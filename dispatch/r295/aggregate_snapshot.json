@@ -1,0 +1,32 @@
+{
+  "snapshot_utc": "2026-11-12T03:30:11Z",
+  "site_id": 256784396,
+  "source": "authenticated read-only WordPress Jetpack newsletter status/get_settings and Stats followers",
+  "newsletter_enabled": true,
+  "site_can_send": true,
+  "new_posts_by_default": false,
+  "email_format": "full",
+  "welcome_fieldbook_configured": true,
+  "diagnostic": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0
+  },
+  "stats_followers": {
+    "email": 0,
+    "wpcom": 3,
+    "partial": false
+  },
+  "recent_five_post_send_status": "never_sent_opted_out",
+  "true_email_eligible": null,
+  "actual_received_welcome_verified": false,
+  "postal_footer_verified": false,
+  "unsubscribe_verified": false,
+  "native_editor_preview_verified": false,
+  "merchant_email_permission_verified": false,
+  "settled_revenue_verified": false,
+  "source_tags_verified": false,
+  "send_authorized": false,
+  "notice": "Populations have different scopes; never sum counters or infer email-eligible audience."
+}
