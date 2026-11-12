@@ -8,36 +8,9 @@ const gitBlobSha=bytes=>{
   return crypto.createHash('sha1').update('blob '+data.length+'\0').update(data).digest('hex');
 };
 const denied=reason=>({verified:false,reason,production_write_allowed:false,third_party_cache_allowed:false});
-const pngSignature=Buffer.from('89504e470d0a1a0a','hex');
+const {verifiedPngGeometry}=require('./png_decode_guard_20261112.cjs');
 
-// Header/structure checks only: never substitute for full decode or editorial parity.
-// CRC-verify every PNG chunk (including screenshot IDAT) without inflating image data.
-const crcTable=Array.from({length:256},(_,i)=>{
- let c=i;for(let j=0;j<8;j++)c=(c&1)?(0xedb88320^(c>>>1)):(c>>>1);return c>>>0;
-});
-function pngGeometry(b){
- if(!Buffer.isBuffer(b)||b.length<57||!b.subarray(0,8).equals(pngSignature))return null;
- let off=8,ihdr=false,idat=false,iend=false,w=0,h=0;
- while(off+12<=b.length){
-  const n=b.readUInt32BE(off),end=off+12+n;
-  if(n>b.length-off-12)return null;
-  const tag=b.toString('ascii',off+4,off+8),payload=off+8;
-  let crc=0xffffffff;
-  for(let k=off+4;k<payload+n;k++)crc=crcTable[(crc^b[k])&255]^(crc>>>8);
-  if(((crc^0xffffffff)>>>0)!==b.readUInt32BE(payload+n))return null;
-  if(!ihdr){
-   if(tag!=='IHDR'||n!==13)return null;
-   w=b.readUInt32BE(payload);h=b.readUInt32BE(payload+4);
-   if(w===0||h===0||w>100000||h>100000||
-      b[payload+10]!==0||b[payload+11]!==0||b[payload+12]>1)return null;
-   ihdr=true;
-  }else if(tag==='IHDR')return null;
-  if(tag==='IDAT'&&n>0)idat=true;
-  if(tag==='IEND'){if(n!==0||!idat||end!==b.length)return null;iend=true;break;}
-  off=end;
- }
- return ihdr&&idat&&iend?{width:w,height:h,format:'png'}:null;
-}
+// Decode-checked PNG before staging review; JPEG/WebP remain structural-only.
 function jpegGeometry(b){
  if(!Buffer.isBuffer(b)||b.length<16||b[0]!==0xff||b[1]!==0xd8)return null;
  let i=2,w=0,h=0,hadSof=false,sos=false;
@@ -76,7 +49,7 @@ function webpGeometry(b){
  }
  return w>0&&h>0?{width:w,height:h,format:'webp'}:null;
 }
-function imageGeometry(b){return pngGeometry(b)||jpegGeometry(b)||webpGeometry(b);}
+function imageGeometry(b){return verifiedPngGeometry(b)||jpegGeometry(b)||webpGeometry(b);}
 
 function verifyP0ReviewEvidence(packet,review,artifacts){
   if(!packet||!review||!artifacts)return denied('MISSING_BYTE_BOUND_ARTIFACTS');
@@ -91,7 +64,7 @@ function verifyP0ReviewEvidence(packet,review,artifacts){
      gitBlobSha(rights_review_text)!==review.rights_review_git_blob_sha||
      sha256(candidate_asset)!==review.asset_sha256)
     return denied('ARTIFACT_HASH_MISMATCH');
-  const screen=pngGeometry(screenshot_png);
+  const screen=verifiedPngGeometry(screenshot_png);
   if(!screen)return denied('MISSING_OR_INVALID_ARTIFACT_BYTES');
   const assetShape=imageGeometry(candidate_asset);
   if(!assetShape||!Number.isSafeInteger(review.geometry?.output_width)||
