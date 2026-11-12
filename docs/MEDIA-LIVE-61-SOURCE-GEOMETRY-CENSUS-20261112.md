@@ -1,0 +1,15 @@
+# Final Vestige — live offsite-source image markup cohort (2026-11-12)
+
+Read-only authenticated WordPress `context=edit` reads of **9 published posts / 61 image tags** (IDs 211, 268, 280, 285, 287, 288, 407, 418, 432). Exact original `src` values were compared against historical frozen 288-image provenance ledger at Git blob `4965a862f7de7de46c1f4a1e26f3ca70a8c38805`.
+
+**61/61 stored source positions match** after only normal HTML-attribute `&amp;` → `&` decoding. Six NPS post-211 URLs include literal `&amp;` in Gutenberg, but frozen URL records use `&`; this is standard serialization, **not image drift**. No other URL normalization is permitted.
+
+**52/61 image tags have neither explicit width nor height**; the other 9 have both. By post, missing size pairs: 211 **1/6**, 268 **10/10**, 280 **6/6**, 285 **6/6**, 287 **5/6**, 288 **6/6**, 407 **5/8**, 418 **6/6**, 432 **7/7**. This is an actual source-markup gap, **not proof of CLS, visible blur, or a broken browser image**: CSS/aspect-ratio, Jetpack and lazy loading may alter the rendered result.
+
+Original P0 six remain exactly embedded: `285:5 → 285:2 → 287:5 → 418:1 → 418:2 → 407:1`. Each audited row carries the current exact URL and inherited candidate catalog (Navy/NPS/USCG/USGS/Florida Memory/Commons, as applicable), tentative copyright status, conditional <=960px size if previously cataloged, and **NULL** actual origin/guest HTTP, image decode and transferred bytes. No external binaries or public browser probes were run. Site QA [#154](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/154) retains sole ownership of real guest CDP/browser capture; do not introduce a competing collector.
+
+**Staging-only remediation plan:** prioritize browser proof for six P0 suspected missing images; if confirmed, match exact archival scene, item reuse rights, pixel dimensions and caption before any reversible cached/WordPress media replacement. Separately measure computed browser aspect ratio and actual CLS in the 52 missing-hint slots; where genuinely needed, reserve space with proven image aspect and QA responsive 1×–3×, rather than guessing 960px or performing blanket post block rewrites. Preserve exact src+ALT rollback manifest. Existing registered WordPress subsizes/Jetpack must be assessed before new derivatives. Rights remain unapproved, no public writes.
+
+Historical **61 posts / 355 refs / 288 external**, **42** reportedly broken still guest-unconfirmed; **15 originals >1.5 decimal MB total 47,096,779 stored bytes** (not wire bytes); proposed **76% reduction unmeasured**. No production repairs, rehosting, downloads, caching, homepage visual work, merge, deploy or subscription spend.
+
+Evidence: [61-row machine audit](../qa/media-recovery/live_9_post_61_source_geometry_20261112.json), [fail-closed validator](../qa/media-recovery/validate_live_9_post_source_geometry_20261112.cjs), [adversarial tests](../qa/media-recovery/test_live_9_post_source_geometry_20261112.cjs). This is not duplicate Site QA work.
