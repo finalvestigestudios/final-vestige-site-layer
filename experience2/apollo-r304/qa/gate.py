@@ -20,7 +20,7 @@ with sync_playwright() as p:
    ids=page.locator('[id]').evaluate_all('(xs)=>xs.map(e=>e.id)')
    assert len(ids)==len(set(ids))
    for section in page.locator('section.fv-r281').all():
-    plates=section.locator('li.fv-r281__plate'); sources=section.locator('.fv-r281__source-list li')
+    plates=section.locator('li.fv-r281__plate'); sources=section.locator('.fv-r281__source-list > li[data-fv-evidence-role=\"documented-textual-claim\"]')
     assert plates.count()==sources.count()==3
     for i in range(3):
      plate=plates.nth(i); source=sources.nth(i); drawer=plate.locator('details.fv-r281__drawer')
