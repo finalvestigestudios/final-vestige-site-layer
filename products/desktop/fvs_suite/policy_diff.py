@@ -15,6 +15,7 @@ from .unicode_hazards import is_visually_blank_filler
 from .policy_canonical import render_local_canonical_evidence
 from .policy_confusables import render_local_confusable_evidence
 from .policy_compatibility_custody import owned_nfkc_hunks
+from .policy_compatibility_selection_r368 import earliest_nfkc_pairs, MAX_REVIEW_PAIRS
 from .policy_input_privacy import checked_policy_path, read_policy_snapshot, decode_policy_utf8
 
 MAX_POLICY_BYTES = 10 * 1024 * 1024
@@ -221,24 +222,12 @@ def _local_compatibility_evidence(hunks) -> str:
     staged = owned_nfkc_hunks(hunks)
     if staged is None:
         return ""
-    matches = []
-    for number, removed, added in staged:
-        for normalized in removed.keys() & added.keys():
-            before_group, after_group = removed[normalized], added[normalized]
-            # Duplicate normalized lines make a one-to-one citation ambiguous.
-            if len(before_group) != 1 or len(after_group) != 1:
-                continue
-            old_line, old_text = before_group[0]
-            new_line, new_text = after_group[0]
-            if old_text == new_text or (
-                    unicodedata.normalize("NFC", old_text) ==
-                    unicodedata.normalize("NFC", new_text)):
-                continue
-            evidence = _compatibility_codepoint_evidence(old_text, new_text).strip()
-            matches.append((number, old_line, new_line, evidence))
-    if not matches:
+    # R368: every valid candidate contributes to the omission count, but
+    # only the earliest 16 are retained for expensive compatibility codepoint
+    # rendering. NFKC and physical-coordinate checks already ran upstream.
+    selected, match_count = earliest_nfkc_pairs(staged)
+    if not match_count:
         return ""
-    matches.sort(key=lambda row: (row[0], row[1], row[2]))
     lines = [
         "LOCAL REVIEW: NFKC-only source-line substitution candidate(s) inside "
         "changed diff hunks, including mixed policy revisions. These are "
@@ -246,12 +235,13 @@ def _local_compatibility_evidence(hunks) -> str:
         "original files and exact cited lines. Ambiguous duplicate lines "
         "are intentionally not paired.\n"
     ]
-    for number, old_line, new_line, evidence in matches[:16]:
+    for number, old_line, new_line, old_text, new_text in selected:
+        evidence = _compatibility_codepoint_evidence(old_text, new_text).strip()
         lines.append(
             f"Local hunk {number:03d}: before L{old_line}; after L{new_line}; "
             f"NFKC-only candidate; {evidence}\n")
-    if len(matches) > 16:
-        lines.append(f"LOCAL REVIEW: +{len(matches) - 16} additional unique "
+    if match_count > MAX_REVIEW_PAIRS:
+        lines.append(f"LOCAL REVIEW: +{match_count - MAX_REVIEW_PAIRS} additional unique "
                      "candidate pair(s) omitted from bounded navigation.\n")
     return "".join(lines) + "\n"
 
