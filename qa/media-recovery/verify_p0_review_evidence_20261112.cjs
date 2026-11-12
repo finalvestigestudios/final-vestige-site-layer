@@ -9,15 +9,91 @@ const gitBlobSha=bytes=>{
 };
 const denied=reason=>({verified:false,reason,production_write_allowed:false,third_party_cache_allowed:false});
 const pngSignature=Buffer.from('89504e470d0a1a0a','hex');
+
+// Header/structure checks only: never substitute for full decode or editorial parity.
+// CRC-verify every PNG chunk (including screenshot IDAT) without inflating image data.
+const crcTable=Array.from({length:256},(_,i)=>{
+ let c=i;for(let j=0;j<8;j++)c=(c&1)?(0xedb88320^(c>>>1)):(c>>>1);return c>>>0;
+});
+function pngGeometry(b){
+ if(!Buffer.isBuffer(b)||b.length<57||!b.subarray(0,8).equals(pngSignature))return null;
+ let off=8,ihdr=false,idat=false,iend=false,w=0,h=0;
+ while(off+12<=b.length){
+  const n=b.readUInt32BE(off),end=off+12+n;
+  if(n>b.length-off-12)return null;
+  const tag=b.toString('ascii',off+4,off+8),payload=off+8;
+  let crc=0xffffffff;
+  for(let k=off+4;k<payload+n;k++)crc=crcTable[(crc^b[k])&255]^(crc>>>8);
+  if(((crc^0xffffffff)>>>0)!==b.readUInt32BE(payload+n))return null;
+  if(!ihdr){
+   if(tag!=='IHDR'||n!==13)return null;
+   w=b.readUInt32BE(payload);h=b.readUInt32BE(payload+4);
+   if(w===0||h===0||w>100000||h>100000||
+      b[payload+10]!==0||b[payload+11]!==0||b[payload+12]>1)return null;
+   ihdr=true;
+  }else if(tag==='IHDR')return null;
+  if(tag==='IDAT'&&n>0)idat=true;
+  if(tag==='IEND'){if(n!==0||!idat||end!==b.length)return null;iend=true;break;}
+  off=end;
+ }
+ return ihdr&&idat&&iend?{width:w,height:h,format:'png'}:null;
+}
+function jpegGeometry(b){
+ if(!Buffer.isBuffer(b)||b.length<16||b[0]!==0xff||b[1]!==0xd8)return null;
+ let i=2,w=0,h=0,hadSof=false,sos=false;
+ while(i+3<b.length){
+  if(b[i++]!==0xff)return null;
+  while(i<b.length&&b[i]===0xff)i++;
+  const marker=b[i++];
+  if(marker===0xd9)break;
+  if(marker===0xd8||marker===0x00||marker===0x01||(marker>=0xd0&&marker<=0xd7))continue;
+  if(i+2>b.length)return null;
+  const n=b.readUInt16BE(i);if(n<2||i+n>b.length)return null;
+  const sof=[0xc0,0xc1,0xc2,0xc3,0xc5,0xc6,0xc7,0xc9,0xca,0xcb,0xcd,0xce,0xcf].includes(marker);
+  if(sof){
+   if(n<8)return null;
+   h=b.readUInt16BE(i+3);w=b.readUInt16BE(i+5);hadSof=true;
+  }
+  if(marker===0xda){sos=true;break;}
+  i+=n;
+ }
+ // Metadata only. Browser decode and EXIF orientation still require visual review.
+ return hadSof&&sos&&w>0&&h>0&&
+  b.lastIndexOf(Buffer.from([0xff,0xd9]))>i?{width:w,height:h,format:'jpeg'}:null;
+}
+function webpGeometry(b){
+ if(!Buffer.isBuffer(b)||b.length<30||b.toString('ascii',0,4)!=='RIFF'||
+    b.toString('ascii',8,12)!=='WEBP'||b.readUInt32LE(4)+8!==b.length)return null;
+ const t=b.toString('ascii',12,16),n=b.readUInt32LE(16);
+ if(n>b.length-20)return null;
+ let w=0,h=0;
+ if(t==='VP8X'&&n>=10){w=1+b.readUIntLE(24,3);h=1+b.readUIntLE(27,3);}
+ else if(t==='VP8L'&&n>=5&&b[20]===0x2f){
+  w=1+(b[21]|((b[22]&63)<<8));
+  h=1+((b[22]>>6)|(b[23]<<2)|((b[24]&15)<<10));
+ }else if(t==='VP8 '&&n>=10&&b[23]===0x9d&&b[24]===0x01&&b[25]===0x2a){
+  w=b.readUInt16LE(26)&0x3fff;h=b.readUInt16LE(28)&0x3fff;
+ }
+ return w>0&&h>0?{width:w,height:h,format:'webp'}:null;
+}
+function imageGeometry(b){return pngGeometry(b)||jpegGeometry(b)||webpGeometry(b);}
+
 function verifyP0ReviewEvidence(packet,review,artifacts){
   if(!packet||!review||!artifacts)return denied('MISSING_BYTE_BOUND_ARTIFACTS');
   const {capture_text,screenshot_png,rights_review_text,candidate_asset}=artifacts;
   if(typeof capture_text!=='string'||!Buffer.isBuffer(screenshot_png)||
      typeof rights_review_text!=='string'||!Buffer.isBuffer(candidate_asset))
     return denied('ARTIFACT_TYPES_UNVERIFIED');
-  if(!capture_text||screenshot_png.length<24||!screenshot_png.subarray(0,8).equals(pngSignature)||
-     !rights_review_text||candidate_asset.length<1)
+  if(!capture_text||!rights_review_text||candidate_asset.length<1)
     return denied('MISSING_OR_INVALID_ARTIFACT_BYTES');
+  const screen=pngGeometry(screenshot_png);
+  if(!screen)return denied('MISSING_OR_INVALID_ARTIFACT_BYTES');
+  const assetShape=imageGeometry(candidate_asset);
+  if(!assetShape||!Number.isSafeInteger(review.geometry?.output_width)||
+     !Number.isSafeInteger(review.geometry?.output_height)||
+     assetShape.width!==review.geometry.output_width||
+     assetShape.height!==review.geometry.output_height)
+    return denied('ASSET_FORMAT_OR_OUTPUT_GEOMETRY_UNVERIFIED');
   if(gitBlobSha(capture_text)!==packet.capture_git_blob_sha||
      sha256(screenshot_png)!==packet.screenshot_sha256||
      gitBlobSha(rights_review_text)!==review.rights_review_git_blob_sha||
