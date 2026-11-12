@@ -1,4 +1,4 @@
-/* Apollo R313: first-party editorial URL continuity; no analytics, storage, or network requests.
+/* Apollo R314: first-party editorial URL continuity; no analytics, storage, or network requests.
  * Staging only: this enhancement must not ship without cache, consent, and owner review.
  * A cached HTML body remains identical for every visitor; values are read on ACTUAL click.
  */
@@ -42,12 +42,16 @@
     return link;
   }
 
-  document.addEventListener('click', event => {
-    // A real, user-initiated anchor click is the ONLY opportunity to add labels.
+  function handleActivation(event) {
+    // Browsers dispatch click for primary mouse, keyboard and touch activation,
+    // but auxclick for middle-button open-in-new-tab. Reject synthetic, canceled,
+    // right-button and unrelated events; do not intercept or prevent navigation.
     if (!event.isTrusted || event.defaultPrevented) return;
+    if (event.type === 'click' && event.button !== 0) return;
+    if (event.type === 'auxclick' && event.button !== 1) return;
     const link = intendedLink(event.target);
     if (!link) return;
-    // Reset stale labels before each real activation, including an SPA URL change.
+    // Reset stale labels before each genuine activation, including SPA URL change.
     link.href = FREE;
     const labels = verifiedLabels(window.location.search);
     if (!labels) return;
@@ -55,5 +59,8 @@
     for (const field of FIELDS) next.searchParams.set(field, labels[field]);
     // Never echo source query or personal data. No network event is generated here.
     link.href = next.toString();
-  }, true);
+  }
+
+  document.addEventListener('click', handleActivation, true);
+  document.addEventListener('auxclick', handleActivation, true);
 })();
