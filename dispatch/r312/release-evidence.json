@@ -1,0 +1,142 @@
+{
+  "record_type": "EDITORIAL_REVIEW_ONLY_NO_SEND",
+  "generated_at_utc": "2026-11-12T19:37:34Z",
+  "master_pr": "#175",
+  "master_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "review_prs": [
+    "#201",
+    "#2223",
+    "#2228",
+    "#2234"
+  ],
+  "site": "https://finalvestige.com",
+  "site_snapshot": {
+    "as_of": "2026-11-12T19:37:34Z",
+    "newsletter_enabled": true,
+    "default_email_new_posts": false,
+    "email_content_format": "full",
+    "sender_display": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "email_sender_address": "donotreply@wordpress.com (provider documented; not inbox witnessed)",
+    "newsletter_categories_enabled": false,
+    "subscriber_totals": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "email_eligible_count": null,
+    "confirmed_signup_events": null,
+    "actual_welcome_receipt": "UNKNOWN",
+    "actual_received_email_footer": "UNKNOWN",
+    "actual_received_unsubscribe": "UNKNOWN",
+    "postal_address_verified": false,
+    "actual_native_email_preview": "NOT_RUN"
+  },
+  "preheader_contract": {
+    "manifest_is_editorial_copy_only": true,
+    "wordpress_inbox_preview_text_control": "NOT_VERIFIED_IN_ACTIVE_JETPACK",
+    "post_excerpt_with_current_full_mode": "NOT_PROVEN_TO_SET_INBOX_SNIPPET",
+    "first_line_of_gutenberg_r310_is_review_only_warning": true,
+    "required": "NATIVE_PREVIEW_WITNESS_PLUS_AUTHORIZED_RECEIVED_INBOX_WITNESS_BEFORE_SEND"
+  },
+  "issues": [
+    {
+      "number": 1,
+      "subject": "The mind is not a camera",
+      "proposed_preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "kind": "editorial",
+      "editorial_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "source_blob_sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "hold": "HOLD_UNSENT",
+      "commercial_hold": null,
+      "inbox_preheader_verified": false,
+      "member_email_permission_verified": false,
+      "editorial_flag": "Duplicates #02 CTA; compare optional #2173 not adopted"
+    },
+    {
+      "number": 2,
+      "subject": "Before hypnosis had a name",
+      "proposed_preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "kind": "editorial",
+      "editorial_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "source_blob_sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "hold": "HOLD_UNSENT",
+      "commercial_hold": null,
+      "inbox_preheader_verified": false,
+      "member_email_permission_verified": false,
+      "editorial_flag": "Same destination as #01; avoid audience repetition"
+    },
+    {
+      "number": 3,
+      "subject": "The twelve-minute meditation question",
+      "proposed_preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "kind": "commercial-review-pending",
+      "editorial_cta": null,
+      "source_blob_sha": "aeeef34efea0cc281f69901488e4501fea851245",
+      "hold": "HOLD_UNSENT",
+      "commercial_hold": "HOLD_MERCHANT",
+      "inbox_preheader_verified": false,
+      "member_email_permission_verified": false,
+      "editorial_flag": null
+    },
+    {
+      "number": 4,
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "proposed_preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "kind": "editorial",
+      "editorial_cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "source_blob_sha": "89635bfb9c8d1ff17297a59b6b5b2a176934ca",
+      "hold": "HOLD_UNSENT",
+      "commercial_hold": null,
+      "inbox_preheader_verified": false,
+      "member_email_permission_verified": false,
+      "editorial_flag": "Unsupported 14-second claim; NASA timing review required"
+    },
+    {
+      "number": 5,
+      "subject": "Before you press play on a hypnosis audio",
+      "proposed_preheader": "Three questions that matter more than an impressive promise.",
+      "kind": "commercial-review-pending",
+      "editorial_cta": null,
+      "source_blob_sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "hold": "HOLD_UNSENT",
+      "commercial_hold": "HOLD_MERCHANT",
+      "inbox_preheader_verified": false,
+      "member_email_permission_verified": false,
+      "editorial_flag": null
+    },
+    {
+      "number": 6,
+      "subject": "What did seven days of attention reveal?",
+      "proposed_preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "kind": "editorial",
+      "editorial_cta": "https://finalvestige.com/focus/",
+      "source_blob_sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "hold": "HOLD_UNSENT",
+      "commercial_hold": null,
+      "inbox_preheader_verified": false,
+      "member_email_permission_verified": false,
+      "editorial_flag": "Targets subscription page for existing recipients; confirm direct reader value"
+    }
+  ],
+  "approval": {
+    "founder_campaign_release": false,
+    "merchant_email_rights": false,
+    "issued_earning_link": false,
+    "live_independent_buyer_guides": false,
+    "publisher_postal": false,
+    "verified_optout": false,
+    "subscriber_eligibility": false,
+    "received_welcome": false,
+    "actual_jetpack_preview": false,
+    "any_send_allowed": false
+  },
+  "sources": [
+    "https://wordpress.com/support/newsletter/send-newsletter-emails/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://jetpack.com/support/newsletter/customize-the-newsletter-experience/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://zen12.com/"
+  ]
+}
