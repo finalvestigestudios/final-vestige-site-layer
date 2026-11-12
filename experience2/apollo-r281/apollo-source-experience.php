@@ -239,7 +239,12 @@ function fv_r281_render($attributes = []): string {
     // chronology and source landmark needs a distinguishable name in AT.
     $landmark_instance=' — atlas instance '.$sequence;
     $s='<section class="fv-r281" aria-labelledby="'.$id.'-heading" data-fv-evidence-status="editorial-review-pending">';
-    $s.='<header class="fv-r281__head"><p class="fv-r281__eyebrow">Final Vestige / Evidence Atlas / Apollo 1</p><h2 id="'.$id.'-heading">What the record establishes</h2>';
+    // R300: the containing <section> is a named region via aria-labelledby.
+    // Distinct IDs alone are insufficient: repeated shortcode instances otherwise
+    // have *identical* accessible region names. Include the stable instance in
+    // the actual heading text for AT, while retaining the visual heading and
+    // CSS-fail-open meaning. Do not add a second aria-label to mask the heading.
+    $s.='<header class="fv-r281__head"><p class="fv-r281__eyebrow">Final Vestige / Evidence Atlas / Apollo 1</p><h2 id="'.$id.'-heading">What the record establishes<span class="fv-r298__sr-only">'.fv_r281_escape($landmark_instance).'</span></h2>';
     $s.='<p>Three documented milestones. Open the source for each claim; note the limits of the evidence. Editorial review remains pending.</p>';
     // R292: an early direct source-catalogue route for visitors arriving from research-led films.
     // Targets the existing focusable first catalogue record; no extra tab stops, JS,
