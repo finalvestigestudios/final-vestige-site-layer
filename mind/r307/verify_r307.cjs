@@ -92,7 +92,7 @@ const mutations=[
  ['remove source scope','matrix',/"reading_scope": "Braid 1843 publication record, not full-book transcription"/,'"reading_scope": ""','SOURCE_PROVENANCE'],
  ['remove free alternative','a',/12 levels and 48 MP3 recordings/,'12 incredible levels','EXACT_PACKAGE'],
  ['overstate study','a',/seller's “one hour in twelve minutes” equivalence/,'verified one-hour equivalence','FALSE_EQUIVALENCE_REJECTED'],
- ['erase article provenance','article',/Bibliographic record accessed/,'Full book independently transcribed','SOURCE_DEPTH_DISCLOSED'],
+ ['erase article provenance','article',/Bibliographic record accessed/g,'Full book independently transcribed','SOURCE_DEPTH_DISCLOSED'],
  ['erase financial caveat','plan',/NOT COMPUTABLE/g,'$0','REALIZED_METRIC_CONTRACT'],
  ['drop publisher hard hold','matrix',/"publisher_accepted": "UNVERIFIED"/,'"publisher_accepted": "APPROVED"','MATRIX_HOLD']
 ];
