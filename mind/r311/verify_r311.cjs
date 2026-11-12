@@ -50,7 +50,7 @@ function check(src){
     assert(html.includes('name="viewport"')&&html.includes('noindex,nofollow'),'mobile/noindex '+label);
     assert(html.includes('prefers-reduced-motion'),'motion safeguard '+label);
     assert(html.includes(':focus-visible')&&html.includes('Skip to content'),'focus and skip link '+label);
-    assert(/<button[^>]*disabled[^>]*>/.test(html),'actual disabled control '+label);
+    assert(/<button\b[^>]*\sdisabled(?:\s|=|>)[^>]*>/.test(html),'actual disabled control '+label);
     assert(html.includes('commission at no additional cost'),'disclosure near withheld CTA '+label);
     assert(/<button[^>]*disabled[^>]*>[\s\S]*?<\/button>/.test(html),'purchase disabled '+label);
     assert(!/<script\b|<iframe\b|<form\b|<video\b|<audio\b|on(?:click|load|focus|error)\s*=/i.test(html),'unapproved active executable/form/media '+label);
@@ -73,13 +73,13 @@ function clone(overrides){return {...base,...overrides}}
 const mutants=[
   ['unapproved gate',x=>({matrix:x.matrix.replace('"HARD_HOLD"','"APPROVED"')})],
   ['source removed',x=>({matrix:x.matrix.replace('"sources": [','"sources": [\n    ') .replace('"S18"','"REMOVED_SOURCE_ID"')})],
-  ['orphan claim',x=>({matrix:x.matrix.replace('"S01",\n      "S02"','"MISSING_SOURCE_ID",\n      "S02"')})],
+  ['orphan claim',x=>({matrix:x.matrix.replace('"S01",\n        "S02"','"MISSING_SOURCE_ID",\n        "S02"')})],
   ['invented asset id',x=>({matrix:x.matrix.replace('"grok_asset_id": null','"grok_asset_id": "invented"')})],
   ['fabricated revenue',x=>({matrix:x.matrix.replace('"metric_status": "NOT_COMPUTABLE"','"metric_status": "$1000"')})],
   ['fictitious affiliate approval',x=>({matrix:x.matrix.replace('"affiliate_approval": "NOT_VERIFIED"','"affiliate_approval": "APPROVED"')})],
   ['A active product link',x=>({a:x.a.replace('Zen12 overview','<a href="https://zen12.com/about">Zen12 overview</a>')})],
   ['B active product link',x=>({b:x.b.replace('Zen12 overview','<a href="https://zen12.com/about">Zen12 overview</a>')})],
-  ['hub active product link',x=>({hub:x.hub.replace('12-level, 48-MP3','<a href="https://zen12.com/getstarted">12-level, 48-MP3</a>')})],
+  ['hub active product link',x=>({hub:x.hub.replace('twelve-level, 48-MP3','<a href="https://zen12.com/getstarted">twelve-level, 48-MP3</a>')})],
   ['A active button',x=>({a:x.a.replace('type="button" disabled','type="button"')})],
   ['B active button',x=>({b:x.b.replace('type="button" disabled','type="button"')})],
   ['hub active button',x=>({hub:x.hub.replace('<button disabled','<button')})],
