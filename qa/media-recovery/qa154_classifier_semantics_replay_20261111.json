@@ -1,0 +1,524 @@
+{
+  "schema": "fv-media-qa154-source-classifier-replay-v1",
+  "date": "2026-11-11",
+  "method": "offline replay of current QA classifier conditions on frozen source URLs; original QA source HTML input unavailable",
+  "sources": {
+    "QA_classifier_blob": "cdadab899abed4dfd222e75a5616a98390dca4ea",
+    "QA_csv_blob": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
+    "source_parts_blobs": [
+      "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+      "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "21095161e633aba093b74c0ead9936c9f6186d00",
+      "5659ec243c188928be3f89c0f96354b660608ca2"
+    ]
+  },
+  "counts": {
+    "posts": 61,
+    "inline": 355,
+    "qa_reported_offsite": 286,
+    "current_QA_classifier_replay_offsite": 288,
+    "source_kinds": {
+      "first_party": 60,
+      "external": 170,
+      "redirect_image": 118,
+      "jetpack_proxy": 7
+    },
+    "post_count_difference": 2
+  },
+  "conclusion": {
+    "third_party_jetpack_exclusion_by_current_classifier": false,
+    "historical_root_cause_proven": false,
+    "possibilities": [
+      "different raw Gutenberg HTML input",
+      "earlier classifier/code version",
+      "CSV aggregation/export discrepancy"
+    ],
+    "qa_original_snapshot_not_retained": true,
+    "do_not_modify_historical_CSV": true
+  },
+  "rows": [
+    {
+      "post_id": 34,
+      "qa_inline": 1,
+      "qa_offsite": 0,
+      "replay_inline": 1,
+      "replay_offsite": 0
+    },
+    {
+      "post_id": 35,
+      "qa_inline": 1,
+      "qa_offsite": 0,
+      "replay_inline": 1,
+      "replay_offsite": 0
+    },
+    {
+      "post_id": 36,
+      "qa_inline": 1,
+      "qa_offsite": 0,
+      "replay_inline": 1,
+      "replay_offsite": 0
+    },
+    {
+      "post_id": 37,
+      "qa_inline": 1,
+      "qa_offsite": 0,
+      "replay_inline": 1,
+      "replay_offsite": 0
+    },
+    {
+      "post_id": 38,
+      "qa_inline": 1,
+      "qa_offsite": 0,
+      "replay_inline": 1,
+      "replay_offsite": 0
+    },
+    {
+      "post_id": 101,
+      "qa_inline": 7,
+      "qa_offsite": 4,
+      "replay_inline": 7,
+      "replay_offsite": 4
+    },
+    {
+      "post_id": 108,
+      "qa_inline": 2,
+      "qa_offsite": 0,
+      "replay_inline": 2,
+      "replay_offsite": 0
+    },
+    {
+      "post_id": 139,
+      "qa_inline": 2,
+      "qa_offsite": 0,
+      "replay_inline": 2,
+      "replay_offsite": 0
+    },
+    {
+      "post_id": 142,
+      "qa_inline": 3,
+      "qa_offsite": 0,
+      "replay_inline": 3,
+      "replay_offsite": 0
+    },
+    {
+      "post_id": 146,
+      "qa_inline": 3,
+      "qa_offsite": 0,
+      "replay_inline": 3,
+      "replay_offsite": 0
+    },
+    {
+      "post_id": 151,
+      "qa_inline": 3,
+      "qa_offsite": 0,
+      "replay_inline": 3,
+      "replay_offsite": 0
+    },
+    {
+      "post_id": 156,
+      "qa_inline": 4,
+      "qa_offsite": 0,
+      "replay_inline": 4,
+      "replay_offsite": 0
+    },
+    {
+      "post_id": 166,
+      "qa_inline": 7,
+      "qa_offsite": 6,
+      "replay_inline": 7,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 190,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 211,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 213,
+      "qa_inline": 7,
+      "qa_offsite": 7,
+      "replay_inline": 7,
+      "replay_offsite": 7
+    },
+    {
+      "post_id": 214,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 215,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 216,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 217,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 218,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 219,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 220,
+      "qa_inline": 7,
+      "qa_offsite": 7,
+      "replay_inline": 7,
+      "replay_offsite": 7
+    },
+    {
+      "post_id": 221,
+      "qa_inline": 7,
+      "qa_offsite": 7,
+      "replay_inline": 7,
+      "replay_offsite": 7
+    },
+    {
+      "post_id": 252,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 253,
+      "qa_inline": 7,
+      "qa_offsite": 7,
+      "replay_inline": 7,
+      "replay_offsite": 7
+    },
+    {
+      "post_id": 254,
+      "qa_inline": 7,
+      "qa_offsite": 7,
+      "replay_inline": 7,
+      "replay_offsite": 7
+    },
+    {
+      "post_id": 255,
+      "qa_inline": 7,
+      "qa_offsite": 7,
+      "replay_inline": 7,
+      "replay_offsite": 7
+    },
+    {
+      "post_id": 256,
+      "qa_inline": 7,
+      "qa_offsite": 7,
+      "replay_inline": 7,
+      "replay_offsite": 7
+    },
+    {
+      "post_id": 257,
+      "qa_inline": 7,
+      "qa_offsite": 7,
+      "replay_inline": 7,
+      "replay_offsite": 7
+    },
+    {
+      "post_id": 258,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 268,
+      "qa_inline": 10,
+      "qa_offsite": 10,
+      "replay_inline": 10,
+      "replay_offsite": 10
+    },
+    {
+      "post_id": 269,
+      "qa_inline": 7,
+      "qa_offsite": 0,
+      "replay_inline": 7,
+      "replay_offsite": 0
+    },
+    {
+      "post_id": 274,
+      "qa_inline": 7,
+      "qa_offsite": 7,
+      "replay_inline": 7,
+      "replay_offsite": 7
+    },
+    {
+      "post_id": 276,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 277,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 278,
+      "qa_inline": 7,
+      "qa_offsite": 7,
+      "replay_inline": 7,
+      "replay_offsite": 7
+    },
+    {
+      "post_id": 279,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 280,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 283,
+      "qa_inline": 7,
+      "qa_offsite": 7,
+      "replay_inline": 7,
+      "replay_offsite": 7
+    },
+    {
+      "post_id": 285,
+      "qa_inline": 6,
+      "qa_offsite": 5,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 287,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 288,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 289,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 290,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 291,
+      "qa_inline": 6,
+      "qa_offsite": 5,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 292,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 299,
+      "qa_inline": 8,
+      "qa_offsite": 0,
+      "replay_inline": 8,
+      "replay_offsite": 0
+    },
+    {
+      "post_id": 330,
+      "qa_inline": 8,
+      "qa_offsite": 0,
+      "replay_inline": 8,
+      "replay_offsite": 0
+    },
+    {
+      "post_id": 367,
+      "qa_inline": 9,
+      "qa_offsite": 8,
+      "replay_inline": 9,
+      "replay_offsite": 8
+    },
+    {
+      "post_id": 370,
+      "qa_inline": 8,
+      "qa_offsite": 4,
+      "replay_inline": 8,
+      "replay_offsite": 4
+    },
+    {
+      "post_id": 407,
+      "qa_inline": 8,
+      "qa_offsite": 8,
+      "replay_inline": 8,
+      "replay_offsite": 8
+    },
+    {
+      "post_id": 413,
+      "qa_inline": 6,
+      "qa_offsite": 4,
+      "replay_inline": 6,
+      "replay_offsite": 4
+    },
+    {
+      "post_id": 418,
+      "qa_inline": 6,
+      "qa_offsite": 6,
+      "replay_inline": 6,
+      "replay_offsite": 6
+    },
+    {
+      "post_id": 425,
+      "qa_inline": 9,
+      "qa_offsite": 8,
+      "replay_inline": 9,
+      "replay_offsite": 8
+    },
+    {
+      "post_id": 428,
+      "qa_inline": 6,
+      "qa_offsite": 5,
+      "replay_inline": 6,
+      "replay_offsite": 5
+    },
+    {
+      "post_id": 431,
+      "qa_inline": 6,
+      "qa_offsite": 5,
+      "replay_inline": 6,
+      "replay_offsite": 5
+    },
+    {
+      "post_id": 432,
+      "qa_inline": 7,
+      "qa_offsite": 7,
+      "replay_inline": 7,
+      "replay_offsite": 7
+    },
+    {
+      "post_id": 433,
+      "qa_inline": 6,
+      "qa_offsite": 5,
+      "replay_inline": 6,
+      "replay_offsite": 5
+    },
+    {
+      "post_id": 434,
+      "qa_inline": 6,
+      "qa_offsite": 5,
+      "replay_inline": 6,
+      "replay_offsite": 5
+    },
+    {
+      "post_id": 621,
+      "qa_inline": 6,
+      "qa_offsite": 0,
+      "replay_inline": 6,
+      "replay_offsite": 0
+    }
+  ],
+  "exceptions": [
+    {
+      "slot": "285:1",
+      "post_id": 285,
+      "source_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "classification_from_current_QA_rules": "external",
+      "delivery_host": "i0.wp.com",
+      "upstream_host": "www.squawkpoint.com",
+      "visitor_http": null,
+      "visitor_decode": null,
+      "network_bytes": null,
+      "native_dimensions": null,
+      "rights_approved": false,
+      "wordPress_write_approved": false,
+      "caching_allowed": false,
+      "max_derivative_width_px": 960,
+      "upscaling_allowed": false
+    },
+    {
+      "slot": "291:0",
+      "post_id": 291,
+      "source_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "classification_from_current_QA_rules": "external",
+      "delivery_host": "i0.wp.com",
+      "upstream_host": "text-message.blogs.archives.gov",
+      "visitor_http": null,
+      "visitor_decode": null,
+      "network_bytes": null,
+      "native_dimensions": null,
+      "rights_approved": false,
+      "wordPress_write_approved": false,
+      "caching_allowed": false,
+      "max_derivative_width_px": 960,
+      "upscaling_allowed": false
+    }
+  ],
+  "performance": {
+    "historical_reported_broken": 42,
+    "guest_confirmed_broken": 0,
+    "proposed_76_percent_measured": false,
+    "oversized_wp_originals": 15,
+    "oversized_stored_original_bytes": 47096779,
+    "visitor_wire_bytes": null
+  },
+  "restrictions": {
+    "no_binary_download": true,
+    "no_cache": true,
+    "no_wp_writes": true,
+    "no_homepage_changes": true,
+    "no_merge_or_deploy": true,
+    "no_spend": true
+  }
+}
