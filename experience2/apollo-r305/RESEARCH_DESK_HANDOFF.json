@@ -1,0 +1,16 @@
+{
+  "purpose": "Review-only source custody boundary between Apollo Evidence Atlas and independent Research Desk PR #158; not deployed, not a media-use license",
+  "research_desk_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/158",
+  "source_document": "experience2/research-desk/templates/ledger.html",
+  "source_blob_sha1": "403d128c57b9bc82dac7c619651689070edef86c",
+  "snapshot_checked": "2026-11-12",
+  "archive_records": [
+    {"id":"S67-19766","url":"https://www.nasa.gov/image-detail/apollo-1-crew-honored/","role":"contextual-photo-record","claim_support":"not-primary-claim-proof","image_rights":"not-cleared"},
+    {"id":"S67-15717","url":"https://www.nasa.gov/image-detail/amf-s67-15717/","role":"contextual-photo-record","claim_support":"not-primary-claim-proof","image_rights":"not-cleared"},
+    {"id":"S66-58038","url":"https://www.nasa.gov/image-detail/amf-s66-58038/","role":"contextual-photo-record","claim_support":"not-primary-claim-proof","image_rights":"not-cleared"},
+    {"id":"KSC-20170124-PH_KLS01_0164","url":"https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/","role":"contextual-photo-record","claim_support":"not-primary-claim-proof","image_rights":"not-cleared"},
+    {"id":"S67-21294","url":"https://www.nasa.gov/image-detail/amf-s67-21294/","role":"contextual-photo-record","claim_support":"not-primary-claim-proof","image_rights":"not-cleared"},
+    {"id":"KSC-20170124-PH_KLS01_0090","url":"https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/","role":"contextual-photo-record","claim_support":"not-primary-claim-proof","image_rights":"not-cleared"}
+  ],
+  "limitations": "IDs and outbound links transcribed from PR #158; this handoff does not independently authenticate each photo caption, verify image access, settle archival rights, or validate each narrative claim. NASA Board report textual claims are separate. Do not publish images, affiliate offers or geographic edges based on this register."
+}
