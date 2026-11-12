@@ -277,7 +277,12 @@ function fv_r281_render($attributes = []): string {
     // Do not silently flatten discrepant NASA dates into one unsupported claim.
     // Plain text is available without JS and in print; all source anchors are
     // direct official NASA destinations, with clear source-dependency labels.
-    $s.='</ol><aside class="fv-r281__reconciliation" aria-label="NASA source-date reconciliation'.$landmark_instance.'" data-fv-date-review="editorial-review-pending"><h3>Why NASA sources give different establishment dates</h3>';
+    // R299: surface the existing single, free narrative continuation at the
+    // end of the verified three-plate chronology, not after the entire source
+    // appendix. The page retains every NASA provenance/uncertainty record below,
+    // with the same one historical action (no merchant CTA or new analytics).
+    $s.='</ol><footer class="fv-r281__next"><p>Continue with the investigation, including the original evidence and its uncertainties. Detailed NASA source custody remains available below.</p><p><a href="'.FV_R281_FREE.'">Read the free Apollo 1 investigation</a></p></footer>';
+    $s.='<aside class="fv-r281__reconciliation" aria-label="NASA source-date reconciliation'.$landmark_instance.'" data-fv-date-review="editorial-review-pending"><h3>Why NASA sources give different establishment dates</h3>';
     $s.='<p><strong>Unresolved source distinction:</strong> The Apollo 204 Review Board narrative dates its original oral authorization to January 27, 1967. A later NASA safety summary describes the Board as established on January 28. Both place its first Kennedy meeting on January 28. We preserve that distinction instead of calling two institutional descriptions independent corroboration.</p>';
     $s.='<h4>Document custody: four different dated actions</h4><p>These dates describe the Board\'s authority, meeting, memorandum and later confirmation. Its own 1967 narrative and proceedings are parts of the same investigation, not independent eyewitness corroboration.</p>';
     $s.='<details class="fv-r291__authority-disclosure"><summary>Inspect all four dated Board authority records<span class="fv-r298__sr-only">'.fv_r281_escape($landmark_instance).'</span></summary><p class="fv-r291__disclosure-intro">Each entry identifies what the Board documented and what that record does not establish. Source links lead to NASA, not a commercial offer.</p><ol class="fv-r281__authority-ledger" aria-label="Board authority document chronology'.$landmark_instance.'">';
@@ -310,7 +315,7 @@ function fv_r281_render($attributes = []): string {
         $s.='<p class="fv-r281__source-return"><a href="#'.$event_point.'">Return to evidence: '.fv_r281_escape($r['title']).'</a></p></li>';
     }
     $s.='</ul><p>No archive image, geolocation, ownership or commercial rights are inferred from these source links. NASA does not endorse this website.</p></aside>';
-    $s.='<footer class="fv-r281__next"><p>Continue with the investigation, including the original evidence and its uncertainties.</p><p><a href="'.FV_R281_FREE.'">Read the free Apollo 1 investigation</a></p></footer></section>';
+    $s.='</section>';
     // Body-placed stylesheet is a progressive fallback where an unknown dynamic
     // shortcode executes after wp_head. Never inject JS or remote analytics.
     // R293: never emit a second stylesheet link when WordPress has already queued
