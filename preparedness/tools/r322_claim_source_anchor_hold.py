@@ -249,4 +249,4 @@ def main() -> int:
     print(json.dumps(r,sort_keys=True,indent=2))
     return 2 if r['state']=='DRAFT_HARD_HOLD' else 1
 
-if __name__=='__main__':raise SystemExit(main)
+if __name__=='__main__':raise SystemExit(main())
