@@ -950,6 +950,12 @@ jobs:
           python -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_whole_hunk_r364.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_source_custody_r182.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_whole_hunk_r364.py'
+      - name: R365 Policy Delta direct-source budget and renderer custody
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_budget_r365.py'
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_budget_engine_r365.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_budget_r365.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_budget_engine_r365.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -1299,6 +1305,18 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R364 Windows optimized legacy policy custody FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_whole_hunk_r364.py'
           if ($LASTEXITCODE -ne 0) { throw "R364 Windows optimized whole-hunk policy custody FAILED" }
+      - name: R365 Policy Delta bounded review evidence on Windows
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_budget_r365.py'
+          if ($LASTEXITCODE -ne 0) { throw "R365 Windows budget unit FAILED" }
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_budget_engine_r365.py'
+          if ($LASTEXITCODE -ne 0) { throw "R365 Windows budget engine FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_budget_r365.py'
+          if ($LASTEXITCODE -ne 0) { throw "R365 Windows optimized budget unit FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_budget_engine_r365.py'
+          if ($LASTEXITCODE -ne 0) { throw "R365 Windows optimized budget engine FAILED" }
       - name: R319 witnessed-vs-compiled premium test source before Windows packaging
         shell: pwsh
         run: |
