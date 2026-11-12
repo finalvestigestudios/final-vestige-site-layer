@@ -7,6 +7,8 @@ from __future__ import annotations
 
 import unicodedata
 
+from .policy_confusable_budget_r365 import within_confusable_budget
+
 # Deliberately small, visually close single-codepoint substitutes. Map only
 # to ASCII Latin, not to NFKC/NFC or to a language-dependent transliteration.
 _TO_LATIN = {
@@ -106,7 +108,9 @@ def render_local_confusable_evidence(hunks: list[dict]) -> str:
     Pairs are navigational hints only. Exact raw text, SHA-256 and human
     judgment decide whether an apparent look-alike matters to a policy.
     """
-    if type(hunks) is not list or len(hunks) > _MAX_SOURCE_LINE:
+    # Bound optional review evidence before building per-line skeleton indexes.
+    # On overflow, omit all supplemental cues rather than citing a partial set.
+    if not within_confusable_budget(hunks):
         return ""
     # Validate *all* well-formed hunks before emitting a single citation.
     # Reusing a physical source coordinate in a later hunk, or presenting
