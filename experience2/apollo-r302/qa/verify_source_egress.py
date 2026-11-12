@@ -117,7 +117,16 @@ with sync_playwright() as p:
     # Actual browser print containing the complete disclosure and primary links.
     page = browser.new_page(viewport={'width':390,'height':850},java_script_enabled=False)
     page.set_content(html)
-    (qa/'r302-390-print.pdf').write_bytes(page.pdf(format='A4',print_background=True))
+    # Normalize actual Chromium PDF metadata so independent runs produce the
+    # same file digest; retain hyperlinks and historical content.
+    import fitz
+    pdf_doc = fitz.open(stream=page.pdf(format='A4',print_background=True),filetype='pdf')
+    metadata = pdf_doc.metadata.copy()
+    metadata['creationDate'] = 'D:19800101000000Z'
+    metadata['modDate'] = 'D:19800101000000Z'
+    pdf_doc.set_metadata(metadata)
+    pdf_doc.save(str(qa/'r302-390-print.pdf'),garbage=4,deflate=1,no_new_id=1)
+    pdf_doc.close()
     page.close()
     browser.close()
 assert passes == 20 and negative_controls == 10 and source_checks == 260
