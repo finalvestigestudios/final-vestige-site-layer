@@ -307,7 +307,18 @@ function fv_r281_render($attributes = []): string {
     // not a verified lead, paid sale, or affiliate event. Claude may inspect
     // this contract during separately approved analytics integration; these
     // attributes themselves send no data and do not rewrite UTM parameters.
-    $s.='</ol><footer class="fv-r281__next" data-fv-funnel-step="evidence-to-investigation"><p>Continue with the investigation, including the original evidence and its uncertainties. Detailed NASA source custody remains available below.</p><p><a href="'.FV_R281_FREE.'" data-fv-cta="apollo-read-free-investigation" data-fv-conversion-kind="editorial-continuation">Read the free Apollo 1 investigation</a></p></footer>';
+    // R306: give documentary viewers a source receipt at the continuation decision.
+    // The three native fragment routes point to the EXISTING catalogue below.
+    // Closed by default to avoid adding friction; opens with keyboard/touch/no-JS.
+    // No new external requests, paid CTA, tracking or source assertions are added.
+    $s.='</ol><footer class="fv-r281__next" data-fv-funnel-step="evidence-to-investigation"><p>Continue with the investigation, including the original evidence and its uncertainties. Detailed NASA source custody remains available below.</p>';
+    $s.='<details class="fv-r281__drawer fv-r306__source-receipt" data-fv-custody-trail="three-documentary-records"><summary>Check the three NASA source records before continuing<span class="fv-r298__sr-only">'.fv_r281_escape($landmark_instance).'</span></summary><p>These are three institutional documentary records, not three independent witnesses. None establishes a precise ignition location, and none certifies commercial image rights.</p><ol>';
+    foreach ($records as $index=>$r) {
+        $source_point=$id.'-source-'.($index+1);
+        $s.='<li data-fv-custody-source-id="'.fv_r281_escape($r['source_id']).'" data-fv-cites-claim="apollo-1-claim-'.($index+1).'"><a href="#'.$source_point.'">'.fv_r281_escape($r['when']).' — '.fv_r281_escape($r['source_name']).'</a><span> · '.fv_r281_escape($r['source_type']).'</span></li>';
+    }
+    $s.='</ol><p>The catalogue entries below contain the original NASA links and each source\'s limitations. The free investigation is editorial reading, not a sale.</p></details>';
+    $s.='<p><a href="'.FV_R281_FREE.'" data-fv-cta="apollo-read-free-investigation" data-fv-conversion-kind="editorial-continuation">Read the free Apollo 1 investigation</a></p></footer>';
     $s.='<aside class="fv-r281__reconciliation" aria-label="NASA source-date reconciliation'.$landmark_instance.'" data-fv-date-review="editorial-review-pending"><h3>Why NASA sources give different establishment dates</h3>';
     $s.='<p><strong>Unresolved source distinction:</strong> The Apollo 204 Review Board narrative dates its original oral authorization to January 27, 1967. A later NASA safety summary describes the Board as established on January 28. Both place its first Kennedy meeting on January 28. We preserve that distinction instead of calling two institutional descriptions independent corroboration.</p>';
     $s.='<h4>Document custody: four different dated actions</h4><p>These dates describe the Board\'s authority, meeting, memorandum and later confirmation. Its own 1967 narrative and proceedings are parts of the same investigation, not independent eyewitness corroboration.</p>';
