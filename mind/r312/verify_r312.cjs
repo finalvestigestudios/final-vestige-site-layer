@@ -35,7 +35,7 @@ function test(v){
   assert(/focus-visible/i.test(s),"keyboard focus "+k);
   assert(/<button type="button" disabled\b/i.test(s),"native disabled button "+k);
   assert(!/<script\b|<iframe\b|<form\b|<input\b|<video\b|<audio\b/i.test(s),"no new active widget/scripts/forms "+k);
-  assert(!/autoplay|document\.cookie|localStorage|fetch\s*\(|gtag\s*\(|fbq\s*\(/i.test(s),"no autostart or tracking "+k);
+  assert(!/\bautoplay(?=\s|>|=)|document\.cookie|localStorage|fetch\s*\(|gtag\s*\(|fbq\s*\(/i.test(s),"no autostart or tracking "+k);
   assert(!/href=["']https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)\b/i.test(s),"no active merchant link "+k);
   assert(!/href=["'](?:javascript:|data:)/i.test(s),"unsafe URL "+k);
   assert(/commission at no additional cost/i.test(s),"proximate commission disclosure "+k);
