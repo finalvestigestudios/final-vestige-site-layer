@@ -15,7 +15,7 @@ function failures(f){
   for(const [name,html] of [['A',a],['B',b]]){
     need(html.includes('nine of the 26 participants who actually heard their own names'),name+' denominator');
     need(!html.includes('34.6% of a sample of 34'),name+' old denominator');
-    need(/<button\b(?=[^>]*\bdisabled(?:\s|=|>))[^>]*>Merchant offer unavailable pending verification<\/button>/.test(html),name+' native disabled button');
+    need(/<button\b[^>]*\sdisabled(?=\s|=|>)[^>]*>Merchant offer unavailable pending verification<\/button>/.test(html),name+' native disabled button');
     const offer=html.match(/<section class="offer"[\s\S]*?<\/section>/)?.[0]||'';
     need(offer.indexOf('Affiliate disclosure:')>=0&&offer.indexOf('Affiliate disclosure:')<offer.indexOf('<button'),name+' adjacent FTC disclosure');
     need(!/<(?:script|form|iframe)\b/i.test(html),name+' scripts/forms');
@@ -60,6 +60,7 @@ const mutants=[
  ['old source depth',x=>{const d=JSON.parse(x.oldLedger);d.sources.find(s=>s.id==='W1995').depth='abstract';x.oldLedger=JSON.stringify(d);}],
  ['A enable purchase',x=>x.a=x.a.replace('type="button" disabled','type="button"')],
  ['B enable purchase',x=>x.b=x.b.replace('type="button" disabled','type="button"')],
+ ['both buttons aria-only',x=>{x.a=x.a.replace('type="button" disabled','type="button"');x.b=x.b.replace('type="button" disabled','type="button"');}],
  ['A FTC missing',x=>x.a=x.a.replace('Affiliate disclosure:','Commercial note:')],
  ['B FTC missing',x=>x.b=x.b.replace('Affiliate disclosure:','Commercial note:')],
  ['A merchant link',x=>x.a+='<a href="https://zen12.com/getstarted">BUY</a>'],
