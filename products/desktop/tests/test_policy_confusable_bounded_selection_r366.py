@@ -260,3 +260,159 @@ class DeferredGlyphCuesR367(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# R368: exercise the bounded NFKC compatibility selector from the existing
+# mandatory Ubuntu/Windows normal and -OO Policy Delta test invocation.
+from fvs_suite.policy_compatibility_selection_r368 import earliest_nfkc_pairs
+from fvs_suite import policy_diff as _r368_policy
+
+
+def _r368_groups(count=25):
+    return [(1, {f"p-{i} 10\n": [(i + 1, f"p-{i} ⑩\n")] for i in range(count)},
+             {f"p-{i} 10\n": [(i + 1, f"p-{i} 10\n")] for i in range(count)})]
+
+
+def _r368_hunk(start=1, count=1):
+    return {
+        "removed_sources": [(start + i, f"Policy {start + i:04d}: ⑩\n")
+                            for i in range(count)],
+        "added_sources": [(start + i, f"Policy {start + i:04d}: 10\n")
+                          for i in range(count)],
+    }
+
+
+class BoundedCompatibilityR368(unittest.TestCase):
+    def test_earliest_sixteen_from_many(self):
+        picked, total = earliest_nfkc_pairs(_r368_groups(100))
+        self.assertEqual(total, 100)
+        self.assertEqual([p[1] for p in picked], list(range(1, 17)))
+
+    def test_no_more_than_sixteen_with_5000_candidates(self):
+        picked, total = earliest_nfkc_pairs(_r368_groups(5000))
+        self.assertEqual(total, 5000)
+        self.assertEqual(len(picked), 16)
+
+    def test_permuted_dict_order_same_output(self):
+        source = _r368_groups(90)
+        removed, added = source[0][1:]
+        pairs = list(removed.items())
+        random.Random(368).shuffle(pairs)
+        shuffled = [(1, dict(pairs), dict(reversed(list(added.items()))))]
+        self.assertEqual(earliest_nfkc_pairs(source),
+                         earliest_nfkc_pairs(shuffled))
+
+    def test_multi_hunk_sort_by_coordinates(self):
+        values = [(3, {"a": [(9, "⑩")]}, {"a": [(9, "10")]}),
+                  (1, {"b": [(5, "⑩")]}, {"b": [(5, "10")]}),
+                  (2, {"c": [(7, "⑩")]}, {"c": [(7, "10")]})]
+        selected, total = earliest_nfkc_pairs(values)
+        self.assertEqual(total, 3)
+        self.assertEqual([(p[0], p[1]) for p in selected],
+                         [(1, 5), (2, 7), (3, 9)])
+
+    def test_ambiguous_duplicate_not_selected(self):
+        selected, total = earliest_nfkc_pairs([
+            (1, {"x": [(1, "⑩"), (2, "⑩")]}, {"x": [(3, "10")]})])
+        self.assertEqual((selected, total), ([], 0))
+
+    def test_unchanged_and_canonical_nfc_ignored(self):
+        for old, new in (("⑩", "⑩"), ("é", "e\u0301")):
+            selected, total = earliest_nfkc_pairs([
+                (1, {"x": [(1, old)]}, {"x": [(1, new)]})])
+            self.assertEqual((selected, total), ([], 0))
+
+    def test_no_common_key(self):
+        self.assertEqual(earliest_nfkc_pairs([
+            (1, {"x": [(1, "a")]}, {"y": [(1, "b")]})]), ([], 0))
+
+    def test_zero_capacity_counts_every_valid_pair(self):
+        self.assertEqual(earliest_nfkc_pairs(_r368_groups(23), 0), ([], 23))
+
+    def test_two_capacity_earliest_selection(self):
+        picked, total = earliest_nfkc_pairs(_r368_groups(26), 2)
+        self.assertEqual(total, 26)
+        self.assertEqual([p[1] for p in picked], [1, 2])
+
+    def test_does_not_mutate_original_groups(self):
+        rows = _r368_groups(22)
+        before = repr(rows)
+        earliest_nfkc_pairs(rows)
+        self.assertEqual(repr(rows), before)
+
+    def test_preserves_raw_source_for_later_display(self):
+        picked, total = earliest_nfkc_pairs(_r368_groups(1))
+        self.assertEqual(total, 1)
+        self.assertEqual(picked[0][3:], ("p-0 ⑩\n", "p-0 10\n"))
+
+    def test_distinct_before_after_physical_lines(self):
+        picked, count = earliest_nfkc_pairs([
+            (1, {"x": [(7, "⑩")]}, {"x": [(22, "10")]})])
+        self.assertEqual((count, picked[0][:3]), (1, (1, 7, 22)))
+
+    def test_empty_collection(self):
+        self.assertEqual(earliest_nfkc_pairs([]), ([], 0))
+
+    def test_matches_full_sort_reference(self):
+        picked, total = earliest_nfkc_pairs(_r368_groups(500))
+        expected = [(1, i + 1, i + 1) for i in range(16)]
+        self.assertEqual([x[:3] for x in picked], expected)
+        self.assertEqual(total, 500)
+
+    def test_real_renderer_formats_only_earliest_sixteen(self):
+        with patch.object(_r368_policy, "_compatibility_codepoint_evidence",
+                          wraps=_r368_policy._compatibility_codepoint_evidence) as cues:
+            report = _r368_policy._local_compatibility_evidence(
+                [_r368_hunk(count=500)])
+        self.assertEqual(cues.call_count, 16)
+        self.assertEqual(report.count("NFKC-only candidate;"), 16)
+        self.assertIn("before L1; after L1;", report)
+        self.assertIn("before L16; after L16;", report)
+        self.assertNotIn("before L17;", report)
+        self.assertIn("+484 additional unique candidate pair(s) omitted", report)
+
+    def test_multi_hunk_renderer_retains_earliest(self):
+        report = _r368_policy._local_compatibility_evidence([
+            _r368_hunk(1, 10), _r368_hunk(21, 10)])
+        self.assertEqual(report.count("NFKC-only candidate;"), 16)
+        self.assertIn("Local hunk 002: before L26; after L26", report)
+        self.assertNotIn("before L27;", report)
+        self.assertIn("+4 additional unique candidate pair(s) omitted", report)
+
+    def test_malformed_late_hunk_suppresses_all_review_cues(self):
+        self.assertEqual(_r368_policy._local_compatibility_evidence([
+            _r368_hunk(1, 30), {"removed_sources": [(31, "⑩\n")]}]), "")
+
+    def test_duplicate_folded_candidates_remain_ambiguous(self):
+        values = [
+            {"removed_sources": [(1, "Limit ⑩\n"), (2, "Limit 10\n")],
+             "added_sources": [(1, "Limit 10\n")]},
+            _r368_hunk(4, 1),
+        ]
+        report = _r368_policy._local_compatibility_evidence(values)
+        self.assertEqual(report.count("NFKC-only candidate;"), 1)
+        self.assertNotIn("additional unique candidate", report)
+
+    def test_private_source_not_emitted(self):
+        report = _r368_policy._local_compatibility_evidence([
+            {"removed_sources": [(1, "client-secret-1234 ⑩\n")],
+             "added_sources": [(1, "client-secret-1234 10\n")]}])
+        self.assertIn("U+2469", report)
+        self.assertNotIn("client-secret-1234", report)
+        self.assertIn("NOT legal or semantic equivalence", report)
+
+    def test_genuine_canonical_change_not_falsely_flagged(self):
+        report = _r368_policy._local_compatibility_evidence([
+            {"removed_sources": [(1, "Café\n")],
+             "added_sources": [(1, "Cafe\u0301\n")]}])
+        self.assertEqual(report, "")
+
+    def test_real_policy_diff_round_trip(self):
+        before = ["Limit ⑩\n", "Owner: OLD\n"]
+        after = ["Limit 10\n", "Owner: NEW\n"]
+        diff, index = _r368_policy._unified_diff(
+            before, after, "before.txt", "after.txt", include_index=True)
+        self.assertIn("Local hunk 001: before L1; after L1", index)
+        self.assertIn("U+2469", index)
+        self.assertIn("Owner: NEW", diff)
+        self.assertIn("human review", index.lower())
