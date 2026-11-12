@@ -14,3 +14,8 @@ test("unverified refund rejected instead of net-deducted",()=>{const x=cp(fixtur
 test("bot not counted as qualified human",()=>assert.equal(replay(fixture).cohorts.d7.qualified_human_sessions,2));
 test("PII input blocked and public aggregate contains no individual keys",()=>{const x=cp(fixture);x.events[0].email="private@example.com";assert.throws(()=>replay(x),/PII prohibited/);assert.doesNotMatch(JSON.stringify(replay(fixture)),/demo_s1|PROOF-SYNTHETIC-01|@/)});
 test("hard holds remain, independently of synthetic positive fixture",()=>{const d=replay(fixture);assert.equal(d.send_authorized,false);assert.ok(d.holds.some(h=>h.includes("postal")));assert.ok(d.holds.some(h=>h.includes("founder")))});
+
+test("multiple orders per one customer do not inflate customer conversion rates",()=>{
+ const x=cp(fixture);x.events.push({type:"merchant_settled_order",session:"demo_s1",at:"2026-11-10T11:12:00Z",status:"settled",independent_partner_report:true,verified_attribution:true,order_ref:"ORDER-SYNTHETIC-02",gross_cents:900,fees_cents:50});
+ const d=replay(x).cohorts.d7;assert.equal(d.settled_orders,2);assert.equal(d.verified_paying_customers,1);assert.equal(d.paid_conversion_rate,0.5);assert.equal(d.lead_to_customer_rate,1);
+});
