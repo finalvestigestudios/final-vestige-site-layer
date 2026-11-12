@@ -10,7 +10,8 @@ const names={
  b:"ZEN12-B-OPTIONAL-42S-FILM-STORYBOARD-REVIEW.html",
  hub:"MIND-ARCHIVE-FOUR-STREAM-REVIEW-ONLY.html",
  matrix:"SOURCE-CLAIM-PRODUCT-AND-RELEASE-GATES.json",
- dossier:"RELEASE-CONVERSION-AND-CREATOR-ACCEPTANCE.md"
+ dossier:"RELEASE-CONVERSION-AND-CREATOR-ACCEPTANCE.md",
+ vtt:"ZEN12-42S-ORIGINAL-STORYBOARD-CAPTIONS-NOT-ACTIVE.vtt"
 };
 function load(){return Object.fromEntries(Object.entries(names).map(([k,p])=>[k,fs.readFileSync(path.join(root,p),"utf8")]));}
 function inspection(F){
@@ -66,6 +67,8 @@ function inspection(F){
  req(F.dossier.includes("NOT COMPUTABLE")&&F.dossier.includes("affiliate_outbound_click"),"MONEY_EVENT_DISAMBIGUATION");
  req(F.dossier.includes("actual_asset_id")&&F.dossier.includes("seven-day")&&F.dossier.includes("thirty-day"),"CAMPAIGN_COHORT_CONTRACT");
  req(F.dossier.includes("HARD HOLD"),"RELEASE_HOLD_DOC");
+ req(F.vtt.startsWith("WEBVTT")&&F.vtt.includes("00:00:35.000 --> 00:00:42.000")&&F.vtt.includes("The evidence comes before the offer."),"VTT_TIMING_AND_CONTENT");
+ req(!/guaranteed focus|cures anxiety|100% proven/i.test(F.vtt),"VTT_NO_UNSUPPORTED_CLAIM");
  return errors;
 }
 function mutate(F,key,replace,withText){
@@ -106,7 +109,8 @@ function mutationCases(F){
  ["matrix",/"status": "UNSUBSTANTIATED_SELLER_CLAIM"/,'"status": "INDEPENDENTLY_PROVEN"'],
  ["dossier",/NOT COMPUTABLE/g,"$999"],
  ["dossier",/HARD HOLD/g,"APPROVED"],
- ["dossier",/actual_asset_id/g,"invented_video_123"]
+ ["dossier",/actual_asset_id/g,"invented_video_123"],
+ ["vtt",/^WEBVTT/,"SRT"],["vtt",/00:00:35.000 --> 00:00:42.000/,"00:00:35.000 --> 00:01:42.000"]
  ];
  return cases.map(([key,from,to],i)=>({id:i+1,key,from,to}));
 }
