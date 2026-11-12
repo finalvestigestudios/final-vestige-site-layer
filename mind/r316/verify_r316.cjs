@@ -10,7 +10,7 @@ test('merchant controls disabled/disclosed',()=>{for(const x of [a,b,hub]){const
 test('a11y source requirements',()=>{for(const x of [a,b,hub]){assert.ok(x.includes('<main id="content">')&&x.includes(':focus-visible')&&x.includes('prefers-reduced-motion')&&x.includes('@media(max-width:640px)'))}});
 test('no scripts or duplicate signup',()=>{for(const x of [a,b,hub])assert.ok(!/<script\b|<form\b|<iframe\b|<video\b|\bautoplay\s*(?:=|>)/i.test(x))});
 test('captions 42 seconds contiguous',()=>{const rows=[...captions.matchAll(/(\d\d):(\d\d):(\d\d)\.(\d{3}) --> (\d\d):(\d\d):(\d\d)\.(\d{3})/g)];assert.equal(rows.length,6);let end=0;const sec=p=>Number(p[0])*3600+Number(p[1])*60+Number(p[2])+Number(p[3])/1000;for(const row of rows){assert.equal(sec(row.slice(1,5)),end);end=sec(row.slice(5,9))}assert.equal(end,42)});
-test('article evidence disclaimers',()=>{for(const marker of ['400 participants','153 healthy adults','1,000 people','not a cognitive diagnostic','not independently tested'])assert.ok(article.includes(marker))});
+test('article evidence disclaimers',()=>{for(const marker of ['400 participants','153 healthy adults','1,000 people','not a cognitive diagnostic','We have not bought'])assert.ok(article.includes(marker))});
 const malicious=['<script>alert(1)</script>','<form action="/subscribe">','<iframe src="x">','<video autoplay>','<a href="https://zen12.com/order?aff=fake">Buy</a>'];
 test('five synthetic unsafe fixtures rejected',()=>{const guard=x=>!/<script\b|<form\b|<iframe\b|\bautoplay\s*>|aff=fake/.test(x);for(const x of malicious)assert.equal(guard(a+x),false)});
 console.log('PASS: '+n+' native structural checks; 5/5 synthetic malicious fixtures rejected');
