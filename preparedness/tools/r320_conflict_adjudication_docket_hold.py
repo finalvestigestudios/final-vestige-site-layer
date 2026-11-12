@@ -102,7 +102,7 @@ def validate_docket(manifest: object, docket: object) -> dict:
     if not isinstance(rows, list): rows = []; errors.append('MISSING_DOCKET_RECORDS')
     if len(rows) != 15: errors.append('REVIEW_ROW_COUNT_DRIFT')
     seen = set()
-    source_map = {r.get('path'):r for r in manifest.get('records', []) if isinstance(r,dict)} if isinstance(manifest,dict) and isinstance(manifest.get('records'),list) else {}
+    source_map = {r.get('path'):r for r in manifest.get('records', []) if isinstance(r,dict) and isinstance(r.get('path'),str)} if isinstance(manifest,dict) and isinstance(manifest.get('records'),list) else {}
     expected = {r['path'] for r in source_map.values() if r.get('disposition')=='HUMAN_REVIEW_REQUIRED'}
     for i, row in enumerate(rows):
         if not isinstance(row, dict): errors.append(f'INVALID_REVIEW_ROW:{i}'); continue
@@ -125,8 +125,12 @@ def validate_docket(manifest: object, docket: object) -> dict:
         for flag in ('claim_by_claim_verified','independent_reviewer_approved','automatic_selection'):
             if row.get(flag) is not False: errors.append('FALSE_REVIEW_ATTESTATION:' + p + ':' + flag)
         if p in source_map:
-            expected_refs = source_refs(source_map[p])
-            if row.get('source_refs') != expected_refs: errors.append('SOURCE_REF_DRIFT:' + p)
+            try:
+                expected_refs = source_refs(source_map[p])
+            except (KeyError, TypeError):
+                errors.append('INVALID_AUTHENTIC_SOURCE_REF:' + p)
+            else:
+                if row.get('source_refs') != expected_refs: errors.append('SOURCE_REF_DRIFT:' + p)
     if seen != expected: errors.append('MISSING_OR_EXTRA_REVIEW_PATH')
     return {'schema': SCHEMA, 'state': 'INVALID_HARD_HOLD' if errors else 'DRAFT_HARD_HOLD',
             'errors': sorted(set(errors)), 'review_required': 15,
