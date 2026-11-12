@@ -31,7 +31,7 @@ with sync_playwright() as p:
                 gallery = section.locator('.fv-r281__gallery')
                 assert gallery.get_attribute('data-fv-gallery-status') == 'text-only-source-custody'
                 assert 'not primary support for a fire-cause claim' in gallery.text_content()
-                sources = gallery.locator('li[data-fv-evidence-role]')
+                sources = gallery.locator('.fv-r281__source-list > li[data-fv-evidence-role=\"documented-textual-claim\"]')
                 plates = section.locator('.fv-r281__plate')
                 assert sources.count() == plates.count() == 3
                 for i in range(3):
