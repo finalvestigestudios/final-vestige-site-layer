@@ -34,7 +34,7 @@ export function replay({asOf,events}) {
    Number.isSafeInteger(e.gross_cents)&&e.gross_cents>=0&&Number.isSafeInteger(e.fees_cents)&&e.fees_cents>=0&&
    /^ORDER-[A-Z0-9-]{7,50}$/.test(e.order_ref||"");
    if(!valid||orders.has(e.order_ref)){reject("order_unverified_or_duplicate");continue;}
-   orders.set(e.order_ref,{session:e.session,gross:e.gross_cents,fees:e.fees_cents,refund:0});continue;
+   orders.set(e.order_ref,{session:e.session,gross:e.gross_cents,fees:e.fees_cents,refund:0,customer_ref:e.customer_ref_verified===true&&/^CUSTOMER-[A-Z0-9-]{7,50}$/.test(e.customer_ref||"")?e.customer_ref:null});continue;
   }
   if(e.type==="merchant_refund"){
    const o=orders.get(e.order_ref);if(!o||o.session!==e.session||e.partner_refund_verified!==true||!Number.isSafeInteger(e.refund_cents)||e.refund_cents<0||e.refund_cents>o.gross-o.refund){reject("refund_unverified");continue;}
@@ -47,12 +47,12 @@ export function replay({asOf,events}) {
  for(const days of [7,30]){
   const ss=[...sessions].filter(([_,v])=>v.qualified&&v.at>now-days*86400000&&v.at<=now);
   const keys=new Set(ss.map(([k])=>k)),os=[...orders.values()].filter(o=>keys.has(o.session));
-  const q=ss.length,n=os.length,l=ss.filter(([_,s])=>s.lead).length,customers=new Set(os.map(o=>o.session)).size;
+  const q=ss.length,n=os.length,l=ss.filter(([_,s])=>s.lead).length,customers=os.length>0&&os.every(o=>o.customer_ref)?new Set(os.map(o=>o.customer_ref)).size:null;
   const gross=os.reduce((a,o)=>a+o.gross,0),fees=os.reduce((a,o)=>a+o.fees,0),refunds=os.reduce((a,o)=>a+o.refund,0);
   result.cohorts["d"+days]={qualified_human_sessions:q,confirmed_signups:l,settled_orders:n,gross_cents:n?gross:null,fees_cents:n?fees:null,
    refunds_cents:n?refunds:null,net_cents:n?gross-fees-refunds:null,
    net_per_1000_qualified_sessions_cents:n&&q?Math.round(1000*(gross-fees-refunds)/q):null,
-   verified_paying_customers:n?customers:null,paid_conversion_rate:n&&q?customers/q:null,lead_to_customer_rate:n&&l?customers/l:null,
+   verified_paying_customers:customers,paid_conversion_rate:customers!==null&&q?customers/q:null,lead_to_customer_rate:customers!==null&&l?customers/l:null,
    caveat:"entirely synthetic; no A/B claims or real-revenue inference"};
  }
  return result;
