@@ -37,6 +37,16 @@ SOURCES = [
      ("Arkansas City", "Chicot")),
 ]
 ALLOWED_HOSTS = {"pubs.usgs.gov", "www.mvn.usace.army.mil"}
+# Prefer pages bearing the actual cited claims, not only the PDF cover or last page.
+# Terms are lookup aids, NOT a claim that any document actually contains them.
+# OCR-free/scanned originals may require manual page discovery.
+CLAIM_PAGE_TERMS = {
+    "usace-2014": ("With MRC approval", "Caernarvon", "saved the city"),
+    "usace-2018": ("With MRC approval", "saved the city", "Caernarvon"),
+    "usgs-1994": ("crevasse", "1927", "Mississippi"),
+    "usgs-2008-combined": ("2,470,000", "2,472,000", "Chicot"),
+    "usgs-2008-arkansas-city": ("2,470,000", "2,472,000", "Chicot"),
+}
 
 def source_check(ctx, source, out: Path, max_bytes: int):
     name, url, expected = source
@@ -80,22 +90,44 @@ def source_check(ctx, source, out: Path, max_bytes: int):
             row["parsed_pdf_pass"] = bool(len(doc))
             # The two USGS cases may have scanned pages: missing extractable text
             # does NOT imply missing readable content; require human PDF inspection.
-            text_parts = []
-            for p in doc:
-                text_parts.append(p.get_text("text"))
+            text_parts = [p.get_text("text") for p in doc]
             all_text = "\n".join(text_parts)
             row["extracted_text_chars"] = len(all_text)
             flat = re.sub(r"\s+", " ", all_text).casefold()
             row["expected_phrases_found"] = {
                 phrase: phrase.casefold() in flat for phrase in expected
             }
-            for index in sorted(set([0, max(0, len(doc) - 1)])):
-                if index < len(doc):
-                    pix = doc[index].get_pixmap(matrix=fitz.Matrix(1.35, 1.35),
-                                               alpha=False)
-                    fname = f"{name}-pdf-raster-page-{index + 1}.png"
-                    pix.save(out / fname)
-                    row["pdf_page_renders"].append(fname)
+            # Find up to TWO most relevant interior pages, plus cover/last as
+            # navigation anchors (up to four total). A cover-only capture can
+            # never substantiate a quoted caption or a hydrology measurement.
+            claim_terms = CLAIM_PAGE_TERMS.get(name, expected)
+            ranked = []
+            for index, page_text in enumerate(text_parts):
+                normalized = re.sub(r"\s+", " ", page_text).casefold()
+                found = [term for term in claim_terms
+                         if term.casefold() in normalized]
+                if found:
+                    ranked.append((len(found), index, found))
+            ranked.sort(key=lambda match: (-match[0], match[1]))
+            row["claim_page_candidates"] = [
+                {"pdf_page": index + 1, "matching_terms": found}
+                for _, index, found in ranked[:5]
+            ]
+            row["claim_page_discovery"] = (
+                "TEXT_MATCH_ONLY_REQUIRES_VISUAL_REVIEW" if ranked
+                else "NO_TEXT_MATCH_CHECK_SCAN_OR_MANUALLY_LOCATE_PAGE"
+            )
+            selected = sorted(set(
+                [0, max(0, len(doc) - 1)] +
+                [index for _, index, _ in ranked[:2]]
+            ))
+            for index in selected:
+                pix = doc[index].get_pixmap(matrix=fitz.Matrix(1.35, 1.35),
+                                           alpha=False)
+                fname = f"{name}-pdf-raster-page-{index + 1}.png"
+                pix.save(out / fname)
+                row["pdf_page_renders"].append(fname)
+            row["rendered_pdf_pages_1_based"] = [i + 1 for i in selected]
     except Exception as exc:
         row["error"] = "Document fetch/parse failed: " + type(exc).__name__
         # Do not serialize credentials, cookies, request headers, or arbitrary
