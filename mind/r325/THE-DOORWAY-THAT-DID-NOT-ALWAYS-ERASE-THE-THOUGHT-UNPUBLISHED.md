@@ -113,7 +113,7 @@ This is also why an audio product advertised as improving focus cannot be valida
 
 ## Before a tool becomes an answer
 
-We review practical audio products only as optional tools, never as the conclusion of an investigation. The maker of [Zen12](https://zen12.com/about) describes a program of twelve-minute listening sessions and twelve levels, with multiple listening styles. It also claims specific psychological benefits that **Final Vestige has not independently substantiated for that product**. No paid recommendation or earning link is enabled in this unpublished article.
+We review practical audio products only as optional tools, never as the conclusion of an investigation. The maker of Zen12 describes a program of twelve-minute listening sessions and twelve levels, with multiple listening styles. It also claims specific psychological benefits that **Final Vestige has not independently substantiated for that product**. No paid recommendation or earning link is enabled in this unpublished article.
 
 Before buying an audio course, a reader should be able to answer: What exact recording is supplied? What is the actual current price? What are the enforceable refund terms? Is the claim based on tests of the product or merely on studies of related practices? Can a free routine meet the same immediate need?
 
