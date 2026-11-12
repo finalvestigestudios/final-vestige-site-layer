@@ -287,6 +287,24 @@ function fv_r281_preflight(): void {
         }
     }
 }
+/**
+ * R320: WordPress may discover a shortcode only while rendering a dynamic block,
+ * after wp_head and the normal enqueue preflight. A footer-enqueued script is
+ * still supported at that point; do not silently lose optional attribution.
+ * This is staging only and NEVER emits inline JS, tracking or query-dependent HTML.
+ * WordPress de-duplicates a handle; explicit status checking reduces unnecessary
+ * calls for repeat shortcodes. If there is no valid footer opportunity, fail open
+ * to the unchanged free editorial link.
+ */
+function fv_r320_late_shortcode_script(): void {
+    if (!function_exists('wp_enqueue_script')) { return; }
+    if (function_exists('is_admin') && is_admin()) { return; }
+    if (function_exists('is_feed') && is_feed()) { return; }
+    if (function_exists('did_action') && did_action('wp_footer')) { return; }
+    if (function_exists('wp_script_is') &&
+        (wp_script_is(FV_R313_SCRIPT, 'enqueued') || wp_script_is(FV_R313_SCRIPT, 'done'))) { return; }
+    wp_enqueue_script(FV_R313_SCRIPT, fv_r313_script_url(), [], FV_R313_VERSION, true);
+}
 /** No user content or parameters alter evidence; ids are unique when a shortcode repeats. */
 function fv_r281_render($attributes = []): string {
     $records=fv_r281_events();
@@ -305,6 +323,10 @@ function fv_r281_render($attributes = []): string {
             .'<p data-fv-funnel-step="recovery-to-investigation"><a href="'.fv_r281_escape(fv_r308_editorial_continuation_url()).'" data-fv-cta="apollo-read-free-investigation" data-fv-conversion-kind="editorial-continuation">Read the free Apollo 1 investigation</a> (editorial reading, not a purchase)</p>'
             .'<p>NASA is an external source, not an endorser. No sale or signup is recorded by these links.</p></aside>';
     }
+    // The normal wp_head preflight can miss shortcode expansion from dynamic
+    // blocks. Only after historical integrity passes, enqueue in wp_footer if
+    // available; the link works without the script in all other contexts.
+    fv_r320_late_shortcode_script();
     static $sequence=0, $linked=false;
     $sequence++;
     $id='fv-r281-'.$sequence;
