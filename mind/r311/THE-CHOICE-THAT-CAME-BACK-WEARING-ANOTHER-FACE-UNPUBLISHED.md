@@ -40,7 +40,7 @@ The experiment is valuable precisely because it allows the records to disagree. 
 
 ## The bridge from change blindness
 
-Visitors to Final Vestige may already know the idea of [change blindness](https://finalvestige.com/change-blindness/): important visible differences can go unnoticed when attention, timing or scene continuity interfere with detection. Choice blindness borrows that puzzle but adds another layer.
+Visitors to Final Vestige may already know the idea of [change blindness](https://finalvestige.com/2026/11/02/change-blindness/): important visible differences can go unnoticed when attention, timing or scene continuity interfere with detection. Choice blindness borrows that puzzle but adds another layer.
 
 In ordinary change blindness, the observer misses a change in the world. In choice blindness, the missed change can be presented as the observer's **own decision**. A report of what happened becomes a report of what *I did*. That is a different relationship between perception, attribution and personal identity.
 
