@@ -8,6 +8,8 @@ const H='a'.repeat(64);
 const get=slot=>audit.rows.find(x=>x.slot===slot);
 function fixture(slot='621:0',beforeBytes=1000,afterBytes=200){
  const row=get(slot);
+ const native=row.native_media_dimensions_px||[4000,3000];
+ const resourceHeight=Math.round(960*native[1]/native[0]);
  const image=(run,bytes)=>({
   slot,post_id:row.post_id,request_id:'request-'+run,resource_type:'Image',
   stored_original_src:row.stored_original_src,dom_img_src:row.stored_original_src,
@@ -16,8 +18,8 @@ function fixture(slot='621:0',beforeBytes=1000,afterBytes=200){
   response_mime_type:'image/jpeg',final_http_status:200,loading_finished:true,
   encoded_data_length:bytes,network_data_received_bytes:500,
   network_data_received_provenance:'CDP_NETWORK_DATA_RECEIVED',
-  natural_width:960,natural_height:720,decoded_selected_physical_width:960,
-  decoded_selected_physical_height:720,decoded_source_provenance:'BROWSER_DECODED_CURRENT_SRC',
+  natural_width:960,natural_height:resourceHeight,decoded_selected_physical_width:960,
+  decoded_selected_physical_height:resourceHeight,decoded_source_provenance:'BROWSER_DECODED_CURRENT_SRC',
   decoded_selected_resource_url:row.stored_original_src,
   painted_css_width:390,painted_css_height:260,
   image_rendered_visible:true,object_fit:'contain',object_position:'50% 50%',
@@ -122,7 +124,7 @@ test('non-image MIME prevents an optimization success',()=>
 test('no CDP body proof prevents transfer claim',()=>
  hold(p=>p.after.images[0].network_data_received_bytes=0,'SECOND_STAGE_BASE_TRANSFER_PAIR_CANDIDATE_MISSING_OR_INVALID_IMAGE_REQUEST'));
 test('2x display needs physical selected pixels',()=>
- hold(p=>p.after.images[0].decoded_selected_physical_width=390,'SECOND_STAGE_CANDIDATE_LOW_DENSITY_OR_UPSCALED_SELECTED_IMAGE'));
+ hold(p=>{p.after.images[0].decoded_selected_physical_width=390;p.after.images[0].decoded_selected_physical_height=293;},'SECOND_STAGE_CANDIDATE_LOW_DENSITY_OR_UPSCALED_SELECTED_IMAGE'));
 test('changed object crop cannot claim visual parity',()=>
  hold(p=>p.after.images[0].object_fit='cover','SECOND_STAGE_IMAGE_PRESENTATION_OR_CROP_CHANGED'));
 test('new candidate URL without source/rights evidence remains HOLD',()=>{
@@ -138,6 +140,9 @@ test('two independent frozen Malbone positions can pass a partial-post pair',()=
    dom_img_src:a.stored_original_src,dom_alt:a.frozen_alt,
    current_src:a.stored_original_src,request_url:a.stored_original_src,
    final_response_url:a.stored_original_src,decoded_selected_resource_url:a.stored_original_src,
+   natural_width:960,natural_height:Math.round(960*a.native_media_dimensions_px[1]/a.native_media_dimensions_px[0]),
+   decoded_selected_physical_width:960,
+   decoded_selected_physical_height:Math.round(960*a.native_media_dimensions_px[1]/a.native_media_dimensions_px[0]),
    image_identity:'separate-historical-scene',request_id:one.request_id+'-other'});
  }
  const r=comparePrioritySourceBoundVisualPair(p);
@@ -199,4 +204,39 @@ test('P1 source does not masquerade as P0 adjudication',()=>{
 test('map original >1.5MB remains review-required with no 960px publication permission',()=>{
  const x=get('269:1');assert.equal(x.conditional_no_upscale_960px[0],960);
  assert.equal(x.publication_approved,false);assert.equal(x.candidate_rights_cleared,false);
+});
+
+test('Vasa 299:1 both wrong 4:3 resource phases cannot report synthetic 76%',()=>{
+ const p=fixture('299:1',1000,240);
+ for(const c of [p.before,p.after]){const x=c.images[0];x.natural_width=960;
+  x.natural_height=720;x.decoded_selected_physical_width=960;x.decoded_selected_physical_height=720;}
+ assert.equal(comparePrioritySourceBoundVisualPair(p).reason,'SELECTED_RESOURCE_FROZEN_ASPECT_MISMATCH');
+});
+test('Malbone 621:0 square source is rejected before percentage calculations',()=>{
+ const p=fixture('621:0',1000,240);
+ for(const c of [p.before,p.after]){c.images[0].natural_height=960;c.images[0].decoded_selected_physical_height=960;}
+ assert.equal(comparePrioritySourceBoundVisualPair(p).reason,'SELECTED_RESOURCE_FROZEN_ASPECT_MISMATCH');
+});
+test('Vasa candidate cropped even if baseline native ratio remains exact',()=>{
+ const p=fixture('299:1',1000,240);
+ p.after.images[0].natural_height=720;p.after.images[0].decoded_selected_physical_height=720;
+ assert.equal(comparePrioritySourceBoundVisualPair(p).reason,'SELECTED_RESOURCE_FROZEN_ASPECT_MISMATCH');
+});
+test('physical image upscaled beyond original media native dimensions is held',()=>{
+ const p=fixture('621:0',1000,240);
+ for(const c of [p.before,p.after]){const x=c.images[0];x.natural_width=4200;x.natural_height=3150;
+  x.decoded_selected_physical_width=4200;x.decoded_selected_physical_height=3150;}
+ assert.equal(comparePrioritySourceBoundVisualPair(p).reason,'SELECTED_RESOURCE_EXCEEDS_FROZEN_NATIVE_PIXELS');
+});
+test('missing selected resource physical dimensions always HOLDS',()=>{
+ const p=fixture('621:0',1000,240);delete p.after.images[0].decoded_selected_physical_width;
+ assert.equal(comparePrioritySourceBoundVisualPair(p).reason,'SELECTED_RESOURCE_GEOMETRY_NOT_PROVEN');
+});
+test('11/11 original native ratios pass bounded source-only pair, not production approval',()=>{
+ for(const row of audit.rows.filter(x=>x.priority==='P1_GT_1_5MB_INLINE')){
+  const r=comparePrioritySourceBoundVisualPair(fixture(row.slot,1000,240));
+  assert.equal(r.status,'VERIFIED_PRIORITY_SUBSET_SOURCE_BOUND_VISUAL_PAIR',row.slot);
+  assert.equal(r.sitewide_transfer_savings_verified,false);
+  assert.equal(r.production_change_allowed,false);
+ }
 });
