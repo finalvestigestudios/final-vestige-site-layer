@@ -1,0 +1,37 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path');
+const {verifyHostRisk}=require('./validate_upstream_host_risk_288_20261111.cjs');
+const dir=__dirname;
+const source=JSON.parse(fs.readFileSync(path.join(dir,'coverage_288_exact_pr1703_20261110.json'),'utf8'));
+const report=JSON.parse(fs.readFileSync(path.join(dir,'upstream_host_risk_288_20261111.json'),'utf8'));
+let passed=0;
+assert.deepEqual(verifyHostRisk(source,report),{ok:true,errors:[]});passed++;
+function fails(name,change){
+ const altered=JSON.parse(JSON.stringify(report));change(altered);
+ const outcome=verifyHostRisk(source,altered);
+ assert.equal(outcome.ok,false,name);assert.ok(outcome.errors.length>0,name);passed++;
+}
+fails('external count',x=>x.counts.external_positions=287);
+fails('host count',x=>x.counts.upstream_hosts=79);
+fails('wrapper warnings',x=>x.counts.web_retriever_wrapper_4xx_5xx_slots=28);
+fails('duplicate host',x=>x.upstream_hosts.push(x.upstream_hosts[0]));
+fails('incorrect host member count',x=>x.upstream_hosts[0].source_positions--);
+fails('invented host slot',x=>x.upstream_hosts[0].source_slots[0]='nope');
+fails('invented host URL',x=>x.upstream_hosts[0].sample_exact_source_url='https://example.org/fake');
+fails('fabricated guest broken',x=>x.upstream_hosts[0].guest_confirmed_broken=1);
+fails('fabricated rights',x=>x.upstream_hosts[0].rights_cleared=true);
+fails('warning URL source mismatch',x=>x.web_retriever_warning_rows[0].original_exact_url='https://example.org/fake');
+fails('warning wrapper status mismatch',x=>x.web_retriever_warning_rows[0].web_retriever_codes_not_origin_status=[404]);
+fails('wrapper promoted to origin status',x=>x.web_retriever_warning_rows[0].guest_status=403);
+fails('warning promoted to release',x=>x.web_retriever_warning_rows[0].release='APPROVE');
+fails('unapproved candidate commercial reuse',x=>x.web_retriever_warning_rows[0].catalog_candidates[0].item_cleared=true);
+fails('P0 reorder',x=>x.p0_queue.reverse());
+fails('P0 URL swap',x=>x.p0_queue[0].original_url='https://example.org/fake');
+fails('P0 unauthorized staging',x=>x.p0_queue[0].staging_approval=true);
+fails('wrong Jetpack upstream',x=>x.jetpack_delivery_vs_upstream[0].upstream_host='i0.wp.com');
+fails('42 reported broken falsely confirmed',x=>x.counts.reported_42_guest_confirmed=true);
+fails('76% transfer reduction falsely measured',x=>x.counts.proposed_76_percent_wire_saving_measured=true);
+fails('original bytes tampered',x=>x.counts.oversize_stored_bytes=1);
+fails('production write authorized',x=>x.release.wordpress_write=true);
+console.log(passed+'/'+passed+' upstream host-risk source integrity checks passed');
