@@ -1,0 +1,94 @@
+{
+  "as_of_utc": "2026-11-12T14:07:41Z",
+  "mode": "READ_ONLY_SNAPSHOT_PLUS_SYNTHETIC_GATE",
+  "newsletter": {
+    "enabled": true,
+    "site_can_send": true,
+    "new_post_auto_default": false,
+    "format": "full",
+    "sender": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "subscriber_totals": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "wpcom_followers": 3,
+    "direct_email_followers": 0,
+    "actual_eligible_recipients": null,
+    "welcome_configured": true,
+    "welcome_received_verified": false
+  },
+  "risk": "site_can_send and disabled default do NOT prove or prevent post-specific sending",
+  "master": {
+    "pr": 175,
+    "commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "blob_matches": "8/8",
+    "native_tests": "6/6"
+  },
+  "r306": {
+    "native_tests": "20/20",
+    "source_hash": "4a2411f94397409f117df81e03162d12aace2cf2",
+    "tests_hash": "47ea4006099fcce7cf3708a5776bef43a879679b",
+    "actual_jetpack_preview": false,
+    "received_email_verified": false,
+    "emails_sent": 0,
+    "wordpress_writes": 0
+  },
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT",
+      "sender_authorized": false,
+      "merchant_approval_verified": false,
+      "net_revenue": null
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT",
+      "sender_authorized": false,
+      "merchant_approval_verified": false,
+      "net_revenue": null
+    },
+    {
+      "number": 3,
+      "kind": "commercial",
+      "status": "HOLD_MERCHANT",
+      "sender_authorized": false,
+      "merchant_approval_verified": false,
+      "net_revenue": null
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT",
+      "sender_authorized": false,
+      "merchant_approval_verified": false,
+      "net_revenue": null
+    },
+    {
+      "number": 5,
+      "kind": "commercial",
+      "status": "HOLD_MERCHANT",
+      "sender_authorized": false,
+      "merchant_approval_verified": false,
+      "net_revenue": null
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT",
+      "sender_authorized": false,
+      "merchant_approval_verified": false,
+      "net_revenue": null
+    }
+  ],
+  "notes": [
+    "No independent settled orders or qualified-human denominator.",
+    "20 new tests use exclusively fictional proof records.",
+    "Unconfirmed counts are excluded from total, no count arithmetic conflict established."
+  ]
+}
