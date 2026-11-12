@@ -39,7 +39,7 @@ class PricePolicyPrivacyIntegrationR388(unittest.TestCase):
         self.private_error(b'{"client":"CLIENT_PRIVATE",', "Invalid UTF-8 JSON price policy")
 
     def test_invalid_utf8_no_payload_in_error_chain(self):
-        self.private_error(b'{"client":"CLIENT_PRIVATE\\xff"}', "Invalid UTF-8 JSON price policy")
+        self.private_error(b'{"client":"CLIENT_PRIVATE\xff"}', "Invalid UTF-8 JSON price policy")
 
     def test_trailing_json_no_payload_in_error_chain(self):
         self.private_error(b'{"client":"CLIENT_PRIVATE"}broken', "Invalid UTF-8 JSON price policy")
