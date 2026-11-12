@@ -98,5 +98,10 @@ class ReleaseGuards(unittest.TestCase):
         for phrase in ('merchant email rights','functional unsubscribe','Actual','HOLD_UNSENT'):
             self.assertIn(phrase.lower(),README.lower())
 
+    def test_long_compliance_placeholders_are_wrappable(self):
+        self.assertIn('overflow-wrap:anywhere;word-break:break-word',HTML)
+    def test_email_inner_table_uses_fixed_layout(self):
+        self.assertIn('table-layout:fixed',HTML)
+
 if __name__=='__main__':
     unittest.main()
