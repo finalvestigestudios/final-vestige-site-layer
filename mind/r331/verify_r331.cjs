@@ -44,4 +44,4 @@ const bad=mutation(A);
 const safe=/disabled aria-disabled="true"/.test(bad)&&/Potential affiliate relationship:[\s\S]{0,230}may earn a commission/.test(bad)&&!/<form\b|<script\b|<(?:video|audio)[^>]*\sautoplay(?:\s|=|>)|tracker\.invalid/i.test(bad)&&!/href="https:\/\/zen12\.com\//.test(bad)&&bad.includes('If we are approved');
 assert.equal(safe,false,'unsafe mutation escaped');n++;
 }
-console.log('R331 source baseline and seven negative mutations: '+n+'/'+n+' PASS (native Node); no browser/WP/payment checks performed');
+console.log('R331 source baseline and seven negative mutations: '+n+'/'+n+' PASS (source-level); no browser/WP/payment checks performed');
