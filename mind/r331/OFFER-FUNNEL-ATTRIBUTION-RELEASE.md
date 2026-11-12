@@ -7,7 +7,7 @@
 | Proposed Grok topic | Research destination | Real asset / post proof | Next step | Offer fit |
 | --- | --- | --- | --- | --- |
 | Attentional blink / second target | Canonical article selected from Mind R327 and older drafts, unpublished | asset_id, URL, platform, post date **UNVERIFIED** | Existing /focus/; optional independent Zen12 tier guide | Medium, not product efficacy |
-| Change blindness / changed detail | Verified live 2026-11-02 FV Change Blindness investigation (exact URL QA needed) | asset_id and published link **UNVERIFIED** | Existing /focus/; independent audio guide optional | Medium |
+| Change blindness / changed detail | Verified public FV Change Blindness investigation https://finalvestige.com/2026/11/02/change-blindness/ (published 2026-11-02; mobile link QA still needed) | asset_id and published link **UNVERIFIED** | Existing /focus/; independent audio guide optional | Medium |
 | Thatcher illusion / inverted face | One canonical page **not selected** among 20+ draft PRs | asset_id and destination **UNVERIFIED** | Editorial science first, Fieldbook; no coerced product pitch | Low-to-medium |
 
 Praxxis/Grok must verify IDs and approved exact URLs through the existing TASK-008 and handoff docs. No new video, posting queue or CTA placement is approved.
