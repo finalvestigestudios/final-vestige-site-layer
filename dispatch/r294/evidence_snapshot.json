@@ -1,0 +1,49 @@
+{
+  "schema": "FV-DISPATCH-R294-v1",
+  "captured_utc": "2026-11-12T02:34:43Z",
+  "status": "NO_SEND_REVIEW_ONLY",
+  "newsletter": {
+    "enabled": true,
+    "new_post_default": false,
+    "content_format": "full",
+    "fieldbook_welcome_configured": true,
+    "confirmed": 3,
+    "total": 3,
+    "unconfirmed": 2,
+    "eligible_email_recipients": null
+  },
+  "followers": {
+    "wpcom": 3,
+    "email": 0,
+    "partial": false
+  },
+  "pages": {
+    "dispatch": {
+      "id": 523,
+      "commission_expectation_visible": false
+    },
+    "focus": {
+      "id": 1579,
+      "commission_expectation_visible": true
+    }
+  },
+  "commercial": {
+    "issue_03": "HOLD_MERCHANT",
+    "issue_05": "HOLD_MERCHANT",
+    "final_founder_approval": false,
+    "affiliate_email_permission": "NOT_VERIFIED",
+    "published_guides": false
+  },
+  "metrics": {
+    "settled_orders": null,
+    "qualified_human_sessions": null,
+    "revenue_per_1000": "NOT_COMPUTABLE"
+  },
+  "sources": [
+    "https://finalvestige.com/dispatch/",
+    "https://finalvestige.com/focus/",
+    "https://zen12.com/about",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}
