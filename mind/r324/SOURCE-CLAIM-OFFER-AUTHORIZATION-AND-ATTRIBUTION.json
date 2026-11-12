@@ -1,0 +1,650 @@
+{
+  "version": "mind-r324-2026-11-12",
+  "release_status": "DRAFT_UNPUBLISHED_NO_AFFILIATE_ACTIVATION",
+  "source_review": "public official pages and indexed research checked 2026-11-12; private account not authenticated",
+  "observed_merchant_snapshots": {
+    "zen12": {
+      "offer": "Complete course",
+      "total_seen_usd": "87.99",
+      "date": "2026-11-12",
+      "guarantee": "one year, seller advertised",
+      "status": "DYNAMIC_TERMS_NOT_VERIFIED",
+      "source_id": "s07"
+    },
+    "focus_shot": {
+      "displayed_usd": "17.99",
+      "date": "2026-11-12",
+      "status": "PRICE_CONFLICT_PREVIOUS_REVIEW_NOT_FOR_COPY",
+      "source_id": "s09"
+    },
+    "total_focus": {
+      "session_minutes": 33,
+      "source_id": "s08",
+      "price_in_copy": "WITHHELD"
+    }
+  },
+  "sources": [
+    {
+      "id": "s01",
+      "type": "primary_experiment",
+      "title": "Warren 1970 speech restoration",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/5409744/",
+      "checked_date": "2026-11-12"
+    },
+    {
+      "id": "s02",
+      "type": "primary_experiment",
+      "title": "Samuel 1981 acoustic confirmation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6457110/",
+      "checked_date": "2026-11-12"
+    },
+    {
+      "id": "s03",
+      "type": "primary_experiment",
+      "title": "2016 masked speech cortical recording",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27996973/",
+      "checked_date": "2026-11-12"
+    },
+    {
+      "id": "s04",
+      "type": "primary_experiment",
+      "title": "Balling et al 2017 interruption costs",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29289097/",
+      "checked_date": "2026-11-12"
+    },
+    {
+      "id": "s05",
+      "type": "official_merchant_parent",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "checked_date": "2026-11-12",
+      "note": "Seller content, not independently established consumer outcomes"
+    },
+    {
+      "id": "s06",
+      "type": "official_merchant_description",
+      "title": "Zen12 About official seller",
+      "url": "https://zen12.com/about",
+      "checked_date": "2026-11-12",
+      "note": "Seller content, not independently established consumer outcomes"
+    },
+    {
+      "id": "s07",
+      "type": "official_merchant_checkout",
+      "title": "Zen12 Get Started seller checkout",
+      "url": "https://zen12.com/getstarted",
+      "checked_date": "2026-11-12",
+      "note": "Seller content, not independently established consumer outcomes"
+    },
+    {
+      "id": "s08",
+      "type": "official_merchant_description",
+      "title": "Hypnosis Live Total Focus official seller",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "checked_date": "2026-11-12",
+      "note": "Seller content, not independently established consumer outcomes"
+    },
+    {
+      "id": "s09",
+      "type": "official_merchant_description",
+      "title": "Brainwave Shots Focus Shot official seller",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "checked_date": "2026-11-12",
+      "note": "Seller content, not independently established consumer outcomes"
+    },
+    {
+      "id": "s10",
+      "type": "public_recruitment",
+      "title": "Inspire3 public affiliate recruitment, not publisher approval",
+      "url": "https://affiliates.inspire3.com/",
+      "checked_date": "2026-11-12"
+    },
+    {
+      "id": "s11",
+      "type": "official_regulator",
+      "title": "FTC endorsement FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked_date": "2026-11-12"
+    },
+    {
+      "id": "s12",
+      "type": "official_regulator",
+      "title": "FTC health-product substantiation and disclosure",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked_date": "2026-11-12"
+    },
+    {
+      "id": "s13",
+      "type": "fv_published",
+      "title": "Puységur historical evidence archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked_date": "2026-11-12"
+    },
+    {
+      "id": "s14",
+      "type": "fv_published",
+      "title": "Existing Focus Fieldbook and one Jetpack route",
+      "url": "https://finalvestige.com/focus/",
+      "checked_date": "2026-11-12"
+    },
+    {
+      "id": "s15",
+      "type": "fv_published",
+      "title": "Change Blindness published source-led guide",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "checked_date": "2026-11-12"
+    },
+    {
+      "id": "s16",
+      "type": "fv_published",
+      "title": "Mesmerism published source-led guide",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "checked_date": "2026-11-12"
+    },
+    {
+      "id": "s17",
+      "type": "fv_published",
+      "title": "FV current archive",
+      "url": "https://finalvestige.com/archive/",
+      "checked_date": "2026-11-12"
+    },
+    {
+      "id": "s18",
+      "type": "fv_policy",
+      "title": "FV affiliate disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "checked_date": "2026-11-12"
+    },
+    {
+      "id": "s19",
+      "type": "fv_policy",
+      "title": "FV editorial standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "checked_date": "2026-11-12"
+    },
+    {
+      "id": "s20",
+      "type": "research_review",
+      "title": "Binaural beats EEG systematic review 2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "checked_date": "2026-11-12"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c01",
+      "text": "Warren 1970 reported missing phoneme perceived under extraneous noise, versus more detectable silent gap",
+      "category": "primary_experiment",
+      "source_ids": [
+        "s01"
+      ],
+      "assessment": "supported_with_abstract_scope"
+    },
+    {
+      "id": "c02",
+      "text": "Warren studied consumer meditation recordings",
+      "category": "cross_domain_efficacy",
+      "source_ids": [
+        "s01"
+      ],
+      "assessment": "reject_not_tested"
+    },
+    {
+      "id": "c03",
+      "text": "Samuel 1981 found restoration depended on acoustic character and phone class",
+      "category": "primary_experiment",
+      "source_ids": [
+        "s02"
+      ],
+      "assessment": "supported_with_abstract_scope"
+    },
+    {
+      "id": "c04",
+      "text": "2016 cortical recordings associated with restored speech percepts in specified conditions",
+      "category": "primary_experiment",
+      "source_ids": [
+        "s03"
+      ],
+      "assessment": "supported_with_abstract_scope"
+    },
+    {
+      "id": "c05",
+      "text": "A 2017 study observed 100 ms slower and 14% less accurate identification for interrupted words versus baseline",
+      "category": "primary_experiment",
+      "source_ids": [
+        "s04"
+      ],
+      "assessment": "supported_with_study_specific_scope"
+    },
+    {
+      "id": "c06",
+      "text": "Speech restoration guarantees that all listeners fill all acoustic gaps",
+      "category": "population_generalization",
+      "source_ids": [
+        "s01",
+        "s02"
+      ],
+      "assessment": "reject"
+    },
+    {
+      "id": "c07",
+      "text": "Inspire3 lists Zen12, Hypnosis Live and Brainwave Shots as separate brands",
+      "category": "seller_catalog",
+      "source_ids": [
+        "s05"
+      ],
+      "assessment": "seller_described_only"
+    },
+    {
+      "id": "c08",
+      "text": "Zen12 seller describes twelve levels and four listening styles per level",
+      "category": "seller_package",
+      "source_ids": [
+        "s06"
+      ],
+      "assessment": "seller_described_only"
+    },
+    {
+      "id": "c09",
+      "text": "Zen12 checkout describes 48 MP3 recordings in complete course",
+      "category": "seller_package",
+      "source_ids": [
+        "s07"
+      ],
+      "assessment": "seller_described_only"
+    },
+    {
+      "id": "c10",
+      "text": "Zen12 seller describes sessions of approximately twelve minutes",
+      "category": "seller_package",
+      "source_ids": [
+        "s06"
+      ],
+      "assessment": "seller_described_only"
+    },
+    {
+      "id": "c11",
+      "text": "Zen12 total of $87.99 was displayed at checked 2026-11-12 seller checkout",
+      "category": "merchant_checkout_snapshot",
+      "source_ids": [
+        "s07"
+      ],
+      "assessment": "dated_variable_not_guaranteed"
+    },
+    {
+      "id": "c12",
+      "text": "Zen12 seller advertises one-year money-back guarantee",
+      "category": "seller_refund_promise",
+      "source_ids": [
+        "s07"
+      ],
+      "assessment": "seller_claim_terms_and_outcome_not_independently_confirmed"
+    },
+    {
+      "id": "c13",
+      "text": "A Zen12 session equals an hour of meditation in benefit",
+      "category": "product_efficacy",
+      "source_ids": [
+        "s06"
+      ],
+      "assessment": "reject_seller_assertion_without_product_trials"
+    },
+    {
+      "id": "c14",
+      "text": "Zen12 automatically enters therapeutic deep-state, treats stress or anxiety",
+      "category": "product_health_claim",
+      "source_ids": [
+        "s06"
+      ],
+      "assessment": "reject_seller_assertion_without_product_trials"
+    },
+    {
+      "id": "c15",
+      "text": "Hypnosis Live Total Focus described by seller as 33-minute 47MB narrated audio",
+      "category": "seller_package",
+      "source_ids": [
+        "s08"
+      ],
+      "assessment": "seller_described_only"
+    },
+    {
+      "id": "c16",
+      "text": "Hypnosis Live Total Focus produces razor-sharp concentration and career advancement",
+      "category": "product_efficacy",
+      "source_ids": [
+        "s08"
+      ],
+      "assessment": "reject_seller_assertion_without_product_trials"
+    },
+    {
+      "id": "c17",
+      "text": "Brainwave Shots Focus Shot seller describes 15-minute and 30-minute sessions",
+      "category": "seller_package",
+      "source_ids": [
+        "s09"
+      ],
+      "assessment": "seller_described_only"
+    },
+    {
+      "id": "c18",
+      "text": "Brainwave Shots Focus Shot produces hours of effortless focus",
+      "category": "product_efficacy",
+      "source_ids": [
+        "s09"
+      ],
+      "assessment": "reject_seller_assertion_without_product_trials"
+    },
+    {
+      "id": "c19",
+      "text": "Brainwave Shots Focus Shot display price observed as $17.99; earlier reviews differed",
+      "category": "merchant_checkout_snapshot",
+      "source_ids": [
+        "s09"
+      ],
+      "assessment": "dated_variable_conflict_omit_from_presell"
+    },
+    {
+      "id": "c20",
+      "text": "Public Inspire3 affiliate page invites signups and advertises issued special links",
+      "category": "public_recruitment",
+      "source_ids": [
+        "s10"
+      ],
+      "assessment": "supported_only_for_public_program"
+    },
+    {
+      "id": "c21",
+      "text": "Final Vestige affiliate partner approved and assigned payable referral URL",
+      "category": "publisher_account_status",
+      "source_ids": [
+        "s10"
+      ],
+      "assessment": "not_authenticated_hard_hold"
+    },
+    {
+      "id": "c22",
+      "text": "Final Vestige allowed to post affiliates in email, organic social and site",
+      "category": "publisher_channel_permission",
+      "source_ids": [
+        "s10"
+      ],
+      "assessment": "not_authenticated_hard_hold"
+    },
+    {
+      "id": "c23",
+      "text": "Final Vestige has verified settled affiliate commission",
+      "category": "merchant_settlement",
+      "source_ids": [
+        "s10"
+      ],
+      "assessment": "not_authenticated_hard_hold"
+    },
+    {
+      "id": "c24",
+      "text": "An adjacent plain-English commission disclosure is required when link is authorized",
+      "category": "regulatory",
+      "source_ids": [
+        "s11"
+      ],
+      "assessment": "supported"
+    },
+    {
+      "id": "c25",
+      "text": "Consumer health claims require reliable substantiation and not exaggerated inference",
+      "category": "regulatory",
+      "source_ids": [
+        "s12"
+      ],
+      "assessment": "supported"
+    },
+    {
+      "id": "c26",
+      "text": "The Puységur site is a source-first historical archive, not proof of magnetism or modern hypnosis efficacy",
+      "category": "fv_historical_boundary",
+      "source_ids": [
+        "s13"
+      ],
+      "assessment": "supported"
+    },
+    {
+      "id": "c27",
+      "text": "The Focus Fieldbook page is an existing free 52-page resource with an email confirmation message",
+      "category": "fv_published",
+      "source_ids": [
+        "s14"
+      ],
+      "assessment": "supported_page_content_only"
+    },
+    {
+      "id": "c28",
+      "text": "Visible focus PDF gift means the user consented and confirmed subscription",
+      "category": "consent",
+      "source_ids": [
+        "s14"
+      ],
+      "assessment": "reject_misleading_signup_display"
+    },
+    {
+      "id": "c29",
+      "text": "Change Blindness and Mesmerism are currently published",
+      "category": "fv_published",
+      "source_ids": [
+        "s15",
+        "s16"
+      ],
+      "assessment": "supported"
+    },
+    {
+      "id": "c30",
+      "text": "2023 binaural beats EEG synthesis established efficacy of Zen12",
+      "category": "scientific_to_brand_extrapolation",
+      "source_ids": [
+        "s20"
+      ],
+      "assessment": "reject_brand_not_tested"
+    },
+    {
+      "id": "c31",
+      "text": "Footer-only general affiliate disclosure replaces near-link notice",
+      "category": "disclosure",
+      "source_ids": [
+        "s11",
+        "s18"
+      ],
+      "assessment": "reject"
+    },
+    {
+      "id": "c32",
+      "text": "Actual settled net paid revenue per 1000 human sessions is known",
+      "category": "conversion_measurement",
+      "source_ids": [],
+      "assessment": "not_computable"
+    },
+    {
+      "id": "c33",
+      "text": "Published historical category counts are distinct overlapping archive facets and not additive inventory",
+      "category": "fv_count_caution",
+      "source_ids": [
+        "s17"
+      ],
+      "assessment": "supported_no_total_inferred"
+    }
+  ],
+  "holds": [
+    {
+      "id": "01",
+      "description": "affiliate account is approved specifically for Final Vestige",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "02",
+      "description": "merchant partner verified exact permitted site and social channels",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "03",
+      "description": "email promotion terms explicitly authorized",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "04",
+      "description": "merchant issued a working Final Vestige earning URL",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "05",
+      "description": "affiliate disclosure attached visibly next to any real CTA",
+      "status": "HOLD",
+      "owner": "Mind/Dispatch/Claude"
+    },
+    {
+      "id": "06",
+      "description": "merchant confirms campaign parameter/tracking support",
+      "status": "HOLD",
+      "owner": "Mind/Dispatch/Claude"
+    },
+    {
+      "id": "07",
+      "description": "terms of payout, reversals and settlement are verified",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "08",
+      "description": "exact checkout package and current total rechecked at release",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "09",
+      "description": "returns eligibility and process independently reviewed",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "10",
+      "description": "claims independently substantiated or removed",
+      "status": "HOLD",
+      "owner": "Mind/Dispatch/Claude"
+    },
+    {
+      "id": "11",
+      "description": "specific FV paid SKU verified active, licensed and deliverable if fallback",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "12",
+      "description": "customer checkout delivery and refund process verified if fallback",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "13",
+      "description": "founder authorizes commercial publication",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "14",
+      "description": "site QA passes signed-out mobile, keyboard, no-JS and disclosure",
+      "status": "HOLD",
+      "owner": "Claude/Site QA"
+    },
+    {
+      "id": "15",
+      "description": "optional 42s film produced, encoded, accessible and quality-tested",
+      "status": "HOLD",
+      "owner": "Claude/Site QA"
+    },
+    {
+      "id": "16",
+      "description": "exact creator asset IDs and permissible paths reconciled with Praxxis/Grok",
+      "status": "HOLD",
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "id": "17",
+      "description": "Jetpack confirmed-consent signup evidence separated from display",
+      "status": "HOLD",
+      "owner": "Mind/Dispatch/Claude"
+    },
+    {
+      "id": "18",
+      "description": "paid attribution and settled net-revenue reconciliation independently confirmed",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    }
+  ],
+  "social_pathways": [
+    {
+      "topic": "Change Blindness",
+      "public_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "social_asset_id": null,
+      "creator": "Grok",
+      "QA": "Praxxis",
+      "free_resource": "https://finalvestige.com/focus/",
+      "conditional_offer": "Zen12 only if license/fit/terms verified; source article never proves audio efficacy"
+    },
+    {
+      "topic": "Mesmerism / Puységur history",
+      "public_article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "social_asset_id": null,
+      "creator": "Grok",
+      "QA": "Praxxis",
+      "free_resource": "https://finalvestige.com/focus/",
+      "conditional_offer": "Hypnosis Live Total Focus possible only if evidence and partner clear; avoid historical cure inference"
+    },
+    {
+      "topic": "Attentional Blink / Invisible Gorilla",
+      "public_article": null,
+      "social_asset_id": null,
+      "creator": "Grok",
+      "QA": "Praxxis",
+      "free_resource": "https://finalvestige.com/focus/",
+      "conditional_offer": "Zen12 buyer guide only with matching paid intent; historical experiments are not brand trials"
+    }
+  ],
+  "privacy_measurement_contract": {
+    "single_existing_jetpack_list": true,
+    "tracking_scripts_added": 0,
+    "unique_qualified_human_session": "Use approved first-party aggregated sessions and bot filtering; no invented person-level identification",
+    "asset_id": "Only authenticated published creator media ID; for YouTube profile utm_content=yt_profile, not video ID",
+    "event_states": [
+      "landing_view_qualified",
+      "relevant_cta_click",
+      "provider_confirmed_lead",
+      "affiliate_outbound_click",
+      "merchant_confirmed_paid_order",
+      "merchant_cleared_commission",
+      "refund_or_reversal",
+      "realized_net_revenue"
+    ],
+    "prohibited_conflation": [
+      "free_PDF_display != confirmed_lead",
+      "affiliate_outbound_click != paid_order",
+      "checkout_start != settled_commission",
+      "gross_checkout != net_revenue"
+    ],
+    "metric": "1000 * (cleared commissions or net owned receipts minus reversals, direct fees, refunds) / unique qualified human sessions; report NOT COMPUTABLE when numerator/denominator missing",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "data_minimization": "Aggregate campaign + source + authenticated asset ID + anonymous conversion counts where consent and policy allow; never copy emails, names or payment details into analytics."
+  },
+  "experiment": {
+    "hypothesis": "An optional original short film may change the rate of independently verified paid transactions relative to an equivalent text-only guide; no assumption it increases conversions.",
+    "treatment": "Variant B has static 42s video storyboard only until encoded media is produced",
+    "control": "Variant A source text guide",
+    "randomization": "requires separate approved deterministic first-party anonymous allocation; not implemented",
+    "outcome": "merchant-confirmed paid orders; refund-adjusted net revenue per 1000 qualified human sessions",
+    "secondary": "provider-confirmed lead only if consent verified",
+    "decision_rule": "Do not launch A/B before both versions are accessible, privacy-reviewed and partner-authorized; avoid small-sample winning claims.",
+    "closed": true
+  }
+}
