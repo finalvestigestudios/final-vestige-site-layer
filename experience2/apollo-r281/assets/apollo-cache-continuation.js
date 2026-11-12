@@ -1,4 +1,4 @@
-/* Apollo R316: first-party editorial URL continuity; no analytics, storage, or network requests.
+/* Apollo R317: first-party editorial URL continuity; no analytics, storage, or network requests.
  * Staging only: this enhancement must not ship without cache, consent, and owner review.
  * A cached HTML body remains identical for every visitor; values are read on
  * trusted activation OR the opening of a native mouse/keyboard context menu.
@@ -10,7 +10,12 @@
   const FIELDS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
   const SOURCE_CODE = Object.freeze({youtube: 'yt', tiktok: 'tt', instagram: 'ig', facebook: 'fb'});
   const campaignFormat = /^apollo1_(?:pilot|longform|shorts)_20\d{2}_(?:0[1-9]|1[0-2])$/;
-  // Grok may propose other IDs; they require a reviewed format change, not a silent fallback.
+  // TASK-008 (2026-11-03) defines <topic_cluster>_pilot_2026_11.
+  // Permit ONLY its November 2026 History pilot in this Apollo-specific
+  // staging adapter. Asset ids still MUST have the Apollo1+platform prefix.
+  // This is a compatibility rule, NOT proof of a real published Grok asset.
+  // Future months, other clusters and unrestricted asset names stay blocked.
+  const reviewedHistoryPilot = 'history_pilot_2026_11';
   const contentFormat = /^apollo1_(yt|tt|ig|fb)_[a-z0-9]{3,24}$/;
 
   function verifiedLabels(search) {
@@ -24,7 +29,8 @@
     }
     if (!Object.hasOwn(SOURCE_CODE, values.utm_source)) return null;
     if (values.utm_medium !== 'organic_social') return null;
-    if (!campaignFormat.test(values.utm_campaign)) return null;
+    if (!campaignFormat.test(values.utm_campaign) &&
+        values.utm_campaign !== reviewedHistoryPilot) return null;
     const match = contentFormat.exec(values.utm_content);
     if (!match || match[1] !== SOURCE_CODE[values.utm_source]) return null;
     return values;

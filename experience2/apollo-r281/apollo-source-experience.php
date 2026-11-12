@@ -13,7 +13,7 @@ const FV_R281_NASA_BOARD = 'https://www.nasa.gov/missions/apollo/apollo-1/report
 const FV_R281_FREE = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/';
 const FV_R281_STYLE = 'fv-apollo-evidence-r281';
 const FV_R313_SCRIPT = 'fv-apollo-click-continuation-r313';
-const FV_R313_VERSION = 'r316-keyboard-contextmenu-20261112';
+const FV_R313_VERSION = 'r317-history-crosswalk-20261112';
 // R294: stylesheet version is tied to reviewed CSS bytes (sha256 prefix). Keep
 // WordPress's enqueued link and the no-preflight body fallback cache-consistent.
 const FV_R294_STYLE_VERSION = 'r309-0c31dbffe1a7';
