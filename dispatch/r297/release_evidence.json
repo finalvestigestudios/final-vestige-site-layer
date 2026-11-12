@@ -1,0 +1,29 @@
+{
+  "review": "R297", "release": "HOLD_UNSENT",
+  "issue": 174, "master_pr": 175, "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stacked_on_pr": 2143, "source_tar_xz_sha256": "ddccb4564f05f73f533719ff9038ef3095f11f0b1368f6d8cc5a5782ae4b50b9",
+  "source_carrier_blob": "d2e697453303032d7e1624b8576191a64e8bb2c9",
+  "original_files_sha_matched": "8/8", "master_native_pytests_passed": "6/6",
+  "inherited_mime_native_pytests_passed": "22/22", "new_native_mime_tests_passed": "40/40",
+  "actual_received_email_test": false, "native_jetpack_preview_test": false,
+  "wp_status_as_of_utc": "2026-11-12T05:41:26Z",
+  "newsletter_enabled": true, "auto_new_post_send": false, "welcome_configured": true,
+  "welcome_received_verified": false, "publisher_postal_verified": false, "functional_optout_verified": false,
+  "subscriber_diagnostic": {"total":3,"confirmed":3,"unconfirmed":2},
+  "follower_stats_distinct": {"wpcom":3,"email":0},
+  "eligible_email_recipients_verified": null,
+  "merchant_email_permission_verified": false,
+  "affiliate_earning_url_verified": false, "approved_live_guide_verified": false,
+  "founder_final_send_approval": false,
+  "issues":[
+    {"issue":1,"kind":"editorial","status":"HOLD_UNSENT"},
+    {"issue":2,"kind":"editorial","status":"HOLD_UNSENT"},
+    {"issue":3,"kind":"commercial","status":"HOLD_MERCHANT_AND_UNSENT"},
+    {"issue":4,"kind":"editorial","status":"HOLD_UNSENT"},
+    {"issue":5,"kind":"commercial","status":"HOLD_MERCHANT_AND_UNSENT"},
+    {"issue":6,"kind":"editorial","status":"HOLD_UNSENT"}
+  ],
+  "settled_paid_conversions_verified": null,
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "no_emails_sent": true, "no_production_writes": true
+}
