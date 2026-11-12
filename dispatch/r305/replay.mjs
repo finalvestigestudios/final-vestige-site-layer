@@ -13,10 +13,10 @@ export function replay({asOf,events}) {
    if(sessions.has(e.session)){reject("repeated_visit");continue;}
    const tagged=e.utm_source==="grok"&&/^[a-z0-9_-]{3,50}$/i.test(e.asset_id||"")&&/^[a-z0-9_-]{3,80}$/i.test(e.utm_campaign||"");
    const qualified=tagged&&e.human_verified===true&&e.bot_flag!==true;
-   sessions.set(e.session,{at:ts,qualified,lead:false,guide:false,outbound:false});
+   sessions.set(e.session,{at:ts,last_at:ts,qualified,lead:false,guide:false,outbound:false});
    if(!qualified)reject("unqualified_visit");continue;
   }
-  const s=sessions.get(e.session);if(!s){reject("orphan");continue;}if(ts<s.at){reject("out_of_order");continue;}
+  const s=sessions.get(e.session);if(!s){reject("orphan");continue;}if(ts<s.at||ts<s.last_at){reject("out_of_order");continue;}s.last_at=ts;
   if(e.type==="form_submit"||e.type==="pdf_download"){reject(e.type+"_not_signup");continue;}
   if(e.type==="provider_subscribed"){
    const confirmed=e.status==="Subscribed"&&e.consent_to_dispatch===true&&e.suppressed!==true&&(
