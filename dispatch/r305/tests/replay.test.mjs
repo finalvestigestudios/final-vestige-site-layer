@@ -23,3 +23,5 @@ test("multiple orders per one customer do not inflate customer conversion rates"
 test("customer conversion withheld when partner does not provide independently verified customer reference",()=>{const x=cp(fixture);const o=x.events.find(e=>e.type==="merchant_settled_order");delete o.customer_ref_verified;const d=replay(x).cohorts.d7;assert.equal(d.settled_orders,1);assert.equal(d.net_cents,1180);assert.equal(d.verified_paying_customers,null);assert.equal(d.paid_conversion_rate,null)});
 
 test("backdated events cannot retroactively manufacture paid conversion",()=>{const x=cp(fixture);x.events.find(e=>e.type==="merchant_settled_order").at="2026-11-10T11:03:20Z";assert.equal(replay(x).cohorts.d7.settled_orders,0);assert.ok(replay(x).rejection_counts.out_of_order>0)});
+
+test("publisher social-source tag is platform, not Grok; medium and utm_content asset ID must match",()=>{for(const patch of [{utm_source:"grok"},{utm_medium:"paid"},{utm_content:"wrong_asset"}]){const x=cp(fixture);Object.assign(x.events.find(e=>e.type==="visit"),patch);assert.equal(replay(x).cohorts.d7.qualified_human_sessions,1)}});
