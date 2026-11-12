@@ -1,0 +1,544 @@
+{
+  "schema": "fv-media-restoration-byte-bound-handoff-v1",
+  "assembled_local_date": "2026-11-12",
+  "scope": "NO_NEW_VISITOR_BROWSER_CAPTURES; prior read-only WordPress records, PR #154 existing QA collector exclusively",
+  "sources": {
+    "six_p0_archive_git_blob": "eeb254c2674d3fa73a8f889d6d3cd2dd1bdecc32",
+    "oversized_original_archive_git_blob": "5e474e1cb293353b2226d84fceedca0a182894d8",
+    "site_qa_pr": 154,
+    "media_recovery_pr": 1703
+  },
+  "historical": {
+    "posts": 61,
+    "inline_images": 355,
+    "offsite_image_positions": 288,
+    "reported_broken_external_positions": 42,
+    "visitor_confirmed_broken": null,
+    "word_press_reconciled_positions": 355
+  },
+  "p0": [
+    {
+      "slot": "285:5",
+      "post_id": 285,
+      "original_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "retriever_observation_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "NOT_FOUND",
+        "wrapper_code": 404
+      },
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_dimensions": null,
+      "guest_cold_image_bytes": null,
+      "official_or_secondary_catalog_candidate": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "additional_primary_archive_candidate": null,
+      "additional_candidate_identifier": null,
+      "original_photo_identity_verified": false,
+      "item_specific_reuse_rights_verified": false,
+      "archive_rights_note": "PD_SELF",
+      "conditional_960_no_upscale": [
+        819,
+        614
+      ],
+      "direct_wordpress_image_rewrite_authorized": false,
+      "attested_staging_review_ready": false
+    },
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "original_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "retriever_observation_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "REDIRECT_TARGET_INACCESSIBLE",
+        "wrapper_code": 500
+      },
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_dimensions": null,
+      "guest_cold_image_bytes": null,
+      "official_or_secondary_catalog_candidate": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "additional_primary_archive_candidate": null,
+      "additional_candidate_identifier": null,
+      "original_photo_identity_verified": false,
+      "item_specific_reuse_rights_verified": false,
+      "archive_rights_note": "UNKNOWN",
+      "conditional_960_no_upscale": null,
+      "direct_wordpress_image_rewrite_authorized": false,
+      "attested_staging_review_ready": false
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "original_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "retriever_observation_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "NOT_FOUND",
+        "wrapper_code": 404
+      },
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_dimensions": null,
+      "guest_cold_image_bytes": null,
+      "official_or_secondary_catalog_candidate": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "additional_primary_archive_candidate": "https://www.floridamemory.com/items/show/32083",
+      "additional_candidate_identifier": "RC09237 (May 9, 1980; different photo, not a verified same-photo restoration)",
+      "original_photo_identity_verified": false,
+      "item_specific_reuse_rights_verified": false,
+      "archive_rights_note": "RIGHTS_UNVERIFIED",
+      "conditional_960_no_upscale": null,
+      "direct_wordpress_image_rewrite_authorized": false,
+      "attested_staging_review_ready": false
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "original_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "retriever_observation_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "FORBIDDEN",
+        "wrapper_code": 403
+      },
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_dimensions": null,
+      "guest_cold_image_bytes": null,
+      "official_or_secondary_catalog_candidate": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "additional_primary_archive_candidate": null,
+      "additional_candidate_identifier": null,
+      "original_photo_identity_verified": false,
+      "item_specific_reuse_rights_verified": false,
+      "archive_rights_note": "USCG_PUBLIC_DOMAIN_RELEASE_CATALOG",
+      "conditional_960_no_upscale": null,
+      "direct_wordpress_image_rewrite_authorized": false,
+      "attested_staging_review_ready": false
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "original_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "retriever_observation_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "FORBIDDEN",
+        "wrapper_code": 403
+      },
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_dimensions": null,
+      "guest_cold_image_bytes": null,
+      "official_or_secondary_catalog_candidate": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+      "additional_primary_archive_candidate": null,
+      "additional_candidate_identifier": null,
+      "original_photo_identity_verified": false,
+      "item_specific_reuse_rights_verified": false,
+      "archive_rights_note": "RIGHTS_UNVERIFIED",
+      "conditional_960_no_upscale": null,
+      "direct_wordpress_image_rewrite_authorized": false,
+      "attested_staging_review_ready": false
+    },
+    {
+      "slot": "407:1",
+      "post_id": 407,
+      "original_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "retriever_observation_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "UNSUPPORTED_OCTET_STREAM",
+        "wrapper_code": 400
+      },
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_dimensions": null,
+      "guest_cold_image_bytes": null,
+      "official_or_secondary_catalog_candidate": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+      "additional_primary_archive_candidate": null,
+      "additional_candidate_identifier": null,
+      "original_photo_identity_verified": false,
+      "item_specific_reuse_rights_verified": false,
+      "archive_rights_note": "USGS_PUBLIC_DOMAIN_CATALOG",
+      "conditional_960_no_upscale": null,
+      "direct_wordpress_image_rewrite_authorized": false,
+      "attested_staging_review_ready": false
+    }
+  ],
+  "oversized": {
+    "source_unit": "stored original WordPress attachment bytes; NOT actual cold visitor encodedDataLength",
+    "threshold_bytes_strictly_greater_than": 1500000,
+    "total_originals": 15,
+    "originals_stored_bytes": 47096779,
+    "inline_matched_originals": 11,
+    "inline_matched_stored_original_bytes": 38480915,
+    "matched_posts": [
+      34,
+      35,
+      36,
+      37,
+      38,
+      269,
+      299,
+      621
+    ],
+    "items": [
+      {
+        "media_id": 388,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg",
+        "stored_original_bytes": 8176362,
+        "native_dimensions": [
+          4256,
+          2832
+        ],
+        "provisional_no_upscale_max_variant_px": [
+          960,
+          639
+        ],
+        "published_post_ids": [
+          299
+        ],
+        "published_raw_image_urls": [
+          "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=1024%2C681&ssl=1"
+        ],
+        "rights_status": "EDITORIAL_ONLY_MUSEUM_CREDIT_REQUIRED",
+        "word_press_subsize_count": 7,
+        "guest_transfer_bytes": null,
+        "permission_to_transform_or_cache": false
+      },
+      {
+        "media_id": 1258,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+        "stored_original_bytes": 5553669,
+        "native_dimensions": [
+          5667,
+          3831
+        ],
+        "provisional_no_upscale_max_variant_px": [
+          960,
+          649
+        ],
+        "published_post_ids": [
+          621
+        ],
+        "published_raw_image_urls": [
+          "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg"
+        ],
+        "rights_status": "ITEM_LEVEL_REVIEW_REQUIRED",
+        "word_press_subsize_count": 7,
+        "guest_transfer_bytes": null,
+        "permission_to_transform_or_cache": false
+      },
+      {
+        "media_id": 1257,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+        "stored_original_bytes": 4798395,
+        "native_dimensions": [
+          4000,
+          3000
+        ],
+        "provisional_no_upscale_max_variant_px": [
+          960,
+          720
+        ],
+        "published_post_ids": [
+          621
+        ],
+        "published_raw_image_urls": [
+          "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg"
+        ],
+        "rights_status": "ITEM_LEVEL_REVIEW_REQUIRED",
+        "word_press_subsize_count": 7,
+        "guest_transfer_bytes": null,
+        "permission_to_transform_or_cache": false
+      },
+      {
+        "media_id": 39,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+        "stored_original_bytes": 2892087,
+        "native_dimensions": [
+          1672,
+          941
+        ],
+        "provisional_no_upscale_max_variant_px": [
+          960,
+          540
+        ],
+        "published_post_ids": [
+          34
+        ],
+        "published_raw_image_urls": [
+          "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png"
+        ],
+        "rights_status": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+        "word_press_subsize_count": 0,
+        "guest_transfer_bytes": null,
+        "permission_to_transform_or_cache": false
+      },
+      {
+        "media_id": 43,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+        "stored_original_bytes": 2836245,
+        "native_dimensions": [
+          1672,
+          941
+        ],
+        "provisional_no_upscale_max_variant_px": [
+          960,
+          540
+        ],
+        "published_post_ids": [
+          38
+        ],
+        "published_raw_image_urls": [
+          "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png"
+        ],
+        "rights_status": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+        "word_press_subsize_count": 0,
+        "guest_transfer_bytes": null,
+        "permission_to_transform_or_cache": false
+      },
+      {
+        "media_id": 389,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg",
+        "stored_original_bytes": 2822969,
+        "native_dimensions": [
+          2147,
+          1417
+        ],
+        "provisional_no_upscale_max_variant_px": [
+          960,
+          634
+        ],
+        "published_post_ids": [
+          299
+        ],
+        "published_raw_image_urls": [
+          "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1024%2C676&ssl=1"
+        ],
+        "rights_status": "ITEM_LEVEL_REVIEW_REQUIRED",
+        "word_press_subsize_count": 7,
+        "guest_transfer_bytes": null,
+        "permission_to_transform_or_cache": false
+      },
+      {
+        "media_id": 40,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+        "stored_original_bytes": 2552136,
+        "native_dimensions": [
+          1672,
+          941
+        ],
+        "provisional_no_upscale_max_variant_px": [
+          960,
+          540
+        ],
+        "published_post_ids": [
+          35
+        ],
+        "published_raw_image_urls": [
+          "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png"
+        ],
+        "rights_status": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+        "word_press_subsize_count": 0,
+        "guest_transfer_bytes": null,
+        "permission_to_transform_or_cache": false
+      },
+      {
+        "media_id": 41,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+        "stored_original_bytes": 2498247,
+        "native_dimensions": [
+          1672,
+          941
+        ],
+        "provisional_no_upscale_max_variant_px": [
+          960,
+          540
+        ],
+        "published_post_ids": [
+          36
+        ],
+        "published_raw_image_urls": [
+          "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png"
+        ],
+        "rights_status": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+        "word_press_subsize_count": 0,
+        "guest_transfer_bytes": null,
+        "permission_to_transform_or_cache": false
+      },
+      {
+        "media_id": 42,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+        "stored_original_bytes": 2488823,
+        "native_dimensions": [
+          1672,
+          941
+        ],
+        "provisional_no_upscale_max_variant_px": [
+          960,
+          540
+        ],
+        "published_post_ids": [
+          37
+        ],
+        "published_raw_image_urls": [
+          "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png"
+        ],
+        "rights_status": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+        "word_press_subsize_count": 0,
+        "guest_transfer_bytes": null,
+        "permission_to_transform_or_cache": false
+      },
+      {
+        "media_id": 382,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+        "stored_original_bytes": 2318980,
+        "native_dimensions": [
+          1800,
+          1200
+        ],
+        "provisional_no_upscale_max_variant_px": [
+          960,
+          640
+        ],
+        "published_post_ids": [
+          299
+        ],
+        "published_raw_image_urls": [
+          "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=1024%2C683&ssl=1"
+        ],
+        "rights_status": "ITEM_LEVEL_REVIEW_REQUIRED",
+        "word_press_subsize_count": 6,
+        "guest_transfer_bytes": null,
+        "permission_to_transform_or_cache": false
+      },
+      {
+        "media_id": 482,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png",
+        "stored_original_bytes": 2293016,
+        "native_dimensions": [
+          1672,
+          941
+        ],
+        "provisional_no_upscale_max_variant_px": [
+          960,
+          540
+        ],
+        "published_post_ids": [],
+        "published_raw_image_urls": [],
+        "rights_status": "ITEM_LEVEL_REVIEW_REQUIRED",
+        "word_press_subsize_count": 6,
+        "guest_transfer_bytes": null,
+        "permission_to_transform_or_cache": false
+      },
+      {
+        "media_id": 405,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png",
+        "stored_original_bytes": 2201573,
+        "native_dimensions": [
+          1122,
+          1402
+        ],
+        "provisional_no_upscale_max_variant_px": [
+          960,
+          1200
+        ],
+        "published_post_ids": [],
+        "published_raw_image_urls": [],
+        "rights_status": "ITEM_LEVEL_REVIEW_REQUIRED",
+        "word_press_subsize_count": 5,
+        "guest_transfer_bytes": null,
+        "permission_to_transform_or_cache": false
+      },
+      {
+        "media_id": 293,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/ne.png",
+        "stored_original_bytes": 2090327,
+        "native_dimensions": [
+          1122,
+          1402
+        ],
+        "provisional_no_upscale_max_variant_px": [
+          960,
+          1200
+        ],
+        "published_post_ids": [],
+        "published_raw_image_urls": [],
+        "rights_status": "ITEM_LEVEL_REVIEW_REQUIRED",
+        "word_press_subsize_count": 5,
+        "guest_transfer_bytes": null,
+        "permission_to_transform_or_cache": false
+      },
+      {
+        "media_id": 2148,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/1927-caernarvon-levee-explosion-noaa-archive.jpg",
+        "stored_original_bytes": 2030948,
+        "native_dimensions": [
+          1821,
+          1190
+        ],
+        "provisional_no_upscale_max_variant_px": [
+          960,
+          627
+        ],
+        "published_post_ids": [],
+        "published_raw_image_urls": [],
+        "rights_status": "COMMONS_NOAA_PD_ASSERTION_CROP_REVIEW_REQUIRED",
+        "word_press_subsize_count": 6,
+        "guest_transfer_bytes": null,
+        "permission_to_transform_or_cache": false
+      },
+      {
+        "media_id": 1714,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png",
+        "stored_original_bytes": 1543002,
+        "native_dimensions": [
+          1280,
+          1280
+        ],
+        "provisional_no_upscale_max_variant_px": [
+          960,
+          960
+        ],
+        "published_post_ids": [
+          269
+        ],
+        "published_raw_image_urls": [
+          "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png"
+        ],
+        "rights_status": "ORIGINAL_MAP_AUTHOR_RIGHTS_UNVERIFIED",
+        "word_press_subsize_count": 5,
+        "guest_transfer_bytes": null,
+        "permission_to_transform_or_cache": false
+      }
+    ]
+  },
+  "metrics": {
+    "historical_76_percent_weight_reduction_verified": false,
+    "source_of_76_percent": "historical example/claim, not a measured 61-post aggregate or current 66-post aggregate",
+    "required_measure": "Before/after logged-out cold CDP Image wire bytes, natural dimensions, LCP/CLS and identity/scene at same CSS x DPR. Sum bytes across identical 61 posts, compute 100*(baseline-total_after)/baseline; no averaging post percentages.",
+    "browser_observation_owner": "Site QA PR #154",
+    "standalone_browser_collector_created": false
+  },
+  "admission": {
+    "new_crypto_verifier": "qa/media-recovery/verify_p0_review_evidence_20261112.cjs",
+    "p0_gate": "qa/media-recovery/p0_guest_evidence_release_gate_20261112.cjs",
+    "requires": [
+      "Git blob SHA-1 over raw capture JSON bound to exact packet fields",
+      "Screenshot PNG bytes SHA-256",
+      "Git blob SHA-1 over item-level rights JSON bound to slot+catalog+asset+credit",
+      "Candidate binary SHA-256",
+      "Existing P0 original URL/currentSrc, redirects, natural pixels, 960px/no-upscale/CSSxDPR, editor-reviewed scene and item-specific rights"
+    ],
+    "does_not_prove": [
+      "Real CDP provenance solely from a SHA string",
+      "True legal clearance from assertions",
+      "PNG full decoding or rendered visual parity",
+      "Any source has live visitor HTTP failure",
+      "Any production write approval"
+    ],
+    "all_production_writes_and_third_party_caching_disabled": true
+  },
+  "follow_up": "Site QA attach genuine P0 cold captures in original queue; editorial/rights review before sourcing any candidate binary. No download, cache or WordPress write in this sprint."
+}
