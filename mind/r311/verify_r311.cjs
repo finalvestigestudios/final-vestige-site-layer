@@ -44,7 +44,7 @@ function check(src){
   assert(removeFilm(b)===a,'A/B buyer text differs outside optional film');
   assert(a.includes('The free')||a.includes('free Focus Fieldbook'),'free alternative missing');
   assert(b.includes('id="original-optional-film"') && b.includes('42-second narration'),'missing optional storyboard');
-  assert(b.includes('posterTitle')&&b.includes('posterDesc')&&b.includes('Read the complete 42-second narration'),'film poster or transcript absent');
+  assert(b.includes('aria-labelledby="posterTitle posterDesc"') && b.includes('id="posterDesc"') && b.includes('Read the complete 42-second narration'),'film poster alt or transcript absent');
   for(const [label,html] of [['A',a],['B',b],['hub',hub]]){
     assert(html.startsWith('<!doctype html>')&&html.includes('<html lang="en">'),'HTML/lang '+label);
     assert(html.includes('name="viewport"')&&html.includes('noindex,nofollow'),'mobile/noindex '+label);
@@ -95,7 +95,7 @@ const mutants=[
   ['B price',x=>({b:x.b.replace('current checkout terms','$29.95 current checkout terms')})],
   ['no A/B parity',x=>({b:x.b.replace('A Source-Led Buyer','A Source-Led Special Buyer')})],
   ['remove film',x=>({b:x.b.replace('id="original-optional-film"','id="lost-film"')})],
-  ['remove poster alt',x=>({b:x.b.replace('posterDesc','noPosterDesc')})],
+  ['remove poster alt',x=>({b:x.b.replace('aria-labelledby="posterTitle posterDesc"','aria-labelledby="posterTitle"')})],
   ['remove researcher',x=>({article:x.article.replaceAll('Johansson','Researcher')})],
   ['fake scientific efficacy',x=>({article:x.article.replace('did not test Zen12','certified Zen12')})],
   ['broken live article URL',x=>({article:x.article.replace('https://finalvestige.com/2026/11/02/change-blindness/','https://finalvestige.com/old-change-blindness/')})],
