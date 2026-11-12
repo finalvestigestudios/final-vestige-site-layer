@@ -157,6 +157,13 @@ def verify_amd64_pe(path: str | Path) -> None:
             raw_bytes = _u32(table, offset + 16)
             raw_offset = _u32(table, offset + 20)
             section_flags = _u32(table, offset + 36)
+            # R370: release candidates must never request pages that are both
+            # writable and executable. Check EVERY mapped section, including
+            # non-entry and zero-filled sections; a valid entry point alone
+            # does not make an unsafe PE suitable for review/distribution.
+            # This is a conservative format policy, not an AV or signing check.
+            if section_flags & 0xA0000000 == 0xA0000000:
+                raise PEFormatError("PE section requests writable executable memory")
             mapped_bytes = max(virtual_bytes, raw_bytes)
             if (not mapped_bytes or virtual_rva < headers_size
                     or virtual_rva % section_align
