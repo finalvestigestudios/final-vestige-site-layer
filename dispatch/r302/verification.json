@@ -1,0 +1,59 @@
+{
+  "review_id": "R302",
+  "date_utc": "2026-11-12",
+  "campaign_status": "HOLD_UNSENT",
+  "commercial_03_05": "HOLD_MERCHANT",
+  "alternative_04": "NOT_ADOPTED",
+  "master_original_pr": 175,
+  "master_original_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "master_exact_blob_hashes_verified": 8,
+  "master_native_python_unittest": {
+    "executed": true,
+    "passed": 6,
+    "failed": 0
+  },
+  "r302_native_python_unittest": {
+    "executed": true,
+    "passed": 22,
+    "failed": 0
+  },
+  "r302_source_blob_matches": 4,
+  "offline_chromium": {
+    "executed": true,
+    "viewports_css_px": [
+      360,
+      390,
+      768,
+      1440
+    ],
+    "additional_font_zoom": "390px viewport at 200% root font size",
+    "passed": 5,
+    "failed": 0,
+    "observed_regression_and_fix": "Long compliance placeholder originally caused horizontal overflow at 360/390. Added fixed table layout and break-anywhere on visibly blocked footer; reran five conditions successfully."
+  },
+  "live_wordpress_snapshot": {
+    "time_utc": "2026-11-12T10:34:34+00:00",
+    "newsletter_enabled": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "reply_to": "no-reply",
+    "welcome_fieldbook": "configured_only_not_received",
+    "diagnostic": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2
+    },
+    "actual_eligible_email_recipients": null,
+    "last_five_post_dispatches": "never_sent_opted_out",
+    "lifetime_campaign_sends": "unknown"
+  },
+  "actual_jetpack_preview": "NOT_TESTED",
+  "actual_inbox_welcome": "NOT_VERIFIED",
+  "postal_and_unsubscribe_in_received_email": "NOT_VERIFIED",
+  "partner_email_rights": "NOT_VERIFIED",
+  "merchant_earning_url": "NOT_VERIFIED",
+  "verified_paid_orders": null,
+  "realized_net_revenue_per_1000_qualified_humans": "NOT_COMPUTABLE",
+  "emails_sent": 0,
+  "production_writes": 0
+}
