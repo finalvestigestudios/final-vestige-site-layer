@@ -4,6 +4,7 @@
  * This code does NOT request images, decide copyright, write WordPress or deploy.
  * It separates suspected, observed-broken, observed-loaded and candidate-review stages.
  */
+const {verifyP0ReviewEvidence}=require('./verify_p0_review_evidence_20261112.cjs');
 const SHA40=/^[a-f0-9]{40}$/;
 const SHA256=/^[a-f0-9]{64}$/;
 const https=x=>typeof x==='string'&&/^https:\/\/[^\s/?#]+\//.test(x);
@@ -34,7 +35,7 @@ const hold=(reason,slot=null)=>({...BASE,status:'HOLD',reason,slot,visitor_obser
 /** Packet is an attached Site QA evidence record, not a self-attested 'broken' flag.
  * A Git SHA is only a pointer, not cryptographic validation without fetching the blob.
  */
-function adjudicateP0(packet,review=null){
+function adjudicateP0(packet,review=null,artifacts=null){
  const slot=packet?.slot,locked=P0[slot];
  if(!locked)return hold('UNRECOGNIZED_P0_SLOT',slot??null);
  const g=packet?.guest;
@@ -95,6 +96,8 @@ function adjudicateP0(packet,review=null){
   Math.abs(z.output_width*z.native_height-z.output_height*z.native_width)>Math.max(z.native_width,z.native_height)||
   review.compared_screenshots_at_target_dpr!==true)
   return {...pending,reason:'960PX_NATIVE_SIZE_ASPECT_OR_TARGET_DPR_VISUAL_HOLD'};
+ const verification=verifyP0ReviewEvidence(packet,review,artifacts);
+ if(!verification.verified)return {...pending,reason:'BYTE_BOUND_ARTIFACTS_REQUIRED:'+verification.reason};
  return {...pending,status:'STAGING_REVIEW_PACKET_ELIGIBLE_NO_WRITE',reason:null,
   staging_reviewer_packet:{slot,mode:review.replacement_mode,asset_url:review.asset_url,
    output_pixels:[z.output_width,z.output_height],credit_required:true},
