@@ -94,7 +94,7 @@ That is the throughline of the Mind Archive: recorded observations, test conditi
 
 Commercial attention and meditation products sometimes use the vocabulary of “brain waves,” “reprogramming,” “automatic focus” or “deeper states.” It is tempting to cite the cocktail-party studies alongside those promises. That would be the wrong inference.
 
-Neither the 1953 speech-recognition experiments, the 1959 name-capture study, nor the 1995 and 2021 replications measured the benefits of **Zen12**, **Hypnosis Live Total Focus**, or **Brainwave Shots Focus Shot**. None establishes that a commercial audio file improves attention, treats a condition, replaces ordinary practice, or causes someone to notice more of an ignored conversation.
+Neither the 1953 speech-recognition experiments, the 1959 name-capture study, nor the 1995 and 2021 replications measured the benefits of **Zen12**, **Hypnosis Live Total Focus**, or **Brainwave Shots Focus Shot**. None establishes that a commercial audio file improves attention, treats a condition, replaces ordinary practice, or causes someone to notice more of an ignored conversation. Those are not tests of any meditation recording.
 
 A person may still enjoy a structured audio routine. That is a preference claim. A vendor's description of included files and listening formats can be checked against its sales page. Those facts are not interchangeable with causal evidence that a product produces promised cognitive outcomes.
 
