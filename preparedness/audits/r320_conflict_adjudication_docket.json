@@ -1,0 +1,374 @@
+{
+  "schema": "fv-preparedness-r320-conflict-adjudication-docket-v1",
+  "r319_manifest_path": "preparedness/audits/r319_three_way_custody_manifest.json",
+  "baseline": {
+    "ref": "automation/prep-r317-test-source-write-sentinel-20261112",
+    "sha": "0335416a3b658f5f626489c428aa61e8890bf90d"
+  },
+  "branches": {
+    "continuation": {
+      "ref": "claude/prep-shelter-continuation",
+      "sha": "ac8625faf30dd5538fadc31e06cb5a2cea1defae"
+    },
+    "followup": {
+      "ref": "claude/prep-shelter-followup-evidence",
+      "sha": "6a5998ead97eca997e573ce8d3ceacf1c6aabad4"
+    }
+  },
+  "review_required_count": 15,
+  "records": [
+    {
+      "path": "preparedness/content/articles/family-communication-plan.body.html",
+      "source_refs": {
+        "integrated": {
+          "sha": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+          "size": 26822
+        },
+        "continuation": {
+          "sha": "cbfe7830e9412ac99a1920c581a14d2913a9eaf6",
+          "size": 26248
+        },
+        "followup": {
+          "sha": "c97a79761dc3be1c44e5f9322a606ccc7fd11c6e",
+          "size": 26939
+        }
+      },
+      "severity": "P0_PRIVACY",
+      "review_task": "Compare emergency call/text instructions; preserve full narrative depth, visible sources and school-reunification privacy.",
+      "status": "UNRESOLVED_HOLD",
+      "claim_by_claim_verified": false,
+      "independent_reviewer_approved": false,
+      "automatic_selection": false
+    },
+    {
+      "path": "preparedness/content/articles/family-communication-plan.meta.json",
+      "source_refs": {
+        "integrated": {
+          "sha": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3",
+          "size": 4489
+        },
+        "continuation": {
+          "sha": "0ad68a8c456f50912ddef11c44bfc05c3c2d3513",
+          "size": 4191
+        },
+        "followup": {
+          "sha": "a8618235711cca039f142ad59962c1153654aa45",
+          "size": 4537
+        }
+      },
+      "severity": "P0_CITATION",
+      "review_task": "Verify related tool routes distinguish the plan builder from wallet card, with source-use IDs and editorial hold unchanged.",
+      "status": "UNRESOLVED_HOLD",
+      "claim_by_claim_verified": false,
+      "independent_reviewer_approved": false,
+      "automatic_selection": false
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.body.html",
+      "source_refs": {
+        "integrated": {
+          "sha": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+          "size": 31595
+        },
+        "continuation": {
+          "sha": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "size": 31755
+        },
+        "followup": {
+          "sha": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "size": 31755
+        }
+      },
+      "severity": "P0_LIFE_SAFETY",
+      "review_task": "Qualified fire-safety reviewer must adjudicate home-power/drill wording and escape instructions before use.",
+      "status": "UNRESOLVED_HOLD",
+      "claim_by_claim_verified": false,
+      "independent_reviewer_approved": false,
+      "automatic_selection": false
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.meta.json",
+      "source_refs": {
+        "integrated": {
+          "sha": "ff1246dcbfb0dd0bc864977f815badb9ad4e7ed8",
+          "size": 3711
+        },
+        "continuation": {
+          "sha": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9",
+          "size": 3758
+        },
+        "followup": {
+          "sha": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9",
+          "size": 3758
+        }
+      },
+      "severity": "P0_CITATION",
+      "review_task": "Retain author/source-use provenance and review status; verify no false approval or duplicate destination.",
+      "status": "UNRESOLVED_HOLD",
+      "claim_by_claim_verified": false,
+      "independent_reviewer_approved": false,
+      "automatic_selection": false
+    },
+    {
+      "path": "preparedness/content/articles/homemade-water-filters.meta.json",
+      "source_refs": {
+        "integrated": {
+          "sha": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+          "size": 2367
+        },
+        "continuation": {
+          "sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
+          "size": 1973
+        },
+        "followup": {
+          "sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
+          "size": 1973
+        }
+      },
+      "severity": "P0_HEALTH_SAFETY",
+      "review_task": "Qualified water-safety review needed; historical filter context must not imply potable output.",
+      "status": "UNRESOLVED_HOLD",
+      "claim_by_claim_verified": false,
+      "independent_reviewer_approved": false,
+      "automatic_selection": false
+    },
+    {
+      "path": "preparedness/content/articles/making-water-safer.meta.json",
+      "source_refs": {
+        "integrated": {
+          "sha": "827d861eb3beebfd010ee98fcca764b23a2de90e",
+          "size": 3523
+        },
+        "continuation": {
+          "sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+          "size": 2987
+        },
+        "followup": {
+          "sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+          "size": 2987
+        }
+      },
+      "severity": "P0_HEALTH_SAFETY",
+      "review_task": "Preserve unresolved qualified review; do not infer independent QD PASS from founder chat approval.",
+      "status": "UNRESOLVED_HOLD",
+      "claim_by_claim_verified": false,
+      "independent_reviewer_approved": false,
+      "automatic_selection": false
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.body.html",
+      "source_refs": {
+        "integrated": {
+          "sha": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+          "size": 33137
+        },
+        "continuation": {
+          "sha": "55a1e3018e3413b79378c6677f15e536bb777377",
+          "size": 33238
+        },
+        "followup": {
+          "sha": "5608a28249a0e351710e0c756d878048c8e41e24",
+          "size": 33265
+        }
+      },
+      "severity": "P0_LIFE_SAFETY",
+      "review_task": "Qualified carbon-monoxide, generator, indoor heating and medical-device redline review required.",
+      "status": "UNRESOLVED_HOLD",
+      "claim_by_claim_verified": false,
+      "independent_reviewer_approved": false,
+      "automatic_selection": false
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.meta.json",
+      "source_refs": {
+        "integrated": {
+          "sha": "be37b602d0b82593d438083dfc8a1e5ef595dd44",
+          "size": 5155
+        },
+        "continuation": {
+          "sha": "debfd11fb189cb43a688862867dc60172fb6eb3a",
+          "size": 5096
+        },
+        "followup": {
+          "sha": "593e7bd6fef0446f05d7a86551e702ceaa38eabb",
+          "size": 5210
+        }
+      },
+      "severity": "P0_CITATION",
+      "review_task": "Check source-use changes and danger-warning linkage; maintain safety hold and canonical URL.",
+      "status": "UNRESOLVED_HOLD",
+      "claim_by_claim_verified": false,
+      "independent_reviewer_approved": false,
+      "automatic_selection": false
+    },
+    {
+      "path": "preparedness/content/articles/salt-beef-salt-pork-age-of-sail.meta.json",
+      "source_refs": {
+        "integrated": {
+          "sha": "1c4c5396da703f3724b584c67e49e2128ab1f4c6",
+          "size": 3433
+        },
+        "continuation": {
+          "sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+          "size": 2897
+        },
+        "followup": {
+          "sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+          "size": 2897
+        }
+      },
+      "severity": "P0_HEALTH_SAFETY",
+      "review_task": "Keep historical food-preservation treatment distinct from modern food-safety approval.",
+      "status": "UNRESOLVED_HOLD",
+      "claim_by_claim_verified": false,
+      "independent_reviewer_approved": false,
+      "automatic_selection": false
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.body.html",
+      "source_refs": {
+        "integrated": {
+          "sha": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+          "size": 31374
+        },
+        "continuation": {
+          "sha": "ed6e6bc4dc1344d1aa25679c6f4380f76d82927e",
+          "size": 30877
+        },
+        "followup": {
+          "sha": "a8c36cd63517fdeb723dca201b31802c2a721ddf",
+          "size": 31507
+        }
+      },
+      "severity": "P0_LIFE_SAFETY",
+      "review_task": "Adjudicate evacuation direction, local official instructions, airborne hazards and shelter tradeoffs.",
+      "status": "UNRESOLVED_HOLD",
+      "claim_by_claim_verified": false,
+      "independent_reviewer_approved": false,
+      "automatic_selection": false
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.meta.json",
+      "source_refs": {
+        "integrated": {
+          "sha": "cb559141d1e4a39debad16cf5cb796b746a01f19",
+          "size": 3938
+        },
+        "continuation": {
+          "sha": "0f4800f6808f54e0487de1f8426b4612f7d0a54f",
+          "size": 3736
+        },
+        "followup": {
+          "sha": "fb1081527e5afdd542299f2087397cf3308716c6",
+          "size": 3981
+        }
+      },
+      "severity": "P0_CITATION",
+      "review_task": "Cross-check citation-to-claim mappings and correct related tool identity without silently replacing sources.",
+      "status": "UNRESOLVED_HOLD",
+      "claim_by_claim_verified": false,
+      "independent_reviewer_approved": false,
+      "automatic_selection": false
+    },
+    {
+      "path": "preparedness/content/tools/power-outage-planner.body.html",
+      "source_refs": {
+        "integrated": {
+          "sha": "aa8f866aaaaab9253f41c4363d31919029c69234",
+          "size": 39172
+        },
+        "continuation": {
+          "sha": "66a70ecc4192166958fcde125ada2b6f98e92b6c",
+          "size": 38695
+        },
+        "followup": {
+          "sha": "aa8f866aaaaab9253f41c4363d31919029c69234",
+          "size": 39172
+        }
+      },
+      "severity": "P0_LIFE_SAFETY",
+      "review_task": "Review generator/CO, medical devices, print and JavaScript-disabled behavior; preserve form fields.",
+      "status": "UNRESOLVED_HOLD",
+      "claim_by_claim_verified": false,
+      "independent_reviewer_approved": false,
+      "automatic_selection": false
+    },
+    {
+      "path": "preparedness/content/tools/power-outage-planner.meta.json",
+      "source_refs": {
+        "integrated": {
+          "sha": "8796bba2b323cce096639997002c402bd853e50f",
+          "size": 3033
+        },
+        "continuation": {
+          "sha": "bcbe83a82cc3bfbd10e179e6e18742253683b3ab",
+          "size": 2707
+        },
+        "followup": {
+          "sha": "8796bba2b323cce096639997002c402bd853e50f",
+          "size": 3033
+        }
+      },
+      "severity": "P0_CITATION",
+      "review_task": "Preserve tool taxonomy, canonical destination, safety status and exact source-use declarations.",
+      "status": "UNRESOLVED_HOLD",
+      "claim_by_claim_verified": false,
+      "independent_reviewer_approved": false,
+      "automatic_selection": false
+    },
+    {
+      "path": "preparedness/content/tools/reunification-plan.body.html",
+      "source_refs": {
+        "integrated": {
+          "sha": "3305578369183edb1d427c8f8f8002eaacee420f",
+          "size": 13745
+        },
+        "continuation": {
+          "sha": "79fe2cf7c7d486c105bac7a6a256136c2e237a0f",
+          "size": 18678
+        },
+        "followup": {
+          "sha": "be8698ac5d020476ff649d85813810e2000c6f98",
+          "size": 19145
+        }
+      },
+      "severity": "P0_TOOL_IDENTITY",
+      "review_task": "Do not replace the household plan-builder with the distinct family wallet card; verify form, print, privacy, JS fallback.",
+      "status": "UNRESOLVED_HOLD",
+      "claim_by_claim_verified": false,
+      "independent_reviewer_approved": false,
+      "automatic_selection": false
+    },
+    {
+      "path": "preparedness/content/tools/reunification-plan.meta.json",
+      "source_refs": {
+        "integrated": {
+          "sha": "10cd57dc8d39e366aaef8fd76cc3f8969b8c5348",
+          "size": 2040
+        },
+        "continuation": {
+          "sha": "61187860e045e41dd5f8df992927ff702c0d5156",
+          "size": 2093
+        },
+        "followup": {
+          "sha": "d4776aad104f59cfc50305e8eeed5220ec201cd5",
+          "size": 2394
+        }
+      },
+      "severity": "P0_TOOL_IDENTITY",
+      "review_task": "Contributor number 104 and card identity conflict with integrated plan builder number 102; retain separate tool 104 source.",
+      "status": "UNRESOLVED_HOLD",
+      "claim_by_claim_verified": false,
+      "independent_reviewer_approved": false,
+      "automatic_selection": false
+    }
+  ],
+  "release": {
+    "publication_authorized": false,
+    "qualified_safety_approved": false,
+    "independent_qd_pass": false,
+    "paid_conversion_verified": false,
+    "canonical_sources_modified": false,
+    "automatic_merge_permitted": false
+  }
+}
