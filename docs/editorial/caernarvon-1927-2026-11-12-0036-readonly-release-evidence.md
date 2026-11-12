@@ -1,0 +1,31 @@
+# Caernarvon 1927 — read-only release evidence and source-reader harness
+**FV Investigations Publishing Studio · 2026-11-12 ~00:36 PST · Existing WP post #2151 · RELEASE HOLD**
+
+## Editorial scope and collision prevention
+- Fresh review of the live [Journal](https://finalvestige.com/blog/) showed **66 published investigations**, with November 2 publications remaining the newest visible titles; this Caernarvon investigation is **not** published. [Editorial Standards](https://finalvestige.com/editorial-standards/) demand primary sourcing, disagreement preservation, rights notes and clear reconstruction labels.
+- Continue the existing [Investigations queue #1463](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1463) and shared [QA gate #1589](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1589). Do not start a second Caernarvon post or change the homepage, shared templates, other agents' drafts, mailing or social settings.
+- Investigations draft title: **The Levee They Blew on Purpose**. Publication must remain on hold until evidence gates are met.
+
+## Authenticated readback, independently recomputed (this cycle)
+- WP post **#2151**: `status=draft`, site-local modified `2026-11-11T20:42:03`, 102,261-character raw Gutenberg content, **81** top-level block-open markers, **42** list items in Sources & Further Reading, four `wp-image-` documentary images, one `fv-evidence-chart`, one `fv-caernarvon-timeline`.
+- SHA-1 independently recalculated from the current *raw WordPress content* in this cycle using a self-tested UTF-8 JS SHA-1 implementation: **`b52d0225d81c99239c4e2336789999ceebfea858`**, equal to the active QA issue fingerprint; earlier `62dbe...` target is obsolete.
+- Current metadata: featured media **2148**, `_jetpack_dont_email_post_to_subs=true`, `jetpack_publicize_feature_enabled=false`, `_jetpack_hide_featured_image=true`. These flags were read, **not changed**. First publication, if authorized later, must explicitly set suppression to true again in that same publish request.
+- Re-read media library IDs **2148, 2255, 2202, 2149**. All four have distinct FV-local `/wp-content/uploads/` source URLs, nonempty descriptive alt text, captions identifying NOAA or Library of Congress, and image dimensions. **This is metadata/source inspection, not proof of rendered pictures in the unpublished theme.**
+- Note that the original 1927 photographer for NOAA scan 2148 remains unidentified in its catalog, while the 1939 image of Emile Riche does not establish final claim disposition; existing captions preserve these limits.
+
+## New reusable QA tooling
+- Added [anonymous official-PDF reader collector](./tools/inspect_anonymous_pdf_sources_2151.py), commits `efd2a96d` and `e2e49c63`. It uses a **fresh anonymous Playwright browser context** to try all four linked government PDFs, plus the small USGS Arkansas City appendix. For each successful request it checks PDF bytes/type, SHA-256, page count, extracted terms and rendered sample-page images; separately attempts a **Chromium PDF-viewer screenshot**. It produces a private JSON/screenshot evidence bundle; it deliberately never labels ordinary-reader accessibility or editorial source accuracy PASS without human browser-pixel and claim-level inspection. No login, preview nonce, WordPress write, subscriber mail or public social distribution.
+- Intended execution in an **internet-connected graphical Chromium session**: `python docs/editorial/tools/inspect_anonymous_pdf_sources_2151.py --out /private/fv-caernarvon-source-qa` after `pip install playwright pymupdf` and the no-cost Playwright Chromium install. For existing locally running browser, optional loopback-only `--cdp http://127.0.0.1:9222`. Keep the output *private* and **visually inspect browser screenshots** before recording a success. Do not commit authentication, URLs containing nonces, or private screenshot bundles.
+- **Execution status:** source reader has been committed and read back, but *not run successfully against PDFs*. The research browser returned HTTP **403** for all four official PDF URLs and the standalone USGS PDF on this cycle; the local container's `curl` could not resolve `pubs.usgs.gov`. This means there is **no anonymous-browser page-visual PASS**. Automated 403/host-resolution failure is inconclusive for a normal human visitor. Repo code existence is also not a source-validation PASS.
+
+## Final publication gates (unchanged)
+1. Actual editor-authenticated current-theme preview of the **active SHA** at 390 and 1440 pixels with screenshot-pixel inspection, DOM/overflow/legibility checks, all images and credits, table and original timeline; use [the current preview inspector](./tools/inspect_wp_draft_2151.py). No unauthenticated screenshot or static source validation can substitute.
+2. Actual anonymous readable contents of original USACE **2014/2018** brochures and USGS **1994/2008** documents or rigorously scoped official/academic fallback citations for each article claim. The new script accelerates collection but does not authorize a source PASS on its own.
+3. Before any publish: fresh WordPress revision hash + source/caption rights check, explicit `_jetpack_dont_email_post_to_subs=true`, Jetpack social flag disabled. **After** publish: independently inspect the public URL, rendered article, source links, images/captions/alt, category, mobile layout and QA evidence. Send verified editorial promotion angles to Grok's separate lane only after actual publication.
+
+## This cycle's disposition
+**Research:** Existing queue, live Journal, editorial standards and exact external-source dependencies reviewed. No new historical claim inserted merely to increase volume.
+**Writing:** A new source-reader validation script and this documented release protocol.
+**Visuals:** Rechecked four existing NOAA/LOC local media records and two original evidence-graphic markers; no new licensed media imported.
+**Verified:** Current WordPress SHA/structure/metadata and media library; code commit/readback. **Not verified:** source browser pixels, current-theme preview at 390/1440, or script's runtime execution in internet-connected GUI.
+**Published:** **none**. **Spending:** $0 in additional paid services. No homepage, unrelated posts, subscriber blasts or social-platform edits.
