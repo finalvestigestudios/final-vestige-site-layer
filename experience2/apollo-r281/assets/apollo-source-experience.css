@@ -197,3 +197,15 @@
   .fv-r281 .fv-r309__media-list>li{padding:12px}
   .fv-r281 .fv-r306__source-receipt ol{padding-inline-start:18px}
 }
+
+/* R331: nested custody cards must retain a nonzero content box at 320px and
+   400% text enlargement. Rem-based padding on both the reconciliation and
+   its nested record had consumed all available width, collapsing seven NASA
+   anchor hit rectangles to 0px despite no document-level overflow. Physical
+   pixel padding is bounded only in narrow viewports; document order, original
+   NASA destinations and the free editorial CTA are untouched. */
+@media screen and (max-width:420px){
+  .fv-r281 .fv-r281__reconciliation{padding:12px}
+  .fv-r281 .fv-r281__reconciliation-list>li,
+  .fv-r281 .fv-r281__authority-ledger>li{padding:12px}
+}
