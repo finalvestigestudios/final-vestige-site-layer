@@ -9,7 +9,8 @@ const SHA40=/^[a-f0-9]{40}$/;
 const SHA256=/^[a-f0-9]{64}$/;
 const https=x=>typeof x==='string'&&/^https:\/\/[^\s/?#]+\//.test(x);
 const natural=n=>Number.isSafeInteger(n)&&n>=0;
-const mimePresent=x=>typeof x==='string'&&/^[a-z0-9][a-z0-9!#const natural=n=>Number.isSafeInteger(n)&&n>=0;^_.+-]*\/[a-z0-9][a-z0-9!#const natural=n=>Number.isSafeInteger(n)&&n>=0;^_.+-]*(?:\s*;\s*[a-z0-9-]+=[a-z0-9._+-]+)*$/i.test(x);
+// Strict MIME grammar: CDP failure MIME may be HTML, but no whitespace, control chars or operators in type/subtype.
+const mimePresent=x=>typeof x==='string'&&x.length<=256&&!/[\x00-\x1f\x7f]/.test(x)&&/^[a-z0-9][a-z0-9!#$%&'*+.^_|~-]*\/[a-z0-9][a-z0-9!#$%&'*+.^_|~-]*(?:[ \t]*;[ \t]*[a-z0-9-]+[ \t]*=[ \t]*(?:[a-z0-9._+-]+|"[^"]*"))*$/i.test(x);
 const decodableImageMime=x=>typeof x==='string'&&/^image\/(?:jpeg|png|gif|webp|avif|bmp|svg\+xml)(?:\s*;.*)?$/i.test(x);
 const positive=n=>Number.isSafeInteger(n)&&n>0;
 const P0=Object.freeze({

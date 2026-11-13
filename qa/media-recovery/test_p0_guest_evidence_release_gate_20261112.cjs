@@ -150,3 +150,19 @@ test('200 decoded Image requires positive completed-transfer bytes',()=>{
  Object.assign(p.guest,{natural_width:960,natural_height:540,image_decoded:true});
  assert.equal(adjudicateP0(p).status,'HOLD');
 });
+
+test('MIME custody: whitespace inside MIME type is HOLD rather than image failure',()=>held(p=>{p.guest.response_mime_type='te xt/html'},/MISSING_OR_UNBOUND/));
+test('MIME custody: whitespace inside MIME subtype is HOLD',()=>held(p=>{p.guest.response_mime_type='text/ht ml'},/MISSING_OR_UNBOUND/));
+test('MIME custody: operator in MIME token is HOLD',()=>held(p=>{p.guest.response_mime_type='te>xt/html'},/MISSING_OR_UNBOUND/));
+test('MIME custody: equals sign inside MIME subtype is HOLD',()=>held(p=>{p.guest.response_mime_type='text/h=tml'},/MISSING_OR_UNBOUND/));
+test('MIME custody: line break is HOLD',()=>held(p=>{p.guest.response_mime_type='text/html\n'},/MISSING_OR_UNBOUND/));
+test('MIME custody: overlong reported MIME is HOLD',()=>held(p=>{p.guest.response_mime_type='text/'+('x'.repeat(260))},/MISSING_OR_UNBOUND/));
+test('MIME custody: valid 404 HTML with charset remains failure-review-only',()=>{
+ const p=packet();p.guest.response_mime_type='text/html; charset=utf-8';
+ const a=adjudicateP0(p);assert.equal(a.status,'GUEST_FAILURE_EVIDENCE_RECORDED_REVIEW_REQUIRED');assert.equal(a.production_write_allowed,false);
+});
+test('MIME custody: valid decoded JPEG with charset keeps published original',()=>{
+ const p=packet('418:1',200);p.guest.response_mime_type='image/jpeg; charset=utf-8';
+ Object.assign(p.guest,{natural_width:960,natural_height:540,image_decoded:true});
+ const a=adjudicateP0(p);assert.equal(a.status,'GUEST_IMAGE_LOADED_KEEP_ORIGINAL');
+});
