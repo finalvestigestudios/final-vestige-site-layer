@@ -81,9 +81,20 @@ def ledger(snapshots, *, expected=PINS, require_full=True):
             if url is not None:
                 if not isinstance(url,str):errors.append('INVALID_URL:'+branch+':'+key)
                 else:
-                    parsed=urlsplit(url)
+                    try:
+                        parsed=urlsplit(url)
+                    except ValueError:
+                        errors.append('MALFORMED_CANONICAL_URL:'+branch+':'+key)
+                        parsed=urlsplit('/__invalid__/')
                     path=parsed.path
-                    if (parsed.scheme and (parsed.scheme!='https' or parsed.netloc.lower() not in ('finalvestige.com','www.finalvestige.com'))) or not path.startswith('/preparedness/') or parsed.query or parsed.fragment:
+                    host=parsed.netloc.lower()
+                    if ((parsed.scheme and parsed.scheme!='https')
+                        or (host and host not in ('finalvestige.com','www.finalvestige.com'))
+                        or (parsed.scheme and not host)
+                        or parsed.username is not None or parsed.password is not None
+                        or not path.startswith('/preparedness/')
+                        or '..' in path.split('/') or '%' in path
+                        or parsed.query or parsed.fragment):
                         errors.append('UNSAFE_CANONICAL_URL:'+branch+':'+key)
                     else:urls[path.rstrip('/')+'/'].add(key)
             else:errors.append('URL_NOT_AUTHENTICATED:'+branch+':'+key)
