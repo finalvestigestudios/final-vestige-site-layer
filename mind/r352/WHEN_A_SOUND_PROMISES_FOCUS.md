@@ -22,7 +22,7 @@ There is another complication: *brainwave audio* is a marketing umbrella, not a 
 
 ## A positive meta-analysis and a stubborn contradiction
 
-A 2022 meta-analysis by Garcia-Argibay and colleagues examined fifteen studies of binaural beats on memory and attention, assembling 31 effect sizes. It reported an overall statistically significant medium-sized pooled effect, Hedges' g approximately 0.40. That finding is worth reading—not quietly ignoring because it complicates a skeptical story. But even its abstract reports conflicting results, especially for frequency-specific memory and attention tasks. The included studies were not trials of the exact retail recordings on this page. [1]
+A 2022 meta-analysis by Basu and Banerjee examined fifteen studies of binaural beats on memory and attention, assembling 31 effect sizes. It reported an overall statistically significant medium-sized pooled effect, Hedges' g approximately 0.40. That finding is worth reading—not quietly ignoring because it complicates a skeptical story. But even its abstract reports conflicting results, especially for frequency-specific memory and attention tasks. The included studies were not trials of the exact retail recordings on this page. [1]
 
 In 2023 Ingendoh, Posny and Heine asked a narrower physiological question: do binaural beats entrain measured electrical activity in the brain? Their PLOS ONE systematic review included fourteen EEG studies. Five reported findings consistent with the entrainment hypothesis, eight reported contrary findings, and one was mixed. Experimental methods, frequencies, EEG measures and analyses varied enough to limit direct comparison. This does not prove that no beat could ever affect an EEG signal. It does mean that a categorical claim of reliable entrainment is stronger than that reviewed evidence can carry. [2]
 
@@ -86,7 +86,7 @@ Our conclusion is practical: **choose an audio for what the seller can actually 
 
 ## Research ledger and scope of verification
 
-1. Garcia-Argibay et al., "Potential of binaural beats intervention for improving memory and attention" (2022), PMID 35842538, abstract consulted: https://pubmed.ncbi.nlm.nih.gov/35842538/
+1. Basu and Banerjee, "Potential of binaural beats intervention for improving memory and attention" (2022), PMID 35842538, abstract consulted: https://pubmed.ncbi.nlm.nih.gov/35842538/
 2. Ingendoh, Posny & Heine (2023), *PLOS ONE*, 14-study EEG systematic review, DOI 10.1371/journal.pone.0286023: https://pubmed.ncbi.nlm.nih.gov/37205669/
 3. Leistiko et al. (2023), 58-adult gamma-binaural-beat attention task, PMID 37359672: https://pubmed.ncbi.nlm.nih.gov/37359672/
 4. Chee et al. (2024), 31-study music/auditory stimulation systematic review, PMID 38458383: https://pubmed.ncbi.nlm.nih.gov/38458383/
