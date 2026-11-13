@@ -1,0 +1,338 @@
+{
+  "schema": "fv-preparedness-r334-frozen-nine-head-source-object-crosswalk-v1",
+  "scope": "READ_ONLY_GIT_TREE_OBJECTS_NOT_MERGE_SAFETY_OR_SOURCE_CLAIM_APPROVAL",
+  "source_heads": {
+    "start": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+    "food": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+    "health": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+    "hist-field": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+    "hist-food": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+    "hist-home": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+    "shelter": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+    "shelter-continuation": "ac8625faf30dd5538fadc31e06cb5a2cea1defae",
+    "shelter-followup": "6a5998ead97eca997e573ce8d3ceacf1c6aabad4"
+  },
+  "integrated_base_commit": "74a3d268caccc0a0ae32d9f1c916ddaba3cb6ce7",
+  "source_tree_truncation_detected": false,
+  "seven_original_clusters": [
+    "start",
+    "food",
+    "health",
+    "hist-field",
+    "hist-food",
+    "hist-home",
+    "shelter"
+  ],
+  "two_shelter_descendants": [
+    "shelter-continuation",
+    "shelter-followup"
+  ],
+  "integrated_article_bodies": 35,
+  "integrated_tool_bodies": 6,
+  "integrated_missing_body_metadata_pairs": [],
+  "source_candidate_paths_missing_from_integrated": [],
+  "differing_shared_source_paths": [
+    {
+      "path": "preparedness/content/articles/family-communication-plan.body.html",
+      "integrated_blob": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+      "contributors": [
+        {
+          "cluster": "shelter",
+          "blob": "16e2b1ec37fd6ea37f442d13e831180253c709b9"
+        },
+        {
+          "cluster": "shelter-continuation",
+          "blob": "cbfe7830e9412ac99a1920c581a14d2913a9eaf6"
+        },
+        {
+          "cluster": "shelter-followup",
+          "blob": "c97a79761dc3be1c44e5f9322a606ccc7fd11c6e"
+        }
+      ],
+      "integrated_matches_contributor": [],
+      "resolution": "NOT_ADJUDICATED_BY_OBJECT_IDENTITY"
+    },
+    {
+      "path": "preparedness/content/articles/family-communication-plan.meta.json",
+      "integrated_blob": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3",
+      "contributors": [
+        {
+          "cluster": "shelter",
+          "blob": "e63bbe70f5b93936da5cd71c030e33d82256d3ee"
+        },
+        {
+          "cluster": "shelter-continuation",
+          "blob": "0ad68a8c456f50912ddef11c44bfc05c3c2d3513"
+        },
+        {
+          "cluster": "shelter-followup",
+          "blob": "a8618235711cca039f142ad59962c1153654aa45"
+        }
+      ],
+      "integrated_matches_contributor": [],
+      "resolution": "NOT_ADJUDICATED_BY_OBJECT_IDENTITY"
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.body.html",
+      "integrated_blob": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+      "contributors": [
+        {
+          "cluster": "shelter",
+          "blob": "ba869874b5ee6ef85a7694e65a364e12f4aed873"
+        },
+        {
+          "cluster": "shelter-continuation",
+          "blob": "b8db7be7e0482334d8356f35616f21f36aaa2d4d"
+        },
+        {
+          "cluster": "shelter-followup",
+          "blob": "b8db7be7e0482334d8356f35616f21f36aaa2d4d"
+        }
+      ],
+      "integrated_matches_contributor": [],
+      "resolution": "NOT_ADJUDICATED_BY_OBJECT_IDENTITY"
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.meta.json",
+      "integrated_blob": "ff1246dcbfb0dd0bc864977f815badb9ad4e7ed8",
+      "contributors": [
+        {
+          "cluster": "shelter",
+          "blob": "6a54547ef1458b0b5b0464f95d735ff4653c8368"
+        },
+        {
+          "cluster": "shelter-continuation",
+          "blob": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9"
+        },
+        {
+          "cluster": "shelter-followup",
+          "blob": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9"
+        }
+      ],
+      "integrated_matches_contributor": [],
+      "resolution": "NOT_ADJUDICATED_BY_OBJECT_IDENTITY"
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.body.html",
+      "integrated_blob": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+      "contributors": [
+        {
+          "cluster": "shelter",
+          "blob": "47d949d97ddb15abc5fdc3b556f37aea5036ce29"
+        },
+        {
+          "cluster": "shelter-continuation",
+          "blob": "55a1e3018e3413b79378c6677f15e536bb777377"
+        },
+        {
+          "cluster": "shelter-followup",
+          "blob": "5608a28249a0e351710e0c756d878048c8e41e24"
+        }
+      ],
+      "integrated_matches_contributor": [],
+      "resolution": "NOT_ADJUDICATED_BY_OBJECT_IDENTITY"
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.meta.json",
+      "integrated_blob": "be37b602d0b82593d438083dfc8a1e5ef595dd44",
+      "contributors": [
+        {
+          "cluster": "shelter",
+          "blob": "77dd194b096bb60ea99728a5b0042adf016b905e"
+        },
+        {
+          "cluster": "shelter-continuation",
+          "blob": "debfd11fb189cb43a688862867dc60172fb6eb3a"
+        },
+        {
+          "cluster": "shelter-followup",
+          "blob": "593e7bd6fef0446f05d7a86551e702ceaa38eabb"
+        }
+      ],
+      "integrated_matches_contributor": [],
+      "resolution": "NOT_ADJUDICATED_BY_OBJECT_IDENTITY"
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.body.html",
+      "integrated_blob": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+      "contributors": [
+        {
+          "cluster": "shelter",
+          "blob": "b8acf07e533eea43795aa242f39fd926b080130f"
+        },
+        {
+          "cluster": "shelter-continuation",
+          "blob": "ed6e6bc4dc1344d1aa25679c6f4380f76d82927e"
+        },
+        {
+          "cluster": "shelter-followup",
+          "blob": "a8c36cd63517fdeb723dca201b31802c2a721ddf"
+        }
+      ],
+      "integrated_matches_contributor": [],
+      "resolution": "NOT_ADJUDICATED_BY_OBJECT_IDENTITY"
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.meta.json",
+      "integrated_blob": "cb559141d1e4a39debad16cf5cb796b746a01f19",
+      "contributors": [
+        {
+          "cluster": "shelter",
+          "blob": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186"
+        },
+        {
+          "cluster": "shelter-continuation",
+          "blob": "0f4800f6808f54e0487de1f8426b4612f7d0a54f"
+        },
+        {
+          "cluster": "shelter-followup",
+          "blob": "fb1081527e5afdd542299f2087397cf3308716c6"
+        }
+      ],
+      "integrated_matches_contributor": [],
+      "resolution": "NOT_ADJUDICATED_BY_OBJECT_IDENTITY"
+    },
+    {
+      "path": "preparedness/content/tools/power-outage-planner.body.html",
+      "integrated_blob": "aa8f866aaaaab9253f41c4363d31919029c69234",
+      "contributors": [
+        {
+          "cluster": "shelter-continuation",
+          "blob": "66a70ecc4192166958fcde125ada2b6f98e92b6c"
+        },
+        {
+          "cluster": "shelter-followup",
+          "blob": "aa8f866aaaaab9253f41c4363d31919029c69234"
+        }
+      ],
+      "integrated_matches_contributor": [
+        "shelter-followup"
+      ],
+      "resolution": "NOT_ADJUDICATED_BY_OBJECT_IDENTITY"
+    },
+    {
+      "path": "preparedness/content/tools/power-outage-planner.meta.json",
+      "integrated_blob": "8796bba2b323cce096639997002c402bd853e50f",
+      "contributors": [
+        {
+          "cluster": "shelter-continuation",
+          "blob": "bcbe83a82cc3bfbd10e179e6e18742253683b3ab"
+        },
+        {
+          "cluster": "shelter-followup",
+          "blob": "8796bba2b323cce096639997002c402bd853e50f"
+        }
+      ],
+      "integrated_matches_contributor": [
+        "shelter-followup"
+      ],
+      "resolution": "NOT_ADJUDICATED_BY_OBJECT_IDENTITY"
+    },
+    {
+      "path": "preparedness/content/tools/reunification-plan.body.html",
+      "integrated_blob": "3305578369183edb1d427c8f8f8002eaacee420f",
+      "contributors": [
+        {
+          "cluster": "shelter-continuation",
+          "blob": "79fe2cf7c7d486c105bac7a6a256136c2e237a0f"
+        },
+        {
+          "cluster": "shelter-followup",
+          "blob": "be8698ac5d020476ff649d85813810e2000c6f98"
+        }
+      ],
+      "integrated_matches_contributor": [],
+      "resolution": "NOT_ADJUDICATED_BY_OBJECT_IDENTITY"
+    },
+    {
+      "path": "preparedness/content/tools/reunification-plan.meta.json",
+      "integrated_blob": "10cd57dc8d39e366aaef8fd76cc3f8969b8c5348",
+      "contributors": [
+        {
+          "cluster": "shelter-continuation",
+          "blob": "61187860e045e41dd5f8df992927ff702c0d5156"
+        },
+        {
+          "cluster": "shelter-followup",
+          "blob": "d4776aad104f59cfc50305e8eeed5220ec201cd5"
+        }
+      ],
+      "integrated_matches_contributor": [],
+      "resolution": "NOT_ADJUDICATED_BY_OBJECT_IDENTITY"
+    },
+    {
+      "path": "preparedness/sources/fragments/shelter.json",
+      "integrated_blob": "2a3f1a7ddeab2782add875be1e0e378513504aa1",
+      "contributors": [
+        {
+          "cluster": "shelter",
+          "blob": "d9eeb4546e58f083031e0767aaea7cf112099e09"
+        },
+        {
+          "cluster": "shelter-continuation",
+          "blob": "7291a7836a14b8a83f85310815e820295245c83b"
+        },
+        {
+          "cluster": "shelter-followup",
+          "blob": "5105f4bbd7d5b2e991f28d4b4ae7c9d5a2804aa9"
+        }
+      ],
+      "integrated_matches_contributor": [],
+      "resolution": "NOT_ADJUDICATED_BY_OBJECT_IDENTITY"
+    },
+    {
+      "path": "preparedness/taxonomy.json",
+      "integrated_blob": "15c547bb3018ac182b12a51036389cfa39a59168",
+      "contributors": [
+        {
+          "cluster": "start",
+          "blob": "eea601e53e16e36cd4fc890876bc249b39632370"
+        },
+        {
+          "cluster": "food",
+          "blob": "eea601e53e16e36cd4fc890876bc249b39632370"
+        },
+        {
+          "cluster": "health",
+          "blob": "eea601e53e16e36cd4fc890876bc249b39632370"
+        },
+        {
+          "cluster": "hist-field",
+          "blob": "eea601e53e16e36cd4fc890876bc249b39632370"
+        },
+        {
+          "cluster": "hist-food",
+          "blob": "eea601e53e16e36cd4fc890876bc249b39632370"
+        },
+        {
+          "cluster": "hist-home",
+          "blob": "eea601e53e16e36cd4fc890876bc249b39632370"
+        },
+        {
+          "cluster": "shelter",
+          "blob": "eea601e53e16e36cd4fc890876bc249b39632370"
+        },
+        {
+          "cluster": "shelter-continuation",
+          "blob": "4dce806ffd8bac7918645df77d2be8b1fb520aeb"
+        },
+        {
+          "cluster": "shelter-followup",
+          "blob": "4dce806ffd8bac7918645df77d2be8b1fb520aeb"
+        }
+      ],
+      "integrated_matches_contributor": [],
+      "resolution": "NOT_ADJUDICATED_BY_OBJECT_IDENTITY"
+    }
+  ],
+  "distinct_source_divergence_count": 14,
+  "unresolved_legacy_adjudication_conflict_count_from_issue136": 15,
+  "divergence_count_is_not_legacy_docket_count": true,
+  "word_depth_verified": false,
+  "canonical_url_uniqueness_verified": false,
+  "citation_claim_support_verified": false,
+  "source_conflict_human_signoff": false,
+  "qualified_qd_pass": false,
+  "may_merge": false,
+  "may_publish": false
+}
