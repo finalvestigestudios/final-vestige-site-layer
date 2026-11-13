@@ -21,7 +21,7 @@ function safeCommerce(html){
  if(bad.test(html))throw Error('active/script/form/iframe unsafe');
  if(/<a\b[^>]*href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)/i.test(html))throw Error('unapproved merchant outbound');
  if(!/may earn a commission at no additional cost/i.test(html))throw Error('adjacent material disclosure missing');
- if(!/<button[^>]+disabled\b/i.test(html))throw Error('merchant CTA not natively disabled');
+ if(!/<button\b(?=[^>]*\sdisabled(?:\s|>|=))[^>]*>/i.test(html))throw Error('merchant CTA not natively disabled');
  if(!/No earning link is active here/i.test(html))throw Error('false activated offer');
  if(!/https:\/\/finalvestige\.com\/focus\//.test(html))throw Error('original focus route missing');
  if((html.match(/<div data-comparison-core="true">/g)||[]).length!==1)throw Error('core absent or duplicate');
