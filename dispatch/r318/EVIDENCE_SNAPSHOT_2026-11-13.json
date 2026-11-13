@@ -1,0 +1,112 @@
+{
+  "report_id": "dispatch-r318",
+  "sampled_at_utc": "2026-11-13T01:31:39Z",
+  "mode": "authenticated_read_only",
+  "no_subscriber_personal_information": true,
+  "site": "https://finalvestige.com",
+  "newsletter": {
+    "subscriptions": true,
+    "site_can_send": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "reply_to": "no-reply",
+    "from_name": "Final Vestige Studios",
+    "newsletter_categories_enabled": false,
+    "welcome_configured": true,
+    "welcome_fieldbook_pdf": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+    "welcome_delivery_verified": false,
+    "subscriber_dashboard": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "followers_by_source": {
+      "email": 0,
+      "wpcom": 3
+    },
+    "eligible_email_recipients": null,
+    "subscriber_count_semantics": "OVERLAPPING_COUNTS_NOT_ADDITIVE",
+    "recent_post_notification_examples": {
+      "count": 5,
+      "status": "never_sent_opted_out",
+      "meaning": "Only five listed posts; does not establish lifetime sends"
+    },
+    "native_jetpack_preview_verified": false,
+    "valid_publisher_postal_address_verified": false,
+    "functioning_unsubscribe_verified": false
+  },
+  "production_routes": {
+    "dispatch": {
+      "url": "https://finalvestige.com/dispatch/",
+      "page_id": 523,
+      "has_jetpack_subscribe_block": true,
+      "newsletter_content_promise": "Investigations and archive finds when published"
+    },
+    "focus": {
+      "url": "https://finalvestige.com/focus/",
+      "page_id": 1579,
+      "has_jetpack_subscribe_block": true,
+      "download_link_present_on_page": true,
+      "provider_confirmation_verified": false,
+      "download_must_not_count_as_confirmed_signup": true
+    },
+    "editorial_standards": {
+      "url": "https://finalvestige.com/editorial-standards/",
+      "page_id": 17
+    }
+  },
+  "commercial": {
+    "zen12": {
+      "url": "https://zen12.com/",
+      "seller_description": "Beginner: first 6 levels/24 MP3; Premium: 12/48; Advanced: last 6/24",
+      "merchant_benefit_claim_independently_verified": false,
+      "affiliate_account_approved": null,
+      "email_permission": null,
+      "issued_earning_link": null,
+      "guide_live": false,
+      "checkout_terms_verified": false
+    },
+    "total_focus": {
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "seller_description": "33 min, 47MB; seller displays USD 24.44 and 14-day refund",
+      "benefit_claim_independently_verified": false,
+      "affiliate_account_approved": null,
+      "email_permission": null,
+      "issued_earning_link": null,
+      "guide_live": false,
+      "checkout_terms_verified": false
+    },
+    "public_recruitment_url": "https://affiliates.inspire3.com/",
+    "public_recruitment_not_account_acceptance": true
+  },
+  "release": {
+    "canonical_master_pr": 175,
+    "canonical_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "prior_review_pr": 201,
+    "predecessor_pr": 2271,
+    "editorial_issues": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_issues": [
+      3,
+      5
+    ],
+    "all_editions": "HOLD_UNSENT",
+    "commercial": "HOLD_MERCHANT",
+    "founder_final_send_approval": false
+  },
+  "sources": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://wordpress.com/support/newsletter/send-newsletter-emails/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://finalvestige.com/focus/",
+    "https://zen12.com/",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://affiliates.inspire3.com/"
+  ]
+}
