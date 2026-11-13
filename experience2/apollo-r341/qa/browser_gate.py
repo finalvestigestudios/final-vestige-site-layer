@@ -22,9 +22,12 @@ with sync_playwright() as pw:
         page=browser.new_page(viewport={'width':w,'height':950},java_script_enabled=js,
             reduced_motion='reduce',forced_colors='active' if forced else 'none',has_touch=w<=390)
         try:
-            if js:
-                page.add_init_script("window.__fvCLS=0;new PerformanceObserver(l=>l.getEntries().forEach(e=>{if(!e.hadRecentInput)window.__fvCLS+=e.value})).observe({type:'layout-shift',buffered:true});")
-            page.set_content(html,wait_until='load')
+            perf = """<script>window.__fvCLS=0;window.__fvLCP=null;
+            new PerformanceObserver(l=>l.getEntries().forEach(e=>{if(!e.hadRecentInput)window.__fvCLS+=e.value})).observe({type:'layout-shift',buffered:true});
+            new PerformanceObserver(l=>l.getEntries().forEach(e=>window.__fvLCP=e.startTime)).observe({type:'largest-contentful-paint',buffered:true});</script>"""
+            rendered = html.replace('</head>',perf+'</head>',1) if js else html
+            page.set_content(rendered,wait_until='load')
+            page.wait_for_timeout(250)
             data=page.evaluate('''() => ({overflow:document.documentElement.scrollWidth-innerWidth,
               ids:[...document.querySelectorAll('[id]')].map(x=>x.id),
               nasa:document.querySelectorAll('[data-fv-r340-source]').length,
@@ -32,7 +35,7 @@ with sync_playwright() as pw:
               galleries:document.querySelectorAll('[data-fv-r340-gallery]').length,
               ctas:document.querySelectorAll('[data-fv-r339-cta="editorial"]').length,
               cls:window.__fvCLS||0,
-              lcp:(performance.getEntriesByType('largest-contentful-paint').at(-1)||{}).startTime||null})''')
+              lcp:window.__fvLCP??null})''')
             assert data['overflow']<=1 and len(data['ids'])==len(set(data['ids'])),(w,data)
             assert (data['nasa'],data['rails'],data['galleries'],data['ctas'])==(8,2,2,2)
             summary=page.locator('[data-fv-r340-gallery]').first.locator('summary').first
