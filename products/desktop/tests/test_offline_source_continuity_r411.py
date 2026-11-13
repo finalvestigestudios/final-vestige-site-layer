@@ -5,6 +5,8 @@ No financial source, customer data, Windows executable or premium entitlement is
 from __future__ import annotations
 
 from pathlib import Path
+from contextlib import redirect_stdout
+import io
 import stat
 import subprocess
 import tempfile
@@ -58,6 +60,30 @@ class SourceContinuityR411(unittest.TestCase):
         except (OSError, NotImplementedError):
             self.skipTest('Filesystem does not permit symlink creation')
         self.no_spawn(linked / 'desktop')
+
+    def test_cli_rejects_linked_ancestor_before_any_child(self):
+        linked = self.root.parent / 'linked_cli_parent'
+        try:
+            linked.symlink_to(self.root.parent, target_is_directory=True)
+        except (OSError, NotImplementedError):
+            self.skipTest('Filesystem does not permit symlink creation')
+        stream = io.StringIO()
+        cli_file = linked / 'desktop' / 'offline_source_smoke_r408.py'
+        with patch.object(gate, '__file__', str(cli_file)), \
+                patch.object(gate.subprocess, 'run') as fake, redirect_stdout(stream):
+            status = gate.main()
+        self.assertEqual(status, 1)
+        self.assertIn('"release_authorized":false', stream.getvalue())
+        fake.assert_not_called()
+
+    def test_cli_preserves_unlinked_absolute_checkout(self):
+        stream = io.StringIO()
+        with patch.object(gate, '__file__', str(self.root / 'offline_source_smoke_r408.py')):
+            with redirect_stdout(stream):
+                status = gate.main()
+        self.assertEqual(status, 0)
+        self.assertIn('"passed":12', stream.getvalue())
+        self.assertIn('"release_authorized":false', stream.getvalue())
 
     def test_parent_reparse_point_denied_even_with_valid_desktop(self):
         original = Path.lstat
