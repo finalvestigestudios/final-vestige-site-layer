@@ -9,6 +9,8 @@ const SHA40=/^[a-f0-9]{40}$/;
 const SHA256=/^[a-f0-9]{64}$/;
 const https=x=>typeof x==='string'&&/^https:\/\/[^\s/?#]+\//.test(x);
 const natural=n=>Number.isSafeInteger(n)&&n>=0;
+const mimePresent=x=>typeof x==='string'&&/^[a-z0-9][a-z0-9!#const natural=n=>Number.isSafeInteger(n)&&n>=0;^_.+-]*\/[a-z0-9][a-z0-9!#const natural=n=>Number.isSafeInteger(n)&&n>=0;^_.+-]*(?:\s*;\s*[a-z0-9-]+=[a-z0-9._+-]+)*$/i.test(x);
+const decodableImageMime=x=>typeof x==='string'&&/^image\/(?:jpeg|png|gif|webp|avif|bmp|svg\+xml)(?:\s*;.*)?$/i.test(x);
 const positive=n=>Number.isSafeInteger(n)&&n>0;
 const P0=Object.freeze({
  '285:5':{post_id:285,page:'https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/',src:'https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg',catalog:'https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg'},
@@ -45,6 +47,10 @@ function adjudicateP0(packet,review=null,artifacts=null){
   packet.published_original_src!==locked.src||
   !g||!https(g.current_src)||g.current_src!==g.request_url||g.current_src!==locked.src||
   !https(g.final_response_url)||typeof g.cdp_request_id!=='string'||!g.cdp_request_id.trim()||
+  g.resource_type!=='Image'||g.response_request_id!==g.cdp_request_id||
+  g.completion_request_id!==g.cdp_request_id||
+  g.response_url!==g.final_response_url||g.response_http_status!==g.final_status||
+  !mimePresent(g.response_mime_type)||!natural(g.loading_finished_encoded_data_length)||
   g.response_event_provenance!=='CDP_NETWORK_RESPONSE_RECEIVED'||
   g.completion_event_provenance!=='CDP_NETWORK_LOADING_FINISHED'||
   g.page_http_status!==200||g.full_scroll_complete!==true||
@@ -59,7 +65,8 @@ function adjudicateP0(packet,review=null,artifacts=null){
   return hold('MISSING_OR_UNBOUND_ACTUAL_GUEST_CDP_EVIDENCE',slot);
  // Do not call a timeout, wrapper 403 or bare user-provided "broken" label a visitor failure.
  if(g.final_status===200&&g.image_decoded===true&&
-  positive(g.natural_width)&&positive(g.natural_height))
+  positive(g.natural_width)&&positive(g.natural_height)&&
+  decodableImageMime(g.response_mime_type)&&positive(g.loading_finished_encoded_data_length))
   return {...BASE,status:'GUEST_IMAGE_LOADED_KEEP_ORIGINAL',slot,visitor_observation:'CDP_HTTP_200_AND_DECODED',staging_reviewer_packet:null};
  const httpFailed=g.final_status>=400&&g.final_status<=599&&
   g.image_decoded===false&&g.natural_width===0&&g.natural_height===0;
