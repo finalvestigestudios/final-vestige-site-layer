@@ -45,6 +45,13 @@ function compareColdPairVisualParity(pair){
      prev.object_fit!==next.object_fit||
      prev.object_position!==next.object_position)
     return hold('IMAGE_PRESENTATION_OR_CROP_CHANGED',slot);
+  // Preserve framing across cold runs even when a CDN keeps the same URL.
+  // Aspect drift changes cover cropping, contain borders, or fill distortion.
+  const baselineAspect=prev.decoded_selected_physical_width/prev.decoded_selected_physical_height;
+  const candidateAspect=next.decoded_selected_physical_width/next.decoded_selected_physical_height;
+  if(Math.abs(baselineAspect-candidateAspect)>
+     Math.max(.0025,Math.max(baselineAspect,candidateAspect)*.005))
+    return hold('SELECTED_SOURCE_ASPECT_OR_CROP_DRIFT',slot);
   if(prev.current_src!==next.current_src){
    const r=pair.independent_replacement_review?.[slot];
    if(!r||r.original_src!==prev.current_src||r.candidate_src!==next.current_src||
