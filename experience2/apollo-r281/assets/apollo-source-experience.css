@@ -166,3 +166,19 @@
     .fv-r281 details.fv-r296__date-disclosure::details-content{content-visibility:visible!important;display:block!important}
   }
 }
+
+/* R325 — primary NASA evidence links should have comfortable touch targets.
+   Before this fix, long inline source links were 19–22px tall at desktop width.
+   Scope the adjustment to official/contextual links, preserve print URLs and
+   native no-JS anchors. No new links, media or remote assets. */
+@media screen {
+  .fv-r281 a[data-fv-link-purpose] {
+    display:inline-flex;
+    align-items:center;
+    min-height:44px;
+    max-width:100%;
+    min-width:0;
+    box-sizing:border-box;
+    overflow-wrap:anywhere;
+  }
+}
