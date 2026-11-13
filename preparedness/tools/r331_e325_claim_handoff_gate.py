@@ -5,6 +5,10 @@ import argparse, hashlib, json, re
 from pathlib import Path
 
 SCHEMA = "fv-preparedness-r331-e325-crosswalk-draft-hard-hold-v1"
+# Immutable code-level pinned authorities. The JSON handoff is NOT allowed to redefine its own evidence.
+PINNED = json.loads("{\"a_body\":{\"path\":\"preparedness/content/articles/family-communication-plan.body.html\",\"git_blob_sha1\":\"8ac8bd7dba3be15d477c15737e54d83364d72527\"},\"a_meta\":{\"path\":\"preparedness/content/articles/family-communication-plan.meta.json\",\"git_blob_sha1\":\"dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3\"},\"t_body\":{\"path\":\"preparedness/content/tools/family-reunification-card.body.html\",\"git_blob_sha1\":\"be8698ac5d020476ff649d85813810e2000c6f98\"},\"t_meta\":{\"path\":\"preparedness/content/tools/family-reunification-card.meta.json\",\"git_blob_sha1\":\"47da1e7e20e39f0ea85e26d54a8d58301f6e0a15\"}}")
+EXPECTED_WITNESSES = json.loads("[[\"A15-911-SCOPE\",\"a_body\",\"call 911 for anything life-threatening\",\"E325-01\"],[\"T104-911-SCOPE\",\"t_body\",\"call 911 for anything life-threatening\",null],[\"T104-TEXT-EMERGENCY\",\"t_body\",\"use text messages rather than calls for everything else\",null],[\"A15-LOCAL-PRIVACY\",\"a_body\",\"keeps what you type on your own device\",\"E325-04\"],[\"T104-PRIVACY-METADATA\",\"t_meta\",\"Nothing is stored.\",null],[\"A15-UNREVIEWED-CARD-LINK\",\"a_body\",\"{{link:family-reunification-card|\",\"E325-04\"],[\"T104-PRINTED-CHILD-PRIVACY\",\"t_body\",\"A printed card can be lost\",null],[\"A15-MISSING-CHILD\",\"a_body\",\"If a child is missing after a disaster\",\"E325-05\"],[\"T104-MISSING-CHILD\",\"t_body\",\"If a child is missing after a disaster\",null],[\"T104-SCHOOL-REUNIFICATION\",\"t_body\",\"School and childcare reunification\",null],[\"A15-CORDED-SERVICE\",\"a_body\",\"keep at least one corded telephone that does not depend on electricity\",\"E325-02\"],[\"A15-REDCROSS-ARCHIVE\",\"a_body\",\"Red Cross takes welfare-check requests at 1-800-RED CROSS\",\"E325-06\"],[\"A15-NCMEC-ORDER\",\"a_body\",\"If a child is missing after a disaster\",\"E325-05\"],[\"T104-NCMEC-ORDER\",\"t_body\",\"If a child is missing after a disaster\",null],[\"A15-SCHOOL-LOCALITY\",\"a_body\",\"Colorado's Office of School Safety describes reunification as \\\"not a normal pick-up\\\"\",\"E325-05\"],[\"T104-SCHOOL-LOCALITY\",\"t_body\",\"Colorado's Office of School Safety, as one state's example\",null],[\"A15-RESEARCH-NOT-OPENED\",\"a_body\",\"We did not open the Ready.gov fillable PDF card, the Red Cross's Reconnecting Families program\",\"E325-06\"]]")
+EXPECTED_GATES = set(json.loads("[\"publication_authorized\",\"independent_qd_pass\",\"source_claim_support_verified\",\"qualified_emergency_review\",\"child_privacy_approved\",\"tool104_release_approved\",\"paid_preparedness_offer_verified\"]"))
 
 def blob(data):
     return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
@@ -26,14 +30,18 @@ def inspect(docs, manifest, *, simulated=False):
     issues=manifest.get("original_review_witnesses")
     directions=manifest.get("editorial_directions")
     gates=manifest.get("gates")
-    if not isinstance(src,dict) or set(src)!={"a_body","a_meta","t_body","t_meta"}: errors.append("INVALID_SOURCE_SCOPE");src={}
+    if not isinstance(src,dict) or src!=PINNED: errors.append("IMMUTABLE_SOURCE_PIN_OR_PATH_DRIFT");src={}
     if not isinstance(docs,dict) or set(docs)!=set(src): errors.append("MISSING_SOURCE_ROLES");docs={}
     if not isinstance(directions,dict) or set(directions)!={f"E325-{i:02d}" for i in range(1,8)}:
         errors.append("SEVEN_EDITORIAL_DIRECTIONS_REQUIRED");directions={}
-    if not isinstance(gates,dict) or not gates or any(v is not False for v in gates.values()):
+    if not isinstance(gates,dict) or set(gates)!=EXPECTED_GATES or any(v is not False for v in gates.values()):
         errors.append("FORGED_RELEASE_OR_SAFETY_CLEARANCE")
     if not isinstance(issues,list) or len(issues)!=17 or len({r.get("id") for r in issues if isinstance(r,dict)})!=17:
         errors.append("SEVENTEEN_UNIQUE_UNRESOLVED_REVIEWS_REQUIRED");issues=[]
+    if issues:
+        actual=[(r.get("id"),r.get("source_role"),r.get("exact_anchor"),r.get("editorial_candidate")) for r in issues if isinstance(r,dict)]
+        if len(actual)!=17 or sorted(actual)!=sorted(tuple(x) for x in EXPECTED_WITNESSES):
+            errors.append("IMMUTABLE_REVIEW_ID_OR_ANCHOR_DRIFT")
     text={};meta={}
     for role,rec in src.items():
         if not isinstance(rec,dict) or not str(rec.get("path","")).startswith("preparedness/content/"):
