@@ -1,11 +1,11 @@
 'use strict';
 const{test}=require('node:test'),assert=require('node:assert/strict');
-const{imageIdentity,sameSource,matchStoredImages,classifyImages,pageHostVerified,countTransfer}=require('./browser_probe_core.cjs');
+const{imageIdentity,sameSource,matchStoredImages,classifyImages,pageHostVerified,countTransfer,scopeArticleImageWire}=require('./browser_probe_core.cjs');
 const source=[{key:'1:0',source_url:'https://www.history.uscg.mil/Portals/6/example.jpg',alt:'Historic Coast Guard photo'}];
 const rendered=[{src:'https://www.history.uscg.mil/Portals/6/example.jpg',currentSrc:'https://www.history.uscg.mil/Portals/6/example.jpg',alt:'Historic Coast Guard photo',complete:true,naturalWidth:0}];
 test('Jetpack proxy preserves third-party origin',()=>{assert.equal(imageIdentity('https://i0.wp.com/text-message.blogs.archives.gov/a/picture.jpg?ssl=1'),'https://text-message.blogs.archives.gov/a/picture.jpg');assert.equal(imageIdentity('https://i0.wp.com/finalvestige.com/wp-content/uploads/x.jpg?fit=960%2C600'),'https://finalvestige.com/wp-content/uploads/x.jpg')});
 test('sameSource ignores resizing query, not hostname',()=>{assert.ok(sameSource('https://example.org/a.jpg','https://example.org/a.jpg?width=960'));assert.equal(sameSource('https://x.org/a.jpg','https://y.org/a.jpg'),false)});
-test('browser failure requires failed response and naturalWidth zero',()=>{const d=classifyImages(source,[{...rendered[0],naturalHeight:0}],[{url:rendered[0].src,status:403,encodedDataLength:0,was_cached:false,from_disk_cache:false,from_service_worker:false}],true)[0];assert.equal(d.result,'confirmed_broken_in_probe_browser');assert.equal(d.verified_broken_in_browser,true)});
+test('browser failure requires failed response and naturalWidth zero',()=>{const d=classifyImages(source,[{...rendered[0],naturalHeight:0}],[{url:rendered[0].src,status:403,encodedDataLength:0,was_cached:false,from_disk_cache:false,from_memory_cache:false,from_service_worker:false}],true)[0];assert.equal(d.result,'confirmed_broken_in_probe_browser');assert.equal(d.verified_broken_in_browser,true)});
 test('redirect to an unrelated final image does not count as source 404',()=>{const d=classifyImages(source,rendered,[{url:'https://cdn.example.org/final.jpg',url_aliases:[rendered[0].src],status:404}],true)[0];assert.equal(d.result,'redirected_image_identity_unverified');assert.equal(d.verified_broken_in_browser,null)});
 test('viewer 403 alone is never browser evidence',()=>{const d=classifyImages(source,rendered,[],true)[0];assert.equal(d.result,'zero_intrinsic_width_needs_review');assert.equal(d.verified_broken_in_browser,null)});
 test('403 response without visual failure is not broken',()=>{const d=classifyImages(source,[{...rendered[0],naturalWidth:640}],[{url:rendered[0].src,status:403}],true)[0];assert.equal(d.result,'decoded_without_verified_response');assert.equal(d.verified_broken_in_browser,null)});
@@ -17,3 +17,23 @@ test('article and requested URL must survive navigation',()=>{const u='https://f
 test('network wire bytes are counted without placeholders',()=>assert.equal(countTransfer([{encodedDataLength:100},{encodedDataLength:200},{encodedDataLength:null},{encodedDataLength:-1}]),300));
 
 test('preserves natural height for geometric integrity check',()=>{const d=classifyImages(source,[{...rendered[0],naturalHeight:480}],[],true)[0];assert.equal(d.natural_height,480);const m=classifyImages(source,rendered,[],true)[0];assert.equal(m.natural_height,null)});
+
+test('memory-cached HTTP 404 never becomes a proven broken original',()=>{
+ const r={...rendered[0],naturalWidth:0,naturalHeight:0};
+ const n={url:r.src,status:404,encodedDataLength:0,was_cached:false,from_disk_cache:false,from_memory_cache:true,from_service_worker:false};
+ const d=classifyImages(source,[r],[n],true)[0];
+ assert.notEqual(d.result,'confirmed_broken_in_probe_browser');assert.equal(d.verified_broken_in_browser,null);
+});
+test('missing memory provenance cannot certify loaded images',()=>{
+ const r={...rendered[0],naturalWidth:960,naturalHeight:720};
+ const n={url:r.src,status:200,mime_type:'image/jpeg',encodedDataLength:240,was_cached:false,from_disk_cache:false,from_service_worker:false};
+ const d=classifyImages(source,[r],[n],true)[0];
+ assert.notEqual(d.result,'loaded_in_probe_browser');assert.equal(d.verified_broken_in_browser,null);
+});
+test('memory-cache image requests never qualify as cold article bytes',()=>{
+ const r={...rendered[0],naturalWidth:960,naturalHeight:720};
+ const n={url:r.src,request_id:'r1',status:200,mime_type:'image/jpeg',encodedDataLength:240,was_cached:false,from_disk_cache:false,from_memory_cache:true,from_service_worker:false};
+ const slot=classifyImages(source,[r],[n],true)[0];
+ const v=scopeArticleImageWire([slot],[n]);
+ assert.equal(v.article_bytes,null);
+});
