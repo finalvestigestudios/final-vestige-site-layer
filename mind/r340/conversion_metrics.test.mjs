@@ -1,0 +1,10 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {computeNetRevenue,paidConversionRate,validateCampaign,validateEvent} from "./conversion_metrics.mjs";
+const good={utm_source:"tiktok",utm_medium:"organic_social",utm_campaign:"mind_blink_2026_11",asset_id:"grok_asset_id_pending"};
+test("rejects PII and bogus campaign inputs",()=>{assert.equal(validateCampaign(good),true); assert.equal(validateCampaign({...good,email:"example@example.invalid"}),false);assert.equal(validateCampaign({...good,utm_medium:"paid"}),false);assert.equal(validateCampaign({...good,asset_id:""}),false)});
+test("outbound affiliate click cannot self-report paid revenue",()=>{assert.equal(validateEvent({type:"affiliate_click",date:"2026-11-13",asset_id:"grok_asset_id_pending"}),true); assert.equal(validateEvent({type:"affiliate_click",date:"2026-11-13",asset_id:"grok_asset_id_pending",revenue:50}),false)});
+test("merchant conversion requires verified provider ID",()=>{assert.equal(validateEvent({type:"merchant_confirmed_commission",date:"2026-11-13",provider_verified:false,provider_id:"abc"}),false);assert.equal(validateEvent({type:"merchant_confirmed_order",date:"2026-11-13",provider_verified:true,provider_id:"order_fixture"}),true)});
+test("missing settlement or denominator prevents fabricated KPI",()=>{assert.equal(computeNetRevenue({qualifiedHumanSessions:0,grossPaid:0,refunds:0,fees:0,commissions:0}).status,"NOT_COMPUTABLE");assert.equal(computeNetRevenue({qualifiedHumanSessions:100,grossPaid:100,refunds:0,fees:10,commissions:0,settledOnly:false}).status,"NOT_COMPUTABLE")});
+test("explicit synthetic settlement computes net, never claims real sale",()=>{const s=computeNetRevenue({qualifiedHumanSessions:200,grossPaid:250,commissions:15,refunds:30,fees:10});assert.equal(s.netRevenue,225);assert.equal(s.per1000,1125);assert.equal(s.tinySample,false);assert.equal(paidConversionRate({orders:2,qualifiedHumanSessions:200}),.01)});
+test("small synthetic samples must carry warning",()=>{const s=computeNetRevenue({qualifiedHumanSessions:12,grossPaid:10,commissions:0,refunds:0,fees:1});assert.equal(s.tinySample,true)});
