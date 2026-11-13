@@ -42,12 +42,12 @@ class SpendVendorIntegrationR358(unittest.TestCase):
                          preserve_spend_vendor_source=True)
             self.assertEqual(rows[0]['vendor'], '\u00a0ACME')
 
-    def test_default_csv_import_retains_prior_behavior(self):
+    def test_default_csv_import_retains_exact_vendor_source(self):
         with TemporaryDirectory() as folder:
             root = Path(folder)
             source = fixture(root, '\u00a0ACME')
             rows = table(source, ('vendor', 'amount', 'date'), ('category',))
-            self.assertEqual(rows[0]['vendor'], 'ACME')
+            self.assertEqual(rows[0]['vendor'], '\u00a0ACME')
 
     def test_spendmap_flags_normalized_only_nbsp_collision(self):
         with TemporaryDirectory() as folder:
@@ -77,11 +77,12 @@ class SpendVendorIntegrationR358(unittest.TestCase):
             self.assertNotIn('normalized_vendor_collision_review', row['flag'])
             self.assertEqual(row['vendor_label_variants'], '1')
 
-    def test_ascii_whitespace_keeps_legacy_source_labels(self):
+    def test_ascii_whitespace_is_visible_and_requires_review(self):
         with TemporaryDirectory() as folder:
             row = rows_from_spend(Path(folder), ' ACME ', 'ACME')[0]
-            self.assertNotIn('normalized_vendor_collision_review', row['flag'])
-            self.assertEqual(row['source_vendor_labels'], 'ACME')
+            self.assertIn('normalized_vendor_collision_review', row['flag'])
+            self.assertEqual(row['vendor_label_variants'], '2')
+            self.assertEqual(row['source_vendor_labels'], r'\u0020ACME\u0020; ACME')
 
     def test_genuine_direct_summarizer_flags_unicode_source(self):
         rows = [dict(row='2', vendor='ACME', amount='100.00', date='2026-11-01'),
