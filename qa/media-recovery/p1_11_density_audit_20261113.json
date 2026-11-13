@@ -1,0 +1,331 @@
+{
+  "schema": "fv-11-oversize-density-bridge-v1",
+  "capture_date_local": "2026-11-13",
+  "provenance": {
+    "worklist_pr": 183,
+    "worklist_path": "docs/IMAGE-WEIGHT-WORKLIST.md",
+    "worklist_blob": "2acd06a4ca4317646006eb6591face3fe76fedec",
+    "source_15_blob": "5e474e1cb293353b2226d84fceedca0a182894d8",
+    "media_recovery_pr": 1703,
+    "site_qa_pr": 154,
+    "historical_census": "61 posts / 355 inline slots; expanded 66 / 361 not conflated"
+  },
+  "metrics": {
+    "eleven_inline_originals": 11,
+    "eight_posts": 8,
+    "total_stored_bytes": 38480915,
+    "direct_original_stored_bytes": 25162604,
+    "jetpack_original_stored_bytes": 13318311,
+    "guest_wire_baseline_bytes": null,
+    "guest_wire_candidate_bytes": null,
+    "claimed_76_percent_verified": false,
+    "visitor_confirmed_broken": null
+  },
+  "rows": [
+    {
+      "media_id": 39,
+      "post_id": 34,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "stored_original_bytes": 2892087,
+      "native_px": [
+        1672,
+        941
+      ],
+      "conditional_960px": [
+        960,
+        540
+      ],
+      "generated_subsizes": 0,
+      "embedding_kind": "DIRECT",
+      "editorial_gate": "CREATOR_RIGHTS_AND_SCENE_PARITY",
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_wire_bytes": null,
+      "guest_css_width": null,
+      "guest_dpr": null,
+      "candidate_wire_bytes": null,
+      "rights_release_authorized": false,
+      "derivative_created": false
+    },
+    {
+      "media_id": 40,
+      "post_id": 35,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "stored_original_bytes": 2552136,
+      "native_px": [
+        1672,
+        941
+      ],
+      "conditional_960px": [
+        960,
+        540
+      ],
+      "generated_subsizes": 0,
+      "embedding_kind": "DIRECT",
+      "editorial_gate": "CREATOR_RIGHTS_AND_SCENE_PARITY",
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_wire_bytes": null,
+      "guest_css_width": null,
+      "guest_dpr": null,
+      "candidate_wire_bytes": null,
+      "rights_release_authorized": false,
+      "derivative_created": false
+    },
+    {
+      "media_id": 41,
+      "post_id": 36,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "stored_original_bytes": 2498247,
+      "native_px": [
+        1672,
+        941
+      ],
+      "conditional_960px": [
+        960,
+        540
+      ],
+      "generated_subsizes": 0,
+      "embedding_kind": "DIRECT",
+      "editorial_gate": "CREATOR_RIGHTS_AND_SCENE_PARITY",
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_wire_bytes": null,
+      "guest_css_width": null,
+      "guest_dpr": null,
+      "candidate_wire_bytes": null,
+      "rights_release_authorized": false,
+      "derivative_created": false
+    },
+    {
+      "media_id": 42,
+      "post_id": 37,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "stored_original_bytes": 2488823,
+      "native_px": [
+        1672,
+        941
+      ],
+      "conditional_960px": [
+        960,
+        540
+      ],
+      "generated_subsizes": 0,
+      "embedding_kind": "DIRECT",
+      "editorial_gate": "CREATOR_RIGHTS_AND_SCENE_PARITY",
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_wire_bytes": null,
+      "guest_css_width": null,
+      "guest_dpr": null,
+      "candidate_wire_bytes": null,
+      "rights_release_authorized": false,
+      "derivative_created": false
+    },
+    {
+      "media_id": 43,
+      "post_id": 38,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "stored_original_bytes": 2836245,
+      "native_px": [
+        1672,
+        941
+      ],
+      "conditional_960px": [
+        960,
+        540
+      ],
+      "generated_subsizes": 0,
+      "embedding_kind": "DIRECT",
+      "editorial_gate": "CREATOR_RIGHTS_AND_SCENE_PARITY",
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_wire_bytes": null,
+      "guest_css_width": null,
+      "guest_dpr": null,
+      "candidate_wire_bytes": null,
+      "rights_release_authorized": false,
+      "derivative_created": false
+    },
+    {
+      "media_id": 1257,
+      "post_id": 621,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "stored_original_bytes": 4798395,
+      "native_px": [
+        4000,
+        3000
+      ],
+      "conditional_960px": [
+        960,
+        720
+      ],
+      "generated_subsizes": 7,
+      "embedding_kind": "DIRECT",
+      "editorial_gate": "ARCHIVAL_ITEM_RIGHTS",
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_wire_bytes": null,
+      "guest_css_width": null,
+      "guest_dpr": null,
+      "candidate_wire_bytes": null,
+      "rights_release_authorized": false,
+      "derivative_created": false
+    },
+    {
+      "media_id": 1258,
+      "post_id": 621,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "stored_original_bytes": 5553669,
+      "native_px": [
+        5667,
+        3831
+      ],
+      "conditional_960px": [
+        960,
+        649
+      ],
+      "generated_subsizes": 7,
+      "embedding_kind": "DIRECT",
+      "editorial_gate": "ARCHIVAL_ITEM_RIGHTS",
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_wire_bytes": null,
+      "guest_css_width": null,
+      "guest_dpr": null,
+      "candidate_wire_bytes": null,
+      "rights_release_authorized": false,
+      "derivative_created": false
+    },
+    {
+      "media_id": 1714,
+      "post_id": 269,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png",
+      "stored_original_bytes": 1543002,
+      "native_px": [
+        1280,
+        1280
+      ],
+      "conditional_960px": [
+        960,
+        960
+      ],
+      "generated_subsizes": 5,
+      "embedding_kind": "DIRECT",
+      "editorial_gate": "MAP_LABEL_ZOOM_AND_AUTHOR_RIGHTS",
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_wire_bytes": null,
+      "guest_css_width": null,
+      "guest_dpr": null,
+      "candidate_wire_bytes": null,
+      "rights_release_authorized": false,
+      "derivative_created": false
+    },
+    {
+      "media_id": 388,
+      "post_id": 299,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg",
+      "published_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=1024%2C681&ssl=1",
+      "stored_original_bytes": 8176362,
+      "native_px": [
+        4256,
+        2832
+      ],
+      "conditional_960px": [
+        960,
+        639
+      ],
+      "generated_subsizes": 7,
+      "embedding_kind": "JETPACK",
+      "editorial_gate": "EXISTING_CDN_TRANSFORM_AND_RIGHTS",
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_wire_bytes": null,
+      "guest_css_width": null,
+      "guest_dpr": null,
+      "candidate_wire_bytes": null,
+      "rights_release_authorized": false,
+      "derivative_created": false
+    },
+    {
+      "media_id": 389,
+      "post_id": 299,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg",
+      "published_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1024%2C676&ssl=1",
+      "stored_original_bytes": 2822969,
+      "native_px": [
+        2147,
+        1417
+      ],
+      "conditional_960px": [
+        960,
+        634
+      ],
+      "generated_subsizes": 7,
+      "embedding_kind": "JETPACK",
+      "editorial_gate": "EXISTING_CDN_TRANSFORM_AND_RIGHTS",
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_wire_bytes": null,
+      "guest_css_width": null,
+      "guest_dpr": null,
+      "candidate_wire_bytes": null,
+      "rights_release_authorized": false,
+      "derivative_created": false
+    },
+    {
+      "media_id": 382,
+      "post_id": 299,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+      "published_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=1024%2C683&ssl=1",
+      "stored_original_bytes": 2318980,
+      "native_px": [
+        1800,
+        1200
+      ],
+      "conditional_960px": [
+        960,
+        640
+      ],
+      "generated_subsizes": 6,
+      "embedding_kind": "JETPACK",
+      "editorial_gate": "EXISTING_CDN_TRANSFORM_AND_RIGHTS",
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_wire_bytes": null,
+      "guest_css_width": null,
+      "guest_dpr": null,
+      "candidate_wire_bytes": null,
+      "rights_release_authorized": false,
+      "derivative_created": false
+    }
+  ],
+  "methodology": {
+    "css_density_formula": "source_pixel_width / (rendered_css_width * device_pixel_ratio)",
+    "for_960_px_dpr2_max_css_width": 480,
+    "for_960_px_dpr3_max_css_width": 320,
+    "no_upscale": true,
+    "do_not_assume_declared_html_width_equals_css": true,
+    "cold_wire_savings_formula": "(sum_baseline_Image_encodedDataLength - sum_candidate_Image_encodedDataLength) / sum_baseline_Image_encodedDataLength; only matched successful uncached requests with stable source/scene; use Site QA collector",
+    "do_not_equate_original_storage_with_transfer": true,
+    "do_not_automatically_downscale_maps": true
+  },
+  "safety": {
+    "wordpress_writes": 0,
+    "image_downloads": 0,
+    "media_caching": 0,
+    "home_design_changes": 0,
+    "subscription_spend_usd": 0,
+    "qa_collector": "Site QA #154",
+    "production_release_approved": false
+  }
+}
