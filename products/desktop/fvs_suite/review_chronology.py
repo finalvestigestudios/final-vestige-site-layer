@@ -7,20 +7,42 @@ never approves a financial exception or silently repairs journal history.
 from __future__ import annotations
 
 from datetime import datetime, timedelta, timezone
+import re
+
+# datetime.fromisoformat accepts week dates, compact forms, arbitrary date/time
+# separators, and fractional seconds beyond its six-digit resolution (which
+# it silently truncates). A hash-linked human review must never let those
+# alternate serializations mask the event's ordering or effective instant.
+# Preserve documented historical UTC suffixes and 1-6 fractional digits;
+# new journal records are emitted with whole seconds and +00:00.
+_REVIEW_UTC = re.compile(
+    r"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}"
+    r"(?:\.[0-9]{1,6})?(?:Z|[+-]00:00)\Z",
+    re.ASCII,
+)
 
 
 def parse_review_utc(value: object) -> datetime:
-    """Accept finite ISO-8601 UTC instants only, without logging private input."""
-    if type(value) is not str or not value or len(value) > 64 or value != value.strip():
+    """Accept bounded unambiguous UTC instants without leaking input/context.
+
+    The parser explicitly refuses precision beyond microseconds rather than
+    silently truncating a signed/hash-linked journal field.
+    """
+    if (type(value) is not str or len(value) > 64
+            or _REVIEW_UTC.fullmatch(value) is None):
         raise ValueError("Review journal has an invalid UTC timestamp")
+    invalid_calendar = False
     try:
         result = datetime.fromisoformat(value)
-        if result.tzinfo is None or result.utcoffset() != timedelta(0):
-            raise ValueError
-    except (ValueError, TypeError, OverflowError) as exc:
-        raise ValueError("Review journal has an invalid UTC timestamp") from exc
+    except (ValueError, TypeError, OverflowError):
+        invalid_calendar = True
+    # Translation occurs OUTSIDE the exception handler: 'from None' would
+    # still retain the private parse exception in __context__.
+    if invalid_calendar:
+        raise ValueError("Review journal has an invalid UTC timestamp")
+    if result.utcoffset() != timedelta(0):
+        raise ValueError("Review journal has an invalid UTC timestamp")
     return result.astimezone(timezone.utc)
-
 
 def check_record_order(previous: datetime | None, recorded: object) -> datetime:
     """Reject backwards timestamps; equal-second decisions remain permissible."""
