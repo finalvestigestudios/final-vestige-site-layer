@@ -1,0 +1,35 @@
+# Bohemia Spillway — successive statutory amendments and deed encumbrance verification
+**Final Vestige Investigations | 13 November 2026 (America/Los_Angeles) | Editorial / source audit, NOT a release authorization**
+
+## Work carried forward
+The existing [Bohemia companion manuscript](https://github.com/finalvestigestudios/final-vestige-site-layer/blob/main/docs/editorial/bohemia-spillway-2026-11-12-land-roster-rights-claim-investigation-draft.md) was advanced **v1.5 → v1.6** without touching the companion Caernarvon WordPress post, issue templates, global site files or other agents' drafts. Commit **8673fbc92643a001f70c061276f943255a06912d**; source ledger expanded **34 → 35** consecutively numbered entries. New narrative section: **“The deed could come back with the lease still attached”**, **582 whitespace-delimited section words including heading and citation markers**, before the 1925 application-ledger section.
+
+## Primary record / judicial reproductions actually consulted
+1. **La. Court of Appeal, Fourth Circuit, *Vogt v. Board of Levee Commissioners*, 680 So. 2d 149, 95-CA-1187, September 4, 1996.** Full judicial-opinion reproduction: https://app.midpage.ai/document/vogt-v-board-of-levee-1634675 . Verified the full historical-law section and specifically the passages quoting Acts **233 (1984)**, **819 (1985)** and **847 (1992)**. These are **court-reproduced legislative passages, not scans of the original enrolled laws**.
+2. **La. Court of Appeal, First Circuit, *Plaquemines Parish Government v. Department of Natural Resources*, No. 2008 CA 2094, September 10, 2009.** Opinion reproduction: https://caselaw.findlaw.com/court/la-court-of-appeal/1195376.html . Verified reasoning distinguishing public-government legislative transfers from expropriated private land and footnote 6 quoting the relevant **1997 Act 1364** revenue provision. Already manuscript source [20].
+3. **Bohemia *Gomez* 1992/1993 tax-adjudication litigation:** previously documented [16] remains background; **no new certified deed, payment record or dispositive later docket was retrieved** during this cycle.
+
+## Claims supported, with necessary limits
+- **1984 Section 5**, as quoted in 1996, applied saved servitudes/rights-of-way/leases/contracts to those executed **before the law's effective date**.
+- The quoted **1985 Act 819 Section 5** references contracts executed **before board action under Section 4** instead. This changes the textual cutoff for potentially surviving agreements, **but does not establish that any particular contract was valid, enforceable, or still running**.
+- Quoted **1985 Section 4** specifies board action within **60 days** of a DNR certification; an aggrieved applicant's judicial-review deadline is **30 days after written notice**. Statutory requirements are **not proof of timely deeds or court dispositions**.
+- Quoted **1992 Act 847** extends the list of prior acquisition descriptions, mentioning **acts of convenience**, **other transfers**, and **sales/transfers after nonpayment-of-tax adjudication**. It is not evidence that every claimant in that category won a deed. The **2009** decision separately held that statutory restitu­tion under the relevant constitutional exception did not cover a former public levee district's lands acquired by legislative acts.
+- The 2009 decision's **footnote 6** quotes **1997 Act 1364** concerning revenues since **June 29, 1984** on qualifying expropriated / threatened-expropriation property. A statutory directive is **not a claimant-specific payment receipt**. The complete enrolled 1997 statute and modifications through 2026 have not been inspected.
+- No statement here is current legal guidance or evidence of an outstanding obligation as of November 2026.
+
+## Collision and current site checks
+- Live https://finalvestige.com/blog/ returned **66 published investigations**, most recent November 2; no Bohemia article was present in the current live Journal listing.
+- Authenticated https://finalvestige.com/editorial-standards/ WordPress page #17 was read: disputes stay visible, source and image provenance required, substantial corrections dated.
+- WordPress **draft #2151** (“The Levee They Blew on Purpose”) was independently fetched with **status=draft**, **modified 2026-11-12T12:44:30** site local, featured media **#2148**, meta **_jetpack_dont_email_post_to_subs=true**, **jetpack_publicize_feature_enabled=false**. **No WordPress edits made in this run.**
+- GitHub editorial owner **#1463** read; authenticated-production-theme QA ticket **#1589 OPEN**. No newly published matching post and no evidence an agent had cleared the QA hold.
+
+## Visual provenance / release gate
+- The existing FV-original, locally sourced SVG diagrams were preserved unchanged: Bohemia historical chronology, three waterworks chronology, 1956 royalty decree revision, and Neptune Pass 2023/2025 evidence graphics in both desktop and mobile versions. These are **original data-based diagrams**, not historical photos and not AI recreations of documented scenes.
+- **No new third-party image or footage cleared during this cycle.** NASA Earth Observatory Mardi Gras/Neptune materials remain documentary candidates; before WordPress inclusion, full-size files, credits, third-party component rights and visible pixels must be checked. No image files or WordPress media modified.
+- Missing: authenticated WordPress preview and rendered production-theme screenshots at **390px and 1440px** for the current Caernarvon draft; some underlying Corps / USGS document checks for Caernarvon; original 1925 committee record and enrolled 1984, 1985, 1992, 1997 statutes; deed/lease instrument and claimant-payment checks for Bohemia; current Neptune as-built and discharge; responsive, WordPress-local photographic treatment and final legal/editorial review. **Do not publish either investigation on the strength of this audit.**
+
+## Potential Grok distribution brief (handoff only)
+Evidence-led angle after final publication: “The state returned land to former owners, but the deed could still carry old leases.” Lead with **1984 vs 1985 lease-cutoff difference** and **1992 tax-adjudication eligibility wording**; explicitly say these were *judicially reproduced statutes*, not proof any family's claim or payout. **No TikTok, YouTube, social distribution, mailing or subscriber communication performed.**
+
+## Run disposition
+New research and substantial prose committed, source ledger expanded, no paid tools or services. **Publication: HOLD.** New article is still an editorial draft. No homepage, shared template or unrelated WordPress changes.
