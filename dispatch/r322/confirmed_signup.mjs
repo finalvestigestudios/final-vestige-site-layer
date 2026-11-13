@@ -16,8 +16,8 @@ export function classifyConfirmedSignups(providerEvents, sessionEvents=[], windo
   if(!s||typeof s!=='object'||Array.isArray(s))throw Error('BAD_SESSION');
   if(s.source!=='authenticated_first_party_session'||s.human_verified!==true||!requiredRef(s.source_ref)||!requiredRef(s.join_ref)||!requiredRef(s.session_ref)||!requiredRef(s.asset_id)||s.utm_content!==s.asset_id||s.utm_medium!=='organic_social'||!requiredRef(s.utm_source)||!requiredRef(s.utm_campaign)||iso(s.at)===null){reasons.push('SESSION_UNPROVEN');continue}
   const signature=JSON.stringify([s.session_ref,s.asset_id,s.utm_source,s.utm_campaign,s.at]);
-  if(joins.has(s.join_ref)&&joins.get(s.join_ref)!==signature)throw Error('ATTRIBUTION_JOIN_CONFLICT');
-  joins.set(s.join_ref,signature);
+  if(joins.has(s.join_ref)&&joins.get(s.join_ref).signature!==signature)throw Error('ATTRIBUTION_JOIN_CONFLICT');
+  joins.set(s.join_ref,{signature,at:iso(s.at)});
  }
  for(const e of providerEvents){
   if(!e||typeof e!=='object'||Array.isArray(e))throw Error('BAD_PROVIDER_ROW');
@@ -37,7 +37,7 @@ export function classifyConfirmedSignups(providerEvents, sessionEvents=[], windo
   seenSubjects.add(e.subject_ref);
   if(e._time<=start||e._time>end)continue;
   confirmed++;if(e.confirmation_route==='email_link')email++;else account++;
-  if(requiredRef(e.join_ref)&&joins.has(e.join_ref))attributed++;
+  if(requiredRef(e.join_ref)&&joins.has(e.join_ref)){const s=joins.get(e.join_ref);if(s.at<=e._time&&e._time-s.at<=30*86400000)attributed++;}
  }
  return Object.freeze({confirmed_signup:confirmed,email_link_confirmed:email,existing_wp_account_activated:account,attributed_confirmed_signup:attributed,rejected_evidence:reasons.length,mail_actions:0,eligible_recipient_count:null,trust_boundary:'INPUTS_MUST_BE_AUTHENTICATED_PRIVATELY_NOT_LIVE_DATA'});
 }
