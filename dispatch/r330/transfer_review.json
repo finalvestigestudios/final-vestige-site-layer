@@ -1,0 +1,87 @@
+{
+  "artifact": "dispatch_r330_post_backed_transfer_contract",
+  "review_only": true,
+  "not_authorized_to_create_wordpress_post": true,
+  "not_authorized_to_publish": true,
+  "not_authorized_to_send": true,
+  "source_master_pr": 175,
+  "source_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stacked_on_pr": 2343,
+  "stacked_on_sha": "8d6f7531d04f85f1995e7805c29343d273ca1a97",
+  "wordpress_observation": {
+    "as_of_utc": "2026-11-13T13:34:27Z",
+    "newsletter_enabled": true,
+    "new_post_email_default": false,
+    "email_content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "counts": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2
+    },
+    "eligible_recipients": "UNKNOWN",
+    "welcome_content_configured": true,
+    "welcome_delivered": "UNKNOWN",
+    "real_inbox_unsubscribe_tested": false,
+    "valid_publisher_postal_address_verified": false,
+    "recent_five_posts_email_status": "never_sent_opted_out; do not extrapolate lifetime sends"
+  },
+  "preheader_note": "proposed only; not established as a native independently controllable or received preheader",
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "subject": "The mind is not a camera",
+      "proposed_preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "state": "HOLD_UNSENT"
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "subject": "Before hypnosis had a name",
+      "proposed_preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "state": "HOLD_UNSENT"
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "subject": "The twelve-minute meditation question",
+      "proposed_preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "cta": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]",
+      "state": "HOLD_UNSENT_AND_MERCHANT"
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "proposed_preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "state": "HOLD_UNSENT"
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "subject": "Before you press play on a hypnosis audio",
+      "proposed_preheader": "Three questions that matter more than an impressive promise.",
+      "cta": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+      "state": "HOLD_UNSENT_AND_MERCHANT"
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "proposed_preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "cta": "https://finalvestige.com/focus/",
+      "state": "HOLD_UNSENT"
+    }
+  ],
+  "native_jetpack_preview": "NOT_PERFORMED",
+  "first_party_url_permissions": "NOT_AUTHORIZED",
+  "approved_merchant_email_promotion": "NOT_VERIFIED",
+  "founder_final_send_approval": false,
+  "merchant_paid_orders_verified": false,
+  "revenue_per_1000_qualified_humans": "NOT_COMPUTABLE"
+}

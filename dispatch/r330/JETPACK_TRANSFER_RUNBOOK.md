@@ -1,0 +1,38 @@
+# R330 — Jetpack-native post-to-email transfer: zero-send acceptance protocol
+
+**UNSENT / NON-PRODUCTION / NO POST CREATION AUTHORIZED.** Source master [PR #175](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175), canonical six-edition offline previews [#2337](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2337), actual received-MIME reviewer [#2343](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2343), owner Issue [#174](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174).
+
+## New mismatch that matters more than another HTML preview
+
+A Jetpack Newsletter email is **post-backed**. It is not an arbitrary delivered HTML template with standalone subject and preheader fields. WordPress documents that the **post title becomes the email subject**, its native renderer supplies the appearance, and current site setting is **FULL** content. [Official send guide](https://wordpress.com/support/newsletter/send-newsletter-emails/), [appearance and preview guide](https://wordpress.com/support/newsletter/email-appearance/), each reviewed November 9, 2026.
+
+The 12 offline assets in R328 are source-preserving review files, **not native Jetpack rendering**. Directly transferring an original Markdown file into a WordPress post risks exposing internal wording such as `UNSENT DRAFT`, `DO NOT PUBLISH OR EMAIL`, legal placeholders and merchant-guide hold tokens as subscriber-facing copy. Even an internally sound campaign cannot be published without a deliberately cleaned, founder-approved post body. **R330 adds an intermediate transfer gate, not more duplicate HTML emails.**
+
+The manifest's six preheaders remain **proposals**, not evidence that the Jetpack inbox will display them as separate preheaders. Never promise a subject/preheader pairing in a review presentation until the received email demonstrates it. The current sender setting is `from_name="Final Vestige Studios"`, `reply_to=no-reply`. Therefore do not include a call to 'reply to this message' in issued copy. Per WordPress, the underlying sender address is a WordPress-managed address, not a custom Final Vestige mailbox; sender display alone does not prove legal issuer address.
+
+## Source-verified live read-only status — 2026-11-13 13:34:27 UTC
+
+- Jetpack subscriptions enabled, site_can_send=true, no configured send blockers. **Ability to send is NOT authority to send.**
+- `email_new_posts_by_default=false`; full post text; welcome configured to link the 52-page Focus Fieldbook. Actual inbox receipt and download completion have NOT been witnessed.
+- Diagnostic counters: total 3, confirmed 3, unconfirmed 2. These are internally overlapping categories. Do **not** sum to 8 or infer 3 deliverable email recipients. The separate WP.com Reader follower and email channel dimensions are not additive.
+- Five recent posts are `never_sent_opted_out`; do **not** claim zero lifetime sends.
+- Public /dispatch/ (page 523), /focus/ (page 1579), and /editorial-standards/ (page 17) were inspected via authenticated read-only connector. /dispatch/ uses the existing Jetpack subscriptions block; /focus/ supplies the same welcome path. No new form/list required.
+- Editorial Standards require source proximity, visible uncertainty and correction notes for consequential changes; commercial relationships cannot determine historical conclusions.
+
+## Required transfer gates: preparation versus actual native proof
+
+1. **Present-state freeze.** The canonical master is PR #175 @ `d57ccdba3aee8f065e143e101c2945f4f3d01647`. Original six issues remain unchanged. Preserve four editorial and two merchant-review slots; optional copy R321–R327 was NOT adopted.
+2. **WordPress post proposal, NOT write.** Prepare the title to exactly equal the issue's intended subject. Keep status `draft`, never `publish`/`future`, and explicitly propose `_jetpack_dont_email_post_to_subs=true`. The draft editor itself is a WordPress write; no such write has been authorized. This gate may only inspect a *hypothetical* post object.
+3. **Sanitize only within a separate proposed copy artifact after founder editorial approval.** Separate editorial text from metadata, code fences, internal banners, compliance placeholders and not-live CTA URLs. Never secretly edit the originals, remove FTC disclosures, or pretend footer values are known. A sanitized proposed body is still not launch-eligible until real footer, consent and partner checks.
+4. **Actual email preview after a separately authorized, safely configured WordPress draft exists.** In the WordPress post editor, inspect the Newsletter panel, use **Preview email** (not **Send test email**), check desktop/tablet/mobile, header, first-screen subject/preview excerpt, visible body and footer. The official guide says the preview works even if per-post email toggle is off. Do not flip any sitewide setting or publish to get a preview.
+5. **Genuine received-mail test is a separate approval.** No test email can be sent under the current permissions. If founder later approves a specifically scoped received-message test, privately capture original MIME and actual device rendering. R329's read-only receipt guard supplements but cannot prove real unsubscribe functionality or physical-address ownership from MIME alone.
+6. **CAN-SPAM legal review.** A valid Final Vestige business mailing address and functional unsubscribe are required launch evidence for qualifying commercial messages; conservatively apply the footer gate to all six. Merchant or Automattic address by itself is not a substitute. Assess primary purpose and any paid/affiliate disclosures per [FTC guidance](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business) and [endorsement guidance](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking).
+7. **Commercial rights twice, separately.** For Issue 03 Zen12 and Issue 05 Total Focus, Mind/Commerce must provide authenticated account acceptance, terms allowing **email** distribution, product-specific issued earning URL, permitted creative, exact current checkout/returns and a rights-cleared LIVE first-party guide. The offer disclosure must appear beside the qualifying recommendation and on the guide. Neither a seller public page nor a consumer email establishes partner permission.
+8. **Consent and sale remain distinct.** A Jetpack form attempt, PDF reveal or WordPress account follow is not automatically a new consented email lead. Provider-origin new enrollment with current eligibility and identity dedupe is required for `confirmed_signup`. Merchant-specific second newsletter consent is separate. Guide clicks/affiliate outbound clicks cannot prove independently settled paid commissions.
+9. **Final release authority.** Obtain founder approval of final text, audience and schedule **after** all evidence. This repository offers no mail/schedule/post API, and the guard always returns `HOLD_UNSENT` even when mock attestation flags are true.
+
+## Decision of this pass
+
+**No WordPress draft, native preview, test message, signup, subscriber export, publish/scheduling, merchant link, tracking script or social action was created.** R330 specifically tests the transfer boundary which offline email-rendering QA cannot certify.
+
+Code: `post_transfer_guard.cjs` and 27 adversarial tests. Required independent proof: live received email, functional opt-out and valid publisher address, actual source-of-truth subscriber eligibility, partner rights, approved guide and founder signoff. Until then `HOLD_UNSENT` (03/05 also `HOLD_MERCHANT`).
