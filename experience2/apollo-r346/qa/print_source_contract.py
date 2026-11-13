@@ -12,6 +12,7 @@ css = '\n'.join((root / f).read_text() for f in (
     'apollo-r339/assets/chronology-rail.css',
     'apollo-r345/evidence-plate.css',
     'apollo-r340/assets/accession-gallery.css'))
+assert markup.count('data-fv-r340-print-limit') == 4
 assert markup.count('data-fv-apollo-print-custody') == 3
 assert markup.count('data-fv-apollo-print-source="board"') == 3
 assert markup.count('data-fv-r339-cta="editorial"') == 1
@@ -31,6 +32,8 @@ with sync_playwright() as p:
         words='\n'.join(x.get_text() for x in doc)
         assert words.count('Original Board source:') == 3
         assert words.count('Record custody:') == 9
+        assert words.count('Photograph evidence limitation:') == 4
+        assert ' '.join(words.split()).count('Rights review required:') == 4
         assert words.count('Primary source:') == 5
         assert words.count('Later institutional source:') == 1
         links=[a.get('uri','') for x in doc for a in x.get_links() if a.get('kind')==2]

@@ -25,3 +25,7 @@ The attempt to use a native loopback HTTP/CSP test was blocked by the browser's 
 Controlled journey remains Grok Apollo long-form → this NASA source-led evidence experience → existing free Apollo investigation → a **separately approved and independently payable Apollo-specific educational offer**. No payable rights-cleared SKU, merchant acceptance, authenticated published Grok asset ID or 7-/30-day paid conversion/net-revenue records were established here. Purchase CTA **HOLD**; no inferred sales.
 
 **Hard hold / no merge or deployment.** No homepage PR #49, Research Desk owner PR #158, Grok/Praxxis TASK-008 queue, live WordPress, analytics, merchant or external services altered. Founder and QD release approval remains necessary.
+
+## R346 additional gallery finding
+
+During native-PDF visual review, the four contextual NASA accession cards also omitted their closed provenance disclosures in print. R346 extends the same screen-hidden/print-visible mirror approach to **four gallery records**, retaining each documentary limitation and explicit image/likeness/branding rights-review warning. The gallery still links to NASA originals and embeds no photos. Its interactive source disclosure is suppressed only in print, where the static rights/limits mirror replaces it. The source-controlled print gate now additionally asserts 4/4 photographic evidence limits and 4/4 rights warnings in actual Chromium-generated PDFs at five viewport widths.

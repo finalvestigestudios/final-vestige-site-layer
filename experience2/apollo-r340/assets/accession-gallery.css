@@ -18,4 +18,5 @@
 @media(max-width:359px){.fv-apollo-r340__inner{width:calc(100% - 24px)}.fv-apollo-r340__card{padding:16px}}
 @media(prefers-reduced-motion:reduce){.fv-apollo-r340 *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media(forced-colors:active){.fv-apollo-r340__card{border:1px solid CanvasText}.fv-apollo-r340 :focus-visible{outline:3px solid Highlight}}
-@media print{.fv-apollo-r340{background:white;color:black}.fv-apollo-r340__card{background:white;color:black;break-inside:avoid;border:1px solid black}.fv-apollo-r340__card a,.fv-apollo-r340 p,.fv-apollo-r340 summary{color:black}.fv-apollo-r340 details{display:block}}
+.fv-apollo-r340__print-limit[hidden]{display:none}
+@media print{.fv-apollo-r340{background:white;color:black}.fv-apollo-r340__card{background:white;color:black;break-inside:avoid;border:1px solid black}.fv-apollo-r340__card a,.fv-apollo-r340 p,.fv-apollo-r340 summary{color:black}.fv-apollo-r340 details{display:none}.fv-apollo-r340__print-limit[hidden]{display:block!important;border-top:1px solid #666;margin:12px 0;padding:8px 0;color:#000!important}}
