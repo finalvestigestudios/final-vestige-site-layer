@@ -11,6 +11,7 @@ import sys
 
 BOARD = 'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/'
 RETRO = 'https://www.nasa.gov/history/55-years-ago-tragedy-on-the-launch-pad/'
+AFTERMATH = 'https://www.nasa.gov/history/55-years-ago-the-apollo-1-fire-and-its-aftermath/'
 FREE = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/'
 PHOTOS = (
     'https://www.nasa.gov/image-detail/apollo-1-crew-honored/',
@@ -28,6 +29,8 @@ def audit(html):
         return [f'expected 6 cards, found {len(cards)}']
     if 'not evidence of the ignition point' not in html or 'reuse rights' not in html:
         errors.append('visible provenance and reuse boundary missing')
+    if html.count('Contextual photo reference (not investigation record)') != 6:
+        errors.append('photograph accession presented without contextual label')
     if '102 deliberate ignition tests' in html:
         errors.append('unsupported exact post-fire test count')
     for n, card in enumerate(cards, 1):
@@ -40,7 +43,7 @@ def audit(html):
             errors.append(f'card {n}: expected 2 distinct custody links')
             continue
         href = [re.search(r'\bhref="([^"]+)"', attrs).group(1) for attrs, _ in links]
-        if href[0] != (RETRO if n == 1 else BOARD):
+        if href[0] != (RETRO if n == 1 else AFTERMATH if n == 6 else BOARD):
             errors.append(f'card {n}: documentary support is not first')
         if href[1] != PHOTOS[n-1]:
             errors.append(f'card {n}: contextual photo accession drift')
