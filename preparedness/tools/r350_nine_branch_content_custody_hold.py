@@ -90,6 +90,7 @@ def ledger(snapshots, *, expected=PINS, require_full=True):
                     host=parsed.netloc.lower()
                     if ((parsed.scheme and parsed.scheme!='https')
                         or (host and host not in ('finalvestige.com','www.finalvestige.com'))
+                        or (host and not parsed.scheme)
                         or (parsed.scheme and not host)
                         or parsed.username is not None or parsed.password is not None
                         or not path.startswith('/preparedness/')
