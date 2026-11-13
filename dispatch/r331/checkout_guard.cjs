@@ -18,8 +18,7 @@ function inspect(record) {
   if(/\[\[PENDING_FIRST_PARTY_ZEN12_GUIDE\]\]/.test(email)) failures.push("unresolved_guide_cta");
   const dest=String(record.cta_url||"");
   if(dest){
-    try {const u=new URL(dest);if(u.protocol!=="https:"||u.hostname!=="finalvestige.com") failures.push("unapproved_commercial_destination");}
-    catch {failures.push("invalid_commercial_destination");}
+    if(!/^https:\/\/finalvestige\.com\/[a-z0-9/_?=&%.-]*$/i.test(dest)) failures.push("unapproved_commercial_destination");
     if(p.guide_live!==true) failures.push("unapproved_guide_destination");
   }
   if(/<a\b[^>]*href\s*=\s*["'][^"']*(?:zen12\.com|inspire3\.com|hypnosislive\.com)/i.test(String(record.html||""))) failures.push("direct_merchant_anchor");
