@@ -47,7 +47,7 @@ class PremiumSourceErrorPrivacyR396(unittest.TestCase):
                 missing = self.root / "PRIVATE_ACCOUNT_NUMBER.csv"
                 self.assert_private_failure(
                     lambda: review.read_cases(missing, product),
-                    "Exception report must be an existing regular file, not a symlink",
+                    "Review evidence cannot be read; inspect local input permissions",
                 )
 
     def test_read_helper_translates_only_missing_file(self):
