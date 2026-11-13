@@ -1,0 +1,304 @@
+{
+  "run": "R335",
+  "checked_on": "2026-11-12",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "sources": [
+    "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "https://inspire3.com/",
+    "https://affiliates.inspire3.com/",
+    "https://zen12.com/?no-popup=1",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://brainwaveshots.com/focus-shot",
+    "https://pubmed.ncbi.nlm.nih.gov/31160812/",
+    "https://pubmed.ncbi.nlm.nih.gov/37304656/",
+    "https://pubmed.ncbi.nlm.nih.gov/37578065/",
+    "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "https://finalvestige.com/focus/",
+    "https://finalvestige.com/2026/11/02/change-blindness/",
+    "https://finalvestige.com/2026/11/02/mesmerism/",
+    "https://finalvestige.com/affiliate-disclosure/",
+    "https://finalvestige.com/editorial-standards/"
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Zen12 is one of the Inspire3 brands",
+      "classification": "merchant fact",
+      "source": "https://inspire3.com/",
+      "limitation": "supported catalog relationship",
+      "decision": "ALLOW attributed"
+    },
+    {
+      "id": "C02",
+      "statement": "Zen12 Beginner first six levels/24 MP3s",
+      "classification": "merchant specification",
+      "source": "https://zen12.com/?no-popup=1",
+      "limitation": "seller description only",
+      "decision": "ALLOW attributed"
+    },
+    {
+      "id": "C03",
+      "statement": "Zen12 Premium all twelve levels/48 MP3s",
+      "classification": "merchant specification",
+      "source": "https://zen12.com/?no-popup=1",
+      "limitation": "seller description only",
+      "decision": "ALLOW attributed"
+    },
+    {
+      "id": "C04",
+      "statement": "Zen12 Advanced last six levels/24 MP3s",
+      "classification": "merchant specification",
+      "source": "https://zen12.com/?no-popup=1",
+      "limitation": "seller description only",
+      "decision": "ALLOW attributed"
+    },
+    {
+      "id": "C05",
+      "statement": "Four styles per Zen12 level include guided meditation, music, nature and white noise",
+      "classification": "merchant specification",
+      "source": "https://zen12.com/?no-popup=1",
+      "limitation": "seller description only",
+      "decision": "ALLOW attributed"
+    },
+    {
+      "id": "C06",
+      "statement": "Twelve minutes of Zen12 equals one hour of advanced meditation",
+      "classification": "seller efficacy",
+      "source": "https://zen12.com/?no-popup=1",
+      "limitation": "no independent Zen12-specific equivalence demonstration identified",
+      "decision": "EXCLUDE as efficacy"
+    },
+    {
+      "id": "C07",
+      "statement": "Zen12 immediately relieves anxiety, improves health or boosts brain power",
+      "classification": "seller health/cognition",
+      "source": "https://zen12.com/?no-popup=1",
+      "limitation": "no identified adequate product-specific scientific substantiation",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C08",
+      "statement": "Total Focus is one 33-minute, 47 MB hypnosis MP3",
+      "classification": "merchant specification",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "limitation": "seller description only; offer not Zen12",
+      "decision": "ALLOW attributed"
+    },
+    {
+      "id": "C09",
+      "statement": "Total Focus creates unlimited concentration and career improvement",
+      "classification": "seller efficacy/wealth",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "limitation": "not independently proven for this recording",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C10",
+      "statement": "Focus Shot includes 15/30-minute recordings and brainwave-only formats",
+      "classification": "merchant specification",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "limitation": "seller description only; offer not Zen12",
+      "decision": "ALLOW attributed"
+    },
+    {
+      "id": "C11",
+      "statement": "Focus Shot confers 4 hours to all-day focus, or is 100% safe",
+      "classification": "seller efficacy/safety",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "limitation": "no independent product-specific substantiation",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C12",
+      "statement": "Six-week MediTrain improved measured sustained attention vs its study comparison",
+      "classification": "independent study",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/31160812/",
+      "limitation": "interactive feedback software, not Zen12; study-specific outcomes",
+      "decision": "ALLOW bounded"
+    },
+    {
+      "id": "C13",
+      "statement": "No significant ten- vs thirty-minute difference was detected in 2023 mindfulness trial",
+      "classification": "independent study",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37304656/",
+      "limitation": "161 protocol completers; neither equivalence proof nor Zen12 trial",
+      "decision": "ALLOW bounded"
+    },
+    {
+      "id": "C14",
+      "statement": "2024 meta-analysis studied 111 RCTs and 9538 participants",
+      "classification": "independent synthesis",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37578065/",
+      "limitation": "mindfulness programs not product-specific; selective cognitive domains",
+      "decision": "ALLOW bounded"
+    },
+    {
+      "id": "C15",
+      "statement": "2023 binaural EEG review found 5 supportive, 8 contradictory and 1 mixed reports",
+      "classification": "independent synthesis",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "limitation": "heterogeneous binaural protocols cannot be generalized to exact Zen12 encoding",
+      "decision": "ALLOW bounded"
+    },
+    {
+      "id": "C16",
+      "statement": "Affiliate connection must be disclosed conspicuously near link",
+      "classification": "FTC policy",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "limitation": "disclosure doesn't cure unsupported claim",
+      "decision": "REQUIRE"
+    },
+    {
+      "id": "C17",
+      "statement": "Objective health-product claims need competent reliable scientific substantiation",
+      "classification": "FTC policy",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "limitation": "evaluate express and implied messages",
+      "decision": "REQUIRE"
+    },
+    {
+      "id": "C18",
+      "statement": "Public affiliate recruitment establishes Final Vestige partner acceptance",
+      "classification": "authorization inference",
+      "source": "https://affiliates.inspire3.com/",
+      "limitation": "sign-up page proves opportunity not named publisher acceptance",
+      "decision": "REJECT"
+    },
+    {
+      "id": "C19",
+      "statement": "Published Puységur archive proves present-day hypnosis effects",
+      "classification": "historical inference",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "limitation": "historical records are not clinical efficacy evidence",
+      "decision": "REJECT"
+    },
+    {
+      "id": "C20",
+      "statement": "Existing Focus Fieldbook is an established free route",
+      "classification": "first-party live",
+      "source": "https://finalvestige.com/focus/",
+      "limitation": "not paid SKU or sale evidence",
+      "decision": "ALLOW link"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": 1,
+      "gate": "named Final Vestige publisher account acceptance document",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 2,
+      "gate": "current partner contract and commission schedule",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 3,
+      "gate": "permitted website channel",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 4,
+      "gate": "permitted TikTok/YouTube creator channels",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 5,
+      "gate": "permitted email channel (Dispatch coordination)",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 6,
+      "gate": "issued exact earning URL with network host verification",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 7,
+      "gate": "approved creatives and reproduction/derivative rights",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 8,
+      "gate": "merchant disclosure and negative-claim policy",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 9,
+      "gate": "current checkout total independently checked",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 10,
+      "gate": "current exact terms/refund policy read",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 11,
+      "gate": "purchase/return delivery independently established",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 12,
+      "gate": "licensed/rights-cleared FV-owned paid Mind SKU fallback",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 13,
+      "gate": "FV Payhip active SKU + checkout delivery fallback",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 14,
+      "gate": "approved staged accessibility/browser source proof",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 15,
+      "gate": "encoded original <=45s media caption + transcript parity",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 16,
+      "gate": "native no-JS and performance acceptance",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 17,
+      "gate": "server-side or independent merchant paid transaction reconciliation",
+      "status": "UNCLEARED",
+      "evidence": null
+    },
+    {
+      "id": 18,
+      "gate": "founder production/commercial release approval",
+      "status": "UNCLEARED",
+      "evidence": null
+    }
+  ],
+  "verified_partner_acceptance": false,
+  "issued_affiliate_url": null,
+  "commission_rate": null,
+  "approved_merchant_url": null,
+  "payhip_fallback_active_sku": null,
+  "verified_paid_orders": null,
+  "net_revenue_per_1000_qualified_humans": null,
+  "method": "Seller metadata is attributed; independent trials are not product trials; no earnings-link activation without authenticated partner agreement."
+}
