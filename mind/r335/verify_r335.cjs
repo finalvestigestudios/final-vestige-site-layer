@@ -33,6 +33,6 @@ const mutations=[
  ()=>JSON.stringify({...m,commercial_gates:m.commercial_gates.map((x,i)=>i===0?{...x,status:"CLEARED"}:x)}),
  ()=>vtt.replace("00:00:35.000 --> 00:00:42.000",""),
 ];
-const safety=[s=>/<button[^>]+disabled/.test(s),s=>/Prospective affiliate disclosure/.test(s),s=>!/<form/.test(s),s=>/Not a playable video/.test(s),s=>/00:35–00:42/.test(s),s=>JSON.parse(s).verified_partner_acceptance===false,s=>JSON.parse(s).commercial_gates.every(x=>x.status==="UNCLEARED"),s=>(s.match(/ --> /g)||[]).length===6];
+const safety=[s=>/<button[^>]+\sdisabled(?=\s|>)/.test(s),s=>/Prospective affiliate disclosure/.test(s),s=>!/<form/.test(s),s=>/Not a playable video/.test(s),s=>/00:35–00:42/.test(s),s=>JSON.parse(s).verified_partner_acceptance===false,s=>JSON.parse(s).commercial_gates.every(x=>x.status==="UNCLEARED"),s=>(s.match(/ --> /g)||[]).length===6];
 mutations.forEach((make,i)=>{const unsafe=make();ok(!safety[i](unsafe),"unsafe mutation rejected "+(i+1))});
 process.stdout.write("R335 PASS "+passes+" source assertions; 8 synthetic unsafe mutations rejected. Native source-level only.\n");
