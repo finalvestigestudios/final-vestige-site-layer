@@ -108,8 +108,12 @@ def inspect_record(slug: str, body: str, meta: dict, kind: str) -> dict:
     if not isinstance(status, dict) or status.get('publish') not in ALLOWED_STATES:
         errors.append('NON_DRAFT_SOURCE_STATE')
     safety = meta.get('safety_review')
-    if not isinstance(safety, dict) or safety.get('state') != 'pending':
-        errors.append('SAFETY_REVIEW_STATE_NOT_PENDING')
+    if not isinstance(safety, dict) or not (
+        safety.get('state') == 'pending' or
+        (kind == 'articles' and meta.get('track') == 'lost-ways' and
+         safety.get('state') == 'not-required')
+    ):
+        errors.append('SAFETY_REVIEW_STATE_NOT_PENDING_OR_UNGATED_HISTORICAL')
     source_use = meta.get('source_use')
     if not isinstance(source_use, dict) or any(not isinstance(k, str) or not isinstance(v, str) for k, v in source_use.items()):
         errors.append('INVALID_SOURCE_USE')
