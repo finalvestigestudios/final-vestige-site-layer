@@ -1,0 +1,8 @@
+/* Non-sending static checks for R327. Run under Node 22 with readFileSync when checked out. */
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const dir=__dirname;const file=n=>fs.readFileSync(path.join(dir,n),'utf8');
+const md=file('01-proposed.md'),txt=file('01-proposed.txt'),html=file('01-proposed.html'),audit=file('SIX_ISSUE_CONVERSION_DECISIONS.md'),proof=file('CLAIMS_CONSENT_AND_MERCHANT_PROOF.md');
+for(const body of [md,txt,html]){assert(body.includes('The picture changed. Did you see it?'));assert(body.includes('[[VALID_POSTAL_ADDRESS_REQUIRED]]'));assert(body.includes('[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]'));assert(body.includes('https://doi.org/10.1111/j.1467-9280.1997.tb00427.x'));assert.equal(body.split('Read the change-blindness investigation').length-1,1);}
+assert(md.includes('NOT ADOPTED'));assert(!html.includes('<script'));assert(!html.includes('<img'));assert(html.includes('<html lang="en"'));assert(html.includes('max-width:600px'));assert(html.includes('overflow-wrap:anywhere'));assert(html.includes('role="presentation"'));assert(!html.includes('href="https://zen12.com'));assert(audit.includes('HOLD_MERCHANT'));assert(proof.includes('consumer marketing messages'));assert(proof.includes('NOT COMPUTABLE'));assert(proof.includes('No emails or tests were sent'));
+for(let n=1;n<=6;n++)assert(audit.includes('| 0'+n+' '));
+console.log('R327 static source checks: PASS (all assertions)');
