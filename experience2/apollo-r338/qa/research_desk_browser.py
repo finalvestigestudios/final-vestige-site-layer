@@ -12,7 +12,7 @@ SOURCES={
  BASE/'research-desk/final-vestige-ex2-research-desk.php':'fa7e8b0d9535bd2e87d46d484d9ff481b2e1e148',
  BASE/'research-desk/assets/source-ledger.css':'0ae12d1bb9e0e10cb8ce6286e205b500f7b8f304',
  BASE/'research-desk/assets/source-ledger.js':'32e757cc4dc8708397ff65ac21e89dd319781d78',
- BASE/'research-desk/templates/ledger.html':'d773d0de24d9eb0eaf073e007b135034c214fb51',
+ BASE/'research-desk/templates/ledger.html':'e33395a4d9a16164e9867e2a38c7eb95b3520cd8',
 }
 FREE='https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/'
 OUT=Path(os.environ.get('FV_R338_OUT','/tmp/fv-apollo-r338'))
