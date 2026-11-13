@@ -1,0 +1,78 @@
+{
+  "audit_id": "FV_MEDIA_P0_NATIVE_RASTER_INTEGRATION_20261113",
+  "executed_utc": "2026-11-13T12:27:44Z",
+  "scope": "OFFLINE_SYNTHETIC_FIXTURES_ONLY",
+  "pre_run_pr1703_head_sha": "d54934e9b4f4c90668e2ab1126b633b7571768a3",
+  "source_blob_git_shas": {
+    "qa/media-recovery/test_p0_real_raster_decode_integration_20261113.cjs": "0650a57e2cd014436c492934c3c779b631161d42",
+    "qa/media-recovery/verify_p0_review_evidence_20261112.cjs": "4d5372ca28b4189d0b0279e6880d43b9c8b150aa",
+    "qa/media-recovery/verify_image_pixels_pillow_20261113.cjs": "dd075d50bdff2a8bc91d2e50d027158c1f03646a",
+    "qa/media-recovery/png_decode_guard_20261112.cjs": "d09669d0116a741fd1eccaa0631c73061125f8b2"
+  },
+  "exact_git_blob_matches_locally": 4,
+  "environment": {
+    "node": "v22.16.0",
+    "pillow": "12.3.0",
+    "runtime": "local restricted runner; not GitHub Actions; no Internet access"
+  },
+  "command": "node --test --test-reporter=tap test_p0_real_raster_decode_integration_20261113.cjs",
+  "result": {
+    "exit_code": 0,
+    "tests": 10,
+    "passed": 10,
+    "failed": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "tap_stdout_sha256": "2589abc9ed814341584f76050e7805a8cffa1e382645095f41c78509eaecdd82"
+  },
+  "cases": [
+    "full JPEG pixel raster verified",
+    "full WebP pixel raster verified",
+    "JPEG source master byte/decode review eligibility only",
+    "WebP source master byte/decode review eligibility only",
+    "JPEG candidate byte/decode review eligibility only",
+    "WebP candidate byte/decode review eligibility only",
+    "EXIF rotated file held for visual review",
+    "truncated JPEG master fails even if SHA matches truncated bytes",
+    "false source-master native geometry denied",
+    "missing decoder fails closed"
+  ],
+  "sources": {
+    "original_asset_downloaded": false,
+    "third_party_asset_cached": false,
+    "wordpress_writes": false,
+    "homepage_edits": false,
+    "live_deployed": false,
+    "observed_real_guest_http_statuses": 0,
+    "observed_real_guest_broken_images": 0,
+    "rewrites_performed": 0
+  },
+  "historical_unverified_baseline": {
+    "posts": 61,
+    "image_slots": 355,
+    "offsite_refs_media_recovery_classification": 288,
+    "alleged_broken_external_images": 42,
+    "oversized_originals_above_decimal_1_5MB": 15,
+    "oversized_stored_bytes": 47096779,
+    "claimed_percent_transfer_reduction_unmeasured": 76
+  },
+  "decision": "NATIVE_INTEGRATION_REGRESSION_CLOSED_TESTS_PASS_BUT_RESTORATIONS_REMAIN_HOLD",
+  "limitations": [
+    "All pixels in tests are locally authored synthetic fixtures; no original third-party image pixels, authorized source masters, or browser captures authenticated.",
+    "Native results apply only to the four exact Git blob source files above; not a full repository test or GitHub Actions CI run.",
+    "Pillow subprocess resource limits are not equivalent to OS security sandboxing; security review required before decoding untrusted source-master binaries.",
+    "Site QA #154 retains the logged-out Chrome/CDP collector, six P0 priority slots and guest failure classification.",
+    "No 960px derivative production authorization, item-level rights release, caching or publication approval follows from a passing regression test.",
+    "15 oversized media originals measure stored bytes, not guest network transferred bytes; the proposed 76% reduction remains unmeasured."
+  ],
+  "p0_slots_pending": [
+    "285:5",
+    "285:2",
+    "287:5",
+    "418:1",
+    "418:2",
+    "407:1"
+  ],
+  "next_gate": "Site QA authentic guest failure evidence -> byte/source provenance and item rights -> exact-scene editorial approval -> reversible non-production staging proposal -> independent Chrome measurement."
+}
