@@ -55,42 +55,54 @@ def _inventory(root: Path) -> dict[str, str]:
     """
     path = root / "SHA256SUMS.txt"
     _regular(path)
+    invalid_inventory = False
     try:
         return parse_canonical_inventory(read_checksum_candidate(path), EXPECTED)
-    except (CandidateGuardError, CanonicalInventoryError) as exc:
-        raise GateFailure(str(exc)) from None
+    except (CandidateGuardError, CanonicalInventoryError):
+        invalid_inventory = True
+    if invalid_inventory:
+        raise GateFailure("Candidate checksum inventory rejected")
 
 
 def _pe64(path: Path) -> None:
     """Require a bounded, structurally plausible user-mode AMD64 PE32+ image."""
+    invalid_image = False
     try:
         verify_amd64_pe(path)
-    except PEFormatError as exc:
-        raise GateFailure(f"{path.name}: {exc}") from exc
+    except PEFormatError:
+        invalid_image = True
+    if invalid_image:
+        raise GateFailure("Candidate PE32+ image rejected")
 
 
 def _sha(path: Path) -> str:
     # The checksum file is small; packaged binaries are capped at 512 MiB each.
     # Descriptor checks detect source swaps, links and observed in-flight edits.
+    failed_custody = False
     try:
         if path.name == "SHA256SUMS.txt":
             return sha256_candidate(path, maximum=MAX_CHECKSUM_BYTES)
         return sha256_candidate(path)
-    except CandidateGuardError as exc:
-        raise GateFailure(str(exc)) from None
+    except CandidateGuardError:
+        failed_custody = True
+    if failed_custody:
+        raise GateFailure("Candidate payload failed custody check")
 
 
 def verify(folder: str | Path, *, smoke: bool = False, runner=None,
            platform_name: str | None = None, timeout: int = 120) -> dict:
     # A test-injected runner or OS override can exercise failure branches but
     # must never create a report that claims native Windows x64 execution.
+    provenance_failed = False
     try:
         smoke_status = classify_smoke(
             enabled=smoke, native_os=os.name, native_arch=platform.machine(),
             runner_injected=runner is not None, platform_override=platform_name,
         )
-    except SmokeProvenanceError as exc:
-        raise GateFailure(str(exc)) from None
+    except SmokeProvenanceError:
+        provenance_failed = True
+    if provenance_failed:
+        raise GateFailure("Candidate smoke provenance rejected")
     root = Path(folder)
     if root.is_symlink() or not root.is_dir():
         raise GateFailure("Choose a real directory of candidate executables")
@@ -100,10 +112,13 @@ def verify(folder: str | Path, *, smoke: bool = False, runner=None,
     # Check expected file status first to preserve clear symlink diagnostics.
     for name in EXPECTED:
         _regular(root / name)
+    invalid_staging = False
     try:
         check_candidate_directory(root, EXPECTED)
-    except CandidateGuardError as exc:
-        raise GateFailure(str(exc)) from None
+    except CandidateGuardError:
+        invalid_staging = True
+    if invalid_staging:
+        raise GateFailure("Candidate staging directory rejected")
     checksums = _inventory(root)
     initial_inventory_sha = _sha(root / "SHA256SUMS.txt")
     records = []
@@ -120,10 +135,13 @@ def verify(folder: str | Path, *, smoke: bool = False, runner=None,
                         "smoke": "not_run"})
     def recheck_artifacts(phase: str) -> None:
         """Catch changed binaries/inventory before and after each smoke execution."""
+        changed_staging = False
         try:
             check_candidate_directory(root, EXPECTED)
-        except CandidateGuardError as exc:
-            raise GateFailure(str(exc)) from None
+        except CandidateGuardError:
+            changed_staging = True
+        if changed_staging:
+            raise GateFailure("Candidate staging directory changed during " + phase)
         inventory_file = root / "SHA256SUMS.txt"
         if (_sha(inventory_file) != initial_inventory_sha
                 or _inventory(root) != checksums):
@@ -143,10 +161,13 @@ def verify(folder: str | Path, *, smoke: bool = False, runner=None,
             recheck_artifacts("pre-smoke")
             exe = root / record["name"]
             started = time.monotonic()
+            failed_smoke = False
             try:
                 run_smoke_checked(launch, exe, root, name=record["name"], timeout=timeout)
-            except SmokeRunError as exc:
-                raise GateFailure(str(exc)) from None
+            except SmokeRunError:
+                failed_smoke = True
+            if failed_smoke:
+                raise GateFailure("Candidate smoke test unsuccessful")
             # A passing exit code is insufficient if a process modifies its
             # own image, another app's image, or the checksum inventory.
             recheck_artifacts("post-smoke")
