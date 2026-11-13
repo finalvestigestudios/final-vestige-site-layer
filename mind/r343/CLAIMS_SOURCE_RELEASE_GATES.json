@@ -1,0 +1,164 @@
+{
+  "review_date": "2026-11-13",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "affiliate_acceptance": "UNVERIFIED",
+  "affiliate_url": null,
+  "sellable_fv_mind_sku": "UNVERIFIED",
+  "revenue_data": "NOT_COMPUTABLE",
+  "sources": {
+    "inspire3": "https://inspire3.com/",
+    "zen12": "https://zen12.com/",
+    "gift": "https://zen12.com/gift",
+    "total_focus": "https://hypnosislive.com/mental-skills/total-focus",
+    "focus_shot": "https://brainwaveshots.com/focus-shot",
+    "portal": "https://affiliates.inspire3.com/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "raz2002": "https://pubmed.ncbi.nlm.nih.gov/12470132/",
+    "raz2005": "https://pubmed.ncbi.nlm.nih.gov/15994228/",
+    "raz2006": "https://pubmed.ncbi.nlm.nih.gov/16466414/",
+    "suggestion_review2024": "https://doi.org/10.1016/j.concog.2024.103730",
+    "slagter2007": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1865565/",
+    "eeg_review2023": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "fieldbook": "https://finalvestige.com/focus/"
+  },
+  "claims": [
+    {
+      "claim": "Premium is twelve levels and 48 MP3s",
+      "source": "zen12",
+      "class": "seller_format",
+      "decision": "ATTRIBUTE"
+    },
+    {
+      "claim": "Beginner first six and Advanced last six, 24 MP3s each",
+      "source": "zen12",
+      "class": "seller_format",
+      "decision": "ATTRIBUTE"
+    },
+    {
+      "claim": "Twelve minutes of Zen12 equals an hour of meditation",
+      "source": "zen12",
+      "class": "seller_efficacy",
+      "decision": "DO_NOT_ADOPT"
+    },
+    {
+      "claim": "Zen12 improves health, concentration, mood or creativity",
+      "source": "zen12",
+      "class": "seller_efficacy",
+      "decision": "DO_NOT_ADOPT"
+    },
+    {
+      "claim": "Zen12 free gift also subscribes to seller newsletter",
+      "source": "gift",
+      "class": "consent",
+      "decision": "EXPLAIN_SEPARATE_CONSENT"
+    },
+    {
+      "claim": "Total Focus is 33 minutes and 47 MB",
+      "source": "total_focus",
+      "class": "seller_format",
+      "decision": "ATTRIBUTE"
+    },
+    {
+      "claim": "Total Focus improves career/productivity/concentration",
+      "source": "total_focus",
+      "class": "seller_efficacy",
+      "decision": "DO_NOT_ADOPT"
+    },
+    {
+      "claim": "Focus Shot includes 15- and 30-minute audio",
+      "source": "focus_shot",
+      "class": "seller_format",
+      "decision": "ATTRIBUTE"
+    },
+    {
+      "claim": "Focus Shot sustains concentration for hours",
+      "source": "focus_shot",
+      "class": "seller_efficacy",
+      "decision": "DO_NOT_ADOPT"
+    },
+    {
+      "claim": "Stroop interference diminished after a task-specific suggestion for highly suggestible participants",
+      "source": "raz2006",
+      "class": "primary_research",
+      "decision": "QUALIFY"
+    },
+    {
+      "claim": "2002 experiment involved 16 highly and 16 less suggestible participants",
+      "source": "raz2002",
+      "class": "primary_research",
+      "decision": "QUALIFY"
+    },
+    {
+      "claim": "2005 experiment observed regional neural activity differences under suggestion",
+      "source": "raz2005",
+      "class": "primary_research",
+      "decision": "QUALIFY"
+    },
+    {
+      "claim": "2024 theory review discusses competing explanations for hypnotic suggestion",
+      "source": "suggestion_review2024",
+      "class": "review",
+      "decision": "NOT_PRODUCT_PROOF"
+    },
+    {
+      "claim": "Attentional blink improved following three months intensive meditation training",
+      "source": "slagter2007",
+      "class": "primary_research",
+      "decision": "NOT_ZEN12_PROOF"
+    },
+    {
+      "claim": "Binaural-beat EEG studies provide mixed findings",
+      "source": "eeg_review2023",
+      "class": "systematic_review",
+      "decision": "NOT_PRODUCT_PROOF"
+    },
+    {
+      "claim": "Puységur archive preserves contrary evidence, ethics and historical provenance",
+      "source": "puysegur",
+      "class": "history_source",
+      "decision": "NOT_TREATMENT_PROOF"
+    },
+    {
+      "claim": "Clear, close-to-link material connection disclosure is necessary",
+      "source": "ftc",
+      "class": "FTC_guidance",
+      "decision": "REQUIRE"
+    },
+    {
+      "claim": "Objective health-related advertising needs adequate scientific substantiation",
+      "source": "ftc_health",
+      "class": "FTC_guidance",
+      "decision": "REQUIRE"
+    }
+  ],
+  "release_gates": {
+    "publisher_acceptance": false,
+    "authorized_social_channels": false,
+    "authorized_website_channel": false,
+    "authorized_email_channel": false,
+    "approved_creatives": false,
+    "issued_tracking_url": false,
+    "exact_offer_eligibility": false,
+    "live_checkout_final_price": false,
+    "merchant_refund_terms": false,
+    "partner_attribution_terms": false,
+    "verified_fv_owned_payhip_sku": false,
+    "claim_substantiation": false,
+    "adjacent_disclosure_review": false,
+    "real_browser_a11y": false,
+    "mobile_destination_validation": false,
+    "film_encoding_performance": false,
+    "conversion_provider_reconciliation": false,
+    "founder_release_approval": false,
+    "site_QA_approval": false
+  },
+  "commercial_prototype": {
+    "state": "disabled",
+    "outbound_affiliate_url": null,
+    "confirmed_orders": null,
+    "confirmed_commissions": null,
+    "net_revenue_per_1000_qualified_humans": null
+  }
+}
