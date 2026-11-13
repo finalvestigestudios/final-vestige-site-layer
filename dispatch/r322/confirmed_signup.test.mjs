@@ -28,3 +28,5 @@ test('utm_content must match asset id',()=>assert.equal(run([{...wp,join_ref:'jo
 test('conflicting join raises',()=>assert.throws(()=>run([],[sess,{...sess,asset_id:'other_asset',utm_content:'other_asset'}]),/ATTRIBUTION_JOIN_CONFLICT/));
 test('private email field rejected',()=>assert.throws(()=>run([{...wp,details:{subscriber_email:'redacted'}}]),/PII_FIELD_REJECTED/));
 test('no list contacts or sends',()=>assert.deepEqual([run([wp]).mail_actions,run([wp]).eligible_recipient_count],[0,null]));
+test('future social session must not claim earlier enrollment',()=>assert.equal(run([{...wp,join_ref:'join_001'}],[{...sess,at:'2026-11-13T00:00:00Z'}]).attributed_confirmed_signup,0));
+test('social session older than thirty days cannot claim enrollment',()=>assert.equal(run([{...wp,join_ref:'join_001'}],[{...sess,at:'2026-09-01T00:00:00Z'}]).attributed_confirmed_signup,0));
