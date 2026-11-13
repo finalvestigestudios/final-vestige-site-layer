@@ -1,0 +1,79 @@
+{
+  "schema": "FV_DISPATCH_R329_PARTNER_AND_DELIVERY_PROOF_V1",
+  "created_at_utc": "2026-11-13T12:31:32Z",
+  "campaign": "original #175 six-issue unsent; 4 editorial 2 commercial",
+  "unverified_not_false_knowledge": true,
+  "wordpress_observations": {
+    "newsletter_enabled": true,
+    "new_posts_auto_send": false,
+    "email_content_format": "full",
+    "welcome_configured": true,
+    "reported_total": 3,
+    "reported_confirmed": 3,
+    "reported_unconfirmed": 2,
+    "counts_overlap": true,
+    "actual_email_eligible_count": null,
+    "welcome_received": null
+  },
+  "requirements": {
+    "publisher_postal_address_verified": false,
+    "rendered_email_postal_footer_verified": false,
+    "actual_received_jetpack_email_verified": false,
+    "functional_unsubscribe_verified": false,
+    "native_preheader_verified": false,
+    "confirmed_optin_event_reconciled": false,
+    "founder_final_send_approved": false,
+    "zen12_inspire3_account_approved": false,
+    "zen12_affiliate_email_permission_verified": false,
+    "zen12_issued_earning_link_verified": false,
+    "zen12_approved_published_guide_verified": false,
+    "zen12_checkout_price_refund_verified": false,
+    "zen12_efficacy_claims_substantiated": false,
+    "total_focus_inspire3_account_approved": false,
+    "total_focus_email_permission_verified": false,
+    "total_focus_issued_link_verified": false,
+    "total_focus_approved_guide_verified": false,
+    "total_focus_checkout_price_refund_verified": false,
+    "qualified_human_session_denominator_verified": false,
+    "independently_settled_paid_orders_verified": false,
+    "refund_fee_commission_reversal_reconciled": false
+  },
+  "sources": [
+    {
+      "type": "authenticated_wordpress_newsletter_status",
+      "as_of": "2026-11-13T12:31:31Z"
+    },
+    {
+      "type": "authenticated_wordpress_newsletter_settings",
+      "as_of": "2026-11-13T12:31:32Z"
+    },
+    {
+      "type": "canonical_campaign",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175"
+    },
+    {
+      "type": "canonical_offline_previews",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2337"
+    },
+    {
+      "type": "inspire3_seller",
+      "url": "https://zen12.com/"
+    },
+    {
+      "type": "inspire3_seller",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    }
+  ],
+  "release": {
+    "issues_01_02_04_06": "HOLD_UNSENT",
+    "issues_03_05": "HOLD_UNSENT_AND_MERCHANT",
+    "no_automatic_release": true,
+    "paid_sales": null,
+    "net_revenue_per_thousand_qualified_human_sessions": null
+  },
+  "privacy": "No subscriber addresses, tokens, receipt MIME, published affiliate links or paid records may be placed in this ledger."
+}
