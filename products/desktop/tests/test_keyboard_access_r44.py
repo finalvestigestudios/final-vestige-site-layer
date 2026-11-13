@@ -33,6 +33,7 @@ class FakeRoot:
         if add != "+":
             raise AssertionError("Existing application bindings must be preserved")
         self.bindings[key] = handler
+        return f"fake-callback-{len(self.bindings)}"
 
     def press(self, key):
         return self.bindings[key](object())
