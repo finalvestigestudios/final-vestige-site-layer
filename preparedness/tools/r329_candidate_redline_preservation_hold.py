@@ -11,6 +11,9 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+import sys
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from preparedness.tools import r319_three_way_custody_hold as custody
 from preparedness.tools import r328_article15_tool104_claim_holds as original
 
