@@ -10,6 +10,23 @@ from __future__ import annotations
 from .shortcut_targets_r403 import validate_shortcut_targets
 
 
+def _verify_callback_ack(callback_id, used_ids: set[str]) -> None:
+    """Accept only a distinct, bounded Tk-created Python callback command ID.
+
+    Native Tkinter Python bindings return compact printable ASCII Tcl command
+    names. A duplicate, invisible, non-ASCII or oversized acknowledgement
+    cannot safely identify one callback for targeted rollback. Do not hash or
+    stringify subclasses: they could execute arbitrary user-defined methods.
+    """
+    if (type(callback_id) is not str
+            or not 1 <= len(callback_id) <= 128
+            or not callback_id.isascii()
+            or any(not 33 <= ord(ch) <= 126 for ch in callback_id)
+            or callback_id in used_ids):
+        raise ValueError("Tk shortcut registration returned no unique valid callback ID")
+    used_ids.add(callback_id)
+
+
 def install_shortcuts(root, inputs, output, generate, *, review=None,
                       invoice_window=None, policy_rules=None,
                       ledger_headers=None) -> tuple[str, ...]:
@@ -120,17 +137,17 @@ def install_shortcuts(root, inputs, output, generate, *, review=None,
     # Recreate the root to retry; do not silently double-run Generate/Review.
     root._fvs_shortcuts_installed = True
     installed: list[tuple[str, str | None]] = []
+    used_callback_ids: set[str] = set()
     try:
         for sequence, operation in actions.items():
             # Tk returns the unique callback id; it lets us roll back only
             # OUR newly added function without erasing a preexisting handler.
             callback_id = root.bind(sequence, make_handler(operation), add="+")
-            # Tkinter returns a nonempty Tcl command ID for a Python handler.
-            # A silent/ambiguous acknowledgement is NOT proof of registration:
-            # it may leave an unknown orphan that cannot be unbound safely.
-            # Keep every staged handler inert and the same-root hard hold set.
-            if type(callback_id) is not str or not callback_id:
-                raise ValueError("Tk shortcut registration returned no valid callback ID")
+            # Tkinter returns one unique, compact Tcl command ID per Python
+            # binding. Reused or noncanonical acknowledgements make targeted
+            # cleanup ambiguous. Fail closed before publishing activation.
+            # An orphan from an invalid ACK remains staged and permanently inert.
+            _verify_callback_ack(callback_id, used_callback_ids)
             installed.append((sequence, callback_id))
     except BaseException:
         # Best effort only: the failing bind has no trustworthy callback ID.

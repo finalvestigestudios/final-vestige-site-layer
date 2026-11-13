@@ -145,6 +145,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p test_keyboard_bind_ack_r406.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_keyboard_bind_ack_r406.py
+      - name: R407 unique bounded Tk callback receipts, six-app human-review hold
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_keyboard_unique_receipts_r407.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_keyboard_unique_receipts_r407.py
       - name: Execute six synthetic engines with before-and-after SHA-256 source inventory
         run: |
           python -W error products/desktop/scripts/source_smoke_gate.py
