@@ -175,6 +175,17 @@ def native_audit(root: Path) -> dict:
     try:
         from preparedness.tools import r343_claim_citation_review_crosswalk_hold as claims
         from preparedness.tools import r344_source_url_identity_citation_hold as sources
+        # A modified predecessor must not be allowed to rewrite its own pins.
+        upstream_pins = {
+            'r343_claim_citation_review_crosswalk_hold.py': 'bb547a16a38ddb5bf71b06d86a42b47bfed2d944',
+            'r344_source_url_identity_citation_hold.py': '4d9b562c72c13c8a1fd71fd1f2129571b8d35dbf',
+        }
+        for filename, expected_blob in sorted(upstream_pins.items()):
+            upstream = prep / 'tools' / filename
+            if upstream.is_symlink() or not upstream.is_file():
+                errors.append('MISSING_OR_SYMLINK_PREDECESSOR:' + filename)
+            elif git_blob(upstream.read_bytes()) != expected_blob:
+                errors.append('PREDECESSOR_CODE_BLOB_DRIFT:' + filename)
         records, source_errors = _native_source_records(prep, sources.SOURCE_PINS)
         errors.extend(source_errors)
         prior = claims.audit_native(root)
