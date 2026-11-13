@@ -57,8 +57,8 @@ def _visible_source_char(character: str) -> str:
         return "\\r"
     codepoint = ord(character)
     category = unicodedata.category(character)
-    if (category in ("Cf", "Mn", "Me")
-            # Nonspacing/enclosing marks can disguise canonically equivalent
+    if (category in ("Cf", "Mn", "Mc", "Me")
+            # Nonspacing/spacing/enclosing marks can disguise canonically equivalent
             # edits (e.g. precomposed é versus e + U+0301) in a rendered diff.
             # Escape codepoints only in the display; never alter source bytes.
             # Non-ASCII Unicode spacing separators can be visually identical
@@ -295,7 +295,7 @@ def compare_policy_files(old, new, folder, output_path):
         "Invisible Unicode format and variation characters display as \\uXXXX or \\UXXXXXXXX.\n"
         "Non-ASCII Unicode spacing separators display as \\uXXXX (ordinary spaces remain unchanged).\n"
         "Unicode blank filler glyphs display as \\uXXXX; raw files remain authoritative.\n"
-        "Unicode nonspacing/enclosing combining marks display as \\uXXXX or \\UXXXXXXXX.\n"
+        "Unicode nonspacing/spacing/enclosing combining marks display as \\uXXXX or \\UXXXXXXXX.\n"
         + identity_note + normalization_note + compatibility_note +
         f"Before: {before_name} | SHA-256: {before_hash} | lines: {len(before)}\n"
         f"After: {after_name} | SHA-256: {after_hash} | lines: {len(after)}\n\n"
