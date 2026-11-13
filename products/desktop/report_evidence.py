@@ -38,13 +38,13 @@ def prepare_report_path(report: str | Path, candidate_dir: str | Path) -> Path:
         # lexists deliberately rejects dangling symlinks as well as ordinary files.
         if os.path.lexists(destination):
             raise ReportEvidenceError("Evidence destination already exists")
-        return destination
     except ReportEvidenceError:
         raise
     except (OSError, RuntimeError, ValueError):
         invalid_path = True
     if invalid_path:
         raise ReportEvidenceError("Invalid evidence destination")
+    return destination
 
 
 def _write_verified_stage(fd: int, payload: bytes) -> None:
