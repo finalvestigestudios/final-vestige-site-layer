@@ -196,8 +196,9 @@ class KeyboardStagedActivationR405(unittest.TestCase):
 
     def test_missing_callback_id_then_later_failure_inert(self):
         root, parts = StagedRoot(fail_at=8, missing_id_at=2), configuration()
-        with self.assertRaises(RuntimeError):
+        with self.assertRaisesRegex(ValueError, "callback ID"):
             self.run_install(root, parts)
+        self.assertEqual(root.bind_count, 2)
         self.assertIn("<Control-Key-1>", root.handlers)
         self.assert_all_captured_callbacks_inert(root, parts)
 
