@@ -13,7 +13,7 @@ The previous event classifier required an **unconfirmed → active** history bef
 
 Both require consent to The Dispatch, active email delivery eligibility, unique opaque subject/event references, deduplication, and the first actual site enrollment timestamp for 7/30-day cohort assignment. Neither a first-seen active snapshot, Reader follow, PDF access, browser `?subscribe=` value, republished historical record nor a previously subscribed WordPress.com account is a new event.
 
-R322's pure JS classifier and 25 native Node tests exercise both paths, source-origin and privacy failure cases. **The string `authenticated_jetpack_site_event` is merely a mock adapter contract. This program cannot authenticate the provider.** Claude/Focus must validate provider events *outside* GitHub, retain private witness records privately and export only aggregated counts. If Jetpack does not expose sufficient event evidence, report `confirmed_signup=UNKNOWN` for actual operations; do not fabricate a zero or call a Reader follow a subscriber.
+R322's pure JS classifier and 27 native Node tests exercise both paths, source-origin and privacy failure cases. **The string `authenticated_jetpack_site_event` is merely a mock adapter contract. This program cannot authenticate the provider.** Claude/Focus must validate provider events *outside* GitHub, retain private witness records privately and export only aggregated counts. If Jetpack does not expose sufficient event evidence, report `confirmed_signup=UNKNOWN` for actual operations; do not fabricate a zero or call a Reader follow a subscriber.
 
 ## Authenticated site snapshot — 13 November 2026 05:34 UTC
 
@@ -61,4 +61,4 @@ Commercial primary purpose is assessed per **final email**, even for predominant
 
 Original master PR #175 at exact `d57ccdba3aee8f065e143e101c2945f4f3d01647`, independently read 8/8 remote blobs and ran its six native Python tests 6/6 PASS. PR #201 original QA artifacts and R319 #2286 untouched. R322 branch is based directly on master #175 to avoid conflicting stacked editorial drafts. No changes to frozen homepage PR #49.
 
-**Evidence labels:** BUILT = new read-only source/testing package; TESTED = 25 native Node tests and 6 master Python tests on byte-identical GitHub source; NOT LIVE = provider authentication, welcome delivery, actual inbox/legal footer, published offer, partner rights, consented human attribution and paid revenue.
+**Evidence labels:** BUILT = new read-only source/testing package; TESTED = 27 native Node tests and 6 master Python tests on byte-identical GitHub source; NOT LIVE = provider authentication, welcome delivery, actual inbox/legal footer, published offer, partner rights, consented human attribution and paid revenue.
