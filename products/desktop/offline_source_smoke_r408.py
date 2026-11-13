@@ -28,10 +28,28 @@ BOOTSTRAP = (
     "runpy.run_path(p,run_name='__main__')"
 )
 MAX_SOURCE_BYTES = 2_000_000
+# Explicitly retain only runtime variables used to locate OS/Python libraries and
+# a temporary workspace. Sensitive credentials, proxy endpoints, custom Python
+# import overrides and arbitrary CI secrets never enter smoke children.
+_CHILD_RUNTIME_ENV = frozenset({
+    "PATH", "PATHEXT", "SYSTEMROOT", "WINDIR", "TEMP", "TMP", "TMPDIR",
+})
 
 
 class SourceGateError(ValueError):
     """Only fixed, private-data-free errors are exposed."""
+
+
+def _child_environment() -> dict[str, str]:
+    """Use a minimal, cross-platform subprocess environment, not caller secrets.
+
+    Windows environment variables are case-insensitive; match key names by
+    case-folding while preserving original spelling and ordinary temp paths.
+    """
+    safe = {key: value for key, value in os.environ.items()
+            if key.upper() in _CHILD_RUNTIME_ENV}
+    safe["PYTHONDONTWRITEBYTECODE"] = "1"
+    return safe
 
 
 def _require_real_directory(path: Path) -> None:
@@ -109,7 +127,7 @@ def run_gate(desktop: Path, *, timeout: int = 90) -> dict:
                         str(desktop / "launchers" / launcher_name)]
             try:
                 completed = subprocess.run(
-                    command, cwd=desktop, env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1"},
+                    command, cwd=desktop, env=_child_environment(),
                     # Never hold arbitrary private child output in process memory.
                     stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
                     stderr=subprocess.DEVNULL, timeout=timeout, check=False,
