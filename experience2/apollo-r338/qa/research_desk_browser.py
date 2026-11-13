@@ -54,7 +54,7 @@ with sync_playwright() as p:
      assert first.locator('[data-fvx-record]:visible').count()==6 and first.locator('[data-fvx-tools]').is_hidden()
     if width in (320,390,1440) and not forced:
      page.evaluate('scrollTo(0,0)')
-     page.screenshot(path=str(OUT/f'r338-{width}-'+('js' if js else 'nojs')+'.png'),full_page=False)
+     page.screenshot(path=str(OUT / ('r338-'+str(width)+'-'+('js' if js else 'nojs')+'.png')),full_page=False)
     cases.append({'width':width,'javascript':js,'rootFontPx':font,'forcedColors':forced,'reducedMotion':reduce,'status':'PASS','overflow':d['overflow']})
     print('PASS',width,js,font,forced,flush=True)
    finally:page.close()
