@@ -45,6 +45,7 @@ def guarded(source):
 def fixture():
     raw=subprocess.check_output(['php',str(STUB),'late-dynamic','2'],text=True)
     doc,meta=raw.split('<!--R320_QUEUE:')
+    doc=doc.removesuffix('\\n')  # PHP stub emits a literal backslash-n before QA metadata
     assert json.loads(meta.split('-->')[0])['calls']==1
     return doc.replace('</head>','<style>'+CSS.read_text()+'</style></head>')
 
