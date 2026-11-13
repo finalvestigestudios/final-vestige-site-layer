@@ -1,0 +1,19 @@
+/* R334 isolated, optional visual enhancement; native links/details work without CSS/JS. */
+.fv-r334{--ink:#e9e4d9;--gold:#d6b876;--line:#655b4a;color:var(--ink);background:#161817;font:inherit;line-height:1.55;padding:clamp(1rem,3vw,3rem);overflow-wrap:anywhere}
+.fv-r334 *{box-sizing:border-box;min-width:0}
+.fv-r334__eyebrow,.fv-r334__number{color:var(--gold);font-size:.82em;letter-spacing:.07em}
+.fv-r334 h2{font-size:clamp(1.5rem,3.5vw,2.5rem);line-height:1.18;margin:.5em 0}
+.fv-r334 h3{font-size:1.15em;line-height:1.35;margin:.2em 0}
+.fv-r334__records{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1rem;list-style:none;padding:0;margin:2rem 0}
+.fv-r334__record{padding:1.2rem;border:1px solid var(--line);background:#202321}
+.fv-r334 details{margin-top:1rem;border-top:1px solid var(--line);padding-top:.6rem}
+.fv-r334 summary{min-height:44px;display:list-item;cursor:pointer;color:var(--gold);padding:.55rem .2rem}
+.fv-r334 a{color:#f0ce82;overflow-wrap:anywhere;text-underline-offset:.18em;display:inline-block;padding:.3rem 0;min-height:40px}
+.fv-r334 a:focus-visible,.fv-r334 summary:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.fv-r334__details{padding:.1rem .3rem}
+.fv-r334 code{color:inherit;white-space:normal;overflow-wrap:anywhere}
+.fv-r334 footer{border-top:1px solid var(--line);padding-top:1rem}
+@media (max-width:420px){.fv-r334{padding:1rem}.fv-r334__record{padding:.85rem}}
+@media (prefers-reduced-motion:reduce){.fv-r334 *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+@media print{.fv-r334{color:#000!important;background:#fff!important}.fv-r334__record{background:#fff!important;color:#000!important;border-color:#777!important;break-inside:avoid}.fv-r334 a{color:#000!important}.fv-r334 details:not([open])>*:not(summary){display:block!important}.fv-r334 footer{color:#000!important}}
+@media (forced-colors:active){.fv-r334,.fv-r334__record{color:CanvasText;background:Canvas;border-color:CanvasText}.fv-r334 a,.fv-r334 summary{color:LinkText}}
