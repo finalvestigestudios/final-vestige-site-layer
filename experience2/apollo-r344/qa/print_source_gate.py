@@ -48,8 +48,8 @@ with sync_playwright() as p:
    page.screenshot(path=str(OUT/f"r344-screen-{width}-{font}.png"),full_page=True)
   screen.append({"width":width,"font":font,"js":js,"result":"PASS"})
   ctx.close()
- def print_pdf(code,styles):
-  page=b.new_page()
+ def print_pdf(code,styles,width=390,js=True):
+  page=b.new_page(viewport={"width":width,"height":900},java_script_enabled=js)
   page.set_content('<html lang="en"><head><style>'+styles+'</style></head><body>'+code+'</body></html>')
   raw=page.pdf(format="A4",print_background=True)
   page.close()
@@ -59,7 +59,7 @@ with sync_playwright() as p:
   return raw,doc,text,urls
  for width,js in [(320,False),(390,True),(1440,True)]:
   # A4 print geometry is deliberately fixed; viewport/JS variants must agree on source custody.
-  raw,doc,text,urls=print_pdf(html,CSS)
+  raw,doc,text,urls=print_pdf(html,CSS,width,js)
   assert text.count("Evidence limit:")==6
   assert text.count("Record custody:")==6
   assert text.count("Primary source:")==6
