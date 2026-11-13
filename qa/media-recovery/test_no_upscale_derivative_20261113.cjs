@@ -1,0 +1,21 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict');
+const {verifyNoUpscaleDerivative:gate}=require('./verify_no_upscale_derivative_20261113.cjs');
+const sha='f'.repeat(64);
+const base=()=>({review:{source_master_sha256:sha,source_master_provenance:'AUTHORIZED_ORIGINAL_MASTER_BYTES',geometry:{output_width:960,output_height:540}},master:{width:1672,height:941,format:'png'},derivative:{width:960,height:540,format:'webp'},masterSha256:sha,rights:{source_master_sha256:sha,source_master_reuse_permission_verified:true,item_level_reuse_permission_verified:true}});
+function hold(fn,reason){const d=base();fn(d);const r=gate(d);assert.equal(r.status,'HOLD');assert.equal(r.reason,reason);assert.equal(r.production_write_allowed,false);}
+test('valid downsample passes staging-only; never permits write or caching',()=>{const r=gate(base());assert.equal(r.status,'ADMISSIBLE_FOR_MANUAL_STAGING_REVIEW_ONLY');assert.equal(r.no_upscale_verified_from_hash_bound_raster_geometry,true);assert.equal(r.image_scene_identity_verified,false);assert.equal(r.production_write_allowed,false);assert.equal(r.third_party_cache_allowed,false);});
+test('missing original-master bytes proof holds',()=>hold(x=>delete x.master,'MISSING_VERIFIED_MASTER_OR_DERIVATIVE_GEOMETRY'));
+test('master digest must match review',()=>hold(x=>x.review.source_master_sha256='e'.repeat(64),'MASTER_BYTES_AND_ITEM_RIGHTS_NOT_BOUND'));
+test('master digest must match rights record',()=>hold(x=>x.rights.source_master_sha256='e'.repeat(64),'MASTER_BYTES_AND_ITEM_RIGHTS_NOT_BOUND'));
+test('master rights required separately from derivative rights',()=>hold(x=>x.rights.source_master_reuse_permission_verified=false,'MASTER_BYTES_AND_ITEM_RIGHTS_NOT_BOUND'));
+test('source provenance required',()=>hold(x=>x.review.source_master_provenance='UNVERIFIED','MASTER_BYTES_AND_ITEM_RIGHTS_NOT_BOUND'));
+test('even rights-cleared 961px derivative is held',()=>hold(x=>{x.derivative.width=961;x.review.geometry.output_width=961;},'DERIVATIVE_EXCEEDS_960PX_WIDTH'));
+test('small original cannot be enlarged to 960px',()=>hold(x=>{x.master.width=819;x.master.height=614;},'DERIVATIVE_WOULD_UPSCALE_MASTER'));
+test('height upscale forbidden even when width decreases',()=>hold(x=>{x.master.width=1600;x.master.height=400;},'DERIVATIVE_WOULD_UPSCALE_MASTER'));
+test('scene cropping despite matching width is held',()=>hold(x=>{x.derivative.height=640;x.review.geometry.output_height=640;},'MASTER_ASPECT_OR_CROP_CHANGED'));
+test('1-pixel aspect rounding acceptable',()=>{const d=base();d.derivative.height=541;d.review.geometry.output_height=541;assert.equal(gate(d).status,'ADMISSIBLE_FOR_MANUAL_STAGING_REVIEW_ONLY');});
+test('invented source-master dimensions excluded',()=>hold(x=>x.master.width=0,'MISSING_VERIFIED_MASTER_OR_DERIVATIVE_GEOMETRY'));
+test('invalid master digest excluded',()=>hold(x=>x.masterSha256='fake','MISSING_VERIFIED_MASTER_OR_DERIVATIVE_GEOMETRY'));
+test('unsupported raster excluded',()=>hold(x=>x.derivative.format='svg','MISSING_VERIFIED_MASTER_OR_DERIVATIVE_GEOMETRY'));
+test('derivative geometry must match decoded candidate',()=>hold(x=>x.review.geometry.output_width=959,'MISSING_VERIFIED_MASTER_OR_DERIVATIVE_GEOMETRY'));
