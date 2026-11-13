@@ -11,7 +11,7 @@ ok(html.startsWith('<!doctype html>'),name+' html document');
 ok(/<html lang="en">/.test(html),name+' lang');
 ok(/name="viewport"/.test(html),name+' responsive');
 ok(/name="robots" content="noindex,nofollow"/.test(html),name+' unpublished');
-ok(!/<script\b|<iframe\b|<form\b|<input\b|<video\b|<audio\b|autoplay\b|<link\b[^>]+rel="preload"/i.test(html),name+' no scripts/forms/media');
+ok(!/<script\b|<iframe\b|<form\b|<input\b|<video\b|<audio\b|<[^>]+\sautoplay(?:[ =/>])|<link\b[^>]+rel="preload"/i.test(html),name+' no scripts/forms/media');
 ok(/focus-visible/.test(html),name+' focus indicator');
 ok(/prefers-reduced-motion/.test(html),name+' reduced-motion');
 ok(!/https?:\/\/(?:www\.)?(?:payhip\.com|affiliates\.inspire3\.com)\/.*(?:ref|aff|tracking)/i.test(html),name+' no issued earning links');
