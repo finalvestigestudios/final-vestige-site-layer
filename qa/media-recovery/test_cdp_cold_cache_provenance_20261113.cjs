@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const {coldNetworkProvenance}=require('./cdp_cold_cache_provenance_20261113.cjs');
-const raw=()=>({type:'Image',request_id:'request-17',status:404,
+const raw=()=>({type:'Image',request_id:'request-17',status:404,encodedDataLength:512,
  request_will_be_sent_observed:true,response_received_observed:true,
  loading_finished_observed:true,loading_failed_observed:false,
  served_from_cache_observed:false,from_disk_cache:false,from_service_worker:false});
