@@ -1,0 +1,33 @@
+THE DISPATCH — ISSUE 04 / OFFLINE REVIEW ONLY
+Subject: Apollo 1: five minutes to open the hatch
+Proposed preheader: The surviving timeline tells a harder story than a single spark.
+STATUS: UNSENT / NOT ADOPTED
+
+On January 27, 1967, Virgil “Gus” Grissom, Edward White and Roger Chaffee were sitting inside an Apollo spacecraft at Launch Complex 34. Their rocket was not fueled. This was a ground rehearsal, not a launch.
+
+From the first report of fire, the official record is precise to the tenth of a second—and then, suddenly, it isn't.
+
+At 6:31:04.7 p.m. Eastern time, the crew reported an emergency. At 6:31:22.4, voice and data transmission ended. Those are 17.7 seconds between two recorded events. They do not tell us the precise moment the fire began, how long the crew had to escape, or the time of anyone's death.
+
+The first rescuers faced smoke, heat and three separate hatches. The innermost opened inward. Investigators estimated that the hatches were finally open approximately five minutes after the fire was first reported. One figure came from recordings; the other was reconstructed from testimony and logs. They deserve different levels of certainty.
+
+An electrical arc was the review board's most probable ignition explanation—but it did not conclusively identify one starting point. The board also documented a high-pressure pure-oxygen ground-test atmosphere, combustible materials, vulnerable wiring and coolant plumbing, and inadequate escape and rescue provisions.
+
+Calling the catastrophe 'a spark' hides the conditions that made it catastrophic. Calling it 'a hatch' is also incomplete. The parts mattered together.
+
+NASA ultimately adopted a faster-opening hatch and imposed stronger limits on combustible materials and ground-test hazards. Those changes were engineering responses to specific failures, not a tidy explanation invented afterward.
+
+Here is a useful way to read any dramatic historical number. Ask what started the clock. Ask what stopped it. Then ask whether the number was recorded at the time or estimated later.
+
+Our investigation follows the hatch, the instrument record and the unfinished question of ignition. The historical evidence is substantial; its uncertainties are part of the story.
+
+READ THE INVESTIGATION: The Hatch Opened Inward
+https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+
+DOCUMENTARY SOURCES
+- Apollo 204 Review Board accident chronology: https://www.nasa.gov/history/Apollo204/tragedy.html
+- Apollo 204 Review Board findings: https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html
+- Apollo 204 Review Board investigation: https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html
+- NASA safety retrospective: https://sma.nasa.gov/sma-disciplines/accllp/apollo-1
+
+Offline artifact only; the publisher address, opt-out and delivery are not verified here.
