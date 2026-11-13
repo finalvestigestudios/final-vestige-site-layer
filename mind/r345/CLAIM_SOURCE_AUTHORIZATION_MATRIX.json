@@ -1,0 +1,421 @@
+{
+  "artifact": "Mind R345 claim-to-source and authorization matrix",
+  "verified_as_of": "2026-11-13",
+  "scope": "Public seller pages, publicly accessible studies and published FV pages only. No private merchant or dashboard transaction verification.",
+  "sources": [
+    {
+      "id": "I3",
+      "url": "https://inspire3.com/",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "ZEN",
+      "url": "https://zen12.com/",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "GIFT",
+      "url": "https://zen12.com/gift",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "PORTAL",
+      "url": "https://affiliates.inspire3.com/",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "HYP",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "BWS",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "STROOP",
+      "url": "https://psychclassics.yorku.ca/Stroop/",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "RAZ2002",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12470132/",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "RAZ2006",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16466414/",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "IANI2006",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16913956/",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "RAZ2005",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15994228/",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "REVIEW",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "PUY",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "FIELD",
+      "url": "https://finalvestige.com/focus/",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "FTC_ENDORSE",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "FTC_HEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "CHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "access": "public_page_read_or_indexed_source"
+    },
+    {
+      "id": "MESMER",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "access": "public_page_read_or_indexed_source"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c01",
+      "topic": "inspire3 portfolio",
+      "type": "seller_format",
+      "claim": "Seller identifies Zen12 and Hypnosis Live in portfolio",
+      "source_id": "I3",
+      "decision": "pass_seller_description"
+    },
+    {
+      "id": "c02",
+      "topic": "zen12 twelve minute offer",
+      "type": "seller_promise",
+      "claim": "One hour meditation benefits in twelve minutes",
+      "source_id": "ZEN",
+      "decision": "exclude_from_FV_performance_copy"
+    },
+    {
+      "id": "c03",
+      "topic": "zen12 beginner",
+      "type": "seller_format",
+      "claim": "Beginner is first six levels, 24 MP3s",
+      "source_id": "ZEN",
+      "decision": "pass_seller_description"
+    },
+    {
+      "id": "c04",
+      "topic": "zen12 premium",
+      "type": "seller_format",
+      "claim": "Premium is all 12 levels, 48 MP3s",
+      "source_id": "ZEN",
+      "decision": "pass_seller_description"
+    },
+    {
+      "id": "c05",
+      "topic": "zen12 advanced",
+      "type": "seller_format",
+      "claim": "Advanced is final six levels, 24 MP3s",
+      "source_id": "ZEN",
+      "decision": "pass_seller_description"
+    },
+    {
+      "id": "c06",
+      "topic": "zen12 seller price",
+      "type": "merchant_display_snapshot",
+      "claim": "Public seller showed Beginner 67.77 USD, Premium 87.99 USD, Advanced 67.77 USD on Nov 13 2026; live checkout, taxes and conditions not audited",
+      "source_id": "ZEN",
+      "decision": "not_checkout_price"
+    },
+    {
+      "id": "c07",
+      "topic": "zen12 refund",
+      "type": "merchant_terms_claim",
+      "claim": "Seller advertises one-year refund promise; not independently verified in transaction",
+      "source_id": "ZEN",
+      "decision": "do_not_guarantee"
+    },
+    {
+      "id": "c08",
+      "topic": "zen12 free offer privacy",
+      "type": "merchant_consent_notice",
+      "claim": "Gift page states recipients will receive Zen12 newsletter",
+      "source_id": "GIFT",
+      "decision": "must_disclose_separate_from_FV_list"
+    },
+    {
+      "id": "c09",
+      "topic": "hypnosis live format",
+      "type": "seller_format",
+      "claim": "Total Focus is 33-minute/47MB download written and recorded by J.A. Amos",
+      "source_id": "HYP",
+      "decision": "pass_seller_description"
+    },
+    {
+      "id": "c10",
+      "topic": "hypnosis live outcome",
+      "type": "seller_promise",
+      "claim": "Product will give limitless powers of concentration",
+      "source_id": "HYP",
+      "decision": "exclude_from_FV_performance_copy"
+    },
+    {
+      "id": "c11",
+      "topic": "brainwave shots format",
+      "type": "seller_format",
+      "claim": "Focus Shot includes 15- and 30-minute versions and bonus brainwave-only versions",
+      "source_id": "BWS",
+      "decision": "pass_seller_description"
+    },
+    {
+      "id": "c12",
+      "topic": "brainwave shots outcome",
+      "type": "seller_promise",
+      "claim": "Four hours or more of guaranteed focus",
+      "source_id": "BWS",
+      "decision": "exclude_from_FV_performance_copy"
+    },
+    {
+      "id": "c13",
+      "topic": "stroop classic",
+      "type": "experiment",
+      "claim": "Color word/ink naming conflict demonstrated in original Stroop research",
+      "source_id": "STROOP",
+      "decision": "cite_with_design_limit"
+    },
+    {
+      "id": "c14",
+      "topic": "raz 2002",
+      "type": "experiment",
+      "claim": "Suggestion altered Stroop interference for selected highly suggestible subjects",
+      "source_id": "RAZ2002",
+      "decision": "cite_with_sample_and_task"
+    },
+    {
+      "id": "c15",
+      "topic": "raz 2006",
+      "type": "experiment",
+      "claim": "Suggestion decreased Stroop interference with and without induction in that protocol",
+      "source_id": "RAZ2006",
+      "decision": "not_product_trial"
+    },
+    {
+      "id": "c16",
+      "topic": "iani 2006",
+      "type": "experiment",
+      "claim": "In flanker experiments only highly susceptible induction group showed eliminated flanker effect; experiment 2 suggestion alone did not",
+      "source_id": "IANI2006",
+      "decision": "not_direct_replication_of_stroop"
+    },
+    {
+      "id": "c17",
+      "topic": "raz 2005",
+      "type": "experiment",
+      "claim": "Neuroimaging examined conflict changes with suggestion",
+      "source_id": "RAZ2005",
+      "decision": "not_proof_of_sound_product"
+    },
+    {
+      "id": "c18",
+      "topic": "entrainment evidence",
+      "type": "independent_synthesis",
+      "claim": "2023 systematic review included fourteen heterogeneous binaural-beat EEG studies with conflicting outcomes",
+      "source_id": "REVIEW",
+      "decision": "not_specific_to_zen12_or_focus_shot"
+    },
+    {
+      "id": "c19",
+      "topic": "historical boundary",
+      "type": "primary_source_archive",
+      "claim": "Puységur archive labels testimony/ethics/witness claims separately from mechanism",
+      "source_id": "PUY",
+      "decision": "historical_not_clinical"
+    },
+    {
+      "id": "c20",
+      "topic": "owned lead funnel",
+      "type": "first_party_page",
+      "claim": "Existing Focus Fieldbook offers 52-page guide via existing subscription path",
+      "source_id": "FIELD",
+      "decision": "do_not_duplicate_form"
+    },
+    {
+      "id": "c21",
+      "topic": "commercial FTC disclosure",
+      "type": "regulatory_guidance",
+      "claim": "Disclose unexpected material connections clearly next to recommendations",
+      "source_id": "FTC_ENDORSE",
+      "decision": "adjacent_text_required"
+    },
+    {
+      "id": "c22",
+      "topic": "health claim substantiation",
+      "type": "regulatory_guidance",
+      "claim": "Health-related product benefit claims need appropriate evidence, not just testimonials",
+      "source_id": "FTC_HEALTH",
+      "decision": "unsupported_claim_block"
+    },
+    {
+      "id": "c23",
+      "topic": "public affiliate portal",
+      "type": "seller_program_public",
+      "claim": "Generic portal advertises an affiliate program; does not establish Final Vestige publisher acceptance or actual links",
+      "source_id": "PORTAL",
+      "decision": "authorization_not_verified"
+    },
+    {
+      "id": "c24",
+      "topic": "organic bridge published",
+      "type": "first_party_page",
+      "claim": "Published change blindness research accessible for relevant source-led social traffic",
+      "source_id": "CHANGE",
+      "decision": "published_source_only"
+    },
+    {
+      "id": "c25",
+      "topic": "mesmer historical research",
+      "type": "first_party_page",
+      "claim": "Published Franklin commission report analysis accessible",
+      "source_id": "MESMER",
+      "decision": "published_source_only"
+    }
+  ],
+  "authorization": [
+    {
+      "id": "fv_accepted_partner_id",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "fv_issued_tracking_url",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "approved_promotion_channels",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "approved_creatives_rights",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "live_terms_verified",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "payout_eligibility_verified",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "paid_offer_available_to_FV",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "checkout_current_price_verified",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "refund_contract_verified",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "customer_purchase_path_tested",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "first_party_attribution_approved",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "first_party_attribution_browser_tested",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "email_consent_proven",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "single_jetpack_list_preserved_in_prod",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "merchant_confirmed_sale_available",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "refund_fee_net_reconciliation",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "independent_wcag_22_aa_QA",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "video_hosting_weight_performance_QA",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "founder_commerce_release_approval",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    },
+    {
+      "id": "founder_production_release_approval",
+      "verified": false,
+      "evidence": "No account-specific or independent release evidence acquired in this sprint; do not interpret unknown as denied."
+    }
+  ],
+  "policy": {
+    "all_commerce_gates_must_be_true_before_activation": true,
+    "affiliate_url": null,
+    "commission_rate": null,
+    "partner_approval": null,
+    "checkout_price": null,
+    "paid_orders": null,
+    "net_revenue": null,
+    "qualifying_sessions": null,
+    "requires_adjacent_disclosure": true,
+    "avoid_double_counting_affiliate_clicks": true,
+    "do_not_copy_affiliate_creatives": true
+  },
+  "review_limits": [
+    "Public seller promotional prices are transient and not checkout confirmations",
+    "Scientific studies are not branded-product trials",
+    "Approval absence in email search is not proof of denial",
+    "WordPress candidate is a GitHub source draft, not a CMS draft",
+    "Grok media IDs unverified until Praxxis confirms published asset IDs"
+  ]
+}
