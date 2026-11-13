@@ -29,22 +29,26 @@ def _escape_source_character(character: str) -> bool:
     )
 
 
-def visible_source_text(value: str) -> str:
+def visible_source_text(value: str, *, reveal_combining: bool = False) -> str:
     """Escape ambiguous source Unicode and literal backslashes for display.
 
     Every input codepoint maps deterministically to itself, a doubled
     backslash, a 4-digit Unicode escape or an 8-digit Unicode escape.
     A literal source escape stays distinguishable from an actual control.
+    Identity-only mode reveals all nonspacing/enclosing combining marks,
+    while the legacy plain-text renderer keeps readable Unicode as before.
+    Reject string subclasses to avoid invoking untrusted iteration hooks.
     Never call on previously rendered text; escape is not idempotent.
     """
-    if not isinstance(value, str):
+    if type(value) is not str:
         raise TypeError("Audit source display requires text")
     parts: list[str] = []
     for character in value:
         codepoint = ord(character)
         if character == "\\":
             parts.append("\\\\")
-        elif _escape_source_character(character):
+        elif (_escape_source_character(character) or
+              (reveal_combining and unicodedata.category(character) in ("Mn", "Me"))):
             parts.append(f"\\u{codepoint:04X}" if codepoint <= 0xFFFF
                          else f"\\U{codepoint:08X}")
         else:
@@ -66,7 +70,7 @@ def visible_identity_label(value: str) -> str:
     trailing = len(rest) - len(rest.rstrip(" "))
     inner = rest[:-trailing] if trailing else rest
     return (r"\u0020" * leading
-            + visible_source_text(inner).replace(";", r"\u003B")
+            + visible_source_text(inner, reveal_combining=True).replace(";", r"\u003B")
             + r"\u0020" * trailing)
 
 
