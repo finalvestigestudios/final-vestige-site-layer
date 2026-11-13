@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+<title id="t">Neptune Pass sediment budget: the Quarantine Bay deposit exceeded sediment scoured from the pass</title>
+<desc id="d">Estimated sediment volumes from Kolker and colleagues (2025): 6.1 million cubic meters scoured from Neptune Pass, 11 million cubic meters deposited in Quarantine Bay, or roughly 4.8 million cubic meters of net deposition. Estimates use different survey years and model assumptions. This is not a measurement of permanent dry land.</desc>
+<rect width="1200" height="720" fill="#111A1E"/>
+<rect x="32" y="32" width="1136" height="656" rx="15" fill="#172429" stroke="#3D5255" stroke-width="1.5"/>
+<text x="76" y="85" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="700" fill="#BCAD7B" letter-spacing="3">FINAL VESTIGE  /  EVIDENCE GRAPHIC</text>
+<text x="76" y="144" font-family="DejaVu Serif,Georgia,serif" font-size="39" font-weight="700" fill="#F1EAD6">The sediment that came from elsewhere</text>
+<text x="76" y="181" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#C9D0CE">Neptune Pass and Quarantine Bay · Estimated sediment volumes</text>
+<line x1="76" y1="208" x2="1120" y2="208" stroke="#44585A"/>
+<text x="76" y="254" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#F1EAD6">SCOURED FROM NEPTUNE PASS</text>
+<rect x="76" y="273" width="980" height="51" rx="6" fill="#293A3E"/>
+<rect x="76" y="273" width="543" height="51" rx="6" fill="#79979B"/>
+<text x="647" y="310" font-family="DejaVu Sans,sans-serif" font-size="29" font-weight="700" fill="#F1EAD6">6.1 million m³</text>
+<text x="76" y="374" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#F1EAD6">DEPOSITED IN QUARANTINE BAY</text>
+<rect x="76" y="393" width="980" height="51" rx="6" fill="#293A3E"/>
+<rect x="76" y="393" width="980" height="51" rx="6" fill="#D6B672"/>
+<text x="76" y="484" font-family="DejaVu Sans,sans-serif" font-size="27" font-weight="700" fill="#F1EAD6">11.0 million m³ deposited</text>
+<text x="76" y="520" font-family="DejaVu Sans,sans-serif" font-size="19" fill="#D6B672">≈4.8 million m³ additional net deposition, after rounding</text>
+<line x1="76" y1="548" x2="1120" y2="548" stroke="#44585A"/>
+<text x="76" y="575" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#C9D0CE">2016–2022 channel surveys vs. 2011–2022 bay surveys; volumes are estimates, not a direct sediment inventory.</text>
+<text x="76" y="601" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#C9D0CE">Assumptions include survey interpolation, 22 mm/year subsidence, and sediment-porosity sensitivity.</text>
+<text x="76" y="631" font-family="DejaVu Sans,sans-serif" font-size="14" fill="#BCAD7B">Source: Kolker et al., PLOS ONE 20(4), e0320502 (2025), §3.7, Table 3 · doi:10.1371/journal.pone.0320502</text>
+<text x="76" y="654" font-family="DejaVu Sans,sans-serif" font-size="13" fill="#B8C5C4">Original diagram © Final Vestige Studios · Not a measure of permanent land or of 2026 conditions</text>
+</svg>
