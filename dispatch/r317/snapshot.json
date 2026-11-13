@@ -1,0 +1,103 @@
+{
+  "verified_at": "2026-11-12T16:38:07-08:00",
+  "note": "Read-only WordPress aggregate and official seller page; no individual email addresses, no subscriber export, no active tracking or affiliate links.",
+  "wordpress": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "wpcom_followers": 3,
+    "direct_email_followers": 0,
+    "auto_new_post_email": false,
+    "newsletter": true,
+    "content_format": "full",
+    "welcome_configured": true,
+    "welcome_received_verified": false,
+    "native_email_preview_verified": false,
+    "actual_email_eligible": null
+  },
+  "merchant": {
+    "zen12": "https://zen12.com/",
+    "beginner": {
+      "levels": 6,
+      "mp3s": 24
+    },
+    "premium": {
+      "levels": 12,
+      "mp3s": 48
+    },
+    "advanced": {
+      "levels": 6,
+      "mp3s": 24
+    },
+    "channel_email_permission": false,
+    "partner_acceptance": false,
+    "earning_url_issued": false,
+    "presell_guide_live": false,
+    "current_checkout_price_verified": false,
+    "effectiveness_independently_verified": false
+  },
+  "manifest": {
+    "id": "fv-dispatch-mind-launch-2026-10-30",
+    "mix": {
+      "editorial": 4,
+      "commercial_review_pending": 2
+    },
+    "issues": [
+      {
+        "number": 1,
+        "kind": "editorial",
+        "publish_state": "hold",
+        "merchant_affiliate_url": null
+      },
+      {
+        "number": 2,
+        "kind": "editorial",
+        "publish_state": "hold",
+        "merchant_affiliate_url": null
+      },
+      {
+        "number": 3,
+        "kind": "commercial-review-pending",
+        "publish_state": "hold",
+        "merchant_affiliate_url": null
+      },
+      {
+        "number": 4,
+        "kind": "editorial",
+        "publish_state": "hold",
+        "merchant_affiliate_url": null
+      },
+      {
+        "number": 5,
+        "kind": "commercial-review-pending",
+        "publish_state": "hold",
+        "merchant_affiliate_url": null
+      },
+      {
+        "number": 6,
+        "kind": "editorial",
+        "publish_state": "hold",
+        "merchant_affiliate_url": null
+      }
+    ]
+  },
+  "revenue": {
+    "qualified_human_sessions": null,
+    "independently_settled_orders": null,
+    "net_revenue_per_1000": "NOT_COMPUTABLE"
+  },
+  "sources": [
+    "https://zen12.com/",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://affiliates.inspire3.com/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ],
+  "release": {
+    "all_six": "HOLD_UNSENT",
+    "issues_3_5": "HOLD_MERCHANT",
+    "new_copy": "NOT_ADOPTED",
+    "send_authorized": false
+  }
+}
