@@ -1,0 +1,472 @@
+{
+  "sprint": "R334",
+  "inspected_on": "2026-11-12",
+  "status": "UNPUBLISHED/HARD_HOLD",
+  "rules": {
+    "scientific_evidence": "Study condition and population must match claimed product and outcome; unrelated techniques do not substantiate brand",
+    "disclosure": "Plain material-connection disclosure immediately before or beside earning link",
+    "commerce": "No enabled merchant link or earning URL without account-specific acceptance, channels, exact product/terms and founder production approval"
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "type": "seller_official",
+      "url": "https://inspire3.com/",
+      "scope": "Product family; not a clinical efficacy or partner-acceptance certificate"
+    },
+    {
+      "id": "S02",
+      "type": "seller_official",
+      "url": "https://zen12.com/",
+      "scope": "Beginner/Premium/Advanced packages, four formats, seller prices/guarantee, unproven benefits"
+    },
+    {
+      "id": "S03",
+      "type": "seller_official",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "33-minute downloadable Total Focus, promotional price observed to vary, seller refund wording"
+    },
+    {
+      "id": "S04",
+      "type": "seller_official",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "scope": "15/30 min and brainwave-only packages, seller focus claims, advertised safety and refund"
+    },
+    {
+      "id": "S05",
+      "type": "research_primary",
+      "url": "https://doi.org/10.1177/13524585251329820",
+      "scope": "333 adult MS participants with fatigue; recordings versus treatment as usual; fatigue impact measured"
+    },
+    {
+      "id": "S06",
+      "type": "research_primary_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41217756/",
+      "scope": "250 women with hot flashes; audio hypnosis vs white-noise comparator; not concentration"
+    },
+    {
+      "id": "S07",
+      "type": "research_review",
+      "url": "https://doi.org/10.1080/00207144.2024.2434085",
+      "scope": "168 hypnosis apps included, 4 reported clinical trial inclusion; not outcome proof"
+    },
+    {
+      "id": "S08",
+      "type": "research_primary",
+      "url": "https://doi.org/10.1038/s41598-025-88517-z",
+      "scope": "80 undergraduates; 16 binaural parameter conditions; limited attention effect not vigilance decrement"
+    },
+    {
+      "id": "S09",
+      "type": "ftc_official",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "Material connection near recommendations, truthful endorsements"
+    },
+    {
+      "id": "S10",
+      "type": "ftc_official",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "Competent reliable product-specific substantiation"
+    },
+    {
+      "id": "S11",
+      "type": "fv_published",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "Historical-source ethics and cause-versus-testimony boundary"
+    },
+    {
+      "id": "S12",
+      "type": "fv_published",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "One existing 52-page Fieldbook and Jetpack signup"
+    },
+    {
+      "id": "S13",
+      "type": "fv_published",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "Published change-blindness investigation"
+    },
+    {
+      "id": "S14",
+      "type": "fv_published",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "scope": "Published mesmerism/Franklin investigation"
+    },
+    {
+      "id": "S15",
+      "type": "fv_published",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "scope": "General legal policy, not a substitute for adjacent offer disclosure"
+    },
+    {
+      "id": "S16",
+      "type": "fv_published",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "scope": "Final Vestige editorial standards"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Zen12 Beginner: first six levels, 24 MP3s",
+      "classification": "seller_format",
+      "source": [
+        "S02"
+      ],
+      "allowed": "Attribution to seller only"
+    },
+    {
+      "id": "C02",
+      "statement": "Zen12 Premium: twelve levels, 48 MP3s",
+      "classification": "seller_format",
+      "source": [
+        "S02"
+      ],
+      "allowed": "Attribution to seller only"
+    },
+    {
+      "id": "C03",
+      "statement": "Zen12 Advanced: final six levels, 24 MP3s",
+      "classification": "seller_format",
+      "source": [
+        "S02"
+      ],
+      "allowed": "Attribution to seller only"
+    },
+    {
+      "id": "C04",
+      "statement": "Four sound styles per Zen12 level",
+      "classification": "seller_format",
+      "source": [
+        "S02"
+      ],
+      "allowed": "Descriptive only"
+    },
+    {
+      "id": "C05",
+      "statement": "Zen12 12 minutes equals 1 hour meditation",
+      "classification": "unsupported_product_efficacy",
+      "source": [
+        "S02",
+        "S05",
+        "S08"
+      ],
+      "allowed": "Do not endorse or repeat as fact"
+    },
+    {
+      "id": "C06",
+      "statement": "Zen12 guarantees concentration or stress relief",
+      "classification": "unsupported_product_efficacy",
+      "source": [
+        "S02"
+      ],
+      "allowed": "Exclude as Final Vestige claim"
+    },
+    {
+      "id": "C07",
+      "statement": "Zen12 2026-11-12 promotional prices: $67.77/$87.99/$67.77",
+      "classification": "dated_seller_display",
+      "source": [
+        "S02"
+      ],
+      "allowed": "Dated observation only; checkout unknown"
+    },
+    {
+      "id": "C08",
+      "statement": "Zen12 1-year refund promise",
+      "classification": "seller_policy",
+      "source": [
+        "S02"
+      ],
+      "allowed": "Seller advertises only; not independently tested"
+    },
+    {
+      "id": "C09",
+      "statement": "Hypnosis Live Total Focus single 33-minute session",
+      "classification": "seller_format",
+      "source": [
+        "S03"
+      ],
+      "allowed": "Descriptive only"
+    },
+    {
+      "id": "C10",
+      "statement": "Total Focus instant laser concentration",
+      "classification": "unsupported_product_efficacy",
+      "source": [
+        "S03"
+      ],
+      "allowed": "Do not endorse"
+    },
+    {
+      "id": "C11",
+      "statement": "Total Focus seller refund appears to be 14-day policy",
+      "classification": "seller_policy",
+      "source": [
+        "S03"
+      ],
+      "allowed": "Verify before approved referral"
+    },
+    {
+      "id": "C12",
+      "statement": "Focus Shot 15- and 30-minute variants plus brainwave-only tracks",
+      "classification": "seller_format",
+      "source": [
+        "S04"
+      ],
+      "allowed": "Descriptive only"
+    },
+    {
+      "id": "C13",
+      "statement": "Focus Shot improves focus for four hours or rest of day",
+      "classification": "unsupported_product_efficacy",
+      "source": [
+        "S04"
+      ],
+      "allowed": "Exclude; no verified product-specific efficacy"
+    },
+    {
+      "id": "C14",
+      "statement": "Focus Shot completely safe for everyone",
+      "classification": "unsupported_product_safety",
+      "source": [
+        "S04"
+      ],
+      "allowed": "Exclude"
+    },
+    {
+      "id": "C15",
+      "statement": "MS trial: 333 people, hypnosis and mindfulness audio better than treatment as usual on fatigue impact",
+      "classification": "bounded_clinical_research",
+      "source": [
+        "S05"
+      ],
+      "allowed": "Explain exact population/intervention/outcome"
+    },
+    {
+      "id": "C16",
+      "statement": "Hot flash trial: 250 women, hypnosis audio outperformed white-noise group on mean hot flash score",
+      "classification": "bounded_clinical_research",
+      "source": [
+        "S06"
+      ],
+      "allowed": "Abstract-level, not a focus product trial"
+    },
+    {
+      "id": "C17",
+      "statement": "168 hypnosis apps review, only four reported clinical trial inclusion",
+      "classification": "research_inventory",
+      "source": [
+        "S07"
+      ],
+      "allowed": "Neither guarantees those four efficacy nor identifies our sellers"
+    },
+    {
+      "id": "C18",
+      "statement": "2025 binaural experiment: one configuration improved overall attention, not vigilance decrement",
+      "classification": "bounded_lab_research",
+      "source": [
+        "S08"
+      ],
+      "allowed": "No product-specific inference"
+    },
+    {
+      "id": "C19",
+      "statement": "Puységur notarial file proves animal magnetism",
+      "classification": "unsupported_historical_inference",
+      "source": [
+        "S11"
+      ],
+      "allowed": "Reject"
+    },
+    {
+      "id": "C20",
+      "statement": "Focus Fieldbook is existing 52-page free resource linked to Dispatch",
+      "classification": "fv_published_resource",
+      "source": [
+        "S12"
+      ],
+      "allowed": "Allowed; not a verified paid order"
+    },
+    {
+      "id": "C21",
+      "statement": "Final Vestige Inspire3 approved publisher with issued commission link",
+      "classification": "account_specific_unverified",
+      "source": [],
+      "allowed": "HARD HOLD"
+    },
+    {
+      "id": "C22",
+      "statement": "FV-owned Payhip Mind SKU live, rights cleared, settled sale recorded",
+      "classification": "merchant_unverified",
+      "source": [],
+      "allowed": "HARD HOLD"
+    },
+    {
+      "id": "C23",
+      "statement": "FTC material connection disclosure adjacent to optional paid recommendation",
+      "classification": "compliance_requirement",
+      "source": [
+        "S09",
+        "S15"
+      ],
+      "allowed": "Must be present with earning CTA"
+    },
+    {
+      "id": "C24",
+      "statement": "Medical, psychological, performance benefits require competent substantiation matching claim",
+      "classification": "compliance_requirement",
+      "source": [
+        "S10"
+      ],
+      "allowed": "Never rely on unrelated general study"
+    }
+  ],
+  "authorization_gates": [
+    {
+      "id": "G01",
+      "requirement": "Publisher identity explicitly accepted by Inspire3",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G02",
+      "requirement": "Contract current and applies to FV entity",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G03",
+      "requirement": "Zen12 product eligible for commissions",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G04",
+      "requirement": "Permitted website editorial promotional channel",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G05",
+      "requirement": "Permitted organic social referral channel",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G06",
+      "requirement": "Permitted Dispatch/email channel separately documented",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G07",
+      "requirement": "Issued account-linked earning URL verified without exposure in draft",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G08",
+      "requirement": "Affiliate link destination and redirects independently inspected",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G09",
+      "requirement": "Tracking UTM and sub-ID policy reviewed",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G10",
+      "requirement": "Commission amount/schedule confirmed privately, not publicly promised",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G11",
+      "requirement": "Exact SKU tier and current checkout totals verified",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G12",
+      "requirement": "Refund and cancellation policy evidence captured",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G13",
+      "requirement": "Product claim limitations and creatives authorization checked",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G14",
+      "requirement": "FTC disclosure adjacent to every actual earning CTA",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G15",
+      "requirement": "No unsupported performance/safety/medical/wealth copy",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G16",
+      "requirement": "Site QA mobile/a11y/privacy check",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G17",
+      "requirement": "Founder exact SHA and deployment approval",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G18",
+      "requirement": "Merchant-confirmed paid sale and refund-adjusted accounting only for revenue claim",
+      "status": "HOLD_UNVERIFIED"
+    }
+  ],
+  "proposed_social_fit": [
+    {
+      "topic": "Change blindness",
+      "intent": "Understand an attention failure, not purchase a remedy",
+      "published_editorial": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "lead": "https://finalvestige.com/focus/",
+      "optional_offer": "Zen12 neutral evidence guide",
+      "asset_id": null,
+      "asset_url": null,
+      "owner": "Grok/Praxxis"
+    },
+    {
+      "topic": "Attentional blink",
+      "intent": "Understand rapid-target perception and practice limitations",
+      "published_editorial": null,
+      "unpublished_draft": "mind/r327/THE-SECOND-LETTER-THAT-VANISHED-UNPUBLISHED.md",
+      "lead": "https://finalvestige.com/focus/",
+      "optional_offer": "Zen12 neutral evidence guide",
+      "asset_id": null,
+      "asset_url": null,
+      "owner": "Grok/Praxxis"
+    },
+    {
+      "topic": "Mesmerism and Puységur",
+      "intent": "Historical origins and ethics of suggestion",
+      "published_editorial": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "archive": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "lead": "https://finalvestige.com/focus/",
+      "optional_offer": "independent Hypnosis Live comparator only if user actually seeks product",
+      "asset_id": null,
+      "asset_url": null,
+      "owner": "Grok/Praxxis"
+    }
+  ],
+  "measurement_contract": {
+    "campaign": "utm_source={actual_platform}&utm_medium=organic_social&utm_campaign=mind_pilot_2026_11&utm_content={verified_asset_id}",
+    "events": [
+      "qualified_human_session",
+      "landing_article_view",
+      "focus_cta_click",
+      "provider_confirmed_signup_if_observable",
+      "affiliate_outbound_click_ONLY_IF_APPROVED",
+      "merchant_verified_paid_order",
+      "merchant_verified_affiliate_commission",
+      "refund_or_chargeback"
+    ],
+    "personally_identifying_data": "Do not collect IP, email, name or fingerprint into campaign events",
+    "attribution": "Never treat view, link click, form submission or checkout visit as paid order",
+    "primary_kpi": "1000 * realized net revenue / qualified human sessions",
+    "cohorts": [
+      "7-day",
+      "30-day"
+    ],
+    "status": "NOT_COMPUTABLE"
+  }
+}
