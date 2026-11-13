@@ -91,6 +91,29 @@ class AttestationCustodyR392(unittest.TestCase):
         self.assertEqual(target._validate_report(
             json.dumps(sample).encode("utf-8")), sample)
 
+    def test_invalid_calendar_discards_datetime_error_context(self):
+        # A syntactically shaped UTC timestamp with impossible calendar fields
+        # must not preserve the original ValueError as __context__.
+        sample = {key: False for key in target.REPORT_KEYS}
+        sample.update(schema=1, status="integrity_only",
+                      verified_utc="2026-99-99T99:99:99+00:00",
+                      windows_executables_verified=False, smoke_simulated=False)
+        with patch.object(target.json, "loads", return_value=sample):
+            self.reject(target._validate_report, b'{}',
+                        expected="Invalid verification timestamp")
+
+    def test_candidate_gate_failure_discards_private_context(self):
+        # The attestation report is deliberately synthetic, not a release.
+        with patch.object(target, "_read_verified_report",
+                          return_value=(self.raw, "a" * 64)):
+            with patch.object(target, "_validate_report",
+                              return_value={"checksums_sha256": "b" * 64}):
+                with patch.object(target.gate, "verify",
+                                  side_effect=OSError(PRIVATE)):
+                    self.reject(target.verify_report, self.report,
+                                self.candidates,
+                                expected="Candidate executable verification failed")
+
     def test_empty_report_rejected(self):
         self.report.write_bytes(b"")
         self.reject(target._read_verified_report, self.report, self.candidates,
@@ -102,8 +125,10 @@ class AttestationCustodyR392(unittest.TestCase):
                     expected="bounded ordinary")
 
     def test_report_inside_binary_directory_rejected(self):
-        self.reject(target._read_verified_report, self.candidates / "candidate.json",
-                    self.candidates)
+        internal = self.candidates / "candidate.json"
+        internal.write_bytes(self.raw)
+        self.reject(target._read_verified_report, internal, self.candidates,
+                    expected="inside the candidate directory")
 
     def test_report_symlink_rejected(self):
         link = self.root / "report-link.json"
