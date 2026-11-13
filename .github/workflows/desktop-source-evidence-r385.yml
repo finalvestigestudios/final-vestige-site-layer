@@ -93,6 +93,12 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p test_financial_callback_exception_custody_r397.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_financial_callback_exception_custody_r397.py
+      - name: R398 prevent loss of source ID whitespace and unsafe label coercion
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_review_source_identity_r398.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_source_identity_r398.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_import_identity_integration_r398.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_import_identity_integration_r398.py
       - name: Execute six synthetic engines with before-and-after SHA-256 source inventory
         run: |
           python -W error products/desktop/scripts/source_smoke_gate.py

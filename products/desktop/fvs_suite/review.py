@@ -27,22 +27,47 @@ def ascii_case_identity(value: str) -> str:
 
 
 def raw_values(rows: Iterable[Mapping[str, str]], field: str) -> tuple[str, ...]:
-    """Return distinct, nonblank source labels, preserving exact spelling."""
-    return tuple(sorted({str(row.get(field, "")).strip() for row in rows
-                         if str(row.get(field, "")).strip()}, key=lambda s: (s.casefold(), s)))
+    """Keep distinct original source spellings without lossy whitespace trimming.
+
+    Boundary whitespace can distinguish two names or IDs which share a
+    normalized matching key. Discard only truly absent/empty labels, never
+    a literal whitespace-only source field. Reject nonnative values rather
+    than evaluating potentially sensitive customer-defined __str__ methods.
+    """
+    found: set[str] = set()
+    for row in rows:
+        if not isinstance(row, Mapping):
+            raise ValueError("Source review rows must be mappings")
+        value = row.get(field, "")
+        if type(value) is not str:
+            raise ValueError("Source identity label must be text")
+        if value:
+            found.add(value)
+    return tuple(sorted(found, key=lambda s: (s.casefold(), s)))
+
+
+def _visible_identity_label(value: str) -> str:
+    """Render boundary ASCII spaces as explicit escapes, not ambiguous padding.
+
+    Literal backslashes are escaped by visible_source_text, so real spaces
+    remain distinct from a source spelling containing the characters \\u0020.
+    """
+    leading = len(value) - len(value.lstrip(" "))
+    tail = value[leading:]
+    trailing = len(tail) - len(tail.rstrip(" "))
+    middle = tail[:-trailing] if trailing else tail
+    return (r"\u0020" * leading
+            + visible_source_text(middle).replace(";", r"\u003B")
+            + r"\u0020" * trailing)
 
 
 def labels_for_report(rows: Iterable[Mapping[str, str]], field: str) -> str:
-    """Render original source labels visibly without forging report separators.
+    """Display each exact source label; human review, never an approval decision.
 
-    This is a HUMAN DISPLAY string, not a source identifier. Matching/collision
-    checks keep the raw values; original input bytes and SHA-256 are authoritative.
-    Preserve the existing deterministic case-insensitive sort of raw_values.
+    Source SHA-256 and physical rows remain authoritative. Explicit boundary
+    spaces and escaped separators distinguish visually similar identities.
     """
-    return "; ".join(
-        visible_source_text(label).replace(";", r"\u003B")
-        for label in raw_values(rows, field)
-    )
+    return "; ".join(_visible_identity_label(label) for label in raw_values(rows, field))
 
 
 def normalized_collision(rows: Iterable[Mapping[str, str]], field: str) -> bool:
