@@ -9,6 +9,20 @@ const hold=(reason,slot=null)=>({status:'HOLD',reason,slot,quality_preserved:fal
  measured_76_percent_with_visual_parity:false,sitewide_transfer_savings_verified:false,
  production_change_allowed:false});
 const FITS=new Set(['contain','cover','fill','none','scale-down']);
+const HASH64=/^[a-f0-9]{64}$/;
+// URLs, dimensions and caller-provided identity labels do not prove the image
+// has the same content. Explicit independent scene review is required even
+// if the URL is unchanged; hashes are pointers, NOT byte-verified here.
+function reviewedScene(pair,slot,b,a){
+ const r=pair?.independent_visual_review?.[slot];
+ return !!r && r.method==='SIDE_BY_SIDE_STAGING_SCREENSHOT_REVIEW' &&
+  r.before_run_id===pair.before.run_id&&r.after_run_id===pair.after.run_id&&
+  r.before_current_src===b.current_src&&r.after_current_src===a.current_src&&
+  HASH64.test(r.before_screenshot_sha256)&&HASH64.test(r.after_screenshot_sha256)&&
+  r.same_scene_verified===true&&r.same_crop_verified===true&&
+  r.alt_fidelity_verified===true&&r.independent_editor_reviewed===true&&
+  typeof r.review_evidence_url==='string'&&/^https:\/\/[^\s/]+\//.test(r.review_evidence_url);
+}
 function frame(row,dpr){
  if(!row||!positive(row.decoded_selected_physical_width)||
   !positive(row.decoded_selected_physical_height)||
@@ -62,11 +76,14 @@ function compareColdPairVisualParity(pair){
      typeof r.rights_evidence_url!=='string'||!/^https:\/\//.test(r.rights_evidence_url))
     return hold('SOURCE_CHANGE_NEEDS_INDEPENDENT_SCENE_RIGHTS_EDITOR_REVIEW',slot);
   }
+  if(!reviewedScene(pair,slot,prev,next))
+   return hold('MISSING_OR_STALE_INDEPENDENT_SCENE_REVIEW',slot);
  }
  return {...measured,status:'VERIFIED_SINGLE_POST_COLD_PAIR_WITH_VISUAL_PARITY',
-  quality_preserved:true,
+  quality_preserved:true,visual_scene_review_asserted:true,
+  screenshot_artifact_bytes_verified:false,
   measured_76_percent_with_visual_parity:measured.target_76_percent_met,
   sitewide_transfer_savings_verified:false,production_change_allowed:false,
-  caveat:'Only a post sample with physical-resolution and framing proof; not sitewide saving or authorization to publish.'};
+  caveat:'Manual scene review and screenshot hashes are assertions; screenshot artifact bytes have NOT been checked here. No sitewide savings or publication authorization.'};
 }
 module.exports={compareColdPairVisualParity,frame};
