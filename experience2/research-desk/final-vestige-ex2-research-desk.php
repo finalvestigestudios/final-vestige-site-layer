@@ -47,6 +47,16 @@ function fv_ex2_rd_shortcode($atts = array()): string {
     }
     // Trust boundary: this is a release-reviewed, immutable, bundled file, NOT shortcode input.
     // No user-supplied attributes or remote content are injected into the returned markup.
-    return $markup;
+    // The same shortcode may appear more than once (reusable patterns, previews, blocks).
+    // Every static template ID and corresponding for/aria-* reference shares this prefix.
+    // Namespacing each render prevents duplicate IDs and cross-instance focus/search links.
+    // Do not incorporate shortcode attributes, query strings or untrusted user input.
+    static $render_instance = 0;
+    $render_instance++;
+    return str_replace(
+        'fv-ex2-ledger-apollo1-',
+        'fv-ex2-ledger-apollo1-instance-' . $render_instance . '-',
+        $markup
+    );
 }
 add_shortcode('fv_ex2_research_desk', 'fv_ex2_rd_shortcode');

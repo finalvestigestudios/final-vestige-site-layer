@@ -31,7 +31,8 @@
 .fv-ex2-ledger__boundary strong{display:block;font:700 10px ui-monospace,monospace;color:var(--fvx-gold);letter-spacing:.12em}
 .fv-ex2-ledger__boundary p{color:#ddd6ca;margin:9px 0 0;font-size:14px}
 .fv-ex2-ledger__recordlinks{display:flex;flex-wrap:wrap;gap:18px;padding-top:8px;font-size:13px}
-.fv-ex2-ledger__recordlinks a{text-decoration-thickness:1px;text-underline-offset:4px}
+.fv-ex2-ledger__recordlinks a{display:inline-flex;align-items:center;min-height:44px;overflow-wrap:anywhere;text-decoration-thickness:1px;text-underline-offset:4px}
+.fv-ex2-ledger__footer a{display:inline-flex;align-items:center;min-height:44px;overflow-wrap:anywhere}
 .fv-ex2-ledger__fulltext{color:var(--fvx-muted);border-top:1px solid var(--fvx-border);padding-top:15px}
 .fv-ex2-ledger__fulltext summary{cursor:pointer;color:var(--fvx-paper);font-size:13px;font-weight:650}
 .fv-ex2-ledger__fulltext p{font-size:14px;line-height:1.75}
