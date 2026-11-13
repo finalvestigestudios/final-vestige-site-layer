@@ -1,0 +1,94 @@
+{
+  "source_pr": 175,
+  "source_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "all_source_blobs": [
+    {
+      "path": "dispatch/campaign-2026-mind/manifest.json",
+      "sha": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00"
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md",
+      "sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8"
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md",
+      "sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14"
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md",
+      "sha": "aeeef34efea0cc281f69901488e4501fea851245"
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md",
+      "sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca"
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md",
+      "sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc"
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md",
+      "sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355"
+    }
+  ],
+  "preview_proof": [
+    {
+      "issue": 1,
+      "source_blob": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "html_bytes": 3952,
+      "txt_bytes": 1927,
+      "structural_checks": 8,
+      "passed": true
+    },
+    {
+      "issue": 2,
+      "source_blob": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "html_bytes": 4222,
+      "txt_bytes": 2057,
+      "structural_checks": 8,
+      "passed": true
+    },
+    {
+      "issue": 3,
+      "source_blob": "aeeef34efea0cc281f69901488e4501fea851245",
+      "html_bytes": 4412,
+      "txt_bytes": 2375,
+      "structural_checks": 8,
+      "passed": true
+    },
+    {
+      "issue": 4,
+      "source_blob": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "html_bytes": 3749,
+      "txt_bytes": 1791,
+      "structural_checks": 8,
+      "passed": true
+    },
+    {
+      "issue": 5,
+      "source_blob": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "html_bytes": 4581,
+      "txt_bytes": 2349,
+      "structural_checks": 8,
+      "passed": true
+    },
+    {
+      "issue": 6,
+      "source_blob": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "html_bytes": 3862,
+      "txt_bytes": 1817,
+      "structural_checks": 8,
+      "passed": true
+    }
+  ],
+  "all_release_status": "HOLD_UNSENT",
+  "merchant_issues": [
+    3,
+    5
+  ],
+  "merchant_status": "HOLD_MERCHANT",
+  "real_jetpack_preview": "NOT_TESTED",
+  "received_email": "NOT_VERIFIED",
+  "version": "R328",
+  "no_WP_writes": true
+}
