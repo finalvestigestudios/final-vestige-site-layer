@@ -63,3 +63,51 @@ function fv_apollo_r339_shortcode($atts = array()): string {
 if (function_exists('add_shortcode')) {
     add_shortcode('fv_apollo_chronology_r339', 'fv_apollo_r339_shortcode');
 }
+
+/**
+ * Pre-head stylesheet for a standalone ChronologyRail shortcode.
+ * The R340 composite has its own preflight; its two CSS handles stay unchanged.
+ * This bounded read-only resolver handles direct and core/block reusable patterns,
+ * never renders blocks, edits content or follows unreviewed dynamic templates.
+ */
+function fv_apollo_r339_in_content(string $content, array &$seen = array(), int $depth = 0): bool {
+    if (strlen($content) > 500000) { return false; }
+    if (function_exists('has_shortcode') ? has_shortcode($content, 'fv_apollo_chronology_r339') : strpos($content, '[fv_apollo_chronology_r339') !== false) {
+        return true;
+    }
+    if ($depth >= 5 || !function_exists('parse_blocks')) { return false; }
+    $walk = function (array $blocks) use (&$walk, &$seen, $depth): bool {
+        foreach ($blocks as $block) {
+            if (!is_array($block)) { continue; }
+            if (($block['blockName'] ?? '') === 'core/block') {
+                $ref = (int) ($block['attrs']['ref'] ?? 0);
+                if ($ref > 0 && !isset($seen[$ref]) && count($seen) < 24 && function_exists('get_post')) {
+                    $seen[$ref] = true;
+                    $post = get_post($ref);
+                    if (is_object($post) && ($post->post_type ?? '') === 'wp_block' &&
+                        fv_apollo_r339_in_content((string) ($post->post_content ?? ''), $seen, $depth + 1)) {
+                        return true;
+                    }
+                }
+            }
+            if (isset($block['innerBlocks']) && is_array($block['innerBlocks']) && $walk($block['innerBlocks'])) {
+                return true;
+            }
+        }
+        return false;
+    };
+    return $walk(parse_blocks($content));
+}
+
+function fv_apollo_r339_enqueue(): void {
+    if (!function_exists('is_singular') || !is_singular() || !function_exists('get_post') || !function_exists('wp_enqueue_style')) { return; }
+    $post = get_post();
+    if (!is_object($post) || !isset($post->post_content)) { return; }
+    $seen = array();
+    if (!fv_apollo_r339_in_content((string) $post->post_content, $seen)) { return; }
+    if (!is_readable(__DIR__ . '/assets/chronology-rail.css')) { return; }
+    wp_enqueue_style('fv-apollo-r339-chronology', plugins_url('assets/chronology-rail.css', __FILE__), array(), '0.0.1-research');
+}
+if (function_exists('add_action')) {
+    add_action('wp_enqueue_scripts', 'fv_apollo_r339_enqueue', 20);
+}
