@@ -173,10 +173,13 @@ def _validate_report(raw: bytes) -> dict:
     timestamp = value["verified_utc"]
     if not isinstance(timestamp, str) or not UTC_SECONDS.fullmatch(timestamp):
         raise ReportAttestationError("Invalid verification timestamp")
+    invalid_calendar = False
     try:
         parsed = datetime.fromisoformat(timestamp)
     except ValueError:
-        raise ReportAttestationError("Invalid verification timestamp") from None
+        invalid_calendar = True
+    if invalid_calendar:
+        raise ReportAttestationError("Invalid verification timestamp")
     if parsed.utcoffset() != timedelta(0):
         raise ReportAttestationError("Invalid verification timestamp")
     if not isinstance(value["checksums_sha256"], str) or not HEX.fullmatch(value["checksums_sha256"]):
@@ -220,10 +223,13 @@ def verify_report(report: str | Path, candidate_dir: str | Path, *,
     recorded = _validate_report(raw)
     if expected_report_sha256 is not None and digest != expected_report_sha256:
         raise ReportAttestationError("Independent evidence fingerprint mismatch")
+    candidate_failed = False
     try:
         current = gate.verify(candidate_dir, smoke=False)
     except (gate.GateFailure, OSError, ValueError):
-        raise ReportAttestationError("Candidate executable verification failed") from None
+        candidate_failed = True
+    if candidate_failed:
+        raise ReportAttestationError("Candidate executable verification failed")
     if current["checksums_sha256"] != recorded["checksums_sha256"]:
         raise ReportAttestationError("Checksum inventory changed since evidence capture")
     if len(current["artifacts"]) != len(recorded["artifacts"]):
