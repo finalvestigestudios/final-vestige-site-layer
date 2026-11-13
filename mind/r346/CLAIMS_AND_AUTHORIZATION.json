@@ -1,0 +1,201 @@
+{
+  "version": "R346",
+  "as_of": "2026-11-13",
+  "publication_state": "DRAFT ONLY",
+  "publisher_approval": "UNVERIFIED",
+  "verified_purchases": 0,
+  "recorded_purchases_are_real": false,
+  "sources": {
+    "inspire3": "https://inspire3.com/",
+    "zen12": "https://zen12.com/",
+    "zen12_free": "https://zen12.com/gift",
+    "hypnosis": "https://hypnosislive.com/mental-skills/total-focus",
+    "brainwaves": "https://brainwaveshots.com/focus-shot",
+    "affiliate_portal": "https://affiliates.inspire3.com/",
+    "thompson": "https://journals.sagepub.com/doi/10.1068/pmktho",
+    "boutsen03": "https://research.birmingham.ac.uk/en/publications/the-effect-of-inversion-on-encoding-of-normal-faces-and-the-thatc/",
+    "boutsen06": "https://research.birmingham.ac.uk/en/publications/comparing-neural-correlates-of-configural-processing-in-faces-and/",
+    "psalta": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4191594/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/"
+  },
+  "claims": [
+    {
+      "id": "tier-beginner",
+      "finding": "Seller lists 24 MP3s, first 6 levels",
+      "basis": "zen12",
+      "classification": "seller feature",
+      "editorial": "ATTRIBUTED"
+    },
+    {
+      "id": "tier-premium",
+      "finding": "Seller lists 48 MP3s, full 12 levels",
+      "basis": "zen12",
+      "classification": "seller feature",
+      "editorial": "ATTRIBUTED"
+    },
+    {
+      "id": "tier-advanced",
+      "finding": "Seller lists 24 MP3s, last 6 levels",
+      "basis": "zen12",
+      "classification": "seller feature",
+      "editorial": "ATTRIBUTED"
+    },
+    {
+      "id": "return-zen",
+      "finding": "One-year money-back statement appears on sales page",
+      "basis": "zen12",
+      "classification": "seller terms",
+      "editorial": "ATTRIBUTED, require final terms"
+    },
+    {
+      "id": "price-zen",
+      "finding": "Page displays promotional prices",
+      "basis": "zen12",
+      "classification": "dynamic seller amount",
+      "editorial": "WITHHELD pending live checkout"
+    },
+    {
+      "id": "zen-equivalence",
+      "finding": "Hour-equivalent meditation in 12 minutes",
+      "basis": "zen12",
+      "classification": "unverified effectiveness claim",
+      "editorial": "DO NOT ADOPT"
+    },
+    {
+      "id": "zen-health",
+      "finding": "Health gains, reduced anxiety and better focus",
+      "basis": "zen12",
+      "classification": "unverified health/performance claims",
+      "editorial": "DO NOT ADOPT"
+    },
+    {
+      "id": "zen-newsletter",
+      "finding": "Free sample signup also enrolls seller newsletter",
+      "basis": "zen12_free",
+      "classification": "seller consent disclosure",
+      "editorial": "CLEAR separate relationship"
+    },
+    {
+      "id": "hypnosis-format",
+      "finding": "Total Focus 33 minute 47MB self-hypnosis audio",
+      "basis": "hypnosis",
+      "classification": "seller feature",
+      "editorial": "ATTRIBUTED"
+    },
+    {
+      "id": "hypnosis-refund",
+      "finding": "Seller states a 14-day satisfaction refund",
+      "basis": "hypnosis",
+      "classification": "seller policy",
+      "editorial": "ATTRIBUTED, verify checkout"
+    },
+    {
+      "id": "hypnosis-focus",
+      "finding": "Guaranteed concentration and NLP brain rewiring",
+      "basis": "hypnosis",
+      "classification": "unsupported product benefit",
+      "editorial": "DO NOT ADOPT"
+    },
+    {
+      "id": "brainwaves-format",
+      "finding": "Focus Shot 15/30-minute audio and alternative mixes",
+      "basis": "brainwaves",
+      "classification": "seller feature",
+      "editorial": "ATTRIBUTED"
+    },
+    {
+      "id": "brainwaves-return",
+      "finding": "Seller states 1-year refund guarantee",
+      "basis": "brainwaves",
+      "classification": "seller policy",
+      "editorial": "ATTRIBUTED, verify checkout"
+    },
+    {
+      "id": "brainwaves-performance",
+      "finding": "Four hours or day of strong concentration",
+      "basis": "brainwaves",
+      "classification": "seller efficacy claim",
+      "editorial": "DO NOT ADOPT"
+    },
+    {
+      "id": "thatcher-origin",
+      "finding": "1980 article described the named illusion",
+      "basis": "thompson",
+      "classification": "bibliographic research record",
+      "editorial": "CITE"
+    },
+    {
+      "id": "thatcher-local",
+      "finding": "2014 study found orientation effects in isolated eyes/mouth",
+      "basis": "psalta",
+      "classification": "independent experimental finding",
+      "editorial": "CITE with experimental context"
+    },
+    {
+      "id": "thatcher-erp",
+      "finding": "2006 study found face-specific changes in ERP timing",
+      "basis": "boutsen06",
+      "classification": "academic abstract",
+      "editorial": "CITE with abstract-only limit"
+    },
+    {
+      "id": "affiliate-approval",
+      "finding": "Public affiliate portal offers signup/login; no account-specific proof",
+      "basis": "affiliate_portal",
+      "classification": "account-specific authorization",
+      "editorial": "UNVERIFIED"
+    },
+    {
+      "id": "material-link",
+      "finding": "Earning relationship requires clear disclosure",
+      "basis": "ftc",
+      "classification": "FTC guidance",
+      "editorial": "REQUIRED near link"
+    },
+    {
+      "id": "health-proof",
+      "finding": "Objective health-related claim requires appropriate evidence",
+      "basis": "health",
+      "classification": "FTC guidance",
+      "editorial": "REQUIRED"
+    },
+    {
+      "id": "owned-payhip",
+      "finding": "FV owned active Mind product with valid checkout and delivery",
+      "basis": "focus",
+      "classification": "commerce inventory",
+      "editorial": "UNVERIFIED; Focus is free"
+    }
+  ],
+  "release_gates": {
+    "partner_approval": false,
+    "partner_terms": false,
+    "channel_rights": false,
+    "link_issued": false,
+    "cookie_attribution_terms": false,
+    "commission_refund_rules": false,
+    "creative_use_rights": false,
+    "accurate_package": false,
+    "final_checkout_price": false,
+    "refund_terms_check": false,
+    "merchant_email_disclosure": false,
+    "independent_qa": false,
+    "wp_sanitizer": false,
+    "browser_360": false,
+    "browser_390": false,
+    "browser_768": false,
+    "browser_1440": false,
+    "wcag_22": false,
+    "video_encoded": false,
+    "video_rights": false,
+    "video_caption_sync": false,
+    "no_js_acceptance": false,
+    "site_cwv": false,
+    "privacy_review": false,
+    "owner_net_revenue_report": false,
+    "founder_publish_approval": false
+  }
+}
