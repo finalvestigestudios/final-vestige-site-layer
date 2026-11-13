@@ -1,0 +1,286 @@
+{
+  "schema": "FV_MIND_R333_1",
+  "date": "2026-11-12",
+  "state": "UNPUBLISHED_NO_ACTIVATION",
+  "seller_approval": false,
+  "affiliate_url": null,
+  "sales_verified": null,
+  "source_count": 16,
+  "sources": [
+    {
+      "id": "zen12",
+      "url": "https://zen12.com/",
+      "type": "seller",
+      "claim": "Premium 12 levels/48 MP3; Beginner & Advanced six levels/24 each",
+      "classification": "descriptive_only",
+      "caveat": "Seller 1-hour equivalence and one-year return promise not independently verified"
+    },
+    {
+      "id": "hypnosis",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "seller",
+      "claim": "Total Focus 33 minutes, 47 MB, J. A. Amos",
+      "classification": "descriptive_only",
+      "caveat": "Focus/productivity claims and 14-day refund are seller assertions"
+    },
+    {
+      "id": "shots",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "seller",
+      "claim": "Focus Shot 15/30 min + bonus mixes",
+      "classification": "descriptive_only",
+      "caveat": "4-hour results unverified"
+    },
+    {
+      "id": "shotsfaq",
+      "url": "https://brainwaveshots.com/faq",
+      "type": "seller",
+      "claim": "Refund qualifications, warnings",
+      "classification": "policy_needs_checkout_validation",
+      "caveat": "Not proof of actual refunds"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "type": "seller",
+      "claim": "Brand catalog",
+      "classification": "descriptive_only",
+      "caveat": "Corporate efficacy promises not proven"
+    },
+    {
+      "id": "affiliate",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public recruitment",
+      "claim": "Application/login only",
+      "classification": "not_acceptance",
+      "caveat": "No account permission, issued tracking URL or actual commission"
+    },
+    {
+      "id": "entrainment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "type": "independent review",
+      "claim": "2023 fourteen studies: five for, eight contrary, one mixed",
+      "classification": "science_context",
+      "caveat": "No branded product trial"
+    },
+    {
+      "id": "binaural",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35842538/",
+      "type": "independent meta-analysis",
+      "claim": "2023 fifteen studies; pooled g around 0.40 with heterogeneity",
+      "classification": "science_context",
+      "caveat": "Not Zen12"
+    },
+    {
+      "id": "audio",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+      "type": "independent review",
+      "claim": "2024 thirty-one studies, mixed or insufficient conclusions",
+      "classification": "science_context",
+      "caveat": "No branded product trial"
+    },
+    {
+      "id": "mindfulness",
+      "url": "https://doi.org/10.1080/17437199.2023.2248222",
+      "type": "independent meta-analysis",
+      "claim": "2024 111 RCTs 9538 participants",
+      "classification": "science_context",
+      "caveat": "Interventions not interchangeable with audio"
+    },
+    {
+      "id": "practice",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8821485/",
+      "type": "primary study",
+      "claim": "Repeated selective-attention testing has practice effects",
+      "classification": "science_context",
+      "caveat": "Not an audio trial"
+    },
+    {
+      "id": "puysegur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "published FV archive",
+      "claim": "Preserved historical record",
+      "classification": "historical_not_efficacy",
+      "caveat": "Not proof of magnetism"
+    },
+    {
+      "id": "fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "type": "existing FV asset",
+      "claim": "Free 52-page Fieldbook and existing opt-in",
+      "classification": "live_free",
+      "caveat": "No paid order implied"
+    },
+    {
+      "id": "change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "published FV article",
+      "claim": "Source-backed investigation",
+      "classification": "live_editorial",
+      "caveat": "Actual Grok media ID unverified"
+    },
+    {
+      "id": "ftc_affiliate",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory",
+      "claim": "Clear conspicuous material connection disclosure",
+      "classification": "governance",
+      "caveat": "Near recommendation"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory",
+      "claim": "Adequate science for objective product claims",
+      "classification": "governance",
+      "caveat": "No health guarantees"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "claim": "Zen12 Premium includes 48 MP3s",
+      "status": "seller_format_only",
+      "source": "zen12"
+    },
+    {
+      "claim": "All Zen12 tiers contain 12 levels",
+      "status": "reject_false",
+      "source": "zen12"
+    },
+    {
+      "claim": "12 minutes equals an hour of advanced meditation",
+      "status": "unsupported_for_product",
+      "source": "zen12"
+    },
+    {
+      "claim": "Brainwave Shots reliably produces four hours of focus",
+      "status": "unsupported_for_product",
+      "source": "shots"
+    },
+    {
+      "claim": "Binaural entrainment always works",
+      "status": "contradicted_by_review",
+      "source": "entrainment"
+    },
+    {
+      "claim": "Mindfulness trials prove Zen12 efficacy",
+      "status": "false_cross_intervention",
+      "source": "mindfulness"
+    },
+    {
+      "claim": "FV affiliate account approved",
+      "status": "unverified",
+      "source": "affiliate"
+    },
+    {
+      "claim": "One-year badge guarantees each refund",
+      "status": "seller_policy_not_fulfillment",
+      "source": "zen12"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "FV Inspire3 acceptance",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G02",
+      "name": "Authorized merchant earning URL",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G03",
+      "name": "Allowed promotion channels",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G04",
+      "name": "Product eligibility by tier",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G05",
+      "name": "Approved creative rights",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G06",
+      "name": "Cookie and tracking conditions",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G07",
+      "name": "Payout commission terms",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G08",
+      "name": "Refund/chargeback commission terms",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G09",
+      "name": "Accurate checkout total",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G10",
+      "name": "Refund policy and exclusions",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G11",
+      "name": "Founder release approval",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G12",
+      "name": "Product-specific claim substantiation",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G13",
+      "name": "Canonical duplicate editorial review",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G14",
+      "name": "Browser WCAG 2.2 AA QA",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G15",
+      "name": "Playable 42-second captioned film",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G16",
+      "name": "Checkout/payment/delivery independent QA",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G17",
+      "name": "Source confirmed sale or commission",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G18",
+      "name": "Qualified sessions + net-cohort reconciliation",
+      "status": "HARD_HOLD"
+    }
+  ],
+  "measurement": [
+    "qualified_human_session",
+    "landing_view",
+    "offer_guide_view",
+    "cta_click",
+    "provider_confirmed_lead",
+    "affiliate_click",
+    "merchant_confirmed_paid_order",
+    "merchant_confirmed_affiliate_commission",
+    "refund",
+    "fee",
+    "realized_net_revenue"
+  ]
+}
