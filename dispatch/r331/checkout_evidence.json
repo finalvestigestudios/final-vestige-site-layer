@@ -1,0 +1,85 @@
+{
+  "observed_utc": "2026-11-13T14:42:20Z",
+  "status": "DRAFT_HOLD_UNSENT",
+  "source_of_truth": {
+    "issue": 174,
+    "companion": 171,
+    "master_pr": 175,
+    "stacked_on_pr": 2348,
+    "origin_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647"
+  },
+  "proposed_sku": "Zen12 Premium",
+  "alternative_sku": "Hypnosis Live Total Focus (second reserved commercial edition only)",
+  "zen12": {
+    "checkout_url": "https://zen12.com/getstarted",
+    "paid_package": "12 levels and 48 MP3s",
+    "checkout_observed_display": "$187.99 listed; $100 VIP discount shown; $87.99 subtotal / displayed total before any applicable tax at captured moment",
+    "checkout_is_durable_price": false,
+    "checkout_countdown_is_verified_scarcity": false,
+    "phone_requested": true,
+    "sms_may_be_marketed": true,
+    "sms_claim_frequency": "3–4 messages per week, seller terms",
+    "seller_refund_claim": "1-year guarantee",
+    "refund_rights_independently_verified": false,
+    "product_specific_outcome_claim_independently_supported": false
+  },
+  "hypnotic_comparison": {
+    "product": "Total Focus",
+    "sales_url": "https://hypnosislive.com/mental-skills/total-focus",
+    "seller_claimed_length_minutes": 33,
+    "seller_claimed_size_mb": 47,
+    "seller_refund_claim": "14 days",
+    "sku_price_verified_at_final_checkout": false
+  },
+  "affiliate": {
+    "accepted_account": false,
+    "email_distribution_authorized": false,
+    "exact_email_creative_approved": false,
+    "issued_earning_url_verified": false,
+    "presell_guide_live_and_approved": false
+  },
+  "wordpress": {
+    "newsletter_enabled": true,
+    "auto_post_send": false,
+    "email_content_format": "full",
+    "welcome_configured": true,
+    "welcome_receipt_verified": false,
+    "subscriber_dashboard": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2
+    },
+    "separate_followers": {
+      "wpcom": 3,
+      "email": 0
+    },
+    "actual_deliverable_email_recipients": null,
+    "valid_publisher_postal_address_verified": false,
+    "unsubscribe_in_received_email_verified": false
+  },
+  "business": {
+    "qualified_human_sessions": null,
+    "confirmed_paid_orders": null,
+    "settled_affiliate_commissions": null,
+    "refunded_amount": null,
+    "fees": null,
+    "net_revenue_per_1000_sessions": null
+  },
+  "release": {
+    "editorial_founder_approval": false,
+    "send_approval": false,
+    "approved_to_schedule": false,
+    "commercial_issue_03": "HOLD_MERCHANT",
+    "commercial_issue_05": "HOLD_MERCHANT",
+    "all_original_six": "HOLD_UNSENT"
+  },
+  "sources": [
+    "https://zen12.com/getstarted",
+    "https://inspire3.com/terms/?s=zen12",
+    "https://zen12.com/gift",
+    "https://zen12.com/",
+    "https://affiliates.inspire3.com/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://finalvestige.com/editorial-standards/"
+  ]
+}
