@@ -28,6 +28,8 @@ test('complete uncached 200 image accepted',()=>{
 hold('missing requestWillBeSent cannot forge cold',r=>{delete r.request_will_be_sent_observed});
 hold('missing responseReceived cannot forge cold',r=>{delete r.response_received_observed});
 hold('missing loadingFinished cannot forge cold',r=>{delete r.loading_finished_observed});
+hold('missing encoded transfer length cannot prove CDP completion',r=>{delete r.encodedDataLength});
+hold('negative encoded transfer length rejected',r=>{r.encodedDataLength=-3});
 hold('loadingFailed cannot certify completed image transfer',r=>{r.loading_failed_observed=true});
 hold('Network.requestServedFromCache is not cold',r=>{r.served_from_cache_observed=true});
 hold('cached request remains held even if was_cached asserted',r=>{r.was_cached=true});
