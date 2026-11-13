@@ -115,6 +115,16 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p test_review_spacing_marks_r401.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_spacing_marks_r401.py
+      - name: R402 Policy Delta Desk exact Mc spelling evidence and inherited diff contracts
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_policy_spacing_mark_evidence_r402.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_policy_spacing_mark_evidence_r402.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_policy_display_r76.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_policy_display_r76.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_policy_spacing_r78.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_policy_spacing_r78.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_policy_local_canonical_r178.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_policy_local_canonical_r178.py
       - name: Execute six synthetic engines with before-and-after SHA-256 source inventory
         run: |
           python -W error products/desktop/scripts/source_smoke_gate.py
