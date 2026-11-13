@@ -1,0 +1,35 @@
+# R333 — one decision, not six more editions
+**2026-11-13 PT · Editorial recommendation only · NOT_ADOPTED / HOLD_UNSENT**
+
+Source of truth: [Issue #174](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174), [original master #175](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175) at `d57ccdba3aee8f065e143e101c2945f4f3d01647`, [preflight #201](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201), [canonical HTML/plaintext previews #2337](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2337). This review does **not** create a replacement series or adopt earlier alternatives. The other owners' staged branches are untouched.
+
+## An overdue copy/conversion decision
+Nine rounds of optional variants have exposed real opportunities, but repeated parallel drafts increase selection and compliance risk. Choose the *single final six* on explicit evidence rather than continuing unbounded variations. The existing campaign has four editorial slots (01,02,04,06), and two commercial-review slots (03,05). Keep those allocations. An affiliate slot is not permission to send an affiliate link.
+
+### Source-led editorial adjudication (originals remain intact)
+| Issue | Current asset / useful strength | Material conversion or credibility flaw | Recommended decision for founder review, NOT adopted |
+|---|---|---|---|
+| 01 | **The mind is not a camera** bridges historical evidence and perception | Same Puységur destination as 02; opening mostly abstract; lacks a specific experimental source | Compare to [R327's change-blindness opening](../r327/01-proposed.md), whose visible experiment gives a first-issue reason to click. Keep the history-evidence framing. |
+| 02 | **Before hypnosis had a name** preserves documented historical testimony | Another Puységur CTA immediately after 01; 1785 framing and historical context need primary-source check | Consider [R332's Franklin orchard experiment](../r332/02-franklin-orchard.md) and make the historical distinction from Puységur explicit. Link to the established Puységur source trail only once. |
+| 03 | **The twelve-minute meditation question** offers a free reader exercise before commercial consideration | Link target placeholder; no verified merchant-email rights; seller free gift may add the reader to a *different* newsletter; checkout requests phone | Keep Zen12 **Premium only** as the primary buyer hypothesis. Compare [R331 buyer-consent copy](../r331/03-buyer-consent-candidate.html) but do not adopt. A *published, approved* Mind-owned independent guide would be the only CTA; no direct unverified merchant URL. |
+| 04 | **Fourteen seconds. A much longer explanation.** has valuable NASA engineering theme and a first-party published destination | Subject doesn't say **14 seconds until what**; conflating pressure-vessel rupture vs last transmission risks factual ambiguity | Compare [R325's documented Apollo endpoint revision](../r325/issue04-apollo-review.html) and the official accident board report; avoid a precise duration without an explicitly defined start/end. |
+| 05 | **Before you press play** has a good three-question buyer checklist | "Hypnosis Live" is a brand, not the specific product under review; no verified guide, email rights or current price/checkout | Narrow to **Total Focus**, seller-described 33-min/47-MB audio, without treating promised focus gains as proven. Compare [R324 candidate](../r324/issue05-review.html). Commercial guide remains blocked independently of issue 03. |
+| 06 | **What did seven days of attention reveal?** has a useful evidence-log close | CTA sends an already-confirmed subscriber back to /focus/, potentially repeating signup instead of progressing | Compare [R326's evidence-log continuation](../r326/06-proposed.md) and favor a published perception investigation as the single CTA. Do not claim behaviorally proven improvement. |
+
+**Prioritize selecting which version is retained before polishing typography.** Canonical full HTML/text pairs have already been built and browser-checked in #2337, so do not re-create them. No more commissioned alternates without a demonstrated new research or conversion requirement.
+
+## Proposed six-message progression (editorial sequencing, not automation)
+1. **The observation** — an observable perception effect, one evidence-backed first-party investigation, no offer.
+2. **The source** — Franklin/Puységur: direct observation vs claimed mechanism, no offer.
+3. **The decision** — independently compare Zen12 Premium against free twelve-minute practice; one optional relevant guide CTA only *after rights, terms, guide, disclosures and approval*.
+4. **The counterexample** — Apollo 1 as a real engineering case where a one-cause story fails; one history article CTA.
+5. **The second buyer test** — Total Focus media/claims/refund evaluation, *not live and no second earning-link rollout until independently approved*. Original commercial-review allocation stays reserved.
+6. **The follow-through** — ask readers to look at evidence log vs inference, direct them to a published research piece rather than redundant opt-in.
+
+A *segmentation hypothesis*, not an observed cohort: visitors with a voluntarily declared interest in meditation could be shown the Zen12 evaluation; readers of pure history may prefer editorial links. Do not infer health conditions, compile a secret interest list, or infer email eligibility from a pageview. No new list or hidden behavioral targeting. If Jetpack cannot lawfully or technically target such preferences, the pilot remains a common, consented editorial sequence, subject to the founder's final approval.
+
+## CTA/editing contract
+Exactly one prominent action per issue. Any source links remain secondary citations, not sales buttons. Preserve *related* first-party destination between Grok's actual asset/topic and the email. Attribution tokens may use `utm_source=dispatch&utm_medium=email&utm_campaign=mind_pilot_2026_11&utm_content=issue_0X` **only after Claude verifies native URL preservation and existing analytics**. Never substitute these tokens for merchant-issued tracking links. The proposed preheader is a copy asset; WordPress has not independently certified its delivered preheader behavior.
+
+## Approval status
+This is a founder **decision brief**, not an adopted manuscript, send authorization, post publication request, WordPress change or affiliate campaign. All six **HOLD_UNSENT**, 03/05 **HOLD_MERCHANT**. No observed sales or denominators; net revenue per 1,000 qualified human sessions **NOT COMPUTABLE**.
