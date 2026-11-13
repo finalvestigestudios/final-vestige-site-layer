@@ -16,7 +16,7 @@ const FV_R313_SCRIPT = 'fv-apollo-click-continuation-r313';
 const FV_R313_VERSION = 'r323-print-neutral-20261112';
 // R294: stylesheet version is tied to reviewed CSS bytes (sha256 prefix). Keep
 // WordPress's enqueued link and the no-preflight body fallback cache-consistent.
-const FV_R294_STYLE_VERSION = 'r331-custody-reflow-20261113';
+const FV_R294_STYLE_VERSION = 'r331-41061636fd73';
 // Staging-only digest of corrected chronology, pending independent historical editorial
 // approval. It detects accidental data drift; it does not certify publication.
 const FV_R287_STAGING_EVENTS_SHA256 = '2a473986ed2e9c8ca98d19fb5ce0d32fea62d060d9dadcd2fa4613167eba36ef';
