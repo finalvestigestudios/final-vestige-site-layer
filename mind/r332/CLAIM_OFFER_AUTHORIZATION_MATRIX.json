@@ -1,0 +1,204 @@
+{
+  "date": "2026-11-12 PT",
+  "type": "source-controlled independent conversion research",
+  "release": "HARD_HOLD",
+  "public_product_links_active": false,
+  "live_read_only_inventory": {
+    "published_posts": 66,
+    "published_pages": 92,
+    "previous_issue_171_snapshot": {
+      "posts": 61,
+      "pages": 79
+    },
+    "mind_route_published": false,
+    "verified_on": "2026-11-12",
+    "source": "authenticated WordPress read-only published posts/pages and mind slug query"
+  },
+  "offers": [
+    {
+      "name": "Zen12 Beginner",
+      "seller": "https://zen12.com/",
+      "reported_contents": "levels 1-6, 24 MP3",
+      "seller_display_price": "67.77 USD",
+      "source_type": "seller commercial page",
+      "outcome_proof": "UNVERIFIED",
+      "publisher_approved": false
+    },
+    {
+      "name": "Zen12 Premium",
+      "seller": "https://zen12.com/",
+      "reported_contents": "levels 1-12, 48 MP3",
+      "seller_display_price": "87.99 USD",
+      "source_type": "seller commercial page",
+      "outcome_proof": "UNVERIFIED",
+      "publisher_approved": false
+    },
+    {
+      "name": "Zen12 Advanced",
+      "seller": "https://zen12.com/",
+      "reported_contents": "levels 7-12, 24 MP3",
+      "seller_display_price": "67.77 USD",
+      "source_type": "seller commercial page",
+      "outcome_proof": "UNVERIFIED",
+      "publisher_approved": false
+    },
+    {
+      "name": "Hypnosis Live Total Focus",
+      "seller": "https://hypnosislive.com/mental-skills/total-focus",
+      "reported_contents": "33 min, 47MB",
+      "seller_display_price": "24.44 USD",
+      "source_type": "seller commercial page",
+      "outcome_proof": "UNVERIFIED",
+      "publisher_approved": false
+    },
+    {
+      "name": "Brainwave Shots Focus Shot",
+      "seller": "https://brainwaveshots.com/focus-shot",
+      "reported_contents": "15 and 30 minute audio variants plus advertised extras",
+      "seller_display_price": "17.99 USD",
+      "source_type": "seller commercial page",
+      "outcome_proof": "UNVERIFIED",
+      "publisher_approved": false
+    }
+  ],
+  "claims": [
+    {
+      "id": "format_Z12",
+      "claim": "Zen12 Premium covers all 12 levels and 48 MP3s",
+      "reference": "https://zen12.com/",
+      "evidence": "seller feature claim",
+      "use": "with dated attribution"
+    },
+    {
+      "id": "equivalence",
+      "claim": "12 minutes equals an hour of meditation benefit",
+      "reference": "https://zen12.com/",
+      "evidence": "seller efficacy assertion; product-specific trial unverified",
+      "use": "exclude as proven effect"
+    },
+    {
+      "id": "meditation_meta",
+      "claim": "Mindfulness programs improved some cognitive accuracy domains",
+      "reference": "https://pubmed.ncbi.nlm.nih.gov/37578065/",
+      "evidence": "independent program-level meta-analysis, not Zen12",
+      "use": "qualified context"
+    },
+    {
+      "id": "digital_review",
+      "claim": "Digital mindfulness results mixed across 19 studies",
+      "reference": "https://pubmed.ncbi.nlm.nih.gov/38197226/",
+      "evidence": "independent heterogeneous review",
+      "use": "qualified context"
+    },
+    {
+      "id": "hypnosis_theories",
+      "claim": "Experimental suggestion can alter subjective or behavioral responses",
+      "reference": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "evidence": "independent theoretical review, not branded product trial",
+      "use": "qualified context"
+    },
+    {
+      "id": "hypnosis_apps",
+      "claim": "Only four apps in a 168-app review reported clinical efficacy trial inclusion",
+      "reference": "https://doi.org/10.1080/00207144.2024.2434085",
+      "evidence": "independent app survey, not Total Focus trial",
+      "use": "context with correct denominator"
+    },
+    {
+      "id": "binaural_meta",
+      "claim": "Binaural audio cognitive results heterogeneous",
+      "reference": "https://pubmed.ncbi.nlm.nih.gov/35842538/",
+      "evidence": "independent heterogeneous synthesis, not Focus Shot trial",
+      "use": "qualified context"
+    },
+    {
+      "id": "entrainment_review",
+      "claim": "Evidence of oscillatory entrainment across binaural beat designs inconsistent",
+      "reference": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "evidence": "independent review, not named product trial",
+      "use": "qualified context"
+    },
+    {
+      "id": "sound_review",
+      "claim": "Auditory stimulation physiological and cognitive findings are mixed or insufficient",
+      "reference": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+      "evidence": "independent systematic review",
+      "use": "qualified context"
+    },
+    {
+      "id": "hypnosis_live",
+      "claim": "Total Focus 33 minutes 47 MB, $24.44 page display",
+      "reference": "https://hypnosislive.com/mental-skills/total-focus",
+      "evidence": "dated seller feature and price",
+      "use": "not permanent or checkout guaranteed"
+    },
+    {
+      "id": "brainwave_shot",
+      "claim": "Focus Shot 15 and 30 minute variants, $17.99 display",
+      "reference": "https://brainwaveshots.com/focus-shot",
+      "evidence": "dated seller offer, refund unsupported by transaction",
+      "use": "not permanent checkout guaranteed"
+    },
+    {
+      "id": "affiliate_program",
+      "claim": "FV is accepted affiliate and has approved earning link",
+      "reference": "https://affiliates.inspire3.com/",
+      "evidence": "PUBLIC RECRUITMENT ONLY; FV account status unverified",
+      "use": "blocked"
+    },
+    {
+      "id": "affiliate_disclosure",
+      "claim": "Labeling a link affiliate link alone explains earnings",
+      "reference": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "evidence": "FTC warns affiliation label may be misunderstood",
+      "use": "clear adjacent commission statement"
+    },
+    {
+      "id": "health_proof",
+      "claim": "General literature substantiates named products' health benefits",
+      "reference": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "evidence": "not relevant product-specific substantiation",
+      "use": "blocked"
+    }
+  ],
+  "commercial_gates": {
+    "publisher_identity": "HOLD",
+    "signed_partner_acceptance": "HOLD",
+    "website_channel_permission": "HOLD",
+    "social_channel_permission": "HOLD",
+    "email_channel_permission": "HOLD",
+    "issued_tracking_url": "HOLD",
+    "tracking_terms": "HOLD",
+    "creative_license": "HOLD",
+    "claims_substantiation": "HOLD",
+    "sku_identified": "HOLD",
+    "current_checkout_total": "HOLD",
+    "refund_terms": "HOLD",
+    "rights_and_fulfillment": "HOLD",
+    "near_link_disclosure": "HOLD",
+    "consent_and_privacy": "HOLD",
+    "independent_mobile_accessibility_QA": "HOLD",
+    "paid_conversion_reconciliation": "HOLD",
+    "founder_release_approval": "HOLD"
+  },
+  "sources": [
+    "https://inspire3.com/",
+    "https://affiliates.inspire3.com/",
+    "https://zen12.com/",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://brainwaveshots.com/focus-shot",
+    "https://pubmed.ncbi.nlm.nih.gov/37578065/",
+    "https://pubmed.ncbi.nlm.nih.gov/38197226/",
+    "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+    "https://doi.org/10.1080/00207144.2024.2434085",
+    "https://pubmed.ncbi.nlm.nih.gov/35842538/",
+    "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+    "https://finalvestige.com/2026/11/02/change-blindness/",
+    "https://finalvestige.com/2026/11/02/mesmerism/",
+    "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "https://finalvestige.com/focus/",
+    "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  ]
+}
