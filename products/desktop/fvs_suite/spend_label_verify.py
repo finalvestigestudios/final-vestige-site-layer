@@ -52,6 +52,15 @@ def _visible(text: str) -> str:
     return "".join(result)
 
 
+def _visible_vendor_label(text: str) -> str:
+    """Independent encoding of boundary ASCII spaces and source characters."""
+    leading = len(text) - len(text.lstrip(" "))
+    remainder = text[leading:]
+    trailing = len(remainder) - len(remainder.rstrip(" "))
+    center = remainder[:-trailing] if trailing else remainder
+    return (r"\u0020" * leading + _visible(center) + r"\u0020" * trailing)
+
+
 def _spreadsheet_safe(text: str) -> str:
     """Replicate CSV export formula-prefix defense independently for this field."""
     index = 0
@@ -81,19 +90,18 @@ def expected_vendor_labels(
 
     Input tuples are (normalized vendor, YYYY-MM, report-safe category,
     untouched imported raw vendor). Source validation and SHA pinning occur in
-    the calling verifier. Labels are trimmed/deduplicated exactly as documented,
-    with Unicode casefold used for ORDER ONLY, never merging source identities.
+    the calling verifier. Preserve original boundary whitespace as visible
+    evidence; Unicode casefold is used for ORDER ONLY, never for merging IDs.
     """
     groups: dict[tuple[str, str, str], set[str]] = defaultdict(set)
     for vendor, month, category, raw_label in observations:
         bucket = (vendor, month, category)
-        label = raw_label.strip()
-        if label:
-            groups[bucket].add(label)
+        if raw_label:
+            groups[bucket].add(raw_label)
         else:
             groups[bucket]  # Retain an existing bucket with no visible label.
     result = {}
     for bucket, labels in groups.items():
         ordered = sorted(labels, key=lambda value: (value.casefold(), value))
-        result[bucket] = _spreadsheet_safe("; ".join(_visible(x) for x in ordered))
+        result[bucket] = _spreadsheet_safe("; ".join(_visible_vendor_label(x) for x in ordered))
     return result
