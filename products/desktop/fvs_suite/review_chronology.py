@@ -44,6 +44,7 @@ def parse_review_utc(value: object) -> datetime:
         raise ValueError("Review journal has an invalid UTC timestamp")
     return result.astimezone(timezone.utc)
 
+
 def check_record_order(previous: datetime | None, recorded: object) -> datetime:
     """Reject backwards timestamps; equal-second decisions remain permissible."""
     current = parse_review_utc(recorded)
