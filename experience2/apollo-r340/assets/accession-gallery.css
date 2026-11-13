@@ -1,0 +1,21 @@
+/* R340: no image downloads, no JavaScript, all selectors scoped to the NASA accession gallery. */
+.fv-apollo-r340{box-sizing:border-box;background:#11130f;color:#f4efe6;font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:16px;line-height:1.65}
+.fv-apollo-r340 *, .fv-apollo-r340 *::before,.fv-apollo-r340 *::after{box-sizing:inherit;min-width:0}
+.fv-apollo-r340__inner{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:clamp(32px,5vw,72px) 0}
+.fv-apollo-r340__kicker,.fv-apollo-r340__id{color:#d2b980;font:700 12px/1.6 ui-monospace,monospace;letter-spacing:.06em;overflow-wrap:anywhere}
+.fv-apollo-r340 h2{font:400 clamp(32px,4vw,54px)/1.1 Georgia,serif;margin:12px 0 22px}
+.fv-apollo-r340__intro,.fv-apollo-r340__rights{max-width:78ch;color:#dfd8cb;overflow-wrap:anywhere}
+.fv-apollo-r340__grid{padding:0;margin:32px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;list-style:none}
+.fv-apollo-r340__card{display:flex;flex-direction:column;border:1px solid #786a4d;background:#191b17;padding:clamp(18px,3vw,32px);overflow-wrap:anywhere}
+.fv-apollo-r340__card h3{font:400 clamp(23px,2.5vw,31px)/1.22 Georgia,serif;margin:10px 0}
+.fv-apollo-r340__card p{margin:8px 0;color:#ebe4d7}
+.fv-apollo-r340 details{border-top:1px solid #786a4d;margin:16px 0;padding-top:12px}
+.fv-apollo-r340 summary{cursor:pointer;min-height:44px;padding:10px 0;color:#e8c98e;font-weight:650}
+.fv-apollo-r340__card a{color:#f1d39a;text-underline-offset:4px;display:inline-flex;align-items:center;min-height:44px;margin-top:auto;padding:10px 0;overflow-wrap:anywhere}
+.fv-apollo-r340__arrow{padding-left:8px}
+.fv-apollo-r340 :focus-visible{outline:3px solid #f5d58e;outline-offset:4px}
+@media(max-width:700px){.fv-apollo-r340__grid{grid-template-columns:1fr}}
+@media(max-width:359px){.fv-apollo-r340__inner{width:calc(100% - 24px)}.fv-apollo-r340__card{padding:16px}}
+@media(prefers-reduced-motion:reduce){.fv-apollo-r340 *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){.fv-apollo-r340__card{border:1px solid CanvasText}.fv-apollo-r340 :focus-visible{outline:3px solid Highlight}}
+@media print{.fv-apollo-r340{background:white;color:black}.fv-apollo-r340__card{background:white;color:black;break-inside:avoid;border:1px solid black}.fv-apollo-r340__card a,.fv-apollo-r340 p,.fv-apollo-r340 summary{color:black}.fv-apollo-r340 details{display:block}}
