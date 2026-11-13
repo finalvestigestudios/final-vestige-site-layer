@@ -111,6 +111,7 @@ def _checked(value: object, parser: Callable, *, quantity: bool) -> Decimal:
     # Direct API values must be size-bounded before callbacks. A custom
     # callback must not launder a simple source numeral into a different sum.
     original = _source_value(value, quantity=quantity)
+    failed_parser = False
     try:
         # Parser code may alter getcontext(), setcontext(), traps or status
         # flags. Isolate it so a valid Decimal return cannot silently lower
@@ -118,8 +119,12 @@ def _checked(value: object, parser: Callable, *, quantity: bool) -> Decimal:
         with localcontext():
             result = parser(value)
     except Exception:
-        # Callback exception text and chaining can disclose private CSV paths.
-        raise ValueError(failure) from None
+        failed_parser = True
+    # Raising 'from None' INSIDE the except hides the traceback but retains
+    # potentially private callback exceptions in ValueError.__context__.
+    # Translate only after that handler has ended, retaining no source object.
+    if failed_parser:
+        raise ValueError(failure)
     if (type(result) is not Decimal or not result.is_finite()
             or not -_MAX_EXPONENT <= result.as_tuple().exponent <= _MAX_EXPONENT
             or result.copy_abs() > (_MAX_QUANTITY if quantity else _MAX_UNIT_PRICE)

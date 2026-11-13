@@ -100,17 +100,28 @@ def validated_spend_rows(
         # Verify original money before ANY supplied parser is invoked. A
         # callback must never replace an invalid future source cell with a
         # fabricated valid Decimal after earlier rows have been processed.
+        failed_source_amount = False
         try:
-            canonical_source_amounts.append(canonical_spend_source_cents(record["amount"]))
+            source_amount = canonical_spend_source_cents(record["amount"])
         except ValueError:
-            raise ValueError(f"Invalid original spend amount at physical row {physical_row}") from None
+            failed_source_amount = True
+        if failed_source_amount:
+            raise ValueError(f"Invalid original spend amount at physical row {physical_row}")
+        canonical_source_amounts.append(source_amount)
         # Verify original calendar facts before any external callback can
         # substitute a plausible but false month in the spend report.
+        failed_source_date = False
         try:
-            canonical_source_dates.append(canonical_spend_source_date(record["date"]))
+            source_date = canonical_spend_source_date(record["date"])
         except ValueError:
-            raise ValueError(f"Invalid original spend date at physical row {physical_row}") from None
+            failed_source_date = True
+        if failed_source_date:
+            raise ValueError(f"Invalid original spend date at physical row {physical_row}")
+        canonical_source_dates.append(source_date)
 
+    # Private exceptions from original source validators and injected callbacks
+    # must not survive through either __cause__ or __context__. In particular
+    # 'raise ... from None' inside except would retain their source payloads.
     # Precompute every semantic result *before* yielding the first one.
     # Previously the first valid row escaped to a direct iterator consumer
     # before a later callback/date/Decimal failure became known. A consumer
@@ -126,10 +137,13 @@ def validated_spend_rows(
             frozen_records, canonical_source_amounts, canonical_source_dates):
         physical_row = record["row"]
         category = record.get("category", "")
+        failed_vendor = False
         try:
             vendor = invoke_spend_callback(normalize_vendor, record["vendor"])
         except Exception:
-            raise ValueError(f"Invalid vendor at physical row {physical_row}") from None
+            failed_vendor = True
+        if failed_vendor:
+            raise ValueError(f"Invalid vendor at physical row {physical_row}")
         if type(vendor) is not str:
             raise ValueError(f"Invalid normalized vendor key at physical row {physical_row}")
         if vendor == "":
@@ -139,19 +153,25 @@ def validated_spend_rows(
             raise ValueError(f"Invalid normalized vendor key at physical row {physical_row}")
         vendor_session.attest(record["vendor"], vendor, physical_row)
 
+        failed_date_parser = False
         try:
             calendar_day = invoke_spend_callback(parse_date, record["date"])
         except Exception:
-            raise ValueError(f"Invalid spend date at physical row {physical_row}") from None
+            failed_date_parser = True
+        if failed_date_parser:
+            raise ValueError(f"Invalid spend date at physical row {physical_row}")
         if type(calendar_day) is not date:
             raise ValueError(f"Spend date must be a calendar date at physical row {physical_row}")
         if not spend_date_parser_preserves_source(canonical_source_day, calendar_day):
             raise ValueError(f"Spend parser changed original date at physical row {physical_row}")
 
+        failed_money_parser = False
         try:
             amount = invoke_spend_callback(parse_money, record["amount"])
         except Exception:
-            raise ValueError(f"Invalid spend amount at physical row {physical_row}") from None
+            failed_money_parser = True
+        if failed_money_parser:
+            raise ValueError(f"Invalid spend amount at physical row {physical_row}")
         if type(amount) is not Decimal or not amount.is_finite():
             raise ValueError(f"Spend amount must be a finite exact Decimal at physical row {physical_row}")
         if not spend_parser_preserves_source(canonical_source_amount, amount):
@@ -178,13 +198,16 @@ def validated_spend_rows(
             if -parts.exponent - trailing > 2:
                 raise ValueError(
                     f"Spend amount must have cent precision at physical row {physical_row}")
+        failed_cent_check = False
         try:
             # Direct helper callers may have a low/trapping Decimal context;
             # check cent equivalence under a private fixed-point context.
             with localcontext(Context(prec=64)):
                 has_subcent = amount != amount.quantize(_CENT)
         except Exception:
-            raise ValueError(f"Invalid cent precision at physical row {physical_row}") from None
+            failed_cent_check = True
+        if failed_cent_check:
+            raise ValueError(f"Invalid cent precision at physical row {physical_row}")
         if has_subcent:
             raise ValueError(f"Spend amount must have cent precision at physical row {physical_row}")
 
