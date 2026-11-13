@@ -1,0 +1,56 @@
+{
+  "captured_utc": "2026-11-13T03:38:14Z",
+  "mode": "READ_ONLY",
+  "site": "https://finalvestige.com",
+  "origin": "connected WordPress.com Jetpack newsletter status/get_settings, site pages 1579/523 and media 1737",
+  "newsletter": {
+    "enabled": true,
+    "site_can_send": true,
+    "auto_post_email": false,
+    "content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "email_followers": 0,
+    "wpcom_followers": 3,
+    "counts_are_nonadditive": true,
+    "actual_email_eligible_recipients": null,
+    "recent_post_sends_status": "five most recent never_sent_opted_out, not lifetime zero sends"
+  },
+  "focus": {
+    "page_id": 1579,
+    "gift_initially_hidden": true,
+    "gift_untrusted_query_reveal": true,
+    "gift_class_signal": "is-subscriber",
+    "pdf_media_id": 1737,
+    "pdf_mime": "application/pdf",
+    "pdf_bytes": 599946,
+    "public_pdf_retrieval": "web cache miss; not a verified 404",
+    "real_welcome_receipt": null,
+    "post_confirmation_signup": null
+  },
+  "approvals": {
+    "founder_campaign": false,
+    "partner_email_permission": false,
+    "approved_earning_url": false,
+    "verified_commercial_guide_live": false,
+    "postal_footer": false,
+    "functional_unsubscribe": false,
+    "native_jetpack_preview": false
+  },
+  "release": {
+    "issues_01_to_06": "HOLD_UNSENT",
+    "issues_03_and_05": "HOLD_MERCHANT",
+    "original_copy_unchanged": true
+  },
+  "measured": {
+    "qualified_human_sessions": null,
+    "confirmed_new_leads": null,
+    "verified_paid_orders": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified_human_sessions": null
+  }
+}
