@@ -1,0 +1,44 @@
+{
+  "version": "R319",
+  "approval": "NOT_GIVEN",
+  "no_send": true,
+  "original_4_to_2": {
+    "editorial": 4,
+    "commercial_draft": 2
+  },
+  "source_of_truth": {
+    "master_pr": 175,
+    "qa_pr": 201,
+    "stacked_on": 2277,
+    "live_as_of": "2026-11-13T02:46:16Z",
+    "jetpack": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "wpcom_followers": 3,
+      "direct_email_followers": 0,
+      "eligible_recipients": null,
+      "auto_send": false
+    }
+  },
+  "release_gates": {
+    "welcome_received": false,
+    "actual_jetpack_preview": false,
+    "actual_postal_address": false,
+    "functional_unsubscribe": false,
+    "affiliate_account_approved": false,
+    "email_promotion_rights": false,
+    "issued_earning_link": false,
+    "live_guides": false,
+    "settled_orders": false
+  },
+  "net_revenue_per_1000": null,
+  "issue_status": [
+    "HOLD_UNSENT",
+    "HOLD_UNSENT",
+    "HOLD_UNSENT+HOLD_MERCHANT",
+    "HOLD_UNSENT",
+    "HOLD_UNSENT+HOLD_MERCHANT",
+    "HOLD_UNSENT"
+  ]
+}
