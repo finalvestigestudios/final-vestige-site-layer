@@ -16,7 +16,7 @@ R328 already solved source-preserving static previews. The major launch blocker 
 
 ## Verification
 - Native original master suite: `python -m unittest discover -s dispatch/campaign-2026-mind/tests -p 'test_*.py' -v` → 6/6 PASS using prior archived files whose four sampled Git blob SHA values re-matched today's live PR #175.
-- R329 committed guard test: exact committed JS bytes loaded through GitHub fetch in V8/CommonJS harness → 23/23 PASS after one test expectation correction. Native Node execution of R329 source is *not* attested in this PR.
+- R329 committed guard test: exact committed JS bytes loaded through GitHub fetch in V8/CommonJS harness → 23/23 PASS after one test expectation correction. Independently reconstructed both source files in the isolated native environment; `git hash-object` matched **both exact committed blob IDs**. Native `node --test dispatch/r329/receipt_guard.test.cjs` **23/23 PASS**. Evidence recorded in `NATIVE_EXECUTION_EVIDENCE.md`.
 - All-FALSE external attestation ledger: no valid commercial release conclusions; missing evidence includes postal address and actual authorized commercial inbox.
 - The input fixture is **fabricated synthetic** and its domains/addresses are invalid. It is not actual received email. Never store a real receipt on a public branch.
 - No public/production writes, messages, test sends, list changes, new platforms or spending.
