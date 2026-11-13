@@ -11,10 +11,19 @@ from typing import Iterable, Mapping
 from .audit_display import visible_source_text
 from .review import ascii_case_identity
 
-# Compatibility with existing CSV import: only ordinary ASCII boundary
-# whitespace is insignificant. Python's default strip() erases NBSP and
-# FIGURE/NARROW NBSP, incorrectly hiding distinct original source labels.
-_ASCII_BOUNDARY_WHITESPACE = " \t\r\n\v\f"
+# CSV ingestion now retains exact vendor spelling (R398). Matching may ignore
+# boundary whitespace, but reviewed labels must show the original differences.
+
+
+def _visible_vendor_label(value: str) -> str:
+    """Show boundary ASCII spaces explicitly, separate from literal escapes."""
+    leading = len(value) - len(value.lstrip(" "))
+    remainder = value[leading:]
+    trailing = len(remainder) - len(remainder.rstrip(" "))
+    center = remainder[:-trailing] if trailing else remainder
+    return (r"\u0020" * leading
+            + visible_source_text(center).replace(";", r"\u003B")
+            + r"\u0020" * trailing)
 
 
 def spend_vendor_evidence(
@@ -32,13 +41,12 @@ def spend_vendor_evidence(
         original = row.get("vendor")
         if type(original) is not str:
             raise ValueError("Spend vendor evidence requires native source text")
-        trimmed = original.strip(_ASCII_BOUNDARY_WHITESPACE)
-        if trimmed:
-            originals.add(trimmed)
+        if original:
+            originals.add(original)
 
     identities = {ascii_case_identity(value) for value in originals}
     labels = "; ".join(
-        visible_source_text(value).replace(";", r"\u003B")
+        _visible_vendor_label(value)
         for value in sorted(originals, key=lambda value: (value.casefold(), value))
     )
     return (len(identities) > 1, len(identities), labels)
