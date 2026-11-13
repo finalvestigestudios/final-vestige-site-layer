@@ -24,7 +24,7 @@ check("A/B product tier parity",a.includes("48 MP3s")&&b.includes("48 MP3s")&&a.
 check("A/B evidence disclosure",a.replace(/<[^>]*>/g,"").includes("not a controlled attentional-blink experiment")&&b.replace(/<[^>]*>/g,"").includes("not a controlled attentional-blink experiment"));
 check("A/B source link to article",a.includes("THE_SECOND_THING_YOU_NEVER_SAW.md")&&b.includes("THE_SECOND_THING_YOU_NEVER_SAW.md"));
 const blockedCommercial=s=>!/<a\b[^>]*href=["'][^"']*(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com|payhip\.com)/i.test(s);
-const noActiveCommerce=s=>blockedCommercial(s)&&/<button[^>]*\\sdisabled(?:\\s|>)[^>]*>Zen12 merchant offer — not yet verified<\/button>/i.test(s);
+const noActiveCommerce=s=>blockedCommercial(s)&&/<button[^>]*\sdisabled(?:\s|>)[^>]*>Zen12 merchant offer — not yet verified<\/button>/i.test(s);
 check("A withholds all merchant links",noActiveCommerce(a));
 check("B withholds all merchant links",noActiveCommerce(b));
 const disclose=s=>s.indexOf('Affiliate disclosure for any future merchant recommendation')>0&&s.indexOf('Affiliate disclosure for any future merchant recommendation')<s.indexOf('<button type="button" class="cta"');
