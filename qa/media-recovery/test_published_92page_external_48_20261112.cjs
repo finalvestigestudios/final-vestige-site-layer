@@ -1,0 +1,20 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {validate}=require('./validate_published_92page_external_48_20261112.cjs');
+const original=require('./published_92page_external_48_and_profile_293_20261112.json');
+let n=0;assert.deepEqual(validate(original),[]);n++;
+function t(f,label){const v=JSON.parse(JSON.stringify(original));f(v);assert.ok(validate(v).some(x=>x.includes(label)),label);n++;}
+t(v=>v.schema='invalid','schema');
+t(v=>v.rows[0].browser_http_status=404,'guest_unknown');
+t(v=>v.rows[0].wire_transfer_bytes=1400,'guest_unknown');
+t(v=>v.rows[0].cache_approved=true,'rights_hold');
+t(v=>v.rows[0].rehost_approved=true,'rights_hold');
+t(v=>v.rows[0].source_url='https://example.org/x.jpg','url_host_kind');
+t(v=>v.rows[0].max_derivative_width_px=1920,'960_no_upscale');
+t(v=>v.rows[1].slot=v.rows[0].slot,'slot_unique');
+t(v=>v.page_scan.offsite_img_src_references=0,'census');
+t(v=>v.page_scan.external_source_kinds.youtube_thumbnails=39,'kind_count_youtube_thumbnails');
+t(v=>v.oversized_media_reference.not_safe_to_delete=false,'profile_293');
+t(v=>v.policy.no_wordpress_writes=false,'scope_safety');
+t(v=>v.rows.pop(),'row_count');
+console.log(`${n}/${n} native Node integrity checks PASS — no guest HTTP is asserted`);
