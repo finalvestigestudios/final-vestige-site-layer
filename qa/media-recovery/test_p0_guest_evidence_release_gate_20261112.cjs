@@ -6,7 +6,7 @@ function packet(slot='418:1',status=404){const x=P0[slot];return {slot,post_id:x
  published_original_src:x.src,siteqa_pr:154,method:'SITEQA154_CHROME_CDP_LOGGED_OUT_COLD',
  capture_git_blob_sha:'a'.repeat(40),screenshot_sha256:'b'.repeat(64),
  guest:{page_http_status:200,full_scroll_complete:true,network_capture_complete:true,
-  cache_disabled:true,from_disk_cache:false,from_memory_cache:false,from_service_worker:false,
+  cache_disabled:true,was_cached:false,from_disk_cache:false,from_memory_cache:false,from_service_worker:false,
   current_src:x.src,request_url:x.src,final_response_url:x.src,cdp_request_id:'req-1',
   response_event_provenance:'CDP_NETWORK_RESPONSE_RECEIVED',
   completion_event_provenance:'CDP_NETWORK_LOADING_FINISHED',final_status:status,
@@ -42,6 +42,13 @@ test('200 explicitly recorded decoder error is an observed failure',()=>{
  assert.equal(adjudicateP0(p).visitor_observation,'CDP_200_EXPLICIT_DECODE_FAILURE');});
 test('missing response event cannot be inferred from wrapper code',()=>held((p)=>{p.guest.response_event_provenance='WEB_OPEN_WRAPPER'},/MISSING_OR_UNBOUND/));
 test('cached response rejected',()=>held(p=>{p.guest.from_disk_cache=true},/MISSING_OR_UNBOUND/));
+test('was_cached true rejects otherwise plausible 404',()=>held(p=>{p.guest.was_cached=true},/MISSING_OR_UNBOUND/));
+test('was_cached missing rejects otherwise plausible 404',()=>held(p=>{delete p.guest.was_cached},/MISSING_OR_UNBOUND/));
+test('was_cached null rejects otherwise plausible 404',()=>held(p=>{p.guest.was_cached=null},/MISSING_OR_UNBOUND/));
+test('cached decoded 200 cannot certify original loaded',()=>{
+ const p=packet('418:1',200);Object.assign(p.guest,{natural_width:960,natural_height:540,image_decoded:true,was_cached:true});
+ assert.equal(adjudicateP0(p).status,'HOLD');
+});
 test('missing cache signal rejected',()=>held(p=>{delete p.guest.from_memory_cache},/MISSING_OR_UNBOUND/));
 test('original source swapped across image slots rejected',()=>held(p=>{p.published_original_src=P0['418:2'].src},/MISSING_OR_UNBOUND/));
 test('page URL tampering rejected',()=>held(p=>{p.page_url='https://finalvestige.com/other/'},/MISSING_OR_UNBOUND/));
