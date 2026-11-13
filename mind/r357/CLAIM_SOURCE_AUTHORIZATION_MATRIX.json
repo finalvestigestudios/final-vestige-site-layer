@@ -1,0 +1,490 @@
+{
+  "sprint": "R357",
+  "as_of": "2026-11-13",
+  "editorial_status": "UNPUBLISHED",
+  "partner_status": "UNVERIFIED",
+  "release_status": "HARD_HOLD",
+  "checked_sources": [
+    "https://inspire3.com/",
+    "https://zen12.com/",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://brainwaveshots.com/focus-shot",
+    "https://finalvestige.com/focus/",
+    "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "https://finalvestige.com/2026/11/02/mesmerism/",
+    "https://finalvestige.com/2026/11/02/change-blindness/",
+    "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+    "https://doi.org/10.1037/0033-295X.101.1.34",
+    "https://www.psychologicalscience.org/journals/perspectives/1745691619898795/",
+    "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  ],
+  "claims": [
+    {
+      "id": "SCI-01",
+      "claim": "Wegner 1987 participants reported suppressed white bear thoughts and later rebound",
+      "type": "independent_scientific_abstract",
+      "classification": "supported_abstract_only",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+      "decision": "article_only"
+    },
+    {
+      "id": "SCI-02",
+      "claim": "1987 specific distractor reduced later preoccupation",
+      "type": "independent_scientific_abstract",
+      "classification": "supported_abstract_only",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+      "decision": "article_only"
+    },
+    {
+      "id": "SCI-03",
+      "claim": "Wegner 1994 operating and monitoring processes theory",
+      "type": "scientific_theory",
+      "classification": "supported_theoretical_model",
+      "source_url": "https://doi.org/10.1037/0033-295X.101.1.34",
+      "decision": "article_only"
+    },
+    {
+      "id": "SCI-04",
+      "claim": "2020 meta-analysis considered 31 thought suppression studies",
+      "type": "independent_scientific_abstract",
+      "classification": "supported_abstract_only",
+      "source_url": "https://www.psychologicalscience.org/journals/perspectives/1745691619898795/",
+      "decision": "article_only"
+    },
+    {
+      "id": "SCI-05",
+      "claim": "2020 review reports rebound regardless of cognitive load",
+      "type": "independent_scientific_abstract",
+      "classification": "supported_abstract_only",
+      "source_url": "https://www.psychologicalscience.org/journals/perspectives/1745691619898795/",
+      "decision": "article_only"
+    },
+    {
+      "id": "SCI-06",
+      "claim": "2020 review reports immediate enhancement under cognitive load",
+      "type": "independent_scientific_abstract",
+      "classification": "supported_abstract_only",
+      "source_url": "https://www.psychologicalscience.org/journals/perspectives/1745691619898795/",
+      "decision": "article_only"
+    },
+    {
+      "id": "SCI-07",
+      "claim": "Thought suppression research proves Zen12 efficacy",
+      "type": "commercial_efficacy",
+      "classification": "unsupported",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+      "decision": "exclude"
+    },
+    {
+      "id": "SCI-08",
+      "claim": "Commercial recordings are equivalent to an hour of meditation",
+      "type": "commercial_efficacy",
+      "classification": "seller_claim_unsubstantiated",
+      "source_url": "https://zen12.com/",
+      "decision": "exclude"
+    },
+    {
+      "id": "HIST-01",
+      "claim": "1784 commission separated apparent action from expectation",
+      "type": "historical_primary_source_via_fv_analysis",
+      "classification": "source_bounded",
+      "source_url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "decision": "article_only"
+    },
+    {
+      "id": "HIST-02",
+      "claim": "Puységur files examine testimony obedience and magnetic somnambulism",
+      "type": "existing_fv_historical_archive",
+      "classification": "source_bounded",
+      "source_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "decision": "article_only"
+    },
+    {
+      "id": "HIST-03",
+      "claim": "Historical animal magnetism experiments prove NLP hypnosis improves focus",
+      "type": "commercial_efficacy",
+      "classification": "unsupported_category_error",
+      "source_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "decision": "exclude"
+    },
+    {
+      "id": "PROD-01",
+      "claim": "Inspire3 markets multiple distinct self-development brands",
+      "type": "official_merchant_catalog",
+      "classification": "seller_description",
+      "source_url": "https://inspire3.com/",
+      "decision": "comparison_only"
+    },
+    {
+      "id": "PROD-02",
+      "claim": "Zen12 Premium is seller-described as 12 levels and 48 MP3s",
+      "type": "official_offer_page",
+      "classification": "seller_description",
+      "source_url": "https://zen12.com/",
+      "decision": "review_only"
+    },
+    {
+      "id": "PROD-03",
+      "claim": "Zen12 Beginner is seller-described as 6 levels and 24 MP3s",
+      "type": "official_offer_page",
+      "classification": "seller_description",
+      "source_url": "https://zen12.com/",
+      "decision": "review_only"
+    },
+    {
+      "id": "PROD-04",
+      "claim": "Zen12 Advanced is seller-described as 6 levels and 24 MP3s",
+      "type": "official_offer_page",
+      "classification": "seller_description",
+      "source_url": "https://zen12.com/",
+      "decision": "review_only"
+    },
+    {
+      "id": "PROD-05",
+      "claim": "Zen12 meditation hour-equivalence claim",
+      "type": "official_offer_page",
+      "classification": "seller_claim_unsubstantiated",
+      "source_url": "https://zen12.com/",
+      "decision": "label_as_unsubstantiated_only"
+    },
+    {
+      "id": "PROD-06",
+      "claim": "Final Zen12 checkout price tax currency and refund guarantee applicability",
+      "type": "account_specific_checkout",
+      "classification": "unverified",
+      "source_url": "https://zen12.com/",
+      "decision": "exclude_guaranteed_price"
+    },
+    {
+      "id": "PROD-07",
+      "claim": "Hypnosis Live Total Focus is 33 minutes and 47 MB",
+      "type": "official_offer_page",
+      "classification": "seller_description",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "decision": "comparison_only"
+    },
+    {
+      "id": "PROD-08",
+      "claim": "Hypnosis Live Total Focus enhances cognition via reprogramming",
+      "type": "official_offer_page",
+      "classification": "seller_claim_unsubstantiated",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "decision": "exclude"
+    },
+    {
+      "id": "PROD-09",
+      "claim": "Brainwave Shots Focus Shot includes 15-min and 30-min versions",
+      "type": "official_offer_page",
+      "classification": "seller_description",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "decision": "comparison_only"
+    },
+    {
+      "id": "PROD-10",
+      "claim": "Focus Shot provides focus for four hours or all day",
+      "type": "official_offer_page",
+      "classification": "seller_claim_unsubstantiated",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "decision": "exclude"
+    },
+    {
+      "id": "PROD-11",
+      "claim": "Focus Shot completely safe for everyone",
+      "type": "official_offer_page",
+      "classification": "seller_claim_unsubstantiated",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "decision": "exclude"
+    },
+    {
+      "id": "COM-01",
+      "claim": "Final Vestige named publisher partner acceptance",
+      "type": "private_partner_account",
+      "classification": "not_authenticated",
+      "source_url": "https://inspire3.com/",
+      "decision": "hard_hold"
+    },
+    {
+      "id": "COM-02",
+      "claim": "Final Vestige authorized earning URL",
+      "type": "private_partner_portal",
+      "classification": "not_authenticated",
+      "source_url": "https://inspire3.com/",
+      "decision": "hard_hold"
+    },
+    {
+      "id": "COM-03",
+      "claim": "Website/social/email channel permissions",
+      "type": "private_partner_terms",
+      "classification": "not_authenticated",
+      "source_url": "https://inspire3.com/",
+      "decision": "hard_hold"
+    },
+    {
+      "id": "COM-04",
+      "claim": "Affiliate commission rate cookie period settlement and refunds",
+      "type": "private_partner_terms",
+      "classification": "not_authenticated",
+      "source_url": "https://inspire3.com/",
+      "decision": "hard_hold"
+    },
+    {
+      "id": "COM-05",
+      "claim": "Existing payhip Mind SKU is FV-owned licensed deliverable live and payable",
+      "type": "private_merchant_account",
+      "classification": "not_authenticated",
+      "source_url": "https://payhip.com/",
+      "decision": "hard_hold"
+    },
+    {
+      "id": "COM-06",
+      "claim": "Actual paid affiliate commission",
+      "type": "merchant_reporting",
+      "classification": "no_receipt_verified",
+      "source_url": null,
+      "decision": "do_not_count_clicks"
+    },
+    {
+      "id": "COM-07",
+      "claim": "FTC commission disclosure near recommendation",
+      "type": "regulatory",
+      "classification": "required",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "decision": "test_in_previews"
+    },
+    {
+      "id": "COM-08",
+      "claim": "FTC adequate substantiation of health performance claims",
+      "type": "regulatory",
+      "classification": "required",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "decision": "exclude_unsubstantiated"
+    },
+    {
+      "id": "FUN-01",
+      "claim": "The live Focus Fieldbook uses existing single Jetpack signup path",
+      "type": "existing_first_party_resource",
+      "classification": "observed_live_not_delivery_tested",
+      "source_url": "https://finalvestige.com/focus/",
+      "decision": "preserve_only"
+    },
+    {
+      "id": "FUN-02",
+      "claim": "Change Blindness investigation has actual live article",
+      "type": "existing_first_party_editorial",
+      "classification": "observed_live",
+      "source_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "decision": "link_ok"
+    },
+    {
+      "id": "FUN-03",
+      "claim": "Mesmerism investigation has actual live article",
+      "type": "existing_first_party_editorial",
+      "classification": "observed_live",
+      "source_url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "decision": "link_ok"
+    },
+    {
+      "id": "FUN-04",
+      "claim": "R357 white bear article has an approved public permalink",
+      "type": "unpublished_draft",
+      "classification": "not_true",
+      "source_url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "decision": "do_not_assign_live_url"
+    },
+    {
+      "id": "FUN-05",
+      "claim": "Three distinct existing published Grok asset IDs and matching mobile links",
+      "type": "creator_handoff",
+      "classification": "not_authenticated",
+      "source_url": null,
+      "decision": "no_utm_claim"
+    },
+    {
+      "id": "FUN-06",
+      "claim": "Provider-confirmed Focus signup attributable to original asset ID",
+      "type": "jetpack_provider",
+      "classification": "not_authenticated",
+      "source_url": null,
+      "decision": "exclude_from_paid_metrics"
+    },
+    {
+      "id": "FUN-07",
+      "claim": "Qualified sessions and net settled revenue available for cohorts",
+      "type": "mixed_provider_evidence",
+      "classification": "not_authenticated",
+      "source_url": null,
+      "decision": "not_computable"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_partner_account_approved",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "publisher_identity_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "website_channel_permitted",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "organic_tiktok_channel_permitted",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "youtube_channel_permitted",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "instagram_channel_permitted",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "facebook_channel_permitted",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "email_channel_permitted",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "original_creatives_use_permitted",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "issued_earning_url_verifiable",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "affiliate_link_format_authorized",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "cookie_and_attribution_terms_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "commission_rate_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "settlement_terms_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "refund_chargeback_handling_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "merchant_checkout_currency_tax_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "actual_checkout_receipt_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "product_delivery_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "refund_policy_current_checkout_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "owner_fv_owned_payhip_sku_authenticated",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "payhip_product_license_clear",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "payhip_checkout_test_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "payhip_delivery_test_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "original_video_playable_and_captions_qa",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "browser_keyboard_mobile_wcag_qa",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "staging_nojs_reducedmotion_csp_qa",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "partner_claim_specific_evidence",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "independent_site_qa",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "founder_commercial_approval",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "founder_production_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "first_party_no_duplicate_tracking",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "attributed_paid_settlement_with_refund_fee_records",
+      "status": "HARD_HOLD",
+      "evidence": null
+    }
+  ],
+  "revenue": {
+    "verified_commissions": null,
+    "verified_paid_orders": null,
+    "refund_adjusted_net_usd": null,
+    "qualified_human_sessions": null,
+    "net_revenue_usd_per_1000_qualified_sessions": null,
+    "note": "NOT_COMPUTABLE, not zero"
+  }
+}
