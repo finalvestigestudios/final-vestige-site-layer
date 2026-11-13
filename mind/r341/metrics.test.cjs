@@ -1,0 +1,34 @@
+'use strict';
+// Run from repository root: node mind/r341/metrics.test.cjs. All fixtures SYNTHETIC.
+const assert=require('node:assert/strict');
+const {cohortScorecard}=require('./metrics.cjs');
+let n=0;function c(ok,description){assert.ok(ok,description);n++}
+const one=cohortScorecard({qualified_human_sessions:100,qualified_sessions_verified:true,merchant_report_verified:true,affiliate_clicks:90,paid_orders:[{kind:'owned_product',settled:true,attribution_verified:true,gross:20,refunds:0,fees:3}]});
+c(one.net_revenue===17,'owned net after fees');
+c(one.net_revenue_per_1000===170,'per-1000 correct');
+c(one.confirmed_paid_orders===1,'confirmed purchase only');
+c(one.paid_conversion_rate===.01,'paid rate denominator');
+c(one.tiny_sample_warning===true,'small buyer warning');
+const notSale=cohortScorecard({qualified_human_sessions:500,qualified_sessions_verified:true,merchant_report_verified:false,affiliate_clicks:30,paid_orders:[]});
+c(notSale.status==='NOT_COMPUTABLE','clicks not substitute for verified merchant report');
+c(notSale.net_revenue===null,'missing merchant report yields null');
+const onlyClicks=cohortScorecard({qualified_human_sessions:1000,qualified_sessions_verified:true,merchant_report_verified:true,affiliate_clicks:400,paid_orders:[]});
+c(onlyClicks.confirmed_paid_orders===0,'no orders despite clicks');
+c(onlyClicks.net_revenue===0,'verified empty order report yields zero net');
+const unknown=cohortScorecard({qualified_human_sessions:100,qualified_sessions_verified:true,merchant_report_verified:true,paid_orders:[{kind:'affiliate_commission',settled:true,attribution_verified:false,gross:40,refunds:0,fees:0}]});
+c(unknown.confirmed_paid_orders===0,'unattributed commission excluded');
+const pending=cohortScorecard({qualified_human_sessions:100,qualified_sessions_verified:true,merchant_report_verified:true,paid_orders:[{kind:'affiliate_commission',settled:false,attribution_verified:true,gross:40,refunds:0,fees:0}]});
+c(pending.confirmed_paid_orders===0,'pending commission excluded');
+const refunded=cohortScorecard({qualified_human_sessions:100,qualified_sessions_verified:true,merchant_report_verified:true,paid_orders:[{kind:'affiliate_commission',settled:true,attribution_verified:true,gross:40,refunds:40,fees:2}]});
+c(refunded.net_revenue===-2,'refund adjusted revenue may be negative');
+const noFees=cohortScorecard({qualified_human_sessions:100,qualified_sessions_verified:true,merchant_report_verified:true,paid_orders:[{kind:'owned_product',settled:true,attribution_verified:true,gross:10,refunds:0}]});
+c(noFees.status==='NOT_COMPUTABLE','missing fees held');
+const missingHuman=cohortScorecard({qualified_human_sessions:100,qualified_sessions_verified:false,merchant_report_verified:true});
+c(missingHuman.status==='NOT_COMPUTABLE','unverified humans held');
+const zero=cohortScorecard({qualified_human_sessions:0,qualified_sessions_verified:true,merchant_report_verified:true});
+c(zero.status==='NOT_COMPUTABLE','zero denominator held');
+const thirty=cohortScorecard({qualified_human_sessions:100,qualified_sessions_verified:true,merchant_report_verified:true,window_days:30,paid_orders:[]});
+c(thirty.window_days===30,'30 day supported');
+let rejected=false;try{cohortScorecard({window_days:1})}catch{rejected=true};c(rejected,'invalid window rejected');
+rejected=false;try{cohortScorecard({affiliate_clicks:-1})}catch{rejected=true};c(rejected,'bad clicks rejected');
+console.log('PASS '+n+' synthetic revenue cohort cases. No real customer or affiliate evidence.');
