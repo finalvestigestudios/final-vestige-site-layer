@@ -1,0 +1,321 @@
+{
+  "workstream": "Mind & Perception",
+  "run": "R358",
+  "review_date": "2026-11-13",
+  "unpublished": true,
+  "live_merchant_links": 0,
+  "claims": [
+    {
+      "id": "S01",
+      "type": "research",
+      "claim": "2013 radiologists n=24 83% did not report inserted gorilla",
+      "url": "https://doi.org/10.1177/0956797613479386",
+      "limit": "primary abstract, restricted full text",
+      "verdict": "SOURCE_CLASSIFIED",
+      "product_specific_efficacy_verified": false
+    },
+    {
+      "id": "S02",
+      "type": "research",
+      "claim": "1999 original dynamic inattentional blindness",
+      "url": "https://doi.org/10.1068/p281059",
+      "limit": "original experiment",
+      "verdict": "SOURCE_CLASSIFIED",
+      "product_specific_efficacy_verified": false
+    },
+    {
+      "id": "S03",
+      "type": "research",
+      "claim": "2010 gorilla familiarity did not generalize to other unexpected changes",
+      "url": "https://doi.org/10.1068/i0386",
+      "limit": "open-access study",
+      "verdict": "SOURCE_CLASSIFIED",
+      "product_specific_efficacy_verified": false
+    },
+    {
+      "id": "S04",
+      "type": "historical",
+      "claim": "Puységur archive historical testimony and consent limits",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "limit": "historical not causal evidence",
+      "verdict": "SOURCE_CLASSIFIED",
+      "product_specific_efficacy_verified": false
+    },
+    {
+      "id": "S05",
+      "type": "merchant",
+      "claim": "Inspire3 catalog lists meditation/hypnosis/audio products",
+      "url": "https://inspire3.com/",
+      "limit": "seller",
+      "verdict": "SOURCE_CLASSIFIED",
+      "product_specific_efficacy_verified": false
+    },
+    {
+      "id": "S06",
+      "type": "merchant",
+      "claim": "Zen12 Premium twelve levels 48 MP3s displayed $87.99",
+      "url": "https://zen12.com/",
+      "limit": "seller snapshot not checkout",
+      "verdict": "SOURCE_CLASSIFIED",
+      "product_specific_efficacy_verified": false
+    },
+    {
+      "id": "S07",
+      "type": "unsupported",
+      "claim": "Zen12 twelve minutes equals hour of advanced meditation",
+      "url": "https://zen12.com/",
+      "limit": "seller assertion not independently established",
+      "verdict": "DO_NOT_ENDORSE",
+      "product_specific_efficacy_verified": false
+    },
+    {
+      "id": "S08",
+      "type": "merchant",
+      "claim": "Zen12 seller advertises one-year refund promise",
+      "url": "https://zen12.com/",
+      "limit": "transaction terms not authenticated",
+      "verdict": "SOURCE_CLASSIFIED",
+      "product_specific_efficacy_verified": false
+    },
+    {
+      "id": "S09",
+      "type": "merchant",
+      "claim": "Total Focus 33 minute hypnosis recording",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "limit": "seller",
+      "verdict": "SOURCE_CLASSIFIED",
+      "product_specific_efficacy_verified": false
+    },
+    {
+      "id": "S10",
+      "type": "merchant",
+      "claim": "Focus Shot 15 and 30 minute versions",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "limit": "seller",
+      "verdict": "SOURCE_CLASSIFIED",
+      "product_specific_efficacy_verified": false
+    },
+    {
+      "id": "S11",
+      "type": "policy",
+      "claim": "FTC clear affiliate disclosure close to offer",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "limit": "compliance",
+      "verdict": "SOURCE_CLASSIFIED",
+      "product_specific_efficacy_verified": false
+    },
+    {
+      "id": "S12",
+      "type": "policy",
+      "claim": "FTC adequate product-specific health claims substantiation",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "limit": "compliance",
+      "verdict": "SOURCE_CLASSIFIED",
+      "product_specific_efficacy_verified": false
+    },
+    {
+      "id": "S13",
+      "type": "affiliate",
+      "claim": "Inspire3 affiliate signup public, named publisher approval unverified",
+      "url": "https://affiliates.inspire3.com/",
+      "limit": "public not account acceptance",
+      "verdict": "SOURCE_CLASSIFIED",
+      "product_specific_efficacy_verified": false
+    },
+    {
+      "id": "S14",
+      "type": "firstparty",
+      "claim": "Free Seven Day Focus Fieldbook established funnel",
+      "url": "https://finalvestige.com/focus/",
+      "limit": "do not duplicate",
+      "verdict": "SOURCE_CLASSIFIED",
+      "product_specific_efficacy_verified": false
+    },
+    {
+      "id": "S15",
+      "type": "inventory",
+      "claim": "Live Journal now reports 66 results, original issue baseline 61",
+      "url": "https://finalvestige.com/blog/",
+      "limit": "live count as of Nov 13",
+      "verdict": "SOURCE_CLASSIFIED",
+      "product_specific_efficacy_verified": false
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_FV_partner_acceptance",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "website_promotions_permission",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "social_promotions_permission",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "email_promotions_permission",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "issued_FV_tracking_url",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "merchant_payout_terms",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "merchant_settlement_reporting",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "pricing_at_checkout",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "refund_policy_at_checkout",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "digital_delivery_test",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "seller_efficacy_independent_trials",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "owned_FV_Mind_Payhip_rights",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "owned_FV_Mind_Payhip_checkout",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "owned_FV_Mind_delivery",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "Grok_three_published_asset_ids",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "Grok_approved_utm_destinations",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "existing_Jetpack_confirmed_leads",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "first_party_attribution_consent",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "no_duplicate_measurement_script",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "provider_paid_orders",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "independent_affiliate_settlement",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "refund_and_fee_export",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "qualified_human_session_filter",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "seven_day_cohort",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "thirty_day_cohort",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "text_vs_video_test_assigned",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "video_playable_captions_qa",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "real_browser_keyboard_wcag",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "mobile_360_390_768_1440_1920",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "no_js_and_reduced_motion_qa",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "CSP_and_tracking_security_qa",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "native_Node_and_CI",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "WP_sanitization_qa",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "editorial_and_founder_release",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "site_QA_release",
+      "state": "HARD_HOLD",
+      "evidence": "NOT VERIFIED"
+    }
+  ]
+}
