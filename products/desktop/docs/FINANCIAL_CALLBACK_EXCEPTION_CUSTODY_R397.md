@@ -13,10 +13,15 @@ can carry the original private CSV bytes, source field or path on its instance.
 A caller inspecting/serializing the exception graph could recover it.
 
 An isolated Linux CPython 3.13.5 comparison with a synthetic
-`PrivateSourceError` carrying `financial-csv-private-marker` showed:
-- Previous in-handler translator: `__context__ is not None`.
+financial exception carrying a confidential byte marker showed:
+- Previous in-handler translator: `__context__ is not None`, including
+  reachable `UnicodeDecodeError.object` / `JSONDecodeError.doc`.
 - Translator executed **after** the handler: `__context__ is None`,
   `__cause__ is None`, generic message retained.
+- Local *standalone control-flow rehearsal*, NOT a repository test:
+  10/10 synthetic tests passed in normal Python and 10/10 in `-OO -W error`
+  (20/20 test executions). It tested the error-translation pattern, private
+  payload/JSON/OS exceptions, Decimal return identity, and context restoration.
 
 This is an in-process potential disclosure mechanism, not proof of a
 customer-data breach. Synthetic inputs only.
