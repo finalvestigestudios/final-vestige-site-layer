@@ -8,7 +8,7 @@ function add_shortcode($tag,$fn): void {}
 function add_action($name,$fn,$prio=10): void {}
 function is_singular(): bool {return true;}
 function get_post($id=null){return (object)['post_type'=>'post','post_content'=>$GLOBALS['body']];}
-function has_shortcode($text,$tag): bool {return str_contains($text, '['.$tag.']');}
+function has_shortcode($text,$tag): bool {return strpos($text, '['.$tag.']')!==false;}
 function parse_blocks($text): array {return [];}
 function plugins_url($path,$file): string {return '/test-plugin/'.$path;}
 function wp_enqueue_style($name,$src,$deps,$v): void {$GLOBALS['styles'][$name]=$src;}
