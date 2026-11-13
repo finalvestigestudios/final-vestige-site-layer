@@ -14,7 +14,11 @@ from pathlib import Path
 import re
 import subprocess
 from urllib.parse import unquote
-import r350_nine_branch_content_custody_hold as prior
+import importlib.util
+_prior_path=Path(__file__).resolve().with_name('r350_nine_branch_content_custody_hold.py')
+_spec=importlib.util.spec_from_file_location('r350_nine_branch_content_custody_hold',_prior_path)
+prior=importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(prior)
 
 SCHEMA = 'fv-preparedness-r351-canonical-route-custody-v1'
 BUILDER_BLOB = '349173d1e1d735eade218d95c7a0a2649c8cccd9'
