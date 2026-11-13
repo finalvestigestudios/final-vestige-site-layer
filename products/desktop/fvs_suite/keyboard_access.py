@@ -95,8 +95,15 @@ def install_shortcuts(root, inputs, output, generate, *, review=None,
     if review is not None:
         actions["<Alt-Key-r>"] = review.invoke
 
+    # Staged callbacks are inert until every additive Tk bind has succeeded.
+    # R404 can retain a callback with an unknown ID after a failed bind; that
+    # orphan must never operate Generate, Browse, or premium Review.
+    activated = False
+
     def make_handler(operation):
         def handle(_event):
+            if not activated:
+                return "break"
             operation()
             return "break"
         return handle
@@ -131,4 +138,7 @@ def install_shortcuts(root, inputs, output, generate, *, review=None,
                 # Preserve the original failure and the conservative hold.
                 pass
         raise
+    # Publish activation only after the entire shortcut map is registered.
+    # On errors the closed-over flag stays False for even orphan callbacks.
+    activated = True
     return tuple(actions)
