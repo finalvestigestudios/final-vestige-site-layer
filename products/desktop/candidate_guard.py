@@ -10,6 +10,7 @@ from contextlib import contextmanager
 import os
 import stat
 from pathlib import Path
+from candidate_reparse_r390 import unsafe_windows_reparse
 
 MAX_EXE_BYTES = 512 * 1024 * 1024
 MAX_CHECKSUM_BYTES = 4096
@@ -50,6 +51,8 @@ def _ordinary(path: Path, maximum: int) -> os.stat_result:
         lookup_failed = True
     if lookup_failed:
         raise CandidateGuardError("Missing or inaccessible candidate payload")
+    if unsafe_windows_reparse(info):
+        raise CandidateGuardError("Windows reparse-point candidate payload is forbidden")
     if not stat.S_ISREG(info.st_mode) or info.st_nlink > 1:
         raise CandidateGuardError("Candidate payload must be a distinct ordinary file")
     if info.st_size > maximum:
@@ -126,6 +129,8 @@ def _inspect(path: str | Path, maximum: int, *, return_bytes: bool):
     try:
         with _private_candidate_stream(stream):
             opened = os.fstat(stream.fileno())
+            if unsafe_windows_reparse(opened):
+                raise CandidateGuardError("Windows reparse-point candidate descriptor is forbidden")
             if (not _same_path_descriptor_signature(before, opened)
                     or not stat.S_ISREG(opened.st_mode) or opened.st_nlink > 1):
                 raise CandidateGuardError("Candidate changed during opening")
@@ -140,6 +145,8 @@ def _inspect(path: str | Path, maximum: int, *, return_bytes: bool):
                 if chunks is not None:
                     chunks.append(chunk)
             finished = os.fstat(stream.fileno())
+            if unsafe_windows_reparse(finished):
+                raise CandidateGuardError("Windows reparse-point candidate descriptor is forbidden")
             if total != opened.st_size or _signature(finished) != _signature(opened):
                 raise CandidateGuardError("Candidate changed during reading")
     except CandidateGuardError:
@@ -178,6 +185,8 @@ def check_candidate_directory(folder: str | Path, expected_exes) -> None:
     directory_failed = False
     try:
         info = root.lstat()
+        if unsafe_windows_reparse(info):
+            raise CandidateGuardError("Windows reparse-point candidate directory is forbidden")
         if not stat.S_ISDIR(info.st_mode):
             raise CandidateGuardError("Candidate root must be a real directory")
         members = list(root.iterdir())
