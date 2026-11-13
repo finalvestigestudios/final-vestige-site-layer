@@ -1,0 +1,182 @@
+{
+  "schema": "fv-media-qa154-reconciliation-machine-audit-20261112-v1",
+  "date_local": "2026-11-12",
+  "method": "Offline cross-check of exact Site QA #154 CSV and current frozen Media Recovery 61-post 355-slot source ledger; apply Site QA #154 origin classifier to each stored published source; NO HTTP GET or browser probes",
+  "source_blobs": {
+    "site_qa_counts_csv": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
+    "site_qa_classifier_code": "cdadab899abed4dfd222e75a5616a98390dca4ea",
+    "media_recovery_355_frozen_ledger": "a9706c72ad6f17a68113aa87fc063f70d0ca0c34"
+  },
+  "counts": {
+    "published_posts_in_historical_cohort": 61,
+    "original_inline_image_slots": 355,
+    "site_qa_offsite_reported": 286,
+    "media_recovery_offsite_reported": 288,
+    "same_site_qa_classifier_applied_to_media_recovery_ledger": 288,
+    "disagreement_positions": 2,
+    "disagreement_post_count": 2,
+    "classes_on_media_recovery_ledger": {
+      "first_party": 60,
+      "external": 170,
+      "redirect_image": 118,
+      "jetpack_proxy": 7
+    }
+  },
+  "discrepancies": [
+    {
+      "post_id": 285,
+      "qa154_stored_images": 6,
+      "media1703_stored_images": 6,
+      "qa154_offsite": 5,
+      "media1703_offsite": 6,
+      "delta": 1,
+      "possible_slots": [
+        {
+          "slot": "285:0",
+          "original_published_url": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+          "source_class": "external",
+          "actual_browser_http_status": null,
+          "origin_http_status": null,
+          "rights_to_cache_or_rehost_verified": false,
+          "conditional_max_width_px": 960,
+          "no_upscaling": true
+        },
+        {
+          "slot": "285:1",
+          "original_published_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+          "source_class": "external",
+          "actual_browser_http_status": null,
+          "origin_http_status": null,
+          "rights_to_cache_or_rehost_verified": false,
+          "conditional_max_width_px": 960,
+          "no_upscaling": true
+        },
+        {
+          "slot": "285:2",
+          "original_published_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+          "source_class": "external",
+          "actual_browser_http_status": null,
+          "origin_http_status": null,
+          "rights_to_cache_or_rehost_verified": false,
+          "conditional_max_width_px": 960,
+          "no_upscaling": true
+        },
+        {
+          "slot": "285:3",
+          "original_published_url": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+          "source_class": "external",
+          "actual_browser_http_status": null,
+          "origin_http_status": null,
+          "rights_to_cache_or_rehost_verified": false,
+          "conditional_max_width_px": 960,
+          "no_upscaling": true
+        },
+        {
+          "slot": "285:4",
+          "original_published_url": "https://images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg",
+          "source_class": "external",
+          "actual_browser_http_status": null,
+          "origin_http_status": null,
+          "rights_to_cache_or_rehost_verified": false,
+          "conditional_max_width_px": 960,
+          "no_upscaling": true
+        },
+        {
+          "slot": "285:5",
+          "original_published_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+          "source_class": "external",
+          "actual_browser_http_status": null,
+          "origin_http_status": null,
+          "rights_to_cache_or_rehost_verified": false,
+          "conditional_max_width_px": 960,
+          "no_upscaling": true
+        }
+      ],
+      "source_of_difference": "UNATTRIBUTED_QA_ORIGINAL_SLOT_SNAPSHOT_NOT_PRESENT"
+    },
+    {
+      "post_id": 291,
+      "qa154_stored_images": 6,
+      "media1703_stored_images": 6,
+      "qa154_offsite": 5,
+      "media1703_offsite": 6,
+      "delta": 1,
+      "possible_slots": [
+        {
+          "slot": "291:0",
+          "original_published_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+          "source_class": "external",
+          "actual_browser_http_status": null,
+          "origin_http_status": null,
+          "rights_to_cache_or_rehost_verified": false,
+          "conditional_max_width_px": 960,
+          "no_upscaling": true
+        },
+        {
+          "slot": "291:1",
+          "original_published_url": "https://dmt55mxnkgbz2.cloudfront.net/1205x0_s3-30217-W-AP-PNW-TETON-COLLAPSE-1.jpg",
+          "source_class": "external",
+          "actual_browser_http_status": null,
+          "origin_http_status": null,
+          "rights_to_cache_or_rehost_verified": false,
+          "conditional_max_width_px": 960,
+          "no_upscaling": true
+        },
+        {
+          "slot": "291:2",
+          "original_published_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+          "source_class": "external",
+          "actual_browser_http_status": null,
+          "origin_http_status": null,
+          "rights_to_cache_or_rehost_verified": false,
+          "conditional_max_width_px": 960,
+          "no_upscaling": true
+        },
+        {
+          "slot": "291:3",
+          "original_published_url": "https://brightspotcdn.byui.edu/dims4/default/37ddf06/2147483647/strip/true/crop/2048x1365+0+0/resize/1200x800!/quality/90/?url=https%3A%2F%2Fk3-prod-byuifulbrightspot.s3.us-west-2.amazonaws.com%2Fbrightspot%2F33%2F7d%2F67f04f174772ab1d35419706138c%2Fteton-dam-flooding-aerial.jpg",
+          "source_class": "external",
+          "actual_browser_http_status": null,
+          "origin_http_status": null,
+          "rights_to_cache_or_rehost_verified": false,
+          "conditional_max_width_px": 960,
+          "no_upscaling": true
+        },
+        {
+          "slot": "291:4",
+          "original_published_url": "https://www.rexburgonline.com/wp-content/uploads/2016/05/fb-0053.jpg",
+          "source_class": "external",
+          "actual_browser_http_status": null,
+          "origin_http_status": null,
+          "rights_to_cache_or_rehost_verified": false,
+          "conditional_max_width_px": 960,
+          "no_upscaling": true
+        },
+        {
+          "slot": "291:5",
+          "original_published_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+          "source_class": "external",
+          "actual_browser_http_status": null,
+          "origin_http_status": null,
+          "rights_to_cache_or_rehost_verified": false,
+          "conditional_max_width_px": 960,
+          "no_upscaling": true
+        }
+      ],
+      "source_of_difference": "UNATTRIBUTED_QA_ORIGINAL_SLOT_SNAPSHOT_NOT_PRESENT"
+    }
+  ],
+  "conclusion": "61/355 image totals agree. Source offsite counts disagree only for posts 285 and 291, +1 each in recovery ledger. When the exact QA classifier policy is applied to the recovery 355 URLs, 288 is recovered; this is not attributable to Jetpack proxy taxonomy. Original Site QA per-slot source snapshot is needed to determine which slot(s) differed. These two are NOT independently verified broken images.",
+  "status": "RECONCILED_SCOPE_DISCREPANCY_SOURCE_SNAPSHOT_PENDING",
+  "real_guest_browser_http_statuses": 0,
+  "reported_historical_broken_images": 42,
+  "confirmed_guest_broken_images": null,
+  "sitewide_76_percent_weight_reduction_verified": false,
+  "oversized_wordpress_originals_over_1500000_bytes": 15,
+  "oversized_stored_bytes": 47096779,
+  "recovery_plan": "Request per-slot Site QA original source snapshot for posts 285/291 through existing QA #154 workflow; retain six-image P0 guest-browser order; stage only exact-scene rights-cleared <=960px no-upscale assets after editor review; no WordPress writes.",
+  "allow_third_party_cache": false,
+  "allow_wordpress_writes": false,
+  "allow_merge_deploy": false,
+  "subscription_spend_usd": 0
+}
