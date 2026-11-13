@@ -90,4 +90,46 @@ function verifyP0ReviewEvidence(packet,review,artifacts){
     verified_rights_blob_sha:review.rights_review_git_blob_sha,
     verified_asset_sha256:review.asset_sha256};
 }
-module.exports={verifyP0ReviewEvidence,gitBlobSha,sha256};
+
+/**
+ * Bind the AUTHORIZED candidate source master to actual supplied bytes,
+ * rather than allowing a caller to invent native_width/native_height.
+ * JPEG/WebP dimension parsing is container-level only; actual decode and
+ * visual-scene parity must be independently reviewed before any release.
+ */
+function verifyP0SourceMasterEvidence(review,artifacts){
+ const b=artifacts?.source_master_asset;
+ if(!Buffer.isBuffer(b)||b.length<1||b.length>60*1024*1024||
+    typeof artifacts?.rights_review_text!=='string'||!review?.geometry)
+   return denied('SOURCE_MASTER_BYTES_REQUIRED');
+ const shape=imageGeometry(b);
+ if(!shape)return denied('SOURCE_MASTER_IMAGE_FORMAT_UNVERIFIED');
+ const hash=sha256(b);
+ if(!/^[a-f0-9]{64}$/.test(review.source_master_sha256||'')||
+    review.source_master_sha256!==hash||
+    review.source_master_provenance!=='AUTHORIZED_ORIGINAL_MASTER_BYTES')
+   return denied('SOURCE_MASTER_SHA_OR_PROVENANCE_MISMATCH');
+ let rights;try{rights=JSON.parse(artifacts.rights_review_text);}
+ catch{return denied('SOURCE_MASTER_RIGHTS_JSON_INVALID');}
+ if(rights.source_master_sha256!==hash||
+    rights.source_master_reuse_permission_verified!==true||
+    rights.item_level_reuse_permission_verified!==true||
+    rights.asset_sha256!==review.asset_sha256)
+   return denied('SOURCE_MASTER_RIGHTS_NOT_BYTE_BOUND');
+ const z=review.geometry;
+ const positive=n=>Number.isSafeInteger(n)&&n>0;
+ if(![z.native_width,z.native_height,z.output_width,z.output_height].every(positive)||
+    shape.width!==z.native_width||shape.height!==z.native_height)
+   return denied('DECLARED_NATIVE_GEOMETRY_DIFFERS_FROM_MASTER_BYTES');
+ if(z.output_width>960||z.output_width>shape.width||z.output_height>shape.height)
+   return denied('DERIVATIVE_OVER_960_OR_UPSCALED_FROM_MASTER');
+ if(Math.abs(z.output_width*shape.height-z.output_height*shape.width)>Math.max(shape.width,shape.height))
+   return denied('SOURCE_MASTER_CROP_OR_ASPECT_MISMATCH');
+ return {verified:true,reason:null,source_master_sha256:hash,
+   source_master_dimensions:[shape.width,shape.height],
+   source_master_raster_decode_verified:shape.format==='png',
+   other_format_container_geometry_only:shape.format!=='png',
+   production_write_allowed:false,third_party_cache_allowed:false};
+}
+
+module.exports={verifyP0ReviewEvidence,verifyP0SourceMasterEvidence,gitBlobSha,sha256};

@@ -4,7 +4,7 @@
  * This code does NOT request images, decide copyright, write WordPress or deploy.
  * It separates suspected, observed-broken, observed-loaded and candidate-review stages.
  */
-const {verifyP0ReviewEvidence}=require('./verify_p0_review_evidence_20261112.cjs');
+const {verifyP0ReviewEvidence,verifyP0SourceMasterEvidence}=require('./verify_p0_review_evidence_20261112.cjs');
 const SHA40=/^[a-f0-9]{40}$/;
 const SHA256=/^[a-f0-9]{64}$/;
 const https=x=>typeof x==='string'&&/^https:\/\/[^\s/?#]+\//.test(x);
@@ -98,9 +98,13 @@ function adjudicateP0(packet,review=null,artifacts=null){
   return {...pending,reason:'960PX_NATIVE_SIZE_ASPECT_OR_TARGET_DPR_VISUAL_HOLD'};
  const verification=verifyP0ReviewEvidence(packet,review,artifacts);
  if(!verification.verified)return {...pending,reason:'BYTE_BOUND_ARTIFACTS_REQUIRED:'+verification.reason};
+ const master=verifyP0SourceMasterEvidence(review,artifacts);
+ if(!master.verified)return {...pending,reason:'BYTE_BOUND_SOURCE_MASTER_REQUIRED:'+master.reason};
  return {...pending,status:'STAGING_REVIEW_PACKET_ELIGIBLE_NO_WRITE',reason:null,
   staging_reviewer_packet:{slot,mode:review.replacement_mode,asset_url:review.asset_url,
-   output_pixels:[z.output_width,z.output_height],credit_required:true},
+   output_pixels:[z.output_width,z.output_height],credit_required:true,
+   source_master_sha256:master.source_master_sha256,
+   source_master_raster_decode_verified:master.source_master_raster_decode_verified},
   next_action:'Independent QA must verify evidence blobs, inspect rights and screen parity; prepare reversible staging proposal only.'};
 }
 module.exports={adjudicateP0,P0};
