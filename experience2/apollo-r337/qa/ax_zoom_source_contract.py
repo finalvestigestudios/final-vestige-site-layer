@@ -159,7 +159,7 @@ def main():
                 s.focus(); page.keyboard.press('Enter')
                 assert page.locator('details').first.evaluate('(e)=>e.open'), 'keyboard disclosure failure'
                 if (width,font,js) in ((320,64,True),(390,16,False),(1440,16,True)) and not forced:
-                    page.screenshot(path=str(OUTPUT / f"r336-ax-{width}-font{font}-{'js' if js else 'nojs'}.png"), full_page=(font == 16))
+                    page.screenshot(path=str(OUTPUT / f"r337-ax-{width}-font{font}-{'js' if js else 'nojs'}.png"), full_page=(font == 16))
                 cases.append({'width':width,'rootFontPx':font,'javaScript':js,'forcedColors':forced,'reducedMotion':reduce,**result})
                 page.close()
             # Multi-shortcode instance: independent accessible names and DOM anchors.
@@ -208,7 +208,7 @@ def main():
         'independentScreenReader':'NOT EXECUTED','FirefoxSafari':'NOT EXECUTED','installedWordPress':False,
         'productionCWV':None,'merchantSale':None,'netRevenuePer1000QualifiedHumanSessions':None,
         'releaseGate':'HARD HOLD'}
-    (OUTPUT/'r336-ax-results.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
+    (OUTPUT/'r337-ax-results.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
     print(f"PASS R337 {len(cases)} Chromium CDP AX contexts, 3 reproduced prior word-split failures, {len(negatives)} safety mutations rejected. Not axe-core or production QA.")
 
 if __name__=='__main__':
