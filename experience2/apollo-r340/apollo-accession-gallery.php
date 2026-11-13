@@ -1,0 +1,84 @@
+<?php
+/**
+ * Plugin Name: FV Apollo 1 Source Gallery Bridge — Research Only
+ * Description: Isolated no-JS source-custody gallery and R339 chronology integration. NOT authorized for installation.
+ * Version: 0.0.1-research
+ * Requires PHP: 7.4
+ */
+if (!defined('ABSPATH')) { exit; }
+
+/** NASA source pages only. Accessions are context, never proof of ignition or blanket commercial permission. */
+function fv_apollo_r340_accessions(): array {
+    return array(
+        array('id' => 'S67-15717', 'title' => 'Spacecraft 012 preparation', 'context' => 'NASA archive record of command-module preparation before the fire.', 'limit' => 'A pre-incident image cannot establish where the fire began.', 'url' => 'https://www.nasa.gov/image-detail/amf-s67-15717/'),
+        array('id' => 'S66-58038', 'title' => 'Altitude test context', 'context' => 'NASA image record of Apollo/Saturn 204 astronaut training and testing.', 'limit' => 'This testing photograph is not a sensor record of the January 27 emergency.', 'url' => 'https://www.nasa.gov/image-detail/amf-s66-58038/'),
+        array('id' => 'S67-21294', 'title' => 'Fire investigation context', 'context' => 'NASA accession for a photograph of Command Module 012 associated with the fire.', 'limit' => 'An image record alone cannot conclusively identify an electrical initiator.', 'url' => 'https://www.nasa.gov/image-detail/amf-s67-21294/'),
+        array('id' => 'KSC-20170124-PH_KLS01_0090', 'title' => 'Later Apollo 1 tribute', 'context' => 'NASA archival page for a later Apollo 1 tribute photograph.', 'limit' => 'Commemorative imagery is not contemporaneous evidence of spacecraft conditions.', 'url' => 'https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/'),
+    );
+}
+
+function fv_apollo_r340_gallery_shortcode($atts = array()): string {
+    static $instance = 0;
+    $instance++;
+    $heading_id = 'fv-apollo-r340-gallery-' . $instance;
+    $escape = function ($text): string { return htmlspecialchars((string) $text, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); };
+    ob_start();
+    ?>
+<section class="fv-apollo-r340" aria-labelledby="<?php echo $escape($heading_id); ?>" data-fv-r340-gallery>
+  <div class="fv-apollo-r340__inner">
+    <p class="fv-apollo-r340__kicker">APOLLO 1 / NASA ARCHIVE ACCESSIONS</p>
+    <h2 id="<?php echo $escape($heading_id); ?>">Four records. Four boundaries.</h2>
+    <p class="fv-apollo-r340__intro">A link-only research gallery: open original NASA archive pages to inspect photographs and their descriptions. The images are not embedded, cropped, downloaded or licensed for Final Vestige merchandise. An image accession is not a Review Board conclusion.</p>
+    <ol class="fv-apollo-r340__grid">
+    <?php foreach (fv_apollo_r340_accessions() as $record): ?>
+      <li class="fv-apollo-r340__card" data-fv-r340-rights="review-required" data-fv-r340-role="contextual-photo-only">
+        <p class="fv-apollo-r340__id">NASA / <?php echo $escape($record['id']); ?></p>
+        <h3><?php echo $escape($record['title']); ?></h3>
+        <p><?php echo $escape($record['context']); ?></p>
+        <details><summary>Provenance and limits</summary><p><?php echo $escape($record['limit']); ?></p><p>Source classification: contextual NASA photograph. Copyright, branding, likeness and commercial-context restrictions require individual review.</p></details>
+        <a href="<?php echo $escape($record['url']); ?>" rel="noopener noreferrer" data-fv-r340-source="contextual-photo">Inspect NASA accession <span class="fv-apollo-r340__arrow" aria-hidden="true">↗</span></a>
+      </li>
+    <?php endforeach; ?>
+    </ol>
+    <p class="fv-apollo-r340__rights">These links remain on NASA's website. No photograph is used as proof of the exact ignition point. The archive's public accessibility does not itself authorize endorsement, trademark use, identifiable-person merchandising or third-party rights.</p>
+  </div>
+</section>
+    <?php
+    return (string) ob_get_clean();
+}
+
+/** The chronology supplies the only editorial continuation CTA; gallery supplies none. */
+function fv_apollo_r340_experience_shortcode($atts = array()): string {
+    $chronology = dirname(__DIR__) . '/apollo-r339/chronology-rail.php';
+    if (is_readable($chronology)) {
+        require_once $chronology;
+    }
+    if (!function_exists('fv_apollo_r339_shortcode')) {
+        return '<p>Research experience unavailable. <a href="https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/">Read the free Apollo 1 investigation</a>.</p>';
+    }
+    return fv_apollo_r339_shortcode() . fv_apollo_r340_gallery_shortcode();
+}
+
+/** Enqueue scoped styles only for ordinary WP posts explicitly containing these shortcodes. */
+function fv_apollo_r340_enqueue(): void {
+    if (!function_exists('is_singular') || !is_singular() || !function_exists('get_post') || !function_exists('wp_enqueue_style')) { return; }
+    $post = get_post();
+    if (!$post || !isset($post->post_content)) { return; }
+    $content = (string) $post->post_content;
+    $has = function ($tag) use ($content): bool {
+        return function_exists('has_shortcode') ? has_shortcode($content, $tag) : strpos($content, '[' . $tag) !== false;
+    };
+    $combined = $has('fv_apollo_experience_r340');
+    if (!$combined && !$has('fv_apollo_gallery_r340')) { return; }
+    if ($combined && is_readable(dirname(__DIR__) . '/apollo-r339/assets/chronology-rail.css')) {
+        wp_enqueue_style('fv-apollo-r339-chronology', plugins_url('../apollo-r339/assets/chronology-rail.css', __FILE__), array(), '0.0.1-research');
+    }
+    wp_enqueue_style('fv-apollo-r340-gallery', plugins_url('assets/accession-gallery.css', __FILE__), array(), '0.0.1-research');
+}
+if (function_exists('add_shortcode')) {
+    add_shortcode('fv_apollo_gallery_r340', 'fv_apollo_r340_gallery_shortcode');
+    add_shortcode('fv_apollo_experience_r340', 'fv_apollo_r340_experience_shortcode');
+}
+if (function_exists('add_action')) {
+    add_action('wp_enqueue_scripts', 'fv_apollo_r340_enqueue', 20);
+}
