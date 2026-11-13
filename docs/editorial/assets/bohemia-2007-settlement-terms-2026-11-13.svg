@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="chart-title chart-desc">
+<title id="chart-title">Two different promises in a Bohemia Spillway settlement</title>
+<desc id="chart-desc">A court-described settlement split approximately 21.09 million dollars into 2.318 million designated for immediate payment and 18.767 million dependent on appropriations. The Fifth Circuit said some payments occurred but the annual 2.6 million threshold was not met; it reversed a separate federal takings judgment in 2007. These figures are settlement terms, not a verified disbursement ledger or present balance.</desc>
+<rect width="1200" height="660" fill="#111B22"/>
+<rect x="32" y="32" width="1136" height="596" rx="22" fill="#19252B" stroke="#53605D" stroke-opacity=".5"/>
+<text x="76" y="91" font-family="Arial,Helvetica,sans-serif" font-size="16" letter-spacing="3" font-weight="bold" fill="#D7B36A">FINAL VESTIGE  /  THE EVIDENCE</text>
+<text x="76" y="137" font-family="Georgia,'Times New Roman',serif" font-size="39" fill="#F0E9DB">A settlement is not a payment record</text>
+<text x="76" y="176" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#C9D1D0">Terms described by the U.S. Fifth Circuit in its July 23, 2007 opinion</text>
+<rect x="76" y="214" width="1046" height="19" rx="9" fill="#415458"/>
+<path d="M85 214 H190 V233 H85 Q76 233 76 224 V223 Q76 214 85 214 Z" fill="#D7B36A"/>
+<path d="M190 214 H1112 Q1122 214 1122 224 V223 Q1122 233 1112 233 H190 Z" fill="#6D9CAA"/>
+<rect x="76" y="262" width="479" height="163" rx="13" fill="#2C3538"/>
+<rect x="77" y="263" width="6" height="161" rx="3" fill="#D7B36A"/>
+<text x="101" y="306" font-family="Arial,Helvetica,sans-serif" font-size="17" letter-spacing="1.5" fill="#E4C58A">IMMEDIATE-PAYMENT TERM</text>
+<text x="101" y="353" font-family="Georgia,'Times New Roman',serif" font-size="35" fill="#F7EFE1">$2,318,263.72</text>
+<text x="101" y="393" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#D1D8D6">About 11% of the agreed sum</text>
+<rect x="574" y="262" width="548" height="163" rx="13" fill="#2C3538"/>
+<rect x="575" y="263" width="6" height="161" rx="3" fill="#6D9CAA"/>
+<text x="599" y="306" font-family="Arial,Helvetica,sans-serif" font-size="17" letter-spacing="1.4" fill="#B7D4DB">CONDITIONAL-APPROPRIATION TERM</text>
+<text x="599" y="353" font-family="Georgia,'Times New Roman',serif" font-size="35" fill="#F7EFE1">$18,767,145.26</text>
+<text x="599" y="393" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#D1D8D6">About 89% — payable if funds appropriated</text>
+<line x1="76" y1="457" x2="1122" y2="457" stroke="#4B5D60"/>
+<text x="76" y="490" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold" fill="#E6E5DB">What the court actually established</text>
+<text x="76" y="524" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#CAD4D2">Multiple payments occurred, but the stated $2.6M-per-year threshold was missed.</text>
+<text x="76" y="553" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#CAD4D2">In 2007, the separate federal takings judgment was reversed; settlement remedies remained.</text>
+<text x="76" y="601" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#AEBEBD">SOURCE: U.S. Court of Appeals, Fifth Circuit, No. 07-30086 (2007), pp. 3–4, 10–11. © Final Vestige Studios, 2026.</text>
+</svg>
