@@ -53,6 +53,10 @@ jobs:
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_policy_private_json_r388.py
           python -W error -m unittest discover -s products/desktop/tests -p test_procurement_policy_privacy_integration_r388.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_policy_privacy_integration_r388.py
+      - name: R389 verify all six report roles and required premium manifests (normal and optimized)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_smoke_output_roles_r389.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_smoke_output_roles_r389.py
       - name: Execute six synthetic engines with before-and-after SHA-256 source inventory
         run: |
           python -W error products/desktop/scripts/source_smoke_gate.py

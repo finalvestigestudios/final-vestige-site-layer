@@ -12,6 +12,7 @@ from pathlib import Path
 
 from . import engine, evidence_vault, exception_review
 from .vault_smoke_scope import check_scoped_vault_roundtrip
+from .smoke_output_roles_r389 import verify_smoke_output_roles
 
 
 def _csv(folder: Path, name: str, fields: tuple[str, ...], rows: list[tuple[str, ...]]) -> str:
@@ -281,4 +282,7 @@ def run_smoke(app_id: str) -> list[Path]:
             raise ValueError("Unsupported application for smoke test: " + app_id)
 
         _check(outputs and all(path.is_file() and path.stat().st_size > 0 for path in outputs), "smoke invariant 30")
+        # Verify *which* reports were generated, not only that some files exist.
+        # Premium manifests must occupy their exact final role and extension.
+        verify_smoke_output_roles(app_id, outputs)
         return [Path(path.name) for path in outputs]
