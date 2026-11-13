@@ -1,0 +1,11 @@
+# Dispatch R334 — consent-to-settled-revenue audit (NO SEND)
+
+Owner: [Dispatch #174](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174), with [Mind #171](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171), [Focus #129](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/129), [Conversion #820](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820). This additive branch is stacked on [R333 #2366](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2366). Original six-issue draft [#175](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175), prior edition gate #201, canonical previews #2337, actual-inbox inspector #2343 and frozen homepage #49 remain unchanged.
+
+**Deliverable:** a substantive single-offer conversion proof contract, an original optional Issue 03 buyer-readiness letter, privacy-safe synthetic QA for the Grok → Focus → Dispatch → independently settled purchase chain, claim/legal-source audit, and explicit evidence requests. This does NOT add a seventh or extra email, create a new mailing list, activate an affiliate link or deploy analytics.
+
+**Run:** `node --test dispatch/r334/consent_revenue_gate.test.cjs`. A local sample is synthetic. The guard never authorizes a send, a WordPress post or an affiliate activation—even if every supplied proof flag is fabricated as true. It refuses email/IP/contact data. It reports `null` for actual confirmed leads, paid orders, net revenue and qualified-human denominator until a separate real-world private verification process exists.
+
+**Release state:** all six original emails `HOLD_UNSENT`, commercial 03/05 `HOLD_MERCHANT`; alternative Issue 03 `NOT_ADOPTED`. The single selected purchase hypothesis is **Zen12 Premium**, not a verified sellable affiliate offer. There is no authenticated FV-specific Inspire3 email approval, issued tracked URL, approved live guide, valid FV publisher postal footer, actual inbox opt-out proof, welcome receipt or settled order. Current Jetpack counters overlap (3 total, 3 confirmed, 2 unconfirmed), and are not an eligible-recipient count.
+
+No emails (including test messages), subscriber contact, WordPress writes/settings changes, mailing-list copies, public social posts, merges or expenses.
