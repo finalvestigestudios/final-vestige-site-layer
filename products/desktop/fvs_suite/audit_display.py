@@ -52,22 +52,38 @@ def visible_source_text(value: str) -> str:
     return "".join(parts)
 
 
-def visible_source_label_list(values: Iterable[str]) -> str:
-    """Deterministic, readable source-document list for human audit reports.
+def visible_identity_label(value: str) -> str:
+    """Display original identity boundaries without changing audit provenance.
 
-    Preserve raw labels in source snapshots, never normalize matching keys.
-    Trim only ordinary ASCII outside spaces, not hidden Unicode evidence.
-    Escape a literal semicolon so it cannot masquerade as the list separator.
+    A leading or trailing ASCII space can distinguish identifiers that share
+    a normalized matching key. Mark such spaces explicitly, just as hidden
+    Unicode is escaped. Literal backslashes cannot imitate those markers.
+    """
+    if type(value) is not str:
+        raise TypeError("Audit source identity labels require native text")
+    leading = len(value) - len(value.lstrip(" "))
+    rest = value[leading:]
+    trailing = len(rest) - len(rest.rstrip(" "))
+    inner = rest[:-trailing] if trailing else rest
+    return (r"\u0020" * leading
+            + visible_source_text(inner).replace(";", r"\u003B")
+            + r"\u0020" * trailing)
+
+
+def visible_source_label_list(values: Iterable[str]) -> str:
+    """Render an unambiguous source-document list, including boundary spaces.
+
+    Never trim or normalize source identities in a human audit display.
+    The first-level sort preserves prior ordering for unchanged inputs.
+    Empty labels are absent; whitespace-only labels remain visible evidence.
     """
     labels: set[str] = set()
     for value in values:
         if type(value) is not str:
-            raise TypeError("Audit source document labels require text")
-        trimmed = value.strip(" ")
-        if trimmed:
-            labels.add(trimmed)
-    return "; ".join(visible_source_text(value).replace(";", r"\u003B")
-                     for value in sorted(labels))
+            raise TypeError("Audit source document labels require native text")
+        if value:
+            labels.add(value)
+    return "; ".join(visible_identity_label(value) for value in sorted(labels))
 
 
 def visible_review_row(case: object, decision: str) -> tuple[int, str, str, str]:
@@ -77,6 +93,6 @@ def visible_review_row(case: object, decision: str) -> tuple[int, str, str, str]
     and the raw case is bound to the original report SHA-256.
     """
     return (
-        case.report_row, visible_source_text(case.source_key),
+        case.report_row, visible_identity_label(case.source_key),
         visible_source_text(case.flags), decision,
     )
