@@ -1,0 +1,557 @@
+{
+  "schema": "fv.mind.claim-authorization.v1",
+  "review_date": "2026-11-13",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "owner": "Mind & Perception editorial and ethical presell only",
+  "source_count": 18,
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "founder charter",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S02",
+      "url": "https://finalvestige.com/blog/",
+      "type": "live newsroom",
+      "checked": "2026-11-13",
+      "observation": "66 published results in public Journal listing"
+    },
+    {
+      "id": "S03",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "live archival source trail",
+      "checked": "2026-11-13",
+      "observation": "153 locked rows, 16 dossiers shown"
+    },
+    {
+      "id": "S04",
+      "url": "https://finalvestige.com/focus/",
+      "type": "live site/resource",
+      "checked": "2026-11-13",
+      "observation": "one established 52-page Fieldbook/Jetpack Dispatch opt-in"
+    },
+    {
+      "id": "S05",
+      "url": "https://inspire3.com/",
+      "type": "official merchant umbrella",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S06",
+      "url": "https://zen12.com/",
+      "type": "exact merchant sales page",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S07",
+      "url": "https://zen12.com/gift",
+      "type": "seller sample/consent",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S08",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "exact merchant SKU",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S09",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "exact merchant SKU",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S10",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public recruitment only",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "type": "peer-reviewed original abstract",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8189198/",
+      "type": "peer-reviewed follow-up abstract",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S13",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1865565/",
+      "type": "peer-reviewed meditation study",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S14",
+      "url": "https://doi.org/10.1146/annurev-psych-012925-030843",
+      "type": "2026 psychological review",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S15",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory guidance",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S16",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory substantiation guidance",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S17",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "type": "publisher editorial policy",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S18",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "published adjacent investigation",
+      "checked": "2026-11-13"
+    }
+  ],
+  "claim_count": 30,
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Attentional blink is temporary impaired report of T2 under particular RSVP timing and task",
+      "evidence_class": "peer_reviewed_task_specific",
+      "status": "supported_in_task",
+      "source_ids": [
+        "S11",
+        "S12"
+      ],
+      "limit": "Do not claim literal eye blink or universal time interval."
+    },
+    {
+      "id": "C02",
+      "claim": "Raymond et al original task showed temporary probe impairment at a limited interval",
+      "evidence_class": "peer_reviewed_task_specific",
+      "status": "supported_in_task",
+      "source_ids": [
+        "S11"
+      ],
+      "limit": "Task, probe and controls matter."
+    },
+    {
+      "id": "C03",
+      "claim": "1994 follow-up tested seven RSVP experiments and disputed simple demand account",
+      "evidence_class": "peer_reviewed_task_specific",
+      "status": "supported_in_task",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "Mechanistic interpretation remains qualified."
+    },
+    {
+      "id": "C04",
+      "claim": "Three months of intensive meditation training altered AB and P3b in 2007 study",
+      "evidence_class": "peer_reviewed_task_specific",
+      "status": "supported_in_task",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "NOT Zen12 test; no guaranteed customer outcome."
+    },
+    {
+      "id": "C05",
+      "claim": "2026 mindfulness internal attention review offers explanatory framework",
+      "evidence_class": "independent_review",
+      "status": "framework_only",
+      "source_ids": [
+        "S14"
+      ],
+      "limit": "Not a product efficacy evaluation."
+    },
+    {
+      "id": "C06",
+      "claim": "Zen12 advertises twelve minutes equivalent to hour",
+      "evidence_class": "seller_claim",
+      "status": "unsubstantiated_product_claim",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "Must not repeat as fact or CTA promise."
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 advertises health, stress and focus gains",
+      "evidence_class": "seller_claim",
+      "status": "unsubstantiated_product_claim",
+      "source_ids": [
+        "S06",
+        "S16"
+      ],
+      "limit": "Omit efficacy representations absent adequate product-specific substantiation."
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 Beginner first six levels, 24 MP3s",
+      "evidence_class": "seller_description",
+      "status": "seller_described_only",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "Do not confuse with complete Premium."
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 Premium all twelve levels, 48 MP3s",
+      "evidence_class": "seller_description",
+      "status": "seller_described_only",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "Verify purchase contents again before release."
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 Advanced final six levels, 24 MP3s",
+      "evidence_class": "seller_description",
+      "status": "seller_described_only",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "Not the same as Beginner or Premium."
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 seller free gift also subscribes to separate newsletter",
+      "evidence_class": "seller_consent_disclosure",
+      "status": "seller_page_explicit",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "Explicitly distinguish from FV Jetpack list."
+    },
+    {
+      "id": "C12",
+      "claim": "Hypnosis Live Total Focus is seller-described 33-min,47MB audio",
+      "evidence_class": "seller_description",
+      "status": "seller_described_only",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "Not proof of hypnosis benefit or partner authorization."
+    },
+    {
+      "id": "C13",
+      "claim": "Brainwave Shots Focus Shot includes 15-min and 30-min versions",
+      "evidence_class": "seller_description",
+      "status": "seller_described_only",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "Not proof of brainwave entrainment outcome."
+    },
+    {
+      "id": "C14",
+      "claim": "Merchant product pages show promotional prices",
+      "evidence_class": "seller_price_observation",
+      "status": "not_checkout_verified",
+      "source_ids": [
+        "S06",
+        "S08",
+        "S09"
+      ],
+      "limit": "Do not hard-code price or claim live checkout totals."
+    },
+    {
+      "id": "C15",
+      "claim": "Merchant promises money-back terms on some SKU pages",
+      "evidence_class": "seller_refund_promise",
+      "status": "not_verified_in_checkout",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "No audited successful refund; omit risk-free language."
+    },
+    {
+      "id": "C16",
+      "claim": "Public Inspire3 affiliate network recruits partners and advertises commissions",
+      "evidence_class": "seller_recruitment_copy",
+      "status": "not_account_specific_authorization",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "No payout rate or EPC in FV copy; must authenticate signed actual account terms."
+    },
+    {
+      "id": "C17",
+      "claim": "FV-specific Inspire3 partner acceptance",
+      "evidence_class": "private_account_requirement",
+      "status": "not_verified",
+      "source_ids": [
+        "S01",
+        "S10"
+      ],
+      "limit": "Gmail searches found consumer marketing, not publisher approval; dashboard not authenticated."
+    },
+    {
+      "id": "C18",
+      "claim": "FV-specific earning URL and tracked commission",
+      "evidence_class": "private_account_requirement",
+      "status": "not_verified",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "Never invent or activate URL."
+    },
+    {
+      "id": "C19",
+      "claim": "FTC requires material-connection disclosure clear/conspicuous near endorsement",
+      "evidence_class": "regulatory_guidance",
+      "status": "supported_policy",
+      "source_ids": [
+        "S15"
+      ],
+      "limit": "Show plainly beside recommendation and active link if later approved."
+    },
+    {
+      "id": "C20",
+      "claim": "Health-related claims require appropriate science substantiation",
+      "evidence_class": "regulatory_guidance",
+      "status": "supported_policy",
+      "source_ids": [
+        "S16"
+      ],
+      "limit": "Absent product-specific adequate evidence omit."
+    },
+    {
+      "id": "C21",
+      "claim": "Historical Puységur source trail establishes magnetism as physical medical mechanism",
+      "evidence_class": "historical_archive",
+      "status": "not_supported",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "History of claims is not causal efficacy."
+    },
+    {
+      "id": "C22",
+      "claim": "FV Focus Fieldbook published 52-page free existing list",
+      "evidence_class": "site_observation",
+      "status": "supported_as_live",
+      "source_ids": [
+        "S04"
+      ],
+      "limit": "Do not add duplicate form/welcome."
+    },
+    {
+      "id": "C23",
+      "claim": "FV currently has live Mind route",
+      "evidence_class": "site_route",
+      "status": "not_verified",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "limit": "Do not assert /mind/ is live; review HTML only."
+    },
+    {
+      "id": "C24",
+      "claim": "Grok asset IDs and matching live mobile routes for three candidate topics",
+      "evidence_class": "creator_inventory",
+      "status": "not_verified",
+      "source_ids": [
+        "S01"
+      ],
+      "limit": "Need Praxxis/Grok TASK-008 readback and QA."
+    },
+    {
+      "id": "C25",
+      "claim": "FV owned Payhip active rights-cleared Mind SKU",
+      "evidence_class": "commerce_ownership",
+      "status": "not_verified",
+      "source_ids": [
+        "S01"
+      ],
+      "limit": "Do not conflate public listing with seller ownership/license/delivery."
+    },
+    {
+      "id": "C26",
+      "claim": "Merchant-confirmed affiliate commission or FV paid order",
+      "evidence_class": "commerce_reconciliation",
+      "status": "not_verified",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "Net revenue/1000 qualified humans NOT COMPUTABLE."
+    },
+    {
+      "id": "C27",
+      "claim": "Video variant B has a playable encoded original film",
+      "evidence_class": "implementation_status",
+      "status": "not_yet",
+      "source_ids": [
+        "S01"
+      ],
+      "limit": "Source-controlled SVG, transcript, captions only."
+    },
+    {
+      "id": "C28",
+      "claim": "Seller swipe creatives approved for FV's specific marketing channels",
+      "evidence_class": "private_account_requirement",
+      "status": "not_verified",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "No copied creative and no published marketing until written terms."
+    },
+    {
+      "id": "C29",
+      "claim": "One existing FV Dispatch route, no second list or imported addresses",
+      "evidence_class": "site_observation",
+      "status": "supported_as_live",
+      "source_ids": [
+        "S04",
+        "S17"
+      ],
+      "limit": "Do not modify welcome or newsletter drafts."
+    },
+    {
+      "id": "C30",
+      "claim": "A/B original film improves paid conversion",
+      "evidence_class": "hypothesis",
+      "status": "untested",
+      "source_ids": [
+        "S01"
+      ],
+      "limit": "Needs eligible merchant, controlled allocation and paid reconciliation."
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "affiliate account acceptance",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G02",
+      "name": "identity/brand verified",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G03",
+      "name": "program and product eligible",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G04",
+      "name": "publisher terms downloaded",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G05",
+      "name": "permitted web/social/email channels confirmed",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G06",
+      "name": "issued earning URL verified",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G07",
+      "name": "tracking parameters/attribution approved",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G08",
+      "name": "merchant SKU and tier verified",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G09",
+      "name": "current checkout currency/tax verified",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G10",
+      "name": "exact refund rules verified",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G11",
+      "name": "representations independently substantiated",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G12",
+      "name": "near-link disclosure QA",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G13",
+      "name": "claims and consent editorial review",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G14",
+      "name": "no unauthorized seller free-sample email",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G15",
+      "name": "real browser a11y & responsive QA",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G16",
+      "name": "video encoded caption tested",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G17",
+      "name": "no-JS and privacy QA",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G18",
+      "name": "founder commercial release approval",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    },
+    {
+      "id": "G19",
+      "name": "net revenue reporting reconciliation",
+      "passed": false,
+      "evidence": "Not authenticated; no inference from public recruitment, promotional emails or seller pages"
+    }
+  ],
+  "disclosure_copy": "If you purchase through an approved earning link, Final Vestige may earn a commission at no additional cost to you.",
+  "exclusions": [
+    "no invented commission or SKU price",
+    "no merchant affiliate URL",
+    "no product-specific efficacy assertion",
+    "no second email list",
+    "no live CMS writes",
+    "no auto-deploy/merge",
+    "no sales from clicks"
+  ],
+  "status_notes": "Gmail search inspected consumer Inspire3 marketing including Zen12 welcomes; these do not constitute FV publisher acceptance. Private dashboard and Payhip ownership/payment not audited. Verification is time-scoped."
+}
