@@ -1,0 +1,303 @@
+{
+  "version": "2026-11-12 R339",
+  "status": "UNPUBLISHED/NO ACTIVE AFFILIATE",
+  "sources": [
+    {
+      "id": "pu",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "review_method": "official/public source page"
+    },
+    {
+      "id": "mes",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "review_method": "official/public source page"
+    },
+    {
+      "id": "cb",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "review_method": "official/public source page"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "review_method": "official/public source page"
+    },
+    {
+      "id": "dispatch",
+      "url": "https://finalvestige.com/dispatch/",
+      "review_method": "official/public source page"
+    },
+    {
+      "id": "review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "review_method": "accessible indexed abstract or publisher summary"
+    },
+    {
+      "id": "stroop",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38874567/",
+      "review_method": "accessible indexed abstract or publisher summary"
+    },
+    {
+      "id": "brief",
+      "url": "https://doi.org/10.1016/j.jpsychires.2023.12.009",
+      "review_method": "accessible indexed abstract or publisher summary"
+    },
+    {
+      "id": "inspire",
+      "url": "https://inspire3.com/",
+      "review_method": "official/public source page"
+    },
+    {
+      "id": "zen",
+      "url": "https://zen12.com/",
+      "review_method": "official/public source page"
+    },
+    {
+      "id": "gift",
+      "url": "https://zen12.com/gift",
+      "review_method": "official/public source page"
+    },
+    {
+      "id": "hyp",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "review_method": "official/public source page"
+    },
+    {
+      "id": "brain",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "review_method": "official/public source page"
+    },
+    {
+      "id": "recruit",
+      "url": "https://affiliates.inspire3.com/",
+      "review_method": "official/public source page"
+    },
+    {
+      "id": "ftc",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "review_method": "official/public source page"
+    },
+    {
+      "id": "health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "review_method": "official/public source page"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12 tiers: Beginner 6/24, Premium 12/48, Advanced final 6/24",
+      "source": "zen",
+      "status": "seller_description"
+    },
+    {
+      "id": "C02",
+      "claim": "12 minutes equals 1 hour of meditation",
+      "source": "zen",
+      "status": "seller_claim_excluded"
+    },
+    {
+      "id": "C03",
+      "claim": "Premium on-page 2026-11-12 $87.99",
+      "source": "zen",
+      "status": "dated_promotion_not_checkout"
+    },
+    {
+      "id": "C04",
+      "claim": "One-year Zen12 money-back claim",
+      "source": "zen",
+      "status": "seller_policy_unverified"
+    },
+    {
+      "id": "C05",
+      "claim": "Zen12 free gift also receives seller newsletter",
+      "source": "gift",
+      "status": "seller_disclosure"
+    },
+    {
+      "id": "C06",
+      "claim": "Total Focus 33 min 47MB J.A.Amos",
+      "source": "hyp",
+      "status": "seller_description"
+    },
+    {
+      "id": "C07",
+      "claim": "Total Focus 14-day refund advertised",
+      "source": "hyp",
+      "status": "seller_policy_unverified"
+    },
+    {
+      "id": "C08",
+      "claim": "Total Focus 100 percent concentration promise",
+      "source": "hyp",
+      "status": "seller_claim_excluded"
+    },
+    {
+      "id": "C09",
+      "claim": "Focus Shot 15/30 minute versions",
+      "source": "brain",
+      "status": "seller_description"
+    },
+    {
+      "id": "C10",
+      "claim": "Focus Shot lasts hours",
+      "source": "brain",
+      "status": "seller_claim_excluded"
+    },
+    {
+      "id": "C11",
+      "claim": "Suggestion theory mechanism remains debated",
+      "source": "review",
+      "status": "academic_review_abstract"
+    },
+    {
+      "id": "C12",
+      "claim": "Stroop interference studied among highly suggestible",
+      "source": "stroop",
+      "status": "academic_review_abstract"
+    },
+    {
+      "id": "C13",
+      "claim": "Brief mindfulness audio studies have limited attention findings",
+      "source": "brief",
+      "status": "academic_review_summary"
+    },
+    {
+      "id": "C14",
+      "claim": "Puységur archive documents consent conflicts",
+      "source": "pu",
+      "status": "historical_archive"
+    },
+    {
+      "id": "C15",
+      "claim": "FTC requires clear and conspicuous material connection disclosure",
+      "source": "ftc",
+      "status": "regulatory_guidance"
+    },
+    {
+      "id": "C16",
+      "claim": "Health claims require appropriate substantiation",
+      "source": "health",
+      "status": "regulatory_guidance"
+    },
+    {
+      "id": "C17",
+      "claim": "FV is accepted as an Inspire3 affiliate",
+      "source": "recruit",
+      "status": "not_verified"
+    },
+    {
+      "id": "C18",
+      "claim": "FV-owned paid Mind product delivers properly",
+      "source": null,
+      "status": "not_verified"
+    },
+    {
+      "id": "C19",
+      "claim": "Affiliate outbound click proves merchant-paid conversion",
+      "source": null,
+      "status": "false_do_not_claim"
+    }
+  ],
+  "gates": [
+    {
+      "id": "partner_accepted",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "channel_permission",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "affiliate_link_issued",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "affiliate_tracking_terms",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "current_final_checkout",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "current_refund_terms",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "creative_rights",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "source_approval",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "founder_commerce_approval",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "founder_publication_approval",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "merchant_delivery_verified",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "paid_sku_verified",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "adjacent_disclosure_browser_qa",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "a11y_360_390_768_1440_1920",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "actual_encoded_42s_video",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "captions_synced_in_player",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "existing_jetpack_only",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "qualified_sessions_verified",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    },
+    {
+      "id": "merchant_settlements_reconciled",
+      "pass": false,
+      "reason": "Not proven for authorized public commercial release"
+    }
+  ],
+  "partner_eligibility": "NOT VERIFIED",
+  "issued_earning_url": null,
+  "licensed_paid_mind_sku": null,
+  "net_revenue_1000_sessions": null
+}
