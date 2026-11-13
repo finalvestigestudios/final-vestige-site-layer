@@ -21,7 +21,7 @@ check("historical source",article.includes("puysegurs-animal-magnetism-files"));
 check("FTC source",article.includes("ftc.gov/business-guidance"));
 check("Fieldbook retained",article.includes("https://finalvestige.com/focus/"));
 check("A/B product tier parity",a.includes("48 MP3s")&&b.includes("48 MP3s")&&a.includes("24 MP3s")&&b.includes("24 MP3s"));
-check("A/B evidence disclosure",a.includes("not a controlled attentional-blink experiment")&&b.includes("not a controlled attentional-blink experiment"));
+check("A/B evidence disclosure",a.replace(/<[^>]*>/g,"").includes("not a controlled attentional-blink experiment")&&b.replace(/<[^>]*>/g,"").includes("not a controlled attentional-blink experiment"));
 check("A/B source link to article",a.includes("THE_SECOND_THING_YOU_NEVER_SAW.md")&&b.includes("THE_SECOND_THING_YOU_NEVER_SAW.md"));
 const blockedCommercial=s=>!/<a\b[^>]*href=["'][^"']*(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com|payhip\.com)/i.test(s);
 const noActiveCommerce=s=>blockedCommercial(s)&&/<button[^>]*disabled[^>]*>Zen12 merchant offer — not yet verified<\/button>/i.test(s);
