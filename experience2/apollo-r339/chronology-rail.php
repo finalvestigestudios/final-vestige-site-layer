@@ -48,11 +48,11 @@ function fv_apollo_r339_shortcode($atts = array()): string {
         <div class="fv-apollo-r339__time"><?php if ($item['datetime'] !== ''): ?><time datetime="<?php echo $e($item['datetime']); ?>"><?php echo $e($item['time']); ?> GMT</time><?php else: ?><?php echo $e($item['time']); ?><?php if ($i !== 5): ?> GMT<?php endif; ?><?php endif; ?></div>
         <div class="fv-apollo-r339__record"><p class="fv-apollo-r339__type"><?php echo $e($item['class']); ?> · <?php echo $e($item['certainty']); ?></p>
         <h3><?php echo $e($item['event']); ?></h3><p><?php echo $e($item['description']); ?></p>
-        <details class="fv-apollo-r339__source"><summary>Source and evidence limits</summary><p><strong>Evidence limit:</strong> <?php echo $e($item['boundary']); ?></p><p><strong>Record custody:</strong> <?php echo $e($item['custody']); ?></p><p><a href="<?php echo $e($item['source']); ?>" rel="noopener noreferrer" data-fv-r339-source="<?php echo $i === 5 ? 'later-nasa-history' : 'original-board'; ?>"><?php echo $e($item['source_label']); ?></a></p></details>
+        <details class="fv-apollo-r339__source"><summary>Source and evidence limits</summary><p><strong>Document class:</strong> <?php echo $item['tier'] === 'later-history' ? 'Later NASA institutional history' : 'Original 1967 Review Board analysis'; ?></p><p><strong>Evidence limit:</strong> <?php echo $e($item['boundary']); ?></p><p><strong>Record custody:</strong> <?php echo $e($item['custody']); ?></p><p><a href="<?php echo $e($item['source']); ?>" rel="noopener noreferrer" data-fv-r339-source="<?php echo $i === 5 ? 'later-nasa-history' : 'original-board'; ?>"><?php echo $e($item['source_label']); ?></a></p></details>
         <div class="fv-apollo-r339__print-source" hidden>
           <p><strong>Evidence limit:</strong> <?php echo $e($item['boundary']); ?></p>
           <p><strong>Record custody:</strong> <?php echo $e($item['custody']); ?></p>
-          <p><strong>Primary source:</strong> <a href="<?php echo $e($item['source']); ?>" rel="noopener noreferrer"><?php echo $e($item['source_label']); ?></a></p>
+          <p><strong><?php echo $item['tier'] === 'later-history' ? 'Later institutional source:' : 'Primary source:'; ?></strong> <a href="<?php echo $e($item['source']); ?>" rel="noopener noreferrer"><?php echo $e($item['source_label']); ?></a></p>
         </div>
         </div>
       </li>
