@@ -4,7 +4,7 @@
  * downloader, browser collector, rights grant, or publishing approval. */
 const SHA=/^[0-9a-f]{64}$/;
 const okDimension=n=>Number.isSafeInteger(n)&&n>0&&n<=100000;
-const reject=reason=>({status:'HOLD',reason,derivative_review_admissible:false,
+const reject=reason=>({status:'HOLD',reason,geometry_precheck_passed:false,
  production_write_allowed:false,third_party_cache_allowed:false});
 function verifyNoUpscaleDerivative({review,master,derivative,masterSha256,rights}={}){
  const g=review?.geometry;
@@ -30,11 +30,12 @@ function verifyNoUpscaleDerivative({review,master,derivative,masterSha256,rights
  const cross=Math.abs(derivative.width*master.height-derivative.height*master.width);
  if(cross>Math.max(master.width,master.height))
    return reject('MASTER_ASPECT_OR_CROP_CHANGED');
- return {status:'ADMISSIBLE_FOR_MANUAL_STAGING_REVIEW_ONLY',reason:null,
-   derivative_review_admissible:true,master_dimensions:[master.width,master.height],
+ return {status:'GEOMETRY_PRECHECK_PASS_NO_RELEASE',reason:null,
+   geometry_precheck_passed:true,master_dimensions:[master.width,master.height],
    derivative_dimensions:[derivative.width,derivative.height],
    maximum_output_width_px:Math.min(master.width,960),
-   no_upscale_verified_from_hash_bound_raster_geometry:true,
+   no_upscale_geometry_consistent_from_supplied_dimensions:true,
+   master_artifact_bytes_verified_here:false,
    image_scene_identity_verified:false,production_write_allowed:false,
    third_party_cache_allowed:false};
 }
