@@ -1,0 +1,386 @@
+{
+  "run": "R354",
+  "asOf": "2026-11-13",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12 Premium 12 levels / 48 MP3",
+      "classification": "seller_format",
+      "source": "https://zen12.com/",
+      "verification": "seller_page_confirmed",
+      "rule": "Describe only as merchant's offer"
+    },
+    {
+      "id": "C02",
+      "claim": "Zen12 Beginner 6 early levels / 24 MP3",
+      "classification": "seller_format",
+      "source": "https://zen12.com/",
+      "verification": "seller_page_confirmed",
+      "rule": "Not the complete course"
+    },
+    {
+      "id": "C03",
+      "claim": "Zen12 Advanced 6 last levels / 24 MP3",
+      "classification": "seller_format",
+      "source": "https://zen12.com/",
+      "verification": "seller_page_confirmed",
+      "rule": "Not complete course"
+    },
+    {
+      "id": "C04",
+      "claim": "Premium seller-page $87.99 on 2026-11-13",
+      "classification": "price_snapshot",
+      "source": "https://zen12.com/",
+      "verification": "seller_page_confirmed",
+      "rule": "Not independently verified checkout pricing"
+    },
+    {
+      "id": "C05",
+      "claim": "Seller describes one-year refund promise",
+      "classification": "seller_policy",
+      "source": "https://zen12.com/",
+      "verification": "seller_page_confirmed",
+      "rule": "Final policy and actual refunds unverified"
+    },
+    {
+      "id": "C06",
+      "claim": "Twelve minutes equals one hour benefits",
+      "classification": "seller_efficacy",
+      "source": "https://zen12.com/",
+      "verification": "not_product_substantiated",
+      "rule": "DO NOT endorse or inherit"
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 audio controls brainwaves automatically",
+      "classification": "seller_mechanism",
+      "source": "https://zen12.com/",
+      "verification": "not_product_substantiated",
+      "rule": "DO NOT assert as established"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 free audio enrols merchant newsletter",
+      "classification": "seller_consent",
+      "source": "https://zen12.com/",
+      "verification": "seller_page_confirmed",
+      "rule": "Separate from FV Jetpack"
+    },
+    {
+      "id": "C09",
+      "claim": "Hypnosis Live Total Focus 33 min / 47MB",
+      "classification": "seller_format",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "verification": "seller_page_confirmed",
+      "rule": "Separate hypnosis product"
+    },
+    {
+      "id": "C10",
+      "claim": "Total Focus yields 100% concentration",
+      "classification": "seller_efficacy",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "verification": "not_product_substantiated",
+      "rule": "Do not endorse"
+    },
+    {
+      "id": "C11",
+      "claim": "Brainwave Shots offers Focus Shot",
+      "classification": "seller_format",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "verification": "seller_page_confirmed",
+      "rule": "No effect implied"
+    },
+    {
+      "id": "C12",
+      "claim": "Mind wandering can relate to errors and future planning",
+      "classification": "research_review",
+      "source": "https://doi.org/10.1146/annurev-psych-010814-015331",
+      "verification": "review_supported",
+      "rule": "Context and costs/benefits matter"
+    },
+    {
+      "id": "C13",
+      "claim": "Self-caught wandering relates to prospective monitoring",
+      "classification": "research_experiment",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/29355371/",
+      "verification": "abstract_supported",
+      "rule": "Not equivalent to product result"
+    },
+    {
+      "id": "C14",
+      "claim": "Three instructed wandering experiments N=336",
+      "classification": "research_experiment",
+      "source": "https://doi.org/10.3389/fpsyg.2024.1448226",
+      "verification": "abstract_supported",
+      "rule": "Laboratory task only"
+    },
+    {
+      "id": "C15",
+      "claim": "Clock timing can shape wandering",
+      "classification": "research_experiment",
+      "source": "https://doi.org/10.1177/0956797618761039",
+      "verification": "abstract_supported",
+      "rule": "Task context only"
+    },
+    {
+      "id": "C16",
+      "claim": "EEG/MEG meditation research has major methodological gaps",
+      "classification": "research_review",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/40800838/",
+      "verification": "review_supported",
+      "rule": "Not a Zen12 trial"
+    },
+    {
+      "id": "C17",
+      "claim": "Mindfulness student studies show domain-specific outcomes",
+      "classification": "research_review",
+      "source": "https://onlinelibrary.wiley.com/doi/full/10.1002/acp.70056",
+      "verification": "review_supported",
+      "rule": "Not a Zen12 trial"
+    },
+    {
+      "id": "C18",
+      "claim": "Puységur archive 153 rows / 16 case dossiers",
+      "classification": "fv_live",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "verification": "live_page_confirmed",
+      "rule": "Historical sources not clinical efficacy"
+    },
+    {
+      "id": "C19",
+      "claim": "FV Fieldbook 52-page existing free product",
+      "classification": "fv_live",
+      "source": "https://finalvestige.com/focus/",
+      "verification": "live_page_confirmed",
+      "rule": "Maintain same Jetpack/Dispatch"
+    },
+    {
+      "id": "C20",
+      "claim": "Public affiliate portal describes network",
+      "classification": "affiliate_public",
+      "source": "https://affiliates.inspire3.com/",
+      "verification": "public_page_confirmed",
+      "rule": "Not account acceptance"
+    },
+    {
+      "id": "C21",
+      "claim": "FV-specific Inspire3 acceptance",
+      "classification": "affiliate_private",
+      "source": "https://affiliates.inspire3.com/",
+      "verification": "unverified",
+      "rule": "Hard hold"
+    },
+    {
+      "id": "C22",
+      "claim": "FV-issued tracked merchant URL",
+      "classification": "affiliate_private",
+      "source": "https://affiliates.inspire3.com/",
+      "verification": "unverified",
+      "rule": "Never invent link"
+    },
+    {
+      "id": "C23",
+      "claim": "Affiliate channel permissions",
+      "classification": "affiliate_private",
+      "source": "https://affiliates.inspire3.com/",
+      "verification": "unverified",
+      "rule": "Hard hold, including email"
+    },
+    {
+      "id": "C24",
+      "claim": "Current seller payout terms for FV",
+      "classification": "affiliate_private",
+      "source": "https://affiliates.inspire3.com/",
+      "verification": "unverified",
+      "rule": "Public promotion not actual agreement"
+    },
+    {
+      "id": "C25",
+      "claim": "Live saleable FV-owned Mind SKU & rights",
+      "classification": "owned_commerce",
+      "source": "",
+      "verification": "unverified",
+      "rule": "Commerce audit required"
+    },
+    {
+      "id": "C26",
+      "claim": "Merchant actual checkout price/fees/refund",
+      "classification": "payment",
+      "source": "",
+      "verification": "unverified",
+      "rule": "Do not infer from display price"
+    },
+    {
+      "id": "C27",
+      "claim": "Near-link clear affiliate disclosure",
+      "classification": "compliance",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "verification": "guidance_supported",
+      "rule": "Place immediately adjacent"
+    },
+    {
+      "id": "C28",
+      "claim": "Health efficacy needs adequate substantiation",
+      "classification": "compliance",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "verification": "guidance_supported",
+      "rule": "Seller copy not proof"
+    },
+    {
+      "id": "C29",
+      "claim": "Actual paid partner commissions",
+      "classification": "finances",
+      "source": "",
+      "verification": "unverified",
+      "rule": "Do not compute net revenue"
+    },
+    {
+      "id": "C30",
+      "claim": "Actual settled owned-product orders",
+      "classification": "finances",
+      "source": "",
+      "verification": "unverified",
+      "rule": "Do not equate with clicks"
+    },
+    {
+      "id": "C31",
+      "claim": "Three real on-topic Grok media IDs",
+      "classification": "creator",
+      "source": "",
+      "verification": "unverified",
+      "rule": "No fabricated IDs"
+    }
+  ],
+  "releaseGates": [
+    {
+      "id": "publisher_acceptance",
+      "status": "HOLD"
+    },
+    {
+      "id": "issued_affiliate_link",
+      "status": "HOLD"
+    },
+    {
+      "id": "channel_permission",
+      "status": "HOLD"
+    },
+    {
+      "id": "creative_permissions",
+      "status": "HOLD"
+    },
+    {
+      "id": "payout_terms",
+      "status": "HOLD"
+    },
+    {
+      "id": "checkout_price",
+      "status": "HOLD"
+    },
+    {
+      "id": "refund_policy",
+      "status": "HOLD"
+    },
+    {
+      "id": "merchant_consent",
+      "status": "HOLD"
+    },
+    {
+      "id": "independent_efficacy",
+      "status": "HOLD"
+    },
+    {
+      "id": "owned_sku",
+      "status": "HOLD"
+    },
+    {
+      "id": "owned_rights",
+      "status": "HOLD"
+    },
+    {
+      "id": "owned_checkout",
+      "status": "HOLD"
+    },
+    {
+      "id": "owned_delivery",
+      "status": "HOLD"
+    },
+    {
+      "id": "founder_release",
+      "status": "HOLD"
+    },
+    {
+      "id": "mobile_360",
+      "status": "HOLD"
+    },
+    {
+      "id": "mobile_390",
+      "status": "HOLD"
+    },
+    {
+      "id": "mobile_768",
+      "status": "HOLD"
+    },
+    {
+      "id": "desktop_1440",
+      "status": "HOLD"
+    },
+    {
+      "id": "desktop_1920",
+      "status": "HOLD"
+    },
+    {
+      "id": "keyboard",
+      "status": "HOLD"
+    },
+    {
+      "id": "screen_reader",
+      "status": "HOLD"
+    },
+    {
+      "id": "reduced_motion",
+      "status": "HOLD"
+    },
+    {
+      "id": "no_javascript",
+      "status": "HOLD"
+    },
+    {
+      "id": "lighthouse",
+      "status": "HOLD"
+    },
+    {
+      "id": "wordpress_sanitizer",
+      "status": "HOLD"
+    },
+    {
+      "id": "real_caption_playback",
+      "status": "HOLD"
+    },
+    {
+      "id": "first_party_event_accuracy",
+      "status": "HOLD"
+    },
+    {
+      "id": "qualified_sessions",
+      "status": "HOLD"
+    },
+    {
+      "id": "paid_settlement",
+      "status": "HOLD"
+    },
+    {
+      "id": "refund_fees",
+      "status": "HOLD"
+    },
+    {
+      "id": "creator_id",
+      "status": "HOLD"
+    },
+    {
+      "id": "release_qa",
+      "status": "HOLD"
+    }
+  ],
+  "privacy": "No new tracking code or email forms; actual paid order or affiliate commission requires merchant proof"
+}
