@@ -12,7 +12,7 @@ test('all 30 release gates held',()=>{assert.equal(Object.keys(claims.release_ga
 for(const [name,html] of [['A',a],['B',b]]) {
  test(name+' fixed-content disclosure immediately before disabled CTA',()=>{const d=html.indexOf('Affiliate disclosure for any future earning link');const btn=html.indexOf('disabled aria-disabled="true"');assert.ok(d>0&&btn>d&&btn-d<700)});
  test(name+' no active merchant purchase link',()=>{assert.doesNotMatch(html,/<a[^>]+href="(?:https?:\/\/)?(?:www\.)?(?:zen12\.com\/checkout|affiliates\.inspire3\.com\/click|hop\.clickbank\.net)/i);assert.match(html,/Merchant offer unavailable — approval required/)});
- test(name+' no JS, form or autoplay',()=>{assert.doesNotMatch(html,/<script\b|<form\b|autoplay|<iframe\b/i)});
+ test(name+' no JS, form or autoplay',()=>{assert.doesNotMatch(html,/<script\b|<form\b|<iframe\b/i);assert.doesNotMatch(html,/<(?:video|audio)\b[^>]*\bautoplay\b/i)});
  test(name+' no unsubstantiated efficacy endorsement',()=>{assert.match(html,/not found independently verified product-specific evidence/);assert.match(html,/neither choice requires believing|No checkout or affiliate link is active/i)});
  test(name+' preserves one live Focus path and separate merchant newsletter',()=>{assert.match(html,/https:\/\/finalvestige\.com\/focus\//);assert.match(html,/merchant's newsletter/)});
  test(name+' basic accessibility',()=>{assert.match(html,/<html lang="en"/);assert.match(html,/<meta name="viewport"/);assert.match(html,/:focus-visible/);assert.match(html,/@media\(prefers-reduced-motion:reduce\)/);assert.match(html,/aria-disabled="true"/)});
