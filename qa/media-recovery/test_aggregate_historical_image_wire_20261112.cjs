@@ -31,6 +31,14 @@ function fixture(){
  const by=new Map();
  for(const r of audit.rows){if(!by.has(r.post_id))by.set(r.post_id,[]);by.get(r.post_id).push(r);}
  return [...by].map(([post_id,rows])=>({
+  independent_visual_review:Object.fromEntries(rows.map(r=>[r.slot,{
+   method:'SIDE_BY_SIDE_STAGING_SCREENSHOT_REVIEW',
+   before_run_id:'b-'+post_id,after_run_id:'a-'+post_id,
+   before_current_src:r.source_url,after_current_src:r.source_url,
+   before_screenshot_sha256:'b'.repeat(64),after_screenshot_sha256:'c'.repeat(64),
+   same_scene_verified:true,same_crop_verified:true,alt_fidelity_verified:true,
+   independent_editor_reviewed:true,
+   review_evidence_url:'https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1703'}])),
   schema:'fv-cold-transfer-pair-v1',
   source_ledger_blob_sha:'d1a9c7a499510ec37bcdba5858d45165752587e0',
   post_id,expected_slots:rows.map(r=>r.slot),
