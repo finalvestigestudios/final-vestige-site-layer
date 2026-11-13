@@ -12,7 +12,7 @@ def fixture():
         source[role]=json.dumps({"n":n,"slug":slug,"status":{"editorial":"drafted","publish":"draft"},
           "safety_review":{"state":"pending","reviewer":None,"date":None},"source_use":{},
           "notes":" ".join(anchors)}).encode()
-    m={"schema":gate.SCHEMA,"source_objects":{k:{"path":"preparedness/content/"+k,"git_blob_sha1":gate.blob(v)} for k,v in source.items()},
+    m={"schema":gate.SCHEMA,"source_objects":{k:{"path":"preparedness/content/"+k,"git_blob_sha1":gate.PINNED[k]["git_blob_sha1"]} for k,v in source.items()},
        "original_review_witnesses":[{"id":i,"source_role":r,"exact_anchor":a,"editorial_candidate":e,
           "disposition":"UNRESOLVED_HUMAN_REVIEW","clearance":False} for i,r,a,e in CASES],
        "editorial_directions":{f"E325-{i:02d}":"review-only" for i in range(1,8)},
@@ -40,13 +40,12 @@ CASES=(
 )
 class Review(unittest.TestCase):
     def setUp(self):self.src,self.m=fixture()
-    def check(self):return gate.inspect(self.src,self.m)
+    def check(self):return gate.inspect(self.src,self.m,simulated=True)
     def test_valid_synthetic_always_held(self):
         r=self.check();self.assertEqual(r["state"],"DRAFT_HARD_HOLD",r["errors"])
         self.assertEqual(r["review_count"],17);self.assertFalse(r["release_authorized"])
     def test_real_only_rejects_synthetic_bytes(self):
-        self.src["a_body"]+=b"!"
-        self.assertEqual(self.check()["state"],"INVALID_HARD_HOLD")
+        self.assertEqual(gate.inspect(self.src,self.m,simulated=False)["state"],"INVALID_HARD_HOLD")
     def test_forged_qd_rejected(self):
         self.m["gates"]["independent_qd_pass"]=True
         self.assertEqual(self.check()["state"],"INVALID_HARD_HOLD")
@@ -65,10 +64,27 @@ class Review(unittest.TestCase):
     def test_duplicate_json_rejected(self):
         with self.assertRaises(ValueError):gate.strict_json(b'{"a":1,"a":2}')
 
+
+    def test_forged_source_pin_rejected_even_with_matching_forged_bytes(self):
+        self.m["source_objects"]["a_body"]["git_blob_sha1"]=gate.blob(self.src["a_body"])
+        self.assertEqual(self.check()["state"],"INVALID_HARD_HOLD")
+    def test_substituted_source_path_rejected(self):
+        self.m["source_objects"]["a_body"]["path"]="preparedness/content/articles/another.body.html"
+        self.assertEqual(self.check()["state"],"INVALID_HARD_HOLD")
+    def test_forged_review_id_rejected(self):
+        self.m["original_review_witnesses"][0]["id"]="FAKE-REVIEW-ITEM"
+        self.assertEqual(self.check()["state"],"INVALID_HARD_HOLD")
+    def test_swapped_anchor_rejected(self):
+        self.m["original_review_witnesses"][0]["exact_anchor"]="fake claim"
+        self.assertEqual(self.check()["state"],"INVALID_HARD_HOLD")
+    def test_removed_release_gate_rejected(self):
+        self.m["gates"].pop("independent_qd_pass")
+        self.assertEqual(self.check()["state"],"INVALID_HARD_HOLD")
+
 for idx,(rid,role,anchor,_) in enumerate(CASES):
     def removed(self,role=role,anchor=anchor):
         self.src[role]=self.src[role].replace(anchor.encode(),b"REMOVED")
-        self.m["source_objects"][role]["git_blob_sha1"]=gate.blob(self.src[role])
+        self.m["source_objects"][role]["git_blob_sha1"]=gate.PINNED[role]["git_blob_sha1"]
         self.assertEqual(self.check()["state"],"INVALID_HARD_HOLD")
     def repeated(self,role=role,anchor=anchor):
         self.src[role]+=b"<p>"+anchor.encode()+b"</p>"
