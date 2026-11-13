@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 650" role="img" aria-labelledby="title desc">
+<title id="title">Mardi Gras Pass: two January surveys</title>
+<desc id="desc">Pontchartrain Conservancy's January 2023 and January 2024 measurements. Average width was 263 feet in both years. Mean cross-sectional area fell from 6,247 to 6,201 square feet, approximately 0.7 percent. Survey of 45 transects, not river discharge.</desc>
+<rect width="1120" height="650" fill="#141817"/>
+<rect x="30" y="30" width="1060" height="590" rx="18" fill="#1b211e" stroke="#3f5145" stroke-width="2"/>
+<text x="70" y="87" fill="#d2b98b" font-size="19" font-family="Arial,sans-serif" letter-spacing="3">FINAL VESTIGE · SOURCE-DERIVED EVIDENCE</text>
+<text x="70" y="145" fill="#f7f0e3" font-family="Georgia,serif" font-size="48">The pass did not keep widening</text>
+<text x="70" y="183" fill="#c7cbbf" font-family="Arial,sans-serif" font-size="22">Mardi Gras Pass · two January field surveys · not a flow measurement</text>
+<path d="M70 216 H1050" stroke="#48534a" stroke-width="2"/>
+<text x="70" y="252" fill="#d2b98b" font-family="Arial,sans-serif" font-weight="bold" font-size="20" letter-spacing="2">AVERAGE WIDTH</text>
+<text x="70" y="302" fill="#f7f0e3" font-family="Arial,sans-serif" font-size="27">2023</text>
+<rect x="196" y="282" width="735" height="25" rx="7" fill="#303a34"/>
+<rect x="196" y="282" width="644" height="25" rx="7" fill="#c9a96d"/>
+<text x="956" y="303" fill="#f7f0e3" font-family="Arial,sans-serif" font-size="27">263 ft</text>
+<text x="70" y="344" fill="#f7f0e3" font-family="Arial,sans-serif" font-size="27">2024</text>
+<rect x="196" y="324" width="735" height="25" rx="7" fill="#303a34"/>
+<rect x="196" y="324" width="644" height="25" rx="7" fill="#c9a96d"/>
+<text x="956" y="345" fill="#f7f0e3" font-family="Arial,sans-serif" font-size="27">263 ft</text>
+<path d="M70 375 H1050" stroke="#48534a" stroke-width="2"/>
+<text x="70" y="411" fill="#d2b98b" font-family="Arial,sans-serif" font-weight="bold" font-size="20" letter-spacing="2">MEAN CROSS-SECTIONAL AREA</text>
+<text x="70" y="462" fill="#f7f0e3" font-family="Arial,sans-serif" font-size="27">2023</text>
+<rect x="196" y="440" width="735" height="26" rx="7" fill="#303a34"/>
+<rect x="196" y="440" width="706" height="26" rx="7" fill="#77ac9d"/>
+<text x="956" y="462" fill="#f7f0e3" font-family="Arial,sans-serif" font-size="24">6,247 ft²</text>
+<text x="70" y="507" fill="#f7f0e3" font-family="Arial,sans-serif" font-size="27">2024</text>
+<rect x="196" y="485" width="735" height="26" rx="7" fill="#303a34"/>
+<rect x="196" y="485" width="701" height="26" rx="7" fill="#77ac9d"/>
+<text x="956" y="507" fill="#f7f0e3" font-family="Arial,sans-serif" font-size="24">6,201 ft²</text>
+<text x="70" y="559" fill="#f7f0e3" font-family="Arial,sans-serif" font-size="24">Change: −0.7% across 45 transects. A two-date comparison, not permanent stability.</text>
+<text x="70" y="592" fill="#aeb6a9" font-family="Arial,sans-serif" font-size="17">Source: Songy &amp; Hopkins, Pontchartrain Conservancy (Feb. 2024), Table 2 · Graphic © Final Vestige Studios</text>
+</svg>
