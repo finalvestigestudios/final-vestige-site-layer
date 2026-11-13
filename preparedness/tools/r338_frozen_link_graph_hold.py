@@ -31,7 +31,7 @@ def result(errors: list[str], *, rows=0, links=0, targets=0, tool_links=0) -> di
             'errors':sorted(set(errors)), 'entries_checked':rows,
             'internal_link_occurrences':links, 'distinct_link_targets':targets,
             'internal_links_to_unpublished_tools':tool_links,
-            'source_head':SOURCE_PR_HEAD, 'all_41_items_draft_only':True,
+            'source_head':SOURCE_PR_HEAD, 'treat_all_graph_nodes_as_private_drafts':True,
             'independent_claim_source_support_verified':False,
             'tool_104_emergency_privacy_approved':False,
             'native_wordpress_preview_build_verified':False,
