@@ -214,7 +214,10 @@ def summarize_spend(
                 "" if category_baseline is None else format(category_baseline, "f")),
             "category_review_flag": "review_category_spike" if category_spike else "",
             "source_rows": canonical_spend_source_rows([row["row"] for row in rows]),
-            "source_vendor_labels": vendor_source_evidence[vendor][2],
+            # Only display spellings contributing to THIS month/category bucket.
+            # The collision flag and variant count remain vendor-wide so that
+            # a spelling seen in another month/category is never overlooked.
+            "source_vendor_labels": spend_vendor_evidence(rows)[2],
             "vendor_label_variants": str(vendor_source_evidence[vendor][1]),
             "source_sha256": source_sha256,
         })
