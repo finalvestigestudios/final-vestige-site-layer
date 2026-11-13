@@ -1,0 +1,224 @@
+{
+  "type": "OFFLINE_READ_ONLY_SNAPSHOT",
+  "captured_at": "2026-11-13T21:32:02Z",
+  "source_issue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+  "master_pr": 175,
+  "parallel_review_pr": 201,
+  "lineage_note": "Point-in-time connector metadata; re-fetch each exact head/branch immediately before any future decision; no live GitHub API execution in offline auditor.",
+  "prs": [
+    {
+      "number": 175,
+      "head_branch": "feature/dispatch-mind-campaign-pilot-20261030",
+      "head_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+      "base_branch": "main",
+      "base_sha": "77a87635eb613ce6de268aee11350fa8242efa0f",
+      "state": "open",
+      "draft": true
+    },
+    {
+      "number": 2337,
+      "head_branch": "dispatch-r328-canonical-preview-gates-20261113",
+      "head_sha": "6bf50815fcdd6f170bd30e963d6d9140c4cc120b",
+      "base_branch": "feature/dispatch-mind-campaign-pilot-20261030",
+      "base_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+      "state": "open",
+      "draft": true
+    },
+    {
+      "number": 2343,
+      "head_branch": "dispatch-r329-received-proof-offer-permission-20261113",
+      "head_sha": "8d6f7531d04f85f1995e7805c29343d273ca1a97",
+      "base_branch": "dispatch-r328-canonical-preview-gates-20261113",
+      "base_sha": "6bf50815fcdd6f170bd30e963d6d9140c4cc120b",
+      "state": "open",
+      "draft": true
+    },
+    {
+      "number": 2348,
+      "head_branch": "dispatch-r330-native-post-transfer-gates-20261113",
+      "head_sha": "5c0295f438f2c52cc9524132560303cb958b8a49",
+      "base_branch": "dispatch-r329-received-proof-offer-permission-20261113",
+      "base_sha": "8d6f7531d04f85f1995e7805c29343d273ca1a97",
+      "state": "open",
+      "draft": true
+    },
+    {
+      "number": 2354,
+      "head_branch": "dispatch-r331-merchant-checkout-consent-truth-20261113",
+      "head_sha": "4ccbb7b254b13c34ce996cbe1af353def8d5550c",
+      "base_branch": "dispatch-r330-native-post-transfer-gates-20261113",
+      "base_sha": "5c0295f438f2c52cc9524132560303cb958b8a49",
+      "state": "open",
+      "draft": true
+    },
+    {
+      "number": 2360,
+      "head_branch": "dispatch-r332-1784-blindfold-source-and-revenue-holds-20261113",
+      "head_sha": "0861e61399f329226bcb5641f9faccf1681f7f15",
+      "base_branch": "dispatch-r331-merchant-checkout-consent-truth-20261113",
+      "base_sha": "4ccbb7b254b13c34ce996cbe1af353def8d5550c",
+      "state": "open",
+      "draft": true
+    },
+    {
+      "number": 2366,
+      "head_branch": "dispatch-r333-canonical-selection-consent-conversion-20261113",
+      "head_sha": "aad7f67fa5250675ce18d4b807db0eb0b0976744",
+      "base_branch": "dispatch-r332-1784-blindfold-source-and-revenue-holds-20261113",
+      "base_sha": "0861e61399f329226bcb5641f9faccf1681f7f15",
+      "state": "open",
+      "draft": true
+    },
+    {
+      "number": 2372,
+      "head_branch": "dispatch-r334-mail-consent-to-revenue-audit-20261113",
+      "head_sha": "9e779fe8bfb6d8685b18151a6b4ebdfe158d97fd",
+      "base_branch": "dispatch-r333-canonical-selection-consent-conversion-20261113",
+      "base_sha": "aad7f67fa5250675ce18d4b807db0eb0b0976744",
+      "state": "open",
+      "draft": true
+    },
+    {
+      "number": 2375,
+      "head_branch": "dispatch-r335-provider-confirmation-two-path-witness-20261113",
+      "head_sha": "ad4f0babf29522615cb75973740e8015eaa19732",
+      "base_branch": "dispatch-r334-mail-consent-to-revenue-audit-20261113",
+      "base_sha": "9e779fe8bfb6d8685b18151a6b4ebdfe158d97fd",
+      "state": "open",
+      "draft": true
+    },
+    {
+      "number": 2377,
+      "head_branch": "dispatch-r336-total-focus-specific-email-claim-refund-gate-20261113",
+      "head_sha": "c0b4cfbc9dbb6b02d473fbe8cdc9caff27c7ac4c",
+      "base_branch": "dispatch-r335-provider-confirmation-two-path-witness-20261113",
+      "base_sha": "ad4f0babf29522615cb75973740e8015eaa19732",
+      "state": "open",
+      "draft": true
+    },
+    {
+      "number": 2383,
+      "head_branch": "dispatch-r337-apollo-1-primary-timeline-20261113",
+      "head_sha": "d0f2c5f455108cbd573bf528ea2252d7d0e7a061",
+      "base_branch": "dispatch-r336-total-focus-specific-email-claim-refund-gate-20261113",
+      "base_sha": "c0b4cfbc9dbb6b02d473fbe8cdc9caff27c7ac4c",
+      "state": "open",
+      "draft": true
+    },
+    {
+      "number": 2389,
+      "head_branch": "dispatch-r338-proof-of-conversion-consent-20261113",
+      "head_sha": "48bba09de5ced984f555e9156067c2c45e9522c5",
+      "base_branch": "dispatch-r337-apollo-1-primary-timeline-20261113",
+      "base_sha": "d0f2c5f455108cbd573bf528ea2252d7d0e7a061",
+      "state": "open",
+      "draft": true
+    },
+    {
+      "number": 201,
+      "head_branch": "feature/dispatch-per-edition-review-20261030",
+      "head_sha": "ef53e5a17046e3dff5a4a7e3b0f4c8fbce9cd6f6",
+      "base_branch": "feature/dispatch-audience-acquisition-20261030",
+      "base_sha": "542e3697d1730cb0268709d99366601b9bffef6a",
+      "state": "open",
+      "draft": true
+    }
+  ],
+  "editions": [
+    {
+      "number": 1,
+      "type": "editorial",
+      "status": "HOLD_UNSENT",
+      "merchant_status": "NOT_APPLICABLE",
+      "alternative_adopted": false
+    },
+    {
+      "number": 2,
+      "type": "editorial",
+      "status": "HOLD_UNSENT",
+      "merchant_status": "NOT_APPLICABLE",
+      "alternative_adopted": false
+    },
+    {
+      "number": 3,
+      "type": "merchant",
+      "status": "HOLD_UNSENT",
+      "merchant_status": "HOLD_MERCHANT",
+      "alternative_adopted": false
+    },
+    {
+      "number": 4,
+      "type": "editorial",
+      "status": "HOLD_UNSENT",
+      "merchant_status": "NOT_APPLICABLE",
+      "alternative_adopted": false
+    },
+    {
+      "number": 5,
+      "type": "merchant",
+      "status": "HOLD_UNSENT",
+      "merchant_status": "HOLD_MERCHANT",
+      "alternative_adopted": false
+    },
+    {
+      "number": 6,
+      "type": "editorial",
+      "status": "HOLD_UNSENT",
+      "merchant_status": "NOT_APPLICABLE",
+      "alternative_adopted": false
+    }
+  ],
+  "gates": {
+    "affiliate_accepted": false,
+    "email_channel_permitted": false,
+    "earning_link_issued": false,
+    "buyer_guide_live_approved": false,
+    "product_claims_approved": false,
+    "price_checkout_checked": false,
+    "refund_terms_checked": false,
+    "publisher_postal_verified": false,
+    "native_received_email_verified": false,
+    "unsubscribe_functional": false,
+    "welcome_received_verified": false,
+    "provider_eligible_audience_verified": false,
+    "founder_final_send_approval": false
+  },
+  "newsletter": {
+    "enabled": true,
+    "new_post_auto_send": false,
+    "email_content_format": "full",
+    "welcome_configured": true,
+    "welcome_received_verified": false
+  },
+  "subscribers": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "eligible_recipients": null
+  },
+  "followers": {
+    "wpcom": 3,
+    "email": 0
+  },
+  "actions": {
+    "email_sent": false,
+    "test_email_sent": false,
+    "subscriber_contacted": false,
+    "wordpress_written": false,
+    "affiliate_link_activated": false,
+    "production_analytics_changed": false,
+    "pr_merged": false,
+    "paid_service_started": false
+  },
+  "confirmed_orders": null,
+  "qualified_human_sessions": null,
+  "net_revenue_usd": null,
+  "kpi": "NOT_COMPUTABLE",
+  "facts": [
+    "A recipient count cannot be derived from nonadditive aggregates.",
+    "A provider-verified subscriber is not a welcome delivery.",
+    "Offline HTML is not a native Jetpack received email.",
+    "A public affiliate page is not Final Vestige account-level permission.",
+    "An outbound click is not a paid order."
+  ]
+}
