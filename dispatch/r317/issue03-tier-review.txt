@@ -1,0 +1,49 @@
+THE DISPATCH — ISSUE 03 / OPTIONAL REVIEW CANDIDATE
+STATUS: HOLD_UNSENT / HOLD_MERCHANT / NOT_ADOPTED
+Subject: The twelve-minute offer has three different versions
+Preheader: Beginner, Premium and Advanced are not the same package. Here is how to tell them apart.
+Audience: evidence-minded Dispatch readers considering short meditation audio
+Purpose: commercial candidate; FTC primary-purpose determination still required
+
+An archive can be accurate in every date and still mislead you with its label. "Complete record" sometimes means the whole collection. Sometimes it means the portion someone selected for a particular volume.
+
+A product description can make the same mistake, even when nobody intends it.
+
+Zen12, an audio meditation program sold by Inspire3, is advertised around twelve-minute sessions. The idea is appealing: a small, repeatable slot rather than a large commitment. But the first question is not whether twelve minutes can fit into your day. It is what the seller is actually offering for that time.
+
+The official sales page presently shows THREE distinct packages:
+
+BEGINNER: the first six progression levels, with 24 MP3 recordings.
+PREMIUM: all twelve progression levels, with 48 MP3 recordings.
+ADVANCED: the final six progression levels, with 24 MP3 recordings, positioned for listeners with experience.
+
+That difference matters. "Zen12 has twelve levels and 48 MP3s" describes the complete Premium package, not every choice at checkout. A reader who pays for Beginner or Advanced should not assume the entire twelve-level program is included. We should be especially careful not to imply that Advanced contains all preceding levels.
+
+The vendor also markets each twelve-minute session as providing benefits comparable with an hour of meditation. That is a seller claim, not an independently verified finding about this product. General studies of meditation cannot prove a specific commercial recording produces the same result as an hour of some other practice. We have not personally tested Zen12 or independently established the effects of its audio.
+
+Before paying for any focus or meditation audio, use three questions as a small evidence checklist.
+
+FIRST: Which exact tier is named at checkout, and which levels and recordings does that tier include? Compare the final order summary with the advertised package, not just a headline on the landing page.
+
+SECOND: What experience are you purchasing: a guided recording, background audio, or an evidence-backed outcome? Enjoying a format is a legitimate preference; it is not a clinical result.
+
+THIRD: What do the current checkout terms say about the amount charged, how you get the recordings, and refunds? A promotional page is not proof of the transaction that will actually occur. Save the relevant terms before purchasing.
+
+You can also make a seven-day attention log without purchasing anything. Pick a modest routine, note when you did it, and record observations without treating them as a clinical test. A notebook can tell you whether a habit was practical for you; it cannot validate a vendor's neuroscience claim.
+
+OUR SINGLE PROPOSED NEXT STEP — INACTIVE:
+Read Final Vestige's independent Zen12 buyer guide.
+[[APPROVED_LIVE_ZEN12_GUIDE_REQUIRED — NOT A LINK]]
+
+Commercial disclosure (immediately adjacent to the proposed guide CTA): If a later approved guide contains a qualifying purchase link and you buy through it, Final Vestige may earn a commission. We have not verified our publisher-specific Inspire3 email-promotion rights, issued earning URL, approved promotional materials or current checkout terms. No purchase is required to use our free Focus Fieldbook.
+
+This edition remains a draft. No subscriber will receive it unless the founder separately approves final content, commercial rights, eligible audience, legal footer, native rendering and sending.
+
+SOURCES (official seller descriptions, not proof of effectiveness):
+https://zen12.com/ — see Beginner, Premium and Advanced package rows; checked November 12, 2026 PT.
+https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety — general meditation research, not Zen12 testing.
+https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance — substantiation expectations for objective product claims.
+https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business — U.S. commercial email requirements.
+https://affiliates.inspire3.com/ — public partner recruitment only; not Final Vestige acceptance or channel permission.
+
+PRE-SEND LEGAL WITNESS REQUIRED: [[FV_VALID_PHYSICAL_POSTAL_ADDRESS_REQUIRED]] | [[RENDERED_UNSUBSCRIBE_REQUIRED]] | [[ACTUAL_JETPACK_PREVIEW_REQUIRED]]

@@ -1,0 +1,37 @@
+# Dispatch R317 — product-tier truth and subscriber-to-customer integrity (NO SEND)
+
+**2026-11-12, 16:38 PT / 2026-11-13, 00:38 UTC.** Owner: Dispatch Issue [#174](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174), Mind partner [#171](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171), Focus [#129](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/129), business [#820](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820). Stacked on R316 [#2265](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2265). Original master [#175](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175) and QA [#201](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201) unchanged. No overlap with frozen homepage #49, Grok posting or Claude analytics engineering.
+
+## High-impact fact fix
+
+The official [Zen12 seller page](https://zen12.com/) currently offers **Beginner (first six levels/24 MP3s)**, **Premium (all twelve/48)**, and **Advanced (last six/24)**. A blanket statement that a Zen12 purchase provides twelve levels and 48 recordings would be materially misleading to a buyer of the other two products. The R315 Issue03 candidate describes the entire program's 48-MP3 format; this new alternative names exact tiers and warns that Advanced does not include earlier levels. [Mind R331 #2266](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2266) independently discovered the tier distinction. R317 is a **Dispatch-channel copy-control** implementing that handoff, not a duplicate Mind landing page.
+
+The seller additionally advertises equivalence between one twelve-minute recording and an hour of meditation. This remains **unverified product-specific efficacy**; [NCCIH](https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety) summarizes broader meditation evidence, not a validation of Zen12. [FTC health-products guidance](https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance) limits unsupported objective benefits. No current checkout, merchant email permission, issued earning URL or approved promotional assets established.
+
+## Audience evidence—what counts mean
+
+Authenticated read-only [Jetpack newsletter](https://finalvestige.com/dispatch/) status at 2026-11-13 00:38 UTC: **total=3, confirmed=3, unconfirmed=2, suppressed=0**, global new-post auto-email **OFF**, full-content email, welcome configured to deliver the existing 52-page Fieldbook. **The counts are classifications, not five or eight addable people.** Separate Jetpack follower stats: **WordPress.com followers=3, direct email followers=0**. The latter is *not* proof no WP.com follower opted for email. Individual actual email eligibility and delivered welcome remain unknown; we have not fetched or disclosed subscriber addresses. A URL parameter, subscribe-button click, or PDF download cannot assert `confirmed_signup`.
+
+## One verified conversion trajectory—NOT a claimed sale
+
+Grok published asset ID (must be real, not invented) → qualified human session with source-tagged campaign (existing analytics only) → published first-party editorial page → explicit consent and provider-origin email confirmation (deduplicate transitions; no email PII in event payload) → authorized independent product guide → issued partner earning link only after channel approval → independently settled commission/order → fee/refund reconciliation → realized net revenue per 1,000 qualified human sessions in 7/30-day cohorts. Subscriber counts, clicks, affiliate outbound events and estimated checkouts are **NOT paid conversions**. Without a real denominator and settled financial data the KPI is **NOT COMPUTABLE**, not zero.
+
+## OFFER → STEP → BLOCKER → CHANGE/EXPERIMENT → PASS/FAIL EVIDENCE → OWNER
+
+1. **Zen12 Premium or Beginner (tier to be selected explicitly) → vetted guide → actual purchase:** tier mismatch could mislead reader; merchant email authorization, issued URL, guide-live and checkout terms unverified. **Change:** tier-accurate optional email and native copy guard; **PASS** tier source read/QA candidate; **HOLD_MERCHANT** final rights/guide. **Owner Mind/Commerce, Dispatch copy QA.**
+2. **Focus Fieldbook → confirmed lead:** WordPress counters 3/3/2 overlap and email followers 0, WP.com followers 3; none confirms current email delivery permission. **Change:** request private provider-status breakdown and deduplicated provider-origin transition without exposing identities. **HOLD** email-eligible count/welcome receipt unknown. **Owner Claude/Focus.**
+3. **Dispatch → authentic inbox:** native Jetpack preview, custom preheader, FV postal address and functional unsubscribe not evidenced. WordPress documents **Preview email** independently of send toggle; a true inbox receipt still needs founder-authorized test. **HOLD** recipient rendering. **Owner Dispatch/Founder.**
+4. **Grok asset → qualified visit:** signed inventory, platform URL, assigned ID, landing tag and consent-safe first-party event must be reconciled through existing TASK-008; no duplicate GA scripts. **HOLD** real asset and session witness. **Owner Grok/Praxxis/Claude.**
+5. **Settled paid order → net revenue:** no independent financial ledger or 7/30-day cohort denominator available. **HOLD/NOT COMPUTABLE**; do not call affiliate clicks conversions. **Owner Commerce/Claude.**
+
+## Compliance and QA acceptance
+
+- The proposed text and HTML have ONE inactive guide CTA and a plainly adjacent prospective commission disclosure. They do not activate checkout, affiliate tracking, subscribe forms, sends or scripts.
+- WordPress [newsletter appearance docs](https://wordpress.com/support/newsletter/email-appearance/) explain true preview, not proof that a separate manifest preheader becomes inbox preview text.
+- FTC [CAN-SPAM guidance](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business) requires appropriate sender identification, truthful subject and commercial purpose treatment, **Final Vestige's valid physical postal address**, functioning opt-out and compliance with opt-out requests. Seller/Automattic London addresses cannot be substituted for publisher authorization. Legal witness is absent.
+- The new local gate is advisory and **always returns `send_allowed:false`**. Its static text patterns are guardrails and can produce false positives/negatives; they never create merchant authorization. Source links below are verifiable; receiving a valid-source URL in an object is not partner acceptance.
+- Current master #175's original 6 Python tests were rerun natively from previously archived GitHub-source bytes and passed **6/6**; no assertion that a new WordPress email has been delivered. New Node test source is supplied for native follow-up. Include its actual execution result only when run. No founder release or alternative selection.
+
+**Decision:** All six master editions `HOLD_UNSENT`; #03 and #05 additionally `HOLD_MERCHANT`; R317 candidate `NOT_ADOPTED`. This is strictly a review-only GitHub change.
+
+Source register: https://zen12.com/ ; https://affiliates.inspire3.com/ ; https://hypnosislive.com/mental-skills/total-focus ; https://wordpress.com/support/newsletter/email-appearance/ ; https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business ; https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance .
