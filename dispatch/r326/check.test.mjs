@@ -1,0 +1,16 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {checkDraft} from './check.mjs';
+const rd=(n)=>readFileSync(new URL(n,import.meta.url),'utf8');
+const base={manuscript:rd('06-proposed.md'),html:rd('06-proposed.html'),plaintext:rd('06-proposed.txt'),dossier:rd('EVIDENCE_AND_CONVERSION_DECISIONS.md')};
+test('all offline holds and source guards',()=>assert.equal(checkDraft(base).ok,true));
+test('refuse send-ready substitution',()=>assert.equal(checkDraft({...base,manuscript:base.manuscript.replace('OPTIONAL_EDITORIAL_REVIEW_ONLY / HOLD_UNSENT','READY_TO_SEND')}).ok,false));
+test('require one owned-site CTA',()=>assert.equal(checkDraft({...base,html:base.html.replace('data-primary-cta="true"','data-primary-cta="false"')}).ok,false));
+test('reject merchant link',()=>assert.equal(checkDraft({...base,html:base.html+'<a href="https://zen12.com/">Buy</a>'}).ok,false));
+test('require publisher address',()=>assert.equal(checkDraft({...base,html:base.html.replace('[[VALID_FV_POSTAL_ADDRESS_REQUIRED]]','assumed')}).ok,false));
+test('require real unsubscribe',()=>assert.equal(checkDraft({...base,plaintext:base.plaintext.replace('[[JETPACK_RENDERED_UNSUBSCRIBE_REQUIRED]]','assumed')}).ok,false));
+test('require native preview',()=>assert.equal(checkDraft({...base,html:base.html.replace('[[NATIVE_JETPACK_PREVIEW_REQUIRED]]','assumed')}).ok,false));
+test('require founder approval',()=>assert.equal(checkDraft({...base,html:base.html.replace('[[FOUNDER_SEND_APPROVAL_REQUIRED]]','assumed')}).ok,false));
+test('reject scripts',()=>assert.equal(checkDraft({...base,html:base.html+'<script>alert(1)</script>'}).ok,false));
+test('reject efficacy promise',()=>assert.equal(checkDraft({...base,manuscript:base.manuscript+' Guaranteed success'}).ok,false));
