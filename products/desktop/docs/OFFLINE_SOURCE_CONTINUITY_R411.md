@@ -11,7 +11,7 @@ The R411 regression suite was executed with the **exact R410 Git-blob runner** (
 
 ## Implementation
 
-- Reject relative desktop root paths rather than resolving through an uncontrolled parent.
+- Reject relative desktop root paths rather than resolving through an uncontrolled parent. The command-line entry point now uses lexical `os.path.abspath(__file__)` rather than `Path.resolve()` so a linked ancestor cannot disappear before verification.
 - Validate each ancestor from the filesystem root down to the desktop checkout using `lstat` and Windows `FILE_ATTRIBUTE_REPARSE_POINT` checks; continue validating suite, launchers and nested suite directories.
 - Compare the exact original SHA-256 source inventory before **each** of the fixed 12 child runs and immediately afterward. The first detected mutation terminates the gate with a private-data-free `SourceGateError`; no remaining children launch.
 - Preserve `-I`, normal/optimized execution, secret-denying subprocess environment, OS-level discarded child output, fixed inventory, no shell or stdin, timeout, deterministic successful receipt and `release_authorized=false`.
@@ -20,9 +20,9 @@ The R411 regression suite was executed with the **exact R410 Git-blob runner** (
 ## Reproducible focused evidence (2026-11-13 PT)
 
 - Matched the prior runner against actual Git blob `19fd24622226d68b86ecde5e9be56a964a547a99`.
-- R411 edited runner Git blob: `ac90cd809c3c5a90648465b99f8727acc1f53609`.
-- R411 regression file Git blob: `9276cc1f98f77648b6b2124cd501fba72b2d113c`.
-- Locally ran exact edited Git-matched runner and 12 new test methods: **12/12 PASS** under `python -W error`, **12/12 PASS** under `python -OO -W error` = **24/24 focused method executions**.
+- R411 edited runner Git blob: `1f7bead37c57eaca1baa335d5b662c82df2d2660`.
+- R411 regression file Git blob: `6e4d4db78e06c67d579fa6f7afc3d2a68af9c639`.
+- Locally ran exact edited Git-matched runner and 14 new test methods: **14/14 PASS** under `python -W error`, **14/14 PASS** under `python -OO -W error` = **28/28 focused method executions**.
 - The test harness creates a temporary synthetic six-launcher source tree, with actual local Python child processes for the pass path and deterministic mocked mutation probes for fail-closed paths. It does **not** represent a full repository checkout or six real financial engines.
 - **Not verified:** full repository regressions, actual six product launchers, Windows native reparse behavior, hosted Ubuntu/Windows CI, x64 PE, Defender, NVDA/high-DPI, signed packaging, premium protected delivery.
 
