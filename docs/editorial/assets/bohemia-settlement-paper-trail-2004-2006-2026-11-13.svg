@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="1100" viewBox="0 0 760 1100" role="img" aria-labelledby="ttl desc">
+<title id="ttl">Three numbers, three different kinds of evidence: Bohemia payments and liabilities, 2004–2006</title>
+<desc id="desc">Documentary timeline. In 2004, the Orleans Levee District reported depositing $600,000 into the Haspel and Davis court registry. The district's 2005 financial statements report $314,491.59 paid in a separate Taylor succession matter. A June 30, 2005 district-wide claims-and-judgments liability of $22,733,183 included both Bohemia and unrelated contractual disputes, not a confirmed Bohemia-only debt. None of these entries establishes beneficiary-level receipt.</desc>
+<rect width="760" height="1100" fill="#111b20"/>
+<rect x="30" y="28" width="700" height="1044" rx="18" fill="#18262c" stroke="#49616a" stroke-width="1.5"/>
+<text x="60" y="91" font-family="Georgia,serif" font-size="30" fill="#f0e9d9">A payment is not a balance</text>
+<text x="60" y="124" font-family="Arial,sans-serif" font-size="16" fill="#c5c8c1">BOHEMIA SPILLWAY  /  THE ACCOUNTING RECORD, 2004–2006</text>
+<line x1="77" y1="176" x2="77" y2="818" stroke="#ba965c" stroke-width="3"/>
+<circle cx="77" cy="206" r="10" fill="#d9b679"/>
+<circle cx="77" cy="416" r="10" fill="#d9b679"/>
+<circle cx="77" cy="642" r="10" fill="#d9b679"/>
+<rect x="111" y="165" width="580" height="177" rx="13" fill="#24363b"/>
+<text x="138" y="203" font-family="Arial,sans-serif" font-size="15" letter-spacing="2" fill="#d9b679">FEBRUARY 26, 2004</text>
+<text x="138" y="252" font-family="Georgia,serif" font-size="38" fill="#fbf3e4">$600,000</text>
+<text x="138" y="287" font-family="Arial,sans-serif" font-size="18" fill="#f0e9d9">Deposited into a court registry</text>
+<text x="138" y="315" font-family="Arial,sans-serif" font-size="16" fill="#c5c8c1">Haspel &amp; Davis class action; not a payee receipt</text>
+<rect x="111" y="373" width="580" height="201" rx="13" fill="#24363b"/>
+<text x="138" y="414" font-family="Arial,sans-serif" font-size="15" letter-spacing="2" fill="#d9b679">JUNE 30, 2005 FINANCIAL DISCLOSURE</text>
+<text x="138" y="466" font-family="Georgia,serif" font-size="38" fill="#fbf3e4">$314,491.59</text>
+<text x="138" y="501" font-family="Arial,sans-serif" font-size="18" fill="#f0e9d9">District-reported payment</text>
+<text x="138" y="528" font-family="Arial,sans-serif" font-size="16" fill="#c5c8c1">Taylor succession matter; separate from class action</text>
+<rect x="111" y="606" width="580" height="211" rx="13" fill="#24363b"/>
+<text x="138" y="649" font-family="Arial,sans-serif" font-size="15" letter-spacing="2" fill="#d9b679">JUNE 30, 2005 AGGREGATE LIABILITY</text>
+<text x="138" y="701" font-family="Georgia,serif" font-size="37" fill="#fbf3e4">$22,733,183</text>
+<text x="138" y="740" font-family="Arial,sans-serif" font-size="18" fill="#f0e9d9">Claims and judgments, district-wide</text>
+<text x="138" y="770" font-family="Arial,sans-serif" font-size="16" fill="#c5c8c1">Includes Bohemia and contractual disputes;</text>
+<text x="138" y="795" font-family="Arial,sans-serif" font-size="16" fill="#c5c8c1">not a Bohemia-only balance or a payment</text>
+<line x1="60" y1="858" x2="700" y2="858" stroke="#49616a"/>
+<text x="60" y="899" font-family="Georgia,serif" font-size="20" fill="#f0e9d9">What the documents cannot tell us</text>
+<text x="60" y="929" font-family="Arial,sans-serif" font-size="16" fill="#c5c8c1">No cleared check, distribution register or recipient-level</text>
+<text x="60" y="952" font-family="Arial,sans-serif" font-size="16" fill="#c5c8c1">allocation was inspected. Do not add these figures.</text>
+<text x="60" y="1003" font-family="Arial,sans-serif" font-size="14" fill="#d9b679">SOURCE  /  Louisiana Legislative Auditor, Orleans Levee District</text>
+<text x="60" y="1026" font-family="Arial,sans-serif" font-size="14" fill="#c5c8c1">FY2005 financial report, pages 3 and 64; FY2006, page 4</text>
+<text x="60" y="1050" font-family="Arial,sans-serif" font-size="13" fill="#a1a9a9">Original editorial diagram © Final Vestige Studios, 2026</text>
+</svg>
