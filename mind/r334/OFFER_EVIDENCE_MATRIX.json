@@ -1,0 +1,254 @@
+{
+  "schema_version": "1.0",
+  "artifact": "R334 Mind & Affiliate evidence and authorization ledger",
+  "inspected_date": "2026-11-12",
+  "publication_status": "UNPUBLISHED_HARD_HOLD",
+  "account_specific_inspire3_status": "NOT_AUTHENTICATED",
+  "affiliate_url": null,
+  "assumed_commission": null,
+  "offers": [
+    {
+      "product": "Zen12 Beginner",
+      "official": "https://zen12.com/",
+      "seller_description": "Opening 6 levels, 24 MP3s",
+      "price_display_2026_11_12_usd": 67.77,
+      "final_checkout_verified": false,
+      "advertised_refund": "1 year, merchant assertion only",
+      "partner_tracking_verified": false
+    },
+    {
+      "product": "Zen12 Premium",
+      "official": "https://zen12.com/",
+      "seller_description": "All 12 levels, 48 MP3s",
+      "price_display_2026_11_12_usd": 87.99,
+      "final_checkout_verified": false,
+      "advertised_refund": "1 year, merchant assertion only",
+      "partner_tracking_verified": false
+    },
+    {
+      "product": "Zen12 Advanced",
+      "official": "https://zen12.com/",
+      "seller_description": "Final 6 levels, 24 MP3s",
+      "price_display_2026_11_12_usd": 67.77,
+      "final_checkout_verified": false,
+      "advertised_refund": "1 year, merchant assertion only",
+      "partner_tracking_verified": false
+    },
+    {
+      "product": "Hypnosis Live Total Focus",
+      "official": "https://hypnosislive.com/mental-skills/total-focus",
+      "seller_description": "Single hypnosis audio; 33 minutes, 47MB",
+      "price_display_2026_11_12_usd": null,
+      "final_checkout_verified": false,
+      "partner_tracking_verified": false
+    },
+    {
+      "product": "Brainwave Shots Focus Shot",
+      "official": "https://brainwaveshots.com/focus-shot",
+      "seller_description": "15- and 30-minute audio, bonus versions described by seller",
+      "price_display_2026_11_12_usd": null,
+      "final_checkout_verified": false,
+      "partner_tracking_verified": false
+    }
+  ],
+  "claim_proof": [
+    {
+      "id": "M01",
+      "claim": "Zen12 Premium is 12 levels / 48 MP3s",
+      "class": "SELLER_FORMAT",
+      "proof": "https://zen12.com/",
+      "editorial_use": "ATTRIBUTED_SELLER_DESCRIPTION"
+    },
+    {
+      "id": "M02",
+      "claim": "Zen12 Beginner and Advanced are 6 levels / 24 MP3s each",
+      "class": "SELLER_FORMAT",
+      "proof": "https://zen12.com/",
+      "editorial_use": "ATTRIBUTED_SELLER_DESCRIPTION"
+    },
+    {
+      "id": "M03",
+      "claim": "Zen12 promotional displays are current permanent checkout prices",
+      "class": "UNVERIFIED_CHECKOUT",
+      "proof": "https://zen12.com/",
+      "editorial_use": "DATED_SELLER_DISPLAY_ONLY"
+    },
+    {
+      "id": "M04",
+      "claim": "One year refund will always be honored for any buyer",
+      "class": "UNVERIFIED_REFUND_EXECUTION",
+      "proof": "https://zen12.com/",
+      "editorial_use": "SELLER_ADVERTISED_TERM_ONLY"
+    },
+    {
+      "id": "M05",
+      "claim": "12 minutes objectively replicates one hour of meditation",
+      "class": "PRODUCT_EFFICACY_UNSUBSTANTIATED",
+      "proof": "https://zen12.com/",
+      "editorial_use": "EXCLUDE_AS_FACT"
+    },
+    {
+      "id": "M06",
+      "claim": "Brainwave audio guarantees a state of deep focus",
+      "class": "PRODUCT_EFFICACY_UNSUBSTANTIATED",
+      "proof": "https://brainwaveshots.com/focus-shot",
+      "editorial_use": "EXCLUDE_AS_FACT"
+    },
+    {
+      "id": "M07",
+      "claim": "Total Focus guarantees higher concentration",
+      "class": "PRODUCT_EFFICACY_UNSUBSTANTIATED",
+      "proof": "https://hypnosislive.com/mental-skills/total-focus",
+      "editorial_use": "EXCLUDE_AS_FACT"
+    },
+    {
+      "id": "S01",
+      "claim": "1966 lexical experiments elicited near-retrieval and some partial details",
+      "class": "PRIMARY_ABSTRACT",
+      "proof": "https://doi.org/10.1016/S0022-5371(66)80040-3",
+      "editorial_use": "BOUNDED_EXPERIMENT"
+    },
+    {
+      "id": "S02",
+      "claim": "1991 review describes phenomenology and unresolved mechanisms",
+      "class": "REVIEW_ABSTRACT",
+      "proof": "https://pubmed.ncbi.nlm.nih.gov/2034750/",
+      "editorial_use": "REVIEW_CONTEXT"
+    },
+    {
+      "id": "S03",
+      "claim": "2023 experiments found false confidence in partial retrieval",
+      "class": "PRIMARY_ABSTRACT",
+      "proof": "https://pubmed.ncbi.nlm.nih.gov/36048055/",
+      "editorial_use": "BOUNDED_EXPERIMENT"
+    },
+    {
+      "id": "S04",
+      "claim": "2022 EEG reports alpha-band association in TOT states",
+      "class": "OPEN_PRIMARY",
+      "proof": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9787753/",
+      "editorial_use": "ASSOCIATION_NOT_CAUSAL_AUDIO_PROOF"
+    },
+    {
+      "id": "S05",
+      "claim": "2025 study of 80 adults reports retrieval-history predictors",
+      "class": "PRIMARY_ABSTRACT",
+      "proof": "https://pubmed.ncbi.nlm.nih.gov/40274869/",
+      "editorial_use": "BOUNDED_EXPERIMENT"
+    },
+    {
+      "id": "P01",
+      "claim": "Puységur archive documents animal magnetism historical claims",
+      "class": "HISTORICAL_SOURCE",
+      "proof": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "editorial_use": "DOES_NOT_VERIFY_THERAPY"
+    },
+    {
+      "id": "P02",
+      "claim": "Focus Fieldbook existing free route is published",
+      "class": "AUTHENTICATED_LIVE_WORDPRESS",
+      "proof": "https://finalvestige.com/focus/",
+      "editorial_use": "NO_DUPLICATE_LIST"
+    },
+    {
+      "id": "L01",
+      "claim": "Disclosure must be proximate and understandable",
+      "class": "FTC",
+      "proof": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "editorial_use": "ADJACENT_DISCLOSURE"
+    },
+    {
+      "id": "L02",
+      "claim": "Objective health/psychological efficacy requires suitable substantiation",
+      "class": "FTC",
+      "proof": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "editorial_use": "EXCLUDE_UNSUPPORTED_EFFECTS"
+    },
+    {
+      "id": "A01",
+      "claim": "Public affiliate program means FV named account accepted",
+      "class": "PUBLIC_RECRUITMENT_NOT_PROOF",
+      "proof": "https://affiliates.inspire3.com/",
+      "editorial_use": "NO_AFFILIATE_ACTIVATION"
+    }
+  ],
+  "commercial_release_gates": [
+    {
+      "gate": "named_FV_partner_approval",
+      "cleared": false
+    },
+    {
+      "gate": "issued_product_earning_url",
+      "cleared": false
+    },
+    {
+      "gate": "allowed_website_channel",
+      "cleared": false
+    },
+    {
+      "gate": "allowed_youtube_channel",
+      "cleared": false
+    },
+    {
+      "gate": "allowed_tiktok_channel",
+      "cleared": false
+    },
+    {
+      "gate": "allowed_email_channel",
+      "cleared": false
+    },
+    {
+      "gate": "creative_rights",
+      "cleared": false
+    },
+    {
+      "gate": "copy_claim_approval",
+      "cleared": false
+    },
+    {
+      "gate": "tracking_parameter_terms",
+      "cleared": false
+    },
+    {
+      "gate": "commission_payout_terms",
+      "cleared": false
+    },
+    {
+      "gate": "authenticated_price_checkout",
+      "cleared": false
+    },
+    {
+      "gate": "refund_terms_verified",
+      "cleared": false
+    },
+    {
+      "gate": "SKU_correctness",
+      "cleared": false
+    },
+    {
+      "gate": "owned_alternative_license_and_delivery",
+      "cleared": false
+    },
+    {
+      "gate": "founder_release_approval",
+      "cleared": false
+    },
+    {
+      "gate": "independent_WCAG_and_mobile_QA",
+      "cleared": false
+    },
+    {
+      "gate": "verified_settled_order_event",
+      "cleared": false
+    },
+    {
+      "gate": "refunds_fees_reconciliation",
+      "cleared": false
+    }
+  ],
+  "confirmed_paid_orders": null,
+  "confirmed_paid_commissions": null,
+  "qualified_human_sessions": null,
+  "realized_net_revenue_per_1000_qualified_human_sessions": null,
+  "data_definition": "Null = not independently computable; outbound or form CTA clicks are not merchant payments."
+}
