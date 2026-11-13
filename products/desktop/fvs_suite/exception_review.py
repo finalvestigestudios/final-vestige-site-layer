@@ -21,7 +21,7 @@ from .journal_io import append_verified_event, read_regular_bytes
 from .review_line_framing_r324 import canonical_review_records
 from .review_commit import confirm_review_commit
 from .review_lock import exclusive_review_lock
-from .review_chronology import check_new_review_clock, check_record_order
+from .review_chronology import check_new_review_clock, check_record_order, parse_review_utc
 from .unicode_hazards import is_visually_blank_filler
 
 MAX_REPORT_BYTES = 64 * 1024 * 1024
@@ -198,12 +198,9 @@ def _validate_event(event: dict, batch: ReportBatch, cases: dict, previous: str)
         raise ValueError("Unsupported review decision")
     _text(event["reviewer"], "Reviewer", 2, 80)
     _text(event["rationale"], "Rationale", 12, 2000)
-    try:
-        timestamp = datetime.fromisoformat(event["created_utc"])
-        if timestamp.tzinfo is None or timestamp.utcoffset().total_seconds() != 0:
-            raise ValueError
-    except (ValueError, TypeError) as exc:
-        raise ValueError("Review journal has an invalid UTC timestamp") from exc
+    # One strict, lossless UTC syntax/precision guard for both premium apps.
+    # Never retain a customer-derived timestamp or parser exception in a chain.
+    parse_review_utc(event["created_utc"])
     if event["previous_hash"] != previous:
         raise ValueError("Review journal chain broken or reordered")
     payload = {name: event[name] for name in FIELDS}
