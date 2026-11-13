@@ -28,7 +28,7 @@ for(const [name,html] of [['A',a],['B',b]]){
 }
 const prefix='<section class="rule" aria-labelledby="film">';
 check(!a.includes(prefix)&&b.includes(prefix),'film distinct B treatment');
-check(b.replace(/<section class="rule" aria-labelledby="film">[\s\S]*?(?=<\/main>)/,'')===a.replace('Review B','Review A').replace('GUIDE B','GUIDE A').replace('Buyer Guide B','Buyer Guide A').replace('REVIEW B','REVIEW A').replace('Review Variant B','Review Variant A').replace(/Guide B \|/g,'Guide A |'),'substantive page parity'); // standalone variant-specific <title> normalized separately if necessary
+check(b.replace(/<section class="rule" aria-labelledby="film">[\s\S]*?(?=<\/main>)/,'') .replace('Buyer Guide B','Buyer Guide A')===a,'substantive page parity'); // standalone variant-specific <title> normalized separately if necessary
 check(b.includes('role="img"')&&b.includes('<figcaption>'),'SVG has readable alternative');
 check(b.includes('<details>')&&b.includes('<summary>'),'optional transcript is user controlled');
 check((vtt.match(/--> /g)||[]).length===6,'six caption cues');
