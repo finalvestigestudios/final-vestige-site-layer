@@ -80,6 +80,19 @@
     link.href = next.toString();
   }
 
+  // R323: a visitor can open the native context menu and then cancel it.
+  // The anchor retains vetted campaign labels so "Copy link" works; without
+  // a print reset, Chromium embeds those labels in the distributed research
+  // PDF's clickable URI annotations. Printing is not a campaign activation.
+  // Strip ONLY our own already-vetted editorial anchors at beforeprint; a later
+  // genuine click/context menu reconstructs labels from the current page URL.
+  // No personal data, storage, listener interception or extra request.
+  window.addEventListener('beforeprint', () => {
+    document.querySelectorAll('a[data-fv-cta="apollo-read-free-investigation"]').forEach(link => {
+      if (intendedLink(link)) link.href = FREE;
+    });
+  });
+
   document.addEventListener('click', handleActivation, true);
   document.addEventListener('auxclick', handleActivation, true);
   document.addEventListener('contextmenu', handleActivation, true);
