@@ -1,0 +1,15 @@
+# R322 Apollo conversion-first release gate
+
+**No live modifications, posts, email, paid service or merchant changes.** GitHub #150 is the component charter; #820 and #818 govern commercial verification. Owner lanes remain Grok (content/distribution), Praxxis (TASK-008 creator review), Claude (production analytics/checkout), founder (production, posting and spend approvals), Apollo (isolated evidence experience and browser QA).
+
+One restrained journey only: **future Grok Apollo 1 long-form video (not authenticated as published)** → Apollo Evidence Atlas, with NASA original chronological source proof, media-rights caveat and no invented geographic relationships → the **one existing** "Read the free Apollo 1 investigation" CTA at <https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/> → **only after clearance** a verified rights-cleared payable FV classroom/history evidence kit. That kit remains hypothetical: SKU, checkout, price, fulfillment, sales permission and refunds have NOT been authenticated. The public FV Archive Trail is free; other unrelated affiliate offers are not Apollo products. Do not render any paid link until offer acceptance.
+
+| Priority | Offer → step | Blocker | Change / experiment | PASS/FAIL evidence | Owner |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Apollo educational kit → paid order | No authenticated payable rights-cleared SKU | Verify live inventory, terms, merchant acceptance, fulfillment and independently settled orders | **HOLD** | Founder + Claude/Commerce |
+| 2 | Grok long-form → qualified Atlas visit | No verified published asset_id, post URL, UTM placement or landing destination | Have Praxxis cross-check Grok's EXISTING TASK-008 inventory, Claude verify consent-safe first-party IDs | **UNVERIFIED** | Grok/Praxxis/Claude |
+| 3 | NASA source custody → free investigation | R321 print summary was unconditionally suppressed in two closed date disclosures | R322 guards hiding behind support for printing body; compare independently across browser engines | **LOCAL Chromium/PDF PASS; cross-browser HOLD** | Apollo/Site QA |
+| 4 | Confirmed lead → confirmed purchase | No linked consented lead, email-delivery or merchant settlement | Verify within existing Dispatch and merchant systems after owner approval; no new tag/script | **NOT OBSERVABLE** | Dispatch/Claude |
+| 5 | Qualified human sessions → realized net revenue | Missing verified denominator, paid numerator, fees, refunds | 7/30-day cohorts, exact asset_id, qualification/dedup, independently verified paid orders and net; tiny-N caution | **NOT COMPUTABLE** | Claude/Commerce |
+
+**Hypothesis only:** better printed NASA source custody may increase reader trust and relevant free-investigation continuation. Browser tests establish functionality, not an improvement in revenue. Any eventual comparison requires founder-approved SKU, consent-safe measurement and controlled test design. CTA clicks ≠ confirmed leads ≠ paid sales. Source references ≠ NASA product endorsement.
