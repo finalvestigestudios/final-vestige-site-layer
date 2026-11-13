@@ -1,0 +1,70 @@
+{
+  "schema": "dispatch-r334-v1",
+  "state": "HOLD_UNSENT",
+  "dataset": "NO_REAL_SUBSCRIBER_OR_SALES_DATA",
+  "commercial_offer": "ZEN12_PREMIUM_HYPOTHESIS_ONLY",
+  "issues_total": 6,
+  "issues_editorial": 4,
+  "issues_commercial_pending": 2,
+  "emails_sent_this_sprint": 0,
+  "source_proofs": {
+    "founder_campaign_approval": {
+      "verified": false,
+      "opaque_proof_ref": null
+    },
+    "provider_eligible_recipient_proof": {
+      "verified": false,
+      "opaque_proof_ref": null
+    },
+    "provider_confirmed_opt_in_proof": {
+      "verified": false,
+      "opaque_proof_ref": null
+    },
+    "welcome_receipt_proof": {
+      "verified": false,
+      "opaque_proof_ref": null
+    },
+    "publisher_postal_proof": {
+      "verified": false,
+      "opaque_proof_ref": null
+    },
+    "native_unsubscribe_receipt_proof": {
+      "verified": false,
+      "opaque_proof_ref": null
+    },
+    "jetpack_actual_render_proof": {
+      "verified": false,
+      "opaque_proof_ref": null
+    },
+    "native_subject_and_footer_review": {
+      "verified": false,
+      "opaque_proof_ref": null
+    },
+    "merchant_account_approval": {
+      "verified": false,
+      "opaque_proof_ref": null
+    },
+    "merchant_email_channel_permission": {
+      "verified": false,
+      "opaque_proof_ref": null
+    },
+    "issued_affiliate_link_proof": {
+      "verified": false,
+      "opaque_proof_ref": null
+    },
+    "founder_approved_live_buyer_guide": {
+      "verified": false,
+      "opaque_proof_ref": null
+    },
+    "product_claim_and_checkout_review": {
+      "verified": false,
+      "opaque_proof_ref": null
+    },
+    "independent_settlement_export": {
+      "verified": false,
+      "opaque_proof_ref": null
+    }
+  },
+  "actual_orders": null,
+  "realized_net_per_1000": null
+}
