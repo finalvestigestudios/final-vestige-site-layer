@@ -42,3 +42,7 @@ test('a fieldbook download is diagnostic not confirmed lead',()=>{let e={type:'f
 test('no revenue backfill from lead or click',()=>{let e={type:'email_cta_click',event_id:'evt_c12',at:'2026-11-13T12:00:00Z'};let r=compile([lead,e],complete,when);assert.equal(r.seven_day.net_revenue_cents,0);});
 test('reject unsettled order',()=>{let e=clone(order);e.status='pending';assert.throws(()=>compile([session,e],complete,when));});
 test('refuse when as-of is invalid',()=>assert.throws(()=>compile([],complete,'tomorrow'),/INVALID_DATE/));
+test('reject email traffic mislabeled as organic social',()=>{let e=clone(session);e.utm_source='email';assert.throws(()=>compile([e],complete,when),/UNVERIFIED_SESSION/);});
+test('accept email traffic only with matching email medium',()=>{let e=clone(session);e.utm_source='email';e.utm_medium='email';assert.equal(compile([e],complete,when).seven_day.qualified_sessions,1);});
+test('reject direct traffic mislabeled as social',()=>{let e=clone(session);e.utm_source='direct';assert.throws(()=>compile([e],complete,when));});
+test('reject other PII field names',()=>assert.throws(()=>noPrivateData({customer_email:'redacted'}),/PII_FIELD/));
