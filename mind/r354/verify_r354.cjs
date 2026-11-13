@@ -34,7 +34,7 @@ test(m.claims.length>=30,"claim coverage");
 test(m.releaseGates.length>=30&&m.releaseGates.every(x=>x.status==="HOLD"),"all release gates hold");
 test(m.claims.some(x=>x.classification==="affiliate_private"&&x.verification==="unverified"),"partner status unverified");
 test(d.includes("NOT COMPUTABLE"),"net revenue no guess");
-test(d.includes("no queue/task rewriting"),"creator custody");
+test(d.includes("No queue/task rewriting"),"creator custody");
 test(h.includes("puysegurs-animal-magnetism-files"),"valid historical route");
 test(h.includes("2026/11/02/change-blindness"),"live change blindness route");
 console.log("R354 PASS "+n+" source-only checks. Real browser/WordPress/merchant NOT tested.");
