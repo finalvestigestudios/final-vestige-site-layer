@@ -88,7 +88,7 @@
 .fv-r281 .fv-r291__disclosure-intro{color:var(--muted);max-width:66ch}
 .fv-r281 .fv-r291__authority-disclosure[open]>summary{border-bottom:1px solid var(--line)}
 @media(forced-colors:active){.fv-r281 .fv-r291__authority-disclosure{background:Canvas;color:CanvasText;border-color:CanvasText}.fv-r281 .fv-r291__authority-disclosure>summary{color:LinkText}}
-@media print{.fv-r281 .fv-r291__authority-disclosure{background:#fff!important;color:#000!important;break-inside:auto}.fv-r281 .fv-r291__authority-disclosure::details-content{content-visibility:visible!important}.fv-r281 .fv-r291__authority-disclosure>summary{display:none!important}.fv-r281 .fv-r291__authority-disclosure .fv-r291__disclosure-intro{display:block!important}}
+@media print{.fv-r281 .fv-r291__authority-disclosure{background:#fff!important;color:#000!important;break-inside:auto}.fv-r281 .fv-r291__authority-disclosure::details-content{content-visibility:visible!important}.fv-r281 .fv-r291__authority-disclosure .fv-r291__disclosure-intro{display:block!important}}
 /* R291: print evidence boundaries must not retain the on-screen dark fill while
    the print stylesheet forces their text black. This is a contrast correction. */
 @media print{.fv-r281 .fv-r281__boundary{background:#fff!important;color:#000!important;border-color:#000!important}}
@@ -118,7 +118,7 @@
 .fv-r281 .fv-r296__date-guide{color:var(--muted);max-width:66ch}
 .fv-r281 .fv-r296__date-disclosure[open]>summary{border-bottom:1px solid var(--line)}
 @media(forced-colors:active){.fv-r281 .fv-r296__date-disclosure{background:Canvas;color:CanvasText;border-color:CanvasText}.fv-r281 .fv-r296__date-disclosure>summary{color:LinkText}}
-@media print{.fv-r281 .fv-r296__date-disclosure{background:#fff!important;border-color:#000!important;break-inside:auto}.fv-r281 .fv-r296__date-disclosure::details-content{content-visibility:visible!important;display:block!important}.fv-r281 .fv-r296__date-disclosure>summary{display:none!important}}
+@media print{.fv-r281 .fv-r296__date-disclosure{background:#fff!important;border-color:#000!important;break-inside:auto}.fv-r281 .fv-r296__date-disclosure::details-content{content-visibility:visible!important;display:block!important}}
 
 /* R298: keep native <details> summary visible while adding per-record/per-instance
    screen-reader text. In CSS failure the plain text remains human-readable. */
@@ -148,5 +148,21 @@
   @media print {
     .fv-r281 details.fv-r281__drawer > summary {display:none!important}
     .fv-r281 details.fv-r281__drawer::details-content {content-visibility:visible!important;display:block!important}
+  }
+}
+
+/* R322 capability-safe printed custody: R291/R296 previously hid summary
+   unconditionally. Engines lacking the modern ::details-content pseudo-element
+   can then lose BOTH the closed summary and its hidden source record in print.
+   Match R321's fail-open policy: suppress the summary ONLY in engines that can
+   explicitly reveal the details content. For older engines retain the native
+   disclosure label, allowing a meaningful print fallback. Do not infer that
+   this feature test is a substitute for independent Safari/Firefox printing. */
+@supports selector(details::details-content){
+  @media print{
+    .fv-r281 details.fv-r291__authority-disclosure > summary,
+    .fv-r281 details.fv-r296__date-disclosure > summary{display:none!important}
+    .fv-r281 details.fv-r291__authority-disclosure::details-content,
+    .fv-r281 details.fv-r296__date-disclosure::details-content{content-visibility:visible!important;display:block!important}
   }
 }
