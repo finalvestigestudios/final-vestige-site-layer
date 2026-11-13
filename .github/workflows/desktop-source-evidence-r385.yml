@@ -99,6 +99,14 @@ jobs:
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_source_identity_r398.py
           python -W error -m unittest discover -s products/desktop/tests -p test_import_identity_integration_r398.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_import_identity_integration_r398.py
+      - name: R399 preserve premium audit source boundaries and inherited R81/R97 contracts
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_audit_identity_boundaries_r399.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_audit_identity_boundaries_r399.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_audit_display_r81.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_audit_display_r81.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_source_label_visibility_r97.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_source_label_visibility_r97.py
       - name: Execute six synthetic engines with before-and-after SHA-256 source inventory
         run: |
           python -W error products/desktop/scripts/source_smoke_gate.py
