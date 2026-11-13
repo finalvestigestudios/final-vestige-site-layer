@@ -19,6 +19,7 @@ function verify(f){
   const button=s.lastIndexOf('class="cta" disabled'),disclosure=s.lastIndexOf("Affiliate disclosure:");
   c(label+" near-CTA FTC disclosure",disclosure>0&&button>disclosure&&button-disclosure<1100);
   c(label+" no earning URL",!/<a[^>]*href=["'][^"']*(affiliates\.inspire3|\/hop\/|clickbank)[^"']*["']/i.test(s));
+  c(label+" zero clickable seller links",!/<a[^>]*href=["\x27]https:\/\/(?:zen12\.com|inspire3\.com|hypnosislive\.com|brainwaveshots\.com)/i.test(s));
   c(label+" no fake experience",s.includes("have not purchased or personally tested"));
   c(label+" only existing Focus signup",s.includes('href="https://finalvestige.com/focus/"'));
   c(label+" no active video/iframe",!/<video\b|<iframe\b/i.test(s));
