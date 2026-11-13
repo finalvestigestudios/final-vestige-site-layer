@@ -41,18 +41,22 @@ MAX_ROWS = 200_000
 # Bound user-provided exports before parsing (premium review reports use the same cap).
 MAX_IMPORT_BYTES = 64 * 1024 * 1024
 CENT = Decimal("0.01")
-# Original credit/return document labels retain Unicode boundary whitespace.
-# The lossy matching key may collapse them, but the human reviewer must still
-# see an explicit normalized-link review flag. Preserve legacy ASCII trimming.
-_ASCII_DOCUMENT_BOUNDARY_WHITESPACE = " \t\r\n\v\f"
+# Preserve original CSV identity spellings even when the matching key
+# discards punctuation or whitespace. This ensures an equal normalized key
+# cannot conceal a boundary-space source-label difference from human review.
+# Money, dates, categories and rule selectors keep legacy trimming.
+_AUDIT_IDENTITY_FIELDS = frozenset({
+    "id", "program", "vendor", "invoice_number", "po_number", "line",
+    "document_id", "related_document", "ledger_reference", "related_claim",
+})
 
 
 def _import_cell_text(name: str, cell: str, *, preserve_spend_vendor_source: bool = False) -> str:
     text = str(cell or "")
-    if name in ("document_id", "related_document") or (preserve_spend_vendor_source and name == "vendor"):
-        # SpendMap must not erase Unicode source identity evidence before its
-        # vendor collision review. Other applications retain legacy imports.
-        return text.strip(_ASCII_DOCUMENT_BOUNDARY_WHITESPACE)
+    if name in _AUDIT_IDENTITY_FIELDS:
+        # The signature retains its public compatibility for SpendMap; source
+        # identity fidelity now applies consistently to every financial app.
+        return text
     return text.strip()
 
 _AMOUNT_FORMAT = re.compile(
