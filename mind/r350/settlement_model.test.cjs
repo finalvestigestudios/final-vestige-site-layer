@@ -1,0 +1,15 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict');
+const {calculateCohort}=require('./settlement_model.cjs');
+const row={channel:'owned_product',verified:true,settled:true,gross_cents:10000,refund_cents:2000,fee_cents:500,variable_cost_cents:0};
+const input={cohort_days:7,qualified_human_sessions:100,session_evidence:'verified',settlements:[row]};
+test('verified synthetic owned sales net is 75 dollars and 750 dollars per 1000 visits',()=>{const r=calculateCohort(input);assert.equal(r.net_cents,7500);assert.equal(r.net_revenue_per_1000_human_sessions_cents,75000)});
+test('unverified human denominator means NOT COMPUTABLE',()=>assert.equal(calculateCohort({...input,session_evidence:'unknown'}).status,'NOT_COMPUTABLE'));
+test('missing denominator means NOT COMPUTABLE',()=>assert.equal(calculateCohort({...input,qualified_human_sessions:null}).status,'NOT_COMPUTABLE'));
+test('unsettled affiliate commission means NOT COMPUTABLE',()=>assert.equal(calculateCohort({...input,settlements:[{...row,channel:'affiliate_commission',settled:false}]}).status,'NOT_COMPUTABLE'));
+test('affiliate commission uses commission, not merchant order amount',()=>assert.equal(calculateCohort({...input,settlements:[{...row,channel:'affiliate_commission',gross_cents:1000,refund_cents:0,fee_cents:0}]}).net_cents,1000));
+test('does not allow email address in aggregates',()=>assert.throws(()=>calculateCohort({...input,email:'someone@example.com'})));
+test('does not allow customer fields inside settlement',()=>assert.throws(()=>calculateCohort({...input,settlements:[{...row,customer_id:'123'}]})));
+test('rejects decimal currency',()=>assert.throws(()=>calculateCohort({...input,settlements:[{...row,gross_cents:1.2}]})));
+test('rejects invented cohort windows',()=>assert.throws(()=>calculateCohort({...input,cohort_days:14})));
+test('rejects zero denominator without division by zero',()=>assert.equal(calculateCohort({...input,qualified_human_sessions:0}).status,'NOT_COMPUTABLE'));

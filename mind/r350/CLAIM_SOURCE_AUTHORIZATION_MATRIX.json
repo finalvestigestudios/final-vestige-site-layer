@@ -1,0 +1,328 @@
+{
+  "id": "mind-r350",
+  "status": "UNPUBLISHED_REVIEW_ONLY",
+  "as_of": "2026-11-13",
+  "sources": {
+    "hasher": "https://doi.org/10.1016/S0022-5371(77)80012-1",
+    "fazio": "https://pubmed.ncbi.nlm.nih.gov/26301795/",
+    "vellani": "https://doi.org/10.1016/j.cognition.2023.105421",
+    "meta": "https://www.nature.com/articles/s41467-026-70041-x",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "focus": "https://finalvestige.com/focus/",
+    "inspire3": "https://inspire3.com/",
+    "zen12": "https://zen12.com/",
+    "zengift": "https://zen12.com/gift",
+    "hypnosis": "https://hypnosislive.com/mental-skills/total-focus",
+    "brainwave": "https://brainwaveshots.com/focus-shot",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "github": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "In 1977 repeated statements were judged more true across three occasions",
+      "status": "independently_supported",
+      "source_ids": [
+        "hasher"
+      ],
+      "limit": "Publisher abstract only; not product research"
+    },
+    {
+      "id": "C02",
+      "claim": "Knowledge does not completely block illusory-truth effect in the studied settings",
+      "status": "independently_supported",
+      "source_ids": [
+        "fazio"
+      ],
+      "limit": "Two experiments; no universal inevitability"
+    },
+    {
+      "id": "C03",
+      "claim": "Single repetition increased intention to share in two experiments N=260",
+      "status": "independently_supported",
+      "source_ids": [
+        "vellani"
+      ],
+      "limit": "Simulated sharing, not actual sales"
+    },
+    {
+      "id": "C04",
+      "claim": "2026 meta analyzed 182 studies, 366 effects, N=31184",
+      "status": "independently_supported_excerpt",
+      "source_ids": [
+        "meta"
+      ],
+      "limit": "Indexed source summary; full text not accessible"
+    },
+    {
+      "id": "C05",
+      "claim": "Corrected average g=.37 (CI .30-.44)",
+      "status": "independently_supported_excerpt",
+      "source_ids": [
+        "meta"
+      ],
+      "limit": "Do not apply effect size to purchase likelihood"
+    },
+    {
+      "id": "C06",
+      "claim": "Puységur archive has 153 locked rows and 16 dossiers",
+      "status": "publisher_source",
+      "source_ids": [
+        "puysegur"
+      ],
+      "limit": "Site source inventory, not independent historical verification in this run"
+    },
+    {
+      "id": "C07",
+      "claim": "A repeated notarized statement establishes the mechanism",
+      "status": "unsupported",
+      "source_ids": [
+        "puysegur"
+      ],
+      "limit": "Do not claim"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 Premium contains 12 levels and 48 MP3s",
+      "status": "seller_format",
+      "source_ids": [
+        "zen12"
+      ],
+      "limit": "Snapshot 2026-11-13"
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 Beginner contains first six levels / 24 MP3s",
+      "status": "seller_format",
+      "source_ids": [
+        "zen12"
+      ],
+      "limit": "Snapshot 2026-11-13"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 Advanced contains final six levels / 24 MP3s",
+      "status": "seller_format",
+      "source_ids": [
+        "zen12"
+      ],
+      "limit": "Snapshot 2026-11-13"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 Premium official page displays $87.99",
+      "status": "seller_price_snapshot",
+      "source_ids": [
+        "zen12"
+      ],
+      "limit": "NOT verified checkout price; do not make durable quote"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 seller advertises one-year money-back promise",
+      "status": "seller_policy_claim",
+      "source_ids": [
+        "zen12"
+      ],
+      "limit": "Refund execution and terms not tested"
+    },
+    {
+      "id": "C13",
+      "claim": "12 minutes of Zen12 equals 1 hour advanced meditation benefits",
+      "status": "unsubstantiated_product_claim",
+      "source_ids": [
+        "zen12"
+      ],
+      "limit": "Omit as endorsement, quote only as merchant claim"
+    },
+    {
+      "id": "C14",
+      "claim": "Brainwave audio scientifically proven to improve focus for every listener",
+      "status": "unsubstantiated_product_claim",
+      "source_ids": [
+        "brainwave"
+      ],
+      "limit": "Omit"
+    },
+    {
+      "id": "C15",
+      "claim": "Hypnosis Live Total Focus format 33 minutes / 47MB / J. A. Amos",
+      "status": "seller_format",
+      "source_ids": [
+        "hypnosis"
+      ],
+      "limit": "Not a product-specific efficacy trial"
+    },
+    {
+      "id": "C16",
+      "claim": "Brainwave Focus Shot 15 and 30 minute audio formats",
+      "status": "seller_format",
+      "source_ids": [
+        "brainwave"
+      ],
+      "limit": "Do not adopt performance claims"
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 gift enrolls recipient in merchant newsletter",
+      "status": "seller_consent",
+      "source_ids": [
+        "zengift"
+      ],
+      "limit": "Separate from FV Jetpack and Dispatch"
+    },
+    {
+      "id": "C18",
+      "claim": "Zen12 commercial checkout asks phone/SMS promotional consent",
+      "status": "needs_checkout_reinspection",
+      "source_ids": [
+        "zen12"
+      ],
+      "limit": "Dispatch #171 latest handoff flags risk; do not assert current terms without direct checkout review"
+    },
+    {
+      "id": "C19",
+      "claim": "FV-specific Inspire3 publisher approval exists",
+      "status": "not_verified",
+      "source_ids": [
+        "affiliate"
+      ],
+      "limit": "Public portal sign-up is not account eligibility"
+    },
+    {
+      "id": "C20",
+      "claim": "FV-specific earning URL and allowed promotional channels confirmed",
+      "status": "not_verified",
+      "source_ids": [
+        "affiliate"
+      ],
+      "limit": "Hold commercial CTA"
+    },
+    {
+      "id": "C21",
+      "claim": "Inspire3 public portal advertises commission percentages",
+      "status": "seller_program_claim",
+      "source_ids": [
+        "affiliate"
+      ],
+      "limit": "Cannot infer FV deal or payable rate"
+    },
+    {
+      "id": "C22",
+      "claim": "Active FV owned Payhip Mind SKU is verified purchasable",
+      "status": "not_verified",
+      "source_ids": [
+        "github"
+      ],
+      "limit": "No verified rights, SKU, checkout total, delivery and refund report"
+    },
+    {
+      "id": "C23",
+      "claim": "Affiliate earning disclosure must be clear near recommendation and link",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "ftc"
+      ],
+      "limit": "Review final production context including video/hosted platform"
+    },
+    {
+      "id": "C24",
+      "claim": "Health benefit claims need competent, reliable evidence",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "health"
+      ],
+      "limit": "Product-specific proof absent"
+    },
+    {
+      "id": "C25",
+      "claim": "An affiliate click proves a paid commission",
+      "status": "false",
+      "source_ids": [
+        "affiliate"
+      ],
+      "limit": "Never count an outbound click as revenue"
+    },
+    {
+      "id": "C26",
+      "claim": "52-page Focus Fieldbook is existing one-list free resource",
+      "status": "site_verified",
+      "source_ids": [
+        "focus"
+      ],
+      "limit": "No new list/forms"
+    },
+    {
+      "id": "C27",
+      "claim": "Final Vestige has independently used or tested Zen12",
+      "status": "not_verified",
+      "source_ids": [
+        "zen12"
+      ],
+      "limit": "No fabricated firsthand experience"
+    },
+    {
+      "id": "C28",
+      "claim": "Merchant checkout displayed price is final settled amount",
+      "status": "not_verified",
+      "source_ids": [
+        "zen12"
+      ],
+      "limit": "Requires provider and receipts"
+    },
+    {
+      "id": "C29",
+      "claim": "Original optional film will improve verified purchase conversion",
+      "status": "hypothesis_only",
+      "source_ids": [
+        "github"
+      ],
+      "limit": "Not tested; require preregistered A/B and paid outcome"
+    },
+    {
+      "id": "C30",
+      "claim": "Qualified-human sessions can be derived from anonymous video views",
+      "status": "false",
+      "source_ids": [
+        "github"
+      ],
+      "limit": "Need explicit verified website cohort denominator"
+    }
+  ],
+  "release_gates": {
+    "FV_PARTNER_ACCOUNT_ACCEPTED": "HOLD",
+    "FV_ISSUED_PRODUCT_EARNING_URL": "HOLD",
+    "ZEN12_PROMOTIONAL_CHANNEL_PERMISSION": "HOLD",
+    "APPROVED_OFFICIAL_CREATIVE_OR_ORIGINAL_COPY_RIGHTS": "HOLD",
+    "ACCOUNT_PERSONAL_DATA_HANDLING_REVIEW": "HOLD",
+    "CURRENT_PRODUCT_PRICING_CHECKOUT_CAPTURE": "HOLD",
+    "REFUND_AND_UPSELL_TERMS_CHECK": "HOLD",
+    "PHONE_SMS_CONSENT_REVIEW": "HOLD",
+    "EMAIL_NEWSLETTER_CONSENT_REVIEW": "HOLD",
+    "FINAL_FTC_ADJACENT_LINK_REVIEW": "HOLD",
+    "CLAIM_BY_CLAIM_HEALTH_EVIDENCE": "HOLD",
+    "ONE_APPROVED_IN_MARKET_PAID_OFFER": "HOLD",
+    "OWNER_REVIEW_OF_FV_PAYHIP_SKU": "HOLD",
+    "SINGLE_JETPACK_FUNNEL_CHECK": "HOLD",
+    "GROK_REAL_ASSET_ID_RECEIVED": "HOLD",
+    "MOBILE_360_390_768_1440_QA": "HOLD",
+    "SCREENREADER_KEYBOARD_A11Y_QA": "HOLD",
+    "WORDPRESS_SANITIZATION_TEST": "HOLD",
+    "REAL_VIDEO_ENCODED_CAPTIONED_AND_PERFORMANCE_TESTED": "HOLD",
+    "REAL_BROWSER_NO_JS_TEST": "HOLD",
+    "NO_DUPLICATE_ANALYTICS_REVIEW": "HOLD",
+    "PERMITTED_FIRST_PARTY_EVENT_SCHEMA": "HOLD",
+    "MERCHANT_PAID_CONVERSION_REPORT": "HOLD",
+    "REFUND_FEE_SETTLEMENT_AUDIT": "HOLD",
+    "QUALIFIED_HUMAN_COHORT_DEFINITION": "HOLD",
+    "HOMEPAGE_ART_COORDINATION_SIGNOFF": "HOLD",
+    "SITE_QA_INDEPENDENT_SIGNOFF": "HOLD",
+    "FOUNDER_COMMERCIAL_RELEASE_APPROVAL": "HOLD",
+    "FOUNDER_PUBLISHING_RELEASE_APPROVAL": "HOLD",
+    "NO_UNAPPROVED_DEPLOY_OR_MERGE": "HOLD"
+  }
+}
