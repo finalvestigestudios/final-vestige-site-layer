@@ -24,16 +24,16 @@ The current integrated builder Git blob is `349173d1e1d735eade218d95c7a0a2649c8c
 | Committed R351 implementation blob | `aaac2009bea3bfa1ecb0562d03f26c2d468819ec` |
 | Committed R351 test blob | `0a7d211818ac598851fa27533359134c6eaa6099` |
 | Inherited R350 implementation blob | `4f3446a907b4c53c3ea33773d8f2c25cd512c94a` |
-| 93 R351 exact-code standalone tests | **PASS** |
+| 94 R351 exact-code standalone tests | **PASS** |
 | 68 inherited R350 standalone tests | **PASS** |
-| Combined isolated test executions | **161/161 PASS** |
+| Combined isolated test executions | **162/162 PASS** |
 | Python compilation | **PASS** |
 | Isolated mode missing native checkout | **INVALID_HARD_HOLD, exit 2** (expected) |
 | Authenticated full checkout, native validate/build, 100 WordPress/preview outputs | **NOT EXECUTED** |
 | Hosted CI, actual live route verification, mobile/print acceptance | **NOT VERIFIED** |
 | Human safety/privacy/source claims and qualified QD | **NOT APPROVED** |
 
-Tests and source blobs were compared with actual committed Git identities. The 161 tests are **synthetic/isolated only**, not a full repository build or independent editorial approval. Source checked dates and HTTPS links cannot replace individual claim-level support checks.
+Tests and source blobs were compared with actual committed Git identities. The 162 tests are **synthetic/isolated only**, not a full repository build or independent editorial approval. Source checked dates and HTTPS links cannot replace individual claim-level support checks.
 
 ## Independent QA and unresolved source holds
 
@@ -58,3 +58,13 @@ Tests and source blobs were compared with actual committed Git identities. The 1
 ## Next executable gate
 
 On an authenticated complete nine-ref checkout, run `python -I preparedness/tools/r351_canonical_route_gate.py --repo-root .` (exit 2 is intentional); run native `python -I preparedness/tools/validate.py`, `python -I preparedness/tools/build.py`, and `python -I -m unittest discover -s preparedness/tests -v`, then compare **all 50 WordPress + 50 preview private draft exports** and inspect canonical links/anchors against actual builder records. Any disagreement remains a hard hold; no silent cherry-pick or publish. Founder retains release/spending authority, Claude core-site engineering, Grok posts, Praxxis social QA.
+
+## New verified native-tree mismatch — additional publication blocker (read-only GitHub retrieval)
+
+The R350 integrated draft's **actual** taxonomy blob `15c547bb3018ac182b12a51036389cfa39a59168` lists six field tools including **`pantry-worksheet`**, but no `preparedness/content/tools/pantry-worksheet.meta.json` or `.body.html` exists at that exact commit. The authenticated `preparedness/content/tools/` GitHub contents directory instead has six complete body/metadata pairs including **`kit-builder`** (metadata Git blob `e9be8a497df737b36d7d399fccc4a00000ce8eac`), which **is absent** from `taxonomy.tools`. The other five tool pairs match taxonomy. All 35 article metadata records were also individually read at exact R350 branch; their slug/section identities matched the taxonomy. The 41 *authored* drafts exist, but the taxonomy and actual tool identities **do not reconcile**.
+
+This means a simplistic total of “35 articles + six tools” is **not enough** to certify WordPress route identities or tool navigation. The missing planned Pantry Worksheet must not be represented as drafted, and the existing Kit Builder must not be silently dropped or relabeled. R351's `DOCUMENT_NOT_IN_TAXONOMY:tools/kit-builder` plus `INCOMPLETE_TOOLS_INVENTORY` tests explicitly preserve this failure. **No taxonomy/source file was edited**; qualified editorial and Claude integration owners must decide whether to produce the missing planned tool or amend the proposed slate with founder approval, and then run full native build/link review.
+
+The 41 examined private metadata records were all marked `status.publish=draft`. Two original articles carry `safety_review.state=approved`, four historical entries `not-required`, and the remaining 35 `pending`. The `making-water-safer` metadata explicitly states its internal “approved” record is a one-word founder chat reply with unconfirmed scope, **not independent safety/QD review**. R351 flags internally approved safety metadata for additional adjudication; it does not erase the record or turn it into clearance. The article `salt-beef-salt-pork-age-of-sail` also retains an internal approved state. No medical or emergency correctness conclusion is drawn.
+
+**Updated exact test receipt:** 94/94 new R351 isolated Python tests PASS, 68/68 inherited R350 tests PASS, **162/162 combined** isolated executions, compilation PASS. Updated R351 test blob `4c32e1199b8b6c21a364ed7a3784a0c55fe607ef`, implementation unchanged `aaac2009bea3bfa1ecb0562d03f26c2d468819ec`. Complete native validation/build and all 100 private exports remain NOT EXECUTED; release HARD HOLD unchanged.
