@@ -1,0 +1,360 @@
+{
+  "schema": "fv-preparedness-r337-measurement-part-v1",
+  "source_commit": "05fa47e24f5d7bb17ce40a3737242983706e57c7",
+  "r336_witness_blob": "ff714125b0e785248819acc1358f912b470f4a69",
+  "part": 3,
+  "range": [
+    18,
+    27
+  ],
+  "rows": [
+    {
+      "kind": "articles",
+      "slug": "warnings-radios-offline-maps",
+      "route": "/preparedness/family-communication/warnings-radios-offline-maps/",
+      "body_blob": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+      "meta_blob": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+      "min_utf8_bytes": 21257,
+      "word_units": 2924,
+      "citations": {
+        "health-fcc-comms-tips": 3,
+        "health-fcc-wea": 4,
+        "health-fema-ipaws": 6,
+        "health-nws-nwr-national": 11,
+        "health-ready-alerts": 18,
+        "health-ready-disabilities": 3,
+        "health-ready-kit": 4,
+        "health-ready-plan": 3,
+        "nws-nwr": 3
+      },
+      "links": {},
+      "headings": [
+        "act-h",
+        "problem",
+        "layers",
+        "wea",
+        "nwr",
+        "features",
+        "eas",
+        "app",
+        "comms",
+        "maps",
+        "routine",
+        "options",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "preparedness-real-households",
+      "route": "/preparedness/start-here/preparedness-real-households/",
+      "body_blob": "68344cf6c4022285fffb2a01f42027bf6f9ee95d",
+      "meta_blob": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+      "min_utf8_bytes": 25659,
+      "word_units": 3408,
+      "citations": {
+        "cdc-water-store": 2,
+        "ready-are-you-ready": 4,
+        "start-acl-emergency": 5,
+        "start-cdc-disability-evacuate": 2,
+        "start-cdc-disability-plan": 1,
+        "start-cdc-pyh-prescriptions": 2,
+        "start-fema-housing": 2,
+        "start-hud-multifamily-template": 1,
+        "start-ready-alerts": 2,
+        "start-ready-disability": 12,
+        "start-ready-financial": 8,
+        "start-ready-low-cost": 3,
+        "start-ready-older-adults": 10,
+        "start-ready-plan": 1,
+        "start-ready-power": 1,
+        "start-redcross-older-adults": 4,
+        "start-usfa-high-rise": 4
+      },
+      "links": {
+        "go-bags": 2,
+        "household-emergency-plan": 1,
+        "three-day-kit": 3,
+        "two-week-water-storage": 1,
+        "water-math": 1
+      },
+      "headings": [
+        "act-h",
+        "why",
+        "renters",
+        "money",
+        "elder",
+        "access",
+        "ask",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "salt-beef-salt-pork-age-of-sail",
+      "route": "/preparedness/lost-ways/salt-beef-salt-pork-age-of-sail/",
+      "body_blob": "6539aafeca9bca67c96247c81a7412b117201b88",
+      "meta_blob": "1c4c5396da703f3724b584c67e49e2128ab1f4c6",
+      "min_utf8_bytes": 21371,
+      "word_units": 2850,
+      "citations": {
+        "cdc-botulism-prevention": 5,
+        "fsis-botulism": 4,
+        "fsis-home-cure-qa": 1,
+        "jll-trohler-2003": 4,
+        "nchfp-cure-smoke": 3,
+        "rmg-biscuit-aab0766": 1,
+        "rmg-life-at-sea": 3,
+        "si-lind-1753": 1,
+        "si-nmah-life-aboard": 2,
+        "usscm-brenckle-2019": 25
+      },
+      "links": {
+        "making-water-safer": 1
+      },
+      "headings": [
+        "act-h",
+        "hold",
+        "ration",
+        "contract",
+        "reputation",
+        "cooking",
+        "bread",
+        "scurvy",
+        "schooner",
+        "ledger",
+        "why-it-worked",
+        "verdict-h",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "ships-biscuit-and-hardtack",
+      "route": "/preparedness/lost-ways/ships-biscuit-and-hardtack/",
+      "body_blob": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+      "meta_blob": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+      "min_utf8_bytes": 19898,
+      "word_units": 2639,
+      "citations": {
+        "hist-food-fsis-molds": 6,
+        "hist-food-marcy-prairie-traveler-text": 3,
+        "hist-food-nps-fosc-rations": 7,
+        "hist-food-nps-hardtack-mana": 6,
+        "loc-prairie-traveler": 1,
+        "rmg-biscuit-aab0766": 2,
+        "rmg-life-at-sea": 3,
+        "usscm-brenckle-2019": 14
+      },
+      "links": {
+        "history-of-food-preservation": 1,
+        "pioneer-travel-rations": 1,
+        "salt-beef-salt-pork-age-of-sail": 2
+      },
+      "headings": [
+        "act-h",
+        "problem",
+        "what",
+        "ration",
+        "failure",
+        "army",
+        "trail",
+        "logic",
+        "nutrition",
+        "ledger",
+        "verdict-h",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "lewis-and-clark-salt-works",
+      "route": "/preparedness/lost-ways/lewis-and-clark-salt-works/",
+      "body_blob": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+      "meta_blob": "3a350aedac67ea89c6995831032367634248c9e9",
+      "min_utf8_bytes": 17785,
+      "word_units": 2309,
+      "citations": {
+        "cdc-botulism-prevention": 2,
+        "epa-emergency-disinfection": 3,
+        "fsis-home-cure-qa": 2,
+        "hist-food-lc-journal-1805-12-28": 7,
+        "hist-food-lc-journal-1806-01-05": 11,
+        "hist-food-lc-journal-1806-02-21": 3,
+        "hist-food-lc-salt-works-trail-alliance": 5,
+        "hist-food-nps-lewi-tribes": 3,
+        "nchfp-cure-smoke": 2,
+        "nps-lewis-clark-salt": 4,
+        "nps-salt-works": 7
+      },
+      "links": {
+        "history-of-food-preservation": 1,
+        "making-water-safer": 1,
+        "salt-beef-salt-pork-age-of-sail": 1
+      },
+      "headings": [
+        "act-h",
+        "problem",
+        "order",
+        "work",
+        "neighbors",
+        "salt",
+        "difference",
+        "ledger",
+        "verdict-h",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "pioneer-travel-rations",
+      "route": "/preparedness/lost-ways/pioneer-travel-rations/",
+      "body_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+      "meta_blob": "7191acba55d63dc405ad9c2003d66193276da89f",
+      "min_utf8_bytes": 18100,
+      "word_units": 2334,
+      "citations": {
+        "cdc-botulism-prevention": 2,
+        "fsis-home-cure-qa": 1,
+        "hist-food-fsis-jerky": 4,
+        "hist-food-marcy-prairie-traveler-text": 13,
+        "hist-food-nchfp-jerky": 1,
+        "hist-food-nps-emigrant-trails": 5,
+        "hist-food-nps-nht-nevada-guide": 9,
+        "loc-pioneer-diaries": 1,
+        "loc-prairie-traveler": 1,
+        "nchfp-cure-smoke": 2
+      },
+      "links": {
+        "history-of-food-preservation": 1,
+        "pemmican-and-dried-meats": 1,
+        "salt-beef-salt-pork-age-of-sail": 1,
+        "ships-biscuit-and-hardtack": 1
+      },
+      "headings": [
+        "act-h",
+        "sources",
+        "list",
+        "eat",
+        "short",
+        "hunger",
+        "ledger",
+        "verdict-h",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "pemmican-and-dried-meats",
+      "route": "/preparedness/lost-ways/pemmican-and-dried-meats/",
+      "body_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+      "meta_blob": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+      "min_utf8_bytes": 18672,
+      "word_units": 2419,
+      "citations": {
+        "cdc-botulism-prevention": 2,
+        "fsis-home-cure-qa": 2,
+        "hist-food-ce-pemmican": 11,
+        "hist-food-fsis-jerky": 7,
+        "hist-food-headsmashedin": 6,
+        "hist-food-marcy-prairie-traveler-text": 2,
+        "hist-food-metis-fur-trade": 4,
+        "hist-food-natifs-wasna": 3,
+        "hist-food-nchfp-jerky": 7,
+        "hist-food-nk360-bison": 1,
+        "loc-prairie-traveler": 1
+      },
+      "links": {
+        "history-of-food-preservation": 1,
+        "pioneer-travel-rations": 1,
+        "smokehouses-salting-curing": 1
+      },
+      "headings": [
+        "act-h",
+        "whose",
+        "bison",
+        "trade",
+        "storage",
+        "modern",
+        "ledger",
+        "verdict-h",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "smokehouses-salting-curing",
+      "route": "/preparedness/lost-ways/smokehouses-salting-curing/",
+      "body_blob": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+      "meta_blob": "16223945e83f95b349acf09a2b684c09326550c0",
+      "min_utf8_bytes": 16424,
+      "word_units": 2128,
+      "citations": {
+        "cdc-botulism-prevention": 2,
+        "fsis-botulism": 5,
+        "fsis-home-cure-qa": 3,
+        "hist-food-fsis-molds": 1,
+        "hist-food-fsis-smoking": 4,
+        "hist-food-marcy-prairie-traveler-text": 1,
+        "hist-food-monticello-meat": 7,
+        "hist-food-mv-smokehouse": 5,
+        "nchfp-cure-smoke": 3,
+        "nchfp-historical-origins": 2,
+        "usscm-brenckle-2019": 3
+      },
+      "links": {
+        "history-of-food-preservation": 1,
+        "pemmican-and-dried-meats": 1,
+        "salt-beef-salt-pork-age-of-sail": 1,
+        "ships-biscuit-and-hardtack": 1
+      },
+      "headings": [
+        "act-h",
+        "craft",
+        "navy",
+        "science",
+        "smoke",
+        "limits-of-craft",
+        "ledger",
+        "verdict-h",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "root-cellars-cool-storage",
+      "route": "/preparedness/lost-ways/root-cellars-cool-storage/",
+      "body_blob": "2ff8d029769aa9a97de6b1e388d937899f3af38c",
+      "meta_blob": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+      "min_utf8_bytes": 21281,
+      "word_units": 2780,
+      "citations": {
+        "cdc-botulism-prevention": 2,
+        "hist-home-fsis-refrigeration": 6,
+        "hist-home-monticello-ice-house": 8,
+        "hist-home-msu-simmons-1798": 4,
+        "hist-home-mu-root-cellars": 15,
+        "hist-home-nps-fort-union-water": 1,
+        "hist-home-nps-oxon-hill-root-cellar": 4,
+        "hist-home-nps-ww2-canning": 2
+      },
+      "links": {
+        "pickling-fermentation-old-recipes": 1,
+        "salt-beef-salt-pork-age-of-sail": 1
+      },
+      "headings": [
+        "act-h",
+        "problem",
+        "why-underground",
+        "cook-book",
+        "left-in-ground",
+        "ice",
+        "not-a-fridge",
+        "options",
+        "ledger",
+        "verdict-h",
+        "limits"
+      ]
+    }
+  ]
+}
