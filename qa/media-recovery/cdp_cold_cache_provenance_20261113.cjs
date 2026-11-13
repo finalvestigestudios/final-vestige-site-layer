@@ -11,7 +11,8 @@ function coldNetworkProvenance(r,policy){
  const completed=!!(r&&r.type==='Image'&&typeof r.request_id==='string'&&r.request_id.trim()&&
   r.request_will_be_sent_observed===true&&r.response_received_observed===true&&
   r.loading_finished_observed===true&&r.loading_failed_observed!==true&&
-  Number.isInteger(r.status)&&r.status>=100&&r.status<=599);
+  Number.isInteger(r.status)&&r.status>=100&&r.status<=599&&
+  Number.isSafeInteger(r.encodedDataLength)&&r.encodedDataLength>=0);
  const configured=!!(policy&&policy.cache_disabled_acknowledged===true&&
   policy.service_worker_bypass_acknowledged===true&&
   policy.monitor_started_before_navigation===true);
