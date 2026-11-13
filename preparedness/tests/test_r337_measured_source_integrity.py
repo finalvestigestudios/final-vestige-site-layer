@@ -34,7 +34,9 @@ class MeasuredSourceIntegrity(unittest.TestCase):
         cls.witness,cls.rows=make_fixture(cls.root)
     @classmethod
     def tearDownClass(cls):cls.temp.cleanup()
-    def audit(self):return gate.audit(self.root)
+    def audit(self):return gate.audit(self.root,prior_witness=self.witness)
+    def test_disk_authentic_witness_pin_required(self):
+        self.assertEqual(gate.audit(self.root)["errors"],["R336_WITNESS_GIT_BLOB_DRIFT"])
     def change(self,path,transform):
         before=path.read_bytes()
         try:
