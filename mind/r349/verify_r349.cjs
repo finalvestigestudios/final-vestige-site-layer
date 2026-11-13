@@ -21,7 +21,7 @@ function checkOffer(html){
  ok(!/<a\b[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots)\./i.test(html),"no clickable merchant link");
  ok(!/<script\b|<form\b|<iframe\b|<video\b/i.test(html),"no script/form/iframe/video");
  ok(!/on(?:click|load|error|submit)\s*=|javascript:|<meta[^>]*http-equiv=["']refresh/i.test(html),"no inline handlers or redirects");
- ok(/Affiliate disclosure:[\s\S]{0,700}<button[^>]*disabled/i.test(html),"earning disclosure near disabled CTA");
+ ok(/Affiliate disclosure:[\s\S]{0,300}Final Vestige may earn a commission[\s\S]{0,400}<button[^>]*disabled/i.test(html),"earning disclosure near disabled CTA");
  ok(/https:\/\/finalvestige\.com\/focus\//.test(html),"existing Focus path preserved");
  ok(/<html lang="en">/.test(html)&&/name="viewport"/.test(html),"language and viewport");
  ok(/prefers-reduced-motion/.test(html)&&/focus-visible/.test(html),"keyboard/reduced-motion styles");
@@ -63,7 +63,7 @@ function verifyAdversarial(){
    b.replace("42-second transcript","short video"),
  ];
  ok(!/<button\b[^>]*\bdisabled\b[^>]*\baria-disabled="true"/.test(unsafe[0]),"reject enabled CTA");
- ok(!/Affiliate disclosure:[\s\S]{0,700}<button[^>]*disabled/i.test(unsafe[1]),"reject removed disclosure");
+ ok(!/Affiliate disclosure:[\s\S]{0,300}Final Vestige may earn a commission[\s\S]{0,400}<button[^>]*disabled/i.test(unsafe[1]),"reject removed disclosure");
  ok(/href="https:\/\/zen12\.com/.test(unsafe[2]),"reject active merchant URL");
  ok(/<script\b/.test(unsafe[3]),"reject inline script");
  ok(!/loading="lazy"/.test(unsafe[4]),"reject eager poster");
