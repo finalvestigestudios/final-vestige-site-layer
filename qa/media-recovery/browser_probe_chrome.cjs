@@ -96,7 +96,8 @@ function monitor(cdp){
    const r=reqs.get(id)||{};r.url=p.response.url;r.status=p.response.status;r.mime_type=p.response.mimeType||null;r.type=p.type||r.type||null;r.from_disk_cache=!!p.response.fromDiskCache;r.from_service_worker=!!p.response.fromServiceWorker;r.response_received_observed=true;reqs.set(id,r);
   }else if(m.method==='Network.requestServedFromCache'){const r=reqs.get(id)||{};r.was_cached=true;r.served_from_cache_observed=true;reqs.set(id,r);
   }else if(m.method==='Network.loadingFinished'){
-   const r=reqs.get(id)||{};r.encodedDataLength=Math.round(p.encodedDataLength||0);r.loading_finished_observed=true;reqs.set(id,r);
+   const r=reqs.get(id)||{};r.encodedDataLength=Number.isFinite(p.encodedDataLength)&&p.encodedDataLength>=0?
+    Math.round(p.encodedDataLength):null;r.loading_finished_observed=true;reqs.set(id,r);
   }else if(m.method==='Network.loadingFailed'){
    const r=reqs.get(id)||{};r.type=p.type||r.type||null;r.failed_error=p.errorText||'network_load_failed';r.loading_failed_observed=true;reqs.set(id,r);
    if(p.type==='Document')docFailures.push({url:r.url||null,error:r.failed_error});
