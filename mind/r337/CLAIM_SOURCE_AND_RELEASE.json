@@ -1,0 +1,159 @@
+{
+  "updated": "2026-11-12",
+  "scope": "mind/r337 unpublished read-only research",
+  "sources": [
+    {
+      "url": "https://zen12.com/",
+      "type": "official seller",
+      "verified": "Premium 12 levels/48 MP3s; Beginner first 6/24; Advanced final 6/24; four styles; seller advertised prices and one-year refund"
+    },
+    {
+      "url": "https://zen12.com/gift",
+      "type": "official seller",
+      "verified": "Free-audio page visibly announces merchant newsletter signup; do not conflate with FV Dispatch"
+    },
+    {
+      "url": "https://affiliates.inspire3.com/",
+      "type": "official recruitment",
+      "verified": "Public sign-up and general promotional commission language; no FV account proof"
+    },
+    {
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "official seller",
+      "verified": "33 minute, 47 MB recording, seller benefits claims and refund language"
+    },
+    {
+      "url": "https://brainwaveshots.com/",
+      "type": "official seller",
+      "verified": "Separate brainwave audio product catalog"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3701572/",
+      "type": "research abstract",
+      "verified": "1986 expectancy and hypnotic response experiment; not Zen12"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15994228/",
+      "type": "research abstract",
+      "verified": "2005 selected hypnotizable participants and experimental conflict test; not Zen12"
+    },
+    {
+      "url": "https://doi.org/10.1111/j.1467-9280.2006.01669.x",
+      "type": "research abstract",
+      "verified": "2006 suggestion with/without induction in highly suggestible group; 45% variance is not sales efficacy"
+    },
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator",
+      "verified": "Clear conspicuous near-link affiliate disclosure"
+    },
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator",
+      "verified": "Requires appropriate product-specific substantiation for health-related benefits"
+    },
+    {
+      "url": "https://finalvestige.com/focus/",
+      "type": "existing FV",
+      "verified": "One existing free Fieldbook, 52-page edition"
+    },
+    {
+      "url": "https://finalvestige.com/dispatch/",
+      "type": "existing FV",
+      "verified": "One existing newsletter"
+    },
+    {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "existing FV",
+      "verified": "Archival historical dossier"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Premium includes 12 levels, 48 MP3s",
+      "classification": "merchant-described format",
+      "decision": "permit attribution to seller only"
+    },
+    {
+      "claim": "Beginner has first 6 levels, 24 MP3s; Advanced has last 6, 24 MP3s",
+      "classification": "merchant-described format",
+      "decision": "permit attribution to seller only"
+    },
+    {
+      "claim": "Free sample also enrolls in seller newsletter",
+      "classification": "merchant consent statement",
+      "decision": "disclose plainly; no email collection or cross-transfer"
+    },
+    {
+      "claim": "One-year refund offered",
+      "classification": "merchant representation",
+      "decision": "date-specific, conditional; actual refund and checkout untested"
+    },
+    {
+      "claim": "Promotional Premium $87.99",
+      "classification": "merchant display 2026-11-12",
+      "decision": "do not hardcode live or claim final charge"
+    },
+    {
+      "claim": "12 minutes equates to an hour of meditation",
+      "classification": "seller efficacy claim",
+      "decision": "do not endorse; no product-specific adequate substantiation"
+    },
+    {
+      "claim": "Automatic deep brainwave entrainment and improved concentration",
+      "classification": "seller efficacy claim",
+      "decision": "do not endorse; do not generalize laboratory studies"
+    },
+    {
+      "claim": "Hypnotic suggestions may change selected controlled task outcomes",
+      "classification": "independent controlled research",
+      "decision": "limit to selected study context and participants"
+    },
+    {
+      "claim": "45% variation in Stroop responding",
+      "classification": "2006 experimental statistic",
+      "decision": "not 45% productivity improvement"
+    },
+    {
+      "claim": "FV is an approved Inspire3 publisher",
+      "classification": "not verified",
+      "decision": "HARD HOLD"
+    },
+    {
+      "claim": "Current authorized FV earning URL and channels",
+      "classification": "not verified",
+      "decision": "HARD HOLD"
+    },
+    {
+      "claim": "Commissioned or settled sale, net profit",
+      "classification": "not verified",
+      "decision": "HARD HOLD"
+    },
+    {
+      "claim": "FV owns rights-cleared active paid Mind Payhip SKU",
+      "classification": "not verified",
+      "decision": "HARD HOLD"
+    }
+  ],
+  "gates": {
+    "merchant_account_approved": false,
+    "specific_product_permission": false,
+    "permitted_site_channel": false,
+    "permitted_social_channel": false,
+    "permitted_email_channel": false,
+    "exact_earning_url": false,
+    "attribution_terms": false,
+    "commission_terms": false,
+    "refund_and_checkout_verified": false,
+    "product_specific_claims_reviewed": false,
+    "founder_commercial_release": false,
+    "site_QA_browser": false,
+    "original_42s_video_encoded": false,
+    "captions_playback_QA": false,
+    "privacy_consent_tested": false,
+    "qualified_human_measurement": false,
+    "merchant_sale_proven": false,
+    "refund_adjusted_revenue_reconciled": false
+  },
+  "verdict": "HARD_HOLD: no affiliate links, no seller free-sample CTA, no WordPress write, no purchase/revenue claims"
+}
