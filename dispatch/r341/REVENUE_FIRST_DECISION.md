@@ -1,0 +1,30 @@
+# Commercial conversion decision — 2026-11-13 PT
+
+**Decision: Six original issues remain HOLD_UNSENT; #03 and #05 additionally HOLD_MERCHANT. No alternate manuscript adopted.**
+
+## Journey and owner-ranked changes
+| Offer | Funnel step | Blocker | Change or experiment | Pass / fail evidence | Owner |
+|---|---|---|---|---|---|
+| Zen12 Premium | Qualified Mind/Focus subscriber → buyer guide → paid order | Named partner account's email rights, issued earning URL, and reviewed live guide absent | When Mind supplies *approved* guide and EMAIL permission, evaluate one text-only optional guide CTA in #03 | FAIL: no merchant-authoritative acceptance, email terms, guide approved live, or settled sales | Mind / Commerce |
+| Total Focus | Relevant interest → buyer evaluation → paid order | Same affiliate rights and landing proof; 14-day advertised guarantee subject to FAQ's maximum five refunds/year | Retain #05 draft but make specific recording and terms clear; do not imply efficacy | FAIL: no product-specific authorization, approved live guide, or merchant settled sale | Mind / Commerce |
+| Fieldbook | Focus → legitimate confirmed signup | WordPress 3 total / 3 confirmed / 2 unconfirmed overlap; 3 WordPress.com followers / 0 direct email | Provider-authoritative state reconciliation with deduped, consent-scoped opaque references | UNKNOWN: aggregate sources cannot establish deliverable inboxes; no PII in GitHub | Claude / Focus |
+| Fieldbook | Confirmed subscriber → received welcome | PDF directly accessible independently; configured welcome not received-email proof | Witness a legitimately authorized inbox receipt separately, no test email absent founder approval | UNKNOWN: existence of PDF != email delivery | Focus / Founder |
+| Dispatch | WordPress post → received commercial email | Address, unsubscribe and Jetpack formatting unverified | Approved post-editor preview followed by *explicitly authorized* controlled receipt check; compare full HTML and text footers | FAIL/UNKNOWN: static previews not native inbox evidence | Dispatch / Founder |
+| Grok asset | Qualified human visit → settled order | Real asset IDs and qualified sessions not joined to merchant/own ledger | QA existing UTMs; independently reconcile merchant settlement + fees + refunds before net KPI | UNKNOWN: no authenticated session/settlement intersection | Grok / Praxxis / Claude / Commerce |
+
+### Why direct downloadable PDF is not a confirmed email subscriber
+Published https://finalvestige.com/focus/ includes both Subscribe and direct Fieldbook Download routes. Both may be useful, but download analytics are not consent, welcome delivery or lead conversion. The page also suggests users "sign up again" after an in-app-browser PDF difficulty; this can inflate attempts unless the provider-confirmed event is idempotent. Request Claude's copy/measurement review under #129, **without modifying the published page here**.
+
+### Unresolved subscriber overlap
+Authenticated read-only November 13 23:37 UTC: Newsletter enabled, default sends OFF, content=full, no-reply, welcome configured; 3 total, 3 confirmed, 2 unconfirmed; follower sources 3 wpcom, 0 direct-email. Status categories are not additively disjoint. No private recipient records or actually eligible inbox count were obtained. Recent 5 post records show individually opted-out and MUST NOT be called a full history of never-sent emails.
+
+### Merchant hard facts (seller assertions, not independent efficacy)
+* https://zen12.com/ seller's Premium description: 12 levels / 48 MP3s and four styles, **advertised** one-year guarantee. Landing page shows $87.99 vs $187.99 display *at this check*, not a guaranteed durable price. Claims including "one hour in twelve minutes", symptom relief, neurophysiological entrainment are **not independently verified for the retail product** and must not be adopted as FV conclusions. Free audio form enrolls in **seller's separate newsletter**.
+* https://hypnosislive.com/mental-skills/total-focus seller lists a 33-minute, 47 MB download, ads about concentration, and advertised 14-day refund. https://hypnosislive.com/faq adds a five-sessions/year refund cap. This is not efficacy proof.
+* https://affiliates.inspire3.com/ publicly explains affiliate links and commissions, but is a **signup/login landing page**, not account acceptance or EMAIL-channel permission.
+* https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business requires accurate sender/subject, commercial-identification where applicable, valid physical postal address and effective opt-out. A merchant's or Automattic's address is not FV's postal identity. Do not approve any commercial email until received native copy is verified.
+
+### Evidence and revenue proof conventions
+Canonical UTM when matched to Grok's AUTHENTIC asset: utm_source=actual_platform, utm_medium=organic_social, utm_campaign=topic_cluster_pilot_2026_11, utm_content=immutable_asset_id. For Dispatch when **approved**: utm_source=dispatch, utm_medium=email, utm_campaign=dispatch_pilot_2026_11, utm_content=issue_03 or issue_05. These are PROPOSALS, not live tracked links. Do not introduce duplicate scripts. \`confirmed_signup\` is provider-confirmed once per stable opaque subscriber reference (not click/form-submit). Merchant paid status must be independently settled and matched to a human-session source, less refunds/fees, in both 7- and 30-day cohorts. Never export list emails to GitHub. KPI: net cents / qualified sessions * 1000. If reporting completeness is unverified: NULL. No A/B inference at this list size.
+
+**Owned source:** original #175 + current #174; Site Editorial Standards https://finalvestige.com/editorial-standards/; Mind issue #171; Focus issue #129; conversion #820. This packet is neither merchant acceptance nor editorial substitution.
