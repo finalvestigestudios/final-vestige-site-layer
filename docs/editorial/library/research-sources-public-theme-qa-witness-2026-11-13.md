@@ -4,7 +4,7 @@
 
 ## Verified authoritative evidence — 2026-11-13
 
-- Fresh authenticated WordPress **edit-context** readback: page **#1338**, `status=publish`, last modified **2026-11-03T22:12:43** (site-local); 3 core HTML blocks. First HTML block has **60** `article.fv-rs-card` entries. Third HTML block contains **30** further entries in a separate **visible no-JS fallback** `#fv-rs-batch003`, which the script moves to category grids when JS runs.
+- Fresh authenticated WordPress **edit-context** readback: page **#1338**, `status=publish`, last modified **2026-11-03T22:12:43** (site-local); 3 core HTML blocks. First HTML block has **60** `article.fv-rs-card` entries. Third HTML block contains **30** further entries in a separate **no-JS fallback container** `#fv-rs-batch003` (actual visual visibility must still be checked against the live theme), which the script moves to category grids when JS runs.
 - All **90 saved cards** have **90 distinct titles and 90 distinct primary card hrefs**, with category counts **declassified 12; accountability 24; engineering 21; archives 25; navigation 8**. The source did not change in this run.
 - Published initial header/search/filter text still advertises **60**. The supplemental JS updates many labels to 90 after loading but embeds an incorrect category total (`accountability:23`, `archives:26`). A visitor without JavaScript sees the 30 fallback cards but stale 60-label text. Do not remove the fallback while repairing labels.
 - Published SEO description already says **Ninety**; `jetpack_seo_noindex=false`.
