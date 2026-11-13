@@ -1,0 +1,150 @@
+{
+  "as_of": "2026-11-13",
+  "scope": "UNPUBLISHED",
+  "public_evidence_only": true,
+  "sources": [
+    {
+      "claim": "Zen12 Beginner first six levels and 24 MP3s",
+      "classification": "seller-description-verified",
+      "url": "https://zen12.com/",
+      "disposition": "format-only"
+    },
+    {
+      "claim": "Zen12 Premium all twelve levels and 48 MP3s",
+      "classification": "seller-description-verified",
+      "url": "https://zen12.com/",
+      "disposition": "format-only"
+    },
+    {
+      "claim": "Zen12 Advanced final six levels and 24 MP3s",
+      "classification": "seller-description-verified",
+      "url": "https://zen12.com/",
+      "disposition": "format-only"
+    },
+    {
+      "claim": "Zen12 twelve minutes equals one hour meditation benefits",
+      "classification": "seller-efficacy-unsubstantiated-for-named-product",
+      "url": "https://zen12.com/",
+      "disposition": "exclude-from-FV-promise"
+    },
+    {
+      "claim": "Zen12 claimed health/stress/focus benefits",
+      "classification": "seller-efficacy-unsubstantiated-for-named-product",
+      "url": "https://zen12.com/",
+      "disposition": "exclude-from-FV-promise"
+    },
+    {
+      "claim": "Zen12 claimed one-year refund",
+      "classification": "seller-policy-not-checkout-verified",
+      "url": "https://zen12.com/",
+      "disposition": "verify-actual-final-terms"
+    },
+    {
+      "claim": "Zen12 gift enrolls in seller newsletter",
+      "classification": "seller-privacy-disclosure-observed",
+      "url": "https://zen12.com/gift",
+      "disposition": "separate-from-FV-Dispatch"
+    },
+    {
+      "claim": "Total Focus 33 minutes, 47 MB",
+      "classification": "seller-description-verified",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "format-only"
+    },
+    {
+      "claim": "Total Focus claimed 14-day refund",
+      "classification": "seller-policy-not-checkout-verified",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "verify-actual-final-terms"
+    },
+    {
+      "claim": "Total Focus instant or perfect concentration",
+      "classification": "seller-efficacy-unsubstantiated-for-named-product",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "exclude-from-FV-promise"
+    },
+    {
+      "claim": "Focus Shot 15/30-minute files",
+      "classification": "seller-description-verified",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "disposition": "format-only"
+    },
+    {
+      "claim": "Focus Shot multihour focus",
+      "classification": "seller-efficacy-unsubstantiated-for-named-product",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "disposition": "exclude-from-FV-promise"
+    },
+    {
+      "claim": "Focus Shot one-year seller refund statement",
+      "classification": "seller-policy-not-checkout-verified",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "disposition": "verify-actual-final-terms"
+    },
+    {
+      "claim": "Slagter attentional blink 2007",
+      "classification": "independent-study-intensive-three-month-training",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1865565/",
+      "disposition": "not-a-Zen12-trial"
+    },
+    {
+      "claim": "Binaural beats review 2023",
+      "classification": "independent-literature-mixed-EEG",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/",
+      "disposition": "not-product-specific"
+    },
+    {
+      "claim": "Puységur archive 153 source rows",
+      "classification": "historical-archive-verified",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "disposition": "historical-method-not-modern-clinical-evidence"
+    },
+    {
+      "claim": "FTC affiliate earning disclosures",
+      "classification": "official-regulatory-guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "disposition": "near-specific-link"
+    },
+    {
+      "claim": "FTC health claims require adequate relevant evidence",
+      "classification": "official-regulatory-guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "disposition": "no-efficacy-inheritance"
+    },
+    {
+      "claim": "Inspire3 public signup page",
+      "classification": "public-affiliate-recruitment-only",
+      "url": "https://affiliates.inspire3.com/",
+      "disposition": "not-FV-specific-approval"
+    },
+    {
+      "claim": "Existing 52-page Focus Fieldbook",
+      "classification": "live-resource-confirmed",
+      "url": "https://finalvestige.com/focus/",
+      "disposition": "single-jetpack-funnel"
+    }
+  ],
+  "commercial_release_gates": {
+    "affiliate_account_authenticated": false,
+    "publisher_application_accepted": false,
+    "partner_terms_signed": false,
+    "zen12_sku_affiliate_eligible": false,
+    "allowed_youtube_channel": false,
+    "allowed_tiktok_channel": false,
+    "allowed_email_channel": false,
+    "issued_earning_url": false,
+    "exact_merchant_checkout_audited": false,
+    "refund_claim_process_audited": false,
+    "fv_owned_payhip_mind_sku_verified": false,
+    "fv_payhip_rights_verified": false,
+    "fv_payhip_checkout_delivery_verified": false,
+    "first_party_campaign_QA": false,
+    "actual_grok_media_ids_verified": false,
+    "jetpack_provider_confirmed_signup": false,
+    "film_encoded_caption_checked": false,
+    "real_browser_WCAG_QA": false,
+    "founder_approved_release": false,
+    "merchant_confirmed_paid_revenue": false
+  },
+  "summary": "Never treat official seller promotion as substantiated clinical claim, or public affiliate recruitment as publisher authorization. All merchant CTAs remain inactive."
+}
