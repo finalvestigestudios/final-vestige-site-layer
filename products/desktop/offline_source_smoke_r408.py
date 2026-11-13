@@ -163,7 +163,8 @@ def run_gate(desktop: Path, *, timeout: int = 90) -> dict:
 
 
 def main() -> int:
-    desktop = Path(__file__).resolve().parent
+    # Keep lexical ancestry visible; resolve() would erase linked parents.
+    desktop = Path(os.path.abspath(__file__)).parent
     try:
         result = run_gate(desktop)
     except SourceGateError:
