@@ -21,7 +21,8 @@ Local Linux CPython 3.13.5 with directly fetched R403 Git blobs and committed R4
 - `keyboard_access.py` Git blob `8188c9558d877665eb6a334f932a364d57fbcdc9`.
 - `test_keyboard_bind_uncertain_r404.py` Git blob `1cc2e61085292eda7fa78eb32a0114ea07632f13`.
 - R403 `shortcut_targets_r403.py` unchanged Git blob `a1e41291fa32ed52d6f972c681bab11f6ffacf9e`.
-- 19 unittest methods PASS in normal `python -W error`; 19 PASS in `python -OO -W error`, **38/38 focused test-method executions**. `py_compile` passed.
+- **71/71** focused unittest methods PASS in normal `python -W error` and **71/71** in `python -OO -W error`: **142/142 method executions**. This includes 19 new R404, 10 inherited R403 binding integration, 24 inherited R403 preflight, and 18 inherited R44. `compileall` passed. All five source/test Python files used for this subset matched their exact Git blob SHAs; the tests were run in a partial local reconstruction, not a complete checkout.
+- Replayed the 19 new R404 methods against exact prepatch R403 `keyboard_access.py` Git blob `c1839246200003cb36e973913b60a57e45d448bb`: **15 expected failures** (including all six app-shape subtests), reproducing the weak retry contract.
 - Synthetic cases include a callback already installed when `bind` raises, early/mid/last action failure, unknown callback ID, failing unbind, `KeyboardInterrupt`/`SystemExit`, six application control shapes, and premium disabled review.
 - These are no-display synthetic control-flow tests, **not** six real Tk desktop GUIs, a full checkout suite, genuine Windows x64 validation, accessibility acceptance, or packaging tests.
 
