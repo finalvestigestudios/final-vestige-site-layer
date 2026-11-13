@@ -18,5 +18,6 @@
 @media(max-width:359px){.fv-apollo-r345__inner{width:calc(100% - 16px)}.fv-apollo-r345__card{padding:12px}}
 @media(prefers-reduced-motion:reduce){.fv-apollo-r345 *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media(forced-colors:active){.fv-apollo-r345__card{border-color:CanvasText}.fv-apollo-r345__limit{border-color:CanvasText}.fv-apollo-r345 :focus-visible{outline-color:Highlight}}
-@media print{.fv-apollo-r345,.fv-apollo-r345 *{color:#000!important;background:#fff!important;box-shadow:none!important}.fv-apollo-r345__grid{display:block}.fv-apollo-r345__card{border-color:#555;break-inside:avoid-page;margin:12px 0}.fv-apollo-r345__custody{display:none}.fv-apollo-r345__source a{color:#000!important;text-decoration:underline}}
+.fv-apollo-r345__print-custody[hidden]{display:none}
+@media print{.fv-apollo-r345,.fv-apollo-r345 *{color:#000!important;background:#fff!important;box-shadow:none!important}.fv-apollo-r345__grid{display:block}.fv-apollo-r345__card{border-color:#555;break-inside:avoid-page;margin:12px 0}.fv-apollo-r345__custody,.fv-apollo-r345__source{display:none!important}.fv-apollo-r345__print-custody[hidden]{display:block!important;border-top:1px solid #555;margin-top:10px;padding-top:8px}.fv-apollo-r345__print-custody p{margin:.35rem 0}.fv-apollo-r345__print-custody a{color:#000!important;text-decoration:underline}}
 .fv-apollo-r345 h2,.fv-apollo-r345 p{overflow-wrap:anywhere}

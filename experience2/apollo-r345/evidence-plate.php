@@ -28,6 +28,13 @@ function fv_apollo_r345_evidence_plate(): string {
         <p class="fv-apollo-r345__limit"><strong>Evidence limit:</strong> <?php echo $e($claim['limit']); ?></p>
         <details class="fv-apollo-r345__custody"><summary>Inspect source custody</summary><p>Document class: original 1967 NASA Apollo 204 Review Board findings, hosted by NASA. Plate text is a paraphrase, not a verbatim quotation.</p></details>
         <p class="fv-apollo-r345__source"><a href="<?php echo $e($claim['source']); ?>" rel="noopener noreferrer" data-fv-apollo-primary-source="board"><?php echo $e($claim['locator']); ?></a></p>
+        <!-- A separate print-only source ledger avoids losing closed <details> in native PDF export.
+             It is hidden from the screen/accessibility tree and replaces, rather than duplicates,
+             the screen source link in print. All data derives from this same reviewed claim. -->
+        <div class="fv-apollo-r345__print-custody" data-fv-apollo-print-custody hidden>
+          <p><strong>Original Board source:</strong> <a href="<?php echo $e($claim['source']); ?>" rel="noopener noreferrer" data-fv-apollo-print-source="board"><?php echo $e($claim['locator']); ?></a></p>
+          <p><strong>Record custody:</strong> NASA-hosted 1967 Apollo 204 Review Board finding; this plate is an editorial paraphrase, not a verbatim quotation or a photograph.</p>
+        </div>
       </article></li>
       <?php endforeach; ?>
     </ol>
