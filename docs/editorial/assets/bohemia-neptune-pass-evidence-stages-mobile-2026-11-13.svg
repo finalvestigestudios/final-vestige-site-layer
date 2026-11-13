@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1080" viewBox="0 0 600 1080" role="img" aria-labelledby="title desc">
+<title id="title">Neptune Pass: reported widening and proposed inlet change, mobile layout</title>
+<desc id="desc">Mobile Final Vestige original sourced chart. NASA reported Neptune Pass widening from about 150 feet in 2016 to 850 feet in 2023. A separate April 2025 U.S. Army Corps plan proposed reducing inlet cross-sectional area from 32,000 to 10,300 square feet. Second measurement is proposed, not verified as-built.</desc>
+<rect width="600" height="1080" fill="#101b25"/>
+<rect x="22" y="22" width="556" height="1036" rx="22" fill="#182733" stroke="#465865" stroke-width="2"/>
+<text x="50" y="75" font-family="Georgia,serif" font-size="24" letter-spacing="1" fill="#d3b57e">FINAL VESTIGE / EVIDENCE</text>
+<text x="50" y="126" font-family="Georgia,serif" font-size="35" fill="#f4efe3">The River Opened</text>
+<text x="50" y="170" font-family="Georgia,serif" font-size="35" fill="#f4efe3">Another Way</text>
+<text x="50" y="210" font-family="Arial,sans-serif" font-size="23" fill="#c9d5d8">Neptune Pass · Bohemia Spillway</text>
+<line x1="50" x2="550" y1="238" y2="238" stroke="#63747e"/>
+<text x="50" y="293" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#d3b57e">1  REPORTED WIDTH</text>
+<text x="50" y="334" font-family="Arial,sans-serif" font-size="21" fill="#dbe1df">NASA Earth Observatory, 2023</text>
+<text x="50" y="386" font-family="Arial,sans-serif" font-size="24" fill="#f3f0e8">2016  ·  150 feet</text>
+<rect x="50" y="408" width="78" height="38" rx="5" fill="#7bb3bb"/>
+<text x="50" y="489" font-family="Arial,sans-serif" font-size="24" fill="#f3f0e8">2023  ·  850 feet</text>
+<rect x="50" y="511" width="450" height="38" rx="5" fill="#d3b57e"/>
+<line x1="50" x2="550" y1="593" y2="593" stroke="#63747e"/>
+<text x="50" y="646" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#d3b57e">2  PROPOSED INLET AREA</text>
+<text x="50" y="684" font-family="Arial,sans-serif" font-size="20" fill="#dbe1df">U.S. Army Corps of Engineers, 2025</text>
+<text x="50" y="732" font-family="Arial,sans-serif" font-size="24" fill="#f3f0e8">Existing  ·  32,000 ft²</text>
+<rect x="50" y="750" width="450" height="36" rx="5" fill="#7bb3bb"/>
+<text x="50" y="828" font-family="Arial,sans-serif" font-size="24" fill="#f3f0e8">Proposed  ·  10,300 ft²</text>
+<rect x="50" y="846" width="145" height="36" rx="5" fill="#d3b57e"/>
+<line x1="50" x2="550" y1="914" y2="914" stroke="#63747e"/>
+<text x="50" y="955" font-family="Arial,sans-serif" font-size="22" fill="#c1ced2">Different measures. Each pair</text>
+<text x="50" y="984" font-family="Arial,sans-serif" font-size="22" fill="#c1ced2">uses its own scale. The planned</text>
+<text x="50" y="1013" font-family="Arial,sans-serif" font-size="22" fill="#c1ced2">area is NOT verified as built.</text>
+</svg>
