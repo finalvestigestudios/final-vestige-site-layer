@@ -113,6 +113,13 @@ MUTATIONS={
  'url_none':lambda c,b,d:d['meta'].update(canonical_url=None),
  'url_missing':lambda c,b,d:d['meta'].pop('canonical_url'),
  'url_duplicate':lambda c,b,d:c[b]['documents'][1]['meta'].update(canonical_url=d['meta']['canonical_url']),
+ 'url_network_path':lambda c,b,d:d['meta'].update(canonical_url='//evil.example/preparedness/foo/'),
+ 'url_scheme_relative_home':lambda c,b,d:d['meta'].update(canonical_url='//finalvestige.com/preparedness/foo/'),
+ 'url_encoded_traversal':lambda c,b,d:d['meta'].update(canonical_url='/preparedness/%2e%2e/focus/'),
+ 'url_dotdot':lambda c,b,d:d['meta'].update(canonical_url='/preparedness/../focus/'),
+ 'url_bad_ipv6':lambda c,b,d:d['meta'].update(canonical_url='https://[bad/preparedness/foo/'),
+ 'url_credentials':lambda c,b,d:d['meta'].update(canonical_url='https://user:secret@finalvestige.com/preparedness/foo/'),
+ 'url_port':lambda c,b,d:d['meta'].update(canonical_url='https://finalvestige.com:8000/preparedness/foo/'),
 }
 for name,mutation in MUTATIONS.items():
     def generated(f):
