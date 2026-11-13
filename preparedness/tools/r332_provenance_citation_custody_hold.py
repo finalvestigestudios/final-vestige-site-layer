@@ -10,6 +10,8 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from preparedness.tools import r331_editorial_handoff_custody_gate as prior
 
 SCHEMA = 'fv-preparedness-r332-e326-citation-custody-hard-hold-v1'
