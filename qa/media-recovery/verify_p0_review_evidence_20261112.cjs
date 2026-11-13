@@ -72,6 +72,9 @@ function verifyP0ReviewEvidence(packet,review,artifacts){
      assetShape.width!==review.geometry.output_width||
      assetShape.height!==review.geometry.output_height)
     return denied('ASSET_FORMAT_OR_OUTPUT_GEOMETRY_UNVERIFIED');
+  // JPEG/WebP container headers can be forged without valid compressed pixels.
+  // Until an independent full-raster decoder is bound to these bytes, HOLD.
+  if(assetShape.format!=='png')return denied('CANDIDATE_FULL_RASTER_DECODE_REQUIRED');
   let capture,rights;
   try{capture=JSON.parse(capture_text);rights=JSON.parse(rights_review_text);}
   catch{return denied('ARTIFACT_JSON_INVALID');}
@@ -125,6 +128,9 @@ function verifyP0SourceMasterEvidence(review,artifacts){
    return denied('DERIVATIVE_OVER_960_OR_UPSCALED_FROM_MASTER');
  if(Math.abs(z.output_width*shape.height-z.output_height*shape.width)>Math.max(shape.width,shape.height))
    return denied('SOURCE_MASTER_CROP_OR_ASPECT_MISMATCH');
+ // An exact SHA over bytes does not prove those bytes decode into image pixels.
+ // JPEG/WebP geometry here is structural only; never promote a header-only image.
+ if(shape.format!=='png')return denied('SOURCE_MASTER_FULL_RASTER_DECODE_REQUIRED');
  return {verified:true,reason:null,source_master_sha256:hash,
    source_master_dimensions:[shape.width,shape.height],
    source_master_raster_decode_verified:shape.format==='png',
