@@ -185,6 +185,11 @@ def run(root: Path, execute_suite: bool = False, pattern: str = 'test*.py',
         before = inventory(prep)
     except (OSError, ValueError) as exc:
         return report(['AUTHENTIC_NATIVE_SOURCE_INVENTORY_REQUIRED:' + str(exc)])
+    # Isolated Python excludes both CWD and script dir; make only the authenticated
+    # checkout roots importable before witness/test discovery, never test fixture paths.
+    for module_root in (str(root.resolve()), str(prep / 'tools')):
+        if module_root not in sys.path:
+            sys.path.insert(0, module_root)
     if require_native_witness:
         try:
             from r341_nine_branch_conflict_review_hold import audit_native
