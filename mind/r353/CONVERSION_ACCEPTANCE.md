@@ -84,3 +84,9 @@ Analytics payload denylist: email, phone, postal address, name, IP, device finge
 - Actual offer: https://zen12.com/ ; separate merchant consent: https://zen12.com/gift
 - Lab proof: https://doi.org/10.1016/j.concog.2025.103948 ; https://pubmed.ncbi.nlm.nih.gov/12470132/ ; https://pubmed.ncbi.nlm.nih.gov/39032268/
 - Live archives: https://finalvestige.com/blog/ ; https://finalvestige.com/2026/11/02/change-blindness/ ; https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ ; https://finalvestige.com/focus/
+
+## Original optional-film proof — native local render, not hosted/activated
+- Source-controlled Python renderer: `mind/r353/render_original_42s.py`, generated with Pillow + FFmpeg locally on 2026-11-13; six original text/geometry scenes, **no purchased clips, no outside music, no forced playback**.
+- Verified local proof: `mind_r353_original_42s_proof.mp4`, H.264, 1280×720, 12 fps, **42.000 seconds**, 128,011 bytes. Container-generated SHA-256: `79533153677e534d4a8df74eb53e414a1e8da0fc383c389b5e26a36b8c943064`. Source file Git UTF-8 byte count matches the executed local Python source at 2,095 bytes; no claim of binary hosting in GitHub.
+- The review Variant B **does not embed this MP4**; its optional film remains poster/transcript/VTT only until hosted, size-budgeted, caption-timed and human-approved in staging. The video is supplementary, not a seller testimonial or proof of meditation benefits.
+- `ffprobe` verified 42.000 seconds and 1280×720. Local encoder completed. Actual embedded playback, accessible captions in-browser, mobile decode performance, no-JS media fallback, WCAG 2.2 AA and Core Web Vitals have **NOT** been tested.
