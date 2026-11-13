@@ -1,0 +1,37 @@
+{
+  "schema_version": "mind-r341-1",
+  "retention": "No new JS or independent cookie; Claude must map existing approved first-party analytics before instrumentation",
+  "utm": {
+    "utm_source": "actual platform only",
+    "utm_medium": "organic_social",
+    "utm_campaign": "mind_pilot_2026_11",
+    "utm_content": "immutable published asset_id, never fabricated"
+  },
+  "allowed_events": [
+    "qualified_human_landing",
+    "article_to_fieldbook_click",
+    "confirmed_signup",
+    "affiliate_outbound",
+    "merchant_confirmed_purchase",
+    "affiliate_confirmed_commission",
+    "refund",
+    "fees"
+  ],
+  "prohibitions": [
+    "No PII, email addresses, IPs, device fingerprinting, duplicate scripts, raw query string logs",
+    "Do not infer leads from form starts or sales from outbound clicks",
+    "No affiliate_outbound event before partner approval/link",
+    "Do not assign unattributed orders to Grok"
+  ],
+  "cohorts": [
+    "7_day",
+    "30_day"
+  ],
+  "kpi": "(settled_attributed_gross - refunds - chargebacks - processing_fees - platform_fees - applicable incremental costs) / qualified_human_sessions * 1000",
+  "uncomputable_if": [
+    "denominator absent",
+    "provider paid receipts absent",
+    "refunds/fees absent"
+  ],
+  "status": "UNOBSERVABLE_UNTIL_MERCHANT_AND_HUMAN_SESSION_VALIDATION"
+}
