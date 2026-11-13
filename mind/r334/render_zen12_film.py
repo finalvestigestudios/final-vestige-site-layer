@@ -59,7 +59,7 @@ def main():
             manifest.extend([f"file '{path.as_posix()}'", "duration 7"])
         manifest.append(f"file '{(root / 'slide-05.png').as_posix()}'")
         (root / "concat.txt").write_text("\n".join(manifest) + "\n", encoding="utf-8")
-        subprocess.run(["ffmpeg","-hide_banner","-loglevel","error","-y","-f","concat","-safe","0","-i",str(root / "concat.txt"),"-vf","fps=6,scale=960:540:flags=lanczos,format=yuv420p","-c:v","libx264","-preset","veryfast","-crf","29","-movflags","+faststart","-an",str(OUTPUT)],check=True)
+        subprocess.run(["ffmpeg","-hide_banner","-loglevel","error","-y","-f","concat","-safe","0","-i",str(root / "concat.txt"),"-vf","fps=6,scale=960:540:flags=lanczos,format=yuv420p","-c:v","libx264","-preset","veryfast","-crf","29","-movflags","+faststart","-an","-t","42",str(OUTPUT)],check=True)
     duration = subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","default=noprint_wrappers=1:nokey=1",str(OUTPUT)], text=True).strip()
     if not 41.8 <= float(duration) <= 42.5:
         raise SystemExit(f"Unexpected film duration: {duration}s")
