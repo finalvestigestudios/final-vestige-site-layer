@@ -56,7 +56,10 @@ function fv_apollo_r340_experience_shortcode($atts = array()): string {
     if (!function_exists('fv_apollo_r339_shortcode')) {
         return '<p>Research experience unavailable. <a href="https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/">Read the free Apollo 1 investigation</a>.</p>';
     }
-    return fv_apollo_r339_shortcode() . fv_apollo_r340_gallery_shortcode();
+    $plate_file = dirname(__DIR__) . '/apollo-r345/evidence-plate.php';
+    if (is_readable($plate_file)) { require_once $plate_file; }
+    $plate = function_exists('fv_apollo_r345_evidence_plate') ? fv_apollo_r345_evidence_plate() : '';
+    return fv_apollo_r339_shortcode() . $plate . fv_apollo_r340_gallery_shortcode();
 }
 
 /**
@@ -110,6 +113,9 @@ function fv_apollo_r340_enqueue(): void {
     if (!$combined && !$flags[1]) { return; }
     if ($combined && is_readable(dirname(__DIR__) . '/apollo-r339/assets/chronology-rail.css')) {
         wp_enqueue_style('fv-apollo-r339-chronology', plugins_url('../apollo-r339/assets/chronology-rail.css', __FILE__), array(), '0.0.1-research');
+    }
+    if ($combined && is_readable(dirname(__DIR__) . '/apollo-r345/evidence-plate.css')) {
+        wp_enqueue_style('fv-apollo-r345-evidence-plate', plugins_url('../apollo-r345/evidence-plate.css', __FILE__), array(), '0.0.1-research');
     }
     wp_enqueue_style('fv-apollo-r340-gallery', plugins_url('assets/accession-gallery.css', __FILE__), array(), '0.0.1-research');
 }
