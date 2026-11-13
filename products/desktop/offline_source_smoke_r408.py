@@ -142,7 +142,10 @@ def run_gate(desktop: Path, *, timeout: int = 90) -> dict:
             # had changed, which was unsafe evidence and unnecessary execution.
             if source_digest(desktop) != digest:
                 raise SourceGateError("Desktop source changed during source smoke checks")
-            command = [sys.executable, "-I", "-W", "error"]
+            # -I ignores PYTHON* environment variables, including the child
+            # PYTHONDONTWRITEBYTECODE=1 setting. -B is therefore required to
+            # prevent our own smoke process creating unmeasured .pyc files.
+            command = [sys.executable, "-I", "-B", "-W", "error"]
             if mode == "optimized":
                 command.append("-OO")
             command += ["-c", BOOTSTRAP, str(desktop),
