@@ -77,10 +77,15 @@ def summarize_spend(
         # In addition to isolating the Decimal context, reject callbacks that
         # alter any exported number or smuggle formulas/nontext into the CSV.
         # Never propagate callback exception messages containing private cells.
+        failed_formatter = False
         try:
             rendered = invoke_spend_callback(format_money, amount)
         except Exception:
-            raise ValueError("Invalid SpendMap monetary display; no report was saved") from None
+            failed_formatter = True
+        if failed_formatter:
+            # A callback may carry the complete source field or customer path
+            # in an exception attribute. Never retain it via __context__.
+            raise ValueError("Invalid SpendMap monetary display; no report was saved")
         return verified_spend_money_display(amount, rendered)
 
     totals: dict[tuple[str, str, str], Decimal] = defaultdict(lambda: Decimal(0))
