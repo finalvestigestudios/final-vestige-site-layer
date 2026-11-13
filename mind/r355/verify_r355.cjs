@@ -22,7 +22,7 @@ function validatePage(s,what){
  ok(/<html lang="en">/.test(s),what+' language');
  ok(/<main id="main">/.test(s),what+' main landmark');
  ok(/href="#main"/.test(s),what+' skip link');
- ok(/<button\b[^>]*\bdisabled\b/.test(s),what+' disabled merchant button');
+ ok(/<button\b[^>]*\sdisabled(?=\s|=|>)/.test(s),what+' disabled merchant button');
  ok(/may earn a commission at no additional cost to you/.test(s),what+' proximate disclosure');
  ok(s.indexOf('may earn a commission')<s.indexOf('<button type="button" disabled'),what+' disclosure DOM before CTA');
  ok(!merchant.test(s),what+' no active merchant outbound');
@@ -65,7 +65,7 @@ ok(matrix.claims.every(x=>x.source_key in matrix.sources),'every claim source ke
 ok(!JSON.stringify(matrix).includes('sk-proj'),'no accidental API key');
 ok(!/\b(?:customer_email|email_address|phone_number|payment_card)\b/.test(JSON.stringify(matrix.attribution.allowlist)),'no PII allowed for attribution');
 ok(!/https?:\/\/[^\s"']+\/checkout\/buy\b/.test(A+B),'no checkout URL');
-const guard=s=>/<button\b[^>]*\bdisabled\b/.test(s)&&/may earn a commission at no additional cost to you/.test(s)&&!merchant.test(s)&&!prohibited.test(s)&&!/<a\s+[^>]*href=["']javascript:/i.test(s)&&!/will cure|guaranteed focus|instant IQ boost/i.test(s);
+const guard=s=>/<button\b[^>]*\sdisabled(?=\s|=|>)/.test(s)&&/may earn a commission at no additional cost to you/.test(s)&&!merchant.test(s)&&!prohibited.test(s)&&!/<a\s+[^>]*href=["']javascript:/i.test(s)&&!/will cure|guaranteed focus|instant IQ boost/i.test(s);
 const attacks=[
 A.replace(' disabled aria-disabled',' aria-disabled'),
 A.replace('may earn a commission at no additional cost to you','relationship undisclosed'),
