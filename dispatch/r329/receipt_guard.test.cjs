@@ -39,8 +39,7 @@ const mutations=[
 ];
 for(const [label,override,raw,failed] of mutations){
  test('fails closed: '+label,()=>{const r=inspectReceived(raw??original,{...verified,...override});
- if(label==='missing body opt out') assert.equal(r.checks.renderedBodyMentionsUnsubscribe,true); // URL alone plus word in header stays visible: check limitation
- else assert.equal(r.checks[failed],false);
+ assert.equal(r.checks[failed],false);
  assert.equal(r.status,'HOLD_UNSENT');});
 }
 test('empty evidence remains hold without PII',()=>{const r=inspectReceived(original);assert.equal(r.status,'HOLD_UNSENT');assert(r.missingEvidence.length>=7);assert(!JSON.stringify(r).includes('private-reader'));});
