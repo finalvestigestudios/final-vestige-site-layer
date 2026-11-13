@@ -1,0 +1,665 @@
+{
+  "schema_version": "mind-r355-1",
+  "review_date": "2026-11-13",
+  "commercial_status": "NO_COMMERCE",
+  "notes": [
+    "Seller price and policy claims are dated snapshots, never checkout, fulfilled refunds or advertiser entitlement.",
+    "No inaccessible partner portal was claimed reviewed; general public program terms do not prove publisher approval.",
+    "Evidence of binaural beats is not product-specific evidence for Zen12, Total Focus or Focus Shot.",
+    "R355 is a single isolated candidate; canonical Mind hub PR #172 and existing A/B owner remain unchanged."
+  ],
+  "sources": {
+    "inspire_catalog": "https://inspire3.com/",
+    "affiliate_public": "https://affiliates.inspire3.com/",
+    "zen_offer": "https://zen12.com/",
+    "zen_styles": "https://zen12.com/about",
+    "zen_checkout": "https://zen12.com/getstarted",
+    "hypnosis_focus": "https://hypnosislive.com/mental-skills/total-focus",
+    "hypnosis_faq": "https://hypnosislive.com/faq",
+    "brainwave_focus": "https://brainwaveshots.com/focus-shot",
+    "eeg_review": "https://doi.org/10.1371/journal.pone.0286023",
+    "attention_study": "https://doi.org/10.1038/s41598-025-88517-z",
+    "mindful_meta": "https://doi.org/10.1016/j.jpsychires.2023.12.009",
+    "ncch": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+    "historical": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/",
+    "journal": "https://finalvestige.com/blog/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "ftc_endorsement": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "product": "zen12",
+      "claim": "brand listed in official Inspire3 portfolio",
+      "classification": "seller_factual",
+      "source_key": "inspire_catalog",
+      "disposition": "allowed_as_catalog_description",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C02",
+      "product": "affiliate",
+      "claim": "network advertises participation and individual links",
+      "classification": "seller_network_description",
+      "source_key": "affiliate_public",
+      "disposition": "public_program_not_FV_approval",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C03",
+      "product": "affiliate",
+      "claim": "60%+ commission and $1+ EPC headlines",
+      "classification": "network_marketing",
+      "source_key": "affiliate_public",
+      "disposition": "exclude_from_FV_copy_not_verified_terms_or_results",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C04",
+      "product": "affiliate",
+      "claim": "Final Vestige has approved partner account",
+      "classification": "unverified_private_permission",
+      "source_key": "affiliate_public",
+      "disposition": "HARD_HOLD_no_account_proof",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C05",
+      "product": "affiliate",
+      "claim": "Final Vestige website, social and email promotion permitted",
+      "classification": "unverified_private_permission",
+      "source_key": "affiliate_public",
+      "disposition": "HARD_HOLD_no_channel_terms",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C06",
+      "product": "affiliate",
+      "claim": "approved creative swipe for this publisher",
+      "classification": "unverified_private_permission",
+      "source_key": "affiliate_public",
+      "disposition": "HARD_HOLD_login_or_direct_approval_needed",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C07",
+      "product": "affiliate",
+      "claim": "Final Vestige issued earning URL",
+      "classification": "unverified_private_permission",
+      "source_key": "affiliate_public",
+      "disposition": "HARD_HOLD_no_URL",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C08",
+      "product": "zen12",
+      "claim": "Beginner 6 levels / 24 MP3s",
+      "classification": "seller_package",
+      "source_key": "zen_offer",
+      "disposition": "seller_attribution_required",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C09",
+      "product": "zen12",
+      "claim": "Premium 12 levels / 48 MP3s",
+      "classification": "seller_package",
+      "source_key": "zen_offer",
+      "disposition": "seller_attribution_required",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C10",
+      "product": "zen12",
+      "claim": "Advanced 6 later levels / 24 MP3s",
+      "classification": "seller_package",
+      "source_key": "zen_offer",
+      "disposition": "seller_attribution_required",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C11",
+      "product": "zen12",
+      "claim": "each level has guided, relaxation, nature, white noise options",
+      "classification": "seller_package",
+      "source_key": "zen_styles",
+      "disposition": "avoid_implying_48_guided_sessions",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C12",
+      "product": "zen12",
+      "claim": "Premium displayed price US $87.99 on Nov 13",
+      "classification": "seller_page_snapshot",
+      "source_key": "zen_offer",
+      "disposition": "not_final_checkout_or_discount_guarantee",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C13",
+      "product": "zen12",
+      "claim": "one-year money-back promise",
+      "classification": "seller_policy_claim",
+      "source_key": "zen_offer",
+      "disposition": "refund_eligibility_and_processing_unverified",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C14",
+      "product": "zen12",
+      "claim": "twelve minutes equals one hour advanced meditation",
+      "classification": "seller_efficacy",
+      "source_key": "zen_offer",
+      "disposition": "EXCLUDE_not_product_substantiated",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C15",
+      "product": "zen12",
+      "claim": "instant focus, anxiety, creativity and health benefits",
+      "classification": "seller_efficacy",
+      "source_key": "zen_offer",
+      "disposition": "EXCLUDE_not_product_substantiated",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C16",
+      "product": "zen12",
+      "claim": "checkout collects payment and personal contact data",
+      "classification": "seller_checkout_observed",
+      "source_key": "zen_checkout",
+      "disposition": "do_not_submit_or_track_PII",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C17",
+      "product": "hypnosis",
+      "claim": "Total Focus one 33-minute 47MB audio",
+      "classification": "seller_package",
+      "source_key": "hypnosis_focus",
+      "disposition": "seller_attribution_required",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C18",
+      "product": "hypnosis",
+      "claim": "Total Focus displayed US $17.95",
+      "classification": "seller_page_snapshot",
+      "source_key": "hypnosis_focus",
+      "disposition": "not_final_cart_or_stable_price",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C19",
+      "product": "hypnosis",
+      "claim": "14-day refund headline; FAQ max 5 sessions per year",
+      "classification": "seller_policy_claim",
+      "source_key": "hypnosis_faq",
+      "disposition": "include_condition_not_guaranteed_refund",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C20",
+      "product": "hypnosis",
+      "claim": "super-sharp on-demand concentration and career benefits",
+      "classification": "seller_efficacy",
+      "source_key": "hypnosis_focus",
+      "disposition": "EXCLUDE_not_product_substantiated",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C21",
+      "product": "brainwave",
+      "claim": "Focus Shot includes 15m and 30m plus brainwave-only audios",
+      "classification": "seller_package",
+      "source_key": "brainwave_focus",
+      "disposition": "seller_attribution_required",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C22",
+      "product": "brainwave",
+      "claim": "Focus Shot displayed US $17.99",
+      "classification": "seller_page_snapshot",
+      "source_key": "brainwave_focus",
+      "disposition": "not_final_cart_or_stable_price",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C23",
+      "product": "brainwave",
+      "claim": "claimed focus lasts 4 hours to rest of day",
+      "classification": "seller_efficacy",
+      "source_key": "brainwave_focus",
+      "disposition": "EXCLUDE_not_product_substantiated",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C24",
+      "product": "science",
+      "claim": "2023 review of 14 EEG studies: 5 support, 8 contradict, 1 mixed",
+      "classification": "peer_reviewed_review",
+      "source_key": "eeg_review",
+      "disposition": "supports_inconsistency_only_not_zen12",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C25",
+      "product": "science",
+      "claim": "2025 80-person study had parameter-specific attention improvement",
+      "classification": "peer_reviewed_experiment",
+      "source_key": "attention_study",
+      "disposition": "not_zen12_or_all_recordings",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C26",
+      "product": "science",
+      "claim": "2025 study did not reduce vigilance decrement",
+      "classification": "peer_reviewed_experiment",
+      "source_key": "attention_study",
+      "disposition": "do_not_claim_sustained_focus",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C27",
+      "product": "science",
+      "claim": "2024 acute mindfulness review 5 studies n=277, attention limited",
+      "classification": "peer_reviewed_review",
+      "source_key": "mindful_meta",
+      "disposition": "not_zen12",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C28",
+      "product": "science",
+      "claim": "general meditation outcomes and safety evidence varies",
+      "classification": "government_summary",
+      "source_key": "ncch",
+      "disposition": "not_zen12",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C29",
+      "product": "history",
+      "claim": "Puységur archive documents testimony and case dossiers",
+      "classification": "first_party_historical_archive",
+      "source_key": "historical",
+      "disposition": "not_animal_magnetism_validation",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C30",
+      "product": "funnel",
+      "claim": "Focus Fieldbook 52-page reader resource uses existing Dispatch",
+      "classification": "live_first_party_page",
+      "source_key": "focus",
+      "disposition": "no_duplicate_forms_or_emails",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C31",
+      "product": "funnel",
+      "claim": "public journal shows 66 results as of 2026-11-13",
+      "classification": "live_first_party_page",
+      "source_key": "journal",
+      "disposition": "do_not_rewrite_171_historical_61_baseline",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C32",
+      "product": "ftc",
+      "claim": "material connections require clear nearby disclosure",
+      "classification": "FTC_guidance",
+      "source_key": "ftc_endorsement",
+      "disposition": "include_near_future_link",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C33",
+      "product": "ftc",
+      "claim": "psychological or health efficacy requires substantiation",
+      "classification": "FTC_guidance",
+      "source_key": "ftc_health",
+      "disposition": "EXCLUDE_unverified_mental_health_claims",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    },
+    {
+      "id": "C34",
+      "product": "commerce",
+      "claim": "independently reported paid affiliate commission exists",
+      "classification": "not_verified",
+      "source_key": "affiliate_public",
+      "disposition": "NO_SALE_claims_or_NET_REV",
+      "inspection_date": "2026-11-13",
+      "review_depth": "public page or abstract/full-text primary as specified in guide",
+      "proves_product_efficacy": false
+    }
+  ],
+  "release_gates": [
+    {
+      "gate": "publisher_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "product_specific_program_eligibility",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "issued_publisher_url",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "website_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "social_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "email_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "creative_license_permission",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "quote_and_analytics_terms",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "FTC_disclosure_legal_QA",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "product_specific_efficacy_substantiation",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "seller_page_cart_price",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "taxes_and_checkout_total",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "refund_terms_tested",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "delivery_fulfillment_observed",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "consumer_eligibility_and_privacy",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "authentic_published_Grok_asset_ids",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Praxxis / Grok"
+    },
+    {
+      "gate": "native_mobile_tap_path",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Claude / Site QA"
+    },
+    {
+      "gate": "unique_first_party_campaign_attribution",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "provider_confirmed_focus_signup",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "existing_Jetpack_consent_QA",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "no_duplicate_tracking_scripts",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Claude / Site QA"
+    },
+    {
+      "gate": "original_film_encoded_and_hosted",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "video_caption_audio_sync",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "real_browser_WCAG_22_AA",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Claude / Site QA"
+    },
+    {
+      "gate": "WP_sanitization_and_QA",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "affiliate_order_settlement",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "refund_and_fee_ledger",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "qualified_human_sessions_7_30d",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "gate": "founder_commercial_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder"
+    },
+    {
+      "gate": "founder_technical_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": "not independently verified in this run",
+      "owner": "Founder"
+    }
+  ],
+  "creator_topic_fit": [
+    {
+      "topic": "Change blindness / door swap",
+      "existing_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "source_link": "https://doi.org/10.3758/BF03210774",
+      "asset_id": null,
+      "platform_url": null,
+      "hook_unverified": true,
+      "interest": "Why did an obvious change go unseen?",
+      "reader_intent": "perception explanation",
+      "free_next": "https://finalvestige.com/focus/",
+      "conditional_offer": "Brainwave Shots Focus Shot only when goal switches to buying focus audio and affiliate approval verified"
+    },
+    {
+      "topic": "Mesmer / Puységur and suggestion",
+      "existing_article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "archive": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "asset_id": null,
+      "platform_url": null,
+      "hook_unverified": true,
+      "interest": "How did nineteenth-century testimony become a proposed mechanism?",
+      "reader_intent": "historical science",
+      "free_next": "https://finalvestige.com/focus/",
+      "conditional_offer": "Hypnosis Live Total Focus only for explicit product-format shopping intent and approval"
+    },
+    {
+      "topic": "Meditation-audio buyer's decision",
+      "existing_article": null,
+      "unpublished_guide": "mind/r355/THE_FREQUENCY_THAT_WAS_NOT_A_VERDICT.md",
+      "asset_id": null,
+      "platform_url": null,
+      "hook_unverified": true,
+      "interest": "Can twelve minutes replace sixty?",
+      "reader_intent": "structured downloadable audio buying",
+      "free_next": "https://finalvestige.com/focus/",
+      "conditional_offer": "Zen12 Premium, held until issued FV-specific earning link"
+    }
+  ],
+  "attribution": {
+    "allowlist": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content",
+      "asset_id",
+      "landing_variant"
+    ],
+    "event_types": [
+      "qualified_landing",
+      "relevant_cta_click",
+      "confirmed_lead",
+      "affiliate_click",
+      "merchant_verified_paid_order",
+      "merchant_verified_paid_commission",
+      "refund_or_chargeback",
+      "realized_net_revenue"
+    ],
+    "no_capture": [
+      "email",
+      "name",
+      "telephone",
+      "IP",
+      "full_URL_query",
+      "cookies_without_consent",
+      "fingerprint",
+      "payment_card",
+      "medical_history"
+    ],
+    "definition": "paid outcomes only from signed merchant or owned store reports; clicks never paid sales",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "kpi": "1000*realized_net_revenue/qualified_human_sessions; null if denominator or settlement unverified"
+  }
+}
