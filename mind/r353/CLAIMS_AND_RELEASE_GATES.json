@@ -1,0 +1,418 @@
+{
+  "version": "r353",
+  "checked_on": "2026-11-13",
+  "status": "DRAFT_NON_COMMERCIAL",
+  "classification": "Facts or seller claims are not proof of publisher authorization or consumer results",
+  "sources": {
+    "raz2002": "https://pubmed.ncbi.nlm.nih.gov/12470132/",
+    "raz2006": "https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.2006.01669.x/",
+    "brunel2025": "https://doi.org/10.1016/j.concog.2025.103948",
+    "zahedi2024": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+    "depascalis2024": "https://pubmed.ncbi.nlm.nih.gov/38391691/",
+    "archive": "https://finalvestige.com/archive/",
+    "journal": "https://finalvestige.com/blog/",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/",
+    "changeblindness": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "inspire3": "https://inspire3.com/",
+    "zen12": "https://zen12.com/",
+    "gift": "https://zen12.com/gift",
+    "hypnosis": "https://hypnosislive.com/",
+    "brainwaves": "https://brainwaveshots.com/",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "ftcendorsement": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftchealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  },
+  "claims": [
+    {
+      "id": "S001",
+      "claim": "Zen12 Premium: twelve levels, 48 MP3s",
+      "type": "seller_product_format",
+      "source_key": "zen12",
+      "source": "https://zen12.com/",
+      "decision": "ALLOW AS SELLER-DESCRIBED ONLY"
+    },
+    {
+      "id": "S002",
+      "claim": "Zen12 Beginner: first six levels, 24 MP3s",
+      "type": "seller_product_format",
+      "source_key": "zen12",
+      "source": "https://zen12.com/",
+      "decision": "ALLOW AS SELLER-DESCRIBED ONLY"
+    },
+    {
+      "id": "S003",
+      "claim": "Zen12 Advanced: last six levels, 24 MP3s",
+      "type": "seller_product_format",
+      "source_key": "zen12",
+      "source": "https://zen12.com/",
+      "decision": "ALLOW AS SELLER-DESCRIBED ONLY"
+    },
+    {
+      "id": "S004",
+      "claim": "Zen12 Premium public-page price was $87.99 on 2026-11-13",
+      "type": "seller_dated_display",
+      "source_key": "zen12",
+      "source": "https://zen12.com/",
+      "decision": "ALLOW DATED SNAPSHOT, NOT FINAL CHECKOUT"
+    },
+    {
+      "id": "S005",
+      "claim": "Zen12 public page describes a one-year money-back guarantee",
+      "type": "seller_refund_promise",
+      "source_key": "zen12",
+      "source": "https://zen12.com/",
+      "decision": "ALLOW WITH ACTUAL TERMS/RECEIPT UNVERIFIED"
+    },
+    {
+      "id": "U001",
+      "claim": "Zen12's twelve minutes equal an hour of advanced meditation",
+      "type": "unsupported_product_specific_efficacy",
+      "source_key": "zen12",
+      "source": "https://zen12.com/",
+      "decision": "REJECT PERFORMANCE CLAIM"
+    },
+    {
+      "id": "U002",
+      "claim": "Zen12 treats anxiety, illness or provides guaranteed focus",
+      "type": "unsupported_medical_cognitive_efficacy",
+      "source_key": "zen12",
+      "source": "https://zen12.com/",
+      "decision": "REJECT PERFORMANCE CLAIM"
+    },
+    {
+      "id": "U003",
+      "claim": "Inspire3 says it uses scientifically proven methods",
+      "type": "seller_general_claim",
+      "source_key": "inspire3",
+      "source": "https://inspire3.com/",
+      "decision": "ATTRIBUTION ONLY; DO NOT ADOPT"
+    },
+    {
+      "id": "E001",
+      "claim": "Raz 2002 high-suggestible group reduced Stroop interference",
+      "type": "bounded_experiment_abstract",
+      "source_key": "raz2002",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/12470132/",
+      "decision": "ALLOW QUALIFIED LAB FINDING"
+    },
+    {
+      "id": "E002",
+      "claim": "Raz 2002 low-suggestible group lacked significant reduction",
+      "type": "bounded_experiment_abstract",
+      "source_key": "raz2002",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/12470132/",
+      "decision": "ALLOW QUALIFIED LAB LIMIT"
+    },
+    {
+      "id": "E003",
+      "claim": "Raz 2006 suggestion changed Stroop with and without induction",
+      "type": "bounded_experiment_abstract",
+      "source_key": "raz2006",
+      "source": "https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.2006.01669.x/",
+      "decision": "ALLOW HIGH-SUGGESTIBILITY CONTEXT"
+    },
+    {
+      "id": "E004",
+      "claim": "Raz 2006 variance result predicts consumer response percentage",
+      "type": "false_extrapolation",
+      "source_key": "raz2006",
+      "source": "https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.2006.01669.x/",
+      "decision": "REJECT"
+    },
+    {
+      "id": "E005",
+      "claim": "Brunel 2025 highly suggestible N=34 emotional Stroop",
+      "type": "bounded_open_access_experiment",
+      "source_key": "brunel2025",
+      "source": "https://doi.org/10.1016/j.concog.2025.103948",
+      "decision": "ALLOW TASK-SPECIFIC"
+    },
+    {
+      "id": "E006",
+      "claim": "Brunel 2025 low-suggestible N=38 did not show effect",
+      "type": "bounded_open_access_experiment",
+      "source_key": "brunel2025",
+      "source": "https://doi.org/10.1016/j.concog.2025.103948",
+      "decision": "ALLOW TASK-SPECIFIC"
+    },
+    {
+      "id": "E007",
+      "claim": "Brunel 2025 demonstrates Zen12 efficacy",
+      "type": "unsupported_inference",
+      "source_key": "brunel2025",
+      "source": "https://doi.org/10.1016/j.concog.2025.103948",
+      "decision": "REJECT"
+    },
+    {
+      "id": "E008",
+      "claim": "Zahedi 2024 review finds no single accepted hypnosis mechanism",
+      "type": "review_abstract",
+      "source_key": "zahedi2024",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "decision": "ALLOW REVIEW CONCLUSION"
+    },
+    {
+      "id": "E009",
+      "claim": "De Pascalis 2024 describes resting EEG/imaging correlates",
+      "type": "review_abstract",
+      "source_key": "depascalis2024",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/38391691/",
+      "decision": "ALLOW BOUNDED REVIEW"
+    },
+    {
+      "id": "H001",
+      "claim": "Puységur archive contains 153 primary-source rows and 16 case dossiers",
+      "type": "first_party_archive_live",
+      "source_key": "puysegur",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "decision": "ALLOW AS SITE SNAPSHOT"
+    },
+    {
+      "id": "H002",
+      "claim": "Puységur historical cure claims prove animal magnetism",
+      "type": "invalid_historical_inference",
+      "source_key": "puysegur",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "decision": "REJECT"
+    },
+    {
+      "id": "L001",
+      "claim": "Final Vestige public Journal displayed 66 results on Nov 13",
+      "type": "first_party_live_page",
+      "source_key": "journal",
+      "source": "https://finalvestige.com/blog/",
+      "decision": "ALLOW AS DATED SNAPSHOT, RECONCILE ISSUE INVENTORY"
+    },
+    {
+      "id": "L002",
+      "claim": "Existing 52-page Focus Fieldbook uses the existing Dispatch route",
+      "type": "first_party_live_page",
+      "source_key": "focus",
+      "source": "https://finalvestige.com/focus/",
+      "decision": "ALLOW WITH SIGNUP CONVERSION UNVERIFIED"
+    },
+    {
+      "id": "S006",
+      "claim": "Zen12 free gift is a separate merchant email relationship",
+      "type": "merchant_consent",
+      "source_key": "gift",
+      "source": "https://zen12.com/gift",
+      "decision": "ALLOW WITH USER CHOICE EXPLAINED"
+    },
+    {
+      "id": "S007",
+      "claim": "Hypnosis Live markets 200+ self-hypnosis MP3s",
+      "type": "seller_catalog",
+      "source_key": "hypnosis",
+      "source": "https://hypnosislive.com/",
+      "decision": "ALLOW DESCRIPTIVE ONLY"
+    },
+    {
+      "id": "S008",
+      "claim": "Brainwave Shots lists Focus Shot",
+      "type": "seller_catalog",
+      "source_key": "brainwaves",
+      "source": "https://brainwaveshots.com/",
+      "decision": "ALLOW DESCRIPTIVE ONLY"
+    },
+    {
+      "id": "U004",
+      "claim": "Hypnosis Live or Brainwave Shots guarantees mental/health improvements",
+      "type": "unsupported_product_claim",
+      "source_key": "hypnosis",
+      "source": "https://hypnosislive.com/",
+      "decision": "REJECT"
+    },
+    {
+      "id": "C001",
+      "claim": "Inspire3 public affiliate registration proves FV accepted",
+      "type": "authorization_false_inference",
+      "source_key": "affiliate",
+      "source": "https://affiliates.inspire3.com/",
+      "decision": "REJECT"
+    },
+    {
+      "id": "C002",
+      "claim": "Public affiliate payout advertisements prove a FV commission",
+      "type": "authorization_false_inference",
+      "source_key": "affiliate",
+      "source": "https://affiliates.inspire3.com/",
+      "decision": "REJECT"
+    },
+    {
+      "id": "C003",
+      "claim": "FTC requires conspicuous disclosures for material connections",
+      "type": "regulatory_guidance",
+      "source_key": "ftcendorsement",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "decision": "APPLY NEAR SPECIFIC APPROVED LINK"
+    },
+    {
+      "id": "C004",
+      "claim": "FTC expects adequate evidence for health-related efficacy claims",
+      "type": "regulatory_guidance",
+      "source_key": "ftchealth",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "decision": "APPLY; DO NOT INVENT TRIALS"
+    },
+    {
+      "id": "C005",
+      "claim": "A clicked affiliate link is a paid commission",
+      "type": "metric_false_inference",
+      "source_key": "affiliate",
+      "source": "https://affiliates.inspire3.com/",
+      "decision": "REJECT"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "account_accepted",
+      "requirement": "Final Vestige publisher-specific acceptance verified",
+      "status": "HOLD"
+    },
+    {
+      "id": "allowed_domain",
+      "requirement": "finalvestige.com permitted as publisher domain",
+      "status": "HOLD"
+    },
+    {
+      "id": "allowed_social",
+      "requirement": "Grok channels permitted for relevant social promotion",
+      "status": "HOLD"
+    },
+    {
+      "id": "allowed_email",
+      "requirement": "Existing Dispatch email channel permitted",
+      "status": "HOLD"
+    },
+    {
+      "id": "approved_offer",
+      "requirement": "Zen12 Premium product-specific promotion approved",
+      "status": "HOLD"
+    },
+    {
+      "id": "issued_url",
+      "requirement": "Exact publisher-issued earning URL and attribution verified",
+      "status": "HOLD"
+    },
+    {
+      "id": "creative_rights",
+      "requirement": "Permitted seller creative/claims terms verified",
+      "status": "HOLD"
+    },
+    {
+      "id": "current_checkout",
+      "requirement": "Exact customer checkout amount verified by permitted test",
+      "status": "HOLD"
+    },
+    {
+      "id": "refund_terms",
+      "requirement": "Actual seller terms verified, not only headline",
+      "status": "HOLD"
+    },
+    {
+      "id": "merchant_consent",
+      "requirement": "Separate Zen12 gift/newsletter consent checked",
+      "status": "HOLD"
+    },
+    {
+      "id": "claim_legal",
+      "requirement": "Qualified editorial + FTC claim review",
+      "status": "HOLD"
+    },
+    {
+      "id": "founder_release",
+      "requirement": "Explicit founder production release approval",
+      "status": "HOLD"
+    },
+    {
+      "id": "site_QA",
+      "requirement": "Independent Site QA and security/a11y signoff",
+      "status": "HOLD"
+    },
+    {
+      "id": "wordpress_sanitizer",
+      "requirement": "WordPress sanitization/render pass",
+      "status": "HOLD"
+    },
+    {
+      "id": "browser_360_390",
+      "requirement": "360 and 390 responsive keyboard/contrast pass",
+      "status": "HOLD"
+    },
+    {
+      "id": "browser_768_1440_1920",
+      "requirement": "768,1440,1920 responsive pass",
+      "status": "HOLD"
+    },
+    {
+      "id": "video_encoded",
+      "requirement": "Original 42s encoded, rights checked and staged",
+      "status": "HOLD"
+    },
+    {
+      "id": "captions_tested",
+      "requirement": "Actual captions/transcript timing cross-checked",
+      "status": "HOLD"
+    },
+    {
+      "id": "nojs_tested",
+      "requirement": "Real browser no-JS behavior verified",
+      "status": "HOLD"
+    },
+    {
+      "id": "performance",
+      "requirement": "Lighthouse/CWV media loading verified",
+      "status": "HOLD"
+    },
+    {
+      "id": "campaign_asset_ids",
+      "requirement": "Three authentic Grok published asset IDs verified",
+      "status": "HOLD"
+    },
+    {
+      "id": "campaign_mobile_route",
+      "requirement": "Platform-permitted clickable mobile route verified",
+      "status": "HOLD"
+    },
+    {
+      "id": "firstparty_event_owner",
+      "requirement": "Claude existing analytics contract approved, no duplicate script",
+      "status": "HOLD"
+    },
+    {
+      "id": "consent_leads",
+      "requirement": "Jetpack provider-confirmed list attribution proven",
+      "status": "HOLD"
+    },
+    {
+      "id": "settlement_reports",
+      "requirement": "Paid merchant orders/commission settlement verified",
+      "status": "HOLD"
+    },
+    {
+      "id": "refund_fee_reconciliation",
+      "requirement": "Fees/refunds/chargebacks known for cohort",
+      "status": "HOLD"
+    },
+    {
+      "id": "qualified_sessions",
+      "requirement": "Consent-respecting qualified-human session denominator",
+      "status": "HOLD"
+    },
+    {
+      "id": "cohort_7_30",
+      "requirement": "7/30-day cohort accounting audit passes",
+      "status": "HOLD"
+    }
+  ],
+  "commercial_status": {
+    "publisher_approved": null,
+    "issued_link": null,
+    "accepted_paid_sales": null,
+    "realized_net_revenue": null,
+    "qualified_human_sessions": null,
+    "kpi_net_revenue_per_1000": null
+  }
+}
