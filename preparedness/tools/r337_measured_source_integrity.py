@@ -50,7 +50,10 @@ def audit(root: Path, *, prior_witness: dict | None = None) -> dict:
     errors: list[str] = []
     if prior_witness is None:
         try:
-            prior_witness = json.loads((root / 'audits' / 'r336_frozen_41_entry_witness.json').read_text('utf-8'))
+            raw_witness = (root / 'audits' / 'r336_frozen_41_entry_witness.json').read_bytes()
+            if r336.git_blob(raw_witness) != PRIOR_WITNESS_BLOB:
+                return report(['R336_WITNESS_GIT_BLOB_DRIFT'])
+            prior_witness = json.loads(raw_witness.decode('utf-8'))
         except (OSError, ValueError, UnicodeError):
             return report(['MISSING_OR_INVALID_R336_AUTHENTIC_WITNESS'])
     if prior_witness.get('schema') != r336.SCHEMA or len(prior_witness.get('entries', [])) != 41:
