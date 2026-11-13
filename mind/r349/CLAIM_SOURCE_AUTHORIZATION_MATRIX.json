@@ -1,0 +1,492 @@
+{
+  "record": "mind-r349",
+  "reviewed_date": "2026-11-13",
+  "offer_selected_for_future_hypothesis": "Zen12 Premium; never an active offer",
+  "affiliate_status": "NOT VERIFIED",
+  "owned_paid_mind_sku_status": "NOT VERIFIED",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21937032/",
+      "note": "de Fockert/Bremner 2011 PubMed abstract"
+    },
+    {
+      "id": "S02",
+      "url": "https://doi.org/10.3758/BF03208840",
+      "note": "Simons/Levin 1998 publisher abstract"
+    },
+    {
+      "id": "S03",
+      "url": "https://doi.org/10.1002/wcs.130",
+      "note": "Jensen et al 2011 review abstract"
+    },
+    {
+      "id": "S04",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "FV historical source archive"
+    },
+    {
+      "id": "S05",
+      "url": "https://finalvestige.com/focus/",
+      "note": "existing Fieldbook/Jetpack disclosure"
+    },
+    {
+      "id": "S06",
+      "url": "https://inspire3.com/",
+      "note": "official seller portfolio"
+    },
+    {
+      "id": "S07",
+      "url": "https://zen12.com/",
+      "note": "seller product and pricing page 2026-11-13"
+    },
+    {
+      "id": "S08",
+      "url": "https://zen12.com/gift",
+      "note": "seller separate free-gift newsletter"
+    },
+    {
+      "id": "S09",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "note": "seller product page 2026-11-13"
+    },
+    {
+      "id": "S10",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "note": "seller product page 2026-11-13"
+    },
+    {
+      "id": "S11",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "endorsement and material-connection guidance"
+    },
+    {
+      "id": "S12",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "health-claims substantiation guidance"
+    },
+    {
+      "id": "S13",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "note": "published FV investigation"
+    },
+    {
+      "id": "S14",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "note": "published FV investigation"
+    },
+    {
+      "id": "S15",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "note": "existing FV disclosures"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "High memory load improved unexpected-stimulus detection in a specified line-comparison experiment",
+      "source_ids": [
+        "S01"
+      ],
+      "kind": "independent abstract",
+      "decision": "admissible only with laboratory-context limitation"
+    },
+    {
+      "id": "C02",
+      "claim": "High memory load always improves attention",
+      "source_ids": [
+        "S01"
+      ],
+      "kind": "unsupported extrapolation",
+      "decision": "exclude"
+    },
+    {
+      "id": "C03",
+      "claim": "Door replacement went unnoticed by approximately half of pedestrians in original study",
+      "source_ids": [
+        "S02"
+      ],
+      "kind": "independent publisher abstract",
+      "decision": "admissible with field-study constraints"
+    },
+    {
+      "id": "C04",
+      "claim": "Social-group membership affected detection in door study",
+      "source_ids": [
+        "S02"
+      ],
+      "kind": "independent publisher abstract",
+      "decision": "admissible only as study-specific finding"
+    },
+    {
+      "id": "C05",
+      "claim": "Change blindness and inattentional blindness are distinct phenomena",
+      "source_ids": [
+        "S03"
+      ],
+      "kind": "independent review",
+      "decision": "admissible"
+    },
+    {
+      "id": "C06",
+      "claim": "Animal magnetism historical record preserved contradictory testimony and failures",
+      "source_ids": [
+        "S04"
+      ],
+      "kind": "archive",
+      "decision": "admissible as historical analysis"
+    },
+    {
+      "id": "C07",
+      "claim": "Animal magnetism was scientifically validated as medical treatment",
+      "source_ids": [
+        "S04"
+      ],
+      "kind": "unsupported",
+      "decision": "exclude"
+    },
+    {
+      "id": "C08",
+      "claim": "Focus Fieldbook has 52 pages and established Dispatch opt-in",
+      "source_ids": [
+        "S05"
+      ],
+      "kind": "FV live page",
+      "decision": "admissible; avoid new list"
+    },
+    {
+      "id": "C09",
+      "claim": "Inspire3 includes Zen12, Hypnosis Live and other audio/mind brands",
+      "source_ids": [
+        "S06"
+      ],
+      "kind": "seller portfolio",
+      "decision": "admissible as seller-described"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 Beginner: first six levels and 24 MP3s",
+      "source_ids": [
+        "S07"
+      ],
+      "kind": "seller product description",
+      "decision": "admissible, date noted"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 Premium: all twelve levels and 48 MP3s",
+      "source_ids": [
+        "S07"
+      ],
+      "kind": "seller product description",
+      "decision": "admissible, date noted"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 Advanced: final six levels and 24 MP3s",
+      "source_ids": [
+        "S07"
+      ],
+      "kind": "seller product description",
+      "decision": "admissible, date noted"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 displayed $67.77 / $87.99 / $67.77 for tiers on 2026-11-13",
+      "source_ids": [
+        "S07"
+      ],
+      "kind": "seller price snapshot",
+      "decision": "display only with final-checkout caveat"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 advertised one-year money-back guarantee",
+      "source_ids": [
+        "S07"
+      ],
+      "kind": "seller policy advertisement",
+      "decision": "label seller promise; no verified settlement"
+    },
+    {
+      "id": "C15",
+      "claim": "Twelve minutes of Zen12 audio equals an hour of meditation",
+      "source_ids": [
+        "S07"
+      ],
+      "kind": "seller efficacy claim",
+      "decision": "exclude as independently unsubstantiated"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 treats anxiety, ADHD, insomnia or produces guaranteed brain changes",
+      "source_ids": [
+        "S07",
+        "S12"
+      ],
+      "kind": "unsupported health extrapolation",
+      "decision": "exclude"
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 free gift enrolls recipient in merchant newsletter",
+      "source_ids": [
+        "S08"
+      ],
+      "kind": "seller consent page",
+      "decision": "admissible, separate from FV"
+    },
+    {
+      "id": "C18",
+      "claim": "Hypnosis Live Total Focus 33-minute, 47 MB recording",
+      "source_ids": [
+        "S09"
+      ],
+      "kind": "seller format",
+      "decision": "admissible as description"
+    },
+    {
+      "id": "C19",
+      "claim": "Hypnosis Live guarantees powerful sustained focus and 100% concentration",
+      "source_ids": [
+        "S09"
+      ],
+      "kind": "seller efficacy claim",
+      "decision": "exclude"
+    },
+    {
+      "id": "C20",
+      "claim": "Brainwave Shots Focus Shot has 15-minute and 30-minute audio versions",
+      "source_ids": [
+        "S10"
+      ],
+      "kind": "seller format",
+      "decision": "admissible as description"
+    },
+    {
+      "id": "C21",
+      "claim": "Focus Shot produces several hours of reliable focus",
+      "source_ids": [
+        "S10"
+      ],
+      "kind": "seller efficacy claim",
+      "decision": "exclude"
+    },
+    {
+      "id": "C22",
+      "claim": "Affiliate material connection should be disclosed clearly near relevant recommendation",
+      "source_ids": [
+        "S11"
+      ],
+      "kind": "FTC guidance",
+      "decision": "required"
+    },
+    {
+      "id": "C23",
+      "claim": "Health-related benefit claims require adequate substantiation",
+      "source_ids": [
+        "S12"
+      ],
+      "kind": "FTC guidance",
+      "decision": "required"
+    },
+    {
+      "id": "C24",
+      "claim": "FV-specific Inspire3 affiliate approval has been authenticated",
+      "source_ids": [],
+      "kind": "private-account missing evidence",
+      "decision": "hold; do not assert"
+    },
+    {
+      "id": "C25",
+      "claim": "Issued publisher tracking link and permitted social/email channels verified",
+      "source_ids": [],
+      "kind": "private-account missing evidence",
+      "decision": "hold"
+    },
+    {
+      "id": "C26",
+      "claim": "Specific Zen12 checkout total and refunds verified for FV buyers",
+      "source_ids": [],
+      "kind": "payment evidence missing",
+      "decision": "hold"
+    },
+    {
+      "id": "C27",
+      "claim": "Paid commissions independently settled and net of refunds/fees",
+      "source_ids": [],
+      "kind": "settlement evidence missing",
+      "decision": "hold"
+    },
+    {
+      "id": "C28",
+      "claim": "Existing published Change Blindness and Mesmerism can serve as actual landing URLs",
+      "source_ids": [
+        "S13",
+        "S14"
+      ],
+      "kind": "verified live FV pages",
+      "decision": "admissible"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "gate": "publisher-account acceptance",
+      "status": "HOLD"
+    },
+    {
+      "id": "G02",
+      "gate": "unique merchant earning URL",
+      "status": "HOLD"
+    },
+    {
+      "id": "G03",
+      "gate": "social channel permission",
+      "status": "HOLD"
+    },
+    {
+      "id": "G04",
+      "gate": "email channel permission",
+      "status": "HOLD"
+    },
+    {
+      "id": "G05",
+      "gate": "creative license/approval",
+      "status": "HOLD"
+    },
+    {
+      "id": "G06",
+      "gate": "specific checkout total",
+      "status": "HOLD"
+    },
+    {
+      "id": "G07",
+      "gate": "currency/tax confirmation",
+      "status": "HOLD"
+    },
+    {
+      "id": "G08",
+      "gate": "delivery route",
+      "status": "HOLD"
+    },
+    {
+      "id": "G09",
+      "gate": "refund policy/claim process",
+      "status": "HOLD"
+    },
+    {
+      "id": "G10",
+      "gate": "material-connection disclosure review",
+      "status": "HOLD"
+    },
+    {
+      "id": "G11",
+      "gate": "independent benefit substantiation",
+      "status": "HOLD"
+    },
+    {
+      "id": "G12",
+      "gate": "commercial link destination safety",
+      "status": "HOLD"
+    },
+    {
+      "id": "G13",
+      "gate": "Grok three asset IDs",
+      "status": "HOLD"
+    },
+    {
+      "id": "G14",
+      "gate": "live landing route identity match",
+      "status": "HOLD"
+    },
+    {
+      "id": "G15",
+      "gate": "Fieldbook consent QA",
+      "status": "HOLD"
+    },
+    {
+      "id": "G16",
+      "gate": "no duplicate email list",
+      "status": "HOLD"
+    },
+    {
+      "id": "G17",
+      "gate": "no duplicate tracking code",
+      "status": "HOLD"
+    },
+    {
+      "id": "G18",
+      "gate": "real browser 360",
+      "status": "HOLD"
+    },
+    {
+      "id": "G19",
+      "gate": "real browser 390",
+      "status": "HOLD"
+    },
+    {
+      "id": "G20",
+      "gate": "real browser 768",
+      "status": "HOLD"
+    },
+    {
+      "id": "G21",
+      "gate": "real browser 1440",
+      "status": "HOLD"
+    },
+    {
+      "id": "G22",
+      "gate": "real browser 1920",
+      "status": "HOLD"
+    },
+    {
+      "id": "G23",
+      "gate": "WCAG 2.2 AA keyboard",
+      "status": "HOLD"
+    },
+    {
+      "id": "G24",
+      "gate": "screen reader checks",
+      "status": "HOLD"
+    },
+    {
+      "id": "G25",
+      "gate": "WP sanitizer",
+      "status": "HOLD"
+    },
+    {
+      "id": "G26",
+      "gate": "playable film with captions",
+      "status": "HOLD"
+    },
+    {
+      "id": "G27",
+      "gate": "media CWV budget",
+      "status": "HOLD"
+    },
+    {
+      "id": "G28",
+      "gate": "verified purchase webhook/report",
+      "status": "HOLD"
+    },
+    {
+      "id": "G29",
+      "gate": "fee/refund reconciliation",
+      "status": "HOLD"
+    },
+    {
+      "id": "G30",
+      "gate": "founder production approval",
+      "status": "HOLD"
+    }
+  ],
+  "prohibitions": [
+    "No active affiliate link",
+    "No medical or money outcome claims",
+    "No CMS publishing",
+    "No email transfer",
+    "No new measurement script",
+    "No live experiment before release"
+  ]
+}
