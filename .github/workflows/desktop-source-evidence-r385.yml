@@ -107,6 +107,10 @@ jobs:
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_audit_display_r81.py
           python -W error -m unittest discover -s products/desktop/tests -p test_source_label_visibility_r97.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_source_label_visibility_r97.py
+      - name: R400 disambiguate canonical combining source identities in all financial review displays
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_review_combining_identity_r400.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_combining_identity_r400.py
       - name: Execute six synthetic engines with before-and-after SHA-256 source inventory
         run: |
           python -W error products/desktop/scripts/source_smoke_gate.py
