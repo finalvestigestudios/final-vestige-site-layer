@@ -14,8 +14,8 @@
 
 ## Local execution and evidence boundary
 
-- A disposable synthetic 41-entry suite: **98 new R337 tests PASS**, with 41 simulated body-depth removals, 41 citation removals and 16 other safety/integrity controls.
-- Combined reconstructed archived R331–R336 suite with R337: **643/643 local Python unittest PASS**; Python compilation PASS. Exact committed R337 implementation and test blobs were independently fetched and matched byte-identical local Git hashes.
+- A disposable synthetic 41-entry suite: **99 new R337 tests PASS**, with 41 simulated body-depth removals, 41 citation removals and 17 other safety/integrity controls.
+- Combined reconstructed archived R331–R336 suite with R337: **644/644 local Python unittest PASS**; Python compilation PASS. Exact committed R337 implementation and test blobs were independently fetched and matched byte-identical local Git hashes.
 - **Not executed**: authentic complete checkout's `validate.py`, `build.py`, native 36+ tests, WordPress export parity for 50 WP + 50 private preview files, browser/no-JS/print QA, independent qualified QD review, production CI. Local GitHub DNS resolution still blocks a complete authenticated clone. GitHub-source reads and synthetic tests must not be labeled native-build PASS.
 - Source-claim support is not automatically established from 2,173 citation markers. All 15 legacy source-adjudication conflicts, 14 differently defined raw Git-object divergences and 17 Article #15 / Tool #104 qualified claim reviews remain held. E327-05 phone-versus-missing-child numbering collision remains unresolved; E331 semantic editorial handoff is review-only.
 - Independent QA PRs #157 and #169 are open drafts; PR #169 still has an unsafe canonical-source duplicate-test fixture addressed only by dependent unmerged draft #2205. Do not merge either by inference. Homepage lead #1689 remains outside this lane.
@@ -33,3 +33,7 @@
 | Qualified human 7-/30-day cohort → CTA → confirmed lead (where applicable) → merchant-confirmed paid order → fees/refunds → realized net revenue / 1,000 sessions | Existing attribution and merchant settlement not reconciled. Preserve consent and separate outbound click, email intent, checkout start and verified purchase. | NOT COMPUTABLE → Claude / Commerce |
 
 **No public release, navigation, CMS, mail, socials, analytics, affiliate/merchant activation, spending or homepage changes.** Founder retains release and spending decisions. This PR contains only additive Preparedness audits/tools/tests/review documentation.
+
+## R337 native witness pin hardening addendum
+
+The validator now cryptographically checks that the existing R336 witness file's Git blob equals `ff714125b0e785248819acc1358f912b470f4a69` before parsing it in actual disk mode. A dedicated synthetic injection path remains for offline adversarial tests only. This blocks simultaneous forgery of the prior route/body manifest and its new depth measurements. Combined local suite **644/644 PASS** (99 new); all original publication/safety/commerce holds remain enforced.
