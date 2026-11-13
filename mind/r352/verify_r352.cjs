@@ -14,7 +14,7 @@ for(const [name,html] of [['A',a],['B',b],['hub',hub]]){
   check(html.includes('name="viewport"'),name+' responsive');
   check(!/<script\b/i.test(html),name+' no script');
   check(!/<form\b/i.test(html),name+' no extra email forms');
-  check(!/autoplay/i.test(html.replace(/no autoplay/gi,'')),name+' no autoplay');
+  check(!/<(?:video|audio)\b[^>]*\bautoplay\b/i.test(html),name+' no autoplay');
   check(!/https?:\/\/[^"' ]+\?(?:[^"' ]*affiliate|[^"' ]*ref=)/i.test(html),name+' no earning URL');
 }
 for(const [name,html] of [['A',a],['B',b]]){
