@@ -8,7 +8,7 @@ P=R/'apollo-r281/apollo-source-experience.php'
 C=R/'apollo-r281/assets/apollo-source-experience.css'
 J=R/'apollo-r281/assets/apollo-cache-continuation.js'
 H=R/'apollo-r320/qa/wp_late_shortcodes.php'
-PINS={P:'2d56c12cddce58b865ec29496d95f0567ea5aebe',C:'577a5d33518baec6e1beff1517779264d342bc50',J:'f85617e5f12ba747908ac507261f69c377369de7'}
+PINS={P:'f59a083de8d0774ed7210bfe4e18726feea73f76',C:'577a5d33518baec6e1beff1517779264d342bc50',J:'f85617e5f12ba747908ac507261f69c377369de7'}
 WIDTHS=[320,360,390,768,1024,1440,1920]
 FREE='https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/'
 def blob(p):
