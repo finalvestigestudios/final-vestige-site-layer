@@ -9,6 +9,7 @@ const {selectCdpImageRequests}=require('./cdp_image_request_scope.cjs');
 const {selectScreenshotTarget}=require('./screenshot_target_core.cjs');
 const {MAX_STEPS,nextScrollTarget,evaluateCoverage}=require('./scroll_coverage_core.cjs');
 const {assessPage,assessRun}=require('./image_census_coverage_core.cjs');
+const {coldNetworkProvenance}=require('./cdp_cold_cache_provenance_20261113.cjs');
 const {DOCUMENT_START_SCRIPT,READ_EXPRESSION,interpretVisualLab}=require('./lab_visual_metrics_20261104.cjs');
 const {buildPriorityPlan}=require('./probe_p0_queue_core.cjs');
 const auditedReleaseQueue=require('./p0_restoration_release_queue_20261101.json');
@@ -88,16 +89,16 @@ function monitor(cdp){
   if(m.method==='Network.requestWillBeSent'){
    const old=reqs.get(id)||{url_aliases:[],encodedDataLength:null};
    if(old.url&&old.url!==p.request.url)old.url_aliases.push(old.url);
-   const r={...old,request_id:id,url:p.request.url,type:p.type||old.type||null};
+   const r={...old,request_id:id,url:p.request.url,type:p.type||old.type||null,request_will_be_sent_observed:true};
    if(p.redirectResponse){r.url_aliases.push(p.redirectResponse.url);r.redirect_status=p.redirectResponse.status}
    reqs.set(id,r);
   }else if(m.method==='Network.responseReceived'){
-   const r=reqs.get(id)||{};r.url=p.response.url;r.status=p.response.status;r.mime_type=p.response.mimeType||null;r.type=p.type||r.type||null;r.from_disk_cache=!!p.response.fromDiskCache;r.from_service_worker=!!p.response.fromServiceWorker;reqs.set(id,r);
-  }else if(m.method==='Network.requestServedFromCache'){const r=reqs.get(id)||{};r.was_cached=true;reqs.set(id,r);
+   const r=reqs.get(id)||{};r.url=p.response.url;r.status=p.response.status;r.mime_type=p.response.mimeType||null;r.type=p.type||r.type||null;r.from_disk_cache=!!p.response.fromDiskCache;r.from_service_worker=!!p.response.fromServiceWorker;r.response_received_observed=true;reqs.set(id,r);
+  }else if(m.method==='Network.requestServedFromCache'){const r=reqs.get(id)||{};r.was_cached=true;r.served_from_cache_observed=true;reqs.set(id,r);
   }else if(m.method==='Network.loadingFinished'){
-   const r=reqs.get(id)||{};r.encodedDataLength=Math.round(p.encodedDataLength||0);reqs.set(id,r);
+   const r=reqs.get(id)||{};r.encodedDataLength=Math.round(p.encodedDataLength||0);r.loading_finished_observed=true;reqs.set(id,r);
   }else if(m.method==='Network.loadingFailed'){
-   const r=reqs.get(id)||{};r.type=p.type||r.type||null;r.failed_error=p.errorText||'network_load_failed';reqs.set(id,r);
+   const r=reqs.get(id)||{};r.type=p.type||r.type||null;r.failed_error=p.errorText||'network_load_failed';r.loading_failed_observed=true;reqs.set(id,r);
    if(p.type==='Document')docFailures.push({url:r.url||null,error:r.failed_error});
   }
  });
@@ -134,12 +135,20 @@ async function inspect(cdp,page,outputDir){
   const verified=pageHostVerified(page.url,doc?.title,doc?.url,doc?.hasArticle,fail[0]?.error);
   // Only CDP Image resources may certify historical-photo load or failure.
   // XHR/Fetch/Document requests for the same URL must not mask a broken <img>.
-  const imageRecords=selectCdpImageRequests(records);
+  // The monitor began before Page.navigate; both CDP cache-control calls were
+  // awaited successfully before inspect(). A complete Image event chain is
+  // required to infer negative memory-cache provenance (never default false).
+  const coldPolicy={cache_disabled_acknowledged:true,service_worker_bypass_acknowledged:true,
+   monitor_started_before_navigation:true};
+  const imageRecords=selectCdpImageRequests(records).map(x=>({...x,...coldNetworkProvenance(x,coldPolicy)}));
   const images=classifyImages(page.stored,doc?.images||[],imageRecords,verified);
   const networkImages=imageRecords.map(x=>({
    request_id:x.request_id||null,url:x.url,url_aliases:x.url_aliases,status:x.status??null,error:x.failed_error||null,
    mime_type:x.mime_type||null,encoded_data_length:x.encodedDataLength??null,
-   from_disk_cache:x.from_disk_cache===true,from_service_worker:x.from_service_worker===true,was_cached:x.was_cached===true}));
+   from_disk_cache:x.from_disk_cache,from_service_worker:x.from_service_worker,
+   from_memory_cache:x.from_memory_cache,was_cached:x.was_cached,
+   cold_event_chain_complete:x.cold_event_chain_complete,
+   cold_network_transfer_proven:x.cold_network_transfer_proven}));
   const articleWire=scopeByRequestId(images,networkImages);
   const pageResult=verified?(coverage.complete?'inspected_browser':'inspected_browser_partial_scroll'):'blocked_or_unverified_page';
   const evidence=assessPage({page_result:pageResult,scroll_coverage:coverage,stored_image_count:page.stored.length,stored_images:images});
