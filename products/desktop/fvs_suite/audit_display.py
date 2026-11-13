@@ -35,7 +35,7 @@ def visible_source_text(value: str, *, reveal_combining: bool = False) -> str:
     Every input codepoint maps deterministically to itself, a doubled
     backslash, a 4-digit Unicode escape or an 8-digit Unicode escape.
     A literal source escape stays distinguishable from an actual control.
-    Identity-only mode reveals all nonspacing/enclosing combining marks,
+    Identity-only mode reveals nonspacing/spacing/enclosing combining marks,
     while the legacy plain-text renderer keeps readable Unicode as before.
     Reject string subclasses to avoid invoking untrusted iteration hooks.
     Never call on previously rendered text; escape is not idempotent.
@@ -48,7 +48,7 @@ def visible_source_text(value: str, *, reveal_combining: bool = False) -> str:
         if character == "\\":
             parts.append("\\\\")
         elif (_escape_source_character(character) or
-              (reveal_combining and unicodedata.category(character) in ("Mn", "Me"))):
+              (reveal_combining and unicodedata.category(character) in ("Mn", "Mc", "Me"))):
             parts.append(f"\\u{codepoint:04X}" if codepoint <= 0xFFFF
                          else f"\\U{codepoint:08X}")
         else:
