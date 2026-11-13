@@ -16,11 +16,11 @@
     "consequence": "synthetic evidence path fails closed for all current Chrome collector Image records; no claim of actual production breakage"
   },
   "fix": {
-    "collector_blob": "0afc47d03b5e7b3f0b7666e878a88039fce7d6b1",
+    "collector_blob": "756e6bbfcf8035804951b8ad0aca7ad249c740bd",
     "helper_path": "qa/media-recovery/cdp_cold_cache_provenance_20261113.cjs",
-    "helper_blob": "af8054852919fc16fff6e68107e87b1ccf817da7",
+    "helper_blob": "9ff77f7ae6616ae3b4aa1ebdbaa3977fe801e55c",
     "tests_path": "qa/media-recovery/test_cdp_cold_cache_provenance_20261113.cjs",
-    "tests_blob": "694ad3711db6979d263ffc8ffc89b21e88a64b57",
+    "tests_blob": "955519d807521928eb0c1f2f33df604edf6a941a",
     "integration_tests_path": "qa/media-recovery/test_cdp_cold_cache_classifier_integration_20261113.cjs",
     "integration_tests_blob": "28cfea6ad51313e705c6cd61b117bf86599ac4a3",
     "event_requirements": [
@@ -31,19 +31,22 @@
       "no Network.requestServedFromCache",
       "Network.setCacheDisabled acknowledgement",
       "Network.setBypassServiceWorker acknowledgement",
-      "monitor started before navigation"
+      "monitor started before navigation",
+      "valid nonnegative Network.loadingFinished.encodedDataLength"
     ],
     "missing_or_partial_events_result": "UNKNOWN_NULL_NOT_FALSE",
     "classification_after_complete_events": "UNCACHED_CONFIRMED_ONLY_IF_ALL_FOUR_CACHE_FLAGS_FALSE",
     "tests": {
-      "native_node_unit_passed": 18,
+      "native_node_unit_passed": 20,
       "native_node_unit_failed": 0,
       "exact_git_blob_hashes_matched": true,
       "v8_integration_cases_passed": 12,
       "v8_integration_cases_failed": 0,
       "actual_chrome_executed": false,
-      "repository_ci_executed": false
-    }
+      "repository_ci_executed": false,
+      "exact_committed_integrated_files_read_back": true
+    },
+    "doc_path": "docs/MEDIA-CDP-UNCACHED-EVENT-LINEAGE-RESTORATION-20261113.md"
   },
   "cohort": {
     "historical_posts": 61,
