@@ -1,0 +1,48 @@
+THE DISPATCH — OPTIONAL ISSUE 03, R323
+UNSENT / NOT ADOPTED / HOLD_MERCHANT
+
+Subject: What “free” means on Zen12’s audio page
+Preheader: The seller mentions its own newsletter. That is separate from The Dispatch.
+Content type: commercial-review-pending
+Editorial purpose: qualify a specific reader decision without treating merchant free gift as an FV subscriber or a purchase.
+
+A free audio file sounds like a small decision. Download it, listen, and decide whether the format suits you.
+
+But the first decision may not be about listening at all.
+
+On its free-MP3 page, Zen12 says people requesting the audio will also receive the seller’s newsletter. That is a second email relationship, separate from The Dispatch you signed up for at Final Vestige. We do not treat a Zen12 signup as consent to our newsletter, or your existing Dispatch subscription as permission for Zen12 to contact you.
+
+Why does that distinction matter? Because “try a free file,” “join a newsletter,” and “buy a complete program” are three different choices. A thoughtful offer lets you see each one.
+
+THE FORMAT VERSUS THE CLAIM
+
+Zen12 sells several packages, not one interchangeable library. Its site presents Beginner as six levels with 24 MP3s, Premium as twelve levels with 48, and Advanced as the later six levels with 24. Before paying, identify which package is actually selected at checkout. Do not assume an introductory download includes the paid program.
+
+The seller also says twelve minutes of its audio can deliver benefits comparable to an hour of meditation. That is an advertising claim, not a conclusion Final Vestige has independently validated. The U.S. National Center for Complementary and Integrative Health reviews studies of meditation and mindfulness more broadly; it does not establish that result for Zen12.
+
+A useful experiment is simpler. Pick one twelve-minute period on several days. Record whether you began, what interrupted you, and whether the routine was workable. This will not prove that an audio file changed your brain. It can tell you what you were actually able to do.
+
+THREE QUESTIONS BEFORE ANY PAID STEP
+
+1. Which exact edition and files are included? Ask for the current checkout terms, not an old screenshot.
+2. Does a free sample also enroll me in the seller’s emails? Check the merchant’s wording before entering an address.
+3. Which benefits are product-specific evidence, and which are seller promises? Do not substitute studies of meditation in general.
+
+We're preparing an independent Zen12 Premium evaluation that will distinguish paid package contents, seller claims, limitations, and any verified offer terms before asking you to consider a purchase.
+
+PROPOSED SINGLE CTA — INACTIVE:
+Read the independent Zen12 Premium evaluation: [[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]
+
+Commercial disclosure (beside the proposed recommendation): If you buy through a qualifying link on the future guide, Final Vestige may earn a commission. No such earning link is active or approved in this email. The free Seven Day Focus Fieldbook already provided in your welcome email requires no audio purchase.
+
+SOURCES (plain source URLs, not affiliate links):
+Zen12 free-gift opt-in: https://zen12.com/gift
+Zen12 seller packages and advertising: https://zen12.com/
+NIH/NCCIH overview of meditation evidence: https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety
+WordPress confirmation and welcome policy: https://wordpress.com/support/newsletter-settings/
+FTC endorsements and commercial disclosures: https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking
+
+PRE-SEND LEGAL GATE:
+Final Vestige Studios postal mailing address: [[VALID_POSTAL_ADDRESS_REQUIRED]]
+Verified WordPress/Jetpack unsubscribe in RECEIVED email: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
+This text is an UNSENT DRAFT. No provider inbox preview, sending or marketing permission has been approved.

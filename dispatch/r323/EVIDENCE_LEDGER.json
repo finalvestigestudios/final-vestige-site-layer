@@ -1,0 +1,66 @@
+{
+  "run": "R323",
+  "observed_at_utc": "2026-11-13T06:31:11Z",
+  "status": "DRAFT_NO_SEND",
+  "based_on": "PR175 d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "ratio": "4 editorial : 2 commercial reserved",
+  "documented": {
+    "fv_jetpack": {
+      "enabled": true,
+      "auto_new_post_send": false,
+      "email_format": "full",
+      "welcome_configured": true,
+      "received_welcome_verified": false,
+      "subscribers": {
+        "total": 3,
+        "confirmed": 3,
+        "unconfirmed": 2,
+        "actual_email_eligible": null
+      }
+    },
+    "merchant_zen12_gift": {
+      "url": "https://zen12.com/gift",
+      "seller_site_explicitly_mentions_separate_newsletter": true,
+      "promotional_rights_verified": false,
+      "actual_subscriber_overlap": null
+    },
+    "official_merchant_pages": [
+      "https://zen12.com/",
+      "https://hypnosislive.com/mental-skills/total-focus",
+      "https://affiliates.inspire3.com/"
+    ]
+  },
+  "approvals": {
+    "affiliate_account": false,
+    "email_permission": false,
+    "issued_earning_url": false,
+    "guide_live_and_approved": false,
+    "price_checkout_verified": false,
+    "refund_checkout_verified": false,
+    "native_jetpack_inbox_preview": false,
+    "fv_physical_address_footer": false,
+    "native_unsubscribe": false,
+    "new_subscriber_provider_event": false,
+    "final_founder_send_approval": false
+  },
+  "prohibited_equivalences": [
+    "merchant_newsletter_signup != fv_dispatch_signup",
+    "fieldbook_download != fv_confirmed_lead",
+    "affiliate_click != settled_paid_conversion",
+    "reader_follow != email_eligible",
+    "total != confirmed+unconfirmed"
+  ],
+  "release": {
+    "issues": [
+      "HOLD_UNSENT",
+      "HOLD_UNSENT",
+      "HOLD_UNSENT/HOLD_MERCHANT",
+      "HOLD_UNSENT",
+      "HOLD_UNSENT/HOLD_MERCHANT",
+      "HOLD_UNSENT"
+    ],
+    "email_sent": false,
+    "wordpress_written": false,
+    "merchant_link_activated": false
+  }
+}
