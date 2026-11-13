@@ -34,6 +34,7 @@ def capture(pg):
  docs:[...r.querySelectorAll('.fv-r281__source-list>li')].map(e=>({id:e.dataset.fvSourceId,role:e.dataset.fvEvidenceRole,claim:e.dataset.fvCitesClaim,href:e.querySelector('a[data-fv-link-purpose="official-evidence-source"]')?.href})),
  photos:[...r.querySelectorAll('[data-fv-media-record]')].map(e=>({rights:e.dataset.fvImageRights,role:e.dataset.fvEvidenceRole,proof:e.dataset.fvClaimProof,href:e.querySelector('a[data-fv-link-purpose="contextual-media-source"]')?.href})),
  ctas:[...r.querySelectorAll('a[data-fv-cta]')].map(e=>e.href),
+ allLinks:[...r.querySelectorAll('a')].map(e=>e.getAttribute('href')),
  noGeo:!r.querySelector('[data-lat],[data-lng],[data-geo-edge]'),
  noEmbeddedMedia:!r.querySelector('img,video,iframe'),
  noEndorsement:r.textContent.includes('NASA does not endorse this website.')})''')
@@ -45,6 +46,8 @@ def safe(d):
  for a in d['photos']:
   assert a['rights']=='not-cleared-for-reuse' and a['role']=='contextual-media-only' and a['proof']=='no'
   assert urlsplit(a['href']).hostname=='www.nasa.gov' and urlsplit(a['href']).path.startswith('/image-detail/')
+ for href in d['allLinks']:
+  assert href.startswith('#fv-r281-') or href==FREE or href.startswith('https://www.nasa.gov/') or href.startswith('https://sma.nasa.gov/'),href
  assert d['noGeo'] and d['noEmbeddedMedia'] and d['noEndorsement']
 def main():
  for k,p,sha in PIN:
@@ -86,7 +89,8 @@ def main():
               'photo_as_proof':"e=>e.querySelector('[data-fv-media-record]').dataset.fvClaimProof='yes'",
               'merchant_redirect':"e=>e.querySelector('a[data-fv-cta]').href='https://payhip.com/unknown'",
               'invented_pin':"e=>e.querySelector('.fv-r281__source-list li').dataset.lat='28.6083'",
-              'imaginary_rights':"e=>e.querySelector('[data-fv-media-record]').dataset.fvImageRights='cleared'"}
+              'imaginary_rights':"e=>e.querySelector('[data-fv-media-record]').dataset.fvImageRights='cleared'",
+              'hidden_merchant_link':"e=>e.querySelector('.fv-r281__source-list li').insertAdjacentHTML('beforeend','<a href=\"https://payhip.com/unknown\">Buy</a>')"}
    for name,mutation in mutations.items():
     pg.locator('section.fv-r281').evaluate(mutation)
     try:safe(capture(pg))
