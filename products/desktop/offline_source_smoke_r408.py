@@ -34,6 +34,10 @@ MAX_SOURCE_BYTES = 2_000_000
 _CHILD_RUNTIME_ENV = frozenset({
     "PATH", "PATHEXT", "SYSTEMROOT", "WINDIR", "TEMP", "TMP", "TMPDIR",
 })
+# Python can execute a cached .pyc even when the hashed .py differs. Native
+# extensions are likewise executable imports but absent from the .py digest.
+# This *source-only* gate must refuse them rather than attest their contents.
+_BLOCKED_IMPORT_SUFFIXES = (".pyc", ".pyo", ".pyd", ".so", ".dll")
 
 
 class SourceGateError(ValueError):
@@ -81,12 +85,18 @@ def _verify_source_directories(desktop: Path) -> None:
     def reject_unreadable(error: OSError) -> None:
         raise SourceGateError("Unsafe desktop source directory") from None
 
-    # pathlib.rglob('*.py') may omit a symlink to a directory entirely.
-    # Inspect the directory tree independently so it cannot hide an import.
-    for root, directories, _ in os.walk(
-            desktop / "fvs_suite", followlinks=False, onerror=reject_unreadable):
-        for name in directories:
-            _require_real_directory(Path(root) / name)
+    # pathlib.rglob('*.py') can omit linked subdirectories. Also, existing
+    # __pycache__ bytecode and native extension files can execute code that is
+    # *not* in our hashed .py inventory. Refuse them in both import roots.
+    # Ordinary local data assets such as JSON/CSV remain allowed.
+    for import_root in (desktop / "fvs_suite", desktop / "launchers"):
+        for root, directories, files in os.walk(
+                import_root, followlinks=False, onerror=reject_unreadable):
+            for name in directories:
+                _require_real_directory(Path(root) / name)
+            for name in files:
+                if name.casefold().endswith(_BLOCKED_IMPORT_SUFFIXES):
+                    raise SourceGateError("Untrusted compiled import in desktop source inventory")
 
 
 def source_digest(desktop: Path) -> str:
@@ -132,7 +142,10 @@ def run_gate(desktop: Path, *, timeout: int = 90) -> dict:
             # had changed, which was unsafe evidence and unnecessary execution.
             if source_digest(desktop) != digest:
                 raise SourceGateError("Desktop source changed during source smoke checks")
-            command = [sys.executable, "-I", "-W", "error"]
+            # -I ignores PYTHON* environment variables, including the child
+            # PYTHONDONTWRITEBYTECODE=1 setting. -B is therefore required to
+            # prevent our own smoke process creating unmeasured .pyc files.
+            command = [sys.executable, "-I", "-B", "-W", "error"]
             if mode == "optimized":
                 command.append("-OO")
             command += ["-c", BOOTSTRAP, str(desktop),
