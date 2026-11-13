@@ -62,7 +62,8 @@ with sync_playwright() as p:
   raw,doc,text,urls=print_pdf(html,CSS,width,js)
   assert text.count("Evidence limit:")==6
   assert text.count("Record custody:")==6
-  assert text.count("Primary source:")==6
+  assert text.count("Primary source:")==5
+  assert text.count("Later institutional source:")==1
   assert text.count("Read the complete Apollo 1 investigation")==1
   assert sum(u.startswith("https://www.nasa.gov/") for u in urls)>=6
   assert any(u=="https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/" for u in urls)
