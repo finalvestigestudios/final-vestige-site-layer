@@ -1,0 +1,37 @@
+{
+  "synthetic": true,
+  "events": [
+    {
+      "type": "landing",
+      "event_id": "event_landing_001",
+      "at": "2026-11-13T17:30:00Z",
+      "session_ref": "sess_example_001",
+      "asset_id": "yt_change_001",
+      "utm_source": "youtube",
+      "utm_medium": "organic_social",
+      "utm_campaign": "mind_pilot_2026_11",
+      "quality_status": "provider_human_classified"
+    },
+    {
+      "type": "signup_attempt",
+      "event_id": "event_attempt_001",
+      "at": "2026-11-13T17:30:05Z"
+    },
+    {
+      "type": "provider_confirmed_signup",
+      "event_id": "event_signup_001",
+      "at": "2026-11-13T17:33:00Z",
+      "provider": "jetpack",
+      "provider_status": "confirmed",
+      "consent_scope": "fv_dispatch",
+      "subscriber_ref": "opaque_sub_001",
+      "provider_receipt_ref": "opaque_proof_001"
+    },
+    {
+      "type": "affiliate_outbound",
+      "event_id": "event_outbound_001",
+      "at": "2026-11-13T17:34:00Z"
+    }
+  ],
+  "receipts": {}
+}
