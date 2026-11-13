@@ -25,6 +25,11 @@ run("click counted as paid sale",{metric_claim:"click_is_sale"},r=>r.failures.in
 run("seller sample counted as lead",{metric_claim:"free_sample_is_confirmed_signup"},r=>r.failures.includes("false_conversion_attribution"));
 run("empty subject",{subject:""},r=>r.failures.includes("invalid_subject"));
 run("empty object",{email:"",subject:""},r=>r.failures.length>=3);
-run("null evidence",null,r=>true);
+run("unresolved guide token",{email:good+" [[PENDING_FIRST_PARTY_ZEN12_GUIDE]]"},r=>r.failures.includes("unresolved_guide_cta"));
+run("direct merchant CTA",{cta_url:"https://zen12.com/getstarted"},r=>r.failures.includes("unapproved_commercial_destination"));
+run("unapproved finalvestige guide",{cta_url:"https://finalvestige.com/mind/zen12"},r=>r.failures.includes("unapproved_guide_destination"));
+run("invalid URL",{cta_url:"javascript:alert(1)"},r=>r.failures.includes("unapproved_commercial_destination"));
+run("merchant anchor",{html:'<a href="https://zen12.com/getstarted">Buy</a>'},r=>r.failures.includes("direct_merchant_anchor"));
+const n=G.inspect(null);if(n.status!=="HOLD_UNSENT"||n.allow_send||!n.failures.includes("invalid_record"))throw Error("FAIL actual null record");passed++;
 if(require.main===module) process.stdout.write("R331 "+passed+"/"+passed+" native checkout-guard tests passed\\n");
 module.exports={passed};
