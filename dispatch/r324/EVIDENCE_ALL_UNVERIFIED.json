@@ -1,0 +1,36 @@
+{
+  "revision": "r324",
+  "status": "HOLD_UNSENT",
+  "candidate": "NOT_ADOPTED",
+  "preserved_campaign": {
+    "editorial_issues": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_issues": [
+      3,
+      5
+    ]
+  },
+  "word_press_snapshot_utc": "2026-11-13T07:40:09Z",
+  "newsletter_enabled": true,
+  "auto_new_post_email": false,
+  "format": "full",
+  "reported_total": 3,
+  "reported_confirmed": 3,
+  "reported_unconfirmed": 2,
+  "eligible_email_recipients": "UNKNOWN",
+  "confirmed_welcome_receipt": false,
+  "merchant_email_permission": false,
+  "merchant_account_acceptance": false,
+  "affiliate_tracking_url_issued": false,
+  "guide_live": false,
+  "publisher_postal_address_verified": false,
+  "rendered_opt_out_verified": false,
+  "native_received_preview_verified": false,
+  "founder_final_send_approval": false,
+  "verified_paid_orders": null,
+  "verified_net_revenue": null
+}
