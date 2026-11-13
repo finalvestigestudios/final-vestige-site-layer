@@ -36,6 +36,7 @@ function fv_apollo_r340_gallery_shortcode($atts = array()): string {
         <h3><?php echo $escape($record['title']); ?></h3>
         <p><?php echo $escape($record['context']); ?></p>
         <details><summary>Provenance and limits</summary><p><?php echo $escape($record['limit']); ?></p><p>Source classification: contextual NASA photograph. Copyright, branding, likeness and commercial-context restrictions require individual review.</p></details>
+        <p class="fv-apollo-r340__print-limit" data-fv-r340-print-limit hidden><strong>Photograph evidence limitation:</strong> <?php echo $escape($record['limit']); ?> <strong>Rights review required:</strong> A NASA accession link is not commercial image/likeness/branding clearance.</p>
         <a href="<?php echo $escape($record['url']); ?>" rel="noopener noreferrer" data-fv-r340-source="contextual-photo">Inspect NASA accession <span class="fv-apollo-r340__arrow" aria-hidden="true">↗</span></a>
       </li>
     <?php endforeach; ?>
