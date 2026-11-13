@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Dispatch R335 — Provider Confirmation Reality Board</title>
+<style>
+:root{color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#f6f2eb;color:#24231e;font:17px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1000px;margin:auto;padding:clamp(20px,4vw,54px)}h1,h2{font-family:Georgia,serif;line-height:1.18}h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:400}h2{font-size:1.45rem}
+.small{font-size:.85rem;color:#514a3e}.eyebrow{letter-spacing:.11em;text-transform:uppercase;font-size:.78rem;font-weight:750}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:16px}.card{border:1px solid #c7bba5;border-radius:8px;background:#fffefa;padding:20px;overflow-wrap:anywhere}.card h2{margin-top:0}
+.steps{border-left:4px solid #987c50;padding-left:17px;margin:25px 0}a{color:#713616;text-underline-offset:3px}a:focus-visible{outline:3px solid #1b1b1b;outline-offset:4px}
+.hold{font-weight:750;color:#873727}.tag{display:inline-block;border:1px solid #806d51;border-radius:25px;padding:3px 10px;margin:4px 5px 4px 0;font-size:.8rem}
+footer{border-top:1px solid #c7bba5;padding-top:23px;color:#514a3e;font-size:.86rem;overflow-wrap:anywhere}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style></head><body><main>
+<p class="eyebrow">Final Vestige Studios / The Dispatch / Reviewer Only</p>
+<h1>What counts as a confirmed subscriber?</h1>
+<p>A free PDF download, a WordPress.com follower, a confirmed Dispatch opt-in and a delivered welcome email are different events. Combining them overstates the audience and obscures the conversion path.</p>
+<p><span class="tag">NO SEND</span><span class="tag">NO SUBSCRIBER DATA</span><span class="tag">4 EDITORIAL / 2 COMMERCIAL</span></p>
+<div class="grid" aria-label="Current evidence">
+<section class="card"><h2>Newsletter</h2><p>Enabled. Automatic new-post emails OFF. Full content. Welcome message configured with 52-page Fieldbook.</p><p class="small">Authenticated read-only state, November 13, 2026 at 18:03 UTC.</p></section>
+<section class="card"><h2>Subscriber counts</h2><p>Total 3, confirmed 3, unconfirmed 2. Separate followers: WordPress.com 3, direct email 0.</p><p class="hold">Eligible recipients: UNKNOWN.</p></section>
+<section class="card"><h2>Fieldbook access</h2><p>The <a href="https://finalvestige.com/focus/">Focus landing page</a> directly links a PDF regardless of subscription.</p><p class="hold">Welcome receipt: NOT VERIFIED.</p></section>
+</div>
+<h2>Two legitimate provider confirmation paths</h2>
+<section class="steps"><h3>1. New email address</h3><p>Attempt → provider link confirmation → opted-in Subscribed state → privately deduplicated confirmed_signup event if a real state transition is witnessed.</p></section>
+<section class="steps"><h3>2. Previously verified WordPress.com account</h3><p>Provider verifies address already → explicit site subscription and Subscribed state → privately deduplicated confirmed_signup. Do not invent an email link click that WordPress.com skips.</p></section>
+<section class="steps"><h3>3. Independent Fieldbook welcome and PDF</h3><p>A configured welcome is not a received message. A PDF click and Zen12 merchant gift opt-in are not site subscription consent.</p></section>
+<h2>Commercial decision</h2>
+<p>Zen12 Premium is a <strong>purchase hypothesis, not an authorized offer.</strong> Mind/Commerce must establish account-specific EMAIL rights, issued earning URL, approved live buyer guide, final seller claims/checkout and settlement data. Dispatch must verify founder final campaign approval, actual inbox rendering, Final Vestige publisher address, opt-out and genuine consent. No synthetic check can authorize an email.</p>
+<footer>Offline accessibility-oriented reviewer only; no scripts, remote assets, tracking pixel, subscriber identity or live email capability. Sources: <a href="https://wordpress.com/support/newsletter-settings/">WordPress welcome & confirmation</a> · <a href="https://wordpress.com/support/subscribers/">Subscriber status</a> · <a href="https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business">FTC email guidance</a> · <a href="https://finalvestige.com/editorial-standards/">FV Editorial Standards</a>.</footer>
+</main></body></html>
