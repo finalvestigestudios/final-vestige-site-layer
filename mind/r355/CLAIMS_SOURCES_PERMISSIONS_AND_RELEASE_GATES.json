@@ -297,7 +297,7 @@
     {
       "id": "C25",
       "product": "science",
-      "claim": "2025 80-person study had parameter-specific attention improvement",
+      "claim": "2025 study randomized 80 students across conditions; 64 analyzed after 12 missing second visits and four performance exclusions; observed parameter-specific attention improvement",
       "classification": "peer_reviewed_experiment",
       "source_key": "attention_study",
       "disposition": "not_zen12_or_all_recordings",
