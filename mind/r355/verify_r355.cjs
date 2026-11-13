@@ -28,7 +28,7 @@ function validatePage(s,what){
  ok(!merchant.test(s),what+' no active merchant outbound');
  ok(!prohibited.test(s),what+' no script/iframe/form/auto media');
  ok(!/\b(onclick|onerror|onload)\s*=|<meta[^>]+http-equiv=["']refresh/i.test(s),what+' no inline event/redirect');
- ok(/48 MP3/.test(s)&&/four listening styles|four different listening styles|four styles per level/i.test(s),what+' accurate package distinctions');
+ ok(/48 (?:downloadable )?MP3/.test(s)&&/four listening styles|four different listening styles|four styles per level/i.test(s),what+' accurate package distinctions');
  ok(/seller-page|seller effectiveness claim|seller descriptions/i.test(s),what+' no independent product-efficacy claim');
  ok(/not independently|not established|not a warranty/i.test(s),what+' evidence limits visible');
  ok(/https:\/\/finalvestige.com\/focus\//.test(s),what+' unchanged first party Focus');
