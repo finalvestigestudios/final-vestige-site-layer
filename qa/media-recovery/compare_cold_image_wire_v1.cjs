@@ -89,7 +89,7 @@ function inspectRun(run, label, reasons) {
       if (!validId(slot.request_id) || !n || netUrl(slot.request_url) !== netUrl(n.url) ||
           n.status !== 200 || !/^image\//i.test(n.mime_type||'') ||
           !positive(n.encoded_data_length) || n.encoded_data_length !== slot.transfer_bytes ||
-          n.error || n.was_cached !== false || n.from_disk_cache !== false || n.from_service_worker !== false) {
+          n.error || n.was_cached !== false || n.from_disk_cache !== false || n.from_memory_cache !== false || n.from_service_worker !== false) {
         add(reasons, label+':uncached_cdp_request_mismatch:'+key);continue;
       }
       if (!sameSource(slot.current_src,n.url) ||
