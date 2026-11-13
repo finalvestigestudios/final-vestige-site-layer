@@ -67,6 +67,10 @@ jobs:
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_candidate_path_ancestry_r391.py
           python -W error -m unittest discover -s products/desktop/tests -p test_candidate_path_integration_r391.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_candidate_path_integration_r391.py
+      - name: R392 private attestation JSON, handle and Windows parent-junction custody
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_report_attestation_custody_r392.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_report_attestation_custody_r392.py
       - name: Execute six synthetic engines with before-and-after SHA-256 source inventory
         run: |
           python -W error products/desktop/scripts/source_smoke_gate.py
