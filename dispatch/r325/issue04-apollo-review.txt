@@ -1,0 +1,28 @@
+THE DISPATCH — ISSUE 04 — REVIEW ONLY / UNSENT
+SUBJECT: The fire wasn't just a spark
+PREHEADER: Apollo 1's investigation distinguished a probable arc from six documented dangers.
+
+An unfueled rocket stood on Pad 34 on January 27, 1967. Inside its command module, Gus Grissom, Ed White and Roger Chaffee were rehearsing a countdown. Because this was a ground test, the danger did not look like a launch. But the cabin itself contained the hazards that mattered.
+
+The official investigation begins with a distinction: the first recorded fire report was at about 23:31:04.7 GMT. The pressure vessel ruptured around 23:31:19 GMT—roughly fourteen seconds later. NASA's shorter public history also says the last crew communication ended about seventeen seconds after the first indication of the fire. Those numbers describe different endpoints, not two competing versions of what happened.
+
+The fire was not a solved mystery with one identified guilty wire. The Apollo 204 Review Board considered an electrical arc the most probable initiator, but it could not identify a particular ignition source conclusively. What the investigators could identify was a lethal combination: a sealed pure-oxygen cabin, combustible materials, vulnerable electrical wiring, hazardous coolant plumbing, inadequate escape provisions and inadequate rescue arrangements.
+
+One feature makes the failure visible without any diagram. The inner hatch opened inward. As the fire drove cabin pressure upward, the pressure worked against the crew opening it. The official record says the ground team took about five minutes after the fire report to open the hatches. A design that could seal effectively during operation did not provide a realistic path out of a rapidly burning cabin.
+
+Notice what this changes. “A spark killed the crew” is a short story, but it implies more certainty about ignition and less responsibility for surrounding conditions than the evidence warrants. The deeper lesson is not that investigators failed because they could not name a single arc. It is that they learned enough to identify the system's vulnerabilities and change the design.
+
+Try this evidence check with the next dramatic account you encounter: first, list what was directly recorded. Second, separate the investigators' probable explanation from what they proved. Third, ask what design or institutional choices made one initiating event so consequential. The same three questions are useful when an eyewitness story sounds almost too neat.
+
+Read our original investigation: The Hatch Opened Inward
+https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+
+Primary sources:
+- Apollo 204 Review Board report: https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/
+- NASA Space Science Data Coordinated Archive timeline: https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo1info.html
+- Final Vestige article: https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+
+SENDER: Final Vestige Studios
+PHYSICAL ADDRESS: [[VALID_POSTAL_ADDRESS_REQUIRED]]
+UNSUBSCRIBE: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
+DO NOT SEND OR PUBLISH; HOLD FOR FOUNDER APPROVAL.
