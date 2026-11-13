@@ -2,7 +2,8 @@
 const test=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
 const {aggregateHistoricalImageWire,AUDIT_BLOB}=require('./aggregate_historical_image_wire_20261112.cjs');
-const audit=JSON.parse(fs.readFileSync(path.join(__dirname,'live_61post_355image_integrity_consolidated_20261112.json')));
+const auditBytes=fs.readFileSync(path.join(__dirname,'live_61post_355image_integrity_consolidated_20261112.json'));
+const audit=JSON.parse(auditBytes);
 const clone=x=>JSON.parse(JSON.stringify(x));
 function makeImage(r,run){
  return {slot:r.slot,post_id:r.post_id,published_original_src:r.source_url,published_alt:r.alt,
@@ -38,13 +39,14 @@ function fixture(){
 }
 function check(change,pattern){
  const a=clone(audit),pairs=fixture();change(a,pairs);
- const out=aggregateHistoricalImageWire(a,pairs,AUDIT_BLOB);
+ const raw=JSON.stringify(a)===JSON.stringify(audit)?auditBytes:Buffer.from(JSON.stringify(a));
+ const out=aggregateHistoricalImageWire(raw,pairs,AUDIT_BLOB);
  assert.equal(out.status,'HOLD');assert.match(out.reason,pattern);
  assert.equal(out.historical_cohort_image_wire_reduction_percent,null);
  assert.equal(out.current_sitewide_76_percent_verified,false);
 }
 test('full 61/355 exact image and cold source quality passes only historical scope',()=>{
- const r=aggregateHistoricalImageWire(audit,fixture(),AUDIT_BLOB);
+ const r=aggregateHistoricalImageWire(auditBytes,fixture(),AUDIT_BLOB);
  assert.equal(r.status,'VERIFIED_HISTORICAL_61_POST_INLINE_IMAGE_COHORT_ONLY');
  assert.equal(r.observed_img_slots,355);assert.equal(r.observed_post_count,61);
  assert.equal(r.historical_cohort_transfer_before_bytes,355000);
@@ -68,9 +70,29 @@ test('network bytes absent',()=>check((a,p)=>p[5].after.images[0].encoded_data_l
 test('visible resolution too small',()=>check((a,p)=>p[5].after.images[0].decoded_selected_physical_width=100,/UNVERIFIED_PER_POST/));
 test('changed crop',()=>check((a,p)=>p[5].after.images[0].object_fit='cover',/UNVERIFIED_PER_POST/));
 test('stale or forged audit blob',()=>{
- const r=aggregateHistoricalImageWire(audit,fixture(),'0'.repeat(40));
+ const r=aggregateHistoricalImageWire(auditBytes,fixture(),'0'.repeat(40));
  assert.equal(r.status,'HOLD');assert.match(r.reason,/FROZEN_COHORT_SOURCE_UNVERIFIED/);
 });
-test('frozen source mutated',()=>check((a,p)=>a.rows[0].source_equal=false,/CORRUPT_FROZEN/));
+test('frozen source mutated',()=>check((a,p)=>a.rows[0].source_equal=false,/FROZEN_COHORT_SOURCE_UNVERIFIED/));
 test('42 claimed verified spoof',()=>check((a,p)=>a.policy.visitor_browser_confirmed_42_broken=true,/FROZEN_COHORT_SOURCE_UNVERIFIED/));
-test('unverified rights override',()=>check((a,p)=>a.rows[0].rights_cleared=true,/CORRUPT_FROZEN/));
+test('unverified rights override',()=>check((a,p)=>a.rows[0].rights_cleared=true,/FROZEN_COHORT_SOURCE_UNVERIFIED/));
+
+test('caller passing a parsed object rather than frozen raw Git bytes is rejected',()=>{
+ const out=aggregateHistoricalImageWire(audit,fixture(),AUDIT_BLOB);
+ assert.equal(out.status,'HOLD');assert.match(out.reason,/RAW_GIT_BLOB_SHA_MISMATCH/);
+});
+test('same-length original image URL substitution is rejected despite claimed frozen SHA',()=>{
+ const needle=Buffer.from('https://');
+ const mutated=Buffer.from(auditBytes);
+ const index=mutated.indexOf(needle);
+ assert.ok(index>=0);
+ mutated[index+8]^=1;
+ assert.equal(mutated.length,auditBytes.length);
+ const out=aggregateHistoricalImageWire(mutated,fixture(),AUDIT_BLOB);
+ assert.equal(out.status,'HOLD');assert.match(out.reason,/RAW_GIT_BLOB_SHA_MISMATCH/);
+ assert.equal(out.historical_cohort_image_wire_reduction_percent,null);
+});
+test('reformatting otherwise identical audit invalidates exact freeze',()=>{
+ const out=aggregateHistoricalImageWire(Buffer.from(JSON.stringify(audit)),fixture(),AUDIT_BLOB);
+ assert.equal(out.status,'HOLD');assert.match(out.reason,/RAW_GIT_BLOB_SHA_MISMATCH/);
+});
