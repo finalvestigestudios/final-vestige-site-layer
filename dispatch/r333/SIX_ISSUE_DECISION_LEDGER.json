@@ -1,0 +1,109 @@
+{
+  "version": "R333",
+  "as_of": "2026-11-13T16:30:00Z",
+  "parent_issue": 174,
+  "base_pr": 2360,
+  "original_master_pr": 175,
+  "original_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "policy": {
+    "send_allowed": false,
+    "auto_email_new_posts": false,
+    "final_campaign_approval": false,
+    "commercial_issue_numbers": [
+      3,
+      5
+    ],
+    "editorial_issue_numbers": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "affiliate_permission_verified": false,
+    "first_party_guides_live_verified": false,
+    "confirmed_eligible_recipients_verified": false,
+    "postal_address_verified": false,
+    "unsubscribe_received_tested": false,
+    "recipient_welcome_received_verified": false,
+    "settled_sale_evidence_verified": false
+  },
+  "audience": {
+    "source": "WordPress Jetpack read-only 2026-11-13 16:29-16:30 UTC",
+    "newsletter_total": 3,
+    "newsletter_confirmed": 3,
+    "newsletter_unconfirmed": 2,
+    "followers_wpcom": 3,
+    "followers_email": 0,
+    "eligible_recipients": null,
+    "confirmed_new_signups_attributed": null,
+    "welcome_delivered": null
+  },
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "subject": "The mind is not a camera",
+      "original_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "issue_state": "HOLD_UNSENT",
+      "alternative_status": "NOT_ADOPTED",
+      "editorial_problem": "Repeated Puységur CTA with issue 02 and abstract opening",
+      "candidate_reference": "dispatch/r327/01-proposed.md"
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "subject": "Before hypnosis had a name",
+      "original_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "issue_state": "HOLD_UNSENT",
+      "alternative_status": "NOT_ADOPTED",
+      "editorial_problem": "Same CTA as issue 01; keep Franklin and Puységur distinct",
+      "candidate_reference": "dispatch/r332/02-franklin-orchard.md"
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "subject": "The twelve-minute meditation question",
+      "original_cta": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]",
+      "issue_state": "HOLD_MERCHANT",
+      "alternative_status": "NOT_ADOPTED",
+      "editorial_problem": "No live guide or authenticated affiliate email rights",
+      "candidate_reference": "dispatch/r331/03-buyer-consent-candidate.html"
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "original_cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "issue_state": "HOLD_UNSENT",
+      "alternative_status": "NOT_ADOPTED",
+      "editorial_problem": "14-second endpoint not defined in subject",
+      "candidate_reference": "dispatch/r325/issue04-apollo-review.html"
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "subject": "Before you press play on a hypnosis audio",
+      "original_cta": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+      "issue_state": "HOLD_MERCHANT",
+      "alternative_status": "NOT_ADOPTED",
+      "editorial_problem": "Generic product vs specific Total Focus, no guide or permission",
+      "candidate_reference": "dispatch/r324/issue05-review.html"
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "original_cta": "https://finalvestige.com/focus/",
+      "issue_state": "HOLD_UNSENT",
+      "alternative_status": "NOT_ADOPTED",
+      "editorial_problem": "Already subscribed user returned to acquisition page",
+      "candidate_reference": "dispatch/r326/06-proposed.md"
+    }
+  ],
+  "commercial_offer_order": [
+    "Zen12 Premium (future hypothesis only)",
+    "Hypnosis Live Total Focus (second reserved review, no link)"
+  ],
+  "realized_net_revenue_per_1000_qualified_sessions": null,
+  "qualifier": "NOT_COMPUTABLE"
+}
