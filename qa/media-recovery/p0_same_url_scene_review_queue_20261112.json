@@ -1,0 +1,234 @@
+{
+  "schema": "fv-media-p0-guest-scene-review-requirements-20261112-v1",
+  "date_local": "2026-11-12",
+  "source_commit": "e81e41c099b5c6522a54c6964cf4361bfcbbdd38",
+  "upstream_git_blob_sha": "a593817eabe42fd1f108882d8349a26e0c65b023",
+  "priority": "P0_6_SITE_QA_154_EXISTING_COLLECTOR",
+  "statement": "Exact original source URLs and currently known archival leads; no actual guest HTTP status, binary identity, screenshot bytes, rights to rehost, or published repairs have been established.",
+  "status_counts": {
+    "p0_slots": 6,
+    "verified_guest_broken": 0,
+    "origin_http_status_known": 0,
+    "cleared_for_rehosting": 0
+  },
+  "scope": {
+    "historical_posts": 61,
+    "historical_inline_images": 355,
+    "historical_offsite_positions": 288,
+    "reported_broken_unconfirmed": 42,
+    "oversized_wordpress_originals": 15,
+    "oversized_original_stored_bytes": 47096779,
+    "claimed_76_percent_actual_transfer_reduction_verified": false
+  },
+  "browser_owner": {
+    "pr": 154,
+    "source": "EXISTING_SITE_QA_BROWSER_COLLECTOR_ONLY",
+    "new_collector_allowed": false
+  },
+  "review_gate": {
+    "same_url_change_requires_scene_review": true,
+    "required_method": "SIDE_BY_SIDE_STAGING_SCREENSHOT_REVIEW",
+    "must_bind_to_before_and_after_run_ids": true,
+    "must_bind_to_before_and_after_current_src": true,
+    "requires_source_specific_reuse_rights": true,
+    "requires_hashes_of_both_screenshots": true,
+    "hashes_do_not_verify_screenshot_bytes": true,
+    "derivative_max_width_px": 960,
+    "no_upscale": true,
+    "production_writes_allowed": false
+  },
+  "records": [
+    {
+      "slot": "285:5",
+      "original_embedded_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "archival_or_publisher_candidate_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "candidate_kind": "distinct_archival_scene",
+      "same_photo_or_binary_identity_verified": false,
+      "candidate_rights_to_cache_or_rehost_verified": false,
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "source_retriever_wrapper": {
+        "method": "THIRD_PARTY_WEB_RETRIEVER_ONLY",
+        "wrapper_code": 404,
+        "wrapper_result": "NOT_FOUND",
+        "access_date": "2026-11-12"
+      },
+      "browser_current_src": null,
+      "browser_decode_natural_width": null,
+      "browser_decode_natural_height": null,
+      "cold_image_network_transfer_bytes": null,
+      "conditional_max_width_px": 819,
+      "no_upscale": true,
+      "evidence_requirements": [
+        "logged_out_cold_chrome_complete_scroll",
+        "current_src_and_request_id",
+        "origin_http_mime_and_decode",
+        "actual_screenshot_png_bytes_with_sha256",
+        "same_scene_crop_and_ALT_editor_review",
+        "item_level_licensing_and_credit",
+        "derivative_CSS_width_times_DPR"
+      ],
+      "release_decision": "HOLD_GUEST_FAILURE_AND_RIGHTS_UNVERIFIED"
+    },
+    {
+      "slot": "285:2",
+      "original_embedded_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "archival_or_publisher_candidate_url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "candidate_kind": "publisher_domain_redirect",
+      "same_photo_or_binary_identity_verified": false,
+      "candidate_rights_to_cache_or_rehost_verified": false,
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "source_retriever_wrapper": {
+        "method": "THIRD_PARTY_WEB_RETRIEVER_ONLY",
+        "wrapper_code": 500,
+        "wrapper_result": "REDIRECT_TARGET_INACCESSIBLE",
+        "access_date": "2026-11-12"
+      },
+      "browser_current_src": null,
+      "browser_decode_natural_width": null,
+      "browser_decode_natural_height": null,
+      "cold_image_network_transfer_bytes": null,
+      "conditional_max_width_px": 960,
+      "no_upscale": true,
+      "evidence_requirements": [
+        "logged_out_cold_chrome_complete_scroll",
+        "current_src_and_request_id",
+        "origin_http_mime_and_decode",
+        "actual_screenshot_png_bytes_with_sha256",
+        "same_scene_crop_and_ALT_editor_review",
+        "item_level_licensing_and_credit",
+        "derivative_CSS_width_times_DPR"
+      ],
+      "release_decision": "HOLD_GUEST_FAILURE_AND_RIGHTS_UNVERIFIED"
+    },
+    {
+      "slot": "287:5",
+      "original_embedded_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "archival_or_publisher_candidate_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "candidate_kind": "publisher_media_host_migration",
+      "same_photo_or_binary_identity_verified": false,
+      "candidate_rights_to_cache_or_rehost_verified": false,
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "source_retriever_wrapper": {
+        "method": "THIRD_PARTY_WEB_RETRIEVER_ONLY",
+        "wrapper_code": 404,
+        "wrapper_result": "NOT_FOUND",
+        "access_date": "2026-11-12"
+      },
+      "browser_current_src": null,
+      "browser_decode_natural_width": null,
+      "browser_decode_natural_height": null,
+      "cold_image_network_transfer_bytes": null,
+      "conditional_max_width_px": 960,
+      "no_upscale": true,
+      "evidence_requirements": [
+        "logged_out_cold_chrome_complete_scroll",
+        "current_src_and_request_id",
+        "origin_http_mime_and_decode",
+        "actual_screenshot_png_bytes_with_sha256",
+        "same_scene_crop_and_ALT_editor_review",
+        "item_level_licensing_and_credit",
+        "derivative_CSS_width_times_DPR"
+      ],
+      "release_decision": "HOLD_GUEST_FAILURE_AND_RIGHTS_UNVERIFIED"
+    },
+    {
+      "slot": "418:1",
+      "original_embedded_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "archival_or_publisher_candidate_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "candidate_kind": "official_catalog_virin_match",
+      "same_photo_or_binary_identity_verified": false,
+      "candidate_rights_to_cache_or_rehost_verified": false,
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "source_retriever_wrapper": {
+        "method": "THIRD_PARTY_WEB_RETRIEVER_ONLY",
+        "wrapper_code": 403,
+        "wrapper_result": "FORBIDDEN",
+        "access_date": "2026-11-12"
+      },
+      "browser_current_src": null,
+      "browser_decode_natural_width": null,
+      "browser_decode_natural_height": null,
+      "cold_image_network_transfer_bytes": null,
+      "conditional_max_width_px": 960,
+      "no_upscale": true,
+      "evidence_requirements": [
+        "logged_out_cold_chrome_complete_scroll",
+        "current_src_and_request_id",
+        "origin_http_mime_and_decode",
+        "actual_screenshot_png_bytes_with_sha256",
+        "same_scene_crop_and_ALT_editor_review",
+        "item_level_licensing_and_credit",
+        "derivative_CSS_width_times_DPR"
+      ],
+      "release_decision": "HOLD_GUEST_FAILURE_AND_RIGHTS_UNVERIFIED"
+    },
+    {
+      "slot": "418:2",
+      "original_embedded_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "archival_or_publisher_candidate_url": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+      "candidate_kind": "coast_guard_secondary_copy",
+      "same_photo_or_binary_identity_verified": false,
+      "candidate_rights_to_cache_or_rehost_verified": false,
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "source_retriever_wrapper": {
+        "method": "THIRD_PARTY_WEB_RETRIEVER_ONLY",
+        "wrapper_code": 403,
+        "wrapper_result": "FORBIDDEN",
+        "access_date": "2026-11-12"
+      },
+      "browser_current_src": null,
+      "browser_decode_natural_width": null,
+      "browser_decode_natural_height": null,
+      "cold_image_network_transfer_bytes": null,
+      "conditional_max_width_px": 960,
+      "no_upscale": true,
+      "evidence_requirements": [
+        "logged_out_cold_chrome_complete_scroll",
+        "current_src_and_request_id",
+        "origin_http_mime_and_decode",
+        "actual_screenshot_png_bytes_with_sha256",
+        "same_scene_crop_and_ALT_editor_review",
+        "item_level_licensing_and_credit",
+        "derivative_CSS_width_times_DPR"
+      ],
+      "release_decision": "HOLD_GUEST_FAILURE_AND_RIGHTS_UNVERIFIED"
+    },
+    {
+      "slot": "407:1",
+      "original_embedded_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "archival_or_publisher_candidate_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+      "candidate_kind": "official_catalog_original_path_differs",
+      "same_photo_or_binary_identity_verified": false,
+      "candidate_rights_to_cache_or_rehost_verified": false,
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "source_retriever_wrapper": {
+        "method": "THIRD_PARTY_WEB_RETRIEVER_ONLY",
+        "wrapper_code": 400,
+        "wrapper_result": "UNSUPPORTED_BINARY",
+        "access_date": "2026-11-12"
+      },
+      "browser_current_src": null,
+      "browser_decode_natural_width": null,
+      "browser_decode_natural_height": null,
+      "cold_image_network_transfer_bytes": null,
+      "conditional_max_width_px": 960,
+      "no_upscale": true,
+      "evidence_requirements": [
+        "logged_out_cold_chrome_complete_scroll",
+        "current_src_and_request_id",
+        "origin_http_mime_and_decode",
+        "actual_screenshot_png_bytes_with_sha256",
+        "same_scene_crop_and_ALT_editor_review",
+        "item_level_licensing_and_credit",
+        "derivative_CSS_width_times_DPR"
+      ],
+      "release_decision": "HOLD_GUEST_FAILURE_AND_RIGHTS_UNVERIFIED"
+    }
+  ]
+}
