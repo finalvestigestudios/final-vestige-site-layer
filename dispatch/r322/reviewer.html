@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Dispatch R322 | Consent and conversion proof — offline reviewer</title>
+<style>
+:root{color-scheme:dark;--bg:#0a0b0b;--panel:#141515;--ink:#f4efe6;--body:#ded8cc;--muted:#aaa49a;--line:#393632;--gold:#c7a66c}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--body);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif;margin:0}
+main{max-width:1120px;margin:auto;padding:clamp(22px,5vw,62px)}
+header{border-bottom:1px solid var(--line);padding-bottom:32px}
+h1,h2,h3{color:var(--ink);font-family:Georgia,serif;line-height:1.13;letter-spacing:-.01em;font-weight:400}
+h1{font-size:clamp(36px,5vw,62px);max-width:790px}
+h2{font-size:clamp(26px,3.4vw,38px);margin:0 0 12px}
+h3{font-size:23px}
+a{color:var(--gold);text-underline-offset:4px;overflow-wrap:anywhere}
+a:focus-visible{outline:3px solid var(--ink);outline-offset:5px}
+p{max-width:78ch} .kicker{font-size:.79rem;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);font-weight:700}
+.subtitle{font-size:clamp(18px,2.2vw,22px);max-width:65ch}
+.tag{border:1px solid var(--line);display:inline-block;padding:3px 9px;margin:4px 8px 0 0;color:var(--gold);font-size:.8rem;letter-spacing:.04em}
+section{margin:40px 0}
+.columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.panel{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,3vw,30px);min-width:0}
+.panel ol{padding-left:22px}
+.trail{border-left:2px solid var(--gold);padding:8px 0 8px 18px;margin:20px 0}
+small,.muted{color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border-bottom:1px solid var(--line);padding:13px 9px;vertical-align:top;text-align:left}
+th{color:var(--gold);font-weight:600}
+.wrap{overflow-x:auto}
+strong{color:var(--ink)}
+@media(max-width:700px){.columns{grid-template-columns:1fr}main{padding:20px}table{min-width:620px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<p class="kicker">Final Vestige Studios / Internal editorial QA</p>
+<h1>A confirmed subscriber is not always a confirmed email click.</h1>
+<p class="subtitle">Two valid WordPress enrollment routes. One existing Jetpack list. Zero permission to send.</p>
+<span class="tag">REVIEW ONLY</span><span class="tag">ALL SIX HOLD_UNSENT</span><span class="tag">03/05 HOLD_MERCHANT</span>
+</header>
+<section aria-labelledby="paths"><h2 id="paths">One site subscription, two pathways</h2>
+<div class="columns">
+<article class="panel"><h3>01 / New email subscriber</h3><ol><li>Visitor chooses the site's existing subscribe form.</li><li>Jetpack sends a verification email.</li><li>Visitor confirms through the actual email link.</li><li>Provider records new site subscription, consent and email eligibility.</li><li>Welcome message is configured; receipt must still be witnessed.</li></ol><p class="muted">Count only a genuinely authenticated, unique confirmation event — never the form submission.</p></article>
+<article class="panel"><h3>02 / Existing WordPress account</h3><ol><li>A signed-in WordPress.com user chooses to follow the site.</li><li>WordPress may skip a separate confirmation email.</li><li>Provider records a genuinely new site-subscription activation.</li><li>Confirm explicit Dispatch permission and actual email delivery preference, not Reader-only status.</li><li>Welcome may arrive without a confirmation email; verify independently.</li></ol><p class="muted">Count only a new provider-confirmed enrollment event — never just seeing an old active subscriber.</p></article>
+</div>
+<p>Official source: <a href="https://wordpress.com/support/newsletter-settings/">WordPress Newsletter Settings</a>, reviewed October 26, 2026. Routes modeled here are not proof that provider event-level data is available in the connected API.</p>
+</section>
+<section aria-labelledby="transitions"><h2 id="transitions">Trust boundaries</h2>
+<div class="trail"><strong>Social asset</strong> — Grok-owned, actually published asset ID and permitted destination → genuine human session, not video views.</div>
+<div class="trail"><strong>Subscription event</strong> — one of two provider-authenticated site enrollment routes, consent and email eligibility → one confirmed signup.</div>
+<div class="trail"><strong>Welcome</strong> — 52-page Fieldbook configured in Jetpack → real inbox delivery and PDF retrieval still require witness.</div>
+<div class="trail"><strong>Commercial handoff</strong> — source-led Issue 03 → **unpublished** independent Zen12 Premium guide → no active merchant link.</div>
+<div class="trail"><strong>Paid order</strong> — merchant settlement and refund/fee reconciliation → net revenue, never a mere CTA click.</div>
+</section>
+<section aria-labelledby="campaign"><h2 id="campaign">Six-issue pilot, original allocation unchanged</h2>
+<div class="wrap"><table><thead><tr><th>Edition</th><th>Function</th><th>Destination</th><th>Gate</th></tr></thead><tbody>
+<tr><td>01 / Perception</td><td>Editorial</td><td>Historical evidence/attention article; original duplicated Puységur CTA under editorial review</td><td>HOLD</td></tr>
+<tr><td>02 / Witness</td><td>Editorial</td><td>Published Puységur historical archive</td><td>HOLD</td></tr>
+<tr><td>03 / Zen12</td><td>Commercial candidate</td><td>Independent Premium-tier guide NOT LIVE; no authorized earning URL</td><td>HOLD_MERCHANT</td></tr>
+<tr><td>04 / Apollo 1</td><td>Editorial</td><td>Published Apollo 1 investigation; subject-source wording still under review</td><td>HOLD</td></tr>
+<tr><td>05 / Hypnosis</td><td>Commercial candidate</td><td>Independent Total Focus guide NOT LIVE; no authorized earning URL</td><td>HOLD_MERCHANT</td></tr>
+<tr><td>06 / Evidence log</td><td>Editorial</td><td>Existing Fieldbook; avoid asking existing subscribers to resubscribe</td><td>HOLD</td></tr>
+</tbody></table></div>
+</section>
+<section aria-labelledby="gates"><h2 id="gates">Why nothing is send-ready</h2>
+<div class="columns">
+<div class="panel"><h3>Legal and inbox</h3><p>No independently captured native Jetpack received email, Final Vestige legal mailing address, actual functional unsubscribe, verified preheader or welcome delivery. Sender is currently no-reply.</p><p><a href="https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business">FTC requirements</a> · <a href="https://wordpress.com/support/newsletter/email-appearance/">WordPress preview workflow</a></p></div>
+<div class="panel"><h3>Merchant and conversion</h3><p>No account-specific Inspire3 email rights, issued earning URL, live approved guides, verified final price/terms, qualified human attribution join or settled sale. Seller claims are not independent outcome evidence.</p><p><a href="https://zen12.com/">Zen12 seller specifications</a> · <a href="https://hypnosislive.com/mental-skills/total-focus">Total Focus specifications</a></p></div>
+</div></section>
+<footer><p class="kicker">Offline reviewer · no subscription form · no tracking · no commerce CTA · no send mechanism</p><p>Reference: <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174">Dispatch #174</a>, <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175">original six issue master</a> and <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171">Mind #171</a>.</p></footer>
+</main>
+</body>
+</html>

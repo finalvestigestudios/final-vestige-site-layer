@@ -1,0 +1,95 @@
+{
+  "sprint": "R322",
+  "title": "WordPress existing-account signup route + evidence-led conversion hold",
+  "prepared_at_utc": "2026-11-13T05:34:10Z",
+  "base_pr": 175,
+  "base_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "campaign": {
+    "editorial": 4,
+    "commercial_draft": 2,
+    "issues": [
+      {
+        "number": 1,
+        "release": "HOLD_UNSENT"
+      },
+      {
+        "number": 2,
+        "release": "HOLD_UNSENT"
+      },
+      {
+        "number": 3,
+        "release": "HOLD_MERCHANT"
+      },
+      {
+        "number": 4,
+        "release": "HOLD_UNSENT"
+      },
+      {
+        "number": 5,
+        "release": "HOLD_MERCHANT"
+      },
+      {
+        "number": 6,
+        "release": "HOLD_UNSENT"
+      }
+    ],
+    "original_manuscripts_modified": false,
+    "alternates_adopted": false
+  },
+  "site_snapshot": {
+    "newsletter_enabled": true,
+    "auto_new_post_email": false,
+    "email_content_format": "full",
+    "reply_to": "no-reply",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "counts_overlap": true,
+    "email_eligible_recipients": null,
+    "as_of": "2026-11-13T05:34:10Z"
+  },
+  "witnesses": {
+    "provider_issued_email_confirmation": false,
+    "provider_issued_existing_wordpress_new_site_enrollment": false,
+    "permission_specific_to_dispatch": false,
+    "actual_email_eligible_recipients": false,
+    "actual_fieldbook_welcome_received": false,
+    "actual_pdf_opened": false,
+    "actual_jetpack_native_preview": false,
+    "final_vestige_valid_postal_address": false,
+    "functional_unsubscribe_in_received_email": false,
+    "affiliate_account_approved": false,
+    "affiliate_email_channel_allowed": false,
+    "publisher_earning_link_issued": false,
+    "zen12_guide_live": false,
+    "total_focus_guide_live": false,
+    "settled_paid_order": false,
+    "net_revenue_qualified_sessions_join": false,
+    "founder_final_send_approval": false
+  },
+  "sources": [
+    "https://wordpress.com/support/newsletter-settings/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://zen12.com/",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://affiliates.inspire3.com/",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+  ],
+  "test_claims": {
+    "original_master_python_native": "6/6 PASS on exact Git blob matched source",
+    "r322_native_node": "27/27 PASS on locally byte-identical source to GitHub (Git blob verified)",
+    "native_wordpress_email": false,
+    "real_subscriber_data": false,
+    "paid_affiliate_conversion": false
+  },
+  "actions": {
+    "mail_sent": 0,
+    "test_mail_sent": 0,
+    "wp_writes": 0,
+    "subscriber_contacts": 0,
+    "merchant_links_activated": 0,
+    "expenses": 0
+  }
+}
