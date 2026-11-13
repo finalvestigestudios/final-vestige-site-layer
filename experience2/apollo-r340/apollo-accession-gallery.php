@@ -59,17 +59,55 @@ function fv_apollo_r340_experience_shortcode($atts = array()): string {
     return fv_apollo_r339_shortcode() . fv_apollo_r340_gallery_shortcode();
 }
 
-/** Enqueue scoped styles only for ordinary WP posts explicitly containing these shortcodes. */
+/**
+ * Resolve a bounded set of core/block reusable patterns before wp_head.
+ * Do not render blocks or change WP content. Missing/malformed references fail closed
+ * for optional styling; the shortcode itself still emits complete semantic HTML.
+ * Explicitly does not claim detection in arbitrary dynamic/template-part renderers.
+ * @return array{0: bool, 1: bool} composite / gallery-only shortcode flags
+ */
+function fv_apollo_r340_shortcode_flags(string $content, array &$seen = array(), int $depth = 0): array {
+    $contains = function (string $tag) use ($content): bool {
+        return function_exists('has_shortcode') ? has_shortcode($content, $tag) : strpos($content, '[' . $tag) !== false;
+    };
+    $flags = array($contains('fv_apollo_experience_r340'), $contains('fv_apollo_gallery_r340'));
+    if (($flags[0] && $flags[1]) || $depth >= 5 || strlen($content) > 500000 || !function_exists('parse_blocks')) {
+        return $flags;
+    }
+    $visit = function (array $blocks) use (&$visit, &$flags, &$seen, $depth): void {
+        foreach ($blocks as $block) {
+            if (!is_array($block)) { continue; }
+            if (($block['blockName'] ?? '') === 'core/block') {
+                $ref = (int) ($block['attrs']['ref'] ?? 0);
+                if ($ref > 0 && !isset($seen[$ref]) && count($seen) < 24 && function_exists('get_post')) {
+                    $seen[$ref] = true;
+                    $referenced = get_post($ref);
+                    if (is_object($referenced) && ($referenced->post_type ?? '') === 'wp_block') {
+                        $nested = fv_apollo_r340_shortcode_flags((string) ($referenced->post_content ?? ''), $seen, $depth + 1);
+                        $flags[0] = $flags[0] || $nested[0];
+                        $flags[1] = $flags[1] || $nested[1];
+                    }
+                }
+            }
+            if (isset($block['innerBlocks']) && is_array($block['innerBlocks'])) {
+                $visit($block['innerBlocks']);
+            }
+            if ($flags[0] && $flags[1]) { return; }
+        }
+    };
+    $visit(parse_blocks($content));
+    return $flags;
+}
+
+/** Enqueue scoped styles for direct and safely resolvable reusable-block references. */
 function fv_apollo_r340_enqueue(): void {
     if (!function_exists('is_singular') || !is_singular() || !function_exists('get_post') || !function_exists('wp_enqueue_style')) { return; }
     $post = get_post();
     if (!$post || !isset($post->post_content)) { return; }
-    $content = (string) $post->post_content;
-    $has = function ($tag) use ($content): bool {
-        return function_exists('has_shortcode') ? has_shortcode($content, $tag) : strpos($content, '[' . $tag) !== false;
-    };
-    $combined = $has('fv_apollo_experience_r340');
-    if (!$combined && !$has('fv_apollo_gallery_r340')) { return; }
+    $seen = array();
+    $flags = fv_apollo_r340_shortcode_flags((string) $post->post_content, $seen);
+    $combined = $flags[0];
+    if (!$combined && !$flags[1]) { return; }
     if ($combined && is_readable(dirname(__DIR__) . '/apollo-r339/assets/chronology-rail.css')) {
         wp_enqueue_style('fv-apollo-r339-chronology', plugins_url('../apollo-r339/assets/chronology-rail.css', __FILE__), array(), '0.0.1-research');
     }
