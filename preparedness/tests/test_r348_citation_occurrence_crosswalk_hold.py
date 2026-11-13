@@ -72,6 +72,12 @@ class TestUnit(unittest.TestCase):
         x=r.inspect_record('test-sample',b,meta(sources={'loc-pioneer-diaries':'a','fsis-power-failure':'b'}),'articles')
         self.assertEqual([c['source_id'] for c in x['citations']], ['loc-pioneer-diaries','fsis-power-failure'])
 
+    def test_historical_not_required_is_not_approval(self):
+        m=meta();m['track']='lost-ways';m['safety_review']['state']='not-required'
+        x=r.inspect_record('test-sample',body(),m,'articles')
+        self.assertEqual(x['errors'],[])
+        self.assertFalse(r.FALSE_GATES['qualified_qd_pass'])
+
     def test_always_has_no_publish_authority(self):
         for k,v in r.FALSE_GATES.items(): self.assertIs(v,False,k)
 
