@@ -1,0 +1,42 @@
+# THE DISPATCH — ISSUE 02 · OPTIONAL R321 REVIEW
+
+> **HOLD_UNSENT — NOT ADOPTED. Not a Jetpack export or received email.**
+
+**Subject:** A witness signed. Did that prove anything?
+
+**Preheader:** Puységur’s 1785 volume preserved written claims, signatures—and failure.
+
+**Classification:** editorial (final primary-purpose review still required)
+
+---
+
+An eyewitness account changes the moment someone writes it down. Add a signature, a dated prediction or an official-looking document, and the story can begin to feel almost unanswerable.
+
+The Marquis de Puységur understood the power of a paper trail. In the works associated with his animal-magnetism investigations, he gathered statements about remarkable experiences, witnesses and attempts to record predictions before their supposed outcomes. The records are fascinating. They are not a shortcut to proving the force he believed was responsible.
+
+Look at the part that a modern sales pitch might leave out: the failures. Final Vestige’s source study retains an unsuccessful prediction associated with Louis de Rieux, as well as the competing interpretations and warnings in Puységur’s own late notes. A signed document can establish that someone made a claim. It cannot, by signing alone, establish the mechanism behind that claim.
+
+There is a second complication. In the surviving narratives, people seeking care could be ill, dependent or subject to pressure from the person conducting and recording the procedure. That context changes how testimony should be read. It is not a reason to erase witnesses; it is a reason to ask whose account we have, and under what conditions it was produced.
+
+Here is a useful three-part test for the next extraordinary claim you encounter. First: what was written before anyone knew the result? Second: which failures survived alongside the successes? Third: does the source verify the reported event, or the explanation attached to it?
+
+This is why our archive keeps the material history visible. The Bibliothèque nationale de France catalogs Puységur’s two-volume work under 1784–1785; the Wood Library-Museum identifies a separate 256-page London edition of the sequel dated 1785. Our research page explains which 1813 scan was used for page-level checking rather than passing a nineteenth-century reproduction off as the original printing.
+
+The distinction feels small until it matters. An object, an edition, an observation and a conclusion are four different things. We do not collapse them into one.
+
+**Examine the records:** [Open Puységur’s Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/)
+
+The next time a record looks conclusive, ask what it actually records. That is where an investigation begins.
+
+**Source notes (not additional promotional CTAs)**
+
+- [Wood Library-Museum — catalog record for the 1785 sequel](https://www.woodlibrarymuseum.org/rare-book/chastenet-de-puysegur-amj-memoires-pour-servir-a-lhistoire-et-a-letablissement-du-magnetisme-animal-1786-suite-des-memoires-pour-servir-a-lhistoire-et-letablissement-du-magnetisme-animal-1785/)
+- [Bibliothèque nationale de France — two-volume 1784–1785 record](https://catalogue.bnf.fr/ark:/12148/cb31160297p)
+
+**Editorial limit:** Historic descriptions of animal magnetism are not evidence that its proposed physical mechanism existed, nor modern medical advice.
+
+---
+
+**HOLD — COMPLIANCE-ONLY PLACEHOLDERS, NEVER PUBLISH AS-IS**
+
+Publisher: Final Vestige Studios. Valid publisher postal address: `[[VALID_POSTAL_ADDRESS_REQUIRED]]`. Provider-rendered unsubscribe: `[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]`. Native email preview, source-specific consent and founder final sending approval absent.
