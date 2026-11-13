@@ -49,7 +49,7 @@ function adjudicateP0(packet,review=null,artifacts=null){
   g.completion_event_provenance!=='CDP_NETWORK_LOADING_FINISHED'||
   g.page_http_status!==200||g.full_scroll_complete!==true||
   g.network_capture_complete!==true||g.cache_disabled!==true||
-  g.from_disk_cache!==false||g.from_memory_cache!==false||g.from_service_worker!==false||
+  g.was_cached!==false||g.from_disk_cache!==false||g.from_memory_cache!==false||g.from_service_worker!==false||
   !positive(g.final_status)||g.final_status<200||g.final_status>599||
   !natural(g.natural_width)||!natural(g.natural_height)||
   typeof g.image_decoded!=='boolean'||
