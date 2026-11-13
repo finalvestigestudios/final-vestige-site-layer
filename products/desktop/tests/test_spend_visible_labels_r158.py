@@ -86,9 +86,10 @@ class SpendLabelR158(unittest.TestCase):
         values = {r["month"]: r["source_vendor_labels"] for r in self.report_rows()[1]}
         self.assertEqual(values, {"2026-01": "ACME", "2026-02": "A-CME"})
 
-    def test_trimmed_outer_spaces_and_duplicates(self):
+    def test_outer_spaces_and_duplicates_are_distinct_source_labels(self):
         self.write([self.row("  ACME  "), self.row("ACME")])
-        self.assertEqual(self.report_rows()[1][0]["source_vendor_labels"], "ACME")
+        self.assertEqual(self.report_rows()[1][0]["source_vendor_labels"],
+                         r"\u0020\u0020ACME\u0020\u0020; ACME")
 
     def test_literal_semicolon_is_not_list_separator(self):
         self.write([self.row("AC;ME"), self.row("ACME")])
