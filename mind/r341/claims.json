@@ -1,0 +1,164 @@
+{
+  "observed_at": "2026-11-13",
+  "publisher_status": "UNVERIFIED",
+  "pilot_commercial_state": "HARD_HOLD",
+  "basis": "Direct official site read, public scientific abstracts/full-text; no private dashboard access.",
+  "products": [
+    {
+      "name": "Zen12 Premium",
+      "official": "https://zen12.com/",
+      "audience": "Listener wanting progressive short meditation files",
+      "verified_seller_format": "12 levels, 48 MP3s",
+      "not_independently_proven": [
+        "12 minutes equals 1 hour meditation",
+        "increased focus",
+        "health outcomes"
+      ],
+      "refund": "Seller page states 1 year, observed 2026-11-13; checkout and refund execution unverified",
+      "price": "Observed seller promotional display $87.99 on 2026-11-13; NOT verified at checkout; OMIT from buyer HTML",
+      "acceptance": "UNKNOWN",
+      "issued_affiliate_url": "NONE_VERIFIED",
+      "approved_channels": "UNKNOWN"
+    },
+    {
+      "name": "Zen12 Beginner",
+      "official": "https://zen12.com/",
+      "audience": "Newer listener",
+      "verified_seller_format": "First 6 levels, 24 MP3s",
+      "not_independently_proven": [
+        "equivalence to advanced meditation"
+      ],
+      "refund": "Same page seller promise, not checkout verified",
+      "price": "Observed seller promotional display $67.77; omit from buyer HTML",
+      "acceptance": "UNKNOWN",
+      "issued_affiliate_url": "NONE_VERIFIED",
+      "approved_channels": "UNKNOWN"
+    },
+    {
+      "name": "Zen12 Advanced",
+      "official": "https://zen12.com/",
+      "audience": "Seller targets readers with at least six months' practice",
+      "verified_seller_format": "Final 6 levels, 24 MP3s",
+      "not_independently_proven": [
+        "concentration and health benefits"
+      ],
+      "refund": "Same page seller promise, not independently fulfilled",
+      "price": "Observed seller promotional display $67.77; omit",
+      "acceptance": "UNKNOWN",
+      "issued_affiliate_url": "NONE_VERIFIED",
+      "approved_channels": "UNKNOWN"
+    },
+    {
+      "name": "Hypnosis Live Total Focus",
+      "official": "https://hypnosislive.com/mental-skills/total-focus",
+      "audience": "Consumer specifically seeking guided suggestion",
+      "verified_seller_format": "33 min/47MB guided session; credited to J.A. Amos",
+      "not_independently_proven": [
+        "reprogramming the brain",
+        "100% concentration"
+      ],
+      "refund": "14-day seller-stated refund; checkout unverified",
+      "price": "Seller $24.44 single-product display, $19.95 bundle per-item display; no guaranteed charged amount",
+      "acceptance": "UNKNOWN",
+      "issued_affiliate_url": "NONE_VERIFIED",
+      "approved_channels": "UNKNOWN"
+    },
+    {
+      "name": "Brainwave Shots Focus Shot",
+      "official": "https://brainwaveshots.com/focus-shot",
+      "audience": "Listener wanting sound-based focus session",
+      "verified_seller_format": "15 and 30 min audios; brainwave-only versions and quick-start video",
+      "not_independently_proven": [
+        "instant powerful focus",
+        "focus for 4+ hours",
+        "universal safety"
+      ],
+      "refund": "1-year seller promise; checkout unverified",
+      "price": "Seller displayed $17.99; not checkout verified",
+      "acceptance": "UNKNOWN",
+      "issued_affiliate_url": "NONE_VERIFIED",
+      "approved_channels": "UNKNOWN"
+    }
+  ],
+  "evidence": [
+    {
+      "claim": "Binaural-beat stimulation reliably entrains EEG",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/",
+      "classification": "INCONCLUSIVE",
+      "scope": "14 EEG studies: 5 supportive, 8 contradictory, 1 mixed; methodology varies",
+      "product_proof": false
+    },
+    {
+      "claim": "Short meditation interventions can affect measured short-term mindfulness",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/38001316/",
+      "classification": "GENERAL_TECHNIQUE_ONLY",
+      "scope": "372 participants, 10 and 20 minute conditions, not 12 or 60; no Zen12",
+      "product_proof": false
+    },
+    {
+      "claim": "Posthypnotic suggestion may reduce Stroop interference in highly suggestible participants",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/12470132/",
+      "classification": "CONTEXT_LIMITED",
+      "scope": "Experiment; not commercial recordings",
+      "product_proof": false
+    },
+    {
+      "claim": "Suggestion effect can occur with or without hypnotic induction",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/16466414/",
+      "classification": "CONTEXT_LIMITED",
+      "scope": "Highly suggestible participants and Stroop task; not a general focus guarantee",
+      "product_proof": false
+    },
+    {
+      "claim": "Puységur archive proves animal magnetism",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "classification": "NOT_SUPPORTED",
+      "scope": "Historical records support source-trail reconstruction not mechanism",
+      "product_proof": false
+    },
+    {
+      "claim": "Zen12 gift signup subscribes to merchant newsletter",
+      "source": "https://zen12.com/gift",
+      "classification": "SELLER_DISCLOSURE_CONFIRMED",
+      "scope": "Distinct from FV Jetpack",
+      "product_proof": false
+    },
+    {
+      "claim": "FV is authorized to earn money from Inspire3",
+      "source": "https://affiliates.inspire3.com/",
+      "classification": "UNKNOWN_ACCOUNT_SPECIFIC",
+      "scope": "Public recruitment page is not individualized approval",
+      "product_proof": false
+    }
+  ],
+  "policy": [
+    {
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "requirement": "Near-link clear material connection disclosure, no fabricated experience"
+    },
+    {
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "requirement": "Appropriate scientific evidence for explicit or implied product health claims"
+    }
+  ],
+  "gates": {
+    "partner_approval": false,
+    "issued_tracking_url": false,
+    "channel_permissions": false,
+    "creatives_permissions": false,
+    "merchant_terms_check": false,
+    "payhip_owned_sku": false,
+    "payhip_rights": false,
+    "payhip_checkout": false,
+    "refund_terms_at_checkout": false,
+    "original_film_hosted": false,
+    "real_browser_review": false,
+    "caption_playback_verified": false,
+    "wp_sanitization": false,
+    "founder_release": false,
+    "actual_grok_asset_ids": false,
+    "provider_confirmed_leads": false,
+    "provider_confirmed_sales": false,
+    "net_revenue_reconciled": false
+  }
+}
