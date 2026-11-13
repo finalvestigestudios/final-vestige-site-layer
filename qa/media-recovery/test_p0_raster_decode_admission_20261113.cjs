@@ -31,7 +31,7 @@ function candidateFixture(bytes){
  const review={slot:'418:1',candidate_catalog:catalog,asset_url:assetUrl,asset_sha256:hash,
   rights_review_git_blob_sha:gitBlobSha(rightsText),replacement_mode:'SAME_PHOTO',
   geometry:{output_width:1,output_height:1}};
- const capture={slot:'418:1'};
+ const capture={slot:'418:1',screenshot_sha256:sha256(png)};
  const captureText=JSON.stringify(capture);
  const packet={...capture,capture_git_blob_sha:gitBlobSha(captureText),screenshot_sha256:sha256(png)};
  return {packet,review,artifacts:{capture_text:captureText,screenshot_png:png,
