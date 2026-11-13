@@ -106,6 +106,12 @@ def install_shortcuts(root, inputs, output, generate, *, review=None,
     # Reject before changing existing bindings, including preexisting app keys.
     if getattr(root, "_fvs_shortcuts_installed", False):
         raise ValueError("Keyboard shortcuts already installed for this window")
+    # A failing bind may have already registered its callback *before* it
+    # raises, leaving no callback ID to undo. Mark the window as attempted
+    # BEFORE the first bind, so even an interrupt or a perfect-looking cleanup
+    # cannot lead to a second additive registration over an unknown handler.
+    # Recreate the root to retry; do not silently double-run Generate/Review.
+    root._fvs_shortcuts_installed = True
     installed: list[tuple[str, str | None]] = []
     try:
         for sequence, operation in actions.items():
@@ -113,19 +119,16 @@ def install_shortcuts(root, inputs, output, generate, *, review=None,
             # OUR newly added function without erasing a preexisting handler.
             callback_id = root.bind(sequence, make_handler(operation), add="+")
             installed.append((sequence, callback_id))
-    except Exception:
-        rollback_incomplete = False
+    except BaseException:
+        # Best effort only: the failing bind has no trustworthy callback ID.
+        # Preserve earlier unrelated application bindings; do not clear all.
         for sequence, callback_id in reversed(installed):
             if not callback_id or not callable(getattr(root, "unbind", None)):
-                rollback_incomplete = True
                 continue
             try:
                 root.unbind(sequence, callback_id)
-            except Exception:
-                rollback_incomplete = True
-        if rollback_incomplete:
-            # An uncertain partial registration must never be installed over.
-            root._fvs_shortcuts_installed = True
+            except BaseException:
+                # Preserve the original failure and the conservative hold.
+                pass
         raise
-    root._fvs_shortcuts_installed = True
     return tuple(actions)
