@@ -84,7 +84,7 @@ function netPerThousand(x){
 }
 const valid={settlement_verified:true,qualified_sessions_verified:true,qualified_sessions:100,settled_owned_usd:100,settled_affiliate_usd:100,fees_usd:10,refunds_usd:20,other_costs_usd:0};
 ok(netPerThousand(valid)===1700,'verified net calculation 1700');
-ok(netPerThousand({...valid,refunds_usd:180})===0,'zero is real only when verified');
+ok(netPerThousand({...valid,refunds_usd:190})===0,'zero is real only when verified');
 for(const bad of [{...valid,settlement_verified:false},{...valid,qualified_sessions_verified:false},{...valid,qualified_sessions:0},{...valid,fees_usd:null},{...valid,refunds_usd:-1},{...valid,email:'no'},{...valid,ip:'0.0.0.0'},{...valid,qualified_sessions:1.4}]){
  let rejected=false;try{netPerThousand(bad)}catch{rejected=true};ok(rejected,'unsafe settlement fixture rejected');
 }
