@@ -92,10 +92,10 @@ def compute_expected_review_fields(
         for vendor, month, category, amount, source_label in observations:
             month_net[(vendor, month)] += amount
             category_net[(vendor, month, category)] += amount
-            if source_label.strip():
-                # ASCII case alone is a safe identity equivalence. Unicode
-                # casefold could conceal visually meaningful label changes.
-                variants[vendor].add(source_label.strip().translate(_ASCII_LOWER))
+            if source_label:
+                # Exact raw spelling, including boundary whitespace, is review
+                # evidence. Only ASCII case is equivalent; keys remain lossy.
+                variants[vendor].add(source_label.translate(_ASCII_LOWER))
 
         by_vendor: dict[str, dict[str, Decimal]] = defaultdict(dict)
         for (vendor, month), total in month_net.items():
