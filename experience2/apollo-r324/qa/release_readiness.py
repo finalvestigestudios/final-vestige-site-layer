@@ -91,6 +91,8 @@ def main():
     subprocess.run(['php','-l',str(PHP)],check=True,capture_output=True)
     subprocess.run(['node','--check',str(JS)],check=True,capture_output=True)
     html=fixture(); axe_path=os.environ.get('AXE_CORE_JS','')
+    if os.environ.get('REQUIRE_AXE')=='1' and not axe_path:
+        raise SystemExit('R324 RELEASE BLOCKED: genuine axe-core bundle is required (set AXE_CORE_JS)')
     if axe_path:
         assert Path(axe_path).is_file(), 'AXE_CORE_JS specified but file missing: fail closed'
     rows=[]; axe_observations=[]; negatives=[]
