@@ -1,0 +1,401 @@
+{
+  "schema_version": "2026-11-12.r338",
+  "status": "UNPUBLISHED / NO MERCHANT LINK / NO SALE CLAIM",
+  "verification_method": "Public original sources read, issue and Drive inspection, Gmail targeted searches; private partner dashboards and Payhip merchant account not audited",
+  "source_records": [
+    {
+      "id": "S01",
+      "label": "1999 primary study",
+      "url": "https://doi.org/10.1068/p281059",
+      "reviewed_on": "2026-11-12"
+    },
+    {
+      "id": "S02",
+      "label": "2010 open original follow-up",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3563049/",
+      "reviewed_on": "2026-11-12"
+    },
+    {
+      "id": "S03",
+      "label": "2023 fast-motion PNAS primary study",
+      "url": "https://doi.org/10.1073/pnas.2214930120",
+      "reviewed_on": "2026-11-12"
+    },
+    {
+      "id": "S04",
+      "label": "2023 similarity study",
+      "url": "https://doi.org/10.3758/s13414-023-02794-2",
+      "reviewed_on": "2026-11-12"
+    },
+    {
+      "id": "S05",
+      "label": "Final Vestige Puységur archival page",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "reviewed_on": "2026-11-12"
+    },
+    {
+      "id": "S06",
+      "label": "Final Vestige live Change Blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "reviewed_on": "2026-11-12"
+    },
+    {
+      "id": "S07",
+      "label": "Final Vestige live Mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "reviewed_on": "2026-11-12"
+    },
+    {
+      "id": "S08",
+      "label": "Final Vestige live Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "reviewed_on": "2026-11-12"
+    },
+    {
+      "id": "S09",
+      "label": "Final Vestige live Dispatch",
+      "url": "https://finalvestige.com/dispatch/",
+      "reviewed_on": "2026-11-12"
+    },
+    {
+      "id": "S10",
+      "label": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "reviewed_on": "2026-11-12"
+    },
+    {
+      "id": "S11",
+      "label": "Zen12 official offer",
+      "url": "https://zen12.com/",
+      "reviewed_on": "2026-11-12"
+    },
+    {
+      "id": "S12",
+      "label": "Zen12 free sample + seller newsletter",
+      "url": "https://zen12.com/gift",
+      "reviewed_on": "2026-11-12"
+    },
+    {
+      "id": "S13",
+      "label": "Hypnosis Live Total Focus official offer",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "reviewed_on": "2026-11-12"
+    },
+    {
+      "id": "S14",
+      "label": "Brainwave Shots Focus Shot official offer",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "reviewed_on": "2026-11-12"
+    },
+    {
+      "id": "S15",
+      "label": "Inspire3 public affiliate recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "reviewed_on": "2026-11-12",
+      "note": "Public recruitment does NOT establish FV approval"
+    },
+    {
+      "id": "S16",
+      "label": "FTC endorsement disclosure guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "reviewed_on": "2026-11-12"
+    },
+    {
+      "id": "S17",
+      "label": "FTC health claim substantiation",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "reviewed_on": "2026-11-12"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "1999 gorilla missed by some viewers under pass-counting instructions",
+      "status": "supported_primary",
+      "source_ids": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "id": "C02",
+      "claim": "2010 follow-up found familiarity not a general improvement for all unexpected events",
+      "status": "supported_primary",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "C03",
+      "claim": "2023 fast unexpected objects readily noticed in three experiments total n=4493",
+      "status": "supported_primary",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "C04",
+      "claim": "2023 similarity effects depend on attended and ignored-item features",
+      "status": "supported_primary",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "C05",
+      "claim": "2023 findings show Zen12 improves attention",
+      "status": "unsupported_do_not_claim",
+      "source_ids": [
+        "S03",
+        "S11"
+      ]
+    },
+    {
+      "id": "C06",
+      "claim": "Puységur's source archive documents testimony, doubts and failures, not efficacy",
+      "status": "supported_archive_with_limit",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 Premium full 12 levels 48 MP3",
+      "status": "seller_description_only",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 Beginner first 6 levels 24 MP3",
+      "status": "seller_description_only",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 Advanced last 6 levels 24 MP3",
+      "status": "seller_description_only",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 each 12 minutes is equivalent to an hour of advanced meditation",
+      "status": "seller_claim_unsubstantiated_exclude",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 seller advertises one-year refund",
+      "status": "seller_policy_not_checkout_verified",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 seller displayed Premium $87.99 on 2026-11-12",
+      "status": "dated_seller_display_not_final_checkout",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 free gift also enrolls user in seller newsletter",
+      "status": "seller_explicit_notice",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "id": "C14",
+      "claim": "Hypnosis Live Total Focus 33 minutes 47 MB",
+      "status": "seller_description_only",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "id": "C15",
+      "claim": "Hypnosis Live produces 100% focus or mind reprogramming",
+      "status": "seller_claim_unsubstantiated_exclude",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "id": "C16",
+      "claim": "Brainwave Shots Focus Shot 15 and 30 minute versions",
+      "status": "seller_description_only",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "id": "C17",
+      "claim": "Brainwave Shots effects persist four hours or rest of day",
+      "status": "seller_claim_unsubstantiated_exclude",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "id": "C18",
+      "claim": "Public affiliate recruitment guarantees FV acceptance or a particular payout",
+      "status": "unsupported_do_not_claim",
+      "source_ids": [
+        "S15"
+      ]
+    },
+    {
+      "id": "C19",
+      "claim": "Adjacent simple commission language should accompany any approved link",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "S16"
+      ]
+    },
+    {
+      "id": "C20",
+      "claim": "Product-specific health/cognition efficacy claims need adequate substantiation",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "S17"
+      ]
+    },
+    {
+      "id": "C21",
+      "claim": "Existing Focus Fieldbook has its own Dispatch signup",
+      "status": "verified_live_site",
+      "source_ids": [
+        "S08",
+        "S09"
+      ]
+    },
+    {
+      "id": "C22",
+      "claim": "An affiliate outbound click equals a confirmed merchant commission",
+      "status": "false_do_not_claim",
+      "source_ids": []
+    },
+    {
+      "id": "C23",
+      "claim": "A paid FV Mind SKU is currently authenticated through merchant inventory",
+      "status": "unverified_no_purchase_route",
+      "source_ids": []
+    },
+    {
+      "id": "C24",
+      "claim": "Named Grok media asset IDs are reconciled to official platform URLs",
+      "status": "unverified_no_attribution",
+      "source_ids": []
+    }
+  ],
+  "release_gates": [
+    {
+      "name": "fv_partner_account_verified",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "permitted_website_traffic_channel_verified",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "permitted_email_channel_verified_if_used",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "account_issued_affiliate_url_verified",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "link_tracking_terms_verified",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "affiliate_creatives_use_permission_verified",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "merchant_current_checkout_total_verified",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "merchant_returns_current_terms_verified",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "merchant_delivery_and_support_verified",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "medical_or_cognition_product_efficacy_substantiated_or_excluded",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "prospective_disclosure_visible_near_cta",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "founder_revenue_offer_approval",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "founder_publication_release_approval",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "independent_site_qa_a11y",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "actual_optional_42s_video_encoded",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "real_browser_media_transcript_caption_sync_qa",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "consent_and_privacy_qa",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    },
+    {
+      "name": "merchant_attribution_and_settlement_reconciliation",
+      "passed": false,
+      "reason": "Not yet independently authenticated in this run; draft review controls remain disabled."
+    }
+  ],
+  "affiliate_partner_eligibility": "NOT VERIFIED",
+  "issued_affiliate_url": "WITHHELD",
+  "payhip_paid_mind_sku": "NOT VERIFIED",
+  "zero_commission_claims": true,
+  "price_note": "Zen12 Premium $87.99 on-page observation on 2026-11-12; not verified order total; do not display as guaranteed price",
+  "refund_note": "Seller advertises one-year guarantee, not independently tested",
+  "customer_data": "No new collection, no list duplication, merchant gift requires separate merchant newsletter consent",
+  "note": "Public affiliate recruiting percentages/EPC are not our payment terms and must never be shown as FV economics"
+}
