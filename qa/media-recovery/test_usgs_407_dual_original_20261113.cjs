@@ -1,0 +1,31 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {assess}=require('./validate_usgs_407_dual_original_20261113.cjs');
+const clean=require('./usgs_407_dual_official_original_20261113.json');
+const copy=()=>JSON.parse(JSON.stringify(clean));
+function run(){
+  let passed=0;
+  const good=(name,x)=>{assert.deepEqual(assess(x).errors,[],name);passed++;};
+  const bad=(name,mutate)=>{const x=copy();mutate(x);assert.equal(assess(x).ok,false,name);passed++;};
+  good('exact official source, alternate and holds',copy());
+  bad('reject fabricated guest 404',x=>x.release_gate.guest_http_status=404);
+  bad('reject fabricated decoded pixels',x=>x.release_gate.guest_natural_width=1000);
+  bad('reject treating web wrapper 400 as origin',x=>x.primary_source_a.origin_http_status=400);
+  bad('reject treating web wrapper 400 as browser',x=>x.primary_source_a.browser_http_status=400);
+  bad('reject changed published src',x=>x.source_item.published_src=x.primary_source_b.catalog_original_link_url);
+  bad('reject unrelated alternate',x=>x.primary_source_b.catalog_original_link_url='https://example.com/img7535.jpg');
+  bad('reject wrong publisher',x=>x.identity.publisher='Wikipedia');
+  bad('reject imagined binary hash',x=>x.identity.same_binary_sha256='deadbeef');
+  bad('reject invented native image dimensions',x=>x.identity.native_dimensions_px={width:960,height:960});
+  bad('reject rights preapproval',x=>x.rights.wordpress_upload_authorized=true);
+  bad('reject third-party caching preapproval',x=>x.rights.third_party_caching_authorized=true);
+  bad('reject bigger than 960 width',x=>x.release_gate.conditional_max_derivative_width_px=1024);
+  bad('reject upscaling',x=>x.release_gate.no_upscale=false);
+  bad('reject unverified 76% saving',x=>x.baseline.claimed_savings_verified=true);
+  bad('reject actual post write',x=>x.safety.production_wordpress_writes=1);
+  bad('reject premature source swap',x=>x.release_gate.approved_to_swap_external_src=true);
+  bad('reject pretending alternate has browser status',x=>x.primary_source_b.browser_http_status=200);
+  return passed;
+}
+if(require.main===module) console.log(run()+'/18 USGS 407 original-link checks passed');
+module.exports={run};
