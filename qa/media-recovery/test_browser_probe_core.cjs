@@ -37,3 +37,21 @@ test('memory-cache image requests never qualify as cold article bytes',()=>{
  const v=scopeArticleImageWire([slot],[n]);
  assert.equal(v.article_bytes,null);
 });
+
+test('unknown memory-cache provenance on 404 is not browser-failure proof',()=>{
+ const r={...rendered[0],naturalWidth:0,naturalHeight:0};
+ const n={url:r.src,status:404,encodedDataLength:0,was_cached:false,from_disk_cache:false,from_service_worker:false};
+ const d=classifyImages(source,[r],[n],true)[0];
+ assert.notEqual(d.result,'confirmed_broken_in_probe_browser');
+ assert.equal(d.verified_broken_in_browser,null);
+});
+test('independently valid loaded slot rejects memory-cached bytes in article-only tally',()=>{
+ const r={...rendered[0],naturalWidth:960,naturalHeight:720};
+ const n={url:r.src,request_id:'r1',status:200,mime_type:'image/jpeg',encodedDataLength:240,
+   was_cached:false,from_disk_cache:false,from_memory_cache:false,from_service_worker:false};
+ const slot=classifyImages(source,[r],[n],true)[0];
+ assert.equal(slot.result,'loaded_in_probe_browser');
+ const v=scopeArticleImageWire([slot],[{...n,from_memory_cache:true}]);
+ assert.equal(v.article_bytes,null);
+ assert.equal(v.unmeasured_article_requests,1);
+});
