@@ -29,6 +29,7 @@ def verify_published_link(stage: str | Path, destination: str | Path, payload: b
     if type(payload) is not bytes:
         raise LinkWitnessError("Invalid expected verification evidence")
     fd = None
+    read_failed = False
     try:
         stage_info = os.stat(stage, follow_symlinks=False)
         dest_info = os.stat(destination, follow_symlinks=False)
@@ -66,10 +67,12 @@ def verify_published_link(stage: str | Path, destination: str | Path, payload: b
     except LinkWitnessError:
         raise
     except (OSError, ValueError, TypeError):
-        raise LinkWitnessError("Could not verify published evidence safely") from None
+        read_failed = True
     finally:
         if fd is not None:
             try:
                 os.close(fd)
             except OSError:
                 pass
+    if read_failed:
+        raise LinkWitnessError("Could not verify published evidence safely")
