@@ -1,0 +1,58 @@
+{
+  "status": "NOT_ADOPTED_HOLD_UNSENT",
+  "pilot_mix": {
+    "editorial": 4,
+    "commercial": 2
+  },
+  "headline": "The fire wasn't just a spark",
+  "preheader": "Apollo 1's investigation distinguished a probable arc from six documented dangers.",
+  "primary_cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+  "issue_number": 4,
+  "chronology": {
+    "first_fire_report_gmt": "23:31:04.7",
+    "pressure_vessel_rupture_gmt": "approximately 23:31:19",
+    "seconds_first_report_to_rupture": "approximately 14",
+    "last_crew_communication_note": "approximately 17 s from first indication of fire, separately scoped by NASA NSSDC"
+  },
+  "evidence_sources": [
+    {
+      "url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "type": "primary board report"
+    },
+    {
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo1info.html",
+      "type": "NASA historic public overview"
+    },
+    {
+      "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "type": "FV live published investigation"
+    }
+  ],
+  "release_gates": {
+    "founder_approved_final_copy": false,
+    "native_jetpack_email_inbox_received": false,
+    "valid_final_vestige_postal_address_verified": false,
+    "unsubscribe_render_and_optout_verified": false,
+    "eligible_consented_recipients_authenticated": false,
+    "confirmation_and_welcome_receipt_verified": false,
+    "commercial_issue03_email_permission_verified": false,
+    "commercial_issue05_email_permission_verified": false,
+    "merchant_account_and_earning_links_verified": false,
+    "paid_conversion_evidence_authenticated": false
+  },
+  "wp_snapshot_utc": "2026-11-13T08:37:45Z",
+  "wp_counts": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "wpcom_followers": 3,
+    "direct_email_followers": 0,
+    "email_eligible": "UNKNOWN"
+  },
+  "wp_autosend": false,
+  "notes": [
+    "Publisher counts overlap; do not add total+unconfirmed",
+    "Email invitation is one active editorial CTA only; NASA citations are not separate offers",
+    "No live WordPress, subscriber, commerce, analytics, affiliate or social actions"
+  ]
+}
