@@ -8,7 +8,7 @@ from __future__ import annotations
 from decimal import Context, Decimal, localcontext
 from typing import Iterable, Mapping
 
-from .audit_display import visible_source_text
+from .audit_display import visible_identity_label
 
 
 _ASCII_CASE_TABLE = str.maketrans("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")
@@ -47,18 +47,8 @@ def raw_values(rows: Iterable[Mapping[str, str]], field: str) -> tuple[str, ...]
 
 
 def _visible_identity_label(value: str) -> str:
-    """Render boundary ASCII spaces as explicit escapes, not ambiguous padding.
-
-    Literal backslashes are escaped by visible_source_text, so real spaces
-    remain distinct from a source spelling containing the characters \\u0020.
-    """
-    leading = len(value) - len(value.lstrip(" "))
-    tail = value[leading:]
-    trailing = len(tail) - len(tail.rstrip(" "))
-    middle = tail[:-trailing] if trailing else tail
-    return (r"\u0020" * leading
-            + visible_source_text(middle).replace(";", r"\u003B")
-            + r"\u0020" * trailing)
+    """Compatibility delegate to the shared unambiguous audit renderer."""
+    return visible_identity_label(value)
 
 
 def labels_for_report(rows: Iterable[Mapping[str, str]], field: str) -> str:
