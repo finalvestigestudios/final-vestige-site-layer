@@ -76,8 +76,11 @@ def _read_file(path: str | Path, limit: int, kind: str) -> bytes:
     # Descriptor and pathname must still match after the bounded read.
     try:
         return read_regular_bytes(path, limit, kind)
-    except FileNotFoundError as exc:
-        raise ValueError(f"{kind} must be an existing regular file, not a symlink") from exc
+    except FileNotFoundError:
+        pass
+    # Translate AFTER the originating handler: 'from None' inside an except
+    # still retains the private OS exception in __context__.
+    raise ValueError(f"{kind} must be an existing regular file, not a symlink")
 
 
 def read_cases(report: str | Path, product: str) -> ReportBatch:
@@ -91,15 +94,22 @@ def read_cases(report: str | Path, product: str) -> ReportBatch:
     digest = _hex_hash(data)
     try:
         decoded = data.decode("utf-8-sig")
-    except UnicodeError as exc:
-        raise ValueError("Exception report must be UTF-8 CSV") from exc
+    except UnicodeError:
+        decoded = None
+    # UnicodeDecodeError.object can contain the ENTIRE financial input buffer.
+    # Do not retain it through a chained exception for callers or loggers.
+    if decoded is None:
+        raise ValueError("Exception report must be UTF-8 CSV")
     if "\x00" in decoded:
         raise ValueError("Exception report contains a NUL character")
     reader = csv.reader(io.StringIO(decoded, newline=""), strict=True)
+    malformed_header = False
     try:
         fieldnames = next(reader, None)
-    except csv.Error as exc:
-        raise ValueError("Exception report contains a malformed CSV header") from exc
+    except csv.Error:
+        malformed_header = True
+    if malformed_header:
+        raise ValueError("Exception report contains a malformed CSV header")
     if not fieldnames:
         raise ValueError("Exception report has no CSV headers")
     names = [str(h).strip().lower().replace(" ", "_") for h in fieldnames]
@@ -143,8 +153,12 @@ def read_cases(report: str | Path, product: str) -> ReportBatch:
             # The journal is bound to a file hash and the *physical* record line.
             case_id = _hex_hash(f"FVS-CASE-v1|{product}|{digest}|{physical_line}".encode("ascii"))
             cases.append(ExceptionCase(case_id, physical_line, key, status))
-    except csv.Error as exc:
-        raise ValueError(f"Malformed CSV quoting near physical line {reader.line_num}") from exc
+    except csv.Error:
+        malformed_line = reader.line_num
+    else:
+        malformed_line = None
+    if malformed_line is not None:
+        raise ValueError(f"Malformed CSV quoting near physical line {malformed_line}")
     return ReportBatch(product, digest, tuple(cases))
 
 
@@ -228,12 +242,17 @@ def read_journal(journal: str | Path, batch: ReportBatch) -> list[dict]:
             raise ValueError("Review journal exceeds maximum recorded events")
         if not line:
             raise ValueError("Review journal contains an empty record")
+        malformed_event = False
         try:
             event = json.loads(line.decode("utf-8"), object_pairs_hook=_unique_keys,
                                parse_constant=lambda raw: (_ for _ in ()).throw(
                                    ValueError(f"Invalid JSON constant: {raw}")))
-        except (UnicodeError, json.JSONDecodeError) as exc:
-            raise ValueError(f"Malformed review journal record {line_number}") from exc
+        except (UnicodeError, json.JSONDecodeError):
+            malformed_event = True
+        # JSONDecodeError.doc retains the raw untrusted record.  Do not keep
+        # that record in an exception cause/context returned to UI callers.
+        if malformed_event:
+            raise ValueError(f"Malformed review journal record {line_number}")
         previous = _validate_event(event, batch, cases, previous)
         # A valid SHA chain alone must not normalize backdated review events.
         prior_timestamp = check_record_order(prior_timestamp, event["created_utc"])
