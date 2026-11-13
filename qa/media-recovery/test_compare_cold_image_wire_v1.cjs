@@ -17,7 +17,7 @@ function fixture(bytes=1000){
  article_wire_attribution_mode:'strict_cdp_request_id',stored_image_count:1,stored_images:[slot],
  matched_article_network_requests:1,article_image_wire_bytes_total:bytes,
  network_images:[{request_id:'r1',url:src,status:200,mime_type:'image/png',encoded_data_length:bytes,
- was_cached:false,from_disk_cache:false,from_service_worker:false}]};
+ was_cached:false,from_disk_cache:false,from_memory_cache:false,from_service_worker:false}]};
  return {status:'complete_browser_image_census',image_census_coverage:{complete:true,confirmed_broken_count:0},
  confirmed_broken_count:0,requested_pages:1,verified_pages:1,viewport:'390x844',mode:'priority',
  browser_product:'Chrome/140',run_profile:{cache_disabled:true,service_worker_bypassed:true},pages:[page]};
@@ -189,3 +189,10 @@ test('zero-image articles do not attribute unrelated theme network requests',()=
  assert.equal(r.state,'LAB_PAIR_MEASURED');
  assert.equal(r.baseline_cdp_bytes,1000);
 });
+
+hold('candidate memory-cached response cannot manufacture a 76 percent saving',null,
+ a=>{a.pages[0].network_images[0].from_memory_cache=true},'uncached_cdp');
+hold('baseline memory-cached response is not a valid transfer',b=>{
+ b.pages[0].network_images[0].from_memory_cache=true},null,'uncached_cdp');
+hold('unknown candidate memory-cache status fails closed',null,
+ a=>{delete a.pages[0].network_images[0].from_memory_cache},'uncached_cdp');
