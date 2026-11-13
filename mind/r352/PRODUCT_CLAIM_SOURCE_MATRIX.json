@@ -1,0 +1,282 @@
+{
+  "sprint": "R352",
+  "checked_local_date": "2026-11-13",
+  "status": "DRAFT_HARD_HOLD",
+  "evidence_method": "Official public seller pages, scholarly abstracts, FTC guidance and first-party archive. No private partner account or merchant purchase.",
+  "sources": {
+    "inspire3": "https://inspire3.com/",
+    "zen12": "https://zen12.com/",
+    "zen12gift": "https://zen12.com/gift",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "hypnosis": "https://hypnosislive.com/mental-skills/total-focus",
+    "focusshot": "https://brainwaveshots.com/focus-shot",
+    "research2022": "https://pubmed.ncbi.nlm.nih.gov/35842538/",
+    "eeg2023": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "ant2023": "https://pubmed.ncbi.nlm.nih.gov/37359672/",
+    "review2024": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+    "ftcEndorse": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftcHealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "mesmerism": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "fieldbook": "https://finalvestige.com/focus/"
+  },
+  "claims": [
+    {
+      "id": "M352-01",
+      "claim": "Zen12 Premium includes 12 levels and 48 MP3s",
+      "classification": "seller-description",
+      "source_url": "https://zen12.com/",
+      "editorial_decision": "allow as attributed package contents"
+    },
+    {
+      "id": "M352-02",
+      "claim": "Zen12 Beginner includes first six levels and 24 MP3s",
+      "classification": "seller-description",
+      "source_url": "https://zen12.com/",
+      "editorial_decision": "allow as attributed package contents"
+    },
+    {
+      "id": "M352-03",
+      "claim": "Zen12 Advanced includes last six levels and 24 MP3s",
+      "classification": "seller-description",
+      "source_url": "https://zen12.com/",
+      "editorial_decision": "allow as attributed package contents"
+    },
+    {
+      "id": "M352-04",
+      "claim": "Zen12 offers four styles per level",
+      "classification": "seller-description",
+      "source_url": "https://zen12.com/",
+      "editorial_decision": "allow as attributed product format"
+    },
+    {
+      "id": "M352-05",
+      "claim": "Zen12 sessions are 12 minutes",
+      "classification": "seller-description",
+      "source_url": "https://zen12.com/",
+      "editorial_decision": "allow as attributed product format"
+    },
+    {
+      "id": "M352-06",
+      "claim": "Zen12 Premium page displays $87.99 Nov 13 2026",
+      "classification": "seller-display-snapshot",
+      "source_url": "https://zen12.com/",
+      "editorial_decision": "allow only dated seller-page price, not confirmed checkout"
+    },
+    {
+      "id": "M352-07",
+      "claim": "Zen12 offers a 1-year guarantee",
+      "classification": "seller-terms-unverified",
+      "source_url": "https://zen12.com/",
+      "editorial_decision": "attribute, check live binding policy at checkout"
+    },
+    {
+      "id": "M352-08",
+      "claim": "Zen12 audio delivers an hour of meditation benefit in 12 minutes",
+      "classification": "unsupported-retail-efficacy",
+      "source_url": "https://zen12.com/",
+      "editorial_decision": "exclude as editorial outcome; seller claim only"
+    },
+    {
+      "id": "M352-09",
+      "claim": "Zen12 automatically induces advanced brainwave state",
+      "classification": "unsupported-retail-mechanism",
+      "source_url": "https://zen12.com/",
+      "editorial_decision": "exclude"
+    },
+    {
+      "id": "M352-10",
+      "claim": "Zen12 gift signup adds seller newsletter",
+      "classification": "seller-consent-term",
+      "source_url": "https://zen12.com/gift",
+      "editorial_decision": "explicitly distinguish from FV Dispatch"
+    },
+    {
+      "id": "M352-11",
+      "claim": "Total Focus is 33 minutes and 47 MB",
+      "classification": "seller-description",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "editorial_decision": "allow as attributed product format"
+    },
+    {
+      "id": "M352-12",
+      "claim": "Total Focus page shows $17.95 and 14-day refund",
+      "classification": "seller-display-snapshot",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "editorial_decision": "attributed snapshot; checkout/terms unverified"
+    },
+    {
+      "id": "M352-13",
+      "claim": "Total Focus reprograms brain and guarantees concentration",
+      "classification": "unsupported-retail-efficacy",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "editorial_decision": "exclude"
+    },
+    {
+      "id": "M352-14",
+      "claim": "Focus Shot includes 15- and 30-minute sessions",
+      "classification": "seller-description",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "editorial_decision": "allow as attributed format"
+    },
+    {
+      "id": "M352-15",
+      "claim": "Focus Shot uses seller-described alternating 12-18 Hz protocol",
+      "classification": "seller-description",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "editorial_decision": "allow as attributed protocol, not proof of outcome"
+    },
+    {
+      "id": "M352-16",
+      "claim": "Focus Shot headphones not required",
+      "classification": "seller-description",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "editorial_decision": "allow attributed; do not equate with binaural-beat study stimuli"
+    },
+    {
+      "id": "M352-17",
+      "claim": "Focus Shot improves concentration 4 hours to all day",
+      "classification": "unsupported-retail-efficacy",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "editorial_decision": "exclude as independently verified benefit"
+    },
+    {
+      "id": "M352-18",
+      "claim": "Focus Shot shows $17.99 and 1-year refund",
+      "classification": "seller-display-snapshot",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "editorial_decision": "attribute and verify checkout/terms"
+    },
+    {
+      "id": "M352-19",
+      "claim": "2022 binaural-beat cognition meta-analysis pooled g approx .40",
+      "classification": "research-review",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/35842538/",
+      "editorial_decision": "allow for studied protocols with heterogeneity caveat"
+    },
+    {
+      "id": "M352-20",
+      "claim": "2023 EEG systematic review included 14 studies, results inconsistent",
+      "classification": "research-review",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "editorial_decision": "allow; do not equate EEG result with product benefit"
+    },
+    {
+      "id": "M352-21",
+      "claim": "2023 58-participant 40Hz trial found no significant attention improvement",
+      "classification": "direct-experiment",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/37359672/",
+      "editorial_decision": "allow only for tested stimuli and endpoints"
+    },
+    {
+      "id": "M352-22",
+      "claim": "2024 auditory stimulation review of 31 studies found mixed/insufficient outcomes",
+      "classification": "research-review",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+      "editorial_decision": "allow bounded conclusion"
+    },
+    {
+      "id": "M352-23",
+      "claim": "Franklin commission tested animal magnetism in 1784",
+      "classification": "historical-secondary-with-primary-links",
+      "source_url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "editorial_decision": "allow as historical context; no equivalence to modern audio"
+    },
+    {
+      "id": "M352-24",
+      "claim": "Puységur source archive documents consent concerns, not proven magnetic mechanism",
+      "classification": "historical-primary-source-ledger",
+      "source_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "editorial_decision": "allow with evidence limits"
+    },
+    {
+      "id": "M352-25",
+      "claim": "Existing Fieldbook is free 52 page guide with Jetpack/Dispatch opt in",
+      "classification": "live-first-party-offer",
+      "source_url": "https://finalvestige.com/focus/",
+      "editorial_decision": "allow free use; not merchant signup"
+    },
+    {
+      "id": "M352-26",
+      "claim": "FTC requires disclosure of material affiliate relationships",
+      "classification": "regulatory-guidance",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "editorial_decision": "disclose adjacent to prospective merchant CTA"
+    },
+    {
+      "id": "M352-27",
+      "claim": "FTC requires substantiation of objective health claims",
+      "classification": "regulatory-guidance",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "editorial_decision": "avoid unsubstantiated audio health promises"
+    },
+    {
+      "id": "M352-28",
+      "claim": "Public affiliate portal advertises commissions",
+      "classification": "public-marketing-only",
+      "source_url": "https://affiliates.inspire3.com/",
+      "editorial_decision": "do not invent FV rate, eligibility, or terms"
+    },
+    {
+      "id": "M352-29",
+      "claim": "Final Vestige is accepted for Zen12 affiliate program",
+      "classification": "publisher-account-unknown",
+      "source_url": "https://affiliates.inspire3.com/",
+      "editorial_decision": "HOLD until authenticated partner acceptance"
+    },
+    {
+      "id": "M352-30",
+      "claim": "Final Vestige has issued tracked Zen12 earning URL and permissions",
+      "classification": "publisher-account-unknown",
+      "source_url": "https://affiliates.inspire3.com/",
+      "editorial_decision": "HOLD, no URL or activation"
+    },
+    {
+      "id": "M352-31",
+      "claim": "Active rights-cleared purchased FV Mind Payhip SKU exists",
+      "classification": "owned-commerce-unknown",
+      "source_url": "https://finalvestige.com/focus/",
+      "editorial_decision": "HOLD; free Focus is verified, paid product not"
+    },
+    {
+      "id": "M352-32",
+      "claim": "Any affiliate_click is a paid commission",
+      "classification": "metric-inference-prohibited",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "editorial_decision": "NEVER count click as sale or commission"
+    },
+    {
+      "id": "M352-33",
+      "claim": "Revenue per 1000 qualified sessions can be calculated now",
+      "classification": "data-availability-unknown",
+      "source_url": "https://finalvestige.com/focus/",
+      "editorial_decision": "NOT COMPUTABLE without settlements/refunds/fees/session qualification"
+    }
+  ],
+  "release_gates": {
+    "publisher_acceptance": "HOLD",
+    "per_product_permission": "HOLD",
+    "channel_permission": "HOLD",
+    "approved_creative": "HOLD",
+    "issued_earning_url": "HOLD",
+    "link_tracking_terms": "HOLD",
+    "merchant_current_checkout": "HOLD",
+    "return_policy_transaction": "HOLD",
+    "sms_and_newsletter_consent": "HOLD",
+    "settlement_reporting": "HOLD",
+    "source_specific_studies": "HOLD",
+    "founder_commercial_approval": "HOLD",
+    "qa_accessibility": "HOLD",
+    "qa_links": "HOLD",
+    "qa_checkout": "HOLD",
+    "qa_privacy": "HOLD",
+    "qa_claims": "HOLD",
+    "qa_media": "HOLD",
+    "qa_mobile": "HOLD",
+    "site_release": "HOLD",
+    "grok_ids": "HOLD",
+    "qualified_sessions": "HOLD",
+    "confirmed_sales": "HOLD",
+    "settled_net": "HOLD"
+  }
+}
