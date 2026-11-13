@@ -9,6 +9,7 @@ const gitBlobSha=bytes=>{
 };
 const denied=reason=>({verified:false,reason,production_write_allowed:false,third_party_cache_allowed:false});
 const {verifiedPngGeometry}=require('./png_decode_guard_20261112.cjs');
+const {fullyDecodedJpegWebpGeometry}=require('./verify_image_pixels_pillow_20261113.cjs');
 
 // Decode-checked PNG before staging review; JPEG/WebP remain structural-only.
 function jpegGeometry(b){
@@ -74,7 +75,11 @@ function verifyP0ReviewEvidence(packet,review,artifacts){
     return denied('ASSET_FORMAT_OR_OUTPUT_GEOMETRY_UNVERIFIED');
   // JPEG/WebP container headers can be forged without valid compressed pixels.
   // Until an independent full-raster decoder is bound to these bytes, HOLD.
-  if(assetShape.format!=='png')return denied('CANDIDATE_FULL_RASTER_DECODE_REQUIRED');
+  if(assetShape.format!=='png'){
+   const pixels=fullyDecodedJpegWebpGeometry(candidate_asset);
+   if(!pixels||!isDeepStrictEqual(pixels,assetShape))
+     return denied('CANDIDATE_FULL_RASTER_DECODE_REQUIRED');
+  }
   let capture,rights;
   try{capture=JSON.parse(capture_text);rights=JSON.parse(rights_review_text);}
   catch{return denied('ARTIFACT_JSON_INVALID');}
@@ -130,11 +135,15 @@ function verifyP0SourceMasterEvidence(review,artifacts){
    return denied('SOURCE_MASTER_CROP_OR_ASPECT_MISMATCH');
  // An exact SHA over bytes does not prove those bytes decode into image pixels.
  // JPEG/WebP geometry here is structural only; never promote a header-only image.
- if(shape.format!=='png')return denied('SOURCE_MASTER_FULL_RASTER_DECODE_REQUIRED');
+ if(shape.format!=='png'){
+   const pixels=fullyDecodedJpegWebpGeometry(b);
+   if(!pixels||!isDeepStrictEqual(pixels,shape))
+     return denied('SOURCE_MASTER_FULL_RASTER_DECODE_REQUIRED');
+  }
  return {verified:true,reason:null,source_master_sha256:hash,
    source_master_dimensions:[shape.width,shape.height],
-   source_master_raster_decode_verified:shape.format==='png',
-   other_format_container_geometry_only:shape.format!=='png',
+   source_master_raster_decode_verified:true,
+   other_format_container_geometry_only:false,
    production_write_allowed:false,third_party_cache_allowed:false};
 }
 
