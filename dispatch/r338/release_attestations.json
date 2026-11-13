@@ -1,0 +1,53 @@
+{
+  "schema": "fv-dispatch-r338-proof-attestations/v1",
+  "dated_utc": "2026-11-13T20:38:59Z",
+  "source": "Read-only Jetpack counts and state; all permissions remain unverified",
+  "no_send_contract": true,
+  "six_issues": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial": [
+      3,
+      5
+    ],
+    "status": "HOLD_UNSENT",
+    "commercial_status": "HOLD_MERCHANT"
+  },
+  "evidence": {
+    "provider_confirmed_eligible_recipients": false,
+    "welcome_receipt_witnessed": false,
+    "publisher_valid_physical_postal_address_verified": false,
+    "received_email_unsubscribe_operational_verified": false,
+    "genuine_jetpack_received_edition_verified": false,
+    "founder_final_campaign_send_approval": false,
+    "inspire3_account_accepted": false,
+    "inspire3_email_promotion_authorized": false,
+    "approved_partner_earning_url": false,
+    "approved_live_first_party_zen12_guide": false,
+    "approved_live_first_party_total_focus_guide": false,
+    "merchant_checkout_and_refund_terms_attested": false,
+    "independent_settled_paid_orders": false,
+    "qualified_human_sessions_verified": false
+  },
+  "provider_aggregate_counters": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "wordpress_followers": 3,
+    "direct_email_followers": 0,
+    "eligible_recipients": null,
+    "non_additive": true
+  },
+  "business_outcome": {
+    "qualified_human_sessions": null,
+    "paid_orders": null,
+    "realized_net_revenue_usd": null,
+    "net_revenue_per_1000_human_sessions": null,
+    "reporting": "NOT_COMPUTABLE"
+  },
+  "send_permitted": false
+}
