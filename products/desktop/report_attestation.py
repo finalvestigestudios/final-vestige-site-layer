@@ -26,6 +26,8 @@ if str(DESKTOP) not in sys.path:
     sys.path.insert(0, str(DESKTOP))
 
 import release_gate as gate
+from candidate_path_ancestry_r391 import snapshot_candidate_parents
+from candidate_reparse_r390 import unsafe_windows_reparse
 
 MAX_REPORT_BYTES = 64 * 1024
 HEX = re.compile(r"^[0-9a-f]{64}$")
@@ -56,46 +58,74 @@ def _same_path_descriptor_signature(path_info: os.stat_result,
     return path_sig[:-1] == fd_sig[:-1] if windows else path_sig == fd_sig
 
 
-def _read_verified_report(path: str | Path, candidate_dir: str | Path) -> tuple[bytes, str]:
-    """Read a bounded, nonlinked report outside dist, with descriptor checks.
 
-    Path and file identity checks catch observed swaps, not every adversarial
-    race on filesystems without no-follow or secure directory descriptors.
+def _read_verified_report_impl(path: str | Path, candidate_dir: str | Path) -> tuple[bytes, str]:
+    """Read one bounded ordinary report; preserve descriptor ownership on fdopen faults.
+
+    Lexical ancestry checks reject junctions and symlink parents, even when the
+    final JSON is an ordinary file. They detect observed swaps, not every race.
     """
+    root = Path(candidate_dir).resolve(strict=True)
+    file = Path(path)
+    parents_before = snapshot_candidate_parents(file)
+    resolved = file.resolve(strict=True)
+    if resolved == root or root in resolved.parents:
+        raise ReportAttestationError("Report cannot be inside the candidate directory")
+    before = file.lstat()
+    if (unsafe_windows_reparse(before) or not stat.S_ISREG(before.st_mode)
+            or before.st_nlink != 1 or before.st_size < 1
+            or before.st_size > MAX_REPORT_BYTES):
+        raise ReportAttestationError("Report must be one bounded ordinary file")
+    flags = (os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
+             | getattr(os, "O_NONBLOCK", 0))
+    fd = os.open(file, flags)
     try:
-        root = Path(candidate_dir).resolve(strict=True)
-        file = Path(path)
-        resolved = file.resolve(strict=True)
-        if resolved == root or root in resolved.parents:
-            raise ReportAttestationError("Report cannot be inside the candidate directory")
-        before = file.lstat()
-        if (not stat.S_ISREG(before.st_mode) or before.st_nlink != 1
-                or before.st_size < 1 or before.st_size > MAX_REPORT_BYTES):
-            raise ReportAttestationError("Report must be one bounded ordinary file")
-        flags = (os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
-                 | getattr(os, "O_NONBLOCK", 0))
-        fd = os.open(file, flags)
-        with os.fdopen(fd, "rb") as stream:
-            opened = os.fstat(stream.fileno())
-            if (not _same_path_descriptor_signature(before, opened) or not stat.S_ISREG(opened.st_mode)
-                    or opened.st_nlink != 1):
-                raise ReportAttestationError("Report changed during opening")
-            raw = stream.read(MAX_REPORT_BYTES + 1)
-            finished = os.fstat(stream.fileno())
-            if (len(raw) != opened.st_size or _signature(finished) != _signature(opened)
-                    or len(raw) > MAX_REPORT_BYTES):
-                raise ReportAttestationError("Report changed during reading")
-        after = file.lstat()
-        if (_signature(after) != _signature(before)
-                or not _same_path_descriptor_signature(after, opened)):
+        stream = os.fdopen(fd, "rb")
+    except BaseException:
+        # fdopen has not accepted descriptor ownership; avoid leaking a
+        # report handle even on interruption or private I/O exceptions.
+        try:
+            os.close(fd)
+        except OSError:
+            pass
+        raise
+    with stream:
+        opened = os.fstat(stream.fileno())
+        if (unsafe_windows_reparse(opened)
+                or not _same_path_descriptor_signature(before, opened)
+                or not stat.S_ISREG(opened.st_mode) or opened.st_nlink != 1):
+            raise ReportAttestationError("Report changed during opening")
+        raw = stream.read(MAX_REPORT_BYTES + 1)
+        finished = os.fstat(stream.fileno())
+        if (unsafe_windows_reparse(finished) or len(raw) != opened.st_size
+                or _signature(finished) != _signature(opened)
+                or len(raw) > MAX_REPORT_BYTES):
             raise ReportAttestationError("Report changed during reading")
-        if file.resolve(strict=True) != resolved:
-            raise ReportAttestationError("Report path changed during reading")
-        return raw, hashlib.sha256(raw).hexdigest()
+    after = file.lstat()
+    if (unsafe_windows_reparse(after) or _signature(after) != _signature(before)
+            or not _same_path_descriptor_signature(after, opened)
+            or snapshot_candidate_parents(file) != parents_before):
+        raise ReportAttestationError("Report path changed during reading")
+    if file.resolve(strict=True) != resolved:
+        raise ReportAttestationError("Report path changed during reading")
+    return raw, hashlib.sha256(raw).hexdigest()
+
+
+def _read_verified_report(path: str | Path, candidate_dir: str | Path) -> tuple[bytes, str]:
+    """Translate private filesystem errors OUTSIDE their exception handlers.
+
+    'raise ... from None' only hides __context__ in traceback rendering; it
+    does not destroy that retained private exception object.
+    """
+    read_failed = False
+    try:
+        return _read_verified_report_impl(path, candidate_dir)
     except ReportAttestationError:
         raise
-    except (OSError, RuntimeError, ValueError):
-        raise ReportAttestationError("Report could not be read safely") from None
+    except (OSError, RuntimeError, ValueError, TypeError):
+        read_failed = True
+    if read_failed:
+        raise ReportAttestationError("Report could not be read safely")
 
 
 def _unique_keys(pairs: list[tuple[str, object]]) -> dict:
@@ -112,13 +142,16 @@ def _bad_constant(_value: str):
 
 
 def _validate_report(raw: bytes) -> dict:
+    malformed = False
     try:
         value = json.loads(raw.decode("utf-8"), object_pairs_hook=_unique_keys,
                            parse_constant=_bad_constant)
     except ReportAttestationError:
         raise
     except (UnicodeError, ValueError, TypeError, RecursionError):
-        raise ReportAttestationError("Malformed verification JSON") from None
+        malformed = True
+    if malformed:
+        raise ReportAttestationError("Malformed verification JSON")
     if not isinstance(value, dict) or set(value) != REPORT_KEYS:
         raise ReportAttestationError("Unexpected verification schema")
     if type(value["schema"]) is not int or value["schema"] != 1:
