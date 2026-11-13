@@ -1,0 +1,413 @@
+{
+  "sprint": "R356",
+  "date": "2026-11-13",
+  "publication": "UNPUBLISHED",
+  "partner": "Inspire3",
+  "affiliate_authorization": {
+    "fv_account_approved": false,
+    "authorized_website_channel": false,
+    "authorized_social_channel": false,
+    "authorized_email_channel": false,
+    "issued_earning_link": false,
+    "actual_checkout_verified": false,
+    "settlement_terms_verified": false,
+    "approved_creatives_verified": false,
+    "all_commercial_links_disabled": true
+  },
+  "source_verification": [
+    {
+      "id": "S01",
+      "class": "primary_psychology",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "purpose": "1992 original target-window experiment"
+    },
+    {
+      "id": "S02",
+      "class": "systematic_theory_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19933555/",
+      "purpose": "2009 200–500ms and competing mechanisms"
+    },
+    {
+      "id": "S03",
+      "class": "primary_psychology",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19170478/",
+      "purpose": "Unmasking attentional blink"
+    },
+    {
+      "id": "S04",
+      "class": "primary_meditation_trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "purpose": "Three-month intensive training, no retail audio"
+    },
+    {
+      "id": "S05",
+      "class": "secondary_review",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/acp.70056",
+      "purpose": "2025 tertiary student mindfulness review"
+    },
+    {
+      "id": "S06",
+      "class": "history",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "purpose": "Franklin commission"
+    },
+    {
+      "id": "S07",
+      "class": "history_archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "purpose": "Puységur source dossier"
+    },
+    {
+      "id": "S08",
+      "class": "seller",
+      "url": "https://inspire3.com/",
+      "purpose": "Inspire3 catalog and merchant representations"
+    },
+    {
+      "id": "S09",
+      "class": "seller",
+      "url": "https://zen12.com/",
+      "purpose": "Exact Zen12 sales page"
+    },
+    {
+      "id": "S10",
+      "class": "seller",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "purpose": "Total Focus actual product"
+    },
+    {
+      "id": "S11",
+      "class": "seller",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "purpose": "Focus Shot actual product"
+    },
+    {
+      "id": "S12",
+      "class": "affiliate_portal",
+      "url": "https://affiliates.inspire3.com/",
+      "purpose": "General signup; insufficient for FV authorization"
+    },
+    {
+      "id": "S13",
+      "class": "ftc",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "purpose": "Adjacent earning disclosure"
+    },
+    {
+      "id": "S14",
+      "class": "ftc",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "purpose": "Claim substantiation"
+    },
+    {
+      "id": "S15",
+      "class": "first_party",
+      "url": "https://finalvestige.com/focus/",
+      "purpose": "Existing one Jetpack free Fieldbook"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Attentional blink varies with second-target timing and task",
+      "category": "independently_supported",
+      "source_ids": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "id": "C02",
+      "claim": "No unchanging fixed blackout of all vision follows",
+      "category": "bounded_inference",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "id": "C03",
+      "claim": "Three months of intensive mental training affected lab task and P3b signal",
+      "category": "independently_supported_contextual",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "C04",
+      "claim": "12 min Zen12 equals an hour of advanced meditation",
+      "category": "seller_promotion_not_substantiated",
+      "source_ids": [
+        "S09"
+      ],
+      "publish_as_factual": false
+    },
+    {
+      "id": "C05",
+      "claim": "Zen12 Premium has 12 levels and 48 MP3 recordings",
+      "category": "seller_described_format",
+      "source_ids": [
+        "S09"
+      ]
+    },
+    {
+      "id": "C06",
+      "claim": "Zen12 Beginner has 6 levels and 24 MP3s",
+      "category": "seller_described_format",
+      "source_ids": [
+        "S09"
+      ]
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 Advanced has last six levels / 24 MP3s",
+      "category": "seller_described_format",
+      "source_ids": [
+        "S09"
+      ]
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 seller offers a one-year refund promise",
+      "category": "seller_policy_not_transaction_verified",
+      "source_ids": [
+        "S09"
+      ]
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 actual total checkout price and return application",
+      "category": "unverified",
+      "source_ids": [
+        "S09"
+      ],
+      "publish_as_factual": false
+    },
+    {
+      "id": "C10",
+      "claim": "Hypnosis Live Total Focus is a 33-minute recording",
+      "category": "seller_described_format",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "id": "C11",
+      "claim": "Total Focus will guarantee better concentration",
+      "category": "seller_promotion_not_substantiated",
+      "source_ids": [
+        "S10"
+      ],
+      "publish_as_factual": false
+    },
+    {
+      "id": "C12",
+      "claim": "Focus Shot includes 15- and 30-minute formats",
+      "category": "seller_described_format",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "id": "C13",
+      "claim": "Brainwave Shots instant focus / lasting brain entrainment",
+      "category": "seller_promotion_not_substantiated",
+      "source_ids": [
+        "S11"
+      ],
+      "publish_as_factual": false
+    },
+    {
+      "id": "C14",
+      "claim": "General affiliate portal exists and advertises commission rates",
+      "category": "public_program_promotion_not_account_terms",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "id": "C15",
+      "claim": "FV is accepted for Zen12 in approved channels",
+      "category": "unverified_private_permission",
+      "source_ids": [],
+      "publish_as_factual": false
+    },
+    {
+      "id": "C16",
+      "claim": "FV has authorized earning URL",
+      "category": "unverified_private_permission",
+      "source_ids": [],
+      "publish_as_factual": false
+    },
+    {
+      "id": "C17",
+      "claim": "Affiliate disclosure should accompany endorsement",
+      "category": "regulatory_guidance",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "id": "C18",
+      "claim": "Health/cognitive claims require adequate evidence",
+      "category": "regulatory_guidance",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "id": "C19",
+      "claim": "Focus Fieldbook is a free 52-page resource and one existing funnel",
+      "category": "first_party_live_description",
+      "source_ids": [
+        "S15"
+      ]
+    },
+    {
+      "id": "C20",
+      "claim": "Grok published asset IDs and channel links",
+      "category": "unverified",
+      "source_ids": [],
+      "publish_as_factual": false
+    },
+    {
+      "id": "C21",
+      "claim": "Verified paid partner conversion / net realized revenue",
+      "category": "unverified",
+      "source_ids": [],
+      "publish_as_factual": false
+    },
+    {
+      "id": "C22",
+      "claim": "No product-specific retail efficacy in referenced attentional blink studies",
+      "category": "source_scope_limitation",
+      "source_ids": [
+        "S01",
+        "S04"
+      ]
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "fv_publisher_account_accepted",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "zen12_offer_authorized",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "specific_earning_url_issued",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "website_channel_authorized",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "social_channel_authorized",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "email_channel_authorized",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "approved_creatives_authenticated",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "merchant_checkout_total_verified",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "merchant_refund_terms_verified",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "sku_delivery_verified",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "publisher_settlement_terms_verified",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "owned_payhip_mind_sku_rights_verified",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "owned_payhip_mind_sku_live_checkout_verified",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "actual_grok_asset_ids_reconciled",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "landing_mobile_url_verified",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "no_double_analytics_confirmed",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "staging_accessibility_confirmed",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "caption_media_encoding_confirmed",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "caption_sync_confirmed",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "poster_license_confirmed",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "reduced_motion_confirmed",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "keyboard_confirmed",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "no_js_confirmed",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "wordpress_sanitization_confirmed",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "affiliate_disclosure_qa_confirmed",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "ftc_claim_qa_confirmed",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "focus_consent_provider_confirmed",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "confirmed_purchases_observed",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "merchant_refunds_fees_verified",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "founder_release_approved",
+      "status": "HARD_HOLD"
+    }
+  ]
+}
