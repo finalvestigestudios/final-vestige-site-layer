@@ -13,6 +13,10 @@ In 1974, Elizabeth Loftus and John Palmer investigated whether language used *af
 
 That result travels widely because it feels like a magic trick on consciousness. But it becomes more interesting when we stop exaggerating it. The study did not establish that a single word reliably rewrites everyone's memory. Its experimental tasks used short films, specific questions, and particular participant samples. The findings are consistent with reconstructive remembering, while leaving questions about response bias and the underlying mechanism. What they did establish is enough: what a person reports about an experience can depend on information supplied after the experience.
 
+### What happened when other researchers changed the scene?
+
+A useful complication appeared in a 2017 study by Goldschmied and colleagues. Their **conceptual replication** used a hockey collision instead of a car crash. In its first experiment, written descriptions using words such as *contact*, *bump*, and *smash* did not produce corresponding differences in reported skating speed, intention, or outcome. In the second, live commentary sometimes produced effects in a different direction: hearing *contact* led to higher speed estimates than hearing *smash*. [E5] This did not repeat the original driving-film design exactly, so it cannot alone overturn the 1974 result. It does puncture a popular oversimplification—that “smash” always makes a witness see greater speed. Context, timing and what participants think the words mean matter. A genuinely evidence-led account should include such contrary findings, not just the trick that performs best in a video.
+
 ## The witness and the interpreter
 
 Imagine you are not watching a highway collision. Imagine that you are reading a case record from eighteenth-century France. A patient speaks while apparently in an altered state. The operator asks questions, describes symptoms, suggests interpretations, and records the answers. Witnesses and sometimes notaries enter the chain of evidence. What, precisely, has been independently observed?
@@ -106,6 +110,7 @@ A reader deserves the whole scene: what happened, what was asked, who supplied t
 ### Source ledger and boundaries (checked 13 November 2026)
 
 - [E1] Loftus & Palmer, *Reconstruction of automobile destruction* (1974), *Journal of Verbal Learning and Verbal Behavior* 13:585–589, research text [archived scan reference](https://www.sweetstudy.com/files/loftuspalmer1974.pdf). Abstract-level and indexed description cross-checked; reproduced film and participant responses not independently audited.
+- [E5] Goldschmied, Sheptock, Kim & Galily, *Appraising Loftus and Palmer (1974) post-event information versus concurrent commentary in sport* (2017), [PubMed 27643483](https://pubmed.ncbi.nlm.nih.gov/27643483/) (conceptual hockey-collision replication, no effect for written verbs in first experiment; domain and procedure differ).
 - [E2] Loftus, *Planting misinformation in the human mind* (2005), *Learning & Memory* 12:361–366, [DOI 10.1101/lm.94705](https://doi.org/10.1101/lm.94705).
 - [E3] Zahedi, Lynn & Sommer, *How hypnotic suggestions work* (2024), *Consciousness and Cognition*, [PubMed 39032268](https://pubmed.ncbi.nlm.nih.gov/39032268/) (review abstract; mechanisms debated).
 - [E4] Rosendahl, Alldredge & Haddenhorst, *Meta-analytic evidence on efficacy of hypnosis* (2024), [PubMed 38268815](https://pubmed.ncbi.nlm.nih.gov/38268815/) (meta-analyses largely clinical, not seller-product studies).
