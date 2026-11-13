@@ -38,7 +38,7 @@ safePage(B,'B');
 assert(B.replace(filmRE,'')===A,'A/B strict copy parity with film section removed');
 assert((B.match(/<section id="optional-film"/g)||[]).length===1,'optional film once');
 assert(/<svg\b[^>]*role="img"[^>]*aria-labelledby/.test(B),'film poster accessible');
-assert(/<details>[\s\S]*42 seconds/.test(B)===false,'nonmisleading film transcript metadata');
+assert(B.includes('No automatic playback'),'clear nonplayable-film status');
 assert(/<summary>Read the complete film transcript/.test(B),'full transcript available');
 assert(!/<video\b/i.test(B),'no fake playable asset');
 assert((vtt.match(/-->/g)||[]).length===6,'six caption cues');
