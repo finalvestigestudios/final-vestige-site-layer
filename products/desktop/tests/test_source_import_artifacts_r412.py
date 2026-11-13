@@ -88,6 +88,18 @@ class SourceImportArtifactR412(unittest.TestCase):
         self.assertEqual(result["passed"], 12)
         self.assertEqual(result["required"], 12)
         self.assertFalse(result["release_authorized"])
+        # -I alone ignores PYTHONDONTWRITEBYTECODE and generated caches here
+        # before the R412 -B correction.
+        self.assertFalse(list(self.root.rglob("*.pyc")))
+
+    def test_all_twelve_children_use_isolated_no_bytecode_flags(self):
+        with patch.object(gate.subprocess, "run", return_value=subprocess.CompletedProcess(
+                args=[], returncode=0)) as run:
+            result = gate.run_gate(self.root)
+        self.assertEqual(result["passed"], 12)
+        self.assertEqual(run.call_count, 12)
+        for call in run.call_args_list:
+            self.assertEqual(call.args[0][1:3], ["-I", "-B"])
 
     def test_artifact_injected_before_first_spawn_is_rejected(self):
         real = gate.source_digest
