@@ -8,6 +8,9 @@ function packet(slot='418:1',status=404){const x=P0[slot];return {slot,post_id:x
  guest:{page_http_status:200,full_scroll_complete:true,network_capture_complete:true,
   cache_disabled:true,was_cached:false,from_disk_cache:false,from_memory_cache:false,from_service_worker:false,
   current_src:x.src,request_url:x.src,final_response_url:x.src,cdp_request_id:'req-1',
+  resource_type:'Image',response_request_id:'req-1',completion_request_id:'req-1',
+  response_url:x.src,response_http_status:status,response_mime_type:status===200?'image/jpeg':'text/html',
+  loading_finished_encoded_data_length:256,
   response_event_provenance:'CDP_NETWORK_RESPONSE_RECEIVED',
   completion_event_provenance:'CDP_NETWORK_LOADING_FINISHED',final_status:status,
   natural_width:0,natural_height:0,image_decoded:false,
@@ -36,7 +39,7 @@ test('real CDP-like failure evidence recorded but rights pending',()=>{
 test('200 successful decoded image kept, never stage a replacement',()=>{
  const p=packet('418:1',200);Object.assign(p.guest,{natural_width:960,natural_height:540,image_decoded:true});
  assert.equal(adjudicateP0(p,review()).status,'GUEST_IMAGE_LOADED_KEEP_ORIGINAL');});
-test('200 unconfirmed decode fails closed',()=>held((p)=>{p.guest.final_status=200},/INCONSISTENT/));
+test('200 unconfirmed decode fails closed',()=>held((p)=>{p.guest.final_status=p.guest.response_http_status=200;p.guest.response_mime_type='image/jpeg'},/INCONSISTENT/));
 test('200 explicitly recorded decoder error is an observed failure',()=>{
  const p=packet('418:1',200);p.guest.decode_error_recorded=true;
  assert.equal(adjudicateP0(p).visitor_observation,'CDP_200_EXPLICIT_DECODE_FAILURE');});
@@ -54,7 +57,7 @@ test('original source swapped across image slots rejected',()=>held(p=>{p.publis
 test('page URL tampering rejected',()=>held(p=>{p.page_url='https://finalvestige.com/other/'},/MISSING_OR_UNBOUND/));
 test('unverified redirect rejected',()=>held(p=>{p.guest.final_response_url='https://example.org/elsewhere.jpg'},/MISSING_OR_UNBOUND/));
 test('linked completed redirect may be evaluated',()=>{
- const p=packet();p.guest.final_response_url='https://example.org/other.jpg';p.guest.redirect_chain_verified=true;
+ const p=packet();p.guest.final_response_url='https://example.org/other.jpg';p.guest.response_url=p.guest.final_response_url;p.guest.redirect_chain_verified=true;
  p.guest.redirect_chain=[{url:p.guest.request_url,cdp_request_id:'req-1',response_status:302},{url:p.guest.final_response_url,cdp_request_id:'req-1',response_status:404}];
  assert.equal(adjudicateP0(p).status,'GUEST_FAILURE_EVIDENCE_RECORDED_REVIEW_REQUIRED');});
 test('invalid screenshot hash rejected',()=>held(p=>{p.screenshot_sha256='x'.repeat(64)},/MISSING_OR_UNBOUND/));
@@ -123,4 +126,27 @@ test('all six frozen originals still allow coherent synthetic failed-capture tri
  for(const slot of Object.keys(P0)){const a=adjudicateP0(packet(slot));
   assert.equal(a.status,'GUEST_FAILURE_EVIDENCE_RECORDED_REVIEW_REQUIRED');
   assert.equal(a.production_write_allowed,false);}
+});
+
+test('response request ID must match the original image request',()=>held(p=>{p.guest.response_request_id='another-request'},/MISSING_OR_UNBOUND/));
+test('completion request ID must match the original image request',()=>held(p=>{p.guest.completion_request_id='other-request'},/MISSING_OR_UNBOUND/));
+test('document response type cannot masquerade as failed Image',()=>held(p=>{p.guest.resource_type='Document'},/MISSING_OR_UNBOUND/));
+test('final response URL must be linked to actual response event',()=>held(p=>{p.guest.response_url='https://another.example/unrelated.jpg'},/MISSING_OR_UNBOUND/));
+test('reported HTTP status must equal response event HTTP status',()=>held(p=>{p.guest.response_http_status=200},/MISSING_OR_UNBOUND/));
+test('response MIME must not be omitted',()=>held(p=>{delete p.guest.response_mime_type},/MISSING_OR_UNBOUND/));
+test('missing transfer length cannot establish completed request',()=>held(p=>{delete p.guest.loading_finished_encoded_data_length},/MISSING_OR_UNBOUND/));
+test('negative transfer length is invalid',()=>held(p=>{p.guest.loading_finished_encoded_data_length=-1},/MISSING_OR_UNBOUND/));
+test('malformed MIME must fail closed',()=>held(p=>{p.guest.response_mime_type='text/html\nInjected: x'},/MISSING_OR_UNBOUND/));
+test('404 HTML error response remains valid failed Image evidence when request-bound',()=>{
+ const a=adjudicateP0(packet('418:1',404));assert.equal(a.status,'GUEST_FAILURE_EVIDENCE_RECORDED_REVIEW_REQUIRED');
+});
+test('200 text/html cannot count as successful image pixels even if flagged decoded',()=>{
+ const p=packet('418:1',200);p.guest.response_mime_type='text/html';
+ Object.assign(p.guest,{natural_width:960,natural_height:540,image_decoded:true});
+ assert.equal(adjudicateP0(p).status,'HOLD');
+});
+test('200 decoded Image requires positive completed-transfer bytes',()=>{
+ const p=packet('418:1',200);p.guest.loading_finished_encoded_data_length=0;
+ Object.assign(p.guest,{natural_width:960,natural_height:540,image_decoded:true});
+ assert.equal(adjudicateP0(p).status,'HOLD');
 });
