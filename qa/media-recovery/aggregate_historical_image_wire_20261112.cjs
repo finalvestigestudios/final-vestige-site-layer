@@ -5,6 +5,7 @@
  * A 61-post sample is NOT the currently expanded 66-post site.
  */
 const {compareColdPairVisualParity}=require('./compare_cold_pair_visual_parity_20261111.cjs');
+const {bindExactHistoricalAudit}=require('./bind_exact_historical_audit_20261112.cjs');
 const AUDIT_BLOB='a9706c72ad6f17a68113aa87fc063f70d0ca0c34';
 const AUDIT_SCHEMA='fv-media-complete-historical-61-355-live-src-alt-20261112-v1';
 const hold=(reason,slot=null)=>({status:'HOLD',reason,slot,
@@ -16,8 +17,11 @@ const hold=(reason,slot=null)=>({status:'HOLD',reason,slot,
  production_change_allowed:false});
 const listEqual=(a,b)=>Array.isArray(a)&&Array.isArray(b)&&a.length===b.length&&
  a.every((v,i)=>v===b[i]);
-function aggregateHistoricalImageWire(audit,pairs,blobSha){
- if(blobSha!==AUDIT_BLOB||audit?.schema!==AUDIT_SCHEMA||
+function aggregateHistoricalImageWire(auditBytes,pairs,blobSha){
+ const bound=bindExactHistoricalAudit(auditBytes,blobSha,AUDIT_BLOB);
+ if(!bound.ok)return hold('FROZEN_COHORT_SOURCE_UNVERIFIED:'+bound.reason);
+ const audit=bound.audit;
+ if(audit?.schema!==AUDIT_SCHEMA||
     !Array.isArray(audit.rows)||audit.rows.length!==355||
     audit.counts?.frozen_posts!==61||
     audit.counts?.verified_image_positions!==355||
@@ -28,9 +32,9 @@ function aggregateHistoricalImageWire(audit,pairs,blobSha){
    return hold('FROZEN_COHORT_SOURCE_UNVERIFIED');
  const byPost=new Map(),slots=new Set();
  for(const row of audit.rows){
-   if(!Number.isSafeInteger(row.post_id)||row.post_id<=0||
-      row.slot!==row.post_id+':'+row.slot.split(':')[1]||
-      !/^\d+:\d+$/.test(row.slot)||slots.has(row.slot)||
+   if(!row||typeof row!=='object'||!Number.isSafeInteger(row.post_id)||row.post_id<=0||
+      typeof row.slot!=='string'||!/^\d+:\d+$/.test(row.slot)||
+      row.slot.split(':')[0]!==String(row.post_id)||slots.has(row.slot)||
       row.source_equal!==true||row.alt_equal!==true||
       typeof row.source_url!=='string'||!row.source_url.startsWith('https://')||
       typeof row.alt!=='string'||
