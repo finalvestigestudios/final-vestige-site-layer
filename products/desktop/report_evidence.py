@@ -23,6 +23,7 @@ def prepare_report_path(report: str | Path, candidate_dir: str | Path) -> Path:
     Called *before* smoke runs; a bad report location must not execute a binary.
     A subsequent exclusive hardlink is the authoritative no-overwrite check.
     """
+    invalid_path = False
     try:
         root = Path(candidate_dir).resolve(strict=True)
         supplied = Path(report)
@@ -41,7 +42,9 @@ def prepare_report_path(report: str | Path, candidate_dir: str | Path) -> Path:
     except ReportEvidenceError:
         raise
     except (OSError, RuntimeError, ValueError):
-        raise ReportEvidenceError("Invalid evidence destination") from None
+        invalid_path = True
+    if invalid_path:
+        raise ReportEvidenceError("Invalid evidence destination")
 
 
 def _write_verified_stage(fd: int, payload: bytes) -> None:
@@ -51,18 +54,23 @@ def _write_verified_stage(fd: int, payload: bytes) -> None:
     never be published as a successful release-gate report. Re-read through
     the same descriptor after fsync; do not trust the writer's return alone.
     """
+    adoption_failed = False
     try:
         stream = os.fdopen(fd, "w+b")
     except BaseException as exc:
-        # fdopen did not assume ownership; a failed adoption must not leak the
-        # private staging handle, including on deliberate system interrupts.
+        # fdopen did not assume ownership; close the private raw descriptor.
         try:
             os.close(fd)
         except OSError:
             pass
         if isinstance(exc, Exception):
-            raise ReportEvidenceError("Could not stage verification evidence safely") from None
-        raise
+            adoption_failed = True
+        else:
+            raise
+    if adoption_failed:
+        raise ReportEvidenceError("Could not stage verification evidence safely")
+
+    stage_failed = False
     try:
         with stream:
             count = stream.write(payload)
@@ -77,14 +85,15 @@ def _write_verified_stage(fd: int, payload: bytes) -> None:
     except ReportEvidenceError:
         raise
     except Exception:
-        raise ReportEvidenceError("Could not stage verification evidence safely") from None
+        stage_failed = True
     finally:
-        # with.__enter__ failure does not invoke __exit__; always discharge
-        # ownership even when a wrapper fails during context entry.
+        # A failed __enter__ does not invoke __exit__; explicitly discharge ownership.
         try:
             stream.close()
         except Exception:
             pass
+    if stage_failed:
+        raise ReportEvidenceError("Could not stage verification evidence safely")
 
 
 def publish_report(destination: str | Path, evidence: dict) -> None:
@@ -101,23 +110,25 @@ def publish_report(destination: str | Path, evidence: dict) -> None:
     """
     destination = Path(destination)
     parent = destination.parent
+    publish_failed = False
+    witness_failed = False
     try:
         payload = (json.dumps(evidence, sort_keys=True, indent=2,
                               ensure_ascii=True, allow_nan=False) + "\n").encode("utf-8")
         fd, name = tempfile.mkstemp(prefix=".fvs-candidate-report-", suffix=".tmp", dir=parent)
         temporary = Path(name)
-        # R339: no automatic pathname deletion. A concurrent local actor can
-        # swap a path between a metadata check and unlink; retain the private
-        # stage for explicit post-review cleanup in every outcome.
+        # Never automatically delete a potentially swapped staging path.
         _write_verified_stage(fd, payload)
-        # Never use rename/replace: those can overwrite previous verification evidence.
         os.link(temporary, destination)
-        # An exclusive link can point at the wrong inode or modified bytes if
-        # the staging pathname changed after initial descriptor readback.
-        # Never treat that as successful audit evidence.
         try:
             verify_published_link(temporary, destination, payload)
         except LinkWitnessError:
-            raise ReportEvidenceError("Published verification evidence failed custody check") from None
+            witness_failed = True
     except (OSError, TypeError, ValueError, OverflowError, RuntimeError):
-        raise ReportEvidenceError("Could not exclusively publish complete verification evidence") from None
+        publish_failed = True
+    # Publish errors must be constructed only after untrusted exception handlers
+    # unwind: ``from None`` masks tracebacks but retains private __context__.
+    if witness_failed:
+        raise ReportEvidenceError("Published verification evidence failed custody check")
+    if publish_failed:
+        raise ReportEvidenceError("Could not exclusively publish complete verification evidence")
