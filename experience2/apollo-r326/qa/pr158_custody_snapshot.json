@@ -1,0 +1,14 @@
+{
+  "researchDeskPR": 158,
+  "headSHA": "250d7f05a4de037e73826dcf0cfaef0ec4c29383",
+  "ledgerBlobSHA": "403d128c57b9bc82dac7c619651689070edef86c",
+  "capturedFrom": "GitHub connector, exact Research Desk staging ledger.html, 2026-11-12 (read-only)",
+  "cards": [
+    {"id":"fv-ex2-ledger-apollo1-record-01","kind":"DOCUMENTED CONTEXT","urls":["https://www.nasa.gov/image-detail/apollo-1-crew-honored/","https://www.nasa.gov/history/55-years-ago-tragedy-on-the-launch-pad/"]},
+    {"id":"fv-ex2-ledger-apollo1-record-02","kind":"PRIMARY REVIEW BOARD RECORD","urls":["https://www.nasa.gov/image-detail/amf-s67-15717/","https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"]},
+    {"id":"fv-ex2-ledger-apollo1-record-03","kind":"INSTRUMENT CHRONOLOGY","urls":["https://www.nasa.gov/image-detail/amf-s66-58038/","https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"]},
+    {"id":"fv-ex2-ledger-apollo1-record-04","kind":"HARDWARE AND DESIGN FINDING","urls":["https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/","https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"]},
+    {"id":"fv-ex2-ledger-apollo1-record-05","kind":"EVIDENCE BOUNDARY","urls":["https://www.nasa.gov/image-detail/amf-s67-21294/","https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"]},
+    {"id":"fv-ex2-ledger-apollo1-record-06","kind":"ENGINEERING RESPONSE","urls":["https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/","https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"]}
+  ]
+}
