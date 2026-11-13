@@ -72,7 +72,7 @@ def join_documents(documents: list[dict], catalog: dict, *, complete: bool = Tru
         errors.extend(key + ':' + e for e in record.get('errors', []))
         meta = d.get('meta') if isinstance(d.get('meta'), dict) else {}
         uses = meta.get('source_use') if isinstance(meta.get('source_use'), dict) else {}
-        for sid in sorted(uses):
+        for sid in sorted(uses, key=str):
             if not isinstance(sid, str):
                 errors.append(key + ':INVALID_SOURCE_USE_ID')
                 continue
@@ -117,6 +117,8 @@ def join_documents(documents: list[dict], catalog: dict, *, complete: bool = Tru
 def read_documents(prep: Path) -> tuple[list[dict], list[str]]:
     docs, errors = [], []
     content = prep / 'content'
+    if content.is_symlink():
+        return [], ['SYMLINKED_CANONICAL_CONTENT_ROOT']
     for kind, count in (('articles', 35), ('tools', 6)):
         folder = content / kind
         if folder.is_symlink() or not folder.is_dir():
