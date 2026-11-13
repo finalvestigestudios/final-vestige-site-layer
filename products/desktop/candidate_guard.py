@@ -11,6 +11,7 @@ import os
 import stat
 from pathlib import Path
 from candidate_reparse_r390 import unsafe_windows_reparse
+from candidate_path_ancestry_r391 import UnsafeCandidateAncestry, snapshot_candidate_parents
 
 MAX_EXE_BYTES = 512 * 1024 * 1024
 MAX_CHECKSUM_BYTES = 4096
@@ -41,6 +42,18 @@ def _same_path_descriptor_signature(path_info: os.stat_result,
     path_sig = _signature(path_info)
     descriptor_sig = _signature(descriptor_info)
     return path_sig[:-1] == descriptor_sig[:-1] if windows else path_sig == descriptor_sig
+
+
+def _parent_snapshot(path: Path) -> tuple[tuple[object, ...], ...]:
+    """Reject symlink/junction ancestors and redact failed metadata lookups."""
+    unsafe = False
+    try:
+        snapshot = snapshot_candidate_parents(path)
+    except UnsafeCandidateAncestry:
+        unsafe = True
+    if unsafe:
+        raise CandidateGuardError("Candidate parent directory is unsafe")
+    return snapshot
 
 
 def _ordinary(path: Path, maximum: int) -> os.stat_result:
@@ -98,6 +111,7 @@ def _inspect(path: str | Path, maximum: int, *, return_bytes: bool):
     that remain on disk, but cannot guarantee protection against every race.
     """
     path = Path(path)
+    parents_before = _parent_snapshot(path)
     before = _ordinary(path, maximum)
     flags = (os.O_RDONLY | getattr(os, "O_BINARY", 0)
              | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0))
@@ -157,7 +171,8 @@ def _inspect(path: str | Path, maximum: int, *, return_bytes: bool):
         raise CandidateGuardError("Unable to read candidate payload safely")
     after_path = _ordinary(path, maximum)
     if (_signature(after_path) != _signature(before)
-            or not _same_path_descriptor_signature(after_path, opened)):
+            or not _same_path_descriptor_signature(after_path, opened)
+            or _parent_snapshot(path) != parents_before):
         raise CandidateGuardError("Candidate path changed during reading")
     if return_bytes:
         return b"".join(chunks)
@@ -182,6 +197,7 @@ def check_candidate_directory(folder: str | Path, expected_exes) -> None:
     belong OUTSIDE this seven-file staging directory; no cleanup is attempted.
     """
     root = Path(folder)
+    parents_before = _parent_snapshot(root)
     directory_failed = False
     try:
         info = root.lstat()
@@ -199,3 +215,15 @@ def check_candidate_directory(folder: str | Path, expected_exes) -> None:
         raise CandidateGuardError("Candidate directory has missing or unapproved payloads")
     for path in members:
         _ordinary(path, MAX_CHECKSUM_BYTES if path.name == "SHA256SUMS.txt" else MAX_EXE_BYTES)
+    directory_changed = False
+    try:
+        final = root.lstat()
+        if (unsafe_windows_reparse(final) or not stat.S_ISDIR(final.st_mode)
+                or _signature(final) != _signature(info)
+                or final.st_mode != info.st_mode or final.st_nlink != info.st_nlink
+                or _parent_snapshot(root) != parents_before):
+            directory_changed = True
+    except OSError:
+        directory_changed = True
+    if directory_changed:
+        raise CandidateGuardError("Candidate directory changed during verification")
