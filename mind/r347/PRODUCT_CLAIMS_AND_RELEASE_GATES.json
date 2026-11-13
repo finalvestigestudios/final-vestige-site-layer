@@ -1,0 +1,403 @@
+{
+  "version": "r347-20261113",
+  "publication_state": "UNPUBLISHED",
+  "reviewed_date": "2026-11-13",
+  "scope": "Official seller catalog and product pages, independent academic abstracts or open studies, FTC guidance, existing first-party public pages. NOT private account/Payhip seller authenticated.",
+  "sources": {
+    "inspire3": "https://inspire3.com/",
+    "zen12": "https://zen12.com/",
+    "gift": "https://zen12.com/gift",
+    "hypnosis": "https://hypnosislive.com/mental-skills/total-focus",
+    "shots": "https://brainwaveshots.com/focus-shot",
+    "raz02": "https://pubmed.ncbi.nlm.nih.gov/12470132/",
+    "raz06": "https://pubmed.ncbi.nlm.nih.gov/16466414/",
+    "review24": "https://doi.org/10.1080/00207144.2024.2356856",
+    "beats23": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "focus": "https://finalvestige.com/focus/",
+    "puy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "payhip": "https://help.payhip.com/article/59-adding-a-digital-product"
+  },
+  "claims": [
+    {
+      "id": "P01",
+      "statement": "Zen12 Premium: 12 levels, 48 MP3s",
+      "classification": "seller-format",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "editorial_action": "ALLOW seller-attributed; not inspected files"
+    },
+    {
+      "id": "P02",
+      "statement": "Zen12 Beginner: first 6 levels, 24 MP3s",
+      "classification": "seller-format",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "editorial_action": "ALLOW seller-attributed"
+    },
+    {
+      "id": "P03",
+      "statement": "Zen12 Advanced: final 6 levels, 24 MP3s",
+      "classification": "seller-format",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "editorial_action": "ALLOW seller-attributed"
+    },
+    {
+      "id": "P04",
+      "statement": "Zen12 four listening styles per level",
+      "classification": "seller-format",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "editorial_action": "ALLOW seller-attributed"
+    },
+    {
+      "id": "P05",
+      "statement": "Zen12 advertises a one-year money-back guarantee",
+      "classification": "seller-policy",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "editorial_action": "QUALIFY; checkout and refund not independently verified"
+    },
+    {
+      "id": "P06",
+      "statement": "Zen12 promotional price equals buyer checkout total",
+      "classification": "unsupported-commerce",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "editorial_action": "OMIT; live checkout not authenticated"
+    },
+    {
+      "id": "P07",
+      "statement": "Zen12 twelve minutes equals one hour of advanced meditation benefits",
+      "classification": "unsupported-efficacy",
+      "sources": [
+        "https://zen12.com/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/"
+      ],
+      "editorial_action": "OMIT; seller representation not product-specific substantiation"
+    },
+    {
+      "id": "P08",
+      "statement": "Zen12 automatically improves health, concentration or stress",
+      "classification": "unsupported-health",
+      "sources": [
+        "https://zen12.com/",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "editorial_action": "OMIT; no verified branded trial"
+    },
+    {
+      "id": "P09",
+      "statement": "Zen12 gift form opts recipient into merchant newsletter",
+      "classification": "seller-consent",
+      "sources": [
+        "https://zen12.com/gift"
+      ],
+      "editorial_action": "DISCLOSE separate publisher; do not reuse FV list"
+    },
+    {
+      "id": "P10",
+      "statement": "Inspire3 lists Zen12 Hypnosis Live Brainwave Shots",
+      "classification": "seller-catalog",
+      "sources": [
+        "https://inspire3.com/"
+      ],
+      "editorial_action": "ALLOW; catalog listing does not convey FV partner permission"
+    },
+    {
+      "id": "P11",
+      "statement": "Hypnosis Live Total Focus 33-minute 47MB recording",
+      "classification": "seller-format",
+      "sources": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "editorial_action": "ALLOW seller-attributed"
+    },
+    {
+      "id": "P12",
+      "statement": "Total Focus guarantees productivity or limitless focus",
+      "classification": "unsupported-efficacy",
+      "sources": [
+        "https://hypnosislive.com/mental-skills/total-focus",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "editorial_action": "OMIT"
+    },
+    {
+      "id": "P13",
+      "statement": "Total Focus seller says fourteen-day refund",
+      "classification": "seller-policy",
+      "sources": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "editorial_action": "QUALIFY; recheck checkout and terms"
+    },
+    {
+      "id": "P14",
+      "statement": "Focus Shot seller offers 15- and 30-minute versions",
+      "classification": "seller-format",
+      "sources": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "editorial_action": "ALLOW seller-attributed"
+    },
+    {
+      "id": "P15",
+      "statement": "Focus Shot delivers hours of extraordinary concentration",
+      "classification": "unsupported-efficacy",
+      "sources": [
+        "https://brainwaveshots.com/focus-shot",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/"
+      ],
+      "editorial_action": "OMIT"
+    },
+    {
+      "id": "S01",
+      "statement": "Raz 2002 selected 16 highly suggestible and 16 comparison participants",
+      "classification": "study-abstract",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/12470132/"
+      ],
+      "editorial_action": "ALLOW limited to reported Stroop outcome"
+    },
+    {
+      "id": "S02",
+      "statement": "Raz 2006 found suggestion effect with/without hypnosis induction",
+      "classification": "study-abstract",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/16466414/"
+      ],
+      "editorial_action": "ALLOW; 45% variance not 45% improvement"
+    },
+    {
+      "id": "S03",
+      "statement": "Raturi 2024 preregistered review 19 studies, 14 Stroop interference meta-analysis",
+      "classification": "review-abstract-only",
+      "sources": [
+        "https://doi.org/10.1080/00207144.2024.2356856"
+      ],
+      "editorial_action": "ALLOW scope only; no invented effect size"
+    },
+    {
+      "id": "S04",
+      "statement": "Ingendoh 2023 EEG review: 5 supportive 8 contradictory 1 mixed",
+      "classification": "systematic-review",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/"
+      ],
+      "editorial_action": "ALLOW with heterogeneous-protocol caveat"
+    },
+    {
+      "id": "C01",
+      "statement": "FTC requires clear conspicuous material connection disclosure",
+      "classification": "regulatory-guidance",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "editorial_action": "REQUIRE near commercial recommendation"
+    },
+    {
+      "id": "C02",
+      "statement": "Health claims need adequate independent substantiation",
+      "classification": "regulatory-guidance",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "editorial_action": "REQUIRE or omit product claim"
+    },
+    {
+      "id": "C03",
+      "statement": "FV-specific Inspire3 acceptance channel rights and earning URL",
+      "classification": "NOT-VERIFIED",
+      "sources": [
+        "https://inspire3.com/"
+      ],
+      "editorial_action": "HOLD; no authenticated private partner agreement"
+    },
+    {
+      "id": "C04",
+      "statement": "FV-owned payable Mind product with license, delivery and refund",
+      "classification": "NOT-VERIFIED",
+      "sources": [
+        "https://help.payhip.com/article/59-adding-a-digital-product"
+      ],
+      "editorial_action": "HOLD; no seller authenticated SKU"
+    },
+    {
+      "id": "C05",
+      "statement": "Three published Grok media IDs with valid landing/UTM route",
+      "classification": "NOT-VERIFIED",
+      "sources": [
+        "https://finalvestige.com/2026/11/02/change-blindness/",
+        "https://finalvestige.com/2026/11/02/mesmerism/"
+      ],
+      "editorial_action": "HOLD real identifiers; no synthetic media mapping"
+    },
+    {
+      "id": "C06",
+      "statement": "Existing FV Focus is free 52-page Fieldbook through Dispatch",
+      "classification": "existing-first-party-resource",
+      "sources": [
+        "https://finalvestige.com/focus/"
+      ],
+      "editorial_action": "ALLOW existing free URL; subscription counts not verified"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "affiliate_account_approved",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "partner_terms_authenticated",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "social_channel_allowed",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "email_channel_allowed",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "issued_earning_url_verified",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "advertising_creatives_licensed",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "merchant_promo_privacy_checked",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "checkout_price_tax_currency_verified",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "refund_terms_checkout_verified",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "product_claims_independently_substantiated",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "editorial_vs_commerce_separated",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "disclosure_in_render_verified",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "actual_purchase_cta_authorized",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "source_article_published",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "creator_asset_id_verified",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "landing_utm_campaign_verified",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "qualified_human_denominator_available",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "first_party_consent_audited",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "confirmed_jetpack_signup_join_available",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "affiliate_settlement_report_verified",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "owned_product_rights_verified",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "owned_product_checkout_delivery_verified",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "refund_fee_reconciliation_verified",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "cohort_7_30d_audited",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "independent_browser_wcag_qa",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "wordpress_sanitizer_qa",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "hosted_video_performance_qa",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    },
+    {
+      "id": "founder_release_approved",
+      "status": "CLOSED",
+      "note": "This sprint has not independently verified and released this requirement; review-only evidence is not deployment."
+    }
+  ],
+  "earning_url": null,
+  "merchant_verified_paid_order": null,
+  "merchant_verified_affiliate_commission": null,
+  "qualified_human_sessions": null,
+  "net_revenue_per_1000": null
+}
