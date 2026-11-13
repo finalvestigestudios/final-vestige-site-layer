@@ -1,11 +1,11 @@
 'use strict';
 // Dispatch R341 — PURE / NO NETWORK / NO SEND / NO PII
 const allowed = new Set(['qualified_session','signup_attempt','confirmed_signup','fieldbook_download','email_cta_click','affiliate_settlement','direct_order_settlement']);
-const sourceNames = new Set(['youtube','tiktok','instagram','facebook','pinterest','x','bluesky','email','direct']);
+const sourceNames = new Set(['youtube','tiktok','instagram','facebook','pinterest','x','bluesky','email']);
 function validRef(s){return typeof s==='string'&&/^[a-zA-Z0-9][a-zA-Z0-9:_-]{3,99}$/.test(s);}
 function date(s){const ms=Date.parse(s||''); if(!Number.isFinite(ms)||!/^\d{4}-\d{2}-\d{2}T/.test(s))throw Error('INVALID_DATE');return ms;}
 function noPrivateData(value){
-  const piiKey=/^(email|address|name|phone|ip|user_agent|subscriber_email|recipient|cookie|raw_url|password|token)$/i;
+  const piiKey=/(email|phone|address|ip_address|user_agent|password|token|cookie|first_name|last_name|full_name|recipient|subscriber)/i;
   const scan=(o)=>{
     if(typeof o==='string' && /[\w.+-]+@[\w.-]+\.[a-zA-Z]{2,}/.test(o))throw Error('PII_VALUE');
     if(!o||typeof o!=='object')return;
@@ -23,7 +23,7 @@ function compile(events,attestation,asOf){
     if(seen.has(e.event_id))throw Error('DUPLICATE_EVENT_ID');seen.add(e.event_id);
     const t=date(e.at);if(t>now)throw Error('FUTURE_EVENT');
     if(e.type==='qualified_session'){
-      if(!validRef(e.session_ref)||!validRef(e.asset_id)||!sourceNames.has(e.utm_source)||e.utm_medium!=='organic_social'&&e.utm_source!=='email'||e.verified_human!==true||!validRef(e.evidence_ref))throw Error('UNVERIFIED_SESSION');
+      if(!validRef(e.session_ref)||!validRef(e.asset_id)||!sourceNames.has(e.utm_source)||!((e.utm_source==='email'&&e.utm_medium==='email')||(e.utm_source!=='email'&&e.utm_medium==='organic_social'))||e.verified_human!==true||!validRef(e.evidence_ref))throw Error('UNVERIFIED_SESSION');
       if(sessions.has(e.session_ref))throw Error('DUPLICATE_SESSION');sessions.set(e.session_ref,{...e,t});
     }else if(e.type==='confirmed_signup'){
       if(e.provider!=='jetpack'||e.status!=='active'||e.consent_scope!=='dispatch'||!validRef(e.provider_ref)||!validRef(e.evidence_ref)||!validRef(e.confirmation_event_ref))throw Error('UNVERIFIED_SIGNUP');
