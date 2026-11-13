@@ -1,0 +1,449 @@
+{
+  "run": "mind-r351",
+  "checked_on": "2026-11-13",
+  "status": "unpublished review / HARD HOLD",
+  "source_urls": {
+    "FV-PUYS": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "FV-FOCUS": "https://finalvestige.com/focus/",
+    "FV-CHANGE": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "FV-MESMER": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "IN-CATALOG": "https://inspire3.com/",
+    "ZEN-OFFER": "https://zen12.com/",
+    "ZEN-GIFT": "https://zen12.com/gift",
+    "HYP-OFFER": "https://hypnosislive.com/mental-skills/total-focus",
+    "BWS-OFFER": "https://brainwaveshots.com/focus-shot",
+    "IN-AFF": "https://affiliates.inspire3.com/",
+    "FTC-ENDORSE": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "FTC-HEALTH": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "LOFTUS-1974": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+    "LOFTUS-2005": "https://doi.org/10.1101/lm.94705",
+    "HYPN-THEORY": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+    "HYPN-REVIEW": "https://pubmed.ncbi.nlm.nih.gov/38268815/"
+  },
+  "claim_count": 30,
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "1974 traffic-film experiment varied verb in speed question",
+      "type": "independent-study",
+      "source_id": "LOFTUS-1974",
+      "disposition": "supported-experimental",
+      "limitation": "May describe the tested manipulation, not mass mind control."
+    },
+    {
+      "id": "C02",
+      "claim": "The film shown to the tested group contained no broken glass",
+      "type": "independent-study",
+      "source_id": "LOFTUS-1974",
+      "disposition": "supported-experimental",
+      "limitation": "No film reproduction or full protocol replication performed."
+    },
+    {
+      "id": "C03",
+      "claim": "In study two smashed group more likely to report glass a week later",
+      "type": "independent-study",
+      "source_id": "LOFTUS-1974",
+      "disposition": "supported-experimental",
+      "limitation": "Do not extrapolate to all memory, hypnosis or brainwashing."
+    },
+    {
+      "id": "C04",
+      "claim": "Misinformation after events can affect subsequent memory reports",
+      "type": "research-review",
+      "source_id": "LOFTUS-2005",
+      "disposition": "supported-general",
+      "limitation": "Outcome and susceptibility depend on circumstances."
+    },
+    {
+      "id": "C05",
+      "claim": "Hypnotic suggestion mechanisms have no scientific consensus",
+      "type": "research-review",
+      "source_id": "HYPN-THEORY",
+      "disposition": "supported-review",
+      "limitation": "Independent theory review, not a seller product study."
+    },
+    {
+      "id": "C06",
+      "claim": "A hypnosis review reviewed 49 meta-analyses",
+      "type": "research-review",
+      "source_id": "HYPN-REVIEW",
+      "disposition": "supported-review",
+      "limitation": "Most evidence clinical and uneven methodological quality."
+    },
+    {
+      "id": "C07",
+      "claim": "Only nine included meta-analyses ranked high methodological quality",
+      "type": "research-review",
+      "source_id": "HYPN-REVIEW",
+      "disposition": "supported-review",
+      "limitation": "Do not apply positive clinical outcomes to retail focus recordings."
+    },
+    {
+      "id": "C08",
+      "claim": "Puységur archive includes operator pressure and consent conflicts",
+      "type": "historical-record",
+      "source_id": "FV-PUYS",
+      "disposition": "supported-archive",
+      "limitation": "Source-content finding, not efficacy proof."
+    },
+    {
+      "id": "C09",
+      "claim": "FV currently supplies one free Focus Fieldbook",
+      "type": "first-party-live",
+      "source_id": "FV-FOCUS",
+      "disposition": "confirmed-live-page",
+      "limitation": "Provider-confirmed subscriber counts not verified this run."
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 Beginner offers first six levels / 24 MP3s",
+      "type": "seller-specification",
+      "source_id": "ZEN-OFFER",
+      "disposition": "seller-described-only",
+      "limitation": "Can describe contents; verify checkout and fulfillment."
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 Premium offers twelve levels / 48 MP3s",
+      "type": "seller-specification",
+      "source_id": "ZEN-OFFER",
+      "disposition": "seller-described-only",
+      "limitation": "Can describe contents; not proof of efficacy."
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 Advanced offers final six levels / 24 MP3s",
+      "type": "seller-specification",
+      "source_id": "ZEN-OFFER",
+      "disposition": "seller-described-only",
+      "limitation": "Can describe contents; not equivalence to Premium."
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 page displays prices of 67.77 / 87.99 / 67.77 USD",
+      "type": "seller-price",
+      "source_id": "ZEN-OFFER",
+      "disposition": "dated-seller-snapshot",
+      "limitation": "13 Nov 2026 display only; final checkout unverified."
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 advertises one-year money-back guarantee",
+      "type": "seller-policy",
+      "source_id": "ZEN-OFFER",
+      "disposition": "seller-described-only",
+      "limitation": "Conditions, processing and actual refunds untested."
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 says one 12-minute session equals hour meditation benefits",
+      "type": "seller-efficacy",
+      "source_id": "ZEN-OFFER",
+      "disposition": "unsubstantiated-product-claim",
+      "limitation": "Do not adopt or imply as proven."
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 says audio can increase concentration and benefit health",
+      "type": "seller-efficacy",
+      "source_id": "ZEN-OFFER",
+      "disposition": "unsubstantiated-product-claim",
+      "limitation": "No product-specific adequate independent evidence established."
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 free audio enrolls visitor in merchant newsletter",
+      "type": "merchant-consent",
+      "source_id": "ZEN-GIFT",
+      "disposition": "confirmed-seller-page",
+      "limitation": "Do not merge merchant and FV mailing lists or hide opt-in."
+    },
+    {
+      "id": "C18",
+      "claim": "Hypnosis Live Total Focus sold as 33-minute / 47 MB recording",
+      "type": "seller-specification",
+      "source_id": "HYP-OFFER",
+      "disposition": "seller-described-only",
+      "limitation": "Written and recorded by J.A. Amos, seller page."
+    },
+    {
+      "id": "C19",
+      "claim": "Total Focus page displays 24.44 USD single price",
+      "type": "seller-price",
+      "source_id": "HYP-OFFER",
+      "disposition": "dated-seller-snapshot",
+      "limitation": "13 Nov 2026 seller display, not authenticated checkout."
+    },
+    {
+      "id": "C20",
+      "claim": "Total Focus can reprogram brain into 100% focus",
+      "type": "seller-efficacy",
+      "source_id": "HYP-OFFER",
+      "disposition": "unsubstantiated-product-claim",
+      "limitation": "Exclude from positive FV sales copy."
+    },
+    {
+      "id": "C21",
+      "claim": "Focus Shot offers 15-minute and 30-minute tracks",
+      "type": "seller-specification",
+      "source_id": "BWS-OFFER",
+      "disposition": "seller-described-only",
+      "limitation": "Includes sound-only variations per seller; verify delivery."
+    },
+    {
+      "id": "C22",
+      "claim": "Focus Shot page displays 17.99 USD",
+      "type": "seller-price",
+      "source_id": "BWS-OFFER",
+      "disposition": "dated-seller-snapshot",
+      "limitation": "13 Nov 2026 seller display, final checkout unverified."
+    },
+    {
+      "id": "C23",
+      "claim": "Focus Shot creates four hours or more of focus",
+      "type": "seller-efficacy",
+      "source_id": "BWS-OFFER",
+      "disposition": "unsubstantiated-product-claim",
+      "limitation": "Do not repeat as independent finding."
+    },
+    {
+      "id": "C24",
+      "claim": "Public Inspire3 portal offers affiliate signup",
+      "type": "merchant-program-public",
+      "source_id": "IN-AFF",
+      "disposition": "public-page-only",
+      "limitation": "Not publisher acceptance, earning URL or allowed channel terms."
+    },
+    {
+      "id": "C25",
+      "claim": "FV accepted as approved publisher for all these products",
+      "type": "partner-eligibility",
+      "source_id": "IN-AFF",
+      "disposition": "unknown-required-auth",
+      "limitation": "Public affiliate marketing copy does not prove this."
+    },
+    {
+      "id": "C26",
+      "claim": "FVs Payhip Mind SKU rights, checkout, fulfillment, refunds verified",
+      "type": "owned-offer",
+      "source_id": "FV-FOCUS",
+      "disposition": "unknown-required-auth",
+      "limitation": "Free Fieldbook is not a paid SKU. No private Payhip audit."
+    },
+    {
+      "id": "C27",
+      "claim": "Affiliate financial connection needs clear near-link disclosure",
+      "type": "policy",
+      "source_id": "FTC-ENDORSE",
+      "disposition": "policy-supported",
+      "limitation": "Proposed exact language adjacent to disabled CTA."
+    },
+    {
+      "id": "C28",
+      "claim": "Health performance claims require relevant substantiation",
+      "type": "policy",
+      "source_id": "FTC-HEALTH",
+      "disposition": "policy-supported",
+      "limitation": "No implied medical guarantees or general-study laundering."
+    },
+    {
+      "id": "C29",
+      "claim": "Traffic clicks are equivalent to independently paid commissions",
+      "type": "analytics",
+      "source_id": "IN-AFF",
+      "disposition": "false-no-inference",
+      "limitation": "Only merchant-ledger paid events qualify."
+    },
+    {
+      "id": "C30",
+      "claim": "A text/video A/B can establish lifted conversion before authentic buyer data",
+      "type": "experiment",
+      "source_id": "FTC-ENDORSE",
+      "disposition": "hypothesis-only",
+      "limitation": "No conversion effect established; require randomized consent-safe evidence."
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "gate": "affiliate FV identity and approval",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G02",
+      "gate": "exact Zen12 product authorization",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G03",
+      "gate": "exact Hypnosis Live product authorization",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G04",
+      "gate": "exact Brainwave Shots authorization",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G05",
+      "gate": "channel rights social",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G06",
+      "gate": "channel rights website",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G07",
+      "gate": "channel rights Jetpack email",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G08",
+      "gate": "creative/swipe usage rights",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G09",
+      "gate": "issued referral URL",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G10",
+      "gate": "valid attribution window",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G11",
+      "gate": "cookie/consent requirements",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G12",
+      "gate": "current merchant billing terms",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G13",
+      "gate": "final checked total price and currency",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G14",
+      "gate": "no unexpected subscriptions",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G15",
+      "gate": "live cancellation policy",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G16",
+      "gate": "merchant refund procedure",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G17",
+      "gate": "product-level independent efficacy review",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G18",
+      "gate": "on-page plain-language near-CTA FTC disclosure",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G19",
+      "gate": "medical risk review",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G20",
+      "gate": "A/B accessibility keyboard",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G21",
+      "gate": "A/B captioned playable original film",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G22",
+      "gate": "42s media byte/perf budget",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G23",
+      "gate": "no-JS and reduced-motion browser proof",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G24",
+      "gate": "mobile widths 360/390/768/1440",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G25",
+      "gate": "WordPress sanitize/source QA",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G26",
+      "gate": "merchant-specific checkout QA",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G27",
+      "gate": "owned FV Payhip SKU rights and delivery",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G28",
+      "gate": "qualified-human session provenance",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G29",
+      "gate": "paid sale or approved affiliate settlement feed",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    },
+    {
+      "id": "G30",
+      "gate": "founder commercial release authorization",
+      "status": "HOLD",
+      "reason": "Unverified in this sprint; cannot activate commerce."
+    }
+  ],
+  "release_rule": "All relevant authorization/consumer disclosures/merchant custody and release approvals must be verified before any earning URL is enabled. Do not treat source tests as real merchant/browser QA."
+}
