@@ -96,7 +96,7 @@ check('Conversion metric not fabricated',()=>{
  assert.ok(matrix.measurement_contract.events.includes('merchant_verified_paid_order'));
 });
 check('Price and refund descriptions explicitly qualified',()=>{
- assert.ok(a.includes('not** confirmed cart totals'));assert.ok(a.includes('seller advertises a one-year'));
+ assert.ok(a.includes('<strong>not</strong> confirmed cart totals'));assert.ok(a.includes('seller advertises a one-year'));
 });
 function rejectMutation(name,mutate,valid){const changed=mutate(a);assert.ok(!valid(changed),name+' was not detected');}
 check('Negative 1 - stripped commission disclosure rejected',()=>rejectMutation('disclosure',x=>x.replace('id="commission"','id="missing"'),disclosureNearButton));
