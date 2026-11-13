@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-labelledby="fv-title fv-desc">
+<title id="fv-title">Neptune Pass: widening observed, inlet restriction proposed</title>
+<desc id="fv-desc">Final Vestige original evidence graphic with two clearly separate measures. NASA reported channel width about 150 feet in 2016 and 850 feet in 2023. In April 2025 the U.S. Army Corps of Engineers proposed reducing inlet cross-sectional area from 32,000 to 10,300 square feet. Width and area are different measures; the second pair was a proposal, not verified as-built geometry.</desc>
+<rect width="1200" height="750" fill="#101b25"/>
+<rect x="30" y="30" width="1140" height="690" rx="20" fill="#182733" stroke="#415561" stroke-width="2"/>
+<text x="68" y="91" fill="#b6a87e" font-family="Georgia,serif" font-size="19" letter-spacing="3">FINAL VESTIGE  /  DOCUMENTARY EVIDENCE</text>
+<text x="68" y="144" fill="#f5f0e5" font-family="Georgia,serif" font-size="37">The River Opened Another Way</text>
+<text x="68" y="179" fill="#b8c5c8" font-family="Arial,sans-serif" font-size="19">Neptune Pass within the Bohemia Spillway  |  Separate measurements, separate dates</text>
+<line x1="68" x2="1132" y1="202" y2="202" stroke="#53616a"/>
+<text x="72" y="250" fill="#b6a87e" font-family="Arial,sans-serif" font-size="19" font-weight="bold">REPORTED CHANNEL WIDTH</text>
+<text x="72" y="281" fill="#dbe1df" font-family="Arial,sans-serif" font-size="16">NASA Earth Observatory, 20 March 2023 (researcher-reported)</text>
+<text x="72" y="341" fill="#e6eae7" font-family="Arial,sans-serif" font-size="21">2016</text>
+<rect x="188" y="314" width="144" height="35" rx="4" fill="#7bb3bb"/>
+<text x="348" y="340" fill="#f3f0e8" font-family="Arial,sans-serif" font-size="25" font-weight="bold">150 ft</text>
+<text x="72" y="404" fill="#e6eae7" font-family="Arial,sans-serif" font-size="21">2023</text>
+<rect x="188" y="377" width="814" height="35" rx="4" fill="#d3b57e"/>
+<text x="1014" y="402" fill="#f3f0e8" font-family="Arial,sans-serif" font-size="25" font-weight="bold">850 ft</text>
+<line x1="68" x2="1132" y1="445" y2="445" stroke="#53616a"/>
+<text x="72" y="488" fill="#b6a87e" font-family="Arial,sans-serif" font-size="19" font-weight="bold">PROPOSED INLET CROSS-SECTION (NOT AN AS-BUILT MEASUREMENT)</text>
+<text x="72" y="519" fill="#dbe1df" font-family="Arial,sans-serif" font-size="16">U.S. Army Corps of Engineers release, 17 April 2025</text>
+<rect x="74" y="549" width="645" height="30" rx="4" fill="#7bb3bb"/>
+<text x="735" y="574" fill="#f3f0e8" font-family="Arial,sans-serif" font-size="22" font-weight="bold">32,000 ft² existing</text>
+<rect x="74" y="592" width="208" height="30" rx="4" fill="#d3b57e"/>
+<text x="298" y="616" fill="#f3f0e8" font-family="Arial,sans-serif" font-size="22" font-weight="bold">10,300 ft² proposed</text>
+<line x1="68" x2="1132" y1="645" y2="645" stroke="#53616a"/>
+<text x="70" y="672" fill="#a9b9c2" font-family="Arial,sans-serif" font-size="15">Bars scaled within each measure only. A proposed structure does not prove construction or hydraulic outcome.</text>
+<text x="70" y="695" fill="#a9b9c2" font-family="Arial,sans-serif" font-size="15">Sources: NASA Earth Observatory (2023); USACE New Orleans District (2025). Graphic © 2026 Final Vestige Studios.</text>
+</svg>
