@@ -63,6 +63,15 @@ class Routes(unittest.TestCase):
     def test_reserved_and_cross_kind_overwrites(self):
         tax,docs=fixture();docs[35]['meta']['slug']='a-01'
         self.assertIn('BUILDER_ARTICLE_TOOL_OVERWRITE:a-01',gate.audit(tax,docs,SOURCE)['errors'])
+    def test_unlisted_kit_builder_cannot_replace_missing_pantry_worksheet(self):
+        tax,docs=fixture()
+        # Mirrors a real source/taxonomy disagreement observed on R350 (names
+        # are only a synthetic reproduction of the failure mode here).
+        docs[36]['meta']['slug']='kit-builder'
+        errors=gate.audit(tax,docs,SOURCE)['errors']
+        self.assertIn('DOCUMENT_NOT_IN_TAXONOMY:tools/kit-builder',errors)
+        self.assertIn('INCOMPLETE_TOOLS_INVENTORY',errors)
+        self.assertEqual(gate.audit(tax,docs,SOURCE)['status'],'INVALID_HARD_HOLD')
     def test_explicit_url_must_match_actual_builder(self):
         tax,docs=fixture();doc=docs[0]['meta'];route='/preparedness/water/a-01/'
         for k in ('canonical_url','permalink','url'):
