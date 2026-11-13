@@ -11,6 +11,8 @@ ROOT=Path(__file__).resolve().parents[2]
 PHP=ROOT/'apollo-r339/chronology-rail.php'
 APP=ROOT/'apollo-r340/apollo-accession-gallery.php'
 CSS=[ROOT/'apollo-r339/assets/chronology-rail.css',ROOT/'apollo-r340/assets/accession-gallery.css']
+OUT=Path(os.getenv('FV_R342_OUT',str(ROOT/'apollo-r342/QA')))
+OUT.mkdir(parents=True,exist_ok=True)
 
 def run_php(expr):
     return subprocess.check_output(['php','-r',"define('ABSPATH',true); require '"+str(PHP)+"'; require '"+str(APP)+"'; "+expr],text=True)
@@ -46,7 +48,10 @@ with sync_playwright() as p:
         assert page.locator('.fv-apollo-r339__source a').first.is_visible()
         assert page.locator('.fv-apollo-r339__nav a').count()==6
         assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
+        if js and width in (320,1440) and root_px==16:page.screenshot(path=str(OUT/f'r342-committed-{width}.png'),full_page=True)
         results.append({'viewport':width,'js':js,'root_px':root_px,'result':'PASS'})
         page.close()
     browser.close()
-print(json.dumps({'r342_committed_gate':'PASS','contexts':results,'axe':'NOT_EXECUTED','installed_wp':'NOT_VERIFIED'},indent=2))
+receipt={'r342_committed_gate':'PASS','contexts':results,'axe':'NOT_EXECUTED','installed_wp':'NOT_VERIFIED'}
+(OUT/'r342-committed-gate.json').write_text(json.dumps(receipt,indent=2)+'\n')
+print(json.dumps(receipt,indent=2))
