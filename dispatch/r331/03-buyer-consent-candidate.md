@@ -1,0 +1,45 @@
+# THE DISPATCH — PROPOSED ISSUE 03 (R331)
+
+> **NOT ADOPTED. UNSENT. NO SEND OR POST PERMISSION.** This is an optional replacement candidate, NOT an amendment to original PR #175.
+
+**Subject:** What the twelve-minute checkout doesn't prove
+
+**Proposed preheader (not verified as Jetpack renderable):** Zen12's audio library, refund terms and a separate marketing-consent decision.
+
+**Type:** commercial-review-pending — Zen12 single-SKU hypothesis; one inactive CTA.
+
+---
+
+An eighteenth-century witness could be sincere and still be mistaken about the mechanism behind an unusual experience. The Puységur records are useful precisely because they let us separate what someone reported from what they thought made it happen. That standard belongs in a modern product review, too.
+
+Consider Zen12. Its seller presents a program built around short audio sessions. The paid-course checkout currently describes twelve levels and 48 MP3s. Those are product details a buyer can inspect. The separate promise that twelve minutes of audio equal an hour of meditation is the seller's advertising claim, not an independently established result for this product.
+
+Here is the question worth asking before paying: what, exactly, would you receive, what commitment would you make, and what would change your mind about whether it was worth buying?
+
+The current checkout asks for a phone number as well as order and payment information. Inspire3's terms say that people who leave a phone number may be enrolled in its SMS newsletter, which the company describes as three to four marketing messages per week. That is a possible separate merchant relationship, not a Final Vestige Dispatch subscription. The seller also says its Zen12 purchases carry a one-year money-back guarantee; read the current purchase terms for applicable conditions before relying on it.
+
+The seller has displayed discount language and a countdown in its checkout. We have not established that any countdown or price is stable, personalized, or actually expires; this email makes no scarcity or savings claim. You should compare the final checkout total and conditions yourself, rather than trusting a number from an older screenshot.
+
+A free way to decide whether a shorter attention routine suits you is to set a twelve-minute timer, work through one clearly defined task, and record interruptions and how difficult it felt to start. Repeat under reasonably similar conditions. Your notes can tell you whether a routine was workable for you; they cannot prove that a paid audio rewires your brain.
+
+The one commercial product under review for this pilot is Zen12 Premium, not a bundle of unrelated recommendations. An independent first-party buyer guide must be published and its merchant link, email-promotion permission and terms must be approved before we can recommend or link to it.
+
+Proposed single CTA (INACTIVE): Read the independent Zen12 buyer guide — [[PENDING_FIRST_PARTY_ZEN12_GUIDE]]
+
+Commercial disclosure: If you eventually purchase through a qualifying link in our independently reviewed guide, Final Vestige may earn a commission. No purchase is needed to try the free attention exercise.
+
+The Dispatch remains grounded in evidence, including the boundaries of what that evidence cannot show.
+
+**Sources checked:**
+- https://zen12.com/getstarted
+- https://inspire3.com/terms/?s=zen12
+- https://zen12.com/gift
+- https://zen12.com/
+- https://affiliates.inspire3.com/
+- https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
+- https://finalvestige.com/editorial-standards/
+
+---
+PRE-SEND BLOCKERS — REVIEW COPY ONLY: [[VALID_FINAL_VESTIGE_POSTAL_ADDRESS_REQUIRED]] | [[VERIFIED_JETPACK_UNSUBSCRIBE_REQUIRED]] | [[FOUNDER_FINAL_CAMPAIGN_APPROVAL_REQUIRED]] | [[INSPRIRE3_EMAIL_PROMOTION_PERMISSION_REQUIRED]]
+
+**Do not paste this block or the source manuscript into WordPress**: no publisher address, unsub receipt, email rights, live first-party guide, recipient proof or final campaign approval is established.

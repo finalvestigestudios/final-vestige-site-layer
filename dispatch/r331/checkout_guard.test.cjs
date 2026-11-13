@@ -1,0 +1,35 @@
+"use strict";
+const G=require("./checkout_guard.cjs");
+const good="Zen12's seller offers 12 minutes of audio. A person who gives a phone number may be added to separate merchant SMS marketing. This is a seller claim, not independently proven. Commercial disclosure: Final Vestige may earn a commission if an eventual eligible purchase happens.";
+const subject="What the twelve-minute checkout doesn't prove";
+let passed=0;
+function run(name,mutate,expect){
+ const r=G.inspect(Object.assign({subject,email:good,proofs:{},is_post_live:false},mutate));
+ if(r.status!=="HOLD_UNSENT"||r.allow_send!==false||!expect(r))throw Error("FAIL "+name+" "+JSON.stringify(r));
+ passed++;
+}
+run("all unverified holds",{},r=>r.failures.some(f=>f.includes("affiliate_acceptance")));
+run("missing email permission", {proofs:{affiliate_acceptance:true}},r=>r.failures.includes("unverified_email_permission"));
+run("even all flags do not authorize",{proofs:Object.fromEntries(G.REQUIRED.map(k=>[k,true]))},r=>r.failures.length===0);
+run("missing disclosure",{email:good.replace("Commercial disclosure:","Note:")},r=>r.failures.includes("missing_near_offer_disclosure"));
+run("sms consent omitted",{email:good.replace("may be added","will not be added")},r=>r.failures.includes("merchant_sms_consent_omitted"));
+run("price inserted",{email:good+" It costs $87.99."},r=>r.failures.includes("volatile_price_in_email"));
+run("fake countdown",{email:good+" Discount expires in 15 minutes!"},r=>r.failures.includes("unverified_scarcity"));
+run("equal-hour claim",{email:good+" 12 minutes = one hour of meditation."},r=>r.failures.includes("unsubstantiated_efficacy_claim"));
+run("direct merchant tracking",{email:good+" zen12.com/getstarted?affiliate=foo"},r=>r.failures.includes("unapproved_merchant_deep_link"));
+run("post live",{is_post_live:true},r=>r.failures.includes("forbidden_live_action"));
+run("scheduled",{is_scheduled:true},r=>r.failures.includes("forbidden_live_action"));
+run("test email sent",{test_mail_sent:true},r=>r.failures.includes("forbidden_live_action"));
+run("list contacted",{has_contacted_subscribers:true},r=>r.failures.includes("forbidden_live_action"));
+run("click counted as paid sale",{metric_claim:"click_is_sale"},r=>r.failures.includes("false_conversion_attribution"));
+run("seller sample counted as lead",{metric_claim:"free_sample_is_confirmed_signup"},r=>r.failures.includes("false_conversion_attribution"));
+run("empty subject",{subject:""},r=>r.failures.includes("invalid_subject"));
+run("empty object",{email:"",subject:""},r=>r.failures.length>=3);
+run("unresolved guide token",{email:good+" [[PENDING_FIRST_PARTY_ZEN12_GUIDE]]"},r=>r.failures.includes("unresolved_guide_cta"));
+run("direct merchant CTA",{cta_url:"https://zen12.com/getstarted"},r=>r.failures.includes("unapproved_commercial_destination"));
+run("unapproved finalvestige guide",{cta_url:"https://finalvestige.com/mind/zen12"},r=>r.failures.includes("unapproved_guide_destination"));
+run("invalid URL",{cta_url:"javascript:alert(1)"},r=>r.failures.includes("unapproved_commercial_destination"));
+run("merchant anchor",{html:'<a href="https://zen12.com/getstarted">Buy</a>'},r=>r.failures.includes("direct_merchant_anchor"));
+const n=G.inspect(null);if(n.status!=="HOLD_UNSENT"||n.allow_send||!n.failures.includes("invalid_record"))throw Error("FAIL actual null record");passed++;
+if(require.main===module) process.stdout.write("R331 "+passed+"/"+passed+" native checkout-guard tests passed\\n");
+module.exports={passed};
