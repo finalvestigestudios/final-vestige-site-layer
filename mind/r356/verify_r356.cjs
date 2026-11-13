@@ -19,7 +19,7 @@ ok(/<button[^>]*disabled[^>]*>Merchant purchase link unavailable/.test(page),lab
 ok(!/<script\b/i.test(page),label+' no scripts');
 ok(!/<form\b/i.test(page),label+' no duplicate signup');
 ok(!/<iframe\b/i.test(page),label+' no third-party embed');
-ok(!/<video\b|autoplay/i.test(page),label+' no untested playback');
+ok(!/<video\b|<audio\b|autoplay\s*=/i.test(page),label+' no untested playback');
 ok(!/href="https:\/\/(zen12|hypnosislive|brainwaveshots)\.[^"]*\?/.test(page),label+' no tracked merchant link');
 ok(page.indexOf('Affiliate disclosure')<page.indexOf('Merchant purchase link unavailable'),label+' disclosure precedes control');
 }
