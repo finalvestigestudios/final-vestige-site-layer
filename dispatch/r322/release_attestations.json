@@ -79,7 +79,7 @@
   ],
   "test_claims": {
     "original_master_python_native": "6/6 PASS on exact Git blob matched source",
-    "r322_native_node": "25/25 PASS on locally byte-identical source to GitHub; verify blob SHA post-commit",
+    "r322_native_node": "27/27 PASS on locally byte-identical source to GitHub (Git blob verified)",
     "native_wordpress_email": false,
     "real_subscriber_data": false,
     "paid_affiliate_conversion": false
