@@ -80,3 +80,38 @@ test('reviewed replacement can be measured without production authorization',()=
 });
 test('base 404 still blocks',()=>hold(p=>p.before.images[0].final_http_status=404,'BASE_TRANSFER_PAIR_BASELINE_MISSING_OR_INVALID_IMAGE_REQUEST'));
 test('identical CDP run still blocks',()=>hold(p=>p.after.run_id='b','BASE_TRANSFER_PAIR_UNMATCHED_CAPTURE_ENVIRONMENT_OR_CONTENT'));
+
+// Synthetic crop drift can otherwise produce a false 76% parity PASS.
+function candidateGeometry(p,w,h){
+ const x=p.after.images[0];
+ x.decoded_selected_physical_width=w;x.decoded_selected_physical_height=h;
+ x.natural_width=w;x.natural_height=h;
+}
+test('same-src cover: square candidate is not same crop',()=>hold(p=>candidateGeometry(p,960,960),'SELECTED_SOURCE_ASPECT_OR_CROP_DRIFT'));
+test('same-src contain: letterbox drift is not parity',()=>hold(p=>{
+ p.before.images[0].object_fit=p.after.images[0].object_fit='contain';
+ candidateGeometry(p,960,960);
+},'SELECTED_SOURCE_ASPECT_OR_CROP_DRIFT'));
+test('same-src fill: shape distortion drift is not parity',()=>hold(p=>{
+ p.before.images[0].object_fit=p.after.images[0].object_fit='fill';
+ candidateGeometry(p,960,960);
+},'SELECTED_SOURCE_ASPECT_OR_CROP_DRIFT'));
+test('responsive physical-ratio drift 820x540 is blocked at DPR2',()=>hold(p=>candidateGeometry(p,820,540),'SELECTED_SOURCE_ASPECT_OR_CROP_DRIFT'));
+test('approved source replacement cannot alter cropping without review',()=>hold(p=>{
+ const v=changed(p);candidateGeometry(p,960,960);
+ p.independent_replacement_review={'621:0':{
+ original_src:u,candidate_src:v,pixel_scene_parity_verified:true,
+ item_level_reuse_rights_verified:true,staging_editor_approved:true,
+ provenance_evidence_url:'https://archives.gov/scene',
+ rights_evidence_url:'https://archives.gov/rights'}};
+},'SELECTED_SOURCE_ASPECT_OR_CROP_DRIFT'));
+test('960x639 integer rounding preserves original framing',()=>{
+ const p=fixture();candidateGeometry(p,960,639);const r=verify(p);
+ assert.equal(r.status,'VERIFIED_SINGLE_POST_COLD_PAIR_WITH_VISUAL_PARITY');
+ assert.equal(r.production_change_allowed,false);
+});
+test('840x560 same ratio and adequate DPR preserves original framing',()=>{
+ const p=fixture();candidateGeometry(p,840,560);const r=verify(p);
+ assert.equal(r.status,'VERIFIED_SINGLE_POST_COLD_PAIR_WITH_VISUAL_PARITY');
+ assert.equal(r.production_change_allowed,false);
+});
