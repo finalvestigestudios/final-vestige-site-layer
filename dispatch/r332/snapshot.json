@@ -1,0 +1,63 @@
+{
+  "sprint": "R332",
+  "review_only": true,
+  "production_writes": false,
+  "send_authorized": false,
+  "editorial_mix": {
+    "editorial": 4,
+    "commercial": 2
+  },
+  "original_master_pr": 175,
+  "original_master_commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "base_pr": 2354,
+  "base_sha": "4ccbb7b254b13c34ce996cbe1af353def8d5550c",
+  "source_site": "https://finalvestige.com",
+  "as_of_utc": "2026-11-13T15:30:31Z",
+  "jetpack": {
+    "enabled": true,
+    "can_send": true,
+    "auto_send_default": false,
+    "format": "full",
+    "sender": "Final Vestige Studios",
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "total": 3,
+    "suppressed": 0,
+    "wpcom_follower_count": null,
+    "email_eligible_count": null,
+    "welcome_contains_pdf_link": true,
+    "actual_welcome_received": null,
+    "provider_email_client_preview_verified": false
+  },
+  "merchant": {
+    "zen12_email_marketing_permission": null,
+    "zen12_issued_affiliate_link": null,
+    "zen12_approved_first_party_guide": null,
+    "total_focus_email_marketing_permission": null,
+    "total_focus_issued_link": null,
+    "postal_address_verified": false,
+    "unsubscribe_working_verified": false
+  },
+  "attribution": {
+    "confirmed_signup_events": null,
+    "qualified_human_sessions": null,
+    "settled_orders": null,
+    "settled_commission_cents": null,
+    "refund_cents": null,
+    "fees_cents": null,
+    "net_revenue_per_1000": null,
+    "confidence": "unmeasured"
+  },
+  "editorial_issue02": {
+    "status": "NOT_ADOPTED",
+    "subject": "The tree that was never magnetized",
+    "preheader": "Franklin's 1784 investigation asked a harder question than whether a witness felt something.",
+    "primary_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "sources": [
+      "https://www.gutenberg.org/files/78413/78413-h/78413-h.htm",
+      "https://wellcomecollection.org/works/enhgscmf",
+      "https://finalvestige.com/editorial-standards/"
+    ],
+    "commercial": false
+  }
+}
