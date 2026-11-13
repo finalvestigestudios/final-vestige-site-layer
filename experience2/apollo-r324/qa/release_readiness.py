@@ -19,8 +19,8 @@ STUB = ROOT / 'apollo-r320/qa/wp_late_shortcodes.php'
 OUTPUT = ROOT / 'apollo-r324/QA'
 FREE = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/'
 CAMPAIGN = 'utm_source=youtube&utm_medium=organic_social&utm_campaign=history_pilot_2026_11&utm_content=apollo1_yt_longform001'
-SHA = {'php':'bd1d71d60ddee92dc0cc362923101692372ed577',
-       'css':'7c0e58782a8ec7b23f28da784a84c827f117914a',
+SHA = {'php':'91745c286b2f23fb8a93058afb58905a2756714e',
+       'css':'550e1dc6ac869ebbda1b371343a6cdd91f8608f4',
        'js':'f85617e5f12ba747908ac507261f69c377369de7'}
 NASA = {'https://www.nasa.gov/mission/apollo-1/',
         'https://www.nasa.gov/history/Apollo204/proceed.html',
