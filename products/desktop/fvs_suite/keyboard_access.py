@@ -125,6 +125,12 @@ def install_shortcuts(root, inputs, output, generate, *, review=None,
             # Tk returns the unique callback id; it lets us roll back only
             # OUR newly added function without erasing a preexisting handler.
             callback_id = root.bind(sequence, make_handler(operation), add="+")
+            # Tkinter returns a nonempty Tcl command ID for a Python handler.
+            # A silent/ambiguous acknowledgement is NOT proof of registration:
+            # it may leave an unknown orphan that cannot be unbound safely.
+            # Keep every staged handler inert and the same-root hard hold set.
+            if type(callback_id) is not str or not callback_id:
+                raise ValueError("Tk shortcut registration returned no valid callback ID")
             installed.append((sequence, callback_id))
     except BaseException:
         # Best effort only: the failing bind has no trustworthy callback ID.
