@@ -1,0 +1,18 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {test}=require('node:test');
+const {decide}=require('./release_check.cjs');
+const base=require('./snapshot.json');
+const copy=()=>structuredClone(base);
+test('live evidence is a release HOLD',()=>{const r=decide(copy());assert.equal(r.result,'HOLD_UNSENT');assert.equal(r.can_send,false);assert.equal(r.net_revenue_per_1000,null);});
+test('overlapping counts never produce 5 subscribers',()=>{const r=decide(copy());assert.equal(r.recipient_count,'UNKNOWN_UNTIL_PROVIDER_VERIFIED');assert.ok(r.release_reasons.some(x=>x.includes('overlap')));});
+test('zero sends and default-off do not prove eligible audience',()=>assert.notEqual(decide(copy()).recipient_count,3));
+test('confirmation link not equal welcome receipt',()=>assert.ok(decide(copy()).release_reasons.some(x=>x.includes('received welcome'))));
+test('merchant free MP3 not an FV consent event',()=>{const s=copy();s.attribution.confirmed_signup_events=17;assert.equal(decide(s).recipient_count,'UNKNOWN_UNTIL_PROVIDER_VERIFIED')});
+test('claimed FTC compliance without evidence cannot release',()=>{const s=copy();s.merchant.postal_address_verified=false;assert.equal(decide(s).can_send,false)});
+test('even every commercial Boolean true never sends',()=>{const s=copy();Object.assign(s.merchant,{zen12_email_marketing_permission:true,zen12_issued_affiliate_link:'https://seller.example/issued',zen12_approved_first_party_guide:true,postal_address_verified:true,unsubscribe_working_verified:true});Object.assign(s.jetpack,{email_eligible_count:2,actual_welcome_received:true,provider_email_client_preview_verified:true});assert.equal(decide(s).can_send,false)});
+test('buyer clicks are not paid sales',()=>{const s=copy();s.attribution.confirmed_signup_events=30;assert.equal(decide(s).net_revenue_per_1000,null)});
+test('no denominator does not yield zero',()=>{const s=copy();s.attribution.settled_commission_cents=3000;assert.equal(decide(s).net_revenue_per_1000,null)});
+test('safe synthetic arithmetic has explicit unverified source status',()=>{const s=copy();Object.assign(s.attribution,{qualified_human_sessions:1000,settled_commission_cents:5000,refund_cents:1000,fees_cents:500,settled_orders:2});const r=decide(s);assert.equal(r.net_revenue_per_1000,35);assert.equal(r.net_revenue_status,'SYNTHETIC_OR_SOURCE_UNVERIFIED')});
+test('nonconsent lead cannot change release',()=>{const s=copy();s.send_authorized=true;assert.equal(decide(s).can_send,false)});
+test('unknown snapshot must refuse',()=>assert.equal(decide(null).can_send,false));
