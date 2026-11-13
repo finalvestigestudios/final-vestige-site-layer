@@ -12,11 +12,11 @@ def fixture():
         source[role]=json.dumps({"n":n,"slug":slug,"status":{"editorial":"drafted","publish":"draft"},
           "safety_review":{"state":"pending","reviewer":None,"date":None},"source_use":{},
           "notes":" ".join(anchors)}).encode()
-    m={"schema":gate.SCHEMA,"source_objects":{k:{"path":"preparedness/content/"+k,"git_blob_sha1":gate.PINNED[k]["git_blob_sha1"]} for k,v in source.items()},
+    m={"schema":gate.SCHEMA,"source_objects":{k:gate.PINNED[k].copy() for k,v in source.items()},
        "original_review_witnesses":[{"id":i,"source_role":r,"exact_anchor":a,"editorial_candidate":e,
           "disposition":"UNRESOLVED_HUMAN_REVIEW","clearance":False} for i,r,a,e in CASES],
        "editorial_directions":{f"E325-{i:02d}":"review-only" for i in range(1,8)},
-       "gates":{"independent_qd_pass":False,"publication_authorized":False}}
+       "gates":{k:False for k in gate.EXPECTED_GATES}}
     return source,m
 
 CASES=(
