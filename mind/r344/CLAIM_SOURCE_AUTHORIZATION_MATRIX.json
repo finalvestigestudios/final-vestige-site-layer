@@ -1,0 +1,194 @@
+{
+  "version": "r344",
+  "date": "2026-11-13",
+  "all_commerce_releases_blocked": true,
+  "verification": "public pages and connected Gmail search only; no partner or Payhip account access",
+  "sources": [
+    {
+      "url": "https://inspire3.com/",
+      "kind": "merchant",
+      "claim": "Inspire3 owns multiple personal-development product lines",
+      "decision": "company-description only"
+    },
+    {
+      "url": "https://zen12.com/",
+      "kind": "merchant",
+      "claim": "Zen12 twelve-level course; Premium twelve levels and 48 MP3s; Beginner first six /24; Advanced final six /24",
+      "decision": "present as seller-described package contents"
+    },
+    {
+      "url": "https://zen12.com/about",
+      "kind": "merchant",
+      "claim": "Twelve-minute session format and brainwave marketing",
+      "decision": "format only; efficacy unproven"
+    },
+    {
+      "url": "https://zen12.com/gift",
+      "kind": "merchant",
+      "claim": "Free gift triggers separate merchant newsletter",
+      "decision": "explicit consent distinction"
+    },
+    {
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "merchant",
+      "claim": "Total Focus is a 33-minute hypnosis MP3",
+      "decision": "format only; exclude concentration guarantees"
+    },
+    {
+      "url": "https://brainwaveshots.com/focus-shot",
+      "kind": "merchant",
+      "claim": "Focus Shot package includes 15/30 minute versions",
+      "decision": "format only; exclude lasting-effect claims"
+    },
+    {
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "affiliate-network",
+      "claim": "Public program recruitment; special partner-issued links required",
+      "decision": "not FV acceptance evidence"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3062901/",
+      "kind": "peer-reviewed",
+      "claim": "Explanatory depth illusion",
+      "decision": "support phenomenon, not product efficacy"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2778755/",
+      "kind": "peer-reviewed",
+      "claim": "Irrelevant neuroscience sometimes increased explanation ratings in nonexperts",
+      "decision": "support cognitive explanation, not blanket claim"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "kind": "systematic-review",
+      "claim": "14 EEG binaural-beat studies: 5 supportive, 8 contradictory, 1 mixed",
+      "decision": "heterogeneous and not branded product trials"
+    },
+    {
+      "url": "https://doi.org/10.1002/jhbs.21974",
+      "kind": "historical-scholarship",
+      "claim": "Puységur historical psychological turn",
+      "decision": "historical interpretation only"
+    },
+    {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "owned-published",
+      "claim": "Existing historic archive route",
+      "decision": "context bridge; no magnetic-fluid validation"
+    },
+    {
+      "url": "https://finalvestige.com/focus/",
+      "kind": "owned-published",
+      "claim": "Existing separate Focus Fieldbook capture",
+      "decision": "preserve opt-in, no additional forms"
+    },
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator",
+      "claim": "Material affiliate relationship disclosure near endorsement/link",
+      "decision": "activate only with partner verification"
+    },
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator",
+      "claim": "Substantiate objective efficacy and health-related claims",
+      "decision": "exclude unsubstantiated product outcomes"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Twelve minutes = hour of advanced meditation",
+      "classification": "seller-efficacy",
+      "evidence": "zen12.com claim; product-specific controlled equivalence unverified",
+      "publication": "DO NOT REPEAT as fact"
+    },
+    {
+      "claim": "Premium 12 levels / 48 MP3s",
+      "classification": "seller-format",
+      "evidence": "zen12.com",
+      "publication": "attributed seller description; validate at checkout"
+    },
+    {
+      "claim": "Beginner first six /24; Advanced last six /24",
+      "classification": "seller-format",
+      "evidence": "zen12.com",
+      "publication": "attributed and distinct"
+    },
+    {
+      "claim": "Total Focus 33-minute guided track",
+      "classification": "seller-format",
+      "evidence": "hypnosislive.com/mental-skills/total-focus",
+      "publication": "attributed; no efficacy"
+    },
+    {
+      "claim": "Focus Shot 15/30-minute tracks",
+      "classification": "seller-format",
+      "evidence": "brainwaveshots.com/focus-shot",
+      "publication": "attributed; no sustained-focus efficacy"
+    },
+    {
+      "claim": "EEG entrainment by binaural beats",
+      "classification": "mixed-independent-review",
+      "evidence": "PMID 37205669; 14 heterogeneous studies",
+      "publication": "cautious mixed findings"
+    },
+    {
+      "claim": "Neuroscience vocabulary can affect perceived explanations",
+      "classification": "independent-experiment",
+      "evidence": "PMC2778755",
+      "publication": "not evidence against all neuroscience"
+    },
+    {
+      "claim": "Explanatory depth illusion",
+      "classification": "independent-experiment",
+      "evidence": "PMC3062901",
+      "publication": "not direct buyer study"
+    },
+    {
+      "claim": "Zen12 free gift also collects newsletter subscriber",
+      "classification": "seller-consent",
+      "evidence": "zen12.com/gift",
+      "publication": "clearly distinguish publishers"
+    },
+    {
+      "claim": "Final Vestige accepted to Inspire3 affiliate",
+      "classification": "private-authorization",
+      "evidence": "not authenticated",
+      "publication": "FALSE / hold"
+    },
+    {
+      "claim": "Active FV Mind Payhip checkout and rights",
+      "classification": "private-merchant",
+      "evidence": "not audited",
+      "publication": "FALSE / hold"
+    },
+    {
+      "claim": "Present special prices, guaranteed refunds or earnings",
+      "classification": "unverified-transaction",
+      "evidence": "dynamic seller pages; account terms absent",
+      "publication": "omit amounts; recheck at checkout"
+    }
+  ],
+  "commercial_gates": {
+    "fv_partner_approved": false,
+    "publisher_identity_verified": false,
+    "authorized_channels_verified": false,
+    "issued_tracking_url_verified": false,
+    "approved_creative_rights_verified": false,
+    "exact_offer_current": false,
+    "seller_checkout_current": false,
+    "pricing_verified_at_purchase_route": false,
+    "refund_terms_verified_at_purchase_route": false,
+    "ftc_adjacent_disclosure_reviewed": false,
+    "medical_claims_substantiated_or_removed": false,
+    "no_testimonial_fabrication": false,
+    "no_list_duplication": false,
+    "consent_privacy_review": false,
+    "owner_approval": false,
+    "qa_mobile_accessibility": false,
+    "qa_no_js_performance": false,
+    "provider_paid_sales_verification": false,
+    "first_party_attribution_qa": false,
+    "no_unauthorized_publishing": false
+  }
+}
