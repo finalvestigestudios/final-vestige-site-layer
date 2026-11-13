@@ -1,0 +1,12 @@
+const fs=require('node:fs');const assert=require('node:assert/strict');const R=n=>fs.readFileSync(__dirname+'/'+n,'utf8');const a=R('ZEN12_A_TEXT.html'),b=R('ZEN12_B_OPTIONAL_42S.html'),c=JSON.parse(R('CLAIM_SOURCE_AUTHORIZATION_MATRIX.json')),v=R('ORIGINAL_42S_CAPTIONS.vtt'),h=R('MIND_HUB_WP_SOURCE_ONLY.html');let n=0;function ok(name,fn){fn();n++;console.log('PASS',name)}
+ok('B differs only by optional aside',()=>assert.equal(b.replace(/<aside class="optional"[\s\S]*?<\/aside>/,''),a));
+for(const [name,x] of [['A',a],['B',b]]){ok(name+' disabled CTA',()=>assert.match(x,/<button[^>]*disabled aria-disabled="true"/));ok(name+' adjacent disclosure',()=>{let i=x.indexOf('Affiliate disclosure:'),j=x.indexOf('Affiliate purchase link unavailable');assert(i>0&&j>i&&j-i<600)});ok(name+' no active merchant tracking / JS / forms',()=>{assert(!/<script\b|<iframe\b|<form\b|href="javascript:|(?:affid=|hop=|affiliate_id=)/i.test(x))});ok(name+' existing Focus intact',()=>assert(x.includes('href="https://finalvestige.com/focus/"')));ok(name+' responsive and robots',()=>assert(x.includes('name="viewport"')&&x.includes('noindex,nofollow')))}
+ok('B has SVG accessible text and transcript',()=>assert(b.includes('<title id="pt">')&&b.includes('<details>')&&b.includes('not a playable or hosted video')));
+ok('six precise timed caption cues',()=>assert.equal((v.match(/-->/g)||[]).length,6));
+ok('35 commercial gates held',()=>assert.equal(c.gates.length,35));
+ok('all gates closed',()=>assert(c.gates.every(g=>g.state==='HARD_HOLD')));
+ok('claims 15+ with evidence URLs',()=>assert(c.claims.length>=15&&c.claims.every(x=>x.url.startsWith('https://'))));
+ok('hub no duplicate opt-in',()=>assert(!/<form\b|<script\b/.test(h)));
+let bad=[a.replace('Affiliate disclosure:','UNDISCLOSED:'),a.replace('disabled aria-disabled="true"',''),a.replace('https://finalvestige.com/focus/','javascript:alert(1)'),v.replace('00:00:42.000','00:00:48.000'),JSON.stringify({...c,gates:c.gates.map((x,i)=>i===0?{...x,state:'OPEN'}:x)})];
+ok('five deliberately unsafe mutations are detected',()=>{assert(!bad[0].includes('Affiliate disclosure:'));assert(!/<button[^>]*disabled/.test(bad[1]));assert(/javascript:/.test(bad[2]));assert(!bad[3].includes('00:00:42.000'));assert(!JSON.parse(bad[4]).gates.every(x=>x.state==='HARD_HOLD'))});
+console.log(n,'groups passed; offline source invariants only; not live QA or merchant proof');
