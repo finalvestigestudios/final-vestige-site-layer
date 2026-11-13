@@ -68,7 +68,14 @@ def _require_real_directory(path: Path) -> None:
 
 
 def _verify_source_directories(desktop: Path) -> None:
-    for path in (desktop, desktop / "fvs_suite", desktop / "launchers"):
+    # Check *every* ancestor, not just desktop itself: desktop located beneath
+    # a linked parent can redirect a seemingly ordinary suite outside custody.
+    # Reject relative roots rather than silently resolving away linked parents.
+    if not desktop.is_absolute():
+        raise SourceGateError("Unsafe desktop source directory")
+    for ancestor in reversed((desktop, *desktop.parents)):
+        _require_real_directory(ancestor)
+    for path in (desktop / "fvs_suite", desktop / "launchers"):
         _require_real_directory(path)
 
     def reject_unreadable(error: OSError) -> None:
@@ -120,6 +127,11 @@ def run_gate(desktop: Path, *, timeout: int = 90) -> dict:
     for app, launcher_name in PRODUCTS:
         statuses = {}
         for mode in ("normal", "optimized"):
+            # Check the full import inventory *before each* new process. The
+            # original final-only check let 11 more children run after a source
+            # had changed, which was unsafe evidence and unnecessary execution.
+            if source_digest(desktop) != digest:
+                raise SourceGateError("Desktop source changed during source smoke checks")
             command = [sys.executable, "-I", "-W", "error"]
             if mode == "optimized":
                 command.append("-OO")
@@ -135,6 +147,10 @@ def run_gate(desktop: Path, *, timeout: int = 90) -> dict:
                 ok = completed.returncode == 0
             except (OSError, subprocess.TimeoutExpired):
                 ok = False
+            # A child may have modified source while it ran; stop immediately
+            # rather than allowing the remaining 11 source processes to run.
+            if source_digest(desktop) != digest:
+                raise SourceGateError("Desktop source changed during source smoke checks")
             statuses[mode] = "pass" if ok else "fail"
             passed += int(ok)
         results.append({"app": app, **statuses})
@@ -147,7 +163,8 @@ def run_gate(desktop: Path, *, timeout: int = 90) -> dict:
 
 
 def main() -> int:
-    desktop = Path(__file__).resolve().parent
+    # Keep lexical ancestry visible; resolve() would erase linked parents.
+    desktop = Path(os.path.abspath(__file__)).parent
     try:
         result = run_gate(desktop)
     except SourceGateError:
