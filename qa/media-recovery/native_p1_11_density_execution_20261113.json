@@ -1,0 +1,28 @@
+{
+  "schema": "fv-native-test-execution-v1",
+  "date_local": "2026-11-13",
+  "runtime": "v22.16.0",
+  "command": "node --test test_p1_11_density_20261113.cjs",
+  "results": {
+    "tests": 26,
+    "pass": 26,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0
+  },
+  "taps_transcript_sha256": "f0cae62591dbf81870fabcd3a5caeb011b87b2a22b312b7d3a87e4c5a0daeca6",
+  "source_git_blobs": {
+    "p1_11_density_audit_20261113.json": "7121dc155497852ebac0948233eb6f07dbb7fb53",
+    "validate_p1_11_density_20261113.cjs": "12c1fab3f6c27c78bc41a0f8a2d5e55a2a503dc5",
+    "test_p1_11_density_20261113.cjs": "65db61e0cd79900476d66d26b35fcf1f233995cd",
+    "MEDIA-P1-11-DENSITY-AND-WIRE-HOLD-20261113.md": "7da95deab56689b8edbdeaa2ed68d24c384ca3a7"
+  },
+  "environment_limits": {
+    "browser_guest_cdp": false,
+    "network_origin_get": false,
+    "repository_ci": false,
+    "production_writes": 0,
+    "third_party_media_downloads": 0
+  },
+  "interpretation": "Offline synthetic regression and historical source-custody check only; not an actual guest/browser wire measurement."
+}
