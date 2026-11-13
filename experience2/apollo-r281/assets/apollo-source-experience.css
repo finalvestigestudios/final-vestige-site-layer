@@ -209,3 +209,21 @@
   .fv-r281 .fv-r281__reconciliation-list>li,
   .fv-r281 .fv-r281__authority-ledger>li{padding:12px}
 }
+
+/* R337: at 320–390 CSS px with 400% root text, rem-based EvidencePlate
+   padding consumed 109px of the 270px card, forcing the *word* "Inspect"
+   in the native source disclosure to break across two lines. Keep all text
+   at its reader-selected size, but cap only the surrounding narrow-card
+   whitespace. This applies before JS and works in forced-colors/no-JS. */
+@media screen and (max-width:420px){
+  .fv-r281 .fv-r281__plate{padding:8px}
+}
+/* R337: three fixed columns at 900–1200px CSS width combined with 200–400%
+   reader text left narrow 3-column source drawers. At desktop widths retain
+   three plates when font sizing permits, otherwise naturally reduce columns
+   based on the *actual rem-sized* minimum, without JavaScript or truncation. */
+@media screen and (min-width:851px){
+  .fv-r281 .fv-r281__plates{
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));
+  }
+}
