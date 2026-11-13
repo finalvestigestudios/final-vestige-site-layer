@@ -15,14 +15,14 @@ function inspect(record) {
   if(/(?:getstarted|zen12\.com\/gift|affiliates\.inspire3\.com)[^\s]*\?[^\s]*affiliate/i.test(email)) failures.push("unapproved_merchant_deep_link");
   if(/(?:only\s+\d+\s+minutes\s+left|discount\s+expires|hurry|last\s+chance)/i.test(email)) failures.push("unverified_scarcity");
   if(/\$\s*\d+(?:\.\d\d)?/.test(email)) failures.push("volatile_price_in_email");
-  if(/\\[\\[PENDING_FIRST_PARTY_ZEN12_GUIDE\\]\\]/.test(email)) failures.push("unresolved_guide_cta");
+  if(/\[\[PENDING_FIRST_PARTY_ZEN12_GUIDE\]\]/.test(email)) failures.push("unresolved_guide_cta");
   const dest=String(record.cta_url||"");
   if(dest){
     try {const u=new URL(dest);if(u.protocol!=="https:"||u.hostname!=="finalvestige.com") failures.push("unapproved_commercial_destination");}
     catch {failures.push("invalid_commercial_destination");}
     if(p.guide_live!==true) failures.push("unapproved_guide_destination");
   }
-  if(/<a\\b[^>]*href\\s*=\\s*["'][^"']*(?:zen12\\.com|inspire3\\.com|hypnosislive\\.com)/i.test(String(record.html||""))) failures.push("direct_merchant_anchor");
+  if(/<a\b[^>]*href\s*=\s*["'][^"']*(?:zen12\.com|inspire3\.com|hypnosislive\.com)/i.test(String(record.html||""))) failures.push("direct_merchant_anchor");
   if(record.is_post_live||record.is_scheduled||record.test_mail_sent||record.has_contacted_subscribers) failures.push("forbidden_live_action");
   if(record.metric_claim==="click_is_sale"||record.metric_claim==="free_sample_is_confirmed_signup") failures.push("false_conversion_attribution");
   // No automated code path can authorize campaign sending even if all attestations were supplied.
