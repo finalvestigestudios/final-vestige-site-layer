@@ -7,6 +7,8 @@ nothing here reads, transmits, or records paths or customer data.
 """
 from __future__ import annotations
 
+from .shortcut_targets_r403 import validate_shortcut_targets
+
 
 def install_shortcuts(root, inputs, output, generate, *, review=None,
                       invoice_window=None, policy_rules=None,
@@ -41,6 +43,12 @@ def install_shortcuts(root, inputs, output, generate, *, review=None,
                 or len(fields) != 2 or review is not None
                 or invoice_window is not None or policy_rules is not None):
             raise ValueError("Ledger headers require two inputs and no other optional controls")
+
+    # Validate every focus/Browse target before installing any root binding.
+    validate_shortcut_targets(fields, output, generate,
+                              review=review, invoice_window=invoice_window,
+                              policy_rules=policy_rules,
+                              ledger_headers=ledger_headers)
 
     widgets = [widget for pair in (*fields, output) for widget in pair]
     if invoice_window is not None:
