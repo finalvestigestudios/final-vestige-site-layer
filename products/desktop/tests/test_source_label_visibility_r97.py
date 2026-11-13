@@ -31,8 +31,13 @@ class SourceLabelVisibilityR97(unittest.TestCase):
     def test_order_compatible_with_existing_casefold_sort(self):
         self.assertEqual(self.labels("z-2", "A-1", "a-2"), "A-1; a-2; z-2")
 
-    def test_empty_identifiers_unchanged(self):
-        self.assertEqual(self.labels("", " ", ""), "")
+    def test_absent_and_empty_identifiers_remain_absent(self):
+        self.assertEqual(self.labels("", ""), "")
+
+    def test_literal_space_only_identifier_remains_visible_for_review(self):
+        # R398 preserves original source spellings rather than trimming them.
+        # A whitespace-only source is not an absent field or a safe match.
+        self.assertEqual(self.labels("", " ", ""), r"\u0020")
 
     def test_repeated_label_deduplication(self):
         self.assertEqual(self.labels("A-1", "A-1"), "A-1")
