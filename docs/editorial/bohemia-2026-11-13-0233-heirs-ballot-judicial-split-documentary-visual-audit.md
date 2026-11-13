@@ -1,0 +1,40 @@
+# Bohemia companion · 1983 amendment, heirs and 1986 judicial split · research / visual / release audit
+
+**Final Vestige Investigations · November 13, 2026, 02:33 Pacific · NO PUBLICATION AUTHORIZATION**
+
+## Editorial scope and collision control
+
+Continuing companion investigation **The Spillway That Kept Its Names**, now reporting draft **v1.3**, [manuscript](https://github.com/finalvestigestudios/final-vestige-site-layer/blob/main/docs/editorial/bohemia-spillway-2026-11-12-land-roster-rights-claim-investigation-draft.md), coordinated on [Investigations #1463](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1463). This is *not* a replacement for WordPress **Caernarvon draft #2151**. Live [Journal](https://finalvestige.com/blog/) (66 results, most recently Nov. 2) and [Editorial Standards](https://finalvestige.com/editorial-standards/) read this cycle; authenticated list of WordPress published/draft posts showed no Bohemia duplicate. [Site QA #1589](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1589) remains the separate, blocking read-only production-theme QA lane.
+
+## New sourced reporting: the families drove a statewide constitutional change
+
+**Court-source checked November 13:** Louisiana Supreme Court, *Board of Commissioners of Orleans Levee District v. Department of Natural Resources*, 483 So. 2d 958, original Feb. 24, 1986 ruling and rehearing granted May 15, 1986. Full reproduced majority and separate opinions: https://law.justia.com/cases/louisiana/supreme-court/1986/85-ca-1448-4.html . **Not the controlling October 20, 1986 rehearing opinion**, separately catalogued as 496 So. 2d 281: https://law.justia.com/cases/louisiana/supreme-court/1986/85-ca-1448-3.html .
+
+Claim-level findings and confidence limits:
+
+1. Original opinion majority, pages *960 and *964–966, reports **October 22, 1983** statewide voter ratification of the Art. VII, §14(B)(4) exception for restitution of certain expropriated land/mineral rights. It cites **1983 Act 729 / House Bill 56**; the court reports that a successful lobbying effort was undertaken largely by former Bohemia owners' **heirs and successors**, and says those heirs were noted as present in House committee minutes. **Verified as what the court recorded, NOT independently as eyewitness inspection of those 1983 committee minutes, lobbying contacts or ballot returns.**
+2. Majority interpreted "former owner" in the constitutional exception to include successors, relying on legal history and Louisiana succession law. It held 1984 Act 233 constitutional and explained that the legislative **declaration** of an ended public purpose was a legal step whose factual hydrological wisdom the majority was not assigned to decide. No independent hydrological test performed by this investigation.
+3. Chief Justice **John A. Dixon** dissented regarding heirs and observed that a related **1982 HB 151** had failed in the House; Justice **Walter F. Blanche** endorsed that heir objection. Justice **James L. Watson** separately dissented on succession, ongoing public-use and fiscal/bond effects. Those are **judicial dissenting arguments**, not the court's disposition or demonstrated contemporary engineering losses. 1982 roll-call and first-hand committee records not obtained.
+4. The **1984 Act 233 original enrolled scan** remains uninspected. A 1986 judicial opinion reproduces statutory language and the main law, but should never be described as inspection of that original enrolled 1984 act.
+5. No named heir's individual story, personal hardships, property receipt or current loss has been reconstructed from this court source. The 1983 campaign is a human historical lead, not license to fabricate an interview or motive.
+
+## Writing verification
+
+Updated only the GitHub companion manuscript's **"The state changes its mind"** section, now **"The heirs who changed the constitution"**, with approximately **412 additional net words** (some text replaced), plus expanded the existing ledger **[3]** with majority/dissent/date/source caveats; changed draft marker **v1.2 → v1.3**. In-text [2][3] point to the two distinct 1986 judicial decisions. No invented quotations; named dissenting judicial views treated as views. Retained Caernarvon/Bohemia distinction and all previous legal, hydrologic, revenue and land-return caveats.
+
+## Original and archival visuals
+
+**Existing source-derived original SVGs preserved**, not replaced, and still await genuine 390px/1440px rendered visual inspection:
+
+- [Four public records, 1924–2025](https://github.com/finalvestigestudios/final-vestige-site-layer/blob/main/docs/editorial/assets/bohemia-records-restitution-and-revenue-timeline-2026-11-12.svg): source-text inspection shows title/desc and 1200×760 viewBox; no outside images.
+- [Three separate Mississippi water-control works](https://github.com/finalvestigestudios/final-vestige-site-layer/blob/main/docs/editorial/assets/bohemia-caernarvon-three-works-chronology-2026-11-12.svg): original editable diagram, not photographic history.
+
+**NASA documentary image candidates visually revisited this cycle:** official [NASA Earth Observatory *Mardi Gras Pass*, Feb. 21, 2023](https://science.nasa.gov/earth/earth-observatory/mardi-gras-pass-150986/), including actual linked **small image previews only**, one each for the **Sept. 20, 2007 USDA NAIP aerial** and **Feb. 13, 2023 USGS Landsat 8 OLI** scene. Credits: **Joshua Stevens/NASA Earth Observatory; USDA NAIP or USGS Landsat underlying data**. Original NASA download filenames are `mardigras_nap_2007263_lrg.jpg` and `mardigras_oli_2023044_lrg.jpg`. NASA lists JPEG downloads of approximately **7.90 MB** and **957.38 KB**, respectively. NASA original page and [NASA media usage guidance](https://www.nasa.gov/nasa-brand-center/) authorize ordinary factual editorial use generally, subject to asset-specific third-party notices, attribution and nonendorsement. **Full-resolution bytes/pixels, asset-specific rights checks and locally hosted WordPress upload remain uncompleted.** Do not mistake a 150px preview for full-resolution QA or publish a hotlinked image; do not repurpose copyrighted advocacy/publication photographs. Alt/caption wording is in the manuscript's existing asset manifest and differentiates 2007/2023 observations from the 1920s.
+
+## Release gate / blockers
+
+Authenticated WordPress readback this cycle: **#2151** title *The Levee They Blew on Purpose*, `draft`, modified **2026-11-12T12:44:30** site-local, categories 257245/232815, original local media #2148; `_jetpack_dont_email_post_to_subs=true` and `jetpack_publicize_feature_enabled=false`. No WordPress edit/publish/media action performed. Caernarvon still requires actual editor-authenticated current production-theme screenshots and DOM at **390px / 1440px**, plus normal-reader or claim-equivalent **USACE 2018 / USGS 2008** document review ([#1589](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1589)).
+
+Companion still requires original **April 20, 1925 Orleans Levee Board committee report**, original **1983 House committee minutes / 1982 rollcall / 1984 enrolled Act 233**, parish deed/title and claimant-specific money records, 2023 executed memorandum and escrow ledgers, permit/as-built follow-up, original-document inspections, full-res documentary image review/clearance and responsive SVG QA. Final human editorial/legal fact and copyedit pass pending. **NO live release; NO mail blast; NO social posts; NO new paid services; NO homepage, theme or unrelated agent edits.**
+
+**Distribution note for Grok lane after independent release authorization:** It is more accurate to say *heirs helped win a statewide constitutional change before facing decades of title and royalty disputes* than to say *Louisiana discovered the spillway was useless* or *all descendants went unpaid*. Any teaser must link the released feature, not this working draft.
