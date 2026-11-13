@@ -1,0 +1,208 @@
+{
+  "schema": "fv-preparedness-r337-measurement-part-v1",
+  "source_commit": "05fa47e24f5d7bb17ce40a3737242983706e57c7",
+  "r336_witness_blob": "ff714125b0e785248819acc1358f912b470f4a69",
+  "part": 5,
+  "range": [
+    36,
+    41
+  ],
+  "rows": [
+    {
+      "kind": "tools",
+      "slug": "home-fire-escape-worksheet",
+      "route": "/preparedness/field-tools/home-fire-escape-worksheet/",
+      "body_blob": "01161948b6de6ffbd1b053c9b83a420758e707e4",
+      "meta_blob": "397c7d3072fb237b490a5a316c93fc863c101be9",
+      "min_utf8_bytes": 36155,
+      "word_units": 1999,
+      "citations": {
+        "shelter-nfpa-escape": 4,
+        "shelter-nfpa-high-rise": 1,
+        "shelter-nfpa-smoke-alarms": 1,
+        "shelter-ready-home-fires": 1,
+        "shelter-usfa-escape-grid": 1,
+        "shelter-usfa-high-rise-handout": 1,
+        "usfa-fire-escape": 2
+      },
+      "links": {
+        "family-communication-plan": 1,
+        "home-fire-escape-plan": 1,
+        "shelter-or-evacuate": 1
+      },
+      "headings": [
+        "act-h",
+        "worksheet",
+        "how",
+        "privacy"
+      ]
+    },
+    {
+      "kind": "tools",
+      "slug": "kit-builder",
+      "route": "/preparedness/field-tools/kit-builder/",
+      "body_blob": "2cb531174d6828fa5185c47bd2b742a0befa8353",
+      "meta_blob": "e9be8a497df737b36d7d399fccc4a00000ce8eac",
+      "min_utf8_bytes": 51947,
+      "word_units": 3732,
+      "citations": {
+        "cdc-water-store": 2,
+        "ready-are-you-ready": 11,
+        "ready-pets": 7,
+        "start-acl-emergency": 1,
+        "start-cdc-disability-evacuate": 1,
+        "start-cdc-disability-kit": 1,
+        "start-cdc-family-kit": 14,
+        "start-cdc-infant-checklist": 9,
+        "start-cdc-pyh-connected": 2,
+        "start-cdc-pyh-prescriptions": 2,
+        "start-fema-housing": 1,
+        "start-fema-power-sheet": 1,
+        "start-ready-alerts": 1,
+        "start-ready-car": 2,
+        "start-ready-disability": 13,
+        "start-ready-evacuation": 6,
+        "start-ready-financial": 1,
+        "start-ready-food": 2,
+        "start-ready-kit": 22,
+        "start-ready-low-cost": 2,
+        "start-ready-power": 3,
+        "start-ready-supply-list": 2
+      },
+      "links": {
+        "go-bags": 1,
+        "preparedness-real-households": 1,
+        "reunification-plan": 2,
+        "three-day-kit": 1,
+        "water-planner": 1
+      },
+      "headings": [
+        "act-h",
+        "kb-plan",
+        "kb-list-h",
+        "kb-h-core",
+        "kb-h-hazard",
+        "kb-h-adults",
+        "kb-h-children",
+        "kb-h-infants",
+        "kb-h-pregnant",
+        "kb-h-pets",
+        "kb-h-mobility",
+        "kb-h-sensory",
+        "kb-h-power",
+        "kb-h-storage",
+        "kb-h-foot",
+        "kb-h-car",
+        "kb-h-budget",
+        "kb-where",
+        "kb-limits"
+      ]
+    },
+    {
+      "kind": "tools",
+      "slug": "power-outage-planner",
+      "route": "/preparedness/field-tools/power-outage-planner/",
+      "body_blob": "aa8f866aaaaab9253f41c4363d31919029c69234",
+      "meta_blob": "8796bba2b323cce096639997002c402bd853e50f",
+      "min_utf8_bytes": 39172,
+      "word_units": 4011,
+      "citations": {
+        "fsis-power-failure": 1,
+        "shelter-cdc-co-basics": 1,
+        "shelter-cdc-heat": 2,
+        "shelter-cdc-power-outage": 1,
+        "shelter-cdc-winter-storm": 1,
+        "shelter-cpsc-co": 3,
+        "shelter-fema-power-outage-sheet": 5,
+        "shelter-nws-nwr": 1,
+        "shelter-ready-disabilities": 2,
+        "shelter-ready-evacuation": 1,
+        "shelter-ready-heat": 1,
+        "shelter-ready-plan-locations": 1,
+        "shelter-ready-power-outages": 2,
+        "shelter-ready-shelter": 1,
+        "shelter-ready-tech": 1,
+        "shelter-ready-winter-weather": 1,
+        "shelter-usda-fsis-emergencies": 1
+      },
+      "links": {
+        "outage-heat-cold-generators": 1
+      },
+      "headings": [
+        "act-h",
+        "planner",
+        "checklist",
+        "ops-g-lighting",
+        "ops-g-comms",
+        "ops-g-food",
+        "ops-g-weather",
+        "ops-g-meds",
+        "ops-g-family",
+        "ops-g-access",
+        "ops-g-shelter",
+        "ops-g-co",
+        "ops-g-contacts",
+        "medical",
+        "sources"
+      ]
+    },
+    {
+      "kind": "tools",
+      "slug": "reunification-plan",
+      "route": "/preparedness/field-tools/reunification-plan/",
+      "body_blob": "3305578369183edb1d427c8f8f8002eaacee420f",
+      "meta_blob": "10cd57dc8d39e366aaef8fd76cc3f8969b8c5348",
+      "min_utf8_bytes": 13745,
+      "word_units": 1303,
+      "citations": {
+        "ready-are-you-ready": 1,
+        "start-cdc-disability-plan": 1,
+        "start-cdc-pyh-connected": 1,
+        "start-cdc-pyh-prescriptions": 1,
+        "start-ready-evacuation": 1,
+        "start-ready-plan": 1,
+        "start-ready-power": 1
+      },
+      "links": {
+        "go-bags": 1,
+        "household-emergency-plan": 1,
+        "kit-builder": 1,
+        "preparedness-real-households": 1,
+        "three-day-kit": 1
+      },
+      "headings": [
+        "act-h",
+        "pb-top",
+        "pb-preview-h",
+        "pb-where",
+        "pb-limits"
+      ]
+    },
+    {
+      "kind": "tools",
+      "slug": "water-planner",
+      "route": "/preparedness/field-tools/water-planner/",
+      "body_blob": "a738d1f7824437911064d425868ed3d709326027",
+      "meta_blob": "7ea188a06b614940a226328c0166c2a2b20ff84e",
+      "min_utf8_bytes": 8246,
+      "word_units": 798,
+      "citations": {
+        "cdc-water-store": 2,
+        "ready-pets": 1,
+        "ready-water": 4
+      },
+      "links": {
+        "making-water-safer": 1,
+        "two-week-water-storage": 1,
+        "water-math": 1
+      },
+      "headings": [
+        "act-h",
+        "planner",
+        "how",
+        "not",
+        "wp-out-h"
+      ]
+    }
+  ]
+}
