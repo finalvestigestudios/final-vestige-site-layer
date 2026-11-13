@@ -32,6 +32,26 @@ class RenderParity(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td:
             self.assertEqual(gate.audit_native(Path(td))['state'],'INVALID_HARD_HOLD')
             self.assertEqual(list(Path(td).iterdir()),[])
+    def test_identically_tampered_wordpress_and_preview_cannot_hide(self):
+        for folder in ('wp','preview'):
+            key=f'{folder}/family-reunification-card.html'
+            self.actual[key] += b'<!-- unauthorized synchronized change -->'
+        r=gate.exact_compare(self.expected,self.actual)
+        self.assertEqual(r['state'],'INVALID_HARD_HOLD')
+        self.assertEqual(len([e for e in r['errors'] if 'SOURCE_TO_RENDER_BYTES_DRIFT' in e]),2)
+
+    def test_synthetic_clean_never_says_authentic_source(self):
+        r=gate.exact_compare(self.expected,self.actual)
+        self.assertIs(r['authentic_source_checkout_verified'], False)
+        self.assertIs(r['wordpress_live_or_published'], False)
+
+    def test_false_hub_count_report(self):
+        expected={'articles':[], 'hubs':[{'section':'start-here','guides':4}], 'landing':{}}
+        actual={'articles':[], 'hubs':[{'section':'start-here','guides':0}], 'landing':{},'release_evidence':{
+            'state':'HOLD','article_drafts':41,'article_published':0,
+            'independent_qa_verified':False,'wordpress_publication_performed':False}}
+        self.assertIn('BUILDER_SOURCE_REPORT_DRIFT:hubs',gate.report_compare(expected,actual))
+
     def test_missing_expected_file(self):
         self.expected.pop('wp/landing.html')
         self.assertIn('EXACT_100_FILE_SET_REQUIRED', gate.exact_compare(self.expected,self.actual)['errors'])
