@@ -1,0 +1,248 @@
+{
+  "date": "2026-11-12",
+  "scope": "UNPUBLISHED research/offer gate review; no affiliate activation",
+  "primary_offer": "Zen12 Premium (seller describes 12 levels / 48 MP3s)",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arxiv.org/abs/2610.27738",
+      "type": "2026 preprint",
+      "note": "62 male participants, random window vs subject-held-out"
+    },
+    {
+      "id": "s2",
+      "url": "https://arxiv.org/abs/2610.28427",
+      "type": "2026 preprint",
+      "note": "Occipital 0.721 random-split vs 0.453 LOSO; not product efficacy"
+    },
+    {
+      "id": "s3",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "type": "2024 peer-reviewed systematic theories review"
+    },
+    {
+      "id": "s4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38391691/",
+      "type": "2024 scholarly review"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.mdpi.com/2076-3425/13/12/1632",
+      "type": "2023 scholarly review"
+    },
+    {
+      "id": "s6",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "published FV historical source archive"
+    },
+    {
+      "id": "s7",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "published FV editorial"
+    },
+    {
+      "id": "s8",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "published FV editorial"
+    },
+    {
+      "id": "s9",
+      "url": "https://finalvestige.com/focus/",
+      "type": "existing FV opt-in route; page read from Issue 171; independent live fetch failed"
+    },
+    {
+      "id": "s10",
+      "url": "https://inspire3.com/",
+      "type": "official seller group"
+    },
+    {
+      "id": "s11",
+      "url": "https://zen12.com/",
+      "type": "official seller sales page"
+    },
+    {
+      "id": "s12",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "official seller product page"
+    },
+    {
+      "id": "s13",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "official seller product page"
+    },
+    {
+      "id": "s14",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "FTC endorsement staff guidance"
+    },
+    {
+      "id": "s15",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "FTC health claims guidance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "claim": "62 male participants in 32/30 comparison",
+      "classification": "study-reported preprint",
+      "source": "s1",
+      "allowed": "as qualified"
+    },
+    {
+      "id": "c2",
+      "claim": "best random-split window accuracy .82",
+      "classification": "preprint-reported",
+      "source": "s1",
+      "allowed": "with exact context; not universal"
+    },
+    {
+      "id": "c3",
+      "claim": "mean frontal LOSO .646",
+      "classification": "preprint-reported",
+      "source": "s1",
+      "allowed": "with sample and evaluation caveat"
+    },
+    {
+      "id": "c4",
+      "claim": "occipital drop .721 to .453",
+      "classification": "preprint-reported",
+      "source": "s2",
+      "allowed": "same analysis context only"
+    },
+    {
+      "id": "c5",
+      "claim": "hypnotic suggestion theories contested",
+      "classification": "independent scholarly review",
+      "source": "s3",
+      "allowed": "general science not product"
+    },
+    {
+      "id": "c6",
+      "claim": "no universal settled EEG signature",
+      "classification": "synthesis from literature",
+      "source": "s4",
+      "allowed": "careful contextual wording"
+    },
+    {
+      "id": "c7",
+      "claim": "Puységur claims historical source",
+      "classification": "historical; nonclinical",
+      "source": "s6",
+      "allowed": "source trail only"
+    },
+    {
+      "id": "c8",
+      "claim": "Zen12 Premium full 12/48; 6/24 other tiers",
+      "classification": "seller format claim",
+      "source": "s11",
+      "allowed": "seller attributed"
+    },
+    {
+      "id": "c9",
+      "claim": "12 minutes equals an hour of meditation benefits",
+      "classification": "seller efficacy promise",
+      "source": "s11",
+      "allowed": "DO NOT ADOPT - no matching product-specific proof"
+    },
+    {
+      "id": "c10",
+      "claim": "Zen12 treats stress, disease or improves productivity",
+      "classification": "seller/unverified efficacy",
+      "source": "s11",
+      "allowed": "DO NOT ADOPT"
+    },
+    {
+      "id": "c11",
+      "claim": "Total Focus 33 minutes, 47MB",
+      "classification": "seller format claim",
+      "source": "s12",
+      "allowed": "seller attributed, recheck"
+    },
+    {
+      "id": "c12",
+      "claim": "Focus Shot 15/30 minute variants",
+      "classification": "seller format claim",
+      "source": "s13",
+      "allowed": "seller attributed, recheck"
+    },
+    {
+      "id": "c13",
+      "claim": "Brainwave entrainment sustains hours of sharp focus",
+      "classification": "seller efficacy promise",
+      "source": "s13",
+      "allowed": "DO NOT ADOPT"
+    },
+    {
+      "id": "c14",
+      "claim": "Influencer/affiliate connection should be conspicuous",
+      "classification": "FTC staff guidance",
+      "source": "s14",
+      "allowed": "apply near link"
+    },
+    {
+      "id": "c15",
+      "claim": "Objective health benefits need competent reliable evidence",
+      "classification": "FTC staff guidance",
+      "source": "s15",
+      "allowed": "apply product-specifically"
+    },
+    {
+      "id": "c16",
+      "claim": "Final Vestige approved Inspire3 publisher",
+      "classification": "account-specific unverified",
+      "source": null,
+      "allowed": "BLOCKED"
+    },
+    {
+      "id": "c17",
+      "claim": "Active FV issued tracked affiliate URL and channels",
+      "classification": "account-specific unverified",
+      "source": null,
+      "allowed": "BLOCKED"
+    },
+    {
+      "id": "c18",
+      "claim": "FV-owned rights-cleared active Payhip Mind SKU",
+      "classification": "inventory unverified",
+      "source": null,
+      "allowed": "BLOCKED"
+    },
+    {
+      "id": "c19",
+      "claim": "Current checkout price and refund eligibility",
+      "classification": "time-sensitive checkout unverified",
+      "source": null,
+      "allowed": "BLOCKED"
+    },
+    {
+      "id": "c20",
+      "claim": "Commission earned, sale settled or revenue per 1000",
+      "classification": "commercial accounting unverified",
+      "source": null,
+      "allowed": "BLOCKED"
+    }
+  ],
+  "activation_gates": {
+    "publisher_account_approval": false,
+    "issued_affiliate_url": false,
+    "permitted_channels": false,
+    "tracked_attribution_terms": false,
+    "merchant_checkout_price_refund_verified": false,
+    "independent_efficacy_support": false,
+    "founder_release_approval": false,
+    "staging_mobile_a11y": false,
+    "playable_42s_media": false,
+    "commerce_qa": false,
+    "wp_preview_sanitization": false,
+    "settled_paid_order_evidence": false,
+    "refunded_fee_reconciled": false,
+    "qualified_human_denominator": false,
+    "first_party_measurement_qa": false,
+    "grok_asset_ids_verified": false,
+    "jetpack_confirmed_lead_test": false,
+    "owned_product_rights_delivery_verified": false
+  },
+  "calculation": "net_realized_revenue_per_1000_qualified_human_sessions = 1000 * (settled_paid_receipts - refunds - merchant_fees - chargebacks - substantiated_variable_costs) / measured_qualified_human_sessions; missing denominator or settlement => NOT COMPUTABLE",
+  "activation_decision": "HARD HOLD"
+}
