@@ -195,8 +195,9 @@ class UncertainRegistrationR404(unittest.TestCase):
 
     def test_unknown_callback_id_cannot_be_removed_after_later_failure(self):
         root = UncertainRoot(fail_at=4, missing_id_at=2)
-        with self.assertRaises(RuntimeError):
+        with self.assertRaisesRegex(ValueError, "callback ID"):
             self.install(root, 1)
+        self.assertEqual(root.bind_calls, 2)
         self.assertIn("<Control-Key-1>", root.handlers)
         self.assert_hard_hold(root, 1)
 
