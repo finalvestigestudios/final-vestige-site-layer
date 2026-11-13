@@ -201,6 +201,7 @@ def report(errors:list[str],catalog:dict|None=None,binding:dict|None=None)->dict
   'source_identity_crosswalk':b.get('crosswalk',[]),
   'duplicate_url_reviewer_docket':c.get('warnings',[]),
   'unverified_placeholder_promotions_requiring_review':c.get('events',[]),
+  'multi_verified_fragment_conflict_count':sum(x.get('event')=='MULTIPLE_VERIFIED_FRAGMENTS_REQUIRE_HUMAN_RECONCILIATION' for x in c.get('events',[])),
   'human_source_link_checks_established':0,'original_contributor_conflicts_unresolved':15,
   'original_article15_tool104_claim_holds_unresolved':17,
   'safety_policy':'NO_FETCH_OR_CITATION_ADJACENCY_IS_MEDICAL_OR_CLAIM_SUPPORT',
@@ -212,10 +213,12 @@ def audit_native(root:Path)->dict:
  prep=root/'preparedness' if (root/'preparedness').is_dir() else root
  try:
   from preparedness.tools import r343_claim_citation_review_crosswalk_hold as prior
+  # Preserve source-conflict visibility even when upstream paragraph review fails.
+  catalog=read_frozen_catalog(prep)
   prior_report=prior.audit_native(root)
   if prior_report.get('state')!='DRAFT_HARD_HOLD' or prior_report.get('entries_inspected')!=41:
-   return report(['R343_41_ENTRY_CLAIM_TICKET_GUARD_FAILED']+prior_report.get('errors',[]))
-  catalog=read_frozen_catalog(prep);binding=bind_tickets(catalog,prior_report.get('review_tickets'))
+   return report(['R343_41_ENTRY_CLAIM_TICKET_GUARD_FAILED']+prior_report.get('errors',[])+catalog['errors'],catalog)
+  binding=bind_tickets(catalog,prior_report.get('review_tickets'))
   errors=catalog['errors']+binding['errors']
   if len(binding['crosswalk'])!=prior_report.get('citation_claim_review_tickets'):
    errors.append('SOURCE_CITATION_CROSSWALK_INCOMPLETE')
