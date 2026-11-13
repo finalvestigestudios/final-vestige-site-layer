@@ -1,5 +1,5 @@
 # The Spillway That Kept Its Names
-*Final Vestige Investigations · reporting draft v0.3 · 12 November 2026 · NOT APPROVED FOR PUBLICATION*
+*Final Vestige Investigations · reporting draft v0.4 · 12 November 2026 · NOT APPROVED FOR PUBLICATION*
 
 **Editorial status.** This is a separately scoped companion-reporting module associated with [Caernarvon #1463](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1463), not a replacement or expansion of WordPress draft #2151 during the [production-theme QA hold #1589](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1589). It is source-checked where marked, not yet a complete long-form release. No purported interviews, visits, contemporary measurements, or archival access beyond the linked reproduced court text and official source files.
 
@@ -48,6 +48,14 @@ The specificity matters. A government could say that land should be returned, wh
 ### The deeds did not return all at once
 
 Court records in *Vogt* identify transfers of some certified titles in **1991 and 1992**. They also describe litigation over mineral revenues collected after the statutory effective date of **June 29, 1984**. In that case, an accounting for certain plaintiffs' property exceeded **$2.85 million**. That figure is not the money paid to every owner, and a court-ordered accounting is not the same as an independently verified bank transfer. [5]
+
+### A judgment was not a check
+
+The difference between a legally recognized claim and an actual payment emerged in **two separate 2002 appellate opinions** bearing the *Vogt* name. In Louisiana's Fourth Circuit on **March 27**, the court reviewed an attempt to force collection of an earlier **$2,853,358.44** mineral-revenue judgment. It affirmed the denial of mandamus and a writ of seizure. Its reasoning was a practical obstacle for the claimants: public funds and property could not simply be seized to satisfy the judgment, and appropriating money was a discretionary act that the court could not compel through that writ. The sum was attached to particular plaintiffs and particular property, not to all Bohemia heirs. [5]
+
+Then, on **June 14, 2002**, the federal Fifth Circuit decided another *Vogt* appeal. It described **24 landowners** who had obtained an accounting and a state-court judgment but still lacked payment. The federal district court had dismissed their takings complaint, treating the levee district as an arm of the state protected by Eleventh Amendment immunity. The appeals court reversed that dismissal: the district was not entitled to that immunity, and the landowners had stated a takings claim. It did **not** thereby hand the claimants a new paid award. It restored a legal route for the case to proceed. [11]
+
+The two decisions, read together, illuminate the difference the 1984 statute could not erase. Returning a deed, accounting for royalty receipts, establishing a money judgment, securing an appropriation, and receiving payment were five different acts. One court could permit a lawsuit while another refused an immediate means of collection. None of that proves exactly what ultimately reached a household, and a 2002 legal status must not be presented as a current unpaid balance. It does show why the long tail of the spillway story cannot be condensed into *the landowners won*.
 
 A separate federal case presents an even sharper trap for a careless retelling. In **July 2007**, the Fifth Circuit reversed a **$17,442,332.87** federal takings judgment. A reader skimming only the district-court amount could report a dramatic recovery that the appellate court did not let stand. The decision also discussed other state-court settlement obligations, some dependent on future appropriations. The rulings must be kept in their own procedural lanes. [6]
 
@@ -112,6 +120,8 @@ The surviving record does not make every family's ending visible. It shows somet
 [9] **NASA Earth Observatory**, Emily Cassidy (story) and Joshua Stevens (imagery), “Mardi Gras Pass,” **February 21, 2023**. https://science.nasa.gov/earth/earth-observatory/mardi-gras-pass-150986/ . NASA interprets the February 2012 breach and provides an **September 20, 2007** USDA National Agriculture Imagery Program aircraft image and **February 13, 2023** USGS Landsat 8 satellite image. Cross-check acquisition dates against NASA's labelled images. This is primary federal remote-sensing imagery of those dates, **not an archival image of Bohemia in the 1920s**. NASA staff interpretation of geomorphic change must not be misrepresented as an independent 1920s field record.
 
 [10] **NASA**, “NASA Brand Center” — published media-usage terms: https://www.nasa.gov/nasa-brand-center/ . NASA-produced imagery may generally be used for factual editorial purposes with attribution and no suggestion of endorsement; respect third-party copyrighted assets, emblems, and applicable media restrictions. NASA's image-page credit identifies Joshua Stevens / NASA Earth Observatory, with USGS Landsat and USDA NAIP data. Editorial placement only, not merch or promotion.
+
+[11] **U.S. Court of Appeals, Fifth Circuit**, *Vogt v. Board of Commissioners of the Orleans Levee District*, **294 F.3d 684 (June 14, 2002)**, full published-opinion transcription: https://openjurist.org/294/f3d/684/vogt-v-board-of-commissioners-of-the-orleans-levee-district . Identifies 24 claimants, the **$2,853,358.44 state judgment**, legal obstacles to collection, and the federal court's reversal of jurisdictional dismissal. **Procedural win, not confirmation of payment.** Cross-read with separate state appeals case [5], decided March 27, 2002.
 
 ### Remaining editorial blockers for this companion
 
