@@ -18,9 +18,9 @@ class SpendVendorEvidenceR358(unittest.TestCase):
         self.assertIn("ACME", labels)
         self.assertIn("acme", labels)
 
-    def test_ascii_boundary_whitespace_compatibility(self):
+    def test_ascii_boundary_whitespace_is_review_evidence(self):
         self.assertEqual(spend_vendor_evidence(vendors(" \tACME\r", "ACME")),
-                         (False, 1, "ACME"))
+                         (True, 2, r"\u0020\u0009ACME\u000D; ACME"))
 
     def test_nbsp_is_distinct(self):
         collision, count, labels = spend_vendor_evidence(vendors("ACME", "\u00a0ACME"))
