@@ -5,7 +5,7 @@ const path = require('node:path');
 const {review, GATES} = require('./non_sending_decision_audit.cjs');
 const original = JSON.parse(fs.readFileSync(path.join(__dirname,'../campaign-2026-mind/manifest.json'),'utf8'));
 const ledger = JSON.parse(fs.readFileSync(path.join(__dirname,'SIX_ISSUE_DECISION_LEDGER.json'),'utf8'));
-const change = (fn) => {const a=structuredClone(original), b=structuredClone(ledger); fn(a,b); return review(a,b)};
+const change = (fn) => {const a=JSON.parse(JSON.stringify(original)), b=JSON.parse(JSON.stringify(ledger)); fn(a,b); return review(a,b)};
 let passes=0;function check(label, outcome) {assert.ok(typeof outcome==='function'?outcome():outcome,label);passes++;}
 const baseline=review(original,ledger);
 check('baseline never sends',baseline.send_allowed===false&&baseline.release_status==='HOLD_UNSENT');
