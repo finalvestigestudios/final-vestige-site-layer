@@ -119,7 +119,10 @@ def validated_spend_rows(
             raise ValueError(f"Invalid original spend date at physical row {physical_row}")
         canonical_source_dates.append(source_date)
 
-    # Private exceptions from original source validators and injected callbacks\n    # must not survive through either __cause__ or __context__. In particular\n    # 'raise ... from None' inside except would retain their source payloads.\n    # Precompute every semantic result *before* yielding the first one.
+    # Private exceptions from original source validators and injected callbacks
+    # must not survive through either __cause__ or __context__. In particular
+    # 'raise ... from None' inside except would retain their source payloads.
+    # Precompute every semantic result *before* yielding the first one.
     # Previously the first valid row escaped to a direct iterator consumer
     # before a later callback/date/Decimal failure became known. A consumer
     # could write partial evidence while believing it had validated the file.
