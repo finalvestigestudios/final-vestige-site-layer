@@ -1,0 +1,187 @@
+{
+  "schema": "fv-preparedness-r331-e325-crosswalk-draft-hard-hold-v1",
+  "issue": 136,
+  "parent_pr": 2283,
+  "parent_head": "2b3295ed0f86260a07a0d0c4c4d752ac14b91587",
+  "source_objects": {
+    "a_body": {
+      "path": "preparedness/content/articles/family-communication-plan.body.html",
+      "git_blob_sha1": "8ac8bd7dba3be15d477c15737e54d83364d72527"
+    },
+    "a_meta": {
+      "path": "preparedness/content/articles/family-communication-plan.meta.json",
+      "git_blob_sha1": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3"
+    },
+    "t_body": {
+      "path": "preparedness/content/tools/family-reunification-card.body.html",
+      "git_blob_sha1": "be8698ac5d020476ff649d85813810e2000c6f98"
+    },
+    "t_meta": {
+      "path": "preparedness/content/tools/family-reunification-card.meta.json",
+      "git_blob_sha1": "47da1e7e20e39f0ea85e26d54a8d58301f6e0a15"
+    }
+  },
+  "editorial_directions": {
+    "E325-01": "Article 15: 911 immediate-help scope; distinguish family SMS from text-to-911",
+    "E325-02": "Article 15: corded phone service and actual power/network dependencies",
+    "E325-03": "Article 15: school-use child card versus privacy-minimal everyday carry card",
+    "E325-04": "Article 15: no unverified local-only storage promise or cleared link to Tool 104",
+    "E325-05": "Article 15: local police first for missing child; school reunification locality",
+    "E325-06": "Article 15: Red Cross domestic-service eligibility and archived FEMA material",
+    "E325-07": "Article 15: paper rehearsal; no unsolicited 911 test calls"
+  },
+  "original_review_witnesses": [
+    {
+      "id": "A15-911-SCOPE",
+      "source_role": "a_body",
+      "exact_anchor": "call 911 for anything life-threatening",
+      "editorial_candidate": "E325-01",
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "T104-911-SCOPE",
+      "source_role": "t_body",
+      "exact_anchor": "call 911 for anything life-threatening",
+      "editorial_candidate": null,
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "T104-TEXT-EMERGENCY",
+      "source_role": "t_body",
+      "exact_anchor": "use text messages rather than calls for everything else",
+      "editorial_candidate": null,
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "A15-LOCAL-PRIVACY",
+      "source_role": "a_body",
+      "exact_anchor": "keeps what you type on your own device",
+      "editorial_candidate": "E325-04",
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "T104-PRIVACY-METADATA",
+      "source_role": "t_meta",
+      "exact_anchor": "Nothing is stored.",
+      "editorial_candidate": null,
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "A15-UNREVIEWED-CARD-LINK",
+      "source_role": "a_body",
+      "exact_anchor": "{{link:family-reunification-card|",
+      "editorial_candidate": "E325-04",
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "T104-PRINTED-CHILD-PRIVACY",
+      "source_role": "t_body",
+      "exact_anchor": "A printed card can be lost",
+      "editorial_candidate": null,
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "A15-MISSING-CHILD",
+      "source_role": "a_body",
+      "exact_anchor": "If a child is missing after a disaster",
+      "editorial_candidate": "E325-05",
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "T104-MISSING-CHILD",
+      "source_role": "t_body",
+      "exact_anchor": "If a child is missing after a disaster",
+      "editorial_candidate": null,
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "T104-SCHOOL-REUNIFICATION",
+      "source_role": "t_body",
+      "exact_anchor": "School and childcare reunification",
+      "editorial_candidate": null,
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "A15-CORDED-SERVICE",
+      "source_role": "a_body",
+      "exact_anchor": "keep at least one corded telephone that does not depend on electricity",
+      "editorial_candidate": "E325-02",
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "A15-REDCROSS-ARCHIVE",
+      "source_role": "a_body",
+      "exact_anchor": "Red Cross takes welfare-check requests at 1-800-RED CROSS",
+      "editorial_candidate": "E325-06",
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "A15-NCMEC-ORDER",
+      "source_role": "a_body",
+      "exact_anchor": "If a child is missing after a disaster",
+      "editorial_candidate": "E325-05",
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "T104-NCMEC-ORDER",
+      "source_role": "t_body",
+      "exact_anchor": "If a child is missing after a disaster",
+      "editorial_candidate": null,
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "A15-SCHOOL-LOCALITY",
+      "source_role": "a_body",
+      "exact_anchor": "Colorado's Office of School Safety describes reunification as \"not a normal pick-up\"",
+      "editorial_candidate": "E325-05",
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "T104-SCHOOL-LOCALITY",
+      "source_role": "t_body",
+      "exact_anchor": "Colorado's Office of School Safety, as one state's example",
+      "editorial_candidate": null,
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    },
+    {
+      "id": "A15-RESEARCH-NOT-OPENED",
+      "source_role": "a_body",
+      "exact_anchor": "We did not open the Ready.gov fillable PDF card, the Red Cross's Reconnecting Families program",
+      "editorial_candidate": "E325-06",
+      "disposition": "UNRESOLVED_HUMAN_REVIEW",
+      "clearance": false
+    }
+  ],
+  "gates": {
+    "publication_authorized": false,
+    "independent_qd_pass": false,
+    "source_claim_support_verified": false,
+    "qualified_emergency_review": false,
+    "child_privacy_approved": false,
+    "tool104_release_approved": false,
+    "paid_preparedness_offer_verified": false
+  },
+  "notes": [
+    "E325 is seven proposed Article #15 redlines only, not human adjudication.",
+    "17 R328/R329 unique issue IDs are retained; some distinct issues share one source excerpt.",
+    "Eight Tool #104 review issues are not addressed by E325 Article #15 proposals.",
+    "E325-03 and E325-07 add editorial work outside those existing 17 reviewer witnesses.",
+    "Tool #102 plan builder is a different identity and must never be substituted for Tool #104 card."
+  ]
+}
