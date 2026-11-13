@@ -24,7 +24,7 @@ warnings.simplefilter('error', Image.DecompressionBombWarning)
 raw = sys.stdin.buffer.read(33554433)
 if not raw or len(raw) > 33554432:
     sys.exit(2)
-with Image.open(io.BytesIO(raw)) as im:
+with Image.open(io.BytesIO(raw), formats=['JPEG', 'WEBP']) as im:
     if im.format not in ('JPEG', 'WEBP'):
         sys.exit(3)
     w, h = im.size
