@@ -12,11 +12,11 @@ Run from repository root:
 
 Optional genuine axe-core, using a separately obtained official Deque bundle:
 
-    AXE_CORE_JS=/absolute/path/to/axe.min.js python experience2/apollo-r324/qa/release_readiness.py
+    REQUIRE_AXE=1 AXE_CORE_JS=/absolute/path/to/axe.min.js python experience2/apollo-r324/qa/release_readiness.py
 
 Requires Python Playwright, pypdf, local Chromium at /usr/bin/chromium, PHP and Node. The runner verifies exact source Git blobs and PHP/JS syntax, PHP dynamic-shortcode fixture, 14 real offline Chromium contexts at 320/360/390/768/1024/1440/1920px with JavaScript enabled and disabled, official source destinations and source/rights boundaries, the one free editorial continuation, absence of images/geo pins/paid links, native fragment focus and closed-details reveal, actual Chromium CDP accessible link names, two Chrome-generated PDF URI inspections, and offline LCP/CLS observations. Four negative mutations must be rejected: counterfeit NASA media clearance, injected checkout, invented geo pin and inaccessible unnamed link.
 
-**Genuine axe-core was not available locally.** When missing, runner explicitly reports AXE BLOCKED; CDP AX-tree checks are not an axe substitute and cannot satisfy that release gate. When provided, actual axe.run executes and rejects violations. Neither that package nor analytics are injected into public pages. An invalid AXE_CORE_JS path is an error.
+**Genuine axe-core was not available locally.** When missing, runner explicitly reports AXE BLOCKED; CDP AX-tree checks are not an axe substitute and cannot satisfy that release gate. When provided, actual axe.run executes and rejects violations. Neither that package nor analytics are injected into public pages. The QA-only diagnostic run reports AXE BLOCKED but does not certify a release. Set REQUIRE_AXE=1 for the fail-closed release gate: without an actual axe bundle, execution exits nonzero. An invalid AXE_CORE_JS path is an error.
 
 Local execution: 14/14 offline Chromium contexts PASS, four deliberately corrupt variants rejected, two printable source PDFs audited, 390px and 1440px screenshots and JSON per-context receipt. Chromium refused native http://127.0.0.1:8764/ with net::ERR_BLOCKED_BY_ADMINISTRATOR. Installed WordPress, Assembler, CDN, CSP and field CWV are unverified; local fixture LCP/CLS are NOT field metrics.
 
