@@ -49,8 +49,10 @@ class SourceContinuityR411(unittest.TestCase):
             self.skipTest('Filesystem does not permit symlink creation')
         self.no_spawn(linked / 'desktop')
 
-    def test_linked_ancestor_without_python_files_denied(self):
-        linked = self.root.parent / 'linked_parent'
+    def test_nested_linked_ancestor_denied(self):
+        outer = self.root.parent / 'outer'
+        outer.mkdir()
+        linked = outer / 'linked_grandparent'
         try:
             linked.symlink_to(self.root.parent, target_is_directory=True)
         except (OSError, NotImplementedError):
