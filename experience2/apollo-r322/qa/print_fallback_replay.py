@@ -28,9 +28,9 @@ def guarded(source):
             elif r.type=='qualified-rule':
                 selector=tinycss2.serialize(r.prelude)
                 decls=tinycss2.parse_declaration_list(r.content,skip_whitespace=True,skip_comments=True)
-                if 'summary' in selector and any(d.type=='declaration' and d.lower_name=='display'
+                if ('summary' in selector and any(d.type=='declaration' and d.lower_name=='display'
                         and tinycss2.serialize(d.value).strip()=='none' for d in decls) and
-                        any(t=='media' and 'print' in p for t,p in parents):
+                        any(t=='media' and 'print' in p for t,p in parents)):
                     if '.fv-r281' in selector:
                         hidden.append((selector,any(t=='supports' and 'selector(details::details-content)' in p
                               for t,p in parents)))
