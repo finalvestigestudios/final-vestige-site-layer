@@ -61,6 +61,16 @@ class CandidateGuardAncestryIntegration(unittest.TestCase):
         with self.assertRaises(CandidateGuardError):
             candidate_guard.check_candidate_directory(alias, (self.exe.name,))
 
+    def test_directory_under_symlinked_ancestor_rejected(self):
+        nested = self.stage / "nested"
+        nested.mkdir()
+        (nested / self.exe.name).write_bytes(self.exe.read_bytes())
+        (nested / self.sumfile.name).write_bytes(self.sumfile.read_bytes())
+        alias = self._alias()
+        # The final directory is ordinary; an intermediate parent is a link.
+        with self.assertRaises(CandidateGuardError):
+            candidate_guard.check_candidate_directory(alias / "nested", (self.exe.name,))
+
     def test_child_of_symlinked_parent_does_not_open_bytes(self):
         alias = self._alias()
         with patch.object(candidate_guard.os, "open", side_effect=AssertionError("unsafe open")):
