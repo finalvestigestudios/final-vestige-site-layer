@@ -146,9 +146,9 @@ function classifyImages(stored,rendered,network,pageVerified){
   const finalRedirectIdentityUnverified=!!(req&&r?.currentSrc&&!finalNetworkIdentityVerified&&
    (req.url_aliases||[]).some(u=>sameSource(u,r.currentSrc)));
   // Both a genuine failure and a healthy load need explicit cold-network proof.
-  // Missing cache flags are UNKNOWN, not evidence of a fresh origin request.
+  // Missing cache flags (including memory cache) are UNKNOWN, not proof of a fresh transfer.
   const freshNetworkProof=!!(req&&req.was_cached===false&&
-    req.from_disk_cache===false&&req.from_service_worker===false);
+    req.from_disk_cache===false&&req.from_memory_cache===false&&req.from_service_worker===false);
   // Successful HTTP does not imply a valid image: some publishers return 200 HTML/XML/JSON error bodies.
   // Require a completed, zero-width decode and a matching real CDP network response.
   const incompatibleResponse=!!(responseStatus>=200&&responseStatus<300&&responseMime&&
@@ -244,7 +244,7 @@ function scopeArticleImageWire(slots,networkImages){
    matched++;
    if(!Number.isSafeInteger(bytes)||bytes<=0||n.status!==200||
      typeof n.mime_type!=='string'||!/^image\//i.test(n.mime_type)||
-     n.error||n.was_cached!==false||n.from_disk_cache!==false||n.from_service_worker!==false)unmeasured++;
+     n.error||n.was_cached!==false||n.from_disk_cache!==false||n.from_memory_cache!==false||n.from_service_worker!==false)unmeasured++;
    else article+=bytes;
   }else if(Number.isSafeInteger(bytes)&&bytes>=0)unattributed+=bytes;
  }
