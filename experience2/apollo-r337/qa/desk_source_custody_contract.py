@@ -35,11 +35,11 @@ def audit(html):
         if not group:
             errors.append(f'card {n}: missing source group')
             continue
-        links = re.findall(r'<a\\s+([^>]+)>(.*?)</a>', group.group(1), re.S)
+        links = re.findall(r'<a\s+([^>]+)>(.*?)</a>', group.group(1), re.S)
         if len(links) != 2:
             errors.append(f'card {n}: expected 2 distinct custody links')
             continue
-        href = [re.search(r'\\bhref="([^"]+)"', attrs).group(1) for attrs, _ in links]
+        href = [re.search(r'\bhref="([^"]+)"', attrs).group(1) for attrs, _ in links]
         if href[0] != (RETRO if n == 1 else BOARD):
             errors.append(f'card {n}: documentary support is not first')
         if href[1] != PHOTOS[n-1]:
@@ -52,7 +52,7 @@ def audit(html):
             errors.append(f'card {n}: photo accessibility label unclear')
         if any(urlsplit(u).hostname != 'www.nasa.gov' for u in href):
             errors.append(f'card {n}: unexpected source host')
-    urls = re.findall(r'\\bhref="([^"]+)"', html)
+    urls = re.findall(r'\bhref="([^"]+)"', html)
     if urls.count(FREE) != 1:
         errors.append('one canonical editorial continuation required')
     if any(any(s in u.lower() for s in ('payhip','checkout','affiliate','utm_')) for u in urls):
