@@ -1,0 +1,355 @@
+{
+  "schema": "fv-preparedness-r337-measurement-part-v1",
+  "source_commit": "05fa47e24f5d7bb17ce40a3737242983706e57c7",
+  "r336_witness_blob": "ff714125b0e785248819acc1358f912b470f4a69",
+  "part": 1,
+  "range": [
+    0,
+    9
+  ],
+  "rows": [
+    {
+      "kind": "articles",
+      "slug": "household-emergency-plan",
+      "route": "/preparedness/start-here/household-emergency-plan/",
+      "body_blob": "f81cd43516e8295104230412f18776919148f905",
+      "meta_blob": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+      "min_utf8_bytes": 24695,
+      "word_units": 3437,
+      "citations": {
+        "cdc-water-store": 3,
+        "ready-are-you-ready": 22,
+        "start-cdc-disability-kit": 1,
+        "start-cdc-disability-plan": 5,
+        "start-cdc-family-kit": 1,
+        "start-cdc-pyh-connected": 1,
+        "start-ready-alerts": 7,
+        "start-ready-disability": 1,
+        "start-ready-evacuation": 1,
+        "start-ready-financial": 3,
+        "start-ready-kit": 2,
+        "start-ready-low-cost": 1,
+        "start-ready-plan": 7,
+        "start-redcross-older-adults": 2
+      },
+      "links": {
+        "go-bags": 3,
+        "preparedness-real-households": 1,
+        "three-day-kit": 3,
+        "two-week-water-storage": 1,
+        "water-math": 1
+      },
+      "headings": [
+        "act-h",
+        "why",
+        "first-hour",
+        "five",
+        "needs",
+        "alerts",
+        "contact",
+        "windows",
+        "practice",
+        "paper",
+        "disagree",
+        "honest",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "three-day-kit",
+      "route": "/preparedness/start-here/three-day-kit/",
+      "body_blob": "933f38ff3cd55a241cf9b392014fc52d4961e84f",
+      "meta_blob": "1c69d5f1636a3a41631a5d93f11254d85cbe1b59",
+      "min_utf8_bytes": 27644,
+      "word_units": 3783,
+      "citations": {
+        "cdc-water-store": 3,
+        "ready-are-you-ready": 11,
+        "start-cdc-disability-kit": 2,
+        "start-cdc-family-kit": 2,
+        "start-cdc-infant-checklist": 2,
+        "start-cdc-power-outage": 1,
+        "start-cdc-pyh-prescriptions": 5,
+        "start-fema-power-sheet": 5,
+        "start-fsis-emergency-food": 1,
+        "start-ready-car": 1,
+        "start-ready-disability": 1,
+        "start-ready-financial": 1,
+        "start-ready-food": 8,
+        "start-ready-kit": 24,
+        "start-ready-low-cost": 3,
+        "start-ready-power": 6,
+        "start-ready-supply-list": 1,
+        "start-redcross-older-adults": 2
+      },
+      "links": {
+        "go-bags": 2,
+        "household-emergency-plan": 1,
+        "making-water-safer": 1,
+        "preparedness-real-households": 2,
+        "two-week-water-storage": 2,
+        "water-math": 2
+      },
+      "headings": [
+        "act-h",
+        "what",
+        "list",
+        "water",
+        "food",
+        "power",
+        "medicine",
+        "mask-utilities",
+        "storing",
+        "budget",
+        "more",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "water-math",
+      "route": "/preparedness/water/water-math/",
+      "body_blob": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+      "meta_blob": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+      "min_utf8_bytes": 14140,
+      "word_units": 2001,
+      "citations": {
+        "cdc-find-clean-water": 4,
+        "cdc-water-store": 11,
+        "ready-pets": 3,
+        "ready-water": 14,
+        "usscm-brenckle-2019": 1
+      },
+      "links": {
+        "making-water-safer": 1,
+        "two-week-water-storage": 1
+      },
+      "headings": [
+        "act-h",
+        "baseline",
+        "why-3-14",
+        "table",
+        "adjust",
+        "pets",
+        "rationing",
+        "other-sources",
+        "worked",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "two-week-water-storage",
+      "route": "/preparedness/water/two-week-water-storage/",
+      "body_blob": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+      "meta_blob": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+      "min_utf8_bytes": 13321,
+      "word_units": 1892,
+      "citations": {
+        "cdc-water-store": 20,
+        "ready-water": 7,
+        "usscm-brenckle-2019": 1
+      },
+      "links": {
+        "making-water-safer": 1,
+        "water-math": 1
+      },
+      "headings": [
+        "act-h",
+        "bottled",
+        "containers",
+        "cleaning",
+        "filling",
+        "where",
+        "rotation",
+        "drawing",
+        "doubt",
+        "checklist",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "water-advisories-explained",
+      "route": "/preparedness/water/water-advisories-explained/",
+      "body_blob": "e96486d74731606fdd5a616030f146f66c59e2b0",
+      "meta_blob": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+      "min_utf8_bytes": 14465,
+      "word_units": 1891,
+      "citations": {
+        "cdc-find-clean-water": 2,
+        "cdc-water-advisories": 25,
+        "cdc-water-safe": 2,
+        "epa-emergency-disinfection": 1
+      },
+      "links": {
+        "making-water-safer": 2,
+        "two-week-water-storage": 1,
+        "water-math": 1
+      },
+      "headings": [
+        "act-h",
+        "why",
+        "three",
+        "boil",
+        "dnd",
+        "dnu",
+        "quick",
+        "prepare",
+        "unknowns",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "making-water-safer",
+      "route": "/preparedness/water/making-water-safer/",
+      "body_blob": "f85d158fc8752200a227282e640f6df48277daf5",
+      "meta_blob": "827d861eb3beebfd010ee98fcca764b23a2de90e",
+      "min_utf8_bytes": 21486,
+      "word_units": 2910,
+      "citations": {
+        "cdc-water-advisories": 1,
+        "cdc-water-hiking": 1,
+        "cdc-water-safe": 27,
+        "cdc-water-store": 7,
+        "epa-emergency-disinfection": 9,
+        "nps-purify-water": 2,
+        "ready-water": 2,
+        "usscm-brenckle-2019": 3
+      },
+      "links": {
+        "salt-beef-salt-pork-age-of-sail": 1,
+        "water-advisories-explained": 1
+      },
+      "headings": [
+        "act-h",
+        "problem",
+        "clear-first",
+        "boil",
+        "bleach",
+        "tablets",
+        "filters",
+        "light",
+        "not-enough",
+        "storing",
+        "special",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "homemade-water-filters",
+      "route": "/preparedness/water/homemade-water-filters/",
+      "body_blob": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+      "meta_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "min_utf8_bytes": 15230,
+      "word_units": 1938,
+      "citations": {
+        "cdc-find-clean-water": 2,
+        "cdc-water-hiking": 15,
+        "cdc-water-safe": 11,
+        "epa-emergency-disinfection": 1,
+        "nps-purify-water": 17,
+        "ready-water": 5
+      },
+      "links": {
+        "making-water-safer": 1,
+        "two-week-water-storage": 1,
+        "water-math": 1
+      },
+      "headings": [
+        "act-h",
+        "clear",
+        "what-filter",
+        "claims",
+        "what-prefilter-does",
+        "what-instead",
+        "verdict-h",
+        "buying",
+        "scenario",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "pantry-rotation",
+      "route": "/preparedness/food/pantry-rotation/",
+      "body_blob": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+      "meta_blob": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+      "min_utf8_bytes": 23078,
+      "word_units": 3065,
+      "citations": {
+        "food-cdc-home-canned": 3,
+        "food-foodkeeper": 1,
+        "food-fsis-dating": 11,
+        "food-fsis-shelf-stable": 10,
+        "food-illinois-room-temp": 6,
+        "food-osu-survival-food": 14,
+        "food-ready-food": 6,
+        "food-usu-canned-goods": 9,
+        "fsis-emergency-foods": 8
+      },
+      "links": {
+        "food-safety-power-outage": 1,
+        "pressure-canning-low-acid": 2,
+        "safe-jerky-dehydration": 1,
+        "two-week-water-storage": 1,
+        "water-math": 2
+      },
+      "headings": [
+        "act-h",
+        "idea",
+        "what",
+        "how-much",
+        "dates",
+        "chart",
+        "storage",
+        "cans",
+        "frozen-cans",
+        "routine",
+        "waste",
+        "households",
+        "own",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "food-safety-power-outage",
+      "route": "/preparedness/food/food-safety-power-outage/",
+      "body_blob": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+      "meta_blob": "3283071134ba24490d47f5a0635836b6ed4f8965",
+      "min_utf8_bytes": 23027,
+      "word_units": 3094,
+      "citations": {
+        "food-cdc-after-emergency": 12,
+        "food-cdc-risk-factors": 1,
+        "food-fda-outage-flood": 14,
+        "food-fema-outage-sheet": 4,
+        "food-foodsafety-outage-chart": 8,
+        "food-fsis-emergencies": 18,
+        "food-osu-survival-food": 3,
+        "food-ready-food": 6,
+        "fsis-power-failure": 3
+      },
+      "links": {
+        "outage-heat-cold-generators": 1
+      },
+      "headings": [
+        "act-h",
+        "clocks",
+        "before",
+        "during",
+        "dry-ice",
+        "generators",
+        "after",
+        "illness",
+        "special",
+        "households",
+        "limits"
+      ]
+    }
+  ]
+}
