@@ -1,0 +1,360 @@
+{
+  "schema": "fv-preparedness-r337-measurement-part-v1",
+  "source_commit": "05fa47e24f5d7bb17ce40a3737242983706e57c7",
+  "r336_witness_blob": "ff714125b0e785248819acc1358f912b470f4a69",
+  "part": 4,
+  "range": [
+    27,
+    36
+  ],
+  "rows": [
+    {
+      "kind": "articles",
+      "slug": "pickling-fermentation-old-recipes",
+      "route": "/preparedness/lost-ways/pickling-fermentation-old-recipes/",
+      "body_blob": "1869e37626b7463da45763d60202bd5ac0bd7700",
+      "meta_blob": "da97f42fcabbd05dc513d26c6af289bbeb8816f3",
+      "min_utf8_bytes": 21293,
+      "word_units": 2733,
+      "citations": {
+        "cdc-botulism-prevention": 6,
+        "fsis-botulism": 1,
+        "fsis-home-cure-qa": 3,
+        "hist-home-cdc-botulism-about": 5,
+        "hist-home-cdc-botulism-home-canned": 5,
+        "hist-home-loc-simmons-1796": 4,
+        "hist-home-msu-simmons-1798": 6,
+        "hist-home-nchfp-pickling": 13,
+        "hist-home-nps-ww2-canning": 4,
+        "nchfp-home": 2
+      },
+      "links": {
+        "root-cellars-cool-storage": 1,
+        "salt-beef-salt-pork-age-of-sail": 1
+      },
+      "headings": [
+        "act-h",
+        "what",
+        "record",
+        "limits-of-recipes",
+        "botulism",
+        "not-banned",
+        "ledger",
+        "verdict-h",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "rain-barrels-and-cisterns",
+      "route": "/preparedness/lost-ways/rain-barrels-and-cisterns/",
+      "body_blob": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+      "meta_blob": "dc42694e842969624f24ab5edc9bff2497693e70",
+      "min_utf8_bytes": 19896,
+      "word_units": 2595,
+      "citations": {
+        "cdc-find-clean-water": 2,
+        "hist-home-cdc-cisterns": 4,
+        "hist-home-cdc-rainwater": 16,
+        "hist-home-epa-rain-barrels": 3,
+        "hist-home-monticello-cisterns": 8,
+        "hist-home-nps-fort-union-water": 6,
+        "hist-home-nps-san-juan-cisterns": 5
+      },
+      "links": {
+        "homemade-water-filters": 1,
+        "making-water-safer": 3,
+        "two-week-water-storage": 1,
+        "water-math": 1,
+        "water-purification-through-history": 1
+      },
+      "headings": [
+        "act-h",
+        "idea",
+        "monticello",
+        "fort-union",
+        "san-juan",
+        "what-record-omits",
+        "modern",
+        "ledger",
+        "verdict-h",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "water-purification-through-history",
+      "route": "/preparedness/lost-ways/water-purification-through-history/",
+      "body_blob": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+      "meta_blob": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+      "min_utf8_bytes": 24340,
+      "word_units": 2928,
+      "citations": {
+        "cdc-water-hiking": 8,
+        "cdc-water-safe": 10,
+        "epa-emergency-disinfection": 3,
+        "hist-home-aim25-chelsea": 5,
+        "hist-home-ayu-water": 6,
+        "hist-home-cdc-chlorine": 7,
+        "hist-home-monticello-cisterns": 4,
+        "hist-home-oregon-slow-sand": 8,
+        "hist-home-savours-phipps": 4,
+        "hist-home-snow-mode-of-communication": 4,
+        "hist-home-tulchinsky-snow": 7,
+        "hist-home-wellcome-snow-map": 2,
+        "nps-purify-water": 6,
+        "ready-water": 2
+      },
+      "links": {
+        "homemade-water-filters": 1,
+        "making-water-safer": 3,
+        "rain-barrels-and-cisterns": 1,
+        "water-advisories-explained": 1
+      },
+      "headings": [
+        "act-h",
+        "problem",
+        "old-ways",
+        "snow",
+        "sand",
+        "chlorine",
+        "cannot-remove",
+        "ledger",
+        "verdict-h",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "fire-making-across-time",
+      "route": "/preparedness/lost-ways/fire-making-across-time/",
+      "body_blob": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+      "meta_blob": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+      "min_utf8_bytes": 24662,
+      "word_units": 3142,
+      "citations": {
+        "hist-field-bbc-walker-light": 6,
+        "hist-field-cdc-co-basics": 5,
+        "hist-field-nfpa-outdoor-fire": 8,
+        "hist-field-nmah-tinder-box": 1,
+        "hist-field-nps-campfires": 8,
+        "hist-field-nps-flint-steel": 4,
+        "hist-field-nws-winter-before": 2,
+        "hist-field-nws-winter-during": 1,
+        "hist-field-smg-fire-methods": 23,
+        "hist-field-tvm-walker": 5,
+        "hist-field-usfa-outdoor-fire": 4
+      },
+      "links": {},
+      "headings": [
+        "act-h",
+        "problem",
+        "carried",
+        "skill",
+        "walker",
+        "phosphorus",
+        "ledger",
+        "today",
+        "distances",
+        "co",
+        "household",
+        "verdict-h",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "navigation-before-gps",
+      "route": "/preparedness/lost-ways/navigation-before-gps/",
+      "body_blob": "3c02e58c30d1d608224944142f31fbead44a1252",
+      "meta_blob": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+      "min_utf8_bytes": 21752,
+      "word_units": 2892,
+      "citations": {
+        "hist-field-nasa-north-star": 4,
+        "hist-field-noaa-declination": 4,
+        "hist-field-nws-winter-before": 5,
+        "hist-field-rmg-harrison": 8,
+        "hist-field-rmg-lunar": 8,
+        "hist-field-rmg-why-longitude": 8,
+        "hist-field-si-sextant": 1,
+        "hist-field-usgs-declination": 5,
+        "hist-field-usgs-north-arrows": 2,
+        "loc-prairie-traveler": 2
+      },
+      "links": {
+        "pioneer-supply-chains-failed": 1
+      },
+      "headings": [
+        "act-h",
+        "two-questions",
+        "before",
+        "clock",
+        "moon",
+        "direction",
+        "handbook",
+        "stars",
+        "sun",
+        "ledger",
+        "verdict-h",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "sanitation-before-germ-theory",
+      "route": "/preparedness/lost-ways/sanitation-before-germ-theory/",
+      "body_blob": "d56df76647d2598f35cfd4609f91649cef063f12",
+      "meta_blob": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+      "min_utf8_bytes": 21947,
+      "word_units": 2648,
+      "citations": {
+        "cdc-water-safe": 3,
+        "hist-home-cdc-clean-hands": 5,
+        "hist-home-chadwick-cureus": 13,
+        "hist-home-nps-fort-union-water": 3,
+        "hist-home-smith-naval-hygiene": 17,
+        "hist-home-snow-mode-of-communication": 1,
+        "hist-home-tulchinsky-snow": 3,
+        "hist-home-wellcome-chadwick-1842": 1,
+        "hist-home-wellcome-snow-map": 1,
+        "rmg-life-at-sea": 1
+      },
+      "links": {
+        "making-water-safer": 1,
+        "salt-beef-salt-pork-age-of-sail": 1,
+        "water-advisories-explained": 2,
+        "water-purification-through-history": 1
+      },
+      "headings": [
+        "act-h",
+        "foul-air",
+        "ships",
+        "fort",
+        "chadwick",
+        "snow",
+        "practice-reason",
+        "ledger",
+        "verdict-h",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "pioneer-supply-chains-failed",
+      "route": "/preparedness/lost-ways/pioneer-supply-chains-failed/",
+      "body_blob": "ad158ee898f76d05bcb65c845b1e4a0e8103c660",
+      "meta_blob": "4d2dc4958736e3c5257c65dda8ed016a473ac6be",
+      "min_utf8_bytes": 24803,
+      "word_units": 3133,
+      "citations": {
+        "hist-field-britannica-donner": 20,
+        "hist-field-ca-parks-donner": 1,
+        "hist-field-ia-hastings-guide": 3,
+        "hist-field-mccurdy-1994": 4,
+        "hist-field-nps-donner": 16,
+        "hist-field-nws-winter-before": 4,
+        "hist-field-nws-winter-during": 4,
+        "hist-field-oac-breen-diary": 2,
+        "hist-field-utah-hastings": 6,
+        "loc-pioneer-diaries": 1,
+        "loc-prairie-traveler": 2
+      },
+      "links": {
+        "navigation-before-gps": 1
+      },
+      "headings": [
+        "act-h",
+        "why",
+        "parts",
+        "plan",
+        "losses",
+        "winter",
+        "counts",
+        "handbook",
+        "memorial",
+        "ledger",
+        "verdict-h",
+        "limits"
+      ]
+    },
+    {
+      "kind": "articles",
+      "slug": "history-of-food-preservation",
+      "route": "/preparedness/lost-ways/history-of-food-preservation/",
+      "body_blob": "273b246a069e834d8476bfc2854308732f5137ab",
+      "meta_blob": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+      "min_utf8_bytes": 18005,
+      "word_units": 2191,
+      "citations": {
+        "cdc-botulism-prevention": 5,
+        "fsis-botulism": 5,
+        "fsis-home-cure-qa": 1,
+        "hist-food-headsmashedin": 1,
+        "hist-food-marcy-prairie-traveler-text": 3,
+        "hist-food-monticello-meat": 2,
+        "hist-food-nps-icebox": 3,
+        "hist-food-si-cold": 4,
+        "nchfp-cure-smoke": 3,
+        "nchfp-historical-origins": 15,
+        "rmg-life-at-sea": 1,
+        "usscm-brenckle-2019": 4
+      },
+      "links": {
+        "lewis-and-clark-salt-works": 2,
+        "pemmican-and-dried-meats": 2,
+        "pioneer-travel-rations": 1,
+        "salt-beef-salt-pork-age-of-sail": 1,
+        "ships-biscuit-and-hardtack": 2,
+        "smokehouses-salting-curing": 1
+      },
+      "headings": [
+        "act-h",
+        "why",
+        "drying",
+        "salt",
+        "sugar",
+        "canning",
+        "cold",
+        "timeline",
+        "pattern",
+        "verdict-h",
+        "limits"
+      ]
+    },
+    {
+      "kind": "tools",
+      "slug": "family-reunification-card",
+      "route": "/preparedness/field-tools/family-reunification-card/",
+      "body_blob": "be8698ac5d020476ff649d85813810e2000c6f98",
+      "meta_blob": "47da1e7e20e39f0ea85e26d54a8d58301f6e0a15",
+      "min_utf8_bytes": 19145,
+      "word_units": 1694,
+      "citations": {
+        "shelter-ca-cde-safety-plans": 1,
+        "shelter-cdc-chemical-evac": 1,
+        "shelter-cdc-reunification": 4,
+        "shelter-co-oss-reunification": 1,
+        "shelter-fcc-comms": 2,
+        "shelter-fema-reunification": 1,
+        "shelter-ncmec-hotline": 1,
+        "shelter-ready-evacuation": 1,
+        "shelter-ready-plan": 1,
+        "shelter-ready-plan-form": 1,
+        "shelter-ready-tech": 2
+      },
+      "links": {
+        "family-communication-plan": 1,
+        "shelter-or-evacuate": 1
+      },
+      "headings": [
+        "act-h",
+        "card",
+        "preview",
+        "how",
+        "school",
+        "print"
+      ]
+    }
+  ]
+}
