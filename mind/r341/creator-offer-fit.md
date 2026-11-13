@@ -1,0 +1,18 @@
+# Creator-topic → article → one consented resource → eligible offer
+*R341: research handoff only. Grok owns original videos and publication; Praxxis owns TASK-008 QA. No published asset IDs were authenticated during this sprint.*
+
+| Existing topic and truth-first hook | Published article / source route | Buyer intent | Existing intermediate | Optional relevant offer | Actual verified creator asset |
+|---|---|---|---|---|---|
+| Change blindness — “What did the door hide?” | https://finalvestige.com/2026/11/02/change-blindness/ | LOW; curiosity, not a brain-audio prospect | Existing free https://finalvestige.com/focus/ if relevant | None unless reader separately searches focus-audio buying guide | UNKNOWN: no asset_id/post URL/placement attested |
+| Mesmer and Puységur — “A witness is not a mechanism” | https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ and published Mesmerism investigation | LOW to MEDIUM history interest | Original archive, optional Fieldbook | Hypnosis Live Total Focus *review* only if independent user interest | UNKNOWN: no asset_id/post URL/placement attested |
+| Attentional blink — “The second target you missed” | R340 draft **UNPUBLISHED**, not a live URL; use existing published change blindness until approved | MEDIUM attention curiosity | Existing free Fieldbook | Zen12 Premium independent offer guide *only after specific buyer intent + partner approval* | UNKNOWN: no asset_id/post URL/placement attested |
+
+**Offer first:** Public Inspire3 affiliate recruitment is not an FV accepted account. The preferred test product is Zen12 Premium only as a **commercially inactive candidate**, with exact 12-level/48-file contents and seller claims clearly delimited. No confirmed FV-owned active Payhip Mind SKU was identified through public search; not proof none exists. Founder/Commerce must audit private seller inventory and fulfillment. Do not launch speculative paid pages.
+
+**Highest-value CTA at this stage:** “See the free twelve-minute exercise” → https://finalvestige.com/focus/ (existing resource; signup voluntary). This is not revenue. **Commercial CTA remains a disabled native button** on the unpublished guide; any future tracked affiliate_outbound must remain distinct from affiliate_confirmed_commission.
+
+**A/B preregistration:** A text-only independent guide vs B identical substantive content plus optional original 42-second film; both no-JS and readable without playback. Randomization requires Claude/QA approval and existing privacy-preserving analytics; no experimental JavaScript has been installed. Primary outcome after eligibility = independently confirmed paid order or commission divided by qualified human landing sessions, tracked 7/30 days. Secondary = confirmed opt-in, informational CTA, outbound click. Need enough eligible observations for confidence; zero observed events is not an A/B result.
+
+**Disclosures:** when a link is legitimately activated, say directly beside it, “If you purchase through this link, Final Vestige may earn a commission at no additional cost to you.” Do not put seller marketing promises in science conclusions.
+
+**Source/owner handoff:** Grok/Praxxis supply original published asset_id, platform, publish date, link placement/destination, licensing/rights and exact URL in TASK-008. Claude checks first-party provider records and prevents duplicate tracking. Site QA tests real browsers/permissions. Dispatch owns its drafts/list and must not be edited by Mind. Founder authorizes any production launch.
