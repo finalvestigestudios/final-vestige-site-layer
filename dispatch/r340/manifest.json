@@ -1,0 +1,119 @@
+{
+  "id": "FV_DISPATCH_R340_TWO_OPTIONAL_EDITORIAL_CANDIDATES",
+  "date_utc": "2026-11-13T22:32:00Z",
+  "status": "DRAFT_ONLY_NO_SEND",
+  "original_pr": 175,
+  "original_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "parallel_review_pr": 201,
+  "parent_pr": 2393,
+  "approvals": {
+    "substitutions": false,
+    "publishing": false,
+    "email_sending": false,
+    "recipient_eligibility": false,
+    "genuine_jetpack_received_email": false,
+    "publisher_postal_address": false,
+    "functional_unsubscribe": false,
+    "affiliate_accepted": false,
+    "affiliate_email_channel": false,
+    "issued_earning_link": false,
+    "approved_live_guide": false
+  },
+  "mix": {
+    "editorial": 4,
+    "merchant_reserved": 2
+  },
+  "slot_state": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "release": "HOLD_UNSENT",
+      "merchant": "N/A",
+      "alternative_adopted": false
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "release": "HOLD_UNSENT",
+      "merchant": "N/A",
+      "alternative_adopted": false
+    },
+    {
+      "number": 3,
+      "kind": "merchant_reserved",
+      "release": "HOLD_UNSENT",
+      "merchant": "HOLD_MERCHANT",
+      "alternative_adopted": false
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "release": "HOLD_UNSENT",
+      "merchant": "N/A",
+      "alternative_adopted": false
+    },
+    {
+      "number": 5,
+      "kind": "merchant_reserved",
+      "release": "HOLD_UNSENT",
+      "merchant": "HOLD_MERCHANT",
+      "alternative_adopted": false
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "release": "HOLD_UNSENT",
+      "merchant": "N/A",
+      "alternative_adopted": false
+    }
+  ],
+  "candidates": [
+    {
+      "number": 1,
+      "subject": "The stranger who changed behind a door",
+      "preheader": "A 1998 campus experiment and the gap between seeing and noticing.",
+      "kind": "editorial",
+      "status": "OPTIONAL_NOT_ADOPTED_HOLD_UNSENT",
+      "cta_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "sources": [
+        "https://doi.org/10.3758/BF03208840"
+      ]
+    },
+    {
+      "number": 6,
+      "subject": "Seven days later, what does the record say?",
+      "preheader": "An attention log is useful only when you can question its conclusion.",
+      "kind": "editorial",
+      "status": "OPTIONAL_NOT_ADOPTED_HOLD_UNSENT",
+      "cta_url": "https://finalvestige.com/free-resources/the-same-story-twice/",
+      "sources": [
+        "https://doi.org/10.1016/S0065-2601(06)38002-1",
+        "https://doi.org/10.1037/bul0000025"
+      ]
+    }
+  ],
+  "provider_snapshot": {
+    "captured_utc": "2026-11-13T22:32:00Z",
+    "newsletter_enabled": true,
+    "auto_email_new_posts": false,
+    "email_format": "full",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "wpcom_followers": 3,
+    "direct_email_followers": 0,
+    "counts_overlap": true,
+    "eligible_recipient_count": null,
+    "welcome_configured": true,
+    "welcome_receipt_verified": false
+  },
+  "measurement": {
+    "confirmed_signup": "provider-origin verified new subscription state only; private dedup, do not use raw addresses",
+    "content_click": "interest signal, not confirmed signup or paid order",
+    "affiliate_sale": "merchant-confirmed paid commission only, adjusted by fees/refunds",
+    "qualified_human_sessions": null,
+    "settled_orders": null,
+    "net_revenue_per_1000": "NOT_COMPUTABLE",
+    "tracking_changes_deployed": false
+  }
+}
