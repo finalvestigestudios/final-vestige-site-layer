@@ -16,6 +16,7 @@ from preparedness.tools import r339_export_draft_safety_gate as previous
 SCHEMA = 'fv-preparedness-r340-source-to-render-reproducibility-v1'
 BUILDER_BLOB = '349173d1e1d735eade218d95c7a0a2649c8cccd9'
 CSS_BLOB = 'e354395cdb7985eb2fe16b99ca9fd66c9885557e'
+EDITORIAL_HUB_BLOB = 'e1e749169a58e35a32c1d48ee8c46c209630965b'
 VALID_SLUG = re.compile(r'\A[a-z0-9]+(?:-[a-z0-9]+)*\Z')
 
 
@@ -126,7 +127,8 @@ def audit_native(root: Path) -> dict:
             return receipt(['R339_AUTHENTIC_NATIVE_RENDERED_SAFETY_PRECONDITION_REQUIRED'])
         from preparedness.tools import r336_frozen_archive_integrity as custody
         for relative, pin in ((Path('preparedness/tools/build.py'),BUILDER_BLOB),
-                              (Path('preparedness/assets/preparedness.css'),CSS_BLOB)):
+                              (Path('preparedness/assets/preparedness.css'),CSS_BLOB),
+                              (Path('preparedness/content/hubs/start-here.body.html'),EDITORIAL_HUB_BLOB)):
             path = root/relative
             if path.is_symlink() or not path.is_file() or custody.git_blob(path.read_bytes()) != pin:
                 return receipt(['RENDERER_OR_CSS_GIT_BLOB_CHANGED:'+str(relative)])
