@@ -25,7 +25,7 @@ function safePage(s, label){
   assert(!/<iframe\b/i.test(s), label+': no externally embedded frame');
   assert(!/<(?:video|audio)\b[^>]*\bautoplay\b/i.test(s),label+': no autoplay');
   assert(!/<a\b[^>]*href=["'](?:https?:\/\/)?(?:[^"']+\.)?(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com|inspire3\.com)/i.test(s),label+': no active merchant URL');
-  assert(/disabled[^>]*aria-disabled="true"/.test(s),label+': disabled button');
+  assert(/<button\b[^>]*\sdisabled(?:\s|>)[^>]*aria-disabled="true"/i.test(s),label+': genuinely disabled button');
   const idx = s.indexOf('Affiliate disclosure:');
   assert(idx >= 0, label+': obvious disclosure');
   assert(s.indexOf('Merchant offer — awaiting verified approval',idx)>idx && s.indexOf('Merchant offer — awaiting verified approval',idx)-idx<800,label+': adjacent disclaimer');
