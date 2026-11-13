@@ -109,8 +109,8 @@ class OfflineSixSourceGateR408(unittest.TestCase):
             self.assertEqual(args[-1].split("/")[-1].split("\\")[-1][-3:], ".py")
             self.assertFalse(kwargs["check"])
             self.assertEqual(kwargs["stdin"], subprocess.DEVNULL)
-            self.assertEqual(kwargs["stdout"], subprocess.PIPE)
-            self.assertEqual(kwargs["stderr"], subprocess.PIPE)
+            self.assertEqual(kwargs["stdout"], subprocess.DEVNULL)
+            self.assertEqual(kwargs["stderr"], subprocess.DEVNULL)
             self.assertNotIn("shell", kwargs)
 
 

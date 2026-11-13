@@ -34,11 +34,42 @@ class SourceGateError(ValueError):
     """Only fixed, private-data-free errors are exposed."""
 
 
+def _require_real_directory(path: Path) -> None:
+    """Reject symlink/junction traversal before hashing or running source.
+
+    Windows directory junctions can report as directories; the reparse flag
+    must be checked independently of the POSIX file type bits.
+    """
+    try:
+        info = path.lstat()
+    except OSError:
+        raise SourceGateError("Unsafe desktop source directory") from None
+    if (not stat.S_ISDIR(info.st_mode) or
+            getattr(info, "st_file_attributes", 0) & stat.FILE_ATTRIBUTE_REPARSE_POINT):
+        raise SourceGateError("Unsafe desktop source directory")
+
+
+def _verify_source_directories(desktop: Path) -> None:
+    for path in (desktop, desktop / "fvs_suite", desktop / "launchers"):
+        _require_real_directory(path)
+
+    def reject_unreadable(error: OSError) -> None:
+        raise SourceGateError("Unsafe desktop source directory") from None
+
+    # pathlib.rglob('*.py') may omit a symlink to a directory entirely.
+    # Inspect the directory tree independently so it cannot hide an import.
+    for root, directories, _ in os.walk(
+            desktop / "fvs_suite", followlinks=False, onerror=reject_unreadable):
+        for name in directories:
+            _require_real_directory(Path(root) / name)
+
+
 def source_digest(desktop: Path) -> str:
     """Fingerprint suite sources, all six launchers, and this gate by bytes.
 
     The digest is an inventory identity, NOT source provenance or a signed build.
     """
+    _verify_source_directories(desktop)
     paths = [*sorted((desktop / "fvs_suite").rglob("*.py")),
              *(desktop / "launchers" / name for _, name in PRODUCTS),
              desktop / "offline_source_smoke_r408.py"]
@@ -79,8 +110,9 @@ def run_gate(desktop: Path, *, timeout: int = 90) -> dict:
             try:
                 completed = subprocess.run(
                     command, cwd=desktop, env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1"},
-                    stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE, timeout=timeout, check=False,
+                    # Never hold arbitrary private child output in process memory.
+                    stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL, timeout=timeout, check=False,
                 )
                 ok = completed.returncode == 0
             except (OSError, subprocess.TimeoutExpired):
