@@ -24,10 +24,18 @@ const cap=(id,bytes)=>({
  prose_fingerprint_sha256:'a'.repeat(64),viewport_width:390,viewport_height:844,
  dpr:2,images:[row(bytes,id)]
 });
-const fixture=()=>({
- schema:'fv-cold-transfer-pair-v1',source_ledger_blob_sha:INVENTORY_BLOB,
- post_id:621,expected_slots:['621:0'],before:cap('b',1000),after:cap('a',240)
-});
+const fixture=()=>{
+ const p={schema:'fv-cold-transfer-pair-v1',source_ledger_blob_sha:INVENTORY_BLOB,
+ post_id:621,expected_slots:['621:0'],before:cap('b',1000),after:cap('a',240)};
+ p.independent_visual_review={'621:0':{
+  method:'SIDE_BY_SIDE_STAGING_SCREENSHOT_REVIEW',before_run_id:'b',after_run_id:'a',
+  before_current_src:u,after_current_src:u,
+  before_screenshot_sha256:'b'.repeat(64),after_screenshot_sha256:'c'.repeat(64),
+  same_scene_verified:true,same_crop_verified:true,alt_fidelity_verified:true,
+  independent_editor_reviewed:true,
+  review_evidence_url:'https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1703'}};
+ return p;
+};
 function hold(edit,reason){
  const p=fixture();edit(p);const r=verify(p);
  assert.equal(r.status,'HOLD');assert.equal(r.reason,reason);
@@ -55,6 +63,7 @@ test('object-position focal shift blocks',()=>hold(p=>p.after.images[0].object_p
 function changed(p){
  const r=p.after.images[0],v='https://finalvestige.com/new.webp';
  r.current_src=r.request_url=r.final_response_url=r.decoded_selected_resource_url=v;
+ p.independent_visual_review['621:0'].after_current_src=v;
  r.response_mime_type='image/webp';r.rights_review_approved=true;
  r.visual_parity_approved=true;r.item_rights_evidence_url='https://archives.gov/item';
  return v;
@@ -113,5 +122,26 @@ test('960x639 integer rounding preserves original framing',()=>{
 test('840x560 same ratio and adequate DPR preserves original framing',()=>{
  const p=fixture();candidateGeometry(p,840,560);const r=verify(p);
  assert.equal(r.status,'VERIFIED_SINGLE_POST_COLD_PAIR_WITH_VISUAL_PARITY');
+ assert.equal(r.production_change_allowed,false);
+});
+
+test('same URL and identical dimensions cannot pass without scene review',()=>hold(p=>{
+ delete p.independent_visual_review;
+},'MISSING_OR_STALE_INDEPENDENT_SCENE_REVIEW'));
+test('same URL but different scene, unchanged identity label, is held',()=>hold(p=>{
+ p.independent_visual_review['621:0'].same_scene_verified=false;
+},'MISSING_OR_STALE_INDEPENDENT_SCENE_REVIEW'));
+test('scene review bound to old run is held',()=>hold(p=>{
+ p.independent_visual_review['621:0'].after_run_id='old';
+},'MISSING_OR_STALE_INDEPENDENT_SCENE_REVIEW'));
+test('scene review bound to another image URL is held',()=>hold(p=>{
+ p.independent_visual_review['621:0'].after_current_src='https://example.org/other.jpg';
+},'MISSING_OR_STALE_INDEPENDENT_SCENE_REVIEW'));
+test('invalid screenshot evidence digest is held',()=>hold(p=>{
+ p.independent_visual_review['621:0'].before_screenshot_sha256='bad';
+},'MISSING_OR_STALE_INDEPENDENT_SCENE_REVIEW'));
+test('reviewed sample still does not verify underlying screenshot bytes',()=>{
+ const r=verify(fixture());assert.equal(r.visual_scene_review_asserted,true);
+ assert.equal(r.screenshot_artifact_bytes_verified,false);
  assert.equal(r.production_change_allowed,false);
 });
