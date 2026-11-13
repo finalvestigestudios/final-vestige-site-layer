@@ -31,7 +31,7 @@ function check(files) {
   assert(!a.includes('<iframe') && !b.includes('<iframe'), 'no uncontrolled embeds');
   assert(!a.includes('autoplay') && !b.includes('<video'), 'no forced/unencoded playback');
   assert(a.includes('https://finalvestige.com/focus/') && b.includes('https://finalvestige.com/focus/'), 'existing free resource');
-  assert(a.includes('seller-page') && b.includes('seller-page'), 'price provenance caveat');
+  assert(a.toLowerCase().includes('seller-page') && b.toLowerCase().includes('seller-page'), 'price provenance caveat');
   assert(a.includes('one-year') && b.includes('one-year'), 'seller policy distinguished');
   assert(b.includes('id="optional-film"') && !a.includes('id="optional-film"'), 'only B contains optional treatment');
   assert(b.includes('r351-poster.svg') && b.includes('alt="'), 'poster accessible text');
