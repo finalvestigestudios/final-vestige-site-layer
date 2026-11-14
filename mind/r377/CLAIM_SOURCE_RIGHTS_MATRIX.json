@@ -1,0 +1,540 @@
+{
+  "schema": "fv-mind-r377-claims/1.0",
+  "date_checked": "2026-11-14",
+  "scope": "mind/r377/ source-only / no publish",
+  "sources": {
+    "drew": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+    "simons": "https://doi.org/10.1068/p281059",
+    "door": "https://doi.org/10.3758/BF03208840",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "puy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "inspire": "https://inspire3.com/",
+    "zen": "https://zen12.com/",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "ftcEndorse": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftcHealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "disclosure": "https://finalvestige.com/affiliate-disclosure/",
+    "standards": "https://finalvestige.com/editorial-standards/"
+  },
+  "claims": [
+    {
+      "id": "E01",
+      "statement": "2013 paper reported 24 radiologists on a nodule-search task",
+      "status": "supported",
+      "kind": "research",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/"
+      ],
+      "handling": "state experimental scope",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "E02",
+      "statement": "Twenty of the 24 did not report inserted gorilla",
+      "status": "supported",
+      "kind": "research",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/"
+      ],
+      "handling": "use 20/24 and n=24, never infer clinical mistake rate",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "E03",
+      "statement": "The inserted silhouette was described as 48 times size of typical nodule",
+      "status": "supported",
+      "kind": "research",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/"
+      ],
+      "handling": "size refers to experimental stimulus, not real pathology",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "E04",
+      "statement": "Gaze to inserted-object location guarantees recognition",
+      "status": "unsupported",
+      "kind": "inference",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/"
+      ],
+      "handling": "exclude: eye position does not establish awareness",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "E05",
+      "statement": "83% of real medical abnormalities are missed by radiologists",
+      "status": "unsupported",
+      "kind": "generalization",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/"
+      ],
+      "handling": "exclude and explain why",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "E06",
+      "statement": "1999 dynamic inattentional blindness paradigm differs from change blindness",
+      "status": "supported",
+      "kind": "research distinction",
+      "source_urls": [
+        "https://doi.org/10.1068/p281059",
+        "https://finalvestige.com/2026/11/02/change-blindness/"
+      ],
+      "handling": "explain object appearance vs comparing views",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "E07",
+      "statement": "The 1998 door swap is a change-blindness experiment",
+      "status": "supported",
+      "kind": "research",
+      "source_urls": [
+        "https://doi.org/10.3758/BF03208840",
+        "https://finalvestige.com/2026/11/02/change-blindness/"
+      ],
+      "handling": "avoid presenting as 2013 expert study",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "E08",
+      "statement": "Puységur source cases establish animal magnetism as a real force",
+      "status": "unsupported",
+      "kind": "historical inference",
+      "source_urls": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "handling": "reject causal leap",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "E09",
+      "statement": "FV Puységur page reports 153 source rows and sixteen dossiers",
+      "status": "supported as live page description",
+      "kind": "existing asset",
+      "source_urls": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "handling": "describe publication not independent truth of claims",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "E10",
+      "statement": "FV existing Focus fieldbook is free and 52 pages with single subscription route",
+      "status": "supported as live-page description",
+      "kind": "lead magnet",
+      "source_urls": [
+        "https://finalvestige.com/focus/"
+      ],
+      "handling": "no duplicate form, no guaranteed confirmed lead",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "P11",
+      "statement": "Official Inspire3 catalog lists Zen12 and Hypnosis Live",
+      "status": "seller-described",
+      "kind": "product inventory",
+      "source_urls": [
+        "https://inspire3.com/"
+      ],
+      "handling": "credit merchant, not an efficacy assertion",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "P12",
+      "statement": "Official Zen12 Premium page lists 12 levels and 48 MP3s",
+      "status": "seller-described",
+      "kind": "product inventory",
+      "source_urls": [
+        "https://zen12.com/"
+      ],
+      "handling": "contents not delivered/tested",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "P13",
+      "statement": "Zen12 publicly displays $87.99 Premium and former $187.99 display",
+      "status": "seller-described",
+      "kind": "price claim",
+      "source_urls": [
+        "https://zen12.com/"
+      ],
+      "handling": "never present as guaranteed checkout price or valid discount",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "P14",
+      "statement": "Zen12 advertises one-year refund guarantee",
+      "status": "seller-described",
+      "kind": "refund promise",
+      "source_urls": [
+        "https://zen12.com/"
+      ],
+      "handling": "actual terms/fulfillment unverified",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "P15",
+      "statement": "12 minutes of Zen12 delivers benefits of an hour of advanced meditation",
+      "status": "unsupported for product",
+      "kind": "health/efficacy",
+      "source_urls": [
+        "https://zen12.com/",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "handling": "exclude endorsement; cite only as seller claim",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "P16",
+      "statement": "Zen12 has established product-specific clinical improvements in anxiety and focus",
+      "status": "unverified",
+      "kind": "health/efficacy",
+      "source_urls": [
+        "https://zen12.com/",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "handling": "exclude outcome language",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "P17",
+      "statement": "Zen12 brainwave recordings improve nodule detection",
+      "status": "unsupported",
+      "kind": "product-specific efficacy",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+        "https://zen12.com/"
+      ],
+      "handling": "exclude; no crossover study",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "A18",
+      "statement": "The public Inspire3 affiliate portal exists",
+      "status": "supported",
+      "kind": "program description",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "handling": "not evidence FV publisher approved",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "A19",
+      "statement": "Public program payout and EPC language guarantees actual FV earnings",
+      "status": "unsupported",
+      "kind": "partner entitlement",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "handling": "exclude all commission rates/EPC from FV copy",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "A20",
+      "statement": "FV has been approved with issued link, exact channel and usage permissions",
+      "status": "not verified",
+      "kind": "partner authorization",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "handling": "HARD HOLD until authenticated account evidence",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "A21",
+      "statement": "FV has a verified paid, rights-cleared, deliverable Mind-owned SKU",
+      "status": "not verified",
+      "kind": "owned product",
+      "source_urls": [
+        "https://finalvestige.com/focus/"
+      ],
+      "handling": "do not repurpose free Focus as paid proof",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "A22",
+      "statement": "FTC recommends nearby clear material-connection affiliate disclosures",
+      "status": "supported",
+      "kind": "compliance",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "handling": "disclosure adjacent to specific future link",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "A23",
+      "statement": "FTC requires adequate reliable substantiation for objective health product claims",
+      "status": "supported",
+      "kind": "compliance",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "handling": "product-specific substantiation required before outcomes",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "A24",
+      "statement": "Outbound affiliate_click means settled payable affiliate sale",
+      "status": "false",
+      "kind": "measurement",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "handling": "record as click only; reconcile partner settlement/refunds",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "A25",
+      "statement": "Existing Jetpack Focus signup confirms a named social visitor lead",
+      "status": "not verified",
+      "kind": "measurement",
+      "source_urls": [
+        "https://finalvestige.com/focus/"
+      ],
+      "handling": "only provider confirmed and permitted privacy-safe attribution",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "A26",
+      "statement": "Original 42-second film is currently encoded/playable on FV website",
+      "status": "false",
+      "kind": "media release",
+      "source_urls": [
+        "https://finalvestige.com/editorial-standards/"
+      ],
+      "handling": "storyboard/captions/poster only; media still needs release QA",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "A27",
+      "statement": "A/B of text versus source guide+video proves video raises purchases",
+      "status": "hypothesis",
+      "kind": "experiment",
+      "source_urls": [
+        "https://finalvestige.com/editorial-standards/"
+      ],
+      "handling": "pre-register and demand confirmed paid outcome",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    },
+    {
+      "id": "A28",
+      "statement": "Existing live change-blindness article is suitable contextual route",
+      "status": "supported as live page",
+      "kind": "internal link",
+      "source_urls": [
+        "https://finalvestige.com/2026/11/02/change-blindness/"
+      ],
+      "handling": "verify Grok immutable ID before attributing video",
+      "proof_scope": "public text or peer-reviewed original, not transaction evidence"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "G01",
+      "gate": "Named FV-specific publisher approval in authenticated partner account",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G02",
+      "gate": "Allowed website domain and exact promotional channels",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G03",
+      "gate": "Explicit affiliate email permission if applicable",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G04",
+      "gate": "Account-issued exact earning destination",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G05",
+      "gate": "Affiliate tracking and attribution window terms",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G06",
+      "gate": "Product SKU/tier and allowed creative usage",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G07",
+      "gate": "Final checkout charge/currency/taxes",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G08",
+      "gate": "Upsell/renewal/one-time-billing verification",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G09",
+      "gate": "Refund conditions and actual merchant process",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G10",
+      "gate": "Source/claim independent editorial signoff",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G11",
+      "gate": "Near-link FTC disclosure and partner terms compatibility",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G12",
+      "gate": "Offer link revocation and redirect rules",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G13",
+      "gate": "Auth owned-product alternative and rights if needed",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G14",
+      "gate": "Deliverability of paid owned-product SKU",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G15",
+      "gate": "No duplicated Focus subscriber forms or welcome",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G16",
+      "gate": "Jetpack consent and provider-confirmed lead QA",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G17",
+      "gate": "Attribution using verified immutable Grok asset IDs",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G18",
+      "gate": "Privacy/consent review with no personal data or fingerprinting",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G19",
+      "gate": "A/B allocation and variant parity audit",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G20",
+      "gate": "Actual encoded 42s video and rights clearance",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G21",
+      "gate": "WebVTT media captions sync and transcript accuracy",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G22",
+      "gate": "No-JS keyboard/reduced-motion accessibility",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G23",
+      "gate": "Mobile 360/390/768/1440 browser audit",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G24",
+      "gate": "Performance budget and LCP/CLS tests",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G25",
+      "gate": "WordPress sanitizer/staging path review",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G26",
+      "gate": "Independent Site QA #126 review",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G27",
+      "gate": "Homepage art #150 scope review",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G28",
+      "gate": "Dispatch #174 no email copy change",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G29",
+      "gate": "Founder release approval for CMS",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G30",
+      "gate": "Settled order/commission data access",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G31",
+      "gate": "Reconciliation of refunds, fees and gross",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G32",
+      "gate": "Confirmed 7/30-day qualified-human denominators",
+      "status": "HOLD",
+      "evidence": null
+    }
+  ],
+  "audits": {
+    "source_review": "public primary/official descriptions only",
+    "product_test": "NOT TESTED",
+    "account_approval": "NOT VERIFIED",
+    "checkout": "NOT TESTED",
+    "independent_affiliate_sales": "NOT VERIFIED",
+    "active_affiliate_urls": 0,
+    "activated_links": 0
+  },
+  "disclosure": "If you purchase through a future authorized link, Final Vestige Studios may earn a commission at no additional cost to you. Currently no affiliate link is active."
+}
