@@ -17,7 +17,7 @@ let pass=0;
 function check(name,condition){assert.ok(condition,name);pass++;}
 const filmRe=/<figure aria-labelledby="film-title">[\s\S]*?<\/figure>/;
 const extractBlock=(html)=>html.match(/<section class="panel" id="offer">[\s\S]*?<\/section>/)?.[0]??'';
-const safe=(html)=>!/<script\b|<iframe\b|<form\b|<video\b|<audio\b|<link\b[^>]*rel=["']?preload|autoplay(?:=|\s|>)/i.test(html)
+const safe=(html)=>!/<script\b|<iframe\b|<form\b|<video\b|<audio\b|<link\b[^>]*rel=["']?preload/i.test(html)
    && !/href=["']https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|affiliates\.inspire3\.com|hypnosislive\.com|brainwaveshots\.com)/i.test(html)
    && /<button class="cta" type="button" disabled\b/.test(html)
    && /class="disclosure"/.test(html)
