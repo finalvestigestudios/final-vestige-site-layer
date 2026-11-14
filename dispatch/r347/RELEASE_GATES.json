@@ -1,0 +1,80 @@
+{
+  "schema": "fv.dispatch.release.v1",
+  "campaign": "issue_174",
+  "pilot_mix": {
+    "editorial": 4,
+    "prospective_commercial": 2
+  },
+  "edition": "05",
+  "candidate": "chevreul_ideomotor_total_focus",
+  "source_pr": "175",
+  "source_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "adopted": false,
+  "send_authorized": false,
+  "status": "HOLD_UNSENT_AND_HOLD_MERCHANT",
+  "affiliate_urls": [
+    null
+  ],
+  "actual_eligible_subscriber_count": null,
+  "confirmed_signup_count": null,
+  "settled_paid_orders": null,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "release_gates": [
+    {
+      "id": "final_founder_approval",
+      "passed": false
+    },
+    {
+      "id": "authoritative_email_consent",
+      "passed": false
+    },
+    {
+      "id": "verified_welcome_receipt",
+      "passed": false
+    },
+    {
+      "id": "native_email_preview",
+      "passed": false
+    },
+    {
+      "id": "actual_received_message",
+      "passed": false
+    },
+    {
+      "id": "valid_fv_postal_address",
+      "passed": false
+    },
+    {
+      "id": "functional_unsubscribe",
+      "passed": false
+    },
+    {
+      "id": "named_partner_acceptance",
+      "passed": false
+    },
+    {
+      "id": "email_promotion_right",
+      "passed": false
+    },
+    {
+      "id": "issued_earning_url",
+      "passed": false
+    },
+    {
+      "id": "approved_live_first_party_guide",
+      "passed": false
+    },
+    {
+      "id": "checkout_and_refund_terms",
+      "passed": false
+    },
+    {
+      "id": "source_and_compliance_approval",
+      "passed": false
+    },
+    {
+      "id": "authenticated_paid_order_reporting",
+      "passed": false
+    }
+  ]
+}
