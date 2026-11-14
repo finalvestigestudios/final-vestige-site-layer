@@ -31,12 +31,20 @@ def _signature(info: os.stat_result) -> tuple[int, int, int, int, int]:
 
 def _metadata(path: Path) -> os.stat_result:
     """lstat (not stat): a link must never redirect a financial inventory."""
+    missing = False
+    inspect_failed = False
     try:
         info = path.lstat()
     except FileNotFoundError:
-        raise FileNotFoundError("Inventory evidence file is missing") from None
+        missing = True
     except OSError:
-        raise ValueError("Cannot inspect inventory evidence file") from None
+        inspect_failed = True
+    # 'raise ... from None' inside except still retains the private pathname
+    # in __context__. Raise after leaving the handler instead.
+    if missing:
+        raise FileNotFoundError("Inventory evidence file is missing")
+    if inspect_failed:
+        raise ValueError("Cannot inspect inventory evidence file")
     if not stat.S_ISREG(info.st_mode):
         raise ValueError("Inventory evidence must be a regular file, not a link")
     return info
@@ -44,19 +52,33 @@ def _metadata(path: Path) -> os.stat_result:
 
 def _hash_regular(path: Path, maximum: int) -> tuple[str, tuple[int, int, int, int, int]]:
     """Bounded streaming from one descriptor, with pre/post identity checks."""
+    # Direct API callers must not bypass the absolute report ceiling with
+    # infinities, booleans, int subclasses or attacker-sized native integers.
+    # Validate BEFORE inspecting or opening a private filesystem path.
+    if type(maximum) is not int or not (0 <= maximum <= MAX_REPORT_BYTES):
+        raise ValueError("Invalid inventory size limit")
     before = _metadata(path)
     if before.st_size > maximum:
         raise ValueError("Inventory evidence exceeds the file-size limit")
     flags = (os.O_RDONLY | getattr(os, "O_BINARY", 0)
              | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0))
+    missing_on_open = False
+    open_failed = False
     try:
         # Reuse the leak-safe inventory stream adoption from premium verification.
         # An interrupted or failed fdopen must not leave private evidence open.
         stream = open_inventory_stream(path, flags)
     except FileNotFoundError:
-        raise FileNotFoundError("Inventory evidence file is missing") from None
+        missing_on_open = True
     except Exception:
-        raise ValueError("Cannot safely open inventory evidence") from None
+        open_failed = True
+    # No OS exception holding private path text should remain in the public
+    # error chain, including hidden __context__ objects.
+    if missing_on_open:
+        raise FileNotFoundError("Inventory evidence file is missing")
+    if open_failed:
+        raise ValueError("Cannot safely open inventory evidence")
+    read_failed = False
     try:
         with stream:
             opened = os.fstat(stream.fileno())
@@ -73,7 +95,9 @@ def _hash_regular(path: Path, maximum: int) -> tuple[str, tuple[int, int, int, i
             if total != opened.st_size or _signature(finished) != _signature(opened):
                 raise ValueError("Inventory evidence changed while hashing")
     except OSError:
-        raise ValueError("Unable to read inventory evidence") from None
+        read_failed = True
+    if read_failed:
+        raise ValueError("Unable to read inventory evidence")
     # Reject replacement of the pathname while the descriptor was being read.
     after_path = _metadata(path)
     if (_signature(after_path) != _signature(before)
