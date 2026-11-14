@@ -67,9 +67,13 @@ def inspect(tool: str, metadata: str, article: str, *, authenticate=False) -> di
         if authenticate and any(facts['git_blobs'][key] != sha for key,sha in PINS.items()):
             errors.append('ORIGINAL_GIT_IDENTITY_DRIFT')
         meta = json.loads(metadata)
-        if not isinstance(meta,dict) or meta.get('slug') != 'family-reunification-card' or meta.get('kind') != 'tool':
+        if not isinstance(meta, dict):
+            raise ValueError('INVALID_METADATA_OBJECT')
+        if meta.get('slug') != 'family-reunification-card' or meta.get('kind') != 'tool':
             errors.append('TOOL_IDENTITY_INVALID')
-        if meta.get('status',{}).get('publish') != 'draft' or meta.get('safety_review',{}).get('state') != 'pending':
+        state = meta.get('status')
+        safety = meta.get('safety_review')
+        if not isinstance(state,dict) or not isinstance(safety,dict) or state.get('publish') != 'draft' or safety.get('state') != 'pending':
             errors.append('UNAUTHORIZED_PUBLICATION_OR_SAFETY_STATE')
         source_use = meta.get('source_use')
         if not isinstance(source_use,dict) or not source_use or any(not re.fullmatch(r'[a-z0-9-]+', k) for k in source_use):
