@@ -1,0 +1,654 @@
+{
+  "sprint": "R385",
+  "date_checked": "2026-11-14",
+  "branch": "mind-r385-thatcher-face-source-conversion-20261114",
+  "source_classification": "Seller public pages do not constitute efficacy, checkout, publisher authorization or license rights.",
+  "sources": {
+    "t1980": {
+      "url": "https://doi.org/10.1068/pmktho",
+      "type": "primary bibliographic trail",
+      "read": "bibliographic citation; original image not licensed"
+    },
+    "lewis2001": {
+      "url": "https://doi.org/10.1068/p3174",
+      "type": "peer-reviewed experiment",
+      "read": "abstract"
+    },
+    "wong2010": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20942363/",
+      "type": "peer-reviewed experiment",
+      "read": "abstract"
+    },
+    "psalta2014": {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4191594/",
+      "type": "open research",
+      "read": "abstract/introduction"
+    },
+    "binaural2023": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "type": "systematic review",
+      "read": "abstract"
+    },
+    "inspire": {
+      "url": "https://inspire3.com/",
+      "type": "seller-owned catalog",
+      "read": "public landing page November 14 2026"
+    },
+    "zen": {
+      "url": "https://zen12.com/",
+      "type": "seller-owned exact offer",
+      "read": "public exact Premium tier November 14 2026; not checkout"
+    },
+    "hyp": {
+      "url": "https://hypnosislive.com/",
+      "type": "seller-owned offer",
+      "read": "public home November 14 2026; not exact SKU checkout"
+    },
+    "bw": {
+      "url": "https://brainwaveshots.com/",
+      "type": "seller-owned offer",
+      "read": "public home November 14 2026; not exact SKU checkout"
+    },
+    "affiliate": {
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public program portal",
+      "read": "public pitch, not publisher acceptance"
+    },
+    "ftcDisclosure": {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator staff guidance",
+      "read": "endorsement, material connections"
+    },
+    "ftcHealth": {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator staff guidance",
+      "read": "objective claims substantiation"
+    },
+    "focus": {
+      "url": "https://finalvestige.com/focus/",
+      "type": "FV live free resource",
+      "read": "52-page offer overview November 14 2026"
+    },
+    "puy": {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "FV research archive",
+      "read": "source-led page November 14 2026"
+    },
+    "change": {
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "FV live investigation",
+      "read": "public post November 14 2026"
+    }
+  },
+  "claims": [
+    {
+      "id": "M01",
+      "claim": "Thatcher illusion reported by Peter Thompson in 1980 using Margaret Thatcher portrait",
+      "product": "editorial",
+      "classification": "research history",
+      "status": "supported-bibliographically",
+      "source_ids": [
+        "t1980"
+      ],
+      "editorial_action": "Publish factual origin; not original portrait"
+    },
+    {
+      "id": "M02",
+      "claim": "Perceived strangeness changes with image orientation",
+      "product": "editorial",
+      "classification": "research",
+      "status": "supported-paradigm-limited",
+      "source_ids": [
+        "t1980",
+        "psalta2014"
+      ],
+      "editorial_action": "Say can, not every observer always"
+    },
+    {
+      "id": "M03",
+      "claim": "Effect reflects a sudden face processor switching at 180 degrees",
+      "product": "editorial",
+      "classification": "hypothesis",
+      "status": "not-supported",
+      "source_ids": [
+        "lewis2001"
+      ],
+      "editorial_action": "Reject sudden-switch language"
+    },
+    {
+      "id": "M04",
+      "claim": "Related Thatcher-like effects appear with other object categories",
+      "product": "editorial",
+      "classification": "research",
+      "status": "supported-with-conditions",
+      "source_ids": [
+        "wong2010"
+      ],
+      "editorial_action": "Mention tested non-face categories, not all objects"
+    },
+    {
+      "id": "M05",
+      "claim": "Psychoacoustic products can improve the Thatcher effect",
+      "product": "commercial",
+      "classification": "branded efficacy",
+      "status": "no-product-evidence",
+      "source_ids": [
+        "t1980",
+        "zen"
+      ],
+      "editorial_action": "Prohibit"
+    },
+    {
+      "id": "M06",
+      "claim": "Local features inversion and expression recognition reflect the same exact task",
+      "product": "editorial",
+      "classification": "scientific inference",
+      "status": "rejected",
+      "source_ids": [
+        "psalta2014"
+      ],
+      "editorial_action": "Separate outcome measures"
+    },
+    {
+      "id": "Z01",
+      "claim": "Zen12 is a meditation audio product owned/promoted by Inspire3",
+      "product": "Zen12",
+      "classification": "seller identity",
+      "status": "seller-verified",
+      "source_ids": [
+        "inspire",
+        "zen"
+      ],
+      "editorial_action": "Descriptive only"
+    },
+    {
+      "id": "Z02",
+      "claim": "Premium contains 12 levels and 48 MP3s",
+      "product": "Zen12",
+      "classification": "package inclusion",
+      "status": "seller-described",
+      "source_ids": [
+        "zen"
+      ],
+      "editorial_action": "Allow qualified description; confirm checkout SKU"
+    },
+    {
+      "id": "Z03",
+      "claim": "Seller describes Quick Start Guide, user manual, lifetime support and bonuses",
+      "product": "Zen12",
+      "classification": "package inclusion",
+      "status": "seller-described",
+      "source_ids": [
+        "zen"
+      ],
+      "editorial_action": "Do not imply access tested; disclose"
+    },
+    {
+      "id": "Z04",
+      "claim": "Public Premium page on Nov 14 displayed crossed-out $187.99 and $87.99",
+      "product": "Zen12",
+      "classification": "public snapshot price",
+      "status": "seller-displayed-not-transaction",
+      "source_ids": [
+        "zen"
+      ],
+      "editorial_action": "Do not assert checkout price; only note in matrix"
+    },
+    {
+      "id": "Z05",
+      "claim": "One year money-back guarantee advertised",
+      "product": "Zen12",
+      "classification": "refund promise",
+      "status": "seller-described-not-tested",
+      "source_ids": [
+        "zen"
+      ],
+      "editorial_action": "Do not assert actual refunds or unconditional legal terms"
+    },
+    {
+      "id": "Z06",
+      "claim": "12 minutes is scientifically equal to one hour of advanced meditation",
+      "product": "Zen12",
+      "classification": "efficacy",
+      "status": "unsubstantiated-for-branded-product",
+      "source_ids": [
+        "zen",
+        "binaural2023"
+      ],
+      "editorial_action": "Never adopt"
+    },
+    {
+      "id": "Z07",
+      "claim": "Zen12 brainwave entrainment produces reliable cognitive gains",
+      "product": "Zen12",
+      "classification": "efficacy",
+      "status": "unsubstantiated-for-branded-product",
+      "source_ids": [
+        "zen",
+        "binaural2023"
+      ],
+      "editorial_action": "Exclude"
+    },
+    {
+      "id": "Z08",
+      "claim": "Zen12 relieves anxiety or other health conditions",
+      "product": "Zen12",
+      "classification": "medical benefit",
+      "status": "unsubstantiated-for-branded-product",
+      "source_ids": [
+        "zen",
+        "ftcHealth"
+      ],
+      "editorial_action": "Exclude"
+    },
+    {
+      "id": "Z09",
+      "claim": "Specific referred checkout terms, price, taxes and delivery",
+      "product": "Zen12",
+      "classification": "transaction",
+      "status": "unverified",
+      "source_ids": [
+        "zen"
+      ],
+      "editorial_action": "Authenticate live checkout under approval"
+    },
+    {
+      "id": "Z10",
+      "claim": "Publisher acceptance for Final Vestige Studios",
+      "product": "Zen12",
+      "classification": "authorization",
+      "status": "unverified",
+      "source_ids": [
+        "affiliate"
+      ],
+      "editorial_action": "Require account-specific written/dash proof"
+    },
+    {
+      "id": "Z11",
+      "claim": "Issued FV tracking URL and allowed organic social plus email channels",
+      "product": "Zen12",
+      "classification": "authorization",
+      "status": "unverified",
+      "source_ids": [
+        "affiliate"
+      ],
+      "editorial_action": "Require exact rights and issued URL"
+    },
+    {
+      "id": "Z12",
+      "claim": "Affiliate payout/sale conversion reported for FV",
+      "product": "Zen12",
+      "classification": "revenue",
+      "status": "unverified",
+      "source_ids": [
+        "affiliate"
+      ],
+      "editorial_action": "Require merchant settlement evidence; don't extrapolate portal percentages"
+    },
+    {
+      "id": "H01",
+      "claim": "Hypnosis Live publicly markets over 200 self-hypnosis MP3 products",
+      "product": "Hypnosis Live",
+      "classification": "catalog",
+      "status": "seller-described",
+      "source_ids": [
+        "hyp"
+      ],
+      "editorial_action": "Exact SKU page needed before warm-up"
+    },
+    {
+      "id": "H02",
+      "claim": "Hypnosis Live guarantees outcomes",
+      "product": "Hypnosis Live",
+      "classification": "efficacy",
+      "status": "seller-claim-unsubstantiated",
+      "source_ids": [
+        "hyp"
+      ],
+      "editorial_action": "Exclude"
+    },
+    {
+      "id": "H03",
+      "claim": "Site timer proves discount deadline or scarcity",
+      "product": "Hypnosis Live",
+      "classification": "urgency",
+      "status": "not-authenticated",
+      "source_ids": [
+        "hyp"
+      ],
+      "editorial_action": "Exclude countdown from FV"
+    },
+    {
+      "id": "B01",
+      "claim": "Brainwave Shots sells category-specific audio including Focus Shot",
+      "product": "Brainwave Shots",
+      "classification": "catalog",
+      "status": "seller-described",
+      "source_ids": [
+        "bw"
+      ],
+      "editorial_action": "Exact SKU page and checkout required"
+    },
+    {
+      "id": "B02",
+      "claim": "Brainwave Shots can heal pain, boost immunity or improve intelligence",
+      "product": "Brainwave Shots",
+      "classification": "medical/cognitive",
+      "status": "unsubstantiated-for-branded-product",
+      "source_ids": [
+        "bw",
+        "ftcHealth"
+      ],
+      "editorial_action": "Exclude"
+    },
+    {
+      "id": "B03",
+      "claim": "Basket promotion terms are current for referred visitors",
+      "product": "Brainwave Shots",
+      "classification": "offer",
+      "status": "not-authenticated",
+      "source_ids": [
+        "bw"
+      ],
+      "editorial_action": "No FV pricing/discount claim"
+    },
+    {
+      "id": "F01",
+      "claim": "Existing FV Focus Fieldbook is 52-page free resource delivered via existing list",
+      "product": "FV Focus",
+      "classification": "lead magnet",
+      "status": "live-copy-verified",
+      "source_ids": [
+        "focus"
+      ],
+      "editorial_action": "Use existing link, no new form"
+    },
+    {
+      "id": "F02",
+      "claim": "Fieldbook exercise is clinically proven to treat procrastination",
+      "product": "FV Focus",
+      "classification": "health/cognitive efficacy",
+      "status": "not-product-tested",
+      "source_ids": [
+        "focus",
+        "ftcHealth"
+      ],
+      "editorial_action": "Exclude"
+    },
+    {
+      "id": "P01",
+      "claim": "Puységur archive distinguishes evidence trail from magnetic mechanism",
+      "product": "FV archive",
+      "classification": "historical method",
+      "status": "source-led",
+      "source_ids": [
+        "puy"
+      ],
+      "editorial_action": "Preserve strict analogy only"
+    },
+    {
+      "id": "C01",
+      "claim": "Near-link disclosure material economic relationship",
+      "product": "all",
+      "classification": "FTC disclosure",
+      "status": "required-if-activated",
+      "source_ids": [
+        "ftcDisclosure"
+      ],
+      "editorial_action": "Clearly adjacent to CTA and understandable"
+    },
+    {
+      "id": "C02",
+      "claim": "Required product-specific scientific substantiation for objective health claims",
+      "product": "all",
+      "classification": "FTC objective claims",
+      "status": "required",
+      "source_ids": [
+        "ftcHealth"
+      ],
+      "editorial_action": "No medical improvement guarantees"
+    },
+    {
+      "id": "C03",
+      "claim": "42-second film increases paid conversion",
+      "product": "pilot",
+      "classification": "A/B hypothesis",
+      "status": "not-tested",
+      "source_ids": [],
+      "editorial_action": "Test only with approved payable destination and merchant-level outcome"
+    },
+    {
+      "id": "C04",
+      "claim": "Privacy-safe outbound event equals confirmed affiliate order",
+      "product": "pilot",
+      "classification": "analytics semantics",
+      "status": "false",
+      "source_ids": [],
+      "editorial_action": "Track separately; no order inference"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "requirement": "Account-specific Final Vestige Inspire3 partner acceptance verified",
+      "status": "HOLD",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G02",
+      "requirement": "Zen12 publisher tracking URL issued",
+      "status": "HOLD",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G03",
+      "requirement": "Organic social channel allowed",
+      "status": "HOLD",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G04",
+      "requirement": "Website content channel allowed",
+      "status": "HOLD",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G05",
+      "requirement": "Newsletter/email channel allowed before Dispatch placement",
+      "status": "HOLD",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G06",
+      "requirement": "Official approved creatives/swipe reviewed when accessible; no verbatim reuse",
+      "status": "HOLD",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G07",
+      "requirement": "Referred Zen12 Premium exact SKU identified",
+      "status": "HOLD",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G08",
+      "requirement": "Actual checkout currency, taxes and final charge independently checked",
+      "status": "HOLD",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G09",
+      "requirement": "Return policy written terms checked",
+      "status": "HOLD",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G10",
+      "requirement": "Actual refund request and outcome separately verified if lawful and feasible",
+      "status": "HOLD",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G11",
+      "requirement": "Digital delivery rights and device access checked",
+      "status": "HOLD",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G12",
+      "requirement": "Published medical and financial efficacy claims removed unless product-specific evidence",
+      "status": "HOLD",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G13",
+      "requirement": "Proximate visual commission disclosure verified at 360 and 390 pixels",
+      "status": "HOLD",
+      "owner": "Claude / Grok / Dispatch"
+    },
+    {
+      "id": "G14",
+      "requirement": "Nonvisual/assistive disclosure reading order tested in real browser",
+      "status": "HOLD",
+      "owner": "Claude / Grok / Dispatch"
+    },
+    {
+      "id": "G15",
+      "requirement": "Seller link opens only with rel=sponsored noopener noreferrer as applicable",
+      "status": "HOLD",
+      "owner": "Claude / Grok / Dispatch"
+    },
+    {
+      "id": "G16",
+      "requirement": "No tracking until authorized first-party implementation",
+      "status": "HOLD",
+      "owner": "Claude / Grok / Dispatch"
+    },
+    {
+      "id": "G17",
+      "requirement": "Campaign asset ID verified against Grok publication",
+      "status": "HOLD",
+      "owner": "Claude / Grok / Dispatch"
+    },
+    {
+      "id": "G18",
+      "requirement": "UTM campaign maps to exact creator creative and live article",
+      "status": "HOLD",
+      "owner": "Claude / Grok / Dispatch"
+    },
+    {
+      "id": "G19",
+      "requirement": "No duplicate Jetpack signup or changed welcome",
+      "status": "HOLD",
+      "owner": "Claude / Grok / Dispatch"
+    },
+    {
+      "id": "G20",
+      "requirement": "Opt-out and consent read in native Jetpack workflow",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G21",
+      "requirement": "Browser keyboard test on 360px and 390px",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G22",
+      "requirement": "Browser keyboard test on 768px and 1440px",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G23",
+      "requirement": "Browser keyboard test on 1920px",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G24",
+      "requirement": "Reduced-motion and no-JS fallbacks verified",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G25",
+      "requirement": "Real captions and complete transcript for encoded film",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G26",
+      "requirement": "Original film licensed/rights-cleared",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G27",
+      "requirement": "Film hosted first-party or vetted and measured for performance cost",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G28",
+      "requirement": "Real mobile performance/CWV budget checked",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G29",
+      "requirement": "Actual staged WordPress sanitization checked",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G30",
+      "requirement": "Site QA independent approval",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G31",
+      "requirement": "Homepage art owner confirms no conflict #150/#49",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G32",
+      "requirement": "Founder authorizes production publication",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G33",
+      "requirement": "Founder authorizes merchant activation",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G34",
+      "requirement": "Merchant independently reports paid commission/order",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G35",
+      "requirement": "Refund/fee settlement reconciled to realized net revenue",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    },
+    {
+      "id": "G36",
+      "requirement": "Seven- and thirty-day qualified-session cohorts reconcile to actual asset IDs",
+      "status": "HOLD",
+      "owner": "Site QA / Claude / Founder"
+    }
+  ],
+  "commercial_status": "HARD_HOLD",
+  "ever_tested_purchases": false,
+  "usable_affiliate_url": null,
+  "owned_paid_mind_sku": null,
+  "verified_paid_orders": null,
+  "notes": "Gmail targeted search checked publisher/approval terms; results were marketing/consumer messages, not a verified acceptance. No denial claimed. The public portal's promotional commission percentages are NOT contractual FV terms. No external merchant href is inserted into pilot HTML."
+}
