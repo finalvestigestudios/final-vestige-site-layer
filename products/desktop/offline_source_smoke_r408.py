@@ -163,7 +163,7 @@ def _read_verified_source_bytes(path: Path) -> bytes:
                 raise SourceGateError("Cannot verify local desktop source inventory") from None
 
 
-def _verify_source_directories(desktop: Path) -> None:
+def _verify_source_directories(desktop: Path) -> list[Path]:
     # Check *every* ancestor, not just desktop itself: desktop located beneath
     # a linked parent can redirect a seemingly ordinary suite outside custody.
     # Reject relative roots rather than silently resolving away linked parents.
@@ -184,6 +184,7 @@ def _verify_source_directories(desktop: Path) -> None:
     file_count = 0
     dir_count = 2  # Both mandatory import roots also count against the budget.
     total_bytes = 0
+    verified_paths: list[Path] = []
     for import_root in (desktop / "fvs_suite", desktop / "launchers"):
         for root, directories, files in os.walk(
                 import_root, followlinks=False, onerror=reject_unreadable):
@@ -211,6 +212,10 @@ def _verify_source_directories(desktop: Path) -> None:
                 total_bytes += size
                 if total_bytes > MAX_IMPORT_BYTES:
                     raise SourceGateError("Desktop source inventory exceeds safe bounds")
+                # Hand the same bounded, checked inventory to the hasher.
+                # Never perform a second, unbounded rglob enumeration.
+                verified_paths.append(path)
+    return verified_paths
 
 
 
@@ -266,12 +271,11 @@ def source_digest(desktop: Path) -> str:
 
     The digest is an inventory identity, NOT source provenance or a signed build.
     """
-    _verify_source_directories(desktop)
-    # Measure *every* ordinary asset and Python module in import roots. A
-    # changed CSV/JSON fixture or an additional launcher module can influence a
-    # smoke without changing one of the six named launcher scripts.
-    roots = (desktop / "fvs_suite", desktop / "launchers")
-    paths = [*(p for root in roots for p in root.rglob("*") if p.is_file()),
+    # Use the EXACT manifest that just passed the file/dir/byte budgets.
+    # A second unbounded rglob after preflight could discover an arbitrarily
+    # large tree created between scans, defeating the earlier limits.
+    # The checked descriptor reader still revalidates every listed path.
+    paths = [*_verify_source_directories(desktop),
              desktop / "offline_source_smoke_r408.py"]
     if (len(paths) < len(PRODUCTS) + 2 or any(
             desktop / "launchers" / name not in paths for _, name in PRODUCTS)):
