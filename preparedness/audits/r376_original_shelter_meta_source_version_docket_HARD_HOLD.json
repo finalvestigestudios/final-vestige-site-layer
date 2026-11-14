@@ -1,0 +1,461 @@
+{
+  "schema_version": 1,
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "issue": "#136",
+  "commercial_issue": "#820",
+  "observed_date": "2026-11-14",
+  "release_state": "DRAFT_HARD_HOLD",
+  "original_manifest_branch_pins": [
+    {
+      "branch": "claude/prep-start-bbfeb8",
+      "sha": "2122d856fce9f64887c16df3d52e64be9f59a55b"
+    },
+    {
+      "branch": "claude/prep-food-ccdc55",
+      "sha": "f911ff7a655de8d81535ea86ec3d65a49ee76648"
+    },
+    {
+      "branch": "claude/prep-health-837444",
+      "sha": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17"
+    },
+    {
+      "branch": "claude/prep-hist-field-9db767",
+      "sha": "4e5caf812727953aa45e3bda2d382f2c67b6a09c"
+    },
+    {
+      "branch": "claude/prep-hist-food-b81f19",
+      "sha": "67e116e536c7410bed30f8f3b1bb8c166f3c223d"
+    },
+    {
+      "branch": "claude/prep-hist-home-0e0e38",
+      "sha": "7504a5f099594d635e3dd7332a33a2e1346c43a2"
+    },
+    {
+      "branch": "claude/prep-shelter-5e1e0e",
+      "sha": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976"
+    },
+    {
+      "branch": "claude/prep-shelter-continuation",
+      "sha": "ac8625faf30dd5538fadc31e06cb5a2cea1defae"
+    },
+    {
+      "branch": "claude/prep-shelter-followup-evidence",
+      "sha": "6a5998ead97eca997e573ce8d3ceacf1c6aabad4"
+    }
+  ],
+  "original_selected_version": null,
+  "unreviewed_approval_assertions": [],
+  "original_object_conflicts": [
+    {
+      "path": "preparedness/content/articles/family-communication-plan.meta.json",
+      "decision": "ORIGINAL_VERSIONS_PRESERVED_HUMAN_REVIEW_REQUIRED",
+      "all_original_variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+          "size": 3524
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "0ad68a8c456f50912ddef11c44bfc05c3c2d3513",
+          "size": 4191
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "a8618235711cca039f142ad59962c1153654aa45",
+          "size": 4537
+        }
+      ],
+      "variants": [
+        {
+          "sha": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+          "branch": "claude/prep-shelter-5e1e0e",
+          "slug": "family-communication-plan",
+          "number": 15,
+          "publish": "draft",
+          "editorial": "drafted",
+          "safety_state": "pending",
+          "safety_scope": "Not safety-gated in the taxonomy; recorded as pending because the page concerns children's reunification and relies on one state-specific school source and one undated FCC page.",
+          "last_checked": "2026-10-29",
+          "updated": "2026-10-30",
+          "source_use_count": 14,
+          "added_source_use": [],
+          "removed_source_use": [],
+          "changed_source_use": [],
+          "related": [
+            "outage-heat-cold-generators",
+            "home-fire-escape-plan",
+            "shelter-or-evacuate"
+          ]
+        },
+        {
+          "sha": "0ad68a8c456f50912ddef11c44bfc05c3c2d3513",
+          "branch": "claude/prep-shelter-continuation",
+          "slug": "family-communication-plan",
+          "number": 15,
+          "publish": "draft",
+          "editorial": "drafted",
+          "safety_state": "pending",
+          "safety_scope": "Not safety-gated in the taxonomy; recorded as pending because the page concerns children's reunification and relies on one state-specific school source and one undated FCC page.",
+          "last_checked": "2026-11-01",
+          "updated": "2026-11-01",
+          "source_use_count": 18,
+          "added_source_use": [
+            "shelter-cdc-chemical-sip",
+            "shelter-fema-reunification",
+            "shelter-ncmec-hotline",
+            "shelter-ready-tech"
+          ],
+          "removed_source_use": [],
+          "changed_source_use": [],
+          "related": [
+            "outage-heat-cold-generators",
+            "home-fire-escape-plan",
+            "shelter-or-evacuate",
+            "reunification-plan"
+          ]
+        },
+        {
+          "sha": "a8618235711cca039f142ad59962c1153654aa45",
+          "branch": "claude/prep-shelter-followup-evidence",
+          "slug": "family-communication-plan",
+          "number": 15,
+          "publish": "draft",
+          "editorial": "drafted",
+          "safety_state": "pending",
+          "safety_scope": "Not safety-gated in the taxonomy; recorded as pending because the page concerns children's reunification and relies on one state-specific school source and one undated FCC page.",
+          "last_checked": "2026-11-01",
+          "updated": "2026-11-01",
+          "source_use_count": 20,
+          "added_source_use": [
+            "shelter-ca-cde-safety-plans",
+            "shelter-cdc-chemical-evac",
+            "shelter-cdc-chemical-sip",
+            "shelter-fema-reunification",
+            "shelter-ncmec-hotline",
+            "shelter-ready-tech"
+          ],
+          "removed_source_use": [],
+          "changed_source_use": [],
+          "related": [
+            "outage-heat-cold-generators",
+            "home-fire-escape-plan",
+            "shelter-or-evacuate",
+            "reunification-plan"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.meta.json",
+      "decision": "ORIGINAL_VERSIONS_PRESERVED_HUMAN_REVIEW_REQUIRED",
+      "all_original_variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+          "size": 3127
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9",
+          "size": 3758
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9",
+          "size": 3758
+        }
+      ],
+      "variants": [
+        {
+          "sha": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+          "branch": "claude/prep-shelter-5e1e0e",
+          "slug": "home-fire-escape-plan",
+          "number": 13,
+          "publish": "draft",
+          "editorial": "drafted",
+          "safety_state": "pending",
+          "last_checked": "2026-10-30",
+          "updated": "2026-10-30",
+          "source_use_count": 10,
+          "added_source_use": [],
+          "removed_source_use": [],
+          "changed_source_use": [],
+          "related": [
+            "outage-heat-cold-generators",
+            "shelter-or-evacuate",
+            "family-communication-plan"
+          ]
+        },
+        {
+          "sha": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9",
+          "branch": "claude/prep-shelter-followup-evidence",
+          "slug": "home-fire-escape-plan",
+          "number": 13,
+          "publish": "draft",
+          "editorial": "drafted",
+          "safety_state": "pending",
+          "last_checked": "2026-11-01",
+          "updated": "2026-11-01",
+          "source_use_count": 13,
+          "added_source_use": [
+            "shelter-nfpa-high-rise",
+            "shelter-usfa-escape-grid",
+            "shelter-usfa-high-rise-handout"
+          ],
+          "removed_source_use": [],
+          "changed_source_use": [],
+          "related": [
+            "outage-heat-cold-generators",
+            "shelter-or-evacuate",
+            "family-communication-plan",
+            "home-fire-escape-worksheet"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.meta.json",
+      "decision": "ORIGINAL_VERSIONS_PRESERVED_HUMAN_REVIEW_REQUIRED",
+      "all_original_variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "77dd194b096bb60ea99728a5b0042adf016b905e",
+          "size": 4568
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "debfd11fb189cb43a688862867dc60172fb6eb3a",
+          "size": 5096
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "593e7bd6fef0446f05d7a86551e702ceaa38eabb",
+          "size": 5210
+        }
+      ],
+      "variants": [
+        {
+          "sha": "77dd194b096bb60ea99728a5b0042adf016b905e",
+          "branch": "claude/prep-shelter-5e1e0e",
+          "slug": "outage-heat-cold-generators",
+          "number": 12,
+          "publish": "draft",
+          "editorial": "drafted",
+          "safety_state": "pending",
+          "last_checked": "2026-10-30",
+          "updated": "2026-10-30",
+          "source_use_count": 16,
+          "added_source_use": [],
+          "removed_source_use": [],
+          "changed_source_use": [],
+          "related": [
+            "shelter-or-evacuate",
+            "home-fire-escape-plan",
+            "family-communication-plan",
+            "making-water-safer",
+            "two-week-water-storage"
+          ]
+        },
+        {
+          "sha": "debfd11fb189cb43a688862867dc60172fb6eb3a",
+          "branch": "claude/prep-shelter-continuation",
+          "slug": "outage-heat-cold-generators",
+          "number": 12,
+          "publish": "draft",
+          "editorial": "drafted",
+          "safety_state": "pending",
+          "last_checked": "2026-11-01",
+          "updated": "2026-11-01",
+          "source_use_count": 18,
+          "added_source_use": [
+            "shelter-cpsc-co-tips",
+            "shelter-nws-winter-during"
+          ],
+          "removed_source_use": [],
+          "changed_source_use": [],
+          "related": [
+            "shelter-or-evacuate",
+            "home-fire-escape-plan",
+            "family-communication-plan",
+            "making-water-safer",
+            "two-week-water-storage",
+            "power-outage-planner"
+          ]
+        },
+        {
+          "sha": "593e7bd6fef0446f05d7a86551e702ceaa38eabb",
+          "branch": "claude/prep-shelter-followup-evidence",
+          "slug": "outage-heat-cold-generators",
+          "number": 12,
+          "publish": "draft",
+          "editorial": "drafted",
+          "safety_state": "pending",
+          "last_checked": "2026-11-01",
+          "updated": "2026-11-01",
+          "source_use_count": 19,
+          "added_source_use": [
+            "fsis-power-failure",
+            "shelter-cpsc-co-tips",
+            "shelter-nws-winter-during"
+          ],
+          "removed_source_use": [],
+          "changed_source_use": [],
+          "related": [
+            "shelter-or-evacuate",
+            "home-fire-escape-plan",
+            "family-communication-plan",
+            "making-water-safer",
+            "two-week-water-storage",
+            "power-outage-planner"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.meta.json",
+      "decision": "ORIGINAL_VERSIONS_PRESERVED_HUMAN_REVIEW_REQUIRED",
+      "all_original_variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+          "size": 3398
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "0f4800f6808f54e0487de1f8426b4612f7d0a54f",
+          "size": 3736
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "fb1081527e5afdd542299f2087397cf3308716c6",
+          "size": 3981
+        }
+      ],
+      "variants": [
+        {
+          "sha": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+          "branch": "claude/prep-shelter-5e1e0e",
+          "slug": "shelter-or-evacuate",
+          "number": 14,
+          "publish": "draft",
+          "editorial": "drafted",
+          "safety_state": "pending",
+          "last_checked": "2026-10-29",
+          "updated": "2026-10-30",
+          "source_use_count": 13,
+          "added_source_use": [],
+          "removed_source_use": [],
+          "changed_source_use": [],
+          "related": [
+            "outage-heat-cold-generators",
+            "home-fire-escape-plan",
+            "family-communication-plan"
+          ]
+        },
+        {
+          "sha": "0f4800f6808f54e0487de1f8426b4612f7d0a54f",
+          "branch": "claude/prep-shelter-continuation",
+          "slug": "shelter-or-evacuate",
+          "number": 14,
+          "publish": "draft",
+          "editorial": "drafted",
+          "safety_state": "pending",
+          "last_checked": "2026-11-01",
+          "updated": "2026-11-01",
+          "source_use_count": 14,
+          "added_source_use": [
+            "shelter-cdc-chemical-sip"
+          ],
+          "removed_source_use": [],
+          "changed_source_use": [],
+          "related": [
+            "outage-heat-cold-generators",
+            "home-fire-escape-plan",
+            "family-communication-plan",
+            "power-outage-planner",
+            "reunification-plan"
+          ]
+        },
+        {
+          "sha": "fb1081527e5afdd542299f2087397cf3308716c6",
+          "branch": "claude/prep-shelter-followup-evidence",
+          "slug": "shelter-or-evacuate",
+          "number": 14,
+          "publish": "draft",
+          "editorial": "drafted",
+          "safety_state": "pending",
+          "last_checked": "2026-11-01",
+          "updated": "2026-11-01",
+          "source_use_count": 15,
+          "added_source_use": [
+            "shelter-cdc-chemical-evac",
+            "shelter-cdc-chemical-sip"
+          ],
+          "removed_source_use": [],
+          "changed_source_use": [],
+          "related": [
+            "outage-heat-cold-generators",
+            "home-fire-escape-plan",
+            "family-communication-plan",
+            "power-outage-planner",
+            "reunification-plan"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "preparedness/sources/fragments/shelter.json",
+      "decision": "ORIGINAL_VERSIONS_PRESERVED_HUMAN_REVIEW_REQUIRED",
+      "all_original_variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "d9eeb4546e58f083031e0767aaea7cf112099e09",
+          "size": 35032
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "7291a7836a14b8a83f85310815e820295245c83b",
+          "size": 48669
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "5105f4bbd7d5b2e991f28d4b4ae7c9d5a2804aa9",
+          "size": 54250
+        }
+      ],
+      "variants": [
+        {
+          "sha": "d9eeb4546e58f083031e0767aaea7cf112099e09",
+          "branch": "claude/prep-shelter-5e1e0e",
+          "record_count": 31,
+          "keys": [
+            "sources"
+          ],
+          "content_git_sha": "d9eeb4546e58f083031e0767aaea7cf112099e09"
+        },
+        {
+          "sha": "7291a7836a14b8a83f85310815e820295245c83b",
+          "branch": "claude/prep-shelter-continuation",
+          "record_count": 41,
+          "keys": [
+            "sources"
+          ],
+          "content_git_sha": "7291a7836a14b8a83f85310815e820295245c83b"
+        },
+        {
+          "sha": "5105f4bbd7d5b2e991f28d4b4ae7c9d5a2804aa9",
+          "branch": "claude/prep-shelter-followup-evidence",
+          "record_count": 45,
+          "keys": [
+            "sources"
+          ],
+          "content_git_sha": "5105f4bbd7d5b2e991f28d4b4ae7c9d5a2804aa9"
+        }
+      ]
+    }
+  ],
+  "source_fragment_note": "Original shelter source-fragment content remains in each original Git blob; no source record is merged, deleted or chosen.",
+  "publication_approved": false,
+  "qualified_safety_approved": false
+}
