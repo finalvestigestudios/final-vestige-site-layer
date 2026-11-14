@@ -10,12 +10,12 @@ from collections import defaultdict
 from hashlib import sha256
 from decimal import Context, Decimal, localcontext
 from functools import wraps
-import re
 from typing import Callable, Mapping
 
 from .spend_vendor_evidence_r358 import spend_vendor_evidence
 from .spend_median import RunningDecimalMedian
 from .spend_input import validated_spend_rows
+from .spend_source_digest_r426 import require_native_spend_source_sha256
 from .spend_callback_context_r355 import invoke_spend_callback
 from .spend_format_custody_r357 import verified_spend_money_display
 from .spend_source_row_order_r363 import canonical_spend_source_rows
@@ -32,6 +32,7 @@ def _vendor_month_line_digest(source_sha256: str, vendor: str, month: str,
     so equal line positions from different files/groups cannot masquerade as
     equal evidence. A bounded report preview NEVER replaces this full digest.
     """
+    source_sha256 = require_native_spend_source_sha256(source_sha256)
     digest = sha256(b"FVS-SPEND-VENDOR-MONTH-LINES-v1\n")
     for element in (source_sha256, vendor, month, str(len(ordered_lines))):
         digest.update(element.encode("ascii") + b"\n")
@@ -70,8 +71,7 @@ def summarize_spend(
     The source SHA-256 must fingerprint bytes from the SAME imported snapshot.
     It is evidence of source identity, not a digital signature or approval.
     """
-    if not isinstance(source_sha256, str) or re.fullmatch(r"[0-9a-f]{64}", source_sha256) is None:
-        raise ValueError("Source snapshot SHA-256 must be 64 lowercase hexadecimal characters")
+    source_sha256 = require_native_spend_source_sha256(source_sha256)
 
     def report_money(amount: Decimal) -> str:
         # In addition to isolating the Decimal context, reject callbacks that
