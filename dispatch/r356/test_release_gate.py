@@ -30,7 +30,8 @@ class GateTests(unittest.TestCase):
         self.assertEqual(evaluate(p, MANIFEST)['all_issues'], 'HOLD_UNSENT')
     def test_count_duplicate_confirmation_once(self):
         a = {'kind': 'confirmed_signup', 'provider_status': 'confirmed',
-             'provider_proof': True, 'marketing_consent': True, 'opaque_subscriber_id': 'opaque_abc_123'}
+             'provider_proof': True, 'marketing_consent': True, 'provider_source': 'jetpack',
+             'provider_receipt_ref': 'jetpack_confirmed_001', 'opaque_subscriber_id': 'opaque_abc_123'}
         self.assertEqual(count_confirmed([a, a]), 1)
     def test_no_signup_attempt_as_lead(self): self.assertEqual(count_confirmed([{'kind': 'signup_attempt'}]), 0)
     def test_no_unconfirmed_as_lead(self):
@@ -69,30 +70,53 @@ class GateTests(unittest.TestCase):
         self.assertEqual(revenue_report([{'status': 'settled', 'opaque_order_id': 'order_12345678',
                                          'gross': 10, 'fees': 1, 'refunds': 0}])['confirmed_orders'], 0)
     def test_rejected_infinite_amount(self):
-        self.assertEqual(revenue_report([{'status': 'settled', 'independent_receipt': True,
+        self.assertEqual(revenue_report([{'status': 'settled', 'independent_receipt': True, 'receipt_source': 'merchant_settlement_report',
+                   'independent_receipt_ref': 'merchant_settlement_001',
                    'opaque_order_id': 'order_12345678', 'gross': 'Infinity',
                    'fees': 0, 'refunds': 0}])['confirmed_orders'], 0)
     def test_negative_fee_rejected(self):
-        self.assertEqual(revenue_report([{'status': 'settled', 'independent_receipt': True,
+        self.assertEqual(revenue_report([{'status': 'settled', 'independent_receipt': True, 'receipt_source': 'merchant_settlement_report',
+                   'independent_receipt_ref': 'merchant_settlement_001',
                    'opaque_order_id': 'order_12345678', 'gross': 10,
                    'fees': -1, 'refunds': 0}])['confirmed_orders'], 0)
     def test_fee_exceeds_sale_rejected(self):
-        self.assertEqual(revenue_report([{'status': 'settled', 'independent_receipt': True,
+        self.assertEqual(revenue_report([{'status': 'settled', 'independent_receipt': True, 'receipt_source': 'merchant_settlement_report',
+                   'independent_receipt_ref': 'merchant_settlement_001',
                    'opaque_order_id': 'order_12345678', 'gross': 10,
                    'fees': 11, 'refunds': 0}])['confirmed_orders'], 0)
     def test_dedup_order(self):
-        a = {'status': 'settled', 'independent_receipt': True,
+        a = {'status': 'settled', 'independent_receipt': True, 'receipt_source': 'merchant_settlement_report',
+                   'independent_receipt_ref': 'merchant_settlement_001',
              'opaque_order_id': 'order_12345678', 'gross': 10, 'fees': 2, 'refunds': 1}
-        r = revenue_report([a, a], 100)
+        r = revenue_report([a, a], 100, {'source_kind': 'first_party_analytics', 'source_ref': 'qualified_traffic_receipt_001'})
         self.assertEqual(r['confirmed_orders'], 1)
         self.assertEqual(r['net'], '7')
         self.assertEqual(r['net_per_1000_verified_human_sessions'], '70.00')
     def test_zero_denominator_not_computable(self):
-        a = {'status': 'settled', 'independent_receipt': True,
+        a = {'status': 'settled', 'independent_receipt': True, 'receipt_source': 'merchant_settlement_report',
+                   'independent_receipt_ref': 'merchant_settlement_001',
              'opaque_order_id': 'order_12345678', 'gross': 10, 'fees': 2, 'refunds': 1}
         self.assertIsNone(revenue_report([a], 0)['net_per_1000_verified_human_sessions'])
     def test_no_orders_ratio_not_verified(self): self.assertFalse(revenue_report([], 100)['ratio_computable'])
     def test_boolean_denominator_invalid(self):
         self.assertIsNone(revenue_report([], True)['net_per_1000_verified_human_sessions'])
+
+class SourceProofTests(unittest.TestCase):
+    def test_boolean_only_lead_not_provider_confirmation(self):
+        event = {'kind': 'confirmed_signup', 'provider_status': 'confirmed',
+                 'provider_proof': True, 'marketing_consent': True,
+                 'opaque_subscriber_id': 'opaque_abc_123'}
+        self.assertEqual(count_confirmed([event]), 0)
+    def test_boolean_only_purchase_not_independent_settlement(self):
+        sale = {'status': 'settled', 'independent_receipt': True,
+                'opaque_order_id': 'order_12345678', 'gross': 10, 'fees': 1, 'refunds': 0}
+        self.assertEqual(revenue_report([sale], 100)['confirmed_orders'], 0)
+    def test_qualified_session_receipt_needed_for_revenue_ratio(self):
+        sale = {'status': 'settled', 'independent_receipt': True,
+                'receipt_source': 'merchant_settlement_report',
+                'independent_receipt_ref': 'merchant_settlement_001',
+                'opaque_order_id': 'order_12345678', 'gross': 10, 'fees': 1, 'refunds': 0}
+        self.assertEqual(revenue_report([sale], 100)['confirmed_orders'], 1)
+        self.assertIsNone(revenue_report([sale], 100)['net_per_1000_verified_human_sessions'])
 
 if __name__ == '__main__': unittest.main()
