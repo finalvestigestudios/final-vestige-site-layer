@@ -1,0 +1,58 @@
+{
+  "status": "NOT_ADOPTED_HOLD_UNSENT",
+  "issue": 2,
+  "content_type": "editorial",
+  "source_master_pr": 175,
+  "source_master_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "parent_pr": 2532,
+  "source_issues": [
+    174,
+    171,
+    129,
+    820
+  ],
+  "subject": "A sleeping patient. An unresolved claim.",
+  "preheader": "Puységur's 1784 notes show why a vivid observation is not the same as a verified cause.",
+  "primary_cta": {
+    "label": "Read Puységur's Animal Magnetism Files",
+    "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "verified_live": "previously_reported; reverify before release"
+  },
+  "source_notes": [
+    {
+      "title": "1784 Puységur text and digitized editions (CIRCEE/BnF)",
+      "url": "https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/"
+    },
+    {
+      "title": "Adam Crabtree, Artificial Somnambulism and Hypnotism, Harvard CSWR (2026)",
+      "url": "https://cswr.hds.harvard.edu/news/2026/07/13/artificial-somnambulism-and-hypnotism"
+    },
+    {
+      "title": "Crabtree, 1784: The Marquis de Puységur (2019), DOI",
+      "url": "https://doi.org/10.1002/jhbs.21974"
+    },
+    {
+      "title": "Final Vestige editorial standards",
+      "url": "https://finalvestige.com/editorial-standards/"
+    }
+  ],
+  "product_mentions": 0,
+  "commercial_link_active": false,
+  "send_authorized": false,
+  "affiliate_email_rights_verified": false,
+  "subscriber_eligibility_verified": false,
+  "welcome_receipt_verified": false,
+  "publisher_postal_verified": false,
+  "functional_unsubscribe_verified": false,
+  "native_jetpack_preview_verified": false,
+  "founder_adoption_approved": false,
+  "founder_send_approved": false,
+  "placeholders": [
+    "[[VALID_POSTAL_ADDRESS_REQUIRED]]",
+    "[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]"
+  ],
+  "offer_allocation": {
+    "editorial": 4,
+    "commercial_reserved": 2
+  }
+}

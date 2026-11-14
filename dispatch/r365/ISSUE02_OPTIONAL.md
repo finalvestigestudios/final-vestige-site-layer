@@ -1,0 +1,39 @@
+# The Dispatch — Optional Issue 02: A sleeping patient. An unresolved claim.
+
+> **NOT_ADOPTED / UNSENT / DO NOT PUBLISH OR EMAIL.** Original approved six-issue draft remains unchanged. This is an independent alternative for founder review, not a replacement decision.
+
+**Subject:** A sleeping patient. An unresolved claim.
+
+**Preheader:** Puységur's 1784 notes show why a vivid observation is not the same as a verified cause.
+
+**Type:** editorial; no affiliate recommendation or buying link.
+
+---
+
+In the spring of 1784, a French nobleman thought he had witnessed something extraordinary. At his estate in Buzancy, the Marquis de Puységur applied a fashionable treatment called animal magnetism to a young man whom later historians identify as Victor Race. Instead of the dramatic convulsions associated with some Mesmerian demonstrations, Puységur described a quieter scene: the man appeared asleep, yet answered questions.
+
+A camera would not have settled this case. There was no camera record of that session. What survives is testimony, preserved in Puységur's writings. A letter dated May 8 described an episode he placed on May 4. The dated account matters; so does the distance between the event and anyone attempting to verify it.
+
+Puységur went on to describe an unusual state he called magnetic somnambulism. His reports assigned the patient surprising abilities, including making statements about illness. Those are claims in a historical record, not demonstrated diagnostic powers. The record proves that this explanation was proposed; it does not, by itself, prove the explanation.
+
+One detail is easy to miss. The author was not a neutral laboratory observer. He was both practitioner and interpreter, socially more powerful than the person he treated. That does not automatically invalidate the account. It means consent, expectations, suggestibility and the opportunity to challenge the story belong in our questions about it.
+
+The same year, a royal commission associated with Benjamin Franklin examined Mesmer's animal-magnetism claims. Its tests challenged the supposed invisible mechanism. That inquiry should not be described as a direct, complete experimental replication of Puységur's particular May encounter. Distinct subjects, methods and observations cannot be collapsed into one convenient verdict.
+
+Puységur initially circulated his account cautiously and urged replication before broad acceptance. It's a striking moment: a witness who believed his finding important also recognized that other observers would have to test it. Later psychology and hypnotism developed through a much longer, contested history. Neither modern hypnosis nor any commercial recording inherits proof simply because this historical story exists.
+
+Try a one-minute evidence audit the next time a surprising claim crosses your feed. Write three separate lines: (1) what a witness says happened; (2) what source or independently observed result supports it; (3) what would distinguish that explanation from an ordinary alternative. If a line is blank, leave it blank. An unanswered question can be the most accurate conclusion.
+
+**Primary action:** [Read Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/)
+
+In the Puységur case file, the remarkable part is not a guaranteed secret power. It is the surviving paper trail—and the difference between believing a witness and testing an account.
+
+**Source notes (documentary, not additional offers):**
+1. [1784 Puységur text and digitized editions (CIRCEE/BnF)](https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/)
+2. [Adam Crabtree, Artificial Somnambulism and Hypnotism, Harvard CSWR (2026)](https://cswr.hds.harvard.edu/news/2026/07/13/artificial-somnambulism-and-hypnotism)
+3. [Crabtree, 1784: The Marquis de Puységur (2019), DOI](https://doi.org/10.1002/jhbs.21974)
+4. [Final Vestige editorial standards](https://finalvestige.com/editorial-standards/)
+
+---
+
+**HARD-STOP legal/footer review block:** Sender: Final Vestige Studios. Qualifying publisher postal address: `[[VALID_POSTAL_ADDRESS_REQUIRED]]`. Functioning Jetpack unsubscribe: `[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]`. Must be verified in native Jetpack output. Unreplaced placeholders prohibit sending.
