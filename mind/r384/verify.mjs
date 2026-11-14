@@ -40,7 +40,7 @@ function caseChecks(label,s){
  check(s.includes('https://finalvestige.com/focus/'),label+' existing Focus route');
  check(s.includes('https://finalvestige.com/affiliate-disclosure/'),label+' affiliate policy');
  check(s.includes('We have not checked an authorized referred checkout'),label+' price caveat');
- check(s.includes('not an independently demonstrated treatment'),label+' editorial limit');
+ check(s.includes('not automatically an independently demonstrated treatment'),label+' editorial limit');
  check(!/guaranteed focus|cures anxiety|boosts IQ/i.test(s),label+' no banned efficacy slogans');
  check(s.includes('twelve-minute')||s.includes('twelve minutes'),label+' practice context');
 }
@@ -59,7 +59,7 @@ check(P.includes('not research stimuli'),'SVG rights limit');
 check(!/<script\b|<foreignObject\b|<image\b/i.test(P),'SVG safe self contained');
 check(E.split(/\s+/).length>2500,'substantive 2500+ word investigation');
 for(const u of ['https://doi.org/10.1068/p281059','https://doi.org/10.1068/i0386','https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/','https://doi.org/10.1177/17470218211064903'])check(E.includes(u),'research source '+u);
-check(E.includes('not a clinical missed-diagnosis rate')||E.includes('not a clinical miss-rate'),'no clinical generalization');
+check(E.includes('not a medical-error rate')||E.includes('not a medical miss-rate'),'no clinical generalization');
 check(H.includes('Four editorial streams'),'hub four streams');
 check(H.includes('noindex,nofollow'),'hub draft noindex');
 check(safeHTML(H),'hub no forbidden controls');
@@ -75,7 +75,7 @@ check(D.includes('affiliate_outbound'),'affiliate click separate');
 check(D.includes('NOT COMPUTABLE'),'missing outcome disclosed');
 check(D.includes('NOT VERIFIED'),'unknown media IDs disclosed');
 check(D.includes('Issue #150'),'other work preserved');
-check(D.includes('no independently'), 'honest outcomes');
+check(D.includes('independently verified'), 'honest outcomes');
 
 const mutations=[
  ['merchant hyperlink',()=>A.replace('</main>','<a href="https://zen12.com?aff=fake">Buy</a></main>'),s=>noMerchantHref(s)],
@@ -88,7 +88,7 @@ const mutations=[
  ['onload event',()=>A.replace('</body>','<img src="x" onerror="hack()"></body>'),s=>safeHTML(s)],
  ['new merchant in anchor',()=>B.replace('</body>','<a href="https://affiliates.inspire3.com/abcd">Now</a></body>'),s=>noMerchantHref(s)],
  ['noindex removal',()=>A.replace('name="robots" content="noindex,nofollow"','name="robots" content="index,follow"'),s=>s.includes('name="robots" content="noindex,nofollow"')],
- ['buyer parity removal',()=>B.replace('five purchase','six purchase'),s=>stripFilm(sourceBody(s))===sourceBody(A)]
+ ['buyer parity removal',()=>B.replace('A short listening routine is a format, not a promise.','A short listening routine is a miraculous cure.'),s=>stripFilm(sourceBody(s))===sourceBody(A)]
 ];
 let rejected=0;
 for(const [name,mutate,guard] of mutations){check(!guard(mutate()),'unsafe mutation rejected: '+name);rejected++}
