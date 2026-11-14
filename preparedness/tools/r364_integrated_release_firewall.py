@@ -77,6 +77,9 @@ def compare_doc(kind, original, candidate, old_html, new_html):
         sr = meta.get('safety_review')
         if not isinstance(sr, dict) or sr.get('state') not in ('pending','approved','not-required'):
             errors.add(label+'_INVALID_SAFETY_STATE')
+    if isinstance(original.get('status'),dict) and isinstance(candidate.get('status'),dict):
+        if original['status'].get('editorial') != candidate['status'].get('editorial'):
+            errors.add('EDITORIAL_STATUS_DRIFT')
     osr = original.get('safety_review', {})
     csr = candidate.get('safety_review', {})
     if isinstance(osr,dict) and isinstance(csr,dict):
@@ -96,6 +99,11 @@ def compare_doc(kind, original, candidate, old_html, new_html):
     for k in ('source_use', 'related'):
         if not isinstance(original.get(k), (dict if k=='source_use' else list)) or not isinstance(candidate.get(k), (dict if k=='source_use' else list)):
             errors.add('INVALID_'+k.upper())
+    if isinstance(original.get('related'),list) and isinstance(candidate.get('related'),list):
+        if any(x not in candidate['related'] for x in original['related']):
+            errors.add('RELATED_RESOURCE_REMOVED')
+        if any(x not in original['related'] for x in candidate['related']):
+            review.add('RELATED_RESOURCE_ADDED_RECHECK')
     old_use = original.get('source_use') if isinstance(original.get('source_use'),dict) else {}
     new_use = candidate.get('source_use') if isinstance(candidate.get('source_use'),dict) else {}
     for sid, desc in old_use.items():
