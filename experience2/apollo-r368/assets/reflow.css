@@ -1,0 +1,39 @@
+/* Apollo R368 STAGING ONLY: reflow hardening for R367-sealed chronology.
+   Loaded AFTER R365 and R367 CSS, scoped to the evidence experience.
+   Honors the user's chosen root font size; no font-size suppression, JS, images or motion. */
+.fv-apollo-r365,
+.fv-apollo-r365 * { min-width: 0; max-width: 100%; }
+.fv-apollo-r365 :is(h2,h3,p,a,summary,strong,span) {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+.fv-apollo-r365__plate,
+.fv-apollo-r365__withheld { width: 100%; }
+/* These fixed, small gutter caps are intentional: rem gutters at 400% root
+   font size consumed most of a 320px CSS viewport in inherited R365. */
+@media (max-width: 640px) {
+  .fv-apollo-r365 { padding: 12px !important; }
+  .fv-apollo-r365__inner { max-width: 100%; }
+  .fv-apollo-r365__rail { padding: 0; margin: 0; }
+  .fv-apollo-r365__event { grid-template-columns: minmax(0, 1fr); gap: 8px; padding-bottom: 18px; }
+  .fv-apollo-r365__plate { padding: 12px !important; }
+  .fv-apollo-r365__date { padding: 0 0 0 8px; }
+  .fv-apollo-r365__limit { padding: 8px; border-left-width: 3px; }
+  .fv-apollo-r365__source { padding-left: 8px; margin: 8px 0; }
+  .fv-apollo-r365__plate details { margin-top: 12px; padding-top: 8px; }
+  .fv-apollo-r365__quick { grid-template-columns: minmax(0,1fr); margin: 12px 0 16px; gap: 0; }
+  .fv-apollo-r365__quick a { min-height: 44px; padding: 6px 0; }
+  .fv-apollo-r365 h2 { max-width: none; }
+  .fv-apollo-r365__continue { margin: 16px 0 8px; }
+  .fv-apollo-r365__continue a { padding: 10px; }
+  .fv-apollo-r367__unavailable { padding: 12px; }
+}
+@media (forced-colors: active) {
+  .fv-apollo-r365__plate,
+  .fv-apollo-r365__limit,
+  .fv-apollo-r365__continue a { border-color: CanvasText; }
+}
+@media print {
+  /* Print source drawers remain visible as in R365; never hide custody text. */
+  .fv-apollo-r365__source { display: block !important; }
+}
