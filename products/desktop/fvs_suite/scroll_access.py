@@ -11,6 +11,7 @@ from tkinter import ttk
 
 from .wheel_modifiers import is_plain_vertical_wheel
 from .wheel_edge_guard import wheel_points_outward
+from .native_wheel_owner import native_wheel_owner
 
 
 def focus_scroll_fraction(total_height, visible_height, top, widget_y, widget_height):
@@ -157,6 +158,11 @@ class ScrollableForm:
     def _scroll_wheel(self, event, *, button=None):
         if not self._inside_viewport(event.widget):
             return None
+        # Nested native widgets own their own wheel behavior. In particular,
+        # do not double-scroll the root when a Text/Treeview/Listbox scrolls,
+        # and do not disturb Win32 precision-wheel residuals on this path.
+        if native_wheel_owner(event.widget, self.canvas):
+            return None
         # Leave Shift-wheel horizontal navigation and Ctrl/Alt wheel
         # gestures to native controls; do not change Win32 partial residual.
         if not is_plain_vertical_wheel(getattr(event, "state", 0)):
@@ -190,9 +196,11 @@ class ScrollableForm:
 
     def _focus_reveal(self, event):
         widget = event.widget
-        if not isinstance(widget, (tk.Entry, tk.Button, tk.Text, ttk.Entry, ttk.Button,
-                                   ttk.Combobox, ttk.Spinbox, ttk.Checkbutton,
-                                   ttk.Radiobutton, ttk.Treeview)):
+        if not isinstance(widget, (tk.Entry, tk.Button, tk.Text, tk.Listbox,
+                                   tk.Spinbox, tk.Checkbutton, tk.Radiobutton,
+                                   tk.Scale, ttk.Entry, ttk.Button, ttk.Combobox,
+                                   ttk.Spinbox, ttk.Checkbutton, ttk.Radiobutton,
+                                   ttk.Treeview, ttk.Scale, ttk.Notebook)):
             return
         if widget.winfo_toplevel() is not self.root:
             return
