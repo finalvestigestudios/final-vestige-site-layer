@@ -1,0 +1,12 @@
+# R351 QA evidence — 2026-11-14
+## Exact source provenance
+- Parent draft PR #2450 HEAD at start: `0b286c920be00c4cccdc714a6d3c719633f50a78`. Separate `dispatch-r351-guest-signup-proof-and-retention-20261114` branch; 4:2 original draft unchanged; homepage #49 untouched.
+- Original PR #175 current HEAD `d57ccdba3aee8f065e143e101c2945f4f3d01647`. Eight source Git blob identities verified against live GitHub files: six issue manuscripts, manifest, Python suite; exact native master tests **6/6 passed**.
+- New R351 `guest_snapshot_classifier.py` verified Git blob `4aeb77064866d3f3dd1802ed3fc6c71711c0ac51`; `test_guest_snapshot_classifier.py` Git blob `bfbe538c826681314ca2599dc2cc63a68799ac26`. Both byte-identical to locally native-tested sources (`git hash-object` checks).
+- New native Python `python -m unittest -v test_guest_snapshot_classifier`: **17/17 passed**, including misleading REST self-link, incomplete form, valid form, no submission, overlapping counters, boolean/negative counters, no revenue inference.
+- Live authenticated WP read-only snapshot at **2026-11-14 09:39 UTC**: newsletter ON; email-new-post default OFF; full; from Final Vestige Studios; no-reply; welcome configured, not delivered proof; status total3 confirmed3 unconfirmed2 suppressed0; WP.com followers3 direct email followers0; five `never_sent_opted_out`. No actual eligible inbox count.
+- Published /dispatch/ page #523 view contains Subscribe anchor back to `?post_type=page&p=523`, not inline form. **Representation gap, not confirmed actual guest failure**.
+- WordPress document [Preview email](https://wordpress.com/support/newsletter/email-appearance/) is distinct from **Send test email**, neither executed. No live received MIME, verified FV postal address, functional unsubscribe or Fieldbook welcome receipt.
+- Merchant source URLs checked today: https://zen12.com/secret/ ; https://zen12.com/welcome ; https://hypnosislive.com/mental-skills/total-focus ; https://hypnosislive.com/faq ; FTC https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business .
+## Limits
+No browser runtime/network in local offline test environment. No real native signed-out DOM/keyboard screenshots. No subscriber test or click. No active merchant relationship or price/checkout proof. Alternative Issue06 is NOT adopted; its direct PDF CTA must be rechecked as an actual working public asset. No fake paid orders or revenue. All six HOLD_UNSENT; 03/05 HOLD_MERCHANT; editorial founder approval still missing.
