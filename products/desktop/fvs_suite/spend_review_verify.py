@@ -19,6 +19,7 @@ FIELDS = frozenset((
 _ASCII_LOWER = str.maketrans(
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"
 )
+_ASCII_BOUNDARY = " \t\r\n\v\f"
 _ZERO = Decimal("0.00")
 _TWO = Decimal("2")
 
@@ -92,10 +93,10 @@ def compute_expected_review_fields(
         for vendor, month, category, amount, source_label in observations:
             month_net[(vendor, month)] += amount
             category_net[(vendor, month, category)] += amount
-            if source_label.strip():
+            if source_label.strip(_ASCII_BOUNDARY):
                 # ASCII case alone is a safe identity equivalence. Unicode
                 # casefold could conceal visually meaningful label changes.
-                variants[vendor].add(source_label.strip().translate(_ASCII_LOWER))
+                variants[vendor].add(source_label.strip(_ASCII_BOUNDARY).translate(_ASCII_LOWER))
 
         by_vendor: dict[str, dict[str, Decimal]] = defaultdict(dict)
         for (vendor, month), total in month_net.items():

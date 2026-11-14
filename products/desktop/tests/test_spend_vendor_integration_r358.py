@@ -81,7 +81,7 @@ class SpendVendorIntegrationR358(unittest.TestCase):
         with TemporaryDirectory() as folder:
             row = rows_from_spend(Path(folder), ' ACME ', 'ACME')[0]
             self.assertNotIn('normalized_vendor_collision_review', row['flag'])
-            self.assertEqual(row['source_vendor_labels'], 'ACME')
+            self.assertEqual(row['source_vendor_labels'], r'\u0020ACME\u0020; ACME')
 
     def test_genuine_direct_summarizer_flags_unicode_source(self):
         rows = [dict(row='2', vendor='ACME', amount='100.00', date='2026-11-01'),
