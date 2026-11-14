@@ -1,0 +1,400 @@
+{
+  "schema": "fv-mind-source-authorization-r380",
+  "date_checked": "2026-11-14",
+  "state": "UNPUBLISHED_HARD_HOLD",
+  "reference_scope": "public pages and accessible abstracts; no independent original Chevreul facsimile inspection",
+  "sources": {
+    "chevreul": "https://doi.org/10.1080/00221309.1976.9710871",
+    "karlin": "https://pubmed.ncbi.nlm.nih.gov/18058489/",
+    "andersen": "https://doi.org/10.1007/s11097-018-9585-8",
+    "history": "https://doi.org/10.1080/00029157.2011.10401754",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "focus": "https://finalvestige.com/focus/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "inspire": "https://inspire3.com/",
+    "zen": "https://zen12.com/",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  },
+  "claims": [
+    {
+      "id": "P01",
+      "claim": "1976 Easton/Shor pendulum study involved 60 college students",
+      "status": "research_abstract_supported",
+      "source_key": "chevreul",
+      "disposition": "editorial_only"
+    },
+    {
+      "id": "P02",
+      "claim": "Attention and support conditions altered the pendulum effect in that study",
+      "status": "research_abstract_supported",
+      "source_key": "chevreul",
+      "disposition": "editorial_only"
+    },
+    {
+      "id": "P03",
+      "claim": "Pendulum motion proves hidden external knowledge",
+      "status": "unsupported",
+      "source_key": "chevreul",
+      "disposition": "exclude"
+    },
+    {
+      "id": "P04",
+      "claim": "2008 paper compared pendulum response and hypnotic susceptibility",
+      "status": "research_abstract_supported",
+      "source_key": "karlin",
+      "disposition": "editorial_only"
+    },
+    {
+      "id": "P05",
+      "claim": "2008 nonresponder analysis included 10 nonresponders and 65 responders",
+      "status": "research_abstract_supported",
+      "source_key": "karlin",
+      "disposition": "editorial_only"
+    },
+    {
+      "id": "P06",
+      "claim": "Pendulum nonresponse diagnoses low hypnotic capacity",
+      "status": "unsupported_extrapolation",
+      "source_key": "karlin",
+      "disposition": "exclude"
+    },
+    {
+      "id": "P07",
+      "claim": "2018 Ouija field study recorded eye tracking and reduced visual prediction",
+      "status": "research_abstract_supported",
+      "source_key": "andersen",
+      "disposition": "editorial_only"
+    },
+    {
+      "id": "P08",
+      "claim": "2018 Ouija study establishes all board movements everywhere",
+      "status": "unsupported_extrapolation",
+      "source_key": "andersen",
+      "disposition": "exclude"
+    },
+    {
+      "id": "P09",
+      "claim": "Puységur archive preserves historical case dossiers and disputed causal claims",
+      "status": "fv_live_source",
+      "source_key": "puysegur",
+      "disposition": "editorial_only"
+    },
+    {
+      "id": "P10",
+      "claim": "A pendulum experiment verifies consumer meditation-audio efficacy",
+      "status": "unsupported",
+      "source_key": "chevreul",
+      "disposition": "exclude"
+    },
+    {
+      "id": "P11",
+      "claim": "Zen12 Premium seller describes 12 levels",
+      "status": "seller_description_only",
+      "source_key": "zen",
+      "disposition": "qualify"
+    },
+    {
+      "id": "P12",
+      "claim": "Zen12 seller describes 48 MP3s in four listening formats",
+      "status": "seller_description_only",
+      "source_key": "zen",
+      "disposition": "qualify"
+    },
+    {
+      "id": "P13",
+      "claim": "Zen12 seller advertises a one-year refund guarantee",
+      "status": "seller_promise_unverified_execution",
+      "source_key": "zen",
+      "disposition": "recheck_prior_to_release"
+    },
+    {
+      "id": "P14",
+      "claim": "Zen12 public page displayed 87.99 USD Premium on 2026-11-14",
+      "status": "seller_page_display_not_checkout",
+      "source_key": "zen",
+      "disposition": "no_live_numeric_price_without_checkout"
+    },
+    {
+      "id": "P15",
+      "claim": "Zen12 12 minutes provides benefits equal to an hour",
+      "status": "seller_comparative_claim_unsubstantiated",
+      "source_key": "zen",
+      "disposition": "exclude"
+    },
+    {
+      "id": "P16",
+      "claim": "Zen12 audio treats anxiety or produces guaranteed focus",
+      "status": "health_claim_unsubstantiated_for_SKU",
+      "source_key": "zen",
+      "disposition": "exclude"
+    },
+    {
+      "id": "P17",
+      "claim": "Zen12 audio clinically proves brainwave entrainment",
+      "status": "mechanism_and_outcome_unsubstantiated",
+      "source_key": "zen",
+      "disposition": "exclude"
+    },
+    {
+      "id": "P18",
+      "claim": "Zen12 page listed a Premium training call bonus",
+      "status": "seller_description_only",
+      "source_key": "zen",
+      "disposition": "qualify_verify_delivery"
+    },
+    {
+      "id": "P19",
+      "claim": "Inspire3 operates public affiliate portal",
+      "status": "public_program_verified",
+      "source_key": "affiliate",
+      "disposition": "internal_review_only"
+    },
+    {
+      "id": "P20",
+      "claim": "Final Vestige accepted as Inspire3 affiliate publisher",
+      "status": "not_authenticated",
+      "source_key": "affiliate",
+      "disposition": "hold_activation"
+    },
+    {
+      "id": "P21",
+      "claim": "Final Vestige may promote Zen12 in email and TikTok",
+      "status": "terms_not_authenticated",
+      "source_key": "affiliate",
+      "disposition": "hold_activation"
+    },
+    {
+      "id": "P22",
+      "claim": "Final Vestige issued account-specific earning link",
+      "status": "not_authenticated",
+      "source_key": "affiliate",
+      "disposition": "hold_activation"
+    },
+    {
+      "id": "P23",
+      "claim": "Inspire3 public program describes payout economics",
+      "status": "public_advertising_not_account_terms",
+      "source_key": "affiliate",
+      "disposition": "never_assert_personal_commission_rate"
+    },
+    {
+      "id": "P24",
+      "claim": "Focus Fieldbook is live and free",
+      "status": "verified_public_route",
+      "source_key": "focus",
+      "disposition": "allowed_editorial_link"
+    },
+    {
+      "id": "P25",
+      "claim": "Focus Fieldbook is a paid FV Mind SKU",
+      "status": "false",
+      "source_key": "focus",
+      "disposition": "exclude"
+    },
+    {
+      "id": "P26",
+      "claim": "An actually saleable rights-cleared FV Mind SKU is verified",
+      "status": "not_authenticated",
+      "source_key": "focus",
+      "disposition": "hold_paid_cta"
+    },
+    {
+      "id": "P27",
+      "claim": "FTC expects conspicuous nearby disclosure for earning recommendations",
+      "status": "ftc_guidance",
+      "source_key": "ftc",
+      "disposition": "required_if_activated"
+    },
+    {
+      "id": "P28",
+      "claim": "FTC expects adequate substantiation for objective health claims",
+      "status": "ftc_guidance",
+      "source_key": "health",
+      "disposition": "required"
+    },
+    {
+      "id": "P29",
+      "claim": "Outbound affiliate click proves paid commission",
+      "status": "false",
+      "source_key": "affiliate",
+      "disposition": "exclude"
+    },
+    {
+      "id": "P30",
+      "claim": "A/B static variant can establish paid lift without customers",
+      "status": "false",
+      "source_key": "affiliate",
+      "disposition": "exclude"
+    },
+    {
+      "id": "P31",
+      "claim": "Actual Grok asset IDs for three Mind routes are verified",
+      "status": "not_authenticated",
+      "source_key": "change",
+      "disposition": "hold_campaign_attribution"
+    },
+    {
+      "id": "P32",
+      "claim": "A real purchaser can receive their specific referral refund",
+      "status": "merchant_terms_and_execution_unverified",
+      "source_key": "zen",
+      "disposition": "hold_activation"
+    }
+  ],
+  "release_gates": {
+    "named_publisher_acceptance": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "permitted_website_promotion": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "permitted_email_promotion": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "permitted_tiktok_promotion": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "permitted_youtube_promotion": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "approved_creative_rights": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "issued_zen12_tracking_url": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "approved_attribution_parameters": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "verified_referred_checkout": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "verified_customer_currency_tax": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "verified_refund_terms": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "verified_refund_execution": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "verified_sku_fulfillment": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "verified_no_unapproved_upsell_claim": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "product_claim_independent_substantiation": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "copy_editor_review": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "near_link_ftc_disclosure": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "mobile_disclosure_visibility": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "browser_360": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "browser_390": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "browser_768": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "browser_1440": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "screen_reader_review": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "keyboard_review": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "reduced_motion_review": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "no_js_review": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "video_encoded_license_verified": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "video_captions_playback_review": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "provider_confirmed_leads": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "qualified_human_campaign_attribution": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "merchant_paid_order_evidence": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "refund_and_fee_reconciliation": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "founder_commercial_approval": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "founder_release_approval": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "claude_prod_release_review": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    },
+    "site_qa_signoff": {
+      "status": "HOLD",
+      "evidence": "not established in this sprint"
+    }
+  },
+  "policy": {
+    "public_seller_page_is_not_affiliate_approval": true,
+    "public_price_is_not_checkout_price": true,
+    "require_product_specific_substantiation": true,
+    "merchant_purchase_href_enabled": false,
+    "paid_conversion_definition": "settled partner-reported commission or verified paid order net of fees and refunds"
+  }
+}
