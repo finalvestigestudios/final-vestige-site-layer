@@ -63,6 +63,25 @@ def _visible(text: str) -> str:
     return "".join(output)
 
 
+# Preserve an independent source-bound check for spreadsheet importers
+# that NFKC-fold compatibility operators before evaluating a CSV cell.
+# Keep raw source display unchanged; this is not an import, signature or approval.
+_FORMULA_IGNORABLE = frozenset(("Cf", "Cc", "Mn", "Me"))
+
+
+def _compatibility_formula_prefix(text: str) -> bool:
+    """Independently reproduce the publisher's first-meaningful-character rule."""
+    for index, character in enumerate(text):
+        if character.isspace() or unicodedata.category(character) in _FORMULA_IGNORABLE:
+            continue
+        if character == "-":
+            # Valid native negative Decimal text must not become a formula.
+            return _NUMBER.fullmatch(text[index:]) is None
+        normalized = unicodedata.normalize("NFKC", character)
+        return bool(normalized and normalized[0] in "=+@-")
+    return False
+
+
 def _spreadsheet_safe(text: str) -> str:
     """Independent formula-prefix defense for final CSV field."""
     index = 0
@@ -80,7 +99,8 @@ def _spreadsheet_safe(text: str) -> str:
         break
     token = text[index:]
     if (invisible or token.startswith(("=", "+", "@"))
-            or (token.startswith("-") and _NUMBER.fullmatch(token) is None)):
+            or (token.startswith("-") and _NUMBER.fullmatch(token) is None)
+            or _compatibility_formula_prefix(text)):
         return "'" + text
     return text
 
