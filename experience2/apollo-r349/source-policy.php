@@ -29,7 +29,10 @@ function fv_apollo_r349_source_link($url, $label, array $data = array()): string
     $esc = static function($value): string {
         return htmlspecialchars((string)$value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
     };
-    if (!fv_apollo_r349_is_source_approved($url)) {
+    $integrity_file = dirname(__DIR__) . '/apollo-r350/integrity.php';
+    if (is_readable($integrity_file)) { require_once $integrity_file; }
+    $reviewed_record_pairing = function_exists('fv_apollo_r350_integrity_ok') && fv_apollo_r350_integrity_ok();
+    if (!fv_apollo_r349_is_source_approved($url) || !$reviewed_record_pairing) {
         return '<span class="fv-apollo-source-quarantined" data-fv-source-review-required="true">'
              . $esc($label) . ' — source link withheld pending editorial verification</span>';
     }
