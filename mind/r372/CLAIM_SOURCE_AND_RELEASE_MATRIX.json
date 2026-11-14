@@ -1,0 +1,462 @@
+{
+  "revision": "Mind R372",
+  "date": "2026-11-14",
+  "note": "Public/secondary historical and merchant-source verification; all product effects and business rights gated; no personal info",
+  "sources": [
+    {
+      "id": "braid1843",
+      "url": "https://content.www.wellcomecollection.org/works/demkv24m",
+      "type": "primary",
+      "assertion": "1843 book exists/title/public-domain status",
+      "status": "catalog_verified",
+      "limit": "not clinical efficacy"
+    },
+    {
+      "id": "puys",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "FV source",
+      "assertion": "published Puységur archival bridge",
+      "status": "issue_171_live_listing",
+      "limit": "source access separately QA"
+    },
+    {
+      "id": "hypmeta2023",
+      "url": "https://doi.org/10.3389/fpsyg.2023.1330238",
+      "type": "secondary",
+      "assertion": "49 meta-analyses/261 distinct studies/9 high quality",
+      "status": "abstract_verified",
+      "limit": "no Zen12 trial"
+    },
+    {
+      "id": "pain2024",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11390056/",
+      "type": "secondary",
+      "assertion": "70 pain studies / 6078 people / adjunctive context",
+      "status": "abstract_verified",
+      "limit": "not consumer recordings"
+    },
+    {
+      "id": "sleep2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37399315/",
+      "type": "secondary",
+      "assertion": "44 hypnotherapy sleep studies / mixed findings",
+      "status": "abstract_verified",
+      "limit": "per-study percentage not user success rate"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "type": "seller",
+      "assertion": "official product family",
+      "status": "public_page_verified",
+      "limit": "seller claims only"
+    },
+    {
+      "id": "zen12",
+      "url": "https://zen12.com/",
+      "type": "seller",
+      "assertion": "12-min session headline, claimed one-hour equivalence, 12 premium levels 48 files in public offer",
+      "status": "public_page_verified",
+      "limit": "pricing/checkout/returns unverified"
+    },
+    {
+      "id": "hypnosislive",
+      "url": "https://hypnosislive.com/",
+      "type": "seller",
+      "assertion": "catalog says over 200 downloadable MP3 tracks",
+      "status": "public_page_verified",
+      "limit": "no guarantee adopted"
+    },
+    {
+      "id": "focusshot",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "seller",
+      "assertion": "15/30min Focus Shot and bonus files advertised",
+      "status": "public_page_verified",
+      "limit": "no focus duration benefit adopted"
+    },
+    {
+      "id": "affiliateportal",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "seller",
+      "assertion": "public network exists and special link issuance described",
+      "status": "public_page_verified",
+      "limit": "account-specific acceptance unknown"
+    },
+    {
+      "id": "ftcendorse",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator",
+      "assertion": "clear material-connection disclosure",
+      "status": "verified",
+      "limit": "footer alone not enough"
+    },
+    {
+      "id": "ftchealth",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator",
+      "assertion": "product-specific claim substantiation",
+      "status": "verified",
+      "limit": "no inherited health promises"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "type": "FV live",
+      "assertion": "free 52-page Seven Day Focus Fieldbook / existing Jetpack",
+      "status": "live_page_verified",
+      "limit": "not a paid SKU"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Braid published Neurypnology in 1843",
+      "classification": "historical_verified",
+      "source_ids": [
+        "braid1843"
+      ]
+    },
+    {
+      "id": "C02",
+      "claim": "Braid's book offered nineteenth-century disease cure cases",
+      "classification": "historic_author_claim",
+      "source_ids": [
+        "braid1843"
+      ]
+    },
+    {
+      "id": "C03",
+      "claim": "Historic cases establish modern clinical efficacy",
+      "classification": "not_supported",
+      "source_ids": [
+        "braid1843"
+      ]
+    },
+    {
+      "id": "C04",
+      "claim": "2023 hypnosis overview included 49 meta-analyses and 261 studies",
+      "classification": "review_verified",
+      "source_ids": [
+        "hypmeta2023"
+      ]
+    },
+    {
+      "id": "C05",
+      "claim": "Only 9 overview included high-quality meta-analyses",
+      "classification": "review_verified",
+      "source_ids": [
+        "hypmeta2023"
+      ]
+    },
+    {
+      "id": "C06",
+      "claim": "2024 review included 70 studies and 6078 people",
+      "classification": "review_verified",
+      "source_ids": [
+        "pain2024"
+      ]
+    },
+    {
+      "id": "C07",
+      "claim": "Pain review proves Zen12 effectiveness",
+      "classification": "not_supported",
+      "source_ids": [
+        "pain2024"
+      ]
+    },
+    {
+      "id": "C08",
+      "claim": "2023 sleep review included 44 studies",
+      "classification": "review_verified",
+      "source_ids": [
+        "sleep2023"
+      ]
+    },
+    {
+      "id": "C09",
+      "claim": "Review's % positive = buyers' chance of success",
+      "classification": "not_supported",
+      "source_ids": [
+        "sleep2023"
+      ]
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 described as 12-minute format",
+      "classification": "seller_description",
+      "source_ids": [
+        "zen12"
+      ]
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 Premium describes 12 levels/48 MP3s",
+      "classification": "seller_description",
+      "source_ids": [
+        "zen12"
+      ]
+    },
+    {
+      "id": "C12",
+      "claim": "12 minutes equal one hour advanced meditation",
+      "classification": "unsupported_seller_claim",
+      "source_ids": [
+        "zen12"
+      ]
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 medically reduces anxiety",
+      "classification": "unsupported_seller_claim",
+      "source_ids": [
+        "zen12",
+        "ftchealth"
+      ]
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 has clinically proven concentration increases",
+      "classification": "unsupported_seller_claim",
+      "source_ids": [
+        "zen12",
+        "ftchealth"
+      ]
+    },
+    {
+      "id": "C15",
+      "claim": "Publicly advertised money-back guarantee is executed",
+      "classification": "unverified_actual_returns",
+      "source_ids": [
+        "zen12"
+      ]
+    },
+    {
+      "id": "C16",
+      "claim": "Final affiliate checkout price/fees",
+      "classification": "unverified_actual_checkout",
+      "source_ids": [
+        "zen12"
+      ]
+    },
+    {
+      "id": "C17",
+      "claim": "FV publisher accepted into Inspire3 network",
+      "classification": "unverified_account",
+      "source_ids": [
+        "affiliateportal"
+      ]
+    },
+    {
+      "id": "C18",
+      "claim": "FV publisher issued earning URL",
+      "classification": "unverified_account",
+      "source_ids": [
+        "affiliateportal"
+      ]
+    },
+    {
+      "id": "C19",
+      "claim": "Website/video/email promotion approved",
+      "classification": "unverified_contract",
+      "source_ids": [
+        "affiliateportal"
+      ]
+    },
+    {
+      "id": "C20",
+      "claim": "Inspire3 independently pays commissions to FV",
+      "classification": "unverified_settlement",
+      "source_ids": [
+        "affiliateportal"
+      ]
+    },
+    {
+      "id": "C21",
+      "claim": "Hypnosis Live claims 200+ downloads",
+      "classification": "seller_description",
+      "source_ids": [
+        "hypnosislive"
+      ]
+    },
+    {
+      "id": "C22",
+      "claim": "Hypnosis Live guaranteed clinical outcomes",
+      "classification": "unsupported_seller_claim",
+      "source_ids": [
+        "hypnosislive",
+        "ftchealth"
+      ]
+    },
+    {
+      "id": "C23",
+      "claim": "Brainwave Shots Focus Shot format includes 15/30-min audio",
+      "classification": "seller_description",
+      "source_ids": [
+        "focusshot"
+      ]
+    },
+    {
+      "id": "C24",
+      "claim": "Brainwave Shots Focus Shot effects last 4 hours+",
+      "classification": "unsupported_seller_claim",
+      "source_ids": [
+        "focusshot",
+        "ftchealth"
+      ]
+    },
+    {
+      "id": "C25",
+      "claim": "Existing Focus Fieldbook available free",
+      "classification": "FV_live_verified",
+      "source_ids": [
+        "focus"
+      ]
+    },
+    {
+      "id": "C26",
+      "claim": "Free Focus Fieldbook is currently payable product",
+      "classification": "false_free_not_paid",
+      "source_ids": [
+        "focus"
+      ]
+    },
+    {
+      "id": "C27",
+      "claim": "FV-owned Mind paid SKU, license and delivery",
+      "classification": "unverified_owned_offer",
+      "source_ids": [
+        "focus"
+      ]
+    },
+    {
+      "id": "C28",
+      "claim": "Affiliate disclosure adjacent to future CTA",
+      "classification": "required",
+      "source_ids": [
+        "ftcendorse"
+      ]
+    },
+    {
+      "id": "C29",
+      "claim": "No fabricated product use, personally observed result or payout",
+      "classification": "required",
+      "source_ids": [
+        "ftcendorse",
+        "ftchealth"
+      ]
+    },
+    {
+      "id": "C30",
+      "claim": "Study-to-Zen12 medical promise is legally supported",
+      "classification": "not_supported",
+      "source_ids": [
+        "hypmeta2023",
+        "ftchealth"
+      ]
+    },
+    {
+      "id": "C31",
+      "claim": "Publisher-specific current channel promotion terms",
+      "classification": "unverified_contract",
+      "source_ids": [
+        "affiliateportal"
+      ]
+    },
+    {
+      "id": "C32",
+      "claim": "Realized net revenue per 1K qualified humans",
+      "classification": "not_computable",
+      "source_ids": [
+        "affiliateportal",
+        "focus"
+      ]
+    },
+    {
+      "id": "C33",
+      "claim": "Grok asset media IDs exist in this evidence packet",
+      "classification": "unverified_cross_lane",
+      "source_ids": [
+        "puys"
+      ]
+    },
+    {
+      "id": "C34",
+      "claim": "Variant B has real encoded playable film",
+      "classification": "false_storyboard_only",
+      "source_ids": [
+        "zen12"
+      ]
+    },
+    {
+      "id": "C35",
+      "claim": "A/B variants have identical buyer copy",
+      "classification": "built_static_needs_test",
+      "source_ids": [
+        "ftcendorse"
+      ]
+    },
+    {
+      "id": "C36",
+      "claim": "Journal history is separate from product-review commerce",
+      "classification": "editorial_requirement",
+      "source_ids": [
+        "puys",
+        "ftcendorse"
+      ]
+    },
+    {
+      "id": "C37",
+      "claim": "Current company price can be promoted as guaranteed final charge",
+      "classification": "not_supported",
+      "source_ids": [
+        "zen12"
+      ]
+    },
+    {
+      "id": "C38",
+      "claim": "FDA-style diagnosis/treatment language appears in approved guide",
+      "classification": "forbidden",
+      "source_ids": [
+        "ftchealth"
+      ]
+    }
+  ],
+  "release": {
+    "status": "HARD_HOLD",
+    "gates": {
+      "partner_publisher_acceptance": false,
+      "issued_unique_link": false,
+      "website_channel_terms": false,
+      "youtube_channel_terms": false,
+      "tiktok_channel_terms": false,
+      "email_channel_terms": false,
+      "creative_rights": false,
+      "exact_approved_destination": false,
+      "checkout_price_test": false,
+      "refund_policy_verified": false,
+      "return_exclusions_verified": false,
+      "merchant_settlement_reporting": false,
+      "verified_earned_commission": false,
+      "owned_paid_sku_verified": false,
+      "owned_sku_rights": false,
+      "owned_delivery_test": false,
+      "owned_checkout_terms": false,
+      "owned_confirmed_purchase": false,
+      "video_encoded": false,
+      "film_caption_browser_check": false,
+      "film_reduced_motion_check": false,
+      "real_browser_360": false,
+      "real_browser_390": false,
+      "real_browser_768": false,
+      "real_browser_1440": false,
+      "screenreader_test": false,
+      "keyboard_test": false,
+      "wordpress_sanitization": false,
+      "real_jetpack_confirmation": false,
+      "grok_media_id_validated": false,
+      "qualified_human_denominator": false,
+      "verified_net_revenue": false
+    }
+  }
+}
