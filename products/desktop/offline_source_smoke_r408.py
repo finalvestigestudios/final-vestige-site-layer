@@ -99,6 +99,70 @@ def _require_real_source_file(path: Path) -> None:
         raise SourceGateError("Unsafe desktop source file")
 
 
+
+def _file_identity(info: os.stat_result, *, cross_view: bool = False) -> tuple[int, ...]:
+    """Compare path and open-fd identity without Windows ctime false alarms.
+
+    On Windows, Python can report different st_ctime_ns via lstat and fstat
+    for the SAME file. Retain ctime in every same-API before/after comparison,
+    but omit it only in cross-API comparisons (matching the R101 source gate).
+    """
+    identity = (info.st_dev, info.st_ino, info.st_mode, info.st_nlink,
+                info.st_size, info.st_mtime_ns, info.st_ctime_ns)
+    return identity[:-1] if cross_view and os.name == "nt" else identity
+
+
+def _read_verified_source_bytes(path: Path) -> bytes:
+    """Read bounded source through a checked descriptor, never Path.read_bytes.
+
+    Checking path.lstat alone then reopening by path permits an inode swap or
+    symlink insertion between validation and read. On POSIX O_NOFOLLOW blocks
+    a last-component symlink swap. On both platforms path/fd identities must
+    match at entry and remain stable through the complete read.
+    """
+    fd = None
+    try:
+        _require_real_source_file(path)
+        before = path.lstat()
+        if not 0 < before.st_size <= MAX_SOURCE_BYTES:
+            raise SourceGateError("Unsafe desktop source inventory")
+        flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_BINARY", 0)
+        fd = os.open(path, flags)
+        opened = os.fstat(fd)
+        if (not stat.S_ISREG(opened.st_mode) or opened.st_nlink != 1 or
+                getattr(opened, "st_file_attributes", 0) &
+                stat.FILE_ATTRIBUTE_REPARSE_POINT or
+                _file_identity(before, cross_view=True) !=
+                _file_identity(opened, cross_view=True)):
+            raise SourceGateError("Desktop source changed during hashing")
+        chunks = []
+        consumed = 0
+        while consumed < before.st_size:
+            chunk = os.read(fd, min(64 * 1024, before.st_size - consumed))
+            if not chunk:
+                break
+            consumed += len(chunk)
+            chunks.append(chunk)
+        # A file that grew during read must not be attested from a stale prefix.
+        extra = os.read(fd, 1)
+        if (extra or consumed != before.st_size or
+                _file_identity(os.fstat(fd)) != _file_identity(opened) or
+                _file_identity(path.lstat()) != _file_identity(before)):
+            raise SourceGateError("Desktop source changed during hashing")
+        _require_real_source_file(path)
+        return b"".join(chunks)
+    except SourceGateError:
+        raise
+    except (OSError, ValueError):
+        raise SourceGateError("Cannot verify local desktop source inventory") from None
+    finally:
+        if fd is not None:
+            try:
+                os.close(fd)
+            except OSError:
+                raise SourceGateError("Cannot verify local desktop source inventory") from None
+
+
 def _verify_source_directories(desktop: Path) -> None:
     # Check *every* ancestor, not just desktop itself: desktop located beneath
     # a linked parent can redirect a seemingly ordinary suite outside custody.
@@ -215,13 +279,7 @@ def source_digest(desktop: Path) -> str:
     digest = hashlib.sha256()
     for path in sorted(paths, key=lambda p: p.relative_to(desktop).as_posix()):
         try:
-            info = path.lstat()
-            _require_real_source_file(path)
-            if not 0 < info.st_size <= MAX_SOURCE_BYTES:
-                raise SourceGateError("Unsafe desktop source inventory")
-            raw = path.read_bytes()
-            if len(raw) != info.st_size:
-                raise SourceGateError("Desktop source changed during hashing")
+            raw = _read_verified_source_bytes(path)
             if path.parent == desktop / "launchers" and path.name in _LAUNCHER_APP_IDS:
                 _verify_launcher_route(raw, _LAUNCHER_APP_IDS[path.name])
             label = path.relative_to(desktop).as_posix().encode("ascii")
