@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-14",
+  "decision": "HOLD_UNSENT",
+  "master_pr": 175,
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "campaign_mix": {
+    "editorial": 4,
+    "commercial_pending": 2
+  },
+  "original_adoption": false,
+  "time_reconstruction": [
+    {
+      "source": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/seamans.html",
+      "kind": "1967 preliminary",
+      "interval": "~14 seconds, first fire indication to cabin rupture",
+      "qualification": "NASA preliminary briefing itself warns clock synchronization error of one or two seconds"
+    },
+    {
+      "source": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html",
+      "kind": "later Board investigation",
+      "interval": "~15 seconds, verbal report of fire to cabin rupture",
+      "qualification": "not identical clock start and not death timing"
+    },
+    {
+      "source": "https://www.nasa.gov/history/Apollo204/tragedy.html",
+      "kind": "formal Board event chronology",
+      "interval": "fire report at 23:31:04.7; telemetry ended by 23:31:22.4",
+      "qualification": "distinct recorded signals"
+    },
+    {
+      "source": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo1info.html",
+      "kind": "official overview",
+      "interval": "17 seconds, first fire indication to end of last crew communication",
+      "qualification": "different endpoint from rupture"
+    }
+  ],
+  "merchant": [
+    {
+      "offer": "Zen12 Premium",
+      "exact_seller_page": "https://zen12.com/",
+      "seller_content": "12 levels and four styles each, 48 MP3s; one-hour-equivalence NOT independently substantiated for product",
+      "publisher_email_permission": "NOT VERIFIED",
+      "affiliate_url": "NOT VERIFIED",
+      "live_guide": "NOT VERIFIED",
+      "status": "HOLD_MERCHANT"
+    },
+    {
+      "offer": "Hypnosis Live Total Focus",
+      "exact_seller_page": "https://hypnosislive.com/mental-skills/total-focus",
+      "official_faq": "https://hypnosislive.com/faq",
+      "seller_content": "33 min/47 MB; FAQ 14-day refund limited to five sessions yearly; exact customer checkout not verified",
+      "publisher_email_permission": "NOT VERIFIED",
+      "affiliate_url": "NOT VERIFIED",
+      "live_guide": "NOT VERIFIED",
+      "status": "HOLD_MERCHANT"
+    }
+  ],
+  "compliance": {
+    "all": "HOLD_UNSENT",
+    "actual_eligible_inboxes": "UNKNOWN",
+    "postal": "NOT VERIFIED",
+    "unsubscribe": "NOT VERIFIED",
+    "jetpack_native_preview": "NOT PERFORMED",
+    "received_welcome": "NOT VERIFIED",
+    "founder_send_approval": false
+  },
+  "current_wordpress": {
+    "as_of": "2026-11-14T15:37:59Z",
+    "newsletter": true,
+    "auto_send": false,
+    "full_text": true,
+    "counts": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "wpcom_followers": 3,
+      "email_followers": 0
+    },
+    "note": "dashboard fields overlap; followers not recipient permission"
+  },
+  "source_urls": [
+    "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/seamans.html",
+    "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html",
+    "https://www.nasa.gov/history/Apollo204/tragedy.html",
+    "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo1info.html"
+  ]
+}
