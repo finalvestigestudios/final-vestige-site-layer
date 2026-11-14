@@ -17,6 +17,54 @@ const FROZEN={
  '285:5':{post:285,media:null,width:819,height:614,bytes:null,url_sha:'f2b19a3806fc2bdcab18e64781a64506106f09a1b608984610f191b7b6a4100f',catalog_sha:'04265be0fbe50057b441189f877bdf7254c61c4ae236ca22d0755ac464ed6c90'},
  '418:2':{post:418,media:null,width:600,height:463,bytes:null,url_sha:'deea9612294737b05795af61a6b509cdfe7e12f59171b5b15728707e8a9b8eea',catalog_sha:'f033612a88bc7378ce5bfc13019cfe9ca3ad25715c31903ab21b310c9adb8803'}
 };
+// Frozen source editorial custody: URL equality does not establish rights or scene identity.
+const SOURCE_CUSTODY={
+  "34:0": {
+    "source_kind": "FIRST_PARTY_AI_ASSISTED_RECONSTRUCTION",
+    "historical_scene_identity": "RECONSTRUCTION_SAME_SOURCE",
+    "provenance_note": "Must retain explicit AI-assisted reconstruction label; source content is not a documentary photograph"
+  },
+  "35:0": {
+    "source_kind": "FIRST_PARTY_AI_ASSISTED_RECONSTRUCTION",
+    "historical_scene_identity": "RECONSTRUCTION_SAME_SOURCE",
+    "provenance_note": "Must retain explicit AI-assisted reconstruction label; source content is not a documentary photograph"
+  },
+  "36:0": {
+    "source_kind": "FIRST_PARTY_AI_ASSISTED_RECONSTRUCTION",
+    "historical_scene_identity": "RECONSTRUCTION_SAME_SOURCE",
+    "provenance_note": "Must retain explicit AI-assisted reconstruction label; source content is not a documentary photograph"
+  },
+  "37:0": {
+    "source_kind": "FIRST_PARTY_AI_ASSISTED_RECONSTRUCTION",
+    "historical_scene_identity": "RECONSTRUCTION_SAME_SOURCE",
+    "provenance_note": "Must retain explicit AI-assisted reconstruction label; source content is not a documentary photograph"
+  },
+  "38:0": {
+    "source_kind": "FIRST_PARTY_AI_ASSISTED_RECONSTRUCTION",
+    "historical_scene_identity": "RECONSTRUCTION_SAME_SOURCE",
+    "provenance_note": "Must retain explicit AI-assisted reconstruction label; source content is not a documentary photograph"
+  },
+  "621:0": {
+    "source_kind": "CC_BY_SA4_COMMONS_ITEM_NOT_MATCHED",
+    "historical_scene_identity": "UNVERIFIED",
+    "provenance_note": "Exact Commons catalog, attribution, share-alike and edit notices require review"
+  },
+  "621:1": {
+    "source_kind": "NYPL_US_PUBLIC_DOMAIN_BELIEF",
+    "historical_scene_identity": "UNVERIFIED",
+    "provenance_note": "Map labels must remain readable and zoomable; exact uploaded binary identity unproved"
+  },
+  "285:5": {
+    "source_kind": "COMMONS_PD_SELF_2010",
+    "historical_scene_identity": "UNVERIFIED",
+    "provenance_note": "2010 full frame is 4:3 while original publisher used 16:9 crop, so not drop-in; catalog marked public domain"
+  },
+  "418:2": {
+    "source_kind": "USCG_CREDITED_MUSEUM_RENDITION",
+    "historical_scene_identity": "UNVERIFIED",
+    "provenance_note": "600x463 is museum display, not verified USCG master; binary rights and crop unresolved"
+  }
+};
 function assess(ledger,observations={}){
  const issues=[],results=[];
  if(!ledger||ledger.schema!=='fv-media-density-preflight-v1'||!Array.isArray(ledger.items)||ledger.items.length!==9)issues.push('invalid_ledger_shape');
@@ -35,6 +83,8 @@ function assess(ledger,observations={}){
   if(!integer(w)||!integer(h)||w>960||w>f.width||h>f.height)reasons.push('invalid_derivative_size_or_upscale');
   else if(Math.abs(w*f.height-h*f.width)/(w*f.height)>0.01)reasons.push('crop_or_ratio_not_reviewed');
   if(x.historical_scene_identity!=='UNVERIFIED'&&x.historical_scene_identity!=='RECONSTRUCTION_SAME_SOURCE')reasons.push('invented_scene_identity');
+  const custody=SOURCE_CUSTODY[x.slot];
+  if(!custody||x.source_kind!==custody.source_kind||x.historical_scene_identity!==custody.historical_scene_identity||x.provenance_note!==custody.provenance_note)reasons.push('source_provenance_drift');
   const o=observations?.[x.slot];let density='NOT_MEASURED';
   if(o!==undefined){
    if(!o||typeof o!=='object'||Array.isArray(o)||!positive(o.css_width_px)||!positive(o.css_height_px)||!positive(o.dpr)||o.dpr>4||
@@ -55,7 +105,7 @@ function assess(ledger,observations={}){
  }
  for(const k of Object.keys(FROZEN))if(!seen.has(k))issues.push('frozen_slot_missing:'+k);
  if(Object.keys(observations||{}).some(k=>!FROZEN[k]))issues.push('unknown_observation_slot');
- return {schema:'fv-media-density-preflight-result-v1',state:'HOLD',source_inventory_valid:issues.length===0&&results.every(r=>!r.reasons.some(x=>['source_metadata_drift','slot_missing_duplicate_or_unrecognized','missing_or_changed_frozen_source_catalog','unsupported_existing_evidence_or_approval','invalid_derivative_size_or_upscale','crop_or_ratio_not_reviewed','invented_scene_identity'].includes(x))),issues,results,guest_measurement_count:results.filter(r=>r.density==='DENSITY_SCREEN_PASS'||r.density==='INSUFFICIENT').length,release_authorized:false,sitewide_76_percent_claim_supported:false};
+ return {schema:'fv-media-density-preflight-result-v1',state:'HOLD',source_inventory_valid:issues.length===0&&results.every(r=>!r.reasons.some(x=>['source_metadata_drift','slot_missing_duplicate_or_unrecognized','missing_or_changed_frozen_source_catalog','unsupported_existing_evidence_or_approval','invalid_derivative_size_or_upscale','crop_or_ratio_not_reviewed','invented_scene_identity','source_provenance_drift'].includes(x))),issues,results,guest_measurement_count:results.filter(r=>r.density==='DENSITY_SCREEN_PASS'||r.density==='INSUFFICIENT').length,release_authorized:false,sitewide_76_percent_claim_supported:false};
 }
 if(require.main===module){try{const args=process.argv.slice(2);if(args.length<1||args.length>2)throw Error('Usage: node image_density_release_gate_20261114.cjs LEDGER.json [GUEST_OBSERVATIONS.json]');const a=JSON.parse(fs.readFileSync(args[0],'utf8'));const b=args[1]?JSON.parse(fs.readFileSync(args[1],'utf8')):{};const result=assess(a,b);process.stdout.write(JSON.stringify(result,null,2)+'\n');if(!result.source_inventory_valid)process.exitCode=2;}catch(e){console.error('INVALID_INPUT '+e.message);process.exitCode=2}}
 module.exports={assess,FROZEN};
