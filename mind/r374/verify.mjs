@@ -22,7 +22,8 @@ function checkGuide(x,tag){
  ok(/Final Vestige may earn a commission at no additional cost to you/.test(x),tag+' nearby readable disclosure');
  ok(x.indexOf('Prospective affiliate disclosure:') < x.indexOf('Merchant purchase unavailable'),tag+' disclosure precedes CTA');
  ok(x.includes('https://finalvestige.com/focus/'),tag+' existing free resource');
- ok(x.includes('https://zen12.com/'),tag+' official public seller evidence');
+ ok(x.includes('zen12.com; reference only, no merchant hyperlink'),tag+' seller described without live merchant link');
+ forbid(x,/<a\b[^>]*href="https?:\/\/zen12\.com/i,tag+' no active seller destination');
  forbid(x,/<form\b/i,tag+' no new form');
  forbid(x,/<(?:script|iframe)\b/i,tag+' no script/iframe');
  forbid(x,/<(?:video|audio)\b[^>]*autoplay/i,tag+' no autoplay');
