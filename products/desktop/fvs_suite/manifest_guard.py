@@ -96,16 +96,27 @@ def inventory_text(inputs, outputs, *, expected_input_digests=None) -> str:
     output_paths = [Path(path) for path in outputs]
     supplied = None
     if expected_input_digests is not None:
-        try:
-            supplied = {os.fspath(path): digest for path, digest
-                        in expected_input_digests.items()}
-        except (AttributeError, TypeError, ValueError):
-            raise ValueError("Invalid source digest map") from None
+        # Direct API callers must not forge source provenance through a
+        # mapping's virtual items()/keys() or a path object's __fspath__ hook.
+        # Engine calls pass native dictionaries keyed by str or Path.
+        if not isinstance(expected_input_digests, dict):
+            raise ValueError("Invalid source digest map")
+        supplied = {}
+        for path, digest in dict.items(expected_input_digests):
+            if type(path) is str:
+                name = path
+            elif type(path) is type(Path()):
+                name = os.fspath(path)
+            else:
+                raise ValueError("Invalid source digest map")
+            if name in supplied:
+                raise ValueError("Source digest coverage mismatch")
+            supplied[name] = digest
         selected_names = [os.fspath(path) for path in input_paths]
         if (len(selected_names) != len(set(selected_names))
                 or set(supplied) != set(selected_names)):
             raise ValueError("Source digest coverage mismatch")
-        if any(not isinstance(digest, str)
+        if any(type(digest) is not str
                or re.fullmatch(r"[0-9a-f]{64}", digest) is None
                for digest in supplied.values()):
             raise ValueError("Invalid source digest")
