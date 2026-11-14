@@ -1,0 +1,355 @@
+{
+  "milestone": "r364",
+  "checked_at": "2026-11-13 America/Los_Angeles",
+  "release": "HARD_HOLD",
+  "sources": {
+    "chevreul1854": {
+      "url": "https://openlibrary.org/works/OL4989940W/De_la_baguette_divinatoire",
+      "scope": "1854 edition metadata; not translation of full volume"
+    },
+    "chevreulscan": {
+      "url": "https://fr.wikisource.org/wiki/Livre:Chevreul_-_De_la_baguette_divinatoire,_1854.djvu",
+      "scope": "table of contents and 1833 letter locator"
+    },
+    "carpenter1852": {
+      "url": "https://wellcomecollection.org/works/k532hmn2",
+      "scope": "Wellcome original 1852 pamphlet"
+    },
+    "faraday1853": {
+      "url": "https://en.wikisource.org/wiki/Experimental_Researches_in_Chemistry_and_Physics/Table-turning",
+      "scope": "1853 primary text"
+    },
+    "moga2022": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35184700/",
+      "scope": "2022 empirical abstract"
+    },
+    "puységur": {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "actual FV public historical archive"
+    },
+    "focus": {
+      "url": "https://finalvestige.com/focus/",
+      "scope": "actual FV existing free 52-page Fieldbook"
+    },
+    "inspire3": {
+      "url": "https://inspire3.com/",
+      "scope": "seller brand catalog"
+    },
+    "zen12": {
+      "url": "https://zen12.com/",
+      "scope": "seller exact Zen12 package page checked Nov 13 2026"
+    },
+    "focusshot": {
+      "url": "https://brainwaveshots.com/focus-shot",
+      "scope": "seller exact format and guarantee description"
+    },
+    "totalfocus": {
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "seller exact 33-min audio page"
+    },
+    "affiliate": {
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "public enrollment marketing; not personal acceptance"
+    },
+    "ftc_disclosure": {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "compensation disclosure near recommendation"
+    },
+    "ftc_health": {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "product-specific support for claims"
+    }
+  },
+  "claims": [
+    {
+      "id": "M01",
+      "claim": "Chevreul 1854 book exists",
+      "type": "documentary",
+      "status": "verified_public_bibliography",
+      "source": "chevreul1854",
+      "limit": "Can say 1854 book; do not claim entire text translated"
+    },
+    {
+      "id": "M02",
+      "claim": "Chevreul 1833 letter included in 1854 contents",
+      "type": "documentary",
+      "status": "verified_table_of_contents",
+      "source": "chevreulscan",
+      "limit": "Do not equate letter and book dates"
+    },
+    {
+      "id": "M03",
+      "claim": "Carpenter published movement-suggestion analysis 1852",
+      "type": "documentary",
+      "status": "verified",
+      "source": "carpenter1852",
+      "limit": "Original text title and date"
+    },
+    {
+      "id": "M04",
+      "claim": "Faraday measured direction of causation in table movement 1853",
+      "type": "historical_interpretation",
+      "status": "primary_text_reviewed",
+      "source": "faraday1853",
+      "limit": "No lab re-enactment claimed"
+    },
+    {
+      "id": "M05",
+      "claim": "Moga & Dienes pendulum did not outperform verbal guesses in study",
+      "type": "empirical",
+      "status": "abstract_verified",
+      "source": "moga2022",
+      "limit": "Context-specific negative replication"
+    },
+    {
+      "id": "M06",
+      "claim": "Puysegur archive retains failed predictions/cure records",
+      "type": "archival",
+      "status": "verified_site",
+      "source": "puységur",
+      "limit": "Historical testimony, not clinical efficacy"
+    },
+    {
+      "id": "M07",
+      "claim": "Existing Focus Fieldbook 52-page free edition",
+      "type": "site",
+      "status": "verified_live_page",
+      "source": "focus",
+      "limit": "Keep single Jetpack funnel"
+    },
+    {
+      "id": "M08",
+      "claim": "Inspire3 publicly lists Zen12 and Hypnosis Live",
+      "type": "seller_catalog",
+      "status": "verified_public",
+      "source": "inspire3",
+      "limit": "Seller self-description"
+    },
+    {
+      "id": "M09",
+      "claim": "Zen12 Premium twelve levels 48 MP3s",
+      "type": "seller_feature",
+      "status": "verified_page_only",
+      "source": "zen12",
+      "limit": "Not delivery-tested"
+    },
+    {
+      "id": "M10",
+      "claim": "Zen12 four audio styles per level",
+      "type": "seller_feature",
+      "status": "verified_page_only",
+      "source": "zen12",
+      "limit": "Not delivery-tested"
+    },
+    {
+      "id": "M11",
+      "claim": "Zen12 page advertises 1-year refund",
+      "type": "seller_policy",
+      "status": "seller_claim_only",
+      "source": "zen12",
+      "limit": "No refund execution tested"
+    },
+    {
+      "id": "M12",
+      "claim": "Zen12 seller displayed 87.99 USD on Nov 13",
+      "type": "seller_price",
+      "status": "snapshot_only",
+      "source": "zen12",
+      "limit": "Not a checkout quote; omit buyer CTA"
+    },
+    {
+      "id": "M13",
+      "claim": "Zen12 twelve minutes equals hour meditation",
+      "type": "efficacy",
+      "status": "unsubstantiated_product_specific",
+      "source": "zen12",
+      "limit": "Do not adopt"
+    },
+    {
+      "id": "M14",
+      "claim": "Zen12 recording improves focus/health",
+      "type": "efficacy",
+      "status": "unsubstantiated_product_specific",
+      "source": "zen12",
+      "limit": "Do not adopt"
+    },
+    {
+      "id": "M15",
+      "claim": "Zen12 brainwave entrainment automatically brings deep meditation",
+      "type": "efficacy",
+      "status": "unsubstantiated_product_specific",
+      "source": "zen12",
+      "limit": "Do not adopt"
+    },
+    {
+      "id": "M16",
+      "claim": "Brainwave Shots Focus Shot 15/30-min formats",
+      "type": "seller_feature",
+      "status": "page_only",
+      "source": "focusshot",
+      "limit": "No efficacy inference"
+    },
+    {
+      "id": "M17",
+      "claim": "Focus Shot scientifically activates instant focus",
+      "type": "efficacy",
+      "status": "unsubstantiated_product_specific",
+      "source": "focusshot",
+      "limit": "Do not adopt"
+    },
+    {
+      "id": "M18",
+      "claim": "Hypnosis Live Total Focus 33min 47MB",
+      "type": "seller_feature",
+      "status": "page_only",
+      "source": "totalfocus",
+      "limit": "No listening/testing"
+    },
+    {
+      "id": "M19",
+      "claim": "Hypnosis Live Total Focus automatically boosts concentration",
+      "type": "efficacy",
+      "status": "unsubstantiated_product_specific",
+      "source": "totalfocus",
+      "limit": "Do not adopt"
+    },
+    {
+      "id": "M20",
+      "claim": "Inspire3 offers public affiliate enrollment",
+      "type": "affiliate_program",
+      "status": "verified_public",
+      "source": "affiliate",
+      "limit": "Not FV acceptance"
+    },
+    {
+      "id": "M21",
+      "claim": "FV publisher acceptance",
+      "type": "commercial_authorization",
+      "status": "unverified",
+      "source": "affiliate",
+      "limit": "HOLD"
+    },
+    {
+      "id": "M22",
+      "claim": "FV issued earning URL",
+      "type": "commercial_authorization",
+      "status": "unverified",
+      "source": "affiliate",
+      "limit": "HOLD"
+    },
+    {
+      "id": "M23",
+      "claim": "FV permitted TikTok YouTube email channels",
+      "type": "commercial_authorization",
+      "status": "unverified",
+      "source": "affiliate",
+      "limit": "HOLD"
+    },
+    {
+      "id": "M24",
+      "claim": "FV actual commission rate and payout terms",
+      "type": "commercial_authorization",
+      "status": "unverified",
+      "source": "affiliate",
+      "limit": "HOLD; public marketing is not agreement"
+    },
+    {
+      "id": "M25",
+      "claim": "FV-owned rights-cleared payable Mind Payhip SKU",
+      "type": "owned_product",
+      "status": "unverified",
+      "source": "focus",
+      "limit": "HOLD; Focus is free"
+    },
+    {
+      "id": "M26",
+      "claim": "Actual merchant checkout/tax/delivery/refund",
+      "type": "transaction",
+      "status": "not_tested",
+      "source": "zen12",
+      "limit": "HOLD"
+    },
+    {
+      "id": "M27",
+      "claim": "Paid affiliate conversion or settled commission",
+      "type": "revenue",
+      "status": "not_observed",
+      "source": "affiliate",
+      "limit": "NOT COMPUTABLE"
+    },
+    {
+      "id": "M28",
+      "claim": "Actual paid FV order and refund-adjusted net",
+      "type": "revenue",
+      "status": "not_observed",
+      "source": "focus",
+      "limit": "NOT COMPUTABLE"
+    },
+    {
+      "id": "M29",
+      "claim": "Near-link disclosure required for material connection",
+      "type": "policy",
+      "status": "verified_guidance",
+      "source": "ftc_disclosure",
+      "limit": "Adjacent commission disclosure conditional"
+    },
+    {
+      "id": "M30",
+      "claim": "Product-specific scientific support needed for health claims",
+      "type": "policy",
+      "status": "verified_guidance",
+      "source": "ftc_health",
+      "limit": "Not inferred from generic literature"
+    },
+    {
+      "id": "M31",
+      "claim": "B film playable/encoded",
+      "type": "implementation",
+      "status": "not_built",
+      "source": null,
+      "limit": "Story treatment only"
+    },
+    {
+      "id": "M32",
+      "claim": "7-day and 30-day qualified-human cohorts",
+      "type": "measurement",
+      "status": "not_observed",
+      "source": null,
+      "limit": "No session/order source evidence"
+    }
+  ],
+  "release_gates": {
+    "publisher_acceptance": "HOLD_OR_NOT_TESTED",
+    "channel_rights": "HOLD_OR_NOT_TESTED",
+    "issued_affiliate_link": "HOLD_OR_NOT_TESTED",
+    "settlement_terms": "HOLD_OR_NOT_TESTED",
+    "checkout_total": "HOLD_OR_NOT_TESTED",
+    "refund_procedure": "HOLD_OR_NOT_TESTED",
+    "owned_payhip_license": "HOLD_OR_NOT_TESTED",
+    "owned_payhip_delivery": "HOLD_OR_NOT_TESTED",
+    "grok_asset_ids": "HOLD_OR_NOT_TESTED",
+    "approved_first_party_landing": "HOLD_OR_NOT_TESTED",
+    "consent_checked": "HOLD_OR_NOT_TESTED",
+    "newsletter_single_list": "HOLD_OR_NOT_TESTED",
+    "hosted_video_original": "HOLD_OR_NOT_TESTED",
+    "closed_captions_verified": "HOLD_OR_NOT_TESTED",
+    "browser_360": "HOLD_OR_NOT_TESTED",
+    "browser_390": "HOLD_OR_NOT_TESTED",
+    "browser_768": "HOLD_OR_NOT_TESTED",
+    "browser_1440": "HOLD_OR_NOT_TESTED",
+    "browser_1920": "HOLD_OR_NOT_TESTED",
+    "reduced_motion": "HOLD_OR_NOT_TESTED",
+    "no_js": "HOLD_OR_NOT_TESTED",
+    "keyboard": "HOLD_OR_NOT_TESTED",
+    "focus_visible": "HOLD_OR_NOT_TESTED",
+    "contrast": "HOLD_OR_NOT_TESTED",
+    "wcag22aa": "HOLD_OR_NOT_TESTED",
+    "csp": "HOLD_OR_NOT_TESTED",
+    "wordpress_sanitization": "HOLD_OR_NOT_TESTED",
+    "no_duplicate_analytics": "HOLD_OR_NOT_TESTED",
+    "qualified_human_denominator": "HOLD_OR_NOT_TESTED",
+    "merchant_confirmed_sale": "HOLD_OR_NOT_TESTED",
+    "refunds_fees": "HOLD_OR_NOT_TESTED",
+    "founder_release_approval": "HOLD_OR_NOT_TESTED"
+  }
+}

@@ -1,0 +1,18 @@
+/* Mind R364 local source-only verifier: run node verify_r364.cjs from mind/r364/ . No network/PII. */
+const fs=require('node:fs'),assert=require('node:assert/strict');
+const a=fs.readFileSync(__dirname+'/ZEN12_A_TEXT.html','utf8');
+const b=fs.readFileSync(__dirname+'/ZEN12_B_OPTIONAL_FILM.html','utf8');
+const h=fs.readFileSync(__dirname+'/MIND_HUB_SOURCE_ONLY.html','utf8');
+const v=fs.readFileSync(__dirname+'/ORIGINAL_42S.vtt','utf8');
+const m=JSON.parse(fs.readFileSync(__dirname+'/CLAIMS_AND_RIGHTS.json','utf8'));
+const article=fs.readFileSync(__dirname+'/THE_PENDULUM_THAT_KNEW_TOO_MUCH.md','utf8');
+let n=0;function check(x,msg){assert.ok(x,msg);n++;}
+for(const x of [a,b,h]){check(x.includes('name="robots" content="noindex,nofollow"'),'noindex');check(x.includes('<html lang="en">'),'lang');check(x.includes('viewport'),'viewport');check(!/<script\b/i.test(x),'no scripts');check(!/<iframe\b/i.test(x),'no third-party embed');check(!/<form\b/i.test(x),'no new signup');check(!/\bautoplay\b(?=\s|>|=)/i.test(x),'no autoplay attribute');check(!/href=["']https?:\/\/(?:zen12|inspire3|affiliates\.inspire3|hypnosislive|brainwaveshots)\./i.test(x),'no linked merchants');}
+for(const x of [a,b]){check(/<button[^>]*disabled[^>]*>/.test(x),'native disabled control');check(x.includes('If an approved earning link is eventually added'),'conditional disclosure');check(x.indexOf('Commission disclosure:')>0,'disclosure');check(x.indexOf('Commission disclosure:')<x.indexOf('<button'),'disclosure before CTA');check(x.includes('unsubstantiated')||x.includes('not Final Vestige findings'),'claim caveat');check(x.includes('finalvestige.com/focus/'),'existing resource');}
+check(a.replace('Zen12 evidence-first guide A','Zen12 evidence-first guide B')===b.replace(/<section class="film"[\s\S]*?<\/section>/,'').replace('Zen12 evidence-first guide B','Zen12 evidence-first guide A').replace('Zen12 evidence-first guide A','Zen12 evidence-first guide B'),'same buyer content except optional film');
+check(b.includes('poster-desc')&&b.includes('<details>'),'accessible poster/transcript');
+const cues=[...v.matchAll(/(\d\d):(\d\d):(\d\d)\.(\d{3}) --> (\d\d):(\d\d):(\d\d)\.(\d{3})/g)];check(cues.length===6,'6 cues');
+let end=0;for(const c of cues){const s=(+c[1]*3600 + +c[2]*60 + +c[3])*1000 + +c[4];const e=(+c[5]*3600 + +c[6]*60 + +c[7])*1000 + +c[8];check(s===end,'contiguous cues');check(e-s===7000,'7 seconds each');end=e;}check(end===42000,'42 second runtime');
+check(m.release==='HARD_HOLD','release blocked');check(m.claims.length>=30,'claim coverage');check(Object.values(m.release_gates).every(x=>x==='HOLD_OR_NOT_TESTED'),'closed gates');check(article.includes('Carpenter')&&article.includes('Chevreul')&&article.includes('Faraday')&&article.includes('Moga'),'original sources');check(article.includes('https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/'),'archival link');
+for(const x of [a,b]){const unsafe=[x.replace(' disabled aria-disabled="true"',''),x.replace('If an approved earning link is eventually added','Affiliate link'),x.replace('not Final Vestige findings','proven benefits'),x.replace('</main>','<script>alert(1)</script></main>')];check(unsafe[0]!==x && !/<button[^>]*disabled[^>]*>/.test(unsafe[0]),'detect enabled');check(!unsafe[1].includes('If an approved earning link is eventually added'),'detect disclosure removal');check(!unsafe[2].includes('not Final Vestige findings'),'detect efficacy drift');check(/<script\b/i.test(unsafe[3]),'detect script');}
+console.log('R364 PASS '+n+' static assertions; 8 deliberately unsafe fixtures detected. Browser, merchant, WP and hosted CI NOT RUN.');
