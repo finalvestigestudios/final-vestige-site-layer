@@ -1,0 +1,1031 @@
+{
+  "schema_version": 1,
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "issue": "#136",
+  "conversion_issue": "#820",
+  "observed_date": "2026-11-14",
+  "release_state": "DRAFT_HARD_HOLD",
+  "source_crosswalk_git_blob": "24b49f0a423119c2f612455f021669709a3f22b5",
+  "object_manifest_git_blob": "5e7d9a8972872c82b4bc46ac13aab18883d8149a",
+  "reference_pr": "#2525",
+  "branch_pins": [
+    {
+      "branch": "claude/prep-start-bbfeb8",
+      "sha": "2122d856fce9f64887c16df3d52e64be9f59a55b"
+    },
+    {
+      "branch": "claude/prep-food-ccdc55",
+      "sha": "f911ff7a655de8d81535ea86ec3d65a49ee76648"
+    },
+    {
+      "branch": "claude/prep-health-837444",
+      "sha": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17"
+    },
+    {
+      "branch": "claude/prep-hist-field-9db767",
+      "sha": "4e5caf812727953aa45e3bda2d382f2c67b6a09c"
+    },
+    {
+      "branch": "claude/prep-hist-food-b81f19",
+      "sha": "67e116e536c7410bed30f8f3b1bb8c166f3c223d"
+    },
+    {
+      "branch": "claude/prep-hist-home-0e0e38",
+      "sha": "7504a5f099594d635e3dd7332a33a2e1346c43a2"
+    },
+    {
+      "branch": "claude/prep-shelter-5e1e0e",
+      "sha": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976"
+    },
+    {
+      "branch": "claude/prep-shelter-continuation",
+      "sha": "ac8625faf30dd5538fadc31e06cb5a2cea1defae"
+    },
+    {
+      "branch": "claude/prep-shelter-followup-evidence",
+      "sha": "6a5998ead97eca997e573ce8d3ceacf1c6aabad4"
+    }
+  ],
+  "exact_inventory": {
+    "article_bodies": 35,
+    "source_occurrences": 280,
+    "distinct_source_ids": 203,
+    "repeated_source_id_groups": 46,
+    "repeated_with_semantic_changes": 5,
+    "repeated_with_identical_source_payload": 41,
+    "multi_id_shared_url_groups": 17,
+    "conflicting_original_git_object_paths": 9,
+    "human_link_checked_occurrences": 0
+  },
+  "semantic_conflict_docket": [
+    {
+      "source_id": "fsis-power-failure",
+      "different_fields": [
+        "verified_on",
+        "supports",
+        "notes"
+      ],
+      "release_disposition": "HUMAN_ADJUDICATION_REQUIRED_NO_AUTO_SELECT",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "fragment": "preparedness/sources/fragments/food.json",
+          "source_blob": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+          "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+          "publisher": "USDA Food Safety and Inspection Service (Ask USDA)",
+          "kind": "regulator",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "supports": "A refrigerator keeps food cold for about 4 hours if unopened; a full stand-alone freezer holds temperature about 48 hours (24 if half full) with the door closed; a refrigerator's freezer compartment may not hold as long; group freezer packages together.",
+          "notes": "Short Q&A that points to the longer FSIS emergencies page. Upgraded from the register placeholder."
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "fragment": "preparedness/sources/fragments/shelter.json",
+          "source_blob": "5105f4bbd7d5b2e991f28d4b4ae7c9d5a2804aa9",
+          "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+          "publisher": "USDA Food Safety and Inspection Service (Ask USDA)",
+          "kind": "regulator",
+          "verified_on": "2026-11-01",
+          "human_link_check": false,
+          "supports": "A refrigerator keeps food cold for about 4 hours if unopened; a full stand-alone freezer holds its temperature for approximately 48 hours (24 hours if half full) if the door stays closed; the freezer compartment of a refrigerator-freezer may not keep food frozen as long; group freezer packages together.",
+          "notes": "Upgraded from the register placeholder. Read: the whole short article as rendered by Firecrawl on 2026-11-01. Page shows 'Last Updated: Dec 17, 2024'. Agrees with the CDC, FEMA and Ready.gov timings. human_link_check remains false."
+        }
+      ]
+    },
+    {
+      "source_id": "loc-pioneer-diaries",
+      "different_fields": [
+        "publisher",
+        "verified_on",
+        "supports",
+        "notes"
+      ],
+      "release_disposition": "HUMAN_ADJUDICATION_REQUIRED_NO_AUTO_SELECT",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "fragment": "preparedness/sources/fragments/hist-field.json",
+          "source_blob": "6b65e0aaa777b4c5ebc57fbeade0386b4ab6c32f",
+          "url": "https://www.loc.gov/item/2002564479/",
+          "publisher": "Library of Congress, with Harold B. Lee Library (Brigham Young University) and the Utah Academic Library Consortium",
+          "kind": "archive",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "supports": "Catalogue record for a digitized collection of 49 diaries, 43 maps, 82 photographs and illustrations, and seven published guides for emigrants, about Mormon and other pioneers moving west to Utah, Montana and the Pacific between 1847 and 1869 (collection title runs from 1846).",
+          "notes": "Upgraded from the register placeholder; the placeholder title 'Pioneer diaries collection' was not the record's actual title. The drafting agent read the catalogue record only, NOT the diaries. The collection is mostly Latter Day Saint migration to Utah and is not a Donner Party source; it is cited only as a place to read ordinary overland provisioning in the travelers' own words."
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "fragment": "preparedness/sources/fragments/hist-food.json",
+          "source_blob": "c1856c998c6c728f0de72221e5654a238df994a9",
+          "url": "https://www.loc.gov/item/2002564479/",
+          "publisher": "Library of Congress (American Memory-derived collection; source material from Brigham Young University and Utah Academic Libraries Consortium)",
+          "kind": "archive",
+          "verified_on": "2026-10-30",
+          "human_link_check": false,
+          "supports": "The collection comprises 49 diaries, 43 maps, 82 photographs and illustrations and seven published guides for emigrants, covering Mormon and other pioneers moving to Utah, Montana and the Pacific between 1847 and 1869.",
+          "notes": "Only the collection-level description was read. We did not open individual diaries, so no diary text is quoted or paraphrased from it. The placeholder titled this 'Pioneer diaries collection'; this is the actual title. Extent read: the collection-level description only. No individual diary was opened."
+        }
+      ]
+    },
+    {
+      "source_id": "loc-prairie-traveler",
+      "different_fields": [
+        "publisher",
+        "supports",
+        "notes"
+      ],
+      "release_disposition": "HUMAN_ADJUDICATION_REQUIRED_NO_AUTO_SELECT",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "fragment": "preparedness/sources/fragments/hist-field.json",
+          "source_blob": "6b65e0aaa777b4c5ebc57fbeade0386b4ab6c32f",
+          "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+          "publisher": "Library of Congress (Joseph Meredith Toner Collection, digitized book)",
+          "kind": "primary-digitized",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "supports": "Digitized public-domain handbook by Capt. Randolph B. Marcy, U.S. Army, 'published by authority of the War Department'. Contents list (seven chapters, read in full) shows chapters on routes, wagons and teams, stores and provisions (including anti-scorbutics), camp life including fuel and making fires, and guides. Preface says it draws on the author's frontier experience and on officers' reports for the routes.",
+          "notes": "Upgraded from the register placeholder. The drafting agent read the LOC catalogue record and the OCR snippets of the first 25 of 398 page images (title page, copyright page, preface, both contents pages and the opening of chapter I). The two contents pages (images 17 and 18) were read in full on 2026-11-01; the book's full-text file could not be fetched (404), NOT the body chapters. No passage from the chapters is quoted or relied on. The LOC copy is the 1861 printing; the title page shows a copyright entry of 1860, and the work postdates the 1846-47 events discussed in pioneer-supply-chains-failed. Rights: LOC says books in this collection are in the public domain."
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "fragment": "preparedness/sources/fragments/hist-food.json",
+          "source_blob": "c1856c998c6c728f0de72221e5654a238df994a9",
+          "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+          "publisher": "Library of Congress (Joseph Meredith Toner Collection); Randolph B. Marcy, Harper & Brothers, 1861",
+          "kind": "primary-digitized",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "supports": "Catalogue and contents: 'published by authority of the War Department'; Chapter I contents list 'Stores and Provisions ... Pemmican ... Antiscorbutics ... Cold Flour'; Chapter V includes 'Jerking Meat'; rights statement says the book is in the public domain.",
+          "notes": "The LOC page-level text view did not load for us; the passages we quote were read in the Internet Archive text of the same scan (see hist-food-marcy-prairie-traveler-text). Extent read: the item landing page (catalogue record, contents list and a few page-level OCR excerpts); the page-level text view did not load."
+        }
+      ]
+    },
+    {
+      "source_id": "nchfp-home",
+      "different_fields": [
+        "supports",
+        "notes"
+      ],
+      "release_disposition": "HUMAN_ADJUDICATION_REQUIRED_NO_AUTO_SELECT",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "fragment": "preparedness/sources/fragments/food.json",
+          "source_blob": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+          "url": "https://nchfp.uga.edu/",
+          "publisher": "NCHFP, University of Georgia",
+          "kind": "extension",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "supports": "Describes itself as the source of current research-based recommendations for most methods of home food preservation, established with USDA funding to address food-safety concerns; sections on canning, pickling, fermenting, freezing, drying, curing and smoking, and storing.",
+          "notes": "Home page only. Used as the hub link. Upgraded from the register placeholder."
+        },
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "fragment": "preparedness/sources/fragments/hist-home.json",
+          "source_blob": "8d85fd868508c5caba14a839d119d55f31f14f72",
+          "url": "https://nchfp.uga.edu/",
+          "publisher": "NCHFP, University of Georgia",
+          "kind": "extension",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "supports": "Describes itself as a source of current research-based recommendations for most methods of home food preservation, established with USDA (CSREES) funding; separate sections for canning, pickling, fermenting, freezing, drying, curing and smoking, and storing; points to the University of Georgia Cooperative Extension book So Easy To Preserve (6th edition, reviewed and updated 2020).",
+          "notes": "Upgrades the register placeholder of the same id. Home page only; no specific recipe or process is taken from it. Reading depth: FULL: whole page read as markdown."
+        }
+      ]
+    },
+    {
+      "source_id": "nchfp-jerky",
+      "different_fields": [
+        "publisher",
+        "supports",
+        "notes"
+      ],
+      "release_disposition": "HUMAN_ADJUDICATION_REQUIRED_NO_AUTO_SELECT",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "fragment": "preparedness/sources/fragments/food.json",
+          "source_blob": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+          "url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+          "publisher": "NCHFP, University of Georgia (extracted from So Easy to Preserve, 6th ed.)",
+          "kind": "extension",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "supports": "Jerky safety procedure: raw poultry generally not recommended; freeze pork and wild game 6 inches or thinner at 0 F or below for at least 30 days against trichinella; handling rules; wild-game cautions; reaching 160 F internally by heating in marinade before drying or in an oven after drying, without case hardening; slices no thicker than 1/4 inch; dry in a dehydrator or oven preheated to 140 F until a test piece cracks but does not break; ground-meat jerky is harder; home-dried jerky keeps 2 weeks at room temperature in a sealed container, longer refrigerated or frozen.",
+          "notes": "Page text credits \"So Easy to Preserve\", 6th ed. 2014 (Bulletin 989, UGA Cooperative Extension). No page-level date is shown. Upgraded from the register placeholder."
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "fragment": "preparedness/sources/fragments/hist-food.json",
+          "source_blob": "c1856c998c6c728f0de72221e5654a238df994a9",
+          "url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+          "publisher": "National Center for Home Food Preservation, University of Georgia (from So Easy to Preserve, 6th ed., Bulletin 989)",
+          "kind": "extension",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "supports": "Jerky raw-meat hazards; wild game and pork trichinella treatment; heating meat strips to 160 F either in marinade before drying or in an oven after drying; fecal contamination of game; properly dried jerky keeps at room temperature two weeks in a sealed container.",
+          "notes": "Upgrades the register placeholder of the same id. Source of an official disagreement: NCHFP allows the 160 F heat step after drying; USDA FSIS recommends it before dehydrating and says home-dried jerky keeps 1 to 2 months. See hist-food-fsis-jerky. Extent read: full page text, live scrape."
+        }
+      ]
+    }
+  ],
+  "shared_url_docket": [
+    {
+      "url": "https://www.cdc.gov/botulism/prevention/home-canned-foods.html",
+      "distinct_ids": [
+        "food-cdc-home-canned",
+        "hist-home-cdc-botulism-home-canned"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "food-cdc-home-canned",
+          "branches": [
+            "claude/prep-food-ccdc55"
+          ],
+          "supports": [
+            "Follow the USDA Complete Guide; do not use other recipes even from a trusted friend or relative; low-acid foods (pH above 4.6) are the most common source of home-canning botulism and home-canned vegetables the most common cause of US outbreaks; pressure canning is the only recommended method for low-acid foods; do not use a boiling water canner or an electric multi-cooker for them; use a canner that holds at least four 1-quart jars upright, an accurate gauge (county extension offices often check gauges), vented before pressurizing; use current processing times for old recipes; can only a year's worth; store 50 to 70 F for quality, never above 95 F; boil home-canned low-acid foods and tomatoes 10 minutes plus 1 minute per additional 1,000 ft before eating; signs of contamination; if in doubt, throw it out."
+          ]
+        },
+        {
+          "id": "hist-home-cdc-botulism-home-canned",
+          "branches": [
+            "claude/prep-hist-home-0e0e38"
+          ],
+          "supports": [
+            "Follow safe canning instructions and use the right equipment; never taste food to see if it is safe; be mindful of the kind of food, jar size and packing method; the page lists home-canned tomatoes, low-acid home-canned foods and home-fermented foods among foods to boil before eating (times given on the page, not reproduced here); signs a container should be thrown out (leaking, bulging, swollen, damaged, spurting, discolored, moldy, smells bad); do not eat food if you do not know whether safe canning guidelines were followed."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.cdc.gov/carbon-monoxide/about/index.html",
+      "distinct_ids": [
+        "hist-field-cdc-co-basics",
+        "shelter-cdc-co-basics"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "hist-field-cdc-co-basics",
+          "branches": [
+            "claude/prep-hist-field-9db767"
+          ],
+          "supports": [
+            "CO is an odorless, colorless gas that kills without warning; produced when fuel burns in vehicles, small engines, stoves, lanterns, grills, fireplaces, gas ranges and furnaces; symptoms are headache, dizziness, weakness, upset stomach, vomiting, chest pain and confusion, often described as flu-like; people who are sleeping or intoxicated can die before symptoms; never burn charcoal indoors; never use a portable gas camp stove indoors; do not cook or burn anything in a stove or fireplace that is not vented; install battery-operated or battery backup CO detectors near every sleeping area; operate generators only outdoors more than 20 feet from windows, doors and vents."
+          ]
+        },
+        {
+          "id": "shelter-cdc-co-basics",
+          "branches": [
+            "claude/prep-shelter-5e1e0e",
+            "claude/prep-shelter-continuation",
+            "claude/prep-shelter-followup-evidence"
+          ],
+          "supports": [
+            "CO is odorless and colorless; symptoms are flu-like; people who are sleeping or intoxicated can die before symptoms; infants, older adults and people with chronic heart disease, anemia or breathing problems more likely to get sick; more than 400 non-fire CO deaths a year; detectors near every sleeping area, check batteries when clocks change, replace per manufacturer or every 5 years; annual servicing of fuel-burning appliances and chimney; never burn charcoal or use a camp stove or flameless chemical heater indoors; generator rules; vehicle in garage.",
+            "CO is odorless and colorless; symptoms are flu-like; people who are sleeping or intoxicated can die before symptoms; infants, older adults and people with chronic heart disease, anemia or breathing problems more likely to get sick; more than 400 non-fire CO deaths a year; detectors near every sleeping area, check batteries when clocks change, replace per manufacturer or every 5 years; annual servicing of fuel-burning appliances and chimney; never burn charcoal or use a camp stove or flameless chemical heater indoors; generator rules; vehicle in garage.",
+            "CO is odorless and colorless; symptoms are flu-like; people who are sleeping or intoxicated can die before symptoms; infants, older adults and people with chronic heart disease, anemia or breathing problems more likely to get sick; more than 400 non-fire CO deaths a year; detectors near every sleeping area, check batteries when clocks change, replace per manufacturer or every 5 years; annual servicing of fuel-burning appliances and chimney; never burn charcoal or use a camp stove or flameless chemical heater indoors; generator rules; vehicle in garage."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+      "distinct_ids": [
+        "health-cdc-power-outage",
+        "shelter-cdc-power-outage"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "health-cdc-power-outage",
+          "branches": [
+            "claude/prep-health-837444"
+          ],
+          "supports": [
+            "Medication safety in an outage: some drugs need refrigeration to keep their strength; when the power is out for a day or more, throw away refrigerated medication unless the label says otherwise; if a life depends on a refrigerated drug that has been at room temperature, use it only until a new supply is available; replace refrigerated drugs as soon as possible. Also: safe water for drinking, cooking and hygiene is bottled, boiled or treated; carbon monoxide rules (never run a generator indoors or less than 20 feet from a window, door or vent; Poison Control 1-800-222-1222); fridge and freezer hold times."
+          ]
+        },
+        {
+          "id": "shelter-cdc-power-outage",
+          "branches": [
+            "claude/prep-shelter-5e1e0e",
+            "claude/prep-shelter-continuation",
+            "claude/prep-shelter-followup-evidence"
+          ],
+          "supports": [
+            "CO rules for generators (20 ft, longer extension cord, battery CO detector, never in basement, garage or enclosed structure even with doors open unless professionally installed and vented), never charcoal grills, camp stoves or lanterns indoors, never run a vehicle in a garage; never heat with a gas range or oven; CO symptoms and 911 / Poison Control 1-800-222-1222; food (4 h fridge, 48 h full freezer) and refrigerated-medication guidance; heat stroke; no air conditioning options; hypothermia below 95 F; heat sources; flashlights over candles; do not siphon gasoline.",
+            "CO rules for generators (20 ft, longer extension cord, battery CO detector, never in basement, garage or enclosed structure even with doors open unless professionally installed and vented), never charcoal grills, camp stoves or lanterns indoors, never run a vehicle in a garage; never heat with a gas range or oven; CO symptoms and 911 / Poison Control 1-800-222-1222; food (4 h fridge, 48 h full freezer) and refrigerated-medication guidance; heat stroke; no air conditioning options; hypothermia below 95 F; heat sources; flashlights over candles; do not siphon gasoline.",
+            "CO rules for generators (20 ft, longer extension cord, battery CO detector, never in basement, garage or enclosed structure even with doors open unless professionally installed and vented), never charcoal grills, camp stoves or lanterns indoors, never run a vehicle in a garage; never heat with a gas range or oven; CO symptoms and 911 / Poison Control 1-800-222-1222; food (4 h fridge, 48 h full freezer) and refrigerated-medication guidance; heat stroke; no air conditioning options; hypothermia below 95 F; heat sources; flashlights over candles; do not siphon gasoline."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.fcc.gov/reports-research/guides/tips-communicating-emergency",
+      "distinct_ids": [
+        "health-fcc-comms-tips",
+        "shelter-fcc-comms"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "health-fcc-comms-tips",
+          "branches": [
+            "claude/prep-health-837444"
+          ],
+          "supports": [
+            "Emergencies create network congestion; limit non-emergency calls and keep calls brief; try text messaging, which may go through when a call will not; try several services (text, email, landline); wait 10 seconds before redialing; have charged batteries and car-charger adapters; keep emergency numbers in the phone; place calls while the vehicle is stationary; have a family communications plan with an out-of-area central contact; forward a home number to a wireless number when evacuating; keep a corded phone that does not depend on electricity; for people with disabilities, medical alert systems usually need a working phone line so keep a backup."
+          ]
+        },
+        {
+          "id": "shelter-fcc-comms",
+          "branches": [
+            "claude/prep-shelter-5e1e0e",
+            "claude/prep-shelter-continuation",
+            "claude/prep-shelter-followup-evidence"
+          ],
+          "supports": [
+            "Congestion on phone networks in emergencies; limit non-emergency calls; try text messaging, which often goes through when calls do not; try multiple services; wait 10 seconds before redialing; backup power; designate an out-of-area person as central contact and make sure everyone knows who to contact; keep a corded phone that does not depend on electricity.",
+            "Congestion on phone networks in emergencies; limit non-emergency calls; try text messaging, which often goes through when calls do not; try multiple services; wait 10 seconds before redialing; backup power; designate an out-of-area person as central contact and make sure everyone knows who to contact; keep a corded phone that does not depend on electricity.",
+            "Congestion on phone networks in emergencies; limit non-emergency calls; try text messaging, which often goes through when calls do not; try multiple services; wait 10 seconds before redialing; backup power; designate an out-of-area person as central contact and make sure everyone knows who to contact; keep a corded phone that does not depend on electricity."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+      "distinct_ids": [
+        "food-fsis-emergencies",
+        "shelter-usda-fsis-emergencies"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "food-fsis-emergencies",
+          "branches": [
+            "claude/prep-food-ccdc55"
+          ],
+          "supports": [
+            "Power-outage planning (appliance thermometers: refrigerator 40 F or below, freezer 0 F or below; group and fill the freezer; cooler and gel packs); refrigerator safe up to 4 hours; full freezer about 48 hours (24 half full); 50 lb dry ice holds an 18 cu ft freezer 2 days; do not put perishable food in snow; never taste food to judge safety; lists of foods to discard after more than 4 hours without power and foods that are safe; frozen-food rules; flood and fire guidance; USDA Meat and Poultry Hotline 1-888-674-6854."
+          ]
+        },
+        {
+          "id": "shelter-usda-fsis-emergencies",
+          "branches": [
+            "claude/prep-shelter-followup-evidence"
+          ],
+          "supports": [
+            "Keep an appliance thermometer in the refrigerator and freezer (refrigerator 40 F or below, freezer 0 F or below); group foods; keep the freezer full or fill gaps with frozen jugs of water, ice or gel packs; have an insulated cooler and frozen gel packs; perishable food stays safe in a refrigerator only 4 hours; refrigerator up to 4 hours and full freezer about 48 hours (24 if half full); never taste food to judge its safety, when in doubt throw it out; discard listed perishable foods (raw, cooked or leftover meat, poultry, fish, eggs, milk, soft cheeses, cut fruit and others) if the refrigerator has been without power for more than 4 hours; do not put perishable food in the snow, make ice instead; USDA Meat and Poultry Hotline 1-888-MPHotline; flood and fire sections."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-fish/jerky",
+      "distinct_ids": [
+        "food-fsis-jerky",
+        "hist-food-fsis-jerky"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "food-fsis-jerky",
+          "branches": [
+            "claude/prep-food-ccdc55"
+          ],
+          "supports": [
+            "Pathogenic bacteria are likely to survive dry heat and the 130 to 140 F of a food dehydrator; Salmonella and E. coli O157:H7 illnesses from homemade jerky; USDA Hotline recommendation to heat meat to 160 F and poultry to 165 F before dehydrating, then dry at a constant 130 to 140 F; why the order matters (evaporation keeps the meat cool, bacteria become more heat resistant); sun drying not recommended; summary of a 2004 Journal of Food Protection study (marination alone did not reduce the pathogen; E. coli survived up to 10 hours at up to 145 F in lab-inoculated venison) and a 1998 study on ground beef jerky with and without a nitrite curing mix; wild-game contamination; storage times (commercial 12 months, home-dried 1 to 2 months)."
+          ]
+        },
+        {
+          "id": "hist-food-fsis-jerky",
+          "branches": [
+            "claude/prep-hist-food-b81f19"
+          ],
+          "supports": [
+            "USDA Meat and Poultry Hotline's current recommendation to heat meat to 160 F and poultry to 165 F before dehydrating; explanation that dehydrators may not reach that temperature and that bacteria become more heat resistant after drying; venison fecal contamination; home-dried jerky stored 1 to 2 months, commercially packaged 12 months."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.ready.gov/alerts",
+      "distinct_ids": [
+        "health-ready-alerts",
+        "start-ready-alerts"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "health-ready-alerts",
+          "branches": [
+            "claude/prep-health-837444"
+          ],
+          "supports": [
+            "Wireless Emergency Alerts (short alerts to WEA-enabled phones in a locally targeted area; unique sound and vibration; not affected by network congestion; no charge, no subscription; older phones may not be capable and some phones require WEA to be enabled; some carriers call them Government Alerts or Emergency Alert Messages); the Emergency Alert System (broadcast TV and radio, satellite audio, cable); NOAA Weather Radio All Hazards; IPAWS (FEMA does not review, edit or approve alerts); the FEMA App (NWS alerts for up to five locations, shelter finder)."
+          ]
+        },
+        {
+          "id": "start-ready-alerts",
+          "branches": [
+            "claude/prep-start-bbfeb8"
+          ],
+          "supports": [
+            "Wireless Emergency Alerts (no subscription or charge, distinct sound and vibration, not affected by network congestion, some phones need the setting enabled, older phones may not be capable); Emergency Alert System on broadcast TV and radio; NOAA Weather Radio All Hazards broadcasting 24 hours a day; IPAWS; FEMA App with alerts for up to five locations and shelter finder; local alerting authorities decide what to send and FEMA does not review or approve alerts."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.ready.gov/evacuation",
+      "distinct_ids": [
+        "shelter-ready-evacuation",
+        "start-ready-evacuation"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "shelter-ready-evacuation",
+          "branches": [
+            "claude/prep-shelter-5e1e0e",
+            "claude/prep-shelter-continuation",
+            "claude/prep-shelter-followup-evidence"
+          ],
+          "supports": [
+            "Know your risks, destinations, zones and routes; go-bag; several destinations in different directions; pets; route may be on foot; fuel (full tank when evacuation likely, half tank at all times); one car per family; leave early; tell the out-of-state contact where you are going; leave a note; check on neighbors needing a ride; no shortcuts; after an evacuation check with officials before returning; generators outdoors only and never connected to the home's electrical system.",
+            "Know your risks, destinations, zones and routes; go-bag; several destinations in different directions; pets; route may be on foot; fuel (full tank when evacuation likely, half tank at all times); one car per family; leave early; tell the out-of-state contact where you are going; leave a note; check on neighbors needing a ride; no shortcuts; after an evacuation check with officials before returning; generators outdoors only and never connected to the home's electrical system.",
+            "Know your risks, destinations, zones and routes; go-bag; several destinations in different directions; pets; route may be on foot; fuel (full tank when evacuation likely, half tank at all times); one car per family; leave early; tell the out-of-state contact where you are going; leave a note; check on neighbors needing a ride; no shortcuts; after an evacuation check with officials before returning; generators outdoors only and never connected to the home's electrical system."
+          ]
+        },
+        {
+          "id": "start-ready-evacuation",
+          "branches": [
+            "claude/prep-start-bbfeb8"
+          ],
+          "supports": [
+            "Know your risks, when and where to go, what to bring; build a go-bag so you do not scramble; everyone knows where the bag is and who is responsible; several destinations in different directions; a pet-friendly place because most public shelters allow only service animals; prepare a go-bag to carry on foot or public transport plus supplies for longer trips by car; keep a half tank at all times; one car per family; what to do before leaving; evacuation route may be on foot."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.ready.gov/food",
+      "distinct_ids": [
+        "food-ready-food",
+        "start-ready-food"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "food-ready-food",
+          "branches": [
+            "claude/prep-food-ccdc55"
+          ],
+          "supports": [
+            "Store at least a several-day supply of non-perishable food; choose foods your family will eat; special dietary needs; example items including a manual can opener; do not eat from swollen, dented or corroded cans; throw away food at room temperature two hours or more; refrigerator about four hours unopened; discard perishables above 40 F for two hours or more; dry ice 25 lb for a 10 cu ft freezer three to four days, gloves, no direct contact with food; heating canned food and a bleach-to-water disinfecting ratio."
+          ]
+        },
+        {
+          "id": "start-ready-food",
+          "branches": [
+            "claude/prep-start-bbfeb8"
+          ],
+          "supports": [
+            "Store at least a several-day supply of non-perishable food; choose foods your family will eat; remember special dietary needs; example items (ready-to-eat canned goods and a can opener, bars, cereal, peanut butter, dried fruit, juices, non-perishable milk, high-energy and comfort foods, infant food); refrigerator holds cold about four hours unopened; discard perishables above 40 F for two hours or more; do not eat from swollen, dented or corroded cans; use ready-to-feed formula, and bottled or boiled water as a last resort if mixing."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.ready.gov/kit",
+      "distinct_ids": [
+        "health-ready-kit",
+        "start-ready-kit"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "health-ready-kit",
+          "branches": [
+            "claude/prep-health-837444"
+          ],
+          "supports": [
+            "Basic kit items include water (one gallon per person per day for several days, for drinking and sanitation), a battery-powered or hand-crank radio and a NOAA Weather Radio with tone alert, flashlight, extra batteries, whistle, moist towelettes, garbage bags and plastic ties for personal sanitation, local maps, and a cell phone with chargers and a backup battery; additional items include soap, hand sanitizer, prescription medications, feminine supplies, diapers and wipes, and personal hygiene items."
+          ]
+        },
+        {
+          "id": "start-ready-kit",
+          "branches": [
+            "claude/prep-start-bbfeb8"
+          ],
+          "supports": [
+            "Basic disaster supplies kit list (water, several days of non-perishable food, radio including NOAA Weather Radio with tone alert, flashlight, first aid kit, batteries, whistle, dust mask, plastic sheeting and duct tape, towelettes and garbage bags, wrench or pliers, manual can opener, local maps, phone and charger with backup battery); additional items (hygiene, medications, eyeglasses, infant supplies, pet supplies, cash, documents, bedding, clothing and sturdy shoes, fire extinguisher, matches, mess kits, paper and pencil, activities); store items in airtight bags in one or two easy-to-carry containers; maintenance (cool dry place, replace expired items, 're-think your needs every year'); kit locations (home, work for at least 24 hours, car)."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.ready.gov/people-disabilities",
+      "distinct_ids": [
+        "health-ready-disabilities",
+        "shelter-ready-disabilities",
+        "start-ready-disability"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "health-ready-disabilities",
+          "branches": [
+            "claude/prep-health-837444"
+          ],
+          "supports": [
+            "Support network; many city and county emergency management agencies keep voluntary registries for people with disabilities; know more than one dialysis or treatment facility; ask the power provider for priority power restoration; organize prescriptions; medical alert tags; list of device styles and serial numbers; backup oxygen; spare batteries and a manual backup for a power wheelchair; keep model information and where equipment came from; weather radio with text display and flashing alert for people who are deaf or hard of hearing; extra hearing-aid batteries; FEMA App alerts for up to five locations; several days' supply of prescription medicines."
+          ]
+        },
+        {
+          "id": "shelter-ready-disabilities",
+          "branches": [
+            "claude/prep-shelter-5e1e0e",
+            "claude/prep-shelter-continuation",
+            "claude/prep-shelter-followup-evidence"
+          ],
+          "supports": [
+            "Support network and accessible evacuation transportation; voluntary registries kept by some city and county emergency management agencies; priority power restoration lists; assistive-technology and mobility-equipment backups; guidance for people who are deaf or hard of hearing, blind or low vision, with speech or intellectual or developmental disabilities, or with Alzheimer's and dementia; extreme-heat risks for people with spinal cord injuries, certain medications, cognitive disabilities.",
+            "Support network and accessible evacuation transportation; voluntary registries kept by some city and county emergency management agencies; priority power restoration lists; assistive-technology and mobility-equipment backups; guidance for people who are deaf or hard of hearing, blind or low vision, with speech or intellectual or developmental disabilities, or with Alzheimer's and dementia; extreme-heat risks for people with spinal cord injuries, certain medications, cognitive disabilities.",
+            "Support network and accessible evacuation transportation; voluntary registries kept by some city and county emergency management agencies; priority power restoration lists; assistive-technology and mobility-equipment backups; guidance for people who are deaf or hard of hearing, blind or low vision, with speech or intellectual or developmental disabilities, or with Alzheimer's and dementia; extreme-heat risks for people with spinal cord injuries, certain medications, cognitive disabilities."
+          ]
+        },
+        {
+          "id": "start-ready-disability",
+          "branches": [
+            "claude/prep-start-bbfeb8"
+          ],
+          "supports": [
+            "Support network and contact list; tell the network where supplies are and consider giving a trusted person a key; plan accessible transportation; voluntary local registries; know more than one dialysis or treatment facility; talk to your doctor about keeping electric medical equipment running and ask your power provider about priority restoration; medical alert tags; communication cards; kit tips by disability (deaf or hard of hearing, blind or low vision, speech disability, intellectual or developmental, mobility including a spare battery and a lightweight manual chair, Alzheimer's and dementia); several days' supply of prescription medicines; extreme-heat cautions; direct deposit."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.ready.gov/plan",
+      "distinct_ids": [
+        "health-ready-plan",
+        "shelter-ready-plan",
+        "start-ready-plan"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "health-ready-plan",
+          "branches": [
+            "claude/prep-health-837444"
+          ],
+          "supports": [
+            "Plan around five questions, the first being how you will receive emergency alerts and warnings; know how you will contact one another and reconnect if separated; pick a familiar, easy-to-find family meeting place; account for medical needs including prescriptions and equipment, disabilities and access needs, languages, pets and service animals; document and practice the plan."
+          ]
+        },
+        {
+          "id": "shelter-ready-plan",
+          "branches": [
+            "claude/prep-shelter-5e1e0e",
+            "claude/prep-shelter-continuation",
+            "claude/prep-shelter-followup-evidence"
+          ],
+          "supports": [
+            "Family may not be together; know how you'll contact one another and reconnect; familiar, easy-to-find meeting place; five discussion questions (alerts, shelter plan, evacuation route, communication plan, kit); household-needs checklist (ages, medical, disabilities and access and functional needs, languages, pets, school-aged children); document and practice the plan.",
+            "Family may not be together; know how you'll contact one another and reconnect; familiar, easy-to-find meeting place; five discussion questions (alerts, shelter plan, evacuation route, communication plan, kit); household-needs checklist (ages, medical, disabilities and access and functional needs, languages, pets, school-aged children); document and practice the plan.",
+            "Family may not be together; know how you'll contact one another and reconnect; familiar, easy-to-find meeting place; five discussion questions (alerts, shelter plan, evacuation route, communication plan, kit); household-needs checklist (ages, medical, disabilities and access and functional needs, languages, pets, school-aged children); document and practice the plan."
+          ]
+        },
+        {
+          "id": "start-ready-plan",
+          "branches": [
+            "claude/prep-start-bbfeb8"
+          ],
+          "supports": [
+            "Four steps: meet with your household (five questions: alerts, shelter, evacuation route, communication plan, kit); assess household needs (ages, responsibilities for assisting others, locations visited, dietary and medical needs, disabilities and access and functional needs, languages, cultural and religious considerations, pets or service animals, school-aged children); document the plan with the free fillable form; practice it. Family meeting place that is familiar and easy to find."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.ready.gov/power-outages",
+      "distinct_ids": [
+        "health-ready-power-outages",
+        "shelter-ready-power-outages",
+        "start-ready-power"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "health-ready-power-outages",
+          "branches": [
+            "claude/prep-health-837444"
+          ],
+          "supports": [
+            "A power outage may prevent use of medical devices; have alternate plans for refrigerating medicines or powering medical devices; inventory the items that rely on electricity and plan for batteries, power banks and other alternatives; talk to your medical provider about an outage plan for powered devices and refrigerated medicines, ask how long a medication can be stored at higher temperatures, and get specific guidance for life-critical medications; if power is out for more than a day, discard refrigerated medication unless the label says otherwise and consult a doctor or pharmacist for a new supply; generator and carbon monoxide rules (outdoors, at least 20 feet from windows, doors and attached garages)."
+          ]
+        },
+        {
+          "id": "shelter-ready-power-outages",
+          "branches": [
+            "claude/prep-shelter-5e1e0e",
+            "claude/prep-shelter-continuation",
+            "claude/prep-shelter-followup-evidence"
+          ],
+          "supports": [
+            "Generator and fuel outdoors at least 20 ft from windows, doors and attached garages; CO detectors with battery backup on every level; keep generator dry; heavy-duty cords; let it cool before refueling; no gas stove or oven for heat; plan for medicines and power-dependent medical devices; check local officials for heating and cooling locations; go to a community location with power if heat or cold is extreme; fridge about 4 h and full freezer about 48 h; inventory electric-dependent items.",
+            "Generator and fuel outdoors at least 20 ft from windows, doors and attached garages; CO detectors with battery backup on every level; keep generator dry; heavy-duty cords; let it cool before refueling; no gas stove or oven for heat; plan for medicines and power-dependent medical devices; check local officials for heating and cooling locations; go to a community location with power if heat or cold is extreme; fridge about 4 h and full freezer about 48 h; inventory electric-dependent items.",
+            "Generator and fuel outdoors at least 20 ft from windows, doors and attached garages; CO detectors with battery backup on every level; keep generator dry; heavy-duty cords; let it cool before refueling; no gas stove or oven for heat; plan for medicines and power-dependent medical devices; check local officials for heating and cooling locations; go to a community location with power if heat or cold is extreme; fridge about 4 h and full freezer about 48 h; inventory electric-dependent items."
+          ]
+        },
+        {
+          "id": "start-ready-power",
+          "branches": [
+            "claude/prep-start-bbfeb8"
+          ],
+          "supports": [
+            "What an extended outage can disrupt; take an inventory of items that rely on electricity; talk to your medical provider about a power-outage plan for powered medical devices and refrigerated medicines; refrigerator keeps food cold about four hours, a full freezer about 48 hours; discard food at 40 F or above for two hours or more; discard refrigerated medicine if power is out more than a day unless the label says otherwise; generators, camp stoves and charcoal grills outdoors and at least 20 feet from windows, doors and attached garages; CO detectors with battery backup on every level; never heat a home with a gas stovetop or oven."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+      "distinct_ids": [
+        "food-fema-outage-sheet",
+        "health-fema-power-outage-sheet",
+        "shelter-fema-power-outage-sheet",
+        "start-fema-power-sheet"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "food-fema-outage-sheet",
+          "branches": [
+            "claude/prep-food-ccdc55"
+          ],
+          "supports": [
+            "Keep freezers and refrigerators closed; a refrigerator keeps food cold for about 4 hours and a full freezer stays at a safe temperature for about 48 hours; do not store food outside or in snow; keep a thermometer in the refrigerator and freezer; throw away refrigerated food exposed to 40 F or higher for more than 4 hours, and food with an unusual odor, color or texture; make a plan with your doctor for refrigerating medicines and powering medical devices; replace refrigerated medications if the power is out for a day or more unless the drug's label says otherwise, call your doctor or pharmacist if you depend on refrigerated medication that has been at room temperature, and use the medicine only until you have a new supply; use generators outdoors at least 20 feet from building openings."
+          ]
+        },
+        {
+          "id": "health-fema-power-outage-sheet",
+          "branches": [
+            "claude/prep-health-837444"
+          ],
+          "supports": [
+            "One-page FEMA fact sheet: make a plan for refrigerating medicines and powering medical devices; talk to your doctor about how you will use electrically powered devices and store medications; 'Replace refrigerated medications if the power is out for a day or more, unless the drug's label says otherwise. Call your doctor or pharmacist if you depend on refrigerated medications that have been at room temperature. Only use the medicine until you have a new supply.'; generators outdoors at least 20 feet from building openings; learn the signs of carbon monoxide poisoning."
+          ]
+        },
+        {
+          "id": "shelter-fema-power-outage-sheet",
+          "branches": [
+            "claude/prep-shelter-5e1e0e",
+            "claude/prep-shelter-continuation",
+            "claude/prep-shelter-followup-evidence"
+          ],
+          "supports": [
+            "Two-page FEMA fact sheet: generators, camp stoves and charcoal grills outdoors at least 20 ft from any building openings like windows, doors or garages; never use a gas stovetop, oven, grill or dryer to heat a home; do not use gas stoves or candles to heat; do not leave a vehicle running in a garage even with the door open and run a vehicle used for power or warmth in a well-ventilated place outside; smoke and CO alarms with battery backup (if hardwired) on every level and near sleeping areas; talk to your doctor about medical devices and storing medications; replace refrigerated medications if the power is out for a day or more unless the label says otherwise, call your doctor or pharmacist if you depend on refrigerated medications that have been at room temperature, and use the medicine only until you have a new supply; refrigerator about 4 hours and full freezer about 48 hours; communications plan with a paper copy; go to an alternate location for heat or cooling if safe.",
+            "Two-page FEMA fact sheet: generators, camp stoves and charcoal grills outdoors at least 20 ft from any building openings like windows, doors or garages; never use a gas stovetop, oven, grill or dryer to heat a home; do not use gas stoves or candles to heat; do not leave a vehicle running in a garage even with the door open and run a vehicle used for power or warmth in a well-ventilated place outside; smoke and CO alarms with battery backup (if hardwired) on every level and near sleeping areas; talk to your doctor about medical devices and storing medications; replace refrigerated medications if the power is out for a day or more unless the label says otherwise, call your doctor or pharmacist if you depend on refrigerated medications that have been at room temperature, and use the medicine only until you have a new supply; refrigerator about 4 hours and full freezer about 48 hours; communications plan with a paper copy; go to an alternate location for heat or cooling if safe.",
+            "Two-page FEMA fact sheet: generators, camp stoves and charcoal grills outdoors at least 20 ft from any building openings like windows, doors or garages; never use a gas stovetop, oven, grill or dryer to heat a home; do not use gas stoves or candles to heat; do not leave a vehicle running in a garage even with the door open and run a vehicle used for power or warmth in a well-ventilated place outside; smoke and CO alarms with battery backup (if hardwired) on every level and near sleeping areas; talk to your doctor about medical devices and storing medications; replace refrigerated medications if the power is out for a day or more unless the label says otherwise, call your doctor or pharmacist if you depend on refrigerated medications that have been at room temperature, and use the medicine only until you have a new supply; refrigerator about 4 hours and full freezer about 48 hours; communications plan with a paper copy; go to an alternate location for heat or cooling if safe."
+          ]
+        },
+        {
+          "id": "start-fema-power-sheet",
+          "branches": [
+            "claude/prep-start-bbfeb8"
+          ],
+          "supports": [
+            "English two-page sheet (pages 1-2 of a 34-page file) read in full as extracted text: make a plan for refrigerating medicines and powering medical devices; talk to your doctor to plan for medical devices and medication storage; generators, camp stoves and charcoal grills outdoors at least 20 feet from building openings such as windows, doors or garages; never use a gas stovetop, oven, grill or dryer to heat a home; CO and smoke alarms with battery backup; refrigerator keeps food cold about 4 hours, full freezer about 48 hours; throw away refrigerated food above 40 F for more than 4 hours; 'Replace refrigerated medications if the power is out for a day or more, unless the drug's label says otherwise. Call your doctor or pharmacist if you depend on refrigerated medications that have been at room temperature. Only use the medicine until you have a new supply.'"
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/",
+      "distinct_ids": [
+        "shelter-usfa-high-rise",
+        "start-usfa-high-rise"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "shelter-usfa-high-rise",
+          "branches": [
+            "claude/prep-shelter-5e1e0e",
+            "claude/prep-shelter-continuation",
+            "claude/prep-shelter-followup-evidence"
+          ],
+          "supports": [
+            "Default is to evacuate by the nearest stairs: pull the alarm or shout fire, call 911, tell building staff, close doors behind you, no elevators; keep stair and corridor doors closed and never propped open (pressurized stairwells work best with doors closed); shelter in place is for people who cannot self-evacuate (call 911, stay in a room with the door closed and seal cracks with a wet towel, or wait on the stair landing if clear or nearly clear of smoke); not all tall buildings meet modern standards; learn exits and practice the route.",
+            "Default is to evacuate by the nearest stairs: pull the alarm or shout fire, call 911, tell building staff, close doors behind you, no elevators; keep stair and corridor doors closed and never propped open (pressurized stairwells work best with doors closed); shelter in place is for people who cannot self-evacuate (call 911, stay in a room with the door closed and seal cracks with a wet towel, or wait on the stair landing if clear or nearly clear of smoke); not all tall buildings meet modern standards; learn exits and practice the route.",
+            "Default is to evacuate by the nearest stairs: pull the alarm or shout fire, call 911, tell building staff, close doors behind you, no elevators; keep stair and corridor doors closed and never propped open (pressurized stairwells work best with doors closed); shelter in place is for people who cannot self-evacuate (call 911, stay in a room with the door closed and seal cracks with a wet towel, or wait on the stair landing if clear or nearly clear of smoke); not all tall buildings meet modern standards; learn exits and practice the route."
+          ]
+        },
+        {
+          "id": "start-usfa-high-rise",
+          "branches": [
+            "claude/prep-start-bbfeb8"
+          ],
+          "supports": [
+            "Know the exits and fire-safety features of your building; practice your exit route; do not prop stairway or corridor doors open; do not use elevators during a fire; close stair doors behind you; call 911; not all tall buildings meet modern standards; a person who cannot use the stairs should call 911 and be prepared to shelter in place, possibly in a room with the door closed and a wet towel sealing the cracks, or wait on a clear stair landing for help."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.weather.gov/nwr/",
+      "distinct_ids": [
+        "health-nws-nwr-national",
+        "shelter-nws-nwr"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "health-nws-nwr-national",
+          "branches": [
+            "claude/prep-health-837444"
+          ],
+          "supports": [
+            "NWR is a nationwide network of radio stations broadcasting from the nearest NWS office; it also carries warnings for non-weather hazards (earthquakes, chemical releases, AMBER alerts, 911 telephone outages); more than 1,000 transmitters covering all 50 states, coastal waters, Puerto Rico, the U.S. Virgin Islands and U.S. Pacific territories; a special receiver or scanner is required; seven VHF frequencies (162.400 to 162.550 MHz); the page lists transmitters that are degraded or out of service and says to check county coverage listings for alternate transmitters."
+          ]
+        },
+        {
+          "id": "shelter-nws-nwr",
+          "branches": [
+            "claude/prep-shelter-5e1e0e",
+            "claude/prep-shelter-continuation",
+            "claude/prep-shelter-followup-evidence"
+          ],
+          "supports": [
+            "NWR broadcasts official NWS warnings, watches and forecasts 24 hours a day; works with the Emergency Alert System; also carries non-weather hazard information including chemical releases; needs a special receiver; some transmitters are out of service and the county coverage listing should be checked.",
+            "NWR broadcasts official NWS warnings, watches and forecasts 24 hours a day; works with the Emergency Alert System; also carries non-weather hazard information including chemical releases; needs a special receiver; some transmitters are out of service and the county coverage listing should be checked.",
+            "NWR broadcasts official NWS warnings, watches and forecasts 24 hours a day; works with the Emergency Alert System; also carries non-weather hazard information including chemical releases; needs a special receiver; some transmitters are out of service and the county coverage listing should be checked."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.weather.gov/safety/winter-during",
+      "distinct_ids": [
+        "hist-field-nws-winter-during",
+        "shelter-nws-winter-during"
+      ],
+      "decision": "KEEP_SEPARATE_CITATION_IDENTITIES",
+      "reason": "Same destination does not establish identical source reading scope; independently verify every attached claim",
+      "source_scopes": [
+        {
+          "id": "hist-field-nws-winter-during",
+          "branches": [
+            "claude/prep-hist-field-9db767"
+          ],
+          "supports": [
+            "In a vehicle: let someone know where you are going and what route you will take so a search can start in the right place; if the car is stuck, stay in the vehicle because leaving means becoming disoriented quickly in wind-driven snow and cold; be visible to rescuers. The page also gives engine-running and exhaust-pipe instructions to avoid carbon monoxide poisoning, which this archive does not reproduce."
+          ]
+        },
+        {
+          "id": "shelter-nws-winter-during",
+          "branches": [
+            "claude/prep-shelter-continuation",
+            "claude/prep-shelter-followup-evidence"
+          ],
+          "supports": [
+            "If your car gets stuck: stay in the vehicle, run the motor about 10 minutes each hour for heat, open the window a little for fresh air while running it to avoid carbon monoxide poisoning, clear snow from the exhaust pipe, be visible to rescuers (dome light at night, bright cloth, raise the hood after snow stops); indoors: use fire safeguards and ventilate when using a fireplace, wood stove or space heater, make sure a gas furnace vent is not blocked by snow; close off rooms, stuff towels in cracks, close curtains.",
+            "If your car gets stuck: stay in the vehicle, run the motor about 10 minutes each hour for heat, open the window a little for fresh air while running it to avoid carbon monoxide poisoning, clear snow from the exhaust pipe, be visible to rescuers (dome light at night, bright cloth, raise the hood after snow stops); indoors: use fire safeguards and ventilate when using a fireplace, wood stove or space heater, make sure a gas furnace vent is not blocked by snow; close off rooms, stuff towels in cracks, close curtains."
+          ]
+        }
+      ]
+    }
+  ],
+  "original_git_object_conflict_docket": [
+    {
+      "path": "preparedness/content/articles/family-communication-plan.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+          "size": 23180
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "cbfe7830e9412ac99a1920c581a14d2913a9eaf6",
+          "size": 26248
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "c97a79761dc3be1c44e5f9322a606ccc7fd11c6e",
+          "size": 26939
+        }
+      ],
+      "decision": "HUMAN_DIFF_REVIEW_REQUIRED_NO_VERSION_SELECTED"
+    },
+    {
+      "path": "preparedness/content/articles/family-communication-plan.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+          "size": 3524
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "0ad68a8c456f50912ddef11c44bfc05c3c2d3513",
+          "size": 4191
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "a8618235711cca039f142ad59962c1153654aa45",
+          "size": 4537
+        }
+      ],
+      "decision": "HUMAN_DIFF_REVIEW_REQUIRED_NO_VERSION_SELECTED"
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+          "size": 26250
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "size": 31755
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "size": 31755
+        }
+      ],
+      "decision": "HUMAN_DIFF_REVIEW_REQUIRED_NO_VERSION_SELECTED"
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+          "size": 3127
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9",
+          "size": 3758
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9",
+          "size": 3758
+        }
+      ],
+      "decision": "HUMAN_DIFF_REVIEW_REQUIRED_NO_VERSION_SELECTED"
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+          "size": 31428
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "55a1e3018e3413b79378c6677f15e536bb777377",
+          "size": 33238
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "5608a28249a0e351710e0c756d878048c8e41e24",
+          "size": 33265
+        }
+      ],
+      "decision": "HUMAN_DIFF_REVIEW_REQUIRED_NO_VERSION_SELECTED"
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "77dd194b096bb60ea99728a5b0042adf016b905e",
+          "size": 4568
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "debfd11fb189cb43a688862867dc60172fb6eb3a",
+          "size": 5096
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "593e7bd6fef0446f05d7a86551e702ceaa38eabb",
+          "size": 5210
+        }
+      ],
+      "decision": "HUMAN_DIFF_REVIEW_REQUIRED_NO_VERSION_SELECTED"
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "b8acf07e533eea43795aa242f39fd926b080130f",
+          "size": 24382
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "ed6e6bc4dc1344d1aa25679c6f4380f76d82927e",
+          "size": 30877
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "a8c36cd63517fdeb723dca201b31802c2a721ddf",
+          "size": 31507
+        }
+      ],
+      "decision": "HUMAN_DIFF_REVIEW_REQUIRED_NO_VERSION_SELECTED"
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+          "size": 3398
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "0f4800f6808f54e0487de1f8426b4612f7d0a54f",
+          "size": 3736
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "fb1081527e5afdd542299f2087397cf3308716c6",
+          "size": 3981
+        }
+      ],
+      "decision": "HUMAN_DIFF_REVIEW_REQUIRED_NO_VERSION_SELECTED"
+    },
+    {
+      "path": "preparedness/sources/fragments/shelter.json",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "d9eeb4546e58f083031e0767aaea7cf112099e09",
+          "size": 35032
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "7291a7836a14b8a83f85310815e820295245c83b",
+          "size": 48669
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "5105f4bbd7d5b2e991f28d4b4ae7c9d5a2804aa9",
+          "size": 54250
+        }
+      ],
+      "decision": "HUMAN_DIFF_REVIEW_REQUIRED_NO_VERSION_SELECTED"
+    }
+  ],
+  "gate_recommendations": [
+    "Never merge distinct source IDs merely because of matching URLs",
+    "Require independent human adjudication of five differing same-ID scopes, including dates and publishers",
+    "Preserve each entire original source supports and notes field from R374",
+    "Do not select Shelter fork body/meta/source blob automatically",
+    "Run native validation/build/complete WordPress private pair verification only on authenticated full checkout",
+    "No QD PASS, emergency/medical safety clearance or public publish from source custody alone"
+  ],
+  "publication_approved": false,
+  "qualified_emergency_safety_approved": false,
+  "qualified_privacy_approved": false,
+  "commercial_checkout_approved": false,
+  "verified_paid_orders": null,
+  "verified_net_revenue": null,
+  "sales_attribution_status": "UNAVAILABLE_NOT_ZERO",
+  "commercial_verification_source": "NONE_AUTHENTICATED"
+}
