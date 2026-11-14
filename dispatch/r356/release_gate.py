@@ -59,6 +59,9 @@ def count_confirmed(events):
             continue
         if x.get('provider_proof') is not True or x.get('marketing_consent') is not True:
             continue
+        if (x.get('provider_source') != 'jetpack' or not isinstance(x.get('provider_receipt_ref'), str)
+                or len(x['provider_receipt_ref']) < 12):
+            continue
         key = x.get('opaque_subscriber_id')
         if not isinstance(key, str) or not key.startswith('opaque_') or len(key) < 12:
             continue
@@ -67,7 +70,7 @@ def count_confirmed(events):
             count += 1
     return count
 
-def revenue_report(orders, verified_human_sessions=None):
+def revenue_report(orders, verified_human_sessions=None, sessions_receipt=None):
     """Require independent settled receipts; clicks and checkout starts are not sales."""
     seen = set()
     gross = Decimal('0')
@@ -77,6 +80,11 @@ def revenue_report(orders, verified_human_sessions=None):
     rejected = []
     for i, o in enumerate(orders):
         if not isinstance(o, dict) or o.get('status') != 'settled' or o.get('independent_receipt') is not True:
+            rejected.append(i)
+            continue
+        if (o.get('receipt_source') not in ('merchant_settlement_report', 'payhip_settlement_report')
+                or not isinstance(o.get('independent_receipt_ref'), str)
+                or len(o['independent_receipt_ref']) < 12):
             rejected.append(i)
             continue
         key = o.get('opaque_order_id')
@@ -94,7 +102,10 @@ def revenue_report(orders, verified_human_sessions=None):
         refunds += values[2]
     net = gross - fees - refunds
     denominator = (isinstance(verified_human_sessions, int) and not isinstance(verified_human_sessions, bool)
-                   and verified_human_sessions > 0)
+                   and verified_human_sessions > 0 and isinstance(sessions_receipt, dict)
+                   and sessions_receipt.get('source_kind') == 'first_party_analytics'
+                   and isinstance(sessions_receipt.get('source_ref'), str)
+                   and len(sessions_receipt['source_ref']) >= 12)
     ratio = (net * 1000 / Decimal(verified_human_sessions)).quantize(Decimal('0.01')) if denominator and count > 0 else None
     return {'confirmed_orders': count, 'gross': str(gross), 'fees': str(fees),
             'refunds': str(refunds), 'net': str(net),
@@ -120,7 +131,7 @@ def validate_attribution(event):
                 and event.get('recipient_permission_verified') is True)
     return False
 
-def evaluate(proof, manifest, confirmed_events=None, orders=None, qualified_sessions=None):
+def evaluate(proof, manifest, confirmed_events=None, orders=None, qualified_sessions=None, qualified_sessions_proof=None):
     """A source-format diagnostic, NEVER an email-release approval token."""
     confirmed_events = confirmed_events or []
     orders = orders or []
@@ -137,7 +148,7 @@ def evaluate(proof, manifest, confirmed_events=None, orders=None, qualified_sess
     counts = proof.get('provider_aggregate', {})
     aggregate_nonadditive = (counts.get('total') == counts.get('confirmed') and (counts.get('unconfirmed') or 0) > 0)
     private_data_paths = pii_paths(proof) + pii_paths(confirmed_events) + pii_paths(orders)
-    money = revenue_report(orders, qualified_sessions)
+    money = revenue_report(orders, qualified_sessions, qualified_sessions_proof)
     return {'campaign_source_valid': source_valid, 'all_issues': 'HOLD_UNSENT',
             'commercial_03': 'HOLD_MERCHANT', 'commercial_05': 'HOLD_MERCHANT',
             'shared_missing': missing, 'merchant_missing': merchants,
