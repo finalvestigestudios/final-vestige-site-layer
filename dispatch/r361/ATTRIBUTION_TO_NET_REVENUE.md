@@ -1,0 +1,21 @@
+# Conversion truth: content asset → confirmed consent → authenticated sale
+
+**Revenue first.** Relevant high-intent readers, not generic click volume, are the objective. No paid sale or affiliate commission was independently observed this run. Realized **net revenue per 1,000 qualified human sessions is NOT COMPUTABLE**, not zero: no verified qualified-human denominator or settled revenue source was supplied.
+
+## One non-duplicating attribution contract
+
+**Acquisition (Grok/Praxxis):** for actually posted content with immutable evidence-backed asset ID, use `utm_source=(youtube|tiktok|instagram|facebook|pinterest|x|bluesky)`, `utm_medium=organic_social`, `utm_campaign=<topic_cluster>_pilot_2026_11`, `utm_content=<asset_id>`. These are source conventions in [TASK-008](https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit), not deployed links. Grok owns actual platform posts and their landing intent; don't take over video distribution. Direct/bio clicks with lost UTM remain unattributed rather than backfilled.
+
+**Lead (Claude/Focus):** `signup_attempt` describes a form action, never a customer or confirmed subscriber. `confirmed_signup` emits **once per provider-backed consent lifecycle** only after a trustworthy confirmation timestamp/status; an opaque stable ID and provider event version prevent replays/duplicates, with no email addresses in analytics. Preserve initial valid Grok touch separately from newsletter touches and opt-out. When consent is absent/ambiguous, mark UNKNOWN; no automated welcome receipt assumption.
+
+**Dispatch (Dispatch/Claude):** proposed `utm_source=dispatch`, `utm_medium=email`, `utm_campaign=fv_dispatch_pilot_2026_11`, `utm_content=issue_01...issue_06` only upon approval and in a privacy-safe, provider-compatible link. Don't overwrite initial social acquisition source. One dominant editorial or buyer-guide CTA per email. The source-only offer guides currently are NOT navigable send-ready destinations; do not generate or activate affiliate URLs or production scripts.
+
+**Sale (Mind/Commerce):** a CTA click, affiliate outbound hit, add-to-cart or checkout start is an intent signal, not payment. A **settled paid order** requires vendor/merchant independent report with unique anonymous order identifier, paid timestamp, attributable issued earning link where possible, gross amount, commission approved and refund/reversal state. Actual net revenue = **cash recognized on settled paid sales or accepted affiliate commissions, less refunds, reversals and directly attributable fees** without counting both gross order value and commission as publisher revenue. Never extrapolate vendor-advertised EPC or commission rates into realized FV sales.
+
+**Cohorts and safeguards:** 7- and 30-day attribution cohorts from actual timestamped qualified sessions; preserve honest missing data and cross-device limitations. `net_revenue_per_1000_qualified_sessions = 1000 * realized_net_revenue / verified_qualified_human_sessions` only when both inputs exist and denominator is positive. If they are absent or tiny, report NO COMPUTATION and a sample-size caution. No A/B statistical conclusions with three dashboard followers.
+
+## One concrete approved-offer hypothesis (NOT live)
+
+The **first candidate** for a high-intent buyer path remains Zen12 Premium via an evidence-led meditation-audio buyer guide, pending publisher-specific EMAIL rights and a live vetted guide from Mind Studio. Readers can choose free Fieldbook practice without purchasing. Issue 05 retains a separately gated Hypnosis Live evaluation, not a duplicate Zen12 blast. Prioritize buyer value, exact current checkout, near-link commercial disclosure and lawful recipient eligibility before increasing email volume.
+
+Ownership: Grok content IDs; Praxxis independent platform QA; Claude instrumentation/first-party funnel; Focus confirmed signup and welcome; Dispatch editorial link consent; Mind/Commerce actual SKU/earning link and settlements; founder final spending, posting and mailing release. No production analytics installation authorized by this file.
