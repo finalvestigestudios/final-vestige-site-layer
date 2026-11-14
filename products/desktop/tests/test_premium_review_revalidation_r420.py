@@ -111,9 +111,12 @@ class PremiumReviewProofBoundaryR420(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "UI scrub failed"):
             revalidate_or_revoke(lambda: True, fail, product="grants")
 
-    def test_unscoped_legacy_semantics_remain_for_existing_callers(self):
-        self.assertTrue(revalidate_or_revoke(lambda: object(), lambda: None))
-        self.assertFalse(revalidate_or_revoke(lambda: False, lambda: None))
+    def test_missing_product_scope_rejected_before_verifier(self):
+        events = []
+        with self.assertRaises(TypeError):
+            revalidate_or_revoke(lambda: events.append("verify") or synthetic("grants"),
+                                 lambda: events.append("scrub"))
+        self.assertEqual(events, [])
 
     def test_real_review_ui_preflight_and_action_checks_both_scope_product(self):
         path = Path(__file__).resolve().parents[1] / "fvs_suite" / "review_ui.py"
