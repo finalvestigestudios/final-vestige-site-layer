@@ -30,7 +30,14 @@ def focus_scroll_fraction(total_height, visible_height, top, widget_y, widget_he
         return None
     top = min(max(0.0, top), total_height - visible_height)
     margin = min(12.0, visible_height / 4)
-    if widget_y < top + margin:
+    if widget_height > visible_height - 2 * margin:
+        # An oversized focused control cannot fit entirely in the viewport.
+        # Reveal its start, never scroll the beginning out of sight while
+        # trying to satisfy an impossible bottom-edge visibility request.
+        if top + margin <= widget_y < top + visible_height - margin:
+            return None
+        desired = widget_y - margin
+    elif widget_y < top + margin:
         desired = widget_y - margin
     elif widget_y + widget_height > top + visible_height - margin:
         desired = widget_y + widget_height + margin - visible_height
@@ -185,6 +192,10 @@ class ScrollableForm:
         if not isinstance(widget, (ttk.Entry, ttk.Button)):
             return
         if widget.winfo_toplevel() is not self.root:
+            return
+        # Root-local focus events can originate in sibling root-owned widgets.
+        # Only descendants of this canvas may move its scroll position.
+        if not self._inside_viewport(widget):
             return
         total = self.frame.winfo_height()
         visible = self.canvas.winfo_height()
