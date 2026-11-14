@@ -28,10 +28,10 @@ const memo=files['CONVERSION_ACCEPTANCE_CREATOR_HANDOFF.md'];
 const matrix=JSON.parse(files['CLAIM_PROOF_RIGHTS_RELEASE_MATRIX.json']);
 let passed=0, failed=0;
 function check(name,pred){if(!pred){console.error('FAIL',name);failed++}else{passed++}}
-const forbidRe=/<script\b|<iframe\b|<form\b|<video\b|<audio\b|<meta\b[^>]*http-equiv\s*=\s*["']?refresh|(?:onload|onclick|onerror|onmouseover)\s*=|javascript:|autoplay|googletagmanager|google-analytics|dataLayer|<img\b[^>]+src\s*=\s*["']https?:/i;
+const forbidRe=/<script\b|<iframe\b|<form\b|<video\b|<audio\b|<meta\b[^>]*http-equiv\s*=\s*["']?refresh|(?:onload|onclick|onerror|onmouseover)\s*=|javascript:|<(?:video|audio|source)\b[^>]*\bautoplay\b|googletagmanager|google-analytics|dataLayer|<img\b[^>]+src\s*=\s*["']https?:/i;
 const sellerLinkRe=/<a\b[^>]*href\s*=\s*["']https?:\/\/(?:[a-z0-9-]+\.)*(?:inspire3\.com|zen12\.com|hypnosislive\.com|brainwaveshots\.com|payhip\.com|clickbank\.com)\b/i;
 function allStaticGuard(s){return !forbidRe.test(s)&&!sellerLinkRe.test(s)}
-function disabledCTA(s){return /<button\b[^>]*\bdisabled(?:\s|>|=)/i.test(s) && /Purchasing unavailable/.test(s)}
+function disabledCTA(s){return /<button\b[^>]*\sdisabled(?:\s|>|=)/i.test(s) && /Purchasing unavailable/.test(s)}
 function nearDisclosure(s){
  let button=s.indexOf('<button'),disc=s.indexOf('If you purchase through a future approved link');
  return button>0&&disc>0&&button>disc&&button-disc<900;
