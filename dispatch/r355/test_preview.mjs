@@ -16,7 +16,7 @@ const originals=provenance.issues.map(entry=>({
  content:readFileSync(resolve(dir,"../../",entry.source_file),"utf8"),
  sha:entry.git_blob
 }));
-function blobHash(text){let bytes=Buffer.from(text,"utf8");return createHash("sha1").update(Buffer.from("blob "+bytes.length+"\\0")).update(bytes).digest("hex");}
+function blobHash(text){let bytes=Buffer.from(text,"utf8");return createHash("sha1").update(Buffer.from("blob "+bytes.length+String.fromCharCode(0))).update(bytes).digest("hex");}
 test("exact original campaign source blobs and 4:2 allocation",()=>{
  assert.equal(provenance.source_commit,"d57ccdba3aee8f065e143e101c2945f4f3d01647");
  originals.forEach((o,i)=>assert.equal(blobHash(o.content),provenance.issues[i].git_blob));
