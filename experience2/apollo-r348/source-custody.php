@@ -13,16 +13,10 @@ if (!defined('ABSPATH')) { exit; }
  * URL and record text are derived from R347; these labels are page identifiers.
  */
 function fv_apollo_r348_approved_pages(): array {
-    return array(
-      'https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html' => '1967 Review Board — findings',
-      'https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html' => '1967 Review Board — investigation',
-      'https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/chro.html' => '1967 Review Board — chronology',
-      'https://www.nasa.gov/history/55-years-ago-the-apollo-1-fire-and-its-aftermath/' => 'Later NASA institutional history',
-      'https://www.nasa.gov/image-detail/amf-s67-15717/' => 'NASA photo accession S67-15717',
-      'https://www.nasa.gov/image-detail/amf-s66-58038/' => 'NASA photo accession S66-58038',
-      'https://www.nasa.gov/image-detail/amf-s67-21294/' => 'NASA photo accession S67-21294',
-      'https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/' => 'NASA photo accession KSC-20170124-PH_KLS01_0090',
-    );
+    $policy = dirname(__DIR__) . '/apollo-r349/source-policy.php';
+    if (is_readable($policy)) { require_once $policy; }
+    // Absent policy module: quarantine all source links instead of trusting URLs.
+    return function_exists('fv_apollo_r349_approved_sources') ? fv_apollo_r349_approved_sources() : array();
 }
 /** No heuristics or speculative relationships: a shared URL is the ONLY grouping edge. */
 function fv_apollo_r348_custody(?array $input = null): array {

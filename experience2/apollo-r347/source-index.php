@@ -6,6 +6,9 @@
  * Requires PHP: 7.4
  */
 if (!defined('ABSPATH')) { exit; }
+$fv_apollo_r349_policy = dirname(__DIR__) . '/apollo-r349/source-policy.php';
+if (is_readable($fv_apollo_r349_policy)) { require_once $fv_apollo_r349_policy; }
+
 
 /** Derive labels, limits, and URLs from the already-reviewed records, never maintain competing factual copies. */
 function fv_apollo_r347_records(): array {
@@ -62,7 +65,7 @@ function fv_apollo_r347_index_shortcode($atts = array()): string {
                 <p class="fv-apollo-r347__type"><?php echo $esc($record['type']); ?></p>
                 <h4><?php echo $esc($record['label']); ?></h4>
                 <p><strong>Evidence boundary:</strong> <?php echo $esc($record['limit']); ?></p>
-                <a href="<?php echo $esc($record['url']); ?>" rel="noopener noreferrer" data-fv-apollo-source-link="<?php echo $esc($key); ?>"><?php echo $esc($record['locator']); ?></a>
+                <?php echo function_exists('fv_apollo_r349_source_link') ? fv_apollo_r349_source_link($record['url'], $record['locator'], array('data-fv-apollo-source-link'=>$key)) : '<span data-fv-source-review-required="true">Source link withheld pending verification</span>'; ?>
               </li>
             <?php endforeach; ?>
           </ol>
