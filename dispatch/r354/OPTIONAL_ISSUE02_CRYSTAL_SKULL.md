@@ -1,0 +1,35 @@
+# THE DISPATCH — OPTIONAL ISSUE 02 · UNSENT / NOT ADOPTED
+
+**Subject:** The skull was real. The age wasn't.
+
+**Preheader:** A quartz carving, an 1885 rejection, and the marks a microscope could read.
+
+**Content type:** EDITORIAL. One primary site CTA; no affiliate offer or merchant link. This does not replace original Issue 02 without founder approval.
+
+---
+
+In the nineteenth century, an impressive rock-crystal skull found its way through collectors and dealers, carrying a very old story. But the paper trail held an awkward detail: a museum in Mexico had already questioned its supposed antiquity.
+
+A skull can be genuine quartz and still have a false history.
+
+The British Museum acquired one of these objects from Tiffany & Company in **1897**. Its story reached farther back through the antiquities trade, including the dealer Eugène Boban. In **1885**, Boban and a Mexican government inspector offered a skull to the Museo Nacional de México as an ancient object. The proposal was rejected. That rejection is not a laboratory date, but it is consequential documentation: people close to the transaction were already unconvinced.
+
+Then the tool marks offered an independent test.
+
+In **2008**, a team led by Margaret Sax, with Jane Walsh and colleagues from the British Museum and Smithsonian, published a study of **two** skulls. The researchers examined surface traces and compared the results with securely dated Mesoamerican crystal objects. The museum skulls showed evidence of rotary cutting wheels; the securely dated comparison pieces did not. On the Smithsonian skull, analysis found traces of silicon carbide, a manufactured abrasive, supporting a much later origin.
+
+The team concluded that the British Museum example was worked in nineteenth-century Europe. The much larger Smithsonian skull was probably made not long before its reported purchase in Mexico in **1960**. Those are conclusions about these **two examined objects**, not a verdict on every crystal skull ever collected.
+
+Notice the three different kinds of evidence: the story told by a dealer, the dates surviving in records, and the marks remaining on the object itself. Each answers a slightly different question. Together they are more useful than a striking photograph or an exotic label.
+
+**A two-minute archive habit:** The next time an object is called "ancient," ask for a dated chain of custody, a description of how its material was worked, and at least one comparison with a securely provenanced object. If any of those are missing, keep the uncertainty in your notes instead of filling the gap with a confident story.
+
+**Read the evidence trail:** [Crystal Skulls: What the Evidence Says About Their Age](https://finalvestige.com/2026/11/02/crystal-skulls/).
+
+The Dispatch follows the same method into the history of perception: what was seen, what was claimed, and what survives inspection. A good mystery can become more interesting when one part of it is solved.
+
+---
+
+**Sources:** [Sax, Walsh, Freestone, Rankin & Meeks, Journal of Archaeological Science 35 (2008), 2751–2760](https://doi.org/10.1016/j.jas.2008.05.007) (two-object scientific investigation); [Smithsonian collection record, A562841-0](https://www.si.edu/object/nmnhanthropology_8552155) (object history and provenance limits); [Smithsonian news release on tool-mark examination](https://www.si.edu/newsdesk/releases/mysterious-crystal-skull-exhibit-first-time-smithsonian-s-national-museum-natural-history) (institutional corroboration).
+
+**HARD PRE-SEND HOLD (not an actual footer):** [[VALID_FINAL_VESTIGE_POSTAL_ADDRESS_REQUIRED]] · [[VERIFY_ACTUAL_JETPACK_UNSUBSCRIBE_IN_RECEIVED_EMAIL]]. Never place these tokens into an email. No publishing or sending authorized.
