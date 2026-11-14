@@ -20,3 +20,7 @@
 @media(prefers-reduced-motion:reduce){.fv-apollo-r355 *{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 @media(forced-colors:active){.fv-apollo-r355__facts p,.fv-apollo-r355__source,.fv-apollo-r355__boundary{border-color:CanvasText}.fv-apollo-r355 :focus-visible{outline-color:Highlight}}
 @media print{.fv-apollo-r355{background:#fff!important;color:#000!important}.fv-apollo-r355__inner{width:100%;padding:15px 0}.fv-apollo-r355__source{display:none!important}.fv-apollo-r355__print[hidden]{display:block!important}.fv-apollo-r355__facts{grid-template-columns:repeat(3,1fr)}.fv-apollo-r355 a{color:#000!important}}
+
+/* R360 accessibility correction: the institutional source link must present a
+   >=44 CSS-pixel vertical tap target, even at native 16px body text. */
+.fv-apollo-r355 a[data-fv-r355-reviewed-source]{display:inline-block;min-height:44px;max-width:100%;padding:10px 0;line-height:1.5}
