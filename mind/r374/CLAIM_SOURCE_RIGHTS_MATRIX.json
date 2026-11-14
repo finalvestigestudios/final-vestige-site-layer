@@ -1,0 +1,435 @@
+{
+  "schema": "fv-mind-r374-claim-rights-evidence-v1",
+  "date": "2026-11-14",
+  "scope": "unpublished review-only editorial/affiliate presell; no authority inferred",
+  "source_count": 17,
+  "claims_count": 30,
+  "held_gate_count": 36,
+  "official_partner_creatives": {
+    "status": "NOT_ACCESSED",
+    "reason": "Requires authenticated FV affiliate rights; public merchant pages reviewed, no swipe copy reused"
+  },
+  "partner_verification": {
+    "public_program": "VERIFIED_EXISTS",
+    "named_FV_account_approval": "UNKNOWN",
+    "earned_URL": "UNKNOWN",
+    "merchant_sales": "NOT_VERIFIED",
+    "fallback_owned_mind_SKU": "NOT_VERIFIED",
+    "gmail_limit": "targeted negative searches are not exhaustive proof of absence"
+  },
+  "sources": {
+    "I3": "https://inspire3.com/",
+    "ZEN": "https://zen12.com/",
+    "AFF": "https://affiliates.inspire3.com/",
+    "HYP": "https://hypnosislive.com/",
+    "BWS": "https://brainwaveshots.com/",
+    "HIST": "https://en.wikisource.org/wiki/Self_Mastery_Through_Conscious_Autosuggestion",
+    "DISC": "https://www.old.archeophone.org/cylindres_textes/methode_coue.php",
+    "EASON": "https://staffprofiles.bournemouth.ac.uk/display/journal-article/307888",
+    "SLEEP": "https://pubmed.ncbi.nlm.nih.gov/26365453/",
+    "STRESS": "https://pubmed.ncbi.nlm.nih.gov/28629342/",
+    "THEORY": "https://doi.org/10.1016/j.concog.2024.103730",
+    "PUY": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "FOCUS": "https://finalvestige.com/focus/",
+    "FTC_END": "https://consumer.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "FTC_HEALTH": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "FV_EDITORIAL": "https://finalvestige.com/editorial-standards/",
+    "FV_DISC": "https://finalvestige.com/affiliate-disclosure/"
+  },
+  "claims": [
+    {
+      "id": "A01",
+      "kind": "archival",
+      "source": "HIST",
+      "assertion": "Coue's conscious-autosuggestion work exists as a published historical text",
+      "editorial_handling": "report_with_locator"
+    },
+    {
+      "id": "A02",
+      "kind": "archival",
+      "source": "DISC",
+      "assertion": "Commercial recordings of the Coue method are evidenced by period promotional material; recording efficacy is not established",
+      "editorial_handling": "report_without_reproducing_image"
+    },
+    {
+      "id": "A03",
+      "kind": "archive",
+      "source": "PUY",
+      "assertion": "Published FV Puységur page preserves historical testimonies, failures and source-trail distinctions",
+      "editorial_handling": "report_with_context"
+    },
+    {
+      "id": "C01",
+      "kind": "independent_review",
+      "source": "EASON",
+      "assertion": "2019 self-hypnosis review screened 576 records and included 22 randomized studies",
+      "editorial_handling": "report_as_review"
+    },
+    {
+      "id": "C02",
+      "kind": "independent_review",
+      "source": "EASON",
+      "assertion": "Positive reviewed interventions more often taught independent practice and at least three sessions",
+      "editorial_handling": "report_with_methodological_qualification"
+    },
+    {
+      "id": "C03",
+      "kind": "independent_review",
+      "source": "EASON",
+      "assertion": "No-effect reviewed interventions often involved listening to recordings alone; not a universal causal conclusion",
+      "editorial_handling": "report_with_qualification"
+    },
+    {
+      "id": "C04",
+      "kind": "independent_review",
+      "source": "SLEEP",
+      "assertion": "2015 insomnia review evaluated 13 studies with 502 participants; 11 rated methodologically low quality",
+      "editorial_handling": "report_in_context"
+    },
+    {
+      "id": "C05",
+      "kind": "independent_review",
+      "source": "SLEEP",
+      "assertion": "Sleep-latency comparison versus waitlist differed from comparison versus sham; not a Zen12 test",
+      "editorial_handling": "report_in_context"
+    },
+    {
+      "id": "C06",
+      "kind": "independent_review",
+      "source": "STRESS",
+      "assertion": "2017 stress review included nine RCTs and 365 participants with high-risk-of-bias concern",
+      "editorial_handling": "report_in_context"
+    },
+    {
+      "id": "C07",
+      "kind": "independent_review",
+      "source": "THEORY",
+      "assertion": "2024 theory review describes competing explanatory accounts of hypnotic suggestion",
+      "editorial_handling": "report_in_context"
+    },
+    {
+      "id": "M01",
+      "kind": "seller_format",
+      "source": "I3",
+      "assertion": "Inspire3 catalog lists Zen12, Hypnosis Live and Brainwave Shots as distinct brands",
+      "editorial_handling": "seller_described_only"
+    },
+    {
+      "id": "M02",
+      "kind": "seller_format",
+      "source": "ZEN",
+      "assertion": "Zen12 Premium public sales page lists 12 levels and four style options per level",
+      "editorial_handling": "seller_described_only"
+    },
+    {
+      "id": "M03",
+      "kind": "seller_format",
+      "source": "ZEN",
+      "assertion": "Zen12 Premium public page describes 48 twelve-minute MP3s",
+      "editorial_handling": "seller_described_only"
+    },
+    {
+      "id": "M04",
+      "kind": "seller_format",
+      "source": "ZEN",
+      "assertion": "Zen12 Premium public page lists quick start, manual, support, extras and training call",
+      "editorial_handling": "seller_described_only"
+    },
+    {
+      "id": "M05",
+      "kind": "seller_price",
+      "source": "ZEN",
+      "assertion": "Zen12 public Premium page displayed $87.99 on 2026-11-14",
+      "editorial_handling": "factual_dated_display_not_checkout"
+    },
+    {
+      "id": "M06",
+      "kind": "seller_terms",
+      "source": "ZEN",
+      "assertion": "Zen12 public Premium page advertises a one-year money-back guarantee",
+      "editorial_handling": "not_verified_refund_outcome"
+    },
+    {
+      "id": "M07",
+      "kind": "seller_claim",
+      "source": "ZEN",
+      "assertion": "One hour of deep meditation in 12 minutes is seller's unproven product-specific efficacy/equivalence claim",
+      "editorial_handling": "exclude_as_established_fact"
+    },
+    {
+      "id": "M08",
+      "kind": "seller_claim",
+      "source": "ZEN",
+      "assertion": "Automated brainwave entrainment and broad health/focus/creativity improvements are seller claims",
+      "editorial_handling": "exclude_as_established_fact"
+    },
+    {
+      "id": "M09",
+      "kind": "seller_format",
+      "source": "HYP",
+      "assertion": "Hypnosis Live public site lists over 200 self-hypnosis MP3 audio downloads",
+      "editorial_handling": "seller_described_only"
+    },
+    {
+      "id": "M10",
+      "kind": "seller_claim",
+      "source": "HYP",
+      "assertion": "Hypnosis Live guarantee of results is a seller promotional representation, not proven consumer outcome",
+      "editorial_handling": "exclude_as_established_fact"
+    },
+    {
+      "id": "M11",
+      "kind": "seller_format",
+      "source": "BWS",
+      "assertion": "Brainwave Shots public site lists focus, sleep, mood and other audio-format categories",
+      "editorial_handling": "seller_described_only"
+    },
+    {
+      "id": "M12",
+      "kind": "seller_claim",
+      "source": "BWS",
+      "assertion": "Brainwave Shots advertised performance, healing and pain effects are unverified seller claims",
+      "editorial_handling": "exclude_as_established_fact"
+    },
+    {
+      "id": "F01",
+      "kind": "ftc",
+      "source": "FTC_END",
+      "assertion": "Near-recommendation conspicuous commission disclosure needed when financial connection exists",
+      "editorial_handling": "required"
+    },
+    {
+      "id": "F02",
+      "kind": "ftc",
+      "source": "FTC_HEALTH",
+      "assertion": "Health-related benefit claims require competent and reliable product-appropriate evidence",
+      "editorial_handling": "required"
+    },
+    {
+      "id": "F03",
+      "kind": "first_party",
+      "source": "FOCUS",
+      "assertion": "Existing free 52-page Focus Fieldbook and Jetpack/Dispatch are established routes",
+      "editorial_handling": "keep_existing_funnel"
+    },
+    {
+      "id": "F04",
+      "kind": "first_party",
+      "source": "FV_DISC",
+      "assertion": "General affiliate disclosure exists but cannot replace near-link disclosure",
+      "editorial_handling": "supplement_not_substitute"
+    },
+    {
+      "id": "G01",
+      "kind": "permissions",
+      "source": "AFF",
+      "assertion": "Public affiliate portal only evidences network existence and generic promotional terms, not account-specific access",
+      "editorial_handling": "no_link_until_authorized"
+    },
+    {
+      "id": "G02",
+      "kind": "private_email_search",
+      "source": "AFF",
+      "assertion": "Targeted connected Gmail queries for partner acceptance/issued links yielded no matching account-specific approval",
+      "editorial_handling": "unknown_not_definitive_negative"
+    },
+    {
+      "id": "G03",
+      "kind": "private_email_search",
+      "source": "FOCUS",
+      "assertion": "Targeted connected Gmail queries found no verifiable FV-owned Mind paid SKU/order evidence",
+      "editorial_handling": "unknown_not_definitive_negative"
+    },
+    {
+      "id": "G04",
+      "kind": "inference",
+      "source": "EASON",
+      "assertion": "Clinical self-hypnosis literature cannot substantiate Zen12 Premium outcomes without specific suitable tests",
+      "editorial_handling": "exclude_product_efficacy_inference"
+    }
+  ],
+  "commercial_release_gates": [
+    {
+      "id": "authenticated_FV_publisher_approval",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "approved_website_channel",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "approved_organic_social_channel",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "approved_email_channel_if_used",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "issued_Zen12_affiliate_URL",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "confirmed_offer_destination",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "final_checkout_total_and_tax",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "recurring_charges_or_upsells_reviewed",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "refund_policy_terms_reviewed",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "actual_test_purchase_authorized",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "actual_refund_outcome_verified",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "product_specific_health_claim_substantiation",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "FV_owned_alternative_rights",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "FV_owned_alternative_SKU_active",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "FV_owned_alternative_delivery",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "FV_owned_alternative_return_terms",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "verified_grok_asset_id_1",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "verified_grok_asset_id_2",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "verified_grok_asset_id_3",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "grok_platform_UTM_permission",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "mobile_destination_QA",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "Jetpack_confirmed_lead_QA",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "consent_and_data_map",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "outbound_event_existing_stack",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "merchant_paid_order_reconciliation",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "fee_and_refund_reconciliation",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "seven_day_cohort_min_sample",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "thirty_day_cohort_min_sample",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "playable_original_video_with_rights",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "captions_and_transcript_synced",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "real_browser_WCAG_AA_QA",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "native_Node_and_hosted_CI",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "WordPress_sanitization_and_theme_QA",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "site_QA_approval",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "founder_commercial_release_approval",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    },
+    {
+      "id": "owner_conflict_QA_approval",
+      "status": "HOLD",
+      "evidence": "not independently completed in R374"
+    }
+  ],
+  "disclosure_copy": "If you purchase through a future authorized link, Final Vestige may earn a commission at no additional cost to you.",
+  "conclusion": "No active merchant CTA. The review and film storyboard remain unpublished. No realized revenue computable without verified transactions and qualified-human sessions."
+}
