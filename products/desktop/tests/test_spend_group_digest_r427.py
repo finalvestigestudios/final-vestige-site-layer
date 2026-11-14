@@ -23,12 +23,12 @@ class GroupDigestCustodyR427(unittest.TestCase):
         self.assertEqual(group(rows=[2])[-1], (2,))
 
     def test_valid_months(self):
-        for month in ("0001-01", "2026-02", "9999-12"):
+        for month in ("1-01", "0001-01", "2026-02", "9999-12"):
             with self.subTest(month=month):
                 self.assertEqual(group(month=month)[2], month)
 
     def test_invalid_months(self):
-        for month in ("0000-01", "2026-00", "2026-13", "2026-1", "2026-011", " 2026-11",
+        for month in ("0-01", "0000-01", "2026-00", "2026-13", "2026-1", "2026-011", " 2026-11",
                       "2026-11\n", "2026/11", 12):
             with self.subTest(month=repr(month)), self.assertRaisesRegex(ValueError, "source-group"):
                 group(month=month)
