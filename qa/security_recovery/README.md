@@ -21,3 +21,7 @@ Five explicit checks: patched plugin active; zero reported active/ignored threat
 Observed case: Burst Statistics 3.7.4 -> 3.7.5 fixed on 2026-11-14 02:30:35 UTC, but the latest full backup completed 02:29:17 UTC and latest scan started 02:27:21 UTC. Thus three gates PASS; post-fix backup and post-fix clean-scan gates HOLD. A recovery from the latest pre-fix point may restore the vulnerable version. Recheck plugin version after any authorized restoration.
 
 Tests were executed locally (14 of 14 pass), but GitHub CI, exact committed-source checkout execution, actual restore, and live browser work remain UNVERIFIED. Do not use this code as an automatic release, restore, or QD bypass. Complements historical QA draft PR #127, whose backup check did not compare fix/backup/scan timestamps. Issue #126 is the coordination record.
+
+## Completed scan acceptance (independent QA correction)
+
+`POST_FIX_CLEAN_SCAN` requires a Jetpack `scan.state` of `idle`, a `last_scan.progress` **integer 100**, `last_scan.error` strictly `false`, a valid post-fix `last_scan.started_at`, and empty active and ignored threat arrays. Missing, partial or in-progress scan telemetry is **HOLD**, not a pass. This verifies scan metadata only; it does not substitute for incident forensics or actual restore rehearsal.
