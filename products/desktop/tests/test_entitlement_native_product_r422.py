@@ -168,9 +168,12 @@ class NativeLicenseProductR422(unittest.TestCase):
         for method in ("installed_license_path", "verify_license"):
             with self.subTest(method=method):
                 body = functions[method].body
-                self.assertIsInstance(body[0], ast.Expr)  # Docstring
-                self.assertIsInstance(body[1], ast.Assign)
-                call = body[1].value
+                # installed_license_path has no docstring; verify_license does.
+                first = body[1] if (isinstance(body[0], ast.Expr)
+                                    and isinstance(body[0].value, ast.Constant)
+                                    and isinstance(body[0].value.value, str)) else body[0]
+                self.assertIsInstance(first, ast.Assign)
+                call = first.value
                 self.assertIsInstance(call, ast.Call)
                 self.assertIsInstance(call.func, ast.Name)
                 self.assertEqual(call.func.id, "_require_native_premium_product")
