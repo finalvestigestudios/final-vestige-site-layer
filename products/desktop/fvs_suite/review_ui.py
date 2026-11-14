@@ -25,7 +25,7 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
     # Require affirmative, privacy-safe proof BEFORE constructing the window.
     # A verifier returning None/False or unexpectedly failing must not open
     # a workbench on an unverified premium entitlement.
-    if not revalidate_or_revoke(authorize, lambda: None):
+    if not revalidate_or_revoke(authorize, lambda: None, product=product):
         raise ValueError("Premium entitlement denied")
 
     window = tk.Toplevel(parent)
@@ -98,7 +98,7 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         rationale.delete("1.0", "end")
 
     def _authorized():
-        if revalidate_or_revoke(authorize, _revoke_review_view):
+        if revalidate_or_revoke(authorize, _revoke_review_view, product=product):
             return True
         messagebox.showerror(
             "Premium entitlement required",

@@ -6,6 +6,10 @@ through the explicit, entitlement-checked Browse action in the review window.
 """
 from __future__ import annotations
 
+from .premium_launch_proof import has_verified_premium_proof
+
+_LEGACY_UNSCOPED = object()
+
 
 def clear_auto_review_target(report_slot: list[str | None]) -> None:
     """Drop the implicit latest-report path, including before a failed attempt."""
@@ -32,18 +36,31 @@ def watch_auto_review_target(variables, report_slot: list[str | None]):
     return invalidate
 
 
-def revalidate_or_revoke(authorize, clear_sensitive_view) -> bool:
+def revalidate_or_revoke(authorize, clear_sensitive_view, *,
+                         product: object = _LEGACY_UNSCOPED) -> bool:
     """Require affirmative offline proof; scrub the visible review on denial.
 
     Every ordinary verifier failure, missing proof and proof-boolean error is
     a denial. No verifier error details escape to the UI or diagnostic output.
     The verifier remains authoritative; this wrapper cannot validate a license.
+
+    Premium GUI callers MUST pass their exact product. In that mode, require an
+    exact offline_entitlement.Entitlement instance for the selected product,
+    not a truthy sentinel, incorrect product, or user-defined __bool__ hook.
+    The verifier callback still owns Ed25519 signature, expiry and current
+    license-file validation on EVERY call. Omitting product retains historical
+    helper behavior for old non-gating callers; never omit it at an access gate.
     If the UI scrub itself fails, its exception is deliberately not concealed.
     """
     if not callable(authorize) or not callable(clear_sensitive_view):
         raise ValueError("Invalid premium authorization callbacks")
     try:
-        permitted = bool(authorize())
+        proof = authorize()
+        if product is _LEGACY_UNSCOPED:
+            permitted = bool(proof)  # Legacy compatibility; NOT a premium gate.
+        else:
+            from .offline_entitlement import Entitlement
+            permitted = has_verified_premium_proof(proof, product, Entitlement)
     except Exception:
         # A verifier dependency/programming failure must not leave previously
         # loaded customer evidence visible or authorize a privileged action.
