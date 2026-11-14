@@ -27,7 +27,7 @@ def audit(data):
         blockers.append("native_received_email_unknown")
     if not data["release"]["founder_final_approval"]:
         blockers.append("no_final_founder_approval")
-    if not data["paid_outcomes"]["merchant_settled_orders"] is not None:
+    if data["paid_outcomes"]["merchant_settled_orders"] is None:
         blockers.append("settled_sales_unknown")
     if data["paid_outcomes"]["qualified_human_sessions"] is None:
         blockers.append("qualified_sessions_unknown")
