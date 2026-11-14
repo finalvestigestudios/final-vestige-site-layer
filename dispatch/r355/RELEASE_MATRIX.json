@@ -1,0 +1,116 @@
+{
+  "as_of": "2026-11-14T13:32:31Z",
+  "wordpress": {
+    "newsletter_enabled": true,
+    "auto_new_post_emails": false,
+    "email_content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "welcome": "CONFIGURED_NOT_RECEIVED",
+    "counts": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "not_additive": true
+    },
+    "eligible_inbox_recipients": "UNKNOWN",
+    "actual_sends": "none in sampled five posts"
+  },
+  "master": {
+    "pr": 175,
+    "commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647"
+  },
+  "stack": {
+    "pr": 2473,
+    "commit": "d1d91d96f25a8b0ee7c33f60a91d5570a9abff9a"
+  },
+  "shared_attestation": {
+    "publisher_postal_verified": {
+      "status": "not_verified",
+      "source_ref": null
+    },
+    "real_jetpack_preview_verified": {
+      "status": "not_verified",
+      "source_ref": null
+    },
+    "received_email_verified": {
+      "status": "not_verified",
+      "source_ref": null
+    },
+    "received_email_optout_function_verified": {
+      "status": "not_verified",
+      "source_ref": null
+    },
+    "consent_recipient_dedup_verified": {
+      "status": "not_verified",
+      "source_ref": null
+    },
+    "welcome_fieldbook_receipt_verified": {
+      "status": "not_verified",
+      "source_ref": null
+    },
+    "founder_final_campaign_approved": {
+      "status": "not_verified",
+      "source_ref": null
+    }
+  },
+  "merchant_attestation": {
+    "named_partner_approval_verified": {
+      "status": "not_verified",
+      "source_ref": null
+    },
+    "email_channel_allowed_verified": {
+      "status": "not_verified",
+      "source_ref": null
+    },
+    "issued_affiliate_url_verified": {
+      "status": "not_verified",
+      "source_ref": null
+    },
+    "live_guide_verified": {
+      "status": "not_verified",
+      "source_ref": null
+    },
+    "checkout_price_refund_verified": {
+      "status": "not_verified",
+      "source_ref": null
+    },
+    "specific_claim_review_verified": {
+      "status": "not_verified",
+      "source_ref": null
+    }
+  },
+  "edition_states": [
+    {
+      "issue": 1,
+      "kind": "editorial",
+      "state": "HOLD_UNSENT"
+    },
+    {
+      "issue": 2,
+      "kind": "editorial",
+      "state": "HOLD_UNSENT"
+    },
+    {
+      "issue": 3,
+      "kind": "commercial-review-pending",
+      "state": "HOLD_UNSENT_AND_HOLD_MERCHANT"
+    },
+    {
+      "issue": 4,
+      "kind": "editorial",
+      "state": "HOLD_UNSENT"
+    },
+    {
+      "issue": 5,
+      "kind": "commercial-review-pending",
+      "state": "HOLD_UNSENT_AND_HOLD_MERCHANT"
+    },
+    {
+      "issue": 6,
+      "kind": "editorial",
+      "state": "HOLD_UNSENT"
+    }
+  ],
+  "net_revenue_per_1000_qualified_sessions": "NOT_COMPUTABLE_NO_SETTLED_ORDER_OR_DENOMINATOR"
+}

@@ -1,0 +1,21 @@
+# P0 release proof intake — one offer / no send
+
+| OFFER → FUNNEL | BLOCKER | CHANGE / EXPERIMENT | PASS / FAIL evidence | OWNER |
+|---|---|---|---|---|
+| Zen12 Premium → evidence guide → verified paid commission | Publisher-specific affiliate acceptance / EMAIL permission, issued URL, approved live guide, SKU/checkout/refund/claims unverified | Mind/Commerce privately authenticate named affiliate account, actual email-channel approval terms/creative and approved first-party guide; do NOT paste credentials or earning IDs to issues | FAIL / none validated; public catalog and promotional emails are NOT account authorization | Mind / Commerce |
+| Dispatch / Focus → provider-confirmed lead | totals 3 / confirmed 3 / unconfirmed 2 overlap; direct-email 0 and WP followers 3 don't prove distinct marketing-eligible addresses | Provider-authoritative, private consent transitions, unique opaque confirmation dedup and eligible recipient report; no new test signup | FAIL / eligibility unknown. Never expose addresses | Claude / Focus |
+| Welcome → Fieldbook delivery | Configured welcome text contains 52-page PDF URL; no actual received welcome proof | Only with explicit founder approval inspect existing recipient-owned original message and download entitlement; do not send test email | FAIL / configuration proven, received delivery unproven | Focus / Founder |
+| Final Vestige email → legally sufficient received copy | Publisher valid physical mailing address, verified actual Jetpack preheader/HTML and functional unsubscribe absent | Founder supplies legitimate FV postal address privately; owner runs native non-sending email preview; separate authorized received sample later checks unsub; no contacts this sprint | FAIL / offline HTML cannot satisfy CAN-SPAM | Founder / Dispatch |
+| Grok acquired audience → qualified paid buyer | No unique asset-matched qualified-human sessions/settled orders and refunds/fees | Canonical TASK-008 utm_medium=organic_social and utm_content=<real asset_id>; Claude owns instrumentation, Grok creates/publishes, Praxxis checks | FAIL / no authenticated cohort or order ledger | Grok / Praxxis / Claude / Commerce |
+
+## Independent source references and limits
+- WordPress actual settings via connected site, 2026-11-14 13:32 UTC: enabled, automatic new-post email OFF, FULL content, from Final Vestige Studios, no-reply, configured welcome; sampled five new post notifications opted out.
+- WordPress [Preview email vs Send test email](https://wordpress.com/support/newsletter/email-appearance/) are separate operations; none performed.
+- FTC [CAN-SPAM compliance](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business) requires honest header and subject, qualifying sender postal address, functioning opt-out for commercial mail. Sender and advertiser may share liability; brand owner's business address is not supplied by merchant's or Automattic's address.
+- Zen12 sales pages: https://www.zen12.com/ and Inspire3 https://inspire3.com/; proprietary equivalence is seller positioning, not product-independent efficacy proof. Mind's current R372 source-only approved-guide variants NOT LIVE: https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2474.
+- Hypnosis Live specific seller page https://hypnosislive.com/mental-skills/total-focus lists a 33-minute, 47MB MP3 and advertised 14-day satisfaction promise (seller representation). Public listing version price is not verified referred checkout. Affiliate EMAIL rights not proven.
+- Grok TASK-008 source-owned https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit. Do not alter Grok's queue or Claude production instrumentation.
+- Revenue requires independent merchant settlement less refunds and fees, per 7/30-day cohort. Neither numerator nor denominator verified; net revenue per 1000 qualified human sessions **NOT COMPUTABLE**.
+
+## Why an offline pass can never unlock sending
+Preview files are rendered from source Markdown by a V8 inspection script. They do not prove WordPress.com rewrites, deliverability, inbox preheaders, legal footer, or functioning unsubscribe. This is also not a substitute for the founder's explicit final campaign approval. Offline checks report release state HOLD_UNSENT even with synthetically complete attestations.
