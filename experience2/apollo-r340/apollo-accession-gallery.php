@@ -38,7 +38,7 @@ function fv_apollo_r340_gallery_shortcode($atts = array()): string {
         <p class="fv-apollo-r340__id">NASA / <?php echo $escape($record['id']); ?></p>
         <h3><?php echo $escape($record['title']); ?></h3>
         <p><?php echo $escape($record['context']); ?></p>
-        <details><summary>Provenance and limits</summary><p><?php echo $escape($record['limit']); ?></p><p>Source classification: contextual NASA photograph. Copyright, branding, likeness and commercial-context restrictions require individual review.</p></details>
+        <details><summary>Provenance and limits for <?php echo $escape($record['title']); ?></summary><p><?php echo $escape($record['limit']); ?></p><p>Source classification: contextual NASA photograph. Copyright, branding, likeness and commercial-context restrictions require individual review.</p></details>
         <p class="fv-apollo-r340__print-limit" data-fv-r340-print-limit hidden><strong>Photograph evidence limitation:</strong> <?php echo $escape($record['limit']); ?> <strong>Rights review required:</strong> A NASA accession link is not commercial image/likeness/branding clearance.</p>
         <?php echo function_exists('fv_apollo_r349_source_link') ? fv_apollo_r349_source_link($record['url'], 'Inspect NASA accession ' . $record['id'], array('data-fv-r340-source'=>'contextual-photo')) : '<span data-fv-source-review-required="true">Source link withheld pending verification</span>'; ?>
       </li>
