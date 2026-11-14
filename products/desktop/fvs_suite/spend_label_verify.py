@@ -109,11 +109,15 @@ def _label_digest(ordered: list[str]) -> str:
     """Recompute the domain-separated, full-native-label digest."""
     digest = sha256(_DIGEST_DOMAIN)
     for label in ordered:
+        bad_encoding = False
         try:
             data = label.encode("utf-8")
         except UnicodeError:
-            # Never chain an exception containing the customer source cell.
-            raise ValueError(_ERROR) from None
+            bad_encoding = True
+        # Raise OUTSIDE the handler: "from None" only suppresses display.
+        # UnicodeEncodeError.__context__.object retains the private label.
+        if bad_encoding:
+            raise ValueError(_ERROR)
         digest.update(len(data).to_bytes(8, "big"))
         digest.update(data)
     return digest.hexdigest()
