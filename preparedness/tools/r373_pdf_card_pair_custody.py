@@ -44,7 +44,7 @@ def markers(count: int) -> list[tuple[str, str]]:
 def check_pdf_pairs(pdf: bytes, *, copies: int, margin_pt: float=18) -> dict:
     """Fail closed if the print pipeline drops, duplicates or page-splits a card.
 
-    Exact \`search_for\` matches require intact PDF text. If Chromium has outlined
+    Exact search_for matches require intact PDF text. If Chromium has outlined
     text or PDF extraction is unavailable, the result correctly remains HOLD.
     margin_pt is an additional synthetic printer-safe-area proxy, not proof of
     real device margins. A marker hit does not prove all real fields fit.
