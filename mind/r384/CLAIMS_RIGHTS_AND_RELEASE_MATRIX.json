@@ -1,0 +1,493 @@
+{
+  "project": "FV Mind & Affiliate",
+  "sprint": "R384",
+  "date": "2026-11-14",
+  "reviewState": "DRAFT_SOURCE_ONLY",
+  "release": "HARD_HOLD",
+  "scope": "mind/r384 only",
+  "sellerReview": [
+    "Zen12 exact public page 2026-11-14",
+    "Inspire3 catalog 2026-11-14",
+    "Hypnosis Live public page 2026-11-14",
+    "Brainwave Shots public page 2026-11-14"
+  ],
+  "sourceUrls": {
+    "simons1999": "https://doi.org/10.1068/p281059",
+    "simons2010": "https://doi.org/10.1068/i0386",
+    "drew2013": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+    "matias2021": "https://doi.org/10.1177/17470218211064903",
+    "inspire3": "https://inspire3.com/",
+    "zen12": "https://zen12.com/",
+    "hypnosis": "https://hypnosislive.com/",
+    "shots": "https://brainwaveshots.com/",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "ftcDisclosure": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftcHealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "focus": "https://finalvestige.com/focus/",
+    "dispatch": "https://finalvestige.com/dispatch/",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "blind": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/"
+  },
+  "claimCount": 31,
+  "claims": [
+    {
+      "id": "LAB01",
+      "claim": "20/24 radiologists failed to report digitally inserted gorilla",
+      "status": "INDEPENDENT_SUPPORTED",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "limit": "exact 2013 lab search sample, not clinical mistake rate"
+    },
+    {
+      "id": "LAB02",
+      "claim": "all 24 saw gorilla when image explicitly inspected later",
+      "status": "INDEPENDENT_SUPPORTED",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "limit": "reinspection in specific experimental context"
+    },
+    {
+      "id": "LAB03",
+      "claim": "gorilla was ~48x average nodule size",
+      "status": "INDEPENDENT_SUPPORTED",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "limit": "stimulus-scale description not comparative brain phenomenon"
+    },
+    {
+      "id": "LAB04",
+      "claim": "eye fixations alone prove full conscious perception",
+      "status": "REJECT_UNSUPPORTED",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "limit": "gaze location and consciously reported recognition are distinct"
+    },
+    {
+      "id": "LAB05",
+      "claim": "83% of doctors miss dangerous diagnoses",
+      "status": "REJECT_UNSUPPORTED",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "limit": "invalid generalization beyond lab participants and insertion"
+    },
+    {
+      "id": "LAB06",
+      "claim": "original gorilla dynamic scene used selective monitoring task",
+      "status": "INDEPENDENT_SUPPORTED",
+      "source": "https://doi.org/10.1068/p281059",
+      "limit": "varying detection by conditions, no universal percentage"
+    },
+    {
+      "id": "LAB07",
+      "claim": "knowing the gorilla trick ensures noticing any unexpected event",
+      "status": "REJECT_CONTRADICTED",
+      "source": "https://doi.org/10.1068/i0386",
+      "limit": "follow-up did not improve detection of other surprises"
+    },
+    {
+      "id": "LAB08",
+      "claim": "perceptual load is associated with inattentional blindness",
+      "status": "INDEPENDENT_QUALIFIED",
+      "source": "https://doi.org/10.1177/17470218211064903",
+      "limit": "review abstract supports load result; cognitive load less clear"
+    },
+    {
+      "id": "HIST01",
+      "claim": "animal magnetism is experimentally proven",
+      "status": "REJECT_UNSUPPORTED",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "limit": "historical testimony cannot validate proposed mechanism"
+    },
+    {
+      "id": "FV01",
+      "claim": "existing Focus Fieldbook is 52 pages via Dispatch",
+      "status": "FIRST_PARTY_PAGE_SUPPORTED",
+      "source": "https://finalvestige.com/focus/",
+      "limit": "free signup using existing Jetpack list; delivery not retested"
+    },
+    {
+      "id": "FV02",
+      "claim": "existing Dispatch is same signup/welcome infrastructure",
+      "status": "FIRST_PARTY_PAGE_SUPPORTED",
+      "source": "https://finalvestige.com/dispatch/",
+      "limit": "do not create a second list, no new forms"
+    },
+    {
+      "id": "SELL01",
+      "claim": "Inspire3 is parent catalog for Zen12/Hypnosis Live",
+      "status": "SELLER_DESCRIBED",
+      "source": "https://inspire3.com/",
+      "limit": "public seller catalog, not affiliate authorization"
+    },
+    {
+      "id": "SELL02",
+      "claim": "Zen12 Premium is described as twelve levels and 48 MP3",
+      "status": "SELLER_DESCRIBED",
+      "source": "https://zen12.com/",
+      "limit": "not independently inspected downloaded product"
+    },
+    {
+      "id": "SELL03",
+      "claim": "Zen12 Premium lists guides, support and additional bonuses",
+      "status": "SELLER_DESCRIBED",
+      "source": "https://zen12.com/",
+      "limit": "exact fulfillment not verified"
+    },
+    {
+      "id": "SELL04",
+      "claim": "Zen12 Premium displayed 87.99 USD Nov 14",
+      "status": "PUBLIC_PRICE_SNAPSHOT_ONLY",
+      "source": "https://zen12.com/",
+      "limit": "display differs across captures; checkout/taxes/currency not authenticated"
+    },
+    {
+      "id": "SELL05",
+      "claim": "seller offers one-year money-back guarantee",
+      "status": "SELLER_ADVERTISEMENT_ONLY",
+      "source": "https://zen12.com/",
+      "limit": "refund policy operation and claims not tested"
+    },
+    {
+      "id": "SELL06",
+      "claim": "12 minutes produces one hour of advanced meditation benefits",
+      "status": "REJECT_UNSUBSTANTIATED",
+      "source": "https://zen12.com/",
+      "limit": "no brand-specific adequate independent study here"
+    },
+    {
+      "id": "SELL07",
+      "claim": "Zen12 reduces anxiety or treats clinical disease",
+      "status": "REJECT_UNSUBSTANTIATED",
+      "source": "https://zen12.com/",
+      "limit": "medical/health claim requires product-specific substantiation"
+    },
+    {
+      "id": "SELL08",
+      "claim": "Zen12 improves inattentional blindness",
+      "status": "REJECT_UNSUBSTANTIATED",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "limit": "gorilla research did not test the audio"
+    },
+    {
+      "id": "SELL09",
+      "claim": "Hypnosis Live sells downloadable hypnosis MP3 categories",
+      "status": "SELLER_DESCRIBED",
+      "source": "https://hypnosislive.com/",
+      "limit": "specific paid SKU/clinical outcomes unverified"
+    },
+    {
+      "id": "SELL10",
+      "claim": "Hypnosis Live works 100% of the time",
+      "status": "REJECT_UNSUBSTANTIATED",
+      "source": "https://hypnosislive.com/",
+      "limit": "seller guarantee must not become FV efficacy assertion"
+    },
+    {
+      "id": "SELL11",
+      "claim": "Brainwave Shots lists Focus and Health category downloads",
+      "status": "SELLER_DESCRIBED",
+      "source": "https://brainwaveshots.com/",
+      "limit": "seller category not efficacy proof"
+    },
+    {
+      "id": "SELL12",
+      "claim": "Brainwave Shots heals or relieves pain",
+      "status": "REJECT_UNSUBSTANTIATED",
+      "source": "https://brainwaveshots.com/",
+      "limit": "unsupported product-specific health treatment"
+    },
+    {
+      "id": "AFF01",
+      "claim": "public Inspire3 network offers registration and earning links",
+      "status": "PUBLIC_PROGRAM_EXISTS",
+      "source": "https://affiliates.inspire3.com/",
+      "limit": "not named FV approval or issued link"
+    },
+    {
+      "id": "AFF02",
+      "claim": "Final Vestige is approved Inspire3 publisher",
+      "status": "UNVERIFIED_HOLD",
+      "source": "https://affiliates.inspire3.com/",
+      "limit": "public login not individualized authorization; Gmail targeted check not conclusive"
+    },
+    {
+      "id": "AFF03",
+      "claim": "advertised public affiliate payout applies to FV",
+      "status": "UNVERIFIED_HOLD",
+      "source": "https://affiliates.inspire3.com/",
+      "limit": "terms not authenticated; no commission rate asserted"
+    },
+    {
+      "id": "AFF04",
+      "claim": "FV has a rights-cleared payable Mind Payhip SKU",
+      "status": "UNVERIFIED_HOLD",
+      "source": "https://finalvestige.com/focus/",
+      "limit": "free fieldbook is not a purchasable SKU"
+    },
+    {
+      "id": "FTC01",
+      "claim": "affiliate disclosure should be near recommendation/link",
+      "status": "REGULATORY_GUIDANCE",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "limit": "plain financial relationship statement required"
+    },
+    {
+      "id": "FTC02",
+      "claim": "objective health product claims need adequate scientific support",
+      "status": "REGULATORY_GUIDANCE",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "limit": "do not infer product efficacy from unrelated trials"
+    },
+    {
+      "id": "TECH01",
+      "claim": "42s optional variant is a playable tested video",
+      "status": "REJECT_NOT_BUILT",
+      "source": "https://finalvestige.com/focus/",
+      "limit": "poster/transcript/VTT only, film not encoded"
+    },
+    {
+      "id": "MET01",
+      "claim": "affiliate outbound clicks equal paid commissions",
+      "status": "REJECT_FALSE_METRIC",
+      "source": "https://affiliates.inspire3.com/",
+      "limit": "require independently reported paid settlement"
+    }
+  ],
+  "releaseGateCount": 32,
+  "releaseGates": [
+    {
+      "id": "G01",
+      "gate": "individual publisher acceptance",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G02",
+      "gate": "approved product and campaign channels",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G03",
+      "gate": "issued earning URL",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G04",
+      "gate": "verified offer identity",
+      "status": "HOLD",
+      "owner": "Mind/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G05",
+      "gate": "valid tracking terms",
+      "status": "HOLD",
+      "owner": "Mind/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G06",
+      "gate": "order and upsell terms",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G07",
+      "gate": "checkout currency and actual total",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G08",
+      "gate": "refund policy implementation",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G09",
+      "gate": "product support and fulfillment",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G10",
+      "gate": "claims and legal review",
+      "status": "HOLD",
+      "owner": "Mind/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G11",
+      "gate": "product-specific health substantiation",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G12",
+      "gate": "seller-approved creative rights",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G13",
+      "gate": "original image and audio rights",
+      "status": "HOLD",
+      "owner": "Mind/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G14",
+      "gate": "browser accessibility at 360/390/768/1440/1920",
+      "status": "HOLD",
+      "owner": "Site QA/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G15",
+      "gate": "keyboard and screen reader",
+      "status": "HOLD",
+      "owner": "Mind/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G16",
+      "gate": "reduced motion and no-JS",
+      "status": "HOLD",
+      "owner": "Site QA/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G17",
+      "gate": "encoded original film with captions",
+      "status": "HOLD",
+      "owner": "Mind/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G18",
+      "gate": "mobile page speed and CWV",
+      "status": "HOLD",
+      "owner": "Site QA/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G19",
+      "gate": "first-party privacy/consent approval",
+      "status": "HOLD",
+      "owner": "Mind/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G20",
+      "gate": "duplicate tracking vendor check",
+      "status": "HOLD",
+      "owner": "Mind/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G21",
+      "gate": "UTM and Grok asset IDs authenticated",
+      "status": "HOLD",
+      "owner": "Praxxis/Grok",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G22",
+      "gate": "Jetpack provider-confirmed consent/lead",
+      "status": "HOLD",
+      "owner": "Dispatch/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G23",
+      "gate": "affiliate click separate from order",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G24",
+      "gate": "merchant confirmed settled paid conversion",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G25",
+      "gate": "refund and fee reconciliation",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G26",
+      "gate": "7-day qualified cohort denominator",
+      "status": "HOLD",
+      "owner": "Mind/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G27",
+      "gate": "30-day qualified cohort denominator",
+      "status": "HOLD",
+      "owner": "Mind/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G28",
+      "gate": "founder release and CMS approval",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G29",
+      "gate": "site QA review",
+      "status": "HOLD",
+      "owner": "Site QA/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G30",
+      "gate": "homepage art coordination",
+      "status": "HOLD",
+      "owner": "Mind/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G31",
+      "gate": "Dispatch Issue 174 no-overlap review",
+      "status": "HOLD",
+      "owner": "Dispatch/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    },
+    {
+      "id": "G32",
+      "gate": "PR remains isolated from homepage PR49 and Mind PR172",
+      "status": "HOLD",
+      "owner": "Mind/Claude",
+      "evidence": "No current run release proof sufficient to clear this gate"
+    }
+  ],
+  "permissionNote": "Targeted Gmail search located no dependable FV affiliate acceptance; no inference of affirmative denial. Public affiliate commission advertising never establishes account-specific terms.",
+  "copyRights": "Original SVG and original prose only; do not copy researchers' videos or CT scans. No seller swipe files authenticated.",
+  "disclosureText": "If an approved earning link is later added and you purchase through it, Final Vestige may earn a commission at no additional cost to you.",
+  "measurementEvents": [
+    "qualified_human_landing",
+    "article_to_focus_click",
+    "provider_confirmed_lead",
+    "affiliate_outbound",
+    "merchant_confirmed_paid_purchase",
+    "merchant_settled_commission",
+    "refund_or_chargeback",
+    "realized_net_revenue"
+  ],
+  "revenueStatus": "NOT_COMPUTABLE_NO_AUTHENTICATED_CONVERSION"
+}
