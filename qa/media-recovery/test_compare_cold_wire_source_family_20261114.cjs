@@ -14,7 +14,7 @@ function fixture(bytes=1000,source=original,current=jetpack) {
  const s={image_key:'621:0',result:'loaded_in_probe_browser',match:'exact_url_or_jetpack_origin',
   verified_broken_in_browser:false,current_src_identity_verified:true,network_final_identity_verified:true,
   loaded_network_proof_verified:true,redirected_image_identity_unverified:false,complete:true,
-  natural_width:960,natural_height:720,rendered_alt:'Malbone tunnel',http_status:200,
+  natural_width:960,natural_height:720,css_width_px:300,css_height_px:225,rendered_alt:'Malbone tunnel',http_status:200,
   response_mime_type:'image/jpeg',transfer_bytes:bytes,stored_url:source,current_src:current,
   request_url:current,request_id:'r1'};
  const n={request_id:'r1',url:current,status:200,mime_type:'image/jpeg',

@@ -9,7 +9,7 @@ function fixture(bytes=1000){
  const slot={image_key:key,result:'loaded_in_probe_browser',match:'exact_url_or_jetpack_origin',
  verified_broken_in_browser:false,current_src_identity_verified:true,network_final_identity_verified:true,
  loaded_network_proof_verified:true,redirected_image_identity_unverified:false,complete:true,
- natural_width:960,natural_height:720,rendered_alt:'Historic source image',http_status:200,response_mime_type:'image/png',transfer_bytes:bytes,stored_url:src,
+ natural_width:960,natural_height:720,css_width_px:300,css_height_px:225,rendered_alt:'Historic source image',http_status:200,response_mime_type:'image/png',transfer_bytes:bytes,stored_url:src,
  current_src:src,request_url:src,request_id:'r1'};
  const page={post_id:34,url:'https://finalvestige.com/2026/08/01/post/',page_result:'inspected_browser',
  scroll_coverage:{complete:true,state:'full_height_scanned'},image_census:{complete:true,confirmed_broken_count:0},

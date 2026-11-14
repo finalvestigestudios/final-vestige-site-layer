@@ -73,7 +73,8 @@ function inspectRun(run, label, reasons) {
           !['exact_url_or_jetpack_origin','exact_url_unique_alt'].includes(slot.match) ||
           slot.current_src_identity_verified !== true || slot.network_final_identity_verified !== true ||
           slot.loaded_network_proof_verified !== true || slot.redirected_image_identity_unverified === true ||
-          slot.complete !== true || !positive(slot.natural_width) || !positive(slot.natural_height) || slot.http_status !== 200 ||
+          slot.complete !== true || !positive(slot.natural_width) || !positive(slot.natural_height) ||
+          !positive(slot.css_width_px) || !positive(slot.css_height_px) || slot.http_status !== 200 ||
           !/^image\//i.test(slot.response_mime_type||'') || !positive(slot.transfer_bytes) ||
           !netUrl(slot.stored_url) || !netUrl(slot.current_src) || !netUrl(slot.request_url)) {
         add(reasons, label+':unverified_or_broken_image:'+key);continue;
@@ -168,6 +169,20 @@ function compareColdImageWire(before, after) {
       if(y.natural_width<Math.min(320,x.natural_width) ||
           y.natural_height<Math.min(160,x.natural_height))
         add(reasons,'candidate_intrinsic_too_small:'+k);
+      // Actual DOM CSS dimensions are part of the evidence. Reducing intrinsic
+      // resolution below the lesser of baseline pixels and CSS*DPR is a
+      // visual-density regression even when CDP bytes appear to fall 76%.
+      const cssOk=[x.css_width_px,x.css_height_px,y.css_width_px,y.css_height_px].every(positive);
+      if(!cssOk) add(reasons,'rendered_css_geometry_missing:'+k);
+      else {
+        if(Math.abs(x.css_width_px-y.css_width_px)>1 ||
+           Math.abs(x.css_height_px-y.css_height_px)>1)
+          add(reasons,'rendered_css_geometry_changed:'+k);
+        const dpr=before.viewport==='390x844'?2:1;
+        if(y.natural_width<Math.min(x.natural_width,Math.ceil(y.css_width_px*dpr)) ||
+           y.natural_height<Math.min(x.natural_height,Math.ceil(y.css_height_px*dpr)))
+          add(reasons,'candidate_display_density_regression:'+k);
+      }
     }
     paired.push({post_id:id,image_slots:bkeys.length,baseline_cdp_bytes:br.computed,candidate_cdp_bytes:ar.computed,
       sources:bkeys.map(k=>({image_key:k,baseline_stored_url:bs.get(k).stored_url,

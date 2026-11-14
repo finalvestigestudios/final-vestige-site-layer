@@ -1,0 +1,145 @@
+{
+  "schema": "fv-cdp-css-dpr-wire-pair-gate-v1",
+  "observed_local_date": "2026-11-14",
+  "scope": "Existing draft #183 cold image comparator; isolated child PR; no site modification",
+  "original_comparator_blob_sha": "fc7c662f72fbba99b6078cdc7ba18c6cf21110c1",
+  "baseline": {
+    "posts": 61,
+    "stored_inline_images": 355,
+    "external_references_media_census": 288,
+    "site_qa_external_references": 286,
+    "reported_broken_sources": 42,
+    "confirmed_broken_in_guest_browser": null,
+    "measured_sitewide_transfer_saving_percent": null
+  },
+  "latest_oversize_originals": {
+    "threshold_bytes_strictly_greater_than": 1500000,
+    "count": 16,
+    "stored_original_bytes": 49107665,
+    "visitor_transfer_bytes": null
+  },
+  "data_path": {
+    "collector": "qa/media-recovery/browser_probe_chrome.cjs",
+    "projection": "qa/media-recovery/browser_probe_core.cjs",
+    "comparison": "qa/media-recovery/compare_cold_image_wire_v1.cjs",
+    "source_url_verification": "original + currentSrc + request URL and CDP request ID"
+  },
+  "new_fields": [
+    "stored_images[].css_width_px",
+    "stored_images[].css_height_px"
+  ],
+  "dpr_by_verified_viewport": {
+    "390x844": 2,
+    "1440x900": 1
+  },
+  "test_only_scenarios": [
+    {
+      "scenario": "mobile_390_css_dpr2_960_candidate",
+      "baseline_natural_px": [
+        1600,
+        1200
+      ],
+      "candidate_px": [
+        960,
+        720
+      ],
+      "rendered_css_px": [
+        390,
+        292
+      ],
+      "dpr": 2,
+      "lab_wire_bytes": [
+        1000,
+        240
+      ],
+      "expected": "LAB_PAIR_MEASURED",
+      "savings_example_percent": 76
+    },
+    {
+      "scenario": "mobile_500_css_dpr2_960_candidate",
+      "baseline_natural_px": [
+        1600,
+        1200
+      ],
+      "candidate_px": [
+        960,
+        720
+      ],
+      "rendered_css_px": [
+        500,
+        375
+      ],
+      "dpr": 2,
+      "lab_wire_bytes": [
+        1000,
+        240
+      ],
+      "expected": "HOLD",
+      "reason": "candidate_display_density_regression"
+    },
+    {
+      "scenario": "desktop_1024_css_dpr1_960_candidate",
+      "baseline_natural_px": [
+        1600,
+        1200
+      ],
+      "candidate_px": [
+        960,
+        720
+      ],
+      "rendered_css_px": [
+        1024,
+        768
+      ],
+      "dpr": 1,
+      "lab_wire_bytes": [
+        1000,
+        240
+      ],
+      "expected": "HOLD",
+      "reason": "candidate_display_density_regression"
+    }
+  ],
+  "priority_original_source_map": [
+    {
+      "slot": "285:5",
+      "url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "candidate_catalog": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "candidate_native_px": [
+        819,
+        614
+      ],
+      "original_crop_match": "UNVERIFIED",
+      "rights": "PD-self catalog assertion, scene and crop unverified",
+      "guest_http_status": null
+    },
+    {
+      "slot": "287:5",
+      "url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "candidate_catalog": "https://floridamemory.com/items/show/32082",
+      "candidate_native_px": null,
+      "original_crop_match": "NOT_SAME_PHOTO",
+      "rights": "Florida Memory separate archival scene; original publisher credits University Press of Florida",
+      "guest_http_status": null
+    },
+    {
+      "slot": "418:2",
+      "url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "candidate_catalog": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+      "candidate_native_px": null,
+      "original_crop_match": "UNVERIFIED",
+      "rights": "USCG/source scene, exact rights and crop pending",
+      "guest_http_status": null
+    }
+  ],
+  "release": {
+    "archive_binary_downloads": 0,
+    "wordpress_writes": 0,
+    "media_caching": false,
+    "homepage_edits": false,
+    "pr_merge": false,
+    "production_deployment": false,
+    "subscription_spend_usd": 0
+  },
+  "limitations": "Synthetic fixture statuses and wire bytes are not actual browser measurements. No rights clearance, scene parity or production repair claimed."
+}
