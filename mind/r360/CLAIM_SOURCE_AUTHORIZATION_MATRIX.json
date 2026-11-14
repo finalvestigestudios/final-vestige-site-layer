@@ -1,0 +1,209 @@
+{
+  "run": "R360",
+  "checked_on": "2026-11-13",
+  "sources": {
+    "zen": "https://zen12.com/",
+    "insp": "https://inspire3.com/",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "brain": "https://brainwaveshots.com/focus-shot",
+    "hyp": "https://hypnosislive.com/",
+    "hypfaq": "https://hypnosislive.com/faq",
+    "eg": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "eeg": "https://doi.org/10.1371/journal.pone.0286023",
+    "mind": "https://doi.org/10.1016/j.jpsychires.2023.12.009",
+    "door": "https://doi.org/10.3758/BF03208840",
+    "followup": "https://pubmed.ncbi.nlm.nih.gov/12230832/",
+    "focus": "https://finalvestige.com/focus/",
+    "puys": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/"
+  },
+  "verification_scope": "public-source checks and targeted account-mail searches; not an authenticated affiliate portal or FV Payhip backend",
+  "claims": [
+    {
+      "claim": "Zen12 Premium lists 12 levels",
+      "category": "seller_content",
+      "editorial_decision": "approved_attributed_description",
+      "source": "https://zen12.com/"
+    },
+    {
+      "claim": "Zen12 Premium lists 48 MP3s",
+      "category": "seller_content",
+      "editorial_decision": "approved_attributed_description",
+      "source": "https://zen12.com/"
+    },
+    {
+      "claim": "Zen12 includes four audio styles per level",
+      "category": "seller_content",
+      "editorial_decision": "approved_attributed_description",
+      "source": "https://zen12.com/"
+    },
+    {
+      "claim": "Zen12 displayed $87.99 on November 13, 2026",
+      "category": "merchant_price_snapshot",
+      "editorial_decision": "dated_only_checkout_unverified",
+      "source": "https://zen12.com/"
+    },
+    {
+      "claim": "Zen12 states one-year refund guarantee",
+      "category": "seller_policy_claim",
+      "editorial_decision": "dated_qualified_no_refund_test",
+      "source": "https://zen12.com/"
+    },
+    {
+      "claim": "Zen12 delivers one hour of meditation in twelve minutes",
+      "category": "unsupported_merchant_efficacy",
+      "editorial_decision": "exclude_as_fact",
+      "source": "https://zen12.com/"
+    },
+    {
+      "claim": "Zen12 automatically eliminates anxiety",
+      "category": "unsupported_health_claim",
+      "editorial_decision": "exclude",
+      "source": "https://zen12.com/"
+    },
+    {
+      "claim": "Zen12 permanently improves concentration",
+      "category": "unsupported_product_effect",
+      "editorial_decision": "exclude",
+      "source": "https://zen12.com/"
+    },
+    {
+      "claim": "Zen12 treatment is safe for all users",
+      "category": "unsupported_safety_claim",
+      "editorial_decision": "exclude",
+      "source": "https://zen12.com/"
+    },
+    {
+      "claim": "Focus Shot lists 15 and 30 minute formats",
+      "category": "seller_content",
+      "editorial_decision": "approved_attributed_description",
+      "source": "https://brainwaveshots.com/focus-shot"
+    },
+    {
+      "claim": "Focus Shot is proven to sustain hours of laser focus",
+      "category": "unsupported_merchant_efficacy",
+      "editorial_decision": "exclude",
+      "source": "https://brainwaveshots.com/focus-shot"
+    },
+    {
+      "claim": "Focus Shot displayed sale/list prices",
+      "category": "merchant_price_snapshot",
+      "editorial_decision": "omit_from_pilot_until_checkout_verified",
+      "source": "https://brainwaveshots.com/focus-shot"
+    },
+    {
+      "claim": "Hypnosis Live offers downloadable self-hypnosis MP3s",
+      "category": "seller_content",
+      "editorial_decision": "approved_attributed_description",
+      "source": "https://hypnosislive.com/"
+    },
+    {
+      "claim": "Hypnosis Live self-hypnosis guarantees outcomes",
+      "category": "unsupported_merchant_efficacy",
+      "editorial_decision": "exclude",
+      "source": "https://hypnosislive.com/"
+    },
+    {
+      "claim": "Hypnosis Live generic FAQ overrides exact SKU terms",
+      "category": "policy_mismatch_risk",
+      "editorial_decision": "do_not_assume",
+      "source": "https://hypnosislive.com/faq"
+    },
+    {
+      "claim": "Inspire3 operates a public affiliate program",
+      "category": "public_partner_offer",
+      "editorial_decision": "program_exists_but_not_FV_approval",
+      "source": "https://affiliates.inspire3.com/"
+    },
+    {
+      "claim": "FV has an accepted affiliate account",
+      "category": "account_specific_permission",
+      "editorial_decision": "not_verified_hold",
+      "source": "https://affiliates.inspire3.com/"
+    },
+    {
+      "claim": "FV has an issued earning link",
+      "category": "account_specific_permission",
+      "editorial_decision": "not_verified_hold",
+      "source": "https://affiliates.inspire3.com/"
+    },
+    {
+      "claim": "FV permitted YouTube/TikTok/email affiliate placements",
+      "category": "account_specific_permission",
+      "editorial_decision": "not_verified_hold",
+      "source": "https://affiliates.inspire3.com/"
+    },
+    {
+      "claim": "FV commission rate is 60%",
+      "category": "account_specific_money_claim",
+      "editorial_decision": "do_not_quote_as_FV_terms",
+      "source": "https://affiliates.inspire3.com/"
+    },
+    {
+      "claim": "EEG review covers 14 studies with mixed findings",
+      "category": "independent_science",
+      "editorial_decision": "approved_with_limitations",
+      "source": "https://doi.org/10.1371/journal.pone.0286023"
+    },
+    {
+      "claim": "2024 mindfulness review proves branded audio works",
+      "category": "unjustified_extrapolation",
+      "editorial_decision": "exclude",
+      "source": "https://doi.org/10.1016/j.jpsychires.2023.12.009"
+    },
+    {
+      "claim": "1998 door substitution study proves meditation fixes attention",
+      "category": "unjustified_extrapolation",
+      "editorial_decision": "exclude",
+      "source": "https://doi.org/10.3758/BF03208840"
+    },
+    {
+      "claim": "FTC requires clear conspicuous affiliate disclosure",
+      "category": "regulatory_guidance",
+      "editorial_decision": "adjacent_offer_and_link",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "claim": "FTC requires scientifically adequate support for health claims",
+      "category": "regulatory_guidance",
+      "editorial_decision": "product_specific_evidence_required",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "claim": "Puységur files establish modern magnetic cure efficacy",
+      "category": "historical_category_error",
+      "editorial_decision": "exclude",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "claim": "Existing Focus Fieldbook is a live free resource",
+      "category": "first_party_verified",
+      "editorial_decision": "preserve_single_jetpack_funnel",
+      "source": "https://finalvestige.com/focus/"
+    },
+    {
+      "claim": "Actual paid affiliate sale from outbound click",
+      "category": "measurement_category_error",
+      "editorial_decision": "never_infer_sale_from_click",
+      "source": "https://affiliates.inspire3.com/"
+    },
+    {
+      "claim": "Actual FV Payhip paid SKU in Mind vertical",
+      "category": "account_specific_merchant_data",
+      "editorial_decision": "not_verified_hold_no_link",
+      "source": null
+    }
+  ],
+  "release": {
+    "affiliate_activation": false,
+    "owned_product_activation": false,
+    "live_wp_write": false,
+    "duplicate_email_forms": false,
+    "tracking_script": false,
+    "actual_settled_sales": false,
+    "commercial_cta_enabled": false,
+    "reason": "named FV partner acceptance, earning link, channel permissions, merchant checkout and settlement are not authenticated"
+  },
+  "test_gate": "No authorization may be inferred from an affiliate signup page, promotional email, generic seller promise or public payout copy."
+}
