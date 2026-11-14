@@ -1,0 +1,87 @@
+{
+  "version": "R348",
+  "campaign": "fv-dispatch-mind-launch-2026-10-30",
+  "status": "HOLD_UNSENT",
+  "master_pr": 175,
+  "stack_base_pr": 2434,
+  "source_issue": 174,
+  "editorial_issue_numbers": [
+    1,
+    2,
+    4,
+    6
+  ],
+  "commercial_issue_numbers": [
+    3,
+    5
+  ],
+  "not_adopted_alternative": {
+    "issue": 4,
+    "subject": "Apollo 1: The hatch wasn't the whole story",
+    "preheader": "A sealed cabin, an unknown ignition point, and the danger of one-cause stories."
+  },
+  "approval": {
+    "founder_final_send": false,
+    "merchant_named_acceptance": false,
+    "merchant_email_permission": false,
+    "affiliate_earning_url": false,
+    "live_approved_zen12_guide": false,
+    "live_approved_total_focus_guide": false,
+    "valid_fv_postal": false,
+    "native_unsubscribe_received": false,
+    "actual_welcome_received": false,
+    "eligible_subscribers_reconciled": false,
+    "native_wordpress_received_email": false
+  },
+  "wordpress_snapshot": {
+    "as_of": "2026-11-14T06:35:07Z",
+    "newsletter_enabled": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "non_additive": true,
+    "eligible_inbox_recipients": "UNKNOWN",
+    "recent_posts_email_status": "never_sent_opted_out"
+  },
+  "revenue": {
+    "qualified_human_sessions": null,
+    "settled_paid_orders": null,
+    "verified_net_revenue": null,
+    "net_revenue_per_1000_qualified_sessions": null
+  },
+  "issues": [
+    {
+      "issue": 1,
+      "status": "HOLD_UNSENT",
+      "merchant_gate": "NOT_APPLICABLE"
+    },
+    {
+      "issue": 2,
+      "status": "HOLD_UNSENT",
+      "merchant_gate": "NOT_APPLICABLE"
+    },
+    {
+      "issue": 3,
+      "status": "HOLD_UNSENT",
+      "merchant_gate": "HOLD_MERCHANT"
+    },
+    {
+      "issue": 4,
+      "status": "HOLD_UNSENT",
+      "merchant_gate": "NOT_APPLICABLE"
+    },
+    {
+      "issue": 5,
+      "status": "HOLD_UNSENT",
+      "merchant_gate": "HOLD_MERCHANT"
+    },
+    {
+      "issue": 6,
+      "status": "HOLD_UNSENT",
+      "merchant_gate": "NOT_APPLICABLE"
+    }
+  ],
+  "safety": "NO_SEND_NO_SCHEDULE_NO_PUBLISH_NO_IMPORT_NO_SETTINGS_NO_AFFILIATE_ACTIVATION"
+}
