@@ -84,6 +84,12 @@ class Core(unittest.TestCase):
     def test_nonpending_review_flag(self):
         o=metadata('special-case');o['safety_review']['state']='not-required'
         self.assertIn('ORIGINAL_NONPENDING_SAFETY_STATE_REQUIRES_QD',v.compare_doc('article',o,o,sample(),sample())[1])
+    def test_related_original_link_loss(self):
+        o=metadata('a');o['related']=['original-article'];c=copy.deepcopy(o);c['related']=[]
+        self.assertIn('RELATED_RESOURCE_REMOVED',v.compare_doc('article',o,c,sample(),sample())[0])
+    def test_related_resource_addition(self):
+        o=metadata('a');c=copy.deepcopy(o);c['related']=['new']
+        self.assertIn('RELATED_RESOURCE_ADDED_RECHECK',v.compare_doc('article',o,c,sample(),sample())[1])
     def test_uncleared_original_approval(self):
         o=metadata('making-water-safer');o['safety_review']['state']='approved'
         o['safety_review']['scope']='This is NOT an independent safety audit.'
@@ -96,6 +102,8 @@ class Core(unittest.TestCase):
 
 # Each table row is one independent unittest, with its own name/assertion.
 META_CASES = [
+ ('editorial_status_change',lambda c:c['status'].__setitem__('editorial','published'),'EDITORIAL_STATUS_DRIFT','error'),
+ ('related_removed',lambda c:c.__setitem__('related',['new']),'RELATED_RESOURCE_ADDED_RECHECK','review'),
  ('publish_public',lambda c:c['status'].__setitem__('publish','publish'),'CANDIDATE_PUBLICATION_STATE','error'),
  ('publish_none',lambda c:c['status'].__setitem__('publish',None),'CANDIDATE_PUBLICATION_STATE','error'),
  ('status_missing',lambda c:c.pop('status'),'CANDIDATE_PUBLICATION_STATE','error'),
