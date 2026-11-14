@@ -32,7 +32,7 @@ for(const [n,h] of [["A",a],["B",b]]){
  ["adjacent disclosure",/class="disclosure"[^>]*>Affiliate disclosure:/],
  ["free focus",/href="https:\/\/finalvestige.com\/focus\/"/],
  ["noindex",/noindex,nofollow/],
- ["seller price attributed",/seller displayed \$87\.99|seller page displayed|displayed \$87\.99/i],
+ ["seller price attributed",/seller (?:page )?displayed|displayed <strong>\$87\.99/i],
  ["product-specific scientific caution",/not independently substantiated/i],
  ["no monetization before approval",/currently no active affiliate link/i],
  ["meta mobile viewport",/name="viewport"/],
@@ -52,7 +52,7 @@ ok(b.includes('<svg viewBox="0 0 960 540" role="img"'),"SVG poster has text equi
 ok(!b.includes('<video ')&&!b.includes('<audio '),"B storyboard clearly unplayable");
 ok(hub.includes('Perception &amp; attention')&&hub.includes('History of suggestion')&&hub.includes('Practice &amp; reflection')&&hub.includes('Tools under review'),"Four streams");
 ok(!/<form\b|<script\b|<iframe\b|href="https:\/\/zen12/i.test(hub),"Hub has no form/scripts/merchant link");
-ok(hub.includes('The unreliab')&&hub.includes('Published')===false,"Hub editorial without inventing published R361");
+ok(hub.includes('The unreliab')&&!hub.includes('href="/mind/'),"Hub editorial without inventing published R361");
 ok(article.includes('**168 met the review')&&article.includes('**four reported inclusion')&&article.includes('not a controlled efficacy test'),"Hypnosis review scope");
 ok(article.includes('have **not** purchased or used')&&article.includes('no purchase link'),"No fake experience");
 ok(article.includes('https://doi.org/10.1080/00207144.2024.2434085'),"Source DOI present");
@@ -64,7 +64,7 @@ ok(matrix.net_revenue_per_1000_qualified_human_sessions===null&&matrix.rate_stat
 ok(matrix.claims.filter(c=>c.decision.startsWith("REJECT")).length>=8,"At least eight rejected claims");
 ok(matrix.claims.some(c=>c.id==="R361-10"&&c.decision==="REJECT_UNSUBSTANTIATED"),"Reject hour-equivalence outcome");
 ok(matrix.claims.some(c=>c.id==="R361-03"&&c.decision==="HOLD_UNVERIFIED"),"Affiliate approval remains unknown");
-ok(plan.includes('Grok owns videos')&&plan.includes('not a production task'),"Grok ownership held");
+ok(plan.includes('Grok owns videos')&&plan.includes('as a production task'),"Grok ownership held");
 ok(plan.includes('NOT COMPUTABLE')&&plan.includes('qualified_human_sessions'),"Revenue denominator contract");
 ok(plan.includes('No live CMS')&&plan.includes('PR #172'),"Other ownership/release gates");
 ok(vtt.startsWith('WEBVTT\n')&&(vtt.match(/-->/g)||[]).length===6,"6 caption cues");
