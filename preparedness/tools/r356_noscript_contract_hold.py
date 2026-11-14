@@ -5,6 +5,8 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 import r355_sensitive_form_privacy_provenance_hold as prior
 
 SCHEMA = 'fv-preparedness-r356-noscript-contract-v1'
