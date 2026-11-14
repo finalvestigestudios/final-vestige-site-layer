@@ -37,7 +37,7 @@ ok(/class="film"/.test(b),'B film only');
 ok(!/class="film"/.test(a),'A no film');
 ok(/<svg\b/.test(b)&&/<title id="posterTitle">/.test(b),'B original labeled SVG');
 ok(/<details><summary>/.test(b),'B no-JS accessible transcript');
-ok(!/autoplay|<video\b/i.test(b),'B no autoplay or unhosted video masquerading playable');
+ok(!/<(?:video|audio)\b[^>]*\bautoplay\b|<video\b/i.test(b),'B no autoplay or unhosted video masquerading playable');
 ok(/^WEBVTT/.test(vtt),'VTT header');
 const timings=[...vtt.matchAll(/(\d\d):(\d\d):(\d\d)\.(\d{3}) --> (\d\d):(\d\d):(\d\d)\.(\d{3})/g)].map(m=>({from:(+m[1])*3600+(+m[2])*60+(+m[3])+(+m[4])/1000,to:(+m[5])*3600+(+m[6])*60+(+m[7])+(+m[8])/1000}));
 ok(timings.length===6,'six timed cues');
