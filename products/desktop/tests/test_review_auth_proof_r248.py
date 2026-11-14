@@ -12,7 +12,20 @@ from dataclasses import dataclass
 DESKTOP = Path(__file__).resolve().parents[1]
 if str(DESKTOP) not in sys.path:
     sys.path.insert(0, str(DESKTOP))
-from fvs_suite.review_target import revalidate_or_revoke
+from fvs_suite.review_target import revalidate_or_revoke as _scoped_gate
+from fvs_suite.offline_entitlement import Entitlement
+from datetime import datetime, timezone
+
+
+def _synthetic_proof():
+    """Unsigned shape fixture: this test does not assert cryptographic validity."""
+    return Entitlement("grants", "SYNTHETIC-UNSIGNED", "Test Holder",
+                       datetime(2099, 1, 1, tzinfo=timezone.utc))
+
+
+def revalidate_or_revoke(authorize, clear_sensitive_view):
+    """Exercise the product-scoped review path in inherited headless tests."""
+    return _scoped_gate(authorize, clear_sensitive_view, product="grants")
 
 
 @dataclass(frozen=True)
@@ -24,15 +37,15 @@ class AuthProofR248Tests(unittest.TestCase):
     def test_authoritative_proof_is_accepted_once(self):
         calls = []
         self.assertTrue(revalidate_or_revoke(
-            lambda: calls.append("verify") or Proof(),
+            lambda: calls.append("verify") or _synthetic_proof(),
             lambda: calls.append("scrub")))
         self.assertEqual(calls, ["verify"])
 
-    def test_explicit_true_is_accepted(self):
+    def test_explicit_true_is_denied(self):
         calls = []
-        self.assertTrue(revalidate_or_revoke(lambda: True,
-                                             lambda: calls.append("scrub")))
-        self.assertEqual(calls, [])
+        self.assertFalse(revalidate_or_revoke(lambda: True,
+                                              lambda: calls.append("scrub")))
+        self.assertEqual(calls, ["scrub"])
 
     def test_all_missing_and_falsey_proofs_deny(self):
         for proof in (False, None, 0, 0.0, "", [], {}, (), b""):
@@ -78,7 +91,7 @@ class AuthProofR248Tests(unittest.TestCase):
 
     def test_positive_proof_does_not_scrub_existing_view(self):
         view = {"path": "synthetic.csv"}
-        self.assertTrue(revalidate_or_revoke(lambda: Proof(), view.clear))
+        self.assertTrue(revalidate_or_revoke(lambda: _synthetic_proof(), view.clear))
         self.assertEqual(view, {"path": "synthetic.csv"})
 
     def test_denial_never_emits_verifier_diagnostics(self):

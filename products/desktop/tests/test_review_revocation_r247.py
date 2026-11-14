@@ -9,13 +9,26 @@ import unittest
 DESKTOP = Path(__file__).resolve().parents[1]
 if str(DESKTOP) not in sys.path:
     sys.path.insert(0, str(DESKTOP))
-from fvs_suite.review_target import revalidate_or_revoke
+from fvs_suite.review_target import revalidate_or_revoke as _scoped_gate
+from fvs_suite.offline_entitlement import Entitlement
+from datetime import datetime, timezone
+
+
+def _synthetic_proof():
+    """Unsigned shape fixture: this test does not assert cryptographic validity."""
+    return Entitlement("grants", "SYNTHETIC-UNSIGNED", "Test Holder",
+                       datetime(2099, 1, 1, tzinfo=timezone.utc))
+
+
+def revalidate_or_revoke(authorize, clear_sensitive_view):
+    """Exercise the product-scoped review path in inherited headless tests."""
+    return _scoped_gate(authorize, clear_sensitive_view, product="grants")
 
 
 class EntitlementRevocationR247Tests(unittest.TestCase):
     def test_valid_entitlement_does_not_scrub_or_repeat_check(self):
         calls = []
-        proof = object()
+        proof = _synthetic_proof()
         self.assertTrue(revalidate_or_revoke(
             lambda: calls.append("verify") or proof,
             lambda: calls.append("scrub")))
@@ -48,7 +61,7 @@ class EntitlementRevocationR247Tests(unittest.TestCase):
 
     def test_success_preserves_review_state(self):
         view = {"report": "synthetic.csv", "queue": ["a"]}
-        self.assertTrue(revalidate_or_revoke(lambda: object(), view.clear))
+        self.assertTrue(revalidate_or_revoke(lambda: _synthetic_proof(), view.clear))
         self.assertEqual(view, {"report": "synthetic.csv", "queue": ["a"]})
 
     def test_scrub_error_never_returns_authorized(self):
