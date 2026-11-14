@@ -1,0 +1,30 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {validate}=require('./validate_wp_123_media_16_draft_20261113.cjs');
+const baseline=require('./wp_123_media_16_draft_20261113.json');
+let passed=0;
+function check(name,change,shouldPass=false){
+ const x=JSON.parse(JSON.stringify(baseline));if(change)change(x);
+ const v=validate(x);assert.equal(v.ok,shouldPass,name+': '+v.errors.join(','));passed++;
+}
+check('untouched live read-only audit',null,true);
+check('missing 16th row',x=>x.oversized_media.pop());
+check('duplicate media ID',x=>x.oversized_media[0].media_id=2432);
+check('forged visitor 404',x=>x.oversized_media[0].visitor_image_http_status=404);
+check('forged wire bytes',x=>x.oversized_media[0].visitor_encoded_transfer_bytes=200);
+check('false public domain clearance',x=>x.oversized_media[0].rights_status='PUBLIC_DOMAIN');
+check('unlicensed rehosting enabled',x=>x.oversized_media[0].rights_to_rehost_verified=true);
+check('cache permission enabled',x=>x.oversized_media[0].local_copy_or_cache_authorized=true);
+check('draft falsely marked published',x=>x.inventory.added_media_parent_status='publish');
+check('draft parent changed',x=>x.oversized_media.find(v=>v.media_id===2432).parent_content_id=33);
+check('new draft image replaced',x=>x.oversized_media.find(v=>v.media_id===2432).source_url='https://finalvestige.com/wp-content/uploads/2026/11/other.png');
+check('claim 76 percent proven',x=>x.inventory.claimed_76_percent_wire_reduction_measured=true);
+check('claim 42 browser broken',x=>x.inventory.historical_reported_broken_42_guest_confirmed=true);
+check('storage total falsified',x=>x.inventory.originals_above_1500000_total_storage_bytes--);
+check('unauthorized WordPress writes',x=>x.rights_and_quality_policy.wordpress_rewrites_authorized=true);
+check('960 width exceeded',x=>x.oversized_media[0].conditional_derivative_max_px.width=1024);
+check('distorted crop ratio',x=>x.oversized_media[0].conditional_derivative_max_px.height=1);
+check('unverified rights omitted',x=>delete x.oversized_media[0].rights_status);
+check('new attachment body claimed published',x=>x.inventory.added_media_is_proven_published_article_image=true);
+check('offsite source injected',x=>x.oversized_media[0].source_url='https://evil.example/a.png');
+console.log(passed+'/'+passed+' media inventory native Node assertions PASS');
