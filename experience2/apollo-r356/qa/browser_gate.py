@@ -14,11 +14,11 @@ def render(method):
     return subprocess.check_output(['php','-r',code],text=True)
 html_note=render('fv_apollo_r356_postfire')
 html_full=render('fv_apollo_r356_experience')
-styles_note=(EX/'apollo-r355/postfire-ledger.css').read_text()
+styles_note=(EX/'apollo-r355/postfire-ledger.css').read_text()+'\n'+(EX/'apollo-r356/assets/print-proof.css').read_text()
 full_css='\n'.join((EX/x).read_text() for x in (
 'apollo-r339/assets/chronology-rail.css','apollo-r340/assets/accession-gallery.css',
 'apollo-r345/evidence-plate.css','apollo-r347/assets/source-index.css',
-'apollo-r348/assets/source-custody.css','apollo-r355/postfire-ledger.css'))
+'apollo-r348/assets/source-custody.css','apollo-r355/postfire-ledger.css','apollo-r356/assets/print-proof.css'))
 js=(EX/'apollo-r347/assets/source-index.js').read_text()
 def document(content,css):
     return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0}'+css+'</style></head><body>'+content+'</body></html>'
