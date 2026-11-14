@@ -1,0 +1,56 @@
+{
+  "source_pr": 175,
+  "source_commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "manifest_blob": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+  "previews": "OFFLINE_ONLY_NOT_JETPACK",
+  "issues": [
+    {
+      "issue": 1,
+      "source_file": "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md",
+      "git_blob": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "subject": "The mind is not a camera",
+      "kind": "editorial",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 2,
+      "source_file": "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md",
+      "git_blob": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "subject": "Before hypnosis had a name",
+      "kind": "editorial",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 3,
+      "source_file": "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md",
+      "git_blob": "aeeef34efea0cc281f69901488e4501fea851245",
+      "subject": "The twelve-minute meditation question",
+      "kind": "commercial-review-pending",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 4,
+      "source_file": "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md",
+      "git_blob": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "kind": "editorial",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 5,
+      "source_file": "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md",
+      "git_blob": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "subject": "Before you press play on a hypnosis audio",
+      "kind": "commercial-review-pending",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 6,
+      "source_file": "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md",
+      "git_blob": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "subject": "What did seven days of attention reveal?",
+      "kind": "editorial",
+      "release": "HOLD_UNSENT"
+    }
+  ]
+}
