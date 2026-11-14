@@ -50,7 +50,14 @@ def check(snapshot):
     completions = [d for d in (utc(e.get('date')) for e in events
                      if e.get('action') == 'backup_complete_full') if d]
     backup_completed = max(completions, default=None)
-    scan_started = utc((scan.get('last_scan') or {}).get('started_at'))
+    last_scan = scan.get('last_scan') or {}
+    scan_started = utc(last_scan.get('started_at'))
+    # A timestamp and error=False alone do not prove the scan completed.
+    # This strictly requires the Jetpack status snapshot's full progress and idle state.
+    scan_complete = (scan.get('state') == 'idle'
+                     and type(last_scan.get('progress')) is int
+                     and last_scan['progress'] == 100
+                     and last_scan.get('error') is False)
     last = backup.get('backups') or {}
     results = []
 
@@ -74,10 +81,10 @@ def check(snapshot):
          f"backup_completed={backup_completed.isoformat() if backup_completed else 'UNKNOWN'}; patch={patch_at.isoformat() if patch_at else 'UNKNOWN'}; last_attempt={last.get('last_attempt_status', 'UNKNOWN')}",
          'A pre-fix recovery point can restore a vulnerable plugin; independently check post-restore version.')
     gate('POST_FIX_CLEAN_SCAN', patch_at is not None and scan_started is not None
-         and scan_started > patch_at and (scan.get('last_scan') or {}).get('error') is False
+         and scan_started > patch_at and scan_complete
          and scan.get('threats') == [] and scan.get('ignored_threats') == [],
-         f"scan_started={scan_started.isoformat() if scan_started else 'UNKNOWN'}; patch={patch_at.isoformat() if patch_at else 'UNKNOWN'}",
-         'A scan begun before a patch is not a completed post-fix scan, even if the fixer ran during it.')
+         f"scan_started={scan_started.isoformat() if scan_started else 'UNKNOWN'}; patch={patch_at.isoformat() if patch_at else 'UNKNOWN'}; state={scan.get('state', 'UNKNOWN')}; progress={last_scan.get('progress', 'UNKNOWN')}; error={last_scan.get('error', 'UNKNOWN')}",
+         'Require a 100% complete, non-error, idle Jetpack scan started after the patch. A timestamp alone cannot prove completion.')
     return results
 
 
