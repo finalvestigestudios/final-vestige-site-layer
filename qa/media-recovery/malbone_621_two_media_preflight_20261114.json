@@ -1,0 +1,106 @@
+{
+  "schema": "fv-malbone-two-virtual-derivative-hold-v1",
+  "date": "2026-11-14",
+  "method": "authenticated readonly WordPress post 621 edit and media.get 1257+1258; NYPL catalog",
+  "post": {
+    "id": 621,
+    "status": "publish",
+    "modified": "2026-09-09T12:03:35",
+    "url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+    "raw_blocks_use_sizeSlug_large": true,
+    "raw_img_src_original": true,
+    "guest_currentSrc_measured": false
+  },
+  "cohort": {
+    "published_slots": 2,
+    "original_stored_bytes": 10352064,
+    "existing_site_oversize_count": 16,
+    "existing_site_oversize_original_bytes": 49107665,
+    "reported_42_broken_browser_confirmed": false,
+    "proposed_76_percent_wire_saving_measured": false
+  },
+  "policy": {
+    "max_width_px": 960,
+    "no_upscale": true,
+    "site_qa_collector_owner": 154,
+    "homepage_in_scope": false,
+    "wp_write_authorized": false,
+    "media_download_authorized": false,
+    "rehost_or_cache_authorized": false,
+    "release_authorized": false
+  },
+  "items": [
+    {
+      "slot": 0,
+      "media_id": 1257,
+      "stored_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "stored_bytes": 4798395,
+      "native_px": [
+        4000,
+        3000
+      ],
+      "wordpress_large": {
+        "virtual": true,
+        "width": 1024,
+        "height": 768,
+        "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=1024%2C768&ssl=1"
+      },
+      "conditional_960px": {
+        "width": 960,
+        "height": 720,
+        "css_dpr2_max": 480,
+        "derivative_url": null,
+        "approved": false
+      },
+      "provenance": {
+        "attribution_in_post": "GeneralPunger / Wikimedia Commons, CC BY-SA 4.0",
+        "primary_catalog_url": null,
+        "exact_file_identified": false,
+        "right_to_transform_verified": false,
+        "needs_license_link_and_sharealike": true,
+        "map_readability_hold": false
+      },
+      "visitor_http": null,
+      "visitor_currentSrc": null,
+      "visitor_bytes": null,
+      "rights_approved": false,
+      "release": "HOLD"
+    },
+    {
+      "slot": 1,
+      "media_id": 1258,
+      "stored_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "stored_bytes": 5553669,
+      "native_px": [
+        5667,
+        3831
+      ],
+      "wordpress_large": {
+        "virtual": true,
+        "width": 1024,
+        "height": 692,
+        "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1024%2C692&ssl=1"
+      },
+      "conditional_960px": {
+        "width": 960,
+        "height": 649,
+        "css_dpr2_max": 480,
+        "derivative_url": null,
+        "approved": false
+      },
+      "provenance": {
+        "attribution_in_post": "New York Public Library Digital Collections; public domain in the United States",
+        "primary_catalog_url": "https://old-digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0",
+        "exact_file_identified": false,
+        "right_to_transform_verified": false,
+        "needs_license_link_and_sharealike": false,
+        "map_readability_hold": true
+      },
+      "visitor_http": null,
+      "visitor_currentSrc": null,
+      "visitor_bytes": null,
+      "rights_approved": false,
+      "release": "HOLD"
+    }
+  ]
+}
