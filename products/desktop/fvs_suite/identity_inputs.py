@@ -16,13 +16,28 @@ _DATE_FORMATS = (
     (re.compile(r"[0-9]{1,2}/[0-9]{1,2}/[0-9]{2}\Z"), "%m/%d/%y"),
 )
 _DATE_ERROR = "Invalid date (use YYYY-MM-DD, MM/DD/YYYY, or MM/DD/YY)"
+# The reusable direct API must not upper-case or regex-process a string larger
+# than a sane source cell. Use the SpendMap native-cell ceiling; the shared CSV
+# file reader's 64 MiB limit by itself does not bound a single identifier.
+MAX_SOURCE_IDENTITY_CHARS = 1_048_576
+_IDENTITY_BUDGET_ERROR = "Source identity text exceeds length limit"
 
 
 def normalize_key(value: str) -> str:
-    """Legacy ASCII matching key with no caller-defined conversion hooks."""
+    """Legacy ASCII matching key, with bounded native input and expansion.
+
+    Unicode uppercasing can expand source text (e.g. sharp S to SS); reject
+    such expansions before regex processing. Do not truncate identifiers:
+    changing the key could conceal collisions requiring human review.
+    """
     if type(value) is not str:
         raise ValueError("Invalid source identity text")
-    return re.sub(r"[^A-Z0-9]+", "", value.upper())
+    if len(value) > MAX_SOURCE_IDENTITY_CHARS:
+        raise ValueError(_IDENTITY_BUDGET_ERROR)
+    upper = value.upper()
+    if len(upper) > MAX_SOURCE_IDENTITY_CHARS:
+        raise ValueError(_IDENTITY_BUDGET_ERROR)
+    return re.sub(r"[^A-Z0-9]+", "", upper)
 
 
 def parse_date(value: str):
