@@ -45,7 +45,7 @@ check(substr_count($html,'data-fv-apollo-source-index')===1,'one index');
 check(substr_count($html,'data-fv-apollo-custody')===1,'one crosswalk');
 check(substr_count($html,'data-fv-custody-approval="approved"')===8,'eight approved pages');
 check(!preg_match('/<script|<img|<iframe/i',$html),'no inline scripts, images or iframes');
-check(str_contains($html,'No single ignition') || str_contains($html,'single ignition source'),'certainty boundary preserved');
+check(strpos($html,'No single ignition')!==false || strpos($html,'single ignition source')!==false,'certainty boundary preserved');
 $urls=fv_apollo_r349_approved_sources();
 check(count($urls)===8,'exact reviewed URL allowlist count');
 foreach (fv_apollo_r347_records() as $entry)check(array_key_exists($entry['url'],$urls),'record approved link');
