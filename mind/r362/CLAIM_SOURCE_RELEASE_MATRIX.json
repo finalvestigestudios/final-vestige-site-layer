@@ -1,0 +1,488 @@
+{
+  "version": "r362",
+  "reviewed_date": "2026-11-13",
+  "authority": "independent editorial research; no merchant or owner acceptance implied",
+  "public_links_withheld": true,
+  "sources": {
+    "ftc_endorsements": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "inspire3": "https://inspire3.com/",
+    "inspire3_affiliates": "https://affiliates.inspire3.com/",
+    "zen12": "https://zen12.com/",
+    "hypnosis_live": "https://hypnosislive.com/",
+    "brainwave_focus": "https://brainwaveshots.com/focus-shot",
+    "loftus_palmer": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+    "loftus_review": "https://doi.org/10.1101/lm.94705",
+    "fake_news_meta": "https://doi.org/10.1017/mem.2024.14",
+    "hypnotic_confidence": "https://doi.org/10.1002/acp.2350030105",
+    "false_memory_review": "https://doi.org/10.1002/cpp.2567",
+    "fieldbook": "https://finalvestige.com/focus/",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "journal": "https://finalvestige.com/blog/",
+    "change_blindness": "https://finalvestige.com/2026/11/02/change-blindness/"
+  },
+  "claims": [
+    {
+      "id": "loftus_video_method",
+      "type": "historical_fact",
+      "status": "SUPPORTED",
+      "sources": [
+        "https://doi.org/10.1016/S0022-5371(74)80011-3"
+      ],
+      "limits": "Two film experiments; experimental question wording not field accuracy."
+    },
+    {
+      "id": "smash_speed",
+      "type": "experimental_finding",
+      "status": "SUPPORTED",
+      "sources": [
+        "https://doi.org/10.1016/S0022-5371(74)80011-3"
+      ],
+      "limits": "Participants estimated faster speed with smashed than milder verbs; no independent speed recording implication."
+    },
+    {
+      "id": "glass_absent",
+      "type": "experimental_finding",
+      "status": "SUPPORTED",
+      "sources": [
+        "https://doi.org/10.1016/S0022-5371(74)80011-3"
+      ],
+      "limits": "One-week later glass reports affected by wording; no glass in film; not every person."
+    },
+    {
+      "id": "misinformation_effect",
+      "type": "research_review",
+      "status": "SUPPORTED_WITH_LIMITS",
+      "sources": [
+        "https://doi.org/10.1101/lm.94705"
+      ],
+      "limits": "Misinformation can bias later reports; mechanism and person-to-person variation remain."
+    },
+    {
+      "id": "fake_news_meta_13",
+      "type": "research_meta",
+      "status": "SUPPORTED_WITH_LIMITS",
+      "sources": [
+        "https://doi.org/10.1017/mem.2024.14"
+      ],
+      "limits": "13 articles, near 40% at least one false memory, near 60% false belief in studied manipulations; not general population rate."
+    },
+    {
+      "id": "hypnosis_confidence",
+      "type": "research_review",
+      "status": "SUPPORTED_WITH_LIMITS",
+      "sources": [
+        "https://doi.org/10.1002/acp.2350030105"
+      ],
+      "limits": "Hypnosis can change confidence/accuracy relationship; does not characterize a particular commercial product."
+    },
+    {
+      "id": "lab_false_memory_induction",
+      "type": "research_review",
+      "status": "SUPPORTED_WITH_LIMITS",
+      "sources": [
+        "https://doi.org/10.1002/cpp.2567"
+      ],
+      "limits": "59 reports, diverse methods; cannot claim all hypnosis sessions produce false memories."
+    },
+    {
+      "id": "puysegur_evidence",
+      "type": "historical_archive",
+      "status": "SUPPORTED_WITH_LIMITS",
+      "sources": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "limits": "Records contain testimony, failed predictions, provenance/consent flags, not proof animal magnetism."
+    },
+    {
+      "id": "focus_52",
+      "type": "first_party_live",
+      "status": "OBSERVED",
+      "sources": [
+        "https://finalvestige.com/focus/"
+      ],
+      "limits": "Site describes 52-page free fieldbook and a single existing Dispatch/Jetpack capture route; signup email delivery not tested in this run."
+    },
+    {
+      "id": "journal_66",
+      "type": "first_party_live",
+      "status": "OBSERVED",
+      "sources": [
+        "https://finalvestige.com/blog/"
+      ],
+      "limits": "66 search results on live Journal Nov 13; not proof that all are Mind items."
+    },
+    {
+      "id": "catalog_zen12",
+      "type": "seller_format",
+      "status": "SELLER_DESCRIBES",
+      "sources": [
+        "https://inspire3.com/",
+        "https://zen12.com/"
+      ],
+      "limits": "Meditation audio series; seller language not product efficacy."
+    },
+    {
+      "id": "zen12_premium_48",
+      "type": "seller_format",
+      "status": "SELLER_DESCRIBES",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "limits": "Premium 48 MP3s across 12 levels as displayed Nov 13 2026; checkout access not authenticated."
+    },
+    {
+      "id": "zen12_premium_8799",
+      "type": "seller_price",
+      "status": "SELLER_ONLY_NOT_CHECKOUT",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "limits": "$87.99 seller display Nov 13; not payable final total or price lock."
+    },
+    {
+      "id": "zen12_guarantee",
+      "type": "seller_policy",
+      "status": "SELLER_ONLY_NOT_TESTED",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "limits": "One-year refund promise displayed; actual claim processing, exclusions and payment methods unverified."
+    },
+    {
+      "id": "zen12_1h_in_12m",
+      "type": "seller_efficacy",
+      "status": "UNSUBSTANTIATED_OMIT",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "limits": "Do not repeat as an established fact or make an implied clinically proven equivalence claim."
+    },
+    {
+      "id": "zen12_medical",
+      "type": "seller_efficacy",
+      "status": "UNSUBSTANTIATED_OMIT",
+      "sources": [
+        "https://zen12.com/",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limits": "No product-specific health outcome substantiation established."
+    },
+    {
+      "id": "hypnosis_live_catalog",
+      "type": "seller_format",
+      "status": "SELLER_DESCRIBES",
+      "sources": [
+        "https://hypnosislive.com/"
+      ],
+      "limits": "Seller describes 200+ MP3 self-hypnosis sessions; no outcome claim adopted."
+    },
+    {
+      "id": "hypnosis_live_guaranteed",
+      "type": "seller_efficacy",
+      "status": "UNSUBSTANTIATED_OMIT",
+      "sources": [
+        "https://hypnosislive.com/",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limits": "Do not carry guaranteed-results assertion."
+    },
+    {
+      "id": "brainwave_focus_format",
+      "type": "seller_format",
+      "status": "SELLER_DESCRIBES",
+      "sources": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "limits": "Focus Shot seller describes 15/30-minute files, brainwave-only versions, headphones not required."
+    },
+    {
+      "id": "brainwave_focus_outcome",
+      "type": "seller_efficacy",
+      "status": "UNSUBSTANTIATED_OMIT",
+      "sources": [
+        "https://brainwaveshots.com/focus-shot",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limits": "Laser sharp/instant focus seller promise not verified as product-specific efficacy."
+    },
+    {
+      "id": "inspire3_program_exists",
+      "type": "affiliate_public",
+      "status": "OBSERVED_NOT_APPROVED",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "limits": "Program existence is not Final Vestige partner acceptance or terms."
+    },
+    {
+      "id": "affiliate_commission",
+      "type": "affiliate_terms",
+      "status": "NOT_VERIFIED_FOR_FV",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "limits": "Public advertising of commission percentages is not a verified contract; omit payout and EPC figures from copy."
+    },
+    {
+      "id": "fv_partner_approval",
+      "type": "commercial_authorization",
+      "status": "UNVERIFIED_HOLD",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "limits": "No named publisher dashboard or acceptance obtained; targeted Gmail query did not establish it."
+    },
+    {
+      "id": "fv_affiliate_url",
+      "type": "commercial_authorization",
+      "status": "UNVERIFIED_HOLD",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "limits": "No account-issued link verified. Do not fabricate href or purchase click."
+    },
+    {
+      "id": "channel_permissions",
+      "type": "commercial_authorization",
+      "status": "UNVERIFIED_HOLD",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "limits": "Need exact allowed TikTok/YouTube/blog/email usage, ad/paid and disclosure policy."
+    },
+    {
+      "id": "creatives_rights",
+      "type": "creative_permissions",
+      "status": "UNVERIFIED_HOLD",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "limits": "No authenticated approved affiliate creative/swipe license; use original copy only."
+    },
+    {
+      "id": "fv_owned_mind_sku",
+      "type": "owned_commerce",
+      "status": "UNVERIFIED_HOLD",
+      "sources": [
+        "https://finalvestige.com/focus/"
+      ],
+      "limits": "Free Fieldbook isn't proof that a payable FV-owned rights-cleared Mind SKU currently exists."
+    },
+    {
+      "id": "refund_reconciliation",
+      "type": "financial_metric",
+      "status": "UNVERIFIED_HOLD",
+      "sources": [],
+      "limits": "No settlement/export/fees/refund evidence provided; net revenue not computable."
+    },
+    {
+      "id": "affiliate_disclosure",
+      "type": "compliance",
+      "status": "REQUIRED_BEFORE_ACTIVE_LINK",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "limits": "Use plain statement near recommendation; do not rely only on disclosure page or term affiliate link."
+    },
+    {
+      "id": "product_claim_support",
+      "type": "compliance",
+      "status": "REQUIRED_BEFORE_EFFICACY_COPY",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limits": "Adequate support needed for express and implied health-related effects; avoid seller claims without support."
+    },
+    {
+      "id": "utm_asset_ids",
+      "type": "privacy_attribution",
+      "status": "NOT_AUTHENTICATED",
+      "sources": [],
+      "limits": "Grok published video IDs and actual social→landing routes unknown; no fabricated UTMs or sessions."
+    },
+    {
+      "id": "variant_b_playable",
+      "type": "media_qa",
+      "status": "NOT_BUILT",
+      "sources": [],
+      "limits": "42-second original treatment poster, captions/transcript only; no encoded hosted media/browser QA."
+    },
+    {
+      "id": "experiment_success",
+      "type": "financial_metric",
+      "status": "NOT_TESTED",
+      "sources": [],
+      "limits": "No visitor experiment, confirmed purchases, control group or lift claim."
+    }
+  ],
+  "releases": [
+    {
+      "gate": "named_inspire3_acceptance",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "issued_merchant_link",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "approved_promotion_channels",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "affiliate_legal_terms",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "payout_attribution_terms",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "creative_use_rights",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "exact_current_checkout_price",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "seller_returns_exclusions",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "FV_owned_SKU_rights",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "FV_owned_checkout_delivery",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "source_claim_product_specificity",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "FTC_in_view_disclosure",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "no_unqualified_health_claims",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "no_wealth_guarantees",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "site_QA_360",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "site_QA_390",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "site_QA_768",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "site_QA_1440",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "site_QA_1920",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "keyboard_WCAG22AA",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "no_JS_baseline",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "captioned_42s_encoded_video",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "reduced_motion_poster",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "consent_compliant_event_contract",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "no_duplicate_tracking",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "no_duplicate_Jetpack_form",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "real_merchant_reconciliation",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "session_asset_id_authentication",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "founder_release_approval",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "independent_SiteQA_signoff",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "WordPress_sanitization",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    },
+    {
+      "gate": "rollback_verified",
+      "state": "CLOSED_UNVERIFIED",
+      "proof": null
+    }
+  ],
+  "disclosure": "If you buy through a link on this page, Final Vestige may earn a commission at no additional cost to you. No affiliate link is active here.",
+  "financial_metric": {
+    "name": "realized_net_revenue_per_1000_qualified_human_sessions",
+    "value": null,
+    "status": "NOT_COMPUTABLE",
+    "reason": "No independently qualified session denominator, attributed settled merchant purchases, fees or refunds."
+  }
+}
