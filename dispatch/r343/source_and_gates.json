@@ -1,0 +1,101 @@
+{
+  "status": "OFFLINE_REVIEW_ONLY",
+  "base_pr": 175,
+  "base_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stacked_on_pr": 2408,
+  "master_verified_by_github_blob_ids": true,
+  "copy_selection": "ORIGINAL_175_ONLY_NOT_FOUNDER_APPROVED_FOR_SEND",
+  "mandate": {
+    "editorial": 4,
+    "commercial": 2
+  },
+  "real_wordpress_email_preview": false,
+  "real_received_email": false,
+  "merchant_email_rights": false,
+  "business_postal_verified": false,
+  "unsubscribe_rendered_tested": false,
+  "welcome_received": false,
+  "recipient_count_verified": false,
+  "paid_order_verified": false,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "records": [
+    {
+      "issue": 1,
+      "original": "01-the-mind-is-not-a-camera.md",
+      "original_blob_sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "subject": "The mind is not a camera",
+      "preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "kind": "editorial",
+      "merchant_gate": "NOT_APPLICABLE",
+      "delivery_gate": "HOLD_UNSENT",
+      "preheader_rendering_verified": false,
+      "original_copy_modified": false,
+      "cta_destination": "LIVE_EDITORIAL"
+    },
+    {
+      "issue": 2,
+      "original": "02-before-hypnosis-had-a-name.md",
+      "original_blob_sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "subject": "Before hypnosis had a name",
+      "preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "kind": "editorial",
+      "merchant_gate": "NOT_APPLICABLE",
+      "delivery_gate": "HOLD_UNSENT",
+      "preheader_rendering_verified": false,
+      "original_copy_modified": false,
+      "cta_destination": "LIVE_EDITORIAL"
+    },
+    {
+      "issue": 3,
+      "original": "03-the-twelve-minute-question.md",
+      "original_blob_sha": "aeeef34efea0cc281f69901488e4501fea851245",
+      "subject": "The twelve-minute meditation question",
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "kind": "commercial-review-pending",
+      "merchant_gate": "HOLD_MERCHANT",
+      "delivery_gate": "HOLD_UNSENT",
+      "preheader_rendering_verified": false,
+      "original_copy_modified": false,
+      "cta_destination": "NOT_LIVE"
+    },
+    {
+      "issue": 4,
+      "original": "04-the-hatch-and-the-spark.md",
+      "original_blob_sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "kind": "editorial",
+      "merchant_gate": "NOT_APPLICABLE",
+      "delivery_gate": "HOLD_UNSENT",
+      "preheader_rendering_verified": false,
+      "original_copy_modified": false,
+      "cta_destination": "LIVE_EDITORIAL"
+    },
+    {
+      "issue": 5,
+      "original": "05-before-you-press-play.md",
+      "original_blob_sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "Three questions that matter more than an impressive promise.",
+      "kind": "commercial-review-pending",
+      "merchant_gate": "HOLD_MERCHANT",
+      "delivery_gate": "HOLD_UNSENT",
+      "preheader_rendering_verified": false,
+      "original_copy_modified": false,
+      "cta_destination": "NOT_LIVE"
+    },
+    {
+      "issue": 6,
+      "original": "06-the-evidence-log.md",
+      "original_blob_sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "kind": "editorial",
+      "merchant_gate": "NOT_APPLICABLE",
+      "delivery_gate": "HOLD_UNSENT",
+      "preheader_rendering_verified": false,
+      "original_copy_modified": false,
+      "cta_destination": "LIVE_FOCUS_PAGE_BUT_AUDIENCE_MISMATCH"
+    }
+  ]
+}

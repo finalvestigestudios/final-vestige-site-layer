@@ -1,0 +1,9 @@
+# Dispatch R343 offline Chromium test addendum (NOT live provider)
+
+**Local, non-sending renderer:** a separately generated original-#175 static preview suite from source-identical eight master blobs. At 320px the initial renderer exposed a real usability problem: long legal-placeholder strings caused horizontal overflow. The formatter was changed to wrap long strings; the GitHub static preview branch received the same `overflow-wrap:anywhere;word-break:break-word` mobile safeguard in each of its six source-preserving HTML files. No original manuscript content changed.
+
+**Final local native Chromium 24/24 PASS:** six emails at 320, 390, 768 and 1440 px. Checked no document-level horizontal overflow, exactly one H1, no scripts or forms, conspicuous no-send HOLD, and only first-party hyperlinks. Four local screenshots (Issue 03/05 at 320 and 768 px) plus structured test results are available in the offline deliverable archive; the screenshots are **not** actual Jetpack email captures. Local Python 32/32 PASS for source conversion, no merchant link activation, paired HTML/plaintext, required placeholders, source alignment and adverse-input rejection.
+
+**Precision of proof:** The native Chromium evidence comes from the local Python offline renderer. The GitHub review HTML was separately generated from the same exact original Markdown with matching overflow safeguard, **not byte-identical** to the local renderer. Thus the 24/24 browser result is strong visual feasibility evidence, not proof of those exact GitHub bytes, not certification against every email client, and absolutely not a native WordPress preview or received inbox artifact.
+
+**Remains STOP/HOLD:** no authorized real email preview, genuine delivered Fieldbook, verified postal address, functional native unsubscribe, account-specific Inspire3 EMAIL permission or order settlement. Do not distribute preview HTML as send-ready email.
