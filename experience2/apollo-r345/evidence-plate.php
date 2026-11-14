@@ -1,6 +1,9 @@
 <?php
 /** Apollo R345: evidence plates. Isolated staging research, NOT production. */
 if (!defined('ABSPATH')) { exit; }
+$fv_apollo_r349_policy = dirname(__DIR__) . '/apollo-r349/source-policy.php';
+if (is_readable($fv_apollo_r349_policy)) { require_once $fv_apollo_r349_policy; }
+
 function fv_apollo_r345_claims(): array {
   $board = 'https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html';
   return array(
@@ -27,12 +30,12 @@ function fv_apollo_r345_evidence_plate(): string {
         <p class="fv-apollo-r345__finding"><strong>Established:</strong> <?php echo $e($claim['finding']); ?></p>
         <p class="fv-apollo-r345__limit"><strong>Evidence limit:</strong> <?php echo $e($claim['limit']); ?></p>
         <details class="fv-apollo-r345__custody"><summary>Inspect source custody</summary><p>Document class: original 1967 NASA Apollo 204 Review Board findings, hosted by NASA. Plate text is a paraphrase, not a verbatim quotation.</p></details>
-        <p class="fv-apollo-r345__source"><a href="<?php echo $e($claim['source']); ?>" rel="noopener noreferrer" data-fv-apollo-primary-source="board"><?php echo $e($claim['locator']); ?></a></p>
+        <p class="fv-apollo-r345__source"><?php echo function_exists('fv_apollo_r349_source_link') ? fv_apollo_r349_source_link($claim['source'], $claim['locator'], array('data-fv-apollo-primary-source'=>'board')) : '<span data-fv-source-review-required="true">Source link withheld pending verification</span>'; ?></p>
         <!-- A separate print-only source ledger avoids losing closed <details> in native PDF export.
              It is hidden from the screen/accessibility tree and replaces, rather than duplicates,
              the screen source link in print. All data derives from this same reviewed claim. -->
         <div class="fv-apollo-r345__print-custody" data-fv-apollo-print-custody hidden>
-          <p><strong>Original Board source:</strong> <a href="<?php echo $e($claim['source']); ?>" rel="noopener noreferrer" data-fv-apollo-print-source="board"><?php echo $e($claim['locator']); ?></a></p>
+          <p><strong>Original Board source:</strong> <?php echo function_exists('fv_apollo_r349_source_link') ? fv_apollo_r349_source_link($claim['source'], $claim['locator'], array('data-fv-apollo-print-source'=>'board')) : '<span data-fv-source-review-required="true">Source link withheld pending verification</span>'; ?></p>
           <p><strong>Record custody:</strong> NASA-hosted 1967 Apollo 204 Review Board finding; this plate is an editorial paraphrase, not a verbatim quotation or a photograph.</p>
         </div>
       </article></li>
