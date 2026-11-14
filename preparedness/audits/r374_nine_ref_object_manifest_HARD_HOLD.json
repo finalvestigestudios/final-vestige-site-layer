@@ -1,0 +1,1542 @@
+{
+  "schema_version": 1,
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "observed_date": "2026-11-14",
+  "release_state": "DRAFT_HARD_HOLD",
+  "branch_pins": [
+    {
+      "branch": "claude/prep-start-bbfeb8",
+      "sha": "2122d856fce9f64887c16df3d52e64be9f59a55b"
+    },
+    {
+      "branch": "claude/prep-food-ccdc55",
+      "sha": "f911ff7a655de8d81535ea86ec3d65a49ee76648"
+    },
+    {
+      "branch": "claude/prep-health-837444",
+      "sha": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17"
+    },
+    {
+      "branch": "claude/prep-hist-field-9db767",
+      "sha": "4e5caf812727953aa45e3bda2d382f2c67b6a09c"
+    },
+    {
+      "branch": "claude/prep-hist-food-b81f19",
+      "sha": "67e116e536c7410bed30f8f3b1bb8c166f3c223d"
+    },
+    {
+      "branch": "claude/prep-hist-home-0e0e38",
+      "sha": "7504a5f099594d635e3dd7332a33a2e1346c43a2"
+    },
+    {
+      "branch": "claude/prep-shelter-5e1e0e",
+      "sha": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976"
+    },
+    {
+      "branch": "claude/prep-shelter-continuation",
+      "sha": "ac8625faf30dd5538fadc31e06cb5a2cea1defae"
+    },
+    {
+      "branch": "claude/prep-shelter-followup-evidence",
+      "sha": "6a5998ead97eca997e573ce8d3ceacf1c6aabad4"
+    }
+  ],
+  "article_count": 35,
+  "conflict_count": 9,
+  "objects": [
+    {
+      "path": "preparedness/content/articles/emergency-hygiene-sanitation.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+          "size": 24497
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/emergency-hygiene-sanitation.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+          "size": 3096
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/family-communication-plan.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+          "size": 23180
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "cbfe7830e9412ac99a1920c581a14d2913a9eaf6",
+          "size": 26248
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "c97a79761dc3be1c44e5f9322a606ccc7fd11c6e",
+          "size": 26939
+        }
+      ],
+      "decision": "REVIEW_REQUIRED",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/family-communication-plan.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+          "size": 3524
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "0ad68a8c456f50912ddef11c44bfc05c3c2d3513",
+          "size": 4191
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "a8618235711cca039f142ad59962c1153654aa45",
+          "size": 4537
+        }
+      ],
+      "decision": "REVIEW_REQUIRED",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/fire-making-across-time.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+          "size": 24662
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/fire-making-across-time.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+          "size": 3134
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/food-safety-power-outage.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+          "size": 23027
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/food-safety-power-outage.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "3283071134ba24490d47f5a0635836b6ed4f8965",
+          "size": 2902
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/go-bags.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "5135639786bbafa4e03939a74659cd0f31df3564",
+          "size": 24931
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/go-bags.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "16cc5e91204a77486912444c6e516f5d5b48f567",
+          "size": 3881
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/history-of-food-preservation.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "273b246a069e834d8476bfc2854308732f5137ab",
+          "size": 18005
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/history-of-food-preservation.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+          "size": 3128
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+          "size": 26250
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "size": 31755
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "size": 31755
+        }
+      ],
+      "decision": "REVIEW_REQUIRED",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+          "size": 3127
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9",
+          "size": 3758
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9",
+          "size": 3758
+        }
+      ],
+      "decision": "REVIEW_REQUIRED",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/homemade-water-filters.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "size": 15230
+        },
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "size": 15230
+        },
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "size": 15230
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "size": 15230
+        },
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "size": 15230
+        },
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "size": 15230
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "size": 15230
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "size": 15230
+        },
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "size": 15230
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/homemade-water-filters.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
+          "size": 1973
+        },
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
+          "size": 1973
+        },
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
+          "size": 1973
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
+          "size": 1973
+        },
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
+          "size": 1973
+        },
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
+          "size": 1973
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
+          "size": 1973
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
+          "size": 1973
+        },
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
+          "size": 1973
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/household-emergency-plan.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "8ca5c261dba56eeaf79c445332381a74867233de",
+          "size": 23176
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/household-emergency-plan.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+          "size": 3314
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/lewis-and-clark-salt-works.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+          "size": 17785
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/lewis-and-clark-salt-works.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "3a350aedac67ea89c6995831032367634248c9e9",
+          "size": 3230
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/making-water-safer.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "f85d158fc8752200a227282e640f6df48277daf5",
+          "size": 21486
+        },
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "f85d158fc8752200a227282e640f6df48277daf5",
+          "size": 21486
+        },
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "f85d158fc8752200a227282e640f6df48277daf5",
+          "size": 21486
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "f85d158fc8752200a227282e640f6df48277daf5",
+          "size": 21486
+        },
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "f85d158fc8752200a227282e640f6df48277daf5",
+          "size": 21486
+        },
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "f85d158fc8752200a227282e640f6df48277daf5",
+          "size": 21486
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "f85d158fc8752200a227282e640f6df48277daf5",
+          "size": 21486
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "f85d158fc8752200a227282e640f6df48277daf5",
+          "size": 21486
+        },
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "f85d158fc8752200a227282e640f6df48277daf5",
+          "size": 21486
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/making-water-safer.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+          "size": 2987
+        },
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+          "size": 2987
+        },
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+          "size": 2987
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+          "size": 2987
+        },
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+          "size": 2987
+        },
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+          "size": 2987
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+          "size": 2987
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+          "size": 2987
+        },
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+          "size": 2987
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/medication-and-devices.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e",
+          "size": 28770
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/medication-and-devices.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c",
+          "size": 3923
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/navigation-before-gps.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "49beb68339a6b85b07d686c0cfb9fe1d88b8de4f",
+          "size": 21852
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/navigation-before-gps.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+          "size": 2856
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+          "size": 31428
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "55a1e3018e3413b79378c6677f15e536bb777377",
+          "size": 33238
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "5608a28249a0e351710e0c756d878048c8e41e24",
+          "size": 33265
+        }
+      ],
+      "decision": "REVIEW_REQUIRED",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "77dd194b096bb60ea99728a5b0042adf016b905e",
+          "size": 4568
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "debfd11fb189cb43a688862867dc60172fb6eb3a",
+          "size": 5096
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "593e7bd6fef0446f05d7a86551e702ceaa38eabb",
+          "size": 5210
+        }
+      ],
+      "decision": "REVIEW_REQUIRED",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/pantry-rotation.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+          "size": 23078
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/pantry-rotation.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+          "size": 2730
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/pemmican-and-dried-meats.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "1febc8929f8b90c81a3fcef1e46a2811778b7e06",
+          "size": 18693
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/pemmican-and-dried-meats.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "c19f68f2ac0988a8d0959e2d05b8ace8f9511348",
+          "size": 3424
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/pickling-fermentation-old-recipes.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "1869e37626b7463da45763d60202bd5ac0bd7700",
+          "size": 21293
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/pickling-fermentation-old-recipes.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "da97f42fcabbd05dc513d26c6af289bbeb8816f3",
+          "size": 2838
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/pioneer-supply-chains-failed.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "3643c50b43ca7ba6c1d9bc439e7c78730503b80f",
+          "size": 24916
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/pioneer-supply-chains-failed.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "8789c77dcc2be717f09ce0fbd340a04319aaf223",
+          "size": 3208
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/pioneer-travel-rations.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "a658481d828dc4c5ba85f296adbfbee0514f0611",
+          "size": 18180
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/pioneer-travel-rations.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "521e56a3f18d8b211920529a88a3c3b86eb332d7",
+          "size": 3057
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/preparedness-real-households.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "70d03c366e10db623929f118501becfa26c48bab",
+          "size": 24269
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/preparedness-real-households.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "a0c3a09143a825560b5a5ed79d857b7402bfa295",
+          "size": 3718
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/pressure-canning-low-acid.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "c60d824c2f679fb7362b8523aec18110f8248290",
+          "size": 25674
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/pressure-canning-low-acid.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+          "size": 3828
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/rain-barrels-and-cisterns.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+          "size": 19896
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/rain-barrels-and-cisterns.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "dc42694e842969624f24ab5edc9bff2497693e70",
+          "size": 2422
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/root-cellars-cool-storage.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "7f375c32d74f2828b4912f5692abc44483e4629a",
+          "size": 21383
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/root-cellars-cool-storage.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+          "size": 2538
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/safe-jerky-dehydration.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+          "size": 21780
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/safe-jerky-dehydration.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+          "size": 2881
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/salt-beef-salt-pork-age-of-sail.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "size": 21371
+        },
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "size": 21371
+        },
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "size": 21371
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "size": 21371
+        },
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "size": 21371
+        },
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "size": 21371
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "size": 21371
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "size": 21371
+        },
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "size": 21371
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/salt-beef-salt-pork-age-of-sail.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+          "size": 2897
+        },
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+          "size": 2897
+        },
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+          "size": 2897
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+          "size": 2897
+        },
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+          "size": 2897
+        },
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+          "size": 2897
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+          "size": 2897
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+          "size": 2897
+        },
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+          "size": 2897
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/sanitation-before-germ-theory.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "02090fc1b773fd79f08a7ba754b6125844c37eab",
+          "size": 22049
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/sanitation-before-germ-theory.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+          "size": 2962
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "b8acf07e533eea43795aa242f39fd926b080130f",
+          "size": 24382
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "ed6e6bc4dc1344d1aa25679c6f4380f76d82927e",
+          "size": 30877
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "a8c36cd63517fdeb723dca201b31802c2a721ddf",
+          "size": 31507
+        }
+      ],
+      "decision": "REVIEW_REQUIRED",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+          "size": 3398
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "0f4800f6808f54e0487de1f8426b4612f7d0a54f",
+          "size": 3736
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "fb1081527e5afdd542299f2087397cf3308716c6",
+          "size": 3981
+        }
+      ],
+      "decision": "REVIEW_REQUIRED",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/ships-biscuit-and-hardtack.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+          "size": 19898
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/ships-biscuit-and-hardtack.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+          "size": 2741
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/smokehouses-salting-curing.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+          "size": 16424
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/smokehouses-salting-curing.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "16223945e83f95b349acf09a2b684c09326550c0",
+          "size": 3280
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/three-day-kit.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+          "size": 24783
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/three-day-kit.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "c830e4b8b0ee2890a8ddaf82273fdc25bd4b50f2",
+          "size": 3865
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/two-week-water-storage.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "size": 13321
+        },
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "size": 13321
+        },
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "size": 13321
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "size": 13321
+        },
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "size": 13321
+        },
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "size": 13321
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "size": 13321
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "size": 13321
+        },
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "size": 13321
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/two-week-water-storage.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+          "size": 1583
+        },
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+          "size": 1583
+        },
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+          "size": 1583
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+          "size": 1583
+        },
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+          "size": 1583
+        },
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+          "size": 1583
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+          "size": 1583
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+          "size": 1583
+        },
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+          "size": 1583
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/warnings-radios-offline-maps.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+          "size": 21257
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/warnings-radios-offline-maps.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+          "size": 3132
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/water-advisories-explained.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "size": 14465
+        },
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "size": 14465
+        },
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "size": 14465
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "size": 14465
+        },
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "size": 14465
+        },
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "size": 14465
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "size": 14465
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "size": 14465
+        },
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "size": 14465
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/water-advisories-explained.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+          "size": 1740
+        },
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+          "size": 1740
+        },
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+          "size": 1740
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+          "size": 1740
+        },
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+          "size": 1740
+        },
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+          "size": 1740
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+          "size": 1740
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+          "size": 1740
+        },
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+          "size": 1740
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/water-math.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "size": 14140
+        },
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "size": 14140
+        },
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "size": 14140
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "size": 14140
+        },
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "size": 14140
+        },
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "size": 14140
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "size": 14140
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "size": 14140
+        },
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "size": 14140
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/water-math.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+          "size": 1860
+        },
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+          "size": 1860
+        },
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+          "size": 1860
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+          "size": 1860
+        },
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+          "size": 1860
+        },
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+          "size": 1860
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+          "size": 1860
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+          "size": 1860
+        },
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+          "size": 1860
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/water-purification-through-history.body.html",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+          "size": 24340
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/content/articles/water-purification-through-history.meta.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+          "size": 3142
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/sources/fragments/food.json",
+      "variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "sha": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+          "size": 35020
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/sources/fragments/health.json",
+      "variants": [
+        {
+          "branch": "claude/prep-health-837444",
+          "sha": "cc29c439372b9d49debf78e63020ffe4d62baeb8",
+          "size": 27263
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/sources/fragments/hist-field.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "sha": "6b65e0aaa777b4c5ebc57fbeade0386b4ab6c32f",
+          "size": 36787
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/sources/fragments/hist-food.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "sha": "c1856c998c6c728f0de72221e5654a238df994a9",
+          "size": 32765
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/sources/fragments/hist-home.json",
+      "variants": [
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "sha": "8d85fd868508c5caba14a839d119d55f31f14f72",
+          "size": 37320
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/sources/fragments/shelter.json",
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "d9eeb4546e58f083031e0767aaea7cf112099e09",
+          "size": 35032
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "7291a7836a14b8a83f85310815e820295245c83b",
+          "size": 48669
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "5105f4bbd7d5b2e991f28d4b4ae7c9d5a2804aa9",
+          "size": 54250
+        }
+      ],
+      "decision": "REVIEW_REQUIRED",
+      "selected_sha": null
+    },
+    {
+      "path": "preparedness/sources/fragments/start.json",
+      "variants": [
+        {
+          "branch": "claude/prep-start-bbfeb8",
+          "sha": "29574c328cbab0548e6e5d4a026694857d56b6b4",
+          "size": 28667
+        }
+      ],
+      "decision": "IDENTICAL_OR_SINGLE",
+      "selected_sha": null
+    }
+  ]
+}
