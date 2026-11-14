@@ -78,9 +78,9 @@ function fv_apollo_r348_drawer_shortcode($atts=array()): string {
           <article aria-labelledby="<?php echo $esc($id.'-source-'.$n); ?>">
             <h3 id="<?php echo $esc($id.'-source-'.$n); ?>"><?php echo $esc($page['label']); ?></h3>
             <p class="fv-apollo-r348__count"><?php echo count($page['items']); ?> referenced <?php echo count($page['items'])===1?'entry':'entries'; ?> · <?php echo $page['approved']?'NASA source-page link':'source link withheld pending review'; ?></p>
-            <?php if ($page['approved']): ?><p><a href="<?php echo $esc($page['url']); ?>" rel="noopener noreferrer" data-fv-custody-source>Open institutional source record</a></p><?php else: ?><p class="fv-apollo-r348__warning">Unreviewed URL withheld. This evidence must not be presented as source-verified or used for a commercial claim.</p><?php endif; ?>
+            <?php if ($page['approved']): ?><p><a href="<?php echo $esc($page['url']); ?>" rel="noopener noreferrer" data-fv-custody-source>Open institutional source record — <?php echo $esc($page['label']); ?></a></p><?php else: ?><p class="fv-apollo-r348__warning">Unreviewed URL withheld. This evidence must not be presented as source-verified or used for a commercial claim.</p><?php endif; ?>
             <details class="fv-apollo-r348__detail">
-              <summary>Inspect <?php echo count($page['items']); ?> record <?php echo count($page['items'])===1?'boundary':'boundaries'; ?></summary>
+              <summary>Inspect <?php echo count($page['items']); ?> record <?php echo count($page['items'])===1?'boundary':'boundaries'; ?> for <?php echo $esc($page['label']); ?></summary>
               <ol>
                 <?php foreach($page['items'] as $item): ?>
                   <li><p class="fv-apollo-r348__role"><?php echo $esc($item['type']); ?></p><h4><?php echo $esc($item['label']); ?></h4><p><strong>Evidence boundary:</strong> <?php echo $esc($item['limit']); ?></p></li>
