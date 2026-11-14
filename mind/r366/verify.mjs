@@ -27,7 +27,7 @@ const normalized=s=>s.replace(/<section class="film" data-optional-film[\s\S]*?<
 ok(article.trim().split(/\s+/).length>=2300,'substantive new original investigation');
 ok(article.includes('status: SOURCE_CONTROL_ONLY_NOT_PUBLISHED'),'draft-only editorial status');
 for(const p of ['https://doi.org/10.1038/264746a0','https://doi.org/10.1371/journal.pone.0207160','https://doi.org/10.1371/journal.pone.0202908','https://doi.org/10.1371/journal.pone.0286023','https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/','https://finalvestige.com/focus/'])ok(article.includes(p),'article source '+p);
-for(const p of ['not a diagnosis','not evidence that','seller','no product','one-year','not independently tested'])ok(article.toLowerCase().includes(p.toLowerCase()),'article nuance '+p);
+for(const p of ['not a test of suggestibility','not evidence that','seller','no product','one-year','not independently tested'])ok(article.toLowerCase().includes(p.toLowerCase()),'article nuance '+p);
 ok(normalized(A)===normalized(B),'A/B core copy identical after optional film removal');
 for(const [name,s] of [['A',A],['B',B]]){
 ok(s.includes('name="viewport"'),name+' responsive');
