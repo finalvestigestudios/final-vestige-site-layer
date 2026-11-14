@@ -30,7 +30,7 @@ ok(/https:\/\/finalvestige\.com\/focus\//.test(s),'existing Focus route');
 ok(!/<video\b/.test(s),'no video network load');
 ok(!/<(?:video|audio)\b[^>]*\bautoplay\b|<source\b|<input\b/i.test(s),'no autoplay or new signup');
 ok(/not a verified final checkout total/i.test(s),'price caveat');
-ok(/not.*a.*clinically|not a scientifically|not scientifically|not a fair blinded/i.test(s),'claim boundary');
+ok(/<strong>not<\\/strong> a scientifically validated|not a scientifically/i.test(s),'claim boundary');
 }
 ok(articleCore(a)===stripFilm(articleCore(b)),'one-variable textual parity');
 ok(/class="film"/.test(b),'B film only');
