@@ -1,0 +1,447 @@
+{
+  "sprint": "Mind R365",
+  "as_of": "2026-11-13",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "seller_caveat": "Seller statements do not establish clinical performance, realized price, refund operation, specific FV rights, paid orders or commissions.",
+  "sources": {
+    "lab02": "https://pubmed.ncbi.nlm.nih.gov/12470132/",
+    "lab05": "https://pubmed.ncbi.nlm.nih.gov/15994228/",
+    "meta": "https://doi.org/10.1080/00207144.2024.2356856",
+    "theory": "https://doi.org/10.1016/j.concog.2024.103730",
+    "nih": "https://www.nccih.nih.gov/health/hypnosis",
+    "arch": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "inspire": "https://inspire3.com/",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "zen": "https://zen12.com/",
+    "totalfocus": "https://hypnosislive.com/mental-skills/total-focus",
+    "faq": "https://hypnosislive.com/faq",
+    "endorse": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Lab 2002: sixteen high and sixteen low hypnotic suggestibility participants",
+      "state": "supported",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/12470132/"
+    },
+    {
+      "id": "C02",
+      "claim": "Lab 2002: selected high-suggestibility subjects showed greatly reduced Stroop conflict",
+      "state": "supported_scope",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/12470132/"
+    },
+    {
+      "id": "C03",
+      "claim": "Lab 2002: less-suggestible controls did not show same significant reduction",
+      "state": "supported_scope",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/12470132/"
+    },
+    {
+      "id": "C04",
+      "claim": "Lab 2005: measured ACC and visual responses during posthypnotic suggestion",
+      "state": "supported_scope",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/15994228/"
+    },
+    {
+      "id": "C05",
+      "claim": "Lab 2005 establishes Zen12 Premium cognitive benefit",
+      "state": "unsupported_excluded",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/15994228/"
+    },
+    {
+      "id": "C06",
+      "claim": "2024 systematic review includes nineteen studies",
+      "state": "supported_scope",
+      "source": "https://doi.org/10.1080/00207144.2024.2356856"
+    },
+    {
+      "id": "C07",
+      "claim": "2024 interference meta-analysis uses fourteen studies",
+      "state": "supported_scope",
+      "source": "https://doi.org/10.1080/00207144.2024.2356856"
+    },
+    {
+      "id": "C08",
+      "claim": "Any study of hypnotic suggestion proves all hypnosis products work",
+      "state": "unsupported_excluded",
+      "source": "https://doi.org/10.1016/j.concog.2024.103730"
+    },
+    {
+      "id": "C09",
+      "claim": "NCCIH discusses hypnosis evidence with condition-specific caveats",
+      "state": "supported_scope",
+      "source": "https://www.nccih.nih.gov/health/hypnosis"
+    },
+    {
+      "id": "C10",
+      "claim": "Puységur Library distinguishes original edition and 1813 verification facsimile",
+      "state": "supported_scope",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "C11",
+      "claim": "Puységur Library includes refusals and operator/subject consent conflicts",
+      "state": "supported_scope",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "C12",
+      "claim": "Existing published Final Vestige Change Blindness article is live",
+      "state": "verified_public_page",
+      "source": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "C13",
+      "claim": "Existing 52-page free Seven Day Focus Fieldbook is live",
+      "state": "verified_public_page",
+      "source": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "C14",
+      "claim": "Focus Fieldbook clinically treats attention disorders",
+      "state": "unsupported_excluded",
+      "source": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "C15",
+      "claim": "Inspire3 publicly names Zen12 and Hypnosis Live brands",
+      "state": "seller_description",
+      "source": "https://inspire3.com/"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 Premium lists twelve levels and forty-eight MP3s",
+      "state": "seller_description",
+      "source": "https://zen12.com/"
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 Beginner lists first six levels and twenty-four MP3s",
+      "state": "seller_description",
+      "source": "https://zen12.com/"
+    },
+    {
+      "id": "C18",
+      "claim": "Zen12 Advanced lists last six levels and twenty-four MP3s",
+      "state": "seller_description",
+      "source": "https://zen12.com/"
+    },
+    {
+      "id": "C19",
+      "claim": "Zen12 Premium publicly displayed $87.99 on November 13 2026",
+      "state": "seller_display_not_checkout",
+      "source": "https://zen12.com/"
+    },
+    {
+      "id": "C20",
+      "claim": "Zen12 publicly advertises one-year money-back guarantee",
+      "state": "seller_promise_not_fulfillment",
+      "source": "https://zen12.com/"
+    },
+    {
+      "id": "C21",
+      "claim": "Zen12 twelve minutes equals an hour of advanced meditation",
+      "state": "seller_efficacy_UNSUBSTANTIATED",
+      "source": "https://zen12.com/"
+    },
+    {
+      "id": "C22",
+      "claim": "Zen12 is clinically proven to reprogram brainwaves or cure anxiety",
+      "state": "unsupported_excluded",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "C23",
+      "claim": "Total Focus described as 33-min 47 MB spoken audio",
+      "state": "seller_description",
+      "source": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "C24",
+      "claim": "Total Focus marketed for perfect concentration",
+      "state": "seller_efficacy_UNSUBSTANTIATED",
+      "source": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "C25",
+      "claim": "Hypnosis Live FAQ: 14-day refund with at most five sessions per year",
+      "state": "seller_promise_not_fulfillment",
+      "source": "https://hypnosislive.com/faq"
+    },
+    {
+      "id": "C26",
+      "claim": "Total Focus publicly displayed $17.95 at prior review",
+      "state": "seller_display_not_checkout",
+      "source": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "C27",
+      "claim": "Brainwave Shots individual product exact SKU price and terms",
+      "state": "UNVERIFIED_exact_offer_required",
+      "source": "https://inspire3.com/"
+    },
+    {
+      "id": "C28",
+      "claim": "Public Inspire3 portal invites affiliate applications",
+      "state": "verified_public_page",
+      "source": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "C29",
+      "claim": "Inspire3 issues special earning links to accepted publishers",
+      "state": "seller_description_not_specific_rights",
+      "source": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "C30",
+      "claim": "Specific Final Vestige publisher application acceptance",
+      "state": "NOT_AUTHENTICATED",
+      "source": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "C31",
+      "claim": "Specific issued Final Vestige tracked earning URL",
+      "state": "NOT_AUTHENTICATED",
+      "source": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "C32",
+      "claim": "Website / email / social promotion permissions for Final Vestige",
+      "state": "NOT_AUTHENTICATED",
+      "source": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "C33",
+      "claim": "Public Inspire3 payout claims equal FV contracted commission",
+      "state": "unsupported_excluded",
+      "source": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "C34",
+      "claim": "FTC expects proximate clear disclosure of material affiliate connection",
+      "state": "supported_scope",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "C35",
+      "claim": "FTC health claims need competent reliable relevant scientific evidence",
+      "state": "supported_scope",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "C36",
+      "claim": "Currently payable rights-cleared FV Mind Payhip SKU checkout delivery refunds",
+      "state": "NOT_AUTHENTICATED",
+      "source": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "C37",
+      "claim": "R365 optional film is hosted encoded playable media",
+      "state": "FALSE_storyboard_only",
+      "source": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "C38",
+      "claim": "Three published immutable Grok Mind video asset IDs and allowed mobile links",
+      "state": "NOT_AUTHENTICATED",
+      "source": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "C39",
+      "claim": "Confirmed Jetpack provider signup attributable to Grok asset ID",
+      "state": "UNVERIFIED",
+      "source": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "C40",
+      "claim": "Affiliate click equals paid commission or purchase",
+      "state": "FALSE_metric_boundary",
+      "source": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "C41",
+      "claim": "Net revenue per 1k qualified-human sessions is presently computable",
+      "state": "FALSE_missing_data",
+      "source": "https://finalvestige.com/focus/"
+    }
+  ],
+  "release_gates": [
+    {
+      "gate": "G01",
+      "description": "Named FV publisher acceptance authenticated",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G02",
+      "description": "Product-specific affiliate URL issued",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G03",
+      "description": "Website promotion permission in merchant terms",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G04",
+      "description": "Social-platform promotion permission where used",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G05",
+      "description": "Email promotion permission if applicable",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G06",
+      "description": "Approved creative usage and limitations",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G07",
+      "description": "Merchant product and SKU identity match",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G08",
+      "description": "Merchant checkout price currency tax verified",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G09",
+      "description": "Merchant refund terms and real fulfillment checked",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G10",
+      "description": "Merchant digital delivery tested",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G11",
+      "description": "No unsubstantiated objective efficacy claims",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G12",
+      "description": "No unsubstantiated mental-health promises",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G13",
+      "description": "No unsubstantiated financial outcomes",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G14",
+      "description": "Commission disclosure immediately adjacent",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G15",
+      "description": "No fabricated product experience",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G16",
+      "description": "No unapproved active commercial hyperlinks",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G17",
+      "description": "No tracking pixel or extra data collection",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G18",
+      "description": "Original film rights and captions",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G19",
+      "description": "42-second encoded original opt-in media",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G20",
+      "description": "No-JS static parity",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G21",
+      "description": "Mobile 360px verified",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G22",
+      "description": "Mobile 390px verified",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G23",
+      "description": "Tablet 768px verified",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G24",
+      "description": "Desktop 1440px verified",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G25",
+      "description": "Real keyboard screen-reader contrast QA",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G26",
+      "description": "Staging WordPress sanitization CSP check",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G27",
+      "description": "Existing single Jetpack/Focus funnel unchanged",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G28",
+      "description": "Three Grok real published asset IDs verified",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G29",
+      "description": "Qualified sessions and unique campaign attribution reconciled",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G30",
+      "description": "Merchant-reported paid orders commissions fees refunds",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G31",
+      "description": "Independent site QA approval",
+      "state": "HOLD"
+    },
+    {
+      "gate": "G32",
+      "description": "Founder live release approval",
+      "state": "HOLD"
+    }
+  ],
+  "commerce_authorization": {
+    "accepted_publisher": "not_authenticated",
+    "issued_link": "not_authenticated",
+    "allowed_channels": "not_authenticated",
+    "owned_mind_payhip_sku": "not_authenticated",
+    "buyer_cta": "DISABLED"
+  },
+  "revenue": {
+    "qualified_sessions": "unknown",
+    "confirmed_paid_orders": "unknown",
+    "settled_affiliate_commissions": "unknown",
+    "refunds_and_fees": "unknown",
+    "net_revenue_per_1000_qualified_human_sessions": "NOT_COMPUTABLE"
+  }
+}
