@@ -88,7 +88,7 @@ A good record leaves room for unanswered questions. A good buyer guide leaves ro
 
 ## Source trail and reporting limits
 
-1. Final Vestige, [*Mesmerism: What Franklin's 1784 Commission Actually Found*](https://finalvestige.com/2026/11/02/mesmerism/), citing the [1785 English translation of the royal commissioners' report](https://www.gutenberg.org/ebooks/68465). See also [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/). Historical records; not commercial-efficacy trials.
+1. Final Vestige, [*Mesmerism: What Franklin's 1784 Commission Actually Found*](https://finalvestige.com/2026/11/02/mesmerism/), citing the [1785 English translation of the royal commissioners' report](https://www.gutenberg.org/ebooks/78413). See also [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/). Historical records; not commercial-efficacy trials.
 2. Scheffrahn K, Alldredge CT, Snyder M, Elkins GR. [“Hypnosis Apps: A Systematic Review.”](https://doi.org/10.1080/00207144.2024.2434085) *International Journal of Clinical and Experimental Hypnosis* 73(1), 2025, 79–95; published online 16 December 2024. App descriptive audit, **not Zen12/Hypnosis Live/Brainwave Shots trial**.
 3. Zahedi A, Lynn SJ, Sommer W. [“How hypnotic suggestions work—a systematic review of prominent theories of hypnosis.”](https://doi.org/10.1016/j.concog.2024.103730) *Consciousness and Cognition* 123, 103730 (2024). Review of theory; not product verification.
 4. Zen12, [official offer and current seller terms](https://zen12.com/), reviewed 13 November 2026. Seller-described product format, displayed price, guarantee and promotional claims; checkout and refund execution unverified.
