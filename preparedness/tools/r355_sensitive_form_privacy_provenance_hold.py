@@ -79,7 +79,7 @@ def review(documents: dict, taxonomy: dict, *, baseline: dict | None = None) -> 
     if len(documents) != 41:
         errors.append('ORIGINAL_41_DOCUMENT_INVENTORY_INCOMPLETE')
     slugs = set()
-    for slug, doc in sorted(documents.items()):
+    for slug, doc in sorted(documents.items(), key=lambda pair: str(pair[0])):
         if not isinstance(slug, str) or not IDENT.fullmatch(slug) or not isinstance(doc, dict):
             errors.append('INVALID_DOCUMENT_IDENTITY'); continue
         body, meta = doc.get('body'), doc.get('meta')
@@ -127,9 +127,9 @@ def review(documents: dict, taxonomy: dict, *, baseline: dict | None = None) -> 
         errors.append('NINE_TOOL_PLAN_MISSING')
     else:
         planned_slugs = [row.get('slug') for row in planned if isinstance(row, dict)]
-        if len(planned_slugs) != 9 or len(set(planned_slugs)) != 9:
+        if len(planned_slugs) != 9 or not all(isinstance(x, str) and IDENT.fullmatch(x) for x in planned_slugs) or len(set(planned_slugs)) != 9:
             errors.append('DUPLICATE_OR_INVALID_TOOL_PLAN')
-        authored = set(planned_slugs) & slugs
+        authored = set(x for x in planned_slugs if isinstance(x, str)) & slugs
         if len(authored) != 6:
             errors.append('SIX_AUTHORED_TOOLS_NOT_ACCOUNTED')
     for row in taxonomy.get('sections', []) if isinstance(taxonomy.get('sections'), list) else []:
@@ -152,9 +152,9 @@ def review(documents: dict, taxonomy: dict, *, baseline: dict | None = None) -> 
                 if not isinstance(d, dict) or not isinstance(want, dict):
                     errors.append('PINNED_SOURCE_MISSING:' + str(slug)); continue
                 if sha256(d.get('body', '') if isinstance(d.get('body'), str) else '') != want.get('body_sha256'):
-                    errors.append('SOURCE_BODY_EDIT_REQUIRES_ADJUDICATION:' + slug)
+                    errors.append('SOURCE_BODY_EDIT_REQUIRES_ADJUDICATION:' + str(slug))
                 if sha256(json.dumps(d.get('meta'), sort_keys=True, ensure_ascii=False)) != want.get('meta_sha256'):
-                    errors.append('SOURCE_META_EDIT_REQUIRES_ADJUDICATION:' + slug)
+                    errors.append('SOURCE_META_EDIT_REQUIRES_ADJUDICATION:' + str(slug))
     tool104 = next((r for r in dockets if r['slug'] == 'family-reunification-card'), None)
     if not tool104:
         errors.append('TOOL104_FORM_NOT_FOUND')
