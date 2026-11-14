@@ -1,0 +1,65 @@
+// Final Vestige Studios · Mind R375 · offline deterministic safety checks.
+// Run from repository root: node mind/r375/verify.mjs
+// Native Node >=18, zero npm dependencies, zero network/telemetry, never touches WordPress.
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+const dir=dirname(fileURLToPath(import.meta.url));
+const load=f=>readFileSync(join(dir,f),'utf8');
+const A=load('ZEN12_A_BUYER_GUIDE.html');
+const B=load('ZEN12_B_OPTIONAL_FILM_GUIDE.html');
+const hub=load('MIND_HUB_WORDPRESS_REVIEW_ONLY.html');
+const article=load('THE_BROKEN_GLASS_THAT_WASNT_THERE.md');
+const vtt=load('ORIGINAL_42S_CAPTIONS.vtt');
+const matrix=JSON.parse(load('CLAIM_SOURCE_AUTHORIZATION_MATRIX.json'));
+const memo=load('CONVERSION_FIRST_ACCEPTANCE.md');
+let checks=0;const ok=(condition,name)=>{assert.ok(condition,name);checks++};
+const no=(content,pattern,name)=>ok(!pattern.test(content),name);
+function checkGuide(html,variant){
+  ok(html.startsWith('<!doctype html>'),variant+' valid doctype');
+  ok(/<html lang="en">/.test(html),variant+' language');
+  ok(/name="robots" content="noindex,nofollow,noarchive"/.test(html),variant+' noindex');
+  ok(/name="viewport" content="width=device-width,initial-scale=1"/.test(html),variant+' viewport');
+  ok(/<button\b[^>]*\stype="button"\sdisabled\b[^>]*>Merchant purchase unavailable/.test(html),variant+' NATIVE disabled merchant button');
+  ok(html.includes('Prospective affiliate disclosure:'),variant+' clearly labels commercial disclosure');
+  ok(html.includes('Final Vestige may earn a commission at no additional cost to you'),variant+' financial material connection');
+  ok(html.indexOf('Prospective affiliate disclosure:')>=0&&html.indexOf('Merchant purchase unavailable')-html.indexOf('Prospective affiliate disclosure:')<600,variant+' disclosure next to CTA');
+  ok(html.includes('https://finalvestige.com/focus/'),variant+' existing lead magnet');
+  ok(html.includes('What is included in Zen12 Premium?'),variant+' actual offer matches page');
+  ok(html.includes('no active merchant link'),variant+' explains withholding links');
+  no(html,/<a\b[^>]*href\s*=\s*["'][^"']*(?:zen12\.com|inspire3\.com|hypnosislive\.com|brainwaveshots\.com|payhip\.com)/i,variant+' no active seller/affiliate checkout link');
+  no(html,/<(?:script|iframe|form)\b/i,variant+' no script, iframe or duplicate form');
+  no(html,/<(?:video|audio)\b[^>]*\bautoplay\b/i,variant+' no forced playback');
+  no(html,/(?:pixel\.(?:gif|png)|google-analytics\.com|gtag|fbq\s*\()/i,variant+' no marketing pixel/tracker');
+  no(html,/<a\b[^>]*href\s*=\s*["'](?:javascript:|data:)/i,variant+' no executable href');
+  ok(html.includes('@media(max-width:700px)')&&html.includes('prefers-reduced-motion'),variant+' static mobile/reduced motion CSS');
+}
+checkGuide(A,'A');checkGuide(B,'B');
+const section=B.match(/<section class="visual" data-variant="optional-film"[\s\S]*?<\/section>/);
+ok(Boolean(section),'B includes exactly one optional film treatment');
+ok(B.replace(section[0],'')===A,'A/B copy exact parity except B optional insert');
+ok(!A.includes('data-variant="optional-film"'),'A contains no optional treatment');
+ok(B.includes('<svg role="img" aria-labelledby="poster-title poster-desc"'),'B original labeled SVG');
+ok(B.includes('<title id="poster-title">')&&B.includes('<desc id="poster-desc">'),'B poster long description');
+ok(B.includes('<details class="transcript">')&&B.includes('Read full 42-second narration transcript'),'B accessible transcript');
+no(B,/<video\b/i,'B not falsely presented as playable movie');
+ok(vtt.startsWith('WEBVTT'),'webvtt header');
+const cues=[...vtt.matchAll(/(\d\d:\d\d:\d\d\.\d\d\d) --> (\d\d:\d\d:\d\d\.\d\d\d)/g)];
+ok(cues.length===6,'six subtitle cues');
+ok(cues[0][1]==='00:00:00.000'&&cues.at(-1)[2]==='00:00:42.000','caption duration 42 seconds');
+ok(hub.includes('noindex,nofollow,noarchive'),'hub noindex');
+ok(hub.includes('NOT SAVED IN CMS')&&hub.includes('PR #172'),'hub honestly source only and protects canonical hub');
+ok(hub.includes('https://finalvestige.com/focus/')&&hub.includes('https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/'),'hub established URLs');
+no(hub,/<form\b|<script\b/i,'hub not extra form/script');
+ok(article.split(/\s+/).length>1800,'substantial research investigation');
+for(const url of ['10.1016/S0022-5371(74)80011-3','10.1017/mem.2024.14','10.1002/cpp.2567','10.1027/1016-9040/a000513'])ok(article.includes(url),'article contains source '+url);
+ok(matrix.claims.length>=30,'machine-readable >=30 claims');
+ok(matrix.gates.length>=30,'commercial eligibility gates documented');
+ok(matrix.gates.every(x=>x.release_approved===false),'no false authorizations');
+ok(matrix.claims.filter(x=>x.assessment==='not-product-independently-substantiated').length>=3,'seller effect claims withheld');
+ok(matrix.sources.F1?.startsWith('https://www.ftc.gov/')&&matrix.sources.F2?.startsWith('https://www.ftc.gov/'),'official FTC sources');
+ok(memo.includes('NOT COMPUTABLE')&&memo.includes('qualified_human_sessions'),'revenue arithmetic holds unknown denominator');
+ok(memo.includes('affiliate_outbound')&&memo.includes('merchant_paid_order'),'click not payment');
+ok(memo.includes('Grok')&&memo.includes('Praxxis')&&memo.includes('no extra signup'),'coordination/privacy provisions');
+console.log('PASS '+checks+' native Node assertions; R375 draft merchant activation remains blocked');
