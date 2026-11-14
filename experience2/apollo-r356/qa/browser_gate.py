@@ -71,6 +71,10 @@ with sync_playwright() as p:
     ctx.close()
  ctx=browser.new_context(viewport={'width':390,'height':900})
  page=ctx.new_page();page.set_content(document(html_note,styles_note));page.locator('summary').click()
+ page.emulate_media(media='print')
+ for selector in ('.fv-apollo-r355__eyebrow','.fv-apollo-r355__lead','.fv-apollo-r355__boundary','.fv-apollo-r355__note'):
+    assert page.locator(selector).evaluate('(e)=>getComputedStyle(e).color') == 'rgb(0, 0, 0)',selector
+ assert page.locator('.fv-apollo-r355__boundary').evaluate('(e)=>getComputedStyle(e).backgroundColor') == 'rgb(255, 255, 255)'
  pdf=OUT/'note-source-custody.pdf';pdf.write_bytes(page.pdf(print_background=True,format='A4'))
  ctx.close();browser.close()
 doc=fitz.open(pdf);text='\n'.join(x.get_text() for x in doc)
