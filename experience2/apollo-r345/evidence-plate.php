@@ -29,7 +29,7 @@ function fv_apollo_r345_evidence_plate(): string {
         <h3><?php echo $e($claim['question']); ?></h3>
         <p class="fv-apollo-r345__finding"><strong>Established:</strong> <?php echo $e($claim['finding']); ?></p>
         <p class="fv-apollo-r345__limit"><strong>Evidence limit:</strong> <?php echo $e($claim['limit']); ?></p>
-        <details class="fv-apollo-r345__custody"><summary>Inspect source custody</summary><p>Document class: original 1967 NASA Apollo 204 Review Board findings, hosted by NASA. Plate text is a paraphrase, not a verbatim quotation.</p></details>
+        <details class="fv-apollo-r345__custody"><summary>Inspect source custody for <?php echo $e($claim['question']); ?></summary><p>Document class: original 1967 NASA Apollo 204 Review Board findings, hosted by NASA. Plate text is a paraphrase, not a verbatim quotation.</p></details>
         <p class="fv-apollo-r345__source"><?php echo function_exists('fv_apollo_r349_source_link') ? fv_apollo_r349_source_link($claim['source'], $claim['locator'], array('data-fv-apollo-primary-source'=>'board')) : '<span data-fv-source-review-required="true">Source link withheld pending verification</span>'; ?></p>
         <!-- A separate print-only source ledger avoids losing closed <details> in native PDF export.
              It is hidden from the screen/accessibility tree and replaces, rather than duplicates,

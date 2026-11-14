@@ -52,7 +52,7 @@ function fv_apollo_r347_index_shortcode($atts = array()): string {
     <?php if (!$records): ?>
       <p class="fv-apollo-r347__unavailable" data-fv-source-review-required="true">The source index is unavailable. Institutional source links are withheld until this experience can verify its reviewed evidence records. The historical record may be consulted independently through NASA’s Apollo 204 Review Board archive.</p>
     <?php else: ?>
-      <div class="fv-apollo-r347__filters" data-fv-apollo-filters hidden aria-label="Filter evidence types"></div>
+      <div class="fv-apollo-r347__filters" data-fv-apollo-filters hidden role="group" aria-label="Filter evidence types"></div>
       <p class="fv-apollo-r347__status" data-fv-apollo-status aria-live="polite" hidden></p>
       <div class="fv-apollo-r347__groups">
       <?php foreach($groups as $key=>$group): ?>
