@@ -1,0 +1,257 @@
+{
+  "schema": "fv-p0-six-retriever-recheck-v1",
+  "date_pt": "2026-11-14",
+  "methodology": "Fresh external web retriever requests to six original published URLs. Tool HTTP-like codes are wrapper observations only; no origin-server HEAD/GET, visitor browser or fresh WordPress editor read.",
+  "source_custody": {
+    "previous_wp_readback_20261108_blob": "04df35ce25f99626c7b754c1d7eed0f3f006e3f4",
+    "post_count_in_prior_wp_readback": 4,
+    "live_wp_verified_this_sprint": false
+  },
+  "historical_census": {
+    "posts": 61,
+    "inline_images": 355,
+    "external_refs_media": 288,
+    "external_refs_site_qa": 286,
+    "broken_originals_reported": 42,
+    "broken_guest_verified": null,
+    "sitewide_wire_reduction_76_percent_measured": false
+  },
+  "last_verified_large_wp_origins": {
+    "threshold_decimal_bytes_exclusive": 1500000,
+    "count": 16,
+    "total_stored_bytes": 49107665,
+    "actual_visitor_bytes": null
+  },
+  "rows": [
+    {
+      "slot": "285:5",
+      "post_id": 285,
+      "published_src_prior_wp_readback": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "fresh_retriever": {
+        "date_pt": "2026-11-14",
+        "method": "web.open",
+        "tool_result_code": 404,
+        "tool_result": "not_found",
+        "origin_http_status": null,
+        "logged_out_browser_http_status": null,
+        "current_src": null,
+        "decoded_intrinsic_px": null,
+        "encoded_transfer_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "catalog_or_candidate_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "relationship": "different_year_photo",
+        "rights_status": "pd_self_catalog_assertion",
+        "native_dimensions_px": [
+          819,
+          614
+        ],
+        "conditional_no_upscale_960px_dimensions": [
+          819,
+          614
+        ],
+        "candidate_retriever_observation": null,
+        "same_binary_sha256": null,
+        "item_republication_rights_cleared": false,
+        "historical_scene_verified_for_replacement": false,
+        "editor_approved": false
+      },
+      "release": {
+        "auto_replace": false,
+        "download_or_cache": false,
+        "wordpress_write": false,
+        "risk_status": "HOLD"
+      }
+    },
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "published_src_prior_wp_readback": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "fresh_retriever": {
+        "date_pt": "2026-11-14",
+        "method": "web.open",
+        "tool_result_code": 500,
+        "tool_result": "redirect_target_inaccessible",
+        "origin_http_status": null,
+        "logged_out_browser_http_status": null,
+        "current_src": null,
+        "decoded_intrinsic_px": null,
+        "encoded_transfer_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "catalog_or_candidate_url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+        "relationship": "same_publisher_redirect_target_unverified",
+        "rights_status": "republication_not_cleared",
+        "native_dimensions_px": null,
+        "conditional_no_upscale_960px_dimensions": null,
+        "candidate_retriever_observation": "500_or_inaccessible",
+        "same_binary_sha256": null,
+        "item_republication_rights_cleared": false,
+        "historical_scene_verified_for_replacement": false,
+        "editor_approved": false
+      },
+      "release": {
+        "auto_replace": false,
+        "download_or_cache": false,
+        "wordpress_write": false,
+        "risk_status": "HOLD"
+      }
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "published_src_prior_wp_readback": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "fresh_retriever": {
+        "date_pt": "2026-11-14",
+        "method": "web.open",
+        "tool_result_code": 404,
+        "tool_result": "not_found",
+        "origin_http_status": null,
+        "logged_out_browser_http_status": null,
+        "current_src": null,
+        "decoded_intrinsic_px": null,
+        "encoded_transfer_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "catalog_or_candidate_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "relationship": "same_publisher_filename_binary_unverified",
+        "rights_status": "university_press_of_florida_credit_rights_unknown",
+        "native_dimensions_px": null,
+        "conditional_no_upscale_960px_dimensions": null,
+        "candidate_retriever_observation": "renders_in_retriever",
+        "same_binary_sha256": null,
+        "item_republication_rights_cleared": false,
+        "historical_scene_verified_for_replacement": false,
+        "editor_approved": false
+      },
+      "release": {
+        "auto_replace": false,
+        "download_or_cache": false,
+        "wordpress_write": false,
+        "risk_status": "HOLD"
+      }
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "published_src_prior_wp_readback": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "fresh_retriever": {
+        "date_pt": "2026-11-14",
+        "method": "web.open",
+        "tool_result_code": 403,
+        "tool_result": "forbidden",
+        "origin_http_status": null,
+        "logged_out_browser_http_status": null,
+        "current_src": null,
+        "decoded_intrinsic_px": null,
+        "encoded_transfer_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "catalog_or_candidate_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "relationship": "uscg_catalog_virin_match_not_binary",
+        "rights_status": "uscg_pd_catalog_assertion_item_recheck",
+        "native_dimensions_px": null,
+        "conditional_no_upscale_960px_dimensions": null,
+        "candidate_retriever_observation": "403_in_retriever",
+        "same_binary_sha256": null,
+        "item_republication_rights_cleared": false,
+        "historical_scene_verified_for_replacement": false,
+        "editor_approved": false
+      },
+      "release": {
+        "auto_replace": false,
+        "download_or_cache": false,
+        "wordpress_write": false,
+        "risk_status": "HOLD"
+      }
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "published_src_prior_wp_readback": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "fresh_retriever": {
+        "date_pt": "2026-11-14",
+        "method": "web.open",
+        "tool_result_code": 403,
+        "tool_result": "forbidden",
+        "origin_http_status": null,
+        "logged_out_browser_http_status": null,
+        "current_src": null,
+        "decoded_intrinsic_px": null,
+        "encoded_transfer_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "catalog_or_candidate_url": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+        "relationship": "same_basename_secondary_host_not_binary",
+        "rights_status": "museum_courtesy_rights_unknown",
+        "native_dimensions_px": null,
+        "conditional_no_upscale_960px_dimensions": null,
+        "candidate_retriever_observation": "renders_in_retriever",
+        "same_binary_sha256": null,
+        "item_republication_rights_cleared": false,
+        "historical_scene_verified_for_replacement": false,
+        "editor_approved": false
+      },
+      "release": {
+        "auto_replace": false,
+        "download_or_cache": false,
+        "wordpress_write": false,
+        "risk_status": "HOLD"
+      }
+    },
+    {
+      "slot": "407:1",
+      "post_id": 407,
+      "published_src_prior_wp_readback": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "fresh_retriever": {
+        "date_pt": "2026-11-14",
+        "method": "web.open",
+        "tool_result_code": 400,
+        "tool_result": "unsupported_binary_content_type",
+        "origin_http_status": null,
+        "logged_out_browser_http_status": null,
+        "current_src": null,
+        "decoded_intrinsic_px": null,
+        "encoded_transfer_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "catalog_or_candidate_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+        "relationship": "usgs_same_record_thumbnail_not_binary",
+        "rights_status": "usgs_pd_catalog_assertion_item_recheck",
+        "native_dimensions_px": null,
+        "conditional_no_upscale_960px_dimensions": null,
+        "candidate_retriever_observation": null,
+        "same_binary_sha256": null,
+        "item_republication_rights_cleared": false,
+        "historical_scene_verified_for_replacement": false,
+        "editor_approved": false
+      },
+      "release": {
+        "auto_replace": false,
+        "download_or_cache": false,
+        "wordpress_write": false,
+        "risk_status": "HOLD"
+      }
+    }
+  ],
+  "release": {
+    "guest_browser_evidence_required": true,
+    "rights_and_scene_approval_required": true,
+    "max_derivative_width_px": 960,
+    "no_upscale": true,
+    "all_hold": true,
+    "binaries_downloaded": 0,
+    "wordpress_prod_writes": 0,
+    "homepage_design_writes": 0,
+    "merges": 0,
+    "deployments": 0,
+    "subscriptions_usd": 0
+  },
+  "handoff": "Site QA #154 owns browser capture; no duplicated collector. Exact source/CMS timestamps must be re-read before staging."
+}
