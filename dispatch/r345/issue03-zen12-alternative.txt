@@ -1,0 +1,34 @@
+THE DISPATCH — ISSUE 03 ALTERNATIVE
+NOT ADOPTED / UNSENT / DO NOT EMAIL
+
+SUBJECT: Twelve minutes is a duration, not a result
+PROPOSED PREHEADER (UNVERIFIED IN JETPACK): How to judge an audio meditation claim before you pay for it.
+
+Twelve minutes can fit into a crowded day. An hour often cannot.
+
+That is the attractive part of a short audio routine. The uncomfortable question arrives when a seller suggests those twelve minutes deliver the equivalent of an hour of advanced meditation. What, exactly, is being compared?
+
+Zen12, an Inspire3 meditation-audio product, makes that comparison on its sales page. The seller describes twelve progressive levels and four listening styles per level. A convenient format is not proof of a particular result.
+
+A 2023 systematic review of fourteen binaural-beat studies found five consistent with an entrainment hypothesis, eight inconsistent and one mixed. A separate meta-analysis found potentially promising effects for attention and memory but conflicting findings across tasks. Neither tested this branded product.
+
+Try three quiet twelve-minute sessions without buying anything. Record: Did you complete each session? What interrupted you? Would you voluntarily repeat the routine next week? These notes can show whether the habit fits your life; they cannot prove cognitive or clinical benefits.
+
+A paid recording could provide structure or an appealing listening style. The product's scientific claims are a separate question.
+
+PRIMARY CTA — INACTIVE: Read the independent Zen12 buyer evidence guide
+[[APPROVED_LIVE_ZEN12_BUYER_GUIDE_URL_REQUIRED]]
+
+COMMERCIAL DISCLOSURE: If you purchase through a qualifying link in that guide, Final Vestige may earn a commission. We will not activate the guide or merchant links without specific merchant/email permission and product review. No purchase is necessary to try the routine.
+
+Sources:
+Official Zen12 presentation (seller claims): https://zen12.com/
+Systematic review of EEG entrainment (2023): https://pubmed.ncbi.nlm.nih.gov/37205669/
+Memory and attention review/meta-analysis (2023): https://pubmed.ncbi.nlm.nih.gov/35842538/
+FTC health product substantiation: https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance
+
+Final Vestige Studios
+
+DO NOT SEND — publisher postal address: [[VALID_POSTAL_ADDRESS_REQUIRED]]
+DO NOT SEND — native unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
+Real recipient consent, inbox proof and founder release authorization: NOT VERIFIED.
