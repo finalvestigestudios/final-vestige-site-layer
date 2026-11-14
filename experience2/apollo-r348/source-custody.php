@@ -70,7 +70,7 @@ function fv_apollo_r348_drawer_shortcode($atts=array()): string {
     <h2 id="<?php echo $esc($id); ?>-heading">Trace each claim to its source.</h2>
     <p class="fv-apollo-r348__intro">This is a source-page crosswalk, not an additional set of independent reports. <?php echo $esc((string)$references); ?> evidence references resolve to <?php echo $esc((string)count($pages)); ?> distinct source identities; <?php echo $esc((string)$approved); ?> of those page addresses are explicitly approved for link display. Entries are grouped <strong>only when their exact NASA source-page URL matches</strong>. A citation does not grant media reuse rights.</p>
     <?php if (!$pages): ?>
-      <p class="fv-apollo-r348__fallback">The custody crosswalk is temporarily unavailable. Read the <a href="https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html">original NASA Review Board findings</a>.</p>
+      <p class="fv-apollo-r348__fallback" data-fv-source-review-required="true">The custody crosswalk is temporarily unavailable. Reviewed NASA source links are withheld until source custody can be verified; readers can independently consult the NASA Apollo 204 Review Board archive.</p>
     <?php else: ?>
       <ol class="fv-apollo-r348__pages">
       <?php foreach($pages as $n=>$page): ?>
