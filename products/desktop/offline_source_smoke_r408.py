@@ -5,6 +5,7 @@ Private subprocess output is discarded rather than reflected in receipts.
 """
 from __future__ import annotations
 
+import ast
 import hashlib
 import json
 import os
@@ -38,6 +39,7 @@ _CHILD_RUNTIME_ENV = frozenset({
 # extensions are likewise executable imports but absent from the .py digest.
 # This *source-only* gate must refuse them rather than attest their contents.
 _BLOCKED_IMPORT_SUFFIXES = (".pyc", ".pyo", ".pyd", ".so", ".dll")
+_LAUNCHER_APP_IDS = {name: app for app, name in PRODUCTS}
 
 
 class SourceGateError(ValueError):
@@ -115,6 +117,54 @@ def _verify_source_directories(desktop: Path) -> None:
                     raise SourceGateError("Untrusted compiled import in desktop source inventory")
 
 
+
+def _verify_launcher_route(source: bytes, app_id: str) -> None:
+    """Require each named launcher to call the shared launch() for its own app.
+
+    An unexecuted or wrong-product launcher can otherwise return exit code zero
+    and create twelve false-positive source smoke receipts. Parse without
+    executing source. This is a launcher-route check, not a code signature.
+    """
+    try:
+        tree = ast.parse(source, filename="<desktop-launcher>")
+    except (SyntaxError, ValueError, UnicodeError):
+        raise SourceGateError("Unsafe desktop launcher route") from None
+    statements = tree.body
+    if (statements and isinstance(statements[0], ast.Expr) and
+            isinstance(statements[0].value, ast.Constant) and
+            isinstance(statements[0].value.value, str)):
+        statements = statements[1:]  # Optional harmless module docstring.
+    if len(statements) != 2:
+        raise SourceGateError("Unsafe desktop launcher route")
+    imported, entry = statements
+    if (not isinstance(imported, ast.ImportFrom) or imported.level != 0 or
+            imported.module != "fvs_suite.launcher" or
+            len(imported.names) != 1 or imported.names[0].name != "launch" or
+            imported.names[0].asname is not None):
+        raise SourceGateError("Unsafe desktop launcher route")
+    if isinstance(entry, ast.If):
+        guard = entry.test
+        if (entry.orelse or len(entry.body) != 1 or
+                not isinstance(guard, ast.Compare) or
+                not isinstance(guard.left, ast.Name) or
+                guard.left.id != "__name__" or
+                len(guard.ops) != 1 or not isinstance(guard.ops[0], ast.Eq) or
+                len(guard.comparators) != 1 or
+                not isinstance(guard.comparators[0], ast.Constant) or
+                guard.comparators[0].value != "__main__"):
+            raise SourceGateError("Unsafe desktop launcher route")
+        entry = entry.body[0]
+    if not isinstance(entry, ast.Expr) or not isinstance(entry.value, ast.Call):
+        raise SourceGateError("Unsafe desktop launcher route")
+    call = entry.value
+    if (not isinstance(call.func, ast.Name) or call.func.id != "launch" or
+            len(call.args) != 1 or call.keywords or
+            not isinstance(call.args[0], ast.Constant) or
+            type(call.args[0].value) is not str or
+            call.args[0].value != app_id):
+        raise SourceGateError("Unsafe desktop launcher route")
+
+
 def source_digest(desktop: Path) -> str:
     """Fingerprint all import-root files, six launchers and this gate by bytes.
 
@@ -140,7 +190,11 @@ def source_digest(desktop: Path) -> str:
             raw = path.read_bytes()
             if len(raw) != info.st_size:
                 raise SourceGateError("Desktop source changed during hashing")
+            if path.parent == desktop / "launchers" and path.name in _LAUNCHER_APP_IDS:
+                _verify_launcher_route(raw, _LAUNCHER_APP_IDS[path.name])
             label = path.relative_to(desktop).as_posix().encode("ascii")
+        except SourceGateError:
+            raise  # Fixed, non-private launcher/asset rejection; never chain input.
         except (OSError, UnicodeError, ValueError):
             raise SourceGateError("Cannot verify local desktop source inventory") from None
         digest.update(len(label).to_bytes(4, "big"))
