@@ -1,0 +1,38 @@
+# Bohemia Investigations cycle — 14 November 2026, 15:36 PT
+
+**Disposition: RELEASE HOLD.** Existing WordPress investigation **#2488** remains **draft**. Nothing publicly published, no Jetpack subscriber email or social distribution, no paid service and no modifications to unrelated posts, site template or homepage.
+
+## Duplicate and scope guard
+- Inspected current live FV homepage, [Journal](https://finalvestige.com/blog/), [Editorial Standards](https://finalvestige.com/editorial-standards/), authenticated WordPress modified-date post queue, [Investigations issue #1463](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1463) and [visual QA issue #1589](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1589).
+- No competing published Bohemia article in targeted checks; keep the prior Bohemia draft #2488 and do not touch Caernarvon #2151. Preserve all existing original art and NASA/USDA/USGS documentary images in #2488.
+
+## Newly documented official source
+**Louisiana House of Representatives, Official Journal for Wednesday May 24, 2000, printed pp. 9–10**, [original PDF](https://house.legis.la.gov/H_Journals/H_Journals_All/2000_RSJournals/hj052414.PDF).
+
+- Representative Wooton offered an amendment to **engrossed HB 221** proposing a **Bohemia Spillway Debt Retirement Fund** from qualifying increases to riverboat gaming franchise fees with maximum dedication **$3 million annually**.
+- Proposed annual legislative appropriation; proposed monthly court-registry disbursement: **14.18% Vogt/Edgecombe**, **85.82% Haspel & Davis**.
+- The amendment's characterization of over-$10,000 claims as the only remaining matters was **proposed legislative language**, not a judicial or audited determination of every claim.
+- **Vote 36 yeas, 66 nays; amendment rejected**, as recorded in House journal. This only establishes defeat of the named proposal, **not** rejection of every later funding measure, an existing court payment, nor a current balance. A separate HB 283's ultimate fate was not determined.
+- Web reading/search directly verified the official legislature-domain PDF searchable text. **The web PDF screenshot of the relevant original page failed with HTTP 502/DisabledError; graphic-page verification remains open.** No false claim of physical archive visit or visual inspection.
+
+## New reader writing, research ledger and owned art
+- Continued [Reader Edition v14](https://github.com/finalvestigestudios/final-vestige-site-layer/blob/main/docs/editorial/bohemia-spillway-reader-edition-2026-11-14.md) as **v15**, inserting the new three-paragraph section **“A funding plan loses on the House floor”**, distinguishing the legislative proposal, appropriation, judicial registry receipts and individual payments. New reader bibliography **[28]**. Commit `e728f651`; independently fetched reader blob `f9995645ed9a067d1127bbd3c01e16ad249bc3c8`, with v15 heading, new section and [28] confirmed.
+- Expanded the existing [master research dossier](https://github.com/finalvestigestudios/final-vestige-site-layer/blob/main/docs/editorial/bohemia-spillway-2026-11-12-land-roster-rights-claim-investigation-draft.md) from 61 to **62** numbered ledger items, adding **[62]** with House journal URL, vote and limitations, without renumbering or discarding prior research. Commit `182dd4f0`; readback matched.
+- Produced original FV-owned [graphic: the rejected repayment channel](https://github.com/finalvestigestudios/final-vestige-site-layer/blob/main/docs/editorial/assets/bohemia-2000-defeated-repayment-amendment-2026-11-14.svg). **Creator:** Final Vestige Studios. **Date:** 2026-11-14. **Rights:** original vector artwork, no third-party images, embedded external data, stock photos or outside fonts. **Primary source:** Louisiana House May 24, 2000 Official Journal printed pp. 9–10 (text verified, original page screenshot failed). **Alt:** “In 2000 Louisiana legislators proposed up to $3 million a year in specified gaming-fee revenues for Bohemia claims, with 14.18% going to Vogt and Edgecombe, 85.82% to Haspel and Davis; the House rejected the amendment 36 yeas to 66 nays.” **Caption:** “Proposed dedicated funding defeated; not an enacted account or evidence of payment.” Original SVG commit `f2203507`, readback shows source-derived title, disclaimer and vote. Local 390×465 and 780×930 PNG renders generated; 390px image opened and inspected for clipping, contrast and readable labels. **Not uploaded or embedded in live WordPress post** pending image/site QA.
+
+## Authenticated WordPress staging and readback
+- Post **#2488** only; 4 new top-level Gutenberg blocks (heading + 3 paragraphs) inserted immediately before prior “The settlement that changed the remedy” via individual **optimistic-lock guarded** block operations. Replaced the same post's last bibliography `core/list` block via exact hash and content-version guard to append source #28, and separately replaced introductory count “27” to “28”; **no full-post rewrite**.
+- **Independent readback:** `modified=2026-11-14T15:36:53` (site-local) and `content_hash=4e6f00ded500b8a5ac850fa53c5cb6ad62b3d8ab`; **119 Gutenberg top-level blocks, 28 unique numbered source anchors #1–#28, 85 `href="#fv-source-*"` links, zero unresolved internal citation targets**, new heading/amount/vote and reader-source-count verified.
+- Both original NASA-presented government documentary-image blocks remain, with source filenames for 2007 and 2023, as do the existing evidence diagrams; post categories unchanged `[9369,232815]`, featured media `#2484`.
+- Safeguards independently read back: **`status=draft`, `_jetpack_dont_email_post_to_subs=true`, `jetpack_publicize_feature_enabled=false`, `jetpack_seo_noindex=true`**; never published. No changes to #2151, public pages, templates or social media.
+- Independent anonymous image URL checks using available web retrieval returned “not accessible via this tool,” **NOT** positive image-byte/loading evidence.
+- The new SVG is in GitHub's documented asset register only, not WordPress media; do not hotlink to GitHub from a public article.
+
+## Required release gates
+1. Secure actual **House May 24, 2000 original PDF-page visual** or preserve explicit text-only verification; independently trace HB 283 or later **enacted** funding if used in a narrative.
+2. Obtain original **1998 Orleans Levee District Resolution 1-071598**, actual 2015 escrow closing / bank transfers, original `Vogt` claimant allocation and `Haspel & Davis` court-registry recipient distributions; find the 2007 $19m segregation/release order. Never conflate amendments, judgment, reserves, the 2015 board *authorization*, treasury receipts or cleared claimant payments.
+3. Complete final factual/legal editorial scrutiny and anonymous real image-load verification. Authenticated production-theme **390px and 1440px** screens for #2488, including title/featured photo, source list, original graphics, text clipping and citation navigation, remain unverified; [shared QA #1589](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1589) awaits an inspector. A WordPress API block readback **is not a visual test**.
+4. After all gates, first publish only with `_jetpack_dont_email_post_to_subs=true` and `jetpack_publicize_feature_enabled=false`, then independently verify public post URL, actual live HTML/images/credits and link destination. **Do not publish now**.
+5. For Grok's separate lane only *after* approved publication: narrative candidate “In 2000 Louisiana considered a $3 million-a-year Bohemia restitution fund. The amendment lost 36–66.” No platform posting here.
+
+**Additional spend:** $0. **Published:** none.
