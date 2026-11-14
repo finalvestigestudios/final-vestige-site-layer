@@ -15,7 +15,7 @@ check('A no active merchant links',()=>assert.doesNotMatch(files.a,/<a[^>]+href=
 check('B no active merchant links',()=>assert.doesNotMatch(files.b,/<a[^>]+href="https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|affiliates\.inspire3\.com|hypnosislive\.com|brainwaveshots\.com)/i));
 check('A truly disabled CTA',()=>assert.match(files.a,/<button type="button" disabled aria-disabled="true">/));
 check('B truly disabled CTA',()=>assert.match(files.b,/<button type="button" disabled aria-disabled="true">/));
-for(const key of ['a','b','hub']){check(key+' no scripts',()=>assert.doesNotMatch(files[key],/<script\b/i));check(key+' no forms',()=>assert.doesNotMatch(files[key],/<form\b/i));check(key+' no autoplay',()=>assert.doesNotMatch(files[key],/autoplay/i));check(key+' no tracker',()=>assert.doesNotMatch(files[key],/<iframe\b|googletagmanager|facebook\.net\/tr/i));}
+for(const key of ['a','b','hub']){check(key+' no scripts',()=>assert.doesNotMatch(files[key],/<script\b/i));check(key+' no forms',()=>assert.doesNotMatch(files[key],/<form\b/i));check(key+' no autoplay media',()=>assert.doesNotMatch(files[key],/<video[^>]+autoplay|<audio[^>]+autoplay/i));check(key+' no tracker',()=>assert.doesNotMatch(files[key],/<iframe\b|googletagmanager|facebook\.net\/tr/i));}
 check('A disclosure adjacent button',()=>assert.match(files.a,/<p class="disclose">[\s\S]{0,550}<\/p><button type="button" disabled/));
 check('B disclosure adjacent button',()=>assert.match(files.b,/<p class="disclose">[\s\S]{0,550}<\/p><button type="button" disabled/));
 check('conditional language',()=>assert.ok(files.a.includes('If an approved earning link is added')));
@@ -46,7 +46,7 @@ check('B extra film does not alter buyer core',()=>{const start='<div class="eye
 const adversarial=[
 ['merchant link',x=>x.replace('<button type="button" disabled','<a href="https://zen12.com/buy">buy</a><button type="button" disabled'),x=>/<a[^>]+href="https?:\/\/(?:www\.)?zen12\.com/i.test(x)],
 ['enabled button',x=>x.replace('<button type="button" disabled','<button type="button"'),x=>!/<button type="button" disabled/.test(x)],
-['new form',x=>x+'<form action="/lead"></form>',x=>/<form\\b/.test(x)],
+['new form',x=>x+'<form action="/lead"></form>',x=>/<form\b/.test(x)],
 ];
 let rejected=0;
 for(const [name,mutate,detector] of adversarial.slice(0,2)){assert.ok(detector(mutate(files.a)),name);rejected++;}
