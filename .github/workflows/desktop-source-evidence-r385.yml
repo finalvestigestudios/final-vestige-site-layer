@@ -234,6 +234,14 @@ jobs:
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_revocation_r247.py
           python -W error -m unittest discover -s products/desktop/tests -p test_premium_launch_proof_r252.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_launch_proof_r252.py
+      - name: R428 exact original SpendMap vendor labels, inherited R358 and real summary (normal and optimized)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_spend_source_label_custody_r428.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_source_label_custody_r428.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_evidence_r358.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_evidence_r358.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_spend_source_label_integration_r428.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_source_label_integration_r428.py
       - name: R427 SpendMap group fingerprint custody and real-engine regressions (normal and optimized)
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p test_spend_group_digest_r427.py

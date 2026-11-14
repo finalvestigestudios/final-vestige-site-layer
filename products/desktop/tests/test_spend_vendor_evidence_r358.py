@@ -19,8 +19,11 @@ class SpendVendorEvidenceR358(unittest.TestCase):
         self.assertIn("acme", labels)
 
     def test_ascii_boundary_whitespace_compatibility(self):
-        self.assertEqual(spend_vendor_evidence(vendors(" \tACME\r", "ACME")),
-                         (False, 1, "ACME"))
+        collision, count, labels = spend_vendor_evidence(vendors(" \tACME\r", "ACME"))
+        self.assertFalse(collision)  # Matching still ignores ordinary ASCII boundary whitespace.
+        self.assertEqual(count, 1)
+        self.assertIn(r"\u0020\u0009ACME\u000D", labels)
+        self.assertIn("ACME", labels)
 
     def test_nbsp_is_distinct(self):
         collision, count, labels = spend_vendor_evidence(vendors("ACME", "\u00a0ACME"))
