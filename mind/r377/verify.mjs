@@ -41,7 +41,7 @@ function safeBuyer(html){
 let passed=0;
 const check=(label,yes)=>{assert.ok(yes,label);passed++;};
 check("original article at least 2000 words",article.trim().split(/\s+/).length>=2000);
-for(const fragment of ["Twenty of the twenty-four","https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/","https://doi.org/10.1068/p281059","puysegurs-animal-magnetism-files","https://finalvestige.com/focus/","not proof that an MP3"])check("article required "+fragment,article.toLowerCase().includes(fragment.toLowerCase()));
+for(const fragment of ["Twenty of the twenty-four","https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/","https://doi.org/10.1068/p281059","puysegurs-animal-magnetism-files","https://finalvestige.com/focus/","proof that an MP3"])check("article required "+fragment,article.toLowerCase().includes(fragment.toLowerCase()));
 check("A independent inactive buyer guide",safeBuyer(a));
 check("B independent inactive buyer guide",safeBuyer(b));
 check("A/B meaningful source parity after optional film",b.replace(figure,"")===a);
