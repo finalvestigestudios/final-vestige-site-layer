@@ -13,7 +13,7 @@ const slot=(over={})=>({
 const net=(over={})=>({
  request_id:'33.1',url:img,url_aliases:[],status:200,
  mime_type:'image/jpeg',encoded_data_length:5000,error:null,
- was_cached:false,from_disk_cache:false,from_service_worker:false,...over});
+ was_cached:false,from_disk_cache:false,from_memory_cache:false,from_service_worker:false,...over});
 const result=(slots=[slot()],network=[net()])=>scopeByRequestId(slots,network);
 test('one bound photo counts exactly once; chrome logo excluded',()=>{
  const x=result([slot()],[net(),net({request_id:'ui.1',url:'https://finalvestige.com/logo.png',encoded_data_length:11000})]);
@@ -84,7 +84,8 @@ test('dynamic query selecting a different photo remains a mismatch',()=>{
 for(const [label,bad] of [
  ['404',{status:404}],['HTML disguised as image',{mime_type:'text/html'}],
  ['zero transfer',{encoded_data_length:0}],['disk cache',{from_disk_cache:true}],
- ['service worker',{from_service_worker:true}],['reused browser cache',{was_cached:true}],
+ ['service worker',{from_service_worker:true}],
+ ['memory cache',{from_memory_cache:true}],['reused browser cache',{was_cached:true}],
  ['transport error',{error:'net::ERR_ABORTED'}]
 ])test('invalid CDP Image response ('+label+') fails closed',()=>{
  assert.equal(result([slot()],[net(bad)]).article_bytes,null,label);
@@ -109,6 +110,7 @@ for (const [name,networkChange] of [
  ['missing was_cached flag',{was_cached:undefined}],
  ['missing disk-cache flag',{from_disk_cache:undefined}],
  ['missing service-worker flag',{from_service_worker:undefined}],
+ ['missing memory-cache flag',{from_memory_cache:undefined}],
  ['network JPEG vs decoded PNG',{mime_type:'image/png'}]
 ])test('fail closed on '+name,()=>{
  const v=result([slot()],[net(networkChange)]);
