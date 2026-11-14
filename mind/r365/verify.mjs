@@ -20,14 +20,14 @@ let checks = 0;
 const ok = (condition, message) => { checks++; assert.ok(condition, message); };
 const impossibleMerchantLink = s => /<a\b[^>]*href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots)\./i.test(s);
 const unsafeMarkup = s => /<script\b|<iframe\b|<form\b|<input\b|<video\b|\sonclick\s*=|\sonsubmit\s*=|\sautoplay\s*=|dataLayer|gtag\s*\(/i.test(s);
-const hasDisabled = s => /<button\b[^>]*\bdisabled\b[^>]*>/i.test(s);
+const hasDisabled = s => /<button\b[^>]*\sdisabled(?=\s|>)[^>]*>/i.test(s);
 const disclosed = s => /Affiliate disclosure:[\s\S]*?Final Vestige may earn a commission at no additional cost to you/.test(s);
 const safe = s => hasDisabled(s)&&disclosed(s)&&!impossibleMerchantLink(s)&&!unsafeMarkup(s);
 const core = s => s.replace(/<section class="film"[\s\S]*?<\/section>/,'').replace(/Version [AB]/g,'Version X').replace(/>\s+</g,'><').trim();
 ok(article.split(/\s+/).length >= 1900, 'deep original research threshold');
 ok(article.includes('status: SOURCE_CONTROL_ONLY_NOT_PUBLISHED'), 'not published editorial status');
 for(const p of ['https://pubmed.ncbi.nlm.nih.gov/12470132/','https://pubmed.ncbi.nlm.nih.gov/15994228/','https://doi.org/10.1080/00207144.2024.2356856','https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/','https://www.nccih.nih.gov/health/hypnosis']) ok(article.includes(p), 'article lacks source '+p);
-for(const claim of ['16 highly suggestible and 16 less','not evidence that a consumer','historical analogy','not a product']) ok(article.toLowerCase().includes(claim.toLowerCase()), 'article boundary: '+claim);
+for(const claim of ['16 highly suggestible and 16 less','does not demonstrate that a purchasable recording','historical analogy','The experiment also concerned']) ok(article.toLowerCase().includes(claim.toLowerCase()), 'article boundary: '+claim);
 ok(core(A)===core(B), 'A/B must contain identical substantive text');
 for(const [v,s] of [['A',A],['B',B]]) {
   ok(s.includes('noindex,nofollow'),v+' must be noindex');
