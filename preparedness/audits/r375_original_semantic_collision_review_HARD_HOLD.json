@@ -1024,6 +1024,8 @@
   "qualified_emergency_safety_approved": false,
   "qualified_privacy_approved": false,
   "commercial_checkout_approved": false,
-  "verified_paid_orders": 0,
-  "verified_net_revenue": null
+  "verified_paid_orders": null,
+  "verified_net_revenue": null,
+  "sales_attribution_status": "UNAVAILABLE_NOT_ZERO",
+  "commercial_verification_source": "NONE_AUTHENTICATED"
 }
