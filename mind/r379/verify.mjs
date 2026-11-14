@@ -24,7 +24,7 @@ for(const [label,html] of [["A",a],["B",b],["hub",hub]]){
  check(/prefers-reduced-motion/.test(html),label+" reduced motion");
 }
 for(const [label,html] of [["A",a],["B",b]]){
- check(/<button[^>]*\bdisabled\b/.test(html),label+" native disabled");
+ check(/<button\b[^>]*\sdisabled(?:\s|>)/.test(html),label+" native disabled");
  check(/may earn a commission/.test(html),label+" adjacent FTC text");
  check(html.indexOf("may earn a commission")<html.indexOf("Merchant checkout withheld"),label+" disclosure before button");
  check(/https:\/\/finalvestige.com\/focus\//.test(html),label+" existing free path");
