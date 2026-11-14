@@ -1,0 +1,43 @@
+{
+  "id": "dispatch-r352-optional-issue01",
+  "state": "OPTIONAL_NOT_ADOPTED_HOLD_UNSENT",
+  "original_campaign_pr": 175,
+  "original_issue": 1,
+  "subject": "Behind the door, the stranger changed",
+  "preheader": "What a 1998 street experiment really showed about noticing a person swap.",
+  "issue_kind": "editorial",
+  "proposed_utm_content": "issue_01_change_blindness",
+  "primary_cta_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+  "sources": [
+    {
+      "title": "Simons and Levin, 1998, Psychonomic Bulletin & Review",
+      "url": "https://doi.org/10.3758/BF03208840"
+    },
+    {
+      "title": "Simons and Chabris, 1999, Perception",
+      "url": "https://doi.org/10.1068/p281059"
+    },
+    {
+      "title": "Final Vestige's published Change Blindness investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    }
+  ],
+  "source_checks": [
+    "Simons & Levin's field experiment published 1998; an experimenter was switched during a conversation",
+    "About half noticed the swap in the reported experiment; not a population estimate",
+    "Simons & Chabris 1999 is a different inattentional-blindness study",
+    "Published FV /change-blindness/ post is a genuine existing link"
+  ],
+  "flags": {
+    "founder_editorial_approval": false,
+    "provider_confirmed_consent": false,
+    "native_jetpack_preview": false,
+    "received_email": false,
+    "publisher_postal_address_verified": false,
+    "unsubscribe_function_verified": false,
+    "release_authorized": false,
+    "scheduled": false,
+    "sent": false
+  },
+  "status_note": "Offline source-only production asset. No email, WordPress post, subscriber or merchant action authorized."
+}
