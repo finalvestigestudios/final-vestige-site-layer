@@ -48,6 +48,18 @@ class Entitlement:
     expires_at: datetime
 
 
+def _require_native_premium_product(product: object) -> str:
+    """Reject forged str subclasses before membership, formatting or file I/O.
+
+    Client and direct-API callers must select an exact built-in product ID;
+    otherwise Python subclasses can override hashing/equality or formatting.
+    This is an identity boundary, not a substitute for Ed25519 verification.
+    """
+    if type(product) is not str or product not in PRODUCTS:
+        raise EntitlementError("Unknown premium application")
+    return product
+
+
 def _unique_fields(pairs):
     obj = {}
     for name, value in pairs:
@@ -75,8 +87,7 @@ def _canonical_payload(data: dict) -> bytes:
 
 
 def installed_license_path(product: str) -> Path:
-    if product not in PRODUCTS:
-        raise EntitlementError("Unknown premium application")
+    product = _require_native_premium_product(product)
     base = os.environ.get("LOCALAPPDATA") if os.name == "nt" else None
     folder = Path(base) if base else Path.home() / ".config"
     return folder / "FinalVestige" / "licenses" / f"{product}.fvslicense"
@@ -101,8 +112,7 @@ def verify_license(path: str | Path, product: str, *,
     Offline clients cannot prevent clock rollback, binary patching, copying,
     or license sharing by themselves.
     """
-    if product not in PRODUCTS:
-        raise EntitlementError("Unknown premium application")
+    product = _require_native_premium_product(product)
     keys = TRUSTED_PUBLIC_KEYS if trusted_keys is None else trusted_keys
     if not keys:
         raise EntitlementError("Premium entitlements are not activated in this pre-release build")
