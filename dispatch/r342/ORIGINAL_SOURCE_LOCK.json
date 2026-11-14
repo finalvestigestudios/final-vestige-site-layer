@@ -1,0 +1,20 @@
+{
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "manifest_blob": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+  "test_blob": "fd7f05e30092a7ec82090993dc5d7d0e23755c8e",
+  "issue_blobs": {
+    "the-mind-is-not-a-camera": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+    "before-hypnosis-had-a-name": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+    "the-twelve-minute-question": "aeeef34efea0cc281f69901488e4501fea851245",
+    "the-hatch-and-the-spark": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+    "before-you-press-play": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+    "the-evidence-log": "004d558df6376d2ad6f4f79a4581e8d2c444e355"
+  },
+  "release": "HOLD_UNSENT",
+  "commercial_issue_03": "HOLD_MERCHANT",
+  "commercial_issue_05": "HOLD_MERCHANT",
+  "final_send_authorized": false,
+  "eligible_recipients": null,
+  "verified_paid_orders": null,
+  "verified_net_revenue": null
+}
