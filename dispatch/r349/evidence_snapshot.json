@@ -1,0 +1,133 @@
+{
+  "schema": "fv_dispatch_r349_merchant_and_consent_review_v1",
+  "captured_utc": "2026-11-14T07:35:34Z",
+  "status": "SOURCE_ONLY_HOLD_UNSENT",
+  "github": {
+    "master_pr": 175,
+    "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "independent_review_pr": 201,
+    "immediate_base_pr": 2439,
+    "immediate_base_sha": "4a4a146832c5f5b70ac79a83ecfafb1715172b17",
+    "founder_original_allocation": {
+      "editorial": 4,
+      "commercial_review_pending": 2
+    },
+    "alternates_adopted": 0
+  },
+  "wordpress": {
+    "site": "https://finalvestige.com",
+    "newsletter": {
+      "subscription_enabled": true,
+      "auto_post_enabled": false,
+      "email_content_format": "full",
+      "reply_to": "no-reply",
+      "from_name": "Final Vestige Studios",
+      "provider_eligible_recipients_verified": false,
+      "welcome_actual_inbox_verified": false,
+      "native_inbox_preview_verified": false,
+      "publisher_postal_address_verified": false,
+      "functional_unsubscribe_verified": false,
+      "founder_final_campaign_approval": false,
+      "subscriber_counts": {
+        "total": 3,
+        "confirmed": 3,
+        "unconfirmed": 2
+      },
+      "follower_counts": {
+        "wpcom": 3,
+        "email": 0
+      },
+      "recent_post_notifications": "5 of 5 never_sent_opted_out"
+    },
+    "welcome": "Fieldbook 52-page URL configured only; actual delivery not independently verified",
+    "source": "WordPress authenticated newsletter status/get_settings and Jetpack followers; 2026-11-14T07:35Z"
+  },
+  "merchant": [
+    {
+      "id": "zen12",
+      "product": "Zen12 Premium",
+      "public_observations": [
+        {
+          "type": "promotional_display",
+          "amount": 37,
+          "currency": "USD",
+          "source": "https://zen12.com/secret/",
+          "provenance": "public coupon variant; NOT checkout price"
+        },
+        {
+          "type": "promotional_display",
+          "amount": 67.77,
+          "currency": "USD",
+          "source": "https://zen12.com/",
+          "provenance": "Beginner tier shown; NOT same offer as Premium; do NOT compare as one SKU"
+        }
+      ],
+      "source": "https://zen12.com/",
+      "format": "Seller describes 12 levels, four audio styles each, 48 MP3s; seller claims 12 minutes equivalent to hour",
+      "claims_proven_for_product": false,
+      "proofs": {},
+      "email_permission": "UNVERIFIED",
+      "approved_guide": "UNVERIFIED",
+      "payout": "UNVERIFIED",
+      "issued_link": "UNVERIFIED"
+    },
+    {
+      "id": "total_focus",
+      "product": "Hypnosis Live Total Focus",
+      "public_observations": [
+        {
+          "type": "promotional_display",
+          "amount": 2,
+          "currency": "USD",
+          "source": "Issue #174 R348 snapshot",
+          "provenance": "historic agent observed, not independently reverified this run"
+        },
+        {
+          "type": "promotional_display",
+          "amount": 17.95,
+          "currency": "USD",
+          "source": "https://hypnosislive.com/mental-skills/total-focus",
+          "provenance": "web indexed public listing on earlier crawl; not authenticated checkout"
+        },
+        {
+          "type": "promotional_display",
+          "amount": 24.44,
+          "currency": "USD",
+          "source": "https://hypnosislive.com/mental-skills/total-focus",
+          "provenance": "web opened November 13, 2026; indexed crawl about 2 days earlier, not authenticated checkout"
+        }
+      ],
+      "list_price_observation": "Web page 2026-11-13 retrieval also displayed $29.95 list price, distinct from earlier $22.95; do not quote in Dispatch.",
+      "format": "Seller 33 minutes, 47 MB MP3; claims concentration gains unverified",
+      "refund_terms": "14-day advertised satisfaction promise with maximum five refunded sessions per year stated in FAQ; fulfillment not independently confirmed",
+      "refund_source": "https://hypnosislive.com/faq",
+      "claims_proven_for_product": false,
+      "proofs": {},
+      "email_permission": "UNVERIFIED",
+      "approved_guide": "UNVERIFIED",
+      "payout": "UNVERIFIED",
+      "issued_link": "UNVERIFIED"
+    }
+  ],
+  "private_evidence": {
+    "gmail_partner_search": "No matching account-specific acceptance/EMAIL channel message found within scoped search; absence in this inbox does not prove none exists elsewhere.",
+    "gmail_welcome_search": "2026-10-25 subscription confirmation request found; no actual Fieldbook welcome receipt found in scoped search.",
+    "subscription_confirmation_is_not_welcome": true,
+    "personal_addresses_exposed": false
+  },
+  "commercial_measurement": {
+    "status": "NOT_COMPUTABLE",
+    "verified_qualified_sessions": null,
+    "merchant_settled_orders": null,
+    "net_revenue_usd": null,
+    "sample_warning": "Tiny list: no A/B inference"
+  },
+  "sources": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://finalvestige.com/editorial-standards/"
+  ],
+  "sending_authorized": false
+}
