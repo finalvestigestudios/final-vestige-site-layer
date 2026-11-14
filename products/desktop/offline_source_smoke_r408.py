@@ -13,6 +13,7 @@ from pathlib import Path
 import stat
 import subprocess
 import sys
+import time
 
 PRODUCTS = (
     ("ledger", "LedgerDiffLite.py"),
@@ -35,6 +36,10 @@ MAX_SOURCE_BYTES = 2_000_000
 MAX_IMPORT_FILES = 512
 MAX_IMPORT_DIRS = 128
 MAX_IMPORT_BYTES = 16_000_000
+# Prevent twelve individually timed-out smoke children from exhausting CI or
+# a local engineering workstation; this is a SOURCE test, not a release gate.
+MAX_SMOKE_TOTAL_SECONDS = 300
+MAX_SMOKE_CHILD_SECONDS = 120
 # Explicitly retain only runtime variables used to locate OS/Python libraries and
 # a temporary workspace. Sensitive credentials, proxy endpoints, custom Python
 # import overrides and arbitrary CI secrets never enter smoke children.
@@ -233,6 +238,11 @@ def source_digest(desktop: Path) -> str:
 
 def run_gate(desktop: Path, *, timeout: int = 90) -> dict:
     """Run 12 separate source smokes; no customer file or executable invoked."""
+    # Reject invalid or unlimited caller-supplied deadlines before hashing or
+    # spawning. bool is an int subclass; it must not be interpreted as seconds.
+    if type(timeout) is not int or not 1 <= timeout <= MAX_SMOKE_CHILD_SECONDS:
+        raise SourceGateError("Unsafe desktop source smoke timeout")
+    started = time.monotonic()
     digest = source_digest(desktop)
     results = []
     passed = 0
@@ -252,16 +262,26 @@ def run_gate(desktop: Path, *, timeout: int = 90) -> dict:
                 command.append("-OO")
             command += ["-c", BOOTSTRAP, str(desktop),
                         str(desktop / "launchers" / launcher_name)]
+            remaining = MAX_SMOKE_TOTAL_SECONDS - (time.monotonic() - started)
+            if remaining <= 0:
+                raise SourceGateError("Desktop source smoke time budget exhausted")
+            # A fresh 90-second allowance for each child allowed a worst-case
+            # 18-minute chain. Cap each new child by the same total deadline.
+            child_timeout = min(timeout, remaining)
             try:
                 completed = subprocess.run(
                     command, cwd=desktop, env=_child_environment(),
                     # Never hold arbitrary private child output in process memory.
                     stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
-                    stderr=subprocess.DEVNULL, timeout=timeout, check=False,
+                    stderr=subprocess.DEVNULL, timeout=child_timeout, check=False,
                 )
                 ok = completed.returncode == 0
             except (OSError, subprocess.TimeoutExpired):
                 ok = False
+            # A mocked or abnormal child can return after the allotted time;
+            # never claim a success receipt beyond the global safety budget.
+            if time.monotonic() - started > MAX_SMOKE_TOTAL_SECONDS:
+                raise SourceGateError("Desktop source smoke time budget exhausted")
             # A child may have modified source while it ran; stop immediately
             # rather than allowing the remaining 11 source processes to run.
             if source_digest(desktop) != digest:
