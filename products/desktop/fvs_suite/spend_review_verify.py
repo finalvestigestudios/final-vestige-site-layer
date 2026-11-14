@@ -19,7 +19,7 @@ FIELDS = frozenset((
 _ASCII_LOWER = str.maketrans(
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"
 )
-_ASCII_BOUNDARY = " \\t\\r\\n\\v\\f"
+_ASCII_BOUNDARY = " \t\r\n\v\f"
 _ZERO = Decimal("0.00")
 _TWO = Decimal("2")
 
