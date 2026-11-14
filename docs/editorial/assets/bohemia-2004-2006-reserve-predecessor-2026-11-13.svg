@@ -1,21 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 790" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 855" role="img" aria-labelledby="title desc">
 <title id="title">Bohemia settlement fund balance reserves, 2004 through 2006</title>
 <desc id="desc">Three horizontal bars show Orleans Levee District audited year-end General Fund reserves labeled Bohemia Spillway Escrow: 246,877 US dollars in 2004; 456,190 in 2005; and 339,407 in 2006. These balances are not proof of claimant payments. The 2007 report instead uses the broader Legal Settlements category, so that figure is not plotted as a comparable Bohemia amount.</desc>
-<rect width="900" height="790" fill="#10202A"/>
+<rect width="900" height="855" fill="#10202A"/>
 <rect x="34" y="35" width="9" height="100" rx="4" fill="#DDB574"/>
 <text x="62" y="78" class="eyebrow">FINAL VESTIGE STUDIOS / INVESTIGATIONS</text>
 <text x="62" y="138" class="heading">Before the reserve lost its name</text>
 <text x="62" y="180" class="sub">Bohemia-labeled General Fund balances at June 30</text>
 <line x1="62" y1="207" x2="840" y2="207" stroke="#40545A" stroke-width="2"/>
-<text x="62" y="282" class="year">2004</text><rect x="235" y="248" width="263.0" height="56" rx="9" fill="#71959B"/><text x="848" y="283" text-anchor="end" class="value">$246,877</text>
-<text x="62" y="394" class="year">2005</text><rect x="235" y="360" width="486.0" height="56" rx="9" fill="#DDB574"/><text x="848" y="395" text-anchor="end" class="value">$456,190</text>
-<text x="62" y="506" class="year">2006</text><rect x="235" y="472" width="361.6" height="56" rx="9" fill="#71959B"/><text x="848" y="507" text-anchor="end" class="value">$339,407</text>
+<text x="62" y="282" class="year">2004</text><rect x="235" y="248" width="232.7" height="56" rx="9" fill="#71959B"/><text x="848" y="283" text-anchor="end" class="value">$246,877</text>
+<text x="62" y="394" class="year">2005</text><rect x="235" y="360" width="430.0" height="56" rx="9" fill="#DDB574"/><text x="848" y="395" text-anchor="end" class="value">$456,190</text>
+<text x="62" y="506" class="year">2006</text><rect x="235" y="472" width="319.9" height="56" rx="9" fill="#71959B"/><text x="848" y="507" text-anchor="end" class="value">$339,407</text>
 <rect x="53" y="555" width="794" height="126" rx="15" fill="#1E3440" stroke="#49616B"/>
 <text x="77" y="594" class="note-head">WHAT THIS DOES NOT SHOW</text>
 <text x="77" y="627" class="note">The +$209,313 change in 2004–05 and −$116,783 in 2005–06</text>
 <text x="77" y="658" class="note">are reserve movements, not identified receipts or beneficiary payouts.</text>
-<text x="62" y="725" class="foot">2007 uses “Legal Settlements,” a broader category: not a comparable Bohemia-only bar.</text>
-<text x="62" y="760" class="credit">Source: Orleans Levee District FY2004 p.60; FY2005 p.61; FY2006 p.49 (Louisiana Legislative Auditor).</text>
+<text x="62" y="729" class="foot">2007 uses “Legal Settlements,” a broader category.</text>
+<text x="62" y="762" class="foot">It is not comparable to a Bohemia-only reserve.</text>
+<text x="62" y="802" class="credit">Source: Orleans Levee District FY2004 p.60; FY2005 p.61;</text>
+<text x="62" y="831" class="credit">FY2006 p.49 (Louisiana Legislative Auditor).</text>
 <style>
 .eyebrow{fill:#DDB574;font:700 22px Arial,sans-serif;letter-spacing:1.2px}
 .heading{fill:#F7F1E6;font:700 39px Georgia,serif}
