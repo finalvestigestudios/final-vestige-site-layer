@@ -234,6 +234,16 @@ jobs:
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_revocation_r247.py
           python -W error -m unittest discover -s products/desktop/tests -p test_premium_launch_proof_r252.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_launch_proof_r252.py
+      - name: R423 CSV snapshot native byte budget, descriptor and privacy regressions
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_csv_snapshot_native_budget_r423.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_snapshot_native_budget_r423.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_csv_snapshot_r30.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_snapshot_r30.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_csv_descriptor_custody_r258.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_descriptor_custody_r258.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_csv_snapshot_exception_privacy_r296.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_snapshot_exception_privacy_r296.py
       - name: R422 reject forged license-product identities before read or path formatting
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p test_entitlement_native_product_r422.py
