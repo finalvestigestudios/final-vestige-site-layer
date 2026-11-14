@@ -1,0 +1,603 @@
+{
+  "version": "r363",
+  "as_of": "2026-11-13 America/Los_Angeles",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "source_count": 16,
+  "claim_count": 30,
+  "gate_count": 34,
+  "editorial_rule": "Seller claims are not scientific substantiation. Do not publish commerce until all required gate proofs verified.",
+  "sources": [
+    {
+      "id": "S1",
+      "name": "Original rubber hand study",
+      "url": "https://doi.org/10.1038/35784",
+      "kind": "peer_reviewed_primary",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S2",
+      "name": "Hypnotic suggestibility and rubber hand illusion",
+      "url": "https://doi.org/10.1038/s41467-022-28177-z",
+      "kind": "peer_reviewed_study",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S3",
+      "name": "Multisensory versus expectancy comparison",
+      "url": "https://doi.org/10.3389/fnhum.2022.834492",
+      "kind": "peer_reviewed_reanalysis",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S4",
+      "name": "Puységur archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "historical_internal",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S5",
+      "name": "Official Zen12 landing and offer",
+      "url": "https://zen12.com/",
+      "kind": "seller_claims",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S6",
+      "name": "Official Hypnosis Live product catalog",
+      "url": "https://hypnosislive.com/",
+      "kind": "seller_claims",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S7",
+      "name": "Official Brainwave Shots catalog",
+      "url": "https://brainwaveshots.com/",
+      "kind": "seller_claims",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S8",
+      "name": "Official Focus Shot exact product",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "kind": "seller_claims",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S9",
+      "name": "Inspire3 main catalog",
+      "url": "https://inspire3.com/",
+      "kind": "seller_claims",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S10",
+      "name": "Inspire3 affiliate program public page",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "seller_claims_not_account_acceptance",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S11",
+      "name": "FTC Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulatory_guidance",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S12",
+      "name": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulatory_guidance",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S13",
+      "name": "Focus Fieldbook and existing signup",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "live_owned_resource",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S14",
+      "name": "Final Vestige published Journal",
+      "url": "https://finalvestige.com/blog/",
+      "kind": "live_owned_inventory",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S15",
+      "name": "Mind and affiliate canonical GitHub Issue #171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "governance",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "S16",
+      "name": "Conversion audit Issue #820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "kind": "governance",
+      "checked": "2026-11-13"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "topic": "RHI original",
+      "claim": "1998 researchers reported artificial-hand ownership under coordinated sensory inputs",
+      "status": "supported_in_published_research",
+      "source_ids": [
+        "S1"
+      ],
+      "decision": "Publish with original paradigm limits; not universal"
+    },
+    {
+      "id": "C02",
+      "topic": "RHI sensory components",
+      "claim": "Original authors framed vision, touch and proprioception as interacting",
+      "status": "supported_in_published_research",
+      "source_ids": [
+        "S1"
+      ],
+      "decision": "Do not claim all participants responded"
+    },
+    {
+      "id": "C03",
+      "topic": "RHI debate",
+      "claim": "2022 journal papers investigate suggestibility and expectation as alternative/contributing accounts",
+      "status": "supported_in_published_research",
+      "source_ids": [
+        "S2",
+        "S3"
+      ],
+      "decision": "Represent disagreement and measures"
+    },
+    {
+      "id": "C04",
+      "topic": "RHI attribution",
+      "claim": "A 2022 analysis reports sensory correspondence dominated hypnotisability and measured expectation",
+      "status": "supported_with_study_bounds",
+      "source_ids": [
+        "S3"
+      ],
+      "decision": "Do not universalize to all illusions"
+    },
+    {
+      "id": "C05",
+      "topic": "Puységur evidence",
+      "claim": "Archive tracks signed testimony, operator influence and historical failed cases",
+      "status": "supported_historical",
+      "source_ids": [
+        "S4"
+      ],
+      "decision": "Historic case file, not treatment validation"
+    },
+    {
+      "id": "C06",
+      "topic": "Zen12 Premium format",
+      "claim": "Seller lists 12 levels and 48 MP3 audio files",
+      "status": "seller_description_only",
+      "source_ids": [
+        "S5"
+      ],
+      "decision": "Can describe with seller attribution"
+    },
+    {
+      "id": "C07",
+      "topic": "Zen12 package extras",
+      "claim": "Seller lists quick-start manual, support, audio guides, bonuses and training call",
+      "status": "seller_description_only",
+      "source_ids": [
+        "S5"
+      ],
+      "decision": "Recheck before any release"
+    },
+    {
+      "id": "C08",
+      "topic": "Zen12 displayed price",
+      "claim": "Seller displayed $87.99 Premium on 2026-11-13",
+      "status": "seller_snapshot_not_checkout",
+      "source_ids": [
+        "S5"
+      ],
+      "decision": "Reverify exact checkout taxes/region and upsells"
+    },
+    {
+      "id": "C09",
+      "topic": "Zen12 refund language",
+      "claim": "Merchant advertises one-year guarantee",
+      "status": "seller_policy_not_tested",
+      "source_ids": [
+        "S5"
+      ],
+      "decision": "No guarantee of refund processing by FV"
+    },
+    {
+      "id": "C10",
+      "topic": "Zen12 meditation equivalence",
+      "claim": "Claim that 12 min audio equals one hour meditation",
+      "status": "unsubstantiated_product_efficacy",
+      "source_ids": [
+        "S5"
+      ],
+      "decision": "Exclude as FV assertion"
+    },
+    {
+      "id": "C11",
+      "topic": "Zen12 health outcomes",
+      "claim": "Merchant advertises mood, relaxation and physical health outcomes",
+      "status": "unsubstantiated_product_efficacy",
+      "source_ids": [
+        "S5",
+        "S12"
+      ],
+      "decision": "No product-benefit assertion"
+    },
+    {
+      "id": "C12",
+      "topic": "Zen12 entrainment",
+      "claim": "Merchant presents brainwave entrainment as proven mechanism",
+      "status": "unverified_product_mechanism",
+      "source_ids": [
+        "S5",
+        "S12"
+      ],
+      "decision": "Do not extrapolate general audio science"
+    },
+    {
+      "id": "C13",
+      "topic": "Hypnosis Live catalog",
+      "claim": "Seller advertises 200+ MP3s",
+      "status": "seller_description_only",
+      "source_ids": [
+        "S6"
+      ],
+      "decision": "Separate from Zen12; not personal test"
+    },
+    {
+      "id": "C14",
+      "topic": "Hypnosis Live guarantees",
+      "claim": "Seller advertises guaranteed results or refund",
+      "status": "unverified_seller_guarantee",
+      "source_ids": [
+        "S6"
+      ],
+      "decision": "Do not copy into FV promises"
+    },
+    {
+      "id": "C15",
+      "topic": "Brainwave Shots Focus",
+      "claim": "Seller offers a product named Focus Shot",
+      "status": "seller_description_only",
+      "source_ids": [
+        "S7",
+        "S8"
+      ],
+      "decision": "No efficacy assertion"
+    },
+    {
+      "id": "C16",
+      "topic": "Inspire3 affiliate existence",
+      "claim": "Public site describes publisher program and issued special links",
+      "status": "public_program_not_approval",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "No live earnings link"
+    },
+    {
+      "id": "C17",
+      "topic": "FV publisher approval",
+      "claim": "Final Vestige-specific acceptance, account and channel permissions",
+      "status": "unverified_private_eligibility",
+      "source_ids": [
+        "S10",
+        "S15"
+      ],
+      "decision": "Founder/Commerce must provide authenticated evidence"
+    },
+    {
+      "id": "C18",
+      "topic": "FV affiliate commission",
+      "claim": "Public generic payout descriptions differ from account-specific contract",
+      "status": "unverified_specific_terms",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "Do not forecast or assert rates"
+    },
+    {
+      "id": "C19",
+      "topic": "FV tracked affiliate URL",
+      "claim": "Issued FV-specific Zen12 tracking link",
+      "status": "unverified_not_present",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "Withhold; no redirect or link cloaking"
+    },
+    {
+      "id": "C20",
+      "topic": "Approved swipe copy",
+      "claim": "Exact publisher-approved product creatives or swipe permission",
+      "status": "unverified_partner_assets",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "No copying promotional language"
+    },
+    {
+      "id": "C21",
+      "topic": "FTC disclosure location",
+      "claim": "Material commission relationship must be clear conspicuous near recommendation/link",
+      "status": "supported_guidance",
+      "source_ids": [
+        "S11"
+      ],
+      "decision": "Test disclosure in same viewport as CTA"
+    },
+    {
+      "id": "C22",
+      "topic": "FTC health substantiation",
+      "claim": "Health claims need competent reliable scientific substantiation as appropriate",
+      "status": "supported_guidance",
+      "source_ids": [
+        "S12"
+      ],
+      "decision": "Product-specific proof or omit"
+    },
+    {
+      "id": "C23",
+      "topic": "Free fieldbook",
+      "claim": "Existing live free 52-page Seven Day Focus Fieldbook uses established signup",
+      "status": "verified_live_owned_asset",
+      "source_ids": [
+        "S13"
+      ],
+      "decision": "Preserve Jetpack path"
+    },
+    {
+      "id": "C24",
+      "topic": "Site journal count",
+      "claim": "Journal currently says 66 results, issue #171 baseline was 61",
+      "status": "verified_current_page_vs_historical_baseline",
+      "source_ids": [
+        "S14",
+        "S15"
+      ],
+      "decision": "No CMS edit"
+    },
+    {
+      "id": "C25",
+      "topic": "Owned Payhip offer",
+      "claim": "A relevant rights-cleared, currently deliverable FV Mind SKU with functioning paid checkout",
+      "status": "not_verified",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "No paid owned CTA"
+    },
+    {
+      "id": "C26",
+      "topic": "Verified attributable sales",
+      "claim": "Merchant confirms a paid order or settled affiliate conversion attributable to FV",
+      "status": "not_verified",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "No conversion assertion"
+    },
+    {
+      "id": "C27",
+      "topic": "Refund adjusted revenue",
+      "claim": "Confirmed gross less refunds, merchant fees and actual costs",
+      "status": "not_computable",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "No zero substitute; finance reconciliation"
+    },
+    {
+      "id": "C28",
+      "topic": "Grok three assets",
+      "claim": "Three actual posted immutable Mind-topic asset_id and allowed mobile destination",
+      "status": "not_verified",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "Praxxis and Grok own exact mapping"
+    },
+    {
+      "id": "C29",
+      "topic": "Variant B original film",
+      "claim": "Accessible 42-second script/poster/captions treatment",
+      "status": "built_only_not_hosted",
+      "source_ids": [
+        "S15"
+      ],
+      "decision": "No claim of playable encoded video"
+    },
+    {
+      "id": "C30",
+      "topic": "A/B paid-lift",
+      "claim": "Text+video increases net realized revenue relative to text",
+      "status": "hypothesis_only",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "Randomize by eligible sessions and verify orders"
+    }
+  ],
+  "release_gates": [
+    {
+      "gate": "affiliate_publisher_acceptance",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "authenticated_affiliate_account_owner",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "partner_allowed_promotion_channels",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "issued_exact_earning_url",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "partner_attribution_terms",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "partner_cookie_window",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "partner_refunds_chargebacks",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "partner_actual_commission_rate",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "partner_approved_creatives_permission",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "merchant_checkout_total",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "merchant_upsells_duties",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "merchant_refund_implementation",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "product_specific_meditation_equivalence_substantiation",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "product_specific_health_claim_support",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "legal_disclosure_frozen_copy",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "founder_commercial_signoff",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "owned_product_relevant_sku_exists",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "owned_product_rights_cleared",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "owned_product_checkout_enabled",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "owned_product_delivery_works",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "owned_product_returns_documented",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "Grok_published_asset_ids",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "Grok_allowed_mobile_paths",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "Jetpack_confirmed_lead_campaign_attribution",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "existing_analytics_contract_reviewed",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "first_party_consent_validated",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "privacy_safe_click_event",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "original_film_encoded_and_reviewed",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "native_browser_accessibility",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "native_no_JS_workflow",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "production_CSP_and_sanitizer",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "QA_independent_signoff",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "founder_release_approval",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    },
+    {
+      "gate": "verified_paid_order_settlement",
+      "status": "HOLD",
+      "proof": "Not authenticated in this sprint; owner must supply original evidence before activation"
+    }
+  ]
+}
