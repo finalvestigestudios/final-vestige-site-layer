@@ -30,3 +30,4 @@
 
 .fv-apollo-r371__print-source{display:none}
 @media print{.fv-apollo-r371__print-source{display:block!important;font-size:10pt;overflow-wrap:anywhere}.fv-apollo-r371__drawer{display:none!important}}
+@media print{.fv-apollo-r371{--a-accent:#111;--a-muted:#111;--a-ink:#111}.fv-apollo-r371__eyebrow,.fv-apollo-r371__intro,.fv-apollo-r371__boundary,.fv-apollo-r371__drawer summary{color:#111!important}}
