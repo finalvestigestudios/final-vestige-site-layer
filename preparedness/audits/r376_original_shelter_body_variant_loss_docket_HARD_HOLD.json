@@ -1,0 +1,608 @@
+{
+  "schema_version": 1,
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "issue": "#136",
+  "commercial_issue": "#820",
+  "source_manifest_git_blob": "5e7d9a8972872c82b4bc46ac13aab18883d8149a",
+  "observed_date": "2026-11-14",
+  "release_state": "DRAFT_HARD_HOLD",
+  "selected_original": null,
+  "body_conflicts": [
+    {
+      "path": "preparedness/content/articles/family-communication-plan.body.html",
+      "decision": "NO_AUTO_SELECT_PENDING_HUMAN_SAFETY_SOURCE_REVIEW",
+      "all_original_variant_blobs": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+          "size": 23180
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "cbfe7830e9412ac99a1920c581a14d2913a9eaf6",
+          "size": 26248
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "c97a79761dc3be1c44e5f9322a606ccc7fd11c6e",
+          "size": 26939
+        }
+      ],
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+          "bytes": 23180,
+          "words": 3026,
+          "block_count": 71,
+          "headings": 11,
+          "unique_citation_count": 14,
+          "unique_citation_ids": [
+            "shelter-cdc-reunification",
+            "shelter-co-oss-reunification",
+            "shelter-fcc-comms",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-home-fires",
+            "shelter-ready-hurricanes",
+            "shelter-ready-plan",
+            "shelter-ready-plan-form",
+            "shelter-ready-plan-locations",
+            "shelter-ready-shelter",
+            "shelter-ready-tornadoes",
+            "shelter-ready-wildfires"
+          ],
+          "compared_with_original_sha": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+          "blocks_added_vs_first": 0,
+          "blocks_missing_vs_first": 0,
+          "added_excerpt_samples": [],
+          "missing_excerpt_samples": [],
+          "added_citation_ids": [],
+          "removed_citation_ids": []
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "cbfe7830e9412ac99a1920c581a14d2913a9eaf6",
+          "bytes": 26248,
+          "words": 3463,
+          "block_count": 72,
+          "headings": 11,
+          "unique_citation_count": 18,
+          "unique_citation_ids": [
+            "shelter-cdc-chemical-sip",
+            "shelter-cdc-reunification",
+            "shelter-co-oss-reunification",
+            "shelter-fcc-comms",
+            "shelter-fema-reunification",
+            "shelter-ncmec-hotline",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-home-fires",
+            "shelter-ready-hurricanes",
+            "shelter-ready-plan",
+            "shelter-ready-plan-form",
+            "shelter-ready-plan-locations",
+            "shelter-ready-shelter",
+            "shelter-ready-tech",
+            "shelter-ready-tornadoes",
+            "shelter-ready-wildfires"
+          ],
+          "compared_with_original_sha": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+          "blocks_added_vs_first": 8,
+          "blocks_missing_vs_first": 7,
+          "added_excerpt_samples": [
+            "The FCC's guide recommends that you designate someone out of the area as a central contact, and make sure all family members know who to contact if they become separated. Ready.gov's evacuation page assumes the same arrangement: i",
+            "Editor's note Keep it on paper, too. A plan that lives only on a phone is lost when the phone is dead, lost or locked. Print or write the plan, keep a copy in a go-bag and one at home, and give a copy to the out-of-area contact. C",
+            "Ready.gov's Get Tech Ready page (updated March 2026) is the current statement: mobile networks can become overwhelmed in emergencies, making calls hard to place and receive, and text messages require less bandwidth, so they can be",
+            "Uncertain The FCC page is undated, and its section for people with disabilities mentions pagers and personal digital assistants, so parts of it are plainly old. We used it only for general network-congestion points. The texting ad",
+            "If a child is missing after a disaster, the CDC lists the National Center for Missing and Exploited Children's 24-hour hotline, 1-800-THE-LOST. NCMEC's own site lists its 24-hour hotline and call center as 1-800-843-5678, which is",
+            "FEMA's reunification fact sheet explains the national picture. FEMA, the Red Cross and NCMEC co-lead a National Reunification Committee. After a Presidentially declared disaster, and at a state, tribal or territorial request, NCME",
+            "People who rely on a caregiver or support network, including older adults. Ready.gov says to create a support network, keep its contact list in a watertight container in your kit or on devices, and tell them where your supplies ar",
+            "This guide reproduces the contents of Ready.gov's planning pages, the FCC's emergency-communication tips, a CDC page on reunification and one state school-safety page, each read in full on the date shown. The FCC page is undated a"
+          ],
+          "missing_excerpt_samples": [
+            "The FCC's guide recommends that you designate someone out of the area as a central contact, and make sure all family members know who to contact if they become separated. Ready.gov's evacuation page assumes the same arrangement: i",
+            "Editor's note Keep it on paper, too. A plan that lives only on a phone is lost when the phone is dead, lost or locked. Print or write the plan, keep a copy in a go-bag and one at home, and give a copy to the out-of-area contact. C",
+            "The FCC's recommended practices for all users are, in summary:",
+            "Uncertain The FCC page is undated, and its section for people with disabilities mentions pagers and personal digital assistants, so parts of it are plainly old. We used it only for the general network-congestion points, which the ",
+            "If a child is missing after a disaster, the CDC lists the National Center for Missing and Exploited Children's 24-hour hotline, 1-800-THE-LOST, for reporting a missing or sighted child. It also points to FEMA's reunification-suppo",
+            "People who rely on a caregiver or support network. Ready.gov says to create a support network, keep its contact list in a watertight container in your kit or on devices, and tell them where your supplies are. The FCC adds that if ",
+            "This guide reproduces the contents of Ready.gov's planning pages, the FCC's emergency-communication tips, a CDC page on reunification and one state school-safety page, each read in full on the date shown. The FCC page is undated a"
+          ],
+          "added_citation_ids": [
+            "shelter-cdc-chemical-sip",
+            "shelter-fema-reunification",
+            "shelter-ncmec-hotline",
+            "shelter-ready-tech"
+          ],
+          "removed_citation_ids": []
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "c97a79761dc3be1c44e5f9322a606ccc7fd11c6e",
+          "bytes": 26939,
+          "words": 3563,
+          "block_count": 72,
+          "headings": 11,
+          "unique_citation_count": 20,
+          "unique_citation_ids": [
+            "shelter-ca-cde-safety-plans",
+            "shelter-cdc-chemical-evac",
+            "shelter-cdc-chemical-sip",
+            "shelter-cdc-reunification",
+            "shelter-co-oss-reunification",
+            "shelter-fcc-comms",
+            "shelter-fema-reunification",
+            "shelter-ncmec-hotline",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-home-fires",
+            "shelter-ready-hurricanes",
+            "shelter-ready-plan",
+            "shelter-ready-plan-form",
+            "shelter-ready-plan-locations",
+            "shelter-ready-shelter",
+            "shelter-ready-tech",
+            "shelter-ready-tornadoes",
+            "shelter-ready-wildfires"
+          ],
+          "compared_with_original_sha": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+          "blocks_added_vs_first": 9,
+          "blocks_missing_vs_first": 8,
+          "added_excerpt_samples": [
+            "The FCC's guide recommends that you designate someone out of the area as a central contact, and make sure all family members know who to contact if they become separated. Ready.gov's evacuation page assumes the same arrangement: i",
+            "Editor's note Keep it on paper, too. A plan that lives only on a phone is lost when the phone is dead, lost or locked. Print or write the plan, keep a copy in a go-bag and one at home, and give a copy to the out-of-area contact. C",
+            "Ready.gov's Get Tech Ready page (updated March 2026) is the current statement: mobile networks can become overwhelmed in emergencies, making calls hard to place and receive, and text messages require less bandwidth, so they can be",
+            "Uncertain The FCC page is undated, and its section for people with disabilities mentions pagers and personal digital assistants, so parts of it are plainly old. We used it only for general network-congestion points. The texting ad",
+            "A state example shows what a school plan can look like. Colorado's Office of School Safety describes reunification as \"not a normal pick-up\" but a slow and careful process meant to make sure no student is lost or given to the wron",
+            "If a child is missing after a disaster, the CDC lists the National Center for Missing and Exploited Children's 24-hour hotline, 1-800-THE-LOST. NCMEC's own site lists its 24-hour hotline and call center as 1-800-843-5678, which is",
+            "FEMA's reunification fact sheet explains the national picture. FEMA, the Red Cross and NCMEC co-lead a National Reunification Committee. After a Presidentially declared disaster, and at a state, tribal or territorial request, NCME",
+            "People who rely on a caregiver or support network, including older adults. Ready.gov says to create a support network, keep its contact list in a watertight container in your kit or on devices, and tell them where your supplies ar",
+            "This guide reproduces the contents of Ready.gov's planning pages, the FCC's emergency-communication tips, a CDC page on reunification and one state school-safety page, each read in full on the date shown. The FCC page is undated a"
+          ],
+          "missing_excerpt_samples": [
+            "The FCC's guide recommends that you designate someone out of the area as a central contact, and make sure all family members know who to contact if they become separated. Ready.gov's evacuation page assumes the same arrangement: i",
+            "Editor's note Keep it on paper, too. A plan that lives only on a phone is lost when the phone is dead, lost or locked. Print or write the plan, keep a copy in a go-bag and one at home, and give a copy to the out-of-area contact. C",
+            "The FCC's recommended practices for all users are, in summary:",
+            "Uncertain The FCC page is undated, and its section for people with disabilities mentions pagers and personal digital assistants, so parts of it are plainly old. We used it only for the general network-congestion points, which the ",
+            "A state example shows what a school plan can look like. Colorado's Office of School Safety describes reunification as \"not a normal pick-up\" but a slow and careful process meant to make sure no student is lost or given to the wron",
+            "If a child is missing after a disaster, the CDC lists the National Center for Missing and Exploited Children's 24-hour hotline, 1-800-THE-LOST, for reporting a missing or sighted child. It also points to FEMA's reunification-suppo",
+            "People who rely on a caregiver or support network. Ready.gov says to create a support network, keep its contact list in a watertight container in your kit or on devices, and tell them where your supplies are. The FCC adds that if ",
+            "This guide reproduces the contents of Ready.gov's planning pages, the FCC's emergency-communication tips, a CDC page on reunification and one state school-safety page, each read in full on the date shown. The FCC page is undated a"
+          ],
+          "added_citation_ids": [
+            "shelter-ca-cde-safety-plans",
+            "shelter-cdc-chemical-evac",
+            "shelter-cdc-chemical-sip",
+            "shelter-fema-reunification",
+            "shelter-ncmec-hotline",
+            "shelter-ready-tech"
+          ],
+          "removed_citation_ids": []
+        }
+      ]
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.body.html",
+      "decision": "NO_AUTO_SELECT_PENDING_HUMAN_SAFETY_SOURCE_REVIEW",
+      "all_original_variant_blobs": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+          "size": 26250
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "size": 31755
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "size": 31755
+        }
+      ],
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+          "bytes": 26250,
+          "words": 3746,
+          "block_count": 86,
+          "headings": 15,
+          "unique_citation_count": 10,
+          "unique_citation_ids": [
+            "shelter-cdc-power-outage",
+            "shelter-cpsc-co",
+            "shelter-nfpa-escape",
+            "shelter-nfpa-smoke-alarms",
+            "shelter-ready-disabilities",
+            "shelter-ready-home-fires",
+            "shelter-ready-plan",
+            "shelter-ready-plan-locations",
+            "shelter-usfa-high-rise",
+            "usfa-fire-escape"
+          ],
+          "compared_with_original_sha": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+          "blocks_added_vs_first": 0,
+          "blocks_missing_vs_first": 0,
+          "added_excerpt_samples": [],
+          "missing_excerpt_samples": [],
+          "added_citation_ids": [],
+          "removed_citation_ids": []
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "bytes": 31755,
+          "words": 4256,
+          "block_count": 87,
+          "headings": 15,
+          "unique_citation_count": 13,
+          "unique_citation_ids": [
+            "shelter-cdc-power-outage",
+            "shelter-cpsc-co",
+            "shelter-nfpa-escape",
+            "shelter-nfpa-high-rise",
+            "shelter-nfpa-smoke-alarms",
+            "shelter-ready-disabilities",
+            "shelter-ready-home-fires",
+            "shelter-ready-plan",
+            "shelter-ready-plan-locations",
+            "shelter-usfa-escape-grid",
+            "shelter-usfa-high-rise",
+            "shelter-usfa-high-rise-handout",
+            "usfa-fire-escape"
+          ],
+          "compared_with_original_sha": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+          "blocks_added_vs_first": 6,
+          "blocks_missing_vs_first": 5,
+          "added_excerpt_samples": [
+            "USFA's instructions are short: draw a map of your home that includes all doors and windows, and find two ways out of every room. NFPA adds that you should mark where each smoke alarm is, and that you should walk through the home a",
+            "Uncertain The documents differ on the window. NFPA's general page says to open the windows at the top and bottom if possible. NFPA's high-rise tip sheet and USFA's high-rise handout say to open a window slightly and signal with a ",
+            "Is \"defend in place\" a different instruction?",
+            "NFPA's general escape-planning page says residents of high-rise and apartment buildings \"may be safer defending in place.\" NFPA's own one-page high-rise tip sheet, which we have now read, does not repeat that wording. It tells res",
+            "Editor's note We read the documents as agreeing on the default: a person who can use the stairs and has a usable route leaves by the stairs, unless the building's plan, an announcement or the fire department says otherwise, and sh",
+            "The instructions here come from four pages read in full on the date shown: USFA's home fire escape plans page, NFPA's escape planning and smoke alarm pages, and Ready.gov's home fires page, with supporting detail from Ready.gov's "
+          ],
+          "missing_excerpt_samples": [
+            "USFA's instructions are short: draw a map of your home that includes all doors and windows, and find two ways out of every room. NFPA adds that you should mark where each smoke alarm is, and that you should walk through the home a",
+            "Uncertain The two pages differ in one detail: NFPA suggests opening the window at the top and bottom, and Ready.gov does not mention opening it. We have not found a source explaining when each is advisable. This is a last resort, ",
+            "NFPA's wording is different",
+            "NFPA's escape-planning page says that residents of high-rise and apartment buildings \"may be safer defending in place\" and links to a separate high-rise tip sheet that we did not open. USFA's high-rise page makes evacuation by sta",
+            "The instructions here come from four pages read in full on the date shown: USFA's home fire escape plans page, NFPA's escape planning and smoke alarm pages, and Ready.gov's home fires page, with supporting detail from Ready.gov's "
+          ],
+          "added_citation_ids": [
+            "shelter-nfpa-high-rise",
+            "shelter-usfa-escape-grid",
+            "shelter-usfa-high-rise-handout"
+          ],
+          "removed_citation_ids": []
+        }
+      ]
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.body.html",
+      "decision": "NO_AUTO_SELECT_PENDING_HUMAN_SAFETY_SOURCE_REVIEW",
+      "all_original_variant_blobs": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+          "size": 31428
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "55a1e3018e3413b79378c6677f15e536bb777377",
+          "size": 33238
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "5608a28249a0e351710e0c756d878048c8e41e24",
+          "size": 33265
+        }
+      ],
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+          "bytes": 31422,
+          "words": 4196,
+          "block_count": 81,
+          "headings": 13,
+          "unique_citation_count": 16,
+          "unique_citation_ids": [
+            "cdc-co-generators",
+            "shelter-cdc-co-basics",
+            "shelter-cdc-heat",
+            "shelter-cdc-power-outage",
+            "shelter-cdc-winter-storm",
+            "shelter-cpsc-co",
+            "shelter-cpsc-heaters",
+            "shelter-fema-power-outage-sheet",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-home-fires",
+            "shelter-ready-hurricanes",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-winter-weather"
+          ],
+          "compared_with_original_sha": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+          "blocks_added_vs_first": 0,
+          "blocks_missing_vs_first": 0,
+          "added_excerpt_samples": [],
+          "missing_excerpt_samples": [],
+          "added_citation_ids": [],
+          "removed_citation_ids": []
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "55a1e3018e3413b79378c6677f15e536bb777377",
+          "bytes": 33232,
+          "words": 4463,
+          "block_count": 82,
+          "headings": 13,
+          "unique_citation_count": 18,
+          "unique_citation_ids": [
+            "cdc-co-generators",
+            "shelter-cdc-co-basics",
+            "shelter-cdc-heat",
+            "shelter-cdc-power-outage",
+            "shelter-cdc-winter-storm",
+            "shelter-cpsc-co",
+            "shelter-cpsc-co-tips",
+            "shelter-cpsc-heaters",
+            "shelter-fema-power-outage-sheet",
+            "shelter-nws-winter-during",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-home-fires",
+            "shelter-ready-hurricanes",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-winter-weather"
+          ],
+          "compared_with_original_sha": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+          "blocks_added_vs_first": 5,
+          "blocks_missing_vs_first": 4,
+          "added_excerpt_samples": [
+            "Two features of the CDC's description explain why guidance on this topic is so insistent. The early symptoms (headache, dizziness, weakness, upset stomach, vomiting, chest pain and confusion) are often described as flu-like, and p",
+            "Uncertain The distance rule is written in terms of your own home's openings: windows, doors, vents and attached garages. The pages we read do not address a neighbor's windows, a covered or enclosed porch, a small yard, or how wind",
+            "For fireplaces, wood stoves and other combustion heaters , the CDC says to use them only if they are properly vented to the outside and do not leak gas from the flue or exhaust into the room, to have the heating system serviced by",
+            "If you are stranded in a car in a winter storm, the CDC says staying in the car is often the safest choice. It advises running the motor and heater for about 10 minutes each hour with one window opened slightly, and making sure sn",
+            "Editor's note The practical test we suggest is whether your plan depends on a device that, if it fails, hurts someone: a heater left on overnight, a generator you cannot refuel in the dark, a space only one person in the house can"
+          ],
+          "missing_excerpt_samples": [
+            "Two features of the CDC's description explain why guidance on this topic is so insistent. The early symptoms (headache, dizziness, weakness, upset stomach, vomiting, chest pain and confusion) are often described as flu-like, and p",
+            "For fireplaces, wood stoves and other combustion heaters , the CDC says to use them only if they are properly vented to the outside and do not leak gas from the flue or exhaust into the room, to have the heating system serviced by",
+            "If you are stranded in a car in a winter storm, the CDC says staying in the car is often the safest choice. It advises running the motor and heater for about 10 minutes each hour with one window opened slightly, and making sure sn",
+            "Editor's note The practical test we suggest is whether your plan depends on a device that, if it fails, hurts someone: a heater left on overnight, a generator you cannot refuel in the dark, a space only one person in the house can"
+          ],
+          "added_citation_ids": [
+            "shelter-cpsc-co-tips",
+            "shelter-nws-winter-during"
+          ],
+          "removed_citation_ids": []
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "5608a28249a0e351710e0c756d878048c8e41e24",
+          "bytes": 33259,
+          "words": 4463,
+          "block_count": 82,
+          "headings": 13,
+          "unique_citation_count": 19,
+          "unique_citation_ids": [
+            "cdc-co-generators",
+            "fsis-power-failure",
+            "shelter-cdc-co-basics",
+            "shelter-cdc-heat",
+            "shelter-cdc-power-outage",
+            "shelter-cdc-winter-storm",
+            "shelter-cpsc-co",
+            "shelter-cpsc-co-tips",
+            "shelter-cpsc-heaters",
+            "shelter-fema-power-outage-sheet",
+            "shelter-nws-winter-during",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-home-fires",
+            "shelter-ready-hurricanes",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-winter-weather"
+          ],
+          "compared_with_original_sha": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+          "blocks_added_vs_first": 5,
+          "blocks_missing_vs_first": 4,
+          "added_excerpt_samples": [
+            "Two features of the CDC's description explain why guidance on this topic is so insistent. The early symptoms (headache, dizziness, weakness, upset stomach, vomiting, chest pain and confusion) are often described as flu-like, and p",
+            "Uncertain The distance rule is written in terms of your own home's openings: windows, doors, vents and attached garages. The pages we read do not address a neighbor's windows, a covered or enclosed porch, a small yard, or how wind",
+            "For fireplaces, wood stoves and other combustion heaters , the CDC says to use them only if they are properly vented to the outside and do not leak gas from the flue or exhaust into the room, to have the heating system serviced by",
+            "If you are stranded in a car in a winter storm, the CDC says staying in the car is often the safest choice. It advises running the motor and heater for about 10 minutes each hour with one window opened slightly, and making sure sn",
+            "Editor's note The practical test we suggest is whether your plan depends on a device that, if it fails, hurts someone: a heater left on overnight, a generator you cannot refuel in the dark, a space only one person in the house can"
+          ],
+          "missing_excerpt_samples": [
+            "Two features of the CDC's description explain why guidance on this topic is so insistent. The early symptoms (headache, dizziness, weakness, upset stomach, vomiting, chest pain and confusion) are often described as flu-like, and p",
+            "For fireplaces, wood stoves and other combustion heaters , the CDC says to use them only if they are properly vented to the outside and do not leak gas from the flue or exhaust into the room, to have the heating system serviced by",
+            "If you are stranded in a car in a winter storm, the CDC says staying in the car is often the safest choice. It advises running the motor and heater for about 10 minutes each hour with one window opened slightly, and making sure sn",
+            "Editor's note The practical test we suggest is whether your plan depends on a device that, if it fails, hurts someone: a heater left on overnight, a generator you cannot refuel in the dark, a space only one person in the house can"
+          ],
+          "added_citation_ids": [
+            "fsis-power-failure",
+            "shelter-cpsc-co-tips",
+            "shelter-nws-winter-during"
+          ],
+          "removed_citation_ids": []
+        }
+      ]
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.body.html",
+      "decision": "NO_AUTO_SELECT_PENDING_HUMAN_SAFETY_SOURCE_REVIEW",
+      "all_original_variant_blobs": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "b8acf07e533eea43795aa242f39fd926b080130f",
+          "size": 24382
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "ed6e6bc4dc1344d1aa25679c6f4380f76d82927e",
+          "size": 30877
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "a8c36cd63517fdeb723dca201b31802c2a721ddf",
+          "size": 31507
+        }
+      ],
+      "variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "sha": "b8acf07e533eea43795aa242f39fd926b080130f",
+          "bytes": 24382,
+          "words": 3437,
+          "block_count": 76,
+          "headings": 14,
+          "unique_citation_count": 13,
+          "unique_citation_ids": [
+            "shelter-nws-nwr",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-floods",
+            "shelter-ready-hazmat",
+            "shelter-ready-hurricanes",
+            "shelter-ready-plan",
+            "shelter-ready-plan-locations",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-tornadoes",
+            "shelter-ready-wildfires",
+            "shelter-ready-winter-weather"
+          ],
+          "compared_with_original_sha": "b8acf07e533eea43795aa242f39fd926b080130f",
+          "blocks_added_vs_first": 0,
+          "blocks_missing_vs_first": 0,
+          "added_excerpt_samples": [],
+          "missing_excerpt_samples": [],
+          "added_citation_ids": [],
+          "removed_citation_ids": []
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "sha": "ed6e6bc4dc1344d1aa25679c6f4380f76d82927e",
+          "bytes": 30877,
+          "words": 4089,
+          "block_count": 78,
+          "headings": 14,
+          "unique_citation_count": 14,
+          "unique_citation_ids": [
+            "shelter-cdc-chemical-sip",
+            "shelter-nws-nwr",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-floods",
+            "shelter-ready-hazmat",
+            "shelter-ready-hurricanes",
+            "shelter-ready-plan",
+            "shelter-ready-plan-locations",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-tornadoes",
+            "shelter-ready-wildfires",
+            "shelter-ready-winter-weather"
+          ],
+          "compared_with_original_sha": "b8acf07e533eea43795aa242f39fd926b080130f",
+          "blocks_added_vs_first": 7,
+          "blocks_missing_vs_first": 5,
+          "added_excerpt_samples": [
+            "Four things decide the answer, and no category of hazard settles it by itself: the hazard and how it behaves; the warning time you have; where you are (your evacuation zone, floor, type of home, and whether you can reach a shelter",
+            "Ready.gov's tornado page lists winds that can exceed 200 miles per hour, and says a tornado can happen anytime and anywhere. The signs include a rotating, funnel-shaped cloud, an approaching cloud of debris or a loud roar like a f",
+            "The CDC's chemical-emergency page (reviewed June 2026) is the more recent and fuller statement, and it agrees with Ready.gov on the core: in some chemical emergencies, leaving may be dangerous and it may be safer to stay put and s",
+            "The two agencies differ in small ways. Ready.gov's hazmat page suggests an above-ground room with as few openings as possible and allows setting ventilation to 100 percent recirculation as an alternative to turning it off; the CDC",
+            "Ready.gov's shelter page describes \"sealing a room\" as a temporary protective measure that creates a barrier between you and potentially contaminated air outside, and says it requires pre-planning: plastic sheeting and duct tape k",
+            "Then compare your answers with what the county or city emergency management office publishes. Ready.gov's planning page asks households to discuss almost exactly these questions: how will I receive alerts, what is my shelter plan,",
+            "Every instruction here comes from a Ready.gov page or the National Weather Service page cited beside it, read in full on the date shown. Those pages are dated from 2023 (hazardous materials) to October 2026 (floods); the Ready.gov"
+          ],
+          "missing_excerpt_samples": [
+            "The pattern is that fast, local, violent hazards (tornadoes, flash floods) usually mean shelter now, and slower, wider hazards where the danger comes to you (hurricanes, wildfires) usually mean leaving before it arrives. Editor's ",
+            "Ready.gov's tornado page lists winds that can exceed 200 miles per hour, and says a tornado can happen anytime and anywhere. The signs include a rotating, funnel-shaped cloud, an approaching cloud of debris or a loud roar like a f",
+            "Ready.gov's shelter page describes \"sealing a room\" as a temporary protective measure that creates a barrier between you and potentially contaminated air outside, and says it requires pre-planning: plastic sheeting and duct tape k",
+            "Then compare your answers with what the county or city emergency management office publishes. Ready.gov's planning page asks households to discuss almost exactly these questions: how will I receive alerts, what is my shelter plan,",
+            "Every instruction here comes from a Ready.gov page or the National Weather Service page cited beside it, read in full on the date shown. Those pages are dated from 2023 (hazardous materials) to October 2026 (floods); the hazmat pa"
+          ],
+          "added_citation_ids": [
+            "shelter-cdc-chemical-sip"
+          ],
+          "removed_citation_ids": []
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "sha": "a8c36cd63517fdeb723dca201b31802c2a721ddf",
+          "bytes": 31507,
+          "words": 4193,
+          "block_count": 79,
+          "headings": 14,
+          "unique_citation_count": 15,
+          "unique_citation_ids": [
+            "shelter-cdc-chemical-evac",
+            "shelter-cdc-chemical-sip",
+            "shelter-nws-nwr",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-floods",
+            "shelter-ready-hazmat",
+            "shelter-ready-hurricanes",
+            "shelter-ready-plan",
+            "shelter-ready-plan-locations",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-tornadoes",
+            "shelter-ready-wildfires",
+            "shelter-ready-winter-weather"
+          ],
+          "compared_with_original_sha": "b8acf07e533eea43795aa242f39fd926b080130f",
+          "blocks_added_vs_first": 8,
+          "blocks_missing_vs_first": 5,
+          "added_excerpt_samples": [
+            "Four things decide the answer, and no category of hazard settles it by itself: the hazard and how it behaves; the warning time you have; where you are (your evacuation zone, floor, type of home, and whether you can reach a shelter",
+            "Ready.gov's tornado page lists winds that can exceed 200 miles per hour, and says a tornado can happen anytime and anywhere. The signs include a rotating, funnel-shaped cloud, an approaching cloud of debris or a loud roar like a f",
+            "The CDC's chemical-emergency page (reviewed June 2026) is the more recent and fuller statement, and it agrees with Ready.gov on the core: in some chemical emergencies, leaving may be dangerous and it may be safer to stay put and s",
+            "The two agencies differ in small ways. Ready.gov's hazmat page suggests an above-ground room with as few openings as possible and allows setting ventilation to 100 percent recirculation as an alternative to turning it off; the CDC",
+            "The CDC's chemical evacuation page (reviewed June 2026) adds a point that matters for families: if you are separated from your children, loved ones or pets, do not go to them unless police, fire or other local officials say it is ",
+            "Ready.gov's shelter page describes \"sealing a room\" as a temporary protective measure that creates a barrier between you and potentially contaminated air outside, and says it requires pre-planning: plastic sheeting and duct tape k",
+            "Then compare your answers with what the county or city emergency management office publishes. Ready.gov's planning page asks households to discuss almost exactly these questions: how will I receive alerts, what is my shelter plan,",
+            "Every instruction here comes from a Ready.gov page or the National Weather Service page cited beside it, read in full on the date shown. Those pages are dated from 2023 (hazardous materials) to October 2026 (floods); the Ready.gov"
+          ],
+          "missing_excerpt_samples": [
+            "The pattern is that fast, local, violent hazards (tornadoes, flash floods) usually mean shelter now, and slower, wider hazards where the danger comes to you (hurricanes, wildfires) usually mean leaving before it arrives. Editor's ",
+            "Ready.gov's tornado page lists winds that can exceed 200 miles per hour, and says a tornado can happen anytime and anywhere. The signs include a rotating, funnel-shaped cloud, an approaching cloud of debris or a loud roar like a f",
+            "Ready.gov's shelter page describes \"sealing a room\" as a temporary protective measure that creates a barrier between you and potentially contaminated air outside, and says it requires pre-planning: plastic sheeting and duct tape k",
+            "Then compare your answers with what the county or city emergency management office publishes. Ready.gov's planning page asks households to discuss almost exactly these questions: how will I receive alerts, what is my shelter plan,",
+            "Every instruction here comes from a Ready.gov page or the National Weather Service page cited beside it, read in full on the date shown. Those pages are dated from 2023 (hazardous materials) to October 2026 (floods); the hazmat pa"
+          ],
+          "added_citation_ids": [
+            "shelter-cdc-chemical-evac",
+            "shelter-cdc-chemical-sip"
+          ],
+          "removed_citation_ids": []
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "All original blobs are retained in Git; this docket does not choose a preferred version.",
+    "Text/paragraph comparisons are deterministic structural prompts, not semantic expert review.",
+    "A wording change may materially affect emergency safety even with higher word count.",
+    "No article, source register, CMS or public route changed."
+  ],
+  "publication_approved": false,
+  "safety_approved": false
+}
