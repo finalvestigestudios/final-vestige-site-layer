@@ -152,7 +152,14 @@ class EarlyWindowAuthorizationR248Tests(unittest.TestCase):
             with self.subTest(proof=proof):
                 with self.assertRaisesRegex(ValueError, "Premium entitlement denied"):
                     namespace["preflight"]("grants", lambda: proof)
-        self.assertTrue(namespace["preflight"]("procurement", lambda: Proof("procurement")))
+        # R420: a plausible dataclass is not sufficient product-bound proof.
+        with self.assertRaisesRegex(ValueError, "Premium entitlement denied"):
+            namespace["preflight"]("procurement", lambda: Proof("procurement"))
+        from fvs_suite.offline_entitlement import Entitlement
+        from datetime import datetime, timezone
+        selected = Entitlement("procurement", "SYNTHETIC-UNSIGNED",
+                               "Test Holder", datetime(2099, 1, 1, tzinfo=timezone.utc))
+        self.assertTrue(namespace["preflight"]("procurement", lambda: selected))
 
 
 if __name__ == "__main__":
