@@ -1,0 +1,57 @@
+{
+  "campaign_source_valid": true,
+  "all_issues": "HOLD_UNSENT",
+  "commercial_03": "HOLD_MERCHANT",
+  "commercial_05": "HOLD_MERCHANT",
+  "shared_missing": [
+    "founder_final_campaign_approval",
+    "provider_recipient_eligibility",
+    "confirmed_consent_dedup",
+    "welcome_fieldbook_received",
+    "native_jetpack_preview",
+    "received_email_render",
+    "fv_postal_address",
+    "working_unsubscribe",
+    "verified_subject_from"
+  ],
+  "merchant_missing": {
+    "03": [
+      "named_fv_partner_acceptance",
+      "explicit_email_channel_permission",
+      "issued_earning_link",
+      "approved_live_guide",
+      "current_checkout_terms",
+      "refund_terms",
+      "product_claim_review",
+      "approved_offer_creative"
+    ],
+    "05": [
+      "named_fv_partner_acceptance",
+      "explicit_email_channel_permission",
+      "issued_earning_link",
+      "approved_live_guide",
+      "current_checkout_terms",
+      "refund_terms",
+      "product_claim_review",
+      "approved_offer_creative"
+    ]
+  },
+  "provider_totals_overlap": true,
+  "eligible_recipients": null,
+  "verified_confirmed_signups_in_submitted_sample": 0,
+  "pii_field_violations": [],
+  "money": {
+    "confirmed_orders": 0,
+    "gross": "0",
+    "fees": "0",
+    "refunds": "0",
+    "net": "0",
+    "net_per_1000_verified_human_sessions": null,
+    "rejected_records": [],
+    "revenue_verified": false,
+    "ratio_computable": false
+  },
+  "cannot_infer_actual_list_or_welcome_delivery": true,
+  "cannot_authorize_send": true,
+  "note": "Offline source assertions cannot validate evidence receipts or authorize a send. Zero synthetic orders is NOT a claim that actual real-world orders are zero."
+}
