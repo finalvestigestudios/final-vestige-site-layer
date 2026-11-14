@@ -101,10 +101,15 @@ function inspectRun(run, label, reasons) {
     }
     // The same image URL could have a preloaded/retried transfer. Unbound duplicate
     // transfers must not be silently excluded from an 'article-only' byte claim.
-    const sources = new Set(p.stored_images.flatMap(s => [netUrl(s?.request_url),netUrl(s?.current_src)].filter(Boolean)));
+    const sources = p.stored_images.flatMap(s =>
+      [s?.stored_url,s?.current_src,s?.request_url].filter(netUrl));
     for (const n of p.network_images) {
       if (bound.has(n?.request_id)) continue;
-      if ([n?.url,...(Array.isArray(n?.url_aliases)?n.url_aliases:[])].some(v => sources.has(netUrl(v))))
+      // Redirected Commons files, Jetpack resize variants and direct WP URLs
+      // can all represent the *same* historical image without byte-equal URLs.
+      // A second request must be reconciled, not silently excluded from bytes.
+      const aliases = [n?.url,...(Array.isArray(n?.url_aliases)?n.url_aliases:[])].filter(netUrl);
+      if (aliases.some(candidate => sources.some(src => sameSource(candidate,src))))
         add(reasons, label+':unbound_same_photo_request:'+id);
     }
     if (bound.size !== p.matched_article_network_requests ||
