@@ -5,7 +5,7 @@
 - New isolated `dispatch/r349/*` subtree on branch `dispatch-r349-offer-drift-consent-release-audit-20261113`, directly based on R348 commit `4a4a146832c5f5b70ac79a83ecfafb1715172b17`. No master manuscript, homepage PR #49, WordPress page, settings, subscriber, mail, or seller account modified.
 - Current original PR #175 HEAD independently confirmed `d57ccdba3aee8f065e143e101c2945f4f3d01647`.
 - All **eight** source manifests/tests/issues from the locally mounted earlier R343 archive matched their exact HEAD Git blob IDs retrieved fresh from GitHub: `86df98ad` manifest, `fd7f05e3` tests; six issues `039b452b`, `faa207ab`, `aeeef34e`, `89635bfb`, `a9dfaa45`, `004d558d`. Actual native Python `python -m unittest discover -s master/dispatch/campaign-2026-mind/tests -p test_campaign.py -v` **6/6 PASS**.
-- R349's **28/28 test cases executed in isolated V8 on exact independently refetched GitHub code** using `node:assert/strict` compatible assertions. This is **not a native Node run**; `test_evidence_release_gate.cjs` is committed as a reproducible native test for later CI/owner execution. Precommit same-functions adversarial checks: **32/32 PASS**.
+- R349's **30/30 test cases executed in isolated V8 on exact independently refetched GitHub code** using `node:assert/strict` compatible assertions. This is **not a native Node run**; `test_evidence_release_gate.cjs` is committed as a reproducible native test for later CI/owner execution. Precommit same-functions adversarial checks: **32/32 PASS**.
 - Independent postcommit static-source assertions against seven GitHub-retrieved blobs: **31/31 PASS**. Verified content SHA IDs are in the PR source tree. Reviewer HTML was checked structurally, **not rendered in Chromium**; no screenshots or accessibility automation claimed for R349.
 
 ## New verified factual observations (not approvals)
@@ -18,7 +18,7 @@
 
 ## Release and business outcome
 - **6 original issues: HOLD_UNSENT**; #03/#05 additionally **HOLD_MERCHANT**, all original 4:2 slots retained. R349 adopts no alternate copy, does not activate merchant links, and stores no recipient PII.
-- New files: `evidence_release_gate.cjs` (read-only fail-closed validator), `test_evidence_release_gate.cjs` (28 reproducible native-Node assertions), `evidence_snapshot.json` (source-linked no-PII point-in-time evidence), `CLAIM_CONVERSION_DECISION.md`, `RELEASE_AND_CONSENT_METHOD.md`, `SUBJECT_AND_CTA_AUDIT.md`, `reviewer.html`, and this record.
+- New files: `evidence_release_gate.cjs` (read-only fail-closed validator), `test_evidence_release_gate.cjs` (30 reproducible native-Node assertions), `evidence_snapshot.json` (source-linked no-PII point-in-time evidence), `CLAIM_CONVERSION_DECISION.md`, `RELEASE_AND_CONSENT_METHOD.md`, `SUBJECT_AND_CTA_AUDIT.md`, `reviewer.html`, and this record.
 - One source-linked high-intent offer hypothesis = Zen12 buyer-evidence guide **only if Mind/Commerce obtains publisher-specific EMAIL promotional rights and an approved first-party live guide**. Total Focus kept reserved, not sent. A mere web listing, approval-sounding text, affiliate public page, click or PDF download is not monetary conversion.
 - The KPI `realized net USD / 1,000 independently verified qualified-human sessions` remains **NOT COMPUTABLE** for 7d/30d cohorts, as merchant paid-order settlement and qualified-human denominator are absent. Do not invent zero dollars or subscribers.
 - **No** emails, test emails, subscriber contact, newsletter publishes, WordPress writes, list imports, live scripts, affiliate activations, PR merges, social distribution or spending took place.
@@ -28,3 +28,6 @@
 2. Claude / Focus — provider-authoritative eligible recipient count and deduplicated confirmation semantics; actual welcome receipt under separately authorized owner-controlled test.
 3. Founder / Dispatch — physically valid Final Vestige postal identity, native received email plus text/HTML footer and functioning unsubscribe, final selection/audience/schedule authorization.
 4. Claude / Commerce / Praxxis / Grok — preserve genuine asset UTMs, qualified-human sessions, settled orders/commissions, fees/refunds and 7/30-day confidence labels. No new scripts, no platform role overlap.
+
+## Post-review correction before founder report
+After opening draft PR #2444, a false-positive risk was identified: the initial offline merchant gate compared two **different Zen12 SKU/offer paths** as if their displayed prices belonged to one product. The audit was corrected to compare observations only when `sku === product id`, while tracking incomparable offer variants separately. The Total Focus observations have a common SKU and remain flagged. Exact committed source and fixture were re-fetched; the updated isolated V8 reproduction passed **30/30**. The comparison still cannot authenticate an actual merchant checkout, and the release remains HOLD.
