@@ -57,6 +57,8 @@ ok(article.includes('**168 met the review')&&article.includes('**four reported i
 ok(article.includes('have **not** purchased or used')&&article.includes('no purchase link'),"No fake experience");
 ok(article.includes('https://doi.org/10.1080/00207144.2024.2434085'),"Source DOI present");
 ok(article.includes('https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/'),"Primary archive bridge");
+ok(article.includes('https://www.gutenberg.org/ebooks/78413'),"Correct primary 1785 translation URL");
+ok(!article.includes('https://www.gutenberg.org/ebooks/68465'),"Reject unrelated Gutenberg Latin book source");
 ok(matrix.claims.length===30,"Exactly 30 classified claims");
 ok(Object.keys(matrix.source_inventory).length===18,"18 source URLs");
 ok(matrix.gates.length===32&&matrix.gates.every(g=>g.state==="CLOSED"&&g.pass_evidence===null),"All 32 commercial gates closed");
