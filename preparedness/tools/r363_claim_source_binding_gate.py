@@ -73,8 +73,10 @@ def check(meta, body, source_map):
     safety = meta.get('safety_review')
     if not isinstance(status, dict) or status.get('publish') != 'draft':
         errors.add('UNAPPROVED_PUBLICATION_STATE')
-    if not isinstance(safety, dict) or safety.get('state') != 'pending':
+    if not isinstance(safety, dict) or safety.get('state') not in ('pending', 'approved', 'not-required'):
         errors.add('UNAPPROVED_SAFETY_STATE')
+    elif safety['state'] != 'pending':
+        review.add('HUMAN_SAFETY_STATE_EVIDENCE_REQUIRED:' + safety['state'])
     uses = meta.get('source_use')
     if not isinstance(uses, dict):
         errors.add('SOURCE_USE_MISSING')
