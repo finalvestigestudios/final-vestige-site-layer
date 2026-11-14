@@ -34,7 +34,7 @@ const checkPage=(s,id)=>{
   assert(s.indexOf('class="disclosure"')>0&&s.indexOf('class="disclosure"')<s.indexOf('class="disabled"'),id+' disclaimer preceding control');
   assert(noMerchantAnchors(s),id+' withholding ALL merchant outbound anchors');
   assert(noScripts(s),id+' no scripts forms embeds or unexpected event handlers');
-  assert(!/(autoplay|\btracking-pixel\b)/i.test(s.replace(/no autoplay|no tracking-pixel/gi,'')),id+' no active autoplay/tracker');
+  assert(!/<(?:video|audio|iframe)[^>]*\sautoplay\b/i.test(s) && !/<img[^>]*src=["'][^"']*(?:pixel|track)\b/i.test(s),id+' no active autoplay/tracker');
   assert(s.includes('https://finalvestige.com/focus/'),id+' existing Focus path');
   assert(s.includes('pubmed.ncbi.nlm.nih.gov/17128613'),id+' exact experimental primary record');
 };
