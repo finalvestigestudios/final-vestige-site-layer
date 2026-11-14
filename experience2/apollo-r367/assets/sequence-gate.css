@@ -1,0 +1,7 @@
+/* Staging-only, fail-closed notice; no webfonts, script or external images. */
+.fv-apollo-r367__unavailable{box-sizing:border-box;background:#11171c;color:#f4efe6;border:2px solid #e0c38d;padding:clamp(1rem,4vw,2.5rem);font:400 1rem/1.6 system-ui,sans-serif;max-width:75rem;margin:auto;overflow-wrap:anywhere}
+.fv-apollo-r367__unavailable h2{font:650 clamp(1.35rem,3vw,2rem)/1.2 Georgia,serif;color:inherit}
+.fv-apollo-r367__unavailable a{color:#ffe0a6;display:inline-block;min-height:44px;padding:.6rem 0;overflow-wrap:anywhere}
+.fv-apollo-r367__unavailable a:focus-visible{outline:3px solid #ffe0a6;outline-offset:3px}
+@media (forced-colors:active){.fv-apollo-r367__unavailable{background:Canvas;color:CanvasText;border-color:CanvasText}.fv-apollo-r367__unavailable a{color:LinkText}}
+@media print{.fv-apollo-r367__unavailable{background:#fff!important;color:#000!important;border-color:#000!important}.fv-apollo-r367__unavailable a{color:#000!important}}
