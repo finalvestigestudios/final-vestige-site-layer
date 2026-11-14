@@ -1,0 +1,25 @@
+/* Apollo R369, scoped staging enhancement. No scripts or remote media. */
+.fv-apollo-r369,.fv-apollo-r369 * { box-sizing:border-box; }
+.fv-apollo-r369 { min-width:0; max-width:100%; color: #eae3d4; background:#121516; overflow-wrap:anywhere; }
+.fv-apollo-r369__intro,.fv-apollo-r369__lenses { margin:0 auto; width:min(100%, 1100px); padding:clamp(12px,2vw,32px); }
+.fv-apollo-r369__eyebrow { color:#d5b983; letter-spacing:.09em; font-size:.85em; }
+.fv-apollo-r369 h2,.fv-apollo-r369 h3 { line-height:1.2; color:#f7f0df; }
+.fv-apollo-r369__intro h2 { max-width:24ch; font-size:clamp(1.55rem,3.6vw,3rem); }
+.fv-apollo-r369__intro p:not(.fv-apollo-r369__eyebrow) { max-width:72ch; line-height:1.65; }
+.fv-apollo-r369__gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.fv-apollo-r369__lens { min-width:0; padding:16px; border:1px solid #817052; background:#1d2222; color:#eee5d7; border-radius:4px; }
+.fv-apollo-r369__lens summary { cursor:pointer; font-weight:700; line-height:1.5; padding:4px 0; }
+.fv-apollo-r369__lens summary:focus-visible { outline:3px solid #f0cf82; outline-offset:3px; }
+.fv-apollo-r369__lens p { max-width:65ch; line-height:1.65; }
+.fv-apollo-r369__note { border-inline-start:3px solid #bda474; padding-inline-start:12px; line-height:1.6; }
+.fv-apollo-r369__unavailable { padding:12px; border:1px solid currentColor; }
+@media (max-width:700px) { .fv-apollo-r369__gallery {grid-template-columns:minmax(0,1fr);} }
+@media (max-width:640px) { .fv-apollo-r369__intro,.fv-apollo-r369__lenses { padding:12px; }
+ .fv-apollo-r369__lens { padding:12px; } }
+@media (forced-colors:active) { .fv-apollo-r369__lens,.fv-apollo-r369__note {border-color:CanvasText;} }
+@media print { .fv-apollo-r369 { color:black;background:white; } .fv-apollo-r369 h2,.fv-apollo-r369 h3 {color:black;} 
+ .fv-apollo-r369__lens {color:black;background:white;border-color:black;} .fv-apollo-r369__lens:not([open]) > p {display:block;} }
+@media print {
+  .fv-apollo-r369__lens::details-content { display:block !important; content-visibility:visible !important; }
+  .fv-apollo-r369__lens:not([open]) > :not(summary) { display:block !important; }
+}
