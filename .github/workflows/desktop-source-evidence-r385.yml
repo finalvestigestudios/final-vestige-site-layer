@@ -318,3 +318,14 @@ jobs:
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_auth_proof_r248.py
           python -W error -m unittest discover -s products/desktop/tests -p test_premium_launch_proof_r252.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_launch_proof_r252.py
+
+      - name: R432 private SpendMap Unicode error-chain custody and full-engine verification
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_spend_private_unicode_custody_r432.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_private_unicode_custody_r432.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_spend_private_report_errors_integration_r432.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_private_report_errors_integration_r432.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_spend_compatibility_formula_r431.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_compatibility_formula_r431.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_verification_integration_r430.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_verification_integration_r430.py

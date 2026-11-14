@@ -38,7 +38,15 @@ class NativeSpendCsvDigest:
     def write(self, text):
         if type(text) is not str:
             raise ValueError("Invalid native SpendMap CSV cell")
-        data = text.encode("utf-8")
+        bad_encoding = False
+        try:
+            data = text.encode("utf-8")
+        except UnicodeError:
+            bad_encoding = True
+        # A UnicodeEncodeError contains the source cell in .object. Never
+        # attach it as __context__ on a public verifier exception.
+        if bad_encoding:
+            raise ValueError("Invalid native SpendMap CSV cell encoding")
         self._hash.update(data)
         self.byte_length += len(data)
         return len(text)
