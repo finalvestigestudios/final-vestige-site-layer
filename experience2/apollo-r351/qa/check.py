@@ -67,6 +67,14 @@ try:
         for width,js,touch,zoom in [(320,True,False,4),(390,False,False,1),(768,True,True,1),(1440,True,False,1),(1920,True,False,1)]:
             context=browser.new_context(viewport={'width':width,'height':900},java_script_enabled=js,has_touch=touch,is_mobile=touch,reduced_motion='reduce')
             page=context.new_page()
+            # Observe genuine Chromium paint/shift entries in this synthetic fixture.
+            page.evaluate("""() => {
+                window.__fvPerf = {lcp: [], cls: 0};
+                new PerformanceObserver(list => window.__fvPerf.lcp.push(...list.getEntries().map(x=>x.startTime)))
+                    .observe({type:'largest-contentful-paint', buffered:true});
+                new PerformanceObserver(list => { for(const e of list.getEntries()) if(!e.hadRecentInput) window.__fvPerf.cls += e.value; })
+                    .observe({type:'layout-shift', buffered:true});
+            }""")
             page.set_content('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0}'+css+'</style><body>'+rendered+'</body></html>')
             if js:page.add_script_tag(content=script)
             if zoom!=1: page.evaluate('(z)=>document.documentElement.style.fontSize=(16*z)+"px"',zoom)
@@ -84,7 +92,9 @@ try:
             else: summary.focus();page.keyboard.press('Enter')
             assert page.locator('.fv-apollo-r348__detail').first.get_attribute('open') is not None
             if width in (320,390,1440):page.screenshot(path=str(OUT/f'r351-http-{width}-{int(js)}.png'),full_page=True)
-            receipts.append({'case':f'isolated Chromium {width}px JS={js} touch={touch} rootZoom={zoom}x','pass':True,'network_mode':'set_content; HTTP/CSP blocked by administrator'})
+            page.wait_for_timeout(180)
+            perf=page.evaluate('window.__fvPerf')
+            receipts.append({'case':f'isolated Chromium {width}px JS={js} touch={touch} rootZoom={zoom}x','pass':True,'network_mode':'set_content; HTTP/CSP blocked by administrator','synthetic_lcp_ms':round(max(perf['lcp']),1) if perf['lcp'] else None,'observed_cls':round(perf['cls'],5)})
             if width==390:
                 pdf=page.pdf(print_background=True)
                 (OUT/'r351-native-http-dossier.pdf').write_bytes(pdf)
