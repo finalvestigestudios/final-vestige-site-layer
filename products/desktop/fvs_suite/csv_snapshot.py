@@ -12,6 +12,8 @@ import stat
 from pathlib import Path
 
 CHUNK_BYTES = 1024 * 1024
+# Absolute intake ceiling for every finance CSV consumer, independent of caller.
+MAX_SNAPSHOT_BYTES = 64 * 1024 * 1024
 
 
 def _signature(info: os.stat_result) -> tuple[int, int, int, int, int]:
@@ -60,7 +62,9 @@ def read_csv_snapshot(path: str | Path, maximum: int) -> bytes:
     pathname; checks size and timestamps before and after the bounded read.
     A malicious actor can still defeat metadata checks or edit after return.
     """
-    if maximum < 0:
+    # Fail before path conversion, stat or open. NaN/infinity and int subclasses
+    # could otherwise disable the bound or invoke caller-controlled methods.
+    if type(maximum) is not int or not (0 <= maximum <= MAX_SNAPSHOT_BYTES):
         raise ValueError("Invalid CSV input size limit")
     source = Path(path)
     before = _metadata(source)
