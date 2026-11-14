@@ -1,0 +1,58 @@
+{
+  "id": "dispatch-r358-total-focus-specific-sku",
+  "as_of_utc": "2026-11-14T16:39:15Z",
+  "release": "HOLD_UNSENT",
+  "adoption": "NOT_ADOPTED",
+  "original_campaign_pr": 175,
+  "master_release_pr": 201,
+  "previous_pr": 2492,
+  "preserve_original_issue_count": 6,
+  "editorial_issues": [
+    1,
+    2,
+    4,
+    6
+  ],
+  "commercial_reservations": [
+    3,
+    5
+  ],
+  "wordpress_observed": {
+    "newsletter_enabled": true,
+    "automatic_new_post_email": false,
+    "content_format": "full",
+    "welcome_configured": true,
+    "welcome_received_verified": false,
+    "counts": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2
+    },
+    "recipient_eligibility_verified": false,
+    "native_preview_verified": false,
+    "unsubscribe_functional_verified": false,
+    "publisher_postal_address_verified": false
+  },
+  "merchant": {
+    "name": "Hypnosis Live",
+    "sku": "Total Focus",
+    "official_product": "https://hypnosislive.com/mental-skills/total-focus",
+    "faq": "https://hypnosislive.com/faq",
+    "seller_listed_duration_minutes": 33,
+    "seller_listed_file_size_mb": 47,
+    "public_price_conflicts_observed": true,
+    "actual_checkout_price_verified": false,
+    "refund_fulfillment_verified": false,
+    "individual_product_effectiveness_verified": false,
+    "affiliate_publisher_approval_verified": false,
+    "permission_to_promote_by_email_verified": false,
+    "earning_url_issued_verified": false,
+    "approved_live_fv_guide_verified": false,
+    "approved_creative_verified": false
+  },
+  "commercial_disclosure_in_candidate": true,
+  "real_qualified_sessions_verified": false,
+  "independently_settled_orders_verified": false,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "founder_final_send_approval": false
+}
