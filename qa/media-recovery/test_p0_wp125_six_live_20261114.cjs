@@ -38,6 +38,13 @@ const mutations=[
   ["disable no upscale", d=>{d.release.no_upscale=false;}],
   ["duplicate P0", d=>{d.source_slots[5].slot=d.source_slots[4].slot;}],
   ["fake subscription budget", d=>{d.release.subscriptions_usd=5;}]
+,
+  ["forged Commons rights clearance", d=>{d.asset_candidates[0].rights='UNIVERSAL_LICENSE_CLEARED';}],
+  ["forged catalog scene date", d=>{d.asset_candidates[0].scene='1979_INCIDENT_CAMERA';}],
+  ["different candidate catalog", d=>{d.asset_candidates[3].catalog_url='https://floridamemory.com/items/show/999999';}],
+  ["swapped tool wrapper code", d=>{d.source_slots[0].source_status.retriever_wrapper_code=403;}],
+  ["swapped tool wrapper message", d=>{d.source_slots[0].source_status.retriever_wrapper_message='not_a_browser_404';}],
+  ["silently changed museum candidate file", d=>{d.asset_candidates[5].candidate_url='https://nationalcoastguardmuseum.org/wp-content/uploads/different.jpg';}]
 ];
 assert.deepEqual(validate(original),{ok:true,errors:[]},'positive exact-source inventory');
 let passed=1;
