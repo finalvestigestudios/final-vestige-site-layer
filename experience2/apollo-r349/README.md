@@ -15,11 +15,11 @@ From the repository root (PHP 7.4+, Python 3, Playwright with Chromium, PyMuPDF,
 ```sh
 php -l experience2/apollo-r349/source-policy.php
 php experience2/apollo-r349/qa/preflight.php
-python experience2/apollo-r349/qa/acceptance.py
+python experience2/apollo-r349/qa/browser.py
 python experience2/apollo-r348/qa/acceptance.py
 ```
 
-`qa/acceptance.py` mutates source identities in **temporary filesystem copies**, verifies the whole composed HTML never exposes those links, checks loss-of-policy behavior, then runs eight genuine Chromium screen/print contexts from 320 to 1920px. Artifacts under untracked `QA/` include screenshots, native PDF and JSON receipts. Does not contact NASA or any commerce service. Local LCP/CLS are fixture observations, not production metrics.
+`qa/preflight.php` rejects unsafe identities, while `qa/browser.py` runs eight genuine Chromium screen/print contexts from 320 to 1920px. A larger temporary-filesystem mutation suite is included in the external reproducibility archive, not this draft PR. Artifacts under untracked `QA/` include screenshots, native PDF and JSON receipts. Does not contact NASA or any commerce service. Local LCP/CLS are fixture observations, not production metrics.
 
 ## Release gates outstanding
 
