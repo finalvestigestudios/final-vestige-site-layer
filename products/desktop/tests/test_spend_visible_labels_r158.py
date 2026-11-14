@@ -75,20 +75,21 @@ class SpendLabelR158(unittest.TestCase):
         self.write([self.row("ACME"), self.row("A-CME")])
         self.assertEqual(self.report_rows()[1][0]["source_vendor_labels"], "A-CME; ACME")
 
-    def test_labels_per_category_not_whole_month(self):
+    def test_labels_vendor_wide_across_categories(self):
         self.write([self.row("ACME", category="Parts"),
                     self.row("A-CME", category="Service")])
         values = {r["category"]: r["source_vendor_labels"] for r in self.report_rows()[1]}
-        self.assertEqual(values, {"Parts": "ACME", "Service": "A-CME"})
+        self.assertEqual(values, {"Parts": "A-CME; ACME", "Service": "A-CME; ACME"})
 
-    def test_labels_per_month_not_all_vendor_history(self):
+    def test_labels_vendor_wide_across_months(self):
         self.write([self.row("ACME", month=1), self.row("A-CME", month=2)])
         values = {r["month"]: r["source_vendor_labels"] for r in self.report_rows()[1]}
-        self.assertEqual(values, {"2026-01": "ACME", "2026-02": "A-CME"})
+        self.assertEqual(values, {"2026-01": "A-CME; ACME", "2026-02": "A-CME; ACME"})
 
-    def test_trimmed_outer_spaces_and_duplicates(self):
+    def test_original_outer_spaces_and_duplicates(self):
         self.write([self.row("  ACME  "), self.row("ACME")])
-        self.assertEqual(self.report_rows()[1][0]["source_vendor_labels"], "ACME")
+        self.assertEqual(self.report_rows()[1][0]["source_vendor_labels"],
+                         r"\u0020\u0020ACME\u0020\u0020; ACME")
 
     def test_literal_semicolon_is_not_list_separator(self):
         self.write([self.row("AC;ME"), self.row("ACME")])
@@ -156,7 +157,7 @@ class SpendLabelR158(unittest.TestCase):
 
     def test_leading_combining_mark_is_neutralized(self):
         self.write([self.row("\u0301ACME")])
-        self.assertEqual(self.report_rows()[1][0]["source_vendor_labels"], "'\u0301ACME")
+        self.assertEqual(self.report_rows()[1][0]["source_vendor_labels"], r"\u0301ACME")
 
     def test_quoted_multiline_source_preserves_snapshot(self):
         self.write([self.row("A-CME", note="private\nmultiline"), self.row("ACME")])
