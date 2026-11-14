@@ -11,6 +11,8 @@ test("all merchants remain hold",()=>assert.ok(offers.every(o=>o.status==="HOLD_
 test("no merchant link allowed",()=>assert.ok(offers.every(o=>o.do_not_activate_link)));
 test("public prices not authorized",()=>assert.ok(offers.every(o=>o.do_not_quote_price)));
 test("Total Focus public promotional price disagreement flagged",()=>assert.equal(offers[1].public_price_conflict,true));
+test("Zen12 different SKUs are not same-product price drift",()=>assert.equal(offers[0].public_price_conflict,false));
+test("Zen12 ambiguous offer paths flagged separately",()=>assert.equal(offers[0].incomparable_offer_variants,true));
 test("cannot treat coupon and other package as checkout",()=>assert.equal(evidence.merchant[0].proofs.issued_earning_url,undefined));
 test("all release proofs missing",()=>assert.equal(offers[0].missing_proofs.length,7));
 test("newsletter still hold",()=>assert.equal(letter.status,"HOLD_UNSENT"));
