@@ -1,0 +1,11 @@
+# QA AND SOURCE EVIDENCE — R364
+- Exact master PR #175 `d57ccdba3aee8f065e143e101c2945f4f3d01647`; eight GitHub blob SHA identities compared to archived native test fixture: 8/8 match.
+- Native Python original campaign suite: 6/6 PASS on November 14, 2026; archived source files from prior R361 locally available. Does not mean live email or legal compliance passed.
+- R364 offline candidate: 23/23 isolated V8 checks PASS against exact objects used to generate HTML and plaintext. Native Node run and browser/email-client audits NOT PERFORMED.
+- Sources: Science Museum Group camera catalog, museum blog with 1983 letter and photo dispute, Leeds archive, Conan Doyle collection. No image reproduction, licensing pending if added.
+- The proposed Issue 01 replaces neither approved content nor original PR; no launch attestation, address, unsubscribe, or founder approval.
+- Exact live WordPress read-only snapshot at 2026-11-14 22:33 UTC: newsletter enabled, auto-new-post OFF, full content, sender Final Vestige Studios; total/confirmed/unconfirmed 3/3/2 overlap; direct email followers 0, wpcom 3; eligible inbox recipients unknown; sampled recent posts not sent.
+- Connected Gmail targeted subject and exact Fieldbook searches: no confirmed received welcome in available results; not definitive.
+- Merchant rights, email permission, actual checkout, earning links, and commercially compliant received email UNVERIFIED. Commercial 03/05 HOLD_MERCHANT. All 6 HOLD_UNSENT.
+- Compliance: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business ; WordPress-native preview docs https://wordpress.com/support/newsletter/email-appearance/ .
+- No WordPress writes, send/test send, subscriber contact, merchant activation, publication, new platform, expense, CI or PR merge.
