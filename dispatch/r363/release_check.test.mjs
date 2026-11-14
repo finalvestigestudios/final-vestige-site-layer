@@ -7,7 +7,7 @@ const read = name => readFileSync(new URL(name, root), 'utf8');
 const md = read('ISSUE06_OPTIONAL.md'), txt = read('ISSUE06_OPTIONAL.txt'), html = read('ISSUE06_OPTIONAL.html');
 const cta = 'https://finalvestige.com/2026/11/02/change-blindness/', doi = 'https://doi.org/10.3758/BF03208840';
 test('original Issue06 remains optional and unsent',()=>{for (const f of [md,txt,html]) assert.match(f,/UNSENT|DO NOT SEND/i);assert.match(md,/NOT_ADOPTED/);});
-test('exact subject and preheader parity',()=>{for(const f of [md,txt,html]){assert.ok(f.includes('Seven days of noticing. One thing you probably missed.'));assert.ok(f.includes('A fieldbook log, a door experiment, and a better question than 'did it work?''));}});
+test('exact subject and preheader parity',()=>{for(const f of [md,txt,html]){assert.ok(f.includes('Seven days of noticing. One thing you probably missed.'));assert.ok(f.includes("A fieldbook log, a door experiment, and a better question than 'did it work?'"));}});
 test('primary destination is existing live article, not signup or merchant',()=>{for(const f of [md,txt,html]){assert.ok(f.includes(cta));assert.ok(!/affiliate\.inspire3|zen12\.com|hypnosislive\.com|\[\[APPROVED_/.test(f));}});
 test('accuracy claim is qualified',()=>{for(const f of [md,txt,html]){assert.ok(/seven of fifteen|7\/15/i.test(f));assert.ok(f.includes(doi));}});
 test('mandatory hard stop retained in all variants',()=>{for(const f of [md,txt,html]){assert.ok(f.includes('[[VALID_POSTAL_ADDRESS_REQUIRED]]'));assert.ok(f.includes('[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]'));}});
