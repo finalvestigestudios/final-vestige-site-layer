@@ -3,11 +3,12 @@
 function inspectOffer(o) {
   const required=["named_account_acceptance","email_channel_permission","issued_earning_url","approved_live_first_party_guide","exact_checkout_terms","refund_terms_review","claim_review"];
   const missing=required.filter(k=>o.proofs?.[k]?.status!=="verified"||!o.proofs[k].reference);
-  const prices=(o.public_observations||[]).filter(x=>x.type==="promotional_display"&&typeof x.amount==="number").map(x=>x.amount);
+  const prices=(o.public_observations||[]).filter(x=>x.type==="promotional_display"&&typeof x.amount==="number"&&x.sku===o.id).map(x=>x.amount);
+  const incomparableVariants=(o.public_observations||[]).some(x=>x.type==="promotional_display"&&x.sku!==o.id);
   const unique=[...new Set(prices)];
   const publicPriceConflict=unique.length>1;
   const prohibited=(o.public_observations||[]).some(x=>x.verified_checkout===true);
-  return {offer:o.id||"unknown",status:"HOLD_MERCHANT",missing_proofs:missing,public_price_conflict:publicPriceConflict,observed_promotional_prices:unique,do_not_quote_price:true,do_not_activate_link:true, invalid_public_proof:prohibited, note:"Public seller pages and coupon variants are not authenticated affiliate approval or checkout."};
+  return {offer:o.id||"unknown",status:"HOLD_MERCHANT",missing_proofs:missing,public_price_conflict:publicPriceConflict,incomparable_offer_variants:incomparableVariants,observed_promotional_prices:unique,do_not_quote_price:true,do_not_activate_link:true, invalid_public_proof:prohibited, note:"Public seller pages and coupon variants are not authenticated affiliate approval or checkout."};
 }
 function inspectNewsletter(n) {
   const reasons=[];
