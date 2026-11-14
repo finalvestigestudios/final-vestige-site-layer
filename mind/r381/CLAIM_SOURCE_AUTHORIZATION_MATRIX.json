@@ -1,0 +1,462 @@
+{
+  "schema": "FV-MIND-R381-claims-v1",
+  "date": "2026-11-14",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "sources": {
+    "research2006": "https://pubmed.ncbi.nlm.nih.gov/17128613/",
+    "research2011": "https://pubmed.ncbi.nlm.nih.gov/21563019/",
+    "research2016": "https://pubmed.ncbi.nlm.nih.gov/26556012/",
+    "researchImagined": "https://pubmed.ncbi.nlm.nih.gov/25412111/",
+    "researchUniversity": "https://www.eurekalert.org/news-releases/654470",
+    "sellerIndex": "https://inspire3.com/",
+    "sellerZen": "https://zen12.com/",
+    "sellerHypnosis": "https://hypnosislive.com/",
+    "sellerShots": "https://brainwaveshots.com/",
+    "affiliatePortal": "https://affiliates.inspire3.com/",
+    "ftcEndorse": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftcHealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/"
+  },
+  "claims": [
+    {
+      "id": "R01",
+      "claim": "2006 study tested virtual movement between spatial regions and retrieval of associated/dissociated object names",
+      "status": "research_abstract_supported",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/17128613/",
+      "disposition": "editorial"
+    },
+    {
+      "id": "R02",
+      "claim": "2006 paper found less accessible object information after spatial shift",
+      "status": "research_abstract_supported",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/17128613/",
+      "disposition": "editorial"
+    },
+    {
+      "id": "R03",
+      "claim": "Doorway causes permanent deletion of intentions",
+      "status": "unsupported_extrapolation",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/17128613/",
+      "disposition": "exclude"
+    },
+    {
+      "id": "R04",
+      "claim": "2011 follow-up included small/large virtual setups and actual physical rooms",
+      "status": "research_abstract_supported",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/21563019/",
+      "disposition": "editorial"
+    },
+    {
+      "id": "R05",
+      "claim": "2011 return to original room reliably restores all memory",
+      "status": "contradicted_by_study",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/21563019/",
+      "disposition": "exclude"
+    },
+    {
+      "id": "R06",
+      "claim": "2016 paper evaluated travel time and a 3 second delay",
+      "status": "research_abstract_supported",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/26556012/",
+      "disposition": "editorial"
+    },
+    {
+      "id": "R07",
+      "claim": "2016 results favored competition/interference between event models",
+      "status": "authors_interpretation",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/26556012/",
+      "disposition": "qualify"
+    },
+    {
+      "id": "R08",
+      "claim": "Imagined doorway transitions were associated with worse recall in two experiments",
+      "status": "research_abstract_supported",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/25412111/",
+      "disposition": "editorial"
+    },
+    {
+      "id": "R09",
+      "claim": "Doorway study demonstrates a diagnosis for everyday forgetfulness",
+      "status": "unsupported_generalization",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/21563019/",
+      "disposition": "exclude"
+    },
+    {
+      "id": "R10",
+      "claim": "Puységur primary-source archive exists as an FV editorial bridge",
+      "status": "issue171_inventory_live_refetch_429",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "disposition": "editorial_with_access_caveat"
+    },
+    {
+      "id": "R11",
+      "claim": "Existing Focus Fieldbook is a free 52 page practical book with one Dispatch funnel",
+      "status": "live_official_fv_verified",
+      "source": "https://finalvestige.com/focus/",
+      "disposition": "free_cta"
+    },
+    {
+      "id": "S01",
+      "claim": "Official Inspire3 index links Zen12 and Hypnosis Live",
+      "status": "seller_catalog_verified",
+      "source": "https://inspire3.com/",
+      "disposition": "qualify_seller_only"
+    },
+    {
+      "id": "S02",
+      "claim": "Zen12 seller describes 12 levels",
+      "status": "seller_claim_verified",
+      "source": "https://zen12.com/",
+      "disposition": "qualify_seller_only"
+    },
+    {
+      "id": "S03",
+      "claim": "Zen12 seller describes 48 MP3s and four style options",
+      "status": "seller_claim_verified",
+      "source": "https://zen12.com/",
+      "disposition": "qualify_seller_only"
+    },
+    {
+      "id": "S04",
+      "claim": "Zen12 seller advertises guide, manual and support",
+      "status": "seller_claim_verified",
+      "source": "https://zen12.com/",
+      "disposition": "qualify_seller_only"
+    },
+    {
+      "id": "S05",
+      "claim": "Zen12 seller advertises a 1 year refund promise",
+      "status": "seller_claim_not_independently_tested",
+      "source": "https://zen12.com/",
+      "disposition": "qualify_and_reverify"
+    },
+    {
+      "id": "S06",
+      "claim": "Public price variations $87 and $87.99 in previous audits are proven checkout price",
+      "status": "not_verified_checkout",
+      "source": "https://zen12.com/",
+      "disposition": "exclude_price_from_cta"
+    },
+    {
+      "id": "S07",
+      "claim": "Seller's 12 minutes is equivalent to an hour advanced meditation outcome",
+      "status": "unsupported_product_specific_efficacy",
+      "source": "https://zen12.com/",
+      "disposition": "exclude"
+    },
+    {
+      "id": "S08",
+      "claim": "Seller's clinical mental health focus and creativity claims proven for this exact MP3 library",
+      "status": "unsupported_product_specific_efficacy",
+      "source": "https://zen12.com/",
+      "disposition": "exclude"
+    },
+    {
+      "id": "S09",
+      "claim": "Hypnosis Live lists 200+ hypnosis recordings",
+      "status": "seller_claim_verified",
+      "source": "https://hypnosislive.com/",
+      "disposition": "seller_only_not_endorsed"
+    },
+    {
+      "id": "S10",
+      "claim": "Hypnosis Live wealth/weight/immunity outcomes guaranteed",
+      "status": "unsupported_product_specific_efficacy",
+      "source": "https://hypnosislive.com/",
+      "disposition": "exclude"
+    },
+    {
+      "id": "S11",
+      "claim": "Brainwave Shots lists Focus and Brain Power audio",
+      "status": "seller_claim_verified",
+      "source": "https://brainwaveshots.com/",
+      "disposition": "seller_only_not_endorsed"
+    },
+    {
+      "id": "S12",
+      "claim": "Brainwave Shots immune booster/healing/pain relief offers proven",
+      "status": "unsupported_product_specific_health_claims",
+      "source": "https://brainwaveshots.com/",
+      "disposition": "exclude"
+    },
+    {
+      "id": "C01",
+      "claim": "Inspire3 affiliate portal publicly solicits publishers",
+      "status": "public_program_verified",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "not_authorization"
+    },
+    {
+      "id": "C02",
+      "claim": "FV publisher acceptance, eligible channels, issued referral URL and attribution terms",
+      "status": "not_verified_via_public_portal_or_targeted_gmail",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "hold"
+    },
+    {
+      "id": "C03",
+      "claim": "Public portal commission percentages are FV-specific approved terms",
+      "status": "not_verified_account_terms",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "exclude_numbers"
+    },
+    {
+      "id": "C04",
+      "claim": "Targeted mailbox search proves no acceptance exists anywhere",
+      "status": "unsupported_negative",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "state_only_no_evidence_found"
+    },
+    {
+      "id": "C05",
+      "claim": "FV-owned Payhip paid Mind product has active rights-cleared SKU and checkout",
+      "status": "not_authenticated",
+      "source": "https://finalvestige.com/focus/",
+      "disposition": "hold"
+    },
+    {
+      "id": "F01",
+      "claim": "Material connections require clear conspicuous disclosure near recommendation",
+      "status": "ftc_guidance_supported",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "disposition": "include"
+    },
+    {
+      "id": "F02",
+      "claim": "Objective health claims require truthful adequate scientific substantiation",
+      "status": "ftc_guidance_supported",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "disposition": "enforce"
+    },
+    {
+      "id": "M01",
+      "claim": "Affiliate outgoing click is a verified paid affiliate sale",
+      "status": "false_metric_equivalence",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "forbid"
+    },
+    {
+      "id": "M02",
+      "claim": "Gross cash, settlement, refunds and fees must be reconciled for realized revenue",
+      "status": "business_acceptance_rule",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "require_proof"
+    },
+    {
+      "id": "M03",
+      "claim": "Existing Jetpack subscription can be counted from client click alone",
+      "status": "unverified_provider_confirmation",
+      "source": "https://finalvestige.com/focus/",
+      "disposition": "forbid"
+    },
+    {
+      "id": "V01",
+      "claim": "Variant B film is already encoded and playable",
+      "status": "not_true_storyboard_only",
+      "source": "https://zen12.com/",
+      "disposition": "label_concept"
+    },
+    {
+      "id": "V02",
+      "claim": "A/B variant wins without paid outcomes and denominators",
+      "status": "not_tested",
+      "source": "https://zen12.com/",
+      "disposition": "no_claim"
+    }
+  ],
+  "commercial_release_gates": [
+    {
+      "id": "G01",
+      "gate": "Named FV Inspire3 publisher approval read from authenticated account or directly issued written authorization",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G02",
+      "gate": "Eligible publisher domain and organic social channels independently recorded",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G03",
+      "gate": "Official product-specific approved promotion rules available",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G04",
+      "gate": "Issued trackable authorized merchant referral URL for this exact Zen12 offer",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G05",
+      "gate": "Authorized destination and redirects reviewed without exposing private tokens publicly",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G06",
+      "gate": "Exact checkout currency, tax, upsells and final amount verified",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G07",
+      "gate": "Checkout return/refund conditions for actual referred transaction verified",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G08",
+      "gate": "Product-format claims rechecked immediately before release",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G09",
+      "gate": "Audio contents/delivery rights verified with permitted inspection",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G10",
+      "gate": "Product-specific health/efficacy substantiation or exclusion",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G11",
+      "gate": "Adjacent FTC disclosure desktop",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G12",
+      "gate": "Adjacent FTC disclosure mobile 360px",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G13",
+      "gate": "Adjacent FTC disclosure mobile 390px",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G14",
+      "gate": "Keyboard and visible focus pass in real browser",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G15",
+      "gate": "Native disabled purchase controls until activation",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G16",
+      "gate": "No seller link or automatic referral redirect in draft",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G17",
+      "gate": "No cloned Jetpack/Dispatch signup",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G18",
+      "gate": "Campaign identifiers from real Grok asset_id provided",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G19",
+      "gate": "Landing destination and source intent match",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G20",
+      "gate": "First-party event existing implementation inspected by Claude",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G21",
+      "gate": "No new tracking service or duplicate scripts",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G22",
+      "gate": "Consent/privacy handling and retention reviewed",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G23",
+      "gate": "Confirmed signup observed via provider not click",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G24",
+      "gate": "Merchant-confirmed purchase event authenticated",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G25",
+      "gate": "Affiliate commission settled/independently reported",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G26",
+      "gate": "Refund reconciliation completed",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G27",
+      "gate": "Fees and payout settlement reconciled",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G28",
+      "gate": "Seven-day qualified-human session denominator present",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G29",
+      "gate": "Thirty-day qualified-human session denominator present",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G30",
+      "gate": "Low sample warning and unknown attribution provided",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G31",
+      "gate": "Variant allocation stable and privacy safe",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G32",
+      "gate": "Real encoded film user-started if film arm intended",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G33",
+      "gate": "Accessible captions verified in native player",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G34",
+      "gate": "Original media rights and reduced motion verified",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G35",
+      "gate": "WordPress sanitizer preview approved",
+      "result": "HOLD_NOT_PROVEN"
+    },
+    {
+      "id": "G36",
+      "gate": "Founder signoff and site QA release approval",
+      "result": "HOLD_NOT_PROVEN"
+    }
+  ],
+  "email_scope": "Targeted Gmail searches 2026-11-14 for Inspire3 publisher approval/issued link and Payhip showed no attributable proof. Lack of search results is not proof of nonexistence.",
+  "review_scope": "Source abstracts and official public pages; original paywalled article full texts and merchant checkout not audited. Puységur live URL rate limited (429); verified as existing route in issue #171, not independently fetched this run.",
+  "unverified_not_zero": [
+    "paid_orders",
+    "paid_commissions",
+    "qualified_human_sessions",
+    "net_revenue",
+    "confirmed_signups"
+  ],
+  "commercial_rule": "No merchant outbound activation or product outcome claims until written account permissions, exact checkout and founder/site QA approval."
+}
