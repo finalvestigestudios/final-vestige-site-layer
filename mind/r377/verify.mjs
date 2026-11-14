@@ -15,7 +15,7 @@ const poster=get("ORIGINAL_42S_POSTER.svg");
 const vtt=get("ORIGINAL_42S_CAPTIONS.vtt");
 const memo=get("CONVERSION_ACCEPTANCE_AND_HANDOFF.md");
 const claims=JSON.parse(get("CLAIM_SOURCE_RIGHTS_MATRIX.json"));
-const figure=/<figure id="optional-film"\b[\s\S]*?<\/figure>/;
+const figure=/<figure id="optional-film"[^>]*>[\s\S]*?<\/figure>/;
 const offer=html=>html.match(/<section class="offer" id="offer">[\s\S]*?<\/section>/)?.[0]||"";
 const merchantHref=/<a\b[^>]*href\s*=\s*["']\s*https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|affiliates\.inspire3\.com|hypnosislive\.com|brainwaveshots\.com)(?:[\/"'?\s]|$)/i;
 const nativeButton=/<button\b[^>]*\btype="button"[^>]*\bdisabled(?:\s|>|=)/i;
