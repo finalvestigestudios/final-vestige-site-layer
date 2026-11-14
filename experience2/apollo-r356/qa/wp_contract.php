@@ -50,6 +50,6 @@ $note=fv_apollo_r356_postfire();
 check(strpos($note,'102 deliberate ignitions')!==false && strpos($note,'data-fv-apollo-entry')===false,'standalone note without Atlas');
 check(substr_count($note,'data-fv-r339-cta="editorial"')===0,'no unrelated CTA on note');
 $result=['scope'=>'WordPress API stub only; no installed WordPress, Assembler or live pages', 'cases'=>$checks,
-    'standalone_css_assets'=>1,'standalone_js_assets'=>0,'full_css_assets'=>6,'full_js_assets'=>1,
+    'standalone_css_assets'=>2,'standalone_js_assets'=>0,'full_css_assets'=>7,'full_js_assets'=>1,
     'composite_entries'=>13,'composite_editorial_ctas'=>1,'embedded_media'=>0,'pass'=>true];
 echo json_encode($result,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES)."\n";
