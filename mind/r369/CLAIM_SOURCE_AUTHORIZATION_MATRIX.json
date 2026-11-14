@@ -1,0 +1,240 @@
+{
+  "review_date": "2026-11-14",
+  "release": "HARD_HOLD",
+  "source_count": 12,
+  "claims": [
+    {
+      "claim": "Attentional blink first-target interference window",
+      "kind": "original_lab",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "status": "SUPPORTED_TASK_LIMIT"
+    },
+    {
+      "claim": "Attentional blink mechanisms are debated",
+      "kind": "review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19933555/",
+      "status": "SUPPORTED_REVIEW"
+    },
+    {
+      "claim": "Intensive mental training after three months reduced blink in study",
+      "kind": "original_lab",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "status": "SUPPORTED_IN_STUDY_NOT_PRODUCT"
+    },
+    {
+      "claim": "EEG binaural-beat review five support eight contradict one mixed",
+      "kind": "review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "status": "SUPPORTED_REVIEW"
+    },
+    {
+      "claim": "Zen12 Premium contains 12 levels 48 MP3s",
+      "kind": "seller",
+      "url": "https://zen12.com/",
+      "status": "SELLER_DESCRIBED"
+    },
+    {
+      "claim": "Zen12 displayed $87.99 on 2026-11-14",
+      "kind": "seller",
+      "url": "https://zen12.com/",
+      "status": "PUBLIC_PRICE_ONLY_NOT_CHECKOUT"
+    },
+    {
+      "claim": "Zen12 advertises a one-year refund guarantee",
+      "kind": "seller",
+      "url": "https://zen12.com/",
+      "status": "SELLER_CLAIM_REFUND_UNVERIFIED"
+    },
+    {
+      "claim": "12 minutes of Zen12 equals one hour advanced meditation",
+      "kind": "seller",
+      "url": "https://zen12.com/",
+      "status": "UNSUBSTANTIATED_DO_NOT_ENDORSE"
+    },
+    {
+      "claim": "Brainwave entrainment product reliably controls brainwaves",
+      "kind": "seller",
+      "url": "https://zen12.com/",
+      "status": "UNSUBSTANTIATED_DO_NOT_ENDORSE"
+    },
+    {
+      "claim": "Inspire3 offers a public affiliate program",
+      "kind": "seller",
+      "url": "https://affiliates.inspire3.com/",
+      "status": "PROGRAM_ONLY_NOT_FV_ELIGIBILITY"
+    },
+    {
+      "claim": "Inspire3 publisher acceptance for FV",
+      "kind": "private",
+      "url": "https://affiliates.inspire3.com/",
+      "status": "NOT_AUTHENTICATED"
+    },
+    {
+      "claim": "Hypnosis Live vendor offers MP3 hypnosis catalog",
+      "kind": "seller",
+      "url": "https://hypnosislive.com/",
+      "status": "SELLER_ONLY"
+    },
+    {
+      "claim": "Brainwave Shots offers Focus Shot",
+      "kind": "seller",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "status": "SELLER_ONLY"
+    },
+    {
+      "claim": "FTC requires clear proximate material connection disclosure",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "status": "REQUIRED"
+    },
+    {
+      "claim": "Health benefit claims require adequate support",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "status": "REQUIRED"
+    },
+    {
+      "claim": "Puységur archive preserves failed predictions and consent",
+      "kind": "first_party",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "status": "FIRST_PARTY_ARCHIVE"
+    },
+    {
+      "claim": "Existing free 52-page Focus Fieldbook",
+      "kind": "first_party",
+      "url": "https://finalvestige.com/focus/",
+      "status": "FIRST_PARTY_EXISTING"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "publisher_accepted",
+      "status": "HOLD"
+    },
+    {
+      "id": "exact_issued_earning_link",
+      "status": "HOLD"
+    },
+    {
+      "id": "website_permission",
+      "status": "HOLD"
+    },
+    {
+      "id": "social_permission",
+      "status": "HOLD"
+    },
+    {
+      "id": "email_permission",
+      "status": "HOLD"
+    },
+    {
+      "id": "approved_creatives",
+      "status": "HOLD"
+    },
+    {
+      "id": "tracking_terms",
+      "status": "HOLD"
+    },
+    {
+      "id": "actual_checkout_price",
+      "status": "HOLD"
+    },
+    {
+      "id": "tax_and_currency",
+      "status": "HOLD"
+    },
+    {
+      "id": "refund_terms",
+      "status": "HOLD"
+    },
+    {
+      "id": "refund_verification",
+      "status": "HOLD"
+    },
+    {
+      "id": "delivery_verification",
+      "status": "HOLD"
+    },
+    {
+      "id": "payment_processor",
+      "status": "HOLD"
+    },
+    {
+      "id": "affiliate_commission_terms",
+      "status": "HOLD"
+    },
+    {
+      "id": "commission_settlement_data",
+      "status": "HOLD"
+    },
+    {
+      "id": "product_specific_science",
+      "status": "HOLD"
+    },
+    {
+      "id": "no_health_guarantee",
+      "status": "HOLD"
+    },
+    {
+      "id": "no_wealth_guarantee",
+      "status": "HOLD"
+    },
+    {
+      "id": "no_faked_experience",
+      "status": "HOLD"
+    },
+    {
+      "id": "disclosure_near_cta",
+      "status": "HOLD"
+    },
+    {
+      "id": "disclosure_contrast",
+      "status": "HOLD"
+    },
+    {
+      "id": "disabled_merchant_cta",
+      "status": "HOLD"
+    },
+    {
+      "id": "no_link_cloaking",
+      "status": "HOLD"
+    },
+    {
+      "id": "no_new_email_forms",
+      "status": "HOLD"
+    },
+    {
+      "id": "preserve_jetpack",
+      "status": "HOLD"
+    },
+    {
+      "id": "consent_data_policy",
+      "status": "HOLD"
+    },
+    {
+      "id": "no_tracking_pixel",
+      "status": "HOLD"
+    },
+    {
+      "id": "qa_a11y",
+      "status": "HOLD"
+    },
+    {
+      "id": "qa_mobile",
+      "status": "HOLD"
+    },
+    {
+      "id": "qa_security",
+      "status": "HOLD"
+    },
+    {
+      "id": "founder_release",
+      "status": "HOLD"
+    },
+    {
+      "id": "no_live_changes",
+      "status": "HOLD"
+    }
+  ],
+  "evidence_limits": "Seller claims are not independent product proof; no named account approval, commissioned URL, payment receipt, checkout refund execution or purchased Mind SKU authenticated."
+}
