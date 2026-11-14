@@ -29,6 +29,12 @@ BOOTSTRAP = (
     "runpy.run_path(p,run_name='__main__')"
 )
 MAX_SOURCE_BYTES = 2_000_000
+# Bound the entire untrusted import tree before rglob/materialization or child
+# launch. Per-file size checks alone permit arbitrarily many tiny files or
+# directories, exhausting memory/time during repeated SHA-256 walks.
+MAX_IMPORT_FILES = 512
+MAX_IMPORT_DIRS = 128
+MAX_IMPORT_BYTES = 16_000_000
 # Explicitly retain only runtime variables used to locate OS/Python libraries and
 # a temporary workspace. Sensitive credentials, proxy endpoints, custom Python
 # import overrides and arbitrary CI secrets never enter smoke children.
@@ -106,15 +112,36 @@ def _verify_source_directories(desktop: Path) -> None:
     # __pycache__ bytecode and native extension files can execute code that is
     # *not* in our hashed .py inventory. Refuse them in both import roots.
     # Ordinary local data assets such as JSON/CSV remain allowed.
+    file_count = 0
+    dir_count = 2  # Both mandatory import roots also count against the budget.
+    total_bytes = 0
     for import_root in (desktop / "fvs_suite", desktop / "launchers"):
         for root, directories, files in os.walk(
                 import_root, followlinks=False, onerror=reject_unreadable):
+            # Reject an oversized directory listing before walking its entries.
+            # Count all entries, including files with no meaningful extension.
+            if (dir_count + len(directories) > MAX_IMPORT_DIRS or
+                    file_count + len(files) > MAX_IMPORT_FILES):
+                raise SourceGateError("Desktop source inventory exceeds safe bounds")
+            dir_count += len(directories)
+            file_count += len(files)
             for name in directories:
                 _require_real_directory(Path(root) / name)
             for name in files:
-                _require_real_source_file(Path(root) / name)
+                path = Path(root) / name
+                _require_real_source_file(path)
                 if name.casefold().endswith(_BLOCKED_IMPORT_SUFFIXES):
                     raise SourceGateError("Untrusted compiled import in desktop source inventory")
+                try:
+                    size = path.lstat().st_size
+                except OSError:
+                    raise SourceGateError("Unsafe desktop source file") from None
+                # Do not read or hash unbounded single files or cumulative data.
+                if size <= 0 or size > MAX_SOURCE_BYTES:
+                    raise SourceGateError("Desktop source inventory exceeds safe bounds")
+                total_bytes += size
+                if total_bytes > MAX_IMPORT_BYTES:
+                    raise SourceGateError("Desktop source inventory exceeds safe bounds")
 
 
 
