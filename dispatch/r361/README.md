@@ -1,0 +1,21 @@
+# Dispatch R361 — decision-grade evidence on the ORIGINAL six issues (2026-11-14)
+
+**SOURCE ONLY. DRAFT. HOLD_UNSENT across all six; HOLD_MERCHANT on 03 and 05. No send authority.** This increment is stacked on draft [#2510](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2510) at `466cdd0515fce59886736b2354cd1f92371e3aaf`. Canonical campaign [#175](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175) remains `d57ccdba3aee8f065e143e101c2945f4f3d01647`; independent gate [#201](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201); coordinating Issues [#174](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174), [#171](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171), [#129](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/129), [#820](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820). Frozen homepage PR #49 unmodified.
+
+## What is different this run
+
+Rather than adding a seventh optional newsletter or another near-duplicate subscriber classifier, R361 independently audits the **actual six untouched master manuscripts and manifest**, tests 26 adversarial source mutations against archived source, isolates the subscriber fulfilment proof still missing, and supplies a decision-grade merchant rights evidence request. A WordPress media-library read also located the **actual Fieldbook PDF attachment** by its exact URL, ID 1737, MIME application/pdf, size **599,946 bytes**. The media record proves that an attachment is present in the site's WordPress inventory; it does **not** prove successful guest download or an email recipient's inbox receipt. A public PDF fetch returned a cache miss and cannot certify either result.
+
+**Original manuscript diagnosis:** Issues 01 and 02 direct to identical Puységur archive URLs; Issue 06 sends an already-subscribed reader to /focus/, which is predominantly a signup landing page; Issue 04's 'Fourteen seconds' subject needs a clearly defined NASA interval; commercial 03/05 retain deliberately unfilled warm-up-guide tokens. This is editorial-conversion criticism, **not** recorded audience performance. Previous optional rewrites remain NOT_ADOPTED.
+
+**Latest read-only WordPress** (2026-11-14 19:39–19:40 UTC): subscriptions enabled; site can send technically; post auto-email OFF; content full; welcome configured with the 52-page download URL; dashboard total3/confirmed3/unconfirmed2 (overlap, not additive); suppressed0; recent five notifications opted out / never sent; WP.com followers3 and direct-email followers0. **Actual eligible inboxes UNKNOWN.** Gmail targeted search surfaced the 2026-10-25 confirmation email, not a proved final welcome or merchant EMAIL approval. No private mail addresses included.
+
+## Read next
+
+- [SIX_ISSUE_DECISION_MAP.md](./SIX_ISSUE_DECISION_MAP.md) — exactly one primary CTA per original issue and prioritized owner/acceptance evidence; alternatives never adopted.
+- [MERCHANT_PERMISSION_EVIDENCE_PACKET.md](./MERCHANT_PERMISSION_EVIDENCE_PACKET.md) — **draft request, not sent**; exact named publisher / SKU / email channel / earning link questions, allowed proof and seller-claim matrix.
+- [CONSENT_FULFILMENT_AND_EMAIL_QA.md](./CONSENT_FULFILMENT_AND_EMAIL_QA.md) — proof hierarchy for provider consent, Fieldbook, postal address, unsubscribe, genuine Jetpack preview.
+- [ATTRIBUTION_TO_NET_REVENUE.md](./ATTRIBUTION_TO_NET_REVENUE.md) — Grok asset attribution, deduped confirmed signup and settled revenue, with no false A/B or tiny-list conclusions.
+- [QA_EVIDENCE.md](./QA_EVIDENCE.md) — what was actually executed versus unavailable.
+
+**Release invariant:** This PR adds only review materials, cannot post or send, is not an affiliate sign-up, and does not authorize changes to WordPress, merchant accounts, subscriber data, email automation, Grok distribution, analytics production or paid services. All changes require their assigned owners and final founder approval.
