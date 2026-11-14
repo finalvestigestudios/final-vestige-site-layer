@@ -1,0 +1,44 @@
+{
+  "source": "WordPress connected read-only",
+  "as_of_utc": "2026-11-14T04:38:09Z",
+  "site": "https://finalvestige.com",
+  "newsletter": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "site_can_send": true,
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "welcome_fieldbook_52_configured": true,
+    "welcome_receipt_verified": false
+  },
+  "subscribers": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "paid": 0
+  },
+  "followers": {
+    "wpcom": 3,
+    "email": 0,
+    "comment": 0
+  },
+  "recent_sends": {
+    "post_notifications_opted_out": 5,
+    "actual_dispatched": 0
+  },
+  "eligible_inbox_recipients": null,
+  "verified_publisher_postal_address": false,
+  "verified_mime_unsubscribe": false,
+  "native_preview_verified": false,
+  "affiliate_email_permission_verified": false,
+  "verified_net_revenue_per_1000": null,
+  "no_pii": true,
+  "all_six": "HOLD_UNSENT",
+  "offer_issues": [
+    "03",
+    "05"
+  ],
+  "offer_status": "HOLD_MERCHANT"
+}
