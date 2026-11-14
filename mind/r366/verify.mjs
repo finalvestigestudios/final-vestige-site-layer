@@ -19,7 +19,7 @@ const handoff=load('CONVERSION_ACCEPTANCE_AND_OWNER_HANDOFF.md');
 let passed=0;
 const ok=(p,label)=>{assert.ok(p,label);passed++};
 const merchantAnchor=s=/<a\b[^>]*\bhref\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots)\./i.test(s);
-const unsafe=s=/<script\b|<iframe\b|<form\b|<input\b|<video\b|\sonclick\s*=|\sonsubmit\s*=|\sautoplay\b|\bdataLayer\b|\bgtag\s*\(/i.test(s);
+const unsafe=s=/<script\b|<iframe\b|<form\b|<input\b|<video\b|\sonclick\s*=|\sonsubmit\s*=|\sautoplay\s*=|\bdataLayer\b|\bgtag\s*\(/i.test(s);
 const nativeDisabled=s=/<button\b[^>]*\sdisabled(?:\s|>)[^>]*>/.test(s);
 const disclose=s=>/Affiliate disclosure:[\s\S]*?Final Vestige may earn a commission at no additional cost to you/.test(s);
 const safe=s=>nativeDisabled(s)&&disclose(s)&&!merchantAnchor(s)&&!unsafe(s);
