@@ -1,0 +1,535 @@
+{
+  "run": "R361",
+  "date_pt": "2026-11-13",
+  "release": "HARD_HOLD",
+  "source_inventory": {
+    "inspire3": "https://inspire3.com/",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "zen12": "https://zen12.com/",
+    "hypnosis": "https://hypnosislive.com/mental-skills/total-focus",
+    "faq": "https://hypnosislive.com/faq",
+    "focusShot": "https://brainwaveshots.com/focus-shot",
+    "apps": "https://doi.org/10.1080/00207144.2024.2434085",
+    "theories": "https://doi.org/10.1016/j.concog.2024.103730",
+    "ftcDisclosure": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftcHealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "historical": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "fieldbook": "https://finalvestige.com/focus/",
+    "blog": "https://finalvestige.com/blog/",
+    "changeBlindness": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "dispatch": "https://finalvestige.com/dispatch/",
+    "affiliateDisclosure": "https://finalvestige.com/affiliate-disclosure/",
+    "editorial": "https://finalvestige.com/editorial-standards/"
+  },
+  "claims": [
+    {
+      "id": "R361-01",
+      "statement": "Inspire3 publicly lists Zen12 and Hypnosis Live",
+      "source_ids": [
+        "inspire3"
+      ],
+      "classification": "official catalog",
+      "decision": "PASS",
+      "allowed_language": "Seller catalog lists these brands."
+    },
+    {
+      "id": "R361-02",
+      "statement": "Inspire3 publicly offers an affiliate program",
+      "source_ids": [
+        "affiliate"
+      ],
+      "classification": "official seller program",
+      "decision": "PASS",
+      "allowed_language": "A public publisher program exists."
+    },
+    {
+      "id": "R361-03",
+      "statement": "FV named affiliate publisher approved",
+      "source_ids": [
+        "affiliate"
+      ],
+      "classification": "account-specific authorization",
+      "decision": "HOLD_UNVERIFIED",
+      "allowed_language": "No publisher-specific approval established by public page or targeted mail."
+    },
+    {
+      "id": "R361-04",
+      "statement": "FV exact earning URL issued and approved for website",
+      "source_ids": [
+        "affiliate"
+      ],
+      "classification": "account-specific authorization",
+      "decision": "HOLD_UNVERIFIED",
+      "allowed_language": "No affiliate URL is active or inserted."
+    },
+    {
+      "id": "R361-05",
+      "statement": "FV permitted email, social and video placements",
+      "source_ids": [
+        "affiliate"
+      ],
+      "classification": "channel rights",
+      "decision": "HOLD_UNVERIFIED",
+      "allowed_language": "No approval inferred from public signup."
+    },
+    {
+      "id": "R361-06",
+      "statement": "FV commission amount or rate earned",
+      "source_ids": [
+        "affiliate"
+      ],
+      "classification": "contract and actual ledger",
+      "decision": "HOLD_UNVERIFIED",
+      "allowed_language": "Generic program rates are NOT FV actual commission terms or earnings."
+    },
+    {
+      "id": "R361-07",
+      "statement": "Zen12 Premium comprises 12 levels and 48 MP3 files",
+      "source_ids": [
+        "zen12"
+      ],
+      "classification": "seller-described catalog",
+      "decision": "PASS_ATTRIBUTED",
+      "allowed_language": "The seller lists twelve levels and forty-eight MP3s."
+    },
+    {
+      "id": "R361-08",
+      "statement": "Zen12 Premium seller displayed $87.99 on Nov 13",
+      "source_ids": [
+        "zen12"
+      ],
+      "classification": "seller-page snapshot",
+      "decision": "PASS_ATTRIBUTED",
+      "allowed_language": "Seller-displayed $87.99 as of Nov 13, 2026; checkout unverified."
+    },
+    {
+      "id": "R361-09",
+      "statement": "Zen12 one-year refund promise",
+      "source_ids": [
+        "zen12"
+      ],
+      "classification": "seller policy statement",
+      "decision": "PASS_ATTRIBUTED",
+      "allowed_language": "Seller advertises one-year refund guarantee; outcome/restrictions unverified."
+    },
+    {
+      "id": "R361-10",
+      "statement": "Zen12 12 minutes equals one hour meditation scientifically",
+      "source_ids": [
+        "zen12"
+      ],
+      "classification": "seller physiological efficacy assertion",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "allowed_language": "Describe only as seller advertising; no product-specific validation."
+    },
+    {
+      "id": "R361-11",
+      "statement": "Zen12 treats stress, anxiety, insomnia or clinical conditions",
+      "source_ids": [
+        "zen12",
+        "ftcHealth"
+      ],
+      "classification": "health claim",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "allowed_language": "Do not assert health treatment outcomes."
+    },
+    {
+      "id": "R361-12",
+      "statement": "Zen12 purchased or trialed by FV",
+      "source_ids": [],
+      "classification": "firsthand testimonial",
+      "decision": "REJECT_NO_EXPERIENCE",
+      "allowed_language": "FV has not trialed this program."
+    },
+    {
+      "id": "R361-13",
+      "statement": "Hypnosis Live Total Focus length 33 min and size 47 MB",
+      "source_ids": [
+        "hypnosis"
+      ],
+      "classification": "seller-described file format",
+      "decision": "PASS_ATTRIBUTED",
+      "allowed_language": "Seller lists 33 minutes and 47 MB."
+    },
+    {
+      "id": "R361-14",
+      "statement": "Hypnosis Live Total Focus displayed $24.44",
+      "source_ids": [
+        "hypnosis"
+      ],
+      "classification": "seller-page snapshot",
+      "decision": "PASS_ATTRIBUTED",
+      "allowed_language": "Seller-displayed as of review; final checkout unverified."
+    },
+    {
+      "id": "R361-15",
+      "statement": "Total Focus brain reprogramming or limitless concentration proven",
+      "source_ids": [
+        "hypnosis",
+        "ftcHealth"
+      ],
+      "classification": "seller efficacy assertion",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "allowed_language": "Not independently demonstrated for this file."
+    },
+    {
+      "id": "R361-16",
+      "statement": "Hypnosis Live returns fully verified",
+      "source_ids": [
+        "faq"
+      ],
+      "classification": "policy and transaction outcome",
+      "decision": "HOLD_UNVERIFIED",
+      "allowed_language": "Seller FAQ may be cited; no verified refund transaction."
+    },
+    {
+      "id": "R361-17",
+      "statement": "Brainwave Shots Focus Shot includes 15 and 30 minute versions",
+      "source_ids": [
+        "focusShot"
+      ],
+      "classification": "seller-described contents",
+      "decision": "PASS_ATTRIBUTED",
+      "allowed_language": "Seller lists 15/30-minute and brainwave-only versions."
+    },
+    {
+      "id": "R361-18",
+      "statement": "Brainwave Shots Focus Shot displayed $17.99",
+      "source_ids": [
+        "focusShot"
+      ],
+      "classification": "seller-page snapshot",
+      "decision": "PASS_ATTRIBUTED",
+      "allowed_language": "Seller displayed $17.99; checkout unverified."
+    },
+    {
+      "id": "R361-19",
+      "statement": "Focus Shot induces an immediate focus state",
+      "source_ids": [
+        "focusShot",
+        "ftcHealth"
+      ],
+      "classification": "seller benefit assertion",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "allowed_language": "Unproved product-specific claim; do not assert it."
+    },
+    {
+      "id": "R361-20",
+      "statement": "2025 review sampled 168 of 679 commercial hypnosis apps",
+      "source_ids": [
+        "apps"
+      ],
+      "classification": "scientific descriptive review",
+      "decision": "PASS_WITH_LIMITS",
+      "allowed_language": "Review is about qualifying apps, not these seller MP3 products."
+    },
+    {
+      "id": "R361-21",
+      "statement": "Only four of 168 apps reported clinical efficacy trial inclusion",
+      "source_ids": [
+        "apps"
+      ],
+      "classification": "scientific descriptive review",
+      "decision": "PASS_WITH_LIMITS",
+      "allowed_language": "Reporting count, not four proved effective or 164 proved ineffective."
+    },
+    {
+      "id": "R361-22",
+      "statement": "Experimental hypnosis theory consensus established",
+      "source_ids": [
+        "theories"
+      ],
+      "classification": "scientific review",
+      "decision": "REJECT_OVERSTATEMENT",
+      "allowed_language": "Theories remain contested; effects do not validate an MP3."
+    },
+    {
+      "id": "R361-23",
+      "statement": "Puységur archive has 153 source rows and 16 dossiers",
+      "source_ids": [
+        "puysegur"
+      ],
+      "classification": "live original archive snapshot",
+      "decision": "PASS_ATTRIBUTED",
+      "allowed_language": "As published on live archive at review."
+    },
+    {
+      "id": "R361-24",
+      "statement": "Franklin commission evaluated Deslon and tested expectations",
+      "source_ids": [
+        "historical"
+      ],
+      "classification": "historical source synthesis",
+      "decision": "PASS_WITH_LIMITS",
+      "allowed_language": "No conclusion that hypnosis products are uniformly ineffective."
+    },
+    {
+      "id": "R361-25",
+      "statement": "Existing Focus Fieldbook is 52 pages with one signup route",
+      "source_ids": [
+        "fieldbook"
+      ],
+      "classification": "live owned resource",
+      "decision": "PASS_ATTRIBUTED",
+      "allowed_language": "Use existing /focus/ and Jetpack/Dispatch; no duplicate form."
+    },
+    {
+      "id": "R361-26",
+      "statement": "Disclosure can live only in footer",
+      "source_ids": [
+        "ftcDisclosure"
+      ],
+      "classification": "FTC disclosure compliance",
+      "decision": "REJECT",
+      "allowed_language": "Prospective commission text must be close to purchase recommendations."
+    },
+    {
+      "id": "R361-27",
+      "statement": "Affiliate click means a paid sale",
+      "source_ids": [],
+      "classification": "measurement inference",
+      "decision": "REJECT",
+      "allowed_language": "Click is a distinct event; merchant confirmation required."
+    },
+    {
+      "id": "R361-28",
+      "statement": "One verified FV-owned Mind Payhip SKU is currently payable",
+      "source_ids": [],
+      "classification": "owned commerce",
+      "decision": "HOLD_UNVERIFIED",
+      "allowed_language": "No authenticated rights, checkout, delivered content, return policy."
+    },
+    {
+      "id": "R361-29",
+      "statement": "Optional short video is guaranteed to improve purchase conversion",
+      "source_ids": [],
+      "classification": "marketing experiment",
+      "decision": "REJECT",
+      "allowed_language": "A/B is an untested hypothesis; actual orders needed."
+    },
+    {
+      "id": "R361-30",
+      "statement": "A public media video ID equals approved UTM conversions",
+      "source_ids": [],
+      "classification": "attribution inference",
+      "decision": "REJECT",
+      "allowed_language": "Need exact asset ID, landing path, permitted click location and validated sessions."
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "named FV Inspire3 account approval",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G02",
+      "name": "publisher program product enrollment",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G03",
+      "name": "website channel permission",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G04",
+      "name": "social channel permission",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G05",
+      "name": "email channel permission",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G06",
+      "name": "issued exact tracked link",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G07",
+      "name": "affiliate URL transport and terms",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G08",
+      "name": "approved affiliate creative reuse",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G09",
+      "name": "current product merchant evidence",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G10",
+      "name": "current price including checkout final total",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G11",
+      "name": "tax and region handling",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G12",
+      "name": "returns and refund restrictions",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G13",
+      "name": "product-specific claim substantiation",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G14",
+      "name": "FTC adjacent disclosure QA",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G15",
+      "name": "owner visual review",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G16",
+      "name": "site QA mobile 360/390/768/1440/1920",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G17",
+      "name": "browser WCAG keyboard and contrast",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G18",
+      "name": "WordPress sanitizer/staging review",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G19",
+      "name": "42s film rendered encoded/playable",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G20",
+      "name": "film caption sync/transcript and poster rights",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G21",
+      "name": "film no-JS and reduced motion",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G22",
+      "name": "no autoplay or third party beacon",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G23",
+      "name": "site performance CWV test",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G24",
+      "name": "no duplicate subscriber form",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G25",
+      "name": "existing Jetpack provider-backed confirmed leads",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G26",
+      "name": "real Grok IDs and approved platform click path",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G27",
+      "name": "first party campaign mapping (without PII)",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G28",
+      "name": "qualified human session denominator",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G29",
+      "name": "settled paid order/commission records",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G30",
+      "name": "fees/returns/refunds reconciliation",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G31",
+      "name": "founder commercial release approval",
+      "state": "CLOSED",
+      "pass_evidence": null
+    },
+    {
+      "id": "G32",
+      "name": "founder site publishing approval",
+      "state": "CLOSED",
+      "pass_evidence": null
+    }
+  ],
+  "account_specific_partner_authorization": "UNVERIFIED",
+  "fv_owned_mind_paid_sku": "UNVERIFIED",
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "rate_state": "NOT_COMPUTABLE",
+  "record_types": {
+    "affiliate_click": "outbound action only",
+    "lead_confirmed": "provider verified opt-in only",
+    "paid_order": "merchant confirmed settled payment only",
+    "paid_affiliate_conversion": "partner reported settled credited commission only",
+    "net_revenue": "confirmed gross minus fees/refunds/returns"
+  },
+  "excluded_personal_data": [
+    "email",
+    "full_name",
+    "IP",
+    "phone",
+    "unhashed precise device identifier",
+    "secret affiliate token",
+    "order customer identity"
+  ],
+  "notes": "Seller-reported prices/rates are not accepted commercial terms. The review of 168 smartphone apps does not test seller MP3s. All gates closed. Source list for forensic review; do not auto-render links as commercial CTAs."
+}
