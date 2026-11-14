@@ -9,9 +9,9 @@ Run R350–R359 existing integration/citation/privacy/no-JS/print/QA guards as o
 The parent commit is `3076317ae51b7527146920ab738e5b421b3e5cee` (R359 PR #2438). The ten SHA-1 Git blobs are hard-pinned in `preparedness/tools/r360_guardrail_evidence_chain_hold.py`, verified against connector-read current parent. Source key count: 10. The existing R357 QA guard is run for #157; independent QA PR #169 and its dependent remediation PR #2205 remain separately inspected, unmerged and not production-approved. They are NOT represented as passing native integration.
 
 ## Executed evidence
-- 71/71 R360 synthetic/adversarial Python tests passed on exact locally matched blobs, Python compiled.
+- 73/73 R360 synthetic/adversarial Python tests passed on exact locally matched blobs, Python compiled.
 - 292/292 inherited R355–R359 isolated tests independently re-executed in disposable local import layouts.
-- Total 363/363 isolated tests; not a substitute for complete repository / 35 articles / 6 authored tools / 100 exports.
+- Total 365/365 isolated tests; not a substitute for complete repository / 35 articles / 6 authored tools / 100 exports.
 - Native audit against incomplete checkout exits code 2, `INVALID_HARD_HOLD`, `AUTHENTIC_CHECKOUT_MISSING`.
 - Full native `build.py`, integrated validations, 50 private WordPress + 50 preview outputs, browser/device/print QA: NOT EXECUTED. GitHub DNS remains unavailable in local container.
 - Prior unresolved source/safety reviews remain unresolved: 15 editorial conflicts, 17 Article #15 / Tool #104 obligations, four source identity disputes and tool-number collisions. Do not assert numeric resolutions without editorial receipts.
