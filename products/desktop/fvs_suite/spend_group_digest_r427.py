@@ -11,7 +11,7 @@ import re
 from .spend_source_digest_r426 import require_native_spend_source_sha256
 
 _VENDOR = re.compile(r"[A-Z0-9]+\Z", re.ASCII)
-_MONTH = re.compile(r"[0-9]{4}-(?:0[1-9]|1[0-2])\Z", re.ASCII)
+_MONTH = re.compile(r"(?!0000)[0-9]{4}-(?:0[1-9]|1[0-2])\Z", re.ASCII)
 MAX_GROUP_ROWS = 200_000
 MAX_VENDOR_KEY_CHARS = 1_048_576
 MAX_PHYSICAL_ROW = 9_999_999_999
