@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "count": 23,
+  "passes": 23,
+  "scope": "V8 source-derived synthetic fixtures; native Node & Jetpack untested",
+  "test_names": [
+    "valid offline reviewer",
+    "overlong subject",
+    "empty subject",
+    "long preheader",
+    "kind commercial",
+    "missing lang",
+    "missing table role",
+    "missing reviewer label",
+    "missing txt hold",
+    "missing address",
+    "missing unsubscribe",
+    "image injected",
+    "script injected",
+    "form injected",
+    "multiple H1",
+    "CTA missing plaintext",
+    "CTA missing HTML",
+    "sources too few",
+    "insecure source",
+    "efficacy claim",
+    "false approval",
+    "false mailing evidence",
+    "false unsubscribe proof"
+  ]
+}

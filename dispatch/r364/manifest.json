@@ -1,0 +1,43 @@
+{
+  "run": "R364",
+  "date": "2026-11-14",
+  "master_pr": 175,
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stacked_base_pr": 2526,
+  "edition": 1,
+  "kind": "editorial",
+  "review_only": true,
+  "adopted": false,
+  "release": "HOLD_UNSENT",
+  "subject": "A real photograph. Paper fairies.",
+  "preheader": "A 1917 camera, a famous believer, and the evidence outside the frame.",
+  "primary_cta": "https://finalvestige.com/2026/11/02/mesmerism/",
+  "primary_cta_label": "Read our investigation of the 1784 Mesmerism commission",
+  "source_urls": [
+    "https://collection.sciencemuseumgroup.org.uk/objects/co469836/midg-camera-used-to-make-the-first-two-cottingley-fairies-photographs-in-1917-quarter-plate-camera-plate-camera",
+    "https://blog.scienceandmediamuseum.org.uk/the-story-of-the-cottingley-fairies-shows-that-image-manipulation-is-nothing-new/",
+    "https://explore.library.leeds.ac.uk/special-collections-explore/8705",
+    "https://www.conandoylecollection.com/conan-doyle/exhibitions/the-cottingley-fairies"
+  ],
+  "compliance": {
+    "postal_verified": false,
+    "unsubscribe_verified": false,
+    "jetpack_preview_verified": false,
+    "welcome_received_verified": false,
+    "recipient_eligibility_verified": false,
+    "founder_send_approved": false
+  },
+  "commercial": {
+    "offer_issue_ids": [
+      3,
+      5
+    ],
+    "merchant_email_approved": false,
+    "earning_links_verified": false
+  },
+  "metrics": {
+    "paid_orders_verified": false,
+    "qualified_human_sessions_verified": false,
+    "net_revenue_per_1000": "NOT_COMPUTABLE"
+  }
+}
