@@ -1,0 +1,65 @@
+{
+  "run": "R359",
+  "checked_at_utc": "2026-11-14T17:39:16Z",
+  "source_prs": {
+    "original": 175,
+    "review_gate": 201,
+    "previous_stacked": 2498
+  },
+  "campaign": {
+    "original_issue_count": 6,
+    "original_editorial_count": 4,
+    "original_commercial_issues": [
+      3,
+      5
+    ],
+    "all_six": "HOLD_UNSENT",
+    "commercial": "HOLD_MERCHANT",
+    "this_issue03_alternative": "NOT_ADOPTED",
+    "founder_final_send_approval": false
+  },
+  "wordpress": {
+    "newsletter_enabled": true,
+    "post_default_email": false,
+    "content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "subscriber_total": 3,
+    "confirmed_count": 3,
+    "unconfirmed_count": 2,
+    "counts_overlap": true,
+    "wpcom_followers": 3,
+    "email_followers": 0,
+    "eligible_recipients": null,
+    "welcome_message_configured": true,
+    "welcome_receipt_verified": false,
+    "native_jetpack_preview_verified": false
+  },
+  "merchant": {
+    "fv_accepted_as_partner": false,
+    "email_promotion_permission_verified": false,
+    "sku_earning_url_verified": false,
+    "creative_rights_verified": false,
+    "guide_live_and_approved": false,
+    "checkout_price_verified": false,
+    "checkout_refund_terms_verified": false,
+    "product_specific_outcomes_verified": false
+  },
+  "compliance": {
+    "fv_qualifying_postal_address_verified": false,
+    "actual_recipient_unsubscribe_verified": false,
+    "unsubscribe_function_verified": false
+  },
+  "analytics": {
+    "confirmed_signup_count": null,
+    "qualified_human_sessions": null,
+    "settled_customer_orders": null,
+    "affiliate_paid_commissions": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified_sessions": null
+  },
+  "test_mail_sent": false,
+  "newsletter_sent": false,
+  "wordpress_written": false,
+  "merchant_activated": false
+}

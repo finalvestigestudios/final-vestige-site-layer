@@ -1,0 +1,19 @@
+# R359 conversion-first funnel — one offer hypothesis, never a fake sale
+
+**Product-fit hypothesis:** Readers attracted by evidence about attention and suggestion may find a properly qualified Zen12 Premium buying guide useful. The guide is NOT LIVE, EMAIL marketing rights are NOT VERIFIED, and this is not a recommendation to buy.
+
+| OFFER → FUNNEL STEP | BLOCKER | CHANGE / EXPERIMENT | PASS / FAIL EVIDENCE | OWNER |
+|---|---|---|---|---|
+| Grok evidence-led historical asset → /focus/ | Unknown asset-to-page continuity | Keep TASK-008 canonical source tags, qualified session receipt, no duplicate analytics | Actual published asset ID, URL, human-qualified visit, matching landing CTA | Grok / Praxxis / Claude |
+| Focus → confirmed newsletter lead | total=3/confirmed=3/unconfirmed=2 overlap, form submission not consent | One provider-confirmed signup event only, deduplicate by authoritative provider event/recipient eligibility privately | Provider confirmation + consent timestamp + aggregate eligible count (no PII in issues) | Claude / Focus |
+| Welcome → first meaningful value | Fieldbook message configured but actual receipt unproven | Founder-owned, read-only received-email and PDF check; do not trigger a new mail | Real welcome delivery and accessible 52-page PDF, distinct from confirmation request | Focus / Founder |
+| Dispatch Issue 03 → approved buyer guide | Original guide URL inactive; Mind R378 SOURCE ONLY | Review R359 optional manuscript against exact Zen12 Premium SKU; no live link yet | Approved live guide with current merchant terms and adjacent disclosure, actual mobile walkthrough | Mind / Commerce / Dispatch |
+| Buyer guide → affiliate checkout | No named affiliate EMAIL permission, earning URL, SKU checkout proof | Validate merchant account rights and authorized destination privately; no traffic until approved | Publisher acceptance, EMAIL promotion rights, issued tracking format, final price/refund proof | Mind / Commerce |
+| Settlement → legitimate revenue | No partner-confirmed sale, refund or fee records | Reuse existing Claude conversion event model, never infer from click or lead | Independent partner settled commission and refunds/fees, deduplicated customer/order keys | Commerce / Claude |
+| Compliant Dispatch → inbox | FV postal/opt-out/rendering unverified | Native non-sending WordPress email preview; separately permitted real test later only with owner authorization | Screen proof of native preview plus ultimately owner-authorized received message, valid postal and functioning unsub | Founder / Dispatch |
+
+**Attribution specification (NOT DEPLOYED):** Grok TASK-008 uses source in youtube/tiktok/etc, medium organic_social, campaign topic pilot and unique asset_id in utm_content. Keep that first acquisition record. A future approved email guide link could use utm_source=dispatch, utm_medium=email, utm_campaign=fv_dispatch_pilot_2026_11, utm_content=issue03_zen12. Never overwrite first touch, create duplicate GA4 tags, or send new subscriber identifiers to social/affiliate URLs.
+
+**KPI:** Realized net revenue per 1,000 qualified-human sessions = 1000 × (independently reported settled gross revenue - fees - refunds) / verified qualified-human sessions. It is **NOT COMPUTABLE** today. Paid conversion and lead-to-paid-customer rates similarly remain missing. Use genuine 7/30-day cohorts only when observed data exist. With 3 ambiguously classified subscribers, no valid A/B claims are possible.
+
+**Operational priority:** Do not write further commercial emails until Mind/Commerce actually obtains named Inspire3 EMAIL permission and an approved live guide. The next meaningful non-sending evidence is actual native Jetpack preview, publisher postal identity and consent reconciliation.
