@@ -1,0 +1,618 @@
+{
+  "schema": "fv-two-wp-proxy-origin-reconciliation-v1",
+  "observed_on": "2026-11-14",
+  "method": "offline original GitHub snapshots + independent web image retriever; no guest Chrome",
+  "sources": {
+    "qa": {
+      "pr": 154,
+      "ref": "qa/media-source-dependency-20261029-2347",
+      "path": "qa/media/cms_image_census_20261030.csv",
+      "blob": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab"
+    },
+    "media": {
+      "pr": 183,
+      "ref": "qa/media-recovery-reviewed-20261030-1158",
+      "summary_path": "qa/media-recovery/summary_20261030.json",
+      "summary_blob": "e8d8bea7746c12d2d447822946df338333909449",
+      "parts": [
+        {
+          "path": "qa/media-recovery/parts/01.json",
+          "blob": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+        },
+        {
+          "path": "qa/media-recovery/parts/02.json",
+          "blob": "48e1ebf07207e948ba5802e714eb39659d2e1c1d"
+        },
+        {
+          "path": "qa/media-recovery/parts/03.json",
+          "blob": "49183f66f880f7c4dfd363acca906876877f2e5e"
+        },
+        {
+          "path": "qa/media-recovery/parts/04.json",
+          "blob": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+        },
+        {
+          "path": "qa/media-recovery/parts/05.json",
+          "blob": "9b16b828342a9ac338f3e65610fd3d8d508355e9"
+        },
+        {
+          "path": "qa/media-recovery/parts/06.json",
+          "blob": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69"
+        },
+        {
+          "path": "qa/media-recovery/parts/07.json",
+          "blob": "21095161e633aba093b74c0ead9936c9f6186d00"
+        },
+        {
+          "path": "qa/media-recovery/parts/08.json",
+          "blob": "5659ec243c188928be3f89c0f96354b660608ca2"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "posts": 61,
+    "images": 355,
+    "qa_offsite": 286,
+    "media_offsite": 288,
+    "delta": 2,
+    "unchanged_rows": 59,
+    "qa_pct": 80.56,
+    "media_pct": 81.13,
+    "reported_broken_42": "BROWSER_UNCONFIRMED",
+    "proposed_76_pct": "NOT_MEASURED"
+  },
+  "rows": [
+    {
+      "post_id": 34,
+      "qa_images": 1,
+      "media_images": 1,
+      "qa_offsite": 0,
+      "media_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 35,
+      "qa_images": 1,
+      "media_images": 1,
+      "qa_offsite": 0,
+      "media_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 36,
+      "qa_images": 1,
+      "media_images": 1,
+      "qa_offsite": 0,
+      "media_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 37,
+      "qa_images": 1,
+      "media_images": 1,
+      "qa_offsite": 0,
+      "media_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 38,
+      "qa_images": 1,
+      "media_images": 1,
+      "qa_offsite": 0,
+      "media_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 101,
+      "qa_images": 7,
+      "media_images": 7,
+      "qa_offsite": 4,
+      "media_offsite": 4,
+      "delta": 0
+    },
+    {
+      "post_id": 108,
+      "qa_images": 2,
+      "media_images": 2,
+      "qa_offsite": 0,
+      "media_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 139,
+      "qa_images": 2,
+      "media_images": 2,
+      "qa_offsite": 0,
+      "media_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 142,
+      "qa_images": 3,
+      "media_images": 3,
+      "qa_offsite": 0,
+      "media_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 146,
+      "qa_images": 3,
+      "media_images": 3,
+      "qa_offsite": 0,
+      "media_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 151,
+      "qa_images": 3,
+      "media_images": 3,
+      "qa_offsite": 0,
+      "media_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 156,
+      "qa_images": 4,
+      "media_images": 4,
+      "qa_offsite": 0,
+      "media_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 166,
+      "qa_images": 7,
+      "media_images": 7,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 190,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 211,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 213,
+      "qa_images": 7,
+      "media_images": 7,
+      "qa_offsite": 7,
+      "media_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 214,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 215,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 216,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 217,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 218,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 219,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 220,
+      "qa_images": 7,
+      "media_images": 7,
+      "qa_offsite": 7,
+      "media_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 221,
+      "qa_images": 7,
+      "media_images": 7,
+      "qa_offsite": 7,
+      "media_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 252,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 253,
+      "qa_images": 7,
+      "media_images": 7,
+      "qa_offsite": 7,
+      "media_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 254,
+      "qa_images": 7,
+      "media_images": 7,
+      "qa_offsite": 7,
+      "media_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 255,
+      "qa_images": 7,
+      "media_images": 7,
+      "qa_offsite": 7,
+      "media_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 256,
+      "qa_images": 7,
+      "media_images": 7,
+      "qa_offsite": 7,
+      "media_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 257,
+      "qa_images": 7,
+      "media_images": 7,
+      "qa_offsite": 7,
+      "media_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 258,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 268,
+      "qa_images": 10,
+      "media_images": 10,
+      "qa_offsite": 10,
+      "media_offsite": 10,
+      "delta": 0
+    },
+    {
+      "post_id": 269,
+      "qa_images": 7,
+      "media_images": 7,
+      "qa_offsite": 0,
+      "media_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 274,
+      "qa_images": 7,
+      "media_images": 7,
+      "qa_offsite": 7,
+      "media_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 276,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 277,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 278,
+      "qa_images": 7,
+      "media_images": 7,
+      "qa_offsite": 7,
+      "media_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 279,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 280,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 283,
+      "qa_images": 7,
+      "media_images": 7,
+      "qa_offsite": 7,
+      "media_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 285,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 5,
+      "media_offsite": 6,
+      "delta": 1
+    },
+    {
+      "post_id": 287,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 288,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 289,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 290,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 291,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 5,
+      "media_offsite": 6,
+      "delta": 1
+    },
+    {
+      "post_id": 292,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 299,
+      "qa_images": 8,
+      "media_images": 8,
+      "qa_offsite": 0,
+      "media_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 330,
+      "qa_images": 8,
+      "media_images": 8,
+      "qa_offsite": 0,
+      "media_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 367,
+      "qa_images": 9,
+      "media_images": 9,
+      "qa_offsite": 8,
+      "media_offsite": 8,
+      "delta": 0
+    },
+    {
+      "post_id": 370,
+      "qa_images": 8,
+      "media_images": 8,
+      "qa_offsite": 4,
+      "media_offsite": 4,
+      "delta": 0
+    },
+    {
+      "post_id": 407,
+      "qa_images": 8,
+      "media_images": 8,
+      "qa_offsite": 8,
+      "media_offsite": 8,
+      "delta": 0
+    },
+    {
+      "post_id": 413,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 4,
+      "media_offsite": 4,
+      "delta": 0
+    },
+    {
+      "post_id": 418,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 6,
+      "media_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 425,
+      "qa_images": 9,
+      "media_images": 9,
+      "qa_offsite": 8,
+      "media_offsite": 8,
+      "delta": 0
+    },
+    {
+      "post_id": 428,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 5,
+      "media_offsite": 5,
+      "delta": 0
+    },
+    {
+      "post_id": 431,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 5,
+      "media_offsite": 5,
+      "delta": 0
+    },
+    {
+      "post_id": 432,
+      "qa_images": 7,
+      "media_images": 7,
+      "qa_offsite": 7,
+      "media_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 433,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 5,
+      "media_offsite": 5,
+      "delta": 0
+    },
+    {
+      "post_id": 434,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 5,
+      "media_offsite": 5,
+      "delta": 0
+    },
+    {
+      "post_id": 621,
+      "qa_images": 6,
+      "media_images": 6,
+      "qa_offsite": 0,
+      "media_offsite": 0,
+      "delta": 0
+    }
+  ],
+  "cases": [
+    {
+      "key": "285:1",
+      "post_id": 285,
+      "stored_src": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "target_origin": "www.squawkpoint.com",
+      "offsite": true,
+      "retriever": "IMAGE_RENDERED",
+      "retriever_http_status": null,
+      "origin_http_status": null,
+      "visitor_http_status": null,
+      "visitor_natural_px": null,
+      "visitor_wire_bytes": null,
+      "native_px": null,
+      "rights_cleared": false,
+      "exact_primary_binary_confirmed": false,
+      "cache_allowed": false,
+      "replacement_allowed": false,
+      "max_conditional_width_px": 960,
+      "no_upscale": true,
+      "authoritative_catalog": null,
+      "catalog_disposition": "NO_MATCHED_PRIMARY_ITEM_AND_REUSE_RIGHTS_UNKNOWN"
+    },
+    {
+      "key": "291:0",
+      "post_id": 291,
+      "stored_src": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "target_origin": "text-message.blogs.archives.gov",
+      "offsite": true,
+      "retriever": "IMAGE_RENDERED",
+      "retriever_http_status": null,
+      "origin_http_status": null,
+      "visitor_http_status": null,
+      "visitor_natural_px": null,
+      "visitor_wire_bytes": null,
+      "native_px": null,
+      "rights_cleared": false,
+      "exact_primary_binary_confirmed": false,
+      "cache_allowed": false,
+      "replacement_allowed": false,
+      "max_conditional_width_px": 960,
+      "no_upscale": true,
+      "authoritative_catalog": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+      "catalog_disposition": "OFFICIAL_NARA_STORY_RELATED_PHOTOS_NOT_EXACT_BINARY_OR_NAID"
+    }
+  ],
+  "root_cause": "NOT_VERIFIED_SITEQA_PER_URL_SNAPSHOT_UNAVAILABLE",
+  "explanation": "Two offsite deltas occur in posts 285 and 291 and both frozen URL strings are third-party origins via i0.wp.com; difference from earlier Site QA CSV could reflect snapshot or historical classifier, not proven. Current PR154 classifier handles both correctly.",
+  "release": {
+    "siteqa_browser_collector_touched": false,
+    "homepage_design_touched": false,
+    "wp_production_write": false,
+    "media_downloads": 0,
+    "rehosted": 0,
+    "deploy": false,
+    "spending_usd": 0
+  },
+  "current_issues": {
+    "actual_guest_broken": null,
+    "actual_visitor_weight_reduction_pct": null,
+    "oversize_originals_last_reported": 16,
+    "oversize_original_bytes_last_reported": 49107665
+  }
+}
