@@ -69,7 +69,8 @@ function fv_apollo_r356_enqueue(): void {
         array('fv-apollo-r347-index', 'apollo-r347/assets/source-index.css'),
         array('fv-apollo-r348-custody', 'apollo-r348/assets/source-custody.css'),
     );
-    $assets = $usage[0] ? array_merge($composite, array($note)) : array($note);
+    $print = array('fv-apollo-r356-print-proof', 'apollo-r356/assets/print-proof.css');
+    $assets = $usage[0] ? array_merge($composite, array($note, $print)) : array($note, $print);
     foreach ($assets as $asset) {
         $absolute = $root . '/' . $asset[1];
         if (is_readable($absolute)) {
