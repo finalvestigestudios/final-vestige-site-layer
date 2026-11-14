@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="1000" viewBox="0 0 780 1000" role="img" aria-labelledby="t d">
+<title id="t">The Bohemia land-change record depends on which map you read</title>
+<desc id="d">Original Final Vestige Studios source-derived graphic comparing methods reported by Lopez and colleagues in a 2014 scholarly article. US Army Corps of Engineers mapping records 2.5 square miles of loss from 1932 to 2001; US Geological Survey mapping records 2.99 square miles net loss from 1932 to 2010; a hybrid merged map records 3.4 square miles of total mapped loss. Different source definitions, date ranges and spatial coverage mean the figures should not be added together or treated as direct yearly measurements. The USGS mapped 1.08 square miles of land gain, a distinct observation.</desc>
+<rect width="780" height="1000" fill="#101b21"/>
+<path d="M42 49H738" stroke="#bc9b67" stroke-width="3"/>
+<text x="42" y="92" font-family="Georgia,serif" font-size="21" fill="#d8c194" letter-spacing="2.3">FINAL VESTIGE / EVIDENCE ATLAS</text>
+<text x="42" y="157" font-family="Georgia,serif" font-weight="bold" font-size="38" fill="#f4f0e6">How Much Land Was Lost?</text>
+<text x="42" y="197" font-family="Arial,sans-serif" font-size="24" fill="#d5d1c9">Three mapping approaches. Three different answers.</text>
+<rect x="42" y="231" width="696" height="156" rx="12" fill="#20323a" stroke="#40535a"/>
+<text x="66" y="271" font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="#e5d7b9">U.S. Army Corps mapping</text>
+<text x="66" y="332" font-family="Georgia,serif" font-weight="bold" font-size="55" fill="#e7ca93">2.5 mi²</text>
+<text x="418" y="326" font-family="Arial,sans-serif" font-size="23" fill="#efe8d9">Mapped land loss</text>
+<text x="418" y="358" font-family="Arial,sans-serif" font-size="21" fill="#b3c3c6">1932–2001</text>
+<rect x="42" y="407" width="696" height="156" rx="12" fill="#20323a" stroke="#40535a"/>
+<text x="66" y="447" font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="#e5d7b9">U.S. Geological Survey mapping</text>
+<text x="66" y="508" font-family="Georgia,serif" font-weight="bold" font-size="55" fill="#e7ca93">2.99 mi²</text>
+<text x="418" y="502" font-family="Arial,sans-serif" font-size="23" fill="#efe8d9">Net land loss</text>
+<text x="418" y="534" font-family="Arial,sans-serif" font-size="21" fill="#b3c3c6">1932–2010</text>
+<rect x="42" y="583" width="696" height="156" rx="12" fill="#273b3b" stroke="#bda77d" stroke-width="2"/>
+<text x="66" y="623" font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="#e5d7b9">Research team's merged map</text>
+<text x="66" y="684" font-family="Georgia,serif" font-weight="bold" font-size="55" fill="#f8d498">3.4 mi²</text>
+<text x="418" y="678" font-family="Arial,sans-serif" font-size="23" fill="#efe8d9">Total mapped loss</text>
+<text x="418" y="710" font-family="Arial,sans-serif" font-size="21" fill="#c5c7bc">Combines both sources</text>
+<rect x="42" y="761" width="696" height="94" rx="9" fill="#15272e" stroke="#8b9ca0"/>
+<text x="62" y="793" font-family="Arial,sans-serif" font-weight="bold" font-size="21" fill="#e7ca93">Not additive. Not a single uninterrupted survey.</text>
+<text x="62" y="822" font-family="Arial,sans-serif" font-size="19" fill="#e2dfd5">The USGS also mapped 1.08 mi² of land gain.</text>
+<text x="42" y="896" font-family="Arial,sans-serif" font-size="18" fill="#d3d0c6">Source: Lopez et al., GCAGS Journal (2014), pp. 90–91.</text>
+<text x="42" y="924" font-family="Arial,sans-serif" font-size="17" fill="#b4c0c1">Original data interpretation graphic © Final Vestige Studios, 2026.</text>
+<text x="42" y="952" font-family="Arial,sans-serif" font-size="17" fill="#b4c0c1">No historical image or aerial photograph reproduced.</text>
+</svg>
