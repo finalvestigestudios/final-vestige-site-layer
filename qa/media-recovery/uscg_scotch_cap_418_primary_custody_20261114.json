@@ -1,0 +1,120 @@
+{
+  "schema": "fv-uscg-scotch-cap-p0-primary-custody-v1",
+  "observed_local_date": "2026-11-14",
+  "audit_kind": "source-and-catalog-readback-not-browser-proof",
+  "post": {
+    "id": 418,
+    "status": "publish",
+    "modified": "2026-08-28T03:11:08",
+    "url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/"
+  },
+  "historical_baseline": {
+    "posts": 61,
+    "inline_images": 355,
+    "reported_broken_external": 42,
+    "confirmed_guest_broken": null,
+    "claimed_visitor_wire_reduction_pct": 76,
+    "actual_visitor_wire_reduction_pct": null,
+    "oversized_wordpress_origins": 16,
+    "oversized_stored_original_bytes": 49107665,
+    "oversize_threshold_decimal_bytes": 1500000
+  },
+  "sources": [
+    {
+      "slot": "418:1",
+      "published_source": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "published_alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew.",
+      "published_caption": "Chief Boatswain’s Mate Anthony L. Petit. U.S. Coast Guard.",
+      "origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_px": null,
+      "guest_encoded_transfer_bytes": null,
+      "verified_guest_broken": null,
+      "external_retriever": {
+        "date": "2026-11-14",
+        "method": "web.open",
+        "wrapper_status": 403,
+        "meaning": "wrapper tool forbidden; NOT guest/origin HTTP status"
+      },
+      "archival_candidate": {
+        "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "alternate_catalog_url": "https://www.history.uscg.mil/US-Coast-Guard-Photo-Gallery/igphoto/2002905913/",
+        "identifier": "210330-G-DE713-0002.JPG",
+        "relation": "exact-VIRIN-filename-catalog-match-NOT-byte-or-crop-equality",
+        "catalog_description": "Service portrait of Anthony Pettit, Scotch Cap station chief",
+        "author": "U.S. Coast Guard",
+        "publisher_item_public_domain_assertion": true,
+        "publisher_item_cleared_for_release_assertion": true,
+        "publisher_republish_requires_credit_and_dod_guidance": true,
+        "rights_guidance_url": "https://www.dma.mil/Services/Visual-Information/References/Limitations/",
+        "actual_native_px": null,
+        "derivative_max_width_px": 960,
+        "conditional_output_px": null,
+        "binary_hash_verified": false,
+        "exact_visual_parity_verified": false,
+        "wp_localization_authorized": false,
+        "editorial_name_review": "HOLD: live ALT/caption say Anthony L. Petit; Coast Guard portrait says Anthony Pettit; Coast Guard article itself uses both spellings. Do not silently correct."
+      }
+    },
+    {
+      "slot": "418:2",
+      "published_source": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "published_alt": "Broken concrete and debris where Scotch Cap Lighthouse stood after the April 1, 1946 tsunami.",
+      "published_caption": "What remained at Scotch Cap after the tsunami. U.S. Coast Guard.",
+      "origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_px": null,
+      "guest_encoded_transfer_bytes": null,
+      "verified_guest_broken": null,
+      "external_retriever": {
+        "date": "2026-11-14",
+        "method": "web.open",
+        "wrapper_status": 403,
+        "meaning": "wrapper tool forbidden; NOT guest/origin HTTP status"
+      },
+      "archival_candidate": {
+        "catalog_url": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+        "alternate_catalog_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "candidate_image_url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg",
+        "relation": "same-scene-and-filename-stem-not-pixel-or-licensing-proof",
+        "catalog_description": "1946 Scotch Cap lighthouse debris; museum credits Coast Guard",
+        "author": "Attributed U.S. Coast Guard by museum",
+        "publisher_item_public_domain_assertion": false,
+        "publisher_item_cleared_for_release_assertion": false,
+        "publisher_republish_requires_credit_and_dod_guidance": null,
+        "rights_guidance_url": null,
+        "actual_native_px": null,
+        "advertised_rendition_px": [
+          600,
+          463
+        ],
+        "derivative_max_width_px": 960,
+        "conditional_output_px": null,
+        "binary_hash_verified": false,
+        "exact_visual_parity_verified": false,
+        "wp_localization_authorized": false,
+        "editorial_name_review": null
+      }
+    }
+  ],
+  "rights_method": "Publisher copyright assertion is item-specific; never infer grant from government domain, other museum pages or filename. Credited PD release does not establish exact binary identity, quality or a production upload authorization.",
+  "qa_release": {
+    "state": "HOLD",
+    "site_qa_owner_pr": 154,
+    "await_guest_cdp_full_scroll": true,
+    "await_final_url_status_mime_cache_bytes": true,
+    "await_nat_css_px_and_dpr": true,
+    "await_exact_asset_hash_or_visual_comparison": true,
+    "await_item_rights_editorial_signoff": true,
+    "allow_image_download": false,
+    "allow_image_cache": false,
+    "allow_wordpress_write": false,
+    "allow_block_rewrite": false,
+    "allow_homepage_change": false,
+    "allow_merge": false,
+    "allow_paid_subscription": false,
+    "production_repairs": 0
+  }
+}

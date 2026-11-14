@@ -1,0 +1,21 @@
+# Scotch Cap P0 two-slot archival custody and licensing decision — 2026-11-14
+
+Scope: post [#418](https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/) image slots **418:1** and **418:2** only; archived description and src read back through authenticated **read-only** WordPress at modified token `2026-08-28T03:11:08`. This is a standalone media QA lane, not homepage styling or Site QA #154's browser collector.
+
+## New, specific archival finding
+
+**418:1 portrait.** The *published* image URL ends in `210330-G-DE713-0002.JPG`. USCG's [item-level gallery](https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/) identifies **the same VIRIN** and describes a service portrait of Anthony **Pettit**. Crucially, the USCG gallery explicitly states the photo is **public domain and cleared for release**, while requiring photographer credit and compliance with [DoD visual-information reuse limitations](https://www.dma.mil/Services/Visual-Information/References/Limitations/). This is a **source/filename provenance advance**, not binary identity proof, dimensions, current guest availability or approval to rehost.
+
+**Spelling uncertainty:** The *published* FV alt/caption use Anthony L. **Petit**. USCG's [2021 Long Blue Line history](https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/) itself calls the portrait subject **Pettit** but lists fallen crewman **Petit**. Do **not** auto-change the name; request editorial verification against independent personnel/cutter records before any wording change. The mismatch alone does not mean the image is wrong.
+
+**418:2 debris.** The [National Coast Guard Museum article](https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/) displays a nominal 600×463 JPEG with the same underlying filename stem, but that does not verify an identical binary, source crop, full-resolution original or a separate item-specific redistribution grant. Attribution to USCG is **not** a license. No permission is inferred from the portrait's item-level PD statement. Nominal 600px **cannot be upscaled to 960px**; at 2× DPR it supports only up to 300 CSS pixels before visible density loss. This is a conditional quality warning, not a measured browser outcome.
+
+## Retrieval semantics and next release gate
+
+November 14 direct external `web.open` attempts returned **wrapper 403** for both published URLs and the USCG catalog page. Those are retriever restrictions, **not actual server status** and not confirmed broken guest images. Authentic origin/guest statuses, MIME, currentSrc, redirect chain, decoded dimensions, CSS size/DPR and encoded network bytes remain null. External container cannot resolve DNS, so no authentic cold Chrome result was acquired. Preserve priority and browser ownership in [Site QA #154](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/154).
+
+For each guest-confirmed failure: preserve original src/ALT/caption and media IDs; compare alternate catalog item/VIRIN and actual image with visual review; verify item rights; compute a **no-upscale** rendition at at most 960px width only from verified original decoded dimensions, with special handling for low-resolution portraits and crop/contrast; stage an **unpublished, reversible WordPress media plan** with alt and credit, no automatic Gutenberg rewrite. Only measure actual cold CDP wire bytes for paired source-locked baseline/candidate runs; previous 76% is not measured. Historical 61 posts/355 images and 42 reported failures are **source inventory only**. As of prior Nov 14 media inventory, 16 WordPress originals exceed 1,500,000 decimal bytes, totaling 49,107,665 **stored** bytes, not transferred bytes.
+
+## Test and release status
+
+Machine-readable two-row audit: `qa/media-recovery/uscg_scotch_cap_418_primary_custody_20261114.json`; exact-field fail-closed validator and regression suite in sibling files. No binaries, downloads, WordPress changes, image caching, risky post block edits, homepage changes, deployment, merge, or subscription charges. Item-level rights/quality/source test gates fail closed; release state **HOLD**. This changes provenance confidence for 418:1, not the number of confirmed visitor-broken images.
