@@ -22,7 +22,7 @@ New test source: `products/desktop/tests/test_focus_viewport_r434.py` (11 method
 
 Red/green reproduction in an **isolated Linux Python projection of the touched production methods** (not a complete checkout):
 - Pre-fix: 3/11 tests **failed** (oversized offscreen, oversized visible start, unrelated root sibling).
-- Post-fix: 11/11 normal and 11/11 `-OO -W error` tests **passed** (22 method executions). Compilation passed.
+- Post-fix: the 11 R434 methods **plus 15 inherited R107 scroll-math expectations** passed under each mode: **26/26 standard + 26/26 `-OO -W error` = 52 projected executions**. Source compilation passed. (The inherited projections were copied from the R107 scroll-math class, not the full R107 native-scale test module.)
 - Actual committed GitHub production module and committed test are **not yet executed together**: the local projection contains only the touched methods and stub imports. Hosted Ubuntu/Windows CI remains required for Git-blob-matched evidence.
 
 Required full-checkout commands, both operating systems:
