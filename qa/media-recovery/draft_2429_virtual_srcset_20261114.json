@@ -1,0 +1,109 @@
+{
+  "schema": "fv-draft-virtual-srcset-custody-v1",
+  "observed_local_date": "2026-11-14",
+  "method": "Authenticated read-only wpcom_mcp_media_get(2432) and wpcom_mcp_pages_get(2429,context=edit), plus published post/page lists. No network GET of image binary or guest Chrome.",
+  "asset": {
+    "id": 2432,
+    "date": "2026-11-12T01:53:45",
+    "parent_page_id": 2429,
+    "original_url": "https://finalvestige.com/wp-content/uploads/2026/11/final-vestige-artifact-editions-editorial-concept.png",
+    "original_width": 1280,
+    "original_height": 720,
+    "original_bytes": 2010886,
+    "mime": "image/png",
+    "virtual_renditions": [
+      {
+        "name": "large",
+        "virtual": true,
+        "width": 1024,
+        "height": 576,
+        "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/final-vestige-artifact-editions-editorial-concept.png?fit=1024%2C576&ssl=1"
+      },
+      {
+        "name": "medium_large",
+        "virtual": true,
+        "width": 768,
+        "height": 432,
+        "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/final-vestige-artifact-editions-editorial-concept.png?fit=768%2C432&ssl=1"
+      }
+    ],
+    "original_copyright_or_creator_clearance": "NOT_VERIFIED; first-party upload is not a substitute for rights clearance"
+  },
+  "page": {
+    "id": 2429,
+    "title": "Artifact Editions — Original History Objects | Final Vestige",
+    "status": "draft",
+    "modified": "2026-11-12T01:54:55",
+    "preview_or_unpublished_link": "https://finalvestige.com/?page_id=2429",
+    "raw_content_image_count": 1,
+    "images": [
+      {
+        "slot": "2429:0",
+        "src": "https://finalvestige.com/wp-content/uploads/2026/11/final-vestige-artifact-editions-editorial-concept-1024x576.png",
+        "srcset": "https://finalvestige.com/wp-content/uploads/2026/11/final-vestige-artifact-editions-editorial-concept-768x432.png 768w, https://finalvestige.com/wp-content/uploads/2026/11/final-vestige-artifact-editions-editorial-concept-1024x576.png 1024w, https://finalvestige.com/wp-content/uploads/2026/11/final-vestige-artifact-editions-editorial-concept.png 1280w",
+        "sizes": "(max-width: 900px) 100vw, 50vw",
+        "width": 1280,
+        "height": 720,
+        "loading": "eager",
+        "decoding": "async",
+        "alt": "Illustrative editorial still life: dark cartographic T-shirt, cream ceramic mug, forest-green field notebook, map print and brass compass on a charcoal table. Concept art, not finished merchandise."
+      }
+    ]
+  },
+  "image_url_http_evidence": {
+    "origin_http_tested": false,
+    "guest_chrome_tested": false,
+    "original_http_status": null,
+    "virtual_large_http_status": null,
+    "virtual_medium_large_http_status": null,
+    "hardcoded_1024_http_status": null,
+    "hardcoded_768_http_status": null,
+    "actual_img_current_src": null,
+    "visitor_transferred_bytes": null,
+    "confirmed_public_breakages": 0
+  },
+  "conditional_960px_derivative": {
+    "dimensions": [
+      960,
+      540
+    ],
+    "no_upscaling": true,
+    "verified_existing_asset": false,
+    "safe_at_css_px_dpr_2_max_width": 480,
+    "release_authorized": false
+  },
+  "snapshot_reconciliation": {
+    "frozen_oct_30_posts": 61,
+    "frozen_oct_30_inline_images": 355,
+    "nov_8_published_posts": 66,
+    "nov_8_inline_images": 361,
+    "nov_14_image_attachments": 125,
+    "nov_14_oversized_originals_decimal_over_1500000": 16,
+    "nov_14_oversized_original_storage_bytes": 49107665,
+    "nov_8_matched_published_inline_originals": 11,
+    "nov_8_matched_published_inline_bytes": 38480915,
+    "nov_8_unmatched_published_inline_originals": 4,
+    "nov_8_unmatched_published_inline_bytes": 8615864,
+    "added_asset_after_old_scan_id": 2432,
+    "added_asset_after_old_scan_bytes": 2010886,
+    "added_asset_now_attached_to_draft_page": 2429,
+    "no_inference_of_unused_or_deletable_assets": true
+  },
+  "published_external_p0_queue_owner": 154,
+  "published_external_p0_slots": [
+    "285:5",
+    "285:2",
+    "287:5",
+    "418:1",
+    "418:2",
+    "407:1"
+  ],
+  "reported_42_broken_guest_verified": false,
+  "reported_76_percent_savings_measured": false,
+  "release_authorized": false,
+  "wp_write_allowed": false,
+  "third_party_asset_download_allowed": false,
+  "homepage_design_changes_allowed": false,
+  "subscription_spend_usd": 0,
+  "guest_browser_verified": false
+}
