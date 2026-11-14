@@ -31,6 +31,9 @@ The monthly statutory reporting requirement is not a substitute for obtaining ac
 
 **Do not send this packet without a records-law and privacy review.** It is a research plan, not a statement that the account has an identifiable owner, or that the named agency legally owes a refund.
 
+## Documentary-image search / rights disposition
+A targeted Bohemia Spillway historical-image search surfaced a map image presented by [The Clio](https://theclio.com/entry/104997) and separate Library of Congress **Caernarvon/Poydras 1927** photography (e.g., https://www.loc.gov/item/2002699300/). The Clio's displayed map did not establish an independently reviewed creator/license/original raster and was **not downloaded or used**. The LOC photographs concern the **different Caernarvon 1927 blast**, so none is suitable as Bohemia-specific documentary imagery; their catalog says no known restrictions but that does not make their event label interchangeable. Existing NASA-source Bohemia imagery remains a conditional candidate with original asset and rights checks outstanding. The only asset newly committed in this cycle is the FV-owned original statutory diagram.
+
 ## Live queue, collision and publication gate
 - November 13 public [Editorial Standards](https://finalvestige.com/editorial-standards/) inspected. It requires verifying underlying evidence, visible uncertainty and clear image rights.
 - Public Journal and Investigations page retrieval failed, so their current page layouts were **not** independently checked.
