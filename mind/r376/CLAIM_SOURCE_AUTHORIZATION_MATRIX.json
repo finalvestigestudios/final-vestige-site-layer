@@ -1,0 +1,536 @@
+{
+  "schema": "fv-mind-claim-matrix/1.0",
+  "date_checked": "2026-11-14",
+  "scope": "mind/r376/ source-only, commercial HARD HOLD",
+  "public_catalog_note": "Seller site crawls may be months old; recheck exact authorized destination and live checkout before release.",
+  "sources": {
+    "ioed": "https://doi.org/10.1207/s15516709cog2605_1",
+    "fern2013": "https://doi.org/10.1177/0956797612464058",
+    "hks": "https://www.hks.harvard.edu/publications/political-extremism-supported-illusion-understanding",
+    "puy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "focus": "https://finalvestige.com/focus/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "inspire": "https://inspire3.com/",
+    "zen": "https://zen12.com/",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "hypnosis": "https://hypnosislive.com/",
+    "brainwave": "https://brainwaveshots.com/",
+    "ftcEndorse": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftcHealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "policy": "https://finalvestige.com/affiliate-disclosure/"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "An illusion of explanatory depth was studied in a 2002 Cognitive Science paper.",
+      "classification": "original research",
+      "support": "supported",
+      "handling": "cite study and do not equate with general gullibility",
+      "source_urls": [
+        "https://doi.org/10.1207/s15516709cog2605_1"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The 2002 authors report a twelve-study program and stronger explanatory-knowledge overconfidence than for certain other knowledge domains.",
+      "classification": "research abstract",
+      "support": "supported with scope",
+      "handling": "avoid invented effect size/sample counts",
+      "source_urls": [
+        "https://doi.org/10.1207/s15516709cog2605_1"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Asking for a detailed mechanism, rather than reasons, moderated certain attitudes in 2013 experiments.",
+      "classification": "research abstract",
+      "support": "supported with scope",
+      "handling": "do not promise persuasion/depolarization",
+      "source_urls": [
+        "https://doi.org/10.1177/0956797612464058",
+        "https://www.hks.harvard.edu/publications/political-extremism-supported-illusion-understanding"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The 2013 findings are a guaranteed way to reduce anyone's extremism.",
+      "classification": "generalized outcome",
+      "support": "unsupported",
+      "handling": "exclude",
+      "source_urls": [
+        "https://doi.org/10.1177/0956797612464058"
+      ]
+    },
+    {
+      "id": "C05",
+      "statement": "The historical Puységur archive contains case dossiers, source provenance, failed predictions, and ethical dilemmas.",
+      "classification": "existing FV editorial evidence",
+      "support": "supported as archive description",
+      "handling": "do not convert reports into clinical proof",
+      "source_urls": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ]
+    },
+    {
+      "id": "C06",
+      "statement": "Witness statements or notarial records prove an invisible magnetic mechanism.",
+      "classification": "causal efficacy",
+      "support": "unsupported",
+      "handling": "explicitly reject this inference",
+      "source_urls": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ]
+    },
+    {
+      "id": "C07",
+      "statement": "Final Vestige has an existing free 52-page Seven Day Focus Fieldbook and single Dispatch subscription route.",
+      "classification": "live offer/funnel description",
+      "support": "supported as public-site description",
+      "handling": "do not add new form or assert confirmed lead",
+      "source_urls": [
+        "https://finalvestige.com/focus/"
+      ]
+    },
+    {
+      "id": "C08",
+      "statement": "Inspire3 identifies Zen12, Hypnosis Live and related audio brands.",
+      "classification": "seller catalog",
+      "support": "seller description",
+      "handling": "name relevant merchant only",
+      "source_urls": [
+        "https://inspire3.com/"
+      ]
+    },
+    {
+      "id": "C09",
+      "statement": "Zen12 describes Premium as 12 levels and 48 MP3 files.",
+      "classification": "seller product content",
+      "support": "seller-described, not independently fulfilled",
+      "handling": "say merchant describes; validate purchased delivery later",
+      "source_urls": [
+        "https://zen12.com/"
+      ]
+    },
+    {
+      "id": "C10",
+      "statement": "Zen12 lists quick start guide, manual, lifetime support, bonuses and a training call for Premium.",
+      "classification": "seller product content",
+      "support": "seller-described",
+      "handling": "check exact authorized tier and fulfillment",
+      "source_urls": [
+        "https://zen12.com/"
+      ]
+    },
+    {
+      "id": "C11",
+      "statement": "Zen12 advertises a one-year money-back guarantee.",
+      "classification": "seller return claim",
+      "support": "advertised, refund mechanism untested",
+      "handling": "verify terms and returns before activation",
+      "source_urls": [
+        "https://zen12.com/"
+      ]
+    },
+    {
+      "id": "C12",
+      "statement": "Zen12 Premium publicly appears as $87 in current accessible site markup; prior review reported $87.99.",
+      "classification": "display discrepancy",
+      "support": "conflict/needs live checkout",
+      "handling": "do not include numeric price promise in buyer HTML",
+      "source_urls": [
+        "https://zen12.com/"
+      ]
+    },
+    {
+      "id": "C13",
+      "statement": "Twelve minutes of Zen12 produces one hour's advanced meditation benefits.",
+      "classification": "product-specific efficacy",
+      "support": "unsupported by independent exact-product evidence",
+      "handling": "exclude from FV assertions",
+      "source_urls": [
+        "https://zen12.com/",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ]
+    },
+    {
+      "id": "C14",
+      "statement": "Zen12 proves immediate stress reduction, treatment, sharper cognition and mood change.",
+      "classification": "product-specific health/cognitive efficacy",
+      "support": "seller promotion, not independently supported here",
+      "handling": "exclude",
+      "source_urls": [
+        "https://zen12.com/",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ]
+    },
+    {
+      "id": "C15",
+      "statement": "Meditation, self-hypnosis and audio entrainment evidence proves Zen12 Premium results.",
+      "classification": "evidence extrapolation",
+      "support": "unsupported",
+      "handling": "never transfer related interventions to this exact product",
+      "source_urls": [
+        "https://zen12.com/",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ]
+    },
+    {
+      "id": "C16",
+      "statement": "Hypnosis Live lists over 200 downloadable recordings.",
+      "classification": "seller catalog",
+      "support": "seller description; cached page contains outdated June 2026 sale timer",
+      "handling": "do not use outdated prices, guarantees or countdown",
+      "source_urls": [
+        "https://hypnosislive.com/"
+      ]
+    },
+    {
+      "id": "C17",
+      "statement": "Brainwave Shots sells named audio downloads including Focus Shot.",
+      "classification": "seller catalog",
+      "support": "seller description",
+      "handling": "no efficacy or price claim",
+      "source_urls": [
+        "https://brainwaveshots.com/"
+      ]
+    },
+    {
+      "id": "C18",
+      "statement": "FTC recommends clear, conspicuous disclosure of material endorsement connections.",
+      "classification": "advertising guidance",
+      "support": "supported",
+      "handling": "adjacent near any future earning link; not only footer",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ]
+    },
+    {
+      "id": "C19",
+      "statement": "Objective health-related benefit claims need appropriate scientific substantiation before advertising.",
+      "classification": "advertising guidance",
+      "support": "supported",
+      "handling": "omit unsubstantiated health guarantees",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ]
+    },
+    {
+      "id": "C20",
+      "statement": "An Inspire3 public affiliate program exists.",
+      "classification": "seller program",
+      "support": "seller statement",
+      "handling": "not equal FV-specific approval",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ]
+    },
+    {
+      "id": "C21",
+      "statement": "Final Vestige has been accepted as Inspire3 affiliate publisher.",
+      "classification": "account authorization",
+      "support": "not verified",
+      "handling": "HARD HOLD until actual authenticated account evidence",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ]
+    },
+    {
+      "id": "C22",
+      "statement": "Final Vestige can place earning links in all owned, social and email channels.",
+      "classification": "partner permissions",
+      "support": "not verified",
+      "handling": "HARD HOLD until channel terms reviewed",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ]
+    },
+    {
+      "id": "C23",
+      "statement": "Final Vestige has a specific issued compliant Zen12 earning URL.",
+      "classification": "publisher tracking",
+      "support": "not verified",
+      "handling": "no link active; no link cloaking",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ]
+    },
+    {
+      "id": "C24",
+      "statement": "Final Vestige has a genuinely payable, rights-cleared, delivered Mind Payhip SKU.",
+      "classification": "owned product commerce",
+      "support": "not verified",
+      "handling": "do not invent SKU, price or purchase",
+      "source_urls": []
+    },
+    {
+      "id": "C25",
+      "statement": "A tracked outbound click is a paid affiliate conversion.",
+      "classification": "analytics inference",
+      "support": "false",
+      "handling": "keep affiliate_outbound separate from merchant_confirmed_affiliate_sale",
+      "source_urls": []
+    },
+    {
+      "id": "C26",
+      "statement": "A Jetpack opt-in attempt is a confirmed lead.",
+      "classification": "analytics inference",
+      "support": "false without confirmation",
+      "handling": "dedupe and count provider-confirmed subscriptions only",
+      "source_urls": [
+        "https://finalvestige.com/focus/"
+      ]
+    },
+    {
+      "id": "C27",
+      "statement": "The proposed 42-second guide B video is encoded, hosted and playable.",
+      "classification": "media production",
+      "support": "false",
+      "handling": "storyboard with SVG/transcript/VTT only",
+      "source_urls": []
+    },
+    {
+      "id": "C28",
+      "statement": "An A/B experiment shows video improves paid conversion.",
+      "classification": "experiment outcome",
+      "support": "untested",
+      "handling": "randomization, sample, QA, paid outcome needed",
+      "source_urls": []
+    },
+    {
+      "id": "C29",
+      "statement": "A consumer-accessible free twelve-minute explanation audit is a validated therapy.",
+      "classification": "health intervention",
+      "support": "unsupported",
+      "handling": "present as nonclinical reflection only",
+      "source_urls": []
+    },
+    {
+      "id": "C30",
+      "statement": "Live Grok media IDs match three editorial landing intents.",
+      "classification": "creator attribution",
+      "support": "unknown",
+      "handling": "require Praxxis verified asset_id/platform post URL/hook",
+      "source_urls": []
+    },
+    {
+      "id": "C31",
+      "statement": "The current /mind/ HTML prototype is a saved WordPress draft or published route.",
+      "classification": "CMS state",
+      "support": "false",
+      "handling": "source-only GitHub review, no CMS write",
+      "source_urls": []
+    },
+    {
+      "id": "C32",
+      "statement": "Realized net revenue per 1,000 qualified-human sessions can be computed.",
+      "classification": "business KPI",
+      "support": "not verified",
+      "handling": "requires qualified sessions + settled paid revenue minus fees/refunds",
+      "source_urls": []
+    }
+  ],
+  "gates": [
+    {
+      "gate_id": "G01",
+      "name": "FV Inspire3 publisher identity confirmed in authenticated dashboard",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G02",
+      "name": "Partner acceptance confirmation retained",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G03",
+      "name": "Permitted website promotions confirmed",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G04",
+      "name": "Permitted social promotions confirmed",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G05",
+      "name": "Permitted email/Dispatch promotions confirmed",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G06",
+      "name": "Approved original creatives/swipe rights understood",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G07",
+      "name": "Exact Zen12 tracking URL issued to FV and checked",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G08",
+      "name": "Tracking URL matches approved destination and permissions",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G09",
+      "name": "Merchant checkout total charge verified",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G10",
+      "name": "Check for trial or recurring charge verified",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G11",
+      "name": "Price currency and taxes verified",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G12",
+      "name": "One-year refund terms saved and checked",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G13",
+      "name": "Refund workflow test/independent evidence checked",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G14",
+      "name": "Exact Premium 48-file deliverability validated",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G15",
+      "name": "Terms for bonuses/support/training call verified",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G16",
+      "name": "Seller product-specific efficacy claims adequately supported or omitted",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G17",
+      "name": "No mental-health, medical or wealth promises",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G18",
+      "name": "All FTC disclosures legible at recommendation and link",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G19",
+      "name": "No implied product use/testimonial invented",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G20",
+      "name": "Site QA approves keyboard mobile reduced motion no-JS",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G21",
+      "name": "Actual 42s original video encoded, captioned and poster QC passed",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G22",
+      "name": "Source page WordPress sanitization tested",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G23",
+      "name": "CSP and external resource behavior tested",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G24",
+      "name": "No duplicate Jetpack list/form",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G25",
+      "name": "Consent-aware attribution design reviewed by Claude",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G26",
+      "name": "Published Grok asset_id and exact destination independently matched",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G27",
+      "name": "No double counting humans/bots/campaigns",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G28",
+      "name": "Provider-confirmed lead identified without PII",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G29",
+      "name": "Merchant-confirmed paid order/affiliate commission reporting authorized",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G30",
+      "name": "Refund/fees/settlement reconciliation evidence available",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G31",
+      "name": "Founder approves commercial activation and release",
+      "status": "HOLD",
+      "verified_pass": false
+    },
+    {
+      "gate_id": "G32",
+      "name": "No merge, deployment or live WP changes before approval",
+      "status": "HOLD",
+      "verified_pass": false
+    }
+  ],
+  "commerce": {
+    "inspire3_publisher_approval": "NOT VERIFIED",
+    "issued_earning_url": "NOT VERIFIED",
+    "authorized_channels": "NOT VERIFIED",
+    "fv_owned_paid_mind_sku": "NOT VERIFIED",
+    "seller_display_price": "CONFLICT $87 page markup / previously observed $87.99; NOT checkout",
+    "settled_sales": "UNKNOWN",
+    "net_revenue_per_1000": "NOT COMPUTABLE"
+  }
+}
