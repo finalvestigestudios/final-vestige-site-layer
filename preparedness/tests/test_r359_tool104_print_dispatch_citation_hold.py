@@ -36,6 +36,21 @@ class CustodyTests(unittest.TestCase):
     def test_native_missing_checkout(self):
         with tempfile.TemporaryDirectory() as d:self.assertEqual(g.native_review(Path(d))['status'],'INVALID_HARD_HOLD')
     def test_invalid_bad_json(self):self.assertEqual(g.inspect(BODY,'{',ARTICLE)['status'],'INVALID_HARD_HOLD')
+    def test_non_dict_metadata_is_rejected(self):
+        self.assertEqual(g.inspect(BODY, '[]', ARTICLE)['status'],'INVALID_HARD_HOLD')
+    def test_null_metadata_is_rejected(self):
+        self.assertEqual(g.inspect(BODY, 'null', ARTICLE)['status'],'INVALID_HARD_HOLD')
+    def test_string_status_is_rejected(self):
+        m=copy.deepcopy(META);m['status']='published'
+        self.assertEqual(run(meta=m)['status'],'INVALID_HARD_HOLD')
+    def test_null_safety_review_is_rejected(self):
+        m=copy.deepcopy(META);m['safety_review']=None
+        self.assertEqual(run(meta=m)['status'],'INVALID_HARD_HOLD')
+    def test_string_safety_review_is_rejected(self):
+        m=copy.deepcopy(META);m['safety_review']='approved'
+        self.assertEqual(run(meta=m)['status'],'INVALID_HARD_HOLD')
+    def test_article_nonstring_is_rejected(self):
+        self.assertEqual(g.inspect(BODY,json.dumps(META),[])['status'],'INVALID_HARD_HOLD')
     def test_source_hash_known(self):self.assertEqual(g.git_blob(''),'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391')
     def test_unmodified_source_warning(self):self.assertIn('PRINT_WARNING_HIDDEN_IN_AUTHORED_PRINT_CSS_REQUIRES_REVIEW',run()['review_docket'])
     def test_privacy_claim_marked(self):self.assertIn('UNVERIFIED_ABSOLUTE_PRIVACY_PROMISE',run()['review_docket'])
