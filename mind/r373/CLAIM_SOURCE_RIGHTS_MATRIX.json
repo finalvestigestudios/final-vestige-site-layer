@@ -1,0 +1,655 @@
+{
+  "title": "R373 claim / source / rights & release matrix",
+  "date": "2026-11-14",
+  "branch": "mind-r373-door-changeblindness-conversion-20261114",
+  "scope": "Unpublished Mind & Perception only; no commercial rights inferred",
+  "official_creatives_review": {
+    "status": "not_accessible_without_verified_partner_credentials",
+    "reason": "No claim to inspected approved creatives or swipe. Public sales copy analyzed only; original writing prepared."
+  },
+  "account_evidence": {
+    "gmail_queries": [
+      "(from:inspire3.com OR from:affiliates.inspire3.com OR subject:Zen12) (affiliate OR approved)",
+      "('affiliate account' OR 'affiliate approval') (inspire3 OR Zen12 OR Hypnosis)"
+    ],
+    "result": "Promotional Reprogram.ME consumer waitlist and Wealth Factor product email only; no Final Vestige-specific affiliate acceptance located in reviewed matches",
+    "limit": "absence in returned messages not definitive proof of absence across all accounts"
+  },
+  "alternative_owned_mind_sku": {
+    "status": "unverified",
+    "reason": "No authenticated currently sellable FV Mind SKU with rights, delivery, checkout, returns and receipt; Focus Fieldbook is free, not paid"
+  },
+  "date_scoped_offers": {
+    "zen12_premium_public_display": "$87.99 on 2026-11-14 public page, not tracked checkout or fixed price promise",
+    "hypnosis_live": "catalog only, no product-specific paid CTA",
+    "focus_shot": "merchant public page only; offer not selected"
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Primary field study: Simons & Levin (1998)",
+      "url": "https://doi.org/10.3758/BF03208840",
+      "kind": "research_primary",
+      "reading_scope": "1998 door interaction, first-experiment approx half detect and group-context qualification",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S02",
+      "title": "Primary experimental study: Rensink et al. (1997)",
+      "url": "https://doi.org/10.1111/j.1467-9280.1997.tb00427.x",
+      "kind": "research_primary",
+      "reading_scope": "flicker/blank-field change detection; attention cues",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S03",
+      "title": "Simons 2000 change blindness review",
+      "url": "https://home.cs.colorado.edu/~mozer/Teaching/syllabi/3702/readings/Simons2000.pdf",
+      "kind": "research_review",
+      "reading_scope": "changes and limitations of scene memory; no product efficacy",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S04",
+      "title": "2025 applied eyewitness memory brief",
+      "url": "https://doi.org/10.22215/apb.v2i2.5224",
+      "kind": "research_review",
+      "reading_scope": "post-event social-media familiarity separate from change blindness",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S05",
+      "title": "2023 binaural-beat EEG systematic review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "kind": "research_review",
+      "reading_scope": "14 EEG studies, 5 supportive, 8 contradictory, 1 mixed, heterogeneity",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S06",
+      "title": "Official Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "kind": "seller_public",
+      "reading_scope": "brand umbrella and catalog, not individual affiliate approval",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S07",
+      "title": "Exact official Zen12 public product offer",
+      "url": "https://zen12.com/",
+      "kind": "seller_public",
+      "reading_scope": "Premium 12 levels/48 MP3, styles, displayed $87.99, advertised 1-year guarantee; not checkout",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S08",
+      "title": "Official Hypnosis Live sales homepage",
+      "url": "https://hypnosislive.com/",
+      "kind": "seller_public",
+      "reading_scope": "seller-described catalog over 200 self-hypnosis MP3s and broad unverified performance claims",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S09",
+      "title": "Official Focus Shot product page",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "kind": "seller_public",
+      "reading_scope": "seller-described 15/30min formats + bonuses and refund offer, claims unverified",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S10",
+      "title": "Official Inspire3 affiliate public site",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "seller_public",
+      "reading_scope": "open program, publicly advertised percentage does NOT prove FV approval or payout",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S11",
+      "title": "FV Puységur source archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "fv_live",
+      "reading_scope": "153 active master-source rows and 16 case dossiers; historic reports not science",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S12",
+      "title": "FV existing Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "fv_live",
+      "reading_scope": "52-page PDF, single Jetpack list, free offer; delivery not independently QA'd",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S13",
+      "title": "FV 61-item time-place investigation archive",
+      "url": "https://finalvestige.com/archive/time-place/",
+      "kind": "fv_live",
+      "reading_scope": "61 investigations at November 14 site-index review",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S14",
+      "title": "FTC endorsement guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulatory_guidance",
+      "reading_scope": "clear, conspicuous disclosure near endorsements; no fabricated endorsement",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S15",
+      "title": "FTC health products compliance guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulatory_guidance",
+      "reading_scope": "competent/reliable product-relevant substantiation for benefits, not merely general science",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S16",
+      "title": "FV existing editorial standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "fv_live",
+      "reading_scope": "editorial independence/source boundaries",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    },
+    {
+      "id": "S17",
+      "title": "FV affiliate disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "kind": "fv_live",
+      "reading_scope": "site-wide policy not sufficient substitute for adjacent specific link disclosure",
+      "checked_at": "2026-11-14",
+      "access": "public-web",
+      "limitation": "link and page audit are not confirmation of transactional rights"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "1998 door study involved replacing the person asking a pedestrian for directions",
+      "kind": "research",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "allow_with_attribution",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C02",
+      "statement": "Only approximately half noticed first-experiment substitution",
+      "kind": "research",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "allow_with_experiment_qualification",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C03",
+      "statement": "1998 study found contextual social-group association and ran second experiment",
+      "kind": "research",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "allow_with_context",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C04",
+      "statement": "Every human misses 50% of person replacements",
+      "kind": "universal_generalization",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "block_false_generalization",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C05",
+      "statement": "1997 alternating-picture blank fields made change identification harder",
+      "kind": "research",
+      "source_ids": [
+        "S02"
+      ],
+      "decision": "allow_with_attribution",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C06",
+      "statement": "Attention cues and scene importance can affect change detection",
+      "kind": "research",
+      "source_ids": [
+        "S02"
+      ],
+      "decision": "allow_with_attribution",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C07",
+      "statement": "Change blindness proves eyewitnesses lie",
+      "kind": "harmful_inference",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "block_not_supported",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C08",
+      "statement": "2025 social media contamination affects eyewitness familiarity, distinct from door study",
+      "kind": "research_review",
+      "source_ids": [
+        "S04"
+      ],
+      "decision": "allow_with_separation",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C09",
+      "statement": "Puységur archive has 153 active rows and 16 case dossiers",
+      "kind": "historical_archive",
+      "source_ids": [
+        "S11"
+      ],
+      "decision": "allow_as_live_archive_fact",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C10",
+      "statement": "Puységur historical reports prove animal magnetism",
+      "kind": "unsupported_history",
+      "source_ids": [
+        "S11"
+      ],
+      "decision": "block_not_supported",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C11",
+      "statement": "FV maintains an existing 52-page free Seven Day Focus Fieldbook",
+      "kind": "fv_resource",
+      "source_ids": [
+        "S12"
+      ],
+      "decision": "allow_free_no_duplicated_form",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C12",
+      "statement": "Zen12 is an Inspire3-associated product",
+      "kind": "seller_identity",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "allow_seller_catalog_fact",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "seller-description—not-efficacy"
+    },
+    {
+      "id": "C13",
+      "statement": "Zen12 Premium seller describes 12 levels and 48 MP3s",
+      "kind": "seller_format",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "allow_as_seller_description_only",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "seller-description—not-efficacy"
+    },
+    {
+      "id": "C14",
+      "statement": "Zen12 seller describes four listening styles",
+      "kind": "seller_format",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "allow_as_seller_description_only",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "seller-description—not-efficacy"
+    },
+    {
+      "id": "C15",
+      "statement": "Official Zen12 sales page displayed $87.99 on Nov 14",
+      "kind": "seller_price_display",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "allow_dated_public_display_not_checkout",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "seller-description—not-efficacy"
+    },
+    {
+      "id": "C16",
+      "statement": "Zen12 exact approved checkout totals $87.99",
+      "kind": "transactional_claim",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "hold_no_authorized_checkout_proof",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C17",
+      "statement": "Zen12 seller advertises one-year money-back guarantee",
+      "kind": "seller_policy",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "allow_as_merchant_advertisement_only",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "seller-description—not-efficacy"
+    },
+    {
+      "id": "C18",
+      "statement": "Zen12 refunds always succeed and terms have no exceptions",
+      "kind": "refund_outcome",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "hold_no_independent_transaction",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C19",
+      "statement": "Zen12 twelve minutes equals an hour of meditation",
+      "kind": "seller_efficacy",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "omit_no_product_specific_evidence",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "seller-description—not-efficacy"
+    },
+    {
+      "id": "C20",
+      "statement": "Zen12 cures anxiety, depression or stress disorders",
+      "kind": "health_efficacy",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "omit_no_product_specific_evidence",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C21",
+      "statement": "Zen12 improves attention or prevents change blindness",
+      "kind": "cognitive_efficacy",
+      "source_ids": [
+        "S01",
+        "S07"
+      ],
+      "decision": "omit_no_product_specific_evidence",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C22",
+      "statement": "Zen12 brings wealth, IQ gains or guaranteed success",
+      "kind": "finance_or_cognitive_efficacy",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "omit_no_product_specific_evidence",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C23",
+      "statement": "2023 review of 14 binaural-beat EEG studies found inconsistent evidence",
+      "kind": "research_review",
+      "source_ids": [
+        "S05"
+      ],
+      "decision": "allow_with_methodology_caveat",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C24",
+      "statement": "Binaural-beat review is a Zen12 trial",
+      "kind": "invalid_inference",
+      "source_ids": [
+        "S05"
+      ],
+      "decision": "block_false_product_equivalence",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C25",
+      "statement": "Hypnosis Live public site lists over 200 MP3 downloads",
+      "kind": "seller_format",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "allow_seller_description_only",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "seller-description—not-efficacy"
+    },
+    {
+      "id": "C26",
+      "statement": "Hypnosis Live audios guarantee outcomes",
+      "kind": "seller_efficacy",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "omit_no_independent_product_trial",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "seller-description—not-efficacy"
+    },
+    {
+      "id": "C27",
+      "statement": "Brainwave Shots Focus Shot advertises 15/30 minute audio formats",
+      "kind": "seller_format",
+      "source_ids": [
+        "S09"
+      ],
+      "decision": "allow_seller_description_only",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "seller-description—not-efficacy"
+    },
+    {
+      "id": "C28",
+      "statement": "Focus Shot creates instantaneous strong focus",
+      "kind": "seller_efficacy",
+      "source_ids": [
+        "S09"
+      ],
+      "decision": "omit_no_product_specific_evidence",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "seller-description—not-efficacy"
+    },
+    {
+      "id": "C29",
+      "statement": "Inspire3 publicly offers affiliate enrollment",
+      "kind": "seller_program",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "allow_program_exists_not_account_access",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "seller-description—not-efficacy"
+    },
+    {
+      "id": "C30",
+      "statement": "Final Vestige has Inspire3 affiliate acceptance and earning URL",
+      "kind": "account_specific_authorization",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "hold_unverified_account_specific",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C31",
+      "statement": "Public advertised commission percentage proves FV entitlement",
+      "kind": "account_specific_income",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "block_no_contract",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C32",
+      "statement": "Near-link affiliate disclosure is required for future recommendation",
+      "kind": "regulatory",
+      "source_ids": [
+        "S14"
+      ],
+      "decision": "allow_and_require_clear_adjacent_copy",
+      "commercial_copy_allowed": true,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C33",
+      "statement": "General meditation research alone substantiates health claims for Zen12",
+      "kind": "regulatory",
+      "source_ids": [
+        "S15"
+      ],
+      "decision": "block_product_specific_evidence_needed",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C34",
+      "statement": "FV existing disclosure page alone satisfies contextual material disclosure",
+      "kind": "regulatory",
+      "source_ids": [
+        "S14",
+        "S17"
+      ],
+      "decision": "block_need_proximate_clear",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C35",
+      "statement": "The visual door-study footage is free to reuse in a commercial video",
+      "kind": "media_rights",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "hold_rights_not_obtained",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C36",
+      "statement": "Our no-JS twelve-minute observation exercise is a scientifically validated intervention",
+      "kind": "self_test",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "block_demonstration_only",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    },
+    {
+      "id": "C37",
+      "statement": "The seller's public site establishes independently settled affiliate commission",
+      "kind": "financial_verification",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "block_no_settlement_record",
+      "commercial_copy_allowed": false,
+      "evidence_scope": "see-source-reading-scope"
+    }
+  ],
+  "release": {
+    "status": "HARD_HOLD",
+    "gates": {
+      "publisher_account_approved": false,
+      "affiliate_program_account_identity": false,
+      "website_channel_permission": false,
+      "tiktok_channel_permission": false,
+      "youtube_channel_permission": false,
+      "email_channel_permission": false,
+      "original_creative_rights": false,
+      "approved_swipe_review": false,
+      "issued_tracking_link": false,
+      "tracked_link_merchant_allowlist": false,
+      "merchant_url_integrity": false,
+      "final_checkout_currency": false,
+      "final_checkout_total": false,
+      "sales_tax_and_upsell_review": false,
+      "refund_terms_documented": false,
+      "actual_refund_path_verified": false,
+      "actual_deliverable_entitlement": false,
+      "clinical_claim_substantiation": false,
+      "cognitive_claim_substantiation": false,
+      "whitelist_safe_copy": false,
+      "native_a11y_review": false,
+      "real_browser_360": false,
+      "real_browser_390": false,
+      "real_browser_768": false,
+      "real_browser_1440": false,
+      "no_js_and_keyboard": false,
+      "encoded_42s_video_qa": false,
+      "video_caption_sync": false,
+      "real_mobile_link_route": false,
+      "jetpack_confirmed_lead_qa": false,
+      "actual_asset_id_verified": false,
+      "first_party_utm_provenance": false,
+      "provider_confirmed_paid_order": false,
+      "refund_fee_settlement_reconciliation": false,
+      "founder_staging_approval": false,
+      "founder_production_release_approval": false
+    },
+    "reason": "No partner approval, active link, qualified commercial data, real-world film/checkout QA or founder approval"
+  },
+  "required_disclosure": "If you purchase through a future approved link, Final Vestige may earn a commission at no additional cost to you.",
+  "note": "Use a clear adjacent live-link disclosure after approval; current guides' buttons are genuinely disabled and have no merchant href.",
+  "comparison": "Zen12 pilot is a test hypothesis only; no measured uplift or revenue attributed to this sprint."
+}
