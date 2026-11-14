@@ -1,0 +1,518 @@
+{
+  "revision": "R367",
+  "checked_at": "2026-11-14",
+  "scope": "source-control-only/no commerce activation",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/5409744/",
+      "role": "primary experiment",
+      "status": "verified"
+    },
+    {
+      "id": "S02",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6459403/",
+      "role": "primary experimental extension",
+      "status": "verified"
+    },
+    {
+      "id": "S03",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6457110/",
+      "role": "primary experiment",
+      "status": "verified"
+    },
+    {
+      "id": "S04",
+      "url": "https://www.nature.com/articles/ncomms13619",
+      "role": "primary cortical recording study",
+      "status": "verified"
+    },
+    {
+      "id": "S05",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "role": "systematic review",
+      "status": "verified"
+    },
+    {
+      "id": "S06",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "role": "FV existing history archive",
+      "status": "verified"
+    },
+    {
+      "id": "S07",
+      "url": "https://finalvestige.com/focus/",
+      "role": "FV existing free lead magnet",
+      "status": "verified"
+    },
+    {
+      "id": "S08",
+      "url": "https://inspire3.com/",
+      "role": "merchant parent catalog",
+      "status": "verified"
+    },
+    {
+      "id": "S09",
+      "url": "https://zen12.com/",
+      "role": "official Zen12 seller page",
+      "status": "verified"
+    },
+    {
+      "id": "S10",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "role": "official other product page",
+      "status": "verified"
+    },
+    {
+      "id": "S11",
+      "url": "https://brainwaveshots.com/",
+      "role": "official merchant catalog",
+      "status": "verified"
+    },
+    {
+      "id": "S12",
+      "url": "https://affiliates.inspire3.com/",
+      "role": "public program not publisher approval",
+      "status": "verified"
+    },
+    {
+      "id": "S13",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "role": "FTC endorsement guidance",
+      "status": "verified"
+    },
+    {
+      "id": "S14",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "role": "FTC health product claims guidance",
+      "status": "verified"
+    },
+    {
+      "id": "S15",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "role": "live editorial route",
+      "status": "verified"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Warren replaced actual sound with extraneous noise",
+      "classification": "research_supported",
+      "source_id": "S01",
+      "boundary": "no general performance guarantee"
+    },
+    {
+      "id": "C02",
+      "claim": "Silence condition was distinguishable",
+      "classification": "research_supported",
+      "source_id": "S01",
+      "boundary": "specific experiment"
+    },
+    {
+      "id": "C03",
+      "claim": "Samuel showed role for lexical expectation",
+      "classification": "research_supported",
+      "source_id": "S02",
+      "boundary": "no brand transfer"
+    },
+    {
+      "id": "C04",
+      "claim": "Samuel varied acoustic replacement and phoneme class",
+      "classification": "research_supported",
+      "source_id": "S03",
+      "boundary": "specific design"
+    },
+    {
+      "id": "C05",
+      "claim": "Leonard et al reported cortical correlates in specialized participants",
+      "classification": "research_supported",
+      "source_id": "S04",
+      "boundary": "not population benefit"
+    },
+    {
+      "id": "C06",
+      "claim": "Binaural EEG systematic review included 14 studies",
+      "classification": "research_supported",
+      "source_id": "S05",
+      "boundary": "five aligned, eight contradictory, one mixed"
+    },
+    {
+      "id": "C07",
+      "claim": "Puységur archive keeps failures and consent concerns",
+      "classification": "published_fv_evidence",
+      "source_id": "S06",
+      "boundary": "historical claims not proof"
+    },
+    {
+      "id": "C08",
+      "claim": "Focus Fieldbook is existing free 52 page asset",
+      "classification": "published_fv_evidence",
+      "source_id": "S07",
+      "boundary": "not new signup"
+    },
+    {
+      "id": "C09",
+      "claim": "Inspire3 markets Zen12",
+      "classification": "seller_catalog",
+      "source_id": "S08",
+      "boundary": "seller not independent"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 Premium contains 48 MP3 across 12 levels",
+      "classification": "seller_described",
+      "source_id": "S09",
+      "boundary": "inventory not delivered verification"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 Premium displayed public $87.99 2026-11-14",
+      "classification": "seller_displayed",
+      "source_id": "S09",
+      "boundary": "not checkout confirmation"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 advertises one-year refund guarantee",
+      "classification": "seller_described",
+      "source_id": "S09",
+      "boundary": "not test of refund honor"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 12min equals one hour meditation",
+      "classification": "seller_claim_UNSUBSTANTIATED",
+      "source_id": "S09",
+      "boundary": "exclude from FV recommendation as fact"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 improves focus, stress or health",
+      "classification": "seller_claim_UNSUBSTANTIATED",
+      "source_id": "S09",
+      "boundary": "do not assert"
+    },
+    {
+      "id": "C15",
+      "claim": "Hypnosis Live Total Focus 33min 47MB",
+      "classification": "seller_described",
+      "source_id": "S10",
+      "boundary": "not effectiveness evidence"
+    },
+    {
+      "id": "C16",
+      "claim": "Total Focus displays variable price/bundle options",
+      "classification": "seller_displayed",
+      "source_id": "S10",
+      "boundary": "do not copy into cross SKU checkout claim"
+    },
+    {
+      "id": "C17",
+      "claim": "Brainwave Shots catalog includes Focus Shot",
+      "classification": "seller_catalog",
+      "source_id": "S11",
+      "boundary": "not effectiveness"
+    },
+    {
+      "id": "C18",
+      "claim": "General Inspire3 affiliate portal exists",
+      "classification": "program_public",
+      "source_id": "S12",
+      "boundary": "not FV account approval"
+    },
+    {
+      "id": "C19",
+      "claim": "Public portal advertises commission levels",
+      "classification": "seller_claim_not_FV_terms",
+      "source_id": "S12",
+      "boundary": "never assert FV commissions"
+    },
+    {
+      "id": "C20",
+      "claim": "FV acceptance and issued earning link",
+      "classification": "UNVERIFIED",
+      "source_id": "S12",
+      "boundary": "hold all merchant CTA"
+    },
+    {
+      "id": "C21",
+      "claim": "Allowed social and email channels for FV",
+      "classification": "UNVERIFIED",
+      "source_id": "S12",
+      "boundary": "requires contractual terms"
+    },
+    {
+      "id": "C22",
+      "claim": "Approved affiliate creative / swipe copy",
+      "classification": "UNVERIFIED",
+      "source_id": "S12",
+      "boundary": "do not use"
+    },
+    {
+      "id": "C23",
+      "claim": "Current exact checkout and refund terms for linked account",
+      "classification": "UNVERIFIED",
+      "source_id": "S09",
+      "boundary": "verify with authorization"
+    },
+    {
+      "id": "C24",
+      "claim": "Actual product delivery / personal use by FV",
+      "classification": "NOT_TESTED",
+      "source_id": "S09",
+      "boundary": "no testimonial"
+    },
+    {
+      "id": "C25",
+      "claim": "Owned rights-cleared FV Payhip Mind SKU",
+      "classification": "UNVERIFIED",
+      "source_id": "S07",
+      "boundary": "do not propose purchasable"
+    },
+    {
+      "id": "C26",
+      "claim": "FTC expects clear, conspicuous material connection disclosure",
+      "classification": "compliance",
+      "source_id": "S13",
+      "boundary": "near specific approved link"
+    },
+    {
+      "id": "C27",
+      "claim": "Psychological or health benefit claims require adequate substantiation",
+      "classification": "compliance",
+      "source_id": "S14",
+      "boundary": "suppress unsupported claims"
+    },
+    {
+      "id": "C28",
+      "claim": "Live change blindness article exists",
+      "classification": "published_fv_evidence",
+      "source_id": "S15",
+      "boundary": "match real Grok asset before attribution"
+    },
+    {
+      "id": "C29",
+      "claim": "Actual published Grok asset_id for these 3 topics",
+      "classification": "UNVERIFIED",
+      "source_id": "S15",
+      "boundary": "do not invent posts"
+    },
+    {
+      "id": "C30",
+      "claim": "Existing Jetpack provider-backed confirmed signup tracking",
+      "classification": "NOT_TESTED",
+      "source_id": "S07",
+      "boundary": "no duplicate list"
+    },
+    {
+      "id": "C31",
+      "claim": "Settled paid affiliate conversion and net proceeds",
+      "classification": "UNVERIFIED",
+      "source_id": "S12",
+      "boundary": "not equal outbound_click"
+    },
+    {
+      "id": "C32",
+      "claim": "7/30-day qualified-human session counts",
+      "classification": "UNVERIFIED",
+      "source_id": "S15",
+      "boundary": "net KPI not computable"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "FV affiliate publisher acceptance",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G02",
+      "name": "named owner account",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G03",
+      "name": "permitted domain",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G04",
+      "name": "permitted social platform",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G05",
+      "name": "email channel authorization",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G06",
+      "name": "merchant-issued destination",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G07",
+      "name": "commission attribution rules",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G08",
+      "name": "allowed creatives",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G09",
+      "name": "affiliate disclosure approval",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G10",
+      "name": "checkout SKU identity",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G11",
+      "name": "public/checkout price parity",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G12",
+      "name": "returns/refund terms verified",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G13",
+      "name": "anti-fraud and consent rules",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G14",
+      "name": "health benefit evidence",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G15",
+      "name": "affiliate destination test",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G16",
+      "name": "mobile cross-platform destination",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G17",
+      "name": "analytics no duplicate scripts",
+      "status": "HOLD",
+      "owner": "Praxxis/Grok + Claude"
+    },
+    {
+      "id": "G18",
+      "name": "no PII in event payload",
+      "status": "HOLD",
+      "owner": "Praxxis/Grok + Claude"
+    },
+    {
+      "id": "G19",
+      "name": "qualified human session method",
+      "status": "HOLD",
+      "owner": "Praxxis/Grok + Claude"
+    },
+    {
+      "id": "G20",
+      "name": "asset_id from actual published Grok video",
+      "status": "HOLD",
+      "owner": "Praxxis/Grok + Claude"
+    },
+    {
+      "id": "G21",
+      "name": "campaign UTM platform policy",
+      "status": "HOLD",
+      "owner": "Praxxis/Grok + Claude"
+    },
+    {
+      "id": "G22",
+      "name": "confirmed lead by Jetpack",
+      "status": "HOLD",
+      "owner": "Praxxis/Grok + Claude"
+    },
+    {
+      "id": "G23",
+      "name": "consent/welcome flow checked",
+      "status": "HOLD",
+      "owner": "Praxxis/Grok + Claude"
+    },
+    {
+      "id": "G24",
+      "name": "paid order independent record",
+      "status": "HOLD",
+      "owner": "Commerce/Claude"
+    },
+    {
+      "id": "G25",
+      "name": "merchant affiliate sale record",
+      "status": "HOLD",
+      "owner": "Commerce/Claude"
+    },
+    {
+      "id": "G26",
+      "name": "chargeback/refund net reconciliation",
+      "status": "HOLD",
+      "owner": "Commerce/Claude"
+    },
+    {
+      "id": "G27",
+      "name": "7-day cohort",
+      "status": "HOLD",
+      "owner": "Commerce/Claude"
+    },
+    {
+      "id": "G28",
+      "name": "30-day cohort",
+      "status": "HOLD",
+      "owner": "Commerce/Claude"
+    },
+    {
+      "id": "G29",
+      "name": "real-browser keyboard a11y",
+      "status": "HOLD",
+      "owner": "Site QA/Founder"
+    },
+    {
+      "id": "G30",
+      "name": "WCAG 2.2 AA evidence",
+      "status": "HOLD",
+      "owner": "Site QA/Founder"
+    },
+    {
+      "id": "G31",
+      "name": "playable optional film + captions performance",
+      "status": "HOLD",
+      "owner": "Site QA/Founder"
+    },
+    {
+      "id": "G32",
+      "name": "founder release approval",
+      "status": "HOLD",
+      "owner": "Site QA/Founder"
+    }
+  ],
+  "conclusion": "No authorized payable Mind/Perception merchant link, verified eligible owned Mind SKU, settled orders, revenue per 1000 or verified first-party attribution. No prices/commissions are publisher-specific guarantees."
+}
