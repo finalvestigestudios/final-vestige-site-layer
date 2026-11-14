@@ -1,0 +1,105 @@
+{
+  "snapshot_utc": "2026-11-14T02:36:15Z",
+  "origin_pr": 175,
+  "origin_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stacked_on_pr": 2413,
+  "stacked_on_sha": "192ab9e7b49d51bc0fbb60c3c6c455d7fa27e2b3",
+  "independent_qa_pr": 201,
+  "wordpress": {
+    "newsletter_enabled": true,
+    "new_post_auto_send": false,
+    "email_content_format": "full",
+    "from_display": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "provider_sending_address": "donotreply@wordpress.com",
+    "custom_preheader_verified": false,
+    "native_preview_verified": false,
+    "actual_received_email_verified": false,
+    "eligible_recipient_count": null,
+    "confirmed_signup_attribution_verified": false,
+    "fieldbook_welcome_configured": true,
+    "fieldbook_welcome_delivered_verified": false,
+    "subscribers": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2
+    },
+    "follower_counts": {
+      "wpcom": 3,
+      "direct_email": 0
+    }
+  },
+  "campaign": {
+    "cadence": "weekly DRAFT ONLY",
+    "email_send_authorized": false,
+    "post_publish_authorized": false,
+    "experiment_real_traffic": false,
+    "selected_replacements": [],
+    "issues": [
+      {
+        "id": 1,
+        "kind": "editorial",
+        "send": false,
+        "cta_status": "live first-party historic guide",
+        "original_subject": "The mind is not a camera"
+      },
+      {
+        "id": 2,
+        "kind": "editorial",
+        "send": false,
+        "cta_status": "live first-party Puységur guide",
+        "original_subject": "Before hypnosis had a name",
+        "candidate_available": "The tree that did nothing",
+        "candidate_adopted": false
+      },
+      {
+        "id": 3,
+        "kind": "commercial-review-pending",
+        "send": false,
+        "merchant_rights_verified": false,
+        "guide_live_verified": false,
+        "cta_status": "placeholder",
+        "original_subject": "The twelve-minute meditation question"
+      },
+      {
+        "id": 4,
+        "kind": "editorial",
+        "send": false,
+        "cta_status": "live first-party investigation",
+        "original_subject": "Fourteen seconds. A much longer explanation."
+      },
+      {
+        "id": 5,
+        "kind": "commercial-review-pending",
+        "send": false,
+        "merchant_rights_verified": false,
+        "guide_live_verified": false,
+        "cta_status": "placeholder",
+        "original_subject": "Before you press play on a hypnosis audio"
+      },
+      {
+        "id": 6,
+        "kind": "editorial",
+        "send": false,
+        "cta_status": "live first-party Focus resource",
+        "original_subject": "What did seven days of attention reveal?"
+      }
+    ]
+  },
+  "revenue": {
+    "qualified_human_sessions": null,
+    "independently_settled_paid_orders": null,
+    "refunds": null,
+    "fees": null,
+    "realized_net_revenue_per_1000_qualified_sessions": null
+  },
+  "required_signoffs": [
+    "Founder final creative and audience/schedule release",
+    "Merchant accepted affiliate account and permitted EMAIL channel per offer",
+    "Issued verified earning link, live vetted buyer guide, checkout/refund confirmation",
+    "Actual provider verified recipient consent, confirmed signup deduplication and welcome delivery",
+    "Actual native Jetpack preview (not send test) and publisher postal address",
+    "Received email native unsubscribe verified with authorized safe procedure",
+    "Paid order/commission reports and fees/refunds verified before revenue KPI"
+  ]
+}
