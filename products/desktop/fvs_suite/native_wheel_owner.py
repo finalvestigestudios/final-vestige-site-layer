@@ -1,7 +1,7 @@
 """Prevent form-level wheel events from stealing native control scrolling.
 
-This check is strictly about Tk widget identity/type. It neither calls widget
-methods nor inspects text, financial values, paths or application state.
+This check is strictly about Tk widget identity/type and parentage. It neither
+calls widget content methods nor inspects text, financial values or file paths.
 """
 from __future__ import annotations
 
@@ -17,12 +17,25 @@ _NATIVE_WHEEL_CONTROLS = (
 
 
 def native_wheel_owner(widget, form_canvas):
-    """Return True for a native wheel recipient other than the form canvas.
+    """Whether a native wheel owner exists below the form canvas.
 
-    Nested canvases keep their own scroll gestures, but the form canvas must
-    retain the existing viewport gesture. No Tk display or content getter is
-    needed to make this decision.
+    A label, editor child or embedded widget inside a native Text, Treeview or
+    nested Canvas belongs to that native wheel owner too. Do not traverse
+    beyond the form canvas: every ordinary form input is its descendant.
+    Ancestry checks do not call Tk methods or read customer content.
     """
-    if widget is form_canvas:
-        return False
-    return isinstance(widget, (tk.Canvas,) + _NATIVE_WHEEL_CONTROLS)
+    seen = set()
+    while widget is not None and widget is not form_canvas:
+        identity = id(widget)
+        if identity in seen:
+            return False  # Fail closed on malformed cyclic synthetic ancestry.
+        seen.add(identity)
+        if isinstance(widget, (tk.Canvas,) + _NATIVE_WHEEL_CONTROLS):
+            return True
+        try:
+            # Bypass tkinter.Misc.__getattr__, which may try to call an absent
+            # interpreter on displayless widget proxies used by tests.
+            widget = object.__getattribute__(widget, "master")
+        except AttributeError:
+            return False
+    return False
