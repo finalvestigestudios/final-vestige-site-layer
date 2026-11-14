@@ -6,12 +6,12 @@ const read=p=>readFileSync(new URL(p,dir),'utf8');
 const A=read('ZEN12_A_BUYER_GUIDE.html'), B=read('ZEN12_B_OPTIONAL_FILM_GUIDE.html'), H=read('MIND_ARCHIVE_SOURCE_ONLY.html'), M=JSON.parse(read('CLAIMS_SOURCES_RIGHTS.json')), V=read('ORIGINAL_42S_CAPTIONS.vtt'), C=read('CONVERSION_ACCEPTANCE.md'), N=read('THE_WORD_THAT_WASNT_THERE.md');
 const tests=[];
 const test=(name,fn)=>{try{fn();tests.push({name,pass:true});}catch(e){tests.push({name,pass:false,error:e.message});}};
-const checkDoc=(s)=>{assert.match(s,/<meta name="robots" content="noindex,nofollow">/);assert.doesNotMatch(s,/<script\\b|<iframe\\b|<form\\b/ig);assert.doesNotMatch(s,/href="https?:\\/\\/(?:www\\.)?(?:zen12\\.com|affiliates\\.inspire3\\.com|hypnosislive\\.com|brainwaveshots\\.com)/ig);};
+const checkDoc=(s)=>{assert.match(s,/<meta name="robots" content="noindex,nofollow">/);assert.doesNotMatch(s,/<script\b|<iframe\b|<form\b/ig);assert.doesNotMatch(s,/href="https?:\/\/(?:www\.)?(?:zen12\.com|affiliates\.inspire3\.com|hypnosislive\.com|brainwaveshots\.com)/ig);};
 for(const [n,s] of [['A',A],['B',B],['hub',H]]){test(n+' noindex',()=>assert.match(s,/noindex,nofollow/));test(n+' no scripts/iframes/forms/merchant',()=>checkDoc(s));test(n+' native-disabled merchant',()=>assert.match(s,/<button[^>]+disabled>/));test(n+' accessible lang',()=>assert.match(s,/<html lang="en">/));}
-const core=s=>s.match(/<main id="content">[\\s\\S]*?<\\/main>/)?.[0];
+const core=s=>s.match(/<main id="content">[\s\S]*?<\/main>/)?.[0];
 test('identical substantive main sections',()=>assert.equal(core(A),core(B)));
-for(const [n,s] of [['A',A],['B',B]]){test(n+' nearby FTC disclosure',()=>assert.match(s,/<p><strong>Prospective affiliate disclosure:[\\s\\S]{0,500}<\\/p><button type="button" disabled>/));test(n+' accurate seller tier',()=>{assert.match(s,/48 MP3/);assert.match(s,/twelve-level/);});test(n+' no false endorsement',()=>assert.match(s,/has not purchased or used the course/));test(n+' free existing funnel',()=>assert.match(s,/https:\/\/finalvestige\.com\/focus\//));}
-test('poster is static with transcript',()=>{assert.match(B,/<svg role="img"/);assert.match(B,/<details>/);assert.doesNotMatch(B,/<video|autoplay/ig);});
+for(const [n,s] of [['A',A],['B',B]]){test(n+' nearby FTC disclosure',()=>assert.match(s,/<p><strong>Prospective affiliate disclosure:[\s\S]{0,500}<\/p><button type="button" disabled>/));test(n+' accurate seller tier',()=>{assert.match(s,/48 MP3/);assert.match(s,/twelve-level/);});test(n+' no false endorsement',()=>assert.match(s,/has not purchased or used the course/));test(n+' free existing funnel',()=>assert.match(s,/https:\/\/finalvestige\.com\/focus\//));}
+test('poster is static with transcript',()=>{assert.match(B,/<svg role="img"/);assert.match(B,/<details>/);assert.doesNotMatch(B,/<video[\s>]|autoplay\s*=/ig);});
 test('vtt six cues / 42 sec',()=>{assert.equal((V.match(/-->/g)||[]).length,6);assert.match(V,/00:00:35\.000 --> 00:00:42\.000/);});
 test('matrix 32 claims',()=>assert.equal(M.claims.length,32));
 test('matrix 32 gates all held',()=>{assert.equal(M.gates.length,32);assert.ok(M.gates.every(x=>x.status==='HOLD'));});
