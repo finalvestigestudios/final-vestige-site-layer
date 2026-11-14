@@ -1,0 +1,81 @@
+{
+  "schema": "fv-usgs-407-source-schema-hardening-v1",
+  "date_local": "2026-11-13",
+  "status": "SAFE_DRAFT_ONLY",
+  "source_validator_prior_blob": "7e99b758049352fed0c8528dd5d037ac3c68574f",
+  "source_test_prior_blob": "a35c04bea48a7e5bab2fa8ef558d1c34f56eee7a",
+  "evidenced_original": {
+    "slot": "407:1",
+    "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+    "published_src": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+    "tool_observation": "USGS catalog A original clicked: web retriever unsupported binary 400 wrapper",
+    "origin_http_status": null,
+    "guest_browser_http_status": null,
+    "guest_natural_dimensions_px": null,
+    "guest_encoded_bytes": null
+  },
+  "official_same_subject_alternative": {
+    "catalog_a": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+    "catalog_b": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+    "candidate_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+    "identity_status": "SAME_SUBJECT_FILENAME_ONLY_NO_BINARY_OR_CROP_PARITY",
+    "rights_citation": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+    "rights_catalog_label": "Public Domain",
+    "rights_review_complete": false,
+    "max_conditional_width_px": 960,
+    "native_pixel_size": null,
+    "no_upscale": true,
+    "css_width_times_dpr_verified": false
+  },
+  "defect": {
+    "type": "OFFLINE_VALIDATOR_FALSE_ACCEPTANCE",
+    "pre_patch_adversarial_cases_tested": 20,
+    "pre_patch_false_acceptances": [
+      "false rights assertion",
+      "unauthorized cache permission field",
+      "invented alternate browser pixels",
+      "wrong publication URL",
+      "invented alternate 404",
+      "false alternate display flag",
+      "invented WP content write",
+      "extra root visitor claim",
+      "extra rights release",
+      "unrecorded binary mirror",
+      "missing alternate link candidacy",
+      "wrong catalog subject flag",
+      "wrong snapshot caption",
+      "wrong CMS modified timestamp",
+      "rights citation changed",
+      "original catalog title changed",
+      "alternate catalog title changed",
+      "alternate link method invented",
+      "CMS read method invented",
+      "observation date fabricated"
+    ],
+    "post_patch_rejected_cases": 20,
+    "post_patch_positive_pass": true,
+    "old_plus_new_regression_passed": 38,
+    "environment": "isolated V8 evaluation of exact GitHub-fetched CJS modules, Node assert behavior shim; native Node and repo CI not run",
+    "classification": "synthetic evidence-tampering vulnerability, NOT a live broken image"
+  },
+  "historical_baseline": {
+    "frozen_posts": 61,
+    "frozen_inline": 355,
+    "reported_broken": 42,
+    "guest_verified_broken": null,
+    "oversized_originals_decimal_mb": 15,
+    "oversized_original_storage_bytes": 47096779,
+    "claimed_76_percent_reduction_measured": false
+  },
+  "release": {
+    "visitor_failure_confirmed": false,
+    "license_review_completed": false,
+    "exact_crop_confirmed": false,
+    "wordpress_production_writes": 0,
+    "media_downloads": 0,
+    "third_party_caching": 0,
+    "merges": 0,
+    "deployments": 0,
+    "spend_usd": 0
+  }
+}

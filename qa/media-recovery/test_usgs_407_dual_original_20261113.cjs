@@ -25,7 +25,27 @@ function run(){
   bad('reject actual post write',x=>x.safety.production_wordpress_writes=1);
   bad('reject premature source swap',x=>x.release_gate.approved_to_swap_external_src=true);
   bad('reject pretending alternate has browser status',x=>x.primary_source_b.browser_http_status=200);
+  bad("false rights assertion",x=>{x.rights.item_catalog_public_domain_assertion=false;});
+  bad("unauthorized cache permission field",x=>{x.release_gate.replacement_cached=true;});
+  bad("invented alternate browser pixels",x=>{x.primary_source_b.browser_decoded_pixels=[960,540];});
+  bad("wrong publication URL",x=>{x.source_item.post_url='https://finalvestige.com/unrelated/';});
+  bad("invented alternate 404",x=>{x.primary_source_b.retriever_wrapper_code=404;});
+  bad("false alternate display flag",x=>{x.identity.visually_rendered_alternate=false;});
+  bad("invented WP content write",x=>{x.source_item.production_post_updated=true;});
+  bad("extra root visitor claim",x=>{x.production_browser_verified=true;});
+  bad("extra rights release",x=>{x.rights.license_verified=true;});
+  bad("unrecorded binary mirror",x=>{x.safety.automatic_image_mirroring=true;});
+  bad("missing alternate link candidacy",x=>{x.release_gate.standalone_external_alternate_link_candidate=false;});
+  bad("wrong catalog subject flag",x=>{x.identity.same_official_catalog_subject=false;});
+  bad("wrong snapshot caption",x=>{x.source_item.caption='A 1964 earthquake in Montana';});
+  bad("wrong CMS modified timestamp",x=>{x.source_item.modified_wp='1900-01-01T00:00:00';});
+  bad("rights citation changed",x=>{x.rights.catalog_a_rights_url='https://example.invalid/';});
+  bad("original catalog title changed",x=>{x.primary_source_a.catalog_title='Unrelated image';});
+  bad("alternate catalog title changed",x=>{x.primary_source_b.catalog_title='Unrelated image';});
+  bad("alternate link method invented",x=>{x.primary_source_b.link_method='Unsourced mirror';});
+  bad("CMS read method invented",x=>{x.source_item.wp_read_method='Trusted without a CMS read';});
+  bad("observation date fabricated",x=>{x.observation_date='2026-12-31';});
   return passed;
 }
-if(require.main===module) console.log(run()+'/18 USGS 407 original-link checks passed');
+if(require.main===module) console.log(run()+'/38 USGS 407 original-link checks passed');
 module.exports={run};
