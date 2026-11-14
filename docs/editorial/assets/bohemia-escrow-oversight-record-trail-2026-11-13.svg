@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 920" role="img" aria-labelledby="title desc">
+<title id="title">Where a Bohemia escrow account's monthly records should travel</title>
+<desc id="desc">A documentary-source flowchart for Louisiana escrow reporting. The 2021 Department of Natural Resources account 1107 reports 48,087 dollars and 59 cents. Louisiana Revised Statutes 49:320.2 and 39:372 require agency monthly escrow reporting through the state treasurer, the Cash Management Review Board and the Joint Legislative Committee on the Budget. The chart does not verify reports after 2021, payments, or a 2026 balance.</desc>
+<rect width="390" height="920" fill="#111a1d"/>
+<rect x="17" y="18" width="356" height="884" rx="10" fill="#162126" stroke="#637274" stroke-width="1"/>
+<text x="34" y="51" fill="#dbc391" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="bold" letter-spacing="2">FINAL VESTIGE / RECORD TRAIL</text>
+<text x="34" y="86" fill="#faf5e9" font-family="Georgia,serif" font-size="25" font-weight="bold">The Account's Paper Trail</text>
+<text x="34" y="110" fill="#c9d1cf" font-family="Arial,Helvetica,sans-serif" font-size="13">What Louisiana law says must be reported</text>
+<rect x="34" y="129" width="322" height="115" rx="7" fill="#223237" stroke="#9e8a60"/>
+<text x="49" y="155" fill="#dbc391" font-family="Arial,sans-serif" font-size="12" font-weight="bold">DOCUMENTED SNAPSHOT / NOV 2021</text>
+<text x="49" y="192" fill="#ffffff" font-family="Georgia,serif" font-size="32" font-weight="bold">$48,087.59</text>
+<text x="49" y="217" fill="#d5dfdd" font-family="Arial,sans-serif" font-size="13">DNR administrative-cost escrow · account 1107</text>
+<path d="M195 246 L195 271" stroke="#cbb98c" stroke-width="2"/><path d="M190 265 L195 272 L200 265" fill="none" stroke="#cbb98c" stroke-width="2"/>
+<rect x="47" y="274" width="296" height="82" rx="8" fill="#263536" stroke="#9eaeaa"/>
+<text x="63" y="300" fill="#fff6e6" font-family="Arial,sans-serif" font-size="17" font-weight="bold">1  Agency reports monthly</text>
+<text x="63" y="323" fill="#d7e0dd" font-family="Arial,sans-serif" font-size="13">Beginning/end balance, dated</text>
+<text x="63" y="341" fill="#d7e0dd" font-family="Arial,sans-serif" font-size="13">deposits, withdrawals, transfers</text>
+<path d="M195 356 L195 388" stroke="#cbb98c" stroke-width="2"/><path d="M190 381 L195 389 L200 381" fill="none" stroke="#cbb98c" stroke-width="2"/>
+<rect x="47" y="391" width="296" height="74" rx="8" fill="#263536" stroke="#9eaeaa"/>
+<text x="63" y="419" fill="#fff6e6" font-family="Arial,sans-serif" font-size="17" font-weight="bold">2  State Treasurer</text>
+<text x="63" y="442" fill="#d7e0dd" font-family="Arial,sans-serif" font-size="13">Compiles agency reports</text>
+<path d="M195 465 L195 495" stroke="#cbb98c" stroke-width="2"/><path d="M190 488 L195 496 L200 488" fill="none" stroke="#cbb98c" stroke-width="2"/>
+<rect x="47" y="499" width="296" height="74" rx="8" fill="#263536" stroke="#9eaeaa"/>
+<text x="63" y="527" fill="#fff6e6" font-family="Arial,sans-serif" font-size="17" font-weight="bold">3  Cash Management Board</text>
+<text x="63" y="550" fill="#d7e0dd" font-family="Arial,sans-serif" font-size="13">Receives escrow reporting</text>
+<path d="M195 573 L195 602" stroke="#cbb98c" stroke-width="2"/><path d="M190 595 L195 603 L200 595" fill="none" stroke="#cbb98c" stroke-width="2"/>
+<rect x="47" y="606" width="296" height="82" rx="8" fill="#263536" stroke="#9eaeaa"/>
+<text x="63" y="634" fill="#fff6e6" font-family="Arial,sans-serif" font-size="16" font-weight="bold">4  Legislative Budget Committee</text>
+<text x="63" y="657" fill="#d7e0dd" font-family="Arial,sans-serif" font-size="13">Receives compiled account reports</text>
+<rect x="34" y="709" width="322" height="100" rx="8" fill="#2e2825" stroke="#b58d5e"/>
+<text x="49" y="733" fill="#efcf9d" font-family="Arial,sans-serif" font-size="12" font-weight="bold">WHAT THIS DOES NOT PROVE</text>
+<text x="49" y="756" fill="#f5eadd" font-family="Arial,sans-serif" font-size="13">No verified post-2021 account balance.</text>
+<text x="49" y="776" fill="#f5eadd" font-family="Arial,sans-serif" font-size="13">No documented payment to any heir.</text>
+<text x="49" y="796" fill="#f5eadd" font-family="Arial,sans-serif" font-size="13">No assertion that later reports were filed.</text>
+<text x="34" y="842" fill="#b7c5c1" font-family="Arial,sans-serif" font-size="11">Sources: La. R.S. 49:320.2(C); 39:372(H);</text>
+<text x="34" y="857" fill="#b7c5c1" font-family="Arial,sans-serif" font-size="11">JLCB/DNR Nov. 2021 monthly report (p. 4).</text>
+<text x="34" y="881" fill="#dbc391" font-family="Arial,sans-serif" font-size="11">© Final Vestige Studios · 2026 · Original vector diagram</text>
+</svg>
