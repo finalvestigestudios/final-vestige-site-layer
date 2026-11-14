@@ -1,0 +1,98 @@
+{
+  "version": "R350",
+  "as_of": "2026-11-14T08:31:16Z",
+  "master_pr": 175,
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "newsletter": {
+    "enabled": true,
+    "automatic_new_post_emails": false,
+    "email_content_format": "full",
+    "welcome_configured": true,
+    "welcome_received_verified": false,
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "jetpack_wpcom": 3,
+    "jetpack_email": 0,
+    "eligible_email_recipients": null
+  },
+  "release": {
+    "status": "HOLD_UNSENT",
+    "native_preview_received": false,
+    "publisher_postal_verified": false,
+    "unsubscribe_verified": false,
+    "founder_final_approval": false,
+    "actual_commercial_approval": false
+  },
+  "issues": [
+    {
+      "n": 1,
+      "kind": "editorial",
+      "subject": "The mind is not a camera",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "risk": "duplicate destination with 02",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "n": 2,
+      "kind": "editorial",
+      "subject": "Before hypnosis had a name",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "risk": "duplicate destination with 01",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "n": 3,
+      "kind": "commercial",
+      "subject": "The twelve-minute meditation question",
+      "cta": null,
+      "risk": "Zen12 rights and guide unknown",
+      "status": "HOLD_UNSENT_HOLD_MERCHANT"
+    },
+    {
+      "n": 4,
+      "kind": "editorial",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "risk": "subject needs Apollo context",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "n": 5,
+      "kind": "commercial",
+      "subject": "Before you press play on a hypnosis audio",
+      "cta": null,
+      "risk": "Total Focus rights/checkout/guide unknown",
+      "status": "HOLD_UNSENT_HOLD_MERCHANT"
+    },
+    {
+      "n": 6,
+      "kind": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "cta": "https://finalvestige.com/focus/",
+      "risk": "returns subscribed reader to signup funnel",
+      "status": "HOLD_UNSENT"
+    }
+  ],
+  "commercial_offers": {
+    "zen12": {
+      "email_permission": false,
+      "issued_earning_url": false,
+      "live_vetted_guide": false,
+      "actual_checkout_verified": false
+    },
+    "total_focus": {
+      "email_permission": false,
+      "issued_earning_url": false,
+      "live_vetted_guide": false,
+      "actual_checkout_verified": false
+    }
+  },
+  "paid_outcomes": {
+    "qualified_human_sessions": null,
+    "merchant_settled_orders": null,
+    "refunds_and_fees": null,
+    "net_revenue_per_1000": null
+  },
+  "send_authorized": false
+}
