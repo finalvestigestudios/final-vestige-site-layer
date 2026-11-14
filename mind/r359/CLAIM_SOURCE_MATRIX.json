@@ -1,0 +1,616 @@
+{
+  "sprint": "R359",
+  "checked_pt": "2026-11-13",
+  "state": "UNPUBLISHED_HARD_HOLD",
+  "sources": [
+    {
+      "id": "thompson",
+      "url": "https://doi.org/10.1068/p090483",
+      "description": "1980 primary original"
+    },
+    {
+      "id": "bartlett",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8354050/",
+      "description": "1993 research abstract"
+    },
+    {
+      "id": "wong",
+      "url": "https://doi.org/10.1068/p6659",
+      "description": "2010 publisher abstract"
+    },
+    {
+      "id": "cornes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21639673/",
+      "description": "2011 research abstract"
+    },
+    {
+      "id": "psalta2013",
+      "url": "https://doi.org/10.1177/0956797613501521",
+      "description": "fMRI orientation contrast"
+    },
+    {
+      "id": "psalta2014",
+      "url": "https://doi.org/10.1068/p7755",
+      "description": "expression-reversal findings"
+    },
+    {
+      "id": "fv_focus",
+      "url": "https://finalvestige.com/focus/",
+      "description": "published WordPress page verified"
+    },
+    {
+      "id": "fv_puysegur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "description": "published WordPress page verified"
+    },
+    {
+      "id": "fv_mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "description": "published WordPress post verified"
+    },
+    {
+      "id": "fv_change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "description": "published WordPress post verified"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "description": "official seller catalog"
+    },
+    {
+      "id": "zen12",
+      "url": "https://zen12.com/",
+      "description": "official sales page"
+    },
+    {
+      "id": "zen12about",
+      "url": "https://zen12.com/about",
+      "description": "official sales specifications"
+    },
+    {
+      "id": "hypnosis",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "description": "official sales page"
+    },
+    {
+      "id": "brainwave",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "description": "official sales page"
+    },
+    {
+      "id": "affiliate",
+      "url": "https://affiliates.inspire3.com/",
+      "description": "generic affiliate marketing, not Final Vestige approval"
+    },
+    {
+      "id": "ftcend",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "description": "FTC material relationship disclosure"
+    },
+    {
+      "id": "ftchealth",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "description": "FTC efficacy substantiation"
+    }
+  ],
+  "claims": [
+    {
+      "id": "R359-01",
+      "claim": "Thompson introduced Thatcher face illusion in 1980",
+      "evidence_class": "historical established",
+      "source_ids": [
+        "thompson"
+      ],
+      "decision": "include"
+    },
+    {
+      "id": "R359-02",
+      "claim": "Upside-down global face orientation affects local inversion detection",
+      "evidence_class": "experimental task specific",
+      "source_ids": [
+        "thompson"
+      ],
+      "decision": "include qualified"
+    },
+    {
+      "id": "R359-03",
+      "claim": "Inversion always makes grotesque faces look normal",
+      "evidence_class": "unsupported universality",
+      "source_ids": [
+        "bartlett"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "R359-04",
+      "claim": "Facial configural processing is relevant to Thatcher judgments",
+      "evidence_class": "research interpretation",
+      "source_ids": [
+        "bartlett"
+      ],
+      "decision": "include qualified"
+    },
+    {
+      "id": "R359-05",
+      "claim": "Thatcher effect is face-only",
+      "evidence_class": "contradicted in 2010 test",
+      "source_ids": [
+        "wong"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "R359-06",
+      "claim": "Cars, bicycles, buildings, and letters can show analogous effects",
+      "evidence_class": "research finding",
+      "source_ids": [
+        "wong"
+      ],
+      "decision": "include qualified"
+    },
+    {
+      "id": "R359-07",
+      "claim": "Decision and perception contributions can be separated experimentally",
+      "evidence_class": "research design",
+      "source_ids": [
+        "cornes"
+      ],
+      "decision": "include qualified"
+    },
+    {
+      "id": "R359-08",
+      "claim": "STS fMRI adaptation for upright but not inverted Thatcher face contrasts",
+      "evidence_class": "experimental correlational",
+      "source_ids": [
+        "psalta2013"
+      ],
+      "decision": "include qualified"
+    },
+    {
+      "id": "R359-09",
+      "claim": "fMRI result pinpoints a unique universal brain mechanism",
+      "evidence_class": "not supported",
+      "source_ids": [
+        "psalta2013"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "R359-10",
+      "claim": "Inversion can improve expression recognition for Thatcherized images",
+      "evidence_class": "specific task finding",
+      "source_ids": [
+        "psalta2014"
+      ],
+      "decision": "include qualified"
+    },
+    {
+      "id": "R359-11",
+      "claim": "Puységur historical source page is live",
+      "evidence_class": "verified site content",
+      "source_ids": [
+        "fv_puysegur"
+      ],
+      "decision": "include"
+    },
+    {
+      "id": "R359-12",
+      "claim": "Franklin commission historical article is live",
+      "evidence_class": "verified site content",
+      "source_ids": [
+        "fv_mesmerism"
+      ],
+      "decision": "include"
+    },
+    {
+      "id": "R359-13",
+      "claim": "Change blindness article is live",
+      "evidence_class": "verified site content",
+      "source_ids": [
+        "fv_change"
+      ],
+      "decision": "include"
+    },
+    {
+      "id": "R359-14",
+      "claim": "Existing Focus Fieldbook route is published",
+      "evidence_class": "verified site content",
+      "source_ids": [
+        "fv_focus"
+      ],
+      "decision": "include"
+    },
+    {
+      "id": "R359-15",
+      "claim": "Inspire3 lists Zen12 Hypnosis Live Brainwave Shots",
+      "evidence_class": "seller catalog",
+      "source_ids": [
+        "inspire3"
+      ],
+      "decision": "include as seller"
+    },
+    {
+      "id": "R359-16",
+      "claim": "Zen12 Premium seller lists 12 levels and 48 MP3",
+      "evidence_class": "seller package information",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "include as seller"
+    },
+    {
+      "id": "R359-17",
+      "claim": "Zen12 advertises four listening styles per level",
+      "evidence_class": "seller package information",
+      "source_ids": [
+        "zen12about"
+      ],
+      "decision": "include as seller"
+    },
+    {
+      "id": "R359-18",
+      "claim": "Zen12 Premium displayed price $87.99 on November 13 2026",
+      "evidence_class": "seller display snapshot",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "include qualified"
+    },
+    {
+      "id": "R359-19",
+      "claim": "Zen12 one-year refund guarantee is advertised",
+      "evidence_class": "seller policy claim",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "include qualified"
+    },
+    {
+      "id": "R359-20",
+      "claim": "Zen12 guarantees one hour meditation equivalence in twelve minutes",
+      "evidence_class": "unsubstantiated product claim",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "R359-21",
+      "claim": "Zen12 automatically cures anxiety or boosts health",
+      "evidence_class": "unsubstantiated medical claim",
+      "source_ids": [
+        "ftchealth"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "R359-22",
+      "claim": "Hypnosis Live Total Focus seller lists 33 minutes 47 MB",
+      "evidence_class": "seller technical detail",
+      "source_ids": [
+        "hypnosis"
+      ],
+      "decision": "include as seller"
+    },
+    {
+      "id": "R359-23",
+      "claim": "Total Focus guarantees total concentration",
+      "evidence_class": "unsubstantiated efficacy",
+      "source_ids": [
+        "hypnosis"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "R359-24",
+      "claim": "Brainwave Focus Shot seller lists 15 and 30 minute versions",
+      "evidence_class": "seller technical detail",
+      "source_ids": [
+        "brainwave"
+      ],
+      "decision": "include as seller"
+    },
+    {
+      "id": "R359-25",
+      "claim": "Focus Shot guarantees focus lasting four hours",
+      "evidence_class": "unsubstantiated product claim",
+      "source_ids": [
+        "brainwave"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "R359-26",
+      "claim": "Inspire3 public affiliate signup proves FV named acceptance",
+      "evidence_class": "not established",
+      "source_ids": [
+        "affiliate"
+      ],
+      "decision": "HOLD"
+    },
+    {
+      "id": "R359-27",
+      "claim": "Inspire3 public program establishes FV channel rights",
+      "evidence_class": "not established",
+      "source_ids": [
+        "affiliate"
+      ],
+      "decision": "HOLD"
+    },
+    {
+      "id": "R359-28",
+      "claim": "Inspire3 issues an FV-specific tracked earning URL",
+      "evidence_class": "not authenticated",
+      "source_ids": [
+        "affiliate"
+      ],
+      "decision": "HOLD"
+    },
+    {
+      "id": "R359-29",
+      "claim": "FTC material relationship statement should appear clearly near link",
+      "evidence_class": "regulatory disclosure",
+      "source_ids": [
+        "ftcend"
+      ],
+      "decision": "include conditional"
+    },
+    {
+      "id": "R359-30",
+      "claim": "Specific health benefit claims need adequate product substantiation",
+      "evidence_class": "regulatory evidence",
+      "source_ids": [
+        "ftchealth"
+      ],
+      "decision": "include"
+    },
+    {
+      "id": "R359-31",
+      "claim": "A merchant outbound click proves payment",
+      "evidence_class": "false measurement claim",
+      "source_ids": [
+        "ftcend"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "R359-32",
+      "claim": "An FV Mind Payhip SKU is currently payable and rights-cleared",
+      "evidence_class": "not authenticated",
+      "source_ids": [
+        "fv_focus"
+      ],
+      "decision": "HOLD"
+    },
+    {
+      "id": "R359-33",
+      "claim": "Three Grok post asset IDs have been reconciled",
+      "evidence_class": "not authenticated",
+      "source_ids": [
+        "fv_change"
+      ],
+      "decision": "HOLD"
+    },
+    {
+      "id": "R359-34",
+      "claim": "Optional 42 second film improves verified purchases",
+      "evidence_class": "unmeasured hypothesis",
+      "source_ids": [
+        "fv_focus"
+      ],
+      "decision": "HOLD"
+    },
+    {
+      "id": "R359-35",
+      "claim": "Thompson original copyrighted figure can be freely republished",
+      "evidence_class": "reuse rights unavailable",
+      "source_ids": [
+        "thompson"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "R359-36",
+      "claim": "A sample audio registration adds recipients to seller newsletter",
+      "evidence_class": "seller page consent statement",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "include caution"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "named FV partner approval",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G02",
+      "name": "exact issued affiliate URL",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G03",
+      "name": "website promotion permitted",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G04",
+      "name": "social channel promotion permitted",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G05",
+      "name": "email promotion permitted if proposed",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G06",
+      "name": "actual settlement terms and commission conditions",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G07",
+      "name": "seller creative reuse rights",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G08",
+      "name": "independent checkout price verification",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G09",
+      "name": "refund policy and actual process",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G10",
+      "name": "product-specific efficacy support",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G11",
+      "name": "FTC disclosure and adjacent link QA",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G12",
+      "name": "independent real-browser WCAG QA",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G13",
+      "name": "native Node test execution",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G14",
+      "name": "WordPress sanitizer staging",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G15",
+      "name": "original playable video licensed and captioned",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G16",
+      "name": "founder commercial release approval",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G17",
+      "name": "Grok immutable asset IDs verified",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G18",
+      "name": "privacy-safe first-party attribution",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G19",
+      "name": "Payhip rights-cleared SKU",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G20",
+      "name": "Payhip payable checkout verified",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G21",
+      "name": "Payhip product delivery verified",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G22",
+      "name": "merchant conversion reconciliation",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G23",
+      "name": "refund and fee reconciliation",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G24",
+      "name": "qualified human sessions denominator",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G25",
+      "name": "Jetpack single existing funnel preserved",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G26",
+      "name": "no duplicate analytics installed",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G27",
+      "name": "no homepage flagship change",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G28",
+      "name": "no Dispatch newsletter edit",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G29",
+      "name": "no Grok creator queue edit",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G30",
+      "name": "no unapproved CMS navigation changes",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G31",
+      "name": "no paid SaaS or ad spend",
+      "status": "HOLD",
+      "passed": false
+    }
+  ],
+  "affiliate_auth": "Generic publicly displayed program only; no named account approval, channel grant, exact tracked link, private terms or actual settlement.",
+  "owned_Mind_Sku_auth": "No verified currently payable and rights-cleared Payhip Mind product, checkout, returns and delivery.",
+  "zero_merchant_links_policy": true,
+  "supplier_stance": "A seller-described format is not independently verified efficacy. Product benefits and guarantees are withheld until supported.",
+  "revenue_kpi": "NOT COMPUTABLE: no independently authenticated settled commission/orders, refunds/fees, or qualified-human session denominator."
+}
