@@ -1,0 +1,23 @@
+# Media P0 readback: 125 WordPress image attachments and six original sources (14 Nov 2026)
+
+**Scope:** media integrity and image performance only. Separate from homepage design and from Site QA [#154](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/154). This is a source/CMS **read**, not a visitor-browser test or image-repair release.
+
+## Fresh source evidence
+
+- WordPress authenticated `posts_get(context=edit)` read all published source blocks in 285 (6), 287 (6), 407 (8), and 418 (6). Six priority image slots **285:5, 285:2, 287:5, 418:1, 418:2, 407:1** retain their exact original URLs, ALTs and captions; JSON records each post's live modified timestamp.
+- Two read-only `media_list` pages contained **125 image attachments** (100+25), versus prior **123**. The oversize count did **not** rise: **16** originals >1,500,000 decimal bytes, sum **49,107,665 stored original bytes**. 5 AI-assisted 1672×941 PNGs (#39–43) total 13,267,538 stored bytes. The audit includes all sixteen IDs, exact URLs and intrinsic metadata. Media counts and original storage are **not page load bytes**.
+- External retriever statuses from 14 Nov for P0 originals (404, 500, 404, 403, 403, 400 respectively) are **web tool wrappers, not origin responses nor real Chrome Image requests**. Browser status, `currentSrc`, natural dimensions, redirects and transfer bytes are null. The historical 61-post/355-image census remains separate from today's 125-image media library; the **42 broken** report is unconfirmed and proposed **76% weight reduction unmeasured**.
+
+## New primary-source resolution for 285:5
+
+The publisher's [article](https://discover.hubpages.com/entertainment/The-China-Syndrome-Blockbuster-Movie-Becomes-Eerie-Prophecy) actually labels a Three Mile Island photograph as taken **June 6, 2010** and credits Wikimedia Commons/public domain. The [Commons 819×614 photograph](https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg) matches that description/date and the author dedicates it to the public domain. This is a *stronger provenance lead* than an unrelated 1979 photograph, but the site's now-inaccessible SayMedia URL is **not pixel-/binary-matched**. The 2010 image cannot depict the 1979 event as it occurred. No direct substitution is approved. A 1979 [DOE photograph](https://commons.wikimedia.org/wiki/File:Three_Mile_Island_(color).jpg), 2592×2488, is explicitly listed as a different-scene editorial alternative (conditional 960×921, not a copy of the missing image).
+
+Other exact candidates: official [Florida Memory RC09236](https://floridamemory.com/items/show/32082) documents May 9, 1980 Skyway aftermath but is a different photograph; [Coast Guard Museum](https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/) presents same-scene Scotch Cap wreckage at **600×463**, credited to USCG, which **must not be enlarged to 960**; official [USGS Hebgen](https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959) catalog and [USCG portrait](https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/) are additional leads. None grants blanket image-rehosting permission. Rights, dates, original-file identity, crops and credit must be reviewed per item.
+
+## Safe implementation order
+
+1. Site QA #154 owns logged-out cold desktop/mobile Chrome full-scroll captures for the six P0 slots, including actual Image request ID, HTTP/MIME, redirect/cache flags, `currentSrc`, natural and CSS dimensions, DPR and actual encoded network bytes. No duplicate collector here.
+2. Only for confirmed broken images, compare candidate pixel/scene identity and item-specific license/attribution. If a different photo is proposed, require explicit editorial approval; do not call it exact restoration. The 960px width ceiling is **conditional and never permits upscaling**, while DPR/crop parity may demand retaining a larger asset or a responsive `srcset`.
+3. Stage only an approved **reversible minimal source update** in a nonproduction copy, with previous source and caption preserved and rollback recorded. Cache or WordPress-media upload only when reuse rights are cleared and approved. Compare cold visitor transfers with source-matched baselines before any bandwidth claim.
+
+Run `node qa/media-recovery/test_p0_wp125_six_live_20261114.cjs` and `node qa/media-recovery/validate_p0_wp125_six_live_20261114.cjs`. A passing offline test proves frozen inventory consistency, not user-visible media health. **No images downloaded, rehosted, resized, cached or pasted; no WordPress production writes, post block rewrites, homepage changes, releases or spend.**
