@@ -1,0 +1,46 @@
+{
+  "as_of_status_utc": "2026-11-14T18:31:28Z",
+  "as_of_settings_utc": "2026-11-14T18:32:11Z",
+  "source": "authenticated WordPress wpcom_jetpack_newsletter status/get_settings and jetpack_stats_followers; read only",
+  "newsletter_enabled": true,
+  "site_can_send": true,
+  "send_blockers": [],
+  "email_new_posts_by_default": false,
+  "email_content_format": "full",
+  "from_name": "Final Vestige Studios",
+  "reply_to": "no-reply",
+  "welcome_fieldbook_configured": true,
+  "welcome_received_verified": false,
+  "subscribers": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "paid": 0,
+    "imported_last_24h": 0
+  },
+  "followers": {
+    "wpcom": 3,
+    "direct_email": 0,
+    "comment": 0,
+    "partial": false
+  },
+  "recent_posts_sample": 5,
+  "recent_post_sends": "never_sent_opted_out",
+  "recipient_count_from_recent_sends": null,
+  "eligible_inboxes": null,
+  "signup_confirmed_event_count": null,
+  "merchant_publisher_email_permission_verified": false,
+  "merchant_live_guide_verified": false,
+  "publisher_postal_address_verified": false,
+  "functional_unsubscribe_verified": false,
+  "native_jetpack_preview_verified": false,
+  "all_six_original_issues": "HOLD_UNSENT",
+  "commercial_issues_03_05": "HOLD_MERCHANT",
+  "notes": [
+    "Subscriber counts may overlap or use different denominators; never add counts",
+    "Followers by source are not an eligible email audience",
+    "Missing welcome in one connected mailbox search is not absence everywhere",
+    "No messages were sent, scheduled or published in this sprint"
+  ]
+}
