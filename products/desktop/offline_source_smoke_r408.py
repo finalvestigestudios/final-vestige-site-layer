@@ -71,6 +71,21 @@ def _require_real_directory(path: Path) -> None:
         raise SourceGateError("Unsafe desktop source directory")
 
 
+def _require_real_source_file(path: Path) -> None:
+    """Refuse linked/reparse/special source and asset files, including hardlinks.
+
+    Even non-Python CSV/JSON templates can alter smoke behavior. A symlink,
+    NTFS reparse file or hardlink to an external file must not escape custody.
+    """
+    try:
+        info = path.lstat()
+    except OSError:
+        raise SourceGateError("Unsafe desktop source file") from None
+    if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1 or
+            getattr(info, "st_file_attributes", 0) & stat.FILE_ATTRIBUTE_REPARSE_POINT):
+        raise SourceGateError("Unsafe desktop source file")
+
+
 def _verify_source_directories(desktop: Path) -> None:
     # Check *every* ancestor, not just desktop itself: desktop located beneath
     # a linked parent can redirect a seemingly ordinary suite outside custody.
@@ -95,26 +110,32 @@ def _verify_source_directories(desktop: Path) -> None:
             for name in directories:
                 _require_real_directory(Path(root) / name)
             for name in files:
+                _require_real_source_file(Path(root) / name)
                 if name.casefold().endswith(_BLOCKED_IMPORT_SUFFIXES):
                     raise SourceGateError("Untrusted compiled import in desktop source inventory")
 
 
 def source_digest(desktop: Path) -> str:
-    """Fingerprint suite sources, all six launchers, and this gate by bytes.
+    """Fingerprint all import-root files, six launchers and this gate by bytes.
 
     The digest is an inventory identity, NOT source provenance or a signed build.
     """
     _verify_source_directories(desktop)
-    paths = [*sorted((desktop / "fvs_suite").rglob("*.py")),
-             *(desktop / "launchers" / name for _, name in PRODUCTS),
+    # Measure *every* ordinary asset and Python module in import roots. A
+    # changed CSV/JSON fixture or an additional launcher module can influence a
+    # smoke without changing one of the six named launcher scripts.
+    roots = (desktop / "fvs_suite", desktop / "launchers")
+    paths = [*(p for root in roots for p in root.rglob("*") if p.is_file()),
              desktop / "offline_source_smoke_r408.py"]
-    if len(paths) < len(PRODUCTS) + 2:
+    if (len(paths) < len(PRODUCTS) + 2 or any(
+            desktop / "launchers" / name not in paths for _, name in PRODUCTS)):
         raise SourceGateError("Required desktop source inventory is incomplete")
     digest = hashlib.sha256()
     for path in sorted(paths, key=lambda p: p.relative_to(desktop).as_posix()):
         try:
             info = path.lstat()
-            if not stat.S_ISREG(info.st_mode) or not 0 < info.st_size <= MAX_SOURCE_BYTES:
+            _require_real_source_file(path)
+            if not 0 < info.st_size <= MAX_SOURCE_BYTES:
                 raise SourceGateError("Unsafe desktop source inventory")
             raw = path.read_bytes()
             if len(raw) != info.st_size:
