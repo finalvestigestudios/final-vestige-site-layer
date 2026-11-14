@@ -1,0 +1,218 @@
+{
+  "schema": "fv-media-wire-alias-preload-custody-v1",
+  "observed_date": "2026-11-14",
+  "scope": "Historical 61-post census and priority media recovery; evidence and code-only, no CMS writes",
+  "worklist": {
+    "repository_path": "docs/IMAGE-WEIGHT-WORKLIST.md",
+    "git_blob_sha": "2acd06a4ca4317646006eb6591face3fe76fedec"
+  },
+  "context": {
+    "historic_posts": 61,
+    "historic_inline_img_references": 355,
+    "media_offsite_source_count": 288,
+    "site_qa_offsite_count": 286,
+    "difference_explained_by_proxy_wrapped_external_publishers": true,
+    "reported_broken_external_images": 42,
+    "guest_confirmed_broken_images": null,
+    "measured_sitewide_76_percent_reduction": null,
+    "previous_oversized_wp_originals_decimal_gt_1500000": 16,
+    "previous_oversized_stored_bytes": 49107665,
+    "stored_original_bytes_are_guest_network_bytes": false
+  },
+  "defect": {
+    "source_file": "qa/media-recovery/compare_cold_image_wire_v1.cjs",
+    "prior_blob_sha": "5ff97e286d915fa3d02bd44f66adccbe98433d00",
+    "change": "Unbound CDP image requests compared byte-exact URLs; now compare sameSource families across stored_url/current_src/request_url and request url_aliases",
+    "method": "synthetic offline V8 regression; NOT browser/origin HTTP evidence",
+    "synthetic_fixture": {
+      "source": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "rendition": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=1024%2C768&ssl=1",
+      "baseline_matched_request_encoded_bytes": 1000,
+      "unbound_original_source_request_bytes": 1200,
+      "candidate_matched_request_encoded_bytes": 240,
+      "these_values_are_synthetic": true
+    },
+    "before": {
+      "state": "LAB_PAIR_MEASURED",
+      "claimed_lab_reduction_percent": 76,
+      "false_positive": true
+    },
+    "after": {
+      "state": "HOLD",
+      "reason": "baseline:unbound_same_photo_request:621",
+      "reduction_percent": null,
+      "sitewide_claim_permitted": false
+    },
+    "unbound_request_requires_investigation": "preload, responsive duplicate, retry, redirects, source-family aliases; reconcile encoded bytes and CDP request IDs before comparing",
+    "expected_nonmatching_theme_image": "exclude from article bytes"
+  },
+  "priority_image_sources": [
+    {
+      "slot": "285:5",
+      "stored_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "prior_web_retriever_wrapper": 404,
+      "candidate_catalog": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "candidate_max_native_width": 819,
+      "scene_match": "CROP_UNPROVEN",
+      "rights": "PD-SELF on catalog; binary/crop and authorization unverified",
+      "prior_web_wrapper_date": "2026-11-08",
+      "prior_web_wrapper_is_not_origin_http": true,
+      "guest_browser_http_status": null,
+      "guest_natural_dimensions": null,
+      "guest_encoded_transfer_bytes": null,
+      "broken_for_visitors": null,
+      "rights_cleared_for_rehosting": false,
+      "source_binary_downloaded": false,
+      "wp_replaced": false
+    },
+    {
+      "slot": "285:2",
+      "stored_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "prior_web_retriever_wrapper": 500,
+      "candidate_catalog": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+      "candidate_max_native_width": null,
+      "scene_match": "NRC_ATTRIBUTED_FIGURE_4_NOT_GENERIC_PHOTO",
+      "rights": "Item-level reproduction clearance unverified",
+      "prior_web_wrapper_date": "2026-11-08",
+      "prior_web_wrapper_is_not_origin_http": true,
+      "guest_browser_http_status": null,
+      "guest_natural_dimensions": null,
+      "guest_encoded_transfer_bytes": null,
+      "broken_for_visitors": null,
+      "rights_cleared_for_rehosting": false,
+      "source_binary_downloaded": false,
+      "wp_replaced": false
+    },
+    {
+      "slot": "287:5",
+      "stored_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "prior_web_retriever_wrapper": 404,
+      "candidate_catalog": "https://www.floridamemory.com/items/show/32083",
+      "candidate_max_native_width": null,
+      "scene_match": "ALTERNATE_FLORIDA_ARCHIVE_SCENE_NOT_SAME_PHOTO",
+      "rights": "Publisher credits University Press of Florida; Florida Memory item-specific restrictions must be checked",
+      "prior_web_wrapper_date": "2026-11-08",
+      "prior_web_wrapper_is_not_origin_http": true,
+      "guest_browser_http_status": null,
+      "guest_natural_dimensions": null,
+      "guest_encoded_transfer_bytes": null,
+      "broken_for_visitors": null,
+      "rights_cleared_for_rehosting": false,
+      "source_binary_downloaded": false,
+      "wp_replaced": false
+    },
+    {
+      "slot": "418:1",
+      "stored_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "prior_web_retriever_wrapper": 403,
+      "candidate_catalog": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "candidate_max_native_width": null,
+      "scene_match": "USCG_CHIEF_PETTIT_PORTRAIT_VIRIN_MATCH_BINARY_UNPROVEN",
+      "rights": "Catalog PD statement; exact file/crop and attribution review required",
+      "prior_web_wrapper_date": "2026-11-08",
+      "prior_web_wrapper_is_not_origin_http": true,
+      "guest_browser_http_status": null,
+      "guest_natural_dimensions": null,
+      "guest_encoded_transfer_bytes": null,
+      "broken_for_visitors": null,
+      "rights_cleared_for_rehosting": false,
+      "source_binary_downloaded": false,
+      "wp_replaced": false
+    },
+    {
+      "slot": "418:2",
+      "stored_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "prior_web_retriever_wrapper": 403,
+      "candidate_catalog": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+      "candidate_max_native_width": 600,
+      "scene_match": "SAME_SCENE_NOT_CRYPTOGRAPHICALLY_IDENTICAL",
+      "rights": "Coast Guard-credit photograph, item-level permission and crop unverified",
+      "prior_web_wrapper_date": "2026-11-08",
+      "prior_web_wrapper_is_not_origin_http": true,
+      "guest_browser_http_status": null,
+      "guest_natural_dimensions": null,
+      "guest_encoded_transfer_bytes": null,
+      "broken_for_visitors": null,
+      "rights_cleared_for_rehosting": false,
+      "source_binary_downloaded": false,
+      "wp_replaced": false
+    },
+    {
+      "slot": "407:1",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "prior_web_retriever_wrapper": 400,
+      "candidate_catalog": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+      "candidate_max_native_width": null,
+      "scene_match": "USGS_FAULT_SCARP_SAME_SCENE_BINARY_UNPROVEN",
+      "rights": "USGS catalog PD indication; exact binary and derivative review required",
+      "prior_web_wrapper_date": "2026-11-08",
+      "prior_web_wrapper_is_not_origin_http": true,
+      "guest_browser_http_status": null,
+      "guest_natural_dimensions": null,
+      "guest_encoded_transfer_bytes": null,
+      "broken_for_visitors": null,
+      "rights_cleared_for_rehosting": false,
+      "source_binary_downloaded": false,
+      "wp_replaced": false
+    }
+  ],
+  "oversized_first_party_examples": [
+    {
+      "post_id": 621,
+      "slot": "621:0",
+      "media_id": 1257,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "stored_original_bytes": 4798395,
+      "native_px": [
+        4000,
+        3000
+      ],
+      "advertised_jetpack_large": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=1024%2C768&ssl=1",
+      "conditional_960_px": [
+        960,
+        720
+      ],
+      "max_2x_css_width": 480,
+      "rights": "GeneralPunger Commons CC BY-SA 4.0 claimed in post; exact Commons file unmatched",
+      "visitor_current_src": null,
+      "visitor_transfer_bytes": null
+    },
+    {
+      "post_id": 621,
+      "slot": "621:1",
+      "media_id": 1258,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "stored_original_bytes": 5553669,
+      "native_px": [
+        5667,
+        3831
+      ],
+      "advertised_jetpack_large": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1024%2C692&ssl=1",
+      "conditional_960_px": [
+        960,
+        649
+      ],
+      "max_2x_css_width": 480,
+      "rights": "NYPL 1903 catalog believes US PD; exact uploaded map identity/crop unverified; map lettering/sharpness HOLD",
+      "visitor_current_src": null,
+      "visitor_transfer_bytes": null
+    }
+  ],
+  "release_gates": {
+    "site_qa_browser_collector_pr": 154,
+    "site_qa_retains_cdp_collection": true,
+    "cold_full_scroll_guest_results_required": true,
+    "match_full_page_source_identity": true,
+    "require_all_four_cache_flags_explicit_false": true,
+    "require_no_unbound_same_family_requests": true,
+    "require_item_level_rights_and_historical_scene_match": true,
+    "require_source_bytes_and_well_formed_responsive_renditions": true,
+    "conditional_max_width_px": 960,
+    "no_upscale": true,
+    "require_css_width_and_dpr_testing": true,
+    "wp_write_authorized": false,
+    "third_party_asset_cache_authorized": false,
+    "release_authorized": false
+  },
+  "evidence_nature": "Previously documented WordPress readback and web-retriever wrapper observations + new isolated synthetic regression; no new external request in this sprint"
+}
