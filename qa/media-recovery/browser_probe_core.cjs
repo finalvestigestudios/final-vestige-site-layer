@@ -198,6 +198,8 @@ function classifyImages(stored,rendered,network,pageVerified){
    current_src:r?.currentSrc||null,current_src_identity_verified:identityVerified,
    loaded_network_proof_verified:loadedNetworkProof,
    complete:r?.complete??null,natural_width:r?.naturalWidth??null,natural_height:r?.naturalHeight??null,
+   css_width_px:Number.isSafeInteger(r?.rectWidth)&&r.rectWidth>0?r.rectWidth:null,
+   css_height_px:Number.isSafeInteger(r?.rectHeight)&&r.rectHeight>0?r.rectHeight:null,
    request_url:req?.url||null,request_id:typeof req?.request_id==='string'?req.request_id:null,
    matching_cdp_image_request_count:matchingRequests.length,
    ambiguous_network_request_identity:ambiguousRequestIdentity,
