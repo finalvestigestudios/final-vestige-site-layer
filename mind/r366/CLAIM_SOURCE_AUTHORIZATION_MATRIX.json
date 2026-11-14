@@ -1,0 +1,708 @@
+{
+  "edition": "R366",
+  "updated": "2026-11-13",
+  "state": "SOURCE_CONTROL_ONLY_NOT_PUBLISHED",
+  "method": "evidence status represents source review, not a commercial efficacy trial or account acceptance",
+  "sources": {
+    "S01": {
+      "title": "McGurk & MacDonald, Hearing lips and seeing voices, Nature 1976",
+      "url": "https://doi.org/10.1038/264746a0",
+      "role": "original experiment"
+    },
+    "S02": {
+      "title": "Brown et al., individual differences in McGurk susceptibility, PLOS ONE 2018",
+      "url": "https://doi.org/10.1371/journal.pone.0207160",
+      "role": "open empirical study"
+    },
+    "S03": {
+      "title": "Magnotti & Beauchamp, published estimates inflation, PLOS ONE 2018",
+      "url": "https://doi.org/10.1371/journal.pone.0202908",
+      "role": "methodology and simulations"
+    },
+    "S04": {
+      "title": "Ingendoh et al., binaural beat EEG systematic review 2023",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "role": "14-study systematic review"
+    },
+    "S05": {
+      "title": "Inspire3 official brand catalog",
+      "url": "https://inspire3.com/",
+      "role": "seller descriptions only"
+    },
+    "S06": {
+      "title": "Zen12 official tier sales page",
+      "url": "https://zen12.com/",
+      "role": "seller offer page; no checkout"
+    },
+    "S07": {
+      "title": "Inspire3 public affiliate program",
+      "url": "https://affiliates.inspire3.com/",
+      "role": "public program existence; not account proof"
+    },
+    "S08": {
+      "title": "Hypnosis Live Total Focus official page",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "role": "seller alternate product details"
+    },
+    "S09": {
+      "title": "Hypnosis Live FAQ",
+      "url": "https://hypnosislive.com/faq",
+      "role": "seller policy description"
+    },
+    "S10": {
+      "title": "Brainwave Shots official catalog",
+      "url": "https://brainwaveshots.com/",
+      "role": "seller catalog"
+    },
+    "S11": {
+      "title": "Final Vestige Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "role": "historical source ledger"
+    },
+    "S12": {
+      "title": "Final Vestige Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "role": "current free first-party lead resource"
+    },
+    "S13": {
+      "title": "FTC Endorsement Guides questions",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "role": "regulator disclosure guidance"
+    },
+    "S14": {
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "role": "regulator claim substantiation"
+    },
+    "S15": {
+      "title": "FV internal issue #171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "role": "editorial and release charter"
+    },
+    "S16": {
+      "title": "FV measurement issue #820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "role": "attribution/QA charter"
+    },
+    "S17": {
+      "title": "FV existing six-category journal",
+      "url": "https://finalvestige.com/blog/",
+      "role": "live category context; counts may change"
+    }
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "McGurk 1976 tested incongruent speech audio and moving lips",
+      "type": "research_finding",
+      "decision": "supported_within_study",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "id": "C02",
+      "claim": "Audio /ba/ with visual /ga/ can elicit /da/ report",
+      "type": "research_finding",
+      "decision": "supported_within_study_not_universal",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "id": "C03",
+      "claim": "Reverse dubbing can elicit combined reports",
+      "type": "research_finding",
+      "decision": "supported_within_study_not_universal",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "id": "C04",
+      "claim": "All viewers experience exactly the same McGurk response",
+      "type": "overreach",
+      "decision": "reject",
+      "source_ids": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "id": "C05",
+      "claim": "McGurk susceptibility varies substantially across participants",
+      "type": "research_finding",
+      "decision": "supported_within_study",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "C06",
+      "claim": "Visual place-of-articulation extraction related to susceptibility",
+      "type": "research_finding",
+      "decision": "supported_within_study",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "C07",
+      "claim": "Working-memory score predicted susceptibility in Brown sample",
+      "type": "research_finding",
+      "decision": "not_supported_in_that_study",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "C08",
+      "claim": "A viral clip can diagnose attention disorders",
+      "type": "health_overreach",
+      "decision": "reject",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S14"
+      ]
+    },
+    {
+      "id": "C09",
+      "claim": "Publication bias may inflate reported group differences",
+      "type": "methodology",
+      "decision": "supported_in_simulation",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "C10",
+      "claim": "10% modeled difference can appear as 31% reported at sample assumptions",
+      "type": "methodology",
+      "decision": "supported_as_model_example_not_general_forecast",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "C11",
+      "claim": "Fourteen EEG studies in 2023 binaural review",
+      "type": "review_finding",
+      "decision": "supported",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "C12",
+      "claim": "EEG review: five positive, eight contradictory, one mixed",
+      "type": "review_finding",
+      "decision": "supported",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "C13",
+      "claim": "That review tested Zen12 Premium",
+      "type": "evidence_transfer",
+      "decision": "reject",
+      "source_ids": [
+        "S04",
+        "S06"
+      ]
+    },
+    {
+      "id": "C14",
+      "claim": "All marketed brainwave files entrain EEG waves reliably",
+      "type": "health_overreach",
+      "decision": "unsupported",
+      "source_ids": [
+        "S04",
+        "S14"
+      ]
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 Premium described as 12 levels and 48 MP3 files",
+      "type": "seller_feature",
+      "decision": "seller_page_only",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 Beginner described as 6 levels and 24 MP3 files",
+      "type": "seller_feature",
+      "decision": "seller_page_only",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 Advanced described as last 6 levels and 24 MP3 files",
+      "type": "seller_feature",
+      "decision": "seller_page_only",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "id": "C18",
+      "claim": "Seller advertises one-year Zen12 money-back guarantee",
+      "type": "seller_term",
+      "decision": "advertised_not_tested",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "id": "C19",
+      "claim": "Final Zen12 payable checkout total and tax",
+      "type": "commerce_term",
+      "decision": "unverified_do_not_quote",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "id": "C20",
+      "claim": "Zen12 twelve minutes equals one hour of advanced meditation",
+      "type": "seller_efficacy",
+      "decision": "unsupported_do_not_adopt",
+      "source_ids": [
+        "S06",
+        "S04"
+      ]
+    },
+    {
+      "id": "C21",
+      "claim": "Zen12 treats anxiety or depression",
+      "type": "health_claim",
+      "decision": "no_product_specific_support_do_not_state",
+      "source_ids": [
+        "S06",
+        "S14"
+      ]
+    },
+    {
+      "id": "C22",
+      "claim": "Hypnosis Live Total Focus described as 33-minute/47 MB audio",
+      "type": "seller_feature",
+      "decision": "seller_page_only",
+      "source_ids": [
+        "S08"
+      ]
+    },
+    {
+      "id": "C23",
+      "claim": "Hypnosis Live Total Focus prices seen across public pages differ",
+      "type": "commerce_term",
+      "decision": "ambiguous_checkout_unverified",
+      "source_ids": [
+        "S08"
+      ]
+    },
+    {
+      "id": "C24",
+      "claim": "Hypnosis Live FAQ advertises a fourteen-day refund policy",
+      "type": "seller_term",
+      "decision": "advertised_not_executed",
+      "source_ids": [
+        "S09"
+      ]
+    },
+    {
+      "id": "C25",
+      "claim": "Brainwave Shots has a separate official product catalog",
+      "type": "seller_feature",
+      "decision": "seller_page_only",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "id": "C26",
+      "claim": "Puységur case evidence includes failures and consent problems",
+      "type": "historical_record",
+      "decision": "documented_as_historical_record_not_mechanism",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "id": "C27",
+      "claim": "Focus Fieldbook complete edition is 52 pages",
+      "type": "fv_owned_free_resource",
+      "decision": "published_free_resource",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "id": "C28",
+      "claim": "Focus Fieldbook replaces existing Jetpack signup",
+      "type": "funnel_mutation",
+      "decision": "prohibited",
+      "source_ids": [
+        "S12",
+        "S15"
+      ]
+    },
+    {
+      "id": "C29",
+      "claim": "One existing Focus welcome/list remains intact",
+      "type": "funnel_governance",
+      "decision": "required_not_live_modified",
+      "source_ids": [
+        "S12",
+        "S15"
+      ]
+    },
+    {
+      "id": "C30",
+      "claim": "Prospective earning relationship should be near link",
+      "type": "disclosure",
+      "decision": "required_when_recommendation_activated",
+      "source_ids": [
+        "S13",
+        "S14"
+      ]
+    },
+    {
+      "id": "C31",
+      "claim": "A footer disclosure by itself is sufficient for specific affiliate CTA",
+      "type": "disclosure",
+      "decision": "reject",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "id": "C32",
+      "claim": "A successful affiliate click is a paid commission",
+      "type": "measurement",
+      "decision": "reject",
+      "source_ids": [
+        "S16"
+      ]
+    },
+    {
+      "id": "C33",
+      "claim": "A provider-confirmed subscriber is a paid purchase",
+      "type": "measurement",
+      "decision": "reject",
+      "source_ids": [
+        "S16"
+      ]
+    },
+    {
+      "id": "C34",
+      "claim": "Net realized revenue per 1000 qualified humans measurable today",
+      "type": "revenue",
+      "decision": "not_computable_without_sessions_settlements",
+      "source_ids": [
+        "S16"
+      ]
+    },
+    {
+      "id": "C35",
+      "claim": "Inspire3 offers special links to participating publishers",
+      "type": "affiliate_program",
+      "decision": "public_general_program_only",
+      "source_ids": [
+        "S07"
+      ]
+    },
+    {
+      "id": "C36",
+      "claim": "Final Vestige publisher acceptance issued link channel permissions",
+      "type": "affiliate_authorization",
+      "decision": "not_authenticated",
+      "source_ids": [
+        "S07",
+        "S15"
+      ]
+    },
+    {
+      "id": "C37",
+      "claim": "Permitted email promotion for FV affiliate account",
+      "type": "affiliate_authorization",
+      "decision": "not_authenticated",
+      "source_ids": [
+        "S07"
+      ]
+    },
+    {
+      "id": "C38",
+      "claim": "Approved seller swipe copy available to Final Vestige",
+      "type": "creative_rights",
+      "decision": "not_authenticated_do_not_copy",
+      "source_ids": [
+        "S07"
+      ]
+    },
+    {
+      "id": "C39",
+      "claim": "Current FV-owned paid Mind Payhip product rights checkout fulfillment",
+      "type": "owned_commerce",
+      "decision": "not_authenticated",
+      "source_ids": [
+        "S15"
+      ]
+    },
+    {
+      "id": "C40",
+      "claim": "Video variant contains functioning original film",
+      "type": "media_status",
+      "decision": "false_storyboard_only",
+      "source_ids": [
+        "S15"
+      ]
+    },
+    {
+      "id": "C41",
+      "claim": "A and B must show identical core buyer copy",
+      "type": "experiment_quality",
+      "decision": "must_validate",
+      "source_ids": [
+        "S16"
+      ]
+    },
+    {
+      "id": "C42",
+      "claim": "Real paid A/B uplift demonstrated",
+      "type": "experiment_result",
+      "decision": "not_tested",
+      "source_ids": [
+        "S16"
+      ]
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "gate": "named FV publisher acceptance",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G02",
+      "gate": "authorized website channel",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G03",
+      "gate": "authorized TikTok channel",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G04",
+      "gate": "authorized YouTube channel",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G05",
+      "gate": "authorized email channel",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G06",
+      "gate": "issued FV earning URL",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G07",
+      "gate": "permitted deep link and redirects",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G08",
+      "gate": "merchant program terms/version",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G09",
+      "gate": "merchant payout/settlement schedule",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G10",
+      "gate": "seller-approved creative permissions",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G11",
+      "gate": "product-specific efficacy substantiation",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G12",
+      "gate": "FTC disclosure placement and comprehension",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G13",
+      "gate": "advertised package reconfirmation",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G14",
+      "gate": "actual checkout currency and taxes",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G15",
+      "gate": "upsell/checkout friction verified",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G16",
+      "gate": "refund terms checked on exact buyer pathway",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G17",
+      "gate": "refund execution proof",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G18",
+      "gate": "product delivery/file access proof",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G19",
+      "gate": "owned Payhip rights record",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G20",
+      "gate": "owned Payhip live SKU id",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G21",
+      "gate": "owned checkout/order reconciliation",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G22",
+      "gate": "purchase/commission event reconciliation",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G23",
+      "gate": "refund and fee ledger",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G24",
+      "gate": "first-party qualified-human denominator",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G25",
+      "gate": "Grok immutable published asset_id",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G26",
+      "gate": "Grok actual post/platform/date",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G27",
+      "gate": "campaign legal link destination",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G28",
+      "gate": "Jetpack consent and confirmation QA",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G29",
+      "gate": "original film encoded and hosted",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G30",
+      "gate": "captions and accessible playback QA",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G31",
+      "gate": "real browser CWV/WCAG/security QA",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    },
+    {
+      "id": "G32",
+      "gate": "founder release and commerce approval",
+      "state": "HOLD",
+      "evidence": "not fully authenticated/approved in this run; no release permission"
+    }
+  ],
+  "commerce_authorization": {
+    "accepted_publisher": "not_authenticated",
+    "issued_link": "not_authenticated",
+    "allowed_channels": "not_authenticated",
+    "approved_creatives": "not_authenticated",
+    "owned_mind_payhip_sku": "not_authenticated",
+    "buyer_cta": "DISABLED",
+    "seller_checkout": "not_tested",
+    "refund_execution": "not_tested"
+  },
+  "experimental_variants": {
+    "A": "source-led text guide with native disabled CTA",
+    "B": "same content plus original SVG and 42-second transcript/captions; video not encoded",
+    "effect_on_sales": "NOT_TESTED",
+    "exposure": "0 deployed pilot sessions"
+  },
+  "revenue": {
+    "net_revenue_per_1000_qualified_human_sessions": "NOT_COMPUTABLE",
+    "confirmed_affiliate_commissions": "UNKNOWN",
+    "confirmed_mind_orders": "UNKNOWN",
+    "qualified_human_sessions": "UNKNOWN",
+    "refunds_fees": "UNKNOWN",
+    "note": "UNKNOWN is not zero; diagnostic clicks never become paid orders"
+  },
+  "revision_holds": [
+    "No live WordPress or Jetpack edits",
+    "Do not change homepage PR #49, Mind PR #172, agent issue #150",
+    "No affiliate links, checkout, new signup, pricing guarantees, socials or paid services",
+    "All activation remains contingent on actual owner/founder approvals"
+  ]
+}
