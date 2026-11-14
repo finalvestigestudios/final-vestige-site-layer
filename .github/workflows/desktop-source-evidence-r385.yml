@@ -341,3 +341,10 @@ jobs:
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_inventory_native_digest_custody_r425.py
           python -W error -m unittest discover -s products/desktop/tests -p test_snapshot_manifest_binding_r31.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_snapshot_manifest_binding_r31.py
+
+      - name: R434 oversized focus visibility, viewport isolation and inherited scale contract
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_focus_viewport_r434.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_focus_viewport_r434.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_scroll_access_r107.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_scroll_access_r107.py
