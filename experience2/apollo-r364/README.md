@@ -4,7 +4,7 @@
 
 ## Why
 
-R363's original stylesheet enqueue inspects only the singular post's literal content. A custody guard rendered inside a reusable block, same-theme `core/template-part`, explicitly assigned block template or previously captured default template can lose its CSS. R364 recuses into those *verified* sources before the page head, reusing WordPress's existing `fv-apollo-r362-crosswalk` style handle (one enqueue). No script, remote request, content mutation or guessed template hierarchy.
+R363's original stylesheet enqueue inspects only the singular post's literal content. A custody guard rendered inside a reusable block, same-theme `core/template-part`, explicitly assigned block template or previously captured default template can lose its CSS. R364 recurses into those *verified* sources before the page head, reusing WordPress's existing `fv-apollo-r362-crosswalk` style handle (one enqueue). No script, remote request, content mutation or guessed template hierarchy.
 
 Traversal is bounded to 500,000 cumulative bytes, 128 nodes, 48 references and six levels. Invalid or stale identities, foreign themes, cycles, missing post data and incomplete scans withhold asset authorization. This is an **asset-discovery** fail-closed rule; the underlying R363 historical record remains static-first, text-readable and no-JS.
 
