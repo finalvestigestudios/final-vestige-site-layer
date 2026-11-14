@@ -1,0 +1,363 @@
+{
+  "scope": "mind/r370",
+  "date": "2026-11-14",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "claim_count": 32,
+  "source_count": 16,
+  "claims": [
+    {
+      "id": "R370-01",
+      "statement": "1999 gorilla unexpected event missed in task",
+      "status": "research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10694957/",
+      "boundary": "Conditional observation"
+    },
+    {
+      "id": "R370-02",
+      "statement": "1999 study publication",
+      "status": "research",
+      "url": "https://doi.org/10.1068/p281059",
+      "boundary": "Primary paper"
+    },
+    {
+      "id": "R370-03",
+      "statement": "2023 study three experiments, combined n=4493",
+      "status": "research",
+      "url": "https://doi.org/10.1073/pnas.2214930120",
+      "boundary": "Reported authors"
+    },
+    {
+      "id": "R370-04",
+      "statement": "Fast objects more noticeable in studied tasks",
+      "status": "research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37216543/",
+      "boundary": "Not universal"
+    },
+    {
+      "id": "R370-05",
+      "statement": "Expectation and prior familiarity limit viral replay",
+      "status": "interpretation",
+      "url": "https://doi.org/10.1073/pnas.2214930120",
+      "boundary": "Design constraint"
+    },
+    {
+      "id": "R370-06",
+      "statement": "Puységur archive 153 rows, 16 cases",
+      "status": "FV-published",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "boundary": "History not clinical trial"
+    },
+    {
+      "id": "R370-07",
+      "statement": "Free Focus Fieldbook 52-page edition",
+      "status": "FV-published",
+      "url": "https://finalvestige.com/focus/",
+      "boundary": "One signup"
+    },
+    {
+      "id": "R370-08",
+      "statement": "Zen12 Premium 12 levels, 48 MP3s",
+      "status": "seller-only",
+      "url": "https://zen12.com/",
+      "boundary": "Not delivery-tested"
+    },
+    {
+      "id": "R370-09",
+      "statement": "Four styles at each level",
+      "status": "seller-only",
+      "url": "https://zen12.com/",
+      "boundary": "Music, guidance, nature, noise"
+    },
+    {
+      "id": "R370-10",
+      "statement": "Zen12 public Premium display $87.99 on Nov 14",
+      "status": "seller-snapshot",
+      "url": "https://zen12.com/",
+      "boundary": "Not actual checkout"
+    },
+    {
+      "id": "R370-11",
+      "statement": "Zen12 one-year refund claim",
+      "status": "seller-only",
+      "url": "https://zen12.com/",
+      "boundary": "Not return-tested"
+    },
+    {
+      "id": "R370-12",
+      "statement": "12 minutes = 1 hour advanced meditation",
+      "status": "unsupported-seller-efficacy",
+      "url": "https://zen12.com/",
+      "boundary": "Omit as fact"
+    },
+    {
+      "id": "R370-13",
+      "statement": "Product enhances focus or health",
+      "status": "unsupported-seller-efficacy",
+      "url": "https://zen12.com/",
+      "boundary": "Omit as fact"
+    },
+    {
+      "id": "R370-14",
+      "statement": "Hypnosis Live >200 sessions",
+      "status": "seller-only",
+      "url": "https://inspire3.com/",
+      "boundary": "Catalog"
+    },
+    {
+      "id": "R370-15",
+      "statement": "Total Focus audio 33 minutes",
+      "status": "seller-only",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "boundary": "No results proven"
+    },
+    {
+      "id": "R370-16",
+      "statement": "Focus Shot 15 and 30 minute tracks",
+      "status": "seller-only",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "boundary": "No results proven"
+    },
+    {
+      "id": "R370-17",
+      "statement": "Focus Shot gives hours of concentration",
+      "status": "unsupported-seller-efficacy",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "boundary": "Omit as fact"
+    },
+    {
+      "id": "R370-18",
+      "statement": "Inspire3 public partner program exists",
+      "status": "public-site",
+      "url": "https://affiliates.inspire3.com/",
+      "boundary": "Not acceptance"
+    },
+    {
+      "id": "R370-19",
+      "statement": "Final Vestige partner approval",
+      "status": "UNVERIFIED",
+      "url": "https://affiliates.inspire3.com/",
+      "boundary": "Private account proof required"
+    },
+    {
+      "id": "R370-20",
+      "statement": "Issued FV earning link",
+      "status": "UNVERIFIED",
+      "url": "https://affiliates.inspire3.com/",
+      "boundary": "No activation"
+    },
+    {
+      "id": "R370-21",
+      "statement": "Website/social/email permissions",
+      "status": "UNVERIFIED",
+      "url": "https://affiliates.inspire3.com/",
+      "boundary": "Separate channel review"
+    },
+    {
+      "id": "R370-22",
+      "statement": "Approved creative/swipe rights",
+      "status": "UNVERIFIED",
+      "url": "https://affiliates.inspire3.com/",
+      "boundary": "No copying ads"
+    },
+    {
+      "id": "R370-23",
+      "statement": "Affiliate commission paid to FV",
+      "status": "UNVERIFIED",
+      "url": "https://affiliates.inspire3.com/",
+      "boundary": "Clicks not sales"
+    },
+    {
+      "id": "R370-24",
+      "statement": "FV paid rights-cleared Mind SKU",
+      "status": "UNVERIFIED",
+      "url": "https://finalvestige.com/focus/",
+      "boundary": "Free resource is not paid SKU"
+    },
+    {
+      "id": "R370-25",
+      "statement": "FTC near-link disclosure",
+      "status": "FTC-guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "boundary": "Disclose adjacent"
+    },
+    {
+      "id": "R370-26",
+      "statement": "Product-specific health substantiation",
+      "status": "FTC-guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "boundary": "No extrapolation"
+    },
+    {
+      "id": "R370-27",
+      "statement": "Actual published Grok asset IDs for three topics",
+      "status": "UNVERIFIED",
+      "url": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit",
+      "boundary": "Praxxis verification"
+    },
+    {
+      "id": "R370-28",
+      "statement": "Existing Jetpack confirmed lead attribution",
+      "status": "UNTESTED",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "boundary": "No duplicate"
+    },
+    {
+      "id": "R370-29",
+      "statement": "Variant B playable film",
+      "status": "NOT_BUILT",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "boundary": "Poster/captions only"
+    },
+    {
+      "id": "R370-30",
+      "statement": "A/B increases paid conversion",
+      "status": "UNTESTED",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "boundary": "Hypothesis not outcome"
+    },
+    {
+      "id": "R370-31",
+      "statement": "Checkout terms and delivery verified",
+      "status": "UNVERIFIED",
+      "url": "https://zen12.com/",
+      "boundary": "Hold commerce"
+    },
+    {
+      "id": "R370-32",
+      "statement": "Refund-adjusted net/1k qualified sessions",
+      "status": "NOT_COMPUTABLE",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "boundary": "Missing settlement and denominator"
+    }
+  ],
+  "gates": [
+    {
+      "name": "named_merchant_partner_approval",
+      "state": "HOLD"
+    },
+    {
+      "name": "authorized_domain",
+      "state": "HOLD"
+    },
+    {
+      "name": "authorized_social_channels",
+      "state": "HOLD"
+    },
+    {
+      "name": "authorized_email_channel",
+      "state": "HOLD"
+    },
+    {
+      "name": "issued_attribution_link",
+      "state": "HOLD"
+    },
+    {
+      "name": "link_destination_offer_match",
+      "state": "HOLD"
+    },
+    {
+      "name": "creative_rights",
+      "state": "HOLD"
+    },
+    {
+      "name": "substantiated_product_claims",
+      "state": "HOLD"
+    },
+    {
+      "name": "independent_editorial_approval",
+      "state": "HOLD"
+    },
+    {
+      "name": "disclosure_placement",
+      "state": "HOLD"
+    },
+    {
+      "name": "responsive_browser_QA",
+      "state": "HOLD"
+    },
+    {
+      "name": "WCAG_keyboard_QA",
+      "state": "HOLD"
+    },
+    {
+      "name": "screenreader_QA",
+      "state": "HOLD"
+    },
+    {
+      "name": "reduced_motion_QA",
+      "state": "HOLD"
+    },
+    {
+      "name": "no_js_QA",
+      "state": "HOLD"
+    },
+    {
+      "name": "server_sanitization_QA",
+      "state": "HOLD"
+    },
+    {
+      "name": "CSP_security_QA",
+      "state": "HOLD"
+    },
+    {
+      "name": "media_encoding",
+      "state": "HOLD"
+    },
+    {
+      "name": "poster_rights",
+      "state": "HOLD"
+    },
+    {
+      "name": "captions_and_transcript",
+      "state": "HOLD"
+    },
+    {
+      "name": "video_lazy_load",
+      "state": "HOLD"
+    },
+    {
+      "name": "variant_parity",
+      "state": "HOLD"
+    },
+    {
+      "name": "ab_assignment_privacy",
+      "state": "HOLD"
+    },
+    {
+      "name": "utm_asset_provenance",
+      "state": "HOLD"
+    },
+    {
+      "name": "no_duplicate_tracking",
+      "state": "HOLD"
+    },
+    {
+      "name": "jetpack_existing_funnel",
+      "state": "HOLD"
+    },
+    {
+      "name": "checkout_total",
+      "state": "HOLD"
+    },
+    {
+      "name": "refund_terms",
+      "state": "HOLD"
+    },
+    {
+      "name": "delivery_confirmation",
+      "state": "HOLD"
+    },
+    {
+      "name": "commission_reporting",
+      "state": "HOLD"
+    },
+    {
+      "name": "fee_refund_reconciliation",
+      "state": "HOLD"
+    },
+    {
+      "name": "founder_release_approval",
+      "state": "HOLD"
+    }
+  ]
+}
