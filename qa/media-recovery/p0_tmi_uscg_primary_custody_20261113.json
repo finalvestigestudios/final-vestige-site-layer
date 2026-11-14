@@ -1,0 +1,136 @@
+{
+  "schema": "fv-p0-2855-4181-publisher-to-primary-custody-v1",
+  "observed_date": "2026-11-13",
+  "method": "Read-only official catalogs and publisher article credit links; web-retriever outcomes are NOT guest browser/origin HTTP. No image binaries downloaded.",
+  "records": [
+    {
+      "slot": "285:5",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "published_src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "published_source_last_wp_readback": "2026-11-08",
+      "retriever": {
+        "date": "2026-11-13",
+        "url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+        "tool_wrapper_code": 404,
+        "tool_result": "NOT_FOUND",
+        "origin_status": null,
+        "guest_status": null
+      },
+      "primary_credited_source": {
+        "publisher_url": "https://discover.hubpages.com/entertainment/The-China-Syndrome-Blockbuster-Movie-Becomes-Eerie-Prophecy",
+        "publisher_credit_direct_file": "https://upload.wikimedia.org/wikipedia/commons/0/09/Three_mile_island_062010.jpg",
+        "catalog": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "publisher_photo_caption": "Photo of Three Mile Island Nuclear Generating Station taken on June 6, 2010.",
+        "catalog_description_photo_date": "2010-06-06",
+        "catalog_date_field": "2010-06-16",
+        "catalog_author": "Marque1313",
+        "catalog_license": "PD-self",
+        "catalog_dimensions_px": [
+          819,
+          614
+        ],
+        "catalog_size_display": "235 KB",
+        "subject": "2010_aerial_power_station_not_1979_accident_or_film_still",
+        "same_underlying_image": "PUBLISHER_DIRECT_CREDIT_LINK_ESTABLISHED_BINARY_ORIGINAL_CROP_NOT_PROVEN"
+      },
+      "derivative_plan": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "uncropped_possible_px": [
+          819,
+          614
+        ],
+        "exact_sixteen_nine_crop_example_px": [
+          816,
+          459
+        ],
+        "published_transformation": "ar_16:9,c_fill,w_1200",
+        "requires_crop_review": true,
+        "allowed_to_render_or_upload": false
+      },
+      "release": {
+        "browser_failure_confirmed": false,
+        "binary_match_confirmed": false,
+        "crop_parity_confirmed": false,
+        "rehost_cleared_for_this_change": false,
+        "downloaded": false,
+        "cache_written": false,
+        "wp_media_written": false,
+        "wp_post_written": false
+      }
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "published_src": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "published_source_last_wp_readback": "2026-11-08",
+      "retriever": {
+        "date": "2026-11-13",
+        "url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+        "tool_wrapper_code": 403,
+        "tool_result": "FORBIDDEN",
+        "origin_status": null,
+        "guest_status": null
+      },
+      "primary_credited_source": {
+        "publisher_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "catalog": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "virin": "210330-G-DE713-0002.JPG",
+        "catalog_title": "Scotch Cap Disaster",
+        "subject": "USCG_service_portrait_Anthony_Pettit_not_lighthouse_wreckage",
+        "catalog_attribution": "U.S. Coast Guard",
+        "catalog_rights": "PHOTO_PUBLIC_DOMAIN_CLEARED_FOR_RELEASE_CREDIT_AND_DOD_LIMITATIONS_APPLY",
+        "catalog_download_size_display": "0.04 MB",
+        "catalog_dimensions_px": null,
+        "same_underlying_image": "VIRIN_AND_SOURCE_MATCH_CATALOG_ITEM_BINARY_NOT_PROVEN"
+      },
+      "derivative_plan": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "uncropped_possible_px": null,
+        "requires_crop_review": true,
+        "allowed_to_render_or_upload": false
+      },
+      "release": {
+        "browser_failure_confirmed": false,
+        "binary_match_confirmed": false,
+        "crop_parity_confirmed": false,
+        "rehost_cleared_for_this_change": false,
+        "downloaded": false,
+        "cache_written": false,
+        "wp_media_written": false,
+        "wp_post_written": false
+      }
+    }
+  ],
+  "controls": {
+    "max_derivative_width_px": 960,
+    "no_upscale": true,
+    "siteqa_owner_pr": 154,
+    "p0_queue": [
+      "285:5",
+      "285:2",
+      "287:5",
+      "418:1",
+      "418:2",
+      "407:1"
+    ],
+    "guest_broken_total": null,
+    "reported_broken_unconfirmed": 42,
+    "frozen_posts": 61,
+    "frozen_inline_images": 355,
+    "current_posts_last_census": 66,
+    "current_inline_images_last_census": 361,
+    "oversized_originals_last_census": 16,
+    "oversized_stored_bytes_last_census": 49107665,
+    "proposed_wire_savings_percent": 76,
+    "measured_wire_savings_percent": null,
+    "third_party_downloads": 0,
+    "wp_production_writes": 0,
+    "homepage_changes": 0,
+    "subscription_spend_usd": 0,
+    "stage": "HOLD_BROWSER_VISUAL_RIGHTS"
+  }
+}

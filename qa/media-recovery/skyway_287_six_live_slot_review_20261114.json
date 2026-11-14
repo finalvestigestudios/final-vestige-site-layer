@@ -1,0 +1,114 @@
+{
+  "schema": "fv-skyway-287-six-image-live-review-snapshot-v1",
+  "observed_date_pt": "2026-11-14",
+  "capture_method": "WordPress posts_get context=edit read-only; NOT visitor-browser or origin HTTP",
+  "post": {
+    "id": 287,
+    "status": "publish",
+    "modified": "2026-11-02T21:40:01",
+    "url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/"
+  },
+  "source_audit_path": "qa/media-recovery/skyway_visual_fidelity_287_20261114.json",
+  "source_audit_blob": "176810f12a41d9d02d7c508edbfeca2abe20b5fb",
+  "source_audit_items_exact_live_match": true,
+  "images": [
+    {
+      "slot": "287:0",
+      "src": "https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/IIYZWAFLJUQD3YGEYEKMG5PVXY.jpg",
+      "alt": "An automobile stopped near the broken end of the Sunshine Skyway Bridge after the May 9, 1980 collapse.",
+      "caption_html": "A car stopped at the severed Sunshine Skyway roadway after the collapse. The difference between stopping and falling was measured in feet.",
+      "html_width": "1024",
+      "html_height": "672",
+      "guest_http_status": null,
+      "guest_intrinsic_px": null,
+      "guest_transfer_bytes": null
+    },
+    {
+      "slot": "287:1",
+      "src": "https://cloudfront-us-east-1.images.arcpublishing.com/tbt/555OWMWIJMI6TGNIIBWI6S7HAY.jpg",
+      "alt": "The bulk carrier Summit Venture beneath the broken Sunshine Skyway Bridge after the collision.",
+      "caption_html": "<em>Summit Venture</em> beneath the severed Sunshine Skyway after striking pier 2S.",
+      "html_width": null,
+      "html_height": null,
+      "guest_http_status": null,
+      "guest_intrinsic_px": null,
+      "guest_transfer_bytes": null
+    },
+    {
+      "slot": "287:2",
+      "src": "https://skywaydisaster.com/images/timeline2.jpg",
+      "alt": "Diagram showing the Summit Venture collision sequence at the Sunshine Skyway Bridge.",
+      "caption_html": "Collision geometry at the old Sunshine Skyway. By the time the bridge emerged from the rain, the ship had roughly one ship-length left.",
+      "html_width": null,
+      "html_height": null,
+      "guest_http_status": null,
+      "guest_intrinsic_px": null,
+      "guest_transfer_bytes": null
+    },
+    {
+      "slot": "287:3",
+      "src": "https://img.connatix.com/ecf95169-f8cd-4cd5-8698-9bc54211f8e9/1_th.jpg",
+      "alt": "Automobile halted at the broken end of the Sunshine Skyway after the 1980 collapse.",
+      "caption_html": "A vehicle stopped essentially at the broken end of a roadway that had existed moments earlier.",
+      "html_width": null,
+      "html_height": null,
+      "guest_http_status": null,
+      "guest_intrinsic_px": null,
+      "guest_transfer_bytes": null
+    },
+    {
+      "slot": "287:4",
+      "src": "https://www.flmd.uscourts.gov/sites/flmd/files/images/figure-9-sunshine-skyway-bridge-3.jpg",
+      "alt": "Federal archival view of the collapsed Sunshine Skyway Bridge and Summit Venture after the May 1980 accident.",
+      "caption_html": "The collapsed span and <em>Summit Venture</em> after the accident. Federal archival image.",
+      "html_width": null,
+      "html_height": null,
+      "guest_http_status": null,
+      "guest_intrinsic_px": null,
+      "guest_transfer_bytes": null
+    },
+    {
+      "slot": "287:5",
+      "src": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+      "caption_html": "The Sunshine Skyway story did not end with replacement. Engineers also changed how the new crossing dealt with vessel impact.",
+      "html_width": null,
+      "html_height": null,
+      "guest_http_status": null,
+      "guest_intrinsic_px": null,
+      "guest_transfer_bytes": null
+    }
+  ],
+  "triage": {
+    "priority_slots": [
+      "287:5"
+    ],
+    "editorial_integrity_slots": [
+      "287:4",
+      "287:5"
+    ],
+    "slot_5_publisher_moved_candidate_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+    "slot_5_candidate_retriever": "IMAGE_DISPLAYED_NO_HTTP_STATUS",
+    "slot_5_published_retriever": "RETRIEVER_404_NOT_GUEST_HTTP",
+    "source_swap_approved": false,
+    "rights_rehost_approved": false,
+    "binary_identity_verified": false,
+    "scene_comparison_complete": false,
+    "guest_browser_failure_verified": false
+  },
+  "limits": {
+    "historical_posts": 61,
+    "historical_images": 355,
+    "expanded_posts_last_verified": 66,
+    "reported_broken_images": 42,
+    "guest_verified_broken_images": null,
+    "claimed_wire_reduction_pct": 76,
+    "measured_wire_reduction_pct": null,
+    "oversized_originals_last_verified": 16,
+    "oversized_stored_bytes_last_verified": 49107665,
+    "wp_prod_writes": 0,
+    "downloaded_media": 0,
+    "siteqa_collector_changes": 0,
+    "homepage_design_changes": 0
+  }
+}

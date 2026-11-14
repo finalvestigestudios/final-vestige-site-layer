@@ -1,0 +1,416 @@
+{
+  "schema": "fv-live-wp125-p0-six-recovery-readback-v1",
+  "observed_local_date": "2026-11-14",
+  "method": "Authenticated read-only WordPress posts_get(context=edit) for four published posts and two media_list pages; independent web retriever labels from Nov 14 retained only as tool wrappers; no origin GET or guest Chrome",
+  "posts": {
+    "285": {
+      "modified": "2026-11-02T21:39:59",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "inline_images": 6
+    },
+    "287": {
+      "modified": "2026-11-02T21:40:01",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "inline_images": 6
+    },
+    "407": {
+      "modified": "2026-10-29T18:30:30",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "inline_images": 8
+    },
+    "418": {
+      "modified": "2026-08-28T03:11:08",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "inline_images": 6
+    }
+  },
+  "source_slots": [
+    {
+      "slot": "285:5",
+      "post_id": 285,
+      "published_source": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "caption": "Three Mile Island from the air. The public emergency outside the plant and the physical damage inside the reactor differed sharply in scale.",
+      "source_status": {
+        "retriever_date": "2026-11-14",
+        "retriever_method": "web.open",
+        "retriever_wrapper_code": 404,
+        "retriever_wrapper_message": "not_found",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_transfer_bytes": null,
+        "guest_intrinsic_dimensions": null,
+        "guest_broken": null
+      }
+    },
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "published_source": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+      "caption": "A TMI control panel illustrates the interface problem: each light and gauge represented part of the machine, but operators still had to infer the machine’s overall physical state.",
+      "source_status": {
+        "retriever_date": "2026-11-14",
+        "retriever_method": "web.open",
+        "retriever_wrapper_code": 500,
+        "retriever_wrapper_message": "redirect_target_inaccessible",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_transfer_bytes": null,
+        "guest_intrinsic_dimensions": null,
+        "guest_broken": null
+      }
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "published_source": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+      "caption": "The Sunshine Skyway story did not end with replacement. Engineers also changed how the new crossing dealt with vessel impact.",
+      "source_status": {
+        "retriever_date": "2026-11-14",
+        "retriever_method": "web.open",
+        "retriever_wrapper_code": 404,
+        "retriever_wrapper_message": "not_found",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_transfer_bytes": null,
+        "guest_intrinsic_dimensions": null,
+        "guest_broken": null
+      }
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "published_source": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew.",
+      "caption": "Chief Boatswain’s Mate Anthony L. Petit. U.S. Coast Guard.",
+      "source_status": {
+        "retriever_date": "2026-11-14",
+        "retriever_method": "web.open",
+        "retriever_wrapper_code": 403,
+        "retriever_wrapper_message": "forbidden",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_transfer_bytes": null,
+        "guest_intrinsic_dimensions": null,
+        "guest_broken": null
+      }
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "published_source": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "alt": "Broken concrete and debris where Scotch Cap Lighthouse stood after the April 1, 1946 tsunami.",
+      "caption": "What remained at Scotch Cap after the tsunami. U.S. Coast Guard.",
+      "source_status": {
+        "retriever_date": "2026-11-14",
+        "retriever_method": "web.open",
+        "retriever_wrapper_code": 403,
+        "retriever_wrapper_message": "forbidden",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_transfer_bytes": null,
+        "guest_intrinsic_dimensions": null,
+        "guest_broken": null
+      }
+    },
+    {
+      "slot": "407:1",
+      "post_id": 407,
+      "published_source": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "alt": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake.",
+      "caption": "A fresh Hebgen Lake fault scarp in 1959. USGS photograph by J. R. Stacy, public domain.",
+      "source_status": {
+        "retriever_date": "2026-11-14",
+        "retriever_method": "web.open",
+        "retriever_wrapper_code": 400,
+        "retriever_wrapper_message": "unsupported_binary_content_type",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_transfer_bytes": null,
+        "guest_intrinsic_dimensions": null,
+        "guest_broken": null
+      }
+    }
+  ],
+  "asset_candidates": [
+    {
+      "slot": "285:5",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "original_author_context": "https://discover.hubpages.com/entertainment/The-China-Syndrome-Blockbuster-Movie-Becomes-Eerie-Prophecy",
+      "relationship": "PUBLISHER_CREDITS_SAME_2010_COMMONS_PHOTO_BUT_PUBLISHED_URL_BINARY_UNVERIFIED",
+      "native_px": [
+        819,
+        614
+      ],
+      "max_960_no_upscale_px": [
+        819,
+        614
+      ],
+      "rights": "COMMONS_AUTHOR_PUBLIC_DOMAIN_DEDICATION_ITEM_ASSERTED",
+      "scene": "JUNE_2010_NOT_1979",
+      "reuse_approved": false
+    },
+    {
+      "slot": "285:5",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_(color).jpg",
+      "relationship": "ALTERNATIVE_1979_DOE_STATION_PHOTO_DIFFERENT_SCENE",
+      "native_px": [
+        2592,
+        2488
+      ],
+      "max_960_no_upscale_px": [
+        960,
+        921
+      ],
+      "rights": "DOE_FEDERAL_WORK_PUBLIC_DOMAIN_CATALOG_ASSERTED",
+      "scene": "1979",
+      "reuse_approved": false
+    },
+    {
+      "slot": "285:2",
+      "catalog_url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "relationship": "SAME_PUBLISHER_RELOCATED_HOST_IDENTITY_UNVERIFIED",
+      "native_px": null,
+      "max_960_no_upscale_px": null,
+      "rights": "PUBLISHER_PERMISSION_NOT_ESTABLISHED",
+      "scene": "CONTROL_PANEL",
+      "reuse_approved": false
+    },
+    {
+      "slot": "287:5",
+      "catalog_url": "https://floridamemory.com/items/show/32082",
+      "relationship": "OFFICIAL_1980_EVENT_ALTERNATIVE_DIFFERENT_PHOTO",
+      "native_px": null,
+      "max_960_no_upscale_px": null,
+      "rights": "FLORIDA_MEMORY_ITEM_RIGHTS_RECHECK_REQUIRED",
+      "scene": "1980_05_09_COLLAPSE_AFTERMATH",
+      "reuse_approved": false
+    },
+    {
+      "slot": "418:1",
+      "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "relationship": "COAST_GUARD_PORTRAIT_CATALOG_VIRIN_NOT_BINARY_MATCH",
+      "native_px": null,
+      "max_960_no_upscale_px": null,
+      "rights": "USCG_ITEM_LEVEL_RIGHTS_CHECK",
+      "scene": "SERVICE_PORTRAIT",
+      "reuse_approved": false
+    },
+    {
+      "slot": "418:2",
+      "catalog_url": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+      "candidate_url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg",
+      "relationship": "SAME_1946_SCENE_AND_FILENAME_STEM_NOT_BINARY_PROOF",
+      "native_px": [
+        600,
+        463
+      ],
+      "max_960_no_upscale_px": [
+        600,
+        463
+      ],
+      "rights": "MUSEUM_CREDITS_USCG_NO_ITEM_REHOST_GRANT",
+      "scene": "1946_04_01_AFTERMATH",
+      "reuse_approved": false
+    },
+    {
+      "slot": "407:1",
+      "catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+      "relationship": "OFFICIAL_USGS_CATALOG_ORIGINAL_URL_MATCH_NOT_BYTES",
+      "native_px": null,
+      "max_960_no_upscale_px": null,
+      "rights": "USGS_ITEM_PUBLIC_DOMAIN_LABEL_VERIFY",
+      "scene": "1959_FAULT_SCARP",
+      "reuse_approved": false
+    }
+  ],
+  "wp_media": {
+    "date": "2026-11-14",
+    "image_attachments_total": 125,
+    "strict_decimal_gt_bytes": 1500000,
+    "oversized_count": 16,
+    "oversized_stored_bytes": 49107665,
+    "oversized_origins": [
+      {
+        "id": 39,
+        "bytes": 2892087,
+        "dimensions_px": [
+          1672,
+          941
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png"
+      },
+      {
+        "id": 40,
+        "bytes": 2552136,
+        "dimensions_px": [
+          1672,
+          941
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png"
+      },
+      {
+        "id": 41,
+        "bytes": 2498247,
+        "dimensions_px": [
+          1672,
+          941
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png"
+      },
+      {
+        "id": 42,
+        "bytes": 2488823,
+        "dimensions_px": [
+          1672,
+          941
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png"
+      },
+      {
+        "id": 43,
+        "bytes": 2836245,
+        "dimensions_px": [
+          1672,
+          941
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png"
+      },
+      {
+        "id": 293,
+        "bytes": 2090327,
+        "dimensions_px": [
+          1122,
+          1402
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/ne.png"
+      },
+      {
+        "id": 382,
+        "bytes": 2318980,
+        "dimensions_px": [
+          1800,
+          1200
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg"
+      },
+      {
+        "id": 388,
+        "bytes": 8176362,
+        "dimensions_px": [
+          4256,
+          2832
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg"
+      },
+      {
+        "id": 389,
+        "bytes": 2822969,
+        "dimensions_px": [
+          2147,
+          1417
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg"
+      },
+      {
+        "id": 405,
+        "bytes": 2201573,
+        "dimensions_px": [
+          1122,
+          1402
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png"
+      },
+      {
+        "id": 482,
+        "bytes": 2293016,
+        "dimensions_px": [
+          1672,
+          941
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png"
+      },
+      {
+        "id": 1257,
+        "bytes": 4798395,
+        "dimensions_px": [
+          4000,
+          3000
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg"
+      },
+      {
+        "id": 1258,
+        "bytes": 5553669,
+        "dimensions_px": [
+          5667,
+          3831
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg"
+      },
+      {
+        "id": 1714,
+        "bytes": 1543002,
+        "dimensions_px": [
+          1280,
+          1280
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png"
+      },
+      {
+        "id": 2148,
+        "bytes": 2030948,
+        "dimensions_px": [
+          1821,
+          1190
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/11/1927-caernarvon-levee-explosion-noaa-archive.jpg"
+      },
+      {
+        "id": 2432,
+        "bytes": 2010886,
+        "dimensions_px": [
+          1280,
+          720
+        ],
+        "url": "https://finalvestige.com/wp-content/uploads/2026/11/final-vestige-artifact-editions-editorial-concept.png"
+      }
+    ],
+    "visitor_network_bytes": null
+  },
+  "historical_baseline": {
+    "frozen_published_posts": 61,
+    "frozen_inline_images": 355,
+    "reported_broken_originals": 42,
+    "confirmed_guest_broken": null,
+    "claimed_76_percent_wire_savings_measured": false,
+    "measured_savings_percent": null
+  },
+  "release": {
+    "all_candidates_hold": true,
+    "source_identity_verified": false,
+    "item_rights_cleared": false,
+    "editorial_approval": false,
+    "guest_browser_test_required": true,
+    "qa_owner_pr": 154,
+    "maximum_derivative_width": 960,
+    "no_upscale": true,
+    "cache_or_download_allowed": false,
+    "wp_production_write_allowed": false,
+    "homepage_changes_allowed": false,
+    "merges_allowed": false,
+    "subscriptions_usd": 0
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "schema": "fv-p0-usgs-dual-original-link-evidence-v1",
+  "observation_date": "2026-11-13",
+  "scope": "OFFLINE_DRAFT_ONLY_NO_MEDIA_BINARY_NO_WORDPRESS_WRITE",
+  "source_item": {
+    "post_id": 407,
+    "slot": "407:1",
+    "post_title": "The Lake Wasn't There Yesterday",
+    "status": "publish",
+    "modified_wp": "2026-10-29T18:30:30",
+    "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+    "published_src": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+    "stored_wordpress_src_readback_exact": true,
+    "wp_read_method": "WordPress posts_get context=edit include_fields=id,status,modified,content,link 2026-11-13",
+    "caption": "A fresh Hebgen Lake fault scarp in 1959. USGS photograph by J. R. Stacy, public domain."
+  },
+  "primary_source_a": {
+    "catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+    "catalog_title": "Hebgen Lake fault scarp in 1959",
+    "catalog_original_link_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+    "link_method": "USGS catalog Original link clicked 2026-11-13",
+    "retriever_result": "ERROR_WRAPPER_UNSUPPORTED_BINARY_OCTET_STREAM",
+    "retriever_wrapper_code": 400,
+    "origin_http_status": null,
+    "browser_http_status": null,
+    "browser_decoded_pixels": null,
+    "encoded_transfer_bytes": null
+  },
+  "primary_source_b": {
+    "catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+    "catalog_title": "Hebgen Lake fault scarp in 1959",
+    "catalog_original_link_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+    "link_method": "USGS alternate catalog Original link clicked 2026-11-13",
+    "retriever_result": "IMAGE_RENDERED_BY_WEB_RETRIEVER",
+    "retriever_wrapper_code": null,
+    "origin_http_status": null,
+    "browser_http_status": null,
+    "encoded_transfer_bytes": null
+  },
+  "identity": {
+    "publisher": "U.S. Geological Survey",
+    "photographer": "J. R. Stacy",
+    "source_item_title_match": true,
+    "filename_match": true,
+    "same_official_catalog_subject": true,
+    "same_binary_sha256": null,
+    "verified_same_binary": false,
+    "verified_same_crop": false,
+    "native_dimensions_px": null,
+    "visually_rendered_alternate": true
+  },
+  "rights": {
+    "catalog_source_usage": "Public Domain",
+    "catalog_a_rights_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+    "catalog_b_rights_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+    "credit": "USGS photo by J. R. Stacy",
+    "item_catalog_public_domain_assertion": true,
+    "republishing_permission_review_completed": false,
+    "third_party_caching_authorized": false,
+    "wordpress_upload_authorized": false
+  },
+  "release_gate": {
+    "guest_failure_proven": false,
+    "guest_current_src": null,
+    "guest_http_status": null,
+    "guest_natural_width": null,
+    "guest_natural_height": null,
+    "guest_wire_bytes": null,
+    "exact_byte_and_crop_parity_proven": false,
+    "rendered_css_width": null,
+    "device_pixel_ratio": null,
+    "conditional_max_derivative_width_px": 960,
+    "no_upscale": true,
+    "standalone_external_alternate_link_candidate": true,
+    "approved_to_swap_external_src": false,
+    "approved_to_rehost": false,
+    "disposition": "HOLD_PENDING_SITEQA_GUEST_AND_VISUAL_RIGHTS_STAGING"
+  },
+  "baseline": {
+    "frozen_posts": 61,
+    "frozen_inline_images": 355,
+    "historical_broken_reports": 42,
+    "guest_confirmed_broken_count": null,
+    "stored_wp_originals_above_decimal_1500000_bytes": 15,
+    "stored_oversize_originals_bytes": 47096779,
+    "claimed_savings_percent": 76,
+    "claimed_savings_verified": false
+  },
+  "evidence_note": "USGS own original-link A exactly equals FV published source. USGS alternate catalog original-link B is a distinct hosted path with the same filename and topic and rendered in independent web retriever; A returned tool-level binary/octet-stream unsupported wrapper 400. No visitor 400/404, same binary, native dimensions or 76% transfer saving established.",
+  "safety": {
+    "external_image_downloads": 0,
+    "third_party_copies": 0,
+    "production_wordpress_writes": 0,
+    "production_uploads": 0,
+    "home_page_changes": 0,
+    "merges": 0,
+    "deployments": 0,
+    "spend_usd": 0
+  }
+}
