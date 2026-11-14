@@ -63,6 +63,8 @@ def evaluate_child(name: str, exit_code: int, stdout: str, stderr: str='') -> di
    errors.append('UNAUTHORIZED_APPROVAL:'+k)
  if isinstance(payload,dict) and payload.get('state') in ('PASS','VERIFIED','LIVE','APPROVED','PUBLISH_READY'):
   errors.append('UNAUTHORIZED_SUCCESS_STATE')
+ if status == 'INVALID_HARD_HOLD': errors.append('CHILD_INVALID_HOLD')
+ if isinstance(payload,dict) and payload.get('errors'): errors.append('CHILD_REPORTED_ERRORS')
  # Do not turn a child's diagnostic status into a claim of validated native exports.
  return {'gate':name,'status':status if isinstance(status,str) else None,
          'diagnostic_errors':payload.get('errors',[]) if isinstance(payload,dict) and isinstance(payload.get('errors',[]),list) else ['MALFORMED_ERRORS'],
