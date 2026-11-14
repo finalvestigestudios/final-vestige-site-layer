@@ -26,4 +26,4 @@ $styles=$scripts=array();$main->post_content='<!-- wp:block {"ref":9999} /-->';f
 $styles=$scripts=array();$main->post_content=str_repeat('A',500001).'[fv_apollo_experience_r347]';fv_apollo_r347_enqueue();check(count($styles)===0,'oversized content short-circuits bounded scan');
 $markup=fv_apollo_r347_experience_shortcode();check(substr_count($markup,'data-fv-apollo-entry=')===13,'composite has 13 canonical-source entries');check(substr_count($markup,'data-fv-r339-cta="editorial"')===1,'composite has exactly one editorial continuation');
 check(strpos($markup,'payhip.com')===false&&strpos($markup,'data-geo-pin')===false&&strpos($markup,'<img')===false,'no merchandise, map pins or embedded photos');
-echo "PASS preflight: 10/10\n";
+echo "PASS preflight: 12/12\n";
