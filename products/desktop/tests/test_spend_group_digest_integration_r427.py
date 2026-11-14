@@ -57,6 +57,19 @@ class SpendGroupDigestIntegrationR427(unittest.TestCase):
         self.assertNotEqual(first[0]["vendor_month_evidence_sha256"],
                             second[0]["vendor_month_evidence_sha256"])
 
+    def test_real_historical_year_keeps_native_strftime_month(self):
+        # Some Python platforms emit "1-11", others "0001-11".
+        # Do not reject a legitimate imported historical calendar date.
+        historical = records()
+        historical[0]["date"] = "0001-11-02"
+        historical[1]["date"] = "0001-11-01"
+        result = run(historical)
+        expected_month = date(1, 11, 1).strftime("%Y-%m")
+        self.assertEqual({r["month"] for r in result}, {expected_month})
+        self.assertEqual(
+            {r["vendor_month_evidence_sha256"] for r in result},
+            {_vendor_month_line_digest(SOURCE, "ACME", expected_month, [2, 4])})
+
     def test_direct_digest_rejects_forged_vendor(self):
         class Forged(str):
             def encode(self, *_args, **_kwargs):
