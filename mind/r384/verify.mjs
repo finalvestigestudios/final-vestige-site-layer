@@ -59,7 +59,7 @@ check(P.includes('not research stimuli'),'SVG rights limit');
 check(!/<script\b|<foreignObject\b|<image\b/i.test(P),'SVG safe self contained');
 check(E.split(/\s+/).length>2500,'substantive 2500+ word investigation');
 for(const u of ['https://doi.org/10.1068/p281059','https://doi.org/10.1068/i0386','https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/','https://doi.org/10.1177/17470218211064903'])check(E.includes(u),'research source '+u);
-check(E.includes('not a medical-error rate')||E.includes('not a medical miss-rate'),'no clinical generalization');
+check(E.includes('does not measure real clinical error')||E.includes('not the prevalence of missed nodules'),'no clinical generalization');
 check(H.includes('Four editorial streams'),'hub four streams');
 check(H.includes('noindex,nofollow'),'hub draft noindex');
 check(safeHTML(H),'hub no forbidden controls');
