@@ -234,6 +234,12 @@ jobs:
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_revocation_r247.py
           python -W error -m unittest discover -s products/desktop/tests -p test_premium_launch_proof_r252.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_launch_proof_r252.py
+      - name: R422 reject forged license-product identities before read or path formatting
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_entitlement_native_product_r422.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_entitlement_native_product_r422.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_offline_entitlement_r11.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_offline_entitlement_r11.py
       - name: R421 reject unscoped premium review access and forged product fields
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p test_review_scope_mandatory_r421.py
