@@ -63,3 +63,40 @@ class OriginalLabelIntegrationR428(unittest.TestCase):
         self.assertEqual(item["vendor_label_variants"], "2")
         self.assertIn(r"\u0020ACME", item["source_vendor_labels"])
         self.assertIn(r"\u00A0ACME", item["source_vendor_labels"])
+
+
+class BoundedSourceVendorLabelsIntegrationR429(unittest.TestCase):
+    def test_high_cardinality_report_is_bounded_without_changing_financial_facts(self):
+        records = [row(i + 2, f"SOURCE{i:03}", "1.00") for i in range(100)]
+        report = run(records, normalize=lambda value: "ONEVENDOR")
+        self.assertEqual(len(report), 1)
+        item = report[0]
+        self.assertEqual(item["amount"], "100.00")
+        self.assertEqual(item["gross_charges"], "100.00")
+        self.assertEqual(item["gross_credits"], "0")
+        self.assertEqual(item["source_sha256"], _SOURCE)
+        self.assertEqual(item["vendor_label_variants"], "100")
+        self.assertIn("normalized_vendor_collision_review", item["flag"])
+        self.assertEqual(item["vendor_month_evidence_count"], "100")
+        self.assertLessEqual(len(item["source_vendor_labels"]), 8192)
+        self.assertIn(r"\u[PREVIEW_ONLY:shown=32:omitted=68:sha256=",
+                      item["source_vendor_labels"])
+
+    def test_long_original_vendor_label_keeps_a_verifiable_review_marker(self):
+        original = "A" * 3000
+        item = run([row(2, original)], normalize=lambda value: "ONEVENDOR")[0]
+        self.assertEqual(item["amount"], "10.00")
+        self.assertEqual(item["vendor_label_variants"], "1")
+        self.assertEqual(item["source_rows"], "2")
+        self.assertTrue(item["source_vendor_labels"].startswith(
+            "A" * 64 + r"\u[LABEL_PREFIX_ONLY]"))
+        self.assertIn(r"\u[PREVIEW_ONLY:shown=1:omitted=0:sha256=",
+                      item["source_vendor_labels"])
+
+    def test_high_cardinality_digest_and_review_stable_across_row_order(self):
+        records = [row(i + 2, f"V{i:03}", "1.25") for i in range(40)]
+        forward = run(records, normalize=lambda value: "ONEVENDOR")
+        reverse = run(list(reversed(records)), normalize=lambda value: "ONEVENDOR")
+        self.assertEqual(forward, reverse)
+        self.assertEqual(forward[0]["amount"], "50.00")
+        self.assertEqual(forward[0]["vendor_label_variants"], "40")
