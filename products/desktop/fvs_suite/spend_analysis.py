@@ -16,6 +16,7 @@ from .spend_vendor_evidence_r358 import spend_vendor_evidence
 from .spend_median import RunningDecimalMedian
 from .spend_input import validated_spend_rows
 from .spend_source_digest_r426 import require_native_spend_source_sha256
+from .spend_group_digest_r427 import checked_spend_group_evidence
 from .spend_callback_context_r355 import invoke_spend_callback
 from .spend_format_custody_r357 import verified_spend_money_display
 from .spend_source_row_order_r363 import canonical_spend_source_rows
@@ -32,7 +33,8 @@ def _vendor_month_line_digest(source_sha256: str, vendor: str, month: str,
     so equal line positions from different files/groups cannot masquerade as
     equal evidence. A bounded report preview NEVER replaces this full digest.
     """
-    source_sha256 = require_native_spend_source_sha256(source_sha256)
+    source_sha256, vendor, month, ordered_lines = checked_spend_group_evidence(
+        source_sha256, vendor, month, ordered_lines)
     digest = sha256(b"FVS-SPEND-VENDOR-MONTH-LINES-v1\n")
     for element in (source_sha256, vendor, month, str(len(ordered_lines))):
         digest.update(element.encode("ascii") + b"\n")
