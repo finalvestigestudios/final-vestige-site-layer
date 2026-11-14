@@ -1,0 +1,31 @@
+{
+  "snapshot_as_of": "2026-11-14T11:38:43Z",
+  "source": "authenticated WordPress Jetpack status/get_settings, public WP and finalvestige.com content; no PII",
+  "newsletter_enabled": true,
+  "new_post_automatic_send": false,
+  "email_content_format": "full",
+  "from_name": "Final Vestige Studios",
+  "reply_to": "no-reply",
+  "recent_five_post_send_status": "never_sent_opted_out",
+  "subscriber_aggregates": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "wp_followers": 3,
+    "direct_email_followers": 0,
+    "non_additive": true
+  },
+  "eligible_recipients": null,
+  "provider_confirmation_transition_receipt": null,
+  "actual_welcome_receipt": null,
+  "native_received_email_preview": null,
+  "valid_fv_postal_address": null,
+  "functional_unsubscribe": null,
+  "affiliate_email_rights": null,
+  "issued_affiliate_url": null,
+  "paid_merchant_receipts": null,
+  "qualified_human_sessions": null,
+  "realized_net_revenue_per_1000": null,
+  "six_issues": "HOLD_UNSENT",
+  "issues_03_05": "HOLD_MERCHANT"
+}

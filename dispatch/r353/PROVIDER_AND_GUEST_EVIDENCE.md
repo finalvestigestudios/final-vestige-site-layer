@@ -1,0 +1,11 @@
+# Two different observations: do not call a failed subscription from HTML alone
+
+**Authenticated WP content-view:** /dispatch/ (page #523) contains a Subscribe anchor to its own page in the WordPress page-content representation. Seen in R351 and rechecked Nov 14. This can be the API representation of a dynamic subscription block rather than its final public DOM.
+
+**Public anonymous page extraction:** https://finalvestige.com/dispatch/ at retrieval on Nov 14 2026 visibly includes the labeled Subscribe section, `Type your email…` input, Subscribe button and confirmation instructions. https://finalvestige.com/focus/ likewise surfaces a signup input, Fieldbook download, and explicit newsletter/affiliate consent copy. This is **structure evidence only**. It does not prove interactive JS, keyboard submission, double opt-in, delivered welcome, spam placement, eligibility or unique leads. Real guest test must not press Submit absent explicit founder authorization.
+
+**Provider settings (read-only 2026-11-14 11:38 UTC):** newsletter ON, automatic new-post emails OFF, full-message selected, sender Final Vestige Studios, reply-to no-reply; configured welcome includes direct 52-page PDF URL. The five most recent post notifications carry `never_sent_opted_out`. Provider subscriber aggregates: total=3, confirmed=3, unconfirmed=2, WP.com followers=3, direct-email followers=0. They are overlapping and must never be summed. `site_can_send=true` is capability, not permission to send. An actual recipient list and consent/audience reconciliation cannot be produced from aggregate counts.
+
+**Read-only verification acceptance (Claude/Focus + Dispatch):** anonymous real-browser viewport at 320/390/768/1440, label/focus order, valid email input visibility and consent text; do NOT submit. Privately inspect provider-side confirmation transitions and mailing eligibility by existing source, never exporting PII. Founder-authorized individual testing of welcome/received MIME and unsubscribe is a separate future approval, not authorized now. The WP.com confirm email observed 2026-10-25 is not welcome receipt. The site's PDF direct-download path does not imply signup confirmation.
+
+Owner: Claude/Focus owns live form and events; Dispatch owns evidence rules. No duplicate list, pixel, backend, or new instrumentation.
