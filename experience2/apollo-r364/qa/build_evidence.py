@@ -4,7 +4,7 @@ import hashlib,json,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[3]
 EX=ROOT/'experience2'/'apollo-r364';OUT=EX/'QA';OUT.mkdir(exist_ok=True)
-source=[EX/'README.md',EX/'custody-asset-bridge.php',EX/'qa'/'php_contract.php',EX/'qa'/'browser_gate.py',EX/'qa'/'build_evidence.py']
+source=[EX/'README.md',EX/'custody-asset-bridge.php',EX/'qa'/'wp_contract.php',EX/'qa'/'browser_gate.py',EX/'qa'/'build_evidence.py']
 proof=sorted(x for x in OUT.iterdir() if x.is_file() and x.suffix in ('.png','.pdf','.json'))
 paths=source+proof
 manifest={'sprint':'R364','provenance':'local audited PHP/Chromium fixture, not WordPress, HTTP CSP or production','files':[{'path':str(x.relative_to(ROOT)),'sha256':hashlib.sha256(x.read_bytes()).hexdigest(),'bytes':x.stat().st_size} for x in paths]}
