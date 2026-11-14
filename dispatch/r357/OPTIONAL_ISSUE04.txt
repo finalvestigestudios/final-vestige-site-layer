@@ -1,0 +1,30 @@
+FINAL VESTIGE · THE DISPATCH
+OPTIONAL ISSUE 04 — UNSENT · NOT ADOPTED
+SUBJECT: Apollo 1: The danger was bigger than one spark
+PREHEADER (offline simulation only): A ground test, a sealed hatch, and what NASA could—and could not—reconstruct.
+
+The rocket was not about to launch. On January 27, 1967, Gus Grissom, Ed White and Roger Chaffee were inside Apollo’s command module for a ground test. The test conditions were recorded. Their danger had not been adequately controlled.
+
+Then came a report of fire.
+
+It is easy to reduce what followed to one frightening number. A NASA preliminary briefing described roughly fourteen seconds from the first indication of fire to rupture of the command module. That February 1967 briefing also cautioned that the clocks might differ by a second or two. The later Apollo 204 Review Board reported approximately fifteen seconds from the first verbal warning to rupture. Those are estimates using different start points. Neither tells us precisely when the men died.
+
+The official investigation followed the spread of flames in a pressurized, oxygen-rich cabin, through combustible materials and around obstacles to escape. The inward-opening hatch could not be opened against the rising pressure. It was a terrible physical fact, but it was not the entire explanation.
+
+Investigators could identify the conditions that made disaster possible without identifying the precise spark that initiated the fire. They examined wiring, combustibles, test procedures, emergency preparation and the decisions that had allowed risks to accumulate.
+
+Knowing that a system was unsafe does not require us to pretend every second and every link in the chain is settled.
+
+That is the discipline behind Final Vestige’s historical investigations. A single vivid detail may be memorable. The complete record is more useful. When a story sounds neatly solved, ask what the inquiry actually established—and what remains inference.
+
+PRIMARY CTA: Read the Apollo 1 investigation — https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+
+SOURCES (not additional CTAs):
+NASA preliminary, February 3, 1967: https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/seamans.html
+NASA Apollo 204 Board investigation: https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html
+NASA Board chronology: https://www.nasa.gov/history/Apollo204/tragedy.html
+NASA NSSDC Apollo 1 overview: https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo1info.html
+
+LEGAL / RELEASE HOLD — NOT FOR DISTRIBUTION.
+Sender: Final Vestige Studios. Physical address: [[VALID_POSTAL_ADDRESS_REQUIRED]]. Unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]].
+HOLD_UNSENT
