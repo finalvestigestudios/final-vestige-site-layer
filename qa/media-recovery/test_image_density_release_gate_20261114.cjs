@@ -52,4 +52,4 @@ for(const [name,mutate] of [
  ['guest invalid fractional width',o=>o['34:0'].css_width_px=0],
  ['guest extreme DPR',o=>o['34:0'].dpr=5]
 ])test(name,()=>{const obs=observable();mutate(obs);const r=assess(fresh(),obs);assert.equal(r.state,'HOLD');assert.notEqual(r.results[0].density,'DENSITY_SCREEN_PASS')});
-test('unknown observation cannot certify additional media',()=>{const o=observable();o['123:1']=o['34:0'];assert.ok(assess(fresh(),o).issues.includes('unknown_observation_slot')});
+test('unknown observation cannot certify additional media',()=>{const o=observable();o['123:1']=o['34:0'];assert.ok(assess(fresh(),o).issues.includes('unknown_observation_slot'))});
