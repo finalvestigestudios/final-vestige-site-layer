@@ -20,7 +20,7 @@ test('all three assets share subject',()=>{for(const v of [md,txt,html])assert(v
 test('preheader is a proposal only',()=>assert.match(md,/not a verified standalone Jetpack/));
 test('HTML has lang and viewport',()=>{assert.match(html,/<html lang="en">/);assert.match(html,/name="viewport"/);});
 test('email HTML table-only and inert',()=>{assert.match(html,/role="presentation"/);assert.doesNotMatch(html,/<script|<form|<iframe|<img/i);});
-test('one primary CTA in email HTML',()=>{assert.equal((html.match(/href="https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"/g)||[]).length,1);});
+test('one primary CTA in email HTML',()=>{assert.equal(html.split('href="'+destination+'"').length-1,1);});
 test('main CTA in text and markdown',()=>{assert(txt.includes(destination));assert(md.includes(destination));});
 test('no offer link and no affiliate activation',()=>{for(const v of [md,txt,html])assert.doesNotMatch(v,/affiliates\\.inspire3\\.com|[?&]aff(?:id|iliate)=|buy now/i);});
 test('inert footer address and unsubscribe in all assets',()=>{for(const v of [md,txt,html]){assert(v.includes('[[VALID_FV_POSTAL_ADDRESS_REQUIRED]]'));assert(v.includes('[[VERIFIED_NATIVE_UNSUBSCRIBE_REQUIRED]]'));}});
