@@ -1,0 +1,464 @@
+{
+  "schema": "fv-mind-claim-gates-v1",
+  "run": "R383",
+  "date": "2026-11-14",
+  "offer": "Zen12 Premium",
+  "commercialStatus": "HARD_HOLD",
+  "scope": "editorial and presell drafts only",
+  "sources": {
+    "raymond": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+    "slagter": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+    "plos": "https://doi.org/10.1371/journal.pbio.0050138",
+    "vander": "https://doi.org/10.1177/1745691617709589",
+    "rct": "https://pubmed.ncbi.nlm.nih.gov/32969686/",
+    "tech": "https://pubmed.ncbi.nlm.nih.gov/27894358/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftchealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "inspire": "https://inspire3.com/",
+    "zen": "https://zen12.com/",
+    "hyp": "https://hypnosislive.com/",
+    "brain": "https://brainwaveshots.com/",
+    "aff": "https://affiliates.inspire3.com/",
+    "focus": "https://finalvestige.com/focus/",
+    "puy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "dispatch": "https://finalvestige.com/dispatch/"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12 Premium contains 48 MP3 tracks across 12 levels",
+      "type": "seller_description",
+      "source": "https://zen12.com/",
+      "decision": "ALLOW_AS_ATTRIBUTED_SELLER_FEATURE",
+      "limit": "Exact referred package/checkouts not independently verified",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C02",
+      "claim": "Zen12 publicly advertises a one-year refund guarantee",
+      "type": "seller_description",
+      "source": "https://zen12.com/",
+      "decision": "ALLOW_WITH_SELLER_QUALIFIER",
+      "limit": "Refund execution/eligibility not tested",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C03",
+      "claim": "Zen12 page shows a displayed $87 price in an accessible snapshot",
+      "type": "seller_price_snapshot",
+      "source": "https://zen12.com/",
+      "decision": "WITHHOLD_PUBLIC_PRICE",
+      "limit": "Prior snapshots conflict with $87.99; taxes/currency/checkout unknown",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C04",
+      "claim": "Zen12 12 minutes equals 1 hour meditation",
+      "type": "product_specific_efficiency",
+      "source": "https://zen12.com/",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "limit": "No product-specific equivalence trial reviewed",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C05",
+      "claim": "Zen12 produces clinically meaningful stress/anxiety reduction",
+      "type": "health_claim",
+      "source": "https://zen12.com/",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "limit": "Requires competent reliable product-specific evidence",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C06",
+      "claim": "Zen12 boosts attention or cognitive performance",
+      "type": "product_specific_mental_claim",
+      "source": "https://zen12.com/",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "limit": "Slagter intensive training is not Zen12 trial",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 brainwave entrainment controls brainwaves",
+      "type": "mechanism_claim",
+      "source": "https://zen12.com/",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "limit": "No independently verified product-specific mechanistic evidence",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C08",
+      "claim": "Inspire3 official catalog identifies Zen12, Hypnosis Live and related brands",
+      "type": "seller_catalog",
+      "source": "https://inspire3.com/",
+      "decision": "ALLOW_WITH_SOURCE_CONTEXT",
+      "limit": "No general blanket efficacy assertion",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C09",
+      "claim": "Hypnosis Live seller describes 200+ downloadable MP3 titles",
+      "type": "seller_description",
+      "source": "https://hypnosislive.com/",
+      "decision": "ALLOW_SELLER_ONLY_IN_SEPARATE_GUIDE",
+      "limit": "Product and claim review needed",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C10",
+      "claim": "Hypnosis Live universal guarantee and dated $2 promotion",
+      "type": "merchant_marketing",
+      "source": "https://hypnosislive.com/",
+      "decision": "REJECT_AS_CURRENT_BENEFIT_OR_PRICE",
+      "limit": "June 30 2026 promo is stale and not a verified checkout",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C11",
+      "claim": "Brainwave Shots seller advertises focused audio library and one-year guarantee",
+      "type": "seller_description",
+      "source": "https://brainwaveshots.com/",
+      "decision": "ALLOW_SELLER_ONLY_IN_SEPARATE_GUIDE",
+      "limit": "No verified effectiveness or refunds",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C12",
+      "claim": "Brainwave Shots instant mood/health changes",
+      "type": "health_claim",
+      "source": "https://brainwaveshots.com/",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "limit": "Do not inherit one-click mood/health outcome",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C13",
+      "claim": "Inspire3 affiliate program publicly advertises a referral network",
+      "type": "general_program_existence",
+      "source": "https://affiliates.inspire3.com/",
+      "decision": "ALLOW_CONTEXT",
+      "limit": "Public program listing cannot prove FV acceptance",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C14",
+      "claim": "Final Vestige affiliate publisher approved and issued earnings URL",
+      "type": "publisher_rights",
+      "source": "ACCOUNT_SPECIFIC_PRIVATE_PROOF_REQUIRED",
+      "decision": "HOLD",
+      "limit": "No authenticated named approval, channel permission or unique link",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C15",
+      "claim": "Inspire3 public affiliate rates apply to FV's referred order",
+      "type": "commission_claim",
+      "source": "https://affiliates.inspire3.com/",
+      "decision": "REJECT_ACCOUNT_UNVERIFIED",
+      "limit": "No commission/payout terms claimed in guide",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C16",
+      "claim": "2007 meditation training changed task attention after three months",
+      "type": "peer_reviewed_experiment",
+      "source": "https://doi.org/10.1371/journal.pbio.0050138",
+      "decision": "ALLOW_EXACT_SCOPE",
+      "limit": "Not equivalent to a consumer audio intervention",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C17",
+      "claim": "1992 RSVP study detected a temporal probe-report deficit",
+      "type": "peer_reviewed_experiment",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "decision": "ALLOW_EXACT_SCOPE",
+      "limit": "Context-dependent; not universal blindness",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C18",
+      "claim": "2020 attention trial improved self-report but not attention-task performance",
+      "type": "peer_reviewed_RCT",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/32969686/",
+      "decision": "ALLOW_EXACT_SCOPE",
+      "limit": "Do not present as replication or refutation of Slagter",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C19",
+      "claim": "Meditation research raises methodological and adverse-effect questions",
+      "type": "review",
+      "source": "https://doi.org/10.1177/1745691617709589",
+      "decision": "ALLOW_EXACT_SCOPE",
+      "limit": "Van Dam review cannot prove branded product harm",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C20",
+      "claim": "FTC expects clearly conspicuous affiliate connections near endorsements",
+      "type": "regulator",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "decision": "REQUIRED_IF_MONETIZED",
+      "limit": "Adjacent text, not only policy footer",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C21",
+      "claim": "Health-related objective claims need appropriate competent reliable evidence",
+      "type": "regulator",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "decision": "REQUIRED",
+      "limit": "No blanket medical or wellness guarantees",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C22",
+      "claim": "Existing Fieldbook is 52-page free PDF routed via one Dispatch subscription",
+      "type": "live_site_content",
+      "source": "https://finalvestige.com/focus/",
+      "decision": "ALLOW_AS_LIVE_ROUTE",
+      "limit": "No paid conversion inference or second signup",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C23",
+      "claim": "Puységur archive documents historical animal magnetism claims",
+      "type": "editorial_inventory",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "decision": "ALLOW_AS_HISTORICAL_REFERENCE",
+      "limit": "Full live page not fetched this run",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C24",
+      "claim": "An outbound affiliate click establishes a paid order",
+      "type": "measurement_inference",
+      "source": "NONE",
+      "decision": "REJECT",
+      "limit": "Clicks, leads and purchases are distinct",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C25",
+      "claim": "A confirmed paid referral commission occurred in this sprint",
+      "type": "financial_outcome",
+      "source": "MERCHANT_LEDGER_REQUIRED",
+      "decision": "HOLD_NOT_COMPUTABLE",
+      "limit": "No authenticated sales ledger",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C26",
+      "claim": "FV-owned Mind SKU is currently rights-cleared and purchasable",
+      "type": "merchant_rights",
+      "source": "PAYHIP_SKU_CHECKOUT_REQUIRED",
+      "decision": "HOLD_NOT_VERIFIED",
+      "limit": "No authenticated paid SKU + delivery + refund",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C27",
+      "claim": "Optional 42s video increases revenue over text version",
+      "type": "experiment_outcome",
+      "source": "NONE",
+      "decision": "TEST_HYPOTHESIS_ONLY",
+      "limit": "No playable video, assignment, revenue or sample",
+      "last_reviewed": "2026-11-14"
+    },
+    {
+      "id": "C28",
+      "claim": "Grok-specific social source IDs were validated",
+      "type": "attribution",
+      "source": "PUBLISHED_PLATFORM_ASSET_REQUIRED",
+      "decision": "HOLD_UNKNOWN",
+      "limit": "Require actual ID and verified landing route",
+      "last_reviewed": "2026-11-14"
+    }
+  ],
+  "releaseGates": [
+    {
+      "gate": "publisher_acceptance",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "authorized_platforms",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "email_authorized",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "issued_unique_affiliate_link",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "tracking_terms",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "advertiser_creative_rights",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "exact_sku_identity",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "current_referred_checkout",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "taxes_and_currency",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "renewal_and_upsell_terms",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "refund_eligibility",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "refund_process",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "fulfillment",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "no_unsubstantiated_health_claims",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "no_unsubstantiated_finance_claims",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "near_link_disclosure",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "noncoercive_CTA",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "original_media_rights",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "film_encoded_and_hosted",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "captions_verified",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "transcript_verified",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "reduced_motion_and_no_autoplay",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "no_JS_browser",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "keyboard_focus",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "mobile_360_390_768_1440_1920",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "contrast_WCAG_AA",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "screen_reader_QA",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "CSP_and_WP_sanitization",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "site_QA_approval",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "founder_release_approval",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "actual_social_asset_ids",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "permitted_mobile_source_route",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "confirmed_Jetpack_consent",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "merchant_purchase_evidence",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "refund_fee_reconciliation",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    },
+    {
+      "gate": "net_revenue_cohorts",
+      "status": "HOLD",
+      "reason": "Not verified or not authorized for commercial release"
+    }
+  ]
+}
