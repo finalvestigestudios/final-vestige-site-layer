@@ -1,0 +1,526 @@
+{
+  "version": "R371-2026-11-14",
+  "purpose": "Unpublished source and merchant verification; not authorization",
+  "source_review_utc_date": "2026-11-14",
+  "source_links": {
+    "thompson": "https://doi.org/10.1068/p090483",
+    "wong": "https://pubmed.ncbi.nlm.nih.gov/20942363/",
+    "psalta": "https://doi.org/10.1068/p7755",
+    "fMRI": "https://doi.org/10.1177/0956797613501521",
+    "beats": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "zen": "https://zen12.com/",
+    "inspire": "https://inspire3.com/",
+    "portal": "https://affiliates.inspire3.com/",
+    "focusShot": "https://brainwaveshots.com/focus-shot",
+    "hypnosis": "https://hypnosislive.com/",
+    "fieldbook": "https://finalvestige.com/focus/",
+    "puys": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  },
+  "claims": [
+    {
+      "id": "TH01",
+      "claim": "Thompson published Thatcher illusion in Perception in 1980",
+      "source_url": "https://doi.org/10.1068/p090483",
+      "classification": "primary-publication",
+      "permission_to_state": "yes",
+      "notes": "Paper title/date/DOI verifiable; photograph is copyrighted; do not reuse"
+    },
+    {
+      "id": "TH02",
+      "claim": "Original manipulation concerns local inversion of eyes/mouth and global inversion of portrait",
+      "source_url": "https://doi.org/10.1068/p090483",
+      "classification": "primary-study",
+      "permission_to_state": "yes-with-context",
+      "notes": "Present as illustration of orientation effects; no universal claim"
+    },
+    {
+      "id": "TH03",
+      "claim": "Thatcher illusion proves exclusive face-processing module",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/20942363/",
+      "classification": "unsupported-mechanistic-inference",
+      "permission_to_state": "no",
+      "notes": "2010 study found Thatcher-like effects in non-face categories"
+    },
+    {
+      "id": "TH04",
+      "claim": "Wong et al. tested faces and cars buildings bicycles letter strings",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/20942363/",
+      "classification": "primary-study",
+      "permission_to_state": "yes",
+      "notes": "Explicit categories reported in abstract"
+    },
+    {
+      "id": "TH05",
+      "claim": "For tested tasks face effects were not exceptionally large relative to nonfaces",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/20942363/",
+      "classification": "primary-study",
+      "permission_to_state": "yes-with-scope",
+      "notes": "Scope to their task; not neural identity proof"
+    },
+    {
+      "id": "TH06",
+      "claim": "Psalta and Andrews found altered expression recognition with Thatcherized images",
+      "source_url": "https://doi.org/10.1068/p7755",
+      "classification": "primary-study",
+      "permission_to_state": "yes-with-scope",
+      "notes": "Avoid oversimplifying inversion results"
+    },
+    {
+      "id": "TH07",
+      "claim": "fMRI facial-expression regions show orientation-dependent Thatcher response",
+      "source_url": "https://doi.org/10.1177/0956797613501521",
+      "classification": "primary-study",
+      "permission_to_state": "yes-with-scope",
+      "notes": "Do not infer audio intervention effects"
+    },
+    {
+      "id": "TH08",
+      "claim": "An original geometric schematic is a validated Thatcher illusion replication",
+      "source_url": "https://doi.org/10.1068/p090483",
+      "classification": "unvalidated-original-illustration",
+      "permission_to_state": "no",
+      "notes": "Original graphic explicitly not a scientific reproduction"
+    },
+    {
+      "id": "TH09",
+      "claim": "Perception studies establish Zen12 improves cognition or attention",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/20942363/",
+      "classification": "unsupported-cross-domain-inference",
+      "permission_to_state": "no",
+      "notes": "Different intervention/outcome; not product study"
+    },
+    {
+      "id": "TH10",
+      "claim": "Puységur archive separates written testimony provenance from physical mechanism",
+      "source_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "classification": "published-editorial-source",
+      "permission_to_state": "yes",
+      "notes": "Describe FV archive methodology only"
+    },
+    {
+      "id": "TH11",
+      "claim": "Puységur's magnetic treatments were clinically effective",
+      "source_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "classification": "unsupported-medical-efficacy",
+      "permission_to_state": "no",
+      "notes": "Historical records are not clinical proof"
+    },
+    {
+      "id": "AU01",
+      "claim": "2023 binaural review analyzed fourteen EEG studies",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "classification": "peer-reviewed-systematic-review",
+      "permission_to_state": "yes",
+      "notes": "5 supportive 8 contradicting 1 mixed"
+    },
+    {
+      "id": "AU02",
+      "claim": "Every audio product causes brainwave entrainment",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "classification": "unsupported-generalization",
+      "permission_to_state": "no",
+      "notes": "Findings heterogeneous/inconsistent"
+    },
+    {
+      "id": "AU03",
+      "claim": "Binaural EEG research directly tests Zen12 Premium",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "classification": "false-product-attribution",
+      "permission_to_state": "no",
+      "notes": "No specific Zen12 intervention evaluated"
+    },
+    {
+      "id": "Z01",
+      "claim": "Zen12 Premium seller lists 12 levels and 48 MP3 files",
+      "source_url": "https://zen12.com/",
+      "classification": "seller-described-format",
+      "permission_to_state": "yes-labeled-seller",
+      "notes": "Public offer on 2026-11-14 not proof fulfillment"
+    },
+    {
+      "id": "Z02",
+      "claim": "Seller describes four styles guided/music/nature/white noise",
+      "source_url": "https://zen12.com/",
+      "classification": "seller-described-format",
+      "permission_to_state": "yes-labeled-seller",
+      "notes": "Public seller page; check changed package before launch"
+    },
+    {
+      "id": "Z03",
+      "claim": "Zen12 public Premium price displayed USD 87.99",
+      "source_url": "https://zen12.com/",
+      "classification": "seller-displayed-price",
+      "permission_to_state": "internal-only-in-copy-with-date",
+      "notes": "Never claim final checkout price; partner destination may differ"
+    },
+    {
+      "id": "Z04",
+      "claim": "Seller advertises one-year money-back guarantee",
+      "source_url": "https://zen12.com/",
+      "classification": "seller-described-terms",
+      "permission_to_state": "yes-labeled-seller",
+      "notes": "Refund exclusions/process and fulfillment not independently tested"
+    },
+    {
+      "id": "Z05",
+      "claim": "Zen12 12 minutes equals an hour of advanced meditation",
+      "source_url": "https://zen12.com/",
+      "classification": "seller-efficacy-claim",
+      "permission_to_state": "only-as-unsupported-seller-claim",
+      "notes": "No adequate independent product-specific substantiation"
+    },
+    {
+      "id": "Z06",
+      "claim": "Zen12 cures anxiety and provides guaranteed health gains",
+      "source_url": "https://zen12.com/",
+      "classification": "seller-health-claim",
+      "permission_to_state": "no",
+      "notes": "FTC health substantiation required; avoid benefit promises"
+    },
+    {
+      "id": "Z07",
+      "claim": "Zen12 has been used and independently tested by Final Vestige",
+      "source_url": "https://zen12.com/",
+      "classification": "unverified-experience",
+      "permission_to_state": "no",
+      "notes": "No purchase/use/test receipts"
+    },
+    {
+      "id": "H01",
+      "claim": "Inspire3 lists Hypnosis Live brand",
+      "source_url": "https://inspire3.com/",
+      "classification": "seller-catalog",
+      "permission_to_state": "yes-labeled-seller",
+      "notes": "Catalog brand existence only"
+    },
+    {
+      "id": "H02",
+      "claim": "Hypnosis Live seller advertises over 200 downloadable MP3 recordings",
+      "source_url": "https://hypnosislive.com/",
+      "classification": "seller-catalog",
+      "permission_to_state": "yes-labeled-seller",
+      "notes": "Avoid claiming any specific track works"
+    },
+    {
+      "id": "H03",
+      "claim": "Hypnosis Live advertised guaranteed mental improvement",
+      "source_url": "https://hypnosislive.com/",
+      "classification": "seller-efficacy",
+      "permission_to_state": "no",
+      "notes": "Not independently supported for particular product"
+    },
+    {
+      "id": "B01",
+      "claim": "Focus Shot seller describes 15 and 30 minute tracks",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "classification": "seller-described-inclusions",
+      "permission_to_state": "yes-labeled-seller",
+      "notes": "Product-specific merchant page"
+    },
+    {
+      "id": "B02",
+      "claim": "Focus Shot public offer displays USD 17.99",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "classification": "seller-displayed-price",
+      "permission_to_state": "internal-only-in-copy-with-date",
+      "notes": "No checkout confirmation; may be dynamic"
+    },
+    {
+      "id": "B03",
+      "claim": "Focus Shot delivers focus lasting 4 hours to a day",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "classification": "seller-efficacy",
+      "permission_to_state": "only-as-unsupported-seller-claim",
+      "notes": "No independent product-specific proof"
+    },
+    {
+      "id": "F01",
+      "claim": "One free published 52-page Focus Fieldbook exists",
+      "source_url": "https://finalvestige.com/focus/",
+      "classification": "live-first-party-asset",
+      "permission_to_state": "yes",
+      "notes": "Current published page; single existing signup"
+    },
+    {
+      "id": "F02",
+      "claim": "Fieldbook is clinically proven to treat disorders",
+      "source_url": "https://finalvestige.com/focus/",
+      "classification": "unsupported-first-party-claim",
+      "permission_to_state": "no",
+      "notes": "Planning tool; not clinically validated"
+    },
+    {
+      "id": "AFF01",
+      "claim": "Inspire3 hosts a public affiliate program",
+      "source_url": "https://affiliates.inspire3.com/",
+      "classification": "public-merchant-program",
+      "permission_to_state": "yes",
+      "notes": "Does not prove this publisher is approved"
+    },
+    {
+      "id": "AFF02",
+      "claim": "Final Vestige has an accepted publisher account and issued tracking URL",
+      "source_url": "https://affiliates.inspire3.com/",
+      "classification": "account-approval-missing",
+      "permission_to_state": "no",
+      "notes": "Gmail 2023 'access approved' was Reprogram.ME prospect waitlist, NOT affiliate approval"
+    },
+    {
+      "id": "AFF03",
+      "claim": "Inspire3 marketing site cites payout percentages",
+      "source_url": "https://affiliates.inspire3.com/",
+      "classification": "public-advertised-program-marketing",
+      "permission_to_state": "never-as-FV-commission",
+      "notes": "No personal contract, actual commission, or settlement rights"
+    },
+    {
+      "id": "AFF04",
+      "claim": "Email, TikTok and YouTube are authorized promotion channels",
+      "source_url": "https://affiliates.inspire3.com/",
+      "classification": "unknown-partner-permissions",
+      "permission_to_state": "no",
+      "notes": "Need written channel-specific terms"
+    },
+    {
+      "id": "AFF05",
+      "claim": "Official creative/swipe resources are licensed for Final Vestige",
+      "source_url": "https://affiliates.inspire3.com/",
+      "classification": "unknown-creative-rights",
+      "permission_to_state": "no",
+      "notes": "No authenticated partner portal permissions"
+    },
+    {
+      "id": "FTC01",
+      "claim": "Material affiliate connections need clear conspicuous disclosures",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "classification": "official-regulator-guidance",
+      "permission_to_state": "yes",
+      "notes": "Adjacent to actual earning recommendation; not just footer"
+    },
+    {
+      "id": "FTC02",
+      "claim": "Health-related product performance claims need adequate substantiation",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "classification": "official-regulator-guidance",
+      "permission_to_state": "yes",
+      "notes": "Product/outcome-specific claim evidence is necessary"
+    },
+    {
+      "id": "REV01",
+      "claim": "Outbound affiliate click establishes paid sale",
+      "source_url": "https://affiliates.inspire3.com/",
+      "classification": "false-attribution",
+      "permission_to_state": "no",
+      "notes": "Only merchant-confirmed paid conversion/settlement qualifies"
+    },
+    {
+      "id": "REV02",
+      "claim": "No verified Payhip paid FV Mind SKU was found",
+      "source_url": "https://finalvestige.com/focus/",
+      "classification": "not-yet-authenticated",
+      "permission_to_state": "status-only",
+      "notes": "Cannot infer no SKU exists; seller dashboard/rights/fulfillment receipt needed"
+    }
+  ],
+  "commercial_release_gates": [
+    {
+      "id": "G01",
+      "name": "named FV publisher acceptance",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G02",
+      "name": "identity of approved publisher",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G03",
+      "name": "approved website channel",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G04",
+      "name": "approved organic YouTube channel",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G05",
+      "name": "approved organic TikTok channel",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G06",
+      "name": "approved newsletter channel",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G07",
+      "name": "approved social bio/link format",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G08",
+      "name": "issued account-tracked earning URL",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G09",
+      "name": "exact target SKU identity",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G10",
+      "name": "merchant product version",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G11",
+      "name": "checkout price including currency/taxes",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G12",
+      "name": "upsell disclosures",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G13",
+      "name": "refund policy effective at final checkout",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G14",
+      "name": "refund procedure/cutoffs",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G15",
+      "name": "digital delivery verified",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G16",
+      "name": "digital rights and usage restrictions",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G17",
+      "name": "approved creative reproduction",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G18",
+      "name": "license of any third-party portrait",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G19",
+      "name": "no unsupported outcome claim",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G20",
+      "name": "FTC adjacent disclosure",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G21",
+      "name": "no fake testimonial",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G22",
+      "name": "no invented payout",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G23",
+      "name": "no invented urgency",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G24",
+      "name": "no cloaked links",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G25",
+      "name": "no new signup list",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G26",
+      "name": "no third-party tracking pixel",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G27",
+      "name": "consent handling accepted",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G28",
+      "name": "first-party campaign ID present",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G29",
+      "name": "published Grok asset ID authenticated",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G30",
+      "name": "mobile browser accessibility passed",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G31",
+      "name": "merchant paid-order evidence source",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    },
+    {
+      "id": "G32",
+      "name": "refund-adjusted settlement reconciliation",
+      "status": "HOLD",
+      "evidence": "not independently authenticated or release-tested; prerequisite not satisfied"
+    }
+  ],
+  "affiliate_approval": "NOT VERIFIED",
+  "owned_paid_mind_sku": "NOT VERIFIED",
+  "purchase_links_active": 0,
+  "refund_adjusted_net_revenue": "NOT COMPUTABLE",
+  "personal_data": "No credentials, subscriber identifiers, email data or affiliate token recorded"
+}
