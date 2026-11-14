@@ -181,6 +181,7 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
         for bucket in buckets
     }
     expected_labels = expected_vendor_labels(vendor_label_observations)
+    bad_report_encoding = False
     try:
         decoded = report_bytes.decode("utf-8-sig")
         reader = csv.DictReader(io.StringIO(decoded, newline=""), strict=True)
@@ -225,8 +226,12 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
         # Require exact canonical native bytes (length + SHA256) as well.
         if not canonical.matches(report_bytes):
             raise ValueError("Noncanonical native SpendMap report bytes")
-    except (UnicodeError, csv.Error, OverflowError) as exc:
-        raise ValueError("Malformed local SpendMap evidence") from None
+    except (UnicodeError, csv.Error, OverflowError):
+        bad_report_encoding = True
+    # UnicodeDecodeError.object can contain the COMPLETE private CSV report.
+    # Raise after the handler has exited so no hidden exception chain survives.
+    if bad_report_encoding:
+        raise ValueError("Malformed local SpendMap evidence")
     if seen != set(buckets):
         raise ValueError("SpendMap source category evidence is incomplete")
     if (_hash_regular(source_path, MAX_INPUT_BYTES) != before_source
