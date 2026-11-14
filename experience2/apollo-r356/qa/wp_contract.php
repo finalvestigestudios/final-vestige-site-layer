@@ -17,7 +17,7 @@ function wp_enqueue_script($handle,$uri,$deps=[],$v='',$footer=false){$GLOBALS['
 function check($ok,$msg){if(!$ok)throw new RuntimeException($msg);}
 require dirname(__DIR__).'/asset-bridge.php';
 check(isset($shortcodes['fv_apollo_experience_r356']) && isset($shortcodes['fv_apollo_postfire_r356']),'shortcodes registered');
-$all=['fv-apollo-r339-chronology','fv-apollo-r340-gallery','fv-apollo-r345-evidence-plate','fv-apollo-r347-index','fv-apollo-r348-custody','fv-apollo-r355-postfire'];
+$all=['fv-apollo-r339-chronology','fv-apollo-r340-gallery','fv-apollo-r345-evidence-plate','fv-apollo-r347-index','fv-apollo-r348-custody','fv-apollo-r355-postfire','fv-apollo-r356-print-proof'];
 $checks=[];
 function scenario($name,$text,$refs,$expected,$js,$singular=true){
     $GLOBALS['styles']=[]; $GLOBALS['scripts']=[]; $GLOBALS['posts']=$refs; $GLOBALS['singular']=$singular;
@@ -29,11 +29,11 @@ function scenario($name,$text,$refs,$expected,$js,$singular=true){
     foreach($GLOBALS['styles'] as $path){check(strpos($path,'staging.invalid')!==false,$name.' path');}
     $GLOBALS['checks'][]=['case'=>$name,'styles'=>count($actual),'scripts'=>count($GLOBALS['scripts']),'pass'=>true];
 }
-scenario('standalone-note','[fv_apollo_postfire_r356]',[],['fv-apollo-r355-postfire'],false);
-scenario('standalone-spaced','[fv_apollo_postfire_r356 /]',[],['fv-apollo-r355-postfire'],false);
+scenario('standalone-note','[fv_apollo_postfire_r356]',[],['fv-apollo-r355-postfire','fv-apollo-r356-print-proof'],false);
+scenario('standalone-spaced','[fv_apollo_postfire_r356 /]',[],['fv-apollo-r355-postfire','fv-apollo-r356-print-proof'],false);
 scenario('full-composite','[fv_apollo_experience_r356]',[],$all,true);
 scenario('both-composite-wins','[fv_apollo_postfire_r356][fv_apollo_experience_r356]',[],$all,true);
-scenario('reusable-note','<!-- wp:block {"ref":17} /-->',[17=>(object)['post_type'=>'wp_block','post_content'=>'[fv_apollo_postfire_r356]']],['fv-apollo-r355-postfire'],false);
+scenario('reusable-note','<!-- wp:block {"ref":17} /-->',[17=>(object)['post_type'=>'wp_block','post_content'=>'[fv_apollo_postfire_r356]']],['fv-apollo-r355-postfire','fv-apollo-r356-print-proof'],false);
 scenario('nested-composite','<!-- wp:block {"ref":17} /-->',[17=>(object)['post_type'=>'wp_block','post_content'=>'<!-- wp:block {"ref":18} /-->'],18=>(object)['post_type'=>'wp_block','post_content'=>'[fv_apollo_experience_r356]']],$all,true);
 scenario('cyclic-reusable','<!-- wp:block {"ref":17} /-->',[17=>(object)['post_type'=>'wp_block','post_content'=>'<!-- wp:block {"ref":17} /-->']],[],false);
 scenario('unrelated-post','<p>No shortcode</p>',[],[],false);
