@@ -46,8 +46,10 @@ function scopeByRequestId(slots,network){
     n.status!==200||typeof n.mime_type!=='string'||!/^image\//i.test(n.mime_type)||
     // Missing cache flags never prove a cold transfer, and the CDP MIME
     // must agree with the decoded DOM image response before counting bytes.
+    // A complete CDP response can still be memory-cached. Absent or true
+    // from_memory_cache must never certify cold article-image transfer bytes.
     n.error||n.was_cached!==false||n.from_disk_cache!==false||
-    n.from_service_worker!==false||!bytes(n.encoded_data_length)||
+    n.from_memory_cache!==false||n.from_service_worker!==false||!bytes(n.encoded_data_length)||
     String(v.response_mime_type).split(';')[0].trim().toLowerCase()!==
       String(n.mime_type).split(';')[0].trim().toLowerCase()||
     v.transfer_bytes!==n.encoded_data_length){
