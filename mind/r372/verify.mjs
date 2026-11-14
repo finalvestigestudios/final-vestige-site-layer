@@ -14,7 +14,7 @@ check(!/<script\b|<iframe\b|<form\b|on(?:click|load|submit)\s*=|<meta[^>]+http-e
 check(!/https?:\/\/(?:zen12\.com|affiliates\.inspire3\.com)(?:\/[^"']*)?["']/i.test(html),name+':no merchant anchor');
 }
 for(const [name,html] of [['A',A],['B',B]]){
-check(/<button\b[^>]+\bdisabled\b/.test(html),name+':native-disabled');
+check(/<button\b[^>]+\sdisabled(?=[\s>])/.test(html),name+':native-disabled');
 check(html.indexOf('Affiliate disclosure:')>0 && html.indexOf('Affiliate disclosure:')<html.indexOf('<button class="merchant"'),name+':adjacent-disclosure');
 check((html.match(/<button class="merchant"/g)||[]).length===1,name+':one-merchant-control');
 check(html.includes('href="/focus/"'),name+':single-existing-focus-route');
@@ -44,7 +44,7 @@ A.replace('href="/focus/"','href="https://affiliates.inspire3.com/"')
 ];
 let denied=0;
 for (const m of mutants){
-const isInvalid=!/<button\b[^>]+\bdisabled\b/.test(m)||!m.includes('Affiliate disclosure:')||/<script\b|<form\b/i.test(m)||/href="https:\/\/(?:zen12\.com|affiliates\.inspire3\.com)\//.test(m)||!m.includes('noindex,nofollow');
+const isInvalid=!/<button\b[^>]+\sdisabled(?=[\s>])/.test(m)||!m.includes('Affiliate disclosure:')||/<script\b|<form\b/i.test(m)||/href="https:\/\/(?:zen12\.com|affiliates\.inspire3\.com)\//.test(m)||!m.includes('noindex,nofollow');
 check(isInvalid,'must reject unsafe mutation '+denied);denied++;
 }
 console.log('PASS checks='+n+' unsafe_mutations_rejected='+denied+' release_gates='+Object.keys(data.release.gates).length+' word_count='+article.trim().split(/\s+/).length);
