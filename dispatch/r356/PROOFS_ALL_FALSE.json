@@ -1,0 +1,29 @@
+{
+  "status": "SOURCE_ONLY_HOLD_UNSENT",
+  "as_of_utc": "2026-11-14T14:31:52Z",
+  "provider_aggregate": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0
+  },
+  "wpcom_followers": 3,
+  "direct_email_followers": 0,
+  "eligible_recipients": null,
+  "shared": {
+    "founder_final_campaign_approval": null,
+    "provider_recipient_eligibility": null,
+    "confirmed_consent_dedup": null,
+    "welcome_fieldbook_received": null,
+    "native_jetpack_preview": null,
+    "received_email_render": null,
+    "fv_postal_address": null,
+    "working_unsubscribe": null,
+    "verified_subject_from": null
+  },
+  "merchant": {
+    "03": {},
+    "05": {}
+  },
+  "note": "Every release proof is false or absent. Provider aggregates overlap and do NOT establish distinct eligible recipients; no subscriber email or actual personal information stored."
+}
