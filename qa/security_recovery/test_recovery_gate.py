@@ -12,10 +12,10 @@ FIXTURE = {
     'fixed_version': '3.7.5',
     'plugin': {'version': '3.7.5', 'status': 'active'},
     'scan': {
-        'threats': [], 'ignored_threats': [],
+        'state': 'idle', 'threats': [], 'ignored_threats': [],
         'recent_fixes': [{'status': 'fixed', 'description': 'burst-statistics known issue',
                           'fixed_on': '2026-11-14T02:30:35Z'}],
-        'last_scan': {'started_at': '2026-11-14T02:27:21+00:00', 'error': False}
+        'last_scan': {'started_at': '2026-11-14T02:27:21+00:00', 'error': False, 'progress': 100}
     },
     'backup': {'backups': {'last_attempt_failed': False, 'last_attempt_status': 'finished'}},
     'activity': [{'action': 'backup_complete_full', 'date': '2026-11-14T02:29:17Z'}]
@@ -67,6 +67,26 @@ class RecoveryGateTest(unittest.TestCase):
         s['activity'][0]['date'] = '2026-11-14T03:01:00Z'
         s['backup']['backups']['last_attempt_failed'] = True
         self.assertEqual(self.results(s)['POST_FIX_FULL_BACKUP'], 'HOLD')
+
+    def test_incomplete_scan_progress_fails_closed(self):
+        for progress in (0, 20, 99, None, '100', True):
+            with self.subTest(progress=progress):
+                s = copy.deepcopy(FIXTURE)
+                s['scan']['last_scan']['started_at'] = '2026-11-14T03:01:00Z'
+                s['scan']['last_scan']['progress'] = progress
+                self.assertEqual(self.results(s)['POST_FIX_CLEAN_SCAN'], 'HOLD')
+
+    def test_missing_scan_progress_fails_closed(self):
+        s = copy.deepcopy(FIXTURE)
+        s['scan']['last_scan']['started_at'] = '2026-11-14T03:01:00Z'
+        del s['scan']['last_scan']['progress']
+        self.assertEqual(self.results(s)['POST_FIX_CLEAN_SCAN'], 'HOLD')
+
+    def test_scan_still_in_progress_fails_closed(self):
+        s = copy.deepcopy(FIXTURE)
+        s['scan']['last_scan']['started_at'] = '2026-11-14T03:01:00Z'
+        s['scan']['state'] = 'scanning'
+        self.assertEqual(self.results(s)['POST_FIX_CLEAN_SCAN'], 'HOLD')
 
     def test_scan_error_blocks(self):
         s = copy.deepcopy(FIXTURE)
