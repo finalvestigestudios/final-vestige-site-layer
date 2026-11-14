@@ -1,0 +1,262 @@
+{
+  "date": "2026-11-14",
+  "source_control": "unpublished",
+  "release": "HARD_HOLD",
+  "live_connected_WordPress_counts": {
+    "published_posts": 66,
+    "published_pages": 92,
+    "prior_issue_171_inventory": "61/79 older snapshot"
+  },
+  "claims": [
+    {
+      "id": "R1",
+      "claim": "Original rubber-hand study 1998",
+      "url": "https://doi.org/10.1038/35784",
+      "qualification": "primary research; not commercial audio"
+    },
+    {
+      "id": "R2",
+      "claim": "Demand characteristics challenge 2020",
+      "url": "https://doi.org/10.1525/collabra.325",
+      "qualification": "contested methodological interpretation"
+    },
+    {
+      "id": "R3",
+      "claim": "Attention instruction findings 2022",
+      "url": "https://doi.org/10.1177/17470218221078858",
+      "qualification": "specific measured dimensions"
+    },
+    {
+      "id": "H1",
+      "claim": "Puységur archive live",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "qualification": "connected WP page 1377"
+    },
+    {
+      "id": "H2",
+      "claim": "Franklin commission article live",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "qualification": "connected WP post 1924"
+    },
+    {
+      "id": "H3",
+      "claim": "Existing Focus free",
+      "url": "https://finalvestige.com/focus/",
+      "qualification": "connected WP page 1579"
+    },
+    {
+      "id": "Z1",
+      "claim": "Premium describes 12 levels",
+      "url": "https://zen12.com/",
+      "qualification": "seller claim only"
+    },
+    {
+      "id": "Z2",
+      "claim": "Premium describes 48 MP3s",
+      "url": "https://zen12.com/",
+      "qualification": "seller claim only"
+    },
+    {
+      "id": "Z3",
+      "claim": "Four styles: music,guided,nature,white noise",
+      "url": "https://zen12.com/",
+      "qualification": "seller claim only"
+    },
+    {
+      "id": "Z4",
+      "claim": "One year refund advertised",
+      "url": "https://zen12.com/",
+      "qualification": "actual refund not tested"
+    },
+    {
+      "id": "Z5",
+      "claim": "Public price discrepancy $87/$87.99",
+      "url": "https://zen12.com/",
+      "qualification": "withhold until account checkout"
+    },
+    {
+      "id": "Z6",
+      "claim": "Equivalence of 12 mins to 1hr",
+      "url": "https://zen12.com/",
+      "qualification": "unsupported exact-product efficacy claim; exclude"
+    },
+    {
+      "id": "Z7",
+      "claim": "Automatic focus/brainwave outcomes",
+      "url": "https://zen12.com/",
+      "qualification": "unsupported health mechanism; exclude"
+    },
+    {
+      "id": "Z8",
+      "claim": "Publisher account acceptance",
+      "url": "https://affiliates.inspire3.com/",
+      "qualification": "not verified; hold"
+    },
+    {
+      "id": "Z9",
+      "claim": "Issued earning link",
+      "url": "https://affiliates.inspire3.com/",
+      "qualification": "not verified; hold"
+    },
+    {
+      "id": "Z10",
+      "claim": "FV paid Mind SKU",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818",
+      "qualification": "rights/active checkout not verified"
+    },
+    {
+      "id": "F1",
+      "claim": "Material affiliate relationship",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "qualification": "clear disclosure adjacent to earning link"
+    },
+    {
+      "id": "F2",
+      "claim": "Objective health claim",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "qualification": "competent and reliable evidence needed"
+    },
+    {
+      "id": "C1",
+      "claim": "Outbound click versus confirmed paid sale",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "qualification": "not interchangeable"
+    },
+    {
+      "id": "C2",
+      "claim": "Net revenue per 1000 qualified sessions",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "qualification": "not computable"
+    }
+  ],
+  "gates": [
+    {
+      "name": "publisher_acceptance",
+      "status": "HOLD"
+    },
+    {
+      "name": "approved_site_channel",
+      "status": "HOLD"
+    },
+    {
+      "name": "approved_social_channel",
+      "status": "HOLD"
+    },
+    {
+      "name": "approved_email_channel",
+      "status": "HOLD"
+    },
+    {
+      "name": "approved_creative",
+      "status": "HOLD"
+    },
+    {
+      "name": "issued_earning_link",
+      "status": "HOLD"
+    },
+    {
+      "name": "exact_sku_destination",
+      "status": "HOLD"
+    },
+    {
+      "name": "actual_checkout_price",
+      "status": "HOLD"
+    },
+    {
+      "name": "refund_terms",
+      "status": "HOLD"
+    },
+    {
+      "name": "refund_execution",
+      "status": "HOLD"
+    },
+    {
+      "name": "account_reporting",
+      "status": "HOLD"
+    },
+    {
+      "name": "contract_terms",
+      "status": "HOLD"
+    },
+    {
+      "name": "product_claim_support",
+      "status": "HOLD"
+    },
+    {
+      "name": "FTC_endorsement_review",
+      "status": "HOLD"
+    },
+    {
+      "name": "FTC_health_review",
+      "status": "HOLD"
+    },
+    {
+      "name": "founder_commerce_approval",
+      "status": "HOLD"
+    },
+    {
+      "name": "founder_release_approval",
+      "status": "HOLD"
+    },
+    {
+      "name": "mobile_360",
+      "status": "HOLD"
+    },
+    {
+      "name": "mobile_390",
+      "status": "HOLD"
+    },
+    {
+      "name": "tablet_768",
+      "status": "HOLD"
+    },
+    {
+      "name": "desktop_1440",
+      "status": "HOLD"
+    },
+    {
+      "name": "desktop_1920",
+      "status": "HOLD"
+    },
+    {
+      "name": "keyboard_screenreader",
+      "status": "HOLD"
+    },
+    {
+      "name": "no_JS",
+      "status": "HOLD"
+    },
+    {
+      "name": "reduced_motion",
+      "status": "HOLD"
+    },
+    {
+      "name": "WordPress_sanitizer",
+      "status": "HOLD"
+    },
+    {
+      "name": "video_encoded_captions_synced",
+      "status": "HOLD"
+    },
+    {
+      "name": "existing_Jetpack_flow",
+      "status": "HOLD"
+    },
+    {
+      "name": "privacy_consent",
+      "status": "HOLD"
+    },
+    {
+      "name": "first_party_event_QA",
+      "status": "HOLD"
+    },
+    {
+      "name": "verified_paid_orders",
+      "status": "HOLD"
+    },
+    {
+      "name": "net_refunds_fees_reconciliation",
+      "status": "HOLD"
+    }
+  ]
+}
