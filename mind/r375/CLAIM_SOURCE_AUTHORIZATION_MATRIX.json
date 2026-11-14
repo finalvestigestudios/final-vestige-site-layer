@@ -1,0 +1,580 @@
+{
+  "title": "Mind R375 claim-to-source, offer eligibility and release gates",
+  "date": "2026-11-14",
+  "scope": "UNPUBLISHED SOURCE ONLY; no CMS changes or affiliate activation",
+  "sources": {
+    "F1": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "F2": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "I1": "https://inspire3.com/",
+    "I2": "https://zen12.com/",
+    "I3": "https://affiliates.inspire3.com/",
+    "I4": "https://hypnosislive.com/",
+    "I5": "https://brainwaveshots.com/",
+    "P1": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+    "P2": "https://doi.org/10.1017/mem.2024.14",
+    "P3": "https://doi.org/10.1002/cpp.2567",
+    "P4": "https://doi.org/10.1027/1016-9040/a000513",
+    "V1": "https://finalvestige.com/focus/",
+    "V2": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "V3": "https://finalvestige.com/dispatch/",
+    "G1": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "G2": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+  },
+  "claims": [
+    {
+      "id": "Z01",
+      "claim": "Zen12 is in the official Inspire3 product catalog",
+      "assessment": "verified-public-description",
+      "evidence": [
+        "I1",
+        "I2"
+      ],
+      "allowed_action": "Describe brand relationship"
+    },
+    {
+      "id": "Z02",
+      "claim": "Premium page describes 12 levels",
+      "assessment": "seller-description-only",
+      "evidence": [
+        "I2"
+      ],
+      "allowed_action": "Attribute to merchant"
+    },
+    {
+      "id": "Z03",
+      "claim": "Premium page describes 48 MP3 tracks",
+      "assessment": "seller-description-only",
+      "evidence": [
+        "I2"
+      ],
+      "allowed_action": "Attribute to merchant"
+    },
+    {
+      "id": "Z04",
+      "claim": "Four options per level: guided, music, nature, white noise",
+      "assessment": "seller-description-only",
+      "evidence": [
+        "I2"
+      ],
+      "allowed_action": "Attribute to merchant"
+    },
+    {
+      "id": "Z05",
+      "claim": "Sessions are described as 12 minutes",
+      "assessment": "seller-description-only",
+      "evidence": [
+        "I2"
+      ],
+      "allowed_action": "Attribute to merchant; not clinical dose validation"
+    },
+    {
+      "id": "Z06",
+      "claim": "Quick start guide, manual and support are listed",
+      "assessment": "seller-description-only",
+      "evidence": [
+        "I2"
+      ],
+      "allowed_action": "Attribute to merchant, final checkout required"
+    },
+    {
+      "id": "Z07",
+      "claim": "Seller lists bonus material, audio guides and access to call for Premium",
+      "assessment": "seller-description-only",
+      "evidence": [
+        "I2"
+      ],
+      "allowed_action": "No proof of delivered bonus"
+    },
+    {
+      "id": "Z08",
+      "claim": "Public Premium block displayed $87.99 at review (14 Nov 2026)",
+      "assessment": "seller-page-observation",
+      "evidence": [
+        "I2"
+      ],
+      "allowed_action": "Not a guaranteed final checkout price; update before promotion"
+    },
+    {
+      "id": "Z09",
+      "claim": "Seller advertises 1-year money-back guarantee",
+      "assessment": "seller-description-only",
+      "evidence": [
+        "I2"
+      ],
+      "allowed_action": "Do not say refunds independently verified"
+    },
+    {
+      "id": "Z10",
+      "claim": "12 minutes equals hour of advanced meditation benefits",
+      "assessment": "not-product-independently-substantiated",
+      "evidence": [
+        "I2",
+        "F2"
+      ],
+      "allowed_action": "EXCLUDE as factual endorsement"
+    },
+    {
+      "id": "Z11",
+      "claim": "Zen12 produces clinically meaningful anxiety or health improvement",
+      "assessment": "not-product-independently-substantiated",
+      "evidence": [
+        "I2",
+        "F2"
+      ],
+      "allowed_action": "EXCLUDE"
+    },
+    {
+      "id": "Z12",
+      "claim": "Zen12 increases measurable attention, creativity or memory",
+      "assessment": "not-product-independently-substantiated",
+      "evidence": [
+        "I2",
+        "F2"
+      ],
+      "allowed_action": "EXCLUDE"
+    },
+    {
+      "id": "Z13",
+      "claim": "Zen12 brainwaves entrain reliably in a way that proves health gains",
+      "assessment": "not-product-independently-substantiated",
+      "evidence": [
+        "I2",
+        "F2"
+      ],
+      "allowed_action": "EXCLUDE"
+    },
+    {
+      "id": "Z14",
+      "claim": "Seller's general research/marketing applies to its exact Premium bundle",
+      "assessment": "not-verified",
+      "evidence": [
+        "I2"
+      ],
+      "allowed_action": "Do not transfer generalized results"
+    },
+    {
+      "id": "Z15",
+      "claim": "Actual download, compatibility, customer support and refund delivery",
+      "assessment": "not-tested",
+      "evidence": [
+        "I2"
+      ],
+      "allowed_action": "Commerce must validate authorized checkout and fulfillment"
+    },
+    {
+      "id": "Z16",
+      "claim": "FV is approved Inspire3 publisher",
+      "assessment": "not-authenticated",
+      "evidence": [
+        "I3",
+        "G1"
+      ],
+      "allowed_action": "BLOCK active links"
+    },
+    {
+      "id": "Z17",
+      "claim": "Specific FV issued tracking URL and permitted website/social/email channels",
+      "assessment": "not-authenticated",
+      "evidence": [
+        "I3",
+        "G1"
+      ],
+      "allowed_action": "BLOCK active links"
+    },
+    {
+      "id": "Z18",
+      "claim": "Inspire3 approved affiliate creatives/swipe license exists for FV",
+      "assessment": "not-authenticated",
+      "evidence": [
+        "I3"
+      ],
+      "allowed_action": "No use of seller creatives, never copy verbatim"
+    },
+    {
+      "id": "Z19",
+      "claim": "Public network's general payout pitch guarantees FV commission",
+      "assessment": "not-established",
+      "evidence": [
+        "I3"
+      ],
+      "allowed_action": "DO NOT assert payout or rate"
+    },
+    {
+      "id": "Z20",
+      "claim": "Attributed click is evidence of paid commission",
+      "assessment": "false-inference",
+      "evidence": [
+        "G2"
+      ],
+      "allowed_action": "Measure outbound separately from verified settlement"
+    },
+    {
+      "id": "Z21",
+      "claim": "Hypnosis Live homepage markets 200+ MP3s",
+      "assessment": "seller-description-only",
+      "evidence": [
+        "I4"
+      ],
+      "allowed_action": "Separate product-specific review required"
+    },
+    {
+      "id": "Z22",
+      "claim": "Hypnosis Live promised health or wealth outcomes",
+      "assessment": "not-independently-substantiated",
+      "evidence": [
+        "I4",
+        "F2"
+      ],
+      "allowed_action": "EXCLUDE"
+    },
+    {
+      "id": "Z23",
+      "claim": "Brainwave Shots homepage markets themed audio files",
+      "assessment": "seller-description-only",
+      "evidence": [
+        "I5"
+      ],
+      "allowed_action": "No clinical effect promises"
+    },
+    {
+      "id": "Z24",
+      "claim": "Brainwave Shots improves focus, recovery or cognition",
+      "assessment": "not-independently-substantiated",
+      "evidence": [
+        "I5",
+        "F2"
+      ],
+      "allowed_action": "EXCLUDE"
+    },
+    {
+      "id": "S01",
+      "claim": "1974 Loftus-Palmer: differing verbs influenced answers after collision films",
+      "assessment": "supported-laboratory-observation",
+      "evidence": [
+        "P1"
+      ],
+      "allowed_action": "Report experimental association only"
+    },
+    {
+      "id": "S02",
+      "claim": "1974 Loftus-Palmer: participants more often affirmed nonexistent glass after strongest wording",
+      "assessment": "supported-laboratory-observation",
+      "evidence": [
+        "P1"
+      ],
+      "allowed_action": "Report group response counts with caveats"
+    },
+    {
+      "id": "S03",
+      "claim": "The experiment proved exact contents of every witness's memory",
+      "assessment": "unsupported-interpretation",
+      "evidence": [
+        "P1"
+      ],
+      "allowed_action": "EXCLUDE"
+    },
+    {
+      "id": "S04",
+      "claim": "2024 meta-analysis of fake-news memory was of thirteen articles",
+      "assessment": "supported-review-scope",
+      "evidence": [
+        "P2"
+      ],
+      "allowed_action": "Distinguish people-level vs event-level rates"
+    },
+    {
+      "id": "S05",
+      "claim": "2021 review assessed suggestive memory induction across heterogeneous studies",
+      "assessment": "supported-review-scope",
+      "evidence": [
+        "P3"
+      ],
+      "allowed_action": "Do not assert uniform false-memory base rate"
+    },
+    {
+      "id": "S06",
+      "claim": "2024 scoping review noted methodological caveats in true-vs-false memory comparison",
+      "assessment": "supported-review-scope",
+      "evidence": [
+        "P4"
+      ],
+      "allowed_action": "Confidence not a truth test"
+    },
+    {
+      "id": "V01",
+      "claim": "Existing Focus Fieldbook is 52 pages, free with current Dispatch signup",
+      "assessment": "verified-public-description",
+      "evidence": [
+        "V1",
+        "V3"
+      ],
+      "allowed_action": "Use one existing link, not a second form"
+    },
+    {
+      "id": "V02",
+      "claim": "Published Puységur archive provides a historical research bridge",
+      "assessment": "verified-public-description",
+      "evidence": [
+        "V2",
+        "G1"
+      ],
+      "allowed_action": "Do not treat historical reports as trials"
+    },
+    {
+      "id": "F01",
+      "claim": "Material financial connection should be clearly disclosed near endorsement",
+      "assessment": "FTC-guidance",
+      "evidence": [
+        "F1"
+      ],
+      "allowed_action": "Adjacent plain English affiliate disclosure"
+    },
+    {
+      "id": "F02",
+      "claim": "Objective health claims need reliable scientific substantiation",
+      "assessment": "FTC-guidance",
+      "evidence": [
+        "F2"
+      ],
+      "allowed_action": "Do not repeat unverified product effects as facts"
+    },
+    {
+      "id": "C01",
+      "claim": "Final Vestige has authenticated rights-cleared payable Mind product SKU",
+      "assessment": "not-authenticated",
+      "evidence": [
+        "G2"
+      ],
+      "allowed_action": "Commerce read-only verification before owned paid pilot"
+    },
+    {
+      "id": "C02",
+      "claim": "Final Vestige has authorized sales and realized net revenue attributable to this pilot",
+      "assessment": "not-authenticated",
+      "evidence": [
+        "G2"
+      ],
+      "allowed_action": "DO NOT report paid conversion"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "gate": "named FV Inspire3 publisher acceptance",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G02",
+      "gate": "allowed channels: website",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G03",
+      "gate": "allowed channels: social",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G04",
+      "gate": "allowed channels: email",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G05",
+      "gate": "issued unique tracking URL",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G06",
+      "gate": "approved creatives and reuse terms",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G07",
+      "gate": "attribution/cookie window agreed",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G08",
+      "gate": "product-specific destination verified",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G09",
+      "gate": "authentic seller landing copy verified",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G10",
+      "gate": "checkout price inclusive of applicable taxes verified",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G11",
+      "gate": "returns/refund agreement reviewed",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G12",
+      "gate": "customer support process verified",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G13",
+      "gate": "seller fulfillment verified",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G14",
+      "gate": "FV rights to promote reviewed",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G15",
+      "gate": "no misleading medical claim",
+      "release_approved": false,
+      "status": "design-limited-static-no-real-world-QA"
+    },
+    {
+      "id": "G16",
+      "gate": "no false economic claim",
+      "release_approved": false,
+      "status": "design-limited-static-no-real-world-QA"
+    },
+    {
+      "id": "G17",
+      "gate": "proximate disclosure reviewed",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G18",
+      "gate": "native disabled buttons until release",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G19",
+      "gate": "no merchant URLs before approval",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G20",
+      "gate": "no new email signup",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G21",
+      "gate": "one existing Jetpack welcome",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G22",
+      "gate": "approved canonical /focus/ route",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G23",
+      "gate": "three real Grok immutable asset IDs",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G24",
+      "gate": "Grok/Praxxis claim matching",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G25",
+      "gate": "platform mobile destination tested",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G26",
+      "gate": "site no-JS fallback",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G27",
+      "gate": "site keyboard WCAG review",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G28",
+      "gate": "responsive 360/390/768/1440/1920",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G29",
+      "gate": "original film encoded and playable",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G30",
+      "gate": "film captions timing browser-tested",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G31",
+      "gate": "reduced motion and poster contrast verified",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G32",
+      "gate": "browser/WordPress HTML sanitization",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G33",
+      "gate": "unique attribution without PII",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G34",
+      "gate": "qualified human cohort quality check",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G35",
+      "gate": "merchant-authoritative order/commission receipt",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    },
+    {
+      "id": "G36",
+      "gate": "refund/fee settlement reconciliation",
+      "release_approved": false,
+      "status": "hold-or-unverified"
+    }
+  ],
+  "editorial_rule": "A seller-described feature can be quoted with clear attribution; seller-outcome claims cannot be made as FV outcomes without product-specific substantiation. An unverified acceptance is unknown, not definitively absent.",
+  "revenue_kpi": "NOT COMPUTABLE: no authenticated paid conversions with refund/fee reconciled and qualified-human denominator"
+}
