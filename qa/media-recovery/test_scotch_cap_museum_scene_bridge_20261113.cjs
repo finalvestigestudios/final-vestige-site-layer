@@ -39,4 +39,4 @@ const mutations=[
  ['invented broken count',a=>a.context.reported_broken_unverified=0]
 ];
 for(const [label,fn] of mutations)check(label,fn);
-console.log('PASS '+tests+'/'+tests+' frozen source, scene, licensing, geometry and release tests; native Node; no network calls');
+console.log('PASS '+tests+'/'+tests+' frozen source, scene, licensing, geometry and release tests (Node-compatible suite; no network calls)');
