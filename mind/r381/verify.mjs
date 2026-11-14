@@ -44,7 +44,7 @@ assert(copy(A)===copy(B),'only optional film differs in substantive buyer copy')
 assert(!A.includes('class="film"')&&B.includes('class="film"'),'film is B-only');
 assert(B.includes('R381_ORIGINAL_POSTER.svg')&&B.includes('R381_ORIGINAL_CAPTIONS.vtt'),'B names the accessible original media');
 assert(B.includes('not')&&B.includes('encoded'),'B honestly labels film as concept');
-assert(!/<script|<foreignObject|onload\s*=|xlink:href|https?:\/\//i.test(poster),'original SVG is inert and contains no external fetch');
+assert(!/<script|<foreignObject|onload\s*=|xlink:href|<image\b|<use\b|<a\b/i.test(poster),'original SVG is inert and contains no external fetch');
 assert(/<title id="title">/.test(poster)&&/<desc id="desc">/.test(poster),'SVG accessible title and description');
 assert(vtt.startsWith('WEBVTT\n'),'valid VTT header');
 const timings=[...vtt.matchAll(/(\d\d):(\d\d):(\d\d)\.(\d{3}) --> (\d\d):(\d\d):(\d\d)\.(\d{3})/g)];
