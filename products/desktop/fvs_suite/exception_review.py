@@ -18,6 +18,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .journal_io import append_verified_event, read_regular_bytes
+from .review_identity_gate_r419 import (
+    require_native_choice, require_canonical_digest, require_native_string,
+)
 from .review_line_framing_r324 import canonical_review_records
 from .review_commit import confirm_review_commit
 from .review_lock import exclusive_review_lock
@@ -85,8 +88,9 @@ def _read_file(path: str | Path, limit: int, kind: str) -> bytes:
 
 def read_cases(report: str | Path, product: str) -> ReportBatch:
     """Bind reviews to exact bytes and physical CSV source lines; reject malformed rows."""
-    if product not in ("grants", "procurement"):
-        raise ValueError("Only premium grant/procurement exception reports are supported")
+    product = require_native_choice(
+        product, ("grants", "procurement"),
+        "Only premium grant/procurement exception reports are supported")
     source = Path(report)
     if source.suffix.lower() != ".csv":
         raise ValueError("The exception report must be a CSV file")
@@ -181,7 +185,10 @@ def _unsafe_review_character(character: str) -> bool:
 
 
 def _text(value: str, name: str, minimum: int, maximum: int) -> str:
-    if not isinstance(value, str):
+    # Only native text may enter a hash-linked human-review journal. A str
+    # subclass can override iteration, strip or other text hooks and fabricate
+    # a different reviewer identity or rationale after validation.
+    if type(value) is not str:
         raise ValueError(f"{name} must be text")
     # Inspect the caller's original text before trimming. str.strip() removes
     # C0/C1 controls and Unicode line separators at either edge, which would
@@ -265,8 +272,17 @@ def append_review(report: str | Path, product: str, journal: str | Path, *,
                   case_id: str, expected_report_sha256: str, reviewer: str,
                   decision: str, rationale: str) -> dict:
     """Append a reviewer action; no automatic status changes or authorization."""
-    if decision not in DECISIONS:
-        raise ValueError("Decision must be needs_evidence, escalated, or reviewed")
+    # Preflight direct API inputs before invoking user-defined equality,
+    # entering a file lock or reading any report. A forged str subclass must
+    # never bypass the caller\'s exact source-snapshot selection.
+    product = require_native_choice(
+        product, ("grants", "procurement"),
+        "Only premium grant/procurement exception reports are supported")
+    decision = require_native_choice(
+        decision, DECISIONS,
+        "Decision must be needs_evidence, escalated, or reviewed")
+    case_id = require_native_string(case_id, "Review case identifier must be native text")
+    expected_report_sha256 = require_canonical_digest(expected_report_sha256)
     reviewer = _text(reviewer, "Reviewer", 2, 80)
     rationale = _text(rationale, "Rationale", 12, 2000)
     path = Path(journal)
