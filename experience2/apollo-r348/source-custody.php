@@ -20,6 +20,7 @@ function fv_apollo_r348_approved_pages(): array {
 }
 /** No heuristics or speculative relationships: a shared URL is the ONLY grouping edge. */
 function fv_apollo_r348_custody(?array $input = null): array {
+    $caller_supplied_records = $input !== null;
     if ($input === null) {
         $parent = dirname(__DIR__) . '/apollo-r347/source-index.php';
         if (is_readable($parent)) { require_once $parent; }
@@ -27,6 +28,17 @@ function fv_apollo_r348_custody(?array $input = null): array {
         $input = fv_apollo_r347_records();
     }
     $approved = fv_apollo_r348_approved_pages();
+    $integrity_file = dirname(__DIR__) . '/apollo-r350/integrity.php';
+    if (is_readable($integrity_file)) { require_once $integrity_file; }
+    if (!function_exists('fv_apollo_r350_integrity_ok') || !fv_apollo_r350_integrity_ok()) {
+        // A reviewed NASA URL does not authenticate an altered editorial claim.
+        $approved = array();
+    }
+    if ($caller_supplied_records &&
+        (!function_exists('fv_apollo_r347_records') || $input !== fv_apollo_r347_records())) {
+        // Do not authenticate arbitrary third-party rows merely because URLs are approved.
+        $approved = array();
+    }
     $groups = array();
     foreach ($input as $record) {
         $url = isset($record['url']) ? (string)$record['url'] : '';
