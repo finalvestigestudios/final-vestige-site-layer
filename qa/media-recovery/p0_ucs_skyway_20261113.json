@@ -1,0 +1,123 @@
+{
+  "schema": "fv-p0-ucs-skyway-archive-bridge-v1",
+  "observed_date": "2026-11-13",
+  "methodology": "Read-only original publisher/catalog review and WEB RETRIEVER WRAPPER; not real origin HTTP or guest Chrome",
+  "historical": {
+    "posts": 61,
+    "inline_images": 355,
+    "reported_broken": 42,
+    "guest_confirmed_broken": null,
+    "measured_transfer_reduction_pct": null
+  },
+  "expanded_prior": {
+    "posts": 66,
+    "inline_images": 361,
+    "wordpress_originals_above_1500000_bytes": 16,
+    "stored_original_bytes": 49107665
+  },
+  "rows": [
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "original_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "wp_last_readback": "2026-11-08",
+      "observation": {
+        "url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+        "retriever_wrapper_status": 500,
+        "kind": "REDIRECT_TARGET_INACCESSIBLE",
+        "redirect_target": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+        "origin_http": null,
+        "visitor_http": null,
+        "visitor_currentSrc": null,
+        "visitor_pixels": null,
+        "visitor_wire_bytes": null
+      },
+      "candidate": {
+        "url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+        "catalog": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+        "published_caption_source": "Nuclear Regulatory Commission",
+        "visual_type": "FIGURE_4_NOT_POWER_PLANT_AERIAL",
+        "original_file_or_crop_proven": false,
+        "native_px": null,
+        "rights_to_rehost_verified": false,
+        "cache_allowed": false
+      }
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "original_src": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "wp_last_readback": "2026-11-08",
+      "observation": {
+        "url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "retriever_wrapper_status": 404,
+        "kind": "NOT_FOUND",
+        "redirect_target": null,
+        "origin_http": null,
+        "visitor_http": null,
+        "visitor_currentSrc": null,
+        "visitor_pixels": null,
+        "visitor_wire_bytes": null
+      },
+      "candidate": {
+        "url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "catalog": "https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/",
+        "published_caption_source": "University Press of Florida",
+        "visual_type": "SHIP_PIER_AFTER_COLLISION",
+        "original_file_or_crop_proven": false,
+        "native_px": null,
+        "rights_to_rehost_verified": false,
+        "cache_allowed": false
+      },
+      "alternate_florida_archive": {
+        "catalog": "https://www.floridamemory.com/items/show/32083",
+        "id": "RC09237",
+        "image_catalog_path": "/fpc/reference/rc09237.jpg",
+        "date": "1980-05-09",
+        "scene": "Black-and-white photograph of car near collapsed roadway; NOT publisher ship-and-pier photograph",
+        "rights_policy": "https://floridamemory.com/share/order-info/faq.php",
+        "site_mark": "PDM_1_0",
+        "credit": "State Archives of Florida, Florida Memory, RC09237",
+        "native_px": null,
+        "http_status": null,
+        "exact_scene_match": false,
+        "download_or_cache_allowed": false
+      }
+    }
+  ],
+  "rights": {
+    "florida_memory_policy_url": "https://floridamemory.com/share/order-info/faq.php",
+    "sitewide_pdm_mark": true,
+    "state_archives_credit_required": true,
+    "item_donor_review_pending": true,
+    "applies_to_UCS_figure": false,
+    "applies_to_publisher_skyway_photo": false
+  },
+  "siteqa": {
+    "pr": 154,
+    "sole_owner_of_browser_collector": true,
+    "required": [
+      "logged_out_mobile_desktop",
+      "full_scroll_screenshots",
+      "final_currentSrc",
+      "CDP_final_request_status_MIME",
+      "request_ID_and_redirect_chain",
+      "explicit_uncached_provenance",
+      "natural_width_and_height",
+      "encoded_wire_bytes",
+      "CSS_width_and_DPR"
+    ]
+  },
+  "release": {
+    "conditional_width_cap_px": 960,
+    "no_upscale": true,
+    "dimensions_unverified": true,
+    "downloaded_images": 0,
+    "rights_approved": false,
+    "staging_or_wordpress_writes": false,
+    "deploy_or_merge": false,
+    "paid_spend_usd": 0
+  }
+}
