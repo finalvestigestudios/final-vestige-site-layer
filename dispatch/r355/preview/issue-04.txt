@@ -1,0 +1,39 @@
+FINAL VESTIGE STUDIOS / THE DISPATCH
+HOLD — UNSENT DRAFT — OFFLINE SIMULATION. NOT A RECEIVED EMAIL.
+Subject: Fourteen seconds. A much longer explanation.
+Simulated preheader: Apollo 1, the surviving record, and why a tidy cause can mislead.
+
+# THE DISPATCH — ISSUE 04
+
+> STATUS: UNSENT DRAFT — DO NOT PUBLISH OR EMAIL
+> This content awaits editorial and subscriber-list approval. All campaign emails require legal-footer QA; promotional issues require offer/affiliate review.
+
+Subject: Fourteen seconds. A much longer explanation.
+
+Preheader: Apollo 1, the surviving record, and why a tidy cause can mislead.
+
+Content type: editorial
+
+---
+
+A good explanation is often shorter than the evidence it rests on. Sometimes it's too short.
+
+The Apollo 1 fire is often compressed into a sentence about an electrical spark. The surviving official findings tell a harder story: an oxygen-rich ground-test environment, combustible material, vulnerable wiring, emergency escape constraints and choices in the design and test process.
+
+The investigators could identify dangerous conditions without conclusively identifying the exact first arc. That distinction matters. Unknown doesn't mean nothing was learned. It means the boundary between evidence and inference has to stay visible.
+
+Our investigation, The Hatch Opened Inward, follows that boundary through records and hardware. It also shows why the redesigned hatch became one of the event's clearest physical traces.
+
+Read the investigation: The Hatch Opened Inward (https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/).
+
+There is a connection to the mind here, too: we like stories with one obvious cause. The record often refuses to cooperate.
+
+This is what The Dispatch will continue to do—move between history, science and the strange edges of human experience, without asking you to trade curiosity for certainty.
+
+
+---
+Pre-send compliance block — remove/replace ONLY after legal and rendered-email QA.
+Sender: Final Vestige Studios. Physical mailing address: `[[VALID_POSTAL_ADDRESS_REQUIRED]]`. Unsubscribe: `[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]`. These placeholders intentionally prevent sending.
+
+
+DO NOT SEND — actual publisher address and Jetpack unsubscribe are not verified.
