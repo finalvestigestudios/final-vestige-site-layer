@@ -13,11 +13,11 @@ php -l experience2/apollo-r355/postfire-ledger.php
 php experience2/apollo-r359/qa/wp_contract.php
 php experience2/apollo-r360/qa/php_custody.php
 python experience2/apollo-r360/qa/compact_browser.py
-python experience2/apollo-r360/qa/browser_acceptance.py  # independent supplemental, archive-only
+python experience2/apollo-r360/qa/browser_acceptance.py  # source-controlled additional Chromium sampling
 python experience2/apollo-r360/qa/build_evidence.py
 ```
 
-The source-controlled compact Playwright suite covers 320/390/768/1440/1920 CSS-pixel widths, JavaScript off, optional filter interactions (13/3/5/1/4 index record counts), keyboard Enter on the native source disclosure, touch, reduced motion, forced colors, no horizontal overflow, 44px corrected target, the Chromium accessibility-tree named links, and native print PDF historical-source retention. The separate archived acceptance suite adds programmatic contrast sampling, 24px minimum-target sampling and local synthetic LCP/CLS observations; not an axe-core substitute. Browser visuals/screenshots are replayable but timing and PDF metadata may change on regeneration. Determinism applies to packaging frozen artifacts, not creating exactly identical screenshots on another Chromium build.
+The source-controlled compact Playwright suite covers 320/390/768/1440/1920 CSS-pixel widths, JavaScript off, optional filter interactions (13/3/5/1/4 index record counts), keyboard Enter on the native source disclosure, touch, reduced motion, forced colors, no horizontal overflow, 44px corrected target, the Chromium accessibility-tree named links, and native print PDF historical-source retention. The second source-controlled acceptance suite adds programmatic contrast sampling, 24px minimum-target sampling and local synthetic LCP/CLS observations; not an axe-core substitute. Browser visuals/screenshots are replayable but timing and PDF metadata may change on regeneration. Determinism applies to packaging frozen artifacts, not creating exactly identical screenshots on another Chromium build.
 
 **Historical provenance:** the original Apollo 204 Review Board did not prove an exact ignition source; NASA's later 2018 retrospective describes 102 deliberate postfire test ignitions as subsequent engineering evidence, NOT the Board's 1967 findings. NASA source-page links do not themselves clear images, astronauts' likenesses, logos, endorsement, marks or third-party media. See https://sma.nasa.gov/sma-disciplines/accllp/apollo-1 and https://www.nasa.gov/nasa-brand-center/advertising-guidelines/ . No NASA photos were embedded and no invented geographic pins or connections added.
 
