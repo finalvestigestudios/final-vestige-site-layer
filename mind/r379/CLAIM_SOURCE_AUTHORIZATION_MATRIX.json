@@ -1,0 +1,462 @@
+{
+  "schema": "fv-mind-offer-claim-proof/2.0",
+  "date_checked": "2026-11-14",
+  "state": "unpublished_hard_hold",
+  "scope": "mind/r379 only",
+  "sources": {
+    "mcgurk_1976": "https://doi.org/10.1038/264746a0",
+    "brown_2018": "https://doi.org/10.1371/journal.pone.0207160",
+    "ujiie_2018": "https://doi.org/10.1007/s00221-018-5188-4",
+    "fv_puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "fv_mesmerism": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "fv_change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "fv_focus": "https://finalvestige.com/focus/",
+    "inspire3": "https://inspire3.com/",
+    "zen12": "https://zen12.com/",
+    "inspire3_affiliate": "https://affiliates.inspire3.com/",
+    "hypnosislive": "https://hypnosislive.com/",
+    "brainwaveshots": "https://brainwaveshots.com/",
+    "ftc_disclosure": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  },
+  "claims": [
+    {
+      "id": "M01",
+      "claim": "McGurk and MacDonald published audiovisual speech conflict experiments in 1976",
+      "status": "primary_research_supported",
+      "source_url_key": "mcgurk_1976",
+      "disposition": "editorial_only"
+    },
+    {
+      "id": "M02",
+      "claim": "A mismatched /ba/ soundtrack and /ga/ visible articulation sometimes led to a /da/ report",
+      "status": "primary_research_supported",
+      "source_url_key": "mcgurk_1976",
+      "disposition": "editorial_only"
+    },
+    {
+      "id": "M03",
+      "claim": "A fusion response occurs in all observers",
+      "status": "NOT_supported",
+      "source_url_key": "brown_2018",
+      "disposition": "exclude"
+    },
+    {
+      "id": "M04",
+      "claim": "McGurk susceptibility differs substantially across participants",
+      "status": "primary_research_supported",
+      "source_url_key": "brown_2018",
+      "disposition": "editorial_only"
+    },
+    {
+      "id": "M05",
+      "claim": "Visual place-of-articulation extraction correlated with susceptibility in 2018 study",
+      "status": "primary_research_supported",
+      "source_url_key": "brown_2018",
+      "disposition": "editorial_only"
+    },
+    {
+      "id": "M06",
+      "claim": "That study proves low attention causes McGurk susceptibility",
+      "status": "NOT_supported",
+      "source_url_key": "brown_2018",
+      "disposition": "exclude"
+    },
+    {
+      "id": "M07",
+      "claim": "Face configuration may influence effect in the cited 2018 study",
+      "status": "research_context_only",
+      "source_url_key": "ujiie_2018",
+      "disposition": "qualified_only"
+    },
+    {
+      "id": "M08",
+      "claim": "Puységur archive distinguishes original-edition reference from reprint verification",
+      "status": "source_documented",
+      "source_url_key": "fv_puysegur",
+      "disposition": "editorial_only"
+    },
+    {
+      "id": "M09",
+      "claim": "Franklin commission tested specific magnetism claims using blind/sham controls",
+      "status": "source_documented",
+      "source_url_key": "fv_mesmerism",
+      "disposition": "editorial_only"
+    },
+    {
+      "id": "M10",
+      "claim": "The McGurk effect verifies hypnosis, subliminal audio or meditation benefits",
+      "status": "NOT_supported",
+      "source_url_key": "mcgurk_1976",
+      "disposition": "exclude"
+    },
+    {
+      "id": "M11",
+      "claim": "The existing free Focus Fieldbook is published at /focus/",
+      "status": "verified_public_route",
+      "source_url_key": "fv_focus",
+      "disposition": "editorial_link_allowed"
+    },
+    {
+      "id": "M12",
+      "claim": "The Focus Fieldbook is a paid product",
+      "status": "false",
+      "source_url_key": "fv_focus",
+      "disposition": "exclude"
+    },
+    {
+      "id": "M13",
+      "claim": "Inspire3 lists Zen12, Hypnosis Live and Brainwave Shots",
+      "status": "seller_catalogue",
+      "source_url_key": "inspire3",
+      "disposition": "catalogue_only"
+    },
+    {
+      "id": "M14",
+      "claim": "Zen12 website describes 12 levels",
+      "status": "seller_described",
+      "source_url_key": "zen12",
+      "disposition": "qualified_only"
+    },
+    {
+      "id": "M15",
+      "claim": "Zen12 website describes 48 MP3 recordings",
+      "status": "seller_described",
+      "source_url_key": "zen12",
+      "disposition": "qualified_only"
+    },
+    {
+      "id": "M16",
+      "claim": "Zen12 advertises four styles each level",
+      "status": "seller_described",
+      "source_url_key": "zen12",
+      "disposition": "qualified_only"
+    },
+    {
+      "id": "M17",
+      "claim": "Zen12 advertises a one-year money-back guarantee",
+      "status": "seller_promise_unverified_execution",
+      "source_url_key": "zen12",
+      "disposition": "must_recheck"
+    },
+    {
+      "id": "M18",
+      "claim": "Zen12 public price uniformly $87.99",
+      "status": "conflicting_display_not_checkout_verified",
+      "source_url_key": "zen12",
+      "disposition": "exclude_numeric_price"
+    },
+    {
+      "id": "M19",
+      "claim": "Zen12 package fulfills exact listed files to all customers",
+      "status": "not_independently_verified",
+      "source_url_key": "zen12",
+      "disposition": "no_unqualified_claim"
+    },
+    {
+      "id": "M20",
+      "claim": "Zen12 yields one hour of meditation in twelve minutes",
+      "status": "seller_efficacy_claim_unsubstantiated_for_SKU",
+      "source_url_key": "zen12",
+      "disposition": "exclude"
+    },
+    {
+      "id": "M21",
+      "claim": "Zen12 reduces anxiety or provides medical treatment",
+      "status": "seller_or_implied_health_claim_not_substantiated",
+      "source_url_key": "zen12",
+      "disposition": "exclude"
+    },
+    {
+      "id": "M22",
+      "claim": "Zen12 brainwave sound provides any specific clinical outcome",
+      "status": "seller_mechanism_claim_unsubstantiated",
+      "source_url_key": "zen12",
+      "disposition": "exclude"
+    },
+    {
+      "id": "M23",
+      "claim": "A research paper on meditation validates this exact Zen12 SKU",
+      "status": "not_product_specific",
+      "source_url_key": "ftc_health",
+      "disposition": "exclude"
+    },
+    {
+      "id": "M24",
+      "claim": "Inspire3 has a public affiliate program",
+      "status": "seller_program_public",
+      "source_url_key": "inspire3_affiliate",
+      "disposition": "eligibility_unknown"
+    },
+    {
+      "id": "M25",
+      "claim": "Final Vestige's publisher application has been accepted",
+      "status": "not_authenticated",
+      "source_url_key": "inspire3_affiliate",
+      "disposition": "HOLD"
+    },
+    {
+      "id": "M26",
+      "claim": "Final Vestige has approved social/email promotional rights",
+      "status": "not_authenticated",
+      "source_url_key": "inspire3_affiliate",
+      "disposition": "HOLD"
+    },
+    {
+      "id": "M27",
+      "claim": "Final Vestige was issued a valid product-specific earning URL",
+      "status": "not_authenticated",
+      "source_url_key": "inspire3_affiliate",
+      "disposition": "HOLD"
+    },
+    {
+      "id": "M28",
+      "claim": "Commission rate/payout to Final Vestige is known",
+      "status": "not_authenticated",
+      "source_url_key": "inspire3_affiliate",
+      "disposition": "HOLD"
+    },
+    {
+      "id": "M29",
+      "claim": "A current exact offer checkout total and refund exceptions were tested",
+      "status": "not_tested",
+      "source_url_key": "zen12",
+      "disposition": "HOLD"
+    },
+    {
+      "id": "M30",
+      "claim": "An owned, rights-cleared, payable FV Mind digital SKU exists",
+      "status": "not_authenticated",
+      "source_url_key": "fv_focus",
+      "disposition": "HOLD"
+    },
+    {
+      "id": "M31",
+      "claim": "Material connection must be disclosed clearly near an earning recommendation",
+      "status": "ftc_guidance",
+      "source_url_key": "ftc_disclosure",
+      "disposition": "required_at_release"
+    },
+    {
+      "id": "M32",
+      "claim": "Objective health benefit claims require competent reliable product-relevant evidence",
+      "status": "ftc_guidance",
+      "source_url_key": "ftc_health",
+      "disposition": "required"
+    },
+    {
+      "id": "M33",
+      "claim": "Outbound affiliate_click is a verified paid order",
+      "status": "false",
+      "source_url_key": "ftc_disclosure",
+      "disposition": "exclude"
+    },
+    {
+      "id": "M34",
+      "claim": "Realized refund-adjusted net revenue from Mind cohort is known",
+      "status": "not_measured",
+      "source_url_key": "fv_focus",
+      "disposition": "not_computable"
+    },
+    {
+      "id": "M35",
+      "claim": "The proposed video file is currently hosted and playable",
+      "status": "false",
+      "source_url_key": "mcgurk_1976",
+      "disposition": "storyboard_only"
+    }
+  ],
+  "release_gates": [
+    {
+      "gate": "named_inspire3_publisher_approval",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "named_allowed_domains",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "named_allowed_social_channels",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "named_email_permission_if_used",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "issued_product_specific_affiliate_url",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "permitted_creative_rights",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "authorized_url_destination_checked",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "verified_current_checkout_total",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "verified_currency_taxes",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "refund_policy_current",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "refund_exclusions_and_process",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "terms_and_disclosures_approved",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "adequate_health_efficacy_evidence_or_no_claim",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "no_guaranteed_medical_wealth_claim",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "no_false_testimonial",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "no_urgency_or_fake_reviews",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "no_retargeting_without_consent",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "adjacent_affiliate_disclosure",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "verified_grok_asset_id",
+      "status": "HOLD",
+      "owner": "Praxxis / Grok"
+    },
+    {
+      "gate": "verified_mobile_social_link_permission",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "first_party_utm_content_contract",
+      "status": "HOLD",
+      "owner": "Claude / Dispatch"
+    },
+    {
+      "gate": "existing_jetpack_consent_test",
+      "status": "HOLD",
+      "owner": "Claude / Dispatch"
+    },
+    {
+      "gate": "native_html_a11y",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "real_browser_wcag_2_2_AA",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "no_js_baseline",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "responsive_360_390_768_1440_1920",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "rights_cleared_original_video",
+      "status": "HOLD",
+      "owner": "Mind / Site QA"
+    },
+    {
+      "gate": "encoded_video_42_seconds",
+      "status": "HOLD",
+      "owner": "Mind / Site QA"
+    },
+    {
+      "gate": "video_caption_and_transcript_sync",
+      "status": "HOLD",
+      "owner": "Mind / Site QA"
+    },
+    {
+      "gate": "video_optional_no_autoplay",
+      "status": "HOLD",
+      "owner": "Mind / Site QA"
+    },
+    {
+      "gate": "video_performance_budget",
+      "status": "HOLD",
+      "owner": "Mind / Site QA"
+    },
+    {
+      "gate": "wordpress_sanitization",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "cms_editorial_approval",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    },
+    {
+      "gate": "founder_commercial_approval",
+      "status": "HOLD",
+      "owner": "Founder"
+    },
+    {
+      "gate": "founder_release_approval",
+      "status": "HOLD",
+      "owner": "Founder"
+    },
+    {
+      "gate": "seller_reported_transaction_and_fee_reconciliation",
+      "status": "HOLD",
+      "owner": "Mind / Commerce / Site QA"
+    }
+  ],
+  "actual_commercial_evidence": {
+    "inbox_review": "2026-11-14: Targeted Gmail search identified seller promotional/consumer messages; no reliable FV publisher acceptance or earning link. A 2023 'access approved' message concerned consumer Reprogram.ME waiting-list access.",
+    "account_specific_approval": "UNKNOWN",
+    "qualified_human_sessions": "UNKNOWN",
+    "verified_paid_orders": "UNKNOWN",
+    "affiliate_commission": "UNKNOWN",
+    "refunds_and_fees": "UNKNOWN",
+    "net_revenue_per_1000_qualified_humans": "NOT_COMPUTABLE",
+    "email_subscription_system": "One existing Jetpack/Focus funnel; no new capture form.",
+    "CTA": "Natively disabled merchant button. Public organic Focus link is not an affiliate link."
+  }
+}
