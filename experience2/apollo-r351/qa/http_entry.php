@@ -21,6 +21,6 @@ $styles = [
 <?php endforeach; ?>
 <script defer src="/experience2/apollo-r347/assets/source-index.js"></script>
 <!-- Negative CSP control: must never run; no inline-script allowance. -->
-<script>window.__fvInlineCspProbe=true</script></head><body style="margin:0">
+<script>window.__fvInlineCspProbe=true</script></head><body>
 <?php echo fv_apollo_r348_experience_shortcode(); ?>
 </body></html>
