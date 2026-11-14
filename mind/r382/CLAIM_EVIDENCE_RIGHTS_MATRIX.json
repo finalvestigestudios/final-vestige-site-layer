@@ -1,0 +1,442 @@
+{
+  "version": "R382",
+  "date": "2026-11-14",
+  "stage": "DRAFT_HARD_HOLD",
+  "source_urls": {
+    "choice2005": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+    "choice2006": "https://pubmed.ncbi.nlm.nih.gov/17049881/",
+    "choice2010": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+    "zen12": "https://zen12.com/",
+    "index": "https://inspire3.com/",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "hypnosis": "https://hypnosislive.com/",
+    "shots": "https://brainwaveshots.com/",
+    "FTCendorse": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "FTChealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "disclosure": "https://finalvestige.com/affiliate-disclosure/"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Johansson et al. published a covert choice/outcome mismatch experiment in 2005",
+      "claim_type": "independent-experiment",
+      "evidence_status": "SUPPORTED",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "use_limit": "Use only for this experimental design, not consumer purchasing"
+    },
+    {
+      "id": "C02",
+      "claim": "Some participants offered verbal reasons for the substituted outcomes",
+      "claim_type": "independent-experiment",
+      "evidence_status": "SUPPORTED",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "use_limit": "Does not prove universal or permanent blindness"
+    },
+    {
+      "id": "C03",
+      "claim": "Choice blindness means all explanations are false",
+      "claim_type": "interpretation",
+      "evidence_status": "REJECTED",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "use_limit": "Overgeneralization"
+    },
+    {
+      "id": "C04",
+      "claim": "2010 supermarket experiment switched samples of jam/tea on some trials",
+      "claim_type": "independent-experiment",
+      "evidence_status": "SUPPORTED",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "use_limit": "Detected manipulated outcomes no more than one third of trials overall per abstract"
+    },
+    {
+      "id": "C05",
+      "claim": "2006 researchers analyzed language in introspective choice-blindness reports",
+      "claim_type": "independent-experiment",
+      "evidence_status": "SUPPORTED",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/17049881/",
+      "use_limit": "The analysis is not product-testing"
+    },
+    {
+      "id": "C06",
+      "claim": "Puységur archive preserves primary volume distinctions, witness claims and failures",
+      "claim_type": "FV-archive",
+      "evidence_status": "SUPPORTED",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "use_limit": "Historical source-trail context, not evidence for hypnotic mechanism"
+    },
+    {
+      "id": "C07",
+      "claim": "Seven Day Focus Fieldbook available free via existing Jetpack mechanism",
+      "claim_type": "FV-live",
+      "evidence_status": "SUPPORTED",
+      "source": "https://finalvestige.com/focus/",
+      "use_limit": "52-page version; lead confirmation requires backend validation"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 is advertised by Inspire3 as one of its self-development brands",
+      "claim_type": "seller-index",
+      "evidence_status": "SELLER_DESCRIBED",
+      "source": "https://inspire3.com/",
+      "use_limit": "Do not imply approval or efficacy"
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 Premium is described as including 12 levels",
+      "claim_type": "seller-product-format",
+      "evidence_status": "SELLER_DESCRIBED",
+      "source": "https://zen12.com/",
+      "use_limit": "No independent delivery test"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 Premium is described as including 48 MP3 audio files",
+      "claim_type": "seller-product-format",
+      "evidence_status": "SELLER_DESCRIBED",
+      "source": "https://zen12.com/",
+      "use_limit": "No independent delivery test"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 Premium page advertises quick-start guide and user manual",
+      "claim_type": "seller-product-format",
+      "evidence_status": "SELLER_DESCRIBED",
+      "source": "https://zen12.com/",
+      "use_limit": "No independent manual inspected"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 site advertises 1-year money-back guarantee",
+      "claim_type": "seller-policy",
+      "evidence_status": "SELLER_DESCRIBED",
+      "source": "https://zen12.com/",
+      "use_limit": "Not independently tested or authenticated checkout"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 Premium costs $87 or $87.99 at actual referred checkout",
+      "claim_type": "merchant-checkout",
+      "evidence_status": "UNVERIFIED",
+      "source": "https://zen12.com/",
+      "use_limit": "Public display and prior reports differ; no price shown in guide"
+    },
+    {
+      "id": "C14",
+      "claim": "12 minutes of Zen12 audio delivers benefits equivalent to one hour of advanced meditation",
+      "claim_type": "seller-efficacy",
+      "evidence_status": "UNSUBSTANTIATED",
+      "source": "https://zen12.com/",
+      "use_limit": "Omit entirely as positive claim"
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 cures stress or anxiety or significantly changes mental performance",
+      "claim_type": "seller-health",
+      "evidence_status": "UNSUBSTANTIATED",
+      "source": "https://zen12.com/",
+      "use_limit": "No product-specific reliable scientific support authenticated"
+    },
+    {
+      "id": "C16",
+      "claim": "Any brainwave entrainment response proves Zen12 clinically effective",
+      "claim_type": "mechanism-inference",
+      "evidence_status": "REJECTED",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "use_limit": "Mechanism does not establish marketed endpoint"
+    },
+    {
+      "id": "C17",
+      "claim": "Hypnosis Live sells an extensive library of self-hypnosis MP3s",
+      "claim_type": "seller-product-format",
+      "evidence_status": "SELLER_DESCRIBED",
+      "source": "https://hypnosislive.com/",
+      "use_limit": "Do not cite old countdown pricing as current"
+    },
+    {
+      "id": "C18",
+      "claim": "Hypnosis Live special sale shown with end date June 30 2026 is presently valid",
+      "claim_type": "seller-price-urgency",
+      "evidence_status": "REJECTED",
+      "source": "https://hypnosislive.com/",
+      "use_limit": "Stale countdown; no urgency or price copied"
+    },
+    {
+      "id": "C19",
+      "claim": "Brainwave Shots offers audio in categories such as focus and sleep",
+      "claim_type": "seller-product-format",
+      "evidence_status": "SELLER_DESCRIBED",
+      "source": "https://brainwaveshots.com/",
+      "use_limit": "No health or therapeutic benefit validated"
+    },
+    {
+      "id": "C20",
+      "claim": "Brainwave Shots can instantly change mood or guarantee cognitive effects",
+      "claim_type": "seller-efficacy",
+      "evidence_status": "UNSUBSTANTIATED",
+      "source": "https://brainwaveshots.com/",
+      "use_limit": "Omit efficacy promise"
+    },
+    {
+      "id": "C21",
+      "claim": "Public Inspire3 portal exists and describes affiliate signup",
+      "claim_type": "public-program",
+      "evidence_status": "SUPPORTED",
+      "source": "https://affiliates.inspire3.com/",
+      "use_limit": "Does not establish named Final Vestige partner acceptance"
+    },
+    {
+      "id": "C22",
+      "claim": "Final Vestige is accepted into Inspire3 affiliate program",
+      "claim_type": "account-specific-rights",
+      "evidence_status": "UNVERIFIED",
+      "source": "https://affiliates.inspire3.com/",
+      "use_limit": "Targeted Gmail review inconclusive; provider dashboard or approval needed"
+    },
+    {
+      "id": "C23",
+      "claim": "Final Vestige has an issued earning link authorized for WordPress + Grok social referrals",
+      "claim_type": "account-specific-rights",
+      "evidence_status": "UNVERIFIED",
+      "source": "https://affiliates.inspire3.com/",
+      "use_limit": "Withhold URL and paid CTA"
+    },
+    {
+      "id": "C24",
+      "claim": "Public 60%+ network pitch establishes actual FV commission rate",
+      "claim_type": "account-specific-payout",
+      "evidence_status": "REJECTED",
+      "source": "https://affiliates.inspire3.com/",
+      "use_limit": "Generic seller pitch is not individual contract; no payout figure in guide"
+    },
+    {
+      "id": "C25",
+      "claim": "Commercial endorsements require clear and conspicuous commission disclosure",
+      "claim_type": "legal-compliance",
+      "evidence_status": "SUPPORTED",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "use_limit": "Prospective disclosure near inactive control; repeat near each actual link"
+    },
+    {
+      "id": "C26",
+      "claim": "Objective health benefits require competent and reliable scientific substantiation",
+      "claim_type": "legal-compliance",
+      "evidence_status": "SUPPORTED",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "use_limit": "Seller copy alone inadequate"
+    },
+    {
+      "id": "C27",
+      "claim": "A merchant outbound click is a paid affiliate sale",
+      "claim_type": "analytics-interpretation",
+      "evidence_status": "REJECTED",
+      "source": "https://affiliates.inspire3.com/",
+      "use_limit": "Require independently settled commission"
+    },
+    {
+      "id": "C28",
+      "claim": "Existing /mind/ hub is live WordPress draft",
+      "claim_type": "release-state",
+      "evidence_status": "REJECTED",
+      "source": "https://finalvestige.com/focus/",
+      "use_limit": "Only source HTML concept, no CMS writes"
+    },
+    {
+      "id": "C29",
+      "claim": "A 42-second storyboard is a playable video",
+      "claim_type": "asset-state",
+      "evidence_status": "REJECTED",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "use_limit": "Caption/transcript/poster only, encode/host after rights/QA"
+    },
+    {
+      "id": "C30",
+      "claim": "No currently authenticated FV-owned purchasable Mind product was identified",
+      "claim_type": "commerce-review",
+      "evidence_status": "UNKNOWN",
+      "source": "https://finalvestige.com/focus/",
+      "use_limit": "Search limitations do not prove no SKU exists; verify merchant records"
+    },
+    {
+      "id": "C31",
+      "claim": "Published Final Vestige change-blindness article is a legal public route",
+      "claim_type": "FV-live",
+      "evidence_status": "SUPPORTED",
+      "source": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "use_limit": "Relevant nearby research; not identical phenomenon"
+    },
+    {
+      "id": "C32",
+      "claim": "Published Final Vestige Mesmerism article exists",
+      "claim_type": "FV-live",
+      "evidence_status": "SUPPORTED",
+      "source": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "use_limit": "History of suggestion topic, no commerce inference"
+    }
+  ],
+  "claims_count": 32,
+  "release_gates": {
+    "signed_publisher_approval": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "verified_account_identity": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "promotional_channel_authorization": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "issued_trackable_affiliate_url": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "product_placement_permission": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "approved_creatives_terms": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "merchant_checkout_test": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "checkout_price_currency_verification": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "tax_vat_fee_clarity": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "refund_terms_independently_reviewed": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "refund_execution_evidence": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "delivery_and_file_format_verification": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "rights_cleared_video_assets": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "original_captioned_encoded_video": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "opt_in_video_playback_only": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "reduced_motion_review": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "WCAG_keyboard_360_390_768_1440_1920": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "screen_reader_landmarks_and_names": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "WordPress_sanitization_review": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "Link_and_CSP_security": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "no_duplicate_jetpack_list": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "verified_existing_focus_welcome": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "privacy_appropriate_analytics_consent": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "authentic_grok_media_ids": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "Grok_hook_to_landing_match": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "affiliate_click_separate_from_paid": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "merchant_sale_confirmation": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "net_settlement_reconciliation": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "refund_and_fees_reconciliation": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "cohort_denominator_7_day": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "cohort_denominator_30_day": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "founder_commercial_release_approval": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "site_QA_release_approval": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "homepage_art_coordination": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "site_engineer_release_approval": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    },
+    "no_live_wordpress_publication": {
+      "state": "HOLD",
+      "evidence": "Not authenticated for this release"
+    }
+  },
+  "prohibited_misreadings": [
+    "Public affiliate pitch is NOT individual approval",
+    "Generic meditation evidence is NOT product-specific evidence",
+    "Captioned storyboard is NOT rendered video",
+    "Affiliate click is NOT paid sale",
+    "Email interest is NOT confirmed lead",
+    "Unverified Payhip SKU is NOT payable owned digital product"
+  ],
+  "affiliate_disclosure": "If you purchase through a future authorized link, Final Vestige may earn a commission at no additional cost to you.",
+  "affiliate_earning_url": null,
+  "approved_partner_account": null,
+  "verified_paid_sale": null,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "merchant_checkout_price": null,
+  "source_method": "Primary/publisher source pages and official seller sites read 2026-11-14; content snapshots may differ later. Proof of merchant terms and customer settlement unavailable."
+}
