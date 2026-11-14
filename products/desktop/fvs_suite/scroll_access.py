@@ -141,7 +141,8 @@ class ScrollableForm:
         if event.width < 1:
             return
         self.canvas.itemconfigure(self.window, width=event.width)
-        wraplength = max(100, event.width - 72)
+        # Fit even a one-pixel viewport; a 100px minimum clips labels at 400% zoom.
+        wraplength = max(1, event.width - 72)
         for widget in self.wrapping_labels:
             widget.configure(wraplength=wraplength)
 
@@ -189,7 +190,9 @@ class ScrollableForm:
 
     def _focus_reveal(self, event):
         widget = event.widget
-        if not isinstance(widget, (ttk.Entry, ttk.Button)):
+        if not isinstance(widget, (tk.Entry, tk.Button, tk.Text, ttk.Entry, ttk.Button,
+                                   ttk.Combobox, ttk.Spinbox, ttk.Checkbutton,
+                                   ttk.Radiobutton, ttk.Treeview)):
             return
         if widget.winfo_toplevel() is not self.root:
             return
