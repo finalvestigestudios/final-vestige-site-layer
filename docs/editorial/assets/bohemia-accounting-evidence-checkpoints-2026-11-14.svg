@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 1000" width="390" height="1000" role="img" aria-labelledby="title desc">
+<title id="title">Bohemia Spillway: five checkpoints in the missing royalty-accounting trail</title>
+<desc id="desc">Five stages: 1984 enacted accounting duty, 1997 escrow procedures, 1999 judicial decisions, 2008 district claim of a complete accounting, and unresolved 2026 claimant-level reconciliation. Each date establishes a limited fact, not proof every beneficiary was paid.</desc>
+<rect width="390" height="1000" fill="#161613"/>
+<rect x="0" y="0" width="390" height="7" fill="#bda477"/>
+<text x="24" y="41" fill="#bea77c" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" letter-spacing="1.6">FINAL VESTIGE / EVIDENCE GRAPHIC</text>
+<text x="24" y="82" fill="#eee7dc" font-family="DejaVu Serif,Georgia,serif" font-weight="bold" font-size="24">The accounting trail</text>
+<text x="24" y="107" fill="#b6afa2" font-family="DejaVu Sans,Arial,sans-serif" font-size="13">A legal duty is not a payment receipt.</text>
+<path d="M 42 153 L 42 860" fill="none" stroke="#645941" stroke-width="2" />
+<rect x="57" y="145" width="311" height="133" rx="9" fill="#25241f" stroke="#4b473b"/>
+<circle cx="42" cy="168" r="7" fill="#bda477" stroke="#161613" stroke-width="4"/>
+<text x="72" y="169" fill="#bea77c" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" font-weight="bold" letter-spacing="1">1984 / ACCOUNTING DUTY</text>
+<text x="72" y="196" fill="#eee7dc" font-family="DejaVu Sans,Arial,sans-serif" font-size="13">Louisiana required a revenue account</text>
+<text x="72" y="216" fill="#eee7dc" font-family="DejaVu Sans,Arial,sans-serif" font-size="13">for DNR and access for applicants.</text>
+<line x1="72" y1="229" x2="352" y2="229" stroke="#4b473b"/>
+<text x="72" y="250" fill="#c5b6a3" font-family="DejaVu Sans,Arial,sans-serif" font-size="11.5">Duty enacted, delivery unverified.</text>
+<rect x="57" y="293" width="311" height="133" rx="9" fill="#25241f" stroke="#4b473b"/>
+<circle cx="42" cy="316" r="7" fill="#bda477" stroke="#161613" stroke-width="4"/>
+<text x="72" y="317" fill="#bea77c" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" font-weight="bold" letter-spacing="1">1997 / ESCROW PROCEDURES</text>
+<text x="72" y="344" fill="#eee7dc" font-family="DejaVu Sans,Arial,sans-serif" font-size="13">Act 1364 added machinery for</text>
+<text x="72" y="364" fill="#eee7dc" font-family="DejaVu Sans,Arial,sans-serif" font-size="13">escrow and royalty payment.</text>
+<line x1="72" y1="377" x2="352" y2="377" stroke="#4b473b"/>
+<text x="72" y="398" fill="#c5b6a3" font-family="DejaVu Sans,Arial,sans-serif" font-size="11.5">Procedure does not establish receipt.</text>
+<rect x="57" y="441" width="311" height="133" rx="9" fill="#25241f" stroke="#4b473b"/>
+<circle cx="42" cy="464" r="7" fill="#bda477" stroke="#161613" stroke-width="4"/>
+<text x="72" y="465" fill="#bea77c" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" font-weight="bold" letter-spacing="1">1999 / TWO COURT CHECKPOINTS</text>
+<text x="72" y="492" fill="#eee7dc" font-family="DejaVu Sans,Arial,sans-serif" font-size="13">Vogt attests a case-specific account;</text>
+<text x="72" y="512" fill="#eee7dc" font-family="DejaVu Sans,Arial,sans-serif" font-size="13">Haspel rejects a returned-deed challenge.</text>
+<line x1="72" y1="525" x2="352" y2="525" stroke="#4b473b"/>
+<text x="72" y="546" fill="#c5b6a3" font-family="DejaVu Sans,Arial,sans-serif" font-size="11.5">Neither proves all claimants were paid.</text>
+<rect x="57" y="589" width="311" height="133" rx="9" fill="#25241f" stroke="#4b473b"/>
+<circle cx="42" cy="612" r="7" fill="#bda477" stroke="#161613" stroke-width="4"/>
+<text x="72" y="613" fill="#bea77c" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" font-weight="bold" letter-spacing="1">2008 / OFFICIAL DISCLOSURE</text>
+<text x="72" y="640" fill="#eee7dc" font-family="DejaVu Sans,Arial,sans-serif" font-size="13">The district said it maintained a</text>
+<text x="72" y="660" fill="#eee7dc" font-family="DejaVu Sans,Arial,sans-serif" font-size="13">“complete” royalty-revenue account.</text>
+<line x1="72" y1="673" x2="352" y2="673" stroke="#4b473b"/>
+<text x="72" y="694" fill="#c5b6a3" font-family="DejaVu Sans,Arial,sans-serif" font-size="11.5">The underlying ledger is still needed.</text>
+<rect x="57" y="737" width="311" height="133" rx="9" fill="#25241f" stroke="#4b473b"/>
+<circle cx="42" cy="760" r="7" fill="#bda477" stroke="#161613" stroke-width="4"/>
+<text x="72" y="761" fill="#bea77c" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" font-weight="bold" letter-spacing="1">2026 / THE QUESTION TO RESOLVE</text>
+<text x="72" y="788" fill="#eee7dc" font-family="DejaVu Sans,Arial,sans-serif" font-size="13">Compare tract records, original ledgers,</text>
+<text x="72" y="808" fill="#eee7dc" font-family="DejaVu Sans,Arial,sans-serif" font-size="13">court registry and beneficiary receipts.</text>
+<line x1="72" y1="821" x2="352" y2="821" stroke="#4b473b"/>
+<text x="72" y="842" fill="#c5b6a3" font-family="DejaVu Sans,Arial,sans-serif" font-size="11.5">No verified current balance asserted.</text>
+<path d="M24 915 H366" stroke="#5a564d"/>
+<text x="24" y="940" fill="#c1b9aa" font-family="DejaVu Sans,Arial,sans-serif" font-size="10">SOURCES: La. Act 233 (1984); Act 1364 (1997);</text>
+<text x="24" y="956" fill="#c1b9aa" font-family="DejaVu Sans,Arial,sans-serif" font-size="10">La. Fourth Circuit (1999); SLFPA-E audit note (2008).</text>
+<text x="24" y="982" fill="#a89d88" font-family="DejaVu Sans,Arial,sans-serif" font-size="10">© Final Vestige Studios · 14 Nov 2026 · Original diagram</text>
+</svg>
