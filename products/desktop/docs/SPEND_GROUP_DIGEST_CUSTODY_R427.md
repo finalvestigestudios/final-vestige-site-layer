@@ -20,7 +20,7 @@ all group inputs before hashing and requires:
 
 - R426's strict native 64-lowercase-hex source SHA-256;
 - an exact built-in ASCII `[A-Z0-9]+` vendor key, up to 1,048,576 characters;
-- an exact built-in `YYYY-MM` month with a real month 01–12 and year 0001–9999;
+- an exact built-in month with 1–4-digit year 1–9999 and month 01–12 (Python `strftime('%Y-%m')` may omit leading year zeros on Linux);
 - an exact built-in list of 1–200,000 strictly increasing distinct native
   integer physical rows within [2, 9,999,999,999], copied into a tuple.
 
