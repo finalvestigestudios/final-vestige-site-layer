@@ -1,0 +1,22 @@
+/* Apollo R355 — self-contained later-source evidence note; zero JS or images. */
+.fv-apollo-r355{--r355-bg:#11120f;--r355-ink:#f1eadf;--r355-sub:#c9c0b0;--r355-line:#786a50;--r355-accent:#debb83;background:var(--r355-bg);color:var(--r355-ink);font:400 16px/1.65 system-ui,sans-serif;isolation:isolate}
+.fv-apollo-r355 *, .fv-apollo-r355 *::before,.fv-apollo-r355 *::after{box-sizing:border-box}
+.fv-apollo-r355__inner{width:min(1100px,calc(100% - 40px));margin:auto;padding:clamp(28px,5vw,74px) 0}
+.fv-apollo-r355__eyebrow{color:var(--r355-accent);font:700 12px/1.6 ui-monospace,monospace;letter-spacing:.12em}
+.fv-apollo-r355 h2{font:400 clamp(32px,4vw,54px)/1.14 Georgia,serif;letter-spacing:-.02em;max-width:22ch;margin:16px 0}
+.fv-apollo-r355__lead{color:var(--r355-sub);font-size:1.08em;max-width:80ch}
+.fv-apollo-r355__facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:30px 0}
+.fv-apollo-r355__facts p{border:1px solid var(--r355-line);padding:16px;min-width:0;margin:0}
+.fv-apollo-r355__facts span{display:block;color:var(--r355-accent);font-size:.79em;letter-spacing:.06em;text-transform:uppercase}
+.fv-apollo-r355__facts strong{font-weight:600;overflow-wrap:anywhere}
+.fv-apollo-r355__boundary{border-left:3px solid var(--r355-accent);padding:12px 16px;background:#211e18}
+.fv-apollo-r355__source{border:1px solid var(--r355-line);margin-top:22px;padding:12px 16px}
+.fv-apollo-r355 summary{cursor:pointer;font-weight:600;min-height:44px;display:list-item;padding:9px 0;overflow-wrap:anywhere}
+.fv-apollo-r355 a{color:var(--r355-accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.fv-apollo-r355 :focus-visible{outline:3px solid var(--r355-accent);outline-offset:3px}
+.fv-apollo-r355__note{font-size:.88em;color:var(--r355-sub);border-top:1px solid var(--r355-line);padding-top:15px}
+.fv-apollo-r355__print{display:none}
+@media(max-width:650px){.fv-apollo-r355__facts{grid-template-columns:1fr}.fv-apollo-r355__inner{width:calc(100% - 24px)}}
+@media(prefers-reduced-motion:reduce){.fv-apollo-r355 *{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+@media(forced-colors:active){.fv-apollo-r355__facts p,.fv-apollo-r355__source,.fv-apollo-r355__boundary{border-color:CanvasText}.fv-apollo-r355 :focus-visible{outline-color:Highlight}}
+@media print{.fv-apollo-r355{background:#fff!important;color:#000!important}.fv-apollo-r355__inner{width:100%;padding:15px 0}.fv-apollo-r355__source{display:none!important}.fv-apollo-r355__print[hidden]{display:block!important}.fv-apollo-r355__facts{grid-template-columns:repeat(3,1fr)}.fv-apollo-r355 a{color:#000!important}}
