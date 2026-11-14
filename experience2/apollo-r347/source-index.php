@@ -50,7 +50,7 @@ function fv_apollo_r347_index_shortcode($atts = array()): string {
     <h2 id="<?php echo $esc($id); ?>-heading">Find the original record.</h2>
     <p class="fv-apollo-r347__intro">A curated index of <strong><?php echo count($records); ?> evidence entries</strong> derived from the chronology, findings and NASA accession gallery above. Entries can share the same source page. Each link opens its institutional record; access does not establish image or commercial rights.</p>
     <?php if (!$records): ?>
-      <p class="fv-apollo-r347__unavailable">The source index is unavailable. The complete <a href="https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html">NASA Apollo 204 Review Board findings</a> remain accessible directly.</p>
+      <p class="fv-apollo-r347__unavailable" data-fv-source-review-required="true">The source index is unavailable. Institutional source links are withheld until this experience can verify its reviewed evidence records. The historical record may be consulted independently through NASA’s Apollo 204 Review Board archive.</p>
     <?php else: ?>
       <div class="fv-apollo-r347__filters" data-fv-apollo-filters hidden aria-label="Filter evidence types"></div>
       <p class="fv-apollo-r347__status" data-fv-apollo-status aria-live="polite" hidden></p>
