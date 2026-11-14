@@ -76,6 +76,25 @@ class TestCore(unittest.TestCase):
     def test_invalid_taxonomy_list(self):
         self.assertEqual(gate.review(self.docs, [])['status'],'INVALID_HARD_HOLD')
 
+    def test_bad_document_key_fails_closed(self):
+        self.docs[99] = self.docs.pop('article-02')
+        self.assertEqual(self.res()['status'], 'INVALID_HARD_HOLD')
+
+    def test_bad_tool_plan_slug_array_fails_closed(self):
+        self.tax['tools'][0]['slug'] = ['nested']
+        self.assertEqual(self.res()['status'], 'INVALID_HARD_HOLD')
+
+    def test_bad_tool_plan_slug_dict_fails_closed(self):
+        self.tax['tools'][0]['slug'] = {'x': 1}
+        self.assertEqual(self.res()['status'], 'INVALID_HARD_HOLD')
+
+    def test_bad_tool_plan_none_fails_closed(self):
+        self.tax['tools'][0]['slug'] = None
+        self.assertEqual(self.res()['status'], 'INVALID_HARD_HOLD')
+
+    def test_bad_baseline_key_fails_closed(self):
+        self.assertEqual(gate.review(self.docs, self.tax, baseline={None:{}})['status'],'INVALID_HARD_HOLD')
+
     def test_native_not_checkout(self):
         with tempfile.TemporaryDirectory() as td:
             self.assertEqual(gate.native_review(Path(td))['status'], 'INVALID_HARD_HOLD')
