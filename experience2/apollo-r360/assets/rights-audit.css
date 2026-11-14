@@ -1,0 +1,16 @@
+/* FV Apollo R360: isolated nonproduction editorial source/rights annex. */
+.fv-apollo-r360{box-sizing:border-box;max-width:1120px;margin:2rem auto;padding:clamp(1rem,3vw,2.5rem);background:#181b1c;color:#f6f0df;font:inherit;line-height:1.65;border:1px solid #7e7052;overflow-wrap:anywhere}
+.fv-apollo-r360 *{box-sizing:border-box}
+.fv-apollo-r360 h2,.fv-apollo-r360 h3{color:#f6ebcd;line-height:1.25}
+.fv-apollo-r360 h2{font-size:clamp(1.3rem,3vw,2rem);margin:.25rem 0 1.1rem}
+.fv-apollo-r360 h3{font-size:1.1rem;margin:0 0 .75rem}
+.fv-apollo-r360>ol{list-style-position:inside;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}
+.fv-apollo-r360>ol>li{min-width:0;border:1px solid #786849;padding:1rem 1.1rem;background:#242728}
+.fv-apollo-r360>ol>li::marker{color:#e6c983;font-weight:700}
+.fv-apollo-r360 a{color:#ffe0a0;text-decoration:underline;text-underline-offset:.2em;overflow-wrap:anywhere}
+.fv-apollo-r360 a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.fv-apollo-r360 p{margin:.65rem 0}
+.fv-apollo-r360 [data-fv-commercial-clearance]{border-left:4px solid #d2ac64}
+@media(min-width:760px){.fv-apollo-r360>ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(forced-colors:active){.fv-apollo-r360,.fv-apollo-r360>ol>li{forced-color-adjust:auto;border:1px solid CanvasText}}
+@media print{.fv-apollo-r360,.fv-apollo-r360>ol>li{color:#000!important;background:#fff!important;border-color:#000!important;break-inside:avoid}.fv-apollo-r360 h2,.fv-apollo-r360 h3,.fv-apollo-r360 a{color:#000!important}}
