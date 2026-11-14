@@ -22,6 +22,12 @@ class GateChainTests(unittest.TestCase):
    result=r.audit(Path(d))
    self.assertEqual(result['status'],'INVALID_HARD_HOLD')
    self.assertFalse(result['qd_pass'])
+ def test_invalid_native_status_is_never_admitted(self):
+  obj=dict(BASE);obj['status']='INVALID_HARD_HOLD'
+  self.assertIn('CHILD_INVALID_HOLD',r.evaluate_child(NAME,2,json.dumps(obj))['errors'])
+ def test_native_diagnostic_errors_are_never_admitted(self):
+  obj=dict(BASE);obj['errors']=['NATIVE_CHECKOUT_MISSING']
+  self.assertIn('CHILD_REPORTED_ERRORS',r.evaluate_child(NAME,2,json.dumps(obj))['errors'])
  def test_source_blob_and_drift(self):
   with tempfile.TemporaryDirectory() as d:
    p=Path(d)/'x.py';p.write_text('pass\n')
