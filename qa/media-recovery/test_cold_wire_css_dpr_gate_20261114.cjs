@@ -53,7 +53,7 @@ hold('mobile CSS 500 at DPR2: 960px rendition is too small',
 hold('mobile CSS 390 at DPR2: 600px rendition is too small',
  fixture(),fixture(240,600,450),'candidate_display_density_regression');
 hold('mobile older CDP export missing CSS cannot claim bytes',
- fixture(),fixture(240,960,720,undefined,292),'unverified_or_broken_image');
+ fixture(),(()=>{const a=fixture(240,960,720);delete a.pages[0].stored_images[0].css_width_px;return a})(),'unverified_or_broken_image');
 hold('mobile zero CSS box is unverified',fixture(),fixture(240,960,720,0,292),'unverified_or_broken_image');
 hold('CSS box shrinkage must not disguise byte savings',
  fixture(),fixture(240,960,720,300,225),'rendered_css_geometry_changed');
