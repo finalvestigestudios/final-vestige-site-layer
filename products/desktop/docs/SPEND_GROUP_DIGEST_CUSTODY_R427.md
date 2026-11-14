@@ -44,7 +44,7 @@ PYTHONPATH=products/desktop python -OO -W error -m unittest discover -s products
 
 **18/18 normal + 18/18 optimized passed locally** in an isolated reproduction
 of the committed helper source and R426 dependency. Byte-for-byte repository
-integration, the eight new real-engine integration methods, inherited suites,
+integration, the nine new real-engine integration methods, inherited suites,
 and native Windows were not executed locally. The committed Ubuntu/Windows
 workflow specifies the four new test commands for independent execution.
 
