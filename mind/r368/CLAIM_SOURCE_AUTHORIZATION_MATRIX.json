@@ -1,0 +1,619 @@
+{
+  "revision": "R368",
+  "checked_at": "2026-11-14",
+  "scope": "Mind/Perception source-only; HOLD commerce; no live edit",
+  "canonical_issue": "#171",
+  "public_source_count": 14,
+  "claim_count": 39,
+  "release_gate_count": 32,
+  "seller_price_variant_notice": "Accessible Zen12.com seller snapshot currently returns $87 Premium, while earlier audits reported $87.99. Do not claim a checkout change or advertise exact current payable price. HL Total Focus public price also varies by snapshot/variant.",
+  "sources": [
+    {
+      "id": "EXP2005",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "role": "peer-reviewed 2005 choice blindness",
+      "checked": "2026-11-14",
+      "access": "readable public source or authenticated WP inspection; historical prior-snapshot seller price not checkout evidence"
+    },
+    {
+      "id": "EXP2010",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "role": "peer-reviewed 2010 supermarket study",
+      "checked": "2026-11-14",
+      "access": "readable public source or authenticated WP inspection; historical prior-snapshot seller price not checkout evidence"
+    },
+    {
+      "id": "EXP2013",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0060554",
+      "role": "peer-reviewed 2013 survey experiment",
+      "checked": "2026-11-14",
+      "access": "readable public source or authenticated WP inspection; historical prior-snapshot seller price not checkout evidence"
+    },
+    {
+      "id": "PUY",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "role": "FV published historical research",
+      "checked": "2026-11-14",
+      "access": "readable public source or authenticated WP inspection; historical prior-snapshot seller price not checkout evidence"
+    },
+    {
+      "id": "FOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "role": "FV existing Focus Fieldbook/Jetpack",
+      "checked": "2026-11-14",
+      "access": "readable public source or authenticated WP inspection; historical prior-snapshot seller price not checkout evidence"
+    },
+    {
+      "id": "CHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "role": "FV published investigation",
+      "checked": "2026-11-14",
+      "access": "readable public source or authenticated WP inspection; historical prior-snapshot seller price not checkout evidence"
+    },
+    {
+      "id": "MES",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "role": "FV published history investigation",
+      "checked": "2026-11-14",
+      "access": "readable public source or authenticated WP inspection; historical prior-snapshot seller price not checkout evidence"
+    },
+    {
+      "id": "INSPIRE",
+      "url": "https://inspire3.com/",
+      "role": "official parent seller catalog",
+      "checked": "2026-11-14",
+      "access": "readable public source or authenticated WP inspection; historical prior-snapshot seller price not checkout evidence"
+    },
+    {
+      "id": "ZEN12",
+      "url": "https://zen12.com/",
+      "role": "exact seller product display; cache variant risk",
+      "checked": "2026-11-14",
+      "access": "readable public source or authenticated WP inspection; historical prior-snapshot seller price not checkout evidence"
+    },
+    {
+      "id": "HL",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "role": "official Total Focus seller page",
+      "checked": "2026-11-14",
+      "access": "readable public source or authenticated WP inspection; historical prior-snapshot seller price not checkout evidence"
+    },
+    {
+      "id": "BWS",
+      "url": "https://brainwaveshots.com/",
+      "role": "seller catalog; Focus Shot",
+      "checked": "2026-11-14",
+      "access": "readable public source or authenticated WP inspection; historical prior-snapshot seller price not checkout evidence"
+    },
+    {
+      "id": "AFF",
+      "url": "https://affiliates.inspire3.com/",
+      "role": "public affiliate program not account-specific permission",
+      "checked": "2026-11-14",
+      "access": "readable public source or authenticated WP inspection; historical prior-snapshot seller price not checkout evidence"
+    },
+    {
+      "id": "FTC_E",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "role": "FTC endorsement guidance",
+      "checked": "2026-11-14",
+      "access": "readable public source or authenticated WP inspection; historical prior-snapshot seller price not checkout evidence"
+    },
+    {
+      "id": "FTC_H",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "role": "FTC health-claim substantiation",
+      "checked": "2026-11-14",
+      "access": "readable public source or authenticated WP inspection; historical prior-snapshot seller price not checkout evidence"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Face-choice study manipulated outcome after participant selection",
+      "classification": "research_supported",
+      "source_id": "EXP2005",
+      "boundary": "Experimental mismatch, not universal consumer psychology",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C02",
+      "claim": "Some participants explained manipulated face as if chosen",
+      "classification": "research_supported",
+      "source_id": "EXP2005",
+      "boundary": "Specific lab paradigm; does not validate product",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C03",
+      "claim": "Study published in Science Oct 7 2005",
+      "classification": "research_supported",
+      "source_id": "EXP2005",
+      "boundary": "Publication metadata",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C04",
+      "claim": "Supermarket study substituted chosen jam or tea",
+      "classification": "research_supported",
+      "source_id": "EXP2010",
+      "boundary": "Sleight-of-hand research not product test",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C05",
+      "claim": "At most one third of manipulated marketplace trials detected overall",
+      "classification": "research_supported",
+      "source_id": "EXP2010",
+      "boundary": "Trial rate, not population or conversion rate",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C06",
+      "claim": "Higher detection for salient flavor/scent contrasts",
+      "classification": "research_supported",
+      "source_id": "EXP2010",
+      "boundary": "No universal strength estimate",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C07",
+      "claim": "2013 political survey manipulated some recorded answers",
+      "classification": "research_supported",
+      "source_id": "EXP2013",
+      "boundary": "Not a consumer conversion recipe or broad population claim",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C08",
+      "claim": "2013 paper's shifted policy reasoning generalizes to all buyers",
+      "classification": "EXCLUDE_UNSUBSTANTIATED",
+      "source_id": "EXP2013",
+      "boundary": "No such external-validity proof",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C09",
+      "claim": "Choice blindness proves opinions can be controlled",
+      "classification": "EXCLUDE_UNSUBSTANTIATED",
+      "source_id": "EXP2005",
+      "boundary": "Cannot infer reliable mind control",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C10",
+      "claim": "Puységur archive records failed predictions and cures",
+      "classification": "historical_archival",
+      "source_id": "PUY",
+      "boundary": "Historical record not modern therapeutic efficacy",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C11",
+      "claim": "Puységur 153 source rows/16 case dossiers",
+      "classification": "historical_archival",
+      "source_id": "PUY",
+      "boundary": "Read from published WordPress content",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C12",
+      "claim": "Published Mesmerism historical investigation exists",
+      "classification": "site_verified",
+      "source_id": "MES",
+      "boundary": "Context only",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C13",
+      "claim": "Published change-blindness article exists",
+      "classification": "site_verified",
+      "source_id": "CHANGE",
+      "boundary": "Live editorial route",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C14",
+      "claim": "Existing Seven Day Focus Fieldbook live page",
+      "classification": "site_verified",
+      "source_id": "FOCUS",
+      "boundary": "One existing Jetpack subscriber path",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C15",
+      "claim": "52-page Focus Fieldbook established",
+      "classification": "site_verified",
+      "source_id": "FOCUS",
+      "boundary": "Not new signup stack",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C16",
+      "claim": "Inspire3 catalog includes Zen12 and Hypnosis Live",
+      "classification": "seller_described",
+      "source_id": "INSPIRE",
+      "boundary": "Catalog fact does not imply FV contract",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 seller describes 12 levels and 48 MP3s Premium",
+      "classification": "seller_described",
+      "source_id": "ZEN12",
+      "boundary": "No independent delivery check",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C18",
+      "claim": "Zen12 seller describes four listening styles per level",
+      "classification": "seller_described",
+      "source_id": "ZEN12",
+      "boundary": "Package not an effect",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C19",
+      "claim": "Zen12 public rounded Premium $87 appears on available cache",
+      "classification": "seller_displayed_variant_sensitive",
+      "source_id": "ZEN12",
+      "boundary": "PRIOR $87.99 snapshot also reported; no verified checkout, omit price from CTA",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C20",
+      "claim": "Zen12 advertises one-year money-back guarantee",
+      "classification": "seller_described_unverified_execution",
+      "source_id": "ZEN12",
+      "boundary": "Refund eligibility and processing for exact checkout not tested",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C21",
+      "claim": "Zen12 claims 12 minutes equal an hour of meditation",
+      "classification": "EXCLUDE_UNSUBSTANTIATED",
+      "source_id": "ZEN12",
+      "boundary": "No product-specific outcome substantiation",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C22",
+      "claim": "Zen12 claims brainwave and health gains",
+      "classification": "EXCLUDE_UNSUBSTANTIATED",
+      "source_id": "ZEN12",
+      "boundary": "Do not assert health efficacy",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C23",
+      "claim": "Hypnosis Live Total Focus seller describes 33-minute /47MB file",
+      "classification": "seller_described",
+      "source_id": "HL",
+      "boundary": "No trial, no objective result",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C24",
+      "claim": "Hypnosis Live Total Focus dynamically displayed prices",
+      "classification": "variant_sensitive_hold",
+      "source_id": "HL",
+      "boundary": "Public snapshots conflict; not actual checkout proof",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C25",
+      "claim": "Brainwave Shots catalog lists Focus Shot",
+      "classification": "seller_described",
+      "source_id": "BWS",
+      "boundary": "Not endorsement or efficacy",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C26",
+      "claim": "Inspire3 public affiliate program says special link is issued",
+      "classification": "public_program",
+      "source_id": "AFF",
+      "boundary": "Does not prove issued FV link",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C27",
+      "claim": "FV account approved and issued earning URL",
+      "classification": "NOT_AUTHENTICATED",
+      "source_id": "AFF",
+      "boundary": "No personalized documentary evidence",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C28",
+      "claim": "FV permitted social channels incl Grok postings",
+      "classification": "NOT_AUTHENTICATED",
+      "source_id": "AFF",
+      "boundary": "Require terms",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C29",
+      "claim": "FV permitted EMAIL channel / Jetpack promotion",
+      "classification": "NOT_AUTHENTICATED",
+      "source_id": "AFF",
+      "boundary": "Require express authorization",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C30",
+      "claim": "FV commission amount, payment eligibility or settlement",
+      "classification": "NOT_AUTHENTICATED",
+      "source_id": "AFF",
+      "boundary": "Do not report public program percentages as FV terms",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C31",
+      "claim": "Official affiliate swipe creatives approved for FV channels",
+      "classification": "NOT_AUTHENTICATED",
+      "source_id": "AFF",
+      "boundary": "No public approval; do not copy",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C32",
+      "claim": "FTC adjacent clear commission disclosure required if monetized",
+      "classification": "guidance_supported",
+      "source_id": "FTC_E",
+      "boundary": "Disclosure near specific recommendation/earning link",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C33",
+      "claim": "FTC health claims require adequate scientific support",
+      "classification": "guidance_supported",
+      "source_id": "FTC_H",
+      "boundary": "Do not imply product-specific health efficacy",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C34",
+      "claim": "Active rights-cleared paid FV Mind product checkout and delivery",
+      "classification": "NOT_AUTHENTICATED",
+      "source_id": "FOCUS",
+      "boundary": "Free Fieldbook is not a paid product",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C35",
+      "claim": "Three published matching Grok Mind asset IDs",
+      "classification": "NOT_AUTHENTICATED",
+      "source_id": "CHANGE",
+      "boundary": "Proposed video hooks ≠ verified published IDs",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C36",
+      "claim": "Jetpack provider confirmed attributable lead",
+      "classification": "NOT_TESTED",
+      "source_id": "FOCUS",
+      "boundary": "Do not infer form submit to confirmed subscriber",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C37",
+      "claim": "Merchant-confirmed paid order and refund-adjusted net",
+      "classification": "NOT_TESTED",
+      "source_id": "AFF",
+      "boundary": "Clicks ≠ sales; settlement proof required",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C38",
+      "claim": "Full 42s hosted film and A/B comparison",
+      "classification": "NOT_BUILT",
+      "source_id": "ZEN12",
+      "boundary": "Storyboard/captions only",
+      "release_state": "HOLD"
+    },
+    {
+      "id": "C39",
+      "claim": "Buyer guide price and return terms at approved checkout",
+      "classification": "NOT_AUTHENTICATED",
+      "source_id": "ZEN12",
+      "boundary": "Verify separately for exact offer variant",
+      "release_state": "HOLD"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "named FV publisher acceptance from merchant authenticated privately",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G02",
+      "name": "explicit permitted website and social acquisition channels",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G03",
+      "name": "explicit allowed Jetpack email / Dispatch channel if promoted there",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G04",
+      "name": "approved original claims and creatives review",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G05",
+      "name": "issued FV-specific earning destination verified privately",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G06",
+      "name": "authorized link destination tested, no cloaking",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G07",
+      "name": "product variant ID mapped to exact merchant offer",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G08",
+      "name": "actual checkout final price and tax verified for variant",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G09",
+      "name": "written returns eligibility and actual refund flow checked",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G10",
+      "name": "no medical/wealth guarantees or unverified neuro equivalence",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G11",
+      "name": "near CTA clear conspicuous affiliate earning disclosure",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G12",
+      "name": "real offsite link must not launch before all gates",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G13",
+      "name": "public paid owned Mind SKU license/rights verified",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G14",
+      "name": "owned Payhip checkout confirmed and deliverable verified",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G15",
+      "name": "original paid order receipt and refund/fee reconciliation",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G16",
+      "name": "actual published Grok asset IDs and dates validated by Praxxis",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G17",
+      "name": "mobile social bio/per-asset route verified",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G18",
+      "name": "existing Jetpack consent/confirmed subscriber provider proof",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G19",
+      "name": "no new list or duplicate analytics scripts",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G20",
+      "name": "first-party campaign attribution consent checked",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G21",
+      "name": "independent viewport/keyboard/contrast/screen-reader QA",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G22",
+      "name": "review WordPress sanitization/no-JS state",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G23",
+      "name": "film genuinely playable with accurate captions and transcript",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G24",
+      "name": "film meets low-cost/LCP performance budget",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G25",
+      "name": "randomization only after explicit founder release approval",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G26",
+      "name": "7-day cohort merchant settled paid order QA",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G27",
+      "name": "30-day cohort and refund window reconciliation",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G28",
+      "name": "independent qualified-human session denominator",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G29",
+      "name": "verify no homepage PR #49 / Mind hub PR #172 regression",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G30",
+      "name": "founder release sign-off",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G31",
+      "name": "site QA independent acceptance",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    },
+    {
+      "id": "G32",
+      "name": "no paid services/no live CMS navigation changes",
+      "status": "HOLD",
+      "reason": "Independent account, production or QA proof not yet obtained"
+    }
+  ],
+  "commercial_state": "HARD_HOLD"
+}
