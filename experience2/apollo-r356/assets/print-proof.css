@@ -1,0 +1,10 @@
+/* R356 isolated print custody contrast correction; never affects screen or source records. */
+@media print {
+  .fv-apollo-r355__eyebrow,
+  .fv-apollo-r355__lead,
+  .fv-apollo-r355__facts span,
+  .fv-apollo-r355__note,
+  .fv-apollo-r355__boundary { color:#000 !important; }
+  .fv-apollo-r355__boundary { background:#fff !important; border-left-color:#222 !important; }
+  .fv-apollo-r355__facts p { border-color:#333 !important; }
+}
