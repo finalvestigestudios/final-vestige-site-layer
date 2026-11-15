@@ -1,0 +1,675 @@
+{
+  "audit": "mind-r386-2026-11-14",
+  "review_local_date": "2026-11-14",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "verification_note": "Seller pages accessible on 2026-11-14; account approval not verified. Puységur live page HTTP 429; rely on Issue #171 for inventory. Connected Gmail search showed promotional email, not publisher approval; no independently verified FV paid Mind SKU.",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Stroop original 1935",
+      "url": "https://doi.org/10.1037/h0054651",
+      "category": "primary-study"
+    },
+    {
+      "id": "S02",
+      "title": "Stroop catalog Max Planck",
+      "url": "https://www.mpi.nl/publications/item2389918/studies-interference-serial-verbal-reactions",
+      "category": "bibliographic"
+    },
+    {
+      "id": "S03",
+      "title": "Raz et al. 2002 16+16",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12470132/",
+      "category": "primary-abstract"
+    },
+    {
+      "id": "S04",
+      "title": "Raz et al. 2005 brain study",
+      "url": "https://doi.org/10.1073/pnas.0503064102",
+      "category": "primary-study"
+    },
+    {
+      "id": "S05",
+      "title": "Raz et al. 2006 induction comparison",
+      "url": "https://doi.org/10.1111/j.1467-9280.2006.01669.x",
+      "category": "primary-abstract"
+    },
+    {
+      "id": "S06",
+      "title": "Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "category": "seller"
+    },
+    {
+      "id": "S07",
+      "title": "Exact Zen12 Premium sales page",
+      "url": "https://zen12.com/",
+      "category": "seller"
+    },
+    {
+      "id": "S08",
+      "title": "Exact Hypnosis Live site",
+      "url": "https://hypnosislive.com/",
+      "category": "seller"
+    },
+    {
+      "id": "S09",
+      "title": "Exact Brainwave Shots site",
+      "url": "https://brainwaveshots.com/",
+      "category": "seller"
+    },
+    {
+      "id": "S10",
+      "title": "Inspire3 affiliate public portal",
+      "url": "https://affiliates.inspire3.com/",
+      "category": "seller-program-not-account-proof"
+    },
+    {
+      "id": "S11",
+      "title": "FTC endorsement FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "category": "regulator"
+    },
+    {
+      "id": "S12",
+      "title": "FTC Health Products Compliance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "category": "regulator"
+    },
+    {
+      "id": "S13",
+      "title": "Existing FV Focus",
+      "url": "https://finalvestige.com/focus/",
+      "category": "live-editorial"
+    },
+    {
+      "id": "S14",
+      "title": "Existing FV Puységur archive (HTTP 429)",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "category": "issue-171-inventory"
+    },
+    {
+      "id": "S15",
+      "title": "Existing FV Mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "category": "live-editorial"
+    },
+    {
+      "id": "S16",
+      "title": "Issue 171 governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "category": "internal-governance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Stroop 1935 ink naming interference",
+      "classification": "independently-grounded",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "limit": "Original test condition only; not a consumer outcome"
+    },
+    {
+      "id": "C02",
+      "claim": "Raz 2002 high/low suggestible sample 16 + 16",
+      "classification": "independently-grounded",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "Do not generalize to unselected consumers"
+    },
+    {
+      "id": "C03",
+      "claim": "Raz 2005 brain-imaging differences under suggestion",
+      "classification": "independently-grounded",
+      "source_ids": [
+        "S04"
+      ],
+      "limit": "Imaging contrast ≠ treatment or product proof"
+    },
+    {
+      "id": "C04",
+      "claim": "Raz 2006 induction not necessary for selected sample",
+      "classification": "independently-grounded",
+      "source_ids": [
+        "S05"
+      ],
+      "limit": "Not proof all hypnosis is equivalent"
+    },
+    {
+      "id": "C05",
+      "claim": "All hypnosis recordings improve focus",
+      "classification": "excluded-unsubstantiated",
+      "source_ids": [
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "limit": "No branded product evidence"
+    },
+    {
+      "id": "C06",
+      "claim": "Zen12 Premium seller lists 12 levels",
+      "classification": "seller-feature",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "Not independently delivered/fulfilled"
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 Premium seller lists 48 MP3s",
+      "classification": "seller-feature",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "Not independently fulfilled"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 seller advertises quick start and manual",
+      "classification": "seller-feature",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "Confirm checkout bundle"
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 seller advertises year refund",
+      "classification": "seller-policy-not-verified",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "Request operative terms, test refund process"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 public display $87.99 on 2026-11-14",
+      "classification": "seller-display-only",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "Not verified referred checkout total"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 equals hour meditation in 12 minutes",
+      "classification": "excluded-unsubstantiated",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "No product-specific support reviewed"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 objectively reduces anxiety",
+      "classification": "excluded-unsubstantiated",
+      "source_ids": [
+        "S07",
+        "S12"
+      ],
+      "limit": "Health outcome not substantiated for product"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 increases creativity or IQ",
+      "classification": "excluded-unsubstantiated",
+      "source_ids": [
+        "S07",
+        "S12"
+      ],
+      "limit": "No specific controlled study authenticated"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 clinically heals",
+      "classification": "excluded-unsubstantiated",
+      "source_ids": [
+        "S07",
+        "S12"
+      ],
+      "limit": "No medical claims permitted"
+    },
+    {
+      "id": "C15",
+      "claim": "Hypnosis Live over 200 sessions",
+      "classification": "seller-feature",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "No consumer outcome inference"
+    },
+    {
+      "id": "C16",
+      "claim": "Hypnosis Live guaranteed results",
+      "classification": "excluded-unsubstantiated",
+      "source_ids": [
+        "S08",
+        "S12"
+      ],
+      "limit": "Do not repeat in offers"
+    },
+    {
+      "id": "C17",
+      "claim": "Brainwave Shots 15-minute format",
+      "classification": "seller-feature",
+      "source_ids": [
+        "S06",
+        "S09"
+      ],
+      "limit": "Seller description only"
+    },
+    {
+      "id": "C18",
+      "claim": "Brainwave Shots pain/healing claims",
+      "classification": "excluded-unsubstantiated",
+      "source_ids": [
+        "S09",
+        "S12"
+      ],
+      "limit": "Avoid medical implication"
+    },
+    {
+      "id": "C19",
+      "claim": "Brainwave Shots discount countdown",
+      "classification": "seller-promotion-excluded",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "No false urgency borrowing"
+    },
+    {
+      "id": "C20",
+      "claim": "Inspire3 network exists",
+      "classification": "seller-program",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "Not Final Vestige acceptance"
+    },
+    {
+      "id": "C21",
+      "claim": "Final Vestige affiliate accepted",
+      "classification": "blocked-unverified",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "No account-specific proof"
+    },
+    {
+      "id": "C22",
+      "claim": "Final Vestige social channel permission",
+      "classification": "blocked-unverified",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "Must authenticate terms"
+    },
+    {
+      "id": "C23",
+      "claim": "Final Vestige EMAIL promotional permission",
+      "classification": "blocked-unverified",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "Must authenticate terms"
+    },
+    {
+      "id": "C24",
+      "claim": "Issued earning URL for approved offer",
+      "classification": "blocked-unverified",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "No destination/link activation"
+    },
+    {
+      "id": "C25",
+      "claim": "Final Vestige rights-cleared paid Mind SKU",
+      "classification": "blocked-unverified",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "Free Fieldbook not a paid SKU"
+    },
+    {
+      "id": "C26",
+      "claim": "Clear adjacent commission disclosure",
+      "classification": "draft-implemented",
+      "source_ids": [
+        "S11"
+      ],
+      "limit": "Needs real consumer and browser QA"
+    },
+    {
+      "id": "C27",
+      "claim": "No unsupported health outcome",
+      "classification": "draft-implemented",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "Independent claim review pending"
+    },
+    {
+      "id": "C28",
+      "claim": "No merchant outbound on draft",
+      "classification": "draft-implemented",
+      "source_ids": [
+        "S10",
+        "S11"
+      ],
+      "limit": "Blocked native button; scan both variants"
+    },
+    {
+      "id": "C29",
+      "claim": "Focus existing single Jetpack route",
+      "classification": "live-resource",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "Do not duplicate signup"
+    },
+    {
+      "id": "C30",
+      "claim": "Puységur historical record",
+      "classification": "existing-editorial",
+      "source_ids": [
+        "S14",
+        "S16"
+      ],
+      "limit": "Page fetched 429: cannot claim direct reread"
+    },
+    {
+      "id": "C31",
+      "claim": "Paid purchase or commission",
+      "classification": "not-measured",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "Only authenticated settlement may qualify"
+    },
+    {
+      "id": "C32",
+      "claim": "Refund-adjusted net revenue",
+      "classification": "not-measured",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "No order/fee/refund dataset"
+    },
+    {
+      "id": "C33",
+      "claim": "Verified Grok asset IDs for three routes",
+      "classification": "not-measured",
+      "source_ids": [
+        "S16"
+      ],
+      "limit": "Must be sourced by Praxxis/Grok"
+    },
+    {
+      "id": "C34",
+      "claim": "No-JS and reduced-motion source structure",
+      "classification": "draft-implemented",
+      "source_ids": [
+        "S16"
+      ],
+      "limit": "Needs real browser QA"
+    },
+    {
+      "id": "C35",
+      "claim": "42-second storyboard is playable",
+      "classification": "excluded-false",
+      "source_ids": [
+        "S16"
+      ],
+      "limit": "No encoded video exists"
+    },
+    {
+      "id": "C36",
+      "claim": "Commercial approval for publication",
+      "classification": "blocked-unverified",
+      "source_ids": [
+        "S16"
+      ],
+      "limit": "Founder/QA release required"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "named publisher approval",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G02",
+      "name": "approved website channel",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G03",
+      "name": "approved social channel",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G04",
+      "name": "approved email channel",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G05",
+      "name": "issued earning URL",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G06",
+      "name": "approved precise offer",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G07",
+      "name": "exact merchant SKU",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G08",
+      "name": "authenticated referred checkout",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G09",
+      "name": "tax/upsell policy",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G10",
+      "name": "published refund terms",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G11",
+      "name": "tested merchant delivery",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G12",
+      "name": "independent product efficacy for any material benefit",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G13",
+      "name": "health claim legal clearance",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G14",
+      "name": "nonmedical claim accuracy",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G15",
+      "name": "FTC adjacent link disclosure",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G16",
+      "name": "non-hidden endorsement relationship",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G17",
+      "name": "offer-guide copy QA",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G18",
+      "name": "creator asset ID authentic",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G19",
+      "name": "social hook source match",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G20",
+      "name": "social destination mobile valid",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G21",
+      "name": "consent and privacy QA",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G22",
+      "name": "no duplicate telemetry",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G23",
+      "name": "no PII in event payload",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G24",
+      "name": "human session classification",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G25",
+      "name": "provider-confirmed lead verification",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G26",
+      "name": "transaction/commission reporting access",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G27",
+      "name": "order reconciliation method",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G28",
+      "name": "refund/chargeback reconciliation",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G29",
+      "name": "fees calculation",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G30",
+      "name": "7-day cohort analysis",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G31",
+      "name": "30-day cohort analysis",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G32",
+      "name": "browser keyboard WCAG",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G33",
+      "name": "360/390/768/1440/1920 layout",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G34",
+      "name": "real playable captioned film",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G35",
+      "name": "Core Web Vitals budget",
+      "status": "HOLD",
+      "evidence_required": true
+    },
+    {
+      "id": "G36",
+      "name": "founder production release approval",
+      "status": "HOLD",
+      "evidence_required": true
+    }
+  ],
+  "economic_truth": {
+    "affiliate_click_is_sale": false,
+    "confirmed_lead_is_sale": false,
+    "sku_verified": false,
+    "net_revenue_per_1000_qualified_sessions": null,
+    "reason": "No authenticated payable offer and no matched settlement/refund/fee/session data"
+  },
+  "exclude_ads": [
+    "Guaranteed health outcomes",
+    "Guaranteed financial gains",
+    "Brainwave-equivalent hour claims",
+    "Seller countdowns and fake scarcity",
+    "Fabricated personally used testimony",
+    "Public payout rate as personalized contract",
+    "Checkout prices as fixed"
+  ]
+}
