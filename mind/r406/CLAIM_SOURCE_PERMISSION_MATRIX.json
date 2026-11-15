@@ -1,0 +1,459 @@
+{
+  "date": "2026-11-15",
+  "status": "HARD_HOLD",
+  "scope": "Unpublished Mind R406 review; seller pages are NOT scientific confirmation or valid FV earning links.",
+  "sources": [
+    {
+      "id": "src01",
+      "title": "Inspire3 portfolio",
+      "url": "https://inspire3.com/",
+      "category": "SELLER"
+    },
+    {
+      "id": "src02",
+      "title": "Public Inspire3 affiliate signup",
+      "url": "https://affiliates.inspire3.com/",
+      "category": "SELLER"
+    },
+    {
+      "id": "src03",
+      "title": "Zen12 official overview",
+      "url": "https://zen12.com/",
+      "category": "SELLER"
+    },
+    {
+      "id": "src04",
+      "title": "Zen12 standard checkout",
+      "url": "https://zen12.com/getstarted",
+      "category": "SELLER"
+    },
+    {
+      "id": "src05",
+      "title": "Zen12 separate conditional promotion",
+      "url": "https://zen12.com/secret/",
+      "category": "SELLER"
+    },
+    {
+      "id": "src06",
+      "title": "Hypnosis Live Total Focus official SKU",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "category": "SELLER"
+    },
+    {
+      "id": "src07",
+      "title": "Brainwave Shots Focus Shot official SKU",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "category": "SELLER"
+    },
+    {
+      "id": "src08",
+      "title": "Brainwave Shots FAQ",
+      "url": "https://brainwaveshots.com/faq",
+      "category": "SELLER"
+    },
+    {
+      "id": "src09",
+      "title": "How hypnotic suggestions work (2024)",
+      "url": "https://doi.org/10.1016/j.concog.2024.103730",
+      "category": "INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "src10",
+      "title": "Induction and suggestion study (2025)",
+      "url": "https://doi.org/10.1016/j.concog.2025.103948",
+      "category": "INDEPENDENT_TRIAL"
+    },
+    {
+      "id": "src11",
+      "title": "FTC Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "category": "REGULATOR"
+    },
+    {
+      "id": "src12",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "category": "REGULATOR"
+    },
+    {
+      "id": "src13",
+      "title": "FV Change Blindness published",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "category": "FV_LIVE"
+    },
+    {
+      "id": "src14",
+      "title": "FV Mesmerism published",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "category": "FV_LIVE"
+    },
+    {
+      "id": "src15",
+      "title": "FV Puységur source files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "category": "FV_LIVE"
+    },
+    {
+      "id": "src16",
+      "title": "FV Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "category": "FV_LIVE"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim01",
+      "claim": "Zen12 contains twelve levels and 48 MP3 files",
+      "classification": "SELLER_DESCRIPTION",
+      "source_id": "src03",
+      "decision": "ALLOW_ATTRIBUTED"
+    },
+    {
+      "id": "claim02",
+      "claim": "Zen12 offers guides and support resources",
+      "classification": "SELLER_DESCRIPTION",
+      "source_id": "src04",
+      "decision": "ALLOW_ATTRIBUTED"
+    },
+    {
+      "id": "claim03",
+      "claim": "Zen12 delivers an hour's meditation effect in twelve minutes",
+      "classification": "SELLER_UNSUBSTANTIATED",
+      "source_id": "src03",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "claim04",
+      "claim": "Zen12 causes extraordinary cognitive improvements",
+      "classification": "PRODUCT_SPECIFIC_PROOF_MISSING",
+      "source_id": "src03",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "claim05",
+      "claim": "Zen12's one-year refund representation guarantees any specific referral order",
+      "classification": "SELLER_TERMS_NOT_TRANSACTION_VERIFIED",
+      "source_id": "src03",
+      "decision": "QUALIFY"
+    },
+    {
+      "id": "claim06",
+      "claim": "Zen12 promotional coupon is valid for all buyers",
+      "classification": "CONDITIONAL_OFFER",
+      "source_id": "src05",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "claim07",
+      "claim": "Zen12 checkout price is fixed for FV referral visitors",
+      "classification": "PARTNER_PRICE_UNVERIFIED",
+      "source_id": "src04",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "claim08",
+      "claim": "Hypnosis Live Total Focus is 33 minutes/47 MB",
+      "classification": "SELLER_DESCRIPTION",
+      "source_id": "src06",
+      "decision": "ALLOW_ATTRIBUTED"
+    },
+    {
+      "id": "claim09",
+      "claim": "Total Focus refund window advertised as 14 days",
+      "classification": "SELLER_NOT_VERIFIED_FULFILLED",
+      "source_id": "src06",
+      "decision": "QUALIFY"
+    },
+    {
+      "id": "claim10",
+      "claim": "Total Focus produces 100% concentration",
+      "classification": "PRODUCT_SPECIFIC_PROOF_MISSING",
+      "source_id": "src06",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "claim11",
+      "claim": "Total Focus boosts career prospects",
+      "classification": "PRODUCT_SPECIFIC_PROOF_MISSING",
+      "source_id": "src06",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "claim12",
+      "claim": "Brainwave Shots Focus Shot offers 15- and 30-minute tracks",
+      "classification": "SELLER_DESCRIPTION",
+      "source_id": "src07",
+      "decision": "ALLOW_ATTRIBUTED"
+    },
+    {
+      "id": "claim13",
+      "claim": "Focus Shot mentions an alternating 12/18Hz program",
+      "classification": "SELLER_SPEC_NOT_INDEPENDENTLY_MEASURED",
+      "source_id": "src07",
+      "decision": "QUALIFY"
+    },
+    {
+      "id": "claim14",
+      "claim": "Focus Shot ensures four hours of intense focus",
+      "classification": "PRODUCT_SPECIFIC_PROOF_MISSING",
+      "source_id": "src07",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "claim15",
+      "claim": "Focus Shot is universally safe",
+      "classification": "UNSUPPORTED_SAFETY_CLAIM",
+      "source_id": "src07",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "claim16",
+      "claim": "Binaural beat studies prove Focus Shot isochronic efficacy",
+      "classification": "INVALID_MODALITY_TRANSFER",
+      "source_id": "src08",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "claim17",
+      "claim": "Hypnotic suggestion mechanisms have multiple competing explanations",
+      "classification": "RESEARCH_REVIEW",
+      "source_id": "src09",
+      "decision": "ALLOW_QUALIFIED"
+    },
+    {
+      "id": "claim18",
+      "claim": "2025 experiment separates induction and suggestion in high suggestibility",
+      "classification": "RESEARCH_EXPERIMENT",
+      "source_id": "src10",
+      "decision": "ALLOW_WITH_SAMPLE_LIMITS"
+    },
+    {
+      "id": "claim19",
+      "claim": "2025 experiment proves any commercial self-hypnosis MP3 works",
+      "classification": "INVALID_STUDY_TRANSFER",
+      "source_id": "src10",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "claim20",
+      "claim": "Puységur historical material proves retail brainwave effects",
+      "classification": "INVALID_HISTORICAL_TRANSFER",
+      "source_id": "src15",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "claim21",
+      "claim": "Existing Focus Fieldbook provides a free route",
+      "classification": "SITE_VERIFIED",
+      "source_id": "src16",
+      "decision": "ALLOW"
+    },
+    {
+      "id": "claim22",
+      "claim": "Affiliate public signup proves named FV publisher acceptance",
+      "classification": "AUTHORIZATION_MISSING",
+      "source_id": "src02",
+      "decision": "HOLD"
+    },
+    {
+      "id": "claim23",
+      "claim": "A public seller commission advertisement proves FV earning URL issuance",
+      "classification": "AUTHORIZATION_MISSING",
+      "source_id": "src02",
+      "decision": "HOLD"
+    },
+    {
+      "id": "claim24",
+      "claim": "Outbound affiliate click proves a sale occurred",
+      "classification": "MEASUREMENT_ERROR",
+      "source_id": "src02",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "claim25",
+      "claim": "Near-link material connection disclosure is required",
+      "classification": "REGULATORY_GUIDANCE",
+      "source_id": "src11",
+      "decision": "REQUIRED_IF_ACTIVATED"
+    },
+    {
+      "id": "claim26",
+      "claim": "Health-benefit claims require adequate evidence",
+      "classification": "REGULATORY_GUIDANCE",
+      "source_id": "src12",
+      "decision": "REQUIRED"
+    },
+    {
+      "id": "claim27",
+      "claim": "FV has a verified paid rights-cleared Mind digital SKU",
+      "classification": "OWNED_PRODUCT_PROOF_MISSING",
+      "source_id": "src16",
+      "decision": "HOLD"
+    },
+    {
+      "id": "claim28",
+      "claim": "B's timed illustration is an encoded 42-second video",
+      "classification": "MEDIA_NOT_ENCODED",
+      "source_id": "src13",
+      "decision": "EXCLUDE"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_inspire3_publisher_approval",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "zen12_specific_sku_permission",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "hypnosislive_sku_permission",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "brainwave_sku_permission",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "site_channel_permission",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "tiktok_channel_permission",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "youtube_channel_permission",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "email_channel_permission",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "affiliate_creative_and_claim_policy",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "issued_unique_earning_url",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "referred_price_checkout_screenshot",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "refund_and_delivery_terms",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "reversal_and_commission_terms",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "source_claim_review",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "FTC_adjacency_review",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "founder_commercial_release_approval",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "browser_360px_a11y",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "browser_390px_a11y",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "browser_768px_a11y",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "browser_1440px_a11y",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "reduced_motion_noJS_keyboard_review",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "wordpress_sanitizer_review",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "original_film_encoded",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "caption_visual_parity",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "tracking_implementation_existing_script_review",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "grok_published_media_asset_ids",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "jetpack_confirmation_and_delivery",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "merchant_paid_sale_and_refund_record",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "id": "net_revenue_reconciliation",
+      "state": "HOLD",
+      "evidence": null
+    }
+  ],
+  "offer_selection": {
+    "primary": "Zen12 prospective buyer guide, not activated",
+    "secondary": [
+      "Hypnosis Live Total Focus",
+      "Brainwave Shots Focus Shot"
+    ],
+    "owned_paid_mind_product": "NOT VERIFIED",
+    "publisher_acceptance": "NOT VERIFIED",
+    "affiliate_url": "WITHHELD"
+  },
+  "note": "No test implies independent product use; no real sales, gross revenue, verified commission, refund or fees established."
+}
