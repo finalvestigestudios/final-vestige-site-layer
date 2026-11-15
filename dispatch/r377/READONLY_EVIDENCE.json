@@ -1,0 +1,93 @@
+{
+  "run": "2026-11-15T11:37:15Z",
+  "release_state": "HOLD_UNSENT",
+  "privacy": "AGGREGATE_ONLY_NO_SUBSCRIBER_IDENTIFIERS",
+  "original_pr": {
+    "number": 175,
+    "head_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "eight_original_git_blob_sha_verified": true,
+    "native_python_tests": {
+      "passed": 6,
+      "failed": 0
+    }
+  },
+  "parent_pr": {
+    "number": 2610,
+    "head_sha": "1bebdca9583c7c25361cf97dd3e37b752e81de0a"
+  },
+  "new_native_tests": {
+    "passed": 28,
+    "failed": 0,
+    "type": "native_python_3_13",
+    "source_files": [
+      {
+        "path": "dispatch/r377/transport_guard.py",
+        "sha": "91498ac4802d7d75b8f356ab08609b63ea12e4c8"
+      },
+      {
+        "path": "dispatch/r377/test_transport_guard.py",
+        "sha": "a48ff3f5291444332857211af57b9920f0970f64"
+      }
+    ]
+  },
+  "static_github_review_html": {
+    "blob_sha": "a73fd15ff392a392073e66c0fdff7da92466a326",
+    "checks_passed": 9,
+    "total_checks": 9,
+    "real_browser_exact_github_source": false
+  },
+  "separate_local_browser_review": {
+    "widths_px": [
+      320,
+      360,
+      390,
+      768,
+      1440
+    ],
+    "passed_viewports": 5,
+    "total_viewports": 5,
+    "visual_source_byte_identical_to_github": false,
+    "note": "chromium tested a separate offline local board; not a genuine Jetpack render"
+  },
+  "live_wp": {
+    "newsletter_enabled": true,
+    "auto_new_post_email": false,
+    "email_format": "full",
+    "site_can_send": true,
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "wpcom_followers": 3,
+    "stats_email_followers": 0,
+    "eligible_inboxes": null,
+    "welcome_configured": true,
+    "actual_welcome_received": null,
+    "native_email_preview": null,
+    "native_postal_address": null,
+    "native_unsubscribe_functional": null
+  },
+  "merchant": {
+    "zen12_specific_email_permission": null,
+    "total_focus_specific_email_permission": null,
+    "approved_earning_urls": null,
+    "live_mind_guides": false,
+    "real_referred_price": null
+  },
+  "commercial": {
+    "qualified_human_sessions": null,
+    "verified_settled_orders": null,
+    "refunds": null,
+    "fees": null,
+    "realized_net_revenue_per_1000": null
+  },
+  "governance": {
+    "founder_final_campaign_approval": false,
+    "original_issues_unchanged": true,
+    "send": false,
+    "test_send": false,
+    "cms_write": false,
+    "subscriber_import": false,
+    "merge": false,
+    "spend": false
+  }
+}
