@@ -257,4 +257,6 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
         sanitized_error = private_csv_failure(exc)
     # The filesystem exception must be out of scope before raising: `from None`
     # hides tracebacks but leaves financial paths readable via __context__.
+    if sanitized_error is None:
+        raise RuntimeError("CSV report internal publication state invalid")
     raise sanitized_error
