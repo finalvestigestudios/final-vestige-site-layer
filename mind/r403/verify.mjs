@@ -43,7 +43,7 @@ assert(M.claims.every(c=>c.id&&c.claim&&c.classification&&c.copy_policy&&Array.i
 assert(M.claims.filter(c=>/UNSUBSTANTIATED|FALSE|NOT_SUPPORTED/.test(c.classification)).every(c=>/DO_NOT_ASSERT|NEVER/.test(c.copy_policy)),'unsafe claims barred');
 assert(M.release_gates.length>=20&&M.release_gates.every(g=>g.status==='HOLD'),'all release gates held');
 assert(M.no_active_affiliate_url===true&&M.no_paid_sku_authenticated===true,'commercial blockers');
-assert(R.includes('2025')&&(R.includes('without hypnotic induction')||R.includes('without a hypnosis induction')),'article differentiates recent evidence and induction');
+assert(R.includes('2025')&&R.includes('induction was not necessary'),'article differentiates recent evidence and induction');
 assert(/#2547/.test(D)&&/NOT a second approved public Stroop destination/.test(D),'prior-article duplication flagged');
 assert(/NOT COMPUTABLE/.test(D)&&/merchant_confirmed_paid_conversion/.test(D),'paid conversion not conflated with click');
 console.log('PASS '+checks+'/'+checks+' offline source assertions; no network, browser or merchant tests executed.');
