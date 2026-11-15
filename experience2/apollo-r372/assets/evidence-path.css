@@ -1,0 +1,33 @@
+/* R372 staging-only independent evidence pathway; no JS, fonts, media or tracking. */
+.fv-apollo-r372{--ar-bg:#0d1011;--ar-surface:#171a1a;--ar-ink:#eee6d9;--ar-muted:#d2c7b7;--ar-edge:#827666;--ar-gold:#f5cf8f;box-sizing:border-box;background:var(--ar-bg);color:var(--ar-ink);font:400 1rem/1.65 system-ui,-apple-system,sans-serif;overflow-wrap:anywhere;isolation:isolate}
+.fv-apollo-r372 *,.fv-apollo-r372 *::before,.fv-apollo-r372 *::after{box-sizing:border-box}
+.fv-apollo-r372__wrap{max-width:78rem;width:100%;padding:clamp(12px,3vw,40px);margin-inline:auto}
+.fv-apollo-r372 h2,.fv-apollo-r372 h3{font-family:Georgia,'Times New Roman',serif;line-height:1.18;margin:0;color:var(--ar-ink)}
+.fv-apollo-r372 h2{font-size:clamp(1.7rem,3.6vw,2.9rem);margin:.5rem 0 1rem}
+.fv-apollo-r372 h3{font-size:clamp(1.25rem,2.1vw,1.95rem)}
+.fv-apollo-r372 p{max-width:78ch;margin:.8em 0 1.2em}
+.fv-apollo-r372 a,.fv-apollo-r372 summary{color:var(--ar-gold)}
+.fv-apollo-r372 a{text-decoration-thickness:1px;text-underline-offset:.2em}
+.fv-apollo-r372 a:focus-visible,.fv-apollo-r372 summary:focus-visible{outline:3px solid var(--ar-gold);outline-offset:4px}
+.fv-apollo-r372__eyebrow,.fv-apollo-r372__when,.fv-apollo-r372__index{font:700 .78rem/1.6 ui-monospace,monospace;letter-spacing:.045em;text-transform:uppercase;color:var(--ar-gold)}
+.fv-apollo-r372__intro,.fv-apollo-r372__note,.fv-apollo-r372__method{color:var(--ar-muted)}
+.fv-apollo-r372__jump ol{display:flex;flex-wrap:wrap;list-style:none;margin:1.5rem 0 2.25rem;padding:0;gap:.5rem}
+.fv-apollo-r372__jump a{border:1px solid var(--ar-edge);display:inline-block;padding:.55rem .8rem;min-height:44px;max-width:100%}
+.fv-apollo-r372__stages{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;padding:0;margin:0}
+.fv-apollo-r372__stage{min-width:0;scroll-margin-block-start:1rem;background:var(--ar-surface);border:1px solid var(--ar-edge);padding:clamp(12px,2.3vw,28px)}
+.fv-apollo-r372__stagehead{display:flex;align-items:flex-start;gap:1rem;border-bottom:1px solid var(--ar-edge);padding-bottom:1rem}
+.fv-apollo-r372__index{font-size:1.4rem;flex:0 0 auto;line-height:1.2}
+.fv-apollo-r372__when{font-size:.68rem;color:var(--ar-muted);margin:0 0 .55rem}
+.fv-apollo-r372__claim{color:var(--ar-ink)}
+.fv-apollo-r372__limit{border-left:3px solid var(--ar-gold);padding-left:1rem}
+.fv-apollo-r372__drawer{border-top:1px solid var(--ar-edge);padding-top:1rem;margin-top:1.3rem}
+.fv-apollo-r372 summary{cursor:pointer;font-weight:700;touch-action:manipulation;padding:.15rem 0;max-width:100%}
+.fv-apollo-r372__source{padding-top:.6rem;color:var(--ar-ink)}
+.fv-apollo-r372__context{border-block:1px solid var(--ar-edge);padding:1.1rem 0;margin:2rem 0}
+.fv-apollo-r372__cta a{display:inline-block;border:1px solid var(--ar-gold);padding:.75rem 1.1rem;min-height:44px;max-width:100%}
+.fv-apollo-r372__print{display:none}
+@media(max-width:760px){.fv-apollo-r372__stages{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:420px){.fv-apollo-r372__stagehead{flex-wrap:wrap;gap:.35rem}.fv-apollo-r372__jump ol{display:block}.fv-apollo-r372__jump li{margin-bottom:.55rem}}
+@media(forced-colors:active){.fv-apollo-r372__stage,.fv-apollo-r372__jump a,.fv-apollo-r372__cta a{border-color:CanvasText}.fv-apollo-r372__limit{border-left-color:LinkText}}
+@media(prefers-reduced-motion:reduce){.fv-apollo-r372 *,.fv-apollo-r372 *::before,.fv-apollo-r372 *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{.fv-apollo-r372{--ar-bg:#fff;--ar-surface:#fff;--ar-ink:#000;--ar-muted:#111;--ar-edge:#555;--ar-gold:#000;color:#000;background:#fff;font-size:11pt}.fv-apollo-r372__stages{display:block}.fv-apollo-r372__stage{break-inside:avoid;margin-bottom:.8rem}.fv-apollo-r372__jump,.fv-apollo-r372__drawer,.fv-apollo-r372__context details{display:none!important}.fv-apollo-r372__print{display:block!important;font-size:9pt;overflow-wrap:anywhere}.fv-apollo-r372 a{color:#000;text-decoration:underline}.fv-apollo-r372__stagehead{break-after:avoid}}
