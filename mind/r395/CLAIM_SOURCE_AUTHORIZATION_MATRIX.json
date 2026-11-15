@@ -1,0 +1,452 @@
+{
+  "schema": "fv-mind-r395-claims-1",
+  "date": "2026-11-15",
+  "activation": "HARD_HOLD",
+  "source_links": {
+    "paper2005": "https://doi.org/10.1126/science.1111709",
+    "paper2010": "https://doi.org/10.1016/j.cognition.2010.06.010",
+    "paper2013": "https://doi.org/10.1371/journal.pone.0060554",
+    "paper2014": "https://doi.org/10.1002/bdm.1807",
+    "inspire": "https://inspire3.com/",
+    "zen12": "https://zen12.com/",
+    "standard": "https://zen12.com/getstarted",
+    "promotion": "https://zen12.com/secret/",
+    "shot": "https://brainwaveshots.com/focus-shot",
+    "shotFAQ": "https://brainwaveshots.com/faq",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "focus": "https://finalvestige.com/focus/",
+    "puys": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "issue171": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "issue820": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+    "portal": "https://affiliates.inspire3.com/"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "2005 face choice mismatch",
+      "classification": "peer_reviewed",
+      "source": "paper2005",
+      "decision": "EDITORIAL_OK",
+      "note": "Specific task, not all decision-making"
+    },
+    {
+      "id": "C02",
+      "claim": "2010 supermarket jam and tea swap",
+      "classification": "peer_reviewed",
+      "source": "paper2010",
+      "decision": "EDITORIAL_OK",
+      "note": "Manipulated trials, task-specific"
+    },
+    {
+      "id": "C03",
+      "claim": "2010 no more than one third of manipulated trials detected",
+      "classification": "peer_reviewed",
+      "source": "paper2010",
+      "decision": "QUALIFY",
+      "note": "Not all consumers"
+    },
+    {
+      "id": "C04",
+      "claim": "2013 altered political survey feedback",
+      "classification": "peer_reviewed",
+      "source": "paper2013",
+      "decision": "QUALIFY",
+      "note": "Not generalized election manipulation"
+    },
+    {
+      "id": "C05",
+      "claim": "2014 later preference effects in face-choice paradigm",
+      "classification": "peer_reviewed",
+      "source": "paper2014",
+      "decision": "QUALIFY",
+      "note": "No evidence of permanent brand preference"
+    },
+    {
+      "id": "C06",
+      "claim": "historical Puységur route exists",
+      "classification": "FV_published",
+      "source": "puys",
+      "decision": "URL_ONLY",
+      "note": "Current live body HTTP 429, no quote"
+    },
+    {
+      "id": "C07",
+      "claim": "FV free 52-page Focus Fieldbook offered",
+      "classification": "FV_published",
+      "source": "focus",
+      "decision": "EDITORIAL_OK",
+      "note": "Confirmed delivered email not tested"
+    },
+    {
+      "id": "C08",
+      "claim": "FV live change-blindness article available",
+      "classification": "FV_published",
+      "source": "change",
+      "decision": "EDITORIAL_OK",
+      "note": "Not the same as choice blindness"
+    },
+    {
+      "id": "C09",
+      "claim": "Inspire3 lists Zen12 as a product",
+      "classification": "seller_description",
+      "source": "inspire",
+      "decision": "ATTRIBUTED",
+      "note": "Not independent efficacy"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 Premium is described as 12 levels",
+      "classification": "seller_description",
+      "source": "zen12",
+      "decision": "ATTRIBUTED",
+      "note": "Version-specific"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 Premium is described as 48 MP3 files",
+      "classification": "seller_description",
+      "source": "zen12",
+      "decision": "ATTRIBUTED",
+      "note": "Digital delivery unverified"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 seller says twelve-minute audio",
+      "classification": "seller_description",
+      "source": "zen12",
+      "decision": "ATTRIBUTED",
+      "note": "Duration not hour-equivalent effect"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 describes user manual and quick start",
+      "classification": "seller_description",
+      "source": "standard",
+      "decision": "ATTRIBUTED",
+      "note": "Delivery not independently tested"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 describes seller support",
+      "classification": "seller_description",
+      "source": "standard",
+      "decision": "ATTRIBUTED",
+      "note": "Support quality untested"
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 claims one-year refund promise",
+      "classification": "seller_terms",
+      "source": "zen12",
+      "decision": "ATTRIBUTED",
+      "note": "Current conditions and refund fulfillment unverified"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 public standard order displayed $87.99 on 2026-11-15",
+      "classification": "seller_price_snapshot",
+      "source": "standard",
+      "decision": "QUALIFY",
+      "note": "Not referred offer; displayed local tax $0.00"
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 separate promotional page displayed $37 coupon",
+      "classification": "seller_price_snapshot",
+      "source": "promotion",
+      "decision": "QUALIFY",
+      "note": "No FV eligibility, do not promote countdown"
+    },
+    {
+      "id": "C18",
+      "claim": "Zen12 produces equivalent of hour of meditation in twelve minutes",
+      "classification": "seller_efficacy",
+      "source": "inspire",
+      "decision": "WITHHOLD",
+      "note": "No product-specific equivalence trial"
+    },
+    {
+      "id": "C19",
+      "claim": "Zen12 gives proven brainwave control",
+      "classification": "seller_efficacy",
+      "source": "zen12",
+      "decision": "WITHHOLD",
+      "note": "Research unrelated to named product insufficient"
+    },
+    {
+      "id": "C20",
+      "claim": "Zen12 treats anxiety or depression",
+      "classification": "unsupported_health",
+      "source": "health",
+      "decision": "WITHHOLD",
+      "note": "No product-specific clinical substantiation"
+    },
+    {
+      "id": "C21",
+      "claim": "Zen12 guarantees cognition or wealth",
+      "classification": "unsupported_benefit",
+      "source": null,
+      "decision": "WITHHOLD",
+      "note": "No credible evidence provided"
+    },
+    {
+      "id": "C22",
+      "claim": "FV personally tried Zen12",
+      "classification": "unsupported_experience",
+      "source": null,
+      "decision": "WITHHOLD",
+      "note": "No hands-on independent product test"
+    },
+    {
+      "id": "C23",
+      "claim": "Brainwave Shots Focus Shot is distinct product",
+      "classification": "seller_description",
+      "source": "shot",
+      "decision": "ATTRIBUTED",
+      "note": "Not the same as Zen12"
+    },
+    {
+      "id": "C24",
+      "claim": "Focus Shot seller offers 15 and 30 minute formats",
+      "classification": "seller_description",
+      "source": "shot",
+      "decision": "ATTRIBUTED",
+      "note": "Current offer subject to change"
+    },
+    {
+      "id": "C25",
+      "claim": "Brainwave Shots refund FAQ has restrictions",
+      "classification": "seller_terms",
+      "source": "shotFAQ",
+      "decision": "ATTRIBUTED",
+      "note": "Inspect exact terms before offering"
+    },
+    {
+      "id": "C26",
+      "claim": "Focus Shot guarantees immediate concentration",
+      "classification": "seller_efficacy",
+      "source": "shot",
+      "decision": "WITHHOLD",
+      "note": "No product-specific validation"
+    },
+    {
+      "id": "C27",
+      "claim": "Hypnosis Live is separate Inspire3 brand",
+      "classification": "seller_description",
+      "source": "inspire",
+      "decision": "ATTRIBUTED",
+      "note": "No cross-product price/benefit inference"
+    },
+    {
+      "id": "C28",
+      "claim": "Hypnosis Live guaranteed health benefits",
+      "classification": "seller_efficacy",
+      "source": "health",
+      "decision": "WITHHOLD",
+      "note": "Do not assert"
+    },
+    {
+      "id": "C29",
+      "claim": "Inspire3 public affiliate portal exists",
+      "classification": "partner_public",
+      "source": "portal",
+      "decision": "PORTAL_ONLY",
+      "note": "Does not prove named FV approval"
+    },
+    {
+      "id": "C30",
+      "claim": "FV publisher accepted as Inspire3 partner",
+      "classification": "partner_private",
+      "source": null,
+      "decision": "HOLD",
+      "note": "Named authorization not authenticated"
+    },
+    {
+      "id": "C31",
+      "claim": "Specific Zen12 social/email channel rights granted",
+      "classification": "partner_private",
+      "source": null,
+      "decision": "HOLD",
+      "note": "Channel and SKU rules missing"
+    },
+    {
+      "id": "C32",
+      "claim": "FV issued active Zen12 tracking URL",
+      "classification": "partner_private",
+      "source": null,
+      "decision": "HOLD",
+      "note": "No invented earning URLs"
+    },
+    {
+      "id": "C33",
+      "claim": "FV commission, cookie and payment terms known",
+      "classification": "partner_private",
+      "source": null,
+      "decision": "HOLD",
+      "note": "No authenticated agreement"
+    },
+    {
+      "id": "C34",
+      "claim": "Authorized FV referred checkout and refund confirmed",
+      "classification": "partner_private",
+      "source": null,
+      "decision": "HOLD",
+      "note": "Public checkout not attributable"
+    },
+    {
+      "id": "C35",
+      "claim": "Owned sellable FV Mind SKU licensed and deliverable",
+      "classification": "owned_sale",
+      "source": null,
+      "decision": "HOLD",
+      "note": "Rights, active checkout, delivery unknown"
+    },
+    {
+      "id": "C36",
+      "claim": "Outbound click is paid commission",
+      "classification": "measurement_logic",
+      "source": "issue820",
+      "decision": "REJECT",
+      "note": "Needs merchant reported paid settlement"
+    },
+    {
+      "id": "C37",
+      "claim": "Confirmed lead requires Jetpack provider verification",
+      "classification": "measurement_logic",
+      "source": "focus",
+      "decision": "REQUIRE",
+      "note": "PDF download alone not confirmed lead"
+    },
+    {
+      "id": "C38",
+      "claim": "Net revenue per 1000 qualified human sessions available",
+      "classification": "measurement_logic",
+      "source": "issue820",
+      "decision": "HOLD",
+      "note": "No matched human sessions, paid orders, returns and fees"
+    },
+    {
+      "id": "C39",
+      "claim": "Affiliate earning disclosure appears near recommendation",
+      "classification": "ftc_requirement",
+      "source": "ftc",
+      "decision": "REQUIRE",
+      "note": "Prominent adjacency, mobile/reader QA"
+    },
+    {
+      "id": "C40",
+      "claim": "Objective health claims need suitable scientific support",
+      "classification": "ftc_requirement",
+      "source": "health",
+      "decision": "REQUIRE",
+      "note": "Generic trials do not validate SKU"
+    },
+    {
+      "id": "C41",
+      "claim": "Optional 42s video is encoded/playable",
+      "classification": "production",
+      "source": null,
+      "decision": "HOLD",
+      "note": "Poster, captions and storyboard only"
+    }
+  ],
+  "release_gates": [
+    {
+      "gate": "G01",
+      "name": "Named FV Inspire3 partner approval",
+      "passed": false,
+      "proof": "NOT VERIFIED"
+    },
+    {
+      "gate": "G02",
+      "name": "Exact Zen12 SKU and paid channel rights",
+      "passed": false,
+      "proof": "NOT VERIFIED"
+    },
+    {
+      "gate": "G03",
+      "name": "Issued tracked merchant URL",
+      "passed": false,
+      "proof": "NOT VERIFIED"
+    },
+    {
+      "gate": "G04",
+      "name": "Approved referred price and refunds",
+      "passed": false,
+      "proof": "NOT VERIFIED"
+    },
+    {
+      "gate": "G05",
+      "name": "Current FV owned paid SKU rights and checkout",
+      "passed": false,
+      "proof": "NOT VERIFIED"
+    },
+    {
+      "gate": "G06",
+      "name": "Original playable 42s video with captions",
+      "passed": false,
+      "proof": "NOT VERIFIED"
+    },
+    {
+      "gate": "G07",
+      "name": "WCAG 2.2 AA at 360/390/768/1440/1920",
+      "passed": false,
+      "proof": "NOT VERIFIED"
+    },
+    {
+      "gate": "G08",
+      "name": "WordPress sanitizer/theme compatibility",
+      "passed": false,
+      "proof": "NOT VERIFIED"
+    },
+    {
+      "gate": "G09",
+      "name": "Grok authentic asset IDs and topic rights",
+      "passed": false,
+      "proof": "NOT VERIFIED"
+    },
+    {
+      "gate": "G10",
+      "name": "Existing Jetpack confirmed email opt-in",
+      "passed": false,
+      "proof": "NOT VERIFIED"
+    },
+    {
+      "gate": "G11",
+      "name": "Consented first-party session and CTA attribution",
+      "passed": false,
+      "proof": "NOT VERIFIED"
+    },
+    {
+      "gate": "G12",
+      "name": "Verified merchant-paid commissions and refund reconciliation",
+      "passed": false,
+      "proof": "NOT VERIFIED"
+    },
+    {
+      "gate": "G13",
+      "name": "Founder release authorization",
+      "passed": false,
+      "proof": "NOT VERIFIED"
+    }
+  ],
+  "measurement_separation": {
+    "affiliate_click": "a privacy-safe outbound event, not an order",
+    "confirmed_lead": "Jetpack/Dispatch provider-confirmed, consented",
+    "partner_paid": "authenticated partner report with transaction status",
+    "realized_net": "settled revenue less fees and refunds"
+  },
+  "source_limitations": [
+    "Puységur 429, no unseen body quotes",
+    "61-investigation inventory reviewed via issue but not all individual posts",
+    "public seller prices are not FV referred prices",
+    "no claimed commissions, rates or user experience"
+  ],
+  "prohibitions": [
+    "no live CMS or navigation writes",
+    "no homepage or Dispatch modifications",
+    "no merchant link, tracking or A/B deployment before authorization"
+  ]
+}
