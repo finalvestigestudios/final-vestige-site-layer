@@ -36,6 +36,23 @@ if($scenario==='cycle'){
   $GLOBALS['templates']['assembler//evidence']->content=encoded(array(b('core/template-part','',array('slug'=>'nested'))));
   $GLOBALS['templates']['assembler//nested']->content=encoded(array(b('core/template-part','',array('slug'=>'evidence'))));
 }
+if($scenario==='cycle_with_sibling'){
+  $GLOBALS['templates']['assembler//evidence']->content=encoded(array(b('core/template-part','',array('slug'=>'nested'))));
+  $GLOBALS['templates']['assembler//nested']->content=encoded(array(b('core/template-part','',array('slug'=>'evidence'))));
+  $GLOBALS['templates']['assembler//single']->content=encoded(array(b('core/template-part','',array('slug'=>'evidence')),b('core/shortcode',$target)));
+}
+if($scenario==='missing_with_sibling')$GLOBALS['templates']['assembler//evidence']->content=encoded(array(b('core/template-part','',array('slug'=>'absent')),b('core/shortcode',$target)));
+if($scenario==='draft_with_sibling'){
+  $GLOBALS['templates']['assembler//evidence']->content=encoded(array(b('core/template-part','',array('slug'=>'nested')),b('core/shortcode',$target)));
+  $GLOBALS['templates']['assembler//nested']->status='draft';
+}
+if($scenario==='foreign_with_sibling')$GLOBALS['templates']['assembler//evidence']->content=encoded(array(b('core/template-part','',array('slug'=>'nested','theme'=>'other')),b('core/shortcode',$target)));
+if($scenario==='bad_ref_with_sibling')$GLOBALS['templates']['assembler//evidence']->content=encoded(array(b('core/block','',array('ref'=>'101')),b('core/shortcode',$target)));
+if($scenario==='block_cycle_with_sibling'){
+  $GLOBALS['templates']['assembler//evidence']->content=encoded(array(b('core/block','',array('ref'=>101)),b('core/shortcode',$target)));
+  $GLOBALS['posts'][101]->post_content=encoded(array(b('core/block','',array('ref'=>101))));
+}
+if($scenario==='dag_reuse')$GLOBALS['templates']['assembler//single']->content=encoded(array(b('core/template-part','',array('slug'=>'evidence')),b('core/template-part','',array('slug'=>'evidence'))));
 if($scenario==='foreign_theme'){
   $GLOBALS['templates']['assembler//single']->content=encoded(array(b('core/template-part','',array('slug'=>'evidence','theme'=>'other'))));
 }
@@ -75,12 +92,12 @@ require dirname(__DIR__,2).'/apollo-r378/guarded-reusable-assets.php';
 require dirname(__DIR__).'/prehead-template-parts.php';
 $checks=array();
 function ck($name,$ok){$GLOBALS['checks'][$name]=((bool)$ok);}
-$expected = in_array($scenario,array('part','nested','reusable','duplicate'),true);
+$expected = in_array($scenario,array('part','nested','reusable','duplicate','dag_reuse'),true);
 do_action_stub('plugins_loaded');
 $pre = fv_r379_current_template();
 ck('verified_current_template',($pre !== null) === ($scenario !== 'no_id' && $scenario !== 'wrong_template_type'));
 $scan=$pre !== null && fv_r379_template_contains_shortcode($pre);
-ck('template_scan_expected', $scan === in_array($scenario,array('part','nested','reusable','duplicate','production','wronghost','disabled','foreign_owner'),true));
+ck('template_scan_expected', $scan === in_array($scenario,array('part','nested','reusable','duplicate','dag_reuse','production','wronghost','disabled','foreign_owner'),true));
 ck('scan_does_not_enqueue',count($GLOBALS['styles'])===0);
 do_action_stub('wp_enqueue_scripts');
 ck('enqueued_if_approved', (count($GLOBALS['styles']) === 1) === $expected);
