@@ -163,14 +163,16 @@
       "verified_paid_conversion"
     ],
     "confirmed_signup_rule": "Only provider-confirmed email-eligible records with opaque non-PII dedup id; never infer from form submitted or PDF click.",
-    "buyer_event_rule": "Only independently settled supplier report joined by privacy-safe attribution, refunds/fees final; clicks are not orders.",
+    "buyer_event_rule": "For Zen12: count only independently publisher-paid affiliate COMMISSION, not customer's retail checkout subtotal; require refund-window-final commission reconciliation, clawbacks and publisher fees. No inferred sales from clicks.",
     "key_metric": "net revenue per 1000 qualified human sessions",
     "key_metric_value": null,
     "cohorts_days": [
       7,
       30
     ],
-    "note": "No real sales or sessions attached; missing denominator or settlement means NOT COMPUTABLE (not zero)."
+    "note": "No real sales or sessions attached; missing denominator or settlement means NOT COMPUTABLE (not zero).",
+    "affiliates_publisher_revenue_basis": "publisher_paid_commission",
+    "customer_retail_sales_amount_not_publisher_revenue": true
   },
   "provenance": [
     "Authenticated WordPress Jetpack status 2026-11-15T15:32:59Z",
