@@ -1,0 +1,20 @@
+# New London School #217: six exact-source rights, link and no-upscale review — 2026-11-14 PT
+
+**QA HOLD; no production edits.** Read-only WordPress post [#217](https://finalvestige.com/2026/08/18/the-gas-had-no-smell/) is published, last modified `2026-10-29T16:04:52`; six stored `<img src>` values match frozen PR #183 `qa/media-recovery/parts/06.json` blob `0f3dfe398a76838049cebba7cb773d5c5a0c8c69`. All six Commons Redirect/file URLs request `width=1280` but omit explicit HTML width and height. No guest browser `currentSrc`, origin response, MIME, decode, CLS, LCP or transfer bytes were captured. External catalog HTML read is not browser HTTP proof.
+
+| Slot | Exact Commons catalog | Catalog original | Conditional non-upscaled target |
+| --- | --- | --- | --- |
+| 217:0 | [Associated Press destruction image](https://commons.wikimedia.org/wiki/File:New_London_School_explosion.jpg) | 760×609 | **760×609** |
+| 217:1 | [Pre-disaster school](https://commons.wikimedia.org/wiki/File:New_London_School_before_explosion.webp) | 960×685 | **960×685** |
+| 217:2 | [International News Photos parent newspaper scan](https://commons.wikimedia.org/wiki/File:INP_Photos_of_New_London_School_explosion.jpg) | 2861×2244 | 960×753 |
+| 217:3 | [Extracted INP crop 1](https://commons.wikimedia.org/wiki/File:INP_Photos_of_New_London_School_explosion_(1).jpg) | 2457×1950 | 960×762 |
+| 217:4 | [Extracted INP crop 2](https://commons.wikimedia.org/wiki/File:INP_Photos_of_New_London_School_explosion_(2).jpg) | 2457×1862 | 960×728 |
+| 217:5 | [QuesterMark 2016 memorial photograph](https://commons.wikimedia.org/wiki/File:New_London_School_Explosion_Memorial_-_46699056584.jpg) | 3840×2160 | 960×540 |
+
+**Visual provenance:** 217:3 and 217:4 are extracted from 217:2's parent *San Antonio Light* scan; treat these as three distinct **crops/views** but not three independent newspaper source records or interchangeable photographs. The Associated Press Commons item records the photograph's date as **March 17, 1937** while describing the March 18 blast; flag the record's chronology discrepancy for editorial review without changing correct article history.
+
+**Rights:** The five 1937 images are tagged *PD-US-not-renewed* by Commons, an assertion not a universal copyright warranty; confirm exact publisher item and jurisdiction before hosting. Slot 217:5 is the modern QuesterMark **CC BY-SA 2.0** photograph, with source [Flickr](https://www.flickr.com/photos/52855156@N00/46699056584/) and [specific license](https://creativecommons.org/licenses/by-sa/2.0/). WordPress currently names the photographer and license in plain caption text but includes **no actual license URL link**, and does not address modification disclosure. Review how to add compliant link/credit without silently rewriting the image block. No conversion, cache or crop permission is auto-approved.
+
+**Staging-only release sequence:** (1) Site QA [#154](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/154) completes its six P0 uncached full-scroll browser image proofs; (2) guest-browser inspect #217 on mobile and desktop, correlate exact CDP Image requests and uncached `currentSrc`, measure bytes and visual failures; (3) if confirmed, source-match exact scene/crop, check per-item rights and attribution, original byte hash, preserve ALT and figures; (4) conditionally stage source-consistent max-width≤960 no-upscale variants and review at DPR 1/2 with label readability and visual before/after; (5) back up and test a reversible isolated editor-approved staging change; (6) revert to these exact published URLs/captions on failure. No risky bulk Gutenberg rewrite or production WP write.
+
+**Metric discipline:** historical 61 posts/355 tags; reported 42 broken images remain **unconfirmed by visitor browser**, claimed 76% transfer reduction **unmeasured**, last verified 16 WP originals over 1.5 decimal MB = 49,107,665 **stored bytes**, not visitor traffic. Neither Commons original sizes nor requested `width=1280` determine browser transfer savings. No image binary downloaded, no rehost/cache, no homepage work or subscription spending.
