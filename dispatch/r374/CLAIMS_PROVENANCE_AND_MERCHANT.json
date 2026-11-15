@@ -1,0 +1,53 @@
+{
+  "as_of_utc": "2026-11-15T08:37:42Z",
+  "status": "SOURCE_REVIEW_ONLY",
+  "historical": [
+    {
+      "claim": "Franklin autobiographical seven-day columns and thirteen virtue rows",
+      "source": "https://anthology.lib.virginia.edu/work/Franklin/franklin-autobiography",
+      "qualification": "retrospective self-account; no efficacy experiment",
+      "verified_scope": "text checked"
+    },
+    {
+      "claim": "1784 report tests d'Eslon's asserted magnetic agent",
+      "source": "https://www.gutenberg.org/files/78413/78413-h/78413-h.htm",
+      "qualification": "not all hypnosis or every contemporary treatment",
+      "verified_scope": "original English-edition text checked"
+    },
+    {
+      "claim": "report describes blindfold and sham/expectation comparisons",
+      "source": "https://www.gutenberg.org/files/78413/78413-h/78413-h.htm",
+      "qualification": "historical setting; not product-specific evidence",
+      "verified_scope": "text checked"
+    }
+  ],
+  "commercial": [
+    {
+      "offer": "Zen12",
+      "official_pages": [
+        "https://zen12.com/getstarted",
+        "https://zen12.com/secret/"
+      ],
+      "official_public_details": "12 levels, 48 MP3s. Distinct public checkout display $87.99 and separate $37 coupon route; not FV referral pricing.",
+      "specific_email_permission_verified": false,
+      "issued_earning_link_verified": false,
+      "presell_guide_live_approved": false,
+      "referred_price_refund_verified": false,
+      "release": "HOLD_MERCHANT"
+    },
+    {
+      "offer": "Hypnosis Live Total Focus",
+      "official_pages": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "official_public_details": "33 minutes, 47MB; 2026 public page $24.44, other archived result $17.95. Claims of brain reprogramming are seller claims.",
+      "specific_email_permission_verified": false,
+      "issued_earning_link_verified": false,
+      "presell_guide_live_approved": false,
+      "referred_price_refund_verified": false,
+      "release": "HOLD_MERCHANT"
+    }
+  ],
+  "portal": "https://affiliates.inspire3.com/",
+  "portal_grants_FV_permissions": false
+}
