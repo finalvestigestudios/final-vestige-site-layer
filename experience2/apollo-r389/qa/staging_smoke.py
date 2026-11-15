@@ -14,6 +14,10 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import sys
+# R392 exact textual source custody: no visitor-facing code, network or WP writes.
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]/'apollo-r392'/'qa'))
+from semantic_custody import verify_page, verified_records
 from urllib.parse import urlparse, urlsplit, urlunsplit
 from playwright.sync_api import sync_playwright
 
@@ -146,6 +150,8 @@ def main():
     axe_path=Path(args.axe_script)
     if not axe_path.is_file() or len(args.axe_sha256)!=64 or sha_file(axe_path)!=args.axe_sha256.lower():
         raise ValueError('HARD STOP: genuine axe-core bundle must be present and pinned to a reviewed SHA256')
+    # Fail before opening browser if the approved source ledger has drifted.
+    verified_records()
     folder=Path(args.output_dir)
     folder.mkdir(parents=True,exist_ok=True)
     output={'kind':'REAL_INSTALLED_STAGING_CANDIDATE','url':scrub_url(args.url),'approved_host':host,'axe_bundle_sha256':args.axe_sha256,
@@ -196,6 +202,10 @@ def main():
                 item['overflow']=page.evaluate('document.documentElement.scrollWidth>window.innerWidth+1')
                 item['computed_background']=page.locator('[data-fv-r384-gallery]').evaluate('(el)=>getComputedStyle(el).backgroundColor') if item['gallery_present'] else None
                 item['stylesheets']=page.evaluate("[...document.styleSheets].map(x=>x.href).filter(Boolean)")
+                custody_ok, custody_blockers = verify_page(page)
+                item['exact_source_custody_pass']=custody_ok
+                item['source_custody_blockers']=custody_blockers
+                if not custody_ok: failures.append(f'{width}: NASA source content, limitations, chronology or CTA integrity failed')
                 item['local_vitals']=page.evaluate('window.__fvVitals')
                 page.add_script_tag(path=str(axe_path))
                 item['axe_version']=page.evaluate('window.axe&&window.axe.version')
@@ -242,6 +252,10 @@ def main():
                 item['nojs_publication_links']=nojs.locator('[data-fv-r384-publication]').count()
                 item['nojs_nasa_question_links']=nojs.locator('[data-fv-r384-nasa]').count()
                 item['nojs_free_ctas']=nojs.locator('[data-fv-free-cta]').count()
+                nojs_custody_ok, nojs_custody_blockers = verify_page(nojs)
+                item['nojs_exact_source_custody_pass']=nojs_custody_ok
+                item['nojs_source_custody_blockers']=nojs_custody_blockers
+                if not nojs_custody_ok: failures.append(f'{width}: no-JS NASA source / rights / CTA custody mismatch')
                 css_nojs_ok, css_nojs_responses=inspect_stylesheet_responses(nojs_responses)
                 item['nojs_gallery_css_verified']=css_nojs_ok
                 item['nojs_gallery_css_responses']=css_nojs_responses
