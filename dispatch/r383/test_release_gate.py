@@ -35,15 +35,21 @@ class GateTests(unittest.TestCase):
     def test_settled_commission_less_refunds_fees(self):
         r = dict(opaque_order_id='opaque-01', merchant_report_verified=True, settlement_final=True, refunds_fees_final=True,
                  publisher_commission='12.50', refunds_and_clawbacks='2.00', publisher_fees='0.50')
-        self.assertEqual(net_commission_per_1000(500, [r]), '20.00')
+        self.assertEqual(net_commission_per_1000(500, [r], True), '20.00')
     def test_duplicate_rejected(self):
         r = dict(opaque_order_id='opaque-01', merchant_report_verified=True, settlement_final=True, refunds_fees_final=True,
                  publisher_commission='12.50', refunds_and_clawbacks='0', publisher_fees='0')
-        self.assertIsNone(net_commission_per_1000(500, [r, r]))
+        self.assertIsNone(net_commission_per_1000(500, [r, r], True))
     def test_retail_amount_not_commission(self):
         r = dict(opaque_order_id='opaque-01', merchant_report_verified=True, settlement_final=True, refunds_fees_final=True,
                  customer_retail_amount='87.99', refunds_and_clawbacks='0', publisher_fees='0')
         self.assertIsNone(net_commission_per_1000(500, [r]))
+    def test_missing_denominator_attestation_stays_unknown(self):
+        r = dict(opaque_order_id='opaque-01', merchant_report_verified=True, settlement_final=True, refunds_fees_final=True,
+                 publisher_commission='12.50', refunds_and_clawbacks='0', publisher_fees='0')
+        self.assertIsNone(net_commission_per_1000(500, [r]))
+    def test_missing_transaction_report_is_not_zero(self):
+        self.assertIsNone(net_commission_per_1000(500, [], True))
     def test_negative_and_non_numeric_rejected(self):
         r = dict(opaque_order_id='opaque-01', merchant_report_verified=True, settlement_final=True, refunds_fees_final=True,
                  publisher_commission='NaN', refunds_and_clawbacks='0', publisher_fees='0')
