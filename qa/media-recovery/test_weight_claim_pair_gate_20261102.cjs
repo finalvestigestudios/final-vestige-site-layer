@@ -11,10 +11,11 @@ function fixture(){
    stored_images.push({image_key:id+':'+i,stored_url:src,current_src:src,request_url:src,request_id:rid,
     match:'exact_url_or_jetpack_origin',result:'loaded_in_probe_browser',verified_broken_in_browser:false,
     current_src_identity_verified:true,network_final_identity_verified:true,loaded_network_proof_verified:true,
-    redirected_image_identity_unverified:false,complete:true,natural_width:960,http_status:200,
+    redirected_image_identity_unverified:false,complete:true,natural_width:960,natural_height:720,http_status:200,
     response_mime_type:'image/jpeg',transfer_bytes:1000});
    network_images.push({request_id:rid,url:src,url_aliases:[],status:200,mime_type:'image/jpeg',encoded_data_length:1000,
-    from_disk_cache:false,from_service_worker:false,was_cached:false});
+    from_disk_cache:false,from_memory_cache:false,from_service_worker:false,was_cached:false,
+    cold_event_chain_complete:true,cold_network_transfer_proven:true});
   }
   pages.push({post_id:id,url:'https://finalvestige.com/story-'+id+'/',page_result:'inspected_browser',
    scroll_coverage:{complete:true,state:'full_height_scanned'},stored_image_count:n,stored_images,network_images,
@@ -23,7 +24,8 @@ function fixture(){
    article_image_wire_bytes_total:n*1000,matched_article_network_requests:n,unattributed_image_wire_bytes_total:0,
    unmeasured_article_network_requests:0,image_wire_bytes_total:n*1000,browser_wire_bytes_total:n*1000+100});
  }
- const base={mode:'all',requested_pages:61,status:'complete_browser_image_census',
+ const base={mode:'all',requested_pages:61,verified_pages:61,probe_version:4,
+  status:'complete_browser_image_census',
   image_census_coverage:{complete:true,confirmed_broken_count:0},confirmed_broken_count:0,
   run_profile:{cache_disabled:true,service_worker_bypassed:true,scroll_step_px:720,
    scroll_wait_ms:220,settle_wait_ms:1000},browser_product:'Chrome/143.0',viewport:'390x844',
@@ -132,6 +134,18 @@ const bad=[
  ['partial or fake 42 count',(b)=>{b.image_census_coverage.complete=false}],
  ['forged completed audit flag',(b)=>{b.pages[0].image_census.complete=false}],
  ['missing image network log',(b)=>{b.pages[0].network_images=[]}],
+ ['missing legacy probe version',(b)=>{delete b.probe_version}],
+ ['string probe version',(b)=>{b.probe_version='4'}],
+ ['fractional probe version',(b)=>{b.probe_version=4.1}],
+ ['version 3 cannot prove cold transfer',(b)=>{b.probe_version=3}],
+ ['candidate collector version omitted',(_b,n)=>{delete n.probe_version}],
+ ['unverified page count',(b)=>{delete b.verified_pages}],
+ ['incorrect candidate verified pages',(_b,n)=>{n.verified_pages=60}],
+ ['baseline event-chain absent',(b)=>{delete b.pages[0].network_images[0].cold_event_chain_complete}],
+ ['candidate event-chain absent',(_b,n)=>{delete n.pages[0].network_images[0].cold_event_chain_complete}],
+ ['forged false event-chain',(b)=>{b.pages[0].network_images[0].cold_event_chain_complete=false}],
+ ['candidate cold transfer unproven',(_b,n)=>{n.pages[0].network_images[0].cold_network_transfer_proven=false}],
+ ['legacy image record missing cold-transfer flag',(b)=>{delete b.pages[0].network_images[0].cold_network_transfer_proven}],
  ['zero baseline image budget',(b)=>{b.pages[0].article_image_wire_bytes_total=0}],
  ['unattributed same-photo duplicate request',(b)=>{
   const n={...b.pages[0].network_images[0],request_id:'preload-0'};
