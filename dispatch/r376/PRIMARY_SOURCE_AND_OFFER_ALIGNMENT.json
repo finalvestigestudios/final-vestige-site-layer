@@ -1,0 +1,114 @@
+{
+  "edition": 2,
+  "status": "OPTIONAL_NOT_ADOPTED_UNSENT",
+  "source_observation_date": "2026-11-15",
+  "historical_claims": [
+    {
+      "claim": "1784 May 4 episode with a 23-year-old worker, reported in May 8 letter",
+      "source": "https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/",
+      "type": "historical self-report",
+      "known_limit": "No independent test of the cause or cure efficacy",
+      "verified_as_document_claim": true
+    },
+    {
+      "claim": "Calm sleep, speech, subsequent failure to remember described by author",
+      "source": "https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/",
+      "type": "author-described episode",
+      "known_limit": "Not independently observed, not proof of animal magnetism",
+      "verified_as_document_claim": true
+    },
+    {
+      "claim": "December 28 1784 covering letter condition mentioning 50 magnetizers",
+      "source": "https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/",
+      "type": "written request, not achieved replication result",
+      "known_limit": "No evidence 50 repetitions actually occurred",
+      "verified_as_document_claim": true,
+      "independent_fifty_successes": false
+    },
+    {
+      "claim": "1784 original private circulation and historical research",
+      "source": "https://doi.org/10.1002/jhbs.21974",
+      "type": "peer-reviewed historical interpretation",
+      "known_limit": "Not modern RCT or clinical efficacy",
+      "verified_as_document_claim": true
+    },
+    {
+      "claim": "2025 full English translation exists",
+      "source": "https://www.routledge.com/The-Marquis-de-Puysgur-Artificial-Somnambulism-and-the-Discovery-of/Crabtree-Osei-Bonsu/p/book/9781032292472",
+      "type": "publisher bibliographic metadata only",
+      "known_limit": "Full copyrighted translation not reviewed",
+      "verified_as_document_claim": true
+    }
+  ],
+  "historical_truth_limits": [
+    "1784 commissions tested particular Mesmerism claims, not this episode under a modern experimental design",
+    "No claims of magnetic fluid, telepathy, medical cure, or product-specific audio effects established"
+  ],
+  "primary_pdf_directly_reviewed": false,
+  "full_2025_book_reviewed": false,
+  "primary_cta": {
+    "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "wordpress_confirmed_published": true,
+    "post_id": 1924,
+    "affiliate": false
+  },
+  "product_claims": [
+    {
+      "sku": "Zen12",
+      "source": "https://zen12.com/getstarted",
+      "observed_public_path": "12 levels and 48 MP3; $87.99 displayed total with on-page discount",
+      "unverified": [
+        "actual referred checkout",
+        "email promotion rights",
+        "issued earning URL",
+        "refund applicability",
+        "specific efficacy claims"
+      ],
+      "commercial_draft_issue": 3
+    },
+    {
+      "sku": "Zen12 separate coupon",
+      "source": "https://zen12.com/secret/",
+      "observed_public_path": "Separate $37 coupon path, countdown, promotional efficacy claims",
+      "unverified": [
+        "coupon eligibility",
+        "referral applicability",
+        "time-sensitive terms",
+        "specific efficacy"
+      ],
+      "commercial_draft_issue": 3
+    },
+    {
+      "sku": "Hypnosis Live Total Focus",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "observed_public_path": "33-minute 47 MB MP3; $24.44 single-item public listing; bundles separately advertised",
+      "unverified": [
+        "actual referred price and bundle",
+        "refund terms at checkout",
+        "email promotion rights",
+        "issued earning URL",
+        "product-specific efficacy"
+      ],
+      "commercial_draft_issue": 5
+    },
+    {
+      "sku": "Inspire3 affiliate account",
+      "source": "https://affiliates.inspire3.com/",
+      "observed_public_path": "Program signup and statement that partners get special links",
+      "unverified": [
+        "Final Vestige approval",
+        "Zen12/Total Focus email permission",
+        "payout for this account"
+      ]
+    },
+    {
+      "sku": "Limitless Labs creative",
+      "source": "https://inspire3.com/ll/",
+      "observed_public_path": "Vendor offers swipe-copy for another SKU but also requires partner approval",
+      "unverified": [
+        "transferability to either campaign SKU"
+      ],
+      "explicitly_not_permission_for_zen12_or_total_focus": true
+    }
+  ]
+}

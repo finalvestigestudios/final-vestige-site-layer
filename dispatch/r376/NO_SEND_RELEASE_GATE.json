@@ -1,0 +1,89 @@
+{
+  "checked_at_utc": "2026-11-15T10:37:25Z",
+  "source_pr_175": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "campaign_ratio": {
+    "editorial": 4,
+    "commercial_reserved": 2
+  },
+  "orig_six_modified": false,
+  "source_of_truth": {
+    "newsletter_enabled": true,
+    "site_can_send": true,
+    "new_post_automatic_email": false,
+    "email_format": "full",
+    "sender_display": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "sampled_last_five_post_notifications": "never_sent_opted_out",
+    "jetpack_total": 3,
+    "jetpack_confirmed": 3,
+    "jetpack_unconfirmed": 2,
+    "stats_wpcom_followers": 3,
+    "stats_email_followers": 0,
+    "unique_email_receiving_subscribers": null,
+    "confirmed_signup_events_verified": null,
+    "fieldbook_welcome_configured": true,
+    "actual_welcome_received": false,
+    "guest_fieldbook_access_verified": false,
+    "native_preview_email_captured": false,
+    "rendered_publisher_postal_address_verified": false,
+    "functional_unsubscribe_verified": false,
+    "preheader_transport_behavior_verified": false
+  },
+  "merchant": {
+    "zen12_named_acceptance": false,
+    "zen12_email_rights": false,
+    "zen12_earning_url": false,
+    "zen12_guide_published": false,
+    "zen12_referred_checkout_verified": false,
+    "total_focus_named_acceptance": false,
+    "total_focus_email_rights": false,
+    "total_focus_earning_url": false,
+    "total_focus_guide_published": false,
+    "total_focus_referred_checkout_verified": false
+  },
+  "founder_final_campaign_approval": false,
+  "send_scheduled": false,
+  "send_authorized": false,
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "release": "HOLD_UNSENT",
+      "can_send": false
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "release": "HOLD_UNSENT",
+      "can_send": false
+    },
+    {
+      "number": 3,
+      "kind": "commercial_reserved",
+      "release": "HOLD_UNSENT_HOLD_MERCHANT",
+      "can_send": false
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "release": "HOLD_UNSENT",
+      "can_send": false
+    },
+    {
+      "number": 5,
+      "kind": "commercial_reserved",
+      "release": "HOLD_UNSENT_HOLD_MERCHANT",
+      "can_send": false
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "release": "HOLD_UNSENT",
+      "can_send": false
+    }
+  ],
+  "r376_issue_02_candidate": "NOT_ADOPTED",
+  "qualified_human_session_denominator": null,
+  "independently_settled_orders": null,
+  "realized_net_revenue_per_1000_qualified_sessions": null
+}
