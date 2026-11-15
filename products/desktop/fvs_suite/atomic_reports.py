@@ -18,7 +18,7 @@ from typing import Callable, Iterable, Mapping
 
 from .csv_formula_guard import has_unescaped_formula_prefix
 from .csv_stage_integrity import CSVStagingWitness
-from .csv_publish_guard import adopt_csv_descriptor, raise_private_csv_failure, require_free_destination
+from .csv_publish_guard import adopt_csv_descriptor, private_csv_failure, require_free_destination
 from .csv_userdict_custody import verify_userdict_storage
 
 
@@ -250,7 +250,11 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
     source-row validation and exclusive no-overwrite semantics. Filesystem
     failures are displayed with fixed text; caller input errors still fail.
     """
+    sanitized_error = None
     try:
         return _write_csv_report(destination, fields, rows, cell)
     except OSError as exc:
-        raise_private_csv_failure(exc)
+        sanitized_error = private_csv_failure(exc)
+    # The filesystem exception must be out of scope before raising: `from None`
+    # hides tracebacks but leaves financial paths readable via __context__.
+    raise sanitized_error
