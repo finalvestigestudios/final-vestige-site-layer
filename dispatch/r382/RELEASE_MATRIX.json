@@ -1,0 +1,91 @@
+{
+  "review_only": true,
+  "schema": "dispatch_r382_v1",
+  "parent_pr": 2637,
+  "original_campaign_pr": 175,
+  "master_issue": 174,
+  "site": "https://finalvestige.com",
+  "time_utc": "2026-11-15T16:32:15Z",
+  "newsletter": {
+    "enabled": true,
+    "automatic_new_posts": false,
+    "email_content_format": "full",
+    "subscribers_total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "email_eligible_unique": null,
+    "welcome_configured": true,
+    "welcome_receipt_verified": false,
+    "native_preview_verified": false,
+    "footer_postal_verified": false,
+    "functional_unsubscribe_verified": false
+  },
+  "commercial": {
+    "named_zen12_email_permission_verified": false,
+    "approved_live_zen12_guide": false,
+    "issued_earning_url_verified": false,
+    "real_referred_checkout_verified": false,
+    "merchant_subid_allowed_verified": false,
+    "settled_publisher_commission_verified": false
+  },
+  "revenue": {
+    "qualified_human_sessions": null,
+    "net_commission": null,
+    "net_per_1000": null,
+    "asset_source_join_verified": false
+  },
+  "editions": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "release": "HOLD_UNSENT",
+      "merchant_hold": false,
+      "copy_hold": false,
+      "founder_approval": false
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "release": "HOLD_UNSENT",
+      "merchant_hold": false,
+      "copy_hold": false,
+      "founder_approval": false
+    },
+    {
+      "number": 3,
+      "kind": "commercial",
+      "release": "HOLD_UNSENT",
+      "merchant_hold": true,
+      "copy_hold": false,
+      "founder_approval": false
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "release": "HOLD_UNSENT",
+      "merchant_hold": false,
+      "copy_hold": true,
+      "founder_approval": false
+    },
+    {
+      "number": 5,
+      "kind": "commercial",
+      "release": "HOLD_UNSENT",
+      "merchant_hold": true,
+      "copy_hold": false,
+      "founder_approval": false
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "release": "HOLD_UNSENT",
+      "merchant_hold": false,
+      "copy_hold": false,
+      "founder_approval": false
+    }
+  ],
+  "optional_issue06": {
+    "status": "NOT_ADOPTED_UNSENT",
+    "subject": "The photograph that couldn't show the whole flight"
+  }
+}
