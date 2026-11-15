@@ -149,6 +149,7 @@ def git_blob(data: bytes) -> str:
     return hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data,usedforsecurity=False).hexdigest()
 
 
+
 def collect_source_ids(register: dict, objects: dict, read) -> set[str]:
     """Resolve BASE plus all seven original contributor source fragments, without choosing a fork."""
     base=register.get('sources')
@@ -173,7 +174,6 @@ def collect_source_ids(register: dict, objects: dict, read) -> set[str]:
                 local.add(src['id'])
             ids.update(local)
     return ids
-
 
 
 def audit(manifest: dict, register: dict, reader) -> dict:
