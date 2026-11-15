@@ -1,0 +1,23 @@
+/* R377 standalone source-role desktop/mobile research UI; no images, animations or JS. */
+.fv-r377{--rv-bg:#0d1011;--rv-fg:#f4ecdf;--rv-gold:#d0b16c;--rv-line:#5c564c;color:var(--rv-fg);background:var(--rv-bg);font:inherit;box-sizing:border-box;overflow-wrap:anywhere}
+.fv-r377 *{box-sizing:border-box;min-width:0}
+.fv-r377__inner{width:min(100%,84rem);margin-inline:auto;padding:clamp(8px,3vw,28px)}
+.fv-r377 h2{font-size:clamp(1.6rem,3.8vw,3rem);line-height:1.2;margin:0 0 1rem;color:var(--rv-fg)}
+.fv-r377 h3{font-size:clamp(1.2rem,2vw,1.65rem);line-height:1.25;color:var(--rv-fg);margin:.4rem 0 1rem}
+.fv-r377 p,.fv-r377 summary{line-height:1.65}
+.fv-r377__kicker,.fv-r377__number{font-size:.82rem;letter-spacing:.075em;text-transform:uppercase;color:var(--rv-gold)}
+.fv-r377__intro{max-width:65ch;margin-bottom:1.5rem}
+.fv-r377__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(6px,1.5vw,16px);list-style:none;margin:0;padding:0}
+.fv-r377__item{padding:clamp(8px,2vw,18px);border:1px solid var(--rv-line);border-radius:.5rem;background:#171b1d;min-width:0}
+.fv-r377__boundary{border-left:.25rem solid var(--rv-gold);padding-left:clamp(6px,2vw,16px)}
+.fv-r377 a{color:#f2d58b;text-decoration:underline;text-underline-offset:.18em}
+.fv-r377 a:focus-visible,.fv-r377 summary:focus-visible{outline:.22rem solid #ffe7a5;outline-offset:.2rem}
+.fv-r377 details{border-top:1px solid var(--rv-line);padding-top:.7rem;margin-top:1rem}
+.fv-r377 summary{cursor:pointer;font-weight:700;touch-action:manipulation;padding:.45rem 0}
+.fv-r377__source{margin-top:1rem;padding:clamp(8px,2vw,16px);background:#24292b;border-radius:.3rem}
+.fv-r377__cta{margin-top:1.5rem;font-size:1.13rem;font-weight:700}
+.fv-r377__method,.fv-r377__disclaimer{max-width:78ch;font-size:.9rem;color:#ddd6cb}
+.fv-r377__print{display:none}
+@media(max-width:44rem){.fv-r377__grid{grid-template-columns:minmax(0,1fr)}.fv-r377__item{padding:8px}}
+@media(forced-colors:active){.fv-r377{background:Canvas;color:CanvasText}.fv-r377__item,.fv-r377__source{background:Canvas;color:CanvasText;border:1px solid CanvasText}.fv-r377 a{color:LinkText}.fv-r377__boundary{border-left-color:CanvasText}}
+@media print{.fv-r377{background:white;color:black}.fv-r377__inner{padding:0}.fv-r377 h2,.fv-r377 h3,.fv-r377 .fv-r377__kicker,.fv-r377 .fv-r377__number{color:black}.fv-r377__grid{display:block}.fv-r377__item{background:white;color:black;border:1px solid #444;break-inside:avoid;page-break-inside:avoid;margin-bottom:.7rem}.fv-r377 a{color:blue}.fv-r377__print{display:block}.fv-r377 details{display:none}.fv-r377__method,.fv-r377__disclaimer{color:black}}
