@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const base=new URL('.',import.meta.url);
+const read=(name)=>fs.readFileSync(new URL(name,base),'utf8');
+const a=read('ZEN12_A_TEXT.html'),b=read('ZEN12_B_OPTIONAL_FILM.html'),h=read('MIND_HUB_SOURCE_ONLY.html'),vtt=read('ORIGINAL_42S_CAPTIONS.vtt'),m=JSON.parse(read('CLAIM_SOURCE_PERMISSION_MATRIX.json'));
+let checks=0;const ok=(condition,label)=>{assert.ok(condition,label);checks++};
+for(const [name,p] of [['A',a],['B',b],['hub',h]]){
+ ok(/<!doctype html>/i.test(p),name+' doctype');ok(/lang="en"/.test(p),name+' language');ok(/name="viewport"/.test(p),name+' viewport');ok(/name="robots" content="noindex,nofollow"/.test(p),name+' noindex');ok(!/<script\b/i.test(p),name+' no script');ok(!/<form\b/i.test(p),name+' no new forms');ok(!/\sautoplay(?:[\s=>])/i.test(p),name+' no autoplay attr');ok(!/https?:\/\/[^" ]+(?:ref=|affiliate_id=|aff_id=)/i.test(p),name+' no ref URL');ok(!/on(?:click|load|error|submit)\s*=/i.test(p),name+' no inline events');ok(/:focus-visible/.test(p),name+' keyboard focus');ok(/prefers-reduced-motion/.test(p),name+' reduced motion');
+}
+for(const p of [a,b]){ok(/<button[^>]*\sdisabled(?:\s|>)/.test(p),'native disabled merchant button');ok(/Final Vestige may earn a commission/.test(p),'adjacent earning disclosure');ok(p.indexOf('may earn a commission')<p.indexOf('<button'),'disclosure precedes button');ok(/finalvestige.com\/focus\//.test(p),'one established focus route');ok(!/price is guaranteed|proven to cure|100% focus/i.test(p),'no false seller promises')}
+ok(!a.includes('Optional 42-second original short'),'A excludes optional module');ok(b.includes('Optional 42-second original short'),'B includes optional module');ok(b.includes('Read the full narration transcript'),'B visible transcript');ok(b.includes('<svg'),'B original SVG');ok(b.replace(/<section class="card extra"[\s\S]*?<\/section>/,'').replace('B optional visual','A text')===a,'A/B substantive HTML parity');
+ok(vtt.startsWith('WEBVTT'),'VTT header');ok((vtt.match(/-->/g)||[]).length===6,'six VTT cues');ok(vtt.includes('00:00:00.000 --> 00:00:07.000'),'VTT begins at 0');ok(vtt.includes('00:00:35.000 --> 00:00:42.000'),'VTT ends at 42');ok(m.claims.length===20,'20 claims');ok(m.gates.length===26,'26 gates');ok(m.gates.every(g=>g.state==='HOLD'),'commercial fail closed');ok(m.claims.some(c=>c.id==='C09'&&c.status==='EXCLUDE_AS_FACT'),'seller efficacy withheld');ok(m.claims.some(c=>c.id==='C16'&&c.status==='REQUIRE_IF_ACTIVE'),'FTC rule present');
+console.log('PASS',checks,'offline structural assertions. Browser, merchant, CMS and film-playback gates NOT TESTED.');
