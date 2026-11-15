@@ -11,6 +11,7 @@ import getpass
 import hashlib
 import json
 import os
+import sqlite3
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -160,6 +161,7 @@ def main(argv: list[str] | None = None) -> int:
     if not sys.stdin.isatty():
         parser.error("An interactive terminal is required for the private-key passphrase")
     secret = getpass.getpass("Encrypted signing-key passphrase: ").encode("utf-8")
+    refusal = None
     try:
         registry = IssuanceRegistry(args.registry)
         # Reserve before touching the private key. Failed or uncertain issuance
@@ -173,8 +175,17 @@ def main(argv: list[str] | None = None) -> int:
                                    return_digest=True)
         digest = registry.finalize(license_id=args.license_id, product=args.product,
                                    kid=args.kid, output=issued, expected_sha256=signed_digest)
-    except (RegistryError, IssuanceError, verifier.EntitlementError, OSError, ValueError) as exc:
-        parser.exit(1, f"Issuance refused (reservation may require manual review): {exc}\n")
+    except (RegistryError, IssuanceError, verifier.EntitlementError) as exc:
+        # These modules own their public, intentionally bounded refusal text.
+        refusal = str(exc)
+    except (OSError, ValueError, sqlite3.Error):
+        # Raw filesystem/database exceptions may contain customer paths,
+        # SQL, or signing-key locations. Never echo their messages.
+        refusal = "Unexpected protected issuance failure; investigate manually"
+    # argparse exits via SystemExit. Doing so *inside* an exception handler
+    # would attach the private exception as SystemExit.__context__.
+    if refusal is not None:
+        parser.exit(1, f"Issuance refused (reservation may require manual review): {refusal}\n")
     print(f"Entitlement verified and recorded (SHA-256 {digest}). Distribution NOT authorized.")
     return 0
 
