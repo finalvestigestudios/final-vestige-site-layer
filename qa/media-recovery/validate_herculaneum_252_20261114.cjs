@@ -16,20 +16,20 @@ function validate(d){
  const digest=crypto.createHash('sha256').update(images.map(x=>x.source_url).join('\n')).digest('hex');
  req(digest===EXPECTED_SOURCE_SHA256,'original source URL custody');
  images.forEach((im,i)=>{
-  const key=EXPECTED_SLOTS[i];req(im.key===key && im.slot===i,\`slot binding \${i}\`);
+  const key=EXPECTED_SLOTS[i];req(im.key===key && im.slot===i,`slot binding ${i}`);
   let parsed;try{parsed=new URL(im.source_url)}catch{}
-  req(parsed?.protocol==='https:' && parsed?.hostname==='commons.wikimedia.org' && parsed?.pathname.startsWith('/wiki/Special:Redirect/file/'),\`untrusted source \${key}\`);
+  req(parsed?.protocol==='https:' && parsed?.hostname==='commons.wikimedia.org' && parsed?.pathname.startsWith('/wiki/Special:Redirect/file/'),`untrusted source ${key}`);
   let fn=null;try{fn=decodeURIComponent(parsed.pathname.split('/').pop()).replace(/ /g,'_')}catch{}
-  req(fn===im.catalog_filename,\`catalog filename mismatch \${key}\`);
-  req(im.catalog_url===\`https://commons.wikimedia.org/wiki/File:\${im.catalog_filename.replace(/ /g,'_')}\`,\`catalog link mismatch \${key}\`);
+  req(fn===im.catalog_filename,`catalog filename mismatch ${key}`);
+  req(im.catalog_url===`https://commons.wikimedia.org/wiki/File:${im.catalog_filename.replace(/ /g,'_')}`,`catalog link mismatch ${key}`);
   const w=im.catalog_dimensions_px?.width,h=im.catalog_dimensions_px?.height;
   const tw=im.max_width_960_preserve_aspect_px?.width,th=im.max_width_960_preserve_aspect_px?.height;
-  req(Number.isInteger(w)&&w>0&&Number.isInteger(h)&&h>0&&tw===Math.min(w,960)&&th===Math.round(h*tw/w),\`native/no-upscale geometry \${key}\`);
-  req(im.browser_status===null && im.visitor_natural_width===null && im.visitor_transfer_bytes===null && im.source_binary_sha256===null,\`invented browser or binary proof \${key}\`);
-  req(im.rights_cleared_for_rehost===false && im.wp_media_upload_authorized===false && im.replacement_binary_created===false,\`unauthorized publication \${key}\`);
-  req(typeof im.live_alt==='string'&&typeof im.live_caption==='string'&&typeof im.catalog_description==='string'&&im.catalog_description.length>45&&typeof im.catalog_rights_claim==='string',\`missing descriptive provenance \${key}\`);
-  req(im.identity_disposition===(MISMATCH.has(key)?'editorial_mismatch':'accurate_subject'),\`editorial classification \${key}\`);
-  req(MISMATCH.has(key)?typeof im.proposed_alt_review_only==='string'&&im.proposed_alt_review_only.length>50:im.proposed_alt_review_only===null,\`editorial suggestion \${key}\`);
+  req(Number.isInteger(w)&&w>0&&Number.isInteger(h)&&h>0&&tw===Math.min(w,960)&&th===Math.round(h*tw/w),`native/no-upscale geometry ${key}`);
+  req(im.browser_status===null && im.visitor_natural_width===null && im.visitor_transfer_bytes===null && im.source_binary_sha256===null,`invented browser or binary proof ${key}`);
+  req(im.rights_cleared_for_rehost===false && im.wp_media_upload_authorized===false && im.replacement_binary_created===false,`unauthorized publication ${key}`);
+  req(typeof im.live_alt==='string'&&typeof im.live_caption==='string'&&typeof im.catalog_description==='string'&&im.catalog_description.length>45&&typeof im.catalog_rights_claim==='string',`missing descriptive provenance ${key}`);
+  req(im.identity_disposition===(MISMATCH.has(key)?'editorial_mismatch':'accurate_subject'),`editorial classification ${key}`);
+  req(MISMATCH.has(key)?typeof im.proposed_alt_review_only==='string'&&im.proposed_alt_review_only.length>50:im.proposed_alt_review_only===null,`editorial suggestion ${key}`);
  });
  req(images[1]?.catalog_description?.includes('Ground plan') && images[1]?.live_alt?.includes('papyrus rolls'), 'Villa-plan-versus-scrolls identity');
  req(images[4]?.catalog_description?.includes('Casanova')&&images[4]?.live_alt?.includes('carbonized'), 'drawing-versus-fragment identity');
