@@ -25,3 +25,25 @@ test('reject mutation 15',()=>{const x=fresh();(x=>x.rows.find(z=>z.key==="285:5
 test('reject mutation 16',()=>{const x=fresh();(x=>x.rows.find(z=>z.key==="418:5").query_gap=false)(x);assert.notDeepEqual(validate(x),[]);});
 test('reject mutation 17',()=>{const x=fresh();(x=>x.release.wordpress_writes=1)(x);assert.notDeepEqual(validate(x),[]);});
 test('reject mutation 18',()=>{const x=fresh();(x=>x.rows.find(z=>z.key==="285:5").p0_candidate.publication_rights_verified=true)(x);assert.notDeepEqual(validate(x),[]);});
+
+const {candidateGeometrySafe,attributesSafe}=require('./validate_wp_view_proxy_26_20261115.cjs');
+test('review geometry exactly preserves native under 960',()=>assert.equal(candidateGeometrySafe(fresh().rows.find(r=>r.key==='285:5').p0_candidate),true));
+test('reject upscaled P0 replacement',()=>{const x=fresh(),c=x.rows.find(r=>r.key==='285:5').p0_candidate;c.review_px=[960,719];assert.notDeepEqual(validate(x),[]);});
+test('reject distorted P0 replacement',()=>{const x=fresh(),c=x.rows.find(r=>r.key==='285:5').p0_candidate;c.review_px=[819,300];assert.notDeepEqual(validate(x),[]);});
+test('reject invalid intrinsic geometry',()=>{const x=fresh(),c=x.rows.find(r=>r.key==='285:5').p0_candidate;c.native_px=[-819,614];assert.notDeepEqual(validate(x),[]);});
+test('reject partial invented native geometry',()=>{const x=fresh(),c=x.rows.find(r=>r.key==='418:1').p0_candidate;c.native_px=[800,600];assert.notDeepEqual(validate(x),[]);});
+test('reject non-HTTPS replacement catalog',()=>{const x=fresh(),c=x.rows.find(r=>r.key==='418:1').p0_candidate;c.official_item_url='http://unverified.test/photo';assert.notDeepEqual(validate(x),[]);});
+test('reject missing P0 rights note',()=>{const x=fresh(),c=x.rows.find(r=>r.key==='418:1').p0_candidate;c.rights_note='';assert.notDeepEqual(validate(x),[]);});
+test('reject missing width or height',()=>{const x=fresh();x.rows[0].width=1280;assert.notDeepEqual(validate(x),[]);});
+test('reject injected dimensions and unchanged summary',()=>{const x=fresh();x.rows[0].width=800;x.rows[0].height=600;assert.notDeepEqual(validate(x),[]);});
+test('reject zero dimensions',()=>{const x=fresh();x.rows.find(r=>r.key==='287:0').width=0;assert.notDeepEqual(validate(x),[]);});
+test('reject phantom responsive candidates',()=>{const x=fresh();x.rows[0].srcset='https://unverified.test/picture.jpg 900w';x.rows[0].sizes='100vw';assert.notDeepEqual(validate(x),[]);});
+test('reject blank descriptive ALT',()=>{const x=fresh();x.rows[0].alt=' ';assert.notDeepEqual(validate(x),[]);});
+test('reject fabricated 42 verified failures',()=>{const x=fresh();x.counts.reported_broken_guest_verified=true;assert.notDeepEqual(validate(x),[]);});
+test('reject fabricated 76% transferred savings',()=>{const x=fresh();x.counts.measured_76_percent=true;assert.notDeepEqual(validate(x),[]);});
+test('reject invented merge or deployment',()=>{const x=fresh();x.release.merged=true;assert.notDeepEqual(validate(x),[]);});
+test('reject unapproved spend',()=>{const x=fresh();x.release.paid_usd=1;assert.notDeepEqual(validate(x),[]);});
+test('reject falsified parent link',()=>{const x=fresh();x.posts[0].link='https://other.test/post';assert.notDeepEqual(validate(x),[]);});
+test('reject altered summary page count',()=>{const x=fresh();x.counts.posts=3;assert.notDeepEqual(validate(x),[]);});
+test('reject missing attribute fields',()=>{const x=fresh();delete x.rows[0].srcset;assert.notDeepEqual(validate(x),[]);});
+test('attribute helper accepts existing dimensionless image',()=>assert.equal(attributesSafe(fresh().rows[0]),true));
