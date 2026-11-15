@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="960" height="1160" viewBox="0 0 960 1160" role="img" aria-labelledby="title description">
+<title id="title">The bill attached to a Bohemia land-return claim</title>
+<desc id="description">Document-based flowchart showing a $175 advance administrative deposit under the December 2002 Louisiana Administrative Code, a 70-day initial payment deadline, actual-cost reconciliation, a 30-day later payment period, an indigence exception with deferred liability, and statutory direction to deposit recovered fees into the state treasury. This chart does not document any actual individual payment or land forfeiture.</desc>
+<rect width="960" height="1160" fill="#101c24"/>
+<rect x="38" y="38" width="884" height="1084" rx="18" fill="none" stroke="#426276" stroke-width="2"/>
+<text x="82" y="95" font-family="DejaVu Sans,Arial,sans-serif" fill="#ccab77" font-size="25" letter-spacing="3" font-weight="700">FINAL VESTIGE STUDIOS   /   EVIDENCE MAP</text>
+<text x="80" y="160" font-family="DejaVu Serif,Georgia,serif" fill="#f6f0e7" font-size="55" font-weight="700">A claim came with a bill.</text>
+<text x="82" y="208" font-family="DejaVu Sans,Arial,sans-serif" fill="#c3d0d2" font-size="26">Bohemia land-return rules in the December 2002 code</text>
+<path d="M120 283 V917" stroke="#66869b" stroke-width="5" stroke-dasharray="9 10" opacity=".8"/>
+<circle cx="120" cy="312" r="17" fill="#d8ad6e"/>
+<rect x="177" y="260" width="699" height="172" rx="16" fill="#1d303b" stroke="#506c80" stroke-width="2"/>
+<text x="213" y="312" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" fill="#d2bf9d" font-weight="700">STAGE 1   /   ADVANCE COSTS</text>
+<text x="212" y="377" font-family="DejaVu Sans,Arial,sans-serif" font-size="63" fill="#ffffff" font-weight="700">$175</text>
+<text x="416" y="369" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" fill="#d6e1e3">deposit per claim</text>
+<text x="212" y="411" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" fill="#d6e1e3">70 days after notice; late deposit could invalidate claim</text>
+<circle cx="120" cy="544" r="17" fill="#d8ad6e"/>
+<rect x="177" y="465" width="699" height="175" rx="16" fill="#1d303b" stroke="#506c80" stroke-width="2"/>
+<text x="213" y="515" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" fill="#d2bf9d" font-weight="700">STAGE 2   /   ACTUAL COST</text>
+<text x="213" y="564" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" fill="#ffffff">Deposit reconciled to processing cost.</text>
+<text x="213" y="604" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" fill="#d6e1e3">Excess returned; shortfall could be payable.</text>
+<circle cx="120" cy="751" r="17" fill="#d8ad6e"/>
+<rect x="177" y="673" width="699" height="169" rx="16" fill="#1d303b" stroke="#506c80" stroke-width="2"/>
+<text x="213" y="724" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" fill="#d2bf9d" font-weight="700">EXCEPTION   /   INDIGENCE</text>
+<text x="213" y="772" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" fill="#ffffff">Some upfront costs could be deferred.</text>
+<text x="213" y="813" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" fill="#d6e1e3">Remaining liability was due before land transfer.</text>
+<circle cx="120" cy="916" r="17" fill="#d8ad6e"/>
+<rect x="177" y="869" width="699" height="118" rx="16" fill="#253c42" stroke="#75908c" stroke-width="2"/>
+<text x="213" y="919" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" fill="#e8d2a9" font-weight="700">WHERE THE FEES WENT BY LAW</text>
+<text x="213" y="960" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" fill="#ffffff">State treasury  ·  not claimant royalties</text>
+<path d="M79 1012 H879" stroke="#3c5c68" stroke-width="2"/>
+<text x="81" y="1046" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" fill="#dce3e0">Statute: La. R.S. 30:21.2 (enacted 1987; later amended)</text>
+<text x="81" y="1077" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" fill="#dce3e0">Rule: LAC 43:I §§1303, 1305, December 2002 compilation</text>
+<text x="81" y="1102" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" fill="#b3c0c5">Documented requirements, not proof any identified claimant paid or lost land.</text>
+</svg>
