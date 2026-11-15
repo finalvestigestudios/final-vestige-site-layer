@@ -1,0 +1,188 @@
+{
+  "schema": "fv-eastland-214-primary-custody-v1",
+  "date": "2026-11-14",
+  "method": "Frozen published WordPress 61-post/355-inline-image source census plus separately read public archive catalog records; six direct image URLs were attempted using an external web reader and were inaccessible to that reader, NOT confirmed HTTP failures",
+  "article": {
+    "post_id": 214,
+    "title": "The Lifeboats Never Left the Deck",
+    "url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+    "source_snapshot_modified": "2026-10-29T16:30:42"
+  },
+  "baseline": {
+    "historical_posts": 61,
+    "historical_images": 355,
+    "reported_broken": 42,
+    "guest_confirmed_broken": null,
+    "claimed_transfer_savings_percent": 76,
+    "measured_transfer_savings_percent": null,
+    "wp_originals_above_1500000_bytes": 16,
+    "wp_original_stored_bytes": 49107665
+  },
+  "items": [
+    {
+      "slot": "214:0",
+      "source_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19622v.jpg",
+      "record_url": "https://www.loc.gov/pictures/item/2014699553/marc/",
+      "archive_candidate": "https://commons.wikimedia.org/wiki/File:EASTLAND_overturned_in_Chicago_River,_7-24-15_LCCN2014699553.jpg",
+      "candidate_original_px": {
+        "width": 5691,
+        "height": 4122
+      },
+      "proposed_max_width_px": 960,
+      "proposed_non_upscale_px": {
+        "width": 960,
+        "height": 695
+      },
+      "rights_evidence": "LOC Bain News Service LCCN 2014699553; no known restrictions on publication; actual CDN v binary not verified",
+      "visual_review": "Bain News Service 1915 overturning negative, not necessarily equivalent to Commons high-resolution derivative",
+      "source_reader": "web_open_inaccessible_binary_or_redirect",
+      "origin_http_status": null,
+      "guest_http_status": null,
+      "guest_natural_width": null,
+      "encoded_transfer_bytes": null,
+      "exact_binary_identity_verified": false,
+      "rights_cleared_for_wp": false,
+      "cache_allowed": false,
+      "wp_write_allowed": false,
+      "disposition": "HOLD"
+    },
+    {
+      "slot": "214:1",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Wreck_of_the_Eastland,_Chicago,_1915.jpg",
+      "record_url": "https://hdl.loc.gov/loc.pnp/pan.6a04191",
+      "archive_candidate": "https://commons.wikimedia.org/wiki/File:Wreck_of_the_Eastland,_Chicago,_1915.jpg",
+      "candidate_original_px": {
+        "width": 2475,
+        "height": 662
+      },
+      "proposed_max_width_px": 960,
+      "proposed_non_upscale_px": {
+        "width": 960,
+        "height": 257
+      },
+      "rights_evidence": "LOC panoramic photograph via Commons; pre-1931 US publication PD tag; item-specific source cross-check remains required",
+      "visual_review": "Panorama 2475x662: 960px-wide derivative is only 257px tall; preserve full composition and check detail",
+      "source_reader": "web_open_inaccessible_binary_or_redirect",
+      "origin_http_status": null,
+      "guest_http_status": null,
+      "guest_natural_width": null,
+      "encoded_transfer_bytes": null,
+      "exact_binary_identity_verified": false,
+      "rights_cleared_for_wp": false,
+      "cache_allowed": false,
+      "wp_write_allowed": false,
+      "disposition": "HOLD"
+    },
+    {
+      "slot": "214:2",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/EastlandKenosha.jpg",
+      "record_url": "https://commons.wikimedia.org/wiki/File:EastlandKenosha.jpg",
+      "archive_candidate": "https://commons.wikimedia.org/wiki/File:EastlandKenosha.jpg",
+      "candidate_original_px": {
+        "width": 475,
+        "height": 381
+      },
+      "proposed_max_width_px": 960,
+      "proposed_non_upscale_px": {
+        "width": 475,
+        "height": 381
+      },
+      "rights_evidence": "Chicago Daily News negative DN-0064936, Chicago Historical Society; US public domain Commons tag; verify item credit",
+      "visual_review": "Only 475px wide; must not upscale; DPR2 full-width article would undersample",
+      "source_reader": "web_open_inaccessible_binary_or_redirect",
+      "origin_http_status": null,
+      "guest_http_status": null,
+      "guest_natural_width": null,
+      "encoded_transfer_bytes": null,
+      "exact_binary_identity_verified": false,
+      "rights_cleared_for_wp": false,
+      "cache_allowed": false,
+      "wp_write_allowed": false,
+      "disposition": "HOLD"
+    },
+    {
+      "slot": "214:3",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Helen_Repa_Eastland_Disaster_photo.png?width=1280",
+      "record_url": "https://commons.wikimedia.org/wiki/File:Helen_Repa_Eastland_Disaster_photo.png",
+      "archive_candidate": "https://commons.wikimedia.org/wiki/File:Helen_Repa_Eastland_Disaster_photo.png",
+      "candidate_original_px": {
+        "width": 1786,
+        "height": 920
+      },
+      "proposed_max_width_px": 960,
+      "proposed_non_upscale_px": {
+        "width": 960,
+        "height": 495
+      },
+      "rights_evidence": "4 Aug 1915 newspaper source, unknown photographer; Commons PD pre-1931 US publication assertion; confirm original scan identity",
+      "visual_review": "Published requested width 1280, Commons original 1786x920; verify content and crop visually",
+      "source_reader": "web_open_inaccessible_binary_or_redirect",
+      "origin_http_status": null,
+      "guest_http_status": null,
+      "guest_natural_width": null,
+      "encoded_transfer_bytes": null,
+      "exact_binary_identity_verified": false,
+      "rights_cleared_for_wp": false,
+      "cache_allowed": false,
+      "wp_write_allowed": false,
+      "disposition": "HOLD"
+    },
+    {
+      "slot": "214:4",
+      "source_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19623v.jpg",
+      "record_url": "https://www.loc.gov/pictures/item/2014699554/",
+      "archive_candidate": "https://commons.wikimedia.org/wiki/File:Reviving_EASTLAND_victim_LCCN2014699554.jpg",
+      "candidate_original_px": {
+        "width": 4153,
+        "height": 5697
+      },
+      "proposed_max_width_px": 960,
+      "proposed_non_upscale_px": {
+        "width": 960,
+        "height": 1317
+      },
+      "rights_evidence": "LOC Bain LCCN 2014699554 says no known publication restrictions; Commons counterpart records 1910 date despite 1915 Eastland caption; verify archival chronology",
+      "visual_review": "Candidate dimensions come from Commons counterpart, not inspected CDN v binary; hold exact equivalence",
+      "source_reader": "web_open_inaccessible_binary_or_redirect",
+      "origin_http_status": null,
+      "guest_http_status": null,
+      "guest_natural_width": null,
+      "encoded_transfer_bytes": null,
+      "exact_binary_identity_verified": false,
+      "rights_cleared_for_wp": false,
+      "cache_allowed": false,
+      "wp_write_allowed": false,
+      "disposition": "HOLD"
+    },
+    {
+      "slot": "214:5",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Photograph_of_The_Eastland_(upside_down)_on_Chicago_River,_Chicago._-_NARA_-_281841.jpg?width=1280",
+      "record_url": "https://www.archives.gov/chicago/highlights/eastland",
+      "archive_candidate": "https://commons.wikimedia.org/wiki/File:Photograph_of_The_Eastland_(upside_down)_on_Chicago_River,_Chicago._-_NARA_-_281841.jpg",
+      "candidate_original_px": {
+        "width": 3000,
+        "height": 2402
+      },
+      "proposed_max_width_px": 960,
+      "proposed_non_upscale_px": {
+        "width": 960,
+        "height": 769
+      },
+      "rights_evidence": "NARA NAID 281841, court-case exhibit; Commons applies federal-employee PD tag, but custody by federal court is not proof federal authorship; verify rights basis",
+      "visual_review": "Official NARA institutional page confirms ID 281841, but original photographer unknown; image description is not creator attribution",
+      "source_reader": "web_open_inaccessible_binary_or_redirect",
+      "origin_http_status": null,
+      "guest_http_status": null,
+      "guest_natural_width": null,
+      "encoded_transfer_bytes": null,
+      "exact_binary_identity_verified": false,
+      "rights_cleared_for_wp": false,
+      "cache_allowed": false,
+      "wp_write_allowed": false,
+      "disposition": "HOLD"
+    }
+  ],
+  "release": "HOLD",
+  "site_qa_154_collector_unchanged": true,
+  "homepage_untouched": true
+}
