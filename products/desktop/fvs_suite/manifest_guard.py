@@ -14,7 +14,7 @@ from pathlib import Path
 
 from .csv_snapshot import _same_path_descriptor_signature
 from .evidence_label import canonical_evidence_label
-from .premium_link_custody import open_inventory_stream
+from .premium_link_custody import open_inventory_stream, require_single_link
 
 # Source CSV imports have a 64 MiB cap; finished reports can be larger.
 MAX_INPUT_BYTES = 64 * 1024 * 1024
@@ -58,6 +58,9 @@ def _hash_regular(path: Path, maximum: int) -> tuple[str, tuple[int, int, int, i
     if type(maximum) is not int or not (0 <= maximum <= MAX_REPORT_BYTES):
         raise ValueError("Invalid inventory size limit")
     before = _metadata(path)
+    # An external hard-link alias can mutate the same private evidence bytes.
+    # Refuse it before opening; repeat the check on every descriptor/path view.
+    require_single_link(before)
     if before.st_size > maximum:
         raise ValueError("Inventory evidence exceeds the file-size limit")
     flags = (os.O_RDONLY | getattr(os, "O_BINARY", 0)
@@ -82,6 +85,7 @@ def _hash_regular(path: Path, maximum: int) -> tuple[str, tuple[int, int, int, i
     try:
         with stream:
             opened = os.fstat(stream.fileno())
+            require_single_link(opened)
             if not stat.S_ISREG(opened.st_mode) or not _same_path_descriptor_signature(before, opened):
                 raise ValueError("Inventory evidence changed while opening")
             digest = hashlib.sha256()
@@ -92,6 +96,7 @@ def _hash_regular(path: Path, maximum: int) -> tuple[str, tuple[int, int, int, i
                     raise ValueError("Inventory evidence exceeds the file-size limit")
                 digest.update(chunk)
             finished = os.fstat(stream.fileno())
+            require_single_link(finished)
             if total != opened.st_size or _signature(finished) != _signature(opened):
                 raise ValueError("Inventory evidence changed while hashing")
     except OSError:
@@ -100,6 +105,7 @@ def _hash_regular(path: Path, maximum: int) -> tuple[str, tuple[int, int, int, i
         raise ValueError("Unable to read inventory evidence")
     # Reject replacement of the pathname while the descriptor was being read.
     after_path = _metadata(path)
+    require_single_link(after_path)
     if (_signature(after_path) != _signature(before)
             or not _same_path_descriptor_signature(after_path, opened)):
         raise ValueError("Inventory evidence path changed while hashing")
@@ -173,6 +179,10 @@ def inventory_text(inputs, outputs, *, expected_input_digests=None) -> str:
         snapshots.append((path, signature))
     # Detect changes to earlier files while hashing subsequent files.
     for path, signature in snapshots:
-        if _signature(_metadata(path)) != signature:
+        current = _metadata(path)
+        # st_nlink is intentionally not part of the five-field fingerprint.
+        # Enforce single-link custody separately on the final whole-set pass.
+        require_single_link(current)
+        if _signature(current) != signature:
             raise ValueError("Inventory evidence changed before publication")
     return "".join(lines)
