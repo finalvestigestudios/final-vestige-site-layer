@@ -1,0 +1,37 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {auditErrors}=require('./validate_malbone_621_renditions_20261114.cjs');
+const source=require('./malbone_621_six_image_rendition_audit_20261114.json');
+let passed=0;
+function run(name,mutate,expectFailure){
+  const d=JSON.parse(JSON.stringify(source));if(mutate)mutate(d);
+  const got=auditErrors(d);
+  if(expectFailure)assert.ok(got.length>0,name+' should fail closed');
+  else assert.deepEqual(got,[],name);
+  passed++;
+}
+run('canonical read-only ledger',null,false);
+run('invent guest status',d=>d.images[0].observations.guest_browser_status=404,true);
+run('invent HTTP origin',d=>d.images[0].observations.origin_http_status=403,true);
+run('invent wire bytes',d=>d.images[0].observations.wire_bytes=2048,true);
+run('invent browser currentSrc',d=>d.images[0].observations.browser_current_src=d.images[0].source_url,true);
+run('invent visitor savings',d=>d.summary.verified_visitor_transfer_reduction_pct=76,true);
+run('claim reported broken verified',d=>d.site_baselines.broken_external_guest_verified=42,true);
+run('flag release approved',d=>d.images[0].plan.approved_for_publication=true,true);
+run('flag upload approved',d=>d.images[0].plan.approved_for_upload=true,true);
+run('flag cache approved',d=>d.images[0].plan.approved_for_cache=true,true);
+run('strip copyright',d=>d.images[0].plan.rights_note='',true);
+run('strip credit',d=>d.images[1].plan.credit_note='',true);
+run('lose map legibility gate',d=>d.images[1].plan.legibility_review_required=false,true);
+run('upscale mistaken geometry',d=>d.images[1].plan.max_height=960,true);
+run('change historic image source',d=>d.images[1].source_url='https://example.com/replacement.jpg',true);
+run('duplicate attachment',d=>d.images[1].media_id=1257,true);
+run('bad image width',d=>d.images[2].wordpress_media.original_width=0,true);
+run('claim markup srcset',d=>d.images[0].stored_gutenberg.img_srcset_attribute='placeholder',true);
+run('claim markup intrinsic width',d=>d.images[0].stored_gutenberg.img_width_attribute=960,true);
+run('invent large rendition availability',d=>d.images[0].wordpress_media.virtual_large_url='https://unknown.example.com/thumbnail.jpg',true);
+run('falsify total',d=>d.summary.original_stored_bytes--,true);
+run('invent overall count',d=>d.images.pop(),true);
+run('release state lowered',d=>d.release_state='APPROVED',true);
+run('erase stage checklist',d=>d.required_checks=[],true);
+console.log(passed+'/'+passed+' Malbone image-integrity regression checks passed');
