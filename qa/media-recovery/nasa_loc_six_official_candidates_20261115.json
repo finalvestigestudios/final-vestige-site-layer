@@ -1,0 +1,212 @@
+{
+  "schema": "fv-nasa-loc-six-primary-candidates-v1",
+  "date_pacific": "2026-11-15",
+  "source_audit_path": "qa/media-recovery/wp_twelve_remaining_posts_view_routes_20261115.json",
+  "source_audit_git_blob": "0174b969d519450801e3ed1597d8be1d02d7aab6",
+  "method": "Catalog/source metadata only; original WordPress VIEW URLs from authenticated read-only API; primary NASA file paths decoded from Jetpack view src, LoC 1905 record found independently. No media GET, guest browser, downloaded binary, rights approval, or image replacement.",
+  "candidates": [
+    {
+      "image_key": "434:1",
+      "published_view_src": "https://i0.wp.com/images-assets.nasa.gov/image/S67-15717/S67-15717~large.jpg?resize=1514%2C1920&ssl=1",
+      "original_official_url": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~large.jpg",
+      "official_publisher": "NASA",
+      "source_identifier": "S67-15717",
+      "official_catalog_item_url": null,
+      "candidate_verification": "Official NASA-hosted file path observed inside WordPress-proxy view src; standalone NASA item catalog and exact binary identity not independently verified",
+      "source_rights_policy_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "general_rights_summary": "NASA government photography generally reusable for factual editorial purposes, but agency branding, third-party rights, personal likeness and non-endorsement restrictions require individual review",
+      "image_specific_rights_confirmed": false,
+      "exact_scene_pixel_identity_verified": false,
+      "view_declared_width_height_px": [
+        1514,
+        1920
+      ],
+      "native_file_dimensions_px": null,
+      "conditional_width_960_display_aspect_px": [
+        960,
+        1217
+      ],
+      "output_dimensions_approved": null,
+      "max_derivative_width_px": 960,
+      "never_upscale": true,
+      "keep_zoomable_map_master": false,
+      "annotation_and_text_legibility_check": false,
+      "browser_confirmed_broken": null,
+      "actual_cold_transfer_bytes": null,
+      "wordpress_cache_authorized": false,
+      "wordpress_media_upload_authorized": false,
+      "safe_rollback": "Retain existing post img source/caption/alt and current media ID. On isolated staging only after rights+scene+browser proof, generate derivative from authorized source, check responsive candidate, compare screenshot, revert staging on mismatch."
+    },
+    {
+      "image_key": "434:2",
+      "published_view_src": "https://i0.wp.com/images-assets.nasa.gov/image/S66-58038/S66-58038~large.jpg?resize=1920%2C1546&ssl=1",
+      "original_official_url": "https://images-assets.nasa.gov/image/S66-58038/S66-58038~large.jpg",
+      "official_publisher": "NASA",
+      "source_identifier": "S66-58038",
+      "official_catalog_item_url": null,
+      "candidate_verification": "Official NASA-hosted file path observed inside WordPress-proxy view src; standalone NASA item catalog and exact binary identity not independently verified",
+      "source_rights_policy_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "general_rights_summary": "NASA government photography generally reusable for factual editorial purposes, but agency branding, third-party rights, personal likeness and non-endorsement restrictions require individual review",
+      "image_specific_rights_confirmed": false,
+      "exact_scene_pixel_identity_verified": false,
+      "view_declared_width_height_px": [
+        1920,
+        1546
+      ],
+      "native_file_dimensions_px": null,
+      "conditional_width_960_display_aspect_px": [
+        960,
+        773
+      ],
+      "output_dimensions_approved": null,
+      "max_derivative_width_px": 960,
+      "never_upscale": true,
+      "keep_zoomable_map_master": false,
+      "annotation_and_text_legibility_check": false,
+      "browser_confirmed_broken": null,
+      "actual_cold_transfer_bytes": null,
+      "wordpress_cache_authorized": false,
+      "wordpress_media_upload_authorized": false,
+      "safe_rollback": "Retain existing post img source/caption/alt and current media ID. On isolated staging only after rights+scene+browser proof, generate derivative from authorized source, check responsive candidate, compare screenshot, revert staging on mismatch."
+    },
+    {
+      "image_key": "434:3",
+      "published_view_src": "https://i0.wp.com/images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0164/KSC-20170124-PH_KLS01_0164~large.jpg?resize=1920%2C1280&ssl=1",
+      "original_official_url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0164/KSC-20170124-PH_KLS01_0164~large.jpg",
+      "official_publisher": "NASA",
+      "source_identifier": "KSC-20170124-PH_KLS01_0164",
+      "official_catalog_item_url": null,
+      "candidate_verification": "Official NASA-hosted file path observed inside WordPress-proxy view src; standalone NASA item catalog and exact binary identity not independently verified",
+      "source_rights_policy_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "general_rights_summary": "NASA government photography generally reusable for factual editorial purposes, but agency branding, third-party rights, personal likeness and non-endorsement restrictions require individual review",
+      "image_specific_rights_confirmed": false,
+      "exact_scene_pixel_identity_verified": false,
+      "view_declared_width_height_px": [
+        1920,
+        1280
+      ],
+      "native_file_dimensions_px": null,
+      "conditional_width_960_display_aspect_px": [
+        960,
+        640
+      ],
+      "output_dimensions_approved": null,
+      "max_derivative_width_px": 960,
+      "never_upscale": true,
+      "keep_zoomable_map_master": false,
+      "annotation_and_text_legibility_check": false,
+      "browser_confirmed_broken": null,
+      "actual_cold_transfer_bytes": null,
+      "wordpress_cache_authorized": false,
+      "wordpress_media_upload_authorized": false,
+      "safe_rollback": "Retain existing post img source/caption/alt and current media ID. On isolated staging only after rights+scene+browser proof, generate derivative from authorized source, check responsive candidate, compare screenshot, revert staging on mismatch."
+    },
+    {
+      "image_key": "434:4",
+      "published_view_src": "https://i0.wp.com/images-assets.nasa.gov/image/S67-21294/S67-21294~large.jpg?resize=1920%2C1297&ssl=1",
+      "original_official_url": "https://images-assets.nasa.gov/image/S67-21294/S67-21294~large.jpg",
+      "official_publisher": "NASA",
+      "source_identifier": "S67-21294",
+      "official_catalog_item_url": null,
+      "candidate_verification": "Official NASA-hosted file path observed inside WordPress-proxy view src; standalone NASA item catalog and exact binary identity not independently verified",
+      "source_rights_policy_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "general_rights_summary": "NASA government photography generally reusable for factual editorial purposes, but agency branding, third-party rights, personal likeness and non-endorsement restrictions require individual review",
+      "image_specific_rights_confirmed": false,
+      "exact_scene_pixel_identity_verified": false,
+      "view_declared_width_height_px": [
+        1920,
+        1297
+      ],
+      "native_file_dimensions_px": null,
+      "conditional_width_960_display_aspect_px": [
+        960,
+        649
+      ],
+      "output_dimensions_approved": null,
+      "max_derivative_width_px": 960,
+      "never_upscale": true,
+      "keep_zoomable_map_master": false,
+      "annotation_and_text_legibility_check": false,
+      "browser_confirmed_broken": null,
+      "actual_cold_transfer_bytes": null,
+      "wordpress_cache_authorized": false,
+      "wordpress_media_upload_authorized": false,
+      "safe_rollback": "Retain existing post img source/caption/alt and current media ID. On isolated staging only after rights+scene+browser proof, generate derivative from authorized source, check responsive candidate, compare screenshot, revert staging on mismatch."
+    },
+    {
+      "image_key": "434:5",
+      "published_view_src": "https://i0.wp.com/images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0090/KSC-20170124-PH_KLS01_0090~large.jpg?resize=1280%2C1920&ssl=1",
+      "original_official_url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0090/KSC-20170124-PH_KLS01_0090~large.jpg",
+      "official_publisher": "NASA",
+      "source_identifier": "KSC-20170124-PH_KLS01_0090",
+      "official_catalog_item_url": null,
+      "candidate_verification": "Official NASA-hosted file path observed inside WordPress-proxy view src; standalone NASA item catalog and exact binary identity not independently verified",
+      "source_rights_policy_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "general_rights_summary": "NASA government photography generally reusable for factual editorial purposes, but agency branding, third-party rights, personal likeness and non-endorsement restrictions require individual review",
+      "image_specific_rights_confirmed": false,
+      "exact_scene_pixel_identity_verified": false,
+      "view_declared_width_height_px": [
+        1280,
+        1920
+      ],
+      "native_file_dimensions_px": null,
+      "conditional_width_960_display_aspect_px": [
+        960,
+        1440
+      ],
+      "output_dimensions_approved": null,
+      "max_derivative_width_px": 960,
+      "never_upscale": true,
+      "keep_zoomable_map_master": false,
+      "annotation_and_text_legibility_check": false,
+      "browser_confirmed_broken": null,
+      "actual_cold_transfer_bytes": null,
+      "wordpress_cache_authorized": false,
+      "wordpress_media_upload_authorized": false,
+      "safe_rollback": "Retain existing post img source/caption/alt and current media ID. On isolated staging only after rights+scene+browser proof, generate derivative from authorized source, check responsive candidate, compare screenshot, revert staging on mismatch."
+    },
+    {
+      "image_key": "428:5",
+      "published_view_src": "https://i0.wp.com/tile.loc.gov/image-services/iiif/service%3Agmd%3Agmd427m%3Ag4274m%3Ag4274wm%3Ag016871905%3A01687_1905-0001/full/pct%3A25/0/default.jpg?ssl=1",
+      "original_official_url": "https://tile.loc.gov/image-services/iiif/service%3Agmd%3Agmd427m%3Ag4274m%3Ag4274wm%3Ag016871905%3A01687_1905-0001/full/pct%3A25/0/default.jpg",
+      "official_publisher": "Library of Congress",
+      "source_identifier": "g4274wm.g016871905 / 01687_1905-0001",
+      "official_catalog_item_url": "https://www.loc.gov/item/sanborn01687_005/",
+      "candidate_verification": "1905 Wallace Sanborn map catalog entry independently located at LoC; single-sheet identity with the IIIF path not binary-hash verified",
+      "source_rights_policy_url": "https://www.loc.gov/item/sanborn01687_005/",
+      "general_rights_summary": "LoC catalog says this 1905 Sanborn map collection item is public domain and free to reuse, with recommended source credit",
+      "image_specific_rights_confirmed": false,
+      "exact_scene_pixel_identity_verified": false,
+      "view_declared_width_height_px": null,
+      "native_file_dimensions_px": null,
+      "conditional_width_960_display_aspect_px": null,
+      "output_dimensions_approved": null,
+      "max_derivative_width_px": 960,
+      "never_upscale": true,
+      "keep_zoomable_map_master": true,
+      "annotation_and_text_legibility_check": true,
+      "browser_confirmed_broken": null,
+      "actual_cold_transfer_bytes": null,
+      "wordpress_cache_authorized": false,
+      "wordpress_media_upload_authorized": false,
+      "safe_rollback": "Retain existing post img source/caption/alt and current media ID. On isolated staging only after rights+scene+browser proof, generate derivative from authorized source, check responsive candidate, compare screenshot, revert staging on mismatch."
+    }
+  ],
+  "counts": {
+    "official_candidates": 6,
+    "nasa": 5,
+    "library_of_congress": 1,
+    "browser_confirmed_broken": 0,
+    "actual_browser_failure_statuses_available": false,
+    "rights_clear_for_automatic_rehost": 0
+  },
+  "release_status": "HOLD",
+  "staging_protocol": [
+    "Site QA #154 proves actual cold guest currentSrc/request/response/decode and visually missing image before repair",
+    "Verify item copyright, photographer, appropriate credit and exact scene; do not infer blanket rights from NASA or LoC custody",
+    "Obtain lawful approved source file and SHA256 with native dimensions; do not scrape or copy in this audit",
+    "Create conditional proportional <=960px width, never upscale; require map zoom/legible labels where needed",
+    "Use isolated WordPress staging media only, reversible post attachment/link compare, mobile and desktop visual QA, measured network bytes before/after",
+    "Do not touch production posts, media library, homepage, paid accounts or subscription settings"
+  ]
+}
