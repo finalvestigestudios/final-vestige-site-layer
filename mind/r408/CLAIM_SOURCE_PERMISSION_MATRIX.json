@@ -1,0 +1,427 @@
+{
+  "date": "2026-11-15",
+  "status": "DRAFT_HARD_HOLD",
+  "scope": "Mind-only; no commerce activation",
+  "sources": [
+    {
+      "id": "seller_inspire3",
+      "url": "https://inspire3.com/",
+      "type": "seller",
+      "note": "catalog and brands"
+    },
+    {
+      "id": "seller_zen12_main",
+      "url": "https://zen12.com/",
+      "type": "seller",
+      "note": "marketing performance assertions"
+    },
+    {
+      "id": "seller_zen12_checkout",
+      "url": "https://zen12.com/getstarted/",
+      "type": "seller",
+      "note": "12 levels and 48 MP3s, offer display"
+    },
+    {
+      "id": "seller_zen12_coupon",
+      "url": "https://zen12.com/secret/",
+      "type": "seller",
+      "note": "separate coupon presentation"
+    },
+    {
+      "id": "seller_focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "seller",
+      "note": "single session format, displayed price"
+    },
+    {
+      "id": "seller_shot",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "seller",
+      "note": "audio variants and performance claims"
+    },
+    {
+      "id": "seller_shot_faq",
+      "url": "https://brainwaveshots.com/faq",
+      "type": "seller",
+      "note": "isochronic claim and contraindication notice"
+    },
+    {
+      "id": "seller_affiliate",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "seller",
+      "note": "general affiliate marketing, not publisher authentication"
+    },
+    {
+      "id": "science_slagter",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "type": "research",
+      "note": "intensive training experimental attention"
+    },
+    {
+      "id": "science_binaural2019",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+      "type": "research",
+      "note": "binaural meta-analysis not SKU test"
+    },
+    {
+      "id": "science_eeg2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "type": "research",
+      "note": "EEG entrainment studies inconsistent"
+    },
+    {
+      "id": "ftc_endorse",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "government",
+      "note": "material relationship disclosure"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "government",
+      "note": "health efficacy substantiation"
+    },
+    {
+      "id": "fv_focus",
+      "url": "https://finalvestige.com/focus/",
+      "type": "owned_live",
+      "note": "existing free funnel"
+    },
+    {
+      "id": "fv_puysegur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "owned_live",
+      "note": "historical provenance boundary"
+    },
+    {
+      "id": "fv_change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "owned_live",
+      "note": "published perception article"
+    }
+  ],
+  "claims": [
+    {
+      "id": "z12_bundle",
+      "text": "Zen12 seller lists 12 levels and 48 MP3s",
+      "status": "seller-described",
+      "source_ids": [
+        "seller_zen12_checkout"
+      ],
+      "editorial_rule": "describe without claiming independent delivery verification"
+    },
+    {
+      "id": "z12_hour",
+      "text": "12 minutes delivers an hour of meditation benefits",
+      "status": "unsupported-product-efficacy",
+      "source_ids": [
+        "seller_zen12_main"
+      ],
+      "editorial_rule": "exclude as editorial conclusion"
+    },
+    {
+      "id": "z12_prices",
+      "text": "Public standard and coupon route show different figures",
+      "status": "dated-seller-snapshot",
+      "source_ids": [
+        "seller_zen12_checkout",
+        "seller_zen12_coupon"
+      ],
+      "editorial_rule": "avoid fixed FV referral price"
+    },
+    {
+      "id": "z12_returns",
+      "text": "Seller advertises money-back promise",
+      "status": "seller-described",
+      "source_ids": [
+        "seller_zen12_checkout"
+      ],
+      "editorial_rule": "do not guarantee actual return"
+    },
+    {
+      "id": "total_format",
+      "text": "Total Focus listing states 33 minutes and 47MB",
+      "status": "seller-described",
+      "source_ids": [
+        "seller_focus"
+      ],
+      "editorial_rule": "format only"
+    },
+    {
+      "id": "total_price",
+      "text": "Total Focus individual price displayed as $24.44",
+      "status": "dated-seller-snapshot",
+      "source_ids": [
+        "seller_focus"
+      ],
+      "editorial_rule": "not an authorized referral checkout"
+    },
+    {
+      "id": "total_reprogram",
+      "text": "Total Focus reprograms brain for perfect focus",
+      "status": "unsupported-product-efficacy",
+      "source_ids": [
+        "seller_focus"
+      ],
+      "editorial_rule": "exclude"
+    },
+    {
+      "id": "shot_versions",
+      "text": "Focus Shot describes 15- and 30-minute versions",
+      "status": "seller-described",
+      "source_ids": [
+        "seller_shot"
+      ],
+      "editorial_rule": "do not claim file inspection"
+    },
+    {
+      "id": "shot_entrainment",
+      "text": "Focus Shot produces reliable neurological state changes",
+      "status": "unsupported-product-efficacy",
+      "source_ids": [
+        "seller_shot",
+        "seller_shot_faq",
+        "science_eeg2023"
+      ],
+      "editorial_rule": "do not inherit seller certainty"
+    },
+    {
+      "id": "shot_duration",
+      "text": "Focus Shot reliably extends focus for hours",
+      "status": "unsupported-product-efficacy",
+      "source_ids": [
+        "seller_shot"
+      ],
+      "editorial_rule": "exclude"
+    },
+    {
+      "id": "shot_safety",
+      "text": "Brainwave Shots FAQ lists contraindications",
+      "status": "seller-warning",
+      "source_ids": [
+        "seller_shot_faq"
+      ],
+      "editorial_rule": "preserve warning rather than blanket safety assurance"
+    },
+    {
+      "id": "binaural_review",
+      "text": "2019 research is about binaural beats",
+      "status": "independent-class-evidence",
+      "source_ids": [
+        "science_binaural2019"
+      ],
+      "editorial_rule": "no transfer to isochronic SKU"
+    },
+    {
+      "id": "eeg_ambiguity",
+      "text": "2023 systematic review found inconsistent EEG entrainment evidence",
+      "status": "independent-class-evidence",
+      "source_ids": [
+        "science_eeg2023"
+      ],
+      "editorial_rule": "not disproof of every product"
+    },
+    {
+      "id": "slg_three_month",
+      "text": "2007 intensive-training study concerns three months of meditation training",
+      "status": "independent-study",
+      "source_ids": [
+        "science_slagter"
+      ],
+      "editorial_rule": "not Zen12 head-to-head"
+    },
+    {
+      "id": "source_history",
+      "text": "Puységur archive preserves historical records without proving magnetism",
+      "status": "historical-source-boundary",
+      "source_ids": [
+        "fv_puysegur"
+      ],
+      "editorial_rule": "no transfer to clinical outcomes"
+    },
+    {
+      "id": "fieldbook",
+      "text": "Existing 52-page Focus Fieldbook is free",
+      "status": "owned-live",
+      "source_ids": [
+        "fv_focus"
+      ],
+      "editorial_rule": "do not repackage as paid SKU"
+    },
+    {
+      "id": "inspire3_public",
+      "text": "Affiliate portal publicly advertises a program",
+      "status": "seller-described",
+      "source_ids": [
+        "seller_affiliate"
+      ],
+      "editorial_rule": "not account-specific approval"
+    },
+    {
+      "id": "inspire3_fv_approval",
+      "text": "Final Vestige publisher approval and issued link",
+      "status": "unverified-partner-credential",
+      "source_ids": [
+        "seller_affiliate"
+      ],
+      "editorial_rule": "HOLD all merchant CTA links"
+    },
+    {
+      "id": "ftc_material",
+      "text": "Earning relationship requires clear proximate disclosure",
+      "status": "regulatory-guidance",
+      "source_ids": [
+        "ftc_endorse"
+      ],
+      "editorial_rule": "put next to actual affiliate recommendation"
+    },
+    {
+      "id": "ftc_health",
+      "text": "Health-related efficacy claims require appropriate science",
+      "status": "regulatory-guidance",
+      "source_ids": [
+        "ftc_health"
+      ],
+      "editorial_rule": "disclosure is not substantiation"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_fv_partner_acceptance",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "allowed_website_channel",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "allowed_organic_social_channel",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "allowed_email_channel_if_used",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "exact_zen12_sku",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "issued_tracking_url",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "partner_redirect_destination",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "current_referred_checkout_price",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "commission_settlement_terms",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "affiliate_refund_treatment",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "seller_return_terms",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "claim_by_claim_proof",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "near_link_disclosure",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "original_media_rights",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "encoded_accessible_video",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "track_caption_validation",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "real_browser_mobile",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "keyboard_screenreader",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "reduced_motion",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "no_js_copy_parity",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "privacy_utm_review",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "no_duplicate_tracking",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "jetpack_single_list",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "merchant_confirmed_order",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "refund_fee_reconciliation",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HOLD",
+      "reason": "Required independent approval or execution evidence not supplied in this run"
+    }
+  ],
+  "observations": {
+    "affiliate_publisher_acceptance": "NOT_AUTHENTICATED",
+    "fv_owned_paid_mind_sku": "NOT_AUTHENTICATED",
+    "actual_partner_sales": "UNKNOWN",
+    "realized_net_per_1000": "NOT_COMPUTABLE",
+    "refunds_and_fees": "UNKNOWN"
+  }
+}
