@@ -52,6 +52,33 @@ def _validate_amount_envelope(amount: Decimal) -> None:
             raise ValueError("Invoice amount exceeds permitted precision; no report was saved")
 
 
+def _private_source_records(records):
+    """Keep caller iterator faults out of financial reports and exception chains.
+
+    Iterators supplied to the direct API may hold private CSV/account details
+    in exception messages and attributes. Raise only after their handler ends;
+    leave ordinary validation errors to the owning caller.
+    """
+    iterator_failed = False
+    try:
+        source = iter(records)
+    except Exception:
+        iterator_failed = True
+    if iterator_failed:
+        raise ValueError("Invoice source records could not be read")
+    while True:
+        read_failed = False
+        try:
+            record = next(source)
+        except StopIteration:
+            return
+        except Exception:
+            read_failed = True
+        if read_failed:
+            raise ValueError("Invoice source records could not be read")
+        yield record
+
+
 def _validated_records(records: Iterable[dict[str, Any]]) -> Iterable[dict[str, Any]]:
     """Check audit identity and exact money before building candidate groups.
 
@@ -60,7 +87,7 @@ def _validated_records(records: Iterable[dict[str, Any]]) -> Iterable[dict[str, 
     citations, and duplicate source positions; never echo private values.
     """
     seen_rows: set[str] = set()
-    for record in records:
+    for record in _private_source_records(records):
         if len(seen_rows) >= MAX_RECORDS:
             raise ValueError("Too many invoice source records; no report was saved")
         if not isinstance(record, dict):
