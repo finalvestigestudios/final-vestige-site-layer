@@ -1,0 +1,151 @@
+{
+  "schema": "fv-published-pages-79-complement-v1",
+  "date_pt": "2026-11-14",
+  "batch": 4,
+  "previous_pilot_ids": [
+    1484,
+    1480,
+    2017,
+    2088,
+    2089,
+    529,
+    77,
+    76,
+    531,
+    525,
+    1304,
+    1868
+  ],
+  "excluded_homepage_id": 6,
+  "method": "authenticated read-only WP pages_get edit; stored img tags; not guest-browser or origin HTTP",
+  "expected": 15,
+  "checked": 15,
+  "errors": [],
+  "source_groups": {},
+  "guest_http_verified": false,
+  "claimed_42_broken_verified": false,
+  "claimed_76_percent_wire_savings_verified": false,
+  "rights_and_cache_hold": true,
+  "rows": [
+    {
+      "id": 1120,
+      "url": "https://finalvestige.com/the-working-order/",
+      "modified": "2026-11-02T21:41:01",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1121,
+      "url": "https://finalvestige.com/the-lost-itinerary/",
+      "modified": "2026-10-29T14:07:57",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1122,
+      "url": "https://finalvestige.com/the-missing-caption/",
+      "modified": "2026-11-03T14:46:51",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1123,
+      "url": "https://finalvestige.com/the-paper-witness/",
+      "modified": "2026-11-02T21:41:06",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1124,
+      "url": "https://finalvestige.com/the-year-in-the-wood/",
+      "modified": "2026-10-29T14:00:07",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1125,
+      "url": "https://finalvestige.com/the-builders-trace/",
+      "modified": "2026-11-02T21:41:08",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1127,
+      "url": "https://finalvestige.com/the-enumerators-block/",
+      "modified": "2026-11-02T21:41:09",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1148,
+      "url": "https://finalvestige.com/archive-shelf/",
+      "modified": "2026-11-02T21:41:11",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1305,
+      "url": "https://finalvestige.com/accountability/failures-to-protect/",
+      "modified": "2026-11-02T21:41:15",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1306,
+      "url": "https://finalvestige.com/accountability/public-money-private-power/",
+      "modified": "2026-11-02T21:41:17",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1307,
+      "url": "https://finalvestige.com/accountability/abuse-of-power/",
+      "modified": "2026-11-02T21:41:19",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1308,
+      "url": "https://finalvestige.com/accountability/votes-decisions/",
+      "modified": "2026-11-02T21:41:21",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1309,
+      "url": "https://finalvestige.com/accountability/watch/",
+      "modified": "2026-11-02T21:41:22",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1310,
+      "url": "https://finalvestige.com/accountability/ledger/",
+      "modified": "2026-11-02T21:41:24",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1311,
+      "url": "https://finalvestige.com/accountability/evidence/",
+      "modified": "2026-11-02T21:41:26",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    }
+  ]
+}
