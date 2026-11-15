@@ -1,0 +1,65 @@
+{
+  "id": "fv_dispatch_r379",
+  "utc": "2026-11-15T13:32:44Z",
+  "source_pr_175_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "base_pr": 2619,
+  "delivery": {
+    "jetpack_enabled": true,
+    "auto_new_post_emails": false,
+    "subscriber_total_reported": 3,
+    "confirmed_reported": 3,
+    "unconfirmed_reported": 2,
+    "jetpack_stats_wpcom_followers": 3,
+    "jetpack_stats_email_followers": 0,
+    "email_eligible_unique_recipients": null,
+    "received_fieldbook_welcome_verified": false,
+    "native_jetpack_preview_verified": false,
+    "valid_fv_postal_address_verified": false,
+    "actual_unsubscribe_verified": false,
+    "founder_send_approval": false
+  },
+  "issues": [
+    {
+      "id": "01",
+      "type": "editorial",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "id": "02",
+      "type": "editorial",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "id": "03",
+      "type": "commercial",
+      "status": "HOLD_MERCHANT",
+      "email_partner_rights_verified": false,
+      "approved_guide_live": false,
+      "issued_earning_link_verified": false
+    },
+    {
+      "id": "04",
+      "type": "editorial",
+      "status": "HOLD_COPY",
+      "r379_correction_adopted": false
+    },
+    {
+      "id": "05",
+      "type": "commercial",
+      "status": "HOLD_MERCHANT",
+      "email_partner_rights_verified": false,
+      "approved_guide_live": false,
+      "issued_earning_link_verified": false
+    },
+    {
+      "id": "06",
+      "type": "editorial",
+      "status": "HOLD_UNSENT"
+    }
+  ],
+  "net_revenue": null,
+  "paid_orders": null,
+  "qualified_human_sessions": null,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "notes": "Null means unknown, not reported zero. No claims of actual email recipients, affiliate purchases or completed QA."
+}
