@@ -298,6 +298,11 @@ def outpath(folder,stem,suffix=".csv"):
     if not p.is_dir(): raise ValueError("Choose an existing output folder")
     return p/(stem+"-"+datetime.now().strftime("%Y%m%d-%H%M%S-%f")+suffix)
 
+# Match only canonical ASCII negative Decimal text at a given offset.
+# Fullmatch with pos preserves end-of-cell anchoring without a large slice.
+_SAFE_CELL_NEGATIVE_DECIMAL = re.compile(r"-[0-9]+(?:\.[0-9]+)?", re.ASCII)
+
+
 def safe_cell(value):
     """Conservatively neutralize spreadsheet formulas behind invisible prefixes.
 
@@ -324,10 +329,12 @@ def safe_cell(value):
             index += 1
             continue
         break
-    token = s[index:]
-    if (invisible_prefix or token.startswith(("=", "+", "@"))
-            or (token.startswith("-") and
-                re.fullmatch(r"-[0-9]+(?:\.[0-9]+)?", token) is None)
+    # The input may contain 1 MiB of evidence text after an ASCII space.
+    # Inspect the existing string in place: slicing here used to allocate
+    # nearly an entire extra cell even for safe text or a real negative.
+    if (invisible_prefix or s.startswith(("=", "+", "@"), index)
+            or (s.startswith("-", index) and
+                _SAFE_CELL_NEGATIVE_DECIMAL.fullmatch(s, index) is None)
             or has_unescaped_formula_prefix(s)):
         return "'" + s
     return s
