@@ -1,0 +1,672 @@
+{
+  "title": "R393 claim-to-proof, rights and commercialization gates",
+  "date": "2026-11-14",
+  "branch": "mind-r393-digital-meditation-proof-buyer-20261114",
+  "reviewed_official_pages": [
+    "https://inspire3.com/",
+    "https://zen12.com/getstarted",
+    "https://zen12.com/secret/"
+  ],
+  "sources": {
+    "catalog": "https://inspire3.com/",
+    "standard": "https://zen12.com/getstarted",
+    "promo": "https://zen12.com/secret/",
+    "rev24": "https://pubmed.ncbi.nlm.nih.gov/38197226/",
+    "beats": "https://doi.org/10.1371/journal.pone.0286023",
+    "adverse": "https://doi.org/10.1111/acps.13225",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "puys": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "disclosure": "https://finalvestige.com/affiliate-disclosure/"
+  },
+  "claims": [
+    {
+      "id": "R393-C01",
+      "claim": "Zen12 is offered by Inspire3",
+      "classification": "SELLER_DESCRIPTION",
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "sources": [
+        "https://inspire3.com/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C02",
+      "claim": "Zen12 marketed as 12-minute meditation shortcut",
+      "classification": "SELLER_PROMISE",
+      "decision": "QUOTE_ONLY_IN_CRITIQUE",
+      "sources": [
+        "https://inspire3.com/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C03",
+      "claim": "Zen12 has twelve levels",
+      "classification": "SELLER_PACKAGE",
+      "decision": "ALLOW_SELLER_ATTRIBUTION",
+      "sources": [
+        "https://zen12.com/getstarted"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C04",
+      "claim": "Zen12 package lists 48 MP3s",
+      "classification": "SELLER_PACKAGE",
+      "decision": "ALLOW_SELLER_ATTRIBUTION",
+      "sources": [
+        "https://zen12.com/getstarted"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C05",
+      "claim": "Zen12 page lists quick-start manual",
+      "classification": "SELLER_PACKAGE",
+      "decision": "ALLOW_SELLER_ATTRIBUTION",
+      "sources": [
+        "https://zen12.com/getstarted"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C06",
+      "claim": "Zen12 order page lists support call",
+      "classification": "SELLER_PACKAGE",
+      "decision": "ALLOW_SELLER_ATTRIBUTION_NOT_FULFILLED",
+      "sources": [
+        "https://zen12.com/getstarted"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C07",
+      "claim": "Zen12 guarantees one-year refunds",
+      "classification": "SELLER_POLICY",
+      "decision": "ADVERTISED_NOT_VERIFIED",
+      "sources": [
+        "https://zen12.com/getstarted"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C08",
+      "claim": "Public standard Zen12 checkout displayed $87.99 2026-11-14",
+      "classification": "OBSERVED_SELLER_PRICE",
+      "decision": "DATED_ONLY_NOT_FV_REFERRAL",
+      "sources": [
+        "https://zen12.com/getstarted"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C09",
+      "claim": "Public promotional route advertised $37 coupon 2026-11-14",
+      "classification": "OBSERVED_SELLER_PROMO",
+      "decision": "NOT_OFFER_OR_RIGHTS",
+      "sources": [
+        "https://zen12.com/secret/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C10",
+      "claim": "Promotional countdown establishes genuine scarcity",
+      "classification": "UNSUBSTANTIATED",
+      "decision": "EXCLUDE",
+      "sources": [
+        "https://zen12.com/secret/",
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C11",
+      "claim": "Zen12 equals an hour of meditation in twelve minutes",
+      "classification": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "decision": "EXCLUDE",
+      "sources": [
+        "https://inspire3.com/",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C12",
+      "claim": "Zen12 improves IQ or memory",
+      "classification": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "decision": "EXCLUDE",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C13",
+      "claim": "Zen12 treats anxiety or insomnia",
+      "classification": "UNSUBSTANTIATED_HEALTH",
+      "decision": "EXCLUDE",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C14",
+      "claim": "Brainwave frequencies force targeted states",
+      "classification": "UNSUBSTANTIATED_MECHANISM",
+      "decision": "EXCLUDE",
+      "sources": [
+        "https://doi.org/10.1371/journal.pone.0286023",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C15",
+      "claim": "2024 digital mindfulness review included 19 studies",
+      "classification": "INDEPENDENT_REVIEW",
+      "decision": "ALLOW_CONTEXT",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/38197226/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C16",
+      "claim": "2024 digital mindfulness review included 1654 participants",
+      "classification": "INDEPENDENT_REVIEW",
+      "decision": "ALLOW_CONTEXT",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/38197226/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C17",
+      "claim": "2024 review had at least as many null as favorable findings",
+      "classification": "INDEPENDENT_REVIEW",
+      "decision": "ALLOW_WITH_CAVEAT",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/38197226/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C18",
+      "claim": "2024 review demonstrates Zen12 effectiveness",
+      "classification": "INVALID_TRANSFER",
+      "decision": "EXCLUDE",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/38197226/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C19",
+      "claim": "2023 binaural review included 14 studies",
+      "classification": "INDEPENDENT_REVIEW",
+      "decision": "ALLOW_CONTEXT",
+      "sources": [
+        "https://doi.org/10.1371/journal.pone.0286023"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C20",
+      "claim": "Binaural review showed 5 supportive, 8 contradictory, 1 mixed outcomes",
+      "classification": "INDEPENDENT_REVIEW",
+      "decision": "ALLOW_WITH_METHOD_CAVEAT",
+      "sources": [
+        "https://doi.org/10.1371/journal.pone.0286023"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C21",
+      "claim": "Binaural review measured Zen12",
+      "classification": "FALSE_TRANSFER",
+      "decision": "EXCLUDE",
+      "sources": [
+        "https://doi.org/10.1371/journal.pone.0286023"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C22",
+      "claim": "Meditation is harmless for all people",
+      "classification": "UNSUPPORTED_SAFETY",
+      "decision": "EXCLUDE",
+      "sources": [
+        "https://doi.org/10.1111/acps.13225"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C23",
+      "claim": "2020 adverse-event review reports unwanted experiences",
+      "classification": "INDEPENDENT_REVIEW",
+      "decision": "ALLOW_WITH_HETEROGENEITY",
+      "sources": [
+        "https://doi.org/10.1111/acps.13225"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C24",
+      "claim": "1784 Franklin commission tested Deslon's animal magnetism",
+      "classification": "HISTORICAL_SECONDARY_VIA_FV",
+      "decision": "ALLOW_CONTEXT",
+      "sources": [
+        "https://finalvestige.com/2026/11/02/mesmerism/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C25",
+      "claim": "Puységur page was reread in full this sprint",
+      "classification": "ACCESS_FAILURE",
+      "decision": "DO_NOT_ASSERT",
+      "sources": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C26",
+      "claim": "Existing Focus PDF is 52 pages",
+      "classification": "PUBLISHED_FV_RESOURCE",
+      "decision": "ALLOW",
+      "sources": [
+        "https://finalvestige.com/focus/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C27",
+      "claim": "Focus download visibility proves Jetpack confirmation",
+      "classification": "INVALID_METRIC",
+      "decision": "EXCLUDE",
+      "sources": [
+        "https://finalvestige.com/focus/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C28",
+      "claim": "Final Vestige approved Inspire3 publisher",
+      "classification": "ACCOUNT_SPECIFIC_UNVERIFIED",
+      "decision": "BLOCK",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C29",
+      "claim": "Zen12 earning URL issued to Final Vestige",
+      "classification": "ACCOUNT_SPECIFIC_UNVERIFIED",
+      "decision": "BLOCK",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C30",
+      "claim": "Email, TikTok and website marketing permitted by partner",
+      "classification": "ACCOUNT_SPECIFIC_UNVERIFIED",
+      "decision": "BLOCK",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C31",
+      "claim": "Product-specific approved creative/swipe obtained",
+      "classification": "PERMISSION_UNVERIFIED",
+      "decision": "BLOCK",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C32",
+      "claim": "Publisher channel rights include reader landing pages",
+      "classification": "ACCOUNT_SPECIFIC_UNVERIFIED",
+      "decision": "BLOCK",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C33",
+      "claim": "Current referred checkout price and refund performance confirmed",
+      "classification": "TRANSACTION_UNVERIFIED",
+      "decision": "BLOCK",
+      "sources": [
+        "https://zen12.com/getstarted"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C34",
+      "claim": "Final Vestige Mind paid SKU currently rights-cleared and deliverable",
+      "classification": "OWNED_OFFER_UNVERIFIED",
+      "decision": "BLOCK",
+      "sources": [
+        "https://finalvestige.com/focus/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C35",
+      "claim": "Affiliate commission from outbound click",
+      "classification": "INVALID_SALES_INFERENCE",
+      "decision": "EXCLUDE",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C36",
+      "claim": "Affiliate disclosure near merchant CTA",
+      "classification": "FTC_REQUIRED",
+      "decision": "PASS_STATIC_NEEDS_BROWSER",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C37",
+      "claim": "Reader must subscribe before reading guide",
+      "classification": "PROHIBITED_GATE",
+      "decision": "EXCLUDE",
+      "sources": [
+        "https://finalvestige.com/focus/"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C38",
+      "claim": "Net revenue per 1000 qualified-human sessions can be calculated",
+      "classification": "DATA_MISSING",
+      "decision": "NOT_COMPUTABLE",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C39",
+      "claim": "Original SVG has no third-party image rights",
+      "classification": "ORIGINAL_DESIGN",
+      "decision": "ALLOW_INTERNAL_REVIEW",
+      "sources": [],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C40",
+      "claim": "42 second video has been filmed and captioned",
+      "classification": "NOT_BUILT",
+      "decision": "DO_NOT_ASSERT",
+      "sources": [],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    },
+    {
+      "id": "R393-C41",
+      "claim": "WordPress hub is installed and live",
+      "classification": "NOT_DEPLOYED",
+      "decision": "DO_NOT_ASSERT",
+      "sources": [],
+      "verified_at": "2026-11-14",
+      "evidence_scope": "source review only; no merchant purchase"
+    }
+  ],
+  "release_requirements": [
+    {
+      "id": "named_inspire3_publisher_acceptance",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "partner_terms_and_account_identity",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "exact_zen12_sku_approval",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "website_channel_rights",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "youtube_channel_rights",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "tiktok_channel_rights",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "email_channel_rights",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "issued_referral_url",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "authorized_ad_creatives_rights",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "referral_checkout_price_and_tax",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "refund_and_fulfillment_terms",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "commission_terms_and_settlement",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "original_video_encoded",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "poster_and_caption_playback_test",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "manual_playback_only",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "no_js_fallback_test",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "360px_mobile_browser",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "390px_mobile_browser",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "768px_browser",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "1440px_browser",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "1920px_browser",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "WCAG_2_2_AA_independent_review",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "keyboard_screenreader_review",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "reduced_motion_review",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "copy_claim_legal_review",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "wordpress_sanitizer_review",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "real_cwv_and_network_cost",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "site_csp_and_security_review",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "one_jetpack_funnel_preserved",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "jetpack_confirmed_subscriber_evidence",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "grok_actual_post_asset_ids",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "praxxis_mobile_url_qa",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "claude_first_party_attribution_review",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "founder_publication_approval",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "merchant_verified_paid_commission",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    },
+    {
+      "id": "refund_adjusted_net_revenue_proof",
+      "status": "HOLD",
+      "reason": "Requires account, commerce, deployed-site or independent human evidence not authenticated this sprint"
+    }
+  ],
+  "commercial_activation": false,
+  "merchant_affiliate_url": null,
+  "claimed_revenue": null,
+  "paid_orders": null,
+  "qualified_human_sessions": null,
+  "ownership_risks": [
+    "no proof of individually approved seller creatives or referral channels",
+    "no claimed original third-party rights; poster/copy original",
+    "no owned purchasable Mind product independently authenticated"
+  ],
+  "limitations": [
+    "Puységur page returned 429 on this run; do not claim complete re-read",
+    "full 61 published investigations inventory consulted but not exhaustively reread",
+    "no genuine referring checkout or processed refund",
+    "no live WordPress or browser QA"
+  ]
+}
