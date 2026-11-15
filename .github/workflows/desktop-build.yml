@@ -485,6 +485,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_errno_descriptor_custody_r452.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_errno_descriptor_custody_r452.py'
+      - name: R453 bounded CSV serializer preflight before source packaging
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_serialization_preflight_r453.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_serialization_preflight_r453.py'
       - name: R238 release PE file descriptor and private failure custody (14 methods per mode)
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_pe_descriptor_custody_r238.py'
@@ -2779,6 +2783,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R452 normal native errno custody FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_errno_descriptor_custody_r452.py'
           if ($LASTEXITCODE -ne 0) { throw "R452 optimized native errno custody FAILED" }
+      - name: R453 Windows bounded CSV serialization before packaging
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_serialization_preflight_r453.py'
+          if ($LASTEXITCODE -ne 0) { throw "R453 Windows normal CSV preflight FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_serialization_preflight_r453.py'
+          if ($LASTEXITCODE -ne 0) { throw "R453 Windows optimized CSV preflight FAILED" }
       - name: R238 Windows PE candidate FD custody before packaging (14 methods per mode)
         shell: pwsh
         run: |

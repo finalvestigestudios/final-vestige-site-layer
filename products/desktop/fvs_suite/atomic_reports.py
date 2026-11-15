@@ -60,6 +60,22 @@ class _BudgetedCSVTextSink:
         self._remaining -= encoded_bytes
         return written
 
+    def preflight(self, values: Iterable[str]) -> None:
+        """Reject a row whose *minimum* UTF-8 bytes exceed the remaining cap.
+
+        csv.writer builds a complete serialized row before calling write().
+        Its quoting may multiply the text size, so a write-time budget alone
+        can permit a giant temporary allocation. The source cell UTF-8 sum is
+        a safe lower bound: CSV quoting/separators cannot make it smaller.
+        This does not debit the budget; write() still enforces the exact
+        serialized byte count, including punctuation and line endings.
+        """
+        available = self._remaining
+        for value in values:
+            available -= len(value.encode("utf-8"))
+            if available < 0:
+                raise ValueError("CSV report byte limit exceeded")
+
     def verify(self, descriptor: int) -> None:
         self._witness.verify(descriptor)
 
@@ -151,6 +167,8 @@ def _write_csv_report(destination: str | Path, fields: Iterable[str],
         with adopt_csv_descriptor(descriptor) as stream:
             sink = _BudgetedCSVTextSink(stream)
             writer = csv.DictWriter(sink, fieldnames=names, extrasaction="ignore")
+            # Bound the header before csv.writer allocates its serialized row.
+            sink.preflight(rendered)
             writer.writer.writerow(rendered)
             # Explicit next() isolates arbitrary caller-owned iterator errors
             # from the writer's own exceptions, including their __context__.
@@ -219,6 +237,9 @@ def _write_csv_report(destination: str | Path, fields: Iterable[str],
                 }
                 if any(name not in rendered_row for name in names):
                     raise ValueError("Incomplete CSV report row schema")
+                # Only emitted columns count toward the final file budget;
+                # ignored extras were still sanitized above for safety.
+                sink.preflight(rendered_row[name] for name in names)
                 writer.writerow(rendered_row)
             stream.flush()
             # Prove the real staged bytes match the exact serialized CSV
