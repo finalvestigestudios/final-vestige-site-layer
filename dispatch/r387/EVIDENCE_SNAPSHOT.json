@@ -1,0 +1,54 @@
+{
+  "snapshot_utc": "2026-11-15T21:31:44Z",
+  "site": "finalvestige.com",
+  "source": "authenticated WordPress connector, status + get_settings + follower source",
+  "newsletter_enabled": true,
+  "automatic_new_post_email": false,
+  "email_content_format": "full",
+  "reply_to": "no-reply",
+  "subscribers": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "paid": 0
+  },
+  "followers": {
+    "wpcom": 3,
+    "email": 0,
+    "comment": 0,
+    "partial": false
+  },
+  "count_discrepancy": "confirmed=3 and unconfirmed=2 are not additive to total=3",
+  "unique_email_eligible_inboxes": null,
+  "real_sent_dispatch_emails": null,
+  "five_recent_posts": "never_sent_opted_out, send_subscription=false",
+  "welcome_fieldbook_configured": true,
+  "welcome_delivered_verified": false,
+  "recipient_eligibility_privately_reconciled": false,
+  "real_wordpress_native_preview_verified": false,
+  "publisher_physical_postal_verified": false,
+  "rendered_unsubscribe_verified": false,
+  "preheader_native_mapping_verified": false,
+  "inspire3_named_affiliate_accepted_verified": false,
+  "inspire3_specific_email_rights_verified": false,
+  "live_zen12_guide_verified": false,
+  "live_total_focus_guide_verified": false,
+  "independently_settled_commission_ledger_verified": false,
+  "audited_qualified_human_sessions_verified": false,
+  "campaign_release_state": "ALL_SIX_HOLD_UNSENT",
+  "approved_mix": {
+    "editorial": 4,
+    "commercial": 2
+  },
+  "founder_final_send_approval": false,
+  "current_master": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "prior_draft": "5ef6c35866b034fb02e5771651f33bf4ea0abbaf",
+  "factual_sources": [
+    "https://wordpress.com/support/subscribers/",
+    "https://wordpress.com/support/newsletter/send-newsletter-emails/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://zen12.com/",
+    "https://hypnosislive.com/mental-skills/total-focus"
+  ]
+}
