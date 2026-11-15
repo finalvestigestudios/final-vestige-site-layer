@@ -14,6 +14,7 @@ import unicodedata
 from pathlib import Path
 
 from .csv_snapshot import _same_path_descriptor_signature
+from .evidence_label import canonical_evidence_label
 from .premium_link_custody import open_inventory_stream
 
 # Source CSV imports have a 64 MiB cap; finished reports can be larger.
@@ -148,6 +149,8 @@ def inventory_text(inputs, outputs, *, expected_input_digests=None) -> str:
     selected += [(path, MAX_REPORT_BYTES) for path in output_paths]
     seen_names: set[str] = set()
     for path, _ in selected:
+        # Refuse misleading labels before opening or hashing any private file.
+        canonical_evidence_label(path.name)
         label = unicodedata.normalize("NFKC", path.name).casefold()
         if label in seen_names:
             raise ValueError("Ambiguous evidence names; rename duplicate basenames")
@@ -166,7 +169,7 @@ def inventory_text(inputs, outputs, *, expected_input_digests=None) -> str:
             raise ValueError("Evidence files must be distinct, not hard-link aliases")
         if identity[1]:
             seen_files.add(identity)
-        safe_name = json.dumps(path.name, ensure_ascii=True)[1:-1]
+        safe_name = canonical_evidence_label(path.name)
         lines.append(f"{safe_name}\t{digest}\n")
         snapshots.append((path, signature))
     # Detect changes to earlier files while hashing subsequent files.
