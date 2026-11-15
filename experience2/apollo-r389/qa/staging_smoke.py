@@ -31,6 +31,65 @@ def guard(url, allowed):
 def sha_file(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
+# The digest is sealed in the reviewed R389 PHP shortcode adapter. A remotely
+# loaded stylesheet must match this *exact* payload, not merely a computed color.
+REVIEWED_GALLERY_CSS_SHA256 = '4fe1595d790d22181c01038afd31c19e0839360458ded3c6098bd604d73035a9'
+
+def staging_resource_allowed(resource_url, approved_host):
+    """Fail closed before sending requests, including redirect hops and subresources.
+
+    WordPress staging must be isolated from the live origin. External assets are
+    a visible QA blocker, not a reason to silently allow production requests.
+    """
+    parsed = urlparse(resource_url)
+    return (parsed.scheme == 'https' and parsed.hostname is not None
+            and parsed.hostname.lower() == approved_host.lower()
+            and parsed.hostname.lower() not in PRODUCTION
+            and parsed.username is None and parsed.password is None)
+
+def install_network_boundary(context, approved_host, denied):
+    def check_route(route):
+        request = route.request
+        if not staging_resource_allowed(request.url, approved_host):
+            denied.append({'url': request.url, 'kind': request.resource_type,
+                           'navigation': request.is_navigation_request()})
+            route.abort(error_code='blockedbyclient')
+        else:
+            # Do not allow Playwright's redirect follow-through to bypass route
+            # inspection. Route handlers are only invoked for the *first* URL
+            # of a redirect chain, so deny ALL 3xx responses at the edge.
+            try:
+                response = route.fetch(max_redirects=0, timeout=15000)
+                if 300 <= response.status < 400:
+                    denied.append({'url':request.url,'kind':request.resource_type,
+                                   'navigation':request.is_navigation_request(),
+                                   'redirect_status':response.status,
+                                   'redirect_location':response.headers.get('location')})
+                    route.abort(error_code='blockedbyclient')
+                else:
+                    route.fulfill(response=response)
+            except Exception as exc:
+                denied.append({'url':request.url,'kind':request.resource_type,
+                               'error':'network boundary fetch failed: '+str(exc)})
+                try: route.abort(error_code='failed')
+                except Exception: pass
+    context.route('**/*', check_route)
+
+
+def inspect_stylesheet_responses(responses):
+    """Require one successful, same-origin gallery.css response of reviewed bytes."""
+    candidates = [r for r in responses if urlparse(r.url).path.endswith('/assets/gallery.css')]
+    found = []
+    for r in candidates:
+        try:
+            found.append({'url': r.url, 'status': r.status,
+                          'sha256': hashlib.sha256(r.body()).hexdigest()})
+        except Exception as exc:
+            found.append({'url': r.url, 'error': str(exc)})
+    ok = (len(found) == 1 and found[0].get('status') == 200
+          and found[0].get('sha256') == REVIEWED_GALLERY_CSS_SHA256)
+    return ok, found
+
 
 def main():
     a=argparse.ArgumentParser(description=__doc__)
@@ -58,12 +117,35 @@ def main():
         browser=p.chromium.launch(headless=True,executable_path=args.chromium,args=['--no-sandbox'])
         try:
             for width in VIEWPORTS:
-                ctx=browser.new_context(viewport={'width':width,'height':880},java_script_enabled=True)
+                ctx=browser.new_context(viewport={'width':width,'height':880},java_script_enabled=True,
+                                        service_workers='block')
+                denied = []
+                install_network_boundary(ctx, host, denied)
                 page=ctx.new_page()
+                responses=[]
+                page.on('response',lambda response: responses.append(response))
                 page.add_init_script(vitals_script)
-                response=page.goto(args.url,wait_until='load',timeout=30000)
-                page.wait_for_timeout(500)
-                item={'width':width,'http_status':response.status if response else None,'csp_header':response.headers.get('content-security-policy') if response else None}
+                try:
+                    response=page.goto(args.url,wait_until='load',timeout=30000)
+                    page.wait_for_timeout(500)
+                except Exception as exc:
+                    output['contexts'].append({'width':width,'status':'HARD_HOLD_NETWORK',
+                                               'error':str(exc),'blocked_requests':denied})
+                    failures.append(f'{width}: navigation/redirect rejected or unavailable')
+                    ctx.close()
+                    continue
+                item={'width':width,'http_status':response.status if response else None,
+                      'final_url':page.url, 'blocked_requests':denied,
+                      'csp_header':response.headers.get('content-security-policy') if response else None}
+                if not staging_resource_allowed(page.url, host):
+                    failures.append(f'{width}: final browser URL escaped approved staging origin')
+                if denied:
+                    failures.append(f'{width}: blocked {len(denied)} off-staging resource/redirect requests')
+                css_ok, css_responses = inspect_stylesheet_responses(responses)
+                item['gallery_css_verified']=css_ok
+                item['gallery_css_responses']=css_responses
+                if not css_ok:
+                    failures.append(f'{width}: reviewed gallery stylesheet bytes not delivered')
                 item['gallery_present']=page.locator('[data-fv-r384-gallery]').count()==1
                 item['card_count']=page.locator('[data-fv-r384-record]').count()
                 item['publication_count']=page.locator('[data-fv-r384-publication]').count()
@@ -84,7 +166,7 @@ def main():
                     item['axe_violations']=axe
                 if not (response and response.ok and item['gallery_present'] and item['card_count']==6
                       and item['publication_count']==2 and item['nasa_card_links']==6 and item['free_ctas']==1
-                      and not item['overflow'] and item['computed_background']=='rgb(21, 27, 32)' and not item['axe_violations']):
+                      and not item['overflow'] and item['computed_background']=='rgb(21, 27, 32)' and css_ok and not denied and not item['axe_violations']):
                     failures.append(f'{width}: staging structural/stylesheet/axe acceptance incomplete')
                 if not item['csp_header']:
                     failures.append(f'{width}: CSP response header not established (manual governance required)')
@@ -93,9 +175,24 @@ def main():
                     page.pdf(path=str(folder/'installed-staging-document.pdf'),format='A4',print_background=True)
                 ctx.close()
                 # No action beyond read-only page navigation and fixture capture.
-                ctx2=browser.new_context(viewport={'width':width,'height':880},java_script_enabled=False)
+                ctx2=browser.new_context(viewport={'width':width,'height':880},java_script_enabled=False,
+                                         service_workers='block')
+                denied_nojs=[]
+                install_network_boundary(ctx2,host,denied_nojs)
                 nojs=ctx2.new_page()
-                nojs.goto(args.url,wait_until='load',timeout=30000)
+                try:
+                    nojs.goto(args.url,wait_until='load',timeout=30000)
+                except Exception as exc:
+                    failures.append(f'{width}: no-JS navigation/redirect failed closed: {exc}')
+                    item['nojs_navigation_error']=str(exc)
+                    item['nojs_blocked_requests']=denied_nojs
+                    ctx2.close()
+                    output['contexts'].append(item)
+                    continue
+                item['nojs_blocked_requests']=denied_nojs
+                item['nojs_final_url']=nojs.url
+                if denied_nojs or not staging_resource_allowed(nojs.url,host):
+                    failures.append(f'{width}: no-JS off-staging request or redirect')
                 item['nojs_cards']=nojs.locator('[data-fv-r384-record]').count()
                 item['nojs_disclosures']=nojs.locator('details').count()
                 if item['nojs_cards']!=6 or item['nojs_disclosures']!=6:
