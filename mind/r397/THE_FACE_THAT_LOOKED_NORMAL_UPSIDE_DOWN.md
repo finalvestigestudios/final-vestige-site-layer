@@ -8,7 +8,7 @@
 
 ## The disturbing part is the ordinary-looking part
 
-An observer is shown a face upside down. Something about its eyes and mouth has been changed: their local orientation has been reversed relative to the rest of the face. In the upside-down presentation, the alteration may be less apparent than it becomes after the whole picture is rotated to an upright orientation. Suddenly the expression looks bizarre. The pixels have not changed between observations. The observer's relationship to the image has.
+An observer is shown a face upside down. Something about its eyes and mouth has been changed: their local orientation has been reversed relative to the rest of the face. In the upside-down presentation, the alteration may be less apparent than it becomes after the whole picture is rotated to an upright orientation. Suddenly the expression looks bizarre. The local eye and mouth edits have not changed between observations; only the picture's global orientation has. The observer's relationship to the image has.
 
 That contrast is often called the Thatcher illusion, after an influential 1980 paper by psychologist Peter Thompson, *Margaret Thatcher: a new illusion*, published in *Perception* 9, pages 483–484. What its name does **not** mean is that a photograph of a politician is needed to learn the lesson. Nor does the effect mean that the human brain ordinarily fails to see eyes or mouths. The experiment concerns the sensitivity with which a viewer identifies certain **local feature orientations** depending on the **global orientation** of a figure.
 
