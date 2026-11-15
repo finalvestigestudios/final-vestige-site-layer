@@ -10,7 +10,7 @@ const FV_R384_TAG = 'fv_apollo_source_gallery_r384';
 const FV_R384_FREE = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/';
 const FV_R384_BOARD = 'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/';
 const FV_R384_TESTS = 'https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/';
-const FV_R384_CSS_SHA256 = '4c82ef62de508c7fab61841a0e2c824e03d14b0c94fcf8223cbc52a4f4a04db3';
+const FV_R384_CSS_SHA256 = '4fe1595d790d22181c01038afd31c19e0839360458ded3c6098bd604d73035a9';
 const FV_R384_MEDIA = 'https://www.nasa.gov/nasa-brand-center/images-and-media/';
 
 function fv_r384_h($v): string {
@@ -68,6 +68,7 @@ function fv_r384_render(): string {
     <div class="fv-r384__source-group">
      <h4>Publication A · 1967 Apollo 204 Review Board</h4>
      <p><strong>Five questions, one investigation.</strong> Ground test, oxygen environment, recorded fire sequence, hatch and ignition uncertainty.</p>
+     <p class="fv-r384__citation"><strong>Publication A / primary investigation (1967):</strong> NASA-hosted Apollo 204 Review Board report. <a data-fv-r384-publication="A" href="<?php echo fv_r384_h(FV_R384_BOARD); ?>" rel="noopener noreferrer">Read the original Review Board report at NASA</a>. This single report supports five different questions; it does not count as five independent publications.</p>
      <ol>
      <?php foreach (array_slice($records,0,5) as $i => $record): ?>
       <li><a href="#<?php echo fv_r384_h($prefix . '-question-' . $record['id']); ?>"><?php echo fv_r384_h('Question '.($i+1).' · '.$record['heading']); ?></a></li>
@@ -77,6 +78,7 @@ function fv_r384_render(): string {
     <div class="fv-r384__source-group">
      <h4>Publication B · NASA's 2018 retrospective</h4>
      <p><strong>One question, one later account.</strong> The 102 deliberate test ignitions from December 1967 through February 1968 happened <em>after</em> the January 1967 accident.</p>
+     <p class="fv-r384__citation"><strong>Publication B / NASA retrospective (February 14, 2018):</strong> Johnson Space Center's historical account of deliberately ignited post-accident flammability tests. <a data-fv-r384-publication="B" href="<?php echo fv_r384_h(FV_R384_TESTS); ?>" rel="noopener noreferrer">Read the later flammability-test account at NASA</a>. This retrospective is not eyewitness evidence of the January 1967 fire.</p>
      <ol><li><a href="#<?php echo fv_r384_h($prefix . '-question-' . $records[5]['id']); ?>"><?php echo fv_r384_h('Question 6 · '.$records[5]['heading']); ?></a></li></ol>
     </div>
    </div>
