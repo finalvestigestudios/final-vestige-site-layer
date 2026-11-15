@@ -25,4 +25,18 @@ def valid_holder(value: object) -> bool:
         return False
     if not (1 <= len(value) <= MAX_HOLDER_CODEPOINTS) or value != value.strip():
         return False
-    return all(unicodedata.category(ch) not in _UNSAFE_CATEGORIES for ch in value)
+    for ch in value:
+        point = ord(ch)
+        # Noncharacters cannot represent stable customer display identities.
+        # Fixed codepoint ranges avoid Unicode-database-version differences.
+        if 0xFDD0 <= point <= 0xFDEF or point & 0xFFFE == 0xFFFE:
+            return False
+        # Variation selectors can be invisible but still alter signed bytes.
+        if 0xFE00 <= point <= 0xFE0F or 0xE0100 <= point <= 0xE01EF:
+            return False
+        category = unicodedata.category(ch)
+        # Other Unicode spaces can look identical to ordinary U+0020 and
+        # cause two visibly indistinguishable signed holder names to differ.
+        if category in _UNSAFE_CATEGORIES or (category == "Zs" and ch != " "):
+            return False
+    return True
