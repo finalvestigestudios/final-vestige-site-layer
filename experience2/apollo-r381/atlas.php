@@ -7,8 +7,8 @@
 if (!defined('ABSPATH')) { exit; }
 const FV_R381_TAG = 'fv_apollo_curated_atlas_r381';
 const FV_R381_FREE = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/';
-const FV_R381_CSS_SHA256 = 'e6d6e054781bdd4abb309d48e0c9498f5f59dd4d01436698763df97c70cecb3a';
-const FV_R381_JS_SHA256 = '8d2099b9a34f060540063ba0697980658d5754f24bcb25c0b28e18c3368f5cda';
+const FV_R381_CSS_SHA256 = '7c8653e5055fffd962cda716d923f619c7da23d47f65117527943ee07776fd32';
+const FV_R381_JS_SHA256 = '939153c5488baece594f09b8d298d2189a387b94ca1835bd649856f6ef148f61';
 
 function fv_r381_escape($value): string {
     return htmlspecialchars((string) $value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
