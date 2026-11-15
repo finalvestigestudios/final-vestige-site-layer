@@ -75,7 +75,7 @@ check('Document supports' in text and 'Does not establish' in text,'print source
 check(text.count('Source role:')==6,'all six source roles visible once in closed-disclosure paper/PDF')
 check(text.count('What a photograph cannot prove:')==6,'all six photographic limits visible once in paper/PDF')
 check(text.count('https://www.nasa.gov/missions/apollo/apollo-1/')>=5,'five printed full board URLs')
-check('https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/' in text.replace('\\n',''),'printed later testing URL visible to paper reader')
+check('https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/' in text.replace('\n',''),'printed later testing URL visible to paper reader')
 check('No single ignition source' not in text or 'Does not establish' in text,'no standalone oversold ignition conclusion')
 
 check(any('report-of-the-apollo-204-review-board' in x for x in links),'print Board hyperlink')
