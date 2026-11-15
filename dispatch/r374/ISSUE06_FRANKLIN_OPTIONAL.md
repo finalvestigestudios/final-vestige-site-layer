@@ -1,0 +1,49 @@
+# THE DISPATCH — R374 OPTIONAL ISSUE 06
+
+> **NOT ADOPTED. UNSENT. DO NOT PUBLISH OR EMAIL.** Competes with unadopted R363; original six-edition PR #175 is unchanged. Four editorial and two commercial drafts remain reserved.
+
+**Subject:** Franklin’s notebook wasn't proof
+
+**Preheader:** Seven columns, a blindfold, and a better test of what we think we know.
+
+**Lane:** editorial only, no affiliate offer.
+
+## Seven columns, thirteen rows
+
+Benjamin Franklin described making a small notebook with seven columns for the days of the week and thirteen rows for virtues he wanted to practice. He marked a black spot each time he believed he had fallen short. It was a physical record of a very personal judgment. [1]
+
+His later autobiography explains the method and admits that the project proved harder than expected. It does not supply a controlled comparison showing the notebook made him more virtuous. A record of what we noticed is not automatically proof of what caused an improvement.
+
+If you received the Seven Day Focus Fieldbook, that is the same distinction worth making after seven days. An unfinished page isn't proof of failure. Seven neat entries aren't proof that a technique changed your attention. Both are starting points for asking better questions.
+
+## Decades later, a different kind of test
+
+In 1784 Franklin joined royal commissioners examining claims of animal magnetism as practiced by Charles d'Eslon in Paris. They had reports of extraordinary sensations, but the assertion at issue was more specific: did an invisible magnetic agent produce those effects? [2] [3]
+
+The commission described blindfolding subjects and comparing what happened when they expected an operation with occasions when none was performed. Sometimes the reported reactions followed the suggestion rather than the alleged magnetic treatment. The investigators concluded that the observations did not establish the supposed magnetic fluid. [2]
+
+The inquiry did not test every practice now called hypnosis. It did not test Zen12, Total Focus, or the effectiveness of a present-day recording. Most important, the commissioners asked a question that an impressive personal account alone could not answer.
+
+## A useful ten-minute evidence check
+
+Pick one work or study session from your own notes. Make two columns: OBSERVED and INFERRED. Under observed, record only what you can check: start time, interruptions, a paragraph drafted, or a task not finished. Under inferred, write your explanation: 'the timer helped,' 'I was more disciplined,' or 'the audio distracted me.'
+
+Now write down one alternative explanation. Was the task easier? Was it quieter? Did you already know the material? If you cannot distinguish the explanations, write UNKNOWN. The word is more useful than a confident but unsupported verdict.
+
+This little exercise is for reflection, not diagnosis, a controlled clinical trial, or evidence for a seller's claimed product results. You don't need to buy anything to attempt it.
+
+## The original test is worth reading
+
+Final Vestige's published Mesmerism investigation reconstructs what Franklin's commission actually tested, including its evidence limits. It is a useful companion to the gap between what we experience and what we can establish.
+
+**One reader action:** [Examine the 1784 Mesmerism investigation](https://finalvestige.com/2026/11/02/mesmerism/)
+
+### Source notes (not promotional calls to action)
+- [1] Franklin’s Autobiography (University of Virginia full text): https://anthology.lib.virginia.edu/work/Franklin/franklin-autobiography
+- [2] 1784 royal commissioners' report, 1785 English edition (primary text): https://www.gutenberg.org/files/78413/78413-h/78413-h.htm
+- [3] James Lind Library — historical analysis and narrow test question: https://www.jameslindlibrary.org/articles/mesmers-1780-proposal-for-a-controlled-trial-to-test-his-method-of-treatment-using-animal-magnetism/
+- [4] Final Vestige Editorial Standards: https://finalvestige.com/editorial-standards/
+
+**Scope:** Franklin's self-description was retrospective, not a causal experiment. The commissioners investigated d'Eslon's asserted magnetic agency, not all hypnosis, and their report is not evidence for a present-day commercial audio SKU.
+
+**Hard release block:** final publisher postal address [[FV_POSTAL_UNVERIFIED]], actual Jetpack unsubscribe [[UNSUBSCRIBE_RENDER_UNVERIFIED]], native preview UNVERIFIED, uniquely eligible consent UNKNOWN, founder approval NOT GIVEN. No emails or WordPress writes authorized.
