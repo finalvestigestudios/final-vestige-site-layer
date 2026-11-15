@@ -15,6 +15,8 @@ def blob(raw: bytes) -> str:
 
 
 def literal(text: object) -> str:
+    if isinstance(text, bool):
+        text = "true" if text else "false"
     return "\n".join("    " + line for line in str(text).replace("\r\n", "\n").split("\n"))
 
 
