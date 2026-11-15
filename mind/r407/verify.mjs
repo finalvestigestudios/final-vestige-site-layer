@@ -39,7 +39,7 @@ ok(svg.startsWith('<svg xmlns="http://www.w3.org/2000/svg"'),'inline original SV
 ok(!reject(svg)&&!/<image\b|<foreignObject\b|xlink:href|https?:\/\//i.test(svg.replace('http://www.w3.org/2000/svg','')),'SVG no external asset or active content');
 ok(svg.length<2048,'lightweight poster');
 const match=[...vtt.matchAll(/(\d\d):(\d\d):(\d\d)\.(\d\d\d) --> (\d\d):(\d\d):(\d\d)\.(\d\d\d)/g)];
-const sec=z=>Number(z[1])*3600+Number(z[2])*60+Number(z[3])+Number(z[4])/1000;
+const sec=z=>Number(z[0])*3600+Number(z[1])*60+Number(z[2])+Number(z[3])/1000;
 const cues=match.map(m=>({start:sec(m.slice(1,5)),end:sec(m.slice(5,9))}));
 ok(cues.length===6,'six caption cues');
 ok(cues[0].start===0&&cues.at(-1).end===42,'42s exact storyboard');
