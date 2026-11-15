@@ -73,11 +73,11 @@ if(require.main===module){
  const expected=["dcb735226eb71fcba302b38ae3ab3a73751fe2a8","978f1cb9fe3b17d6766ea89668cedb9e94074cb4"];
  const objs=sources.map((name,i)=>{
    const bytes=fs.readFileSync(path.join(base,name));
-   const sha=crypto.createHash('sha1').update('blob '+bytes.length+'\\0').update(bytes).digest('hex');
+   const sha=crypto.createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex');
    if(sha!==expected[i])throw Error('frozen_source_blob_drift:'+name+':'+sha);
    return JSON.parse(bytes.toString('utf8'));
  });
  const ledger=JSON.parse(fs.readFileSync(path.join(base,'query_token_fidelity_68_20261115.json'),'utf8'));
  checkLedger(ledger,objs[0],objs[1]);
- process.stdout.write('PASS 68 source/view slots, 24 query-bearing, 2 missing itok tokens, 0 guest statuses\\n');
+ process.stdout.write('PASS 68 source/view slots, 24 query-bearing, 2 missing itok tokens, 0 guest statuses\n');
 }
