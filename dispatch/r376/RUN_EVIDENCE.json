@@ -1,0 +1,40 @@
+{
+  "sprint": "Dispatch R376",
+  "date": "2026-11-15",
+  "branch": "dispatch-r376-puysegur-transport-revenueqa-20261115",
+  "original_master": {
+    "pr": 175,
+    "head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "files_git_hash_verified": 8,
+    "python_native_executed": 6,
+    "python_passed": 6
+  },
+  "new_package": {
+    "candidate": "optional Issue 02",
+    "status": "NOT_ADOPTED",
+    "source_copy_formats": 3,
+    "genuine_jetpack_render": false,
+    "source_integrity_v8_assertions_run": 47,
+    "source_integrity_v8_passed": 47,
+    "new_authored_test_definitions": 34,
+    "new_authored_test_callbacks_executed_in_isolated_v8": 34,
+    "new_authored_test_callbacks_passed": 34,
+    "new_native_node_test_run": false,
+    "actual_browser_qa": false,
+    "actual_received_email": false
+  },
+  "release": {
+    "founder_final_approval": false,
+    "all_six_unsent": true,
+    "commercial_03_05_extra_merchant_hold": true,
+    "merchant_email_rights_verified": false,
+    "eligible_recipient_count": null,
+    "postal_and_unsubscribe_verified": false,
+    "realized_net_revenue_per_1000_qualified_sessions": null
+  },
+  "evidence_note": "Actual test callback code was retrieved from GitHub by path and current branch, stripped of node: imports and executed unchanged within isolated V8 with node:test, node:fs and assert compatibility shims against exact GitHub source file contents. The environment DID NOT execute native node --test or actual Jetpack/email-client render. Native original Python suite executed against eight byte-identical archived copies and compared to authenticated original GitHub blob hashes.",
+  "original_sources_unchanged": true,
+  "merchant_links_activated": false,
+  "send_or_test_email_performed": false,
+  "wp_write_performed": false
+}
