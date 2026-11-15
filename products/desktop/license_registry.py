@@ -128,11 +128,16 @@ class IssuanceRegistry:
             raise RegistryError("Entitlement output already exists; never overwrite")
         with self._db() as db:
             def write_reservation(conn):
+                inspection_failed = False
                 try:
                     enforce_registry_schema(conn)
                     enforce_registry_rows(conn)
-                except (RegistrySchemaError, RegistryRowError) as exc:
-                    raise RegistryError("Unsafe registry schema or issuance records; investigate manually") from exc
+                except (RegistrySchemaError, RegistryRowError):
+                    inspection_failed = True
+                # Fail after leaving the handler, so neither __cause__ nor
+                # __context__ retain a private SQL fault or registry row.
+                if inspection_failed:
+                    raise RegistryError("Unsafe registry schema or issuance records; investigate manually")
                 output_hash = _path_fingerprint(destination)
                 if conn.execute("SELECT 1 FROM issuance WHERE output_path_sha256=? LIMIT 1",
                                 (output_hash,)).fetchone():
@@ -175,11 +180,16 @@ class IssuanceRegistry:
             raise RegistryError("Issued file differs from verified signed payload; reservation retained")
         with self._db() as db:
             def write_finalization(conn):
+                inspection_failed = False
                 try:
                     enforce_registry_schema(conn)
                     enforce_registry_rows(conn)
-                except (RegistrySchemaError, RegistryRowError) as exc:
-                    raise RegistryError("Unsafe registry schema or issuance records; investigate manually") from exc
+                except (RegistrySchemaError, RegistryRowError):
+                    inspection_failed = True
+                # Fail after leaving the handler, so neither __cause__ nor
+                # __context__ retain a private SQL fault or registry row.
+                if inspection_failed:
+                    raise RegistryError("Unsafe registry schema or issuance records; investigate manually")
                 finalized_at = _stamp()
                 cursor = conn.execute("""UPDATE issuance SET state='issued',
                     license_sha256=?, issued_at=? WHERE license_id=?
