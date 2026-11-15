@@ -16,7 +16,7 @@ test('email html no scripts, images, forms or tracking',()=>assert.ok(!/<(script
 test('unverified postal and unsubscribe rendered as warning not live links',()=>assert.ok(h.includes('UNVERIFIED')&&!h.includes('href="#unsubscribe"')));
 test('human-review-only status visible',()=>assert.ok(h.includes('NOT A NATIVE JETPACK RENDER')));
 test('no fake active merchant permissions',()=>assert.ok(c.commercial.every(x=>!x.specific_email_permission_verified&&!x.issued_earning_link_verified)));
-test('4/2 campaign unchanged',()=>assert.equal(g.initial_six_mix.editorial,4)&&assert.equal(g.initial_six_mix.commercial_reserved,2));
+test('4/2 campaign unchanged',()=>(assert.equal(g.initial_six_mix.editorial,4),assert.equal(g.initial_six_mix.commercial_reserved,2)));
 test('all six holds',()=>assert.ok(g.issues.every(x=>x.send_allowed===false)));
 test('03 and 05 merchant holds',()=>{for(const n of [3,5]) assert.equal(g.issues[n-1].release,'HOLD_UNSENT_HOLD_MERCHANT')});
 test('no eligible audience inferred by addition',()=>assert.equal(g.source_of_truth.unique_email_eligible,null));
