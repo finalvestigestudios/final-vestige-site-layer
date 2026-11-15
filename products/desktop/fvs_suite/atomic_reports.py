@@ -31,6 +31,20 @@ MAX_REPORT_ROWS = 200_000
 # quoted/escaped text and line endings; no truncation or partial publication.
 MAX_REPORT_BYTES = 64 * 1024 * 1024
 MAX_REPORT_CELL_CHARS = 1_048_576
+# Never allocate an entire UTF-8 copy of a large customer CSV row or cell
+# solely to count or attest its bytes. A Unicode code point fits one slice.
+_UTF8_CHUNK_CHARACTERS = 16 * 1024
+
+
+def _utf8_chunks(text: str) -> Iterable[bytes]:
+    """Encode bounded character slices for exact length and SHA-256 custody.
+
+    Slicing native str at character boundaries cannot divide a UTF-8 code
+    point. Each chunk has at most 65,536 encoded bytes, even for astral text.
+    Rejecting lone surrogates remains the upstream _render_cell contract.
+    """
+    for start in range(0, len(text), _UTF8_CHUNK_CHARACTERS):
+        yield text[start:start + _UTF8_CHUNK_CHARACTERS].encode("utf-8")
 
 
 class _BudgetedCSVTextSink:
@@ -46,24 +60,31 @@ class _BudgetedCSVTextSink:
         self._witness = CSVStagingWitness()
 
     def write(self, text: str) -> int:
-        encoded = text.encode("utf-8")
-        encoded_bytes = len(encoded)
-        if encoded_bytes > self._remaining:
-            raise ValueError("CSV report byte limit exceeded")
+        encoded_bytes = 0
+        # Independently enforce the budget even for direct sink.write callers.
+        # Streaming this count avoids another up-to-64-MiB bytes allocation
+        # after csv.writer has already rendered the complete record text.
+        for chunk in _utf8_chunks(text):
+            encoded_bytes += len(chunk)
+            if encoded_bytes > self._remaining:
+                raise ValueError("CSV report byte limit exceeded")
         written = self._stream.write(text)
         # A text stream may legally return a short character count. Neither
         # csv.writer nor DictWriter guarantees that such a result aborts the
         # export, so a partial financial report could otherwise be published.
         if type(written) is not int or written != len(text):
             raise OSError(errno.EIO, "CSV report staging incomplete write")
-        self._witness.record(encoded)
+        # Only attest a complete accepted write. Re-encode bounded slices
+        # after stream acceptance rather than retaining a giant byte buffer.
+        for chunk in _utf8_chunks(text):
+            self._witness.record(chunk)
         self._remaining -= encoded_bytes
         return written
 
     @staticmethod
     def _excel_field_bytes(value: str) -> int:
         """Exact quoted csv.excel UTF-8 field cost, excluding separators."""
-        cost = len(value.encode("utf-8")) + value.count('"')
+        cost = sum(len(chunk) for chunk in _utf8_chunks(value)) + value.count('"')
         if any(char in value for char in ('"', ",", "\r", "\n")):
             cost += 2
         return cost
