@@ -21,3 +21,10 @@
 
 ## Release decision
 **All six original issues still HOLD_UNSENT; 03/05 HOLD_MERCHANT; original 04 HOLD_COPY. Optional R388 issue 01 is NOT_ADOPTED.** No test send, real send, WordPress draft/post/change, subscriber import/contact, affiliate link, paid order, homepage edit, site deploy, issue-list override or PR merge. Real publisher net revenue per 1,000 qualified-human sessions: **NOT_COMPUTABLE** (verified settlement and denominator unavailable), not zero. The only founder approval here covers drafting, never sending.
+
+## Real offline Chromium accessibility regression — correction committed
+
+- Reconstructed the GitHub HTML specimen as exact local Git blob (same SHA-1). Initial Chromium QA exposed **real horizontal overflow**: 399px document width at viewport widths 320/360/390, caused by the long deliberately disabled Jetpack unsubscribe placeholder. This was not labeled PASS.
+- Repaired the footer with `overflow-wrap:anywhere;word-break:break-word`. A second run found 320px overflow (327px) at **200% CSS zoom** from table-cell padding. Reduced cell padding without changing copy, CTA count, links or safety flags.
+- Final exact HTML Git blob: `fefb86f8356cdd984020eb2010f367aee3b383dd`. Local matching blob tested through actual offline Chromium via Playwright `page.set_content` (sandbox blocks `file://` navigation). **Normal 320/360/390/768/1024/1440: 6/6 PASS**, **200% zoom 320/360/390/768: 4/4 PASS**; no horizontal overflow, three links (one principal CTA plus two research citations), no images/forms/scripts, zero page errors and legal placeholders visible. Browser evidence JSON is committed separately as `BROWSER_QA.json`. Screenshots are held in local QA artifact, not claimed to be Jetpack screenshots.
+- **Still no native Jetpack or inbox render proof**. Offline Chromium alone does not clear send, FTC or merchant permissions.
