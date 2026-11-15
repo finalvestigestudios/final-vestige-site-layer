@@ -205,13 +205,13 @@ for label in ('render','anchor'):
 
 # Twelve remaining distinct source/render drift scenarios across original and supplemental pairs.
 for i in range(12):
-    def test(self, idx=i):
+    def _case(self, idx=i):
         slug=self.slugs[idx+35] if idx<6 else self.slugs[idx-6]
         target=self.wp if idx%2==0 else self.pv
         def f():
             r=self.reports();(target/(slug+'.html')).write_text('changed in callback')
             return r
         self.failed('EXPORT_MUTATION_DURING_VALIDATION',f)
-    setattr(FrozenExportTests, 'test_export_race_scenario_'+str(i), test)
+    setattr(FrozenExportTests, 'test_export_race_scenario_'+str(i), _case)
 
 if __name__ == '__main__':unittest.main()
