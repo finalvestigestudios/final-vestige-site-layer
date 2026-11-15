@@ -23,6 +23,7 @@ from fvs_suite import offline_entitlement as verifier
 from license_registry import IssuanceRegistry, RegistryError
 from signing_key_guard import read_signing_key
 from license_output_guard import create_issued_license
+from fvs_suite.holder_identity import valid_holder
 
 MAX_KEY_BYTES = 16 * 1024
 KEY_HEADER = b"-----BEGIN ENCRYPTED PRIVATE KEY-----\n"
@@ -65,9 +66,7 @@ def _validate_text(value: str, field: str) -> None:
     if not isinstance(value, str):
         raise IssuanceError(f"Invalid {field}")
     if field == "holder":
-        if not (1 <= len(value) <= 120) or value != value.strip() or any(
-            ord(c) < 32 or ord(c) == 127 for c in value
-        ):
+        if not valid_holder(value):
             raise IssuanceError("Invalid holder")
     elif not verifier.IDENTIFIER.fullmatch(value):
         raise IssuanceError(f"Invalid {field}")
