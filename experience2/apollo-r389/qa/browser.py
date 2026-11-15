@@ -1,0 +1,121 @@
+#!/usr/bin/env python3
+"""R389: two-publication custody index + print regression in real Chromium on local PHP fixture, not WordPress."""
+import json, pathlib, subprocess
+import fitz
+from playwright.sync_api import sync_playwright
+ROOT=pathlib.Path(__file__).resolve().parents[1]
+QA=ROOT/'QA'; QA.mkdir(exist_ok=True)
+subprocess.check_call(['php',str(ROOT/'qa/contract.php')])
+fixture=QA/'local-php-fixture.html'
+source=fixture.read_text(encoding='utf8')
+assert 'data-fv-r384-gallery' in source
+CONTEXTS=[('320-mobile',320,780,True,False,False,False),('390-mobile',390,850,True,False,False,False),('768-tablet',768,900,False,False,False,False),('1440-desktop',1440,900,False,False,False,False),('1920-wide',1920,1080,False,False,False,False),('320-nojs',320,780,True,True,False,False),('390-touch',390,850,True,False,False,True),('390-reduced',390,850,True,False,False,False),('320-forced',320,830,True,False,True,False),('320-root4x',320,900,True,False,False,False)]
+report={'status':'R389_CHROMIUM_DIRECT_NASA_CUSTODY_PASS_NOT_STAGING','contexts':[],'assertions':0,'axe_core':'NOT RUN: genuine axe-core not installed in execution image; hard release blocker','installed_wordpress':'NOT TESTED','https_csp':'NOT TESTED: local HTTP Chromium navigation blocked by administrator; only set_content fixture','core_web_vitals':'NOT MEASURED: fixture-only LCP/CLS observations; no field CWV or real network'}
+def check(value, label):
+ report['assertions']+=1
+ if not value: raise AssertionError(label)
+observer="""window.__apolloVitals={lcp:null,cls:0};try{new PerformanceObserver(l=>{for(const e of l.getEntries())window.__apolloVitals.lcp=e.startTime}).observe({type:'largest-contentful-paint',buffered:true});new PerformanceObserver(l=>{for(const e of l.getEntries())if(!e.hadRecentInput)window.__apolloVitals.cls+=e.value}).observe({type:'layout-shift',buffered:true})}catch(e){window.__apolloVitals.observerError=String(e)}"""
+with sync_playwright() as p:
+ browser=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox'])
+ for name,w,h,mobile,nojs,forced,touch in CONTEXTS:
+  ctx=browser.new_context(viewport={'width':w,'height':h},is_mobile=mobile,has_touch=touch or mobile,java_script_enabled=not nojs,reduced_motion='reduce' if name=='390-reduced' else 'no-preference',forced_colors='active' if forced else 'none')
+  page=ctx.new_page()
+  page.set_content(source.replace('</head>',('<script>'+observer+'</script></head>') if not nojs else '</head>',1),wait_until='load')
+  if name=='320-root4x': page.add_style_tag(content='html{font-size:400%!important}')
+  page.wait_for_timeout(120)
+  cards=page.locator('[data-fv-r384-record]')
+  # R389: every no-JS internal deep link points to exactly one source card.
+  index=page.locator('.fv-r384__source-index')
+  check(index.count()==1,name+' one publication-level source index')
+  check(page.locator('.fv-r384__source-group').count()==2,name+' two publications not six')
+  check(page.locator('.fv-r384__source-index a[href^="#"]').count()==6,name+' exactly six question deep links')
+  for internal in page.locator('.fv-r384__source-index a[href^="#"]').all():
+   href=internal.get_attribute('href')
+   check(page.locator(f'[id="{href[1:]}"]').count()==1,name+' valid unique deep-link '+href)
+  check('Five questions, one investigation' in index.inner_text(),name+' board source counted once')
+  check('One question, one later account' in index.inner_text(),name+' retrospective source counted once')
+  check('after' in index.inner_text(),name+' retrospective chronology clear')
+  provenance=page.locator('[data-fv-r384-publication]')
+  check(provenance.count()==2,name+' two directly linked publications')
+  check(page.locator('.fv-r384__citation').count()==2,name+' two accessible citation passages')
+  check(provenance.nth(0).get_attribute('href')=='https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/',name+' direct original Board URL')
+  check(provenance.nth(1).get_attribute('href')=='https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/',name+' direct retrospective URL')
+  check(provenance.nth(0).get_attribute('rel')=='noopener noreferrer',name+' Board link safe rel')
+  check(provenance.nth(1).get_attribute('rel')=='noopener noreferrer',name+' retrospective link safe rel')
+  check('primary investigation (1967)' in page.locator('.fv-r384__citation').first.inner_text(),name+' source A class')
+  check('February 14, 2018' in page.locator('.fv-r384__citation').last.inner_text(),name+' source B date')
+  check('not eyewitness evidence' in page.locator('.fv-r384__citation').last.inner_text(),name+' historical evidence limitation')
+  check(cards.count()==6,name+' six sources')
+  check(page.locator('.fv-r384__phase').count()==3,name+' three phases')
+  check(page.locator('[data-fv-r384-nasa]').count()==6,name+' six primary links')
+  check(page.locator('[data-fv-free-cta]').count()==1,name+' one noncommercial CTA')
+  check(page.locator('details').count()==6,name+' native drawers')
+  check(page.locator('.fv-r384__print-custody').count()==6,name+' print custody nodes')
+  check(not page.locator('.fv-r384__print-custody').first.is_visible(),name+' print duplicates hidden from screen/speech')
+  check(page.locator('summary').count()==6,name+' accessible native summaries')
+  check(page.locator('img,canvas,iframe,video').count()==0,name+' no imagery or remote media')
+  check(page.locator('[data-fv-free-cta]').get_attribute('href')=='https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/',name+' correct free destination')
+  check(page.locator('[data-fv-r384-nasa]').nth(5).get_attribute('href')=='https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/',name+' later testing separated')
+  check(page.locator('[data-fv-r384-nasa]').nth(4).get_attribute('href')=='https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/',name+' Board uncertainty source')
+  check(page.locator('.fv-r384__rights').count()==1,name+' rights statement')
+  check(page.evaluate('document.documentElement.scrollWidth<=window.innerWidth+1'),name+' no horizontal overflow')
+  check(page.locator('.fv-r384__phase').first.is_visible(),name+' complete no JS meaning')
+  if name=='1440-desktop':
+   page.locator('summary').first.focus();page.keyboard.press('Enter')
+   check(page.locator('details').first.evaluate('(el)=>el.open'),name+' keyboard opens detail')
+   page.keyboard.press('Enter')
+   check(not page.locator('details').first.evaluate('(el)=>el.open'),name+' keyboard re-closes before PDF')
+   target=page.locator('.fv-r384__source-index a[href^="#"]').first.get_attribute('href')
+   page.locator('.fv-r384__source-index a[href^="#"]').first.click()
+   check(page.evaluate('location.hash')==target,name+' deep link navigates without JS')
+   check(page.locator(f'[id="{target[1:]}"]').is_visible(),name+' target source card shown')
+   cdp=ctx.new_cdp_session(page); ax=cdp.send('Accessibility.getFullAXTree')['nodes']
+   roles=[n.get('role',{}).get('value') for n in ax if not n.get('ignored')]
+   check('link' in roles and 'heading' in roles,name+' real Chromium AX tree exposes links and headings')
+   provenance.first.focus()
+   check(provenance.first.evaluate('(el)=>document.activeElement===el'),name+' publication A link keyboard focusable')
+   page.keyboard.press('Tab')
+   check(page.evaluate('document.activeElement?.tagName') in ('A','LI','BODY'),name+' sequential focus remains navigable')
+   page.pdf(path=str(QA/'Apollo_R389_Complete_Source_Print.pdf'),format='A4',print_background=True)
+  if name=='390-touch':
+   page.locator('summary').first.tap()
+   check(page.locator('details').first.evaluate('(el)=>el.open'),name+' native touch opens detail')
+  if name=='320-nojs':
+   check(page.locator('details').first.is_visible(),name+' native details exist with JS disabled')
+   page.locator('summary').first.tap()
+   check(page.locator('details').first.evaluate('(el)=>el.open'),name+' noJS native touch disclosure')
+  if name=='320-forced': check(page.locator('.fv-r384__card').first.is_visible(),name+' forced-color card readable')
+  page.screenshot(path=str(QA/(name+'.png')),full_page=True,animations='disabled')
+  metrics=None if nojs else page.evaluate('window.__apolloVitals')
+  report['contexts'].append({'context':name,'width':w,'result':'PASS','local_lcp_observed_ms':None if not metrics else metrics['lcp'],'local_cls_observed':None if not metrics else metrics['cls']})
+  ctx.close()
+ browser.close()
+pdf=fitz.open(str(QA/'Apollo_R389_Complete_Source_Print.pdf'))
+text='\n'.join(p.get_text() for p in pdf)
+normalized=' '.join(text.split())
+source=json.loads((ROOT.parent/'apollo-r377'/'custody.json').read_text())['records']
+for record in source:
+ for field in ('evidence_role','catalog_note'):
+  check(' '.join(record[field].split()) in normalized, 'print missing verified '+record['id']+':'+field)
+
+links=[x.get('uri') for p in pdf for x in p.get_links() if x.get('uri')]
+check(len(pdf)>=1,'print pages created')
+check('Document supports' in text and 'Does not establish' in text,'print source and limits')
+check('two underlying NASA publications' in text or 'two underlying NASA publications'.lower() in text.lower(),'print distinguishes source-document counts')
+check(text.count('Source role:')==6,'all six source roles visible once in closed-disclosure paper/PDF')
+check(text.count('What a photograph cannot prove:')==6,'all six photographic limits visible once in paper/PDF')
+check(text.count('https://www.nasa.gov/missions/apollo/apollo-1/')>=5,'five printed full board URLs')
+check('https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/' in text.replace('\n',''),'printed later testing URL visible to paper reader')
+check('No single ignition source' not in text or 'Does not establish' in text,'no standalone oversold ignition conclusion')
+
+check(any('report-of-the-apollo-204-review-board' in x for x in links),'print Board hyperlink')
+check(any('apollo-flammability-tests' in x for x in links),'print testing hyperlink')
+check(any('the-hatch-opened-inward-apollo-1' in x for x in links),'print free CTA hyperlink')
+check('Publication A / primary investigation (1967)' in text,'print labels primary investigation')
+check('Publication B / NASA retrospective (February 14, 2018)' in text,'print dates secondary retrospective')
+check('This retrospective is not eyewitness evidence' in text,'print retains source limitation')
+check('https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/' in text.replace('\\n',''),'print readable direct Board URL')
+check('https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/' in text.replace('\\n',''),'print readable direct retrospective URL')
+report['print_pdf']={'pages':len(pdf),'links':len(links),'distinct_urls':len(set(links))}
+(QA/'browser-results.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps({'status':report['status'],'contexts':len(report['contexts']),'assertions':report['assertions'],'print_pages':len(pdf)},indent=2))
