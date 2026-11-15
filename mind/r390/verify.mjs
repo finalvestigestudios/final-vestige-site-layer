@@ -51,9 +51,10 @@ requireTrue(!!transcriptMatch&&words(capText).join("|")===words(transcriptMatch[
 requireTrue(/class="sections"/.test(hub)&&["01 \/ PERCEPTION","02 \/ HISTORY","03 \/ PRACTICE","04 \/ TOOLS"].every(x=>hub.includes(x)),"hub four editorial streams");
 requireTrue(/prefers-reduced-motion/.test(hub)&&!/<script\b|<form\b|<iframe\b/.test(hub),"hub reduced motion and no duplicate forms");
 requireTrue(/finalvestige.com\/focus\//.test(hub)&&/finalvestige.com\/free-resources\/puysegurs/.test(hub),"hub live source links");
-requireTrue(Array.isArray(claims.claims)&&claims.claims.length===35,"35 sourced classified claim rows");
-requireTrue(Object.keys(claims.sources).length===16,"16 explicit source URLs");
+requireTrue(Array.isArray(claims.claims)&&claims.claims.length===36,"36 sourced classified claim rows");
+requireTrue(Object.keys(claims.sources).length===17,"17 explicit source URLs");
 requireTrue(claims.claims.every(x=>x.id&&x.claim&&x.status&&Array.isArray(x.source_ids)&&x.source_ids.every(y=>y in claims.sources)),"all claim citations resolvable");
+requireTrue(claims.claims.some(x=>x.id==="M05B"&&x.status==="DATED_SELLER_PROMO_SCREEN_ONLY"),"separate coupon-price route recorded as seller-only");
 requireTrue(claims.gates.length===36&&claims.gates.every(x=>x.status==="HARD_HOLD"),"all 36 commercial gates held");
 requireTrue(claims.commerce_status.affiliate_url===null&&claims.commerce_status.net_revenue_per_1000===null,"merchant and revenue fields null");
 requireTrue(dossier.includes("NOT COMPUTABLE")&&dossier.includes("UNKNOWN")&&dossier.includes("HARD HOLD"),"dossier truthful unknown revenue/creator states");
