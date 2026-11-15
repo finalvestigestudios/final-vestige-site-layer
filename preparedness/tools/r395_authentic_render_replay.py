@@ -12,6 +12,9 @@ from hashlib import sha256
 import json
 from pathlib import Path
 import subprocess
+import sys
+# Python -I excludes the script directory from sys.path; imports stay confined to this private tooling directory.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 try:
     from . import r384_variant_review_packet as originals
