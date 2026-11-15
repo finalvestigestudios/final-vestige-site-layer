@@ -1,0 +1,42 @@
+{
+  "version": "R375",
+  "updated_utc": "2026-11-15",
+  "editorial_candidate": "01",
+  "status": "NOT_ADOPTED_UNSENT",
+  "sources": [
+    {
+      "url": "https://web.stanford.edu/class/psych205/papers/Loftus-Palmer-1974.pdf",
+      "kind": "contemporaneous_peer_reviewed_original",
+      "claim": "45 participants in Experiment I watched accident films; verb affected reported speed; 40.8 versus 31.8 mph in smashed/contacted groups",
+      "qualification": "Measured reports, not actual vehicle speed or eyewitness population rates"
+    },
+    {
+      "url": "https://web.stanford.edu/class/psych205/papers/Loftus-Palmer-1974.pdf",
+      "kind": "contemporaneous_peer_reviewed_original",
+      "claim": "Experiment II: 150 participants, 50 per condition; week-later broken glass yes answers 16,7,6",
+      "qualification": "No glass depicted; memory reconstruction versus response mechanisms not conclusively separated"
+    },
+    {
+      "url": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+      "kind": "journal_doi",
+      "claim": "1974 publication by Loftus and Palmer, Volume 13 pp. 585–589",
+      "qualification": "Original-study methods do not establish modern product effectiveness"
+    },
+    {
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "existing_published_final_vestige",
+      "claim": "Separate editorial on change blindness in attention",
+      "qualification": "Does not test Loftus and Palmer replication or affiliate programs"
+    }
+  ],
+  "commercial_offer_in_this_issue": false,
+  "affiliate_disclosure_required_for_this_issue": false,
+  "offer_outbound_link_present": false,
+  "unverified_fields": [
+    "actual inbox opt-in",
+    "publisher qualifying postal address",
+    "native unsubscribe render",
+    "Jetpack true subject/preheader render",
+    "founder adoption"
+  ]
+}
