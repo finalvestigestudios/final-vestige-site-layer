@@ -82,7 +82,7 @@ The archive's attention to the French word *voir* is especially instructive. Dep
 
 Search for meditation, hypnosis or audio-guided focus and you will encounter promises about subconscious reprogramming, memory, brainwave states and unusually rapid benefits. These claims may have emotional appeal, especially when a person is tired, distracted or uncertain where to start.
 
-They are not validated by an experiment showing that participants recalled unspoken words.
+The DRM result is not a Zen12 product trial. It does not validate product claims merely because participants recalled unspoken words.
 
 The specific leap to resist is: *a general psychological phenomenon exists, therefore this product can control it*. Evidence that human memory is reconstructive is not product-specific evidence that a commercial recording corrects, enhances, rewires or treats memory. Demonstrating that suggestion can influence some judgments under particular laboratory conditions is not proof that every user of a prerecorded hypnosis audio will achieve a specified outcome.
 
