@@ -62,6 +62,42 @@ class Invariants(unittest.TestCase):
     def test_external_css_unknown(self):
         self.assertIn('EXTERNAL_CSS_JS_BROWSER_SCREENREADER_AND_PRINT_UNVERIFIED',check(GOOD)['warnings'])
 
+class RegistryEvidence(unittest.TestCase):
+    def test_base_plus_fragment_ids(self):
+        import json
+        obj=json.dumps({'sources':[{'id':'local-only'}]}).encode()
+        sha=G.git_blob(obj)
+        rows={'preparedness/sources/fragments/food.json':{'variants':[{'sha':sha}]}}
+        got=G.collect_source_ids({'sources':[{'id':'src-a'}]},rows,lambda _:obj)
+        self.assertEqual(got,{'src-a','local-only'})
+    def test_distinct_branches_not_selected(self):
+        import json
+        x=json.dumps({'sources':[{'id':'old-evidence'}]}).encode()
+        y=json.dumps({'sources':[{'id':'new-evidence'}]}).encode()
+        rows={'preparedness/sources/fragments/shelter.json':{'variants':[{'sha':'a'},{'sha':'b'}]}}
+        got=G.collect_source_ids({'sources':[]},rows,lambda sha:x if sha=='a' else y)
+        self.assertEqual(got,{'old-evidence','new-evidence'})
+    def test_duplicate_within_fragment_rejected(self):
+        import json
+        data=json.dumps({'sources':[{'id':'dup'},{'id':'dup'}]}).encode()
+        rows={'preparedness/sources/fragments/food.json':{'variants':[{'sha':'a'}]}}
+        with self.assertRaisesRegex(ValueError,'FRAGMENT_DUPLICATE_SOURCE_ID'):
+            G.collect_source_ids({'sources':[]},rows,lambda _:data)
+    def test_duplicate_base_rejected(self):
+        with self.assertRaisesRegex(ValueError,'BASE_DUPLICATE_SOURCE_ID'):
+            G.collect_source_ids({'sources':[{'id':'dup'},{'id':'dup'}]}, {},lambda _:b'')
+    def test_registry_invalid_rejected(self):
+        with self.assertRaisesRegex(ValueError,'BASE_SOURCE_REGISTRY_INVALID'):
+            G.collect_source_ids({'sources':None}, {},lambda _:b'')
+    def test_fragment_missing_sources_rejected(self):
+        rows={'preparedness/sources/fragments/food.json':{'variants':[{'sha':'a'}]}}
+        with self.assertRaisesRegex(ValueError,'FRAGMENT_SOURCES_INVALID'):
+            G.collect_source_ids({'sources':[]},rows,lambda _:b'{}')
+    def test_fragment_bad_id_rejected(self):
+        rows={'preparedness/sources/fragments/food.json':{'variants':[{'sha':'a'}]}}
+        with self.assertRaisesRegex(ValueError,'FRAGMENT_SOURCE_ID_INVALID'):
+            G.collect_source_ids({'sources':[]},rows,lambda _:b'{"sources":[{"id":null}]}')
+
 class Matrix(unittest.TestCase): pass
 
 def case(name,html,reason=None):
