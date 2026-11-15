@@ -2,6 +2,7 @@
 /** Frozen Gutenberg image-source audit. Offline; never requests or mirrors media. */
 const fs = require('node:fs');
 const path = require('node:path');
+const crypto = require('node:crypto');
 
 function classifyStoredUrl(value) {
   if (typeof value !== 'string' || !value.trim()) return 'unverifiable';
@@ -18,6 +19,43 @@ function classifyStoredUrl(value) {
   }
   return 'external_direct';
 }
+const EXPECTED_PART_BLOBS = Object.freeze(["948bc1b65b42799aa40cfdb810ddf6ffd80886b6","48e1ebf07207e948ba5802e714eb39659d2e1c1d","49183f66f880f7c4dfd363acca906876877f2e5e","6df3251e5a67a971d87a516a1ba4a0cc32f51f96","9b16b828342a9ac338f3e65610fd3d8d508355e9","0f3dfe398a76838049cebba7cb773d5c5a0c8c69","21095161e633aba093b74c0ead9936c9f6186d00","5659ec243c188928be3f89c0f96354b660608ca2"]);
+function gitBlobSha(data) {
+  const bytes=Buffer.from(data,'utf8');
+  return crypto.createHash('sha1').update(Buffer.from('blob '+bytes.length+'\\0')).update(bytes).digest('hex');
+}
+function loadPinnedParts(dir) {
+  return EXPECTED_PART_BLOBS.map((expected,i)=>{
+    const raw=fs.readFileSync(path.join(dir,String(i+1).padStart(2,'0')+'.json'),'utf8');
+    if(gitBlobSha(raw)!==expected) throw Error('Frozen source part blob SHA mismatch: '+(i+1));
+    return JSON.parse(raw);
+  });
+}
+
+function assertCompleteCoverage(batches) {
+  const postIds = new Set(), keys = new Set();
+  for (let i=0;i<batches.length;i++) {
+    const p=batches[i];
+    if (!p || p.batch!==i+1 || !Array.isArray(p.posts) || !Array.isArray(p.images) || p.post_count!==p.posts.length || p.image_count!==p.images.length) throw Error('Frozen batch structure mismatch');
+    const meta=new Map(), slots=new Map();
+    for (const z of p.posts) {
+      if (!Number.isSafeInteger(z.id) || z.id<=0 || !Number.isSafeInteger(z.images) || z.images<0 || typeof z.url!=='string' || typeof z.title!=='string' || postIds.has(z.id)) throw Error('Duplicate or malformed frozen post');
+      postIds.add(z.id); meta.set(z.id,z); slots.set(z.id,new Set());
+    }
+    for (const x of p.images) {
+      const z=meta.get(x.post_id);
+      if (!z || !Number.isSafeInteger(x.slot) || x.slot<0 || x.slot>=z.images || x.key!==`${x.post_id}:${x.slot}` || keys.has(x.key)) throw Error('Duplicate, orphan, or out-of-range frozen image slot');
+      if (x.post_url!==z.url || x.post_title!==z.title) throw Error('Frozen image differs from parent post metadata');
+      keys.add(x.key);slots.get(z.id).add(x.slot);
+    }
+    for (const z of p.posts) {
+      if (slots.get(z.id).size!==z.images) throw Error('Frozen post has missing or duplicate slots');
+      for (let n=0;n<z.images;n++) if (!slots.get(z.id).has(n)) throw Error('Non-contiguous frozen post slots');
+    }
+  }
+  return {posts:postIds.size,slots:keys.size};
+}
+
 function reconcile(parts) {
   if (!Array.isArray(parts) || parts.length !== 8) throw Error('Require the eight frozen inventory parts');
   const rows = parts.flatMap((p, i) => {
@@ -25,6 +63,7 @@ function reconcile(parts) {
       throw Error('Frozen image batch metadata mismatch: ' + (i + 1));
     return p.images;
   });
+  assertCompleteCoverage(parts);
   const byPost = new Map();
   const byClass = {owned_direct:0, owned_jetpack_origin:0, external_jetpack_origin:0, external_direct:0, unverifiable:0};
   const sourceKindErrors = [];
@@ -65,8 +104,8 @@ function reconcile(parts) {
 if (require.main === module) {
   try {
     const dir = process.argv[2] || path.join(__dirname, 'parts');
-    const parts = Array.from({length:8},(_,i) => JSON.parse(fs.readFileSync(path.join(dir, String(i+1).padStart(2,'0')+'.json'),'utf8')));
+    const parts = loadPinnedParts(dir);
     console.log(JSON.stringify(reconcile(parts),null,2));
   } catch(e) { console.error('FROZEN_SOURCE_RECONCILIATION_HOLD: '+e.message); process.exitCode=2; }
 }
-module.exports = {classifyStoredUrl,reconcile};
+module.exports = {classifyStoredUrl,reconcile,assertCompleteCoverage,gitBlobSha,loadPinnedParts,EXPECTED_PART_BLOBS};
