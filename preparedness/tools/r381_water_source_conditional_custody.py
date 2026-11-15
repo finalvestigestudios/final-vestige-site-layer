@@ -117,7 +117,10 @@ def assess(body: bytes, meta: dict, register: dict) -> dict:
         risks.append('BASE_SUMMARY_TAP_VERSUS_HEATING_TANK_UNDIFFERENTIATED')
     parser = LIParser()
     parser.feed(html)
-    candidates = [li for li in parser.items if SOURCE_ID in CITE.findall(li)]
+    # This source also supports a separate chemical-contamination caution later
+    # in the manuscript. Select only the *household inside-water* assertion.
+    candidates = [li for li in parser.items if SOURCE_ID in CITE.findall(li)
+                  and 'other clean water in the house' in li.lower()]
     if len(candidates)!=1:
         errors.append('EXPECTED_SINGLE_CLAIM_LIST_ITEM_NOT_FOUND')
     claim = candidates[0] if len(candidates)==1 else ''
