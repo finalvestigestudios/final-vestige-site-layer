@@ -1,0 +1,183 @@
+{
+  "audit_date": "2026-11-14",
+  "source_type": "authenticated read-only WordPress posts.get #252 editor content plus exact Wikimedia Commons file records",
+  "post_id": 252,
+  "post_url": "https://finalvestige.com/2026/08/18/they-thought-the-books-were-charcoal/",
+  "post_modified_wp_local": "2026-11-14T18:44:18",
+  "audit_scope": "six original stored inline image URLs; no browser wire status claimed",
+  "browser_failure_count": null,
+  "claimed_42_broken_in_visitor_browser": null,
+  "claimed_76_percent_network_savings": null,
+  "production_changes": 0,
+  "items": [
+    {
+      "key": "252:0",
+      "slot": 0,
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Herculaneum%20papyri.jpg?width=960",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Herculaneum_papyri.jpg",
+      "catalog_filename": "Herculaneum_papyri.jpg",
+      "catalog_dimensions_px": {
+        "width": 2006,
+        "height": 1740
+      },
+      "max_width_960_preserve_aspect_px": {
+        "width": 960,
+        "height": 833
+      },
+      "live_alt": "Carbonized Herculaneum papyrus fragments PHerc. 1103 and PHerc. 110, showing the dark brittle surfaces created by the AD 79 eruption.",
+      "live_caption": "Carbonized Herculaneum papyri PHerc. 1103 and PHerc. 110. Sara Stabile et al., CC BY 4.0.",
+      "catalog_description": "2021 research photograph of PHerc. 1103 and PHerc. 110; Sara Stabile et al.",
+      "catalog_rights_claim": "CC BY 4.0",
+      "identity_disposition": "accurate_subject",
+      "proposed_alt_review_only": null,
+      "browser_status": null,
+      "visitor_natural_width": null,
+      "visitor_transfer_bytes": null,
+      "source_binary_sha256": null,
+      "rights_cleared_for_rehost": false,
+      "wp_media_upload_authorized": false,
+      "replacement_binary_created": false
+    },
+    {
+      "key": "252:1",
+      "slot": 1,
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Herculaneum%2C%20past%2C%20present%20and%20future%20%281908%29%20%2814596218878%29.jpg",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Herculaneum,_past,_present_and_future_(1908)_(14596218878).jpg",
+      "catalog_filename": "Herculaneum,_past,_present_and_future_(1908)_(14596218878).jpg",
+      "catalog_dimensions_px": {
+        "width": 3334,
+        "height": 948
+      },
+      "max_width_960_preserve_aspect_px": {
+        "width": 960,
+        "height": 273
+      },
+      "live_alt": "Historic view of Herculaneum papyrus rolls and early work associated with the collection.",
+      "live_caption": "The Herculaneum papyri in an early twentieth-century history of the site. Public-domain publication.",
+      "catalog_description": "Ground plan of Villa of the Papyri showing tunnels, reproduced in a 1908 volume; NOT a photograph of scrolls",
+      "catalog_rights_claim": "Flickr Commons no known copyright restrictions; item review",
+      "identity_disposition": "editorial_mismatch",
+      "proposed_alt_review_only": "Ground plan of the Villa of the Papyri showing archaeological tunnels, reproduced in a 1908 publication.",
+      "browser_status": null,
+      "visitor_natural_width": null,
+      "visitor_transfer_bytes": null,
+      "source_binary_sha256": null,
+      "rights_cleared_for_rehost": false,
+      "wp_media_upload_authorized": false,
+      "replacement_binary_created": false
+    },
+    {
+      "key": "252:2",
+      "slot": 2,
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Abbot-Piaggio-machine-Herculaneum-papyri.jpg",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Abbot-Piaggio-machine-Herculaneum-papyri.jpg",
+      "catalog_filename": "Abbot-Piaggio-machine-Herculaneum-papyri.jpg",
+      "catalog_dimensions_px": {
+        "width": 876,
+        "height": 552
+      },
+      "max_width_960_preserve_aspect_px": {
+        "width": 876,
+        "height": 552
+      },
+      "live_alt": "Wooden mechanical apparatus developed from Antonio Piaggio",
+      "live_caption": "Piaggio’s papyrus-unrolling machine, reproduced in a public-domain historical work.",
+      "catalog_description": "Illustration of Antonio Piaggio unrolling machine from 1908 book",
+      "catalog_rights_claim": "public domain historical 1908 publication; item review",
+      "identity_disposition": "accurate_subject",
+      "proposed_alt_review_only": null,
+      "browser_status": null,
+      "visitor_natural_width": null,
+      "visitor_transfer_bytes": null,
+      "source_binary_sha256": null,
+      "rights_cleared_for_rehost": false,
+      "wp_media_upload_authorized": false,
+      "replacement_binary_created": false
+    },
+    {
+      "key": "252:3",
+      "slot": 3,
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Heruclaneum%20Papyrus%201521%20f001r%2C%20British%20Library%2001.jpg?width=960",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Heruclaneum_Papyrus_1521_f001r,_British_Library_01.jpg",
+      "catalog_filename": "Heruclaneum_Papyrus_1521_f001r,_British_Library_01.jpg",
+      "catalog_dimensions_px": {
+        "width": 2000,
+        "height": 1432
+      },
+      "max_width_960_preserve_aspect_px": {
+        "width": 960,
+        "height": 687
+      },
+      "live_alt": "Charred and physically opened Herculaneum papyrus fragment preserving ancient writing.",
+      "live_caption": "Herculaneum Papyrus 1521, one of the physically opened fragments now held by the British Library. Public-domain manuscript image.",
+      "catalog_description": "British Library Herculaneum Papyrus 1521 f001r; exact historical manuscript item",
+      "catalog_rights_claim": "Commons marks PD; missing explicit US PD tag; BL reproduction terms review",
+      "identity_disposition": "accurate_subject",
+      "proposed_alt_review_only": null,
+      "browser_status": null,
+      "visitor_natural_width": null,
+      "visitor_transfer_bytes": null,
+      "source_binary_sha256": null,
+      "rights_cleared_for_rehost": false,
+      "wp_media_upload_authorized": false,
+      "replacement_binary_created": false
+    },
+    {
+      "key": "252:4",
+      "slot": 4,
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Herculaneum%20papyrus%201425.png?width=960",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Herculaneum_papyrus_1425.png",
+      "catalog_filename": "Herculaneum_papyrus_1425.png",
+      "catalog_dimensions_px": {
+        "width": 500,
+        "height": 740
+      },
+      "max_width_960_preserve_aspect_px": {
+        "width": 500,
+        "height": 740
+      },
+      "live_alt": "Herculaneum papyrus fragment showing preserved Greek writing on carbonized material.",
+      "live_caption": "A Herculaneum papyrus preserving Greek text. Public-domain manuscript image.",
+      "catalog_description": "Drawn copy of PHerc. 1425 text by Giuseppe Casanova, approximately 1807; NOT physical carbonized papyrus fragment",
+      "catalog_rights_claim": "public domain two-dimensional drawing claim; rights jurisdiction review",
+      "identity_disposition": "editorial_mismatch",
+      "proposed_alt_review_only": "Historical handwritten copy of text from Herculaneum Papyrus 1425, drawn by Giuseppe Casanova around 1807.",
+      "browser_status": null,
+      "visitor_natural_width": null,
+      "visitor_transfer_bytes": null,
+      "source_binary_sha256": null,
+      "rights_cleared_for_rehost": false,
+      "wp_media_upload_authorized": false,
+      "replacement_binary_created": false
+    },
+    {
+      "key": "252:5",
+      "slot": 5,
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tetrapharmakos%20PHerc%201005%20col%205.png",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Tetrapharmakos_PHerc_1005_col_5.png",
+      "catalog_filename": "Tetrapharmakos_PHerc_1005_col_5.png",
+      "catalog_dimensions_px": {
+        "width": 467,
+        "height": 179
+      },
+      "max_width_960_preserve_aspect_px": {
+        "width": 467,
+        "height": 179
+      },
+      "live_alt": "Digitized text from Herculaneum papyrus PHerc. 1005 showing the kind of ancient writing scholars work to recover.",
+      "live_caption": "Text from PHerc. 1005. Public-domain scholarly facsimile.",
+      "catalog_description": "Handwritten copy of PHerc. 1005 col. 5, attributed to Giuseppe Casanova 1803–1806; NOT digital scan of ancient writing",
+      "catalog_rights_claim": "public domain reproduction claim; Commons warns missing US PD tag",
+      "identity_disposition": "editorial_mismatch",
+      "proposed_alt_review_only": "Early nineteenth-century handwritten copy of PHerc. 1005 column 5, attributed to Giuseppe Casanova.",
+      "browser_status": null,
+      "visitor_natural_width": null,
+      "visitor_transfer_bytes": null,
+      "source_binary_sha256": null,
+      "rights_cleared_for_rehost": false,
+      "wp_media_upload_authorized": false,
+      "replacement_binary_created": false
+    }
+  ],
+  "restoration_policy": "HOLD pending guest browser evidence and rights; original exact catalog images only; no outside image substitution, no image downloads/rehosting and no automated caption or Gutenberg rewrites."
+}
