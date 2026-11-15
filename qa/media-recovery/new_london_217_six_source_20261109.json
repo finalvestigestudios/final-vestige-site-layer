@@ -1,0 +1,414 @@
+{
+  "schema": "fv-media-new-london-217-six-source-custody-v1",
+  "audit_date_utc": "2026-11-09",
+  "scope": "Frozen published WordPress HTML, six exact stored Wikimedia redirect URLs and verified HTML catalog metadata; not visitor browser, true origin HTTP, downloaded binaries, or production publication.",
+  "source_cohort": {
+    "posts": 61,
+    "inline_positions": 355,
+    "external_origin_positions": 288,
+    "as_of": "2026-10-30",
+    "source_part_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+    "post_id": 217,
+    "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/"
+  },
+  "evidence": {
+    "redirects_tested": 6,
+    "external_web_retriever_not_accessible": 6,
+    "commons_catalog_html_verified": 6,
+    "verified_guest_broken": 0,
+    "guest_observation_performed": false,
+    "proposed_76pct_wire_reduction_measured": false,
+    "wordpress_originals_over_1500000_bytes": 15,
+    "oversize_stored_bytes_not_wire_bytes": 47096779
+  },
+  "editorial_alternative_not_equivalent": {
+    "primary_source_url": "https://texashistory.unt.edu/ark:/67531/metapth19251/",
+    "catalog_authority": "UNT Portal to Texas History, Austin History Center/Austin Public Library, Neal Douglass 1937",
+    "image_identity_verified_same_as_any_stored_slot": false,
+    "rights_for_fv_republication_cleared": false,
+    "do_not_auto_substitute": true
+  },
+  "site_qa_p0_owner": "PR #154 — existing guest-browser collector",
+  "site_qa_p0_queue": [
+    "285:5",
+    "285:2",
+    "287:5",
+    "418:1",
+    "418:2",
+    "407:1"
+  ],
+  "rows": [
+    {
+      "slot": "217:0",
+      "post_id": 217,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_London_School_explosion.jpg?width=1280",
+      "original_alt": "The shattered New London School after the March 18, 1937 gas explosion, with rescuers gathered around the ruins.",
+      "inventory_source": {
+        "path": "qa/media-recovery/parts/06.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+        "post_modified_at_source": "2026-10-29T16:04:52"
+      },
+      "external_retrieval": {
+        "checked_utc_date": "2026-11-09",
+        "method": "WEB_OPEN_STORED_COMMONS_REDIRECT",
+        "observation": "NOT_ACCESSIBLE_VIA_THIS_TOOL",
+        "wrapper_status": null,
+        "origin_http_status": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:New_London_School_explosion.jpg",
+        "underlying_source_url": "https://newsroom.ap.org/editorial-photos-videos/detail?itemid=6663ae6645e5da11af9f0014c2589dfb&mediatype=photo",
+        "source_authority": "ASSOCIATED_PRESS_VIA_COMMONS",
+        "html_readable": true,
+        "original_catalog_dimensions_px": [
+          760,
+          609
+        ],
+        "catalog_metadata_not_binary_decode": true,
+        "credit": "Associated Press; photographer unidentified",
+        "license_observation": "COMMONS_PD_US_NOT_RENEWED_ASSERTION_NOT_INDEPENDENTLY_ADJUDICATED"
+      },
+      "conditional_960px": {
+        "max_width_px": 960,
+        "dimensions_px": [
+          760,
+          609
+        ],
+        "no_upscaling": true,
+        "not_a_created_derivative": true,
+        "visual_integrity_gate": "ORIGINAL_SMALLER_THAN_960; no upscale."
+      },
+      "historical_integrity_note": "Commons claims date 1937-03-17 but disaster occurred 1937-03-18: metadata chronology contradiction, do not copy erroneous date into caption.",
+      "visitor": {
+        "actual_http_status": null,
+        "final_current_src": null,
+        "image_mime": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "uncached_encoded_wire_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "item_rights_cleared": false,
+        "exact_binary_identity_verified": false,
+        "visual_editor_approved": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_media_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "217:1",
+      "post_id": 217,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_London_School_before_explosion.webp?width=1280",
+      "original_alt": "London School in East Texas before the March 1937 explosion, showing the large modern school building intact.",
+      "inventory_source": {
+        "path": "qa/media-recovery/parts/06.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+        "post_modified_at_source": "2026-10-29T16:04:52"
+      },
+      "external_retrieval": {
+        "checked_utc_date": "2026-11-09",
+        "method": "WEB_OPEN_STORED_COMMONS_REDIRECT",
+        "observation": "NOT_ACCESSIBLE_VIA_THIS_TOOL",
+        "wrapper_status": null,
+        "origin_http_status": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:New_London_School_before_explosion.webp",
+        "underlying_source_url": "https://www.mysanantonio.com/entertainment/visual_arts/article/Books-chronicle-37-school-explosion-3410834.php",
+        "source_authority": "SECONDARY_PUBLISHER_VIA_COMMONS",
+        "html_readable": true,
+        "original_catalog_dimensions_px": [
+          960,
+          685
+        ],
+        "catalog_metadata_not_binary_decode": true,
+        "credit": "Photographer unknown; Commons cites mySanAntonio and historical newspapers",
+        "license_observation": "COMMONS_PD_US_NOT_RENEWED_ASSERTION_NOT_INDEPENDENTLY_ADJUDICATED"
+      },
+      "conditional_960px": {
+        "max_width_px": 960,
+        "dimensions_px": [
+          960,
+          685
+        ],
+        "no_upscaling": true,
+        "not_a_created_derivative": true,
+        "visual_integrity_gate": "WebP input; preserve format compatibility, 960 px original."
+      },
+      "historical_integrity_note": "Prior to March 18 disaster; do not caption as explosion aftermath.",
+      "visitor": {
+        "actual_http_status": null,
+        "final_current_src": null,
+        "image_mime": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "uncached_encoded_wire_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "item_rights_cleared": false,
+        "exact_binary_identity_verified": false,
+        "visual_editor_approved": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_media_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "217:2",
+      "post_id": 217,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/INP_Photos_of_New_London_School_explosion.jpg?width=1280",
+      "original_alt": "Rescuers and debris at New London School after the 1937 explosion, photographed for International News Photos.",
+      "inventory_source": {
+        "path": "qa/media-recovery/parts/06.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+        "post_modified_at_source": "2026-10-29T16:04:52"
+      },
+      "external_retrieval": {
+        "checked_utc_date": "2026-11-09",
+        "method": "WEB_OPEN_STORED_COMMONS_REDIRECT",
+        "observation": "NOT_ACCESSIBLE_VIA_THIS_TOOL",
+        "wrapper_status": null,
+        "origin_http_status": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:INP_Photos_of_New_London_School_explosion.jpg",
+        "underlying_source_url": "https://www.newspapers.com/newspage/1260112112/",
+        "source_authority": "INTERNATIONAL_NEWS_PHOTOS_SAN_ANTONIO_LIGHT_VIA_COMMONS",
+        "html_readable": true,
+        "original_catalog_dimensions_px": [
+          2861,
+          2244
+        ],
+        "catalog_metadata_not_binary_decode": true,
+        "credit": "International News Photos / San Antonio Light, March 19, 1937",
+        "license_observation": "COMMONS_PD_SCAN_AND_US_NOT_RENEWED_ASSERTION_REVIEW_REQUIRED"
+      },
+      "conditional_960px": {
+        "max_width_px": 960,
+        "dimensions_px": [
+          960,
+          753
+        ],
+        "no_upscaling": true,
+        "not_a_created_derivative": true,
+        "visual_integrity_gate": "Full collage must offer detail-access path if captions illegible at 960."
+      },
+      "historical_integrity_note": "Full newspaper collage (not a single uncaptioned event photo). Keep overall layout; evaluate text legibility at 960px.",
+      "visitor": {
+        "actual_http_status": null,
+        "final_current_src": null,
+        "image_mime": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "uncached_encoded_wire_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "item_rights_cleared": false,
+        "exact_binary_identity_verified": false,
+        "visual_editor_approved": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_media_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "217:3",
+      "post_id": 217,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/INP_Photos_of_New_London_School_explosion_(1).jpg?width=1280",
+      "original_alt": "Emergency workers at the New London School ruins after the March 1937 explosion.",
+      "inventory_source": {
+        "path": "qa/media-recovery/parts/06.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+        "post_modified_at_source": "2026-10-29T16:04:52"
+      },
+      "external_retrieval": {
+        "checked_utc_date": "2026-11-09",
+        "method": "WEB_OPEN_STORED_COMMONS_REDIRECT",
+        "observation": "NOT_ACCESSIBLE_VIA_THIS_TOOL",
+        "wrapper_status": null,
+        "origin_http_status": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:INP_Photos_of_New_London_School_explosion_(1).jpg",
+        "underlying_source_url": "https://www.newspapers.com/newspage/1260112112/",
+        "source_authority": "INTERNATIONAL_NEWS_PHOTOS_EXTRACTED_CROP_VIA_COMMONS",
+        "html_readable": true,
+        "original_catalog_dimensions_px": [
+          2457,
+          1950
+        ],
+        "catalog_metadata_not_binary_decode": true,
+        "credit": "International News Photos / San Antonio Light, extracted photograph 1",
+        "license_observation": "COMMONS_PD_SCAN_AND_US_NOT_RENEWED_ASSERTION_REVIEW_REQUIRED"
+      },
+      "conditional_960px": {
+        "max_width_px": 960,
+        "dimensions_px": [
+          960,
+          762
+        ],
+        "no_upscaling": true,
+        "not_a_created_derivative": true,
+        "visual_integrity_gate": "Image edited in 2026 for quality; preserve crop/meaning."
+      },
+      "historical_integrity_note": "Extracted crop from position 217:2 composite; confirm specific rescue scene and crop, not interchangeable with 217:4.",
+      "visitor": {
+        "actual_http_status": null,
+        "final_current_src": null,
+        "image_mime": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "uncached_encoded_wire_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "item_rights_cleared": false,
+        "exact_binary_identity_verified": false,
+        "visual_editor_approved": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_media_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "217:4",
+      "post_id": 217,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/INP_Photos_of_New_London_School_explosion_(2).jpg?width=1280",
+      "original_alt": "Rescue and recovery activity among the wreckage of New London School after the gas explosion.",
+      "inventory_source": {
+        "path": "qa/media-recovery/parts/06.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+        "post_modified_at_source": "2026-10-29T16:04:52"
+      },
+      "external_retrieval": {
+        "checked_utc_date": "2026-11-09",
+        "method": "WEB_OPEN_STORED_COMMONS_REDIRECT",
+        "observation": "NOT_ACCESSIBLE_VIA_THIS_TOOL",
+        "wrapper_status": null,
+        "origin_http_status": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:INP_Photos_of_New_London_School_explosion_(2).jpg",
+        "underlying_source_url": "https://www.newspapers.com/newspage/1260112112/",
+        "source_authority": "INTERNATIONAL_NEWS_PHOTOS_EXTRACTED_CROP_VIA_COMMONS",
+        "html_readable": true,
+        "original_catalog_dimensions_px": [
+          2457,
+          1862
+        ],
+        "catalog_metadata_not_binary_decode": true,
+        "credit": "International News Photos / San Antonio Light, extracted photograph 2",
+        "license_observation": "COMMONS_PD_SCAN_AND_US_NOT_RENEWED_ASSERTION_REVIEW_REQUIRED"
+      },
+      "conditional_960px": {
+        "max_width_px": 960,
+        "dimensions_px": [
+          960,
+          728
+        ],
+        "no_upscaling": true,
+        "not_a_created_derivative": true,
+        "visual_integrity_gate": "Image edited in 2026 for quality; preserve crop/meaning."
+      },
+      "historical_integrity_note": "Different extracted crop from position 217:2 composite; no swapping scenes with 217:3.",
+      "visitor": {
+        "actual_http_status": null,
+        "final_current_src": null,
+        "image_mime": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "uncached_encoded_wire_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "item_rights_cleared": false,
+        "exact_binary_identity_verified": false,
+        "visual_editor_approved": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_media_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "217:5",
+      "post_id": 217,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_London_School_Explosion_Memorial_-_46699056584.jpg?width=1280",
+      "original_alt": "New London School Explosion Memorial in Texas, photographed in 2016.",
+      "inventory_source": {
+        "path": "qa/media-recovery/parts/06.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+        "post_modified_at_source": "2026-10-29T16:04:52"
+      },
+      "external_retrieval": {
+        "checked_utc_date": "2026-11-09",
+        "method": "WEB_OPEN_STORED_COMMONS_REDIRECT",
+        "observation": "NOT_ACCESSIBLE_VIA_THIS_TOOL",
+        "wrapper_status": null,
+        "origin_http_status": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:New_London_School_Explosion_Memorial_-_46699056584.jpg",
+        "underlying_source_url": "https://www.flickr.com/photos/52855156@N00/46699056584/",
+        "source_authority": "FLICKR_ORIGINAL_VIA_COMMONS",
+        "html_readable": true,
+        "original_catalog_dimensions_px": [
+          3840,
+          2160
+        ],
+        "catalog_metadata_not_binary_decode": true,
+        "credit": "QuesterMark",
+        "license_observation": "CC_BY_SA_2_0_GENERIC_CREDIT_LICENSE_LINK_AND_ADAPTATION_NOTICE"
+      },
+      "conditional_960px": {
+        "max_width_px": 960,
+        "dimensions_px": [
+          960,
+          540
+        ],
+        "no_upscaling": true,
+        "not_a_created_derivative": true,
+        "visual_integrity_gate": "Any edited derivative requires attribution, indicated changes, ShareAlike-compatible derivative conditions."
+      },
+      "historical_integrity_note": "Memorial photograph taken 2016-07-05; not an image from 1937. Flickr 2019 publication is not capture date.",
+      "visitor": {
+        "actual_http_status": null,
+        "final_current_src": null,
+        "image_mime": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "uncached_encoded_wire_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "item_rights_cleared": false,
+        "exact_binary_identity_verified": false,
+        "visual_editor_approved": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_media_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    }
+  ]
+}

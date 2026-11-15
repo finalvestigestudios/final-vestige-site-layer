@@ -1,0 +1,155 @@
+{
+  "schema": "fv-p0-three-primary-scene-guard-v1",
+  "date_utc": "2026-11-11",
+  "scope": "Read-only primary-source identity/chronology/rights audit; source-retriever wrapper is NOT an origin HTTP status or guest browser result",
+  "branch": "media/triage-43-source-15-oversize-20261109",
+  "authority": {
+    "source_bridge_path": "qa/media-recovery/browser_handoff_6_p0_15_oversize_20261110.json",
+    "source_bridge_blob_sha": "d1a9c7a499510ec37bcdba5858d45165752587e0",
+    "site_qa_pr": 154,
+    "recovery_pr": 1703,
+    "worklist_pr": 183
+  },
+  "sitewide": {
+    "historical_posts": 61,
+    "historical_external_images_researched": 288,
+    "historical_external_images_total": 288,
+    "historical_claim_broken": 42,
+    "confirmed_guest_broken": 0,
+    "claimed_savings_pct": 76,
+    "actual_savings_pct": null,
+    "oversized_wordpress_originals": 15,
+    "oversized_stored_bytes": 47096779
+  },
+  "items": [
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "exact_published_original_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "independent_retriever_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "FORBIDDEN",
+        "wrapper_code": 403
+      },
+      "guest_http_status": null,
+      "actual_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_px": null,
+      "cold_encoded_image_bytes": null,
+      "primary_evidence": {
+        "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "catalog_kind": "USCG_ITEM_CATALOG",
+        "item_identifier": "210330-G-DE713-0002.JPG",
+        "primary_description_subject": "SERVICE_PORTRAIT_ANTHONY_PETTIT",
+        "catalog_publication_date": "2021-04-01",
+        "depicted_historical_year": 1946,
+        "rights_notice": "CATALOG_ITEM_PD_RELEASE_WITH_COMMERCIAL_USE_LIMITATIONS",
+        "advertised_download_size_mb_not_transfer": 0.04,
+        "notes": "This is a portrait of chief petty officer Anthony Pettit, NOT wreckage or a lighthouse; the exact filename is present on the official catalog page. Byte equality with original media.defense.gov derivative is untested.",
+        "source_urls": [
+          "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+          "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/"
+        ]
+      },
+      "native_dimensions_verified": null,
+      "conditional_candidate_output_dimensions": null,
+      "max_width_px_without_upscale": 960,
+      "exact_binary_or_crop_identity_proven": false,
+      "guest_failure_confirmed": false,
+      "commercial_reuse_approval": false,
+      "item_level_attribution_review_done": false,
+      "editor_scene_signoff": false,
+      "wordpress_cache_approval": false,
+      "wordpress_upload_approval": false,
+      "production_write_permitted": false,
+      "decision": "HOLD_PRIMARY_SOURCE_LEAD_ONLY"
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "exact_published_original_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "independent_retriever_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "FORBIDDEN",
+        "wrapper_code": 403
+      },
+      "guest_http_status": null,
+      "actual_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_px": null,
+      "cold_encoded_image_bytes": null,
+      "primary_evidence": {
+        "catalog_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "catalog_kind": "USCG_OFFICIAL_HISTORICAL_ARTICLE",
+        "item_identifier": null,
+        "primary_description_subject": "SCOTCH_CAP_1946_DEBRIS_VIEWS",
+        "catalog_publication_date": "2021-04-01",
+        "depicted_historical_year": 1946,
+        "rights_notice": "OFFICIAL_ARTICLE_NO_ITEM_SPECIFIC_REHOST_CLEARANCE",
+        "advertised_download_size_mb_not_transfer": null,
+        "notes": "Official 2021 USCG history contains two *different* 1946 aftermath photos (view from bluff, aerial remains). Neither was proven identical to published debris2_1946.jpg; do not substitute a NOAA page labelled 1964 without resolving chronology.",
+        "source_urls": [
+          "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+          "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1988680/scotch-cap-light/"
+        ]
+      },
+      "native_dimensions_verified": null,
+      "conditional_candidate_output_dimensions": null,
+      "max_width_px_without_upscale": 960,
+      "exact_binary_or_crop_identity_proven": false,
+      "guest_failure_confirmed": false,
+      "commercial_reuse_approval": false,
+      "item_level_attribution_review_done": false,
+      "editor_scene_signoff": false,
+      "wordpress_cache_approval": false,
+      "wordpress_upload_approval": false,
+      "production_write_permitted": false,
+      "decision": "HOLD_PRIMARY_SOURCE_LEAD_ONLY"
+    },
+    {
+      "slot": "407:1",
+      "post_id": 407,
+      "exact_published_original_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "independent_retriever_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "UNSUPPORTED_OCTET_STREAM",
+        "wrapper_code": 400
+      },
+      "guest_http_status": null,
+      "actual_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_px": null,
+      "cold_encoded_image_bytes": null,
+      "primary_evidence": {
+        "catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+        "catalog_kind": "USGS_ITEM_CATALOG_EDITORIAL_ALTERNATIVE",
+        "item_identifier": null,
+        "primary_description_subject": "HEBGEN_LAKE_1959_FAULT_SCARP_J_R_STACY",
+        "catalog_publication_date": "2019-04-19",
+        "depicted_historical_year": 1959,
+        "rights_notice": "USGS_ALTERNATIVE_ITEM_MARKED_PUBLIC_DOMAIN",
+        "advertised_download_size_mb_not_transfer": null,
+        "notes": "USGS identifies a 1959 fault-scarp photograph by J. R. Stacy as public domain. The original img7535.jpg S3 object has NOT been matched to this photo or its exact crop; catalog is a scene-level alternative only.",
+        "source_urls": [
+          "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+          "https://www.usgs.gov/observatories/yvo/news/1959-madison-slide-part-1-a-deadly-consequence-hebgen-lake-earthquake"
+        ]
+      },
+      "native_dimensions_verified": null,
+      "conditional_candidate_output_dimensions": null,
+      "max_width_px_without_upscale": 960,
+      "exact_binary_or_crop_identity_proven": false,
+      "guest_failure_confirmed": false,
+      "commercial_reuse_approval": false,
+      "item_level_attribution_review_done": false,
+      "editor_scene_signoff": false,
+      "wordpress_cache_approval": false,
+      "wordpress_upload_approval": false,
+      "production_write_permitted": false,
+      "decision": "HOLD_PRIMARY_SOURCE_LEAD_ONLY"
+    }
+  ],
+  "production_changes": 0,
+  "external_binary_downloads": 0,
+  "subscription_spend_usd": 0
+}

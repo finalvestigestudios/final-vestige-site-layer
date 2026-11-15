@@ -1,0 +1,47 @@
+{
+  "schema": "fv-lituya-277-original-live-source-fixture-v1",
+  "observed_utc_date": "2026-11-10",
+  "post_id": 277,
+  "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/",
+  "live_modified": "2026-08-21T00:32:52",
+  "live_status": "publish",
+  "frozen_source_blob_sha": "92a904c8da1ace1f972b2f00adf1a4847dde2b99",
+  "images": [
+    {
+      "slot": "277:0",
+      "src": "https://www.datosfreak.org/wp-content/uploads/2019/01/Tsunami-maremoto-Lituya-Alaska-1958-1.jpg",
+      "alt": "Aerial view of Lituya Bay after the July 1958 megatsunami showing the stripped shoreline and runup scar.",
+      "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/"
+    },
+    {
+      "slot": "277:1",
+      "src": "https://www.researchgate.net/profile/Tim-Davies-4/publication/258771194/figure/fig10/AS:669504034914309@1536632655693/Lituya-Bay-following-the-1958-tsunami-a-NW-panoramic-view-of-Lituya-Bay-and-Centoaph.png",
+      "alt": "Scientific aerial view of Lituya Bay showing the fjord, Cenotaph Island and tsunami damage.",
+      "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/"
+    },
+    {
+      "slot": "277:2",
+      "src": "https://indomgb.s3.amazonaws.com/wp-content/uploads/2025/10/29031840/gigantesca-cicatriz-en-el-acantilado-que-se-ID7X2VZ6AZGR5EAPSHH3IDCIUQ.jpg",
+      "alt": "The enormous landslide and runup scar at the head of Lituya Bay.",
+      "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/"
+    },
+    {
+      "slot": "277:3",
+      "src": "https://imagerenderer.com/images/rendered/default/greeting-card/images-medium-5/4-damage-from-1958-lituya-bay-tsunami-us-geological-surveyscience-photo-library.jpg",
+      "alt": "Shoreline stripped of mature forest by the 1958 Lituya Bay tsunami.",
+      "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/"
+    },
+    {
+      "slot": "277:4",
+      "src": "https://miro.medium.com/v2/resize:fit:1400/1*NtiMuQy8rJhpG_xg-nv92g.png",
+      "alt": "Aerial photograph showing the pale band left where the 1958 wave stripped forest around Lituya Bay.",
+      "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/"
+    },
+    {
+      "slot": "277:5",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Lituyabay_Earth_Observatory_image_2020.jpg",
+      "alt": "Modern satellite view of Lituya Bay, Alaska, with forest regrown around the shoreline.",
+      "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/"
+    }
+  ]
+}

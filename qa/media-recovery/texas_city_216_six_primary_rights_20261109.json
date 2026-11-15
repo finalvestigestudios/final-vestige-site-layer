@@ -1,0 +1,348 @@
+{
+  "schema": "fv-media-texas-city-primary-conflict-v1",
+  "audit_date_utc": "2026-11-09",
+  "source_frozen_date_utc": "2026-10-30",
+  "source_inventory": {
+    "path": "qa/media-recovery/parts/06.json",
+    "ref": "qa/media-recovery-reviewed-20261030-1158",
+    "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69"
+  },
+  "source_census": {
+    "path": "qa/media-recovery/offsite_upstream_288_20261109.json",
+    "blob_sha": "92a904c8da1ace1f972b2f00adf1a4847dde2b99"
+  },
+  "post_count_frozen": 61,
+  "offsite_slots_frozen": 288,
+  "reported_42_browser_confirmed": false,
+  "proposed_76pct_wire_savings_measured": false,
+  "original_media_gt_1500000_bytes": 15,
+  "original_media_stored_bytes": 47096779,
+  "live_wp_content_read_back_this_sprint": false,
+  "rights_release_or_caching_authorized": false,
+  "rows": [
+    {
+      "slot": "216:0",
+      "post_id": 216,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "original_alt": "Wrecked automobiles in a parking lot about one quarter mile from the Texas City explosion, photographed April 18, 1947.",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Txcitydisasterparkinglot.jpg?width=1280",
+      "source_corpus_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "retriever": {
+        "method": "web.open (independent external URL retrieval service)",
+        "checked_utc_date": "2026-11-09",
+        "observation": "TOOL_URL_NOT_ACCESSIBLE",
+        "actual_origin_http_status": null
+      },
+      "visitor": {
+        "guest_browser_http_status": null,
+        "guest_broken": null,
+        "decoded_width_px": null,
+        "decoded_height_px": null,
+        "transfer_bytes": null,
+        "was_cached": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Txcitydisasterparkinglot.jpg",
+        "primary_authority_url": "https://digitalcollections.lib.uh.edu/collections/0p0967712?locale=en&view=gallery",
+        "authority": "University of Houston Digital Collections; Commons derivative",
+        "creator_credit": "Charles Tellus Townsend per UH current listing",
+        "native_catalog_px": [
+          3111,
+          2421
+        ],
+        "conditional_max960_px": [
+          960,
+          747
+        ],
+        "catalog_geometry_not_binary_verified": true,
+        "exact_binary_or_crop_verified": false,
+        "rights_observation": "Commons says public domain; UH current primary description states Copyright Undetermined. Conflicting claims; permission NOT established.",
+        "source_rights_conflict": true,
+        "scene_integrity_gate": "April 18, 1947 wrecked vehicles; verify same image/crop against UH source"
+      },
+      "recovery_plan": {
+        "stage": "HOLD",
+        "steps": "If guest browser proves a failure, verify exact-image/crop and catalog accession, resolve per-item rights and attribution, inspect full-res visual, create ≤960px no-upscale local derivative only after authorized download, capture checksum/source/license, upload to WP media only after separate approval, use staged non-destructive reversible mapping and verified guest-browser before/after; never blindly rewrite Gutenberg blocks."
+      },
+      "release": {
+        "rights_cleared": false,
+        "byte_identity_verified": false,
+        "full_resolution_visual_check_passed": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "216:1",
+      "post_id": 216,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "original_alt": "Memorial to the Texas City firefighters killed in the 1947 disaster.",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Texas_City_Disaster_Firemen_Memorial.jpg?width=960",
+      "source_corpus_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "retriever": {
+        "method": "web.open (independent external URL retrieval service)",
+        "checked_utc_date": "2026-11-09",
+        "observation": "TOOL_URL_NOT_ACCESSIBLE",
+        "actual_origin_http_status": null
+      },
+      "visitor": {
+        "guest_browser_http_status": null,
+        "guest_broken": null,
+        "decoded_width_px": null,
+        "decoded_height_px": null,
+        "transfer_bytes": null,
+        "was_cached": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Texas_City_Disaster_Firemen_Memorial.jpg",
+        "primary_authority_url": "https://commons.wikimedia.org/wiki/File:Texas_City_Disaster_Firemen_Memorial.jpg",
+        "authority": "Creator's Commons upload",
+        "creator_credit": "Jim Evans",
+        "native_catalog_px": [
+          1917,
+          1544
+        ],
+        "conditional_max960_px": [
+          960,
+          773
+        ],
+        "catalog_geometry_not_binary_verified": true,
+        "exact_binary_or_crop_verified": false,
+        "rights_observation": "Modern 2008 photo licensed CC BY-SA 4.0 by creator; credit/link/change indication/share-alike obligations. Not government public domain.",
+        "source_rights_conflict": false,
+        "scene_integrity_gate": "Modern firefighters' memorial, not 1947 event photograph"
+      },
+      "recovery_plan": {
+        "stage": "HOLD",
+        "steps": "If guest browser proves a failure, verify exact-image/crop and catalog accession, resolve per-item rights and attribution, inspect full-res visual, create ≤960px no-upscale local derivative only after authorized download, capture checksum/source/license, upload to WP media only after separate approval, use staged non-destructive reversible mapping and verified guest-browser before/after; never blindly rewrite Gutenberg blocks."
+      },
+      "release": {
+        "rights_cleared": false,
+        "byte_identity_verified": false,
+        "full_resolution_visual_check_passed": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "216:2",
+      "post_id": 216,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "original_alt": "A damaged five-story building in Texas City two days after the 1947 explosions.",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Txcitydisaster5storybuilding.jpg",
+      "source_corpus_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "retriever": {
+        "method": "web.open (independent external URL retrieval service)",
+        "checked_utc_date": "2026-11-09",
+        "observation": "TOOL_URL_NOT_ACCESSIBLE",
+        "actual_origin_http_status": null
+      },
+      "visitor": {
+        "guest_browser_http_status": null,
+        "guest_broken": null,
+        "decoded_width_px": null,
+        "decoded_height_px": null,
+        "transfer_bytes": null,
+        "was_cached": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Txcitydisaster5storybuilding.jpg",
+        "primary_authority_url": "https://digitalcollections.lib.uh.edu/collections/0p0967712?locale=en&view=gallery",
+        "authority": "University of Houston Digital Collections; Commons derivative",
+        "creator_credit": "Charles Tellus Townsend per UH current listing",
+        "native_catalog_px": [
+          2765,
+          2112
+        ],
+        "conditional_max960_px": [
+          960,
+          733
+        ],
+        "catalog_geometry_not_binary_verified": true,
+        "exact_binary_or_crop_verified": false,
+        "rights_observation": "Commons says public domain; University of Houston current primary description states Copyright Undetermined. Conflicting claims.",
+        "source_rights_conflict": true,
+        "scene_integrity_gate": "Damage to five-story building; verify incident-day caption, date, identical crop"
+      },
+      "recovery_plan": {
+        "stage": "HOLD",
+        "steps": "If guest browser proves a failure, verify exact-image/crop and catalog accession, resolve per-item rights and attribution, inspect full-res visual, create ≤960px no-upscale local derivative only after authorized download, capture checksum/source/license, upload to WP media only after separate approval, use staged non-destructive reversible mapping and verified guest-browser before/after; never blindly rewrite Gutenberg blocks."
+      },
+      "release": {
+        "rights_cleared": false,
+        "byte_identity_verified": false,
+        "full_resolution_visual_check_passed": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "216:3",
+      "post_id": 216,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "original_alt": "Aerial view of the Texas City industrial waterfront from a U.S. government photographic series dating to the 1940s.",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Texas_-_Texas_City_-_NARA_-_68149862.jpg?width=1280",
+      "source_corpus_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "retriever": {
+        "method": "web.open (independent external URL retrieval service)",
+        "checked_utc_date": "2026-11-09",
+        "observation": "TOOL_URL_NOT_ACCESSIBLE",
+        "actual_origin_http_status": null
+      },
+      "visitor": {
+        "guest_browser_http_status": null,
+        "guest_broken": null,
+        "decoded_width_px": null,
+        "decoded_height_px": null,
+        "transfer_bytes": null,
+        "was_cached": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Texas_-_Texas_City_-_NARA_-_68149862.jpg",
+        "primary_authority_url": "https://catalog.archives.gov/id/68149862",
+        "authority": "U.S. National Archives, Record Group 18 / Army Air Forces",
+        "creator_credit": "US Army Air Forces (record series attribution)",
+        "native_catalog_px": [
+          6923,
+          5485
+        ],
+        "conditional_max960_px": [
+          960,
+          761
+        ],
+        "catalog_geometry_not_binary_verified": true,
+        "exact_binary_or_crop_verified": false,
+        "rights_observation": "Commons carries US federal government public-domain rationale; item-level author/rights and exact binary still require confirmation.",
+        "source_rights_conflict": false,
+        "scene_integrity_gate": "NARA title Texas - Texas City; series date range 1917–1964 does NOT establish this image dates to 1947 or depicts explosion"
+      },
+      "recovery_plan": {
+        "stage": "HOLD",
+        "steps": "If guest browser proves a failure, verify exact-image/crop and catalog accession, resolve per-item rights and attribution, inspect full-res visual, create ≤960px no-upscale local derivative only after authorized download, capture checksum/source/license, upload to WP media only after separate approval, use staged non-destructive reversible mapping and verified guest-browser before/after; never blindly rewrite Gutenberg blocks."
+      },
+      "release": {
+        "rights_cleared": false,
+        "byte_identity_verified": false,
+        "full_resolution_visual_check_passed": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "216:4",
+      "post_id": 216,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "original_alt": "A wrecked ship in the Texas City harbor after the 1947 explosions, associated with the High Flyer and Wilson B. Keene disaster area.",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Txcitydisasterboat.jpg",
+      "source_corpus_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "retriever": {
+        "method": "web.open (independent external URL retrieval service)",
+        "checked_utc_date": "2026-11-09",
+        "observation": "TOOL_URL_NOT_ACCESSIBLE",
+        "actual_origin_http_status": null
+      },
+      "visitor": {
+        "guest_browser_http_status": null,
+        "guest_broken": null,
+        "decoded_width_px": null,
+        "decoded_height_px": null,
+        "transfer_bytes": null,
+        "was_cached": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Txcitydisasterboat.jpg",
+        "primary_authority_url": "https://digitalcollections.lib.uh.edu/collections/0p0967712?locale=en&view=gallery",
+        "authority": "University of Houston Texas City Disaster Photographs collection; Commons derivative",
+        "creator_credit": "Not confirmed for this exact frame",
+        "native_catalog_px": [
+          2768,
+          2120
+        ],
+        "conditional_max960_px": [
+          960,
+          735
+        ],
+        "catalog_geometry_not_binary_verified": true,
+        "exact_binary_or_crop_verified": false,
+        "rights_observation": "Commons claims public domain via historical UH source; UH collection shows Copyright Undetermined for historical images. Exact-item rights unresolved.",
+        "source_rights_conflict": true,
+        "scene_integrity_gate": "Commons description identifies SS Wilson B. Keene; do not substitute High Flyer or assume same vessel"
+      },
+      "recovery_plan": {
+        "stage": "HOLD",
+        "steps": "If guest browser proves a failure, verify exact-image/crop and catalog accession, resolve per-item rights and attribution, inspect full-res visual, create ≤960px no-upscale local derivative only after authorized download, capture checksum/source/license, upload to WP media only after separate approval, use staged non-destructive reversible mapping and verified guest-browser before/after; never blindly rewrite Gutenberg blocks."
+      },
+      "release": {
+        "rights_cleared": false,
+        "byte_identity_verified": false,
+        "full_resolution_visual_check_passed": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "216:5",
+      "post_id": 216,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "original_alt": "One of the Grandcamp anchors displayed in Texas City Memorial Park after the 1947 disaster.",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Grandcampanchor.jpg",
+      "source_corpus_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "retriever": {
+        "method": "web.open (independent external URL retrieval service)",
+        "checked_utc_date": "2026-11-09",
+        "observation": "TOOL_URL_NOT_ACCESSIBLE",
+        "actual_origin_http_status": null
+      },
+      "visitor": {
+        "guest_browser_http_status": null,
+        "guest_broken": null,
+        "decoded_width_px": null,
+        "decoded_height_px": null,
+        "transfer_bytes": null,
+        "was_cached": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Grandcampanchor.jpg",
+        "primary_authority_url": "https://commons.wikimedia.org/wiki/File:Grandcampanchor.jpg",
+        "authority": "Uploader-declared creator's photo on Commons",
+        "creator_credit": "David Provines / Provines (uploader)",
+        "native_catalog_px": [
+          480,
+          320
+        ],
+        "conditional_max960_px": [
+          480,
+          320
+        ],
+        "catalog_geometry_not_binary_verified": true,
+        "exact_binary_or_crop_verified": false,
+        "rights_observation": "Uploader marked PD-self (modern photograph, 2006); creator declaration and sculpture/property scope require item review.",
+        "source_rights_conflict": false,
+        "scene_integrity_gate": "2006 photo of modern memorial anchor, not historic wreckage; preserve at 480x320, no enlargement"
+      },
+      "recovery_plan": {
+        "stage": "HOLD",
+        "steps": "If guest browser proves a failure, verify exact-image/crop and catalog accession, resolve per-item rights and attribution, inspect full-res visual, create ≤960px no-upscale local derivative only after authorized download, capture checksum/source/license, upload to WP media only after separate approval, use staged non-destructive reversible mapping and verified guest-browser before/after; never blindly rewrite Gutenberg blocks."
+      },
+      "release": {
+        "rights_cleared": false,
+        "byte_identity_verified": false,
+        "full_resolution_visual_check_passed": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    }
+  ]
+}

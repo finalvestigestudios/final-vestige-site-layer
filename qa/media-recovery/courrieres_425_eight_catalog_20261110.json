@@ -1,0 +1,437 @@
+{
+  "schema": "fv-courrieres-eight-v1",
+  "utc_date": "2026-11-10",
+  "frozen_inventory_date": "2026-10-30",
+  "frozen_fixture_path": "qa/media-recovery/parts/01.json",
+  "frozen_fixture_branch": "qa/media-recovery-reviewed-20261030-1158",
+  "frozen_fixture_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+  "counts": {
+    "catalog_html_readable": 8,
+    "new_exact_source_research_slots": 8,
+    "actual_visitor_broken_confirmed": 0,
+    "actual_visitor_loaded_confirmed": 0,
+    "reported_42_broken_confirmed": false,
+    "proposed_76_percent_wire_savings_measured": false,
+    "oversize_wp_original_count": 15,
+    "oversize_wp_original_stored_bytes": 47096779
+  },
+  "notes": "All eight exact published Commons Special:Redirect links were tool-inaccessible in web text retriever, NOT verified origin or guest HTTP errors; the recorded file dimensions came from Commons HTML, not downloaded binary files. 960px is only a conditional staging maximum; no download, cache, WordPress writes or homepage edits.",
+  "rows": [
+    {
+      "slot": "425:1",
+      "post_id": 425,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_Groupe_de_Sauveteurs,_Fosse_n%C2%B0_2.jpg?width=960",
+      "stored_original_alt": "Mine rescuers gathered at Courrières pit number 2 during rescue operations after the March 10, 1906 explosion.",
+      "source_fixture_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "catalog": {
+        "file_page_url": "https://commons.wikimedia.org/wiki/File:Catastrophe_de_Courri%C3%A8res_-_Groupe_de_Sauveteurs%2C_Fosse_n%C2%B0_2.jpg",
+        "title": "Catastrophe de Courrières - Groupe de Sauveteurs, Fosse n° 2.jpg",
+        "native_catalog_px": [
+          1245,
+          792
+        ],
+        "catalog_credited_author": "Unknown",
+        "archival_scene_summary": "Courrières pit 2 rescue group",
+        "reuse_claim": "COMMONS_PD_FR_70_US_TAG_MISSING",
+        "primary_source_candidate": null,
+        "primary_catalog_item_independently_verified": false,
+        "html_retriever": "CATALOG_READABLE"
+      },
+      "independent_redirect_probe": {
+        "method": "WEB_TEXT_RETRIEVER_NOT_HTTP_CLIENT",
+        "status": "TOOL_INACCESSIBLE",
+        "origin_http_status": null,
+        "final_location": null,
+        "visitor_http_status": null,
+        "visitor_natural_px": null,
+        "visitor_encoded_bytes": null,
+        "visitor_broken": null
+      },
+      "conditional_sizing": {
+        "max_width_px": 960,
+        "target_px": [
+          960,
+          611
+        ],
+        "no_upscale": true,
+        "derivative_created": false
+      },
+      "editorial_integrity_review": "SOURCE_AND_ALT_SUBJECT_CONSISTENT",
+      "release_gate": {
+        "same_original_binary_verified": false,
+        "individual_rights_cleared": false,
+        "attribution_cleared": false,
+        "visual_approved": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wp_upload_authorized": false,
+        "block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "425:2",
+      "post_id": 425,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_La_remonte_des_victimes.jpg?width=960",
+      "stored_original_alt": "Rescue and recovery workers bringing victims to the surface during the 1906 Courrières mine disaster.",
+      "source_fixture_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "catalog": {
+        "file_page_url": "https://commons.wikimedia.org/wiki/File:Catastrophe_de_Courri%C3%A8res_-_La_remonte_des_victimes.jpg",
+        "title": "Catastrophe de Courrières - La remonte des victimes.jpg",
+        "native_catalog_px": [
+          1226,
+          761
+        ],
+        "catalog_credited_author": "JÄNNICK Jérémy (verify creator vs digitizer)",
+        "archival_scene_summary": "Victims brought to surface",
+        "reuse_claim": "COMMONS_PD_FR_70_US_TAG_MISSING",
+        "primary_source_candidate": null,
+        "primary_catalog_item_independently_verified": false,
+        "html_retriever": "CATALOG_READABLE"
+      },
+      "independent_redirect_probe": {
+        "method": "WEB_TEXT_RETRIEVER_NOT_HTTP_CLIENT",
+        "status": "TOOL_INACCESSIBLE",
+        "origin_http_status": null,
+        "final_location": null,
+        "visitor_http_status": null,
+        "visitor_natural_px": null,
+        "visitor_encoded_bytes": null,
+        "visitor_broken": null
+      },
+      "conditional_sizing": {
+        "max_width_px": 960,
+        "target_px": [
+          960,
+          596
+        ],
+        "no_upscale": true,
+        "derivative_created": false
+      },
+      "editorial_integrity_review": "ALT_SCENE_PLAUSIBLE_CHECK_ORIGINAL_CROP",
+      "release_gate": {
+        "same_original_binary_verified": false,
+        "individual_rights_cleared": false,
+        "attribution_cleared": false,
+        "visual_approved": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wp_upload_authorized": false,
+        "block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "425:3",
+      "post_id": 425,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_Les_rescap%C3%A9s_sont_soign%C3%A9s.jpg?width=1280",
+      "stored_original_alt": "Survivors of the Courrières mine disaster receiving medical care after emerging from the mine in March 1906.",
+      "source_fixture_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "catalog": {
+        "file_page_url": "https://commons.wikimedia.org/wiki/File:Catastrophe_de_Courri%C3%A8res_-_Les_rescap%C3%A9s_sont_soign%C3%A9s.jpg",
+        "title": "Catastrophe de Courrières - Les rescapés sont soignés.jpg",
+        "native_catalog_px": [
+          798,
+          1024
+        ],
+        "catalog_credited_author": "JÄNNICK Jérémy (verify creator vs digitizer)",
+        "archival_scene_summary": "Survivors receiving care",
+        "reuse_claim": "COMMONS_PD_FR_70_US_TAG_MISSING",
+        "primary_source_candidate": null,
+        "primary_catalog_item_independently_verified": false,
+        "html_retriever": "CATALOG_READABLE"
+      },
+      "independent_redirect_probe": {
+        "method": "WEB_TEXT_RETRIEVER_NOT_HTTP_CLIENT",
+        "status": "TOOL_INACCESSIBLE",
+        "origin_http_status": null,
+        "final_location": null,
+        "visitor_http_status": null,
+        "visitor_natural_px": null,
+        "visitor_encoded_bytes": null,
+        "visitor_broken": null
+      },
+      "conditional_sizing": {
+        "max_width_px": 960,
+        "target_px": [
+          798,
+          1024
+        ],
+        "no_upscale": true,
+        "derivative_created": false
+      },
+      "editorial_integrity_review": "PUBLISHED_REQUEST_1280_NATIVE_798_NO_UPSCALE",
+      "release_gate": {
+        "same_original_binary_verified": false,
+        "individual_rights_cleared": false,
+        "attribution_cleared": false,
+        "visual_approved": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wp_upload_authorized": false,
+        "block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "425:4",
+      "post_id": 425,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_Arriv%C3%A9e_des_Sauveteurs_allemands.jpg?width=960",
+      "stored_original_alt": "German mine rescuers arriving in northern France to assist after the 1906 Courrières mine disaster.",
+      "source_fixture_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "catalog": {
+        "file_page_url": "https://commons.wikimedia.org/wiki/File:Catastrophe_de_Courri%C3%A8res_-_Arriv%C3%A9e_des_Sauveteurs_allemands.jpg",
+        "title": "Catastrophe de Courrières - Arrivée des Sauveteurs allemands.jpg",
+        "native_catalog_px": [
+          1244,
+          791
+        ],
+        "catalog_credited_author": "JÄNNICK Jérémy (verify creator vs digitizer)",
+        "archival_scene_summary": "German mine rescue team arrival",
+        "reuse_claim": "COMMONS_PD_FR_70_US_TAG_MISSING",
+        "primary_source_candidate": null,
+        "primary_catalog_item_independently_verified": false,
+        "html_retriever": "CATALOG_READABLE"
+      },
+      "independent_redirect_probe": {
+        "method": "WEB_TEXT_RETRIEVER_NOT_HTTP_CLIENT",
+        "status": "TOOL_INACCESSIBLE",
+        "origin_http_status": null,
+        "final_location": null,
+        "visitor_http_status": null,
+        "visitor_natural_px": null,
+        "visitor_encoded_bytes": null,
+        "visitor_broken": null
+      },
+      "conditional_sizing": {
+        "max_width_px": 960,
+        "target_px": [
+          960,
+          610
+        ],
+        "no_upscale": true,
+        "derivative_created": false
+      },
+      "editorial_integrity_review": "ALT_SCENE_PLAUSIBLE_CHECK_ORIGINAL_CROP",
+      "release_gate": {
+        "same_original_binary_verified": false,
+        "individual_rights_cleared": false,
+        "attribution_cleared": false,
+        "visual_approved": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wp_upload_authorized": false,
+        "block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "425:5",
+      "post_id": 425,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_Appareil_Guglielminetti-Drager_(01).jpg?width=1280",
+      "stored_original_alt": "A rescuer demonstrating Guglielminetti-Dräger breathing equipment associated with the 1906 Courrières mine rescue effort.",
+      "source_fixture_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "catalog": {
+        "file_page_url": "https://commons.wikimedia.org/wiki/File:Catastrophe_de_Courri%C3%A8res_-_Appareil_Guglielminetti-Drager_(01).jpg",
+        "title": "Catastrophe de Courrières - Appareil Guglielminetti-Drager (01).jpg",
+        "native_catalog_px": [
+          994,
+          625
+        ],
+        "catalog_credited_author": "JÄNNICK Jérémy (verify creator vs digitizer)",
+        "archival_scene_summary": "Guglielminetti-Dräger rescue breathing equipment",
+        "reuse_claim": "COMMONS_PD_FR_70_US_TAG_MISSING",
+        "primary_source_candidate": "https://www.deutsche-digitale-bibliothek.de/item/VUJU4WUSWNQDL7Z52H7IXLN6MFE3LO5S",
+        "primary_catalog_item_independently_verified": false,
+        "html_retriever": "CATALOG_READABLE"
+      },
+      "independent_redirect_probe": {
+        "method": "WEB_TEXT_RETRIEVER_NOT_HTTP_CLIENT",
+        "status": "TOOL_INACCESSIBLE",
+        "origin_http_status": null,
+        "final_location": null,
+        "visitor_http_status": null,
+        "visitor_natural_px": null,
+        "visitor_encoded_bytes": null,
+        "visitor_broken": null
+      },
+      "conditional_sizing": {
+        "max_width_px": 960,
+        "target_px": [
+          960,
+          604
+        ],
+        "no_upscale": true,
+        "derivative_created": false
+      },
+      "editorial_integrity_review": "ALT_ASSERTS_RESCUER_DEMONSTRATING_EQUIPMENT_CATALOG_ONLY_IDENTIFIES_APPARATUS; REQUEST_1280_NATIVE_994",
+      "release_gate": {
+        "same_original_binary_verified": false,
+        "individual_rights_cleared": false,
+        "attribution_cleared": false,
+        "visual_approved": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wp_upload_authorized": false,
+        "block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "425:6",
+      "post_id": 425,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Courri%C3%A8res_1906_LeJ.jpg?width=960",
+      "stored_original_alt": "Contemporary Le Petit Journal illustration depicting recovery operations after the Courrières mine disaster in March 1906.",
+      "source_fixture_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "catalog": {
+        "file_page_url": "https://commons.wikimedia.org/wiki/File:Courri%C3%A8res_1906_LeJ.jpg",
+        "title": "Courrières 1906 LeJ.jpg",
+        "native_catalog_px": [
+          924,
+          1105
+        ],
+        "catalog_credited_author": "Anonymous period illustrator",
+        "archival_scene_summary": "Period Le Petit Journal illustration, not original photographic evidence",
+        "reuse_claim": "COMMONS_PD_FR_100_AND_PD_US_PRE1931_CLAIMS",
+        "primary_source_candidate": "https://gallica.bnf.fr/ark:/12148/bpt6k716688z/f1.item",
+        "primary_catalog_item_independently_verified": false,
+        "html_retriever": "CATALOG_READABLE"
+      },
+      "independent_redirect_probe": {
+        "method": "WEB_TEXT_RETRIEVER_NOT_HTTP_CLIENT",
+        "status": "TOOL_INACCESSIBLE",
+        "origin_http_status": null,
+        "final_location": null,
+        "visitor_http_status": null,
+        "visitor_natural_px": null,
+        "visitor_encoded_bytes": null,
+        "visitor_broken": null
+      },
+      "conditional_sizing": {
+        "max_width_px": 960,
+        "target_px": [
+          924,
+          1105
+        ],
+        "no_upscale": true,
+        "derivative_created": false
+      },
+      "editorial_integrity_review": "ILLUSTRATION_NOT_PHOTO; CATALOG_DATE_25_MAR_VS_HISTORY_23_MAR",
+      "release_gate": {
+        "same_original_binary_verified": false,
+        "individual_rights_cleared": false,
+        "attribution_cleared": false,
+        "visual_approved": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wp_upload_authorized": false,
+        "block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "425:7",
+      "post_id": 425,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_Berthou,_le_dernier_survivant,_24_jours_dans_la_Mine_en_feu.jpg?width=960",
+      "stored_original_alt": "Auguste Berthon, the Courrières miner who emerged alive on April 4, 1906 after approximately twenty-five days underground.",
+      "source_fixture_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "catalog": {
+        "file_page_url": "https://commons.wikimedia.org/wiki/File:Catastrophe_de_Courri%C3%A8res_-_Berthou%2C_le_dernier_survivant%2C_24_jours_dans_la_Mine_en_feu.jpg",
+        "title": "Catastrophe de Courrières - Berthou, le dernier survivant, 24 jours dans la Mine en feu.jpg",
+        "native_catalog_px": [
+          1227,
+          783
+        ],
+        "catalog_credited_author": "JÄNNICK Jérémy (verify creator vs digitizer)",
+        "archival_scene_summary": "Last survivor: title spells Berthou and 24 days",
+        "reuse_claim": "COMMONS_PD_FR_70_US_TAG_MISSING",
+        "primary_source_candidate": null,
+        "primary_catalog_item_independently_verified": false,
+        "html_retriever": "CATALOG_READABLE"
+      },
+      "independent_redirect_probe": {
+        "method": "WEB_TEXT_RETRIEVER_NOT_HTTP_CLIENT",
+        "status": "TOOL_INACCESSIBLE",
+        "origin_http_status": null,
+        "final_location": null,
+        "visitor_http_status": null,
+        "visitor_natural_px": null,
+        "visitor_encoded_bytes": null,
+        "visitor_broken": null
+      },
+      "conditional_sizing": {
+        "max_width_px": 960,
+        "target_px": [
+          960,
+          613
+        ],
+        "no_upscale": true,
+        "derivative_created": false
+      },
+      "editorial_integrity_review": "PUBLISHED_ALT_BERTHON_25_DAYS_VS_FILENAME_BERTHOU_24_DAYS; HISTORICAL_REVIEW",
+      "release_gate": {
+        "same_original_binary_verified": false,
+        "individual_rights_cleared": false,
+        "attribution_cleared": false,
+        "visual_approved": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wp_upload_authorized": false,
+        "block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "425:8",
+      "post_id": 425,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_La_gr%C3%A8ve_des_mineurs.jpg?width=1280",
+      "stored_original_alt": "Coal miners marching during the strike that followed the Courrières disaster in 1906.",
+      "source_fixture_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "catalog": {
+        "file_page_url": "https://commons.wikimedia.org/wiki/File:Catastrophe_de_Courri%C3%A8res_-_La_gr%C3%A8ve_des_mineurs.jpg",
+        "title": "Catastrophe de Courrières - La grève des mineurs.jpg",
+        "native_catalog_px": [
+          5098,
+          3193
+        ],
+        "catalog_credited_author": "E. Baron (Douai), per Commons",
+        "archival_scene_summary": "Seated Lens strike committee with Benoît Broutchoux and Madame Sorgue",
+        "reuse_claim": "COMMONS_PD_FR_70_US_TAG_MISSING_PARALLEL_AGENCY_RIGHTS_MANAGED",
+        "primary_source_candidate": "https://www.granger.com/media/0837397",
+        "primary_catalog_item_independently_verified": false,
+        "html_retriever": "CATALOG_READABLE"
+      },
+      "independent_redirect_probe": {
+        "method": "WEB_TEXT_RETRIEVER_NOT_HTTP_CLIENT",
+        "status": "TOOL_INACCESSIBLE",
+        "origin_http_status": null,
+        "final_location": null,
+        "visitor_http_status": null,
+        "visitor_natural_px": null,
+        "visitor_encoded_bytes": null,
+        "visitor_broken": null
+      },
+      "conditional_sizing": {
+        "max_width_px": 960,
+        "target_px": [
+          960,
+          601
+        ],
+        "no_upscale": true,
+        "derivative_created": false
+      },
+      "editorial_integrity_review": "ALT_SAYS_MARCHING; MATCHING_ARCHIVE_DESCRIBES_SEATED_STRIKE_COMMITTEE",
+      "release_gate": {
+        "same_original_binary_verified": false,
+        "individual_rights_cleared": false,
+        "attribution_cleared": false,
+        "visual_approved": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wp_upload_authorized": false,
+        "block_rewrite_authorized": false
+      }
+    }
+  ]
+}

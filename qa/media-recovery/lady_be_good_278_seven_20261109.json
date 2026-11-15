@@ -1,0 +1,362 @@
+{
+  "schema": "fv-media-lady-be-good-recovery-v1",
+  "audit_date": "2026-11-09",
+  "post_id": 278,
+  "scope": "Frozen Oct 30 source URLs; independent web retrieval only. No live visitor browser status, rights approval, downloads, cache or WordPress writes.",
+  "source_inventory": {
+    "path": "qa/media-recovery/offsite_upstream_288_20261109.json",
+    "blob_sha": "92a904c8da1ace1f972b2f00adf1a4847dde2b99",
+    "posts": 61,
+    "images": 355,
+    "offsite": 288
+  },
+  "prior_researched_distinct": 100,
+  "already_in_prior_reconciled_93": false,
+  "measurements": {
+    "guest_confirmed_broken": 0,
+    "guest_measurement_performed": false,
+    "original_reported_broken_42_verified": false,
+    "transfer_reduction_76pct_measured": false,
+    "wordPress_originals_over_1500000_bytes": 15,
+    "stored_total_bytes": 47096779
+  },
+  "rows": [
+    {
+      "slot": "278:0",
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "stored_url": "https://media.defense.gov/2007/Jan/25/2000519451/-1/-1/0/070125-F-0000Z-099.JPG",
+      "original_alt": "The B-24D Lady Be Good lying largely intact in the Libyan Desert after its discovery.",
+      "origin_host": "media.defense.gov",
+      "original_source_fixture": {
+        "path": "qa/media-recovery/parts/04.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+      },
+      "retrieval": {
+        "method": "INDEPENDENT_WEB_VIEWER_NOT_ORIGIN_OR_VISITOR_HTTP",
+        "result": "WRAPPER_403",
+        "note": "Retriever returned 403 for exact media.defense.gov JPG; does not establish origin or guest status",
+        "retriever_wrapper_status": 403
+      },
+      "visitor": {
+        "http_status": null,
+        "natural_width": null,
+        "natural_height": null,
+        "wire_bytes": null,
+        "confirmed_broken": null,
+        "cache_state": null
+      },
+      "catalog": {
+        "url": null,
+        "authority": "US_AIR_FORCE_HOST_UNCATALOGUED",
+        "catalog_identity": "VIRIN from stored filename only: 070125-F-0000Z-099; independent item-level catalog not established",
+        "rights": "UNKNOWN_ITEM_RIGHTS",
+        "native_px": null,
+        "conditional_960_px": null,
+        "source_match": "UNVERIFIED",
+        "scene_note": "B-24D wreck, museum catalog and frame identity unresolved"
+      },
+      "hold": {
+        "rights_cleared": false,
+        "exact_binary_match": false,
+        "visual_parity_approved": false,
+        "download_approved": false,
+        "cache_approved": false,
+        "wordpress_upload_approved": false,
+        "post_rewrite_approved": false
+      }
+    },
+    {
+      "slot": "278:1",
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "stored_url": "https://media.defense.gov/2006/May/30/2000572755/2000/2000/0/050606-F-1234P-012.JPG",
+      "original_alt": "The nine members of the Lady Be Good crew posed in front of a B-24 before the 1943 mission.",
+      "origin_host": "media.defense.gov",
+      "original_source_fixture": {
+        "path": "qa/media-recovery/parts/04.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+      },
+      "retrieval": {
+        "method": "INDEPENDENT_WEB_VIEWER_NOT_ORIGIN_OR_VISITOR_HTTP",
+        "result": "WRAPPER_403",
+        "note": "Retriever returned 403 for exact media.defense.gov JPG; official museum record independently indexed",
+        "retriever_wrapper_status": 403
+      },
+      "visitor": {
+        "http_status": null,
+        "natural_width": null,
+        "natural_height": null,
+        "wire_bytes": null,
+        "confirmed_broken": null,
+        "cache_state": null
+      },
+      "catalog": {
+        "url": "https://www.nationalmuseum.af.mil/Upcoming/Photos/igphoto/2000572755/",
+        "authority": "NATIONAL_MUSEUM_USAF",
+        "catalog_identity": "050606-F-1234P-012, Lady Be Good crew",
+        "rights": "ITEM_CATALOG_PUBLIC_DOMAIN_RELEASE_WITH_DOD_LIMITATIONS_AND_CREDIT",
+        "native_px": null,
+        "conditional_960_px": null,
+        "source_match": "FILENAME_AND_CATALOG_VIRIN_ONLY",
+        "scene_note": "Crew portrait, not photograph of crash/recovery"
+      },
+      "hold": {
+        "rights_cleared": false,
+        "exact_binary_match": false,
+        "visual_parity_approved": false,
+        "download_approved": false,
+        "cache_approved": false,
+        "wordpress_upload_approved": false,
+        "post_rewrite_approved": false
+      }
+    },
+    {
+      "slot": "278:2",
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "stored_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/0000050606-F-1234P-014.jpg",
+      "original_alt": "The preserved wreck of Lady Be Good in the Libyan Desert.",
+      "origin_host": "upload.wikimedia.org",
+      "original_source_fixture": {
+        "path": "qa/media-recovery/parts/04.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+      },
+      "retrieval": {
+        "method": "INDEPENDENT_WEB_VIEWER_NOT_ORIGIN_OR_VISITOR_HTTP",
+        "result": "IMAGE_DISPLAYED",
+        "note": "Independent web viewer rendered exact Commons upload (not a network status measurement)",
+        "retriever_wrapper_status": null
+      },
+      "visitor": {
+        "http_status": null,
+        "natural_width": null,
+        "natural_height": null,
+        "wire_bytes": null,
+        "confirmed_broken": null,
+        "cache_state": null
+      },
+      "catalog": {
+        "url": "https://www.nationalmuseum.af.mil/Upcoming/Photos/igphoto/2000572753/",
+        "secondary_url": "https://commons.wikimedia.org/wiki/File:0000050606-F-1234P-014.jpg",
+        "authority": "NATIONAL_MUSEUM_USAF_PLUS_COMMONS_FILE",
+        "catalog_identity": "050606-F-1234P-014, aircraft parts scattered at Lady Be Good site; Commons exact filename 0000050606-F-1234P-014.jpg",
+        "rights": "USAF_CATALOG_PUBLIC_DOMAIN_RELEASE_WITH_DOD_LIMITATIONS_AND_CREDIT",
+        "native_px": [
+          1800,
+          1192
+        ],
+        "conditional_960_px": [
+          960,
+          636
+        ],
+        "source_match": "COMMONS_FILE_NAME_MATCH_BINARY_UNVERIFIED",
+        "scene_note": "Recovered crash site photograph, not contemporaneous 1943 crash photo"
+      },
+      "hold": {
+        "rights_cleared": false,
+        "exact_binary_match": false,
+        "visual_parity_approved": false,
+        "download_approved": false,
+        "cache_approved": false,
+        "wordpress_upload_approved": false,
+        "post_rewrite_approved": false
+      }
+    },
+    {
+      "slot": "278:3",
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "stored_url": "https://qmmuseum.army.mil/assets/img/aotm/2012/09_M1910_canteen_1.jpg",
+      "original_alt": "The Model 1910 canteen recovered from the Lady Be Good crew's desert trail.",
+      "origin_host": "qmmuseum.army.mil",
+      "original_source_fixture": {
+        "path": "qa/media-recovery/parts/04.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+      },
+      "retrieval": {
+        "method": "INDEPENDENT_WEB_VIEWER_NOT_ORIGIN_OR_VISITOR_HTTP",
+        "result": "WRAPPER_502",
+        "note": "Retriever returned 502 for exact Army museum image; no origin/guest status",
+        "retriever_wrapper_status": 502
+      },
+      "visitor": {
+        "http_status": null,
+        "natural_width": null,
+        "natural_height": null,
+        "wire_bytes": null,
+        "confirmed_broken": null,
+        "cache_state": null
+      },
+      "catalog": {
+        "url": "https://qmmuseum.army.mil/explore/artifact-of-the-month/2012.html",
+        "authority": "US_ARMY_MUSEUM_HOST_ONLY",
+        "catalog_identity": "M1910 canteen, specific provenance to Lady Be Good crew not verified",
+        "rights": "UNKNOWN_SPECIFIC_ARTIFACT_PHOTO_RIGHTS",
+        "native_px": null,
+        "conditional_960_px": null,
+        "source_match": "EXACT_STORED_URL_ONLY",
+        "scene_note": "ALT says recovered from crew's trail; this specific provenance NOT corroborated — do not make claim"
+      },
+      "hold": {
+        "rights_cleared": false,
+        "exact_binary_match": false,
+        "visual_parity_approved": false,
+        "download_approved": false,
+        "cache_approved": false,
+        "wordpress_upload_approved": false,
+        "post_rewrite_approved": false
+      }
+    },
+    {
+      "slot": "278:4",
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "stored_url": "https://www.ladybegood.net/diaries/full/Toner_Diary2%20.jpg",
+      "original_alt": "A page from Robert Toner's diary recovered with members of the Lady Be Good crew.",
+      "origin_host": "www.ladybegood.net",
+      "original_source_fixture": {
+        "path": "qa/media-recovery/parts/04.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+      },
+      "retrieval": {
+        "method": "INDEPENDENT_WEB_VIEWER_NOT_ORIGIN_OR_VISITOR_HTTP",
+        "result": "IMAGE_DISPLAYED",
+        "note": "Viewer displayed exact ladybegood.net diary image; reproduction permission unknown",
+        "retriever_wrapper_status": null
+      },
+      "visitor": {
+        "http_status": null,
+        "natural_width": null,
+        "natural_height": null,
+        "wire_bytes": null,
+        "confirmed_broken": null,
+        "cache_state": null
+      },
+      "catalog": {
+        "url": "https://www.ladybegood.net/diaries/full/Toner_Diary2%20.jpg",
+        "secondary_url": "https://unwritten-record.blogs.archives.gov/2017/06/16/lost-and-found-the-story-of-lady-be-good-and-her-crew/",
+        "authority": "PRIVATE_DIARY_IMAGE_AND_NARA_CONTEXT",
+        "catalog_identity": "Image shows handwriting on Lt. Toner's diary; NARA lists related diary photographs 342-B-ND-075-4-163133AC and -163134AC, exact-photo match NOT verified",
+        "rights": "PRIVATE_HOST_COPYRIGHT_PERMISSION_UNVERIFIED",
+        "native_px": null,
+        "conditional_960_px": null,
+        "source_match": "NARA_CONTEXT_ONLY_NOT_EXACT_MATCH",
+        "scene_note": "Do not treat private scan ownership as federal PD; do not shrink until handwriting legibility reviewed"
+      },
+      "hold": {
+        "rights_cleared": false,
+        "exact_binary_match": false,
+        "visual_parity_approved": false,
+        "download_approved": false,
+        "cache_approved": false,
+        "wordpress_upload_approved": false,
+        "post_rewrite_approved": false
+      }
+    },
+    {
+      "slot": "278:5",
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "stored_url": "https://unwritten-record.blogs.archives.gov/wp-content/uploads/sites/6/2017/06/111-c-17240-scaled.jpg",
+      "original_alt": "U.S. military investigators examining the Lady Be Good wreck in the Libyan Desert.",
+      "origin_host": "unwritten-record.blogs.archives.gov",
+      "original_source_fixture": {
+        "path": "qa/media-recovery/parts/04.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+      },
+      "retrieval": {
+        "method": "INDEPENDENT_WEB_VIEWER_NOT_ORIGIN_OR_VISITOR_HTTP",
+        "result": "IMAGE_DISPLAYED",
+        "note": "Viewer displayed exact NARA blog JPG; content depicts wreck, no identifiable investigating people in displayed frame",
+        "retriever_wrapper_status": null
+      },
+      "visitor": {
+        "http_status": null,
+        "natural_width": null,
+        "natural_height": null,
+        "wire_bytes": null,
+        "confirmed_broken": null,
+        "cache_state": null
+      },
+      "catalog": {
+        "url": "https://unwritten-record.blogs.archives.gov/2017/06/16/lost-and-found-the-story-of-lady-be-good-and-her-crew/",
+        "authority": "NATIONAL_ARCHIVES_BLOG",
+        "catalog_identity": "NARA exact attachment basename 111-c-17240 and previously researched item ID 111-C-17240 (PR #183); source depiction appears to show aircraft without investigators.",
+        "rights": "NARA_SCAN_CREDIT_AND_ANY_ITEM_RIGHTS_PENDING",
+        "native_px": null,
+        "conditional_960_px": null,
+        "source_match": "OFFICIAL_NARA_PAGE_SAME_SCENE_EXACT_FILE_CATALOG_PENDING",
+        "scene_note": "POSSIBLE ALT ERROR: source ALT says investigators examining wreck, visible frame shows aircraft but no investigators"
+      },
+      "hold": {
+        "rights_cleared": false,
+        "exact_binary_match": false,
+        "visual_parity_approved": false,
+        "download_approved": false,
+        "cache_approved": false,
+        "wordpress_upload_approved": false,
+        "post_rewrite_approved": false
+      }
+    },
+    {
+      "slot": "278:6",
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "stored_url": "https://media.defense.gov/2006/Jun/02/2000554420/-1/-1/0/060530-F-1234S-041.JPG",
+      "original_alt": "Search and recovery personnel working around Lady Be Good in the Libyan Desert.",
+      "origin_host": "media.defense.gov",
+      "original_source_fixture": {
+        "path": "qa/media-recovery/parts/04.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+      },
+      "retrieval": {
+        "method": "INDEPENDENT_WEB_VIEWER_NOT_ORIGIN_OR_VISITOR_HTTP",
+        "result": "WRAPPER_403",
+        "note": "Retriever returned 403 for exact media.defense.gov JPG; no guest status",
+        "retriever_wrapper_status": 403
+      },
+      "visitor": {
+        "http_status": null,
+        "natural_width": null,
+        "natural_height": null,
+        "wire_bytes": null,
+        "confirmed_broken": null,
+        "cache_state": null
+      },
+      "catalog": {
+        "url": "https://www.nationalmuseum.af.mil/Upcoming/Photos/igphoto/2000554420/",
+        "authority": "NATIONAL_MUSEUM_USAF",
+        "catalog_identity": "USAF 060530-F-1234S-041, official image described as bomber tail with C-47 recovery aircraft in background",
+        "rights": "ITEM_CATALOG_PUBLIC_DOMAIN_RELEASE_WITH_DOD_LIMITATIONS_AND_CREDIT",
+        "native_px": null,
+        "conditional_960_px": null,
+        "source_match": "FILENAME_AND_CATALOG_VIRIN_ONLY",
+        "scene_note": "ALT says people working around wreck, whereas official record describes bomber tail and C-47; prior PR #183 proposed alternative ALT pending visual/editorial approval"
+      },
+      "hold": {
+        "rights_cleared": false,
+        "exact_binary_match": false,
+        "visual_parity_approved": false,
+        "download_approved": false,
+        "cache_approved": false,
+        "wordpress_upload_approved": false,
+        "post_rewrite_approved": false
+      }
+    }
+  ],
+  "prior_independent_research": {
+    "pr": 183,
+    "branch": "qa/media-recovery-reviewed-20261030-1158",
+    "path": "qa/media-recovery/lady_be_good_278_primary_20261031.json",
+    "git_blob_sha": "cf69fc6666037488012cf9fd48bb204764904e00",
+    "scope_note": "THIS ENTIRE SEVEN-SLOT SUBJECT WAS ALREADY RESEARCHED IN PR #183 ON OCTOBER 31; current batch reconciles prior records with fresh retriever observations, does not add seven new unique positions across all drafts."
+  }
+}

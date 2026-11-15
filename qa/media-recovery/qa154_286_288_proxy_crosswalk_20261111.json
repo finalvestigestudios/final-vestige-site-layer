@@ -1,0 +1,136 @@
+{
+  "schema": "fv-media-qa154-286-vs-288-proxy-crosswalk-v1",
+  "run_date_pacific": "2026-11-11",
+  "purpose": "Frozen Site QA versus origin-aware cohort discrepancy. Two candidates explain location of delta; exact reason source QA omitted them remains unproven.",
+  "sources": {
+    "site_qa_pr": 154,
+    "qa_csv_blob": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
+    "qa_classifier_blob": "cdadab899abed4dfd222e75a5616a98390dca4ea",
+    "source_pr": 183,
+    "worklist_blob": "2acd06a4ca4317646006eb6591face3fe76fedec",
+    "upstream_pr": 1703,
+    "upstream_blob": "92a904c8da1ace1f972b2f00adf1a4847dde2b99",
+    "frozen_parts": [
+      "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "49183f66f880f7c4dfd363acca906876877f2e5e"
+    ]
+  },
+  "reconciliation": {
+    "qa_posts": 61,
+    "qa_inline": 355,
+    "qa_offsite": 286,
+    "origin_offsite": 288,
+    "delta": 2,
+    "post_differences": [
+      {
+        "post_id": 285,
+        "qa_offsite": 5,
+        "origin_offsite": 6,
+        "delta": 1
+      },
+      {
+        "post_id": 291,
+        "qa_offsite": 5,
+        "origin_offsite": 6,
+        "delta": 1
+      }
+    ],
+    "candidates": [
+      {
+        "slot": "285:1",
+        "stored_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+        "delivery_host": "i0.wp.com",
+        "third_party_origin": "www.squawkpoint.com",
+        "guest_http": null,
+        "guest_broken": null
+      },
+      {
+        "slot": "291:0",
+        "stored_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+        "delivery_host": "i0.wp.com",
+        "third_party_origin": "text-message.blogs.archives.gov",
+        "guest_http": null,
+        "guest_broken": null
+      }
+    ],
+    "exclusion_cause_proven": false,
+    "guest_failures_confirmed": false
+  },
+  "exception_slots": [
+    {
+      "slot": "285:1",
+      "stored_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "delivery_host": "i0.wp.com",
+      "third_party_origin": "www.squawkpoint.com",
+      "guest_http": null,
+      "guest_broken": null,
+      "alt": "Wide view of the densely instrumented Three Mile Island Unit 2 control room.",
+      "catalog": null,
+      "record_id": null,
+      "rights": "Squawkpoint is a secondary published image, not item-specific commercial reuse permission. Creator/licensing and exact-source provenance unresolved.",
+      "web_retriever": {
+        "date": "2026-11-11",
+        "method": "image_url_open",
+        "result": "displayed",
+        "origin_http_status": null,
+        "is_real_guest_browser": false
+      },
+      "guest_status": null,
+      "guest_decode": null,
+      "guest_transfer_bytes": null,
+      "native_width_px": null,
+      "native_height_px": null,
+      "conditional_960_px": "max 960 width and no enlargement, only after native dimensions and rights verified",
+      "candidate_is_exact_binary": false,
+      "copyright_cleared": false,
+      "staging_authorized": false,
+      "wordpress_write_authorized": false
+    },
+    {
+      "slot": "291:0",
+      "stored_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "delivery_host": "i0.wp.com",
+      "third_party_origin": "text-message.blogs.archives.gov",
+      "guest_http": null,
+      "guest_broken": null,
+      "alt": "A rapidly enlarging breach reaching the crest of Teton Dam shortly before its collapse on June 5, 1976.",
+      "catalog": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+      "record_id": "NARA 28894685 (blog-caption identification; catalog and exact file match pending)",
+      "rights": "NARA credits the breach-photo sequence to Jerry Dursteller, an employee of contractor Gibbons and Reed. NARA holdings are not automatically public domain; creator/rights clearance for item required.",
+      "web_retriever": {
+        "date": "2026-11-11",
+        "method": "image_url_open",
+        "result": "displayed",
+        "origin_http_status": null,
+        "is_real_guest_browser": false
+      },
+      "guest_status": null,
+      "guest_decode": null,
+      "guest_transfer_bytes": null,
+      "native_width_px": null,
+      "native_height_px": null,
+      "conditional_960_px": "max 960 width and no enlargement, only after native dimensions and rights verified",
+      "candidate_is_exact_binary": false,
+      "copyright_cleared": false,
+      "staging_authorized": false,
+      "wordpress_write_authorized": false
+    }
+  ],
+  "methodology": {
+    "guest_broken_42_confirmed": false,
+    "claimed_transfer_76_percent_measured": false,
+    "wp_stored_originals_gt_1500000": 15,
+    "wp_stored_original_bytes": 47096779,
+    "possible_reason": "Jetpack i0.wp.com delivery host may hide third-party origin if counted by CDN hostname; QA CSV has only per-post counts, so cause NOT proven without classifier input.",
+    "required_verification": "Site QA reruns its own classifier on exact source HTML and guest CDP. Do not treat image-retriever previews as HTTP; deduplicate real network requests before estimating cold transfer."
+  },
+  "restrictions": {
+    "no_binary_downloads": true,
+    "no_caching": true,
+    "no_mirroring": true,
+    "no_wordpress_writes": true,
+    "no_homepage_changes": true,
+    "no_merge_or_deploy": true,
+    "no_spend": true
+  }
+}

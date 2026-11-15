@@ -1,0 +1,44 @@
+{
+  "schema": "fv-teton-291-originals-fixture-v1",
+  "historical_snapshot": "2026-10-30",
+  "frozen_source_blob_sha": "92a904c8da1ace1f972b2f00adf1a4847dde2b99",
+  "live_wp_last_modified": "2026-11-02T21:36:09",
+  "images": [
+    {
+      "slot": "291:0",
+      "post_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "src": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "alt": "A rapidly enlarging breach reaching the crest of Teton Dam shortly before its collapse on June 5, 1976."
+    },
+    {
+      "slot": "291:1",
+      "post_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "src": "https://dmt55mxnkgbz2.cloudfront.net/1205x0_s3-30217-W-AP-PNW-TETON-COLLAPSE-1.jpg",
+      "alt": "Aerial view of Teton Dam and reservoir around the time of the 1976 failure."
+    },
+    {
+      "slot": "291:2",
+      "post_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "src": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "alt": "Growing breach in Teton Dam during the final hour before collapse."
+    },
+    {
+      "slot": "291:3",
+      "post_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "src": "https://brightspotcdn.byui.edu/dims4/default/37ddf06/2147483647/strip/true/crop/2048x1365+0+0/resize/1200x800!/quality/90/?url=https%3A%2F%2Fk3-prod-byuifulbrightspot.s3.us-west-2.amazonaws.com%2Fbrightspot%2F33%2F7d%2F67f04f174772ab1d35419706138c%2Fteton-dam-flooding-aerial.jpg",
+      "alt": "Aerial view of the flooding downstream after the Teton Dam collapse."
+    },
+    {
+      "slot": "291:4",
+      "post_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "src": "https://www.rexburgonline.com/wp-content/uploads/2016/05/fb-0053.jpg",
+      "alt": "The surviving remains of Teton Dam in Idaho, with the river passing through the unreconstructed breach."
+    },
+    {
+      "slot": "291:5",
+      "post_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "src": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "alt": "Aftermath of the Teton Dam failure and downstream cleanup in Idaho."
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "schema": "fv-p0-original-source-primary-rights-readiness-20261112-v1",
+  "date_utc": "2026-11-12",
+  "pinned_bridge_blob_sha": "d1a9c7a499510ec37bcdba5858d45165752587e0",
+  "site_qa_pr": 154,
+  "media_recovery_pr": 1703,
+  "worklist_pr": 183,
+  "scope": "SOURCE_CATALOG_AND_WEB_RETRIEVER_ONLY_NOT_VISITOR_FAILURE_OR_ORIGIN_HTTP",
+  "historical": {
+    "posts": 61,
+    "images": 355,
+    "offsite": 288,
+    "reported_broken_unconfirmed": 42,
+    "oversized_originals": 15,
+    "oversized_stored_bytes": 47096779,
+    "wire_reduction_76_percent_measured": false
+  },
+  "policy": {
+    "no_wordpress_write": true,
+    "no_cache": true,
+    "no_download": true,
+    "siteqa_owns_browser": true,
+    "staging_requires_scene_rights_dims_dpr": true
+  },
+  "records": [
+    {
+      "slot": "285:5",
+      "post_id": 285,
+      "exact_stored_src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "as_of": "2026-11-12",
+      "retriever_observation": {
+        "method": "WEB_OPEN_WRAPPER_NOT_GUEST",
+        "code": 404,
+        "result": "NOT_FOUND"
+      },
+      "candidate_catalog": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "rights_tier": "COMMONS_PD_SELF_NOT_INDEPENDENTLY_CLEARED",
+      "scene_relation": "16:9 published crop versus 819x614 4:3 catalog; not drop-in",
+      "conditional_960_no_upscale_px": [
+        819,
+        614
+      ],
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "guest_wire_bytes": null,
+      "exact_binary_identity_verified": false,
+      "item_reuse_approved": false,
+      "visual_editor_approved": false,
+      "wordpress_upload_approved": false
+    },
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "exact_stored_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "as_of": "2026-11-12",
+      "retriever_observation": {
+        "method": "WEB_OPEN_WRAPPER_NOT_GUEST",
+        "code": 500,
+        "result": "REDIRECT_TARGET_INACCESSIBLE"
+      },
+      "candidate_catalog": "https://www.si.edu/object/report-presidents-commission-accident-three-mile-island-need-change-legacy-tmi%3Asiris_sil_765655",
+      "rights_evidence_url": "https://www.si.edu/object/report-presidents-commission-accident-three-mile-island-need-change-legacy-tmi%3Asiris_sil_765655",
+      "rights_tier": "FEDERAL_REPORT_FIGURE_RETOUCH_ORIGIN_UNVERIFIED",
+      "scene_relation": "1979 report source differs from retouched panel reproduction",
+      "conditional_960_no_upscale_px": [
+        604,
+        590
+      ],
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "guest_wire_bytes": null,
+      "exact_binary_identity_verified": false,
+      "item_reuse_approved": false,
+      "visual_editor_approved": false,
+      "wordpress_upload_approved": false
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "exact_stored_src": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "as_of": "2026-11-12",
+      "retriever_observation": {
+        "method": "WEB_OPEN_WRAPPER_NOT_GUEST",
+        "code": 404,
+        "result": "NOT_FOUND"
+      },
+      "candidate_catalog": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "rights_evidence_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "rights_tier": "PUBLISHER_RIGHTS_UNVERIFIED",
+      "scene_relation": "Same-publisher moved URL renders in web retriever; exact hash and use permission unknown",
+      "conditional_960_no_upscale_px": null,
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "guest_wire_bytes": null,
+      "exact_binary_identity_verified": false,
+      "item_reuse_approved": false,
+      "visual_editor_approved": false,
+      "wordpress_upload_approved": false
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "exact_stored_src": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "as_of": "2026-11-12",
+      "retriever_observation": {
+        "method": "WEB_OPEN_WRAPPER_NOT_GUEST",
+        "code": 403,
+        "result": "FORBIDDEN"
+      },
+      "candidate_catalog": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "rights_evidence_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "rights_tier": "OFFICIAL_USCG_CATALOG_PD_RELEASE_WITH_CREDIT_AND_DOD_RESTRICTIONS",
+      "scene_relation": "Exact VIRIN 210330-G-DE713-0002 matches filename; bytes and dimensions not checked",
+      "conditional_960_no_upscale_px": null,
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "guest_wire_bytes": null,
+      "exact_binary_identity_verified": false,
+      "item_reuse_approved": false,
+      "visual_editor_approved": false,
+      "wordpress_upload_approved": false
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "exact_stored_src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "as_of": "2026-11-12",
+      "retriever_observation": {
+        "method": "WEB_OPEN_WRAPPER_NOT_GUEST",
+        "code": 403,
+        "result": "FORBIDDEN"
+      },
+      "candidate_catalog": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+      "rights_evidence_url": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+      "rights_tier": "MUSEUM_USCG_CREDIT_REHOST_PERMISSION_UNVERIFIED",
+      "scene_relation": "Multiple 1946 aftermath scenes; same filename elsewhere not hash proof",
+      "conditional_960_no_upscale_px": null,
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "guest_wire_bytes": null,
+      "exact_binary_identity_verified": false,
+      "item_reuse_approved": false,
+      "visual_editor_approved": false,
+      "wordpress_upload_approved": false
+    },
+    {
+      "slot": "407:1",
+      "post_id": 407,
+      "exact_stored_src": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "as_of": "2026-11-12",
+      "retriever_observation": {
+        "method": "WEB_OPEN_WRAPPER_NOT_GUEST",
+        "code": 400,
+        "result": "UNSUPPORTED_OCTET_STREAM"
+      },
+      "candidate_catalog": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+      "rights_evidence_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+      "rights_tier": "OFFICIAL_USGS_ITEM_PUBLIC_DOMAIN_STACY",
+      "scene_relation": "USGS labels J.R. Stacy image public domain; upstream S3 body unverified",
+      "conditional_960_no_upscale_px": null,
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "guest_wire_bytes": null,
+      "exact_binary_identity_verified": false,
+      "item_reuse_approved": false,
+      "visual_editor_approved": false,
+      "wordpress_upload_approved": false
+    }
+  ]
+}

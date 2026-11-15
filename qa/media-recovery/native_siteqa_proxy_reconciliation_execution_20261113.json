@@ -1,0 +1,26 @@
+{
+  "schema": "fv-native-test-execution-v1",
+  "date_local": "2026-11-13",
+  "runtime": "Node v22.16.0",
+  "command": "node --test test_siteqa_proxy_reconciliation_20261113.cjs",
+  "result": {
+    "tests": 15,
+    "pass": 15,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0
+  },
+  "raw_tap_sha256": "fbbef882e49d7fb6034021dffa66e27281a5bab995e5fc1324fb9b1269715731",
+  "verified_exact_git_blobs": {
+    "audit_json": "17d5e8778ba91e48ee03e71fc86f0ef3a5235608",
+    "validator": "73cc0714928f671d746f683b5460be970b17e1b5",
+    "tests": "bacab5a9bc8081c690dbfb92423572aef315af83"
+  },
+  "actual_guest_chrome_run": false,
+  "origin_http_checks": false,
+  "production_changes": 0,
+  "third_party_media_downloads": 0,
+  "wordPress_changes": 0,
+  "subscription_spend": 0,
+  "interpretation": "Native offline regression only; source-level frozen census reconciliation, not browser failure measurement."
+}

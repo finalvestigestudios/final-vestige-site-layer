@@ -1,0 +1,3650 @@
+{
+  "schema": "fv-media-exact-source-coverage-v2",
+  "audit_utc_date": "2026-11-09",
+  "source_snapshot_utc_date": "2026-10-30",
+  "scope": "Archived exact-source research reconciliation only; NOT verified browser status or permission to copy media.",
+  "frozen_census": {
+    "path": "qa/media-recovery/offsite_upstream_288_20261109.json",
+    "ref": "media/triage-43-source-15-oversize-20261109",
+    "git_blob_sha": "92a904c8da1ace1f972b2f00adf1a4847dde2b99",
+    "posts": 61,
+    "all_image_slots": 355,
+    "upstream_external_slots": 288,
+    "upstream_hosts": 80
+  },
+  "sources": [
+    {
+      "batch": "cross",
+      "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+      "ref": "media/triage-43-source-15-oversize-20261109",
+      "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+      "source_rows": 43
+    },
+    {
+      "batch": "navy7",
+      "path": "qa/media-recovery/navy_west_loch_tang_7_live_20261109.json",
+      "ref": "media/navy-seven-west-loch-tang-20261109",
+      "git_blob_sha": "86d4ed137fb27a2db7b77f11077461936fa53736",
+      "source_rows": 7
+    },
+    {
+      "batch": "primary18",
+      "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+      "ref": "media/triage-43-source-15-oversize-20261109",
+      "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+      "source_rows": 18
+    },
+    {
+      "batch": "coastal12",
+      "path": "qa/media-recovery/coastal_scotch_cap_prinsendam_12_20261109.json",
+      "ref": "media/triage-43-source-15-oversize-20261109",
+      "git_blob_sha": "7980bde96151c418e082f3cc3add077477c9ba48",
+      "source_rows": 12
+    },
+    {
+      "batch": "pelee4",
+      "path": "qa/media-recovery/mount_pelee_413_four_loc_20261109.json",
+      "ref": "media/triage-43-source-15-oversize-20261109",
+      "git_blob_sha": "bca94b9db11d804af03a5b0809a036d7a9e967ed",
+      "source_rows": 4
+    },
+    {
+      "batch": "molasses4",
+      "path": "qa/media-recovery/boston_molasses_101_four_20261109.json",
+      "ref": "media/triage-43-source-15-oversize-20261109",
+      "git_blob_sha": "4cfde7163cb3b909a494e5e2fea5a8a3a0767ade",
+      "source_rows": 4
+    },
+    {
+      "batch": "usgs8",
+      "path": "qa/media-recovery/usgs_407_418_eight_20261109.json",
+      "ref": "media/triage-43-source-15-oversize-20261109",
+      "git_blob_sha": "f20f95ab80d63418909dafb22b984d94bd10a4f2",
+      "source_rows": 8
+    }
+  ],
+  "counts": {
+    "researched_distinct": 93,
+    "unresearched": 195,
+    "total_upstream": 288,
+    "source_records": 96,
+    "overlapping_evidence_records": 3,
+    "guest_browser_confirmed_broken": 0,
+    "guest_browser_confirmed_loaded": 0,
+    "oversized_wp_originals": 15,
+    "oversized_wp_stored_original_bytes": 47096779,
+    "image_transfer_savings_pct": null,
+    "unverified_historical_broken_report": 42
+  },
+  "overlap_slots": [
+    "418:1",
+    "418:2",
+    "418:5"
+  ],
+  "rows": [
+    {
+      "slot": "101:1",
+      "post_id": 101,
+      "post_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+      "stored_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/North_End_molasses_tank.jpg",
+      "upstream_origin_host": "upload.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "molasses4",
+          "path": "qa/media-recovery/boston_molasses_101_four_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "4cfde7163cb3b909a494e5e2fea5a8a3a0767ade",
+          "retriever_only_status": "IMAGE_DISPLAYED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:North_End_molasses_tank.jpg",
+          "from_batch": "molasses4",
+          "claimed_960px_from_catalog": [
+            417,
+            327
+          ],
+          "native_catalog_px": [
+            417,
+            327
+          ],
+          "rights_observation": "PD_US_HISTORICAL_COMMONS_CLAIM",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "101:2",
+      "post_id": 101,
+      "post_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+      "stored_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Boston_molasses_detail_map.png",
+      "upstream_origin_host": "upload.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "molasses4",
+          "path": "qa/media-recovery/boston_molasses_101_four_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "4cfde7163cb3b909a494e5e2fea5a8a3a0767ade",
+          "retriever_only_status": "IMAGE_DISPLAYED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Boston_molasses_detail_map.png",
+          "from_batch": "molasses4",
+          "claimed_960px_from_catalog": [
+            874,
+            742
+          ],
+          "native_catalog_px": [
+            874,
+            742
+          ],
+          "rights_observation": "PD_CREATOR_RELEASE_COMMONS",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "101:4",
+      "post_id": 101,
+      "post_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+      "stored_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Boston_post-January_16%2C_1919%2C.jpg",
+      "upstream_origin_host": "upload.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "molasses4",
+          "path": "qa/media-recovery/boston_molasses_101_four_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "4cfde7163cb3b909a494e5e2fea5a8a3a0767ade",
+          "retriever_only_status": "IMAGE_DISPLAYED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Boston_post-January_16%2C_1919%2C.jpg",
+          "from_batch": "molasses4",
+          "claimed_960px_from_catalog": [
+            960,
+            1222
+          ],
+          "native_catalog_px": [
+            1127,
+            1435
+          ],
+          "rights_observation": "PD_US_PRE_1931_COMMONS_CLAIM",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "101:6",
+      "post_id": 101,
+      "post_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+      "stored_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Molasses_Flood_Historical_Marker.jpg/1280px-Molasses_Flood_Historical_Marker.jpg",
+      "upstream_origin_host": "upload.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "molasses4",
+          "path": "qa/media-recovery/boston_molasses_101_four_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "4cfde7163cb3b909a494e5e2fea5a8a3a0767ade",
+          "retriever_only_status": "IMAGE_DISPLAYED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Molasses_Flood_Historical_Marker.jpg",
+          "from_batch": "molasses4",
+          "claimed_960px_from_catalog": [
+            960,
+            859
+          ],
+          "native_catalog_px": [
+            3129,
+            2801
+          ],
+          "rights_observation": "CC_BY_SA_3_0_UNPORTED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "190:0",
+      "post_id": 190,
+      "post_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "stored_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18735v.jpg",
+      "upstream_origin_host": "cdn.loc.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "DIRECT_IMAGE_TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/pictures/resource/npcc.18735/",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "LOC_ITEM_RIGHTS_REVIEW_REQUIRED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "190:2",
+      "post_id": 190,
+      "post_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "stored_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18713v.jpg",
+      "upstream_origin_host": "cdn.loc.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "DIRECT_IMAGE_TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/pictures/resource/npcc.18713/",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "LOC_ITEM_RIGHTS_REVIEW_REQUIRED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "190:3",
+      "post_id": 190,
+      "post_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "stored_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18729v.jpg",
+      "upstream_origin_host": "cdn.loc.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "DIRECT_IMAGE_TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/pictures/resource/npcc.18729/",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "LOC_ITEM_RIGHTS_REVIEW_REQUIRED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "190:4",
+      "post_id": 190,
+      "post_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "stored_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18712v.jpg",
+      "upstream_origin_host": "cdn.loc.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "DIRECT_IMAGE_TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/pictures/resource/npcc.18712/",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "LOC_ITEM_RIGHTS_REVIEW_REQUIRED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "190:5",
+      "post_id": 190,
+      "post_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "stored_url": "https://cdn.loc.gov/service/pnp/pan/6a05000/6a05800/6a05834r.jpg",
+      "upstream_origin_host": "cdn.loc.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "DIRECT_IMAGE_TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/pictures/resource/pan.6a05834/",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "LOC_ITEM_NO_KNOWN_RESTRICTIONS_NEEDS_ITEM_REVIEW",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "211:0",
+      "post_id": 211,
+      "post_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "stored_url": "https://www.nps.gov/common/uploads/pwr/park/poch/80CFA67B-03FC-82AE-99A5AD290D8C5371/80CFA67B-03FC-82AE-99A5AD290D8C5371.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "upstream_origin_host": "www.nps.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "NOT_CHECKED_EXACT_URL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.nps.gov/poch/learn/historyculture/index.htm",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "NPS_HOSTING_NOT_ITEM_RIGHTS_CLEARANCE",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "211:1",
+      "post_id": 211,
+      "post_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "stored_url": "https://www.nps.gov/common/uploads/pwr/park/poch/80A5458E-F39E-DB01-9A32F52ABA3482BE/80A5458E-F39E-DB01-9A32F52ABA3482BE.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "upstream_origin_host": "www.nps.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "NOT_CHECKED_EXACT_URL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.nps.gov/poch/learn/historyculture/index.htm",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "NPS_HOSTING_NOT_ITEM_RIGHTS_CLEARANCE",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "211:2",
+      "post_id": 211,
+      "post_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "stored_url": "https://www.nps.gov/common/uploads/pwr/park/poch/ED8E4950-C94B-14B3-1E358F1265D3F870/ED8E4950-C94B-14B3-1E358F1265D3F870.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "upstream_origin_host": "www.nps.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "NOT_CHECKED_EXACT_URL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.nps.gov/poch/learn/historyculture/index.htm",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "NPS_HOSTING_NOT_ITEM_RIGHTS_CLEARANCE",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "211:3",
+      "post_id": 211,
+      "post_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "stored_url": "https://www.nps.gov/common/uploads/pwr/park/poch/14DAEF66-B99F-637F-316D6B52D59F0C1E/14DAEF66-B99F-637F-316D6B52D59F0C1E.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "upstream_origin_host": "www.nps.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "NOT_CHECKED_EXACT_URL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.nps.gov/poch/learn/historyculture/index.htm",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "NPS_HOSTING_NOT_ITEM_RIGHTS_CLEARANCE",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "211:4",
+      "post_id": 211,
+      "post_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "stored_url": "https://www.nps.gov/poch/learn/historyculture/images/Mutiny-Trial.jpeg?autorotate=false&maxwidth=650",
+      "upstream_origin_host": "www.nps.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "DIRECT_IMAGE_RENDERED_BY_WEB_RETRIEVER_NOT_BROWSER",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.nps.gov/poch/learn/historyculture/the-mutiny-trial.htm",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "NPS_HOSTING_NOT_ITEM_RIGHTS_CLEARANCE",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "211:5",
+      "post_id": 211,
+      "post_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "stored_url": "https://www.nps.gov/common/uploads/pwr/park/poch/16BF8B2E-0E6F-C0F7-83BB8EE76D13F26C/16BF8B2E-0E6F-C0F7-83BB8EE76D13F26C.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "upstream_origin_host": "www.nps.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "NOT_CHECKED_EXACT_URL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.nps.gov/poch/learn/historyculture/index.htm",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "NPS_HOSTING_NOT_ITEM_RIGHTS_CLEARANCE",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "214:0",
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "stored_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19622v.jpg",
+      "upstream_origin_host": "cdn.loc.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "NOT_CHECKED_EXACT_URL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/pictures/resource/ggbain.19622/",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "LOC_ITEM_RIGHTS_REVIEW_REQUIRED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "214:4",
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "stored_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19623v.jpg",
+      "upstream_origin_host": "cdn.loc.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "NOT_CHECKED_EXACT_URL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/pictures/resource/ggbain.19623/",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "LOC_ITEM_RIGHTS_REVIEW_REQUIRED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "268:0",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Archimedes%20Palimpsest.jpg?width=1280",
+      "upstream_origin_host": "commons.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Archimedes_Palimpsest.jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": [
+            665,
+            448
+          ],
+          "native_catalog_px": [
+            665,
+            448
+          ],
+          "rights_observation": "COMMONS_PD_US_CLAIM",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "268:1",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_url": "https://archimedespalimpsest.org/assets/img/imaging_x8.jpg",
+      "upstream_origin_host": "archimedespalimpsest.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "WRAPPER_403",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.archimedespalimpsest.org/about/imaging/capture.php",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "PROJECT_SITE_STATIC_RIGHTS_UNVERIFIED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "268:2",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/002r-001v%20Arch13r%20Sinar%20uvblue%20norm8%20Euchologion%20up%20%289737603804%29.jpg?width=960",
+      "upstream_origin_host": "commons.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:002r-001v_Arch13r_Sinar_uvblue_norm8_Euchologion_up_(9737603804).jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": [
+            960,
+            720
+          ],
+          "native_catalog_px": [
+            10880,
+            8160
+          ],
+          "rights_observation": "COMMONS_CC_BY_2_0_PROJECT_CC_BY_3_0_CONFLICT",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "268:3",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Heiberg-UV-blue%20%289737623542%29.jpg?width=960",
+      "upstream_origin_host": "commons.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:017r-016v_Heiberg-UV-blue_(9737623542).jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": [
+            960,
+            1280
+          ],
+          "native_catalog_px": [
+            2040,
+            2720
+          ],
+          "rights_observation": "COMMONS_CC_BY_2_0_PROJECT_CC_BY_3_0_CONFLICT",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "268:4",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_url": "https://www.archimedespalimpsest.org/assets/img/imagecapture-capture2b.jpg",
+      "upstream_origin_host": "www.archimedespalimpsest.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "WRAPPER_403",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.archimedespalimpsest.org/about/imaging/capture.php",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "PROJECT_SITE_STATIC_RIGHTS_UNVERIFIED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "268:5",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Arch07r%20Sinar%20pseudo%20no-veil%20%289734386225%29.jpg?width=960",
+      "upstream_origin_host": "commons.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:017r-016v_Arch07r_Sinar_pseudo_no-veil_(9734386225).jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": [
+            960,
+            1280
+          ],
+          "native_catalog_px": [
+            8160,
+            10880
+          ],
+          "rights_observation": "COMMONS_CC_BY_2_0_PROJECT_CC_BY_3_0_CONFLICT",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "268:6",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/028v-021r%20Arch08r%20XRF%20FeFront%20registered%20%289734104759%29.jpg?width=1280",
+      "upstream_origin_host": "commons.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:028v-021r_Arch08r_XRF_FeFront_registered_(9734104759).jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": [
+            960,
+            1280
+          ],
+          "native_catalog_px": [
+            8160,
+            10880
+          ],
+          "rights_observation": "COMMONS_CC_BY_2_0_PROJECT_CC_BY_3_0_CONFLICT",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "268:7",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_url": "https://archimedespalimpsest.org/assets/img/imaging_x12.jpg",
+      "upstream_origin_host": "archimedespalimpsest.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "WRAPPER_403",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.archimedespalimpsest.org/about/imaging/capture.php",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "PROJECT_SITE_STATIC_RIGHTS_UNVERIFIED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "268:8",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_url": "https://archimedespalimpsest.org/assets/img/imaging_x9.jpg",
+      "upstream_origin_host": "archimedespalimpsest.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.archimedespalimpsest.org/about/imaging/capture.php",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "PROJECT_SITE_STATIC_RIGHTS_UNVERIFIED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "268:9",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/176r-173v%20Hype03r%20Sinar%20LED445-735%20pseudo%20%289734660151%29.jpg?width=960",
+      "upstream_origin_host": "commons.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:176r-173v_Hype03r_Sinar_LED445-735_pseudo_(9734660151).jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": [
+            960,
+            1382
+          ],
+          "native_catalog_px": [
+            6600,
+            9500
+          ],
+          "rights_observation": "COMMONS_CC_BY_2_0_PROJECT_CC_BY_3_0_CONFLICT",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "274:1",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "stored_url": "https://www.history.navy.mil/content/history/nhhc/research/library/online-reading-room/title-list-alphabetically/u/united-states-submarine-losses/tang-ss-306/_jcr_content/body/media_asset_3/image.img.jpg/1485804525424.jpg",
+      "upstream_origin_host": "www.history.navy.mil",
+      "research_evidence": [
+        {
+          "batch": "navy7",
+          "path": "qa/media-recovery/navy_west_loch_tang_7_live_20261109.json",
+          "ref": "media/navy-seven-west-loch-tang-20261109",
+          "git_blob_sha": "86d4ed137fb27a2db7b77f11077461936fa53736",
+          "retriever_only_status": "TOOL_WRAPPER_502",
+          "retriever_wrapper_code": 502
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-g-227987-uss-tang--ss-306-.html",
+          "from_batch": "navy7",
+          "claimed_960px_from_catalog": [
+            960,
+            1163
+          ],
+          "native_catalog_px": [
+            4908,
+            5948
+          ],
+          "rights_observation": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "274:2",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "stored_url": "https://www.history.navy.mil/content/history/nhhc/browse-by-topic/exploration-and-innovation/navy-torpedoes/_jcr_content/body/media_asset_1279725910/image.img.jpg/1701176168705.jpg",
+      "upstream_origin_host": "www.history.navy.mil",
+      "research_evidence": [
+        {
+          "batch": "navy7",
+          "path": "qa/media-recovery/navy_west_loch_tang_7_live_20261109.json",
+          "ref": "media/navy-seven-west-loch-tang-20261109",
+          "git_blob_sha": "86d4ed137fb27a2db7b77f11077461936fa53736",
+          "retriever_only_status": "TOOL_WRAPPER_502",
+          "retriever_wrapper_code": 502
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-84000/NH-84498.html",
+          "from_batch": "navy7",
+          "claimed_960px_from_catalog": [
+            960,
+            753
+          ],
+          "native_catalog_px": [
+            6216,
+            4876
+          ],
+          "rights_observation": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "274:4",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "stored_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fmuseums%2Fnmusn%2FPhotography%2FNARA+II%2F80-G%2F80-G-300000%2F80-G-344565.tif&rendition=cq5dam.web.1280.1280.jpeg",
+      "upstream_origin_host": "www.history.navy.mil",
+      "research_evidence": [
+        {
+          "batch": "navy7",
+          "path": "qa/media-recovery/navy_west_loch_tang_7_live_20261109.json",
+          "ref": "media/navy-seven-west-loch-tang-20261109",
+          "git_blob_sha": "86d4ed137fb27a2db7b77f11077461936fa53736",
+          "retriever_only_status": "TOOL_WRAPPER_502",
+          "retriever_wrapper_code": 502
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/wwii/wwii-pacific/japanese-surrender/allied-prisoners-of-war/80-g-344565.html",
+          "from_batch": "navy7",
+          "claimed_960px_from_catalog": [
+            960,
+            1271
+          ],
+          "native_catalog_px": [
+            1464,
+            1938
+          ],
+          "rights_observation": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "280:0",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "stored_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/ships-us/ships-usn-p/uss-pueblo-ager-2/428-gx-usn-1129207/_jcr_content/mediaitem/image.img.jpg/1504112093611.jpg",
+      "upstream_origin_host": "www.history.navy.mil",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "TIMEOUT_FETCHING",
+          "retriever_wrapper_code": 400
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/ships-us/ships-usn-p/uss-pueblo-ager-2/428-gx-usn-1129207.html",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "280:1",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "stored_url": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/p/pueblo-iii/_jcr_content/body/media_asset_1086930325/image.img.jpg/1514467381634.jpg",
+      "upstream_origin_host": "www.history.navy.mil",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "TIMEOUT_FETCHING",
+          "retriever_wrapper_code": 400
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-75000/NH-75559.html",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "280:2",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "stored_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2FNH+75000%2FNH+75561&rendition=cq5dam.web.1280.1280.jpeg",
+      "upstream_origin_host": "www.history.navy.mil",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "TIMEOUT_FETCHING",
+          "retriever_wrapper_code": 400
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-75000/NH-75561.html",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "280:3",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "stored_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64683/_jcr_content/mediaitem/image.img.jpg/1459314791691.jpg",
+      "upstream_origin_host": "www.history.navy.mil",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "TIMEOUT_FETCHING",
+          "retriever_wrapper_code": 400
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64683.html",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "280:4",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "stored_url": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/b/banner-ii/_jcr_content/body/media_asset/image.img.jpg",
+      "upstream_origin_host": "www.history.navy.mil",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "NOT_ACCESSIBLE_IN_TOOL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "280:5",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "stored_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64728/_jcr_content/mediaitem/image.img.jpg/1424360116159.jpg",
+      "upstream_origin_host": "www.history.navy.mil",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "TIMEOUT_FETCHING",
+          "retriever_wrapper_code": 400
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64728.html",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "285:0",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "stored_url": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+      "upstream_origin_host": "live.staticflickr.com",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "TOOL_403_FORBIDDEN",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "285:1",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "stored_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "upstream_origin_host": "www.squawkpoint.com",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "RENDERED_VIA_WEB_RETRIEVER",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "stored_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "upstream_origin_host": "blog.ucsusa.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "REDIRECT_TARGET_INACCESSIBLE",
+          "retriever_wrapper_code": 500
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "UNKNOWN",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "285:3",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "stored_url": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+      "upstream_origin_host": "i.insider.com",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "RENDERED_VIA_WEB_RETRIEVER",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "285:4",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "stored_url": "https://images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg",
+      "upstream_origin_host": "images.pixels.com",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "RENDERED_VIA_WEB_RETRIEVER",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.nrc.gov/education-regulatory-research/research/state-of-the-art-reactor-consequence-analyses-soarca/frequently-asked-questions",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": [
+            960,
+            1421
+          ],
+          "native_catalog_px": [
+            1772,
+            2623
+          ],
+          "rights_observation": "CATALOG_ASSERTS_PD_USGOV_NRC_DERIVATIVE_REVIEW",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "285:5",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "stored_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "upstream_origin_host": "images.saymedia-content.com",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "NOT_FOUND",
+          "retriever_wrapper_code": 404
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": [
+            819,
+            614
+          ],
+          "native_catalog_px": [
+            819,
+            614
+          ],
+          "rights_observation": "PD_SELF",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "stored_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "upstream_origin_host": "stpetecatalyst.com",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "NOT_FOUND",
+          "retriever_wrapper_code": 404
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "RIGHTS_UNVERIFIED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "288:0",
+      "post_id": 288,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "stored_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586/_jcr_content/mediaitem/image.img.jpg/1438378291110.jpg",
+      "upstream_origin_host": "www.history.navy.mil",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "BAD_GATEWAY",
+          "retriever_wrapper_code": 502
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586.html",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "COURTESY_PRIVATE_COLLECTION_VERIFY_ITEM_RIGHTS",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "288:2",
+      "post_id": 288,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "stored_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio/jcr%3Acontent/mediaitem/image.img.jpg/1564510769845.jpg",
+      "upstream_origin_host": "www.history.navy.mil",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "BAD_GATEWAY",
+          "retriever_wrapper_code": 502
+        }
+      ],
+      "archival_candidates": [],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "292:0",
+      "post_id": 292,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "stored_url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/DF-SN-86-12843-header-image-900x675.jpeg",
+      "upstream_origin_host": "nationalcoastguardmuseum.org",
+      "research_evidence": [
+        {
+          "batch": "coastal12",
+          "path": "qa/media-recovery/coastal_scotch_cap_prinsendam_12_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "7980bde96151c418e082f3cc3add077477c9ba48",
+          "retriever_only_status": "IMAGE_RENDERED_WEB_TOOL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002603427/",
+          "from_batch": "coastal12",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "MUSEUM_RENDITION_ITEM_RIGHTS_REVIEW",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "292:1",
+      "post_id": 292,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "stored_url": "https://stadsarchief.rotterdam.nl/sites/default/files/styles/gallery_large/public/2025-04/hal-prinsendam-nl-rtsa_4121_24162-1-14.jpg?h=3e6ca723&itok=wjXwUo3w",
+      "upstream_origin_host": "stadsarchief.rotterdam.nl",
+      "research_evidence": [
+        {
+          "batch": "coastal12",
+          "path": "qa/media-recovery/coastal_scotch_cap_prinsendam_12_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "7980bde96151c418e082f3cc3add077477c9ba48",
+          "retriever_only_status": "IMAGE_RENDERED_WEB_TOOL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://stadsarchief.rotterdam.nl/holland-amerika-lijn",
+          "from_batch": "coastal12",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "CITY_ARCHIVES_PHOTO_RIGHTS_NOT_CLEARED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "292:2",
+      "post_id": 292,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "stored_url": "https://images.pubble.cloud/worker/jpg/quick/1920/3077598/96897487/content/2024/6/cf6d9b51-c16b-4938-800c-833b86ac5740",
+      "upstream_origin_host": "images.pubble.cloud",
+      "research_evidence": [
+        {
+          "batch": "coastal12",
+          "path": "qa/media-recovery/coastal_scotch_cap_prinsendam_12_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "7980bde96151c418e082f3cc3add077477c9ba48",
+          "retriever_only_status": "IMAGE_RENDERED_WEB_TOOL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "292:3",
+      "post_id": 292,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "stored_url": "https://cgaviationhistory.org/wp-content/uploads/MS_Prisendam_sinking_off_Alaska_with_USCG_HH-3F_1980.jpg",
+      "upstream_origin_host": "cgaviationhistory.org",
+      "research_evidence": [
+        {
+          "batch": "coastal12",
+          "path": "qa/media-recovery/coastal_scotch_cap_prinsendam_12_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "7980bde96151c418e082f3cc3add077477c9ba48",
+          "retriever_only_status": "IMAGE_RENDERED_WEB_TOOL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002603427/",
+          "from_batch": "coastal12",
+          "claimed_960px_from_catalog": [
+            960,
+            644
+          ],
+          "native_catalog_px": [
+            2820,
+            1891
+          ],
+          "rights_observation": "USCG_PD_RELEASE_WITH_CREDIT_AND_VISUAL_INFORMATION_LIMITS",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "292:4",
+      "post_id": 292,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "stored_url": "https://www.travelserver.net/travelpage/aspgallery/pictures/Ad_1981_12.jpg",
+      "upstream_origin_host": "www.travelserver.net",
+      "research_evidence": [
+        {
+          "batch": "coastal12",
+          "path": "qa/media-recovery/coastal_scotch_cap_prinsendam_12_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "7980bde96151c418e082f3cc3add077477c9ba48",
+          "retriever_only_status": "IMAGE_RENDERED_WEB_TOOL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "292:5",
+      "post_id": 292,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "stored_url": "https://static.thisdayinaviation.com/wp-content/uploads/tdia/2020/10/Screen-Shot-2020-10-03-at-14.51.27.png",
+      "upstream_origin_host": "static.thisdayinaviation.com",
+      "research_evidence": [
+        {
+          "batch": "coastal12",
+          "path": "qa/media-recovery/coastal_scotch_cap_prinsendam_12_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "7980bde96151c418e082f3cc3add077477c9ba48",
+          "retriever_only_status": "WEB_OPEN_403",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "367:1",
+      "post_id": 367,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Operation_Chrome_Dome_route.jpg?width=1280",
+      "upstream_origin_host": "commons.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Operation_Chrome_Dome_route.jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": [
+            960,
+            601
+          ],
+          "native_catalog_px": [
+            1475,
+            923
+          ],
+          "rights_observation": "CC_BY_SA_2_5",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "367:2",
+      "post_id": 367,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Skill_(MSO-471)_operating_off_the_coast_of_Spain%2C_in_February_1966_(428-NPC-36556).jpg?width=1280",
+      "upstream_origin_host": "commons.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:USS_Skill_(MSO-471)_operating_off_the_coast_of_Spain,_in_February_1966_(428-NPC-36556).jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": [
+            960,
+            703
+          ],
+          "native_catalog_px": [
+            1227,
+            898
+          ],
+          "rights_observation": "US_NAVY_PD_CLAIM_NARA_85011",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "367:3",
+      "post_id": 367,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Zoeken_naar_H_bom_in_Spanje%2C_de_Alvin_wordt_te_water_gelaten%2C_Bestanddeelnr_918-8161.jpg?width=1280",
+      "upstream_origin_host": "commons.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Zoeken_naar_H_bom_in_Spanje,_de_Alvin_wordt_te_water_gelaten,_Bestanddeelnr_918-8161.jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": [
+            960,
+            685
+          ],
+          "native_catalog_px": [
+            3440,
+            2453
+          ],
+          "rights_observation": "CC0_1_0_ARCHIVES_NL_918_8161",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "367:4",
+      "post_id": 367,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_url": "https://navalunderseamuseum.org/wp-content/uploads/2016/03/CURV-I-H-Bomb-Recovery-300x243.jpg",
+      "upstream_origin_host": "navalunderseamuseum.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "IMAGE_RENDERED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://navalunderseamuseum.org/petrel-helmet/",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "RIGHTS_UNVERIFIED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "367:5",
+      "post_id": 367,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/428-GX-_USN_118930_(26941557635).jpg?width=1280",
+      "upstream_origin_host": "commons.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:428-GX-_USN_118930_(26941557635).jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": [
+            960,
+            1276
+          ],
+          "native_catalog_px": [
+            1854,
+            2464
+          ],
+          "rights_observation": "US_NAVY_PD_CLAIM",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "367:6",
+      "post_id": 367,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/1966_Palomares_B-52_crash_-_recovered_H-bomb.jpg?width=1280",
+      "upstream_origin_host": "commons.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:1966_Palomares_B-52_crash_-_recovered_H-bomb.jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": [
+            662,
+            374
+          ],
+          "native_catalog_px": [
+            662,
+            374
+          ],
+          "rights_observation": "US_NAVY_PD_CLAIM_WITH_CROP",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "367:7",
+      "post_id": 367,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Palomares_barrels.jpg?width=1280",
+      "upstream_origin_host": "commons.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Palomares_barrels.jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": [
+            500,
+            252
+          ],
+          "native_catalog_px": [
+            500,
+            252
+          ],
+          "rights_observation": "US_AIR_FORCE_PD_CLAIM_THIRD_PARTY_ORIGIN",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "367:8",
+      "post_id": 367,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Recovered_Mk_28RI_bomb.JPG?width=1280",
+      "upstream_origin_host": "commons.wikimedia.org",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Recovered_Mk_28RI_bomb.JPG",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": [
+            617,
+            461
+          ],
+          "native_catalog_px": [
+            617,
+            461
+          ],
+          "rights_observation": "US_NAVY_PD_CLAIM",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "370:0",
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "stored_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-270000%2F80-G-276907&rendition=cq5dam.web.1280.1280.jpeg",
+      "upstream_origin_host": "www.history.navy.mil",
+      "research_evidence": [
+        {
+          "batch": "navy7",
+          "path": "qa/media-recovery/navy_west_loch_tang_7_live_20261109.json",
+          "ref": "media/navy-seven-west-loch-tang-20261109",
+          "git_blob_sha": "86d4ed137fb27a2db7b77f11077461936fa53736",
+          "retriever_only_status": "TOOL_WRAPPER_502",
+          "retriever_wrapper_code": 502
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-270000/80-G-276907.html",
+          "from_batch": "navy7",
+          "claimed_960px_from_catalog": [
+            960,
+            1007
+          ],
+          "native_catalog_px": [
+            4320,
+            4530
+          ],
+          "rights_observation": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "370:1",
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "stored_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-200000%2F80-G-202485&rendition=cq5dam.web.1280.1280.jpeg",
+      "upstream_origin_host": "www.history.navy.mil",
+      "research_evidence": [
+        {
+          "batch": "navy7",
+          "path": "qa/media-recovery/navy_west_loch_tang_7_live_20261109.json",
+          "ref": "media/navy-seven-west-loch-tang-20261109",
+          "git_blob_sha": "86d4ed137fb27a2db7b77f11077461936fa53736",
+          "retriever_only_status": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/80-G-202000/80-G-202485.html",
+          "from_batch": "navy7",
+          "claimed_960px_from_catalog": [
+            960,
+            801
+          ],
+          "native_catalog_px": [
+            5860,
+            4890
+          ],
+          "rights_observation": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "370:3",
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "stored_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-270000%2F80-G-276940&rendition=cq5dam.web.1280.1280.jpeg",
+      "upstream_origin_host": "www.history.navy.mil",
+      "research_evidence": [
+        {
+          "batch": "navy7",
+          "path": "qa/media-recovery/navy_west_loch_tang_7_live_20261109.json",
+          "ref": "media/navy-seven-west-loch-tang-20261109",
+          "git_blob_sha": "86d4ed137fb27a2db7b77f11077461936fa53736",
+          "retriever_only_status": "TOOL_WRAPPER_502",
+          "retriever_wrapper_code": 502
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-270000/80-G-276940.html",
+          "from_batch": "navy7",
+          "claimed_960px_from_catalog": [
+            960,
+            768
+          ],
+          "native_catalog_px": [
+            6254,
+            5002
+          ],
+          "rights_observation": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "370:4",
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "stored_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2FSC-400000%2FSC-427947&rendition=cq5dam.web.1280.1280.jpeg",
+      "upstream_origin_host": "www.history.navy.mil",
+      "research_evidence": [
+        {
+          "batch": "navy7",
+          "path": "qa/media-recovery/navy_west_loch_tang_7_live_20261109.json",
+          "ref": "media/navy-seven-west-loch-tang-20261109",
+          "git_blob_sha": "86d4ed137fb27a2db7b77f11077461936fa53736",
+          "retriever_only_status": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/sc-series/SC-400000/SC-427947.html",
+          "from_batch": "navy7",
+          "claimed_960px_from_catalog": [
+            960,
+            780
+          ],
+          "native_catalog_px": [
+            6084,
+            4942
+          ],
+          "rights_observation": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "407:0",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/vhp_img317.jpg",
+      "upstream_origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "research_evidence": [
+        {
+          "batch": "usgs8",
+          "path": "qa/media-recovery/usgs_407_418_eight_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "f20f95ab80d63418909dafb22b984d94bd10a4f2",
+          "retriever_only_status": "IMAGE_RENDERED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.usgs.gov/media/images/earthquake-damage-1959-hebgen-lake-event-yellowstone-plateau",
+          "from_batch": "usgs8",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "HOLD - item-specific copyright, credit and source identity",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "407:1",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "upstream_origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "UNSUPPORTED_OCTET_STREAM",
+          "retriever_wrapper_code": 400
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "USGS_PUBLIC_DOMAIN_CATALOG",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "407:2",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake1.jpg",
+      "upstream_origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "research_evidence": [
+        {
+          "batch": "usgs8",
+          "path": "qa/media-recovery/usgs_407_418_eight_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "f20f95ab80d63418909dafb22b984d94bd10a4f2",
+          "retriever_only_status": "IMAGE_RENDERED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.usgs.gov/media/images/view-madison-slide-august-21-1959-rapidly-filling-earthquake-lake",
+          "from_batch": "usgs8",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "HOLD - item-specific copyright, credit and source identity",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "407:3",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake3.jpg",
+      "upstream_origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "research_evidence": [
+        {
+          "batch": "usgs8",
+          "path": "qa/media-recovery/usgs_407_418_eight_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "f20f95ab80d63418909dafb22b984d94bd10a4f2",
+          "retriever_only_status": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.usgs.gov/observatories/yvo/news/1959-madison-slide-part-1-a-deadly-consequence-hebgen-lake-earthquake",
+          "from_batch": "usgs8",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "HOLD - item-specific copyright, credit and source identity",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "407:4",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7536.jpg",
+      "upstream_origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "research_evidence": [
+        {
+          "batch": "usgs8",
+          "path": "qa/media-recovery/usgs_407_418_eight_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "f20f95ab80d63418909dafb22b984d94bd10a4f2",
+          "retriever_only_status": "IMAGE_RENDERED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.usgs.gov/observatories/yvo/news/1959-madison-slide-part-2-recovery-and-remediation",
+          "from_batch": "usgs8",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "HOLD - item-specific copyright, credit and source identity",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "407:5",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7538.jpg",
+      "upstream_origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "research_evidence": [
+        {
+          "batch": "usgs8",
+          "path": "qa/media-recovery/usgs_407_418_eight_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "f20f95ab80d63418909dafb22b984d94bd10a4f2",
+          "retriever_only_status": "IMAGE_RENDERED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.usgs.gov/media/images/old-faithful-eruption",
+          "from_batch": "usgs8",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "HOLD - item-specific copyright, credit and source identity",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "407:6",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7537.jpg",
+      "upstream_origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "research_evidence": [
+        {
+          "batch": "usgs8",
+          "path": "qa/media-recovery/usgs_407_418_eight_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "f20f95ab80d63418909dafb22b984d94bd10a4f2",
+          "retriever_only_status": "IMAGE_RENDERED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.usgs.gov/media/images/old-faithful-geyser-eruption-yellowstone-national-park",
+          "from_batch": "usgs8",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "HOLD - item-specific copyright, credit and source identity",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "407:7",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/Quake%20lake%20and%20slide%2020230627.jpg",
+      "upstream_origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "research_evidence": [
+        {
+          "batch": "usgs8",
+          "path": "qa/media-recovery/usgs_407_418_eight_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "f20f95ab80d63418909dafb22b984d94bd10a4f2",
+          "retriever_only_status": "IMAGE_RENDERED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.usgs.gov/media/images/earthquake-lake-and-madison-slide",
+          "from_batch": "usgs8",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "HOLD - item-specific copyright, credit and source identity",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "413:1",
+      "post_id": 413,
+      "post_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+      "stored_url": "https://tile.loc.gov/storage-services/service/pnp/stereo/1s40000/1s41000/1s41500/1s41590v.jpg",
+      "upstream_origin_host": "tile.loc.gov",
+      "research_evidence": [
+        {
+          "batch": "pelee4",
+          "path": "qa/media-recovery/mount_pelee_413_four_loc_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "bca94b9db11d804af03a5b0809a036d7a9e967ed",
+          "retriever_only_status": "WEB_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/item/98504788/",
+          "from_batch": "pelee4",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "No known restrictions on publication",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "413:3",
+      "post_id": 413,
+      "post_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+      "stored_url": "https://tile.loc.gov/storage-services/service/pnp/stereo/1s40000/1s41000/1s41500/1s41518v.jpg",
+      "upstream_origin_host": "tile.loc.gov",
+      "research_evidence": [
+        {
+          "batch": "pelee4",
+          "path": "qa/media-recovery/mount_pelee_413_four_loc_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "bca94b9db11d804af03a5b0809a036d7a9e967ed",
+          "retriever_only_status": "WEB_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "413:4",
+      "post_id": 413,
+      "post_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+      "stored_url": "https://tile.loc.gov/storage-services/service/pnp/stereo/1s40000/1s41000/1s41400/1s41424v.jpg",
+      "upstream_origin_host": "tile.loc.gov",
+      "research_evidence": [
+        {
+          "batch": "pelee4",
+          "path": "qa/media-recovery/mount_pelee_413_four_loc_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "bca94b9db11d804af03a5b0809a036d7a9e967ed",
+          "retriever_only_status": "WEB_IMAGE_RENDERED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/item/2006688499/",
+          "from_batch": "pelee4",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "No known restrictions on publication",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "413:5",
+      "post_id": 413,
+      "post_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+      "stored_url": "https://tile.loc.gov/storage-services/service/pnp/stereo/1s40000/1s41000/1s41500/1s41568v.jpg",
+      "upstream_origin_host": "tile.loc.gov",
+      "research_evidence": [
+        {
+          "batch": "pelee4",
+          "path": "qa/media-recovery/mount_pelee_413_four_loc_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "bca94b9db11d804af03a5b0809a036d7a9e967ed",
+          "retriever_only_status": "WEB_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/item/2004680426/",
+          "from_batch": "pelee4",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "No known restrictions on publication",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "418:0",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "stored_url": "https://www.history.uscg.mil/Portals/6/2_%20new%20and%20old%20lighthouses%2019849609_web1_1_-Scotch-Cap-lighthouse-1200x984.jpg",
+      "upstream_origin_host": "www.history.uscg.mil",
+      "research_evidence": [
+        {
+          "batch": "coastal12",
+          "path": "qa/media-recovery/coastal_scotch_cap_prinsendam_12_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "7980bde96151c418e082f3cc3add077477c9ba48",
+          "retriever_only_status": "WEB_OPEN_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+          "from_batch": "coastal12",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "USCG_ITEM_ATTRIBUTION_USE_LIMITS_REVIEW",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "stored_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "upstream_origin_host": "media.defense.gov",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "FORBIDDEN",
+          "retriever_wrapper_code": 403
+        },
+        {
+          "batch": "coastal12",
+          "path": "qa/media-recovery/coastal_scotch_cap_prinsendam_12_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "7980bde96151c418e082f3cc3add077477c9ba48",
+          "retriever_only_status": "WEB_OPEN_403",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "USCG_PUBLIC_DOMAIN_RELEASE_CATALOG",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        },
+        {
+          "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+          "from_batch": "coastal12",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "USCG_ITEM_ATTRIBUTION_USE_LIMITS_REVIEW",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "stored_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "upstream_origin_host": "www.history.uscg.mil",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "FORBIDDEN",
+          "retriever_wrapper_code": 403
+        },
+        {
+          "batch": "coastal12",
+          "path": "qa/media-recovery/coastal_scotch_cap_prinsendam_12_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "7980bde96151c418e082f3cc3add077477c9ba48",
+          "retriever_only_status": "WEB_OPEN_403",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "RIGHTS_UNVERIFIED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        },
+        {
+          "catalog_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+          "from_batch": "coastal12",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "USCG_ITEM_ATTRIBUTION_USE_LIMITS_REVIEW",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "418:3",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "stored_url": "https://www.history.uscg.mil/Portals/6/6_%20Scotch%20Cap%20remains.jpg",
+      "upstream_origin_host": "www.history.uscg.mil",
+      "research_evidence": [
+        {
+          "batch": "coastal12",
+          "path": "qa/media-recovery/coastal_scotch_cap_prinsendam_12_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "7980bde96151c418e082f3cc3add077477c9ba48",
+          "retriever_only_status": "WEB_OPEN_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+          "from_batch": "coastal12",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "USCG_ITEM_ATTRIBUTION_USE_LIMITS_REVIEW",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "418:4",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "stored_url": "https://www.hawaiimagazine.com/wp-content/uploads/2020/12/Tsunami1946NOAA2.jpg",
+      "upstream_origin_host": "www.hawaiimagazine.com",
+      "research_evidence": [
+        {
+          "batch": "coastal12",
+          "path": "qa/media-recovery/coastal_scotch_cap_prinsendam_12_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "7980bde96151c418e082f3cc3add077477c9ba48",
+          "retriever_only_status": "IMAGE_RENDERED_WEB_TOOL",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://prod-01-alb-www-noaa.woc.noaa.gov/noaa-collections/photo-library/pl23theb2705jpg",
+          "from_batch": "coastal12",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "NOAA_ITEM_IDENTITY_RIGHTS_REVIEW",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "418:5",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/media/images/19460401_UNKNOWN_37-012_copy.jpg?itok=ASMRCahz",
+      "upstream_origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "research_evidence": [
+        {
+          "batch": "coastal12",
+          "path": "qa/media-recovery/coastal_scotch_cap_prinsendam_12_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "7980bde96151c418e082f3cc3add077477c9ba48",
+          "retriever_only_status": "IMAGE_RENDERED_WEB_TOOL",
+          "retriever_wrapper_code": null
+        },
+        {
+          "batch": "usgs8",
+          "path": "qa/media-recovery/usgs_407_418_eight_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "f20f95ab80d63418909dafb22b984d94bd10a4f2",
+          "retriever_only_status": "IMAGE_RENDERED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ngdc%3AHazard_Images_Database",
+          "from_batch": "coastal12",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "USGS_SOURCE_ORIGINAL_ITEM_RIGHTS_REVIEW",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        },
+        {
+          "catalog_url": "https://www.usgs.gov/media/images/damage-hilo-tsunami-struck-april-fools-day-1946",
+          "from_batch": "usgs8",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "HOLD - item-specific copyright, credit and source identity",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "432:0",
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "stored_url": "https://www.floridamemory.com/fpc/prints/pr04493.jpg",
+      "upstream_origin_host": "www.floridamemory.com",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "REDIRECT_TARGET_INACCESSIBLE",
+          "retriever_wrapper_code": 500
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://floridamemory.com/items/show/4144",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "432:1",
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "stored_url": "https://www.floridamemory.com/fpc/reference/rc17068.jpg",
+      "upstream_origin_host": "www.floridamemory.com",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "REDIRECT_TARGET_INACCESSIBLE",
+          "retriever_wrapper_code": 500
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://floridamemory.com/items/show/38362",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "432:2",
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "stored_url": "https://www.floridamemory.com/fpc/reference/rc10673.jpg",
+      "upstream_origin_host": "www.floridamemory.com",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "REDIRECT_TARGET_INACCESSIBLE",
+          "retriever_wrapper_code": 500
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://floridamemory.com/items/show/33289",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "432:3",
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "stored_url": "https://www.floridamemory.com/fpc/general/n031889.jpg",
+      "upstream_origin_host": "www.floridamemory.com",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "REDIRECT_TARGET_INACCESSIBLE",
+          "retriever_wrapper_code": 500
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://floridamemory.com/items/show/141398",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "432:4",
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "stored_url": "https://www.floridamemory.com/fpc/reference/rc04344.jpg",
+      "upstream_origin_host": "www.floridamemory.com",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "REDIRECT_TARGET_INACCESSIBLE",
+          "retriever_wrapper_code": 500
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://floridamemory.com/items/show/27848",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "432:5",
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "stored_url": "https://www.floridamemory.com/fpc/reference/rc07668.jpg",
+      "upstream_origin_host": "www.floridamemory.com",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "REDIRECT_TARGET_INACCESSIBLE",
+          "retriever_wrapper_code": 500
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://floridamemory.com/items/show/30741",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "432:6",
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "stored_url": "https://www.floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+      "upstream_origin_host": "www.floridamemory.com",
+      "research_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_status": "REDIRECT_TARGET_INACCESSIBLE",
+          "retriever_wrapper_code": 500
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://floridamemory.com/items/show/340182",
+          "from_batch": "cross",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "434:1",
+      "post_id": 434,
+      "post_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "stored_url": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~large.jpg",
+      "upstream_origin_host": "images-assets.nasa.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "DIRECT_IMAGE_RENDERED_BY_WEB_RETRIEVER_NOT_BROWSER",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://images.nasa.gov/details/S67-15717",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "NASA_GENERAL_POLICY_REVIEW_PERSONALITY_LOGOS_THIRD_PARTY",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "434:2",
+      "post_id": 434,
+      "post_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "stored_url": "https://images-assets.nasa.gov/image/S66-58038/S66-58038~large.jpg",
+      "upstream_origin_host": "images-assets.nasa.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "DIRECT_IMAGE_TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://images.nasa.gov/details/S66-58038",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "NASA_GENERAL_POLICY_REVIEW_PERSONALITY_LOGOS_THIRD_PARTY",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "434:3",
+      "post_id": 434,
+      "post_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "stored_url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0164/KSC-20170124-PH_KLS01_0164~large.jpg",
+      "upstream_origin_host": "images-assets.nasa.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "DIRECT_IMAGE_TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://images.nasa.gov/details/KSC-20170124-PH_KLS01_0164",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "NASA_GENERAL_POLICY_REVIEW_PERSONALITY_LOGOS_THIRD_PARTY",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "434:4",
+      "post_id": 434,
+      "post_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "stored_url": "https://images-assets.nasa.gov/image/S67-21294/S67-21294~large.jpg",
+      "upstream_origin_host": "images-assets.nasa.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "DIRECT_IMAGE_TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://images.nasa.gov/details/S67-21294",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "NASA_GENERAL_POLICY_REVIEW_PERSONALITY_LOGOS_THIRD_PARTY",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    },
+    {
+      "slot": "434:5",
+      "post_id": 434,
+      "post_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "stored_url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0090/KSC-20170124-PH_KLS01_0090~large.jpg",
+      "upstream_origin_host": "images-assets.nasa.gov",
+      "research_evidence": [
+        {
+          "batch": "primary18",
+          "path": "qa/media-recovery/primary_source_18_loc_nps_nasa_20261109.json",
+          "ref": "media/triage-43-source-15-oversize-20261109",
+          "git_blob_sha": "ac51e43f9c300e7b19820b6c7f17bdb02db93718",
+          "retriever_only_status": "DIRECT_IMAGE_TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "archival_candidates": [
+        {
+          "catalog_url": "https://images.nasa.gov/details/KSC-20170124-PH_KLS01_0090",
+          "from_batch": "primary18",
+          "claimed_960px_from_catalog": null,
+          "native_catalog_px": null,
+          "rights_observation": "NASA_GENERAL_POLICY_REVIEW_PERSONALITY_LOGOS_THIRD_PARTY",
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded_px": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "rights_cleared": false,
+      "asset_download_authorized": false,
+      "cdn_cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_block_rewrite_authorized": false
+    }
+  ]
+}

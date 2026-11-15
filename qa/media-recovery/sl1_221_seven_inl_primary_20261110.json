@@ -1,0 +1,260 @@
+{
+  "schema": "fv-media-sl1-221-seven-v1",
+  "catalog_checked_date": "2026-11-10",
+  "frozen_source": {
+    "path": "qa/media-recovery/parts/05.json",
+    "branch": "qa/media-recovery-reviewed-20261030-1158",
+    "blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9"
+  },
+  "site": "finalvestige.com",
+  "post_id": 221,
+  "post_title": "The Rod Was Supposed to Move Four Inches",
+  "evidence_method": "Wikimedia catalog HTML readable, original stored Special:Redirect/file source inaccessible through text-only retriever; neither observation is a guest browser HTTP response or actual download.",
+  "native_http_probe": "Container DNS resolution failure for first source (and site page), no HTTP response; rest not attempted from container.",
+  "official_primary": "https://inl.gov/content/uploads/2024/05/Chapter-16_Low-1.pdf",
+  "official_primary_examined_pdf_pages": [
+    155,
+    157
+  ],
+  "source_conditions": "No image binary fetched; no caching, resizing, posting or publishing. Original identity and licensing held.",
+  "rows": [
+    {
+      "slot": "221:0",
+      "post_id": 221,
+      "published_url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+      "original_stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/SL1nuclearpowerplant.JPG",
+      "original_alt": "SL-1 nuclear reactor building at the National Reactor Testing Station in Idaho.",
+      "original_redirect_retriever": "TOOL_INACCESSIBLE_NOT_HTTP",
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_size": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:SL1nuclearpowerplant.JPG",
+      "catalog_retriever": "HTML_ACCESSIBLE_2026-11-10",
+      "catalog_original_px": [
+        704,
+        346
+      ],
+      "catalog_original_kb_approx": 58,
+      "conditional_max_width_960_px": [
+        704,
+        346
+      ],
+      "government_primary_context": null,
+      "description": "U.S. Army source claim; exterior of SL-1 facility; original photographic date not established.",
+      "rights_observation": "Commons claims public domain as an official U.S. Army work; no independent source or binary chain verified.",
+      "historical_integrity": "Original 704-pixel wide image must never be upscaled.",
+      "exact_binary_match_verified": false,
+      "item_rights_cleared": false,
+      "cached_copy_authorized": false,
+      "wordpress_media_upload_authorized": false,
+      "post_block_change_authorized": false
+    },
+    {
+      "slot": "221:1",
+      "post_id": 221,
+      "published_url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+      "original_stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/SL-1_-_Cutaway_of_reactor_and_control_building.png",
+      "original_alt": "Cutaway diagram of the SL-1 reactor and control building showing the reactor vessel and operating floor.",
+      "original_redirect_retriever": "TOOL_INACCESSIBLE_NOT_HTTP",
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_size": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:SL-1_-_Cutaway_of_reactor_and_control_building.png",
+      "catalog_retriever": "HTML_ACCESSIBLE_2026-11-10",
+      "catalog_original_px": [
+        729,
+        589
+      ],
+      "catalog_original_kb_approx": 187,
+      "conditional_max_width_960_px": [
+        729,
+        589
+      ],
+      "government_primary_context": "https://inl.gov/content/uploads/2024/05/Chapter-15_Low-1.pdf",
+      "description": "Reactor/building cutaway diagram reproduced from DOE Idaho Operations Office Proving the Principle chapter 15.",
+      "rights_observation": "Commons claims U.S. federal government PD; diagram designer and figure/redistribution rights require item review.",
+      "historical_integrity": "Diagram, NOT period photograph; original only 729 pixels wide; keep labels legible, no upscale.",
+      "exact_binary_match_verified": false,
+      "item_rights_cleared": false,
+      "cached_copy_authorized": false,
+      "wordpress_media_upload_authorized": false,
+      "post_block_change_authorized": false
+    },
+    {
+      "slot": "221:2",
+      "post_id": 221,
+      "published_url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+      "original_stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/SL-1_-_Reactor_schematic.png",
+      "original_alt": "SL-1 reactor schematic showing the core, pressure vessel and control-rod arrangement.",
+      "original_redirect_retriever": "TOOL_INACCESSIBLE_NOT_HTTP",
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_size": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:SL-1_-_Reactor_schematic.png",
+      "catalog_retriever": "HTML_ACCESSIBLE_2026-11-10",
+      "catalog_original_px": [
+        1454,
+        1753
+      ],
+      "catalog_original_kb_approx": 58,
+      "conditional_max_width_960_px": [
+        960,
+        1157
+      ],
+      "government_primary_context": "https://inl.gov/content/uploads/2024/05/Chapter-15_Low-1.pdf",
+      "description": "SL-1 schematic from DOE Idaho Operations Office Proving the Principle chapter 15.",
+      "rights_observation": "Commons asserts USGov PD; final diagram rights and label readability must be reviewed.",
+      "historical_integrity": "At 960 pixels, schematic text/annotations may be too small; 960px is conditional, not a required shrink.",
+      "exact_binary_match_verified": false,
+      "item_rights_cleared": false,
+      "cached_copy_authorized": false,
+      "wordpress_media_upload_authorized": false,
+      "post_block_change_authorized": false
+    },
+    {
+      "slot": "221:3",
+      "post_id": 221,
+      "published_url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+      "original_stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/US_AEC_SL-1.JPG",
+      "original_alt": "Atomic Energy Commission crews removing the damaged SL-1 reactor core from the Idaho facility after the 1961 accident.",
+      "original_redirect_retriever": "TOOL_INACCESSIBLE_NOT_HTTP",
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_size": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:US_AEC_SL-1.JPG",
+      "catalog_retriever": "HTML_ACCESSIBLE_2026-11-10",
+      "catalog_original_px": [
+        346,
+        253
+      ],
+      "catalog_original_kb_approx": 14,
+      "conditional_max_width_960_px": [
+        346,
+        253
+      ],
+      "government_primary_context": "https://inl.gov/content/uploads/2024/05/Chapter-16_Low-1.pdf",
+      "description": "Atomic Energy Commission image of SL-1 core removal, dated January 1961 in Commons catalog; Commons provenance traces to English Wikipedia transfer.",
+      "rights_observation": "Commons claims public domain as U.S. Atomic Energy Commission/DOE-predecessor work; original federal negative/custody not independently proven.",
+      "historical_integrity": "Only 346x253 catalog original; no upscale, and alternate figure in INL text is NOT verified pixel-identical.",
+      "exact_binary_match_verified": false,
+      "item_rights_cleared": false,
+      "cached_copy_authorized": false,
+      "wordpress_media_upload_authorized": false,
+      "post_block_change_authorized": false
+    },
+    {
+      "slot": "221:4",
+      "post_id": 221,
+      "published_url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+      "original_stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sl-1-ineel81-3966.jpg",
+      "original_alt": "Retrospective photograph showing severe damage inside the SL-1 reactor core after the 1961 prompt-critical excursion.",
+      "original_redirect_retriever": "TOOL_INACCESSIBLE_NOT_HTTP",
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_size": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Sl-1-ineel81-3966.jpg",
+      "catalog_retriever": "HTML_ACCESSIBLE_2026-11-10",
+      "catalog_original_px": [
+        1406,
+        1881
+      ],
+      "catalog_original_kb_approx": 452,
+      "conditional_max_width_960_px": [
+        960,
+        1284
+      ],
+      "government_primary_context": "https://inl.gov/content/uploads/2024/05/Chapter-16_Low-1.pdf",
+      "description": "1981 'Lest We Forget' safety-poster reuse of a 1961 photo showing damaged SL-1 vessel; INL book p157 labels its source INEEL 81-3966.",
+      "rights_observation": "Commons claims federal PD via INEEL; national laboratory / reused poster rights require item-level check before caching.",
+      "historical_integrity": "IMPORTANT: image is a 1981 poster/composite reusing a 1961 photograph, NOT a standalone 1981 incident photo; verify any ALT/caption depiction. Primary source p157.",
+      "exact_binary_match_verified": false,
+      "item_rights_cleared": false,
+      "cached_copy_authorized": false,
+      "wordpress_media_upload_authorized": false,
+      "post_block_change_authorized": false
+    },
+    {
+      "slot": "221:5",
+      "post_id": 221,
+      "published_url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+      "original_stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sl-1-ineel61-9.jpg",
+      "original_alt": "Health physicists checking U.S. Highway 20 for radioactive contamination on the morning after the SL-1 accident.",
+      "original_redirect_retriever": "TOOL_INACCESSIBLE_NOT_HTTP",
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_size": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Sl-1-ineel61-9.jpg",
+      "catalog_retriever": "HTML_ACCESSIBLE_2026-11-10",
+      "catalog_original_px": [
+        1436,
+        1113
+      ],
+      "catalog_original_kb_approx": 363,
+      "conditional_max_width_960_px": [
+        960,
+        744
+      ],
+      "government_primary_context": "https://inl.gov/content/uploads/2024/05/Chapter-15_Low-1.pdf",
+      "description": "Health physicists check Highway 20 for contamination January 4, 1961; accession INEEL 61-9.",
+      "rights_observation": "Commons asserts federal government PD; check whether lab-contractor image is federally authored before copying.",
+      "historical_integrity": "Preserve Jan 4, 1961 setting; do not claim visual quality or download bytes without browser data.",
+      "exact_binary_match_verified": false,
+      "item_rights_cleared": false,
+      "cached_copy_authorized": false,
+      "wordpress_media_upload_authorized": false,
+      "post_block_change_authorized": false
+    },
+    {
+      "slot": "221:6",
+      "post_id": 221,
+      "published_url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+      "original_stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/SL-1_-_Dismantling_of_the_foundation_piers.jpg",
+      "original_alt": "Workers dismantling the SL-1 reactor foundation piers during later cleanup of the Idaho site.",
+      "original_redirect_retriever": "TOOL_INACCESSIBLE_NOT_HTTP",
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_size": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:SL-1_-_Dismantling_of_the_foundation_piers.jpg",
+      "catalog_retriever": "HTML_ACCESSIBLE_2026-11-10",
+      "catalog_original_px": [
+        1402,
+        1050
+      ],
+      "catalog_original_kb_approx": 343,
+      "conditional_max_width_960_px": [
+        960,
+        719
+      ],
+      "government_primary_context": "https://inl.gov/content/uploads/2024/05/Chapter-16_Low-1.pdf",
+      "description": "Workers attaching shaped-charge caps during SL-1 foundation-pier demolition; DOE book p155 attributes printed photograph INEEL 67-2587.",
+      "rights_observation": "Commons asserts federal government PD but labels author INEEL 81-3966, conflicting with primary caption INEEL 67-2587; require exact source and author verification.",
+      "historical_integrity": "IMPORTANT conflicting metadata: Commons labels Taken in 1981/Author INEEL 81-3966; DOE book p155 identifies photograph INEEL 67-2587 and says foundation piers remained in 1962. Do not claim photograph was taken in 1981.",
+      "exact_binary_match_verified": false,
+      "item_rights_cleared": false,
+      "cached_copy_authorized": false,
+      "wordpress_media_upload_authorized": false,
+      "post_block_change_authorized": false
+    }
+  ]
+}

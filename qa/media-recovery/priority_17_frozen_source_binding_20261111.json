@@ -1,0 +1,468 @@
+{
+  "schema": "fv-priority-17-exact-frozen-source-bind-v1",
+  "snapshot_date": "2026-10-30",
+  "build_local_date": "2026-11-11",
+  "purpose": "Bind 6 suspected failures and 11 oversized published-inline originals to the exact 61-post Gutenberg source before accepting any guest-browser evidence or 76% transfer comparison. Source evidence, not browser measurements or publication approval.",
+  "frozen_source": {
+    "posts": 61,
+    "inline_images": 355,
+    "offsite_positions": 288,
+    "part_blob_shas": [
+      "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+      "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "21095161e633aba093b74c0ead9936c9f6186d00",
+      "5659ec243c188928be3f89c0f96354b660608ca2"
+    ],
+    "worklist_pr": 183,
+    "worklist_blob_sha": "2acd06a4ca4317646006eb6591face3fe76fedec"
+  },
+  "bridge_git_blob_sha": "d1a9c7a499510ec37bcdba5858d45165752587e0",
+  "cohort": {
+    "target_slots": 17,
+    "p0_suspected": 6,
+    "p1_oversized_inline": 11,
+    "p1_original_bytes": 38480915,
+    "oversized_all_count": 15,
+    "oversized_all_original_bytes": 47096779,
+    "previously_reported_broken": 42,
+    "guest_broken_verified_from_evidence": 0,
+    "measured_transfer_saving_percent": null
+  },
+  "limitations": {
+    "wrapper_http_is_not_origin_or_guest": true,
+    "post_61_frozen_not_current_66": true,
+    "source_input_does_not_prove_selected_resource": false,
+    "oversized_storage_not_network_transfer": true,
+    "rights_release_approved": false,
+    "wordpress_production_writes": false,
+    "third_party_binary_downloads": false,
+    "sitewide_76_verified": false
+  },
+  "rows": [
+    {
+      "slot": "34:0",
+      "post_id": 34,
+      "post_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+      "priority": "P1_GT_1_5MB_INLINE",
+      "stored_original_src": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "frozen_alt": "Firefighters and horse-drawn fire engines on a ruined San Francisco street during the 1906 fires",
+      "wordpress_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "media_id": 39,
+      "stored_original_bytes": 2892087,
+      "native_media_dimensions_px": [
+        1672,
+        941
+      ],
+      "conditional_no_upscale_960px": [
+        960,
+        540
+      ],
+      "rights_issue": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+      "web_retriever_only": null,
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "candidate_rights_cleared": false,
+      "publication_approved": false
+    },
+    {
+      "slot": "35:0",
+      "post_id": 35,
+      "post_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+      "priority": "P1_GT_1_5MB_INLINE",
+      "stored_original_src": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "frozen_alt": "Shackleton and crew in a small lifeboat crossing icy seas during the Endurance expedition",
+      "wordpress_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "media_id": 40,
+      "stored_original_bytes": 2552136,
+      "native_media_dimensions_px": [
+        1672,
+        941
+      ],
+      "conditional_no_upscale_960px": [
+        960,
+        540
+      ],
+      "rights_issue": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+      "web_retriever_only": null,
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "candidate_rights_cleared": false,
+      "publication_approved": false
+    },
+    {
+      "slot": "36:0",
+      "post_id": 36,
+      "post_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+      "priority": "P1_GT_1_5MB_INLINE",
+      "stored_original_src": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "frozen_alt": "Civilians sheltering inside a cave during the Siege of Vicksburg",
+      "wordpress_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "media_id": 41,
+      "stored_original_bytes": 2498247,
+      "native_media_dimensions_px": [
+        1672,
+        941
+      ],
+      "conditional_no_upscale_960px": [
+        960,
+        540
+      ],
+      "rights_issue": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+      "web_retriever_only": null,
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "candidate_rights_cleared": false,
+      "publication_approved": false
+    },
+    {
+      "slot": "37:0",
+      "post_id": 37,
+      "post_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "priority": "P1_GT_1_5MB_INLINE",
+      "stored_original_src": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "frozen_alt": "Reconstruction of Petra’s water channels and reservoir system in the ancient desert city",
+      "wordpress_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "media_id": 42,
+      "stored_original_bytes": 2488823,
+      "native_media_dimensions_px": [
+        1672,
+        941
+      ],
+      "conditional_no_upscale_960px": [
+        960,
+        540
+      ],
+      "rights_issue": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+      "web_retriever_only": null,
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "candidate_rights_cleared": false,
+      "publication_approved": false
+    },
+    {
+      "slot": "38:0",
+      "post_id": 38,
+      "post_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+      "priority": "P1_GT_1_5MB_INLINE",
+      "stored_original_src": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "frozen_alt": "Firefighters drawing emergency water from an underground cistern in post-earthquake San Francisco",
+      "wordpress_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "media_id": 43,
+      "stored_original_bytes": 2836245,
+      "native_media_dimensions_px": [
+        1672,
+        941
+      ],
+      "conditional_no_upscale_960px": [
+        960,
+        540
+      ],
+      "rights_issue": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+      "web_retriever_only": null,
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "candidate_rights_cleared": false,
+      "publication_approved": false
+    },
+    {
+      "slot": "269:1",
+      "post_id": 269,
+      "post_url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "priority": "P1_GT_1_5MB_INLINE",
+      "stored_original_src": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png",
+      "frozen_alt": "Map of Halifax Harbour showing the 1917 coastline, the area destroyed by the explosion and the tsunami zone.",
+      "wordpress_original_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png",
+      "media_id": 1714,
+      "stored_original_bytes": 1543002,
+      "native_media_dimensions_px": [
+        1280,
+        1280
+      ],
+      "conditional_no_upscale_960px": [
+        960,
+        960
+      ],
+      "rights_issue": "ORIGINAL_MAP_AUTHOR_RIGHTS_UNVERIFIED",
+      "web_retriever_only": null,
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "candidate_rights_cleared": false,
+      "publication_approved": false
+    },
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "priority": "P0_SUSPECTED_BROKEN",
+      "stored_original_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "frozen_alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+      "web_retriever_only": {
+        "wrapper_code": 500,
+        "result": "REDIRECT_TARGET_INACCESSIBLE",
+        "method": "RETRIEVER_NOT_GUEST_ORIGIN"
+      },
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "source_candidate_catalog": "https://www.tmia.com/sites/tmia.com/files/media/Presidents-Commission.pdf",
+      "candidate_identical_binary_verified": false,
+      "candidate_rights_cleared": false,
+      "candidate_natural_dimensions_verified": false,
+      "conditional_no_upscale_960px": null,
+      "publication_approved": false
+    },
+    {
+      "slot": "285:5",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "priority": "P0_SUSPECTED_BROKEN",
+      "stored_original_src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "frozen_alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "web_retriever_only": {
+        "wrapper_code": 404,
+        "result": "NOT_FOUND",
+        "method": "RETRIEVER_NOT_GUEST_ORIGIN"
+      },
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "source_candidate_catalog": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "candidate_identical_binary_verified": false,
+      "candidate_rights_cleared": false,
+      "candidate_natural_dimensions_verified": true,
+      "conditional_no_upscale_960px": [
+        819,
+        614
+      ],
+      "publication_approved": false
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "priority": "P0_SUSPECTED_BROKEN",
+      "stored_original_src": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "frozen_alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+      "web_retriever_only": {
+        "wrapper_code": 404,
+        "result": "NOT_FOUND",
+        "method": "RETRIEVER_NOT_GUEST_ORIGIN"
+      },
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "source_candidate_catalog": "https://floridamemory.com/items/show/32082",
+      "candidate_identical_binary_verified": false,
+      "candidate_rights_cleared": false,
+      "candidate_natural_dimensions_verified": false,
+      "conditional_no_upscale_960px": null,
+      "publication_approved": false
+    },
+    {
+      "slot": "299:0",
+      "post_id": 299,
+      "post_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+      "priority": "P1_GT_1_5MB_INLINE",
+      "stored_original_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1024%2C676&ssl=1",
+      "frozen_alt": "The preserved 1628 warship Vasa inside the Vasa Museum in Stockholm, showing the tall upperworks above the hull.",
+      "wordpress_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg",
+      "media_id": 389,
+      "stored_original_bytes": 2822969,
+      "native_media_dimensions_px": [
+        2147,
+        1417
+      ],
+      "conditional_no_upscale_960px": [
+        960,
+        634
+      ],
+      "rights_issue": "ITEM_LEVEL_REVIEW_REQUIRED",
+      "web_retriever_only": null,
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "candidate_rights_cleared": false,
+      "publication_approved": false
+    },
+    {
+      "slot": "299:1",
+      "post_id": 299,
+      "post_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+      "priority": "P1_GT_1_5MB_INLINE",
+      "stored_original_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=1024%2C681&ssl=1",
+      "frozen_alt": "Painted one-tenth-scale reconstruction of Vasa showing how the heavily armed warship likely appeared in 1628.",
+      "wordpress_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg",
+      "media_id": 388,
+      "stored_original_bytes": 8176362,
+      "native_media_dimensions_px": [
+        4256,
+        2832
+      ],
+      "conditional_no_upscale_960px": [
+        960,
+        639
+      ],
+      "rights_issue": "EDITORIAL_ONLY_MUSEUM_CREDIT_REQUIRED",
+      "web_retriever_only": null,
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "candidate_rights_cleared": false,
+      "publication_approved": false
+    },
+    {
+      "slot": "299:7",
+      "post_id": 299,
+      "post_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+      "priority": "P1_GT_1_5MB_INLINE",
+      "stored_original_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=1024%2C683&ssl=1",
+      "frozen_alt": "Vasa inside the museum with old and new support structures used to reduce continuing deformation of the historic hull.",
+      "wordpress_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+      "media_id": 382,
+      "stored_original_bytes": 2318980,
+      "native_media_dimensions_px": [
+        1800,
+        1200
+      ],
+      "conditional_no_upscale_960px": [
+        960,
+        640
+      ],
+      "rights_issue": "ITEM_LEVEL_REVIEW_REQUIRED",
+      "web_retriever_only": null,
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "candidate_rights_cleared": false,
+      "publication_approved": false
+    },
+    {
+      "slot": "407:1",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "priority": "P0_SUSPECTED_BROKEN",
+      "stored_original_src": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "frozen_alt": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake.",
+      "web_retriever_only": {
+        "wrapper_code": 400,
+        "result": "UNSUPPORTED_OCTET_STREAM",
+        "method": "RETRIEVER_NOT_GUEST_ORIGIN"
+      },
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "source_candidate_catalog": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+      "candidate_identical_binary_verified": false,
+      "candidate_rights_cleared": false,
+      "candidate_natural_dimensions_verified": false,
+      "conditional_no_upscale_960px": null,
+      "publication_approved": false
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "priority": "P0_SUSPECTED_BROKEN",
+      "stored_original_src": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "frozen_alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew.",
+      "web_retriever_only": {
+        "wrapper_code": 403,
+        "result": "FORBIDDEN",
+        "method": "RETRIEVER_NOT_GUEST_ORIGIN"
+      },
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "source_candidate_catalog": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "candidate_identical_binary_verified": false,
+      "candidate_rights_cleared": false,
+      "candidate_natural_dimensions_verified": false,
+      "conditional_no_upscale_960px": null,
+      "publication_approved": false
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "priority": "P0_SUSPECTED_BROKEN",
+      "stored_original_src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "frozen_alt": "Broken concrete and debris where Scotch Cap Lighthouse stood after the April 1, 1946 tsunami.",
+      "web_retriever_only": {
+        "wrapper_code": 403,
+        "result": "FORBIDDEN",
+        "method": "RETRIEVER_NOT_GUEST_ORIGIN"
+      },
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "source_candidate_catalog": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+      "candidate_identical_binary_verified": false,
+      "candidate_rights_cleared": false,
+      "candidate_natural_dimensions_verified": false,
+      "conditional_no_upscale_960px": null,
+      "publication_approved": false
+    },
+    {
+      "slot": "621:0",
+      "post_id": 621,
+      "post_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "priority": "P1_GT_1_5MB_INLINE",
+      "stored_original_src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "frozen_alt": "View into the Malbone Street Tunnel from the southbound platform at Prospect Park, showing the surviving curved tunnel alignment.",
+      "wordpress_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "media_id": 1257,
+      "stored_original_bytes": 4798395,
+      "native_media_dimensions_px": [
+        4000,
+        3000
+      ],
+      "conditional_no_upscale_960px": [
+        960,
+        720
+      ],
+      "rights_issue": "ITEM_LEVEL_REVIEW_REQUIRED",
+      "web_retriever_only": null,
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "candidate_rights_cleared": false,
+      "publication_approved": false
+    },
+    {
+      "slot": "621:1",
+      "post_id": 621,
+      "post_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "priority": "P1_GT_1_5MB_INLINE",
+      "stored_original_src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "frozen_alt": "1903 map of the Brooklyn Rapid Transit street railway and rapid-transit network.",
+      "wordpress_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "media_id": 1258,
+      "stored_original_bytes": 5553669,
+      "native_media_dimensions_px": [
+        5667,
+        3831
+      ],
+      "conditional_no_upscale_960px": [
+        960,
+        649
+      ],
+      "rights_issue": "ITEM_LEVEL_REVIEW_REQUIRED",
+      "web_retriever_only": null,
+      "guest_http_status": null,
+      "guest_decoded_width_px": null,
+      "guest_wire_bytes": null,
+      "candidate_rights_cleared": false,
+      "publication_approved": false
+    }
+  ]
+}

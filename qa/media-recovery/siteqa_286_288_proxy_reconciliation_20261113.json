@@ -1,0 +1,100 @@
+{
+  "schema": "fv-frozen-image-origin-count-reconciliation-v1",
+  "as_of_date": "2026-11-13",
+  "historical_snapshot_date": "2026-10-30",
+  "provenance": {
+    "siteqa_pr": 154,
+    "siteqa_csv_path": "qa/media/cms_image_census_20261030.csv",
+    "siteqa_csv_blob": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
+    "siteqa_classifier_path": "qa/media/source_image_dependencies.cjs",
+    "siteqa_classifier_blob": "cdadab899abed4dfd222e75a5616a98390dca4ea",
+    "media_inventory_pr": 183,
+    "media_inventory_summary_path": "qa/media-recovery/summary_20261030.json",
+    "media_inventory_parts": "qa/media-recovery/parts/01.json ... 08.json",
+    "media_inventory_ref": "qa/media-recovery-reviewed-20261030-1158",
+    "worklist_path": "docs/IMAGE-WEIGHT-WORKLIST.md",
+    "worklist_blob": "2acd06a4ca4317646006eb6591face3fe76fedec"
+  },
+  "historical_counts": {
+    "published_posts": 61,
+    "stored_image_positions": 355,
+    "siteqa_csv_offsite": 286,
+    "media_inventory_offsite": 288,
+    "difference": 2,
+    "per_post_discrepancy_count": 2,
+    "otherwise_matching_post_rows": 59,
+    "inventory_first_party": 60,
+    "inventory_own_jetpack": 7,
+    "inventory_external": 170,
+    "inventory_wikimedia_redirect": 118
+  },
+  "discrepancies": [
+    {
+      "post_id": 291,
+      "siteqa_csv_image_count": 6,
+      "siteqa_csv_offsite_count": 5,
+      "media_inventory_offsite_count": 6,
+      "proxy_candidate_slot": "291:0",
+      "candidate_explanation": "Third-party-origin source served through i0.wp.com, not first-party finalvestige.com proxy; possible prior count methodology difference, not proven without raw Site QA input snapshot",
+      "proxy_source_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "proxy_target_host": "text-message.blogs.archives.gov",
+      "authoritative_catalog_candidate_url": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+      "catalog_same_photo_confirmed": false,
+      "rights_note": "NARA blog documents Jerry Dursteller contractor photographs; archive custody and a wp.com proxy are not copyright clearance",
+      "frozen_source_urls": [
+        "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+        "https://dmt55mxnkgbz2.cloudfront.net/1205x0_s3-30217-W-AP-PNW-TETON-COLLAPSE-1.jpg",
+        "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+        "https://brightspotcdn.byui.edu/dims4/default/37ddf06/2147483647/strip/true/crop/2048x1365+0+0/resize/1200x800!/quality/90/?url=https%3A%2F%2Fk3-prod-byuifulbrightspot.s3.us-west-2.amazonaws.com%2Fbrightspot%2F33%2F7d%2F67f04f174772ab1d35419706138c%2Fteton-dam-flooding-aerial.jpg",
+        "https://www.rexburgonline.com/wp-content/uploads/2016/05/fb-0053.jpg",
+        "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG"
+      ],
+      "guest_origin_http_status": null,
+      "guest_image_decoded": null,
+      "guest_transfer_bytes": null,
+      "rights_release": "HOLD",
+      "max_proposed_width_px": 960,
+      "allowed_to_cache_or_upload": false
+    },
+    {
+      "post_id": 285,
+      "siteqa_csv_image_count": 6,
+      "siteqa_csv_offsite_count": 5,
+      "media_inventory_offsite_count": 6,
+      "proxy_candidate_slot": "285:1",
+      "candidate_explanation": "Third-party-origin source served through i0.wp.com, not first-party finalvestige.com proxy; possible prior count methodology difference, not proven without raw Site QA input snapshot",
+      "proxy_source_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "proxy_target_host": "www.squawkpoint.com",
+      "authoritative_catalog_candidate_url": null,
+      "catalog_same_photo_confirmed": false,
+      "rights_note": "Private third-party publisher; attribution and republishing rights not verified. Do not replace with different DOE/NRC Three Mile Island imagery without editorial approval",
+      "frozen_source_urls": [
+        "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+        "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+        "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+        "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+        "https://images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg",
+        "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg"
+      ],
+      "guest_origin_http_status": null,
+      "guest_image_decoded": null,
+      "guest_transfer_bytes": null,
+      "rights_release": "HOLD",
+      "max_proposed_width_px": 960,
+      "allowed_to_cache_or_upload": false
+    }
+  ],
+  "limits": {
+    "evidence_kind": "frozen WordPress source inventory cross-draft reconciliation, not browser verification",
+    "root_cause_proven": false,
+    "reported_42_broken_guest_verified": false,
+    "proposed_76_percent_wire_reduction_measured": false,
+    "oversized_wordpress_originals_decimal_1_5mb": 15,
+    "oversized_original_stored_bytes": 47096779,
+    "no_image_downloads": true,
+    "no_wordpress_writes": true,
+    "no_homepage_design_changes": true,
+    "no_subscription_spend": true,
+    "siteqa_existing_browser_collector_owner": 154
+  }
+}

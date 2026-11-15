@@ -1,0 +1,190 @@
+{
+  "schema": "fv-media-p0-crop-parity-and-primary-exclusion-20261112-v1",
+  "recorded_date": "2026-11-12",
+  "scope": "Read-only source/catalog provenance and synthetic image-crop failure, not origin HTTP or guest-browser confirmation",
+  "parent_handoff_blob_sha": "0098216405f3415e57d2a3f13969bdb87ffbcd30",
+  "historical": {
+    "posts": 61,
+    "img_positions": 355,
+    "reported_broken_guest_confirmed": false,
+    "claim_76_percent_wire_savings_verified": false
+  },
+  "candidate_asset_policy": {
+    "max_width_px": 960,
+    "no_upscaling": true,
+    "exact_scene_crop_required": true,
+    "original_binary_downloaded": false,
+    "media_cached": false,
+    "word_press_rewrite_authorized": false,
+    "homepage_owned_by_other_team": true
+  },
+  "p0": [
+    {
+      "slot": "285:5",
+      "published_original_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "retriever_wrapper_observation": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "NOT_FOUND",
+        "wrapper_code": 404
+      },
+      "actual_origin_http_status": null,
+      "logged_out_browser_http_status": null,
+      "natural_dimensions_px": null,
+      "transferred_bytes": null,
+      "candidate_catalog_or_publisher_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "second_official_catalog_url": null,
+      "candidate_status": "HOLD_EXACT_PHOTO_RIGHTS_BROWSER_EVIDENCE",
+      "item_specific_reuse_rights_verified": false,
+      "crop_scene_match_verified": false,
+      "conditional_max_dimensions_px": [
+        819,
+        614
+      ]
+    },
+    {
+      "slot": "285:2",
+      "published_original_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "retriever_wrapper_observation": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "REDIRECT_TARGET_INACCESSIBLE",
+        "wrapper_code": 500
+      },
+      "actual_origin_http_status": null,
+      "logged_out_browser_http_status": null,
+      "natural_dimensions_px": null,
+      "transferred_bytes": null,
+      "candidate_catalog_or_publisher_url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "second_official_catalog_url": null,
+      "candidate_status": "HOLD_EXACT_PHOTO_RIGHTS_BROWSER_EVIDENCE",
+      "item_specific_reuse_rights_verified": false,
+      "crop_scene_match_verified": false,
+      "conditional_max_dimensions_px": null
+    },
+    {
+      "slot": "287:5",
+      "published_original_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "retriever_wrapper_observation": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "NOT_FOUND",
+        "wrapper_code": 404
+      },
+      "actual_origin_http_status": null,
+      "logged_out_browser_http_status": null,
+      "natural_dimensions_px": null,
+      "transferred_bytes": null,
+      "candidate_catalog_or_publisher_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "second_official_catalog_url": "https://www.floridamemory.com/items/show/32083",
+      "candidate_status": "HOLD_EXACT_PHOTO_RIGHTS_BROWSER_EVIDENCE",
+      "item_specific_reuse_rights_verified": false,
+      "crop_scene_match_verified": false,
+      "conditional_max_dimensions_px": null
+    },
+    {
+      "slot": "418:1",
+      "published_original_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "retriever_wrapper_observation": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "FORBIDDEN",
+        "wrapper_code": 403
+      },
+      "actual_origin_http_status": null,
+      "logged_out_browser_http_status": null,
+      "natural_dimensions_px": null,
+      "transferred_bytes": null,
+      "candidate_catalog_or_publisher_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "second_official_catalog_url": null,
+      "candidate_status": "HOLD_EXACT_PHOTO_RIGHTS_BROWSER_EVIDENCE",
+      "item_specific_reuse_rights_verified": false,
+      "crop_scene_match_verified": false,
+      "conditional_max_dimensions_px": null
+    },
+    {
+      "slot": "418:2",
+      "published_original_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "retriever_wrapper_observation": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "FORBIDDEN",
+        "wrapper_code": 403
+      },
+      "actual_origin_http_status": null,
+      "logged_out_browser_http_status": null,
+      "natural_dimensions_px": null,
+      "transferred_bytes": null,
+      "candidate_catalog_or_publisher_url": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+      "second_official_catalog_url": null,
+      "candidate_status": "HOLD_EXACT_PHOTO_RIGHTS_BROWSER_EVIDENCE",
+      "item_specific_reuse_rights_verified": false,
+      "crop_scene_match_verified": false,
+      "conditional_max_dimensions_px": null
+    },
+    {
+      "slot": "407:1",
+      "published_original_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "retriever_wrapper_observation": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "UNSUPPORTED_OCTET_STREAM",
+        "wrapper_code": 400
+      },
+      "actual_origin_http_status": null,
+      "logged_out_browser_http_status": null,
+      "natural_dimensions_px": null,
+      "transferred_bytes": null,
+      "candidate_catalog_or_publisher_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+      "second_official_catalog_url": null,
+      "candidate_status": "HOLD_EXACT_PHOTO_RIGHTS_BROWSER_EVIDENCE",
+      "item_specific_reuse_rights_verified": false,
+      "crop_scene_match_verified": false,
+      "conditional_max_dimensions_px": null
+    }
+  ],
+  "additional_florida_memory_candidate_exclusions": [
+    {
+      "p0_slot": "287:5",
+      "catalog_id": "DOT2168",
+      "catalog_url": "https://www.floridamemory.com/items/show/104039",
+      "archive_date": "1963",
+      "scene": "Pre-collapse Sunshine Skyway Bridge",
+      "same_photo_as_published_disaster_image": false,
+      "right_to_rehost_verified": false,
+      "native_digital_px": null,
+      "admission": "REJECT_AS_SAME_SCENE_1980_DISASTER_REPLACEMENT"
+    },
+    {
+      "p0_slot": "287:5",
+      "catalog_id": "C022428",
+      "catalog_url": "https://www.floridamemory.com/items/show/73331",
+      "archive_date": "1955",
+      "scene": "Historical aerial view of original Sunshine Skyway",
+      "same_photo_as_published_disaster_image": false,
+      "right_to_rehost_verified": false,
+      "native_digital_px": null,
+      "admission": "REJECT_AS_SAME_SCENE_1980_DISASTER_REPLACEMENT"
+    }
+  ],
+  "isolated_verification": {
+    "prior_comparator_git_blob_sha": "68793555d6ad8998283501f9cd45114612e8d0db",
+    "synthetic_drift_baseline_physical_px": [
+      960,
+      640
+    ],
+    "synthetic_drift_candidate_physical_px": [
+      960,
+      960
+    ],
+    "synthetic_css_px": [
+      390,
+      260
+    ],
+    "synthetic_dpr": 2,
+    "before_patch_result": "VERIFIED_SINGLE_POST_COLD_PAIR_WITH_VISUAL_PARITY (synthetic, false)",
+    "before_patch_percent_reduction": 76,
+    "after_patch_result": "HOLD:SELECTED_SOURCE_ASPECT_OR_CROP_DRIFT",
+    "isolated_v8_test_cases_passed": 24,
+    "new_regression_cases": 7,
+    "native_node_ci_status": "NOT_EXECUTED",
+    "actual_browser_test_status": "NOT_EXECUTED"
+  },
+  "site_qa_guest_collector_owner": "PR #154",
+  "current_media_recovery_pr": "#1703",
+  "release_allowed": false
+}

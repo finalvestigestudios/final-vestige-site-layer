@@ -1,0 +1,252 @@
+{
+  "schema": "fv-franklin-five-offsite-v1",
+  "dated": "2026-11-09",
+  "frozen_fixture": {
+    "ref": "qa/media-recovery-reviewed-20261030-1158",
+    "path": "qa/media-recovery/parts/01.json",
+    "blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+  },
+  "post": {
+    "id": 433,
+    "title": "All Well Was Written First",
+    "url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/"
+  },
+  "first_party_preserved": {
+    "slot": "433:0",
+    "url": "https://finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg"
+  },
+  "historical_baseline": {
+    "posts": 61,
+    "images": 355,
+    "external": 288,
+    "broken_42_browser_confirmed": false,
+    "claimed_76pct_reduction_measured": false,
+    "oversized_originals_gt_1_5_decimal_mb": 15,
+    "oversized_stored_original_bytes": 47096779
+  },
+  "retriever_counts": {
+    "rendered": 2,
+    "tool_inaccessible": 3,
+    "actual_visitor_http_results": 0
+  },
+  "scope": "No origin HTTP/binary downloads/CDP/WordPress publication, browser failure claims or rights clearance",
+  "rows": [
+    {
+      "slot": "433:1",
+      "post_id": 433,
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/HMS_Erebus_and_Terror_-_ILN_1845.jpg",
+      "original_alt": "Illustrated London News engraving of HMS Erebus and HMS Terror departing for the Arctic expedition in May 1845.",
+      "stored_dimensions": [
+        750,
+        523
+      ],
+      "archival_candidate_url": "https://commons.wikimedia.org/wiki/File:HMS_Erebus_and_Terror_-_ILN_1845.jpg",
+      "archival_record": "Illustrated London News 1845-05-24",
+      "visual_caveat": "Engraving, not a photo",
+      "candidate_catalog_original_dimensions": [
+        750,
+        523
+      ],
+      "conditional_max_960px_dimensions": [
+        750,
+        523
+      ],
+      "rights_review": "Period work PD claimed on Commons; confirm exact crop/credit",
+      "credit_to_verify": "The Illustrated London News",
+      "retrieval": {
+        "method": "web.open exact literal URL",
+        "observed": "VIEWER_DISPLAYED",
+        "origin_http_status": null
+      },
+      "visitor": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "encoded_transfer_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "exact_binary_match": false,
+        "rights_cleared": false,
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "blocks_rewritten": false,
+        "deploy": false
+      }
+    },
+    {
+      "slot": "433:2",
+      "post_id": 433,
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Dr_John_Rae%2C_with_relics_from_the_Franklin_Expedition%2C_gold_medal%2C_and_map%2C_August_1886_%28PORTRAITS_2459%29.jpg",
+      "original_alt": "John Rae seated beside Franklin expedition relics, a Royal Geographical Society medal and a map in an 1886 portrait.",
+      "stored_dimensions": [
+        399,
+        600
+      ],
+      "archival_candidate_url": "https://commons.wikimedia.org/wiki/File:Dr_John_Rae,_with_relics_from_the_Franklin_Expedition,_gold_medal,_and_map,_August_1886_(PORTRAITS_2459).jpg",
+      "archival_record": "University of Washington PORTRAITS 2459 (Byrne and Co., Aug. 1886)",
+      "visual_caveat": "1886 photo, not 1845 expedition-era image",
+      "candidate_catalog_original_dimensions": [
+        399,
+        600
+      ],
+      "conditional_max_960px_dimensions": [
+        399,
+        600
+      ],
+      "rights_review": "Historical US PD claimed on Commons; UW imported catalog accuracy caveat",
+      "credit_to_verify": "Byrne and Co., University of Washington Special Collections",
+      "retrieval": {
+        "method": "web.open exact literal URL",
+        "observed": "VIEWER_INACCESSIBLE",
+        "origin_http_status": null
+      },
+      "visitor": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "encoded_transfer_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "exact_binary_match": false,
+        "rights_cleared": false,
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "blocks_rewritten": false,
+        "deploy": false
+      }
+    },
+    {
+      "slot": "433:3",
+      "post_id": 433,
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/%281860%29_Map_of_the_probable_routes_taken_by_HMS_Erebus_and_HMS_Terror_during_Franklin%27s_lost_expedition_%26_results_of_McClintock%27s_Arctic_Expedition.jpg/1280px-%281860%29_Map_of_the_probable_routes_taken_by_HMS_Erebus_and_HMS_Terror_during_Franklin%27s_lost_expedition_%26_results_of_McClintock%27s_Arctic_Expedition.jpg",
+      "original_alt": "1860 map showing the probable route of Erebus and Terror and areas searched after the Franklin expedition disappeared.",
+      "stored_dimensions": [
+        null,
+        null
+      ],
+      "archival_candidate_url": "https://commons.wikimedia.org/wiki/File:(1860)_Map_of_the_probable_routes_taken_by_HMS_Erebus_and_HMS_Terror_during_Franklin's_lost_expedition_%26_results_of_McClintock's_Arctic_Expedition.jpg",
+      "archival_record": "British Library HMNTS 10460.d.5, John Brown (1860), page 495",
+      "visual_caveat": "Retrospective inferred-route map, not original voyage chart; full-resolution text legibility needed",
+      "candidate_catalog_original_dimensions": [
+        1477,
+        2357
+      ],
+      "conditional_max_960px_dimensions": [
+        960,
+        1532
+      ],
+      "rights_review": "PD historical scan claim; British Library warns machine enhancement can change image appearance",
+      "credit_to_verify": "John Brown; British Library Mechanical Curator",
+      "retrieval": {
+        "method": "web.open exact literal URL",
+        "observed": "VIEWER_INACCESSIBLE",
+        "origin_http_status": null
+      },
+      "visitor": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "encoded_transfer_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "exact_binary_match": false,
+        "rights_cleared": false,
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "blocks_rewritten": false,
+        "deploy": false
+      }
+    },
+    {
+      "slot": "433:4",
+      "post_id": 433,
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/L23402-c8qmb-t3-05-rx.jpg/1280px-L23402-c8qmb-t3-05-rx.jpg",
+      "original_alt": "James Fitzjames photographed in 1845 shortly before sailing aboard HMS Erebus on the Franklin expedition.",
+      "stored_dimensions": [
+        null,
+        null
+      ],
+      "archival_candidate_url": "https://commons.wikimedia.org/wiki/File:L23402-c8qmb-t3-05-rx.jpg",
+      "archival_record": "1845 James Fitzjames daguerreotype photographed in 2023 by FabTet",
+      "visual_caveat": "Historical subject 1845, reproduction made in 2023",
+      "candidate_catalog_original_dimensions": [
+        3284,
+        3966
+      ],
+      "conditional_max_960px_dimensions": [
+        960,
+        1159
+      ],
+      "rights_review": "Copyright FabTet, CC BY-SA 4.0; attribution license link crop/adaptation ShareAlike required",
+      "credit_to_verify": "FabTet (2023 scan), after 1845 daguerreotype",
+      "retrieval": {
+        "method": "web.open exact literal URL",
+        "observed": "VIEWER_INACCESSIBLE",
+        "origin_http_status": null
+      },
+      "visitor": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "encoded_transfer_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "exact_binary_match": false,
+        "rights_cleared": false,
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "blocks_rewritten": false,
+        "deploy": false
+      }
+    },
+    {
+      "slot": "433:5",
+      "post_id": 433,
+      "original_url": "https://d3d0lqu00lnqvz.cloudfront.net/media/media/cea975ac-62ed-4c2f-bf13-67a0f3a90092.jpg",
+      "original_alt": "British Admiralty poster from 1850 offering rewards for rescuing Franklin’s crews or determining their fate.",
+      "stored_dimensions": [
+        null,
+        null
+      ],
+      "archival_candidate_url": "https://commons.wikimedia.org/wiki/File:Reward_for_finding_Franklin_Expedition.jpg",
+      "archival_record": "1850 Admiralty reward; corresponding Commons record attributed to Library and Archives Canada",
+      "visual_caveat": "Published CloudFront poster visually displayed; underlying scan/crop unproven",
+      "candidate_catalog_original_dimensions": [
+        726,
+        1119
+      ],
+      "conditional_max_960px_dimensions": null,
+      "rights_review": "Exact CloudFront scan rights and identity NOT determined; candidate is not established as same binary",
+      "credit_to_verify": "Admiralty / W. A. B. Hamilton; archive scan credit unresolved",
+      "retrieval": {
+        "method": "web.open exact literal URL",
+        "observed": "VIEWER_DISPLAYED",
+        "origin_http_status": null
+      },
+      "visitor": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "encoded_transfer_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "exact_binary_match": false,
+        "rights_cleared": false,
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "blocks_rewritten": false,
+        "deploy": false
+      }
+    }
+  ]
+}

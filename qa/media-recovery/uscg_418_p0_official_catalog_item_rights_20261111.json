@@ -1,0 +1,123 @@
+{
+  "schema": "fv-uscg-418-item-lineage-20261111-v1",
+  "evidence_date": "2026-11-11",
+  "pinned_source": {
+    "path": "qa/media-recovery/coverage_288_exact_pr1703_20261110.json",
+    "blob_sha": "4965a862f7de7de46c1f4a1e26f3ca70a8c38805",
+    "worklist_pr": 183,
+    "worklist_sha": "2acd06a4ca4317646006eb6591face3fe76fedec",
+    "site_qa_pr": 154
+  },
+  "site_status": {
+    "historical_posts": 61,
+    "historical_inline_images": 355,
+    "external_slots": 288,
+    "research_completed": 288,
+    "reported_broken_guest_unverified": 42,
+    "guest_failures_confirmed": 0,
+    "proposed_transfer_reduction_pct": 76,
+    "measured_transfer_reduction_pct": null,
+    "oversized_wp_originals_gt_1500000": 15,
+    "stored_original_bytes": 47096779
+  },
+  "items": [
+    {
+      "slot": "418:1",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "exact_published_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_px": null,
+      "guest_transfer_bytes": null,
+      "master_native_px": null,
+      "conditional_960px": null,
+      "maximum_derivative_width_px": 960,
+      "do_not_upscale": true,
+      "do_not_crop": true,
+      "rights_cleared_to_rehost": false,
+      "pixel_match_verified": false,
+      "web_retriever_only": {
+        "method": "WEB_RETRIEVER_NOT_GUEST_OR_ORIGIN",
+        "date": "2026-11-11",
+        "wrapper_code": 403,
+        "wrapper_result": "FORBIDDEN"
+      },
+      "download_allowed": false,
+      "cache_allowed": false,
+      "wordpress_write_allowed": false,
+      "subject": "Chief Petty Officer Anthony Pettit service PORTRAIT, not Scotch Cap lighthouse ruins",
+      "official_catalog": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "official_alternate_catalog": "https://www.history.uscg.mil/US-Coast-Guard-Photo-Gallery/igphoto/2002905913/",
+      "asset_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "official_virin": "210330-G-DE713-0002.JPG",
+      "catalog_rights": "COAST_GUARD_ITEM_SAYS_PUBLIC_DOMAIN_CLEARED_FOR_RELEASE_CREDIT_REQUESTED",
+      "rights_limitations_url": "https://www.dma.mil/Services/Visual-Information/References/Limitations/",
+      "catalog_advertised_download_mb": 0.04,
+      "catalog_size_is_network_bytes": false,
+      "source_correspondence": "EXACT_FILE_IDENTIFIER_AND_URL_NO_CRYPTOGRAPHIC_HASH",
+      "decision": "OFFICIAL_CATALOG_ID_AND_RIGHTS_DOCUMENTED_GUEST_EDITOR_STAGE_HOLD"
+    },
+    {
+      "slot": "418:2",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "exact_published_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_px": null,
+      "guest_transfer_bytes": null,
+      "master_native_px": null,
+      "conditional_960px": null,
+      "maximum_derivative_width_px": 960,
+      "do_not_upscale": true,
+      "do_not_crop": true,
+      "rights_cleared_to_rehost": false,
+      "pixel_match_verified": false,
+      "web_retriever_only": {
+        "method": "WEB_RETRIEVER_NOT_GUEST_OR_ORIGIN",
+        "date": "2026-11-11",
+        "wrapper_code": 403,
+        "wrapper_result": "FORBIDDEN"
+      },
+      "download_allowed": false,
+      "cache_allowed": false,
+      "wordpress_write_allowed": false,
+      "subject": "Scotch Cap 1946 shoreline bluff aftermath debris, NOT Pettit portrait or rebuilt lighthouse",
+      "official_catalog": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+      "asset_url": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+      "official_virin": null,
+      "catalog_rights": "THIRD_PARTY_COPY_RIGHTS_AND_IDENTICAL_PHOTO_UNVERIFIED",
+      "rights_limitations_url": null,
+      "catalog_advertised_download_mb": null,
+      "catalog_size_is_network_bytes": false,
+      "source_correspondence": "SAME_BASENAME_SIMILAR_SCENE_NOT_PROVEN_BINARY_IDENTITY",
+      "alternate_retriever_only": {
+        "method": "WEB_RETRIEVER_NOT_GUEST_OR_ORIGIN",
+        "result": "DISPLAYED",
+        "origin_status": null
+      },
+      "decision": "SCENE_RELATED_ALT_IDENTITY_RIGHTS_GUEST_HOLD"
+    }
+  ],
+  "siteqa_existing_browser_order": [
+    "285:5",
+    "285:2",
+    "287:5",
+    "418:1",
+    "418:2",
+    "407:1"
+  ],
+  "release": {
+    "guest_cdp_required": true,
+    "source_identity_required": true,
+    "rights_review_required": true,
+    "editor_staging_review_required": true,
+    "third_party_image_binary_download": false,
+    "rehost_or_cache": false,
+    "wordpress_production_write": false,
+    "homepage_changes": false,
+    "merge_or_deploy": false,
+    "subscription_spend_usd": 0
+  }
+}

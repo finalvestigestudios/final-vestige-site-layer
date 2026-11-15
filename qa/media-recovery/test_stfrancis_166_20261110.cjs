@@ -1,0 +1,40 @@
+"use strict";
+const test=require("node:test");
+const assert=require("node:assert/strict");
+const {validate,load}=require("./validate_stfrancis_166_20261110.cjs");
+const batchPath="qa/media-recovery/stfrancis_166_six_loc_usgs_ucla_20261110.json";
+const ledgerPath="qa/media-recovery/coverage_228_exact_pr1703_20261110.json";
+const priorPath="qa/media-recovery/coverage_222_exact_pr1703_20261110.json";
+const frozenPath="qa/media-recovery/parts/07.json";
+const fresh=()=>[load(batchPath),load(ledgerPath),load(priorPath),load(frozenPath)];
+function bad(title, mutate, match) {
+ test(title,()=>{ const args=fresh(); mutate(...args); assert.throws(()=>validate(...args),match); });
+}
+test("exact committed six-source snapshot is internally consistent",()=>{
+ const result=validate(...fresh());
+ assert.deepEqual(result,{verified:6,coverage:228,total:288,untouched:282,guest_broken_confirmed:0});
+});
+bad("mismatched source URL rejected",(a)=>{a.rows[0].published_src+="?poison=1"},/frozen_published_source_mismatch/);
+bad("changed published ALT rejected",(a)=>{a.rows[2].published_alt="unrelated photo"},/frozen_published_source_mismatch/);
+bad("invented visitor 404 rejected",(a)=>{a.rows[0].guest_http_status=404},/invented_http_or_visitor_evidence/);
+bad("invented origin 200 rejected",(a)=>{a.rows[0].origin_http_status=200},/invented_http_or_visitor_evidence/);
+bad("fake browser transfer bytes rejected",(a)=>{a.rows[1].guest_wire_bytes=240},/invented_http_or_visitor_evidence/);
+bad("wrapper tool 404 mislabeled as origin rejected",(a)=>{a.rows[0].web_retriever="ORIGIN_HTTP_404"},/unsupported_retriever_claim/);
+bad("item rights claim without approval rejected",(a)=>{a.rows[0].rights_cleared=true},/unsafe_permission/);
+bad("unlicensed image caching rejected",(a)=>{a.rows[0].cache_authorized=true},/unsafe_permission/);
+bad("publication permission rejected",(a)=>{a.rows[0].post_rewrite_authorized=true},/unsafe_permission/);
+bad("upscaling to 1280 rejected",(a)=>{a.rows[1].conditional_960px=[1280,737]},/wrong_or_upscaled_960_geometry/);
+bad("declared 960px sheet dimensions without decoding rejected",(a)=>{a.rows[0].conditional_960px=[960,720]},/unknown_geometry_false_certainty/);
+bad("missing six-source evidence rejected",(a)=>{a.rows.pop()},/batch_six_required/);
+bad("duplicated image slot rejected",(a)=>{a.rows[1].slot=a.rows[0].slot},/unknown_or_duplicate_slot/);
+bad("altered prior Git pin rejected",(a)=>{a.preceding_register.blob_sha="x"},/prior_blob_changed/);
+bad("falsely confirmed 42 broken rejected",(a)=>{a.reported_42_guest_verified=true},/invented_claim/);
+bad("falsely measured 76 percent rejected",(a)=>{a.reported_76_percent_wire_savings_measured=true},/invented_claim/);
+bad("changing unrelated media slot rejected",(_a,ledger)=>{ledger.rows.find(x=>x.slot==="101:1").stored_url+="&fake=1"},/moved_or_mutated_original_source/);
+bad("promoting item license from HOLD rejected",(a)=>{a.rows[4].license_review="CLEARED"},/unreviewed_license_assumed_cleared/);
+bad("wrong batch SHA in register rejected",(_a,ledger)=>{ledger.rows.find(x=>x.slot==="166:1").evidence[0].blob_sha="x"},/missing_evidence_or_wrong_git_blob/);
+bad("rewriting published source rejected",(_a,ledger)=>{ledger.rows.find(x=>x.slot==="166:2").stored_url="https://example.org/changed.jpg"},/moved_or_mutated_original_source/);
+bad("unrelated record delta rejected",(_a,ledger)=>{ledger.rows.find(x=>x.slot==="101:1").guest_broken=false},/unrelated_row_changed/);
+bad("false census count rejected",(_a,ledger)=>{ledger.counts.researched_unique=229},/new_count/);
+bad("false original-byte savings rejected",(_a,ledger)=>{ledger.counts.oversized_stored_original_bytes=100},/preserve_storage_baseline/);
+bad("candidate rights clearance rejected",(_a,ledger)=>{ledger.rows.find(x=>x.slot==="166:5").candidate_sources[0].item_rights_cleared=true},/bad_candidate_provenance/);

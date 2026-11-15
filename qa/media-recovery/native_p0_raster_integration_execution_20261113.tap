@@ -1,0 +1,70 @@
+TAP version 13
+# Subtest: full JPEG pixel raster verified
+ok 1 - full JPEG pixel raster verified
+  ---
+  duration_ms: 891.184131
+  type: 'test'
+  ...
+# Subtest: full WebP pixel raster verified
+ok 2 - full WebP pixel raster verified
+  ---
+  duration_ms: 886.634761
+  type: 'test'
+  ...
+# Subtest: JPEG source master byte/decode review eligibility only
+ok 3 - JPEG source master byte/decode review eligibility only
+  ---
+  duration_ms: 866.857987
+  type: 'test'
+  ...
+# Subtest: WebP source master byte/decode review eligibility only
+ok 4 - WebP source master byte/decode review eligibility only
+  ---
+  duration_ms: 806.14017
+  type: 'test'
+  ...
+# Subtest: JPEG candidate byte/decode review eligibility only
+ok 5 - JPEG candidate byte/decode review eligibility only
+  ---
+  duration_ms: 782.082727
+  type: 'test'
+  ...
+# Subtest: WebP candidate byte/decode review eligibility only
+ok 6 - WebP candidate byte/decode review eligibility only
+  ---
+  duration_ms: 812.05145
+  type: 'test'
+  ...
+# Subtest: EXIF rotated file held for visual review
+ok 7 - EXIF rotated file held for visual review
+  ---
+  duration_ms: 783.697592
+  type: 'test'
+  ...
+# Subtest: truncated JPEG master fails even if SHA matches truncated bytes
+ok 8 - truncated JPEG master fails even if SHA matches truncated bytes
+  ---
+  duration_ms: 0.483568
+  type: 'test'
+  ...
+# Subtest: false source-master native geometry denied
+ok 9 - false source-master native geometry denied
+  ---
+  duration_ms: 0.617211
+  type: 'test'
+  ...
+# Subtest: missing decoder fails closed
+ok 10 - missing decoder fails closed
+  ---
+  duration_ms: 2.626641
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8652.931855

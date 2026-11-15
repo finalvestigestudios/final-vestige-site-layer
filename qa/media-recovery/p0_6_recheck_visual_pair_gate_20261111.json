@@ -1,0 +1,202 @@
+{
+  "schema": "fv-media-six-p0-current-retriever-and-visual-pair-gap-v1",
+  "date_utc": "2026-11-12",
+  "date_local_pacific": "2026-11-11",
+  "source_corpus": {
+    "historical_posts": 61,
+    "historical_inline": 355,
+    "external_positions": 288,
+    "reported_broken_unverified": 42,
+    "verified_guest_browser_broken": 0,
+    "expanded_published_posts_as_of_prior_readback": 66,
+    "wordpress_originals_gt_1500000B": 15,
+    "stored_original_bytes": 47096779,
+    "inline_associated_oversized_originals": 11
+  },
+  "evidence_limit": "Web tool wrapper codes reflect the retriever, not actual target origin HTTP statuses. Container DNS also unavailable; no native GET and no guest CDP collected.",
+  "new_change": {
+    "module": "qa/media-recovery/compare_cold_pair_visual_parity_20261111.cjs",
+    "tests": "qa/media-recovery/test_compare_cold_pair_visual_parity_20261111.cjs",
+    "defect_class": "Old offline paired transfer evaluator could report a synthetic 76% post-only byte reduction without proving browser-selected physical resolution or unchanged painted crop.",
+    "synthetic_test_baseline_encoded_data_length": 1000,
+    "synthetic_test_candidate_encoded_data_length": 240,
+    "synthetic_reduction_percent": 76,
+    "real_measured_network_reduction_percent": null,
+    "guest_source_physical_pixels_measured": false,
+    "browser_collector_created": false,
+    "siteqa_collects_existing_browser_evidence": true
+  },
+  "authoritative_source_rows": [
+    {
+      "slot": "285:5",
+      "post_id": 285,
+      "published_original_src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "retriever_observation": {
+        "method": "WEB_OPEN_RETRIEVER_NOT_ORIGIN_OR_GUEST",
+        "observed_date": "2026-11-11",
+        "wrapper_code": 404,
+        "description": "retriever not found"
+      },
+      "actual_origin_http_status": null,
+      "actual_guest_http_status": null,
+      "actual_guest_current_src": null,
+      "observed_cdp_network_data_received": null,
+      "actual_guest_wire_bytes": null,
+      "asset_catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "candidate_type": "Commons item",
+      "verified_native_px": [
+        819,
+        614
+      ],
+      "conditional_960_no_upscale_px": [
+        819,
+        614
+      ],
+      "source_rights_context": "PD-self item observation; actual selected crop 16:9 vs catalog 4:3; item-level reuse and crop still review",
+      "same_pixels_verified": false,
+      "rights_reuse_cleared": false,
+      "publication_approved": false
+    },
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "published_original_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "retriever_observation": {
+        "method": "WEB_OPEN_RETRIEVER_NOT_ORIGIN_OR_GUEST",
+        "observed_date": "2026-11-11",
+        "wrapper_code": 500,
+        "description": "redirect to blog.ucs.org inaccessible"
+      },
+      "actual_origin_http_status": null,
+      "actual_guest_http_status": null,
+      "actual_guest_current_src": null,
+      "observed_cdp_network_data_received": null,
+      "actual_guest_wire_bytes": null,
+      "asset_catalog_url": "https://www.tmia.com/sites/tmia.com/files/media/Presidents-Commission.pdf",
+      "candidate_type": "1979 federal historical report, printed p.97; image also Commons TMI-2_control_panel.png",
+      "verified_native_px": [
+        604,
+        590
+      ],
+      "conditional_960_no_upscale_px": [
+        604,
+        590
+      ],
+      "source_rights_context": "Retouched Commons candidate; panel shows emergency feedwater maintenance tags, not PORV indication; item review",
+      "same_pixels_verified": false,
+      "rights_reuse_cleared": false,
+      "publication_approved": false
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "published_original_src": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "retriever_observation": {
+        "method": "WEB_OPEN_RETRIEVER_NOT_ORIGIN_OR_GUEST",
+        "observed_date": "2026-11-11",
+        "wrapper_code": 404,
+        "description": "retriever not found"
+      },
+      "actual_origin_http_status": null,
+      "actual_guest_http_status": null,
+      "actual_guest_current_src": null,
+      "observed_cdp_network_data_received": null,
+      "actual_guest_wire_bytes": null,
+      "asset_catalog_url": "https://www.floridamemory.com/items/show/32082",
+      "candidate_type": "Florida Memory RC09236: 1980 postcollision scene, different photograph",
+      "verified_native_px": null,
+      "conditional_960_no_upscale_px": null,
+      "source_rights_context": "Florida Memory archival alternative is not exact published image; check item rights, credit, chronology and editorial scene",
+      "same_pixels_verified": false,
+      "rights_reuse_cleared": false,
+      "publication_approved": false
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "published_original_src": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "retriever_observation": {
+        "method": "WEB_OPEN_RETRIEVER_NOT_ORIGIN_OR_GUEST",
+        "observed_date": "2026-11-11",
+        "wrapper_code": 403,
+        "description": "retriever forbidden"
+      },
+      "actual_origin_http_status": null,
+      "actual_guest_http_status": null,
+      "actual_guest_current_src": null,
+      "observed_cdp_network_data_received": null,
+      "actual_guest_wire_bytes": null,
+      "asset_catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "candidate_type": "US Coast Guard official accession 210330-G-DE713-0002",
+      "verified_native_px": null,
+      "conditional_960_no_upscale_px": null,
+      "source_rights_context": "Catalog public-domain/release assertion, officer portrait not lighthouse rubble; exact size unknown",
+      "same_pixels_verified": false,
+      "rights_reuse_cleared": false,
+      "publication_approved": false
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "published_original_src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "retriever_observation": {
+        "method": "WEB_OPEN_RETRIEVER_NOT_ORIGIN_OR_GUEST",
+        "observed_date": "2026-11-11",
+        "wrapper_code": 403,
+        "description": "retriever forbidden"
+      },
+      "actual_origin_http_status": null,
+      "actual_guest_http_status": null,
+      "actual_guest_current_src": null,
+      "observed_cdp_network_data_received": null,
+      "actual_guest_wire_bytes": null,
+      "asset_catalog_url": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+      "candidate_type": "National Coast Guard Museum same-scene photograph",
+      "verified_native_px": null,
+      "conditional_960_no_upscale_px": null,
+      "source_rights_context": "USCG photo credit; museum preview filename 600x463 is not original dimensions or commercial rights clearance",
+      "same_pixels_verified": false,
+      "rights_reuse_cleared": false,
+      "publication_approved": false
+    },
+    {
+      "slot": "407:1",
+      "post_id": 407,
+      "published_original_src": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "retriever_observation": {
+        "method": "WEB_OPEN_RETRIEVER_NOT_ORIGIN_OR_GUEST",
+        "observed_date": "2026-11-11",
+        "wrapper_code": 400,
+        "description": "binary/octet-stream unsupported by retriever"
+      },
+      "actual_origin_http_status": null,
+      "actual_guest_http_status": null,
+      "actual_guest_current_src": null,
+      "observed_cdp_network_data_received": null,
+      "actual_guest_wire_bytes": null,
+      "asset_catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+      "candidate_type": "USGS photo catalog, J. R. Stacy",
+      "verified_native_px": null,
+      "conditional_960_no_upscale_px": null,
+      "source_rights_context": "USGS public domain catalog; published URL matches original image link but actual bytes/size unresolved",
+      "same_pixels_verified": false,
+      "rights_reuse_cleared": false,
+      "publication_approved": false
+    }
+  ],
+  "media_policy": {
+    "derivative_width_ceiling": 960,
+    "never_upscale": true,
+    "retina_guard": "selected physical width/height >= CSS painted width/height * DPR",
+    "map_legibility_and_full_original_access": "preserve details and source links; no automatic downsize of maps",
+    "caching": "only with item rights and attribution approved, exact scene confirmed, rollback and stage review; no WordPress uploads",
+    "production_mutations": false,
+    "third_party_binary_downloads": false,
+    "homepage_design_mutations": false,
+    "spend_usd": 0
+  },
+  "development_status": "isolated_draft_only",
+  "site_qa_pr": 154,
+  "media_recovery_pr": 1703,
+  "worklist_pr": 183
+}

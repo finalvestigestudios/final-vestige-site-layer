@@ -1,0 +1,1392 @@
+{
+  "schema": "fv-media-61post-geometry-reservation-exposure-20261112-v1",
+  "status": "VERIFIED_SOURCE_ONLY_LAYOUT_GEOMETRY_EXPOSURE",
+  "audit_git_blob_sha": "a9706c72ad6f17a68113aa87fc063f70d0ca0c34",
+  "source_scope": "61 frozen historical posts / 355 stored inline images; NOT current 66-post cohort",
+  "inference_limit": "Missing HTML width and height is an exposure, not proof of a layout shift. CSS aspect-ratio, containers and browser heuristics may reserve space. No guest image failure or CLS has been measured.",
+  "counts": {
+    "posts": 61,
+    "inline_image_slots": 355,
+    "offsite_slots": 288,
+    "missing_both_html_dimensions": 305,
+    "offsite_missing_both_dimensions": 266,
+    "first_party_missing_both_dimensions": 39,
+    "with_both_dimensions": 50,
+    "partial_dimensions": 0,
+    "html_srcset_present": 0,
+    "p0_source_slots_without_both_html_dimensions": 6
+  },
+  "p0_qa_sequence": [
+    {
+      "slot": "285:5",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "exact_published_original_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "html_width_px": null,
+      "html_height_px": null,
+      "html_srcset_present": false,
+      "guest_response_status": null,
+      "guest_decode_status": null,
+      "measured_layout_shift": null,
+      "explicit_html_dimension_reservation": false,
+      "css_aspect_ratio_or_container_reservation_verified": false,
+      "decision": "SOURCE_EXPOSURE_ONLY_VERIFY_IN_SITE_QA_154_BROWSER"
+    },
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "exact_published_original_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+      "html_width_px": null,
+      "html_height_px": null,
+      "html_srcset_present": false,
+      "guest_response_status": null,
+      "guest_decode_status": null,
+      "measured_layout_shift": null,
+      "explicit_html_dimension_reservation": false,
+      "css_aspect_ratio_or_container_reservation_verified": false,
+      "decision": "SOURCE_EXPOSURE_ONLY_VERIFY_IN_SITE_QA_154_BROWSER"
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "exact_published_original_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+      "html_width_px": null,
+      "html_height_px": null,
+      "html_srcset_present": false,
+      "guest_response_status": null,
+      "guest_decode_status": null,
+      "measured_layout_shift": null,
+      "explicit_html_dimension_reservation": false,
+      "css_aspect_ratio_or_container_reservation_verified": false,
+      "decision": "SOURCE_EXPOSURE_ONLY_VERIFY_IN_SITE_QA_154_BROWSER"
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "exact_published_original_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew.",
+      "html_width_px": null,
+      "html_height_px": null,
+      "html_srcset_present": false,
+      "guest_response_status": null,
+      "guest_decode_status": null,
+      "measured_layout_shift": null,
+      "explicit_html_dimension_reservation": false,
+      "css_aspect_ratio_or_container_reservation_verified": false,
+      "decision": "SOURCE_EXPOSURE_ONLY_VERIFY_IN_SITE_QA_154_BROWSER"
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "exact_published_original_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "alt": "Broken concrete and debris where Scotch Cap Lighthouse stood after the April 1, 1946 tsunami.",
+      "html_width_px": null,
+      "html_height_px": null,
+      "html_srcset_present": false,
+      "guest_response_status": null,
+      "guest_decode_status": null,
+      "measured_layout_shift": null,
+      "explicit_html_dimension_reservation": false,
+      "css_aspect_ratio_or_container_reservation_verified": false,
+      "decision": "SOURCE_EXPOSURE_ONLY_VERIFY_IN_SITE_QA_154_BROWSER"
+    },
+    {
+      "slot": "407:1",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "exact_published_original_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "alt": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake.",
+      "html_width_px": null,
+      "html_height_px": null,
+      "html_srcset_present": false,
+      "guest_response_status": null,
+      "guest_decode_status": null,
+      "measured_layout_shift": null,
+      "explicit_html_dimension_reservation": false,
+      "css_aspect_ratio_or_container_reservation_verified": false,
+      "decision": "SOURCE_EXPOSURE_ONLY_VERIFY_IN_SITE_QA_154_BROWSER"
+    }
+  ],
+  "top_source_exposures": [
+    {
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "inline_images": 10,
+      "offsite_images": 10,
+      "missing_both_html_dimensions": 10,
+      "offsite_missing_html_dimensions": 10,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "268:0",
+        "268:1",
+        "268:2",
+        "268:3",
+        "268:4",
+        "268:5",
+        "268:6",
+        "268:7",
+        "268:8",
+        "268:9"
+      ]
+    },
+    {
+      "post_id": 367,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "inline_images": 9,
+      "offsite_images": 8,
+      "missing_both_html_dimensions": 8,
+      "offsite_missing_html_dimensions": 8,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "367:1",
+        "367:2",
+        "367:3",
+        "367:4",
+        "367:5",
+        "367:6",
+        "367:7",
+        "367:8"
+      ]
+    },
+    {
+      "post_id": 425,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "inline_images": 9,
+      "offsite_images": 8,
+      "missing_both_html_dimensions": 8,
+      "offsite_missing_html_dimensions": 8,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "425:1",
+        "425:2",
+        "425:3",
+        "425:4",
+        "425:5",
+        "425:6",
+        "425:7",
+        "425:8"
+      ]
+    },
+    {
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "inline_images": 8,
+      "offsite_images": 4,
+      "missing_both_html_dimensions": 8,
+      "offsite_missing_html_dimensions": 4,
+      "first_party_missing_html_dimensions": 4,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "370:0",
+        "370:1",
+        "370:2",
+        "370:3",
+        "370:4",
+        "370:5",
+        "370:6",
+        "370:7"
+      ]
+    },
+    {
+      "post_id": 220,
+      "post_url": "https://finalvestige.com/2026/08/18/too-deep-for-the-rescue-bell/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "220:0",
+        "220:1",
+        "220:2",
+        "220:3",
+        "220:4",
+        "220:5",
+        "220:6"
+      ]
+    },
+    {
+      "post_id": 221,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "221:0",
+        "221:1",
+        "221:2",
+        "221:3",
+        "221:4",
+        "221:5",
+        "221:6"
+      ]
+    },
+    {
+      "post_id": 253,
+      "post_url": "https://finalvestige.com/2026/08/18/the-life-preservers-had-passed-inspection/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "253:0",
+        "253:1",
+        "253:2",
+        "253:3",
+        "253:4",
+        "253:5",
+        "253:6"
+      ]
+    },
+    {
+      "post_id": 254,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "254:0",
+        "254:1",
+        "254:2",
+        "254:3",
+        "254:4",
+        "254:5",
+        "254:6"
+      ]
+    },
+    {
+      "post_id": 255,
+      "post_url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "255:0",
+        "255:1",
+        "255:2",
+        "255:3",
+        "255:4",
+        "255:5",
+        "255:6"
+      ]
+    },
+    {
+      "post_id": 256,
+      "post_url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "256:0",
+        "256:1",
+        "256:2",
+        "256:3",
+        "256:4",
+        "256:5",
+        "256:6"
+      ]
+    },
+    {
+      "post_id": 257,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "257:0",
+        "257:1",
+        "257:2",
+        "257:3",
+        "257:4",
+        "257:5",
+        "257:6"
+      ]
+    },
+    {
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "274:0",
+        "274:1",
+        "274:2",
+        "274:3",
+        "274:4",
+        "274:5",
+        "274:6"
+      ]
+    }
+  ],
+  "per_post": [
+    {
+      "post_id": 34,
+      "post_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+      "inline_images": 1,
+      "offsite_images": 0,
+      "missing_both_html_dimensions": 0,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": []
+    },
+    {
+      "post_id": 35,
+      "post_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+      "inline_images": 1,
+      "offsite_images": 0,
+      "missing_both_html_dimensions": 0,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": []
+    },
+    {
+      "post_id": 36,
+      "post_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+      "inline_images": 1,
+      "offsite_images": 0,
+      "missing_both_html_dimensions": 0,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": []
+    },
+    {
+      "post_id": 37,
+      "post_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "inline_images": 1,
+      "offsite_images": 0,
+      "missing_both_html_dimensions": 0,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": []
+    },
+    {
+      "post_id": 38,
+      "post_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+      "inline_images": 1,
+      "offsite_images": 0,
+      "missing_both_html_dimensions": 0,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": []
+    },
+    {
+      "post_id": 101,
+      "post_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+      "inline_images": 7,
+      "offsite_images": 4,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 4,
+      "first_party_missing_html_dimensions": 3,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "101:0",
+        "101:1",
+        "101:2",
+        "101:3",
+        "101:4",
+        "101:5",
+        "101:6"
+      ]
+    },
+    {
+      "post_id": 108,
+      "post_url": "https://finalvestige.com/2026/08/17/the-richest-ship-couldnt-buy-another-hour/",
+      "inline_images": 2,
+      "offsite_images": 0,
+      "missing_both_html_dimensions": 2,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 2,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "108:0",
+        "108:1"
+      ]
+    },
+    {
+      "post_id": 139,
+      "post_url": "https://finalvestige.com/2026/08/17/the-rescue-machine-nobody-had-ever-needed/",
+      "inline_images": 2,
+      "offsite_images": 0,
+      "missing_both_html_dimensions": 2,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 2,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "139:0",
+        "139:1"
+      ]
+    },
+    {
+      "post_id": 142,
+      "post_url": "https://finalvestige.com/2026/08/17/almost-home-sultana-disaster/",
+      "inline_images": 3,
+      "offsite_images": 0,
+      "missing_both_html_dimensions": 3,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 3,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "142:0",
+        "142:1",
+        "142:2"
+      ]
+    },
+    {
+      "post_id": 146,
+      "post_url": "https://finalvestige.com/2026/08/17/the-dam-that-didnt-fail-vajont/",
+      "inline_images": 3,
+      "offsite_images": 0,
+      "missing_both_html_dimensions": 3,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 3,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "146:0",
+        "146:1",
+        "146:2"
+      ]
+    },
+    {
+      "post_id": 151,
+      "post_url": "https://finalvestige.com/2026/08/17/they-taught-the-lake-to-breathe/",
+      "inline_images": 3,
+      "offsite_images": 0,
+      "missing_both_html_dimensions": 3,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 3,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "151:0",
+        "151:1",
+        "151:2"
+      ]
+    },
+    {
+      "post_id": 156,
+      "post_url": "https://finalvestige.com/2026/08/17/they-lifted-the-city-galveston/",
+      "inline_images": 4,
+      "offsite_images": 0,
+      "missing_both_html_dimensions": 4,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 4,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "156:0",
+        "156:1",
+        "156:2",
+        "156:3"
+      ]
+    },
+    {
+      "post_id": 166,
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "inline_images": 7,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 1,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "166:0",
+        "166:1",
+        "166:2",
+        "166:3",
+        "166:4",
+        "166:5",
+        "166:6"
+      ]
+    },
+    {
+      "post_id": 190,
+      "post_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "190:0",
+        "190:1",
+        "190:2",
+        "190:3",
+        "190:4",
+        "190:5"
+      ]
+    },
+    {
+      "post_id": 211,
+      "post_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 1,
+      "offsite_missing_html_dimensions": 1,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "211:4"
+      ]
+    },
+    {
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "213:1",
+        "213:2",
+        "213:3",
+        "213:4",
+        "213:5",
+        "213:6"
+      ]
+    },
+    {
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "214:0",
+        "214:1",
+        "214:2",
+        "214:3",
+        "214:4",
+        "214:5"
+      ]
+    },
+    {
+      "post_id": 215,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "215:0",
+        "215:1",
+        "215:2",
+        "215:3",
+        "215:4",
+        "215:5"
+      ]
+    },
+    {
+      "post_id": 216,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "216:0",
+        "216:1",
+        "216:2",
+        "216:3",
+        "216:4",
+        "216:5"
+      ]
+    },
+    {
+      "post_id": 217,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "217:0",
+        "217:1",
+        "217:2",
+        "217:3",
+        "217:4",
+        "217:5"
+      ]
+    },
+    {
+      "post_id": 218,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "218:0",
+        "218:1",
+        "218:2",
+        "218:3",
+        "218:4",
+        "218:5"
+      ]
+    },
+    {
+      "post_id": 219,
+      "post_url": "https://finalvestige.com/2026/08/18/the-airship-had-no-life-jackets/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "219:0",
+        "219:1",
+        "219:2",
+        "219:3",
+        "219:4",
+        "219:5"
+      ]
+    },
+    {
+      "post_id": 220,
+      "post_url": "https://finalvestige.com/2026/08/18/too-deep-for-the-rescue-bell/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "220:0",
+        "220:1",
+        "220:2",
+        "220:3",
+        "220:4",
+        "220:5",
+        "220:6"
+      ]
+    },
+    {
+      "post_id": 221,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "221:0",
+        "221:1",
+        "221:2",
+        "221:3",
+        "221:4",
+        "221:5",
+        "221:6"
+      ]
+    },
+    {
+      "post_id": 252,
+      "post_url": "https://finalvestige.com/2026/08/18/they-thought-the-books-were-charcoal/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "252:0",
+        "252:1",
+        "252:2",
+        "252:3",
+        "252:4",
+        "252:5"
+      ]
+    },
+    {
+      "post_id": 253,
+      "post_url": "https://finalvestige.com/2026/08/18/the-life-preservers-had-passed-inspection/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "253:0",
+        "253:1",
+        "253:2",
+        "253:3",
+        "253:4",
+        "253:5",
+        "253:6"
+      ]
+    },
+    {
+      "post_id": 254,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "254:0",
+        "254:1",
+        "254:2",
+        "254:3",
+        "254:4",
+        "254:5",
+        "254:6"
+      ]
+    },
+    {
+      "post_id": 255,
+      "post_url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "255:0",
+        "255:1",
+        "255:2",
+        "255:3",
+        "255:4",
+        "255:5",
+        "255:6"
+      ]
+    },
+    {
+      "post_id": 256,
+      "post_url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "256:0",
+        "256:1",
+        "256:2",
+        "256:3",
+        "256:4",
+        "256:5",
+        "256:6"
+      ]
+    },
+    {
+      "post_id": 257,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "257:0",
+        "257:1",
+        "257:2",
+        "257:3",
+        "257:4",
+        "257:5",
+        "257:6"
+      ]
+    },
+    {
+      "post_id": 258,
+      "post_url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "258:0",
+        "258:1",
+        "258:2",
+        "258:3",
+        "258:4",
+        "258:5"
+      ]
+    },
+    {
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "inline_images": 10,
+      "offsite_images": 10,
+      "missing_both_html_dimensions": 10,
+      "offsite_missing_html_dimensions": 10,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "268:0",
+        "268:1",
+        "268:2",
+        "268:3",
+        "268:4",
+        "268:5",
+        "268:6",
+        "268:7",
+        "268:8",
+        "268:9"
+      ]
+    },
+    {
+      "post_id": 269,
+      "post_url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "inline_images": 7,
+      "offsite_images": 0,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 7,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "269:0",
+        "269:1",
+        "269:2",
+        "269:3",
+        "269:4",
+        "269:5",
+        "269:6"
+      ]
+    },
+    {
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "274:0",
+        "274:1",
+        "274:2",
+        "274:3",
+        "274:4",
+        "274:5",
+        "274:6"
+      ]
+    },
+    {
+      "post_id": 276,
+      "post_url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 4,
+      "offsite_missing_html_dimensions": 4,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "276:0",
+        "276:2",
+        "276:3",
+        "276:4"
+      ]
+    },
+    {
+      "post_id": 277,
+      "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "277:0",
+        "277:1",
+        "277:2",
+        "277:3",
+        "277:4",
+        "277:5"
+      ]
+    },
+    {
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "278:0",
+        "278:1",
+        "278:2",
+        "278:3",
+        "278:4",
+        "278:5",
+        "278:6"
+      ]
+    },
+    {
+      "post_id": 279,
+      "post_url": "https://finalvestige.com/2026/08/19/the-geologists-found-the-spy-satellite/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "279:0",
+        "279:1",
+        "279:2",
+        "279:3",
+        "279:4",
+        "279:5"
+      ]
+    },
+    {
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "280:0",
+        "280:1",
+        "280:2",
+        "280:3",
+        "280:4",
+        "280:5"
+      ]
+    },
+    {
+      "post_id": 283,
+      "post_url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "283:0",
+        "283:1",
+        "283:2",
+        "283:3",
+        "283:4",
+        "283:5",
+        "283:6"
+      ]
+    },
+    {
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "285:0",
+        "285:1",
+        "285:2",
+        "285:3",
+        "285:4",
+        "285:5"
+      ]
+    },
+    {
+      "post_id": 287,
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 5,
+      "offsite_missing_html_dimensions": 5,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "287:1",
+        "287:2",
+        "287:3",
+        "287:4",
+        "287:5"
+      ]
+    },
+    {
+      "post_id": 288,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "288:0",
+        "288:1",
+        "288:2",
+        "288:3",
+        "288:4",
+        "288:5"
+      ]
+    },
+    {
+      "post_id": 289,
+      "post_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "289:0",
+        "289:1",
+        "289:2",
+        "289:3",
+        "289:4",
+        "289:5"
+      ]
+    },
+    {
+      "post_id": 290,
+      "post_url": "https://finalvestige.com/2026/08/19/the-city-kept-moving-camp-century/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "290:0",
+        "290:1",
+        "290:2",
+        "290:3",
+        "290:4",
+        "290:5"
+      ]
+    },
+    {
+      "post_id": 291,
+      "post_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "291:0",
+        "291:1",
+        "291:2",
+        "291:3",
+        "291:4",
+        "291:5"
+      ]
+    },
+    {
+      "post_id": 292,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "292:0",
+        "292:1",
+        "292:2",
+        "292:3",
+        "292:4",
+        "292:5"
+      ]
+    },
+    {
+      "post_id": 299,
+      "post_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+      "inline_images": 8,
+      "offsite_images": 0,
+      "missing_both_html_dimensions": 0,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": []
+    },
+    {
+      "post_id": 330,
+      "post_url": "https://finalvestige.com/2026/08/19/the-filter-was-at-the-top-windscale/",
+      "inline_images": 8,
+      "offsite_images": 0,
+      "missing_both_html_dimensions": 0,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": []
+    },
+    {
+      "post_id": 367,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "inline_images": 9,
+      "offsite_images": 8,
+      "missing_both_html_dimensions": 8,
+      "offsite_missing_html_dimensions": 8,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "367:1",
+        "367:2",
+        "367:3",
+        "367:4",
+        "367:5",
+        "367:6",
+        "367:7",
+        "367:8"
+      ]
+    },
+    {
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "inline_images": 8,
+      "offsite_images": 4,
+      "missing_both_html_dimensions": 8,
+      "offsite_missing_html_dimensions": 4,
+      "first_party_missing_html_dimensions": 4,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "370:0",
+        "370:1",
+        "370:2",
+        "370:3",
+        "370:4",
+        "370:5",
+        "370:6",
+        "370:7"
+      ]
+    },
+    {
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "inline_images": 8,
+      "offsite_images": 8,
+      "missing_both_html_dimensions": 5,
+      "offsite_missing_html_dimensions": 5,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "407:0",
+        "407:1",
+        "407:4",
+        "407:5",
+        "407:6"
+      ]
+    },
+    {
+      "post_id": 413,
+      "post_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+      "inline_images": 6,
+      "offsite_images": 4,
+      "missing_both_html_dimensions": 5,
+      "offsite_missing_html_dimensions": 4,
+      "first_party_missing_html_dimensions": 1,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "413:1",
+        "413:2",
+        "413:3",
+        "413:4",
+        "413:5"
+      ]
+    },
+    {
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "inline_images": 6,
+      "offsite_images": 6,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 6,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "418:0",
+        "418:1",
+        "418:2",
+        "418:3",
+        "418:4",
+        "418:5"
+      ]
+    },
+    {
+      "post_id": 425,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "inline_images": 9,
+      "offsite_images": 8,
+      "missing_both_html_dimensions": 8,
+      "offsite_missing_html_dimensions": 8,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "425:1",
+        "425:2",
+        "425:3",
+        "425:4",
+        "425:5",
+        "425:6",
+        "425:7",
+        "425:8"
+      ]
+    },
+    {
+      "post_id": 428,
+      "post_url": "https://finalvestige.com/2026/08/20/the-way-out-was-underground-ed-pulaski-1910/",
+      "inline_images": 6,
+      "offsite_images": 5,
+      "missing_both_html_dimensions": 2,
+      "offsite_missing_html_dimensions": 2,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "428:1",
+        "428:5"
+      ]
+    },
+    {
+      "post_id": 431,
+      "post_url": "https://finalvestige.com/2026/08/20/the-mountain-buried-the-door-frank-slide/",
+      "inline_images": 6,
+      "offsite_images": 5,
+      "missing_both_html_dimensions": 5,
+      "offsite_missing_html_dimensions": 5,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "431:1",
+        "431:2",
+        "431:3",
+        "431:4",
+        "431:5"
+      ]
+    },
+    {
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "inline_images": 7,
+      "offsite_images": 7,
+      "missing_both_html_dimensions": 7,
+      "offsite_missing_html_dimensions": 7,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "432:0",
+        "432:1",
+        "432:2",
+        "432:3",
+        "432:4",
+        "432:5",
+        "432:6"
+      ]
+    },
+    {
+      "post_id": 433,
+      "post_url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/",
+      "inline_images": 6,
+      "offsite_images": 5,
+      "missing_both_html_dimensions": 3,
+      "offsite_missing_html_dimensions": 3,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "433:3",
+        "433:4",
+        "433:5"
+      ]
+    },
+    {
+      "post_id": 434,
+      "post_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "inline_images": 6,
+      "offsite_images": 5,
+      "missing_both_html_dimensions": 0,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 0,
+      "html_srcset_images": 0,
+      "missing_slots": []
+    },
+    {
+      "post_id": 621,
+      "post_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "inline_images": 6,
+      "offsite_images": 0,
+      "missing_both_html_dimensions": 6,
+      "offsite_missing_html_dimensions": 0,
+      "first_party_missing_html_dimensions": 6,
+      "html_srcset_images": 0,
+      "missing_slots": [
+        "621:0",
+        "621:1",
+        "621:2",
+        "621:3",
+        "621:4",
+        "621:5"
+      ]
+    }
+  ],
+  "browser_validation_request": "Site QA #154 existing cold guest collector: capture source/currentSrc and actual response+decode, then BEFORE-image layout reservation (CSS aspect-ratio, intrinsic ratio, box height), AFTER box dimensions and PerformanceObserver layout-shift entries excluding recent user input; compare same viewport/DPR with screenshots. Do not assume no HTML width/height caused CLS.",
+  "production_change_allowed": false,
+  "third_party_download_or_mirror_allowed": false,
+  "wordpress_post_rewrite_allowed": false,
+  "guest_broken_images_confirmed": null,
+  "measured_cls": null,
+  "measured_image_wire_reduction_percent": null,
+  "output_width_constraint": "At most 960px AND never upscale; require rights clearance, decoded native pixels, image identity and target DPR before staging."
+}

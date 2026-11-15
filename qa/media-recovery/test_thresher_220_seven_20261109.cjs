@@ -1,0 +1,20 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {validate}=require('./validate_thresher_220_seven_20261109.cjs');
+const a=JSON.parse(fs.readFileSync(path.join(__dirname,'thresher_220_seven_navy_20261109.json'),'utf8'));
+const f=JSON.parse(fs.readFileSync(path.join(__dirname,'../../qa/media-recovery/parts/05.json'),'utf8'));
+const clone=()=>JSON.parse(JSON.stringify(a));
+test('baseline all seven anchored and on hold',()=>assert.deepEqual(validate(a,f),{ok:true,errors:[]}));
+for(let i=0;i<7;i++){test('reject source tamper at '+i,()=>{const b=clone();b.rows[i].stored_original_url+='?swap';assert.equal(validate(b,f).ok,false)});}
+test('reject falsely confirmed 404',()=>{const b=clone();b.rows[0].source_observation.visitor_http_status=404;assert.equal(validate(b,f).ok,false)});
+test('reject source retriever being described as guest 404',()=>{const b=clone();b.rows[4].source_observation.confirmed_broken=true;assert.equal(validate(b,f).ok,false)});
+test('reject invented transfer bytes',()=>{const b=clone();b.rows[1].source_observation.visitor_transferred_bytes=1234;assert.equal(validate(b,f).ok,false)});
+test('reject rights claim',()=>{const b=clone();b.rows[2].candidate.individual_rights_cleared=true;assert.equal(validate(b,f).ok,false)});
+test('reject WordPress upload',()=>{const b=clone();b.rows[3].release.wordpress_media_upload=true;assert.equal(validate(b,f).ok,false)});
+test('reject cache',()=>{const b=clone();b.rows[0].release.third_party_cache=true;assert.equal(validate(b,f).ok,false)});
+test('reject upscaling 578px Skylark',()=>{const b=clone();b.rows[2].candidate.conditional_max_960_pixels=[960,1224];assert.equal(validate(b,f).ok,false)});
+test('reject 1964 Trieste misdated as 1963',()=>{const b=clone();b.rows[4].candidate.historical_integrity_note='Photographed in April 1963';assert.equal(validate(b,f).ok,false)});
+test('reject 1964 rudder treated as 1963',()=>{const b=clone();b.rows[6].candidate.historical_integrity_note='Photographed April 1963';assert.equal(validate(b,f).ok,false)});
+test('reject Skylark donated provenance erased',()=>{const b=clone();b.rows[2].candidate.rights_observation='U.S. Navy guaranteed rights';assert.equal(validate(b,f).ok,false)});
+test('reject unsupported transfer-savings claim',()=>{const b=clone();b.performance_policy='achieved 76% reduction';assert.equal(validate(b,f).ok,false)});
+test('reject duplicate slot',()=>{const b=clone();b.rows[6].slot=b.rows[5].slot;assert.equal(validate(b,f).ok,false)});

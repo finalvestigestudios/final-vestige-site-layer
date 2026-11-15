@@ -1,0 +1,57 @@
+"use strict";
+const {test}=require("node:test"),assert=require("node:assert/strict");
+const fs=require("node:fs"),path=require("node:path");
+const {verify}=require("./validate_lituya_277_six_20261110.cjs");
+const read=n=>JSON.parse(fs.readFileSync(path.join(__dirname,n),"utf8"));
+const fixture=()=>[
+ read("lituya_277_six_usgs_nasa_composite_rights_20261110.json"),
+ read("coverage_252_exact_pr1703_20261110.json"),
+ read("coverage_246_exact_pr1703_20261110.json"),
+ read("fixture_lituya_277_live_source_20261110.json")];
+const reject=fn=>{const x=fixture();fn(...x);assert.notDeepEqual(verify(...x),[]);};
+test("six live sources, 288 rows, and release holds pass",()=>assert.deepEqual(verify(...fixture()),[]));
+test("282 unrelated positions remain byte-identical JSON",()=>{const [,n,p]=fixture();assert.equal(p.rows.filter(x=>!x.slot.startsWith("277:")).every(x=>JSON.stringify(x)===JSON.stringify(n.rows.find(y=>y.slot===x.slot))),true);});
+test("research now covers 252 unique original slots",()=>{const [,n]=fixture();assert.equal(n.rows.filter(x=>x.evidence.length).length,252);});
+test("36 original slots still unresearched",()=>{const [,n]=fixture();assert.equal(n.rows.filter(x=>!x.evidence.length).length,36);});
+test("six unique exact original URLs",()=>{const [a]=fixture();assert.equal(new Set(a.rows.map(x=>x.published_src)).size,6);});
+test("four previews, two inaccessible, no claimed guest statuses",()=>{const [a]=fixture();assert.equal(a.rows.filter(x=>x.web_retriever_observation.startsWith("IMAGE_DISPLAYED")).length,4);assert.equal(a.rows.filter(x=>x.guest_http_status!==null).length,0);});
+test("NASA image catalog is 720x480 not 960x640",()=>{const [a]=fixture();assert.deepEqual(a.rows[5].conditional_960px,[720,480]);});
+test("reject changed original URL",()=>reject(a=>a.rows[0].published_src="https://example.invalid/new.jpg"));
+test("reject changed published ALT",()=>reject(a=>a.rows[1].published_alt="Broken summary"));
+test("reject falsified live original fixture",()=>reject((a,n,p,f)=>f.images[2].src="https://example.invalid/original.jpg"));
+test("reject fabricated guest HTTP 200",()=>reject(a=>a.rows[0].guest_http_status=200));
+test("reject fabricated guest HTTP 404",()=>reject(a=>a.rows[3].guest_http_status=404));
+test("reject fabricated origin 403",()=>reject(a=>a.rows[1].origin_http_status=403));
+test("reject invented transferred bytes",()=>reject(a=>a.rows[4].guest_wire_bytes=12345));
+test("reject invented decoded pixels",()=>reject(a=>a.rows[2].guest_decoded_px=[960,640]));
+test("reject guessed original width for source #0",()=>reject(a=>a.rows[0].conditional_960px=[960,640]));
+test("reject false broken image classification",()=>reject(a=>a.rows[5].guest_broken=true));
+test("reject premature rights clearance",()=>reject(a=>a.rows[5].rights_cleared=true));
+test("reject commercial photo download authorization",()=>reject(a=>a.rows[3].download_authorized=true));
+test("reject website media caching authorization",()=>reject(a=>a.rows[1].cache_authorized=true));
+test("reject WordPress Media Library upload authorization",()=>reject(a=>a.rows[2].wordpress_media_upload_authorized=true));
+test("reject Gutenberg rewrite authorization",()=>reject(a=>a.rows[4].post_rewrite_authorized=true));
+test("reject asserted exact image binary identity",()=>reject(a=>a.rows[0].exact_binary_identity_proved=true));
+test("reject losing the two-panel original image finding",()=>reject(a=>a.rows[0].visual_integrity_note="One aerial photograph"));
+test("reject losing the two-panel ALT correction",()=>reject(a=>a.rows[0].proposed_alt_editor_review=null));
+test("reject copyright note disappearing from research composite",()=>reject(a=>a.rows[1].rights_observation="unknown"));
+test("reject ResearchGate three-panel scene flag removal",()=>reject(a=>a.rows[1].visual_integrity_note="A simple photo"));
+test("reject commercial greeting-card provenance removal",()=>reject(a=>a.rows[3].rights_observation="Public Domain"));
+test("reject unmentioned arrows in the corrected ALT",()=>reject(a=>a.rows[4].proposed_alt_editor_review="Aerial view of Alaska"));
+test("reject NASA source pixels increased beyond original",()=>reject(a=>a.rows[5].source_original_intrinsic_px=[960,640]));
+test("reject NASA 960px upscale",()=>reject(a=>a.rows[5].conditional_960px=[960,640]));
+test("reject NASA 2020 false-color contextual error",()=>reject(a=>a.rows[5].visual_integrity_note="Satellite taken in 1958"));
+test("reject fabricated 42-broken guest proof",()=>reject((a,n)=>n.counts.reported_42_broken_browser_confirmed=true));
+test("reject invented 76 percent cold wire reduction",()=>reject((a,n)=>n.counts.wire_reduction_76_percent_measured=true));
+test("reject stored bytes substituted as wire-byte evidence",()=>reject((a,n)=>n.counts.oversized_stored_original_bytes=30000000));
+test("reject fabricated researched count",()=>reject((a,n)=>n.counts.researched_unique=253));
+test("reject evidence count drift",()=>reject((a,n)=>n.counts.total_evidence_records=258));
+test("reject changed unrelated image URL",()=>reject((a,n)=>n.rows.find(x=>x.slot==="276:0").stored_url="https://example.invalid/other.jpg"));
+test("reject unrelated source candidate removal",()=>reject((a,n)=>n.rows.find(x=>x.slot==="276:2").candidate_sources=[]));
+test("reject removing newly researched source evidence",()=>reject((a,n)=>n.rows.find(x=>x.slot==="277:2").evidence=[]));
+test("reject changing archival source audit blob SHA",()=>reject((a,n)=>n.batch_sources.find(x=>x.file.includes("lituya_277")).blob_sha="f".repeat(40)));
+test("reject changing frozen source blob SHA",()=>reject((a,n,p,f)=>f.frozen_source_blob_sha="f".repeat(40)));
+test("reject changed WordPress read-only timestamp",()=>reject((a,n,p,f)=>f.live_modified="1999-01-01"));
+test("reject lost image record",()=>reject(a=>a.rows.pop()));
+test("reject duplicated slot",()=>reject(a=>a.rows[1].slot="277:0"));
+test("reject undocumented candidate enlargement",()=>reject((a,n)=>n.rows.find(x=>x.slot==="277:4").candidate_sources[0].conditional_960px=[1200,900]));

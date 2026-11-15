@@ -1,0 +1,18 @@
+# Live Part 04: 56-image source and responsive-integrity audit — 12 November 2026
+
+**Method**: authenticated read-only WordPress `posts_get(context=edit)`; frozen PR #183 `qa/media-recovery/parts/04.json` blob `6df3251e5a67a971d87a516a1ba4a0cc32f51f96`; source research register `4965a862f7de7de46c1f4a1e26f3ca70a8c38805`; oversize bridge `d1a9c7a499510ec37bcdba5858d45165752587e0`. No guest browser was run and no production settings or content were changed.
+
+## New batch
+- **8 posts**, IDs **278, 277, 276, 274, 269, 268, 258, 257**, **56/56 original image URLs and ALT descriptions unchanged**, zero missing or added image tags.
+- **54/56 image tags lack HTML width/height**, 2 have both; 0 partial dimensions and 0 literal `srcset` attributes. No measured CLS; theme/Jetpack may create runtime variants.
+- **34 generic offsite, 15 Commons redirects, 7 first-party** source positions; 48 externally catalogued candidate positions, 29 with conditional ≤960px pair. Candidates are research leads, not licensed/verified identical images.
+- **1** of the already inventoried 15 >1.5 decimal MB originals appear in this frozen part's inline sources (1543002 **stored** bytes, not transferred). In particular post 269's Halifax map requires fine-print/legend readability and full-size access before any derivative is proposed.
+- Official [USGS Lituya Bay 1958 catalog](https://www.usgs.gov/media/images/lituya-bay-1958) states Public Domain and credits Don J. Miller, but this does **not** establish visual identity to the published syndicated third-party photo. NASA [Apollo 12 launch lightning catalog](https://science.nasa.gov/resource/lightning-strikes-twice/) supplies original context, not proven same-frame bytes for a Commons redirect.
+
+## Fail-closed restoration and performance
+The [machine-readable audit](../qa/media-recovery/live_part04_8posts_56_images_20261112.json) records exact frozen/live published image URLs, observed HTML geometry, research-provenance candidate URLs and rights restrictions, plus `null` browser HTTP/redirect/currentSrc/decode/wire/CLS fields. Associated validator and regression tests reject fabricated HTTP statuses, unlabeled image substitution, source drift, license overrides and 960px violations.
+
+The historical **42 broken** originals are not confirmed by true logged-out visitor-browser evidence. The claimed **76% weight reduction** has neither a verified cold baseline nor a comparable post-change measurement. The earlier 15 oversized WP originals total **47,096,779 stored bytes**, not visitor network transfer. Only report `100*(sum cold before encoded image bytes - sum cold after encoded image bytes)/sum cold before` after verified, complete, uncached, matched-post/slot browser requests and matching photograph, crop/legibility, viewport and DPR. Width 960 is a maximum candidate derivative, never a universal browser resolution guarantee.
+
+## Queue and ownership
+Site QA [#154](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/154) retains the original guest-browser collector and six-source P0 queue: **285:5 → 285:2 → 287:5 → 418:1 → 418:2 → 407:1**. This batch adds archival and geometry evidence only. Do **not** create a second collector or overwrite Site QA drafts. For genuine browser-confirmed failures, verify exact same-scene/same-crop at authoritative archives, item-specific licenses/donor rights, credit, native pixel dimensions and responsive display requirements; prepare a conditional WordPress Media Library cache plan *on paper*, then isolated staging QA. No third-party bytes downloaded/cached/rehosted, no risky Gutenberg block rewrites, no WordPress production writes, no homepage design, merge, deployment, or spend.

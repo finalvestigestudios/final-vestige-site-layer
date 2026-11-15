@@ -1,0 +1,112 @@
+{
+  "schema": "fv-media-post166-readonly-wp-source-verification-v1",
+  "date_utc": "2026-11-10",
+  "method": "Authenticated read-only WordPress posts_get(context=edit, include_fields=id/slug/status/modified/link/content), deterministic <img> src/alt extraction, compared by ordinal with frozen October 30 CMS fixture; not visitor network or image binary verification.",
+  "source_is_live_post_editor_content": true,
+  "post_id": 166,
+  "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+  "post_status": "publish",
+  "last_modified": "2026-11-02T21:39:29",
+  "observed_image_tags": 7,
+  "external_source_positions_verified": 6,
+  "matched_total_src_and_alt": 7,
+  "mismatches": 0,
+  "frozen_fixture": {
+    "path": "qa/media-recovery/parts/07.json",
+    "blob_sha": "21095161e633aba093b74c0ead9936c9f6186d00"
+  },
+  "scope": "No WordPress writes, HTTP-origin probes, image downloads, CDP, licensing changes or 960px production derivatives.",
+  "rows": [
+    {
+      "slot": "166:0",
+      "original_cms_frozen_src": "https://finalvestige.com/wp-content/uploads/2026/08/IMG_3479.jpeg",
+      "live_post_src": "https://finalvestige.com/wp-content/uploads/2026/08/IMG_3479.jpeg",
+      "source_url_exact_match": true,
+      "original_cms_frozen_alt": "St. Francis Dam and reservoir in San Francisquito Canyon in February 1927, one year before the catastrophic failure",
+      "live_post_alt": "St. Francis Dam and reservoir in San Francisquito Canyon in February 1927, one year before the catastrophic failure",
+      "alt_exact_match": true,
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_image_decoded": null,
+      "guest_transfer_bytes": null
+    },
+    {
+      "slot": "166:1",
+      "original_cms_frozen_src": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ca/ca3000/ca3095/sheet/00002a.gif",
+      "live_post_src": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ca/ca3000/ca3095/sheet/00002a.gif",
+      "source_url_exact_match": true,
+      "original_cms_frozen_alt": "Historic American Engineering Record drawing showing the Los Angeles Aqueduct system",
+      "live_post_alt": "Historic American Engineering Record drawing showing the Los Angeles Aqueduct system",
+      "alt_exact_match": true,
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_image_decoded": null,
+      "guest_transfer_bytes": null
+    },
+    {
+      "slot": "166:2",
+      "original_cms_frozen_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.%20Francis%20abutment.jpg?width=1280",
+      "live_post_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.%20Francis%20abutment.jpg?width=1280",
+      "source_url_exact_match": true,
+      "original_cms_frozen_alt": "Huge concrete block from the west abutment of St. Francis Dam carried about half a mile downstream by the 1928 flood",
+      "live_post_alt": "Huge concrete block from the west abutment of St. Francis Dam carried about half a mile downstream by the 1928 flood",
+      "alt_exact_match": true,
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_image_decoded": null,
+      "guest_transfer_bytes": null
+    },
+    {
+      "slot": "166:3",
+      "original_cms_frozen_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Twisted_Tracks.jpg?width=1280",
+      "live_post_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Twisted_Tracks.jpg?width=1280",
+      "source_url_exact_match": true,
+      "original_cms_frozen_alt": "Railroad tracks between Castaic Junction and Piru twisted by the flood from the St. Francis Dam failure",
+      "live_post_alt": "Railroad tracks between Castaic Junction and Piru twisted by the flood from the St. Francis Dam failure",
+      "alt_exact_match": true,
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_image_decoded": null,
+      "guest_transfer_bytes": null
+    },
+    {
+      "slot": "166:4",
+      "original_cms_frozen_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.%20Francis%20Dam%20after%20the%201928%20failure.jpg?width=1280",
+      "live_post_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.%20Francis%20Dam%20after%20the%201928%20failure.jpg?width=1280",
+      "source_url_exact_match": true,
+      "original_cms_frozen_alt": "St. Francis Dam site five days after the March 1928 failure, with most of the concrete structure gone",
+      "live_post_alt": "St. Francis Dam site five days after the March 1928 failure, with most of the concrete structure gone",
+      "alt_exact_match": true,
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_image_decoded": null,
+      "guest_transfer_bytes": null
+    },
+    {
+      "slot": "166:5",
+      "original_cms_frozen_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Standing_section.jpg?width=1280",
+      "live_post_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Standing_section.jpg?width=1280",
+      "source_url_exact_match": true,
+      "original_cms_frozen_alt": "The surviving central section of the St. Francis Dam standing after the 1928 collapse",
+      "live_post_alt": "The surviving central section of the St. Francis Dam standing after the 1928 collapse",
+      "alt_exact_match": true,
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_image_decoded": null,
+      "guest_transfer_bytes": null
+    },
+    {
+      "slot": "166:6",
+      "original_cms_frozen_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Man%20pointing%20at%20crack%20in%20Saint%20Francis%20Dam%20after%20its%20collapse.jpg?width=1280",
+      "live_post_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Man%20pointing%20at%20crack%20in%20Saint%20Francis%20Dam%20after%20its%20collapse.jpg?width=1280",
+      "source_url_exact_match": true,
+      "original_cms_frozen_alt": "A man points to a crack in a surviving block of the St. Francis Dam after the 1928 collapse",
+      "live_post_alt": "A man points to a crack in a surviving block of the St. Francis Dam after the 1928 collapse",
+      "alt_exact_match": true,
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_image_decoded": null,
+      "guest_transfer_bytes": null
+    }
+  ]
+}

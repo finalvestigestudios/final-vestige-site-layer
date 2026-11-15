@@ -1,0 +1,38 @@
+"use strict";
+const fs=require("node:fs");
+const {validate}=require("./validate_live_part02_20261112.cjs");
+const audit=JSON.parse(fs.readFileSync(__dirname+"/live_part02_8posts_59_images_20261112.json","utf8"));
+function run(){
+ let n=0;const ok=(v,l)=>{n++;if(!v)throw Error(l)};
+ ok(validate(audit).ok,"original validates");
+ const mutate=(change,label)=>{let x=JSON.parse(JSON.stringify(audit));change(x);ok(!validate(x).ok,label)};
+ mutate(x=>x.records[0].guest_http_status=404,"fake 404");
+ mutate(x=>x.records[0].source_http_status=200,"fake source status");
+ mutate(x=>x.records[0].guest_failure_confirmed=true,"fake broken");
+ mutate(x=>x.records[0].guest_wire_bytes=123,"fake bytes");
+ mutate(x=>x.records[0].guest_natural_px=[960,540],"fake decode");
+ mutate(x=>x.records[0].rights_cleared=true,"rights");
+ mutate(x=>x.records[0].download_authorized=true,"download");
+ mutate(x=>x.records[0].cache_authorized=true,"cache");
+ mutate(x=>x.records[0].wp_media_write_authorized=true,"WP write");
+ mutate(x=>x.records[0].post_rewrite_authorized=true,"post rewrite");
+ mutate(x=>x.records[0].source_equal=!x.records[0].source_equal,"false source match");
+ mutate(x=>x.records[0].live_src="http://invalid.example/pic","http source");
+ mutate(x=>x.records[0].slot=x.records[1].slot,"duplicate");
+ mutate(x=>x.records.pop(),"count");
+ mutate(x=>x.records[0].html_width=0,"zero width");
+ mutate(x=>x.counts.src_equal++,"false count");
+ mutate(x=>x.counts.missing_width_height++,"false dimension count");
+ mutate(x=>x.policy.siteqa_sole_browser_collector=false,"QA ownership");
+ mutate(x=>x.policy.homepage_visual_design_out_of_scope=false,"homepage");
+ mutate(x=>x.historical.claimed_76pct_wire_reduction_measured=true,"false 76");
+ mutate(x=>x.historical.reported_broken_guest_unconfirmed=0,"false broken clearance");
+ mutate(x=>x.evidence.worklist_blob="bad","pinned source");
+ mutate(x=>x.posts[0].live_images=0,"post integrity");
+ let c=audit.records.find(r=>r.source_candidate_catalogs.length>0);ok(!!c,"has candidates");
+ mutate(x=>x.records.find(r=>r.source_candidate_catalogs.length>0).source_candidate_catalogs[0].item_rights_cleared=true,"candidate rights");
+ mutate(x=>x.records.find(r=>r.source_candidate_catalogs.length>0).source_candidate_catalogs[0].conditional_960px=[1200,600],"960 cap");
+ return n;
+}
+module.exports={run};
+if(require.main===module)console.log("PASS "+run()+" checks");

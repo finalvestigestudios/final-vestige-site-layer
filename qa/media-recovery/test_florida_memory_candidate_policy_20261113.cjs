@@ -1,0 +1,17 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict');
+const {validate}=require('./verify_florida_memory_candidate_policy_20261113.cjs');
+const frozen=require('./florida_memory_pdm_and_catalog_wrappers_20261113.json');
+const copy=()=>JSON.parse(JSON.stringify(frozen));
+test('frozen five-candidate audit passes',()=>assert.deepEqual(validate(frozen),{ok:true,errors:[]}));
+test('mislabeling retriever error as origin HTTP fails',()=>{let a=copy();a.official_catalog_candidates[0].catalog_open_kind='ORIGIN_HTTP';assert.equal(validate(a).ok,false)});
+test('mistaking failure wrapper for guest HTTP fails',()=>{let a=copy();a.published_original.actual_guest_http_status=404;assert.equal(validate(a).ok,false)});
+test('cannot elevate PDM mark into a license',()=>{let a=copy();a.policy.classification='CC_LICENSE';assert.equal(validate(a).ok,false)});
+test('statutory credit cannot be lost',()=>{let a=copy();a.policy.credit_source='none';assert.equal(validate(a).ok,false)});
+test('same publisher does not confer mirror rights',()=>{let a=copy();a.same_publisher_moved_image.rehosting_permission_verified=true;assert.equal(validate(a).ok,false)});
+test('candidate cannot be called same photograph',()=>{let a=copy();a.official_catalog_candidates[2].photo_identity_same_as_original=true;assert.equal(validate(a).ok,false)});
+test('960px no upscale ceiling is enforced in audit',()=>{let a=copy();a.official_catalog_candidates[1].conditional_max_output_width_px=1200;assert.equal(validate(a).ok,false)});
+test('unmeasured 76 percent cannot be certified',()=>{let a=copy();a.cohort.actual_wire_reduction_confirmed=true;assert.equal(validate(a).ok,false)});
+test('candidate cannot be marked downloaded',()=>{let a=copy();a.official_catalog_candidates[3].download_performed=true;assert.equal(validate(a).ok,false)});
+test('no invisible WordPress writes',()=>{let a=copy();a.disposition.no_wp_post_rewrite=false;assert.equal(validate(a).ok,false)});
+test('no double counting duplicates',()=>{let a=copy();a.official_catalog_candidates[4].id='RC09236';assert.equal(validate(a).ok,false)});

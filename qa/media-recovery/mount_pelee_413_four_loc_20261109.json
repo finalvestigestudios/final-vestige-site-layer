@@ -1,0 +1,190 @@
+{
+  "schema": "fv-loc-pelee-four-v1",
+  "date_utc": "2026-11-09",
+  "source_census_date": "2026-10-30",
+  "source_census_blob_sha": "92a904c8da1ace1f972b2f00adf1a4847dde2b99",
+  "post_id": 413,
+  "post_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+  "summary": {
+    "rows": 4,
+    "new_individual_slots": 4,
+    "loc_catalog_matches": 3,
+    "loc_catalog_unknown": 1,
+    "web_tool_rendered": 1,
+    "web_tool_inaccessible": 3,
+    "guest_broken_confirmed": 0
+  },
+  "performance": {
+    "alleged_42_browser_verified": false,
+    "proposed_76pct_transfer_saving_measured": false,
+    "originals_above_1500000_bytes": 15,
+    "stored_bytes": 47096779,
+    "guest_transferred_bytes": null
+  },
+  "rows": [
+    {
+      "slot": "413:1",
+      "post_id": 413,
+      "post_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+      "exact_original_url": "https://tile.loc.gov/storage-services/service/pnp/stereo/1s40000/1s41000/1s41500/1s41590v.jpg",
+      "origin_host": "tile.loc.gov",
+      "researched_in_frozen_inventory": false,
+      "web_observation": {
+        "source": "WEB_VIEWER_NOT_GUEST_BROWSER",
+        "date_utc": "2026-11-09",
+        "result": "WEB_INACCESSIBLE",
+        "tool_reference": "turn947291view0",
+        "guest_http": null,
+        "guest_natural_width": null,
+        "guest_natural_height": null,
+        "guest_wire_bytes": null,
+        "guest_broken": null
+      },
+      "loc_candidate": {
+        "authority": "LIBRARY_OF_CONGRESS",
+        "accession": "LC-DIG-stereo-1s41590",
+        "catalog_url": "https://www.loc.gov/item/98504788/",
+        "catalog_title": "St. Pierre, its roadstead and Mont Pelee, before the terrible eruption of May 8, 1902",
+        "scene_era": "BEFORE_ERUPTION",
+        "item_rights_note": "No known restrictions on publication",
+        "record_confirmed": true,
+        "native_px": null,
+        "conditional_960_px": null,
+        "binary_crop_match": false,
+        "republication_rights_cleared": false,
+        "visual_approved": false,
+        "visual_constraint": "Stereocard is a pair of images with potentially small card captions. Preserve both eyes; no cropped or downscaled 960px derivative without visual review; preserve historical before/after eruption context."
+      },
+      "release": {
+        "third_party_download": false,
+        "third_party_cache": false,
+        "wordpress_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      }
+    },
+    {
+      "slot": "413:3",
+      "post_id": 413,
+      "post_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+      "exact_original_url": "https://tile.loc.gov/storage-services/service/pnp/stereo/1s40000/1s41000/1s41500/1s41518v.jpg",
+      "origin_host": "tile.loc.gov",
+      "researched_in_frozen_inventory": false,
+      "web_observation": {
+        "source": "WEB_VIEWER_NOT_GUEST_BROWSER",
+        "date_utc": "2026-11-09",
+        "result": "WEB_INACCESSIBLE",
+        "tool_reference": "turn947291view1",
+        "guest_http": null,
+        "guest_natural_width": null,
+        "guest_natural_height": null,
+        "guest_wire_bytes": null,
+        "guest_broken": null
+      },
+      "loc_candidate": {
+        "authority": "LIBRARY_OF_CONGRESS",
+        "accession": "stereo.1s41518",
+        "catalog_url": null,
+        "catalog_title": null,
+        "scene_era": "UNKNOWN",
+        "item_rights_note": "ITEM_NOT_VERIFIED",
+        "record_confirmed": false,
+        "native_px": null,
+        "conditional_960_px": null,
+        "binary_crop_match": false,
+        "republication_rights_cleared": false,
+        "visual_approved": false,
+        "visual_constraint": "Stereocard is a pair of images with potentially small card captions. Preserve both eyes; no cropped or downscaled 960px derivative without visual review; preserve historical before/after eruption context."
+      },
+      "release": {
+        "third_party_download": false,
+        "third_party_cache": false,
+        "wordpress_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      }
+    },
+    {
+      "slot": "413:4",
+      "post_id": 413,
+      "post_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+      "exact_original_url": "https://tile.loc.gov/storage-services/service/pnp/stereo/1s40000/1s41000/1s41400/1s41424v.jpg",
+      "origin_host": "tile.loc.gov",
+      "researched_in_frozen_inventory": false,
+      "web_observation": {
+        "source": "WEB_VIEWER_NOT_GUEST_BROWSER",
+        "date_utc": "2026-11-09",
+        "result": "WEB_IMAGE_RENDERED",
+        "tool_reference": "turn947291view2",
+        "guest_http": null,
+        "guest_natural_width": null,
+        "guest_natural_height": null,
+        "guest_wire_bytes": null,
+        "guest_broken": null
+      },
+      "loc_candidate": {
+        "authority": "LIBRARY_OF_CONGRESS",
+        "accession": "LC-DIG-stereo-1s41424",
+        "catalog_url": "https://www.loc.gov/item/2006688499/",
+        "catalog_title": "St. Pierre looking north across devastation, Mt Pelee in distance",
+        "scene_era": "AFTER_ERUPTION",
+        "item_rights_note": "No known restrictions on publication",
+        "record_confirmed": true,
+        "native_px": null,
+        "conditional_960_px": null,
+        "binary_crop_match": false,
+        "republication_rights_cleared": false,
+        "visual_approved": false,
+        "visual_constraint": "Stereocard is a pair of images with potentially small card captions. Preserve both eyes; no cropped or downscaled 960px derivative without visual review; preserve historical before/after eruption context."
+      },
+      "release": {
+        "third_party_download": false,
+        "third_party_cache": false,
+        "wordpress_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      }
+    },
+    {
+      "slot": "413:5",
+      "post_id": 413,
+      "post_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+      "exact_original_url": "https://tile.loc.gov/storage-services/service/pnp/stereo/1s40000/1s41000/1s41500/1s41568v.jpg",
+      "origin_host": "tile.loc.gov",
+      "researched_in_frozen_inventory": false,
+      "web_observation": {
+        "source": "WEB_VIEWER_NOT_GUEST_BROWSER",
+        "date_utc": "2026-11-09",
+        "result": "WEB_INACCESSIBLE",
+        "tool_reference": "turn947291view3",
+        "guest_http": null,
+        "guest_natural_width": null,
+        "guest_natural_height": null,
+        "guest_wire_bytes": null,
+        "guest_broken": null
+      },
+      "loc_candidate": {
+        "authority": "LIBRARY_OF_CONGRESS",
+        "accession": "LC-DIG-stereo-1s41568",
+        "catalog_url": "https://www.loc.gov/item/2004680426/",
+        "catalog_title": "Post-eruption St Pierre and bay from boulevard",
+        "scene_era": "AFTER_ERUPTION",
+        "item_rights_note": "No known restrictions on publication",
+        "record_confirmed": true,
+        "native_px": null,
+        "conditional_960_px": null,
+        "binary_crop_match": false,
+        "republication_rights_cleared": false,
+        "visual_approved": false,
+        "visual_constraint": "Stereocard is a pair of images with potentially small card captions. Preserve both eyes; no cropped or downscaled 960px derivative without visual review; preserve historical before/after eruption context."
+      },
+      "release": {
+        "third_party_download": false,
+        "third_party_cache": false,
+        "wordpress_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      }
+    }
+  ]
+}

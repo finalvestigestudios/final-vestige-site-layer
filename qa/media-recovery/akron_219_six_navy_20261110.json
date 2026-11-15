@@ -1,0 +1,309 @@
+{
+  "schema": "fv-media-akron-219-six-v1",
+  "date": "2026-11-10",
+  "post_id": 219,
+  "provenance": {
+    "frozen_inventory": "qa/media-recovery/offsite_upstream_288_20261109.json",
+    "frozen_sha": "92a904c8da1ace1f972b2f00adf1a4847dde2b99",
+    "prior_coverage": "qa/media-recovery/coverage_188_exact_pr1703_20261110.json",
+    "prior_coverage_sha": "fc0e5d5644e982b273c609762f4dfb8b7ef855a2",
+    "live_post_readonly": true
+  },
+  "caveats": [
+    "Browser images not verified broken or loaded; web.open redirect inaccessible for all six",
+    "No image or catalog binary downloaded",
+    "US Army Air Corps authorship for NH 98039 contradicts Commons Navy-author claim",
+    "Four candidates link to US Navy primary catalog; no publishing authorization",
+    "Preserve source attribution, scene, crop; 960px max without upscaling"
+  ],
+  "rows": [
+    {
+      "slot": "219:0",
+      "post_id": 219,
+      "post_url": "https://finalvestige.com/2026/08/18/the-airship-had-no-life-jackets/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/80-G-1009363_(30087379334).jpg?width=1280",
+      "source_kind": "wikimedia_special_redirect_1280",
+      "source_verified_from_frozen_inventory": true,
+      "wordpress_live_edit_readback_20261110": true,
+      "retrieval": {
+        "method": "web.open published literal URL",
+        "result": "TOOL_INACCESSIBLE",
+        "tool_wrapper_status": null,
+        "actual_origin_http_status": null,
+        "visitor_browser_http_status": null,
+        "visitor_decoded_dimensions": null,
+        "visitor_transferred_bytes": null,
+        "confirmation_of_broken": false
+      },
+      "candidate": {
+        "accession": "80-G-1009363",
+        "primary_catalog_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/aircraft-us/aircraft-usn-a/uss-akron-zrs-4/80-g-1009363.html",
+        "commons_catalog_url": "https://commons.wikimedia.org/wiki/File:80-G-1009363_(30087379334).jpg",
+        "catalog_pages_accessible": true,
+        "archive_pixel_dimensions": [
+          2650,
+          2190
+        ],
+        "conditional_960px_dimensions": [
+          960,
+          793
+        ],
+        "creator_credit": "Official U.S. Navy photograph",
+        "scene": "Akron above Lincoln Memorial, Washington D.C.",
+        "rights_review": "PD U.S. Navy creator assertion supported by official catalog; exact file provenance HOLD",
+        "historical_date": "1931–1933; Navy records photograph received in 1957",
+        "proposed_alt": "USS Akron flying over the Lincoln Memorial in Washington, D.C., circa 1931–1933.",
+        "exact_binary_and_crop_match_verified": false,
+        "reuse_rights_cleared": false
+      },
+      "release": {
+        "download": false,
+        "mirror": false,
+        "cache": false,
+        "wp_media_upload": false,
+        "post_rewrite": false
+      },
+      "notes": "Catalog metadata, not binary measurement; 1280 in stored URL is requested width, not proof of transmitted dimensions or bytes."
+    },
+    {
+      "slot": "219:1",
+      "post_id": 219,
+      "post_url": "https://finalvestige.com/2026/08/18/the-airship-had-no-life-jackets/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Akron_(ZRS-4)_in_flight_over_Manhattan,_circa_1931-1933.jpg?width=1280",
+      "source_kind": "wikimedia_special_redirect_1280",
+      "source_verified_from_frozen_inventory": true,
+      "wordpress_live_edit_readback_20261110": true,
+      "retrieval": {
+        "method": "web.open published literal URL",
+        "result": "TOOL_INACCESSIBLE",
+        "tool_wrapper_status": null,
+        "actual_origin_http_status": null,
+        "visitor_browser_http_status": null,
+        "visitor_decoded_dimensions": null,
+        "visitor_transferred_bytes": null,
+        "confirmation_of_broken": false
+      },
+      "candidate": {
+        "accession": "NH 43900",
+        "primary_catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-43000/NH-43900.html",
+        "commons_catalog_url": "https://commons.wikimedia.org/wiki/File:USS_Akron_(ZRS-4)_in_flight_over_Manhattan,_circa_1931-1933.jpg",
+        "catalog_pages_accessible": true,
+        "archive_pixel_dimensions": [
+          5516,
+          4241
+        ],
+        "conditional_960px_dimensions": [
+          960,
+          738
+        ],
+        "creator_credit": "NHHC photograph",
+        "scene": "Akron above lower Manhattan",
+        "rights_review": "Commons PD-U.S. Navy claim; curator identification but reuse/crop unverified",
+        "historical_date": "circa 1931–1933",
+        "proposed_alt": "USS Akron flying over lower Manhattan, New York City, circa 1931–1933.",
+        "exact_binary_and_crop_match_verified": false,
+        "reuse_rights_cleared": false
+      },
+      "release": {
+        "download": false,
+        "mirror": false,
+        "cache": false,
+        "wp_media_upload": false,
+        "post_rewrite": false
+      },
+      "notes": "Catalog metadata, not binary measurement; 1280 in stored URL is requested width, not proof of transmitted dimensions or bytes."
+    },
+    {
+      "slot": "219:2",
+      "post_id": 219,
+      "post_url": "https://finalvestige.com/2026/08/18/the-airship-had-no-life-jackets/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/NH_98039_USS_Akron_(ZRS-4).png?width=1280",
+      "source_kind": "wikimedia_special_redirect_1280",
+      "source_verified_from_frozen_inventory": true,
+      "wordpress_live_edit_readback_20261110": true,
+      "retrieval": {
+        "method": "web.open published literal URL",
+        "result": "TOOL_INACCESSIBLE",
+        "tool_wrapper_status": null,
+        "actual_origin_http_status": null,
+        "visitor_browser_http_status": null,
+        "visitor_decoded_dimensions": null,
+        "visitor_transferred_bytes": null,
+        "confirmation_of_broken": false
+      },
+      "candidate": {
+        "accession": "NH 98039",
+        "primary_catalog_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-98000/NH-98039.html",
+        "commons_catalog_url": "https://commons.wikimedia.org/wiki/File:NH_98039_USS_Akron_(ZRS-4).png",
+        "catalog_pages_accessible": true,
+        "archive_pixel_dimensions": [
+          5482,
+          4160
+        ],
+        "conditional_960px_dimensions": [
+          960,
+          728
+        ],
+        "creator_credit": "Official U.S. Army Air Corps photograph (per Navy primary record)",
+        "scene": "Akron over Panama Canal Zone with N2Y-1 inside hangar",
+        "rights_review": "CONFLICT: Commons incorrectly attributes USN/PD-Navy whereas Navy primary catalog says U.S. Army Air Corps; independent rights review HOLD",
+        "historical_date": "1933-03-15",
+        "proposed_alt": "U.S. Army Air Corps photograph of USS Akron off the Panama Canal Zone, with a training plane suspended in its hangar, March 15, 1933.",
+        "exact_binary_and_crop_match_verified": false,
+        "reuse_rights_cleared": false
+      },
+      "release": {
+        "download": false,
+        "mirror": false,
+        "cache": false,
+        "wp_media_upload": false,
+        "post_rewrite": false
+      },
+      "notes": "Catalog metadata, not binary measurement; 1280 in stored URL is requested width, not proof of transmitted dimensions or bytes."
+    },
+    {
+      "slot": "219:3",
+      "post_id": 219,
+      "post_url": "https://finalvestige.com/2026/08/18/the-airship-had-no-life-jackets/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Akron_releases_its_N2Y_1_aircraft.jpg?width=1280",
+      "source_kind": "wikimedia_special_redirect_1280",
+      "source_verified_from_frozen_inventory": true,
+      "wordpress_live_edit_readback_20261110": true,
+      "retrieval": {
+        "method": "web.open published literal URL",
+        "result": "TOOL_INACCESSIBLE",
+        "tool_wrapper_status": null,
+        "actual_origin_http_status": null,
+        "visitor_browser_http_status": null,
+        "visitor_decoded_dimensions": null,
+        "visitor_transferred_bytes": null,
+        "confirmation_of_broken": false
+      },
+      "candidate": {
+        "accession": "80-G-463185",
+        "primary_catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-460000/80-G-463185.html",
+        "commons_catalog_url": "https://commons.wikimedia.org/wiki/File:USS_Akron_releases_its_N2Y_1_aircraft.jpg",
+        "catalog_pages_accessible": true,
+        "archive_pixel_dimensions": [
+          740,
+          581
+        ],
+        "conditional_960px_dimensions": [
+          740,
+          581
+        ],
+        "creator_credit": "Official U.S. Navy photograph",
+        "scene": "Launching Consolidated N2Y-1 plane, Lakehurst NJ",
+        "rights_review": "PD Navy claimed; Commons current version cropped caption strip, not necessarily exact official pixels; HOLD",
+        "historical_date": "1932-05-04",
+        "proposed_alt": "USS Akron releasing an N2Y-1 training aircraft near Lakehurst, New Jersey, May 4, 1932.",
+        "exact_binary_and_crop_match_verified": false,
+        "reuse_rights_cleared": false
+      },
+      "release": {
+        "download": false,
+        "mirror": false,
+        "cache": false,
+        "wp_media_upload": false,
+        "post_rewrite": false
+      },
+      "notes": "Catalog metadata, not binary measurement; 1280 in stored URL is requested width, not proof of transmitted dimensions or bytes."
+    },
+    {
+      "slot": "219:4",
+      "post_id": 219,
+      "post_url": "https://finalvestige.com/2026/08/18/the-airship-had-no-life-jackets/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Akron_approaches_mooring_mast.jpg?width=1280",
+      "source_kind": "wikimedia_special_redirect_1280",
+      "source_verified_from_frozen_inventory": true,
+      "wordpress_live_edit_readback_20261110": true,
+      "retrieval": {
+        "method": "web.open published literal URL",
+        "result": "TOOL_INACCESSIBLE",
+        "tool_wrapper_status": null,
+        "actual_origin_http_status": null,
+        "visitor_browser_http_status": null,
+        "visitor_decoded_dimensions": null,
+        "visitor_transferred_bytes": null,
+        "confirmation_of_broken": false
+      },
+      "candidate": {
+        "accession": "NH 97977",
+        "primary_catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-97000/NH-97977.html",
+        "commons_catalog_url": "https://commons.wikimedia.org/wiki/File:USS_Akron_approaches_mooring_mast.jpg",
+        "catalog_pages_accessible": true,
+        "archive_pixel_dimensions": [
+          740,
+          586
+        ],
+        "conditional_960px_dimensions": [
+          740,
+          586
+        ],
+        "creator_credit": "NHHC catalog (photographer not separately identified)",
+        "scene": "Akron approaching an unspecified mooring mast",
+        "rights_review": "Commons claims PD-USN, NHHC catalog custody not a definitive creator-rights grant; Commons caption strip cropped; HOLD",
+        "historical_date": "circa 1931–1933",
+        "proposed_alt": "USS Akron approaching a mooring mast, circa 1931–1933.",
+        "exact_binary_and_crop_match_verified": false,
+        "reuse_rights_cleared": false
+      },
+      "release": {
+        "download": false,
+        "mirror": false,
+        "cache": false,
+        "wp_media_upload": false,
+        "post_rewrite": false
+      },
+      "notes": "Catalog metadata, not binary measurement; 1280 in stored URL is requested width, not proof of transmitted dimensions or bytes."
+    },
+    {
+      "slot": "219:5",
+      "post_id": 219,
+      "post_url": "https://finalvestige.com/2026/08/18/the-airship-had-no-life-jackets/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Akron_kitchen.jpg?width=1280",
+      "source_kind": "wikimedia_special_redirect_1280",
+      "source_verified_from_frozen_inventory": true,
+      "wordpress_live_edit_readback_20261110": true,
+      "retrieval": {
+        "method": "web.open published literal URL",
+        "result": "TOOL_INACCESSIBLE",
+        "tool_wrapper_status": null,
+        "actual_origin_http_status": null,
+        "visitor_browser_http_status": null,
+        "visitor_decoded_dimensions": null,
+        "visitor_transferred_bytes": null,
+        "confirmation_of_broken": false
+      },
+      "candidate": {
+        "accession": "Unverified accession; Navy Recruiting Bureau photograph received 1932",
+        "primary_catalog_url": "https://commons.wikimedia.org/wiki/File:Akron_kitchen.jpg",
+        "commons_catalog_url": "https://commons.wikimedia.org/wiki/File:Akron_kitchen.jpg",
+        "catalog_pages_accessible": true,
+        "archive_pixel_dimensions": [
+          590,
+          765
+        ],
+        "conditional_960px_dimensions": [
+          590,
+          765
+        ],
+        "creator_credit": "Unknown photographer, received from Navy Recruiting Bureau NY in 1932",
+        "scene": "Crew member drinking at wash basin, not a cooking scene",
+        "rights_review": "Commons PD-Navy assertion but unknown author and Navy archival receipt not equivalent to authorship; HOLD",
+        "historical_date": "circa 1931–1932",
+        "proposed_alt": "A crew member takes water from a wash basin aboard USS Akron, showing aluminum structural members.",
+        "exact_binary_and_crop_match_verified": false,
+        "reuse_rights_cleared": false
+      },
+      "release": {
+        "download": false,
+        "mirror": false,
+        "cache": false,
+        "wp_media_upload": false,
+        "post_rewrite": false
+      },
+      "notes": "Catalog metadata, not binary measurement; 1280 in stored URL is requested width, not proof of transmitted dimensions or bytes."
+    }
+  ]
+}

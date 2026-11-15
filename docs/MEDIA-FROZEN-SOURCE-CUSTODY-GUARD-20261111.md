@@ -1,0 +1,24 @@
+# Final Vestige — frozen source custody and performance controls (2026-11-11 UTC)
+
+## Reproduced defect, not a live website failure
+Prior to this revision, six independent synthetic mutations were all accepted by the source-only restoration gate: substituting a published P0 image URL; substituting its proposed catalog URL; inflating a WordPress stored-original byte count; inserting an invented guest 404 in the source ledger; falsely claiming the historical 42 images were confirmed broken; and altering native image dimensions. The gate would still produce an adjudication report. The defects involve synthetic fixtures only, not observed changes on FinalVestige.com.
+
+## Safe engineering correction
+The draft-only p0_staging_evidence_gate_20261111.cjs now invokes assertFrozenBridge before any guest adjudication. It independently pins the six exact published original URLs / post slots / catalog candidates / image-source observations. For the fifteen originals larger than 1.5 decimal MB, it pins media IDs, URLs, stored bytes, native pixels, conditional 960px size caps, existing first-party/Jetpack source references, copyright observations and published-inline post associations. The source-only bridge cannot quietly acquire fictitious guest HTTP, wire-byte measurements, rights clearance or publication approval. It checks frozen Git blob identifiers for the source ledger, provenance register and PR #183 performance worklist.
+
+Future legitimate changes to the published content or performance census require a new deliberate review and independent pin update; never bypass by relaxing checks. The pinned historical 61-post / 355-inline / 288-offsite census must remain separate from the expanded 66-post / 361-inline / 122-media performance census.
+
+## Measured versus claimed
+Fifteen WordPress originals greater than 1,500,000 stored bytes total 47,096,779 stored bytes. Eleven originals are inline-associated with eight posts and total 38,480,915 stored-original bytes. Those are not browser wire-transfer measurements. The claimed 76% visitor transfer reduction remains unmeasured. The historical report of 42 broken external images has zero failures demonstrated through guest-browser evidence in this handoff.
+
+## Evidence, tests and safe restoration
+The precommit isolated-V8 execution passed 70/70 Node-compatible tests, comprising the pre-existing 53 and 17 new custody cases. See qa/media-recovery/frozen_ledger_custody_6_p0_15_media_20261111.json for exact sources, candidate catalogs, copyright observations, conditional no-upscale pixel limits, inline references, and NULL actual HTTP/currentSrc/transfer measurements. Postcommit tests are independently rechecked before the QA handoff. Native Node CI and real logged-out Chromium remain outstanding.
+
+Site QA draft PR #154 exclusively owns the browser collector. Preserve the six-item order 285:5 → 285:2 → 287:5 → 418:1 → 418:2 → 407:1. Capture complete logged-out cold CDP request/response, source lineage and currentSrc, all cache flags, naturalWidth and naturalHeight, encoded transferred bytes, screenshot evidence, desktop/mobile fixed viewport/DPR and scroll coverage. Third-party web-retriever wrapper errors are not origin or guest HTTP failures.
+
+Replacement candidates must match the actual photograph/diagram, date, scene and crop, with item-level commercial reproduction rights and attribution verified by a human, plus editorial ALT/caption review. Agency hosting does not automatically license donated images. The Three Mile Island 285:5 source photograph is 819×614 while the published URL asks for a 16:9 crop: do not upscale to 960px or silently recrop. The 960px limit is a maximum width, not a mandatory exact width; fine-print maps and technical figures require zoom/native readability.
+
+After an actual missing image is confirmed, only a separately rights-cleared, visually approved replacement should be proposed for a controlled private/staging WordPress media workflow, preserving a source+caption rollback record; no automatic upload or live block rewrite. For transfer performance, follow with direct-original Malbone post 621 and five no-subsize PNG posts 34–38; Vasa post 299 already requests Jetpack transformations, so original stored byte totals do not establish delivered weight.
+
+## Change boundaries and rollback
+This is isolated draft PR #1703. No third-party binary retrieval, image caching or copying, WordPress production writes, homepage redesign, post-block rewrite, merge, deploy, or paid services. If the pins are stale due to a new independently verified source census, revert this draft-only gate/tests/audit/memo, reconcile new primary source and rights evidence with Site QA, then update pins through review. Do not fabricate a passing guest status.

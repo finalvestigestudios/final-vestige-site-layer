@@ -1,0 +1,145 @@
+{
+  "schema": "fv-p0-mime-evidence-integrity-v1",
+  "date_utc": "2026-11-13",
+  "scope": "QA_ONLY_DRAFT_NO_WORDPRESS_WRITE",
+  "source": {
+    "pr": 1703,
+    "previous_head": "ad28827fbc03406cbfb099dced316a0d3ddc2305",
+    "previous_code_blob": "70c1366fbdf423fab312d977d728d52865907a12",
+    "previous_test_blob": "914f5b4212e79ad050f9f7aff78bf652f1c9bd24",
+    "worklist": {
+      "pr": 183,
+      "path": "docs/IMAGE-WEIGHT-WORKLIST.md",
+      "blob_sha": "2acd06a4ca4317646006eb6591face3fe76fedec"
+    },
+    "siteqa_pr": 154
+  },
+  "defect": {
+    "verified_in_previous_source": true,
+    "description": "Accidental insertion of const natural definition text inside MIME character classes; accepts whitespace and > or = in HTTP type/subtype",
+    "previous_accepted_malformed_404_mimes": [
+      "te xt/html",
+      "text/ht ml",
+      "te>xt/html",
+      "text/h=tml"
+    ],
+    "test_context": "synthetic CDP-like evidence only; NOT an actual browser outage"
+  },
+  "verification": {
+    "new_targeted_isolated_v8_checks_run": 8,
+    "new_checks_passed": 8,
+    "all_existing_tests_rerun": false,
+    "native_node_rerun": false,
+    "repository_ci_rerun": false,
+    "real_guest_cdp_captured": false
+  },
+  "reported": {
+    "posts_historical": 61,
+    "inline_historical": 355,
+    "external_historical": 288,
+    "reported_broken_guest_unverified": 42,
+    "expanded_posts": 66,
+    "expanded_inline": 361,
+    "wordPress_large_originals_gt_1500000B": 15,
+    "large_original_stored_bytes": 47096779,
+    "inline_matched_large_originals": 11,
+    "inline_matched_stored_bytes": 38480915,
+    "claimed_transfer_reduction_percent": 76,
+    "verified_transfer_reduction_percent": null
+  },
+  "sites": [
+    {
+      "slot": "285:5",
+      "published_original_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "external_retriever_wrapper_code": 404,
+      "actual_guest_http_status": null,
+      "actual_origin_http_status": null,
+      "actual_wire_bytes": null,
+      "candidate_native_dimensions_px": null,
+      "derivative_width_limit_px": 960,
+      "reuse_rights_verified": false,
+      "cache_or_wp_write_allowed": false,
+      "disposition": "HOLD_AWAIT_SITEQA154_COLD_BROWSER_AND_RIGHTS"
+    },
+    {
+      "slot": "285:2",
+      "published_original_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "candidate_catalog_url": "https://www.si.edu/object/report-presidents-commission-accident-three-mile-island-need-change-legacy-tmi%3Asiris_sil_765655",
+      "external_retriever_wrapper_code": 500,
+      "actual_guest_http_status": null,
+      "actual_origin_http_status": null,
+      "actual_wire_bytes": null,
+      "candidate_native_dimensions_px": null,
+      "derivative_width_limit_px": 960,
+      "reuse_rights_verified": false,
+      "cache_or_wp_write_allowed": false,
+      "disposition": "HOLD_AWAIT_SITEQA154_COLD_BROWSER_AND_RIGHTS"
+    },
+    {
+      "slot": "287:5",
+      "published_original_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "candidate_catalog_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "external_retriever_wrapper_code": 404,
+      "actual_guest_http_status": null,
+      "actual_origin_http_status": null,
+      "actual_wire_bytes": null,
+      "candidate_native_dimensions_px": null,
+      "derivative_width_limit_px": 960,
+      "reuse_rights_verified": false,
+      "cache_or_wp_write_allowed": false,
+      "disposition": "HOLD_AWAIT_SITEQA154_COLD_BROWSER_AND_RIGHTS"
+    },
+    {
+      "slot": "418:1",
+      "published_original_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "candidate_catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "external_retriever_wrapper_code": 403,
+      "actual_guest_http_status": null,
+      "actual_origin_http_status": null,
+      "actual_wire_bytes": null,
+      "candidate_native_dimensions_px": null,
+      "derivative_width_limit_px": 960,
+      "reuse_rights_verified": false,
+      "cache_or_wp_write_allowed": false,
+      "disposition": "HOLD_AWAIT_SITEQA154_COLD_BROWSER_AND_RIGHTS"
+    },
+    {
+      "slot": "418:2",
+      "published_original_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "candidate_catalog_url": "https://www.lighthousefriends.com/light.asp?ID=1780",
+      "external_retriever_wrapper_code": 403,
+      "actual_guest_http_status": null,
+      "actual_origin_http_status": null,
+      "actual_wire_bytes": null,
+      "candidate_native_dimensions_px": null,
+      "derivative_width_limit_px": 960,
+      "reuse_rights_verified": false,
+      "cache_or_wp_write_allowed": false,
+      "disposition": "HOLD_AWAIT_SITEQA154_COLD_BROWSER_AND_RIGHTS"
+    },
+    {
+      "slot": "407:1",
+      "published_original_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "candidate_catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+      "external_retriever_wrapper_code": 400,
+      "actual_guest_http_status": null,
+      "actual_origin_http_status": null,
+      "actual_wire_bytes": null,
+      "candidate_native_dimensions_px": null,
+      "derivative_width_limit_px": 960,
+      "reuse_rights_verified": false,
+      "cache_or_wp_write_allowed": false,
+      "disposition": "HOLD_AWAIT_SITEQA154_COLD_BROWSER_AND_RIGHTS"
+    }
+  ],
+  "recommendation": "Site QA #154 retains sole CDP collector; do not treat retriever wrapper codes as origin HTTP status; keep exact photo, rights and 960px no-upscale gates",
+  "production": {
+    "wordpress_writes": 0,
+    "media_downloads": 0,
+    "cache_writes": 0,
+    "homepage_changes": 0,
+    "deploys": 0,
+    "paid_spend": 0
+  }
+}

@@ -1,0 +1,18 @@
+# FV Media Recovery — completed-image body and 200-only proof gate (2026-11-11)
+
+**Safe offline change, draft #1703 only.** Read the IMAGE-WEIGHT-WORKLIST from draft #183 (blob `2acd06a4ca4317646006eb6591face3fe76fedec`) and reviewed Site QA draft #154. Site QA remains sole owner of guest Chrome/CDP collection; no duplicate collector created.
+
+## Reproduced synthetic verification failure
+Prior P0 verifier classified a synthetically constructed HTTP 200 response with `encodedDataLength=300`, `image/jpeg` and positive DOM natural pixels as `CONFIRMED_GUEST_DISPLAYED`, despite **no documented CDP image body data**. `Network.loadingFinished.encodedDataLength` is total encoded request transfer and can include headers; treating it as proof of image body can create a false-success classification. The old pairwise transfer comparator also accepted any 2xx (including 206 Partial Content) with otherwise plausible synthetic byte counts, potentially claiming 76% savings from incomplete content. These are synthetic software counterexamples, **not verified live-site failures**.
+
+## Corrected draft verification
+- P0 displayed-image classification now demands `Network.dataReceived.dataLength` aggregated for the *same completed Image request*, represented as positive `network_data_received_bytes` and provenance `CDP_NETWORK_DATA_RECEIVED`. 200 and image MIME and uncached/complete lifecycle still required; a 206 or other non-200 2xx is `HOLD` for whole-image evidence; a 1×1 pixel or less than 64px in either dimension is a placeholder `HOLD`.
+- Matched cold transfer evaluator now requires final **HTTP 200** for every measured Image request, positive request-bound decoded body evidence, and the same body signature across DOM slots sharing a single requestId. It continues counting `Network.loadingFinished.encodedDataLength` **once per actual requestId**, not once per DOM slot. DataReceived is evidence of body content, **not a substitute for measured wire bytes**.
+- This is conservative: a real 206 with proven complete range sequence could be evaluated with a separately reviewed method, but cannot pass this single-request whole-image gate. Missing collector fields produce HOLD, never invented values.
+
+## Coverage and release constraints
+Historical cohort: **61 posts, 355 images, 288 external positions; 42 previously alleged failures are guest-unconfirmed**. Expanded 66-post cohort: 15 WordPress originals over 1.5 decimal MB = **47,096,779 stored bytes**; 11 inline matches = **38,480,915 stored bytes**. These are disk sizes, not visitor network bytes. The **76%** reduction is a target, **not measured**. See [exact 6 + 15 machine-readable audit](../qa/media-recovery/p0_6_oversize_15_cdp_body_200_gate_20261111.json); all guest statuses/bytes remain null.
+
+Priorities remain `285:5 → 285:2 → 287:5 → 418:1 → 418:2 → 407:1`. The Skyway old St Pete Catalyst URL still returned **web-retriever wrapper 404** on November 11 while the relocated publisher image displayed. This is not visitor HTTP 404 and does not grant rights to hotlink, cache or republish. Coast Guard, USGS and Commons source candidates remain conditional on exact picture, item-specific rights, historical caption, crop and no-upscale sizing. For maps preserve a full-resolution reading path.
+
+**Verification:** 114/114 P0 and 39/39 paired-transfer synchronous regression callbacks passed under isolated V8 emulation of node:test. This was **not native Node CI** and there is **no logged-out Chromium or measured wire-byte evidence**. Changes are isolated to draft source/tests, JSON audit and memo; no WordPress production writes, third-party binaries, caching, homepage design, merge, deploy or paid calls.

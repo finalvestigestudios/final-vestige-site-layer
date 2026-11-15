@@ -1,0 +1,42 @@
+'use strict';
+/* Use node --test. Offline exact-Git-blob records; no network or browser collection. */
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {validate,INPUTS}=require('./validate_consolidated_355_20261112.cjs');
+const dir=__dirname;
+const audit=JSON.parse(fs.readFileSync(path.join(dir,'live_61post_355image_integrity_consolidated_20261112.json')));
+const registry=JSON.parse(fs.readFileSync(path.join(dir,'coverage_288_exact_pr1703_20261110.json')));
+const sources=INPUTS.map(s=>JSON.parse(fs.readFileSync(path.join(dir,s))));
+const clone=x=>JSON.parse(JSON.stringify(x));
+function reject(name,change,expected){
+ test(name,()=>{const a=clone(audit),r=clone(registry),s=clone(sources);change(a,r,s);const v=validate(a,r,s);assert.equal(v.ok,false);assert.match(v.errors.join('|'),expected);});
+}
+test('61/355 historical cohort control, no browser confidence',()=>{const v=validate(audit,registry,sources);assert.equal(v.ok,true,v.errors.join('|'));assert.equal(v.counts.historical_offsite_positions,288);assert.equal(v.counts.missing_both_html_dimensions,305);});
+reject('one image removed breaks exhaustive census',(a)=>a.rows.pop(),/historical_census_invariant/);
+reject('unknown extra image position',(a)=>a.rows.push({...a.rows[0],slot:'999:0'}),/foreign_post_slot/);
+reject('duplicate slot',(a)=>{a.rows[0].slot=a.rows[1].slot},/duplicate_rollup_slot/);
+reject('foreign post binding',(a)=>{a.rows[0].post_id=909},/foreign_post_slot/);
+reject('original image source rewritten',(a)=>{a.rows[0].source_url='https://example.org/x.png'},/published_original_drift/);
+reject('external URL source forged',(a)=>{const x=a.rows.find(z=>z.offsite_historical_registry);x.source_url='https://example.org/other.jpg'},/external_registry_original_mismatch|published_original_drift/);
+reject('original source changed in one upstream audit',(a,r,s)=>{s[0].rows[0].live_src='https://example.org/other.png'},/published_original_drift/);
+reject('original ALT altered',(a)=>{a.rows[0].alt='different scene'},/alt_integrity_drift/);
+reject('upstream ALT altered',(a,r,s)=>{s[0].rows[0].live_alt='wrong'},/alt_integrity_drift/);
+reject('HTML width mismatches source',(a)=>{a.rows[0].html_width_px=96},/geometry_source_drift/);
+reject('partial width-height pair',(a)=>{a.rows[0].html_width_px=300;a.rows[0].html_height_px=null},/incomplete_or_invalid_dimensions/);
+reject('invalid height',(a)=>{a.rows[0].html_width_px=300;a.rows[0].html_height_px=0},/incomplete_or_invalid_dimensions/);
+reject('srcset invented',(a)=>{a.rows[0].html_srcset_present=true},/unverified_srcset/);
+reject('candidate rights improperly cleared',(a)=>{a.rows.find(z=>z.candidates.length).candidates[0].item_rights_cleared=true},/candidate_rights_overclaim/);
+reject('candidate image match assumed',(a)=>{a.rows.find(z=>z.candidates.length).candidates[0].exact_image_match_verified=true},/candidate_rights_overclaim/);
+reject('candidate output width above 960',(a)=>{a.rows.find(z=>z.candidates.some(c=>c.conditional_960px)).candidates.find(c=>c.conditional_960px).conditional_960px=[1280,720]},/unsafe_960_width/);
+reject('candidate zero output height',(a)=>{a.rows.find(z=>z.candidates.some(c=>c.conditional_960px)).candidates.find(c=>c.conditional_960px).conditional_960px=[960,0]},/unsafe_960_width/);
+reject('guest HTTP status falsely asserted',(a)=>{a.rows[0].guest_http_status=404},/fabricated_guest_telemetry/);
+reject('guest transfer size falsely asserted',(a)=>{a.rows[0].guest_transferred_bytes=2100},/fabricated_guest_telemetry/);
+reject('guest natural pixels falsely asserted',(a)=>{a.rows[0].guest_natural_pixels=[960,540]},/fabricated_guest_telemetry/);
+reject('rights release override',(a)=>{a.rows[0].rights_cleared=true},/unauthorized_release/);
+reject('rehosting override',(a)=>{a.rows[0].rehost_authorized=true},/unauthorized_release/);
+reject('WordPress write override',(a)=>{a.rows[0].wordpress_write_authorized=true},/unauthorized_release/);
+reject('42 broken claim falsely confirmed',(a)=>{a.policy.visitor_browser_confirmed_42_broken=true},/no_release_policy_changed/);
+reject('76 percent savings claim falsely confirmed',(a)=>{a.policy.claimed_76_percent_network_byte_reduction_verified=true},/no_release_policy_changed/);
+reject('wrong aggregate dimensional count',(a)=>{a.counts.missing_both_html_dimensions=42},/aggregate_count_mismatch/);
+reject('wrong input segment identity',(a)=>{a.input_audits[0].path='qa/media-recovery/forged.json'},/segment_manifest_invariant/);
+reject('site QA collector ownership overridden',(a)=>{a.policy.site_qa_original_collector_pr=1703},/no_release_policy_changed/);
+reject('production writes falsely allowed',(a)=>{a.policy.production_writes=true},/no_release_policy_changed/);
