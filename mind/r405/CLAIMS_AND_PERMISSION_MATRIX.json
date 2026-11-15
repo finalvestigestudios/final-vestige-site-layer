@@ -1,0 +1,446 @@
+{
+  "sprint": "R405",
+  "date": "2026-11-15",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "types": [
+    "primary_experiment",
+    "peer_reviewed_training_study",
+    "seller_representation",
+    "fv_live_source",
+    "ftc_policy",
+    "unverified_partner_permission",
+    "measurement_spec"
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "type": "primary_experiment"
+    },
+    {
+      "id": "S02",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "type": "peer_reviewed_training_study"
+    },
+    {
+      "id": "S03",
+      "url": "https://inspire3.com/",
+      "type": "seller_representation"
+    },
+    {
+      "id": "S04",
+      "url": "https://zen12.com/",
+      "type": "seller_representation"
+    },
+    {
+      "id": "S05",
+      "url": "https://zen12.com/getstarted",
+      "type": "seller_representation"
+    },
+    {
+      "id": "S06",
+      "url": "https://zen12.com/secret/",
+      "type": "seller_representation"
+    },
+    {
+      "id": "S07",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "seller_representation"
+    },
+    {
+      "id": "S08",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "seller_representation"
+    },
+    {
+      "id": "S09",
+      "url": "https://brainwaveshots.com/faq",
+      "type": "seller_representation"
+    },
+    {
+      "id": "S10",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "seller_representation"
+    },
+    {
+      "id": "S11",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "ftc_policy"
+    },
+    {
+      "id": "S12",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "ftc_policy"
+    },
+    {
+      "id": "S13",
+      "url": "https://finalvestige.com/focus/",
+      "type": "fv_live_source"
+    },
+    {
+      "id": "S14",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "fv_live_source"
+    },
+    {
+      "id": "S15",
+      "url": "https://finalvestige.com/dispatch/",
+      "type": "fv_live_source"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "attentional blink: rapid-probe deficit conditional on task timing",
+      "source_id": "S01",
+      "status": "supported_experiment"
+    },
+    {
+      "id": "C02",
+      "text": "three months intensive meditation training reduced attentional blink in tested cohort",
+      "source_id": "S02",
+      "status": "supported_experiment_not_sku"
+    },
+    {
+      "id": "C03",
+      "text": "short commercial MP3 equals three months intensive mental training",
+      "source_id": null,
+      "status": "unsupported_reject"
+    },
+    {
+      "id": "C04",
+      "text": "historical Puységur archive documents claims, predictions and ethical concerns",
+      "source_id": "S14",
+      "status": "verified_fv_history_not_mechanism"
+    },
+    {
+      "id": "C05",
+      "text": "Zen12 premium describes 12 levels and 48 MP3 files",
+      "source_id": "S04",
+      "status": "seller_described"
+    },
+    {
+      "id": "C06",
+      "text": "Zen12 checkout describes quick start, manual, support call and bonuses",
+      "source_id": "S05",
+      "status": "seller_described"
+    },
+    {
+      "id": "C07",
+      "text": "Zen12 standard checkout previously $87.00 / premium page $87.99",
+      "source_id": "S04,S05",
+      "status": "volatile_snapshot_no_referral_price"
+    },
+    {
+      "id": "C08",
+      "text": "Zen12 separate coupon route displays $37",
+      "source_id": "S06",
+      "status": "volatile_conditional_snapshot_do_not_promote"
+    },
+    {
+      "id": "C09",
+      "text": "Zen12 1-year refund promise",
+      "source_id": "S04",
+      "status": "seller_promise_not_verified_honoring"
+    },
+    {
+      "id": "C10",
+      "text": "Zen12 one session matches one hour of meditation",
+      "source_id": null,
+      "status": "unsupported_reject"
+    },
+    {
+      "id": "C11",
+      "text": "Zen12 reduces mental health symptoms or cures illness",
+      "source_id": null,
+      "status": "unsupported_reject"
+    },
+    {
+      "id": "C12",
+      "text": "Total Focus one 33 minute 47MB recording",
+      "source_id": "S07",
+      "status": "seller_described"
+    },
+    {
+      "id": "C13",
+      "text": "Total Focus $2 / reference $22.95 observed",
+      "source_id": "S07",
+      "status": "volatile_snapshot"
+    },
+    {
+      "id": "C14",
+      "text": "Total Focus improves job outcomes",
+      "source_id": null,
+      "status": "unsupported_reject"
+    },
+    {
+      "id": "C15",
+      "text": "Focus Shot 15 and 30 minute recordings",
+      "source_id": "S08",
+      "status": "seller_described"
+    },
+    {
+      "id": "C16",
+      "text": "Focus Shot FAQ says isochronic tones",
+      "source_id": "S09",
+      "status": "seller_described_not_independently_measured"
+    },
+    {
+      "id": "C17",
+      "text": "binaural-beat studies prove Focus Shot efficacy",
+      "source_id": null,
+      "status": "unsupported_reject"
+    },
+    {
+      "id": "C18",
+      "text": "Focus Shot $17.95 observed",
+      "source_id": "S08",
+      "status": "volatile_snapshot"
+    },
+    {
+      "id": "C19",
+      "text": "FV free Focus Fieldbook 52 pages delivered via existing signup",
+      "source_id": "S13",
+      "status": "verified_live"
+    },
+    {
+      "id": "C20",
+      "text": "Puységur documented cure narratives = proof of animal magnetic force",
+      "source_id": null,
+      "status": "unsupported_reject"
+    },
+    {
+      "id": "C21",
+      "text": "Inspire3 public affiliate portal advertises earning commission",
+      "source_id": "S10",
+      "status": "public_program_only"
+    },
+    {
+      "id": "C22",
+      "text": "FV-specific Inspire3 named publisher approved",
+      "source_id": null,
+      "status": "unverified_private"
+    },
+    {
+      "id": "C23",
+      "text": "FV approved to promote Zen12 via site, TikTok, YouTube, email",
+      "source_id": null,
+      "status": "unverified_private"
+    },
+    {
+      "id": "C24",
+      "text": "FV issued trackable earning link/subid permissions",
+      "source_id": null,
+      "status": "unverified_private"
+    },
+    {
+      "id": "C25",
+      "text": "merchant checkout/refund attribution and independently settled commission",
+      "source_id": null,
+      "status": "unverified_private"
+    },
+    {
+      "id": "C26",
+      "text": "FTC material earning connection requires clear conspicuous disclosure",
+      "source_id": "S11",
+      "status": "policy"
+    },
+    {
+      "id": "C27",
+      "text": "FTC health benefit advertising needs appropriate substantiation",
+      "source_id": "S12",
+      "status": "policy"
+    },
+    {
+      "id": "C28",
+      "text": "affiliate outbound click = confirmed paid sale",
+      "source_id": null,
+      "status": "prohibited_inference"
+    },
+    {
+      "id": "C29",
+      "text": "FV-owned payable and rights-cleared Mind product",
+      "source_id": null,
+      "status": "not_authenticated"
+    },
+    {
+      "id": "C30",
+      "text": "qualified-human sessions and net revenue reconciled",
+      "source_id": null,
+      "status": "not_authenticated"
+    },
+    {
+      "id": "C31",
+      "text": "42s short film increased purchase rate",
+      "source_id": null,
+      "status": "untested_hypothesis"
+    },
+    {
+      "id": "C32",
+      "text": "Grok three published Mind assets have validated immutable IDs",
+      "source_id": null,
+      "status": "not_authenticated"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "name": "named_partner_acceptance",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "name": "exact_sku_permission",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "name": "website_channel_permission",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "name": "youtube_channel_permission",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "name": "tiktok_channel_permission",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "name": "email_channel_permission",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "name": "approved_creative_rights",
+      "status": "HOLD",
+      "owner": "Claude/Founder"
+    },
+    {
+      "name": "issued_affiliate_link",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "name": "subid_tracking_terms",
+      "status": "HOLD",
+      "owner": "Claude/Founder"
+    },
+    {
+      "name": "eligible_checkout_price",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "name": "returns_policy_applicability",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "name": "settled_commission_receipt",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "name": "net_fee_refund_records",
+      "status": "HOLD",
+      "owner": "Claude/Founder"
+    },
+    {
+      "name": "verified_own_paid_sku",
+      "status": "HOLD",
+      "owner": "Claude/Founder"
+    },
+    {
+      "name": "owned_content_rights",
+      "status": "HOLD",
+      "owner": "Claude/Founder"
+    },
+    {
+      "name": "owned_fulfillment",
+      "status": "HOLD",
+      "owner": "Claude/Founder"
+    },
+    {
+      "name": "owned_returns",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "name": "grok_asset_ids",
+      "status": "HOLD",
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "name": "grok_landing_url_qa",
+      "status": "HOLD",
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "name": "jetpack_confirmed_lead_qa",
+      "status": "HOLD",
+      "owner": "Claude/Dispatch"
+    },
+    {
+      "name": "first_party_campaign_measurement",
+      "status": "HOLD",
+      "owner": "Claude/Founder"
+    },
+    {
+      "name": "browser_wcag_mobile_qa",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "name": "no_js_qa",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "name": "encoded_film_rights",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "name": "encoded_film_captions",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "name": "real_browser_media_qa",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "name": "release_approval",
+      "status": "HOLD",
+      "owner": "Claude/Founder"
+    }
+  ],
+  "privacy": {
+    "event_dimensions": [
+      "asset_id",
+      "utm_campaign",
+      "utm_source",
+      "utm_medium",
+      "landing_path",
+      "variant",
+      "consent_status"
+    ],
+    "forbidden": [
+      "email_address",
+      "ip_address",
+      "name",
+      "financial_identifier",
+      "raw_referrer_query"
+    ],
+    "definitions": {
+      "affiliate_click": "outbound click only",
+      "confirmed_lead": "provider-confirmed subscriber only",
+      "verified_paid_order": "merchant/provider proof required",
+      "realized_net_revenue": "settled gross minus refunds, fees, costs"
+    }
+  }
+}
