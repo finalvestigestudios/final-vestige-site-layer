@@ -32,6 +32,7 @@ SOURCE_INPUTS = (
     "fvs_suite/atomic_reports.py",
     "fvs_suite/engine.py",
     *("tests/" + name for name in TESTS),
+    "tests/test_offline_regression_gate_r459.py",
     "tests/test_offline_smoke_receipt_r460.py",
 )
 TIMEOUT_TEST_SECONDS = 120
