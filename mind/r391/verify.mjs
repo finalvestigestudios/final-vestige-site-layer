@@ -32,12 +32,12 @@ function checkBuyer(s,which){
  ok(/finalvestige.com\/focus\//.test(s),which+' existing free Focus');
  ok(/affiliate disclosure/i.test(s),which+' disclosure');
  ok(/may earn a commission/i.test(s),which+' plain commission disclosure');
- ok(/<button\b[^>]*\bdisabled\b/.test(s),which+' native disabled button');
+ ok(/<button\b[^>]*\sdisabled(?:\s|>)/.test(s),which+' native disabled button');
  ok(!/<a[^>]+href="https?:\/\/(?:www\.)?(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com|inspire3\.com|affiliates\.inspire3\.com)/i.test(s),which+' NO active merchant link');
  ok(!/<script\b|<iframe\b|<form\b|on\w+\s*=|<(?:video|audio)[^>]*\bautoplay\b/i.test(s),which+' no JS/form/autoplay/handlers');
  ok(!/add to cart|guaranteed (?:cure|memory)|100% guaranteed|earn \$\d+/i.test(s),which+' no invented guarantees');
  const pos=s.search(/affiliate disclosure/i),button=s.search(/<button\b/);
- ok(pos>=0&&button>pos&&button-pos<650,which+' adjacent disclosure');
+ ok(pos>=0&&button>pos&&button-pos<650&&/<p class="disclosure">[\s\S]*?<strong>Affiliate disclosure:/i.test(s),which+' adjacent disclosure');
 }
 checkBuyer(a,'A');checkBuyer(b,'B');
 const extra=b.match(/<details class="film"[\s\S]*?<\/details>/);
@@ -80,14 +80,14 @@ a.replace('</main>','<script>bad()</script></main>'),
 a.replace('</main>','<form action="https://example.org"></form></main>'),
 a.replace('</main>','<video autoplay></video></main>'),
 a.replace('href="https://finalvestige.com/focus/"','href="#missing"'),
-a.replace('affiliate disclosure','commercial terms'),
+a.replace('<strong>Affiliate disclosure:','<strong>Commerce information:'),
 a.replace('<html lang="en">','<html>'),
 a.replace('prefers-reduced-motion','does-not-reduce-motion'),
 ];
 function safe(s){
  return /<html lang="en">/.test(s)&&/prefers-reduced-motion/.test(s)
  && /affiliate disclosure/i.test(s)&&/may earn a commission/i.test(s)
- && /<button\b[^>]*\bdisabled\b/.test(s)
+ && /<button\b[^>]*\sdisabled(?:\s|>)/.test(s)
  && /finalvestige.com\/focus\//.test(s)
  && !/<a[^>]+href="https?:\/\/(?:www\.)?zen12\.com/i.test(s)
  && !/<script\b|<iframe\b|<form\b|autoplay\b/i.test(s);
