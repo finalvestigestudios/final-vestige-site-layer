@@ -1,0 +1,633 @@
+{
+  "sprint": "R390",
+  "date": "2026-11-14",
+  "state": "DRAFT_HARD_HOLD",
+  "scope": "Mind and Perception only",
+  "method": "Source status names refer only to evidence actually inspected; a publicly displayed merchant term is not personalized referral checkout, delivery, satisfaction or efficacy proof.",
+  "sources": {
+    "drm1995": "https://doi.org/10.1037/0278-7393.21.4.803",
+    "robinson1997": "https://doi.org/10.1111/j.1467-9280.1997.tb00417.x",
+    "norms1999": "https://pubmed.ncbi.nlm.nih.gov/10355238/",
+    "review2003": "https://pubmed.ncbi.nlm.nih.gov/15002841/",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "changeBlindness": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "mesmerism": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "fieldbook": "https://finalvestige.com/focus/",
+    "inspire3": "https://inspire3.com/",
+    "zen12": "https://zen12.com/",
+    "checkout": "https://zen12.com/getstarted",
+    "partner": "https://affiliates.inspire3.com/",
+    "ftcAffiliate": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftcHealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "editorial": "https://finalvestige.com/editorial-standards/",
+    "disclosure": "https://finalvestige.com/affiliate-disclosure/",
+    "zen12Special": "https://zen12.com/secret/"
+  },
+  "claims": [
+    {
+      "id": "DRM01",
+      "claim": "1995 experiment 1: critical nonpresented words reported in recall ~40% across tested lists",
+      "source_ids": [
+        "drm1995"
+      ],
+      "status": "SOURCE_SUPPORTED",
+      "handling": "state as study-specific, no personal-memory base rate",
+      "evidence_scope": "laboratory word-list recall"
+    },
+    {
+      "id": "DRM02",
+      "claim": "1995 experiment 2: critical nonpresented words reported in recall ~55% across expanded lists",
+      "source_ids": [
+        "drm1995"
+      ],
+      "status": "SOURCE_SUPPORTED",
+      "handling": "state as study-specific, not lifetime prevalence",
+      "evidence_scope": "laboratory word-list recall"
+    },
+    {
+      "id": "DRM03",
+      "claim": "Participants sometimes recognized nonpresented associative words with subjective remembering",
+      "source_ids": [
+        "drm1995"
+      ],
+      "status": "SOURCE_SUPPORTED",
+      "handling": "avoid all memories are unreliable",
+      "evidence_scope": "recognition judgments under procedure"
+    },
+    {
+      "id": "DRM04",
+      "claim": "Associative list properties affect false recall/recognition",
+      "source_ids": [
+        "robinson1997"
+      ],
+      "status": "SOURCE_SUPPORTED",
+      "handling": "describe manipulations, not single total theory",
+      "evidence_scope": "laboratory associational follow-up"
+    },
+    {
+      "id": "DRM05",
+      "claim": "Lists differ in ability to elicit critical intrusions",
+      "source_ids": [
+        "norms1999"
+      ],
+      "status": "SOURCE_SUPPORTED",
+      "handling": "original homemade demo not validated",
+      "evidence_scope": "normative list-study"
+    },
+    {
+      "id": "DRM06",
+      "claim": "2003 review reported mean critical intrusion 0.374 over 111 estimates",
+      "source_ids": [
+        "review2003"
+      ],
+      "status": "SOURCE_SUPPORTED",
+      "handling": "describe review sample; not universal prevalence",
+      "evidence_scope": "quantitative review"
+    },
+    {
+      "id": "DRM07",
+      "claim": "Deese 1959 historical original contained precise procedure and rates",
+      "source_ids": [
+        "drm1995"
+      ],
+      "status": "SECONDARY_REFERENCE_ONLY",
+      "handling": "do not assign precise 1959 rates; primary not read",
+      "evidence_scope": "historical precursor"
+    },
+    {
+      "id": "DRM08",
+      "claim": "Word-list mistakes prove any one real-life traumatic account is false",
+      "source_ids": [
+        "drm1995"
+      ],
+      "status": "UNSUPPORTED_EXTRAPOLATION",
+      "handling": "exclude; distinguish event-memory cases",
+      "evidence_scope": "prohibited inference"
+    },
+    {
+      "id": "DRM09",
+      "claim": "Original illustrative water-travel words replicate a validated DRM list",
+      "source_ids": [
+        "drm1995",
+        "norms1999"
+      ],
+      "status": "NOT_VALIDATED",
+      "handling": "label original illustration only; no predicted outcome",
+      "evidence_scope": "custom demonstration"
+    },
+    {
+      "id": "HIS01",
+      "claim": "Puységur archive differentiates 1785 edition reference from 1813 verification scan",
+      "source_ids": [
+        "puysegur"
+      ],
+      "status": "SOURCE_SUPPORTED",
+      "handling": "retain distinct provenance labels",
+      "evidence_scope": "archive methodology"
+    },
+    {
+      "id": "HIS02",
+      "claim": "Puységur historical cases prove animal magnetism or present-day hypnotherapy",
+      "source_ids": [
+        "puysegur"
+      ],
+      "status": "UNSUPPORTED_EXTRAPOLATION",
+      "handling": "exclude; historical testimony only",
+      "evidence_scope": "historical vs efficacy"
+    },
+    {
+      "id": "FV01",
+      "claim": "Existing 52-page Focus Fieldbook is free and uses a single signup",
+      "source_ids": [
+        "fieldbook"
+      ],
+      "status": "PUBLIC_PAGE_OBSERVED",
+      "handling": "do not duplicate signup or promise confirmed lead",
+      "evidence_scope": "public site route"
+    },
+    {
+      "id": "FV02",
+      "claim": "Change blindness and Mesmerism existing destinations publicly available",
+      "source_ids": [
+        "changeBlindness",
+        "mesmerism"
+      ],
+      "status": "PUBLIC_PAGE_OBSERVED",
+      "handling": "provide only actual live paths",
+      "evidence_scope": "internal links"
+    },
+    {
+      "id": "M01",
+      "claim": "Inspire3 groups Zen12 under brainwaves/meditation",
+      "source_ids": [
+        "inspire3"
+      ],
+      "status": "MERCHANT_DESCRIPTION",
+      "handling": "name seller, avoid health effectiveness claims",
+      "evidence_scope": "public catalog"
+    },
+    {
+      "id": "M02",
+      "claim": "Zen12 public website advertises twelve progressive meditation levels",
+      "source_ids": [
+        "zen12"
+      ],
+      "status": "MERCHANT_DESCRIPTION",
+      "handling": "may describe included structure",
+      "evidence_scope": "sales copy"
+    },
+    {
+      "id": "M03",
+      "claim": "Zen12 public sales page advertises four formats: music, guided, nature, white noise",
+      "source_ids": [
+        "zen12"
+      ],
+      "status": "MERCHANT_DESCRIPTION",
+      "handling": "may describe modes; no efficacy inference",
+      "evidence_scope": "sales copy"
+    },
+    {
+      "id": "M04",
+      "claim": "Zen12 public order screen lists 12 levels and 48 MP3s",
+      "source_ids": [
+        "checkout"
+      ],
+      "status": "MERCHANT_SCREEN_OBSERVED",
+      "handling": "buyer guide may summarize with date",
+      "evidence_scope": "public order screen"
+    },
+    {
+      "id": "M05",
+      "claim": "Zen12 screen shows $187.99 less $100 and displayed $87.99 total, $0.00 local tax Nov 14 2026",
+      "source_ids": [
+        "checkout"
+      ],
+      "status": "DATED_MERCHANT_DISPLAY",
+      "handling": "dated context only; no referral/locale guarantee",
+      "evidence_scope": "unauthenticated public offer"
+    },
+    {
+      "id": "M05B",
+      "claim": "Separate public Zen12 coupon promotion page displayed a $37 coupon-based offer with countdown, distinct from standard $87.99 public checkout; no FV referral/eligibility/fulfillment verified",
+      "source_ids": [
+        "zen12Special",
+        "checkout"
+      ],
+      "status": "DATED_SELLER_PROMO_SCREEN_ONLY",
+      "handling": "Record only as distinct merchant offer path. Do not republish coupon code, imply automatic discount, copy urgency or infer FV partner checkout price.",
+      "evidence_scope": "Separate unauthenticated public promotional landing route observed November 14 2026"
+    },
+    {
+      "id": "M06",
+      "claim": "A one-year refund guarantee is advertised",
+      "source_ids": [
+        "checkout"
+      ],
+      "status": "MERCHANT_PROMISE_UNTESTED",
+      "handling": "advertised not independently honored",
+      "evidence_scope": "seller guarantee"
+    },
+    {
+      "id": "M07",
+      "claim": "A 15-minute countdown demonstrates actual limited stock or offer expiration",
+      "source_ids": [
+        "checkout"
+      ],
+      "status": "UNSUBSTANTIATED_URGENCY",
+      "handling": "do not carry through",
+      "evidence_scope": "seller UI presentation"
+    },
+    {
+      "id": "M08",
+      "claim": "A 12-minute Zen12 session equals one hour of deep meditation",
+      "source_ids": [
+        "zen12"
+      ],
+      "status": "SELLER_EFFICACY_CLAIM_UNSUBSTANTIATED",
+      "handling": "exclude from FV claims",
+      "evidence_scope": "requires product-specific trial"
+    },
+    {
+      "id": "M09",
+      "claim": "Zen12 audio prevents memory errors or guarantees focus improvements",
+      "source_ids": [
+        "zen12",
+        "drm1995"
+      ],
+      "status": "NO_PRODUCT_SPECIFIC_SUBSTANTIATION",
+      "handling": "exclude",
+      "evidence_scope": "no validated causal evidence"
+    },
+    {
+      "id": "M10",
+      "claim": "Hypnosis Live contains downloadable self-hypnosis recordings",
+      "source_ids": [
+        "inspire3"
+      ],
+      "status": "MERCHANT_DESCRIPTION_ONLY",
+      "handling": "list category; do not promise outcomes",
+      "evidence_scope": "seller catalog"
+    },
+    {
+      "id": "M11",
+      "claim": "Brainwave Shots markets 15-minute task-related audio",
+      "source_ids": [
+        "inspire3"
+      ],
+      "status": "MERCHANT_DESCRIPTION_ONLY",
+      "handling": "list category; do not promise outcomes",
+      "evidence_scope": "seller catalog"
+    },
+    {
+      "id": "M12",
+      "claim": "Inspire3 portal advertises an affiliate program and special tracked URLs",
+      "source_ids": [
+        "partner"
+      ],
+      "status": "PUBLIC_PROGRAM_DESCRIPTION",
+      "handling": "no individual approval implied",
+      "evidence_scope": "unverified account"
+    },
+    {
+      "id": "R01",
+      "claim": "Final Vestige publisher application was accepted and Zen12 website promotion allowed",
+      "source_ids": [
+        "partner"
+      ],
+      "status": "NOT_VERIFIED",
+      "handling": "hard hold; require authenticated account-specific terms",
+      "evidence_scope": "publisher authorization"
+    },
+    {
+      "id": "R02",
+      "claim": "FV received a valid issued Zen12 earning URL",
+      "source_ids": [
+        "partner"
+      ],
+      "status": "NOT_VERIFIED",
+      "handling": "hard hold; do not invent URLs",
+      "evidence_scope": "tracking authorization"
+    },
+    {
+      "id": "R03",
+      "claim": "FV has an actually payable, owned, licensed, delivered Mind digital SKU",
+      "source_ids": [
+        "fieldbook"
+      ],
+      "status": "NOT_VERIFIED",
+      "handling": "free Fieldbook not a paid SKU",
+      "evidence_scope": "owned-commerce fallback"
+    },
+    {
+      "id": "R04",
+      "claim": "Official affiliate creative or swipes are licensed for FV web/social/email",
+      "source_ids": [
+        "partner"
+      ],
+      "status": "NOT_VERIFIED",
+      "handling": "do not reproduce; review only if approved",
+      "evidence_scope": "creative rights"
+    },
+    {
+      "id": "R05",
+      "claim": "Partner has provided independently reconcilable paid order and commission reporting",
+      "source_ids": [
+        "partner"
+      ],
+      "status": "NOT_VERIFIED",
+      "handling": "revenue remains not computable",
+      "evidence_scope": "settlement accounting"
+    },
+    {
+      "id": "C01",
+      "claim": "FTC expects a clear and conspicuous material-connection disclosure near relevant endorsements",
+      "source_ids": [
+        "ftcAffiliate"
+      ],
+      "status": "GUIDANCE_SUPPORTED",
+      "handling": "place commission words close to link, including mobile",
+      "evidence_scope": "legal guidance"
+    },
+    {
+      "id": "C02",
+      "claim": "Objective health-related benefit claims need appropriate supporting evidence",
+      "source_ids": [
+        "ftcHealth"
+      ],
+      "status": "GUIDANCE_SUPPORTED",
+      "handling": "exclude unsourced medical/psych claims",
+      "evidence_scope": "legal guidance"
+    },
+    {
+      "id": "C03",
+      "claim": "An outbound affiliate_click event equals a paid commission",
+      "source_ids": [
+        "partner"
+      ],
+      "status": "FALSE_INFERENCE",
+      "handling": "prohibit conflation; merchant confirmation required",
+      "evidence_scope": "analytics ledger"
+    },
+    {
+      "id": "C04",
+      "claim": "Existing draft pages pass WCAG and mobile Core Web Vitals",
+      "source_ids": [
+        "editorial"
+      ],
+      "status": "NOT_TESTED",
+      "handling": "real browser/site QA pending",
+      "evidence_scope": "release acceptance"
+    },
+    {
+      "id": "C05",
+      "claim": "Original optional 42s poster/captions are a playable video",
+      "source_ids": [],
+      "status": "NOT_IMPLEMENTED",
+      "handling": "storyboard only; encode and QA before release",
+      "evidence_scope": "film accessibility"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_affiliate_account_approval",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "eligible_sku_zen12",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "website_channel_permitted",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "organic_social_channel_permitted",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "email_channel_permitted",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "issued_zen12_earning_url",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "allowed_tracking_params",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "approved_creative_license",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "actual_referral_checkout",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "tax_and_final_charge",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "merchant_fulfillment_proof",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "refund_terms_current",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "refund_process_verification",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "product_specific_health_claim_substantiation",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "medical_or_wealth_guarantee_removed",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "source_independent_human_review",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "editorial_independence_review",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "adjacent_ftc_disclosure_mobile",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "single_jetpack_funnel_unchanged",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "grok_asset_ids_verified",
+      "status": "HARD_HOLD",
+      "owner": "Praxxis/Grok",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "first_party_analytics_owner_agreed",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "no_duplicate_scripts",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "privacy_consent_plan_approved",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "affiliate_click_not_sale",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "merchant_paid_order_reporting",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "fees_and_refunds_reconciled",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "original_video_encoded_if_variant_b",
+      "status": "HARD_HOLD",
+      "owner": "Site QA/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "video_captions_and_transcript_qa",
+      "status": "HARD_HOLD",
+      "owner": "Site QA/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "real_browser_wcag_aa",
+      "status": "HARD_HOLD",
+      "owner": "Site QA/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "mobile_360_390_768_1440_1920",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "core_web_vitals_observed",
+      "status": "HARD_HOLD",
+      "owner": "Site QA/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "wordpress_sanitization_tested",
+      "status": "HARD_HOLD",
+      "owner": "Site QA/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "site_qa_approval",
+      "status": "HARD_HOLD",
+      "owner": "Site QA/Claude",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "founder_commerce_approval",
+      "status": "HARD_HOLD",
+      "owner": "Founder",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "founder_publication_approval",
+      "status": "HARD_HOLD",
+      "owner": "Founder",
+      "evidence": "NOT VERIFIED"
+    },
+    {
+      "id": "release_branch_merge_authorized",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Commerce/Claude",
+      "evidence": "NOT VERIFIED"
+    }
+  ],
+  "experimental_design": {
+    "A": "source-led text-only independent Zen12 buyer guide",
+    "B": "identical substantive guide + optional 42-second storyboard-only original film",
+    "randomization": "NOT IMPLEMENTED",
+    "primary_metric": "realized net revenue / 1000 qualified human sessions",
+    "secondary_metrics": [
+      "merchant-confirmed paid orders",
+      "paid conversion rate",
+      "confirmed leads",
+      "lead-to-customer rate"
+    ],
+    "sample_warning": "do not declare winner on tiny samples"
+  },
+  "commerce_status": {
+    "publisher_accepted": "NOT_VERIFIED",
+    "website_rights": "NOT_VERIFIED",
+    "affiliate_url": null,
+    "commission_rate": null,
+    "permitted_creatives": null,
+    "authorized_referral_checkout": false,
+    "owned_mind_paid_sku": null,
+    "verified_sales": null,
+    "net_revenue_per_1000": null
+  },
+  "no_live_writes": true
+}
