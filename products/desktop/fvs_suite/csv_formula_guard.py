@@ -14,6 +14,9 @@ import unicodedata
 # An initial apostrophe is *not* ignored: it is an explicit sanitizer escape.
 _IGNORABLE_CATEGORIES = frozenset(("Cf", "Cc", "Mn", "Me"))
 _FORMULA_OPERATORS = frozenset("=+@")
+# Mathematical/heavy minus are visually confusable with ASCII numeric minus
+# but are not the canonical Decimal grammar. Escape them for human review.
+_NONCANONICAL_MINUS = frozenset(("−", "➖"))
 # Align with engine.safe_cell's canonical negative Decimal exception. Allow
 # only an ASCII integral/fractional literal: no expressions, names, exponents,
 # grouping, currency signs or non-ASCII digits. Other minus values must first
@@ -33,10 +36,13 @@ def has_unescaped_formula_prefix(value: str) -> bool:
     for index, char in enumerate(value):
         if char.isspace() or unicodedata.category(char) in _IGNORABLE_CATEGORIES:
             continue
-        if char in _FORMULA_OPERATORS:
+        if char in _FORMULA_OPERATORS or char in _NONCANONICAL_MINUS:
             return True
         if char == "-":
-            return _CANONICAL_NEGATIVE_DECIMAL.fullmatch(value[index:]) is None
+            # The positional fullmatch avoids materializing a copy of the
+            # potentially 1 MiB source cell after leading Unicode marks.
+            # Pattern's \Z still requires the exact end of the original cell.
+            return _CANONICAL_NEGATIVE_DECIMAL.fullmatch(value, index) is None
         # Some spreadsheet importers apply Unicode compatibility folds before
         # deciding whether a cell is a formula. Check the first meaningful
         # character's NFKC equivalent without rewriting the source evidence.
