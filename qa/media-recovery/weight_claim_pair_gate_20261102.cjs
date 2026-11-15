@@ -20,6 +20,13 @@ function validateRun(run,label,errors){
    !run.browser_product||!['390x844','1440x900'].includes(run.viewport))
     errors.push(label+':uncached_same_profile_browser_required');
  if(!Number.isFinite(Date.parse(run.created||'')))errors.push(label+':missing_capture_time');
+ // The 61-post site-wide lane must obey the SAME v4 cold CDP lineage gate
+ // as the independent single-pair comparator. Prior collectors cannot prove
+ // a completed fresh image transfer, even if cache controls were requested.
+ if(!Number.isSafeInteger(run.probe_version)||run.probe_version<4)
+   errors.push(label+':cold_collector_v4_required');
+ if(run.verified_pages!==61)
+   errors.push(label+':verified_page_count_untrusted');
  const pages=new Map();let slots=0,bytes=0;
  for(const page of (Array.isArray(run.pages)?run.pages:[])){
   const id=page?.post_id;
@@ -44,6 +51,15 @@ function validateRun(run,label,errors){
   if(!census.complete||census.known_broken_count!==0||census.known_loaded_count!==page.stored_image_count||
     page.image_census?.complete!==true||page.image_census?.known_broken_count!==0)
     errors.push(label+':images_not_proven_loaded:'+id);
+  // Revalidate the *bound* Image requests, not unrelated theme or logo fetches.
+  // A cached response can look uncached if legacy records omitted the CDP
+  // event-chain flags. Never turn that absence into measured bytes.
+  const netById=new Map((Array.isArray(page.network_images)?page.network_images:[])
+    .filter(n=>n&&typeof n.request_id==='string').map(n=>[n.request_id,n]));
+  if(page.stored_images.some(s=>{
+    const n=netById.get(s?.request_id);
+    return !n||n.cold_event_chain_complete!==true||n.cold_network_transfer_proven!==true;
+  }))errors.push(label+':cold_cdp_image_event_chain_unverified:'+id);
   const wire=scopeByRequestId(page.stored_images,page.network_images);
   if(!wire.complete||page.article_wire_evidence_complete!==true||
     page.article_wire_attribution_mode!=='strict_cdp_request_id'||
