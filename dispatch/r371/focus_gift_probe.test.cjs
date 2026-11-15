@@ -23,6 +23,7 @@ function simulate(query = "", className = "", options = {}) {
       querySelector(selector) { return selector === ".wp-block-jetpack-subscriptions__container" && options.container !== false ? container : null; }
     }
   };
+  context.MutationObserver = context.window.MutationObserver; // Browser global alias
   vm.runInNewContext(raw, context, { timeout: 1000 });
   return { visible: !gift.hidden, setClass(s) { container.className = s; if (observer) observer(); return !gift.hidden; } };
 }
