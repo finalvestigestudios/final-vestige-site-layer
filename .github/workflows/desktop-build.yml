@@ -1036,6 +1036,10 @@ jobs:
         run: |
           PYTHONPATH=products/desktop python -W error -m unittest discover -s products/desktop/tests -p 'test_offline_regression_gate_r459.py'
           PYTHONPATH=products/desktop python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_offline_regression_gate_r459.py'
+      - name: R460 strict R408 receipt verification (Ubuntu source-only; release HOLD)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_offline_smoke_receipt_r460.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_offline_smoke_receipt_r460.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -2855,6 +2859,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R459 Windows normal offline gate self-tests FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_offline_regression_gate_r459.py'
           if ($LASTEXITCODE -ne 0) { throw "R459 Windows optimized offline gate self-tests FAILED" }
+      - name: R460 Windows exact six-app smoke receipt (before packaging; release HOLD)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_offline_smoke_receipt_r460.py'
+          if ($LASTEXITCODE -ne 0) { throw "R460 Windows normal smoke receipt FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_offline_smoke_receipt_r460.py'
+          if ($LASTEXITCODE -ne 0) { throw "R460 Windows optimized smoke receipt FAILED" }
       - name: R238 Windows PE candidate FD custody before packaging (14 methods per mode)
         shell: pwsh
         run: |
