@@ -1,0 +1,484 @@
+{
+  "date": "2026-11-15",
+  "status": "DRAFT_UNPUBLISHED_HOLD",
+  "critical_change": "Official Brainwave Shots FAQ identifies product modality as isochronic, so binaural-beat reviews may be contextual only, not direct efficacy proof.",
+  "source_urls": {
+    "inspire": "https://inspire3.com/",
+    "partner": "https://affiliates.inspire3.com/",
+    "zen": "https://zen12.com/getstarted",
+    "zenpromo": "https://zen12.com/secret/",
+    "hyp": "https://hypnosislive.com/mental-skills/total-focus",
+    "hypfaq": "https://hypnosislive.com/faq",
+    "shot": "https://brainwaveshots.com/focus-shot",
+    "shotfaq": "https://brainwaveshots.com/faq",
+    "g2019": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+    "r2022": "https://pubmed.ncbi.nlm.nih.gov/33978805/",
+    "m2021": "https://pubmed.ncbi.nlm.nih.gov/34245340/",
+    "rev2023": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "rev2024": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+    "mindrev": "https://pubmed.ncbi.nlm.nih.gov/38197226/",
+    "puys": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "field": "https://finalvestige.com/focus/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  },
+  "claims": [
+    {
+      "id": "s01",
+      "product": "Brainwave Shots Focus Shot",
+      "claim": "Seller lists 15- and 30-minute audios, brainwave-only variants, quick-start materials and support",
+      "type": "seller_format",
+      "verdict": "seller_page_observed",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "independent_proof_needed": null
+    },
+    {
+      "id": "s02",
+      "product": "Brainwave Shots Focus Shot",
+      "claim": "Seller says full 30-minute protocol alternates between 12 Hz and 18 Hz",
+      "type": "seller_technical_spec",
+      "verdict": "seller_statement_not_signal_test",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "independent_proof_needed": "Acquire authorized file and independently inspect waveform and modulation"
+    },
+    {
+      "id": "s03",
+      "product": "Brainwave Shots Focus Shot",
+      "claim": "Seller FAQ describes technique as isochronic tones and says headphones not required",
+      "type": "seller_modality",
+      "verdict": "seller_statement_not_lab_verification",
+      "source": "https://brainwaveshots.com/faq",
+      "independent_proof_needed": "Independently inspect signal before naming the file technically verified"
+    },
+    {
+      "id": "s04",
+      "product": "Brainwave Shots Focus Shot",
+      "claim": "Seller says effects last four hours or more",
+      "type": "seller_efficacy",
+      "verdict": "not_independently_substantiated",
+      "source": "https://brainwaveshots.com/faq",
+      "independent_proof_needed": "Independent product-specific randomized attention test"
+    },
+    {
+      "id": "s05",
+      "product": "Brainwave Shots Focus Shot",
+      "claim": "Seller describes audio as completely safe",
+      "type": "seller_safety",
+      "verdict": "not_independently_substantiated",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "independent_proof_needed": "Appropriate high-quality product-specific safety substantiation"
+    },
+    {
+      "id": "s06",
+      "product": "Brainwave Shots Focus Shot",
+      "claim": "Seller FAQ advises against epilepsy or use when one must remain awake",
+      "type": "seller_precaution",
+      "verdict": "seller_disclosure_only_not_individual_medical_advice",
+      "source": "https://brainwaveshots.com/faq",
+      "independent_proof_needed": null
+    },
+    {
+      "id": "s07",
+      "product": "Brainwave Shots Focus Shot",
+      "claim": "Seller advertises one-year refund and exclusions (one per six months, multi-item conditions)",
+      "type": "seller_policy",
+      "verdict": "public_terms_not_transaction_verified",
+      "source": "https://brainwaveshots.com/faq",
+      "independent_proof_needed": "Verify applicable checkout and written refund terms; do not claim refund was honored"
+    },
+    {
+      "id": "s08",
+      "product": "Brainwave Shots Focus Shot",
+      "claim": "Public listing displays $17.99 in inspected snapshot",
+      "type": "public_seller_price",
+      "verdict": "not_fv_referral_price",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "independent_proof_needed": "Verified referred checkout and regional tax terms"
+    },
+    {
+      "id": "s09",
+      "product": "Zen12",
+      "claim": "Seller describes 12 levels and 48 MP3s with guides/support",
+      "type": "seller_format",
+      "verdict": "public_seller_description",
+      "source": "https://zen12.com/getstarted",
+      "independent_proof_needed": null
+    },
+    {
+      "id": "s10",
+      "product": "Zen12",
+      "claim": "Public order shows $187.99 less $100 seller discount = $87.99 before tax in inspected snapshot",
+      "type": "public_seller_price",
+      "verdict": "not_fv_referral_price",
+      "source": "https://zen12.com/getstarted",
+      "independent_proof_needed": "Verify actual referred checkout before publishing any price"
+    },
+    {
+      "id": "s11",
+      "product": "Zen12",
+      "claim": "A separate promotional page displays conditional $37 coupon and countdown",
+      "type": "separate_seller_promotion",
+      "verdict": "not_promised_or_authorized",
+      "source": "https://zen12.com/secret/",
+      "independent_proof_needed": "No unverified coupon or urgency reproduced"
+    },
+    {
+      "id": "s12",
+      "product": "Zen12",
+      "claim": "Seller advertises money-back guarantee",
+      "type": "seller_policy",
+      "verdict": "not_verified_merchant_refund",
+      "source": "https://zen12.com/getstarted",
+      "independent_proof_needed": "Retrieve full official conditions and genuine fulfillment evidence"
+    },
+    {
+      "id": "s13",
+      "product": "Zen12",
+      "claim": "Seller claims audio produces rapid meditation or equivalent intensive training benefit",
+      "type": "seller_efficacy",
+      "verdict": "not_independently_substantiated",
+      "source": "https://inspire3.com/",
+      "independent_proof_needed": "Product-specific controlled evidence required"
+    },
+    {
+      "id": "s14",
+      "product": "Hypnosis Live Total Focus",
+      "claim": "Seller lists a 33-minute 47 MB hypnosis file",
+      "type": "seller_format",
+      "verdict": "public_seller_description",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "independent_proof_needed": null
+    },
+    {
+      "id": "s15",
+      "product": "Hypnosis Live Total Focus",
+      "claim": "Public listing displayed $17.95 in inspected snapshot",
+      "type": "public_seller_price",
+      "verdict": "not_fv_referral_price",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "independent_proof_needed": "Verified referred checkout and regional tax"
+    },
+    {
+      "id": "s16",
+      "product": "Hypnosis Live Total Focus",
+      "claim": "Seller promises sharp concentration on demand",
+      "type": "seller_efficacy",
+      "verdict": "not_independently_substantiated",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "independent_proof_needed": "Product-specific randomized performance comparisons"
+    },
+    {
+      "id": "s17",
+      "product": "Hypnosis Live Total Focus",
+      "claim": "FAQ describes refund requests within 14 days and maximum five sessions annually",
+      "type": "seller_policy",
+      "verdict": "not_verified_individual_refund",
+      "source": "https://hypnosislive.com/faq",
+      "independent_proof_needed": "Verify exact checkout condition before asserting applicability"
+    },
+    {
+      "id": "r01",
+      "product": "Binaural beats",
+      "claim": "Meta-analysis pooled 22 studies and reported g=0.45 for mixed cognition/anxiety/pain outcomes",
+      "type": "independent_binaural",
+      "verdict": "studied_interventions_only",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+      "independent_proof_needed": "Cannot generalize effect to isochronic Focus Shot"
+    },
+    {
+      "id": "r02",
+      "product": "Binaural beats",
+      "claim": "2022 publication on 16 Hz sustained attention reported modest effect in first experiment and equivocal Bayes comparisons",
+      "type": "independent_binaural",
+      "verdict": "not_product_specific",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/33978805/",
+      "independent_proof_needed": "Does not test the seller's claimed isochronic file"
+    },
+    {
+      "id": "r03",
+      "product": "Auditory beats",
+      "claim": "2021 40 Hz binaural vs monaural study of 25 students did not confirm predicted EEG entrainment",
+      "type": "independent_lab",
+      "verdict": "not_product_specific",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/34245340/",
+      "independent_proof_needed": "Small sample, different stimulation and frequencies"
+    },
+    {
+      "id": "r04",
+      "product": "Binaural beats",
+      "claim": "2023 review: 14 EEG studies: five support, eight contradict, one mixed",
+      "type": "independent_binaural",
+      "verdict": "heterogeneous_inconsistent",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "independent_proof_needed": "Not direct test of Focus Shot's isochronic sound"
+    },
+    {
+      "id": "r05",
+      "product": "Auditory stimulation",
+      "claim": "2024 31-study review found arousal-cognition relationships mixed or insufficient",
+      "type": "independent_review",
+      "verdict": "studied_audio_types_only",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+      "independent_proof_needed": "No validation of exact commercial recording"
+    },
+    {
+      "id": "r06",
+      "product": "Digital mindfulness",
+      "claim": "2024 review of 19 studies and 1654 participants found mixed cognitive findings",
+      "type": "independent_review",
+      "verdict": "not_zen12_specific",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/38197226/",
+      "independent_proof_needed": "Does not test Zen12 file"
+    },
+    {
+      "id": "m01",
+      "product": "All products",
+      "claim": "Binaural beat evidence proves Focus Shot's claimed isochronic method works",
+      "type": "invalid_inference",
+      "verdict": "REJECT_MODALITY_MISMATCH",
+      "source": "https://brainwaveshots.com/faq",
+      "independent_proof_needed": "Direct isochronic product-specific trial required"
+    },
+    {
+      "id": "m02",
+      "product": "All products",
+      "claim": "Neural frequency measurement proves a productivity outcome",
+      "type": "invalid_inference",
+      "verdict": "REJECT_CAUSAL_LEAP",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "independent_proof_needed": "Need behavioral outcomes and proper controls"
+    },
+    {
+      "id": "m03",
+      "product": "All products",
+      "claim": "Recorded historical testimony proves a physical animal-magnetic mechanism",
+      "type": "invalid_inference",
+      "verdict": "REJECT_HISTORICAL_MECHANISM_LEAP",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "independent_proof_needed": "Interpret reported events apart from inferred force"
+    },
+    {
+      "id": "m04",
+      "product": "Final Vestige owned Mind product",
+      "claim": "A currently payable rights-cleared Mind SKU with checkout/fulfillment/returns exists",
+      "type": "authorization",
+      "verdict": "NOT_VERIFIED",
+      "source": "https://finalvestige.com/focus/",
+      "independent_proof_needed": "Private proof of product rights, live checkout, delivery, receipts, refunds"
+    },
+    {
+      "id": "a01",
+      "product": "Final Vestige Inspire3",
+      "claim": "Public affiliate login page means FV has publisher approval",
+      "type": "authorization",
+      "verdict": "REJECT_PUBLIC_PORTAL_AS_PROOF",
+      "source": "https://affiliates.inspire3.com/",
+      "independent_proof_needed": "Private named acceptance + effective date"
+    },
+    {
+      "id": "a02",
+      "product": "Final Vestige Inspire3",
+      "claim": "Issued authorized SKU-specific earning URL / creative rights / social and email channel permissions",
+      "type": "authorization",
+      "verdict": "NOT_VERIFIED",
+      "source": "https://affiliates.inspire3.com/",
+      "independent_proof_needed": "Private approval and link format, permitted sub-ID scope, exact SKU"
+    },
+    {
+      "id": "a03",
+      "product": "Final Vestige metrics",
+      "claim": "A CTA click or Jetpack opt-in is a paid affiliate sale",
+      "type": "attribution",
+      "verdict": "REJECT_CLICK_AS_SALE",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "independent_proof_needed": "Merchant-confirmed settled commission/order matched without PII leakage"
+    },
+    {
+      "id": "a04",
+      "product": "Final Vestige tracking",
+      "claim": "Partner payout from public portal applies to FV by default",
+      "type": "authorization",
+      "verdict": "REJECT_GENERIC_RATE_AS_PRIVATE_TERMS",
+      "source": "https://affiliates.inspire3.com/",
+      "independent_proof_needed": "Contract-specific rate and actual settlement"
+    },
+    {
+      "id": "a05",
+      "product": "Final Vestige editorial",
+      "claim": "Prospective commission disclosure adjacent to disabled control in both draft variants",
+      "type": "disclosure",
+      "verdict": "SOURCE_DESIGN_ONLY_NOT_LIVE_TEST",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "independent_proof_needed": "Signed-out desktop/mobile and assistive-technology QA"
+    },
+    {
+      "id": "a06",
+      "product": "Final Vestige guide",
+      "claim": "Published article and full 52-page free Focus Fieldbook form currently verified",
+      "type": "funnel",
+      "verdict": "LIVE_DESTINATION_ONLY_LEAD_NOT_CONFIRMED",
+      "source": "https://finalvestige.com/focus/",
+      "independent_proof_needed": "Provider-confirmed consent and actual delivery, avoid duplicate signup"
+    },
+    {
+      "id": "a07",
+      "product": "Final Vestige",
+      "claim": "Lack of product-specific substantiation permits seller mental/health promises to be repeated in our endorsement",
+      "type": "ftc",
+      "verdict": "REJECT_UNSUBSTANTIATED_CLAIM",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "independent_proof_needed": "Adequate, competent and reliable scientific evidence"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "named FV affiliate publisher acceptance",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G02",
+      "name": "Zen12 SKU/channel social permission",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G03",
+      "name": "Zen12 SKU email permission",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G04",
+      "name": "approved creative and disclosure formatting",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G05",
+      "name": "allowed issuer/sub-ID attribution scope",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G06",
+      "name": "issued valid earning URL",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G07",
+      "name": "real referred checkout terms, price, tax",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G08",
+      "name": "merchant refund/fee/clawback terms",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G09",
+      "name": "affiliate settlement feed and payment evidence",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G10",
+      "name": "active rights-cleared paid FV Mind product alternative",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G11",
+      "name": "owner-verified live buyer guide",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G12",
+      "name": "site-QA WordPress sanitization pass",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Mind/Claude/Site QA"
+    },
+    {
+      "id": "G13",
+      "name": "WCAG 2.2 AA keyboard/mobile/zoom/reduced-motion",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Mind/Claude/Site QA"
+    },
+    {
+      "id": "G14",
+      "name": "encoded rights-cleared 42s film + captions/poster",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Mind/Claude/Site QA"
+    },
+    {
+      "id": "G15",
+      "name": "mobile performance and no-JS fallback",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Mind/Claude/Site QA"
+    },
+    {
+      "id": "G16",
+      "name": "preserved single Jetpack flow + provider confirmation",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Mind/Claude/Site QA"
+    },
+    {
+      "id": "G17",
+      "name": "verified three real Grok media asset IDs",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Praxxis/Grok/Commerce"
+    },
+    {
+      "id": "G18",
+      "name": "approved first-party attribution without PII leakage",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Praxxis/Grok/Commerce"
+    },
+    {
+      "id": "G19",
+      "name": "merchant confirmed paid sales and refund net reconciliation",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Praxxis/Grok/Commerce"
+    },
+    {
+      "id": "G20",
+      "name": "founder release approval",
+      "status": "HOLD_UNVERIFIED",
+      "owner": "Praxxis/Grok/Commerce"
+    }
+  ],
+  "findings": {
+    "inspire3_partner_acceptance": "NOT_VERIFIED",
+    "private_email_search": "Consumer promotion found; no named approval, authorized earning URL, or channel permissions established",
+    "fv_owned_sellable_mind_sku": "NOT_VERIFIED",
+    "confirmed_affiliate_orders": "NOT_VERIFIED",
+    "qualified_human_sessions": "NOT_VERIFIED",
+    "net_revenue_per_1000": "NOT_COMPUTABLE"
+  },
+  "measurement_contract": {
+    "event_names": [
+      "qualified_landing_session",
+      "mind_guide_cta",
+      "focus_request",
+      "focus_provider_confirmed",
+      "affiliate_click",
+      "merchant_confirmed_paid_order",
+      "merchant_settled_commission",
+      "merchant_refund_or_clawback"
+    ],
+    "attribution_join": "only approved consent-safe campaign ID and contract-permitted merchant sub-ID; never guess from click or signup",
+    "net_revenue_per_1000": "1000*(settled attributable publisher commission - fees - refunds - reversals)/verified qualified human sessions",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "privacy": "No PII in URL, no fingerprinting, no extra tracker or signup"
+  }
+}
