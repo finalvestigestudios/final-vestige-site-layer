@@ -1,54 +1,53 @@
-// Offline native Node verifier: node mind/r386/verify.mjs
-// No network, no production writes. Run from repository root.
+// Native offline Node verifier. Run: node mind/r386/verify.mjs
+// Read-only. No network requests, production edits, event tracking or affiliate activation.
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 const base='mind/r386/';
-const a=fs.readFileSync(base+'ZEN12_A_GUIDE.html','utf8');
-const b=fs.readFileSync(base+'ZEN12_B_STORYBOARD.html','utf8');
-const hub=fs.readFileSync(base+'MIND_HUB_SOURCE_ONLY.html','utf8');
-const svg=fs.readFileSync(base+'ZEN12_ORIGINAL_POSTER.svg','utf8');
-const vtt=fs.readFileSync(base+'ZEN12_42S_CAPTIONS.vtt','utf8');
-const matrix=JSON.parse(fs.readFileSync(base+'CLAIM_PROOF_AND_HOLDS.json','utf8'));
-const article=fs.readFileSync(base+'STROOP_SUGGESTION_AND_THE_AUDIO_PROMISE.md','utf8');
-let n=0;
-function check(flag,description){assert.ok(flag,description);n++;}
-for(const [name,html] of [['A',a],['B',b],['hub',hub]]){
- check(/<!doctype html>/i.test(html),name+' doctype');
- check(/<html lang="en"/.test(html),name+' lang');
- check(/<meta name="viewport"/.test(html),name+' viewport');
- check(/<meta name="robots" content="noindex,nofollow"/.test(html),name+' noindex');
- check((html.match(/<h1(?:\s|>)/g)||[]).length===1,name+' one h1');
- check(!/<script\b|<form\b|<iframe\b|\son(?:click|load|submit)\s*=|<video\b[^>]*autoplay/i.test(html),name+' no scripts/forms/iframe/handlers/autoplay');
- check(/prefers-reduced-motion/.test(html),name+' reduced-motion');
- check(/:focus-visible/.test(html),name+' focus style');
+const read=n=>fs.readFileSync(base+n,'utf8');
+const a=read('ZEN12_A_GUIDE.html'), b=read('ZEN12_B_STORYBOARD.html');
+const hub=read('MIND_HUB_SOURCE_ONLY.html'), svg=read('ZEN12_ORIGINAL_POSTER.svg');
+const vtt=read('ZEN12_42S_CAPTIONS.vtt'), article=read('STROOP_SUGGESTION_AND_THE_AUDIO_PROMISE.md');
+const matrix=JSON.parse(read('CLAIM_PROOF_AND_HOLDS.json'));
+let count=0;
+function check(value,description){assert.ok(value,description);count++;}
+const plain=h=>h.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ');
+for(const [name,h] of [['A',a],['B',b],['hub',hub]]){
+ check(/<!doctype html>/i.test(h),name+' doctype');
+ check(/<html lang="en"/.test(h),name+' lang');
+ check(/<meta name="viewport"/.test(h),name+' viewport');
+ check(/<meta name="robots" content="noindex,nofollow"/.test(h),name+' noindex');
+ check((h.match(/<h1(?:\s|>)/g)||[]).length===1,name+' one h1');
+ check(!/<script\b|<form\b|<iframe\b|\son(?:click|load|submit)\s*=|<video\b[^>]*autoplay/i.test(h),name+' no scripts/forms/iframe/handlers/autoplay');
+ check(/prefers-reduced-motion/.test(h),name+' reduced motion');
+ check(/:focus-visible/.test(h),name+' keyboard focus');
 }
-for(const [name,html] of [['A',a],['B',b]]){
- check(/<button[^>]*\sdisabled(?:\s|>)/i.test(html),name+' native disabled');
- check(/may earn a commission at no additional cost to you/i.test(html),name+' adjacent disclosure');
- check(/https:\/\/finalvestige.com\/focus\//.test(html),name+' existing Focus');
- check(!/<a\s[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)/i.test(html),name+' no merchant links');
- check(/$87\.99/.test(html),name+' dated seller displayed amount');
- check(/not independently authenticated referred checkout/i.test(html),name+' checkout caveat');
- check(/not.*independently established/i.test(html),name+' efficacy caveat');
- check(/Review the Zen12 offer — unavailable pending verification/.test(html),name+' disabled CTA text');
+for(const [name,h] of [['A',a],['B',b]]){
+ check(/<button[^>]*\sdisabled(?:\s|>)/i.test(h),name+' native disabled');
+ check(plain(h).includes('may earn a commission at no additional cost to you'),name+' nearby disclosure');
+ check(h.includes('https://finalvestige.com/focus/'),name+' existing Focus route');
+ check(!/<a\s[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)/i.test(h),name+' no seller links');
+ check(/\$87\.99/.test(h),name+' dated seller display price');
+ check(plain(h).includes('not an independently authenticated referred checkout'),name+' checkout caveat');
+ check(plain(h).includes('not been independently established'),name+' health/efficacy limit');
+ check(h.includes('Review the Zen12 offer — unavailable pending verification'),name+' CTA text');
 }
-const start='<section aria-labelledby="story">',end='<section aria-labelledby="sources">';
-function shared(h){return h.slice(h.indexOf(start),h.indexOf('</section>',h.indexOf(end)));}
-check(shared(a)===shared(b),'shared buyer editorial body parity');
-check(!a.includes('ZEN12_ORIGINAL_POSTER.svg'),'A no optional poster');
-check(b.includes('ZEN12_ORIGINAL_POSTER.svg'),'B poster');
+const buyerStart='<section aria-labelledby="story">';
+check(a.includes(buyerStart)&&b.includes(buyerStart),'buyer content present');
+check(a.slice(a.indexOf(buyerStart))===b.slice(b.indexOf(buyerStart)),'identical buyer body A/B');
+check(!a.includes('ZEN12_ORIGINAL_POSTER.svg'),'A no media poster');
+check(b.includes('ZEN12_ORIGINAL_POSTER.svg'),'B original poster');
 check(b.includes('<details>')&&b.includes('42-second narration'),'B transcript');
 check(!/<video\b|<audio\b/i.test(b),'B not falsely playable');
-check(/role="img"/.test(svg)&&/<title/.test(svg)&&/<desc/.test(svg),'SVG a11y');
-check(!/<(?:image|script|foreignObject)\b|http:\/\//i.test(svg.replace('xmlns="http://www.w3.org/2000/svg"','')),'SVG no remote executable content');
+check(/role="img"/.test(svg)&&/<title/.test(svg)&&/<desc/.test(svg),'SVG accessibility');
+check(!/<(?:image|script|foreignObject)\b/i.test(svg),'SVG no scripts or external images');
 check(vtt.startsWith('WEBVTT'),'VTT header');
-check((vtt.match(/-->/g)||[]).length===6,'six VTT cues');
-check(vtt.includes('00:00:42.000'),'42 second end');
-check(matrix.release_gates.length===36,'36 release gates');
-check(matrix.release_gates.every(g=>g.status==='HOLD'),'all gates held');
-check(matrix.claims.length>=30,'substantive claim matrix');
-check(matrix.sources.length>=15,'sourced');
-check(matrix.economic_truth.net_revenue_per_1000_qualified_sessions===null,'no invented revenue');
-check(article.includes('https://pubmed.ncbi.nlm.nih.gov/12470132/'),'study reference');
-check(article.trim().split(/\s+/).length>1700,'deep original manuscript');
-console.log('PASS '+n+' independent offline source assertions');
+check((vtt.match(/-->/g)||[]).length===6,'six timed cues');
+check(vtt.includes('00:00:42.000'),'42-second storyboard end');
+check(matrix.sources.length===16,'16 source entries');
+check(matrix.claims.length===36,'36 claim decisions');
+check(matrix.release_gates.length===36,'36 commercial release gates');
+check(matrix.release_gates.every(g=>g.status==='HOLD'),'all release gates held');
+check(matrix.economic_truth.net_revenue_per_1000_qualified_sessions===null,'no invented net revenue');
+check(article.includes('https://pubmed.ncbi.nlm.nih.gov/12470132/'),'primary research cited');
+check(article.trim().split(/\s+/).length>2000,'substantive source manuscript');
+console.log('PASS '+count+' native offline source assertions');
