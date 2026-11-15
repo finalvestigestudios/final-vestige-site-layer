@@ -1,0 +1,126 @@
+{
+  "axe_core": "NOT_RUN: reviewed genuine axe build unavailable",
+  "baseline_sha256": "4fe1595d790d22181c01038afd31c19e0839360458ded3c6098bd604d73035a9",
+  "contexts": [
+    {
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 152,
+      "name": "320-mobile",
+      "nojs": false,
+      "overflow_px": 0,
+      "root4x": false,
+      "source_pass": true,
+      "width": 320
+    },
+    {
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 96,
+      "name": "390-mobile",
+      "nojs": false,
+      "overflow_px": 0,
+      "root4x": false,
+      "source_pass": true,
+      "width": 390
+    },
+    {
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 76,
+      "name": "768-tablet",
+      "nojs": false,
+      "overflow_px": 0,
+      "root4x": false,
+      "source_pass": true,
+      "width": 768
+    },
+    {
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 96,
+      "name": "1440-desktop",
+      "nojs": false,
+      "overflow_px": 0,
+      "root4x": false,
+      "source_pass": true,
+      "width": 1440
+    },
+    {
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 96,
+      "name": "1920-wide",
+      "nojs": false,
+      "overflow_px": 0,
+      "root4x": false,
+      "source_pass": true,
+      "width": 1920
+    },
+    {
+      "fixture_cls": null,
+      "fixture_lcp_ms": null,
+      "name": "320-nojs",
+      "nojs": true,
+      "overflow_px": 0,
+      "root4x": false,
+      "source_pass": true,
+      "width": 320
+    },
+    {
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 72,
+      "name": "390-touch",
+      "nojs": false,
+      "overflow_px": 0,
+      "root4x": false,
+      "source_pass": true,
+      "width": 390
+    },
+    {
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 72,
+      "name": "390-reduced",
+      "nojs": false,
+      "overflow_px": 0,
+      "root4x": false,
+      "source_pass": true,
+      "width": 390
+    },
+    {
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 80,
+      "name": "320-forced",
+      "nojs": false,
+      "overflow_px": 0,
+      "root4x": false,
+      "source_pass": true,
+      "width": 320
+    },
+    {
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 92,
+      "name": "320-root4x-prepaint",
+      "nojs": false,
+      "overflow_px": 0,
+      "root4x": true,
+      "source_pass": true,
+      "width": 320
+    },
+    {
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 72,
+      "name": "390-root4x-prepaint",
+      "nojs": false,
+      "overflow_px": 0,
+      "root4x": true,
+      "source_pass": true,
+      "width": 390
+    }
+  ],
+  "fit_sha256": "93da942bbfd37bd055c97150446a3124bc52d7b55b4e0ac968568343e5838756",
+  "fixture_sha256": "5242da6c49b64d7f37484b6f5924042a69872073e4fd15d9a0ed694920bb11eb",
+  "late_patch_after_overflow_px": 0,
+  "late_patch_before_overflow_px": 8,
+  "late_patch_fixture_cls": 0,
+  "network": "PAGE_SET_CONTENT_ONLY",
+  "release_allowed": false,
+  "scope": "LOCAL_CHROMIUM_PHP_FIXTURE_NOT_INSTALLED_WORDPRESS",
+  "status": "PASS_LOCAL_ONLY",
+  "tests": 136
+}

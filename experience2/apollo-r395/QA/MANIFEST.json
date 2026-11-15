@@ -1,0 +1,26 @@
+{
+  "browser": "Chromium via Playwright page.set_content; 11 contexts, 136 assertions",
+  "php": "Default opt-out 4; simulated opt-in 16",
+  "release_allowed": false,
+  "scope": "LOCAL_ONLY_NOT_STAGING_NOT_PRODUCTION",
+  "sources": {
+    "apollo-r377/custody.json": "60bfa330398b7684463c95afcc7e6ef347d44f22d5a2f1350286a660edb3a76f",
+    "apollo-r384/assets/gallery.css": "4fe1595d790d22181c01038afd31c19e0839360458ded3c6098bd604d73035a9",
+    "apollo-r392/qa/semantic_custody.py": "f65c5b3aaab798338c2c2aeaebb10c7b1746dafc4967d75d78f718082f714fa8",
+    "apollo-r393/QA/local-php-fixture.html": "5242da6c49b64d7f37484b6f5924042a69872073e4fd15d9a0ed694920bb11eb",
+    "apollo-r393/qa/topology.py": "bcee90246409b5830b6b05fda55df33bcce0b1456289ef399112f4cb3c03d03b",
+    "apollo-r394/qa/visibility_custody.py": "3d7e1ef3465126cdc7af7fa6a37c6aa2d428faecd40e3d97f7af74e12fbf8237",
+    "apollo-r395/QA/1440-desktop.png": "e9030ae3486f59f44289e9d2e3f809bf8e811322ad5b3b9eca6e7211abbfe6a2",
+    "apollo-r395/QA/320-mobile.png": "14c1fbaa9721f4cebde80803a1142bc717e7ba8376c3d5801dbb8ecc60029335",
+    "apollo-r395/QA/320-nojs.png": "14c1fbaa9721f4cebde80803a1142bc717e7ba8376c3d5801dbb8ecc60029335",
+    "apollo-r395/QA/320-root4x-prepaint.png": "9d3cc1db960b89e625c67e42e2554d729fae73b91f0ed8f87cafbd3a6e915544",
+    "apollo-r395/QA/prepaint-results.json": "fbcf399e83e618b53475499927a5b187ef3e7e8988d27d79579c92ba01e6a708",
+    "apollo-r395/README.md": "d849a7620d768ad5c78b4a9322471561de5e54fae9ac0ef658c417767a704d6a",
+    "apollo-r395/assets/mobile-fit.css": "93da942bbfd37bd055c97150446a3124bc52d7b55b4e0ac968568343e5838756",
+    "apollo-r395/qa/browser.py": "dedf4ff795f5af5e314ddea07fd40042bd7ac9e7d7a6f5760a4285307c3c1d6a",
+    "apollo-r395/qa/enable.php": "c31ef9c2c886561f1a84a6982e33d3b68bf58d49ef851f0b500a703c5da088d9",
+    "apollo-r395/qa/package.py": "eee1ecdf4ebb6b854ea40a8dadf6704d4893c02b49b84cbfe73cdb9e93ded205",
+    "apollo-r395/qa/php_contract.php": "e0ac6a7f6bd0a720a61ee36bb3f0821e6a681c9dbbe9cd72aa284c38e8787e9d",
+    "apollo-r395/staging-prepaint.php": "c4acb2181bc8ecd9bb11c2abeab2269c48133ef5c2ab4ad1c24be08dd4d4e8be"
+  }
+}
