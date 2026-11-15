@@ -1,0 +1,63 @@
+{
+  "schema": "fv-published-pages-79-complement-v1",
+  "date_pt": "2026-11-14",
+  "batch": 6,
+  "previous_pilot_ids": [
+    1484,
+    1480,
+    2017,
+    2088,
+    2089,
+    529,
+    77,
+    76,
+    531,
+    525,
+    1304,
+    1868
+  ],
+  "excluded_homepage_id": 6,
+  "method": "authenticated read-only WP pages_get edit; stored img tags; not guest-browser or origin HTTP",
+  "expected": 4,
+  "checked": 4,
+  "errors": [],
+  "source_groups": {},
+  "guest_http_verified": false,
+  "claimed_42_broken_verified": false,
+  "claimed_76_percent_wire_savings_verified": false,
+  "rights_and_cache_hold": true,
+  "rows": [
+    {
+      "id": 2198,
+      "url": "https://finalvestige.com/free-resources/the-year-that-changed-twice/",
+      "modified": "2026-11-07T16:43:06",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 2204,
+      "url": "https://finalvestige.com/free-resources/the-list-without-the-passenger/",
+      "modified": "2026-11-07T17:44:21",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 2209,
+      "url": "https://finalvestige.com/free-resources/the-page-that-changed/",
+      "modified": "2026-11-07T18:41:04",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 2213,
+      "url": "https://finalvestige.com/free-resources/the-quote-that-crossed-a-language/",
+      "modified": "2026-11-07T19:38:04",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    }
+  ]
+}

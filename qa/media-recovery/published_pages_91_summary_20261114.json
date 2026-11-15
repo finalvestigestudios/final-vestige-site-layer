@@ -1,0 +1,89 @@
+{
+  "schema": "fv-nonhome-published-page-media-91-v1",
+  "date_pt": "2026-11-14",
+  "source_files": [
+    "qa/media-recovery/published_pages_remaining_batch_01_20261114.json",
+    "qa/media-recovery/published_pages_remaining_batch_02_20261114.json",
+    "qa/media-recovery/published_pages_remaining_batch_03_20261114.json",
+    "qa/media-recovery/published_pages_remaining_batch_04_20261114.json",
+    "qa/media-recovery/published_pages_remaining_batch_05_20261114.json",
+    "qa/media-recovery/published_pages_remaining_batch_06_20261114.json",
+    "qa/media-recovery/published_pages_media_pilot_12_20261114.json"
+  ],
+  "source_blob_shas": [
+    "483abdafc85047e2758069fc1aff8ac8c1ed1d75",
+    "d0b2c8ff325dfca07d23650cb81c6301b7cb15e9",
+    "4255f48b3b8c1e6dffc09892cde5d298cf17b30d",
+    "3f095b0b70f7eb4565ecad31fb1e5ef546dc9859",
+    "061cd8e94ac7e369a95a95ecbdec3dfd1e1c3a62",
+    "2c1cb71567afaf373a1da6f8bf78fe6b140eec1a",
+    "3bf39f5f34032f08ee2f6631b0700a68f629698f"
+  ],
+  "published_wp_pages": 92,
+  "excluded_homepage_id": 6,
+  "published_nonhome_pages": 91,
+  "existing_pilot_pages": 12,
+  "new_live_cms_pages": 79,
+  "new_inline_images": 7,
+  "total_inline_images": 56,
+  "external_stored_image_sources": 48,
+  "firstparty_stored_image_sources": 8,
+  "origin_breakdown": {
+    "youtube_thumbnails": 40,
+    "awin_dynamic_creatives": 3,
+    "wikimedia": 3,
+    "google_drive": 1,
+    "suunto_manufacturer_cdn": 1,
+    "first_party": 8
+  },
+  "new_external_sources": [
+    {
+      "slot": "78:2",
+      "src": "https://us.suunto.com/cdn/shop/files/SS014891000-Suunto-MC-2-G-USGS-MIRROR-COMPASS-perspective-view-01_297f0046-bf9a-4f3c-893c-ad50a6346ef9.png?v=1778238838&width=1390",
+      "source": "Suunto manufacturer",
+      "rights": "Vendor-owned product image; no rehost/derivative rights confirmed",
+      "browser_http": null,
+      "dimensions": null,
+      "wordpress_upload_authorized": false,
+      "conditional_derivative_limit_px": 960,
+      "derivative_authorized": false
+    },
+    {
+      "slot": "78:3",
+      "src": "https://www.awin1.com/cshow.php?s=4959313&v=46005&q=620613&r=3055117",
+      "source": "Awin dynamic affiliate creative",
+      "rights": "Program-served creative; do not copy/cache/transform without program consent",
+      "browser_http": null,
+      "dimensions": null,
+      "wordpress_upload_authorized": false,
+      "conditional_derivative_limit_px": 960,
+      "derivative_authorized": false
+    }
+  ],
+  "baseline_61_published_posts": {
+    "post_count": 61,
+    "inline_img_count": 355,
+    "broken_external_images_reported": 42,
+    "guest_browser_broken_confirmed": null,
+    "weight_reduction_percent_claimed": 76,
+    "visitor_weight_reduction_percent_measured": null,
+    "wp_oversized_original_count_last_verified": 16,
+    "stored_original_bytes_last_verified": 49107665
+  },
+  "method": "WordPress authenticated read-only edit-context stored raw image HTML; no actual guest browser, HTTP responses, rendered currentSrc, transfer bytes or full rendered CSS",
+  "release": {
+    "site_qa_browser_owner_pr": 154,
+    "homepage_design_excluded": true,
+    "guest_status_proof_required": true,
+    "rights_required": true,
+    "actual_css_dpr_required": true,
+    "no_upscaling": true,
+    "conditional_width_ceiling_px": 960,
+    "staging_and_rollback_required": true,
+    "no_prod_writes": true,
+    "no_third_party_asset_downloads": true,
+    "no_caches": true,
+    "no_merges": true,
+    "no_subscription_spend": true
+  }
+}

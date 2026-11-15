@@ -1,0 +1,237 @@
+{
+  "schema": "fv-published-pages-79-complement-v1",
+  "date_pt": "2026-11-14",
+  "batch": 1,
+  "previous_pilot_ids": [
+    1484,
+    1480,
+    2017,
+    2088,
+    2089,
+    529,
+    77,
+    76,
+    531,
+    525,
+    1304,
+    1868
+  ],
+  "excluded_homepage_id": 6,
+  "method": "authenticated read-only WP pages_get edit; stored img tags; not guest-browser or HTTP; corrected host extraction without unsupported URL global",
+  "expected": 15,
+  "checked": 15,
+  "errors": [],
+  "source_groups": {
+    "first_party": 3,
+    "other_external": 1,
+    "affiliate": 1
+  },
+  "guest_http_verified": false,
+  "claimed_42_broken_verified": false,
+  "claimed_76_percent_wire_savings_verified": false,
+  "rights_and_cache_hold": true,
+  "rows": [
+    {
+      "id": 1,
+      "url": "https://finalvestige.com/about/",
+      "modified": "2026-11-06T09:41:48",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 7,
+      "url": "https://finalvestige.com/archive/",
+      "modified": "2026-09-09T16:14:56",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 8,
+      "url": "https://finalvestige.com/field-notes/",
+      "modified": "2026-11-06T21:51:52",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 10,
+      "url": "https://finalvestige.com/blog/",
+      "modified": "2026-09-09T16:04:19",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 14,
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "modified": "2026-11-02T21:39:22",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 15,
+      "url": "https://finalvestige.com/privacy-policy/",
+      "modified": "2026-11-02T21:39:24",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 16,
+      "url": "https://finalvestige.com/terms-disclaimer/",
+      "modified": "2026-11-02T21:39:26",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 17,
+      "url": "https://finalvestige.com/editorial-standards/",
+      "modified": "2026-09-09T16:03:05",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 78,
+      "url": "https://finalvestige.com/collection/",
+      "modified": "2026-11-06T13:48:19",
+      "status": "publish",
+      "inline_images": 4,
+      "images": [
+        {
+          "slot": "78:0",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/10/focus_complete_cover.webp",
+          "origin": "first_party",
+          "alt": "Seven Day Focus Fieldbook Complete Edition cover",
+          "width": "960",
+          "height": "960",
+          "srcset_present": false,
+          "guest_status": null,
+          "guest_current_src": null,
+          "guest_bytes": null,
+          "guest_decoded_px": null,
+          "rights_cleared": false,
+          "cache_authorized": false,
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "78:1",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/08/suunto-logo-300x180.webp",
+          "origin": "first_party",
+          "alt": "Suunto logo",
+          "width": null,
+          "height": null,
+          "srcset_present": false,
+          "guest_status": null,
+          "guest_current_src": null,
+          "guest_bytes": null,
+          "guest_decoded_px": null,
+          "rights_cleared": false,
+          "cache_authorized": false,
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "78:2",
+          "src": "https://us.suunto.com/cdn/shop/files/SS014891000-Suunto-MC-2-G-USGS-MIRROR-COMPASS-perspective-view-01_297f0046-bf9a-4f3c-893c-ad50a6346ef9.png?v=1778238838&width=1390",
+          "origin": "other_external",
+          "alt": "Suunto MC-2 G USGS mirror compass open with sighting mirror",
+          "width": null,
+          "height": null,
+          "srcset_present": false,
+          "guest_status": null,
+          "guest_current_src": null,
+          "guest_bytes": null,
+          "guest_decoded_px": null,
+          "rights_cleared": false,
+          "cache_authorized": false,
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "78:3",
+          "src": "https://www.awin1.com/cshow.php?s=4959313&v=46005&q=620613&r=3055117",
+          "origin": "affiliate",
+          "alt": "Cold Case Inc sponsored mystery-game banner",
+          "width": null,
+          "height": null,
+          "srcset_present": false,
+          "guest_status": null,
+          "guest_current_src": null,
+          "guest_bytes": null,
+          "guest_decoded_px": null,
+          "rights_cleared": false,
+          "cache_authorized": false,
+          "wp_write_authorized": false
+        }
+      ]
+    },
+    {
+      "id": 189,
+      "url": "https://finalvestige.com/the-archive-trail/",
+      "modified": "2026-11-02T21:38:01",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 191,
+      "url": "https://finalvestige.com/what-survives/",
+      "modified": "2026-08-26T11:15:25",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 193,
+      "url": "https://finalvestige.com/the-lost-landscape/",
+      "modified": "2026-11-03T14:46:46",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 234,
+      "url": "https://finalvestige.com/about/bryan-rhodes/",
+      "modified": "2026-11-06T09:18:24",
+      "status": "publish",
+      "inline_images": 1,
+      "images": [
+        {
+          "slot": "234:0",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/08/ne-819x1024.png",
+          "origin": "first_party",
+          "alt": "Bryan Rhodes, founder and editor of Final Vestige",
+          "width": null,
+          "height": null,
+          "srcset_present": false,
+          "guest_status": null,
+          "guest_current_src": null,
+          "guest_bytes": null,
+          "guest_decoded_px": null,
+          "rights_cleared": false,
+          "cache_authorized": false,
+          "wp_write_authorized": false
+        }
+      ]
+    },
+    {
+      "id": 235,
+      "url": "https://finalvestige.com/contact/",
+      "modified": "2026-09-09T16:03:23",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 498,
+      "url": "https://finalvestige.com/watch/primary-sources/",
+      "modified": "2026-11-03T14:47:09",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    }
+  ]
+}

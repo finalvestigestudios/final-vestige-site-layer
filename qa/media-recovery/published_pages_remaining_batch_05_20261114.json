@@ -1,0 +1,186 @@
+{
+  "schema": "fv-published-pages-79-complement-v1",
+  "date_pt": "2026-11-14",
+  "batch": 5,
+  "previous_pilot_ids": [
+    1484,
+    1480,
+    2017,
+    2088,
+    2089,
+    529,
+    77,
+    76,
+    531,
+    525,
+    1304,
+    1868
+  ],
+  "excluded_homepage_id": 6,
+  "method": "authenticated read-only WP pages_get edit; stored img tags; not guest-browser or origin HTTP",
+  "expected": 15,
+  "checked": 15,
+  "errors": [],
+  "source_groups": {
+    "first_party": 2
+  },
+  "guest_http_verified": false,
+  "claimed_42_broken_verified": false,
+  "claimed_76_percent_wire_savings_verified": false,
+  "rights_and_cache_hold": true,
+  "rows": [
+    {
+      "id": 1312,
+      "url": "https://finalvestige.com/accountability/failures-to-protect/gabriel-fernandez-warnings-in-the-system/",
+      "modified": "2026-11-02T21:41:28",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1313,
+      "url": "https://finalvestige.com/accountability/abuse-of-power/watergate-plumbers-abuse-of-power/",
+      "modified": "2026-11-02T21:41:30",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1314,
+      "url": "https://finalvestige.com/accountability/abuse-of-power/iraq-wmd-intelligence-public-claims/",
+      "modified": "2026-11-02T21:41:32",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1315,
+      "url": "https://finalvestige.com/accountability/public-money-private-power/maximus-public-money-private-infrastructure/",
+      "modified": "2026-11-02T21:41:33",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1316,
+      "url": "https://finalvestige.com/accountability/public-money-private-power/andrew-do-orange-county-covid-relief-funds/",
+      "modified": "2026-11-02T21:41:35",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1338,
+      "url": "https://finalvestige.com/free-resources/research-sources/",
+      "modified": "2026-11-03T22:12:43",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1342,
+      "url": "https://finalvestige.com/about/disclosures-policies/",
+      "modified": "2026-09-07T14:30:49",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1377,
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "modified": "2026-11-05T19:47:37",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1433,
+      "url": "https://finalvestige.com/labs/",
+      "modified": "2026-10-29T12:50:50",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1579,
+      "url": "https://finalvestige.com/focus/",
+      "modified": "2026-11-05T17:44:02",
+      "status": "publish",
+      "inline_images": 2,
+      "images": [
+        {
+          "slot": "1579:0",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/10/focus_complete_cover.webp",
+          "origin": "first_party",
+          "alt": "The black and aged-gold cover of Seven Day Focus Fieldbook, Complete Edition.",
+          "width": "1120",
+          "height": "1120",
+          "srcset_present": false,
+          "guest_status": null,
+          "guest_current_src": null,
+          "guest_bytes": null,
+          "guest_decoded_px": null,
+          "rights_cleared": false,
+          "cache_authorized": false,
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "1579:1",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/10/focus_complete_pages.webp",
+          "origin": "first_party",
+          "alt": "Six actual pages from the 52-page Focus Fieldbook, including a step chooser, session worksheet, progress review, audio-claims evaluator and thirty-day tracking log.",
+          "width": "1440",
+          "height": "1210",
+          "srcset_present": false,
+          "guest_status": null,
+          "guest_current_src": null,
+          "guest_bytes": null,
+          "guest_decoded_px": null,
+          "rights_cleared": false,
+          "cache_authorized": false,
+          "wp_write_authorized": false
+        }
+      ]
+    },
+    {
+      "id": 2152,
+      "url": "https://finalvestige.com/free-resources/the-black-bar/",
+      "modified": "2026-11-07T11:43:37",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 2165,
+      "url": "https://finalvestige.com/free-resources/the-same-story-twice/",
+      "modified": "2026-11-07T12:42:55",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 2173,
+      "url": "https://finalvestige.com/free-resources/the-boundary-that-moved/",
+      "modified": "2026-11-07T13:45:49",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 2178,
+      "url": "https://finalvestige.com/free-resources/the-box-behind-the-citation/",
+      "modified": "2026-11-07T14:33:57",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 2185,
+      "url": "https://finalvestige.com/free-resources/the-machine-in-the-drawing/",
+      "modified": "2026-11-07T15:36:42",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    }
+  ]
+}

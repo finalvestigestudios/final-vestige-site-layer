@@ -1,0 +1,151 @@
+{
+  "schema": "fv-published-pages-79-complement-v1",
+  "date_pt": "2026-11-14",
+  "batch": 3,
+  "previous_pilot_ids": [
+    1484,
+    1480,
+    2017,
+    2088,
+    2089,
+    529,
+    77,
+    76,
+    531,
+    525,
+    1304,
+    1868
+  ],
+  "excluded_homepage_id": 6,
+  "method": "authenticated read-only WP pages_get edit; stored img tags; not guest-browser or origin HTTP",
+  "expected": 15,
+  "checked": 15,
+  "errors": [],
+  "source_groups": {},
+  "guest_http_verified": false,
+  "claimed_42_broken_verified": false,
+  "claimed_76_percent_wire_savings_verified": false,
+  "rights_and_cache_hold": true,
+  "rows": [
+    {
+      "id": 748,
+      "url": "https://finalvestige.com/history-lab/",
+      "modified": "2026-10-29T12:51:22",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1027,
+      "url": "https://finalvestige.com/the-turning-screw/",
+      "modified": "2026-11-02T21:40:52",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1029,
+      "url": "https://finalvestige.com/the-failure-chain/",
+      "modified": "2026-11-05T23:40:35",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1031,
+      "url": "https://finalvestige.com/the-last-fix/",
+      "modified": "2026-10-29T13:12:37",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1033,
+      "url": "https://finalvestige.com/the-signal-chain/",
+      "modified": "2026-11-02T21:40:54",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1035,
+      "url": "https://finalvestige.com/the-second-currency/",
+      "modified": "2026-10-29T13:12:44",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1037,
+      "url": "https://finalvestige.com/the-breathing-room/",
+      "modified": "2026-10-29T17:19:57",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1043,
+      "url": "https://finalvestige.com/the-dark-interval/",
+      "modified": "2026-10-29T13:56:35",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1044,
+      "url": "https://finalvestige.com/the-findspot/",
+      "modified": "2026-11-03T14:47:00",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1048,
+      "url": "https://finalvestige.com/the-weather-window/",
+      "modified": "2026-10-29T14:11:53",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1051,
+      "url": "https://finalvestige.com/the-moving-noon/",
+      "modified": "2026-10-29T14:13:29",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1054,
+      "url": "https://finalvestige.com/the-old-line/",
+      "modified": "2026-11-02T21:40:58",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1057,
+      "url": "https://finalvestige.com/the-night-map/",
+      "modified": "2026-10-29T14:15:16",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1060,
+      "url": "https://finalvestige.com/the-open-account/",
+      "modified": "2026-11-02T21:41:00",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 1119,
+      "url": "https://finalvestige.com/the-living-record/",
+      "modified": "2026-10-29T14:17:37",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    }
+  ]
+}
