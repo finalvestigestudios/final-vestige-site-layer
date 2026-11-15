@@ -186,6 +186,61 @@ def _result(errors, rows, counts, required_exports):
                                  'PURCHASABLE_RIGHTS_CLEARED_PREPAREDNESS_SKU_UNVERIFIED']}
 
 
+
+def reconcile_with_all_exports(packet: dict, impact: dict, alias: dict,
+                               render: dict, anchor: dict, wp_dir: Path,
+                               preview_dir: Path, full: dict) -> dict:
+    """R390 is required for the authentic native path, not optional evidence.
+
+    R389's legacy reconcile() remains a synthetic cross-gate API. Never use it
+    by itself to claim ALL export custody: supplemental tools/hubs might be
+    arbitrary 1-byte placeholders and still reach the old 50-file threshold.
+    """
+    result = reconcile(packet, impact, alias, render, anchor, wp_dir, preview_dir)
+    bad = []
+    if not isinstance(full, dict) or full.get('status') != 'ALL_EXPORT_BYTES_REVIEW_HARD_HOLD' or full.get('errors'):
+        bad.append('R390_ALL_EXPORT_CUSTODY_NOT_PASSED')
+    elif (full.get('release_state') != 'DRAFT_HARD_HOLD' or
+          full.get('publication_approved') is not False or
+          full.get('qualified_safety_approved') is not False or
+          full.get('merchant_offer_verified') is not False or
+          full.get('live_release_allowed') is not False):
+        bad.append('R390_INAPPROPRIATE_RELEASE_STATE')
+    else:
+        counts = full.get('counts', {})
+        expected = len(result.get('candidate_intersections', []))
+        if (counts.get('original_articles') != 35 or
+            counts.get('matched_export_pairs') != result.get('counts', {}).get('wp_exports') or
+            counts.get('supplemental_exports_needing_independent_review') !=
+                result.get('counts', {}).get('wp_exports', 0) - expected):
+            bad.append('R390_COUNTS_NOT_RECONCILED')
+        extra_slugs = {r.get('slug') for r in full.get('exports', [])
+                       if isinstance(r, dict) and r.get('kind') == 'unreviewed_supplemental'}
+        original_slugs = {r.get('slug') for r in result.get('candidate_intersections', [])}
+        if (len(full.get('exports', [])) != counts.get('matched_export_pairs') or
+            {r.get('slug') for r in full.get('exports', []) if isinstance(r, dict)} !=
+                original_slugs | extra_slugs or extra_slugs & original_slugs):
+            bad.append('R390_EXPORT_IDENTITIES_NOT_RECONCILED')
+        disk_names, disk_errors = _inventory(Path(wp_dir))
+        if disk_errors or {r.get('slug') for r in full.get('exports', [])} != disk_names:
+            bad.append('R390_EXPORT_IDENTITIES_NOT_RECONCILED')
+        if any(r.get('errors') or r.get('qualified_review_required') is not True or
+               r.get('release_allowed') is not False or r.get('merchant_verified') is not False
+               for r in full.get('exports', [])):
+            bad.append('R390_UNVERIFIED_OUTPUT_OR_APPROVAL')
+        if not isinstance(full.get('evidence_sha256'), str) or not re.fullmatch(r'[a-f0-9]{64}', full['evidence_sha256']):
+            bad.append('R390_EVIDENCE_DIGEST_MISSING')
+    result['all_export_custody'] = {'status': full.get('status') if isinstance(full, dict) else 'MISSING',
+                                   'evidence_sha256': full.get('evidence_sha256') if isinstance(full, dict) else None,
+                                   'supplemental_outputs_remain_unreviewed': True}
+    if bad:
+        result['status'] = 'INVALID_HARD_HOLD'
+        result['errors'] = sorted(set(result.get('errors', []) + bad))
+    result['release_blockers'] = sorted(set(result['release_blockers'] +
+                                        ['SUPPLEMENTAL_EXPORTS_REQUIRE_INDEPENDENT_REVIEW']))
+    return result
+
+
 def native(repo: Path, wp: Path, preview: Path) -> dict:
     """Read pinned Git blob objects and run each independent validator afresh."""
     def read(sha):
@@ -219,7 +274,9 @@ def native(repo: Path, wp: Path, preview: Path) -> dict:
             origin[v['id']] = v['url']
     render = r386.audit(packet, wp, preview, source_urls=urls)
     anchor = r387.audit_original_candidates(packet, wp, read)
-    result = reconcile(packet, impact, alias, render, anchor, wp, preview)
+    r390 = load_dependency('r390_all_export_custody')
+    full = r390.audit(wp, preview, [article['slug'] for article in packet['articles']])
+    result = reconcile_with_all_exports(packet, impact, alias, render, anchor, wp, preview, full)
     result['original_manifest_blob_ids'] = list(ORIGINAL_PINS)
     return result
 
