@@ -1,0 +1,128 @@
+{
+  "version": "R375",
+  "stage": "review_only_not_live",
+  "source_time": "2026-11-15T09:32:00+00:00",
+  "program": "single existing Jetpack list",
+  "campaign_original_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "mix": {
+    "editorial": 4,
+    "commercial_reserved": 2
+  },
+  "issues": [
+    {
+      "id": 1,
+      "send_allowed": false,
+      "merchant_hold": false
+    },
+    {
+      "id": 2,
+      "send_allowed": false,
+      "merchant_hold": false
+    },
+    {
+      "id": 3,
+      "send_allowed": false,
+      "merchant_hold": true
+    },
+    {
+      "id": 4,
+      "send_allowed": false,
+      "merchant_hold": false
+    },
+    {
+      "id": 5,
+      "send_allowed": false,
+      "merchant_hold": true
+    },
+    {
+      "id": 6,
+      "send_allowed": false,
+      "merchant_hold": false
+    }
+  ],
+  "jetpack": {
+    "enabled": true,
+    "automatic_new_posts": false,
+    "full_format": true,
+    "technically_sendable": true,
+    "counts": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2
+    },
+    "email_eligible_unique": null,
+    "actual_welcome_receipt_verified": false,
+    "native_preview_verified": false,
+    "postal_footer_verified": false,
+    "working_unsubscribe_verified": false
+  },
+  "progression": [
+    {
+      "event": "landing_visit",
+      "source": "qualified human session",
+      "verified": false,
+      "owner": "Grok + Claude",
+      "notes": "unique real asset_id as utm_content; no manufactured exposure"
+    },
+    {
+      "event": "cta_click",
+      "source": "existing analytics only",
+      "verified": false,
+      "owner": "Claude",
+      "notes": "diagnostic not lead or sale"
+    },
+    {
+      "event": "confirmed_signup",
+      "source": "authoritative Jetpack subscribed email receipt, one opaque dedupe key",
+      "verified": false,
+      "owner": "Focus + Claude",
+      "notes": "not download panel, URL param, follower or attempt"
+    },
+    {
+      "event": "welcome_download",
+      "source": "consented received-email evidence and successful resource",
+      "verified": false,
+      "owner": "Focus + founder",
+      "notes": "download does not confirm email"
+    },
+    {
+      "event": "affiliate_outbound",
+      "source": "allowed approved guide and assigned link",
+      "verified": false,
+      "owner": "Mind + Commerce",
+      "notes": "not a customer"
+    },
+    {
+      "event": "partner_reported_paid_conversion",
+      "source": "merchant settlement / unique order minus refund+fees",
+      "verified": false,
+      "owner": "Commerce",
+      "notes": "do not infer sale from click"
+    }
+  ],
+  "offer_priority": "Zen12 only after SKU-specific approval; fallback commercial issues remain HOLD",
+  "affiliate": {
+    "publisher_approved": null,
+    "zen12_email_permission": null,
+    "total_focus_email_permission": null,
+    "earning_urls_verified": false,
+    "approved_live_guides": false,
+    "referred_checkouts_verified": false
+  },
+  "commercial_compliance": {
+    "fv_physical_address_verified": false,
+    "unsubscribe_working_verified": false,
+    "native_preview_verified": false,
+    "final_approval": false
+  },
+  "kpis": {
+    "settled_orders": null,
+    "net_revenue": null,
+    "qualified_human_sessions": null,
+    "net_per_1000_qualified_humans": null,
+    "cohort_days": [
+      7,
+      30
+    ]
+  }
+}
