@@ -86,9 +86,17 @@
     418,
     413,
     407,
-    370
+    370,
+    367,
+    330,
+    299,
+    292,
+    291,
+    290,
+    289,
+    288
   ],
-  "cms_img_tags_read": 80,
+  "cms_img_tags_read": 135,
   "media_attachments_read": 132,
   "media_total_original_stored_bytes": 90403013,
   "threshold_strictly_greater_than_bytes": 1500000,
@@ -118,7 +126,24 @@
       "cache_authorized": false,
       "wp_upload_authorized": false,
       "post_rewrite_authorized": false,
-      "published_inline_uses": []
+      "published_inline_uses": [
+        {
+          "post_id": 299,
+          "post_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+          "post_title": "Thirty Men Were Enough",
+          "post_modified": "2026-11-02T21:40:05",
+          "image_index": 1,
+          "wp_view_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=1024%2C681&ssl=1",
+          "img_width": 1024,
+          "img_height": 681,
+          "srcset_present": true,
+          "sizes_present": true,
+          "loading": "lazy",
+          "guest_current_src": null,
+          "guest_http_status": null,
+          "guest_transferred_bytes": null
+        }
+      ]
     },
     {
       "attachment_id": 2640,
@@ -313,7 +338,24 @@
       "cache_authorized": false,
       "wp_upload_authorized": false,
       "post_rewrite_authorized": false,
-      "published_inline_uses": []
+      "published_inline_uses": [
+        {
+          "post_id": 299,
+          "post_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+          "post_title": "Thirty Men Were Enough",
+          "post_modified": "2026-11-02T21:40:05",
+          "image_index": 0,
+          "wp_view_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1024%2C676&ssl=1",
+          "img_width": 1024,
+          "img_height": 676,
+          "srcset_present": true,
+          "sizes_present": true,
+          "loading": "lazy",
+          "guest_current_src": null,
+          "guest_http_status": null,
+          "guest_transferred_bytes": null
+        }
+      ]
     },
     {
       "attachment_id": 40,
@@ -391,7 +433,24 @@
       "cache_authorized": false,
       "wp_upload_authorized": false,
       "post_rewrite_authorized": false,
-      "published_inline_uses": []
+      "published_inline_uses": [
+        {
+          "post_id": 299,
+          "post_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+          "post_title": "Thirty Men Were Enough",
+          "post_modified": "2026-11-02T21:40:05",
+          "image_index": 7,
+          "wp_view_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=1024%2C683&ssl=1",
+          "img_width": 1024,
+          "img_height": 683,
+          "srcset_present": true,
+          "sizes_present": true,
+          "loading": "lazy",
+          "guest_current_src": null,
+          "guest_http_status": null,
+          "guest_transferred_bytes": null
+        }
+      ]
     },
     {
       "attachment_id": 482,
