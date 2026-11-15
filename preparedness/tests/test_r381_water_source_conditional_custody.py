@@ -76,6 +76,18 @@ class SourceScopeTests(unittest.TestCase):
     def test_missing_claim_heater_is_invalid(self):
         def change(b,m,r):return b.replace(b'water heater tank',b'some source'),m,r
         self.assertIn('ORIGINAL_HEATER_CLAIM_MISSING',run(change)['errors'])
+    def test_second_independent_citation_same_source_does_not_hide_target(self):
+        def change(b,m,r):
+            return b.replace(b'</ol>',b'<li>Fuel contamination requires another source.{{cite:cdc-find-clean-water}}</li></ol>'),m,r
+        out=run(change)
+        self.assertEqual(out['status'],'CLAIM_CONTEXT_REVIEW_HARD_HOLD')
+        self.assertEqual(out['citation_occurrences'],2)
+        self.assertIn('melted ice cubes',out['claim_excerpt'])
+    def test_duplicate_qualified_claim_requires_human_triage(self):
+        def change(b,m,r):
+            item=b[b.index(b'<li>'):b.index(b'</li>')+5]
+            return b.replace(b'</ol>',item+b'</ol>'),m,r
+        self.assertIn('EXPECTED_SINGLE_CLAIM_LIST_ITEM_NOT_FOUND',run(change)['errors'])
     def test_missing_supports_rejected(self):
         def change(b,m,r):r['sources'][0]['supports']='';return b,m,r
         self.assertIn('SOURCE_SUPPORTS_MISSING',run(change)['errors'])
