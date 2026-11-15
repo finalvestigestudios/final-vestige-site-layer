@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1100" viewBox="0 0 800 1100" role="img" aria-labelledby="title desc">
+<title id="title">The Taylor succession: principal, interest, and legal fees were decided separately</title>
+<desc id="desc">A studio-original source-derived diagram of the Bohemia Spillway Taylor succession litigation. The parties stipulated 166,842 dollars and 53 cents principal in 2003, while the trial judgment says 166,842 dollars and 50 cents. Investment-return interest applies July 1, 1991 through July 1, 1993; legal interest from July 2, 1993 until paid. The April 6, 2005 appellate court affirmed interest but reversed attorneys' fees. This is a ruling, not evidence of actual disbursement. Source: Louisiana Fourth Circuit case 2004-CA-0358, mirrored at cases.justia.com.</desc>
+<metadata>Original editorial diagram by Final Vestige Studios, November 15, 2026. Source: https://cases.justia.com/louisiana/fourth-circuit-court-of-appeal/2005-2004-ca-0358.pdf?ts=1437512407. Copyright 2026 Final Vestige Studios. No archival photo or AI reconstruction. Diagram does not establish payment.</metadata>
+<rect width="800" height="1100" fill="#0C1925"/>
+<rect x="0" y="0" width="800" height="12" fill="#C5A56B"/>
+<text x="48" y="66" font-family="Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="2.2" fill="#D7B87A">FINAL VESTIGE STUDIOS  /  EVIDENCE FILE</text>
+<text x="48" y="129" font-family="Georgia, serif" font-weight="700" font-size="47" fill="#FBF7EF">A judgment is</text>
+<text x="48" y="182" font-family="Georgia, serif" font-weight="700" font-size="47" fill="#FBF7EF">not a receipt</text>
+<text x="48" y="228" font-family="Arial, sans-serif" font-size="25" fill="#CED8DE">The Taylor succession · Louisiana Fourth Circuit, 2005</text>
+<path d="M48 267 H752" stroke="#637788" stroke-width="2"/>
+<rect x="48" y="296" width="704" height="180" rx="15" fill="#193243" stroke="#527487" stroke-width="2"/>
+<text x="75" y="343" font-size="24" letter-spacing="1" font-family="Arial, sans-serif" fill="#E2CA96" font-weight="700">01  AGREED PRINCIPAL</text>
+<text x="75" y="406" font-family="Georgia, serif" font-size="50" fill="#FFFFFF" font-weight="700">$166,842.53</text>
+<text x="75" y="447" font-size="23" font-family="Arial, sans-serif" fill="#D8E2E5">Parties' 2003 stipulation; mostly mineral royalties</text>
+<path d="M399 478 V508" stroke="#E4BC7C" stroke-width="5"/>
+<path d="M388 501 L399 514 L410 501" stroke="#E4BC7C" stroke-width="4" fill="none" stroke-linecap="round"/>
+<rect x="48" y="521" width="704" height="184" rx="15" fill="#193243" stroke="#527487" stroke-width="2"/>
+<text x="75" y="565" font-size="24" letter-spacing="1" font-family="Arial, sans-serif" fill="#E2CA96" font-weight="700">02  INTEREST, TWO PERIODS</text>
+<text x="75" y="612" font-size="27" font-family="Arial, sans-serif" fill="#FFFFFF" font-weight="700">July 1991–July 1993</text>
+<text x="75" y="645" font-size="23" font-family="Arial, sans-serif" fill="#D8E2E5">District investment-return rate</text>
+<text x="75" y="680" font-size="24" font-family="Arial, sans-serif" fill="#FFFFFF" font-weight="700">From July 2, 1993 · Legal interest until paid</text>
+<path d="M399 709 V739" stroke="#E4BC7C" stroke-width="5"/>
+<path d="M388 732 L399 745 L410 732" stroke="#E4BC7C" stroke-width="4" fill="none" stroke-linecap="round"/>
+<rect x="48" y="752" width="704" height="149" rx="15" fill="#193243" stroke="#527487" stroke-width="2"/>
+<text x="75" y="797" font-size="24" letter-spacing="1" font-family="Arial, sans-serif" fill="#E2CA96" font-weight="700">03  ATTORNEYS' FEES</text>
+<text x="75" y="844" font-size="31" font-family="Arial, sans-serif" fill="#FFFFFF" font-weight="700">Award reversed on appeal</text>
+<text x="75" y="879" font-size="23" font-family="Arial, sans-serif" fill="#D8E2E5">April 6, 2005 · Interest award affirmed</text>
+<rect x="48" y="923" width="704" height="129" rx="13" fill="#352B24" stroke="#C5A56B" stroke-width="2"/>
+<text x="73" y="967" font-size="25" font-family="Arial, sans-serif" font-weight="700" fill="#F7DEAA">WHAT THIS DOES NOT PROVE</text>
+<text x="73" y="1004" font-size="23" font-family="Arial, sans-serif" fill="#FFF8E8">No check, bank transfer, or beneficiary receipt</text>
+<text x="73" y="1036" font-size="21" font-family="Arial, sans-serif" fill="#D8D5CC">Trial order prints $166,842.50 (3¢ difference).</text>
+<text x="48" y="1081" font-size="17" font-family="Arial, sans-serif" fill="#B6C3C9">Source: Frank v. Orleans Levee District, No. 2004-CA-0358, pp. 3–9 · © FV 2026</text>
+</svg>
