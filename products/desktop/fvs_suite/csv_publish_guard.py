@@ -53,5 +53,9 @@ def private_csv_failure(error: OSError) -> OSError:
     """
     if isinstance(error, FileExistsError):
         return FileExistsError(_COLLISION)
-    code = error.errno if type(error.errno) is int and error.errno > 0 else errno.EIO
+    # Read the built-in OSError slot directly. Subclasses can override
+    # ``errno`` via a property or ``__getattribute__`` with private text,
+    # so ordinary attribute lookup is neither trusted nor privacy-safe.
+    native_code = OSError.errno.__get__(error, OSError)
+    code = native_code if type(native_code) is int and native_code > 0 else errno.EIO
     return OSError(code, _FAILED)
