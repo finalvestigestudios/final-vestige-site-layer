@@ -52,7 +52,7 @@ function sourceRows(early,later){
 function pageEvidence(run){
  // A partial, failed or internally inconsistent collector run cannot certify even
  // six apparently-loaded P0 slots. Recalculate the census from underlying DOM proofs.
- if(!isObject(run)||run.status!=='complete_browser_image_census'||run.probe_version<3||!['priority','all'].includes(run.mode)||
+ if(!isObject(run)||run.status!=='complete_browser_image_census'||(!safeInt(run.probe_version)||run.probe_version<3)||!['priority','all'].includes(run.mode)||
     !['390x844','1440x900'].includes(run.viewport)||
     !isObject(run.run_profile)||run.run_profile.cache_disabled!==true||
     run.run_profile.service_worker_bypassed!==true||!Array.isArray(run.pages)||
@@ -89,7 +89,10 @@ function validateNetwork(slot,page,kind){
  // Cached errors (including service-worker 404s) must not establish a fresh
  // network-origin P0 failure. All cache indicators (including memory) must explicitly be false.
  if(n.was_cached!==false||n.from_disk_cache!==false||n.from_memory_cache!==false||
-    n.from_service_worker!==false)return null;
+    n.from_service_worker!==false||
+    // A manually set or replayed set of false cache flags is not evidence that
+    // the Image request had a completed, policy-verified CDP lifecycle.
+    n.cold_event_chain_complete!==true||n.cold_network_transfer_proven!==true)return null;
  if(kind==='loaded'){
   if(!Number.isSafeInteger(slot.natural_width)||slot.natural_width<=0||
      !Number.isSafeInteger(slot.natural_height)||slot.natural_height<=0||
