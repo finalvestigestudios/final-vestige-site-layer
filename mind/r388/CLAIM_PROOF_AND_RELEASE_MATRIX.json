@@ -1,0 +1,523 @@
+{
+  "schema": "fv-mind-r388-evidence-v1",
+  "audited_on": "2026-11-14",
+  "release": "HARD_HOLD",
+  "first_party_current_state": "Focus live; mind hub unpublished; paid FV Mind SKU not authenticated",
+  "sources": {
+    "ost1973": {
+      "url": "https://doi.org/10.1038/scientificamerican1073-94",
+      "type": "historical_primary",
+      "note": "1973 article on auditory beat phenomenon; does not demonstrate product efficacy"
+    },
+    "ing2023": {
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "systematic_review",
+      "note": "14 EEG studies: 5 supportive, 8 contradictory, 1 mixed"
+    },
+    "plat2024": {
+      "url": "https://doi.org/10.1080/18387357.2024.2374759",
+      "type": "systematic_review",
+      "note": "12 RCTs non-clinical stress; 8 with at least one favoring result, 4 null; limitations"
+    },
+    "zen12": {
+      "url": "https://zen12.com/",
+      "type": "official_seller",
+      "note": "Features and promises only; seller price display varied"
+    },
+    "catalog": {
+      "url": "https://inspire3.com/",
+      "type": "official_seller_catalog",
+      "note": "Product family and marketing, not clinical substantiation"
+    },
+    "affiliate": {
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public_program",
+      "note": "Program exists but does not prove account acceptance, channel rights or an issued URL"
+    },
+    "hypnosis": {
+      "url": "https://hypnosislive.com/",
+      "type": "official_seller",
+      "note": "Over 200 MP3 seller claim; sale page stale June 2026; do not adopt countdown"
+    },
+    "brainwave": {
+      "url": "https://brainwaveshots.com/",
+      "type": "official_seller",
+      "note": "Seller promotion and category list; no approved commercial SKU"
+    },
+    "ftc": {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory_guidance",
+      "note": "Adjacent clear material-connection disclosure"
+    },
+    "ftchealth": {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory_guidance",
+      "note": "Competent reliable evidence for health/efficacy claims"
+    },
+    "focus": {
+      "url": "https://finalvestige.com/focus/",
+      "type": "first_party_live",
+      "note": "52-page free fieldbook and existing Jetpack enrollment"
+    },
+    "puysegur": {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "first_party_route",
+      "note": "Verified by Issue 171 route; direct fetch limited this run"
+    }
+  },
+  "records": [
+    {
+      "id": "M388-01",
+      "claim": "Binaural tones separately played can elicit perceived beat",
+      "disposition": "independent_supported",
+      "source_id": "ost1973",
+      "editorial_action": "Use with suitable listening conditions; no physiology guarantee"
+    },
+    {
+      "id": "M388-02",
+      "claim": "Oster published in 1973 Scientific American",
+      "disposition": "independent_supported",
+      "source_id": "ost1973",
+      "editorial_action": "Bibliographic fact"
+    },
+    {
+      "id": "M388-03",
+      "claim": "Binaural-beat perception entails global EEG entrainment",
+      "disposition": "unsubstantiated",
+      "source_id": "ing2023",
+      "editorial_action": "Exclude"
+    },
+    {
+      "id": "M388-04",
+      "claim": "2023 review included fourteen EEG studies",
+      "disposition": "independent_supported",
+      "source_id": "ing2023",
+      "editorial_action": "Use"
+    },
+    {
+      "id": "M388-05",
+      "claim": "Five studies found supporting EEG effects",
+      "disposition": "independent_supported",
+      "source_id": "ing2023",
+      "editorial_action": "Always include eight contrary and one mixed"
+    },
+    {
+      "id": "M388-06",
+      "claim": "Eight studies contradicted entrainment",
+      "disposition": "independent_supported",
+      "source_id": "ing2023",
+      "editorial_action": "Use"
+    },
+    {
+      "id": "M388-07",
+      "claim": "One study reported mixed EEG effects",
+      "disposition": "independent_supported",
+      "source_id": "ing2023",
+      "editorial_action": "Use"
+    },
+    {
+      "id": "M388-08",
+      "claim": "EEG studies had considerable heterogeneity",
+      "disposition": "independent_supported",
+      "source_id": "ing2023",
+      "editorial_action": "Use"
+    },
+    {
+      "id": "M388-09",
+      "claim": "Specific binaural frequency guarantees attention",
+      "disposition": "unsubstantiated",
+      "source_id": "ing2023",
+      "editorial_action": "Exclude"
+    },
+    {
+      "id": "M388-10",
+      "claim": "2024 stress review included twelve RCTs",
+      "disposition": "independent_supported",
+      "source_id": "plat2024",
+      "editorial_action": "Use"
+    },
+    {
+      "id": "M388-11",
+      "claim": "Eight stress trials had >=1 favorable outcome",
+      "disposition": "independent_supported",
+      "source_id": "plat2024",
+      "editorial_action": "Qualify methodological limitations"
+    },
+    {
+      "id": "M388-12",
+      "claim": "Four stress trials had no between-group effect",
+      "disposition": "independent_supported",
+      "source_id": "plat2024",
+      "editorial_action": "Use"
+    },
+    {
+      "id": "M388-13",
+      "claim": "Broad stress-management recommendation established",
+      "disposition": "contradicted_by_caution",
+      "source_id": "plat2024",
+      "editorial_action": "Do not recommend broadly"
+    },
+    {
+      "id": "M388-14",
+      "claim": "Binaural tracks cure anxiety/depression",
+      "disposition": "unsubstantiated",
+      "source_id": "ftchealth",
+      "editorial_action": "Exclude entirely"
+    },
+    {
+      "id": "M388-15",
+      "claim": "Zen12 Premium includes 12 levels",
+      "disposition": "seller_feature",
+      "source_id": "zen12",
+      "editorial_action": "Attribute to seller"
+    },
+    {
+      "id": "M388-16",
+      "claim": "Zen12 Premium includes 48 MP3 tracks",
+      "disposition": "seller_feature",
+      "source_id": "zen12",
+      "editorial_action": "Attribute to seller"
+    },
+    {
+      "id": "M388-17",
+      "claim": "Four Zen12 audio styles listed",
+      "disposition": "seller_feature",
+      "source_id": "zen12",
+      "editorial_action": "Guided, music, nature, white noise; attribute"
+    },
+    {
+      "id": "M388-18",
+      "claim": "Zen12 seller offers one-year refund guarantee",
+      "disposition": "seller_policy_unverified",
+      "source_id": "zen12",
+      "editorial_action": "No verified completed refund"
+    },
+    {
+      "id": "M388-19",
+      "claim": "Zen12 delivered full hour meditation results in 12 minutes",
+      "disposition": "seller_benefit_unsupported",
+      "source_id": "zen12",
+      "editorial_action": "Do not adopt"
+    },
+    {
+      "id": "M388-20",
+      "claim": "Zen12 meditation audio proven to control brainwaves",
+      "disposition": "seller_benefit_unsupported",
+      "source_id": "zen12",
+      "editorial_action": "Do not adopt"
+    },
+    {
+      "id": "M388-21",
+      "claim": "Zen12 Premium independent trial validates benefits",
+      "disposition": "no_evidence_authenticated",
+      "source_id": "ing2023",
+      "editorial_action": "No eligible direct trial authenticated"
+    },
+    {
+      "id": "M388-22",
+      "claim": "Zen12 price from public page is final referred checkout price",
+      "disposition": "unverified",
+      "source_id": "zen12",
+      "editorial_action": "Varied public $87/$87.99; no price on guide"
+    },
+    {
+      "id": "M388-23",
+      "claim": "Zen12 authorized FV affiliate link exists",
+      "disposition": "unverified",
+      "source_id": "affiliate",
+      "editorial_action": "No named approval"
+    },
+    {
+      "id": "M388-24",
+      "claim": "FV has approved website marketing channel",
+      "disposition": "unverified",
+      "source_id": "affiliate",
+      "editorial_action": "Must verify named agreement"
+    },
+    {
+      "id": "M388-25",
+      "claim": "FV has approved email/social channel marketing",
+      "disposition": "unverified",
+      "source_id": "affiliate",
+      "editorial_action": "Not established"
+    },
+    {
+      "id": "M388-26",
+      "claim": "Inspire3 affiliate site publicly advertises commissions",
+      "disposition": "seller_marketing_only",
+      "source_id": "affiliate",
+      "editorial_action": "Never project payout or name rate"
+    },
+    {
+      "id": "M388-27",
+      "claim": "Gmail consumer promotion is proof of partner enrollment",
+      "disposition": "false_evidence",
+      "source_id": "affiliate",
+      "editorial_action": "Reject"
+    },
+    {
+      "id": "M388-28",
+      "claim": "Hypnosis Live over 200 MP3",
+      "disposition": "seller_feature",
+      "source_id": "hypnosis",
+      "editorial_action": "Not proof of benefit"
+    },
+    {
+      "id": "M388-29",
+      "claim": "Hypnosis Live current $2 sale",
+      "disposition": "unverified_stale",
+      "source_id": "hypnosis",
+      "editorial_action": "June 30 deadline stale relative to Nov 14"
+    },
+    {
+      "id": "M388-30",
+      "claim": "Brainwave Shots instantly changes feelings",
+      "disposition": "seller_benefit_unsupported",
+      "source_id": "brainwave",
+      "editorial_action": "Exclude"
+    },
+    {
+      "id": "M388-31",
+      "claim": "Adjacent disclosure required for earning endorsement",
+      "disposition": "guidance",
+      "source_id": "ftc",
+      "editorial_action": "Near actual active link"
+    },
+    {
+      "id": "M388-32",
+      "claim": "General disclosure page alone is adequate",
+      "disposition": "misleading",
+      "source_id": "ftc",
+      "editorial_action": "Reject"
+    },
+    {
+      "id": "M388-33",
+      "claim": "Medical/health benefit claims need robust evidence",
+      "disposition": "guidance",
+      "source_id": "ftchealth",
+      "editorial_action": "No unsupported health claims"
+    },
+    {
+      "id": "M388-34",
+      "claim": "Focus Fieldbook 52-page free resource",
+      "disposition": "first_party_live",
+      "source_id": "focus",
+      "editorial_action": "No new email list"
+    },
+    {
+      "id": "M388-35",
+      "claim": "Puységur archive proves animal magnetism",
+      "disposition": "unsubstantiated",
+      "source_id": "puysegur",
+      "editorial_action": "Historical records are not causal efficacy proof"
+    },
+    {
+      "id": "M388-36",
+      "claim": "Outbound affiliate_click equals paid sale",
+      "disposition": "false_metric",
+      "source_id": "ftc",
+      "editorial_action": "Never conflate"
+    },
+    {
+      "id": "M388-37",
+      "claim": "Net 1000 revenue is currently calculable",
+      "disposition": "unverified",
+      "source_id": "affiliate",
+      "editorial_action": "No settled sale or denominator"
+    },
+    {
+      "id": "M388-38",
+      "claim": "A/B film beats text-only in sales",
+      "disposition": "untested_hypothesis",
+      "source_id": "affiliate",
+      "editorial_action": "Only after rights and hold cleared"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_publisher_approval",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "authorized_website_channel",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "authorized_social_channel",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "authorized_email_channel",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "issued_earning_link",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "exact_sku_authorized",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "tracking_terms",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "creative_rights",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "public_price_recheck",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "referred_checkout_price",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "currency_taxes_upsells",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "refund_terms_verified",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "refund_execution_evidence",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "product_delivery_verified",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "independent_efficacy_check",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "no_health_claims",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "adjacent_ftc_disclosure",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "affiliate_label_comprehension",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "mobile_checkout_preview",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "first_party_consent",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "existing_jetpack_only",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "real_grok_asset_id",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "approved_creator_hook",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "canonical_mobile_route",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "attribution_pseudonymous",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "no_pii_tracking",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "affiliate_click_not_sale",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "merchant_paid_order_proof",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "refund_reconciliation",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "fees_reconciliation",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "7_day_cohort",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "30_day_cohort",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "sample_warning",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "actual_encoded_video",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "real_browser_accessibility",
+      "state": "HARD_HOLD",
+      "passed": false
+    },
+    {
+      "id": "founder_release_approval",
+      "state": "HARD_HOLD",
+      "passed": false
+    }
+  ],
+  "notes": [
+    "Seller claims are not independent efficacy evidence.",
+    "No source establishes named Final Vestige Inspire3 eligibility or issued earning URL.",
+    "No clicks, leads or historical draft assertions are evidence of paid orders."
+  ]
+}
