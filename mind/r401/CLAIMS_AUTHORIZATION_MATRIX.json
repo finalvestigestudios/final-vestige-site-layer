@@ -1,0 +1,363 @@
+{
+  "date": "2026-11-15",
+  "status": "SOURCE_ONLY_HOLD",
+  "source_urls": {
+    "inspire": "https://inspire3.com/",
+    "partner": "https://affiliates.inspire3.com/",
+    "zen": "https://zen12.com/",
+    "checkout": "https://zen12.com/getstarted",
+    "hyp": "https://hypnosislive.com/mental-skills/total-focus",
+    "hypfaq": "https://hypnosislive.com/faq",
+    "focusshot": "https://brainwaveshots.com/focus-shot",
+    "shotfaq": "https://brainwaveshots.com/faq",
+    "meditation": "https://pubmed.ncbi.nlm.nih.gov/38197226/",
+    "beats": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "trial": "https://doi.org/10.1111/bjhp.12745",
+    "nccih": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "puys": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "field": "https://finalvestige.com/focus/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/"
+  },
+  "claims": [
+    {
+      "id": "zen12-library",
+      "product": "Zen12",
+      "type": "seller_format",
+      "claim": "12 levels and 48 MP3s",
+      "verdict": "supported_seller_description",
+      "url": "https://zen12.com/getstarted"
+    },
+    {
+      "id": "zen12-guides",
+      "product": "Zen12",
+      "type": "seller_format",
+      "claim": "Quick-start and user manual/support described",
+      "verdict": "supported_seller_description",
+      "url": "https://zen12.com/getstarted"
+    },
+    {
+      "id": "zen12-effect",
+      "product": "Zen12",
+      "type": "seller_efficacy",
+      "claim": "One hour equivalent effects in 12 minutes",
+      "verdict": "unsubstantiated_product_efficacy",
+      "url": "https://zen12.com/"
+    },
+    {
+      "id": "zen12-price",
+      "product": "Zen12",
+      "type": "public_checkout_snapshot",
+      "claim": "$187.99 less seller-controlled $100 discount, before tax, inspected Nov 15",
+      "verdict": "observed_not_affiliate_price",
+      "url": "https://zen12.com/getstarted"
+    },
+    {
+      "id": "zen12-refund",
+      "product": "Zen12",
+      "type": "seller_policy",
+      "claim": "Money back guarantee represented; full terms require checkout verification",
+      "verdict": "seller_representation_only",
+      "url": "https://zen12.com/getstarted"
+    },
+    {
+      "id": "totalfocus-length",
+      "product": "Total Focus",
+      "type": "seller_format",
+      "claim": "33 minute 47 MB file",
+      "verdict": "supported_seller_description",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "totalfocus-price",
+      "product": "Total Focus",
+      "type": "public_page_snapshot",
+      "claim": "$17.95 listed inspected Nov 15",
+      "verdict": "observed_not_affiliate_price",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "totalfocus-cognition",
+      "product": "Total Focus",
+      "type": "seller_efficacy",
+      "claim": "100% razor-sharp concentration on demand",
+      "verdict": "unsubstantiated_product_efficacy",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "totalfocus-refund",
+      "product": "Total Focus",
+      "type": "seller_policy",
+      "claim": "14-day request window; maximum five sessions yearly",
+      "verdict": "seller_representation_only",
+      "url": "https://hypnosislive.com/faq"
+    },
+    {
+      "id": "focusshot-formats",
+      "product": "Focus Shot",
+      "type": "seller_format",
+      "claim": "15/30 minute plus brainwave-only files",
+      "verdict": "supported_seller_description",
+      "url": "https://brainwaveshots.com/focus-shot"
+    },
+    {
+      "id": "focusshot-price",
+      "product": "Focus Shot",
+      "type": "public_page_snapshot",
+      "claim": "$17.99 listed inspected Nov 15",
+      "verdict": "observed_not_affiliate_price",
+      "url": "https://brainwaveshots.com/focus-shot"
+    },
+    {
+      "id": "focusshot-four-hours",
+      "product": "Focus Shot",
+      "type": "seller_efficacy",
+      "claim": "Effects claimed four hours or longer",
+      "verdict": "unsubstantiated_product_efficacy",
+      "url": "https://brainwaveshots.com/focus-shot"
+    },
+    {
+      "id": "focusshot-safety",
+      "product": "Focus Shot",
+      "type": "seller_safety",
+      "claim": "Seller says do not use with epilepsy or if need to remain awake",
+      "verdict": "seller_precaution_not_medical_advice",
+      "url": "https://brainwaveshots.com/faq"
+    },
+    {
+      "id": "focusshot-refund",
+      "product": "Focus Shot",
+      "type": "seller_policy",
+      "claim": "One year with refund count/order conditions on FAQ",
+      "verdict": "seller_representation_only",
+      "url": "https://brainwaveshots.com/faq"
+    },
+    {
+      "id": "digital-review",
+      "product": "Digital mindfulness research",
+      "type": "independent",
+      "claim": "19 studies 1654 participants; mixed outcomes",
+      "verdict": "supported_for_studied_interventions_only",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38197226/"
+    },
+    {
+      "id": "binaural-review",
+      "product": "Binaural beat EEG",
+      "type": "independent",
+      "claim": "14 studies; five support, eight contradict, one mixed",
+      "verdict": "supported_for_studied_stimulation_only",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/"
+    },
+    {
+      "id": "clinical-translation",
+      "product": "All three products",
+      "type": "inference",
+      "claim": "General meditation and sound studies prove exact commercial effect",
+      "verdict": "not_supported",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38197226/"
+    },
+    {
+      "id": "approval",
+      "product": "Final Vestige partner",
+      "type": "authorization",
+      "claim": "Publisher application/approval/channel rights",
+      "verdict": "unverified_private_record",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "earning-link",
+      "product": "Final Vestige partner",
+      "type": "authorization",
+      "claim": "Issued compliant tracked earning URL",
+      "verdict": "unverified_private_record",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "grok-ids",
+      "product": "Grok/Praxxis",
+      "type": "attribution",
+      "claim": "Three actual public immutable asset IDs",
+      "verdict": "unverified_creator_record",
+      "url": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit"
+    },
+    {
+      "id": "focus-lead",
+      "product": "Existing Jetpack",
+      "type": "measurement",
+      "claim": "Confirmed double-opt-in/delivered lead for campaign",
+      "verdict": "unverified_provider_record",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "paid-sales",
+      "product": "Commerce",
+      "type": "measurement",
+      "claim": "Partner-settled commission with refunds/fees",
+      "verdict": "unverified_merchant_record",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "ftc-adjacent",
+      "product": "All future earning links",
+      "type": "compliance",
+      "claim": "Material connection plainly disclosed adjacent to CTA",
+      "verdict": "required_gate",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "ftc-benefits",
+      "product": "All health claims",
+      "type": "compliance",
+      "claim": "Product-specific competent reliable scientific substantiation",
+      "verdict": "required_gate",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "description": "Named Final Vestige publisher account acceptance",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G02",
+      "description": "Product and channel permission (website/social/email)",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G03",
+      "description": "Issued unmodified tracking URL and rules",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G04",
+      "description": "Allowed creative usage and original-copy review",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G05",
+      "description": "Current seller refund terms and restrictions",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G06",
+      "description": "Referred checkout total, tax, geography, devices",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G07",
+      "description": "Verified separately deliverable FV-owned paid SKU if pivoting",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G08",
+      "description": "Authorized off-site link after founder release",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G09",
+      "description": "Near-link disclosure survives mobile and no-JS",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G10",
+      "description": "Unsupported health/performance claims removed",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G11",
+      "description": "Real WCAG 2.2 AA keyboard/mobile browser review",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G12",
+      "description": "Real WordPress sanitizer/preview review",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G13",
+      "description": "Video rights cleared and encoded; 30–45 seconds",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G14",
+      "description": "Captions, transcript and keyboard playback",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G15",
+      "description": "A/B copy parity and random allocation review",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G16",
+      "description": "No duplicated signup list or scripts",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G17",
+      "description": "Jetpack consent/confirmation/delivery verified",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G18",
+      "description": "Attribution asset IDs and campaign mapping validated",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G19",
+      "description": "Partner payout and refunded commission evidence",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G20",
+      "description": "Order/fee/refund/net reconcilable at 7/30 days",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G21",
+      "description": "Privacy and consent rules independently reviewed",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G22",
+      "description": "Commerce/content separation inspected",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G23",
+      "description": "Homepage PR #49 and Mind PR #172 untouched",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    },
+    {
+      "id": "G24",
+      "description": "Founder/QA production release sign-off",
+      "status": "HOLD",
+      "evidence": "not established in this run"
+    }
+  ]
+}
