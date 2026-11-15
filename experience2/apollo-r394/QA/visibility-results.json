@@ -1,0 +1,197 @@
+{
+  "assertions": 85,
+  "axe_core": "NOT_RUN: genuine reviewed build unavailable",
+  "contexts": [
+    {
+      "control_count": 34,
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 144,
+      "horizontal_overflow": false,
+      "name": "320-mobile",
+      "nojs": false,
+      "semantic_pass": true,
+      "visibility_pass": true,
+      "width": 320
+    },
+    {
+      "control_count": 34,
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 68,
+      "horizontal_overflow": false,
+      "name": "390-mobile",
+      "nojs": false,
+      "semantic_pass": true,
+      "visibility_pass": true,
+      "width": 390
+    },
+    {
+      "control_count": 34,
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 76,
+      "horizontal_overflow": false,
+      "name": "768-tablet",
+      "nojs": false,
+      "semantic_pass": true,
+      "visibility_pass": true,
+      "width": 768
+    },
+    {
+      "control_count": 34,
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 84,
+      "horizontal_overflow": false,
+      "name": "1440-desktop",
+      "nojs": false,
+      "semantic_pass": true,
+      "visibility_pass": true,
+      "width": 1440
+    },
+    {
+      "control_count": 34,
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 88,
+      "horizontal_overflow": false,
+      "name": "1920-wide",
+      "nojs": false,
+      "semantic_pass": true,
+      "visibility_pass": true,
+      "width": 1920
+    },
+    {
+      "control_count": 34,
+      "fixture_cls": 0,
+      "fixture_lcp_ms": null,
+      "horizontal_overflow": false,
+      "name": "320-nojs",
+      "nojs": true,
+      "semantic_pass": true,
+      "visibility_pass": true,
+      "width": 320
+    },
+    {
+      "control_count": 34,
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 80,
+      "horizontal_overflow": false,
+      "name": "390-touch",
+      "nojs": false,
+      "semantic_pass": true,
+      "visibility_pass": true,
+      "width": 390
+    },
+    {
+      "control_count": 34,
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 112,
+      "horizontal_overflow": false,
+      "name": "390-reduced",
+      "nojs": false,
+      "semantic_pass": true,
+      "visibility_pass": true,
+      "width": 390
+    },
+    {
+      "control_count": 34,
+      "fixture_cls": 0,
+      "fixture_lcp_ms": 68,
+      "horizontal_overflow": false,
+      "name": "320-forced",
+      "nojs": false,
+      "semantic_pass": true,
+      "visibility_pass": true,
+      "width": 320
+    },
+    {
+      "control_count": 34,
+      "fixture_cls": 0.16,
+      "fixture_lcp_ms": 1132,
+      "horizontal_overflow": false,
+      "name": "320-root4x",
+      "nojs": false,
+      "semantic_pass": true,
+      "visibility_pass": true,
+      "width": 320
+    }
+  ],
+  "fixture_sha256": "5242da6c49b64d7f37484b6f5924042a69872073e4fd15d9a0ed694920bb11eb",
+  "kind": "ACTUAL_CHROMIUM_LOCAL_PHP_FIXTURE_NOT_INSTALLED_STAGING",
+  "network_browser": "PAGE_SET_CONTENT_ONLY: actual local HTTP browser navigation blocked by runtime",
+  "release_allowed": false,
+  "root4x_overflow_after_px": 0,
+  "root4x_overflow_before_px": 8,
+  "status": "LOCAL_QA_PASSED_NOT_STAGING",
+  "tamper_proofs": [
+    {
+      "R393_accepted": true,
+      "R394_rejected": true,
+      "name": "gallery_fully_transparent",
+      "reason": "gallery_visually_unavailable"
+    },
+    {
+      "R393_accepted": true,
+      "R394_rejected": true,
+      "name": "source_index_transparent",
+      "reason": "source_index_visually_unavailable"
+    },
+    {
+      "R393_accepted": true,
+      "R394_rejected": true,
+      "name": "publisher_a_transparent",
+      "reason": "publisher_1_visually_unavailable"
+    },
+    {
+      "R393_accepted": true,
+      "R394_rejected": true,
+      "name": "source_6_transparent",
+      "reason": "nasa_6_visually_unavailable"
+    },
+    {
+      "R393_accepted": true,
+      "R394_rejected": true,
+      "name": "cta_transparent",
+      "reason": "free_cta_visually_unavailable"
+    },
+    {
+      "R393_accepted": true,
+      "R394_rejected": true,
+      "name": "source_pointer_blocked",
+      "reason": "nasa_1_inoperable"
+    },
+    {
+      "R393_accepted": true,
+      "R394_rejected": true,
+      "name": "publisher_keyboard_blocked",
+      "reason": "publisher_1_inoperable"
+    },
+    {
+      "R393_accepted": true,
+      "R394_rejected": true,
+      "name": "cta_keyboard_blocked",
+      "reason": "free_cta_inoperable"
+    },
+    {
+      "R393_accepted": true,
+      "R394_rejected": true,
+      "name": "cta_aria_disabled",
+      "reason": "free_cta_inoperable"
+    },
+    {
+      "R393_accepted": true,
+      "R394_rejected": true,
+      "name": "cta_clipped",
+      "reason": "free_cta_visually_unavailable"
+    },
+    {
+      "R393_accepted": true,
+      "R394_rejected": true,
+      "name": "source_index_offscreen",
+      "reason": "source_index_visually_unavailable"
+    },
+    {
+      "R393_accepted": true,
+      "R394_rejected": true,
+      "name": "hidden_link_text",
+      "reason": "index_link_1_visually_unavailable"
+    }
+  ]
+}
