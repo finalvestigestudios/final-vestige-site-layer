@@ -35,6 +35,7 @@ def enforce_registry_schema(db: sqlite3.Connection) -> None:
     Must run *inside* the reservation/finalization write transaction; checking
     only at connection startup leaves a race with another SQLite writer.
     """
+    io_fault = False
     try:
         # SQLite reserves names with a literal 'sqlite_' prefix. Use substr,
         # not LIKE 'sqlite_%', where '_' is a wildcard.
@@ -54,5 +55,9 @@ def enforce_registry_schema(db: sqlite3.Connection) -> None:
             raise RegistrySchemaError("Registry primary-key index mismatch")
         if db.execute("PRAGMA integrity_check(1)").fetchone() != ("ok",):
             raise RegistrySchemaError("Registry file failed SQLite integrity check")
-    except sqlite3.Error as exc:
-        raise RegistrySchemaError("Cannot establish registry schema integrity") from exc
+    except sqlite3.Error:
+        io_fault = True
+    # Raise outside the SQLite exception handler: even ``from None`` retains
+    # private SQL/filename data in ``__context__`` for programmatic callers.
+    if io_fault:
+        raise RegistrySchemaError("Cannot establish registry schema integrity")
