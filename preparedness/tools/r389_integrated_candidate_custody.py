@@ -272,11 +272,34 @@ def native(repo: Path, wp: Path, preview: Path) -> dict:
             if v['id'] in origin:
                 raise ValueError('DUPLICATED_BRANCH_SOURCE')
             origin[v['id']] = v['url']
-    render = r386.audit(packet, wp, preview, source_urls=urls)
-    anchor = r387.audit_original_candidates(packet, wp, read)
+    # R391 spans the entire R386/R387/R390 rendered-audit window.
+    # One mutable export cannot be validated as three different versions.
     r390 = load_dependency('r390_all_export_custody')
-    full = r390.audit(wp, preview, [article['slug'] for article in packet['articles']])
-    result = reconcile_with_all_exports(packet, impact, alias, render, anchor, wp, preview, full)
+    r391 = load_dependency('r391_frozen_export_attestation')
+    original_slugs = [article['slug'] for article in packet['articles']]
+    frozen = r391.audit_frozen(wp, preview, original_slugs, lambda: {
+        'render': r386.audit(packet, wp, preview, source_urls=urls),
+        'anchor': r387.audit_original_candidates(packet, wp, read),
+        'full': r390.audit(wp, preview, original_slugs),
+    })
+    reports = frozen.get('reports', {})
+    if (frozen.get('status') != 'FROZEN_EXPORT_REVIEW_HARD_HOLD' or
+            frozen.get('errors') or
+            not all(isinstance(reports.get(k), dict) for k in ('render', 'anchor', 'full'))):
+        result = _result(['R391_FROZEN_EXPORT_ATTESTATION_FAILED'] +
+                         frozen.get('errors', []), [], {}, 50)
+    else:
+        result = reconcile_with_all_exports(packet, impact, alias,
+            reports['render'], reports['anchor'], wp, preview, reports['full'])
+    result['frozen_export_custody'] = {
+        'status': frozen.get('status'),
+        'snapshot_sha256': frozen.get('snapshot_sha256'),
+        'matched_pairs': frozen.get('matched_snapshot_pairs'),
+        'publication_approved': False,
+        'qualified_safety_approved': False,
+    }
+    result['release_blockers'] = sorted(set(result['release_blockers'] +
+        ['FROZEN_EXPORT_ATTESTATION_IS_NOT_QUALIFIED_SAFETY_OR_QD_APPROVAL']))
     result['original_manifest_blob_ids'] = list(ORIGINAL_PINS)
     return result
 
