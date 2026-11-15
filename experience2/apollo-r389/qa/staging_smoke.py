@@ -14,19 +14,42 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlsplit, urlunsplit
 from playwright.sync_api import sync_playwright
 
 VIEWPORTS=(320,390,768,1440,1920)
 PRODUCTION={'finalvestige.com','www.finalvestige.com'}
 
+def _approved_host(allowed):
+    """An explicit bare hostname, not a production alias, URL, port or userinfo."""
+    if not allowed or allowed.strip() != allowed or any(c in allowed for c in '/:@?#\\'):
+        raise ValueError('HARD STOP: --approved-staging-host must be a bare staging hostname')
+    host = allowed.lower().rstrip('.')
+    if not host or host in PRODUCTION or host.startswith('.') or '..' in host:
+        raise ValueError('HARD STOP: approved hostname is invalid or production')
+    return host
+
+def scrub_url(raw):
+    """No query strings, user credentials or fragments in captured QA evidence."""
+    try:
+        u=urlsplit(raw)
+        hostname = (u.hostname or 'invalid-host').lower()
+        port = ':' + str(u.port) if u.port is not None else ''
+        # Host/path are helpful for debugging; query tokens and fragment are not.
+        return urlunsplit((u.scheme, hostname + port, u.path, '', ''))
+    except (ValueError, TypeError):
+        return '[invalid URL redacted]'
+
 def guard(url, allowed):
+    host = _approved_host(allowed)
     dest=urlparse(url)
-    if dest.scheme!='https' or not dest.hostname or dest.hostname.lower()!=allowed.lower() or dest.hostname.lower() in PRODUCTION:
-        raise ValueError('HARD STOP: explicit HTTPS non-production staging host must match --approved-staging-host')
-    if dest.username or dest.password or dest.fragment:
-        raise ValueError('HARD STOP: no URL credentials or fragments')
-    return dest.hostname.lower()
+    try: port = dest.port
+    except ValueError: port = -1
+    if (dest.scheme != 'https' or not dest.hostname or
+        dest.hostname.lower() != host or port not in (None, 443) or
+        dest.username is not None or dest.password is not None or dest.fragment):
+        raise ValueError('HARD STOP: explicit HTTPS non-production staging origin required')
+    return host
 
 def sha_file(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -35,45 +58,64 @@ def sha_file(path):
 # loaded stylesheet must match this *exact* payload, not merely a computed color.
 REVIEWED_GALLERY_CSS_SHA256 = '4fe1595d790d22181c01038afd31c19e0839360458ded3c6098bd604d73035a9'
 
-def staging_resource_allowed(resource_url, approved_host):
-    """Fail closed before sending requests, including redirect hops and subresources.
+def staging_resource_allowed(resource_url, approved_host, method='GET'):
+    """Only idempotent methods on exact HTTPS staging origin may reach network.
 
-    WordPress staging must be isolated from the live origin. External assets are
-    a visible QA blocker, not a reason to silently allow production requests.
+    Crucially, R390 previously permitted POST/PUT/DELETE even though the tool
+    described itself as read-only. Deny all such requests *before* route.fetch.
     """
-    parsed = urlparse(resource_url)
-    return (parsed.scheme == 'https' and parsed.hostname is not None
-            and parsed.hostname.lower() == approved_host.lower()
-            and parsed.hostname.lower() not in PRODUCTION
-            and parsed.username is None and parsed.password is None)
+    if method not in ('GET', 'HEAD'):
+        return False
+    try:
+        host = _approved_host(approved_host)
+        parsed = urlparse(resource_url)
+        port = parsed.port
+        return (parsed.scheme == 'https' and parsed.hostname is not None
+                and parsed.hostname.lower() == host
+                and port in (None,443)
+                and parsed.username is None and parsed.password is None
+                and not parsed.fragment)
+    except (ValueError,TypeError):
+        return False
 
 def install_network_boundary(context, approved_host, denied):
+    """Deny mutations, off-origin fetches, redirects and all WebSocket traffic.
+
+    Passing this mocked contract does NOT prove deployed browser interception.
+    """
     def check_route(route):
         request = route.request
-        if not staging_resource_allowed(request.url, approved_host):
-            denied.append({'url': request.url, 'kind': request.resource_type,
-                           'navigation': request.is_navigation_request()})
+        method = getattr(request,'method','GET')
+        if not staging_resource_allowed(request.url, approved_host, method):
+            denied.append({'url': scrub_url(request.url), 'kind': request.resource_type,
+                           'method': method, 'navigation': request.is_navigation_request(),
+                           'reason': 'METHOD_OR_ORIGIN_DENIED'})
             route.abort(error_code='blockedbyclient')
         else:
-            # Do not allow Playwright's redirect follow-through to bypass route
-            # inspection. Route handlers are only invoked for the *first* URL
-            # of a redirect chain, so deny ALL 3xx responses at the edge.
             try:
                 response = route.fetch(max_redirects=0, timeout=15000)
                 if 300 <= response.status < 400:
-                    denied.append({'url':request.url,'kind':request.resource_type,
-                                   'navigation':request.is_navigation_request(),
-                                   'redirect_status':response.status,
-                                   'redirect_location':response.headers.get('location')})
+                    denied.append({'url':scrub_url(request.url),'kind':request.resource_type,
+                                   'method':method, 'navigation':request.is_navigation_request(),
+                                   'reason':'REDIRECT_DENIED', 'redirect_status':response.status,
+                                   'redirect_location':scrub_url(response.headers.get('location',''))})
                     route.abort(error_code='blockedbyclient')
                 else:
                     route.fulfill(response=response)
             except Exception as exc:
-                denied.append({'url':request.url,'kind':request.resource_type,
-                               'error':'network boundary fetch failed: '+str(exc)})
+                # Library exceptions can contain signed URLs or request tokens.
+                denied.append({'url':scrub_url(request.url),'kind':request.resource_type,
+                               'method':method, 'reason':'FETCH_FAILED',
+                               'error_class':type(exc).__name__})
                 try: route.abort(error_code='failed')
                 except Exception: pass
     context.route('**/*', check_route)
+    if not hasattr(context, 'route_web_socket'):
+        raise RuntimeError('HARD STOP: Playwright must support preconnection WebSocket routing')
+    def block_ws(ws):
+        denied.append({'url':scrub_url(ws.url), 'kind':'websocket','reason':'WEBSOCKET_DENIED'})
+        ws.close(code=1008, reason='Read-only staging evidence capture')
+    context.route_web_socket('**/*',block_ws)
 
 
 def inspect_stylesheet_responses(responses):
@@ -82,10 +124,10 @@ def inspect_stylesheet_responses(responses):
     found = []
     for r in candidates:
         try:
-            found.append({'url': r.url, 'status': r.status,
+            found.append({'url': scrub_url(r.url), 'status': r.status,
                           'sha256': hashlib.sha256(r.body()).hexdigest()})
         except Exception as exc:
-            found.append({'url': r.url, 'error': str(exc)})
+            found.append({'url': scrub_url(r.url), 'error_class': type(exc).__name__})
     ok = (len(found) == 1 and found[0].get('status') == 200
           and found[0].get('sha256') == REVIEWED_GALLERY_CSS_SHA256)
     return ok, found
@@ -106,7 +148,7 @@ def main():
         raise ValueError('HARD STOP: genuine axe-core bundle must be present and pinned to a reviewed SHA256')
     folder=Path(args.output_dir)
     folder.mkdir(parents=True,exist_ok=True)
-    output={'kind':'REAL_INSTALLED_STAGING_CANDIDATE','url':args.url,'approved_host':host,'axe_bundle_sha256':args.axe_sha256,
+    output={'kind':'REAL_INSTALLED_STAGING_CANDIDATE','url':scrub_url(args.url),'approved_host':host,'axe_bundle_sha256':args.axe_sha256,
             'contexts':[], 'production_changes':False,'release_allowed':False}
     failures=[]
     vitals_script="""window.__fvVitals={lcp:null,cls:0};try{
@@ -130,12 +172,12 @@ def main():
                     page.wait_for_timeout(500)
                 except Exception as exc:
                     output['contexts'].append({'width':width,'status':'HARD_HOLD_NETWORK',
-                                               'error':str(exc),'blocked_requests':denied})
+                                               'error_class':type(exc).__name__,'blocked_requests':denied})
                     failures.append(f'{width}: navigation/redirect rejected or unavailable')
                     ctx.close()
                     continue
                 item={'width':width,'http_status':response.status if response else None,
-                      'final_url':page.url, 'blocked_requests':denied,
+                      'final_url':scrub_url(page.url), 'blocked_requests':denied,
                       'csp_header':response.headers.get('content-security-policy') if response else None}
                 if not staging_resource_allowed(page.url, host):
                     failures.append(f'{width}: final browser URL escaped approved staging origin')
@@ -180,23 +222,35 @@ def main():
                 denied_nojs=[]
                 install_network_boundary(ctx2,host,denied_nojs)
                 nojs=ctx2.new_page()
+                nojs_responses=[]
+                nojs.on('response',lambda response: nojs_responses.append(response))
                 try:
                     nojs.goto(args.url,wait_until='load',timeout=30000)
                 except Exception as exc:
                     failures.append(f'{width}: no-JS navigation/redirect failed closed: {exc}')
-                    item['nojs_navigation_error']=str(exc)
+                    item['nojs_navigation_error']=type(exc).__name__
                     item['nojs_blocked_requests']=denied_nojs
                     ctx2.close()
                     output['contexts'].append(item)
                     continue
                 item['nojs_blocked_requests']=denied_nojs
-                item['nojs_final_url']=nojs.url
+                item['nojs_final_url']=scrub_url(nojs.url)
                 if denied_nojs or not staging_resource_allowed(nojs.url,host):
                     failures.append(f'{width}: no-JS off-staging request or redirect')
                 item['nojs_cards']=nojs.locator('[data-fv-r384-record]').count()
                 item['nojs_disclosures']=nojs.locator('details').count()
-                if item['nojs_cards']!=6 or item['nojs_disclosures']!=6:
-                    failures.append(f'{width}: no-JavaScript evidence incomplete')
+                item['nojs_publication_links']=nojs.locator('[data-fv-r384-publication]').count()
+                item['nojs_nasa_question_links']=nojs.locator('[data-fv-r384-nasa]').count()
+                item['nojs_free_ctas']=nojs.locator('[data-fv-free-cta]').count()
+                css_nojs_ok, css_nojs_responses=inspect_stylesheet_responses(nojs_responses)
+                item['nojs_gallery_css_verified']=css_nojs_ok
+                item['nojs_gallery_css_responses']=css_nojs_responses
+                if not css_nojs_ok:
+                    failures.append(f'{width}: no-JavaScript reviewed stylesheet missing/tampered')
+                if (item['nojs_cards']!=6 or item['nojs_disclosures']!=6 or
+                    item['nojs_publication_links']!=2 or item['nojs_nasa_question_links']!=6 or
+                    item['nojs_free_ctas']!=1):
+                    failures.append(f'{width}: no-JavaScript source or free CTA incomplete')
                 ctx2.close()
                 output['contexts'].append(item)
         finally:
