@@ -1,0 +1,353 @@
+{
+  "review_date": "2026-11-15",
+  "status": "DRAFT_ONLY_HARD_HOLD",
+  "pilot_offer": "Zen12",
+  "referral_authorization": "NOT_VERIFIED",
+  "sources": [
+    {
+      "id": "J2005",
+      "kind": "independent_primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16210542/"
+    },
+    {
+      "id": "H2010",
+      "kind": "independent_primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20637455/"
+    },
+    {
+      "id": "FV_P",
+      "kind": "published_primary_archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "FOCUS",
+      "kind": "live_free_asset",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "INSPIRE3",
+      "kind": "seller",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "ZEN",
+      "kind": "seller",
+      "url": "https://zen12.com/"
+    },
+    {
+      "id": "ZEN_PROMO",
+      "kind": "seller_unverified_referral",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "TOTAL",
+      "kind": "seller",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "BRAIN",
+      "kind": "seller",
+      "url": "https://brainwaveshots.com/focus-shot"
+    },
+    {
+      "id": "FAQ",
+      "kind": "seller",
+      "url": "https://brainwaveshots.com/faq"
+    },
+    {
+      "id": "FTC_ENDORSE",
+      "kind": "regulatory_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "FTC_HEALTH",
+      "kind": "regulatory_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "choice2005",
+      "text": "Participants sometimes failed to report a deliberately switched choice and supplied explanations",
+      "status": "supported_study_specific",
+      "source": "J2005",
+      "allowed": "Article only; do not universalize"
+    },
+    {
+      "id": "jam2010",
+      "text": "No more than one-third of manipulated taste and smell trials were detected in supermarket study",
+      "status": "supported_study_specific",
+      "source": "H2010",
+      "allowed": "With task and setting qualified"
+    },
+    {
+      "id": "puysegur",
+      "text": "Puységur files contain historical testimonies and interpretation",
+      "status": "published_source",
+      "source": "FV_P",
+      "allowed": "Never infer animal magnetism efficacy"
+    },
+    {
+      "id": "zen_format",
+      "text": "Zen12 offers twelve levels and 48 MP3s",
+      "status": "seller_claim_unverified_delivery",
+      "source": "ZEN",
+      "allowed": "Attribution as seller describes"
+    },
+    {
+      "id": "zen_12_equals_60",
+      "text": "12 minutes equivalent to one hour of meditation",
+      "status": "seller_only_unsubstantiated_for_product",
+      "source": "ZEN",
+      "allowed": "PROHIBITED as FV statement"
+    },
+    {
+      "id": "zen_health",
+      "text": "Zen12 improves health, stress, cognition or attention",
+      "status": "seller_only_unsubstantiated_for_product",
+      "source": "ZEN",
+      "allowed": "PROHIBITED as FV statement"
+    },
+    {
+      "id": "zen_price",
+      "text": "Public standard price and separate coupon route exist",
+      "status": "seller_display_not_referred_checkout",
+      "source": "ZEN_PROMO",
+      "allowed": "Do not quote in CTA; refresh at checkout"
+    },
+    {
+      "id": "total_specs",
+      "text": "Total Focus 33 minutes and 47 MB, recorded by J.A. Amos",
+      "status": "seller_description",
+      "source": "TOTAL",
+      "allowed": "Attribute to seller"
+    },
+    {
+      "id": "total_price_change",
+      "text": "Total Focus public page displayed $24.44 crossed-out $29.95 Nov 15; prior research notes $17.95",
+      "status": "observed_public_page_conflict",
+      "source": "TOTAL",
+      "allowed": "No reader-facing fixed price; flag drift"
+    },
+    {
+      "id": "brain_specs",
+      "text": "Focus Shot advertises 15 and 30 minute versions",
+      "status": "seller_description",
+      "source": "BRAIN",
+      "allowed": "Attribute"
+    },
+    {
+      "id": "brain_modality",
+      "text": "Brainwave Shots FAQ describes isochronic tones",
+      "status": "seller_technical_claim",
+      "source": "FAQ",
+      "allowed": "Not externally measured; no binaural substitution"
+    },
+    {
+      "id": "brain_efficacy",
+      "text": "Focus Shot induces effortless concentration",
+      "status": "seller_only_unsubstantiated_for_exact_product",
+      "source": "BRAIN",
+      "allowed": "PROHIBITED as FV statement"
+    },
+    {
+      "id": "affiliate_acceptance",
+      "text": "Named FV Inspire3 approval and earning URL",
+      "status": "NOT_VERIFIED",
+      "source": null,
+      "allowed": "HOLD commercial CTAs"
+    },
+    {
+      "id": "approved_swipe",
+      "text": "FV is licensed to use Inspire3 affiliate creative assets",
+      "status": "NOT_VERIFIED",
+      "source": null,
+      "allowed": "Use original FV copy only"
+    },
+    {
+      "id": "ftc_disclosure",
+      "text": "Material affiliate connection disclosed clearly and conspicuously near each link",
+      "status": "policy_requirement",
+      "source": "FTC_ENDORSE",
+      "allowed": "Future earning link only after permission"
+    },
+    {
+      "id": "ftc_health",
+      "text": "Health/product claims require appropriate reliable substantiation",
+      "status": "policy_requirement",
+      "source": "FTC_HEALTH",
+      "allowed": "No health guarantees"
+    },
+    {
+      "id": "focus",
+      "text": "Published free Focus Fieldbook is existing reader pathway",
+      "status": "verified_live",
+      "source": "FOCUS",
+      "allowed": "May link without duplicate form"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "Named FV publisher account acceptance",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G02",
+      "name": "Exact product SKU approved",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G03",
+      "name": "Website traffic channel approved",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G04",
+      "name": "TikTok and YouTube channel permissions confirmed",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G05",
+      "name": "Email campaign rights separately approved before any Dispatch use",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G06",
+      "name": "Specific issued earning URL authenticated",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G07",
+      "name": "Affiliate tracking conditions and prohibited redirect methods reviewed",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G08",
+      "name": "Commission terms and reconciliation route",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G09",
+      "name": "Merchant referral attribution and checkout actual route",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G10",
+      "name": "Accurate seller SKU inclusion",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G11",
+      "name": "Checkout price, taxes and currency verified through authorized route",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G12",
+      "name": "Refund terms verified for referred checkout",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G13",
+      "name": "Actual return/fulfillment experience not invented",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G14",
+      "name": "Claim-specific scientific evidence or prohibited claim removed",
+      "status": "HOLD",
+      "owner": "Mind/Site-QA/Claude"
+    },
+    {
+      "id": "G15",
+      "name": "No health/financial/neurological improvement promises",
+      "status": "HOLD",
+      "owner": "Mind/Site-QA/Claude"
+    },
+    {
+      "id": "G16",
+      "name": "Adjacent FTC disclosure in actual final rendition",
+      "status": "HOLD",
+      "owner": "Mind/Site-QA/Claude"
+    },
+    {
+      "id": "G17",
+      "name": "Mobile disclosure and CTA proximity accessibility proof",
+      "status": "HOLD",
+      "owner": "Mind/Site-QA/Claude"
+    },
+    {
+      "id": "G18",
+      "name": "No-JS and keyboard walkthrough",
+      "status": "HOLD",
+      "owner": "Mind/Site-QA/Claude"
+    },
+    {
+      "id": "G19",
+      "name": "WordPress sanitizer and CSP/security QA",
+      "status": "HOLD",
+      "owner": "Mind/Site-QA/Claude"
+    },
+    {
+      "id": "G20",
+      "name": "Original encoded 42-second film and captions parity",
+      "status": "HOLD",
+      "owner": "Mind/Site-QA/Claude"
+    },
+    {
+      "id": "G21",
+      "name": "Real viewport and LCP/CLS performance evidence",
+      "status": "HOLD",
+      "owner": "Mind/Site-QA/Claude"
+    },
+    {
+      "id": "G22",
+      "name": "Existing Jetpack confirmation/delivery evidence",
+      "status": "HOLD",
+      "owner": "Mind/Site-QA/Claude"
+    },
+    {
+      "id": "G23",
+      "name": "Grok publisher asset IDs, hooks, rights and routes",
+      "status": "HOLD",
+      "owner": "Founder/Claude/Praxxis"
+    },
+    {
+      "id": "G24",
+      "name": "First-party consent and bot exclusion definitions agreed",
+      "status": "HOLD",
+      "owner": "Founder/Claude/Praxxis"
+    },
+    {
+      "id": "G25",
+      "name": "Verified confirmed paid order or merchant affiliate commission",
+      "status": "HOLD",
+      "owner": "Founder/Claude/Praxxis"
+    },
+    {
+      "id": "G26",
+      "name": "Refund/fees reconciliation and cohort source evidence",
+      "status": "HOLD",
+      "owner": "Founder/Claude/Praxxis"
+    },
+    {
+      "id": "G27",
+      "name": "Founder explicit release approval",
+      "status": "HOLD",
+      "owner": "Founder/Claude/Praxxis"
+    }
+  ]
+}
