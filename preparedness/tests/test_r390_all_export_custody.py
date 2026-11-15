@@ -262,7 +262,6 @@ for _slug in EXTRAS:
 if __name__ == '__main__':
     unittest.main()
 
-
 # Native wiring: demonstrate R389's historical 50-one-byte-file false positive
 # is rejected by R390, without altering legacy isolated-validator test semantics.
 class IntegratedGate(unittest.TestCase):
