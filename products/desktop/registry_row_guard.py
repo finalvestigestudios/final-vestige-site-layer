@@ -46,6 +46,7 @@ def enforce_registry_rows(db: sqlite3.Connection) -> None:
     Validation intentionally scans all rows. The registry is an operator-side
     database, not a customer-scale online entitlement service.
     """
+    io_fault = False
     try:
         rows = db.execute(
             "SELECT license_id,product,kid,output_path_sha256,state,"
@@ -74,5 +75,8 @@ def enforce_registry_rows(db: sqlite3.Connection) -> None:
                     raise RegistryRowError("Issued record has invalid digest or chronology")
             else:
                 raise RegistryRowError("Unknown issuance state")
-    except sqlite3.Error as exc:
-        raise RegistryRowError("Unable to inspect issuance registry rows") from exc
+    except sqlite3.Error:
+        io_fault = True
+    # Do not carry underlying private SQLite failure text in an exception chain.
+    if io_fault:
+        raise RegistryRowError("Unable to inspect issuance registry rows")
