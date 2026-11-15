@@ -38,22 +38,33 @@ def inspect(d: dict, markdown: str, raw: bytes, *, pin: str = R397_BLOB) -> dict
     require(pin in markdown, "original_blob_marker_missing")
     require(markdown.count("#### Original source candidate ") == sum(len(x.get("variants", [])) for x in sources), "source_candidate_count")
     require(markdown.count("| `claude/prep-shelter-") >= 9, "fork_table_rows_missing")
+    def section(heading: str) -> str:
+        marker = "### " + heading + "\n"
+        if markdown.count(marker) != 1:
+            return ""
+        after = markdown.split(marker, 1)[1]
+        return after.split("\n### ", 1)[0]
     for s in sources:
         sid = s.get("source_id")
         require(markdown.count("### " + str(sid) + "\n") == 1, "source_heading:" + str(sid))
+        block = section(str(sid))
         require(s.get("selected_record") is None and s.get("decision") == "HUMAN_REVIEW_REQUIRED", "source_auto_selected:" + str(sid))
-        for v in s.get("variants", []):
+        candidates = block.split("#### Original source candidate ")[1:]
+        require(len(candidates) == len(s.get("variants", [])), "source_candidate_sections:" + str(sid))
+        for i, v in enumerate(sorted(s.get("variants", []), key=lambda x: (x.get("branch", ""), x.get("source_blob", "")))):
+            candidate = candidates[i] if i < len(candidates) else ""
             for key in ("branch", "source_blob", "fragment", "publisher", "kind", "url", "verified_on", "human_link_check", "supports_exact", "reading_scope_notes_exact"):
-                require(key in v and literal(v.get(key)) in markdown, "source_field_missing:" + str(sid) + ":" + key)
+                require(key in v and literal(v.get(key)) in candidate, "source_field_missing:" + str(sid) + ":" + key)
             require(v.get("human_link_check") is False, "false_human_link_check:" + str(sid))
     for f in forks:
         path = f.get("path")
         require(markdown.count("### " + str(path) + "\n") == 1, "fork_heading:" + str(path))
+        block = section(str(path))
         require(f.get("selected_sha") is None and f.get("decision") == "HUMAN_REVIEW_REQUIRED", "fork_auto_selected:" + str(path))
         require(len(f.get("variants", [])) == 3, "fork_variants:" + str(path))
         for v in f.get("variants", []):
             row = "| `" + str(v.get("branch")) + "` | `" + str(v.get("git_blob_sha")) + "` | " + str(v.get("byte_length")) + " |"
-            require(row in markdown, "fork_provenance_missing:" + str(path))
+            require(row in block, "fork_provenance_missing:" + str(path))
     require("qualified" in markdown.lower() and "privacy" in markdown.lower(), "qualified_review_not_visible")
     return {"integrity": "FAIL" if failures else "PASS", "release": HOLD,
             "source_cases": len(sources), "fork_cases": len(forks), "failures": sorted(set(failures))}
