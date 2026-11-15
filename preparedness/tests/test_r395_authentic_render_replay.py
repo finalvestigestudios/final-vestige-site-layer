@@ -116,6 +116,16 @@ class R395Tests(unittest.TestCase):
                                self.base["integrated"], self.base["frozen"], self.base["witness"],
                                Path("/no/wp"), Path("/no/preview"))
 
+    def test_isolated_python_cli_returns_invalid_hold_not_import_error(self):
+        command = [sys.executable, "-I", str(ROOT / "tools" / "r395_authentic_render_replay.py"),
+                   "--repo", "/missing", "--original", "/missing", "--integrated", "/missing",
+                   "--frozen", "/missing", "--witness", "/missing",
+                   "--wp", "/missing", "--preview", "/missing"]
+        result = subprocess.run(command, text=True, capture_output=True, check=False, timeout=20)
+        self.assertEqual(result.returncode, 2, result.stderr)
+        self.assertIn('"status": "INVALID_HARD_HOLD"', result.stdout)
+        self.assertNotIn("Traceback", result.stderr)
+
     def test_cli_never_returns_zero(self):
         capture = StringIO()
         with redirect_stdout(capture):
