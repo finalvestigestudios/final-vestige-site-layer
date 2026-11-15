@@ -118,7 +118,8 @@ class IssuanceRegistry:
             raise RegistryError("Invalid license ID")
         if not isinstance(kid, str) or not IDENTIFIER.fullmatch(kid):
             raise RegistryError("Invalid signing key ID")
-        if product not in PRODUCTS:
+        # Never invoke user-defined str-subclass hash/equality during reservation.
+        if type(product) is not str or product not in PRODUCTS:
             raise RegistryError("Unknown premium product")
         destination = Path(output)
         if not destination.is_absolute() or destination.suffix != ".fvslicense":
@@ -156,6 +157,10 @@ class IssuanceRegistry:
         from another read of the destination path. Never reuse a reservation
         after a mismatch; a human must investigate.
         """
+        # Reject forged product IDs before path inspection, hashing or SQLite I/O.
+        # This must match the issuer and offline client identity boundary.
+        if type(product) is not str or product not in PRODUCTS:
+            raise RegistryError("Unknown premium product")
         if (not isinstance(expected_sha256, str)
                 or not re.fullmatch(r"[0-9a-f]{64}", expected_sha256)):
             raise RegistryError("Expected signed-payload SHA-256 must be canonical lowercase hex")
