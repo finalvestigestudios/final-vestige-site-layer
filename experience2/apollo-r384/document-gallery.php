@@ -10,7 +10,7 @@ const FV_R384_TAG = 'fv_apollo_source_gallery_r384';
 const FV_R384_FREE = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/';
 const FV_R384_BOARD = 'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/';
 const FV_R384_TESTS = 'https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/';
-const FV_R384_CSS_SHA256 = 'e467e3be663529be73ceb2b307a8efd5eb24f180cf36af6cc534156d73acfa93';
+const FV_R384_CSS_SHA256 = '4c82ef62de508c7fab61841a0e2c824e03d14b0c94fcf8223cbc52a4f4a04db3';
 const FV_R384_MEDIA = 'https://www.nasa.gov/nasa-brand-center/images-and-media/';
 
 function fv_r384_h($v): string {
@@ -26,7 +26,7 @@ function fv_r384_records() {
     if (!function_exists('fv_r377_environment') || !fv_r377_environment()
       || !function_exists('fv_r377_records') || !function_exists('fv_r381_approved')) { return false; }
     $records = fv_r377_records();
-    if (!fv_r381_approved($records)) { return false; }
+    if (!fv_r381_approved($records) || !is_array($records) || count($records) !== 6) { return false; }
     $ids = array('01-ground-test','02-oxygen','03-fire-sequence','04-hatch','05-ignition','06-testing');
     foreach ($records as $i => $r) {
         if (!is_array($r) || ($r['id'] ?? '') !== $ids[$i]
@@ -59,6 +59,28 @@ function fv_r384_render(): string {
   <h2 id="<?php echo fv_r384_h($prefix); ?>-title">Six documented questions. <em>Two underlying NASA publications.</em></h2>
   <p class="fv-r384__intro">Browse the original 1967 investigation and NASA's later engineering account through six carefully separated questions. These are text-based source cards, not reproductions or an interactive geographic map.</p>
   <p class="fv-r384__rights"><strong>Source and rights notice:</strong> NASA hosts the linked material. NASA photography, identifiers and third-party media are <strong>not reproduced or commercially licensed by these links</strong>. This independent editorial collection is not endorsed by NASA. <a href="<?php echo fv_r384_h(FV_R384_MEDIA); ?>" rel="noopener noreferrer">NASA media-use guidance</a>.</p>
+  <!-- R388: two NASA publications, six separate evidentiary questions.
+       Link destinations are in-page record IDs only; publisher source links remain on the records. -->
+  <section class="fv-r384__source-index" aria-labelledby="<?php echo fv_r384_h($prefix); ?>-source-index-title">
+   <h3 id="<?php echo fv_r384_h($prefix); ?>-source-index-title">Source custody, without inflated document counts</h3>
+   <p>The six questions reference <strong>two underlying NASA publications</strong>, not six independent reports. Choose a question to inspect its exact claim, limitation and original source link.</p>
+   <div class="fv-r384__source-groups">
+    <div class="fv-r384__source-group">
+     <h4>Publication A · 1967 Apollo 204 Review Board</h4>
+     <p><strong>Five questions, one investigation.</strong> Ground test, oxygen environment, recorded fire sequence, hatch and ignition uncertainty.</p>
+     <ol>
+     <?php foreach (array_slice($records,0,5) as $i => $record): ?>
+      <li><a href="#<?php echo fv_r384_h($prefix . '-question-' . $record['id']); ?>"><?php echo fv_r384_h('Question '.($i+1).' · '.$record['heading']); ?></a></li>
+     <?php endforeach; ?>
+     </ol>
+    </div>
+    <div class="fv-r384__source-group">
+     <h4>Publication B · NASA's 2018 retrospective</h4>
+     <p><strong>One question, one later account.</strong> The 102 deliberate test ignitions from December 1967 through February 1968 happened <em>after</em> the January 1967 accident.</p>
+     <ol><li><a href="#<?php echo fv_r384_h($prefix . '-question-' . $records[5]['id']); ?>"><?php echo fv_r384_h('Question 6 · '.$records[5]['heading']); ?></a></li></ol>
+    </div>
+   </div>
+  </section>
   <nav class="fv-r384__rail" aria-label="Three documented phases"><ol>
   <?php foreach ($phases as $phase): ?>
    <li><a href="#<?php echo fv_r384_h($prefix . '-' . $phase['key']); ?>"><?php echo fv_r384_h($phase['title']); ?></a></li>
@@ -69,7 +91,7 @@ function fv_r384_render(): string {
     <h3 id="<?php echo fv_r384_h($prefix . '-' . $phase['key']); ?>-heading"><?php echo fv_r384_h($phase['title']); ?></h3>
     <ol class="fv-r384__grid">
     <?php foreach ($phase['indices'] as $index): $record = $records[$index]; ?>
-     <li class="fv-r384__card" data-fv-r384-record data-fv-r384-source-id="<?php echo fv_r384_h($record['id']); ?>">
+     <li class="fv-r384__card" id="<?php echo fv_r384_h($prefix . '-question-' . $record['id']); ?>" data-fv-r384-record data-fv-r384-source-id="<?php echo fv_r384_h($record['id']); ?>">
       <article>
        <p class="fv-r384__number">SOURCE QUESTION <?php echo fv_r384_h(sprintf('%02d',$index+1)); ?> / 06 · <?php echo fv_r384_h($record['kind']); ?></p>
        <h4><?php echo fv_r384_h($record['heading']); ?></h4>
