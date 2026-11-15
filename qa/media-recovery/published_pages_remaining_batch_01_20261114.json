@@ -17,12 +17,14 @@
     1868
   ],
   "excluded_homepage_id": 6,
-  "method": "authenticated read-only WP pages_get edit; stored img tags; not guest-browser or HTTP",
+  "method": "authenticated read-only WP pages_get edit; stored img tags; not guest-browser or HTTP; corrected host extraction without unsupported URL global",
   "expected": 15,
   "checked": 15,
   "errors": [],
   "source_groups": {
-    "malformed": 5
+    "first_party": 3,
+    "other_external": 1,
+    "affiliate": 1
   },
   "guest_http_verified": false,
   "claimed_42_broken_verified": false,
@@ -103,7 +105,7 @@
         {
           "slot": "78:0",
           "src": "https://finalvestige.com/wp-content/uploads/2026/10/focus_complete_cover.webp",
-          "origin": "malformed",
+          "origin": "first_party",
           "alt": "Seven Day Focus Fieldbook Complete Edition cover",
           "width": "960",
           "height": "960",
@@ -119,7 +121,7 @@
         {
           "slot": "78:1",
           "src": "https://finalvestige.com/wp-content/uploads/2026/08/suunto-logo-300x180.webp",
-          "origin": "malformed",
+          "origin": "first_party",
           "alt": "Suunto logo",
           "width": null,
           "height": null,
@@ -135,7 +137,7 @@
         {
           "slot": "78:2",
           "src": "https://us.suunto.com/cdn/shop/files/SS014891000-Suunto-MC-2-G-USGS-MIRROR-COMPASS-perspective-view-01_297f0046-bf9a-4f3c-893c-ad50a6346ef9.png?v=1778238838&width=1390",
-          "origin": "malformed",
+          "origin": "other_external",
           "alt": "Suunto MC-2 G USGS mirror compass open with sighting mirror",
           "width": null,
           "height": null,
@@ -151,7 +153,7 @@
         {
           "slot": "78:3",
           "src": "https://www.awin1.com/cshow.php?s=4959313&v=46005&q=620613&r=3055117",
-          "origin": "malformed",
+          "origin": "affiliate",
           "alt": "Cold Case Inc sponsored mystery-game banner",
           "width": null,
           "height": null,
@@ -200,7 +202,7 @@
         {
           "slot": "234:0",
           "src": "https://finalvestige.com/wp-content/uploads/2026/08/ne-819x1024.png",
-          "origin": "malformed",
+          "origin": "first_party",
           "alt": "Bryan Rhodes, founder and editor of Final Vestige",
           "width": null,
           "height": null,
