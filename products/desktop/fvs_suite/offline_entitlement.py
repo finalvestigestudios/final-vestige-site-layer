@@ -21,6 +21,7 @@ from cryptography.exceptions import InvalidSignature
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PublicKey
 from .journal_io import read_regular_bytes
 from .entitlement_reader_privacy_r383 import read_private_entitlement
+from .holder_identity import valid_holder
 
 DOMAIN = b"FinalVestigeLabs.entitlement.v1\x00"
 SCHEMA = "fvs.entitlement.v1"
@@ -137,7 +138,7 @@ def verify_license(path: str | Path, product: str, *,
     if not IDENTIFIER.fullmatch(item["kid"]) or not IDENTIFIER.fullmatch(item["license_id"]):
         raise EntitlementError("Invalid entitlement identifiers")
     holder = item["holder"]
-    if not holder or holder != holder.strip() or len(holder) > 120 or any(ord(c) < 32 for c in holder):
+    if not valid_holder(holder):
         raise EntitlementError("Invalid entitlement holder")
     issued = _time(item["issued_at"], "issued_at")
     start = _time(item["not_before"], "not_before")
