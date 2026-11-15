@@ -12,7 +12,7 @@ This independent Experience 2.0 component is stacked on R380, not on homepage PR
 
 ## Reproduce
 
-From repository root, after installing PHP 7.4+ and `playwright` Python package with local Chromium and `pdftotext`:
+From repository root, after installing PHP 8.0+ and `playwright` Python package with local Chromium and `pdftotext`:
 
 ```sh
 php -l experience2/apollo-r381/atlas.php
