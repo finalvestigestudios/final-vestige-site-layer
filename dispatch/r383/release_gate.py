@@ -42,12 +42,14 @@ def audience_snapshot(total, confirmed, unconfirmed, wpcom_followers, email_foll
             'email_followers': email_followers, 'unique_eligible_inboxes': None,
             'combined_audience': None}
 
-def net_commission_per_1000(qualified_sessions, order_records):
+def net_commission_per_1000(qualified_sessions, order_records, qualified_sessions_verified=False):
     """Publisher commission only; never retail sales or raw clicks."""
+    if qualified_sessions_verified is not True:
+        return None
     if qualified_sessions is None or not isinstance(qualified_sessions, int) \
             or isinstance(qualified_sessions, bool) or qualified_sessions <= 0:
         return None
-    if order_records is None or not isinstance(order_records, list):
+    if not isinstance(order_records, list) or not order_records:
         return None
     seen = set()
     net = Decimal('0')
