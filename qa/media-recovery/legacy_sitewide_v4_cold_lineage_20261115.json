@@ -26,7 +26,15 @@
       "failed": 0,
       "method": "Node-style modules evaluated in isolated V8 with sameSource/URL shims and native assertion semantics; native Node and GitHub CI unrun"
     },
-    "new_negative_cases": 12
+    "new_negative_cases": 12,
+    "old_exact_source_against_new_44_test_definitions_v8": {
+      "source_blob": "ba6030357b49245ac2ae4fe553bfbd614a582a2d",
+      "test_blob": "1295528ccfeb439dcbd694286801ac5d89e51c5e",
+      "total": 44,
+      "passed": 32,
+      "failed": 12,
+      "failed_cases": "12 added invalid-collector-version, page-count and cold-CDP-lineage negative cases"
+    }
   },
   "hardening": [
     "require safe integer probe_version >= 4 for BOTH full-site runs",
