@@ -11,6 +11,15 @@
   "observed_date": "2026-11-14",
   "release_state": "DRAFT_HARD_HOLD",
   "editorial_disposition": "SUPPRESS_ACTIONABLE_DISPUTED_CLAIMS_PENDING_QUALIFIED_REVIEW",
+  "original_citation_occurrences": 71,
+  "original_unique_citation_ids": 11,
+  "original_source_use_ids": 11,
+  "source_use_ids_absent_from_r374_fragment_crosswalk": [
+    "cdc-botulism-prevention",
+    "fsis-home-cure-qa",
+    "nchfp-cure-smoke"
+  ],
+  "source_resolution_caveat": "Absent from R374 nine-branch fragment crosswalk, not proven absent from all central registers or build dependencies. Fail closed and inspect authoritative registry/build path before resolution.",
   "critical_review_topics": [
     "Original article paragraphs and hazard table give blanket wild-game freezing advice not supported across freeze-resistant Trichinella species",
     "FSIS and NCHFP jerky heating sequences differ and are not approved as interchangeable steps",
