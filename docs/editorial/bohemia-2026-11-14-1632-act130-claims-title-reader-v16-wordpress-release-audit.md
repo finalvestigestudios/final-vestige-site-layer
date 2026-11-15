@@ -1,0 +1,37 @@
+# FV Investigations — Bohemia cycle QA and release hold — November 14, 2026, 16:32 Pacific
+
+**Disposition:** HOLD. WordPress post #2488 remains an **unpublished draft**; no subscriber emails, social posting, homepage/template modification, paid services, or change to Caernarvon post #2151.
+
+## Scope and duplicate guard
+Current live [Journal](https://finalvestige.com/blog/) and [Editorial Standards](https://finalvestige.com/editorial-standards/) reviewed in this cycle, with authenticated WordPress modified-date queue and GitHub [Investigations issue #1463](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1463) / [visual QA #1589](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1589). No competing Bohemia publication identified in inspected entries. The 2000 funding-rejection finding, 2002 liability disclosures and existing diagrams were preserved, not duplicated.
+
+## Newly verified original primary law (source 29 / master ledger 63)
+Louisiana **Act No. 130 of 2005 (SB 210)**, effective **June 22, 2005**, official [signed/enacted document](https://www.legis.la.gov/Legis/ViewDocument.aspx?d=317802) and [bill status / enactment tracker](https://www.legis.la.gov/Legis/BillInfo.aspx?i=61456). Note the host's generic document-page title incorrectly says “2001 First Extraordinary Session”; the actual PDF header clearly says **Regular Session, 2005, enrolled SB210, Act 130**. Original scanned PDF page images **3, 4, 5, 6** were **visually inspected using the web PDF screenshot service** in this cycle; strikethrough deletions were distinguished from bold-underlined additions. In particular:
+- Enacted Section 1(B)(iii)–(iv), printed pp. 3–4: identifies the December 11, 2000 **Haspel & Davis** consent judgment and **partial payments made**, with further payments intended. It does **not** document exact payees, transfers or full satisfaction.
+- Newly added recitals (v)–(vii), printed p. 5: record competing title claims; represent that existing owner-of-record revenues were paid **or being settled** in the current fiscal year; and record suspension of payments pending title litigation. Recital is official but not a payment audit.
+- Enacted Section 2(a)–(d), printed p. 6: application deadline **June 30, 2007**; direction to contact certified transferees within **30 days of conveyance** to negotiate post-June-29-1984 revenues. Filing ≠ certification ≠ deed ≠ negotiation ≠ payment. The statute does not prove performance.
+- Section 2(e), pp. 6–7: in specified later competing-title claims, payment claim is directed against prior owner of record rather than board. Scope, later judicial application and constitutionality not independently reviewed.
+
+These findings are a substantial **new legal context** for the already documented June 2007 claim surge in the FY2007 audit. They do not imply all heirs were compensated or barred, or that a 2026 debt exists. No first-person interview, archive visit or payment receipt is represented.
+
+## Writing and source ledger
+- [Reader Edition v16](https://github.com/finalvestigestudios/final-vestige-site-layer/blob/main/docs/editorial/bohemia-spillway-reader-edition-2026-11-14.md), verified GitHub commit `9e0f30a02f52418c2e0c8a3c40200f6928e28812`: four original narrative paragraphs under “When the law recognized payments and a deadline”; numbered source **[29]**; amended historical claim chronology and source ledger count.
+- [Master dossier v4.0](https://github.com/finalvestigestudios/final-vestige-site-layer/blob/main/docs/editorial/bohemia-spillway-2026-11-12-land-roster-rights-claim-investigation-draft.md), verified GitHub commit `08808fa7c169bf9d47cfb930242ce166578b7b9c`: new sequential source **[63]**, original PDF verification and exact future claimant-record retrieval tasks; all earlier evidence preserved.
+- [Original SVG diagram](https://github.com/finalvestigestudios/final-vestige-site-layer/blob/main/docs/editorial/assets/bohemia-2005-claims-payments-act130-2026-11-14.svg), committed `8f7bb55361325842f2e24bb76edf0a5870ada83e` and independently fetched SHA `7857900e9f7ab9ee744e4874fc9d8dc913c96f01`. **Creator:** Final Vestige Studios; **date:** November 14, 2026; **rights:** original self-contained SVG with no third-party documentary assets, no external fonts or hotlinked graphics; **source:** enacted Act 130, pp. 3–7. **Caption:** “A law is not a receipt: the different administrative stages documented by Act 130.” **Alt:** “Timeline of 2005 Louisiana Act 130 recitals about partial payments and title disputes; its June 30, 2007 Bohemia filing deadline; and 30-day contact obligation after certified conveyance.” **Graphics check:** SVG source/semantic title and description verified by GitHub readback; **no standalone raster/mobile visual inspection was completed** this cycle. SVG remains in GitHub and is not inserted into WordPress.
+
+## WordPress guarded operations and independent QA
+Edited **existing draft #2488** using five individually guarded top-level Gutenberg inserts before “The settlement that changed the remedy” and one optimistic-lock guarded bibliography list replacement. The final authenticated post readback confirmed:
+- **Status draft**, modified **2026-11-14T16:32:19** site-local.
+- **29** unique numbered source list IDs, **89** internal in-body source links, **0** unresolved `#fv-source-N` targets.
+- Categories **9369, 232815** and featured media **2484** preserved. Media **2484** (2023 Landsat/USGS via NASA) and **2485** (2007 USDA/NAIP via NASA) retained with documentary credits, dates and alt text in authenticated media library and in-post blocks. The existing original figures were not removed.
+- `_jetpack_dont_email_post_to_subs=true`, `jetpack_publicize_feature_enabled=false`, `jetpack_seo_noindex=true` independently read back. No public publish request issued.
+
+**Still unverified:** a real editor-authenticated **390px and 1440px** capture of the *actual WordPress draft in the live theme*, including first screen, images, evidence figures and bibliography; the web fetcher could not access the two local JPG bytes in this run, and metadata does not establish actual pixel rendering. The standalone Act 130 SVG was **not visually checked**, and remains out of WordPress. Site screenshot URLs returned for unauthenticated visitors cannot prove a hidden draft's appearance.
+
+## Specific remaining release gates
+1. Authenticated production-theme draft preview, 390px and 1440px with inspectable screenshot pixels; no clipping, overlays, broken images or misplaced bibliography. Independent byte-level image fetch and credits QA.
+2. Original 1998 district escrow instruction, original 2000 **Haspel & Davis** consent judgment, 1997 **Vogt** accounting/allocation exhibits, executed 2015 bank transfer and court-registry/beneficiary disbursements, plus 2005–2007 certification notices, post-conveyance contact letters and title-dispute outcomes.
+3. Legal/editorial review distinguishing legislative recital, statutory duty, court judgment, district financial disclosure, actual claimant receipts, and what remains unknown; correction/rights review.
+4. When and only when release gates pass, first publish must **explicitly** retain `_jetpack_dont_email_post_to_subs=true` and `jetpack_publicize_feature_enabled=false`; independently reread live URL, metadata, images and anchors after publication. No social distribution by this agent.
+
+**Release decision: HOLD. No paid calls.**
