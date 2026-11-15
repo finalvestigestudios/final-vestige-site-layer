@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="880" viewBox="0 0 780 880" role="img" aria-labelledby="title desc">
+<title id="title">Two openings, two measurements: Bohemia Spillway in 2011 and Mardi Gras Pass in 2012</title>
+<desc id="desc">A documentary timeline. In 2011 the flood authority's Coastal Advisory Committee heard that about 80 percent of the Bohemia Spillway overtopped to an average depth of about 15 inches during high water and that a road breach measured about 150 feet wide and 24 feet deep. NASA dates a separate riverbank breakthrough in February 2012, initially 32 feet wide and five feet deep. These dimensions describe different measured openings and stages, not conflicting measurements of one cross-section. Figure is conceptual and not to scale.</desc>
+<rect x="0" y="0" width="780" height="880" fill="#101c24"/>
+<rect x="34" y="32" width="712" height="816" rx="18" fill="#152633" stroke="#697b7d" stroke-width="2"/>
+<text x="68" y="91" font-size="23" font-family="Arial, sans-serif" fill="#d0b58b" letter-spacing="3">FINAL VESTIGE / EVIDENCE CHRONOLOGY</text>
+<text x="68" y="150" font-size="42" font-family="Georgia, serif" font-weight="bold" fill="#f2f0e9">The opening had a history</text>
+<text x="68" y="187" font-size="26" font-family="Arial, sans-serif" fill="#c6d2d4">One floodplain. Two recorded stages.</text>
+<path d="M97 240 V683" fill="none" stroke="#b8c9c9" stroke-width="4" stroke-dasharray="10 10"/>
+<circle cx="97" cy="273" r="15" fill="#d0b58b"/>
+<rect x="140" y="220" width="570" height="220" rx="14" fill="#1e3440" stroke="#607782"/>
+<text x="169" y="267" font-size="28" font-family="Arial, sans-serif" font-weight="bold" fill="#ecd0a0">2011 · High water / road breach</text>
+<text x="169" y="316" font-size="30" font-family="Georgia,serif" fill="#f2f0e9">~80% overtopped</text>
+<text x="169" y="355" font-size="25" font-family="Arial,sans-serif" fill="#d8e2e2">~15 in. average water depth</text>
+<text x="169" y="393" font-size="25" font-family="Arial,sans-serif" fill="#d8e2e2">Road gap: ~150 ft × 24 ft</text>
+<circle cx="97" cy="520" r="15" fill="#d0b58b"/>
+<rect x="140" y="467" width="570" height="194" rx="14" fill="#1e3440" stroke="#607782"/>
+<text x="169" y="515" font-size="28" font-family="Arial,sans-serif" font-weight="bold" fill="#ecd0a0">Feb 2012 · Riverbank connection</text>
+<text x="169" y="567" font-size="31" font-family="Georgia,serif" fill="#f2f0e9">~32 ft wide × 5 ft deep</text>
+<text x="169" y="608" font-size="24" font-family="Arial,sans-serif" fill="#d8e2e2">NASA's initial breach description</text>
+<rect x="64" y="692" width="652" height="88" rx="10" fill="#2c3b3c"/>
+<text x="83" y="724" font-size="22" font-family="Arial,sans-serif" font-weight="bold" fill="#f3e1bb">Do not compare these as one measurement.</text>
+<text x="83" y="754" font-size="21" font-family="Arial,sans-serif" fill="#eef0e7">Roadway opening ≠ later riverbank breakthrough.</text>
+<text x="68" y="819" font-size="17" font-family="Arial,sans-serif" fill="#abbabd">Sources: 5 Aug 2011 Flood Authority minutes, pp. 7–8; NASA EO, 21 Feb 2023.</text>
+</svg>
