@@ -87,15 +87,17 @@ function validateNetwork(slot,page,kind){
     n.status!==slot.http_status||String(n.mime_type||'').split(';')[0].trim().toLowerCase()!==
        String(slot.response_mime_type||'').split(';')[0].trim().toLowerCase())return null;
  // Cached errors (including service-worker 404s) must not establish a fresh
- // network-origin P0 failure. All cache indicators must explicitly be false.
- if(n.was_cached!==false||n.from_disk_cache!==false||n.from_service_worker!==false)return null;
+ // network-origin P0 failure. All cache indicators (including memory) must explicitly be false.
+ if(n.was_cached!==false||n.from_disk_cache!==false||n.from_memory_cache!==false||
+    n.from_service_worker!==false)return null;
  if(kind==='loaded'){
   if(!Number.isSafeInteger(slot.natural_width)||slot.natural_width<=0||
      !Number.isSafeInteger(slot.natural_height)||slot.natural_height<=0||
      n.status!==200||!/^image\//i.test(n.mime_type||'')||
      !Number.isSafeInteger(n.encoded_data_length)||n.encoded_data_length<=0||
      slot.transfer_bytes!==n.encoded_data_length||n.error||
-     n.was_cached!==false||n.from_disk_cache!==false||n.from_service_worker!==false)return null;
+     n.was_cached!==false||n.from_disk_cache!==false||n.from_memory_cache!==false||
+     n.from_service_worker!==false)return null;
  } else if(kind==='broken'){
   if(slot.natural_width!==0||slot.natural_height!==0)return null;
   const networkFailure=typeof n.error==='string'&&!!n.error.trim()&&
@@ -107,7 +109,8 @@ function validateNetwork(slot,page,kind){
   const decoding=n.status===200&&/^image\//i.test(n.mime_type||'')&&
      slot.visual_failure_kind==='image_decode_failure'&&safeInt(n.encoded_data_length)&&
      n.encoded_data_length>0&&slot.transfer_bytes===n.encoded_data_length&&
-     !n.error&&n.was_cached===false&&n.from_disk_cache===false&&n.from_service_worker===false;
+     !n.error&&n.was_cached===false&&n.from_disk_cache===false&&n.from_memory_cache===false&&
+     n.from_service_worker===false;
   if(![networkFailure,httpError,nonImage,decoding].some(Boolean))return null;
  } else return null;
  return n;
