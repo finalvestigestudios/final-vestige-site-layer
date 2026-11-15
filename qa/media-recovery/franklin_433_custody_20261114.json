@@ -1,0 +1,211 @@
+{
+  "schema": "fv-franklin-433-archival-media-custody-v1",
+  "observed_date_pt": "2026-11-14",
+  "published_post": {
+    "id": 433,
+    "status": "publish",
+    "modified": "2026-11-02T21:37:26",
+    "url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/",
+    "stored_img_count": 6,
+    "external_src_count": 5,
+    "observation": "authenticated WordPress edit context, read only; no Gutenberg content committed"
+  },
+  "source_method": "Catalog pages and external reader only; no logged-out browser, origin HTTP or cold transfer measurement",
+  "historical_baseline": {
+    "posts": 61,
+    "stored_inline_images": 355,
+    "reported_broken_external_images": 42,
+    "confirmed_guest_broken": null,
+    "claimed_wire_reduction_percent": 76,
+    "actual_wire_reduction_percent": null,
+    "wp_originals_above_1500000_bytes": 16,
+    "wp_originals_total_stored_bytes": 49107665
+  },
+  "images": [
+    {
+      "slot": "433:1",
+      "stored_url": "https://finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg",
+      "alt": "The Victory Point note from the Franklin expedition, with the original 1847 message in the center and the 1848 update written around its margins.",
+      "published_caption": "The Victory Point note: the 1847 message occupies the center; Crozier and Fitzjames added the expedition’s 1848 collapse around its margins.",
+      "source_record_url": "https://commons.wikimedia.org/wiki/File:Franklinexpeditionnote.jpg",
+      "authoritative_primary_record_url": "https://www.rmg.co.uk/collections/archive/rmgc-object-504898",
+      "source_rights": "Commons PD-marked reproduction of 1869 printed scan; this is NOT a museum photo license",
+      "license_class": "public_domain_asserted",
+      "native_px": [
+        1576,
+        2506
+      ],
+      "conditional_960_no_upscale_px": [
+        960,
+        1526
+      ],
+      "retriever_observation": "catalog_verified_binary_not_tested",
+      "origin_http_status": null,
+      "logged_out_browser_http_status": null,
+      "rendered_current_src": null,
+      "actual_transfer_bytes": null,
+      "confirmed_guest_broken": null,
+      "candidate_binary_identity_verified": false,
+      "rights_cleared_for_rehost": false,
+      "production_replacement_approved": false,
+      "caption_license_mismatch": false,
+      "review_hold": true
+    },
+    {
+      "slot": "433:2",
+      "stored_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/HMS_Erebus_and_Terror_-_ILN_1845.jpg",
+      "alt": "Illustrated London News engraving of HMS Erebus and HMS Terror departing for the Arctic expedition in May 1845.",
+      "published_caption": "HMS Erebus and HMS Terror departing in 1845. Illustrated London News.",
+      "source_record_url": "https://commons.wikimedia.org/wiki/File:HMS_Erebus_and_Terror_-_ILN_1845.jpg",
+      "authoritative_primary_record_url": null,
+      "source_rights": "Commons public-domain assertion for original 24 May 1845 Illustrated London News engraving",
+      "license_class": "public_domain_asserted",
+      "native_px": [
+        750,
+        523
+      ],
+      "conditional_960_no_upscale_px": [
+        750,
+        523
+      ],
+      "retriever_observation": "rendered_in_external_reader_not_origin_status",
+      "origin_http_status": null,
+      "logged_out_browser_http_status": null,
+      "rendered_current_src": null,
+      "actual_transfer_bytes": null,
+      "confirmed_guest_broken": null,
+      "candidate_binary_identity_verified": false,
+      "rights_cleared_for_rehost": false,
+      "production_replacement_approved": false,
+      "caption_license_mismatch": false,
+      "review_hold": true
+    },
+    {
+      "slot": "433:3",
+      "stored_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Dr_John_Rae%2C_with_relics_from_the_Franklin_Expedition%2C_gold_medal%2C_and_map%2C_August_1886_%28PORTRAITS_2459%29.jpg",
+      "alt": "John Rae seated beside Franklin expedition relics, a Royal Geographical Society medal and a map in an 1886 portrait.",
+      "published_caption": "John Rae with Franklin expedition relics, a Royal Geographical Society medal and a map, photographed by Byrne & Co. in August 1886.",
+      "source_record_url": "https://commons.wikimedia.org/wiki/File:Dr_John_Rae,_with_relics_from_the_Franklin_Expedition,_gold_medal,_and_map,_August_1886_(PORTRAITS_2459).jpg",
+      "authoritative_primary_record_url": null,
+      "source_rights": "University of Washington Portraits 2459; Commons public-domain assertion; source metadata carries reliability warning",
+      "license_class": "public_domain_asserted",
+      "native_px": [
+        399,
+        600
+      ],
+      "conditional_960_no_upscale_px": [
+        399,
+        600
+      ],
+      "retriever_observation": "catalog_verified_binary_not_tested",
+      "origin_http_status": null,
+      "logged_out_browser_http_status": null,
+      "rendered_current_src": null,
+      "actual_transfer_bytes": null,
+      "confirmed_guest_broken": null,
+      "candidate_binary_identity_verified": false,
+      "rights_cleared_for_rehost": false,
+      "production_replacement_approved": false,
+      "caption_license_mismatch": false,
+      "review_hold": true
+    },
+    {
+      "slot": "433:4",
+      "stored_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/%281860%29_Map_of_the_probable_routes_taken_by_HMS_Erebus_and_HMS_Terror_during_Franklin%27s_lost_expedition_%26_results_of_McClintock%27s_Arctic_Expedition.jpg/1280px-%281860%29_Map_of_the_probable_routes_taken_by_HMS_Erebus_and_HMS_Terror_during_Franklin%27s_lost_expedition_%26_results_of_McClintock%27s_Arctic_Expedition.jpg",
+      "alt": "1860 map showing the probable route of Erebus and Terror and areas searched after the Franklin expedition disappeared.",
+      "published_caption": "Map of probable routes and results of McClintock’s search, 1860.",
+      "source_record_url": "https://commons.wikimedia.org/wiki/File:(1860)_Map_of_the_probable_routes_taken_by_HMS_Erebus_and_HMS_Terror_during_Franklin%27s_lost_expedition_%26_results_of_McClintock%27s_Arctic_Expedition.jpg",
+      "authoritative_primary_record_url": null,
+      "source_rights": "British Library Mechanical Curator 1860 scanned historical map; Commons PD assertion; downsampling may damage tiny labels",
+      "license_class": "public_domain_asserted",
+      "native_px": [
+        1477,
+        2357
+      ],
+      "conditional_960_no_upscale_px": [
+        960,
+        1532
+      ],
+      "retriever_observation": "catalog_verified_binary_not_tested",
+      "origin_http_status": null,
+      "logged_out_browser_http_status": null,
+      "rendered_current_src": null,
+      "actual_transfer_bytes": null,
+      "confirmed_guest_broken": null,
+      "candidate_binary_identity_verified": false,
+      "rights_cleared_for_rehost": false,
+      "production_replacement_approved": false,
+      "caption_license_mismatch": false,
+      "review_hold": true
+    },
+    {
+      "slot": "433:5",
+      "stored_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/L23402-c8qmb-t3-05-rx.jpg/1280px-L23402-c8qmb-t3-05-rx.jpg",
+      "alt": "James Fitzjames photographed in 1845 shortly before sailing aboard HMS Erebus on the Franklin expedition.",
+      "published_caption": "James Fitzjames in 1845. Richard Beard daguerreotype; public domain.",
+      "source_record_url": "https://commons.wikimedia.org/wiki/File:L23402-c8qmb-t3-05-rx.jpg",
+      "authoritative_primary_record_url": null,
+      "source_rights": "Commons identifies FabTet 2023 photo of older daguerreotype licensed CC BY-SA 4.0; historical object's rights distinct",
+      "license_class": "CC-BY-SA-4.0",
+      "native_px": [
+        3284,
+        3966
+      ],
+      "conditional_960_no_upscale_px": [
+        960,
+        1159
+      ],
+      "retriever_observation": "catalog_verified_binary_not_tested",
+      "origin_http_status": null,
+      "logged_out_browser_http_status": null,
+      "rendered_current_src": null,
+      "actual_transfer_bytes": null,
+      "confirmed_guest_broken": null,
+      "candidate_binary_identity_verified": false,
+      "rights_cleared_for_rehost": false,
+      "production_replacement_approved": false,
+      "caption_license_mismatch": true,
+      "review_hold": true
+    },
+    {
+      "slot": "433:6",
+      "stored_url": "https://d3d0lqu00lnqvz.cloudfront.net/media/media/cea975ac-62ed-4c2f-bf13-67a0f3a90092.jpg",
+      "alt": "British Admiralty poster from 1850 offering rewards for rescuing Franklin’s crews or determining their fate.",
+      "published_caption": "The Admiralty’s 1850 reward notice for Franklin information. Historical document; public-domain underlying work.",
+      "source_record_url": "https://commons.wikimedia.org/wiki/File:Reward_for_finding_Franklin_Expedition.jpg",
+      "authoritative_primary_record_url": "https://canadianmysteries.ca/sites/franklin/archive/text/RewardPoster_en.htm",
+      "source_rights": "Public-domain underlying 7 March 1850 Admiralty notice, Library and Archives Canada; original CloudFront file not binary matched or licensed to rehost",
+      "license_class": "pd_underlying_host_reproduction_unverified",
+      "native_px": [
+        726,
+        1119
+      ],
+      "conditional_960_no_upscale_px": [
+        726,
+        1119
+      ],
+      "retriever_observation": "rendered_in_external_reader_not_origin_status",
+      "origin_http_status": null,
+      "logged_out_browser_http_status": null,
+      "rendered_current_src": null,
+      "actual_transfer_bytes": null,
+      "confirmed_guest_broken": null,
+      "candidate_binary_identity_verified": false,
+      "rights_cleared_for_rehost": false,
+      "production_replacement_approved": false,
+      "caption_license_mismatch": false,
+      "review_hold": true
+    }
+  ],
+  "release": {
+    "site_qa_cold_browser_owner": 154,
+    "homepage_excluded": true,
+    "allow_wordpress_production_writes": false,
+    "allow_asset_downloads_or_caches": false,
+    "allow_auto_replacement": false,
+    "require_exact_scene_approval": true,
+    "require_item_rights_and_credit": true,
+    "require_actual_css_dpr": true,
+    "require_reversible_stage": true
+  }
+}
