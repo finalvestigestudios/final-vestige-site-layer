@@ -10,7 +10,7 @@ const FV_R384_TAG = 'fv_apollo_source_gallery_r384';
 const FV_R384_FREE = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/';
 const FV_R384_BOARD = 'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/';
 const FV_R384_TESTS = 'https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/';
-const FV_R384_CSS_SHA256 = 'fe168323d5f018db7fb84fc7e50510566523b0f53e881eeb55c80bd628351791';
+const FV_R384_CSS_SHA256 = 'e467e3be663529be73ceb2b307a8efd5eb24f180cf36af6cc534156d73acfa93';
 const FV_R384_MEDIA = 'https://www.nasa.gov/nasa-brand-center/images-and-media/';
 
 function fv_r384_h($v): string {
