@@ -1,0 +1,22 @@
+{
+  "issue_slot": "02-alternative-only",
+  "status": "UNSENT_NOT_ADOPTED",
+  "campaign_pr": 175,
+  "base_pr": 2673,
+  "subject": "The horse answered. The questioner gave it away.",
+  "proposed_preheader": "Berlin, 1904: a remarkable animal, an invisible cue, and an experiment that changed the question.",
+  "preheader_native_render_verified": false,
+  "primary_cta": "https://finalvestige.com/2026/11/02/mesmerism/",
+  "primary_cta_count": 1,
+  "source_urls": [
+    "https://www.biodiversitylibrary.org/item/116908",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3921203/",
+    "https://finalvestige.com/editorial-standards/"
+  ],
+  "source_date_ref": "1911 English translation of investigations starting 1904",
+  "merchant_urls": [],
+  "affiliate_status": "NOT_APPLICABLE_EDITORIAL",
+  "wordpress_id": null,
+  "legal_footer_verified": false,
+  "founder_final_approval": false
+}
