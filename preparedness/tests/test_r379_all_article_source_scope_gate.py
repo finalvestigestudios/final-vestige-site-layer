@@ -43,7 +43,7 @@ def fixture():
         bodies = []
         metas = []
         for j,branch in enumerate(branches):
-            body = f'<p>{TEXT} version-{j} ' + '{{cite:local-ref}} {{cite:base-ref}} {{link:' + slug + '}}</p>'
+            body = f'<p>{TEXT} version-{j} ' + '{{cite:local-ref}} {{cite:base-ref}} {{link:' + slug + '|Read more}}</p>'
             meta = {'n':i+1,'slug':slug,'section':'family-communication' if is_shelter else 'start-here',
                     'status':{'editorial':'drafted','publish':'draft'},
                     'safety_review':{'state':'pending','reviewer':None,'date':None},
@@ -144,9 +144,9 @@ class R379Tests(unittest.TestCase):
     def test_duplicate_base_source_id_rejected(self):
         self.docs[2]['sources'].append(copy.deepcopy(self.docs[2]['sources'][0]));self.assert_bad('duplicate or malformed BASE')
     def test_changed_draft_status_rejected(self):
-        altered(self.docs[0],self.docs[3],SLUGS[8],'meta.json',lambda m:{**m,'status':{'publish':'published'}});self.assert_bad('no longer draft')
+        altered(self.docs[0],self.docs[3],SLUGS[8],'meta.json',lambda m:{**m,'status':{'publish':'published'}});self.assert_bad('publish state no longer draft')
     def test_approval_bypass_rejected(self):
-        altered(self.docs[0],self.docs[3],SLUGS[8],'meta.json',lambda m:{**m,'safety_review':{'state':'approved'}});self.assert_bad('no longer draft')
+        altered(self.docs[0],self.docs[3],SLUGS[8],'meta.json',lambda m:{**m,'safety_review':{'state':'approved'}});self.assert_bad('legacy approved label lacks dated reviewer')
     def test_reading_depth_warning_does_not_approve(self):
         altered(self.docs[0],self.docs[3],SLUGS[8],'body.html',lambda b:b.replace(TEXT,'Short explanation. '));r=report(self.docs)
         self.assertTrue(any('reading-depth below' in w for w in r['warnings']))
