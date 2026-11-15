@@ -14,13 +14,13 @@ This independent Experience 2.0 component is stacked on R380, not on homepage PR
 
 From repository root, after installing PHP 7.4+ and `playwright` Python package with local Chromium and `pdftotext`:
 
-~~~sh
+```sh
 php -l experience2/apollo-r381/atlas.php
 php experience2/apollo-r381/qa/php_contract.php
 python3 experience2/apollo-r381/qa/browser.py
 python3 experience2/apollo-r381/qa/package.py
 sha256sum experience2/apollo-r381/QA/Apollo_R381_Evidence.zip
-~~~
+```
 
 The checked-in **test scripts**, not screenshots, constitute committed QA source. Generated screenshots, JSON results and PDF stay local in the deterministic evidence ZIP. Re-running `package.py` on unchanged bytes must produce the same SHA-256. Screenshots and lab metrics can differ across browsers and machines. The browser test uses Chromium `set_content` with PHP-rendered fixtures: **NOT actual HTTP/HTTPS or installed WordPress staging**. Axe-core, independent screen readers, production LCP/CLS/INP, native 400% zoom, staging HTTP/CSP and exact-HEAD hosted CI remain unverified.
 
