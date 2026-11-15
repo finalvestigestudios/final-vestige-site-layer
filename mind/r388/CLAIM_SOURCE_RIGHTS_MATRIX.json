@@ -1,0 +1,526 @@
+{
+  "title": "Mind R388 claim/source/rights/release matrix",
+  "review_date": "2026-11-14",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "sources": {
+    "n2001": "https://doi.org/10.1038/35104551",
+    "c2003": "https://openaccess.city.ac.uk/id/eprint/335/",
+    "n2005": "https://doi.org/10.1038/nn1488",
+    "n2008": "https://doi.org/10.1038/nn.2111",
+    "zen": "https://zen12.com/",
+    "checkout": "https://zen12.com/getstarted",
+    "inspire": "https://inspire3.com/",
+    "affiliates": "https://affiliates.inspire3.com/",
+    "ll": "https://inspire3.com/ll/",
+    "hypnosis": "https://hypnosislive.com/",
+    "brain": "https://brainwaveshots.com/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "focus": "https://finalvestige.com/focus/",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "cb": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/"
+  },
+  "claims": [
+    {
+      "id": "M01",
+      "claim": "First target after saccade can appear longer",
+      "type": "primary_abstract",
+      "source_links": [
+        "https://doi.org/10.1038/35104551"
+      ],
+      "decision": "include_qualified",
+      "limitation": "Not physical time changing"
+    },
+    {
+      "id": "M02",
+      "claim": "Authors propose perceptual onset backdating",
+      "type": "primary_interpretation",
+      "source_links": [
+        "https://doi.org/10.1038/35104551"
+      ],
+      "decision": "attribute",
+      "limitation": "Mechanism not finally settled"
+    },
+    {
+      "id": "M03",
+      "claim": "Moving target during saccade eliminates reported illusion",
+      "type": "primary_abstract",
+      "source_links": [
+        "https://doi.org/10.1038/35104551"
+      ],
+      "decision": "include_qualified",
+      "limitation": "Original experiment only"
+    },
+    {
+      "id": "M04",
+      "claim": "Reaching hand can produce apparent onset shift",
+      "type": "institutional_abstract",
+      "source_links": [
+        "https://openaccess.city.ac.uk/id/eprint/335/"
+      ],
+      "decision": "include_qualified",
+      "limitation": "Not every touch"
+    },
+    {
+      "id": "M05",
+      "claim": "Continuous visually identifiable event resists manual effect",
+      "type": "institutional_abstract",
+      "source_links": [
+        "https://openaccess.city.ac.uk/id/eprint/335/"
+      ],
+      "decision": "include_qualified",
+      "limitation": "Study control only"
+    },
+    {
+      "id": "M06",
+      "claim": "Brief perisaccadic visual interval can seem compressed",
+      "type": "primary_abstract",
+      "source_links": [
+        "https://doi.org/10.1038/nn1488"
+      ],
+      "decision": "include_qualified",
+      "limitation": "Different task from M01"
+    },
+    {
+      "id": "M07",
+      "claim": "Some pre-saccade time-order reports inverted",
+      "type": "primary_abstract",
+      "source_links": [
+        "https://doi.org/10.1038/nn1488"
+      ],
+      "decision": "include_qualified",
+      "limitation": "Not physical reversal"
+    },
+    {
+      "id": "M08",
+      "claim": "2005 visual compression absent in auditory control",
+      "type": "primary_abstract",
+      "source_links": [
+        "https://doi.org/10.1038/nn1488"
+      ],
+      "decision": "include_qualified",
+      "limitation": "Condition specific"
+    },
+    {
+      "id": "M09",
+      "claim": "Lower transient visibility can compress interval report",
+      "type": "primary_abstract",
+      "source_links": [
+        "https://doi.org/10.1038/nn.2111"
+      ],
+      "decision": "include_qualified",
+      "limitation": "Does not refute all chronostasis"
+    },
+    {
+      "id": "M10",
+      "claim": "Puységur archive retains contested testimony and coercion examples",
+      "type": "FV_published",
+      "source_links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "decision": "historical_only",
+      "limitation": "Not animal magnetism proof"
+    },
+    {
+      "id": "M11",
+      "claim": "Focus Fieldbook has 52 pages, seven-day and thirty-day log",
+      "type": "FV_published",
+      "source_links": [
+        "https://finalvestige.com/focus/"
+      ],
+      "decision": "resource_only",
+      "limitation": "Not a tested treatment"
+    },
+    {
+      "id": "S01",
+      "claim": "Inspire3 lists Zen12 Hypnosis Live and related products",
+      "type": "seller_catalog",
+      "source_links": [
+        "https://inspire3.com/"
+      ],
+      "decision": "include_attributed",
+      "limitation": "Not independent evaluation"
+    },
+    {
+      "id": "S02",
+      "claim": "Zen12 complete Premium lists 12 levels 48 MP3s",
+      "type": "seller_description",
+      "source_links": [
+        "https://zen12.com/",
+        "https://zen12.com/getstarted"
+      ],
+      "decision": "include_attributed",
+      "limitation": "Tier specific"
+    },
+    {
+      "id": "S03",
+      "claim": "Zen12 lists four styles: music/guided/nature/white noise",
+      "type": "seller_description",
+      "source_links": [
+        "https://zen12.com/"
+      ],
+      "decision": "include_attributed",
+      "limitation": "Guided is only one style"
+    },
+    {
+      "id": "S04",
+      "claim": "Zen12 lists manual/support/guides/bonuses",
+      "type": "seller_description",
+      "source_links": [
+        "https://zen12.com/",
+        "https://zen12.com/getstarted"
+      ],
+      "decision": "include_attributed",
+      "limitation": "Fulfillment not tested"
+    },
+    {
+      "id": "S05",
+      "claim": "Zen12 public checkout showed $87.99 on 2026-11-14",
+      "type": "public_seller_display",
+      "source_links": [
+        "https://zen12.com/getstarted",
+        "https://zen12.com/"
+      ],
+      "decision": "include_dated",
+      "limitation": "Final referred price and tax not verified"
+    },
+    {
+      "id": "S06",
+      "claim": "Zen12 promotes a one-year refund promise",
+      "type": "seller_promise",
+      "source_links": [
+        "https://zen12.com/"
+      ],
+      "decision": "include_attributed",
+      "limitation": "No actual refund authenticated"
+    },
+    {
+      "id": "S07",
+      "claim": "Zen12 claims 12 minutes brings 1 hour meditation benefits",
+      "type": "seller_efficacy",
+      "source_links": [
+        "https://zen12.com/"
+      ],
+      "decision": "OMIT",
+      "limitation": "No product-specific adequate substantiation"
+    },
+    {
+      "id": "S08",
+      "claim": "Zen12 claims stress/health/focus improvements",
+      "type": "seller_efficacy",
+      "source_links": [
+        "https://zen12.com/"
+      ],
+      "decision": "OMIT",
+      "limitation": "Not product-specific proven"
+    },
+    {
+      "id": "S09",
+      "claim": "Inspire3 affiliate network offers publisher links",
+      "type": "network_ad",
+      "source_links": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "decision": "network_exists_only",
+      "limitation": "FV not approved by this fact"
+    },
+    {
+      "id": "S10",
+      "claim": "Inspire3 publicly advertises commission/EPC",
+      "type": "network_ad",
+      "source_links": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "decision": "OMIT",
+      "limitation": "No FV-specific contract"
+    },
+    {
+      "id": "S11",
+      "claim": "Limitless Labs says only approved partners can promote",
+      "type": "SKU_specific_partner_page",
+      "source_links": [
+        "https://inspire3.com/ll/"
+      ],
+      "decision": "caution_only",
+      "limitation": "Not Zen12 approval"
+    },
+    {
+      "id": "S12",
+      "claim": "Hypnosis Live lists 200+ self-hypnosis sessions",
+      "type": "seller_description",
+      "source_links": [
+        "https://hypnosislive.com/"
+      ],
+      "decision": "no_cta",
+      "limitation": "SKU/claims unverified"
+    },
+    {
+      "id": "S13",
+      "claim": "Brainwave Shots lists various MP3 products",
+      "type": "seller_description",
+      "source_links": [
+        "https://brainwaveshots.com/"
+      ],
+      "decision": "no_cta",
+      "limitation": "Effects unverified"
+    },
+    {
+      "id": "R01",
+      "claim": "FTC expects near-link clear commission disclosure",
+      "type": "regulator",
+      "source_links": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "decision": "mandatory",
+      "limitation": "Generic page inadequate"
+    },
+    {
+      "id": "R02",
+      "claim": "FTC expects reliable substantiation for health claims",
+      "type": "regulator",
+      "source_links": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "decision": "mandatory",
+      "limitation": "General background studies do not prove SKU"
+    },
+    {
+      "id": "A01",
+      "claim": "Final Vestige has active named affiliate acceptance",
+      "type": "account_permission",
+      "source_links": [],
+      "decision": "UNVERIFIED_HOLD",
+      "limitation": "No accepted evidence"
+    },
+    {
+      "id": "A02",
+      "claim": "Final Vestige can use EMAIL promotional channel",
+      "type": "account_permission",
+      "source_links": [],
+      "decision": "UNVERIFIED_HOLD",
+      "limitation": "Separate explicit approval missing"
+    },
+    {
+      "id": "A03",
+      "claim": "Final Vestige has issued compliant earning link",
+      "type": "account_permission",
+      "source_links": [],
+      "decision": "UNVERIFIED_HOLD",
+      "limitation": "Do not invent URL"
+    },
+    {
+      "id": "C01",
+      "claim": "Current FV-owned Mind product is rights-cleared and payable",
+      "type": "commerce",
+      "source_links": [],
+      "decision": "UNVERIFIED_HOLD",
+      "limitation": "Seller/rights/checkout/delivery/refund proof missing"
+    },
+    {
+      "id": "C02",
+      "claim": "A merchant click indicates commission",
+      "type": "measurement",
+      "source_links": [],
+      "decision": "REJECT",
+      "limitation": "Only settled external sale can prove payment"
+    },
+    {
+      "id": "C03",
+      "claim": "A/B film increased paid conversion",
+      "type": "experiment",
+      "source_links": [],
+      "decision": "UNTESTED",
+      "limitation": "No exposed cohort, encoded film or paid orders"
+    }
+  ],
+  "release_gates": [
+    {
+      "gate": "G01",
+      "requirement": "Named affiliate publisher acceptance",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G02",
+      "requirement": "Approved product-specific Zen12 SKU",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G03",
+      "requirement": "Explicit website and organic social channels",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G04",
+      "requirement": "Separate email/Dispatch promotional permission",
+      "owner": "Founder/Dispatch",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G05",
+      "requirement": "Issued earning URL and tracking requirements",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G06",
+      "requirement": "Licensed creative inventory or original-only approval",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G07",
+      "requirement": "Valid individual referred checkout and tax",
+      "owner": "Commerce",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G08",
+      "requirement": "Current full refund terms and observed practices",
+      "owner": "Commerce",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G09",
+      "requirement": "Settlement and refund adjustment reporting",
+      "owner": "Commerce",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G10",
+      "requirement": "Alternative FV-owned rights-cleared paid SKU",
+      "owner": "Commerce",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G11",
+      "requirement": "Original poster/film media rights",
+      "owner": "Mind/Site QA",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G12",
+      "requirement": "Independent scientific and historical source check",
+      "owner": "Mind/Site QA",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G13",
+      "requirement": "FTC disclosure adjacent in rendered and text views",
+      "owner": "Site QA",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G14",
+      "requirement": "Real keyboard/screenreader and no-JS review",
+      "owner": "Site QA",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G15",
+      "requirement": "360,390,768,1440,1920 pixel browser checks",
+      "owner": "Site QA",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G16",
+      "requirement": "WordPress sanitizer, CSP and link safety",
+      "owner": "Claude/Site QA",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G17",
+      "requirement": "Optional encoded film CWV and mobile performance",
+      "owner": "Claude/Site QA",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G18",
+      "requirement": "Existing Jetpack consent and deduped delivery",
+      "owner": "Claude/Dispatch",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G19",
+      "requirement": "Real matched creator media ID and destination",
+      "owner": "Grok/Praxxis",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G20",
+      "requirement": "First-party consent/privacy handling",
+      "owner": "Claude",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G21",
+      "requirement": "Pre-registered controlled A/B design",
+      "owner": "Claude/Mind",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G22",
+      "requirement": "Merchant verified sale and refunds/fees",
+      "owner": "Commerce",
+      "status": "HOLD",
+      "verified_proof": null
+    },
+    {
+      "gate": "G23",
+      "requirement": "Founder written release approval",
+      "owner": "Founder",
+      "status": "HOLD",
+      "verified_proof": null
+    }
+  ],
+  "measurement_contract": {
+    "events": [
+      "qualified_human_session",
+      "article_to_focus_click",
+      "provider_confirmed_signup_if_observable",
+      "buyer_guide_visit",
+      "affiliate_click_if_authorized",
+      "partner_confirmed_sale",
+      "refund",
+      "fee",
+      "realized_net_revenue"
+    ],
+    "utm_source": "verified_platform",
+    "utm_medium": "organic_social",
+    "utm_campaign": "mind_pilot_2026_11",
+    "utm_content": "verified_immutable_asset_id_only",
+    "no_new_tracking_script": true,
+    "no_personal_data": true,
+    "affiliate_click_is_sale": false,
+    "cohort_days": [
+      7,
+      30
+    ],
+    "net_revenue_per_1000_qualified_sessions": null
+  },
+  "release_decision": "DO_NOT_PUBLISH_OR_ACTIVATE"
+}
