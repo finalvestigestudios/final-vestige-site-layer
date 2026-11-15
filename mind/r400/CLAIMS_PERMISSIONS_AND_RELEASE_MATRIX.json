@@ -1,0 +1,464 @@
+{
+  "schema": "fv.mind.r400.claims.v1",
+  "inspection_date": "2026-11-15",
+  "editorial_status": "UNPUBLISHED_HARD_HOLD",
+  "author_scope": "Mind & Perception presell/editorial only",
+  "source_index": {
+    "inspire3": "https://inspire3.com/",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "zen": "https://zen12.com/",
+    "checkout": "https://zen12.com/getstarted",
+    "hyp": "https://hypnosislive.com/mental-skills/total-focus",
+    "hypFAQ": "https://hypnosislive.com/faq",
+    "focusShot": "https://brainwaveshots.com/focus-shot",
+    "raz": "https://doi.org/10.1111/j.1467-9280.2006.01669.x",
+    "hypTheory": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+    "sleepReview": "https://pubmed.ncbi.nlm.nih.gov/37399315/",
+    "beats": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "nccih": "https://www.nccih.nih.gov/health/hypnosis",
+    "ftcEnd": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftcHealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "puy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "fieldbook": "https://finalvestige.com/focus/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "jhop": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/hypnosis"
+  },
+  "claims": [
+    {
+      "id": "Z1",
+      "claim": "Zen12 complete public checkout lists 12 levels and 48 MP3s",
+      "status": "SELLER_FEATURE",
+      "source": "https://zen12.com/getstarted",
+      "editorial_disposition": "Describe as seller package; reconfirm SKU"
+    },
+    {
+      "id": "Z2",
+      "claim": "Zen12 seller includes a quick-start guide and manual",
+      "status": "SELLER_FEATURE",
+      "source": "https://zen12.com/getstarted",
+      "editorial_disposition": "Seller-described contents only"
+    },
+    {
+      "id": "Z3",
+      "claim": "Zen12 seller includes audio guides and a support call",
+      "status": "SELLER_FEATURE",
+      "source": "https://zen12.com/getstarted",
+      "editorial_disposition": "Do not promise personal access until checkout verified"
+    },
+    {
+      "id": "Z4",
+      "claim": "Zen12 vendor advertises lifetime support",
+      "status": "SELLER_POLICY",
+      "source": "https://zen12.com/getstarted",
+      "editorial_disposition": "Seller representation, untested"
+    },
+    {
+      "id": "Z5",
+      "claim": "Zen12 vendor advertises one-year money-back guarantee",
+      "status": "SELLER_POLICY",
+      "source": "https://zen12.com/getstarted",
+      "editorial_disposition": "Do not say risk-free; jurisdiction/fulfillment unknown"
+    },
+    {
+      "id": "Z6",
+      "claim": "Observed public seller checkout total displayed $87.99 on Nov 15 2026",
+      "status": "OBSERVED_SNAPSHOT",
+      "source": "https://zen12.com/getstarted",
+      "editorial_disposition": "Never use as FV referral price or guaranteed checkout"
+    },
+    {
+      "id": "Z7",
+      "claim": "Zen12 public checkout shows a countdown",
+      "status": "SELLER_INTERFACE",
+      "source": "https://zen12.com/getstarted",
+      "editorial_disposition": "Do not import urgency countdown"
+    },
+    {
+      "id": "Z8",
+      "claim": "Zen12 says 12-minute audio equals an hour of deep meditation",
+      "status": "UNSUPPORTED_EFFICACY",
+      "source": "https://inspire3.com/",
+      "editorial_disposition": "Exclude equality claim from FV marketing"
+    },
+    {
+      "id": "Z9",
+      "claim": "Zen12 seller says brainwave entrainment makes meditation effortless",
+      "status": "UNSUPPORTED_EFFICACY",
+      "source": "https://zen12.com/",
+      "editorial_disposition": "Mark seller claim; exclude independently endorsed outcome"
+    },
+    {
+      "id": "Z10",
+      "claim": "A distinct Zen12 advanced package exists with six levels",
+      "status": "SELLER_FEATURE",
+      "source": "https://zen12.com/",
+      "editorial_disposition": "Prevent SKU conflation"
+    },
+    {
+      "id": "H1",
+      "claim": "Hypnosis Live Total Focus described as 33 minutes and 47 MB",
+      "status": "SELLER_FEATURE",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "editorial_disposition": "Feature, not efficacy"
+    },
+    {
+      "id": "H2",
+      "claim": "Hypnosis Live Total Focus public page showed $17.95 promotional offer",
+      "status": "OBSERVED_SNAPSHOT",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "editorial_disposition": "No extrapolated affiliate price"
+    },
+    {
+      "id": "H3",
+      "claim": "Hypnosis Live says Total Focus produces 100 percent razor-sharp concentration",
+      "status": "UNSUPPORTED_EFFICACY",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "editorial_disposition": "Exclude from FV copy"
+    },
+    {
+      "id": "H4",
+      "claim": "Hypnosis Live FAQ describes 14-day refund window and max 5 sessions per year",
+      "status": "SELLER_POLICY",
+      "source": "https://hypnosislive.com/faq",
+      "editorial_disposition": "Reflect full material limit; merchant must confirm"
+    },
+    {
+      "id": "H5",
+      "claim": "Hypnosis Live states prerecorded MP3 immediately downloadable",
+      "status": "SELLER_FEATURE",
+      "source": "https://hypnosislive.com/faq",
+      "editorial_disposition": "Delivery subject to actual checkout"
+    },
+    {
+      "id": "B1",
+      "claim": "Brainwave Shots Focus Shot seller describes 15 and 30 minute variants",
+      "status": "SELLER_FEATURE",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "editorial_disposition": "Product-specific format"
+    },
+    {
+      "id": "B2",
+      "claim": "Brainwave Shots seller includes brainwave-only variants",
+      "status": "SELLER_FEATURE",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "editorial_disposition": "Product-specific format"
+    },
+    {
+      "id": "B3",
+      "claim": "Brainwave Shots Focus Shot page describes 12-18 Hz protocol",
+      "status": "SELLER_TECHNICAL",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "editorial_disposition": "Not a measured consumer outcome"
+    },
+    {
+      "id": "B4",
+      "claim": "Brainwave Shots seller claims focus lasts four hours or all day",
+      "status": "UNSUPPORTED_EFFICACY",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "editorial_disposition": "Exclude performance duration"
+    },
+    {
+      "id": "B5",
+      "claim": "Brainwave Shots Focus Shot page advertised $17.99",
+      "status": "OBSERVED_SNAPSHOT",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "editorial_disposition": "Not affiliate referral checkout"
+    },
+    {
+      "id": "S1",
+      "claim": "Raz et al. 2006 found reduced Stroop interference after suggestion in selected highly suggestible participants with or without induction",
+      "status": "RESEARCH_CONTEXT",
+      "source": "https://doi.org/10.1111/j.1467-9280.2006.01669.x",
+      "editorial_disposition": "Report participant/task boundaries"
+    },
+    {
+      "id": "S2",
+      "claim": "2006 Stroop suggestion experiment validates Zen12 or Total Focus",
+      "status": "NOT_ESTABLISHED",
+      "source": "https://doi.org/10.1111/j.1467-9280.2006.01669.x",
+      "editorial_disposition": "Explicitly forbid product extrapolation"
+    },
+    {
+      "id": "S3",
+      "claim": "2024 theory review reports no consensus mechanism for all hypnotic suggestions",
+      "status": "RESEARCH_CONTEXT",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "editorial_disposition": "Describe genuine theoretical debate"
+    },
+    {
+      "id": "S4",
+      "claim": "2023 sleep hypnosis review reported heterogeneous positive, mixed and null findings",
+      "status": "RESEARCH_CONTEXT",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37399315/",
+      "editorial_disposition": "Do not generalize to retail concentration audio"
+    },
+    {
+      "id": "S5",
+      "claim": "2023 EEG review found 5 supportive, 8 contradictory, 1 mixed result across 14 binaural-beat studies",
+      "status": "RESEARCH_CONTEXT",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "editorial_disposition": "Specific EEG literature, not all rhythmic sound"
+    },
+    {
+      "id": "S6",
+      "claim": "NCCIH summarizes conditional/limited clinical hypnosis evidence for some specific conditions",
+      "status": "RESEARCH_CONTEXT",
+      "source": "https://www.nccih.nih.gov/health/hypnosis",
+      "editorial_disposition": "No treatment implications for seller audio"
+    },
+    {
+      "id": "P1",
+      "claim": "Puységur historical record contains witness statements, failures and consent warnings",
+      "status": "HISTORICAL_SOURCE",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "editorial_disposition": "Do not claim magnetism mechanism was verified"
+    },
+    {
+      "id": "P2",
+      "claim": "Existing 52-page Focus Fieldbook is a free optional Dispatch-linked resource",
+      "status": "LIVE_FV_ASSET",
+      "source": "https://finalvestige.com/focus/",
+      "editorial_disposition": "Preserve single Jetpack list"
+    },
+    {
+      "id": "P3",
+      "claim": "Published FV Change Blindness and Mesmerism articles already exist",
+      "status": "LIVE_FV_ASSET",
+      "source": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "editorial_disposition": "Avoid publishing duplicate slug/articles"
+    },
+    {
+      "id": "F1",
+      "claim": "FTC says material affiliate connection should be conspicuous near recommendation",
+      "status": "REGULATORY",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "editorial_disposition": "Enforce adjacent plain-language earning disclosure"
+    },
+    {
+      "id": "F2",
+      "claim": "FTC requires scientific support appropriate to actual health-product claims",
+      "status": "REGULATORY",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "editorial_disposition": "Do not borrow unrelated studies to assert product benefits"
+    },
+    {
+      "id": "F3",
+      "claim": "Johns Hopkins says hypnosis is not reliable memory recovery",
+      "status": "MEDICAL_CONTEXT",
+      "source": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/hypnosis",
+      "editorial_disposition": "No recovered-memory claims"
+    },
+    {
+      "id": "A1",
+      "claim": "Public Inspire3 affiliate program has signup/login and advertises commissions",
+      "status": "PUBLIC_PARTNER_PAGE",
+      "source": "https://affiliates.inspire3.com/",
+      "editorial_disposition": "Not proof of FV acceptance, payout or actual commission"
+    },
+    {
+      "id": "A2",
+      "claim": "Named Final Vestige publisher approval",
+      "status": "UNVERIFIED",
+      "source": null,
+      "editorial_disposition": "Commercial hard hold"
+    },
+    {
+      "id": "A3",
+      "claim": "Final Vestige issued Zen12 earning URL and product-specific channel permissions",
+      "status": "UNVERIFIED",
+      "source": null,
+      "editorial_disposition": "No affiliate destination"
+    },
+    {
+      "id": "A4",
+      "claim": "Actual FV-referred payout, checkout, refunds and fees",
+      "status": "UNVERIFIED",
+      "source": null,
+      "editorial_disposition": "Net revenue not computable"
+    },
+    {
+      "id": "A5",
+      "claim": "Current paid, rights-cleared FV-owned Mind SKU and delivery",
+      "status": "UNVERIFIED",
+      "source": null,
+      "editorial_disposition": "No owned paid CTA activated"
+    }
+  ],
+  "commercial_release_gates": [
+    {
+      "key": "named_publisher_approved",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "exact_program_authorized",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "sku_authorized",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "channel_website_allowed",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "channel_email_allowed",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "channel_social_allowed",
+      "status": "HOLD",
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "key": "creative_reuse_rights_verified",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "issuer_link_received",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "issued_link_verified",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "checkout_exact_sku_verified",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "checkout_actual_total_verified",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "refund_terms_confirmed",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "payout_terms_documented",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "tax_and_jurisdiction_checked",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "promotional_claims_substantiated",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "ftc_adjacent_disclosure_qa",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "founder_release_approval",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "web_security_qa",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "key": "mobile_accessibility_qa",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "key": "real_browser_qa",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "key": "video_encoded_rights_qa",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "key": "video_caption_playback_qa",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "key": "data_consent_measured",
+      "status": "HOLD",
+      "owner": "Claude/Analytics"
+    },
+    {
+      "key": "no_duplicate_analytics_verified",
+      "status": "HOLD",
+      "owner": "Claude/Analytics"
+    },
+    {
+      "key": "unique_asset_ids_verified",
+      "status": "HOLD",
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "key": "provider_verified_lead_delivery",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "partner_verified_paid_order",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "refunds_fees_reconciled",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "qualified_human_denominator_verified",
+      "status": "HOLD",
+      "owner": "Claude/Analytics"
+    },
+    {
+      "key": "site_qa_signoff",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "key": "homepage_art_review",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "key": "cms_approval",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    }
+  ],
+  "product_authorization": {
+    "Inspire3": "public network page only; no named FV publisher acceptance",
+    "Zen12": "no authorized FV issuing link or exact checkout",
+    "HypnosisLive": "email channel not authorized; no FV link",
+    "BrainwaveShots": "no FV link",
+    "FV_owned_Mind": "no independently verified paid SKU"
+  },
+  "legal_disclaimer": "Seller features/offer snapshots are not endorsements, proofs of benefit, or confirmed checkout terms. This matrix is an evidence ledger, not counsel.",
+  "orders": {
+    "confirmed_orders": null,
+    "net_revenue": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000_qualified_sessions": null
+  }
+}
