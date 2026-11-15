@@ -36,13 +36,13 @@ function fv_r379_template_contains_shortcode(object $template): bool {
         || !function_exists('get_stylesheet') || !function_exists('has_shortcode')
         || !function_exists('get_post')) { return false; }
     $theme = get_stylesheet();
-    $visited = array(); $nodes = 0; $bytes = 0; $invalid = false; $found = false;
-    $inspect = static function (string $content, int $depth) use (&$inspect, &$visited, &$nodes, &$bytes, &$invalid, &$found, $theme): bool {
+    $visited = array(); $active = array(); $nodes = 0; $bytes = 0; $invalid = false; $found = false;
+    $inspect = static function (string $content, int $depth) use (&$inspect, &$visited, &$active, &$nodes, &$bytes, &$invalid, &$found, $theme): bool {
         $bytes += strlen($content);
         if ($invalid || $depth > 7 || $bytes > 1024 * 1024) { $invalid = true; return false; }
         $blocks = parse_blocks($content);
         if (!is_array($blocks)) { $invalid = true; return false; }
-        $walk = static function (array $parts, int $level) use (&$walk, &$inspect, &$visited, &$nodes, &$invalid, &$found, $theme): bool {
+        $walk = static function (array $parts, int $level) use (&$walk, &$inspect, &$visited, &$active, &$nodes, &$invalid, &$found, $theme): bool {
             if ($invalid || $level > 7) { $invalid = true; return false; }
             foreach ($parts as $block) {
                 if (!is_array($block) || ++$nodes > 200) { $invalid = true; return false; }
@@ -54,28 +54,39 @@ function fv_r379_template_contains_shortcode(object $template): bool {
                 }
                 if ($name === 'core/block') {
                     $ref = $block['attrs']['ref'] ?? null;
-                    if (!is_int($ref) || $ref <= 0) { continue; }
+                    if (!is_int($ref) || $ref <= 0) { $invalid = true; return false; }
                     $key = 'b:' . $ref;
+                    // A repeat on the active path is a cycle, not a harmless cached sibling.
+                    if (isset($active[$key])) { $invalid = true; return false; }
                     if (isset($visited[$key])) { continue; }
-                    $visited[$key] = true;
                     $post = get_post($ref);
-                    if (is_object($post) && ($post->post_type ?? null) === 'wp_block'
-                        && ($post->post_status ?? null) === 'publish'
-                        && is_string($post->post_content ?? null)
-                         ) { $inspect($post->post_content, $level + 1); }
+                    if (!is_object($post) || ($post->post_type ?? null) !== 'wp_block'
+                        || ($post->post_status ?? null) !== 'publish'
+                        || !is_string($post->post_content ?? null)) { $invalid = true; return false; }
+                    $active[$key] = true;
+                    $inspect($post->post_content, $level + 1);
+                    unset($active[$key]);
+                    if ($invalid) { return false; }
+                    $visited[$key] = true;
                 }
                 if ($name === 'core/template-part') {
                     $attrs = $block['attrs'] ?? array();
                     if (!is_array($attrs)) { $invalid = true; return false; }
                     $slug = $attrs['slug'] ?? null;
                     if (!is_string($slug) || !preg_match('/^[a-zA-Z0-9_-]{1,100}$/D', $slug)
-                        || (isset($attrs['theme']) && $attrs['theme'] !== $theme)) { continue; }
+                        || (isset($attrs['theme']) && $attrs['theme'] !== $theme)) { $invalid = true; return false; }
                     $id = $theme . '//' . $slug; $key = 't:' . $id;
+                    if (isset($active[$key])) { $invalid = true; return false; }
                     if (isset($visited[$key])) { continue; }
-                    $visited[$key] = true;
                     $part = get_block_template($id, 'wp_template_part');
-                    if (fv_r379_verified_template($part, $id, $theme, 'wp_template_part')
-                         ) { $inspect($part->content, $level + 1); }
+                    if (!fv_r379_verified_template($part, $id, $theme, 'wp_template_part')) {
+                        $invalid = true; return false;
+                    }
+                    $active[$key] = true;
+                    $inspect($part->content, $level + 1);
+                    unset($active[$key]);
+                    if ($invalid) { return false; }
+                    $visited[$key] = true;
                 }
                 $children = $block['innerBlocks'] ?? array();
                 if (!is_array($children)) { $invalid = true; return false; }
