@@ -1,0 +1,36 @@
+{
+  "sprint": "r388",
+  "snapshot_utc": "2026-11-15T22:31:47Z",
+  "source": "read-only authenticated Jetpack status/settings/followers",
+  "subscribers": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0
+  },
+  "followers": {
+    "wpcom": 3,
+    "email": 0,
+    "partial": false
+  },
+  "eligible_inboxes": null,
+  "full_email": true,
+  "auto_new_post_email": false,
+  "welcome_configured": true,
+  "welcome_received_verified": false,
+  "provider_verified_signup_count": null,
+  "real_native_preview_verified": false,
+  "publisher_address_verified": false,
+  "rendered_unsubscribe_verified": false,
+  "named_affiliate_permission": false,
+  "verified_settled_net_revenue": null,
+  "qualified_human_sessions": null,
+  "approved_issue_mix": {
+    "editorial": 4,
+    "commercial": 2
+  },
+  "campaign_state": "ALL_SIX_HOLD_UNSENT",
+  "candidate_state": "OPTIONAL_NOT_ADOPTED",
+  "original_master_pr": 175,
+  "previous_dispatch_pr": 2668
+}
