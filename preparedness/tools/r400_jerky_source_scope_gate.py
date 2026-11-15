@@ -56,7 +56,7 @@ def git_blob(raw: bytes) -> str:
     return hashlib.sha1(b'blob ' + str(len(raw)).encode('ascii') + b'\0' + raw).hexdigest()
 
 
-def inspect(docket_raw: bytes, registry_raw: bytes, *, docket_pin: str = ORIGINAL_DOCKET_BLOB) -> dict:
+def _inspect_validated(docket_raw: bytes, registry_raw: bytes, *, docket_pin: str = ORIGINAL_DOCKET_BLOB) -> dict:
     """Validate source/custody *structure*, not advice; fail closed on any mutation."""
     failures: list[str] = []
     def need(ok: bool, tag: str) -> None:
@@ -147,6 +147,100 @@ def inspect(docket_raw: bytes, registry_raw: bytes, *, docket_pin: str = ORIGINA
     return {'integrity': 'FAIL' if failures else 'PASS', 'release': STATE,
             'eligible': False, 'source_count': len(SOURCE_POLICY),
             'conflict_count': len(CONFLICT_POLICY), 'failures': sorted(set(failures))}
+
+
+
+# R401: fail-closed schema firewall. This is not a qualified food-safety review.
+_REGISTRY_KEYS = frozenset({
+    'schema', 'state', 'decision', 'source_docket_git_blob', 'article_slug',
+    'source_id', 'editorial_issue', 'conversion_issue', 'business_charter_issue',
+    'review_comment_ids', 'selected_source_id', 'selected_manuscript_blob',
+    'current_household_instructions', 'actual_paid_preparedness_sku',
+    'sources', 'conflicts', 'review_requirements', *RELEASE_FALSE,
+})
+_SOURCE_KEYS = frozenset({
+    'id', 'url', 'evidence_level', 'scope', 'observed_on',
+    'human_reviewer_checked', 'usable_as_current_home_method',
+    'selected_for_article',
+})
+_CONFLICT_KEYS = frozenset({
+    'id', 'source_ids', 'decision', 'approved_public_guidance',
+})
+_REQUIRED_REVIEW = frozenset({
+    'product_and_processing_scope', 'source_date_and_currency',
+    'storage_conditions', 'processing_sequence', 'species_specific_risks',
+    'independent_qualified_signoff',
+})
+
+
+def _strict_pairs(pairs):
+    out = {}
+    for key, value in pairs:
+        if key in out:
+            raise ValueError('duplicate_json_key')
+        out[key] = value
+    return out
+
+
+def _reject_constant(value):
+    raise ValueError('non_finite_json')
+
+
+def _parse_strict(raw):
+    if not isinstance(raw, bytes) or len(raw) > 2_000_000:
+        raise ValueError('input_not_bounded_bytes')
+    return json.loads(raw, object_pairs_hook=_strict_pairs,
+                      parse_constant=_reject_constant)
+
+
+def _validate_schema(docket, register):
+    if not isinstance(docket, dict) or not isinstance(register, dict):
+        raise ValueError('root_not_object')
+    if set(register) != _REGISTRY_KEYS:
+        raise ValueError('unexpected_or_missing_registry_key')
+    for collection, allowed in (('sources', _SOURCE_KEYS),
+                                ('conflicts', _CONFLICT_KEYS)):
+        rows = register.get(collection)
+        if not isinstance(rows, list) or any(
+                not isinstance(row, dict) or set(row) != allowed for row in rows):
+            raise ValueError('unexpected_or_missing_' + collection + '_field')
+    requirements = register.get('review_requirements')
+    if (not isinstance(requirements, list) or
+        len(requirements) != len(_REQUIRED_REVIEW) or
+        any(not isinstance(item, str) for item in requirements) or
+        set(requirements) != _REQUIRED_REVIEW):
+        raise ValueError('invalid_review_requirements')
+    if not isinstance(register.get('review_comment_ids'), list):
+        raise ValueError('invalid_comment_ids')
+    if not isinstance(docket.get('expected'), dict):
+        raise ValueError('invalid_inventory')
+    if not isinstance(docket.get('original_articles'), list):
+        raise ValueError('invalid_articles')
+    disputes = docket.get('source_evidence_disputes')
+    if not isinstance(disputes, list):
+        raise ValueError('invalid_source_disputes')
+    for dispute in disputes:
+        if not isinstance(dispute, dict):
+            raise ValueError('invalid_source_dispute')
+        variants = dispute.get('variants')
+        if variants is not None and (not isinstance(variants, list) or any(
+                not isinstance(item, dict) for item in variants)):
+            raise ValueError('invalid_source_variants')
+
+
+def inspect(docket_raw: bytes, registry_raw: bytes,
+            *, docket_pin: str = ORIGINAL_DOCKET_BLOB) -> dict:
+    """R401 strict evidence boundary; structural PASS still requires HARD HOLD."""
+    try:
+        docket = _parse_strict(docket_raw)
+        register = _parse_strict(registry_raw)
+        _validate_schema(docket, register)
+        return _inspect_validated(docket_raw, registry_raw, docket_pin=docket_pin)
+    except (TypeError, ValueError, AttributeError, KeyError, IndexError,
+            OverflowError, RecursionError, UnicodeError):
+        return {'integrity': 'FAIL', 'release': STATE,
+                'failures': ['r401_invalid_or_ambiguous_evidence'], 'eligible': False}
+
 
 
 def main(argv=None) -> int:
