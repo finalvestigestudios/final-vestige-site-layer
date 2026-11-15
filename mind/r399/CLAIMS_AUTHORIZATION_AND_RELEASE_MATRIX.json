@@ -1,0 +1,486 @@
+{
+  "schema": "fv-mind-r399-claim-verification-v1",
+  "as_of": "2026-11-15",
+  "classification_note": "Seller representations are not independent efficacy evidence. Public displayed prices are dated and not endorsed, referred checkout prices.",
+  "source_urls": {
+    "catalog": "https://inspire3.com/",
+    "zenHome": "https://zen12.com/",
+    "zenOrder": "https://zen12.com/getstarted",
+    "zenPromo": "https://zen12.com/secret/",
+    "hypnosis": "https://hypnosislive.com/mental-skills/total-focus",
+    "hypnosisFAQ": "https://hypnosislive.com/faq",
+    "shot": "https://brainwaveshots.com/focus-shot",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "ftcEndorse": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftcHealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "mindfulness25": "https://pubmed.ncbi.nlm.nih.gov/33582570/",
+    "mindfulness111": "https://doi.org/10.1080/17437199.2023.2248222",
+    "beatsMeta": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+    "beatsEEG": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "puys": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/"
+  },
+  "claims": [
+    {
+      "id": "Z01",
+      "claim": "Zen12 advertises 12 course levels",
+      "classif": "seller_format",
+      "source": [
+        "zenOrder",
+        "zenHome"
+      ],
+      "decision": "descriptive_only",
+      "reason": "A catalog feature is not a benefit proof"
+    },
+    {
+      "id": "Z02",
+      "claim": "Zen12 order lists 48 MP3s",
+      "classif": "seller_format",
+      "source": [
+        "zenOrder"
+      ],
+      "decision": "descriptive_only",
+      "reason": "Quantity from inspected product page"
+    },
+    {
+      "id": "Z03",
+      "claim": "Zen12 says its sessions last 12 minutes",
+      "classif": "seller_format",
+      "source": [
+        "zenHome"
+      ],
+      "decision": "descriptive_only",
+      "reason": "Seller-supplied duration"
+    },
+    {
+      "id": "Z04",
+      "claim": "Zen12 lists four recording styles",
+      "classif": "seller_format",
+      "source": [
+        "zenHome"
+      ],
+      "decision": "descriptive_only",
+      "reason": "Music, guided, nature, white noise from seller"
+    },
+    {
+      "id": "Z05",
+      "claim": "Standard order page displayed $87.99 2026-11-15",
+      "classif": "seller_price_snapshot",
+      "source": [
+        "zenOrder"
+      ],
+      "decision": "quote_with_date_only",
+      "reason": "Not referred checkout or tax guarantee"
+    },
+    {
+      "id": "Z06",
+      "claim": "Separate seller promo displayed $37 with code/timer",
+      "classif": "seller_price_snapshot",
+      "source": [
+        "zenPromo"
+      ],
+      "decision": "exclude_promotional_route",
+      "reason": "No right to reproduce code, discount or urgency"
+    },
+    {
+      "id": "Z07",
+      "claim": "An hour's meditation equivalent in twelve minutes",
+      "classif": "seller_effect_claim",
+      "source": [
+        "zenHome"
+      ],
+      "decision": "exclude",
+      "reason": "No direct program-specific controlled support established"
+    },
+    {
+      "id": "Z08",
+      "claim": "Program immediately reduces stress and anxiety",
+      "classif": "seller_health_claim",
+      "source": [
+        "zenHome"
+      ],
+      "decision": "exclude",
+      "reason": "No product-specific competent reliable evidence"
+    },
+    {
+      "id": "Z09",
+      "claim": "Program changes EEG/induces deep meditation",
+      "classif": "seller_mechanism",
+      "source": [
+        "zenHome"
+      ],
+      "decision": "exclude",
+      "reason": "Mixed research is not a Zen12 brain measure"
+    },
+    {
+      "id": "Z10",
+      "claim": "Standard order advertises support and guarantee",
+      "classif": "seller_terms",
+      "source": [
+        "zenOrder"
+      ],
+      "decision": "qualified_description_only",
+      "reason": "Terms and refund fulfillment not inspected through purchase"
+    },
+    {
+      "id": "H01",
+      "claim": "Total Focus is a 33-minute 47MB narrated file",
+      "classif": "seller_format",
+      "source": [
+        "hypnosis"
+      ],
+      "decision": "descriptive_only",
+      "reason": "Not purchased/tested"
+    },
+    {
+      "id": "H02",
+      "claim": "Total Focus public display $17.95 2026-11-15",
+      "classif": "seller_price_snapshot",
+      "source": [
+        "hypnosis"
+      ],
+      "decision": "quote_with_date_only",
+      "reason": "Not a verified referral offer"
+    },
+    {
+      "id": "H03",
+      "claim": "Total Focus uses hypnosis and NLP",
+      "classif": "seller_method",
+      "source": [
+        "hypnosis"
+      ],
+      "decision": "attribute_to_seller",
+      "reason": "No in-product measurement"
+    },
+    {
+      "id": "H04",
+      "claim": "Total Focus reprograms brain / improves performance",
+      "classif": "seller_effect_claim",
+      "source": [
+        "hypnosis"
+      ],
+      "decision": "exclude",
+      "reason": "Sweeping efficacy unsupported here"
+    },
+    {
+      "id": "B01",
+      "claim": "Focus Shot includes 15- and 30-minute variants",
+      "classif": "seller_format",
+      "source": [
+        "shot"
+      ],
+      "decision": "descriptive_only",
+      "reason": "Not an outcome"
+    },
+    {
+      "id": "B02",
+      "claim": "Focus Shot public display $17.99 2026-11-15",
+      "classif": "seller_price_snapshot",
+      "source": [
+        "shot"
+      ],
+      "decision": "quote_with_date_only",
+      "reason": "Not a verified referral offer"
+    },
+    {
+      "id": "B03",
+      "claim": "Seller describes 12-18Hz frequency protocol",
+      "classif": "seller_spec",
+      "source": [
+        "shot"
+      ],
+      "decision": "attribute_to_seller",
+      "reason": "Audio setting does not prove cortical entrainment"
+    },
+    {
+      "id": "B04",
+      "claim": "Focus Shot gives focus for four hours or more",
+      "classif": "seller_effect_claim",
+      "source": [
+        "shot"
+      ],
+      "decision": "exclude",
+      "reason": "No exact-SKU trial established"
+    },
+    {
+      "id": "B05",
+      "claim": "Focus Shot guarantees safety/efficacy",
+      "classif": "seller_health_claim",
+      "source": [
+        "shot"
+      ],
+      "decision": "exclude",
+      "reason": "Do not amplify sweeping guarantees"
+    },
+    {
+      "id": "S01",
+      "claim": "2021 meta-analysis non-significant on attention",
+      "classif": "independent_review",
+      "source": [
+        "mindfulness25"
+      ],
+      "decision": "include_with_scope",
+      "reason": "25 MBI studies, not Zen12"
+    },
+    {
+      "id": "S02",
+      "claim": "2024 meta-analysis found benefits in some cognitive outcomes",
+      "classif": "independent_review",
+      "source": [
+        "mindfulness111"
+      ],
+      "decision": "include_with_scope",
+      "reason": "111 MBI RCTs, not seller products"
+    },
+    {
+      "id": "S03",
+      "claim": "2019 binaural-beat meta-analysis overall beneficial signal",
+      "classif": "independent_review",
+      "source": [
+        "beatsMeta"
+      ],
+      "decision": "include_with_scope",
+      "reason": "22 studies, product-independent"
+    },
+    {
+      "id": "S04",
+      "claim": "2023 EEG entrainment evidence inconsistent",
+      "classif": "independent_review",
+      "source": [
+        "beatsEEG"
+      ],
+      "decision": "include_with_scope",
+      "reason": "5 supporting, 8 contradictory, 1 mixed of 14 studies"
+    },
+    {
+      "id": "E01",
+      "claim": "Puységur documented witnesses, failures and consent issues",
+      "classif": "historical_source",
+      "source": [
+        "puys"
+      ],
+      "decision": "include_with_scope",
+      "reason": "Paper trail does not establish magnetism"
+    },
+    {
+      "id": "F01",
+      "claim": "Current Focus Fieldbook exists with 52 pages",
+      "classif": "owned_live_resource",
+      "source": [
+        "focus"
+      ],
+      "decision": "include",
+      "reason": "Existing Jetpack pathway, no new form"
+    },
+    {
+      "id": "A01",
+      "claim": "Inspire3 affiliate portal advertises commission program",
+      "classif": "seller_program",
+      "source": [
+        "affiliate"
+      ],
+      "decision": "describe_only",
+      "reason": "Public portal not final-vestige acceptance or channel permission"
+    },
+    {
+      "id": "A02",
+      "claim": "Final Vestige has an authenticated issued earning URL",
+      "classif": "authorization",
+      "source": [
+        "affiliate"
+      ],
+      "decision": "hold_unverified",
+      "reason": "No named acceptance / SKU / channel / issued URL found via targeted email and portal review"
+    },
+    {
+      "id": "C01",
+      "claim": "All prospective earning links require proximate disclosure",
+      "classif": "compliance",
+      "source": [
+        "ftcEndorse"
+      ],
+      "decision": "required_at_activation",
+      "reason": "Generic disclosure page alone insufficient"
+    },
+    {
+      "id": "C02",
+      "claim": "Health/psych claims require specific scientific substantiation",
+      "classif": "compliance",
+      "source": [
+        "ftcHealth"
+      ],
+      "decision": "required",
+      "reason": "No borrowed research outcomes"
+    },
+    {
+      "id": "R01",
+      "claim": "Affiliate outbound click is a paid order",
+      "classif": "measurement",
+      "source": [],
+      "decision": "forbid_equating",
+      "reason": "Only merchant-backed settlement can verify revenue"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "gate": "named_publisher_approval",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "sku_eligibility",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "organic_social_channel_permission",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "website_publisher_permission",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "email_channel_permission_if_ever_used",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "affiliate_link_issued",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "tracking_terms_read",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "landing_page_format_allowed",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "approved_creative_usage",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "price_at_referred_checkout",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "tax_statement_qualified",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "refund_terms_at_referred_checkout",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "substantiation_for_any_health_claim",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "near_link_ftc_disclosure",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "mobile_360_390",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "tablet_768",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "desktop_1440_1920",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "keyboard_focus",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "screen_reader_landmarks",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "reduced_motion",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "nojs_readability",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "no_autoplay_or_unconsented_embed",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "csp_no_external_scripts",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "real_browser_cwv",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "native_static_verifier",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "consent_and_jetpack_confirmation",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "asset_id_utm_mapping",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "qualified_human_sessions",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "paid_order_reconciliation",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "fees_refunds_reconciliation",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    },
+    {
+      "gate": "founder_release_approval",
+      "status": "HOLD",
+      "evidence": "Not independently demonstrated at this source-controlled review stage"
+    }
+  ],
+  "commercial_activation": "HARD_HOLD",
+  "tracking": "No visitor script implemented. No merchant URL or purchase link included.",
+  "owned_product_fallback": "No actually payable rights-cleared FV-owned Mind product independently authenticated in this run; no invented SKU, license or price.",
+  "affiliate_check": "Public portal demonstrates a program exists, not Final Vestige publisher acceptance. Targeted email searches returned promotions and consumer waiting list material, not usable publisher authorization."
+}
