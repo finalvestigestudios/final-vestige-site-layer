@@ -115,9 +115,9 @@ BAD_URLS=[
   'https://cdc.gov/a\r','https://cdc.gov/a\x7f',
 ]
 for n,url in enumerate(BAD_URLS):
-    def test(self, u=url):
+    def _case(self, u=url):
         with self.assertRaises(ValueError): R.url_identity(u)
-    setattr(KnownTests,f'test_reject_url_{n:02d}',test)
+    setattr(KnownTests,f'test_reject_url_{n:02d}',_case)
 
 EQ_PAIRS=[
  ('https://CDC.GOV/a','https://cdc.gov/a'),
@@ -131,8 +131,8 @@ EQ_PAIRS=[
  ('https://cdc.gov/a?x=1&utm_medium=y','https://cdc.gov/a?x=1'),
 ]
 for n,(a,b) in enumerate(EQ_PAIRS):
-    def test(self, left=a,right=b):self.assertEqual(R.url_identity(left)['key'],R.url_identity(right)['key'])
-    setattr(KnownTests,f'test_probable_equivalence_{n:02d}',test)
+    def _case(self, left=a,right=b):self.assertEqual(R.url_identity(left)['key'],R.url_identity(right)['key'])
+    setattr(KnownTests,f'test_probable_equivalence_{n:02d}',_case)
 
 DIFFERENT=[
  ('https://www.cdc.gov/a','https://cdc.gov/a'),
@@ -143,7 +143,7 @@ DIFFERENT=[
  ('https://cdc.gov/a?gclid=1&safe=2','https://cdc.gov/a?safe=3'),
 ]
 for n,(a,b) in enumerate(DIFFERENT):
-    def test(self,left=a,right=b):self.assertNotEqual(R.url_identity(left)['key'],R.url_identity(right)['key'])
-    setattr(KnownTests,f'test_do_not_equate_{n:02d}',test)
+    def _case(self,left=a,right=b):self.assertNotEqual(R.url_identity(left)['key'],R.url_identity(right)['key'])
+    setattr(KnownTests,f'test_do_not_equate_{n:02d}',_case)
 
 if __name__=='__main__':unittest.main()
