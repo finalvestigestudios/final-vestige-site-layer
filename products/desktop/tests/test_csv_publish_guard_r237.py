@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 from fvs_suite.csv_publish_guard import (
     adopt_csv_descriptor,
-    raise_private_csv_failure,
+    private_csv_failure,
     require_free_destination,
 )
 
@@ -85,41 +85,61 @@ class CSVPublicationGuardR237(unittest.TestCase):
         finally:
             real_close(fd)
 
+    def assert_private_error(self, source, sanitized):
+        """The new builder must never retain source paths or exception chains."""
+        self.assertNotIn(str(self.target), repr(sanitized))
+        self.assertNotIn("secret client", repr(sanitized))
+        self.assertIsNone(sanitized.__context__)
+        self.assertIsNone(sanitized.__cause__)
+        self.assertIsNone(sanitized.filename)
+        self.assertIsNone(sanitized.filename2)
+        self.assertIsNot(sanitized, source)
+
     def test_collision_classification_sanitized(self):
-        error = FileExistsError(errno.EEXIST, "secret client", str(self.target))
-        with self.assertRaises(FileExistsError) as caught:
-            raise_private_csv_failure(error)
-        self.assertEqual(str(caught.exception), "CSV report destination already exists")
-        self.assertNotIn(str(self.target), str(caught.exception))
-        self.assertIsNone(caught.exception.filename)
+        source = FileExistsError(errno.EEXIST, "secret client", str(self.target))
+        sanitized = private_csv_failure(source)
+        self.assertIsInstance(sanitized, FileExistsError)
+        self.assertEqual(str(sanitized), "CSV report destination already exists")
+        self.assert_private_error(source, sanitized)
 
     def test_permission_errno_preserved_and_redacted(self):
-        error = PermissionError(errno.EACCES, "full payroll data", str(self.target))
-        with self.assertRaises(OSError) as caught:
-            raise_private_csv_failure(error)
-        self.assertEqual(caught.exception.errno, errno.EACCES)
-        self.assertEqual(str(caught.exception), "[Errno 13] CSV report publication failed")
-        self.assertIsNone(caught.exception.filename)
+        source = PermissionError(errno.EACCES, "secret client", str(self.target))
+        sanitized = private_csv_failure(source)
+        self.assertIsInstance(sanitized, OSError)
+        self.assertEqual(sanitized.errno, errno.EACCES)
+        self.assertEqual(str(sanitized), "[Errno 13] CSV report publication failed")
+        self.assert_private_error(source, sanitized)
 
     def test_disk_full_errno_preserved_and_redacted(self):
-        with self.assertRaises(OSError) as caught:
-            raise_private_csv_failure(OSError(errno.ENOSPC, "client path", str(self.target)))
-        self.assertEqual(caught.exception.errno, errno.ENOSPC)
-        self.assertNotIn(str(self.target), str(caught.exception))
+        source = OSError(errno.ENOSPC, "secret client", str(self.target))
+        sanitized = private_csv_failure(source)
+        self.assertEqual(sanitized.errno, errno.ENOSPC)
+        self.assert_private_error(source, sanitized)
 
     def test_untrusted_errno_boolean_defaults_to_eio(self):
-        bad = OSError("secret")
-        bad.errno = True
-        with self.assertRaises(OSError) as caught:
-            raise_private_csv_failure(bad)
-        self.assertEqual(caught.exception.errno, errno.EIO)
+        source = OSError("secret client")
+        source.errno = True
+        sanitized = private_csv_failure(source)
+        self.assertEqual(sanitized.errno, errno.EIO)
+        self.assert_private_error(source, sanitized)
 
     def test_untrusted_negative_errno_defaults_to_eio(self):
-        bad = OSError("secret")
-        bad.errno = -100
-        with self.assertRaises(OSError) as caught:
-            raise_private_csv_failure(bad)
-        self.assertEqual(caught.exception.errno, errno.EIO)
+        source = OSError("secret client")
+        source.errno = -100
+        sanitized = private_csv_failure(source)
+        self.assertEqual(sanitized.errno, errno.EIO)
+        self.assert_private_error(source, sanitized)
+
+    def test_nested_private_cause_and_handler_context_not_retained(self):
+        source = OSError(errno.EIO, "secret client", str(self.target))
+        source.__cause__ = RuntimeError("secret client")
+        try:
+            raise source
+        except OSError as caught:
+            sanitized = private_csv_failure(caught)
+        self.assertIsNone(sanitized.__cause__)
+        self.assertIsNone(sanitized.__context__)
+        self.assert_private_error(source, sanitized)
 
 
 if __name__ == "__main__":
