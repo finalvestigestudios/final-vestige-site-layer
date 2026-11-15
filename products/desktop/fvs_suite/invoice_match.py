@@ -207,9 +207,46 @@ def candidate_pairs(records: Iterable[dict[str, Any]], *,
     return results
 
 
+def _owned_review_evidence(record: dict[str, Any]) -> dict[str, Any]:
+    """Read native stored fields, never an untrusted mapping's lookup hooks.
+
+    This function is also called directly by integrations which may bypass
+    candidate_pairs and its source-record validation. A dict subclass can
+    supply fabricated labels through __getitem__ or .get; take an ordinary
+    dict snapshot first, then validate the exact evidence used for flags.
+    """
+    if not isinstance(record, dict):
+        raise ValueError("Invoice review evidence must be a source mapping")
+    if any(type(name) is not str for name in dict.keys(record)):
+        raise ValueError("Invoice review field names must be plain text")
+    evidence = dict(dict.items(record))
+    if (type(evidence.get("vendor")) is not str
+            or type(evidence.get("invoice_number")) is not str):
+        raise ValueError("Invoice review identity labels must be text")
+    amount = evidence.get("amt")
+    if type(amount) is not Decimal or not amount.is_finite():
+        raise ValueError("Invoice review amount must be a finite exact Decimal")
+    _validate_amount_envelope(amount)
+    if type(evidence.get("dt")) is not date:
+        raise ValueError("Invoice review date must be a parsed calendar date")
+    return evidence
+
+
 def review_flags(a: dict[str, Any], b: dict[str, Any], status: str,
                  *, window_days: int = WINDOW_DAYS) -> str:
-    """Surface sources of ambiguity without claiming fraudulent activity."""
+    """Surface deterministic human-review flags, never fraud or approval.
+
+    Reject unknown statuses and invalid review windows rather than returning
+    a plausible empty result. Owned snapshots prevent spoofed dict-subclass
+    lookups, and all failures omit private financial source values.
+    """
+    if type(status) is not str or status not in (
+            "exact_invoice_key", "review_possible_duplicate"):
+        raise ValueError("Unrecognized invoice review candidate status")
+    if type(window_days) is not int or not 0 <= window_days <= 365:
+        raise ValueError("Invoice review window must be an integer between 0 and 365 days")
+    a = _owned_review_evidence(a)
+    b = _owned_review_evidence(b)
     flags: list[str] = []
     if ascii_case_identity(a["vendor"]) != ascii_case_identity(b["vendor"]):
         flags.append("normalized_vendor_key_review")
