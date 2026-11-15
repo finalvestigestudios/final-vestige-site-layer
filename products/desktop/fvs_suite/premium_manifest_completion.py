@@ -14,6 +14,7 @@ import unicodedata
 from pathlib import Path
 
 from .csv_snapshot import _same_path_descriptor_signature
+from .evidence_label import canonical_evidence_label
 from .manifest_guard import MAX_REPORT_BYTES, _hash_regular
 from .premium_link_custody import open_inventory_stream, require_single_link
 
@@ -114,8 +115,18 @@ def verify_premium_inventory(paths: tuple[Path, ...], app_id: str) -> None:
             invalid_label = True
         if invalid_label:
             raise ValueError("Malformed premium evidence inventory label")
-        if not isinstance(name, str) or not name or "/" in name or "\\" in name:
+        # Each inventory row must be one canonical writer-produced basename.
+        # Reject visually misleading controls and alternate JSON spellings
+        # before those labels reach a human reviewer or exported evidence.
+        invalid_name = False
+        try:
+            canonical = canonical_evidence_label(name)
+        except ValueError:
+            invalid_name = True
+        if invalid_name:
             raise ValueError("Invalid premium evidence label")
+        if fields[0] != canonical:
+            raise ValueError("Noncanonical premium evidence label")
         folded = unicodedata.normalize("NFKC", name).casefold()
         if folded in decoded_names:
             raise ValueError("Ambiguous premium inventory names")
