@@ -1,0 +1,11 @@
+# R367 independent QA evidence · OFFLINE ONLY
+
+- Input: PR #175 exact master `d57ccdba3aee8f065e143e101c2945f4f3d01647`. All eight original issue/manifest/test Git blob hashes matched an existing locally preserved archive, including manifest `86df98ad8a84e583ff5df64ddbf8c0eaa1335b00`, tests `fd7f05e30092a7ec82090993dc5d7d0e23755c8e`.
+- Original Python `unittest discover`: **6 PASS / 0 FAIL**, independently executed against the source-matched fixture.
+- Added native R367 tests `test_review_mime.py`: **20 PASS / 0 FAIL** including all-six MIME round trips, headers without recipients or sender, actual original content preserved, exactly 4:2 commercial balance, missing consent/legal markers, 03/05 merchant hard-stop, adversarial marker removal and offer-link activation.
+- Added offline Chromium viewports at **360, 390, 768, 1440** × six generated original editions = **24/24 no-horizontal-overflow, one visible H1, visible HOLD warning, zero JavaScript page errors**. The browser harness blocks all external HTTP(S) requests. Screenshots and `browser-evidence.json` are in the local reviewer ZIP; source code is separately committed.
+- MIME builds are intentionally **UNADDRESSED** RFC-5322 multipart/alternative *rehearsal artifacts*. They have no To/From/Date, they are not transmitted, and their legal placeholders are deliberately unfilled. HTML generated here is an independent reviewer representation; it is not the same bytes as R366's static HTML preview and not actual WP/Jetpack output.
+
+**NOT TESTED:** Real WordPress Preview email, real received Jetpack email, working unsubscribe, publisher mailing address, double-opt-in provider receipt, welcome receipt, public PDF guest download, final merchant price/refunds, affiliate email rights, checkout, live offer guides, sales and net revenue. Browser success is NOT email client accessibility proof and not CAN-SPAM compliance.
+
+**No actions:** No newsletters or test emails sent, no WordPress writes or list changes, no actual affiliate links, no paid services, no Grok task queue changes, no merges or deploys, no commercial KPI invented. Existing homepage #150 and frozen #49 untouched.
