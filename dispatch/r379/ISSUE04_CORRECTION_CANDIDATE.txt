@@ -1,0 +1,22 @@
+THE DISPATCH — ISSUE 04 — UNSENT / NOT ADOPTED
+SUBJECT: Apollo 1: what the fire record cannot tell us
+PREHEADER (DRAFT; NOT VERIFIED IN JETPACK): A ground test, a sealed hatch, and why one neat cause misses the evidence.
+
+In a spacecraft sealed for a ground test, the first reported flame was not necessarily the first moment of fire.
+
+That distinction matters when we remember Apollo 1. On January 27, 1967, the crew's report reached controllers during a ground test. Investigators then had to work backward from damaged hardware, communications and the test configuration. In an official February 25 update, NASA described an earlier, initially unnoticed phase as a possibility, not a precisely timed fact. It placed the first crew report at 6:31:04 p.m. Eastern.
+
+The simplest retelling says that one electrical spark caused the disaster. The investigation was more careful. Electrical malfunction was considered the most likely general kind of ignition, but investigators had not identified a particular initiating source. An oxygen-rich cabin atmosphere, combustible materials and emergency-egress constraints made the consequences devastating. A single neat sentence conceals a chain of conditions.
+
+Consider a historian's version of the question. Which observation came directly from a record? Which conclusion is an inference? What remains unknown even after a serious investigation? The same discipline matters when we examine an eighteenth-century witness statement or a polished modern product claim.
+
+That is why Final Vestige follows the surviving chain of evidence rather than the most memorable explanation. Our published Apollo 1 investigation examines the inward-opening hatch, the investigation and the engineering choices surrounding them.
+
+PRIMARY CTA — Read The Hatch Opened Inward:
+https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+
+OFFICIAL NASA SOURCES:
+https://www.nasa.gov/history/Apollo204/seamans3.html
+https://www.nasa.gov/history/Apollo204/seamans2.html
+
+STOP: NOT A SENDING-READY EMAIL. Publisher physical postal address, functional provider unsubscribe, provider-confirmed recipients and final founder send approval remain unverified.
