@@ -18,10 +18,10 @@ function realizedNetPer1000(qualifiedSessions,orders){
  if(!Number.isInteger(qualifiedSessions)||qualifiedSessions<=0||!Array.isArray(orders))return null;
  const used=new Set();let net=0;
  for(const r of orders){
-   if(!r||r.status!=="paid_settled"||r.source!=="independent_merchant_report"||r.proof_verified!==true||typeof r.opaque_order_id!=="string"||r.opaque_order_id.length<10||used.has(r.opaque_order_id))return null;
+   if(!r||r.status!=="paid_settled"||r.source!=="independent_merchant_report"||r.revenue_basis!=="publisher_paid_commission"||r.proof_verified!==true||typeof r.opaque_order_id!=="string"||r.opaque_order_id.length<10||used.has(r.opaque_order_id))return null;
    used.add(r.opaque_order_id);
-   if(!["gross_paid","refunds","fees"].every(k=>typeof r[k]==="number"&&Number.isFinite(r[k])&&r[k]>=0)||typeof r.currency!=="string"||r.currency!=="USD"||r.refund_window_finalized!==true)return null;
-   net+=r.gross_paid-r.refunds-r.fees;
+   if(!["publisher_commission_paid","refunds","fees"].every(k=>typeof r[k]==="number"&&Number.isFinite(r[k])&&r[k]>=0)||typeof r.currency!=="string"||r.currency!=="USD"||r.refund_window_finalized!==true)return null;
+   net+=r.publisher_commission_paid-r.refunds-r.fees;
  }
  if(!orders.length)return null;
  return Math.round((net*1000/qualifiedSessions)*100)/100;
