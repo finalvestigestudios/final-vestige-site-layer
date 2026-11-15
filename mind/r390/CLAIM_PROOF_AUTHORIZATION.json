@@ -20,7 +20,8 @@
     "ftcAffiliate": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
     "ftcHealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
     "editorial": "https://finalvestige.com/editorial-standards/",
-    "disclosure": "https://finalvestige.com/affiliate-disclosure/"
+    "disclosure": "https://finalvestige.com/affiliate-disclosure/",
+    "zen12Special": "https://zen12.com/secret/"
   },
   "claims": [
     {
@@ -204,6 +205,17 @@
       "status": "DATED_MERCHANT_DISPLAY",
       "handling": "dated context only; no referral/locale guarantee",
       "evidence_scope": "unauthenticated public offer"
+    },
+    {
+      "id": "M05B",
+      "claim": "Separate public Zen12 coupon promotion page displayed a $37 coupon-based offer with countdown, distinct from standard $87.99 public checkout; no FV referral/eligibility/fulfillment verified",
+      "source_ids": [
+        "zen12Special",
+        "checkout"
+      ],
+      "status": "DATED_SELLER_PROMO_SCREEN_ONLY",
+      "handling": "Record only as distinct merchant offer path. Do not republish coupon code, imply automatic discount, copy urgency or infer FV partner checkout price.",
+      "evidence_scope": "Separate unauthenticated public promotional landing route observed November 14 2026"
     },
     {
       "id": "M06",
