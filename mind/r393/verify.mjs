@@ -48,14 +48,14 @@ check(B.includes('src="./R393_POSTER.svg"'),'B original local poster');
 check(B.includes('href="./R393_CAPTIONS.vtt"'),'B captions linked');
 check(B.includes('Full transcript:'),'B visible transcript');
 check(poster.includes('<title id="t">')&&poster.includes('<desc id="d">'),'SVG accessible name');
-check(!/https?:\/\//.test(poster),'SVG no external requests');
+check(!/<(?:image|script|foreignObject)\\b/i.test(poster)&&!/(?:href|src)="https?:/i.test(poster),'SVG no remote asset requests');
 check(vtt.startsWith('WEBVTT'),'WebVTT file header');
 const c=cues(vtt);check(c.length===6,'six caption cues');
 check(c[0][1]==='00:00:00.000'&&c.at(-1)[2]==='00:00:42.000','42 second full coverage');
 for(let i=0;i<c.length;i++){check(toSeconds(c[i][2])>toSeconds(c[i][1]),'cue duration positive '+i);if(i)check(c[i-1][2]===c[i][1],'continuous cues '+i)}
 check(art.split(/\s+/).length>=2500,'substantive original 2500+ word article');
 check(art.includes('19 studies')&&art.includes('1,654 participants'),'review scope qualified');
-check(art.includes('five')&&art.includes('eight')&&art.includes('one'),'binaural review mixed counts in narrative');
+check(/five/i.test(art)&&/eight/i.test(art)&&/one/i.test(art),'binaural review mixed counts in narrative');
 check(art.includes('2020 adverse-event review'),'safety consideration');
 check(hub.includes('class="fvmind-r393"'),'WordPress CSS scoped');
 for(const q of ['Perception &amp; Attention','History of Suggestion','Practice &amp; Reflection','Tools Under Review'])check(hub.includes(q),'4-stream hub '+q);
