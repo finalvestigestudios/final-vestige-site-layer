@@ -44,13 +44,14 @@ def adopt_csv_descriptor(descriptor: int) -> TextIO:
         raise
 
 
-def raise_private_csv_failure(error: OSError) -> None:
-    """Expose only stable error type/errno; never OS text or customer paths.
+def private_csv_failure(error: OSError) -> OSError:
+    """Build a fixed diagnostic; the caller MUST raise it after its except block.
 
-    `from None` suppresses ordinary traceback context, but deliberate access
-    to __context__ is not a protected log boundary; avoid recursive logging.
+    Raising inside an active OSError handler, even with ``from None``, retains
+    the private source exception in ``__context__``. Only native errno is used;
+    no private paths, exception args or traceback objects are retained.
     """
     if isinstance(error, FileExistsError):
-        raise FileExistsError(_COLLISION) from None
+        return FileExistsError(_COLLISION)
     code = error.errno if type(error.errno) is int and error.errno > 0 else errno.EIO
-    raise OSError(code, _FAILED) from None
+    return OSError(code, _FAILED)

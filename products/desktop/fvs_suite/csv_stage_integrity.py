@@ -31,6 +31,7 @@ class CSVStagingWitness:
 
     def verify(self, descriptor: int) -> None:
         """Fail closed for incomplete, expanded, or same-length altered data."""
+        failed = False
         try:
             if os.fstat(descriptor).st_size != self._size:
                 raise OSError(errno.EIO, _FAILED)
@@ -46,5 +47,8 @@ class CSVStagingWitness:
             if os.read(descriptor, 1) or digest.digest() != self._digest.digest():
                 raise OSError(errno.EIO, _FAILED)
         except OSError:
-            # Filesystem diagnostic strings can include client directory names.
-            raise OSError(errno.EIO, _FAILED) from None
+            failed = True
+        # Raise only after leaving the OS handler. Even suppressed tracebacks
+        # retain customer filenames in exception.__context__.
+        if failed:
+            raise OSError(errno.EIO, _FAILED)
