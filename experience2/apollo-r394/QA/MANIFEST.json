@@ -1,0 +1,23 @@
+{
+  "file_sha256": {
+    "apollo-r377/custody.json": "60bfa330398b7684463c95afcc7e6ef347d44f22d5a2f1350286a660edb3a76f",
+    "apollo-r392/qa/semantic_custody.py": "f65c5b3aaab798338c2c2aeaebb10c7b1746dafc4967d75d78f718082f714fa8",
+    "apollo-r393/QA/local-php-fixture.html": "5242da6c49b64d7f37484b6f5924042a69872073e4fd15d9a0ed694920bb11eb",
+    "apollo-r393/qa/topology.py": "bcee90246409b5830b6b05fda55df33bcce0b1456289ef399112f4cb3c03d03b",
+    "apollo-r394/QA/1440-desktop.png": "56567e40b85859da01ba8048c891249f86a9f9950dbbb1c93c002e98451b0ad8",
+    "apollo-r394/QA/320-mobile.png": "5948d14826039a61e7497f6cd71ea98d8a8bda2647db8310971b282a651cb657",
+    "apollo-r394/QA/320-nojs.png": "5948d14826039a61e7497f6cd71ea98d8a8bda2647db8310971b282a651cb657",
+    "apollo-r394/QA/320-root4x-before.png": "63f3ecd6236d996385d48ea134c6a04985f242431334f84e9dfce359be008e43",
+    "apollo-r394/QA/320-root4x.png": "17eade52912d7c092c5e6ae3011612ce798dbd7768a8e5a9df9bde580ab4a7e5",
+    "apollo-r394/QA/visibility-results.json": "4bce1359521fb8e6d9131ccc94cfe92cd7b7050f4566da1b90ce45bdea6f569e",
+    "apollo-r394/README.md": "edeeae0e6e62dfc75f13e034649df39afa2a6a6a2935277312e2f5c6143e4c6e",
+    "apollo-r394/assets/root4x-overflow-candidate.css": "93da942bbfd37bd055c97150446a3124bc52d7b55b4e0ac968568343e5838756",
+    "apollo-r394/qa/package.py": "86aded2f1f1b98015b3643155c8a0e69fb27fb155610b4c5e334843ef794a2eb",
+    "apollo-r394/qa/staging_gate.py": "2ea55d2f6ef0129642655152ee176e2b3cc717103ed11efb3e9bcdbb24fb23b9",
+    "apollo-r394/qa/test_visibility.py": "04ba1381160008526331c1253b32df256d079e4c5176d571689a459c21c75d83",
+    "apollo-r394/qa/visibility_custody.py": "3d7e1ef3465126cdc7af7fa6a37c6aa2d428faecd40e3d97f7af74e12fbf8237"
+  },
+  "scope": "LOCAL_ONLY_NO_STAGING_NO_RELEASE",
+  "source_commit": "PENDING_GITHUB_COMMIT_VERIFICATION",
+  "tests": "85/85 Chromium; 12/12 R393 bypasses rejected; 8px->0px candidate CSS"
+}
