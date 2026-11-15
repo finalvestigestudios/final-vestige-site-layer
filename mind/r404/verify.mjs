@@ -1,0 +1,65 @@
+// FV Mind R404 reproducible source-only verifier.
+// Run in a local checkout: node mind/r404/verify.mjs
+// Checks HTML content integrity and evidence gates; NOT browser WCAG/CWV or merchant verification.
+import { readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import assert from 'node:assert/strict';
+const d=dirname(fileURLToPath(import.meta.url));
+const load=p=>readFileSync(join(d,p),'utf8');
+const A=load('ZEN12_A_TEXT.html'),B=load('ZEN12_B_OPTIONAL_FILM.html'),H=load('MIND_HUB_SOURCE_ONLY.html'),V=load('ZEN12_42S_CAPTIONS.vtt'),M=JSON.parse(load('CLAIM_SOURCE_PERMISSION_MATRIX.json')),C=load('CONVERSION_ACCEPTANCE.md'),E=load('WHEN_THE_CONTROL_GROUP_WORKS.md');
+let checks=0;
+const check=(name,fn)=>{try{fn();checks++;process.stdout.write('PASS '+name+'\n')}catch(e){process.stderr.write('FAIL '+name+': '+e.message+'\n');throw e}};
+const match=(re,s,msg)=>assert.match(s,re,msg);
+check('research 1800-plus words',()=>assert.ok(E.trim().split(/\s+/).length>=1800));
+check('research September 2026 review',()=>match(/September 2, 2026/,E));
+check('research case distinguishes pain and product',()=>{match(/clinical pain/,E);match(/not product-specific testing/i,E)});
+check('source DOI present',()=>match(/https:\/\/doi.org\/10.1002\/ejp.70369/,E));
+check('trial source present',()=>match(/41217756/,E));
+check('historic archive source present',()=>match(/puysegurs-animal-magnetism-files/,E));
+check('A full HTML document',()=>match(/<!doctype html>/i,A));
+check('B full HTML document',()=>match(/<!doctype html>/i,B));
+check('hub full HTML document',()=>match(/<!doctype html>/i,H));
+check('A content has native viewport',()=>match(/name="viewport"/,A));
+check('B content has native viewport',()=>match(/name="viewport"/,B));
+check('hub has native viewport',()=>match(/name="viewport"/,H));
+check('A and B same substantive main',()=>{const get=x=>x.match(/<main id="main">[\s\S]*?<\/main>/)?.[0];assert.ok(get(A));assert.equal(get(A),get(B))});
+check('B contains original optional media concept',()=>match(/OPTIONAL FILM \/ 42-SECOND CONCEPT/,B));
+check('A contains no film concept',()=>assert.doesNotMatch(A,/OPTIONAL FILM \/ 42-SECOND CONCEPT/));
+check('B original poster accessible label',()=>{match(/<svg role="img" aria-labelledby="p-title p-desc"/,B);match(/<desc id="p-desc">/,B)});
+check('B no inaccurate playable-video claim',()=>match(/not a.*playable film/i,B));
+check('caption WebVTT header',()=>assert.ok(V.startsWith('WEBVTT\n')));
+const time=t=>{const [h,m,s]=t.split(':');return Number(h)*3600+Number(m)*60+Number(s)};
+check('captions have six contiguous cues 0-42 sec',()=>{const t=[...V.matchAll(/(\d\d:\d\d:\d\d\.\d\d\d) --> (\d\d:\d\d:\d\d\.\d\d\d)/g)].map(x=>[time(x[1]),time(x[2])]);assert.equal(t.length,6);assert.equal(t[0][0],0);assert.equal(t.at(-1)[1],42);t.forEach((v,i)=>{assert.equal(v[1]-v[0],7);if(i)assert.equal(v[0],t[i-1][1])})});
+check('full B narration matches captions exactly',()=>{const cueText=V.trim().split(/\n\n/).slice(1).map(v=>v.split('\n').slice(1).join(' ').trim());const section=B.match(/<details><summary>Read the full 42-second narration and shot plan<\/summary>([\s\S]*?)<p class="small">/)?.[1];assert.ok(section);const paragraphs=[...section.matchAll(/<p>\d+–\d+s: ([\s\S]*?)<\/p>/g)].map(x=>x[1].trim());assert.equal(paragraphs.length,6);assert.deepEqual(paragraphs,cueText)});
+for(const [key,s] of [['A',A],['B',B]]) {
+ check(key+' native disabled purchase button',()=>match(/<button\b[^>]*\bdisabled(?:\s|>|=)/,s));
+ check(key+' near CTA prospective disclosure',()=>{const start=s.indexOf('Potential affiliate relationship:');const button=s.indexOf('<button type="button" disabled');assert.ok(start>0&&button>start&&button-start<700)});
+ check(key+' single existing Focus CTA route',()=>match(/https:\/\/finalvestige.com\/focus\//,s));
+ check(key+' no third-party forms or scripts',()=>assert.doesNotMatch(s,/<\s*(form|script|iframe)\b/i));
+ check(key+' no autoplay or active embedded video',()=>assert.doesNotMatch(s,/\bautoplay\b|<video\b/i));
+ check(key+' no checkout or merchant product anchors',()=>assert.doesNotMatch(s,/<a\b[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots)\./i));
+ check(key+' no live event beacons',()=>assert.doesNotMatch(s,/fetch\s*\(|navigator\.sendBeacon|gtag\s*\(/i));
+ check(key+' no JS URLs or event attributes',()=>assert.doesNotMatch(s,/javascript:|\bonclick\s*=|\bonerror\s*=/i));
+ check(key+' reduced motion and visible focus',()=>{match(/prefers-reduced-motion/,s);match(/focus-visible/,s)});
+ check(key+' original free twelve minute baseline',()=>{match(/TRY THIS FIRST/,s);match(/2 minutes:/,s);match(/6 minutes:/,s)});
+ check(key+' seller price qualified',()=>{match(/87\.99/,s);match(/not Final Vestige referral prices/,s)});
+ check(key+' no false endorsement',()=>match(/have not purchased or tested Zen12/i,s));
+}
+check('hub four editorial streams',()=>{for(const x of ['Perception & Attention','History of Suggestion','Fieldwork Without a Miracle','Tools Under Review'])match(new RegExp(x),H)});
+check('hub three evidence source navigation routes',()=>{for(const x of ['change-blindness/','mesmerism/','puysegurs-animal-magnetism-files/'])match(new RegExp(x),H)});
+check('hub no merchant links or forms',()=>{assert.doesNotMatch(H,/<form\b|<script\b|href="https:\/\/zen12\.com/i)});
+check('claim matrix 32 evidence statements',()=>assert.equal(M.claims.length,32));
+check('claim matrix 19 source URLs',()=>assert.equal(Object.keys(M.sources).length,19));
+check('claim matrix 26 gates all HOLD',()=>{assert.equal(M.release_gates.length,26);assert.ok(M.release_gates.every(x=>x.status==='HOLD'))});
+check('no active link permission asserted',()=>{const p=M.claims.find(x=>x.id==='C026');assert.equal(p.status,'not_authenticated')});
+check('all claims have source URLs',()=>assert.ok(M.claims.every(x=>/^https:\/\//.test(x.source))));
+check('exact product methodology differs',()=>match(/isochronic/,JSON.stringify(M.claims)));
+check('FTC guidance explicitly in matrix',()=>{assert.ok(M.sources.ftc.includes('ftc.gov'));assert.ok(M.sources.health.includes('ftc.gov'))});
+check('creator destinations are canonical',()=>{for(const x of ['change-blindness/','mesmerism/','puysegurs-animal-magnetism-files/'])match(new RegExp(x),C)});
+check('creator asset IDs marked UNKNOWN',()=>match(/asset ID:\*\* UNKNOWN/,C));
+check('measurement paid and click events distinct',()=>{match(/affiliate_outbound/,C);match(/affiliate_commission_settled/,C);match(/merchant_confirmed_paid_order/,C)});
+check('privacy and 7-30 day denominator',()=>{match(/qualified-human sessions/,C);match(/7\/30-day/,C);match(/personally identifying/,C)});
+check('no ROI implied',()=>match(/NOT COMPUTABLE/,C));
+check('no allowed live deployment',()=>{match(/HARD HOLD/,C);match(/No merging, deployment/,C)});
+process.stdout.write('\nR404 source-only checks passed: '+checks+'\n');
