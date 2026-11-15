@@ -1,0 +1,564 @@
+{
+  "title": "Mind R409 claim-and-authorization matrix",
+  "generated_at": "2026-11-15",
+  "mode": "UNPUBLISHED_HARD_HOLD",
+  "source_notes": "Seller descriptions are not efficacy proof; dated public prices are NOT FV earning prices.",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "official_seller",
+      "url": "https://inspire3.com/",
+      "summary": "Inspire3 official catalog; does not authorize FV"
+    },
+    {
+      "id": "S02",
+      "type": "official_seller",
+      "url": "https://zen12.com/getstarted/",
+      "summary": "Zen12 standard offer, package and public checkout"
+    },
+    {
+      "id": "S03",
+      "type": "official_seller",
+      "url": "https://zen12.com/secret/",
+      "summary": "Zen12 different coupon/urgency checkout presentation"
+    },
+    {
+      "id": "S04",
+      "type": "official_seller",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "summary": "Total Focus named SKU"
+    },
+    {
+      "id": "S05",
+      "type": "official_seller",
+      "url": "https://hypnosislive.com/faq",
+      "summary": "Hypnosis Live buyer/refund FAQ"
+    },
+    {
+      "id": "S06",
+      "type": "official_seller",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "summary": "Focus Shot SKU"
+    },
+    {
+      "id": "S07",
+      "type": "official_seller",
+      "url": "https://brainwaveshots.com/faq",
+      "summary": "Isochronic modality and refund qualifications"
+    },
+    {
+      "id": "S08",
+      "type": "official_program",
+      "url": "https://affiliates.inspire3.com/",
+      "summary": "Public program exists; no named FV acceptance"
+    },
+    {
+      "id": "S09",
+      "type": "independent_research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15994228/",
+      "summary": "Specific suggestion and cognitive conflict lab research, 2005"
+    },
+    {
+      "id": "S10",
+      "type": "independent_research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16466414/",
+      "summary": "Suggestion with/without induction in highly suggestible participants, 2006"
+    },
+    {
+      "id": "S11",
+      "type": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "summary": "Material connection disclosure guidance"
+    },
+    {
+      "id": "S12",
+      "type": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "summary": "Health-product claims need adequate substantiation"
+    },
+    {
+      "id": "S13",
+      "type": "FV_public",
+      "url": "https://finalvestige.com/focus/",
+      "summary": "Existing free Focus Fieldbook, unique Jetpack route"
+    },
+    {
+      "id": "S14",
+      "type": "FV_public",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "summary": "Historical archive; no contemporary product proof"
+    },
+    {
+      "id": "S15",
+      "type": "FV_public",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "summary": "Existing published investigation: avoid duplicate SEO"
+    },
+    {
+      "id": "S16",
+      "type": "FV_public",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "summary": "FV editorial governance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "CL01",
+      "topic": "Zen12 format",
+      "status": "SELLER_DESCRIBED",
+      "claim": "12 levels and 48 MP3 recordings",
+      "sources": [
+        "S02"
+      ],
+      "editorial_rule": "May state only as seller-described, date-stamped.",
+      "proof_note": "Official package listing"
+    },
+    {
+      "id": "CL02",
+      "topic": "Zen12 add-ons",
+      "status": "SELLER_DESCRIBED",
+      "claim": "Zen12 includes supplementary instructions/manuals and support",
+      "sources": [
+        "S02"
+      ],
+      "editorial_rule": "Use 'seller describes'; checkout may change.",
+      "proof_note": "Official page lists manuals/support"
+    },
+    {
+      "id": "CL03",
+      "topic": "Zen12 standard price",
+      "status": "VARIABLE_SELLER_DISPLAY",
+      "claim": "Public main offer displayed $87.99",
+      "sources": [
+        "S02"
+      ],
+      "editorial_rule": "Do not put a guaranteed price in presell CTA.",
+      "proof_note": "Public checkout at inspection showed $87.99 after an offer discount"
+    },
+    {
+      "id": "CL04",
+      "topic": "Zen12 coupon",
+      "status": "VARIABLE_SELLER_DISPLAY",
+      "claim": "Promotional coupon route may differ from standard",
+      "sources": [
+        "S03"
+      ],
+      "editorial_rule": "No invented FV special price or imported countdown.",
+      "proof_note": "Separate seller promotional route displayed $37 with coupon and urgency"
+    },
+    {
+      "id": "CL05",
+      "topic": "Zen12 twelve minutes equals hour",
+      "status": "SELLER_EFFICACY_UNSUPPORTED",
+      "claim": "Seller's accelerated or one-hour-equivalence assertion",
+      "sources": [
+        "S02",
+        "S09",
+        "S10"
+      ],
+      "editorial_rule": "Exclude promotional copy as unsubstantiated.",
+      "proof_note": "No independently controlled study of this exact product and equivalence reviewed"
+    },
+    {
+      "id": "CL06",
+      "topic": "Zen12 refund",
+      "status": "SELLER_DESCRIBED_UNVERIFIED_ROUTE",
+      "claim": "Zen12 money-back promise",
+      "sources": [
+        "S02"
+      ],
+      "editorial_rule": "Do not promise FV referred return terms.",
+      "proof_note": "Seller page advertises a money-back guarantee"
+    },
+    {
+      "id": "CL07",
+      "topic": "Zen12 endorsements",
+      "status": "NOT_TESTED",
+      "claim": "FV tested/used Zen12",
+      "sources": [
+        "S02"
+      ],
+      "editorial_rule": "Must not imply; explicitly state not tested.",
+      "proof_note": "No FV listening or testing"
+    },
+    {
+      "id": "CL08",
+      "topic": "Total Focus identity",
+      "status": "SELLER_DESCRIBED",
+      "claim": "Total Focus single hypnosis recording 33 minutes / 47 MB",
+      "sources": [
+        "S04"
+      ],
+      "editorial_rule": "Disclose content and outcome caveat.",
+      "proof_note": "Official individual product page"
+    },
+    {
+      "id": "CL09",
+      "topic": "Total Focus current price",
+      "status": "VARIABLE_SELLER_DISPLAY",
+      "claim": "Total Focus public price has shifted",
+      "sources": [
+        "S04"
+      ],
+      "editorial_rule": "No fixed promise in a presell.",
+      "proof_note": "Nov 15 page showed $24.44 with $29.95 struck through; earlier $17.95 elsewhere"
+    },
+    {
+      "id": "CL10",
+      "topic": "Total Focus refund",
+      "status": "SELLER_DESCRIBED",
+      "claim": "Total Focus policy as public FAQ describes",
+      "sources": [
+        "S05"
+      ],
+      "editorial_rule": "Verify exact checkout applicability, state restrictions.",
+      "proof_note": "FAQ says 14-day refund claim, up to five sessions per year"
+    },
+    {
+      "id": "CL11",
+      "topic": "Total Focus focus benefit",
+      "status": "SELLER_EFFICACY_UNSUPPORTED",
+      "claim": "Improves focus/concentration",
+      "sources": [
+        "S04",
+        "S10"
+      ],
+      "editorial_rule": "Avoid outcome assertion; state only seller claims.",
+      "proof_note": "No specific independent trial of this SKU demonstrated"
+    },
+    {
+      "id": "CL12",
+      "topic": "Focus Shot format",
+      "status": "SELLER_DESCRIBED",
+      "claim": "Focus Shot short focus-oriented recordings",
+      "sources": [
+        "S06"
+      ],
+      "editorial_rule": "Product descriptor only.",
+      "proof_note": "Official SKU describes 15m and 30m variants"
+    },
+    {
+      "id": "CL13",
+      "topic": "Focus Shot modality",
+      "status": "SELLER_DESCRIBED",
+      "claim": "Uses isochronic rather than binaural-tone design",
+      "sources": [
+        "S07"
+      ],
+      "editorial_rule": "Do not transfer binaural study benefits.",
+      "proof_note": "Brand FAQ specifies isochronic tones"
+    },
+    {
+      "id": "CL14",
+      "topic": "Focus Shot protocol",
+      "status": "SELLER_DESCRIBED",
+      "claim": "Advertised focus protocol frequency description",
+      "sources": [
+        "S06"
+      ],
+      "editorial_rule": "Signal protocol is not demonstrated behavior.",
+      "proof_note": "Named product page advertises 12–18 Hz alternating scheme"
+    },
+    {
+      "id": "CL15",
+      "topic": "Focus Shot price",
+      "status": "VARIABLE_SELLER_DISPLAY",
+      "claim": "Public seller display $17.99",
+      "sources": [
+        "S06"
+      ],
+      "editorial_rule": "Not FV referral checkout or price promise.",
+      "proof_note": "Public product page displayed $17.99 at inspection"
+    },
+    {
+      "id": "CL16",
+      "topic": "Focus Shot refund",
+      "status": "SELLER_DESCRIBED",
+      "claim": "Seller's published refund policy is qualified",
+      "sources": [
+        "S07"
+      ],
+      "editorial_rule": "Verify applicable exact route.",
+      "proof_note": "Official FAQ says year coverage with refund frequency and large-order restrictions"
+    },
+    {
+      "id": "CL17",
+      "topic": "Focus Shot efficacy",
+      "status": "SELLER_EFFICACY_UNSUPPORTED",
+      "claim": "Focus Shot objectively boosts daily concentration",
+      "sources": [
+        "S06",
+        "S07"
+      ],
+      "editorial_rule": "Do not assert.",
+      "proof_note": "No independently controlled exact SKU efficacy data obtained"
+    },
+    {
+      "id": "CL18",
+      "topic": "Suggestion laboratory",
+      "status": "INDEPENDENT_STUDY_LIMITED",
+      "claim": "Specific suggestion can reduce interference in selected participants",
+      "sources": [
+        "S09",
+        "S10"
+      ],
+      "editorial_rule": "No generalization to downloadable commercial recordings.",
+      "proof_note": "Highly hypnotizable subset in Stroop experiment"
+    },
+    {
+      "id": "CL19",
+      "topic": "Induction independence",
+      "status": "INDEPENDENT_STUDY_LIMITED",
+      "claim": "Study reported reduced interference both conditions",
+      "sources": [
+        "S10"
+      ],
+      "editorial_rule": "Not proof induction never matters.",
+      "proof_note": "2006 Stroop suggestion administered with vs without induction"
+    },
+    {
+      "id": "CL20",
+      "topic": "History of Puységur",
+      "status": "DOCUMENTED_SOURCE_NOT_EFFICACY",
+      "claim": "Animal magnetism testimony exists",
+      "sources": [
+        "S14"
+      ],
+      "editorial_rule": "History is not proof of mechanism or commercial outcomes.",
+      "proof_note": "Existing archive documents historical testimony and context"
+    },
+    {
+      "id": "CL21",
+      "topic": "Affiliate network",
+      "status": "PROGRAM_PUBLIC_NOT_APPROVED",
+      "claim": "Inspire3 advertises affiliate participation",
+      "sources": [
+        "S08"
+      ],
+      "editorial_rule": "Do not claim FV accepted or quote commission.",
+      "proof_note": "Generic affiliate landing exists"
+    },
+    {
+      "id": "CL22",
+      "topic": "Affiliate account",
+      "status": "NOT_AUTHENTICATED",
+      "claim": "Final Vestige approved publisher",
+      "sources": [
+        "S08"
+      ],
+      "editorial_rule": "HARD HOLD until authorized first-party contract evidence.",
+      "proof_note": "Gmail targeted search found consumer marketing but no named agreement"
+    },
+    {
+      "id": "CL23",
+      "topic": "Earning URL",
+      "status": "NOT_AUTHENTICATED",
+      "claim": "A working FV affiliate earning URL exists",
+      "sources": [
+        "S08"
+      ],
+      "editorial_rule": "Do not construct, guess, click or release.",
+      "proof_note": "No issued FV/Zen12 permitted tracking URL reviewed"
+    },
+    {
+      "id": "CL24",
+      "topic": "Email rights",
+      "status": "NOT_AUTHENTICATED",
+      "claim": "Dispatch may mail earning links",
+      "sources": [
+        "S08"
+      ],
+      "editorial_rule": "Keep Issue #174 commercial slots HOLD.",
+      "proof_note": "No SKU-specific email channel permission observed"
+    },
+    {
+      "id": "CL25",
+      "topic": "Existing free lead magnet",
+      "status": "FV_PUBLIC_PATH",
+      "claim": "Existing Focus Fieldbook /focus/",
+      "sources": [
+        "S13"
+      ],
+      "editorial_rule": "Preserve one Jetpack list; no duplicate forms.",
+      "proof_note": "Established Focus Fieldbook is a free resource"
+    },
+    {
+      "id": "CL26",
+      "topic": "FV paid Mind SKU",
+      "status": "NOT_AUTHENTICATED",
+      "claim": "Owned paid, rights-cleared Mind product actually purchasable",
+      "sources": [
+        "S13"
+      ],
+      "editorial_rule": "Do not invent paid offer; needs commerce receipts and real checkout.",
+      "proof_note": "Read-only WordPress inventory found no product post type/payhip listing; not a complete commerce audit"
+    },
+    {
+      "id": "CL27",
+      "topic": "Disclosure standard",
+      "status": "COMPLIANCE_RULE",
+      "claim": "Disclose earning relationship beside recommendation",
+      "sources": [
+        "S11"
+      ],
+      "editorial_rule": "Required before any future authorized earning link.",
+      "proof_note": "FTC expects clear conspicuous earning relationship disclosures"
+    },
+    {
+      "id": "CL28",
+      "topic": "Health benefit substantiation",
+      "status": "COMPLIANCE_RULE",
+      "claim": "Medical, mental health or cognitive outcomes",
+      "sources": [
+        "S12"
+      ],
+      "editorial_rule": "Exclude unsubstantiated effectiveness and guarantees.",
+      "proof_note": "FTC health guidance requires competent reliable scientific evidence appropriately fitted to claim"
+    },
+    {
+      "id": "CL29",
+      "topic": "Organic source route",
+      "status": "FV_PUBLIC_PATH",
+      "claim": "Change-blindness canonical route exists",
+      "sources": [
+        "S15"
+      ],
+      "editorial_rule": "Avoid duplicate social landing articles.",
+      "proof_note": "Existing published original investigation"
+    },
+    {
+      "id": "CL30",
+      "topic": "A/B video",
+      "status": "BUILT_LOCAL_NOT_RELEASED",
+      "claim": "42-second original opt-in silent video explanation",
+      "sources": [
+        "S16"
+      ],
+      "editorial_rule": "Do not call this a converter or live web delivery; browser QA still required.",
+      "proof_note": "See authored B video, poster, source and rendering proof; binary will be committed only if verified"
+    }
+  ],
+  "release_gates": {
+    "named_inspire3_publisher_acceptance": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "named_payee_identity": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "approved_website_channel": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "approved_youtube_channel": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "approved_tiktok_channel": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "approved_email_channel": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "approved_Zen12_SKU": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "approved_Total_Focus_SKU": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "approved_Focus_Shot_SKU": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "legal_access_to_approved_swipe_creative": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "issued_Zen12_earning_URL": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "issued_Total_Focus_earning_URL": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "actual_merchant_checkout_total": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "actual_merchant_checkout_taxes": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "actual_referred_return_terms": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "commission_rate_written_terms": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "commission_reporting_access": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "settled_payout_evidence": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "owned_Mind_SKU_payability": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "owned_Mind_IP_rights": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "owned_Mind_fulfillment_proof": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "owned_Mind_refunds_fees": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "Grok_immutable_asset_IDs": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "Jetpack_confirmed_real_lead": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "browser_360_390_768_1440_1920_QA": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "video_media_HTTP_delivery_test": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "native_WP_sanitization_test": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    },
+    "release_approval": {
+      "status": "HOLD",
+      "proof": "NOT VERIFIED FOR PRODUCTION"
+    }
+  },
+  "commercial_action": {
+    "merchant_url": null,
+    "affiliate_click_enabled": false,
+    "new_tracking_scripts": false,
+    "public_navigation_edit": false,
+    "Jetpack_form_creation": false,
+    "require_founder_release": true
+  },
+  "paid_revenue_per_1000_qualified_sessions": null
+}
