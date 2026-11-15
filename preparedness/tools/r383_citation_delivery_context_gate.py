@@ -149,6 +149,33 @@ def git_blob(data: bytes) -> str:
     return hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data,usedforsecurity=False).hexdigest()
 
 
+def collect_source_ids(register: dict, objects: dict, read) -> set[str]:
+    """Resolve BASE plus all seven original contributor source fragments, without choosing a fork."""
+    base=register.get('sources')
+    if not isinstance(base,list): raise ValueError('BASE_SOURCE_REGISTRY_INVALID')
+    ids=set()
+    for src in base:
+        if not isinstance(src,dict) or not isinstance(src.get('id'),str):
+            raise ValueError('BASE_SOURCE_ID_INVALID')
+        if src['id'] in ids: raise ValueError('BASE_DUPLICATE_SOURCE_ID')
+        ids.add(src['id'])
+    for path,obj in objects.items():
+        if not path.startswith('preparedness/sources/fragments/'): continue
+        for variant in obj['variants']:
+            document=json.loads(read(variant['sha']))
+            rows=document.get('sources')
+            if not isinstance(rows,list): raise ValueError('FRAGMENT_SOURCES_INVALID')
+            local=set()
+            for src in rows:
+                if not isinstance(src,dict) or not isinstance(src.get('id'),str):
+                    raise ValueError('FRAGMENT_SOURCE_ID_INVALID')
+                if src['id'] in local: raise ValueError('FRAGMENT_DUPLICATE_SOURCE_ID')
+                local.add(src['id'])
+            ids.update(local)
+    return ids
+
+
+
 def audit(manifest: dict, register: dict, reader) -> dict:
     """Read every original article variation from pinned Git objects; no selection."""
     if not isinstance(manifest,dict) or not isinstance(register,dict):
@@ -162,13 +189,15 @@ def audit(manifest: dict, register: dict, reader) -> dict:
     metas={p[:-10]:v for p,v in bypath.items() if p.endswith('.meta.json')}
     if len(bodies)!=35 or set(bodies)!=set(metas) or any(x.get('selected_sha') is not None for x in objs):
         return {'status':'INVALID_HARD_HOLD','errors':['ARTICLE_PAIR_OR_FORK_DRIFT'],'publication_approved':False}
-    ids={s.get('id') for s in register.get('sources',[]) if isinstance(s,dict)}
     rows=[]; errors=[]
     def read(sha):
         if not isinstance(sha,str) or not SHA.fullmatch(sha): raise ValueError('BAD_SHA')
         raw=reader(sha)
         if not isinstance(raw,bytes) or git_blob(raw)!=sha: raise ValueError('GIT_BLOB_MISMATCH')
         return raw
+    try: ids=collect_source_ids(register,bypath,read)
+    except (ValueError,KeyError,TypeError,UnicodeError):
+        return {'status':'INVALID_HARD_HOLD','errors':['SOURCE_REGISTRY_OR_FRAGMENT_INTEGRITY'],'publication_approved':False}
     for prefix,obj in sorted(bodies.items()):
         branchmeta={v['branch']:v['sha'] for v in metas[prefix]['variants']}
         if {v['branch'] for v in obj['variants']}!=set(branchmeta):
