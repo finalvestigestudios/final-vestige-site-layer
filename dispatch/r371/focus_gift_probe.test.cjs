@@ -49,5 +49,5 @@ test("no observer prevents late reveal in the isolated harness", () => {
 test("missing gift node does not throw", () => assert.equal(simulate("?subscribe=arbitrary","", {gift:false}).visible, false));
 test("missing subscription container does not throw", () => assert.equal(simulate("?subscribe=arbitrary","",{container:false}).visible,true));
 test("fixture has no recipient, email-sending, pixel or logging facility", () => {
-  assert.equal(/fetch\\(|XMLHttpRequest|sendBeacon|mailto:|new Image\\(/i.test(raw),false);
+  assert.equal(/fetch\(|XMLHttpRequest|sendBeacon|mailto:|new Image\(/i.test(raw),false);
 });
