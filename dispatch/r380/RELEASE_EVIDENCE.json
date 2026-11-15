@@ -1,0 +1,105 @@
+{
+  "schema": "fv.dispatch.r380.release-v1",
+  "as_of_utc": "2026-11-15T14:30:42Z",
+  "provenance": {
+    "original_pr": 175,
+    "original_exact_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "prior_pr": 2624,
+    "prior_exact_sha": "00108eaf0d68ebbba145828718954eae6f8b41aa",
+    "companion_mind_issue": 171,
+    "coordinator_issue": 174
+  },
+  "email_platform": {
+    "site": "https://finalvestige.com",
+    "jetpack_enabled": true,
+    "technical_send_possible": true,
+    "auto_email_new_posts": false,
+    "content_format": "full",
+    "sender_display": "Final Vestige Studios",
+    "total_subscribers": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "counts_are_not_additive": true,
+    "reader_followers_separate": 3,
+    "direct_email_followers_separate": 0,
+    "unique_email_eligible_recipients": null,
+    "received_fieldbook_welcome_verified": false,
+    "native_preview_verified": false,
+    "native_subject_verified": false,
+    "native_preheader_mapping_verified": false,
+    "fv_postal_address_verified": false,
+    "received_unsubscribe_verified": false,
+    "final_founder_send_approval": false
+  },
+  "issues": [
+    {
+      "id": "01",
+      "kind": "editorial",
+      "state": "HOLD_UNSENT"
+    },
+    {
+      "id": "02",
+      "kind": "editorial",
+      "state": "HOLD_UNSENT"
+    },
+    {
+      "id": "03",
+      "kind": "commercial",
+      "state": "HOLD_MERCHANT_UNSENT"
+    },
+    {
+      "id": "04",
+      "kind": "editorial",
+      "state": "HOLD_COPY_UNSENT"
+    },
+    {
+      "id": "05",
+      "kind": "commercial",
+      "state": "HOLD_MERCHANT_UNSENT"
+    },
+    {
+      "id": "06",
+      "kind": "editorial",
+      "state": "HOLD_UNSENT"
+    }
+  ],
+  "merchant": {
+    "named_final_vestige_acceptance_verified": false,
+    "zen12_sku_email_marketing_permission_verified": false,
+    "total_focus_sku_email_marketing_permission_verified": false,
+    "approved_merchant_creative_rights_verified": false,
+    "issued_earning_url_verified": false,
+    "compliant_merchant_url_format_verified": false,
+    "guide_03_public_and_approved": false,
+    "guide_05_public_and_approved": false,
+    "actual_referred_checkout_verified": false,
+    "actual_referred_pricing_verified": false,
+    "actual_referred_refund_verified": false
+  },
+  "measurement": {
+    "event": "confirmed_signup_v1",
+    "authority": "provider's eligible email subscription state only",
+    "deduplication": "opaque stable provider subscriber ID + first confirmed event; no raw email",
+    "source_attribution": "immutable actual creator asset_id with approved utm_campaign; email utm_content=dispatch_issue_XX",
+    "qualified_human_sessions_7d": null,
+    "qualified_human_sessions_30d": null,
+    "paid_orders_settled": null,
+    "gross_revenue": null,
+    "refunds": null,
+    "fees": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified_human_sessions": null
+  },
+  "prohibited_automated_actions": [
+    "send_email",
+    "test_email",
+    "schedule_email",
+    "publish_wordpress",
+    "subscriber_import",
+    "enable_affiliate_links",
+    "change_site_settings",
+    "deploy_tracking",
+    "merge_pull_request",
+    "spend_money"
+  ]
+}
