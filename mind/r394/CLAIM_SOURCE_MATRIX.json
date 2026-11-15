@@ -1,0 +1,191 @@
+{
+  "run": "R394",
+  "as_of": "2026-11-15",
+  "content_status": "SOURCE_DRAFT_ONLY",
+  "release": "HARD_HOLD",
+  "sources_verified": [
+    "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+    "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138",
+    "https://zen12.com/getstarted",
+    "https://zen12.com/",
+    "https://affiliates.inspire3.com/",
+    "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "https://finalvestige.com/focus/",
+    "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "https://hypnosislive.com/",
+    "https://brainwaveshots.com/",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818"
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "1992 RSVP study reported reduced second-probe detection for a specific post-target interval",
+      "type": "independent_science",
+      "status": "supported_in_study_context",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "publication": "1992",
+      "caveat": "Task-specific; not everyday attention rate"
+    },
+    {
+      "id": "C02",
+      "claim": "2007 study recruited 17 intensive practitioners and 23 novices",
+      "type": "independent_science",
+      "status": "supported",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138",
+      "publication": "2007"
+    },
+    {
+      "id": "C03",
+      "claim": "Intensive group practised 10–12 hours daily for 3 months",
+      "type": "independent_science",
+      "status": "supported",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138",
+      "publication": "2007"
+    },
+    {
+      "id": "C04",
+      "claim": "Practitioners self-selected and had previous meditation experience",
+      "type": "independent_science",
+      "status": "supported",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138",
+      "publication": "2007"
+    },
+    {
+      "id": "C05",
+      "claim": "Group difference at blink interval p=.040 with near-chance cases included",
+      "type": "independent_science",
+      "status": "supported_in_study_context",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138",
+      "publication": "2007"
+    },
+    {
+      "id": "C06",
+      "claim": "Seller describes Zen12 as twelve levels/48 MP3 recordings",
+      "type": "seller_product_feature",
+      "status": "seller_only",
+      "url": "https://zen12.com/getstarted",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "C07",
+      "claim": "Seller advertises a one-year money-back guarantee",
+      "type": "seller_terms",
+      "status": "seller_only_refund_not_tested",
+      "url": "https://zen12.com/getstarted",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "C08",
+      "claim": "Public standard order screen displayed $87 in accessible snapshot",
+      "type": "seller_price",
+      "status": "display_only_not_referred_checkout",
+      "url": "https://zen12.com/getstarted",
+      "checked": "2026-11-15",
+      "caveat": "Past differing $87.99 and separate $37 promo, no price or urgency in public draft"
+    },
+    {
+      "id": "C09",
+      "claim": "Twelve minutes delivers hour-equivalent meditation results",
+      "type": "seller_efficacy",
+      "status": "unsupported_product_specific_do_not_repeat",
+      "url": "https://zen12.com/"
+    },
+    {
+      "id": "C10",
+      "claim": "Product produces guaranteed relaxation, memory, health, creativity or focus benefit",
+      "type": "seller_efficacy",
+      "status": "unsupported_product_specific_do_not_repeat",
+      "url": "https://zen12.com/"
+    },
+    {
+      "id": "C11",
+      "claim": "Specific Zen12 recordings reproduce retreat study attentional-blink outcome",
+      "type": "inference",
+      "status": "not_tested_do_not_claim",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138"
+    },
+    {
+      "id": "C12",
+      "claim": "Public Inspire3 network recruits affiliates using special links",
+      "type": "seller_program",
+      "status": "network_exists_not_named_approval",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "C13",
+      "claim": "Final Vestige approved as publisher with authorized SKU, channels and link",
+      "type": "publisher_specific",
+      "status": "unverified_HARD_HOLD",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "C14",
+      "claim": "Published Puységur dossier includes documented failures and consent concerns",
+      "type": "fv_first_party",
+      "status": "live_page_visited",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "C15",
+      "claim": "52-page free Seven Day Focus Fieldbook is existing Jetpack/Dispatch route",
+      "type": "fv_first_party",
+      "status": "live_page_visited_lead_confirmation_not_tested",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "C16",
+      "claim": "Clear affiliate disclosure near each earning link is required",
+      "type": "regulatory_guidance",
+      "status": "supported",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "C17",
+      "claim": "Health efficacy advertising requires adequate claim-specific substantiation",
+      "type": "regulatory_guidance",
+      "status": "supported",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "C18",
+      "claim": "Hypnosis Live offers 200+ self-hypnosis MP3 titles",
+      "type": "seller_product_feature",
+      "status": "seller_only_not_pilot",
+      "url": "https://hypnosislive.com/"
+    },
+    {
+      "id": "C19",
+      "claim": "Brainwave Shots offers a Focus Shot among its audio downloads",
+      "type": "seller_product_feature",
+      "status": "seller_only_not_pilot",
+      "url": "https://brainwaveshots.com/"
+    },
+    {
+      "id": "C20",
+      "claim": "Mind-vertical owned paid SKU, rights clearance and checkout available",
+      "type": "fv_paid_offer",
+      "status": "not_authenticated_HARD_HOLD",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818"
+    }
+  ],
+  "release_gates": {
+    "publisher_approval": false,
+    "sku_permission": false,
+    "channel_permission": false,
+    "tracked_link": false,
+    "actual_referred_checkout": false,
+    "price_terms_verified": false,
+    "refund_process_verified": false,
+    "rights_cleared_media": false,
+    "original_playable_video": false,
+    "browser_accessibility": false,
+    "cwv_mobile": false,
+    "wordpress_sanitizer": false,
+    "jetpack_confirmed_lead": false,
+    "qa_signoff": false,
+    "founder_release_approval": false,
+    "merchant_settled_payment": false
+  },
+  "source_notice": "All product details explicitly seller-described. False indicates NOT VERIFIED, not verified false in the real world. No price/payout/commission inferred."
+}
