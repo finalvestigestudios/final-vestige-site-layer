@@ -1,0 +1,459 @@
+{
+  "version": "R397",
+  "as_of_local": "2026-11-15",
+  "release": "HARD_HOLD",
+  "inventory": {
+    "posts": 66,
+    "pages": 92,
+    "source": "connected WordPress publish queries, read-only, 2026-11-15",
+    "old_issue171_posts": 61,
+    "old_issue171_pages": 79,
+    "mind_live_page": false
+  },
+  "source_urls": [
+    {
+      "id": "WP_POSTS",
+      "url": "https://finalvestige.com/",
+      "type": "connected WordPress read-only published post list 2026-11-15",
+      "note": "66 published posts returned; updated versus older Issue #171 inventory of 61"
+    },
+    {
+      "id": "WP_PAGES",
+      "url": "https://finalvestige.com/",
+      "type": "connected WordPress read-only published pages 2026-11-15",
+      "note": "92 published pages returned; /mind/ not found among published page slugs"
+    },
+    {
+      "id": "WP_PUY",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "connected WP page content",
+      "note": "published source trail, failed cures/predictions and consent concern"
+    },
+    {
+      "id": "WP_FOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "type": "connected WP page content",
+      "note": "published free 52-page Focus Fieldbook and existing Jetpack/Dispatch opt-in"
+    },
+    {
+      "id": "THOMPSON1980",
+      "url": "https://doi.org/10.1068/p090483",
+      "type": "original research citation",
+      "note": "Thompson 1980 original illusion; bibliographic verification not full licensed text"
+    },
+    {
+      "id": "LOBMAIER2007",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17564200/",
+      "type": "peer reviewed primary abstract",
+      "note": "retinal coordinates with head-tilt modulation"
+    },
+    {
+      "id": "WONG2010",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20942363/",
+      "type": "peer reviewed primary abstract",
+      "note": "similar pattern for non-face objects"
+    },
+    {
+      "id": "CORNES2011",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21639673/",
+      "type": "peer reviewed primary abstract",
+      "note": "perceptual and decision factors"
+    },
+    {
+      "id": "PSALTA2014",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25301017/",
+      "type": "peer reviewed primary abstract",
+      "note": "orientation-sensitive eyes/mouth encoding"
+    },
+    {
+      "id": "PSALTA_FMRI",
+      "url": "https://doi.org/10.1177/0956797613501521",
+      "type": "peer reviewed primary abstract",
+      "note": "orientation-dependent STS responses"
+    },
+    {
+      "id": "SELLER_CATALOG",
+      "url": "https://inspire3.com/",
+      "type": "seller primary",
+      "note": "Zen12, Hypnosis Live and Brainwave Shots listed; product efficacy rhetoric is unverified seller language"
+    },
+    {
+      "id": "ZEN_HOME",
+      "url": "https://zen12.com/",
+      "type": "seller primary",
+      "note": "Premium 12 levels/48 MP3, public displayed $87.99 and advertised year refund"
+    },
+    {
+      "id": "ZEN_ORDER",
+      "url": "https://zen12.com/getstarted",
+      "type": "seller checkout screen, possibly cached",
+      "note": "retrieved $87.00 on public order review, $0 tax for unspecified context; not FV referred checkout"
+    },
+    {
+      "id": "ZEN_PROMO",
+      "url": "https://zen12.com/secret/",
+      "type": "seller promotion",
+      "note": "$37 coupon route; not validated FV referral/availability"
+    },
+    {
+      "id": "HYPNOSIS",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "seller primary",
+      "note": "Total Focus 33m/47MB; public $17.95 displayed on retrieved page, previous reviews differed; not FV referred price"
+    },
+    {
+      "id": "FTC_ENDORSE",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "FTC guidance",
+      "note": "clear conspicuous adjacent commission disclosure"
+    },
+    {
+      "id": "FTC_HEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "FTC guidance",
+      "note": "objective health and efficacy claims need appropriate substantiation"
+    },
+    {
+      "id": "PARTNER_PORTAL",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "seller affiliate portal",
+      "note": "public network information cannot establish named publisher acceptance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "E01",
+      "claim": "The Thatcher illusion involves local eye and mouth inversion in globally inverted faces",
+      "kind": "research",
+      "status": "SUPPORTED_FOR_EXPERIMENT",
+      "source": "THOMPSON1980",
+      "limit": "Do not infer audio efficacy"
+    },
+    {
+      "id": "E02",
+      "claim": "Orientation relative to retina matters in perception of the illusion",
+      "kind": "research",
+      "status": "SUPPORTED_FOR_EXPERIMENT",
+      "source": "LOBMAIER2007",
+      "limit": "Body tilt influence nuanced"
+    },
+    {
+      "id": "E03",
+      "claim": "Thatcher-like changes occur in some nonface object classes",
+      "kind": "research",
+      "status": "SUPPORTED_FOR_EXPERIMENT",
+      "source": "WONG2010",
+      "limit": "Do not generalize all perception mechanisms"
+    },
+    {
+      "id": "E04",
+      "claim": "The illusion may involve perceptual and decisional factors",
+      "kind": "research",
+      "status": "SUPPORTED_WITH_LIMITS",
+      "source": "CORNES2011",
+      "limit": "No single mechanism certain"
+    },
+    {
+      "id": "E05",
+      "claim": "Local feature orientation can matter even when eye/mouth region isolated",
+      "kind": "research",
+      "status": "SUPPORTED_FOR_EXPERIMENT",
+      "source": "PSALTA2014",
+      "limit": "No therapeutic extrapolation"
+    },
+    {
+      "id": "E06",
+      "claim": "STS region shows orientation-dependent adaptation in Thatcher images",
+      "kind": "research",
+      "status": "SUPPORTED_WITH_LIMITS",
+      "source": "PSALTA_FMRI",
+      "limit": "Neural response is not consumer outcome"
+    },
+    {
+      "id": "E07",
+      "claim": "Puységur archive preserves failure and consent alongside witness accounts",
+      "kind": "historical",
+      "status": "VERIFIED_PUBLISHED_CONTEXT",
+      "source": "WP_PUY",
+      "limit": "History not evidence of animal magnetism efficacy"
+    },
+    {
+      "id": "E08",
+      "claim": "Free 52-page Seven Day Focus Fieldbook has existing Jetpack opt-in",
+      "kind": "first_party",
+      "status": "VERIFIED_PUBLISHED",
+      "source": "WP_FOCUS",
+      "limit": "No duplicate list or signup"
+    },
+    {
+      "id": "E09",
+      "claim": "Current published post count is 66",
+      "kind": "first_party",
+      "status": "VERIFIED_CONNECTED_WP_2026_11_15",
+      "source": "WP_POSTS",
+      "limit": "Issue #171 older count 61; query may change"
+    },
+    {
+      "id": "E10",
+      "claim": "Current published pages count is 92, no /mind/ page listed",
+      "kind": "first_party",
+      "status": "VERIFIED_CONNECTED_WP_2026_11_15",
+      "source": "WP_PAGES",
+      "limit": "No claim /mind/ is live"
+    },
+    {
+      "id": "P01",
+      "claim": "Zen12 Premium seller describes 12 levels and 48 MP3 files",
+      "kind": "seller_feature",
+      "status": "SELLER_ONLY",
+      "source": "ZEN_HOME",
+      "limit": "No personal use or verified delivery"
+    },
+    {
+      "id": "P02",
+      "claim": "Zen12 seller presents twelve-minute listening sessions",
+      "kind": "seller_feature",
+      "status": "SELLER_ONLY",
+      "source": "ZEN_HOME",
+      "limit": "Not hour-equivalent proven effect"
+    },
+    {
+      "id": "P03",
+      "claim": "Zen12 website advertises a one-year refund policy",
+      "kind": "seller_policy",
+      "status": "SELLER_ONLY_UNTESTED",
+      "source": "ZEN_HOME",
+      "limit": "No independently processed refund"
+    },
+    {
+      "id": "P04",
+      "claim": "Zen12 public catalog displayed $87.99",
+      "kind": "seller_price",
+      "status": "SNAPSHOT_NOT_REFERRED",
+      "source": "ZEN_HOME",
+      "limit": "No actual checkout validated"
+    },
+    {
+      "id": "P05",
+      "claim": "Zen12 direct public order screen displayed $87.00",
+      "kind": "seller_price",
+      "status": "SNAPSHOT_POSSIBLY_CACHED",
+      "source": "ZEN_ORDER",
+      "limit": "Conflicts with catalog; no universal final price"
+    },
+    {
+      "id": "P06",
+      "claim": "Zen12 coupon route advertises $37",
+      "kind": "seller_price",
+      "status": "DIFFERENT_PROMO_ROUTE",
+      "source": "ZEN_PROMO",
+      "limit": "Do not advertise code/countdown"
+    },
+    {
+      "id": "P07",
+      "claim": "Hypnosis Live Total Focus is seller-listed 33 min, 47 MB",
+      "kind": "seller_feature",
+      "status": "SELLER_ONLY",
+      "source": "HYPNOSIS",
+      "limit": "No independent mental benefit"
+    },
+    {
+      "id": "P08",
+      "claim": "Hypnosis Live seller uses concentration promises",
+      "kind": "seller_efficacy",
+      "status": "UNSUBSTANTIATED_PRODUCT_EFFECT",
+      "source": "HYPNOSIS",
+      "limit": "Exclude outcome guarantee"
+    },
+    {
+      "id": "P09",
+      "claim": "Brainwave Shots seller describes 15-minute audio shots",
+      "kind": "seller_feature",
+      "status": "SELLER_ONLY",
+      "source": "SELLER_CATALOG",
+      "limit": "No verified product-specific clinical effects"
+    },
+    {
+      "id": "P10",
+      "claim": "Zen12 claims an hour in 12 minutes and brainwave benefits",
+      "kind": "seller_efficacy",
+      "status": "NOT_INDEPENDENTLY_SUBSTANTIATED",
+      "source": "ZEN_HOME",
+      "limit": "Exclude from conversion promise"
+    },
+    {
+      "id": "P11",
+      "claim": "Thatcher research supports Zen12 or brainwave entrainment efficacy",
+      "kind": "cross_domain_claim",
+      "status": "UNSUPPORTED",
+      "source": "PSALTA2014",
+      "limit": "Explicitly reject inference"
+    },
+    {
+      "id": "P12",
+      "claim": "Named Final Vestige Inspire3 affiliate approval",
+      "kind": "partner_authorization",
+      "status": "NOT_VERIFIED",
+      "source": "PARTNER_PORTAL",
+      "limit": "Public portal not acceptance; Gmail search negative not conclusive"
+    },
+    {
+      "id": "P13",
+      "claim": "Exact authorized Zen12 web/organic/social/email promotional permissions",
+      "kind": "partner_authorization",
+      "status": "NOT_VERIFIED",
+      "source": "PARTNER_PORTAL",
+      "limit": "Seller relationship alone does not grant channel permission"
+    },
+    {
+      "id": "P14",
+      "claim": "Issued Final Vestige tracked referral URL and commission terms",
+      "kind": "partner_authorization",
+      "status": "NOT_VERIFIED",
+      "source": "PARTNER_PORTAL",
+      "limit": "No link, payout or commission may be asserted"
+    },
+    {
+      "id": "P15",
+      "claim": "Actual referred Zen12 order/fulfillment or refund",
+      "kind": "transaction",
+      "status": "NOT_VERIFIED",
+      "source": "ZEN_ORDER",
+      "limit": "Outbound click is not sale"
+    },
+    {
+      "id": "C01",
+      "claim": "FTC requires clear disclosure of material commercial relationships",
+      "kind": "compliance",
+      "status": "VERIFIED_GUIDANCE",
+      "source": "FTC_ENDORSE",
+      "limit": "Disclosure must be adjacent to future earning link"
+    },
+    {
+      "id": "C02",
+      "claim": "Product health efficacy advertising needs adequate scientific support",
+      "kind": "compliance",
+      "status": "VERIFIED_GUIDANCE",
+      "source": "FTC_HEALTH",
+      "limit": "No treatment or guaranteed cognitive claims"
+    },
+    {
+      "id": "C03",
+      "claim": "Variant A and Variant B should share substantive buyer copy",
+      "kind": "experiment",
+      "status": "READY_STATIC_CHECK_ONLY",
+      "source": "FTC_ENDORSE",
+      "limit": "No claim B converts better"
+    },
+    {
+      "id": "C04",
+      "claim": "Short film exists as 42s transcript/poster/VTT storyboard only",
+      "kind": "asset",
+      "status": "STORYBOARD_NOT_PLAYABLE",
+      "source": "PSALTA2014",
+      "limit": "No imaginary encoded film"
+    },
+    {
+      "id": "C05",
+      "claim": "Native no-JS content and disabled CTA",
+      "kind": "security",
+      "status": "STATIC_REVIEW_ONLY",
+      "source": "FTC_ENDORSE",
+      "limit": "Real browser and WP sanitizer untested"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_publisher_acceptance",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "zen12_sku_eligibility",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "organic_social_rights",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "email_channel_rights",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "valid_earning_url",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "exact_referred_checkout",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "final_refund_terms",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "commission_terms",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "original_film_encoding",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "film_captions_test",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "browser_wcag_2_2_aa",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "wordPress_sanitizer",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "original_content_rights",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "site_QA_signoff",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "paid_transaction_settlement",
+      "status": "HOLD",
+      "proof": null
+    }
+  ],
+  "pricing_warning": "Observed seller snapshots differ: $87.99 catalog, $87.00 public order screen, $37 separate coupon route. No authorized referred checkout, terms, or final payable price verified.",
+  "authorization": "Public Inspire3 affiliate portal and targeted connected Gmail searches are insufficient to prove FV account acceptance or channels. Do not activate.",
+  "reporting": {
+    "qualified_human_sessions": null,
+    "confirmed_leads": null,
+    "paid_orders": null,
+    "settled_affiliate_commissions": null,
+    "refunds": null,
+    "fees": null,
+    "net_revenue_per_1000": null
+  },
+  "last_verified": "Native WordPress live content for Puységur, Focus and 66 posts/92 pages. Public seller pages and academic abstracts. All product effects unsubstantiated for Zen12 specifically."
+}
