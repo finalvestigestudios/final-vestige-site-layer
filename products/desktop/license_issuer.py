@@ -90,11 +90,14 @@ def issue_entitlement(*, key_path: str | Path, password: bytes,
     from a terminal with getpass, NEVER through argv, environment, or files.
     The caller must track unique license IDs and authorize fulfillment.
     """
+    # Select a native premium product before processing identifiers, clocks,
+    # output paths or private signing authority. str subclasses can override
+    # hash/equality and impersonate a recognized entitlement product.
+    if type(product) is not str or product not in verifier.PRODUCTS:
+        raise IssuanceError("Unknown premium product")
     _validate_text(kid, "kid")
     _validate_text(license_id, "license_id")
     _validate_text(holder, "holder")
-    if product not in verifier.PRODUCTS:
-        raise IssuanceError("Unknown premium product")
     current = _utc(datetime.now(timezone.utc) if now is None else now)
     issued = current.strftime("%Y-%m-%dT%H:%M:%SZ")
     start = issued if not_before is None else not_before
