@@ -19,7 +19,8 @@ function fixture(bytes=1000,source=original,current=jetpack) {
   request_url:current,request_id:'r1'};
  const n={request_id:'r1',url:current,status:200,mime_type:'image/jpeg',
   encoded_data_length:bytes,was_cached:false,from_disk_cache:false,
-  from_memory_cache:false,from_service_worker:false};
+  from_memory_cache:false,from_service_worker:false,
+  cold_event_chain_complete:true,cold_network_transfer_proven:true};
  const p={post_id:621,url:'https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/',
   page_result:'inspected_browser',scroll_coverage:{complete:true,state:'full_height_scanned'},
   image_census:{complete:true,confirmed_broken_count:0},confirmed_broken_count:0,
@@ -28,7 +29,7 @@ function fixture(bytes=1000,source=original,current=jetpack) {
   stored_images:[s],network_images:[n],matched_article_network_requests:1,
   article_image_wire_bytes_total:bytes};
  return {status:'complete_browser_image_census',image_census_coverage:{complete:true,confirmed_broken_count:0},
-  confirmed_broken_count:0,requested_pages:1,verified_pages:1,viewport:'390x844',mode:'priority',
+  confirmed_broken_count:0,requested_pages:1,verified_pages:1,probe_version:4,viewport:'390x844',mode:'priority',
   browser_product:'Chrome/140',run_profile:{cache_disabled:true,service_worker_bypassed:true},pages:[p]};
 }
 function extra(run, url, aliases=[]) {
