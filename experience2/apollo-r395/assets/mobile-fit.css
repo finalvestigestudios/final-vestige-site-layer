@@ -1,0 +1,14 @@
+/* Apollo R394 staging-only proposed responsive corrective layer. NOT ACTIVATED.
+   No document or CSS hash in the existing gallery is changed by this PR.
+   Read-only 320px/400%-root-font QA exposed an 8px overflow because original
+   rem-based nested padding exhausted the mobile container. Pixel bounds here
+   shrink only padding, not font size or reader-chosen text scaling. */
+@media screen and (max-width:740px){
+  .fv-r384__inner{width:calc(100% - 20px)}
+  .fv-r384__source-index{padding:12px}
+  .fv-r384__source-group{padding:12px}
+  .fv-r384__source-group ol{padding-left:16px}
+  .fv-r384__next{padding:12px}
+  .fv-r384__next a{max-width:100%;overflow-wrap:anywhere;word-break:break-word}
+  .fv-r384__rail a{padding:12px}
+}
