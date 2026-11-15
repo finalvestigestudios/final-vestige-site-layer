@@ -1,0 +1,364 @@
+{
+  "meta": {
+    "sprint": "R396",
+    "date": "2026-11-15",
+    "status": "HARD_HOLD",
+    "scope": "mind/r396 only",
+    "claim_rule": "seller statements are not product-specific trial evidence",
+    "price_observation": "public page snapshot, no referred purchase"
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "type": "primary_study",
+      "url": "https://doi.org/10.1068/p281059"
+    },
+    {
+      "id": "S02",
+      "type": "primary_study",
+      "url": "https://doi.org/10.1111/1467-9280.00303"
+    },
+    {
+      "id": "S03",
+      "type": "primary_study",
+      "url": "https://doi.org/10.1177/0956797613479386"
+    },
+    {
+      "id": "S04",
+      "type": "study_commentary",
+      "url": "https://doi.org/10.1068/i0386"
+    },
+    {
+      "id": "S05",
+      "type": "vendor_catalog",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "S06",
+      "type": "vendor_zen12",
+      "url": "https://zen12.com/"
+    },
+    {
+      "id": "S07",
+      "type": "vendor_public_checkout",
+      "url": "https://zen12.com/getstarted"
+    },
+    {
+      "id": "S08",
+      "type": "vendor_alternative_promotion",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "S09",
+      "type": "vendor_affiliate_program",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "S10",
+      "type": "ftc_disclosures",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "S11",
+      "type": "ftc_health_claims",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "S12",
+      "type": "free_fv_resource",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "S13",
+      "type": "fV_historical_research_body_not_accessible",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "S14",
+      "type": "hypnosis_live_seller",
+      "url": "https://hypnosislive.com/"
+    },
+    {
+      "id": "S15",
+      "type": "brainwave_shots_focus_vendor",
+      "url": "https://brainwaveshots.com/focus-shot"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Unexpected object detection depends partly on attention task and object similarity",
+      "source": [
+        "S01"
+      ],
+      "classification": "independent_study",
+      "editorial": "allow contextualized"
+    },
+    {
+      "id": "C02",
+      "claim": "Some observers missed a red cross visible for five seconds",
+      "source": [
+        "S02"
+      ],
+      "classification": "independent_study",
+      "editorial": "only conditions with almost 30%, not universal"
+    },
+    {
+      "id": "C03",
+      "claim": "83% of 24 radiologists did not report inserted gorilla in a controlled search task",
+      "source": [
+        "S03"
+      ],
+      "classification": "independent_study",
+      "editorial": "only task-condition-specific; NOT diagnostic error rate"
+    },
+    {
+      "id": "C04",
+      "claim": "Gorilla study establishes Zen12 cognitive efficacy",
+      "source": [
+        "S01",
+        "S03"
+      ],
+      "classification": "unsupported_transfer",
+      "editorial": "PROHIBIT"
+    },
+    {
+      "id": "C05",
+      "claim": "Zen12 offers 12 levels and 48 MP3s",
+      "source": [
+        "S06",
+        "S07"
+      ],
+      "classification": "vendor_description",
+      "editorial": "attribute to seller"
+    },
+    {
+      "id": "C06",
+      "claim": "Zen12 offers a 12-minute routine",
+      "source": [
+        "S06"
+      ],
+      "classification": "vendor_description",
+      "editorial": "seller-described duration"
+    },
+    {
+      "id": "C07",
+      "claim": "12-minute product delivers one hour of advanced meditation benefit",
+      "source": [
+        "S06"
+      ],
+      "classification": "vendor_efficacy",
+      "editorial": "DO NOT ADOPT"
+    },
+    {
+      "id": "C08",
+      "claim": "Product improves cognitive focus and health",
+      "source": [
+        "S06"
+      ],
+      "classification": "vendor_health_performance",
+      "editorial": "DO NOT ADOPT without adequate product-specific evidence"
+    },
+    {
+      "id": "C09",
+      "claim": "Public standard checkout showed $87.99",
+      "source": [
+        "S07"
+      ],
+      "classification": "dated_vendor_snapshot",
+      "editorial": "not FV referral price"
+    },
+    {
+      "id": "C10",
+      "claim": "Separate promo page offered $37 with coupon and countdown",
+      "source": [
+        "S08"
+      ],
+      "classification": "vendor_promo_snapshot",
+      "editorial": "not reusable coupon or true urgency; do not advertise"
+    },
+    {
+      "id": "C11",
+      "claim": "Seller advertises refund",
+      "source": [
+        "S06",
+        "S07"
+      ],
+      "classification": "vendor_contract_presentation",
+      "editorial": "do not imply independent execution verified"
+    },
+    {
+      "id": "C12",
+      "claim": "Inspire3 public portal advertises commissions",
+      "source": [
+        "S09"
+      ],
+      "classification": "vendor_general_offer",
+      "editorial": "NOT approval or payout for FV; do not state numbers"
+    },
+    {
+      "id": "C13",
+      "claim": "FV has named affiliate approval, exact SKU permissions and earning URL",
+      "source": [],
+      "classification": "unverified",
+      "editorial": "HOLD"
+    },
+    {
+      "id": "C14",
+      "claim": "FV has currently sellable rights-cleared owned Mind product",
+      "source": [],
+      "classification": "unverified",
+      "editorial": "HOLD"
+    },
+    {
+      "id": "C15",
+      "claim": "Existing Focus resource is free via established Dispatch list",
+      "source": [
+        "S12"
+      ],
+      "classification": "existing_fv_offer",
+      "editorial": "free lead possible, confirmation untested"
+    },
+    {
+      "id": "C16",
+      "claim": "Hypnosis Live catalog contains self-hypnosis MP3 products",
+      "source": [
+        "S14"
+      ],
+      "classification": "seller_description",
+      "editorial": "no clinical claims"
+    },
+    {
+      "id": "C17",
+      "claim": "Brainwave Shots Focus Shot contains audio products",
+      "source": [
+        "S15"
+      ],
+      "classification": "seller_description",
+      "editorial": "no validated outcome"
+    },
+    {
+      "id": "C18",
+      "claim": "FTC requires clear, prominent disclosures for material connections",
+      "source": [
+        "S10"
+      ],
+      "classification": "regulatory_guidance",
+      "editorial": "near any earning link"
+    },
+    {
+      "id": "C19",
+      "claim": "Objective health claims require reliable substantiation",
+      "source": [
+        "S11"
+      ],
+      "classification": "regulatory_guidance",
+      "editorial": "no unverified health benefit claims"
+    },
+    {
+      "id": "C20",
+      "claim": "Puységur page text was reviewed in full this run",
+      "source": [
+        "S13"
+      ],
+      "classification": "access_blocked_429",
+      "editorial": "FALSE; do not assert"
+    },
+    {
+      "id": "C21",
+      "claim": "Seller checkout links are activated in unpublished buyer pages",
+      "source": [],
+      "classification": "explicitly_not_true",
+      "editorial": "NONE"
+    },
+    {
+      "id": "C22",
+      "claim": "Commission or net revenue verified",
+      "source": [],
+      "classification": "unverified",
+      "editorial": "NOT COMPUTABLE"
+    }
+  ],
+  "release_gates": [
+    {
+      "name": "named_inspire3_approval",
+      "state": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "name": "exact_zen12_sku_permission",
+      "state": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "name": "permitted_tiktok_youtube_email_channels",
+      "state": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "name": "issued_earning_url",
+      "state": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "name": "official_affiliate_creatives_rights",
+      "state": "HOLD",
+      "owner": "Commerce"
+    },
+    {
+      "name": "referred_checkout_price_and_tax",
+      "state": "HOLD",
+      "owner": "Commerce"
+    },
+    {
+      "name": "refund_delivery_terms_confirmed",
+      "state": "HOLD",
+      "owner": "Commerce"
+    },
+    {
+      "name": "paid_fv_mind_sku_rights_and_checkout",
+      "state": "HOLD",
+      "owner": "Commerce"
+    },
+    {
+      "name": "grok_actual_asset_ids_and_link_intent",
+      "state": "HOLD",
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "name": "verified_jetpack_confirmed_lead",
+      "state": "HOLD",
+      "owner": "Claude/Dispatch"
+    },
+    {
+      "name": "real_native_browser_qa",
+      "state": "HOLD",
+      "owner": "Site QA"
+    },
+    {
+      "name": "video_encoded_captioned_and_performance_tested",
+      "state": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "name": "consent_aware_single_tracking_contract",
+      "state": "HOLD",
+      "owner": "Claude"
+    },
+    {
+      "name": "independent_partner_paid_conversions",
+      "state": "HOLD",
+      "owner": "Commerce"
+    },
+    {
+      "name": "refund_fee_net_reconciliation",
+      "state": "HOLD",
+      "owner": "Commerce"
+    },
+    {
+      "name": "founder_live_release_permission",
+      "state": "HOLD",
+      "owner": "Founder"
+    }
+  ]
+}
