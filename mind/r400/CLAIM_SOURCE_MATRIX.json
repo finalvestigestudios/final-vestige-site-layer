@@ -1,0 +1,543 @@
+{
+  "run": "R400",
+  "date_checked": "2026-11-15",
+  "status": "SOURCE_ONLY_HARD_HOLD",
+  "source_kind_note": "Seller feature/price does not substantiate effect; scientific class evidence does not validate a SKU. Public catalog is not publisher approval.",
+  "sources": [
+    {
+      "id": "S01",
+      "name": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "kind": "seller"
+    },
+    {
+      "id": "S02",
+      "name": "Zen12 standard checkout",
+      "url": "https://zen12.com/getstarted",
+      "kind": "seller"
+    },
+    {
+      "id": "S03",
+      "name": "Zen12 separate promotional order",
+      "url": "https://zen12.com/secret/",
+      "kind": "seller"
+    },
+    {
+      "id": "S04",
+      "name": "Hypnosis Live Total Focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "seller"
+    },
+    {
+      "id": "S05",
+      "name": "Brainwave Shots Focus Shot",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "kind": "seller"
+    },
+    {
+      "id": "S06",
+      "name": "Brainwave Shots policy/FAQ",
+      "url": "https://brainwaveshots.com/faq",
+      "kind": "seller"
+    },
+    {
+      "id": "S07",
+      "name": "2025 self-administered hypnosis randomized trial full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "kind": "primary_study"
+    },
+    {
+      "id": "S08",
+      "name": "2025 JAMA Network Open report",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2841242",
+      "kind": "primary_study"
+    },
+    {
+      "id": "S09",
+      "name": "2025 hypnosis apps systematic review",
+      "url": "https://doi.org/10.1080/00207144.2024.2434085",
+      "kind": "systematic_review"
+    },
+    {
+      "id": "S10",
+      "name": "FTC affiliate endorsements Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator"
+    },
+    {
+      "id": "S11",
+      "name": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator"
+    },
+    {
+      "id": "S12",
+      "name": "FV Puységur archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "live_historical_source"
+    },
+    {
+      "id": "S13",
+      "name": "FV existing free Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "live_resource"
+    },
+    {
+      "id": "S14",
+      "name": "FV already-published change blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "live_editorial"
+    },
+    {
+      "id": "S15",
+      "name": "FV affiliate disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "kind": "live_policy"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12 standard checkout describes 12 levels and 48 MP3s",
+      "class": "seller_verified_feature",
+      "sources": [
+        "S02"
+      ],
+      "policy": "attribute_to_seller"
+    },
+    {
+      "id": "C02",
+      "claim": "Zen12 standard seller screen displayed $87.99 total in inspected view",
+      "class": "seller_price_snapshot",
+      "sources": [
+        "S02"
+      ],
+      "policy": "not_FV_checkout"
+    },
+    {
+      "id": "C03",
+      "claim": "Zen12 separate promo page displayed $37 conditional coupon pricing",
+      "class": "seller_promo_snapshot",
+      "sources": [
+        "S03"
+      ],
+      "policy": "exclude_from_public_selling_copy"
+    },
+    {
+      "id": "C04",
+      "claim": "Zen12 advertises bonus support and a money-back guarantee",
+      "class": "seller_policy_claim",
+      "sources": [
+        "S02"
+      ],
+      "policy": "not_a_verified_fulfilled_refund"
+    },
+    {
+      "id": "C05",
+      "claim": "Zen12 improves reader cognition, brainwaves, mood or health",
+      "class": "seller_or_unverified_efficacy",
+      "sources": [
+        "S01",
+        "S02"
+      ],
+      "policy": "exclude"
+    },
+    {
+      "id": "C06",
+      "claim": "Hypnosis Live Total Focus is seller-described as 33 min and 47 MB",
+      "class": "seller_feature",
+      "sources": [
+        "S04"
+      ],
+      "policy": "attribute_to_seller"
+    },
+    {
+      "id": "C07",
+      "claim": "Total Focus guarantees stronger workplace concentration",
+      "class": "seller_efficacy_claim",
+      "sources": [
+        "S04"
+      ],
+      "policy": "exclude"
+    },
+    {
+      "id": "C08",
+      "claim": "Total Focus reprograms the brain",
+      "class": "seller_efficacy_claim",
+      "sources": [
+        "S04"
+      ],
+      "policy": "exclude"
+    },
+    {
+      "id": "C09",
+      "claim": "Focus Shot includes 15- and 30-minute versions",
+      "class": "seller_feature",
+      "sources": [
+        "S05"
+      ],
+      "policy": "attribute_to_seller"
+    },
+    {
+      "id": "C10",
+      "claim": "Focus Shot includes brainwave-only variants",
+      "class": "seller_feature",
+      "sources": [
+        "S05"
+      ],
+      "policy": "attribute_to_seller"
+    },
+    {
+      "id": "C11",
+      "claim": "Focus Shot uses a specified beta-frequency sequence",
+      "class": "seller_technical_description",
+      "sources": [
+        "S05"
+      ],
+      "policy": "no_efficacy_inference"
+    },
+    {
+      "id": "C12",
+      "claim": "Focus Shot assures prolonged focus for hours",
+      "class": "seller_efficacy_claim",
+      "sources": [
+        "S05"
+      ],
+      "policy": "exclude"
+    },
+    {
+      "id": "C13",
+      "claim": "Focus Shot is universally safe",
+      "class": "seller_safety_claim",
+      "sources": [
+        "S05",
+        "S06"
+      ],
+      "policy": "exclude"
+    },
+    {
+      "id": "C14",
+      "claim": "Focus Shot seller FAQ describes usage cautions",
+      "class": "seller_policy",
+      "sources": [
+        "S06"
+      ],
+      "policy": "check_current_terms"
+    },
+    {
+      "id": "C15",
+      "claim": "2025 RCT randomized 250 women with hot flashes",
+      "class": "primary_trial_fact",
+      "sources": [
+        "S07",
+        "S08"
+      ],
+      "policy": "allow_qualified"
+    },
+    {
+      "id": "C16",
+      "claim": "Trial compared recorded clinical hypnosis with white noise active control",
+      "class": "primary_trial_fact",
+      "sources": [
+        "S07",
+        "S08"
+      ],
+      "policy": "allow"
+    },
+    {
+      "id": "C17",
+      "claim": "Trial 6-week hot-flash score changes were 53.4% and 40.9%",
+      "class": "primary_trial_fact",
+      "sources": [
+        "S07",
+        "S08"
+      ],
+      "policy": "allow_with_population_outcome"
+    },
+    {
+      "id": "C18",
+      "claim": "Trial main comparison P=.04",
+      "class": "primary_trial_fact",
+      "sources": [
+        "S07"
+      ],
+      "policy": "allow_with_primary_outcome"
+    },
+    {
+      "id": "C19",
+      "claim": "Trial longitudinal interaction also reported P=.06",
+      "class": "primary_trial_fact",
+      "sources": [
+        "S07"
+      ],
+      "policy": "allow_with_model_context"
+    },
+    {
+      "id": "C20",
+      "claim": "Trial measured concentration or Zen12 efficacy",
+      "class": "invalid_extrapolation",
+      "sources": [
+        "S07"
+      ],
+      "policy": "prohibit"
+    },
+    {
+      "id": "C21",
+      "claim": "Control group's improvement is entirely placebo",
+      "class": "unsupported_mechanism_inference",
+      "sources": [
+        "S07"
+      ],
+      "policy": "prohibit"
+    },
+    {
+      "id": "C22",
+      "claim": "A 2025 systematic review included 168 hypnosis apps",
+      "class": "research_review_fact",
+      "sources": [
+        "S09"
+      ],
+      "policy": "allow_qualified"
+    },
+    {
+      "id": "C23",
+      "claim": "Four of reviewed apps reported clinical efficacy trial inclusion",
+      "class": "research_review_fact",
+      "sources": [
+        "S09"
+      ],
+      "policy": "allow_qualified"
+    },
+    {
+      "id": "C24",
+      "claim": "Other 164 apps were ineffective",
+      "class": "invalid_extrapolation",
+      "sources": [
+        "S09"
+      ],
+      "policy": "prohibit"
+    },
+    {
+      "id": "C25",
+      "claim": "Puységur files distinguish evidence from historical causal claims",
+      "class": "editorial_archive",
+      "sources": [
+        "S12"
+      ],
+      "policy": "allow"
+    },
+    {
+      "id": "C26",
+      "claim": "Existing Seven Day Focus Fieldbook is free and linked to established signup",
+      "class": "live_funnel_observation",
+      "sources": [
+        "S13"
+      ],
+      "policy": "preserve_one_list"
+    },
+    {
+      "id": "C27",
+      "claim": "FTC recommends clear nearby affiliate financial disclosure",
+      "class": "official_guidance",
+      "sources": [
+        "S10"
+      ],
+      "policy": "mandatory_if_active"
+    },
+    {
+      "id": "C28",
+      "claim": "FTC health claims require appropriate substantiation",
+      "class": "official_guidance",
+      "sources": [
+        "S11"
+      ],
+      "policy": "no_transfer"
+    },
+    {
+      "id": "C29",
+      "claim": "Public Inspire3 portal confers publisher authorization on FV",
+      "class": "invalid_authorization_inference",
+      "sources": [
+        "S01"
+      ],
+      "policy": "HOLD"
+    },
+    {
+      "id": "C30",
+      "claim": "Named FV affiliate approval exists",
+      "class": "unverified_account_fact",
+      "sources": [],
+      "policy": "HOLD"
+    },
+    {
+      "id": "C31",
+      "claim": "Issued FV product earning URL exists",
+      "class": "unverified_account_fact",
+      "sources": [],
+      "policy": "HOLD"
+    },
+    {
+      "id": "C32",
+      "claim": "FV owned Mind paid product has active merchant SKU and rights",
+      "class": "unverified_commerce",
+      "sources": [],
+      "policy": "HOLD"
+    },
+    {
+      "id": "C33",
+      "claim": "Paid affiliate click equals confirmed commission",
+      "class": "invalid_metric",
+      "sources": [],
+      "policy": "prohibit"
+    },
+    {
+      "id": "C34",
+      "claim": "Original film currently playable in browser",
+      "class": "unbuilt_feature",
+      "sources": [],
+      "policy": "HOLD"
+    },
+    {
+      "id": "C35",
+      "claim": "Merchant order total is independent of country/tax/coupon",
+      "class": "invalid_price_generalization",
+      "sources": [
+        "S02",
+        "S03"
+      ],
+      "policy": "prohibit"
+    },
+    {
+      "id": "C36",
+      "claim": "Published change-blindness investigation already exists",
+      "class": "editorial_live_route",
+      "sources": [
+        "S14"
+      ],
+      "policy": "canonical_not_duplicate"
+    }
+  ],
+  "commercial_release_gates": [
+    {
+      "name": "approved_publisher_identity",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "sku_permission",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "channels_permission",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "issued_earning_url",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "partner_payout_terms",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "referred_checkout",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "current_price_tax",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "refund_policy_and_exclusions",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "owned_paid_sku_rights",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "owned_sku_delivery",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "owned_sku_refunds",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "original_playable_video",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "video_captions_real_browser",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "WP_sanitizer_review",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "mobile_360_390_768_1440_1920",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "keyboard_screen_reader_WCAG",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "no_JS_and_CWV",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "privacy_consent_for_metrics",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "actual_Grok_asset_IDs",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "Jetpack_provider_confirmed_lead",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "settled_merchant_order",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "fee_refund_reconciliation",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "founder_release_approval",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    },
+    {
+      "name": "Site_QA_approval",
+      "state": "HOLD",
+      "verification": "No acceptable proof or required QA execution in this sprint."
+    }
+  ],
+  "measurement_note": "affiliate_outbound_click != merchant_confirmed_order != settled_net_revenue"
+}
