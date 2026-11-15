@@ -1,0 +1,36 @@
+{
+  "id": "dispatch_r370",
+  "date": "2026-11-14",
+  "source_pr": 175,
+  "stacked_on_pr": 2564,
+  "issue": 3,
+  "status": "NOT_ADOPTED_HOLD_UNSENT_HOLD_MERCHANT",
+  "merchant": "Zen12",
+  "guide_live_verified": false,
+  "publisher_email_rights_verified": false,
+  "affiliate_url_verified": false,
+  "referred_checkout_verified": false,
+  "publisher_postal_verified": false,
+  "native_unsubscribe_verified": false,
+  "native_email_preview_verified": false,
+  "real_welcome_receipt_verified": false,
+  "unique_inbox_count_verified": false,
+  "founder_approved_to_send": false,
+  "independent_paid_sales_verified": false,
+  "net_revenue_per_1000_qualified_humans": null,
+  "original_campaign_remains_unchanged": true,
+  "notes": [
+    "not confirmed excluded from subscriber total",
+    "seller public prices depend on page and coupon",
+    "the 2023 trial does not study Zen12"
+  ],
+  "sources": [
+    "https://psychclassics.yorku.ca/James/Principles/prin11.htm",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10673854/",
+    "https://zen12.com/about",
+    "https://zen12.com/getstarted",
+    "https://zen12.com/secret/",
+    "https://wordpress.com/support/subscribers/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}

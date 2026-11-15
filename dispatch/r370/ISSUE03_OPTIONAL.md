@@ -1,0 +1,47 @@
+# THE DISPATCH — OPTIONAL ISSUE 03
+
+**NOT ADOPTED · UNSENT · HOLD_MERCHANT · REVIEW ONLY**. Original PR #175 is unchanged.
+
+**Subject:** Twelve minutes isn't sixty. That's the point.
+
+**Preheader:** William James, a 2023 meditation trial, and five questions before buying audio.
+
+**Content type:** commercial-review-pending
+
+---
+
+In 1890, William James described attention as a choice among competing objects of thought. In his chapter on attention, he was not offering a shortcut to an empty mind. To notice one thing was also to leave something else outside the frame.
+
+That distinction feels modern when a product page offers a neat promise: twelve minutes for the benefits of an hour. Twelve minutes might fit a crowded day. But an appealing duration and evidence for a particular audio product are very different things.
+
+A 2023 randomized experiment assigned 372 adults recruited online to ten or twenty minutes of guided mindfulness meditation, or an audio control of the same length. The researchers found some improvements in immediate state mindfulness compared with controls, with relatively little overall difference between the ten- and twenty-minute conditions. Certain outcomes varied with participants' characteristics.
+
+That study did not test Zen12 or its brainwave recordings. It did not compare twelve minutes with sixty, study the effects of a year-long practice, or establish that every short-session audio program produces the same results. The distinction matters as much as the result.
+
+Here is a no-cost experiment with a smaller, defensible question. For three days, reserve twelve minutes at a time you can realistically repeat. For two minutes notice the distractions around you. For eight minutes keep returning to a single point of attention when it wanders. For two minutes write down whether the session happened, what interrupted it, and whether you would choose to repeat it.
+
+Do not treat a wandering thought as a failed session. Your notes tell you about the practicality of a routine, not whether an audio product cures anything. This is personal habit observation, not treatment, a clinical test or proof of a promised mental state. The free Seven Day Focus Fieldbook extends this kind of simple observation without a purchase.
+
+So what is Zen12, specifically? The seller describes twelve levels with four versions of each: relaxation music, guided meditation, white noise and nature sounds. Its public order page lists forty-eight MP3s and supporting guides. Those are attributed package descriptions, not independently demonstrated psychological outcomes.
+
+A more useful buyer's checklist asks five things. Which of the four styles could you actually live with? Can you hear a representative sample? Would a free quiet session meet your goal? What total will your actual referred checkout charge? And exactly which return and support rules apply to that transaction?
+
+The price question is not academic. The seller's general checkout displays one public price, while a separate seller page shows a coupon-dependent price. Neither tells us what a Final Vestige referral would finally pay. We won't quote either as a universal offer or manufacture a deadline.
+
+We are developing an independent Zen12 buyer guide that will compare the format with free practice, identify the exact seller claims, and show where science does and does not reach. The guide link is deliberately inactive while we confirm the guide is published and whether Final Vestige is specifically permitted to recommend Zen12 by email.
+
+Commercial disclosure: If you later buy through a qualifying link in a verified guide, Final Vestige may earn a commission. That relationship will not determine our historical or scientific conclusions. No purchase link is active here.
+
+Twelve minutes can be a useful invitation to observe something. It cannot turn a study of one recording into proof of another.
+
+**Reserved primary CTA (DISABLED):** Read the independent Zen12 buyer guide — [[APPROVED_LIVE_ZEN12_GUIDE_URL_REQUIRED]]. No destination is available.
+
+**Source trail:**
+- [William James, The Principles of Psychology (1890), Chapter XI](https://psychclassics.yorku.ca/James/Principles/prin11.htm)
+- [Palmer et al. (2023), Scientific Reports DOI 10.1038/s41598-023-46578-y](https://pmc.ncbi.nlm.nih.gov/articles/PMC10673854/)
+- [Zen12 official About](https://zen12.com/about)
+- [Zen12 official Get Started checkout](https://zen12.com/getstarted)
+- [Zen12 official coupon-specific seller page](https://zen12.com/secret/)
+- [FTC CAN-SPAM guide](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business)
+
+**Delivery hard stop:** Publisher: Final Vestige Studios. Postal address: [[VALID_POSTAL_ADDRESS_REQUIRED]]. Unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]. These placeholders require real publisher/legal proof and a genuine native Jetpack receipt before any send. No campaign approval is implied.
