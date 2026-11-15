@@ -1,0 +1,49 @@
+{
+  "snapshot": "2026-11-15T20:33:15Z",
+  "status": "ALL_MERCHANT_EMAIL_PERMISSIONS_UNVERIFIED",
+  "campaign": "PR #175 original 4 editorial / 2 commercial; PR #2657 latest stacked predecessor; preserve both",
+  "merchant_products": [
+    {
+      "placement": 3,
+      "sku": "Zen12 Premium full course",
+      "official_seller": "https://zen12.com/",
+      "conditional_seller": "https://zen12.com/secret/",
+      "seller_describes": "48 MP3s, 12 levels, quick start, guide and support; public normal $87.99 and separate $37 conditional coupon displayed; 1-year money-back statement; claims of brainwave entrainment and one-hour-in-twelve-minutes not product-specific substantiation",
+      "pricing_volatile": true,
+      "named_publisher_accepted": false,
+      "email_rights_confirmed": false,
+      "issued_earning_url": false,
+      "guide_live_and_approved": false,
+      "refund_referred_checkout_verified": false,
+      "affiliate_creatives_approved": false,
+      "paid_commission_report": null
+    },
+    {
+      "placement": 5,
+      "sku": "Hypnosis Live: Total Focus single audio",
+      "official_seller": "https://hypnosislive.com/mental-skills/total-focus",
+      "seller_faq": "https://hypnosislive.com/faq",
+      "seller_describes": "33-minute, 47-MB downloadable session; public observed price snapshots vary ($2 promotional, $17.95, $24.44); FAQ says request within 14 days, maximum five refunded sessions yearly; concentration results are seller assertions",
+      "pricing_volatile": true,
+      "named_publisher_accepted": false,
+      "email_rights_confirmed": false,
+      "issued_earning_url": false,
+      "guide_live_and_approved": false,
+      "refund_referred_checkout_verified": false,
+      "affiliate_creatives_approved": false,
+      "paid_commission_report": null
+    }
+  ],
+  "non_equivalent_offer_caution": "https://inspire3.com/ll/ includes openly accessible mail swipe for Limitless Labs, a DIFFERENT offer; those materials grant no Zen12 or Total Focus email rights",
+  "required_receipt_fields": [
+    "authenticated named publisher account",
+    "contract/version + allowed traffic channel EMAIL",
+    "exact product SKU and approved creative",
+    "issued payout/earning URL, sub-ID terms",
+    "source-verified referred checkout price/refund",
+    "live Mind owner-reviewed warm-up guide and near-link disclosure",
+    "merchant settlement export and actual reversal/fees"
+  ],
+  "publishing_allowed": false,
+  "sending_allowed": false
+}

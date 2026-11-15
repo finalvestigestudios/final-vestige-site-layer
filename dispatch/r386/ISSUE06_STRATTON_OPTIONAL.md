@@ -1,0 +1,41 @@
+# THE DISPATCH — R386 OPTIONAL EDITORIAL CANDIDATE
+
+**Subject:** He changed the image. His eyes had to relearn the room.
+
+**Proposed preheader (native Jetpack mapping NOT verified):** An 1896 experiment, eight later days, and a warning about easy explanations.
+
+**Status:** NOT_ADOPTED / HOLD_UNSENT / ORIGINAL ISSUE 06 UNCHANGED
+
+---
+
+In 1896, psychologist George Malcolm Stratton arranged lenses that turned the scene before one eye through 180 degrees. He covered the other eye. The world did not suddenly become manageable just because he knew what the apparatus was doing.
+
+At first, visual guidance and familiar movement were at odds. In his preliminary report, Stratton described a three-day experiment involving 21½ hours of wearing the apparatus. He could describe the conflict between what he saw and what prior experience led him to expect. A later, longer experiment in 1897 involved 81½ hours over eight days.
+
+The memorable version of this story goes: *A man wore upside-down glasses until everything looked normal.* It makes a neat anecdote. It also compresses several important distinctions.
+
+**What changed?** Stratton wrote about growing ease in acting under altered visual conditions, and sometimes reported a world appearing in a familiar orientation. Those are observations about experience and behavior. They do not prove that the optical image somehow stopped being rotated.
+
+**Who observed it?** These were remarkably detailed self-experiments, not a blinded, randomized comparison establishing a universal adaptation schedule. There is no honest basis for promising every person can retrain perception in eight days, or for equating optical adaptation with clinical improvement.
+
+**What survived?** His 1896 and 1897 papers remain inspectable; the University of California, Berkeley's departmental history confirms their place in the early development of experimental psychology. Later philosophical analysis cautions that motor adaptation and the felt orientation of the world can diverge.
+
+That distinction matters beyond vision. We routinely mistake a smoother performance for a settled explanation of *why* it improved.
+
+**A three-minute evidence exercise:** Pick a small attention habit you changed recently. Write one sentence about an observable result, another about the explanation you suspect, and a third about an alternative explanation. If you're repeating a task, record its starting conditions before declaring the method a success. This is a note-taking exercise, not a diagnostic or treatment protocol.
+
+The question isn't whether practice can change what you do. Sometimes it can. The question is whether the story you tell about the change has been tested as carefully as the change itself.
+
+**Continue with the free Seven Day Focus Fieldbook:** https://finalvestige.com/focus/
+
+The Fieldbook offers a simple log for separating what you tried from what you can reasonably conclude. No purchase or paid audio is necessary.
+
+Sources and further reading:
+- G. M. Stratton, "Some Preliminary Experiments on Vision without Inversion of the Retinal Image," *Psychological Review* 3(6), 611–617 (1896), DOI 10.1037/h0072918: https://doi.org/10.1037/h0072918
+- University of California, Berkeley, Psychology Department, historical remembrance of George Malcolm Stratton: https://psychology.berkeley.edu/about/history/memoriam
+- Stanford Encyclopedia of Philosophy, "Action-based Theories of Perception," §2.2.2 and §2.2.6, including different interpretations: https://plato.stanford.edu/archives/win2021/entries/action-perception/
+- 1897 original publication record and scans: https://commons.wikimedia.org/wiki/File:Stratton.1897a.pdf
+
+**STATUS: OPTIONAL EDITORIAL CANDIDATE — NOT ADOPTED. NO SEND, NO SCHEDULE, NO PUBLISH.**
+
+Compliance hold: Sender Final Vestige Studios; mailing address [[VALID_FV_POSTAL_ADDRESS_REQUIRED]]; native unsubscribe [[VERIFIED_JETPACK_UNSUBSCRIBE_REQUIRED]]. Neither placeholder may be replaced without first-party evidence and native rendering review.

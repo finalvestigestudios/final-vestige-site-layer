@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {releaseGate, confirmedSignups, revenuePer1000} from './release_gate.mjs';
+test('six original issues held',()=>{for(let i=1;i<=6;i++)assert.equal(releaseGate(i,{}).verdict,'HOLD_UNSENT')});
+test('merchant issue needs named email permission',()=>{for(const i of [3,5])assert.ok(releaseGate(i,{}).blockers.includes('merchant_sku_email_rights'))});
+test('editorial issues do not have a merchant gate',()=>assert.ok(!releaseGate(1,{}).blockers.some(x=>x.startsWith('merchant_'))));
+test('native subject/preheader and unsubscribe fail closed',()=>{const b=releaseGate(2,{}).blockers;for(const field of ['native_preheader_verified','jetpack_subject_verified','working_unsubscribe'])assert.ok(b.includes(field))});
+test('unknown email list cannot be assigned count zero',()=>assert.equal(confirmedSignups(null,{}).count,null));
+test('only provider-verified confirmed unique IDs count',()=>{const e={provider:'jetpack',status:'confirmed',double_optin_verified:true,email_eligible:true,provider_verified:true,provider_subscriber_id:'A'};assert.equal(confirmedSignups([e,e,{...e,provider_subscriber_id:'B',status:'unconfirmed'}],{authoritative_provider_export_complete:true}).count,1)});
+test('unverified commission data stays null',()=>assert.equal(revenuePer1000(null).net,null));
+test('source-specific paid commissions net of fees',()=>{const s={merchant_export_complete:true,adjustments_complete:true,sessions_audited:true,qualified_human_sessions:500,orders:[{source:'merchant_settlement',status:'paid_settled',id:'one',publisher_commission_paid:8,refunds:1,clawbacks:0,fees:0.5}]};assert.equal(revenuePer1000(s).per_1000,13)});
