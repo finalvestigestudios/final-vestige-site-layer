@@ -62,7 +62,7 @@ ok('All release gates held',matrix.commercial_release_gates.every(x=>x.status===
 ok('No authenticated merchant terms',matrix.orders.confirmed_orders===null&&matrix.orders.net_revenue===null);
 ok('Original guide >2000 words',guide.split(/\s+/).length>=2000);
 ok('Guide references main historical primary-source archive',guide.includes('puysegurs-animal-magnetism-files'));
-ok('Guide distinguishes seller from clinical trial',guide.includes('not an independent product trial')||guide.includes('not an independent product trial'.toUpperCase())||guide.includes('did not independently test'));
+ok('Guide distinguishes seller from clinical trial',guide.includes('did not test a retail MP3')&&guide.includes('a product-specific advertised effect'));
 ok('Plan specifies payout rather than clicks',plan.includes('merchant_confirmed_order')&&plan.includes('affiliate_click'));
 ok('Plan preserves Grok and Dispatch roles',plan.includes('Grok')&&plan.includes('Dispatch #174'));
 for (const [name,mutation] of [
