@@ -1,0 +1,69 @@
+{
+  "state": "HOLD_UNSENT",
+  "candidate_issue_06": "NOT_ADOPTED",
+  "initial_six_mix": {
+    "editorial": 4,
+    "commercial_reserved": 2
+  },
+  "issues": [
+    {
+      "issue": 1,
+      "send_allowed": false,
+      "merchant_release": null,
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 2,
+      "send_allowed": false,
+      "merchant_release": null,
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 3,
+      "send_allowed": false,
+      "merchant_release": false,
+      "release": "HOLD_UNSENT_HOLD_MERCHANT"
+    },
+    {
+      "issue": 4,
+      "send_allowed": false,
+      "merchant_release": null,
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 5,
+      "send_allowed": false,
+      "merchant_release": false,
+      "release": "HOLD_UNSENT_HOLD_MERCHANT"
+    },
+    {
+      "issue": 6,
+      "send_allowed": false,
+      "merchant_release": null,
+      "release": "HOLD_UNSENT"
+    }
+  ],
+  "source_of_truth": {
+    "Jetpack_total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "wpcom_followers": 3,
+    "direct_email_followers": 0,
+    "unique_email_eligible": null
+  },
+  "release_requirements": {
+    "founder_final_approval": false,
+    "provider_eligible_recipients": false,
+    "welcome_received": false,
+    "fieldbook_download_received": false,
+    "non_sending_jetpack_native_preview": false,
+    "publisher_postal_address": false,
+    "functional_unsubscribe": false,
+    "affiliate_email_rights": false,
+    "issued_earning_links": false,
+    "verified_live_guides": false,
+    "referred_checkout": false,
+    "settled_revenue": false
+  },
+  "net_revenue_per_1000_qualified_human_sessions": null
+}
