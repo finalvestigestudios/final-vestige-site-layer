@@ -134,9 +134,11 @@
     101,
     38,
     37,
-    36
+    36,
+    35,
+    34
   ],
-  "cms_img_tags_read": 359,
+  "cms_img_tags_read": 361,
   "media_attachments_read": 132,
   "media_total_original_stored_bytes": 90403013,
   "threshold_strictly_greater_than_bytes": 1500000,
@@ -335,7 +337,24 @@
       "cache_authorized": false,
       "wp_upload_authorized": false,
       "post_rewrite_authorized": false,
-      "published_inline_uses": []
+      "published_inline_uses": [
+        {
+          "post_id": 34,
+          "post_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+          "post_title": "The Morning San Francisco Lost Its Water",
+          "post_modified": "2026-10-29T21:19:13",
+          "image_index": 0,
+          "wp_view_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png?resize=1024%2C576&ssl=1",
+          "img_width": 1024,
+          "img_height": 576,
+          "srcset_present": false,
+          "sizes_present": false,
+          "loading": "lazy",
+          "guest_current_src": null,
+          "guest_http_status": null,
+          "guest_transferred_bytes": null
+        }
+      ]
     },
     {
       "attachment_id": 43,
@@ -430,7 +449,24 @@
       "cache_authorized": false,
       "wp_upload_authorized": false,
       "post_rewrite_authorized": false,
-      "published_inline_uses": []
+      "published_inline_uses": [
+        {
+          "post_id": 35,
+          "post_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+          "post_title": "The Boat That Refused to Die",
+          "post_modified": "2026-10-29T17:07:04",
+          "image_index": 0,
+          "wp_view_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png?resize=1024%2C576&ssl=1",
+          "img_width": 1024,
+          "img_height": 576,
+          "srcset_present": false,
+          "sizes_present": false,
+          "loading": "lazy",
+          "guest_current_src": null,
+          "guest_http_status": null,
+          "guest_transferred_bytes": null
+        }
+      ]
     },
     {
       "attachment_id": 41,
