@@ -1,0 +1,64 @@
+{
+  "schema": "fv.apollo.research-desk.source-custody.v1",
+  "case": "Apollo 204 (Apollo 1)",
+  "status": "reviewed staging research; no NASA endorsement or commercial asset permission",
+  "records": [
+    {
+      "id": "01-ground-test", "heading": "Ground rehearsal, not launch", "kind": "1967 ground-test context",
+      "claim": "The Apollo 1 crew was conducting the plugs-out countdown rehearsal with the command module sealed on the launch pad.",
+      "boundary": "The unfueled launch vehicle did not make the cabin or its escape provisions safe.",
+      "evidence_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "evidence_role": "Primary investigation — NASA-hosted copy of the 1967 Board report",
+      "context_url": "https://www.nasa.gov/history/55-years-ago-tragedy-on-the-launch-pad/",
+      "context_role": "NASA 2022 retrospective — contextual, not contemporary evidence",
+      "catalog_note": "Historical crew photographs illustrate the people, not the test's engineering conditions. No photographs are reproduced here."
+    },
+    {
+      "id": "02-oxygen", "heading": "The oxygen environment", "kind": "Hazard documented by the Board",
+      "claim": "The Board reported a 100-percent oxygen atmosphere at 16.7 psia during the test, with combustible materials inside the command module.",
+      "boundary": "Oxygen supported rapid combustion; the atmosphere itself does not identify an ignition spark, and the ground-test pressure was not orbital flight pressure.",
+      "evidence_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "evidence_role": "Primary investigation — Findings and Determinations",
+      "context_url": "", "context_role": "",
+      "catalog_note": "A spacecraft image catalog entry is not instrumentation establishing cabin pressure."
+    },
+    {
+      "id": "03-fire-sequence", "heading": "Recorded fire sequence", "kind": "Telemetry and communication records",
+      "claim": "The Review Board documented the brief sequence of fire reports, pressure rise and command-module rupture.",
+      "boundary": "The Board's observed time markers are not continuous measurements or evidence of the exact ignition point.",
+      "evidence_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "evidence_role": "Primary investigation — Fire Chronology and Data Analysis",
+      "context_url": "", "context_role": "",
+      "catalog_note": "NASA photo S66-58038 depicts the crew in 1966; it is NOT an instrument chronology, time-series dataset or proof of these times."
+    },
+    {
+      "id": "04-hatch", "heading": "The inward-opening hatch", "kind": "Design and escape findings",
+      "claim": "The Board described the inward-opening hatch and why the fire-driven rise in pressure prevented prompt emergency egress.",
+      "boundary": "The hatch compounded multiple hazards; it was not the sole cause of the fire.",
+      "evidence_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "evidence_role": "Primary investigation — Escape and hatch findings",
+      "context_url": "https://www.nasa.gov/history/apollo-1-crew-honored-in-new-tribute-exhibit/",
+      "context_role": "NASA 2017 exhibit account — later explanation of hatch redesign",
+      "catalog_note": "A 2017 exhibit photo may document a displayed hatch; it does not independently prove the 1967 failure mechanism."
+    },
+    {
+      "id": "05-ignition", "heading": "Probable electrical arc, no identified spark", "kind": "Explicit evidentiary uncertainty",
+      "claim": "The Board regarded an electrical arc as the most probable initiator, but did not conclusively identify the specific source.",
+      "boundary": "Do not promote a candidate wire, arc location or theory to a conclusively established cause.",
+      "evidence_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "evidence_role": "Primary investigation — Cause of the Apollo 204 Fire",
+      "context_url": "", "context_role": "",
+      "catalog_note": "Post-fire photographs are damage records, not proof of the initiating arc."
+    },
+    {
+      "id": "06-testing", "heading": "Later redesign and flammability tests", "kind": "1967–1968 engineering response",
+      "claim": "NASA's later historical account reports 102 deliberate ignitions of Command Module Boilerplate 1224 during December 1967–February 1968 tests.",
+      "boundary": "These were later deliberate engineering tests, not 102 ignitions during the January 1967 accident.",
+      "evidence_url": "https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/",
+      "evidence_role": "NASA 2018 retrospective reporting the post-fire flammability program",
+      "context_url": "https://www.nasa.gov/history/apollo-1-crew-honored-in-new-tribute-exhibit/",
+      "context_role": "NASA 2017 exhibit account — redesigned hatch context",
+      "catalog_note": "The 2017 hatch exhibit photograph does not document the 102 test ignitions."
+    }
+  ]
+}
