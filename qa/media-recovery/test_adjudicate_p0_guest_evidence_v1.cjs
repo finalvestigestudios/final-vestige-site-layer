@@ -26,7 +26,7 @@ function loadedSlot(k){let u=link(k);return {
  natural_width:960,natural_height:540,http_status:200,response_mime_type:'image/jpeg',transfer_bytes:700
 };}
 function netLoaded(k){return {request_id:'req'+k,url:link(k),status:200,mime_type:'image/jpeg',encoded_data_length:700,
- was_cached:false,from_disk_cache:false,from_service_worker:false,error:null};}
+ was_cached:false,from_disk_cache:false,from_memory_cache:false,from_service_worker:false,error:null};}
 function sealRun(run){
  const evidence=assessRun(run.pages,run.requested_pages);
  run.status=evidence.complete?'complete_browser_image_census':'partial_or_complete_browser_evidence';
@@ -188,4 +188,23 @@ test('broken claim with nonzero natural_height must HOLD',()=>{
 test('real cold 404, 0x0 dimensions still proves browser breakage but never authorizes replacement',()=>{
  const r=runTest(null,null,p=>bork(p,'287:5'));
  assert.equal(r.rows.find(x=>x.image_key==='287:5').visitor_classification,'BROWSER_CONFIRMED_BROKEN');assert.equal(r.replacement_release_authorized,false);
+});
+
+test('memory-cached 404 is never adjudicated as an uncached origin failure',()=>{
+ const r=runTest(null,null,p=>{bork(p,'287:5');p.pages.find(x=>x.post_id===287).network_images[0].from_memory_cache=true});
+ assert.equal(r.rows.find(x=>x.image_key==='287:5').visitor_classification,'PENDING_GUEST_BROWSER');
+ assert.equal(r.p0_census_complete,false);assert.equal(r.confirmed_broken_count,null);
+});
+test('memory-cached 200 is not evidence of fresh visitor transfer bytes',()=>{
+ const r=runTest(null,null,p=>{p.pages.find(x=>x.post_id===285).network_images[0].from_memory_cache=true});
+ assert.equal(r.rows.find(x=>x.image_key==='285:5').visitor_classification,'PENDING_GUEST_BROWSER');
+ assert.equal(r.p0_census_complete,false);
+});
+test('missing from_memory_cache flag is unknown, not automatically false',()=>{
+ const r=runTest(null,null,p=>{delete p.pages.find(x=>x.post_id===285).network_images[0].from_memory_cache});
+ assert.equal(r.rows.find(x=>x.image_key==='285:5').visitor_classification,'PENDING_GUEST_BROWSER');
+});
+test('memory-cached HTTP 200 image decode failure cannot certify origin breakage',()=>{
+ const r=runTest(null,null,p=>{bork(p,'418:2','decode');p.pages.find(x=>x.post_id===418).network_images[1].from_memory_cache=true});
+ assert.equal(r.rows.find(x=>x.image_key==='418:2').visitor_classification,'PENDING_GUEST_BROWSER');
 });
