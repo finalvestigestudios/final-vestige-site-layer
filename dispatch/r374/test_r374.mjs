@@ -1,0 +1,24 @@
+// Run locally with node --test test_r374.mjs. OFFLINE; no network/sends.
+import test from 'node:test'; import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs'; import {dirname,join} from 'node:path'; import {fileURLToPath} from 'node:url';
+const d=dirname(fileURLToPath(import.meta.url)); const get=f=>readFileSync(join(d,f),'utf8');
+const m=get('ISSUE06_FRANKLIN_OPTIONAL.md'),t=get('ISSUE06_FRANKLIN_OPTIONAL.txt'),h=get('ISSUE06_FRANKLIN_OPTIONAL.html');
+const c=JSON.parse(get('CLAIMS_PROVENANCE_AND_MERCHANT.json')),g=JSON.parse(get('RELEASE_ACCEPTANCE_LEDGER.json'));
+const subj="Franklin’s notebook wasn't proof",pre="Seven columns, a blindfold, and a better test of what we think we know.",cta="https://finalvestige.com/2026/11/02/mesmerism/";
+test('subject in all review formats',()=>{for(const s of [m,t,h]) assert.ok(s.includes(subj))});
+test('preheader in all review formats',()=>{for(const s of [m,t,h]) assert.ok(s.includes(pre))});
+test('subject within 55 codepoints',()=>assert.ok([...subj].length<=55));
+test('CTA exactly once per review format',()=>{for(const s of [m,t,h]) assert.equal(s.split(cta).length-1,1)});
+test('no merchant links in email body',()=>{for(const s of [m,t,h]) assert.ok(!/https?:\/\/(zen12|hypnosislive|affiliates.inspire3)/i.test(s))});
+test('every primary source in plaintext and html',()=>{for(const x of c.historical){assert.ok(t.includes(x.source));assert.ok(h.includes(x.source))}});
+test('HTML lang, heading, viewport, presentational table',()=>{for(const x of ['lang="en"','<h1','<h2','name="viewport"','role="presentation"'])assert.ok(h.includes(x))});
+test('email html no scripts, images, forms or tracking',()=>assert.ok(!/<(script|img|form|iframe|video)\b/i.test(h)));
+test('unverified postal and unsubscribe rendered as warning not live links',()=>assert.ok(h.includes('UNVERIFIED')&&!h.includes('href="#unsubscribe"')));
+test('human-review-only status visible',()=>assert.ok(h.includes('NOT A NATIVE JETPACK RENDER')));
+test('no fake active merchant permissions',()=>assert.ok(c.commercial.every(x=>!x.specific_email_permission_verified&&!x.issued_earning_link_verified)));
+test('4/2 campaign unchanged',()=>assert.equal(g.initial_six_mix.editorial,4)&&assert.equal(g.initial_six_mix.commercial_reserved,2));
+test('all six holds',()=>assert.ok(g.issues.every(x=>x.send_allowed===false)));
+test('03 and 05 merchant holds',()=>{for(const n of [3,5]) assert.equal(g.issues[n-1].release,'HOLD_UNSENT_HOLD_MERCHANT')});
+test('no eligible audience inferred by addition',()=>assert.equal(g.source_of_truth.unique_email_eligible,null));
+test('all hard gates false',()=>assert.ok(Object.values(g.release_requirements).every(x=>x===false)));
+test('no fake revenue estimate',()=>assert.equal(g.net_revenue_per_1000_qualified_human_sessions,null));
