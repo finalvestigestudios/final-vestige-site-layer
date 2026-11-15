@@ -19,8 +19,9 @@ REPO = 'finalvestigestudios/final-vestige-site-layer'
 MANIFEST_SHA = '5e7d9a8972872c82b4bc46ac13aab18883d8149a'
 CROSSWALK_SHA = 'd62e493a67dedd23e04cfdf3cce762ef933c6bf9'
 REGISTER_SHA = 'b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77'
+TAXONOMY_SHA = '15c547bb3018ac182b12a51036389cfa39a59168'
 CITE = re.compile(r'\{\{cite:([a-z0-9-]+)\}\}')
-LINK = re.compile(r'\{\{link:([a-z0-9-]+)\}\}')
+LINK = re.compile(r'\{\{link:([a-z0-9-]+)\|([^{}]+)\}\}')
 OBJ = re.compile(r'^preparedness/content/articles/([a-z0-9-]+)\.(body\.html|meta\.json)$')
 FRAGMENT = re.compile(r'^preparedness/sources/fragments/([a-z0-9-]+)\.json$')
 SHA = re.compile(r'^[a-f0-9]{40}$')
@@ -39,7 +40,7 @@ def load_git_blob(root: Path, sha: str) -> bytes:
     return result.stdout
 
 
-def evaluate(manifest: object, crosswalk: object, register: object, reader) -> dict:
+def evaluate(manifest: object, crosswalk: object, register: object, reader, taxonomy: object = None) -> dict:
     """reader(blob_sha) -> original bytes. Pure, does not select manuscript forks."""
     errors = []
     warnings = []
@@ -95,6 +96,24 @@ def evaluate(manifest: object, crosswalk: object, register: object, reader) -> d
     if not isinstance(origins, dict):
         origins = {}
         errors.append('missing article origin crosswalk')
+    # Taxonomy includes optional private tool targets. A valid link target is not
+    # evidence that a destination is public, approved or usable for conversions.
+    tool_targets = set()
+    if taxonomy is not None:
+        if not isinstance(taxonomy, dict):
+            errors.append('taxonomy input must be an object')
+        else:
+            tools = taxonomy.get('tools')
+            slate = taxonomy.get('slate')
+            if not isinstance(tools, list) or not isinstance(slate, list):
+                errors.append('taxonomy tool/slate arrays missing')
+            else:
+                tool_targets = {x.get('slug') for x in tools if isinstance(x, dict) and isinstance(x.get('slug'), str)}
+                tax_articles = {x.get('slug') for x in slate if isinstance(x, dict) and isinstance(x.get('slug'), str)}
+                if tax_articles != bodies or len(slate) != 35:
+                    errors.append('taxonomy original 35-article slate mismatch')
+                if len(tool_targets) != len(tools) or tool_targets & bodies:
+                    errors.append('duplicate or colliding tool slug')
     base_rows = register.get('sources', [])
     if not isinstance(base_rows, list):
         base_rows = []
@@ -153,8 +172,18 @@ def evaluate(manifest: object, crosswalk: object, register: object, reader) -> d
                 continue
             if meta.get('slug') != slug or not isinstance(meta.get('section'), str) or not meta['section']:
                 errors.append('article identity or section drift: ' + slug)
-            if meta.get('status',{}).get('publish') != 'draft' or meta.get('safety_review',{}).get('state') != 'pending':
-                errors.append('article no longer draft/safety pending: ' + slug)
+            if meta.get('status',{}).get('publish') != 'draft':
+                errors.append('article publish state no longer draft: ' + slug)
+            review = meta.get('safety_review', {})
+            review_state = review.get('state') if isinstance(review, dict) else None
+            if review_state not in ('pending', 'approved', 'not-required'):
+                errors.append('unrecognized original safety label: ' + slug)
+            elif review_state == 'approved':
+                if not isinstance(review.get('reviewer'), str) or not review['reviewer'].strip() or not re.fullmatch(r'\d{4}-\d{2}-\d{2}', str(review.get('date', ''))):
+                    errors.append('legacy approved label lacks dated reviewer: ' + slug)
+                warnings.append('original approval label retained; independent source/safety/QD review still required: ' + slug)
+            elif review_state == 'not-required':
+                warnings.append('original not-required label retained; not independent QD clearance: ' + slug)
             if not isinstance(meta.get('source_use'), dict):
                 errors.append('article source_use not an object: ' + slug)
                 uses = {}
@@ -189,10 +218,18 @@ def evaluate(manifest: object, crosswalk: object, register: object, reader) -> d
                 errors.append('unresolved IDs: ' + slug + ': ' + ','.join(unresolved))
             if missing_scope:
                 errors.append('missing source/claim reading scope: ' + slug + ': ' + ','.join(missing_scope))
+            # Native builder link syntax is {{link:slug|Label}}; the older
+            # one-group regex silently returned no links for authentic bodies.
             links = LINK.findall(html)
-            missing_links = sorted({x for x in links if x not in origins})
+            link_targets = sorted({target for target, _label in links})
+            missing_links = sorted(set(link_targets) - bodies - tool_targets)
             if missing_links:
-                warnings.append('links outside article crosswalk: ' + slug + ': ' + ','.join(missing_links))
+                errors.append('unresolved original article/tool link targets: ' + slug + ': ' + ','.join(missing_links))
+            linked_private_tools = sorted(set(link_targets) & tool_targets)
+            if linked_private_tools:
+                warnings.append('private tool links require independently reviewed destination: ' + slug + ': ' + ','.join(linked_private_tools))
+            if html.count('{{link:') != len(links):
+                errors.append('malformed or unparsed internal link token: ' + slug)
             url = '/preparedness/' + meta.get('section', '') + '/' + slug + '/'
             target_slugs[url].add(slug)
             words = len(re.findall(r"\b[\w'-]+\b", unescape(re.sub(r'<[^>]+>', ' ', html))))
@@ -202,7 +239,10 @@ def evaluate(manifest: object, crosswalk: object, register: object, reader) -> d
                            'origin':origin, 'word_count':words, 'citations':len(citations), 'unique_source_ids':len(cited),
                            'base_fallback_ids':fallback, 'unchecked_human_source_ids':unchecked,
                            'unresolved_ids':unresolved, 'source_scope_missing_ids':missing_scope,
-                           'unresolved_internal_links':missing_links, 'canonical_path':url, 'publish':'draft', 'safety_review':'pending'})
+                           'unresolved_internal_links':missing_links, 'internal_link_targets':link_targets,
+                           'private_tool_link_targets':linked_private_tools, 'canonical_path':url,
+                           'publish':meta.get('status', {}).get('publish'), 'original_safety_label':review_state,
+                           'independent_qd_approved':False})
     duplicates = [{'url':url, 'slugs':sorted(ss)} for url,ss in target_slugs.items() if len(ss) > 1]
     if duplicates:
         errors.append('duplicate article canonical URL across distinct slugs')
@@ -219,6 +259,7 @@ def evaluate(manifest: object, crosswalk: object, register: object, reader) -> d
             'errors':sorted(set(errors)), 'warnings':sorted(set(warnings)),
             'per_variant':census, 'reading_depth_comparison':depth,
             'publication_approved':False, 'qualified_safety_approved':False,
+            'historical_approval_is_not_independent_qd':True,
             'verified_paid_offer':False, 'verified_net_revenue':None}
 
 
@@ -229,7 +270,8 @@ def main() -> int:
     root = args.repo
     paths = [('manifest', 'preparedness/audits/r374_nine_ref_object_manifest_HARD_HOLD.json', MANIFEST_SHA),
              ('crosswalk', 'preparedness/sources/crosswalk.json', CROSSWALK_SHA),
-             ('register', 'preparedness/sources/register.json', REGISTER_SHA)]
+             ('register', 'preparedness/sources/register.json', REGISTER_SHA),
+             ('taxonomy', 'preparedness/taxonomy.json', TAXONOMY_SHA)]
     try:
         inputs = {}
         for label, path, expected in paths:
@@ -238,7 +280,7 @@ def main() -> int:
                 raise ValueError('authenticated '+label+' input SHA mismatch')
             inputs[label] = json.loads(raw)
         result = evaluate(inputs['manifest'], inputs['crosswalk'], inputs['register'],
-                          lambda sha: load_git_blob(root,sha))
+                          lambda sha: load_git_blob(root,sha), inputs['taxonomy'])
     except (OSError, ValueError, subprocess.CalledProcessError, subprocess.TimeoutExpired) as exc:
         result = {'status':'INVALID_HARD_HOLD','errors':[type(exc).__name__ + ': ' + str(exc)],
                   'publication_approved':False, 'qualified_safety_approved':False}
