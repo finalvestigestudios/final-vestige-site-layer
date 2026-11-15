@@ -1,0 +1,9 @@
+# R368 preflight and release evidence
+
+- Baseline original master PR #175 HEAD `d57ccdba3aee8f065e143e101c2945f4f3d01647`. All 8 original source blobs re-fetched through GitHub and matched previous local archive; original Python suite **6/6 native PASS** November 15, 2026 UTC. Original manifest/copy untouched.
+- Compare to R367 parent `34ebeaa15c4430359381c46469c89ffe6530cad2`: must report only additive paths under `dispatch/r368/`, **no** original issue or other-owner files edited.
+- Review checks: alternative title/preheader honest; historical source citations are NASA primary records; no invented 14-second timeline; actual licensed images not copied; no misleading certainty of exact ignition; one active noncommercial site CTA; source references counted separately; visible review warnings; HTML table layout / inline styles / lang / semantic headings / no script, remote images or trackers; legal placeholders intentionally unresolved; no partner URL live. Research docs distinguish seller features from claims and account-specific permissions.
+- In-process exact-source assertions should be reported with executed count, not as native browser/email-client compliance. Actual Jetpack preview/rendering, functional unsubscribe, valid publisher postal address, recipient eligibility, referred checkout, affiliate rights, payment settlement remain **UNVERIFIED**.
+- Current read-only provider snapshot (2026-11-15 02:36 UTC) was technically sendable, automatic post email OFF, full content, total3/confirmed3/unconfirmed2, welcome configured, recent five sends never sent. Do not infer current eligible recipient count.
+
+**Release:** all six original issues remain `HOLD_UNSENT`; 03 and 05 extra `HOLD_MERCHANT`; optional issue04 `NOT_ADOPTED`; no send, test send, subscriber contact, WordPress write, shipping/list change, merchant link activation, merge/deploy/spend.
