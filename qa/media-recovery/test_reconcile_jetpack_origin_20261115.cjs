@@ -31,3 +31,42 @@ test('frozen 61-post/355-slot integration reconciles 286 to 288 independently',
  assert.equal(r.wordpress_write_authorized,false);
 });
 test('unsafe malformed inventory is rejected rather than claimed measured',()=>assert.throws(()=>reconcile([]),/eight frozen/));
+
+// Additional integrity gates: frozen complete coverage and Git blob custody.
+const {assertCompleteCoverage,gitBlobSha,loadPinnedParts,EXPECTED_PART_BLOBS}=require('./reconcile_jetpack_origin_20261115.cjs');
+function samplePart() {
+ const url='https://finalvestige.com/sample',title='Sample';
+ return {batch:1,post_count:1,image_count:2,posts:[{id:42,images:2,url,title}],images:[
+  {key:'42:0',post_id:42,slot:0,post_url:url,post_title:title},
+  {key:'42:1',post_id:42,slot:1,post_url:url,post_title:title}
+ ]};
+}
+test('complete per-post slot set is accepted',()=>assert.deepEqual(assertCompleteCoverage([samplePart()]),{posts:1,slots:2}));
+const corruption=[
+ ['duplicate key instead of second slot',p=>{p.images[1].slot=0;p.images[1].key='42:0'}],
+ ['out-of-range slot',p=>{p.images[1].slot=2;p.images[1].key='42:2'}],
+ ['orphan image',p=>{p.images[0].post_id=43;p.images[0].key='43:0'}],
+ ['wrong parent URL',p=>{p.images[0].post_url='https://other.example/photo'}],
+ ['wrong parent title',p=>{p.images[0].post_title='Wrong title'}],
+ ['wrong key',p=>{p.images[0].key='bad'}],
+ ['wrong batch number',p=>{p.batch=8}],
+ ['wrong declared post count',p=>{p.post_count=2}],
+ ['wrong declared image count',p=>{p.image_count=3}],
+ ['wrong post slot count',p=>{p.posts[0].images=3}],
+ ['bad post identity',p=>{p.posts[0].id=0}]
+];
+for(const [name,mutate] of corruption) test('reject '+name,()=>{
+ const p=samplePart();mutate(p);assert.throws(()=>assertCompleteCoverage([p]));
+});
+test('reject repeated post across batches',()=>{const a=samplePart(),b=samplePart();b.batch=2;assert.throws(()=>assertCompleteCoverage([a,b]));});
+test('reject source text mutation against cryptographic frozen blob',()=>{
+ assert.equal(EXPECTED_PART_BLOBS.length,8);
+ assert.notEqual(gitBlobSha('invented or altered source'),EXPECTED_PART_BLOBS[0]);
+});
+test('all eight pinned part hashes + complete 61/355 coverage',
+ {skip:!fs.existsSync(path.join(dir,'01.json')) ? 'Full frozen repository parts absent locally' : false},()=>{
+ const pinned=loadPinnedParts(dir);
+ assert.deepEqual(assertCompleteCoverage(pinned),{posts:61,slots:355});
+ const r=reconcile(pinned);
+ assert.equal(r.external_source_slots,288);
+});
