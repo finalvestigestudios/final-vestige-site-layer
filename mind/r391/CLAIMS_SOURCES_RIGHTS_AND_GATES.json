@@ -1,0 +1,654 @@
+{
+  "artifact": "Mind R391 | provenance, rights and commercial decision",
+  "created_local_date": "2026-11-14",
+  "version": "1.0-review-only",
+  "scope": "source-controlled experimental drafts; not live",
+  "partner_status": "UNVERIFIED: public network only; targeted email approval search found none",
+  "owned_sku_status": "UNVERIFIED: no confirmed paid Mind SKU",
+  "sources": [
+    {
+      "id": "CHE1833",
+      "url": "https://fr.wikisource.org/wiki/Lettre_%C3%A0_M._Amp%C3%A8re_sur_une_certaine_classe_de_mouvemens_musculaires",
+      "kind": "historical_primary",
+      "checked": "2026-11-14",
+      "limitation": "French transcription, translation and facsimile crosscheck required"
+    },
+    {
+      "id": "CHE1854",
+      "url": "https://fr.wikisource.org/wiki/Page:Chevreul_-_De_la_baguette_divinatoire,_1854.djvu/172",
+      "kind": "historical_primary_facsimile"
+    },
+    {
+      "id": "GAU2012",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22377138/",
+      "kind": "peer_reviewed_abstract",
+      "limitation": "Check full methods before numerical extrapolation"
+    },
+    {
+      "id": "MOG2022",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35184700/",
+      "kind": "peer_reviewed_abstract",
+      "limitation": "Nonreplication not universal refutation"
+    },
+    {
+      "id": "PEND2017",
+      "url": "https://doi.org/10.1093/nc/nix014",
+      "kind": "peer_reviewed_paper"
+    },
+    {
+      "id": "SHE2011",
+      "url": "https://doi.org/10.1080/00029157.2011.10401754",
+      "kind": "historical_review"
+    },
+    {
+      "id": "S_INSP",
+      "url": "https://inspire3.com/",
+      "kind": "seller_primary"
+    },
+    {
+      "id": "S_ZEN",
+      "url": "https://zen12.com/",
+      "kind": "seller_primary"
+    },
+    {
+      "id": "S_ORDER",
+      "url": "https://zen12.com/getstarted",
+      "kind": "seller_public_checkout",
+      "observed": "2026-11-14 $87.99 display after $100 stated discount, subject to personalization"
+    },
+    {
+      "id": "S_PROMO",
+      "url": "https://zen12.com/secret/",
+      "kind": "seller_public_promotion",
+      "observed": "2026-11-14 $37 coupon presentation with countdown; not adopted"
+    },
+    {
+      "id": "AFF_PORTAL",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "seller_affiliate_public",
+      "limitation": "No account-specific approved publisher or issued tracking link"
+    },
+    {
+      "id": "FTC_DISC",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulatory"
+    },
+    {
+      "id": "FTC_HEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulatory"
+    },
+    {
+      "id": "FOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "existing_live_free_resource",
+      "observed": "52-page free Fieldbook; single Jetpack confirmation"
+    },
+    {
+      "id": "PUY",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "existing_editorial",
+      "limitation": "429 this sprint, article not reread"
+    },
+    {
+      "id": "STD",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "existing_policy"
+    },
+    {
+      "id": "DISC",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "kind": "existing_policy"
+    },
+    {
+      "id": "CHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "existing_editorial",
+      "limitation": "live route needs per-asset match"
+    },
+    {
+      "id": "MESMER",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "kind": "existing_editorial",
+      "limitation": "live route needs per-asset match"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Chevreul reported experiments made in 1812 in an 1833 letter",
+      "classification": "historical_documented",
+      "source_ids": [
+        "CHE1833",
+        "CHE1854"
+      ],
+      "decision": "ALLOW qualified with original-language caveat"
+    },
+    {
+      "id": "C02",
+      "claim": "Pendulum movement can be affected by expectation and small hand motion",
+      "classification": "scientific_general",
+      "source_ids": [
+        "CHE1833",
+        "SHE2011"
+      ],
+      "decision": "ALLOW qualified"
+    },
+    {
+      "id": "C03",
+      "claim": "Gauchou 2012 found 65% versus 50% in low-confidence condition",
+      "classification": "reported_study",
+      "source_ids": [
+        "GAU2012"
+      ],
+      "decision": "ALLOW only with cohort/method caveat"
+    },
+    {
+      "id": "C04",
+      "claim": "Moga and Dienes 2022 failed to reproduce pendulum advantage",
+      "classification": "reported_study",
+      "source_ids": [
+        "MOG2022"
+      ],
+      "decision": "ALLOW condition-specific"
+    },
+    {
+      "id": "C05",
+      "claim": "Unconscious knowledge universally revealed by pendulum",
+      "classification": "unsubstantiated",
+      "source_ids": [
+        "MOG2022"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "C06",
+      "claim": "All movement implies intentional fraud",
+      "classification": "unsupported",
+      "source_ids": [
+        "SHE2011"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "C07",
+      "claim": "Hypnosis sessions reliably extract true repressed memories",
+      "classification": "high_risk_unsubstantiated",
+      "source_ids": [
+        "FTC_HEALTH"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 Premium is 12 levels and 48 MP3s",
+      "classification": "seller_product_description",
+      "source_ids": [
+        "S_ORDER"
+      ],
+      "decision": "ALLOW seller attributes only"
+    },
+    {
+      "id": "C09",
+      "claim": "Quick-start and manual are seller-advertised extras",
+      "classification": "seller_product_description",
+      "source_ids": [
+        "S_ORDER"
+      ],
+      "decision": "ALLOW seller attribution only"
+    },
+    {
+      "id": "C10",
+      "claim": "One-hour support call is supplied to every referred buyer",
+      "classification": "seller_product_description_unverified",
+      "source_ids": [
+        "S_ORDER"
+      ],
+      "decision": "SELLER SAYS; authenticate SKU"
+    },
+    {
+      "id": "C11",
+      "claim": "One-year refund guarantee applies as described",
+      "classification": "seller_term_unverified",
+      "source_ids": [
+        "S_ORDER"
+      ],
+      "decision": "SELLER SAYS; terms/refund verification required"
+    },
+    {
+      "id": "C12",
+      "claim": "Public $87.99 is guaranteed current referral price",
+      "classification": "unsupported_commerce",
+      "source_ids": [
+        "S_ORDER"
+      ],
+      "decision": "OMIT promise; disclose observation date"
+    },
+    {
+      "id": "C13",
+      "claim": "Separate $37 route is approved to promote",
+      "classification": "unsupported_commerce",
+      "source_ids": [
+        "S_PROMO"
+      ],
+      "decision": "OMIT code, false urgency and referral eligibility"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 sessions improve clinical anxiety",
+      "classification": "unsubstantiated_health",
+      "source_ids": [
+        "FTC_HEALTH"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 sessions improve attention or memory based on ideomotor studies",
+      "classification": "category_error",
+      "source_ids": [
+        "GAU2012",
+        "MOG2022"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "C16",
+      "claim": "Listening to audio is identical to months of meditation training",
+      "classification": "category_error",
+      "source_ids": [
+        "FTC_HEALTH"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 neurological changes are independently confirmed",
+      "classification": "unsubstantiated_health",
+      "source_ids": [
+        "FTC_HEALTH"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "C18",
+      "claim": "Hypnosis Live has 200+ MP3s",
+      "classification": "seller_catalog",
+      "source_ids": [
+        "S_INSP"
+      ],
+      "decision": "CATALOG ONLY not verified product availability/checkout"
+    },
+    {
+      "id": "C19",
+      "claim": "Brainwave Shots has 15-min audio products",
+      "classification": "seller_catalog",
+      "source_ids": [
+        "S_INSP"
+      ],
+      "decision": "CATALOG ONLY not therapeutic proof"
+    },
+    {
+      "id": "C20",
+      "claim": "Inspire3 offers publicly advertised affiliate network",
+      "classification": "verified_public_program",
+      "source_ids": [
+        "AFF_PORTAL"
+      ],
+      "decision": "ALLOW general existence"
+    },
+    {
+      "id": "C21",
+      "claim": "Final Vestige has named approved Inspire3 account",
+      "classification": "authorization_missing",
+      "source_ids": [
+        "AFF_PORTAL"
+      ],
+      "decision": "HOLD"
+    },
+    {
+      "id": "C22",
+      "claim": "Final Vestige may use website, organic social and email channels",
+      "classification": "authorization_missing",
+      "source_ids": [
+        "AFF_PORTAL"
+      ],
+      "decision": "HOLD"
+    },
+    {
+      "id": "C23",
+      "claim": "Final Vestige earning URL, creative license or payout rate authenticated",
+      "classification": "authorization_missing",
+      "source_ids": [
+        "AFF_PORTAL"
+      ],
+      "decision": "HOLD"
+    },
+    {
+      "id": "C24",
+      "claim": "Existing Fieldbook is free 52-page resource",
+      "classification": "live_own_description",
+      "source_ids": [
+        "FOCUS"
+      ],
+      "decision": "ALLOW existing link only"
+    },
+    {
+      "id": "C25",
+      "claim": "New independent email list required",
+      "classification": "unnecessary_and_prohibited",
+      "source_ids": [
+        "FOCUS"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "C26",
+      "claim": "Near-link material connection disclosure required",
+      "classification": "regulatory",
+      "source_ids": [
+        "FTC_DISC"
+      ],
+      "decision": "REQUIRE immediately adjacent to active link"
+    },
+    {
+      "id": "C27",
+      "claim": "General disclosure footer alone is sufficient",
+      "classification": "regulatory_noncompliance_risk",
+      "source_ids": [
+        "FTC_DISC"
+      ],
+      "decision": "NO"
+    },
+    {
+      "id": "C28",
+      "claim": "Affiliate click equals commission or paid order",
+      "classification": "accounting_error",
+      "source_ids": [
+        "AFF_PORTAL"
+      ],
+      "decision": "NO"
+    },
+    {
+      "id": "C29",
+      "claim": "Original 42-second video generates stronger sales than text",
+      "classification": "untested_hypothesis",
+      "source_ids": [
+        "FTC_DISC"
+      ],
+      "decision": "EXPERIMENT ONLY"
+    },
+    {
+      "id": "C30",
+      "claim": "FV owned current paid Mind SKU verified",
+      "classification": "commerce_missing",
+      "source_ids": [],
+      "decision": "HOLD"
+    },
+    {
+      "id": "C31",
+      "claim": "Referral checkout confirmed, fees and refunds reconciled",
+      "classification": "commerce_missing",
+      "source_ids": [],
+      "decision": "HOLD"
+    },
+    {
+      "id": "C32",
+      "claim": "This historical work establishes any seller efficacy",
+      "classification": "scientific_category_error",
+      "source_ids": [
+        "CHE1833",
+        "MOG2022"
+      ],
+      "decision": "NO"
+    },
+    {
+      "id": "C33",
+      "claim": "Historical Puységur page fully reread now",
+      "classification": "source_access_missing",
+      "source_ids": [
+        "PUY"
+      ],
+      "decision": "NO 429"
+    },
+    {
+      "id": "C34",
+      "claim": "Earlier social posts match these pages",
+      "classification": "source_access_missing",
+      "source_ids": [
+        "CHANGE",
+        "MESMER",
+        "PUY"
+      ],
+      "decision": "NO published Grok asset IDs verified"
+    }
+  ],
+  "gates": [
+    {
+      "gate_id": "G01",
+      "name": "Founder confirms legal entity and publisher account approved",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G02",
+      "name": "Offer-specific Zen12 promotion eligibility confirmed",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G03",
+      "name": "Approved channel: Final Vestige website",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G04",
+      "name": "Approved channel: organic YouTube",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G05",
+      "name": "Approved channel: TikTok",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G06",
+      "name": "Approved channel: Dispatch email",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G07",
+      "name": "Issued URL matches named publisher and eligible SKU",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G08",
+      "name": "Referral checkout page matches stated product",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G09",
+      "name": "Promotional creative licensed and unmodified",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G10",
+      "name": "Returns and one-year terms independently reviewed",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G11",
+      "name": "Exact referred price and tax validated",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G12",
+      "name": "Advertising copy health-claim substantiation",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G13",
+      "name": "Clear affiliate disclosure above/beside active CTA",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G14",
+      "name": "Product feature matrix human fact check",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G15",
+      "name": "One actual currently payable FV-owned alternative verified",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G16",
+      "name": "Actual Grok asset IDs and posts verified",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G17",
+      "name": "Actual source-to-landing intention checked",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G18",
+      "name": "Actual mobile destination tap test",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G19",
+      "name": "Single Jetpack consent and confirmation validated",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G20",
+      "name": "Email delivery tested without duplication",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G21",
+      "name": "Independent accessibility keyboard and screen-reader QA",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G22",
+      "name": "360/390/768/1440/1920 layout inspection",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G23",
+      "name": "Video codec, rights, poster and WebVTT QA",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G24",
+      "name": "No-JS reading and consent fallback QA",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G25",
+      "name": "Performance budget, Lighthouse and CWV",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G26",
+      "name": "First-party attribution privacy assessment",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G27",
+      "name": "No duplicate analytics and no personal URL fields",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G28",
+      "name": "Affiliate_click event distinct from settled sale",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G29",
+      "name": "Merchant signed transaction/revenue evidence",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G30",
+      "name": "Refund and fee reconciliation",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G31",
+      "name": "7/30-day qualified-human session cohort audited",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G32",
+      "name": "Founder written commercial activation approval",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G33",
+      "name": "Site QA written release acceptance",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G34",
+      "name": "Claude core engineering implementation check",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G35",
+      "name": "WordPress sanitization preview verified",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "gate_id": "G36",
+      "name": "Founder written production/publication approval",
+      "status": "HOLD",
+      "evidence": null
+    }
+  ],
+  "decision": "HARD HOLD",
+  "price_discrepancy": "$87.99 standard public checkout vs separate $37 seller coupon route; no attributed checkout verified",
+  "disclosure_template": "If you purchase through an approved link on this page, Final Vestige may earn a commission at no additional cost to you.",
+  "limitations": [
+    "PubMed abstracts not full articles for all methods",
+    "Live Puységur body HTTP 429",
+    "Public affiliate headline terms do not establish individual payout",
+    "No confirmed merchant sales or attributable revenue",
+    "No playable video, native browser QA or WP CMS draft"
+  ]
+}
