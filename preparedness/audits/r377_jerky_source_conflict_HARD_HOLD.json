@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "issue": "#136",
+  "commercial_issue": "#820",
+  "target_slug": "safe-jerky-dehydration",
+  "original_body_git_blob": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+  "original_meta_git_blob": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+  "original_food_branch_sha": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+  "prior_editorial_finding": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/136#issuecomment-6886048936",
+  "observed_date": "2026-11-14",
+  "release_state": "DRAFT_HARD_HOLD",
+  "editorial_disposition": "SUPPRESS_ACTIONABLE_DISPUTED_CLAIMS_PENDING_QUALIFIED_REVIEW",
+  "original_citation_occurrences": 71,
+  "original_unique_citation_ids": 11,
+  "original_source_use_ids": 11,
+  "source_use_ids_absent_from_r374_fragment_crosswalk": [
+    "cdc-botulism-prevention",
+    "fsis-home-cure-qa",
+    "nchfp-cure-smoke"
+  ],
+  "source_resolution_caveat": "Absent from R374 nine-branch fragment crosswalk, not proven absent from all central registers or build dependencies. Fail closed and inspect authoritative registry/build path before resolution.",
+  "critical_review_topics": [
+    "Original article paragraphs and hazard table give blanket wild-game freezing advice not supported across freeze-resistant Trichinella species",
+    "FSIS and NCHFP jerky heating sequences differ and are not approved as interchangeable steps",
+    "Original source descriptors for nchfp-jerky differ between original Food and Historical Food and cannot be collapsed",
+    "Older sources disagree on home-dried jerky storage intervals; no general safety guarantee or upsell"
+  ],
+  "official_evidence": [
+    {
+      "id": "cdc-trichinellosis-prevention",
+      "url": "https://www.cdc.gov/trichinellosis/prevention/index.html",
+      "agency": "CDC",
+      "date_type": "page updated",
+      "date": "2024-03-12",
+      "reading_scope": "Public page text, specifically freeze-resistant wild-game species caveat; not a qualified process review",
+      "qualified_review": false
+    },
+    {
+      "id": "cdc-eid-bear-jerky-2026",
+      "url": "https://wwwnc.cdc.gov/eid/article/32/7/26-0062_article",
+      "agency": "CDC Emerging Infectious Diseases",
+      "date_type": "journal issue publication",
+      "date": "2026-07",
+      "event_date": "2024-11",
+      "reading_scope": "Abstract and discussion: November 2024 North Carolina outbreak; 2026 paper is not a 2026 outbreak",
+      "qualified_review": false
+    },
+    {
+      "id": "nchfp-jerky-existing",
+      "url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+      "agency": "University of Georgia NCHFP",
+      "date_type": "legacy source edition",
+      "date": "2014",
+      "reading_scope": "Public jerky guide original freezing and process language; qualified reconciliation with later CDC needed",
+      "qualified_review": false
+    }
+  ],
+  "publication_approved": false,
+  "qualified_emergency_safety_approved": false,
+  "paid_offer_verified": false,
+  "verified_paid_orders": null,
+  "verified_net_revenue": null,
+  "decision_owner": "Preparedness qualified food-safety and privacy reviewers; founder final release approval",
+  "commercial_custody": "No FV-owned licensed payable Preparedness SKU, checkout, fulfillment or refund acceptance authenticated; no paid CTA approved"
+}
