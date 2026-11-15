@@ -27,7 +27,7 @@ def fixture():
                 notes="synthetic read-scope retention"))
         source_rows.append(dict(id=n,requires_human_review=True,variants=copy.deepcopy(variants)))
         coll.append(dict(source_id=n,release_disposition="HUMAN_ADJUDICATION_REQUIRED_NO_AUTO_SELECT",
-                         variants=copy.deepcopy(variants)))
+                         variants=[{k:v for k,v in item.items() if k!="id"} for item in variants]))
     body=b"<p>Original disputed claim placeholder {{cite:nchfp-jerky}}</p>"
     meta={"n":11,"slug":"safe-jerky-dehydration","section":"food","track":"modern",
         "status":{"editorial":"drafted","publish":"draft"},
