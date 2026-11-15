@@ -32,6 +32,7 @@ def _signature(info: os.stat_result) -> tuple[int, int, int, int, int]:
 
 def _read_bounded_inventory(path: Path) -> str:
     """Read one regular manifest descriptor with pre/post pathname custody."""
+    read_failed = False
     try:
         before = path.lstat()
         if (not stat.S_ISREG(before.st_mode)
@@ -57,9 +58,15 @@ def _read_bounded_inventory(path: Path) -> str:
         if (_signature(after) != _signature(before)
                 or not _same_path_descriptor_signature(after, finished)):
             raise ValueError("Premium inventory was replaced")
-        return raw.decode("ascii", errors="strict")
+        decoded = raw.decode("ascii", errors="strict")
     except (OSError, UnicodeError):
-        raise ValueError("Cannot verify premium evidence inventory") from None
+        read_failed = True
+    # An OSError can contain private file paths; a UnicodeDecodeError can
+    # retain the entire private manifest in .object. Do not attach either
+    # exception as __context__ on the public verifier refusal.
+    if read_failed:
+        raise ValueError("Cannot verify premium evidence inventory")
+    return decoded
 
 
 def verify_premium_inventory(paths: tuple[Path, ...], app_id: str) -> None:
@@ -77,10 +84,13 @@ def verify_premium_inventory(paths: tuple[Path, ...], app_id: str) -> None:
         raise ValueError("Premium inventory is outside the evidence package")
     # The atomic publisher creates only this inventory and the output reports.
     # Detect injected/leftover files before silently treating the bundle as complete.
+    inspect_failed = False
     try:
         entries = set(manifest.parent.iterdir())
     except OSError:
-        raise ValueError("Cannot inspect premium evidence package") from None
+        inspect_failed = True
+    if inspect_failed:
+        raise ValueError("Cannot inspect premium evidence package")
     if entries != set(paths):
         raise ValueError("Premium evidence package contains unexpected files")
     content = _read_bounded_inventory(manifest)
@@ -97,10 +107,13 @@ def verify_premium_inventory(paths: tuple[Path, ...], app_id: str) -> None:
         fields = row.split("\t")
         if len(fields) != 2 or _HEX.fullmatch(fields[1]) is None:
             raise ValueError("Malformed premium evidence inventory entry")
+        invalid_label = False
         try:
             name = json.loads('"' + fields[0] + '"')
         except (ValueError, TypeError):
-            raise ValueError("Malformed premium evidence inventory label") from None
+            invalid_label = True
+        if invalid_label:
+            raise ValueError("Malformed premium evidence inventory label")
         if not isinstance(name, str) or not name or "/" in name or "\\" in name:
             raise ValueError("Invalid premium evidence label")
         folded = unicodedata.normalize("NFKC", name).casefold()
@@ -111,10 +124,13 @@ def verify_premium_inventory(paths: tuple[Path, ...], app_id: str) -> None:
     for path, entry in zip(reports, rows[-count:]):
         # Inventory writer JSON-escapes a *basename* and writes lowercase SHA.
         expected_name = json.dumps(path.name, ensure_ascii=True)[1:-1]
+        inspect_failed = False
         try:
             require_single_link(path.lstat())
         except OSError:
-            raise ValueError("Cannot inspect premium report link custody") from None
+            inspect_failed = True
+        if inspect_failed:
+            raise ValueError("Cannot inspect premium report link custody")
         digest, signature = _hash_regular(path, MAX_REPORT_BYTES)
         if entry != f"{expected_name}\t{digest}":
             raise ValueError("Premium report does not match evidence inventory")
@@ -125,6 +141,7 @@ def verify_premium_inventory(paths: tuple[Path, ...], app_id: str) -> None:
     # This remains point-in-time verification, not a durable filesystem lock.
     if _read_bounded_inventory(manifest) != content:
         raise ValueError("Premium inventory changed while reports were verified")
+    recheck_failed = False
     try:
         for path, signature in report_snapshots:
             current = path.lstat()
@@ -134,4 +151,6 @@ def verify_premium_inventory(paths: tuple[Path, ...], app_id: str) -> None:
         if set(manifest.parent.iterdir()) != set(paths):
             raise ValueError("Premium evidence package changed during verification")
     except OSError:
-        raise ValueError("Cannot recheck premium evidence package") from None
+        recheck_failed = True
+    if recheck_failed:
+        raise ValueError("Cannot recheck premium evidence package")
