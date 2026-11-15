@@ -1,0 +1,182 @@
+{
+  "schema": "fv_dispatch_r381_release_truth_v1",
+  "as_of_utc": "2026-11-15T15:33:00Z",
+  "original_master": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+  "linked_issue": 174,
+  "commercial_slots": [
+    3,
+    5
+  ],
+  "editorial_slots": [
+    1,
+    2,
+    4,
+    6
+  ],
+  "site": {
+    "newsletter": true,
+    "automatic_new_post_email": false,
+    "full_email": true,
+    "subscriber_total": 3,
+    "subscriber_confirmed": 3,
+    "subscriber_unconfirmed": 2,
+    "wordpress_reader_followers": 3,
+    "direct_email_followers": 0,
+    "unique_email_eligible_recipients": null,
+    "actual_welcome_receipt": null,
+    "real_jetpack_preview": null,
+    "valid_fv_postal_address": null,
+    "functional_unsubscribe": null
+  },
+  "gates": {
+    "founder_final_send_approval": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "eligible_recipient_consent": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "actual_welcome_receipt": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "native_jetpack_preview": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "subject_and_transport_qa": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "fv_legal_postal_address": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "functional_unsubscribe": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "approved_live_cta": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "privacy_review": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "apollo_1_source_correction": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "named_affiliate_acceptance": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "sku_email_permission": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "approved_creatives_and_link_format": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "issued_earning_url": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "live_independent_guide": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "referred_checkout_terms": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    },
+    "near_offer_disclosure": {
+      "verified": false,
+      "sourceRef": null,
+      "checkedAt": null
+    }
+  },
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT",
+      "additional_hold": null
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT",
+      "additional_hold": null
+    },
+    {
+      "number": 3,
+      "kind": "commercial",
+      "status": "HOLD_UNSENT",
+      "additional_hold": "HOLD_MERCHANT"
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT",
+      "additional_hold": "HOLD_COPY"
+    },
+    {
+      "number": 5,
+      "kind": "commercial",
+      "status": "HOLD_UNSENT",
+      "additional_hold": "HOLD_MERCHANT"
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT",
+      "additional_hold": null
+    }
+  ],
+  "offer": "Zen12, only via independently reviewed Mind guide if partner approval established",
+  "attribution": {
+    "source_to_site": "utm_source=actual_social_platform;utm_medium=organic_social;utm_campaign=mind_pilot_2026_11;utm_content=verified_unique_asset_id",
+    "first_party_events": [
+      "qualified_human_landing",
+      "relevant_cta_click",
+      "confirmed_signup_v1",
+      "verified_paid_conversion"
+    ],
+    "confirmed_signup_rule": "Only provider-confirmed email-eligible records with opaque non-PII dedup id; never infer from form submitted or PDF click.",
+    "buyer_event_rule": "Only independently settled supplier report joined by privacy-safe attribution, refunds/fees final; clicks are not orders.",
+    "key_metric": "net revenue per 1000 qualified human sessions",
+    "key_metric_value": null,
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "note": "No real sales or sessions attached; missing denominator or settlement means NOT COMPUTABLE (not zero)."
+  },
+  "provenance": [
+    "Authenticated WordPress Jetpack status 2026-11-15T15:32:59Z",
+    "authenticated newsletter settings 2026-11-15T15:33:00Z",
+    "official seller Zen12 https://zen12.com/",
+    "NIH NCCIH https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+    "FTC CAN-SPAM https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}
