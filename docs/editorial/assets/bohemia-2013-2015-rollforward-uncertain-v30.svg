@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="730" viewBox="0 0 390 730" role="img" aria-labelledby="t d">
+<title id="t">Three fiscal snapshots, not a payment trail</title>
+<desc id="d">Authority-wide governmental judgment liabilities: June 2013, 21,182,620 dollars; June 2014 comparative, 200,000 dollars; June 2015, 525,000 dollars. The FY2014 roll-forward is not verified, and changes cannot be attributed to Bohemia claimants without case-specific records.</desc>
+<rect width="390" height="730" rx="14" fill="#f7f4ed"/>
+<rect x="0" y="0" width="390" height="8" fill="#324b46"/>
+<text x="24" y="44" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#52635f" letter-spacing="1.1">FINAL VESTIGE / EVIDENCE NOTES</text>
+<text x="24" y="81" font-family="Georgia, serif" font-size="23" font-weight="bold" fill="#1d3330">Three balances.</text>
+<text x="24" y="111" font-family="Georgia, serif" font-size="23" font-weight="bold" fill="#1d3330">One missing bridge.</text>
+<text x="24" y="136" font-family="Arial, sans-serif" font-size="12" fill="#485753">Government-wide judgment liabilities, not checks.</text>
+<rect x="20" y="160" width="350" height="103" rx="9" fill="#ffffff" stroke="#bfcbc4"/>
+<text x="35" y="187" font-family="Arial, sans-serif" font-size="12" fill="#425953">JUNE 30, 2013 · AUDITED YEAR-END</text>
+<text x="35" y="225" font-family="Georgia, serif" font-size="29" font-weight="bold" fill="#1e3531">$21,182,620</text>
+<text x="35" y="247" font-family="Arial, sans-serif" font-size="11" fill="#53605c">FY2013 Note K · authority-wide judgments</text>
+<line x1="195" y1="264" x2="195" y2="307" stroke="#8b9d96" stroke-width="2" stroke-dasharray="5 5"/>
+<rect x="32" y="277" width="326" height="43" rx="8" fill="#e6e1d5"/>
+<text x="195" y="294" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#5f4d2a">FY2014 reconciliation not in hand</text>
+<text x="195" y="309" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5f4d2a">Do not call the difference a payment</text>
+<rect x="20" y="329" width="350" height="103" rx="9" fill="#ffffff" stroke="#bfcbc4"/>
+<text x="35" y="356" font-family="Arial, sans-serif" font-size="12" fill="#425953">JUNE 30, 2014 · FY2015 COMPARATIVE</text>
+<text x="35" y="394" font-family="Georgia, serif" font-size="29" font-weight="bold" fill="#1e3531">$200,000</text>
+<text x="35" y="416" font-family="Arial, sans-serif" font-size="11" fill="#53605c">FY2015 Note K · beginning balance</text>
+<line x1="195" y1="433" x2="195" y2="466" stroke="#6d837a" stroke-width="2"/>
+<path d="M190 460 L195 468 L200 460" fill="none" stroke="#6d837a" stroke-width="2"/>
+<rect x="20" y="477" width="350" height="103" rx="9" fill="#ffffff" stroke="#bfcbc4"/>
+<text x="35" y="504" font-family="Arial, sans-serif" font-size="12" fill="#425953">JUNE 30, 2015 · AUDITED YEAR-END</text>
+<text x="35" y="542" font-family="Georgia, serif" font-size="29" font-weight="bold" fill="#1e3531">$525,000</text>
+<text x="35" y="564" font-family="Arial, sans-serif" font-size="11" fill="#53605c">2015: +$325,000 additions; $0 retired</text>
+<rect x="20" y="597" width="350" height="72" rx="9" fill="#e6e1d5"/>
+<text x="35" y="620" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4b422c">What this does NOT show</text>
+<text x="35" y="640" font-family="Arial, sans-serif" font-size="11" fill="#4b422c">A Bohemia-specific payout, transfer, or</text>
+<text x="35" y="654" font-family="Arial, sans-serif" font-size="11" fill="#4b422c">claimant-by-claimant satisfaction.</text>
+<text x="20" y="693" font-family="Arial, sans-serif" font-size="10" fill="#4d5b57">Source: SLFPA-E FY2013 Note K; FY2015 Note K, p. 50.</text>
+<text x="20" y="710" font-family="Arial, sans-serif" font-size="10" fill="#4d5b57">© Final Vestige Studios · 2026-11-15 · Original diagram</text>
+</svg>
