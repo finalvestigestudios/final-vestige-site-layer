@@ -1,0 +1,34 @@
+{
+  "schema": "fv-media-p0-publisher-lineage-v1",
+  "observed_date_local": "2026-11-15",
+  "scope": "two_priority_published_image_slots_not_homepage",
+  "methodology": {
+    "cms": "authenticated WordPress posts_get(context=edit), read only, 2026-11-15",
+    "retriever": "web.open exact published URL, 2026-11-15; wrapper errors are NOT browser or origin HTTP",
+    "authority": "publisher original article and linked file plus Wikimedia Commons file record; same-publisher moved image separately rendered by independent viewer",
+    "guest_browser_observation": false,
+    "binary_download_or_hash": false
+  },
+  "historical_baseline": {"published_posts":61,"inline_image_references":355,"reported_broken_42_browser_confirmed":false,"claimed_76_percent_wire_reduction_measured":false,"oversized_wp_originals_last_verified":16,"oversized_original_storage_bytes_last_verified":49107665,"production_repairs":0},
+  "rows": [
+    {
+      "key":"285:5","post_id":285,"post_modified":"2026-11-02T21:39:59","published_post":"https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "published_url":"https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "published_alt":"Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "published_caption":"Three Mile Island from the air. The public emergency outside the plant and the physical damage inside the reactor differed sharply in scale.",
+      "source_observation":{"method":"web.open","tool_wrapper_status":404,"tool_outcome":"NOT_FOUND","origin_http_status":null,"guest_browser_http_status":null,"guest_current_src":null,"guest_natural_width":null,"guest_transferred_bytes":null,"confirmed_visually_broken":null},
+      "candidate":{"catalog":"https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg","publisher_page":"https://discover.hubpages.com/entertainment/The-China-Syndrome-Blockbuster-Movie-Becomes-Eerie-Prophecy","publisher_linked_asset":"https://upload.wikimedia.org/wikipedia/commons/0/09/Three_mile_island_062010.jpg","relationship":"publisher_image_caption_links_to_original_creator_file; same_scene_candidate_not_verified_identical_16_9_crop","catalog_subject":"Three Mile Island nuclear plant, photographed June 2010; NOT a photo of the 1979 accident","original_width":819,"original_height":614,"proposed_no_upscale_max_width":819,"proposed_full_frame_height":614,"published_transform":"ar_16:9,c_fill,w_1200","published_transform_crop_verified":false,"license_evidence":"creator PD-self Commons declaration; separate published rendition identity remains unverified","license_review":"HOLD_UNTIL_EDITOR_APPROVES_EXACT_SOURCE_AND_CROP","asset_identity_hash":null,"cached_wordpress_asset_plan":"only after visual and rights signoff, stage original with documented author/source and optional reviewed crop; never claim 1200px native detail","replacement_approved":false},
+      "rights_cleared_for_cache":false,"wordpress_production_write_allowed":false
+    },
+    {
+      "key":"287:5","post_id":287,"post_modified":"2026-11-02T21:40:01","published_post":"https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "published_url":"https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "published_alt":"The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+      "published_caption":"The Sunshine Skyway story did not end with replacement. Engineers also changed how the new crossing dealt with vessel impact.",
+      "source_observation":{"method":"web.open","tool_wrapper_status":404,"tool_outcome":"NOT_FOUND","origin_http_status":null,"guest_browser_http_status":null,"guest_current_src":null,"guest_natural_width":null,"guest_transferred_bytes":null,"confirmed_visually_broken":null},
+      "candidate":{"catalog":"https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg","publisher_page":null,"publisher_linked_asset":null,"relationship":"same_publisher_same_basename_image_rendered_by_independent_viewer; binary_crop_identity_unverified","catalog_subject":"Summit Venture collision damage and incomplete old span, no later cable-stayed replacement visible in viewed image","original_width":null,"original_height":null,"proposed_no_upscale_max_width":null,"proposed_full_frame_height":null,"published_transform":null,"published_transform_crop_verified":false,"license_evidence":"publisher-hosted photograph; reuse and photographer rights not established","license_review":"HOLD_REQUEST_PUBLISHER_RIGHTS_AND_ALT_CORRECTION","asset_identity_hash":null,"cached_wordpress_asset_plan":"do not copy publisher image; verify rights, exact photograph and 1980-only ALT before reversible WordPress staging","replacement_approved":false},
+      "rights_cleared_for_cache":false,"wordpress_production_write_allowed":false
+    }
+  ],
+  "release":{"source_only_not_visitors":true,"site_qa_pr_154_owns_browser":true,"homepage_out_of_scope":true,"media_downloads":0,"wordpress_uploads":0,"wordpress_post_edits":0,"spend_usd":0,"all_replacements_on_hold":true}
+}
