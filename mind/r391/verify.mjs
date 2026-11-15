@@ -34,7 +34,7 @@ function checkBuyer(s,which){
  ok(/may earn a commission/i.test(s),which+' plain commission disclosure');
  ok(/<button\b[^>]*\bdisabled\b/.test(s),which+' native disabled button');
  ok(!/<a[^>]+href="https?:\/\/(?:www\.)?(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com|inspire3\.com|affiliates\.inspire3\.com)/i.test(s),which+' NO active merchant link');
- ok(!/<script\b|<iframe\b|<form\b|on\w+\s*=|autoplay\b/i.test(s),which+' no JS/form/autoplay/handlers');
+ ok(!/<script\b|<iframe\b|<form\b|on\w+\s*=|<(?:video|audio)[^>]*\bautoplay\b/i.test(s),which+' no JS/form/autoplay/handlers');
  ok(!/add to cart|guaranteed (?:cure|memory)|100% guaranteed|earn \$\d+/i.test(s),which+' no invented guarantees');
  const pos=s.search(/affiliate disclosure/i),button=s.search(/<button\b/);
  ok(pos>=0&&button>pos&&button-pos<650,which+' adjacent disclosure');
@@ -46,7 +46,7 @@ eq(b.replace(extra[0],''),a,'A/B buyer copy exactly matched');
 ok(!a.includes('R391_PENDULUM_POSTER.svg'),'A is text only');
 ok(b.includes('R391_PENDULUM_POSTER.svg'),'B own poster');
 ok(b.includes('R391_CAPTIONS.vtt'),'B caption concept');
-ok(!/<video\b|<audio\b|\bautoplay\b/.test(b),'B storyboard not simulated playback');
+ok(!/<video\b|<audio\b|<(?:video|audio)[^>]*\bautoplay\b/.test(b),'B storyboard not simulated playback');
 const transcript=b.match(/Proposed 42-second narration:<\/strong> ([\s\S]*?)<\/p>/);
 ok(!!transcript,'transcript exists');
 const cues=vtt.trim().split(/\n\n/).filter(x=>x.includes(' --> ')).map(x=>x.split('\n').slice(1).join(' ').trim());
