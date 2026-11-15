@@ -97,13 +97,14 @@ class CSVSerializationPreflightR453(unittest.TestCase):
                 self.publish([{"id": "A", "amount": "42.10"}])
         self.assert_no_publication()
 
-    def test_quoted_csv_expansion_still_requires_exact_sink_check(self):
+    def test_quoted_csv_expansion_rejected_before_serialization(self):
         calls, spy = self.watch_writes()
         with patch.object(atomic_reports, "MAX_REPORT_BYTES", 36), spy:
             with self.assertRaisesRegex(ValueError, "CSV report byte limit exceeded"):
                 self.publish([{"id": "A", "amount": '"' * 20}])
-        # Raw value fits; the exact writer expands escaping and the sink rejects.
-        self.assertEqual(len(calls), 2)
+        # R454 exact dialect preflight accounts for double-quoted escaping
+        # before csv.writer builds the oversized string.
+        self.assertEqual(calls, ["id,amount\r\n"])
         self.assert_no_publication()
 
     def test_ignored_extra_column_still_needs_formula_sanitization(self):

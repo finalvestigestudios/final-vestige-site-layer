@@ -61,20 +61,37 @@ class _BudgetedCSVTextSink:
         return written
 
     def preflight(self, values: Iterable[str]) -> None:
-        """Reject a row whose *minimum* UTF-8 bytes exceed the remaining cap.
+        """Bound exact default csv.excel output *before* writerow allocates it.
 
-        csv.writer builds a complete serialized row before calling write().
-        Its quoting may multiply the text size, so a write-time budget alone
-        can permit a giant temporary allocation. The source cell UTF-8 sum is
-        a safe lower bound: CSV quoting/separators cannot make it smaller.
-        This does not debit the budget; write() still enforces the exact
-        serialized byte count, including punctuation and line endings.
+        All callers supply plain sanitized str values and use DictWriter's
+        default excel dialect (QUOTE_MINIMAL, comma delimiter, doublequote,
+        CRLF line terminator). Count encoded cells, mandatory doubled quotes,
+        surrounding quotes, delimiters, and CRLF. CPython also quotes a sole
+        empty field to distinguish it from an empty record.
+
+        The check consumes no stream bytes and never debits the budget:
+        write() independently enforces the actual serialized size and hashes
+        accepted bytes. If the writer dialect changes, update this preflight
+        and its real csv.writer parity tests together.
         """
-        available = self._remaining
+        available = self._remaining - 2  # excel's CRLF record terminator
+        count = 0
+        only_field_empty = False
         for value in values:
-            available -= len(value.encode("utf-8"))
+            if count:
+                available -= 1  # comma between fields
+            else:
+                only_field_empty = value == ""
+            count += 1
+            available -= len(value.encode("utf-8")) + value.count('"')
+            if any(char in value for char in ('"', ",", "\r", "\n")):
+                available -= 2  # enclosing quotes for QUOTE_MINIMAL
             if available < 0:
                 raise ValueError("CSV report byte limit exceeded")
+        if count == 1 and only_field_empty:
+            available -= 2  # csv.writer(['']) -> '""\\r\\n'
+        if available < 0:
+            raise ValueError("CSV report byte limit exceeded")
 
     def verify(self, descriptor: int) -> None:
         self._witness.verify(descriptor)
