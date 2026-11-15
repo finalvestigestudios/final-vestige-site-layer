@@ -1,0 +1,13 @@
+# R382 QA evidence — source only
+
+Verified review inputs 2026-11-15: GitHub Issues #174 and #171, latest comments including Mind R401; draft PR #201; predecessor PR #2637 at 5eb0a73e7f678e22c60d291ebda8d36ce74fe25b; original PR #175 at d57ccdba3aee8f065e143e101c2945f4f3d01647.
+Connected WordPress read-only at 2026-11-15T16:32:15Z: 3 total, 3 confirmed, 2 unconfirmed; master newsletter ON, automatic posts OFF, FULL format, welcome configured. /dispatch/ #523, /focus/ #1579, Editorial Standards #17 inspected. Actual receiving inboxes, welcome receipt, native preview, valid FV postal address, opt-out and partner email rights UNKNOWN.
+Original source: mounted R378 archive /master/dispatch/campaign-2026-mind/, native Python unittest 6/6 PASS at local /mnt/data/dispatch_r382_work. Exact live GitHub eight individual blob SHAs fetched at original exact commit; 8 source items matched previous archive hashes in earlier logged reviews. This run independently checked test results, GitHub source identity and original status; no original text edited.
+Original optional Wright Issue06 grounded in LOC first-flight photo/negatives and NASA four-flight history; standalone HTML and plaintext files. This is NOT_ADOPTED and UNSENT; existing 4:2 campaign unchanged.
+New author-source function declarations were directly executed in V8 with 25 synthetic privacy, consent, commission, dedup, attribution and denominator assertions: 25/25 PASS. This is an offline check of the same declarations emitted in attribution_firewall.mjs, not native Node. Four authored node:test groups are committed but NOT claimed natively executed.
+Original manuscript HTML preflight 9/9 passed: source count, static email table, lang attribute, one editorial CTA, no script/form or active merchant link. No actual browser/mobile or email-client rendering was performed.
+NO authorization has been obtained to send or test-send emails. No new WordPress posts or settings, list exports, public merchant links, revenue claims, social posts, spends, merge or deploy.
+
+Release: all original 01/02/03/04/05/06 HOLD_UNSENT, 03/05 HOLD_MERCHANT, 04 HOLD_COPY; optional Issue06 NOT_ADOPTED; net revenue per 1000 qualified human sessions NOT COMPUTABLE.
+
+Core official sources: https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/collection-highlights/first-flight/ ; https://www.nasa.gov/history/120-years-ago-the-first-powered-flight-at-kitty-hawk/ ; https://wordpress.com/support/newsletter/send-newsletter-emails/ ; https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business .
