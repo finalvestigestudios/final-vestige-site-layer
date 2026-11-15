@@ -1,0 +1,35 @@
+# R381 — CDC household-water source conditions and Article #7 scope custody
+
+**2026-11-14 PT · Issue #136 · Charter #818 · Conversion #820 · DRAFT / HARD HOLD · NO PUBLICATION**
+
+## Authenticated source evidence (not synthetic test output)
+
+- Original `homemade-water-filters.body.html` Git blob `67aa44e9a332f57fb70298a3867410d8f66c8c15` and paired `meta.json` blob `33789d3db0ec06007deb50d0293361f07cea27ae` were read by immutable Git object identity from original `claude/prep-start-bbfeb8` HEAD `2122d856fce9f64887c16df3d52e64be9f59a55b`. Both remain original, untouched, unpublished. The article is `draft`, safety `pending`.
+- The body cites `cdc-find-clean-water` **twice**: one list item about possible household sources (water heater and melted ice), and an independent item warning about chemical contamination. A validator must not collapse these distinct claims or assume either was reviewed merely because the citation resolves.
+- The article's original metadata **does not include** `cdc-find-clean-water` under `source_use`. The original central BASE register, blob `b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77`, **does** contain the ID, CDC URL, and a brief `supports` paraphrase. That means **claim scope is missing**, **not** that the citation URL or source identity is broken. Registry says `human_link_check=false`.
+- CDC **How to Find Clean Water in an Emergency** (2025-06-25), https://www.cdc.gov/water-emergency/about/how-to-find-clean-water-in-an-emergency.html , qualifies household alternatives. It distinguishes the household **tap-water** heater tank from older homes' **heating-system** tanks, and says melted ice must have been made from **water that was not contaminated**. Local contamination advisories and water quality remain essential. The original manuscript says, without these adjacent conditions, `water heater tank, melted ice cubes and similar sources`. The BASE source summary itself omits the ice-origin condition and the explicit prohibition against heating-system water. These are **unresolved safety-context flags**, not qualified medical/environmental judgments or permission to edit the original manuscript.
+
+## R381 implementation and exact verification limits
+
+- Added isolated read-only `preparedness/tools/r381_water_source_conditional_custody.py`, plus `preparedness/tests/test_r381_water_source_conditional_custody.py` with **65** focused synthetic/adversarial cases (two-citation differentiation; altered source domain/scheme; missing or forged source/use; water qualification omissions; publish and safety-state tampering; duplicate source identity; wrong article; missing HTML anchors).
+- Native mode requires SHA-matched original Git objects, a complete authenticated checkout and the authoritative registry. Outputs machine-readable unresolved **HARD HOLD** only; exit code is **always 2**. Machine phrasing checks merely flag candidates for a qualified reviewer; clearing a regex check **never** indicates source/food/medical safety, independent QD pass, or publication readiness.
+- Isolated local suite: **65/65 PASS**. Combined available R374/R375/R378/R379/R380/R381 isolated tests: **375/375 PASS**; Python compilation PASS. R376/R377 separate unavailable dependencies not included in this aggregate. Exact committed code/test Git blob identities must be compared to the local execution artifact. **No native full repo validation/build or authentic 50 WordPress/50 private previews** executed; local GitHub DNS is not functional. New native gate exits 2. No hosted CI success is claimed.
+
+## Human decision and integration handoff
+
+1. Qualified water/public-health safety reviewer: compare *each* of the two original claim contexts to the complete current CDC source, local official contamination advisories and correct household equipment type. Explicitly decide whether article advice needs tightly scoped wording; never rely on citation count or BASE summary alone.
+2. Source editor: document article-specific `source_use` **only after** human review of exact supporting passages. Do not silently auto-populate or inherit another branch's verification. If a change is approved, make it in a **new independent review branch**, preserve historical SHA, article depth and original safety-state custody.
+3. Integration owner: resolve five existing source-evidence collision groups, nine Shelter object forks and all 35 authentic article/metadata pairs; run native `validate.py`, `build.py`, complete source checks, URL/canonical collision, reading-depth regressions, genuine 50+50 private exports and independent QA #157 / fixture #169 / follow-up #2205. No manuscript selection or release approval at R381.
+4. Preparedness/QD: Article #11 jerky food-safety conflict and Tool #104 family-contact/privacy/print gate remain independently **HARD HOLD**. Founder labeled historical states are not qualified QD.
+5. **Commerce priority:** no authenticated FV-owned, rights-cleared, payable/deliverable Preparedness SKU. Do not publish paid upsells or revive retired water freebies. A possible Grok **family emergency contact** social topic may lead to the existing free official-source archive **only after** Praxxis verifies a genuinely already published matching `asset_id`, hook, rights, permissioned mobile CTA/destination and attribution; Grok retains posting/production. Private Tool #104 is not a public download. No paid orders, fees/refunds or 7/30 day qualified visitor cohort verified.
+
+### Offer → funnel step → blocker → change / experiment → evidence → owner
+
+| Offer and funnel | Blocking fact | Next review-only experiment | Evidence | Owner |
+| --- | --- | --- | --- | --- |
+| FV-owned Preparedness practical pack → paid order | No eligible product entitlement, checkout, rights, delivery or refund validation | Inspect **one actual** founder-approved SKU/merchant receipt/delivery/refund contract before any paid CTA | NOT VERIFIED / HOLD | Founder / Commerce |
+| Existing free family planning resources → optional Tool #104 | Emergency, privacy, physical cutout and accessibility unapproved | Inspect physical trimmed print, qualified source/child-safety opinions, consent and working mobile destination | FAIL/HOLD, private tool | Preparedness / QD |
+| Genuine published Grok family-contact asset → free Archive | Post/asset ID and precise mobile route not authenticated | Praxxis checks actual platform permalink, hook, rights, `asset_id`, platform attribution and tappable `/preparedness/` link | UNVERIFIED | Grok / Praxxis |
+| Qualified sessions → confirmed leads → merchant-confirmed paid orders → realized net revenue | Cohort, conversions, fees and refunds unavailable; outbound clicks are not sales | Reuse Claude's approved native attribution only, no new scripts; audit 7/30-day cohorts with tiny-sample caveats | NOT COMPUTABLE | Claude / Commerce |
+
+**No original article/meta/source, WordPress/CMS, navigation, analytics, merchant, social, newsletter, creator queue, deployment, merge, spending or publication was changed.** No qualified source/medical advice claim or QD PASS.
