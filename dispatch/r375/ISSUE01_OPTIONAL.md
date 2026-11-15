@@ -1,0 +1,42 @@
+# THE DISPATCH — OPTIONAL ISSUE 01
+
+> **NOT ADOPTED / NOT SENT — EDITORIAL REVIEW ONLY.** This is a candidate, not a change to founder's six original drafts. Do not publish, schedule or email.
+
+**Subject:** The broken glass that wasn't there
+
+**Preheader:** A 1974 film study found that one verb changed later reports of a crash.
+
+**Content type:** editorial (non-commercial)
+
+---
+
+In 1974, a group of students watched a filmed traffic accident. There was a crash on the screen, a questionnaire afterward, and a question that looked perfectly ordinary: how fast had the vehicles been moving?
+
+The researchers changed one word in that question. Some students were asked about cars that had *smashed* into each other; others heard *hit*, *collided*, *bumped*, or *contacted*. Those verbs were not interchangeable in the answers that followed.
+
+In the first experiment, the mean estimate for the *smashed* group was 40.8 miles per hour, compared with 31.8 for *contacted*. Those are **estimates given by participants**, not independent measurements of the vehicles. The experiment showed that wording mattered to what people reported.
+
+Then came a different test. In a second experiment, 150 students watched a short film of a multiple-car accident. Fifty received the *smashed* wording, fifty *hit*, and fifty were not asked to estimate speed. One week later, the researchers asked whether they had seen broken glass.
+
+There had been no broken glass in the film. Yet 16 of the 50 students in the *smashed* condition answered yes, compared with 7 in the *hit* condition and 6 among the controls. The figures describe this experiment's groups, not a universal probability that any eyewitness will make an error.
+
+This is the detail worth carrying into a historical archive: an answer on a questionnaire is a record of an answer. It isn't automatically a transparent recording of the event itself.
+
+The researchers argued that later language could become part of a person's reconstruction of what happened. Their findings also leave a careful reader with a further question: exactly how much of the effect came from a changed memory, and how much from the way a participant interpreted or responded to a question? A laboratory film-and-questionnaire experiment cannot settle every real-world eyewitness dispute.
+
+At Final Vestige, that boundary matters. A witness statement, a headline written years later, and a technical report may all concern the same event. They are different kinds of evidence. Treating each as identical makes it easy for a plausible story to outrun its sources.
+
+Try a two-minute exercise with an article you've recently read. Write down one sentence about what the source *directly documents*. Then write a second sentence beginning, "My interpretation is..." Compare them. If the two sentences look the same, look again for the assumption hiding inside the description.
+
+Another useful question: if the source had used a calmer verb, would your account of the event sound different? This isn't a trick for distrusting everyone. It is a way to ask better questions without discarding witnesses or records.
+
+Next in the archive, the problem changes from what we remember to what we overlook in the first place. Our published examination of the flicker and door experiments provides an actual evidence trail, including the limitations of both demonstrations.
+
+**Read the related published investigation:** [Change Blindness: The Flicker Test and the Door Experiment](https://finalvestige.com/2026/11/02/change-blindness/).
+
+**Primary research:** Elizabeth F. Loftus and John C. Palmer, “Reconstruction of Automobile Destruction: An Example of the Interaction Between Language and Memory,” *Journal of Verbal Learning and Verbal Behavior* 13 (1974), 585–589. [Original paper (Stanford-hosted PDF)](https://web.stanford.edu/class/psych205/papers/Loftus-Palmer-1974.pdf). [Publisher DOI](https://doi.org/10.1016/S0022-5371(74)80011-3).
+
+*Scope note:* Laboratory films and study groups are not evidence of a fixed error rate among all eyewitnesses. The published article linked above examines **change blindness** (attention), a related but different phenomenon from the memory-question experiment discussed here.
+
+---
+**Unverified compliance placeholders — MUST NEVER SEND:** Publisher physical address `[[VALID_POSTAL_ADDRESS_REQUIRED]]`. Jetpack delivered unsubscribe `[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]`. Actual native Jetpack rendering and consent unverified.
