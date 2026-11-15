@@ -1,0 +1,151 @@
+{
+  "schema": "fv-published-pages-79-complement-v1",
+  "date_pt": "2026-11-14",
+  "batch": 2,
+  "previous_pilot_ids": [
+    1484,
+    1480,
+    2017,
+    2088,
+    2089,
+    529,
+    77,
+    76,
+    531,
+    525,
+    1304,
+    1868
+  ],
+  "excluded_homepage_id": 6,
+  "method": "authenticated read-only WP pages_get edit; stored img tags; not guest-browser or origin HTTP",
+  "expected": 15,
+  "checked": 15,
+  "errors": [],
+  "source_groups": {},
+  "guest_http_verified": false,
+  "claimed_42_broken_verified": false,
+  "claimed_76_percent_wire_savings_verified": false,
+  "rights_and_cache_hold": true,
+  "rows": [
+    {
+      "id": 499,
+      "url": "https://finalvestige.com/watch/maps-places/",
+      "modified": "2026-11-03T14:47:03",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 500,
+      "url": "https://finalvestige.com/watch/failure-engineering/",
+      "modified": "2026-08-31T22:33:27",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 501,
+      "url": "https://finalvestige.com/watch/objects-archaeology/",
+      "modified": "2026-11-05T12:07:05",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 502,
+      "url": "https://finalvestige.com/watch/courses-lectures/",
+      "modified": "2026-10-29T17:18:30",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 523,
+      "url": "https://finalvestige.com/dispatch/",
+      "modified": "2026-11-05T20:01:31",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 536,
+      "url": "https://finalvestige.com/archive/dossiers/",
+      "modified": "2026-09-09T16:18:48",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 537,
+      "url": "https://finalvestige.com/archive/dossiers/standards/",
+      "modified": "2026-09-09T16:21:09",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 538,
+      "url": "https://finalvestige.com/archive/dossiers/us-navy/",
+      "modified": "2026-09-09T16:21:44",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 539,
+      "url": "https://finalvestige.com/archive/dossiers/maritime-safety/",
+      "modified": "2026-09-09T16:22:11",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 540,
+      "url": "https://finalvestige.com/archive/dossiers/nuclear-safety/",
+      "modified": "2026-09-09T16:24:04",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 541,
+      "url": "https://finalvestige.com/archive/dossiers/search-recovery/",
+      "modified": "2026-09-09T16:19:10",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 542,
+      "url": "https://finalvestige.com/archive/dossiers/fire-safety/",
+      "modified": "2026-09-09T16:24:58",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 543,
+      "url": "https://finalvestige.com/archive/vestige-registry/",
+      "modified": "2026-09-09T16:12:29",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 547,
+      "url": "https://finalvestige.com/archive/time-place/",
+      "modified": "2026-09-09T09:38:51",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    },
+    {
+      "id": 747,
+      "url": "https://finalvestige.com/community/",
+      "modified": "2026-11-02T21:40:50",
+      "status": "publish",
+      "inline_images": 0,
+      "images": []
+    }
+  ]
+}
