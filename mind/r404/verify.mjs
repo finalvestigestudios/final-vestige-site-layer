@@ -28,12 +28,13 @@ check('B contains original optional media concept',()=>match(/OPTIONAL FILM \/ 4
 check('A contains no film concept',()=>assert.doesNotMatch(A,/OPTIONAL FILM \/ 42-SECOND CONCEPT/));
 check('B original poster accessible label',()=>{match(/<svg role="img" aria-labelledby="p-title p-desc"/,B);match(/<desc id="p-desc">/,B)});
 check('B no inaccurate playable-video claim',()=>match(/not a.*playable film/i,B));
+check('aria-disabled alone is not native disabled',()=>assert.doesNotMatch('<button type="button" aria-disabled="true">', /<button\b[^>]*\sdisabled(?:\s|>|=)/));
 check('caption WebVTT header',()=>assert.ok(V.startsWith('WEBVTT\n')));
 const time=t=>{const [h,m,s]=t.split(':');return Number(h)*3600+Number(m)*60+Number(s)};
 check('captions have six contiguous cues 0-42 sec',()=>{const t=[...V.matchAll(/(\d\d:\d\d:\d\d\.\d\d\d) --> (\d\d:\d\d:\d\d\.\d\d\d)/g)].map(x=>[time(x[1]),time(x[2])]);assert.equal(t.length,6);assert.equal(t[0][0],0);assert.equal(t.at(-1)[1],42);t.forEach((v,i)=>{assert.equal(v[1]-v[0],7);if(i)assert.equal(v[0],t[i-1][1])})});
 check('full B narration matches captions exactly',()=>{const cueText=V.trim().split(/\n\n/).slice(1).map(v=>v.split('\n').slice(1).join(' ').trim());const section=B.match(/<details><summary>Read the full 42-second narration and shot plan<\/summary>([\s\S]*?)<p class="small">/)?.[1];assert.ok(section);const paragraphs=[...section.matchAll(/<p>\d+–\d+s: ([\s\S]*?)<\/p>/g)].map(x=>x[1].trim());assert.equal(paragraphs.length,6);assert.deepEqual(paragraphs,cueText)});
 for(const [key,s] of [['A',A],['B',B]]) {
- check(key+' native disabled purchase button',()=>match(/<button\b[^>]*\bdisabled(?:\s|>|=)/,s));
+ check(key+' native disabled purchase button',()=>match(/<button\b[^>]*\sdisabled(?:\s|>|=)/,s));
  check(key+' near CTA prospective disclosure',()=>{const start=s.indexOf('Potential affiliate relationship:');const button=s.indexOf('<button type="button" disabled');assert.ok(start>0&&button>start&&button-start<700)});
  check(key+' single existing Focus CTA route',()=>match(/https:\/\/finalvestige.com\/focus\//,s));
  check(key+' no third-party forms or scripts',()=>assert.doesNotMatch(s,/<\s*(form|script|iframe)\b/i));
