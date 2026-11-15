@@ -22,7 +22,7 @@ function classifyStoredUrl(value) {
 const EXPECTED_PART_BLOBS = Object.freeze(["948bc1b65b42799aa40cfdb810ddf6ffd80886b6","48e1ebf07207e948ba5802e714eb39659d2e1c1d","49183f66f880f7c4dfd363acca906876877f2e5e","6df3251e5a67a971d87a516a1ba4a0cc32f51f96","9b16b828342a9ac338f3e65610fd3d8d508355e9","0f3dfe398a76838049cebba7cb773d5c5a0c8c69","21095161e633aba093b74c0ead9936c9f6186d00","5659ec243c188928be3f89c0f96354b660608ca2"]);
 function gitBlobSha(data) {
   const bytes=Buffer.from(data,'utf8');
-  return crypto.createHash('sha1').update(Buffer.from('blob '+bytes.length+'\\0')).update(bytes).digest('hex');
+  return crypto.createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex');
 }
 function loadPinnedParts(dir) {
   return EXPECTED_PART_BLOBS.map((expected,i)=>{
