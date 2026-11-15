@@ -1,0 +1,60 @@
+{
+  "version": "r373",
+  "state": "DRAFT_UNSENT",
+  "based_on_original": "PR #175 exact head d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "newsletter_source": "WordPress.com Jetpack site 256784396; 2026-11-15T07:36:52Z",
+  "subscribers": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "wpcom_followers": 3,
+    "direct_email_followers": 0,
+    "email_eligible_unique": null
+  },
+  "delivery": {
+    "auto_new_post_email": false,
+    "content_format": "full",
+    "reply_to": "no-reply",
+    "native_preview_verified": false,
+    "received_welcome_verified": false,
+    "valid_fv_postal_address_verified": false,
+    "unsubscribe_functional_verified": false,
+    "latest_five_post_notifications": "never_sent_opted_out"
+  },
+  "merchant": {
+    "zen12_email_permission_verified": false,
+    "total_focus_email_permission_verified": false,
+    "earning_links_verified": false,
+    "live_approved_guides_verified": false,
+    "referred_checkout_verified": false
+  },
+  "financials": {
+    "qualified_sessions_7d": null,
+    "qualified_sessions_30d": null,
+    "settled_orders_7d": null,
+    "settled_orders_30d": null,
+    "net_revenue_7d": null,
+    "net_revenue_30d": null,
+    "net_revenue_per_1000_sessions": null
+  },
+  "original_mix": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "merchant_reserved": [
+      3,
+      5
+    ]
+  },
+  "owner_issues": [
+    174,
+    171,
+    129,
+    820
+  ],
+  "no_sends": true,
+  "no_new_platform": true
+}
