@@ -37,7 +37,7 @@ def _legacy_safe_cell(value):
     token = s[index:]
     if (invisible_prefix or token.startswith(("=", "+", "@"))
             or (token.startswith("-") and
-                re.fullmatch(r"-[0-9]+(?:\\.[0-9]+)?", token) is None)
+                re.fullmatch(r"-[0-9]+(?:\.[0-9]+)?", token) is None)
             or has_unescaped_formula_prefix(s)):
         return "'" + s
     return s
@@ -61,7 +61,7 @@ class SafeCellZeroCopyR456(unittest.TestCase):
                     self.assertEqual(safe_cell(raw), "'" + raw)
 
     def test_invisible_prefixes_still_force_review(self):
-        for lead in ("\\u200b", "\\ufeff", "\\u0301", "\\u2066", "\\t", "\\n", "\\u00a0"):
+        for lead in ("\u200b", "\ufeff", "\u0301", "\u2066", "\t", "\n", "\u00a0"):
             for tail in ("Ordinary", "-123.45", "=A1"):
                 raw = lead + tail
                 with self.subTest(lead=repr(lead), tail=tail):
@@ -74,7 +74,7 @@ class SafeCellZeroCopyR456(unittest.TestCase):
                 self.assertEqual(safe_cell(value), str(value))
 
     def test_source_text_not_mutated_or_normalized(self):
-        raw = "  Résumé – vendor \\u200b"
+        raw = "  Résumé – vendor \u200b"
         self.assertIs(safe_cell(raw), raw)
         formula = "  =HYPERLINK(\"x\")"
         self.assertEqual(safe_cell(formula), "'" + formula)
@@ -89,8 +89,8 @@ class SafeCellZeroCopyR456(unittest.TestCase):
 
     def test_100000_seeded_legacy_parity_cases(self):
         rng = random.Random(456)
-        fragments = ("", " ", "  ", "\\u200b", "\\u0301", "\\r",
-                     "\\n", "\\u00a0", "4", "42", "-1", "-0.25",
+        fragments = ("", " ", "  ", "\u200b", "\u0301", "\r",
+                     "\n", "\u00a0", "4", "42", "-1", "-0.25",
                      "-2e4", "=x", "+SUM(1)", "@A", "−1", "➖1",
                      "plain", "'=1", "😀")
         for trial in range(100_000):
