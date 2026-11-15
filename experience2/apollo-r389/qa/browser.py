@@ -114,8 +114,8 @@ check(any('the-hatch-opened-inward-apollo-1' in x for x in links),'print free CT
 check('Publication A / primary investigation (1967)' in text,'print labels primary investigation')
 check('Publication B / NASA retrospective (February 14, 2018)' in text,'print dates secondary retrospective')
 check('This retrospective is not eyewitness evidence' in text,'print retains source limitation')
-check('https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/' in text.replace('\\n',''),'print readable direct Board URL')
-check('https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/' in text.replace('\\n',''),'print readable direct retrospective URL')
+check('https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/' in text.replace('\n',''),'print readable direct Board URL')
+check('https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/' in text.replace('\n',''),'print readable direct retrospective URL')
 report['print_pdf']={'pages':len(pdf),'links':len(links),'distinct_urls':len(set(links))}
 (QA/'browser-results.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps({'status':report['status'],'contexts':len(report['contexts']),'assertions':report['assertions'],'print_pages':len(pdf)},indent=2))
