@@ -1,0 +1,38 @@
+{
+  "release_status": "HOLD_UNSENT",
+  "source_pr": 175,
+  "source_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "observed_provider_counts": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "wpcom_followers": 3,
+    "email_followers": 0,
+    "unique_eligible_inboxes": null
+  },
+  "proofs": {
+    "founder_final_approval": false,
+    "provider_unique_confirmed_recipient_proof": false,
+    "welcome_received_and_pdf_access_verified": false,
+    "jetpack_native_preview_verified": false,
+    "subject_matches_native_post_title": false,
+    "valid_fv_postal_address_in_render": false,
+    "working_unsubscribe_in_actual_received_message": false,
+    "brand_editorial_signoff": false,
+    "named_fv_affiliate_acceptance": false,
+    "product_email_channel_permission": false,
+    "approved_email_creative_rights": false,
+    "issued_earning_link": false,
+    "approved_live_warmup_guide": false,
+    "referred_checkout_and_terms_checked": false,
+    "product_claims_substantiated_or_removed": false,
+    "adjacent_disclosure_verified": false
+  },
+  "commercial_issue_ids": [
+    3,
+    5
+  ],
+  "no_live_sends": true,
+  "paid_commission_proof": null,
+  "qualified_human_session_denominator": null
+}
