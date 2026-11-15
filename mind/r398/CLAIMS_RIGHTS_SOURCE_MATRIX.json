@@ -1,0 +1,536 @@
+{
+  "schema": "fv-mind-claims-rights-r398-v1",
+  "observed_date": "2026-11-15",
+  "state": "REVIEW_ONLY_NO_COMMERCIAL_ACTIVATION",
+  "owner": "Mind/Perception",
+  "sources": {
+    "S1": "https://doi.org/10.3758/BF03208840",
+    "S2": "https://doi.org/10.1068/p3104",
+    "S3": "https://journals.sagepub.com/stoken/rbtfl/XMuDDa1cAfA0g/full",
+    "S4": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "S5": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "S6": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "S7": "https://finalvestige.com/focus/",
+    "S8": "https://finalvestige.com/dispatch/",
+    "S9": "https://inspire3.com/",
+    "S10": "https://zen12.com/",
+    "S11": "https://zen12.com/getstarted",
+    "S12": "https://zen12.com/secret/",
+    "S13": "https://affiliates.inspire3.com/",
+    "S14": "https://hypnosislive.com/mental-skills/total-focus",
+    "S15": "https://hypnosislive.com/faq",
+    "S16": "https://brainwaveshots.com/focus-shot",
+    "S17": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "S18": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "S19": "https://finalvestige.com/affiliate-disclosure/",
+    "S20": "https://finalvestige.com/editorial-standards/"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "subject": "Research",
+      "claim": "1998 field door-swap participants sometimes failed to identify replacement",
+      "evidence_class": "independent_primary",
+      "source_id": "S1",
+      "status": "SUPPORTED_LAB_CONDITION",
+      "limit_or_decision": "Not a population-wide error rate or diagnostic"
+    },
+    {
+      "id": "C02",
+      "subject": "Research",
+      "claim": "First 1998 paper reports only half detected person replacement",
+      "evidence_class": "independent_primary",
+      "source_id": "S1",
+      "status": "SUPPORTED_IN_CONTEXT",
+      "limit_or_decision": "Abstract uses only half; finer counts in published FV article"
+    },
+    {
+      "id": "C03",
+      "subject": "Research",
+      "claim": "Detection differed by social-group context in 1998 experiments",
+      "evidence_class": "independent_primary",
+      "source_id": "S1",
+      "status": "SUPPORTED_IN_CONTEXT",
+      "limit_or_decision": "Not basis for participant character inferences"
+    },
+    {
+      "id": "C04",
+      "subject": "Research",
+      "claim": "2000 change blindness tested without standard visual disruption",
+      "evidence_class": "independent_primary",
+      "source_id": "S2",
+      "status": "SUPPORTED_IN_CONTEXT",
+      "limit_or_decision": "Do not reduce effect to door interruption only"
+    },
+    {
+      "id": "C05",
+      "subject": "Research",
+      "claim": "Prior expertise may shape change detection of relevant features",
+      "evidence_class": "independent_review",
+      "source_id": "S3",
+      "status": "SUPPORTED_GENERAL",
+      "limit_or_decision": "Not evidence of Zen12 efficacy"
+    },
+    {
+      "id": "C06",
+      "subject": "History",
+      "claim": "Puységur archive includes failed predictions, ethics/consent notes",
+      "evidence_class": "published_primary_trail",
+      "source_id": "S4",
+      "status": "SUPPORTED_DOCUMENTED",
+      "limit_or_decision": "Historical interpretation, not controlled efficacy"
+    },
+    {
+      "id": "C07",
+      "subject": "Published Site",
+      "claim": "Public change-blindness article already covers door experiment",
+      "evidence_class": "published_editorial",
+      "source_id": "S5",
+      "status": "VERIFIED_LIVE",
+      "limit_or_decision": "R398 new essay overlaps and must be consolidated/linked, not cannibalize"
+    },
+    {
+      "id": "C08",
+      "subject": "Published Site",
+      "claim": "Public 1784 Mesmerism study present at exact route",
+      "evidence_class": "published_editorial",
+      "source_id": "S6",
+      "status": "VERIFIED_LIVE",
+      "limit_or_decision": "History bridge only"
+    },
+    {
+      "id": "C09",
+      "subject": "Published Site",
+      "claim": "Free Focus Fieldbook describes 52-page edition and single signup",
+      "evidence_class": "published_editorial",
+      "source_id": "S7",
+      "status": "VERIFIED_LIVE",
+      "limit_or_decision": "Does not independently test the fieldbook"
+    },
+    {
+      "id": "C10",
+      "subject": "Published Site",
+      "claim": "Dispatch exists as one newsletter pathway",
+      "evidence_class": "published_editorial",
+      "source_id": "S8",
+      "status": "VERIFIED_LIVE",
+      "limit_or_decision": "No duplication"
+    },
+    {
+      "id": "C11",
+      "subject": "Zen12 Feature",
+      "claim": "Inspire3 lists Zen12 as brainwave meditation audio",
+      "evidence_class": "seller",
+      "source_id": "S9",
+      "status": "SELLER_DESCRIPTION",
+      "limit_or_decision": "May describe format, not neurological benefit"
+    },
+    {
+      "id": "C12",
+      "subject": "Zen12 Feature",
+      "claim": "Zen12 sales page describes twelve program levels",
+      "evidence_class": "seller",
+      "source_id": "S10",
+      "status": "SELLER_DESCRIPTION",
+      "limit_or_decision": "No independently tested effectiveness"
+    },
+    {
+      "id": "C13",
+      "subject": "Zen12 Feature",
+      "claim": "Four listening options per level music/guided/nature/white noise",
+      "evidence_class": "seller",
+      "source_id": "S10",
+      "status": "SELLER_DESCRIPTION",
+      "limit_or_decision": "Format not therapeutic proof"
+    },
+    {
+      "id": "C14",
+      "subject": "Zen12 Feature",
+      "claim": "Standard checkout advertises 48 MP3 and guide/support",
+      "evidence_class": "seller",
+      "source_id": "S11",
+      "status": "SELLER_DESCRIPTION",
+      "limit_or_decision": "Checkout can change"
+    },
+    {
+      "id": "C15",
+      "subject": "Zen12 Benefit",
+      "claim": "One hour of meditation equals 12-minute Zen12 session",
+      "evidence_class": "seller",
+      "source_id": "S10",
+      "status": "UNSUBSTANTIATED_EXCLUDE",
+      "limit_or_decision": "Requires direct controlled test with clearly equivalent endpoints"
+    },
+    {
+      "id": "C16",
+      "subject": "Zen12 Benefit",
+      "claim": "Zen12 reduces clinical stress or cures health conditions",
+      "evidence_class": "seller",
+      "source_id": "S10",
+      "status": "UNSUBSTANTIATED_EXCLUDE",
+      "limit_or_decision": "No product-specific controlled evidence checked"
+    },
+    {
+      "id": "C17",
+      "subject": "Zen12 Benefit",
+      "claim": "Brainwave patterns automatically mimic meditation through recordings",
+      "evidence_class": "seller",
+      "source_id": "S10",
+      "status": "UNSUBSTANTIATED_EXCLUDE",
+      "limit_or_decision": "Mechanism assertion is not established by door study"
+    },
+    {
+      "id": "C18",
+      "subject": "Zen12 Price",
+      "claim": "Standard seller checkout displayed total 87.99 USD on audit",
+      "evidence_class": "seller_snapshot",
+      "source_id": "S11",
+      "status": "OBSERVED_NOT_REFERRAL_PRICE",
+      "limit_or_decision": "Not a guaranteed referred checkout, tax or price"
+    },
+    {
+      "id": "C19",
+      "subject": "Zen12 Price",
+      "claim": "Separate promotional path advertises 37 USD with code",
+      "evidence_class": "seller_snapshot",
+      "source_id": "S12",
+      "status": "OBSERVED_DISTINCT_OFFER",
+      "limit_or_decision": "Never repeat code or artificial urgency; eligibility unknown"
+    },
+    {
+      "id": "C20",
+      "subject": "Zen12 Returns",
+      "claim": "Seller standard checkout advertises a one-year refund",
+      "evidence_class": "seller",
+      "source_id": "S11",
+      "status": "SELLER_PROMISE_UNVERIFIED_FULFILLMENT",
+      "limit_or_decision": "No actual refund processed; review merchant terms"
+    },
+    {
+      "id": "C21",
+      "subject": "Inspire3 Partner",
+      "claim": "Public affiliate partner network exists",
+      "evidence_class": "seller_partner_portal",
+      "source_id": "S13",
+      "status": "PUBLIC_PORTAL_ONLY",
+      "limit_or_decision": "Does not establish FV acceptance"
+    },
+    {
+      "id": "C22",
+      "subject": "Inspire3 Partner",
+      "claim": "Final Vestige approved as named affiliate for Zen12",
+      "evidence_class": "private_account_required",
+      "source_id": "S13",
+      "status": "NOT_VERIFIED_HOLD",
+      "limit_or_decision": "Need authenticated publisher ID/terms"
+    },
+    {
+      "id": "C23",
+      "subject": "Inspire3 Partner",
+      "claim": "Special tracked FV Zen12 earning URL is issued",
+      "evidence_class": "private_account_required",
+      "source_id": "S13",
+      "status": "NOT_VERIFIED_HOLD",
+      "limit_or_decision": "No invented URL"
+    },
+    {
+      "id": "C24",
+      "subject": "Inspire3 Partner",
+      "claim": "Website/social/email promo channels approved for FV",
+      "evidence_class": "private_account_required",
+      "source_id": "S13",
+      "status": "NOT_VERIFIED_HOLD",
+      "limit_or_decision": "Separate rights for newsletter and creator"
+    },
+    {
+      "id": "C25",
+      "subject": "Inspire3 Partner",
+      "claim": "Commission amount and settlement established for FV",
+      "evidence_class": "private_account_required",
+      "source_id": "S13",
+      "status": "NOT_VERIFIED_HOLD",
+      "limit_or_decision": "Public portal general percentages are not account contracts"
+    },
+    {
+      "id": "C26",
+      "subject": "Hypnosis Live Feature",
+      "claim": "Total Focus official product is 33-min 47 MB MP3",
+      "evidence_class": "seller",
+      "source_id": "S14",
+      "status": "SELLER_DESCRIPTION",
+      "limit_or_decision": "No presell page activated"
+    },
+    {
+      "id": "C27",
+      "subject": "Hypnosis Live Price",
+      "claim": "Total Focus page displayed 24.44 USD deal 29.95 list",
+      "evidence_class": "seller_snapshot",
+      "source_id": "S14",
+      "status": "OBSERVED_NOT_REFERRAL_PRICE",
+      "limit_or_decision": "Bundle configurations differ; never offer as guaranteed"
+    },
+    {
+      "id": "C28",
+      "subject": "Hypnosis Live Benefit",
+      "claim": "Total Focus creates 100% concentration or reprograms brain",
+      "evidence_class": "seller",
+      "source_id": "S14",
+      "status": "UNSUBSTANTIATED_EXCLUDE",
+      "limit_or_decision": "No independent product-specific evidence"
+    },
+    {
+      "id": "C29",
+      "subject": "Hypnosis Live Returns",
+      "claim": "Official FAQ contains merchant refund terms",
+      "evidence_class": "seller",
+      "source_id": "S15",
+      "status": "SELLER_POLICY_CHECK_REQUIRED",
+      "limit_or_decision": "Read exact terms for SKU/referred purchase; no fulfillment proof"
+    },
+    {
+      "id": "C30",
+      "subject": "Brainwave Shots Feature",
+      "claim": "Focus Shot page advertises 15/30-minute audio variants",
+      "evidence_class": "seller",
+      "source_id": "S16",
+      "status": "SELLER_DESCRIPTION",
+      "limit_or_decision": "No independent efficacy"
+    },
+    {
+      "id": "C31",
+      "subject": "Brainwave Shots Benefit",
+      "claim": "Focus Shot activates brain frequencies and guarantees focus",
+      "evidence_class": "seller",
+      "source_id": "S16",
+      "status": "UNSUBSTANTIATED_EXCLUDE",
+      "limit_or_decision": "No product-specific trial; claims cannot be repeated"
+    },
+    {
+      "id": "C32",
+      "subject": "Affiliate Disclosure",
+      "claim": "Clear material commission disclosure beside outbound recommendation",
+      "evidence_class": "government_guidance",
+      "source_id": "S17",
+      "status": "REQUIRED_BEFORE_ACTIVATION",
+      "limit_or_decision": "A generic disclosure page alone is insufficient"
+    },
+    {
+      "id": "C33",
+      "subject": "Health Claims",
+      "claim": "Objective health benefit claims need appropriate scientific substantiation",
+      "evidence_class": "government_guidance",
+      "source_id": "S18",
+      "status": "REQUIRED_BEFORE_CLAIM",
+      "limit_or_decision": "Generic research is not product-specific"
+    },
+    {
+      "id": "C34",
+      "subject": "Owned Alternative",
+      "claim": "A currently payable rights-cleared FV Mind SKU exists",
+      "evidence_class": "commercial_private_required",
+      "source_id": "S7",
+      "status": "NOT_VERIFIED_HOLD",
+      "limit_or_decision": "Free Focus Fieldbook is not a paid SKU"
+    },
+    {
+      "id": "C35",
+      "subject": "Measurement",
+      "claim": "Affiliate outbound click proves paid order",
+      "evidence_class": "not_valid",
+      "source_id": "S17",
+      "status": "FALSE_EXCLUDE",
+      "limit_or_decision": "A click is not a purchase"
+    },
+    {
+      "id": "C36",
+      "subject": "Measurement",
+      "claim": "Realized net per 1000 qualified sessions computable now",
+      "evidence_class": "private_sales_data_required",
+      "source_id": "S13",
+      "status": "NOT_COMPUTABLE",
+      "limit_or_decision": "Missing qualified denominator and settled/returned revenue"
+    }
+  ],
+  "commercial_release_gates": [
+    {
+      "id": "G01",
+      "gate": "Publisher's legal account name accepted",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G02",
+      "gate": "Zen12-specific program/offer accessible in approved affiliate dashboard",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G03",
+      "gate": "Permission for organic-social referral channel",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G04",
+      "gate": "Permission for own website offer guide",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G05",
+      "gate": "Email permission if Dispatch ever references offer",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G06",
+      "gate": "Official approved creative/sales claims scoped",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G07",
+      "gate": "Unique issued actual affiliate URL verified",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G08",
+      "gate": "Exact paid checkout and country tax/currency verified",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G09",
+      "gate": "Return/cancellation/upsell terms confirmed",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G10",
+      "gate": "A genuinely sellable FV-owned Mind alternative ruled in or out with checkout proof",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G11",
+      "gate": "Audio file original-rights manifest approved",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "proof_required": true
+    },
+    {
+      "id": "G12",
+      "gate": "42-second film encoded and playable on native local player",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "proof_required": true
+    },
+    {
+      "id": "G13",
+      "gate": "Captions/transcript exact match and keyboard test",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "proof_required": true
+    },
+    {
+      "id": "G14",
+      "gate": "No-JS and screenreader tested on WordPress preview",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "proof_required": true
+    },
+    {
+      "id": "G15",
+      "gate": "360/390/768/1440/1920 layout/Lighthouse review",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "proof_required": true
+    },
+    {
+      "id": "G16",
+      "gate": "Existing Jetpack lead confirmation tested consent-safely",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "proof_required": true
+    },
+    {
+      "id": "G17",
+      "gate": "Grok actual immutable asset IDs and rights independently verified",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "proof_required": true
+    },
+    {
+      "id": "G18",
+      "gate": "First-party campaign attribution/consent plan accepted by Claude",
+      "status": "HOLD",
+      "owner": "Claude/Praxxis",
+      "proof_required": true
+    },
+    {
+      "id": "G19",
+      "gate": "Affiliate_outbound tracked only if consent and accepted measurement contract",
+      "status": "HOLD",
+      "owner": "Claude/Praxxis",
+      "proof_required": true
+    },
+    {
+      "id": "G20",
+      "gate": "Merchant-confirmed attributed transaction and refund/fee reconciliation",
+      "status": "HOLD",
+      "owner": "Claude/Praxxis",
+      "proof_required": true
+    },
+    {
+      "id": "G21",
+      "gate": "Founder production commercialization approval",
+      "status": "HOLD",
+      "owner": "Founder/Site QA",
+      "proof_required": true
+    },
+    {
+      "id": "G22",
+      "gate": "Site QA editorial/security approval",
+      "status": "HOLD",
+      "owner": "Founder/Site QA",
+      "proof_required": true
+    },
+    {
+      "id": "G23",
+      "gate": "Disclosure/health-claim reviewer approval",
+      "status": "HOLD",
+      "owner": "Founder/Site QA",
+      "proof_required": true
+    },
+    {
+      "id": "G24",
+      "gate": "No PR #49 / PR #172 / Issue #150 ownership conflict",
+      "status": "HOLD",
+      "owner": "Founder/Site QA",
+      "proof_required": true
+    }
+  ],
+  "disclosure_proposal": "If you purchase through an approved link on this page, Final Vestige may earn a commission at no additional cost to you.",
+  "active_merchant_urls": [],
+  "issued_partner_url": null,
+  "verified_publisher_acceptance": false,
+  "merchant_confirmed_orders": null,
+  "confirmed_revenue": null,
+  "notes": [
+    "All seller representations are attributed; unsupported health/cognitive claims excluded.",
+    "Specific product details confirmed only from exact official seller pages, not general Inspire3 catalog alone.",
+    "Existing FV free Focus Funnel retained; no paid product invented.",
+    "R398 doorway article overlaps published Nov 2 change-blindness post: DO NOT publish as competing canonical without editorial consolidation review."
+  ]
+}
