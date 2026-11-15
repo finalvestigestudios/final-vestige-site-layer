@@ -18,10 +18,24 @@ _WINDOWS_DEVICES = frozenset({
 _WINDOWS_FORBIDDEN = frozenset('<>:"/\\|?*')
 
 
+def _is_invisible_combining_mark(codepoint: int) -> bool:
+    """Disallow display-ignorable Mn marks, not visible accent marks.
+
+    Unicode category ``Mn`` alone is too broad: it includes ordinary
+    diacritics. These specific codepoints alter shaping/selection while
+    commonly rendering no visible glyph in financial evidence filenames.
+    """
+    return (codepoint == 0x034F  # Combining grapheme joiner
+            or 0x180B <= codepoint <= 0x180F  # Mongolian variation selectors
+            or 0xFE00 <= codepoint <= 0xFE0F  # BMP variation selectors
+            or 0xE0100 <= codepoint <= 0xE01EF)  # Supplement selectors
+
+
 def canonical_evidence_label(name: str) -> str:
     """Return one portable, ASCII-JSON-encoded evidence basename.
 
-    Refuse invisible formatting, controls, surrogates, noncharacters, and path
+    Refuse invisible formatting and variation marks, controls, surrogates,
+    noncharacters, and path
     separators so human reviewers cannot confuse distinct evidence labels.
     Windows device aliases, alternate-data-stream punctuation and nonportable
     trailing/leading spaces are also refused. Visible international filenames
@@ -36,6 +50,7 @@ def canonical_evidence_label(name: str) -> str:
         number = ord(character)
         kind = unicodedata.category(character)
         if (kind in {"Cc", "Cf", "Cs", "Zl", "Zp"}
+                or _is_invisible_combining_mark(number)
                 or (character.isspace() and character != " ")
                 or 0xFDD0 <= number <= 0xFDEF
                 or (number & 0xFFFE) == 0xFFFE):
