@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Final Vestige Dispatch — R371 evidence and release reviewer</title>
+<style>
+:root{color-scheme:light;background:#f6f5f2;color:#20201e;font:16px/1.55 system-ui,-apple-system,sans-serif}body{margin:0 auto;padding:24px;max-width:800px}header{border-bottom:2px solid #252722;padding-bottom:24px}h1{font-size:clamp(1.65rem,3vw,2.2rem);line-height:1.2}h2{font-size:1.15rem;margin-top:32px}p{max-width:70ch}table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #b6b2a9;padding:11px 7px;text-align:left;vertical-align:top}th{background:#eeebe4}code{overflow-wrap:anywhere}a{color:#174c73}a:focus-visible{outline:3px solid #d09c22;outline-offset:3px}.warning{border-left:4px solid #533f2a;padding:12px 16px;background:#eeeae1}small{color:#555}</style></head><body>
+<header><p>FINAL VESTIGE STUDIOS · DISPATCH · READER-ONLY</p><h1>A visible download is not a verified signup</h1><p><strong>R371 reviewer evidence · November 14, 2026 Pacific</strong></p></header>
+<main>
+<p class="warning"><strong>All six newsletters remain UNSENT and HOLD.</strong> Commercial #03 and #05 additionally remain blocked by merchant authorization. This is a static offline reviewer document—not a live email, signup, analytics dashboard or production preview.</p>
+<h2>What the current Focus script does</h2>
+<table><caption>Offline browser-state interpretation, not WordPress server confirmation</caption><thead><tr><th scope="col">Client example</th><th scope="col">Gift panel</th><th scope="col">Confirmed subscriber?</th></tr></thead><tbody>
+<tr><td><code>?subscribe=unconfirmed</code></td><td>Visible</td><td>Unknown</td></tr>
+<tr><td><code>?subscribe=failed</code></td><td>Visible</td><td>Unknown</td></tr>
+<tr><td><code>?subscribe=error</code></td><td>Hidden</td><td>Unknown</td></tr>
+<tr><td>Container class <code>is-subscriber</code></td><td>Visible</td><td>Unknown</td></tr>
+<tr><td>No status</td><td>Hidden</td><td>Unknown</td></tr>
+</tbody></table>
+<h2>Reconcile without guessing</h2>
+<p>Jetpack classified 3 total, 3 confirmed and 2 unconfirmed. WordPress Stats listed 3 WordPress.com followers and 0 direct email followers. These are different surfaces; eligible inbox count remains unknown. A real provider-subscription filter and private, deduplicated confirmation receipts are required.</p>
+<h2>Revenue path to verify</h2>
+<p>Grok asset → qualified visitor → Focus → provider-confirmed reader → fieldbook delivered → independent Zen12 guide (only after account-specific EMAIL approval) → merchant-confirmed paid sale less refunds and fees. Do not equate a PDF click, email click or affiliate outbound click with a purchase.</p>
+<h2>Source and test trail</h2>
+<p><a href="https://finalvestige.com/focus/">Focus page</a> · <a href="https://finalvestige.com/editorial-standards/">Editorial Standards</a> · <a href="https://wordpress.com/support/subscribers/">WordPress subscriber definitions</a> · <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174">Dispatch master issue</a>.</p>
+<p>Local test: <code>node --test dispatch/r371/focus_gift_probe.test.cjs</code>. No external libraries, scripts, fonts, images or tracking pixels are required for this reviewer page.</p>
+</main><footer><small>Original campaign not modified. No live publisher email footer has been verified.</small></footer></body></html>

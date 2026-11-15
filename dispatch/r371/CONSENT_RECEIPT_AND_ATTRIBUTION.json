@@ -1,0 +1,79 @@
+{
+  "schema": "fv_dispatch_focus_consent_qa_v1",
+  "edition": "R371 2026-11-14 PT",
+  "state": "REVIEW_ONLY_NO_INSTRUMENTATION_DEPLOYED",
+  "authority": "WordPress Jetpack provider-confirmed email subscription receipt; never browser query, CSS or click",
+  "allowed_event": "confirmed_signup",
+  "required_evidence": [
+    "provider_id_or_private_stable_hash",
+    "confirmed_at_utc",
+    "email_subscription_status_subscribed",
+    "newsletter_site_blog_id_256784396",
+    "provider_subscription_event_id_or_equivalent_dedupe_key"
+  ],
+  "excluded_evidence": [
+    "focus_pdf_click",
+    "client_subscribe_query",
+    "is-subscriber_css_class",
+    "form_submit",
+    "thank_you_visible",
+    "wpcom_follower_count",
+    "email_open",
+    "cta_click",
+    "unconfirmed_record"
+  ],
+  "dedupe": "One confirmed_signup per unique provider confirmation event; no client-only confirmation. If provider events unavailable: event status UNKNOWN, not 0 and not true.",
+  "privacy": "Never expose email, name, source-IP, confirmation URL tokens, raw individual subscription history in public GitHub or reports.",
+  "attribution": {
+    "creator_owner": "Grok/Praxxis, TASK-008; no social content edits",
+    "utm_source": "the real network e.g. youtube|tiktok, if present",
+    "utm_medium": "organic_social",
+    "utm_campaign": "mind_pilot_2026_11 when actually approved",
+    "utm_content": "real immutable Grok asset_id; never fabricate",
+    "transport": "Claude existing analytics lane, no duplicate tags or tracking scripts",
+    "status": "NO PRODUCTION INSTRUMENTATION CHANGED"
+  },
+  "funnel_steps": [
+    "qualified_human_session",
+    "relevant_landing_visit",
+    "relevant_guide_cta_click",
+    "provider_confirmed_signup_if_applicable",
+    "merchant_outbound_if_authorized",
+    "merchant_confirmed_paid_order",
+    "refunds_and_fees",
+    "realized_net_revenue"
+  ],
+  "revenue_formula": "1000 * independently_settled_net_revenue / qualified_human_sessions; UNKNOWN if either input unavailable or denominator 0",
+  "cohort_windows_days": [
+    7,
+    30
+  ],
+  "source_of_truth_gates": {
+    "subscriptions_total": 3,
+    "subscriptions_confirmed": 3,
+    "subscriptions_unconfirmed": 2,
+    "wpcom_followers": 3,
+    "direct_email_followers": 0,
+    "email_eligible_inboxes": "UNKNOWN",
+    "actual_fieldbook_receipt": "UNVERIFIED",
+    "actual_live_guest_download": "UNVERIFIED",
+    "native_jetpack_email_preview": "UNVERIFIED",
+    "legally_qualified_fv_postal_and_unsubscribe": "UNVERIFIED",
+    "merchant_sku_email_permission": "UNVERIFIED",
+    "merchant_paid_sales": "UNVERIFIED"
+  },
+  "six_issue_mix": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_hard_hold": [
+      3,
+      5
+    ],
+    "all": "HOLD_UNSENT",
+    "alternates": "NOT_ADOPTED"
+  }
+}
