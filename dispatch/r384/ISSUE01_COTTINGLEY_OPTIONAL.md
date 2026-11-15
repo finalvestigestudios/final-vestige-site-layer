@@ -1,0 +1,41 @@
+# THE DISPATCH — OPTIONAL ISSUE 01
+
+**NOT ADOPTED · HOLD UNSENT · review specimen only. PR #175 originals are unchanged.**
+
+**Subject:** The camera was real. The fairies were cardboard.
+
+**Proposed preheader (native Jetpack mapping unverified):** A 1917 photograph, a 1983 letter, and what pictures cannot prove.
+
+**Edition:** editorial, no affiliate. **One primary CTA:** published first-party Change Blindness investigation.
+
+---
+
+In July 1917, a camera at Cottingley Beck recorded a girl standing beside four dancing fairies. The photograph looked like evidence. For decades, some people believed the picture had captured something supernatural.
+
+The camera was real. The plate was real. Science Museum Group still preserves the first photograph and the type of camera used for the first two pictures. But an authentic exposure does not mean everything arranged in front of the lens was what it appeared to be.
+
+Cousins Elsie Wright and Frances Griffiths made five fairy photographs. The author Arthur Conan Doyle and spiritualist Edward Gardner helped carry the pictures into a wider argument about the unseen. By 1983, Elsie described using drawings cut from paper and fixed in place with hatpins. The problem was not a sophisticated darkroom alteration. It was a staged scene.
+
+Some later photographic checking looked for interference with plates or cameras. That could not settle what the camera had been pointed toward. An image can be physically unaltered and still misleading.
+
+The surviving record is not perfectly tidy. Frances later continued to defend one picture as genuine, while Elsie said all five were staged. A careful investigation preserves that disagreement rather than inventing a single unanimous confession. Still, the surviving camera, pictures, drawings and later testimony make the supernatural interpretation untenable as proof.
+
+Try this with your next startling image. Write three separate sentences: (1) what can actually be seen; (2) what you know about who made it and how; and (3) what conclusion you have added. If you cannot fill the second sentence, that is a reason to investigate, not a reason to stop looking.
+
+**Continue investigating:** [Change Blindness: Why You Miss Big Changes Right in Front of You](https://finalvestige.com/2026/11/02/change-blindness/).
+
+No paid offer appears in this editorial candidate. The separately reserved Issues 03 and 05 remain held for merchant permission. This is not proof of the value of any modern audio product.
+
+## Documentary sources
+
+1. [Science Museum Group — Alice and the Fairies (July 1917)](https://collection.sciencemuseumgroup.org.uk/objects/co469844/alice-and-the-fairies)
+
+2. [Science Museum Group — Midg camera used in 1917](https://collection.sciencemuseumgroup.org.uk/objects/co469836/midg-camera-used-to-make-the-first-two-cottingley-fairies-photographs-in-1917-quarter-plate-camera-plate-camera)
+
+3. [National Science and Media Museum — the 1983 correspondence and photograph history](https://blog.scienceandmediamuseum.org.uk/the-story-of-the-cottingley-fairies-shows-that-image-manipulation-is-nothing-new/)
+
+4. [Science Museum Group — Elsie Wright's drawings](https://collection.sciencemuseumgroup.org.uk/objects/co469867/cottingley-fairies)
+
+**Rights:** No protected museum photograph embedded; collection metadata does not license the photographs.
+
+HOLD: Final Vestige business postal address and genuine native Jetpack unsubscribe remain unverified. This is a reviewer artifact, not a sendable email.

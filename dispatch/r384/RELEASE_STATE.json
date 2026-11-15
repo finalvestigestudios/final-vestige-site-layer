@@ -1,0 +1,76 @@
+{
+  "sprint": "R384",
+  "observed_utc": "2026-11-15T18:36:29Z",
+  "original_pr": 175,
+  "original_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "parent_pr": 2647,
+  "parent_sha": "e431bcea34d5dade1f8b13733afbe7b9f8e091bf",
+  "newsletter": {
+    "enabled": true,
+    "auto_send": false,
+    "format": "full",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "followers_email": 0,
+    "followers_wpcom": 3,
+    "unique_receiving_inboxes": null,
+    "welcome_configured": true,
+    "welcome_received_verified": false,
+    "native_preview_verified": false,
+    "physical_address_verified": false,
+    "unsubscribe_verified": false
+  },
+  "campaign": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial": [
+      3,
+      5
+    ],
+    "held": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "merchant_held": [
+      3,
+      5
+    ],
+    "copy_held": [
+      4
+    ],
+    "optional_adopted": false
+  },
+  "merchant": {
+    "publisher_account_approved": false,
+    "email_channel_permission": false,
+    "approved_creative": false,
+    "earning_url_issued": false,
+    "guide_zen12_live": false,
+    "guide_total_focus_live": false
+  },
+  "attribution": {
+    "confirmed_signup_provider_verified": false,
+    "source_to_order_join_verified": false,
+    "settlement_ledger_verified": false,
+    "audited_human_sessions": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000": "NOT_COMPUTABLE"
+  },
+  "permissions": {
+    "send": false,
+    "test_send": false,
+    "publish": false,
+    "merge": false,
+    "deployment": false,
+    "affiliate_activation": false
+  }
+}
