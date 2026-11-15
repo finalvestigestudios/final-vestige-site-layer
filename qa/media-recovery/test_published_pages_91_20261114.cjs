@@ -1,0 +1,22 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict');
+const {verify,load}=require('./validate_published_pages_91_20261114.cjs');
+test('all 91 nonhome page records',()=>{const r=verify(load());assert.equal(r.ok,true,JSON.stringify(r.errors));assert.equal(r.summary.external,48)});
+function reject(name,f){test('reject '+name,()=>{const d=load();f(d);assert.equal(verify(d).ok,false)})}
+const page=d=>d[0].rows.find(p=>p.id===78);
+reject('duplicate page',d=>d[0].rows[0].id=d[0].rows[1].id);
+reject('invented status',d=>page(d).images[2].guest_status=200);
+reject('rights',d=>page(d).images[2].rights_cleared=true);
+reject('affiliate cache',d=>page(d).images[3].cache_authorized=true);
+reject('product URL drift',d=>page(d).images[2].src='https://example.com/other.jpg');
+reject('affiliate URL drift',d=>page(d).images[3].src='https://www.awin1.com/cshow.php?different');
+reject('claimed savings',d=>d[1].claimed_76_percent_wire_savings_verified=true);
+reject('claimed broken',d=>d[1].claimed_42_broken_verified=true);
+reject('slot drift',d=>page(d).images[2].slot='78:22');
+reject('missing page',d=>d[5].rows.pop());
+reject('invented wire bytes',d=>d[4].rows.find(p=>p.id===1579).images[0].guest_bytes=999);
+reject('pilot browser claim',d=>d[6].rows[0].images[0].guest_broken=true);
+reject('pilot rehost',d=>d[6].rows[0].images[0].rehost_authorized=true);
+reject('pilot origin',d=>d[6].rows[0].images[0].origin_group='first_party');
+reject('pilot overlap',d=>d[6].rows[0].id=d[0].rows[0].id);
+reject('missing image',d=>page(d).images.pop());
