@@ -11,7 +11,7 @@ const [a,b,hub,svg,vtt,matrixRaw,guide,acceptance]=await Promise.all([
  'BEFORE_YOU_PAY_FOR_FOCUS.md','CONVERSION_RELEASE_AND_GROK_CROSSWALK.md'
 ].map(read));
 let checks=0; const ok=(v,msg)=>{assert.ok(v,msg);checks++};
-const reject=x=>/\<script\b|on(?:load|error|click|mouseover)\s*=|<iframe\b|<form\b|autoplay\b|href\s*=\s*["'](?:javascript:|data:)/i.test(x);
+const reject=x=>/\<script\b|on(?:load|error|click|mouseover)\s*=|<iframe\b|<form\b|<(?:video|audio)\b[^>]*\bautoplay\b|href\s*=\s*["'](?:javascript:|data:)/i.test(x);
 const article=s=>(s.match(/<article>([\s\S]*?)<\/article>/)||[])[1];
 const film=s=>(s.match(/<details class="film"[\s\S]*?<\/details>/)||[])[0];
 const removeFilm=s=>s.replace(/<details class="film"[\s\S]*?<\/details>/,'');
