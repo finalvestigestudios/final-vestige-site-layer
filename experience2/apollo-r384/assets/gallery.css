@@ -35,3 +35,21 @@
  .fv-r384__drawer { display:none!important; }
  .fv-r384__print-custody { display:block!important; }
 }
+
+/* R388: explicit two-publication source index with native no-JavaScript deep links.
+   Never imply six independent publications or a speculative geographic relationship. */
+.fv-r384__source-index{border:1px solid var(--edge);padding:clamp(1rem,2.5vw,1.75rem);margin-block:2rem;background:#1c2529}
+.fv-r384__source-index>p{max-width:78ch}
+.fv-r384__source-index h3{font-size:clamp(1.4rem,2.3vw,2rem);margin:.3rem 0 1rem}
+.fv-r384__source-index h4{font-size:1.2rem;margin:.1rem 0 .6rem}
+.fv-r384__source-groups{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.1rem}
+.fv-r384__source-group{min-width:0;padding:1rem;border-left:3px solid var(--accent);background:#263036}
+.fv-r384__source-group p{margin:.5rem 0}
+.fv-r384__source-group ol{margin:.7rem 0 0;padding-left:1.5rem}
+.fv-r384__source-group li{padding:.16rem 0}
+.fv-r384__source-group a{display:inline-block;min-height:44px;padding:.32rem 0}
+.fv-r384__card[id]{scroll-margin-block-start:1.5rem}
+.fv-r384__card:target{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:740px){.fv-r384__source-groups{grid-template-columns:1fr}}
+@media(forced-colors:active){.fv-r384__source-index,.fv-r384__source-group{border-color:CanvasText}.fv-r384__card:target{outline-color:Highlight}}
+@media print{.fv-r384__source-index{padding:.3rem;margin:.8rem 0}.fv-r384__source-groups{display:block}.fv-r384__source-group{padding:.2rem;margin:.2rem 0}.fv-r384__source-group ol{display:none}.fv-r384__card:target{outline:0}}
