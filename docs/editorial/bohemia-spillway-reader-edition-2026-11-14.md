@@ -1,5 +1,5 @@
 # The Spillway That Kept Its Names
-*Final Vestige Investigations · reader-facing revision 23 · 14 November 2026 · REVIEW DRAFT — DO NOT PUBLISH*
+*Final Vestige Investigations · reader-facing revision 24 · 15 November 2026 · REVIEW DRAFT — DO NOT PUBLISH*
 
 **Deck:** Louisiana took land for a flood-control outlet, earned millions from its mineral rights, and later ordered parts of it returned. The courts settled questions of authority. The surviving records are less clear about who received the money.
 
@@ -242,7 +242,12 @@ There is an especially useful warning inside the figures. The management discuss
 [**Original evidence figure — the financing authorization and the audited ledger**](./assets/bohemia-2005-2006-financing-audit-v23.svg)  
 *© Final Vestige Studios, November 14, 2026. Studio-authored source-derived timeline, not archival photography or a reconstruction. FY2006 Orleans Levee District report, printed pp. 4, 10, 45, 49, 53–54. Original page images verified. It does not portray an executed bond, bank transfer or recipient payment.*
 
-The June 2007 audited report then used a broader **Legal Settlements** classification for $292,522. Because the category is no longer explicitly Bohemia-specific, it cannot be used as if it were a continuing single-purpose escrow series. [9]
+The June 2007 audited report then used a broader **Legal Settlements** classification for **$292,522**, reported as funds set aside for legal settlement payments within the General Fund. The source does not explicitly identify the whole balance as Bohemia escrow. The year ended **June 30, 2008** brought another audited note: **$333,218** in that same broad category. Both figures appear on **printed page 46** of their respective official Orleans Levee District reports, visually verified against the original PDF pages. They follow the **$339,407** Bohemia-specific reserve reported for June 2006, but do not form a clean Bohemia-only three-year accounting series. [9][17]
+
+The $40,696 increase from the 2007 reported legal-settlement balance to the 2008 one is arithmetic, not an identified mineral-royalty receipt, loan payment, escrow transfer or reimbursement to an heir. Even a year-end reserve properly classified on an audited balance sheet cannot disclose which claimant was paid or why the restricted balance changed. The underlying fund ledger, escrow-bank statements and settlement voucher file would have to supply that connection. [9][17]
+
+[**Original evidence figure — the label changes, 2006–2008**](./assets/bohemia-2006-2008-restricted-funds-labels-v24.svg)  
+*© Final Vestige Studios, November 15, 2026. Original source-derived SVG, based on the Orleans Levee District's FY2006 printed p.49, FY2007 printed p.46 and FY2008 printed p.46; scanned original FY2007 p.46 and FY2008 p.46 individually inspected on November 15, 2026. For 2007–2008, the category is broader **legal settlement payments**, not identified as a Bohemia-only reserve. No payment inference. Local 390px and 780px standalone render inspected; WordPress-theme visual inspection and upload not completed.*
 
 [**Original evidence figure — reserve labels, 2004–2007**](./assets/bohemia-2004-2006-reserve-predecessor-2026-11-13.svg)  
 *Final Vestige Studios, 2026. Based on original annual financial reports. The figure compares 2004–2006 Bohemia-labelled reserves only; the 2007 broader legal-settlements category requires a separate label and explanation. Original artwork; not archival photography.*
