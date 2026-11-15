@@ -1,0 +1,75 @@
+{
+  "scope": "Local Chromium offline HTML specimen only; NOT WordPress Jetpack renderer, NOT delivered MIME",
+  "tested_source_git_blob": "fefb86f8356cdd984020eb2010f367aee3b383dd",
+  "method": "Playwright sync with /usr/bin/chromium; page.set_content of exact GitHub blob, JS-free HTML",
+  "initial_failure": "At 320/360/390px source blob 8230238c had 399px document width: long hard-stop unsub placeholder. Fixed overflow-wrap on the footer; then 320px 200% zoom still overflowed 327px due to table cell padding. Reduced responsive-safe inline padding; current blob passes.",
+  "normal_viewports": [
+    {
+      "width_px": 320,
+      "document_scroll_width_px": 320,
+      "passed": true
+    },
+    {
+      "width_px": 360,
+      "document_scroll_width_px": 360,
+      "passed": true
+    },
+    {
+      "width_px": 390,
+      "document_scroll_width_px": 390,
+      "passed": true
+    },
+    {
+      "width_px": 768,
+      "document_scroll_width_px": 768,
+      "passed": true
+    },
+    {
+      "width_px": 1024,
+      "document_scroll_width_px": 1024,
+      "passed": true
+    },
+    {
+      "width_px": 1440,
+      "document_scroll_width_px": 1440,
+      "passed": true
+    }
+  ],
+  "zoom_200_percent": [
+    {
+      "viewport_width_px": 320,
+      "document_scroll_width_px": 320,
+      "passed": true
+    },
+    {
+      "viewport_width_px": 360,
+      "document_scroll_width_px": 360,
+      "passed": true
+    },
+    {
+      "viewport_width_px": 390,
+      "document_scroll_width_px": 390,
+      "passed": true
+    },
+    {
+      "viewport_width_px": 768,
+      "document_scroll_width_px": 768,
+      "passed": true
+    }
+  ],
+  "checks": [
+    "no horizontal scroll",
+    "one primary internal CTA, two source links",
+    "no external image, JS or form",
+    "legal hard-stop placeholders visible",
+    "no pageerror"
+  ],
+  "browser_checks_passed": 10,
+  "browser_checks_total": 10,
+  "limitations": [
+    "No native WordPress Preview email",
+    "No actual inbox rendering or subject/preheader verification",
+    "No real browser mobile-device simulation; only Chromium viewports",
+    "Legal placeholder is intentionally NOT a valid published mailing address or functioning opt-out"
+  ]
+}

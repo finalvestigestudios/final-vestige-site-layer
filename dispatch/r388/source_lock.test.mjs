@@ -1,0 +1,16 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {validateCandidate,reviewProofs,classifyMerchantEvidence} from './source_lock.mjs';
+import copy from './COPY_METADATA.json' with {type:'json'};
+const ok=(label,v,f)=>test(label,()=>assert.equal(v,f));
+ok('valid offline candidate',validateCandidate(copy).status,'OFFLINE_COPY_REVIEW_ONLY');
+ok('bad subject prohibited',validateCandidate({...copy,subject:'Guaranteed cure today'}).status,'HOLD_COPY');
+ok('short subject',validateCandidate({...copy,subject:'No'}).status,'HOLD_COPY');
+ok('too many CTAs',validateCandidate({...copy,primary_ctas:[copy.primary_ctas[0],copy.primary_ctas[0]]}).status,'HOLD_COPY');
+ok('merchant URL in editorial',validateCandidate({...copy,merchant_urls:['https://zen12.com/']}).status,'HOLD_COPY');
+ok('insecure source',validateCandidate({...copy,source_urls:['http://x','https://example.org']}).status,'HOLD_COPY');
+ok('mailing address gate',validateCandidate({...copy,postal_placeholder:false}).status,'HOLD_COPY');
+ok('unsubscribe gate',validateCandidate({...copy,unsubscribe_placeholder:false}).status,'HOLD_COPY');
+ok('unverified native proof',reviewProofs({},'editorial').state,'HOLD_UNSENT');
+ok('named acceptance alone insufficient',classifyMerchantEvidence({named_affiliate_account_accepted:true}).status,'HOLD_MERCHANT');
+ok('commercial flags empty',reviewProofs({},'commercial').state,'HOLD_UNSENT');
