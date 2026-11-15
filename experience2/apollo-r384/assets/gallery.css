@@ -27,3 +27,11 @@
  .fv-r384__print-custody p { margin:.25rem 0; }
  .fv-r384__source a::after { content:" — " attr(href); display:block; font-size:.78rem; line-height:1.4; overflow-wrap:anywhere; word-break:break-all; }
 }
+
+/* R387: printed custody must not depend on how many interactive drawers were open.
+   R386 printed both the native open details and the sealed print mirror (up to 12/6).
+   Paper always uses the single complete print mirror; screen/keyboard behavior remains intact. */
+@media print {
+ .fv-r384__drawer { display:none!important; }
+ .fv-r384__print-custody { display:block!important; }
+}
