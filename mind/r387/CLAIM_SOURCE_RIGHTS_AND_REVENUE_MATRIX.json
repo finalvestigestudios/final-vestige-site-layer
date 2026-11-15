@@ -1,0 +1,534 @@
+{
+  "artifact": "R387 / unpublished source-only audit",
+  "checked_on": "2026-11-14",
+  "version": 1,
+  "offer": "Zen12 Premium (held); no authorized FV paid Mind product established",
+  "sources": {
+    "bot": "https://doi.org/10.1038/35784",
+    "roh": "https://doi.org/10.1371/journal.pone.0021659",
+    "lush": "https://doi.org/10.1525/collabra.325",
+    "slater": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9244625/",
+    "meta": "https://doi.org/10.1177/17470218231156849",
+    "slime": "https://doi.org/10.1177/20416695221137731",
+    "zen": "https://zen12.com/",
+    "hyp": "https://hypnosislive.com/",
+    "bws": "https://brainwaveshots.com/",
+    "cat": "https://inspire3.com/",
+    "portal": "https://affiliates.inspire3.com/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "puy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/"
+  },
+  "claims": [
+    {
+      "id": "M01",
+      "claim": "Synchronous matched visual/tactile stimulation can induce reports of rubber-hand ownership",
+      "evidence_state": "independent-lab",
+      "source": "https://doi.org/10.1038/35784",
+      "publication_rule": "ALLOW narrowly, methods-bound"
+    },
+    {
+      "id": "M02",
+      "claim": "The rubber hand illusion shows literally any object can become a body part",
+      "evidence_state": "unsupported-inference",
+      "source": "https://doi.org/10.1038/35784",
+      "publication_rule": "EXCLUDE"
+    },
+    {
+      "id": "M03",
+      "claim": "Rubber-hand results prove that external energy can control bodily sensations",
+      "evidence_state": "unsupported-paranormal",
+      "source": "https://doi.org/10.1038/35784",
+      "publication_rule": "EXCLUDE"
+    },
+    {
+      "id": "M04",
+      "claim": "Proprioceptive drift always means felt ownership",
+      "evidence_state": "contradicted-oversimplification",
+      "source": "https://doi.org/10.1371/journal.pone.0021659",
+      "publication_rule": "EXCLUDE"
+    },
+    {
+      "id": "M05",
+      "claim": "Proprioceptive drift and ownership reports can dissociate",
+      "evidence_state": "independent-lab",
+      "source": "https://doi.org/10.1371/journal.pone.0021659",
+      "publication_rule": "ALLOW with design limits"
+    },
+    {
+      "id": "M06",
+      "claim": "Demand characteristics/suggestion may complicate ownership questionnaires",
+      "evidence_state": "contested-methodological-claim",
+      "source": "https://doi.org/10.1525/collabra.325",
+      "publication_rule": "ATTRIBUTE to researcher; include disagreement"
+    },
+    {
+      "id": "M07",
+      "claim": "Multisensory synchrony effect persists across hypnotisability scores in analyzed data",
+      "evidence_state": "independent-reanalysis",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9244625/",
+      "publication_rule": "ALLOW within reanalysis; not product evidence"
+    },
+    {
+      "id": "M08",
+      "claim": "Hypnotisability alone explains every rubber-hand report",
+      "evidence_state": "not-supported-by-reanalysis",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9244625/",
+      "publication_rule": "EXCLUDE"
+    },
+    {
+      "id": "M09",
+      "claim": "Embodiment/drift correlations are mixed across studies",
+      "evidence_state": "review-context",
+      "source": "https://doi.org/10.1177/17470218231156849",
+      "publication_rule": "ALLOW, no invented pooled statistic"
+    },
+    {
+      "id": "M10",
+      "claim": "Slime-hand experience uses a different mirror-based illusion",
+      "evidence_state": "independent-lab",
+      "source": "https://doi.org/10.1177/20416695221137731",
+      "publication_rule": "ALLOW as related, not equivalent protocol"
+    },
+    {
+      "id": "M11",
+      "claim": "Puységur archive has named cases, failures, documentary records and consent concerns",
+      "evidence_state": "historical-documentary",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "publication_rule": "ALLOW attribution; not animal-magnetism proof"
+    },
+    {
+      "id": "M12",
+      "claim": "Magnetic somnambulism establishes a modern therapeutic technique",
+      "evidence_state": "unsupported-bridge",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "publication_rule": "EXCLUDE"
+    },
+    {
+      "id": "M13",
+      "claim": "Final Vestige has an existing 52-page free Focus Fieldbook",
+      "evidence_state": "first-party-current-route",
+      "source": "https://finalvestige.com/focus/",
+      "publication_rule": "ALLOW; do not call it paid"
+    },
+    {
+      "id": "M14",
+      "claim": "The free Fieldbook is a validated medical therapy",
+      "evidence_state": "unsupported-first-party",
+      "source": "https://finalvestige.com/focus/",
+      "publication_rule": "EXCLUDE"
+    },
+    {
+      "id": "Z01",
+      "claim": "Zen12 Premium seller describes 12 levels",
+      "evidence_state": "seller-only-spec",
+      "source": "https://zen12.com/",
+      "publication_rule": "ALLOW as 'seller describes'"
+    },
+    {
+      "id": "Z02",
+      "claim": "Zen12 Premium seller describes 48 MP3s",
+      "evidence_state": "seller-only-spec",
+      "source": "https://zen12.com/",
+      "publication_rule": "ALLOW as 'seller describes'"
+    },
+    {
+      "id": "Z03",
+      "claim": "Zen12 Premium includes supporting guides, level audio and bonus materials",
+      "evidence_state": "seller-only-spec",
+      "source": "https://zen12.com/",
+      "publication_rule": "ALLOW with precise seller attribution"
+    },
+    {
+      "id": "Z04",
+      "claim": "Zen12 seller advertises one-year refund guarantee",
+      "evidence_state": "seller-only-policy",
+      "source": "https://zen12.com/",
+      "publication_rule": "ALLOW only as seller advertising; fulfillment UNTESTED"
+    },
+    {
+      "id": "Z05",
+      "claim": "Current exact referral checkout cost is $87 or $87.99",
+      "evidence_state": "unverified-price-drift",
+      "source": "https://zen12.com/",
+      "publication_rule": "EXCLUDE hard price from CTA pending checkout"
+    },
+    {
+      "id": "Z06",
+      "claim": "Each 12-minute Zen12 session matches 60-minute advanced meditation benefits",
+      "evidence_state": "unsubstantiated-efficacy",
+      "source": "https://zen12.com/",
+      "publication_rule": "EXCLUDE"
+    },
+    {
+      "id": "Z07",
+      "claim": "Zen12 will treat anxiety, insomnia or depression",
+      "evidence_state": "unsubstantiated-health",
+      "source": "https://zen12.com/",
+      "publication_rule": "EXCLUDE; no medical guarantees"
+    },
+    {
+      "id": "Z08",
+      "claim": "Zen12 is proven to permanently improve concentration or creativity",
+      "evidence_state": "unsubstantiated-cognition",
+      "source": "https://zen12.com/",
+      "publication_rule": "EXCLUDE"
+    },
+    {
+      "id": "Z09",
+      "claim": "A rubber-hand illusion result validates Zen12 audio",
+      "evidence_state": "inappropriate-evidence-transfer",
+      "source": "https://doi.org/10.1038/35784",
+      "publication_rule": "EXCLUDE"
+    },
+    {
+      "id": "Z10",
+      "claim": "The exact merchant checkout tax, upsell and refund processing are verified",
+      "evidence_state": "not-verified",
+      "source": "https://zen12.com/",
+      "publication_rule": "EXCLUDE; controlled checkout not executed"
+    },
+    {
+      "id": "H01",
+      "claim": "Hypnosis Live seller lists a catalog of 200+ MP3 sessions",
+      "evidence_state": "seller-only-spec",
+      "source": "https://hypnosislive.com/",
+      "publication_rule": "ALLOW only as attributed catalog statement"
+    },
+    {
+      "id": "H02",
+      "claim": "Hypnosis Live sale ending 30 June 2026 is currently applicable",
+      "evidence_state": "expired-or-stale-message",
+      "source": "https://hypnosislive.com/",
+      "publication_rule": "EXCLUDE; displayed 2026-06-30 expiry"
+    },
+    {
+      "id": "H03",
+      "claim": "Hypnosis Live guarantees psychological or financial improvement",
+      "evidence_state": "unsubstantiated-efficacy",
+      "source": "https://hypnosislive.com/",
+      "publication_rule": "EXCLUDE"
+    },
+    {
+      "id": "B01",
+      "claim": "Brainwave Shots seller lists individual audio products including Focus Shot",
+      "evidence_state": "seller-only-spec",
+      "source": "https://brainwaveshots.com/",
+      "publication_rule": "ALLOW only if exact offer verified"
+    },
+    {
+      "id": "B02",
+      "claim": "Brainwave Shots audio changes brain states instantly and cures conditions",
+      "evidence_state": "unsubstantiated-efficacy",
+      "source": "https://brainwaveshots.com/",
+      "publication_rule": "EXCLUDE"
+    },
+    {
+      "id": "A01",
+      "claim": "Public Inspire3 portal advertises network program and special earning link",
+      "evidence_state": "public-program",
+      "source": "https://affiliates.inspire3.com/",
+      "publication_rule": "ALLOW general only, no implied FV approval"
+    },
+    {
+      "id": "A02",
+      "claim": "Final Vestige has verified named affiliate approval for Zen12",
+      "evidence_state": "account-specific-unverified",
+      "source": "https://affiliates.inspire3.com/",
+      "publication_rule": "HARD HOLD"
+    },
+    {
+      "id": "A03",
+      "claim": "Final Vestige's website, TikTok, Shorts and email are approved promotional channels",
+      "evidence_state": "account-specific-unverified",
+      "source": "https://affiliates.inspire3.com/",
+      "publication_rule": "HARD HOLD"
+    },
+    {
+      "id": "A04",
+      "claim": "An exact Final Vestige earning URL is issued for this offer",
+      "evidence_state": "account-specific-unverified",
+      "source": "https://affiliates.inspire3.com/",
+      "publication_rule": "HARD HOLD"
+    },
+    {
+      "id": "A05",
+      "claim": "Publicly advertised commission figures apply to Final Vestige",
+      "evidence_state": "account-specific-unverified",
+      "source": "https://affiliates.inspire3.com/",
+      "publication_rule": "EXCLUDE"
+    },
+    {
+      "id": "C01",
+      "claim": "A nearby unambiguous commission disclosure must accompany any earning link",
+      "evidence_state": "regulatory-guidance",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "publication_rule": "REQUIRED if activated"
+    },
+    {
+      "id": "C02",
+      "claim": "Health and psychological efficacy need adequate relevant scientific substantiation",
+      "evidence_state": "regulatory-guidance",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "publication_rule": "REQUIRED before any claims"
+    },
+    {
+      "id": "C03",
+      "claim": "A click establishes a merchant-confirmed sale",
+      "evidence_state": "incorrect-metric",
+      "source": "https://affiliates.inspire3.com/",
+      "publication_rule": "EXCLUDE"
+    },
+    {
+      "id": "C04",
+      "claim": "Realized net revenue per 1000 qualified sessions is measurable now",
+      "evidence_state": "missing-data",
+      "source": "https://affiliates.inspire3.com/",
+      "publication_rule": "NOT COMPUTABLE"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "gate": "Named publisher contract or logged-in approval recorded",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G02",
+      "gate": "Permitted organic video channels confirmed",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G03",
+      "gate": "Permitted website presell channel confirmed",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G04",
+      "gate": "Permitted newsletter channel confirmed separately",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G05",
+      "gate": "Exact Zen12 offer/SKU confirmed",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G06",
+      "gate": "Merchant-issued tracking URL verified, no link cloaking",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G07",
+      "gate": "Approved creative and copy rights verified",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G08",
+      "gate": "Referral checkout region/currency/tax visible",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G09",
+      "gate": "Actual fulfillment verified without unauthorized purchase",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G10",
+      "gate": "Refund terms and request route verified",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G11",
+      "gate": "No stale urgency, fake countdown or savings",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G12",
+      "gate": "No transfer of unrelated cognitive/health research to branded claims",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G13",
+      "gate": "Text A and B substantive content parity",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G14",
+      "gate": "B film encoded before any live video A/B",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G15",
+      "gate": "Poster original and rights-cleared",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G16",
+      "gate": "Subtitles synced to actual film",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G17",
+      "gate": "Original complete transcript and no autoplay",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G18",
+      "gate": "360/390/768/1440/1920 responsive browser QA",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G19",
+      "gate": "Keyboard focus and screen reader review",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G20",
+      "gate": "Contrast and reduced-motion WCAG review",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G21",
+      "gate": "No-JS usable and direct path",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G22",
+      "gate": "Security/CSP and external link safety review",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G23",
+      "gate": "Visible commission disclosure beside approved earning link",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G24",
+      "gate": "Existing Jetpack only; no second signup",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G25",
+      "gate": "Consent and confirmed lead delivery tested",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G26",
+      "gate": "Real Grok asset_id/platform/source verified",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G27",
+      "gate": "Live destination matches promised creator topic",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G28",
+      "gate": "Source consent and privacy-safe attribution confirmed",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G29",
+      "gate": "Analytics event deduplication approved by Claude",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G30",
+      "gate": "affiliate_click not counted as paid sale",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G31",
+      "gate": "Partner postback/settlement evidence obtained",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G32",
+      "gate": "Refunds/fees and net revenue independently reconciled",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G33",
+      "gate": "7-day and 30-day tiny-sample warning configured",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G34",
+      "gate": "Founder commercial release approval",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G35",
+      "gate": "Site QA explicit release PASS",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    },
+    {
+      "id": "G36",
+      "gate": "No live WordPress edits or PR #49/#172/#150 overwrite",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently released/verified within this sprint"
+    }
+  ],
+  "commercial_snapshot": {
+    "offer": "Zen12 Premium",
+    "seller_display": "Public page rendered $87 on one current retrieval; prior dated audit $87.99. NOT a verified referred checkout price.",
+    "refund": "Seller-advertised one-year money-back guarantee; actual handling untested",
+    "publisher_approval": "NOT VERIFIED",
+    "earning_url": "WITHHELD",
+    "promotion_rights": "NOT VERIFIED",
+    "verified_paid_sale": "NONE",
+    "revenue_per_1000_qualified_sessions": "NOT COMPUTABLE"
+  },
+  "scope_ownership": {
+    "mind": "Drafts, claims, evidence, A/B acceptance",
+    "grok": "Media production/publication (not changed)",
+    "praxxis": "Creator QA/TASK-008 coordination",
+    "claude": "Production instrumentation and website implementation",
+    "siteqa": "Independent browser/claims/links review",
+    "founder": "Release and spending approval"
+  },
+  "non_claims": [
+    "No product use or personal testimonial",
+    "No clinically proven Zen12 result",
+    "No prices presented as checkout proof",
+    "No commissions or payout projected",
+    "No affiliate URLs issued or activated"
+  ]
+}
