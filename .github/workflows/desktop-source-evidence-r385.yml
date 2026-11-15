@@ -381,3 +381,14 @@ jobs:
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_native_wheel_owner_r436.py
           python -W error -m unittest discover -s products/desktop/tests -p test_native_wheel_focus_integration_r436.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_native_wheel_focus_integration_r436.py
+
+      - name: R438 native premium product identity at issuer, reservation and finalization
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_issuer_registry_native_product_r438.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_issuer_registry_native_product_r438.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_license_issuer_r12.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_license_issuer_r12.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_license_registry_r13.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_license_registry_r13.py
+          python -W error -m unittest discover -s products/desktop/tests -p test_entitlement_native_product_r422.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_entitlement_native_product_r422.py
