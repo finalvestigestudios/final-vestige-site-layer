@@ -1,0 +1,41 @@
+{
+  "as_of": "2026-11-15T19:31:21Z",
+  "newsletter": {
+    "enabled": true,
+    "auto_new_post": false,
+    "format": "full",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "wpcom_followers": 3,
+    "email_followers": 0,
+    "unique_deliverable_inboxes": "UNVERIFIED",
+    "welcome_received": "UNVERIFIED"
+  },
+  "products": [
+    {
+      "name": "Zen12",
+      "seller_page": "https://zen12.com/getstarted",
+      "public_listed_usd": 87.99,
+      "conditional_coupon_usd": 37,
+      "permission_email": "UNVERIFIED",
+      "earning_url": "UNVERIFIED"
+    },
+    {
+      "name": "Total Focus",
+      "seller_page": "https://hypnosislive.com/mental-skills/total-focus",
+      "retrieved_public_usd": 24.44,
+      "seller_duration_minutes": 33,
+      "seller_file_MB": 47,
+      "permission_email": "UNVERIFIED",
+      "earning_url": "UNVERIFIED"
+    }
+  ],
+  "status": {
+    "all_original": "HOLD_UNSENT",
+    "merchant_issues": "03 AND 05 HOLD_MERCHANT",
+    "original_04": "HOLD_COPY",
+    "optional": "NOT_ADOPTED",
+    "publisher_revenue_per_1000": "NOT_COMPUTABLE"
+  }
+}
