@@ -1,0 +1,477 @@
+{
+  "artifact": "FV_MIND_R389_CLAIM_RIGHTS_MATRIX",
+  "date": "2026-11-14",
+  "status": "UNPUBLISHED_DRAFT_HARD_HOLD",
+  "scope_note": "Sources checked on publicly accessible documents. Private partner acceptance and referred checkout NOT authenticated.",
+  "source_urls": {
+    "W1987": "https://doi.org/10.1037/0022-3514.53.1.5",
+    "W1994": "https://doi.org/10.1037/0033-295X.101.1.34",
+    "META2020": "https://doi.org/10.1177/1745691619898795",
+    "PUY": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "MES": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "CB": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "FOCUS": "https://finalvestige.com/focus/",
+    "LIB": "https://finalvestige.com/free-resources/",
+    "INSPIRE": "https://inspire3.com/",
+    "ZEN": "https://zen12.com/",
+    "ORDER": "https://zen12.com/getstarted",
+    "AFF": "https://affiliates.inspire3.com/",
+    "HL": "https://hypnosislive.com/",
+    "BWS": "https://brainwaveshots.com/",
+    "FTC1": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "FTC2": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "text": "White-bear task can precede later rebound in reported thoughts",
+      "classification": "RESEARCH_LIMITED",
+      "source": "https://doi.org/10.1037/0022-3514.53.1.5",
+      "disposition": "Use only for described conditions"
+    },
+    {
+      "id": "C2",
+      "text": "1987 report used verbalizations and bell rings",
+      "classification": "RESEARCH_LIMITED",
+      "source": "https://doi.org/10.1037/0022-3514.53.1.5",
+      "disposition": "These proxy private mental occurrences"
+    },
+    {
+      "id": "C3",
+      "text": "Specific distractor reduced later preoccupation",
+      "classification": "RESEARCH_LIMITED",
+      "source": "https://doi.org/10.1037/0022-3514.53.1.5",
+      "disposition": "Do not extrapolate to treatment"
+    },
+    {
+      "id": "C4",
+      "text": "Two-process ironic-monitor account is proposed theory",
+      "classification": "THEORY",
+      "source": "https://doi.org/10.1037/0033-295X.101.1.34",
+      "disposition": "Not directly observed brain mechanism"
+    },
+    {
+      "id": "C5",
+      "text": "2020 meta-analysis reviewed 31 eligible studies",
+      "classification": "ABSTRACT_REVIEWED",
+      "source": "https://doi.org/10.1177/1745691619898795",
+      "disposition": "Full text restricted"
+    },
+    {
+      "id": "C6",
+      "text": "Rebound observed regardless of cognitive load in review",
+      "classification": "ABSTRACT_REVIEWED",
+      "source": "https://doi.org/10.1177/1745691619898795",
+      "disposition": "Paradigm-bound"
+    },
+    {
+      "id": "C7",
+      "text": "Immediate enhancement found under added cognitive load",
+      "classification": "ABSTRACT_REVIEWED",
+      "source": "https://doi.org/10.1177/1745691619898795",
+      "disposition": "Not an unconditional effect"
+    },
+    {
+      "id": "C8",
+      "text": "Thought-suppression science proves Zen12 works",
+      "classification": "UNSUPPORTED",
+      "source": "https://doi.org/10.1037/0022-3514.53.1.5",
+      "disposition": "EXCLUDE"
+    },
+    {
+      "id": "C9",
+      "text": "Thought suppression proves meditation always fails",
+      "classification": "UNSUPPORTED",
+      "source": "https://doi.org/10.1177/1745691619898795",
+      "disposition": "EXCLUDE"
+    },
+    {
+      "id": "C10",
+      "text": "Original neutral 12-minute exercise is clinical therapy",
+      "classification": "UNSUPPORTED",
+      "source": null,
+      "disposition": "EXCLUDE"
+    },
+    {
+      "id": "C11",
+      "text": "Puységur source archive preserves failures and consent concerns",
+      "classification": "HISTORICAL",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "disposition": "Does not prove magnetic mechanism"
+    },
+    {
+      "id": "C12",
+      "text": "Signed testimonies prove animal magnetism",
+      "classification": "UNSUPPORTED",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "disposition": "EXCLUDE"
+    },
+    {
+      "id": "C13",
+      "text": "52-page Focus Fieldbook already exists free through Jetpack",
+      "classification": "PUBLIC_SITE",
+      "source": "https://finalvestige.com/free-resources/",
+      "disposition": "One existing newsletter list"
+    },
+    {
+      "id": "C14",
+      "text": "Zen12 listed as Inspire3 product",
+      "classification": "SELLER_LISTING",
+      "source": "https://inspire3.com/",
+      "disposition": "No affiliate acceptance inferred"
+    },
+    {
+      "id": "C15",
+      "text": "Zen12 Premium has 12 levels",
+      "classification": "SELLER_ONLY",
+      "source": "https://zen12.com/",
+      "disposition": "No independent package fulfillment test"
+    },
+    {
+      "id": "C16",
+      "text": "Zen12 Premium has 48 MP3s",
+      "classification": "SELLER_ONLY",
+      "source": "https://zen12.com/getstarted",
+      "disposition": "Feature, not outcome"
+    },
+    {
+      "id": "C17",
+      "text": "Zen12 offers 4 listening styles",
+      "classification": "SELLER_ONLY",
+      "source": "https://zen12.com/",
+      "disposition": "Feature, not efficacy"
+    },
+    {
+      "id": "C18",
+      "text": "Zen12 advertises 1-year guarantee",
+      "classification": "SELLER_ONLY",
+      "source": "https://zen12.com/",
+      "disposition": "Do not represent as honored refund"
+    },
+    {
+      "id": "C19",
+      "text": "Order page has displayed total $87",
+      "classification": "SELLER_SNAPSHOT",
+      "source": "https://zen12.com/getstarted",
+      "disposition": "Not referred/individual checkout"
+    },
+    {
+      "id": "C20",
+      "text": "Prior audit reported $87.99",
+      "classification": "PRIOR_REPORT_UNVERIFIED",
+      "source": null,
+      "disposition": "Do not state final verified price"
+    },
+    {
+      "id": "C21",
+      "text": "12-minute Zen12 equals hour of meditation",
+      "classification": "UNSUBSTANTIATED_VENDOR_CLAIM",
+      "source": "https://zen12.com/",
+      "disposition": "EXCLUDE benefit claim"
+    },
+    {
+      "id": "C22",
+      "text": "Zen12 heals health conditions",
+      "classification": "UNSUPPORTED",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "disposition": "EXCLUDE"
+    },
+    {
+      "id": "C23",
+      "text": "Zen12 objectively controls brainwaves and focus",
+      "classification": "UNSUPPORTED",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "disposition": "EXCLUDE without product RCT"
+    },
+    {
+      "id": "C24",
+      "text": "Public Inspire3 affiliate program exists",
+      "classification": "PUBLIC_PROGRAM",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "Account-specific rights absent"
+    },
+    {
+      "id": "C25",
+      "text": "FV accepted as Inspire3 publisher",
+      "classification": "PERMISSION_UNVERIFIED",
+      "source": null,
+      "disposition": "HOLD"
+    },
+    {
+      "id": "C26",
+      "text": "Zen12 earning link officially issued to FV",
+      "classification": "PERMISSION_UNVERIFIED",
+      "source": null,
+      "disposition": "HOLD"
+    },
+    {
+      "id": "C27",
+      "text": "Web/organic social/email channels approved",
+      "classification": "PERMISSION_UNVERIFIED",
+      "source": null,
+      "disposition": "HOLD per channel"
+    },
+    {
+      "id": "C28",
+      "text": "Public payout examples represent earned FV commission",
+      "classification": "FALSE_TRANSFER",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "EXCLUDE"
+    },
+    {
+      "id": "C29",
+      "text": "FV owns a currently deliverable paid Mind SKU",
+      "classification": "OWNED_SKU_UNVERIFIED",
+      "source": null,
+      "disposition": "HOLD until rights/checkout"
+    },
+    {
+      "id": "C30",
+      "text": "Outbound affiliate click is a paid sale",
+      "classification": "FALSE_METRIC",
+      "source": null,
+      "disposition": "EXCLUDE"
+    },
+    {
+      "id": "C31",
+      "text": "Form display is provider-confirmed lead",
+      "classification": "FALSE_METRIC",
+      "source": null,
+      "disposition": "EXCLUDE"
+    },
+    {
+      "id": "C32",
+      "text": "Original 42-second film storyboard is playable media",
+      "classification": "NOT_BUILT",
+      "source": null,
+      "disposition": "Do not claim playback"
+    },
+    {
+      "id": "C33",
+      "text": "Commission disclosure needed near recommendation",
+      "classification": "FTC_RULE",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "disposition": "Test with both variants"
+    },
+    {
+      "id": "C34",
+      "text": "Health claims require product-relevant substantiation",
+      "classification": "FTC_RULE",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "disposition": "No borrowed research"
+    },
+    {
+      "id": "C35",
+      "text": "Net revenue per 1000 qualified-human sessions is presently known",
+      "classification": "DATA_MISSING",
+      "source": null,
+      "disposition": "NOT COMPUTABLE"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "affiliate_approval",
+      "owner": "Founder/Commerce",
+      "status": "HARD_HOLD",
+      "pass_requires": "Named written acceptance of FV"
+    },
+    {
+      "id": "web_rights",
+      "owner": "Founder/Commerce",
+      "status": "HARD_HOLD",
+      "pass_requires": "Approved website promotion"
+    },
+    {
+      "id": "social_rights",
+      "owner": "Founder/Commerce",
+      "status": "HARD_HOLD",
+      "pass_requires": "Approved organic social promotions"
+    },
+    {
+      "id": "email_rights",
+      "owner": "Founder/Commerce",
+      "status": "HARD_HOLD",
+      "pass_requires": "Separate SKU-specific email permission"
+    },
+    {
+      "id": "approved_Zen12_sku",
+      "owner": "Founder/Commerce",
+      "status": "HARD_HOLD",
+      "pass_requires": "Per-SKU approval and terms"
+    },
+    {
+      "id": "approved_earning_url",
+      "owner": "Founder/Commerce",
+      "status": "HARD_HOLD",
+      "pass_requires": "Issued partner-generated URL"
+    },
+    {
+      "id": "creative_rights",
+      "owner": "Founder/Commerce",
+      "status": "HARD_HOLD",
+      "pass_requires": "Licensed optional swipe or entirely original media"
+    },
+    {
+      "id": "checkout_price_tax",
+      "owner": "Commerce",
+      "status": "HARD_HOLD",
+      "pass_requires": "Current referred individual checkout price/tax"
+    },
+    {
+      "id": "refund_terms",
+      "owner": "Commerce",
+      "status": "HARD_HOLD",
+      "pass_requires": "Current refund eligibility and actual merchant policy"
+    },
+    {
+      "id": "paid_fv_sku",
+      "owner": "Commerce",
+      "status": "HARD_HOLD",
+      "pass_requires": "Actual FV-owned rights-cleared payable fallback"
+    },
+    {
+      "id": "claim_evidence",
+      "owner": "Mind/QA",
+      "status": "HARD_HOLD",
+      "pass_requires": "No unjustified product-specific efficacy"
+    },
+    {
+      "id": "visible_affiliate_disclosure",
+      "owner": "Mind/QA",
+      "status": "HARD_HOLD",
+      "pass_requires": "Same-view near-link disclosure"
+    },
+    {
+      "id": "editorial_separation",
+      "owner": "Mind/QA",
+      "status": "HARD_HOLD",
+      "pass_requires": "Offer separate from investigation conclusion"
+    },
+    {
+      "id": "encoded_video",
+      "owner": "Mind/Site QA",
+      "status": "HARD_HOLD",
+      "pass_requires": "Rights-cleared original production with captions/transcript"
+    },
+    {
+      "id": "browser_360_390_768_1440_1920",
+      "owner": "Site QA",
+      "status": "HARD_HOLD",
+      "pass_requires": "Real WCAG 2.2 AA keyboard, touch, mobile"
+    },
+    {
+      "id": "no_js",
+      "owner": "Site QA",
+      "status": "HARD_HOLD",
+      "pass_requires": "Usable content with scripts disabled"
+    },
+    {
+      "id": "wordpress_sanitize",
+      "owner": "Claude/Site QA",
+      "status": "HARD_HOLD",
+      "pass_requires": "Final DOM on staging survives WP"
+    },
+    {
+      "id": "cwv",
+      "owner": "Claude/Site QA",
+      "status": "HARD_HOLD",
+      "pass_requires": "Real performance budget"
+    },
+    {
+      "id": "single_focus_jetpack",
+      "owner": "Claude/Dispatch",
+      "status": "HARD_HOLD",
+      "pass_requires": "No additional list/form/welcome replacement"
+    },
+    {
+      "id": "provider_confirmed_lead",
+      "owner": "Claude/Dispatch",
+      "status": "HARD_HOLD",
+      "pass_requires": "Verified consent and confirmation evidence"
+    },
+    {
+      "id": "published_grok_asset_ids",
+      "owner": "Praxxis/Grok",
+      "status": "HARD_HOLD",
+      "pass_requires": "Three actual posts, immutable IDs and topics"
+    },
+    {
+      "id": "grok_mobile_links",
+      "owner": "Praxxis/Grok",
+      "status": "HARD_HOLD",
+      "pass_requires": "Actual permitted outbound routes"
+    },
+    {
+      "id": "reuse_analytics",
+      "owner": "Claude",
+      "status": "HARD_HOLD",
+      "pass_requires": "Native first-party implementation; no duplicate tracker"
+    },
+    {
+      "id": "privacy_consent",
+      "owner": "Claude",
+      "status": "HARD_HOLD",
+      "pass_requires": "No PII in URL; proper consent"
+    },
+    {
+      "id": "qualified_human_sessions",
+      "owner": "Claude",
+      "status": "HARD_HOLD",
+      "pass_requires": "Bot/internal filtering"
+    },
+    {
+      "id": "merchant_confirmed_sale",
+      "owner": "Commerce",
+      "status": "HARD_HOLD",
+      "pass_requires": "Independent partner/merchant paid-order report"
+    },
+    {
+      "id": "refunds_fees",
+      "owner": "Commerce",
+      "status": "HARD_HOLD",
+      "pass_requires": "Actual refunds, fees, settlements"
+    },
+    {
+      "id": "cohort_7_30",
+      "owner": "Commerce/Claude",
+      "status": "HARD_HOLD",
+      "pass_requires": "Mature cohorts; tiny samples flagged"
+    },
+    {
+      "id": "site_QA",
+      "owner": "Site QA",
+      "status": "HARD_HOLD",
+      "pass_requires": "Independent signed acceptance"
+    },
+    {
+      "id": "founder_release",
+      "owner": "Founder",
+      "status": "HARD_HOLD",
+      "pass_requires": "Specific merge/deploy/publish permission"
+    },
+    {
+      "id": "protect_PR49",
+      "owner": "Mind",
+      "status": "HARD_HOLD",
+      "pass_requires": "No homepage edits"
+    },
+    {
+      "id": "protect_PR172",
+      "owner": "Mind",
+      "status": "HARD_HOLD",
+      "pass_requires": "No canonical Mind hub edits"
+    },
+    {
+      "id": "protect_Issue150",
+      "owner": "Mind",
+      "status": "HARD_HOLD",
+      "pass_requires": "No agent-owned art changes"
+    },
+    {
+      "id": "protect_Issue174",
+      "owner": "Mind",
+      "status": "HARD_HOLD",
+      "pass_requires": "No newsletter copy/jetpack changes"
+    }
+  ]
+}
