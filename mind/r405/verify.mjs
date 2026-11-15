@@ -44,7 +44,7 @@ check('VTT six exactly contiguous cues ending at 42s',()=>{
 });
 check('32 claims and 27 held gates',()=>{assert.equal(matrix.claims.length,32);assert.equal(matrix.commercial_gates.length,27);assert.ok(matrix.commercial_gates.every(g=>g.status==='HOLD'));});
 check('claims cite existing sources or deliberately null',()=>{const ids=new Set(matrix.sources.map(s=>s.id));matrix.claims.forEach(c=>(c.source_id||'').split(',').filter(Boolean).forEach(id=>assert.ok(ids.has(id))));});
-check('research not substituted for SKU proof',()=>{assert.match(guide,/does not establish that twelve minutes/);assert.match(guide,/not a paid SKU|not a paid SKU/i);});
+check('research not substituted for SKU proof',()=>{assert.match(guide,/does not establish that twelve minutes/);assert.match(guide,/It is delivered through the \\*\\*existing\\*\\*/i);});
 check('plan includes full measurement and withheld links',()=>{for(const term of ['qualified_session','confirmed_lead','affiliate_click','merchant_confirmed_purchase','refund','NOT COMPUTABLE','HARD HOLD'])assert.ok(plan.includes(term),term);});
 let passed=0;for(const t of tests){try{t.fn();passed++;}catch(e){console.error('FAIL',t.name,e.message);process.exitCode=1;}}
 console.log('R405 '+passed+'/'+tests.length+' offline checks passed');
