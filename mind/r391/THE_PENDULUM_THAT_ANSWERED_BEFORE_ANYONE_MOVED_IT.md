@@ -94,7 +94,7 @@ If you would rather work on starting an actual task, the existing free [Seven Da
 
 ## Why the question matters when choosing audio
 
-Suppose a reader has encountered Zen12 because they want to try an organized listening routine. The offer page describes a twelve-level course with 48 MP3 recordings and accompanying guides. That is a concrete package description that can be checked against the seller's page. It is not an independently proven improvement in focus, mood, memory or health ([Zen12 public checkout](https://zen12.com/getstarted); [Inspire3 catalog](https://inspire3.com/)).
+Suppose a reader has encountered Zen12 because they want to try an organized listening routine. The offer page describes a twelve-level course with 48 MP3 recordings and accompanying guides. That is a concrete package description that can be checked against the seller's page. It is not an independently proven improvement in focus, mood, memory or health (official seller pages are logged in the separate provenance matrix, not linked as purchase destinations here).
 
 A serious independent buyer guide should disclose whether the seller's intended format suits someone who prefers guided or audio-supported practice, distinguish it from free approaches, and give the reader a meaningful way to decline. It should describe actual displayed terms as provisional and verify whether the offered package is eligible for referral before supplying any earning link.
 
@@ -113,7 +113,7 @@ If the pendulum teaches a rule, it is a modest one: **before asking why somethin
 6. Moga & Dienes (2022), pendulum nonreplication: https://pubmed.ncbi.nlm.nih.gov/35184700/ ; https://doi.org/10.1080/00029157.2021.2010641
 7. Final Vestige published Puységur historical archive: https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ (current body HTTP 429 in this audit; do not claim it was fully reread)
 8. Final Vestige 52-page free Focus Fieldbook: https://finalvestige.com/focus/
-9. Inspire3 official catalog and Zen12 public order description: https://inspire3.com/ ; https://zen12.com/getstarted
+9. Inspire3 official catalog and Zen12 public order description: exact seller source URLs logged in the separate claim/source matrix (not an active merchant recommendation)
 10. FTC endorsement/affiliate disclosure: https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking
 11. FTC health product claim substantiation: https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance
 
