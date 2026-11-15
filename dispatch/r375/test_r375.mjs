@@ -14,7 +14,7 @@ test('no affiliate earning links',()=>{for(const x of [m,t,h])assert.ok(!/https?
 test('one published FV destination only',()=>assert.equal(c.sources.filter(x=>x.kind==='existing_published_final_vestige').length,1));
 test('original PDF source present',()=>{for(const x of [m,t,h])assert.ok(x.includes("https://web.stanford.edu/class/psych205/papers/Loftus-Palmer-1974.pdf"))});
 test('DOI source present',()=>{for(const x of [m,t,h])assert.ok(x.includes("https://doi.org/10.1016/S0022-5371(74)80011-3"))});
-test('study limitation text',()=>assert.ok(/laboratory/i.test(m)&&/population/i.test(m)));
+test('study limitation text',()=>assert.ok(/laboratory/i.test(m)&&/universal probability/i.test(m)));
 test('study group sample explained',()=>assert.ok(m.includes('150 students')&&m.includes('Fifty received')));
 test('no invented universal result',()=>assert.ok(!m.includes('proves everyone')&&!m.includes('guarantee')));
 test('HTML accessible document language and heading',()=>{for(const x of ['lang="en"','<h1','<h2','name="viewport"','role="presentation"'])assert.ok(h.includes(x))});
