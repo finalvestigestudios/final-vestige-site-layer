@@ -1,9 +1,9 @@
 # The Spillway That Kept Its Names
-*Final Vestige Investigations · reader-facing revision 19 · 14 November 2026 · REVIEW DRAFT — DO NOT PUBLISH*
+*Final Vestige Investigations · reader-facing revision 20 · 14 November 2026 · REVIEW DRAFT — DO NOT PUBLISH*
 
 **Deck:** Louisiana took land for a flood-control outlet, earned millions from its mineral rights, and later ordered parts of it returned. The courts settled questions of authority. The surviving records are less clear about who received the money.
 
-**Editorial identity:** Concise narrative edition of [the 65-entry master dossier](./bohemia-spillway-2026-11-12-land-roster-rights-claim-investigation-draft.md). Preserve that dossier as the complete source ledger and long-form research appendix. This file does **not** supersede the separate Caernarvon 1927 WordPress draft #2151 or authorize publication. Original-source links below correspond to full dossier entries in brackets. Do not infer interviews, archive visits, or current 2026 balances from this work.
+**Editorial identity:** Concise narrative edition of [the 66-entry master dossier](./bohemia-spillway-2026-11-12-land-roster-rights-claim-investigation-draft.md). Preserve that dossier as the complete source ledger and long-form research appendix. This file does **not** supersede the separate Caernarvon 1927 WordPress draft #2151 or authorize publication. Original-source links below correspond to full dossier entries in brackets. Do not infer interviews, archive visits, or current 2026 balances from this work.
 
 ## The river came back
 
