@@ -125,9 +125,28 @@ class OfflineRegressionGateR459(unittest.TestCase):
                 gate._run_tests(self.root)
 
     def test_source_smoke_requires_real_gate_success(self):
-        with patch.object(gate.subprocess, 'run', return_value=SimpleNamespace(returncode=0)):
+        # Exit code zero is insufficient: the child must report all twelve
+        # application/mode statuses under the exact source-only R408 schema.
+        source_only = {
+            'schema': 'fvs-source-smoke-r408-v1',
+            'source_sha256': 'a' * 64,
+            'evidence': 'SOURCE_ONLY_NOT_WINDOWS_BINARY',
+            'tests': [
+                {'app': name, 'normal': 'pass', 'optimized': 'pass'}
+                for name in ('ledger', 'invoices', 'spend', 'policy',
+                             'grants', 'procurement')
+            ],
+            'passed': 12, 'required': 12, 'release_authorized': False,
+        }
+
+        def valid_child(command, **kwargs):
+            kwargs['stdout'].write(json.dumps(source_only).encode('utf-8'))
+            return SimpleNamespace(returncode=0)
+
+        with patch.object(gate.subprocess, 'run', side_effect=valid_child):
             self.assertEqual(gate._run_smokes(self.root), 12)
-        with patch.object(gate.subprocess, 'run', return_value=SimpleNamespace(returncode=1)):
+        with patch.object(gate.subprocess, 'run',
+                          return_value=SimpleNamespace(returncode=1)):
             with self.assertRaises(gate.LocalGateError):
                 gate._run_smokes(self.root)
 

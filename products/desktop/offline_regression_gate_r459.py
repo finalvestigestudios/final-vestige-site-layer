@@ -15,6 +15,10 @@ import subprocess
 import sys
 import tempfile
 
+from offline_smoke_receipt_r460 import (SourceSmokeReceiptError,
+                                        require_six_app_smokes,
+                                        MAX_RECEIPT_BYTES)
+
 TESTS = (
     "test_csv_negative_decimal_zero_copy_r455.py",
     "test_csv_safe_cell_zero_copy_r456.py",
@@ -23,10 +27,13 @@ TESTS = (
 )
 SOURCE_INPUTS = (
     "offline_regression_gate_r459.py",
+    "offline_smoke_receipt_r460.py",
     "offline_source_smoke_r408.py",
     "fvs_suite/atomic_reports.py",
     "fvs_suite/engine.py",
     *("tests/" + name for name in TESTS),
+    "tests/test_offline_regression_gate_r459.py",
+    "tests/test_offline_smoke_receipt_r460.py",
 )
 TIMEOUT_TEST_SECONDS = 120
 TIMEOUT_SMOKE_SECONDS = 330
@@ -136,21 +143,28 @@ def _run_tests(desktop: Path) -> tuple[int, int]:
 
 
 def _run_smokes(desktop: Path) -> int:
-    """R408 independently verifies all 6 actual launchers in both modes."""
+    """Prove R408's twelve actual statuses from a bounded private JSON receipt."""
     command = [sys.executable, '-I', '-B', '-W', 'error',
                str(desktop / 'offline_source_smoke_r408.py')]
     try:
-        completed = subprocess.run(
-            command, cwd=desktop, env=_child_env(),
-            stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL, timeout=TIMEOUT_SMOKE_SECONDS,
-            check=False)
+        # Never PIPE untrusted application output into an unbounded buffer.
+        # The temporary file is owner-private and never exposed as a public artifact.
+        with tempfile.TemporaryFile(mode='w+b') as response:
+            completed = subprocess.run(
+                command, cwd=desktop, env=_child_env(),
+                stdin=subprocess.DEVNULL, stdout=response,
+                stderr=subprocess.DEVNULL, timeout=TIMEOUT_SMOKE_SECONDS,
+                check=False)
+            if completed.returncode != 0:
+                raise LocalGateError("Local six-app source smoke failed")
+            response.seek(0)
+            raw = response.read(MAX_RECEIPT_BYTES + 1)
     except (OSError, subprocess.TimeoutExpired):
         raise LocalGateError("Local source smoke could not execute") from None
-    if completed.returncode != 0:
-        raise LocalGateError("Local six-app source smoke failed")
-    # R408 itself requires exactly 12/12 passes; this is NOT a native EXE test.
-    return 12
+    try:
+        return require_six_app_smokes(raw)
+    except SourceSmokeReceiptError:
+        raise LocalGateError("Local six-app source smoke receipt rejected") from None
 
 
 def run_gate(desktop: Path) -> dict[str, object]:
