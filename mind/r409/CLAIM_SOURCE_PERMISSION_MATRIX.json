@@ -1,0 +1,363 @@
+{
+  "date": "2026-11-15",
+  "scope": "R409 source-only Mind presell",
+  "sources": {
+    "s1999": "https://doi.org/10.1068/p281059",
+    "s2010": "https://doi.org/10.1068/i0386",
+    "s1998": "https://doi.org/10.3758/BF03208840",
+    "wellcome": "https://wellcomecollection.org/works/v69xf8ck",
+    "puy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/",
+    "inspire3": "https://inspire3.com/",
+    "zen12": "https://zen12.com/",
+    "totalfocus": "https://hypnosislive.com/mental-skills/total-focus",
+    "focusshot": "https://brainwaveshots.com/focus-shot",
+    "bwsfaq": "https://brainwaveshots.com/faq",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "ftcEndorse": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftcHealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Inattentional blindness in dynamic events",
+      "evidence_type": "independent research",
+      "source_keys": [
+        "s1999"
+      ],
+      "status": "APPROVED_FOR_BOUNDED_EDITORIAL_USE"
+    },
+    {
+      "id": "C02",
+      "statement": "Knowing gorilla test improves detection of all unexpected events",
+      "evidence_type": "contradicted inference",
+      "source_keys": [
+        "s2010"
+      ],
+      "status": "EXCLUDE"
+    },
+    {
+      "id": "C03",
+      "statement": "2010 familiar participants noticed gorilla but missed other changes",
+      "evidence_type": "independent research",
+      "source_keys": [
+        "s2010"
+      ],
+      "status": "APPROVED_FOR_BOUNDED_EDITORIAL_USE"
+    },
+    {
+      "id": "C04",
+      "statement": "1998 pedestrian door change was sometimes unnoticed",
+      "evidence_type": "independent research",
+      "source_keys": [
+        "s1998"
+      ],
+      "status": "APPROVED_FOR_BOUNDED_EDITORIAL_USE"
+    },
+    {
+      "id": "C05",
+      "statement": "Animal magnetism was a historically documented belief",
+      "evidence_type": "historical source",
+      "source_keys": [
+        "wellcome",
+        "puy"
+      ],
+      "status": "APPROVED_AS_HISTORY_NOT_MECHANISM"
+    },
+    {
+      "id": "C06",
+      "statement": "Animal magnetism is a proven transferable force",
+      "evidence_type": "unsupported efficacy",
+      "source_keys": [
+        "wellcome"
+      ],
+      "status": "EXCLUDE"
+    },
+    {
+      "id": "C07",
+      "statement": "Existing Fieldbook is free and has its own signup route",
+      "evidence_type": "first-party published page",
+      "source_keys": [
+        "focus"
+      ],
+      "status": "RETAIN_SINGLE_FUNNEL"
+    },
+    {
+      "id": "C08",
+      "statement": "Zen12 seller advertises a multi-level meditation recording program",
+      "evidence_type": "seller product-format claim",
+      "source_keys": [
+        "zen12"
+      ],
+      "status": "ATTRIBUTE_TO_SELLER"
+    },
+    {
+      "id": "C09",
+      "statement": "Zen12 twelve-minute session equals one hour meditation benefit",
+      "evidence_type": "seller efficacy claim",
+      "source_keys": [
+        "zen12"
+      ],
+      "status": "EXCLUDE_AS_FACT"
+    },
+    {
+      "id": "C10",
+      "statement": "Zen12 improves concentration or treats conditions",
+      "evidence_type": "unsupported product-specific outcome",
+      "source_keys": [
+        "zen12",
+        "ftcHealth"
+      ],
+      "status": "EXCLUDE"
+    },
+    {
+      "id": "C11",
+      "statement": "Total Focus is listed as 33min 47MB",
+      "evidence_type": "seller product-format claim",
+      "source_keys": [
+        "totalfocus"
+      ],
+      "status": "ATTRIBUTE_TO_SELLER"
+    },
+    {
+      "id": "C12",
+      "statement": "Total Focus reprograms brain and guarantees focus",
+      "evidence_type": "seller efficacy claim",
+      "source_keys": [
+        "totalfocus",
+        "ftcHealth"
+      ],
+      "status": "EXCLUDE"
+    },
+    {
+      "id": "C13",
+      "statement": "Focus Shot contains 15- and 30-minute variants",
+      "evidence_type": "seller product-format claim",
+      "source_keys": [
+        "focusshot"
+      ],
+      "status": "ATTRIBUTE_TO_SELLER"
+    },
+    {
+      "id": "C14",
+      "statement": "Focus Shot proven to entrain EEG and improve work results",
+      "evidence_type": "unsupported product-specific outcome",
+      "source_keys": [
+        "focusshot",
+        "bwsfaq"
+      ],
+      "status": "EXCLUDE"
+    },
+    {
+      "id": "C15",
+      "statement": "Public partner portal proves publisher enrollment",
+      "evidence_type": "authorization inference",
+      "source_keys": [
+        "affiliate"
+      ],
+      "status": "EXCLUDE"
+    },
+    {
+      "id": "C16",
+      "statement": "Commission disclosure should sit near endorsed link",
+      "evidence_type": "regulatory guidance",
+      "source_keys": [
+        "ftcEndorse"
+      ],
+      "status": "REQUIRE_IF_ACTIVE"
+    },
+    {
+      "id": "C17",
+      "statement": "Health-related benefit claims require appropriate scientific substantiation",
+      "evidence_type": "regulatory guidance",
+      "source_keys": [
+        "ftcHealth"
+      ],
+      "status": "REQUIRE"
+    },
+    {
+      "id": "C18",
+      "statement": "Current seller price is guaranteed at referral checkout",
+      "evidence_type": "unverified seller terms",
+      "source_keys": [
+        "zen12",
+        "totalfocus",
+        "focusshot"
+      ],
+      "status": "EXCLUDE"
+    },
+    {
+      "id": "C19",
+      "statement": "Thirty-to-forty-five-second video boosts paid conversion",
+      "evidence_type": "untested marketing hypothesis",
+      "source_keys": [],
+      "status": "EXPERIMENT_ONLY"
+    },
+    {
+      "id": "C20",
+      "statement": "Affiliate outbound clicks prove paid orders",
+      "evidence_type": "invalid attribution inference",
+      "source_keys": [],
+      "status": "EXCLUDE"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "Named Final Vestige Inspire3 account acceptance",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G02",
+      "name": "Authorized Zen12 site promotion",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G03",
+      "name": "Authorized social promotion",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G04",
+      "name": "Authorized email promotion (if used)",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G05",
+      "name": "Issued exact SKU tracking URL",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G06",
+      "name": "Published partner disclosure restrictions reviewed",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G07",
+      "name": "Referral checkout terms and price checked",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G08",
+      "name": "Refund and chargeback conditions checked",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G09",
+      "name": "Payout and attribution reporting access tested",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G10",
+      "name": "Product-specific outcome claims verified or excluded",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G11",
+      "name": "Founder commercial release approval",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G12",
+      "name": "Standalone brand/legal review",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G13",
+      "name": "Keyboard + 360/390/768/1440/1920 viewport evidence",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G14",
+      "name": "WCAG 2.2 AA checks in real browser",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G15",
+      "name": "Sanitization / CMS import staging tests",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G16",
+      "name": "Consent / privacy review for existing analytics",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G17",
+      "name": "No duplicate Jetpack form or welcome",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G18",
+      "name": "Original film asset rights and playback verified",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G19",
+      "name": "No-JS / reduced-motion / user activation tests",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G20",
+      "name": "Verified approved on-topic Grok asset IDs",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G21",
+      "name": "Actual campaign landing attribution",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G22",
+      "name": "Qualified-human dedupe definition tested",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G23",
+      "name": "Real signed-out mobile CTA checkout",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G24",
+      "name": "Merchant confirmed paid order or commission",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G25",
+      "name": "Fees/refunds reconciliation",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    },
+    {
+      "id": "G26",
+      "name": "Founder production release approval",
+      "state": "HOLD",
+      "evidence": "not verified in this sprint"
+    }
+  ],
+  "note": "No approval, earnings link, paid SKU, sale, commission or live experiment implied."
+}
