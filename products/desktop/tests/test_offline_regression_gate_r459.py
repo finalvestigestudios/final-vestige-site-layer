@@ -97,7 +97,7 @@ class OfflineRegressionGateR459(unittest.TestCase):
         fixture = ("import unittest\n"
                    "class SyntheticGateTest(unittest.TestCase):\n"
                    "    def test_native_source_gate(self):\n"
-                   "        self.assertEqual(Decimal(\\\"0.10\\\") + Decimal(\\\"0.20\\\"), Decimal(\\\"0.30\\\"))\n")
+                   "        self.assertEqual(Decimal(\"0.10\") + Decimal(\"0.20\"), Decimal(\"0.30\"))\n")
         # A synthetic native Decimal import is explicit, never financial data.
         fixture = "from decimal import Decimal\n" + fixture
         for name in gate.TESTS:
