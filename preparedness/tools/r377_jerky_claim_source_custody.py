@@ -76,7 +76,7 @@ def claim_risk_lines(html: str) -> dict[str, list[int]]:
 
 
 def _signature(v: dict) -> tuple:
-    keys = ("branch", "fragment", "source_blob", "id", "url", "publisher",
+    keys = ("branch", "fragment", "source_blob", "url", "publisher",
             "kind", "verified_on", "human_link_check", "supports", "notes")
     return tuple(v.get(k) for k in keys)
 
