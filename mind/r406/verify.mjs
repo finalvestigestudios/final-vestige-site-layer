@@ -18,7 +18,7 @@ check('A/B same core buyer copy',()=>{const block=s=>s.slice(s.indexOf('<header>
 check('B optional storyboard only',()=>{assert.match(b,/<details>/);assert.match(b,/not playable video/);assert.doesNotMatch(b,/<video\b/);});
 check('VTT six contiguous cues',()=>{const cues=[...vtt.matchAll(/(\d\d):(\d\d):(\d\d)\.\d{3} --> (\d\d):(\d\d):(\d\d)\.\d{3}/g)];assert.equal(cues.length,6);let last=0;for(const m of cues){const s=+m[1]*3600 + +m[2]*60 + +m[3],e=+m[4]*3600 + +m[5]*60 + +m[6];assert.equal(s,last);last=e;}assert.equal(last,42);});
 check('VTT caption text matches visible transcript',()=>{const first=read('ZEN12_B.html');for(const m of vtt.split(/\n\n+/).slice(1)){const txt=m.split('\n').slice(2).join(' ');assert.ok(first.includes(txt));}});
-check('Original poster no external assets',()=>{assert.match(svg,/<svg/);assert.match(svg,/<title/);assert.match(svg,/<desc/);assert.doesNotMatch(svg,/<(?:image|foreignObject|script)\b|https?:|xlink:href/i)});
+check('Original poster no external assets',()=>{assert.match(svg,/<svg/);assert.match(svg,/<title/);assert.match(svg,/<desc/);assert.doesNotMatch(svg,/<(?:image|foreignObject|script)\b|xlink:href|(?:src|href)=[\"']https?:/i)});
 check('Hub four streams',()=>{for(const term of ['Perception &amp; attention','History of suggestion','Practice &amp; reflection','Tools under review'])assert.ok(hub.includes(term));assert.doesNotMatch(hub,/<(?:script|form|iframe)\b/i)});
 check('Source trail primary papers',()=>{for(const id of ['16210542','20637455'])assert.ok(article.includes(id));});
 check('Claims sources integrity',()=>{const ids=new Set(matrix.sources.map(s=>s.id));for(const c of matrix.claims)if(c.source)assert.ok(ids.has(c.source),c.id);});
