@@ -60,6 +60,9 @@ class FakeContext:
     def route(self,pattern,callback):
         assert pattern=='**/*'
         self.callback=callback
+    def route_web_socket(self,pattern,callback):
+        assert pattern=='**/*'
+        self.websocket_callback=callback
 
 context=FakeContext();denied=[]
 install_network_boundary(context,host,denied)
