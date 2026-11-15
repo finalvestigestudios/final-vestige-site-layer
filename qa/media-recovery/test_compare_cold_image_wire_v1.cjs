@@ -17,9 +17,10 @@ function fixture(bytes=1000){
  article_wire_attribution_mode:'strict_cdp_request_id',stored_image_count:1,stored_images:[slot],
  matched_article_network_requests:1,article_image_wire_bytes_total:bytes,
  network_images:[{request_id:'r1',url:src,status:200,mime_type:'image/png',encoded_data_length:bytes,
- was_cached:false,from_disk_cache:false,from_memory_cache:false,from_service_worker:false}]};
+ was_cached:false,from_disk_cache:false,from_memory_cache:false,from_service_worker:false,
+ cold_event_chain_complete:true,cold_network_transfer_proven:true}]};
  return {status:'complete_browser_image_census',image_census_coverage:{complete:true,confirmed_broken_count:0},
- confirmed_broken_count:0,requested_pages:1,verified_pages:1,viewport:'390x844',mode:'priority',
+ confirmed_broken_count:0,requested_pages:1,verified_pages:1,probe_version:4,viewport:'390x844',mode:'priority',
  browser_product:'Chrome/140',run_profile:{cache_disabled:true,service_worker_bypassed:true},pages:[page]};
 }
 const compare=(mutBefore,mutAfter)=>{const b=fixture(),a=fixture(240);mutBefore?.(b);mutAfter?.(a);return compareColdImageWire(b,a)};
@@ -196,3 +197,28 @@ hold('baseline memory-cached response is not a valid transfer',b=>{
  b.pages[0].network_images[0].from_memory_cache=true},null,'uncached_cdp');
 hold('unknown candidate memory-cache status fails closed',null,
  a=>{delete a.pages[0].network_images[0].from_memory_cache},'uncached_cdp');
+
+/** Regression: pre-v4 or unverifiable CDP transfers can fake a precise 76% saving.
+ * The old comparator accepted this fixture without event-chain/transfer attestations.
+ * These guards apply to BOTH baseline and candidate, not just the optimized side.
+ */
+hold('baseline without collector probe version cannot be called a measured 76% pair',
+ b=>{delete b.probe_version},null,'cold_collector_version_unverified');
+hold('candidate with string probe version cannot be called measured',
+ null,a=>{a.probe_version='4'},'cold_collector_version_unverified');
+hold('pre-v4 baseline CDP collector cannot certify a cold pair',
+ b=>{b.probe_version=3},null,'cold_collector_version_unverified');
+hold('fractional candidate collector version cannot qualify',
+ null,a=>{a.probe_version=4.5},'cold_collector_version_unverified');
+hold('missing baseline image event-chain attestation blocks wire comparison',
+ b=>{delete b.pages[0].network_images[0].cold_event_chain_complete},null,'uncached_cdp_request_mismatch');
+hold('candidate with false event-chain attestation blocks wire comparison',
+ null,a=>{a.pages[0].network_images[0].cold_event_chain_complete=false},'uncached_cdp_request_mismatch');
+hold('missing baseline cold-transfer proof blocks wire comparison',
+ b=>{delete b.pages[0].network_images[0].cold_network_transfer_proven},null,'uncached_cdp_request_mismatch');
+hold('candidate with false cold-transfer proof blocks wire comparison',
+ null,a=>{a.pages[0].network_images[0].cold_network_transfer_proven=false},'uncached_cdp_request_mismatch');
+test('complete version-4 cold CDP pair still measures 1000 to 240 bytes in lab only',()=>{
+ const r=compare();assert.equal(r.state,'LAB_PAIR_MEASURED');assert.equal(r.reduction_percent,76);
+ assert.equal(r.sitewide_76_percent_claim_permitted,false);
+});
