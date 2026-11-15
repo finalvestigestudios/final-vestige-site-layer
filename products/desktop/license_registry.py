@@ -104,8 +104,25 @@ class IssuanceRegistry:
             raise RegistryError("Cannot initialize protected registry")
         try:
             yield conn
-        finally:
-            conn.close()
+        except BaseException:
+            # Preserve the original refusal or process interruption. A close
+            # failure must never replace it with private SQLite diagnostics.
+            try:
+                conn.close()
+            except (sqlite3.Error, OSError):
+                pass
+            raise
+        else:
+            close_failed = False
+            try:
+                conn.close()
+            except (sqlite3.Error, OSError):
+                close_failed = True
+            # The write may already be committed. Fail closed and require
+            # manual investigation rather than suggesting a safe retry.
+            # Raise outside the SQLite handler to discard private __context__.
+            if close_failed:
+                raise RegistryError("Cannot safely close protected registry; investigate manually")
 
     def reserve(self, *, license_id: str, product: str, kid: str,
                 output: str | Path) -> None:
