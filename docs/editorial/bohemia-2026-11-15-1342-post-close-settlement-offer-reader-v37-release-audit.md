@@ -1,0 +1,39 @@
+# Bohemia Spillway — Reader Edition v37 research, visual, staging and hold record
+*Final Vestige Studios · November 15, 2026, 13:42 Pacific · DRAFT / DO NOT PUBLISH*
+
+## Scope and coordination
+- Active continuing article: **The Spillway That Kept Its Names**, WordPress **post 2488**. Previous reader **v36** independently checked; current editorial queue includes separate Caernarvon **draft 2151** with its own QA hold. Existing homepage and global template were left unchanged.
+- Reviewed the live [Editorial Standards](https://finalvestige.com/editorial-standards/) on November 15, 2026; reviewed active site recent post/draft listing; checked [Investigations coordination #1463](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1463), [shared production QA #1589](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1589), previous v36 audit and current repo files before writing.
+- Source-backed editorial goal: distinguish another documented settlement *authorization* from an executed contract, journal entry, escrow transfer or beneficiary payment. Do not merge with the separate 2013 Haspel proposal, FY2014 unnamed audit gain or Caernarvon story.
+
+## Primary-source verification (new reader source #48; master evidence #79)
+**Agency original:** [Southeast Louisiana Flood Protection Authority–East, *Minutes of Board Meeting*, July 24, 2014](https://www.floodauthority.org/wp-content/uploads/minutes/2014%2007%2024%20-%20Board%20Meeting%20Minutes.pdf), printed **pp. 12–13**; **Resolution 07-24-14-10**.
+
+- **Verified original PDF-page visuals and matching text, November 15, 2026:** Executive session convened at **10:17 a.m.**, public meeting resumed at **10:47 a.m.**; Resolution 07-24-14-10 authorized legal counsel to **proceed with a settlement offer** in three specified cases: Authority/Orleans vs Louisiana Department of Natural Resources **563586**, Plaquemines successors **55-774** and **61-051**. Vote **5 yeas, 0 nays, 3 absent**.
+- Pages **12 and 13 were actually rendered via the document screenshot service and visually inspected**, unlike prior oversized FY2014/FY2015 audit PDFs. We did not photograph original physical archives or inspect court filings.
+- Reporting-period calculation: June 30 to July 24 = **24 days**. An approval occurring after fiscal-year close is not itself proof of a liability journal entry effective at June 30. A subsequent-events or predecessor obligation assessment would require signed accounting files, which were **not obtained**. No attribution of liability gain, payment, settlement amount, execution, diversion or fraud.
+- **Prior corroborating primary documents:** [October 17, 2013 authority minutes](https://www.floodauthority.org/wp-content/uploads/minutes/2013%2010%2017%20-%20Board%20Meeting%20Minutes.pdf), Reader [43], documents a different proposed **Haspel & Davis** action; [October 16, 2014 minutes](https://www.floodauthority.org/wp-content/uploads/minutes/2014%2010%2016%20-%20Board%20Meeting%20Minutes.pdf), Reader [40], documents the audit presentation. FY2015 government audit [39] reports an unnamed prior-year settlement-related accounting effect but supplies no case-level allocation.
+- Evidence still needed: signed or declined July 2014 settlement offer; dockets 563586, 55-774 and 61-051 filings; FY2014 signed audit, subsequent-events note, litigation reserve/journal detail; bank-cleared escrow and beneficiary distribution registers; final qualified legal/editorial review.
+
+## Manuscript and original visual
+- [Reader Edition v37](./bohemia-spillway-reader-edition-2026-11-14.md): new section **“An offer after the year closed”**, four analytical paragraphs, original figure documentation, added bibliography **#48**. Reader intro corrected to revision **37**, **48 selected reader sources**, **79 master entries**.
+- [Master dossier](./bohemia-spillway-2026-11-12-land-roster-rights-claim-investigation-draft.md): new verified evidence **[79]** with period and attribution caveat. Earlier entries left intact.
+- [Original SVG diagram](./assets/bohemia-2014-post-close-settlement-offer-v37.svg), © Final Vestige Studios **November 15, 2026**, authored from agency minutes. **960×1170 self-contained SVG**, no externally hosted imagery, public-domain claim, third-party photograph, archive facsimile or AI historical reconstruction. Creator: **Final Vestige Studios**. Source: authority minutes above and the October 2014 board audit presentation. License: studio-owned original; copyright reserved, no outbound reuse license asserted. Source URL: repository file link.
+- Caption: “FY2014 closed on June 30. A July 24 board vote authorized counsel to proceed with a settlement offer; on October 16 the auditor briefed the board. No signed agreement, claimant payment or FY2014 journal entry is established by these meetings.”
+- Alt: “Vertical timeline showing June 30, 2014 fiscal-year close, July 24 authority five-to-zero settlement-offer authorization in three dockets, October 16 audit presentation, and a warning that the vote does not prove funds were paid.”
+- SVG title/long description and caption structurally inspected by fetching committed source. **No claim that the SVG or WordPress layout passed an actual editor-authenticated browser render.** A separate responsive HTML interpretation with CSS-fitting cards, alt-like role/label and local source anchors was inserted into the draft.
+
+## WordPress guarded edits and independent readback
+- Baseline **221 blocks**, modified **2026-11-15T12:37:22** local, initial SHA-1 **dc0c0988fd73f8864330f1b6114914a3c63f817c**.
+- Six *optimistically locked* top-level Gutenberg inserts at section **161–166**: one H3, four paragraphs and one original HTML figure. Source paragraph and ordered bibliography updated with guarded, block-hash confirmed section replacements; no whole-post rewrite.
+- **Independent authenticated WordPress readback after updates:** **227 blocks**, **48 unique numbered bibliography anchors [1–48]**, **202 internal citation links**, **0 missing targets**, **0 duplicate IDs**, final modified **2026-11-15T13:42:19** (site-local), Gutenberg SHA-1 **7d23dc241daa2ba16b0de340dc6e0bd853e1c17e**.
+- Post remains **DRAFT**, **never published**, categories **[9369, 232815]** unchanged, featured media **2484** preserved. `_jetpack_dont_email_post_to_subs=true`, `jetpack_publicize_feature_enabled=false`, `jetpack_seo_noindex=true`, `jetpack_post_was_ever_published=false`. Existing NASA/USDA/USGS documentary inline image URLs unchanged.
+- Anonymous direct image-byte loading attempted from the execution container: both FV-local URLs failed **DNS resolution in that sandbox**, which is inconclusive about public availability. **Do not call this a public image-byte pass or failure.**
+
+## Final release hold, no publication
+1. Genuine **editor-authenticated current WordPress production-theme** 390px and 1440px screenshots of this precise content hash, responsive DOM/overflow/hero/source/gallery checks.
+2. Independent successful public loading of both FV-local documentary JPG image bytes, with captions, licenses, dates and alt verified in the real rendered site.
+3. Signed July 2014 deal terms or docket outcomes, original FY2014 reconciliation, signed Haspel escrow and case-level claimant distribution records, final independent legal/editorial review before making stronger assertions.
+4. Remaining previously noted government documents' original-page image access limitations; do not quietly treat searchable PDF text as all-source visual clearance.
+
+**Outcome:** WordPress #2488 remains unpublished. No mailing, automatic social post, Grok publication, paid API, homepage edit, template edit or changes to separate draft 2151. Further verified discoveries may be queued for Grok's distinct distribution lane **after** the article passes its release gate.
