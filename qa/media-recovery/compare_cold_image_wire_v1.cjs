@@ -28,6 +28,11 @@ function inspectRun(run, label, reasons) {
       run.run_profile.service_worker_bypassed !== true)
     add(reasons, label+':uncached_run_not_proven');
   if (!validId(run.browser_product)) add(reasons, label+':browser_version_missing');
+  // The version-4 collector attests the complete CDP Image event chain and cold
+  // transfer separately. An old/synthetic run with cache booleans alone is not
+  // eligible to measure a historical article's transferred bytes.
+  if (!Number.isSafeInteger(run.probe_version) || run.probe_version < 4)
+    add(reasons, label+':cold_collector_version_unverified');
   for (const p of Array.isArray(run.pages) ? run.pages : []) {
     const id = p?.post_id;
     if (!positive(id) || out.has(id)) { add(reasons, label+':duplicate_or_invalid_post'); continue; }
@@ -89,7 +94,8 @@ function inspectRun(run, label, reasons) {
       if (!validId(slot.request_id) || !n || netUrl(slot.request_url) !== netUrl(n.url) ||
           n.status !== 200 || !/^image\//i.test(n.mime_type||'') ||
           !positive(n.encoded_data_length) || n.encoded_data_length !== slot.transfer_bytes ||
-          n.error || n.was_cached !== false || n.from_disk_cache !== false || n.from_memory_cache !== false || n.from_service_worker !== false) {
+          n.error || n.was_cached !== false || n.from_disk_cache !== false || n.from_memory_cache !== false || n.from_service_worker !== false ||
+          n.cold_event_chain_complete !== true || n.cold_network_transfer_proven !== true) {
         add(reasons, label+':uncached_cdp_request_mismatch:'+key);continue;
       }
       if (!sameSource(slot.current_src,n.url) ||
@@ -193,7 +199,7 @@ function compareColdImageWire(before, after) {
     candidate_cdp_bytes:candidate,reduction_percent:Math.round(reduction*100)/100,
     at_least_76_percent_in_this_pair:reduction>=76,
     sitewide_76_percent_claim_permitted:false,production_repair_claim_permitted:false,visual_parity_verified:false,
-    limitations:'One cold lab CDP pair, not field traffic or a validated 61-post multi-run site-wide result. Geometry and ALT checks are only a safety screen: pixel-level scene/caption/rights review and any WordPress release require separate approval.'};
+    limitations:'One version-4 cold lab CDP pair with complete per-image event-chain and transfer attestations, not field traffic or a validated 61-post multi-run site-wide result. Geometry and ALT checks are only a safety screen: pixel-level scene/caption/rights review and any WordPress release require separate approval.'};
 }
 if (require.main===module) {
  const files=process.argv.slice(2);
