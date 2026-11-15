@@ -1,0 +1,13 @@
+# R369 — Corrected interpretation of WordPress newsletter counts
+
+**New, official source:** [WordPress.com: Manage your WordPress.com subscribers](https://wordpress.com/support/subscribers/), last reviewed **November 4, 2026**. The documentation says **Not confirmed** means a person has not completed email confirmation, is **not yet a subscriber**, and is **not counted toward total subscriber count**. It also distinguishes Reader-only **Not subscribed**, **Bounced**, **Emails paused**, and **Not sending**.
+
+**Authenticated FV snapshot:** November 15, 2026, 03:31:39 UTC: total **3**, confirmed **3**, unconfirmed **2**, suppressed 0, paid 0. The three numbers are **not necessarily arithmetically inconsistent**. Two pending confirmations may sit *outside* the 3-person total. That corrects previous repeated descriptions of 3/3/2 as self-contradictory. It does **not** prove exactly three email-enabled subscribers, and separate WP.com follower 3 / direct-email follower 0 values should not be substituted for recipient eligibility. These are different views/taxonomies.
+
+**Private read-only reconciliation owner (Claude/Focus):** Go to **Jetpack → Newsletter → Subscribers**, filter **Email Subscription = Subscribed**, and record **aggregate count only** (no personally identifiable data, export, screen shares containing addresses, or subscriber outreach). Record Not confirmed, Reader-only/Not subscribed, Bounced, Emails paused, Not sending as separate *possibly overlapping* filters. WordPress says the filtered Email Subscription status is the authoritative route to identify opted-in subscribers eligible for emails. Do not add overlapping classifications as if they were mutually exclusive.
+
+**Signup truth:** `confirmed_signup` only on provider-authoritative confirmation of a unique subscription identity. A form attempt, retry, Fieldbook click, WordPress.com follow, dashboard total fluctuation or imported list is not proof. Do not infer actual consent/eligibility from configured welcome text.
+
+**Welcome fulfillment:** Welcome message includes the 52-page Fieldbook PDF URL in current settings, but actual received welcome and publicly accessible download are **not proven**. No confirmation/re-send/test email is authorized. Existing site /focus/ exposes a PDF download and also asks readers to confirm; that must not be counted as a confirmed subscription.
+
+**Release:** HOLD_UNSENT until verified eligible recipients, genuine consent, actual native Jetpack rendering, valid FV mailing address, functional opt-out, and founder approval. No subscriber addresses disclosed or touched.
