@@ -14,7 +14,7 @@ PRIVATE = "PRIVATE_CLIENT_8831_DO_NOT_ECHO"
 
 def row(n=2, *, vendor="Acme", invoice="INV-A",
         amount=Decimal("12.00"), day=0):
-    return {"row": str(n), "v": "ACME", "inv": "INVA",
+    return {"row": str(n), "v": "ACME", "inv": invoice.replace("-", "").replace(" ", "").upper(),
             "vendor": vendor, "invoice_number": invoice,
             "amt": amount, "dt": date(2026, 1, 1) + timedelta(days=day)}
 
