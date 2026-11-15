@@ -26,7 +26,8 @@ function loadedSlot(k){let u=link(k);return {
  natural_width:960,natural_height:540,http_status:200,response_mime_type:'image/jpeg',transfer_bytes:700
 };}
 function netLoaded(k){return {request_id:'req'+k,url:link(k),status:200,mime_type:'image/jpeg',encoded_data_length:700,
- was_cached:false,from_disk_cache:false,from_memory_cache:false,from_service_worker:false,error:null};}
+ was_cached:false,from_disk_cache:false,from_memory_cache:false,from_service_worker:false,
+ cold_event_chain_complete:true,cold_network_transfer_proven:true,error:null};}
 function sealRun(run){
  const evidence=assessRun(run.pages,run.requested_pages);
  run.status=evidence.complete?'complete_browser_image_census':'partial_or_complete_browser_evidence';
@@ -207,4 +208,29 @@ test('missing from_memory_cache flag is unknown, not automatically false',()=>{
 test('memory-cached HTTP 200 image decode failure cannot certify origin breakage',()=>{
  const r=runTest(null,null,p=>{bork(p,'418:2','decode');p.pages.find(x=>x.post_id===418).network_images[1].from_memory_cache=true});
  assert.equal(r.rows.find(x=>x.image_key==='418:2').visitor_classification,'PENDING_GUEST_BROWSER');
+});
+
+// P0 cold CDP event-lineage regression: four cache-negative flags alone
+// cannot authenticate a partial or versionless collector artifact.
+for(const [name,mutate] of [
+ ['omitted probe_version',r=>{delete r.probe_version}],
+ ['string probe_version',r=>{r.probe_version='4'}],
+ ['fractional probe_version',r=>{r.probe_version=3.5}]
+])test(name+' cannot certify a completed P0 guest census',()=>{
+ const [a,b]=sources(),r=browser();mutate(r);
+ const report=adjudicate(a,b,r);
+ assert.equal(report.guest_capture_valid,false,name);
+ assert.equal(report.p0_census_complete,false,name);
+ assert.equal(report.confirmed_broken_count,null,name);
+});
+for(const [name,mutate] of [
+ ['loaded image missing completed CDP event-chain attestation',r=>{delete r.pages[0].network_images[0].cold_event_chain_complete}],
+ ['loaded image missing cold-transfer attestation',r=>{delete r.pages[0].network_images[0].cold_network_transfer_proven}],
+ ['broken HTTP 404 with partial CDP chain',r=>{bork(r,'287:5');r.pages.find(p=>p.post_id===287).network_images[0].cold_event_chain_complete=false}],
+ ['broken HTTP 404 without cold-transfer proof',r=>{bork(r,'287:5');r.pages.find(p=>p.post_id===287).network_images[0].cold_network_transfer_proven=false}]
+])test(name+' remains PENDING, even with four false cache flags',()=>{
+ const report=runTest(null,null,mutate);
+ assert.equal(report.p0_census_complete,false,name);
+ assert.equal(report.confirmed_broken_count,null,name);
+ assert.ok(report.rows.some(v=>v.visitor_classification==='PENDING_GUEST_BROWSER'),name);
 });
