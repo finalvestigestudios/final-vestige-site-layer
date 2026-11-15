@@ -1,0 +1,99 @@
+{
+  "original_master_pr": 175,
+  "original_master_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "original_manifest_sha": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+  "stacked_on_pr": 2539,
+  "stacked_on_sha": "81ce7b7ed41655bab057ca4865173c3dbf135c7a",
+  "as_of_utc": "2026-11-15T00:31:27Z",
+  "six_issues": [
+    {
+      "number": 1,
+      "slug": "the-mind-is-not-a-camera",
+      "subject": "The mind is not a camera",
+      "kind": "editorial",
+      "original_path": "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md",
+      "original_git_blob_sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "proposed_primary_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "review_html": "issue-01.html",
+      "review_plaintext": "issue-01.txt",
+      "release": "HOLD_UNSENT",
+      "merchant_gate": "N/A"
+    },
+    {
+      "number": 2,
+      "slug": "before-hypnosis-had-a-name",
+      "subject": "Before hypnosis had a name",
+      "kind": "editorial",
+      "original_path": "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md",
+      "original_git_blob_sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "proposed_primary_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "review_html": "issue-02.html",
+      "review_plaintext": "issue-02.txt",
+      "release": "HOLD_UNSENT",
+      "merchant_gate": "N/A"
+    },
+    {
+      "number": 3,
+      "slug": "the-twelve-minute-question",
+      "subject": "The twelve-minute meditation question",
+      "kind": "commercial-review-pending",
+      "original_path": "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md",
+      "original_git_blob_sha": "aeeef34efea0cc281f69901488e4501fea851245",
+      "proposed_primary_cta": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]",
+      "review_html": "issue-03.html",
+      "review_plaintext": "issue-03.txt",
+      "release": "HOLD_UNSENT",
+      "merchant_gate": "HOLD_MERCHANT"
+    },
+    {
+      "number": 4,
+      "slug": "the-hatch-and-the-spark",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "kind": "editorial",
+      "original_path": "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md",
+      "original_git_blob_sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "proposed_primary_cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "review_html": "issue-04.html",
+      "review_plaintext": "issue-04.txt",
+      "release": "HOLD_UNSENT",
+      "merchant_gate": "N/A"
+    },
+    {
+      "number": 5,
+      "slug": "before-you-press-play",
+      "subject": "Before you press play on a hypnosis audio",
+      "kind": "commercial-review-pending",
+      "original_path": "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md",
+      "original_git_blob_sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "proposed_primary_cta": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+      "review_html": "issue-05.html",
+      "review_plaintext": "issue-05.txt",
+      "release": "HOLD_UNSENT",
+      "merchant_gate": "HOLD_MERCHANT"
+    },
+    {
+      "number": 6,
+      "slug": "the-evidence-log",
+      "subject": "What did seven days of attention reveal?",
+      "kind": "editorial",
+      "original_path": "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md",
+      "original_git_blob_sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "proposed_primary_cta": "https://finalvestige.com/focus/",
+      "review_html": "issue-06.html",
+      "review_plaintext": "issue-06.txt",
+      "release": "HOLD_UNSENT",
+      "merchant_gate": "N/A"
+    }
+  ],
+  "release_attestations": {
+    "confirmed_recipient_eligibility": false,
+    "welcome_receipt": false,
+    "merchant_email_approval": false,
+    "merchant_links_issued": false,
+    "approved_live_guides": false,
+    "postal_address": false,
+    "functional_unsubscribe": false,
+    "native_wp_preview": false,
+    "founder_final_approval": false
+  }
+}
