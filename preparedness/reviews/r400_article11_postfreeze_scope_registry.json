@@ -1,0 +1,123 @@
+{
+  "schema": "r400.source-scope-review.v1",
+  "state": "DRAFT_HARD_HOLD",
+  "decision": "HUMAN_ADJUDICATION_REQUIRED",
+  "source_docket_git_blob": "86d22a1d504c93db7689b914e2202a7845b648e2",
+  "article_slug": "safe-jerky-dehydration",
+  "source_id": "nchfp-jerky",
+  "editorial_issue": 136,
+  "conversion_issue": 820,
+  "business_charter_issue": 818,
+  "review_comment_ids": [
+    6901118072,
+    6901975450
+  ],
+  "selected_source_id": null,
+  "selected_manuscript_blob": null,
+  "current_household_instructions": null,
+  "actual_paid_preparedness_sku": null,
+  "sources": [
+    {
+      "id": "umn_drying",
+      "url": "https://extension.umn.edu/food/preparing/cooking-at-home/food-preservation/drying",
+      "evidence_level": "DIRECT_HTML",
+      "scope": "MEAT_JERKY_REFRIGERATION_EXCEPTION",
+      "observed_on": "2026-11-15",
+      "human_reviewer_checked": false,
+      "usable_as_current_home_method": false,
+      "selected_for_article": false
+    },
+    {
+      "id": "umn_cooking_without_kitchen",
+      "url": "https://extension.umn.edu/natural-resources/weather-and-climate/prepare-for-risks/cooking-without-a-kitchen",
+      "evidence_level": "DIRECT_HTML",
+      "scope": "JERKY_LISTED_AMONG_ROOM_TEMPERATURE_FOODS",
+      "observed_on": "2026-11-15",
+      "human_reviewer_checked": false,
+      "usable_as_current_home_method": false,
+      "selected_for_article": false
+    },
+    {
+      "id": "nchfp_home_jerky",
+      "url": "https://nchfp.uga.edu/how/dry/recipes/jerky/",
+      "evidence_level": "DIRECT_HTML",
+      "scope": "CONDITIONAL_HOME_JERKY_STORAGE",
+      "observed_on": "2026-11-15",
+      "human_reviewer_checked": false,
+      "usable_as_current_home_method": false,
+      "selected_for_article": false
+    },
+    {
+      "id": "gpo_fsis_2011_catalog",
+      "url": "https://www.govinfo.gov/app/details/GOVPUB-A110-PURL-gpo38739",
+      "evidence_level": "OFFICIAL_BIBLIOGRAPHY",
+      "scope": "ARCHIVED_2011_NOT_CURRENT_POLICY",
+      "observed_on": "2026-11-15",
+      "human_reviewer_checked": false,
+      "usable_as_current_home_method": false,
+      "selected_for_article": false
+    },
+    {
+      "id": "fsis_ask_jerky",
+      "url": "https://ask.fsis.usda.gov/article/How-do-I-dry-jerky",
+      "evidence_level": "INDEX_ONLY_NOT_DIRECTLY_CHECKED",
+      "scope": "NEWER_FAQ_FULL_TEXT_NOT_AUTHENTICATED",
+      "observed_on": "2026-11-15",
+      "human_reviewer_checked": false,
+      "usable_as_current_home_method": false,
+      "selected_for_article": false
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "umn_cross_page_storage_scope",
+      "source_ids": [
+        "umn_drying",
+        "umn_cooking_without_kitchen"
+      ],
+      "decision": "UNRESOLVED_HUMAN_REVIEW",
+      "approved_public_guidance": false
+    },
+    {
+      "id": "home_processing_storage_scope",
+      "source_ids": [
+        "umn_drying",
+        "nchfp_home_jerky"
+      ],
+      "decision": "UNRESOLVED_HUMAN_REVIEW",
+      "approved_public_guidance": false
+    },
+    {
+      "id": "commercial_versus_home_scope",
+      "source_ids": [
+        "gpo_fsis_2011_catalog",
+        "nchfp_home_jerky"
+      ],
+      "decision": "UNRESOLVED_HUMAN_REVIEW",
+      "approved_public_guidance": false
+    },
+    {
+      "id": "pre_post_drying_sequence_not_adjudicated",
+      "source_ids": [
+        "fsis_ask_jerky",
+        "nchfp_home_jerky"
+      ],
+      "decision": "UNRESOLVED_HUMAN_REVIEW",
+      "approved_public_guidance": false
+    }
+  ],
+  "review_requirements": [
+    "product_and_processing_scope",
+    "source_date_and_currency",
+    "storage_conditions",
+    "processing_sequence",
+    "species_specific_risks",
+    "independent_qualified_signoff"
+  ],
+  "publication_approved": false,
+  "qualified_safety_approved": false,
+  "merchant_offer_verified": false,
+  "paid_cta_approved": false,
+  "automatic_source_selection": false,
+  "human_link_check_complete": false
+}
