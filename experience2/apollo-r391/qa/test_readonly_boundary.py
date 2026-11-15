@@ -146,4 +146,4 @@ report={'status':'PASS','assertions':checks,'checks':outcomes,
         'external_requests_sent':0,'real_axe':'NOT EXECUTED'}
 qa=Path(__file__).resolve().parents[1]/'QA';qa.mkdir(exist_ok=True)
 (qa/'network-boundary-results.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
-print(json.dumps({'status':'PASS','assertions':checks,'external_requests_sent':0},indent=2))
+print(json.dumps({'status':'PASS','assertions':checks,'external_requests_sent':0,'real_axe':'NOT EXECUTED'},indent=2))
