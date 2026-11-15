@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 1110" role="img" aria-labelledby="title desc">
+<title id="title">Two figures, two categories in the Orleans Levee District's 2006 financial report</title>
+<desc id="desc">The management discussion on page 10 inconsistently associates 391,566 dollars with the Bohemia litigation reserve. Detailed Note 14 on page 49 records 339,407 dollars as the Bohemia escrow reserve. Note 15 on page 50 identifies 391,566 dollars as five separate general-fund designations for equipment, air conditioning, hurricane cleanup, workers' compensation, and capital assets. These records do not establish a missing payment.</desc>
+<rect width="780" height="1110" fill="#101820"/>
+<rect x="0" y="0" width="780" height="9" fill="#e5b868"/>
+<text x="48" y="63" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#e5b868" letter-spacing="3">FINAL VESTIGE · EVIDENCE GRAPHIC</text>
+<text x="48" y="116" font-family="Georgia,serif" font-size="44" fill="#f7f4ed">The same number</text>
+<text x="48" y="172" font-family="Georgia,serif" font-size="44" fill="#f7f4ed">in two places</text>
+<text x="48" y="210" font-family="Arial,sans-serif" font-size="22" fill="#b8c4ce">Orleans Levee District · year ended June 30, 2006</text>
+<rect x="44" y="244" rx="16" width="692" height="186" fill="#23313a" stroke="#61717b" stroke-width="2"/>
+<text x="69" y="285" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#e5b868">MANAGEMENT DISCUSSION · P. 10</text>
+<text x="69" y="348" font-family="Georgia,serif" font-size="54" font-weight="700" fill="#fffaf0">$391,566</text>
+<text x="69" y="385" font-family="Arial,sans-serif" font-size="22" fill="#e5e9ee">Printed as both future spending and Bohemia</text>
+<text x="69" y="412" font-family="Arial,sans-serif" font-size="22" fill="#e5e9ee">litigation reserve. The detailed notes disagree.</text>
+<path d="M390 432 L390 467" stroke="#e5b868" stroke-width="4" fill="none"/>
+<path d="M378 457 L390 474 L402 457" stroke="#e5b868" stroke-width="4" fill="none" stroke-linecap="round"/>
+<rect x="44" y="490" rx="16" width="692" height="196" fill="#f7f4ed"/>
+<text x="69" y="534" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#344652">NOTE 14 · P. 49 · RESERVED</text>
+<text x="69" y="605" font-family="Georgia,serif" font-size="59" font-weight="700" fill="#112332">$339,407</text>
+<text x="69" y="645" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#263845">Bohemia Spillway Escrow</text>
+<path d="M390 685 L390 717" stroke="#e5b868" stroke-width="4" fill="none"/>
+<path d="M378 707 L390 724 L402 707" stroke="#e5b868" stroke-width="4" fill="none" stroke-linecap="round"/>
+<rect x="44" y="740" rx="16" width="692" height="238" fill="#f7f4ed"/>
+<text x="69" y="786" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#344652">NOTE 15 · P. 50 · DESIGNATED</text>
+<text x="69" y="851" font-family="Georgia,serif" font-size="53" font-weight="700" fill="#112332">$391,566</text>
+<text x="69" y="893" font-family="Arial,sans-serif" font-size="22" fill="#273d4a">$16,971 equipment · $18,239 air conditioning</text>
+<text x="69" y="922" font-family="Arial,sans-serif" font-size="22" fill="#273d4a">$100,000 storm recovery · $100,000 workers' comp</text>
+<text x="69" y="951" font-family="Arial,sans-serif" font-size="22" fill="#273d4a">$156,356 capital assets</text>
+<text x="47" y="1023" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#e5b868">An internal label inconsistency, not a missing $52,159.</text>
+<text x="47" y="1058" font-family="Arial,sans-serif" font-size="18" fill="#c2ced6">SOURCE: FY2006 audit, MD&amp;A p.10; Notes 14–15, pp.49–50.</text>
+<text x="47" y="1085" font-family="Arial,sans-serif" font-size="18" fill="#c2ced6">© Final Vestige Studios, 2026 · Source-derived, not a bank ledger.</text>
+</svg>
