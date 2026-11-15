@@ -15,6 +15,9 @@ from pathlib import Path
 # Windows and some remote filesystems may expose reparse points as regular
 # files. The public path must never redirect to a different evidence object.
 _REPARSE_POINT = getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400)
+# Defense in depth: the direct helper API must not widen the premium license
+# size ceiling, even when called without the registry's constant.
+MAX_ENTITLEMENT_BYTES = 8192
 _IDENTITY_FIELDS = ("st_dev", "st_ino", "st_mode", "st_nlink",
                     "st_size", "st_mtime_ns", "st_ctime_ns")
 
@@ -39,6 +42,10 @@ def fingerprint_issued_entitlement(path: Path, max_bytes: int,
     O_NOFOLLOW as an additional last-component guard. Parent-directory swaps
     after the final pathname witness still require operator filesystem custody.
     """
+    # Validate before touching a customer path or filesystem descriptor.
+    # Exact int also avoids user-defined comparison hooks on int subclasses.
+    if type(max_bytes) is not int or not 1 <= max_bytes <= MAX_ENTITLEMENT_BYTES:
+        raise error_type("Issued entitlement fingerprint limit must be a bounded native integer")
     error: str | None = None
     digest: str | None = None
     fd: int | None = None
