@@ -1,0 +1,426 @@
+{
+  "version": "r403-2026-11-15",
+  "product_scope": [
+    "Zen12",
+    "Hypnosis Live Total Focus",
+    "Brainwave Shots Focus Shot"
+  ],
+  "checked_at": "2026-11-15",
+  "status": "DRAFT_HARD_HOLD",
+  "sources": [
+    {
+      "id": "inspire",
+      "url": "https://inspire3.com/",
+      "kind": "official seller catalog"
+    },
+    {
+      "id": "affiliate",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "public affiliate program only"
+    },
+    {
+      "id": "zen",
+      "url": "https://zen12.com/getstarted",
+      "kind": "seller checkout, changing price"
+    },
+    {
+      "id": "zenpromo",
+      "url": "https://zen12.com/secret/",
+      "kind": "distinct coupon sales route; not FV authorization"
+    },
+    {
+      "id": "hypno",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "official seller offer"
+    },
+    {
+      "id": "focusshot",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "kind": "official seller offer"
+    },
+    {
+      "id": "faq",
+      "url": "https://brainwaveshots.com/faq",
+      "kind": "seller modality FAQ"
+    },
+    {
+      "id": "st2002",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12470132/",
+      "kind": "primary study"
+    },
+    {
+      "id": "st2005",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1174993/",
+      "kind": "primary study"
+    },
+    {
+      "id": "st2006",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16466414/",
+      "kind": "primary study"
+    },
+    {
+      "id": "st2025",
+      "url": "https://doi.org/10.1016/j.concog.2025.103948",
+      "kind": "primary study"
+    },
+    {
+      "id": "theory",
+      "url": "https://doi.org/10.1016/j.concog.2024.103730",
+      "kind": "review"
+    },
+    {
+      "id": "puy",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "live FV history"
+    },
+    {
+      "id": "fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "live FV free funnel"
+    },
+    {
+      "id": "ftc1",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "FTC endorsement guidance"
+    },
+    {
+      "id": "ftc2",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "FTC health substantiation guidance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12 includes 12 levels, 48 MP3 files",
+      "classification": "SELLER_DESCRIPTION",
+      "sources": [
+        "zen"
+      ],
+      "copy_policy": "seller describes"
+    },
+    {
+      "id": "C02",
+      "claim": "Zen12 standard checkout displayed $87.99 on reviewed seller page",
+      "classification": "OBSERVED_PUBLIC_CHECKOUT",
+      "sources": [
+        "zen"
+      ],
+      "copy_policy": "historical observation in matrix only; no price in prospective CTA"
+    },
+    {
+      "id": "C03",
+      "claim": "Separate promotional route displayed $37 with coupon",
+      "classification": "CONFLICTING_SELLER_PRESENTATION",
+      "sources": [
+        "zenpromo"
+      ],
+      "copy_policy": "no coupon or urgency in presell"
+    },
+    {
+      "id": "C04",
+      "claim": "Zen12 meditation audio produces proven clinically meaningful focus benefits",
+      "classification": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "sources": [
+        "zen"
+      ],
+      "copy_policy": "DO_NOT_ASSERT"
+    },
+    {
+      "id": "C05",
+      "claim": "Zen12 refund guarantee appears on seller page",
+      "classification": "SELLER_PROMISE_UNVERIFIED_FULFILLMENT",
+      "sources": [
+        "zen"
+      ],
+      "copy_policy": "state seller advertises only"
+    },
+    {
+      "id": "C06",
+      "claim": "Total Focus is a 33-minute, 47MB downloadable recording",
+      "classification": "SELLER_DESCRIPTION",
+      "sources": [
+        "hypno"
+      ],
+      "copy_policy": "seller describes"
+    },
+    {
+      "id": "C07",
+      "claim": "Total Focus displayed $17.95 on examined seller page",
+      "classification": "VOLATILE_SELLER_PRICE",
+      "sources": [
+        "hypno"
+      ],
+      "copy_policy": "do not treat as actual affiliate price; price varies"
+    },
+    {
+      "id": "C08",
+      "claim": "Total Focus yields perfect concentration or rewires brain",
+      "classification": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "sources": [
+        "hypno"
+      ],
+      "copy_policy": "DO_NOT_ASSERT"
+    },
+    {
+      "id": "C09",
+      "claim": "Focus Shot alternates 12 and 18 Hz in described mix",
+      "classification": "SELLER_TECHNICAL_DESCRIPTION",
+      "sources": [
+        "focusshot"
+      ],
+      "copy_policy": "not independently signal-tested"
+    },
+    {
+      "id": "C10",
+      "claim": "Focus Shot uses isochronic tones",
+      "classification": "SELLER_TECHNICAL_DESCRIPTION",
+      "sources": [
+        "faq"
+      ],
+      "copy_policy": "do not substitute binaural research"
+    },
+    {
+      "id": "C11",
+      "claim": "Focus Shot improves concentration on demand",
+      "classification": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "sources": [
+        "focusshot"
+      ],
+      "copy_policy": "DO_NOT_ASSERT"
+    },
+    {
+      "id": "C12",
+      "claim": "2002 experiment compared 16 high and 16 low suggestibles",
+      "classification": "INDEPENDENT_PRIMARY",
+      "sources": [
+        "st2002"
+      ],
+      "copy_policy": "include selected-task limitation"
+    },
+    {
+      "id": "C13",
+      "claim": "2005 brain activity and Stroop interference varied under suggestion",
+      "classification": "INDEPENDENT_PRIMARY",
+      "sources": [
+        "st2005"
+      ],
+      "copy_policy": "task-specific"
+    },
+    {
+      "id": "C14",
+      "claim": "2006 suggestion altered Stroop with and without hypnosis induction",
+      "classification": "INDEPENDENT_PRIMARY",
+      "sources": [
+        "st2006"
+      ],
+      "copy_policy": "not product-specific"
+    },
+    {
+      "id": "C15",
+      "claim": "2006 approximately 45% variance explained means 45% productivity boost",
+      "classification": "FALSE_EXTRAPOLATION",
+      "sources": [
+        "st2006"
+      ],
+      "copy_policy": "DO_NOT_ASSERT"
+    },
+    {
+      "id": "C16",
+      "claim": "2025 emotional Stroop study: high 34, low 38 participants in separate experiments",
+      "classification": "INDEPENDENT_PRIMARY",
+      "sources": [
+        "st2025"
+      ],
+      "copy_policy": "emotional Stroop not same outcome"
+    },
+    {
+      "id": "C17",
+      "claim": "Hypnotic suggestion theory is settled",
+      "classification": "NOT_SUPPORTED",
+      "sources": [
+        "theory"
+      ],
+      "copy_policy": "DO_NOT_ASSERT"
+    },
+    {
+      "id": "C18",
+      "claim": "Puységur recorded failed predictions and consent issues",
+      "classification": "HISTORICAL_ARCHIVE",
+      "sources": [
+        "puy"
+      ],
+      "copy_policy": "historical only"
+    },
+    {
+      "id": "C19",
+      "claim": "Seven Day Focus Fieldbook is live free with existing Dispatch list",
+      "classification": "CURRENT_FV_PAGE",
+      "sources": [
+        "fieldbook"
+      ],
+      "copy_policy": "no second signup"
+    },
+    {
+      "id": "C20",
+      "claim": "Public Inspire3 portal invites prospective affiliates",
+      "classification": "PUBLIC_PROGRAM_ONLY",
+      "sources": [
+        "affiliate"
+      ],
+      "copy_policy": "not named acceptance"
+    },
+    {
+      "id": "C21",
+      "claim": "Final Vestige has approved affiliate credentials for Zen12",
+      "classification": "PERMISSION_NOT_AUTHENTICATED",
+      "sources": [
+        "affiliate"
+      ],
+      "copy_policy": "HOLD"
+    },
+    {
+      "id": "C22",
+      "claim": "Official issued earning URL, sub-ID rules, eligible EMAIL/social channels",
+      "classification": "PERMISSION_NOT_AUTHENTICATED",
+      "sources": [
+        "affiliate"
+      ],
+      "copy_policy": "HOLD"
+    },
+    {
+      "id": "C23",
+      "claim": "FV owns a payable rights-cleared Mind digital product",
+      "classification": "NOT_AUTHENTICATED",
+      "sources": [
+        "fieldbook"
+      ],
+      "copy_policy": "HOLD, free fieldbook is not paid SKU"
+    },
+    {
+      "id": "C24",
+      "claim": "FTC material relationship disclosure must be clear and prominent",
+      "classification": "REGULATORY_GUIDANCE",
+      "sources": [
+        "ftc1"
+      ],
+      "copy_policy": "adjacent to earning CTA"
+    },
+    {
+      "id": "C25",
+      "claim": "Health benefit assertions require scientific support",
+      "classification": "REGULATORY_GUIDANCE",
+      "sources": [
+        "ftc2"
+      ],
+      "copy_policy": "avoid implied clinical claims"
+    },
+    {
+      "id": "C26",
+      "claim": "Affiliate outbound clicks imply paid commission",
+      "classification": "FALSE_METRIC_CONFLATION",
+      "sources": [],
+      "copy_policy": "NEVER"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "publisher_acceptance",
+      "status": "HOLD"
+    },
+    {
+      "id": "exact_sku_approval",
+      "status": "HOLD"
+    },
+    {
+      "id": "website_channel_permission",
+      "status": "HOLD"
+    },
+    {
+      "id": "social_channel_permission",
+      "status": "HOLD"
+    },
+    {
+      "id": "email_channel_permission",
+      "status": "HOLD"
+    },
+    {
+      "id": "approved_creative_rights",
+      "status": "HOLD"
+    },
+    {
+      "id": "issued_affiliate_url",
+      "status": "HOLD"
+    },
+    {
+      "id": "subid_and_attribution_terms",
+      "status": "HOLD"
+    },
+    {
+      "id": "refund_and_clawback_terms",
+      "status": "HOLD"
+    },
+    {
+      "id": "checkout_price_recheck",
+      "status": "HOLD"
+    },
+    {
+      "id": "checkout_tax_and_returns",
+      "status": "HOLD"
+    },
+    {
+      "id": "merchant_reporting_access",
+      "status": "HOLD"
+    },
+    {
+      "id": "independent_product_specific_efficacy",
+      "status": "HOLD"
+    },
+    {
+      "id": "real_playable_rights_cleared_film",
+      "status": "HOLD"
+    },
+    {
+      "id": "keyboard_and_screenreader_qa",
+      "status": "HOLD"
+    },
+    {
+      "id": "browser_responsive_qa",
+      "status": "HOLD"
+    },
+    {
+      "id": "no_js_qa",
+      "status": "HOLD"
+    },
+    {
+      "id": "wcag_2_2_aa_qa",
+      "status": "HOLD"
+    },
+    {
+      "id": "lighthouse_and_cwv",
+      "status": "HOLD"
+    },
+    {
+      "id": "wp_sanitization",
+      "status": "HOLD"
+    },
+    {
+      "id": "focus_jetpack_confirmed_signup",
+      "status": "HOLD"
+    },
+    {
+      "id": "lead_delivery_qa",
+      "status": "HOLD"
+    },
+    {
+      "id": "grok_actual_asset_ids",
+      "status": "HOLD"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HOLD"
+    }
+  ],
+  "no_active_affiliate_url": true,
+  "no_paid_sku_authenticated": true
+}
