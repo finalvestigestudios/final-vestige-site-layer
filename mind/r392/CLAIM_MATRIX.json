@@ -1,0 +1,204 @@
+{
+  "run": "2026-11-14",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "products": [
+    {
+      "name": "Zen12 Premium",
+      "official_listing": "https://inspire3.com/",
+      "exact_offer": "https://zen12.com/",
+      "order_screen": "https://zen12.com/getstarted",
+      "features": [
+        {
+          "text": "12 levels / 48 MP3s",
+          "source": "https://zen12.com/getstarted",
+          "class": "seller-described package"
+        },
+        {
+          "text": "short meditation audio sessions",
+          "source": "https://zen12.com/",
+          "class": "seller-described format"
+        },
+        {
+          "text": "hour of meditation in 12 minutes",
+          "source": "https://zen12.com/",
+          "class": "seller efficacy claim; not substantiated"
+        },
+        {
+          "text": "support and refund guarantee",
+          "source": "https://zen12.com/getstarted",
+          "class": "seller representation; fulfillment unverified"
+        }
+      ],
+      "price": {
+        "recorded_standard_snapshots": [
+          "$87",
+          "$87.99"
+        ],
+        "separate_promotional_page": "$37 with coupon and countdown",
+        "current_referred_checkout": "UNKNOWN",
+        "decision": "do not advertise any price or discount"
+      },
+      "affiliate_authorization": "UNKNOWN",
+      "issued_link": "WITHHELD",
+      "permission_for_social_email": "UNKNOWN"
+    },
+    {
+      "name": "Hypnosis Live",
+      "official_catalog": "https://inspire3.com/",
+      "exact_offer": "https://hypnosislive.com/",
+      "decision": "seller catalog reviewed; exact SKU pricing/returns and publisher rights not authenticated; no presell/activation"
+    },
+    {
+      "name": "Brainwave Shots",
+      "official_catalog": "https://inspire3.com/",
+      "exact_offer": "https://brainwaveshots.com/",
+      "decision": "seller catalog reviewed; exact SKU pricing/returns and publisher rights not authenticated; no presell/activation"
+    }
+  ],
+  "claim_source": [
+    {
+      "claim": "1843 Braid book exists",
+      "source": "https://content.www.wellcomecollection.org/works/demkv24m",
+      "verdict": "SOURCE-SUPPORTED HISTORICAL FACT"
+    },
+    {
+      "claim": "Puységur archive records failures, reprint provenance",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "verdict": "SOURCE-SUPPORTED HISTORICAL ARCHIVE"
+    },
+    {
+      "claim": "2006 highly suggestible Stroop task: suggestion effect without induction",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/16466414/",
+      "verdict": "LIMITED EXPERIMENTAL FINDING"
+    },
+    {
+      "claim": "Modern hypnosis theories lack mechanism consensus",
+      "source": "https://doi.org/10.1016/j.concog.2024.103730",
+      "verdict": "LIMITED REVIEW FINDING"
+    },
+    {
+      "claim": "2023 sleep-hypnotherapy review: 44 studies, heterogeneous results",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37399315/",
+      "verdict": "GENERIC CLINICAL LITERATURE, NOT PRODUCT PROOF"
+    },
+    {
+      "claim": "Zen12 equals an hour of advanced meditation",
+      "source": "https://zen12.com/",
+      "verdict": "SELLER CLAIM — DO NOT ENDORSE"
+    },
+    {
+      "claim": "Zen12 medically treats health condition or raises intelligence",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "verdict": "NO PRODUCT-SPECIFIC SUBSTANTIATION — OMIT"
+    },
+    {
+      "claim": "Public affiliate network payout is a guaranteed FV commission",
+      "source": "https://affiliates.inspire3.com/",
+      "verdict": "NOT ESTABLISHED — OMIT"
+    },
+    {
+      "claim": "FV publisher application and allowed channels approved",
+      "source": "https://affiliates.inspire3.com/",
+      "verdict": "NOT VERIFIED"
+    },
+    {
+      "claim": "FV paid Mind SKU currently ready to purchase",
+      "verdict": "NOT AUTHENTICATED"
+    },
+    {
+      "claim": "FV settled commission or refunded order measured",
+      "verdict": "NO VERIFIED EVIDENCE"
+    }
+  ],
+  "release_gates": [
+    {
+      "name": "Named publisher approval",
+      "state": "HOLD"
+    },
+    {
+      "name": "Approved Zen12 SKU",
+      "state": "HOLD"
+    },
+    {
+      "name": "Authorized website channel",
+      "state": "HOLD"
+    },
+    {
+      "name": "Authorized TikTok/YouTube social",
+      "state": "HOLD"
+    },
+    {
+      "name": "Authorized Dispatch/email channel",
+      "state": "HOLD"
+    },
+    {
+      "name": "Issued tracked earning URL",
+      "state": "HOLD"
+    },
+    {
+      "name": "Approved creative rights",
+      "state": "HOLD"
+    },
+    {
+      "name": "Referred checkout and actual tax",
+      "state": "HOLD"
+    },
+    {
+      "name": "Return/refund specifics validated",
+      "state": "HOLD"
+    },
+    {
+      "name": "Independent claim/evidence signoff",
+      "state": "HOLD"
+    },
+    {
+      "name": "Founder release approval",
+      "state": "HOLD"
+    },
+    {
+      "name": "Full mobile viewport browser QA",
+      "state": "HOLD"
+    },
+    {
+      "name": "Screen-reader and keyboard QA",
+      "state": "HOLD"
+    },
+    {
+      "name": "No-JS and captions QA",
+      "state": "HOLD"
+    },
+    {
+      "name": "Playable rights-cleared original video",
+      "state": "HOLD"
+    },
+    {
+      "name": "Existing Jetpack consent/delivery",
+      "state": "HOLD"
+    },
+    {
+      "name": "No duplicated analytics script",
+      "state": "HOLD"
+    },
+    {
+      "name": "Verified merchant settled revenue",
+      "state": "HOLD"
+    },
+    {
+      "name": "Fees/refund reconciliation",
+      "state": "HOLD"
+    },
+    {
+      "name": "Rollback plan",
+      "state": "HOLD"
+    }
+  ],
+  "disclosure": {
+    "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "wording": "If we later provide an authorized purchase link, Final Vestige may earn a commission when you buy through it, at no additional cost to you.",
+    "adjacent": true,
+    "button_native_disabled": true,
+    "affiliate_link_active": false
+  },
+  "kpi": "NOT COMPUTABLE: no verified qualified-human sessions and settled attributable commissions or orders",
+  "privacy": "no PII, no cookies/scripts deployed; first-party schema only"
+}
