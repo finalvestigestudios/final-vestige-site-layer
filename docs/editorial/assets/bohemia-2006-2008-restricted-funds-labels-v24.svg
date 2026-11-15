@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="875" viewBox="0 0 860 875" role="img" aria-labelledby="tit desc">
+<title id="tit">When the account label changed: Orleans Levee District reserves, 2006–2008</title>
+<desc id="desc">Original Final Vestige Studios evidence graphic. June 2006 restricted Bohemia escrow reserve: $339,407. June 2007 and 2008 broader legal settlement funds: $292,522 and $333,218 respectively. The later accounts cannot be treated as Bohemia-only funds. All balances are historical year-end reported figures, not payments to claimants.</desc>
+<rect width="860" height="875" rx="12" fill="#121b25"/><rect width="13" height="875" fill="#cb9a61"/>
+<g font-family="DejaVu Sans,Arial,sans-serif">
+<text x="54" y="66" font-size="23" fill="#cb9a61" letter-spacing="2.5">FINAL VESTIGE / EVIDENCE FIGURE</text>
+<text x="54" y="123" font-size="46" fill="#f5f0e9" font-weight="700">The label changed.</text>
+<text x="54" y="164" font-size="26" fill="#ced5db">Restricted funds reported at June 30</text>
+<rect x="54" y="200" width="750" height="164" rx="12" fill="#243547" stroke="#5e89a0" stroke-width="2"/>
+<text x="78" y="245" font-size="28" font-weight="700" fill="#f5f0e9">2006</text>
+<text x="78" y="286" font-size="25" fill="#b7d9e8">BOHEMIA SPILLWAY ESCROW</text>
+<text x="78" y="343" font-size="52" font-weight="700" fill="#ffffff">$339,407</text>
+<rect x="54" y="388" width="750" height="52" rx="6" fill="#343439"/>
+<text x="78" y="421" font-size="23" fill="#f0ceaa">2007 onward: broader category in the audited notes</text>
+<rect x="54" y="467" width="750" height="124" rx="12" fill="#26332e" stroke="#719c82" stroke-width="2"/>
+<text x="78" y="509" font-size="28" font-weight="700" fill="#f5f0e9">2007</text>
+<text x="236" y="509" font-size="25" fill="#bfdcc5">LEGAL SETTLEMENT PAYMENTS</text>
+<text x="78" y="569" font-size="49" font-weight="700" fill="#ffffff">$292,522</text>
+<rect x="54" y="613" width="750" height="124" rx="12" fill="#26332e" stroke="#719c82" stroke-width="2"/>
+<text x="78" y="655" font-size="28" font-weight="700" fill="#f5f0e9">2008</text>
+<text x="236" y="655" font-size="25" fill="#bfdcc5">LEGAL SETTLEMENT PAYMENTS</text>
+<text x="78" y="714" font-size="49" font-weight="700" fill="#ffffff">$333,218</text>
+<text x="54" y="782" font-size="25" fill="#f5f0e9" font-weight="700">The latter figures are not identified as Bohemia-only.</text>
+<text x="54" y="816" font-size="20" fill="#c7d0d9">Source: Louisiana Legislative Auditor, FY2006 p.49;</text>
+<text x="54" y="841" font-size="20" fill="#c7d0d9">FY2007 p.46; FY2008 p.46. Not a payment ledger.</text>
+</g></svg>
