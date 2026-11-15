@@ -126,9 +126,17 @@
     190,
     166,
     156,
-    151
+    151,
+    146,
+    142,
+    139,
+    108,
+    101,
+    38,
+    37,
+    36
   ],
-  "cms_img_tags_read": 339,
+  "cms_img_tags_read": 359,
   "media_attachments_read": 132,
   "media_total_original_stored_bytes": 90403013,
   "threshold_strictly_greater_than_bytes": 1500000,
@@ -345,7 +353,24 @@
       "cache_authorized": false,
       "wp_upload_authorized": false,
       "post_rewrite_authorized": false,
-      "published_inline_uses": []
+      "published_inline_uses": [
+        {
+          "post_id": 38,
+          "post_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+          "post_title": "The Cisterns Beneath San Francisco",
+          "post_modified": "2026-10-29T17:06:51",
+          "image_index": 0,
+          "wp_view_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png?resize=1024%2C576&ssl=1",
+          "img_width": 1024,
+          "img_height": 576,
+          "srcset_present": false,
+          "sizes_present": false,
+          "loading": "lazy",
+          "guest_current_src": null,
+          "guest_http_status": null,
+          "guest_transferred_bytes": null
+        }
+      ]
     },
     {
       "attachment_id": 389,
@@ -423,7 +448,24 @@
       "cache_authorized": false,
       "wp_upload_authorized": false,
       "post_rewrite_authorized": false,
-      "published_inline_uses": []
+      "published_inline_uses": [
+        {
+          "post_id": 36,
+          "post_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+          "post_title": "The City That Went Underground",
+          "post_modified": "2026-10-29T17:07:30",
+          "image_index": 0,
+          "wp_view_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png?resize=1024%2C576&ssl=1",
+          "img_width": 1024,
+          "img_height": 576,
+          "srcset_present": false,
+          "sizes_present": false,
+          "loading": "lazy",
+          "guest_current_src": null,
+          "guest_http_status": null,
+          "guest_transferred_bytes": null
+        }
+      ]
     },
     {
       "attachment_id": 42,
@@ -441,7 +483,24 @@
       "cache_authorized": false,
       "wp_upload_authorized": false,
       "post_rewrite_authorized": false,
-      "published_inline_uses": []
+      "published_inline_uses": [
+        {
+          "post_id": 37,
+          "post_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+          "post_title": "How Petra Made Water Flow Through Stone",
+          "post_modified": "2026-10-29T17:07:17",
+          "image_index": 0,
+          "wp_view_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png?resize=1024%2C576&ssl=1",
+          "img_width": 1024,
+          "img_height": 576,
+          "srcset_present": false,
+          "sizes_present": false,
+          "loading": "lazy",
+          "guest_current_src": null,
+          "guest_http_status": null,
+          "guest_transferred_bytes": null
+        }
+      ]
     },
     {
       "attachment_id": 382,
