@@ -1024,6 +1024,10 @@ jobs:
         run: |
           PYTHONPATH=products/desktop python -W error -m unittest discover -s products/desktop/tests -p 'test_smoke_child_environment_r371.py'
           PYTHONPATH=products/desktop python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_smoke_child_environment_r371.py'
+      - name: R457 incrementally budget six-app CSV report rendering (source-only)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_incremental_render_budget_r457.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_incremental_render_budget_r457.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -2819,6 +2823,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R456 Windows sanitizer standard-mode FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_safe_cell_zero_copy_r456.py'
           if ($LASTEXITCODE -ne 0) { throw "R456 Windows sanitizer optimized-mode FAILED" }
+      - name: R457 Windows incremental CSV render budget (pre-packaging; release HOLD)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_incremental_render_budget_r457.py'
+          if ($LASTEXITCODE -ne 0) { throw "R457 Windows normal CSV render-budget gate FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_incremental_render_budget_r457.py'
+          if ($LASTEXITCODE -ne 0) { throw "R457 Windows optimized CSV render-budget gate FAILED" }
       - name: R238 Windows PE candidate FD custody before packaging (14 methods per mode)
         shell: pwsh
         run: |

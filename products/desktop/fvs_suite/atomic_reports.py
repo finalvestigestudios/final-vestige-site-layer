@@ -60,19 +60,39 @@ class _BudgetedCSVTextSink:
         self._remaining -= encoded_bytes
         return written
 
+    @staticmethod
+    def _excel_field_bytes(value: str) -> int:
+        """Exact quoted csv.excel UTF-8 field cost, excluding separators."""
+        cost = len(value.encode("utf-8")) + value.count('"')
+        if any(char in value for char in ('"', ",", "\r", "\n")):
+            cost += 2
+        return cost
+
+    def preflight_add(self, value: str, subtotal: int, columns: int) -> int:
+        """Reject an impossible row while its cells are still being rendered.
+
+        Reserve delimiters, CRLF, and the singleton empty-field quotation
+        regardless of Mapping.items() order. This rejects a row as soon as
+        emitted fields exceed its remaining byte budget, rather than creating
+        up to 256 potentially escaped 1 MiB strings before preflight().
+        Unselected extra columns still pass through _render_cell on success.
+        This does not debit the actual stream budget or publish partial data.
+        """
+        if columns < 1:
+            raise ValueError("Invalid CSV report column count")
+        subtotal += self._excel_field_bytes(value)
+        if columns == 1 and value == "":
+            subtotal += 2
+        if subtotal + (columns - 1) + 2 > self._remaining:
+            raise ValueError("CSV report byte limit exceeded")
+        return subtotal
+
     def preflight(self, values: Iterable[str]) -> None:
-        """Bound exact default csv.excel output *before* writerow allocates it.
+        """Bound exact default csv.excel output before writerow allocates it.
 
-        All callers supply plain sanitized str values and use DictWriter's
-        default excel dialect (QUOTE_MINIMAL, comma delimiter, doublequote,
-        CRLF line terminator). Count encoded cells, mandatory doubled quotes,
-        surrounding quotes, delimiters, and CRLF. CPython also quotes a sole
-        empty field to distinguish it from an empty record.
-
-        The check consumes no stream bytes and never debits the budget:
-        write() independently enforces the actual serialized size and hashes
-        accepted bytes. If the writer dialect changes, update this preflight
-        and its real csv.writer parity tests together.
+        The final check remains independent of the incremental render-time
+        guard. Both use the same field-cost calculation; write() still
+        independently checks actual bytes and maintains its SHA-256 witness.
         """
         available = self._remaining - 2  # excel's CRLF record terminator
         count = 0
@@ -83,9 +103,7 @@ class _BudgetedCSVTextSink:
             else:
                 only_field_empty = value == ""
             count += 1
-            available -= len(value.encode("utf-8")) + value.count('"')
-            if any(char in value for char in ('"', ",", "\r", "\n")):
-                available -= 2  # enclosing quotes for QUOTE_MINIMAL
+            available -= self._excel_field_bytes(value)
             if available < 0:
                 raise ValueError("CSV report byte limit exceeded")
         if count == 1 and only_field_empty:
@@ -197,6 +215,7 @@ def _write_csv_report(destination: str | Path, fields: Iterable[str],
             if iterator_failed:
                 raise ValueError("CSV report rows could not be read")
             count = 0
+            emitted_columns = frozenset(names)
             while True:
                 next_failed = False
                 try:
@@ -249,9 +268,16 @@ def _write_csv_report(destination: str | Path, fields: Iterable[str],
                 # a plausible but forged .items() view of financial evidence.
                 # Retain R217 pair validation before checking the backing dict.
                 entries = verify_userdict_storage(row, entries, MAX_REPORT_COLUMNS)
-                rendered_row = {
-                    name: _render_cell(value, cell) for name, value in entries
-                }
+                # Reject oversized output before constructing all rendered
+                # cells. The final whole-row preflight and byte witness remain
+                # authoritative. Incomplete/invalid input still fails closed.
+                rendered_row = {}
+                subtotal = 0
+                for name, value in entries:
+                    rendered_value = _render_cell(value, cell)
+                    if name in emitted_columns:
+                        subtotal = sink.preflight_add(rendered_value, subtotal, len(names))
+                    rendered_row[name] = rendered_value
                 if any(name not in rendered_row for name in names):
                     raise ValueError("Incomplete CSV report row schema")
                 # Only emitted columns count toward the final file budget;
