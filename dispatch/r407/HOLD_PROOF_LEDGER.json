@@ -1,0 +1,51 @@
+{
+  "sprint": "R407",
+  "as_of_utc": "2026-11-16T20:33:20Z",
+  "status": "HOLD_UNSENT",
+  "source_pr175_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "parent_dispatch_head": "61d9c1ae287d0aacb21b3537f6264d6e6127f7e3",
+  "provider_snapshot": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "wpcom_followers": 3,
+    "direct_email_followers": 0,
+    "eligible_inboxes": null,
+    "confirmed_signup_v1": null,
+    "welcomed_inboxes": null,
+    "recent_five_post_emails": "never_sent_opted_out",
+    "email_new_posts_by_default": false,
+    "newsletter_enabled": true
+  },
+  "optional_issue06": {
+    "slot": 6,
+    "status": "NOT_ADOPTED",
+    "type": "editorial",
+    "historical_primary_source": "https://psychclassics.yorku.ca/Ebbinghaus/memorypref.htm",
+    "cta": "https://finalvestige.com/free-resources/the-page-that-changed/",
+    "merchant_url": null
+  },
+  "permissions": {
+    "named_inspire3_email_approval": false,
+    "issued_earning_link": false,
+    "verified_live_guide": false,
+    "exact_referred_checkout": false,
+    "valid_fv_postal": false,
+    "native_email_preview": false,
+    "operational_unsubscribe": false,
+    "founder_send_approval": false
+  },
+  "commercial_outcomes": {
+    "qualified_human_sessions": null,
+    "paid_orders": null,
+    "settled_net_revenue_usd": null,
+    "net_revenue_per_1000_qualified_human_sessions": null
+  },
+  "privacy": {
+    "raw_email_addresses_committed": 0,
+    "verification_tokens_committed": 0,
+    "additional_list_created": false,
+    "tracking_scripts_added": false
+  }
+}
