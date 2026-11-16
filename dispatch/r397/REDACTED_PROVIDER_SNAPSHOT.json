@@ -1,0 +1,36 @@
+{
+  "as_of_utc": "2026-11-16T07:45:41Z",
+  "evidence": "Connected WordPress read-only wpcom_jetpack_newsletter status/get_settings; wpcom_jetpack_stats_followers; published /dispatch/ /focus/ editorial standards",
+  "site": "finalvestige.com",
+  "newsletter_enabled": true,
+  "new_post_default_email": false,
+  "email_format": "full",
+  "reply_to": "no-reply",
+  "welcome_configured_52_page": true,
+  "welcome_receipt": "NOT_VERIFIED",
+  "subscribers": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "paid": 0
+  },
+  "stats_followers": {
+    "wpcom": 3,
+    "direct_email": 0
+  },
+  "recipient_eligible_inboxes": "UNKNOWN",
+  "recent_five_posts": "never_sent_opted_out",
+  "native_email_preview": "NOT_PERFORMED",
+  "postal_address": "NOT_VERIFIED",
+  "actual_unsubscribe": "NOT_VERIFIED",
+  "email_affiliate_rights": "NOT_VERIFIED",
+  "active_offer_guide": "NOT_VERIFIED",
+  "settled_affiliate_sales": "NO_EVIDENCE",
+  "audited_qualified_human_sessions": "NO_EVIDENCE",
+  "revenue_per_1000": "NOT_COMPUTABLE",
+  "all_sends": "HOLD_UNSENT",
+  "editorial_count": 4,
+  "commercial_count": 2,
+  "source_issue": 174
+}
