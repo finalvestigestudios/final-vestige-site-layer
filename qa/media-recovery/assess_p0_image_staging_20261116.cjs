@@ -9,7 +9,7 @@ const HEX = /^[a-f0-9]{64}$/;
 const P0 = ['285:5', '285:2', '287:5', '418:1', '418:2', '407:1'];
 const unique = a => new Set(a).size === a.length;
 const validUrl = s => typeof s === 'string' && HTTPS.test(s) && !/[@\\]/.test(s);
-const validBinaryUrl = s => validUrl(s) && /\.(?:jpe?g|png|webp|avif)(?:\?[^#]*)?$/i.test(s);
+const validBinaryUrl = s => validUrl(s) && !/\/(?:wiki\/|items\/show\/)/i.test(s) && /\.(?:jpe?g|png|webp|avif)(?:\?[^#]*)?$/i.test(s);
 const integer = v => Number.isSafeInteger(v) && v > 0;
 const ratio960 = (w, h) => {
   if (!integer(w) || !integer(h)) return null;
