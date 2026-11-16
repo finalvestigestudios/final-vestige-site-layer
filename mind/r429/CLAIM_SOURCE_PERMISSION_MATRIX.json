@@ -1,0 +1,549 @@
+{
+  "schema_version": "1.0",
+  "vertical": "Final Vestige Studios / Mind & Perception",
+  "sprint": "R429",
+  "date": "2026-11-16",
+  "status": "UNPUBLISHED; NO AFFILIATE ACTIVATION",
+  "source_library": {
+    "chevreul": "https://fr.wikisource.org/wiki/Lettre_%C3%A0_M._Amp%C3%A8re_sur_une_certaine_classe_de_mouvemens_musculaires",
+    "carpenter": "https://commons.wikimedia.org/wiki/File:On_the_influence_of_suggestion_in_modifying_and_directing_muscular_movement,_independently_of_volition_(IA_b22377074).pdf",
+    "carpenter1874": "https://doi.org/10.1017/CBO9780511694226.007",
+    "andersen": "https://link.springer.com/article/10.1007/s11097-018-9585-8",
+    "moga": "https://doi.org/10.1080/00029157.2021.2010641",
+    "inspire": "https://inspire3.com/",
+    "zen12": "https://zen12.com/",
+    "zen12order": "https://zen12.com/order",
+    "total": "https://hypnosislive.com/mental-skills/total-focus",
+    "focusshot": "https://brainwaveshots.com/focus-shot",
+    "ftcendorse": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftchealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "puy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "focus": "https://finalvestige.com/focus/",
+    "dispatch": "https://finalvestige.com/dispatch/",
+    "mindIssue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "rev": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Chevreul reported pendulum experiments in 1812 in a letter published in 1833",
+      "kind": "HISTORICAL_PRIMARY",
+      "status": "SUPPORTED_CONTEXT",
+      "sources": [
+        "https://fr.wikisource.org/wiki/Lettre_%C3%A0_M._Amp%C3%A8re_sur_une_certaine_classe_de_mouvemens_musculaires"
+      ],
+      "limitation": "Published French account; not randomized modern trial"
+    },
+    {
+      "id": "C02",
+      "claim": "A moving pendulum is observable even when the holder does not feel deliberate action",
+      "kind": "MECHANISM_INTERPRETATION",
+      "status": "CAUTIOUS",
+      "sources": [
+        "https://fr.wikisource.org/wiki/Lettre_%C3%A0_M._Amp%C3%A8re_sur_une_certaine_classe_de_mouvemens_musculaires",
+        "https://commons.wikimedia.org/wiki/File:On_the_influence_of_suggestion_in_modifying_and_directing_muscular_movement,_independently_of_volition_(IA_b22377074).pdf"
+      ],
+      "limitation": "Mechanistic explanation not a claim that all movements share one cause"
+    },
+    {
+      "id": "C03",
+      "claim": "Carpenter published an 1852 treatise on suggestion and involuntary muscular movement",
+      "kind": "HISTORICAL_PRIMARY",
+      "status": "SUPPORTED",
+      "sources": [
+        "https://commons.wikimedia.org/wiki/File:On_the_influence_of_suggestion_in_modifying_and_directing_muscular_movement,_independently_of_volition_(IA_b22377074).pdf"
+      ],
+      "limitation": "Archival record of treatise; do not extrapolate therapeutic outcomes"
+    },
+    {
+      "id": "C04",
+      "claim": "Carpenter later discussed ideation and ideo-motor action",
+      "kind": "HISTORICAL_PRIMARY",
+      "status": "SUPPORTED",
+      "sources": [
+        "https://doi.org/10.1017/CBO9780511694226.007"
+      ],
+      "limitation": "Later chapter initially published 1874"
+    },
+    {
+      "id": "C05",
+      "claim": "Ouija-board eye-tracking study published online July 17 2018",
+      "kind": "RESEARCH_PRIMARY",
+      "status": "SUPPORTED",
+      "sources": [
+        "https://link.springer.com/article/10.1007/s11097-018-9585-8"
+      ],
+      "limitation": "2019 print volume 18"
+    },
+    {
+      "id": "C06",
+      "claim": "In Ouija condition participants anticipated letters less than in instructed intentional spelling",
+      "kind": "RESEARCH_PRIMARY",
+      "status": "SUPPORTED_WITH_LIMITS",
+      "sources": [
+        "https://link.springer.com/article/10.1007/s11097-018-9585-8"
+      ],
+      "limitation": "Conference field setting, no proof for every session"
+    },
+    {
+      "id": "C07",
+      "claim": "Ouija believers reported lower sense of agency than skeptics",
+      "kind": "RESEARCH_PRIMARY",
+      "status": "SUPPORTED_WITH_LIMITS",
+      "sources": [
+        "https://link.springer.com/article/10.1007/s11097-018-9585-8"
+      ],
+      "limitation": "Group observation, not universal believer profile"
+    },
+    {
+      "id": "C08",
+      "claim": "Pairs showed more predictive information as word sequences unfolded",
+      "kind": "RESEARCH_PRIMARY",
+      "status": "SUPPORTED_WITH_LIMITS",
+      "sources": [
+        "https://link.springer.com/article/10.1007/s11097-018-9585-8"
+      ],
+      "limitation": "Pair-level interactions relevant; no claim of precise mind reading"
+    },
+    {
+      "id": "C09",
+      "claim": "A 2022 pendulum study considered indirect expression of unconscious general knowledge",
+      "kind": "PUBLICATION_RECORD",
+      "status": "TITLE_ONLY",
+      "sources": [
+        "https://doi.org/10.1080/00029157.2021.2010641"
+      ],
+      "limitation": "Paper metadata checked, full methods inaccessible this pass; no numerical effects asserted"
+    },
+    {
+      "id": "C10",
+      "claim": "Franklin commissioners tested Deslon animal magnetism in 1784",
+      "kind": "HISTORICAL_FV_SECONDARY",
+      "status": "SUPPORTED_WITH_SOURCE_BOUNDARY",
+      "sources": [
+        "https://finalvestige.com/2026/11/02/mesmerism/"
+      ],
+      "limitation": "Not direct experiment on Chevreul effect"
+    },
+    {
+      "id": "C11",
+      "claim": "Puységur archive retains failures and source-edition distinctions",
+      "kind": "FV_SOURCE_ARCHIVE",
+      "status": "SUPPORTED",
+      "sources": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "limitation": "Historic testimony is not product validation"
+    },
+    {
+      "id": "C12",
+      "claim": "Inspire3 lists Zen12, Hypnosis Live and mind-focused brands",
+      "kind": "MERCHANT_CATALOG",
+      "status": "SELLER_DESCRIPTION",
+      "sources": [
+        "https://inspire3.com/"
+      ],
+      "limitation": "No publisher approval implied"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 seller describes twelve levels",
+      "kind": "MERCHANT_FEATURE",
+      "status": "SELLER_DESCRIPTION",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "limitation": "Exact future referred package unknown"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 seller describes four styles per level",
+      "kind": "MERCHANT_FEATURE",
+      "status": "SELLER_DESCRIPTION",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "limitation": "Guided, music, nature, white noise"
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 seller describes twelve-minute sessions",
+      "kind": "MERCHANT_FEATURE",
+      "status": "SELLER_DESCRIPTION",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "limitation": "Session length not benefit claim"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 full-course seller listing describes forty-eight MP3s",
+      "kind": "MERCHANT_FEATURE",
+      "status": "SELLER_DESCRIPTION",
+      "sources": [
+        "https://zen12.com/",
+        "https://zen12.com/order"
+      ],
+      "limitation": "Not necessarily included in every tier"
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 public site displays more than one tier/package",
+      "kind": "MERCHANT_FEATURE",
+      "status": "SELLER_DESCRIPTION",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "limitation": "No fixed price asserted"
+    },
+    {
+      "id": "C18",
+      "claim": "Seller advertises one-year money back guarantee",
+      "kind": "MERCHANT_RETURNS",
+      "status": "SELLER_DESCRIPTION_CONDITIONAL",
+      "sources": [
+        "https://zen12.com/",
+        "https://zen12.com/order"
+      ],
+      "limitation": "Final checkout eligibility/process/terms not independently verified"
+    },
+    {
+      "id": "C19",
+      "claim": "Zen12 provides 1 hour meditation benefit in 12 minutes",
+      "kind": "MERCHANT_EFFICACY",
+      "status": "NOT_ADOPTED",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "limitation": "No independently adequate finished-product equivalence proof reviewed"
+    },
+    {
+      "id": "C20",
+      "claim": "Zen12 listening treats anxiety/stress or produces improved focus",
+      "kind": "MERCHANT_HEALTH_PERFORMANCE",
+      "status": "NOT_ADOPTED",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "limitation": "Do not publish as FV result"
+    },
+    {
+      "id": "C21",
+      "claim": "Brainwave entrainment automatically yields deep meditative state",
+      "kind": "MERCHANT_MECHANISM",
+      "status": "NOT_ADOPTED",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "limitation": "Mechanism and outcomes not validated for actual SKU"
+    },
+    {
+      "id": "C22",
+      "claim": "Total Focus seller listing says 33 minutes and 47 MB",
+      "kind": "MERCHANT_FEATURE",
+      "status": "SELLER_DESCRIPTION",
+      "sources": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "limitation": "Different SKU; not a Zen12 substitute"
+    },
+    {
+      "id": "C23",
+      "claim": "Total Focus seller promises limitless concentration powers",
+      "kind": "MERCHANT_EFFICACY",
+      "status": "NOT_ADOPTED",
+      "sources": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "limitation": "No product-specific adequate proof"
+    },
+    {
+      "id": "C24",
+      "claim": "Focus Shot lists 15- and 30-minute versions",
+      "kind": "MERCHANT_FEATURE",
+      "status": "SELLER_DESCRIPTION",
+      "sources": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "limitation": "Distinct SKU"
+    },
+    {
+      "id": "C25",
+      "claim": "Focus Shot claims audio activates focused concentration",
+      "kind": "MERCHANT_EFFICACY",
+      "status": "NOT_ADOPTED",
+      "sources": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "limitation": "No product-specific proof"
+    },
+    {
+      "id": "C26",
+      "claim": "FTC recommends close clear disclosure of material affiliate relationship",
+      "kind": "FTC_GUIDANCE",
+      "status": "SUPPORTED",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "limitation": "Disclosure must coexist visibly with each active commercial CTA"
+    },
+    {
+      "id": "C27",
+      "claim": "Health-related advertising requires sound scientific substantiation",
+      "kind": "FTC_GUIDANCE",
+      "status": "SUPPORTED",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limitation": "No medical or therapeutic product claims adopted"
+    },
+    {
+      "id": "C28",
+      "claim": "Existing Focus Fieldbook is a free 52-page download connected to one Jetpack list",
+      "kind": "LIVE_FV",
+      "status": "SUPPORTED",
+      "sources": [
+        "https://finalvestige.com/focus/",
+        "https://finalvestige.com/dispatch/"
+      ],
+      "limitation": "Email signup is not a sale"
+    },
+    {
+      "id": "C29",
+      "claim": "FV has named Inspire3 publisher approval and accepted channel rights",
+      "kind": "PARTNER_PERMISSION",
+      "status": "NOT_VERIFIED",
+      "sources": [
+        "https://inspire3.com/"
+      ],
+      "limitation": "Consumer emails and public portal do not establish merchant authorization"
+    },
+    {
+      "id": "C30",
+      "claim": "An approved FV referral deep link and cookie/attribution terms exist",
+      "kind": "PARTNER_PERMISSION",
+      "status": "NOT_VERIFIED",
+      "sources": [],
+      "limitation": "Do not synthesize or append affiliate IDs"
+    },
+    {
+      "id": "C31",
+      "claim": "Referred checkout confirms package, paid price and refund terms",
+      "kind": "CHECKOUT",
+      "status": "NOT_VERIFIED",
+      "sources": [
+        "https://zen12.com/",
+        "https://zen12.com/order"
+      ],
+      "limitation": "Public pages may show variant pricing; merchant flow not exercised"
+    },
+    {
+      "id": "C32",
+      "claim": "An FV-owned commercial Mind SKU is rights-cleared, deliverable and actually purchasable",
+      "kind": "OWNED_OFFER",
+      "status": "NOT_VERIFIED",
+      "sources": [
+        "https://finalvestige.com/focus/"
+      ],
+      "limitation": "Free Focus edition is not a paid SKU; verify full product inventory"
+    },
+    {
+      "id": "C33",
+      "claim": "A paid affiliate sale can be reconciled to refund-adjusted net commission",
+      "kind": "REVENUE",
+      "status": "NOT_VERIFIED",
+      "sources": [],
+      "limitation": "Outbound click is not a paid sale"
+    },
+    {
+      "id": "C34",
+      "claim": "Existing Grok media assets match three proposed topic routes",
+      "kind": "CREATOR_FIT",
+      "status": "UNMATCHED",
+      "sources": [],
+      "limitation": "Requires real asset_id, hook, mobile URL and rights"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "gate": "partner_named_approval",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G02",
+      "gate": "sku_specific_authorization",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G03",
+      "gate": "channel_website_permission",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G04",
+      "gate": "channel_email_permission",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G05",
+      "gate": "social_context_permission",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G06",
+      "gate": "official_creative_rights",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G07",
+      "gate": "affiliate_disclosure_text_approved",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G08",
+      "gate": "issued_tracking_url",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G09",
+      "gate": "no_cloaking_terms",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G10",
+      "gate": "cookie_attribution_terms",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G11",
+      "gate": "merchant_checkout_identity",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G12",
+      "gate": "merchant_actual_price",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G13",
+      "gate": "merchant_tax_fee_terms",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G14",
+      "gate": "merchant_refund_policy",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G15",
+      "gate": "merchant_support_contact",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G16",
+      "gate": "merchant_settlement_ledger",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G17",
+      "gate": "refund_reconciliation",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G18",
+      "gate": "chargeback_reconciliation",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G19",
+      "gate": "owned_sku_rights_if_fallback",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G20",
+      "gate": "owned_sku_checkout_if_fallback",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G21",
+      "gate": "owned_sku_delivery_if_fallback",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G22",
+      "gate": "creator_real_asset_ids",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G23",
+      "gate": "creator_rights_and_honest_hook",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G24",
+      "gate": "first_party_consent_plan",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G25",
+      "gate": "no_duplicate_measurement",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G26",
+      "gate": "real_browser_a11y_performance",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G27",
+      "gate": "site_qa_signoff",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    },
+    {
+      "id": "G28",
+      "gate": "founder_commerce_release_approval",
+      "status": "HOLD",
+      "evidence": "Not independently satisfied for production; see conversion dossier."
+    }
+  ],
+  "summary": {
+    "total_claims": 34,
+    "held_gates": 28,
+    "merchant_link": null,
+    "confirmed_paid_affiliate_sale": null,
+    "verified_net_revenue_per_1000_qualified_sessions": null,
+    "known_partner_authorization": false,
+    "owned_paid_mind_sku_verified": false,
+    "eligible_primary_offer": "NONE_AUTHENTICATED",
+    "default_buyer_candidate": "Zen12 content-fit only"
+  }
+}
