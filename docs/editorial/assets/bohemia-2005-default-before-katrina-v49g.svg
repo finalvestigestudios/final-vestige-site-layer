@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="1190" viewBox="0 0 640 1190" role="img" aria-labelledby="bohemiaTitle bohemiaDesc">
+<title id="bohemiaTitle">A missed settlement installment preceded Hurricane Katrina</title>
+<desc id="bohemiaDesc">Five dated events: June 4 2005 second settlement proposal, August 15 2005 missed installment reported by a federal judge, August 29 2005 Hurricane Katrina landfall, May 31 2006 state court breach declaration, July 23 2007 federal appeals court reversal. The graphic distinguishes recorded chronology from proof of why the August installment was missed or who was later paid.</desc>
+<metadata>
+Creator: Final Vestige Studios Investigations Publishing Studio
+Created: 2026-11-16
+Copyright: © 2026 Final Vestige Studios. Original educational/editorial vector graphic; all rights reserved.
+Title: A Missed Installment Before the Storm
+Source 1: https://www.govinfo.gov/content/pkg/USCOURTS-laed-2_06-cv-03829/pdf/USCOURTS-laed-2_06-cv-03829-1.pdf
+Source 2: https://www.weather.gov/lix/katrina_anniversary
+Source 3: https://openjurist.org/493/f3d/570/haspel-davis-milling-planting-co-v-board-of-levee-commissioners
+Rights: original first-party design, no third-party imagery or embedded fonts, no external scripts or hotlinked assets.
+Limits: February 2007 district-court findings concerning default do not establish its cause; its federal damages ruling was reversed on July 23, 2007. Not proof of cleared payments.
+</metadata>
+<rect width="640" height="1190" fill="#0c1721"/>
+<text x="28" y="42" fill="#b9c9ce" font-size="15" letter-spacing="2">FV / DOCUMENTARY CHRONOLOGY</text>
+<text x="28" y="83" fill="#f8f5ef" font-size="33" font-weight="700">The default came first.</text>
+<text x="28" y="115" fill="#cfdcdd" font-size="20">What court records date before the storm</text>
+<g transform="translate(24 158)"><rect width="592" height="160" rx="16" fill="#16222d" stroke="#3d515f" stroke-width="1"/><rect width="7" height="160" rx="3" fill="#619f9a"/><text x="25" y="32" fill="#d8ba83" font-size="17" font-weight="700" letter-spacing="1.2">04 JUN 2005</text><text x="25" y="64" fill="#faf8f3" font-size="24" font-weight="700">Second settlement proposed</text><text x="25" y="94" fill="#dce5e6" font-size="19">A proposal was dated June 4</text><text x="25" y="120" fill="#dce5e6" font-size="19">and filed in state court June 14.</text><text x="25" y="145" fill="#9ebac0" font-size="13" letter-spacing="0.8">FEDERAL COURT · FEB 2007</text></g>
+<g transform="translate(24 335)"><rect width="592" height="160" rx="16" fill="#16222d" stroke="#d4af70" stroke-width="2.5"/><rect width="7" height="160" rx="3" fill="#d4af70"/><text x="25" y="32" fill="#d8ba83" font-size="17" font-weight="700" letter-spacing="1.2">15 AUG 2005</text><text x="25" y="64" fill="#faf8f3" font-size="24" font-weight="700">Installment missed</text><text x="25" y="94" fill="#dce5e6" font-size="19">The federal judge reported a</text><text x="25" y="120" fill="#dce5e6" font-size="19">missed payment before the storm.</text><text x="25" y="145" fill="#9ebac0" font-size="13" letter-spacing="0.8">FEDERAL COURT · FEB 2007</text></g>
+<g transform="translate(24 512)"><rect width="592" height="160" rx="16" fill="#16222d" stroke="#3d515f" stroke-width="1"/><rect width="7" height="160" rx="3" fill="#619f9a"/><text x="25" y="32" fill="#d8ba83" font-size="17" font-weight="700" letter-spacing="1.2">29 AUG 2005</text><text x="25" y="64" fill="#faf8f3" font-size="24" font-weight="700">Hurricane Katrina</text><text x="25" y="94" fill="#dce5e6" font-size="19">Katrina made landfall near</text><text x="25" y="120" fill="#dce5e6" font-size="19">Buras, Louisiana, 14 days later.</text><text x="25" y="145" fill="#9ebac0" font-size="13" letter-spacing="0.8">NATIONAL WEATHER SERVICE</text></g>
+<g transform="translate(24 689)"><rect width="592" height="160" rx="16" fill="#16222d" stroke="#3d515f" stroke-width="1"/><rect width="7" height="160" rx="3" fill="#619f9a"/><text x="25" y="32" fill="#d8ba83" font-size="17" font-weight="700" letter-spacing="1.2">31 MAY 2006</text><text x="25" y="64" fill="#faf8f3" font-size="24" font-weight="700">State court declares breach</text><text x="25" y="94" fill="#dce5e6" font-size="19">The second agreement was</text><text x="25" y="120" fill="#dce5e6" font-size="19">declared no longer in force.</text><text x="25" y="145" fill="#9ebac0" font-size="13" letter-spacing="0.8">FEDERAL COURT · FEB 2007</text></g>
+<g transform="translate(24 866)"><rect width="592" height="160" rx="16" fill="#16222d" stroke="#3d515f" stroke-width="1"/><rect width="7" height="160" rx="3" fill="#619f9a"/><text x="25" y="32" fill="#d8ba83" font-size="17" font-weight="700" letter-spacing="1.2">23 JUL 2007</text><text x="25" y="64" fill="#faf8f3" font-size="24" font-weight="700">Federal judgment reversed</text><text x="25" y="94" fill="#dce5e6" font-size="19">Fifth Circuit reversed the</text><text x="25" y="120" fill="#dce5e6" font-size="19">2006 federal takings judgment.</text><text x="25" y="145" fill="#9ebac0" font-size="13" letter-spacing="0.8">FIFTH CIRCUIT · 2007</text></g>
+<line x1="30" y1="1055" x2="610" y2="1055" stroke="#58717c"/>
+<text x="28" y="1085" font-size="17" fill="#e9e5dc">A missed installment is established, its cause is not.</text>
+<text x="28" y="1115" font-size="16" fill="#b6c7cb">No beneficiary-level cleared receipt shown here.</text>
+<text x="28" y="1150" font-size="13" fill="#8ba5ac">SOURCES: U.S. DISTRICT COURT (2007); NWS; FIFTH CIRCUIT (2007)</text>
+<text x="28" y="1173" font-size="12" fill="#8ba5ac">© 2026 FINAL VESTIGE STUDIOS · ORIGINAL EVIDENCE DIAGRAM</text>
+</svg>
