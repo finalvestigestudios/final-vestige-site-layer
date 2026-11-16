@@ -278,6 +278,18 @@ def review_line(
     )
     if any(count > 1 for count in invoice_doc_counts.values()):
         flags.append("repeated_invoice_document_id_review")
+    # A credit memo is evidence of one offset document, not proof that the
+    # same source memo may be deducted repeatedly. Count nonblank normalized
+    # credit IDs within this PO/line independently from original invoices.
+    # Missing IDs already receive unlinked_credit_review below.
+    credit_doc_counts: Counter[str] = Counter()
+    for row, kind, _, _ in invoice_entries:
+        if kind == "credit":
+            credit_id = document_key(row.get("document_id", ""))
+            if credit_id:
+                credit_doc_counts[credit_id] += 1
+    if any(count > 1 for count in credit_doc_counts.values()):
+        flags.append("repeated_credit_document_id_review")
     for row, kind, _, price in invoice_entries:
         if kind != "credit":
             continue
