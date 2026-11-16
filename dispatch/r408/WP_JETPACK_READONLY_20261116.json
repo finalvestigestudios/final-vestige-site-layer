@@ -1,0 +1,24 @@
+{
+  "snapshot_id": "wp-readonly-20261116-213856z",
+  "as_of_utc": "2026-11-16T21:38:56Z",
+  "newsletter": {
+    "total": 3, "confirmed": 3, "unconfirmed": 2, "suppressed": 0,
+    "paid": 0, "imported_last_24h": 0, "site_can_send": true, "send_blockers": [],
+    "email_new_posts_by_default": false, "subscriptions": true,
+    "recent_send_statuses": ["never_sent_opted_out", "never_sent_opted_out", "never_sent_opted_out", "never_sent_opted_out", "never_sent_opted_out"]
+  },
+  "followers": {"total": 3, "wpcom": 3, "email": 0, "comment": 0, "partial": false},
+  "proof": {
+    "unique_email_eligible": null,
+    "deduped_confirmed_signup_events": null,
+    "welcome_received": null,
+    "fieldbook_received": null,
+    "publisher_postal_verified": null,
+    "unsubscribe_rendered_and_operational": null,
+    "native_non_sending_preview_seen": null,
+    "inspire3_named_email_authorization": null,
+    "referred_checkout_verified": null,
+    "verified_paid_order_evidence": null,
+    "qualified_human_sessions_evidence": null
+  }
+}
