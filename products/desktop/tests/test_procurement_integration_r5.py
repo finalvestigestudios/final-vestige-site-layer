@@ -633,5 +633,20 @@ class ProcurementIntegrationR5Tests(unittest.TestCase):
         self.assertEqual(normal["credit"][("P2", "2")], ("3", "8"))
 
 
+    def test_r475_cross_order_fanout_fails_before_csv_publication(self):
+        # One valid 1,001-row source can imply >1,000,000 repeated citations.
+        # Reject the entire review instead of emitting truncated audit evidence.
+        po_rows = [(f"PO{i:04d}", "1", "1", "5") for i in range(1001)]
+        invoices = [(po, line, qty, price, "invoice", "PRIVATE_INVOICE", "")
+                    for po, line, qty, price in po_rows]
+        receipts = [(po, line, qty, "receipt", f"RC{i:04d}")
+                    for i, (po, line, qty, _) in enumerate(po_rows)]
+        paths = self.inputs(invoices, receipts, po_rows=po_rows)
+        with self.assertRaisesRegex(ValueError, "exceeds citation budget") as error:
+            engine.procure_guard(*paths, self.folder)
+        self.assertNotIn("PRIVATE_INVOICE", str(error.exception))
+        self.assertFalse(list(self.folder.glob("procurement-three-way*")))
+
+
 if __name__ == "__main__":
     unittest.main()
