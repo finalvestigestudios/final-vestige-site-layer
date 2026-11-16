@@ -7,7 +7,7 @@ This is source-only evidence, NEVER release approval or a binary signature.
 """
 from __future__ import annotations
 
-import json
+from offline_json_receipt_r462 import load_private_receipt
 from pathlib import Path
 
 from offline_source_smoke_r408 import SourceGateError, source_digest
@@ -49,7 +49,7 @@ def require_bound_six_app_smokes(raw: bytes, expected_digest: str) -> int:
         raise SourceBindingError('Local six-app source receipt rejected')
     try:
         total = require_six_app_smokes(raw)
-        reported = json.loads(raw)['source_sha256']
+        reported = load_private_receipt(raw)['source_sha256']
     except (SourceSmokeReceiptError, ValueError, KeyError, TypeError):
         raise SourceBindingError('Local six-app source receipt rejected') from None
     if reported != expected_digest:

@@ -1040,6 +1040,14 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_offline_smoke_receipt_r460.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_offline_smoke_receipt_r460.py'
+      - name: R461 strict six-app source digest (Ubuntu; source-only HOLD)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_source_digest_binding_r461.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_source_digest_binding_r461.py'
+      - name: R462 reject ambiguous private source receipts (Ubuntu; source-only HOLD)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_private_json_receipt_r462.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_private_json_receipt_r462.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -2875,6 +2883,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R461 Windows normal source digest binding FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_source_digest_binding_r461.py'
           if ($LASTEXITCODE -ne 0) { throw "R461 Windows optimized source digest binding FAILED" }
+      - name: R462 Windows strict duplicate-key source receipt checks (pre-packaging; HOLD)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_private_json_receipt_r462.py'
+          if ($LASTEXITCODE -ne 0) { throw "R462 Windows normal strict receipt test FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_private_json_receipt_r462.py'
+          if ($LASTEXITCODE -ne 0) { throw "R462 Windows optimized strict receipt test FAILED" }
       - name: R238 Windows PE candidate FD custody before packaging (14 methods per mode)
         shell: pwsh
         run: |
