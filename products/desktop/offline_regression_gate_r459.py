@@ -78,7 +78,7 @@ _ALLOWED_ENV = frozenset({
 # schema JSON receipt. unittest diagnostic traces are sent to DEVNULL, never
 # captured/replayed into this gate or its final operator-facing JSON.
 _TEST_CHILD = r'''
-import io,json,sys,unittest
+import hashlib,io,json,sys,unittest
 from pathlib import Path
 root=Path(sys.argv[1]); pattern=sys.argv[2]; receipt=Path(sys.argv[3])
 sys.path.insert(0,str(root))
@@ -86,10 +86,26 @@ try:
     suite=unittest.TestLoader().discover(start_dir=str(root/'tests'),pattern=pattern)
     expected=suite.countTestCases()
     if not expected: raise RuntimeError('no tests discovered')
+    def _test_ids(group):
+        for case in group:
+            if isinstance(case,unittest.TestSuite):
+                yield from _test_ids(case)
+            else:
+                yield case.id()
+    names=list(_test_ids(suite))
+    if (len(names)!=expected or any(type(n) is not str or not n for n in names)
+            or len(set(names))!=len(names)):
+        raise RuntimeError('invalid test identity inventory')
+    identity=hashlib.sha256()
+    for name in sorted(names):
+        data=name.encode('utf-8')
+        if len(data)>65535: raise RuntimeError('invalid test identity length')
+        identity.update(len(data).to_bytes(2,'big'))
+        identity.update(data)
     result=unittest.TextTestRunner(stream=io.StringIO(),verbosity=0).run(suite)
     info={'tests':result.testsRun,'failures':len(result.failures),
           'errors':len(result.errors),'skipped':len(result.skipped),
-          'expected':expected}
+          'expected':expected,'test_ids_sha256':identity.hexdigest()}
     with receipt.open('x',encoding='ascii') as output:
         json.dump(info,output,separators=(',',':'))
     sys.exit(0 if result.wasSuccessful() and result.testsRun==expected
@@ -136,7 +152,7 @@ def _source_fingerprint(desktop: Path) -> str:
     return digest.hexdigest()
 
 
-def _validate_receipt(raw: bytes) -> int:
+def _validate_receipt(raw: bytes) -> tuple[int, str]:
     """Never treat a zero-test, skipped, partial or forged success as PASS."""
     if len(raw) > 1024:
         raise LocalGateError("Local source regression receipt rejected")
@@ -145,18 +161,24 @@ def _validate_receipt(raw: bytes) -> int:
     except PrivateReceiptJSONError:
         raise LocalGateError("Local source regression receipt rejected") from None
     if (type(item) is not dict or set(item) != {
-            'tests', 'failures', 'errors', 'skipped', 'expected'}
-            or any(type(item[key]) is not int for key in item)
+            'tests', 'failures', 'errors', 'skipped', 'expected',
+            'test_ids_sha256'}
+            or any(type(item[key]) is not int for key in
+                   ('tests', 'failures', 'errors', 'skipped', 'expected'))
+            or type(item['test_ids_sha256']) is not str
+            or len(item['test_ids_sha256']) != 64
+            or any(c not in '0123456789abcdef' for c in item['test_ids_sha256'])
             or not 1 <= item['tests'] == item['expected'] <= 10000
             or any(item[key] != 0 for key in ('failures', 'errors', 'skipped'))):
         raise LocalGateError("Local source regression receipt rejected")
-    return item['tests']
+    return item['tests'], item['test_ids_sha256']
 
 
 def _run_tests(desktop: Path) -> tuple[int, int]:
     methods = 0
     executions = 0
     standard_counts: dict[str, int] = {}
+    standard_identities: dict[str, str] = {}
     # Use an owner-private disposable folder, not a source/destination folder.
     with tempfile.TemporaryDirectory(prefix='fvs-r459-') as temp:
         for pattern in TESTS:
@@ -176,16 +198,18 @@ def _run_tests(desktop: Path) -> tuple[int, int]:
                         raise LocalGateError("Local source regression test failed")
                     # Read at most 1,025 bytes even if a buggy child wrote a huge receipt.
                     with receipt.open('rb') as response:
-                        observed = _validate_receipt(response.read(1025))
+                        observed, case_digest = _validate_receipt(response.read(1025))
                     # A single no-op test is not six-engine integration proof.
                     # Check each named product, not just the global method sum.
                     if observed < PRODUCT_METHOD_FLOORS.get(pattern, 1):
                         raise LocalGateError("Local product regression coverage rejected")
                     if optimized:
-                        if observed != standard_counts[pattern]:
+                        if (observed != standard_counts[pattern]
+                                or case_digest != standard_identities[pattern]):
                             raise LocalGateError("Local regression mode parity rejected")
                     else:
                         standard_counts[pattern] = observed
+                        standard_identities[pattern] = case_digest
                     methods += observed
                 except (OSError, subprocess.TimeoutExpired):
                     raise LocalGateError("Local source regression could not execute") from None
