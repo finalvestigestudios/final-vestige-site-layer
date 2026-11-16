@@ -1,0 +1,118 @@
+{
+  "evidence_as_of": "2026-11-15",
+  "project": "Final Vestige Studios Dispatch",
+  "purpose": "Exact-SKU merchandising and release review only. Not a permission receipt.",
+  "status": "ALL_HOLD_UNSENT",
+  "source_urls": {
+    "total_focus": "https://hypnosislive.com/mental-skills/total-focus",
+    "merchant_faq": "https://hypnosislive.com/faq",
+    "zen12": "https://zen12.com/",
+    "alternate_zen12": "https://zen12.com/secret/",
+    "nccih": "https://www.nccih.nih.gov/health/hypnosis",
+    "franklin_primary": "https://www.gutenberg.org/files/78413/78413-h/78413-h.htm",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "wordpress_preview": "https://wordpress.com/support/newsletter/send-newsletter-emails/",
+    "distinct_offer_swipes": "https://inspire3.com/ll/"
+  },
+  "findings": [
+    {
+      "id": "F01",
+      "sku": "Hypnosis Live / Total Focus",
+      "category": "seller-observable",
+      "claim": "33 minute, 47 MB downloadable MP3",
+      "support": "merchant exact sales page",
+      "editorial_policy": "May describe as current seller-listed format, recheck before launch."
+    },
+    {
+      "id": "F02",
+      "sku": "Hypnosis Live / Total Focus",
+      "category": "seller-claim-not-validated",
+      "claim": "Reprogram brain, razor-sharp focus, enhanced performance",
+      "support": "merchant exact sales page",
+      "editorial_policy": "Attribute to seller, do not claim independent or product-specific efficacy."
+    },
+    {
+      "id": "F03",
+      "sku": "Hypnosis Live / Total Focus",
+      "category": "seller-observable-volatile",
+      "claim": "Current sales page showed $24.44 with reference $29.95; historical crawls and neighboring pages show different offers",
+      "support": "merchant exact sales page as retrieved 2026-11-15",
+      "editorial_policy": "Do not state a stable price in outbound email; verify referred checkout and applicable terms."
+    },
+    {
+      "id": "F04",
+      "sku": "Hypnosis Live / Total Focus",
+      "category": "seller-terms-unverified-for-affiliate-referral",
+      "claim": "FAQ states refund requests within 14 days, maximum 5 session refunds per year; exact referred checkout unknown",
+      "support": "merchant FAQ",
+      "editorial_policy": "Use only as seller-FAQ description, do not promise refund on a referred checkout."
+    },
+    {
+      "id": "F05",
+      "sku": "Zen12 Premium",
+      "category": "seller-claim-not-validated",
+      "claim": "12 minutes equivalent to one hour of advanced meditation; 12 levels and 48 MP3s",
+      "support": "official Zen12 page",
+      "editorial_policy": "Package structure is seller-listed; equivalence not established product-specifically."
+    },
+    {
+      "id": "F06",
+      "sku": "Zen12 Premium",
+      "category": "seller-observable-volatile",
+      "claim": "Distinct $37 promotional route and other public package display exist",
+      "support": "seller-controlled alternate promotion",
+      "editorial_policy": "Neither is the verified FV earning URL or final referred price."
+    },
+    {
+      "id": "F07",
+      "sku": "Limitless Labs, different program",
+      "category": "nontransferable-affiliate-resource",
+      "claim": "Public Inspire3 page offers email swipe copy while separately requiring product promotion approval",
+      "support": "https://inspire3.com/ll/",
+      "editorial_policy": "Not evidence of Final Vestige authorization to email about Zen12 or Total Focus; do not reuse creative."
+    },
+    {
+      "id": "F08",
+      "sku": "Hypnosis in general",
+      "category": "independent-general-evidence",
+      "claim": "NCCIH discusses condition-specific research with limitations",
+      "support": "NCCIH general overview",
+      "editorial_policy": "Never transfer general efficacy to Total Focus."
+    }
+  ],
+  "permissions": {
+    "named_final_vestige_partner_acceptance": false,
+    "sku_total_focus_authorized": false,
+    "email_channel_authorized": false,
+    "approved_email_creative": false,
+    "merchant_issued_earning_link": false,
+    "referral_checkout_verified": false,
+    "referred_refund_terms_verified": false,
+    "published_mind_owned_guide_verified": false,
+    "publisher_postal_address_verified": false,
+    "native_jetpack_preview_verified": false,
+    "working_unsubscribe_verified": false,
+    "founder_final_campaign_approval": false
+  },
+  "allowed_merchant_links": [],
+  "last_authenticated_jetpack_snapshot": {
+    "as_of": "2026-11-16T01:30:37Z",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "direct_email_followers": 0,
+    "wpcom_followers": 3,
+    "eligible_receiving_inboxes": null,
+    "newsletter_enabled": true,
+    "auto_new_post_email": false,
+    "full_email": true,
+    "actual_welcome_receipt_verified": false
+  },
+  "reference_masters": {
+    "campaign_pr": 175,
+    "readiness_pr": 201,
+    "dispatch_parent_pr": 2687,
+    "issue": 174,
+    "companion": 171
+  }
+}
