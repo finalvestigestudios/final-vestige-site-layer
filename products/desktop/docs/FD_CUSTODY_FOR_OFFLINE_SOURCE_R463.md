@@ -10,7 +10,7 @@ R463 changes the R459 `_source_fingerprint` implementation to reuse R408's `_rea
 
 This is an improvement in local integrity and race detection, **not** absolute protection against adversarial swaps of all ancestor components between checks, signed provenance, or independent binary attestation. The R408 reader and directory checks remain the same audited functions; source-only gates still cannot approve releases.
 
-The R459 regression test module gained **13 targeted methods**: legacy digest parity, repeatability/mutation, hardlink, direct symlink, parent symlink, empty/missing/oversized source, relative checkout, all-files descriptor invocation, fixed-error redaction, observable parent swap during read, and nonmutation of sources. An existing Windows symlink-privilege capability branch now returns normally rather than recording a `unittest.skip` that would itself fail the strict no-skips offline gate. Existing normal/`-OO` source CI steps already execute this module (31 total methods in that module after R463).
+The R459 regression test module gained **13 targeted methods**: legacy digest parity, repeatability/mutation, hardlink, direct symlink, parent symlink, empty/missing/oversized source, relative checkout, all-files descriptor invocation, fixed-error redaction, observable parent swap during read, and nonmutation of sources. An existing Windows symlink-privilege capability branch now returns normally rather than recording a `unittest.skip` that would itself fail the strict no-skips offline gate. Existing normal/`-OO` source CI steps already execute this module (32 total methods in that module after R463).
 
 ## Actually executed local focused evidence
 
