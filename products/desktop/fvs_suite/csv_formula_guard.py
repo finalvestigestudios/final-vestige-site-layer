@@ -12,7 +12,10 @@ import unicodedata
 # Excel-compatible importers may discard many format/control/combining marks
 # when interpreting a cell. Inspect past these marks without changing evidence.
 # An initial apostrophe is *not* ignored: it is an explicit sanitizer escape.
-_IGNORABLE_CATEGORIES = frozenset(("Cf", "Cc", "Mn", "Me"))
+# Mc spacing combining marks can precede an operator just like Mn/Me.
+# Treat them as ignorable only for formula-prefix inspection; never rewrite
+# or normalize the underlying audit evidence.
+_IGNORABLE_CATEGORIES = frozenset(("Cf", "Cc", "Mn", "Mc", "Me"))
 _FORMULA_OPERATORS = frozenset("=+@")
 # Mathematical/heavy minus are visually confusable with ASCII numeric minus
 # but are not the canonical Decimal grammar. Escape them for human review.
