@@ -1,0 +1,165 @@
+#!/usr/bin/env python3
+"""Read-only, fail-closed custody intake for E395 Article #11 editorial export.
+
+Purpose: bind an *external, unpublished* editorial ZIP and its WP-oriented HTML
+to the immutable SHA-256 receipts reported in FV issue #136, without copying,
+executing, publishing, or deeming any food-safety claim safe. An archive integrity
+PASS is never qualified food-safety/QD approval. No extracted files are written.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+from io import BytesIO
+import json
+from pathlib import Path, PurePosixPath
+import re
+import stat
+from zipfile import BadZipFile, ZipFile
+
+STATE = 'DRAFT_HARD_HOLD'
+ISSUE = 'https://github.com/finalvestigestudios/final-vestige-site-layer/issues/136'
+ARTICLE_MEMBER = 'E395_ARTICLE11_SOURCE_SCOPE_WORDPRESS_HARD_HOLD.html'
+ARCHIVE_SHA256 = '21a2142c6050eb3bae020c67744ee82439d854525ba63915ea9092a0b7bba46b'
+ARTICLE_SHA256 = 'bc0537e611d35b195e10ee49ceb9772a904b7c8fea0749a6203da38e835f8184'
+MAX_ZIP = 32 * 1024 * 1024
+MAX_FILES = 200
+MAX_MEMBER = 8 * 1024 * 1024
+MAX_TOTAL = 40 * 1024 * 1024
+MAX_RATIO = 2000
+_ALLOWED_EXTENSION = frozenset({'.html', '.htm', '.txt', '.md', '.json', '.csv', '.png', '.jpg', '.jpeg', '.webp', '.svg', '.pdf', '.sha256', '.css'})
+_SHA = re.compile(r'[0-9a-f]{64}\Z')
+
+
+def sha256(raw: bytes) -> str:
+    return hashlib.sha256(raw).hexdigest()
+
+
+def safe_name(name: str) -> bool:
+    """Reject path traversal, platform ambiguities and active payload formats."""
+    if not isinstance(name, str) or not name or len(name) > 300:
+        return False
+    if ('\\' in name or '\x00' in name or ':' in name or
+        any(ord(c) < 32 or ord(c) == 127 for c in name)):
+        return False
+    p = PurePosixPath(name)
+    if name.startswith('/') or p.is_absolute() or any(part in ('', '.', '..') for part in name.split('/')):
+        return False
+    if any(part.startswith('.') for part in p.parts):
+        return False
+    if p.suffix.lower() not in _ALLOWED_EXTENSION:
+        return False
+    return True
+
+
+def report(failures: list[str], *, archive_size: int | None = None,
+           article_present: bool = False, archive_matches_pin: bool = False,
+           article_matches_pin: bool = False, members: int = 0) -> dict:
+    return {
+        'schema': 'r402.external-e395-custody.v1',
+        'archive_integrity': 'FAIL' if failures else 'PASS',
+        'release': STATE,
+        'eligible': False,
+        'qualified_food_safety_review': 'NOT_GRANTED',
+        'human_content_review': 'NOT_PERFORMED',
+        'origin': ISSUE,
+        'archive_bytes': archive_size,
+        'archive_sha256_matched': archive_matches_pin,
+        'article_html_found': article_present,
+        'article_sha256_matched': article_matches_pin,
+        'archive_member_count': members,
+        'failures': sorted(set(failures)),
+    }
+
+
+def inspect(raw: bytes, *, expected_zip_sha: str = ARCHIVE_SHA256,
+            expected_article_sha: str = ARTICLE_SHA256) -> dict:
+    """Pure in-memory review; SHA overrides exist for synthetic tests ONLY."""
+    f: list[str] = []
+    if not isinstance(raw, bytes) or len(raw) > MAX_ZIP or not raw:
+        return report(['missing_or_oversized_zip'], archive_size=len(raw) if isinstance(raw, bytes) else None)
+    if not (isinstance(expected_zip_sha, str) and _SHA.fullmatch(expected_zip_sha) and
+            isinstance(expected_article_sha, str) and _SHA.fullmatch(expected_article_sha)):
+        return report(['invalid_expected_sha256'], archive_size=len(raw))
+    zip_match = sha256(raw) == expected_zip_sha
+    if not zip_match:
+        f.append('zip_sha256_mismatch')
+    found: list[bytes] = []
+    member_count = 0
+    try:
+        with ZipFile(BytesIO(raw)) as zf:
+            infos = zf.infolist()
+            member_count = len(infos)
+            if not infos or len(infos) > MAX_FILES:
+                f.append('zip_member_count')
+            seen: set[str] = set()
+            total = 0
+            for info in infos:
+                name = info.filename
+                if info.is_dir():
+                    # Directory entries are not used for content custody.
+                    if not safe_name(name.rstrip('/') + '.txt'):
+                        f.append('unsafe_directory_name')
+                    continue
+                if not safe_name(name):
+                    f.append('unsafe_member_name')
+                    continue
+                comparable = name.casefold()
+                if comparable in seen:
+                    f.append('duplicate_casefold_member')
+                    continue
+                seen.add(comparable)
+                mode = (info.external_attr >> 16) & 0xffff
+                if (stat.S_IFMT(mode) not in (0, stat.S_IFREG)):
+                    f.append('non_regular_member')
+                    continue
+                if info.flag_bits & 0x1:
+                    f.append('encrypted_member')
+                    continue
+                total += info.file_size
+                if info.file_size > MAX_MEMBER or total > MAX_TOTAL:
+                    f.append('unbounded_member_size')
+                    continue
+                if info.file_size > MAX_RATIO * max(1, info.compress_size):
+                    f.append('suspicious_compression_ratio')
+                    continue
+                # Decompress only bounded, safe members; never extract to disk.
+                try:
+                    with zf.open(info, 'r') as fh:
+                        chunk = fh.read(MAX_MEMBER + 1)
+                    if len(chunk) != info.file_size:
+                        f.append('member_byte_count_mismatch')
+                        continue
+                except (RuntimeError, BadZipFile, OSError, EOFError, ValueError):
+                    f.append('unreadable_member')
+                    continue
+                if PurePosixPath(name).name == ARTICLE_MEMBER:
+                    found.append(chunk)
+    except (BadZipFile, OSError, RuntimeError, EOFError, ValueError, OverflowError):
+        return report(f + ['invalid_zip'], archive_size=len(raw), archive_matches_pin=zip_match)
+    if len(found) != 1:
+        f.append('article_identity_cardinality')
+    article_match = len(found) == 1 and sha256(found[0]) == expected_article_sha
+    if len(found) == 1 and not article_match:
+        f.append('article_sha256_mismatch')
+    return report(f, archive_size=len(raw), article_present=bool(found),
+                  archive_matches_pin=zip_match, article_matches_pin=article_match,
+                  members=member_count)
+
+
+def main(argv: list[str] | None = None) -> int:
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--e395-zip', type=Path, required=True,
+                   help='Original local E395 editorial ZIP; read-only, never extracted')
+    args = p.parse_args(argv)
+    try:
+        raw = args.e395_zip.read_bytes()
+    except (OSError, ValueError):
+        print(json.dumps(report(['missing_original_e395_zip']), sort_keys=True))
+        return 2
+    print(json.dumps(inspect(raw), sort_keys=True))
+    return 2  # IMPORTANT: even cryptographic custody PASS never grants QD/publish.
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())
