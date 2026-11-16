@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "scope": "PREPAREDNESS_ISSUE_136",
+  "release_state": "DRAFT_HARD_HOLD",
+  "approvals": {"publish": false,"site_write": false,"social_post": false,"paid_activation": false,"safety_qd": false},
+  "campaign": {"topic": "family-emergency-contacts","status":"UNMATCHED","asset_id":null,"platform":null,"post_url":null,"asset_rights_checked":false,"hook_source_checked":false,"mobile_destination":null,"utm_campaign":null,"utm_content":null},
+  "free_guide": {"path":"/preparedness/","status":"EXISTING_FREE","source_class":"OFFICIAL_LINKED_ARCHIVE","article_15_release":false},
+  "optional_tool": {"id":104,"status":"HARD_HOLD","emergency_review":false,"child_privacy_review":false,"accessibility_review":false},
+  "paid_offer": {"status":"UNVERIFIED","sku":null,"seller":null,"merchant_checkout":null,"rights_receipt_sha256":null,"fulfillment_receipt_sha256":null,"refund_terms_url":null,"merchant_confirmation_sha256":null},
+  "cohorts": []
+}
