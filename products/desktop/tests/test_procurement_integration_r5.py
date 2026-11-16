@@ -161,7 +161,7 @@ class ProcurementIntegrationR5Tests(unittest.TestCase):
         ], po_rows=(("P1", "1", "10", "5"), ("P2", "1", "10", "5")))
         outputs = engine.procure_guard(*paths, self.folder)
         rows = self.report(outputs[0])
-        self.assertEqual([row["po"] for row in rows], ["p1", "p2"])
+        self.assertEqual([row["po"] for row in rows], ["P1", "P2"])
         self.assertEqual(len(rows), 2)
         for row in rows:
             self.assertIn("credit_document_cross_po_review", row["status"])
