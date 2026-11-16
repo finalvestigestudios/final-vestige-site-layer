@@ -46,7 +46,7 @@ check(!/dataLayer|gtag\(|fbq\(|google-analytics|googletagmanager/i.test(a+b+hub)
 check(/<svg\b[\s\S]*?<title/.test(b),'B lacks accessible original poster');
 check(/role="img"/.test(b)&&/aria-labelledby="film-svg-title film-svg-desc"/.test(b),'B SVG lacks accessible naming');
 check(/<details open>/.test(b)&&/id="film-transcript"/.test(b),'B lacks visible transcript');
-check(/not yet encoded or embedded/.test(b),'B falsely implies playable video');
+check(/No playable film has been encoded or embedded/.test(b),'B falsely implies playable video');
 check(!/<svg\b/.test(a),'A unexpectedly includes storyboard');
 check(!/<img\b/i.test(a+b+hub),'remote image requests present');
 check(/Four|four-stream|four streams/i.test(guide+hub+read('README.md')),'hub stream metadata absent');
@@ -78,7 +78,7 @@ const mutations=[
 ['script injection',a.replace('</main>','<script src="https://example.test/pixel.js"></script></main>'),s=>noFormsScripts(s)],
 ['forced video',b.replace('</main>','<video autoplay src="track.mp4"></video></main>'),s=>noFormsScripts(s)],
 ['dup signup',hub.replace('</main>','<form><input type="email"></form></main>'),s=>noFormsScripts(s)],
-['unverified price',a.replace('Some people prefer','$87.99 Some people prefer'),s=>noFixed(s)],
+['unverified price',a.replace('Paying might','$87.99 Paying might'),s=>noFixed(s)],
 ['ungated affiliate',JSON.stringify({...matrix,release_gates:matrix.release_gates.map((g,i)=>i?g:{...g,status:'APPROVED'})}),s=>JSON.parse(s).release_gates.every(g=>g.status==='HARD_HOLD')]
 ];
 for(const [name,mutant,property] of mutations)check(!property(mutant),'mutant escaped safety gate: '+name);
