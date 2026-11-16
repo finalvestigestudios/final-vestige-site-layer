@@ -211,7 +211,7 @@ def cross_po_foreign_offset_source_rows(
     A reference is foreign only when its original document exists on another
     PO and there is NO original with that key anywhere on the offset's PO.
     Duplicate references remain provenance-only, never automatic rejection.
-    Two passes bound the citation fanout before any expanded report evidence.
+    One reservation per reference bounds combined credit/return citation fanout\n    before any expanded report evidence is materialized.
     """
     originals: dict[str, dict[str, list[tuple[tuple[str, str], str]]]] = {
         kind: defaultdict(list) for kind in ("credit", "return")
@@ -235,38 +235,37 @@ def cross_po_foreign_offset_source_rows(
                     if reference:
                         offsets[offset_kind][reference].add(group)
 
-    # Conservative per-reference reservations may overcount references shared
-    # by the same PO/line; this errs toward HOLD rather than truncated evidence.
-    # No expanded (affected group, original row) output exists until all credit
-    # AND return citations pass budget and redacted row validation.
+    # For every foreign affected group, every original has a different PO.
+    # Compute unique source rows ONCE per reference, not once per group, then
+    # reserve rows x groups atomically across both types before materializing.
     remaining = _MAX_CROSS_PO_CITATIONS
-    candidates: list[tuple[str, str, tuple[str, str]]] = []
+    candidates: list[tuple[str, tuple[tuple[str, str], ...], frozenset[str]]] = []
     for kind in ("credit", "return"):
         for reference, groups in offsets[kind].items():
             sources = originals[kind].get(reference, ())
             if not sources:
                 continue
             source_pos = {source_group[0] for source_group, _ in sources}
-            for group in groups:
-                if group[0] in source_pos:
-                    continue  # A source on the same PO is not a foreign link.
-                rows = {row for source_group, row in sources if source_group[0] != group[0]}
-                for row in rows:
-                    _source_row_sort_key(row)  # Redact before expansion.
-                if len(rows) > remaining:
-                    raise ValueError("Cross-order document review exceeds citation budget")
-                remaining -= len(rows)
-                if rows:
-                    candidates.append((kind, reference, group))
+            foreign_groups = tuple(sorted(group for group in groups
+                                          if group[0] not in source_pos))
+            if not foreign_groups:
+                continue
+            rows = frozenset(row for _, row in sources)
+            for row in rows:
+                _source_row_sort_key(row)  # Redacted, before either output.
+            cost = len(rows) * len(foreign_groups)
+            if cost > remaining:
+                raise ValueError("Cross-order document review exceeds citation budget")
+            remaining -= cost
+            if rows:
+                candidates.append((kind, foreign_groups, rows))
 
     affected: dict[str, dict[tuple[str, str], set[str]]] = {
         kind: defaultdict(set) for kind in ("credit", "return")
     }
-    for kind, reference, group in candidates:
-        affected[kind][group].update(
-            row for source_group, row in originals[kind][reference]
-            if source_group[0] != group[0]
-        )
+    for kind, groups, rows in candidates:
+        for group in groups:
+            affected[kind][group].update(rows)
     return {
         kind: {
             group: tuple(sorted(rows, key=_source_row_sort_key))
