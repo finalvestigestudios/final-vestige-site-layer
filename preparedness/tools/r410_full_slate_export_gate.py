@@ -64,6 +64,7 @@ def _check(original, manifest, exports, *, raw_original=None, test_only=False):
     if not g.get("integrity_ok"): fail("original source graph or exact Git receipt invalid")
     if not isinstance(manifest,dict):
         return {"release_state":"DRAFT_HARD_HOLD","eligible":False,"integrity_ok":False,"errors":["invalid manifest"],"warnings":[]}
+    if set(manifest) != {"schema", "release_state", "approved", "articles"}: fail("unexpected manifest fields/approval claims")
     if manifest.get("schema") != 1 or manifest.get("release_state") != "DRAFT_HARD_HOLD" or manifest.get("approved") is not False:
         fail("manifest approval/schema changed")
     entries = manifest.get("articles")
@@ -86,6 +87,7 @@ def _check(original, manifest, exports, *, raw_original=None, test_only=False):
     if set(exports)!=set(expected_slugs): fail("export file identity/coverage mismatch")
     for a in entries:
         if not isinstance(a,dict): fail("non-object article entry"); continue
+        if set(a) != {"slug", "canonical_path", "sources"}: fail("unexpected article fields/approval claims")
         slug, route, sources = a.get("slug"), a.get("canonical_path"), a.get("sources")
         if not isinstance(slug,str) or not SLUG.fullmatch(slug): fail("unsafe slug"); continue
         if not isinstance(route,str) or not route.startswith("/preparedness/") or not route.endswith("/"+slug+"/") or "//" in route or "?" in route or "#" in route or ".." in route:
@@ -115,6 +117,7 @@ def _check(original, manifest, exports, *, raw_original=None, test_only=False):
         if len(parsed)==2:
             if parsed[0].cites!=parsed[1].cites: fail("WordPress/preview source order parity lost: "+slug)
             if parsed[0].headings!=parsed[1].headings: fail("WordPress/preview heading structure lost: "+slug)
+            if parsed[0].words!=parsed[1].words: fail("WordPress/preview visible text divergence: "+slug)
             if abs(len(parsed[0].words)-len(parsed[1].words))>max(3,len(parsed[0].words)//20):
                 fail("WordPress/preview reading-depth drift: "+slug)
             details.append({"slug":slug,"wp_words":len(parsed[0].words),"preview_words":len(parsed[1].words),"source_ids":len(set(parsed[0].cites))})
