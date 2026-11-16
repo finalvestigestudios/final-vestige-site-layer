@@ -2867,6 +2867,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R460 Windows normal smoke receipt FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_offline_smoke_receipt_r460.py'
           if ($LASTEXITCODE -ne 0) { throw "R460 Windows optimized smoke receipt FAILED" }
+      - name: R461 Windows full six-app source and child digest binding (pre-packaging; HOLD)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_source_digest_binding_r461.py'
+          if ($LASTEXITCODE -ne 0) { throw "R461 Windows normal source digest binding FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_source_digest_binding_r461.py'
+          if ($LASTEXITCODE -ne 0) { throw "R461 Windows optimized source digest binding FAILED" }
       - name: R238 Windows PE candidate FD custody before packaging (14 methods per mode)
         shell: pwsh
         run: |
