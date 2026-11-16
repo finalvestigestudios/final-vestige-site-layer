@@ -63,6 +63,10 @@ class TestR407(unittest.TestCase):
             self.assertEqual(r.read_original(f),BASE)
     def test_missing_bounded_file(self):self.assertIsNone(r.read_original(Path("/not/a/real/path")))
     def test_cli_always_hold(self):self.assertEqual(r.main([]),2)
+    def test_unvetted_education_host(self):
+        self.assertIsNone(r.clean_source("https://unvetted.example.edu/jerky"))
+    def test_recorded_university_host(self):
+        self.assertEqual(r.clean_source("https://nchfp.uga.edu/how/dry/recipes/jerky"),"https://nchfp.uga.edu/how/dry/recipes/jerky")
 
 # One independent case per forbidden component, event handler, link scheme and CSS network construct.
 BAD_TAGS=["script","iframe","form","input","button","select","textarea","object","embed",
