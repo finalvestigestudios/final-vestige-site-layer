@@ -39,9 +39,9 @@ The 12 methods exercise 220 seeded four-type parity scenarios per mode
 row ordering, same-PO suppression, overlapping references, input immutability,
 privacy-redacted invalid rows, no partial output after later-type failures,
 and exact-bounded citation reservations. Instrumented reconstructed-helper
-calls for one ID across 30 POs: **31 numeric validations before R482 vs 1
-after**. Four document types sharing the same spelling: 1 validation after
-R482. The 25-PO legacy typed wrapper also has 1 validation after R482.
+calls for one ID across 30 POs: **60 numeric validations before R482 vs 1
+after**. Four document types sharing the same spelling: 16 validations before
+R482 vs 1 after. The 25-PO legacy typed wrapper also has 1 validation after R482.
 These are *call counts*, not measured speedups or Windows benchmark results.
 
 ## Reproduce on an authorized checkout
