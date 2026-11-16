@@ -296,6 +296,19 @@ class OfflineRegressionGateR459(unittest.TestCase):
                                   for name in gate.SOURCE_INPUTS])
 
 
+    def test_r468_shared_formula_guard_is_descriptor_fingerprinted(self):
+        self.assertEqual(gate.SOURCE_INPUTS.count(
+            "fvs_suite/csv_formula_guard.py"), 1)
+        before = gate._source_fingerprint(self.root)
+        candidate = self.root / "fvs_suite" / "csv_formula_guard.py"
+        candidate.write_text("altered source", encoding="utf-8")
+        self.assertNotEqual(gate._source_fingerprint(self.root), before)
+
+    def test_r468_spacing_mark_tests_are_in_mandatory_offline_matrix(self):
+        self.assertIn("test_csv_safe_cell_zero_copy_r456.py", gate.CORE_TESTS)
+        self.assertIn("tests/test_csv_safe_cell_zero_copy_r456.py",
+                      gate.SOURCE_INPUTS)
+
     def test_r464_exact_eight_required_real_modules(self):
         self.assertEqual(gate.CORE_TESTS, (
             "test_csv_negative_decimal_zero_copy_r455.py",
