@@ -278,16 +278,24 @@ def cross_po_foreign_offset_source_rows(
                                           if group[0] not in source_pos))
             if not foreign_groups:
                 continue
-            rows = frozenset(row for _, row in sources)
-            for row in rows:
+            # Validate before any hash/set operation. A direct caller may
+            # supply an object or a str subclass with hostile __hash__/__eq__;
+            # even its error message could expose private financial labels.
+            # Accepted native strings retain their exact source-row spelling.
+            rows: set[str] = set()
+            for _, row in sources:
+                if type(row) is not str:
+                    _source_row_sort_key(row)  # fixed, redacted ValueError
                 if row not in validated_row_keys:
                     validated_row_keys[row] = _source_row_sort_key(row)
-            cost = len(rows) * len(foreign_groups)
+                rows.add(row)
+            frozen_rows = frozenset(rows)
+            cost = len(frozen_rows) * len(foreign_groups)
             if cost > remaining:
                 raise ValueError("Cross-order document review exceeds citation budget")
             remaining -= cost
-            if rows:
-                candidates.append((kind, foreign_groups, rows))
+            if frozen_rows:
+                candidates.append((kind, foreign_groups, frozen_rows))
 
     affected: dict[str, dict[tuple[str, str], set[str]]] = {
         kind: defaultdict(set) for kind in ("credit", "return")
