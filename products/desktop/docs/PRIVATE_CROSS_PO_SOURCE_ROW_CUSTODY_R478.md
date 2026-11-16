@@ -14,7 +14,9 @@ No original financial CSV bytes, source SHA-256, Decimal arithmetic, document ke
 
 - Production helper: `products/desktop/fvs_suite/procurement_cross_po_r471.py`, local candidate Git blob `887641e1d87cdd74502192ddbc2d53a029af1190`.
 - New tests: `products/desktop/tests/test_procurement_cross_po_private_rows_r478.py`, local candidate Git blob `ee7d24f6cca6c45b68c0e1c765540e98cfb36143`.
-- Existing R477 regression: `products/desktop/tests/test_procurement_cross_po_canonical_r477.py`, verified existing Git blob `fadb587ef2c1fb3f8e4ea0e31bcedf5fd0dee972`.
+- Inherited R475 regression: `products/desktop/tests/test_procurement_cross_po_budget_r475.py`, verified Git blob `ae5e2343f8660cfb3fc231bacd7ecb617aa93e9f`.
+- Inherited R476 regression: `products/desktop/tests/test_procurement_cross_po_atomic_r476.py`, verified Git blob `e5d51efa9153ee463d27b3ea595f9ba837d59ec5`.
+- Inherited R477 regression: `products/desktop/tests/test_procurement_cross_po_canonical_r477.py`, verified Git blob `fadb587ef2c1fb3f8e4ea0e31bcedf5fd0dee972`.
 - CI workflow: `.github/workflows/desktop-source-evidence-r385.yml` now explicitly invokes the R478 tests in standard and optimized Python on Ubuntu and Windows runners. No release artifact uploaded by that workflow.
 
 ### Executed local evidence (Linux, Python 3.13.5)
@@ -22,13 +24,13 @@ No original financial CSV bytes, source SHA-256, Decimal arithmetic, document ke
 1. Rebuilt the **exact byte-identical R477 helper** locally: `git hash-object` matched GitHub's parent blob `82e2cba446602c75a989fbfe3a482e6aaf999c18`.
 2. Replaced only the three precise R478 helper sections; local Git blob `887641e1d87cdd74502192ddbc2d53a029af1190` matched GitHub committed source on branch.
 3. Wrote 14 new unit methods and verified their Git blob `ee7d24f6cca6c45b68c0e1c765540e98cfb36143` against GitHub committed test.
-4. Combined **R477's 8 exact-source tests plus R478's 14**: `22/22 PASS` using `python -W error -m unittest discover` and `22/22 PASS` using `python -OO -W error -m unittest discover`: **44/44 executed methods, zero skips**. R477's seeded 125 input permutations and 8 distinct child-process hash seeds passed in both modes.
+4. Combined **R475's 8, R476's 8, R477's 8 and R478's 14** exact-Git-blob tests: `38/38 PASS` using `python -W error -m unittest discover` and `38/38 PASS` using `python -OO -W error -m unittest discover`: **76/76 executed methods, zero skips**. This included R475's 1,001-order rejection, R476's seeded 250-case four-type parity oracle, R477's 125 input permutations and 8 distinct subprocess hash seeds in both modes.
 5. Candidate Python `py_compile` and `compileall`: PASS.
 6. Negative control: reverted local helper to byte-identical parent `82e2cba446602c75a989fbfe3a482e6aaf999c18`; the new R478 suite exited nonzero with **19 reported failures including subtests**. Direct unmocked parent repro raised `ValueError` with a private row label in its message; candidate raised a fixed redacted `ValueError`, without that label. This establishes change sensitivity, not a full-app security audit.
 
 ### NOT tested or approved
 
-The **full 38-method ProcureGuard CSV integration suite**, the legacy R475/R476 helper test files, complete six-app regression suite, native Windows x64 packaged executables, Defender/screen-reader/keyboard accessibility, SHA256 distribution/entitlement and live premium delivery **have not been executed in this local slice**. Passing helper unit tests are not Windows release certification. GitHub Actions has repeatedly failed with `steps=null`; the underlying infrastructure cause remains unconfirmed. No files were published and no premium binaries were exposed.
+The **full 38-method ProcureGuard CSV integration suite**, complete six-app regression suite, native Windows x64 packaged executables, Defender/screen-reader/keyboard accessibility, SHA256 distribution/entitlement and live premium delivery **have not been executed in this local slice**. The 38 passing methods above are cross-PO *helper* units, not the distinct 38-method end-to-end CSV integration suite. Passing helper unit tests are not Windows release certification. GitHub Actions has repeatedly failed with `steps=null`; the underlying infrastructure cause remains unconfirmed. No files were published and no premium binaries were exposed.
 
 ## Owner/next action
 
