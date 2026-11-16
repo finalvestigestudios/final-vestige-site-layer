@@ -1,0 +1,35 @@
+# R409 — Original 35-article/source-ID URL equivalence custody (DRAFT / HARD HOLD)
+
+**Scope:** finalvestigestudios/final-vestige-site-layer Issue #136; cross-reference conversion Issue #820 and business charter #818. **No content selection, source rewrite, WordPress/CMS, analytics, social, navigation, checkout, email, or publication.** This additive gate is for the original seven Claude clusters and two Shelter continuations, NOT editorial permission.
+
+## Evidence basis — original R397 source blob
+- Source: `preparedness/reviews/r397_original_source_fork_docket.json`, immutable Git blob `86d22a1d504c93db7689b914e2202a7845b648e2`.
+- Original identities: **35 unique article slugs; 77 original object paths; seven source fragments; 203 distinct source IDs; 280 source record occurrences; 34 base source entries**.
+- Crosswalk independently recomputed from the original GitHub file: **17 EXACT-source-URL groups with different source IDs**, and every group's ID membership and order matches the stored review registry. URL reuse is **NOT** authority to merge distinct claim support or provenance.
+- Original human adjudication still required: **five source-reading disputes, nine Shelter body/source forks**, unselected. All nine original branch refs compared against their pinned SHAs on 2026-11-15 PT and returned **identical, 0 ahead/behind**.
+- 17 groups include FSIS jerky and emergency-food duplicate-source IDs; also CDC CO, Ready.gov planning/disability, USFA high-rise and NWS winter references. **These are citation/provenance identity reviews, not harmful-source findings or a replacement of published URLs.**
+- Original crosswalk showed **zero source ID keys pointing to multiple distinct raw URLs**. R409 treats introduction of such drift as a structural failure, separately flags normalized-looking aliases without collapsing them, and prevents hidden deletion of any 17 human-review groups.
+
+## Gate and local verification
+- `tools/r409_source_equivalence_gate.py` only reads a bounded, single-link regular original docket and pins its **exact Git object**; refuses duplicate JSON keys; checks source ID→per-branch Git blobs, exact URL group membership, HTTPS URL provenance, original counts and blocked review states, and forbids silent manuscript/source choice.
+- `tests/test_r409_source_equivalence_gate.py` contains **66 distinct synthetic/adversarial unittest cases** (fixture size is reduced under explicit API-only test parameters). Tests use disposable files; no canonical content writes.
+- Locally executed on the exact source and test bytes identified by Git blobs **`1d90e4282d67330cf824b50032c30514905ab949` and `e210a49db442d649acc6de3a9d14cfb10f1f6dc8`**: **66/66 PASS**, `py_compile` PASS. Expected missing-authentic-docket CLI returns exit 2.
+- Separate connector-side read-only recomputation of **the genuine R397 GitHub file** confirms the numbers above and exact 17 group parity; this is **NOT** an execution of the committed Python gate over the original bytes, nor native validation/build.
+- The always-exit-2 CLI reports `DRAFT_HARD_HOLD`, `eligible=false`, `publication_approved=false` even if all custody structure checks pass. No inference that a source URL is factually correct, that a medical/food/emergency instruction is safe, or that an original human-link check passed.
+
+## Independent QA, latest editorial and release boundaries
+- QA #157: independent draft safety wording; fixture #169: independent draft, has remaining concern addressed by separate draft #2205; no merge/cherry-pick.
+- Home lead #1689 unaffected; no public navigation/Focus funnel/marketing tracking touched.
+- New Editorial E401 note (Issue #136 comment 6908344970) is an **additive proposed FDA recall/Enforcement Report evidence-route insert**, not a sixth edition. E400 full manuscript unchanged; private original E395/E397/E398/E399/E400 files and E399 printable **not received** by integration. Preserve prior edition digests and their human claim/source/reading-depth status.
+- FDA official sources independently read: [FDA consumer recalls](https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts) (explicitly incomplete public-notice list, three-year archive policy), [FDA Enforcement Reports](https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/enforcement-reports) (recall classification may follow a company's early public warning), [FDA game-meat jurisdiction](https://www.fda.gov/food/meat-guidance-documents-regulatory-information/fda-regulated-meats-and-meat-products-human-consumption) (non-amenable products may have USDA voluntary inspection). **No clean recall search is a food safety certificate.** No jerky process, dosage or storage recommendation authorized.
+
+## OFFER → FUNNEL STEP → BLOCKER → CHANGE/EXPERIMENT → EVIDENCE → OWNER
+| Offer / funnel | Blocker | Acceptance change / experiment | Evidence status | Owner |
+| --- | --- | --- | --- | --- |
+| One existing rights-cleared Preparedness pack → paid confirmed order | No authenticated currently payable **specific** FV SKU, rights, licensing, usable digital delivery, refund and fee proof | Independently verify exact merchant product and test checkout/delivery under founder authorization **before enabling paid CTA** | HOLD; no seller receipt, no buyer conversion | Founder/Commerce |
+| Verified already-posted family-contact/reunification asset → existing **free** `/preparedness/` | Matching immutable Grok asset ID, original hook, rights, consented mobile link and permitted campaign UTM unverified | Praxxis verify against existing TASK-008; only then propose matching free on-site CTA. No creator queue modification | UNVERIFIED; provisional CTA **“Start With Trusted Preparedness Resources”** is unpublished | Grok / Praxxis |
+| Free source-backed guide → optional **private Tool #104** | Child privacy, reunification emergency safety, printing/accessibility and QD unresolved | Qualified human review and real 320/360/390/768/1440 print/mobile plus offline/no-JS; no gated essential safety information | HARD HOLD, not offered | Preparedness / independent QD |
+| Qualified human visits → legitimate CTA → confirmed lead → verified paid order → net realized revenue | Missing merchant events, refund/fee reconciliation, unique approved asset/UTM and qualified human denominators | Use Claude's existing privacy-first measurement, not duplicate scripts. Compare 7- and 30-day cohorts and warn on tiny samples | **Net revenue/1,000 qualified sessions NOT COMPUTABLE** | Claude analytics / Commerce |
+
+## Exit conditions
+**NO publication or QD PASS.** Next: obtain authentic private original editorial archives and 50+ WP/private preview exports, replay exact pinned R397 graph under native full checkout, run `preparedness/validate.py` and `build.py` with original 35 articles, formally resolve five source scopes and nine Shelter forks plus Article #7/#11/#15/Tool #104 safety reviews, independently verify a real sellable SKU and exact Grok asset ID, then request founder production approval. No synthetic fixtures or available GitHub Actions zero-step failure can substitute for those gates.
