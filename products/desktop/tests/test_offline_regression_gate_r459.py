@@ -529,21 +529,21 @@ class OfflineRegressionGateR459(unittest.TestCase):
         # with no count change; count-only R466 validation would have passed.
         for name in gate.TESTS:
             count = gate.PRODUCT_METHOD_FLOORS.get(name, 1)
-            content = 'import unittest\\nclass IdentityFixture(unittest.TestCase):\\n'
+            content = 'import unittest\nclass IdentityFixture(unittest.TestCase):\n'
             content += ''.join(
-                f'    def test_stable_{i}(self):\\n'
-                '        self.assertTrue(True)\\n'
+                f'    def test_stable_{i}(self):\n'
+                '        self.assertTrue(True)\n'
                 for i in range(count - 1))
             content += (
-                '    if __debug__:\\n'
-                '        def test_normal_only(self):\\n'
-                '            self.assertTrue(True)\\n'
-                '    else:\\n'
-                '        def test_optimized_only(self):\\n'
-                '            self.assertTrue(True)\\n'
+                '    if __debug__:\n'
+                '        def test_normal_only(self):\n'
+                '            self.assertTrue(True)\n'
+                '    else:\n'
+                '        def test_optimized_only(self):\n'
+                '            self.assertTrue(True)\n'
             ) if name == gate.PRODUCT_TESTS[0] else (
-                '    def test_last_stable(self):\\n'
-                '        self.assertTrue(True)\\n'
+                '    def test_last_stable(self):\n'
+                '        self.assertTrue(True)\n'
             )
             (self.root / 'tests' / name).write_text(
                 content, encoding='utf-8')
@@ -553,13 +553,13 @@ class OfflineRegressionGateR459(unittest.TestCase):
     def test_r467_repeated_test_identity_rejected_by_real_child(self):
         path = self.root / 'tests' / gate.TESTS[0]
         path.write_text(
-            'import unittest\\n'
-            'class Duplicated(unittest.TestCase):\\n'
-            '    def test_one(self):\\n'
-            '        self.assertTrue(True)\\n'
-            'def load_tests(loader, tests, pattern):\\n'
+            'import unittest\n'
+            'class Duplicated(unittest.TestCase):\n'
+            '    def test_one(self):\n'
+            '        self.assertTrue(True)\n'
+            'def load_tests(loader, tests, pattern):\n'
             '    return unittest.TestSuite([Duplicated("test_one"), '
-            'Duplicated("test_one")])\\n',
+            'Duplicated("test_one")])\n',
             encoding='utf-8')
         with self.assertRaises(gate.LocalGateError):
             gate._run_tests(self.root)
