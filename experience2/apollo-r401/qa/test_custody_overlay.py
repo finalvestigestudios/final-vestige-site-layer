@@ -2,10 +2,18 @@
 No external web requests, redirects, or site writes. A fixture is not staging.
 """
 import unittest
+import subprocess
 from playwright.sync_api import sync_playwright
 import custody_overlay as overlay
 
-FIXTURE=overlay.EXPERIENCE2/'apollo-r393'/'QA'/'local-php-fixture.html'
+def fixture_path():
+ primary=overlay.EXPERIENCE2/'apollo-r384'/'QA'/'local-php-fixture.html'
+ if not primary.is_file() and (overlay.EXPERIENCE2/'apollo-r384'/'qa'/'contract.php').is_file():
+  subprocess.run(['php',str(overlay.EXPERIENCE2/'apollo-r384'/'qa'/'contract.php')],check=True,stdout=subprocess.DEVNULL)
+ if primary.is_file():return primary
+ archived=overlay.EXPERIENCE2/'apollo-r393'/'QA'/'local-php-fixture.html'
+ if archived.is_file():return archived
+ raise RuntimeError('HOLD: no reproducible Apollo local PHP fixture')
 MUTATIONS={
  'changed_claim': "document.querySelector('.fv-r384__card p strong').parentElement.append(' NOT TRUE')",
  'changed_heading': "document.querySelector('[data-fv-r384-record] h4').textContent='Contrary to the report'",
@@ -29,7 +37,7 @@ class SourceCustodyRegression(unittest.TestCase):
   cls.browser=cls.pw.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox'])
   cls.context=cls.browser.new_context(service_workers='block');cls.context.route('**/*',lambda r:r.abort('blockedbyclient'))
   cls.page=cls.context.new_page()
-  cls.html=FIXTURE.read_text(encoding='utf-8')
+  cls.html=fixture_path().read_text(encoding='utf-8')
  @classmethod
  def tearDownClass(cls):
   cls.context.close();cls.browser.close();cls.pw.stop()
