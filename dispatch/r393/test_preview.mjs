@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.dirname(fileURLToPath(import.meta.url));
+const j=JSON.parse(fs.readFileSync(path.join(root,'SOURCE_LEDGER.json'),'utf8'));
+test('original six remain 4:2 and hard hold',()=>{assert.equal(j.issues.length,6);assert.equal(j.issues.filter(x=>x.kind==='editorial').length,4);assert.equal(j.issues.filter(x=>x.kind==='commercial-review-pending').length,2);assert.equal(j.status,'HOLD_UNSENT');});
+for(let n=1;n<=6;n++)test('issue '+n+' preserves copy and no unauthorized mailing',()=>{const i=j.issues[n-1],k=String(n).padStart(2,'0'),h=fs.readFileSync(path.join(root,'preview','issue-'+k+'.html'),'utf8'),t=fs.readFileSync(path.join(root,'preview','issue-'+k+'.txt'),'utf8');assert.ok(h.includes(i.subject)&&h.includes(i.preheader));assert.ok(t.includes('SUBJECT: '+i.subject)&&t.includes('DRAFT PREHEADER: '+i.preheader));assert.match(h,/DO NOT SEND/);assert.match(t,/DO NOT SEND/);assert.match(h,/VALID_POSTAL_ADDRESS_REQUIRED/);assert.match(h,/JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED/);assert.match(h,/<html lang="en">/);assert.match(h,/<h1>/);assert.doesNotMatch(h,/<script|<form|<iframe|<img|https?:\/\/(?:zen12|hypnosislive|affiliates\.inspire3)\.com/i);assert.equal(i.merchant_earning_url,null);assert.equal(i.send_authorized,false);if(i.kind!=='editorial'){assert.match(h,/Commercial disclosure:/);assert.match(h,/CTA DISABLED/);assert.doesNotMatch(h,/<a[^>]*href="[^"]*APPROVED_/);}});
+test('missing proof never becomes made-up recipients or sales',()=>{assert.equal(j.jetpack.eligible_inboxes,null);assert.equal(j.jetpack.actual_welcome_received,false);assert.equal(j.jetpack.native_preview,false);assert.equal(j.metrics.qualified_sessions,null);assert.equal(j.metrics.settled_net_commission,null);assert.equal(j.metrics.net_revenue_per_1000,null);});
