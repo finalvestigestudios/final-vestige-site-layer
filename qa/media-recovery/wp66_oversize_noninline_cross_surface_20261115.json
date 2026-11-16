@@ -1,0 +1,286 @@
+{
+  "schema": "fv-oversize-cross-surface-noninline-v1",
+  "observed_date_pt": "2026-11-15",
+  "method": "read_only_WordPress_66_published_post_featured_fields_92_published_page_featured_fields_3_target_page_body_view_plus_pinned_20_original_media_ledger",
+  "source_20_record_git_blob_sha": "41a2b5cc5c2a14420927312d6e996133e46f7b2f",
+  "source_20_record_path": "qa/media-recovery/wp66_132media_20oversized_inline_exposure_20261115.json",
+  "published_post_featured_fields_examined": 66,
+  "published_page_featured_fields_examined": 92,
+  "individual_page_bodies_examined": [
+    234,
+    85,
+    2429
+  ],
+  "total_noninline_originals": 9,
+  "total_noninline_original_storage_bytes": 25904837,
+  "usage_counts": {
+    "published_post_featured": 4,
+    "published_page_inline": 1,
+    "draft_page_inline": 2,
+    "unresolved": 2
+  },
+  "records": [
+    {
+      "attachment_id": 2640,
+      "title": "Piri Reis world map, 1513",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/11/piri-reis-world-map-01.jpg",
+      "original_stored_bytes": 7422309,
+      "native_width": 1964,
+      "native_height": 2619,
+      "review_max_width": 960,
+      "review_proportional_height": 1280,
+      "published_post_body_inline_uses": 0,
+      "usage_class": "published_post_featured",
+      "verified_usage": [
+        {
+          "type": "post_featured_media",
+          "object_id": 1917,
+          "object_status": "publish",
+          "object_url": "https://finalvestige.com/2026/11/02/piri-reis-map/",
+          "object_title": "The Piri Reis Map: What the 1513 Chart Actually Shows",
+          "field": "featured_media",
+          "evidence_attachment_id": 2640
+        }
+      ],
+      "rights_status": "HOLD_ITEM_SPECIFIC",
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_transferred_bytes": null
+    },
+    {
+      "attachment_id": 2636,
+      "title": "Le Baquet de Mesmer",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/11/le-baquet-de-mesmer.jpg",
+      "original_stored_bytes": 4462854,
+      "native_width": 2988,
+      "native_height": 3538,
+      "review_max_width": 960,
+      "review_proportional_height": 1137,
+      "published_post_body_inline_uses": 0,
+      "usage_class": "published_post_featured",
+      "verified_usage": [
+        {
+          "type": "post_featured_media",
+          "object_id": 1924,
+          "object_status": "publish",
+          "object_url": "https://finalvestige.com/2026/11/02/mesmerism/",
+          "object_title": "Mesmerism: What Franklin’s 1784 Commission Actually Found",
+          "field": "featured_media",
+          "evidence_attachment_id": 2636
+        }
+      ],
+      "rights_status": "HOLD_ITEM_SPECIFIC",
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_transferred_bytes": null
+    },
+    {
+      "attachment_id": 482,
+      "title": "050e21e0-7b54-4f9a-ba0b-7f594657af05",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png",
+      "original_stored_bytes": 2293016,
+      "native_width": 1672,
+      "native_height": 941,
+      "review_max_width": 960,
+      "review_proportional_height": 540,
+      "published_post_body_inline_uses": 0,
+      "usage_class": "unresolved",
+      "verified_usage": [],
+      "rights_status": "HOLD_ITEM_SPECIFIC",
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_transferred_bytes": null
+    },
+    {
+      "attachment_id": 405,
+      "title": "The Water Resilience Field Manual — Expanded First Edition",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png",
+      "original_stored_bytes": 2201573,
+      "native_width": 1122,
+      "native_height": 1402,
+      "review_max_width": 960,
+      "review_proportional_height": 1200,
+      "published_post_body_inline_uses": 0,
+      "usage_class": "draft_page_inline",
+      "verified_usage": [
+        {
+          "type": "page_body_image",
+          "object_id": 85,
+          "object_status": "draft",
+          "object_url": "https://finalvestige.com/?page_id=85",
+          "object_title": "The Water Resilience Field Manual",
+          "field": "content.rendered",
+          "match_method": "data-attachment-id",
+          "matched_filename": "The20Water20Resilience20Field20Manual.png"
+        }
+      ],
+      "rights_status": "HOLD_ITEM_SPECIFIC",
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_transferred_bytes": null
+    },
+    {
+      "attachment_id": 293,
+      "title": "Bryan Rhodes — Founder and Editor of Final Vestige",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/ne.png",
+      "original_stored_bytes": 2090327,
+      "native_width": 1122,
+      "native_height": 1402,
+      "review_max_width": 960,
+      "review_proportional_height": 1200,
+      "published_post_body_inline_uses": 0,
+      "usage_class": "published_page_inline",
+      "verified_usage": [
+        {
+          "type": "page_body_image",
+          "object_id": 234,
+          "object_status": "publish",
+          "object_url": "https://finalvestige.com/about/bryan-rhodes/",
+          "object_title": "Bryan Rhodes",
+          "field": "content.rendered",
+          "match_method": "data-attachment-id",
+          "matched_filename": "ne.png"
+        }
+      ],
+      "rights_status": "HOLD_ITEM_SPECIFIC",
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_transferred_bytes": null
+    },
+    {
+      "attachment_id": 2148,
+      "title": "Caernarvon levee detonation, 1927 — NOAA historic archive",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/11/1927-caernarvon-levee-explosion-noaa-archive.jpg",
+      "original_stored_bytes": 2030948,
+      "native_width": 1821,
+      "native_height": 1190,
+      "review_max_width": 960,
+      "review_proportional_height": 627,
+      "published_post_body_inline_uses": 0,
+      "usage_class": "unresolved",
+      "verified_usage": [],
+      "rights_status": "HOLD_ITEM_SPECIFIC",
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_transferred_bytes": null
+    },
+    {
+      "attachment_id": 2432,
+      "title": "Artifact Editions — Editorial Still Life (Concept)",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/11/final-vestige-artifact-editions-editorial-concept.png",
+      "original_stored_bytes": 2010886,
+      "native_width": 1280,
+      "native_height": 720,
+      "review_max_width": 960,
+      "review_proportional_height": 540,
+      "published_post_body_inline_uses": 0,
+      "usage_class": "draft_page_inline",
+      "verified_usage": [
+        {
+          "type": "page_body_image",
+          "object_id": 2429,
+          "object_status": "draft",
+          "object_url": "https://finalvestige.com/?page_id=2429",
+          "object_title": "Artifact Editions — Original History Objects | Final Vestige",
+          "field": "content.rendered",
+          "match_method": "exact_source_filename",
+          "matched_filename": "final-vestige-artifact-editions-editorial-concept.png"
+        }
+      ],
+      "rights_status": "HOLD_ITEM_SPECIFIC",
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_transferred_bytes": null
+    },
+    {
+      "attachment_id": 2638,
+      "title": "Lycurgus Cup, British Museum",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/11/lycurgus-cup-british-museum.jpg",
+      "original_stored_bytes": 1745282,
+      "native_width": 2720,
+      "native_height": 3649,
+      "review_max_width": 960,
+      "review_proportional_height": 1288,
+      "published_post_body_inline_uses": 0,
+      "usage_class": "published_post_featured",
+      "verified_usage": [
+        {
+          "type": "post_featured_media",
+          "object_id": 1920,
+          "object_status": "publish",
+          "object_url": "https://finalvestige.com/2026/11/02/lycurgus-cup/",
+          "object_title": "The Lycurgus Cup: The Roman Glass That Changes Color",
+          "field": "featured_media",
+          "evidence_attachment_id": 2638
+        }
+      ],
+      "rights_status": "HOLD_ITEM_SPECIFIC",
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_transferred_bytes": null
+    },
+    {
+      "attachment_id": 2637,
+      "title": "British Museum crystal skull",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/11/crystal-skull-british-museum.jpg",
+      "original_stored_bytes": 1647642,
+      "native_width": 1436,
+      "native_height": 2001,
+      "review_max_width": 960,
+      "review_proportional_height": 1338,
+      "published_post_body_inline_uses": 0,
+      "usage_class": "published_post_featured",
+      "verified_usage": [
+        {
+          "type": "post_featured_media",
+          "object_id": 1926,
+          "object_status": "publish",
+          "object_url": "https://finalvestige.com/2026/11/02/crystal-skulls/",
+          "object_title": "Crystal Skulls: What the Evidence Says About Their Age",
+          "field": "featured_media",
+          "evidence_attachment_id": 2637
+        }
+      ],
+      "rights_status": "HOLD_ITEM_SPECIFIC",
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_transferred_bytes": null
+    }
+  ],
+  "known_limitations": [
+    "Published page bodies other than 234 were not exhaustively scanned; two unresolved items are NOT proven unused.",
+    "Featured media is a WordPress relationship, not evidence of a successful logged-out browser image transfer.",
+    "Original stored bytes are not currentSrc encoded bytes and do not establish 76% improvement.",
+    "42 reported broken third-party images still lack guest-browser status; this crosswalk does not validate them."
+  ],
+  "sitewide_visitor_transfer_reduction_percent": null,
+  "reported_42_broken_guest_verified": false,
+  "production_writes": 0
+}
