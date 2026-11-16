@@ -51,7 +51,7 @@ function examine(f) {
    ok(/<button[^>]+disabled[^>]*>/.test(p),'native disabled offer '+i);
    ok(/aria-describedby="affiliate-disclosure"/.test(p),'adjacent disclosure binding '+i);
    ok(/id="affiliate-disclosure"/.test(p),'disclosure presence '+i);
-   ok(p.includes(matrix.disclosure_literal),'disclosure matches approved matrix '+i);
+   ok(p.replace(/<[^>]*>/g,'').includes(matrix.disclosure_literal),'disclosure matches approved matrix '+i);
    ok(/source[- ]first|evidence|scientific/i.test(p),'source-first trust copy '+i);
  }
  const content=(p)=>p.slice(p.indexOf('<div class="grid">'),p.indexOf('</main>'));
