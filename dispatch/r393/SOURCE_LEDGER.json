@@ -1,0 +1,116 @@
+{
+  "schema": "fv-dispatch-r393-source-only-v1",
+  "original_pr_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "original_manifest_blob_sha": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+  "source_issue": 174,
+  "observed_wordpress": "2026-11-16T03:37:13Z",
+  "jetpack": {
+    "newsletter": true,
+    "automatic_email": false,
+    "full_email": true,
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed_not_added": 2,
+    "eligible_inboxes": null,
+    "welcome_configured": true,
+    "actual_welcome_received": false,
+    "native_preview": false,
+    "legal_address_verified": false,
+    "functional_unsubscribe_verified": false
+  },
+  "merchant": {
+    "zen12": {
+      "official": "https://zen12.com/about",
+      "email_rights": false,
+      "named_fv_acceptance": false,
+      "earning_url": null,
+      "approved_guide": null,
+      "referred_price": null,
+      "refund_terms": null
+    },
+    "total_focus": {
+      "official": "https://hypnosislive.com/mental-skills/total-focus",
+      "email_rights": false,
+      "named_fv_acceptance": false,
+      "earning_url": null,
+      "approved_guide": null,
+      "referred_price": null,
+      "refund_terms": null
+    }
+  },
+  "metrics": {
+    "confirmed_signup_v1_live": false,
+    "qualified_sessions": null,
+    "settled_net_commission": null,
+    "net_revenue_per_1000": null
+  },
+  "status": "HOLD_UNSENT",
+  "issues": [
+    {
+      "issue": 1,
+      "subject": "The mind is not a camera",
+      "preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "kind": "editorial",
+      "canonical_path": "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md",
+      "canonical_blob_sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "cta_type": "existing FV editorial route",
+      "merchant_earning_url": null,
+      "send_authorized": false
+    },
+    {
+      "issue": 2,
+      "subject": "Before hypnosis had a name",
+      "preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "kind": "editorial",
+      "canonical_path": "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md",
+      "canonical_blob_sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "cta_type": "existing FV editorial route",
+      "merchant_earning_url": null,
+      "send_authorized": false
+    },
+    {
+      "issue": 3,
+      "subject": "The twelve-minute meditation question",
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "kind": "commercial-review-pending",
+      "canonical_path": "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md",
+      "canonical_blob_sha": "aeeef34efea0cc281f69901488e4501fea851245",
+      "cta_type": "INERT pending Mind-owned approved guide",
+      "merchant_earning_url": null,
+      "send_authorized": false
+    },
+    {
+      "issue": 4,
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "kind": "editorial",
+      "canonical_path": "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md",
+      "canonical_blob_sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "cta_type": "existing FV editorial route",
+      "merchant_earning_url": null,
+      "send_authorized": false
+    },
+    {
+      "issue": 5,
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "Three questions that matter more than an impressive promise.",
+      "kind": "commercial-review-pending",
+      "canonical_path": "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md",
+      "canonical_blob_sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "cta_type": "INERT pending Mind-owned approved guide",
+      "merchant_earning_url": null,
+      "send_authorized": false
+    },
+    {
+      "issue": 6,
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "kind": "editorial",
+      "canonical_path": "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md",
+      "canonical_blob_sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "cta_type": "existing FV editorial route",
+      "merchant_earning_url": null,
+      "send_authorized": false
+    }
+  ]
+}
