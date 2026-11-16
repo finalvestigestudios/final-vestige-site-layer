@@ -205,7 +205,9 @@ def _delta(older: dict, newer: dict) -> dict:
     return {'removed_blocks': sum(removed.values()), 'added_blocks': sum(added.values()),
             'removed_block_ids': sorted([k[1] for k, count in removed.items() for _ in range(count)]),
             'added_block_ids': sorted([k[1] for k, count in added.items() for _ in range(count)]),
-            'reordered_or_changed': [key(x) for x in a] != [key(x) for x in b],
+            'reading_text_changed': older.get('reading_sha256') != newer.get('reading_sha256'),
+            'reordered_or_changed': ([key(x) for x in a] != [key(x) for x in b] or
+                                     older.get('reading_sha256') != newer.get('reading_sha256')),
             'word_delta': newer.get('reading_word_count', 0) - older.get('reading_word_count', 0),
             'removed_bound_sources': sorted(set(older.get('claim_bound_source_urls', [])) - set(newer.get('claim_bound_source_urls', [])))}
 
