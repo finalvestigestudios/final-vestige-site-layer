@@ -1,0 +1,433 @@
+{
+  "id": "fv-mind-r425",
+  "checked_on": "2026-11-16",
+  "status": "SOURCE_ONLY_HARD_HOLD",
+  "source_note": "Original published research metadata and abstracts; official seller pages independently checked; no access to publisher-admin account, approved creatives, final referred checkout or purchase ledger.",
+  "claim_count": 31,
+  "claims": [
+    {
+      "id": "T01",
+      "statement": "Thatcher illusion introduced by Peter Thompson in 1980, Perception 9(4), 483–484",
+      "class": "research metadata",
+      "decision": "supported bibliographic fact",
+      "source": "https://doi.org/10.1068/p090483",
+      "editorial_action": "cite; do not reuse original images"
+    },
+    {
+      "id": "T02",
+      "statement": "Rotating eyes and mouth can make inverted face alteration less visually striking than upright",
+      "class": "research finding",
+      "decision": "supported description of paradigm",
+      "source": "https://doi.org/10.1177/0956797613501521",
+      "editorial_action": "do not quantify universal detection"
+    },
+    {
+      "id": "T03",
+      "statement": "Thatcher-like effects occur on cars, buildings, bicycles and letter strings",
+      "class": "research finding",
+      "decision": "abstract-supported",
+      "source": "https://doi.org/10.1068/p6659",
+      "editorial_action": "do not claim exact same neural mechanism"
+    },
+    {
+      "id": "T04",
+      "statement": "In 2010 study faces not exceptionally large Thatcher effect compared to non-face stimuli",
+      "class": "research finding",
+      "decision": "abstract-supported",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/20942363/",
+      "editorial_action": "cite the task and category comparison"
+    },
+    {
+      "id": "T05",
+      "statement": "Body orientation and viewer-relative rotation affect Thatcher performance in tested positions",
+      "class": "research finding",
+      "decision": "abstract-supported",
+      "source": "https://doi.org/10.1068/p5508",
+      "editorial_action": "qualified conditions only"
+    },
+    {
+      "id": "T06",
+      "statement": "Expression identification and bizarre appearance can diverge",
+      "class": "research finding",
+      "decision": "abstract-supported",
+      "source": "https://doi.org/10.1068/p7755",
+      "editorial_action": "avoid reductive single mechanism"
+    },
+    {
+      "id": "T07",
+      "statement": "Superior temporal sulcus adaptation response depends on upright altered-face condition in specified fMRI protocol",
+      "class": "research finding",
+      "decision": "abstract-supported",
+      "source": "https://doi.org/10.1177/0956797613501521",
+      "editorial_action": "not broad causal brain-training conclusion"
+    },
+    {
+      "id": "T08",
+      "statement": "Thatcher illusion shows anyone's perception is unreliable in all real-world tasks",
+      "class": "editorial inference",
+      "decision": "excluded extrapolation",
+      "source": "https://doi.org/10.1068/p090483",
+      "editorial_action": "never state universal claim"
+    },
+    {
+      "id": "T09",
+      "statement": "Original Thatcher stimuli may be reproduced commercially without permission",
+      "class": "copyright claim",
+      "decision": "not established",
+      "source": "https://doi.org/10.1068/p090483",
+      "editorial_action": "use only original SVG illustration expressly marked not a replication"
+    },
+    {
+      "id": "H01",
+      "statement": "Puységur archive is a published historical source collection",
+      "class": "FV inventory",
+      "decision": "verified public route",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "editorial_action": "no endorsement of magnetism"
+    },
+    {
+      "id": "H02",
+      "statement": "Franklin commission tested claims about magnetism in Deslon's practice",
+      "class": "historical FV source",
+      "decision": "supported published FV article",
+      "source": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "editorial_action": "source notes limit scope"
+    },
+    {
+      "id": "F01",
+      "statement": "52-page Seven Day Focus Fieldbook offered free on FV",
+      "class": "FV product feature",
+      "decision": "verified public page",
+      "source": "https://finalvestige.com/focus/",
+      "editorial_action": "do not duplicate Jetpack form"
+    },
+    {
+      "id": "Z01",
+      "statement": "Zen12 advertises 12 progressive levels",
+      "class": "seller feature",
+      "decision": "seller describes; not efficacy proof",
+      "source": "https://zen12.com/",
+      "editorial_action": "verify exact SKU at referred checkout"
+    },
+    {
+      "id": "Z02",
+      "statement": "Zen12 advertises Premium 48 MP3 library with several styles",
+      "class": "seller feature",
+      "decision": "seller describes; not efficacy proof",
+      "source": "https://zen12.com/",
+      "editorial_action": "other tiers include 24 MP3s"
+    },
+    {
+      "id": "Z03",
+      "statement": "Zen12 advertises a one-year refund policy",
+      "class": "seller policy",
+      "decision": "seller describes only",
+      "source": "https://zen12.com/",
+      "editorial_action": "terms/checkouts not independently verified"
+    },
+    {
+      "id": "Z04",
+      "statement": "Zen12 twelve minutes equals one hour of meditation",
+      "class": "seller efficacy",
+      "decision": "excluded unsupported product-specific equivalence",
+      "source": "https://zen12.com/",
+      "editorial_action": "never adopt"
+    },
+    {
+      "id": "Z05",
+      "statement": "Zen12 product automatically improves stress/anxiety, focus, creativity or health",
+      "class": "seller efficacy",
+      "decision": "excluded unsupported product-specific outcomes",
+      "source": "https://zen12.com/",
+      "editorial_action": "do not inherit"
+    },
+    {
+      "id": "HL01",
+      "statement": "Total Focus listing shows 33-minute 47-MB recording",
+      "class": "seller format",
+      "decision": "seller describes only",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "editorial_action": "no therapeutic/attention guarantee"
+    },
+    {
+      "id": "HL02",
+      "statement": "Total Focus promises 100% razor-sharp concentration",
+      "class": "seller efficacy",
+      "decision": "excluded unsupported product-specific guarantee",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "editorial_action": "never adopt"
+    },
+    {
+      "id": "BS01",
+      "statement": "Focus Shot seller lists 15 and 30 minute recordings",
+      "class": "seller feature",
+      "decision": "seller describes",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "editorial_action": "not a Zen12 SKU"
+    },
+    {
+      "id": "BS02",
+      "statement": "Focus Shot audio creates instant laser-sharp focus",
+      "class": "seller efficacy",
+      "decision": "excluded unsupported product-specific outcome",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "editorial_action": "never adopt"
+    },
+    {
+      "id": "A01",
+      "statement": "Inspire3 has a public affiliate program signup page",
+      "class": "program description",
+      "decision": "public page verified, account approval NOT verified",
+      "source": "https://affiliates.inspire3.com/",
+      "editorial_action": "public payout marketing cannot establish FV-specific terms"
+    },
+    {
+      "id": "A02",
+      "statement": "FV publisher accepted with SKU/channel permissions",
+      "class": "partner eligibility",
+      "decision": "UNVERIFIED",
+      "source": "https://affiliates.inspire3.com/",
+      "editorial_action": "hold all earning links"
+    },
+    {
+      "id": "A03",
+      "statement": "FV issued earning URL and valid tracking terms",
+      "class": "partner tracking",
+      "decision": "UNVERIFIED",
+      "source": "https://affiliates.inspire3.com/",
+      "editorial_action": "no link/redirect/script"
+    },
+    {
+      "id": "A04",
+      "statement": "FV applicable checkout pricing, returns and settlement",
+      "class": "commercial terms",
+      "decision": "UNVERIFIED",
+      "source": "https://zen12.com/",
+      "editorial_action": "no quoted referral price/commission"
+    },
+    {
+      "id": "A05",
+      "statement": "FV-owned Mind payable product rights, checkout and delivery",
+      "class": "owned commerce",
+      "decision": "UNVERIFIED",
+      "source": "https://finalvestige.com/focus/",
+      "editorial_action": "free Focus is not a sellable SKU"
+    },
+    {
+      "id": "L01",
+      "statement": "Near-link affiliate material connection must be disclosed clearly",
+      "class": "FTC endorsement guidance",
+      "decision": "documented requirement",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "editorial_action": "prospective disclosure adjacent to disabled CTA"
+    },
+    {
+      "id": "L02",
+      "statement": "Health-benefit claims need appropriate reliable scientific support",
+      "class": "FTC staff guidance",
+      "decision": "documented compliance standard",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "editorial_action": "do not infer from unrelated studies"
+    },
+    {
+      "id": "M01",
+      "statement": "An affiliate outbound event proves a settled affiliate order",
+      "class": "measurement",
+      "decision": "FALSE—excluded",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "editorial_action": "separate click and merchant settlement"
+    },
+    {
+      "id": "M02",
+      "statement": "One existing Jetpack Focus list is preserved",
+      "class": "funnel governance",
+      "decision": "required; not tested this sprint",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "editorial_action": "no duplicate forms"
+    },
+    {
+      "id": "M03",
+      "statement": "A/B optional film improves paid conversion versus text",
+      "class": "hypothesis",
+      "decision": "UNTESTED—no sales cohort",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "editorial_action": "only test when merchant live and consented qualified data"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "named Final Vestige partner approval",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G02",
+      "name": "authorized Zen12 exact SKU",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G03",
+      "name": "authorized marketing channel",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G04",
+      "name": "published approved creatives/sale copy scope",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G05",
+      "name": "issued earning referral URL",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G06",
+      "name": "tracking parameters/redirect rules",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G07",
+      "name": "affiliate-cookie/attribution terms",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G08",
+      "name": "affiliate settlement and payout terms",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G09",
+      "name": "referred checkout price",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G10",
+      "name": "referred tax/currency/fees",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G11",
+      "name": "returns/refund written conditions",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G12",
+      "name": "actual click-to-merchant acceptance",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G13",
+      "name": "merchant reporting access",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G14",
+      "name": "FV-owned eligible paid SKU proof",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G15",
+      "name": "FV-owned product intellectual property rights",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G16",
+      "name": "owned product fulfillment",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G17",
+      "name": "owned product customer support/refunds",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G18",
+      "name": "founder approval for commercial release",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G19",
+      "name": "Site QA accessibility approval",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G20",
+      "name": "real 360/390/768/1440/1920 QA",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G21",
+      "name": "real WordPress HTML sanitizer check",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G22",
+      "name": "hosted CI",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G23",
+      "name": "original encoded media",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G24",
+      "name": "caption sync/audio review",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G25",
+      "name": "mobile performance/LCP check",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G26",
+      "name": "real unique Grok asset_id and media rights",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G27",
+      "name": "Jetpack provider lead confirmation",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    },
+    {
+      "id": "G28",
+      "name": "independently confirmed paid sale + refund/fees",
+      "state": "HOLD",
+      "evidence": "Not independently authenticated / not executed this sprint"
+    }
+  ],
+  "disclosure_literal": "If Final Vestige later receives an approved earning link and you purchase through it, Final Vestige may earn a commission at no extra cost to you. This page currently contains no earning link or active offer.",
+  "no_active_affiliate_links": true,
+  "referral_price": null,
+  "referral_commission": null,
+  "verified_orders": null,
+  "verified_net_revenue_per_1000_qualified_sessions": null
+}
