@@ -105,7 +105,7 @@ check('Six contiguous caption cues total 42 seconds',()=>assert.equal(parseVtt(V
 check('Storyboard reports NOT playable instead of fake media',()=>{contains(B,/not an encoded or playable film/i);contains(B, /Read the complete film transcript/i);contains(B,/ZEN12_FILM_POSTER.svg/);contains(B,/ZEN12_FILM_CAPTIONS.vtt/);});
 check('Original source-led manuscript',()=>{assert.ok(ARTICLE.split(/\s+/).length>=2200);for(const u of ['10.1068/p281059','PMC3563049','PMC3964612','2214930120','puysegurs-animal-magnetism-files','finalvestige.com/focus/'])contains(ARTICLE,new RegExp(u));});
 check('Dossier requires actual settled net and founder approval',()=>{for(const u of ['NOT COMPUTABLE','Founder','HARD HOLD','refund','Grok','consent','no additional','A/B','UNPUBLISHED','28'])contains(DOSSIER,new RegExp(u,'i'));});
-check('Research/buyer copy separates science from merchant promises',()=>{contains(ARTICLE,/not proof that an audio recording produces/i);contains(A,/seller claims/i);contains(A,/no cited study/i);});
+check('Research/buyer copy separates science from merchant promises',()=>{contains(ARTICLE,/None of those sources demonstrates/i);contains(A,/seller claims/i);contains(A,/no cited study/i);});
 check('Commercial disclosure precedes native-disabled CTA',()=>{for(const s of [A,B])assert.ok(s.indexOf('If you purchase through a future earning link')<s.indexOf('<button type="button" class="locked" disabled'));});
 const unsafe=[
  ['enable real button',s=>s.replace('class="locked" disabled','class="locked"'),false],
