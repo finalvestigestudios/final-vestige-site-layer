@@ -240,6 +240,10 @@ def cross_po_foreign_offset_source_rows(
     # reserve rows x groups atomically across both types before materializing.
     remaining = _MAX_CROSS_PO_CITATIONS
     candidates: list[tuple[str, tuple[tuple[str, str], ...], frozenset[str]]] = []
+    # Validate each distinct original row once across both offset streams.
+    # Cache immutable numeric sort keys for reuse on every affected PO/line;
+    # one-to-many fanout must not repeatedly parse the same physical row.
+    validated_row_keys: dict[str, tuple[int, int, str]] = {}
     for kind in ("credit", "return"):
         for reference, groups in offsets[kind].items():
             sources = originals[kind].get(reference, ())
@@ -252,7 +256,8 @@ def cross_po_foreign_offset_source_rows(
                 continue
             rows = frozenset(row for _, row in sources)
             for row in rows:
-                _source_row_sort_key(row)  # Redacted, before either output.
+                if row not in validated_row_keys:
+                    validated_row_keys[row] = _source_row_sort_key(row)
             cost = len(rows) * len(foreign_groups)
             if cost > remaining:
                 raise ValueError("Cross-order document review exceeds citation budget")
@@ -268,7 +273,7 @@ def cross_po_foreign_offset_source_rows(
             affected[kind][group].update(rows)
     return {
         kind: {
-            group: tuple(sorted(rows, key=_source_row_sort_key))
+            group: tuple(sorted(rows, key=validated_row_keys.__getitem__))
             for group, rows in sorted(affected[kind].items())
         }
         for kind in ("credit", "return")
