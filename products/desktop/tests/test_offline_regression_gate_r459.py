@@ -408,5 +408,18 @@ class OfflineRegressionGateR459(unittest.TestCase):
             smokes.assert_not_called()
 
 
+    def test_r465_shortened_or_duplicate_product_matrix_fails_closed(self):
+        for modified in (gate.TESTS[:-1], gate.TESTS[:-1] + (gate.TESTS[0],)):
+            with self.subTest(modified=modified[-1]), \
+                 patch.object(gate, "TESTS", modified), \
+                 patch.object(gate, "_six_source_digest", return_value="b" * 64), \
+                 patch.object(gate, "_run_tests") as tests, \
+                 patch.object(gate, "_run_smokes") as smokes:
+                with self.assertRaisesRegex(gate.LocalGateError, "coverage rejected"):
+                    gate.run_gate(self.root)
+                tests.assert_not_called()
+                smokes.assert_not_called()
+
+
 if __name__ == '__main__':
     unittest.main()
