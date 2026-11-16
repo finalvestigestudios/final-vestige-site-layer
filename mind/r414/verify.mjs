@@ -88,7 +88,7 @@ const mutations=[
 ['inject javascript',a.replace('</body>','<script src="https://example.com/t.js"></script></body>'),s=>badTracking.test(s)],
 ['inject autoplay',b.replace('</body>','<video autoplay controls></video></body>'),s=>badTracking.test(s)],
 ['insert fixed price',a.replace('Not a live offer.','Price $37. Not a live offer.'),s=>/\$\s*\d+/.test(s)],
-['break A/B equality',b.replace('Twelve minutes','Eleven minutes'),s=>guide(s)!==guide(a)]
+['break A/B equality',b.replace('Before you buy a twelve-minute meditation recording','Before you buy a thirteen-minute meditation recording'),s=>guide(s)!==guide(a)]
 ];
 for(const [name,mut,detector] of mutations){check(detector(mut),'negative test caught '+name);}
 console.log('R414 Node source-only verifier PASS '+checks+'/'+checks+' assertions, '+mutations.length+'/'+mutations.length+' unsafe mutations rejected. This is NOT browser, WordPress, playable media, Jetpack or merchant proof.');
