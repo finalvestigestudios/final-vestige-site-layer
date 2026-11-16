@@ -11,3 +11,9 @@ Date: 2026-11-16; local authoring mode: isolated DRAFT branch, no external send.
 **Editorial decision:** Issue 05 alternative is not adopted. Four editorial + two reserved commercial positions unchanged. All six original issues remain HOLD_UNSENT. No WP/email/affiliate/social/commerce changes.
 
 **Primary risk:** Product page says 14-day refund, FAQ adds max five refunded sessions per year and differing typical price. Merchant referral checkout is not authenticated. Named FV EMAIL permission is not authenticated.
+
+## Re-fetched exact-source post-commit static inspection (Nov 16, 2026)
+- All seven committed R406 assets fetched again from their GitHub branch, with their Git blob SHA identifiers recorded by the repository.
+- **35 of 35 corrected independent V8 source checks passed**, including cross-format subject/preheader parity, precisely one disabled guide CTA, near-CTA commercial disclosure, strict comparison of ALL eight HTML anchor URLs to the eight approved public research/seller citations, null merchant permission and revenue attestations, no active checkout links, inline email CSS/accessibility semantics, all three missing-footer warnings, and the unchanged issue allocation.
+- Initial coarse pattern erroneously flagged the public *affiliate program source citation* as a purchase link. The test was corrected to compare every HTML anchor URL with the explicit ordered evidence-source allowlist. That stronger source-level test passes; **there is still no affiliate earning or purchase link**.
+- Neither a genuine WordPress Preview email nor any inbox delivery was conducted. **Human release remains HOLD.**
