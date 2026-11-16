@@ -1,0 +1,519 @@
+{
+  "sprint": "R416",
+  "date": "2026-11-15",
+  "editorial_lane": "Mind & Perception only",
+  "state": "UNPUBLISHED / NO AFFILIATE LINK / HARD HOLD",
+  "source_urls": {
+    "seller_inspire3": "https://inspire3.com/",
+    "seller_zen12_about": "https://zen12.com/about",
+    "seller_zen12_order": "https://zen12.com/order",
+    "seller_zen12_promo": "https://zen12.com/secret/",
+    "seller_total_focus": "https://hypnosislive.com/mental-skills/total-focus",
+    "seller_focus_shot": "https://brainwaveshots.com/focus-shot",
+    "seller_affiliates": "https://affiliates.inspire3.com/",
+    "review_entrainment_2023": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/",
+    "review_sound_2024": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+    "meta_awareness_2007": "https://pubmed.ncbi.nlm.nih.gov/17874601/",
+    "meta_awareness_2017": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5572547/",
+    "meditation_rct_2024": "https://pubmed.ncbi.nlm.nih.gov/38496316/",
+    "ftc_endorsement": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "fv_puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "fv_focus": "https://finalvestige.com/focus/",
+    "fv_change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "fv_mesmerism": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "fv_journal": "https://finalvestige.com/blog/"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Binaural beats can be an auditory percept from two differing tones",
+      "classification": "independent_mechanism_description",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/"
+      ],
+      "decision": "permit_framed"
+    },
+    {
+      "id": "C02",
+      "claim": "All binaural stimuli entrain the listener's EEG",
+      "classification": "unsupported_generalization",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C03",
+      "claim": "The 2023 review included 14 studies: 5 supportive, 8 contradictory, 1 mixed",
+      "classification": "independent_review_result",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/"
+      ],
+      "decision": "permit_attributed"
+    },
+    {
+      "id": "C04",
+      "claim": "The research conclusively proves binaural beats never work",
+      "classification": "overstatement",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C05",
+      "claim": "2024 review examined 31 studies of auditory stimuli and arousal/cognitive measures",
+      "classification": "independent_review_result",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/38458383/"
+      ],
+      "decision": "permit_attributed"
+    },
+    {
+      "id": "C06",
+      "claim": "2024 review establishes Focus Shot causes real-world productivity gains",
+      "classification": "wrong_product_extrapolation",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/38458383/"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C07",
+      "claim": "Mind wandering with and without awareness has measurable differences in a lab task",
+      "classification": "independent_experiment",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/17874601/"
+      ],
+      "decision": "permit_with_scope"
+    },
+    {
+      "id": "C08",
+      "claim": "More noticed lapses necessarily means lower attention",
+      "classification": "invalid_measurement_inference",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5572547/"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C09",
+      "claim": "Four weeks of meditation in older adults studied sustained attention",
+      "classification": "independent_specific_population",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/38496316/"
+      ],
+      "decision": "permit_with_population"
+    },
+    {
+      "id": "C10",
+      "claim": "That RCT proves a Zen12 MP3 reproduces the results",
+      "classification": "wrong_intervention_extrapolation",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/38496316/"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 seller markets 12 levels and 12-minute sessions",
+      "classification": "seller_format",
+      "sources": [
+        "https://zen12.com/about"
+      ],
+      "decision": "permit_seller_attributed"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 order page lists 48 MP3 files",
+      "classification": "seller_package",
+      "sources": [
+        "https://zen12.com/order"
+      ],
+      "decision": "permit_seller_attributed"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 12 minutes equals one hour of meditation",
+      "classification": "seller_efficacy_comparison_not_independently_substantiated",
+      "sources": [
+        "https://zen12.com/about"
+      ],
+      "decision": "exclude_as_fact"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 promotional and order pathways can differ",
+      "classification": "seller_offer_observation",
+      "sources": [
+        "https://zen12.com/order",
+        "https://zen12.com/secret/"
+      ],
+      "decision": "permit_no_fixed_price"
+    },
+    {
+      "id": "C15",
+      "claim": "A visible mobile phone field proves mandatory telephone collection",
+      "classification": "unverified_form_requirement",
+      "sources": [
+        "https://zen12.com/order"
+      ],
+      "decision": "exclude;note_field_visibility_only"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 final referred checkout total is authorized for FV",
+      "classification": "unverified_partner_transaction",
+      "sources": [
+        "https://affiliates.inspire3.com/",
+        "https://zen12.com/order"
+      ],
+      "decision": "hold"
+    },
+    {
+      "id": "C17",
+      "claim": "Total Focus seller describes one 33-minute 47MB recording",
+      "classification": "seller_format",
+      "sources": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "decision": "permit_seller_attributed"
+    },
+    {
+      "id": "C18",
+      "claim": "Total Focus reprograms brain for unlimited concentration",
+      "classification": "seller_efficacy_claim",
+      "sources": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C19",
+      "claim": "Focus Shot seller lists 15- and 30-minute versions",
+      "classification": "seller_format",
+      "sources": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "decision": "permit_seller_attributed"
+    },
+    {
+      "id": "C20",
+      "claim": "Focus Shot activates a brainwave state and guarantees task output",
+      "classification": "seller_efficacy_claim",
+      "sources": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C21",
+      "claim": "Focus Shot seller advertises a one-year money-back guarantee",
+      "classification": "seller_terms_repr",
+      "sources": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "decision": "permit_only_as_seller_claim;checkout_unverified"
+    },
+    {
+      "id": "C22",
+      "claim": "FV is accepted Inspire3 publisher for website/email/social",
+      "classification": "permission_unverified",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "decision": "hold"
+    },
+    {
+      "id": "C23",
+      "claim": "A public network EPC or payout headline verifies FV revenue",
+      "classification": "misclassified_revenue",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C24",
+      "claim": "Affiliate links require clear conspicuous disclosure near recommendations",
+      "classification": "ftc_guidance",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "decision": "mandatory"
+    },
+    {
+      "id": "C25",
+      "claim": "Efficacy health claims need adequate scientific substantiation",
+      "classification": "ftc_guidance",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "decision": "mandatory"
+    },
+    {
+      "id": "C26",
+      "claim": "Puységur historical testimony establishes modern hypnosis product efficacy",
+      "classification": "historical_to_commercial_leap",
+      "sources": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C27",
+      "claim": "Focus Fieldbook is existing free resource; no new form is required here",
+      "classification": "first_party_live_source",
+      "sources": [
+        "https://finalvestige.com/focus/"
+      ],
+      "decision": "permit_free_cta"
+    },
+    {
+      "id": "C28",
+      "claim": "One free six-plus-six minute observation is a validated clinical or cognitive test",
+      "classification": "not_validated",
+      "sources": [],
+      "decision": "exclude"
+    },
+    {
+      "id": "C29",
+      "claim": "Current net revenue per 1000 verified qualified sessions is numerically known",
+      "classification": "metric_missing",
+      "sources": [],
+      "decision": "not_computable"
+    },
+    {
+      "id": "C30",
+      "claim": "A generated film concept is a playable tested video",
+      "classification": "media_status_unverified",
+      "sources": [],
+      "decision": "exclude"
+    },
+    {
+      "id": "C31",
+      "claim": "Public Journal and prior date can be compared without treating 61 as current count",
+      "classification": "inventory_context",
+      "sources": [
+        "https://finalvestige.com/blog/"
+      ],
+      "decision": "permit_cautious"
+    },
+    {
+      "id": "C32",
+      "claim": "Zen12 is authorized for any link path just because its public site is accessible",
+      "classification": "permissions_false",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "decision": "exclude"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "requirement": "named FV publisher legal entity",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G02",
+      "requirement": "affiliate account approval verified",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G03",
+      "requirement": "Zen12 SKU specifically permitted",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G04",
+      "requirement": "website promotion permitted",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G05",
+      "requirement": "organic social promotion permitted",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G06",
+      "requirement": "email promotion permitted",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G07",
+      "requirement": "issued valid earning URL",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G08",
+      "requirement": "allowed creatives/branding documented",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G09",
+      "requirement": "referral terms and cookies verified",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G10",
+      "requirement": "deduplicated merchant attribution procedure",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G11",
+      "requirement": "actual referred checkout verified",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G12",
+      "requirement": "final payable total/currency verified",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G13",
+      "requirement": "product refund policy verified",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G14",
+      "requirement": "processor/merchant identity verified",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G15",
+      "requirement": "privacy notice for merchant data collection verified",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G16",
+      "requirement": "FTC disclosure adjacent to active offer",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G17",
+      "requirement": "health/psychological promises excluded or substantiated",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Mind / Site QA"
+    },
+    {
+      "id": "G18",
+      "requirement": "original art/media rights clear",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Mind / Site QA"
+    },
+    {
+      "id": "G19",
+      "requirement": "original playable 30-45s film encoded",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Mind / Site QA"
+    },
+    {
+      "id": "G20",
+      "requirement": "WebVTT captions timed against actual playback",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Mind / Site QA"
+    },
+    {
+      "id": "G21",
+      "requirement": "screen reader and keyboard live-browser QA",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Mind / Site QA"
+    },
+    {
+      "id": "G22",
+      "requirement": "no-JS functional live-browser QA",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Mind / Site QA"
+    },
+    {
+      "id": "G23",
+      "requirement": "360/390/768/1440/1920 viewport QA",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Mind / Site QA"
+    },
+    {
+      "id": "G24",
+      "requirement": "WordPress sanitizer review",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Mind / Site QA"
+    },
+    {
+      "id": "G25",
+      "requirement": "existing Jetpack confirmed consent/welcome QA",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Claude / Dispatch"
+    },
+    {
+      "id": "G26",
+      "requirement": "real Grok asset IDs and rights authenticated",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Praxxis / Grok"
+    },
+    {
+      "id": "G27",
+      "requirement": "Claude first-party measurement reconciled",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Claude"
+    },
+    {
+      "id": "G28",
+      "requirement": "founder release approval",
+      "status": "HARD_HOLD",
+      "evidence": "not fully verified",
+      "owner": "Founder / Claude"
+    }
+  ],
+  "affiliate_disclosure_future_conditional": "If you purchase through an approved link, Final Vestige may earn a commission at no additional cost to you.",
+  "disclosure_current": "There is no active, approved Final Vestige affiliate purchase link.",
+  "approved_paid_offers": [],
+  "verified_paid_orders": null,
+  "verified_settled_commissions": null,
+  "verified_qualified_human_sessions": null,
+  "kpi_net_revenue_per_1000_qualified_sessions": null,
+  "notes": "Claims with seller classification are not independent scientific evidence. Public network terms do not prove named publisher acceptance. A claim of an outcome, final purchase price, or refund is not activated by the existence of a public seller landing page."
+}
