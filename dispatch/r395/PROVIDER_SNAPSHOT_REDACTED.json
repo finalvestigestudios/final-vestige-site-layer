@@ -1,0 +1,51 @@
+{
+  "as_of_utc": "2026-11-16T05:32:28Z",
+  "site": "https://finalvestige.com",
+  "provenance": "authenticated WordPress.com Jetpack newsletter status/get_settings and follower connectors; Gmail inbox metadata-only search; official WordPress docs",
+  "newsletter": {
+    "enabled": true,
+    "auto_new_post_send": false,
+    "site_can_send": true,
+    "email_content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "welcome_fieldbook_pages": 52,
+    "welcome_configured": true,
+    "received_welcome_verified": false,
+    "native_email_preview_verified": false,
+    "functional_unsubscribe_verified": false,
+    "final_vestige_physical_postal_verified": false,
+    "recent_five_posts_status": "never_sent_opted_out"
+  },
+  "subscriber_diagnostics": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed_not_additive": 2,
+    "suppressed": 0,
+    "wpcom_followers": 3,
+    "direct_email_followers": 0,
+    "unique_email_eligible_inboxes": null,
+    "provider_filtered_subscribed_status_verified": false
+  },
+  "commerce": {
+    "zen12_named_affiliate_approval": false,
+    "zen12_specific_email_permission": false,
+    "zen12_issued_earning_url": null,
+    "zen12_live_owned_guide_verified": false,
+    "total_focus_named_affiliate_approval": false,
+    "total_focus_specific_email_permission": false,
+    "total_focus_issued_earning_url": null,
+    "total_focus_live_owned_guide_verified": false,
+    "settled_commissions_verified": false
+  },
+  "analytics": {
+    "grok_published_asset_id_join_verified": false,
+    "qualified_human_sessions_7_day": null,
+    "qualified_human_sessions_30_day": null,
+    "net_revenue_per_1000_qualified_sessions": "NOT_COMPUTABLE"
+  },
+  "founder_final_campaign_send_approval": false,
+  "real_send_performed": false,
+  "test_email_performed": false,
+  "data_privacy": "No subscriber emails, customer identifiers or postal addresses included in this snapshot."
+}
