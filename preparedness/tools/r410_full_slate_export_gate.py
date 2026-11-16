@@ -6,7 +6,12 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
-from r409_source_equivalence_gate import audit as graph_audit, read_original, unique_pairs
+# -I isolation removes the script directory from sys.path; load only our fixed sibling file.
+from importlib.util import module_from_spec, spec_from_file_location
+_spec = spec_from_file_location("r409_source_equivalence_gate", Path(__file__).with_name("r409_source_equivalence_gate.py"))
+_r409 = module_from_spec(_spec)
+_spec.loader.exec_module(_r409)
+graph_audit, read_original, unique_pairs = _r409.audit, _r409.read_original, _r409.unique_pairs
 
 SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 BLOCK_TAGS = {"script", "iframe", "frame", "frameset", "object", "embed", "form", "input", "button", "textarea", "select", "link", "style", "meta", "base", "svg", "math", "video", "audio", "source"}
