@@ -286,6 +286,75 @@ class ProcurementIntegrationR5Tests(unittest.TestCase):
             engine.procure_guard(paths[0], inv, paths[2], self.folder)
         self.assertFalse(list(self.folder.glob("procurement-three-way-*.csv")))
 
+    def test_r472_normalized_invoice_id_across_pos_is_flagged_with_source_rows(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "I-NV1", ""),
+            ("P2", "1", "10", "5", "invoice", "INV1", ""),
+        ], [
+            ("P1", "1", "10", "receipt", "R1"),
+            ("P2", "1", "10", "receipt", "R2"),
+        ], po_rows=(("P1", "1", "10", "5"), ("P2", "1", "10", "5")))
+        outputs = engine.procure_guard(*paths, self.folder)
+        rows = self.report(outputs[0])
+        self.assertEqual([row["po"] for row in rows], ["P1", "P2"])
+        for item in rows:
+            self.assertIn("invoice_document_cross_po_review", item["status"])
+            self.assertEqual(item["cross_po_invoice_source_rows"], "2;3")
+            self.assertEqual(item["invoiced_qty"], "10")
+            self.assertEqual(item["invoice_total_exact"], "50")
+            self.assertEqual(item["credit_qty"], "0")
+            self.assertEqual(len(item["invoice_source_sha256"]), 64)
+        self.assertIn("SHA-256", outputs[1].read_text())
+
+    def test_r472_multi_line_invoice_one_po_not_cross_po(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "INV1", ""),
+            ("P1", "2", "10", "5", "invoice", "INV1", ""),
+        ], [
+            ("P1", "1", "10", "receipt", "R1"),
+            ("P1", "2", "10", "receipt", "R2"),
+        ], po_rows=(("P1", "1", "10", "5"), ("P1", "2", "10", "5")))
+        for item in self.report(engine.procure_guard(*paths, self.folder)[0]):
+            self.assertNotIn("invoice_document_cross_po_review", item["status"])
+            self.assertEqual(item["cross_po_invoice_source_rows"], "")
+
+    def test_r472_distinct_invoice_ids_across_pos_not_cross_po(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "INV1", ""),
+            ("P2", "1", "10", "5", "invoice", "INV2", ""),
+        ], [
+            ("P1", "1", "10", "receipt", "R1"),
+            ("P2", "1", "10", "receipt", "R2"),
+        ], po_rows=(("P1", "1", "10", "5"), ("P2", "1", "10", "5")))
+        for item in self.report(engine.procure_guard(*paths, self.folder)[0]):
+            self.assertNotIn("invoice_document_cross_po_review", item["status"])
+            self.assertEqual(item["cross_po_invoice_source_rows"], "")
+
+    def test_r472_blank_invoice_ids_do_not_create_duplicate_identity(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "", ""),
+            ("P2", "1", "10", "5", "invoice", "", ""),
+        ], [
+            ("P1", "1", "10", "receipt", "R1"),
+            ("P2", "1", "10", "receipt", "R2"),
+        ], po_rows=(("P1", "1", "10", "5"), ("P2", "1", "10", "5")))
+        for item in self.report(engine.procure_guard(*paths, self.folder)[0]):
+            self.assertNotIn("invoice_document_cross_po_review", item["status"])
+            self.assertEqual(item["cross_po_invoice_source_rows"], "")
+
+    def test_r472_invoice_and_credit_ids_are_separate_document_types(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "SAME1", ""),
+            ("P2", "1", "10", "5", "invoice", "INV2", ""),
+            ("P2", "1", "1", "5", "credit", "SAME1", "INV2"),
+        ], [
+            ("P1", "1", "10", "receipt", "R1"),
+            ("P2", "1", "9", "receipt", "R2"),
+        ], po_rows=(("P1", "1", "10", "5"), ("P2", "1", "10", "5")))
+        for item in self.report(engine.procure_guard(*paths, self.folder)[0]):
+            self.assertNotIn("invoice_document_cross_po_review", item["status"])
+            self.assertEqual(item["cross_po_invoice_source_rows"], "")
+
 
 if __name__ == "__main__":
     unittest.main()
