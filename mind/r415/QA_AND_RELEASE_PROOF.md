@@ -2,7 +2,7 @@
 
 **Date:** November 15, 2026 Pacific; source-only draft; HARD HOLD. No publication, affiliate link, website tracking deployment or CMS save.
 
-## BUILT
+**Fresh live editorial inventory note:** the public https://finalvestige.com/blog/ currently displays 66 results (checked November 15, 2026), while Issue #171 recorded 61 published investigations on October 30. Three provisional creator routes can therefore use already-published Change Blindness, Mesmerism and the Puységur source archive; real Grok media IDs are still unavailable. None of these routes proves product efficacy.\n\n## BUILT
 
 1. Original 2,253-word research-linked investigation, *The Page You Didn't Read*, with 2004 zoning-out experiments, 2006 review, 2007 meta-awareness, 2012 and 2013 mindfulness research, later reviews, Puységur source context, and a clearly nonclinical free twelve-minute self-observation.
 2. Two static, responsive, content-identical Zen12 guides (A text-only, B with optional film element). Source comparisons exclude the film element and variant title; all other substantive text is identical.
