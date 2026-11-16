@@ -1,0 +1,18 @@
+{
+  "adversarial_css_cases_rejected": 3,
+  "all_horizontal_overflow_zero": true,
+  "all_render_guard_pass": true,
+  "axe": "NOT_RUN",
+  "cls": "NOT_MEASURED_BROWSER_NAVIGATION_BLOCKED",
+  "installed_wordpress": "NOT_TESTED",
+  "lcp": "NOT_MEASURED_BROWSER_NAVIGATION_BLOCKED",
+  "passed": 8,
+  "qa_scope": "LOCAL_REAL_CHROMIUM_OFFLINE_FIXTURE_NOT_INSTALLED_STAGING",
+  "release_allowed": false,
+  "screenshots": 8,
+  "source_test_count": 8,
+  "status": "PASS_LOCAL_CSS_EFFECT_ONLY",
+  "test_output_tail": "\ntest_real_gallery_css_effect_320_to_1920 (test_css_effect_custody.CssEffectChromium.test_real_gallery_css_effect_320_to_1920) ... ok\ntest_root_text4x_stress (test_css_effect_custody.CssEffectChromium.test_root_text4x_stress) ... ok\ntest_stylesheet_override_rejected (test_css_effect_custody.CssEffectChromium.test_stylesheet_override_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 2.649s\n\nOK\n",
+  "upstream_exact": false,
+  "upstream_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2720"
+}
