@@ -10,7 +10,7 @@ rel=[
 'apollo-r393/qa/topology.py','apollo-r394/qa/visibility_custody.py',
 'apollo-r395/assets/mobile-fit.css','apollo-r398/staging-canonical-delivery.php',
 'apollo-r399/README.md','apollo-r399/staging-final-tag-guard.php',
-'apollo-r399/qa/contract.php','apollo-r399/qa/enable.php',
+'apollo-r399/qa/print_gate.php','apollo-r399/qa/enable_print_gate.php',
 'apollo-r399/qa/reproduce_r398_gap.php','apollo-r399/qa/tag_fixture.php',
 'apollo-r399/qa/browser.py','apollo-r399/qa/package.py',
 'apollo-r399/QA/browser-results.json',
