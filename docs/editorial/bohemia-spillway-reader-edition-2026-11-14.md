@@ -1,9 +1,9 @@
 # The Spillway That Kept Its Names
-*Final Vestige Investigations · reader-facing revision 47 · 16 November 2026 · REVIEW DRAFT — DO NOT PUBLISH*
+*Final Vestige Investigations · reader-facing revision 48 · 16 November 2026 (source-figure QA correction) · REVIEW DRAFT — DO NOT PUBLISH*
 
 **Deck:** A Louisiana family recovered a parcel of land, then fought for the revenues it had earned. The court decisions are documented. Whether and when every ordered payment reached its recipients is a different question.
 
-**Editorial identity:** Concise narrative edition of [the 85-entry master dossier](./bohemia-spillway-2026-11-12-land-roster-rights-claim-investigation-draft.md). Preserve that dossier as the complete source ledger and long-form research appendix. This file does **not** supersede the separate Caernarvon 1927 WordPress draft #2151 or authorize publication. Original-source links below correspond to full dossier entries in brackets. Do not infer interviews, archive visits, or current 2026 balances from this work.
+**Editorial identity:** Concise narrative edition of [the 86-entry master dossier](./bohemia-spillway-2026-11-12-land-roster-rights-claim-investigation-draft.md). Preserve that dossier as the complete source ledger and long-form research appendix. This file does **not** supersede the separate Caernarvon 1927 WordPress draft #2151 or authorize publication. Original-source links below correspond to full dossier entries in brackets. Do not infer interviews, archive visits, or current 2026 balances from this work.
 
 ## A deed was not a receipt
 
