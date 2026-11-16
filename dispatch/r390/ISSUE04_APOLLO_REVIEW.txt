@@ -1,0 +1,36 @@
+UNSENT REVIEW SPECIMEN — NOT A SENT EMAIL
+Subject: Apollo 1: the spark the inquiry could not name
+Proposed preheader (unverified in native Jetpack): A 1967 review distinguished a likely electrical arc from conditions that made escape impossible.
+
+THE SPARK THEY COULD NOT NAME
+
+The danger was not invisible in hindsight. It was distributed across the spacecraft: ordinary wiring, materials that could burn, an oxygen-rich test atmosphere and a hatch the crew could not open against rising pressure.
+
+On January 27, 1967, Virgil “Gus” Grissom, Ed White and Roger Chaffee were inside the Apollo command module for a ground test. A fire engulfed the cabin. All three died. This is a story about their deaths and the obligations of investigators, not a puzzle whose answer should be made dramatic for a subject line.
+
+Investigators examined electrical damage, the test conditions and the path of the fire. NASA's Apollo 204 Review Board judged an electrical arc the most probable initiator but concluded that it could not conclusively identify a single ignition source. Those statements belong together. “Most probable” is not “proved.”
+
+The test used an atmosphere of 100 percent oxygen at 16.7 pounds per square inch absolute. The command module also contained combustible materials near possible ignition sources. Fire spread rapidly; rising pressure and the inward-opening inner hatch made escape impossible. NASA later changed the hatch, materials, testing and safety controls.
+
+Here is a useful distinction for any investigation, including one into how our minds remember events. A likely trigger explains how a chain might start. It does not by itself account for everything that made the outcome possible. Our explanations often become more confident as they become shorter.
+
+Try the three-column test on the next remarkable claim you encounter. Column one: what the original record directly establishes. Column two: what the best-supported explanation proposes. Column three: what remains unresolved. If a source only answers column two, don't silently promote it to column one.
+
+Final Vestige's Apollo 1 investigation follows the physical evidence and the consequences for design. You can read it without buying anything or subscribing again.
+
+Read the Apollo 1 investigation: https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+
+SOURCES
+NASA Apollo 204 Review Board final report
+https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/
+
+NASA Safety and Mission Assurance — Apollo 1
+https://sma.nasa.gov/sma-disciplines/accllp/apollo-1
+
+NASA Apollo 1 mission history
+https://www.nasa.gov/mission/apollo-1/
+
+Sender: Final Vestige Studios
+Publisher mailing address: [[VALID_POSTAL_ADDRESS_REQUIRED]]
+Unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
+HOLD: placeholder only, no live sender/footer evidence.
