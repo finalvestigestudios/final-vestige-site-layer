@@ -216,10 +216,17 @@ def run_gate(desktop: Path) -> dict[str, object]:
         raise LocalGateError("Local source regression directory rejected")
     before = _source_fingerprint(desktop)
     full_before = _six_source_digest(desktop)
+    # Reject a shortened or duplicate manifest before executing any claimed
+    # suite. In particular, all six product integrations are mandatory even
+    # if the old eight-module verifier happens to return a green receipt.
+    if (len(CORE_TESTS) != 8 or len(PRODUCT_TESTS) != 6
+            or len(TESTS) != 14 or len(set(TESTS)) != 14
+            or TESTS != CORE_TESTS + PRODUCT_TESTS):
+        raise LocalGateError("Local source regression coverage rejected")
     modes, tests = _run_tests(desktop)
     # A successful receipt from an old eight-module-only verification gate
     # must not pass the full six-product integration contract.
-    if (type(modes) is not int or modes != 2 * len(TESTS)
+    if (type(modes) is not int or modes != 28
             or type(tests) is not int or tests < modes):
         raise LocalGateError("Local source regression coverage rejected")
     if (_source_fingerprint(desktop) != before or
