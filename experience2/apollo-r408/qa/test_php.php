@@ -1,0 +1,36 @@
+<?php
+require __DIR__ . '/fixture.php';
+$count=0;
+function check_r408($test,$message): void {global $count;if(!$test){fwrite(STDERR,'FAIL '.$message."\n");exit(1);} $count++;}
+check_r408(fv_r408_authorized(),'explicit stage gate');
+check_r408(fv_r408_parent_ready(),'parent gate');
+check_r408(count(fv_r408_questions())===6,'six source questions');
+check_r408(count(array_unique(array_column(fv_r408_questions(),0)))===6,'source IDs unique');
+$one=fv_r408_shortcode();
+check_r408(substr_count($one,'data-fv-r408-card')===6,'six atlas cards');
+check_r408(substr_count($one,'data-fvx-record')===6,'six parent records');
+check_r408(substr_count($one,'<details')===12,'six source drawers and six parent native details');
+check_r408(substr_count($one,'data-fv-r408-filter=')===5,'five optional filter controls');
+check_r408(substr_count($one,FV_R408_ARTICLE)===1,'one free investigation CTA');
+check_r408(substr_count($one,FV_R408_SOURCE_BOARD)===5,'five primary board links');
+check_r408(substr_count($one,FV_R408_SOURCE_LATER)===1,'one later-tests link');
+check_r408(strpos($one,'<img')===false&&strpos($one,'<iframe')===false,'no unlicensed imagery/embed');
+check_r408(strpos($one,'data-fv-r408-atlas')!==false,'native atlas present');
+check_r408(strpos($one,'fv-r408-atlas-1-title')!==false,'first heading ID');
+check_r408(fv_r408_extract_parent_instance($one)===1,'parent instance parsed');
+check_r408(fv_r408_extract_parent_instance(str_replace('record-06','record-05',$one))===null,'tampered record targets rejected');
+check_r408(fv_r408_extract_parent_instance(str_replace(FV_R408_ARTICLE,'https://example.org/sale',$one))===null,'altered CTA rejected');
+$two=fv_r408_shortcode();
+check_r408(strpos($two,'fv-r408-atlas-2-title')!==false,'second shortcode new heading ID');
+check_r408(strpos($two,'fv-ex2-ledger-apollo1-r407-i2-record-06')!==false,'second shortcode matching ID');
+$GLOBALS['env']='production';
+check_r408(!fv_r408_authorized(),'production refused');
+check_r408(strpos(fv_r408_shortcode(),'data-fv-r408-atlas')===false,'production content fallback');
+$GLOBALS['env']='staging';$GLOBALS['page_id']=999;
+check_r408(!fv_r408_authorized(),'wrong page denied');
+$GLOBALS['page_id']=408; $GLOBALS['fv_r407_ready']=false;
+check_r408(!fv_r408_parent_ready(),'missing parent readiness');
+check_r408(strpos(fv_r408_shortcode(),'Read the original Apollo 1 investigation')!==false,'fail-open fallback');
+check_r408(strpos(fv_r408_markup(1),'https://www.nasa.gov/')!==false,'NASA source URL present');
+check_r408(strpos(fv_r408_markup(1),'No map pins')!==false,'explicit no invented geography');
+echo "PASS {$count}/{$count} R408 PHP assertions\n";
