@@ -11,8 +11,16 @@ function validate(d){
  if(!Array.isArray(d?.rows)||d.rows.length!==7)bad('rows');
  else {const seen=new Set();let lost=0;for(const r of d.rows){const expect=EXPECTED[r?.key];if(!expect||seen.has(r.key)){bad('key');continue;}seen.add(r.key);try{const u=new URL(r.source_url),v=new URL(r.view_url);const keys=[...u.searchParams.keys()];if(u.protocol!=='https:'||v.protocol!=='https:'||u.hostname!==expect[2]||keys.join(',')!==expect[0]||JSON.stringify(keys)!==JSON.stringify(r.source_query_keys))bad('source_identity:'+r.key);if(r.view_query_outcome!==expect[1])bad('outcome:'+r.key);if(expect[1]==='preserved'){if(v.href!==u.href)bad('preserved_url:'+r.key);}else{lost++;if(v.hostname!=='i0.wp.com'||v.pathname!=='/'+u.hostname+u.pathname||keys.some(k=>v.searchParams.has(k))||v.searchParams.get('ssl')!=='1')bad('dropped_query_route:'+r.key);} }catch{bad('invalid_url:'+r.key);}
  if(NIL.some(k=>r[k]!==null)||r.max_review_width_px!==960||r.no_upscale!==true||r.cache_authorized!==false||r.wp_upload_authorized!==false||r.post_rewrite_authorized!==false||r.rights_status!=='HOLD_UNVERIFIED')bad('unverified_or_authorized:'+r.key);
- if(!Array.isArray(r.official_candidates)||(!['289:2','283:3'].includes(r.key)&&r.official_candidates.length))bad('candidates:'+r.key);
- for(const c of r.official_candidates||[]){if(c.rights_status!=='HOLD_ITEM_LEVEL_REVIEW'||c.source_fidelity==='EXACT_FRAME'||!/^https:\/\//.test(c.catalog_url||'')||c.conditional_review_pixels?.width>960||c.catalog_high_pixels&&(!Number.isInteger(c.catalog_high_pixels.width)||!Number.isInteger(c.catalog_high_pixels.height)))bad('candidate_hold:'+r.key);}
+ const catalogs={'289:2':{url:'https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/USN-1124000/USN-1124781.html',id:'USN 1124781',mode:'SAME_EVENT_NOT_IDENTICAL_FRAME',w:6200,h:4956},'283:3':{url:'https://www.loc.gov/pictures/item/2007662240/',id:'LC-DIG-ppmsca-07431',mode:'SAME_EVENT_DIFFERENT_SCENE',w:null,h:null}};
+ const required=catalogs[r.key];
+ if(!Array.isArray(r.official_candidates)||r.official_candidates.length!==(required?1:0))bad('candidate_count:'+r.key);
+ for(const c of r.official_candidates||[]){
+  if(!required||c.catalog_url!==required.url||c.catalog_id!==required.id||c.source_fidelity!==required.mode||c.rights_status!=='HOLD_ITEM_LEVEL_REVIEW')bad('candidate_identity_or_rights:'+r.key);
+  const hi=c.catalog_high_pixels,lo=c.conditional_review_pixels;
+  if(required?.w){
+   if(!hi||hi.width!==required.w||hi.height!==required.h||!lo||lo.width!==960||lo.height!==Math.round(required.h*960/required.w))bad('candidate_geometry:'+r.key);
+  }else if(hi!==null||lo!==null)bad('unverified_native_dimensions:'+r.key);
+ }
  }if(seen.size!==7||lost!==2)bad('slot_totals');}
  if(d?.claims?.reported_42_broken_guest_verified!==false||d?.claims?.claimed_76_percent_network_reduction_measured!==false)bad('fabricated_claim');
  if(d?.historical_cohorts?.original_media_oversize_stored_bytes!==64385752||d?.historical_cohorts?.original_media_over_1500000_bytes!==20||d?.historical_cohorts?.current_posts!==66||d?.historical_cohorts?.frozen_posts!==61)bad('cohort');
