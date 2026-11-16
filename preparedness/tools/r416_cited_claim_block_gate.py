@@ -241,6 +241,5 @@ def main():
                 'qualified_safety_approved':False,'integrity_ok':False,'errors':[str(exc)]}
     print(json.dumps(result,sort_keys=True,indent=2));return 2
 
-
 if __name__=='__main__':
     raise SystemExit(main())
