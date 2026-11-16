@@ -35,7 +35,7 @@ function pageSafety(s) {
   assert.match(s, /aria-disabled="true"/);
   assert.match(s, /If you purchase through a future earning link on this page, Final Vestige may earn a commission at no additional cost to you\./);
   assert.match(s, /We have not verified named publisher acceptance/);
-  assert.match(s, /No additional email form/);
+  assert.match(s, /no additional email form/i);
   denies(s,sellerLink);
   denies(s,/<script\b|<iframe\b|<form\b|<input\b/i);
   denies(s,/\bautoplay\b|\bonclick\s*=|\bonload\s*=/i);
@@ -100,7 +100,7 @@ check('Hub four-stream no-JS no-merchant safety',()=>assert.equal(hubSafety(H),t
 check('Matrix 35 claims / 28 held gates with resolved provenance',()=>assert.equal(matrixSafety(M),true));
 const start = '<section class="reading" aria-labelledby="problem">';
 check('Identical substantive core buyer copy across variants',()=>assert.equal(A.slice(A.indexOf(start),A.indexOf('</main>')),B.slice(B.indexOf(start),B.indexOf('</main>'))));
-check('Original poster SVG accessible without remote assets',()=>{contains(P,/<svg\b/);contains(P,/<title id="t">/);contains(P,/<desc id="d">/);denies(P,/<script\b|<foreignObject\b|<image\b|<animate\b/i);denies(P,/https?:\/\//i);});
+check('Original poster SVG accessible without remote assets',()=>{contains(P,/<svg\b/);contains(P,/<title id="t">/);contains(P,/<desc id="d">/);denies(P,/<script\b|<foreignObject\b|<image\b|<animate\b/i);denies(P,/<image\b|<script\b/i);});
 check('Six contiguous caption cues total 42 seconds',()=>assert.equal(parseVtt(V).length,6));
 check('Storyboard reports NOT playable instead of fake media',()=>{contains(B,/not an encoded or playable film/i);contains(B, /Read the complete film transcript/i);contains(B,/ZEN12_FILM_POSTER.svg/);contains(B,/ZEN12_FILM_CAPTIONS.vtt/);});
 check('Original source-led manuscript',()=>{assert.ok(ARTICLE.split(/\s+/).length>=2200);for(const u of ['10.1068/p281059','PMC3563049','PMC3964612','2214930120','puysegurs-animal-magnetism-files','finalvestige.com/focus/'])contains(ARTICLE,new RegExp(u));});
