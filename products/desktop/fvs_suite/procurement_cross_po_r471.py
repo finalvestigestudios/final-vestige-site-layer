@@ -10,6 +10,39 @@ from __future__ import annotations
 from collections import defaultdict
 from typing import Callable, Mapping
 
+# Explicit, conservative cap on materialized (document, affected-line, row)
+# citations. A 2,000-order duplicate identity would otherwise request millions
+# of repeated cross-order report references and exhaust memory before review.
+_MAX_CROSS_PO_CITATIONS = 1_000_000
+
+
+def _bounded_index(
+    documents: Mapping[str, list[tuple[tuple[str, str], str]]],
+    remaining: int,
+) -> tuple[dict[tuple[str, str], tuple[str, ...]], int]:
+    """Build cross-order citations with a fail-closed materialization budget.
+
+    Count each matching document's unique source rows times its distinct
+    affected PO/line groups *before* expanding the Cartesian fanout. The
+    conservative sum may count overlaps twice: rejection is safer than
+    partial or unbounded financial evidence. Never include identifiers,
+    paths or amounts in errors.
+    """
+    affected: dict[tuple[str, str], set[str]] = defaultdict(set)
+    for occurrences in documents.values():
+        if len({group[0] for group, _ in occurrences}) < 2:
+            continue
+        groups = {group for group, _ in occurrences}
+        source_rows = {row for _, row in occurrences}
+        cost = len(groups) * len(source_rows)
+        if cost > remaining:
+            raise ValueError("Cross-order document review exceeds citation budget")
+        remaining -= cost
+        for group in groups:
+            affected[group].update(source_rows)
+    return ({group: tuple(sorted(rows, key=int)) for group, rows in affected.items()},
+            remaining)
+
 
 def _typed_cross_po_source_rows(
     source_groups: Mapping[tuple[str, str], list[dict[str, str]]],
@@ -33,17 +66,8 @@ def _typed_cross_po_source_rows(
             if key:
                 occurrences[key].append((group, row["row"]))
 
-    affected: dict[tuple[str, str], set[str]] = defaultdict(set)
-    for matches in occurrences.values():
-        if len({group[0] for group, _ in matches}) < 2:
-            continue
-        source_rows = {row for _, row in matches}
-        for group, _ in matches:
-            affected[group].update(source_rows)
-    return {
-        group: tuple(sorted(rows, key=int))
-        for group, rows in affected.items()
-    }
+    evidence, _ = _bounded_index(occurrences, _MAX_CROSS_PO_CITATIONS)
+    return evidence
 
 
 def cross_po_credit_source_rows(
@@ -122,15 +146,7 @@ def cross_po_all_document_source_rows(
                 if key:
                     by_type[kind][key].append((group, row["row"]))
     evidence: dict[str, dict[tuple[str, str], tuple[str, ...]]] = {}
+    remaining = _MAX_CROSS_PO_CITATIONS
     for kind, documents in by_type.items():
-        affected: dict[tuple[str, str], set[str]] = defaultdict(set)
-        for occurrences in documents.values():
-            if len({group[0] for group, _ in occurrences}) < 2:
-                continue
-            source_rows = {source_row for _, source_row in occurrences}
-            for group, _ in occurrences:
-                affected[group].update(source_rows)
-        evidence[kind] = {
-            group: tuple(sorted(rows, key=int)) for group, rows in affected.items()
-        }
+        evidence[kind], remaining = _bounded_index(documents, remaining)
     return evidence
