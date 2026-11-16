@@ -102,6 +102,53 @@ class ProcurementIntegrationR5Tests(unittest.TestCase):
         row, _ = self.run_report(*paths)
         self.assertIn("unlinked_credit_review", row["status"])
 
+    def test_r470_repeated_credit_memo_id_is_separate_review_flag(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "INV1", ""),
+            ("P1", "1", "1", "5", "credit", "CM1", "INV1"),
+            ("P1", "1", "1", "5", "credit", "CM1", "INV1"),
+        ], [("P1", "1", "8", "receipt", "RC1")])
+        row, manifest = self.run_report(*paths)
+        self.assertIn("repeated_credit_document_id_review", row["status"])
+        self.assertIn("credit_memo_review", row["status"])
+        self.assertEqual(row["invoiced_qty"], "8")
+        self.assertEqual(row["invoice_total"], "40.00")
+        self.assertEqual(row["credit_qty"], "2")
+        self.assertEqual(row["invoice_rows"], "2;3;4")
+        self.assertEqual(row["credit_source_line_links"].count('"offset_row"'), 2)
+        self.assertIn("SHA-256", manifest.read_text())
+
+    def test_r470_normalized_credit_id_collision_requires_review(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "INV1", ""),
+            ("P1", "1", "1", "5", "credit", "C-M1", "INV1"),
+            ("P1", "1", "1", "5", "credit", "CM1", "INV1"),
+        ], [("P1", "1", "8", "receipt", "RC1")])
+        row, _ = self.run_report(*paths)
+        self.assertIn("repeated_credit_document_id_review", row["status"])
+        self.assertIn("C-M1", row["invoice_documents"])
+        self.assertIn("CM1", row["invoice_documents"])
+
+    def test_r470_distinct_credit_memos_are_not_marked_repeated(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "INV1", ""),
+            ("P1", "1", "1", "5", "credit", "CM1", "INV1"),
+            ("P1", "1", "1", "5", "credit", "CM2", "INV1"),
+        ], [("P1", "1", "8", "receipt", "RC1")])
+        row, _ = self.run_report(*paths)
+        self.assertNotIn("repeated_credit_document_id_review", row["status"])
+        self.assertIn("credit_memo_review", row["status"])
+
+    def test_r470_blank_credit_ids_do_not_fake_duplicate_identity(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "INV1", ""),
+            ("P1", "1", "1", "5", "credit", "", "INV1"),
+            ("P1", "1", "1", "5", "credit", "", "INV1"),
+        ], [("P1", "1", "8", "receipt", "RC1")])
+        row, _ = self.run_report(*paths)
+        self.assertIn("unlinked_credit_review", row["status"])
+        self.assertNotIn("repeated_credit_document_id_review", row["status"])
+
     def test_invalid_negative_quantity_does_not_write_report(self):
         paths = self.inputs([("P1","1","-1","5","credit","CM1","INV1")],
                             [("P1","1","10","receipt","RC1")])
