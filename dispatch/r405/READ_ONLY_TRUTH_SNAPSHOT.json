@@ -1,0 +1,49 @@
+{
+  "report_type": "DISPATCH_R405_READ_ONLY",
+  "as_of": "2026-11-16T18:34:37Z",
+  "source": "WordPress authenticated newsletter status, read-only Gmail discovery and GitHub coordination",
+  "environment": "NO_PRODUCTION_EVENTS",
+  "campaign_allocation": {
+    "original_issues": 6,
+    "editorial": 4,
+    "commercial_candidate": 2,
+    "unsent": 6
+  },
+  "newsletter": {
+    "subscriptions_enabled": true,
+    "automatic_post_email": false,
+    "subscriber_dashboard": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "follower_stats": {
+      "total": 3,
+      "wpcom": 3,
+      "direct_email": 0
+    },
+    "unique_email_eligible_recipient_count": null,
+    "welcome_receipt_verified": false,
+    "actual_native_email_preview_verified": false
+  },
+  "merchant": {
+    "named_email_permission_verified": false,
+    "publisher_specific_earning_url_verified": false,
+    "checkout_verified": false,
+    "paid_settlement_report_available": false
+  },
+  "attribution": {
+    "audited_qualified_human_sessions": null,
+    "independently_paid_attributed_orders": null,
+    "verified_realized_net_usd": null,
+    "realized_net_usd_per_1000_qualified_humans": null,
+    "computation_status": "NOT_COMPUTABLE",
+    "explanation": "No audited human-session denominator or verified paid affiliate settlement; do not represent missing as $0"
+  },
+  "release": "HOLD_UNSENT",
+  "no_emails_or_test_emails_sent": true,
+  "no_wordpress_changes": true,
+  "no_subscriber_imports": true,
+  "no_merchant_links_activated": true
+}
