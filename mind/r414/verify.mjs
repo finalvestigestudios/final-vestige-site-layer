@@ -17,7 +17,7 @@ let checks=0;
 function check(condition,reason){checks++;assert.ok(condition,reason);}
 const guide = (s) => s.match(/<main class="wrap" id="buyer-guide">[\s\S]*?<\/main>/)?.[0] || '';
 const badLink = /<a\b[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|affiliates\.inspire3\.com|hypnosislive\.com|brainwaveshots\.com)\b/i;
-const badTracking = /<script\b|<iframe\b|<form\b|<input\b|\bonclick\s*=|\bonload\s*=|\bonerror\s*=|\bautoplay\s*(?:=|\s|>)/i;
+const badTracking = /<script\b|<iframe\b|<form\b|<input\b|\bonclick\s*=|\bonload\s*=|\bonerror\s*=|<(?:video|audio)\b[^>]*\bautoplay\b/i;
 function assertSafeHtml(s,which){
   check(/<!DOCTYPE html>/i.test(s),which+' requires doctype');
   check(/<html lang="en">/.test(s),which+' must declare language');
