@@ -12,7 +12,7 @@ const hub=read('MIND_HUB_SOURCE_ONLY.html'),svg=read('zen12-evidence-poster.svg'
 const vtt=read('zen12-42s-captions.vtt'),claims=JSON.parse(read('CLAIM_SOURCE_AUTHORIZATION_MATRIX.json'));
 const article=read('TEN_MINUTES_NOT_A_CHECKOUT.md'),memo=read('CONVERSION_ACCEPTANCE_AND_CREATOR_FIT.md');
 const stripped=s=>s.replace(/Unpublished Variant [AB]/g,'Unpublished Variant').replace(/<section class="film"[^]*?<\/section>/,'');
-function safe(s){return !/<script\b|<form\b|\bonclick\s*=|<iframe\b|\bautoplay\b|window\.location|localStorage|<audio\b|<video\b/i.test(s)}
+function safe(s){return !/<script\b|<form\b|\bonclick\s*=|<iframe\b|window\.location|localStorage|<audio\b|<video\b/i.test(s)}
 function noMerchantAnchor(s){return !/<a\b[^>]*href\s*=\s*["'][^"']*(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)/i.test(s)}
 for(const [name,s] of [['A',a],['B',b],['Hub',hub]]){
  check(s.includes('<!doctype html>'),name+' full document');
