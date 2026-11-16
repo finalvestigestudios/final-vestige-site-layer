@@ -1,0 +1,353 @@
+{
+  "version": "R410",
+  "observed_at": "2026-11-15",
+  "scope": "Unpublished source-only buyer review; no merchant activation",
+  "authorization": {
+    "named_publisher_accepted": false,
+    "approved_skus": [],
+    "approved_channels": [],
+    "issued_earning_url": null,
+    "merchant_orders_confirmed": 0,
+    "commission_reconciliation": "NOT_AVAILABLE",
+    "owned_paid_mind_sku_authenticated": false
+  },
+  "sources": {
+    "research_door": "https://doi.org/10.3758/BF03208840",
+    "research_gradual": "https://doi.org/10.1068/p3104",
+    "live_change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "live_puy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "live_focus": "https://finalvestige.com/focus/",
+    "inspire": "https://inspire3.com/",
+    "zen": "https://zen12.com/",
+    "zenpromo": "https://zen12.com/secret/",
+    "total": "https://hypnosislive.com/mental-skills/total-focus",
+    "shot": "https://brainwaveshots.com/focus-shot",
+    "shotfaq": "https://brainwaveshots.com/faq",
+    "partner": "https://affiliates.inspire3.com/",
+    "ftcendorse": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftchealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Door experiment: 8/15 first-experiment pedestrians did not report the replacement",
+      "status": "BOUNDED_RESEARCH",
+      "source_ids": [
+        "research_door"
+      ],
+      "evidence_limit": "Small in-situ sample; no product studied"
+    },
+    {
+      "id": "C02",
+      "statement": "Gradual change blindness may occur without an abrupt visual break",
+      "status": "BOUNDED_RESEARCH",
+      "source_ids": [
+        "research_gradual"
+      ],
+      "evidence_limit": "Experimental task not commercial attention outcome"
+    },
+    {
+      "id": "C03",
+      "statement": "Puységur historical archive documents claims without proving magnetic mechanism",
+      "status": "HISTORY_ONLY",
+      "source_ids": [
+        "live_puy"
+      ],
+      "evidence_limit": "Source inventory is not efficacy"
+    },
+    {
+      "id": "C04",
+      "statement": "The Focus Fieldbook is free, 52 pages, with one existing Jetpack signup",
+      "status": "FIRST_PARTY_PUBLIC",
+      "source_ids": [
+        "live_focus"
+      ],
+      "evidence_limit": "Provider-confirmed subscription/delivery not tested"
+    },
+    {
+      "id": "C05",
+      "statement": "Inspire3 catalog markets mind-related products",
+      "status": "SELLER_DESCRIPTION",
+      "source_ids": [
+        "inspire"
+      ],
+      "evidence_limit": "Catalog not clinical evidence"
+    },
+    {
+      "id": "C06",
+      "statement": "Zen12 has twelve levels and forty-eight MP3s listed on promotional route",
+      "status": "SELLER_DESCRIPTION",
+      "source_ids": [
+        "zenpromo"
+      ],
+      "evidence_limit": "Packaging may change"
+    },
+    {
+      "id": "C07",
+      "statement": "Zen12 sessions equal an hour of advanced meditation",
+      "status": "EXCLUDE",
+      "source_ids": [
+        "zen"
+      ],
+      "evidence_limit": "Unsupported product-specific equivalence"
+    },
+    {
+      "id": "C08",
+      "statement": "Zen12 guarantees health, cognitive or mental-illness outcomes",
+      "status": "EXCLUDE",
+      "source_ids": [
+        "zen",
+        "ftchealth"
+      ],
+      "evidence_limit": "No appropriately substantiated product outcome"
+    },
+    {
+      "id": "C09",
+      "statement": "Zen12 public pricing differs across promotional and standard routes",
+      "status": "CHECKOUT_REVERIFY",
+      "source_ids": [
+        "zen",
+        "zenpromo"
+      ],
+      "evidence_limit": "No authorized FV checkout or price"
+    },
+    {
+      "id": "C10",
+      "statement": "Total Focus is seller-listed at 33 minutes and 47 MB",
+      "status": "SELLER_DESCRIPTION",
+      "source_ids": [
+        "total"
+      ],
+      "evidence_limit": "No purchased-file validation"
+    },
+    {
+      "id": "C11",
+      "statement": "Total Focus rewires brain, guarantees focus or boosts career",
+      "status": "EXCLUDE",
+      "source_ids": [
+        "total",
+        "ftchealth"
+      ],
+      "evidence_limit": "Seller promise; no specific independent proof"
+    },
+    {
+      "id": "C12",
+      "statement": "Total Focus public page offers 14-day refund wording",
+      "status": "POLICY_REVERIFY",
+      "source_ids": [
+        "total"
+      ],
+      "evidence_limit": "Seller controls terms; final checkout unknown"
+    },
+    {
+      "id": "C13",
+      "statement": "Focus Shot lists 15 and 30 minute variants",
+      "status": "SELLER_DESCRIPTION",
+      "source_ids": [
+        "shot"
+      ],
+      "evidence_limit": "Unpurchased; format not independent tested"
+    },
+    {
+      "id": "C14",
+      "statement": "Focus Shot seller advertises isochronic tones and a 12/18 Hz protocol",
+      "status": "SELLER_DESCRIPTION",
+      "source_ids": [
+        "shot",
+        "shotfaq"
+      ],
+      "evidence_limit": "Signal description ≠ EEG or performance effect"
+    },
+    {
+      "id": "C15",
+      "statement": "Binaural-beat efficacy can prove Focus Shot isochronic efficacy",
+      "status": "EXCLUDE",
+      "source_ids": [
+        "shotfaq",
+        "ftchealth"
+      ],
+      "evidence_limit": "Non-identical modality, product and endpoint"
+    },
+    {
+      "id": "C16",
+      "statement": "Focus Shot guarantees hours of productivity without adverse effects",
+      "status": "EXCLUDE",
+      "source_ids": [
+        "shot",
+        "shotfaq",
+        "ftchealth"
+      ],
+      "evidence_limit": "Unsubstantiated and product warning exists"
+    },
+    {
+      "id": "C17",
+      "statement": "Brainwave Shots FAQ cautions against use for epilepsy / when wakefulness necessary",
+      "status": "SELLER_WARNING",
+      "source_ids": [
+        "shotfaq"
+      ],
+      "evidence_limit": "Do not reinterpret as medical advice or universal safety"
+    },
+    {
+      "id": "C18",
+      "statement": "Focus Shot seller states one-year return with exceptions",
+      "status": "POLICY_REVERIFY",
+      "source_ids": [
+        "shotfaq"
+      ],
+      "evidence_limit": "Exception conditions apply; final merchant contract needed"
+    },
+    {
+      "id": "C19",
+      "statement": "Public partner page proves named Final Vestige approval and an earning URL",
+      "status": "NO_PROOF",
+      "source_ids": [
+        "partner"
+      ],
+      "evidence_limit": "Public promotion is not acceptance"
+    },
+    {
+      "id": "C20",
+      "statement": "Commercial link must have adjacent conspicuous commission disclosure",
+      "status": "RELEASE_REQUIREMENT",
+      "source_ids": [
+        "ftcendorse"
+      ],
+      "evidence_limit": "Specific earning link withheld pending authorization"
+    },
+    {
+      "id": "C21",
+      "statement": "Paid affiliate sale verified from outbound click alone",
+      "status": "EXCLUDE",
+      "source_ids": [
+        "partner"
+      ],
+      "evidence_limit": "Click is not merchant-confirmed order/commission"
+    },
+    {
+      "id": "C22",
+      "statement": "FV-owned payable Mind digital product currently approved",
+      "status": "UNVERIFIED",
+      "source_ids": [
+        "live_focus"
+      ],
+      "evidence_limit": "Free resource is not payable SKU"
+    },
+    {
+      "id": "C23",
+      "statement": "Qualified sessions and net revenue cohorts currently measurable",
+      "status": "UNVERIFIED",
+      "source_ids": [
+        "live_focus"
+      ],
+      "evidence_limit": "No reconciled paid merchant and session evidence"
+    },
+    {
+      "id": "C24",
+      "statement": "The live Change Blindness article is an independent article destination",
+      "status": "FIRST_PARTY_PUBLIC",
+      "source_ids": [
+        "live_change"
+      ],
+      "evidence_limit": "Do not insert commercial conclusion into investigation"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "publisher_identity",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce",
+      "blocker": "No named Inspire3 acceptance/terms authenticated"
+    },
+    {
+      "id": "sku_and_channels",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce",
+      "blocker": "No approval for Zen12 website/social/email or other SKUs"
+    },
+    {
+      "id": "earning_url",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce",
+      "blocker": "No issued live earning link"
+    },
+    {
+      "id": "checkout_and_refunds",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce",
+      "blocker": "Referred checkout, current price, taxes and returns unverified"
+    },
+    {
+      "id": "merchant_sale_evidence",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce",
+      "blocker": "No settled referred order and commission statement"
+    },
+    {
+      "id": "owned_paid_sku",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce",
+      "blocker": "No rights-cleared payable owned Mind SKU"
+    },
+    {
+      "id": "fulfillment",
+      "status": "HARD_HOLD",
+      "owner": "Claude/Commerce",
+      "blocker": "No purchased deliverable receipt"
+    },
+    {
+      "id": "single_jetpack_flow",
+      "status": "HARD_HOLD",
+      "owner": "Claude/Dispatch",
+      "blocker": "Do not duplicate; live confirmation still untested"
+    },
+    {
+      "id": "source_claim_qd",
+      "status": "HARD_HOLD",
+      "owner": "Site QA",
+      "blocker": "Manual science/FTC read required"
+    },
+    {
+      "id": "browser_wai",
+      "status": "HARD_HOLD",
+      "owner": "Site QA",
+      "blocker": "Real browser keyboard/WCAG and responsive untested"
+    },
+    {
+      "id": "wp_sanitization",
+      "status": "HARD_HOLD",
+      "owner": "Site QA",
+      "blocker": "Source-only HTML no CMS sanitation verification"
+    },
+    {
+      "id": "film_rights",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Site QA",
+      "blocker": "Storyboard not encoded or approved"
+    },
+    {
+      "id": "payment_crossdomain",
+      "status": "HARD_HOLD",
+      "owner": "Claude/Commerce",
+      "blocker": "Affiliate click cannot prove sale"
+    },
+    {
+      "id": "privacy_attribution",
+      "status": "HARD_HOLD",
+      "owner": "Claude",
+      "blocker": "First-party existing analytics only; no new scripts"
+    },
+    {
+      "id": "creator_assets",
+      "status": "HARD_HOLD",
+      "owner": "Praxxis/Grok",
+      "blocker": "No three verified immutable asset IDs"
+    },
+    {
+      "id": "release_signoff",
+      "status": "HARD_HOLD",
+      "owner": "Founder",
+      "blocker": "No permission to publish/merge/deploy"
+    }
+  ]
+}
