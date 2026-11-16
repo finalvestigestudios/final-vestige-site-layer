@@ -1,0 +1,48 @@
+{
+  "status": "HOLD_UNSENT",
+  "canonical": {
+    "pr": 175,
+    "sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "editorial": 4,
+    "commercial": 2,
+    "untouched": true
+  },
+  "candidate": {
+    "issue": 3,
+    "adopted": false,
+    "offer": "Zen12",
+    "cta": "INERT",
+    "approved_live_guide_url": null,
+    "authorized_earning_url": null
+  },
+  "attestation": {
+    "founder_approval": false,
+    "provider_eligible_recipients": false,
+    "fieldbook_welcome_received": false,
+    "physical_address_in_actual_email": false,
+    "real_jetpack_preview": false,
+    "real_unsubscribe_test": false,
+    "merchant_named_approval": false,
+    "merchant_specific_sku_rights": false,
+    "merchant_email_rights": false,
+    "merchant_issued_link": false,
+    "merchant_referral_price_refund_verified": false,
+    "mind_guide_published_approved": false,
+    "settled_commission_ledger": false,
+    "qualified_human_session_audit": false
+  },
+  "source_snapshot": {
+    "utc": "2026-11-16T03:02:09Z",
+    "newsletter_enabled": true,
+    "automatic_new_post_email": false,
+    "full_content": true,
+    "subscriber_total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "wpcom_followers": 3,
+    "direct_email_followers": 0,
+    "deliverable_inboxes": "UNKNOWN",
+    "welcome_delivery": "UNVERIFIED"
+  },
+  "kpi": "NOT_COMPUTABLE"
+}
