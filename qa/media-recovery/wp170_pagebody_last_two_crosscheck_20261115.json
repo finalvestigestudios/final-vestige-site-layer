@@ -1,0 +1,1133 @@
+{
+  "schema": "fv-media-pagebody-custody-v1",
+  "observed_date_pt": "2026-11-15",
+  "observation_method": "authenticated WordPress pages_get, read only: view content for published pages, edit content for draft pages; query each exact filename and data-attachment-id string in returned content; list metadata freshly obtained after reads; reads not an atomic database snapshot",
+  "repository_pr": 183,
+  "source_ledger": "qa/media-recovery/wp66_oversize_noninline_cross_surface_20261115.json",
+  "scanned_pages": {
+    "published_count": 92,
+    "draft_count": 78,
+    "total": 170,
+    "all_page_body_exact_reference_matches": 0,
+    "comparison_needles": [
+      "050e21e0-7b54-4f9a-ba0b-7f594657af05",
+      "1927-caernarvon-levee-explosion-noaa-archive",
+      "data-attachment-id=\"482\"",
+      "data-attachment-id=\"2148\""
+    ],
+    "pages": [
+      {
+        "id": 2213,
+        "status": "publish",
+        "modified": "2026-11-07T19:38:04",
+        "matched_needles": []
+      },
+      {
+        "id": 2209,
+        "status": "publish",
+        "modified": "2026-11-07T18:41:04",
+        "matched_needles": []
+      },
+      {
+        "id": 2204,
+        "status": "publish",
+        "modified": "2026-11-07T17:44:21",
+        "matched_needles": []
+      },
+      {
+        "id": 2198,
+        "status": "publish",
+        "modified": "2026-11-07T16:43:06",
+        "matched_needles": []
+      },
+      {
+        "id": 2185,
+        "status": "publish",
+        "modified": "2026-11-07T15:36:42",
+        "matched_needles": []
+      },
+      {
+        "id": 2178,
+        "status": "publish",
+        "modified": "2026-11-07T14:33:57",
+        "matched_needles": []
+      },
+      {
+        "id": 2173,
+        "status": "publish",
+        "modified": "2026-11-07T13:45:49",
+        "matched_needles": []
+      },
+      {
+        "id": 2165,
+        "status": "publish",
+        "modified": "2026-11-07T12:42:55",
+        "matched_needles": []
+      },
+      {
+        "id": 2152,
+        "status": "publish",
+        "modified": "2026-11-07T11:43:37",
+        "matched_needles": []
+      },
+      {
+        "id": 2089,
+        "status": "publish",
+        "modified": "2026-11-05T20:01:41",
+        "matched_needles": []
+      },
+      {
+        "id": 2088,
+        "status": "publish",
+        "modified": "2026-11-05T20:01:36",
+        "matched_needles": []
+      },
+      {
+        "id": 1868,
+        "status": "publish",
+        "modified": "2026-11-14T18:38:39",
+        "matched_needles": []
+      },
+      {
+        "id": 2017,
+        "status": "publish",
+        "modified": "2026-11-14T18:38:40",
+        "matched_needles": []
+      },
+      {
+        "id": 1579,
+        "status": "publish",
+        "modified": "2026-11-05T17:44:02",
+        "matched_needles": []
+      },
+      {
+        "id": 1484,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:39",
+        "matched_needles": []
+      },
+      {
+        "id": 1480,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:37",
+        "matched_needles": []
+      },
+      {
+        "id": 1316,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:35",
+        "matched_needles": []
+      },
+      {
+        "id": 1315,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:33",
+        "matched_needles": []
+      },
+      {
+        "id": 1314,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:32",
+        "matched_needles": []
+      },
+      {
+        "id": 1313,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:30",
+        "matched_needles": []
+      },
+      {
+        "id": 1312,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:28",
+        "matched_needles": []
+      },
+      {
+        "id": 1310,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:24",
+        "matched_needles": []
+      },
+      {
+        "id": 1309,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:22",
+        "matched_needles": []
+      },
+      {
+        "id": 1308,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:21",
+        "matched_needles": []
+      },
+      {
+        "id": 1307,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:19",
+        "matched_needles": []
+      },
+      {
+        "id": 1306,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:17",
+        "matched_needles": []
+      },
+      {
+        "id": 1305,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:15",
+        "matched_needles": []
+      },
+      {
+        "id": 1433,
+        "status": "publish",
+        "modified": "2026-10-29T12:50:50",
+        "matched_needles": []
+      },
+      {
+        "id": 1377,
+        "status": "publish",
+        "modified": "2026-11-05T19:47:37",
+        "matched_needles": []
+      },
+      {
+        "id": 1304,
+        "status": "publish",
+        "modified": "2026-11-06T20:59:59",
+        "matched_needles": []
+      },
+      {
+        "id": 1311,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:26",
+        "matched_needles": []
+      },
+      {
+        "id": 1342,
+        "status": "publish",
+        "modified": "2026-09-07T14:30:49",
+        "matched_needles": []
+      },
+      {
+        "id": 1338,
+        "status": "publish",
+        "modified": "2026-11-03T22:12:43",
+        "matched_needles": []
+      },
+      {
+        "id": 1148,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:11",
+        "matched_needles": []
+      },
+      {
+        "id": 1127,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:09",
+        "matched_needles": []
+      },
+      {
+        "id": 1125,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:08",
+        "matched_needles": []
+      },
+      {
+        "id": 1124,
+        "status": "publish",
+        "modified": "2026-10-29T14:00:07",
+        "matched_needles": []
+      },
+      {
+        "id": 1123,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:06",
+        "matched_needles": []
+      },
+      {
+        "id": 1122,
+        "status": "publish",
+        "modified": "2026-11-03T14:46:51",
+        "matched_needles": []
+      },
+      {
+        "id": 1121,
+        "status": "publish",
+        "modified": "2026-10-29T14:07:57",
+        "matched_needles": []
+      },
+      {
+        "id": 1120,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:01",
+        "matched_needles": []
+      },
+      {
+        "id": 1119,
+        "status": "publish",
+        "modified": "2026-10-29T14:17:37",
+        "matched_needles": []
+      },
+      {
+        "id": 1060,
+        "status": "publish",
+        "modified": "2026-11-02T21:41:00",
+        "matched_needles": []
+      },
+      {
+        "id": 1057,
+        "status": "publish",
+        "modified": "2026-10-29T14:15:16",
+        "matched_needles": []
+      },
+      {
+        "id": 1054,
+        "status": "publish",
+        "modified": "2026-11-02T21:40:58",
+        "matched_needles": []
+      },
+      {
+        "id": 1051,
+        "status": "publish",
+        "modified": "2026-10-29T14:13:29",
+        "matched_needles": []
+      },
+      {
+        "id": 1048,
+        "status": "publish",
+        "modified": "2026-10-29T14:11:53",
+        "matched_needles": []
+      },
+      {
+        "id": 1044,
+        "status": "publish",
+        "modified": "2026-11-03T14:47:00",
+        "matched_needles": []
+      },
+      {
+        "id": 1043,
+        "status": "publish",
+        "modified": "2026-10-29T13:56:35",
+        "matched_needles": []
+      },
+      {
+        "id": 1037,
+        "status": "publish",
+        "modified": "2026-10-29T17:19:57",
+        "matched_needles": []
+      },
+      {
+        "id": 1035,
+        "status": "publish",
+        "modified": "2026-10-29T13:12:44",
+        "matched_needles": []
+      },
+      {
+        "id": 1033,
+        "status": "publish",
+        "modified": "2026-11-02T21:40:54",
+        "matched_needles": []
+      },
+      {
+        "id": 1031,
+        "status": "publish",
+        "modified": "2026-10-29T13:12:37",
+        "matched_needles": []
+      },
+      {
+        "id": 1029,
+        "status": "publish",
+        "modified": "2026-11-05T23:40:35",
+        "matched_needles": []
+      },
+      {
+        "id": 1027,
+        "status": "publish",
+        "modified": "2026-11-02T21:40:52",
+        "matched_needles": []
+      },
+      {
+        "id": 748,
+        "status": "publish",
+        "modified": "2026-10-29T12:51:22",
+        "matched_needles": []
+      },
+      {
+        "id": 747,
+        "status": "publish",
+        "modified": "2026-11-02T21:40:50",
+        "matched_needles": []
+      },
+      {
+        "id": 547,
+        "status": "publish",
+        "modified": "2026-09-09T09:38:51",
+        "matched_needles": []
+      },
+      {
+        "id": 543,
+        "status": "publish",
+        "modified": "2026-09-09T16:12:29",
+        "matched_needles": []
+      },
+      {
+        "id": 542,
+        "status": "publish",
+        "modified": "2026-09-09T16:24:58",
+        "matched_needles": []
+      },
+      {
+        "id": 541,
+        "status": "publish",
+        "modified": "2026-09-09T16:19:10",
+        "matched_needles": []
+      },
+      {
+        "id": 540,
+        "status": "publish",
+        "modified": "2026-09-09T16:24:04",
+        "matched_needles": []
+      },
+      {
+        "id": 539,
+        "status": "publish",
+        "modified": "2026-09-09T16:22:11",
+        "matched_needles": []
+      },
+      {
+        "id": 538,
+        "status": "publish",
+        "modified": "2026-09-09T16:21:44",
+        "matched_needles": []
+      },
+      {
+        "id": 537,
+        "status": "publish",
+        "modified": "2026-09-09T16:21:09",
+        "matched_needles": []
+      },
+      {
+        "id": 536,
+        "status": "publish",
+        "modified": "2026-09-09T16:18:48",
+        "matched_needles": []
+      },
+      {
+        "id": 531,
+        "status": "publish",
+        "modified": "2026-09-09T16:07:53",
+        "matched_needles": []
+      },
+      {
+        "id": 529,
+        "status": "publish",
+        "modified": "2026-11-06T21:43:51",
+        "matched_needles": []
+      },
+      {
+        "id": 525,
+        "status": "publish",
+        "modified": "2026-09-10T10:51:56",
+        "matched_needles": []
+      },
+      {
+        "id": 523,
+        "status": "publish",
+        "modified": "2026-11-05T20:01:31",
+        "matched_needles": []
+      },
+      {
+        "id": 502,
+        "status": "publish",
+        "modified": "2026-10-29T17:18:30",
+        "matched_needles": []
+      },
+      {
+        "id": 501,
+        "status": "publish",
+        "modified": "2026-11-05T12:07:05",
+        "matched_needles": []
+      },
+      {
+        "id": 500,
+        "status": "publish",
+        "modified": "2026-08-31T22:33:27",
+        "matched_needles": []
+      },
+      {
+        "id": 499,
+        "status": "publish",
+        "modified": "2026-11-03T14:47:03",
+        "matched_needles": []
+      },
+      {
+        "id": 498,
+        "status": "publish",
+        "modified": "2026-11-03T14:47:09",
+        "matched_needles": []
+      },
+      {
+        "id": 235,
+        "status": "publish",
+        "modified": "2026-09-09T16:03:23",
+        "matched_needles": []
+      },
+      {
+        "id": 234,
+        "status": "publish",
+        "modified": "2026-11-06T09:18:24",
+        "matched_needles": []
+      },
+      {
+        "id": 193,
+        "status": "publish",
+        "modified": "2026-11-03T14:46:46",
+        "matched_needles": []
+      },
+      {
+        "id": 191,
+        "status": "publish",
+        "modified": "2026-08-26T11:15:25",
+        "matched_needles": []
+      },
+      {
+        "id": 189,
+        "status": "publish",
+        "modified": "2026-11-02T21:38:01",
+        "matched_needles": []
+      },
+      {
+        "id": 1,
+        "status": "publish",
+        "modified": "2026-11-06T09:41:48",
+        "matched_needles": []
+      },
+      {
+        "id": 78,
+        "status": "publish",
+        "modified": "2026-11-06T13:48:19",
+        "matched_needles": []
+      },
+      {
+        "id": 77,
+        "status": "publish",
+        "modified": "2026-11-07T19:39:01",
+        "matched_needles": []
+      },
+      {
+        "id": 76,
+        "status": "publish",
+        "modified": "2026-11-06T21:44:29",
+        "matched_needles": []
+      },
+      {
+        "id": 17,
+        "status": "publish",
+        "modified": "2026-09-09T16:03:05",
+        "matched_needles": []
+      },
+      {
+        "id": 16,
+        "status": "publish",
+        "modified": "2026-11-02T21:39:26",
+        "matched_needles": []
+      },
+      {
+        "id": 15,
+        "status": "publish",
+        "modified": "2026-11-02T21:39:24",
+        "matched_needles": []
+      },
+      {
+        "id": 14,
+        "status": "publish",
+        "modified": "2026-11-02T21:39:22",
+        "matched_needles": []
+      },
+      {
+        "id": 10,
+        "status": "publish",
+        "modified": "2026-09-09T16:04:19",
+        "matched_needles": []
+      },
+      {
+        "id": 8,
+        "status": "publish",
+        "modified": "2026-11-06T21:51:52",
+        "matched_needles": []
+      },
+      {
+        "id": 7,
+        "status": "publish",
+        "modified": "2026-09-09T16:14:56",
+        "matched_needles": []
+      },
+      {
+        "id": 6,
+        "status": "publish",
+        "modified": "2026-11-14T18:43:13",
+        "matched_needles": []
+      },
+      {
+        "id": 2762,
+        "status": "draft",
+        "modified": "2026-11-15T14:43:46",
+        "matched_needles": []
+      },
+      {
+        "id": 2413,
+        "status": "draft",
+        "modified": "2026-11-15T10:45:55",
+        "matched_needles": []
+      },
+      {
+        "id": 2240,
+        "status": "draft",
+        "modified": "2026-11-15T09:42:38",
+        "matched_needles": []
+      },
+      {
+        "id": 2430,
+        "status": "draft",
+        "modified": "2026-11-15T08:41:45",
+        "matched_needles": []
+      },
+      {
+        "id": 2635,
+        "status": "draft",
+        "modified": "2026-11-15T07:43:47",
+        "matched_needles": []
+      },
+      {
+        "id": 2411,
+        "status": "draft",
+        "modified": "2026-11-15T06:43:37",
+        "matched_needles": []
+      },
+      {
+        "id": 2354,
+        "status": "draft",
+        "modified": "2026-11-15T04:37:26",
+        "matched_needles": []
+      },
+      {
+        "id": 2621,
+        "status": "draft",
+        "modified": "2026-11-15T01:44:05",
+        "matched_needles": []
+      },
+      {
+        "id": 2613,
+        "status": "draft",
+        "modified": "2026-11-14T22:42:55",
+        "matched_needles": []
+      },
+      {
+        "id": 2476,
+        "status": "draft",
+        "modified": "2026-11-14T21:43:49",
+        "matched_needles": []
+      },
+      {
+        "id": 2287,
+        "status": "draft",
+        "modified": "2026-11-14T20:39:49",
+        "matched_needles": []
+      },
+      {
+        "id": 2584,
+        "status": "draft",
+        "modified": "2026-11-14T19:37:45",
+        "matched_needles": []
+      },
+      {
+        "id": 2393,
+        "status": "draft",
+        "modified": "2026-11-14T17:40:44",
+        "matched_needles": []
+      },
+      {
+        "id": 2445,
+        "status": "draft",
+        "modified": "2026-11-14T13:39:20",
+        "matched_needles": []
+      },
+      {
+        "id": 2470,
+        "status": "draft",
+        "modified": "2026-11-12T22:37:50",
+        "matched_needles": []
+      },
+      {
+        "id": 2468,
+        "status": "draft",
+        "modified": "2026-11-12T20:45:23",
+        "matched_needles": []
+      },
+      {
+        "id": 2467,
+        "status": "draft",
+        "modified": "2026-11-12T19:45:23",
+        "matched_needles": []
+      },
+      {
+        "id": 2466,
+        "status": "draft",
+        "modified": "2026-11-12T18:57:20",
+        "matched_needles": []
+      },
+      {
+        "id": 2464,
+        "status": "draft",
+        "modified": "2026-11-12T17:46:37",
+        "matched_needles": []
+      },
+      {
+        "id": 2461,
+        "status": "draft",
+        "modified": "2026-11-12T16:38:48",
+        "matched_needles": []
+      },
+      {
+        "id": 2460,
+        "status": "draft",
+        "modified": "2026-11-12T15:41:41",
+        "matched_needles": []
+      },
+      {
+        "id": 2459,
+        "status": "draft",
+        "modified": "2026-11-12T14:45:23",
+        "matched_needles": []
+      },
+      {
+        "id": 2456,
+        "status": "draft",
+        "modified": "2026-11-12T13:39:56",
+        "matched_needles": []
+      },
+      {
+        "id": 2455,
+        "status": "draft",
+        "modified": "2026-11-12T12:50:04",
+        "matched_needles": []
+      },
+      {
+        "id": 2451,
+        "status": "draft",
+        "modified": "2026-11-12T11:46:02",
+        "matched_needles": []
+      },
+      {
+        "id": 2447,
+        "status": "draft",
+        "modified": "2026-11-12T10:50:57",
+        "matched_needles": []
+      },
+      {
+        "id": 2446,
+        "status": "draft",
+        "modified": "2026-11-12T09:49:57",
+        "matched_needles": []
+      },
+      {
+        "id": 2444,
+        "status": "draft",
+        "modified": "2026-11-12T07:45:36",
+        "matched_needles": []
+      },
+      {
+        "id": 2442,
+        "status": "draft",
+        "modified": "2026-11-12T06:46:43",
+        "matched_needles": []
+      },
+      {
+        "id": 2441,
+        "status": "draft",
+        "modified": "2026-11-12T05:44:26",
+        "matched_needles": []
+      },
+      {
+        "id": 2440,
+        "status": "draft",
+        "modified": "2026-11-12T04:38:12",
+        "matched_needles": []
+      },
+      {
+        "id": 2438,
+        "status": "draft",
+        "modified": "2026-11-12T03:45:37",
+        "matched_needles": []
+      },
+      {
+        "id": 2435,
+        "status": "draft",
+        "modified": "2026-11-12T02:44:42",
+        "matched_needles": []
+      },
+      {
+        "id": 2429,
+        "status": "draft",
+        "modified": "2026-11-12T01:54:55",
+        "matched_needles": []
+      },
+      {
+        "id": 2428,
+        "status": "draft",
+        "modified": "2026-11-12T00:41:31",
+        "matched_needles": []
+      },
+      {
+        "id": 2427,
+        "status": "draft",
+        "modified": "2026-11-11T23:44:37",
+        "matched_needles": []
+      },
+      {
+        "id": 2426,
+        "status": "draft",
+        "modified": "2026-11-11T22:40:15",
+        "matched_needles": []
+      },
+      {
+        "id": 2424,
+        "status": "draft",
+        "modified": "2026-11-11T20:48:42",
+        "matched_needles": []
+      },
+      {
+        "id": 2420,
+        "status": "draft",
+        "modified": "2026-11-11T19:46:04",
+        "matched_needles": []
+      },
+      {
+        "id": 2418,
+        "status": "draft",
+        "modified": "2026-11-11T17:51:43",
+        "matched_needles": []
+      },
+      {
+        "id": 2417,
+        "status": "draft",
+        "modified": "2026-11-11T16:51:37",
+        "matched_needles": []
+      },
+      {
+        "id": 2416,
+        "status": "draft",
+        "modified": "2026-11-11T15:47:33",
+        "matched_needles": []
+      },
+      {
+        "id": 2415,
+        "status": "draft",
+        "modified": "2026-11-11T14:45:47",
+        "matched_needles": []
+      },
+      {
+        "id": 2412,
+        "status": "draft",
+        "modified": "2026-11-11T12:39:09",
+        "matched_needles": []
+      },
+      {
+        "id": 2397,
+        "status": "draft",
+        "modified": "2026-11-10T20:36:50",
+        "matched_needles": []
+      },
+      {
+        "id": 2395,
+        "status": "draft",
+        "modified": "2026-11-10T17:49:49",
+        "matched_needles": []
+      },
+      {
+        "id": 2340,
+        "status": "draft",
+        "modified": "2026-11-09T20:42:09",
+        "matched_needles": []
+      },
+      {
+        "id": 2339,
+        "status": "draft",
+        "modified": "2026-11-09T18:40:56",
+        "matched_needles": []
+      },
+      {
+        "id": 2292,
+        "status": "draft",
+        "modified": "2026-11-09T17:46:14",
+        "matched_needles": []
+      },
+      {
+        "id": 2301,
+        "status": "draft",
+        "modified": "2026-11-09T08:43:54",
+        "matched_needles": []
+      },
+      {
+        "id": 2307,
+        "status": "draft",
+        "modified": "2026-11-09T03:45:11",
+        "matched_needles": []
+      },
+      {
+        "id": 2305,
+        "status": "draft",
+        "modified": "2026-11-09T02:39:26",
+        "matched_needles": []
+      },
+      {
+        "id": 2300,
+        "status": "draft",
+        "modified": "2026-11-09T00:50:48",
+        "matched_needles": []
+      },
+      {
+        "id": 2298,
+        "status": "draft",
+        "modified": "2026-11-08T23:54:12",
+        "matched_needles": []
+      },
+      {
+        "id": 2280,
+        "status": "draft",
+        "modified": "2026-11-08T17:41:58",
+        "matched_needles": []
+      },
+      {
+        "id": 2271,
+        "status": "draft",
+        "modified": "2026-11-08T13:41:02",
+        "matched_needles": []
+      },
+      {
+        "id": 2252,
+        "status": "draft",
+        "modified": "2026-11-08T10:46:56",
+        "matched_needles": []
+      },
+      {
+        "id": 2150,
+        "status": "draft",
+        "modified": "2026-11-08T06:32:56",
+        "matched_needles": []
+      },
+      {
+        "id": 2219,
+        "status": "draft",
+        "modified": "2026-11-08T05:36:01",
+        "matched_needles": []
+      },
+      {
+        "id": 2218,
+        "status": "draft",
+        "modified": "2026-11-07T23:40:21",
+        "matched_needles": []
+      },
+      {
+        "id": 1612,
+        "status": "draft",
+        "modified": "2026-10-27T19:47:36",
+        "matched_needles": []
+      },
+      {
+        "id": 1553,
+        "status": "draft",
+        "modified": "2026-10-12T01:12:53",
+        "matched_needles": []
+      },
+      {
+        "id": 1555,
+        "status": "draft",
+        "modified": "2026-10-12T01:10:28",
+        "matched_needles": []
+      },
+      {
+        "id": 1530,
+        "status": "draft",
+        "modified": "2026-10-04T18:16:43",
+        "matched_needles": []
+      },
+      {
+        "id": 1532,
+        "status": "draft",
+        "modified": "2026-10-04T18:10:42",
+        "matched_needles": []
+      },
+      {
+        "id": 1531,
+        "status": "draft",
+        "modified": "2026-10-04T18:10:25",
+        "matched_needles": []
+      },
+      {
+        "id": 1513,
+        "status": "draft",
+        "modified": "2026-10-04T17:26:36",
+        "matched_needles": []
+      },
+      {
+        "id": 1506,
+        "status": "draft",
+        "modified": "2026-10-04T17:26:10",
+        "matched_needles": []
+      },
+      {
+        "id": 1509,
+        "status": "draft",
+        "modified": "2026-10-04T17:24:35",
+        "matched_needles": []
+      },
+      {
+        "id": 1508,
+        "status": "draft",
+        "modified": "2026-09-27T11:47:51",
+        "matched_needles": []
+      },
+      {
+        "id": 1507,
+        "status": "draft",
+        "modified": "2026-09-27T11:47:48",
+        "matched_needles": []
+      },
+      {
+        "id": 1505,
+        "status": "draft",
+        "modified": "2026-09-27T11:45:40",
+        "matched_needles": []
+      },
+      {
+        "id": 1378,
+        "status": "draft",
+        "modified": "2026-09-08T11:37:44",
+        "matched_needles": []
+      },
+      {
+        "id": 1379,
+        "status": "draft",
+        "modified": "2026-09-08T11:37:32",
+        "matched_needles": []
+      },
+      {
+        "id": 1340,
+        "status": "draft",
+        "modified": "2026-09-08T19:11:16",
+        "matched_needles": []
+      },
+      {
+        "id": 85,
+        "status": "draft",
+        "modified": "2026-10-29T15:39:43",
+        "matched_needles": []
+      },
+      {
+        "id": 29,
+        "status": "draft",
+        "modified": "2026-10-29T15:39:37",
+        "matched_needles": []
+      },
+      {
+        "id": 9,
+        "status": "draft",
+        "modified": "2026-08-16T21:01:02",
+        "matched_needles": []
+      }
+    ]
+  },
+  "media": [
+    {
+      "id": 482,
+      "mime": "image/png",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png",
+      "file_bytes": 2293016,
+      "native": {
+        "width": 1672,
+        "height": 941
+      },
+      "candidate_max_960": {
+        "width": 960,
+        "height": 540
+      },
+      "candidate_geometry_only": true,
+      "prior_post_body_used": false,
+      "prior_featured_media_used": false,
+      "page_body_exact_ref_used": false,
+      "media_parent_post": null,
+      "rights": "unknown_unverified",
+      "rights_hold": true,
+      "wp_upload_authorized": false,
+      "cache_authorized": false,
+      "publication_authorized": false,
+      "guest_http_status": null,
+      "guest_encoded_bytes": null,
+      "disposition": "unresolved_in_other_surfaces_not_proven_orphan",
+      "notes": "No item-level reuse provenance in WP media metadata. Could be template, CSS, background, custom field, plugin, other post type or dynamically referenced."
+    },
+    {
+      "id": 2148,
+      "mime": "image/jpeg",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/1927-caernarvon-levee-explosion-noaa-archive.jpg",
+      "file_bytes": 2030948,
+      "native": {
+        "width": 1821,
+        "height": 1190
+      },
+      "candidate_max_960": {
+        "width": 960,
+        "height": 627
+      },
+      "candidate_geometry_only": true,
+      "prior_post_body_used": false,
+      "prior_featured_media_used": false,
+      "page_body_exact_ref_used": false,
+      "media_parent_post": null,
+      "rights": "NOAA governmental-source public-domain claim plus Commons derivative crop attribution; still requires exact-item, crop provenance review",
+      "rights_hold": true,
+      "wp_upload_authorized": false,
+      "cache_authorized": false,
+      "publication_authorized": false,
+      "guest_http_status": null,
+      "guest_encoded_bytes": null,
+      "disposition": "unresolved_in_other_surfaces_not_proven_orphan",
+      "catalogs": [
+        {
+          "url": "https://www.noaa.gov/noaa-collections/photo-library/wea00739jpg",
+          "role": "original governmental archival item",
+          "item": "wea00739"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:1927_Mississippi_Flood_Blowing_Levee.jpg",
+          "role": "documented crop",
+          "original_dimensions": "1821x1190",
+          "preview_960_dimensions": "960x627"
+        }
+      ],
+      "notes": "Commons describes Wisekwai crop of NOAA source; archive photographer attribution differs from creator of 1927 exposure. No claim asset is currently delivered to visitors."
+    }
+  ],
+  "counts": {
+    "remaining_two_original_stored_bytes": 4323964,
+    "claimed_browser_broken_from_this_audit": 0,
+    "validated_network_saving_percent": null,
+    "reported_historical_broken_candidates": 42,
+    "frozen_baseline_posts": 61,
+    "frozen_baseline_inline_images": 355,
+    "current_post_body_census_posts": 66,
+    "current_post_body_census_inline_images": 361,
+    "large_originals_over_1500000_bytes": 20,
+    "large_original_stored_bytes": 64385752
+  },
+  "safe_change_policy": {
+    "no_wordpress_writes": true,
+    "no_media_downloads": true,
+    "no_homepage_changes": true,
+    "no_subscriptions": true,
+    "not_deletion_authorization": true,
+    "not_publication_authorization": true,
+    "site_qa_cold_browser_owner": "PR #154"
+  }
+}
