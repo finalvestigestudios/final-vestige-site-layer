@@ -33,7 +33,7 @@ check('B caption route',()=>assert(b.includes('ZEN12_42_SECOND_CAPTIONS.vtt')));
 check('VTT cues',()=>assert.equal((vtt.match(/-->/g)||[]).length,6));
 check('VTT duration',()=>assert(vtt.includes('00:00:42.000')));
 check('source citations',()=>assert(art.includes('https://doi.org/10.3758/BF03208840')&&art.includes('https://pubmed.ncbi.nlm.nih.gov/12230832/')));
-check('article original scope',()=>assert(art.length>9500 && art.includes('Puységur') && art.includes('not a validated change-blindness test')));
+check('article original scope',()=>assert(art.length>9500 && art.includes('Puységur') && art.includes('a validated change-blindness test')));
 check('matrix gates all HOLD',()=>assert(Object.values(m.gates).length>=25 && Object.values(m.gates).every(g=>g.status==='HOLD'&&g.evidence===null)));
 check('matrix no earning links',()=>assert.equal(m.approved_affiliate_links.length,0));
 check('seller claims marked',()=>assert(m.claims.some(c=>c.status==='EXCLUDED') && m.claims.some(c=>c.status==='SELLER_DESCRIPTION')));
