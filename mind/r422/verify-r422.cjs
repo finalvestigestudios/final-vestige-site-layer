@@ -25,7 +25,7 @@ for(const [n,s] of [['A',a],['B',b]]){
 check(n+' disclosure adjacent',()=>assert(/Affiliate disclosure:[\s\S]{0,420}<\/p><button type="button" disabled/.test(s)));
 check(n+' disabled CTA',()=>assert(/<button type="button" disabled aria-disabled="true">/.test(s)));
 check(n+' no merchant URL',()=>assert(!/https?:\/\/(?:www\.)?(zen12|hypnosislive|brainwaveshots|inspire3)\.com/i.test(s)));
-check(n+' clear offer boundaries',()=>assert(s.includes('twelve levels')&&s.includes('four listening styles')&&s.includes('not'));
+check(n+' clear offer boundaries',()=>assert(s.includes('twelve levels')&&s.includes('four listening styles')&&s.includes('not')));
 }
 check('B original poster',()=>assert(/<svg\b/.test(b)&&/aria-label=/.test(b)));
 check('B transcript',()=>assert(b.includes('<summary>Read the complete proposed film transcript')));
