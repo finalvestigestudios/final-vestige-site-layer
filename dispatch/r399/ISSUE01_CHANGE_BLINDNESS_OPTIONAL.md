@@ -1,0 +1,32 @@
+# THE DISPATCH — OPTIONAL ISSUE 01 (NOT ADOPTED)
+
+**Release:** UNSENT / REVIEW CANDIDATE ONLY / original Issue 01 in #175 is unchanged.
+
+**Subject:** The person who changed mid-conversation
+
+**Preheader (editorial proposal; Jetpack rendering NOT verified):** A 1998 street experiment reveals what a confident witness can miss.
+
+**Type:** editorial (one of the four noncommercial issues in the proposed pilot)
+
+---
+
+A stranger stops you on a campus walkway and asks for directions. You are looking at him, speaking to him, trying to help. Two people carrying a door pass between you—and when the door clears, someone else is standing in his place.
+
+Would you notice?
+
+In a 1998 field experiment, psychologists Daniel Simons and Daniel Levin arranged a real-world version of that interruption. The person asking for directions was replaced while a door blocked the view. In the first experiment, only about half of the pedestrians detected the swap. The study was small and context-specific; it did not measure what all eyewitnesses notice, or show that memory is always unreliable.
+
+The more interesting finding was not that people were careless. They were engaged in an ordinary task. A visible change could pass through an interruption without being registered.
+
+Final Vestige usually applies this distinction to an archival photograph, a witness deposition or a government report. The question is similar: **what did this person actually observe, and what are we filling in afterward?**
+
+You can test the habit without deciding that every witness is mistaken. Think of a story you told recently. Write two columns: what you personally saw or heard, and what you inferred. If you cannot separate the two, mark the boundary as uncertain. That's useful evidence hygiene—not a cure for attention or a guarantee of perfect recall.
+
+A nearby 1999 study by Simons and Christopher Chabris, using an unexpected event in a basketball-pass counting task, examined **inattentional blindness**. It is related, but not identical: failing to notice a new unexpected object while attending elsewhere is not the same method as missing a substitution after an interruption. Confusing the studies makes a clean headline but weaker evidence.
+
+**Our one editorial invitation:** [Explore the published Change Blindness investigation, including a voluntary visual demonstration](https://finalvestige.com/2026/11/02/change-blindness/). The site identifies the demonstration as an original illustration, not the researchers' original stimulus.
+
+**Source trail:** Simons & Levin (1998), *Psychonomic Bulletin & Review*, https://doi.org/10.3758/BF03208840 ; Simons & Chabris (1999), *Perception*, https://doi.org/10.1068/p281059 . Those articles support the research description, not claims for any meditation, hypnosis or focus product.
+
+---
+**NON-SENDING LEGAL HOLD:** WordPress-native preview, real publisher postal address, functional opt-out, confirmed eligible audience, actual welcome delivery and founder final approval remain unverified. Do not substitute a fabricated unsubscribe link or an Inspire3 address. This issue has no affiliate link.
