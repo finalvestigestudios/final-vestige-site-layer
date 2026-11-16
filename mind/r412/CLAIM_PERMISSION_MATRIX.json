@@ -1,0 +1,254 @@
+{
+  "reviewed_at": "2026-11-15",
+  "status": "DRAFT_HARD_HOLD",
+  "method": "Official seller copy is a seller representation, not independent product efficacy evidence; paper-level conclusions apply only to studied populations and endpoints.",
+  "sources": {
+    "p2021": "https://pubmed.ncbi.nlm.nih.gov/33165219/",
+    "p2022": "https://doi.org/10.1097/j.pain.0000000000002593",
+    "p2024": "https://pubmed.ncbi.nlm.nih.gov/39216636/",
+    "p2026": "https://pubmed.ncbi.nlm.nih.gov/42478332/",
+    "archive": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/",
+    "brand": "https://inspire3.com/",
+    "zen": "https://zen12.com/",
+    "zen_order": "https://zen12.com/order",
+    "zen_promo": "https://zen12.com/secret/",
+    "total": "https://hypnosislive.com/mental-skills/total-focus",
+    "shot": "https://brainwaveshots.com/focus-shot",
+    "shotfaq": "https://brainwaveshots.com/faq",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "portal": "https://affiliates.inspire3.com/"
+  },
+  "claims": [
+    {
+      "claim": "The 2021 experimental pain study used 93 healthy volunteers with sham mindfulness",
+      "status": "independently_supported",
+      "source": "p2021",
+      "limit": "Not focus or product efficacy"
+    },
+    {
+      "claim": "The 2021 sham and mindfulness conditions both raised pain tolerance vs no treatment",
+      "status": "independently_supported",
+      "source": "p2021",
+      "limit": "No mindfulness superiority on that endpoint"
+    },
+    {
+      "claim": "The 2022 balanced-placebo study involved 153 healthy adults",
+      "status": "independently_supported",
+      "source": "p2022",
+      "limit": "Specific heat-pain context"
+    },
+    {
+      "claim": "In the 2022 study, expectation and beliefs predicted some pain outcomes",
+      "status": "independently_supported",
+      "source": "p2022",
+      "limit": "Not a general placebo-only conclusion"
+    },
+    {
+      "claim": "2024 neuro study included 115 healthy adults and distinguished some mindfulness signals",
+      "status": "independently_supported",
+      "source": "p2024",
+      "limit": "Pain condition, not Zen12"
+    },
+    {
+      "claim": "2026 expectations pilot was a 66-participant three-arm trial",
+      "status": "independently_supported",
+      "source": "p2026",
+      "limit": "Small pilot, limited findings"
+    },
+    {
+      "claim": "Zen12 offers 12 levels and 48 MP3s",
+      "status": "seller_format",
+      "source": "zen_order",
+      "limit": "Validate actual authorized SKU before referring"
+    },
+    {
+      "claim": "Zen12 guarantees equivalent benefits of one hour meditation in 12 minutes",
+      "status": "seller_efficacy_excluded",
+      "source": "zen",
+      "limit": "No identified product-specific controlled trial"
+    },
+    {
+      "claim": "Zen12 has a universally applicable promotional price",
+      "status": "not_supported",
+      "source": "zen_promo",
+      "limit": "Different seller routes; price withheld"
+    },
+    {
+      "claim": "Total Focus is a 33-minute, 47MB MP3",
+      "status": "seller_format",
+      "source": "total",
+      "limit": "Not evidence of brain change"
+    },
+    {
+      "claim": "Total Focus reprograms your brain for concentration",
+      "status": "seller_efficacy_excluded",
+      "source": "total",
+      "limit": "Unsupported brand-specific claim"
+    },
+    {
+      "claim": "Focus Shot offers 15/30-minute variants",
+      "status": "seller_format",
+      "source": "shot",
+      "limit": "Confirm purchase details"
+    },
+    {
+      "claim": "Focus Shot guarantees hours of instant focus",
+      "status": "seller_efficacy_excluded",
+      "source": "shot",
+      "limit": "No product-specific controlled evidence"
+    },
+    {
+      "claim": "Brainwave Shots identifies its audio technology in its FAQ",
+      "status": "seller_technical_description",
+      "source": "shotfaq",
+      "limit": "Do not substitute binaural-beat research"
+    },
+    {
+      "claim": "The Puységur archive documents historical testimony and failures",
+      "status": "historical_documentation",
+      "source": "archive",
+      "limit": "Not modern mechanism or treatment proof"
+    },
+    {
+      "claim": "Existing free 52-page Fieldbook is available using existing Dispatch signup",
+      "status": "published_resource",
+      "source": "focus",
+      "limit": "No duplicated email form"
+    },
+    {
+      "claim": "Final Vestige has named approved Inspire3 publisher status",
+      "status": "not_verified",
+      "source": "portal",
+      "limit": "Needs authentic authenticated acceptance"
+    },
+    {
+      "claim": "Final Vestige has a valid issued affiliate tracking URL",
+      "status": "not_verified",
+      "source": "portal",
+      "limit": "Do not activate click or link"
+    },
+    {
+      "claim": "Confirmed referred checkout, refunds, commission and net revenue",
+      "status": "not_verified",
+      "source": "portal",
+      "limit": "No sale events inferred from outbound clicks"
+    },
+    {
+      "claim": "FTC disclosure must be close and intelligible near compensated recommendations",
+      "status": "compliance",
+      "source": "ftc",
+      "limit": "Disclose specific commission benefit"
+    },
+    {
+      "claim": "Health/mental performance claims require adequate substantiation",
+      "status": "compliance",
+      "source": "health",
+      "limit": "Do not carry seller outcomes into independent copy"
+    }
+  ],
+  "gates": [
+    {
+      "name": "named_publisher_approval",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "approved_website_channel",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "approved_social_channel",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "approved_email_channel_if_used",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "issued_product_earning_url",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "offer_sku_verified",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "checkout_price_verified",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "returns_refund_terms_verified",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "creative_reuse_rights_verified",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "independent_claim_substantiation",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "founder_commerce_approval",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "founder_publication_approval",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "real_mobile_browser_qa",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "actual_optional_encoded_video",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "no_js_accessibility_qa",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "jetpack_confirmed_lead_qa",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "merchant_reported_sale",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "merchant_settled_commission",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "refund_fee_reconciliation",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "name": "qualified_human_attribution_verified",
+      "status": "HOLD",
+      "proof": null
+    }
+  ],
+  "activation_rule": "No merchant href, affiliate_click event, publication or purchase CTA until the applicable proof, approval, QA and permission gates are satisfied."
+}
