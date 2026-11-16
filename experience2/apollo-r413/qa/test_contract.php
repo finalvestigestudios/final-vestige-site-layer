@@ -1,0 +1,43 @@
+<?php
+/** Contract assertions against real PHP output & pinned R411 catalog. */
+ob_start();require __DIR__ . '/render_fixture.php';$page=ob_get_clean();
+$checks = 0;
+function t($ok,$message) { global $checks; $checks++; if (!$ok) { fwrite(STDERR,"FAIL $message\n"); exit(1); } }
+t(strpos($page, 'data-fv-r413-plate')!==false, 'component rendered');
+t(substr_count($page, 'data-fv-r413-plate')===2, 'two independent instances');
+t(substr_count($page, 'WHAT THE RECORD SUPPORTS')===12,'twelve claims visible');
+t(substr_count($page, 'WHAT IT DOES NOT PROVE')===12,'twelve limitations visible');
+t(substr_count($page, 'NASA archive record')===12,'twelve original NASA references');
+t(substr_count($page, 'NASA research account')===12,'twelve NASA research URLs');
+t(substr_count($page, 'Continue with the free Apollo 1 investigation')===2, 'one CTA per instance');
+t(strpos($page,'id="fv-r413-evidence-2-06"')!==false,'distinct second instance ID');
+t(strpos($page,'href="#fv-r413-evidence-2-06"')!==false,'matching second fragment');
+t(!preg_match('/<script|<img|<iframe|<form|<canvas/i', $page),'no script/image/form/canvas');
+t(strpos($page, 'The initiating failure was never positively identified')!==false,'uncertainty protected');
+t(strpos($page,'December 1967–February 1968')!==false,'later tests distinct');
+require_once dirname(__DIR__) . '/staging-evidence-plate.php';
+t(fv_r413_dependency_ok(), 'R411 + CSS source hashes pinned');
+t(count(fv_r413_catalog())===6,'exact six-source catalog');
+t(fv_r413_git_blob('test')===sha1('blob 4'."\0".'test'),'correct git blob calculation');
+t(!fv_r413_authorized()===false, 'staging authorized for fixture');
+$GLOBALS['fv_r413_env']='production';
+t(fv_r413_shortcode()===fv_r413_fallback(),'production denied');
+$GLOBALS['fv_r413_env']='staging';$GLOBALS['fv_r413_page']=999;
+t(fv_r413_shortcode()===fv_r413_fallback(),'wrong page denied');
+$GLOBALS['fv_r413_page']=413;
+t(fv_r413_markup(0, fv_r413_catalog())===fv_r413_fallback(),'nonpositive instance denied');
+t(fv_r413_markup(1, array())===fv_r413_fallback(),'incomplete catalog denied');
+$bad=fv_r413_catalog();$bad[0][3]='https://nasa.gov.evil.example/';
+t(fv_r413_markup(1,$bad)===fv_r413_fallback(),'lookalike NASA URL denied');
+$bad=fv_r413_catalog();$bad[0][0]='99';
+t(fv_r413_markup(1,$bad)===fv_r413_fallback(),'unreviewed source ordinal denied');
+$bad=fv_r413_catalog();$bad[0][2]='<script>alert(1)</script>';
+$escaped=fv_r413_markup(1,$bad);
+t(strpos($escaped,'&lt;script&gt;')!==false && strpos($escaped,'<script>')===false,'untrusted text escaped');
+$dir=sys_get_temp_dir().'/apollo_r413_guard_'.getmypid();mkdir($dir);mkdir($dir.'/assets');
+copy(dirname(__DIR__).'/assets/evidence-plate.css',$dir.'/assets/evidence-plate.css');
+t(!fv_r413_dependency_ok($dir),'missing source denied');
+file_put_contents($dir.'/assets/evidence-plate.css','malicious stylesheet');
+t(!fv_r413_dependency_ok($dir),'modified stylesheet denied');
+unlink($dir.'/assets/evidence-plate.css');rmdir($dir.'/assets');rmdir($dir);
+echo "PASS $checks native PHP assertions\n";
