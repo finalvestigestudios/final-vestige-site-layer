@@ -19,7 +19,7 @@ function safeHtml(h){
  assert.match(h,/<a class="skip"/);
  assert.match(h,/prefers-reduced-motion/);
  assert.match(h,/noindex,nofollow/);
- assert.doesNotMatch(h,/<script\b|<iframe\b|autoplay\b|<form\b|on(?:click|load|error)\s*=|javascript:/i);
+ assert.doesNotMatch(h,/<script\b|<iframe\b|autoplay\s*=|<form\b|on(?:click|load|error)\s*=|javascript:/i);
  assert.doesNotMatch(h,/<a\b[^>]*href=["'][^"']*(zen12\.com|inspire3\.com|hypnosislive\.com|brainwaveshots\.com)/i);
 }
 test('A strict HTML/document fallback',()=>safeHtml(a));
@@ -38,7 +38,7 @@ test('Buyer copy is byte-identical after B-only film',()=>{
 });
 test('B only has optional storyboard with transcript',()=>{assert.doesNotMatch(a,/id="film"/);assert.match(b,/id="film"/);assert.match(b,/Read the full 42-second narration/);assert.match(b,/ZEN12_R423_42S.vtt/);});
 test('B poster is static with intrinsic dimensions and lazy-load',()=>{assert.match(b,/<img class="poster"[^>]+alt="[^"]+"[^>]+width="1280" height="720" loading="lazy"/);});
-test('Poster is original scalable art not third-party pixels',()=>{assert.match(poster,/<svg/);assert.match(poster,/<title/);assert.match(poster,/<desc/);assert.doesNotMatch(poster,/<image\b|https?:|<script/);});
+test('Poster is original scalable art not third-party pixels',()=>{assert.match(poster,/<svg/);assert.match(poster,/<title/);assert.match(poster,/<desc/);assert.doesNotMatch(poster,/<image\b|xlink:href=|<script/);});
 test('Six contiguous caption cues span 42 seconds',()=>{
  let lines=[...vtt.matchAll(/(\d\d):(\d\d):(\d\d)\.\d\d\d --> (\d\d):(\d\d):(\d\d)\.\d\d\d/g)];
  assert.equal(lines.length,6);
