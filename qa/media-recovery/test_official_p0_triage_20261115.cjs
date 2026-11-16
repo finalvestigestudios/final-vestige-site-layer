@@ -1,0 +1,23 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict');
+const {validate}=require('./validate_official_p0_triage_20261115.cjs');
+const data=require('./official_p0_triage_20261115_2030pt.json');
+const copy=()=>JSON.parse(JSON.stringify(data));
+test('baseline only approves HOLD',()=>assert.equal(validate(copy()).result,'HOLD_QA_ONLY'));
+function fail(name,fn){test(name,()=>{const d=copy();fn(d);assert.throws(()=>validate(d),/HOLD:/)})}
+fail('invented HTTP',d=>d.records[0].guest_status=404);
+fail('invented breakage',d=>d.records[0].guest_broken=true);
+fail('42 failures claim',d=>d.claimed_42_broken_verified=true);
+fail('76% claim',d=>d.claimed_76_percent_measured=true);
+fail('missing P0',d=>d.records.pop());
+fail('changed view slot',d=>d.records[0].key='wrong');
+fail('production write',d=>d.production_writes=1);
+fail('unauthorized cache',d=>d.records[8].permissions.cache=true);
+fail('unreviewed rights',d=>d.records[6].candidate.item_rights_cleared=true);
+fail('assumed same photo',d=>d.records[6].candidate.identity_verified=true);
+fail('invented dimensions',d=>d.records[6].candidate.review_px=[960,600]);
+fail('stretched image',d=>{let c=d.records[6].candidate;c.native_px=[1200,800];c.review_px=[960,700]});
+fail('upscaled image',d=>{let c=d.records[6].candidate;c.native_px=[400,200];c.review_px=[960,480]});
+fail('untrusted archive',d=>d.records[6].candidate.archive='unlicensed news');
+fail('tampered ledger',d=>d.prior_audit_blob='x');
+fail('fabricated fifth candidate',d=>d.records[0].candidate=copy().records[6].candidate);
