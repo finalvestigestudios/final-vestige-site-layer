@@ -23,7 +23,7 @@ function reviewSource(u){
 }
 function reviewSignup(p){
   if(!p||typeof p!=="object")return reject("not_a_provider_receipt");
-  if(Object.keys(p).some(k=>/(email|address|ip|recipient|confirmation_url|token|raw_id)/i.test(k)))return reject("personal_data_or_secret");
+  if(Object.keys(p).some(k=>/(^email$|^email_address$|^subscriber_email$|^ip$|^ip_address$|^recipient$|confirmation_url|token|raw_id)/i.test(k)))return reject("personal_data_or_secret");
   if(p.origin!=="authenticated_provider_export"||p.state!=="confirmed"||p.email_eligible!==true||p.suppressed!==false||!SAFE_ID.test(p.provider_record_ref||"")||!SAFE_ID.test(p.opaque_dedup_key||""))return reject("consent_or_eligibility_unproven");
   return {status:"REVIEW_CANDIDATE_NOT_COUNTED",reason:"independent provider attestation and private dedup remain necessary",confirmed_signup_v1:null};
 }
