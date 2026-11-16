@@ -1,6 +1,6 @@
 # R418 optional short: original 42-second film treatment (UNPRODUCED)
 
-This is a rights-cleared **original storyboard script and SVG illustration only**. No MP4/WebM has yet been encoded, no narrator recorded, and no preview made playable. The caption file is a pre-production VTT source, not evidence of real playback. A no-JavaScript, fully readable buyer guide (Variant A) is the baseline; Variant B adds ONLY an optional expandable storyboard and illustration until production review permits a proper HTML5 video.
+This package contains a rights-cleared **original storyboard, SVG illustration, VTT and reproducible offline video generator**. A separate 42-second, silent H.264 MP4 prototype was encoded locally and inspected with ffprobe (960×540, 12 fps, 79,748 bytes; SHA-256 in `prototype_manifest.json`). **The MP4 bytes are not committed, embedded, hosted or publicly available; there is no narration, playable HTML element, final caption-sync QA or release approval.** The caption file remains a pre-production script, not evidence of accessible playback. A no-JavaScript, fully readable buyer guide (Variant A) is the baseline; Variant B adds ONLY an optional expandable storyboard and illustration until production review permits a proper HTML5 video.
 
 | Time | Visual production direction | Narration and accessibility |
 |---|---|---|
