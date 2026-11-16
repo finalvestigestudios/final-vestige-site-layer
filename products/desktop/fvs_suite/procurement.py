@@ -441,21 +441,16 @@ def reconcile_procurement(po: str, invoices: str, receipts: str, folder: str,
 
     # Across distinct POs, a shared credit document is a review candidate.
     # A credit spanning multiple lines of the SAME PO is not cross-PO reuse.
-    from .procurement_cross_po_r471 import (
-        cross_po_credit_source_rows, cross_po_invoice_source_rows,
-        cross_po_receipt_source_rows, cross_po_return_source_rows,
-    )
+    from .procurement_cross_po_r471 import cross_po_all_document_source_rows
     document_key = document_key_session(engine.key)
     invoice_event_type = lambda row: event_kind(row, source="invoice")
-    cross_po_credit_refs = cross_po_credit_source_rows(
-        groups[1], document_key=document_key, event_type=invoice_event_type)
-    cross_po_invoice_refs = cross_po_invoice_source_rows(
-        groups[1], document_key=document_key, event_type=invoice_event_type)
     receipt_event_type = lambda row: event_kind(row, source="receipt")
-    cross_po_receipt_refs = cross_po_receipt_source_rows(
-        groups[2], document_key=document_key, event_type=receipt_event_type)
-    cross_po_return_refs = cross_po_return_source_rows(
-        groups[2], document_key=document_key, event_type=receipt_event_type)
+    # One deterministic classification per input row, instead of four
+    # independent passes that could disagree under a stateful classifier.
+    cross_po_refs = cross_po_all_document_source_rows(
+        groups[1], groups[2], document_key=document_key,
+        invoice_event_type=invoice_event_type,
+        receipt_event_type=receipt_event_type)
 
     report = []
     for po_id, line in sorted(set().union(*(set(group) for group in groups))):
@@ -465,16 +460,16 @@ def reconcile_procurement(po: str, invoices: str, receipts: str, folder: str,
                                      unit_cost=engine.unit_cost, identifier=engine.key,
                                      policy=policy)
         source_records = [*ordered, *inv, *received]
-        cross_po_credit_sources = cross_po_credit_refs.get((po_id, line), ())
+        cross_po_credit_sources = cross_po_refs["credit"].get((po_id, line), ())
         if cross_po_credit_sources:
             flags.insert(0, "credit_document_cross_po_review")
-        cross_po_invoice_sources = cross_po_invoice_refs.get((po_id, line), ())
+        cross_po_invoice_sources = cross_po_refs["invoice"].get((po_id, line), ())
         if cross_po_invoice_sources:
             flags.insert(0, "invoice_document_cross_po_review")
-        cross_po_receipt_sources = cross_po_receipt_refs.get((po_id, line), ())
+        cross_po_receipt_sources = cross_po_refs["receipt"].get((po_id, line), ())
         if cross_po_receipt_sources:
             flags.insert(0, "receipt_document_cross_po_review")
-        cross_po_return_sources = cross_po_return_refs.get((po_id, line), ())
+        cross_po_return_sources = cross_po_refs["return"].get((po_id, line), ())
         if cross_po_return_sources:
             flags.insert(0, "return_document_cross_po_review")
         if normalized_collision(source_records, "po_number"):
