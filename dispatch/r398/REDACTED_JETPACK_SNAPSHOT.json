@@ -1,0 +1,44 @@
+{
+  "observed_at_utc": "2026-11-16T10:35:47Z",
+  "site": "https://finalvestige.com",
+  "blog_id": 256784396,
+  "newsletter": {
+    "enabled": true,
+    "site_can_send": true,
+    "auto_new_post_email": false,
+    "email_content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "has_52_page_welcome_configured": true,
+    "actual_welcome_delivered": "UNVERIFIED",
+    "last_five_post_sends": "never_sent_opted_out"
+  },
+  "subscriptions": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "paid": 0,
+    "counting_warning": "confirmed and unconfirmed are NOT additive; actual unique email-eligible receiving inboxes UNVERIFIED",
+    "eligible_inboxes": "UNVERIFIED",
+    "subscriber_addresses_included": false
+  },
+  "live_focus_source": {
+    "page_modified": "2026-11-05T17:44:02",
+    "page": "https://finalvestige.com/focus/",
+    "has_query_driven_gift_reveal": true,
+    "has_is_subscriber_class_reveal": true,
+    "download_event_name": "focus_pdf_click",
+    "download_location_attribute": "after_signup",
+    "source_excerpt_git_blob_sha": "4ba08134ca4586e0d7b3c420020f98571277754e"
+  },
+  "disallowed_actions": [
+    "send",
+    "test_send",
+    "publish",
+    "import",
+    "settings_update",
+    "affiliate_activate",
+    "merge"
+  ]
+}
