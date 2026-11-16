@@ -43,10 +43,10 @@ export function confirmedSignupCount(events) {
   }
   return count;
 }
-export function settledNetPer1000({qualified_human_sessions, sessions_audited, settlements} = {}) {
-  if (sessions_audited !== true || !Number.isSafeInteger(qualified_human_sessions) ||
+export function settledNetPer1000({qualified_human_sessions, sessions_audited, ledger_audited, settlements} = {}) {
+  if (sessions_audited !== true || ledger_audited !== true || !Number.isSafeInteger(qualified_human_sessions) ||
       qualified_human_sessions <= 0 || !Array.isArray(settlements))
-    return Object.freeze({status:"NOT_COMPUTABLE",reason:"audited denominator or ledger missing"});
+    return Object.freeze({status:"NOT_COMPUTABLE",reason:"audited denominator or independently reconciled ledger missing"});
   const ids = new Set(); let netCents=0;
   for (const s of settlements) {
     if (!s || s.provider_verified !== true || s.status !== "settled" ||
