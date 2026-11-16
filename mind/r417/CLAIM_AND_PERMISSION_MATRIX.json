@@ -1,0 +1,314 @@
+{
+  "run": "R417",
+  "as_of": "2026-11-15",
+  "source_urls": {
+    "study": "https://doi.org/10.2190/YPC4-WMK6-XU4R-KUV9",
+    "review": "https://doi.org/10.1080/00207144.2025.2508410",
+    "myths": "https://doi.org/10.1002/acp.3730",
+    "false": "https://doi.org/10.1002/cpp.2567",
+    "binaural": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/",
+    "puy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "focus": "https://finalvestige.com/focus/",
+    "journal": "https://finalvestige.com/blog/",
+    "inspire": "https://inspire3.com/",
+    "portal": "https://affiliates.inspire3.com/",
+    "zen": "https://zen12.com/about",
+    "zenmain": "https://zen12.com/",
+    "zenorder": "https://zen12.com/order",
+    "zencoupon": "https://zen12.com/secret/",
+    "total": "https://hypnosislive.com/mental-skills/total-focus",
+    "shot": "https://brainwaveshots.com/focus-shot",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "disclosure": "https://finalvestige.com/affiliate-disclosure/",
+    "standards": "https://finalvestige.com/editorial-standards/"
+  },
+  "claims": [
+    {
+      "claim": "2025 hypnosis retrieval review",
+      "classifier": "review-abstract",
+      "url": "https://doi.org/10.1080/00207144.2025.2508410",
+      "caution": "No accurate recall benefit in reviewed studies; scope limited"
+    },
+    {
+      "claim": "2002 DRM comparison groups",
+      "classifier": "study-abstract",
+      "url": "https://doi.org/10.2190/YPC4-WMK6-XU4R-KUV9",
+      "caution": "N=21 and N=20; false recognition in both; no hypnosis-specific impairment in this study"
+    },
+    {
+      "claim": "21 hypnosis myths",
+      "classifier": "review",
+      "url": "https://doi.org/10.1002/acp.3730",
+      "caution": "Not a product trial"
+    },
+    {
+      "claim": "false-memory induction",
+      "classifier": "systematic-review",
+      "url": "https://doi.org/10.1002/cpp.2567",
+      "caution": "Heterogeneous definitions"
+    },
+    {
+      "claim": "binaural entrainment EEG",
+      "classifier": "systematic-review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/",
+      "caution": "Inconsistent, not commercial product efficacy"
+    },
+    {
+      "claim": "Puységur archive",
+      "classifier": "live-editorial",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "caution": "Historical dossier not scientific confirmation"
+    },
+    {
+      "claim": "Franklin historical investigation",
+      "classifier": "live-editorial",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "caution": "Evidence of historical methodology"
+    },
+    {
+      "claim": "Change Blindness article",
+      "classifier": "live-editorial",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "caution": "Already published"
+    },
+    {
+      "claim": "free Focus Fieldbook",
+      "classifier": "live-resource",
+      "url": "https://finalvestige.com/focus/",
+      "caution": "Single Jetpack list, free not paid"
+    },
+    {
+      "claim": "live journal count",
+      "classifier": "live-inventory",
+      "url": "https://finalvestige.com/blog/",
+      "caution": "66 displayed Nov 15; not fixed 61"
+    },
+    {
+      "claim": "Zen12 twelve levels/four styles",
+      "classifier": "seller-description",
+      "url": "https://zen12.com/about",
+      "caution": "Feature not efficacy"
+    },
+    {
+      "claim": "Zen12 48 MP3s",
+      "classifier": "seller-description",
+      "url": "https://zen12.com/",
+      "caution": "Main full package"
+    },
+    {
+      "claim": "Zen12 discounted order",
+      "classifier": "seller-price-not-referral",
+      "url": "https://zen12.com/order",
+      "caution": "Not assured for FV"
+    },
+    {
+      "claim": "Zen12 coupon sales route",
+      "classifier": "seller-promotion",
+      "url": "https://zen12.com/secret/",
+      "caution": "No urgency adopted"
+    },
+    {
+      "claim": "Zen12 hour-equivalence",
+      "classifier": "unsupported-product-claim",
+      "url": "https://zen12.com/about",
+      "caution": "Excluded from FV claim"
+    },
+    {
+      "claim": "Zen12 brainwave effects",
+      "classifier": "unsupported-product-claim",
+      "url": "https://zen12.com/",
+      "caution": "Excluded from FV claim"
+    },
+    {
+      "claim": "Total Focus 33-min 47MB",
+      "classifier": "seller-description",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "caution": "Single recording"
+    },
+    {
+      "claim": "Total Focus instant concentration",
+      "classifier": "unsupported-product-claim",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "caution": "Excluded"
+    },
+    {
+      "claim": "Focus Shot 15 and 30 min",
+      "classifier": "seller-description",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "caution": "Technical format"
+    },
+    {
+      "claim": "Focus Shot hours of focus",
+      "classifier": "unsupported-product-claim",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "caution": "Excluded"
+    },
+    {
+      "claim": "Inspire3 public program",
+      "classifier": "public-portal",
+      "url": "https://affiliates.inspire3.com/",
+      "caution": "No named FV acceptance"
+    },
+    {
+      "claim": "FTC disclosure standard",
+      "classifier": "guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "caution": "Adjacent material connection"
+    },
+    {
+      "claim": "FTC health claim standard",
+      "classifier": "guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "caution": "Product-specific adequate substantiation needed"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "named_publisher_approval",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "specific_sku_eligible",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "website_channel_approval",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "social_channel_approval",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "email_channel_approval_if_used",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "issued_earning_link",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "affiliate_attribution_window",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "partner_tracking_terms",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "approved_claims",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "approved_creatives_rights",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "actual_referred_checkout",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "current_applicable_price",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "written_returns_terms",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "settlement_schedule",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "refund_fee_reconciliation",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "fv_owned_paid_sku_exists",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "fv_owned_rights_verified",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "fv_owned_delivery_verified",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "fv_owned_returns_verified",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "published_grok_asset_ids",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "grok_link_placement_rights",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "existing_jetpack_provider_confirmation",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "single_analytics_script_verified",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "browser_wcag_qa",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "mobile_layout_qa",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "wordpress_sanitizer_qa",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "playable_local_video_qa",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HOLD",
+      "reason": "Independent release evidence not authenticated"
+    }
+  ],
+  "is_live": false,
+  "approved_merchant_url": null,
+  "verified_sales": null,
+  "realized_net_per_1000_qualified_humans": null
+}
