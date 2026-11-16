@@ -597,11 +597,11 @@ class OfflineRegressionGateR459(unittest.TestCase):
 
     def test_r469_real_expected_failure_is_hold_in_both_python_modes(self):
         fixture = (
-            "import unittest\\n"
-            "class KnownBroken(unittest.TestCase):\\n"
-            "    @unittest.expectedFailure\\n"
-            "    def test_wrong_cents(self):\\n"
-            "        self.assertEqual(1, 2)\\n"
+            "import unittest\n"
+            "class KnownBroken(unittest.TestCase):\n"
+            "    @unittest.expectedFailure\n"
+            "    def test_wrong_cents(self):\n"
+            "        self.assertEqual(1, 2)\n"
         )
         for optimized in (False, True):
             with self.subTest(optimized=optimized):
@@ -618,15 +618,15 @@ class OfflineRegressionGateR459(unittest.TestCase):
 
     def test_r469_expected_failure_only_in_optimized_mode_is_hold(self):
         fixture = (
-            "import unittest\\n"
-            "class ModeSpecific(unittest.TestCase):\\n"
-            "    if __debug__:\\n"
-            "        def test_decimals(self):\\n"
-            "            self.assertEqual(1, 1)\\n"
-            "    else:\\n"
-            "        @unittest.expectedFailure\\n"
-            "        def test_decimals(self):\\n"
-            "            self.assertEqual(1, 2)\\n"
+            "import unittest\n"
+            "class ModeSpecific(unittest.TestCase):\n"
+            "    if __debug__:\n"
+            "        def test_decimals(self):\n"
+            "            self.assertEqual(1, 1)\n"
+            "    else:\n"
+            "        @unittest.expectedFailure\n"
+            "        def test_decimals(self):\n"
+            "            self.assertEqual(1, 2)\n"
         )
         normal, normal_evidence = self._r469_real_child(
             fixture, receipt_name="normal-r469.json")
@@ -642,15 +642,15 @@ class OfflineRegressionGateR459(unittest.TestCase):
         # expected failure must still block the complete six-app gate.
         for name in gate.TESTS:
             floor = gate.PRODUCT_METHOD_FLOORS.get(name, 1)
-            content = "import unittest\\nclass ProductFixture(unittest.TestCase):\\n"
+            content = "import unittest\nclass ProductFixture(unittest.TestCase):\n"
             for index in range(floor):
                 if name == gate.PRODUCT_TESTS[0] and index == floor - 1:
-                    content += "    @unittest.expectedFailure\\n"
+                    content += "    @unittest.expectedFailure\n"
                     assertion = "self.assertEqual(1, 2)"
                 else:
                     assertion = "self.assertEqual(1, 1)"
-                content += (f"    def test_financial_{index}(self):\\n"
-                            f"        {assertion}\\n")
+                content += (f"    def test_financial_{index}(self):\n"
+                            f"        {assertion}\n")
             (self.root / "tests" / name).write_text(
                 content, encoding="utf-8")
         with self.assertRaisesRegex(gate.LocalGateError,
@@ -659,11 +659,11 @@ class OfflineRegressionGateR459(unittest.TestCase):
 
     def test_r469_unexpected_success_also_remains_hold(self):
         fixture = (
-            "import unittest\\n"
-            "class ChangedExpectedFailure(unittest.TestCase):\\n"
-            "    @unittest.expectedFailure\\n"
-            "    def test_now_passes(self):\\n"
-            "        self.assertEqual(1, 1)\\n"
+            "import unittest\n"
+            "class ChangedExpectedFailure(unittest.TestCase):\n"
+            "    @unittest.expectedFailure\n"
+            "    def test_now_passes(self):\n"
+            "        self.assertEqual(1, 1)\n"
         )
         status, evidence = self._r469_real_child(
             fixture, receipt_name="unexpected-success-r469.json")
