@@ -31,7 +31,7 @@ function pageSafety(s) {
   assert.match(s,/:focus-visible/);
   assert.match(s, /prefers-reduced-motion/);
   assert.match(s, /Purchase link unavailable — approval pending/);
-  assert.match(s, /<button[^>]*\bdisabled\b[^>]*>Purchase link unavailable/);
+  assert.match(s, /<button\b(?=[^>]*\sdisabled(?:\s|=|>))[^>]*>Purchase link unavailable/);
   assert.match(s, /aria-disabled="true"/);
   assert.match(s, /If you purchase through a future earning link on this page, Final Vestige may earn a commission at no additional cost to you\./);
   assert.match(s, /We have not verified named publisher acceptance/);
