@@ -1,6 +1,6 @@
 # The Choice You Didn't Make: When an Answer Is Swapped and a Reason Appears
 
-*Final Vestige Mind & Perception Archive · original editorial manuscript · source-only draft · November 16, 2026*
+*Final Vestige Mind & Perception Archive · original editorial manuscript · source-only draft · November 16, 2026 · Commercial status: HARD HOLD*
 
 A shopper tastes two jams, chooses one, and is handed the other. When asked why that flavor won, some shoppers offer a perfectly intelligible explanation. The problem is that the thing being explained is not the thing chosen. This is not a parable about gullibility. It is an experimental result that poses a hard question for anybody who works with testimony, evidence—or persuasion.
 
