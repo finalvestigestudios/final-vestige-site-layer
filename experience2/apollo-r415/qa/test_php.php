@@ -36,11 +36,24 @@ $bad=$src;array_pop($bad);
 t(fv_r415_markup(1,$bad)===fv_r415_fallback(),'incomplete catalog blocked');
 $bad=$src;$bad[1][1]='<script>alert(1)</script>';
 t(strpos(fv_r415_markup(1,$bad),'&lt;script&gt;')!==false,'source text escaped');
-$temp=sys_get_temp_dir().'/fv-r415-'.bin2hex(random_bytes(5));mkdir($temp);mkdir($temp.'/assets');
-copy($root.'/assets/journey.css',$temp.'/assets/journey.css');
-t(!fv_r415_verified($temp),'missing dependency fail-closed');
-copy($root.'/staging-journey.php',$temp.'/staging-journey.php');
-$original=file_get_contents($temp.'/assets/journey.css');file_put_contents($temp.'/assets/journey.css',$original.'/*tamper*/');
-t(!fv_r415_verified($temp),'modified stylesheet blocked');
-unlink($temp.'/assets/journey.css');unlink($temp.'/staging-journey.php');rmdir($temp.'/assets');rmdir($temp);
+$sandbox=sys_get_temp_dir().'/fv-r415-'.bin2hex(random_bytes(5));
+$testRoot=$sandbox.'/apollo-r415';
+foreach (array($sandbox,$testRoot,$testRoot.'/assets',$sandbox.'/apollo-r411',$sandbox.'/apollo-r414',$sandbox.'/apollo-r414/assets') as $dir) mkdir($dir);
+$copies=array(
+    $root.'/assets/journey.css'=>$testRoot.'/assets/journey.css',
+    dirname($root).'/apollo-r411/staging-source-drawer.php'=>$sandbox.'/apollo-r411/staging-source-drawer.php',
+    dirname($root).'/apollo-r414/staging-archive-gallery.php'=>$sandbox.'/apollo-r414/staging-archive-gallery.php',
+    dirname($root).'/apollo-r414/assets/archive-gallery.css'=>$sandbox.'/apollo-r414/assets/archive-gallery.css',
+);
+foreach ($copies as $from=>$to) copy($from,$to);
+t(fv_r415_verified($testRoot),'complete isolated dependency fixture validates before mutation');
+$original=file_get_contents($testRoot.'/assets/journey.css');
+file_put_contents($testRoot.'/assets/journey.css',$original.'/*tamper*/');
+t(!fv_r415_verified($testRoot),'modified stylesheet alone blocked despite complete valid dependencies');
+file_put_contents($testRoot.'/assets/journey.css',$original);
+$originalCatalog=file_get_contents($sandbox.'/apollo-r411/staging-source-drawer.php');
+file_put_contents($sandbox.'/apollo-r411/staging-source-drawer.php',$originalCatalog.'/*tamper*/');
+t(!fv_r415_verified($testRoot),'modified NASA source custody alone blocked');
+foreach ($copies as $to) unlink($to);
+foreach (array($sandbox.'/apollo-r414/assets',$sandbox.'/apollo-r414',$sandbox.'/apollo-r411',$testRoot.'/assets',$testRoot,$sandbox) as $dir) rmdir($dir);
 print "PASS $assert/".$assert." R415 PHP assertions\n";
