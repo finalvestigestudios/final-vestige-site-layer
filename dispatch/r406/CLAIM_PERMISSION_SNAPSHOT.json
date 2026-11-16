@@ -1,0 +1,105 @@
+{
+  "checked_utc": "2026-11-16T19:30:26Z",
+  "source_of_truth": "official seller pages; authenticated WordPress read-only; recognized scientific and federal sources",
+  "issue_number": "05",
+  "status": "NOT_ADOPTED_HOLD_UNSENT",
+  "four_editorial_two_commercial": [
+    "03",
+    "05"
+  ],
+  "canonical_pr": 175,
+  "stack_base_pr": 2771,
+  "seller": "Hypnosis Live",
+  "sku": "Total Focus",
+  "sale_page": "https://hypnosislive.com/mental-skills/total-focus",
+  "FAQ": "https://hypnosislive.com/faq",
+  "vendor_claim_review": [
+    {
+      "claim": "33-minute, 47 MB downloadable audio by J.A. Amos",
+      "kind": "SELLER_FORMAT_ONLY",
+      "copy": "accurately attribute to current seller listing, no delivered product test"
+    },
+    {
+      "claim": "100% razor-sharp focus or brain reprogramming",
+      "kind": "SELLER_OUTCOME",
+      "copy": "DO_NOT_ADOPT; product-specific adequate evidence absent"
+    },
+    {
+      "claim": "single SKU observed $24.44; crossed out $29.95; bundled per-item $19.95",
+      "kind": "VOLATILE_PRICE",
+      "copy": "OMIT_FROM_ISSUE; referral price unknown"
+    },
+    {
+      "claim": "14-day refund promise versus FAQ limit of five sessions per year",
+      "kind": "MATERIAL_TERMS_QUALIFICATION",
+      "copy": "OMIT GUARANTEE; verify full referred checkout and policy"
+    },
+    {
+      "claim": "Affiliate portal advertises generic special earning links",
+      "kind": "PROGRAM_GENERAL",
+      "copy": "NOT proof of named FV approval, approved creative or email authorization"
+    }
+  ],
+  "publisher_approval": {
+    "named_account": null,
+    "specific_sku_email_permission": null,
+    "issued_earning_url": null,
+    "live_vetted_guide_url": null,
+    "approved_partner_creative": null,
+    "current_referred_checkout_terms": null
+  },
+  "subscriber_snapshot": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "combined_count_invalid": true,
+    "unique_email_eligible_inboxes": null,
+    "actual_welcome_received": null
+  },
+  "email_release": {
+    "native_preview": false,
+    "valid_FV_postal_address": false,
+    "functioning_unsubscribe": false,
+    "founder_campaign_approval": false
+  },
+  "commercial_result": {
+    "audited_qualified_human_sessions": null,
+    "settled_order_count": null,
+    "realized_net_revenue": null,
+    "revenue_per_1000_qualified_sessions": null
+  },
+  "sources": [
+    {
+      "name": "Wellcome Collection: James Braid, Neurypnology, 1843",
+      "url": "https://wellcomecollection.org/works/g59kkex8"
+    },
+    {
+      "name": "American Psychological Association Division 30, hypnosis definitions",
+      "url": "https://www.apadivisions.org/division-30/about/index"
+    },
+    {
+      "name": "NCCIH: Hypnosis, overview of clinical evidence",
+      "url": "https://www.nccih.nih.gov/health/hypnosis"
+    },
+    {
+      "name": "Hypnosis Live: Total Focus official product sales page",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "name": "Hypnosis Live: official FAQ, refund and pricing limitations",
+      "url": "https://hypnosislive.com/faq"
+    },
+    {
+      "name": "Inspire3: public affiliate portal (not FV approval)",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "name": "FTC: health-product advertising claims and substantiation",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "name": "FTC: CAN-SPAM commercial email compliance",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    }
+  ]
+}
