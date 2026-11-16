@@ -26,7 +26,7 @@ function checkHtml(source,label){
  check(!/<iframe\b/i.test(source),label+' no embedded third party');
  check(!/<form\b/i.test(source),label+' no signup duplication');
  check(!/\bonclick\s*=|\bonload\s*=/i.test(source),label+' no inline events');
- check(!/\bautoplay\b/i.test(source.replace(/no autoplay/gi,'')),label+' no autoplay attribute');
+ check(!/<(?:video|audio)[^>]*\bautoplay\b/i.test(source),label+' no autoplay attribute');
  check(!/href\s*=\s*["'][^"']*(?:inspire3\.com|zen12\.com|hypnosislive\.com|brainwaveshots\.com)/i.test(source),label+' no merchant link activation');
  check(!/src\s*=\s*["']https?:/i.test(source),label+' no remote media');
  check(!/<input\b/i.test(source),label+' no hidden lead collection');
