@@ -61,7 +61,7 @@ t('film explicitly unencoded',/not encoded/i.test(B));
 t('film original svg poster',/<svg\b[\s\S]*?<\/svg>/.test(B));
 t('transcript present',/Read the full 42-second narration transcript/.test(B));
 t('caption WebVTT header',vtt.startsWith('WEBVTT\n'));
-const cues=[...vtt.matchAll(/(\d\d):(\d\d):(\d\d)\.(\d{3}) --> (\d\d):(\d\d):(\d\d)\.(\d{3})/g)].map(x=>{const n=v=>Number(v[1])*3600000+Number(v[2])*60000+Number(v[3])*1000+Number(v[4]);return [n(x.slice(1,5)),n(x.slice(5,9))]});
+const cues=[...vtt.matchAll(/(\d\d):(\d\d):(\d\d)\.(\d{3}) --> (\d\d):(\d\d):(\d\d)\.(\d{3})/g)].map(x=>{const n=v=>Number(v[0])*3600000+Number(v[1])*60000+Number(v[2])*1000+Number(v[3]);return [n(x.slice(1,5)),n(x.slice(5,9))]});
 t('six captions',cues.length===6);
 t('captions continuous zero to 42 seconds',cues.length===6&&cues[0][0]===0&&cues.at(-1)[1]===42000&&cues.every((r,i)=>r[1]>r[0]&&(!i||r[0]===cues[i-1][1])));
 t('no outward unapproved media download',!/<source\b|src="https?:\/\//i.test(B));
