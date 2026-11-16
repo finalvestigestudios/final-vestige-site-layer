@@ -33,7 +33,7 @@ class ForeignOffsetFanoutR480Tests(unittest.TestCase):
         with patch.object(index, "_source_row_sort_key", side_effect=real) as tracked:
             got = review(invoice, {})
         self.assertEqual(len(got["credit"]), 30)
-        self.assertEqual(tracked.call_count, 31)  # 1 preflight + 30 output sorts
+        self.assertEqual(tracked.call_count, 1)  # R481: cached once, reused by 30 output sorts
 
     def test_many_source_rows_are_deduplicated_before_fanout(self):
         inv = {("ORIG", "1"): [row("invoice", "I", physical="10"),
