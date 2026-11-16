@@ -29,6 +29,10 @@ TESTS = (
     "test_csv_safe_cell_zero_copy_r456.py",
     "test_csv_incremental_render_budget_r457.py",
     "test_csv_bounded_utf8_witness_r458.py",
+    # Verify the verifier itself: R463's source-custody tests and R460's
+    # fail-closed receipt tests were only exercised in hosted CI, not here.
+    "test_offline_regression_gate_r459.py",
+    "test_offline_smoke_receipt_r460.py",
     "test_source_digest_binding_r461.py",
     "test_private_json_receipt_r462.py",
 )
@@ -40,10 +44,9 @@ SOURCE_INPUTS = (
     "offline_source_smoke_r408.py",
     "fvs_suite/atomic_reports.py",
     "fvs_suite/engine.py",
+    # Each mandatory test source is hashed exactly once, including this
+    # runner's own regression tests. A missing/edited test is HOLD.
     *("tests/" + name for name in TESTS),
-    "tests/test_offline_regression_gate_r459.py",
-    "tests/test_offline_smoke_receipt_r460.py",
-    "tests/test_source_digest_binding_r461.py",
 )
 TIMEOUT_TEST_SECONDS = 120
 TIMEOUT_SMOKE_SECONDS = 330
@@ -201,6 +204,11 @@ def run_gate(desktop: Path) -> dict[str, object]:
     before = _source_fingerprint(desktop)
     full_before = _six_source_digest(desktop)
     modes, tests = _run_tests(desktop)
+    # A successful receipt from only the older six modules must not pass the
+    # new eight-module verification contract, even if source smokes pass.
+    if (type(modes) is not int or modes != 2 * len(TESTS)
+            or type(tests) is not int or tests < modes):
+        raise LocalGateError("Local source regression coverage rejected")
     if (_source_fingerprint(desktop) != before or
             _six_source_digest(desktop) != full_before):
         raise LocalGateError("Local regression sources changed during tests")
