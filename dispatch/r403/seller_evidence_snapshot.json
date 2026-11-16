@@ -1,0 +1,81 @@
+{
+  "as_of": "2026-11-16T16:40:00Z",
+  "source": "LIVE_READ_ONLY",
+  "original_campaign": {
+    "pr": 175,
+    "sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "allocation": {
+      "editorial": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "commercial": [
+        3,
+        5
+      ]
+    },
+    "all_sends": "HOLD_UNSENT"
+  },
+  "current_newsletter": {
+    "enabled": true,
+    "auto_post_emails": false,
+    "content_format": "full",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "wpcom_followers": 3,
+    "direct_email_followers": 0,
+    "recipient_eligibility": "UNKNOWN",
+    "welcome_configured": true,
+    "welcome_receipt": "UNVERIFIED",
+    "actual_preview": "NOT_PERFORMED"
+  },
+  "merchant_snapshots": [
+    {
+      "sku": "hypnosislive_total_focus",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "source_type": "LIVE_PUBLIC_SELLER_PAGE",
+      "observed_at": "2026-11-16",
+      "current_public_single_price_usd": "24.44",
+      "list_price_usd": "29.95",
+      "bundle_per_item_price_usd": "19.95",
+      "audio_duration_minutes": 33,
+      "audio_file_size_mb": 47,
+      "refund_seller_claim_days": 14,
+      "previous_cached_price_usd": "17.95",
+      "warning": "Cached older search result differed; public prices are NOT affiliate referral prices and must not be copied to email"
+    },
+    {
+      "sku": "zen12_premium",
+      "source_url": "https://zen12.com/",
+      "source_type": "LIVE_PUBLIC_SELLER_PAGE",
+      "observed_at": "2026-11-16",
+      "public_premium_usd": "87.99",
+      "other_seller_route_url": "https://zen12.com/secret/",
+      "other_route_advertised_usd": "37",
+      "format": "12 levels, four styles, 48 MP3s (seller description)",
+      "warning": "Different routes/promotions; checkout and permission unverified"
+    }
+  ],
+  "publisher_proofs": {
+    "named_inspire3_acceptance": "NOT_VERIFIED",
+    "per_product_email_permission": "NOT_VERIFIED",
+    "issued_tracking_link": "NOT_VERIFIED",
+    "approved_creative": "NOT_VERIFIED",
+    "exact_referral_checkout": "NOT_VERIFIED",
+    "guide_status": "NOT_LIVE_VERIFIED",
+    "postal_address": "NOT_VERIFIED",
+    "functional_unsubscribe": "NOT_VERIFIED",
+    "actual_received_welcome": "NOT_VERIFIED",
+    "independent_settled_commissions": "UNAVAILABLE"
+  },
+  "outcomes": {
+    "net_revenue_per_1000_qualified_sessions": "NOT_COMPUTABLE",
+    "qualified_human_sessions": "UNAVAILABLE",
+    "settled_order_count": "UNAVAILABLE"
+  },
+  "no_subscriber_addresses": true,
+  "no_affiliate_links": true
+}
