@@ -1,0 +1,663 @@
+{
+  "schema_version": "R415-1",
+  "created_at_pt": "2026-11-15",
+  "vertical": "Mind & Perception",
+  "editorial_status": "UNPUBLISHED_SOURCE_ONLY",
+  "commerce_status": "HARD_HOLD",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://researchers.mq.edu.au/en/publications/zoning-out-while-reading-evidence-for-dissociations-between-exper/",
+      "scope": "2004 original book-chapter record"
+    },
+    {
+      "id": "S02",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17073528/",
+      "scope": "2006 mind-wandering review"
+    },
+    {
+      "id": "S03",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17874601/",
+      "scope": "2007 meta-awareness task study"
+    },
+    {
+      "id": "S04",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23538911/",
+      "scope": "2013 randomized two-week mindfulness training"
+    },
+    {
+      "id": "S05",
+      "url": "https://pure.york.ac.uk/portal/en/publications/mindfulness-and-mind-wandering-finding-convergence-through-opposi/",
+      "scope": "2012 study with mindful-breathing manipulation"
+    },
+    {
+      "id": "S06",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25089941/",
+      "scope": "2014 theory-driven meta-analysis"
+    },
+    {
+      "id": "S07",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25293689/",
+      "scope": "2015 mind-wandering synthesis"
+    },
+    {
+      "id": "S08",
+      "url": "https://inspire3.com/",
+      "scope": "public official brand catalog"
+    },
+    {
+      "id": "S09",
+      "url": "https://zen12.com/about",
+      "scope": "official Zen12 format and efficacy seller wording"
+    },
+    {
+      "id": "S10",
+      "url": "https://zen12.com/order",
+      "scope": "public Zen12 offer page; current referred price not guaranteed"
+    },
+    {
+      "id": "S11",
+      "url": "https://zen12.com/secret/",
+      "scope": "different public coupon route; not approved FV offer"
+    },
+    {
+      "id": "S12",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "official distinct Total Focus seller page"
+    },
+    {
+      "id": "S13",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "scope": "official Focus Shot seller page"
+    },
+    {
+      "id": "S14",
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "public affiliate sign-up; insufficient to prove named account approval"
+    },
+    {
+      "id": "S15",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "FTC endorsement material-connection guidance"
+    },
+    {
+      "id": "S16",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "FTC health-related product claims substantiation guidance"
+    },
+    {
+      "id": "S17",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "existing free 52-page Focus Fieldbook entry point"
+    },
+    {
+      "id": "S18",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "FV source-controlled historical archive"
+    },
+    {
+      "id": "S19",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "published mind-perception bridge"
+    },
+    {
+      "id": "S20",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "scope": "FV editorial standard policy"
+    },
+    {
+      "id": "S21",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "scope": "FV existing affiliate policy"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Reading may continue behaviorally during unrecognized mind wandering",
+      "status": "supported_research",
+      "support": [
+        "S01",
+        "S03"
+      ],
+      "decision": "include",
+      "limit": "not evidence of clinical impairment"
+    },
+    {
+      "id": "C02",
+      "text": "Mind wandering can involve internally directed attention",
+      "status": "supported_research",
+      "support": [
+        "S02",
+        "S07"
+      ],
+      "decision": "include",
+      "limit": "does not make all off-task thought undesirable"
+    },
+    {
+      "id": "C03",
+      "text": "Meta-awareness can differ from ongoing experience",
+      "status": "supported_research",
+      "support": [
+        "S01",
+        "S03"
+      ],
+      "decision": "include",
+      "limit": ""
+    },
+    {
+      "id": "C04",
+      "text": "Mind wandering always causes lost comprehension",
+      "status": "overbroad",
+      "support": [
+        "S01",
+        "S06",
+        "S07"
+      ],
+      "decision": "exclude",
+      "limit": ""
+    },
+    {
+      "id": "C05",
+      "text": "Mind wandering sometimes supports planning or creativity",
+      "status": "review_synthesis",
+      "support": [
+        "S07"
+      ],
+      "decision": "qualified",
+      "limit": "heterogeneous contexts"
+    },
+    {
+      "id": "C06",
+      "text": "The 2013 trial used two weeks of mindfulness training",
+      "status": "supported_research",
+      "support": [
+        "S04"
+      ],
+      "decision": "include",
+      "limit": ""
+    },
+    {
+      "id": "C07",
+      "text": "The 2013 trial showed particular GRE reading and working memory outcomes",
+      "status": "supported_research",
+      "support": [
+        "S04"
+      ],
+      "decision": "qualified",
+      "limit": "no brand-specific extension"
+    },
+    {
+      "id": "C08",
+      "text": "Eight minutes mindful breathing affected the study-specific attention measure",
+      "status": "supported_research",
+      "support": [
+        "S05"
+      ],
+      "decision": "qualified",
+      "limit": "not a consumer-product guarantee"
+    },
+    {
+      "id": "C09",
+      "text": "Any twelve-minute MP3 equals an hour of meditation",
+      "status": "seller_claim_unsubstantiated",
+      "support": [
+        "S09",
+        "S04"
+      ],
+      "decision": "exclude",
+      "limit": "no product-specific equivalence evidence established"
+    },
+    {
+      "id": "C10",
+      "text": "Zen12 official catalog identifies twelve levels",
+      "status": "seller_description",
+      "support": [
+        "S09",
+        "S10"
+      ],
+      "decision": "qualified",
+      "limit": "bundle must be rechecked on actual referral route"
+    },
+    {
+      "id": "C11",
+      "text": "Zen12 order route advertises 48 MP3s",
+      "status": "seller_description",
+      "support": [
+        "S10"
+      ],
+      "decision": "qualified",
+      "limit": "no independent package testing"
+    },
+    {
+      "id": "C12",
+      "text": "Zen12 sessions are marketed as twelve minutes",
+      "status": "seller_description",
+      "support": [
+        "S09"
+      ],
+      "decision": "qualified",
+      "limit": ""
+    },
+    {
+      "id": "C13",
+      "text": "Zen12 brainwave sounds automatically cause a relaxation state",
+      "status": "seller_claim_unsubstantiated",
+      "support": [
+        "S09"
+      ],
+      "decision": "exclude",
+      "limit": ""
+    },
+    {
+      "id": "C14",
+      "text": "Zen12 exact authorized Final Vestige final price",
+      "status": "unknown",
+      "support": [
+        "S10",
+        "S11"
+      ],
+      "decision": "withhold",
+      "limit": "public checkout routes differ"
+    },
+    {
+      "id": "C15",
+      "text": "Zen12 guarantee fully applies to any specific referral",
+      "status": "unverified_terms",
+      "support": [
+        "S10",
+        "S11"
+      ],
+      "decision": "withhold",
+      "limit": "final terms and geography not checked"
+    },
+    {
+      "id": "C16",
+      "text": "Hypnosis Live Total Focus describes one 33-minute recording",
+      "status": "seller_description",
+      "support": [
+        "S12"
+      ],
+      "decision": "qualified",
+      "limit": ""
+    },
+    {
+      "id": "C17",
+      "text": "Total Focus proven to reprogram brain or give limitless concentration",
+      "status": "seller_claim_unsubstantiated",
+      "support": [
+        "S12"
+      ],
+      "decision": "exclude",
+      "limit": ""
+    },
+    {
+      "id": "C18",
+      "text": "Focus Shot includes 15-minute and 30-minute formats",
+      "status": "seller_description",
+      "support": [
+        "S13"
+      ],
+      "decision": "qualified",
+      "limit": ""
+    },
+    {
+      "id": "C19",
+      "text": "Focus Shot ensures instant laser focus for hours",
+      "status": "seller_claim_unsubstantiated",
+      "support": [
+        "S13"
+      ],
+      "decision": "exclude",
+      "limit": ""
+    },
+    {
+      "id": "C20",
+      "text": "The Inspire3 affiliate portal advertises an affiliate program",
+      "status": "public_portal",
+      "support": [
+        "S14"
+      ],
+      "decision": "include_as_context",
+      "limit": "not publisher approval"
+    },
+    {
+      "id": "C21",
+      "text": "Final Vestige is a named approved Inspire3 affiliate",
+      "status": "permission_missing",
+      "support": [
+        "S14"
+      ],
+      "decision": "withhold",
+      "limit": ""
+    },
+    {
+      "id": "C22",
+      "text": "Final Vestige is authorized to email/social-promote Zen12",
+      "status": "permission_missing",
+      "support": [
+        "S14"
+      ],
+      "decision": "withhold",
+      "limit": ""
+    },
+    {
+      "id": "C23",
+      "text": "Final Vestige has a verified tracking/referral URL",
+      "status": "permission_missing",
+      "support": [
+        "S14"
+      ],
+      "decision": "withhold",
+      "limit": ""
+    },
+    {
+      "id": "C24",
+      "text": "Any public Inspire3 quoted commission rate applies to FV",
+      "status": "permission_missing",
+      "support": [
+        "S14"
+      ],
+      "decision": "exclude",
+      "limit": "seller's marketing only; no private terms"
+    },
+    {
+      "id": "C25",
+      "text": "Affiliate material relationship disclosure should be clear and close to recommendation",
+      "status": "compliance_guidance",
+      "support": [
+        "S15"
+      ],
+      "decision": "include",
+      "limit": ""
+    },
+    {
+      "id": "C26",
+      "text": "Objective health/therapeutic benefit claims require competent evidence",
+      "status": "compliance_guidance",
+      "support": [
+        "S16"
+      ],
+      "decision": "include",
+      "limit": ""
+    },
+    {
+      "id": "C27",
+      "text": "FV has an existing free Focus Fieldbook",
+      "status": "verified_live_resource",
+      "support": [
+        "S17"
+      ],
+      "decision": "include",
+      "limit": "not paid SKU or confirmed lead"
+    },
+    {
+      "id": "C28",
+      "text": "Puységur historical materials validate modern commercial audio efficacy",
+      "status": "invalid_transfer",
+      "support": [
+        "S18"
+      ],
+      "decision": "exclude",
+      "limit": ""
+    },
+    {
+      "id": "C29",
+      "text": "Published change blindness is an appropriate thematic archive bridge",
+      "status": "verified_live_resource",
+      "support": [
+        "S19"
+      ],
+      "decision": "include",
+      "limit": "no product proof"
+    },
+    {
+      "id": "C30",
+      "text": "A click or signup is a paid sale",
+      "status": "invalid_metric",
+      "support": [],
+      "decision": "exclude",
+      "limit": ""
+    },
+    {
+      "id": "C31",
+      "text": "There is a rights-cleared, sellable FV Mind product",
+      "status": "not_authenticated",
+      "support": [],
+      "decision": "withhold",
+      "limit": "no complete offer+delivery+rights evidence"
+    },
+    {
+      "id": "C32",
+      "text": "R415 has an encoded video available in repo",
+      "status": "not_yet",
+      "support": [],
+      "decision": "exclude",
+      "limit": "script is source-controlled but MP4 is generated offline"
+    },
+    {
+      "id": "C33",
+      "text": "A/B variant B converts better than text-only A",
+      "status": "untested_hypothesis",
+      "support": [],
+      "decision": "exclude",
+      "limit": "requires approved, independently settled paid conversions"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "G01",
+      "description": "named FV publisher acceptance",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G02",
+      "description": "authorized Zen12 SKU",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G03",
+      "description": "approved website promotion channel",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G04",
+      "description": "approved organic-social channel",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G05",
+      "description": "approved email promotion channel",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G06",
+      "description": "approved, issued affiliate URL",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G07",
+      "description": "approved creative/swipe rights or independent clean-room creative",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G08",
+      "description": "actual referred checkout contents",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G09",
+      "description": "actual referred price and currency",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G10",
+      "description": "actual refunds/cancellation limitations",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G11",
+      "description": "complete tracking/cookie/attribution terms",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G12",
+      "description": "merchant payment/commission eligibility",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G13",
+      "description": "settled commission report",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G14",
+      "description": "FV-owned paid Mind product SKU/rights",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G15",
+      "description": "FV-owned paid Mind delivery and return policy",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G16",
+      "description": "named, real Grok asset IDs and rights",
+      "status": "HOLD",
+      "owner": "Praxxis / Grok",
+      "proof": null
+    },
+    {
+      "id": "G17",
+      "description": "signed-out mobile first-party social-to-page route",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G18",
+      "description": "existing Jetpack confirmed-lead/delivery audit",
+      "status": "HOLD",
+      "owner": "Claude / Dispatch",
+      "proof": null
+    },
+    {
+      "id": "G19",
+      "description": "Claude metric event contract implementation",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G20",
+      "description": "real-browser WCAG 2.2 AA",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G21",
+      "description": "real-browser CWV/Lighthouse",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G22",
+      "description": "actual MP4 encoding in site build + sync QA",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G23",
+      "description": "final WordPress sanitizer compatibility",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G24",
+      "description": "independent Site QA acceptance",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G25",
+      "description": "founder commercial authorization",
+      "status": "HOLD",
+      "owner": "Founder",
+      "proof": null
+    },
+    {
+      "id": "G26",
+      "description": "founder publishing authorization",
+      "status": "HOLD",
+      "owner": "Founder",
+      "proof": null
+    },
+    {
+      "id": "G27",
+      "description": "7/30-day qualified-human cohort integrity",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    },
+    {
+      "id": "G28",
+      "description": "independently reconciled paid order refunds fees net",
+      "status": "HOLD",
+      "owner": "Founder / Commerce / Site QA",
+      "proof": null
+    }
+  ],
+  "measurement": {
+    "primary_kpi": "realized_net_revenue_per_1000_qualified_human_sessions",
+    "status": "NOT_COMPUTABLE",
+    "reason": "No approved referred checkout/settled commission and trustworthy session denominator",
+    "events": [
+      "qualified_session",
+      "offer_page_view",
+      "focus_cta",
+      "provider_confirmed_lead",
+      "affiliate_click",
+      "merchant_confirmed_order",
+      "merchant_settled_commission",
+      "refund",
+      "fee"
+    ],
+    "privacy": "No raw email/IP, no cross-site personal identifiers, no duplicate analytics scripts; implement only with Claude approval."
+  },
+  "release_guard": "No writes to WordPress, navigation, Dispatch, Jetpack welcome, social production/posting, PR #49, PR #172 or Issue #150; no merchant activation, merge or deployment."
+}
