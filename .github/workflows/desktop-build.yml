@@ -1032,7 +1032,7 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_bounded_utf8_witness_r458.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_bounded_utf8_witness_r458.py'
-      - name: R463 descriptor-verified offline fallback (31 tests, Ubuntu; release HOLD)
+      - name: R463 descriptor-verified offline fallback (32 tests, Ubuntu; release HOLD)
         run: |
           PYTHONPATH=products/desktop python -W error -m unittest discover -s products/desktop/tests -p 'test_offline_regression_gate_r459.py'
           PYTHONPATH=products/desktop python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_offline_regression_gate_r459.py'
@@ -2859,7 +2859,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R458 Windows normal CSV witness gate FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_bounded_utf8_witness_r458.py'
           if ($LASTEXITCODE -ne 0) { throw "R458 Windows optimized CSV witness gate FAILED" }
-      - name: R463 Windows descriptor-verified fallback (31 tests; pre-packaging HOLD)
+      - name: R463 Windows descriptor-verified fallback (32 tests; pre-packaging HOLD)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
