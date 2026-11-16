@@ -16,6 +16,7 @@ import os
 from pathlib import Path, PurePosixPath
 import re
 import stat
+import unicodedata
 from zipfile import BadZipFile, ZipFile
 
 STATE = 'DRAFT_HARD_HOLD'
@@ -30,27 +31,56 @@ MAX_TOTAL = 40 * 1024 * 1024
 MAX_RATIO = 2000
 _ALLOWED_EXTENSION = frozenset({'.html', '.htm', '.txt', '.md', '.json', '.csv', '.png', '.jpg', '.jpeg', '.webp', '.svg', '.pdf', '.sha256', '.css'})
 _SHA = re.compile(r'[0-9a-f]{64}\Z')
+_WINDOWS_DEVICES = frozenset({'CON', 'PRN', 'AUX', 'NUL'} |
+                            {f'COM{i}' for i in range(1, 10)} |
+                            {f'LPT{i}' for i in range(1, 10)})
 
 
 def sha256(raw: bytes) -> str:
     return hashlib.sha256(raw).hexdigest()
 
 
-def safe_name(name: str) -> bool:
-    """Reject path traversal, platform ambiguities and active payload formats."""
+def _safe_components(name: str, *, directory: bool) -> bool:
+    """Accept only stable, portable POSIX member paths (no filesystem writes).
+
+    ZIP parsers and future preview consumers may disagree about Unicode,
+    directory entries and Windows device names. Reject such ambiguous names
+    before an archive is admitted as a custody receipt.
+    """
     if not isinstance(name, str) or not name or len(name) > 300:
         return False
-    if ('\\' in name or '\x00' in name or ':' in name or
-        any(ord(c) < 32 or ord(c) == 127 for c in name)):
+    if name.endswith('/') != directory:
         return False
-    p = PurePosixPath(name)
-    if name.startswith('/') or p.is_absolute() or any(part in ('', '.', '..') for part in name.split('/')):
+    body = name[:-1] if directory else name
+    if not body or body.startswith('/') or unicodedata.normalize('NFC', body) != body:
         return False
-    if any(part.startswith('.') for part in p.parts):
+    if any(c in body for c in ('\\', ':', '<', '>', '|', '?', '*', '"')):
         return False
-    if p.suffix.lower() not in _ALLOWED_EXTENSION:
+    parts = body.split('/')
+    if any(part in ('', '.', '..') or part.startswith('.') or
+           part.endswith(('.', ' ')) or
+           part.partition('.')[0].upper() in _WINDOWS_DEVICES
+           for part in parts):
+        return False
+    if any(unicodedata.category(c) in ('Cc', 'Cf', 'Cs') for c in body):
         return False
     return True
+
+
+def safe_name(name: str) -> bool:
+    """Safely admit a *file* member with a passive preview extension."""
+    return (_safe_components(name, directory=False) and
+            PurePosixPath(name).suffix.lower() in _ALLOWED_EXTENSION)
+
+
+def safe_directory_name(name: str) -> bool:
+    """Check actual directory entries, not disguised .txt filenames."""
+    return _safe_components(name, directory=True)
+
+
+def canonical_member(name: str) -> str:
+    """Normalize identity across Unicode compatibility and case differences."""
+    return unicodedata.normalize('NFKC', name.rstrip('/')).casefold()
 
 
 def report(failures: list[str], *, archive_size: int | None = None,
@@ -91,26 +121,38 @@ def inspect(raw: bytes, *, expected_zip_sha: str = ARCHIVE_SHA256,
         with ZipFile(BytesIO(raw)) as zf:
             infos = zf.infolist()
             member_count = len(infos)
+            # Fail before member reads if a central-directory flood is detected.
             if not infos or len(infos) > MAX_FILES:
-                f.append('zip_member_count')
+                return report(f + ['zip_member_count'], archive_size=len(raw),
+                              archive_matches_pin=zip_match, members=member_count)
             seen: set[str] = set()
+            files: set[str] = set()
+            directories: set[str] = set()
             total = 0
             for info in infos:
                 name = info.filename
-                if info.is_dir():
-                    # Directory entries are not used for content custody.
-                    if not safe_name(name.rstrip('/') + '.txt'):
-                        f.append('unsafe_directory_name')
+                directory = info.is_dir()
+                if not (safe_directory_name(name) if directory else safe_name(name)):
+                    f.append('unsafe_directory_name' if directory else 'unsafe_member_name')
                     continue
-                if not safe_name(name):
-                    f.append('unsafe_member_name')
-                    continue
-                comparable = name.casefold()
+                comparable = canonical_member(name)
                 if comparable in seen:
-                    f.append('duplicate_casefold_member')
+                    f.append('duplicate_canonical_member')
                     continue
                 seen.add(comparable)
                 mode = (info.external_attr >> 16) & 0xffff
+                kind = stat.S_IFMT(mode)
+                if directory:
+                    # For ZIPs, directory spelling is not proof of a directory
+                    # inode type: a symlink can masquerade as a trailing-slash
+                    # entry. Check metadata before ignoring its payload.
+                    if kind not in (0, stat.S_IFDIR):
+                        f.append('non_directory_member')
+                    if info.file_size != 0:
+                        f.append('nonempty_directory_member')
+                    directories.add(comparable)
+                    continue
+                files.add(comparable)
                 if (stat.S_IFMT(mode) not in (0, stat.S_IFREG)):
                     f.append('non_regular_member')
                     continue
@@ -136,6 +178,15 @@ def inspect(raw: bytes, *, expected_zip_sha: str = ARCHIVE_SHA256,
                     continue
                 if PurePosixPath(name).name == ARTICLE_MEMBER:
                     found.append(chunk)
+            # Distinct spellings of a parent file and a child path must not be
+            # interpreted as separate safe identities by a later extractor.
+            for path in files | directories:
+                parts = path.split('/')
+                if any('/'.join(parts[:j]) in files for j in range(1, len(parts))):
+                    f.append('file_directory_path_collision')
+                    break
+            if files & directories:
+                f.append('file_directory_identity_collision')
     except (BadZipFile, OSError, RuntimeError, EOFError, ValueError, OverflowError):
         return report(f + ['invalid_zip'], archive_size=len(raw), archive_matches_pin=zip_match)
     if len(found) != 1:
