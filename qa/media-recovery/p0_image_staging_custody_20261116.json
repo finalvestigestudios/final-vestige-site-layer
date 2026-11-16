@@ -1,0 +1,154 @@
+{
+  "schema": "fv-media-p0-staging-custody-v1",
+  "date_local": "2026-11-16",
+  "source_snapshot": {
+    "git_commit": "ecd10d19b51e3b580a82a47a7032e820270e444b",
+    "file": "qa/media-recovery/wp_view_proxy_26_20261115.json",
+    "git_blob_sha": "dcb735226eb71fcba302b38ae3ab3a73751fe2a8",
+    "method": "prior authenticated WordPress EDIT/VIEW; NOT cold guest browser",
+    "image_rows_validated": 26
+  },
+  "historical_census": {
+    "posts": 61,
+    "image_references": 355,
+    "external_references": 288
+  },
+  "later_census": {
+    "posts": 66,
+    "image_references": 361
+  },
+  "reported_broken_42_confirmed": false,
+  "claimed_76_percent_reduction_measured": false,
+  "oversized_origins_gt_1_5_decimal_mb": 20,
+  "oversized_stored_bytes": 64385752,
+  "site_qa_collector": "Site QA #154; this does not duplicate/change collector",
+  "status_semantics": "null is unknown; source/reader failures are not numeric guest HTTP",
+  "release_stance": "HOLD until captured cold guest failure + item rights/crop review + 960px source decode; only outputs staging review; never WordPress writes",
+  "slots": [
+    {
+      "key": "285:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "wp_modified": "2026-11-02T21:39:59",
+      "authored_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "rendered_url": "https://i0.wp.com/images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg?ssl=1",
+      "candidate": null,
+      "related_sources": [
+        {
+          "record_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+          "relation": "related scene/crop, HTML catalog NOT candidate image binary",
+          "license": "Creator self-PD asserted; full verification needed"
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded": null,
+      "guest_current_src": null,
+      "cached_to_wordpress": false,
+      "max_width": 960,
+      "rights_release_status": "HOLD"
+    },
+    {
+      "key": "285:2",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "wp_modified": "2026-11-02T21:39:59",
+      "authored_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "rendered_url": "https://i0.wp.com/blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg?ssl=1",
+      "candidate": null,
+      "related_sources": [
+        {
+          "record_url": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+          "relation": "publisher transition; no exact image located/rights unknown"
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded": null,
+      "guest_current_src": null,
+      "cached_to_wordpress": false,
+      "max_width": 960,
+      "rights_release_status": "HOLD"
+    },
+    {
+      "key": "287:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "wp_modified": "2026-11-02T21:40:01",
+      "authored_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "rendered_url": "https://i0.wp.com/stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg?ssl=1",
+      "candidate": null,
+      "related_sources": [
+        {
+          "record_url": "https://floridamemory.com/items/show/32082",
+          "relation": "different 1980 Skyway scene; not automatic replacement, rights need item review"
+        },
+        {
+          "record_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+          "relation": "same filename at moved publisher host; not item-rights cleared"
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded": null,
+      "guest_current_src": null,
+      "cached_to_wordpress": false,
+      "max_width": 960,
+      "rights_release_status": "HOLD"
+    },
+    {
+      "key": "418:1",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "wp_modified": "2026-08-28T03:11:08",
+      "authored_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "rendered_url": "https://i0.wp.com/media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG?ssl=1",
+      "candidate": {
+        "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "asset_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+        "relation": "same_official_VIRIN_unhashed_same_route",
+        "rights": "Coast Guard item marked public domain/cleared; credit and DoD use restrictions review held"
+      },
+      "related_sources": [],
+      "guest_http_status": null,
+      "guest_decoded": null,
+      "guest_current_src": null,
+      "cached_to_wordpress": false,
+      "max_width": 960,
+      "rights_release_status": "HOLD"
+    },
+    {
+      "key": "418:2",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "wp_modified": "2026-08-28T03:11:08",
+      "authored_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "rendered_url": "https://i0.wp.com/www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg?ssl=1",
+      "candidate": null,
+      "related_sources": [
+        {
+          "record_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+          "relation": "official article but exact master accession and reuse rights unresolved"
+        }
+      ],
+      "guest_http_status": null,
+      "guest_decoded": null,
+      "guest_current_src": null,
+      "cached_to_wordpress": false,
+      "max_width": 960,
+      "rights_release_status": "HOLD"
+    },
+    {
+      "key": "407:1",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "wp_modified": "2026-10-29T18:30:30",
+      "authored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "rendered_url": "https://i0.wp.com/d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg?ssl=1",
+      "candidate": {
+        "catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+        "asset_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+        "relation": "official_sibling_catalog_original_path_binary_hash_unknown",
+        "rights": "USGS item marked public domain; exact binary/crop and attribution signoff still held"
+      },
+      "related_sources": [],
+      "guest_http_status": null,
+      "guest_decoded": null,
+      "guest_current_src": null,
+      "cached_to_wordpress": false,
+      "max_width": 960,
+      "rights_release_status": "HOLD"
+    }
+  ]
+}
