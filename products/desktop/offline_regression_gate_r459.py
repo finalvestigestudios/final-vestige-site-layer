@@ -1,6 +1,7 @@
 """Independent source-only regression gate when GitHub-hosted runners cannot start.
 
-Runs R455-R458 actual unittest modules in normal and optimized Python, then
+Runs eight shared audit/CSV regression modules and one real CSV/engine
+integration suite per desktop product in normal and optimized Python, then
 invokes the existing six-launcher R408 smoke gate. Neither result is a Windows
 executable, Defender, accessibility, entitlement, QD or distribution approval.
 No paths, customer data or subprocess logs are emitted to the operator.
@@ -24,7 +25,7 @@ from offline_source_binding_r461 import (
     SourceBindingError, verified_six_app_digest, require_bound_six_app_smokes,
 )
 
-TESTS = (
+CORE_TESTS = (
     "test_csv_negative_decimal_zero_copy_r455.py",
     "test_csv_safe_cell_zero_copy_r456.py",
     "test_csv_incremental_render_budget_r457.py",
@@ -36,6 +37,18 @@ TESTS = (
     "test_source_digest_binding_r461.py",
     "test_private_json_receipt_r462.py",
 )
+# Six distinct, full-checkout product engine/CSV/finance integration suites.
+# These are actual unittest modules, not reconstructed helper projections.
+# Each must discover and pass at least one method in normal and -OO modes.
+PRODUCT_TESTS = (
+    "test_ledger_source_engine_integration_r62.py",     # LedgerDiff Lite
+    "test_invoice_source_engine_integration_r63.py",    # Invoice Twin Scout
+    "test_spend_engine_integration_r59.py",             # SpendMap Lite
+    "test_policy_engine_r26.py",                       # Policy Delta Desk
+    "test_grant_input_integration_r66.py",             # GrantAudit Studio Pro
+    "test_procurement_integration_r5.py",              # ProcureGuard Studio Pro
+)
+TESTS = CORE_TESTS + PRODUCT_TESTS
 SOURCE_INPUTS = (
     "offline_regression_gate_r459.py",
     "offline_smoke_receipt_r460.py",
@@ -44,8 +57,8 @@ SOURCE_INPUTS = (
     "offline_source_smoke_r408.py",
     "fvs_suite/atomic_reports.py",
     "fvs_suite/engine.py",
-    # Each mandatory test source is hashed exactly once, including this
-    # runner's own regression tests. A missing/edited test is HOLD.
+    # All eight verification modules plus six product integration suites are
+    # hashed exactly once. Missing/edited test code is a hard HOLD.
     *("tests/" + name for name in TESTS),
 )
 TIMEOUT_TEST_SECONDS = 120
@@ -204,8 +217,8 @@ def run_gate(desktop: Path) -> dict[str, object]:
     before = _source_fingerprint(desktop)
     full_before = _six_source_digest(desktop)
     modes, tests = _run_tests(desktop)
-    # A successful receipt from only the older six modules must not pass the
-    # new eight-module verification contract, even if source smokes pass.
+    # A successful receipt from an old eight-module-only verification gate
+    # must not pass the full six-product integration contract.
     if (type(modes) is not int or modes != 2 * len(TESTS)
             or type(tests) is not int or tests < modes):
         raise LocalGateError("Local source regression coverage rejected")
