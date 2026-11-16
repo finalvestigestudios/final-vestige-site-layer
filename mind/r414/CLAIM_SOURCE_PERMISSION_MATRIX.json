@@ -1,0 +1,504 @@
+{
+  "run": "R414",
+  "date": "2026-11-15",
+  "state": "UNPUBLISHED_DRAFT_HARD_HOLD",
+  "scope": "Mind & Perception presell only",
+  "sources": {
+    "hypnosis_apps_2025": "https://doi.org/10.1080/00207144.2024.2434085",
+    "hypnosis_theories_2024": "https://doi.org/10.1016/j.concog.2024.103730",
+    "abi_active_trial_2024": "https://link.springer.com/article/10.1007/s44202-024-00162-1",
+    "mindful_hypnosis_2026": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12837898/",
+    "self_hypnosis_observational_2025": "https://www.nature.com/articles/s41746-025-02182-0",
+    "bias_suggestions_2025": "https://doi.org/10.1016/j.concog.2025.103948",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "change_blindness": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "mesmerism": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "focus": "https://finalvestige.com/focus/",
+    "dispatch": "https://finalvestige.com/dispatch/",
+    "inspire3": "https://inspire3.com/",
+    "partner_portal": "https://affiliates.inspire3.com/",
+    "zen12_about": "https://zen12.com/about",
+    "zen12_order": "https://zen12.com/order",
+    "zen12_promo": "https://zen12.com/secret/",
+    "total_focus": "https://hypnosislive.com/mental-skills/total-focus",
+    "focus_shot": "https://brainwaveshots.com/focus-shot",
+    "focus_shot_faq": "https://brainwaveshots.com/faq",
+    "ftc_endorsement": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  },
+  "claims": [
+    {
+      "id": "S001",
+      "claim": "2025 hypnosis app review identified 679 unique apps and 168 eligible",
+      "kind": "independent_research",
+      "status": "supported",
+      "source_ids": [
+        "hypnosis_apps_2025"
+      ],
+      "limits": "App enumeration, not product outcome"
+    },
+    {
+      "id": "S002",
+      "claim": "34/168 apps noted hypnosis-trained developer/provider",
+      "kind": "independent_research",
+      "status": "supported",
+      "source_ids": [
+        "hypnosis_apps_2025"
+      ],
+      "limits": "Reported app listing, not verified practitioner licensure"
+    },
+    {
+      "id": "S003",
+      "claim": "13/168 apps claimed evidence-based treatment",
+      "kind": "independent_research",
+      "status": "supported",
+      "source_ids": [
+        "hypnosis_apps_2025"
+      ],
+      "limits": "A claim of evidence is not demonstrated efficacy"
+    },
+    {
+      "id": "S004",
+      "claim": "Only four reviewed apps reported inclusion in clinical efficacy trials",
+      "kind": "independent_research",
+      "status": "supported",
+      "source_ids": [
+        "hypnosis_apps_2025"
+      ],
+      "limits": "Not zero efficacy for others; exact products not assumed included"
+    },
+    {
+      "id": "S005",
+      "claim": "A 2024 theory review finds no consensus on hypnosis mechanisms",
+      "kind": "independent_research",
+      "status": "supported",
+      "source_ids": [
+        "hypnosis_theories_2024"
+      ],
+      "limits": "Competing explanatory accounts; not product RCT"
+    },
+    {
+      "id": "S006",
+      "claim": "49 ABI patients in active comparator hypnosis/mindfulness trial",
+      "kind": "independent_research",
+      "status": "supported",
+      "source_ids": [
+        "abi_active_trial_2024"
+      ],
+      "limits": "Clinical rehab population not general focus audio"
+    },
+    {
+      "id": "S007",
+      "claim": "Mindful hypnotherapy meta-analysis drew from five RCT publications",
+      "kind": "independent_research",
+      "status": "supported",
+      "source_ids": [
+        "mindful_hypnosis_2026"
+      ],
+      "limits": "Different interventions, outcomes and populations; no Zen12 brand proof"
+    },
+    {
+      "id": "S008",
+      "claim": "Large 2025 app hypnosis observational dataset reported pre/post stress change",
+      "kind": "independent_research",
+      "status": "supported",
+      "source_ids": [
+        "self_hypnosis_observational_2025"
+      ],
+      "limits": "No control; subjective stress is not concentration"
+    },
+    {
+      "id": "S009",
+      "claim": "2025 lab suggestion work modulated attentional bias in high suggestibles",
+      "kind": "independent_research",
+      "status": "supported",
+      "source_ids": [
+        "bias_suggestions_2025"
+      ],
+      "limits": "Does not establish practical focus MP3"
+    },
+    {
+      "id": "S010",
+      "claim": "Puysegur archive documents historical testimony/source trails",
+      "kind": "existing_fv_source",
+      "status": "supported",
+      "source_ids": [
+        "puysegur"
+      ],
+      "limits": "Historical testimony does not prove magnetic mechanism"
+    },
+    {
+      "id": "S011",
+      "claim": "Published change blindness article demonstrates selective noticing",
+      "kind": "existing_fv_source",
+      "status": "supported",
+      "source_ids": [
+        "change_blindness"
+      ],
+      "limits": "Task evidence not soundtrack efficacy"
+    },
+    {
+      "id": "S012",
+      "claim": "Existing Focus Fieldbook is a free reader resource through established Jetpack",
+      "kind": "existing_fv_offer",
+      "status": "supported",
+      "source_ids": [
+        "focus"
+      ],
+      "limits": "NOT a paid product or independently confirmed subscriber"
+    },
+    {
+      "id": "S013",
+      "claim": "Inspire3 describes Zen12 and Hypnosis Live among brands",
+      "kind": "seller_portfolio",
+      "status": "seller_described",
+      "source_ids": [
+        "inspire3"
+      ],
+      "limits": "Portfolio listing not FV affiliate acceptance"
+    },
+    {
+      "id": "S014",
+      "claim": "Zen12 seller describes twelve levels with four styles/short sessions",
+      "kind": "seller_feature",
+      "status": "seller_described",
+      "source_ids": [
+        "zen12_about"
+      ],
+      "limits": "Verify exact purchased package at authorized checkout"
+    },
+    {
+      "id": "S015",
+      "claim": "Zen12 main order page describes forty-eight MP3s and package extras",
+      "kind": "seller_feature",
+      "status": "seller_described",
+      "source_ids": [
+        "zen12_order"
+      ],
+      "limits": "Old page crawl, offer may vary"
+    },
+    {
+      "id": "S016",
+      "claim": "Zen12 seller states 12 min equals 1h meditation",
+      "kind": "seller_efficacy",
+      "status": "excluded",
+      "source_ids": [
+        "zen12_about",
+        "ftc_health"
+      ],
+      "limits": "No product-specific equivalent-outcome validation"
+    },
+    {
+      "id": "S017",
+      "claim": "Zen12 seller claims brainwave sounds automatically deepen meditation",
+      "kind": "seller_efficacy",
+      "status": "excluded",
+      "source_ids": [
+        "zen12_about",
+        "ftc_health"
+      ],
+      "limits": "No adequate product-specific support authenticated"
+    },
+    {
+      "id": "S018",
+      "claim": "Zen12 promo displays $37 after coupon while different checkout route exists",
+      "kind": "seller_price_observation",
+      "status": "not_referral_price",
+      "source_ids": [
+        "zen12_promo",
+        "zen12_order"
+      ],
+      "limits": "Never advertise price, countdown, coupon or guarantee as FV terms"
+    },
+    {
+      "id": "S019",
+      "claim": "Zen12 seller advertises money-back support",
+      "kind": "seller_return_observation",
+      "status": "terms_unverified",
+      "source_ids": [
+        "zen12_order",
+        "zen12_promo"
+      ],
+      "limits": "Actual applicable return terms and exclusions unverified"
+    },
+    {
+      "id": "S020",
+      "claim": "Hypnosis Live Total Focus seller describes 33m/47MB MP3",
+      "kind": "seller_feature",
+      "status": "seller_described",
+      "source_ids": [
+        "total_focus"
+      ],
+      "limits": "Exact package and price may differ"
+    },
+    {
+      "id": "S021",
+      "claim": "Total Focus promises brain reprogramming/guaranteed productivity",
+      "kind": "seller_efficacy",
+      "status": "excluded",
+      "source_ids": [
+        "total_focus",
+        "ftc_health"
+      ],
+      "limits": "No independent product-matched test"
+    },
+    {
+      "id": "S022",
+      "claim": "Focus Shot seller describes 15/30m plus bonus files",
+      "kind": "seller_feature",
+      "status": "seller_described",
+      "source_ids": [
+        "focus_shot"
+      ],
+      "limits": "Technical format only"
+    },
+    {
+      "id": "S023",
+      "claim": "Focus Shot describes audio protocol at 12–18 Hz",
+      "kind": "seller_specification",
+      "status": "seller_described",
+      "source_ids": [
+        "focus_shot"
+      ],
+      "limits": "No demonstrated causal efficacy from frequency spec alone"
+    },
+    {
+      "id": "S024",
+      "claim": "Focus Shot vendor advertises effects lasting four hours to all day",
+      "kind": "seller_efficacy",
+      "status": "excluded",
+      "source_ids": [
+        "focus_shot",
+        "ftc_health"
+      ],
+      "limits": "No product-specific evidence authenticated"
+    },
+    {
+      "id": "S025",
+      "claim": "Brainwave Shots seller FAQ outlines one-year refund with exceptions",
+      "kind": "seller_return_observation",
+      "status": "qualified_seller_statement",
+      "source_ids": [
+        "focus_shot_faq"
+      ],
+      "limits": "Verify live terms; limits on multiple refunds and large orders"
+    },
+    {
+      "id": "S026",
+      "claim": "Affiliate portal markets commission and assigned links",
+      "kind": "seller_partner_portal",
+      "status": "not_fv_authorization",
+      "source_ids": [
+        "partner_portal"
+      ],
+      "limits": "No confirmed approved account/channel/terms/earning URL"
+    },
+    {
+      "id": "S027",
+      "claim": "FTC expects clear nearby material connection disclosures",
+      "kind": "regulatory_guidance",
+      "status": "supported",
+      "source_ids": [
+        "ftc_endorsement"
+      ],
+      "limits": "A generic footer alone is not enough"
+    },
+    {
+      "id": "S028",
+      "claim": "FTC expects adequate relevant objective health claim substantiation",
+      "kind": "regulatory_guidance",
+      "status": "supported",
+      "source_ids": [
+        "ftc_health"
+      ],
+      "limits": "Scientific reviews of other products are insufficient"
+    },
+    {
+      "id": "S029",
+      "claim": "FV has not authenticated an actually payable rights-cleared Mind SKU",
+      "kind": "commercial_gate",
+      "status": "unverified",
+      "source_ids": [
+        "focus"
+      ],
+      "limits": "Free Focus must not be mislabeled paid"
+    },
+    {
+      "id": "S030",
+      "claim": "FV does not have a verified purchased referred order or settled commission for this sprint",
+      "kind": "commercial_gate",
+      "status": "unverified",
+      "source_ids": [
+        "partner_portal"
+      ],
+      "limits": "Do not infer sale from landing or click"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_publisher_account_acceptance",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "publisher_status_current",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "zen12_sku_enrollment",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "web_channel_approval",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "social_channel_approval",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "email_channel_approval",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "issued_partner_tracking_url",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "tracking_terms_verified",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "authorized_creatives_or_copy_scope",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "referral_checkout_exact_sku",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "referral_price_including_upsell",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "refund_policy_at_checkout",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "commission_terms_and_reversals",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "merchant_settlement_reporting",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "fv_owned_paid_sku_inventory",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "fv_owned_distribution_rights",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "fv_owned_checkout_and_delivery",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "fv_owned_refunds_and_fees",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "grok_three_immutable_asset_ids",
+      "status": "HOLD",
+      "owner": "Praxxis/Grok",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "grok_source_rights_and_mobile_routes",
+      "status": "HOLD",
+      "owner": "Praxxis/Grok",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "jetpack_confirmed_lead_event",
+      "status": "HOLD",
+      "owner": "Claude/Site QA",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "playable_rights_cleared_film",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "real_browser_accessibility_perf",
+      "status": "HOLD",
+      "owner": "Claude/Site QA",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "wordpress_sanitization_review",
+      "status": "HOLD",
+      "owner": "Claude/Site QA",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "founder_commercial_release_approval",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    },
+    {
+      "id": "founder_site_release_approval",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "evidence": "Not authenticated on this run"
+    }
+  ],
+  "active_affiliate_link": false,
+  "verified_fv_partner_approval": false,
+  "verified_fv_owned_payable_mind_sku": false,
+  "verified_affiliate_commission": false,
+  "disclosure_template": "If you purchase through a future authorized link, Final Vestige may earn a commission at no additional cost to you.",
+  "source_date_policy": "Seller observations on 2026-11-15; promotional pages/terms can change. Never imply same price or refund applies to FV referral.",
+  "video_state": "Original static poster+42s transcript+VTT; NOT encoded/playable",
+  "privacy": "Draft-only; no scripts, pixels, cookies, forms or outbound affiliate link",
+  "release_approval": false
+}
