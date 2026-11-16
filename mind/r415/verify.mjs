@@ -16,7 +16,7 @@ const build=read("build-film.sh");
 let passed=0;
 function check(name,fn){try{fn();console.log("PASS",name);passed++;}catch(err){console.error("FAIL",name,err.message);process.exitCode=1}}
 function assertSafe(page){
-const controls=[...page.matchAll(/<button\\b[^>]*>/gi)].map(x=>x[0]); assert.equal(controls.length,1); assert.match(controls[0],/\\sdisabled(?=\\s|>)/i);
+const controls=[...page.matchAll(/<button\b[^>]*>/gi)].map(x=>x[0]); assert.equal(controls.length,1); assert.match(controls[0],/\sdisabled(?=\s|>)/i);
 assert.match(page,/aria-disabled="true"/);
 assert.match(page,/Prospective affiliate disclosure:/); assert.match(page,/If a verified Final Vestige affiliate link is later activated,/);
 assert.match(page,/no additional cost to you/i);
@@ -55,6 +55,6 @@ check("Scientific claims excluded from sales",()=>{for(const id of ["C09","C13",
 check("Media not falsely marked live",()=>{assert.equal(matrix.editorial_status,"UNPUBLISHED_SOURCE_ONLY");assert.ok(matrix.claims.find(x=>x.id==="C32").decision==="exclude")});
 check("All public source entries are HTTPS",()=>assert.ok(matrix.sources.every(x=>x.url.startsWith("https://"))));
 check("Unsafe mutations fail-closed",()=>{const bad=[a.replace("<button type=\"button\" disabled","<button type=\"button\""),a.replace("Prospective affiliate disclosure:","Disclosure removed:"),a.replace("No earning link is active","Earning link live"),a.replace("</body>","<script src=\"https://tracker.example/pixel.js\"></script></body>"),a.replace("</main>","<a href=\"https://zen12.com/order\">Buy now</a></main>"),b.replace('preload="none"','autoplay preload="auto"')];assert.equal(bad.length,6);for(let i=0;i<bad.length;i++){let failed=false;try{assertSafe(bad[i]);if(i===5){assert.match(bad[i],/<video controls preload="none" playsinline/);}}catch{failed=true}assert.ok(failed,"mutation "+(i+1))}});
-check("Claim gate-open mutation would be rejected",()=>{const altered=structuredClone(matrix);altered.commercial_gates[0].status="PASS";assert.ok(!altered.commercial_gates.every(x=>x.status==="HOLD"&&x.proof===null))});
+check("Claim gate-open mutation would be rejected",()=>{const altered=JSON.parse(JSON.stringify(matrix));altered.commercial_gates[0].status="PASS";assert.ok(!altered.commercial_gates.every(x=>x.status==="HOLD"&&x.proof===null))});
 console.log("SUMMARY",passed,"checks",process.exitCode?"FAIL":"PASS");
 if(process.exitCode)process.exit(process.exitCode);
