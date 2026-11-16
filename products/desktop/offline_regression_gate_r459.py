@@ -49,6 +49,10 @@ PRODUCT_TESTS = (
     "test_procurement_integration_r5.py",              # ProcureGuard Studio Pro
 )
 TESTS = CORE_TESTS + PRODUCT_TESTS
+# Floors are the verified declared unittest method inventories at R465.
+# More regression methods are welcome; losing any existing coverage is HOLD.
+# Retain the order to bind each named premium/free product to its own floor.
+PRODUCT_METHOD_FLOORS = dict(zip(PRODUCT_TESTS, (9, 10, 7, 4, 5, 10)))
 SOURCE_INPUTS = (
     "offline_regression_gate_r459.py",
     "offline_smoke_receipt_r460.py",
@@ -152,6 +156,7 @@ def _validate_receipt(raw: bytes) -> int:
 def _run_tests(desktop: Path) -> tuple[int, int]:
     methods = 0
     executions = 0
+    standard_counts: dict[str, int] = {}
     # Use an owner-private disposable folder, not a source/destination folder.
     with tempfile.TemporaryDirectory(prefix='fvs-r459-') as temp:
         for pattern in TESTS:
@@ -171,7 +176,17 @@ def _run_tests(desktop: Path) -> tuple[int, int]:
                         raise LocalGateError("Local source regression test failed")
                     # Read at most 1,025 bytes even if a buggy child wrote a huge receipt.
                     with receipt.open('rb') as response:
-                        methods += _validate_receipt(response.read(1025))
+                        observed = _validate_receipt(response.read(1025))
+                    # A single no-op test is not six-engine integration proof.
+                    # Check each named product, not just the global method sum.
+                    if observed < PRODUCT_METHOD_FLOORS.get(pattern, 1):
+                        raise LocalGateError("Local product regression coverage rejected")
+                    if optimized:
+                        if observed != standard_counts[pattern]:
+                            raise LocalGateError("Local regression mode parity rejected")
+                    else:
+                        standard_counts[pattern] = observed
+                    methods += observed
                 except (OSError, subprocess.TimeoutExpired):
                     raise LocalGateError("Local source regression could not execute") from None
                 executions += 1
@@ -221,7 +236,9 @@ def run_gate(desktop: Path) -> dict[str, object]:
     # if the old eight-module verifier happens to return a green receipt.
     if (len(CORE_TESTS) != 8 or len(PRODUCT_TESTS) != 6
             or len(TESTS) != 14 or len(set(TESTS)) != 14
-            or TESTS != CORE_TESTS + PRODUCT_TESTS):
+            or TESTS != CORE_TESTS + PRODUCT_TESTS
+            or tuple(PRODUCT_METHOD_FLOORS) != PRODUCT_TESTS
+            or tuple(PRODUCT_METHOD_FLOORS.values()) != (9, 10, 7, 4, 5, 10)):
         raise LocalGateError("Local source regression coverage rejected")
     modes, tests = _run_tests(desktop)
     # A successful receipt from an old eight-module-only verification gate

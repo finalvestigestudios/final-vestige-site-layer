@@ -96,16 +96,20 @@ class OfflineRegressionGateR459(unittest.TestCase):
                             for command, kwargs in observed))
 
     def test_actual_twenty_eight_isolated_interpreters_execute_real_unittest(self):
-        fixture = ("import unittest\n"
-                   "class SyntheticGateTest(unittest.TestCase):\n"
-                   "    def test_native_source_gate(self):\n"
-                   "        self.assertEqual(Decimal(\"0.10\") + Decimal(\"0.20\"), Decimal(\"0.30\"))\n")
-        # A synthetic native Decimal import is explicit, never financial data.
-        fixture = "from decimal import Decimal\n" + fixture
+        # Each synthetic module runs the minimum contract number of real
+        # unittest methods. Never lower the production floor for a fixture.
         for name in gate.TESTS:
+            count = gate.PRODUCT_METHOD_FLOORS.get(name, 1)
+            fixture = ("from decimal import Decimal\nimport unittest\n"
+                       "class SyntheticGateTest(unittest.TestCase):\n")
+            fixture += "".join(
+                f"    def test_decimal_{i}(self):\n"
+                '        self.assertEqual(Decimal("0.10") + Decimal("0.20"), Decimal("0.30"))\n'
+                for i in range(count))
             (self.root / 'tests' / name).write_text(fixture, encoding='utf-8')
         modes, methods = gate._run_tests(self.root)
-        self.assertEqual((modes, methods), (28, 28))
+        expected = 2 * (len(gate.CORE_TESTS) + sum(gate.PRODUCT_METHOD_FLOORS.values()))
+        self.assertEqual((modes, methods), (28, expected))
 
     def test_actual_zero_discovery_fails_before_false_receipt(self):
         for name in gate.TESTS:
@@ -420,6 +424,59 @@ class OfflineRegressionGateR459(unittest.TestCase):
                 tests.assert_not_called()
                 smokes.assert_not_called()
 
+
+    def test_r466_exact_six_product_method_floors(self):
+        self.assertEqual(gate.PRODUCT_METHOD_FLOORS, dict(zip(
+            gate.PRODUCT_TESTS, (9, 10, 7, 4, 5, 10))))
+        self.assertEqual(sum(gate.PRODUCT_METHOD_FLOORS.values()), 45)
+
+    def test_r466_each_product_suite_below_floor_rejected(self):
+        for target, floor in gate.PRODUCT_METHOD_FLOORS.items():
+            def child(command, **kwargs):
+                pattern = command[-2]
+                count = floor - 1 if pattern == target else 13
+                Path(command[-1]).write_bytes(self.receipt(
+                    tests=count, expected=count))
+                return SimpleNamespace(returncode=0)
+            with self.subTest(product=target), \
+                 patch.object(gate.subprocess, 'run', side_effect=child):
+                with self.assertRaisesRegex(gate.LocalGateError, 'product regression coverage'):
+                    gate._run_tests(self.root)
+
+    def test_r466_mode_discovery_parity_enforced_per_suite(self):
+        def child(command, **kwargs):
+            pattern = command[-2]
+            floor = gate.PRODUCT_METHOD_FLOORS.get(pattern, 1)
+            count = floor + (1 if '-OO' in command else 0)
+            Path(command[-1]).write_bytes(self.receipt(
+                tests=count, expected=count))
+            return SimpleNamespace(returncode=0)
+        with patch.object(gate.subprocess, 'run', side_effect=child):
+            with self.assertRaisesRegex(gate.LocalGateError, 'mode parity'):
+                gate._run_tests(self.root)
+
+    def test_r466_expanded_suites_pass_when_modes_match(self):
+        def child(command, **kwargs):
+            count = gate.PRODUCT_METHOD_FLOORS.get(command[-2], 1) + 2
+            Path(command[-1]).write_bytes(self.receipt(
+                tests=count, expected=count))
+            return SimpleNamespace(returncode=0)
+        with patch.object(gate.subprocess, 'run', side_effect=child):
+            modes, methods = gate._run_tests(self.root)
+        expected = 2 * (sum(gate.PRODUCT_METHOD_FLOORS.values())
+                        + 2 * len(gate.PRODUCT_TESTS)
+                        + 3 * len(gate.CORE_TESTS))
+        self.assertEqual((modes, methods), (28, expected))
+
+    def test_r466_floor_manifest_tamper_fails_before_children(self):
+        corrupted = dict(gate.PRODUCT_METHOD_FLOORS)
+        corrupted[gate.PRODUCT_TESTS[0]] = 1
+        with patch.object(gate, 'PRODUCT_METHOD_FLOORS', corrupted), \
+             patch.object(gate, '_six_source_digest', return_value='a' * 64), \
+             patch.object(gate, '_run_tests') as children:
+            with self.assertRaisesRegex(gate.LocalGateError, 'coverage rejected'):
+                gate.run_gate(self.root)
+            children.assert_not_called()
 
 if __name__ == '__main__':
     unittest.main()
