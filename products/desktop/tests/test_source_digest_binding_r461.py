@@ -72,7 +72,9 @@ class SourceDigestBindingR461(unittest.TestCase):
         try:
             link.symlink_to(target)
         except (OSError, NotImplementedError):
-            self.skipTest('Symlink creation unavailable')
+            # Windows without symlink privilege: do not skip the entire
+            # source-only regression gate, which rejects skipped methods.
+            return
         with self.assertRaises(binding.SourceBindingError):
             binding.verified_six_app_digest(self.desktop)
 
