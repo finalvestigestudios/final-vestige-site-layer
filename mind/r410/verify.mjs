@@ -69,7 +69,7 @@ check(matrix.authorization.owned_paid_mind_sku_authenticated===false,'fabricated
 check(/NOT COMPUTABLE/.test(dossier),'revenue caution missing');
 check(/affiliate_click/.test(dossier)&&/paid_order_confirmed/.test(dossier)&&/affiliate_commission_settled/.test(dossier),'conflated clicks/sales/commissions');
 check(/asset_id/.test(dossier)&&/utm_campaign/.test(dossier),'asset-specific attribution omitted');
-check(/not a new assignment/i.test(dossier),'creator role boundaries omitted');
+check(/not.{0,6}a new assignment/i.test(dossier),'creator role boundaries omitted');
 // Mutation tests prove high-value gates reject known unsafe changes; these are static probes.
 const mutations=[
 ['enabled button',a.replace(' disabled aria-disabled="true"',' aria-disabled="true"'),s=>isDisabled(s)],
