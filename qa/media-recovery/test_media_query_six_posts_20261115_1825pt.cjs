@@ -20,6 +20,11 @@ const cases={
  'reject missing slot':x=>x.rows.pop(),
  'reject flipped direct route':x=>x.rows[2].view_url='https://i0.wp.com/example.net/altered.jpg?ssl=1',
  'reject oversize derivative':x=>x.rows[0].official_candidates[0].conditional_review_pixels.width=1024,
- 'reject wrong source query key':x=>x.rows[1].source_query_keys=['token']
+ 'reject wrong source query key':x=>x.rows[1].source_query_keys=['token'],
+ 'reject forged Navy catalog URL':x=>x.rows[0].official_candidates[0].catalog_url='https://example.com/fake',
+ 'reject forged Navy catalog id':x=>x.rows[0].official_candidates[0].catalog_id='USN 0000000',
+ 'reject distorted derivative':x=>x.rows[0].official_candidates[0].conditional_review_pixels.height=700,
+ 'reject unverified LOC pixels':x=>x.rows[1].official_candidates[0].conditional_review_pixels={width:960,height:600},
+ 'reject removed archival custody':x=>x.rows[0].official_candidates=[]
 };
 for(const [name,mutate] of Object.entries(cases))test(name,()=>{let x=clone();mutate(x);assert.ok(validate(x).length>0,name);});
