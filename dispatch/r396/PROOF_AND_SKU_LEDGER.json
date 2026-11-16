@@ -1,0 +1,134 @@
+{
+  "schema": "fv.dispatch.r396.canonical_offer_identity.v1",
+  "observed_at_utc": "2026-11-16T07:03:46Z",
+  "run_state": "DRAFT_ONLY_HOLD_UNSENT",
+  "originals": {
+    "ref_pr": 175,
+    "head_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "editorial_slots": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_slots": [
+      3,
+      5
+    ],
+    "frozen_homepage_pr": 49,
+    "send_enabled": false
+  },
+  "current_provider": {
+    "subscribers_total": 3,
+    "confirmed": 3,
+    "unconfirmed_excluded_from_total": 2,
+    "suppressed": 0,
+    "wpcom_followers": 3,
+    "direct_email_followers": 0,
+    "unique_email_receivers": null,
+    "automatic_new_post_emails": false,
+    "newsletter_enabled": true,
+    "content_format": "full",
+    "received_welcome_verified": false,
+    "native_preview_verified": false,
+    "physical_publisher_address_verified": false,
+    "unsubscribe_function_verified": false,
+    "sends_approved": false
+  },
+  "offers": [
+    {
+      "issue": 3,
+      "canonical_family": "Zen12",
+      "offer_token": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]",
+      "live_guide": false,
+      "partner_named_approval": false,
+      "email_permission": false,
+      "issued_earning_link": false,
+      "referred_checkout_terms": false,
+      "independent_efficacy_proof": false,
+      "source_urls": [
+        "https://zen12.com/about",
+        "https://inspire3.com/ll/"
+      ],
+      "product_claims": [
+        {
+          "claim": "12 levels, four listening styles and 12-minute tracks",
+          "status": "SELLER_DESCRIPTION_NOT_INDEPENDENT_VALIDATION"
+        },
+        {
+          "claim": "12 minutes is equivalent to one hour regular meditation",
+          "status": "SELLER_ADVERTISING_NOT_SUBSTANTIATED"
+        }
+      ]
+    },
+    {
+      "issue": 5,
+      "canonical_family": "Hypnosis Live",
+      "offer_token": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+      "live_guide": false,
+      "partner_named_approval": false,
+      "email_permission": false,
+      "issued_earning_link": false,
+      "referred_checkout_terms": false,
+      "independent_efficacy_proof": false,
+      "source_urls": [
+        "https://hypnosislive.com/catalog",
+        "https://hypnosislive.com/faq"
+      ],
+      "product_claims": [
+        {
+          "claim": "collection of individual downloadable hypnosis MP3 recordings",
+          "status": "SELLER_CATALOG"
+        },
+        {
+          "claim": "durations vary between recording products",
+          "status": "SELLER_CATALOG"
+        }
+      ]
+    },
+    {
+      "issue": 5,
+      "canonical_family": "Hypnosis Live",
+      "optional_narrower_sku": "Total Focus",
+      "candidate_only": true,
+      "founder_scope_change_approved": false,
+      "live_guide": false,
+      "partner_named_approval": false,
+      "email_permission": false,
+      "issued_earning_link": false,
+      "referred_checkout_terms": false,
+      "independent_efficacy_proof": false,
+      "source_urls": [
+        "https://hypnosislive.com/mental-skills/total-focus",
+        "https://hypnosislive.com/faq"
+      ],
+      "product_claims": [
+        {
+          "claim": "33 minutes, 47 MB, Julie-Ann Amos, sold as an MP3",
+          "status": "SELLER_PRODUCT_PAGE"
+        },
+        {
+          "claim": "instant 100% razor-sharp concentration",
+          "status": "SELLER_ADVERTISING_NOT_SUBSTANTIATED"
+        },
+        {
+          "claim": "price and refund eligibility",
+          "status": "MERCHANT_DISPLAY_ONLY_NOT_VERIFIED_FV_REFERRED_TERMS"
+        }
+      ]
+    }
+  ],
+  "exposure_rules": {
+    "replace_parent_catalog_without_founder_scope_approval": false,
+    "share_partner_rights_across_skus": false,
+    "share_limitless_labs_swipes_across_products": false,
+    "activate_cta_in_draft": false,
+    "claim_sent_email_from_offline_specimen": false,
+    "claim_paid_conversion_from_click": false
+  },
+  "conversion": {
+    "audited_qualified_human_sessions": null,
+    "settled_affiliate_commissions": null,
+    "realized_net_revenue_per_1000_qualified_human_sessions": "NOT_COMPUTABLE"
+  }
+}
