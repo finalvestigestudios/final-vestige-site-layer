@@ -1,0 +1,484 @@
+{
+  "version": "mind-r411-2026-11-15",
+  "reviewed_on": "2026-11-15",
+  "scope": "source-controlled, unpublished, zero live activation",
+  "source_count": 17,
+  "claim_count": 26,
+  "commercial_gate_count": 21,
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://doi.org/10.1038/35784",
+      "scope": "Original Nature 1998 article abstract/preview; full paper paywall"
+    },
+    {
+      "id": "S02",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3125296/",
+      "scope": "Rohde et al 2011 open paper"
+    },
+    {
+      "id": "S03",
+      "url": "https://doi.org/10.1525/collabra.325",
+      "scope": "Lush 2020 demand-characteristics paper"
+    },
+    {
+      "id": "S04",
+      "url": "https://doi.org/10.1525/collabra.116190",
+      "scope": "2024 expectancy replication and order effects"
+    },
+    {
+      "id": "S05",
+      "url": "https://doi.org/10.3389/fnhum.2022.834492",
+      "scope": "2022 multisensory vs suggestion reanalysis"
+    },
+    {
+      "id": "S06",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8413782/",
+      "scope": "2021 neurophysiological systematic review"
+    },
+    {
+      "id": "S07",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "Published historical source archive"
+    },
+    {
+      "id": "S08",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "Live 52-page free Focus funnel"
+    },
+    {
+      "id": "S09",
+      "url": "https://inspire3.com/",
+      "scope": "Inspire3 public brand catalog"
+    },
+    {
+      "id": "S10",
+      "url": "https://zen12.com/",
+      "scope": "Zen12 primary merchant sales page"
+    },
+    {
+      "id": "S11",
+      "url": "https://zen12.com/secret/",
+      "scope": "Zen12 separate promotional price/coupon route"
+    },
+    {
+      "id": "S12",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "Exact Total Focus seller SKU page"
+    },
+    {
+      "id": "S13",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "scope": "Exact Focus Shot seller SKU page"
+    },
+    {
+      "id": "S14",
+      "url": "https://brainwaveshots.com/faq",
+      "scope": "Focus Shot brand FAQ and refunds precautions"
+    },
+    {
+      "id": "S15",
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "Public program description; not account acceptance"
+    },
+    {
+      "id": "S16",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "FTC material connection disclosures"
+    },
+    {
+      "id": "S17",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "FTC product-specific scientific support"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "1998 researchers reported rubber-hand sensory ownership illusion",
+      "kind": "independent_lab_finding",
+      "source_id": "S01",
+      "status": "SUPPORTED_IN_SCOPE",
+      "approved_public_copy": "qualify_and_attribute"
+    },
+    {
+      "id": "C02",
+      "claim": "Vision, tactile sensation and proprioception are relevant to this setup",
+      "kind": "independent_lab_interpretation",
+      "source_id": "S01",
+      "status": "SUPPORTED_IN_SCOPE",
+      "approved_public_copy": "qualify_and_attribute"
+    },
+    {
+      "id": "C03",
+      "claim": "Proprioceptive drift alone proves felt hand ownership",
+      "kind": "scientific_claim",
+      "source_id": "S02",
+      "status": "CONTRADICTED_OR_OVERBROAD",
+      "approved_public_copy": "no_promotional_claim"
+    },
+    {
+      "id": "C04",
+      "claim": "Expectation and demand characteristics can confound RHI comparisons",
+      "kind": "scientific_method",
+      "source_id": "S03",
+      "status": "SUPPORTED_AS_CRITICISM",
+      "approved_public_copy": "qualify_and_attribute"
+    },
+    {
+      "id": "C05",
+      "claim": "2024 study replicated expectation differences and order effects",
+      "kind": "replication_finding",
+      "source_id": "S04",
+      "status": "SUPPORTED_IN_SCOPE",
+      "approved_public_copy": "qualify_and_attribute"
+    },
+    {
+      "id": "C06",
+      "claim": "Synchronous stroking had stronger findings than asynchronous across tested hypnotisability levels",
+      "kind": "reanalysis_finding",
+      "source_id": "S05",
+      "status": "SUPPORTED_IN_SCOPE",
+      "approved_public_copy": "qualify_and_attribute"
+    },
+    {
+      "id": "C07",
+      "claim": "Neurophysiological RHI studies exist",
+      "kind": "review_finding",
+      "source_id": "S06",
+      "status": "SUPPORTED_NO_PRODUCT_TRANSFER",
+      "approved_public_copy": "qualify_and_attribute"
+    },
+    {
+      "id": "C08",
+      "claim": "Puységur archive establishes a physical animal-magnetic force",
+      "kind": "historical_causal_claim",
+      "source_id": "S07",
+      "status": "NOT_ESTABLISHED",
+      "approved_public_copy": "no_promotional_claim"
+    },
+    {
+      "id": "C09",
+      "claim": "The Focus Fieldbook is currently offered free and is 52 pages",
+      "kind": "first_party_live_offer",
+      "source_id": "S08",
+      "status": "VERIFIED_PUBLIC_PAGE",
+      "approved_public_copy": "qualify_and_attribute"
+    },
+    {
+      "id": "C10",
+      "claim": "Inspire3 owns/markets Zen12, Hypnosis Live and related products",
+      "kind": "merchant_catalog",
+      "source_id": "S09",
+      "status": "SELLER_DESCRIBED",
+      "approved_public_copy": "qualify_and_attribute"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 Premium lists 12 levels and 48 MP3s",
+      "kind": "sku_format",
+      "source_id": "S10",
+      "status": "SELLER_DESCRIBED",
+      "approved_public_copy": "qualify_and_attribute"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 one-year refund guarantee is offered on main public page",
+      "kind": "merchant_refund",
+      "source_id": "S10",
+      "status": "SELLER_REPRESENTATION_RECHECK_CHECKOUT",
+      "approved_public_copy": "no_promotional_claim"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 12 minutes equals one hour advanced meditation",
+      "kind": "seller_product_efficacy",
+      "source_id": "S10",
+      "status": "UNSUBSTANTIATED_FOR_FV_PROMOTION",
+      "approved_public_copy": "no_promotional_claim"
+    },
+    {
+      "id": "C14",
+      "claim": "The coupon price on Zen12 /secret/ is an eligible FV affiliate checkout",
+      "kind": "commercial_eligibility",
+      "source_id": "S11",
+      "status": "NOT_AUTHENTICATED",
+      "approved_public_copy": "no_promotional_claim"
+    },
+    {
+      "id": "C15",
+      "claim": "Total Focus is one 33-minute 47-MB audio",
+      "kind": "sku_format",
+      "source_id": "S12",
+      "status": "SELLER_DESCRIBED",
+      "approved_public_copy": "qualify_and_attribute"
+    },
+    {
+      "id": "C16",
+      "claim": "Total Focus guarantees reprogramming and optimal concentration",
+      "kind": "product_effect",
+      "source_id": "S12",
+      "status": "UNSUBSTANTIATED_FOR_FV_PROMOTION",
+      "approved_public_copy": "no_promotional_claim"
+    },
+    {
+      "id": "C17",
+      "claim": "Focus Shot provides 15- and 30-minute options and a 12–18Hz seller protocol",
+      "kind": "sku_format",
+      "source_id": "S13",
+      "status": "SELLER_DESCRIBED_NOT_INDEPENDENTLY_MEASURED",
+      "approved_public_copy": "no_promotional_claim"
+    },
+    {
+      "id": "C18",
+      "claim": "Focus Shot produces several hours of focus and is universally safe",
+      "kind": "product_efficacy_or_safety",
+      "source_id": "S13",
+      "status": "UNSUBSTANTIATED_FOR_FV_PROMOTION",
+      "approved_public_copy": "no_promotional_claim"
+    },
+    {
+      "id": "C19",
+      "claim": "Focus Shot FAQ sets exclusions and precautions on claimed refunds",
+      "kind": "seller_refund_limits",
+      "source_id": "S14",
+      "status": "SELLER_DESCRIBED_RECHECK_CHECKOUT",
+      "approved_public_copy": "no_promotional_claim"
+    },
+    {
+      "id": "C20",
+      "claim": "The public Inspire3 portal proves named FV approval and URL",
+      "kind": "commercial_permission",
+      "source_id": "S15",
+      "status": "NOT_AUTHENTICATED",
+      "approved_public_copy": "no_promotional_claim"
+    },
+    {
+      "id": "C21",
+      "claim": "Affiliate earning relationship needs clear nearby disclosure",
+      "kind": "compliance",
+      "source_id": "S16",
+      "status": "FTC_GUIDANCE",
+      "approved_public_copy": "qualify_and_attribute"
+    },
+    {
+      "id": "C22",
+      "claim": "Health-related efficacy claims require adequate reliable scientific evidence",
+      "kind": "compliance",
+      "source_id": "S17",
+      "status": "FTC_GUIDANCE",
+      "approved_public_copy": "qualify_and_attribute"
+    },
+    {
+      "id": "C23",
+      "claim": "An outbound affiliate click proves a paid sale",
+      "kind": "attribution_claim",
+      "source_id": "S15",
+      "status": "FALSE_MEASUREMENT_EQUIVALENCE",
+      "approved_public_copy": "no_promotional_claim"
+    },
+    {
+      "id": "C24",
+      "claim": "Owned paid FV Mind SKU has verified license, delivery, checkout and refunds",
+      "kind": "owned_product_commercial",
+      "source_id": "S08",
+      "status": "NOT_AUTHENTICATED",
+      "approved_public_copy": "no_promotional_claim"
+    },
+    {
+      "id": "C25",
+      "claim": "Rubber hand research establishes Zen12 efficacy",
+      "kind": "cross_domain_product_claim",
+      "source_id": "S01",
+      "status": "INVALID_EXTRAPOLATION",
+      "approved_public_copy": "no_promotional_claim"
+    },
+    {
+      "id": "C26",
+      "claim": "Studio may reuse merchant swipe/video creatives",
+      "kind": "creative_rights",
+      "source_id": "S15",
+      "status": "NOT_AUTHENTICATED",
+      "approved_public_copy": "no_promotional_claim"
+    }
+  ],
+  "gates": [
+    {
+      "gate": "named_FV_publisher_acceptance",
+      "owner": "Founder/Commerce",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "zen12_SKU_rights",
+      "owner": "Founder/Commerce",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "permitted_website_channel",
+      "owner": "Founder/Commerce",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "permitted_social_channel",
+      "owner": "Founder/Commerce",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "permitted_email_channel",
+      "owner": "Founder/Commerce",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "actual_issued_earning_URL",
+      "owner": "Founder/Commerce",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "approved_creative_usage_rights",
+      "owner": "Founder/Commerce",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "merchant_checkout_price_and_taxes",
+      "owner": "Founder/Commerce",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "refund_exclusions_for_referral",
+      "owner": "Founder/Commerce",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "confirmed_payout_settlement_terms",
+      "owner": "Founder/Commerce",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "authenticated_paid_FV_Mind_SKU",
+      "owner": "Founder/Commerce",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "owned_SKU_rights_license",
+      "owner": "Founder/Commerce",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "owned_SKU_checkout_and_fulfillment",
+      "owner": "Claude/Commerce",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "browser_keyboard_WCAG_QA",
+      "owner": "Site QA",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "responsive_CWV_QA",
+      "owner": "Site QA",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "WordPress_sanitization_QA",
+      "owner": "Site QA",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "encoded_original_optional_film",
+      "owner": "Mind/Site QA",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "Jetpack_provider_confirmed_delivery",
+      "owner": "Claude/Dispatch",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "3_real_Grok_media_IDs",
+      "owner": "Praxxis/Grok",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "independent_revenue_reconciliation",
+      "owner": "Commerce/Claude",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    },
+    {
+      "gate": "founder_release_signoff",
+      "owner": "Founder",
+      "state": "HOLD",
+      "proof_url": null,
+      "verified_on": null
+    }
+  ],
+  "media_map": [
+    {
+      "topic": "change blindness",
+      "asset_id": null,
+      "platform_url": null,
+      "verified_hook": null,
+      "published_destination": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "approval_status": "NOT_VERIFIED"
+    },
+    {
+      "topic": "history of suggestion and Puységur",
+      "asset_id": null,
+      "platform_url": null,
+      "verified_hook": null,
+      "published_destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "approval_status": "NOT_VERIFIED"
+    },
+    {
+      "topic": "rubber hand illusion",
+      "asset_id": null,
+      "platform_url": null,
+      "verified_hook": null,
+      "published_destination": null,
+      "approval_status": "SOURCE_ONLY_NO_PUBLIC_ROUTE"
+    }
+  ],
+  "release_decision": "HARD_HOLD",
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "realized_revenue_status": "NOT_COMPUTABLE",
+  "notes": "No user experience, verified affiliate approval, product efficacy, authorized price, payout or paid FV SKU claimed. Public Inspire3 program payout copy is a seller claim, not an agreed commission."
+}
