@@ -69,7 +69,7 @@ class Custody(unittest.TestCase):
         result=self.audit(b=html("Changed").replace(b"Sources",b"Different"))
         self.assertTrue(any("headings changed" in x for x in result["review_warnings"]))
     def test_non_utf8_rejected(self):
-        self.assertFalse(self.audit(b=html("read")+b"\\xff")["integrity_ok"])
+        self.assertFalse(self.audit(b=html("read")+bytes([255]))["integrity_ok"])
     def test_symlink_rejected(self):
         target=Path(self.t.name)/"target"
         self.b.rename(target)
