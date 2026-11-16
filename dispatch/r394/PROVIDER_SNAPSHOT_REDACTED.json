@@ -1,0 +1,67 @@
+{
+  "snapshot_utc": "2026-11-16T04:39:28Z",
+  "source": "authenticated WordPress Jetpack read only",
+  "site": "https://finalvestige.com",
+  "newsletter": {
+    "enabled": true,
+    "auto_new_post_email": false,
+    "email_content_format": "full",
+    "reply_to": "no-reply",
+    "welcome_configured": true,
+    "actual_welcome_delivery_verified": false,
+    "recent_post_notifications": "five most recent listed never_sent_opted_out"
+  },
+  "subscriber_provider": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "email_eligible_count": null,
+    "email_eligible_count_source": "Requires provider Subscribers > Email subscription > Subscribed filter",
+    "counts_are_not_additive": true,
+    "no_email_addresses_retained": true
+  },
+  "follower_counter": {
+    "wpcom": 3,
+    "separately_reported_email": 0,
+    "interpretation": "follower channels are not an authoritative email-deliverability count"
+  },
+  "merchant": {
+    "named_fv_partner_acceptance": false,
+    "email_channel_permission": false,
+    "approved_zen12_earning_link": false,
+    "total_focus_email_permission": false,
+    "guide_zen12_live": false,
+    "guide_total_focus_live": false,
+    "settled_publisher_commissions": null
+  },
+  "verification": {
+    "native_jetpack_preview": false,
+    "postal_address": false,
+    "functional_unsubscribe": false,
+    "founder_send_approval": false,
+    "settled_revenue": null,
+    "audited_qualified_sessions": null
+  },
+  "release": {
+    "status": "HOLD_UNSENT",
+    "commercial_issue_numbers": [
+      3,
+      5
+    ],
+    "editorial_issue_numbers": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "send_authorized": false
+  },
+  "provenance": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://wordpress.com/support/subscribers/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://finalvestige.com/dispatch/",
+    "https://finalvestige.com/focus/"
+  ]
+}
