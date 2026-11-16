@@ -1,0 +1,54 @@
+{
+  "axe": "NOT_RUN",
+  "blocked_adversarial_requests_per_width": 2,
+  "chromium_contexts": 7,
+  "chromium_interception_widths": [
+    320,
+    390,
+    768,
+    1440,
+    1920
+  ],
+  "cls_fixture": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    null,
+    0
+  ],
+  "installed_staging": "NOT_TESTED",
+  "lcp_ms_fixture": [
+    180,
+    72,
+    80,
+    84,
+    80,
+    null,
+    84
+  ],
+  "mutating_network_requests_made": 0,
+  "observed_overflow_px": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "production_cwv": "NOT_MEASURED",
+  "status": "PASS_LOCAL_FIXTURE_SHADOW_DEPENDENCY_ONLY",
+  "test_methods_passed": 7,
+  "upstream_exact": false,
+  "widths": [
+    320,
+    390,
+    768,
+    1440,
+    1920,
+    320,
+    390
+  ]
+}
