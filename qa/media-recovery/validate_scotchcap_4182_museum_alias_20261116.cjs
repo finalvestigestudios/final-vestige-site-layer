@@ -1,0 +1,30 @@
+"use strict";
+const assert=require("node:assert/strict");
+function validate(x){
+ assert.equal(x.schema,"fv-media-p0-scotchcap-museum-alias-v1");
+ assert.equal(x.slot,"418:2");assert.equal(x.wordpress_post_id,418);
+ assert.equal(x.wordpress_post_url,"https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/");
+ assert.equal(x.edit_src,"https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg");
+ assert.equal(x.view_src,"https://i0.wp.com/www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg?ssl=1");
+ assert.equal(x.current_guest_src,null);assert.equal(x.guest_get_status,null);assert.equal(x.guest_decoded,null);assert.equal(x.guest_network_bytes,null);
+ assert.equal(x.candidate.record,"https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/");
+ assert.equal(x.candidate.direct_image,"https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg");
+ assert.equal(x.candidate.rendered_in_reader,true);
+ assert.equal(x.candidate.attribution,"U.S. Coast Guard (museum caption)");
+ assert.equal(x.candidate.same_pixels_verified,false);
+ assert.equal(x.candidate.master_hash_sha256,null);
+ assert.equal(x.candidate.master_dimensions_px,null);
+ assert.deepEqual(x.candidate.preview_dimensions_from_name_px,[600,463]);
+ assert.deepEqual(x.candidate.conditional_unscaled_delivery_px,[600,463]);
+ assert.equal(x.candidate.maximum_allowed_width_px,960);
+ assert.equal(x.candidate.individual_publication_rights_verified,false);
+ assert.equal(x.candidate.rehosting_approved,false);assert.equal(x.candidate.cache_wordpress_approved,false);
+ assert.equal(x.secondary_reference_rights_authority,false);
+ assert.equal(x.reported_42_browser_failures_confirmed,false);
+ assert.equal(x.claimed_76_percent_wire_savings_measured,false);
+ assert.equal(x.staging_status,"HOLD");assert.equal(x.site_qa_owns_browser_collector,true);
+ assert.equal(x.production_wordpress_write,false);assert.equal(x.homepage_visual_edit,false);
+ assert.equal(x.media_download,false);assert.equal(x.subscription_spend,false);
+ return {slot:"418:2",status:"HOLD",reason:"guest failure, exact-photo binary, dimensions and item-level rights not verified"};
+}
+module.exports={validate};
