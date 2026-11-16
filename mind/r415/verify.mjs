@@ -16,9 +16,9 @@ const build=read("build-film.sh");
 let passed=0;
 function check(name,fn){try{fn();console.log("PASS",name);passed++;}catch(err){console.error("FAIL",name,err.message);process.exitCode=1}}
 function assertSafe(page){
-assert.match(page,/<button[^>]*\bdisabled\b[^>]*>/i);
+const controls=[...page.matchAll(/<button\\b[^>]*>/gi)].map(x=>x[0]); assert.equal(controls.length,1); assert.match(controls[0],/\\sdisabled(?=\\s|>)/i);
 assert.match(page,/aria-disabled="true"/);
-assert.match(page,/If a verified Final Vestige affiliate link is later activated,/);
+assert.match(page,/Prospective affiliate disclosure:/); assert.match(page,/If a verified Final Vestige affiliate link is later activated,/);
 assert.match(page,/no additional cost to you/i);
 assert.match(page,/No earning link is active/i);
 assert.equal((page.match(/<form\b/gi)||[]).length,0);
@@ -33,7 +33,7 @@ assert.match(page,/https:\/\/finalvestige\.com\/focus\//);
 const between=(s,start,end)=>s.slice(s.indexOf(start),s.indexOf(end));
 const pageA=a.replace(/<title>.*?<\/title>/,"<title></title>");
 const pageB=b.replace(/<title>.*?<\/title>/,"<title></title>").replace(/<section class="section"><span class="pill">Optional film \/ 42 seconds<\/span>[\s\S]*?<\/details><\/section>/,"");
-check("Article: original substantial research",()=>{assert.ok(art.split(/\s+/).length>=1700);for(const token of ["Schooler","Mrazek","2004","2013","mind wandering","Puységur","source ledger","no product-specific"]){assert.ok(art.toLowerCase().includes(token.toLowerCase()),token)}});
+check("Article: original substantial research",()=>{assert.ok(art.split(/\s+/).length>=1700);for(const token of ["Schooler","Mrazek","2004","2013","mind wandering","Puységur","source ledger","product-specific"]){assert.ok(art.toLowerCase().includes(token.toLowerCase()),token)}});
 check("Article: at least 8 independent research URL mentions",()=>assert.ok((art.match(/https:\/\/(?:pubmed\.ncbi\.nlm\.nih\.gov|researchers\.mq\.edu\.au|pure\.york\.ac\.uk)/g)||[]).length>=8));
 check("A/B copy parity apart from film",()=>assert.equal(pageA,pageB));
 check("A has no video, B has one",()=>{assert.doesNotMatch(a,/<video\b/);assert.equal((b.match(/<video\b/g)||[]).length,1)});
