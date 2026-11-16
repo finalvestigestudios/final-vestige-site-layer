@@ -1,0 +1,38 @@
+THE DISPATCH — ISSUE 04 · OPTIONAL · NOT ADOPTED · UNSENT
+
+SUBJECT: Apollo 1 did not have a single cause
+PREHEADER: Oxygen, wiring, escape—and the uncertainty the investigators refused to erase.
+
+The most tempting Apollo 1 explanation is also the shortest: a spark.
+
+On January 27, 1967, Gus Grissom, Ed White and Roger Chaffee were inside a command module on the launch pad, rehearsing a test. They were not launching. In the sealed cabin, a fire spread with catastrophic speed. All three astronauts died.
+
+A short explanation makes the tragedy sound as if identifying one defective wire would have solved it. NASA's investigation tells a more demanding story.
+
+The cabin held a high-pressure, pure-oxygen atmosphere during the ground test. Materials inside it could burn rapidly. The inward-opening inner hatch required a complicated removal process and was effectively trapped by rising pressure. Test procedures and safety assumptions did not adequately account for this combination of hazards.
+
+The ignition source was not conclusively identified. Investigators could locate a probable origin and document failures without pretending that every uncertainty was resolved.
+
+Even the famous seconds require care. A preliminary NASA statement reported cabin rupture about fourteen seconds after an initial indication of fire. The later review board described the first stage ending about fifteen seconds after the verbal report. A NASA event summary says the last crew communication ended seventeen seconds after the first indication. Those are different starting points and events—not three interchangeable measures of how long the tragedy lasted.
+
+That difference is worth keeping. A date, a number or a vivid photograph can be accurate yet still mislead when separated from what it measures.
+
+What changed afterward was not simply a piece of wiring. NASA redesigned the hatch, reduced combustible materials, reconsidered cabin atmospheres and strengthened safety practices. Three lives lost; an extensive record left behind.
+
+PRIMARY CTA — Read the documented investigation:
+https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+
+PRIMARY SOURCES:
+NASA Apollo 204 Review Board:
+https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/
+NASA Apollo 1:
+https://www.nasa.gov/mission/apollo-1/
+NASA preliminary February 3, 1967 statement:
+https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/seamans.html
+NASA NSSDC timeline:
+https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo1info.html
+
+Historical editorial only; no affiliate promotion.
+
+DO NOT SEND — REQUIRED: [[VALID_FV_POSTAL_ADDRESS_REQUIRED]] and [[JETPACK_RENDERED_UNSUBSCRIBE_REQUIRED]].
+Founder approval, native Jetpack preview, and real opt-out proof missing.
