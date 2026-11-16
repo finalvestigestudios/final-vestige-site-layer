@@ -1,0 +1,5 @@
+# Dispatch R404: six faithful UNSENT email specimens
+
+Review [REVIEW_BOARD.html](REVIEW_BOARD.html), six HTML and six plain-text email-safe *offline examples*, and [COPY_CONVERSION_DECISION.md](COPY_CONVERSION_DECISION.md). Generated from the canonical 2026-10-30 [PR #175](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175) exact HEAD `d57ccdba3aee8f065e143e101c2945f4f3d01647`; ORIGINAL FILES UNCHANGED. The original four-editorial/two-commercial allocation is unchanged. Broken offer placeholders intentionally appear as NON-CLICKABLE text. No fake physical mailing address or unsubscribe link is supplied. These samples cannot substitute for a genuine non-sending Jetpack editor Preview.
+
+[QA_RECEIPT.json](QA_RECEIPT.json) contains 43 executed V8 static checks, not email-client or viewport test results. Native original Python suite was independently run 6/6, with all eight original source Git-blob hashes independently matched to current PR #175. This review pack is not adopted as production email copy, and NO SEND, CMS write, subscriber contact, affiliate activation, merge or spending occurred.

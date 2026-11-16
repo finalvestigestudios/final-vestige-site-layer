@@ -1,0 +1,183 @@
+{
+  "tested_at": "2026-11-16 17:33 UTC",
+  "canonical_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stacked_parent_sha": "16d624640b62acb14fc250a093ddc1530166a359",
+  "method": "isolated V8 executed structural checks on fetched canonical source and generated offline HTML/plaintext; NOT native email-client or Jetpack preview",
+  "checks": [
+    {
+      "name": "01-the-mind-is-not-a-camera_sections",
+      "result": "PASS"
+    },
+    {
+      "name": "01_html_safe",
+      "result": "PASS"
+    },
+    {
+      "name": "01_no_live_offer",
+      "result": "PASS"
+    },
+    {
+      "name": "01_static_hold",
+      "result": "PASS"
+    },
+    {
+      "name": "01_subject_preheader",
+      "result": "PASS"
+    },
+    {
+      "name": "01_fidelity",
+      "result": "PASS"
+    },
+    {
+      "name": "02-before-hypnosis-had-a-name_sections",
+      "result": "PASS"
+    },
+    {
+      "name": "02_html_safe",
+      "result": "PASS"
+    },
+    {
+      "name": "02_no_live_offer",
+      "result": "PASS"
+    },
+    {
+      "name": "02_static_hold",
+      "result": "PASS"
+    },
+    {
+      "name": "02_subject_preheader",
+      "result": "PASS"
+    },
+    {
+      "name": "02_fidelity",
+      "result": "PASS"
+    },
+    {
+      "name": "03-the-twelve-minute-question_sections",
+      "result": "PASS"
+    },
+    {
+      "name": "03_html_safe",
+      "result": "PASS"
+    },
+    {
+      "name": "03_no_live_offer",
+      "result": "PASS"
+    },
+    {
+      "name": "03_static_hold",
+      "result": "PASS"
+    },
+    {
+      "name": "03_subject_preheader",
+      "result": "PASS"
+    },
+    {
+      "name": "03_fidelity",
+      "result": "PASS"
+    },
+    {
+      "name": "03_disabled_commercial_link",
+      "result": "PASS"
+    },
+    {
+      "name": "03_disclosure",
+      "result": "PASS"
+    },
+    {
+      "name": "04-the-hatch-and-the-spark_sections",
+      "result": "PASS"
+    },
+    {
+      "name": "04_html_safe",
+      "result": "PASS"
+    },
+    {
+      "name": "04_no_live_offer",
+      "result": "PASS"
+    },
+    {
+      "name": "04_static_hold",
+      "result": "PASS"
+    },
+    {
+      "name": "04_subject_preheader",
+      "result": "PASS"
+    },
+    {
+      "name": "04_fidelity",
+      "result": "PASS"
+    },
+    {
+      "name": "05-before-you-press-play_sections",
+      "result": "PASS"
+    },
+    {
+      "name": "05_html_safe",
+      "result": "PASS"
+    },
+    {
+      "name": "05_no_live_offer",
+      "result": "PASS"
+    },
+    {
+      "name": "05_static_hold",
+      "result": "PASS"
+    },
+    {
+      "name": "05_subject_preheader",
+      "result": "PASS"
+    },
+    {
+      "name": "05_fidelity",
+      "result": "PASS"
+    },
+    {
+      "name": "05_disabled_commercial_link",
+      "result": "PASS"
+    },
+    {
+      "name": "05_disclosure",
+      "result": "PASS"
+    },
+    {
+      "name": "06-the-evidence-log_sections",
+      "result": "PASS"
+    },
+    {
+      "name": "06_html_safe",
+      "result": "PASS"
+    },
+    {
+      "name": "06_no_live_offer",
+      "result": "PASS"
+    },
+    {
+      "name": "06_static_hold",
+      "result": "PASS"
+    },
+    {
+      "name": "06_subject_preheader",
+      "result": "PASS"
+    },
+    {
+      "name": "06_fidelity",
+      "result": "PASS"
+    },
+    {
+      "name": "4to2",
+      "result": "PASS"
+    },
+    {
+      "name": "unique_canonical_blob_ids",
+      "result": "PASS"
+    },
+    {
+      "name": "duplicate_cta_detected",
+      "result": "PASS"
+    }
+  ],
+  "passed": 43,
+  "failed": 0,
+  "original_native_python": "6/6 PASS separately in Python 3.13.5 on SHA-matched eight PR175 source files"
+}
