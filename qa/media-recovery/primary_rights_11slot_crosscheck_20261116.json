@@ -18,7 +18,8 @@
     "florida_faq": "https://floridamemory.com/share/order-info/faq.php",
     "florida_policy": "Florida Memory says all posted images bear CC Public Domain Mark 1.0, no known copyright restrictions; archival credit requested under Florida Statutes 257.35(6). PDM is a status marking not an affirmative reuse license. Per-item identification remains required.",
     "navy_photo_policy": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography.html",
-    "navy_policy": "NHHC: most images public domain; Photo Section cannot confirm rights for every photograph, including donated materials. Verify specific accession."
+    "navy_policy": "NHHC: most images public domain; Photo Section cannot confirm rights for every photograph, including donated materials. Verify specific accession.",
+    "skyway_caveat": "The PDM statement applies only to the Florida Memory candidate, not to publisher-hosted current images in post 287. These candidates are different photographic scenes and may not replace existing images automatically."
   },
   "site_qa_owner": "PR #154 cold logged-out Chromium collector only",
   "reported_42_broken_confirmed": false,
@@ -45,7 +46,7 @@
       "catalog_high_dimensions_px": null,
       "conditional_960_px_from_catalog": null,
       "master_binary_dimensions_verified": false,
-      "rights_policy": "florida-memory-PDM-1.0-source-claim",
+      "rights_policy": "current-publisher-image-rights-unknown; different-scene Florida candidate PDM source-claimed only",
       "rights_approval": "HOLD",
       "caption_note": null,
       "guest_http_status": null,
@@ -75,7 +76,7 @@
       "catalog_high_dimensions_px": null,
       "conditional_960_px_from_catalog": null,
       "master_binary_dimensions_verified": false,
-      "rights_policy": "florida-memory-PDM-1.0-source-claim",
+      "rights_policy": "current-publisher-image-rights-unknown; different-scene Florida candidate PDM source-claimed only",
       "rights_approval": "HOLD",
       "caption_note": null,
       "guest_http_status": null,
