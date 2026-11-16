@@ -1,0 +1,22 @@
+"use strict";
+// Run: node --test qa/media-recovery/test_wp66_oversize_noninline_cross_surface_20261115.cjs
+const test=require("node:test");const assert=require("node:assert/strict");const fs=require("node:fs");const path=require("node:path");
+const {verify}=require("./validate_wp66_oversize_noninline_cross_surface_20261115.cjs");const root=path.resolve(__dirname,"../..");
+const doc=JSON.parse(fs.readFileSync(path.join(root,"qa/media-recovery/wp66_oversize_noninline_cross_surface_20261115.json"),"utf8"));const source=JSON.parse(fs.readFileSync(path.join(root,"qa/media-recovery/wp66_132media_20oversized_inline_exposure_20261115.json"),"utf8"));
+test("full 9 record cross-surface source ledger passes",()=>assert.deepEqual(verify(doc,source),[]));
+test("fabricated_guest_404",()=>{const clone=structuredClone(doc);(d=>d.records[0].guest_http_status=404)(clone);assert.ok(verify(clone,source).length>0);});
+test("false_76_percent",()=>{const clone=structuredClone(doc);(d=>d.sitewide_visitor_transfer_reduction_percent=76)(clone);assert.ok(verify(clone,source).length>0);});
+test("wrong_usage",()=>{const clone=structuredClone(doc);(d=>d.records[0].usage_class="unresolved")(clone);assert.ok(verify(clone,source).length>0);});
+test("wrong_featured_id",()=>{const clone=structuredClone(doc);(d=>d.records[0].verified_usage[0].evidence_attachment_id=1)(clone);assert.ok(verify(clone,source).length>0);});
+test("wrong_post_relationship",()=>{const clone=structuredClone(doc);(d=>d.records[0].verified_usage[0].object_id=21)(clone);assert.ok(verify(clone,source).length>0);});
+test("conceal_draft",()=>{const clone=structuredClone(doc);(d=>d.records.find(x=>x.attachment_id===405).verified_usage[0].object_status="publish")(clone);assert.ok(verify(clone,source).length>0);});
+test("unlicensed_cache",()=>{const clone=structuredClone(doc);(d=>d.records[0].cache_authorized=true)(clone);assert.ok(verify(clone,source).length>0);});
+test("wp_upload",()=>{const clone=structuredClone(doc);(d=>d.records[0].wp_upload_authorized=true)(clone);assert.ok(verify(clone,source).length>0);});
+test("fake_source_url",()=>{const clone=structuredClone(doc);(d=>d.records[0].original_url="https://example.com/fake.jpg")(clone);assert.ok(verify(clone,source).length>0);});
+test("forged_bytes",()=>{const clone=structuredClone(doc);(d=>d.records[0].original_stored_bytes=3)(clone);assert.ok(verify(clone,source).length>0);});
+test("stretched_960",()=>{const clone=structuredClone(doc);(d=>d.records[0].review_proportional_height=500)(clone);assert.ok(verify(clone,source).length>0);});
+test("upscaled_preview",()=>{const clone=structuredClone(doc);(d=>d.records[0].review_max_width=1200)(clone);assert.ok(verify(clone,source).length>0);});
+test("delete_one",()=>{const clone=structuredClone(doc);(d=>d.records.pop())(clone);assert.ok(verify(clone,source).length>0);});
+test("false_all_pages_checked",()=>{const clone=structuredClone(doc);(d=>d.individual_page_bodies_examined=[234,85,2429,1868])(clone);assert.ok(verify(clone,source).length>0);});
+test("broken_42_claim",()=>{const clone=structuredClone(doc);(d=>d.reported_42_broken_guest_verified=true)(clone);assert.ok(verify(clone,source).length>0);});
+test("phantom_use",()=>{const clone=structuredClone(doc);(d=>d.records.find(x=>x.attachment_id===482).verified_usage.push({type:"page_body_image",object_id:1,object_status:"publish"}))(clone);assert.ok(verify(clone,source).length>0);});
