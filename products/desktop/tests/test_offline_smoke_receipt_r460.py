@@ -133,7 +133,7 @@ class SourceSmokeReceiptR460(unittest.TestCase):
             kwargs['stdout'].write(raw)
             return SimpleNamespace(returncode=0)
         with patch.object(gate.subprocess, 'run', side_effect=child):
-            self.assertEqual(gate._run_smokes(Path('/synthetic')), 12)
+            self.assertEqual(gate._run_smokes(Path('/synthetic'), 'a' * 64), 12)
 
     def test_parent_refuses_zero_exit_contradictory_receipt(self):
         item = self.receipt()
@@ -144,12 +144,12 @@ class SourceSmokeReceiptR460(unittest.TestCase):
             return SimpleNamespace(returncode=0)
         with patch.object(gate.subprocess, 'run', side_effect=child):
             with self.assertRaises(gate.LocalGateError):
-                gate._run_smokes(Path('/synthetic'))
+                gate._run_smokes(Path('/synthetic'), 'a' * 64)
 
     def test_parent_refuses_zero_exit_missing_receipt(self):
         with patch.object(gate.subprocess, 'run', return_value=SimpleNamespace(returncode=0)):
             with self.assertRaises(gate.LocalGateError):
-                gate._run_smokes(Path('/synthetic'))
+                gate._run_smokes(Path('/synthetic'), 'a' * 64)
 
     def test_parent_refuses_nonzero_exit_even_with_good_receipt(self):
         def child(command, **kwargs):
@@ -157,7 +157,7 @@ class SourceSmokeReceiptR460(unittest.TestCase):
             return SimpleNamespace(returncode=1)
         with patch.object(gate.subprocess, 'run', side_effect=child):
             with self.assertRaises(gate.LocalGateError):
-                gate._run_smokes(Path('/synthetic'))
+                gate._run_smokes(Path('/synthetic'), 'a' * 64)
 
     def test_fixed_private_safe_error_text(self):
         item = self.receipt()

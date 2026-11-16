@@ -15,25 +15,29 @@ import subprocess
 import sys
 import tempfile
 
-from offline_smoke_receipt_r460 import (SourceSmokeReceiptError,
-                                        require_six_app_smokes,
-                                        MAX_RECEIPT_BYTES)
+from offline_smoke_receipt_r460 import MAX_RECEIPT_BYTES
+from offline_source_binding_r461 import (
+    SourceBindingError, verified_six_app_digest, require_bound_six_app_smokes,
+)
 
 TESTS = (
     "test_csv_negative_decimal_zero_copy_r455.py",
     "test_csv_safe_cell_zero_copy_r456.py",
     "test_csv_incremental_render_budget_r457.py",
     "test_csv_bounded_utf8_witness_r458.py",
+    "test_source_digest_binding_r461.py",
 )
 SOURCE_INPUTS = (
     "offline_regression_gate_r459.py",
     "offline_smoke_receipt_r460.py",
+    "offline_source_binding_r461.py",
     "offline_source_smoke_r408.py",
     "fvs_suite/atomic_reports.py",
     "fvs_suite/engine.py",
     *("tests/" + name for name in TESTS),
     "tests/test_offline_regression_gate_r459.py",
     "tests/test_offline_smoke_receipt_r460.py",
+    "tests/test_source_digest_binding_r461.py",
 )
 TIMEOUT_TEST_SECONDS = 120
 TIMEOUT_SMOKE_SECONDS = 330
@@ -142,7 +146,7 @@ def _run_tests(desktop: Path) -> tuple[int, int]:
     return executions, methods
 
 
-def _run_smokes(desktop: Path) -> int:
+def _run_smokes(desktop: Path, expected_digest: str) -> int:
     """Prove R408's twelve actual statuses from a bounded private JSON receipt."""
     command = [sys.executable, '-I', '-B', '-W', 'error',
                str(desktop / 'offline_source_smoke_r408.py')]
@@ -162,20 +166,31 @@ def _run_smokes(desktop: Path) -> int:
     except (OSError, subprocess.TimeoutExpired):
         raise LocalGateError("Local source smoke could not execute") from None
     try:
-        return require_six_app_smokes(raw)
-    except SourceSmokeReceiptError:
+        return require_bound_six_app_smokes(raw, expected_digest)
+    except SourceBindingError:
         raise LocalGateError("Local six-app source smoke receipt rejected") from None
+
+
+def _six_source_digest(desktop: Path) -> str:
+    """Attest R408's full import-root + six-launcher inventory, not a subset."""
+    try:
+        return verified_six_app_digest(desktop)
+    except SourceBindingError:
+        raise LocalGateError("Local six-app source inventory rejected") from None
 
 
 def run_gate(desktop: Path) -> dict[str, object]:
     if not desktop.is_absolute() or desktop.is_symlink() or not desktop.is_dir():
         raise LocalGateError("Local source regression directory rejected")
     before = _source_fingerprint(desktop)
+    full_before = _six_source_digest(desktop)
     modes, tests = _run_tests(desktop)
-    if _source_fingerprint(desktop) != before:
+    if (_source_fingerprint(desktop) != before or
+            _six_source_digest(desktop) != full_before):
         raise LocalGateError("Local regression sources changed during tests")
-    smokes = _run_smokes(desktop)
-    if _source_fingerprint(desktop) != before:
+    smokes = _run_smokes(desktop, full_before)
+    if (_source_fingerprint(desktop) != before or
+            _six_source_digest(desktop) != full_before):
         raise LocalGateError("Local regression sources changed during smoke checks")
     return {
         'schema': 'fvs-offline-regression-r459-v1',
