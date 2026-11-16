@@ -1,0 +1,41 @@
+{
+  "candidate": "optional issue04; canonical unchanged",
+  "reviewed_at_utc": "2026-11-16",
+  "status": "PRIMARY_SOURCE_REVIEWED_UNSENT",
+  "facts": [
+    {
+      "claim": "1967-01-27 launch-pad ground test, three astronauts died",
+      "source": "https://www.nasa.gov/mission/apollo-1/",
+      "status": "OFFICIAL_NASA"
+    },
+    {
+      "claim": "approximately fourteen seconds to cabin rupture after initial indicated fire",
+      "source": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/seamans.html",
+      "status": "PRELIMINARY_1967_STATEMENT",
+      "qualification": "Seamans warns of possible one- or two-second synchronization error; not necessarily complete fire duration"
+    },
+    {
+      "claim": "first fire stage ended approximately fifteen seconds after the verbal report",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "status": "FINAL_REVIEW_BOARD",
+      "qualification": "Starts at verbal report, refers to pressure-vessel rupture; do not equate with February preliminary reference"
+    },
+    {
+      "claim": "last communication ended about seventeen seconds after first fire indication",
+      "source": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo1info.html",
+      "status": "NASA_NSSDC_SUMMARY",
+      "qualification": "This measures first indication to last communication, not ignition to death"
+    },
+    {
+      "claim": "ignition source not conclusively identified; oxygen, combustible materials and hatch design were identified hazards",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "status": "FINAL_REVIEW_BOARD"
+    }
+  ],
+  "forbidden_inferences": [
+    "Fourteen seconds was the duration of the entire fire",
+    "Exact ignition wire was conclusively identified",
+    "All three NASA timelines share the same start and end events",
+    "A single spark explains all design and test failures"
+  ]
+}
