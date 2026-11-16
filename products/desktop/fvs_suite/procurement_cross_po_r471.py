@@ -52,10 +52,11 @@ def _materialize_index(
     # Sets have hash-seed-dependent iteration order. Both report-group order
     # and equal-numeric source-row spellings must be canonical for repeatable
     # local audit evidence across processes, platforms and input order.
+    # Shortest spelling sorts first for equal numeric rows (2 before 02).
     # Real CSV physical rows use canonical digits; tie-breaking also makes
     # this shared helper deterministic for callers with noncanonical labels.
     return {
-        group: tuple(sorted(rows, key=lambda row: (int(row), row)))
+        group: tuple(sorted(rows, key=lambda row: (int(row), len(row), row)))
         for group, rows in sorted(affected.items())
     }
 
