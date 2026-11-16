@@ -40,7 +40,7 @@ def _reserve_citation_budget(
 def _materialize_index(
     documents: Mapping[str, list[tuple[tuple[str, str], str]]],
 ) -> dict[tuple[str, str], tuple[str, ...]]:
-    """Expand only after the entire selected stream passed its preflight."""
+    """Expand only after preflight; emit canonical group and row order."""
     affected: dict[tuple[str, str], set[str]] = defaultdict(set)
     for occurrences in documents.values():
         groups = {group for group, _ in occurrences}
@@ -49,7 +49,15 @@ def _materialize_index(
         source_rows = {row for _, row in occurrences}
         for group in groups:
             affected[group].update(source_rows)
-    return {group: tuple(sorted(rows, key=int)) for group, rows in affected.items()}
+    # Sets have hash-seed-dependent iteration order. Both report-group order
+    # and equal-numeric source-row spellings must be canonical for repeatable
+    # local audit evidence across processes, platforms and input order.
+    # Real CSV physical rows use canonical digits; tie-breaking also makes
+    # this shared helper deterministic for callers with noncanonical labels.
+    return {
+        group: tuple(sorted(rows, key=lambda row: (int(row), row)))
+        for group, rows in sorted(affected.items())
+    }
 
 
 def _bounded_index(
