@@ -1,0 +1,13 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+import{auditRelease,confirmedLeadCount,netRevenuePerThousand,MERCHANT_KEYS}from './release_gate.mjs';
+const baseline=JSON.parse(fs.readFileSync(new URL('./proof_ledger.json',import.meta.url),'utf8'));
+test('baseline hard hold',()=>{const r=auditRelease(baseline);assert.equal(r.send_authorized,false);assert.ok(r.reasons.includes('not_adopted'));});
+for(const k of MERCHANT_KEYS)test('missing merchant proof '+k,()=>assert.ok(auditRelease(baseline).reasons.includes('missing_proof:'+k)));
+test('cannot bypass by toggling flags',()=>{const b=structuredClone(baseline);for(const k of Object.keys(b.attestation))b.attestation[k]=true;b.candidate.adopted=true;b.candidate.cta='APPROVED_URL';b.candidate.approved_live_guide_url='https://example.test/guide';b.candidate.authorized_earning_url='https://example.test/earning';assert.equal(auditRelease(b).send_authorized,false);});
+test('mix mutation detected',()=>{const b=structuredClone(baseline);b.canonical.commercial=6;assert.ok(auditRelease(b).reasons.includes('4_2_mix_integrity'));});
+test('dedupe confirmed provider transitions',()=>assert.equal(confirmedLeadCount([{provider:'JETPACK',opaque_id:'opaque_123',status:'confirmed'},{provider:'JETPACK',opaque_id:'opaque_123',status:'confirmed'}]),1));
+test('reject pending attempts',()=>assert.equal(confirmedLeadCount([{provider:'JETPACK',opaque_id:'opaque_123',status:'pending'}]),null));
+test('reject screenshot as consent',()=>assert.equal(confirmedLeadCount([{provider:'GIFT_PANEL',opaque_id:'opaque_123',status:'confirmed'}]),null));
+test('no ledger no revenue',()=>assert.equal(netRevenuePerThousand({commission_ledger_verified:false,sessions_audited:true,net_commission:0,human_sessions:100}).status,'NOT_COMPUTABLE'));
+test('no session audit no revenue',()=>assert.equal(netRevenuePerThousand({commission_ledger_verified:true,sessions_audited:false,net_commission:1,human_sessions:100}).status,'NOT_COMPUTABLE'));
+test('verified example computes only synthetic',()=>assert.equal(netRevenuePerThousand({commission_ledger_verified:true,sessions_audited:true,net_commission:30,human_sessions:100}).value,300));
