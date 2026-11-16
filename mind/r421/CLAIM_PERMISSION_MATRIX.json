@@ -380,7 +380,7 @@
       "source_ids": [
         "M6"
       ],
-      "limit": "Exclude",
+      "limit": "Exclude unsupported product-specific efficacy claims",
       "publish_as_benefit": false
     },
     {
@@ -400,7 +400,7 @@
       "source_ids": [
         "M7"
       ],
-      "limit": "Exclude",
+      "limit": "Exclude unsupported product-specific efficacy claims",
       "publish_as_benefit": false
     },
     {
