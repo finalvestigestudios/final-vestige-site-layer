@@ -68,6 +68,12 @@ class TestRecipientTruth(unittest.TestCase):
     def test_valid_zero_attested_count_not_a_sale(self):
         p=self.one();p['proof']['deduped_confirmed_signup_events']=0;self.assertIsNone(audit(p)['net_revenue_per_1000_qualified_sessions'])
     def test_no_total_addition(self):self.assertEqual(audit(self.one())['counts']['total'],3)
+    def test_identifying_snapshot_id_rejected(self):
+        p=self.one(); p['snapshot_id']='wp-readonly-user@example.com'; self.assertRaises(ValueError,audit,p)
+    def test_invalid_calendar_timestamp_rejected(self):
+        p=self.one(); p['as_of_utc']='2026-99-99T21:38:56Z'; self.assertRaises(ValueError,audit,p)
+    def test_timestamp_with_embedded_identifier_rejected(self):
+        p=self.one(); p['as_of_utc']='2026-11-16T21:38:56-user@example.comZ'; self.assertRaises(ValueError,audit,p)
     def test_no_unapproved_url(self):self.assertNotIn('http',json.dumps(audit(self.one())))
 
 if __name__=='__main__':unittest.main()
