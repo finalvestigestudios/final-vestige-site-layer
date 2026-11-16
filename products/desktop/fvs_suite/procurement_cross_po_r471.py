@@ -16,32 +16,49 @@ from typing import Callable, Mapping
 _MAX_CROSS_PO_CITATIONS = 1_000_000
 
 
+def _reserve_citation_budget(
+    documents: Mapping[str, list[tuple[tuple[str, str], str]]],
+    remaining: int,
+) -> int:
+    """Preflight ALL citations before constructing any cross-order row sets.
+
+    Reserve conservative (affected PO/line groups × distinct physical rows)
+    costs. This function does not materialize report evidence. It never puts
+    private IDs, source rows, filenames or amounts in exception messages.
+    """
+    for occurrences in documents.values():
+        groups = {group for group, _ in occurrences}
+        if len({group[0] for group in groups}) < 2:
+            continue
+        cost = len(groups) * len({row for _, row in occurrences})
+        if cost > remaining:
+            raise ValueError("Cross-order document review exceeds citation budget")
+        remaining -= cost
+    return remaining
+
+
+def _materialize_index(
+    documents: Mapping[str, list[tuple[tuple[str, str], str]]],
+) -> dict[tuple[str, str], tuple[str, ...]]:
+    """Expand only after the entire selected stream passed its preflight."""
+    affected: dict[tuple[str, str], set[str]] = defaultdict(set)
+    for occurrences in documents.values():
+        groups = {group for group, _ in occurrences}
+        if len({group[0] for group in groups}) < 2:
+            continue
+        source_rows = {row for _, row in occurrences}
+        for group in groups:
+            affected[group].update(source_rows)
+    return {group: tuple(sorted(rows, key=int)) for group, rows in affected.items()}
+
+
 def _bounded_index(
     documents: Mapping[str, list[tuple[tuple[str, str], str]]],
     remaining: int,
 ) -> tuple[dict[tuple[str, str], tuple[str, ...]], int]:
-    """Build cross-order citations with a fail-closed materialization budget.
-
-    Count each matching document's unique source rows times its distinct
-    affected PO/line groups *before* expanding the Cartesian fanout. The
-    conservative sum may count overlaps twice: rejection is safer than
-    partial or unbounded financial evidence. Never include identifiers,
-    paths or amounts in errors.
-    """
-    affected: dict[tuple[str, str], set[str]] = defaultdict(set)
-    for occurrences in documents.values():
-        if len({group[0] for group, _ in occurrences}) < 2:
-            continue
-        groups = {group for group, _ in occurrences}
-        source_rows = {row for _, row in occurrences}
-        cost = len(groups) * len(source_rows)
-        if cost > remaining:
-            raise ValueError("Cross-order document review exceeds citation budget")
-        remaining -= cost
-        for group in groups:
-            affected[group].update(source_rows)
-    return ({group: tuple(sorted(rows, key=int)) for group, rows in affected.items()},
-            remaining)
+    """Legacy typed wrapper: reject over-budget streams before expansion."""
+    remaining = _reserve_citation_budget(documents, remaining)
+    return _materialize_index(documents), remaining
 
 
 def _typed_cross_po_source_rows(
@@ -145,8 +162,10 @@ def cross_po_all_document_source_rows(
                 key = document_key(row.get("document_id", ""))
                 if key:
                     by_type[kind][key].append((group, row["row"]))
-    evidence: dict[str, dict[tuple[str, str], tuple[str, ...]]] = {}
+    # Reserve the combined four-type budget before expanding even the FIRST
+    # type. A later overflow must not allocate earlier, doomed report evidence.
     remaining = _MAX_CROSS_PO_CITATIONS
-    for kind, documents in by_type.items():
-        evidence[kind], remaining = _bounded_index(documents, remaining)
-    return evidence
+    for documents in by_type.values():
+        remaining = _reserve_citation_budget(documents, remaining)
+    return {kind: _materialize_index(documents)
+            for kind, documents in by_type.items()}

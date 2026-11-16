@@ -573,3 +573,7 @@ jobs:
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_budget_r475.py
           python -W error -m unittest discover -s products/desktop/tests -p test_procurement_integration_r5.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_integration_r5.py
+      - name: R476 atomic all-type cross-PO citation preflight and deterministic parity
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_atomic_r476.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_atomic_r476.py
