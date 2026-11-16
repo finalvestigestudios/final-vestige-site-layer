@@ -19,9 +19,9 @@ Original designed SVG: [`assets/bohemia-archival-finding-aid-1984-2000-v41.svg`]
 ## Guarded WordPress edit and independent readback
 Targeted only [draft #2488](https://finalvestige.com/wp-admin/post.php?post=2488&action=edit) using WordPress **single-block insert/replace** with latest `expected_modified`, `expected_content_hash`, and for replacements `expected_block_hash`; **no whole-post rewrite**. Inserted one `core/html` section at old block 55 after postmark-rule discussion; appended Source 53 to existing final `core/list`; updated reader source and evidence counts in bibliography introduction. Independently reread full authenticated post, all top-level block sections, source target/link relations and media-library metadata after final change.
 
-- **Final modified:** `2026-11-15T17:34:44` (site-local).
-- **Final raw Gutenberg SHA-1/content_hash:** `7d93fd6db8cf81ce7803549d3e8dfcacf5cf4c5f`.
-- **242 top-level Gutenberg blocks**, including 1 new HTML section with original catalog-led graphic; **53 unique numbered bibliography anchors, IDs 1–53**, **222 same-post source links**, **zero missing target IDs, zero duplicate source IDs**.
+- **Final modified:** `2026-11-15T17:41:22` (site-local).
+- **Final raw Gutenberg SHA-1/content_hash:** `48a4cabb0bf53ae734efd6ed80f37e6331fc1ac7`.
+- **244 top-level Gutenberg blocks**, including 1 new HTML section with original catalog-led graphic plus 2 regulatory-evidence paragraphs; **54 unique numbered bibliography anchors, IDs 1–54**, **224 same-post source links**, **zero missing target IDs, zero duplicate source IDs**.
 - **Status DRAFT**, **never published**; categories **[9369, 232815]**, featured media **#2484** unchanged.
 - Subscriber blast suppression `_jetpack_dont_email_post_to_subs=true`, auto-sharing `jetpack_publicize_feature_enabled=false`, search `jetpack_seo_noindex=true`, `jetpack_post_was_ever_published=false` all independently confirmed from WordPress metadata.
 - Existing first-party WordPress-media library **#2484**, 2023 Landsat NASA/USGS, and **#2485**, 2007 USDA NAIP/NASA composite, are JPEGs with nonblank dated/source-attributed alt text and captions. **Actual anonymous public image-byte load and on-page current-theme rendering not independently confirmed.** Library metadata does not prove a visitor can load the photographs.
@@ -33,3 +33,17 @@ Targeted only [draft #2488](https://finalvestige.com/wp-admin/post.php?post=2488
 - [Southeastern Louisiana University — Rod Lincoln Collection finding aid](https://www.southeastern.edu/acad_research/programs/csls/historical_collections/archival_collections/l_m/lincoln_rod/).
 - [Louisiana Office of the State Register, May 20, 1990, Bohemia rule amendment (reader source #46)](https://www.doa.la.gov/media/2t1diled/may.pdf).
 - [Original SVG](./assets/bohemia-archival-finding-aid-1984-2000-v41.svg) · [Reader edition](./bohemia-spillway-reader-edition-2026-11-14.md) · [Master dossier](./bohemia-spillway-2026-11-12-land-roster-rights-claim-investigation-draft.md).
+
+
+## Late-cycle primary-source follow-up: September 1988 Bohemia fee forecasts (final v41 state)
+**Reader source [54], dossier Evidence [83].** A further official record was recovered and read directly: [Louisiana Register Vol. 14 No. 9, September 20, 1988, printed pp. 648–649](https://doa.louisiana.gov/media/td3k1ksv/september.pdf), DNR **Notice of Intent** concerning Bohemia return-of-land rules, with fiscal statement. Government-hosted PDF indexed text lines 5084–5126 inspected. Official PDF original-page screenshot **attempted but failed** with `Content length is too large: 12678880`; **no PDF page-image PASS**. The notice cites original **October 20, 1987** promulgated rules, but their original published pages were not inspected. The 1988 notice text remains a **proposal**, not verified as adopted. Unlike the collection inventory, this is direct primary government text.
+
+The impact statement **forecast**, and did not document realized:
+- **26,000** claim applications, **12,000** $175 advance deposits, **$2,100,000** projected collections (12,000 × 175 exactly);
+- ~**20,000** letters and at least **$35,000** in anticipated savings by changing the mailing method.
+
+Its proposal describes postmarked notices, envelope-retention instructions and 70-day deadlines, refining the timeline: the 1990 rule was not the first located government text documenting that administration. None of these estimates identifies actual applicants, receipts, actual fee disputes, revenue transfers, title losses or claimant restitution. The original October 1987 issue and 1988 final adoption remain retrieval leads, as do realized fee/deposit financial records.
+
+**Supplemental changes staged in #2488:** Two new guarded `core/paragraph` inserts immediately following the new v41 finding-aid figure, numbered source [54] appended to the bibliography and the intro updated to **54 reader sources / 83 master dossier entries**; matching source narrative and entry added to GitHub reader and dossier. The v41 original vector remains the catalog-based timeline; it does **not** purport to chart forecast receipts or historical transactions.
+
+**Definitive independently verified WordPress revision** after all v41 edits: modified `2026-11-15T17:41:22` site-local; SHA-1 `48a4cabb0bf53ae734efd6ed80f37e6331fc1ac7`; **244 top-level blocks**; 54 unique consecutive source IDs [1–54], 224 same-post citation links, **0 orphan links, 0 duplicated source IDs**. Confirmed draft, never-published, categories [9369,232815], featured #2484, newsletter suppression true, automatic social false, noindex true. WP media #2484/#2485 checked for metadata (mime JPEG; nonempty dated alt/captions); public image bytes and genuine WordPress-theme visual QA still **unverified**. No release.
