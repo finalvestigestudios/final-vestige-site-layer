@@ -1,0 +1,635 @@
+{
+  "version": "R431",
+  "date": "2026-11-16",
+  "scope": "Final Vestige Mind & Perception only",
+  "status": "SOURCE_ONLY_HARD_HOLD",
+  "definitions": {
+    "substantiated": "Publisher/primary record supports narrowly stated claim, not product efficacy.",
+    "seller_representation": "Attribution describes public seller copy, not independently observed product performance.",
+    "NOT_VERIFIED": "No sufficient account-specific evidence; explicitly not the same as false.",
+    "not_computable": "No independently reconciled net numerator or qualified-human denominator."
+  },
+  "sources": {
+    "loftus1974": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+    "odonnell2023": "https://doi.org/10.3389/fpsyg.2023.1201674",
+    "schincariol2024": "https://doi.org/10.1017/mem.2024.14",
+    "ama1985": "https://doi.org/10.1001/jama.1985.03350370114035",
+    "kihlstrom1997": "https://pubmed.ncbi.nlm.nih.gov/9415925/",
+    "burgessKirsch": "https://doi.org/10.1002/ch.146",
+    "ftcDisclosure": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftcHealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "sellerCatalog": "https://inspire3.com/",
+    "sellerZen12": "https://zen12.com/",
+    "sellerZen12Checkout": "https://zen12.com/getstarted",
+    "sellerAffiliate": "https://affiliates.inspire3.com/",
+    "sellerHypnosis": "https://hypnosislive.com/",
+    "sellerBrainwave": "https://brainwaveshots.com/",
+    "fvPuy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "fvMesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "fvChange": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "fvFocus": "https://finalvestige.com/focus/",
+    "fvIssue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "fvCommerce": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+  },
+  "claims": [
+    {
+      "id": "L01",
+      "claim": "Loftus and Palmer's article was published in 1974, volume 13, pages 585-589",
+      "type": "independent-research",
+      "status": "substantiated",
+      "sources": [
+        {
+          "key": "loftus1974",
+          "url": "https://doi.org/10.1016/S0022-5371(74)80011-3"
+        }
+      ],
+      "caveat": "Article bibliography"
+    },
+    {
+      "id": "L02",
+      "claim": "Accident films were followed by speed questions with different verbs",
+      "type": "independent-research",
+      "status": "substantiated",
+      "sources": [
+        {
+          "key": "loftus1974",
+          "url": "https://doi.org/10.1016/S0022-5371(74)80011-3"
+        }
+      ],
+      "caveat": "Article section 5 verbs"
+    },
+    {
+      "id": "L03",
+      "claim": "Smashed produced higher speed estimates than contacted",
+      "type": "independent-research",
+      "status": "substantiated",
+      "sources": [
+        {
+          "key": "loftus1974",
+          "url": "https://doi.org/10.1016/S0022-5371(74)80011-3"
+        }
+      ],
+      "caveat": "Do not imply visual film changed"
+    },
+    {
+      "id": "L04",
+      "claim": "Broken glass was not present in the experiment's film",
+      "type": "independent-research",
+      "status": "substantiated",
+      "sources": [
+        {
+          "key": "loftus1974",
+          "url": "https://doi.org/10.1016/S0022-5371(74)80011-3"
+        }
+      ],
+      "caveat": "Second experiment, not first"
+    },
+    {
+      "id": "L05",
+      "claim": "A later broken-glass yes response is not identical to a vivid false autobiographical memory",
+      "type": "methodological-qualification",
+      "status": "supported-inference",
+      "sources": [
+        {
+          "key": "loftus1974",
+          "url": "https://doi.org/10.1016/S0022-5371(74)80011-3"
+        }
+      ],
+      "caveat": "Distinguish report from recollective experience"
+    },
+    {
+      "id": "L06",
+      "claim": "Repetition increased susceptibility to misleading information in 2023 study/meta-analysis",
+      "type": "independent-research",
+      "status": "substantiated",
+      "sources": [
+        {
+          "key": "odonnell2023",
+          "url": "https://doi.org/10.3389/fpsyg.2023.1201674"
+        }
+      ],
+      "caveat": "No universal probability"
+    },
+    {
+      "id": "L07",
+      "claim": "Varying misinformation sources did not reliably add effect independently of repetition",
+      "type": "independent-research",
+      "status": "substantiated",
+      "sources": [
+        {
+          "key": "odonnell2023",
+          "url": "https://doi.org/10.3389/fpsyg.2023.1201674"
+        }
+      ],
+      "caveat": "Context-specific"
+    },
+    {
+      "id": "L08",
+      "claim": "2024 fake-news meta-analysis included thirteen articles",
+      "type": "independent-research",
+      "status": "substantiated",
+      "sources": [
+        {
+          "key": "schincariol2024",
+          "url": "https://doi.org/10.1017/mem.2024.14"
+        }
+      ],
+      "caveat": "Source scope"
+    },
+    {
+      "id": "L09",
+      "claim": "The meta-analysis reports nearly 40 percent false memory and 60 percent false belief in research contexts",
+      "type": "independent-research",
+      "status": "substantiated-with-context",
+      "sources": [
+        {
+          "key": "schincariol2024",
+          "url": "https://doi.org/10.1017/mem.2024.14"
+        }
+      ],
+      "caveat": "Do not project general population"
+    },
+    {
+      "id": "L10",
+      "claim": "1985 AMA review cautioned against hypnotic memory recovery used as truth test",
+      "type": "independent-research",
+      "status": "substantiated",
+      "sources": [
+        {
+          "key": "ama1985",
+          "url": "https://doi.org/10.1001/jama.1985.03350370114035"
+        }
+      ],
+      "caveat": "Not general hypnosis efficacy claim"
+    },
+    {
+      "id": "L11",
+      "claim": "Kihlstrom review warns hypnotic age-regression false recollection risk",
+      "type": "independent-research",
+      "status": "substantiated",
+      "sources": [
+        {
+          "key": "kihlstrom1997",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9415925/"
+        }
+      ],
+      "caveat": "Scope to forensic retrieval"
+    },
+    {
+      "id": "L12",
+      "claim": "Expectancy instructions can affect memory errors in hypnosis laboratory conditions",
+      "type": "independent-research",
+      "status": "substantiated-with-context",
+      "sources": [
+        {
+          "key": "burgessKirsch",
+          "url": "https://doi.org/10.1002/ch.146"
+        }
+      ],
+      "caveat": "Limited participants and task"
+    },
+    {
+      "id": "M01",
+      "claim": "Inspire3 is the umbrella seller for Zen12, Hypnosis Live and Brainwave Shots",
+      "type": "seller-fact",
+      "status": "seller-representation",
+      "sources": [
+        {
+          "key": "sellerCatalog",
+          "url": "https://inspire3.com/"
+        }
+      ],
+      "caveat": "Attribution to merchant"
+    },
+    {
+      "id": "M02",
+      "claim": "Zen12 advertises twelve-minute sessions",
+      "type": "seller-feature",
+      "status": "seller-representation",
+      "sources": [
+        {
+          "key": "sellerZen12",
+          "url": "https://zen12.com/"
+        }
+      ],
+      "caveat": "Not verified duration independently"
+    },
+    {
+      "id": "M03",
+      "claim": "Zen12 advertises twelve levels",
+      "type": "seller-feature",
+      "status": "seller-representation",
+      "sources": [
+        {
+          "key": "sellerZen12",
+          "url": "https://zen12.com/"
+        },
+        {
+          "key": "sellerZen12Checkout",
+          "url": "https://zen12.com/getstarted"
+        }
+      ],
+      "caveat": "No guarantee user receives all tiers"
+    },
+    {
+      "id": "M04",
+      "claim": "Zen12 advertises four audio styles at each level",
+      "type": "seller-feature",
+      "status": "seller-representation",
+      "sources": [
+        {
+          "key": "sellerZen12",
+          "url": "https://zen12.com/"
+        }
+      ],
+      "caveat": "Music, guided, nature, white noise"
+    },
+    {
+      "id": "M05",
+      "claim": "Full package order page describes 48 MP3s",
+      "type": "seller-feature",
+      "status": "seller-representation",
+      "sources": [
+        {
+          "key": "sellerZen12Checkout",
+          "url": "https://zen12.com/getstarted"
+        }
+      ],
+      "caveat": "Verify actual referred SKU"
+    },
+    {
+      "id": "M06",
+      "claim": "Zen12 home premium card currently presents $87.99",
+      "type": "seller-price",
+      "status": "public-page-only",
+      "sources": [
+        {
+          "key": "sellerZen12",
+          "url": "https://zen12.com/"
+        }
+      ],
+      "caveat": "Date accessed 2026-11-16; NOT referral quote"
+    },
+    {
+      "id": "M07",
+      "claim": "Zen12 checkout page currently presents $87.00 before location-specific tax changes",
+      "type": "seller-price",
+      "status": "public-page-only",
+      "sources": [
+        {
+          "key": "sellerZen12Checkout",
+          "url": "https://zen12.com/getstarted"
+        }
+      ],
+      "caveat": "Date accessed 2026-11-16; price drift, checkout not tested"
+    },
+    {
+      "id": "M08",
+      "claim": "One-year seller money-back claim is displayed",
+      "type": "seller-policy",
+      "status": "public-page-only",
+      "sources": [
+        {
+          "key": "sellerZen12",
+          "url": "https://zen12.com/"
+        },
+        {
+          "key": "sellerZen12Checkout",
+          "url": "https://zen12.com/getstarted"
+        }
+      ],
+      "caveat": "Exact agreement/exclusions/refund execution unverified"
+    },
+    {
+      "id": "M09",
+      "claim": "Seller describes meditation equivalent of hour in 12 minutes",
+      "type": "seller-efficacy",
+      "status": "unsupported-for-fv",
+      "sources": [
+        {
+          "key": "sellerZen12",
+          "url": "https://zen12.com/"
+        }
+      ],
+      "caveat": "Do NOT adopt factual benefit claim"
+    },
+    {
+      "id": "M10",
+      "claim": "Inspire3 affiliate public portal advertises commissions",
+      "type": "seller-affiliate",
+      "status": "seller-general-not-authorization",
+      "sources": [
+        {
+          "key": "sellerAffiliate",
+          "url": "https://affiliates.inspire3.com/"
+        }
+      ],
+      "caveat": "No FV-specific eligibility, commissions, or approval verified"
+    },
+    {
+      "id": "M11",
+      "claim": "Seller Hypnosis Live and Brainwave Shots offer other audio categories",
+      "type": "seller-feature",
+      "status": "seller-representation",
+      "sources": [
+        {
+          "key": "sellerCatalog",
+          "url": "https://inspire3.com/"
+        },
+        {
+          "key": "sellerHypnosis",
+          "url": "https://hypnosislive.com/"
+        },
+        {
+          "key": "sellerBrainwave",
+          "url": "https://brainwaveshots.com/"
+        }
+      ],
+      "caveat": "No cross-product efficacy inference"
+    },
+    {
+      "id": "E01",
+      "claim": "Every eventual earning link requires clear adjacent material relationship disclosure",
+      "type": "compliance",
+      "status": "ftc-guidance",
+      "sources": [
+        {
+          "key": "ftcDisclosure",
+          "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+        }
+      ],
+      "caveat": "Include near CTA and ensure mobile a11y"
+    },
+    {
+      "id": "E02",
+      "claim": "Objective health/efficacy claims require adequate claim-specific substantiation",
+      "type": "compliance",
+      "status": "ftc-guidance",
+      "sources": [
+        {
+          "key": "ftcHealth",
+          "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+        }
+      ],
+      "caveat": "Generic meditation trials not Zen12 proof"
+    },
+    {
+      "id": "E03",
+      "claim": "Reading free guide requires no purchase or extra mailing list",
+      "type": "design-policy",
+      "status": "built-draft-only",
+      "sources": [
+        {
+          "key": "fvFocus",
+          "url": "https://finalvestige.com/focus/"
+        },
+        {
+          "key": "fvIssue",
+          "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+        }
+      ],
+      "caveat": "Does not assert live funnel confirmation"
+    },
+    {
+      "id": "E04",
+      "claim": "Puységur archive is published and historical, not an endorsement of hypnosis therapy",
+      "type": "fv-inventory",
+      "status": "verified-live-cms-read",
+      "sources": [
+        {
+          "key": "fvPuy",
+          "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+        }
+      ],
+      "caveat": "WP read-only 2026-11-16"
+    },
+    {
+      "id": "E05",
+      "claim": "Mesmerism and change blindness are published investigations",
+      "type": "fv-inventory",
+      "status": "verified-live-cms-read",
+      "sources": [
+        {
+          "key": "fvMesmer",
+          "url": "https://finalvestige.com/2026/11/02/mesmerism/"
+        },
+        {
+          "key": "fvChange",
+          "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+        }
+      ],
+      "caveat": "WP read-only 2026-11-16"
+    },
+    {
+      "id": "C01",
+      "claim": "FV-specific Inspire3 partner approval exists",
+      "type": "commercial-authorization",
+      "status": "NOT_VERIFIED",
+      "sources": [
+        {
+          "key": "fvIssue",
+          "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+        }
+      ],
+      "caveat": "No named signed acceptance or portal attestation retrieved"
+    },
+    {
+      "id": "C02",
+      "claim": "FV affiliate URL for Zen12 can be activated",
+      "type": "commercial-authorization",
+      "status": "NOT_VERIFIED",
+      "sources": [
+        {
+          "key": "sellerAffiliate",
+          "url": "https://affiliates.inspire3.com/"
+        },
+        {
+          "key": "fvIssue",
+          "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+        }
+      ],
+      "caveat": "Do not substitute vendor URLs"
+    },
+    {
+      "id": "C03",
+      "claim": "FV owned Mind paid product is currently sellable",
+      "type": "commercial-authorization",
+      "status": "NOT_VERIFIED",
+      "sources": [
+        {
+          "key": "fvCommerce",
+          "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+        }
+      ],
+      "caveat": "No verified rights/checkout/fulfillment/refund record"
+    },
+    {
+      "id": "C04",
+      "claim": "Paid affiliate sale occurred",
+      "type": "financial-outcome",
+      "status": "NOT_VERIFIED",
+      "sources": [
+        {
+          "key": "fvCommerce",
+          "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+        }
+      ],
+      "caveat": "Affiliate_outbound does not equal sale"
+    },
+    {
+      "id": "C05",
+      "claim": "Realized net revenue per 1000 qualified sessions can be calculated",
+      "type": "financial-outcome",
+      "status": "NOT_COMPUTABLE",
+      "sources": [
+        {
+          "key": "fvCommerce",
+          "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+        }
+      ],
+      "caveat": "Merchant paid order, fees/refunds and session denominator absent"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_inspire3_partner_acceptance",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "affiliate_account_authorization",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "approved_zen12_sku",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "approved_distribution_channels_web",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "approved_distribution_channels_social",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "approved_distribution_channels_email",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "exact_issued_earning_url",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "official_creative_swipe_permission",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "no_forbidden_claims",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "current_checkout_price_exact_referred_route",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "exact_written_refund_terms",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "actual_checkout_friction_test",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "approved_disclosure_adjacent",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "editorial_product_specific_proof_review",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "authentic_content_asset_ids_three",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "consent_safe_utm_plan",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "existing_jetpack_provider_confirmation",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "owned_product_paid_sku_rights",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "owned_product_payment_acceptance",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "owned_product_fulfillment_returns",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "usable_final_encoded_42s_film",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "captions_real_playback",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "native_node_pass",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "real_browser_wcag_2_2_aa",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "real_mobile_cwv",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "wp_html_sanitization",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "verified_net_revenue_reporting",
+      "status": "HOLD",
+      "proof": null
+    }
+  ]
+}
