@@ -1,0 +1,129 @@
+{
+  "version": "R402",
+  "observed_on": "2026-11-16",
+  "status": "REVIEW_ONLY_HOLD_UNSENT",
+  "canonical_pr": 175,
+  "upstream_pr": 2748,
+  "identity": {
+    "offer": "Zen12",
+    "issue": 3,
+    "catalog_substitution_permitted": false
+  },
+  "campaign": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_review_pending": [
+      3,
+      5
+    ],
+    "issues_total": 6
+  },
+  "evidence": [
+    {
+      "id": "historical1890",
+      "statement": "James discussed attention in The Principles of Psychology (1890); not Zen12-specific proof",
+      "source": "https://www.gutenberg.org/files/57628/old/57628-h/57628-h.htm",
+      "class": "primary_historical"
+    },
+    {
+      "id": "review2021a",
+      "statement": "Mindfulness randomized-program review found small aggregate effects, not advantages over active controls",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/34350544/",
+      "class": "independent_general_not_product_specific"
+    },
+    {
+      "id": "review2021b",
+      "statement": "Controlled-studies meta-analysis reported non-significant attention pooled effects",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/33582570/",
+      "class": "independent_general_not_product_specific"
+    },
+    {
+      "id": "zen12features",
+      "statement": "Seller presents twelve levels, four sound styles",
+      "source": "https://zen12.com/about",
+      "class": "merchant_feature_claim"
+    },
+    {
+      "id": "zen12equivalence",
+      "statement": "Twelve minutes equals one hour of other meditation",
+      "source": "https://zen12.com/about",
+      "class": "UNPROVEN_SELLER_CLAIM_DO_NOT_ASSERT"
+    },
+    {
+      "id": "checkout",
+      "statement": "Seller order page differs from standard package/price presentation, and refund language remains checkout-specific",
+      "source": "https://zen12.com/order",
+      "class": "seller_funnel_not_referred_price_proof"
+    }
+  ],
+  "release_attestation": {
+    "named_FV_affiliate_acceptance": false,
+    "exact_Zen12_email_channel_permission": false,
+    "approved_merchant_email_creative": false,
+    "issued_affiliate_tracking_url": false,
+    "approved_live_warmup_guide": false,
+    "exact_referred_checkout_and_refund_verified": false,
+    "valid_FV_physical_postal_address": false,
+    "actual_native_Jetpack_preview": false,
+    "functional_unsubscribe_verified": false,
+    "eligible_confirmed_inboxes_verified": false,
+    "actual_Fieldbook_welcome_received": false,
+    "founder_specific_send_approval": false,
+    "settled_commission_documented": false,
+    "qualified_human_sessions_audited": false
+  },
+  "commerce": {
+    "cta": "[[APPROVED_LIVE_ZEN12_GUIDE_URL_PENDING]]",
+    "active": false,
+    "disclosure": "If you later buy through a qualifying link within that guide, Final Vestige may earn a commission.",
+    "pricing_claim_in_email": false,
+    "independently_proven_zen12_effect": false
+  },
+  "attribution": {
+    "lead_event": "confirmed_signup_v1",
+    "lead_origin": "provider_verified_confirmation_only",
+    "dedupe": "opaque_site_person_campaign_window",
+    "not_leads": [
+      "?subscribe=",
+      "Fieldbook download",
+      "pageview",
+      "Jetpack follower",
+      "email open"
+    ],
+    "paid_sale_source": "independently_reconciled_merchant_settlement_only",
+    "cohort_days": [
+      7,
+      30
+    ],
+    "revenue_per_1000_qualified_humans": "NOT_COMPUTABLE"
+  },
+  "wordpress_readonly_2026_11_16T1533Z": {
+    "newsletter_enabled": true,
+    "auto_new_post_emails": false,
+    "email_content_format": "full",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "actual_deliverable_inboxes": "UNKNOWN",
+    "recent_five_post_emails": "never_sent_opted_out",
+    "welcome_configured": true,
+    "welcome_receipt": "UNKNOWN"
+  },
+  "owners": {
+    "merchant": "Mind and Affiliate Studio / founder",
+    "consent": "Focus / Claude",
+    "email_legal": "Dispatch / founder",
+    "analytics": "Praxxis / Grok / Claude",
+    "final_send_approval": "founder"
+  },
+  "sources": [
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "https://wordpress.com/support/newsletter/email-appearance/"
+  ]
+}
