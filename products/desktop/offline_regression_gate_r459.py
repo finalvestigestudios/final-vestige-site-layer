@@ -16,6 +16,9 @@ import sys
 import tempfile
 
 from offline_json_receipt_r462 import PrivateReceiptJSONError, load_private_receipt
+from offline_source_smoke_r408 import (
+    SourceGateError, _read_verified_source_bytes, _require_real_directory,
+)
 from offline_smoke_receipt_r460 import MAX_RECEIPT_BYTES
 from offline_source_binding_r461 import (
     SourceBindingError, verified_six_app_digest, require_bound_six_app_smokes,
@@ -85,21 +88,31 @@ def _child_env() -> dict[str, str]:
 
 
 def _source_fingerprint(desktop: Path) -> str:
-    """Bind this receipt to the local test files; not a signed source audit."""
+    """Fingerprint offline gate sources using R408's descriptor-bound custody.
+
+    Test/verification files outside the six-app import-root inventory must
+    reject hardlinks, symlinks, junction parents and in-flight file swaps too.
+    Preserve R459's exact digest layout for unchanged regular source files.
+    """
+    if not desktop.is_absolute():
+        raise LocalGateError("Local source regression inventory rejected")
     digest = hashlib.sha256()
-    for relative in SOURCE_INPUTS:
-        path = desktop / relative
-        try:
-            if path.is_symlink() or not path.is_file() or path.stat().st_size > 2_000_000:
-                raise LocalGateError("Local source regression inventory rejected")
-            source = path.read_bytes()
-            if not source:
-                raise LocalGateError("Local source regression inventory rejected")
-        except OSError:
-            raise LocalGateError("Local source regression inventory rejected") from None
-        digest.update(relative.encode('ascii') + b'\0')
-        digest.update(len(source).to_bytes(8, 'big'))
-        digest.update(hashlib.sha256(source).digest())
+    try:
+        for relative in SOURCE_INPUTS:
+            path = desktop / relative
+            # Ordinary files through linked directories are not inside the
+            # attested checkout. Check every ancestor, including drive/root.
+            for parent in (path.parent, *path.parent.parents):
+                _require_real_directory(parent)
+            source = _read_verified_source_bytes(path)
+            # Reject an observable directory replacement during the fd read.
+            for parent in (path.parent, *path.parent.parents):
+                _require_real_directory(parent)
+            digest.update(relative.encode('ascii') + b'\0')
+            digest.update(len(source).to_bytes(8, 'big'))
+            digest.update(hashlib.sha256(source).digest())
+    except (SourceGateError, OSError, ValueError, UnicodeError):
+        raise LocalGateError("Local source regression inventory rejected") from None
     return digest.hexdigest()
 
 
