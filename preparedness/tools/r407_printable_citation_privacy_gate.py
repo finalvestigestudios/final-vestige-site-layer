@@ -64,7 +64,9 @@ def clean_source(value: str) -> str | None:
         ):
             return None
         host = u.hostname.lower()
-        if not (host.endswith(".gov") or host.endswith(".edu") or host == "foodsafety.gov"):
+        # Government and the two source-record-matched university archives only.
+        # Arbitrary .edu pages are not evidence-approved source hosts.
+        if not (host.endswith(".gov") or host in {"nchfp.uga.edu", "extension.umn.edu"}):
             return None
         if any(k.lower().startswith("utm_") or k.lower() in TRACKING
                for k, _ in parse_qsl(u.query, keep_blank_values=True)):
@@ -243,7 +245,10 @@ def main(argv=None) -> int:
             spec = importlib.util.spec_from_file_location("r406_prior", here / "r406_visible_claim_citation_lineage.py")
             upstream = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(upstream)
-            r = upstream.capture(article, set())
+            original_spec = importlib.util.spec_from_file_location("r405_source_scope", here / "r405_editorial_lineage_citation_gate.py")
+            original = importlib.util.module_from_spec(original_spec)
+            original_spec.loader.exec_module(original)
+            r = upstream.capture(article, original.SOURCE_URLS)
             if r.get("integrity") == "PASS":
                 sources = {u for u in r.get("claim_bound_source_urls", []) if clean_source(u) == u}
         except (OSError, ValueError, AttributeError, RuntimeError):
