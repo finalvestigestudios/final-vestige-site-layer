@@ -10,7 +10,7 @@ for(const [name,body] of [['A',a],['B',b],['Hub',hub]]) {
 check(()=>assert.match(body,/<html lang="en">/),name+' lang');
 check(()=>assert.match(body,/<meta name="viewport"/),name+' viewport');
 check(()=>assert.match(body,/noindex,nofollow/),name+' draft-only');
-check(()=>assert.doesNotMatch(body,/<script\b|<form\b|<iframe\b|<(?:video|audio)\\b[^>]*\\bautoplay\\b|fetch\(|document\.cookie/i),name+' no scripts/form/autoplay');
+check(()=>assert.doesNotMatch(body,/<script\b|<form\b|<iframe\b|<(?:video|audio)\b[^>]*\bautoplay\b|fetch\(|document\.cookie/i),name+' no scripts/form/autoplay');
 check(()=>assert.match(body,/https:\/\/finalvestige\.com\/focus\//),name+' existing Fieldbook');
 }
 for(const [name,body] of [['A',a],['B',b]]) {
