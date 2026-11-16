@@ -70,7 +70,7 @@ check(!hub.includes('href="/mind/"'),'no false live route');
 check(acceptance.includes('NOT COMPUTABLE'),'missing financial proof stated');
 check(acceptance.includes('Grok') && acceptance.includes('asset_id'),'creator audit contract');
 check(acceptance.includes('merchant_settled_commission') && acceptance.includes('affiliate_click'),'separate sale and click');
-function adversarial(html){return safe(html)&&held(html)&&html.includes('Prospective affiliate disclosure:')}
+function adversarial(html){return safe(html)&&held(html)&&html.includes('Prospective affiliate disclosure:')&&html.includes('If you purchase through a future approved link, Final Vestige may earn a commission at no additional cost to you')}
 for(const evil of [a.replace('<button class="held" type="button" disabled','<button class="held" type="button"'),a.replace('Prospective affiliate disclosure:','No disclosure:'),a+'<script src="//tracker.example"></script>',a+'<form method="post"></form>',a.replace('If you purchase through a future approved link, Final Vestige may earn a commission at no additional cost to you',''),a+'<a href="https://zen12.com/secret/">Buy</a>'])check(!adversarial(evil),'unsafe mutation caught');
 console.log('Mind R413 source guard PASS:',checks,'assertions including six unsafe mutations');
 console.log('NOT TESTED: real-browser WCAG/CWV, WordPress sanitization, live provider confirmation, video encoding/playback, checkout, settlement, actual attribution');
