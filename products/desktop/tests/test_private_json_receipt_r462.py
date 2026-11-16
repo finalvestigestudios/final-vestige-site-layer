@@ -76,6 +76,15 @@ class StrictPrivateReceiptR462(unittest.TestCase):
     def test_invalid_utf8_rejected(self):
         self.reject(b'{"private":"\xff"}')
 
+    def test_utf16_auto_detection_rejected(self):
+        self.reject('{"tests":13}'.encode("utf-16"))
+
+    def test_utf32_auto_detection_rejected(self):
+        self.reject('{"tests":13}'.encode("utf-32"))
+
+    def test_utf8_bom_rejected(self):
+        self.reject(b"\xef\xbb\xbf{}")
+
     def test_trailing_json_rejected(self):
         self.reject(b'{}{}')
 

@@ -35,7 +35,7 @@ def load_private_receipt(raw: bytes) -> object:
     if type(raw) is not bytes:
         raise PrivateReceiptJSONError("Ambiguous private source receipt rejected")
     try:
-        return json.loads(raw, object_pairs_hook=_unique_fields,
+        return json.loads(raw.decode("utf-8"), object_pairs_hook=_unique_fields,
                           parse_constant=_reject_nonfinite)
     except (ValueError, UnicodeError, TypeError, RecursionError):
         raise PrivateReceiptJSONError("Ambiguous private source receipt rejected") from None

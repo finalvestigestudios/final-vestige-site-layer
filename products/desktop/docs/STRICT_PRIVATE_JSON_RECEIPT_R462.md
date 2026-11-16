@@ -11,14 +11,14 @@ R462 adds a shared strict decoder using `object_pairs_hook` at **all nesting lev
 ## Artifacts / reproducibility
 
 - `products/desktop/offline_json_receipt_r462.py`: strict JSON decoder.
-- `products/desktop/tests/test_private_json_receipt_r462.py`: **25 methods** including duplicate root/nested/escaped keys, disputed success flags/counts/digests, nonfinite/malformed values, fixed redaction, valid backwards compatibility and R459/R460/R461 consumer integrations.
+- `products/desktop/tests/test_private_json_receipt_r462.py`: **28 methods** including duplicate root/nested/escaped keys, disputed success flags/counts/digests, nonfinite/malformed values, fixed redaction, valid backwards compatibility and R459/R460/R461 consumer integrations.
 - `offline_regression_gate_r459.py`: R462 as the **sixth** source regression module (6 modules × normal and `-OO` = 12 subprocess test-mode runs), strict decoder in the source fingerprint. No source-only receipt can authorize an executable.
 - Adjusted R459 and R461 historical synthetic test expectations from 10 to 12 modes.
 - Ubuntu/Windows source CI workflows run R462 methods normal and optimized; Ubuntu prebuild job adds previously missing R461 test step. No deployment or upload-permission changes.
 
 ## Local execution evidence, limited scope
 
-On Linux Python, the exact new strict decoder logic and 25-method test source ran with **locally reconstructed** R459 regression parser, R460 smoke parser and R461 digest binding: **25/25 normal PASS plus 25/25 `-OO` PASS = 50 passing focused test executions**, with `-W error`. Python compilation passed. This is NOT a full checkout, native Windows, or proof that the new committed tests pass against all original repository modules. Repeat on an authorized complete checkout:
+On Linux Python, the exact new strict decoder logic and 25-method test source ran with **locally reconstructed** R459 regression parser, R460 smoke parser and R461 digest binding: **28/28 normal PASS plus 28/28 `-OO` PASS = 56 passing focused test executions**, with `-W error`. Python compilation passed. This is NOT a full checkout, native Windows, or proof that the new committed tests pass against all original repository modules. Repeat on an authorized complete checkout:
 
 ```sh
 PYTHONPATH=products/desktop python -B -W error -m unittest discover -s products/desktop/tests -p test_private_json_receipt_r462.py
