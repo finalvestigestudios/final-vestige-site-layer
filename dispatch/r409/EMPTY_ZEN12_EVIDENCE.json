@@ -1,0 +1,33 @@
+{
+  "input": {
+    "schema": "fv-dispatch-merchant-v1",
+    "as_of": "2026-11-16",
+    "issue": "03",
+    "product": "ZEN12",
+    "records": []
+  },
+  "output": {
+    "release": "HOLD_UNSENT",
+    "issue": "03",
+    "product": "ZEN12",
+    "proof_records_present": 0,
+    "structural_review_candidate": false,
+    "partner_authorization_authenticated": false,
+    "founder_release_approved": false,
+    "mail_allowed": false,
+    "blockers": [
+      "MISSING_CLAIM_ALIGNMENT",
+      "MISSING_CONSENT_ELIGIBILITY",
+      "MISSING_EMAIL_CHANNEL_PERMISSION",
+      "MISSING_EMAIL_PREVIEW",
+      "MISSING_ISSUED_PRODUCT_EARNING_LINK",
+      "MISSING_NAMED_AFFILIATE_ACCEPTANCE",
+      "MISSING_OPERATIONAL_UNSUBSCRIBE",
+      "MISSING_POSTAL_ADDRESS",
+      "MISSING_PUBLISHED_GUIDE",
+      "MISSING_SKU_TERMS",
+      "MISSING_WELCOME_RECEIPT"
+    ],
+    "limits": "Matching metadata cannot authenticate a partner agreement, a live URL, a postal address, recipient consent, an unsubscribe action, or an inbox preview."
+  }
+}
