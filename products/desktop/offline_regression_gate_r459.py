@@ -61,6 +61,8 @@ SOURCE_INPUTS = (
     "offline_source_smoke_r408.py",
     "fvs_suite/atomic_reports.py",
     "fvs_suite/engine.py",
+    # R471 cross-purchase-order credit witness is release-relevant product code.
+    "fvs_suite/procurement_cross_po_r471.py",
     # R468 formula predicate is executed by the shared CSV sanitizer and must
     # be descriptor-attested along with engine and the required regression.
     "fvs_suite/csv_formula_guard.py",
