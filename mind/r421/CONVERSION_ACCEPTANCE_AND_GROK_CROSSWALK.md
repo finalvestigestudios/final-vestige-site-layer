@@ -1,0 +1,78 @@
+# R421 Conversion Acceptance, Creator Fit, and Release Evidence Contract
+**2026-11-16 · Mind & Perception only · Source controlled · Unpublished · Commercial HARD HOLD**
+
+## Business decision (not a traffic-volume objective)
+There is no independently authenticated Final Vestige publisher acceptance for Inspire3; no issued Zen12 earning URL, product/channel permissions, referred SKU checkout and settlement terms. Public [Inspire3 affiliate portal](https://affiliates.inspire3.com/) proves a possible application route, not acceptance. Neither the seller's product catalog nor its publicly accessible [Limitless Labs creatives](https://inspire3.com/ll/) authorize Zen12: that page is a **different product** and explicitly has its own approval restrictions. No identifiable, currently payable and rights-cleared **FV-owned Mind digital SKU** was established in this sprint from the live site inventory or Issue #818. The owned-product route therefore remains **SKU UNKNOWN / HOLD**, not an assumed fallback.
+
+**Priority P0:** Founder/Commerce obtains a dated authentication artifact for named Final Vestige approval or an actual FV-owned Payhip/other shop SKU with legal rights, working checkout, delivery and refunds. Until then, no affiliate URL, commercial ad or actual merchant CTA. This sprint improves the buyer pathway without conflating a research deliverable and sellable business milestone.
+
+## High-intent audience and one conditional offer
+- **Audience:** adults searching for short, guided meditation audio who value a predictable, repeatable listening format. The broad invisible-gorilla audience is not assumed to have purchase intent; article-first education must remain complete for them.
+- **Conditional offer:** Zen12 *Premium* as a seller-described 12-level, 48 MP3, four-listening-style format only. The public main page also describes Beginner and Advanced six-level products; a future approval must name the **specific edition**. Do not call all editions 'Premium'.
+- **Product motivation from actual seller page:** twelve-minute bounded practice, no perceived time to meditate, difficulty settling down, preference for music/guidance/nature/white noise. This motivates **format comparison** copy, not clinical benefit or performance claims.
+- **Seller proof check:** https://zen12.com/ describes the 12 levels and the music, guided, nature, white-noise styles. https://zen12.com/order lists Premium course content/bonus terms. https://zen12.com/secret/ and main site have different purchase-price presentations. Therefore no referred **price or refund guarantee** is asserted on the buyer page; seller's one-year guarantee is described as an **unverified seller representation pending exact checkout reconciliation**.
+- **Question/objection coverage:** 'Which level/edition do I receive?', 'Will I use the audio?', 'Is the price current?', 'What conditions govern refunds?', 'Is there independent product-level evidence?', 'What can I try free?' No invented testimonials or manufactured urgency.
+- **Buyer-page CTA:** inactive native HTML button "Purchase link unavailable — approval pending" directly preceded by an understandable **future commission** disclosure and explanation of blocked authorization. No merchant links or hidden redirects.
+- **Independent study source:** Simons/Chabris 1999, Simons 2010, Drew/Võ/Wolfe 2013, Wallisch et al. 2023; no meditation audio was tested by these papers. Strongest claim safe for the guide is *the merchant describes twelve-minute MP3 sessions with multiple styles*.
+
+## Three *proposed* creator-topic fit journeys (not actual scheduled posts)
+| Video/organic question to coordinate with Praxxis/Grok | Real published FV source article | Resource | Optional independent tool guide | Exact published media ID |
+|---|---|---|---|---|
+| "Count the passes—but what did you miss?" Source: Simons & Chabris (1999) and Simons (2010) | **Proposed R421 original article**, not published yet; interim [published Change Blindness](https://finalvestige.com/2026/11/02/change-blindness/) | [Existing Focus Fieldbook](https://finalvestige.com/focus/) | Zen12 guide only if reader seeks session structure; never imply it prevents inattentional blindness | **UNKNOWN — Praxxis/Grok verify**, do not invent |
+| "Did someone switch the person behind the door?" Published Rensink and Simons/Levin context | [Change Blindness](https://finalvestige.com/2026/11/02/change-blindness/) | Same existing Focus page | An optional audio-buying checklist, not a claim of fixing visual search | **UNKNOWN — Praxxis/Grok verify** |
+| "How did a witnessed 'cure' become a theory?" Historical Puységur records and Franklin commission | [Mesmerism](https://finalvestige.com/2026/11/02/mesmerism/) → [Puységur files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/) | Same Focus page if relevant | Independent Total Focus/Hypnosis Live guide may come later with separate SKU authorization; not Zen12 automatically | **UNKNOWN — Praxxis/Grok verify** |
+
+No demand for a new Grok post or creator-queue change. The actual asset_id, full original hook, date, distribution channel, licensed footage, platform profile link permissions and URL mappings require owner-supplied evidence under TASK-008. Share this read-only research slate, do not produce or publish content on Grok's behalf. Do not assume an embedded TikTok link resolves on a mobile device until tested.
+
+## Experimental design: buyer guide A versus buyer guide B
+- **A:** complete buyer decision guide, plain text and no media.
+- **B:** exact same main buyer copy plus original SVG poster and **42-second film concept**. Transcript and six WebVTT cues are committed. This is a **storyboard, not a playable film**, until genuine original media are encoded, caption-synchronized and audited. The SVG is not a copy of the copyrighted 1999 video. User-triggered viewing only; no autoplay, iframe, third-party tracker or JS dependence.
+- **Hypothesis, not prediction:** a concise original explanation of why study evidence and seller claims differ may improve *verified paid conversions per qualified human session* compared with text only. Risk: extra visual weight or narrative distraction could lower CTA relevance, speed or purchase confidence. Declare variant and allocation before testing.
+- **Admission requirements:** authentic approved merchant or owned SKU; written founder launch approval; no interference with existing homepage; privacy/consent review; true playable media with tested captions; 360/390/768/1440/1920 real-browser and mobile tests; merchant checkout and attribution verified; offer/benefit/disclosure approved; and sufficient audience to responsibly interpret outcomes.
+- **Primary endpoint:** refund-adjusted **realized net revenue per 1,000 qualified human sessions**, measured by 7- and 30-day enrollment cohort and attributed to explicit asset_id/utm_campaign and assigned A/B variant **only when technically and legally justified**. Secondary: merchant-confirmed paid conversion rate, paid customers, gross/net, and provider-confirmed lead-to-paid conversion. Instrumentation may be unable to link full affiliate checkout to an individual session; mark such conversions unattributed instead of fabricating linkage.
+- **Testing unit:** unique consent-eligible qualified session where identifiable under approved first-party policy, not views. Exclude bots/staff/test traffic with documented criteria. Allocate A/B server-side or by a *single existing* privacy-approved mechanism owned by Claude—do not add a separate browser ID, cookies, JS analytics or email list. If attribution or randomization cannot be implemented, test only UX and **do not claim A/B causal performance**.
+- **Stopping/decision:** do not call uplift from tiny samples. Review sample-size needs and confidence intervals with Claude before running. Report absolute denominators, variations, refunds and unmatched sales. No 'winning' film variant based on clicks alone.
+- **Load discipline:** no video loads before human play, original static poster (1.6 KB source SVG), captions are text. Avoid third-party embeds/fonts. Test actual encoded payload on low-end mobile and ensure a useful transcript for no-JS.
+
+## First-party event and transaction contract (not implemented)
+| Stage | Event definition | Required proof | Invalid inference |
+|---|---|---|---|
+| Creator | `asset_id`, `utm_campaign`, `utm_source`, `utm_medium=organic_social`, `utm_content=asset_id` | Grok-authenticated published media ID and valid landing link | Platform impression is a human site session |
+| Landing | `campaign_landing` with campaign and destination, consent-safe deduplication | Existing privacy-approved first-party logs only | Raw Jetpack views prove a person |
+| Qualified session | `qualified_human_session` per documented filtering methodology | Evidence of internal/bot filtering and session boundary | Pageviews equal unique people |
+| Resource | `article_to_resource_click` | Local non-sensitive aggregate CTA event, if existing tooling supports it | Click equals confirmed lead |
+| Lead | `confirmed_signup` | Existing Jetpack provider-confirmed unique subscriber under consent, no new test subscribers without approval | Form submit equals confirmed subscription |
+| Affiliate outbound | `affiliate_click` | Authorized earning URL click only after partner acceptance | Outbound equals purchase |
+| Merchant paid | `merchant_confirmed_purchase` | Actual unique completed order, product, currency and amounts, authorized merchant report | Landing-to-checkout equals payment |
+| Paid affiliate | `affiliate_confirmed_commission` | Partner-reported accepted eligible sale and payout status | Commission estimate equals settled cash |
+| Realized net | `refund_adjusted_net` | Paid gross less refunds/chargebacks, fees, and applicable direct costs; consistent exchange-rate treatment | Gross checkout equals net cash |
+
+**Privacy boundary:** no IP addresses, names, emails, phone numbers, audio habits or mental-health in campaign parameters or published reports. No unconsented cross-site user tracking. Preserve aggregation, suppressed small cells where needed, stated retention, and no duplicated scripts. Claude owns any implementation; this lane only specifies acceptance tests.
+
+## Commercial release blockers in priority order
+| Offer → step | Blocker | Proposed change/experiment | Pass/fail evidence | Owner |
+|---|---|---|---|---|
+| Zen12 Premium → payable referral | Named publisher, product, website/email/social rights, tracking URL and settlement **absent** | Request formal partner acceptance and issued link with referenced SKU and terms | **HOLD:** no authenticated named rights or live accepted settlement | Founder / Commerce |
+| FV-owned Mind → payable sale | No verified sellable rights-cleared SKU | Inspect current Payhip/shop inventory and actual owned delivery/refunds, choose only if verified | **HOLD:** no authenticated owned product purchase path | Founder / Claude |
+| Product guide → buyer decision | Seller efficacy overpromises vs scientific evidence | Original guide, five objections, sources, free alternative and near-link disclosure | **BUILT; source assertions pending**, no purchase | Mind |
+| Optional 42s film → consideration | No playable film or accessible synchronized captions | Rights-cleared encoding, visual QA and genuine A/B after approval | **STORYBOARD ONLY; playback NOT TESTED** | Mind / Site QA |
+| Grok creator → article | Verified media IDs/platform links missing | Praxxis TASK-008 confirm published IDs, specific hooks and rights | **HOLD; media not attributed** | Praxxis / Grok |
+| Focus click → lead | Unique confirmed Jetpack signup/delivery proof missing | Read-only consent and email delivery audit using existing list | **NOT VERIFIED** | Claude / Dispatch |
+| Purchase → net revenue | No authentic approved transactions, fees/refunds/qualified sessions | Independent merchant ledger and first-party audit | **NOT COMPUTABLE**, not zero | Commerce / Claude |
+
+## Owned Mind fallback: how to unblock without imaginary products
+Read-only inventory was performed against live WordPress posts/pages and Issue #818; published offers include affiliate-oriented pages for unrelated collectibles and games but not a verified paid Mind product. The existing Focus Fieldbook is explicitly free; do not relabel it as a sellable SKU or silently create a paid version. Before choosing a fallback, require authenticated product ID, product description and licensed-rights manifest, public/referred checkout terms, price and tax/currency, purchase/fulfillment test in authorized environment, refund handling, fee schedule, and founder approval. Until all verified, the best commercial action is partner/SKU authorization, not additional speculative pages.
+
+## Research/editorial guardrails
+Sources are listed in `CLAIM_PERMISSION_MATRIX.json`, including seller pages and FTC Endorsement Guides/Health Products Compliance Guidance. No copied swipe emails. The visible official [Limitless Labs swipe portal](https://inspire3.com/ll/) is not Zen12 permission and its self-reported EPC/payout data cannot be represented as Final Vestige outcomes. Product recommendation copy may describe format/fit only and must not say a user experienced, felt or achieved a benefit. Independent research may not serve as product efficacy substantiation unless it actually tests the product and outcome. The historical archive explicitly distinguishes documented persuasion from an established mechanism.
+
+## QA/release evidence contract
+- **BUILT:** eight source-controlled assets: article, A/B pages, original poster, WebVTT cue file, hub, claim matrix, this dossier (plus separate verifier).
+- **TESTED:** specify exact executed verifier output and mutated rejection cases in a final README and Issue #171; do not confuse source assertions with browser or transaction tests.
+- **NOT TESTED:** actual WordPress block sanitization, live/historical links in a browser, 360/390/768/1440/1920 rendered layouts, screen reader, keyboard and focus order, Lighthouse/CWV, video codec/playback/caption sync, real UTM implementation, subscriber confirmation, partner checkout/refund/commission.
+- **LIVE:** existing Change Blindness, Mesmerism, Puységur and Focus routes only. R421 preview is *not* a saved WP draft.
+- **VERIFIED revenue:** **NONE**. Net/1,000 qualified humans is **NOT COMPUTABLE**. No 'zero' denominator assumed.
+- **Release:** HARD HOLD. Do not publish, activate tracking links, modify navigation, merge, deploy, edit homepage PR #49 or Mind PR #172, touch agent-owned #150, alter Dispatch #174, change the Jetpack welcome or create campaigns.
+
+## Source snapshot and ownership
+Research verified November 16, 2026. [1999 study](https://doi.org/10.1068/p281059), [2010 follow-up](https://pmc.ncbi.nlm.nih.gov/articles/PMC3563049/), [2013 radiology](https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/), [2023 motion](https://doi.org/10.1073/pnas.2214930120); [current Zen12 main](https://zen12.com/), [separate Zen12 promotion](https://zen12.com/secret/), [official Inspire3](https://inspire3.com/), [FTC disclosure](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking), [FTC health claims](https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance). Group coordination issues: [#171](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171), [#820](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820), [#174](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174). Homepage ownership #150 remains untouched.
