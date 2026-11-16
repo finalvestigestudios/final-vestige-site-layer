@@ -76,7 +76,7 @@ class OfflineRegressionGateR459(unittest.TestCase):
         with self.assertRaises(gate.LocalGateError):
             gate._source_fingerprint(self.root)
 
-    def test_exact_twelve_child_interpreters_and_receipts(self):
+    def test_exact_sixteen_child_interpreters_and_receipts(self):
         observed = []
 
         def fake_subprocess(command, **kwargs):
@@ -86,8 +86,8 @@ class OfflineRegressionGateR459(unittest.TestCase):
 
         with patch.object(gate.subprocess, 'run', side_effect=fake_subprocess):
             modes, methods = gate._run_tests(self.root)
-        self.assertEqual((modes, methods), (12, 156))
-        self.assertEqual(sum('-OO' in command for command, _ in observed), 6)
+        self.assertEqual((modes, methods), (16, 208))
+        self.assertEqual(sum('-OO' in command for command, _ in observed), 8)
         self.assertTrue(all('-I' in command and '-B' in command
                             and kwargs['stdout'] == subprocess.DEVNULL
                             and kwargs['stderr'] == subprocess.DEVNULL
@@ -95,7 +95,7 @@ class OfflineRegressionGateR459(unittest.TestCase):
                             and 'PYTHONPATH' not in kwargs['env']
                             for command, kwargs in observed))
 
-    def test_actual_twelve_isolated_interpreters_execute_real_unittest(self):
+    def test_actual_sixteen_isolated_interpreters_execute_real_unittest(self):
         fixture = ("import unittest\n"
                    "class SyntheticGateTest(unittest.TestCase):\n"
                    "    def test_native_source_gate(self):\n"
@@ -105,7 +105,7 @@ class OfflineRegressionGateR459(unittest.TestCase):
         for name in gate.TESTS:
             (self.root / 'tests' / name).write_text(fixture, encoding='utf-8')
         modes, methods = gate._run_tests(self.root)
-        self.assertEqual((modes, methods), (12, 12))
+        self.assertEqual((modes, methods), (16, 16))
 
     def test_actual_zero_discovery_fails_before_false_receipt(self):
         for name in gate.TESTS:
@@ -154,7 +154,7 @@ class OfflineRegressionGateR459(unittest.TestCase):
 
     def test_complete_gate_retains_release_hold(self):
         with patch.object(gate, '_six_source_digest', return_value='a' * 64), \
-             patch.object(gate, '_run_tests', return_value=(10, 96)), \
+             patch.object(gate, '_run_tests', return_value=(16, 96)), \
              patch.object(gate, '_run_smokes', return_value=12):
             result = gate.run_gate(self.root)
         self.assertEqual(result['regression_methods_passed'], 96)
@@ -288,6 +288,88 @@ class OfflineRegressionGateR459(unittest.TestCase):
         gate._source_fingerprint(self.root)
         self.assertEqual(before, [(self.root / name).read_bytes()
                                   for name in gate.SOURCE_INPUTS])
+
+
+    def test_r464_exact_eight_required_real_modules(self):
+        self.assertEqual(gate.TESTS, (
+            "test_csv_negative_decimal_zero_copy_r455.py",
+            "test_csv_safe_cell_zero_copy_r456.py",
+            "test_csv_incremental_render_budget_r457.py",
+            "test_csv_bounded_utf8_witness_r458.py",
+            "test_offline_regression_gate_r459.py",
+            "test_offline_smoke_receipt_r460.py",
+            "test_source_digest_binding_r461.py",
+            "test_private_json_receipt_r462.py",
+        ))
+
+    def test_r464_selftest_sources_fingerprinted_once(self):
+        test_paths = ["tests/" + item for item in gate.TESTS]
+        self.assertEqual(len(test_paths), len(set(test_paths)))
+        for source in test_paths:
+            self.assertEqual(gate.SOURCE_INPUTS.count(source), 1)
+        self.assertEqual(len(gate.SOURCE_INPUTS),
+                         len(set(gate.SOURCE_INPUTS)))
+
+    def test_r464_selftest_source_edit_changes_fingerprint(self):
+        original = gate._source_fingerprint(self.root)
+        for name in ("test_offline_regression_gate_r459.py",
+                     "test_offline_smoke_receipt_r460.py"):
+            path = self.root / "tests" / name
+            path.write_text("changed selftest", encoding="utf-8")
+            self.assertNotEqual(gate._source_fingerprint(self.root), original)
+            path.write_text("synthetic checked content", encoding="utf-8")
+
+    def test_r464_legacy_six_module_pass_rejected(self):
+        with patch.object(gate, "_source_fingerprint", return_value="a" * 64), \
+             patch.object(gate, "_six_source_digest", return_value="b" * 64), \
+             patch.object(gate, "_run_tests", return_value=(12, 200)), \
+             patch.object(gate, "_run_smokes") as smokes:
+            with self.assertRaisesRegex(gate.LocalGateError, "coverage rejected"):
+                gate.run_gate(self.root)
+            smokes.assert_not_called()
+
+    def test_r464_missing_method_outcomes_rejected(self):
+        with patch.object(gate, "_source_fingerprint", return_value="a" * 64), \
+             patch.object(gate, "_six_source_digest", return_value="b" * 64), \
+             patch.object(gate, "_run_tests", return_value=(16, 15)), \
+             patch.object(gate, "_run_smokes") as smokes:
+            with self.assertRaises(gate.LocalGateError):
+                gate.run_gate(self.root)
+            smokes.assert_not_called()
+
+    def test_r464_boolean_or_spurious_mode_count_rejected(self):
+        for modes in (True, 0, 14, 18, "16"):
+            with self.subTest(modes=modes), \
+                 patch.object(gate, "_source_fingerprint", return_value="a" * 64), \
+                 patch.object(gate, "_six_source_digest", return_value="b" * 64), \
+                 patch.object(gate, "_run_tests", return_value=(modes, 220)), \
+                 patch.object(gate, "_run_smokes") as smokes:
+                with self.assertRaises(gate.LocalGateError):
+                    gate.run_gate(self.root)
+                smokes.assert_not_called()
+
+    def test_r464_boolean_or_spurious_method_count_rejected(self):
+        for methods in (True, 0, 15, "220"):
+            with self.subTest(methods=methods), \
+                 patch.object(gate, "_source_fingerprint", return_value="a" * 64), \
+                 patch.object(gate, "_six_source_digest", return_value="b" * 64), \
+                 patch.object(gate, "_run_tests", return_value=(16, methods)), \
+                 patch.object(gate, "_run_smokes") as smokes:
+                with self.assertRaises(gate.LocalGateError):
+                    gate.run_gate(self.root)
+                smokes.assert_not_called()
+
+    def test_r464_real_coverage_contract_retains_release_hold(self):
+        with patch.object(gate, "_source_fingerprint", return_value="a" * 64), \
+             patch.object(gate, "_six_source_digest", return_value="b" * 64), \
+             patch.object(gate, "_run_tests", return_value=(16, 230)), \
+             patch.object(gate, "_run_smokes", return_value=12):
+            receipt = gate.run_gate(self.root)
+        self.assertEqual(receipt["regression_mode_runs"], 16)
+        self.assertEqual(receipt["regression_methods_passed"], 230)
+        self.assertFalse(receipt["release_authorized"])
+        self.assertEqual(receipt["evidence"], "SOURCE_ONLY_NOT_WINDOWS_BINARY")
+
 
 
 if __name__ == '__main__':
