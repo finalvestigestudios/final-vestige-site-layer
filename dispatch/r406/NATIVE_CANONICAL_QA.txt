@@ -1,0 +1,6 @@
+Executed Nov 16 2026 in /mnt/data/dispatch_r406_work against existing exact canonical files.
+Current master PR #175 HEAD: d57ccdba3aee8f065e143e101c2945f4f3d01647.
+All eight canonical Git blob SHA identities independently re-fetched from GitHub and matched to local archived sources.
+Command: python -m unittest discover -s campaign-2026-mind/tests -p test_campaign.py -v
+Result: 6 tests passed, exit code 0, no failures/errors.
+No Jetpack Preview/received email/actual merchant affiliate checkout tested.
