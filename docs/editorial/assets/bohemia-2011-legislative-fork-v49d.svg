@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="930" viewBox="0 0 720 930" role="img" aria-labelledby="title desc">
+<title id="title">Two different 2011 legislative outcomes: HB475 enacted as Act 363, HB476 stayed in committee</title>
+<desc id="desc">Documentary source diagram. In June 2011 Louisiana Act 363 enacted a conditional 80 percent Authority, 20 percent Haspel and Davis class allocation of proceeds if non-flood assets were sold or transferred. HB476 was not enacted; a May 2011 fiscal note modeled about 3.4 million dollars annually while May 19 flood-authority minutes described a separate 3.7-million-dollar projection. Neither record proves a sale or claimant payment.</desc>
+<metadata>Original evidence diagram created by Final Vestige Studios, November 16, 2026. Copyright 2026 Final Vestige Studios. All rights reserved. No external imagery or generated historical reconstruction. Sources: Louisiana Legislature 2011 HB475 Act 363, https://www.legis.la.gov/Legis/ViewDocument.aspx?d=760740 ; HB475 bill history https://www.legis.la.gov/Legis/BillInfo.aspx?i=218062 ; HB476 bill history https://www.legis.la.gov/Legis/BillInfo.aspx?i=218063 ; Legislative Fiscal Office HB476 fiscal note https://www.legis.la.gov/Legis/ViewDocument.aspx?d=747354 ; SLFPA-East 2011-05-19 board meeting minutes, source [59] in article. Values are historical statutory rules/projections, not actual payments.</metadata>
+<rect width="720" height="930" fill="#111a1c"/>
+<rect x="36" y="32" width="648" height="3" fill="#bea46d"/>
+<text x="42" y="83" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="2.2" fill="#c6b184">FINAL VESTIGE / EVIDENCE MAP</text>
+<text x="42" y="131" font-family="Georgia, serif" font-size="38" fill="#f5f0e6">Two bills. Two outcomes.</text>
+<text x="42" y="165" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#c3cbd0">Louisiana's 2011 routes toward the Bohemia debt</text>
+<rect x="36" y="202" width="648" height="289" rx="15" fill="#1e302f" stroke="#9ebf9e" stroke-width="2"/>
+<text x="61" y="244" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#e9f2eb">HB475 → ACT 363</text>
+<text x="61" y="276" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#a9d8b1">ENACTED / JUNE 29, 2011</text>
+<line x1="61" y1="294" x2="656" y2="294" stroke="#537265" stroke-width="1"/>
+<text x="61" y="337" font-family="Georgia, serif" font-size="37" fill="#f5f0e6">80% <tspan font-size="21">Authority</tspan></text>
+<text x="61" y="379" font-family="Georgia, serif" font-size="37" fill="#f5f0e6">20% <tspan font-size="21">Haspel &amp; Davis class</tspan></text>
+<text x="61" y="418" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#e1e7e5">Conditional proceeds from qualifying asset sales</text>
+<text x="61" y="448" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#e1e7e5">or transfers; due within 30 days afterward</text>
+<rect x="36" y="519" width="648" height="291" rx="15" fill="#252b36" stroke="#8fa7c9" stroke-width="2"/>
+<text x="61" y="562" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#f2f2fb">HB476 → COMMITTEE</text>
+<text x="61" y="594" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#a9bfe3">PENDING / APRIL 25, 2011</text>
+<line x1="61" y1="611" x2="655" y2="611" stroke="#52637f" stroke-width="1"/>
+<text x="61" y="654" font-family="Georgia, serif" font-size="30" fill="#f5f0e6">$3.4m/year <tspan font-size="19">fiscal-note model</tspan></text>
+<text x="61" y="686" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#d5d9e3">May 15: hypothetical 6% payment scenario</text>
+<text x="61" y="731" font-family="Georgia, serif" font-size="30" fill="#f5f0e6">$3.7m/year <tspan font-size="19">authority estimate</tspan></text>
+<text x="61" y="763" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#d5d9e3">May 19: separate forecast, not money disbursed</text>
+<rect x="36" y="839" width="648" height="59" rx="9" fill="#3b2b27"/>
+<text x="54" y="864" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#f0d4b6">STILL UNVERIFIED</text>
+<text x="54" y="886" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#f4e8df">Sale closing · proceeds ledger · cleared heir receipt</text>
+<text x="36" y="921" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#91a4a7">FV STUDIO ORIGINAL · 16 NOV 2026 · SOURCES [59–61] · NOT A PAYMENT RECORD</text>
+</svg>
