@@ -1,0 +1,115 @@
+{
+  "schema": "fv-media-pinned-native-regression-v1",
+  "purpose": "Read-only Node gate for priority media source identity, rights, 960px hold, actual cold-wire proof protocol and oversized-original exposure. Offline tests do not establish visitor status.",
+  "network_access": false,
+  "production_write_authorized": false,
+  "browser_evidence_collected": false,
+  "actual_savings_measured": false,
+  "suites": [
+    {
+      "id": "hebgen-twin-usgs-originals",
+      "expected_tests": 35,
+      "files": [
+        {
+          "role": "test",
+          "name": "test_hebgen_catalog_alias_fidelity_20261116.cjs",
+          "git_blob_sha": "e5cee5995880e2b7c8d50f22c2304ca6d764dc69"
+        },
+        {
+          "role": "dependency",
+          "name": "validate_hebgen_catalog_alias_fidelity_20261116.cjs",
+          "git_blob_sha": "e2e168d4b5c466ba0b198eec81bc2f44b568d3f0"
+        },
+        {
+          "role": "dependency",
+          "name": "hebgen_catalog_alias_fidelity_20261116.json",
+          "git_blob_sha": "208b3c4ab8e61edea3e5f5aca5db176495cc2226"
+        }
+      ]
+    },
+    {
+      "id": "uscg-scotch-cap-rights",
+      "expected_tests": 21,
+      "files": [
+        {
+          "role": "test",
+          "name": "test_uscg_item_rights_conflict_20261115_2122pt.cjs",
+          "git_blob_sha": "cc928658e6618e8e25bf738206c3af78bf47f158"
+        },
+        {
+          "role": "dependency",
+          "name": "validate_uscg_item_rights_conflict_20261115_2122pt.cjs",
+          "git_blob_sha": "bf594d6e8d38b4f2d08b736ca1b34cd8f33e5048"
+        },
+        {
+          "role": "dependency",
+          "name": "uscg_scotch_cap_item_rights_conflict_20261115_2122pt.json",
+          "git_blob_sha": "aade29397875e63387a4488aea0e6da1386ca35f"
+        }
+      ]
+    },
+    {
+      "id": "p0-official-source-candidates",
+      "expected_tests": 17,
+      "files": [
+        {
+          "role": "test",
+          "name": "test_official_p0_triage_20261115.cjs",
+          "git_blob_sha": "49a0a4cdf9104a5f816f6097cf1c335ccb1f8a16"
+        },
+        {
+          "role": "dependency",
+          "name": "validate_official_p0_triage_20261115.cjs",
+          "git_blob_sha": "fdd8402a3df824aef85878e148f2917c6e55fb72"
+        },
+        {
+          "role": "dependency",
+          "name": "official_p0_triage_20261115_2030pt.json",
+          "git_blob_sha": "82fcf8bb74af22944b8725c5a37e71b8fd9ca3cd"
+        }
+      ]
+    },
+    {
+      "id": "wordpress-oversized-surfaces",
+      "expected_tests": 17,
+      "files": [
+        {
+          "role": "test",
+          "name": "test_wp66_oversize_noninline_cross_surface_20261115.cjs",
+          "git_blob_sha": "39c140ebc414fdc38500a2e45657531a20561e7a"
+        },
+        {
+          "role": "dependency",
+          "name": "validate_wp66_oversize_noninline_cross_surface_20261115.cjs",
+          "git_blob_sha": "95453b6fa049e975436063d48ea36967d325dda7"
+        },
+        {
+          "role": "dependency",
+          "name": "wp66_oversize_noninline_cross_surface_20261115.json",
+          "git_blob_sha": "ba6873871bd2553a471620b25e41342ab45403ed"
+        }
+      ]
+    },
+    {
+      "id": "cold-wire-76-percent-proof",
+      "expected_tests": 33,
+      "files": [
+        {
+          "role": "test",
+          "name": "test_assess_cold_wire_savings_20261115.cjs",
+          "git_blob_sha": "f28f6614d764d94e91ccf07fce7e9afe0968f679"
+        },
+        {
+          "role": "dependency",
+          "name": "assess_cold_wire_savings_20261115.cjs",
+          "git_blob_sha": "e598270ee5c6d2508948f5f3ce02f6f88eb5bf78"
+        }
+      ]
+    }
+  ],
+  "expected_total_node_tests": 123,
+  "visitor_http_evidence": null,
+  "guest_confirmed_broken_slots": null,
+  "measured_visitor_bandwidth_reduction_percent": null,
+  "scope_note": "No Site QA #154 collector edits; no external media binaries, WordPress writes, homepage redesign, paid calls or automatic CI runs."
+}
