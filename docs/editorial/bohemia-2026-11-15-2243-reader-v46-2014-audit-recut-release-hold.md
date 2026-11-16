@@ -1,0 +1,36 @@
+# Final Vestige Investigations · Bohemia Reader Edition v46 — release audit
+**Date:** November 15, 2026, approximately 22:43 Pacific · **Status:** WORDPRESS DRAFT / HOLD · **Publication:** none
+
+## Scope and collision controls
+- Continued **The Spillway That Kept Its Names**, WordPress post **#2488**, rather than starting a duplicate investigation. Live [Final Vestige editorial standards](https://finalvestige.com/editorial-standards/) were read via authenticated site connector; published Journal and draft queue checked; [Investigation coordination #1463](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1463) and [production QA #1589](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1589) read before editing.
+- **No edits** to Caernarvon draft #2151, homepage, shared templates, published articles, categories or featured-media selection.
+- Reader remains [v46](./bohemia-spillway-reader-edition-2026-11-14.md); detailed [2014 board/audit/repayment research annex](./bohemia-2014-board-audit-and-repayment-research-annex-2026-11-15.md) preserves the pre-condensation 1,858-word segment in full. No new evidence entry and no artificial increase in source count: **55** reader entries, **84** master-dossier evidence entries.
+
+## Substantive edit
+- Condensed three overlapping passages on the June 19 litigation agenda, June 30 fiscal cutoff, July 24 settlement-offer authorization, October 2/16 audit presentation and July 10 conditional state-loan repayment discussions. Approximately **1,858 → 994 words** in the canonical Markdown passage (net **864-word cut**, or **46.5%**), moving surplus documentary detail to the annex. Six top-level Gutenberg paragraph replacements and seven guarded removals (including a redundant 2014 audit figure). Continued preserving distinct original 2014 offer-chronology and loan-flow visuals.
+- Kept **the $2m storm-gate maintenance account separate from claimant escrow**, **settlement-offer authorization separate from signed settlement**, **fiscal year-end before post-close board vote**, **audit opinion separate from case-level settlement ledgers**, **loan-repayment discussion separate from any actual repayment**, and **judgments separate from proof of beneficiary receipt**. No allegations of diversion, disappearance or nonpayment from these source records.
+
+## Primary-source spot check, this run
+1. [July 24, 2014 Southeast Louisiana Flood Protection Authority–East board minutes](https://www.floodauthority.org/wp-content/uploads/minutes/2014%2007%2024%20-%20Board%20Meeting%20Minutes.pdf), printed **p. 13**: original PDF page screenshot successfully viewed; Resolution 07-24-14-10 authorizes counsel to proceed with an offer in dockets 563586, 55-774, 61-051; **5 yeas, 0 nays, 3 absent**. It does not record a signed contract or recipient transaction.
+2. [July 10, 2014 Finance Committee minutes](https://www.floodauthority.org/wp-content/uploads/committee_minutes/2014%2007%2010%20Finance%20Committee%20Minutes.pdf), printed **p. 3**: searchable primary-document text verifies attributed statements by Jim Bollinger and Robert Lacour about possible state-note funding and Bohemia mineral receipts. Original page screenshot attempt failed with source retrieval error; **not visually cleared**.
+3. [June 19, 2014 board minutes](https://www.floodauthority.org/wp-content/uploads/minutes/2014%2006%2019%20-%20Board%20Meeting%20Minutes.pdf): searchable primary text identifies litigation agenda and separate Resolution 06-19-14-18 for maintenance of major protective structures. Original page screenshot attempt failed; **not visually cleared**.
+4. [October 16, 2014 board minutes](https://www.floodauthority.org/wp-content/uploads/minutes/2014%2010%2016%20-%20Board%20Meeting%20Minutes.pdf), printed **p. 4**: official searchable text records auditor Jim Durbin's presentation of FY2014 audit results (after October 2 finance-committee presentation). Original PDF page screenshot attempt failed; **not visually cleared**.
+5. [NASA Earth Observatory, Mardi Gras Pass (Feb. 21, 2023)](https://science.nasa.gov/earth/earth-observatory/mardi-gras-pass-150986/) independently reconfirmed provenance for the two existing documentary images; neither is a survey of a claimant's property.
+
+## Guarded WordPress readback
+- All 13 edits used `wpcom_post_sections_*` with **expected_modified, expected_content_hash and expected_block_hash**. One planned operation failed an identity guard before performing a write; corrected target verification and safely continued. No unsupported whole-post replacement.
+- Authenticated post and section-list readback at **site-local modified 2026-11-15T22:43:02**: serialized Gutenberg content SHA-1 **`a98b8a7b9f0c033b9b30013ff76771436f87765e`**, **226 top-level blocks** (v45: 233), **55 unique bibliography IDs**, **213 internal bibliography links**, **zero missing, duplicated or unreferenced bibliography targets**.
+- Status **DRAFT**; categories **[9369, 232815]** and featured media **2484** unchanged. `jetpack_seo_noindex=true`, `_jetpack_dont_email_post_to_subs=true`, `jetpack_publicize_feature_enabled=false` checked by authenticated edit readback.
+- Documentary local media: **2484** (Landsat image, 1280×1280) and **2485** (NAIP image, 1125×1280) remain in the media library with explicit alt text, captions, NASA/USGS/USDA credits and original NASA link. Their **public JPEG bytes were not independently rendered**; direct public retrieval attempt failed. Therefore media visual pass is still **HOLD**, not broken-image proof.
+- First-party artwork: previously sourced studio SVGs retained (the separate 2014 audit graphic is now archived rather than repeated). **Authenticated production WordPress-theme 390px and 1440px screenshots and DOM/overflow QA have not run**.
+
+## Release blockers (remain enforced)
+- Genuine editor-authenticated WordPress theme screenshots at **390px mobile and 1440px desktop**, with link, caption, overflow and accessibility review; no unauthenticated screenshot substitute.
+- Independent successful public loading and credited display of both documentary JPEGs in the rendered draft.
+- Original-page visual checks where the PDF renderer failed (June 19, July 10, October 16), and completed original FY2014 audit plus settlement/case journal reconciliation. The official October 2014 meeting minutes demonstrate audit circulation, not the specific judgment entries.
+- Executed agreements, escrow/bank movement records and claimant-level payment evidence for any affirmative payout conclusion; independent legal/editorial approval for the final manuscript.
+- **Do not publish** until these quality gates are satisfied. No subscriber mailing, auto-social, homepage or template changes, paid services, or Grok social posts.
+
+## Commits and provenance
+- Pre-edit 2014 research annex created in commit `fcca4d7e1bccca9fa1a11aa5fd6bb851b94b29ed`.
+- Reader v46 edit committed in `8c5b371f117337dedc9608755ce1cc02280237c6`. Github reader file blob SHA `748ef9d41850a6e40f525f5e11245b00cffbae35` read back independently. All amounts and dates in this editorial recut were already in the verified source-ledger categories; this cycle did not increase evidence counts.
