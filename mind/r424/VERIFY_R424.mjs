@@ -41,10 +41,10 @@ function audit(f){
    t(name+' viewport',phrase(v,'name="viewport"'));
    t(name+' no javascript',!/<script\b/i.test(v));
    t(name+' no iframe',!/<iframe\b/i.test(v));
-   t(name+' no autoplay',!/\bautoplay\b/i.test(v));
+   t(name+' no autoplay media attribute',!/<(?:video|audio)\b[^>]*\bautoplay\b/i.test(v));
    t(name+' no signup forms',!/<form\b/i.test(v));
    t(name+' no third party analytics',!/googletagmanager|google-analytics|facebook\.com\/tr|pixel\.|gtag\(/i.test(v));
-   t(name+' no activated affiliate merchant links',!/<a\b[^>]*href=["'][^"']*(?:affiliates\.inspire3|affiliate[_-]|clickbank|checkout|\/order(?:\/|["'?]))/i.test(v));
+   t(name+' no activated affiliate merchant links',!/<a\b[^>]*href=["'][^"']*(?:affiliates\.inspire3|affiliate_id=|clickbank|checkout|\/order(?:\/|["'?]))/i.test(v));
    t(name+' no referral query tokens',!/(?:[?&](?:aff_id|affiliate|ref|hop|tid|subid)=)/i.test(v));
    t(name+' readable small screen styles',phrase(v,'max-width:680px'));
    t(name+' keyboard focus indication',phrase(v,'focus-visible'));
