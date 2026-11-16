@@ -1,5 +1,5 @@
 # The Spillway That Kept Its Names
-*Final Vestige Investigations · reader-facing revision 43 · 15 November 2026 · REVIEW DRAFT — DO NOT PUBLISH*
+*Final Vestige Investigations · reader-facing revision 44 · 15 November 2026 · REVIEW DRAFT — DO NOT PUBLISH*
 
 **Deck:** A Louisiana family recovered a parcel of land, then fought for the revenues it had earned. The court decisions are documented. Whether and when every ordered payment reached its recipients is a different question.
 
@@ -127,9 +127,7 @@ The records examined show the legal machinery, not its aggregate effect. We have
 
 ### The notices did not vanish with the lawsuits
 
-A university collection inventory preserves another strand of the Bohemia record. Southeastern Louisiana University's *Rod Lincoln Collection* lists a **February 21, 1987** *Times-Picayune* notice of land returns, a **1988** article cataloged under a headline about claimants contesting the **$175 fee**, and a **December 15, 2000** *Plaquemines Gazette* settlement headline. It also lists 1984 legislative and legal-notice coverage. These are **finding-aid descriptions, not inspected clippings**. The index does not verify the claims in those articles, identify which heirs were paid, or prove that any settlement amount cleared. [53]
-
-The sequence nevertheless suggests a useful correction to the reporting chronology: the **1988 fee-dispute headline precedes the 1990 rule amendment** just examined, so the amendment cannot be presented as the beginning of public objections. The cataloged 1987 notice is another promising lead for matching claimant instructions to administrative deadlines. The actual newspapers, agency mailings, special-master records and payment evidence must be obtained before drawing conclusions about a family's experience. Attempts to open the institutional finding aid directly returned HTTP 403; this research verified indexed collection descriptions only, not physical holdings. [53]
+Another paper trail survives in a university catalogue. Southeastern Louisiana University's *Rod Lincoln Collection* indexes a **February 21, 1987** land-return notice, an **October 8, 1988** newspaper headline about a challenge to the **$175** claims fee, and a **December 15, 2000** settlement headline. These are descriptions of holdings, **not verified accounts of what the clippings reported or proof that a claimant was paid**; the original items remain to be examined. [53]
 
 ![Original studio-owned archival discovery timeline for 1984, 1987, 1988 and 2000 catalog entries.](./assets/bohemia-archival-finding-aid-1984-2000-v41.svg)
 *The second paper trail. Original Final Vestige Studios vector, November 15, 2026, based on the Southeastern Louisiana University collection finding aid. Not a historical scan or proof of the clippings' contents. [53]*
@@ -151,11 +149,7 @@ The proposed indigence process itself was hardly automatic. It called for a ques
 
 ## The accounting was already required
 
-The same **March 31, 1999** ruling supplies a separate piece of the accounting chronology. The landowners had sought a declaration of royalty rights and an order placing revenue in court escrow. The judges said the Department of Natural Resources lacked authority to determine those contested royalty claims before the Legislature enacted more detailed escrow and payment procedures in **Act 1364 of 1997**. They therefore rejected the argument that the landowners' earlier lawsuit had been premature for failure to exhaust an administrative remedy that did not then exist. [16]
-
-A duty to account in 1984, court enforcement efforts in the 1990s, and statutory escrow machinery added in 1997 are different steps. None should be mistaken for a dated receipt showing money reaching a particular successor.
-
-The central document in this investigation is not a secret memorandum. It is Section 3 of the 1984 law.
+Section 3 of Louisiana's 1984 Return of Lands Act imposed a documentary obligation alongside the promised return of title.
 
 It required the Orleans Levee Board to provide Louisiana's Department of Natural Resources with a thorough accounting of revenues received from affected property and made the information available to applicants. Those obligations were more than an aspiration by a later reformer. They appeared in an enacted statute and were examined in litigation. [3][4]
 
@@ -170,6 +164,10 @@ In *Vogt v. Board of Commissioners*, decided June 9, 1999, the Fourth Circuit de
 The next step was more complicated than declaring the whole sum payable to everyone in the courtroom. A January 30, 1998 judgment awarded the reported total, but on reconsideration the trial court issued a revised judgment, signed **July 24, 1998**, identifying individuals and the amounts due to each. Its reasoning distinguished participating owners' fractional interests from the shares of absent or unrepresented co-owners. The appellate court affirmed in June 1999. In other words, the accounting established a pool of receipts from particular properties; entitlement to a particular share still required an ownership analysis. The published appellate opinion does not reproduce the full account, the individual allocation schedule or proof that each award was eventually collected. [14]
 
 The correction narrows the unresolved question. We can no longer write that no accounting is known to have been produced. We can say that the **case-specific Vogt accounting is attested in a published judicial decision**, while the scope and delivery of a complete accounting under Section 3 to DNR and other applicants, including those outside that litigation, have not been independently established. It is the original exhibits and beneficiary-level receipts, not the mere existence of an accounting, that now deserve priority.
+
+A separate **March 31, 1999** appellate ruling explains why an accounting obligation and a claim for payment were not the same remedy. The landowners had sought a declaration of royalty rights and an order placing revenue in court escrow. The judges held that the Department of Natural Resources lacked authority to decide those disputed claims before legislators added more specific escrow and payment procedures in **Act 1364 of 1997**. They rejected the argument that the earlier lawsuit had been premature for failing to exhaust an administrative remedy that did not yet exist. [16]
+
+A duty to account in 1984, court enforcement efforts in the 1990s, and statutory escrow machinery added in 1997 are different steps. None should be mistaken for a dated receipt showing money reaching a particular successor.
 
 [**Original evidence figure — the accounting that reached court, 1997–2002**](./assets/bohemia-vogt-accounting-produced-1997-2002-2026-11-14.svg)  
 *Final Vestige Studios, November 14, 2026. Original source-derived SVG from Vogt (1999) and the later federal appeal (2002), not a reproduction of the missing accounting or a payment register. The $2,853,358.44 figure is aggregate disputed-property revenue, not a verified payee distribution. Mobile/2x standalone raster inspection passed; production-theme placement remains on hold.*
@@ -197,8 +195,6 @@ The report also refers to several payments since 2001 and repeats a **$600,000 p
 The surviving evidence thus points to **two recoverable kinds of paper**: a case-specific 1997 *Vogt* accounting filed in court and a district-maintained royalty accounting described in a 2008 government report. Whether the latter encompassed the former, how it was delivered to DNR, and how the entries match transfers to individual recipients remain unanswered. That is a narrower and more testable question than whether anyone ever bothered to keep books.
 
 ## A judgment could outlive its collection
-
-The accounting entered the record. The judgment entered the record. Payment required another step.
 
 On **October 26, 2000**, the *Vogt* claimants asked a Louisiana court to seize **$1,831,528.49**, plus claimed income and interest, to satisfy an earlier judgment. That particular enforcement request was smaller than the **$2,853,358.44** aggregate royalty judgment. The appellate opinion records both numbers but does not reconcile them. Without the original seizure motion and the individualized allocation order, the difference should not be explained away as a discount, payment, or reduction. [18]
 
@@ -319,8 +315,6 @@ The same 2004 note describes the separate $166,842.53 figure as fees and interes
 There is a financial temptation here: assemble the court figures, add the audited totals, subtract a reserve balance, and announce what heirs are still owed. That arithmetic would be theatrical rather than investigative. A judgment amount, an accounting of receipts, an award allocated among fractional owners, a restricted fund balance and a cleared beneficiary payment are different records.
 
 ## The balance changed, then its label did
-
-The district's financial statements provide a sequence that is easy to chart and harder to interpret.
 
 ### The money on the books was not the money owed
 
@@ -444,8 +438,6 @@ The resolution supplies three unusually specific search keys: **No. 563586**, in
 
 The dates produce a sharper accounting question. The authority's **2014 fiscal year ended June 30**. This board authorization came **24 days after that cutoff**. An action taken on July 24 cannot, *by itself*, prove why the governmental judgments liability was lower on June 30. Negotiations, prior obligations, subsequent-event treatment and recorded accounting entries could matter, but the board resolution does not disclose them. It contains **no dollar amount**, no executed settlement text, no court satisfaction, no case-specific journal entry and no list of paid claimants. The sharp decline in the combined judgments balance therefore remains unreconciled at the case level. [39, 40, 48]
 
-The distinction has a practical consequence for reporting. A board can authorize counsel to negotiate without proving the offer was accepted. A signed agreement may settle rights without showing when an escrow was funded. An audit may recognize an extinguished liability without naming the individual who collected cash. Treating those four records as interchangeable would turn a useful paper trail into a false payment history. The next records to obtain are the signed agreement or rejection associated with **Resolution 07-24-14-10**, docket activity for each of the three proceedings, the fiscal 2014 subsequent-events and litigation schedules, and any case-linked escrow or payment ledger. [48]
-
 [**Original evidence diagram — before the books closed**](./assets/bohemia-preclose-executive-session-v40.svg)  
 *© Final Vestige Studios, November 15, 2026. Original source-derived timeline from June 19 board minutes [52] and July 24 board minutes [48]. Alt: “June 19 agenda listed the three litigation dockets for closed-session consideration, June 30 ended fiscal 2014, and July 24 brought authorization of a settlement offer; a separate $2 million maintenance-account resolution is not a claimant fund.” This is not a historic survey, bank record, signed settlement or proof of a payment. Original studio-authored editable vector; actual WordPress-theme screenshot remains outstanding.*
 
@@ -567,8 +559,6 @@ The physical and legal stories illuminate one another without proving one anothe
 
 ## What an accounting would finally settle
 
-The surviving documents are strong enough to establish several things, including that a specific revenue accounting entered litigation.
-
 The project acquired both private and public land. Mineral income followed. Louisiana created a legal return mechanism for qualifying private holdings. The state also required revenue accounting and later courts entertained claims for access, title and payment. Individual transfers and institutional payments were reported in some cases. [2]–[8]
 
 The documents are not yet sufficient for a complete claimant ledger. They do not establish every original owner, every valid successor, every conveyance recording, every settlement term or the final destination of each dollar. They certainly do not establish a current 2026 sum owed.
@@ -583,7 +573,7 @@ The Mississippi created a new channel in 2012. Long before that, the government 
 
 ## Sources & Further Reading
 
-These are 54 selected reader-facing sources. The [master source ledger](./bohemia-spillway-2026-11-12-land-roster-rights-claim-investigation-draft.md) contains **83 sequential entries** at this research checkpoint and distinguishes originals inspected from judicial reproductions, excerpts, institutional reports, interpretation and unexamined underlying records.
+These are 55 selected reader-facing sources. The [master source ledger](./bohemia-spillway-2026-11-12-land-roster-rights-claim-investigation-draft.md) contains **84 sequential entries** at this research checkpoint and distinguishes originals inspected from judicial reproductions, excerpts, institutional reports, interpretation and unexamined underlying records.
 
 1. **NASA Earth Observatory**, Emily Cassidy and Joshua Stevens, “[Mardi Gras Pass](https://science.nasa.gov/earth/earth-observatory/mardi-gras-pass-150986/)” (February 21, 2023), USDA 2007 NAIP and USGS 2023 Landsat imagery; source images dated September 20, 2007 and February 13, 2023. Images created by Joshua Stevens using USDA NAIP and USGS Landsat data; corresponding documentary JPGs stored locally in WordPress media IDs **2485** (2007) and **2484** (2023). [NASA media-use guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/) permit factual editorial reuse subject to attribution and no endorsement; [USDA's imagery hub](https://apfo-usdaonline.opendata.arcgis.com/) identifies NAIP aerial imagery as public domain; [USGS](https://www.usgs.gov/media/images/landsat-product-citation-screenshot) identifies Landsat images as public domain. Source credit and alt/caption checked by independent media-library readback; article-page rendering is still unverified.
 2. **Louisiana Supreme Court**, *Board of Commissioners v. Department of Natural Resources*, [496 So. 2d 281](https://law.justia.com/cases/louisiana/supreme-court/1986/85-ca-1448-3.html) (October 20, 1986, controlling rehearing), acquisition categories, historical mineral receipts and holding.
@@ -727,3 +717,5 @@ These are 54 selected reader-facing sources. The [master source ledger](./bohemi
 **November 14, 2026 early-afternoon advance (reader v11).** Two additional official July 25, 2024 Lakefront Management Authority primary documents now anchor the post-2023 administrative handoff. Committee PDF pp. 4–5 visually inspected, and full-board government text read; full-board original screenshot blocked and a June/July heading inconsistency noted. Reader sources [24]–[25] qualify management authority versus tract title and beneficiary payment. New original self-contained timeline visually checked at 390px. Publish held for authenticated WordPress rendering and original settlement/accounting transactions.
 
 **November 15, 2026 evening editorial revision (reader v43).** Recut the opening around the original 2005 Tract 78 return and 2012 appellate award, with no invented family scene or payment claim. The Mississippi/Mardi Gras Pass imagery now functions as a landscape counterpoint, explicitly NOT a Tract 78 cadastral survey. Verified appellate original PDF page images 2 and 11; NASA 2023 page with date, instrument and author credits. Six guarded WordPress paragraph replacements; preserved existing 55 sources and the master 84-source ledger. This is a **structural narrative revision**, not a new original-source claim or production-theme QA pass. See separate v43 audit.
+
+**November 15, 2026 evening editorial revision (reader v44).** Guarded WP #2488 moves the 1999 proceedings after the 1984 statutory obligation and 1996 Riley / 1997–99 Vogt trail, makes the archival-index lead explicitly non-evidentiary about settlement payouts, and removes four redundant bridges. The v43 opening and visual roster are preserved. No new source or legal conclusion. Reader bibliography 55; evidence dossier 84. This working Markdown document is *not* a byte-identical Gutenberg export. No public release; production-theme screenshots, claimant transactions, fiscal 2014 schedules and final legal approval remain unresolved.
