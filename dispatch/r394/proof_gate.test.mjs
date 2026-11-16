@@ -56,15 +56,24 @@ test("empty provider list is zero confirmed transitions, not subscriber stock",(
 test("missing ledger is NOT_COMPUTABLE",()=>assert.equal(settledNetPer1000({
  qualified_human_sessions:100,sessions_audited:true}).status,"NOT_COMPUTABLE"));
 test("unknown sessions is NOT_COMPUTABLE",()=>assert.equal(settledNetPer1000({
- qualified_human_sessions:0,sessions_audited:true,settlements:[]}).status,"NOT_COMPUTABLE"));
+ qualified_human_sessions:0,sessions_audited:true,ledger_audited:true,settlements:[]}).status,"NOT_COMPUTABLE"));
 test("unverified settlement cannot become sales",()=>assert.equal(settledNetPer1000({
- qualified_human_sessions:100,sessions_audited:true,settlements:[{
+ qualified_human_sessions:100,sessions_audited:true,ledger_audited:true,settlements:[{
  provider_verified:false,status:"settled",settlement_id:"s",commission_cents:500,
  refund_cents:0,fee_cents:0,reversal_cents:0}]}).status,"NOT_COMPUTABLE"));
 test("verified paid net subtracts reversals and fees, dedupes IDs",()=>{
  const s={provider_verified:true,status:"settled",settlement_id:"one",commission_cents:1000,
  refund_cents:100,fee_cents:50,reversal_cents:250};
- const r=settledNetPer1000({qualified_human_sessions:200,sessions_audited:true,settlements:[s,s]});
+ const r=settledNetPer1000({qualified_human_sessions:200,sessions_audited:true,ledger_audited:true,settlements:[s,s]});
  assert.equal(r.status,"COMPUTABLE");assert.equal(r.net_revenue_cents,600);
  assert.equal(r.revenue_per_1000_sessions_usd,30);assert.equal(r.verified_settlements,1);
+});
+
+test("missing independently audited ledger forbids invented zero revenue",()=>{
+ const r=settledNetPer1000({qualified_human_sessions:100,sessions_audited:true,settlements:[]});
+ assert.equal(r.status,"NOT_COMPUTABLE");
+});
+test("audited empty ledger with audited sessions proves genuine observed zero in fixture",()=>{
+ const r=settledNetPer1000({qualified_human_sessions:100,sessions_audited:true,ledger_audited:true,settlements:[]});
+ assert.equal(r.status,"COMPUTABLE");assert.equal(r.net_revenue_cents,0);
 });
