@@ -1,0 +1,398 @@
+{
+  "version": "r419.1",
+  "audited_on": "2026-11-16",
+  "scope": "read-only source-controlled draft; no activated commerce",
+  "sources": {
+    "FV_ISSUE_171": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "FV_JOURNAL": "https://finalvestige.com/blog/",
+    "FV_PUYSEGUR": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "FV_FOCUS": "https://finalvestige.com/focus/",
+    "FV_CHANGE": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "FV_MESMER": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "FTC_ENDORSE": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "FTC_HEALTH": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "INSPIRE3": "https://inspire3.com/",
+    "ZEN12": "https://zen12.com/",
+    "ZEN12_ABOUT": "https://zen12.com/about",
+    "ZEN12_CHECKOUT": "https://zen12.com/order",
+    "HYPNOSIS_TOTAL_FOCUS": "https://hypnosislive.com/mental-skills/total-focus",
+    "BRAINWAVE_FOCUS_SHOT": "https://brainwaveshots.com/focus-shot",
+    "BRAINWAVE_FAQ": "https://brainwaveshots.com/faq",
+    "INGENDOH_2023": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/",
+    "MELNICHUK_2025": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11799511/",
+    "META_2019": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+    "REVIEW_2024": "https://pubmed.ncbi.nlm.nih.gov/38458383/"
+  },
+  "claims": [
+    {
+      "id": "R01",
+      "claim": "The live Journal currently shows 66 results rather than the 61 baseline",
+      "kind": "public_inventory",
+      "status": "verified_public",
+      "source_id": "FV_JOURNAL",
+      "limitation": "Snapshot only; count can change"
+    },
+    {
+      "id": "R02",
+      "claim": "Puységur archive preserves failed predictions and consent conflicts",
+      "kind": "historical",
+      "status": "verified_archive",
+      "source_id": "FV_PUYSEGUR",
+      "limitation": "Not proof of magnetism or treatment"
+    },
+    {
+      "id": "R03",
+      "claim": "The Focus Fieldbook is a 52-page free PDF using existing Dispatch signup",
+      "kind": "owned_free",
+      "status": "verified_public",
+      "source_id": "FV_FOCUS",
+      "limitation": "Confirmation/delivery independently untested"
+    },
+    {
+      "id": "R04",
+      "claim": "A binaural beat is an auditory percept arising from different tones to each ear",
+      "kind": "science_perception",
+      "status": "independently_supported",
+      "source_id": "INGENDOH_2023",
+      "limitation": "Not proof of work performance"
+    },
+    {
+      "id": "R05",
+      "claim": "2023 EEG review included fourteen binaural beat studies",
+      "kind": "science_eegr",
+      "status": "independently_supported",
+      "source_id": "INGENDOH_2023",
+      "limitation": "Five supportive, eight contradictory, one mixed"
+    },
+    {
+      "id": "R06",
+      "claim": "EEG entrainment findings are conclusively consistent",
+      "kind": "science_eegr",
+      "status": "rejected",
+      "source_id": "INGENDOH_2023",
+      "limitation": "Inconsistent studies, different physiological endpoints"
+    },
+    {
+      "id": "R07",
+      "claim": "The 2025 experiment included eighty university participants",
+      "kind": "science_trial",
+      "status": "independently_supported",
+      "source_id": "MELNICHUK_2025",
+      "limitation": "Not a Zen12 product test"
+    },
+    {
+      "id": "R08",
+      "claim": "One 2025 gamma/lower-carrier/noise combination improved general attention measure",
+      "kind": "science_trial",
+      "status": "independently_supported",
+      "source_id": "MELNICHUK_2025",
+      "limitation": "No corresponding reduction in vigilance decline"
+    },
+    {
+      "id": "R09",
+      "claim": "2025 result proves sustained concentration for hours",
+      "kind": "product_efficacy",
+      "status": "rejected",
+      "source_id": "MELNICHUK_2025",
+      "limitation": "Not studied"
+    },
+    {
+      "id": "R10",
+      "claim": "2019 pooled analysis found medium overall effect g approximately 0.45",
+      "kind": "science_meta",
+      "status": "independently_supported",
+      "source_id": "META_2019",
+      "limitation": "Mixed cognitive/anxiety/pain endpoints, not SKU effect"
+    },
+    {
+      "id": "R11",
+      "claim": "2024 systematic review found mixed/insufficient physiological-cognition links",
+      "kind": "science_review",
+      "status": "independently_supported",
+      "source_id": "REVIEW_2024",
+      "limitation": "Not exclusive to binaural beats"
+    },
+    {
+      "id": "R12",
+      "claim": "Zen12 sellers describe twelve levels and four styles per level",
+      "kind": "product_format",
+      "status": "seller_described",
+      "source_id": "ZEN12_ABOUT",
+      "limitation": "No independent audit of downloaded assets"
+    },
+    {
+      "id": "R13",
+      "claim": "Zen12 merchant checkout describes forty-eight MP3s",
+      "kind": "product_bundle",
+      "status": "seller_described",
+      "source_id": "ZEN12_CHECKOUT",
+      "limitation": "Dynamic checkout; not FV-approved link"
+    },
+    {
+      "id": "R14",
+      "claim": "Zen12 twelve minutes equals one hour of advanced meditation",
+      "kind": "product_efficacy",
+      "status": "seller_unsubstantiated_excluded",
+      "source_id": "ZEN12",
+      "limitation": "Do not promote as proven"
+    },
+    {
+      "id": "R15",
+      "claim": "Zen12 automatically cures anxiety or ensures focus",
+      "kind": "health_product",
+      "status": "seller_unsubstantiated_excluded",
+      "source_id": "ZEN12_ABOUT",
+      "limitation": "Do not use or imply"
+    },
+    {
+      "id": "R16",
+      "claim": "Total Focus seller lists a thirty-three-minute 47 MB audio",
+      "kind": "product_format",
+      "status": "seller_described",
+      "source_id": "HYPNOSIS_TOTAL_FOCUS",
+      "limitation": "Not SKU-specific endorsement permission"
+    },
+    {
+      "id": "R17",
+      "claim": "Total Focus guarantees dramatic concentration",
+      "kind": "product_efficacy",
+      "status": "seller_unsubstantiated_excluded",
+      "source_id": "HYPNOSIS_TOTAL_FOCUS",
+      "limitation": "No qualifying product-specific trial verified"
+    },
+    {
+      "id": "R18",
+      "claim": "Focus Shot seller lists 15- and 30-minute files",
+      "kind": "product_format",
+      "status": "seller_described",
+      "source_id": "BRAINWAVE_FOCUS_SHOT",
+      "limitation": "Product package unverified by FV"
+    },
+    {
+      "id": "R19",
+      "claim": "Focus Shot seller describes 12–18 hertz protocol and says headphones not required",
+      "kind": "product_protocol",
+      "status": "seller_described",
+      "source_id": "BRAINWAVE_FOCUS_SHOT",
+      "limitation": "Do not equate with 2-ear binaural-beat trials"
+    },
+    {
+      "id": "R20",
+      "claim": "Focus Shot provides hours of extraordinary focus",
+      "kind": "product_efficacy",
+      "status": "seller_unsubstantiated_excluded",
+      "source_id": "BRAINWAVE_FOCUS_SHOT",
+      "limitation": "No product-specific clinical trial verified"
+    },
+    {
+      "id": "R21",
+      "claim": "Current seller price/refund is legally binding for referred FV checkout",
+      "kind": "terms",
+      "status": "unverified_hold",
+      "source_id": "ZEN12_CHECKOUT",
+      "limitation": "Different routes/promotions; checkout and referral terms unverified"
+    },
+    {
+      "id": "R22",
+      "claim": "Final Vestige has named Inspire3 partner approval for Zen12 SKU/channel",
+      "kind": "affiliate_eligibility",
+      "status": "unverified_hold",
+      "source_id": "INSPIRE3",
+      "limitation": "Public portal and promotional email insufficient"
+    },
+    {
+      "id": "R23",
+      "claim": "Final Vestige may use public Inspire3 Limitless Labs swipe for Zen12",
+      "kind": "creative_rights",
+      "status": "rejected",
+      "source_id": "INSPIRE3",
+      "limitation": "Different SKU, channel and creative approval"
+    },
+    {
+      "id": "R24",
+      "claim": "Final Vestige has an issued earning URL and confirmed settlement report",
+      "kind": "affiliate_money",
+      "status": "unverified_hold",
+      "source_id": "FV_ISSUE_171",
+      "limitation": "No record verified"
+    },
+    {
+      "id": "R25",
+      "claim": "FTC requires honest disclosure of material affiliate connection",
+      "kind": "compliance",
+      "status": "independently_supported",
+      "source_id": "FTC_ENDORSE",
+      "limitation": "Near recommendation; generic footer not enough"
+    },
+    {
+      "id": "R26",
+      "claim": "FTC guidance expects substantiation for objective health product claims",
+      "kind": "compliance",
+      "status": "independently_supported",
+      "source_id": "FTC_HEALTH",
+      "limitation": "Product-specific reasonable consumer implication"
+    },
+    {
+      "id": "R27",
+      "claim": "Outbound affiliate click proves a commission",
+      "kind": "analytics",
+      "status": "rejected",
+      "source_id": "FV_ISSUE_171",
+      "limitation": "Only merchant-confirmed settled conversion can prove paid"
+    },
+    {
+      "id": "R28",
+      "claim": "Any registered visitor with ?subscribe= is a confirmed provider-eligible lead",
+      "kind": "analytics",
+      "status": "rejected",
+      "source_id": "FV_FOCUS",
+      "limitation": "Claude/Dispatch identified query parameter UI-state hazard; provider confirmation needed"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "legal_named_partner_acceptance",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "specific_zen12_sku_approval",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "approved_web_promotion_channel",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "approved_email_channel_if_relevant",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "issued_referral_earning_url",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "authorized_referral_checkout",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "approved_original_commercial_creative",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "current_seller_offer_and_currency",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "current_return_conditions",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "affiliate_attribution_terms",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "affiliate_settlement_report_access",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "product_claim_substantiation",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "disclosure_visual_proximity",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "founder_commercial_release_approval",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "founder_wordpress_publish_approval",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "site_qa_mobile_360",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "site_qa_mobile_390",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "site_qa_tablet_768",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "site_qa_desktop_1440",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "site_qa_wide_1920",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "real_browser_wacg_2_2_aa",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "real_browser_cwv",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "native_wordpress_sanitization",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "playable_original_42s_media",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "synchronized_accessible_captions",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "real_funnel_provider_confirmed_lead",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "qualified_human_campaign_denominator",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    },
+    {
+      "id": "verified_paid_settled_order_with_fees_and_refunds",
+      "status": "HOLD",
+      "evidence": "Not verified in this sprint"
+    }
+  ],
+  "buyer_decision": "HARD_HOLD",
+  "allowed_noncommercial_cta": "https://finalvestige.com/focus/",
+  "merchant_cta": null,
+  "reported_net_revenue_per_1000_qualified_sessions": null
+}
