@@ -441,13 +441,22 @@ def reconcile_procurement(po: str, invoices: str, receipts: str, folder: str,
 
     # Across distinct POs, a shared credit document is a review candidate.
     # A credit spanning multiple lines of the SAME PO is not cross-PO reuse.
-    from .procurement_cross_po_r471 import cross_po_all_document_source_rows
+    from .procurement_cross_po_r471 import (cross_po_all_document_source_rows,
+                                             cross_po_foreign_offset_source_rows)
     document_key = document_key_session(engine.key)
     invoice_event_type = lambda row: event_kind(row, source="invoice")
     receipt_event_type = lambda row: event_kind(row, source="receipt")
     # One deterministic classification per input row, instead of four
     # independent passes that could disagree under a stateful classifier.
     cross_po_refs = cross_po_all_document_source_rows(
+        groups[1], groups[2], document_key=document_key,
+        invoice_event_type=invoice_event_type,
+        receipt_event_type=receipt_event_type)
+    # Offset references resolving to an original on a DIFFERENT PO warrant
+    # review even when the credit/return ID itself is unique. A local original
+    # anywhere on the same PO suppresses the foreign-target finding; evidence
+    # cites the source original CSV rows, never a cross-order approval.
+    foreign_offset_targets = cross_po_foreign_offset_source_rows(
         groups[1], groups[2], document_key=document_key,
         invoice_event_type=invoice_event_type,
         receipt_event_type=receipt_event_type)
@@ -472,6 +481,12 @@ def reconcile_procurement(po: str, invoices: str, receipts: str, folder: str,
         cross_po_return_sources = cross_po_refs["return"].get((po_id, line), ())
         if cross_po_return_sources:
             flags.insert(0, "return_document_cross_po_review")
+        foreign_credit_targets = foreign_offset_targets["credit"].get((po_id, line), ())
+        foreign_return_targets = foreign_offset_targets["return"].get((po_id, line), ())
+        if foreign_credit_targets:
+            flags.insert(0, "credit_reference_cross_po_review")
+        if foreign_return_targets:
+            flags.insert(0, "return_reference_cross_po_review")
         if normalized_collision(source_records, "po_number"):
             flags.insert(0, "normalized_po_key_review")
         if normalized_collision(source_records, "line"):
@@ -486,6 +501,8 @@ def reconcile_procurement(po: str, invoices: str, receipts: str, folder: str,
             "cross_po_invoice_source_rows": ";".join(cross_po_invoice_sources),
             "cross_po_receipt_source_rows": ";".join(cross_po_receipt_sources),
             "cross_po_return_source_rows": ";".join(cross_po_return_sources),
+            "cross_po_credit_target_rows": ";".join(foreign_credit_targets),
+            "cross_po_return_target_rows": ";".join(foreign_return_targets),
             "status": ";".join(dict.fromkeys(flags)) or "matched",
             "po_rows": ";".join(r["row"] for r in ordered),
             "invoice_rows": ";".join(r["row"] for r in inv),
@@ -508,7 +525,8 @@ def reconcile_procurement(po: str, invoices: str, receipts: str, folder: str,
                      "po_source_sha256", "invoice_source_sha256", "receipt_source_sha256",
                      "credit_source_line_links", "return_source_line_links",
                      "cross_po_credit_source_rows", "cross_po_invoice_source_rows",
-                     "cross_po_receipt_source_rows", "cross_po_return_source_rows")
+                     "cross_po_receipt_source_rows", "cross_po_return_source_rows",
+                     "cross_po_credit_target_rows", "cross_po_return_target_rows")
     inputs = list(source_paths)
     if policy_path is not None and str(policy_path).strip():
         inputs.append(policy_path)
