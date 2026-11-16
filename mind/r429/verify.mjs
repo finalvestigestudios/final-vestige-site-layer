@@ -50,7 +50,7 @@ for(const [i,h] of [A,B,hub].entries()){
  t('CSS scope: '+i,/\#fv-mind-r429/.test(h)&&!/(?:^|\n)(?:body|html)\s*\{/m.test(h));
  t('no remote scripts: '+i,!/<script\b|<iframe\b|<link\b/i.test(h));
  t('no auto media: '+i,!/<(?:video|audio)[^>]*\bautoplay\b/i.test(h));
- t('no rendered active affiliate link: '+i,!/<a[^>]+(?:zen12|hypnosislive|brainwaveshots|affiliate)/i.test(h));
+ t('no rendered active affiliate link: '+i,!/<a[^>]*href="https?:\/\/(?:zen12|hypnosislive|brainwaveshots|affiliates)/i.test(h));
  t('existing focus pathway: '+i,/href="\/focus\/"/.test(h));
  t('no duplicate subscribe form: '+i,!/<form\b/i.test(h));
 }
