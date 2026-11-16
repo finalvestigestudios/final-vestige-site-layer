@@ -1,0 +1,45 @@
+# Bohemia Spillway — Reader v49a source and narrative coherence QA
+**16 November 2026, morning Pacific · Internal editorial / RELEASE HOLD**
+
+## Scope / collision control
+Continued *The Spillway That Kept Its Names*, not a new investigation. Read the live [FV Journal](https://finalvestige.com/blog/) and [Editorial Standards](https://finalvestige.com/editorial-standards/) and current GitHub coordination [Investigations #1463](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1463), [shared visual QA #1589](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1589). The homepage currently showcases other archival stories; no homepage, shared theme/template, unrelated post or Caernarvon #2151 was edited. Existing **WordPress draft #2488 remains the canonical staged post**; this was **GitHub-only editing** of the separate condensed candidate and creation of one studio-owned explanatory SVG.
+
+## Material editorial repair — v49 → v49a
+[Condensed reader v49a](./bohemia-spillway-reader-cut-v49-2026-11-16.md), commit **e8c094896dd9a1334f2758513cb10b3d431a4fac**; blob SHA **289ead55f0e176694efd9d2043636392f1981d4c** (readback verified).
+
+1. **Removed duplicate presentation of the acquisition percentage split.** In the old condensed version the 3%/48%/49% claim was told twice and was followed by vague remarks about unspecified differences. The revised passage directly distinguishes the **October 20, 1986 rehearing** (3% formal expropriation / 48% purchase in lieu / 49% public transfer) from the earlier **February 24, 1986 opinion**, whose footnote describes ~48% purchased and ~52% transferred while noting **fewer than 3%** formally expropriated. The earlier source cited URS Engineers (1984), which this investigation has not itself reviewed. The **August 15, 1988 federal Fifth Circuit** uses ~51% private purchase-or-expropriation, consistent with the final 1986 summary. These are rounded judicial summaries, not tract-level acquisition registers. **No implication that 3% of land transferred in 1986 or that a percentage was literally missing.** Reader citations [2], [3], [50], [51].
+2. **Repaired a dangling 1999-case antecedent.** The old paragraph opened “That claim failed,” with no claim presented in the immediately preceding passage. The rewrite identifies the **levee board's August 21, 1997 reconventional demand**, its challenge to DNR certifications and returned deeds, and the **March 31, 1999 appellate dismissal**, while specifying that the decision is **not** proof of each claimant's title or royalties paid. Reader citation [16]. This is a separate judicial proceeding from the 1986 constitutional case.
+3. Kept the candidate's internal-review/no-publication banner and source chain. Narrative word count by whitespace changed **8,196 → 8,152**; line/section structure preserved. The candidate has **57 numbered bibliography entries**, **44 distinct numbered sources cited** within narrative, **113 bracketed citation mentions**, **zero nonexistent cited entry numbers**. Thirteen bibliography entries (5, 7, 20, 21, 23, 24, 25, 31, 32, 34, 35, 37, 41) are not cited in narrative and require a final decision: preserve as further reading only where editorially justified, or move to master dossier. It is inappropriate to claim the entire 57-entry list is independently reverified in this cycle.
+
+## Original studio evidence diagram — not inserted into WordPress
+[Tract 78: Five Proof Checkpoints](./assets/bohemia-tract78-five-proof-checkpoints-v49a.svg), commit **25e4e3bdaac6d380f685f2b938b0619d7f0c7586**. 
+- **Creator/date:** Final Vestige Studios / November 16, 2026.
+- **Rights:** © 2026 Final Vestige Studios; entirely original explanatory SVG, no borrowed imagery or generated reconstruction pixels.
+- **Source:** [Louisiana Fourth Circuit's 2012 Eusan/Ursin opinion](https://law.justia.com/cases/louisiana/fourth-circuit-court-of-appeal/2012/2011-ca-1105.html), reader source [47]. This is a *diagram of evidence thresholds*, **not** a historical photograph or proof that FV inspected the original 1925 deed.
+- **Content:** 1925 board acquisition (later court account); DNR heir certification (court account); August 9/25, 2005 conveyance/recordation; 2012 opinion affirming **$996,596.40 revenue and $366,957.12 statutory interest**, reversing the separate **$365,777.34 civil-fruits-interest award**; fifth checkpoint marks **actual cleared beneficiary payment NOT VERIFIED**.
+- **Alt text:** “Five vertically stacked checkpoints show court-attested 1925 acquisition, DNR heir certification, 2005 land return, 2012 revenue-and-interest award and the absence of a verified beneficiary-payment receipt.”
+- **Caption:** “Tract 78's return and appellate award are recorded in the judicial account. The missing final record is proof that a named recipient actually received the money.”
+- **QA status:** SVG source XML/alt/source identifiers and no external image dependencies read back. **Not production-theme visual QA**, no mobile/desktop rendering PASS claimed, **not inserted into WP**. Keep separate from the March/July 2014 docket crosswalk, which concerns *different proceedings* and must not be conflated with Eusan.
+
+## Source ledger / independently inspected in this cycle
+- [Louisiana Supreme Court, 496 So. 2d 281 (Oct 20, 1986)](https://law.justia.com/cases/louisiana/supreme-court/1986/85-ca-1448-3.html), background §1 and 3/48/49 + $389,500 figures. Court-text reproduction, not independent archival original.
+- [Louisiana Supreme Court, 483 So. 2d 958 (Feb 24, 1986)](https://law.justia.com/cases/louisiana/supreme-court/1986/85-ca-1448-4.html), n.3 original simplified percentages and underlying uninspected URS source.
+- [Fifth Circuit, 852 F.2d 140 (Aug 15, 1988)](https://law.resource.org/pub/us/case/reporter/F2/852/852.F2d.140.87-3755.html), opening factual paragraph ~51% private lands, distinct from standing/rule of decision.
+- [Louisiana Fourth Circuit, *Haspel & Davis* (Mar 31, 1999)](https://caselaw.findlaw.com/court/la-court-of-appeal/1028222.html), counterclaim, threatened-expropriation and dismissal. Court-text reproduction, not original court file.
+- [Louisiana Fourth Circuit, *Succession of Ursin/Eusan* (Sep 26, 2012)](https://law.justia.com/cases/louisiana/fourth-circuit-court-of-appeal/2012/2011-ca-1105.html), tract conveyance / amount / appellate distinction.
+- [Flood authority original July 24, 2014 minutes](https://www.floodauthority.org/wp-content/uploads/minutes/2014%2007%2024%20-%20Board%20Meeting%20Minutes.pdf), **printed pages 13–14 visually inspected from original PDF**; 3 distinct authorization votes in other cases, **not receipts or Eusan proceedings**.
+- [NASA Earth Observatory, “Mardi Gras Pass” (Feb 21, 2023)](https://science.nasa.gov/earth/earth-observatory/mardi-gras-pass-150986/), independent source for **2007 USDA/NAIP** and **2023 USGS/Landsat** documentary imagery, acquisition dates and Joshua Stevens image credits.
+
+## WordPress safeguard readback
+Authenticated WP REST read on **post #2488**: **status=draft**, site modified **2026-11-16T02:44:46**, **227** top-level Gutenberg markers; categories **9369 / 232815**, featured media **#2484**. `jetpack_seo_noindex=true`, `_jetpack_dont_email_post_to_subs=true`, `jetpack_publicize_feature_enabled=false`. This cycle **made no WordPress post mutation or publish call**. Media #2484 (2023 USGS/Landsat, 1280×1280) and #2485 (2007 USDA/NAIP, 1125×1280) retain source URLs, alt texts, NASA captions and descriptive credit metadata. **Public JPEG byte loads failed in available web reader**; this is indeterminate and not evidence of a broken site asset.
+
+## Unresolved release gates
+1. Independent contextual/legal editor review of 8,152-word condensed candidate, not just structural/source ID checks; avoid importing internal release notes into published post.
+2. Recorded original deeds, executed FY2014 settlement agreements, escrow bank ledger and beneficiary-level cleared disbursement documents to support anything more conclusive than a missing proof trail; never allege that no one was paid.
+3. **Real editor-authenticated current-theme WordPress** 390px and 1440px previews with image/alt/caption, overflow, source list, signup overlay and new SVG visual checks; no mshots URL alone can count as PASS. Do not publish #2488 until inspected revision is identified.
+4. Anonymous successful actual media-byte requests for both existing documentary JPEGs; revisit license notes and local hosting.
+5. First publication, only after all gates, must explicitly preserve **do-not-email=true**, social sharing disabled, and must be independently read back as public; **not performed**.
+
+**Social lane note for Grok, future only:** the evidence distinction “A deed is not a receipt” and the five-checkpoint graphic may make an archival teaser *after* editorial release. Do not assert withheld or unpaid benefits without payee evidence. This lane did not publish to any social platform.
+
+**Spend:** $0 new paid services.
