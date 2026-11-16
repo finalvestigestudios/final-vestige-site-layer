@@ -14,7 +14,7 @@ APPS = ('ledger', 'invoices', 'spend', 'policy', 'grants', 'procurement')
 
 
 def regression():
-    return b'{"tests":13,"failures":0,"errors":0,"skipped":0,"expected":13}'
+    return b'{"tests":13,"failures":0,"errors":0,"skipped":0,"expected":13,"test_ids_sha256":"' + GOOD.encode('ascii') + b'"}'
 
 
 def six_apps():
@@ -100,7 +100,7 @@ class StrictPrivateReceiptR462(unittest.TestCase):
         self.assertEqual(load_private_receipt(b'{"A":1,"a":2}'), {'A': 1, 'a': 2})
 
     def test_regression_consumer_accepts_valid_exact_receipt(self):
-        self.assertEqual(gate._validate_receipt(regression()), 13)
+        self.assertEqual(gate._validate_receipt(regression()), (13, GOOD))
 
     def test_regression_consumer_rejects_duplicate_failure_count(self):
         data = regression().replace(b'"failures":0',
