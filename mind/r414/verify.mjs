@@ -33,7 +33,7 @@ check(guide(a)===guide(b),'A/B buyer copy byte-identical');
 for (const [name,html] of [['A',a],['B',b]]) {
   const offer=html.match(/<section class="offer"[\s\S]*?<\/section>/)?.[0] || '';
   check(offer.includes('If you purchase through a future authorized link, Final Vestige may earn a commission at no additional cost to you.'),name+' nearby full FTC disclosure');
-  check(/<button\b[^>]*\bdisabled\b/.test(offer),name+' genuinely disabled native button');
+  check(/<button\b[^>]*\sdisabled(?=\s|>)/.test(offer),name+' genuinely disabled native button');
   check(offer.indexOf('may earn a commission')<offer.indexOf('<button'),name+' disclosure before button');
   check(offer.includes('named')===false || offer.includes('unverified'),name+' holds commercial CTA');
   check(html.includes('href="https://finalvestige.com/focus/"'),name+' free first-party resource present');
@@ -81,7 +81,7 @@ check(dossier.includes('Founder/Commerce'),'permission owner');
 check(dossier.includes('Claude/Dispatch'),'newsletter owner');
 // Adversarial safety controls: each single mutation MUST be caught by the appropriate gate.
 const mutations=[
-['activate native button',a.replace('class="disabled" disabled','class="disabled"'),s=>!/<button\b[^>]*\bdisabled\b/.test(s.match(/<section class="offer"[\s\S]*?<\/section>/)?.[0]||'')],
+['activate native button',a.replace('class="disabled" disabled','class="disabled"'),s=>!/<button\b[^>]*\sdisabled(?=\s|>)/.test(s.match(/<section class="offer"[\s\S]*?<\/section>/)?.[0]||'')],
 ['inject merchant link',a.replace('View verified Zen12 checkout — unavailable','<a href="https://zen12.com/order">Buy now</a>'),s=>badLink.test(s)],
 ['inject new signup',a.replace('</body>','<form action="/subscribe"><input type="email"></form></body>'),s=>badTracking.test(s)],
 ['remove disclosure',a.replace('If you purchase through a future authorized link, Final Vestige may earn a commission at no additional cost to you.',''),s=>!(s.match(/<section class="offer"[\s\S]*?<\/section>/)?.[0]||'').includes('may earn a commission')],
