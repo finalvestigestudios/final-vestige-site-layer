@@ -7,7 +7,8 @@ provider proof (not accepted by this tool) could establish distinct recipients.
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+import re
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -41,10 +42,14 @@ def audit(snapshot: dict[str, Any]) -> dict[str, Any]:
         _fail_unknown(data, keys, name)
         if set(data) != keys:
             raise ValueError(f"{name}: missing fields")
-    if not isinstance(snapshot["snapshot_id"], str) or not snapshot["snapshot_id"].startswith("wp-readonly-"):
-        raise ValueError("invalid snapshot ID")
-    if not isinstance(snapshot["as_of_utc"], str) or not snapshot["as_of_utc"].endswith("Z"):
-        raise ValueError("UTC source timestamp required")
+    if not isinstance(snapshot["snapshot_id"], str) or not re.fullmatch(r"wp-readonly-[a-z0-9-]{1,70}", snapshot["snapshot_id"]):
+        raise ValueError("invalid or potentially identifying snapshot ID")
+    if not isinstance(snapshot["as_of_utc"], str) or not re.fullmatch(r"\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\dZ", snapshot["as_of_utc"]):
+        raise ValueError("UTC timestamp required without personal data")
+    try:
+        datetime.fromisoformat(snapshot["as_of_utc"].replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise ValueError("invalid UTC timestamp") from exc
     for k in ("total", "confirmed", "unconfirmed", "suppressed", "paid", "imported_last_24h"):
         if not _nonnegative(n[k]):
             raise ValueError(f"newsletter.{k} must be nonnegative integer")
