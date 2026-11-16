@@ -1,17 +1,17 @@
 # The Spillway That Kept Its Names
-*Final Vestige Investigations · reader-facing revision 42 · 15 November 2026 · REVIEW DRAFT — DO NOT PUBLISH*
+*Final Vestige Investigations · reader-facing revision 43 · 15 November 2026 · REVIEW DRAFT — DO NOT PUBLISH*
 
-**Deck:** Louisiana took land for a flood-control outlet, earned millions from its mineral rights, and later ordered parts of it returned. The courts settled questions of authority. The surviving records are less clear about who received the money.
+**Deck:** A Louisiana family recovered a parcel of land, then fought for the revenues it had earned. The court decisions are documented. Whether and when every ordered payment reached its recipients is a different question.
 
 **Editorial identity:** Concise narrative edition of [the 84-entry master dossier](./bohemia-spillway-2026-11-12-land-roster-rights-claim-investigation-draft.md). Preserve that dossier as the complete source ledger and long-form research appendix. This file does **not** supersede the separate Caernarvon 1927 WordPress draft #2151 or authorize publication. Original-source links below correspond to full dossier entries in brackets. Do not infer interviews, archive visits, or current 2026 balances from this work.
 
-## The river came back
+## A deed was not a receipt
 
-In February 2012, the Mississippi broke through its east bank southeast of New Orleans. The opening was modest at first. NASA's account describes a breach roughly 32 feet wide and five feet deep. Within the landscape, however, it reopened a much older argument about where the river belonged.
+On August 9, 2005, the Orleans Levee District conveyed Bohemia Spillway Tract 78 to certified successors of the Eusan family. The property had passed to the district in August 1925; its return was recorded on August 25, 2005. On paper, the eighty-year passage from acquisition to restitution had closed. In court, the fight over the property's earnings was only beginning. [47]
 
-Aerial photographs taken in September 2007 show a canal before the breach. An image from Landsat 8 on February 13, 2023 shows the channel that became Mardi Gras Pass, carrying Mississippi water into the wetlands. The river did not need a vote or a deed to make that connection. [1]
+The successors sought revenues generated while the district held the tract. On September 26, 2012, Louisiana's Fourth Circuit affirmed **$996,596.40** in past revenues and **$366,957.12** in statutory interest, but reversed a further **$365,777.34** award of civil-fruits interest. The opinion establishes a legal outcome, not when those sums were collected or distributed to the successors. [47]
 
-**Two documentary views of the same landscape.** These images were made sixteen years apart, not at the moment of the 2012 breach. Their different acquisition methods and dates make them a record of visible change, not a controlled test of land gain. Both are locally stored in the Final Vestige WordPress media library, rather than hotlinked to NASA. They depict the landscape, not the ownership or payment dispute. [1]
+The land had another record. In February 2012, the Mississippi broke through its eastern bank southeast of New Orleans, opening a breach NASA described as about 32 feet wide and five feet deep. Aircraft imagery from September 2007 and Landsat imagery from February 2023 show the canal before the breach and the later Mardi Gras Pass. Taken sixteen years apart, the images document a changed watercourse, not a precise survey of Tract 78 or a measured estimate of land gain. [1]
 
 ![Aerial view of the Mississippi River east bank in September 2007, showing the canal that preceded Mardi Gras Pass.](https://finalvestige.com/wp-content/uploads/2026/11/bohemia-prepass-naip-2007-usda-nasa.jpg)
 *September 20, 2007. NAIP imagery provided by USDA Farm Service Agency; NASA Earth Observatory presentation by Joshua Stevens. Documentary aerial imagery, before Mardi Gras Pass opened. [1]*
@@ -19,11 +19,11 @@ Aerial photographs taken in September 2007 show a canal before the breach. An im
 ![Landsat 8 image of Mardi Gras Pass connecting the Mississippi River to the Bohemia Spillway wetlands in February 2023.](https://finalvestige.com/wp-content/uploads/2026/11/bohemia-mardi-gras-pass-landsat-2023-nasa-usgs.jpg)
 *February 13, 2023. NASA Earth Observatory image by Joshua Stevens using USGS Landsat 8 data. Documentary satellite imagery, not an AI reconstruction. [1]*
 
-The land underneath it was the Bohemia Spillway. In the 1920s, officials had deliberately altered this stretch of riverbank as flood protection for New Orleans. Decades later, Louisiana declared the original public purpose for acquiring **private title** had ended and ordered qualifying property returned. The river, apparently indifferent to the language, continued to cross the land.
+Both images show the Bohemia Spillway landscape, not the boundaries of Tract 78. The spillway had been formed in the 1920s to relieve flood pressure on New Orleans. In 1984, Louisiana directed the return of qualifying privately acquired land after determining the original purpose no longer justified keeping those parcels. The course of the water did not determine who owned the mineral rights or who was owed their proceeds. [1] [47]
 
-That contradiction makes a good story. It is not the heart of this one. What makes Bohemia extraordinary is the financial and legal trail that followed: historic mineral income, an inheritance battle that helped change Louisiana's constitution, a requirement to account for the money, courts deciding whether landowners could demand payment, and financial statements that preserve figures without identifying every final recipient.
+An aerial image can show where a river flowed. A deed can establish that title changed hands. A court can determine the value of a legal entitlement. None of these records, alone, proves that the money reached the person who was owed it.
 
-One question runs through those records. What did an eligible owner or successor actually receive?
+The evidence that follows traces those separate records through land surveys, restitution applications, mineral accounts, court decisions and government financial statements. Some establish a return or a judgment with precision. The records needed to verify every final claimant payment have not yet been obtained.
 
 ## A public work becomes a revenue asset
 
@@ -725,3 +725,5 @@ These are 54 selected reader-facing sources. The [master source ledger](./bohemi
 **November 14, 2026 evidence and staging QA (reader v9).** Reinspected original-format 2009 appellate opinion, printed pp. 6–7, verifying the Grand Prairie public-land distinction already captured in the 60-source dossier entry [20]. Promoted this separately to reader source [21]; it does **not** create a fictitious new master source [61]. WordPress draft #2488 remains publication-held; source URL and in-post source-anchor QA documented in a separate cycle audit. Original documentary images and 2000 case-count figure remain staged. The 2009 appellate decision is not a deed-by-deed accounting or final payment record.
 
 **November 14, 2026 early-afternoon advance (reader v11).** Two additional official July 25, 2024 Lakefront Management Authority primary documents now anchor the post-2023 administrative handoff. Committee PDF pp. 4–5 visually inspected, and full-board government text read; full-board original screenshot blocked and a June/July heading inconsistency noted. Reader sources [24]–[25] qualify management authority versus tract title and beneficiary payment. New original self-contained timeline visually checked at 390px. Publish held for authenticated WordPress rendering and original settlement/accounting transactions.
+
+**November 15, 2026 evening editorial revision (reader v43).** Recut the opening around the original 2005 Tract 78 return and 2012 appellate award, with no invented family scene or payment claim. The Mississippi/Mardi Gras Pass imagery now functions as a landscape counterpoint, explicitly NOT a Tract 78 cadastral survey. Verified appellate original PDF page images 2 and 11; NASA 2023 page with date, instrument and author credits. Six guarded WordPress paragraph replacements; preserved existing 55 sources and the master 84-source ledger. This is a **structural narrative revision**, not a new original-source claim or production-theme QA pass. See separate v43 audit.
