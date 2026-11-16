@@ -25,12 +25,14 @@ class OfflineRegressionGateR459(unittest.TestCase):
             path.write_text('synthetic checked content', encoding='utf-8')
 
     def receipt(self, **changes):
-        item = dict(tests=13, failures=0, errors=0, skipped=0, expected=13)
+        item = dict(tests=13, failures=0, errors=0, skipped=0, expected=13,
+                    test_ids_sha256='a' * 64)
         item.update(changes)
         return json.dumps(item).encode('ascii')
 
     def test_success_receipt_counts_methods(self):
-        self.assertEqual(gate._validate_receipt(self.receipt()), 13)
+        self.assertEqual(gate._validate_receipt(self.receipt()),
+                         (13, 'a' * 64))
 
     def test_zero_test_discovery_is_not_success(self):
         with self.assertRaises(gate.LocalGateError):
@@ -477,6 +479,90 @@ class OfflineRegressionGateR459(unittest.TestCase):
             with self.assertRaisesRegex(gate.LocalGateError, 'coverage rejected'):
                 gate.run_gate(self.root)
             children.assert_not_called()
+
+
+    def test_r467_digest_field_is_mandatory_strict_and_redacted(self):
+        for changed in (
+            {'test_ids_sha256': ''},
+            {'test_ids_sha256': 'A' * 64},
+            {'test_ids_sha256': 'g' * 64},
+            {'test_ids_sha256': 100},
+            {'test_ids_sha256': None},
+        ):
+            with self.subTest(change=repr(changed)):
+                with self.assertRaisesRegex(gate.LocalGateError,
+                                            'receipt rejected') as error:
+                    gate._validate_receipt(self.receipt(**changed))
+                self.assertNotIn('PRIVATE_CLIENT', str(error.exception))
+        no_digest = json.loads(self.receipt())
+        del no_digest['test_ids_sha256']
+        with self.assertRaises(gate.LocalGateError):
+            gate._validate_receipt(json.dumps(no_digest).encode('utf-8'))
+
+    def test_r467_same_pass_count_but_different_test_ids_is_hold(self):
+        def child(command, **kwargs):
+            digest = ('b' if '-OO' in command else 'a') * 64
+            number = gate.PRODUCT_METHOD_FLOORS.get(command[-2], 1) + 2
+            Path(command[-1]).write_bytes(self.receipt(
+                tests=number, expected=number, test_ids_sha256=digest))
+            return SimpleNamespace(returncode=0)
+        with patch.object(gate.subprocess, 'run', side_effect=child):
+            with self.assertRaisesRegex(gate.LocalGateError, 'mode parity'):
+                gate._run_tests(self.root)
+
+    def test_r467_matching_name_digest_and_counts_allow_expansion(self):
+        def child(command, **kwargs):
+            number = gate.PRODUCT_METHOD_FLOORS.get(command[-2], 1) + 2
+            digest = hashlib.sha256(command[-2].encode('ascii')).hexdigest()
+            Path(command[-1]).write_bytes(self.receipt(
+                tests=number, expected=number, test_ids_sha256=digest))
+            return SimpleNamespace(returncode=0)
+        with patch.object(gate.subprocess, 'run', side_effect=child):
+            modes, methods = gate._run_tests(self.root)
+        self.assertEqual(modes, 28)
+        self.assertEqual(methods, 2 * (sum(gate.PRODUCT_METHOD_FLOORS.values())
+                                       + 2 * len(gate.PRODUCT_TESTS)
+                                       + 3 * len(gate.CORE_TESTS)))
+
+    def test_r467_real_mode_dependent_discovery_rejected_even_at_equal_counts(self):
+        # Proves the real isolated -OO subprocess changes method identity
+        # with no count change; count-only R466 validation would have passed.
+        for name in gate.TESTS:
+            count = gate.PRODUCT_METHOD_FLOORS.get(name, 1)
+            content = 'import unittest\\nclass IdentityFixture(unittest.TestCase):\\n'
+            content += ''.join(
+                f'    def test_stable_{i}(self):\\n'
+                '        self.assertTrue(True)\\n'
+                for i in range(count - 1))
+            content += (
+                '    if __debug__:\\n'
+                '        def test_normal_only(self):\\n'
+                '            self.assertTrue(True)\\n'
+                '    else:\\n'
+                '        def test_optimized_only(self):\\n'
+                '            self.assertTrue(True)\\n'
+            ) if name == gate.PRODUCT_TESTS[0] else (
+                '    def test_last_stable(self):\\n'
+                '        self.assertTrue(True)\\n'
+            )
+            (self.root / 'tests' / name).write_text(
+                content, encoding='utf-8')
+        with self.assertRaisesRegex(gate.LocalGateError, 'mode parity'):
+            gate._run_tests(self.root)
+
+    def test_r467_repeated_test_identity_rejected_by_real_child(self):
+        path = self.root / 'tests' / gate.TESTS[0]
+        path.write_text(
+            'import unittest\\n'
+            'class Duplicated(unittest.TestCase):\\n'
+            '    def test_one(self):\\n'
+            '        self.assertTrue(True)\\n'
+            'def load_tests(loader, tests, pattern):\\n'
+            '    return unittest.TestSuite([Duplicated("test_one"), '
+            'Duplicated("test_one")])\\n',
+            encoding='utf-8')
+        with self.assertRaises(gate.LocalGateError):
+            gate._run_tests(self.root)
 
 if __name__ == '__main__':
     unittest.main()
