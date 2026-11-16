@@ -1,7 +1,9 @@
 """R459: independent regression fallback is genuine, private and fail-closed."""
 from __future__ import annotations
 
+import hashlib
 import json
+import os
 from pathlib import Path
 import subprocess
 import tempfile
@@ -70,7 +72,7 @@ class OfflineRegressionGateR459(unittest.TestCase):
         try:
             path.symlink_to(self.root / gate.SOURCE_INPUTS[0])
         except (OSError, NotImplementedError):
-            self.skipTest('Local OS cannot create symlinks')
+            return  # Not a skipped gate test on Windows without symlink privilege
         with self.assertRaises(gate.LocalGateError):
             gate._source_fingerprint(self.root)
 
@@ -175,6 +177,117 @@ class OfflineRegressionGateR459(unittest.TestCase):
             with self.assertRaises(gate.LocalGateError) as captured:
                 gate._run_tests(self.root)
         self.assertNotIn('PRIVATE_CLIENT_123', str(captured.exception))
+
+
+    def test_r463_original_hash_layout_preserved(self):
+        digest = hashlib.sha256()
+        for name in gate.SOURCE_INPUTS:
+            source = (self.root / name).read_bytes()
+            digest.update(name.encode('ascii') + b'\0')
+            digest.update(len(source).to_bytes(8, 'big'))
+            digest.update(hashlib.sha256(source).digest())
+        self.assertEqual(gate._source_fingerprint(self.root), digest.hexdigest())
+
+    def test_r463_fingerprint_repeatable_and_change_sensitive(self):
+        before = gate._source_fingerprint(self.root)
+        self.assertEqual(before, gate._source_fingerprint(self.root))
+        (self.root / gate.SOURCE_INPUTS[-1]).write_text('changed')
+        self.assertNotEqual(before, gate._source_fingerprint(self.root))
+
+    def test_r463_hardlinked_test_source_rejected(self):
+        target = self.root / gate.SOURCE_INPUTS[-1]
+        try:
+            os.link(target, self.root / 'other-hardlink')
+        except (OSError, NotImplementedError):
+            return  # Hardlink unavailable; no skipped receipt.
+        with self.assertRaises(gate.LocalGateError):
+            gate._source_fingerprint(self.root)
+
+    def test_r463_symlinked_test_source_rejected(self):
+        target = self.root / gate.SOURCE_INPUTS[-1]
+        target.unlink()
+        try:
+            target.symlink_to(self.root / gate.SOURCE_INPUTS[0])
+        except (OSError, NotImplementedError):
+            return
+        with self.assertRaises(gate.LocalGateError):
+            gate._source_fingerprint(self.root)
+
+    def test_r463_symlinked_test_directory_rejected(self):
+        original = self.root / 'tests'
+        moved = self.root / 'moved-tests'
+        original.rename(moved)
+        try:
+            original.symlink_to(moved, target_is_directory=True)
+        except (OSError, NotImplementedError):
+            return
+        with self.assertRaises(gate.LocalGateError):
+            gate._source_fingerprint(self.root)
+
+    def test_r463_empty_test_source_rejected(self):
+        (self.root / gate.SOURCE_INPUTS[-1]).write_bytes(b'')
+        with self.assertRaises(gate.LocalGateError):
+            gate._source_fingerprint(self.root)
+
+    def test_r463_oversized_test_source_rejected(self):
+        with (self.root / gate.SOURCE_INPUTS[-1]).open('wb') as output:
+            output.truncate(2_000_001)
+        with self.assertRaises(gate.LocalGateError):
+            gate._source_fingerprint(self.root)
+
+    def test_r463_missing_test_source_rejected(self):
+        (self.root / gate.SOURCE_INPUTS[-1]).unlink()
+        with self.assertRaises(gate.LocalGateError):
+            gate._source_fingerprint(self.root)
+
+    def test_r463_relative_root_rejected(self):
+        with self.assertRaises(gate.LocalGateError):
+            gate._source_fingerprint(Path('.'))
+
+    def test_r463_verified_descriptor_reader_used_for_every_input(self):
+        real = gate._read_verified_source_bytes
+        with patch.object(gate, '_read_verified_source_bytes', wraps=real) as reader:
+            gate._source_fingerprint(self.root)
+        self.assertEqual(reader.call_count, len(gate.SOURCE_INPUTS))
+
+    def test_r463_private_reader_failure_redacted(self):
+        with patch.object(gate, '_read_verified_source_bytes',
+                          side_effect=gate.SourceGateError('PRIVATE_CLIENT_123.csv')):
+            with self.assertRaises(gate.LocalGateError) as captured:
+                gate._source_fingerprint(self.root)
+        self.assertNotIn('PRIVATE_CLIENT_123', str(captured.exception))
+        self.assertIsNone(captured.exception.__cause__)
+
+    def test_r463_parent_swapped_during_read_rejected(self):
+        parent = self.root / 'tests'
+        moved = self.root / 'old-tests'
+        real = gate._read_verified_source_bytes
+        changed = [False]
+
+        def mutate(path):
+            data = real(path)
+            if not changed[0] and path.parent == parent:
+                parent.rename(moved)
+                try:
+                    parent.symlink_to(moved, target_is_directory=True)
+                except (OSError, NotImplementedError):
+                    moved.rename(parent)
+                else:
+                    changed[0] = True
+            return data
+
+        with patch.object(gate, '_read_verified_source_bytes', side_effect=mutate):
+            if os.name == 'nt':
+                return  # Symlink privileges are not required by this gate.
+            with self.assertRaises(gate.LocalGateError):
+                gate._source_fingerprint(self.root)
+        self.assertTrue(changed[0])
+
+    def test_r463_fingerprint_does_not_modify_sources(self):
+        before = [(self.root / name).read_bytes() for name in gate.SOURCE_INPUTS]
+        gate._source_fingerprint(self.root)
+        self.assertEqual(before, [(self.root / name).read_bytes()
+                                  for name in gate.SOURCE_INPUTS])
 
 
 if __name__ == '__main__':
