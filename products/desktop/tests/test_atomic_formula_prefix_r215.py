@@ -58,6 +58,22 @@ class FormulaPrefixCustodyR215(unittest.TestCase):
             with self.subTest(value=value):
                 self.assertFalse(has_unescaped_formula_prefix(value))
 
+    def test_r468_spacing_combining_marks_before_formulas_are_not_ignored(self):
+        for prefix in ("\u093e", "\u09be", "\u0bbe", " \t\u093e\u0bbe"):
+            for operator in ("=2+2", "+SUM(A1)", "@A1", "-not_money"):
+                with self.subTest(prefix=repr(prefix), operator=operator):
+                    self.assertTrue(has_unescaped_formula_prefix(prefix + operator))
+
+    def test_r468_direct_unsanitized_spacing_mark_formula_fails_closed(self):
+        with self.assertRaisesRegex(ValueError, "Unsafe or non-text CSV report cell"):
+            self.publish(rows=[{"id": "\u093e=PRIVATE_SYNTHETIC",
+                                "amount": Decimal("0.10")}])
+        self.assert_no_partial()
+
+    def test_r468_apostrophe_and_nonleading_spacing_marks_are_not_formulas(self):
+        self.assertFalse(has_unescaped_formula_prefix("'\u093e=2+2"))
+        self.assertFalse(has_unescaped_formula_prefix("Vendor\u093e=2+2"))
+
     def test_direct_callback_whitespace_formula_fails_closed(self):
         with self.assertRaisesRegex(ValueError, "Unsafe or non-text CSV report cell") as context:
             self.publish(rows=[{"id": "\t=1+1", "amount": "0.10"}])
