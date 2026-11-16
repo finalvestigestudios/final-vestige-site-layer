@@ -49,6 +49,8 @@ def reduce_proofs(payload):
         now = date.fromisoformat(payload["as_of"])
     except (ValueError, TypeError):
         raise ValueError("Invalid as_of") from None
+    if type(payload["refunds_complete"]) is not bool or type(payload["fees_complete"]) is not bool:
+        raise ValueError("Refund and fee completeness must be explicit booleans")
     sessions = payload["source_sessions"]
     orders = payload["paid_transactions"]
     if not isinstance(sessions, list) or not isinstance(orders, list):
