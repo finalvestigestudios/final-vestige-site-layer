@@ -581,3 +581,7 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_canonical_r477.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_canonical_r477.py
+      - name: R478 cross-PO citation row privacy, syntax and atomic preflight
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_private_rows_r478.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_private_rows_r478.py
