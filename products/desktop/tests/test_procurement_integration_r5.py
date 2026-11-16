@@ -149,6 +149,97 @@ class ProcurementIntegrationR5Tests(unittest.TestCase):
         self.assertIn("unlinked_credit_review", row["status"])
         self.assertNotIn("repeated_credit_document_id_review", row["status"])
 
+    def test_r471_normalized_credit_memo_reuse_across_pos_has_source_rows(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "INV1", ""),
+            ("P1", "1", "1", "5", "credit", "C-M1", "INV1"),
+            ("P2", "1", "10", "5", "invoice", "INV2", ""),
+            ("P2", "1", "1", "5", "credit", "CM1", "INV2"),
+        ], [
+            ("P1", "1", "9", "receipt", "REC1"),
+            ("P2", "1", "9", "receipt", "REC2"),
+        ], po_rows=(("P1", "1", "10", "5"), ("P2", "1", "10", "5")))
+        outputs = engine.procure_guard(*paths, self.folder)
+        rows = self.report(outputs[0])
+        self.assertEqual([row["po"] for row in rows], ["p1", "p2"])
+        self.assertEqual(len(rows), 2)
+        for row in rows:
+            self.assertIn("credit_document_cross_po_review", row["status"])
+            self.assertIn("credit_memo_review", row["status"])
+            self.assertEqual(row["cross_po_credit_source_rows"], "3;5")
+            self.assertEqual(row["invoiced_qty"], "9")
+            self.assertEqual(row["invoice_total_exact"], "45")
+            self.assertEqual(row["credit_value_exact"], "5")
+        self.assertEqual(
+            json.loads(rows[0]["credit_source_line_links"]),
+            [{"offset_row": "3", "target_rows": ["2"]}],
+        )
+        self.assertIn("SHA-256", outputs[1].read_text())
+
+    def test_r471_same_credit_spanning_two_lines_one_po_is_not_cross_po(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "INV1", ""),
+            ("P1", "1", "1", "5", "credit", "CM1", "INV1"),
+            ("P1", "2", "10", "5", "invoice", "INV2", ""),
+            ("P1", "2", "1", "5", "credit", "CM1", "INV2"),
+        ], [
+            ("P1", "1", "9", "receipt", "REC1"),
+            ("P1", "2", "9", "receipt", "REC2"),
+        ], po_rows=(("P1", "1", "10", "5"), ("P1", "2", "10", "5")))
+        outputs = engine.procure_guard(*paths, self.folder)
+        rows = self.report(outputs[0])
+        self.assertEqual(len(rows), 2)
+        for row in rows:
+            self.assertNotIn("credit_document_cross_po_review", row["status"])
+            self.assertNotIn("repeated_credit_document_id_review", row["status"])
+            self.assertEqual(row["cross_po_credit_source_rows"], "")
+            self.assertEqual(row["invoice_total_exact"], "45")
+
+    def test_r471_distinct_credit_ids_across_pos_do_not_collide(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "INV1", ""),
+            ("P1", "1", "1", "5", "credit", "CM1", "INV1"),
+            ("P2", "1", "10", "5", "invoice", "INV2", ""),
+            ("P2", "1", "1", "5", "credit", "CM2", "INV2"),
+        ], [
+            ("P1", "1", "9", "receipt", "REC1"),
+            ("P2", "1", "9", "receipt", "REC2"),
+        ], po_rows=(("P1", "1", "10", "5"), ("P2", "1", "10", "5")))
+        rows = self.report(engine.procure_guard(*paths, self.folder)[0])
+        for row in rows:
+            self.assertNotIn("credit_document_cross_po_review", row["status"])
+            self.assertEqual(row["cross_po_credit_source_rows"], "")
+
+    def test_r471_missing_credit_ids_across_pos_stay_unlinked_not_shared(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "INV1", ""),
+            ("P1", "1", "1", "5", "credit", "", "INV1"),
+            ("P2", "1", "10", "5", "invoice", "INV2", ""),
+            ("P2", "1", "1", "5", "credit", "", "INV2"),
+        ], [
+            ("P1", "1", "9", "receipt", "REC1"),
+            ("P2", "1", "9", "receipt", "REC2"),
+        ], po_rows=(("P1", "1", "10", "5"), ("P2", "1", "10", "5")))
+        rows = self.report(engine.procure_guard(*paths, self.folder)[0])
+        for row in rows:
+            self.assertIn("unlinked_credit_review", row["status"])
+            self.assertNotIn("credit_document_cross_po_review", row["status"])
+            self.assertEqual(row["cross_po_credit_source_rows"], "")
+
+    def test_r471_only_credit_kind_can_trigger_cross_po_review(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "CM1", ""),
+            ("P2", "1", "10", "5", "invoice", "INV2", ""),
+            ("P2", "1", "1", "5", "credit", "CM1", "INV2"),
+        ], [
+            ("P1", "1", "10", "receipt", "REC1"),
+            ("P2", "1", "9", "receipt", "REC2"),
+        ], po_rows=(("P1", "1", "10", "5"), ("P2", "1", "10", "5")))
+        rows = self.report(engine.procure_guard(*paths, self.folder)[0])
+        for row in rows:
+            self.assertNotIn("credit_document_cross_po_review", row["status"])
+            self.assertEqual(row["cross_po_credit_source_rows"], "")
+
     def test_invalid_negative_quantity_does_not_write_report(self):
         paths = self.inputs([("P1","1","-1","5","credit","CM1","INV1")],
                             [("P1","1","10","receipt","RC1")])
