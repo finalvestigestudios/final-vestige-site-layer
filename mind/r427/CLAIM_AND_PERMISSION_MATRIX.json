@@ -1,0 +1,406 @@
+{
+  "schema": "fv-mind-claim-permission-v1",
+  "sprint": "r427",
+  "as_of": "2026-11-16",
+  "baseline_note": "Issue #171 baseline of 61 published investigations is historical; current public Journal post count requires type/status reconciliation.",
+  "method": "Independent empirical sources vs merchant descriptions vs authenticated publisher rights; public affiliate rates NEVER used as FV terms.",
+  "source_count": 21,
+  "claim_count": 32,
+  "commercial_gates": [
+    {
+      "id": "G01",
+      "gate": "named FV Inspire3 account acceptance",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G02",
+      "gate": "exact approved Zen12 SKU",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G03",
+      "gate": "permitted website channel",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G04",
+      "gate": "permitted social channels",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G05",
+      "gate": "permitted video creative",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G06",
+      "gate": "email rights if used",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G07",
+      "gate": "issued exact affiliate link",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G08",
+      "gate": "merchant accepted link provenance",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G09",
+      "gate": "referral checkout verified",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G10",
+      "gate": "real checkout price confirmed",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G11",
+      "gate": "package inclusion confirmed",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G12",
+      "gate": "shipping/delivery confirmed",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G13",
+      "gate": "refund policy full text confirmed",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G14",
+      "gate": "payment platform identity confirmed",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G15",
+      "gate": "commission and fee schedule accepted",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G16",
+      "gate": "cookie/attribution terms confirmed",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G17",
+      "gate": "no link cloaking conflict",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G18",
+      "gate": "product-specific science claims reviewed",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G19",
+      "gate": "near CTA FTC disclosure reviewed",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G20",
+      "gate": "original video media rights",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G21",
+      "gate": "video captions and transcript",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G22",
+      "gate": "browser keyboard+noJS",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G23",
+      "gate": "mobile WCAG 2.2 AA",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G24",
+      "gate": "WP sanitizer proof",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G25",
+      "gate": "current Jetpack single list preserved",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G26",
+      "gate": "Grok asset IDs verified",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G27",
+      "gate": "real human-session measurement agreement",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    },
+    {
+      "id": "G28",
+      "gate": "paid/refund settlement reconcilable",
+      "state": "HOLD",
+      "evidence": "Not available or not release-tested"
+    }
+  ],
+  "claims": [
+    {
+      "id": "R01",
+      "statement": "1976 visual /ga/ with auditory /ba/ was sometimes reported as /da/.",
+      "source": "https://doi.org/10.1038/264746a0",
+      "verdict": "independent_primary",
+      "note": "original abstract; stimulus-specific, not every person"
+    },
+    {
+      "id": "R02",
+      "statement": "The reverse dub sometimes produced composite /bagba/ or /gaba/ responses.",
+      "source": "https://doi.org/10.1038/264746a0",
+      "verdict": "independent_primary",
+      "note": "asymmetry; don't flatten effect"
+    },
+    {
+      "id": "R03",
+      "statement": "2015 variation across 360 individuals and 20 stimuli ranged widely.",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4580505/",
+      "verdict": "independent_primary",
+      "note": "study outcomes, not population universal"
+    },
+    {
+      "id": "R04",
+      "statement": "Forced-choice increased fusion responses approximately 18 percentage points in one experiment.",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4580505/",
+      "verdict": "independent_primary",
+      "note": "not proof of manipulated subject"
+    },
+    {
+      "id": "R05",
+      "statement": "2018 lipreading articulation skill weakly tracked McGurk susceptibility.",
+      "source": "https://doi.org/10.1371/journal.pone.0207160",
+      "verdict": "independent_primary",
+      "note": "not proof of commercial intervention"
+    },
+    {
+      "id": "R06",
+      "statement": "2018 tested measures of attention, processing speed and working memory did not predict fusion.",
+      "source": "https://doi.org/10.1371/journal.pone.0207160",
+      "verdict": "independent_primary",
+      "note": "avoid diagnosing weak attention"
+    },
+    {
+      "id": "R07",
+      "statement": "2018 estimates of group differences can inflate under significant-results publication.",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6145544/",
+      "verdict": "independent_primary",
+      "note": "publication bias study"
+    },
+    {
+      "id": "R08",
+      "statement": "2025 Mandarin/English sample of 307 found similar group frequencies, large individual variation.",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11987121/",
+      "verdict": "independent_primary",
+      "note": "specific stimuli and sample"
+    },
+    {
+      "id": "R09",
+      "statement": "EEG N1 differences accompanied visually influenced auditory speech in 2018 experiment.",
+      "source": "https://doi.org/10.1152/jn.00262.2018",
+      "verdict": "independent_primary",
+      "note": "not product-specific"
+    },
+    {
+      "id": "R10",
+      "statement": "Puységur archive preserves failures, primary text, ethical qualifications.",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "verdict": "editorial_primary",
+      "note": "historical source archive, not modern efficacy"
+    },
+    {
+      "id": "R11",
+      "statement": "Franklin commission concluded no evidence for animal magnetic fluid in tested conditions.",
+      "source": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "verdict": "editorial_synthesis",
+      "note": "distinguish historical translation and FV analysis"
+    },
+    {
+      "id": "R12",
+      "statement": "Existing free 52-page Seven Day Focus Fieldbook available at /focus/.",
+      "source": "https://finalvestige.com/focus/",
+      "verdict": "first_party_live",
+      "note": "one existing Jetpack route; do not duplicate forms"
+    },
+    {
+      "id": "S01",
+      "statement": "Zen12 seller offers 12 levels and describes 12-minute sessions.",
+      "source": "https://zen12.com/",
+      "verdict": "seller_format",
+      "note": "not support for accelerated benefits"
+    },
+    {
+      "id": "S02",
+      "statement": "Zen12 main page advertises Beginner 24 MP3, Premium 48 MP3, Advanced 24 MP3.",
+      "source": "https://zen12.com/",
+      "verdict": "seller_format",
+      "note": "recheck chosen edition at referred checkout"
+    },
+    {
+      "id": "S03",
+      "statement": "Zen12 order page lists 12 levels and 48 MP3.",
+      "source": "https://zen12.com/order",
+      "verdict": "seller_format",
+      "note": "order route appears differently; no active referral"
+    },
+    {
+      "id": "S04",
+      "statement": "Zen12 advertises 1-year refund guarantee.",
+      "source": "https://zen12.com/",
+      "verdict": "seller_policy_unverified_at_referral",
+      "note": "exact plan/full refund conditions to confirm in valid checkout"
+    },
+    {
+      "id": "S05",
+      "statement": "Zen12 claims 12 minutes are equivalent to an hour of advanced meditation.",
+      "source": "https://zen12.com/",
+      "verdict": "seller_efficacy_EXCLUDE",
+      "note": "no independent Zen12 finished-product trial establishing equivalence"
+    },
+    {
+      "id": "S06",
+      "statement": "Inspire3 program page publicly advertises affiliate commissions.",
+      "source": "https://affiliates.inspire3.com/",
+      "verdict": "seller_program_MARKETING_ONLY",
+      "note": "NOT Final Vestige acceptance, product eligibility, or payable rate"
+    },
+    {
+      "id": "S07",
+      "statement": "Total Focus seller lists 33-min, 47MB MP3 at its public page.",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "verdict": "seller_format",
+      "note": "price varies; not verified FV referred price"
+    },
+    {
+      "id": "S08",
+      "statement": "Total Focus promises extraordinary concentration via hypnosis and NLP.",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "verdict": "seller_efficacy_EXCLUDE",
+      "note": "no finished-product substantiation inspected"
+    },
+    {
+      "id": "S09",
+      "statement": "Hypnosis Live FAQ promises 14-day refunds with five sessions/year cap.",
+      "source": "https://hypnosislive.com/faq",
+      "verdict": "seller_policy_unverified_at_referral",
+      "note": "show meaningful qualification in later guides"
+    },
+    {
+      "id": "S10",
+      "statement": "Focus Shot seller describes 15- and 30-minute versions.",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "verdict": "seller_format",
+      "note": "format only"
+    },
+    {
+      "id": "S11",
+      "statement": "Focus Shot seller says audio instantly creates focus.",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "verdict": "seller_efficacy_EXCLUDE",
+      "note": "unsubstantiated as product-specific outcome"
+    },
+    {
+      "id": "S12",
+      "statement": "Brainwave Shots FAQ states one refund in any six-month period and condition for >10 items.",
+      "source": "https://brainwaveshots.com/faq",
+      "verdict": "seller_policy_unverified_at_referral",
+      "note": "must qualify broad 1-year promise"
+    },
+    {
+      "id": "C01",
+      "statement": "Affiliate link requires clear disclosure beside material link.",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "verdict": "regulatory_guidance",
+      "note": "do not rely on general disclosure footer"
+    },
+    {
+      "id": "C02",
+      "statement": "Health/product safety claims require competent and reliable scientific evidence.",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "verdict": "regulatory_guidance",
+      "note": "seller marketing not independent verification"
+    },
+    {
+      "id": "N01",
+      "statement": "Final Vestige accepted as named Inspire3 affiliate.",
+      "source": "https://affiliates.inspire3.com/",
+      "verdict": "not_authenticated_HOLD",
+      "note": "portal + searches not proof"
+    },
+    {
+      "id": "N02",
+      "statement": "Final Vestige issued an earning URL for exact Zen12 SKU/channel.",
+      "source": "https://affiliates.inspire3.com/",
+      "verdict": "not_authenticated_HOLD",
+      "note": "no active outbound link"
+    },
+    {
+      "id": "N03",
+      "statement": "Final Vestige permitted creator-led TikTok/YouTube/site/email formats for SKU.",
+      "source": "https://affiliates.inspire3.com/",
+      "verdict": "not_authenticated_HOLD",
+      "note": "no approval to promote"
+    },
+    {
+      "id": "N04",
+      "statement": "Final Vestige owns an authenticated payable Mind SKU with rights and returns.",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818",
+      "verdict": "not_authenticated_HOLD",
+      "note": "free fieldbook is not purchasable"
+    },
+    {
+      "id": "N05",
+      "statement": "Grok three already-posted matching assets with immutable media IDs and rights.",
+      "source": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit",
+      "verdict": "not_authenticated_HOLD",
+      "note": "Praxxis independent matching required"
+    },
+    {
+      "id": "N06",
+      "statement": "Actual merchant paid orders, refund reconciliation, qualified-human denominator.",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "verdict": "not_authenticated_HOLD",
+      "note": "net revenue/1000 not computable"
+    }
+  ],
+  "release_rule": "No pay link, no tracking activation, no WordPress write, no publication until permission, claim, legal, browser, merchant verification and founder release."
+}
