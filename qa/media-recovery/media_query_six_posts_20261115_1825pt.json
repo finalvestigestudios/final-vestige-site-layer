@@ -1,0 +1,279 @@
+{
+  "schema": "fv-media-six-post-source-query-fidelity-v1",
+  "observed_date_pt": "2026-11-15",
+  "method": "authenticated read-only WordPress posts_get EDIT and VIEW; exact img src per positional slot; NOT browser HTTP verification",
+  "counts": {
+    "published_posts": 6,
+    "inline_image_slots": 38,
+    "query_bearing_source_slots": 7,
+    "query_preserved": 5,
+    "query_dropped": 2
+  },
+  "posts": [
+    {
+      "id": 289,
+      "modified": "2026-08-28T15:23:16",
+      "slots": 6,
+      "link": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/"
+    },
+    {
+      "id": 283,
+      "modified": "2026-11-02T21:39:57",
+      "slots": 7,
+      "link": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/"
+    },
+    {
+      "id": 291,
+      "modified": "2026-11-02T21:36:09",
+      "slots": 6,
+      "link": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/"
+    },
+    {
+      "id": 279,
+      "modified": "2026-11-02T21:39:54",
+      "slots": 6,
+      "link": "https://finalvestige.com/2026/08/19/the-geologists-found-the-spy-satellite/"
+    },
+    {
+      "id": 276,
+      "modified": "2026-11-02T21:37:08",
+      "slots": 6,
+      "link": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/"
+    },
+    {
+      "id": 274,
+      "modified": "2026-11-02T21:39:50",
+      "slots": 7,
+      "link": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/"
+    }
+  ],
+  "rows": [
+    {
+      "key": "289:2",
+      "source_url": "https://k.sinaimg.cn/n/spider20191227/356/w640h516/20191227/d15a-imfiehq8368462.jpg/w700d1q75cms.jpg?by=cms_fixed_width",
+      "view_url": "https://i0.wp.com/k.sinaimg.cn/n/spider20191227/356/w640h516/20191227/d15a-imfiehq8368462.jpg/w700d1q75cms.jpg?ssl=1",
+      "view_query_outcome": "dropped",
+      "source_query_keys": [
+        "by"
+      ],
+      "alt": "Aerial view of the burned and damaged USS Forrestal flight deck after the 1967 fire.",
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "jetpack_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_width": null,
+      "guest_transfer_bytes": null,
+      "visitor_broken": null,
+      "source_native_pixels": null,
+      "max_review_width_px": 960,
+      "proportional_review_height_px": null,
+      "no_upscale": true,
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "rights_status": "HOLD_UNVERIFIED",
+      "official_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/USN-1124000/USN-1124781.html",
+          "catalog_id": "USN 1124781",
+          "institution": "Naval History and Heritage Command / National Archives",
+          "source_fidelity": "SAME_EVENT_NOT_IDENTICAL_FRAME",
+          "catalog_high_pixels": {
+            "width": 6200,
+            "height": 4956
+          },
+          "conditional_review_pixels": {
+            "width": 960,
+            "height": 767
+          },
+          "rights_status": "HOLD_ITEM_LEVEL_REVIEW",
+          "note": "Charred deck with deck tractor and fire: not verified as the aerial scene in slot 289:2"
+        }
+      ]
+    },
+    {
+      "key": "283:3",
+      "source_url": "https://bloximages.chicago2.vip.townnews.com/enidnews.com/content/tncms/assets/v3/editorial/b/4e/b4e59e84-74da-5f9e-b24f-5e9e3658fd34/54716e12ac97b.image.jpg?resize=1200%2C804",
+      "view_url": "https://i0.wp.com/bloximages.chicago2.vip.townnews.com/enidnews.com/content/tncms/assets/v3/editorial/b/4e/b4e59e84-74da-5f9e-b24f-5e9e3658fd34/54716e12ac97b.image.jpg?ssl=1",
+      "view_query_outcome": "dropped",
+      "source_query_keys": [
+        "resize"
+      ],
+      "alt": "Charred seating and stage area inside the Iroquois Theatre after the 1903 fire.",
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "jetpack_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_width": null,
+      "guest_transfer_bytes": null,
+      "visitor_broken": null,
+      "source_native_pixels": null,
+      "max_review_width_px": 960,
+      "proportional_review_height_px": null,
+      "no_upscale": true,
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "rights_status": "HOLD_UNVERIFIED",
+      "official_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/pictures/item/2007662240/",
+          "catalog_id": "LC-DIG-ppmsca-07431",
+          "institution": "Library of Congress",
+          "source_fidelity": "SAME_EVENT_DIFFERENT_SCENE",
+          "catalog_high_pixels": null,
+          "conditional_review_pixels": null,
+          "rights_status": "HOLD_ITEM_LEVEL_REVIEW",
+          "note": "Panorama after 1903 fire, not the interior seating image; LOC says no known restrictions but no transfer authorization"
+        }
+      ]
+    },
+    {
+      "key": "291:0",
+      "source_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "view_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "view_query_outcome": "preserved",
+      "source_query_keys": [
+        "ssl"
+      ],
+      "alt": "A rapidly enlarging breach reaching the crest of Teton Dam shortly before its collapse on June 5, 1976.",
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "jetpack_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_width": null,
+      "guest_transfer_bytes": null,
+      "visitor_broken": null,
+      "source_native_pixels": null,
+      "max_review_width_px": 960,
+      "proportional_review_height_px": null,
+      "no_upscale": true,
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "rights_status": "HOLD_UNVERIFIED",
+      "official_candidates": []
+    },
+    {
+      "key": "291:3",
+      "source_url": "https://brightspotcdn.byui.edu/dims4/default/37ddf06/2147483647/strip/true/crop/2048x1365+0+0/resize/1200x800!/quality/90/?url=https%3A%2F%2Fk3-prod-byuifulbrightspot.s3.us-west-2.amazonaws.com%2Fbrightspot%2F33%2F7d%2F67f04f174772ab1d35419706138c%2Fteton-dam-flooding-aerial.jpg",
+      "view_url": "https://brightspotcdn.byui.edu/dims4/default/37ddf06/2147483647/strip/true/crop/2048x1365+0+0/resize/1200x800!/quality/90/?url=https%3A%2F%2Fk3-prod-byuifulbrightspot.s3.us-west-2.amazonaws.com%2Fbrightspot%2F33%2F7d%2F67f04f174772ab1d35419706138c%2Fteton-dam-flooding-aerial.jpg",
+      "view_query_outcome": "preserved",
+      "source_query_keys": [
+        "url"
+      ],
+      "alt": "Aerial view of the flooding downstream after the Teton Dam collapse.",
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "jetpack_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_width": null,
+      "guest_transfer_bytes": null,
+      "visitor_broken": null,
+      "source_native_pixels": null,
+      "max_review_width_px": 960,
+      "proportional_review_height_px": null,
+      "no_upscale": true,
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "rights_status": "HOLD_UNVERIFIED",
+      "official_candidates": []
+    },
+    {
+      "key": "279:5",
+      "source_url": "https://media.licdn.com/dms/image/v2/D4D12AQHmW14R-yIi1g/article-inline_image-shrink_1000_1488/B4DZctCqx_q4AM-/0/1748804514162?e=2147483647&v=beta&t=cK4Wg6FhyvLGIEHJU44N_Rj9uCSsywcjtMc_ZoQSgaA",
+      "view_url": "https://media.licdn.com/dms/image/v2/D4D12AQHmW14R-yIi1g/article-inline_image-shrink_1000_1488/B4DZctCqx_q4AM-/0/1748804514162?e=2147483647&v=beta&t=cK4Wg6FhyvLGIEHJU44N_Rj9uCSsywcjtMc_ZoQSgaA",
+      "view_query_outcome": "preserved",
+      "source_query_keys": [
+        "e",
+        "v",
+        "t"
+      ],
+      "alt": "Operation Morning Light search personnel preparing radiological equipment beside an aircraft.",
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "jetpack_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_width": null,
+      "guest_transfer_bytes": null,
+      "visitor_broken": null,
+      "source_native_pixels": null,
+      "max_review_width_px": 960,
+      "proportional_review_height_px": null,
+      "no_upscale": true,
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "rights_status": "HOLD_UNVERIFIED",
+      "official_candidates": []
+    },
+    {
+      "key": "276:2",
+      "source_url": "https://ids.si.edu/ids/deliveryService?id=NMAH-AC1026-0000002",
+      "view_url": "https://ids.si.edu/ids/deliveryService?id=NMAH-AC1026-0000002",
+      "view_query_outcome": "preserved",
+      "source_query_keys": [
+        "id"
+      ],
+      "alt": "Twisted steel wreckage of the Quebec Bridge after the 1907 collapse.",
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "jetpack_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_width": null,
+      "guest_transfer_bytes": null,
+      "visitor_broken": null,
+      "source_native_pixels": null,
+      "max_review_width_px": 960,
+      "proportional_review_height_px": null,
+      "no_upscale": true,
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "rights_status": "HOLD_UNVERIFIED",
+      "official_candidates": []
+    },
+    {
+      "key": "274:4",
+      "source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fmuseums%2Fnmusn%2FPhotography%2FNARA+II%2F80-G%2F80-G-300000%2F80-G-344565.tif&rendition=cq5dam.web.1280.1280.jpeg",
+      "view_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fmuseums%2Fnmusn%2FPhotography%2FNARA+II%2F80-G%2F80-G-300000%2F80-G-344565.tif&rendition=cq5dam.web.1280.1280.jpeg",
+      "view_query_outcome": "preserved",
+      "source_query_keys": [
+        "image",
+        "rendition"
+      ],
+      "alt": "USS Tang commander Richard O'Kane after liberation from Japanese captivity in September 1945.",
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "jetpack_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_width": null,
+      "guest_transfer_bytes": null,
+      "visitor_broken": null,
+      "source_native_pixels": null,
+      "max_review_width_px": 960,
+      "proportional_review_height_px": null,
+      "no_upscale": true,
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "rights_status": "HOLD_UNVERIFIED",
+      "official_candidates": []
+    }
+  ],
+  "historical_cohorts": {
+    "frozen_posts": 61,
+    "frozen_image_slots": 355,
+    "frozen_external_origins": 288,
+    "current_posts": 66,
+    "current_inline_images": 361,
+    "original_media_over_1500000_bytes": 20,
+    "original_media_oversize_stored_bytes": 64385752
+  },
+  "claims": {
+    "reported_42_broken_guest_verified": false,
+    "claimed_76_percent_network_reduction_measured": false
+  },
+  "note": "Publisher query loss is a CMS URL fidelity flag, not numeric response or confirmed visitor failure; no downloads, media mirrors or production changes."
+}
