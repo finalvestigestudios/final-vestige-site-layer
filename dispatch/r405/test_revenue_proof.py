@@ -29,6 +29,9 @@ class RevenueProofTests(unittest.TestCase):
     def test_missing_fees_not_computable(self):
         p = example(); p["fees_complete"] = False; self.assertIsNone(reduce_proofs(p)["net_usd"])
 
+    def test_string_completion_attestation_rejected(self):
+        p = example(); p["refunds_complete"] = "yes"; self.assertRaises(ValueError, reduce_proofs, p)
+
     def test_wrong_campaign_not_computable(self):
         p = example(); p["paid_transactions"][0]["utm_campaign"] = "other"; self.assertIsNone(reduce_proofs(p)["net_usd"])
 
