@@ -30,7 +30,7 @@ These **4,323,964 bytes** are stored originals, **not visitor transfers** or pos
 ## Offline validator and regression evidence
 
 - [Fail-closed audit validator](../qa/media-recovery/validate_wp170_pagebody_last_two_crosscheck_20261115.cjs) checks 170 unique page IDs (92 published, 78 drafts), four literal search patterns, two exact original URLs and media metadata, native dimensions/960px proportionality, null guest HTTP/wire values, no orphan declaration, rights holds, no 76% claim and Site QA ownership.
-- [Node test definitions](../qa/media-recovery/test_validate_wp170_pagebody_last_two_crosscheck_20261115.cjs) include 19 adverse edits plus baseline, for **20 test definitions**. On committed audit bytes, **15/15 isolated V8 checks** executed: one baseline and 14 independent unsafe mutations all behaved as required. Native Node/CI not executed in this run; no deployment or automated guest browser evidence.
+- [Node test definitions](../qa/media-recovery/test_validate_wp170_pagebody_last_two_crosscheck_20261115.cjs) include 19 adverse edits plus baseline, for **20 test definitions**. On committed audit bytes, **20/20 isolated V8 checks** executed: one baseline and 19 independent unsafe mutations all behaved as required. Native Node/CI not executed in this run; no deployment or automated guest browser evidence.
 
 ## Production and ownership boundary
 
