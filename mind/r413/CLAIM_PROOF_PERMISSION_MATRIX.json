@@ -1,0 +1,457 @@
+{
+  "sprint": "R413",
+  "date": "2026-11-15",
+  "mode": "DRAFT_UNPUBLISHED",
+  "verified_partner_approval": false,
+  "verified_paid_owned_mind_sku": false,
+  "affiliate_links_active": false,
+  "prices_are_seller_observations_only": true,
+  "sources": {
+    "thatcher1980": "https://doi.org/10.1068/p090483",
+    "thatcher2010": "https://pubmed.ncbi.nlm.nih.gov/20942363/",
+    "thatcher2014": "https://pubmed.ncbi.nlm.nih.gov/25301017/",
+    "bodyTilt": "https://pubmed.ncbi.nlm.nih.gov/17564200/",
+    "perceptDecision": "https://pubmed.ncbi.nlm.nih.gov/21639673/",
+    "fvChange": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "fvMesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "fvPuy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "fvFocus": "https://finalvestige.com/focus/",
+    "fvDispatch": "https://finalvestige.com/dispatch/",
+    "inspire": "https://inspire3.com/",
+    "affiliates": "https://affiliates.inspire3.com/",
+    "zenAbout": "https://zen12.com/about",
+    "zenSecret": "https://zen12.com/secret/",
+    "totalFocus": "https://hypnosislive.com/mental-skills/total-focus",
+    "focusShot": "https://brainwaveshots.com/focus-shot",
+    "shotsFaq": "https://brainwaveshots.com/faq",
+    "ftcAffiliate": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftcHealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  },
+  "claims": [
+    {
+      "id": "r413-001",
+      "claim": "The Thatcher illusion was introduced in 1980 by Peter Thompson",
+      "type": "research_finding",
+      "status": "documented_historical_attribution",
+      "source": [
+        "https://pubmed.ncbi.nlm.nih.gov/20942363/",
+        "https://pubmed.ncbi.nlm.nih.gov/25301017/"
+      ],
+      "restriction": "Original Thatcher photo rights not obtained; no republication"
+    },
+    {
+      "id": "r413-002",
+      "claim": "Inverting a face can make inverted facial features harder to notice",
+      "type": "research_finding",
+      "status": "supported_under_specific_tasks",
+      "source": [
+        "https://pubmed.ncbi.nlm.nih.gov/20942363/",
+        "https://pubmed.ncbi.nlm.nih.gov/25301017/"
+      ],
+      "restriction": "Not diagnostic of an individual"
+    },
+    {
+      "id": "r413-003",
+      "claim": "Thatcher-like effects can arise with non-face objects",
+      "type": "research_finding",
+      "status": "supported_under_specific_tasks",
+      "source": [
+        "https://pubmed.ncbi.nlm.nih.gov/20942363/"
+      ],
+      "restriction": "Does not establish identical processing across objects"
+    },
+    {
+      "id": "r413-004",
+      "claim": "Some later research emphasizes orientation sensitivity of local facial features",
+      "type": "research_finding",
+      "status": "supported_under_specific_tasks",
+      "source": [
+        "https://pubmed.ncbi.nlm.nih.gov/25301017/"
+      ],
+      "restriction": "Mechanism remains subject to experimental context"
+    },
+    {
+      "id": "r413-005",
+      "claim": "The Thatcher illusion proves mindfulness audio improves attention",
+      "type": "unwarranted_transfer",
+      "status": "exclude",
+      "source": [
+        "https://pubmed.ncbi.nlm.nih.gov/20942363/",
+        "https://pubmed.ncbi.nlm.nih.gov/25301017/"
+      ],
+      "restriction": "No product intervention tested"
+    },
+    {
+      "id": "r413-006",
+      "claim": "Puységur archive has 153 active master-source rows and 16 dossiers",
+      "type": "fv_live_inventory",
+      "status": "verified_read_only",
+      "source": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "restriction": "Provenance of historical claims, not proof of magnetism"
+    },
+    {
+      "id": "r413-007",
+      "claim": "Focus Fieldbook is a free 52-page workbook",
+      "type": "fv_live_inventory",
+      "status": "verified_read_only",
+      "source": [
+        "https://finalvestige.com/focus/"
+      ],
+      "restriction": "NOT a paid SKU or proven clinical treatment"
+    },
+    {
+      "id": "r413-008",
+      "claim": "Existing Dispatch is the newsletter connected to Focus",
+      "type": "fv_live_inventory",
+      "status": "verified_read_only",
+      "source": [
+        "https://finalvestige.com/focus/",
+        "https://finalvestige.com/dispatch/"
+      ],
+      "restriction": "Do not duplicate Jetpack form or send email"
+    },
+    {
+      "id": "r413-009",
+      "claim": "Zen12 official About page describes 12 levels",
+      "type": "seller_product_feature",
+      "status": "seller_described",
+      "source": [
+        "https://zen12.com/about"
+      ],
+      "restriction": "Verify exact package at authorized referral checkout"
+    },
+    {
+      "id": "r413-010",
+      "claim": "Zen12 seller describes four styles per level: music/guided/white-noise/nature",
+      "type": "seller_product_feature",
+      "status": "seller_described",
+      "source": [
+        "https://zen12.com/about"
+      ],
+      "restriction": "Format list not independently audited"
+    },
+    {
+      "id": "r413-011",
+      "claim": "Zen12 promotional page describes 48 MP3s",
+      "type": "seller_product_feature",
+      "status": "seller_described",
+      "source": [
+        "https://zen12.com/secret/"
+      ],
+      "restriction": "Promo route not authorized FV referral"
+    },
+    {
+      "id": "r413-012",
+      "claim": "Zen12 '12 minutes equals one hour' equivalence",
+      "type": "seller_performance_claim",
+      "status": "exclude_as_independent_fact",
+      "source": [
+        "https://zen12.com/about"
+      ],
+      "restriction": "Missing product-specific competent evidence"
+    },
+    {
+      "id": "r413-013",
+      "claim": "Zen12 automatic stress/anxiety/health benefits",
+      "type": "seller_health_claim",
+      "status": "exclude_as_independent_fact",
+      "source": [
+        "https://zen12.com/about",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "restriction": "Clinical proof for this product not authenticated"
+    },
+    {
+      "id": "r413-014",
+      "claim": "Zen12 /secret promotional page displays $37 with coupon and $87 crossed-out",
+      "type": "seller_price_observation",
+      "status": "qualified_observation_only",
+      "source": [
+        "https://zen12.com/secret/"
+      ],
+      "restriction": "May change; not verified referred checkout, fees, availability or eligibility"
+    },
+    {
+      "id": "r413-015",
+      "claim": "Zen12 promotional page says money-back guarantee",
+      "type": "seller_returns_statement",
+      "status": "qualified_observation_only",
+      "source": [
+        "https://zen12.com/secret/"
+      ],
+      "restriction": "Exact terms, exceptions, timing and applicability not authenticated"
+    },
+    {
+      "id": "r413-016",
+      "claim": "Hypnosis Live Total Focus is described as a 33-min, 47 MB MP3",
+      "type": "seller_product_feature",
+      "status": "seller_described",
+      "source": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "restriction": "Seller has displayed differing route prices; verify final checkout"
+    },
+    {
+      "id": "r413-017",
+      "claim": "Hypnosis Live promises focus gains and brain reprogramming",
+      "type": "seller_performance_claim",
+      "status": "exclude_as_independent_fact",
+      "source": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "restriction": "No product-specific controlled substantiation"
+    },
+    {
+      "id": "r413-018",
+      "claim": "Brainwave Shots Focus Shot offers 15- and 30-minute audio",
+      "type": "seller_product_feature",
+      "status": "seller_described",
+      "source": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "restriction": "No FV referral authorization"
+    },
+    {
+      "id": "r413-019",
+      "claim": "Brainwave Shots FAQ says its system uses isochronic tones",
+      "type": "seller_technical_description",
+      "status": "seller_described",
+      "source": [
+        "https://brainwaveshots.com/faq"
+      ],
+      "restriction": "Binaural-beat evidence not interchangeable"
+    },
+    {
+      "id": "r413-020",
+      "claim": "Focus Shot seller gives 12-to-18 Hz protocol",
+      "type": "seller_technical_description",
+      "status": "seller_described",
+      "source": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "restriction": "Technical specification is not measured efficacy"
+    },
+    {
+      "id": "r413-021",
+      "claim": "Focus Shot results last hours and always improve productivity",
+      "type": "seller_performance_claim",
+      "status": "exclude_as_independent_fact",
+      "source": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "restriction": "No product-specific evidence authenticated"
+    },
+    {
+      "id": "r413-022",
+      "claim": "Brainwave Shots FAQ advises against listening for people with epilepsy or when wakefulness is necessary",
+      "type": "seller_safety_warning",
+      "status": "seller_described",
+      "source": [
+        "https://brainwaveshots.com/faq"
+      ],
+      "restriction": "Never assert universal safety"
+    },
+    {
+      "id": "r413-023",
+      "claim": "Public Inspire3 affiliate portal offers registration and earning claims",
+      "type": "seller_program_description",
+      "status": "public_offer_only",
+      "source": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "restriction": "Not FV approval, not SKU permission, not commission entitlement"
+    },
+    {
+      "id": "r413-024",
+      "claim": "FV has publisher acceptance, authorized channels, issued earning link and settlement terms",
+      "type": "partner_entitlement",
+      "status": "unverified_hard_hold",
+      "source": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "restriction": "Need first-party authenticated FV-specific evidence"
+    },
+    {
+      "id": "r413-025",
+      "claim": "An actually payable rights-cleared FV-owned Mind SKU exists",
+      "type": "owned_commerce",
+      "status": "unverified_hard_hold",
+      "source": [
+        "https://finalvestige.com/focus/"
+      ],
+      "restriction": "Free Focus does not establish paid checkout"
+    },
+    {
+      "id": "r413-026",
+      "claim": "Commercial affiliate disclosure belongs adjacent to actual recommendation/link",
+      "type": "compliance_rule",
+      "status": "supported_policy",
+      "source": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "restriction": "Disclosure presence alone cannot legalize unsubstantiated claims"
+    },
+    {
+      "id": "r413-027",
+      "claim": "Health-related promotional benefits require adequate substantiation",
+      "type": "compliance_rule",
+      "status": "supported_policy",
+      "source": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "restriction": "Product-specific evidence needed before any health claims"
+    },
+    {
+      "id": "r413-028",
+      "claim": "Affiliate click is equivalent to a merchant-verified purchase",
+      "type": "measurement_claim",
+      "status": "exclude",
+      "source": [],
+      "restriction": "Never equate click with confirmed order/settled commission"
+    }
+  ],
+  "gates": [
+    {
+      "key": "named_fv_inspire3_account_approval",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "exact_zen12_sku_authorized",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "organic_social_channel_permitted",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "website_channel_permitted",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "email_channel_permitted",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "approved_publisher_affiliate_url_issued",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "affiliate_creative_rights_cleared",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "current_referred_checkout_matched",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "checkout_final_price_taxes_upsells_verified",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "returns_terms_verified",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "commission_and_payout_terms_verified",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "merchant_settlement_reporting_access",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "paid_fv_owned_sku_exists",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "paid_fv_owned_rights_cleared",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "paid_fv_owned_fulfillment_verified",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "paid_fv_owned_refunds_verified",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "grok_authentic_asset_ids_verified",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "grok_topic_and_rights_match_verified",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "jetpack_existing_consent_delivery_verified",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "playable_42s_video_encoded",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "original_video_media_rights_verified",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "keyboard_mobile_wCAG_checked",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "real_browser_performance_checked",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "wordpress_sanitization_checked",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "founder_release_approval",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "site_qa_review_approval",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "commerce_experiment_authorized",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "key": "confirmed_settled_sale_reported",
+      "status": "HOLD",
+      "proof": null
+    }
+  ]
+}
