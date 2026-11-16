@@ -1,0 +1,306 @@
+{
+  "generated_date": "2026-11-16",
+  "lane": "Mind & Perception, no activation",
+  "sources": {
+    "door": "https://doi.org/10.3758/BF03208840",
+    "repeat": "https://pubmed.ncbi.nlm.nih.gov/12230832/",
+    "pred": "https://pubmed.ncbi.nlm.nih.gov/12470620/",
+    "recognition": "https://doi.org/10.1068/p5079",
+    "gorilla": "https://doi.org/10.1068/p281059",
+    "archive": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "focus": "https://finalvestige.com/focus/",
+    "inspire": "https://inspire3.com/",
+    "zen": "https://zen12.com/",
+    "zenabout": "https://zen12.com/about",
+    "zenorder": "https://zen12.com/order",
+    "zensecret": "https://zen12.com/secret/",
+    "total": "https://hypnosislive.com/mental-skills/total-focus",
+    "focusshot": "https://brainwaveshots.com/focus-shot",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftchealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "affiliate": "https://affiliates.inspire3.com/"
+  },
+  "status_legend": {
+    "PRIMARY_RESEARCH": "findings described in an original study, not product-specific",
+    "SELLER_DESCRIPTION": "exact official product page, independent validation absent",
+    "POLICY": "regulatory guidance",
+    "UNVERIFIED": "not authenticated for Final Vestige",
+    "EXCLUDED": "should not appear as an endorsed outcome"
+  },
+  "claims": [
+    {
+      "claim": "1998 experiment replaced a conversation partner during a real-world interruption",
+      "status": "PRIMARY_RESEARCH",
+      "source": "door"
+    },
+    {
+      "claim": "approximately half of the tested pedestrians missed the substitution in original experiment",
+      "status": "PRIMARY_RESEARCH",
+      "source": "door",
+      "caveat": "do not extrapolate to all people or all settings"
+    },
+    {
+      "claim": "original study reported social-group difference",
+      "status": "PRIMARY_RESEARCH",
+      "source": "door",
+      "caveat": "study-condition association, not universal identity rule"
+    },
+    {
+      "claim": "2002 real-world follow-up studied photographic lineups after a change",
+      "status": "PRIMARY_RESEARCH",
+      "source": "repeat"
+    },
+    {
+      "claim": "participants who detected swaps generally showed better two-person memory in 2002 study",
+      "status": "PRIMARY_RESEARCH",
+      "source": "repeat"
+    },
+    {
+      "claim": "2002 change blindness blindness study found overconfidence in noticing changes",
+      "status": "PRIMARY_RESEARCH",
+      "source": "pred"
+    },
+    {
+      "claim": "2003 film study found above-chance recognition after missed changes in many conditions",
+      "status": "PRIMARY_RESEARCH",
+      "source": "recognition",
+      "caveat": "film evidence is not door field trial"
+    },
+    {
+      "claim": "1999 gorilla study investigated inattentional blindness",
+      "status": "PRIMARY_RESEARCH",
+      "source": "gorilla"
+    },
+    {
+      "claim": "Puységur files contain witness records, consent warnings and documentary inconsistencies",
+      "status": "PRIMARY_RESEARCH",
+      "source": "archive",
+      "caveat": "history source, not clinical study"
+    },
+    {
+      "claim": "Zen12 seller advertises 12 levels and four listening styles",
+      "status": "SELLER_DESCRIPTION",
+      "source": "zenabout"
+    },
+    {
+      "claim": "Zen12 checkout seller lists 48 MP3 files",
+      "status": "SELLER_DESCRIPTION",
+      "source": "zenorder"
+    },
+    {
+      "claim": "Zen12 official marketing says 12 minutes equates to an hour or more",
+      "status": "EXCLUDED",
+      "source": "zen",
+      "caveat": "unsupported product-specific efficacy assertion"
+    },
+    {
+      "claim": "Zen12 is independently proven to improve focus or health",
+      "status": "EXCLUDED",
+      "source": "zen",
+      "caveat": "no suitable exact-product substantiation established"
+    },
+    {
+      "claim": "public Zen12 main page displays Premium 87.99 USD on 2026-11-16",
+      "status": "SELLER_DESCRIPTION",
+      "source": "zen",
+      "caveat": "NOT referred checkout price; can change; not for public guide"
+    },
+    {
+      "claim": "Zen12 special and order paths can differ in price and bundle presentation",
+      "status": "SELLER_DESCRIPTION",
+      "source": "zensecret",
+      "caveat": "no authenticated price for any FV referral"
+    },
+    {
+      "claim": "Hypnosis Live Total Focus official product says 33 min 47MB",
+      "status": "SELLER_DESCRIPTION",
+      "source": "total"
+    },
+    {
+      "claim": "Hypnosis Live Total Focus official live page displayed sale 24.44 USD versus struck 29.95 USD when read on 2026-11-16",
+      "status": "SELLER_DESCRIPTION",
+      "source": "total",
+      "caveat": "screenshot/text snapshot; earlier Dispatch had 17.95 USD; price drift: do not publish prices without current referred path"
+    },
+    {
+      "claim": "Hypnosis Live Total Focus seller says 14 day refund on this page",
+      "status": "SELLER_DESCRIPTION",
+      "source": "total",
+      "caveat": "not authenticated for FV referral"
+    },
+    {
+      "claim": "Focus Shot seller lists 15-minute, 30-minute and brainwave-only files",
+      "status": "SELLER_DESCRIPTION",
+      "source": "focusshot"
+    },
+    {
+      "claim": "Focus Shot seller advertises 1-year money back guarantee",
+      "status": "SELLER_DESCRIPTION",
+      "source": "focusshot",
+      "caveat": "terms may vary"
+    },
+    {
+      "claim": "Brainwave Shots improve concentration for this exact customer",
+      "status": "EXCLUDED",
+      "source": "focusshot"
+    },
+    {
+      "claim": "General meditation research establishes Zen12 efficacy",
+      "status": "EXCLUDED",
+      "source": "zen",
+      "caveat": "category-to-SKU inference invalid"
+    },
+    {
+      "claim": "FTC requires clear conspicuous material-connection disclosure near earning recommendation",
+      "status": "POLICY",
+      "source": "ftc"
+    },
+    {
+      "claim": "FTC health benefit advertising needs competent reliable substantiation",
+      "status": "POLICY",
+      "source": "ftchealth"
+    },
+    {
+      "claim": "Public Inspire3 affiliate signup proves named FV approval",
+      "status": "UNVERIFIED",
+      "source": "affiliate"
+    },
+    {
+      "claim": "Final Vestige has an issued earning link or settlement report",
+      "status": "UNVERIFIED",
+      "source": "affiliate"
+    },
+    {
+      "claim": "The Focus Fieldbook is an existing 52-page free resource with one current Jetpack pathway",
+      "status": "SELLER_DESCRIPTION",
+      "source": "focus"
+    },
+    {
+      "claim": "Final Vestige offers a currently payable verified owned Mind product",
+      "status": "UNVERIFIED",
+      "source": "focus"
+    }
+  ],
+  "gates": {
+    "named_final_vestige_partner_acceptance": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "exact_zen12_premium_sku_authorized": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "promotion_channel_web_approved": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "promotion_channel_email_approved": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "allowed_original_creatives": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "issued_earning_url": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "referral_tracking_terms": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "referred_checkout_price_current": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "referred_checkout_refund_terms": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "partner_settlement_reporting": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "merchant_offline_commission_verification": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "owned_fv_payable_mind_sku": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "owned_fv_ip_rights": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "owned_fv_checkout": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "owned_fv_delivery": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "owned_fv_refund_terms": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "founder_commercial_approval": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "founder_publication_release": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "approved_actual_social_asset_ids": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "grok_topic_route_verified": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "site_qa_mobile_wcag": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "browser_cwv_test": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "wp_sanitizer_test": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "original_video_encoded": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "video_captions_synced": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "jetpack_confirmed_unique_lead": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "existing_analytics_event_contract_verified": {
+      "status": "HOLD",
+      "evidence": null
+    },
+    "verified_paid_commission_or_order": {
+      "status": "HOLD",
+      "evidence": null
+    }
+  },
+  "approved_affiliate_links": [],
+  "referred_price": null,
+  "commission_rate": null,
+  "confirmed_paid_orders": null,
+  "realized_net_revenue_per_1000": null,
+  "notes": "Every commercial gate is fail-closed. The price drift on the external Total Focus seller page is a research QA finding, not a public price quote or an FV approved offer."
+}
