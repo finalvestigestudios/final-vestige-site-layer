@@ -44,7 +44,7 @@ def audit(snapshot: dict[str, Any]) -> dict[str, Any]:
             raise ValueError(f"{name}: missing fields")
     if not isinstance(snapshot["snapshot_id"], str) or not re.fullmatch(r"wp-readonly-[a-z0-9-]{1,70}", snapshot["snapshot_id"]):
         raise ValueError("invalid or potentially identifying snapshot ID")
-    if not isinstance(snapshot["as_of_utc"], str) or not re.fullmatch(r"\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\dZ", snapshot["as_of_utc"]):
+    if not isinstance(snapshot["as_of_utc"], str) or not re.fullmatch(r"\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ", snapshot["as_of_utc"]):
         raise ValueError("UTC timestamp required without personal data")
     try:
         datetime.fromisoformat(snapshot["as_of_utc"].replace("Z", "+00:00"))
