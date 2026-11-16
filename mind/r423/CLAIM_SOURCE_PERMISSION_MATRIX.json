@@ -1,0 +1,545 @@
+{
+  "version": "r423-2026-11-16",
+  "status": "DRAFT_UNPUBLISHED_COMMERCE_HARD_HOLD",
+  "editorial_scope": "Mind & Perception only",
+  "as_of": "2026-11-16",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://inspire3.com/",
+      "kind": "official_seller_catalog"
+    },
+    {
+      "id": "S02",
+      "url": "https://zen12.com/about",
+      "kind": "official_zen12_description"
+    },
+    {
+      "id": "S03",
+      "url": "https://zen12.com/order",
+      "kind": "official_zen12_order_not_attributed_checkout"
+    },
+    {
+      "id": "S04",
+      "url": "https://zen12.com/secret/",
+      "kind": "official_alternate_offer_price_drift"
+    },
+    {
+      "id": "S05",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "official_specific_sku"
+    },
+    {
+      "id": "S06",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "kind": "official_specific_sku"
+    },
+    {
+      "id": "S07",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41217756/",
+      "kind": "primary_trial_abstract"
+    },
+    {
+      "id": "S08",
+      "url": "https://doi.org/10.1002/ejp.70369",
+      "kind": "systematic_review"
+    },
+    {
+      "id": "S09",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37399315/",
+      "kind": "systematic_review"
+    },
+    {
+      "id": "S10",
+      "url": "https://doi.org/10.1002/acp.3730",
+      "kind": "academic_myths_review"
+    },
+    {
+      "id": "S11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31914365/",
+      "kind": "suggestibility_study"
+    },
+    {
+      "id": "S12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32744485/",
+      "kind": "expectation_literature_review"
+    },
+    {
+      "id": "S13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38199053/",
+      "kind": "hypnosis_theory_review"
+    },
+    {
+      "id": "S14",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "FV_historical_analysis"
+    },
+    {
+      "id": "S15",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "kind": "FV_published_investigation"
+    },
+    {
+      "id": "S16",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "FV_published_investigation"
+    },
+    {
+      "id": "S17",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "FV_existing_free_offer"
+    },
+    {
+      "id": "S18",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator"
+    },
+    {
+      "id": "S19",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator"
+    },
+    {
+      "id": "S20",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "public_signup_not_named_acceptance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Zen12 seller describes 12 levels",
+      "class": "SELLER_FORMAT",
+      "sources": [
+        "S02"
+      ],
+      "publish": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "C02",
+      "text": "Zen12 seller describes 4 versions at every level",
+      "class": "SELLER_FORMAT",
+      "sources": [
+        "S02"
+      ],
+      "publish": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "C03",
+      "text": "Zen12 order page advertises 48 MP3s",
+      "class": "SELLER_BUNDLE",
+      "sources": [
+        "S03"
+      ],
+      "publish": "ATTRIBUTED_ONLY_NOT_REFERRAL_TERMS"
+    },
+    {
+      "id": "C04",
+      "text": "Zen12 12 minutes equals one hour normal meditation",
+      "class": "SELLER_EFFICACY",
+      "sources": [
+        "S02"
+      ],
+      "publish": "EXCLUDE_UNSUPPORTED"
+    },
+    {
+      "id": "C05",
+      "text": "Zen12 automatically changes brainwaves",
+      "class": "SELLER_EFFICACY",
+      "sources": [
+        "S02"
+      ],
+      "publish": "EXCLUDE_UNSUPPORTED"
+    },
+    {
+      "id": "C06",
+      "text": "Zen12 cures anxiety or mental illness",
+      "class": "UNSUPPORTED_HEALTH",
+      "sources": [
+        "S19"
+      ],
+      "publish": "PROHIBITED"
+    },
+    {
+      "id": "C07",
+      "text": "Total Focus is 33 minutes, 47 MB",
+      "class": "SELLER_FORMAT",
+      "sources": [
+        "S05"
+      ],
+      "publish": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "C08",
+      "text": "Total Focus gives limitless concentration",
+      "class": "SELLER_EFFICACY",
+      "sources": [
+        "S05"
+      ],
+      "publish": "EXCLUDE_UNSUPPORTED"
+    },
+    {
+      "id": "C09",
+      "text": "Focus Shot includes 15 and 30 minute files",
+      "class": "SELLER_FORMAT",
+      "sources": [
+        "S06"
+      ],
+      "publish": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "C10",
+      "text": "Focus Shot improves task performance",
+      "class": "SELLER_EFFICACY",
+      "sources": [
+        "S06"
+      ],
+      "publish": "EXCLUDE_UNSUPPORTED"
+    },
+    {
+      "id": "C11",
+      "text": "2025 self administered hypnosis audio trial recruited 250 women",
+      "class": "TRIAL_SPECIFIC",
+      "sources": [
+        "S07"
+      ],
+      "publish": "INDEPENDENT_RESEARCH_WITH_CONTEXT"
+    },
+    {
+      "id": "C12",
+      "text": "2025 trial measured hot flashes not focus",
+      "class": "TRIAL_SPECIFIC_LIMIT",
+      "sources": [
+        "S07"
+      ],
+      "publish": "INDEPENDENT_RESEARCH_WITH_CONTEXT"
+    },
+    {
+      "id": "C13",
+      "text": "2025 trial reported P .04 for hot flash comparison",
+      "class": "TRIAL_SPECIFIC",
+      "sources": [
+        "S07"
+      ],
+      "publish": "INDEPENDENT_RESEARCH_WITH_CONTEXT"
+    },
+    {
+      "id": "C14",
+      "text": "2026 pain review included 106 studies, 57 non-active comparison pooled",
+      "class": "REVIEW_SPECIFIC",
+      "sources": [
+        "S08"
+      ],
+      "publish": "INDEPENDENT_RESEARCH_WITH_CONTEXT"
+    },
+    {
+      "id": "C15",
+      "text": "2026 pain review no clear superiority against active interventions",
+      "class": "REVIEW_SPECIFIC_LIMIT",
+      "sources": [
+        "S08"
+      ],
+      "publish": "INDEPENDENT_RESEARCH_WITH_CONTEXT"
+    },
+    {
+      "id": "C16",
+      "text": "2013 sleep review had 44 included studies and heterogeneous results",
+      "class": "REVIEW_SPECIFIC",
+      "sources": [
+        "S09"
+      ],
+      "publish": "INDEPENDENT_RESEARCH_WITH_CONTEXT"
+    },
+    {
+      "id": "C17",
+      "text": "Hypnotic suggestion is guaranteed mind control",
+      "class": "MYTH",
+      "sources": [
+        "S10"
+      ],
+      "publish": "EXCLUDE"
+    },
+    {
+      "id": "C18",
+      "text": "Suggestibility forms a single simple measurable trait",
+      "class": "OVERGENERALIZATION",
+      "sources": [
+        "S11"
+      ],
+      "publish": "EXCLUDE"
+    },
+    {
+      "id": "C19",
+      "text": "Expectations have a universally settled role in hypnosis",
+      "class": "OVERGENERALIZATION",
+      "sources": [
+        "S12"
+      ],
+      "publish": "EXCLUDE"
+    },
+    {
+      "id": "C20",
+      "text": "Historical witness testimony proves animal magnetism",
+      "class": "HISTORICAL_UNSUPPORTED",
+      "sources": [
+        "S14",
+        "S15"
+      ],
+      "publish": "EXCLUDE"
+    },
+    {
+      "id": "C21",
+      "text": "Puységur archive documents testimony, contradictions and consent conflicts",
+      "class": "HISTORICAL_DOCUMENT",
+      "sources": [
+        "S14"
+      ],
+      "publish": "SUPPORTED_WITH_LIMITS"
+    },
+    {
+      "id": "C22",
+      "text": "FV Fieldbook currently free 52 page existing Jetpack route",
+      "class": "FV_OWNED_FREE",
+      "sources": [
+        "S17"
+      ],
+      "publish": "VERIFIED_FREE_NOT_PAID"
+    },
+    {
+      "id": "C23",
+      "text": "Public Inspire3 portal proves named FV approval",
+      "class": "PARTNER_PERMISSION",
+      "sources": [
+        "S20"
+      ],
+      "publish": "FALSE"
+    },
+    {
+      "id": "C24",
+      "text": "Final Vestige has authorized earning link to Zen12",
+      "class": "PARTNER_PERMISSION",
+      "sources": [],
+      "publish": "UNVERIFIED_AND_DISABLED"
+    },
+    {
+      "id": "C25",
+      "text": "Current public Zen12 price is the FV referred checkout price",
+      "class": "CHECKOUT_TERMS",
+      "sources": [
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "publish": "UNVERIFIED_AND_EXCLUDED"
+    },
+    {
+      "id": "C26",
+      "text": "Consumer promo emails certify publisher approval",
+      "class": "PARTNER_PERMISSION",
+      "sources": [],
+      "publish": "FALSE"
+    },
+    {
+      "id": "C27",
+      "text": "Affiliate click proves paid sale or commission",
+      "class": "MEASUREMENT_INVALID",
+      "sources": [],
+      "publish": "FALSE"
+    },
+    {
+      "id": "C28",
+      "text": "The short film version improves settled net revenue",
+      "class": "EXPERIMENT_HYPOTHESIS",
+      "sources": [],
+      "publish": "UNTESTED"
+    },
+    {
+      "id": "C29",
+      "text": "Owned FV paid Mind SKU authorized, deliverable, priced and refundable",
+      "class": "OWNED_COMMERCE",
+      "sources": [],
+      "publish": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "C30",
+      "text": "Material earning relationship requires understandable nearby disclosure",
+      "class": "FTC_RULE",
+      "sources": [
+        "S18"
+      ],
+      "publish": "REQUIRED_WHEN_ACTIVATED"
+    },
+    {
+      "id": "C31",
+      "text": "Objective health benefit claims need appropriate product-specific substantiation",
+      "class": "FTC_RULE",
+      "sources": [
+        "S19"
+      ],
+      "publish": "REQUIRED_WHEN_ACTIVATED"
+    }
+  ],
+  "release_gates": {
+    "named_partner_approval": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "publisher_legal_identity": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "zen12_exact_sku": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "website_promotion_permission": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "email_promotion_permission": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "organic_social_permission": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "approved_creative_terms": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "prohibited_claims_review": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "issued_earning_url": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "link_attribution_validation": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "attributed_checkout_identity": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "referred_final_price": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "referred_refund_policy": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "referred_delivery_evidence": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "partner_cookie_and_tracking_terms": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "partner_commission_terms": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "payout_and_chargeback_rules": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "owner_paid_sku_if_fallback": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "owned_rights_if_fallback": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "owned_refund_if_fallback": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "owned_fulfillment_if_fallback": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "founder_editorial_release": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "founder_commercial_release": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "site_QA_browser_a11y": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Site QA"
+    },
+    "video_encoded_original": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    "caption_sync_verified": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Site QA"
+    },
+    "existing_analytics_consent_validated": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Claude/Dispatch"
+    },
+    "Jetpack_confirmation_independently_verified": {
+      "verified": false,
+      "status": "HOLD",
+      "owner": "Claude/Dispatch"
+    }
+  },
+  "attribution_contract": {
+    "event_allowlist": [
+      "landing_visit",
+      "focus_cta_click",
+      "confirmed_focus_lead",
+      "buyer_guide_view",
+      "affiliate_click",
+      "paid_order_verified",
+      "commission_settled",
+      "refund_confirmed"
+    ],
+    "pii": "never",
+    "affiliate_click_is_sale": false,
+    "profit_kpi": "settled_net_revenue/qualified_human_sessions*1000",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "measurement_status": "NOT_CONNECTED_NOT_TESTED"
+  },
+  "notes": "No invented commission, no commercial URL, no pricing copied into public buyer HTML, no product claims derived from unrelated studies. 61-post/79-page issue baseline is historical; latest R422 connected read reported 66/92. Hub is not CMS draft."
+}
