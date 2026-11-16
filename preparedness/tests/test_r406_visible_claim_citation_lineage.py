@@ -200,6 +200,15 @@ class VisibleLineage(unittest.TestCase):
         r = g.inspect({'E395': a, 'E397': b, 'E398': b, 'E399': b}, SOURCES, e399_receipt=g.digest(b.decode()))
         self.assertEqual(r['integrity'], 'FAIL')
 
+    def test_unwrapped_reading_depth_loss_also_requires_review(self):
+        original = doc(suffix='<div>Unwrapped but visible reader explanation.</div>')
+        amended = doc()
+        r = g.inspect({'E395': original, 'E397': amended, 'E398': amended, 'E399': amended},
+                      SOURCES, e399_receipt=g.digest(amended.decode()))
+        self.assertTrue(r['deltas']['E395_to_E397']['reading_text_changed'])
+        self.assertEqual(r['deltas']['E395_to_E397']['removed_blocks'], 0)
+        self.assertIn('editorial_depth_or_citation_context_changes_need_human_review', r['failures'])
+
     def test_semantically_neutral_inline_markup_does_not_false_fail(self):
         original = doc()
         amended = original.decode().replace('<li><a', '<li><span><a').replace('</a></li>', '</a></span></li>').encode()
