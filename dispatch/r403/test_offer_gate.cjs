@@ -1,0 +1,32 @@
+"use strict";
+const {auditOfferEvidence}=require("./offer_gate.cjs");
+function tests(){
+ const assert=(x,msg)=>{if(!x)throw Error(msg)}, complete={status:"VERIFIED",evidence_url:"https://example.test/fixture",checked_at:"2026-11-16T16:40:00Z",reviewer:"synthetic-reviewer"},fields=["named_partner_approval","email_channel_permission","product_specific_permission","approved_creative","issued_earning_url","live_guide_and_disclosure","source_claim_review","referred_checkout_terms","publisher_postal_address","unsubscribe_function","actual_jetpack_preview","confirmed_recipient_consent","founder_final_review"];
+ const fake=()=>({issue:"05",product_sku:"hypnosislive_total_focus",email_copy:{},identity:{},proofs:Object.fromEntries(fields.map(k=>[k,{...complete}]))});
+ let n=0;const check=(ok,label)=>{assert(ok,label);n++};
+ check(auditOfferEvidence({}).decision==="HOLD","missing-all");
+ check(auditOfferEvidence(fake()).decision==="HUMAN_REVIEW_ONLY","synthetic-all-proof-review-only");
+ check(auditOfferEvidence(fake()).send_authorized===false,"never-send");
+ let x=fake();x.issue="06";check(auditOfferEvidence(x).blocks.includes("INVALID_EDITION"),"issue");
+ x=fake();x.product_sku="hypnosislive_catalog";check(auditOfferEvidence(x).blocks.includes("SKU_SCOPE_MISMATCH"),"sku");
+ x=fake();x.active_merchant_link=true;check(auditOfferEvidence(x).blocks.includes("ACTIVE_UNAUTHORIZED_CTA"),"merchant");
+ x=fake();x.active_offer_guide_link=true;check(auditOfferEvidence(x).blocks.includes("ACTIVE_UNAUTHORIZED_CTA"),"guide");
+ x=fake();x.send_requested=true;check(auditOfferEvidence(x).blocks.includes("PRODUCTION_OR_EMAIL_ACTION_FORBIDDEN"),"send");
+ x=fake();x.test_email_requested=true;check(auditOfferEvidence(x).blocks.includes("PRODUCTION_OR_EMAIL_ACTION_FORBIDDEN"),"test-email");
+ x=fake();x.proofs.email_channel_permission=true;check(auditOfferEvidence(x).blocks.includes("MISSING_EMAIL_CHANNEL_PERMISSION"),"bare-boolean");
+ x=fake();delete x.proofs.publisher_postal_address;check(auditOfferEvidence(x).blocks.includes("MISSING_PUBLISHER_POSTAL_ADDRESS"),"postal");
+ x=fake();x.proofs.actual_jetpack_preview.status="UNVERIFIED";check(auditOfferEvidence(x).blocks.includes("MISSING_ACTUAL_JETPACK_PREVIEW"),"preview");
+ x=fake();x.email_copy.price_or_discount_text="$24.44";check(auditOfferEvidence(x).blocks.includes("PRICE_COPY_UNSUPPORTED"),"unvetted-price");
+ x=fake();x.email_copy.mentions_specific_refund="14 days";check(auditOfferEvidence(x).blocks.includes("REFUND_COPY_UNSUPPORTED"),"unvetted-refund");
+ x=fake();x.email_copy.promises_automatic_reprogramming=true;check(auditOfferEvidence(x).blocks.includes("UNSUPPORTED_EFFECT_CLAIM"),"seller-efficacy");
+ x=fake();x.email_copy.identifies_total_focus_as_entire_hypnosis_live_catalog=true;check(auditOfferEvidence(x).blocks.includes("PRODUCT_IDENTITY_DRIFT"),"catalog-sku");
+ x=fake();x.identity.counted_confirmed_signup_from_url_param=true;check(auditOfferEvidence(x).blocks.includes("FALSE_SUBSCRIBER_ATTRIBUTION"),"URL-not-confirm");
+ x=fake();x.identity.counted_download_as_signup=true;check(auditOfferEvidence(x).blocks.includes("FALSE_SUBSCRIBER_ATTRIBUTION"),"download-not-confirm");
+ x=fake();x.identity.added_jetpack_follower_categories=true;check(auditOfferEvidence(x).blocks.includes("FALSE_SUBSCRIBER_ATTRIBUTION"),"count-overlap");
+ x=fake();x.identity.counted_click_as_paid_sale=true;check(auditOfferEvidence(x).blocks.includes("FALSE_REVENUE_ATTRIBUTION"),"click-not-sale");
+ x=fake();x.identity.counted_unsettled_affiliate_value_as_net_revenue=true;check(auditOfferEvidence(x).blocks.includes("FALSE_REVENUE_ATTRIBUTION"),"unsettled-not-net");
+ x=fake();x.issue="03";x.product_sku="zen12_premium";check(auditOfferEvidence(x).decision==="HUMAN_REVIEW_ONLY","zen12-proper-scope");
+ x=fake();x.production_write=true;check(auditOfferEvidence(x).blocks.includes("PRODUCTION_OR_EMAIL_ACTION_FORBIDDEN"),"production-write");
+ return n;
+}
+console.log("PASS",tests(),"synthetic adversarial cases; all send_authorized=false");
