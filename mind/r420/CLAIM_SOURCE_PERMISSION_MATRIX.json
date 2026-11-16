@@ -1,0 +1,452 @@
+{
+  "id": "Mind-R420-2026-11-16",
+  "review_status": "source-verified + commercial hard hold",
+  "scope": "Mind only; no CMS writes",
+  "reviewed_on": "2026-11-16",
+  "source_urls": {
+    "FV_MIND": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "FV_PUY": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "FV_FOCUS": "https://finalvestige.com/focus/",
+    "FV_JOURNAL": "https://finalvestige.com/blog/",
+    "INSP": "https://inspire3.com/",
+    "ZEN": "https://zen12.com/",
+    "ZEN_ABOUT": "https://zen12.com/about",
+    "ZEN_ORDER": "https://zen12.com/order",
+    "ZEN_SECRET": "https://zen12.com/secret/",
+    "HL": "https://hypnosislive.com/mental-skills/total-focus",
+    "BWS": "https://brainwaveshots.com/focus-shot",
+    "FTC_DISC": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "FTC_HEALTH": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "RAYMOND": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+    "PRIMING": "https://journals.sagepub.com/doi/10.1111/j.1467-9280.1997.tb00689.x",
+    "LAG1": "https://journals.sagepub.com/doi/10.1080/02724980443000647",
+    "SLAGTER": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+    "RECON": "https://journals.sagepub.com/doi/10.1177/0956797616654131",
+    "LL": "https://inspire3.com/ll/"
+  },
+  "claim_count": 34,
+  "claims": [
+    {
+      "id": "R001",
+      "claim": "Attentional blink describes reduced detection/report of a second target close after the first in defined rapid tasks",
+      "status": "supported_study",
+      "source_id": "RAYMOND",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "limits": "Exact interval measured in specific task; no general cognitive diagnosis"
+    },
+    {
+      "id": "R002",
+      "claim": "1992 target/probe detection poor for an interval starting ~180 ms after target",
+      "status": "supported_study",
+      "source_id": "RAYMOND",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "limits": "Reported in original abstract; not universal"
+    },
+    {
+      "id": "R003",
+      "claim": "1992 blank/first-target identification controls altered the deficit",
+      "status": "supported_study",
+      "source_id": "RAYMOND",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "limits": "Experimental control, specific to setup"
+    },
+    {
+      "id": "R004",
+      "claim": "Missing a report proves visual input was never processed",
+      "status": "excluded_unsubstantiated",
+      "source_id": "PRIMING",
+      "source_url": "https://journals.sagepub.com/doi/10.1111/j.1467-9280.1997.tb00689.x",
+      "limits": "Priming results suggest processing can occur without report"
+    },
+    {
+      "id": "R005",
+      "claim": "Missed blink targets may prime later reports",
+      "status": "supported_study",
+      "source_id": "PRIMING",
+      "source_url": "https://journals.sagepub.com/doi/10.1111/j.1467-9280.1997.tb00689.x",
+      "limits": "A laboratory result; not subliminal persuasion efficacy"
+    },
+    {
+      "id": "R006",
+      "claim": "Lag-1 sparing can coincide with mistakes in temporal order",
+      "status": "supported_study",
+      "source_id": "LAG1",
+      "source_url": "https://journals.sagepub.com/doi/10.1080/02724980443000647",
+      "limits": "Outcome-specific limitations"
+    },
+    {
+      "id": "R007",
+      "claim": "2016 paper provides alternative temporal episode analysis and open materials",
+      "status": "supported_study",
+      "source_id": "RECON",
+      "source_url": "https://journals.sagepub.com/doi/10.1177/0956797616654131",
+      "limits": "Not a universal clock of consciousness"
+    },
+    {
+      "id": "R008",
+      "claim": "Three months of intensive Vipassana training correlated with reduced blink and changed P3b",
+      "status": "supported_study",
+      "source_id": "SLAGTER",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "limits": "Different population, training and EEG outcome from retail product"
+    },
+    {
+      "id": "R009",
+      "claim": "Three months of intensive Vipassana proves Zen12 works",
+      "status": "excluded_unsubstantiated",
+      "source_id": "SLAGTER",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "limits": "No direct product-specific trial"
+    },
+    {
+      "id": "R010",
+      "claim": "Zen12 is listed on Inspire3 official catalog",
+      "status": "seller_catalog_verified",
+      "source_id": "INSP",
+      "source_url": "https://inspire3.com/",
+      "limits": "Corporate product association only"
+    },
+    {
+      "id": "R011",
+      "claim": "Zen12 offers twelve levels of twelve-minute recordings",
+      "status": "seller_format",
+      "source_id": "ZEN_ABOUT",
+      "source_url": "https://zen12.com/about",
+      "limits": "Attributed seller statement; confirm current tier"
+    },
+    {
+      "id": "R012",
+      "claim": "Zen12 full course is described as 48 MP3 files",
+      "status": "seller_format",
+      "source_id": "ZEN_ORDER",
+      "source_url": "https://zen12.com/order",
+      "limits": "Checkout-specific package"
+    },
+    {
+      "id": "R013",
+      "claim": "Zen12 four styles each level",
+      "status": "seller_format",
+      "source_id": "ZEN_ABOUT",
+      "source_url": "https://zen12.com/about",
+      "limits": "Attribution required"
+    },
+    {
+      "id": "R014",
+      "claim": "Zen12 provides benefits equivalent to an hour of meditation in 12 minutes",
+      "status": "excluded_seller_claim",
+      "source_id": "ZEN",
+      "source_url": "https://zen12.com/",
+      "limits": "No specific comparative controlled evidence"
+    },
+    {
+      "id": "R015",
+      "claim": "Zen12 automatically changes brainwaves and guarantees concentration",
+      "status": "excluded_seller_claim",
+      "source_id": "ZEN_ABOUT",
+      "source_url": "https://zen12.com/about",
+      "limits": "No product-specific support; do not repeat as FV conclusion"
+    },
+    {
+      "id": "R016",
+      "claim": "Main Zen12 lists several tiered prices including Premium 87.99 USD as of review",
+      "status": "seller_price_observed_not_advertisable",
+      "source_id": "ZEN",
+      "source_url": "https://zen12.com/",
+      "limits": "2026-11-16 public appearance; volatile and not referred checkout"
+    },
+    {
+      "id": "R017",
+      "claim": "Zen12 /secret/ has separate 37 USD promotional/coupon representation",
+      "status": "seller_price_observed_not_advertisable",
+      "source_id": "ZEN_SECRET",
+      "source_url": "https://zen12.com/secret/",
+      "limits": "No coupon rights or entitlement; never apply to FV CTA"
+    },
+    {
+      "id": "R018",
+      "claim": "Zen12 /order displays 37 USD with 150 VIP discount",
+      "status": "seller_price_observed_not_advertisable",
+      "source_id": "ZEN_ORDER",
+      "source_url": "https://zen12.com/order",
+      "limits": "Unverified referred checkout, tax, terms"
+    },
+    {
+      "id": "R019",
+      "claim": "Zen12 main seller page advertises a one-year guarantee",
+      "status": "seller_return_claim",
+      "source_id": "ZEN",
+      "source_url": "https://zen12.com/",
+      "limits": "Exact buyer jurisdiction/eligibility and referenced checkout not confirmed"
+    },
+    {
+      "id": "R020",
+      "claim": "Hypnosis Live Total Focus seller lists a 33-minute 47MB audio",
+      "status": "seller_format",
+      "source_id": "HL",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "limits": "Different SKU, not Zen12"
+    },
+    {
+      "id": "R021",
+      "claim": "Hypnosis Live Total Focus seller lists 17.95 USD and 14-day refund",
+      "status": "seller_terms_observed_not_advertisable",
+      "source_id": "HL",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "limits": "Volatile; verify referral checkout, do not generalize catalog-wide"
+    },
+    {
+      "id": "R022",
+      "claim": "Total Focus guarantees limitless concentration or brain reprogramming",
+      "status": "excluded_seller_claim",
+      "source_id": "HL",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "limits": "No product-specific test; no health/performance guarantee"
+    },
+    {
+      "id": "R023",
+      "claim": "Focus Shot seller lists 15- and 30-minute variants",
+      "status": "seller_format",
+      "source_id": "BWS",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "limits": "Separate Brainwave Shots offer"
+    },
+    {
+      "id": "R024",
+      "claim": "Focus Shot performance lasts 4+ hours",
+      "status": "excluded_seller_claim",
+      "source_id": "BWS",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "limits": "No product-specific independent outcome evidence"
+    },
+    {
+      "id": "R025",
+      "claim": "Focus Shot page advertises a one-year refund and price 17.99 USD",
+      "status": "seller_terms_observed_not_advertisable",
+      "source_id": "BWS",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "limits": "Product checkout and current terms need confirmation"
+    },
+    {
+      "id": "R026",
+      "claim": "The official catalog carries affiliate link to a program portal",
+      "status": "public_program_exists_only",
+      "source_id": "INSP",
+      "source_url": "https://inspire3.com/",
+      "limits": "Does NOT establish FV identity, approval, SKU or channel terms"
+    },
+    {
+      "id": "R027",
+      "claim": "Limitless Labs publicly offers swipe copy and requests product approval",
+      "status": "other_product_only",
+      "source_id": "LL",
+      "source_url": "https://inspire3.com/ll/",
+      "limits": "Not proof of any Zen12, Total Focus or Focus Shot rights"
+    },
+    {
+      "id": "R028",
+      "claim": "FTC material connection disclosure should be clear and close to recommendation",
+      "status": "regulatory_guidance",
+      "source_id": "FTC_DISC",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "limits": "Near activated link, plain readable language"
+    },
+    {
+      "id": "R029",
+      "claim": "Health-related claims require adequate prior substantiation",
+      "status": "regulatory_guidance",
+      "source_id": "FTC_HEALTH",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "limits": "Cannot substitute industry-wide research for product trial"
+    },
+    {
+      "id": "R030",
+      "claim": "FV Focus Fieldbook already has free 52-page existing Jetpack funnel",
+      "status": "existing_fv_asset",
+      "source_id": "FV_FOCUS",
+      "source_url": "https://finalvestige.com/focus/",
+      "limits": "No duplicate signup; provider-confirmed leads required"
+    },
+    {
+      "id": "R031",
+      "claim": "Puységur archive differentiates provenance, failure and mechanism",
+      "status": "existing_fv_asset",
+      "source_id": "FV_PUY",
+      "source_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "limits": "Historical bridge not hypnosis treatment evidence"
+    },
+    {
+      "id": "R032",
+      "claim": "FV owned paid Mind SKU is authenticated and payable",
+      "status": "unverified_hold",
+      "source_id": "FV_MIND",
+      "source_url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "limits": "Need rights inventory, live checkout, refund and owner confirmation"
+    },
+    {
+      "id": "R033",
+      "claim": "FV has named Inspire3 publisher acceptance and issued earning URL",
+      "status": "unverified_hold",
+      "source_id": "INSP",
+      "source_url": "https://inspire3.com/",
+      "limits": "Consumer emails and public program portal insufficient"
+    },
+    {
+      "id": "R034",
+      "claim": "Creator post asset IDs can be inferred from a topic name",
+      "status": "excluded_no_attribution",
+      "source_id": "FV_JOURNAL",
+      "source_url": "https://finalvestige.com/blog/",
+      "limits": "Need real Grok published media IDs, rights and mobile link path"
+    }
+  ],
+  "gate_count": 28,
+  "gates": [
+    {
+      "id": "named_fv_partner_approval",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "exact_zen12_sku",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "website_channel_permission",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "email_channel_permission_if_used",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "social_channel_permission_if_used",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "issued_fv_earning_url",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "approved_creative_constraints",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "referred_checkout_match",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "actual_price_tax_at_referral",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "return_policy_referral_eligibility",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "commission_earning_terms",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "refund_clawback_terms",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "settlement_reporting_access",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "sale_to_campaign_attribution",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "merchant_postback_privacy_review",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "FV_owned_sku_rights_fallback",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "FV_owned_paid_checkout_fallback",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "FV_owned_delivery_refund_fallback",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "qa_mobile_360_390_768_1440_1920",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "qa_wai_keyboard_contrast",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "qa_wp_sanitizer",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "qa_actual_video_playback",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "qa_caption_sync",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "qa_site_performance",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "qa_jetpack_existing_funnel",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "qa_event_provider_ledger",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    },
+    {
+      "id": "qa_published_grok_asset_ids",
+      "status": "HOLD",
+      "proof": "No authenticated release/commercial evidence established in this sprint"
+    }
+  ],
+  "activation_policy": {
+    "merchant_anchor": false,
+    "affiliate_tracking": false,
+    "price_advertised": false,
+    "affiliate_disclosure_text": "If you purchase through a future authorized earning link, Final Vestige may earn a commission at no additional cost to you.",
+    "note": "Prospective disclosure in draft adjacent to disabled CTA. Never replace with vague 'sponsored' badge."
+  }
+}
