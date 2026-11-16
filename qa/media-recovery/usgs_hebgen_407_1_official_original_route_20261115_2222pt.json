@@ -1,0 +1,102 @@
+{
+  "schema": "fv-media-p0-official-original-route-v1",
+  "audit_date_pt": "2026-11-15",
+  "finding": "USGS official Original is a different URL path from current WordPress/JETPACK path, despite exact filename; a viable rights-evidenced QA route, NOT a confirmed guest image failure or pixel-match.",
+  "wordpress": {
+    "post_id": 407,
+    "slot": "407:1",
+    "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+    "alt": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake.",
+    "view_src": "https://i0.wp.com/d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg?ssl=1",
+    "authored_origin": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+    "guest_http_status": null,
+    "guest_current_src": null,
+    "guest_decode_ok": null,
+    "guest_natural_width": null,
+    "guest_natural_height": null,
+    "guest_transfer_bytes": null,
+    "confirmed_broken": null
+  },
+  "official": {
+    "agency": "US Geological Survey",
+    "catalog": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+    "original": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+    "photographer": "J. R. Stacy",
+    "rights_catalog_statement": "Public Domain.",
+    "filename_match": true,
+    "same_pixel_hash_proven": false,
+    "same_frame_review_complete": false,
+    "native_width": null,
+    "native_height": null,
+    "rights_review_complete": false
+  },
+  "route_observations": [
+    {
+      "route": "official_catalog",
+      "url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+      "method": "public-web-text-reader",
+      "outcome": "catalog_visible",
+      "http_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "route": "official_original",
+      "url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+      "method": "public-web-image-reader",
+      "outcome": "image_rendered",
+      "http_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "route": "authored_origin",
+      "url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "method": "public-web-document-reader",
+      "outcome": "unsupported_binary_octet_stream",
+      "http_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "route": "wordpress_jetpack_view",
+      "url": "https://i0.wp.com/d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg?ssl=1",
+      "method": "public-web-document-reader",
+      "outcome": "tool_inaccessible",
+      "http_status": null,
+      "guest_browser_status": null
+    }
+  ],
+  "review_derivative": {
+    "target_max_width": 960,
+    "no_upscaling": true,
+    "native_dimensions_verified": false,
+    "output_width": null,
+    "output_height": null,
+    "formula": "width=min(960,nativeWidth);height=round(nativeHeight*width/nativeWidth)",
+    "format": "WEBP_OR_JPEG_ONLY_AFTER_RIGHTS_AND_VISUAL_QA",
+    "cache_location": "WordPress Media Library staging only after explicit approval",
+    "cache_approved": false,
+    "upload_approved": false,
+    "production_change_approved": false
+  },
+  "next_action": "Use Site QA #154 existing collector in logged-out cold desktop and mobile to capture 407:1 actual currentSrc, GET status/redirects/MIME, naturalWidth/Height, screenshot and bytes; compare official Original; only then stage a single-slot reversible plan with exact image matching and rights review.",
+  "baselines": {
+    "historical_published_posts": 61,
+    "historical_image_tags": 355,
+    "current_published_posts": 66,
+    "current_image_tags": 361,
+    "reported_broken_count": 42,
+    "guest_confirmed_broken_count": null,
+    "claimed_wire_reduction_percent": 76,
+    "measured_wire_reduction_percent": null,
+    "oversized_wp_originals": 20,
+    "oversized_storage_bytes": 64385752
+  },
+  "guardrails": {
+    "wordpress_writes": 0,
+    "homepage_design_changes": 0,
+    "post_block_rewrites": 0,
+    "image_downloads_or_mirrors": 0,
+    "pr_merges": 0,
+    "deployments": 0,
+    "spend_usd": 0
+  }
+}
