@@ -1,0 +1,25 @@
+{
+  "status": "ENCODED LOCAL SILENT PROTOTYPE, NOT COMMITTED MEDIA OR APPROVED RELEASE",
+  "source": "build_film.py",
+  "file": "r418-original-silent-42s.mp4",
+  "sha256": "c12df27002bb863dacfbe770845fd2213166275870c591ec3a5b7cb02d83bbea",
+  "ffprobe": {
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 960,
+        "height": 540,
+        "r_frame_rate": "12/1"
+      }
+    ],
+    "format": {
+      "duration": "42.000000",
+      "size": "79748"
+    }
+  },
+  "scenes": 6,
+  "audio": false,
+  "merchant_links": false,
+  "rights": "Original typographic slides, no outside assets; production review pending",
+  "test_note": "Local ffmpeg/ffprobe executed successfully 2026-11-16; media bytes NOT in this draft PR; founder and site QA must review before future embedding."
+}
