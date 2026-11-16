@@ -36,7 +36,7 @@ check(stripped(a)===stripped(b),'identical substantive A/B guide after removing 
 check(b.includes('aria-labelledby="filmhead"'),'B film heading');
 check(b.includes('<details>')&&b.includes('<summary>'),'B keyboard accessible optional open');
 check(b.includes('complete narrated storyboard'),'B described accurately');
-check(b.includes('No video file has been encoded'),'B not falsely described as playable');
+check(b.includes('No playable video is embedded'),'B not falsely described as playable');
 check(svg.includes('<title')&&svg.includes('<desc'),'accessible SVG title/desc');
 check(!/<script|<foreignObject|(?:href|url)\s*=\s*["']https?:/i.test(svg),'no active or remote SVG');
 check(vtt.startsWith('WEBVTT\n'),'VTT header');
@@ -59,12 +59,12 @@ const unsafe=[
   a.replace('https://finalvestige.com/focus/','https://zen12.com/order'),
   a.replace('</main>','<script>alert(1)</script></main>'),
   a.replace('name="robots" content="noindex,nofollow"','name="robots" content="index,follow"'),
-  b.replace('No video file has been encoded','Video is available to play')
+  b.replace('No playable video is embedded','Video is available to play')
 ];
 check(!unsafe[0].includes('disabled type="button"'),'mutation disabled toggle detected');
 check(!unsafe[1].includes('Affiliate disclosure:'),'mutation disclosure removed detected');
 check(!noMerchantAnchor(unsafe[2]),'mutation checkout link detected');
 check(!safe(unsafe[3]),'mutation active script detected');
 check(!unsafe[4].includes('name="robots" content="noindex,nofollow"'),'mutation indexable detected');
-check(!unsafe[5].includes('No video file has been encoded'),'mutation fake playback detected');
+check(!unsafe[5].includes('No playable video is embedded'),'mutation fake playback detected');
 console.log('FV R418 native static preflight PASS: '+checks+' assertions; 6/6 deliberately unsafe changes detected. This does not constitute browser, WordPress, checkout or real-video QA.');
