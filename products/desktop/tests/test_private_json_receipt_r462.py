@@ -59,7 +59,7 @@ class StrictPrivateReceiptR462(unittest.TestCase):
         self.reject(b'{"a":{"b":[{"c":1,"c":2}]}}')
 
     def test_escaped_key_duplicate_rejected(self):
-        self.reject(b'{"source_sha256":"a","source\u005fsha256":"b"}')
+        self.reject(b'{"source_sha256":"a","source\\u005fsha256":"b"}')
 
     def test_nul_payload_safe_fixed_failure(self):
         self.reject(b'{"PRIVATE_ACCOUNT_213":1}\x00')
