@@ -69,6 +69,10 @@ for k,v in [('schema',4),('release_state','PASS'),('approved',True),('approved',
     ATTACKS.append((f'manifest_{k}_{str(v)}',lambda d,m,e,k=k,v=v:m.__setitem__(k,v)))
 ATTACKS += [
 ('drop_article',lambda d,m,e:m['articles'].pop()),
+('root_extra_false_qd',lambda d,m,e:m.__setitem__('qualified_safety_approved',True)),
+('root_extra_publish_claim',lambda d,m,e:m.__setitem__('publication_approved',True)),
+('article_extra_qd',lambda d,m,e:m['articles'][0].__setitem__('qualified_safety_approved',True)),
+('article_extra_publish',lambda d,m,e:m['articles'][0].__setitem__('publication_state','LIVE')),
 ('duplicate_article',lambda d,m,e:m['articles'][1].__setitem__('slug','guide-0')),
 ('foreign_article',lambda d,m,e:m['articles'][1].__setitem__('slug','injected')),
 ('unsafe_slug',lambda d,m,e:m['articles'][0].__setitem__('slug','../bad')),
@@ -89,6 +93,7 @@ ATTACKS += [
 ('huge_html',lambda d,m,e:e.__setitem__('guide-0',('A'*1000001,e['guide-0'][1]))),
 ('no_heading',lambda d,m,e:e.__setitem__('guide-0',(e['guide-0'][0].replace('<h1>','<p>').replace('</h1>','</p>'),e['guide-0'][1]))),
 ('heading_drift',lambda d,m,e:e.__setitem__('guide-0',(e['guide-0'][0].replace('<h1>','<h2>').replace('</h1>','</h2>'),e['guide-0'][1]))),
+('subtle_visible_text_change',lambda d,m,e:e.__setitem__('guide-0',(e['guide-0'][0].replace('Verified only as','Unverified only as'),e['guide-0'][1]))),
 ('shortened_copy',lambda d,m,e:e.__setitem__('guide-0',(e['guide-0'][0].replace('This is draft synthetic placeholder text for comparative source auditing only. '*7,'short'),e['guide-0'][1]))),
 ('source_id_rewrite',lambda d,m,e:e.__setitem__('guide-0',(e['guide-0'][0].replace('data-source-id="src-0"','data-source-id="src-1"'),e['guide-0'][1]))),
 ('source_url_rewrite',lambda d,m,e:e.__setitem__('guide-0',(e['guide-0'][0].replace('asset-0','asset-3'),e['guide-0'][1]))),
