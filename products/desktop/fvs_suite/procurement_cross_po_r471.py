@@ -1,8 +1,9 @@
 """Cross-PO document reuse review evidence; never a payment/compliance decision.
 
-A single invoice or credit may legitimately span multiple orders. Only typed
-source invoice CSV rows and their physical line references are indexed. No
-source bytes, Decimal values, documents or financial movements are changed.
+One document may legitimately span multiple orders. Invoice/credit and
+receipt/return CSV streams are indexed by explicit event type, with physical
+source row citations. No source bytes, Decimal values, documents or financial
+movements are changed.
 """
 from __future__ import annotations
 
@@ -11,7 +12,7 @@ from typing import Callable, Mapping
 
 
 def _typed_cross_po_source_rows(
-    invoice_groups: Mapping[tuple[str, str], list[dict[str, str]]],
+    source_groups: Mapping[tuple[str, str], list[dict[str, str]]],
     *,
     document_key: Callable[[object], str],
     event_type: Callable[[dict[str, str]], str],
@@ -24,7 +25,7 @@ def _typed_cross_po_source_rows(
     the same PO cannot create a false cross-PO alert.
     """
     occurrences: dict[str, list[tuple[tuple[str, str], str]]] = defaultdict(list)
-    for group, rows in invoice_groups.items():
+    for group, rows in source_groups.items():
         for row in rows:
             if event_type(row) != kind:
                 continue
@@ -65,3 +66,26 @@ def cross_po_invoice_source_rows(
     return _typed_cross_po_source_rows(
         invoice_groups, document_key=document_key, event_type=event_type,
         kind="invoice")
+
+
+
+def cross_po_receipt_source_rows(
+    receipt_groups: Mapping[tuple[str, str], list[dict[str, str]]],
+    *, document_key: Callable[[object], str],
+    event_type: Callable[[dict[str, str]], str],
+) -> dict[tuple[str, str], tuple[str, ...]]:
+    """Return original receipt cross-order review row citations (R473)."""
+    return _typed_cross_po_source_rows(
+        receipt_groups, document_key=document_key, event_type=event_type,
+        kind="receipt")
+
+
+def cross_po_return_source_rows(
+    receipt_groups: Mapping[tuple[str, str], list[dict[str, str]]],
+    *, document_key: Callable[[object], str],
+    event_type: Callable[[dict[str, str]], str],
+) -> dict[tuple[str, str], tuple[str, ...]]:
+    """Return return-document cross-order review row citations (R473)."""
+    return _typed_cross_po_source_rows(
+        receipt_groups, document_key=document_key, event_type=event_type,
+        kind="return")
