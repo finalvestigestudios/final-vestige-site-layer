@@ -16,6 +16,20 @@ from typing import Callable, Mapping
 _MAX_CROSS_PO_CITATIONS = 1_000_000
 
 
+def _source_row_sort_key(row: object) -> tuple[int, int, str]:
+    """Sort source-row citations without coercing untrusted text into errors.
+
+    Ordinary imported rows are canonical ASCII digits. Defensive direct-API
+    callers may use leading zeroes (the R477 tie-break contract), but never
+    arbitrary labels, non-native strings, Unicode numerals or overlong ints.
+    Failure messages contain no customer row text or file paths.
+    """
+    if (type(row) is not str or not 1 <= len(row) <= 10
+            or any(char < "0" or char > "9" for char in row)):
+        raise ValueError("Cross-order review requires numeric source row citations")
+    return int(row), len(row), row
+
+
 def _reserve_citation_budget(
     documents: Mapping[str, list[tuple[tuple[str, str], str]]],
     remaining: int,
@@ -30,6 +44,11 @@ def _reserve_citation_budget(
         groups = {group for group, _ in occurrences}
         if len({group[0] for group in groups}) < 2:
             continue
+        # Preflight canonical-sort safety for every cross-PO reference before
+        # allocating ANY typed output. Without this check int(row) could echo
+        # a private CSV label in ValueError, or reject a 4,300-digit string.
+        for _, row in occurrences:
+            _source_row_sort_key(row)
         cost = len(groups) * len({row for _, row in occurrences})
         if cost > remaining:
             raise ValueError("Cross-order document review exceeds citation budget")
@@ -56,7 +75,7 @@ def _materialize_index(
     # Real CSV physical rows use canonical digits; tie-breaking also makes
     # this shared helper deterministic for callers with noncanonical labels.
     return {
-        group: tuple(sorted(rows, key=lambda row: (int(row), len(row), row)))
+        group: tuple(sorted(rows, key=_source_row_sort_key))
         for group, rows in sorted(affected.items())
     }
 
