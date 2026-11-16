@@ -126,19 +126,19 @@ class SourceDigestBindingR461(unittest.TestCase):
         observed = []
         with patch.object(gate, '_source_fingerprint', return_value=OTHER), \
              patch.object(gate, 'verified_six_app_digest', return_value=GOOD), \
-             patch.object(gate, '_run_tests', return_value=(16, 168)), \
+             patch.object(gate, '_run_tests', return_value=(28, 280)), \
              patch.object(gate, '_run_smokes', side_effect=lambda _, digest:
                           observed.append(digest) or 12):
             result = gate.run_gate(self.desktop)
         self.assertEqual(observed, [GOOD])
-        self.assertEqual(result['regression_mode_runs'], 16)
+        self.assertEqual(result['regression_mode_runs'], 28)
         self.assertFalse(result['release_authorized'])
 
     def test_parent_rejects_engine_mutation_during_regressions(self):
         with patch.object(gate, '_source_fingerprint', return_value=OTHER), \
              patch.object(gate, 'verified_six_app_digest',
                           side_effect=[GOOD, OTHER]), \
-             patch.object(gate, '_run_tests', return_value=(16, 168)), \
+             patch.object(gate, '_run_tests', return_value=(28, 280)), \
              patch.object(gate, '_run_smokes') as smoke:
             with self.assertRaises(gate.LocalGateError):
                 gate.run_gate(self.desktop)
@@ -148,7 +148,7 @@ class SourceDigestBindingR461(unittest.TestCase):
         with patch.object(gate, '_source_fingerprint', return_value=OTHER), \
              patch.object(gate, 'verified_six_app_digest',
                           side_effect=[GOOD, GOOD, OTHER]), \
-             patch.object(gate, '_run_tests', return_value=(16, 168)), \
+             patch.object(gate, '_run_tests', return_value=(28, 280)), \
              patch.object(gate, '_run_smokes', return_value=12):
             with self.assertRaises(gate.LocalGateError):
                 gate.run_gate(self.desktop)
