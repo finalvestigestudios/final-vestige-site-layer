@@ -12,6 +12,7 @@ import argparse
 import hashlib
 from io import BytesIO
 import json
+import os
 from pathlib import Path, PurePosixPath
 import re
 import stat
@@ -147,13 +148,45 @@ def inspect(raw: bytes, *, expected_zip_sha: str = ARCHIVE_SHA256,
                   members=member_count)
 
 
+
+def read_bounded_original(path: Path) -> bytes:
+    """Open only a single-link regular ZIP without following symlinks, bounded in RAM.
+
+    This protects the integration runner from an attacker-supplied enormous path;
+    immutable SHA pins in inspect() separately catch content replacement.
+    """
+    if not hasattr(os, 'O_NOFOLLOW'):
+        raise ValueError('safe_nofollow_open_unsupported')
+    flags = os.O_RDONLY | os.O_NOFOLLOW
+    if hasattr(os, 'O_CLOEXEC'):
+        flags |= os.O_CLOEXEC
+    fd = os.open(path, flags)
+    try:
+        before = os.fstat(fd)
+        if (not stat.S_ISREG(before.st_mode) or before.st_nlink != 1 or
+                before.st_size < 1 or before.st_size > MAX_ZIP):
+            raise ValueError('unsafe_original_archive_file')
+        with os.fdopen(fd, 'rb') as fh:
+            fd = -1
+            data = fh.read(MAX_ZIP + 1)
+            after = os.fstat(fh.fileno())
+            if (len(data) != before.st_size or len(data) > MAX_ZIP or
+                    fh.read(1) or after.st_size != before.st_size or
+                    after.st_ino != before.st_ino or after.st_dev != before.st_dev):
+                raise ValueError('changed_or_unbounded_original_archive')
+            return data
+    finally:
+        if fd >= 0:
+            os.close(fd)
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--e395-zip', type=Path, required=True,
                    help='Original local E395 editorial ZIP; read-only, never extracted')
     args = p.parse_args(argv)
     try:
-        raw = args.e395_zip.read_bytes()
+        raw = read_bounded_original(args.e395_zip)
     except (OSError, ValueError):
         print(json.dumps(report(['missing_original_e395_zip']), sort_keys=True))
         return 2
