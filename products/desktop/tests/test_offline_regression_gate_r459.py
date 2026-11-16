@@ -74,7 +74,7 @@ class OfflineRegressionGateR459(unittest.TestCase):
         with self.assertRaises(gate.LocalGateError):
             gate._source_fingerprint(self.root)
 
-    def test_exact_eight_child_interpreters_and_receipts(self):
+    def test_exact_ten_child_interpreters_and_receipts(self):
         observed = []
 
         def fake_subprocess(command, **kwargs):
@@ -84,8 +84,8 @@ class OfflineRegressionGateR459(unittest.TestCase):
 
         with patch.object(gate.subprocess, 'run', side_effect=fake_subprocess):
             modes, methods = gate._run_tests(self.root)
-        self.assertEqual((modes, methods), (8, 104))
-        self.assertEqual(sum('-OO' in command for command, _ in observed), 4)
+        self.assertEqual((modes, methods), (10, 130))
+        self.assertEqual(sum('-OO' in command for command, _ in observed), 5)
         self.assertTrue(all('-I' in command and '-B' in command
                             and kwargs['stdout'] == subprocess.DEVNULL
                             and kwargs['stderr'] == subprocess.DEVNULL
@@ -93,7 +93,7 @@ class OfflineRegressionGateR459(unittest.TestCase):
                             and 'PYTHONPATH' not in kwargs['env']
                             for command, kwargs in observed))
 
-    def test_actual_eight_isolated_interpreters_execute_real_unittest(self):
+    def test_actual_ten_isolated_interpreters_execute_real_unittest(self):
         fixture = ("import unittest\n"
                    "class SyntheticGateTest(unittest.TestCase):\n"
                    "    def test_native_source_gate(self):\n"
@@ -103,7 +103,7 @@ class OfflineRegressionGateR459(unittest.TestCase):
         for name in gate.TESTS:
             (self.root / 'tests' / name).write_text(fixture, encoding='utf-8')
         modes, methods = gate._run_tests(self.root)
-        self.assertEqual((modes, methods), (8, 8))
+        self.assertEqual((modes, methods), (10, 10))
 
     def test_actual_zero_discovery_fails_before_false_receipt(self):
         for name in gate.TESTS:
@@ -144,14 +144,15 @@ class OfflineRegressionGateR459(unittest.TestCase):
             return SimpleNamespace(returncode=0)
 
         with patch.object(gate.subprocess, 'run', side_effect=valid_child):
-            self.assertEqual(gate._run_smokes(self.root), 12)
+            self.assertEqual(gate._run_smokes(self.root, 'a' * 64), 12)
         with patch.object(gate.subprocess, 'run',
                           return_value=SimpleNamespace(returncode=1)):
             with self.assertRaises(gate.LocalGateError):
-                gate._run_smokes(self.root)
+                gate._run_smokes(self.root, 'a' * 64)
 
     def test_complete_gate_retains_release_hold(self):
-        with patch.object(gate, '_run_tests', return_value=(8, 96)), \
+        with patch.object(gate, '_six_source_digest', return_value='a' * 64), \
+             patch.object(gate, '_run_tests', return_value=(10, 96)), \
              patch.object(gate, '_run_smokes', return_value=12):
             result = gate.run_gate(self.root)
         self.assertEqual(result['regression_methods_passed'], 96)
@@ -163,7 +164,8 @@ class OfflineRegressionGateR459(unittest.TestCase):
         def change_source(_):
             (self.root / gate.SOURCE_INPUTS[-1]).write_text('tampered', encoding='utf-8')
             return (8, 80)
-        with patch.object(gate, '_run_tests', side_effect=change_source), \
+        with patch.object(gate, '_six_source_digest', return_value='a' * 64), \
+             patch.object(gate, '_run_tests', side_effect=change_source), \
              patch.object(gate, '_run_smokes', return_value=12):
             with self.assertRaises(gate.LocalGateError):
                 gate.run_gate(self.root)
