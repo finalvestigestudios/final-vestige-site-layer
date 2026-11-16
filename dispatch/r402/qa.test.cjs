@@ -8,13 +8,13 @@ const docs=['ISSUE03_ZEN12_OPTIONAL.md','ISSUE03_ZEN12_OFFLINE.txt','ISSUE03_ZEN
 const m=JSON.parse(fs.readFileSync(path.join(root,'CLAIM_PERMISSION_LEDGER.json'),'utf8'));
 test('six-issue campaign unchanged',()=>{assert.equal(m.campaign.issues_total,6);assert.deepEqual(m.campaign.editorial,[1,2,4,6]);assert.deepEqual(m.campaign.commercial_review_pending,[3,5]);});
 test('all specific release attestations false',()=>assert.ok(Object.values(m.release_attestation).every(x=>x===false)));
-test('merchant CTA remains inactive',()=>{assert.equal(m.commerce.active,false);assert.match(m.commerce.cta,/^\\[\\[APPROVED_/);});
+test('merchant CTA remains inactive',()=>{assert.equal(m.commerce.active,false);assert.ok(m.commerce.cta.startsWith('[[APPROVED_'));});
 test('commercial disclosure consistent in all formats',()=>docs.forEach(s=>assert.match(s,/Final Vestige may earn a commission/)));
 test('core editorial subject consistent in all formats',()=>docs.forEach(s=>assert.match(s,/Twelve minutes is a duration, not a result/)));
 test('all specimens explicitly withheld',()=>docs.forEach(s=>assert.match(s,/UNSENT|NOT ADOPTED|NOT FOR SENDING/i)));
 test('all specimens withhold physical postal address',()=>docs.forEach(s=>assert.match(s,/VALID_FV_PHYSICAL_POSTAL_ADDRESS_REQUIRED/)));
 test('all specimens withhold unsubscribe',()=>docs.forEach(s=>assert.match(s,/NATIVE_JETPACK_UNSUBSCRIBE_URL_AND_RENDERED_FUNCTIONAL_TEST_REQUIRED/)));
-test('no exact price in copy before referral verified',()=>docs.forEach(s=>assert.doesNotMatch(s,/\\$[0-9]+/)));
+test('no exact price in copy before referral verified',()=>docs.forEach(s=>assert.doesNotMatch(s,new RegExp('[$][0-9]+'))));
 test('claims maintain scientific boundary',()=>{assert.match(m.evidence.find(x=>x.id==='zen12equivalence').class,/UNPROVEN/);assert.equal(m.commerce.independently_proven_zen12_effect,false);});
 test('HTML uses email-safe table skeleton',()=>{assert.match(docs[2],/<table role="presentation"/);assert.match(docs[2],/<html lang="en">/);});
 test('seller pages only in sources not purchase links',()=>assert.doesNotMatch(docs[2],/<a[^>]+href="https:\/\/zen12.com/));
