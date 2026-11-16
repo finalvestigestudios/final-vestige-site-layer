@@ -99,7 +99,7 @@ const negatives=[
  ["removed disclosure",()=>disclose(data.a.replace("Final Vestige may earn a commission at no additional cost to you",""))],
  ["removed disabled",()=>commercialHold(data.a.replace('type="button" disabled aria-disabled="true"','type="button"'))],
  ["copy divergence B",()=>parity(data.a,data.b.replace("The format is real enough","A different offer is now best"))],
- ["claim matrix gate open",()=>data.matrix.commercial_gates.map(x=>x.state).every(x=>x==="HOLD")&&false],
+ ["claim matrix gate open",()=>{const tampered=data.matrix.commercial_gates.map((g,i)=>i===0?{...g,state:"OPEN"}:g);return tampered.every(g=>g.state==="HOLD");}],
  ["unsafe checkout anchor",()=>safe(data.a+'<a href="https://merchant.invalid/checkout?hop=abc">click</a>')]
 ];
 for(const [name,test] of negatives){let outcome=false;try{outcome=test()}catch{}check("mutation rejected: "+name,!outcome);}
