@@ -6,15 +6,24 @@ import {fileURLToPath} from 'node:url';
 import assert from 'node:assert/strict';
 const dir=dirname(fileURLToPath(import.meta.url));
 const read=n=>readFileSync(join(dir,n),'utf8');
-const files={a:read('ZEN12_A_TEXT.html'),b:read('ZEN12_B_OPTIONAL_FILM_CONCEPT.html'),hub:read('MIND_HUB_SOURCE_ONLY.html'),article:read('THE_FREQUENCY_THAT_WAS_SUPPOSED_TO_BECOME_FOCUS.md'),decision:read('CONVERSION_CHECKOUT_AND_CREATOR_ACCEPTANCE.md')};
+const files={a:read('ZEN12_A_TEXT.html'),b:read('ZEN12_B_OPTIONAL_FILM_CONCEPT.html'),hub:read('MIND_HUB_SOURCE_ONLY.html'),article:read('THE_FREQUENCY_THAT_WAS_SUPPOSED_TO_BECOME_FOCUS.md'),decision:read('CONVERSION_CHECKOUT_AND_CREATOR_ACCEPTANCE.md'),filmGenerator:read('film/build_film.py')};
 const matrix=JSON.parse(read('CLAIM_PROOF_AND_PERMISSION_MATRIX.json'));
 let tested=0;
 const check=(name,fn)=>{fn();tested++;console.log('PASS '+String(tested).padStart(2,'0')+' '+name);};
 const buyText=s=>s.replace(/<details class="film" id="optional-film">[\s\S]*?<\/details>/,'').replace(/<title>Zen12 independent guide — (?:B optional film concept|A text only) \| Final Vestige<\/title>/,'<title>Zen12 independent guide</title>');
 const anchors=s=>[...s.matchAll(/<a\b[^>]*\bhref=["']([^"']+)["']/gi)].map(m=>m[1]);
-const reject=s=>{
- assert(!/<script\b|<iframe\b|<form\b|<input\b|<object\b|<embed\b|<video\b/i.test(s),'active or input HTML element');
- assert(!/\bon\w+\s*=|\bautoplay(?:\\s|=|>)+|document\.cookie|localStorage|sessionStorage/i.test(s),'JS/auto tracking');
+const reject=(s,{allowVideo=false}={})=>{
+ assert(!/<script\b|<iframe\b|<form\b|<input\b|<object\b|<embed\b/i.test(s),'active or input HTML element');
+ assert(!/\bon\w+\s*=|<[^>]+\bautoplay(?:\s|=|>)|document\.cookie|localStorage|sessionStorage/i.test(s),'JS/autoplay tracking or handlers');
+ const videos=[...s.matchAll(/<video\b[^>]*>/gi)].map(x=>x[0]);
+ if(!allowVideo){assert.equal(videos.length,0,'A must not include video');}
+ else{
+  assert.equal(videos.length,1,'B must have exactly one video');
+  assert(/\bcontrols\b/.test(videos[0])&&/preload="none"/.test(videos[0])&&/\bplaysinline\b/.test(videos[0]),'no forced playback, visible native controls');
+  assert(/poster="\.\/film\/FV_R416_POSTER\.png"/.test(videos[0]),'local original poster');
+  assert(/<source src="\.\/film\/FV_R416_42S\.mp4" type="video\/mp4">/.test(s),'local film source');
+  assert(/<track kind="captions" src="\.\/film\/FV_R416_CAPTIONS\.vtt" srclang="en" label="English" default>/.test(s),'local caption track');
+ }
  assert(/<button\b[^>]*\bdisabled\b[^>]*>/i.test(s),'native disabled commerce control');
  assert(/Affiliate disclosure next to proposed offer:/.test(s),'adjacent affiliate disclosure');
  assert(/No such link is currently active/.test(s),'fail-closed language');
@@ -25,13 +34,14 @@ const reject=s=>{
 };
 for(const k of ['a','b']){
  check(k+' document and noindex',()=>{assert(/<!doctype html>/i.test(files[k]));assert(/lang="en"/.test(files[k]));assert(/name="viewport"/.test(files[k]));assert(/noindex,nofollow/.test(files[k]));});
- check(k+' fail-closed commerce',()=>reject(files[k]));
+ check(k+' fail-closed commerce',()=>reject(files[k],{allowVideo:k==='b'}));
  check(k+' free route and merchant descriptions',()=>{assert(files[k].includes('https://finalvestige.com/focus/'));assert(files[k].includes('https://zen12.com/about'));assert(files[k].includes('48 MP3s'));});
  check(k+' keyboard/mobile/reduced-motion',()=>{assert(/focus-visible/.test(files[k]));assert(/max-width:800px/.test(files[k]));assert(/prefers-reduced-motion/.test(files[k]));assert(/Skip to main content/.test(files[k]));});
  check(k+' external research and FTC',()=>{assert(files[k].includes('PMC10198548'));assert(files[k].includes('health-products-compliance-guidance'));});
 }
 check('A/B copy exactly identical apart from optional film and variant title',()=>assert.equal(buyText(files.a),buyText(files.b)));
-check('B optional, no-JS, rights-original and transcript',()=>{assert(/<details class="film" id="optional-film">/.test(files.b));assert(/role="img"/.test(files.b));assert(/<title id="poster-title">/.test(files.b));assert(/Full accessible narration transcript/.test(files.b));assert(/no encoded video is supplied here/i.test(files.b));assert(!files.a.includes('optional-film'));});
+check('B optional, no-JS, rights-original and transcript',()=>{assert(/<details class="film" id="optional-film">/.test(files.b));assert(/role="img"/.test(files.b));assert(/<title id="poster-title">/.test(files.b));assert(/Full accessible narration transcript/.test(files.b));assert(/<video controls preload="none" playsinline/.test(files.b));assert(/offline-generated film/.test(files.b));assert(!files.a.includes('optional-film'));});
+check('film builder source generates original offline MP4 and captions',()=>{assert(files.filmGenerator.includes('SECONDS = 640')===false);assert(files.filmGenerator.includes('SECONDS = 640, 360')===false);assert(files.filmGenerator.includes('W, H, FPS, SECONDS = 640, 360, 2, 42'));assert(files.filmGenerator.includes('FV_R416_CAPTIONS.vtt'));assert(files.filmGenerator.includes('FV_R416_42S.mp4'));});
 check('B six caption ranges cover complete 42 sec',()=>{for(let [s,e] of [[0,7],[7,14],[14,21],[21,28],[28,35],[35,42]]) assert(files.b.includes(`00:${String(s).padStart(2,'0')}–00:${String(e).padStart(2,'0')}`));});
 check('hub four streams and safe assets',()=>{['Perception and attention','history of suggestion','Practice and reflection','Tools under review'].forEach(t=>assert(files.hub.toLowerCase().includes(t.toLowerCase())));assert(files.hub.includes('noindex,nofollow'));assert(!/<form\b|<script\b|<iframe\b/i.test(files.hub));});
 check('hub live-article and free link destinations',()=>{['/change-blindness/','/mesmerism/','/puysegurs-animal-magnetism-files/','https://finalvestige.com/focus/'].forEach(u=>assert(files.hub.includes(u)));});
