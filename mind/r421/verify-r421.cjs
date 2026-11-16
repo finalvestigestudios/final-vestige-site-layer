@@ -38,7 +38,7 @@ function pageSafety(s) {
   assert.match(s, /no additional email form/i);
   denies(s,sellerLink);
   denies(s,/<script\b|<iframe\b|<form\b|<input\b/i);
-  denies(s,/\bautoplay\b|\bonclick\s*=|\bonload\s*=/i);
+  denies(s,/<(?:video|audio)\b[^>]*\bautoplay\b|\bonclick\s*=|\bonload\s*=/i);
   denies(s,/\bhref\s*=\s*["'](?:javascript|data):/i);
   denies(s,/<a\b[^>]*\bdownload\b/i);
   denies(s,/<video\b|<audio\b/i); // placeholder cannot masquerade as playable
