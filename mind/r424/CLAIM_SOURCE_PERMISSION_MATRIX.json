@@ -1,0 +1,531 @@
+{
+  "title": "Mind R424 Claim-to-Source / Permission / Price / Return Gate Matrix",
+  "reviewed_date": "2026-11-16",
+  "scope": "source-controlled editorial and prospective pre-sell only",
+  "commercial_state": "HARD_HOLD",
+  "source_urls": {
+    "S1": "https://doi.org/10.1068/p281059",
+    "S2": "https://doi.org/10.1177/0956797613479386",
+    "S3": "https://doi.org/10.1068/i0386",
+    "Z1": "https://inspire3.com/",
+    "Z2": "https://zen12.com/",
+    "Z3": "https://zen12.com/about",
+    "Z4": "https://zen12.com/secret/",
+    "H1": "https://hypnosislive.com/mental-skills/total-focus",
+    "B1": "https://brainwaveshots.com/focus-shot",
+    "F1": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "F2": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "V1": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "V2": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "V3": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "V4": "https://finalvestige.com/focus/",
+    "G": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+  },
+  "claims": [
+    {
+      "id": "P01",
+      "claim": "Simons/Chabris published dynamic unexpected-object study in 1999",
+      "kind": "independent primary",
+      "status": "supported limited",
+      "source_id": "S1",
+      "limitation": "Do not apply a universal non-detection rate; difficulty/similarity change outcomes",
+      "release_eligible": true
+    },
+    {
+      "id": "P02",
+      "claim": "1999 work measured noticing under an assigned visual monitoring task",
+      "kind": "independent primary",
+      "status": "supported limited",
+      "source_id": "S1",
+      "limitation": "Not a test of general intelligence or perception training",
+      "release_eligible": true
+    },
+    {
+      "id": "P03",
+      "claim": "2013 radiology experiment recruited 24 radiologists",
+      "kind": "independent primary",
+      "status": "supported limited",
+      "source_id": "S2",
+      "limitation": "Experimental sample, not population prevalence",
+      "release_eligible": true
+    },
+    {
+      "id": "P04",
+      "claim": "2013 radiologists failed to see unexpected gorilla in 83% of cases",
+      "kind": "independent primary",
+      "status": "supported limited",
+      "source_id": "S2",
+      "limitation": "Do not equate with missed actual medical abnormalities",
+      "release_eligible": true
+    },
+    {
+      "id": "P05",
+      "claim": "2013 unexpected gorilla was 48x average nodule size",
+      "kind": "independent primary",
+      "status": "supported limited",
+      "source_id": "S2",
+      "limitation": "Context limited to study stimulus",
+      "release_eligible": true
+    },
+    {
+      "id": "P06",
+      "claim": "Eye tracking showed many missed figure despite gaze at its location",
+      "kind": "independent primary",
+      "status": "supported limited",
+      "source_id": "S2",
+      "limitation": "Looking at location not same as conscious recognition",
+      "release_eligible": true
+    },
+    {
+      "id": "P07",
+      "claim": "2010 foreknowledge did not improve detection of additional surprises",
+      "kind": "independent primary",
+      "status": "supported limited",
+      "source_id": "S3",
+      "limitation": "Not proof attention training is impossible",
+      "release_eligible": true
+    },
+    {
+      "id": "P08",
+      "claim": "Inattentional blindness differs from change blindness",
+      "kind": "independent synthesis",
+      "status": "supported limited",
+      "source_id": "S1",
+      "limitation": "Distinguish unexpected event vs cross-interval change",
+      "release_eligible": true
+    },
+    {
+      "id": "P09",
+      "claim": "Final Vestige already published Change Blindness",
+      "kind": "live publisher source",
+      "status": "verified current in read-only WP",
+      "source_id": "V1",
+      "limitation": "No new article route invented",
+      "release_eligible": true
+    },
+    {
+      "id": "P10",
+      "claim": "Final Vestige published Mesmerism investigation",
+      "kind": "live publisher source",
+      "status": "verified current in read-only WP",
+      "source_id": "V2",
+      "limitation": "Historical record only",
+      "release_eligible": true
+    },
+    {
+      "id": "P11",
+      "claim": "Puységur primary-source oriented library page is live",
+      "kind": "live publisher source",
+      "status": "verified current in read-only WP",
+      "source_id": "V3",
+      "limitation": "Do not claim it proves magnetic fluids",
+      "release_eligible": true
+    },
+    {
+      "id": "P12",
+      "claim": "Seven Day Focus Fieldbook existing page and single funnel",
+      "kind": "live publisher source",
+      "status": "verified current in read-only WP",
+      "source_id": "V4",
+      "limitation": "Provider confirmation/delivery remains untested",
+      "release_eligible": true
+    },
+    {
+      "id": "P13",
+      "claim": "Inspire3 operates Zen12 in its catalog",
+      "kind": "seller feature",
+      "status": "seller-confirmed only",
+      "source_id": "Z1",
+      "limitation": "Not evidence efficacy or affiliate acceptance",
+      "release_eligible": false
+    },
+    {
+      "id": "P14",
+      "claim": "Zen12 seller advertises 12 levels",
+      "kind": "seller feature",
+      "status": "seller-confirmed only",
+      "source_id": "Z2",
+      "limitation": "Check buyer's selected tier",
+      "release_eligible": false
+    },
+    {
+      "id": "P15",
+      "claim": "Zen12 seller advertises 4 styles per level",
+      "kind": "seller feature",
+      "status": "seller-confirmed only",
+      "source_id": "Z3",
+      "limitation": "Guided/music/nature/white noise",
+      "release_eligible": false
+    },
+    {
+      "id": "P16",
+      "claim": "Zen12 seller advertises full package of 48 MP3s",
+      "kind": "seller feature",
+      "status": "seller-confirmed only",
+      "source_id": "Z2",
+      "limitation": "Not a guarantee delivered under each SKU",
+      "release_eligible": false
+    },
+    {
+      "id": "P17",
+      "claim": "Zen12 sessions are described as 12 minutes",
+      "kind": "seller feature",
+      "status": "seller-confirmed only",
+      "source_id": "Z3",
+      "limitation": "Duration is a product attribute",
+      "release_eligible": false
+    },
+    {
+      "id": "P18",
+      "claim": "Zen12 says 12 mins equivalent to an hour of meditation",
+      "kind": "seller efficacy",
+      "status": "excluded unsupported product outcome",
+      "source_id": "Z2",
+      "limitation": "No adequate product-specific efficacy evidence verified",
+      "release_eligible": false
+    },
+    {
+      "id": "P19",
+      "claim": "Zen12 advertises brainwave audio automatically produces deep meditation",
+      "kind": "seller efficacy",
+      "status": "excluded unsupported product outcome",
+      "source_id": "Z2",
+      "limitation": "No adequate product-specific controls verified",
+      "release_eligible": false
+    },
+    {
+      "id": "P20",
+      "claim": "Zen12 site advertises one-year refund guarantee",
+      "kind": "seller return promise",
+      "status": "seller-confirmed not checkout-verified",
+      "source_id": "Z2",
+      "limitation": "Exact referral SKU, refund eligibility and processing unverified",
+      "release_eligible": false
+    },
+    {
+      "id": "P21",
+      "claim": "Public Zen12 page shows tier-specific prices",
+      "kind": "seller price",
+      "status": "observed as variable, not approved price",
+      "source_id": "Z2",
+      "limitation": "Do not display a guaranteed FV referred price",
+      "release_eligible": false
+    },
+    {
+      "id": "P22",
+      "claim": "Separate Zen12 promotional page advertises coupon/discount",
+      "kind": "seller promo",
+      "status": "excluded from FV presell",
+      "source_id": "Z4",
+      "limitation": "Coupon applies only particular seller path; not link approval",
+      "release_eligible": false
+    },
+    {
+      "id": "P23",
+      "claim": "Hypnosis Live sells Total Focus 33-minute recording",
+      "kind": "seller feature",
+      "status": "seller-confirmed only",
+      "source_id": "H1",
+      "limitation": "Claims to improve output remain unverified",
+      "release_eligible": false
+    },
+    {
+      "id": "P24",
+      "claim": "Brainwave Shots Focus Shot includes 15- and 30-minute tracks",
+      "kind": "seller feature",
+      "status": "seller-confirmed only",
+      "source_id": "B1",
+      "limitation": "Do not present 4-hour focus as proven",
+      "release_eligible": false
+    },
+    {
+      "id": "P25",
+      "claim": "FTC endorsement guides require disclosure of material connection near link",
+      "kind": "regulatory guidance",
+      "status": "supported",
+      "source_id": "F1",
+      "limitation": "Prospective disclosure beside inactive CTA",
+      "release_eligible": true
+    },
+    {
+      "id": "P26",
+      "claim": "FTC health marketing requires adequate evidence for objective product claims",
+      "kind": "regulatory guidance",
+      "status": "supported",
+      "source_id": "F2",
+      "limitation": "No unsupported promises in editorial recommendation",
+      "release_eligible": true
+    },
+    {
+      "id": "P27",
+      "claim": "Final Vestige-specific Inspire3 merchant acceptance",
+      "kind": "merchant authorization",
+      "status": "not authenticated",
+      "source_id": "G",
+      "limitation": "No affiliate URL or commercial activation",
+      "release_eligible": false
+    },
+    {
+      "id": "P28",
+      "claim": "Final Vestige issued tracking link and permitted marketing channels",
+      "kind": "merchant authorization",
+      "status": "not authenticated",
+      "source_id": "G",
+      "limitation": "No paid attribution inferred from outbound link",
+      "release_eligible": false
+    },
+    {
+      "id": "P29",
+      "claim": "Final Vestige-owned payable Mind digital product",
+      "kind": "owned commerce",
+      "status": "not authenticated",
+      "source_id": "G",
+      "limitation": "Do not substitute unrelated Payhip seller SKU",
+      "release_eligible": false
+    },
+    {
+      "id": "P30",
+      "claim": "Commercial audio improves inattentional blindness",
+      "kind": "generalization",
+      "status": "excluded no product-specific evidence",
+      "source_id": "S1",
+      "limitation": "Research did not test audio",
+      "release_eligible": false
+    },
+    {
+      "id": "P31",
+      "claim": "Commercial audio provides guaranteed therapeutic focus outcome",
+      "kind": "health claim",
+      "status": "excluded no product-specific evidence",
+      "source_id": "F2",
+      "limitation": "Not a medical claim",
+      "release_eligible": false
+    },
+    {
+      "id": "P32",
+      "claim": "Commercial payout/commission or merchant referred checkout complete",
+      "kind": "settlement",
+      "status": "not authenticated",
+      "source_id": "G",
+      "limitation": "No realized net revenue",
+      "release_eligible": false
+    }
+  ],
+  "release_gates": [
+    {
+      "gate_id": "G01",
+      "requirement": "named_inspire3_publisher_acceptance",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G02",
+      "requirement": "approved_merchant_contract",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G03",
+      "requirement": "affiliate_allowed_zen12",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G04",
+      "requirement": "affiliate_allowed_hypnosislive",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G05",
+      "requirement": "affiliate_allowed_brainwaveshots",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G06",
+      "requirement": "allowed_paid_organic_channels",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G07",
+      "requirement": "creative_rights_swipe_terms",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G08",
+      "requirement": "issued_earning_url",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G09",
+      "requirement": "redirect_cloaking_policy",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G10",
+      "requirement": "affiliate_coupon_terms",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G11",
+      "requirement": "current_referral_sku",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G12",
+      "requirement": "current_checkout_total",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G13",
+      "requirement": "checkout_tax_currency",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G14",
+      "requirement": "seller_refund_conditions",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G15",
+      "requirement": "refund_settlement_delay",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G16",
+      "requirement": "merchant_paid_conversion_reporting",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G17",
+      "requirement": "commission_fee_schedule",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G18",
+      "requirement": "merchant_refund_reporting",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G19",
+      "requirement": "owned_fv_product_sku",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G20",
+      "requirement": "owned_fv_license_rights",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G21",
+      "requirement": "owned_fv_payable_checkout",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G22",
+      "requirement": "owned_fv_delivery_refunds",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G23",
+      "requirement": "actual_grok_asset_ids",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G24",
+      "requirement": "actual_grok_mobile_link_paths",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G25",
+      "requirement": "jetpack_confirmed_lead_proof",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G26",
+      "requirement": "original_encoded_video_and_captions",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G27",
+      "requirement": "real_browser_wcag_and_cwv",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    },
+    {
+      "gate_id": "G28",
+      "requirement": "founder_release_approval",
+      "state": "HOLD",
+      "blocking": true,
+      "verified": false
+    }
+  ],
+  "authoritative_inference_rule": "Seller description establishes only seller-stated packaging. Scientific primary study does not validate named products. Gmail consumer promotions do not authenticate publisher permissions.",
+  "tests_to_run": [
+    "proximate disclosure even with JS disabled",
+    "no merchant checkout or affiliate href while gates closed",
+    "disable all buyer controls natively",
+    "no product medical/wealth claims in promotion",
+    "avoid copied creative/footage",
+    "validate all internal canonical paths and mobile layouts",
+    "price and return terms re-read at exact approved tracking destination",
+    "confirmed paid order plus settlement net of fees/refunds, separate from affiliate_click"
+  ],
+  "commercial_stats": {
+    "qualified_human_sessions": "unknown",
+    "affiliate_clicks": "unknown",
+    "confirmed_leads": "unknown",
+    "merchant_confirmed_sales": "unknown",
+    "settled_net_revenue": "unknown",
+    "net_revenue_per_1000_qualified_humans": "NOT_COMPUTABLE"
+  }
+}
