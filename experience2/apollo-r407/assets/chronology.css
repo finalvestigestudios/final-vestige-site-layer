@@ -1,0 +1,18 @@
+/* Standalone R407 source-derived chronology; no imagery, animation or geo inference. */
+.fv-r407{--r407-gold:#d8ba82;--r407-paper:#eee9df;--r407-quiet:#cec6b8;--r407-edge:#68604e;background:#090a0a;color:var(--r407-paper);font:16px/1.65 system-ui,sans-serif;overflow-wrap:anywhere}
+.fv-r407 *, .fv-r407 *::before,.fv-r407 *::after{box-sizing:border-box}
+.fv-r407 :focus-visible{outline:3px solid var(--r407-gold);outline-offset:3px}
+.fv-r407__rail{max-width:1360px;margin:auto;padding:clamp(20px,5vw,64px);border-block:1px solid var(--r407-edge)}
+.fv-r407__rail h2{font:400 clamp(28px,4vw,48px)/1.15 Georgia,serif;margin:0 0 14px}
+.fv-r407__rail p{max-width:82ch;color:var(--r407-quiet);margin:0 0 22px}
+.fv-r407__rail ol{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:0;margin:0}
+.fv-r407__rail li{min-width:0;border:1px solid var(--r407-edge);padding:18px;background:#161714}
+.fv-r407__rail time,.fv-r407__rail .fv-r407__time{display:block;color:var(--r407-gold);font:700 13px/1.5 ui-monospace,monospace;margin-bottom:12px}
+.fv-r407__rail a{color:var(--r407-paper);text-decoration-thickness:1px;text-underline-offset:4px}
+.fv-r407__rail .fv-r407__kind{display:block;color:var(--r407-quiet);font:12px/1.6 system-ui;margin-top:9px}
+.fv-r407__limits{border-inline-start:3px solid var(--r407-gold);padding-inline-start:16px;margin:23px 0 0!important}
+@media(max-width:900px){.fv-r407__rail ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:530px){.fv-r407__rail ol{grid-template-columns:minmax(0,1fr)}.fv-r407__rail li{padding:16px}}
+@media(prefers-reduced-motion:reduce){.fv-r407 *, .fv-r407 *::before,.fv-r407 *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){.fv-r407__rail li{border:1px solid CanvasText}.fv-r407__limits{border-color:CanvasText}}
+@media print{.fv-r407{background:white;color:black}.fv-r407__rail li{break-inside:avoid;background:white;color:black}.fv-r407__rail a,.fv-r407__rail p,.fv-r407__rail time,.fv-r407__rail .fv-r407__time{color:black}}
