@@ -324,7 +324,7 @@ def safe_cell(value):
             index += 1
             continue
         if (character.isspace() or _escape_source_character(character)
-                or unicodedata.category(character) in ("Mn", "Me")):
+                or unicodedata.category(character) in ("Mn", "Mc", "Me")):
             invisible_prefix = True
             index += 1
             continue

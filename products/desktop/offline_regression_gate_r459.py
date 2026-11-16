@@ -61,6 +61,9 @@ SOURCE_INPUTS = (
     "offline_source_smoke_r408.py",
     "fvs_suite/atomic_reports.py",
     "fvs_suite/engine.py",
+    # R468 formula predicate is executed by the shared CSV sanitizer and must
+    # be descriptor-attested along with engine and the required regression.
+    "fvs_suite/csv_formula_guard.py",
     # All eight verification modules plus six product integration suites are
     # hashed exactly once. Missing/edited test code is a hard HOLD.
     *("tests/" + name for name in TESTS),

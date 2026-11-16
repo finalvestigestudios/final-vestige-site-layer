@@ -67,6 +67,39 @@ class SafeCellZeroCopyR456(unittest.TestCase):
                 with self.subTest(lead=repr(lead), tail=tail):
                     self.assertEqual(safe_cell(raw), "'" + raw)
 
+    def test_r468_spacing_combining_prefixes_are_escaped_without_normalizing(self):
+        # Mc marks were invisible to both pre-R468 formula detection and the
+        # shared sanitizer. They now force review even before plain source text.
+        for lead in ("\u093e", "\u09be", "\u0bbe"):
+            for tail in ("=1+1", "+SUM(A1)", "@A1", "-not_money",
+                         "-12.30", "Vendor A"):
+                with self.subTest(mark=ord(lead), tail=tail):
+                    raw = lead + tail
+                    escaped = safe_cell(raw)
+                    self.assertEqual(escaped, "'" + raw)
+                    self.assertEqual(escaped[1:], raw)
+
+    def test_r468_spacing_marks_are_visible_to_independent_formula_gate(self):
+        for raw in ("\u093e=2+2", " \u09be@A1",
+                    "\t\u093e\u0bbe+SUM(A1)", "\u0bbe-not_money"):
+            with self.subTest(raw=repr(raw)):
+                self.assertTrue(has_unescaped_formula_prefix(raw))
+                self.assertEqual(safe_cell(raw), "'" + raw)
+
+    def test_r468_apostrophe_and_nonleading_marks_keep_source_identity(self):
+        for mark in ("\u093e", "\u09be", "\u0bbe"):
+            escaped = "'" + mark + "=SUM(A1)"
+            self.assertFalse(has_unescaped_formula_prefix(escaped))
+            self.assertIs(safe_cell(escaped), escaped)
+            ordinary = "Vendor" + mark + "=2+2"
+            self.assertFalse(has_unescaped_formula_prefix(ordinary))
+            self.assertIs(safe_cell(ordinary), ordinary)
+
+    def test_r468_bounded_long_spacing_mark_prefix_preserves_every_codepoint(self):
+        source = " " * 17 + "\u093e" * 512 + "=A1"
+        self.assertTrue(has_unescaped_formula_prefix(source))
+        self.assertEqual(safe_cell(source), "'" + source)
+
     def test_decimal_and_int_values_remain_exact(self):
         for value in (Decimal("-42.100"), Decimal("0.00000001"),
                       Decimal("999999999999.99"), -42, 0, 2026):
