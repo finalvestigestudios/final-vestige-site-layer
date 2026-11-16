@@ -9,6 +9,7 @@ const HEX = /^[a-f0-9]{64}$/;
 const P0 = ['285:5', '285:2', '287:5', '418:1', '418:2', '407:1'];
 const unique = a => new Set(a).size === a.length;
 const validUrl = s => typeof s === 'string' && HTTPS.test(s) && !/[@\\]/.test(s);
+const validBinaryUrl = s => validUrl(s) && /\.(?:jpe?g|png|webp|avif)(?:\?[^#]*)?$/i.test(s);
 const integer = v => Number.isSafeInteger(v) && v > 0;
 const ratio960 = (w, h) => {
   if (!integer(w) || !integer(h)) return null;
@@ -58,7 +59,7 @@ function evaluate(manifest, qa=null, approvals=null) {
           (q.http_status>=200 && q.http_status<300 && q.content_type.startsWith('image/') && q.decode_error!=='yes'))
         reasons.push('VISITOR_FAILURE_NOT_PROVEN');
     }
-    if (!s.candidate || !validUrl(s.candidate.catalog_url) || !validUrl(s.candidate.asset_url))
+    if (!s.candidate || !validUrl(s.candidate.catalog_url) || !validBinaryUrl(s.candidate.asset_url))
       reasons.push('NO_IDENTIFIED_REPLACEMENT_BINARY');
     if (!a) reasons.push('MISSING_ITEM_RIGHTS_AND_EDITORIAL_SIGNOFF');
     else {
