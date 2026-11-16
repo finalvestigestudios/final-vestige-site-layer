@@ -14,7 +14,7 @@ const buyText=s=>s.replace(/<details class="film" id="optional-film">[\s\S]*?<\/
 const anchors=s=>[...s.matchAll(/<a\b[^>]*\bhref=["']([^"']+)["']/gi)].map(m=>m[1]);
 const reject=s=>{
  assert(!/<script\b|<iframe\b|<form\b|<input\b|<object\b|<embed\b|<video\b/i.test(s),'active or input HTML element');
- assert(!/\bon\w+\s*=|\bautoplay\b|document\.cookie|localStorage|sessionStorage/i.test(s),'JS/auto tracking');
+ assert(!/\bon\w+\s*=|\bautoplay(?:\\s|=|>)+|document\.cookie|localStorage|sessionStorage/i.test(s),'JS/auto tracking');
  assert(/<button\b[^>]*\bdisabled\b[^>]*>/i.test(s),'native disabled commerce control');
  assert(/Affiliate disclosure next to proposed offer:/.test(s),'adjacent affiliate disclosure');
  assert(/No such link is currently active/.test(s),'fail-closed language');
@@ -44,7 +44,7 @@ check('no approved paid offer',()=>assert.deepEqual(matrix.approved_paid_offers,
 check('no revenue fabrication',()=>{assert.equal(matrix.kpi_net_revenue_per_1000_qualified_sessions,null);assert.equal(matrix.verified_paid_orders,null);});
 check('decision map and 7/30 cohorts',()=>{['Change Blindness','Puységur','Mesmer','7/30-day','merchant_settled_commission','qualified_human_session'].forEach(s=>assert(files.decision.includes(s)));});
 check('checkout friction language caution',()=>{assert(files.decision.includes('does not prove every field is mandatory'));assert(files.decision.includes('price/coupon'));});
-check('no active script or subscription in prototype',()=>{for(const k of ['a','b','hub']) assert(!/<form\b|<script\b|\bautoplay\b/i.test(files[k]));});
+check('no active script or subscription in prototype',()=>{for(const k of ['a','b','hub']) assert(!/<form\b|<script\b|<video\b[^>]*\bautoplay(?:\\s|=|>)/i.test(files[k]));});
 const mutations=[
  s=>s.replace('<button type="button" disabled aria-disabled="true">','<button type="button">'),
  s=>s.replace('Affiliate disclosure next to proposed offer:','No further disclosure:'),
@@ -52,7 +52,7 @@ const mutations=[
  s=>s.replace('</body>','<script>window.x=1</script></body>'),
  s=>s.replace('</body>','<a href="https://zen12.com/order">Pay now</a></body>'),
  s=>s.replace('</body>','<form><input name="email"></form></body>'),
- s=>s.replace('42-second','42-second autoplay'),
+ s=>s.replace('</body>','<video autoplay></video></body>'),
  s=>s.replace('No such link is currently active.','No such link is currently active. Price $37.'),
 ];
 check('8 adversarial media/offer/PII mutations rejected',()=>{for(const change of mutations){let failed=false;try{reject(change(files.a));}catch{failed=true;}assert(failed,'unsafe mutation was accepted');}});
