@@ -15,6 +15,7 @@ import subprocess
 import sys
 import tempfile
 
+from offline_json_receipt_r462 import PrivateReceiptJSONError, load_private_receipt
 from offline_smoke_receipt_r460 import MAX_RECEIPT_BYTES
 from offline_source_binding_r461 import (
     SourceBindingError, verified_six_app_digest, require_bound_six_app_smokes,
@@ -26,11 +27,13 @@ TESTS = (
     "test_csv_incremental_render_budget_r457.py",
     "test_csv_bounded_utf8_witness_r458.py",
     "test_source_digest_binding_r461.py",
+    "test_private_json_receipt_r462.py",
 )
 SOURCE_INPUTS = (
     "offline_regression_gate_r459.py",
     "offline_smoke_receipt_r460.py",
     "offline_source_binding_r461.py",
+    "offline_json_receipt_r462.py",
     "offline_source_smoke_r408.py",
     "fvs_suite/atomic_reports.py",
     "fvs_suite/engine.py",
@@ -105,8 +108,8 @@ def _validate_receipt(raw: bytes) -> int:
     if len(raw) > 1024:
         raise LocalGateError("Local source regression receipt rejected")
     try:
-        item = json.loads(raw)
-    except (ValueError, UnicodeError):
+        item = load_private_receipt(raw)
+    except PrivateReceiptJSONError:
         raise LocalGateError("Local source regression receipt rejected") from None
     if (type(item) is not dict or set(item) != {
             'tests', 'failures', 'errors', 'skipped', 'expected'}

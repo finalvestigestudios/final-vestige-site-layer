@@ -6,7 +6,7 @@ output, paths, customer labels, or errors to an operator.
 """
 from __future__ import annotations
 
-import json
+from offline_json_receipt_r462 import PrivateReceiptJSONError, load_private_receipt
 
 EXPECTED_APPS = ("ledger", "invoices", "spend", "policy", "grants", "procurement")
 MAX_RECEIPT_BYTES = 4096
@@ -31,8 +31,8 @@ def require_six_app_smokes(raw: bytes) -> int:
         raise SourceSmokeReceiptError("Six-app source smoke receipt rejected")
     parse_failed = False
     try:
-        item = json.loads(raw)
-    except (ValueError, UnicodeError):
+        item = load_private_receipt(raw)
+    except PrivateReceiptJSONError:
         parse_failed = True
     if parse_failed:
         raise SourceSmokeReceiptError("Six-app source smoke receipt rejected")
