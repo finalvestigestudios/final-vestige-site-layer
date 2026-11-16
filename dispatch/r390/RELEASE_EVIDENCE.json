@@ -1,0 +1,104 @@
+{
+  "run": "R390",
+  "as_of": "2026-11-16T00:37:30Z",
+  "original_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+  "original_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "review_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201",
+  "source_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2682",
+  "newsletter": {
+    "enabled": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "reply_to": "no-reply",
+    "from_name": "Final Vestige Studios",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "reader_followers": null,
+    "direct_email_followers": null,
+    "recipient_email_eligible_count": null,
+    "confirmed_welcome_received": false,
+    "private_recipient_filter_verified": false
+  },
+  "attestation": {
+    "founder_final_campaign_approved": false,
+    "founder_audience_and_schedule_approved": false,
+    "actual_native_jetpack_preview_verified": false,
+    "publisher_physical_address_verified": false,
+    "operational_unsubscribe_verified": false,
+    "truthful_subject_checked_in_native_preview": false,
+    "preheader_exposed_and_checked_in_native_preview": false,
+    "provider_consent_and_welcome_verified": false,
+    "source_link_client_open_verified": false,
+    "settled_commission_ledger_verified": false,
+    "qualified_human_sessions_verified": false
+  },
+  "merchant": {
+    "zen12": {
+      "approved_partner_account": false,
+      "exact_sku_affiliate_acceptance": false,
+      "email_channel_permission": false,
+      "creative_permission": false,
+      "issued_earning_url_verified": false,
+      "approved_live_guide_verified": false,
+      "referred_checkout_price_and_refund_verified": false,
+      "proximity_disclosure_verified": false,
+      "offer_claim_support_verified": false
+    },
+    "total_focus": {
+      "approved_partner_account": false,
+      "exact_sku_affiliate_acceptance": false,
+      "email_channel_permission": false,
+      "creative_permission": false,
+      "issued_earning_url_verified": false,
+      "approved_live_guide_verified": false,
+      "referred_checkout_price_and_refund_verified": false,
+      "proximity_disclosure_verified": false,
+      "offer_claim_support_verified": false
+    }
+  },
+  "editions": [
+    {
+      "edition": 1,
+      "subject": "The mind is not a camera",
+      "kind": "editorial",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "copy_approval": false
+    },
+    {
+      "edition": 2,
+      "subject": "Before hypnosis had a name",
+      "kind": "editorial",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "copy_approval": false
+    },
+    {
+      "edition": 3,
+      "subject": "The twelve-minute meditation question",
+      "kind": "commercial",
+      "destination": null,
+      "copy_approval": false
+    },
+    {
+      "edition": 4,
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "kind": "editorial",
+      "destination": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "copy_approval": false
+    },
+    {
+      "edition": 5,
+      "subject": "Before you press play on a hypnosis audio",
+      "kind": "commercial",
+      "destination": null,
+      "copy_approval": false
+    },
+    {
+      "edition": 6,
+      "subject": "What did seven days of attention reveal?",
+      "kind": "editorial",
+      "destination": "https://finalvestige.com/focus/",
+      "copy_approval": false
+    }
+  ]
+}
