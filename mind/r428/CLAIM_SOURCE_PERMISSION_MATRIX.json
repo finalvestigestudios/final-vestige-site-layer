@@ -1,0 +1,388 @@
+{
+  "run": "R428",
+  "verified_date": "2026-11-16",
+  "commercial_status": "HARD HOLD",
+  "sources": [
+    {
+      "id": "science-2005",
+      "type": "primary",
+      "url": "https://doi.org/10.1126/science.1111709"
+    },
+    {
+      "id": "market-2010",
+      "type": "primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20637455/"
+    },
+    {
+      "id": "survey-2012",
+      "type": "primary",
+      "url": "https://doi.org/10.1371/journal.pone.0045457"
+    },
+    {
+      "id": "inspire3",
+      "type": "seller",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "zen12",
+      "type": "seller",
+      "url": "https://zen12.com/"
+    },
+    {
+      "id": "zen12-order",
+      "type": "seller",
+      "url": "https://zen12.com/order"
+    },
+    {
+      "id": "total-focus",
+      "type": "seller",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "total-focus-faq",
+      "type": "seller",
+      "url": "https://hypnosislive.com/faq"
+    },
+    {
+      "id": "focus-shot",
+      "type": "seller",
+      "url": "https://brainwaveshots.com/focus-shot"
+    },
+    {
+      "id": "focus-shot-faq",
+      "type": "seller",
+      "url": "https://brainwaveshots.com/faq"
+    },
+    {
+      "id": "ftc-endorsements",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "ftc-health",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "fv-focus",
+      "type": "fv-live",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "fv-puysegur",
+      "type": "fv-live",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "fv-change",
+      "type": "fv-live",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "fv-mesmerism",
+      "type": "fv-live",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Choice blindness face manipulation and explanations",
+      "support": [
+        "science-2005"
+      ],
+      "status": "independent research, with task limits"
+    },
+    {
+      "claim": "Jam/tea manipulations detected no more than one-third of trials",
+      "support": [
+        "market-2010"
+      ],
+      "status": "independent experiment, procedure-specific"
+    },
+    {
+      "claim": "69% fail to detect >=1 of 2 survey reversals",
+      "support": [
+        "survey-2012"
+      ],
+      "status": "independent experiment, not lasting belief change"
+    },
+    {
+      "claim": "Zen12 public site describes 12-minute sessions",
+      "support": [
+        "zen12"
+      ],
+      "status": "seller format only"
+    },
+    {
+      "claim": "Zen12 order says 12 levels and 48 MP3s",
+      "support": [
+        "zen12-order"
+      ],
+      "status": "seller package only; referred tier unknown"
+    },
+    {
+      "claim": "12 minutes equivalent to 1 hour meditation",
+      "support": [
+        "zen12"
+      ],
+      "status": "DO NOT ADOPT efficacy"
+    },
+    {
+      "claim": "Zen12 cures anxiety and guarantees focus",
+      "support": [
+        "zen12"
+      ],
+      "status": "DO NOT ADOPT medical/performance"
+    },
+    {
+      "claim": "Total Focus 33 minutes and 47MB",
+      "support": [
+        "total-focus"
+      ],
+      "status": "seller format only"
+    },
+    {
+      "claim": "Total Focus brain reprogramming and perfect focus",
+      "support": [
+        "total-focus"
+      ],
+      "status": "DO NOT ADOPT efficacy"
+    },
+    {
+      "claim": "Total Focus advertised price",
+      "support": [
+        "total-focus"
+      ],
+      "status": "volatile public offer; do not publish price"
+    },
+    {
+      "claim": "Total Focus 14-day refund vs FAQ limitations",
+      "support": [
+        "total-focus",
+        "total-focus-faq"
+      ],
+      "status": "verify exact referred terms"
+    },
+    {
+      "claim": "Focus Shot 15/30-minute and brainwave-only files",
+      "support": [
+        "focus-shot"
+      ],
+      "status": "seller format only"
+    },
+    {
+      "claim": "Focus Shot 4 hours lasting effects",
+      "support": [
+        "focus-shot"
+      ],
+      "status": "DO NOT ADOPT efficacy"
+    },
+    {
+      "claim": "Focus Shot completely safe",
+      "support": [
+        "focus-shot",
+        "focus-shot-faq"
+      ],
+      "status": "DO NOT ADOPT safety"
+    },
+    {
+      "claim": "Focus Shot returns without limitations",
+      "support": [
+        "focus-shot",
+        "focus-shot-faq"
+      ],
+      "status": "do not promise until terms verified"
+    },
+    {
+      "claim": "Commercial material connection disclosure required",
+      "support": [
+        "ftc-endorsements"
+      ],
+      "status": "clear near-link prospective disclosure"
+    },
+    {
+      "claim": "Health claims require substantiation",
+      "support": [
+        "ftc-health"
+      ],
+      "status": "independent product-specific proof required"
+    },
+    {
+      "claim": "52-page Focus Fieldbook currently free",
+      "support": [
+        "fv-focus"
+      ],
+      "status": "observed live; not payable product"
+    },
+    {
+      "claim": "Puységur documentation contains failures and consent disputes",
+      "support": [
+        "fv-puysegur"
+      ],
+      "status": "historical context only"
+    },
+    {
+      "claim": "Change blindness page presently published",
+      "support": [
+        "fv-change"
+      ],
+      "status": "verified live link"
+    },
+    {
+      "claim": "Franklin 1784 article presently published",
+      "support": [
+        "fv-mesmerism"
+      ],
+      "status": "verified live link"
+    },
+    {
+      "claim": "FV affiliate acceptance, channels, SKU, issued URL",
+      "support": [],
+      "status": "HARD HOLD: no authentication"
+    },
+    {
+      "claim": "FV rights-cleared payable Mind SKU",
+      "support": [],
+      "status": "HARD HOLD: no authentication"
+    },
+    {
+      "claim": "Grok 3 matching real media IDs",
+      "support": [],
+      "status": "HARD HOLD: unverified"
+    },
+    {
+      "claim": "Product-specific Zen12 choice-blindness benefit",
+      "support": [],
+      "status": "PROHIBITED inference"
+    },
+    {
+      "claim": "Affiliate outbound click means sale",
+      "support": [],
+      "status": "FALSE; never interpret as paid order"
+    },
+    {
+      "claim": "Current net revenue per 1000 qualified sessions",
+      "support": [],
+      "status": "NOT COMPUTABLE"
+    },
+    {
+      "claim": "Playable 42s video complete and caption synced",
+      "support": [],
+      "status": "HARD HOLD: storyboard only"
+    }
+  ],
+  "gates": [
+    {
+      "name": "named_partner_approval",
+      "status": "HOLD"
+    },
+    {
+      "name": "SKU_permission",
+      "status": "HOLD"
+    },
+    {
+      "name": "channel_permission",
+      "status": "HOLD"
+    },
+    {
+      "name": "creative_permission",
+      "status": "HOLD"
+    },
+    {
+      "name": "issued_link",
+      "status": "HOLD"
+    },
+    {
+      "name": "tracking_terms",
+      "status": "HOLD"
+    },
+    {
+      "name": "referred_price",
+      "status": "HOLD"
+    },
+    {
+      "name": "refund_terms",
+      "status": "HOLD"
+    },
+    {
+      "name": "payout_terms",
+      "status": "HOLD"
+    },
+    {
+      "name": "owned_paid_SKU",
+      "status": "HOLD"
+    },
+    {
+      "name": "owned_rights",
+      "status": "HOLD"
+    },
+    {
+      "name": "product_delivery",
+      "status": "HOLD"
+    },
+    {
+      "name": "owned_refunds",
+      "status": "HOLD"
+    },
+    {
+      "name": "founder_approval",
+      "status": "HOLD"
+    },
+    {
+      "name": "mobile_360",
+      "status": "HOLD"
+    },
+    {
+      "name": "mobile_390",
+      "status": "HOLD"
+    },
+    {
+      "name": "tablet_768",
+      "status": "HOLD"
+    },
+    {
+      "name": "desktop_1440",
+      "status": "HOLD"
+    },
+    {
+      "name": "desktop_1920",
+      "status": "HOLD"
+    },
+    {
+      "name": "WCAG_keyboard",
+      "status": "HOLD"
+    },
+    {
+      "name": "WCAG_reader",
+      "status": "HOLD"
+    },
+    {
+      "name": "reduced_motion",
+      "status": "HOLD"
+    },
+    {
+      "name": "actual_video_encoded",
+      "status": "HOLD"
+    },
+    {
+      "name": "caption_sync",
+      "status": "HOLD"
+    },
+    {
+      "name": "WP_sanitizer",
+      "status": "HOLD"
+    },
+    {
+      "name": "Claude_measurement_QA",
+      "status": "HOLD"
+    },
+    {
+      "name": "Jetpack_confirmation",
+      "status": "HOLD"
+    },
+    {
+      "name": "verified_net_revenue",
+      "status": "HOLD"
+    }
+  ]
+}
