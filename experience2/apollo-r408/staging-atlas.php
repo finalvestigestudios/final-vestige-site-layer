@@ -22,8 +22,24 @@ function fv_r408_authorized(): bool {
 function fv_r408_fallback(): string {
     return '<p>The interactive source index is unavailable. <a href="' . FV_R408_ARTICLE . '">Read the original Apollo 1 investigation</a>.</p>';
 }
+/** Pin the exact reviewed R408 behavior and style bytes before rendering. */
+function fv_r408_assets_valid(string $root = __DIR__): bool {
+    $expected = array(
+        'assets/evidence-atlas.css' => 'c6e86550f6ea24567e735af00dfed455d98907a0',
+        'assets/evidence-atlas.js' => 'be8433a8a90ab88491cc1e84aea6127eefe59634',
+    );
+    foreach ($expected as $name => $blob) {
+        $path = $root . '/' . $name;
+        if (!is_file($path) || !is_readable($path)) return false;
+        $bytes = file_get_contents($path);
+        if (!is_string($bytes)) return false;
+        $actual = sha1('blob ' . strlen($bytes) . "\0" . $bytes);
+        if (!hash_equals($blob, $actual)) return false;
+    }
+    return true;
+}
 function fv_r408_parent_ready(): bool {
-    return function_exists('fv_r407_shortcode') && function_exists('fv_r407_authorized')
+    return fv_r408_assets_valid() && function_exists('fv_r407_shortcode') && function_exists('fv_r407_authorized')
         && fv_r407_authorized() && function_exists('fv_r407_assets_valid')
         && !empty($GLOBALS['fv_r407_ready']);
 }
