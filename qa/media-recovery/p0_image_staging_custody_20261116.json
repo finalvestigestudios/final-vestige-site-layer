@@ -36,7 +36,15 @@
         {
           "record_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
           "relation": "related scene/crop, HTML catalog NOT candidate image binary",
-          "license": "Creator self-PD asserted; full verification needed"
+          "license": "Creator self-PD asserted; full verification needed",
+          "catalog_or_preview_dimensions_px": [
+            819,
+            614
+          ],
+          "conditional_no_upscale_review_px": [
+            819,
+            614
+          ]
         }
       ],
       "guest_http_status": null,
@@ -44,7 +52,10 @@
       "guest_current_src": null,
       "cached_to_wordpress": false,
       "max_width": 960,
-      "rights_release_status": "HOLD"
+      "rights_release_status": "HOLD",
+      "verified_candidate_binary_native_dimensions_px": null,
+      "verified_visitor_http_status": null,
+      "verified_visitor_transfer_bytes": null
     },
     {
       "key": "285:2",
@@ -64,7 +75,10 @@
       "guest_current_src": null,
       "cached_to_wordpress": false,
       "max_width": 960,
-      "rights_release_status": "HOLD"
+      "rights_release_status": "HOLD",
+      "verified_candidate_binary_native_dimensions_px": null,
+      "verified_visitor_http_status": null,
+      "verified_visitor_transfer_bytes": null
     },
     {
       "key": "287:5",
@@ -88,7 +102,10 @@
       "guest_current_src": null,
       "cached_to_wordpress": false,
       "max_width": 960,
-      "rights_release_status": "HOLD"
+      "rights_release_status": "HOLD",
+      "verified_candidate_binary_native_dimensions_px": null,
+      "verified_visitor_http_status": null,
+      "verified_visitor_transfer_bytes": null
     },
     {
       "key": "418:1",
@@ -108,7 +125,10 @@
       "guest_current_src": null,
       "cached_to_wordpress": false,
       "max_width": 960,
-      "rights_release_status": "HOLD"
+      "rights_release_status": "HOLD",
+      "verified_candidate_binary_native_dimensions_px": null,
+      "verified_visitor_http_status": null,
+      "verified_visitor_transfer_bytes": null
     },
     {
       "key": "418:2",
@@ -120,7 +140,15 @@
       "related_sources": [
         {
           "record_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
-          "relation": "official article but exact master accession and reuse rights unresolved"
+          "relation": "official article but exact master accession and reuse rights unresolved",
+          "catalog_or_preview_dimensions_px": [
+            600,
+            463
+          ],
+          "conditional_no_upscale_review_px": [
+            600,
+            463
+          ]
         }
       ],
       "guest_http_status": null,
@@ -128,7 +156,10 @@
       "guest_current_src": null,
       "cached_to_wordpress": false,
       "max_width": 960,
-      "rights_release_status": "HOLD"
+      "rights_release_status": "HOLD",
+      "verified_candidate_binary_native_dimensions_px": null,
+      "verified_visitor_http_status": null,
+      "verified_visitor_transfer_bytes": null
     },
     {
       "key": "407:1",
@@ -148,7 +179,10 @@
       "guest_current_src": null,
       "cached_to_wordpress": false,
       "max_width": 960,
-      "rights_release_status": "HOLD"
+      "rights_release_status": "HOLD",
+      "verified_candidate_binary_native_dimensions_px": null,
+      "verified_visitor_http_status": null,
+      "verified_visitor_transfer_bytes": null
     }
   ]
 }
