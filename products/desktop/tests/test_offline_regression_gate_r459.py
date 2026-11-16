@@ -297,6 +297,15 @@ class OfflineRegressionGateR459(unittest.TestCase):
                                   for name in gate.SOURCE_INPUTS])
 
 
+    def test_r471_cross_po_credit_source_is_descriptor_fingerprinted(self):
+        self.assertEqual(gate.SOURCE_INPUTS.count(
+            "fvs_suite/procurement_cross_po_r471.py"), 1)
+        self.assertIn("test_procurement_integration_r5.py", gate.PRODUCT_TESTS)
+        before = gate._source_fingerprint(self.root)
+        candidate = self.root / "fvs_suite" / "procurement_cross_po_r471.py"
+        candidate.write_text("altered source", encoding="utf-8")
+        self.assertNotEqual(gate._source_fingerprint(self.root), before)
+
     def test_r468_shared_formula_guard_is_descriptor_fingerprinted(self):
         self.assertEqual(gate.SOURCE_INPUTS.count(
             "fvs_suite/csv_formula_guard.py"), 1)
