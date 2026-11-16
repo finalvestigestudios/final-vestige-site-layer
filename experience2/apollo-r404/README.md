@@ -1,0 +1,25 @@
+# Apollo Experience 2.0 — R404 isolated Research Desk interaction pilot
+
+**Scope / branch status:** DRAFT ONLY, never installed or approved. This source is an **isolated proposed replacement** of the Research Desk v4 optional search JS in [PR #158](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/158); it must NOT be co-loaded with the original `source-ledger.js`, which also binds `input` events. This directory does not modify that PR, homepage PR #49, any WordPress content/settings, merchant links, analytics, or Grok's channels.
+
+## Grounded existing code reviewed
+
+`experience2/research-desk/templates/ledger.html` (Git blob `403d128c57b9bc82dac7c619651689070edef86c`) renders six NASA-linked source records with `details` and limitation text; `assets/source-ledger.js` (Git blob `32e757cc4dc8708397ff65ac21e89dd319781d78`) optionally filters the six records. The fixed `id` values can collide if the shortcode is used more than once; a filtered source disappears if a user navigates to its fragment; there is no explicit accessible clear-search control. The original PHP only enqueues assets when it finds the top-level shortcode, not always from nested block/reusable shortcode contexts. R404 addresses the former three issues, **not** the PHP enqueue problem.
+
+## Staging-only change
+
+`assets/research-desk-resilient.js` replaces the optional filter, preserving the original six static records and NASA source links. It provides an accessible clear button and `Escape` reset, reveals a filtered record when a hash navigation targets it, and deterministically renames duplicate desk IDs and their `for`/ARIA/fragment references on subsequent desk instances. It fails open when the search index is missing or malformed: the six records, full native disclosures and NASA links remain visible while enhanced controls are hidden. No data are sent or stored. `assets/research-desk-resilient.css` scopes focus, touch-size and 400%-text wrapping refinements to the Research Desk. The original PR #158 files are unchanged; separate QD approval would be required to replace its script in a *staging* shortcode adapter.
+
+## Real-browser proof and limitations
+
+Run `python -m unittest discover -s experience2/apollo-r404/qa -p 'test_*.py' -v` from the repo root with Playwright Python, installed Chromium at `/usr/bin/chromium`. Tests use source-structure-matched **synthetic structural fixtures**, *not* the exact PR #158 HTML. They never inject historical claims, NASA photographs, media assets, or speculative geo pins. Seven Chromium tests cover search/reset, hash reveal, duplicate shortcodes, fail-open, no-JS source access, keyboard/touch details and viewport screenshots at 320, 390, 768, 1440, 1920px plus no-JS/reduced motion/root-font 4x. Browser sandbox blocks localhost navigation (`ERR_BLOCKED_BY_ADMINISTRATOR`), so fixture is loaded via Playwright `set_content`; resulting LCP/CLS are **null (not measurable)**, not passing production CWV. Genuine axe-core not available; independent screen readers and native 400% zoom untested. The original Research Desk stylesheet's real 4x wrapping and Assembler interactions are not verified by this fixture.
+
+Use `python experience2/apollo-r404/qa/package_evidence.py` to rebuild the deterministic evidence archive, after running tests. The ZIP is a QA artifact, not proof of GitHub-hosted exact-SHA CI or installed WordPress staging.
+
+## Provenance / rights / customer funnel
+
+Keep the 1967 [Apollo 204 Review Board report](https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/) separate from the [NASA post-fire flammability retrospective](https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/). The review did not conclusively identify one original ignition source; later intentional tests must not be implied to recreate the original ignition. No NASA images or insignia added; NASA non-endorsement guidance applies. No commercial disclosures or merchant URLs changed.
+
+**Offer → funnel → blocker → experiment → evidence → owner:** Existing free Apollo investigation → evidence record search → hidden-source/duplicate-ID accessibility failures → R404 optional JS replacement → 7/7 Chromium fixture tests passed (not staging) → Apollo QA/QD. Proposed Grok Apollo long-form `asset_id` → qualified visits → free investigation CTA → future *rights-cleared, verified-buyable* educator kit; published asset link, purchase availability, attributed human sessions, confirmed lead/order, refunds/fees and realized net revenue are all **unknown**, not zero. Founder/Claude own merchandise and release, Grok owns content/distribution and Praxxis external QA. No extra CTA appears within the historical narrative.
+
+**Hard HOLD:** independent source custody review, exact-head CI, installed WordPress shortcode/template lifecycle QA, genuine axe WCAG 2.2 AA assessment, real HTTPS/CSP, actual media provenance and license sign-off, NVDA/VoiceOver, real native zoom, QD and founder release approval. No live changes, spending, emails, or social posts.
