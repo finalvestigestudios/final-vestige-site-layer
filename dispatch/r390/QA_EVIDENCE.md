@@ -8,7 +8,7 @@ Run verified on November 15, 2026 16:35–17:00 PT (UTC readings saved in snapsh
 
 **Canonical decisions:** Issues 01/02/06 editorial HOLD; original 04 editorial HOLD_COPY for ambiguous subject clock; commercial 03/05 HOLD_MERCHANT for missing approved live guides/email rights. R390 optional Apollo copy NOT_ADOPTED. The HTML preview is source-only offline, without real email client/native Jetpack rendering, has unresolved postal/unsubscribe placeholders by design. No native preview, actual signup, welcome, test email, public post, settings change, merchant checkout, paid transaction, merge or spending.
 
-**Code QA:** source-only machine-readable evidence release gate and Node tests prepared. Verify exact committed file identities and actual runtime execution before marking a passed test number. All attestations intentionally FALSE/UNKNOWN. Synthetic test passing means a fail-closed decision function works in the tested scope; it cannot attest native receiving/merchant rights.
+**Code QA:** source-only machine-readable evidence release gate and native-Node test file prepared. Exact GitHub blob identity and 15 source/HTML structural checks verified in source isolate. Original canonical Python six assertions independently mirrored 6/6 from exact eight immutable GitHub source blobs; native Python not executed. Initial V8 test harness lacked Node structuredClone (environment limitation, not a logic failure); corrected harness uses a deep JSON clone shim. No real/native Node execution or browser/Jetpack rendering claimed. All attestations intentionally FALSE/UNKNOWN; synthetic proof flags cannot confer release authorization.
 
 **Prioritized OFFER → FUNNEL STEP → BLOCKER → EXPERIMENT/CHANGE → PASS EVIDENCE → OWNER**
 

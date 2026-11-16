@@ -41,7 +41,7 @@ export function assessEdition(s,n) {
   if(!e)throw new Error("Unknown edition");
   const missing=COMMON.filter(k=>s.attestation?.[k]!==true);
   if(s.newsletter?.enabled!==true) missing.push("newsletter_enabled");
-  if(s.newsletter?.private_recipient_filter_verified!==true || s.newsletter?.recipient_email_eligible_count===null) missing.push("recipient_eligibility_verified");
+  if(s.newsletter?.private_recipient_filter_verified!==true || !Number.isInteger(s.newsletter?.recipient_email_eligible_count) || s.newsletter.recipient_email_eligible_count<=0) missing.push("recipient_eligibility_verified");
   if(!e.copy_approval) missing.push("edition_copy_approved");
   if(COMMERCIAL.has(n)){
     const p=s.merchant?.[n===3?"zen12":"total_focus"];
