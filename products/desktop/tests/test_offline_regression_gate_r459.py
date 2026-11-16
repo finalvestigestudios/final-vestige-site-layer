@@ -541,7 +541,7 @@ class OfflineRegressionGateR459(unittest.TestCase):
                 '    else:\n'
                 '        def test_optimized_only(self):\n'
                 '            self.assertTrue(True)\n'
-            ) if name == gate.PRODUCT_TESTS[0] else (
+            ) if name == gate.CORE_TESTS[0] else (
                 '    def test_last_stable(self):\n'
                 '        self.assertTrue(True)\n'
             )
