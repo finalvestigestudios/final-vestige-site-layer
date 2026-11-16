@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -576,6 +577,98 @@ class OfflineRegressionGateR459(unittest.TestCase):
             encoding='utf-8')
         with self.assertRaises(gate.LocalGateError):
             gate._run_tests(self.root)
+
+
+    def _r469_real_child(self, fixture, *, optimized=False, receipt_name="r469.json"):
+        """Execute the committed production child code, not a mocked status."""
+        path = self.root / "tests" / gate.TESTS[0]
+        path.write_text(fixture, encoding="utf-8")
+        receipt = self.root / receipt_name
+        command = [sys.executable, "-I", "-B", "-W", "error"]
+        if optimized:
+            command.append("-OO")
+        command.extend(["-c", gate._TEST_CHILD, str(self.root),
+                        gate.TESTS[0], str(receipt)])
+        proc = subprocess.run(
+            command, cwd=self.root, env=gate._child_env(),
+            stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL, timeout=30, check=False)
+        return proc.returncode, json.loads(receipt.read_text(encoding="ascii"))
+
+    def test_r469_real_expected_failure_is_hold_in_both_python_modes(self):
+        fixture = (
+            "import unittest\n"
+            "class KnownBroken(unittest.TestCase):\n"
+            "    @unittest.expectedFailure\n"
+            "    def test_wrong_cents(self):\n"
+            "        self.assertEqual(1, 2)\n"
+        )
+        for optimized in (False, True):
+            with self.subTest(optimized=optimized):
+                status, evidence = self._r469_real_child(
+                    fixture, optimized=optimized,
+                    receipt_name=f"expected-{optimized}.json")
+                # Before R469 unittest.wasSuccessful() incorrectly yielded
+                # zero, despite recording a known failing assertion.
+                self.assertEqual(status, 2)
+                self.assertEqual(evidence["tests"], 1)
+                self.assertEqual(evidence["failures"], 0)
+                self.assertEqual(evidence["errors"], 0)
+                self.assertEqual(evidence["skipped"], 0)
+
+    def test_r469_expected_failure_only_in_optimized_mode_is_hold(self):
+        fixture = (
+            "import unittest\n"
+            "class ModeSpecific(unittest.TestCase):\n"
+            "    if __debug__:\n"
+            "        def test_decimals(self):\n"
+            "            self.assertEqual(1, 1)\n"
+            "    else:\n"
+            "        @unittest.expectedFailure\n"
+            "        def test_decimals(self):\n"
+            "            self.assertEqual(1, 2)\n"
+        )
+        normal, normal_evidence = self._r469_real_child(
+            fixture, receipt_name="normal-r469.json")
+        optimized, optimized_evidence = self._r469_real_child(
+            fixture, optimized=True, receipt_name="optimized-r469.json")
+        self.assertEqual((normal, optimized), (0, 2))
+        self.assertEqual(normal_evidence["tests"], optimized_evidence["tests"])
+        self.assertEqual(normal_evidence["test_ids_sha256"],
+                         optimized_evidence["test_ids_sha256"])
+
+    def test_r469_expected_failures_cannot_pad_product_coverage_floor(self):
+        # Make every module meet exact method floors. One LedgerDiff
+        # expected failure must still block the complete six-app gate.
+        for name in gate.TESTS:
+            floor = gate.PRODUCT_METHOD_FLOORS.get(name, 1)
+            content = "import unittest\nclass ProductFixture(unittest.TestCase):\n"
+            for index in range(floor):
+                if name == gate.PRODUCT_TESTS[0] and index == floor - 1:
+                    content += "    @unittest.expectedFailure\n"
+                    assertion = "self.assertEqual(1, 2)"
+                else:
+                    assertion = "self.assertEqual(1, 1)"
+                content += (f"    def test_financial_{index}(self):\n"
+                            f"        {assertion}\n")
+            (self.root / "tests" / name).write_text(
+                content, encoding="utf-8")
+        with self.assertRaisesRegex(gate.LocalGateError,
+                                    "Local source regression test failed"):
+            gate._run_tests(self.root)
+
+    def test_r469_unexpected_success_also_remains_hold(self):
+        fixture = (
+            "import unittest\n"
+            "class ChangedExpectedFailure(unittest.TestCase):\n"
+            "    @unittest.expectedFailure\n"
+            "    def test_now_passes(self):\n"
+            "        self.assertEqual(1, 1)\n"
+        )
+        status, evidence = self._r469_real_child(
+            fixture, receipt_name="unexpected-success-r469.json")
+        self.assertEqual(status, 2)
+        self.assertEqual(evidence["tests"], 1)
 
 if __name__ == '__main__':
     unittest.main()

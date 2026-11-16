@@ -111,8 +111,12 @@ try:
           'expected':expected,'test_ids_sha256':identity.hexdigest()}
     with receipt.open('x',encoding='ascii') as output:
         json.dump(info,output,separators=(',',':'))
+    # unittest.wasSuccessful() considers @expectedFailure a success, but a
+    # known failing financial regression is NOT a passing evidence method.
+    # Unexpected successes also require human review of changed expectations.
     sys.exit(0 if result.wasSuccessful() and result.testsRun==expected
-             and not result.skipped else 2)
+             and not result.skipped and not result.expectedFailures
+             and not result.unexpectedSuccesses else 2)
 except Exception:
     sys.exit(3)
 '''
