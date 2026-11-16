@@ -1,4 +1,4 @@
-THE DISPATCH | OPTIONAL ISSUE 06 | NOT ADOPTED / UNSENT
+THE DISPATCH | REVIEW ONLY | NOT ADOPTED / UNSENT
 Subject: The man who measured his own forgetting
 Preheader: An 1885 experiment, its limits, and a better way to review seven days of attention.
 
@@ -6,27 +6,28 @@ He did not begin with an impressive claim about unlocking the mind. He began wit
 
 In the late nineteenth century, Hermann Ebbinghaus wanted to study memory without the familiar stories and associations that make ordinary words easier—or harder—to remember. He assembled roughly 2,300 possible consonant–vowel–consonant syllables and drew them into lists. He practiced, timed himself, and later tried learning the material again.
 
-Here is the part worth noticing: Ebbinghaus did not simply ask, “Do I remember this?” He looked at the *work required to relearn it*. His 1885 book, available in a 1913 English translation, describes the method and its limitations in considerable detail.
+Here is the part worth noticing: Ebbinghaus did not simply ask, “Do I remember this?” He looked at the work required to relearn it. His 1885 book, available in a 1913 English translation, describes the method and its limitations in considerable detail.
 
 That changed the question. A memory could feel lost, yet a repeat attempt might take less work than the first. His results also varied, and he knew that what the experimenter expected could influence what the experimenter did. He explicitly discussed this source of error rather than editing the inconvenience out of his story.
 
 There is a caution attached to that famous forgetting curve. Ebbinghaus's measurements came from a highly controlled task, predominantly on himself; they were not a promise that every person's memory follows one exact percentage schedule. His Chapter VII even calls attention to irregular results and to the special, individual character of the numbers.
 
-**What does this have to do with focus?** Only a little—and that's the useful distinction. Remembering an invented syllable list and beginning a difficult work task are different activities. A curve about forgetting cannot prove that a meditation recording improves productivity. The old experiment offers something narrower and better: decide in advance what you will observe, keep the record, and give inconvenient results a place in it.
+What does this have to do with focus? Only a little—and that's the useful distinction. Remembering an invented syllable list and beginning a difficult work task are different activities. A curve about forgetting cannot prove that a meditation recording improves productivity. The old experiment offers something narrower and better: decide in advance what you will observe, keep the record, and give inconvenient results a place in it.
 
 Try this over seven days without buying anything. Before a twelve-minute work session, write down the task, the time, and one small action that would count as starting. Afterward, record whether you started, how many minutes you actually worked, and what interrupted you. Keep the same definitions all week.
 
-On the seventh day, look at the record before asking how the week *felt*. Did the start happen on more days? Did the interruptions change? Was the task unusually easy on the days that went well? If there is no consistent pattern, write that too. Seven observations will not establish causation, diagnose a condition, or validate an audio product. They can help you choose what to try next.
+On the seventh day, look at the record before asking how the week felt. Did the start happen on more days? Did the interruptions change? Was the task unusually easy on the days that went well? If there is no consistent pattern, write that too. Seven observations will not establish causation, diagnose a condition, or validate an audio product. They can help you choose what to try next.
 
 The free Seven Day Focus Fieldbook includes space for this sort of honest review, a thirty-day follow-up log, and questions for assessing meditation-audio claims. You don't need a paid program to use it.
 
-**One next step — open the free Fieldbook:** https://finalvestige.com/focus/
+One next step — open the free Fieldbook: https://finalvestige.com/focus/
 
-**Source trail (not promotional links):** Hermann Ebbinghaus, *Memory: A Contribution to Experimental Psychology* (1885; English translation, 1913), Chapter III, "The Method of Investigation": https://psychclassics.yorku.ca/Ebbinghaus/memory3.htm ; Chapter VII, "Retention and Obliviscence as a Function of the Time": https://psychclassics.yorku.ca/Ebbinghaus/memory7.htm .
+Source trail (not promotional links): Hermann Ebbinghaus, Memory: A Contribution to Experimental Psychology (1885; English translation, 1913), Chapter III, "The Method of Investigation": https://psychclassics.yorku.ca/Ebbinghaus/memory3.htm ; Chapter VII, "Retention and Obliviscence as a Function of the Time": https://psychclassics.yorku.ca/Ebbinghaus/memory7.htm .
 
 The Dispatch will keep investigating records as well as perception. Our conclusions won't be purchased from a product page.
 
 — Final Vestige Studios
+
 
 PRE-SEND HOLD — DO NOT EMAIL
 Final Vestige Studios | [[VALID_POSTAL_ADDRESS_REQUIRED]] | [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
