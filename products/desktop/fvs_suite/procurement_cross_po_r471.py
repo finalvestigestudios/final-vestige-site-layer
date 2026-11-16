@@ -33,13 +33,17 @@ def _source_row_sort_key(row: object) -> tuple[int, int, str]:
 def _reserve_citation_budget(
     documents: Mapping[str, list[tuple[tuple[str, str], str]]],
     remaining: int,
+    *,
+    validated_row_keys: dict[str, tuple[int, int, str]] | None = None,
 ) -> int:
-    """Preflight ALL citations before constructing any cross-order row sets.
+    """Reserve all citations and validate each distinct source row once.
 
-    Reserve conservative (affected PO/line groups × distinct physical rows)
-    costs. This function does not materialize report evidence. It never puts
-    private IDs, source rows, filenames or amounts in exception messages.
+    A shared key cache lets four typed streams reuse the same safe row
+    ordering without repeatedly parsing it for each affected PO/line.
+    No document evidence is materialized until the entire budget passes.
     """
+    if validated_row_keys is None:
+        validated_row_keys = {}
     for occurrences in documents.values():
         groups = {group for group, _ in occurrences}
         if len({group[0] for group in groups}) < 2:
@@ -48,7 +52,10 @@ def _reserve_citation_budget(
         # allocating ANY typed output. Without this check int(row) could echo
         # a private CSV label in ValueError, or reject a 4,300-digit string.
         for _, row in occurrences:
-            _source_row_sort_key(row)
+            if type(row) is not str:
+                _source_row_sort_key(row)  # Reject before hashing hostile objects.
+            if row not in validated_row_keys:
+                validated_row_keys[row] = _source_row_sort_key(row)
         cost = len(groups) * len({row for _, row in occurrences})
         if cost > remaining:
             raise ValueError("Cross-order document review exceeds citation budget")
@@ -58,8 +65,10 @@ def _reserve_citation_budget(
 
 def _materialize_index(
     documents: Mapping[str, list[tuple[tuple[str, str], str]]],
+    *,
+    validated_row_keys: Mapping[str, tuple[int, int, str]] | None = None,
 ) -> dict[tuple[str, str], tuple[str, ...]]:
-    """Expand only after preflight; emit canonical group and row order."""
+    """Expand only after preflight; retain canonical ordering and safe fallback."""
     affected: dict[tuple[str, str], set[str]] = defaultdict(set)
     for occurrences in documents.values():
         groups = {group for group, _ in occurrences}
@@ -74,8 +83,17 @@ def _materialize_index(
     # Shortest spelling sorts first for equal numeric rows (2 before 02).
     # Real CSV physical rows use canonical digits; tie-breaking also makes
     # this shared helper deterministic for callers with noncanonical labels.
+    def key_for_row(row: str) -> tuple[int, int, str]:
+        if validated_row_keys is not None and type(row) is str:
+            cached = validated_row_keys.get(row)
+            if cached is not None:
+                return cached
+        # A legacy direct caller or changed mapping still gets safe validation,
+        # not a KeyError that could print a private source-row identifier.
+        return _source_row_sort_key(row)
+
     return {
-        group: tuple(sorted(rows, key=_source_row_sort_key))
+        group: tuple(sorted(rows, key=key_for_row))
         for group, rows in sorted(affected.items())
     }
 
@@ -85,8 +103,11 @@ def _bounded_index(
     remaining: int,
 ) -> tuple[dict[tuple[str, str], tuple[str, ...]], int]:
     """Legacy typed wrapper: reject over-budget streams before expansion."""
-    remaining = _reserve_citation_budget(documents, remaining)
-    return _materialize_index(documents), remaining
+    validated_row_keys: dict[str, tuple[int, int, str]] = {}
+    remaining = _reserve_citation_budget(
+        documents, remaining, validated_row_keys=validated_row_keys)
+    return _materialize_index(
+        documents, validated_row_keys=validated_row_keys), remaining
 
 
 def _typed_cross_po_source_rows(
@@ -193,9 +214,12 @@ def cross_po_all_document_source_rows(
     # Reserve the combined four-type budget before expanding even the FIRST
     # type. A later overflow must not allocate earlier, doomed report evidence.
     remaining = _MAX_CROSS_PO_CITATIONS
+    validated_row_keys: dict[str, tuple[int, int, str]] = {}
     for documents in by_type.values():
-        remaining = _reserve_citation_budget(documents, remaining)
-    return {kind: _materialize_index(documents)
+        remaining = _reserve_citation_budget(
+            documents, remaining, validated_row_keys=validated_row_keys)
+    return {kind: _materialize_index(
+                documents, validated_row_keys=validated_row_keys)
             for kind, documents in by_type.items()}
 
 def cross_po_foreign_offset_source_rows(
