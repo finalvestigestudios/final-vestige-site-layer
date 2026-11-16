@@ -482,5 +482,156 @@ class ProcurementIntegrationR5Tests(unittest.TestCase):
             self.assertEqual(item["cross_po_return_source_rows"], "")
 
 
+    def test_r474_all_four_typed_cross_po_reviews_preserve_decimal_custody(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "I-A", ""),
+            ("P1", "1", "1", "5", "credit", "C-A", "I-A"),
+            ("P2", "1", "10", "5", "invoice", "IA", ""),
+            ("P2", "1", "1", "5", "credit", "CA", "IA"),
+        ], [
+            ("P1", "1", "10", "receipt", "R-A"),
+            ("P1", "1", "1", "return", "T-A"),
+            ("P2", "1", "10", "receipt", "RA"),
+            ("P2", "1", "1", "return", "TA"),
+        ], po_rows=(("P1", "1", "10", "5"), ("P2", "1", "10", "5")))
+        outputs = engine.procure_guard(*paths, self.folder)
+        for item in self.report(outputs[0]):
+            for flag in ("invoice_document_cross_po_review",
+                         "credit_document_cross_po_review",
+                         "receipt_document_cross_po_review",
+                         "return_document_cross_po_review"):
+                self.assertIn(flag, item["status"])
+            self.assertEqual(item["cross_po_invoice_source_rows"], "2;4")
+            self.assertEqual(item["cross_po_credit_source_rows"], "3;5")
+            self.assertEqual(item["cross_po_receipt_source_rows"], "2;4")
+            self.assertEqual(item["cross_po_return_source_rows"], "3;5")
+            self.assertEqual(item["invoiced_qty"], "9")
+            self.assertEqual(item["received_qty"], "9")
+            self.assertEqual(item["invoice_total_exact"], "45")
+            for column in ("po_source_sha256", "invoice_source_sha256",
+                           "receipt_source_sha256"):
+                self.assertEqual(len(item[column]), 64)
+        self.assertIn("SHA-256", outputs[1].read_text())
+
+    def test_r474_same_id_across_different_event_types_is_not_cross_po(self):
+        paths = self.inputs([
+            ("P1", "1", "10", "5", "invoice", "SAME1", ""),
+            ("P2", "1", "10", "5", "invoice", "INV2", ""),
+            ("P2", "1", "1", "5", "credit", "SAME1", "INV2"),
+        ], [
+            ("P1", "1", "10", "receipt", "SAME1"),
+            ("P2", "1", "10", "receipt", "RC2"),
+            ("P2", "1", "1", "return", "SAME1"),
+        ], po_rows=(("P1", "1", "10", "5"), ("P2", "1", "10", "5")))
+        for item in self.report(engine.procure_guard(*paths, self.folder)[0]):
+            for kind in ("invoice", "credit", "receipt", "return"):
+                self.assertNotIn(kind + "_document_cross_po_review", item["status"])
+                self.assertEqual(item["cross_po_" + kind + "_source_rows"], "")
+
+    def test_r474_multi_document_cross_po_citations_not_cross_contaminated(self):
+        paths = self.inputs([
+            ("P1", "1", "5", "5", "invoice", "A-A", ""),
+            ("P1", "1", "5", "5", "invoice", "B-B", ""),
+            ("P2", "1", "10", "5", "invoice", "AA", ""),
+            ("P3", "1", "10", "5", "invoice", "BB", ""),
+        ], [
+            ("P1", "1", "10", "receipt", "RC1"),
+            ("P2", "1", "10", "receipt", "RC2"),
+            ("P3", "1", "10", "receipt", "RC3"),
+        ], po_rows=(("P1", "1", "10", "5"), ("P2", "1", "10", "5"),
+                    ("P3", "1", "10", "5")))
+        rows = {r["po"]: r for r in self.report(engine.procure_guard(*paths, self.folder)[0])}
+        self.assertEqual(rows["P1"]["cross_po_invoice_source_rows"], "2;3;4;5")
+        self.assertEqual(rows["P2"]["cross_po_invoice_source_rows"], "2;4")
+        self.assertEqual(rows["P3"]["cross_po_invoice_source_rows"], "3;5")
+        for item in rows.values():
+            self.assertEqual(item["cross_po_credit_source_rows"], "")
+            self.assertIn("invoice_document_cross_po_review", item["status"])
+            self.assertEqual(item["invoice_total_exact"], "50")
+
+    def test_r474_single_pass_classifier_call_count_and_legacy_parity(self):
+        from fvs_suite.procurement_cross_po_r471 import (
+            cross_po_all_document_source_rows, cross_po_invoice_source_rows,
+            cross_po_credit_source_rows, cross_po_receipt_source_rows,
+            cross_po_return_source_rows,
+        )
+        invoices = {
+            ("P1", "1"): [
+                {"row": "2", "event_type": "invoice", "document_id": "I-A"},
+                {"row": "3", "event_type": "credit", "document_id": "C-A"},
+            ],
+            ("P2", "1"): [
+                {"row": "4", "event_type": "invoice", "document_id": "IA"},
+                {"row": "5", "event_type": "credit", "document_id": "CA"},
+            ],
+        }
+        receipts = {
+            ("P1", "1"): [
+                {"row": "2", "event_type": "receipt", "document_id": "R-A"},
+                {"row": "3", "event_type": "return", "document_id": "T-A"},
+            ],
+            ("P2", "1"): [
+                {"row": "4", "event_type": "receipt", "document_id": "RA"},
+                {"row": "5", "event_type": "return", "document_id": "TA"},
+            ],
+        }
+        counts = {"invoice": 0, "receipt": 0}
+
+        def key(value):
+            return value.replace("-", "")
+
+        def invoice_kind(row):
+            counts["invoice"] += 1
+            return row["event_type"]
+
+        def receipt_kind(row):
+            counts["receipt"] += 1
+            return row["event_type"]
+
+        all_refs = cross_po_all_document_source_rows(
+            invoices, receipts, document_key=key,
+            invoice_event_type=invoice_kind, receipt_event_type=receipt_kind)
+        self.assertEqual(counts, {"invoice": 4, "receipt": 4})
+        for kind, wrapper, groups in (
+            ("invoice", cross_po_invoice_source_rows, invoices),
+            ("credit", cross_po_credit_source_rows, invoices),
+            ("receipt", cross_po_receipt_source_rows, receipts),
+            ("return", cross_po_return_source_rows, receipts),
+        ):
+            self.assertEqual(all_refs[kind], wrapper(
+                groups, document_key=key, event_type=lambda row: row["event_type"]))
+
+    def test_r474_index_evidence_invariant_under_input_order(self):
+        from fvs_suite.procurement_cross_po_r471 import cross_po_all_document_source_rows
+        invoices = {
+            ("P2", "2"): [
+                {"row": "12", "event_type": "invoice", "document_id": "I1"},
+                {"row": "8", "event_type": "credit", "document_id": "CM1"},
+            ],
+            ("P1", "1"): [
+                {"row": "3", "event_type": "credit", "document_id": "CM1"},
+                {"row": "2", "event_type": "invoice", "document_id": "I1"},
+            ],
+        }
+        receipts = {
+            ("P2", "2"): [{"row": "13", "event_type": "receipt", "document_id": "RC1"}],
+            ("P1", "1"): [{"row": "4", "event_type": "receipt", "document_id": "RC1"}],
+        }
+        keyword = {
+            "document_key": lambda value: value,
+            "invoice_event_type": lambda row: row["event_type"],
+            "receipt_event_type": lambda row: row["event_type"],
+        }
+        normal = cross_po_all_document_source_rows(invoices, receipts, **keyword)
+        reverse = lambda groups: {
+            key: list(reversed(rows)) for key, rows in reversed(list(groups.items()))
+        }
+        changed = cross_po_all_document_source_rows(
+            reverse(invoices), reverse(receipts), **keyword)
+        self.assertEqual(normal, changed)
+        self.assertEqual(normal["invoice"][("P1", "1")], ("2", "12"))
+        self.assertEqual(normal["credit"][("P2", "2")], ("3", "8"))
+
+
 if __name__ == "__main__":
     unittest.main()
