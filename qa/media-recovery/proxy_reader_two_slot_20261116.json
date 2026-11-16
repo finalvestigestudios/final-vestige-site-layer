@@ -1,0 +1,70 @@
+{
+  "schema": "fv-media-two-proxy-reader-v1",
+  "date": "2026-11-16",
+  "observation_method": "PUBLIC_IMAGE_READER_NOT_COLD_BROWSER",
+  "parent_pr": 2747,
+  "qa_pr": 154,
+  "historical": {
+    "posts": 61,
+    "images": 355,
+    "qa_offsite": 286,
+    "media_offsite": 288
+  },
+  "claimed_42_browser_broken": false,
+  "measured_76_percent_savings": false,
+  "large_stored": {
+    "count": 20,
+    "bytes": 64385752,
+    "visitor_transfer_bytes": null
+  },
+  "rows": [
+    {
+      "slot": "285:1",
+      "url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "reader_rendered": true,
+      "scene": "black-and-white control room and people",
+      "reader_http": null,
+      "origin_http": null,
+      "guest_http": null,
+      "guest_current_src": null,
+      "guest_decode": null,
+      "guest_transfer_bytes": null,
+      "binary_sha256": null,
+      "native_dimensions": null,
+      "rights": "HOLD",
+      "max_width": 960,
+      "wp_cached": false,
+      "official_reference": "https://www.flickr.com/photos/nrcgov/7447591424",
+      "relation": "RELATED_NOT_EXACT",
+      "reference_rights": "UNVERIFIED"
+    },
+    {
+      "slot": "291:0",
+      "url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "reader_rendered": true,
+      "scene": "Teton Dam face eroding with muddy water",
+      "reader_http": null,
+      "origin_http": null,
+      "guest_http": null,
+      "guest_current_src": null,
+      "guest_decode": null,
+      "guest_transfer_bytes": null,
+      "binary_sha256": null,
+      "native_dimensions": null,
+      "rights": "HOLD",
+      "max_width": 960,
+      "wp_cached": false,
+      "official_reference": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+      "relation": "CURATORIAL_NOT_EXACT_ACCESSION",
+      "reference_rights": "UNVERIFIED"
+    }
+  ],
+  "rights_policy": "https://www.archives.gov/research/still-pictures/permissions",
+  "browser_failure_confirmed": false,
+  "license_cleared": false,
+  "production_write": false,
+  "homepage_change": false,
+  "paid_action": false,
+  "automatic_replace": false,
+  "followup": "Site QA #154 existing collector only; P0 six first; capture guest currentSrc/GET/MIME/natural dimensions/bytes/screenshots and confirm item rights & exact crop before 960px no-upscale staging"
+}
