@@ -1,0 +1,433 @@
+{
+  "sprint": "mind/r430",
+  "status": "SOURCE_ONLY_DRAFT_AND_COMMERCE_HARD_HOLD",
+  "as_of": "2026-11-16",
+  "source_links": {
+    "stroop": "https://doi.org/10.1037/h0054651",
+    "stroop_catalog": "https://www.mpi.nl/publications/item2389918/studies-interference-serial-verbal-reactions",
+    "macleod": "https://doi.org/10.1037/0033-2909.109.2.163",
+    "mindfulness": "https://doi.org/10.1080/17437199.2023.2248222",
+    "mindfulness_institutional": "https://pure.psu.edu/en/publications/mindfulness-enhances-cognitive-functioning-a-meta-analysis-of-111/",
+    "inspire3": "https://inspire3.com/",
+    "zen12": "https://zen12.com/",
+    "zen12_offer": "https://zen12.com/order",
+    "total_focus": "https://hypnosislive.com/mental-skills/total-focus",
+    "total_focus_faq": "https://hypnosislive.com/faq",
+    "focus_shot": "https://brainwaveshots.com/focus-shot",
+    "affiliate_portal": "https://affiliates.inspire3.com/",
+    "ftc_ends": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "change_blindness": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "fieldbook": "https://finalvestige.com/focus/",
+    "editorial": "https://finalvestige.com/editorial-standards/"
+  },
+  "claim_evidence": [
+    {
+      "id": "stroop",
+      "claim": "Stroop 1935 color naming penalty 47s/74.3%, reading 2.3s/5.6% reported unreliable",
+      "status": "research_abstract_supported",
+      "source_keys": [
+        "stroop",
+        "stroop_catalog"
+      ]
+    },
+    {
+      "id": "context",
+      "claim": "Stroop measures task-dependent interference not universal focus score",
+      "status": "research_supported",
+      "source_keys": [
+        "stroop",
+        "macleod"
+      ]
+    },
+    {
+      "id": "meta",
+      "claim": "2024 meta-analysis covers 111 RCTs and 9538 people",
+      "status": "research_supported",
+      "source_keys": [
+        "mindfulness",
+        "mindfulness_institutional"
+      ]
+    },
+    {
+      "id": "meta_limits",
+      "claim": "Meta-analysis found no improvement in EF latency, processing speed",
+      "status": "research_supported",
+      "source_keys": [
+        "mindfulness_institutional"
+      ]
+    },
+    {
+      "id": "zen12_format",
+      "claim": "Zen12 seller lists 12 levels, 4 formats and 12-min sessions",
+      "status": "seller_described_format",
+      "source_keys": [
+        "zen12"
+      ]
+    },
+    {
+      "id": "zen12_bundle",
+      "claim": "Full bundle advertises 48 MP3 recordings",
+      "status": "seller_described_format",
+      "source_keys": [
+        "zen12",
+        "zen12_offer"
+      ]
+    },
+    {
+      "id": "zen12_warranty",
+      "claim": "Zen12 publicly describes 1-year money-back language",
+      "status": "seller_described_subject_to_exact_checkout",
+      "source_keys": [
+        "zen12"
+      ]
+    },
+    {
+      "id": "zen12_equivalence",
+      "claim": "12 min equivalent to an hour of advanced meditation",
+      "status": "unsupported_product_effect_do_not_adopt",
+      "source_keys": [
+        "zen12"
+      ]
+    },
+    {
+      "id": "zen12_outcome",
+      "claim": "Zen12 improves concentration, mental health, or creativity",
+      "status": "unsupported_product_effect_do_not_adopt",
+      "source_keys": [
+        "zen12",
+        "mindfulness"
+      ]
+    },
+    {
+      "id": "zen12_stroop",
+      "claim": "Zen12 fixes Stroop interference",
+      "status": "no_product_specific_evidence_do_not_claim",
+      "source_keys": [
+        "stroop",
+        "zen12"
+      ]
+    },
+    {
+      "id": "zen12_cost",
+      "claim": "A public Zen12 price is the authorized FV referred checkout price",
+      "status": "unverified_do_not_claim",
+      "source_keys": [
+        "zen12",
+        "zen12_offer"
+      ]
+    },
+    {
+      "id": "zen12_returns",
+      "claim": "Referred order matches public refund wording",
+      "status": "unverified_do_not_claim",
+      "source_keys": [
+        "zen12_offer"
+      ]
+    },
+    {
+      "id": "total_format",
+      "claim": "Total Focus seller describes 33 min/47 MB",
+      "status": "seller_described_format",
+      "source_keys": [
+        "total_focus"
+      ]
+    },
+    {
+      "id": "total_outcome",
+      "claim": "Total Focus guaranteed razor-sharp concentration",
+      "status": "unsupported_seller_effect_do_not_claim",
+      "source_keys": [
+        "total_focus"
+      ]
+    },
+    {
+      "id": "total_refund",
+      "claim": "Hypnosis Live FAQ says 14 days with five sessions per year max",
+      "status": "seller_described_refund_qualification_verify_checkout",
+      "source_keys": [
+        "total_focus_faq"
+      ]
+    },
+    {
+      "id": "shot_format",
+      "claim": "Focus Shot seller lists 15-min and 30-min versions",
+      "status": "seller_described_format",
+      "source_keys": [
+        "focus_shot"
+      ]
+    },
+    {
+      "id": "shot_outcome",
+      "claim": "Focus Shot creates instant 'laser focus'",
+      "status": "unsupported_seller_effect_do_not_claim",
+      "source_keys": [
+        "focus_shot"
+      ]
+    },
+    {
+      "id": "affiliate_public",
+      "claim": "Inspire3 public affiliate sign-up exists",
+      "status": "public_signup_verified_not_contract",
+      "source_keys": [
+        "affiliate_portal"
+      ]
+    },
+    {
+      "id": "affiliate_acceptance",
+      "claim": "FV-specific named acceptance or active affiliate account",
+      "status": "not_authenticated_hold",
+      "source_keys": [
+        "affiliate_portal"
+      ]
+    },
+    {
+      "id": "affiliate_tracking",
+      "claim": "Issued tracked FV earning link and product permissions",
+      "status": "not_authenticated_hold",
+      "source_keys": [
+        "affiliate_portal"
+      ]
+    },
+    {
+      "id": "affiliate_terms",
+      "claim": "Public payout claims are FV-specific agreement terms",
+      "status": "not_authenticated_hold",
+      "source_keys": [
+        "affiliate_portal"
+      ]
+    },
+    {
+      "id": "affiliate_channels",
+      "claim": "Approval to promote via organic social or Dispatch email",
+      "status": "not_authenticated_hold",
+      "source_keys": [
+        "affiliate_portal"
+      ]
+    },
+    {
+      "id": "creatives",
+      "claim": "Private approved affiliate creatives/swipe rights accessible",
+      "status": "not_authenticated_hold",
+      "source_keys": [
+        "affiliate_portal"
+      ]
+    },
+    {
+      "id": "owned_sku",
+      "claim": "Currently payable rights-cleared FV-owned Mind digital SKU",
+      "status": "not_authenticated_hold",
+      "source_keys": [
+        "fieldbook"
+      ]
+    },
+    {
+      "id": "free_asset",
+      "claim": "Live Focus Fieldbook describes 52 pages and existing form",
+      "status": "verified_live_fv",
+      "source_keys": [
+        "fieldbook"
+      ]
+    },
+    {
+      "id": "puys",
+      "claim": "Puységur claims prove animal magnetism or cure",
+      "status": "not_supported_do_not_adopt",
+      "source_keys": [
+        "puysegur"
+      ]
+    },
+    {
+      "id": "ftc_disclosure",
+      "claim": "Clear material relationship disclosure near specific earning links",
+      "status": "ftc_guidance_supported",
+      "source_keys": [
+        "ftc_ends"
+      ]
+    },
+    {
+      "id": "ftc_health",
+      "claim": "Health-related benefit advertising needs competent support",
+      "status": "ftc_guidance_supported",
+      "source_keys": [
+        "ftc_health"
+      ]
+    },
+    {
+      "id": "link_sale",
+      "claim": "Affiliate outbound click equals confirmed paid sale",
+      "status": "false_never_infer",
+      "source_keys": [
+        "affiliate_portal"
+      ]
+    },
+    {
+      "id": "investigation",
+      "claim": "Research conclusions separated from seller commercial text",
+      "status": "fv_editorial_standard",
+      "source_keys": [
+        "editorial"
+      ]
+    }
+  ],
+  "release_gates": [
+    {
+      "name": "named_fv_publisher_acceptance",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "authorized_zen12_sku",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "organic_social_channel_permission",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "email_dispatch_channel_permission",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "approved_creative_rights",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "issued_fv_earning_url",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "tracking_and_attribution_terms",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "settlement_and_payout_terms",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "chargeback_and_refund_terms",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "exact_referral_price_bundle",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "actual_referral_refund_policy",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "checkout_mobile_path_approval",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "product_specific_efficacy_evidence_or_claim_exclusion",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "seller_claims_all_independently_reviewed",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "proximate_disclosure_a11y",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "editorial_commerce_separation",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "responsive_360_390_768_1440_1920",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "keyboard_screen_reader_WCAG22AA",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "no_js_reduced_motion",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "CSP_and_WP_sanitization",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "performance_CWV",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "original_42s_encoded_rights_cleared_video",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "captions_transcript_sync_checked",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "first_party_consent_analytics_no_duplicates",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "existing_jetpack_provider_confirmation",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "real_grok_asset_ids_and_post_rights",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "merchant_confirmed_paid_settled_orders_refunds",
+      "state": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "founder_release_approval",
+      "state": "HOLD",
+      "evidence": null
+    }
+  ],
+  "commercial_identity": {
+    "named_inspire3_acceptance": "NOT_AUTHENTICATED",
+    "earning_url": "WITHHELD",
+    "referred_price": "UNKNOWN",
+    "permission_scope": "UNKNOWN",
+    "owned_paid_mind_sku": "NOT_AUTHENTICATED",
+    "qualified_human_sessions": null,
+    "confirmed_orders": null,
+    "realized_net_per_1000": null
+  },
+  "source_notes": [
+    "Official seller product/offer pages reviewed, not proof of efficacy.",
+    "Public affiliate signup does not establish personal approval or payout terms.",
+    "Gmail approval search returned unrelated promotions, no authenticated FV publisher authorization.",
+    "No actual merchant checkout, affiliate acceptance, or product use undertaken."
+  ]
+}

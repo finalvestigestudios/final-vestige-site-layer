@@ -1,0 +1,42 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const dir=new URL('.',import.meta.url);const read=n=>fs.readFileSync(new URL(n,dir),'utf8');
+const A=read('ZEN12_A_TEXT_BUYER_GUIDE.html'), B=read('ZEN12_B_OPTIONAL_FILM_CONCEPT.html'),hub=read('MIND_HUB_WORDPRESS_SOURCE_ONLY.html'),article=read('THE_WORD_THAT_ARGUED_WITH_ITS_COLOR.md'),matrix=JSON.parse(read('CLAIMS_AND_PERMISSIONS.json')),vtt=read('ORIGINAL_42S_CAPTIONS.vtt'),poster=read('ORIGINAL_STROOP_POSTER.svg'),routing=read('CONVERSION_AND_CREATOR_ROUTES.md');
+let count=0;function check(v,m){assert.ok(v,m);count++}
+check(article.split(/\s+/).length>2000,'substantial original research');
+check(article.includes('## Sources and limits'),'sources');
+check(article.includes('74.3%')&&article.includes('5.6%'),'Stroop asymmetry');
+check(article.includes('not a clinical diagnostic test'),'nonclinical caveat');
+check(A.includes('<!doctype html>')&&B.includes('<!doctype html>')&&hub.includes('<!doctype html>'),'valid prototypes');
+check(B.replace(/<section data-film-concept="true"[\s\S]*?<\/section>/,'')===A,'A and B substantive copy identical');
+for(const [name,html] of [['A',A],['B',B]]){
+check(!/<script\b|<iframe\b|<form\b/i.test(html),name+' no scripts/embeds/forms');
+check(!/\bonclick=|\bonerror=|javascript:|pixel\.facebook|gtag\(/i.test(html),name+' no tracking/event injection');
+check((html.match(/<button\b/g)||[]).length===1,name+' one merchant control');
+check(/<button[^>]+disabled\b/.test(html),name+' merchant button disabled');
+check(html.includes('may earn a commission at no additional cost to you'),name+' disclosure');
+check(html.includes('No commercial link is active'),name+' inactive state');
+check(html.includes('aria-describedby="affiliate-disclosure approval-gate"'),name+' a11y');
+check(html.includes('finalvestige.com/focus/'),name+' single existing free funnel');
+check(!/\$\d+/.test(html),name+' no guessed price');
+}
+check(!A.includes('data-film-concept="true"')&&B.includes('data-film-concept="true"'),'only B video');
+check(B.includes('ORIGINAL_STROOP_POSTER.svg')&&B.includes('<details>'),'B optional text access');
+check(poster.includes('viewBox="0 0 1280 720"'),'16:9 original poster');
+check(!/<script\b|<form\b/i.test(hub),'hub no JS or opt-in duplication');
+check(hub.includes('change-blindness/')&&hub.includes('puysegurs-animal-magnetism-files/'),'hub two live evidence routes');
+check(!hub.includes('href="/mind/"'),'no false live mind path');
+check(matrix.claim_evidence.length>=30,'claim matrix depth');
+check(Object.keys(matrix.source_links).length>=18,'source URLs');
+check(matrix.release_gates.length===28,'28 gates');
+check(matrix.release_gates.every(x=>x.state==='HOLD'&&x.evidence===null),'all gates held');
+check(matrix.commercial_identity.realized_net_per_1000===null,'revenue unknown');
+check(routing.includes('UNMATCHED')&&routing.includes('NOT COMPUTABLE'),'qualification honest');
+check(routing.includes('merchant_verified_paid_order')&&routing.includes('affiliate_outbound'),'sale distinct click');
+const cues=[...vtt.matchAll(/(\d{2}):(\d{2}):(\d{2})\.(\d{3}) --> (\d{2}):(\d{2}):(\d{2})\.(\d{3})/g)];
+check(vtt.startsWith('WEBVTT')&&cues.length===6,'6 VTT cues');
+const sec=(h,m,s,ms)=>+h*3600+(+m)*60+(+s)+(+ms)/1000;
+const times=cues.map(c=>[sec(c[1],c[2],c[3],c[4]),sec(c[5],c[6],c[7],c[8])]);
+check(times[0][0]===0&&times.at(-1)[1]===42,'42 second exact coverage');
+check(times.every((t,i)=>t[1]>t[0]&&(!i||t[0]===times[i-1][1])),'continuous non-overlapping captions');
+console.log('PASS '+count+' source-only verification assertions; native browser, WP sanitizer, video, merchant, Jetpack remain untested.');
