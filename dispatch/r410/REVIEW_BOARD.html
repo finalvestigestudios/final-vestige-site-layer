@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dispatch R410 | Focus consent-state audit (offline)</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.6;background:#0d1110;color:#f1eadd}
+*{box-sizing:border-box}body{margin:0}.wrap{max-width:960px;margin:auto;padding:24px 22px 70px;overflow-wrap:anywhere}
+a{color:#f0c58d;text-underline-offset:3px}:focus-visible{outline:3px solid #f0c58d;outline-offset:3px}h1,h2{font-family:Georgia,serif;font-weight:400;line-height:1.12}h1{font-size:clamp(2rem,6vw,3.3rem)}h2{font-size:1.55rem;margin-top:34px}.eyebrow{color:#d1ab77;letter-spacing:.14em;font-size:.8rem;text-transform:uppercase}.lead{font-size:1.13rem;color:#d3cbc0;max-width:70ch}.note{border-left:3px solid #ca9b58;padding:12px 16px;background:#1b1d19;margin:18px 0}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;margin-top:20px}.card{padding:18px;border:1px solid #555047;border-radius:8px;background:#171a17}.card h3{margin:0 0 8px;font-size:1.1rem}.card p{margin:0;color:#d3cbc0}.tag{display:inline-block;padding:4px 9px;border:1px solid #8b7964;border-radius:3px;font-size:.8rem;margin-bottom:10px}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:590px}th,td{text-align:left;padding:12px;border-bottom:1px solid #4e4c46;vertical-align:top}th{color:#f4d9ab}.foot{margin-top:36px;color:#b6afa3;font-size:.9rem}@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style></head><body><main class="wrap"><p class="eyebrow">Final Vestige Studios · Dispatch / Focus QA · R410</p>
+<h1>A visible download is not a confirmed subscriber.</h1>
+<p class="lead">Source-faithful, non-sending offline review of the client-side gift signal on the published Focus page. No subscriber list, emails, commerce or live analytics touched.</p>
+<p class="note"><strong>Release: HOLD.</strong> This is an editorial/engineering review, not a live site preview, a Jetpack inbox preview or proof that the current form is broken. The free PDF remains the existing free resource.</p>
+<section aria-labelledby="signals"><h2 id="signals">Three levels of evidence</h2><div class="cards">
+<div class="card"><span class="tag">Observed client UI</span><h3>Gift panel appears</h3><p>A query parameter such as <code>?subscribe=confirmed</code> can display the free PDF link in the reproduced script. This establishes a visual state, not an account state.</p></div>
+<div class="card"><span class="tag">Needs private provider proof</span><h3>Confirmed, eligible opt-in</h3><p>Accept only a deduplicated, authenticated Jetpack/provider record with confirmation, email eligibility and unsubscribed/suppressed state reconciled.</p></div>
+<div class="card"><span class="tag">Independent merchant proof</span><h3>Realized paid conversion</h3><p>A verified paid order or settled affiliate commission, net of refunds and fees; never a PDF click, email open or guide view.</p></div>
+</div></section>
+<section aria-labelledby="repro"><h2 id="repro">Local source-code reproduction</h2><div class="tablewrap"><table><thead><tr><th>Untrusted input</th><th>Gift display in offline reproduction</th><th>May count confirmed_signup?</th></tr></thead><tbody>
+<tr><td>none</td><td>Hidden</td><td>No</td></tr>
+<tr><td><code>?subscribe=success</code></td><td>Visible</td><td>No</td></tr>
+<tr><td><code>?subscribe=confirmed</code></td><td>Visible</td><td>No</td></tr>
+<tr><td><code>?subscribe=paid</code></td><td>Visible</td><td>No</td></tr>
+<tr><td><code>?subscribe=blocked</code></td><td>Hidden</td><td>No</td></tr>
+<tr><td>DOM class <code>is-subscriber</code></td><td>Visible</td><td>No, class alone insufficient</td></tr>
+</tbody></table></div></section>
+<section aria-labelledby="next"><h2 id="next">Decision path</h2><p>Keep the 4-editorial / 2-commercial draft. Resolve provider-confirmed signup, actual Fieldbook arrival and genuine non-sending Jetpack email preview before discussing send eligibility. Commercial Issues 03 and 05 additionally require named Inspire3 email approval, authorized live guides and reconciled checkout terms. All six remain unsent.</p></section>
+<p class="foot">Source: authenticated read-only WordPress /focus/ page 1579, inspected 2026-11-16; core evidence and test notes in <code>FOCUS_TO_DISPATCH_CONFIRMATION_AUDIT.md</code>. Cross-check with <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174">Dispatch Issue #174</a>. No external scripts, tracking pixels, forms or network fonts.</p>
+</main></body></html>
