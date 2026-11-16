@@ -17,22 +17,22 @@ const STATUS = Object.freeze({
 const isObject = x => x && typeof x === 'object' && !Array.isArray(x);
 const isInt = x => Number.isSafeInteger(x);
 function requireString(x, label, max = 8192) {
-  if (typeof x !== 'string' || !x.trim() || x.length > max) throw new Error(\`Invalid \${label}\`);
+  if (typeof x !== 'string' || !x.trim() || x.length > max) throw new Error(`Invalid ${label}`);
   return x;
 }
 function requireHttpUrl(x,label) {
   requireString(x,label);
   let u;
-  try { u = new URL(x); } catch { throw new Error(\`Invalid \${label} URL\`); }
-  if (!['https:', 'http:'].includes(u.protocol) || u.username || u.password) throw new Error(\`Invalid \${label} scheme\`);
+  try { u = new URL(x); } catch { throw new Error(`Invalid ${label} URL`); }
+  if (!['https:', 'http:'].includes(u.protocol) || u.username || u.password) throw new Error(`Invalid ${label} scheme`);
   return u;
 }
 function optionalBool(x,label) {
-  if (x !== null && x !== undefined && typeof x !== 'boolean') throw new Error(\`Invalid \${label}\`);
+  if (x !== null && x !== undefined && typeof x !== 'boolean') throw new Error(`Invalid ${label}`);
   return x ?? null;
 }
 function optionalNonnegativeInt(x,label) {
-  if (x !== null && x !== undefined && (!isInt(x) || x < 0)) throw new Error(\`Invalid \${label}\`);
+  if (x !== null && x !== undefined && (!isInt(x) || x < 0)) throw new Error(`Invalid ${label}`);
   return x ?? null;
 }
 function sourceMatches(current, row) {
@@ -159,6 +159,6 @@ if (require.main === module) {
     const manifest = JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
     const capture = process.argv[3] ? JSON.parse(fs.readFileSync(process.argv[3],'utf8')) : null;
     process.stdout.write(JSON.stringify(evaluate(manifest,capture),null,2)+'\n');
-  } catch (e) { process.stderr.write(\`HOLD: \${e.message}\n\`); process.exitCode = 1; }
+  } catch (e) { process.stderr.write(`HOLD: ${e.message}\n`); process.exitCode = 1; }
 }
 module.exports = {evaluate,validateManifest,validateCapture,sourceMatches,STATUS};
