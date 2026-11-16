@@ -72,7 +72,7 @@ This exercise is a reflection aid, **not** a validated change-blindness test, th
 
 ## Does Zen12 fix the problem?
 
-There is no reasonable path from the door experiment to that conclusion. The official [Zen12 home page](https://zen12.com/) describes a twelve-level meditation-audio product and markets possible focus and relaxation benefits. The site's claims about twelve minutes equaling much longer sessions, health improvements and effortless outcomes are seller representations; the door experiments do not validate them. Neither do those experiments study Zen12 listeners. Product evaluation must account for exact format, proposed use, cost at the authenticated referred checkout, refund terms and evidence directly relevant to the promised result.
+There is no reasonable path from the door experiment to that conclusion. The official official Zen12 home page describes a twelve-level meditation-audio product and markets possible focus and relaxation benefits. The site's claims about twelve minutes equaling much longer sessions, health improvements and effortless outcomes are seller representations; the door experiments do not validate them. Neither do those experiments study Zen12 listeners. Product evaluation must account for exact format, proposed use, cost at the authenticated referred checkout, refund terms and evidence directly relevant to the promised result.
 
 An independent buyer guide can still be valuable. It can tell visitors what Zen12 says it offers; distinguish a guided personal practice from a clinical finding; give an immediate free option; explain questions to ask before buying; and disclose any commission relationship plainly. That guide must not recast the historical investigation as a sales demonstration. If verified affiliate permission never arrives, the evidence article and free exercise should still stand on their own.
 
@@ -90,6 +90,6 @@ They do not show that all witnesses are unreliable, that attention can be measur
 4. Angelone, B. L., Levin, D. T., & Simons, D. J. (2003). “The relationship between change detection and recognition of centrally attended objects in motion pictures.” *Perception*, 32. [DOI](https://doi.org/10.1068/p5079).
 5. Simons, D. J., & Chabris, C. F. (1999). “Gorillas in our midst.” *Perception*, 28, 1059–1074. [DOI](https://doi.org/10.1068/p281059).
 6. Final Vestige Studios. [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/) and [published Change Blindness investigation](https://finalvestige.com/2026/11/02/change-blindness/).
-7. [Zen12's official product description](https://zen12.com/), consulted 2026-11-16. Seller claims are not independent efficacy proof.
+7. Zen12's official product description (source retained in internal claim matrix; no outbound merchant link), consulted 2026-11-16. Seller claims are not independent efficacy proof.
 
 *Editorial independence: the research conclusions above are not contingent on any affiliate relationship. No product link, purchase CTA, endorsement or affiliate revenue is live in this manuscript.*
