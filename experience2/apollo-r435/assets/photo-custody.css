@@ -1,0 +1,20 @@
+/* The six photographs are SOURCE LINKS, never local or hotlinked image assets. */
+.fv-r435{max-width:100%;min-width:0;overflow-wrap:anywhere}
+.fv-r435 *,.fv-r435 *::before,.fv-r435 *::after{box-sizing:border-box;min-width:0}
+.fv-r435__catalog{margin:1.3rem 0;border:1px solid #9e906e;color:#eee7d8;background:#1d211e;padding:0 1rem 1rem}
+.fv-r435__catalog>summary{padding:1.1rem 0;font-weight:700;cursor:pointer;color:#ffe0a8}
+.fv-r435__catalog p{max-width:75ch}
+.fv-r435__grid{list-style:none;padding:0;margin:1rem 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1rem}
+.fv-r435__plate{padding:1rem;background:#2a2d28;border:1px solid #807662;display:flex;flex-direction:column;gap:.5rem}
+.fv-r435__plate time{color:#ffe0a8;font-variant-numeric:tabular-nums}
+.fv-r435__index,.fv-r435__kind{font-size:.8rem;color:#eee0c5}
+.fv-r435__plate h3{font-size:1.13rem;line-height:1.35;margin:0;color:#fff}
+.fv-r435__drawer{margin:.25rem 0;padding:.7rem;border-left:2px solid #f4cb76}
+.fv-r435__drawer>summary{cursor:pointer;font-weight:600}
+.fv-r435__plate a{margin-top:auto;color:#ffe0a8;text-underline-offset:.2em}
+.fv-r435 :is(a,summary):focus-visible{outline:3px solid #ffdf9d;outline-offset:3px}
+.fv-r435__rights{border-top:1px solid #807662;padding-top:.75rem;font-size:.9rem}
+@media(max-width:360px){.fv-r435__catalog{padding:0 .65rem .8rem}.fv-r435__plate{padding:.75rem}}
+@media(prefers-reduced-motion:reduce){.fv-r435,.fv-r435 *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){.fv-r435__catalog,.fv-r435__plate,.fv-r435__drawer{border-color:CanvasText}.fv-r435__plate time,.fv-r435__plate a{color:LinkText}}
+@media print{.fv-r435__catalog,.fv-r435__plate{background:white;color:black}.fv-r435__plate h3,.fv-r435__catalog>summary,.fv-r435__plate time,.fv-r435__plate a{color:black}.fv-r435__plate{break-inside:avoid}.fv-r435__catalog:not([open])::after{content:'Photo source catalogue available at the online Research Desk.'}}
