@@ -1,0 +1,33 @@
+# R416 — exact-source QA and release receipt
+
+**Parent:** [R415 draft #2827](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2827) at exact base `7233c3d2f5d811b8d579b672032d62ae7fcc35c1`. Owner [Issue #174](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174), master six [#175](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175), initial per-edition QA [#201](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201), Mind #171, Focus #129, revenue #820. All changes under `dispatch/r416/`. The report does **not** ask to merge any stacked PR or alter frozen homepage PR #49.
+
+## Independent checks completed
+
+1. **Original canonical source:** Re-ran Python `python -m unittest discover -s tests -v` using the eight campaign input/test files from the previously archived R409 source package; **6 tests passed**. Before this run, independently fetched those eight exact paths from original master #175 at `d57ccdba3aee8f065e143e101c2945f4f3d01647`: all eight current Git blob SHA-1 values were identical to the `git hash-object` values of the archived bytes. This proves the Python rerun corresponds to the byte-identical original master snapshot; it does **not** establish anything about delivery.
+2. **New R416 ledger and gate:** The JSON evidence ledger and `QA_NO_SEND_GATE.cjs` were fetched back through the connected GitHub repository at exact commit `2ea24c7e226910a3e0777d2cc4b5e28366e6492d`. Git blob identifiers: JSON `572849f3aff7dd7ec231dcfb7e4af21685f2ee87`, JavaScript `d05c78420aa7680d99bf4af2c05a3c6484ba45ec`. Executed the **exact remote JavaScript source** under an isolated V8 runner with minimal shims for Node's `assert.equal`, `fs.readFileSync` and the URL parser. The unmodified all-HOLD ledger passed and all **25 adversarial mutations were rejected: 26/26** cases in total.
+3. Adversarial cases cover enabling automatic post emails, counterfeit founder approval or adoption, fake recipient count, bogus delivered welcome, fictitious preview/footer/opt-out evidence, product-specific EMAIL permission toggled without authentication, active merchant links or tracking query strings, mismatched 4:2 balance, missing slot, fabricated qualified-human sessions or realized sales, click-as-sale or browser-query-as-signup truth, and a fake personal-data/token field.
+4. **Actual provider status read-only:** Jetpack at `2026-11-17T05:31:53Z`: newsletter `site_can_send=true`, dashboard total3/confirmed3/unconfirmed2, five recent post emails `never_sent_opted_out`. Get-settings at `2026-11-17T05:31:59Z`: enabled, post send default OFF, full-body, no-reply, welcome configured with direct Fieldbook PDF. Separate follower endpoint: WP.com Reader3/direct email0. Actual eligible receiver count **UNKNOWN**. Do not sum categories.
+5. **Live page source:** WordPress page 523 (/dispatch/) and page 1579 (/focus/) each promise publication-tied updates; site-level settings deliberately do not send by default. This is an **expectation-alignment QA finding**, not proof that every sent message is absent. Verified four alternative editorial CTA routes by authenticated content records: posts 1922, 1924, 434, page 2209 are published. Commercial guide routes remain null.
+6. **Scoped connected Gmail read-only checks:** Four terms searched for named FV Inspire3 approval and actual Dispatch/Fieldbook welcome after October 2026; no matches in that scope. Do not treat a negative mailbox search as proof of absence from all sources.
+7. **Official source checks:** Reviewed seller-controlled `https://zen12.com/about`, `https://hypnosislive.com/mental-skills/total-focus` and `https://hypnosislive.com/faq` and FTC's `https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business`. Seller efficacy claims are not independently proven, and no merchant-specific affiliate permission can be inferred from a public page.
+
+## QA qualification — what is NOT proven
+
+- **No native Node execution of new QA file.** Exact GitHub source was executed in V8 with a lightweight Node-API shim, not in a native Node runtime. A later owner with repository checkout can run `node dispatch/r416/QA_NO_SEND_GATE.cjs dispatch/r416/SOURCE_OF_TRUTH_HARD_HOLD_LEDGER.json`.
+- **No new Chromium preview or email-client rendering.** Earlier offline six-issue HTML/text specimens remain in separate pinned candidate commits. Native WordPress **Preview email** not performed; no draft post created.
+- **No actual received email or Fieldbook welcome witness.** No test email authorized. No functional unsubscribe test authorized. No subscriber identities exported.
+- **No Final Vestige business postal address established.** The newsletter sender being labeled FV and a WordPress/merchant footer is insufficient. No assertion of FTC compliance or legal signoff.
+- **No SKU-specific affiliate EMAIL permissions, actual issued earning link, live approved guide or referred checkout/settlement proof.**
+- **No paid conversion or audited qualified-human denominator.** Revenue per 1,000 qualified-human sessions is **NOT COMPUTABLE**, not 0.
+- **No statistical A/B outcome.** Tiny and unverified recipient count.
+
+## Fail-closed result and exact handoff
+
+**Release decision: HOLD_UNSENT for 01–06.** Issues 03/05 **HOLD_MERCHANT**, original 04 **HOLD_COPY**, every R415 option **NOT_ADOPTED**. New trust finding: the existing acquisition wording creates a “when we publish” delivery expectation despite manual-only default-off emails and five observed opt-outs. Founder + Claude/Focus should approve or reject proposed expectation-aligned wording in `CONSENT_COPY_AND_FOUNDER_ACCEPTANCE.md` before any authorized site change; never toggle automatic sends to bridge the gap.
+
+Mind must privately establish named SKU-specific email permission and a real independent presell offer; Focus must privately reconcile recipient eligibility and the received welcome; Dispatch/Founder must witness native preview and lawful postal/unsubscribe; Claude/Grok/Praxxis must keep using the existing acquisition instrumentation and count **settled** revenue, not opens/clicks.
+
+**Non-actions:** No new posts, publications, emails, test sends, subscriber contacts/imports, WordPress settings or page writes, affiliate activation, social queue edits, paid service, branch merge or spend.
+
+**Source paths in this PR:** `INBOX_PROMISE_CONSENT_REVENUE_AUDIT.md`, `CONSENT_COPY_AND_FOUNDER_ACCEPTANCE.md`, `SOURCE_OF_TRUTH_HARD_HOLD_LEDGER.json`, `QA_NO_SEND_GATE.cjs`. This QA receipt was authored after the exact-remote V8 test and must be re-fetched after the last commit for source-integrity verification.
