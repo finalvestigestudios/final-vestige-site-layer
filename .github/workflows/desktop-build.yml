@@ -23,6 +23,12 @@ jobs:
       - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0 (node24)
         with:
           python-version: '3.12'
+      - name: R493 descriptor-bound PE SHA256 + six-app non-release gate (normal and optimized)
+        run: |
+          python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_custody_r493.py
+          python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_custody_r493.py
+          python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_binding_integration_r493.py
+          python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_binding_integration_r493.py
       - name: Fail closed on CI artifact paths (R41)
         run: python products/desktop/ci_artifact_policy.py .github/workflows/desktop-build.yml
       - name: Verify mandatory two-mode CI source gate (R57)
@@ -1068,6 +1074,18 @@ jobs:
       - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0 (node24)
         with:
           python-version: '3.12'
+      - name: R493 descriptor-bound PE SHA256 + six-app non-release gate (normal and optimized)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_custody_r493.py
+          if ($LASTEXITCODE -ne 0) { throw "R493 digest custody failed" }
+          python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_custody_r493.py
+          if ($LASTEXITCODE -ne 0) { throw "R493 optimized digest custody failed" }
+          python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_binding_integration_r493.py
+          if ($LASTEXITCODE -ne 0) { throw "R493 candidate integration failed" }
+          python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_binding_integration_r493.py
+          if ($LASTEXITCODE -ne 0) { throw "R493 optimized candidate integration failed" }
       - name: R334 canonical six-app checksum evidence before private Windows packaging
         shell: pwsh
         run: |

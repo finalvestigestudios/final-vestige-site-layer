@@ -65,6 +65,12 @@ jobs:
         run: |
           python -B -W error -m unittest discover -s products/desktop/tests -p test_windows_source_protocol_r492.py
           python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_windows_source_protocol_r492.py
+      - name: R493 bind all six PE images to the same-descriptor manifest digest (both modes)
+        run: |
+          python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_custody_r493.py
+          python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_custody_r493.py
+          python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_binding_integration_r493.py
+          python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_binding_integration_r493.py
       - name: Prove independent CI custody rules in normal and optimized mode
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p test_independent_ci_r385.py
