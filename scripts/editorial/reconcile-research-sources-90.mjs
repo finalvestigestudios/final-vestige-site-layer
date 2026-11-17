@@ -25,6 +25,8 @@ const PAGE_REPLACEMENTS = [
   ['Archives, maps &amp; research <span>12</span>','Archives, maps &amp; research <span>25</span>'],
   ['Navigation &amp; preservation <span>5</span>','Navigation &amp; preservation <span>8</span>'],
   ['Showing all 60 sources.','Showing all 90 sources.'],
+  ["A record-group discovery tool that makes digitization gaps visible: NARA’s June 2026 baseline reports 475,127,595 scans, about 3.87% of estimated textual holdings represented there.",
+   "Explore record-group scan coverage against estimated textual pages. NARA updates these estimates monthly; they do not measure how many records survive or whether a specific file is accessible."],
   ["' of 60 source'","' of 90 source'"],
   ['const totals={all:90,declassified:12,accountability:23,engineering:21,archives:26,navigation:8};',
    'const totals={all:90,declassified:12,accountability:24,engineering:21,archives:25,navigation:8};']
