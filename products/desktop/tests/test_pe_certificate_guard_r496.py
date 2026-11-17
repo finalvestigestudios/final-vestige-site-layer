@@ -51,8 +51,9 @@ class PECertificateR496(unittest.TestCase):
     def test_non_multiple_of_eight_certificate_length_uses_padding(self):
         verify(certificate(b"P" * 9))
 
-    def test_arbitrary_padding_is_not_misreported_as_signature_verification(self):
-        verify(certificate(b"P")[:-7] + b"Z" * 7)
+    def test_nonzero_outer_padding_is_rejected_without_claiming_signature_verification(self):
+        with self.assertRaises(PECertificateError):
+            verify(certificate(b"P")[:-7] + b"Z" * 7)
 
     def test_blob_that_is_not_win_certificate_is_rejected(self):
         with self.assertRaises(PECertificateError):
