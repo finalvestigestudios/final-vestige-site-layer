@@ -27,7 +27,7 @@ for(const [label,page] of [['A',A],['B',B],['hub',hub]]) {
   check(label+' no tracking pixel',()=>assert.doesNotMatch(page,/<iframe\b|<img[^>]*https?:\/\/|googletagmanager|facebook\.com\/tr\//i));
 }
 for(const [label,page] of [['A',A],['B',B]]) {
-  check(label+' native disabled',()=>assert.match(page,/<button[^>]*\bdisabled\b[^>]*>/));
+  check(label+' native disabled',()=>assert.match(page,/<button[^>]*\sdisabled(?:\s|=|>)[^>]*>/));
   check(label+' adjacent disclosure',()=>{const d=page.indexOf('Potential affiliate disclosure:');const b=page.indexOf('<button',d);assert.ok(d>0&&b>d&&b-d<530)});
   check(label+' no merchant active links',()=>assert.doesNotMatch(page,/<a\b[^>]*href=["']https?:\/\/(?:zen12|inspire3|affiliates\.inspire3|hypnosislive|brainwaveshots)\./i));
   check(label+' no prices or coupons',()=>assert.doesNotMatch(page,/\$[0-9]|coupon code|discount ends tonight/i));
