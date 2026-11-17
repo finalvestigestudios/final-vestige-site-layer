@@ -1,0 +1,508 @@
+{
+  "version": "r450-2026-11-17",
+  "scope": "FV Mind & Perception only",
+  "status": "UNPUBLISHED_SOURCE_ONLY / COMMERCIAL_HARD_HOLD",
+  "reviewed_at": "2026-11-17",
+  "sources": [
+    {
+      "id": "door",
+      "url": "https://doi.org/10.3758/BF03208840"
+    },
+    {
+      "id": "blink",
+      "url": "https://doi.org/10.1111/j.1467-9280.1997.tb00427.x"
+    },
+    {
+      "id": "gradual",
+      "url": "https://doi.org/10.1068/p3104"
+    },
+    {
+      "id": "historyReview",
+      "url": "https://doi.org/10.1177/1745691617707269"
+    },
+    {
+      "id": "puysegur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "inspire",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "zenAbout",
+      "url": "https://zen12.com/about"
+    },
+    {
+      "id": "zenCatalog",
+      "url": "https://zen12.com/"
+    },
+    {
+      "id": "zenPromo",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "partner",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "focusHypnosis",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "focusShot",
+      "url": "https://brainwaveshots.com/focus-shot"
+    },
+    {
+      "id": "ftcLinks",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "ftcHealth",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "D01",
+      "claim": "1998 field study swapped a person during a doorway interruption",
+      "status": "independent_primary",
+      "source_ids": [
+        "door"
+      ],
+      "limitation": "Around half noticed; field context only"
+    },
+    {
+      "id": "D02",
+      "claim": "All pedestrians failed the doorway substitution",
+      "status": "rejected",
+      "source_ids": [
+        "door"
+      ],
+      "limitation": "Only about half failed, so never use"
+    },
+    {
+      "id": "D03",
+      "claim": "Detection varied with social group in the original report",
+      "status": "independent_primary",
+      "source_ids": [
+        "door"
+      ],
+      "limitation": "Study-specific; do not imply universal demographic behavior"
+    },
+    {
+      "id": "D04",
+      "claim": "1997 flicker displays with blank interruptions made change identification difficult",
+      "status": "independent_primary",
+      "source_ids": [
+        "blink"
+      ],
+      "limitation": "Experimental image stimuli, not audio or everyday blindness"
+    },
+    {
+      "id": "D05",
+      "claim": "2000 gradual changes can escape detection without visual interruption",
+      "status": "independent_primary",
+      "source_ids": [
+        "gradual"
+      ],
+      "limitation": "Two experiments, not general failure probability"
+    },
+    {
+      "id": "D06",
+      "claim": "2018 Rensink paper reviews discovery/history of change blindness",
+      "status": "scholarly_context",
+      "source_ids": [
+        "historyReview"
+      ],
+      "limitation": "Retrospective not product trial"
+    },
+    {
+      "id": "D07",
+      "claim": "The door result proves Zen12 improves attention",
+      "status": "rejected",
+      "source_ids": [
+        "door",
+        "zenAbout"
+      ],
+      "limitation": "No Zen12 arm or relevant outcome"
+    },
+    {
+      "id": "D08",
+      "claim": "The door result shows memory is never detailed",
+      "status": "rejected",
+      "source_ids": [
+        "door"
+      ],
+      "limitation": "Study establishes missed change, not absence of all memory"
+    },
+    {
+      "id": "F01",
+      "claim": "Puységur archive records source rows, failures, and operator-suggestion ethics",
+      "status": "site_source",
+      "source_ids": [
+        "puysegur"
+      ],
+      "limitation": "Historically framed, not clinical result"
+    },
+    {
+      "id": "F02",
+      "claim": "Seven Day Focus Fieldbook is free 52 pages through existing list",
+      "status": "site_source",
+      "source_ids": [
+        "focus"
+      ],
+      "limitation": "No confirmed new lead or paid sale"
+    },
+    {
+      "id": "F03",
+      "claim": "Change Blindness article is already published",
+      "status": "site_source",
+      "source_ids": [
+        "change"
+      ],
+      "limitation": "Existing destination; new article unpublished"
+    },
+    {
+      "id": "Z01",
+      "claim": "Zen12 about describes twelve-minute sessions",
+      "status": "seller_format",
+      "source_ids": [
+        "zenAbout"
+      ],
+      "limitation": "Not proven efficacy"
+    },
+    {
+      "id": "Z02",
+      "claim": "Zen12 about describes twelve levels and four styles",
+      "status": "seller_format",
+      "source_ids": [
+        "zenAbout"
+      ],
+      "limitation": "Features described by seller"
+    },
+    {
+      "id": "Z03",
+      "claim": "Zen12 promo describes a 48-MP3 full course",
+      "status": "seller_format",
+      "source_ids": [
+        "zenPromo"
+      ],
+      "limitation": "Not necessarily authorized referred SKU"
+    },
+    {
+      "id": "Z04",
+      "claim": "Zen12 catalog and promotional terms necessarily match",
+      "status": "unverified",
+      "source_ids": [
+        "zenCatalog",
+        "zenPromo"
+      ],
+      "limitation": "Do not conflate offers"
+    },
+    {
+      "id": "Z05",
+      "claim": "Zen12 equals an hour of meditation in twelve minutes",
+      "status": "unsupported_seller_benefit",
+      "source_ids": [
+        "inspire",
+        "zenAbout"
+      ],
+      "limitation": "No independent product-specific proof"
+    },
+    {
+      "id": "Z06",
+      "claim": "A current checkout price applies to FV referred purchases",
+      "status": "not_established",
+      "source_ids": [
+        "zenCatalog",
+        "zenPromo"
+      ],
+      "limitation": "Volatile pricing and absent approved offer"
+    },
+    {
+      "id": "Z07",
+      "claim": "Zen12 refunds and commissions are guaranteed to FV",
+      "status": "not_established",
+      "source_ids": [
+        "zenCatalog",
+        "partner"
+      ],
+      "limitation": "No partner account terms"
+    },
+    {
+      "id": "P01",
+      "claim": "Public Inspire3 partner portal has signup and marketing descriptions",
+      "status": "seller_portal",
+      "source_ids": [
+        "partner"
+      ],
+      "limitation": "Not Final Vestige authorization"
+    },
+    {
+      "id": "P02",
+      "claim": "Final Vestige has named approval and issued earning URL",
+      "status": "not_established",
+      "source_ids": [
+        "partner"
+      ],
+      "limitation": "Targeted mail search did not substantiate"
+    },
+    {
+      "id": "H01",
+      "claim": "Hypnosis Live Total Focus seller describes a 33-minute recording",
+      "status": "seller_format",
+      "source_ids": [
+        "focusHypnosis"
+      ],
+      "limitation": "No therapeutic claim adopted"
+    },
+    {
+      "id": "H02",
+      "claim": "Total Focus guarantees razor-sharp concentration",
+      "status": "unsupported_seller_benefit",
+      "source_ids": [
+        "focusHypnosis"
+      ],
+      "limitation": "Do not inherit"
+    },
+    {
+      "id": "B01",
+      "claim": "Brainwave Shots Focus Shot describes 15/30-minute audio versions",
+      "status": "seller_format",
+      "source_ids": [
+        "focusShot"
+      ],
+      "limitation": "Exact package to recheck"
+    },
+    {
+      "id": "B02",
+      "claim": "Focus Shot creates hours of guaranteed focus",
+      "status": "unsupported_seller_benefit",
+      "source_ids": [
+        "focusShot"
+      ],
+      "limitation": "No named product efficacy evidence"
+    },
+    {
+      "id": "R01",
+      "claim": "FTC affiliate disclosure must be clear and conspicuous near link",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "ftcLinks"
+      ],
+      "limitation": "Do not rely only on site footer"
+    },
+    {
+      "id": "R02",
+      "claim": "FTC requires substantiation for objective health-related benefits",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "ftcHealth"
+      ],
+      "limitation": "Covers implied benefit as well as express claims"
+    },
+    {
+      "id": "M01",
+      "claim": "affiliate_click verifies paid sale",
+      "status": "rejected",
+      "source_ids": [
+        "partner"
+      ],
+      "limitation": "Only a first-party outbound event"
+    },
+    {
+      "id": "M02",
+      "claim": "Realized net commission can be calculated from current data",
+      "status": "not_established",
+      "source_ids": [
+        "partner"
+      ],
+      "limitation": "No verified settlement and qualified-session denominator"
+    }
+  ],
+  "claim_count": 28,
+  "release_gates": [
+    {
+      "id": "GATE_01",
+      "requirement": "Named FV affiliate acceptance",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_02",
+      "requirement": "Partner account identity",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_03",
+      "requirement": "Approved Zen12 SKU",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_04",
+      "requirement": "Website editorial promotion permitted",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_05",
+      "requirement": "EMAIL channel separately permitted",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_06",
+      "requirement": "Social organic attribution permitted",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_07",
+      "requirement": "Issued account-specific earning URL",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_08",
+      "requirement": "Link-parameter policy signed off",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_09",
+      "requirement": "Exact referred checkout compared",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_10",
+      "requirement": "Customer total/taxes verified",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_11",
+      "requirement": "Terms/returns captured for actual SKU",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_12",
+      "requirement": "Valid merchant order and payout identifier",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_13",
+      "requirement": "Commission ledger access",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_14",
+      "requirement": "Refund and chargeback ledger",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_15",
+      "requirement": "Rights-cleared FV-owned paid SKU or documented absence",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_16",
+      "requirement": "Independent buyer guide claim review",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_17",
+      "requirement": "Founder copy/offer approval",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_18",
+      "requirement": "Independent Site QA approval",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_19",
+      "requirement": "No-JS CTA parity",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_20",
+      "requirement": "WCAG 2.2 AA keyboard/screenreader",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_21",
+      "requirement": "Mobile 360/390/768/1440 visual QA",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_22",
+      "requirement": "Optional 42s actual encoded video and captions QA",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_23",
+      "requirement": "Web performance/LCP/CLS budget passed",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_24",
+      "requirement": "UTM asset_id verified from real Grok post",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_25",
+      "requirement": "First-party consent/privacy design approval",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_26",
+      "requirement": "Jetpack existing welcome and confirmed lead proof",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_27",
+      "requirement": "A/B pre-registration and source integrity",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    },
+    {
+      "id": "GATE_28",
+      "requirement": "Verified paid revenue reconciliation",
+      "passed": false,
+      "evidence": "NOT VERIFIED / RELEASE HOLD"
+    }
+  ],
+  "release_gate_count": 28,
+  "affiliate_approval_verified": false,
+  "owned_paid_mind_sku_verified": false,
+  "paid_transaction_evidence": false,
+  "qualified_human_denominator_verified": false,
+  "referral_url_activated": false
+}
