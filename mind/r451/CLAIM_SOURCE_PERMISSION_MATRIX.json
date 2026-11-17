@@ -1,0 +1,290 @@
+{
+  "version": "r451",
+  "date": "2026-11-17",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "sources": [
+    {
+      "id": "mcgurk76",
+      "url": "https://doi.org/10.1038/264746a0",
+      "class": "peer_reviewed_experiment"
+    },
+    {
+      "id": "retrospective",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31264593/",
+      "class": "coauthor_retrospective"
+    },
+    {
+      "id": "mallick15",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4580505/",
+      "class": "peer_reviewed_experiment"
+    },
+    {
+      "id": "eyetrack15",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4437244/",
+      "class": "peer_reviewed_experiment"
+    },
+    {
+      "id": "sumby54",
+      "url": "https://doi.org/10.1121/1.1907309",
+      "class": "peer_reviewed_experiment"
+    },
+    {
+      "id": "binaural23",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "class": "systematic_review_not_product_specific"
+    },
+    {
+      "id": "seller",
+      "url": "https://inspire3.com/",
+      "class": "seller_home"
+    },
+    {
+      "id": "zen_about",
+      "url": "https://zen12.com/about",
+      "class": "seller_description"
+    },
+    {
+      "id": "zen_catalog",
+      "url": "https://zen12.com/",
+      "class": "seller_catalog"
+    },
+    {
+      "id": "zen_promo",
+      "url": "https://zen12.com/secret/",
+      "class": "seller_promotion_distinct_checkout"
+    },
+    {
+      "id": "affiliate_portal",
+      "url": "https://affiliates.inspire3.com/",
+      "class": "public_affiliate_program_not_account_approval"
+    },
+    {
+      "id": "ftc_endorse",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "class": "regulator_guidance"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "class": "regulator_guidance"
+    },
+    {
+      "id": "fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "class": "live_free_offer"
+    },
+    {
+      "id": "puysegur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "class": "live_historical_archive"
+    },
+    {
+      "id": "change_live",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "class": "live_editorial"
+    }
+  ],
+  "claims": [
+    {
+      "id": "M01",
+      "claim": "1976 audiovisual /ba/+/ga/ mismatch could produce perceived /da/",
+      "source": "mcgurk76",
+      "verdict": "SUPPORTED_EXPERIMENT",
+      "boundary": "Speech perception; not a meditation or hypnosis result"
+    },
+    {
+      "id": "M02",
+      "claim": "1976 study found a specific effect in all humans",
+      "source": "mallick15",
+      "verdict": "REJECT",
+      "boundary": "Later evidence finds large participant and stimulus variation"
+    },
+    {
+      "id": "M03",
+      "claim": "2015 first experiment involved 165 English-speaking adults and 12 stimuli",
+      "source": "mallick15",
+      "verdict": "SUPPORTED_EXPERIMENT"
+    },
+    {
+      "id": "M04",
+      "claim": "2015 stimulus response frequency varied 17% to 58%",
+      "source": "mallick15",
+      "verdict": "SUPPORTED_EXPERIMENT"
+    },
+    {
+      "id": "M05",
+      "claim": "2015 participant response frequency varied 0% to 100%",
+      "source": "mallick15",
+      "verdict": "SUPPORTED_EXPERIMENT"
+    },
+    {
+      "id": "M06",
+      "claim": "2015 forced-choice question raised observed effect by estimated 18 percentage points",
+      "source": "mallick15",
+      "verdict": "SUPPORTED_EXPERIMENT",
+      "boundary": "Question format effect, not brain change"
+    },
+    {
+      "id": "M07",
+      "claim": "2015 one-year retest of 40 correlated 0.91",
+      "source": "mallick15",
+      "verdict": "SUPPORTED_EXPERIMENT",
+      "boundary": "Subsample, not general lifespan prediction"
+    },
+    {
+      "id": "M08",
+      "claim": "Eye fixation time associated with effect frequency in study of 40",
+      "source": "eyetrack15",
+      "verdict": "SUPPORTED_ASSOCIATION",
+      "boundary": "Not treatment evidence"
+    },
+    {
+      "id": "M09",
+      "claim": "Faces contribute to speech comprehension in noise",
+      "source": "sumby54",
+      "verdict": "SUPPORTED_CONTEXT"
+    },
+    {
+      "id": "Z01",
+      "claim": "Zen12 describes 12-minute audio",
+      "source": "zen_about",
+      "verdict": "SELLER_DESCRIBED_FEATURE"
+    },
+    {
+      "id": "Z02",
+      "claim": "Zen12 describes a 12-level full course",
+      "source": "zen_about",
+      "verdict": "SELLER_DESCRIBED_FEATURE"
+    },
+    {
+      "id": "Z03",
+      "claim": "Zen12 describes four style options by level",
+      "source": "zen_about",
+      "verdict": "SELLER_DESCRIBED_FEATURE"
+    },
+    {
+      "id": "Z04",
+      "claim": "Public Zen12 catalog has Beginner Premium Advanced variants",
+      "source": "zen_catalog",
+      "verdict": "SELLER_CATALOG_NOT_REFERRED_SKU"
+    },
+    {
+      "id": "Z05",
+      "claim": "Distinct /secret/ promotional landing describes 48 MP3 offer",
+      "source": "zen_promo",
+      "verdict": "SELLER_PROMOTION_NOT_REFERRED_CHECKOUT"
+    },
+    {
+      "id": "Z06",
+      "claim": "A 12-minute Zen12 track equals one hour of advanced meditation benefit",
+      "source": "zen_about",
+      "verdict": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "boundary": "No product-specific comparative trial authenticated"
+    },
+    {
+      "id": "Z07",
+      "claim": "All users get guaranteed stress treatment, health gains or focus enhancement",
+      "source": "zen_catalog",
+      "verdict": "REJECT_UNSUPPORTED_HEALTH_PERFORMANCE"
+    },
+    {
+      "id": "Z08",
+      "claim": "Zen12 automatically controls brainwaves for everyone",
+      "source": "zen_about",
+      "verdict": "REJECT_UNSUPPORTED_GENERALIZATION"
+    },
+    {
+      "id": "Z09",
+      "claim": "Fourteen heterogeneous binaural beat EEG studies were inconsistent",
+      "source": "binaural23",
+      "verdict": "SUPPORTED_REVIEW_NONPRODUCT",
+      "boundary": "Five yes, eight no, one mixed for entrainment hypothesis"
+    },
+    {
+      "id": "Z10",
+      "claim": "Binaural systematic review tested named Zen12 product",
+      "source": "binaural23",
+      "verdict": "REJECT_MISATTRIBUTED"
+    },
+    {
+      "id": "Z11",
+      "claim": "Public catalog advertises a one-year money-back guarantee",
+      "source": "zen_catalog",
+      "verdict": "SELLER_ASSERTION_NOT_VERIFIED_REFERRED_TERMS"
+    },
+    {
+      "id": "Z12",
+      "claim": "Promo coupon or countdown applies to an authorized FV referral",
+      "source": "zen_promo",
+      "verdict": "REJECT_NOT_AUTHENTICATED"
+    },
+    {
+      "id": "P01",
+      "claim": "Inspire3 publicly offers affiliate signup and general advertised commissions",
+      "source": "affiliate_portal",
+      "verdict": "PUBLIC_PROGRAM_ONLY",
+      "boundary": "Do not assert payout or publisher terms"
+    },
+    {
+      "id": "P02",
+      "claim": "Final Vestige approved publisher for web/social/email channels",
+      "source": "affiliate_portal",
+      "verdict": "NO_ACCOUNT_SPECIFIC_EVIDENCE"
+    },
+    {
+      "id": "P03",
+      "claim": "Final Vestige has authorized affiliate link with confirmed attribution",
+      "source": "affiliate_portal",
+      "verdict": "NO_ACCOUNT_SPECIFIC_EVIDENCE"
+    },
+    {
+      "id": "P04",
+      "claim": "Focus Fieldbook is a paid Mind SKU",
+      "source": "fieldbook",
+      "verdict": "REJECT_FREE_ASSET"
+    },
+    {
+      "id": "C01",
+      "claim": "An FTC material relationship must be clearly conspicuously disclosed",
+      "source": "ftc_endorse",
+      "verdict": "SUPPORTED_REGULATORY_GUIDANCE"
+    },
+    {
+      "id": "C02",
+      "claim": "Health-related product claims need appropriate substantiation",
+      "source": "ftc_health",
+      "verdict": "SUPPORTED_REGULATORY_GUIDANCE"
+    }
+  ],
+  "release_gates": {
+    "named_publisher_acceptance": false,
+    "signed_program_terms": false,
+    "approved_web_channel": false,
+    "approved_email_channel": false,
+    "approved_social_channel": false,
+    "approved_specific_product_sku": false,
+    "authorized_earning_url": false,
+    "referral_cookie_terms": false,
+    "current_referred_checkout": false,
+    "referred_price_snapshot": false,
+    "customer_refund_terms": false,
+    "recurring_billing_checked": false,
+    "upsells_checked": false,
+    "merchant_conversion_reporting": false,
+    "commission_amount_verified": false,
+    "settlement_reporting_verified": false,
+    "brand_creative_rights": false,
+    "founder_commercial_approval": false,
+    "founder_publication_approval": false,
+    "site_QA_wcag": false,
+    "site_QA_mobile": false,
+    "site_QA_noJS": false,
+    "site_QA_security": false,
+    "film_encoded_captioned": false,
+    "film_browser_playback": false,
+    "jetpack_confirmation_test": false,
+    "first_party_measurement_QA": false,
+    "verified_paid_revenue_test": false
+  },
+  "decision": "Never enable merchant link or sale tracking until documentary gate evidence is appended and separately approved. A free Fieldbook conversion is a lead only after Jetpack confirmation, not paid revenue."
+}
