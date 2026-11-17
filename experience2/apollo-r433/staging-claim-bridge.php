@@ -36,14 +36,21 @@ function fv_r433_claims(): array {
   ['2018-02-14','Later retrospective','NASA later described 102 deliberate flammability ignitions conducted after the fire.','These experiments are not observations of the 1967 accident itself.','https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/']
  ];
 }
+/** Unified render/enqueue trust gate: never queue inherited CSS/JS when a pinned source has changed. */
+function fv_r433_load_parent(): bool {
+ if (!fv_r433_parent_verified()) return false;
+ if (!empty($GLOBALS['fv_r433_trusted_parent'])) {
+  return function_exists('fv_r432_render') && function_exists('fv_r432_verified') && fv_r432_verified();
+ }
+ if (function_exists('fv_r432_render') || function_exists('fv_r431_render') || function_exists('fv_r430_render') || function_exists('fv_r429_render')) return false;
+ require_once dirname(__DIR__).'/apollo-r432/staging-custody-gate.php';
+ if (!function_exists('fv_r432_render') || !function_exists('fv_r432_verified') || !fv_r432_verified()) return false;
+ $GLOBALS['fv_r433_trusted_parent']=true;
+ return true;
+}
 function fv_r433_render(int $instance,array $campaign=[]): string {
  if($instance<1 || $instance>30 || !fv_r433_parent_verified()) return fv_r433_fallback();
- if(empty($GLOBALS['fv_r433_trusted_parent'])) {
-  if(function_exists('fv_r432_render') || function_exists('fv_r431_render') || function_exists('fv_r430_render') || function_exists('fv_r429_render')) return fv_r433_fallback();
-  require_once dirname(__DIR__).'/apollo-r432/staging-custody-gate.php';
-  if(!function_exists('fv_r432_render')) return fv_r433_fallback();
-  $GLOBALS['fv_r433_trusted_parent']=true;
- }
+ if(!fv_r433_load_parent()) return fv_r433_fallback();
  $inner=fv_r432_render($instance,$campaign);
  if (substr_count($inner,'class="fv-r429__cta"')!==1 || substr_count($inner,'class="fv-r430__question"')!==3
      || substr_count($inner,'class="fv-r429__plate"')!==3 || substr_count($inner,'data-fv-r431-actions')!==1) return fv_r433_fallback();
@@ -69,7 +76,7 @@ function fv_r433_shortcode(): string {
  return fv_r433_render($n,$_GET);
 }
 function fv_r433_enqueue(): void {
- if(!fv_r433_allowed() || !fv_r433_parent_verified() || !function_exists('wp_enqueue_style') || !function_exists('plugins_url'))return;
+ if(!fv_r433_allowed() || !fv_r433_load_parent() || !function_exists('wp_enqueue_style') || !function_exists('plugins_url'))return;
  $base=[
   ['apollo-r429/assets/bridge.css','fv-r433-429',[]],
   ['apollo-r430/assets/educator-case-lab.css','fv-r433-430',['fv-r433-429']],
