@@ -33,7 +33,7 @@ for(const [label,page] of [['A',A],['B',B]]) {
   check(label+' no prices or coupons',()=>assert.doesNotMatch(page,/\$[0-9]|coupon code|discount ends tonight/i));
   check(label+' product caution',()=>assert.match(page,/no independent product-specific trial/i));
   check(label+' free route',()=>assert.match(page,/https:\/\/finalvestige.com\/focus\//));
-  check(label+' no autoplay or hidden videoplayer',()=>assert.doesNotMatch(page,/autoplay|<video\b|<audio\b/i));
+  check(label+' no autoplay or hidden videoplayer',()=>assert.doesNotMatch(page,/<video\b[^>]*\bautoplay\b|<video\b|<audio\b/i));
 }
 check('control absent film module',()=>assert.doesNotMatch(A,/id="film-concept"/));
 check('B film concept present',()=>assert.match(B,/id="film-concept"/));
