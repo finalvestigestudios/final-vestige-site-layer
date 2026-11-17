@@ -1,0 +1,35 @@
+{
+  "schema": "fv-apollo-exact-head-archive-v1",
+  "source": "GitHub contents API file blobs inspected 2026-11-16 (America/Los_Angeles); immutable commits, not default branch",
+  "reviewed": {
+    "r417": {
+      "commit": "a088077d8a58c0e10842bbd48d2da9d6d65b00e8",
+      "pr": 2803,
+      "files": {
+        "README.md": "0e773f7fdd54e20c69d14f86ed1dc9d48bbf80cc",
+        "assets/provenance.css": "921f50a471fad20ee3562e60333cba8f6c84a74d",
+        "qa/package_evidence.py": "e268508e134e8f372cc7628b90d693075833f82c",
+        "qa/render_fixture.php": "c947e0d26b236713eed20d66dabc3b02e5f9276f",
+        "qa/test_browser.py": "ae596eadf39d89024f9d1a78a999b72f4f690371",
+        "qa/test_provenance.py": "29d41611d253141f0646b4ebad3d5664de1e5b59",
+        "staging-provenance-guide.php": "4ce4a65c1d64d267f8a0d5210ed7d776098652e9"
+      }
+    },
+    "r421": {
+      "commit": "7f0d20cb9e4fdfefbdd569da7cab3097c0fc7bc4",
+      "pr": 2822,
+      "files": {
+        "README.md": "98ba06e53073b4684987ad139bb04f4477eba098",
+        "assets/source-receipts.css": "b7ec2d43c59fcc5a8c10a747ec0ab08a24ffcf44",
+        "assets/source-receipts.js": "bb83bb6d1fb203f7f786292aa9701bce149552bb",
+        "qa/package_evidence.py": "11a7068a22ca4c1a5616cef081f3eed68fb41f88",
+        "qa/release_gate.py": "3dae9b66dc06e0dc820e5daca0d1bd3716d9c707",
+        "qa/render_fixture.php": "38053f655f734cf3a1efbcf7eaf004d328baec4b",
+        "qa/test_browser.py": "500431b1abcc2b5a066281914974e05124d1eb73",
+        "qa/test_contract.py": "581cc69e1aad21511943f783ac09f1af08339eab",
+        "staging-source-receipts.php": "44ff1639c8af1dbfafdb200c0d6e11dc922daefd"
+      }
+    }
+  },
+  "release_policy": "HARD_HOLD: archive consistency is necessary, never sufficient; no staging approval, axe or purchase evidence implied"
+}
