@@ -26,6 +26,9 @@ from candidate_guard import (
     CandidateGuardError, MAX_CHECKSUM_BYTES, MAX_EXE_BYTES,
     check_candidate_directory, read_checksum_candidate, sha256_candidate,
 )
+from inventory_staging_ancestry_r484 import (
+    InventoryStagePathError, preflight_inventory_stage,
+)
 
 EXPECTED = (
     "LedgerDiffLite.exe", "InvoiceTwinScout.exe", "SpendMapLite.exe",
@@ -113,6 +116,11 @@ def build_inventory(candidate_dir: str | Path) -> str:
     root = Path(candidate_dir)
     target = root / MANIFEST
     try:
+        # Check the entire lexical parent chain before creating ANY private
+        # staging file. Later release-gate rejection is too late: an unsafe
+        # symlinked ancestor could already have received a checksum manifest.
+        parent_custody = preflight_inventory_stage(
+            root, EXPECTED, maximum=MAX_EXE_BYTES)
         _membership(root, set(EXPECTED))
         original = _fingerprints(root)
         inventory = "".join(f"{digest}  {name}\n"
@@ -127,6 +135,13 @@ def build_inventory(candidate_dir: str | Path) -> str:
         _write_inventory(fd, inventory)
         # Stage is expected here; independently reject any other new file.
         _membership_with_stage(root, stage)
+        # Check the freshly written stage and full parent custody again BEFORE
+        # exclusive hardlink publication. Windows junction/reparse candidates
+        # and changed ancestors must fail without publishing SHA256SUMS.
+        if preflight_inventory_stage(
+                root, EXPECTED, maximum=MAX_EXE_BYTES,
+                stage_name=stage.name) != parent_custody:
+            raise InventoryBuildError("Candidate staging ancestry changed")
         # Never briefly expose an incomplete or same-size corrupted inventory
         # through the exclusive hardlink publication step. The older final
         # post-publication comparison remains as a separate race/drift defense.
@@ -154,7 +169,7 @@ def build_inventory(candidate_dir: str | Path) -> str:
         return target.name
     except InventoryBuildError:
         raise
-    except (OSError, CandidateGuardError, UnicodeError):
+    except (OSError, CandidateGuardError, InventoryStagePathError, UnicodeError):
         raise InventoryBuildError("Candidate inventory could not be generated safely") from None
     finally:
         if stage is not None:
