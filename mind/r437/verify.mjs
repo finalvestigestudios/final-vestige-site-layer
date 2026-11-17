@@ -23,7 +23,7 @@ check(CLAIMS.release_gates.length===28,'gate count');
 check(CLAIMS.release_gates.every(g=>g.status==='HOLD'),'all gates HOLD');
 check(Object.keys(CLAIMS.source_urls).length>=16,'source URLs');
 check(CLAIMS.claims.every(c=>c.source_keys.every(k=>Object.hasOwn(CLAIMS.source_urls,k))),'claim-source references');
-check(CLAIMS.claims.every(c=>/^(supported|seller|unsubstantiated|unsupported|contested|research|not-|false|dynamic|required)/.test(c.status)),'claim statuses explicit');
+check(CLAIMS.claims.every(c=>/^(supported|seller|unsubstantiated|unsupported|contested|research|not-|false|dynamic|required|untested)/.test(c.status)),'claim statuses explicit');
 check(CLAIMS.claims.filter(c=>c.kind.includes('efficacy')||c.kind.includes('mechanism')).every(c=>c.editorial_action.match(/exclude|attribute/)),'product efficacy not adopted');
 check(ARTICLE.split(/\s+/).length>=2000,'substantive manuscript');
 for(const url of ['doi.org/10.1068/p090483','pubmed.ncbi.nlm.nih.gov/20942363','doi.org/10.1177/0956797613501521','puysegurs-animal-magnetism-files'])check(ARTICLE.includes(url),'article provenance '+url);
