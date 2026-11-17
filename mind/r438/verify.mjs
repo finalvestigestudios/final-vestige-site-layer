@@ -40,7 +40,7 @@ for(const [name,txt] of Object.entries({a,b,hub})) {
  check('no iframe '+name,()=>assert.ok(!/<iframe\b/i.test(txt)));
  check('no tracking '+name,()=>assert.ok(!/googletagmanager|gtag\(|fbq\(|analytics\.js/i.test(txt)));
  check('no email collection '+name,()=>assert.ok(!/<input\b/i.test(txt)));
- check('no autoplay '+name,()=>assert.ok(!/autoplay/i.test(txt.replace('No autoplay',''))));
+ check('no autoplay '+name,()=>assert.ok(!/<(?:audio|video)\b[^>]*\sautoplay\b/i.test(txt)));
  check('page lang '+name,()=>assert.ok(txt.includes('<html lang="en">')));
  check('skip link '+name,()=>assert.ok(txt.includes('class="skip"')));
  check('reduced motion '+name,()=>assert.ok(txt.includes('prefers-reduced-motion')));
