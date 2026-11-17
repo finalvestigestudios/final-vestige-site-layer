@@ -26,6 +26,7 @@ From `experience2/apollo-r419/`, after obtaining **the exact reviewed R411/R418 
 python qa/test_contract.py
 python qa/test_release_gate.py
 python qa/browser_qa.py
+python qa/navigation_probe.py  # actual loopback Chromium navigation probe; may be blocked
 python qa/release_gate.py  # expected HOLD, exit 2
 python qa/package_evidence.py
 ```
