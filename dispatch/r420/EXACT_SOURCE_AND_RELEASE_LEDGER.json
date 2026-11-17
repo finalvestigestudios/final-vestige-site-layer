@@ -1,0 +1,124 @@
+{
+  "schema": "dispatch-r420-v1",
+  "evidence_date_utc": "2026-11-17",
+  "github": {
+    "original_pr": 175,
+    "original_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "canonical_previews_pr": 2848,
+    "canonical_previews_head": "7b8237efeb8f3bf0abfb818148183c921f33c1a0",
+    "owner_issue": 174,
+    "affiliate_issue": 171,
+    "focus_issue": 129,
+    "revenue_issue": 820,
+    "engine_git_blob": "f3ffc6cdf55a97782f00d3e9f14205c0940efd2b"
+  },
+  "exact_source_checks": {
+    "count": 141,
+    "passed": 141,
+    "failed": 0,
+    "source_files_read": 19,
+    "mode": "V8 over exact GitHub UTF-8 files",
+    "note": "no native Jetpack/MIME/browser/email deliverability testing",
+    "injected_mutations_detected": "14/14 authoring V8"
+  },
+  "pilot": {
+    "total_issues": 6,
+    "editorial": 4,
+    "commercial_review_pending": 2,
+    "all_unsent": true,
+    "slots": [
+      {
+        "slot": 1,
+        "kind": "editorial",
+        "uri": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+        "html_blob": "adcdd8c10477aa02b26653822c6a956edecee652",
+        "txt_blob": "0fa25d115aabdfe20dfd93652d3a1d8a64592d19"
+      },
+      {
+        "slot": 2,
+        "kind": "editorial",
+        "uri": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+        "html_blob": "f5eba4e33da2cd3de0afa6dc08a98c1026e49d06",
+        "txt_blob": "e08a1bd1633720bfb94417df85765394e771a251"
+      },
+      {
+        "slot": 3,
+        "kind": "commercial-review-pending",
+        "uri": "https://finalvestige.com/focus/",
+        "html_blob": "563489b2586d637b530dcece05f979ce404b025c",
+        "txt_blob": "80ce04d4e1df5d9b05da8f1663d8f0f3e16e9733",
+        "offer_guide": "INACTIVE",
+        "rights": "NOT_VERIFIED"
+      },
+      {
+        "slot": 4,
+        "kind": "editorial",
+        "uri": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+        "html_blob": "84b85355b787faf236a1c798bec2cb98c61b8f43",
+        "txt_blob": "0390ce114a009c467cb26ed38589dd1f0130f965",
+        "factual_copy": "HOLD"
+      },
+      {
+        "slot": 5,
+        "kind": "commercial-review-pending",
+        "uri": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+        "html_blob": "3f248b1d9d38aa7a839c37140acae511f357894e",
+        "txt_blob": "33e9171add60f8d2935a0e1486b86028733eac07",
+        "offer_guide": "INACTIVE",
+        "rights": "NOT_VERIFIED"
+      },
+      {
+        "slot": 6,
+        "kind": "editorial",
+        "uri": "https://finalvestige.com/focus/",
+        "html_blob": "4e43ecd16c523f89c56991ceaa1b5c5b9a12304a",
+        "txt_blob": "da58b68f497cab3ebed500c34425d124c2d7c200",
+        "reentry_loop": "POTENTIAL"
+      }
+    ]
+  },
+  "wordpress": {
+    "as_of": "2026-11-17T09:30:37Z",
+    "newsletter_on": true,
+    "post_auto_send": false,
+    "format": "full",
+    "no_reply": true,
+    "dashboard_total": 3,
+    "dashboard_confirmed": 3,
+    "dashboard_unconfirmed": 2,
+    "stats_wordpress_reader_followers": 3,
+    "stats_direct_email_followers": 0,
+    "distinct_eligible_inboxes": null,
+    "actual_welcome_receipt": false
+  },
+  "partner": {
+    "named_fv_acceptance": null,
+    "zen12_email_rights": null,
+    "total_focus_email_rights": null,
+    "approved_live_guide": null,
+    "issued_earning_urls": null,
+    "verified_checkout_terms": null
+  },
+  "legal": {
+    "verified_fv_postal": null,
+    "actual_native_preview": null,
+    "operational_unsubscribe": null,
+    "founder_approval": false
+  },
+  "revenue": {
+    "audited_qualified_human_sessions": null,
+    "settled_paid_orders": null,
+    "refunds_and_fees": null,
+    "net_per_1000": null
+  },
+  "writes": {
+    "emails": 0,
+    "test_emails": 0,
+    "subscriber_imports": 0,
+    "wordpress_edits": 0,
+    "affiliate_links": 0,
+    "spend": 0,
+    "merges": 0
+  },
+  "status": "HOLD_UNSENT"
+}
