@@ -95,6 +95,10 @@ jobs:
         run: |
           python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_outer_padding_r499.py
           python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_outer_padding_r499.py
+      - name: R500 fail closed on private stream errors and forged PE read receipts
+        run: |
+          python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_receipt_privacy_r500.py
+          python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_receipt_privacy_r500.py
       - name: Prove independent CI custody rules in normal and optimized mode
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p test_independent_ci_r385.py

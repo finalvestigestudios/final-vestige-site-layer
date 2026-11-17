@@ -29,6 +29,8 @@ def verify_certificate_table(stream, optional: bytes, *, file_size: int) -> None
     A structurally valid record is not proof of a valid signature.
     R499 conservatively requires outer record alignment padding to be zero;
     it does not parse PKCS#7 or check padding *inside* the signed-data payload.
+    R500 rejects non-native read receipts and sanitizes arbitrary ordinary
+    stream faults without retaining their possibly private exception chains.
     """
     if len(optional) < 112:
         raise PECertificateError("PE certificate table rejected")
@@ -51,11 +53,13 @@ def verify_certificate_table(stream, optional: bytes, *, file_size: int) -> None
         try:
             stream.seek(cursor)
             header = stream.read(8)
-        except OSError:
-            # Raise after the handler ends so no private path leaks through
-            # ValueError.__context__ ("from None" only hides display).
+        except Exception:
+            # A stream wrapper may fail with more than OSError. Build a fixed
+            # exception only after leaving the handler; never retain paths,
+            # client row data or arbitrary exception attributes in __context__.
+            # SystemExit/KeyboardInterrupt remain unsuppressed.
             pass
-        if header is None or len(header) != 8:
+        if type(header) is not bytes or len(header) != 8:
             raise PECertificateError("PE certificate table rejected")
         record_size, revision, cert_type = struct.unpack("<IHH", header)
         padded_size = (record_size + 7) & ~7
@@ -70,9 +74,9 @@ def verify_certificate_table(stream, optional: bytes, *, file_size: int) -> None
         try:
             stream.seek(cursor + padded_size - 1)
             tail = stream.read(1)
-        except OSError:
+        except Exception:
             pass
-        if tail is None or len(tail) != 1:
+        if type(tail) is not bytes or len(tail) != 1:
             raise PECertificateError("PE certificate table rejected")
         # Per PE/COFF, padding OUTSIDE dwLength is zero-filled. An otherwise
         # framed signature must not carry unaccounted bytes in this gap.
@@ -84,7 +88,7 @@ def verify_certificate_table(stream, optional: bytes, *, file_size: int) -> None
             try:
                 stream.seek(cursor + record_size)
                 padding = stream.read(padding_bytes)
-            except OSError:
+            except Exception:
                 pass
             if type(padding) is not bytes or padding != b"\x00" * padding_bytes:
                 raise PECertificateError("PE certificate table rejected")
