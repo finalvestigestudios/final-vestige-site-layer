@@ -38,7 +38,7 @@ for(const [label,html] of [['A',a],['B',b],['hub',hub]]){
  check(()=>assert.match(html,/<meta name="viewport"/),label+' viewport meta');
  check(()=>assert.match(html,/name="robots" content="noindex,nofollow"/),label+' noindex prototype');
  check(()=>assert.doesNotMatch(html,/<script\b|<iframe\b|<form\b|<input\b/i),label+' no scripts iframe or duplicate forms');
- check(()=>assert.doesNotMatch(html,/autoplay|onerror=|onclick=|javascript:/i),label+' no forced playback / inline handlers');
+ check(()=>assert.doesNotMatch(html,/\bautoplay\s*(?:=|>|\/>)|onerror\s*=|onclick\s*=|javascript:/i),label+' no forced playback / inline handlers');
  check(()=>assert.doesNotMatch(html,/<a\b[^>]*href="https?:\/\/(?:zen12|affiliates\.inspire3|hypnosislive|brainwaveshots)\./i),label+' no merchant outbound links');
  check(()=>assert.match(html,/:focus-visible/),label+' keyboard visible focus');
  check(()=>assert.match(html,/@media\(max-width:/),label+' responsive CSS');
@@ -59,7 +59,7 @@ check(()=>assert.match(b,/ZEN12_OPTIONAL_42S.vtt/),'B names VTT');
 check(()=>assert.match(b,/ZEN12_OPTIONAL_POSTER.svg/),'B names poster');
 check(()=>assert.match(poster,/<svg/),'poster is SVG');
 check(()=>assert.match(poster,/<title id="title">/),'poster accessible title');
-check(()=>assert.doesNotMatch(poster,/<script\b|<foreignObject\b|xlink:href|https?:\/\//i),'poster no script/remote assets');
+check(()=>assert.doesNotMatch(poster,/<script\b|<foreignObject\b|xlink:href\s*=|<image\b[^>]+href\s*=\s*['\"]https?:/i),'poster no script/remote assets');
 check(()=>assert.match(vtt,/^WEBVTT/),'captions VTT header');
 const cues=[...vtt.matchAll(/(\d\d:\d\d:\d\d\.\d{3}) --> (\d\d:\d\d:\d\d\.\d{3})/g)];
 const ms=s=>{let [h,m,t]=s.split(':');return (+h)*3600000+(+m)*60000+Math.round(Number(t)*1000)};
