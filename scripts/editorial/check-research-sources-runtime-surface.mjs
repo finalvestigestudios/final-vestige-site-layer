@@ -34,9 +34,9 @@ const args=process.argv.slice(2);
 const path=args.find(a=>!a.startsWith("--"));
 const mode=args.find(a=>a.startsWith("--expect="))?.split("=")[1];
 if(!path||!["published","staging"].includes(mode)){
-  process.stderr.write("Usage: node check-research-sources-runtime-surface.mjs <raw-content.txt> --expect=published|staging\\n");
+  process.stderr.write("Usage: node check-research-sources-runtime-surface.mjs <raw-content.txt> --expect=published|staging\n");
   process.exit(2);
 }
 const result=audit(readFileSync(path,"utf8"),mode==="published"?60:90);
-process.stdout.write(JSON.stringify(result,null,2)+"\\n");
+process.stdout.write(JSON.stringify(result,null,2)+"\n");
 process.exit(result.hardFailures.length?1:0);
