@@ -1,0 +1,56 @@
+{
+  "schema": "fv-dispatch-r425-postbacked-transport-readonly-v1",
+  "captured_utc": "2026-11-17T14:38:32Z",
+  "site": "finalvestige.com",
+  "original_master_pr": 175,
+  "original_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "parent_pr": 2873,
+  "parent_head": "4b78b9da14a38a25cd73f8cff950aa90e82b0aea",
+  "wordpress": {
+    "newsletter": true,
+    "send_new_posts_by_default": false,
+    "email_content_format": "full",
+    "sender_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "recent_notification_status": "last 5 never_sent_opted_out",
+    "subscriber_dashboard": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "follower_stats": {
+      "reader": 3,
+      "direct_email": 0
+    },
+    "eligible_unique_inboxes": null,
+    "received_welcome": false,
+    "native_email_preview_witnessed": false,
+    "valid_fv_postal_address_witnessed": false,
+    "unsubscribe_witnessed": false
+  },
+  "transport": {
+    "message_source": "new WordPress post",
+    "email_subject_source": "WordPress post title",
+    "custom_inbox_preheader": "NOT VERIFIED; original campaign source fields only",
+    "full_post_content": true,
+    "per_post_email_send_must_remain_disabled": true
+  },
+  "partner": {
+    "named_final_vestige_approval": false,
+    "sku_specific_email_permission": false,
+    "issued_earning_url": false,
+    "approved_live_guide": false,
+    "referred_checkout_verified": false
+  },
+  "founder_final_send_approval": false,
+  "verified_paid_settlements": null,
+  "qualified_human_sessions": null,
+  "sources": [
+    "https://wordpress.com/support/newsletter/send-newsletter-emails/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://wordpress.com/support/newsletter-settings/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://finalvestige.com/editorial-standards/"
+  ]
+}
