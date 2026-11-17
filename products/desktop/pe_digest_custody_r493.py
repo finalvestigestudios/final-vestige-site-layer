@@ -40,25 +40,33 @@ def verify_pe_digest_stream(stream, opened, expected_sha256: str,
                 or not 1 <= before.st_size <= maximum):
             failed = True
         else:
-            stream.seek(0)
-            digest = hashlib.sha256()
-            total = 0
-            while True:
-                chunk = stream.read(min(1_048_576, maximum - total + 1))
-                if type(chunk) is not bytes:
-                    failed = True
-                    break
-                if not chunk:
-                    break
-                total += len(chunk)
-                if total > maximum:
-                    failed = True
-                    break
-                digest.update(chunk)
-            after = os.fstat(stream.fileno())
-            if (total != before.st_size or _identity(after) != _identity(before)
-                    or digest.hexdigest() != expected_sha256):
+            positioned = stream.seek(0)
+            if type(positioned) is not int or positioned != 0:
                 failed = True
+            else:
+                digest = hashlib.sha256()
+                total = 0
+                while True:
+                    requested = min(1_048_576, maximum - total + 1)
+                    chunk = stream.read(requested)
+                    if type(chunk) is not bytes or len(chunk) > requested:
+                        failed = True
+                        break
+                    next_position = stream.tell()
+                    if type(next_position) is not int or next_position != total + len(chunk):
+                        failed = True
+                        break
+                    if not chunk:
+                        break
+                    total += len(chunk)
+                    if total > maximum:
+                        failed = True
+                        break
+                    digest.update(chunk)
+                after = os.fstat(stream.fileno())
+                if (total != before.st_size or _identity(after) != _identity(before)
+                        or digest.hexdigest() != expected_sha256):
+                    failed = True
     except Exception:
         failed = True
     if failed:
