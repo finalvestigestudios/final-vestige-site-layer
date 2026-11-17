@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="980" viewBox="0 0 720 980" role="img" aria-labelledby="fv-title fv-desc">
+<title id="fv-title">Three audits, three different records</title>
+<desc id="fv-desc">Original Final Vestige Studios explanatory diagram, created November 17, 2026. Card one: the FY2025 Lakefront Management Authority annual financial statement audit found a general accounting-control material weakness; it did not perform a Bohemia-specific lease audit. Card two: LMA director Capo requested a specific Bohemia lease audit in March 2025; its engagement, scope and results are unverified. Card three: Louisiana State Mineral and Energy Board on November 12, 2026 reported 39 open state-wide royalty audits and 778,008 dollars 30 cents in statewide audit collections as of October 31; its report did not identify any Bohemia investigation. Sources are LMA March 26 2025 committee minutes, LMA FY2025 audit, and Louisiana State Mineral and Energy Board November 12 2026 audit report page 5. This is an editorial diagram, not a historical image or reconstruction.</desc>
+<metadata>
+Creator: Final Vestige Studios (original vector diagram)
+Created: 2026-11-17
+Copyright: © 2026 Final Vestige Studios. All rights reserved.
+Rights: Studio-created original typographic/vector artwork; no third-party visual assets.
+Source 1: Lakefront Management Authority, March 26, 2025 Finance Committee minutes; bibliography #69 in Bohemia reader v49z.
+Source 2: Lakefront Management Authority audited FY2025 financial statements; bibliography #73.
+Source 3: Louisiana Department of Conservation and Energy, State Mineral and Energy Board, November 12, 2026 Notice, Agenda and Reports, Audit Director page 5; https://www.dce.louisiana.gov/assets/OSTR-SMEB/Board-MTG-Notices-Agendas-Reports/2026/2026-11-Notice-Agenda-Reports.pdf
+Source 4: https://www.dce.louisiana.gov/state-mineral-and-energy-board
+Alt text: Three vertically stacked evidence cards distinguish the 2025 LMA institution-wide financial audit, March 2025 request for a Bohemia lease audit with no verified results, and the November 2026 statewide mineral audit figures. No card proves a specific Bohemia payment or underpayment.
+Caption: Separate audit scopes must not be conflated. The November statewide figures are not Bohemia collections or a confirmation of Capo's proposed audit.
+</metadata>
+<rect width="720" height="980" fill="#151B22"/>
+<path d="M34 40 H120" stroke="#B9A178" stroke-width="5" stroke-linecap="round"/>
+<text x="36" y="92" fill="#F1EDE4" font-family="Arial,sans-serif" font-size="42" font-weight="700">THREE AUDITS.</text>
+<text x="36" y="143" fill="#F1EDE4" font-family="Arial,sans-serif" font-size="42" font-weight="700">THREE DIFFERENT RECORDS.</text>
+<g font-family="Arial,sans-serif">
+<rect x="30" y="178" width="660" height="203" rx="16" fill="#252D35" stroke="#59636E" stroke-width="2"/>
+<text x="52" y="220" font-size="23" fill="#CDB68F" font-weight="700">FY2025  |  LMA FINANCIAL AUDIT</text>
+<text x="52" y="265" font-size="28" fill="#FAF7F0" font-weight="700">General accounting controls</text>
+<text x="52" y="306" font-size="25" fill="#DFE2E4">Material weakness reported</text>
+<text x="52" y="342" font-size="23" fill="#F2BD9B">Not a lease-by-lease Bohemia audit</text>
+<rect x="30" y="402" width="660" height="203" rx="16" fill="#252D35" stroke="#59636E" stroke-width="2"/>
+<text x="52" y="445" font-size="23" fill="#CDB68F" font-weight="700">MARCH 2025  |  LMA DIRECTOR</text>
+<text x="52" y="489" font-size="28" fill="#FAF7F0" font-weight="700">Bohemia lease review requested</text>
+<text x="52" y="530" font-size="24" fill="#DFE2E4">Engagement and results not verified</text>
+<text x="52" y="565" font-size="23" fill="#F2BD9B">A request is not an audit finding</text>
+<rect x="30" y="628" width="660" height="213" rx="16" fill="#252D35" stroke="#59636E" stroke-width="2"/>
+<text x="52" y="672" font-size="23" fill="#CDB68F" font-weight="700">NOVEMBER 2026  |  STATE MINERAL BOARD</text>
+<text x="52" y="716" font-size="29" fill="#FAF7F0" font-weight="700">39 open statewide royalty audits</text>
+<text x="52" y="761" font-size="26" fill="#DFE2E4">$778,008.30 statewide audit collections</text>
+<text x="52" y="800" font-size="23" fill="#F2BD9B">No Bohemia-specific audit identified</text>
+<text x="35" y="887" font-size="24" fill="#FAF7F0" font-weight="700">What remains missing:</text>
+<text x="35" y="922" font-size="21" fill="#D6D8D7">Lease number, remittance ledger, audit file, receipts.</text>
+<text x="35" y="959" font-size="16" fill="#A7AFB4">FINAL VESTIGE STUDIOS  ·  17 NOV 2026  ·  Sources: #69, #73, #81–82</text>
+</g></svg>
