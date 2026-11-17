@@ -4,7 +4,7 @@
  * Real integration must be implemented by Claude with consent and privacy review.
  */
 const ALLOWED_TYPES = new Set(["qualified_visit","signup_attempt","provider_confirmed_subscribed","welcome_receipt","editorial_cta_click","merchant_outbound","settled_order","refund","fee"]);
-const PII = /(email|e_mail|phone|ip_address|user_agent|full_name|address|subscriber_name|cookie|auth|token|raw_url)/i;
+const PII = /^(email|email_address|e_mail|phone|phone_number|ip_address|user_agent|full_name|postal_address|subscriber_name|cookie|auth_token|access_token|refresh_token|raw_url)$/i;
 const FINITE = n => typeof n==="number"&&Number.isFinite(n)&&n>=0;
 const REF = s => typeof s==="string" && /^[a-z0-9][a-z0-9._-]{2,80}$/i.test(s);
 const DAY = 86400000;
