@@ -1,0 +1,72 @@
+[
+  {
+    "scrollWidth": 320,
+    "innerWidth": 320,
+    "anchors": 5,
+    "h1": 1,
+    "bodyText": 2026,
+    "viewport": 320,
+    "js_errors": [],
+    "pass": true
+  },
+  {
+    "scrollWidth": 360,
+    "innerWidth": 360,
+    "anchors": 5,
+    "h1": 1,
+    "bodyText": 2026,
+    "viewport": 360,
+    "js_errors": [],
+    "pass": true
+  },
+  {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "anchors": 5,
+    "h1": 1,
+    "bodyText": 2026,
+    "viewport": 390,
+    "js_errors": [],
+    "pass": true
+  },
+  {
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "anchors": 5,
+    "h1": 1,
+    "bodyText": 2026,
+    "viewport": 768,
+    "js_errors": [],
+    "pass": true
+  },
+  {
+    "scrollWidth": 1024,
+    "innerWidth": 1024,
+    "anchors": 5,
+    "h1": 1,
+    "bodyText": 2026,
+    "viewport": 1024,
+    "js_errors": [],
+    "pass": true
+  },
+  {
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "anchors": 5,
+    "h1": 1,
+    "bodyText": 2026,
+    "viewport": 1440,
+    "js_errors": [],
+    "pass": true
+  },
+  {
+    "scrollWidth": 1920,
+    "innerWidth": 1920,
+    "anchors": 5,
+    "h1": 1,
+    "bodyText": 2026,
+    "viewport": 1920,
+    "js_errors": [],
+    "pass": true
+  }
+]

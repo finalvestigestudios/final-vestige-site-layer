@@ -1,0 +1,25 @@
+The Dispatch | Issue 04 | OFFLINE UNSENT REVIEW ONLY
+Subject: Apollo 1: the spark the record could not name
+Proposed preheader (not Jetpack-native verified): NASA traced the fire's spread without identifying one exact ignition point.
+
+At 23:30:54.8 GMT on January 27, 1967, a voltage transient appeared in the records of an Apollo spacecraft on its launch pad. Ten seconds later, the crew's first audible report of fire began. The proximity is not proof that the transient was the spark.
+
+Apollo 1 was a ground test, not a launch. Virgil Grissom, Edward White and Roger Chaffee were aboard in a pressurized pure-oxygen atmosphere. The Apollo 204 Review Board found combustible material near possible ignition sources and a hatch that could not be opened against rising pressure. An electrical arc was the probable initiator. The exact single ignition source was never conclusively identified.
+
+Beware of a deceptively tidy duration. NASA's February 3 preliminary statement called the cabin rupture fourteen seconds after the first detection. A later timeline places the first report at 23:31:04.7 GMT and rupture at 23:31:19.4 GMT, about 14.7 seconds. Neither establishes when the fire first ignited.
+
+The hatch took much longer to open. The recovery record documents heat, smoke and the difficulty of removing the hatches. This was not simply an unexplained spark; the conditions and the escape constraints were part of the disaster and the redesign.
+
+ONE EDITORIAL CTA — Read The Hatch Opened Inward:
+https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+
+SOURCES (research citations):
+https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html
+https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_01c_Timeline.htm
+https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/seamans.html
+https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/
+
+Publisher: Final Vestige Studios
+[[VALID_FV_POSTAL_ADDRESS_REQUIRED]]
+[[LIVE_JETPACK_UNSUBSCRIBE_REQUIRED]]
+HOLD_UNSENT / NOT_ADOPTED: not a native email rendering or verified legal footer.
