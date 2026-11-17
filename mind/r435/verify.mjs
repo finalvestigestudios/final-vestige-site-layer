@@ -15,6 +15,7 @@ for(const [name,html] of [['A',a],['B',b],['hub',hub]]){
  check(html.includes('focus-visible'),name+' focus outline');
  check(!/<(?:script|iframe|form|video)\b/i.test(html),name+' no scripts/iframes/forms/fake video');
  check(!/<a\b[^>]*\b(?:href=["'][^"']*(?:affiliate_id|ref=|hop=|tag=))/.test(html),name+' no unauthorized earning link');
+ check(!/<a\b[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12|hypnosislive|brainwaveshots|inspire3)\.com/i.test(html),name+' no clickable merchant link');
 }
 for(const html of [a,b]){
  check(html.includes('Prospective affiliate disclosure:'),'near-link prospective disclosure');
