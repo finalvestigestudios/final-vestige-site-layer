@@ -89,7 +89,7 @@ def inspect_docket(docket: dict, branch_heads: dict | None = None) -> list[str]:
             e.append('INVALID_ORIGINAL_ARTICLE_SLUG');continue
         names.append(a['slug'])
         shas=a.get('body_candidate_git_blobs')
-        if not isinstance(shas,list) or not shas or not unique(shas) or any(not isinstance(s,str) or not HEX.fullmatch(s) for s in shas):
+        if not isinstance(shas,list) or not shas or any(not isinstance(s,str) or not HEX.fullmatch(s) for s in shas):
             e.append('INVALID_ORIGINAL_BODY_OBJECTS:'+a['slug'])
     if not unique(names):e.append('DUPLICATE_ORIGINAL_ARTICLE_SLUG')
     disputes=docket.get('source_evidence_disputes')
@@ -189,8 +189,158 @@ def inspect_checkout(docket:dict,root:Path)->dict:
             'distinct_ids_cited':len(set(all_cited)),'review_rows':sorted(rows,key=lambda x:x['slug'])}
 
 
+
+def inspect_original_relationships(docket: dict) -> list[str]:
+    """Relational custody preserving duplicate bytes and contributor provenance.
+
+    Derived from the original R397 docket only. Neither authentic source quality,
+    article advice safety, revenue eligibility nor publication is determined.
+    """
+    from collections import Counter, defaultdict
+    from urllib.parse import urlsplit
+    if not isinstance(docket, dict):
+        return ['RELATION_INVALID_DOCKET']
+    errs = []
+    pins = docket.get('original_git_blob_pins')
+    if (not isinstance(pins, dict) or
+        set(pins) != {'manifest', 'source_fragment_crosswalk', 'base_source_register'} or
+        any(not isinstance(x, str) or not HEX.fullmatch(x) for x in pins.values())):
+        errs.append('ORIGINAL_INPUT_GIT_PINS_LOST')
+    branches = {x.get('branch') for x in docket.get('branch_pins', []) if isinstance(x, dict)}
+    articles = docket.get('original_articles')
+    forks = docket.get('original_fork_disputes')
+    cross = docket.get('all_original_source_id_crosswalk')
+    disputes = docket.get('source_evidence_disputes')
+    groups = docket.get('shared_exact_url_review_groups')
+    if not all(isinstance(x, list) for x in (articles, forks, cross, disputes, groups)):
+        return sorted(set(errs + ['RELATION_MISSING_ORIGINAL_SETS']))
+    byarticle = {a.get('slug'): a for a in articles if isinstance(a, dict)}
+    fork_body_slugs = set()
+    seen_fork_paths = set()
+    for f in forks:
+        if not isinstance(f, dict):
+            errs.append('RELATION_INVALID_FORK_ROW')
+            continue
+        path = f.get('path')
+        if path in seen_fork_paths:
+            errs.append('RELATION_FORK_PATH_COLLISION:'+str(path))
+        seen_fork_paths.add(path)
+        if not isinstance(path, str) or not path.startswith('preparedness/content/articles/') or not path.endswith('.body.html'):
+            continue
+        slug = path[len('preparedness/content/articles/'):-len('.body.html')]
+        fork_body_slugs.add(slug)
+        source = byarticle.get(slug)
+        if source is None:
+            errs.append('BODY_FORK_ARTICLE_IDENTITY_LOST:'+slug)
+            continue
+        vv = f.get('variants')
+        aa = source.get('body_candidate_git_blobs')
+        if not isinstance(vv, list) or not isinstance(aa, list):
+            errs.append('BODY_FORK_CANDIDATE_SET_MISSING:'+slug)
+            continue
+        if any(not isinstance(v, dict) for v in vv):
+            errs.append('BODY_FORK_INVALID_VARIANT:'+slug)
+            continue
+        if Counter(v.get('git_blob_sha') for v in vv) != Counter(aa):
+            errs.append('BODY_FORK_PROVENANCE_MULTIPLICITY_DRIFT:'+slug)
+        if len({v.get('branch') for v in vv}) != len(vv):
+            errs.append('BODY_FORK_BRANCH_COLLISION:'+slug)
+        if any(v.get('branch') not in branches for v in vv):
+            errs.append('BODY_FORK_BRANCH_NOT_PINNED:'+slug)
+    if len(fork_body_slugs) != 4:
+        errs.append('FOUR_ORIGINAL_BODY_FORKS_CHANGED')
+    cross_by_id = {}
+    inferred = defaultdict(set)
+    total = 0
+    for x in cross:
+        if not isinstance(x, dict) or not isinstance(x.get('source_id'), str):
+            errs.append('RELATION_INVALID_SOURCE_ROW')
+            continue
+        sid = x['source_id']
+        vv = x.get('variants')
+        if sid in cross_by_id:
+            errs.append('RELATION_SOURCE_ID_COLLISION:'+sid)
+        cross_by_id[sid] = x
+        if not isinstance(vv, list) or not vv:
+            errs.append('RELATION_SOURCE_VARIANTS_MISSING:'+sid)
+            continue
+        seen_branches = set()
+        for v in vv:
+            total += 1
+            if not isinstance(v, dict):
+                errs.append('RELATION_SOURCE_VARIANT_INVALID:'+sid)
+                continue
+            b, sha, url = v.get('branch'), v.get('source_blob'), v.get('url')
+            if b in seen_branches:
+                errs.append('SOURCE_VARIANT_BRANCH_COLLISION:'+sid)
+            seen_branches.add(b)
+            if b not in branches:
+                errs.append('SOURCE_VARIANT_UNPINNED_BRANCH:'+sid)
+            if not isinstance(sha, str) or not HEX.fullmatch(sha):
+                errs.append('SOURCE_VARIANT_INVALID_GIT_BLOB:'+sid)
+            if not isinstance(url, str):
+                errs.append('SOURCE_VARIANT_INVALID_URL:'+sid)
+                continue
+            try:
+                p = urlsplit(url)
+                if p.scheme != 'https' or not p.hostname or p.username or p.password or p.fragment or any(ord(c)<32 for c in url):
+                    errs.append('SOURCE_VARIANT_UNSAFE_URL:'+sid)
+            except ValueError:
+                errs.append('SOURCE_VARIANT_UNSAFE_URL:'+sid)
+            inferred[url].add(sid)
+    if total != 280:
+        errs.append('CROSSWALK_VARIANT_OCCURRENCE_DRIFT')
+    shared = {u: ids for u, ids in inferred.items() if len(ids) > 1}
+    observed = {}
+    for g in groups:
+        if not isinstance(g, dict) or not isinstance(g.get('url'), str):
+            errs.append('RELATION_INVALID_SHARED_URL_ROW')
+            continue
+        url = g['url']
+        if url in observed:
+            errs.append('RELATION_DUPLICATE_SHARED_URL:'+url)
+        ids = g.get('ids')
+        if not isinstance(ids, list) or any(not isinstance(y, str) for y in ids):
+            errs.append('RELATION_INVALID_GROUP_IDS:'+url)
+            continue
+        observed[url] = set(ids)
+        if len(ids) != len(set(ids)) or g.get('review_required') is not True:
+            errs.append('RELATION_GROUP_REVIEW_OR_ID_COLLISION:'+url)
+    if set(observed) != set(shared):
+        errs.append('INFERRED_SHARED_URL_GROUP_SET_DRIFT')
+    for url in sorted(set(observed) & set(shared)):
+        if observed[url] != shared[url]:
+            errs.append('INFERRED_SHARED_URL_SOURCE_IDS_DRIFT:'+url)
+    if len(shared) != 17:
+        errs.append('INFERRED_SHARED_URL_GROUP_COUNT_DRIFT')
+    for dispute in disputes:
+        if not isinstance(dispute, dict):
+            errs.append('RELATION_INVALID_DISPUTE_ROW')
+            continue
+        sid = dispute.get('source_id')
+        row = cross_by_id.get(sid)
+        if row is None:
+            errs.append('DISPUTED_ID_NOT_IN_SOURCE_CROSSWALK:'+str(sid))
+            continue
+        vv = dispute.get('variants')
+        if not isinstance(vv, list):
+            errs.append('DISPUTED_SOURCE_VARIANTS_MISSING:'+str(sid))
+            continue
+        def key(v):
+            return (v.get('branch'), v.get('source_blob'), v.get('url')) if isinstance(v, dict) else (None,None,None)
+        compared = row.get('variants')
+        if not isinstance(compared, list) or Counter(key(v) for v in vv) != Counter(key(v) for v in compared):
+            errs.append('SOURCE_DISPUTE_TO_CROSSWALK_DRIFT:'+sid)
+        if dispute.get('decision') != 'HUMAN_REVIEW_REQUIRED' or dispute.get('selected_record') is not None:
+            errs.append('SOURCE_DISPUTE_PREMATURE_SELECTION:'+sid)
+        for v in vv:
+            if not isinstance(v, dict) or not isinstance(v.get('supports_exact'), str) or not v['supports_exact'].strip() or not isinstance(v.get('reading_scope_notes_exact'), str) or not v['reading_scope_notes_exact'].strip():
+                errs.append('SOURCE_DISPUTE_READING_SCOPE_MISSING:'+sid)
+    return sorted(set(errs))
+
+
 def audit(docket:dict,root:Path|None=None,branch_heads:dict|None=None)->dict:
-    errors=inspect_docket(docket,branch_heads)
+    errors=inspect_docket(docket,branch_heads) + inspect_original_relationships(docket)
     checks=None
     if root is None:errors.append('AUTHENTIC_CHECKOUT_NOT_PROVIDED')
     else:
