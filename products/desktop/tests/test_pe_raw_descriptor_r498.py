@@ -58,6 +58,7 @@ class RawDescriptorBehaviorR498(unittest.TestCase):
             stream.seek(4095)
             self.assertEqual(stream.read(1), b"Z")
 
+    @unittest.skipIf(os.name == "nt", "Windows handles may deny pathname replacement")
     def test_held_descriptor_not_retargeted_by_path_replacement(self):
         with self.raw() as stream:
             self.assertEqual(stream.read(8), b"A" * 8)
