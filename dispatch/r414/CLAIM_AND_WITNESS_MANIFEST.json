@@ -1,0 +1,61 @@
+{
+  "version": "R414",
+  "source_checked_utc": "2026-11-17T03:41:00Z",
+  "master_pr": 175,
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "base_dispatch_pr": 2818,
+  "candidate_issue": 1,
+  "candidate_adopted": false,
+  "campaign_split": "4 editorial / 2 commercial",
+  "release": "HOLD_UNSENT",
+  "subject": "The stranger behind the door",
+  "preheader_proposed_not_native_verified": "A 1998 experiment, eight missed substitutions, and one question every investigator should ask.",
+  "cta": {
+    "kind": "editorial_primary",
+    "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "status": "public_page_viewed_not_email_sent"
+  },
+  "claims": [
+    {
+      "claim": "First experiment in 1998 door study reported 7 of 15 detecting, 8 missing",
+      "source": "https://doi.org/10.3758/BF03208840",
+      "crosscheck": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "limitation": "single small first study, not all viewers"
+    },
+    {
+      "claim": "Second study had different conditions and results",
+      "source": "https://doi.org/10.3758/BF03208840",
+      "limitation": "cannot extrapolate first study to everyone"
+    }
+  ],
+  "merchant": {
+    "zen12_public_sales_page": "https://zen12.com/about",
+    "total_focus_exact_page": "https://hypnosislive.com/mental-skills/total-focus",
+    "total_focus_refund_faq": "https://hypnosislive.com/faq",
+    "inspire3_public_program": "https://affiliates.inspire3.com/",
+    "final_vestige_named_approval": "NOT_VERIFIED",
+    "sku_email_permission": "NOT_VERIFIED",
+    "earning_url": "NOT_VERIFIED",
+    "live_approved_guide": "NOT_VERIFIED",
+    "referred_checkout": "NOT_VERIFIED"
+  },
+  "wordpress_readonly": {
+    "newsletter_on": true,
+    "email_auto_post_off": true,
+    "email_content_format": "full",
+    "reply_to": "no-reply",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "wpcom_followers": 3,
+    "direct_email_followers": 0,
+    "distinct_eligible_recipients": null,
+    "welcome_received": null,
+    "actual_native_preview": false,
+    "fv_postal_rendered": false,
+    "unsubscribe_functional": false
+  },
+  "settled_attributed_revenue": null,
+  "qualified_human_sessions": null,
+  "revenue_per_1000_qualified_sessions": "NOT_COMPUTABLE"
+}
