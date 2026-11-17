@@ -1,0 +1,148 @@
+{
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "master_manifest_blob": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+  "issue_blobs": [
+    {
+      "number": 1,
+      "path": "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md",
+      "blob": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8"
+    },
+    {
+      "number": 2,
+      "path": "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md",
+      "blob": "faa207ab7deafd86460d36f8c17fe62d392d0e14"
+    },
+    {
+      "number": 3,
+      "path": "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md",
+      "blob": "aeeef34efea0cc281f69901488e4501fea851245"
+    },
+    {
+      "number": 4,
+      "path": "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md",
+      "blob": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca"
+    },
+    {
+      "number": 5,
+      "path": "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md",
+      "blob": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc"
+    },
+    {
+      "number": 6,
+      "path": "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md",
+      "blob": "004d558df6376d2ad6f4f79a4581e8d2c444e355"
+    }
+  ],
+  "reports": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "subject": "The mind is not a camera",
+      "preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "first_party_links": 1,
+      "proposed_subject_mapping": "post-title",
+      "inbox_preheader_mapping": "not_verified",
+      "native_rendering_witness": false,
+      "commercial_links_activated": false,
+      "send_allowed": false
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "subject": "Before hypnosis had a name",
+      "preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "first_party_links": 1,
+      "proposed_subject_mapping": "post-title",
+      "inbox_preheader_mapping": "not_verified",
+      "native_rendering_witness": false,
+      "commercial_links_activated": false,
+      "send_allowed": false
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "subject": "The twelve-minute meditation question",
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "first_party_links": 1,
+      "proposed_subject_mapping": "post-title",
+      "inbox_preheader_mapping": "not_verified",
+      "native_rendering_witness": false,
+      "commercial_links_activated": false,
+      "send_allowed": false
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "first_party_links": 1,
+      "proposed_subject_mapping": "post-title",
+      "inbox_preheader_mapping": "not_verified",
+      "native_rendering_witness": false,
+      "commercial_links_activated": false,
+      "send_allowed": false
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "Three questions that matter more than an impressive promise.",
+      "first_party_links": 1,
+      "proposed_subject_mapping": "post-title",
+      "inbox_preheader_mapping": "not_verified",
+      "native_rendering_witness": false,
+      "commercial_links_activated": false,
+      "send_allowed": false
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "first_party_links": 1,
+      "proposed_subject_mapping": "post-title",
+      "inbox_preheader_mapping": "not_verified",
+      "native_rendering_witness": false,
+      "commercial_links_activated": false,
+      "send_allowed": false
+    }
+  ],
+  "release": {
+    "release": "HOLD_ALL_SIX",
+    "issues": [
+      {
+        "number": 1,
+        "status": "HOLD_TRANSPORT"
+      },
+      {
+        "number": 2,
+        "status": "HOLD_TRANSPORT"
+      },
+      {
+        "number": 3,
+        "status": "HOLD_MERCHANT"
+      },
+      {
+        "number": 4,
+        "status": "HOLD_COPY"
+      },
+      {
+        "number": 5,
+        "status": "HOLD_MERCHANT"
+      },
+      {
+        "number": 6,
+        "status": "HOLD_TRANSPORT"
+      }
+    ],
+    "eligible_receiving_inboxes": null,
+    "realized_net_revenue_per_1000_qualified_sessions": null
+  },
+  "qa_source_review_V8": {
+    "assertions": 49,
+    "rejected_mutations": 6,
+    "passed": true
+  },
+  "native_node_tests": "COMMITTED_NOT_YET_EXECUTED",
+  "native_jetpack_preview": false
+}
