@@ -15,7 +15,7 @@
   "tests": {
     "path": "preparedness/tests/test_r438_css_dependency_custody_gate.py",
     "git_blob": "eb6f28f92b4099b2652bd64d7bb4b4676c40c391",
-    "sha256": ""
+    "sha256": "a0aa278ee7ba903ea92fc072a472b195cbc789147e1190801e57a1378f97fa2b"
   },
   "local_python": {
     "new_passed": 66,
