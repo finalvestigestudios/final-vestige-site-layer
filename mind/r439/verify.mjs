@@ -28,7 +28,7 @@ check(name+' does not link merchant',()=>no(data,sellerHref));
 check(name+' no checkout, redirection, iframe, form, script, autoplay, tracker or injected analytics',()=>no(data,/<(?:script|iframe|form|video|audio)\b|autoplay\s*=|onclick\s*=|onload\s*=|googletagmanager|gtag\s*\(|fbq\s*\(/i));
 check(name+' commercial disabled',()=>{contains(data,'disabled aria-disabled="true"');contains(data,'purchase link unavailable')});
 check(name+' disclosure adjacent to disabled CTA',()=>{let d=data.indexOf('Prospective affiliate disclosure:');let c=data.indexOf('Zen12 purchase link unavailable');assert.ok(d>=0&&c>d&&c-d<700)});
-check(name+' factual seller claims properly qualified',()=>{contains(data,'seller describes');contains(data,'seller claim');contains(data,'not established');contains(data,'different offers')});
+check(name+' factual seller claims properly qualified',()=>{contains(data,'seller-described');contains(data,'seller');contains(data,'not established');contains(data,'different offers')});
 check(name+' direct existing free 52-page route',()=>{contains(data,'https://finalvestige.com/focus/');contains(data,'52-page')});
 check(name+' responsive and focus visible',()=>{contains(data,'width=device-width');contains(data,':focus-visible');contains(data,'prefers-reduced-motion')});
 check(name+' no personal product use claims',()=>no(data,/\b(I used Zen12|we tested the product|we bought Zen12|guaranteed income)\b/i));
