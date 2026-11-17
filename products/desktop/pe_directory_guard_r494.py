@@ -14,12 +14,14 @@ class PEDataDirectoryError(ValueError):
 def validate_pe_directories(optional: bytes, *, header_size: int,
                             image_size: int, file_size: int,
                             virtual_ranges: list[tuple[int, int]],
-                            file_ranges: list[tuple[int, int]]) -> None:
-    """Validate the directory table and its address-space/file-space bounds.
+                            file_ranges: list[tuple[int, int]],
+                            backed_virtual_ranges: list[tuple[int, int]]) -> None:
+    """Validate directory bounds including section bytes backed by the file.
 
-    PE32+ entry 4 (certificate) uses a *file offset*, not an RVA. All other
-    nonempty entries must fit fully in PE headers or one mapped section. This
-    is intentionally conservative for prepublication candidate review.
+    PE32+ entry 4 (certificate) uses a *file offset*, not an RVA. Other
+    nonempty entries must fit wholly inside the headers or ONE file-backed
+    section interval. Virtual-only/zero-filled section tails cannot contain
+    on-disk directory data, even though they map into the image at runtime.
     """
     if len(optional) < 112:
         raise PEDataDirectoryError("PE data directory rejected")
@@ -43,5 +45,7 @@ def validate_pe_directories(optional: bytes, *, header_size: int,
                 raise PEDataDirectoryError("PE data directory rejected")
         elif (end > image_size
               or not any(low <= address and end <= high
-                         for low, high in virtual_ranges)):
+                         for low, high in virtual_ranges)
+              or not any(low <= address and end <= high
+                         for low, high in backed_virtual_ranges)):
             raise PEDataDirectoryError("PE data directory rejected")
