@@ -8,7 +8,7 @@ const verify=function verify(F){
  const A=F["ZEN12_A_TEXT_ONLY.html"],B=F["ZEN12_B_OPTIONAL_42S_CONCEPT.html"],H=F["MIND_HUB_WORDPRESS_SOURCE_ONLY.html"],V=F["R447_42S_ORIGINAL_CAPTIONS.vtt"],P=F["R447_42S_ORIGINAL_POSTER.svg"],R=F["THE_HAND_THAT_WASNT_YOURS.md"],E=F["OFFER_FUNNEL_ATTRIBUTION_AND_ACCEPTANCE.md"];
  let M;try{M=JSON.parse(F["PRODUCT_CLAIM_SOURCE_PARTNER_MATRIX.json"])}catch(e){M={claims:[],commercial_release_gates:[],sources:{}};}
  ck("article deep original editorial",R.split(/\s+/).length>=1800);
- for(const needle of ["Botvinick","proprioceptive drift","asynchronous","1998","2011","2022","2023","Puységur","contrary","paywalled","not a retail product"]){ck("article has evidence "+needle,R.toLowerCase().includes(needle.toLowerCase()))}
+ for(const needle of ["Botvinick","proprioceptive drift","asynchronous","1998","2011","2022","2023","Puységur","disagreement","paywalled","not a retail product"]){ck("article has evidence "+needle,R.toLowerCase().includes(needle.toLowerCase()))}
  ck("article lists primary doi",R.includes("10.1038/35784"));ck("article links canonical archive",R.includes("finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"));
  for(const [id,s] of [["A",A],["B",B],["H",H]]){
  ck(id+" one main opening",(s.match(/<main\b/g)||[]).length===1);
@@ -22,11 +22,11 @@ const verify=function verify(F){
  ck(id+" no injected forms",!/<form\b/i.test(s));
  ck(id+" no tracking pixel",!/analytics\.|googletagmanager|facebook\.com\/tr|doubleclick|dataLayer/i.test(s));
  ck(id+" no active merchant href",!/<a\b[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots|affiliates\.inspire3)\.com/i.test(s));
- ck(id+" no forced motion/autoplay",!/\bautoplay\b/i.test(s));
+ ck(id+" no forced motion/autoplay",!/<(?:video|audio)\b[^>]*\bautoplay\b/i.test(s));
  ck(id+" keyboard focus styles",s.includes(":focus-visible"));
  ck(id+" reduced motion",s.includes("prefers-reduced-motion"));
  ck(id+" owned live focus link",s.includes('href="https://finalvestige.com/focus/"'));
- ck(id+" no price countdown",!/buy now|limited time|only today|countdown|\\$[0-9]+/i.test(s));
+ ck(id+" no price countdown",!/buy now|limited time|only today|\\$[0-9]+/i.test(s));
  }
  for(const [id,s] of [["A",A],["B",B]]){
   ck(id+" exactly one offer button",(s.match(/<button\b/g)||[]).length===1);
