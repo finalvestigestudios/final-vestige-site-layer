@@ -1,0 +1,838 @@
+{
+  "document": "FV Library Research Sources — canonical read-only source inventory",
+  "captured_on": "2026-11-16",
+  "origin_page": "https://finalvestige.com/free-resources/research-sources/",
+  "wordpress_page_id": 1338,
+  "wordpress_modified": "2026-11-03T22:12:43",
+  "published_status": "publish",
+  "source_method": "Authenticated edit-context WordPress raw Gutenberg content; extracted fv-rs-card anchors from two HTML blocks.",
+  "audited_by_category": {
+    "declassified": 12,
+    "accountability": 24,
+    "engineering": 21,
+    "archives": 25,
+    "navigation": 8
+  },
+  "total_sources": 90,
+  "unique_titles": 90,
+  "unique_links": 90,
+  "caveats": [
+    "Inventory presence does not imply destination health or lawful reuse.",
+    "'U.S. government work' and 'Link-only' are existing page cues, not independent item-level copyright determinations.",
+    "Only explicitly flagged institutional destinations were opened in this research pass; 403 may be crawler restriction.",
+    "Published page static copy is inconsistent (60), and supplemental script's 23/26 counts are incorrect (actual 24/25).",
+    "No published WordPress changes authorized under unresolved real-browser QA gate."
+  ],
+  "sources": [
+    {
+      "index": 1,
+      "category": "declassified",
+      "title": "JFK Assassination Records — 2025 Documents Release",
+      "url": "https://www.archives.gov/research/jfk/release-2025",
+      "institution_and_reuse_cue": "National Archives · Declassified records · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 2,
+      "category": "declassified",
+      "title": "Pentagon Papers",
+      "url": "https://www.archives.gov/research/pentagon-papers",
+      "institution_and_reuse_cue": "National Archives · Government study · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 3,
+      "category": "declassified",
+      "title": "COINTELPRO",
+      "url": "https://vault.fbi.gov/cointel-pro/cointel-pro",
+      "institution_and_reuse_cue": "FBI Vault · Domestic intelligence records · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 4,
+      "category": "declassified",
+      "title": "VENONA Documents",
+      "url": "https://www.nsa.gov/serve-from-netstorage/news-features/declassified-documents/venona/index.html",
+      "institution_and_reuse_cue": "National Security Agency · Signals intelligence · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "institutional page opened"
+    },
+    {
+      "index": 5,
+      "category": "declassified",
+      "title": "FRUS: Iran, 1951–1954, Second Edition",
+      "url": "https://history.state.gov/historicaldocuments/frus1951-54IranEd2",
+      "institution_and_reuse_cue": "U.S. Department of State · 375 documents · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 6,
+      "category": "declassified",
+      "title": "FRUS: Guatemala, 1952–1954",
+      "url": "https://history.state.gov/historicaldocuments/frus1952-54Guat",
+      "institution_and_reuse_cue": "U.S. Department of State · 287 documents · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 7,
+      "category": "declassified",
+      "title": "The Nixon Collection",
+      "url": "https://www.cia.gov/stories/story/the-nixon-collection/",
+      "institution_and_reuse_cue": "Central Intelligence Agency · Presidential briefing files · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "institutional page opened"
+    },
+    {
+      "index": 8,
+      "category": "declassified",
+      "title": "President’s Daily Brief — Kennedy and Johnson",
+      "url": "https://www.cia.gov/resources/publications/presidents-daily-brief-delivering-intelligence-to-kennedy-and-johnson/",
+      "institution_and_reuse_cue": "Central Intelligence Agency · Presidential intelligence · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 9,
+      "category": "declassified",
+      "title": "FRUS: Cuban Missile Crisis and Aftermath",
+      "url": "https://history.state.gov/historicaldocuments/frus1961-63v11",
+      "institution_and_reuse_cue": "U.S. Department of State · 390 documents · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 10,
+      "category": "accountability",
+      "title": "Watergate Road Map",
+      "url": "https://www.archives.gov/research/investigations/watergate/roadmap",
+      "institution_and_reuse_cue": "National Archives · Evidence architecture · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 11,
+      "category": "accountability",
+      "title": "OKBOMB — Oklahoma City Bombing Investigation Files",
+      "url": "https://vault.fbi.gov/OKBOMB",
+      "institution_and_reuse_cue": "FBI Vault · Federal investigation · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 12,
+      "category": "accountability",
+      "title": "GAO High-Risk Series 2025",
+      "url": "https://www.gao.gov/products/gao-25-107743",
+      "institution_and_reuse_cue": "GAO · Federal oversight · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 13,
+      "category": "accountability",
+      "title": "Federal IT Acquisition and Management Challenges",
+      "url": "https://www.gao.gov/products/gao-25-107852",
+      "institution_and_reuse_cue": "GAO · Federal IT oversight · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 14,
+      "category": "accountability",
+      "title": "Campaign Finance Data",
+      "url": "https://www.fec.gov/data/",
+      "institution_and_reuse_cue": "Federal Election Commission · Campaign finance · Public data",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 15,
+      "category": "accountability",
+      "title": "USAspending Advanced Search",
+      "url": "https://www.usaspending.gov/search",
+      "institution_and_reuse_cue": "U.S. Treasury · Federal spending · Public data",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 16,
+      "category": "accountability",
+      "title": "FOIA.gov — Annual and Quarterly Reports",
+      "url": "https://www.foia.gov/reports.html",
+      "institution_and_reuse_cue": "U.S. Department of Justice · FOIA performance · Public data",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 17,
+      "category": "accountability",
+      "title": "Lobbying Disclosure Act Reports",
+      "url": "https://lda.gov/system/public/",
+      "institution_and_reuse_cue": "U.S. House Clerk / U.S. Senate · Lobbying disclosures · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 18,
+      "category": "accountability",
+      "title": "Fatality Inspection Data",
+      "url": "https://www.osha.gov/fatalities",
+      "institution_and_reuse_cue": "OSHA · Workplace safety · Public data",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 19,
+      "category": "accountability",
+      "title": "9/11 Commission Records",
+      "url": "https://www.archives.gov/research/9-11",
+      "institution_and_reuse_cue": "National Archives · Federal commission records · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 20,
+      "category": "accountability",
+      "title": "Amerithrax Investigation Files",
+      "url": "https://vault.fbi.gov/Amerithrax",
+      "institution_and_reuse_cue": "FBI Vault · Federal investigation · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 21,
+      "category": "accountability",
+      "title": "ADAMS Public Documents",
+      "url": "https://www.nrc.gov/reading-rm/adams",
+      "institution_and_reuse_cue": "Nuclear Regulatory Commission · Licensing and inspection records · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 22,
+      "category": "accountability",
+      "title": "FARA Browse & Search Filings",
+      "url": "https://efile.fara.gov/ords/fara/f?p=1381:1",
+      "institution_and_reuse_cue": "U.S. Department of Justice · Foreign-agent disclosures · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 23,
+      "category": "accountability",
+      "title": "Oversight.gov",
+      "url": "https://www.oversight.gov/",
+      "institution_and_reuse_cue": "Federal Inspectors General · Audits and recommendations · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 24,
+      "category": "accountability",
+      "title": "EDGAR — SEC Search Filings",
+      "url": "https://www.sec.gov/search-filings",
+      "institution_and_reuse_cue": "Securities and Exchange Commission · Corporate filings · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 25,
+      "category": "accountability",
+      "title": "Regulations.gov",
+      "url": "https://www.regulations.gov/",
+      "institution_and_reuse_cue": "Federal eRulemaking Program · Administrative record · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 26,
+      "category": "accountability",
+      "title": "Open Payments Data",
+      "url": "https://www.cms.gov/priorities/key-initiatives/open-payments/data",
+      "institution_and_reuse_cue": "Centers for Medicare & Medicaid Services · Financial disclosures · Public data",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 27,
+      "category": "accountability",
+      "title": "Deepwater Horizon and the National Contingency Plan",
+      "url": "https://www.epa.gov/office-inspector-general/report-revisions-needed-national-contingency-plan-based-deepwater-horizon",
+      "institution_and_reuse_cue": "EPA Office of Inspector General · Disaster-response oversight · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 28,
+      "category": "accountability",
+      "title": "FederalRegister.gov",
+      "url": "https://www.federalregister.gov/",
+      "institution_and_reuse_cue": "Office of the Federal Register / GPO · Rules and notices · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 29,
+      "category": "engineering",
+      "title": "Columbia Accident Investigation Board Report",
+      "url": "https://ntrs.nasa.gov/citations/20030093634",
+      "institution_and_reuse_cue": "NASA Technical Reports Server · Aerospace · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 30,
+      "category": "engineering",
+      "title": "Rogers Commission Report — Challenger",
+      "url": "https://www.nasa.gov/history/rogersrep/",
+      "institution_and_reuse_cue": "NASA History · Aerospace · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 31,
+      "category": "engineering",
+      "title": "World Trade Center Disaster Investigation — NCSTAR 1",
+      "url": "https://www.nist.gov/publications/federal-building-and-fire-safety-investigation-world-trade-center-disaster-final-report",
+      "institution_and_reuse_cue": "NIST · Structural fire · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 32,
+      "category": "engineering",
+      "title": "The Station Nightclub Fire — NCSTAR 2",
+      "url": "https://www.nist.gov/disaster-failure-studies/station-nightclub-fire-2003",
+      "institution_and_reuse_cue": "NIST · Fire and egress · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 33,
+      "category": "engineering",
+      "title": "Sinking of El Faro — DCA16MM001",
+      "url": "https://www.ntsb.gov/investigations/Pages/DCA16MM001.aspx",
+      "institution_and_reuse_cue": "NTSB · Maritime casualty · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 34,
+      "category": "engineering",
+      "title": "The 1980 Eruptions of Mount St. Helens — Professional Paper 1250",
+      "url": "https://pubs.usgs.gov/publication/pp1250",
+      "institution_and_reuse_cue": "U.S. Geological Survey · Volcanology · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 35,
+      "category": "engineering",
+      "title": "Katrina Levee Failures — Terrestrial Lidar Dataset",
+      "url": "https://www.usgs.gov/publications/terrestrial-lidar-datasets-new-orleans-louisiana-levee-failures-hurricane-katrina",
+      "institution_and_reuse_cue": "U.S. Geological Survey · Levee forensics · Public data",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 36,
+      "category": "engineering",
+      "title": "Katrina Flood-Protection System — Geotechnical Reconnaissance",
+      "url": "https://www.usgs.gov/publications/geotechnical-reconnaissance-mississippi-river-delta-flood-protection-system-after",
+      "institution_and_reuse_cue": "U.S. Geological Survey · Geotechnical reconnaissance · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 37,
+      "category": "engineering",
+      "title": "Event Footprint Catalog",
+      "url": "https://www.ncei.noaa.gov/products/event-footprint-catalog",
+      "institution_and_reuse_cue": "NOAA NCEI · Severe-weather evidence · Public data",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 38,
+      "category": "engineering",
+      "title": "BP Texas City Refinery Explosion",
+      "url": "https://www.csb.gov/bp-america-texas-city-refinery-explosion/",
+      "institution_and_reuse_cue": "U.S. Chemical Safety Board · Process safety · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 39,
+      "category": "engineering",
+      "title": "NIOSH FACE Reports",
+      "url": "https://www.cdc.gov/niosh/face/topics/index.html",
+      "institution_and_reuse_cue": "NIOSH / State FACE Programs · Occupational fatalities · Link-only collection",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 40,
+      "category": "engineering",
+      "title": "TWA Flight 800 — DCA96MA070",
+      "url": "https://www.ntsb.gov/investigations/Pages/DCA96MA070.aspx",
+      "institution_and_reuse_cue": "NTSB · Aviation · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 41,
+      "category": "engineering",
+      "title": "America Burning",
+      "url": "https://www.usfa.fema.gov/downloads/pdf/publications/fa-264.pdf",
+      "institution_and_reuse_cue": "USFA · National fire policy · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 42,
+      "category": "engineering",
+      "title": "FEMA 549 — Hurricane Katrina Building Performance",
+      "url": "https://www.govinfo.gov/app/details/GOVPUB-HS5_100-PURL-LPS81562",
+      "institution_and_reuse_cue": "FEMA / GovInfo · Building performance · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 43,
+      "category": "engineering",
+      "title": "IPET and Hurricane Protection Decision Chronology",
+      "url": "https://www.iwr.usace.army.mil/About/History/IPET-and-HPDC-Investigations/",
+      "institution_and_reuse_cue": "U.S. Army Corps of Engineers · Flood protection · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 44,
+      "category": "engineering",
+      "title": "Three Mile Island Knowledge Management Digest",
+      "url": "https://www.nrc.gov/reading-rm/doc-collections/nuregs/knowledge/km0001/r1/index",
+      "institution_and_reuse_cue": "Nuclear Regulatory Commission · Nuclear accident archive · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 45,
+      "category": "archives",
+      "title": "Psychology of Intelligence Analysis",
+      "url": "https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2/",
+      "institution_and_reuse_cue": "CIA Center for the Study of Intelligence · Research method · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 46,
+      "category": "archives",
+      "title": "HABS / HAER / HALS",
+      "url": "https://www.loc.gov/pictures/collection/hh/",
+      "institution_and_reuse_cue": "Library of Congress / National Park Service · Built environment · Link-only collection",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 47,
+      "category": "archives",
+      "title": "topoView — Historical Topographic Map Collection",
+      "url": "https://www.usgs.gov/tools/topoview",
+      "institution_and_reuse_cue": "U.S. Geological Survey · Historical maps · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 48,
+      "category": "archives",
+      "title": "Chronicling America",
+      "url": "https://www.loc.gov/collections/chronicling-america/about-this-collection/",
+      "institution_and_reuse_cue": "Library of Congress / NEH · Historic newspapers · Mixed rights by item",
+      "rights_status": "item-level review required",
+      "link_verification": "automated access blocked (HTTP 403); not a broken-link determination"
+    },
+    {
+      "index": 49,
+      "category": "archives",
+      "title": "Mission Transcripts — Mercury, Gemini, and Apollo",
+      "url": "https://www.nasa.gov/history/mission-transcripts-mercury-gemini-and-apollo/",
+      "institution_and_reuse_cue": "NASA History · Mission operations · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 50,
+      "category": "archives",
+      "title": "Apollo Lunar Surface Journal & Apollo Flight Journal",
+      "url": "https://www.nasa.gov/history/alsj-and-afj/",
+      "institution_and_reuse_cue": "NASA History / volunteer editors · Annotated Apollo archive · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 51,
+      "category": "archives",
+      "title": "OSTI.GOV",
+      "url": "https://www.osti.gov/",
+      "institution_and_reuse_cue": "U.S. Department of Energy · Technical research · Link-only repository",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 52,
+      "category": "archives",
+      "title": "CDC Stacks",
+      "url": "https://stacks.cdc.gov/",
+      "institution_and_reuse_cue": "Centers for Disease Control and Prevention · Scientific archive · Link-only repository",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 53,
+      "category": "archives",
+      "title": "Smithsonian Open Access",
+      "url": "https://www.si.edu/openaccess",
+      "institution_and_reuse_cue": "Smithsonian Institution · Museum open access · CC0 where marked",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 54,
+      "category": "archives",
+      "title": "Sanborn Maps Collection",
+      "url": "https://www.loc.gov/collections/sanborn-maps/about-this-collection/",
+      "institution_and_reuse_cue": "Library of Congress · Historical maps · Public domain collection",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 55,
+      "category": "archives",
+      "title": "National Archives Catalog",
+      "url": "https://catalog.archives.gov/",
+      "institution_and_reuse_cue": "National Archives · Federal records · Link-only catalog",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 56,
+      "category": "navigation",
+      "title": "Preservation Briefs",
+      "url": "https://www.nps.gov/orgs/1739/preservation-briefs.htm",
+      "institution_and_reuse_cue": "National Park Service · Technical preservation · Link-only series",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 57,
+      "category": "navigation",
+      "title": "International Ice Patrol Annual Reports",
+      "url": "https://www.navcen.uscg.gov/international-ice-patrol-annual-reports",
+      "institution_and_reuse_cue": "U.S. Coast Guard · North Atlantic ice · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 58,
+      "category": "navigation",
+      "title": "United States Coast Pilot",
+      "url": "https://nauticalcharts.noaa.gov/publications/coast-pilot/",
+      "institution_and_reuse_cue": "NOAA Office of Coast Survey · Nautical reference · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 59,
+      "category": "navigation",
+      "title": "Navigation Rules and Regulations Handbook",
+      "url": "https://www.navcen.uscg.gov/sites/default/files/pdf/navRules/Handbook/Nav%20Rules%20Handbook_Corrected_08-12-2024.pdf",
+      "institution_and_reuse_cue": "U.S. Coast Guard · Rules of the Road · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "institutional PDF opened; cover visually inspected"
+    },
+    {
+      "index": 60,
+      "category": "navigation",
+      "title": "Secretary of the Interior’s Standards for the Treatment of Historic Properties",
+      "url": "https://www.nps.gov/orgs/1739/secretary-standards-treatment-historic-properties.htm",
+      "institution_and_reuse_cue": "National Park Service · Historic-property treatment · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 61,
+      "category": "declassified",
+      "title": "CIA Freedom of Information Act Electronic Reading Room",
+      "url": "https://www.cia.gov/readingroom/",
+      "institution_and_reuse_cue": "Central Intelligence Agency · FOIA and declassified records · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 62,
+      "category": "accountability",
+      "title": "Office of Legal Counsel Opinions",
+      "url": "https://www.justice.gov/olc/opinions",
+      "institution_and_reuse_cue": "U.S. Department of Justice · Executive legal opinions · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 63,
+      "category": "declassified",
+      "title": "FRUS: Congo, 1960–1968",
+      "url": "https://history.state.gov/historicaldocuments/frus1964-68v23",
+      "institution_and_reuse_cue": "U.S. Department of State · 582 documents · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 64,
+      "category": "declassified",
+      "title": "Iran-Contra Scandal — Reagan Library Topic Guide",
+      "url": "https://www.reaganlibrary.gov/archives/topic-guide/iran-contra-scandal",
+      "institution_and_reuse_cue": "Ronald Reagan Presidential Library · Presidential records · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 65,
+      "category": "accountability",
+      "title": "Congressional Research Service Products",
+      "url": "https://www.congress.gov/crs-products",
+      "institution_and_reuse_cue": "Congressional Research Service · Policy and legal analysis · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 66,
+      "category": "accountability",
+      "title": "Congressional Hearings Collection",
+      "url": "https://www.govinfo.gov/help/chrg",
+      "institution_and_reuse_cue": "GovInfo · Congressional oversight · Link-only collection",
+      "rights_status": "item-level review required",
+      "link_verification": "institutional page opened"
+    },
+    {
+      "index": 67,
+      "category": "accountability",
+      "title": "Federal Audit Clearinghouse",
+      "url": "https://www.fac.gov/",
+      "institution_and_reuse_cue": "General Services Administration · Single Audits · Public data",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 68,
+      "category": "accountability",
+      "title": "RECAP Archive / CourtListener",
+      "url": "https://www.courtlistener.com/recap/",
+      "institution_and_reuse_cue": "Free Law Project · Federal court records · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 69,
+      "category": "engineering",
+      "title": "NIST Disaster and Failure Studies Data Archive",
+      "url": "https://www.nist.gov/disaster-failure-studies/data-archive",
+      "institution_and_reuse_cue": "NIST · Disaster and failure evidence · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "institutional page opened"
+    },
+    {
+      "index": 70,
+      "category": "engineering",
+      "title": "NTSB CAROL — Case Analysis and Reporting Online",
+      "url": "https://www.ntsb.gov/Pages/carol.aspx",
+      "institution_and_reuse_cue": "National Transportation Safety Board · Investigation search · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 71,
+      "category": "archives",
+      "title": "NASA Technical Reports Server",
+      "url": "https://ntrs.nasa.gov/search",
+      "institution_and_reuse_cue": "NASA · Technical literature · Link-only repository",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 72,
+      "category": "engineering",
+      "title": "National Weather Service Service Assessments",
+      "url": "https://www.weather.gov/publications/assessments",
+      "institution_and_reuse_cue": "National Weather Service · Operational review · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 73,
+      "category": "engineering",
+      "title": "National Hurricane Center Data Archive",
+      "url": "https://www.nhc.noaa.gov/data/",
+      "institution_and_reuse_cue": "NOAA National Hurricane Center · Storm records and data · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 74,
+      "category": "engineering",
+      "title": "Loma Prieta Earthquake Professional Papers",
+      "url": "https://www.usgs.gov/programs/earthquake-hazards/science/loma-prieta-earthquake-professional-papers",
+      "institution_and_reuse_cue": "U.S. Geological Survey · Earthquake research · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 75,
+      "category": "archives",
+      "title": "ROSA P — Repository & Open Science Access Portal",
+      "url": "https://rosap.ntl.bts.gov/",
+      "institution_and_reuse_cue": "U.S. Department of Transportation · Technical research · Link-only repository",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 76,
+      "category": "archives",
+      "title": "USGS EarthExplorer",
+      "url": "https://earthexplorer.usgs.gov/",
+      "institution_and_reuse_cue": "U.S. Geological Survey · Remote sensing · Link-only portal",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 77,
+      "category": "navigation",
+      "title": "Manual of Surveying Instructions — 2009",
+      "url": "https://www.blm.gov/sites/default/files/Manual_Of_Surveying_Instructions_2009.pdf",
+      "institution_and_reuse_cue": "Bureau of Land Management · Cadastral surveying · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 78,
+      "category": "navigation",
+      "title": "U.S. Coast Guard Light List",
+      "url": "https://www.navcen.uscg.gov/light-list-annual-publication",
+      "institution_and_reuse_cue": "U.S. Coast Guard · Aids to navigation · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 79,
+      "category": "navigation",
+      "title": "Aeronautical Information Manual",
+      "url": "https://www.faa.gov/air_traffic/publications/atpubs/aim_html/",
+      "institution_and_reuse_cue": "Federal Aviation Administration · Aviation operations · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 80,
+      "category": "archives",
+      "title": "NOAA Historical Map & Chart Collection",
+      "url": "https://historicalcharts.noaa.gov/",
+      "institution_and_reuse_cue": "NOAA Office of Coast Survey · Historical cartography · U.S. government work",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 81,
+      "category": "archives",
+      "title": "NOAA Historical Hurricane Tracks",
+      "url": "https://coast.noaa.gov/hurricanes/",
+      "institution_and_reuse_cue": "NOAA Office for Coastal Management · Storm geography · Link-only portal",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 82,
+      "category": "archives",
+      "title": "Railroad Maps, 1828–1900",
+      "url": "https://www.loc.gov/collections/railroad-maps-1828-to-1900/about-this-collection/",
+      "institution_and_reuse_cue": "Library of Congress · Railroad cartography · Link-only collection",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 83,
+      "category": "archives",
+      "title": "Digital Public Library of America",
+      "url": "https://dp.la/",
+      "institution_and_reuse_cue": "Digital Public Library of America · Cross-institution discovery · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 84,
+      "category": "archives",
+      "title": "David Rumsey Map Collection",
+      "url": "https://www.davidrumsey.com/",
+      "institution_and_reuse_cue": "David Rumsey Map Collection · Historical maps · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 85,
+      "category": "archives",
+      "title": "National Register of Historic Places — Database and Research",
+      "url": "https://www.nps.gov/subjects/nationalregister/database-research.htm",
+      "institution_and_reuse_cue": "National Park Service · Historic places · Link-only collection",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 86,
+      "category": "archives",
+      "title": "Veterans History Project Collection",
+      "url": "https://www.loc.gov/collections/veterans-history-project-collection/",
+      "institution_and_reuse_cue": "Library of Congress · Oral history and personal records · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 87,
+      "category": "archives",
+      "title": "CyberCemetery",
+      "url": "https://govinfo.library.unt.edu/",
+      "institution_and_reuse_cue": "UNT Libraries / GovInfo · Government web preservation · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 88,
+      "category": "archives",
+      "title": "Biodiversity Heritage Library",
+      "url": "https://www.biodiversitylibrary.org/",
+      "institution_and_reuse_cue": "Biodiversity Heritage Library · Scientific literature · Link-only portal",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    },
+    {
+      "index": 89,
+      "category": "archives",
+      "title": "National Archives Record Group Explorer",
+      "url": "https://www.archives.gov/findingaid/record-group-explorer",
+      "institution_and_reuse_cue": "National Archives · Federal record groups · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "institutional page opened"
+    },
+    {
+      "index": 90,
+      "category": "archives",
+      "title": "National Archives Donated Collection Explorer",
+      "url": "https://www.archives.gov/findingaid/donated-collection-explorer/1000",
+      "institution_and_reuse_cue": "National Archives · Donated collections · Link-only",
+      "rights_status": "item-level review required",
+      "link_verification": "not independently checked on 2026-11-16"
+    }
+  ]
+}
