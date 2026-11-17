@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="A portable, free offline companion to Final Vestige's Research Sources directory: ninety institutional research links with access evidence, source provenance and rights cautions."><meta name="color-scheme" content="dark"><title>The Ninety-Source Field Desk | Final Vestige Studios Library</title><style>
+:root{color-scheme:dark;--bg:#10191e;--panel:#1d2b30;--panel2:#23353a;--ink:#f6f0e6;--muted:#d5d9d5;--gold:#f1cb90;--line:#526c74;--focus:#ffe5a3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--gold);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}a:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:#17232c;padding:8px 12px;z-index:5}.skip:focus{left:8px;top:8px}
+.wrap{max-width:1220px;margin:0 auto;padding:0 22px}.masthead{background:radial-gradient(ellipse at 85% 0%,#304b50 0%,transparent 56%),linear-gradient(160deg,#1a2a2e,#10191e);border-bottom:1px solid var(--line)}
+.topline{padding:18px 0;display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;align-items:center;font-size:13px}.logo{font-weight:760;letter-spacing:.15em;text-decoration:none;color:var(--ink)}.topline nav{display:flex;gap:18px;flex-wrap:wrap}
+.kicker{margin:40px 0 14px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:740;color:var(--gold)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;line-height:1.16;letter-spacing:-.022em}
+h1{font-size:clamp(36px,6.3vw,75px);max-width:1000px;margin:0 0 17px}
+.hero-deck{font-size:clamp(17px,1.8vw,21px);max-width:770px;color:var(--muted);padding-bottom:12px}
+.hero-data{display:flex;flex-wrap:wrap;gap:11px;margin:16px 0 32px}.hero-data span{border:1px solid var(--line);border-radius:30px;padding:6px 12px;font-size:13px;color:#e6e6de}
+intro{display:block}.intro{padding:26px 0 34px}.intro p{max-width:86ch}.hold{border-left:4px solid var(--gold);background:#273330;color:#f6ead4;padding:13px 18px;margin:17px 0}
+.figure-scroller{margin:28px 0;padding:15px;border-radius:14px;border:1px solid var(--line);background:var(--panel);overflow-x:auto}.figure-scroller svg{display:block;min-width:650px;width:100%;height:auto}.figure-scroller figcaption{font-size:12px;color:var(--muted);margin-top:9px}
+.filters{display:none}.js .filters{display:grid;grid-template-columns:minmax(0,2fr) minmax(145px,1fr) minmax(170px,1fr) auto;gap:13px;align-items:end;background:var(--panel2);border:1px solid var(--line);border-radius:13px;padding:20px;margin:24px 0}
+.filters label{display:block;font-size:13px;font-weight:750;margin-bottom:6px}.filters input,.filters select,.filters button{width:100%;padding:12px;background:#0e191e;color:var(--ink);border:1px solid #84949b;border-radius:7px;font:inherit;min-width:0}
+.filters button{cursor:pointer;border:2px solid var(--gold);font-weight:750;color:#13212a;background:var(--gold)}
+#summary{font-size:15px;color:var(--gold);font-weight:700;margin:16px 0 25px}
+.category{margin:29px 0 44px}.group-heading{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;padding-bottom:8px;border-bottom:1px solid var(--line)}.group-heading h2{margin:0;font-size:clamp(24px,3.2vw,36px)}.group-count{color:var(--muted);font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0 0}
+.source-card{border:1px solid var(--line);background:var(--panel);padding:22px;border-radius:12px;min-width:0;overflow-wrap:anywhere}
+.source-card h3{font-size:clamp(21px,2.2vw,27px);margin:7px 0 13px;color:#fff3dc}
+.eyebrow{font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:750;color:var(--gold);margin:0}.source-card p{margin:10px 0}.source-card .status{color:#e9ecea}.source-card .qualification{border-left:2px solid #d2a867;padding-left:12px;color:#f3e6ce}
+.source-card .rights,.source-card .checked{font-size:13px;color:var(--muted)}.source-card .action{margin-top:19px;font-weight:750}.source-card a{overflow-wrap:anywhere}
+[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.footer{padding:28px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.footer p{max-width:90ch}
+@media(max-width:920px){.js .filters{grid-template-columns:1fr 1fr}.filters .search{grid-column:1/-1}}
+@media(max-width:650px){.wrap{padding:0 16px}.cards{grid-template-columns:1fr}.js .filters{grid-template-columns:1fr;padding:14px}.filters .search{grid-column:auto}.source-card{padding:17px}.kicker{margin-top:28px}.hero-data{margin-bottom:23px}}
+@media print{*{color:#000!important;background:#fff!important;box-shadow:none!important}.masthead,.footer{border:0}.skip,.topline,.filters,.figure-scroller{display:none!important}.wrap{max-width:none;padding:0}.cards{grid-template-columns:1fr 1fr;gap:9px}.source-card{break-inside:avoid;border:1px solid #777;padding:10px}.source-card h3{font-size:15px}.source-card p{font-size:11px}.category{break-before:page}.group-heading h2{font-size:21px}a{text-decoration:underline}}
+</style></head>
+<body><a class="skip" href="#research">Skip to research sources</a><header class="masthead"><div class="wrap"><div class="topline"><a class="logo" href="https://finalvestige.com/free-resources/">FINAL VESTIGE · LIBRARY</a><nav aria-label="Research references"><a href="https://finalvestige.com/free-resources/research-sources/">Live directory</a><a href="https://finalvestige.com/editorial-standards/">Editorial standards</a></nav></div>
+<p class="kicker">Free field utility · Portable snapshot · 17 November 2026</p><h1>The Ninety-Source Field Desk.</h1><p class="hero-deck">A searchable pocket directory of the ninety source routes in Final Vestige's Library. Every link preserves its original institution. Every status says what was actually checked—and what was not.</p><div class="hero-data"><span>90 named source destinations</span><span>5 evidence families</span><span>Works without internet to browse</span><span>No forms, tracking, remote scripts or accounts</span></div></div></header>
+<main class="wrap" id="research"><section class="intro" aria-labelledby="how"><h2 id="how">The doorway is not the document.</h2><p>Some portals lead directly to records. Others provide catalog descriptions or search forms. A restricted automated request is a limitation of the check, not proof that a public record has disappeared. These ninety entries preserve the original destination links and the outcome of a November 16, 2026 destination-level verification pass. Open an individual record, inspect the actual pages, then make the claim. Do not reverse that order.</p>
+<figure class="figure-scroller"><svg viewBox="0 0 900 128" role="img" aria-labelledby="diagram-title diagram-desc"><title id="diagram-title">Four steps to verify an archival source</title><desc id="diagram-desc">A record-finding process moves from discover, to retrieve, to check claims, to evaluate reproduction rights. A catalog link alone does not certify record contents.</desc><g font-family="system-ui" text-anchor="middle"><rect x="8" y="15" width="207" height="90" rx="12" fill="#304a50" stroke="#c2c6bc"/><text x="111" y="51" fill="#fff3dc" font-size="16">1. Find the locator</text><text x="111" y="77" fill="#dde9e6" font-size="13">Catalog ≠ item</text><path d="M215 61h16" stroke="#f1cb90" stroke-width="3"/><rect x="232" y="15" width="207" height="90" rx="12" fill="#304a50" stroke="#c2c6bc"/><text x="335" y="51" fill="#fff3dc" font-size="16">2. Open the item</text><text x="335" y="77" fill="#dde9e6" font-size="13">Page ≠ complete file</text><path d="M439 61h16" stroke="#f1cb90" stroke-width="3"/><rect x="456" y="15" width="207" height="90" rx="12" fill="#304a50" stroke="#c2c6bc"/><text x="559" y="51" fill="#fff3dc" font-size="16">3. Check the claim</text><text x="559" y="77" fill="#dde9e6" font-size="13">Record ≠ inference</text><path d="M663 61h16" stroke="#f1cb90" stroke-width="3"/><rect x="680" y="15" width="207" height="90" rx="12" fill="#304a50" stroke="#c2c6bc"/><text x="783" y="51" fill="#fff3dc" font-size="16">4. Check item rights</text><text x="783" y="77" fill="#dde9e6" font-size="13">Free ≠ reusable</text></g></svg><figcaption>Original FV research workflow diagram, 17 November 2026. This is an explanatory diagram, not a historical record, source image or authenticity certification. © Final Vestige Studios.</figcaption></figure>
+<p class="hold"><strong>What this file is:</strong> a portable, offline-browseable index of links and research cautions. It does not include archival scans, guarantee any destination works today, certify underlying files, or grant reuse rights. Links require an internet connection. The authoritative live directory may be updated after this snapshot.</p>
+<p><strong>Evidence basis:</strong> Final Vestige's original 90-card WordPress directory snapshot, taken November 16, 2026. The full provenance and institutional verification ledger is maintained in the site's research workflow. <a href="https://finalvestige.com/free-resources/research-sources/">Consult the live Research Sources page</a> before relying on a catalog entry; read <a href="https://finalvestige.com/editorial-standards/">the editorial standards</a> for the treatment of disputed material and image permissions.</p>
+<p><strong>Destination-level access audit:</strong> 64 institutional page bodies retrieved, 18 automated access restrictions, and 8 application-shell or other unresolved retrieval results. These are not counts of usable underlying documents. All checks were performed on November 16, 2026, and are not being represented as rechecks on November 17.</p>
+<noscript><p class="hold">JavaScript is disabled. All ninety links and their source notes are still visible below; use your browser's Find function to search the page. Category counts remain printed in each section.</p></noscript>
+<div class="filters" aria-label="Find research sources" role="group"><div class="search"><label for="q">Search titles, institutions and source cautions</label><input type="search" id="q" placeholder="e.g., NASA, inspection, maps, release…" autocomplete="off"></div>
+<div><label for="category">Research family</label><select id="category"><option value="">All 90 sources</option><option value="declassified">Declassified &amp; decisions (12)</option><option value="accountability">Accountability &amp; public records (24)</option><option value="engineering">Engineering, disaster &amp; safety (21)</option><option value="archives">Archives, maps &amp; research (25)</option><option value="navigation">Navigation &amp; preservation (8)</option></select></div>
+<div><label for="evidence">Retrieval evidence</label><select id="evidence"><option value="">Any retrieval outcome</option><option value="retrieved">Institutional page retrieved</option><option value="restricted">Automated restriction</option><option value="interface">Application shell only</option><option value="unresolved">Other unresolved check</option></select></div><div><button id="reset" type="button">Reset</button></div></div>
+<p id="summary" aria-live="polite" aria-atomic="true" role="status">Showing all 90 sources.</p>
+</section>
+<section class="category" data-section="declassified" aria-labelledby="heading-declassified"><div class="group-heading"><h2 id="heading-declassified">Declassified &amp; decisions</h2><span class="group-count">12 sources</span></div><div class="cards"><article class="source-card" data-cat="declassified" data-outcome="retrieved" data-search="jfk assassination records — 2025 documents release national archives · declassified records · link-only nara release page explicitly warns some 2025 jfk files contain living persons&#39; personal identifiers; do not rehost private data. declassified" aria-label="JFK Assassination Records — 2025 Documents Release">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#01 · National Archives · Declassified records · Link-only</p>
+ <h3>JFK Assassination Records — 2025 Documents Release</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NARA release page explicitly warns some 2025 JFK files contain living persons&#39; personal identifiers; do not rehost private data.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.archives.gov/research/jfk/release-2025">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="declassified" data-outcome="retrieved" data-search="pentagon papers national archives · government study · link-only  declassified" aria-label="Pentagon Papers">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#02 · National Archives · Government study · Link-only</p>
+ <h3>Pentagon Papers</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.archives.gov/research/pentagon-papers">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="declassified" data-outcome="retrieved" data-search="cointelpro fbi vault · domestic intelligence records · link-only  declassified" aria-label="COINTELPRO">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#03 · FBI Vault · Domestic intelligence records · Link-only</p>
+ <h3>COINTELPRO</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://vault.fbi.gov/cointel-pro/cointel-pro">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="declassified" data-outcome="retrieved" data-search="venona documents national security agency · signals intelligence · link-only  declassified" aria-label="VENONA Documents">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#04 · National Security Agency · Signals intelligence · Link-only</p>
+ <h3>VENONA Documents</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.nsa.gov/serve-from-netstorage/news-features/declassified-documents/venona/index.html">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="declassified" data-outcome="retrieved" data-search="frus: iran, 1951–1954, second edition u.s. department of state · 375 documents · link-only  declassified" aria-label="FRUS: Iran, 1951–1954, Second Edition">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#05 · U.S. Department of State · 375 documents · Link-only</p>
+ <h3>FRUS: Iran, 1951–1954, Second Edition</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://history.state.gov/historicaldocuments/frus1951-54IranEd2">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="declassified" data-outcome="retrieved" data-search="frus: guatemala, 1952–1954 u.s. department of state · 287 documents · link-only  declassified" aria-label="FRUS: Guatemala, 1952–1954">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#06 · U.S. Department of State · 287 documents · Link-only</p>
+ <h3>FRUS: Guatemala, 1952–1954</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://history.state.gov/historicaldocuments/frus1952-54Guat">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="declassified" data-outcome="retrieved" data-search="the nixon collection central intelligence agency · presidential briefing files · link-only  declassified" aria-label="The Nixon Collection">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#07 · Central Intelligence Agency · Presidential briefing files · Link-only</p>
+ <h3>The Nixon Collection</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.cia.gov/stories/story/the-nixon-collection/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="declassified" data-outcome="retrieved" data-search="president’s daily brief — kennedy and johnson central intelligence agency · presidential intelligence · link-only cia publication page retrieved; the publication describes a curated product, not a complete chronological pdb corpus. identify dates and editions before quotation. declassified" aria-label="President’s Daily Brief — Kennedy and Johnson">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#08 · Central Intelligence Agency · Presidential intelligence · Link-only</p>
+ <h3>President’s Daily Brief — Kennedy and Johnson</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> CIA publication page retrieved; the publication describes a curated product, not a complete chronological PDB corpus. Identify dates and editions before quotation.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.cia.gov/resources/publications/presidents-daily-brief-delivering-intelligence-to-kennedy-and-johnson/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="declassified" data-outcome="retrieved" data-search="frus: cuban missile crisis and aftermath u.s. department of state · 390 documents · link-only  declassified" aria-label="FRUS: Cuban Missile Crisis and Aftermath">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#09 · U.S. Department of State · 390 documents · Link-only</p>
+ <h3>FRUS: Cuban Missile Crisis and Aftermath</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://history.state.gov/historicaldocuments/frus1961-63v11">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="declassified" data-outcome="retrieved" data-search="cia freedom of information act electronic reading room central intelligence agency · foia and declassified records · link-only cia foia electronic reading room landing retrieved; index availability does not prove all underlying intelligence files are unrestricted. declassified" aria-label="CIA Freedom of Information Act Electronic Reading Room">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#61 · Central Intelligence Agency · FOIA and declassified records · Link-only</p>
+ <h3>CIA Freedom of Information Act Electronic Reading Room</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> CIA FOIA Electronic Reading Room landing retrieved; index availability does not prove all underlying intelligence files are unrestricted.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.cia.gov/readingroom/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="declassified" data-outcome="retrieved" data-search="frus: congo, 1960–1968 u.s. department of state · 582 documents · link-only state department frus congo volume xxiii retrieved (2013 edition); introduction lists documents 1–582. it is a selected edited historical series, not a complete diplomatic record. declassified" aria-label="FRUS: Congo, 1960–1968">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#63 · U.S. Department of State · 582 documents · Link-only</p>
+ <h3>FRUS: Congo, 1960–1968</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> State Department FRUS Congo volume XXIII retrieved (2013 edition); introduction lists documents 1–582. It is a selected edited historical series, not a complete diplomatic record.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://history.state.gov/historicaldocuments/frus1964-68v23">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="declassified" data-outcome="retrieved" data-search="iran-contra scandal — reagan library topic guide ronald reagan presidential library · presidential records · link-only reagan library iran-contra topic guide retrieved; archival finding aids and collections may have distinct processing/access states. declassified" aria-label="Iran-Contra Scandal — Reagan Library Topic Guide">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#64 · Ronald Reagan Presidential Library · Presidential records · Link-only</p>
+ <h3>Iran-Contra Scandal — Reagan Library Topic Guide</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> Reagan Library Iran-Contra topic guide retrieved; archival finding aids and collections may have distinct processing/access states.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.reaganlibrary.gov/archives/topic-guide/iran-contra-scandal">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article></div></section>
+<section class="category" data-section="accountability" aria-labelledby="heading-accountability"><div class="group-heading"><h2 id="heading-accountability">Accountability &amp; public records</h2><span class="group-count">24 sources</span></div><div class="cards"><article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="watergate road map national archives · evidence architecture · link-only  accountability" aria-label="Watergate Road Map">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#10 · National Archives · Evidence architecture · Link-only</p>
+ <h3>Watergate Road Map</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.archives.gov/research/investigations/watergate/roadmap">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="okbomb — oklahoma city bombing investigation files fbi vault · federal investigation · link-only fbi vault okbomb listing retrieved with part 01. part-page availability and completeness were not tested. accountability" aria-label="OKBOMB — Oklahoma City Bombing Investigation Files">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#11 · FBI Vault · Federal investigation · Link-only</p>
+ <h3>OKBOMB — Oklahoma City Bombing Investigation Files</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> FBI Vault OKBOMB listing retrieved with Part 01. Part-page availability and completeness were not tested.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://vault.fbi.gov/OKBOMB">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="gao high-risk series 2025 gao · federal oversight · u.s. government work  accountability" aria-label="GAO High-Risk Series 2025">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#12 · GAO · Federal oversight · U.S. government work</p>
+ <h3>GAO High-Risk Series 2025</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.gao.gov/products/gao-25-107743">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="federal it acquisition and management challenges gao · federal it oversight · u.s. government work gao report gao-25-107852 published january 23, 2025; a 2025 it-management challenge report, not a live agency risk score. accountability" aria-label="Federal IT Acquisition and Management Challenges">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#13 · GAO · Federal IT oversight · U.S. government work</p>
+ <h3>Federal IT Acquisition and Management Challenges</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> GAO report GAO-25-107852 published January 23, 2025; a 2025 IT-management challenge report, not a live agency risk score.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.gao.gov/products/gao-25-107852">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="campaign finance data federal election commission · campaign finance · public data  accountability" aria-label="Campaign Finance Data">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#14 · Federal Election Commission · Campaign finance · Public data</p>
+ <h3>Campaign Finance Data</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.fec.gov/data/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="interface" data-search="usaspending advanced search u.s. treasury · federal spending · public data usaspending javascript application returned a shell only; search, data delivery and download not independently exercised. accountability" aria-label="USAspending Advanced Search">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#15 · U.S. Treasury · Federal spending · Public data</p>
+ <h3>USAspending Advanced Search</h3>
+ <p class="status">Application shell only <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The destination delivered an application shell, not searchable record content. Use the browser interface to verify the underlying item.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> USAspending JavaScript application returned a shell only; search, data delivery and download not independently exercised.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.usaspending.gov/search">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="foia.gov — annual and quarterly reports u.s. department of justice · foia performance · public data  accountability" aria-label="FOIA.gov — Annual and Quarterly Reports">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#16 · U.S. Department of Justice · FOIA performance · Public data</p>
+ <h3>FOIA.gov — Annual and Quarterly Reports</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.foia.gov/reports.html">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="restricted" data-search="lobbying disclosure act reports u.s. house clerk / u.s. senate · lobbying disclosures · link-only lobbying disclosure act page returned http 403 to automated retrieval; not a broken-link determination. accountability" aria-label="Lobbying Disclosure Act Reports">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#17 · U.S. House Clerk / U.S. Senate · Lobbying disclosures · Link-only</p>
+ <h3>Lobbying Disclosure Act Reports</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> Lobbying Disclosure Act page returned HTTP 403 to automated retrieval; not a broken-link determination.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://lda.gov/system/public/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="fatality inspection data osha · workplace safety · public data osha states fatality-inspection data are refreshed daily but only after an approximately six-month opening-conference delay. accountability" aria-label="Fatality Inspection Data">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#18 · OSHA · Workplace safety · Public data</p>
+ <h3>Fatality Inspection Data</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> OSHA states fatality-inspection data are refreshed daily but only after an approximately six-month opening-conference delay.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.osha.gov/fatalities">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="9/11 commission records national archives · federal commission records · link-only  accountability" aria-label="9/11 Commission Records">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#19 · National Archives · Federal commission records · Link-only</p>
+ <h3>9/11 Commission Records</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.archives.gov/research/9-11">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="amerithrax investigation files fbi vault · federal investigation · link-only fbi vault amerithrax landing retrieved, listing multiple parts. automated inspection did not open all files. accountability" aria-label="Amerithrax Investigation Files">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#20 · FBI Vault · Federal investigation · Link-only</p>
+ <h3>Amerithrax Investigation Files</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> FBI Vault Amerithrax landing retrieved, listing multiple parts. Automated inspection did not open all files.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://vault.fbi.gov/Amerithrax">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="restricted" data-search="adams public documents nuclear regulatory commission · licensing and inspection records · link-only nrc adams page returned http 403 to automated retrieval; not a broken-link determination. accountability" aria-label="ADAMS Public Documents">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#21 · Nuclear Regulatory Commission · Licensing and inspection records · Link-only</p>
+ <h3>ADAMS Public Documents</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NRC ADAMS page returned HTTP 403 to automated retrieval; not a broken-link determination.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.nrc.gov/reading-rm/adams">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="fara browse &amp; search filings u.s. department of justice · foreign-agent disclosures · link-only doj fara browse filings landing retrieved. interactive filters/search and completeness were not tested. accountability" aria-label="FARA Browse &amp; Search Filings">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#22 · U.S. Department of Justice · Foreign-agent disclosures · Link-only</p>
+ <h3>FARA Browse &amp; Search Filings</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> DOJ FARA Browse Filings landing retrieved. Interactive filters/search and completeness were not tested.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://efile.fara.gov/ords/fara/f?p=1381:1">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="restricted" data-search="oversight.gov federal inspectors general · audits and recommendations · link-only oversight.gov returned http 406 to automated retrieval; not a broken-link determination. accountability" aria-label="Oversight.gov">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#23 · Federal Inspectors General · Audits and recommendations · Link-only</p>
+ <h3>Oversight.gov</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> Oversight.gov returned HTTP 406 to automated retrieval; not a broken-link determination.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.oversight.gov/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="edgar — sec search filings securities and exchange commission · corporate filings · link-only  accountability" aria-label="EDGAR — SEC Search Filings">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#24 · Securities and Exchange Commission · Corporate filings · Link-only</p>
+ <h3>EDGAR — SEC Search Filings</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.sec.gov/search-filings">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="restricted" data-search="regulations.gov federal erulemaking program · administrative record · link-only regulations.gov returned http 403 to automated retrieval; not a broken-link determination. accountability" aria-label="Regulations.gov">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#25 · Federal eRulemaking Program · Administrative record · Link-only</p>
+ <h3>Regulations.gov</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> Regulations.gov returned HTTP 403 to automated retrieval; not a broken-link determination.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.regulations.gov/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="open payments data centers for medicare &amp; medicaid services · financial disclosures · public data cms open payments data overview retrieved; collection scope, program rules, reporting years and amendments must accompany comparisons. accountability" aria-label="Open Payments Data">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#26 · Centers for Medicare &amp; Medicaid Services · Financial disclosures · Public data</p>
+ <h3>Open Payments Data</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> CMS Open Payments data overview retrieved; collection scope, program rules, reporting years and amendments must accompany comparisons.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.cms.gov/priorities/key-initiatives/open-payments/data">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="deepwater horizon and the national contingency plan epa office of inspector general · disaster-response oversight · u.s. government work epa oig report 11-p-0534 (august 25, 2011) landing retrieved; links include agency responses, which need to be read separately from the oig findings. accountability" aria-label="Deepwater Horizon and the National Contingency Plan">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#27 · EPA Office of Inspector General · Disaster-response oversight · U.S. government work</p>
+ <h3>Deepwater Horizon and the National Contingency Plan</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> EPA OIG report 11-P-0534 (August 25, 2011) landing retrieved; links include agency responses, which need to be read separately from the OIG findings.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.epa.gov/office-inspector-general/report-revisions-needed-national-contingency-plan-based-deepwater-horizon">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="federalregister.gov office of the federal register / gpo · rules and notices · link-only federalregister.gov itself says its html is not the official legal edition; use official govinfo edition for controlling text. accountability" aria-label="FederalRegister.gov">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#28 · Office of the Federal Register / GPO · Rules and notices · Link-only</p>
+ <h3>FederalRegister.gov</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> FederalRegister.gov itself says its HTML is not the official legal edition; use official GovInfo edition for controlling text.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.federalregister.gov/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="office of legal counsel opinions u.s. department of justice · executive legal opinions · u.s. government work  accountability" aria-label="Office of Legal Counsel Opinions">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#62 · U.S. Department of Justice · Executive legal opinions · U.S. government work</p>
+ <h3>Office of Legal Counsel Opinions</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.justice.gov/olc/opinions">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="restricted" data-search="congressional research service products congressional research service · policy and legal analysis · u.s. government work congress.gov crs products path rejected automated retrieval; content not validated. accountability" aria-label="Congressional Research Service Products">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#65 · Congressional Research Service · Policy and legal analysis · U.S. government work</p>
+ <h3>Congressional Research Service Products</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> Congress.gov CRS products path rejected automated retrieval; content not validated.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.congress.gov/crs-products">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="congressional hearings collection govinfo · congressional oversight · link-only collection  accountability" aria-label="Congressional Hearings Collection">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#66 · GovInfo · Congressional oversight · Link-only collection</p>
+ <h3>Congressional Hearings Collection</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.govinfo.gov/help/chrg">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="retrieved" data-search="federal audit clearinghouse general services administration · single audits · public data  accountability" aria-label="Federal Audit Clearinghouse">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#67 · General Services Administration · Single Audits · Public data</p>
+ <h3>Federal Audit Clearinghouse</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.fac.gov/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="accountability" data-outcome="restricted" data-search="recap archive / courtlistener free law project · federal court records · link-only courtlistener recap returned http 403 to automated retrieval; not a broken-link determination. accountability" aria-label="RECAP Archive / CourtListener">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#68 · Free Law Project · Federal court records · Link-only</p>
+ <h3>RECAP Archive / CourtListener</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> CourtListener RECAP returned HTTP 403 to automated retrieval; not a broken-link determination.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.courtlistener.com/recap/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article></div></section>
+<section class="category" data-section="engineering" aria-labelledby="heading-engineering"><div class="group-heading"><h2 id="heading-engineering">Engineering, disaster &amp; safety</h2><span class="group-count">21 sources</span></div><div class="cards"><article class="source-card" data-cat="engineering" data-outcome="unresolved" data-search="columbia accident investigation board report nasa technical reports server · aerospace · u.s. government work nasa ntrs citation request timed out; record existence and landing-page content not independently verified this run. engineering" aria-label="Columbia Accident Investigation Board Report">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#29 · NASA Technical Reports Server · Aerospace · U.S. government work</p>
+ <h3>Columbia Accident Investigation Board Report</h3>
+ <p class="status">Automated request timed out <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A timeout is not proof that the record or site has vanished.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NASA NTRS citation request timed out; record existence and landing-page content not independently verified this run.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://ntrs.nasa.gov/citations/20030093634">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="rogers commission report — challenger nasa history · aerospace · u.s. government work  engineering" aria-label="Rogers Commission Report — Challenger">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#30 · NASA History · Aerospace · U.S. government work</p>
+ <h3>Rogers Commission Report — Challenger</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.nasa.gov/history/rogersrep/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="world trade center disaster investigation — ncstar 1 nist · structural fire · u.s. government work  engineering" aria-label="World Trade Center Disaster Investigation — NCSTAR 1">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#31 · NIST · Structural fire · U.S. government work</p>
+ <h3>World Trade Center Disaster Investigation — NCSTAR 1</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.nist.gov/publications/federal-building-and-fire-safety-investigation-world-trade-center-disaster-final-report">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="the station nightclub fire — ncstar 2 nist · fire and egress · u.s. government work nist station nightclub fire study page retrieved; distinguish preliminary releases from final technical findings and recommendations. engineering" aria-label="The Station Nightclub Fire — NCSTAR 2">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#32 · NIST · Fire and egress · U.S. government work</p>
+ <h3>The Station Nightclub Fire — NCSTAR 2</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NIST Station nightclub fire study page retrieved; distinguish preliminary releases from final technical findings and recommendations.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.nist.gov/disaster-failure-studies/station-nightclub-fire-2003">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="sinking of el faro — dca16mm001 ntsb · maritime casualty · u.s. government work  engineering" aria-label="Sinking of El Faro — DCA16MM001">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#33 · NTSB · Maritime casualty · U.S. government work</p>
+ <h3>Sinking of El Faro — DCA16MM001</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.ntsb.gov/investigations/Pages/DCA16MM001.aspx">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="restricted" data-search="the 1980 eruptions of mount st. helens — professional paper 1250 u.s. geological survey · volcanology · u.s. government work usgs pp1250 landing returned http 403 to automated retrieval; do not label broken. engineering" aria-label="The 1980 Eruptions of Mount St. Helens — Professional Paper 1250">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#34 · U.S. Geological Survey · Volcanology · U.S. government work</p>
+ <h3>The 1980 Eruptions of Mount St. Helens — Professional Paper 1250</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> USGS PP1250 landing returned HTTP 403 to automated retrieval; do not label broken.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://pubs.usgs.gov/publication/pp1250">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="katrina levee failures — terrestrial lidar dataset u.s. geological survey · levee forensics · public data usgs lidar publication entry retrieved, dated october 24, 2009. a dataset description does not establish all 3d files can be downloaded. engineering" aria-label="Katrina Levee Failures — Terrestrial Lidar Dataset">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#35 · U.S. Geological Survey · Levee forensics · Public data</p>
+ <h3>Katrina Levee Failures — Terrestrial Lidar Dataset</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> USGS lidar publication entry retrieved, dated October 24, 2009. A dataset description does not establish all 3D files can be downloaded.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.usgs.gov/publications/terrestrial-lidar-datasets-new-orleans-louisiana-levee-failures-hurricane-katrina">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="katrina flood-protection system — geotechnical reconnaissance u.s. geological survey · geotechnical reconnaissance · u.s. government work usgs katrina geotechnical reconnaissance article retrieved; this is one study rather than the complete federal investigative record. engineering" aria-label="Katrina Flood-Protection System — Geotechnical Reconnaissance">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#36 · U.S. Geological Survey · Geotechnical reconnaissance · U.S. government work</p>
+ <h3>Katrina Flood-Protection System — Geotechnical Reconnaissance</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> USGS Katrina geotechnical reconnaissance article retrieved; this is one study rather than the complete federal investigative record.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.usgs.gov/publications/geotechnical-reconnaissance-mississippi-river-delta-flood-protection-system-after">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="event footprint catalog noaa ncei · severe-weather evidence · public data noaa ncei event footprint catalog retrieved. ncei warns of cloud migration delays, slower updates and planned november 17, 2026 downtime; do not represent coverage as live or complete. engineering" aria-label="Event Footprint Catalog">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#37 · NOAA NCEI · Severe-weather evidence · Public data</p>
+ <h3>Event Footprint Catalog</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NOAA NCEI Event Footprint Catalog retrieved. NCEI warns of cloud migration delays, slower updates and planned November 17, 2026 downtime; do not represent coverage as live or complete.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.ncei.noaa.gov/products/event-footprint-catalog">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="bp texas city refinery explosion u.s. chemical safety board · process safety · u.s. government work  engineering" aria-label="BP Texas City Refinery Explosion">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#38 · U.S. Chemical Safety Board · Process safety · U.S. government work</p>
+ <h3>BP Texas City Refinery Explosion</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.csb.gov/bp-america-texas-city-refinery-explosion/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="niosh face reports niosh / state face programs · occupational fatalities · link-only collection cdc niosh face page retrieved. niosh directs reports dated 2015 or earlier to cdc stacks; newer state face reports appear on this index. engineering" aria-label="NIOSH FACE Reports">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#39 · NIOSH / State FACE Programs · Occupational fatalities · Link-only collection</p>
+ <h3>NIOSH FACE Reports</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> CDC NIOSH FACE page retrieved. NIOSH directs reports dated 2015 or earlier to CDC Stacks; newer State FACE reports appear on this index.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.cdc.gov/niosh/face/topics/index.html">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="twa flight 800 — dca96ma070 ntsb · aviation · u.s. government work ntsb dca96ma070 page retrieved. investigation identifiers are the stable route; attached docket files were not individually opened. engineering" aria-label="TWA Flight 800 — DCA96MA070">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#40 · NTSB · Aviation · U.S. government work</p>
+ <h3>TWA Flight 800 — DCA96MA070</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NTSB DCA96MA070 page retrieved. Investigation identifiers are the stable route; attached docket files were not individually opened.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.ntsb.gov/investigations/Pages/DCA96MA070.aspx">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="america burning usfa · national fire policy · u.s. government work federal pdf opened and a page inspected. pdf explicitly exempts photographs from broad reproduction permission; linked-only, no image reuse. engineering" aria-label="America Burning">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#41 · USFA · National fire policy · U.S. government work</p>
+ <h3>America Burning</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> Federal PDF opened and a page inspected. PDF explicitly exempts photographs from broad reproduction permission; linked-only, no image reuse.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.usfa.fema.gov/downloads/pdf/publications/fa-264.pdf">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="fema 549 — hurricane katrina building performance fema / govinfo · building performance · u.s. government work govinfo fema katrina mitigation assessment team report entry retrieved; catalog shows a very large ~255 mb pdf and 2006 publication. avoid assuming a quick mobile download. engineering" aria-label="FEMA 549 — Hurricane Katrina Building Performance">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#42 · FEMA / GovInfo · Building performance · U.S. government work</p>
+ <h3>FEMA 549 — Hurricane Katrina Building Performance</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> GovInfo FEMA Katrina Mitigation Assessment Team report entry retrieved; catalog shows a very large ~255 MB PDF and 2006 publication. Avoid assuming a quick mobile download.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.govinfo.gov/app/details/GOVPUB-HS5_100-PURL-LPS81562">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="restricted" data-search="ipet and hurricane protection decision chronology u.s. army corps of engineers · flood protection · u.s. government work u.s. army corps institute landing returned http 403 to automated retrieval; manual browser check required, not a broken-link verdict. engineering" aria-label="IPET and Hurricane Protection Decision Chronology">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#43 · U.S. Army Corps of Engineers · Flood protection · U.S. government work</p>
+ <h3>IPET and Hurricane Protection Decision Chronology</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> U.S. Army Corps institute landing returned HTTP 403 to automated retrieval; manual browser check required, not a broken-link verdict.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.iwr.usace.army.mil/About/History/IPET-and-HPDC-Investigations/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="restricted" data-search="three mile island knowledge management digest nuclear regulatory commission · nuclear accident archive · u.s. government work nrc nureg knowledge digest page returned http 403 to automated retrieval; item access unresolved. engineering" aria-label="Three Mile Island Knowledge Management Digest">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#44 · Nuclear Regulatory Commission · Nuclear accident archive · U.S. government work</p>
+ <h3>Three Mile Island Knowledge Management Digest</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NRC NUREG knowledge digest page returned HTTP 403 to automated retrieval; item access unresolved.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.nrc.gov/reading-rm/doc-collections/nuregs/knowledge/km0001/r1/index">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="nist disaster and failure studies data archive nist · disaster and failure evidence · link-only  engineering" aria-label="NIST Disaster and Failure Studies Data Archive">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#69 · NIST · Disaster and failure evidence · Link-only</p>
+ <h3>NIST Disaster and Failure Studies Data Archive</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.nist.gov/disaster-failure-studies/data-archive">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="ntsb carol — case analysis and reporting online national transportation safety board · investigation search · u.s. government work ntsb carol help specifies aviation coverage from 1962, other transport modes from 2010; check individual dockets. engineering" aria-label="NTSB CAROL — Case Analysis and Reporting Online">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#70 · National Transportation Safety Board · Investigation search · U.S. government work</p>
+ <h3>NTSB CAROL — Case Analysis and Reporting Online</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NTSB CAROL help specifies aviation coverage from 1962, other transport modes from 2010; check individual dockets.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.ntsb.gov/Pages/carol.aspx">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="national weather service service assessments national weather service · operational review · u.s. government work  engineering" aria-label="National Weather Service Service Assessments">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#72 · National Weather Service · Operational review · U.S. government work</p>
+ <h3>National Weather Service Service Assessments</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.weather.gov/publications/assessments">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="restricted" data-search="national hurricane center data archive noaa national hurricane center · storm records and data · u.s. government work nhc data page returned http 403 to automated retrieval; not a broken-link determination. engineering" aria-label="National Hurricane Center Data Archive">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#73 · NOAA National Hurricane Center · Storm records and data · U.S. government work</p>
+ <h3>National Hurricane Center Data Archive</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NHC data page returned HTTP 403 to automated retrieval; not a broken-link determination.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.nhc.noaa.gov/data/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="engineering" data-outcome="retrieved" data-search="loma prieta earthquake professional papers u.s. geological survey · earthquake research · u.s. government work usgs loma prieta series landing retrieved; usgs says the four multi-chapter professional papers cover a wide disciplinary range and are downloadable as chapters, not a single document. engineering" aria-label="Loma Prieta Earthquake Professional Papers">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#74 · U.S. Geological Survey · Earthquake research · U.S. government work</p>
+ <h3>Loma Prieta Earthquake Professional Papers</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> USGS Loma Prieta series landing retrieved; USGS says the four multi-chapter professional papers cover a wide disciplinary range and are downloadable as chapters, not a single document.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.usgs.gov/programs/earthquake-hazards/science/loma-prieta-earthquake-professional-papers">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article></div></section>
+<section class="category" data-section="archives" aria-labelledby="heading-archives"><div class="group-heading"><h2 id="heading-archives">Archives, maps &amp; research</h2><span class="group-count">25 sources</span></div><div class="cards"><article class="source-card" data-cat="archives" data-outcome="retrieved" data-search="psychology of intelligence analysis cia center for the study of intelligence · research method · link-only  archives" aria-label="Psychology of Intelligence Analysis">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#45 · CIA Center for the Study of Intelligence · Research method · Link-only</p>
+ <h3>Psychology of Intelligence Analysis</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="restricted" data-search="habs / haer / hals library of congress / national park service · built environment · link-only collection loc habs/haer/hals catalog returned http 403 to automated retrieval; not a broken-link determination. archives" aria-label="HABS / HAER / HALS">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#46 · Library of Congress / National Park Service · Built environment · Link-only collection</p>
+ <h3>HABS / HAER / HALS</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> LOC HABS/HAER/HALS catalog returned HTTP 403 to automated retrieval; not a broken-link determination.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.loc.gov/pictures/collection/hh/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="retrieved" data-search="topoview — historical topographic map collection u.s. geological survey · historical maps · u.s. government work  archives" aria-label="topoView — Historical Topographic Map Collection">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#47 · U.S. Geological Survey · Historical maps · U.S. government work</p>
+ <h3>topoView — Historical Topographic Map Collection</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.usgs.gov/tools/topoview">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="restricted" data-search="chronicling america library of congress / neh · historic newspapers · mixed rights by item library of congress chronicling america page returned automated http 403; visit with ordinary browser and assess individual newspaper-page rights. archives" aria-label="Chronicling America">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#48 · Library of Congress / NEH · Historic newspapers · Mixed rights by item</p>
+ <h3>Chronicling America</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> Library of Congress Chronicling America page returned automated HTTP 403; visit with ordinary browser and assess individual newspaper-page rights.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.loc.gov/collections/chronicling-america/about-this-collection/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="retrieved" data-search="mission transcripts — mercury, gemini, and apollo nasa history · mission operations · u.s. government work nasa mercury/gemini/apollo transcript directory retrieved; transcripts should be cited by mission, document or recording where available. archives" aria-label="Mission Transcripts — Mercury, Gemini, and Apollo">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#49 · NASA History · Mission operations · U.S. government work</p>
+ <h3>Mission Transcripts — Mercury, Gemini, and Apollo</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NASA Mercury/Gemini/Apollo transcript directory retrieved; transcripts should be cited by mission, document or recording where available.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.nasa.gov/history/mission-transcripts-mercury-gemini-and-apollo/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="retrieved" data-search="apollo lunar surface journal &amp; apollo flight journal nasa history / volunteer editors · annotated apollo archive · link-only nasa apollo lunar surface/flight journal overview retrieved; edited/annotated journals are not automatically literal contemporaneous unedited audio. archives" aria-label="Apollo Lunar Surface Journal &amp; Apollo Flight Journal">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#50 · NASA History / volunteer editors · Annotated Apollo archive · Link-only</p>
+ <h3>Apollo Lunar Surface Journal &amp; Apollo Flight Journal</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NASA Apollo Lunar Surface/Flight Journal overview retrieved; edited/annotated journals are not automatically literal contemporaneous unedited audio.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.nasa.gov/history/alsj-and-afj/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="unresolved" data-search="osti.gov u.s. department of energy · technical research · link-only repository osti homepage request timed out; institutional service status and search operation not established. archives" aria-label="OSTI.GOV">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#51 · U.S. Department of Energy · Technical research · Link-only repository</p>
+ <h3>OSTI.GOV</h3>
+ <p class="status">Automated request timed out <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A timeout is not proof that the record or site has vanished.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> OSTI homepage request timed out; institutional service status and search operation not established.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.osti.gov/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="retrieved" data-search="cdc stacks centers for disease control and prevention · scientific archive · link-only repository cdc stacks institutional homepage retrieved. search is visible, but complete article/file access not tested. archives" aria-label="CDC Stacks">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#52 · Centers for Disease Control and Prevention · Scientific archive · Link-only repository</p>
+ <h3>CDC Stacks</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> CDC Stacks institutional homepage retrieved. Search is visible, but complete article/file access not tested.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://stacks.cdc.gov/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="unresolved" data-search="smithsonian open access smithsonian institution · museum open access · cc0 where marked exact smithsonian open access url produced a 404 on one direct retrieval and timed out on retry; a separately indexed smithsonian page and its official open access faq confirm the program. do not label broken without ordinary-browser verification. cc0 applies only to marked assets, not all smithsonian holdings, and does not waive privacy/trademark rights. archives" aria-label="Smithsonian Open Access">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#53 · Smithsonian Institution · Museum open access · CC0 where marked</p>
+ <h3>Smithsonian Open Access</h3>
+ <p class="status">Inconsistent retrieval <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>Public scripted retrieval returned inconsistent results; manual verification remains necessary.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> Exact Smithsonian Open Access URL produced a 404 on one direct retrieval and timed out on retry; a separately indexed Smithsonian page and its official Open Access FAQ confirm the program. Do not label broken without ordinary-browser verification. CC0 applies only to marked assets, not all Smithsonian holdings, and does not waive privacy/trademark rights.</p>
+ <p class="rights"><strong>Reuse:</strong> CC0 only where asset specifically marked; other restrictions may apply. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.si.edu/openaccess">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="restricted" data-search="sanborn maps collection library of congress · historical maps · public domain collection library of congress sanborn collection returned http 403 for automated retrieval. item-level map copyright and publication dates still matter. archives" aria-label="Sanborn Maps Collection">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#54 · Library of Congress · Historical maps · Public domain collection</p>
+ <h3>Sanborn Maps Collection</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> Library of Congress Sanborn collection returned HTTP 403 for automated retrieval. Item-level map copyright and publication dates still matter.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.loc.gov/collections/sanborn-maps/about-this-collection/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="interface" data-search="national archives catalog national archives · federal records · link-only catalog national archives catalog returned an almost empty javascript application shell; records/search not validated through this interface. archives" aria-label="National Archives Catalog">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#55 · National Archives · Federal records · Link-only catalog</p>
+ <h3>National Archives Catalog</h3>
+ <p class="status">Application shell only <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The destination delivered an application shell, not searchable record content. Use the browser interface to verify the underlying item.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> National Archives Catalog returned an almost empty JavaScript application shell; records/search not validated through this interface.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://catalog.archives.gov/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="retrieved" data-search="nasa technical reports server nasa · technical literature · link-only repository nasa ntrs search interface retrieved and filters visible; actual record-level downloads were not tested. archives" aria-label="NASA Technical Reports Server">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#71 · NASA · Technical literature · Link-only repository</p>
+ <h3>NASA Technical Reports Server</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NASA NTRS search interface retrieved and filters visible; actual record-level downloads were not tested.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://ntrs.nasa.gov/search">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="retrieved" data-search="rosa p — repository &amp; open science access portal u.s. department of transportation · technical research · link-only repository dot rosa p repository homepage and search controls retrieved; downstream full-text permissions remain item-specific. archives" aria-label="ROSA P — Repository &amp; Open Science Access Portal">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#75 · U.S. Department of Transportation · Technical research · Link-only repository</p>
+ <h3>ROSA P — Repository &amp; Open Science Access Portal</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> DOT ROSA P repository homepage and search controls retrieved; downstream full-text permissions remain item-specific.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://rosap.ntl.bts.gov/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="retrieved" data-search="usgs earthexplorer u.s. geological survey · remote sensing · link-only portal usgs earthexplorer interface retrieved; a place/date search can be specified, but certain uploads require login and actual downloads were not tested. archives" aria-label="USGS EarthExplorer">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#76 · U.S. Geological Survey · Remote sensing · Link-only portal</p>
+ <h3>USGS EarthExplorer</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> USGS EarthExplorer interface retrieved; a place/date search can be specified, but certain uploads require login and actual downloads were not tested.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://earthexplorer.usgs.gov/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="retrieved" data-search="noaa historical map &amp; chart collection noaa office of coast survey · historical cartography · u.s. government work noaa historical map &amp; chart collection search landing retrieved; chart date, scale and survey revision remain distinct from present navigation conditions. archives" aria-label="NOAA Historical Map &amp; Chart Collection">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#80 · NOAA Office of Coast Survey · Historical cartography · U.S. government work</p>
+ <h3>NOAA Historical Map &amp; Chart Collection</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NOAA Historical Map &amp; Chart Collection search landing retrieved; chart date, scale and survey revision remain distinct from present navigation conditions.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://historicalcharts.noaa.gov/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="interface" data-search="noaa historical hurricane tracks noaa office for coastal management · storm geography · link-only portal noaa historical hurricane tracks exact app url returned no crawlable body, but noaa&#39;s indexed companion page describes the interface. search-radius filtering can exclude storms that caused damage at a place without passing directly through it; not a storm-impact footprint. archives" aria-label="NOAA Historical Hurricane Tracks">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#81 · NOAA Office for Coastal Management · Storm geography · Link-only portal</p>
+ <h3>NOAA Historical Hurricane Tracks</h3>
+ <p class="status">Application shell only <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The destination delivered an application shell, not searchable record content. Use the browser interface to verify the underlying item.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NOAA Historical Hurricane Tracks exact app URL returned no crawlable body, but NOAA&#39;s indexed companion page describes the interface. Search-radius filtering can exclude storms that caused damage at a place without passing directly through it; not a storm-impact footprint.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://coast.noaa.gov/hurricanes/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="restricted" data-search="railroad maps, 1828–1900 library of congress · railroad cartography · link-only collection loc railroad maps collection returned http 403 to automated retrieval. historic map scans may contain later annotations or rights notices; cannot infer usage license. archives" aria-label="Railroad Maps, 1828–1900">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#82 · Library of Congress · Railroad cartography · Link-only collection</p>
+ <h3>Railroad Maps, 1828–1900</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> LOC Railroad Maps collection returned HTTP 403 to automated retrieval. Historic map scans may contain later annotations or rights notices; cannot infer usage license.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.loc.gov/collections/railroad-maps-1828-to-1900/about-this-collection/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="unresolved" data-search="digital public library of america digital public library of america · cross-institution discovery · link-only digital public library of america homepage returned http 405 to this automated request. a 405 response is not proof ordinary visitors cannot browse; rights depend on the supplying institution and item. archives" aria-label="Digital Public Library of America">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#83 · Digital Public Library of America · Cross-institution discovery · Link-only</p>
+ <h3>Digital Public Library of America</h3>
+ <p class="status">Retrieval method refused <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The automated reading method could not open the page. Manual browser access needs confirmation.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> Digital Public Library of America homepage returned HTTP 405 to this automated request. A 405 response is not proof ordinary visitors cannot browse; rights depend on the supplying institution and item.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://dp.la/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="retrieved" data-search="david rumsey map collection david rumsey map collection · historical maps · link-only david rumsey collection page retrieved. its own permissions page allows many publication uses but warns about post-1929 copyrights, maps lacking a download button and stand-alone facsimile sale permission. archives" aria-label="David Rumsey Map Collection">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#84 · David Rumsey Map Collection · Historical maps · Link-only</p>
+ <h3>David Rumsey Map Collection</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> David Rumsey collection page retrieved. Its own permissions page allows many publication uses but warns about post-1929 copyrights, maps lacking a download button and stand-alone facsimile sale permission.</p>
+ <p class="rights"><strong>Reuse:</strong> site grants broad image uses with important source-copyright and facsimile exceptions. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.davidrumsey.com/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="retrieved" data-search="national register of historic places — database and research national park service · historic places · link-only collection nps states some register files are not online and restricted files are not posted; use reference-number and custodian route. archives" aria-label="National Register of Historic Places — Database and Research">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#85 · National Park Service · Historic places · Link-only collection</p>
+ <h3>National Register of Historic Places — Database and Research</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NPS states some Register files are not online and restricted files are not posted; use reference-number and custodian route.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.nps.gov/subjects/nationalregister/database-research.htm">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="restricted" data-search="veterans history project collection library of congress · oral history and personal records · link-only library of congress vhp landing could not be directly retrieved through this reader, but official indexed loc collection/use guidance was identified. some collections are descriptive only, and recorded interviews can carry participant/donor rights; copying for publication requires explicit rights review. archives" aria-label="Veterans History Project Collection">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#86 · Library of Congress · Oral history and personal records · Link-only</p>
+ <h3>Veterans History Project Collection</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> Library of Congress VHP landing could not be directly retrieved through this reader, but official indexed LOC collection/use guidance was identified. Some collections are descriptive only, and recorded interviews can carry participant/donor rights; copying for publication requires explicit rights review.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.loc.gov/collections/veterans-history-project-collection/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="retrieved" data-search="cybercemetery unt libraries / govinfo · government web preservation · link-only  archives" aria-label="CyberCemetery">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#87 · UNT Libraries / GovInfo · Government web preservation · Link-only</p>
+ <h3>CyberCemetery</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://govinfo.library.unt.edu/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="restricted" data-search="biodiversity heritage library biodiversity heritage library · scientific literature · link-only portal biodiversity heritage library returned http 403 to automated retrieval; not a broken-link determination. archives" aria-label="Biodiversity Heritage Library">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#88 · Biodiversity Heritage Library · Scientific literature · Link-only portal</p>
+ <h3>Biodiversity Heritage Library</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> Biodiversity Heritage Library returned HTTP 403 to automated retrieval; not a broken-link determination.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.biodiversitylibrary.org/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="retrieved" data-search="national archives record group explorer national archives · federal record groups · link-only  archives" aria-label="National Archives Record Group Explorer">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#89 · National Archives · Federal record groups · Link-only</p>
+ <h3>National Archives Record Group Explorer</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.archives.gov/findingaid/record-group-explorer">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="archives" data-outcome="retrieved" data-search="national archives donated collection explorer national archives · donated collections · link-only donated collection explorer tracks donated collections as a separate population from federal record groups; page ratios are estimates. archives" aria-label="National Archives Donated Collection Explorer">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#90 · National Archives · Donated collections · Link-only</p>
+ <h3>National Archives Donated Collection Explorer</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> Donated Collection Explorer tracks donated collections as a separate population from federal record groups; page ratios are estimates.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.archives.gov/findingaid/donated-collection-explorer/1000">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article></div></section>
+<section class="category" data-section="navigation" aria-labelledby="heading-navigation"><div class="group-heading"><h2 id="heading-navigation">Navigation &amp; preservation</h2><span class="group-count">8 sources</span></div><div class="cards"><article class="source-card" data-cat="navigation" data-outcome="retrieved" data-search="preservation briefs national park service · technical preservation · link-only series  navigation" aria-label="Preservation Briefs">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#56 · National Park Service · Technical preservation · Link-only series</p>
+ <h3>Preservation Briefs</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.nps.gov/orgs/1739/preservation-briefs.htm">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="navigation" data-outcome="restricted" data-search="international ice patrol annual reports u.s. coast guard · north atlantic ice · u.s. government work uscg ice patrol reports landing returned http 403 to automated retrieval; availability unresolved. navigation" aria-label="International Ice Patrol Annual Reports">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#57 · U.S. Coast Guard · North Atlantic ice · U.S. government work</p>
+ <h3>International Ice Patrol Annual Reports</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> USCG Ice Patrol reports landing returned HTTP 403 to automated retrieval; availability unresolved.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.navcen.uscg.gov/international-ice-patrol-annual-reports">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="navigation" data-outcome="retrieved" data-search="united states coast pilot noaa office of coast survey · nautical reference · u.s. government work noaa coast pilot landing retrieved. the coast pilot is a continually updated navigation publication; use edition/date, and do not substitute a historical copy for current navigation. navigation" aria-label="United States Coast Pilot">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#58 · NOAA Office of Coast Survey · Nautical reference · U.S. government work</p>
+ <h3>United States Coast Pilot</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> NOAA Coast Pilot landing retrieved. The Coast Pilot is a continually updated navigation publication; use edition/date, and do not substitute a historical copy for current navigation.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://nauticalcharts.noaa.gov/publications/coast-pilot/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="navigation" data-outcome="retrieved" data-search="navigation rules and regulations handbook u.s. coast guard · rules of the road · u.s. government work  navigation" aria-label="Navigation Rules and Regulations Handbook">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#59 · U.S. Coast Guard · Rules of the Road · U.S. government work</p>
+ <h3>Navigation Rules and Regulations Handbook</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.navcen.uscg.gov/sites/default/files/pdf/navRules/Handbook/Nav%20Rules%20Handbook_Corrected_08-12-2024.pdf">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="navigation" data-outcome="retrieved" data-search="secretary of the interior’s standards for the treatment of historic properties national park service · historic-property treatment · u.s. government work  navigation" aria-label="Secretary of the Interior’s Standards for the Treatment of Historic Properties">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#60 · National Park Service · Historic-property treatment · U.S. government work</p>
+ <h3>Secretary of the Interior’s Standards for the Treatment of Historic Properties</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ 
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.nps.gov/orgs/1739/secretary-standards-treatment-historic-properties.htm">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="navigation" data-outcome="unresolved" data-search="manual of surveying instructions — 2009 bureau of land management · cadastral surveying · u.s. government work the 2009 blm manual of surveying instructions pdf exceeds the public textual reader’s size ceiling (~39.6 mb); this is a retrieval limit, not a broken-link determination. exact historical edition and controlling local law still matter. navigation" aria-label="Manual of Surveying Instructions — 2009">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#77 · Bureau of Land Management · Cadastral surveying · U.S. government work</p>
+ <h3>Manual of Surveying Instructions — 2009</h3>
+ <p class="status">Document too large to inspect <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institution&#39;s document was too large for this verification method; contents remain uninspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> The 2009 BLM Manual of Surveying Instructions PDF exceeds the public textual reader’s size ceiling (~39.6 MB); this is a retrieval limit, not a broken-link determination. Exact historical edition and controlling local law still matter.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.blm.gov/sites/default/files/Manual_Of_Surveying_Instructions_2009.pdf">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="navigation" data-outcome="restricted" data-search="u.s. coast guard light list u.s. coast guard · aids to navigation · u.s. government work coast guard light list page returned http 403 to automated retrieval; verify annual issue before use for active navigation. navigation" aria-label="U.S. Coast Guard Light List">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#78 · U.S. Coast Guard · Aids to navigation · U.S. government work</p>
+ <h3>U.S. Coast Guard Light List</h3>
+ <p class="status">Automated access restricted <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>A scripted request was blocked; this does not establish that the public source is broken.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> Coast Guard Light List page returned HTTP 403 to automated retrieval; verify annual issue before use for active navigation.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.navcen.uscg.gov/light-list-annual-publication">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article>
+<article class="source-card" data-cat="navigation" data-outcome="retrieved" data-search="aeronautical information manual federal aviation administration · aviation operations · u.s. government work faa aeronautical information manual landing retrieved, showing effective july 9, 2026, change 3 at check time; not an archival edition for historical flights and not a substitute for current notams. navigation" aria-label="Aeronautical Information Manual">
+ <p class="eyebrow"><span class="sr-only">Entry </span>#79 · Federal Aviation Administration · Aviation operations · U.S. government work</p>
+ <h3>Aeronautical Information Manual</h3>
+ <p class="status">Institutional page retrieved <span aria-hidden="true">·</span> <span class="sr-only">Verification context: </span>The institutional destination yielded page content. Its individual records, downloads and permissions were not necessarily inspected.</p>
+ <p class="qualification"><strong>Critical qualification:</strong> FAA Aeronautical Information Manual landing retrieved, showing effective July 9, 2026, Change 3 at check time; not an archival edition for historical flights and not a substitute for current NOTAMs.</p>
+ <p class="rights"><strong>Reuse:</strong> item-level review required. A publicly reachable source is not, by itself, permission to reproduce media.</p>
+ <p class="checked"><strong>Access checked:</strong> 2026-11-16 America/Los_Angeles · destination-level textual retrieval, not an item-level audit.</p>
+ <p class="action"><a target="_blank" rel="noopener noreferrer" href="https://www.faa.gov/air_traffic/publications/atpubs/aim_html/">Open the institution's source <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></p>
+ </article></div></section>
+</main><footer class="footer"><div class="wrap"><p><strong>Provenance ledger:</strong> Original titles, URL destinations, research classifications, institutional cues and last-check notes originate in the Final Vestige Research Sources inventory captured November 16, 2026. This portable derivative was assembled November 17, 2026. Individual retrieval results are observations of a text-access method, not a guarantee of browser access. Each record requires its own rights, privacy, completeness and provenance assessment.</p><p><strong>Media:</strong> No outside archival image, photo, scan, video or document content is reproduced. The diagram and layout are original Final Vestige work, © 2026 Final Vestige Studios. Free to use personally; no blanket redistribution rights to external items or this designed file are granted.</p><p>Related: <a href="https://finalvestige.com/free-resources/">The Library</a> · <a href="https://finalvestige.com/free-resources/research-sources/">Research Sources</a> · <a href="https://finalvestige.com/editorial-standards/">Editorial Standards</a></p></div></footer>
+<script>(function(){'use strict';
+document.documentElement.classList.add('js');
+var query=document.getElementById('q'),category=document.getElementById('category'),evidence=document.getElementById('evidence'),summary=document.getElementById('summary'),reset=document.getElementById('reset');
+var items=Array.from(document.querySelectorAll('.source-card')),groups=Array.from(document.querySelectorAll('.category'));
+function update(){
+ var q=query.value.trim().toLocaleLowerCase(),c=category.value,e=evidence.value,n=0;
+ for(var card of items){var visible=(!q||card.dataset.search.includes(q))&&(!c||card.dataset.cat===c)&&(!e||card.dataset.outcome===e);card.hidden=!visible;if(visible)n++;}
+ for(var group of groups){group.hidden=!group.querySelector('.source-card:not([hidden])');}
+ summary.textContent=n+' of '+items.length+' sources shown'+(n===0?' — no matches; try a broader term.':'.');
+}
+query.addEventListener('input',update);category.addEventListener('change',update);evidence.addEventListener('change',update);
+reset.addEventListener('click',function(){query.value='';category.value='';evidence.value='';update();query.focus();});
+update();
+})();</script>
+</body></html>
