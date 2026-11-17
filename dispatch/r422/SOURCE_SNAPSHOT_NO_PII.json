@@ -1,0 +1,75 @@
+{
+  "schema": "fv-dispatch-r422-readonly-snapshot-v1",
+  "as_of_utc": "2026-11-17T11:37:22Z",
+  "site": "https://finalvestige.com",
+  "site_id": 256784396,
+  "newsletter": {
+    "enabled": true,
+    "site_can_send": true,
+    "auto_new_post_email": false,
+    "email_format": "full",
+    "reply_to": "no-reply",
+    "dashboard": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "stats": {
+      "wpcom_reader": 3,
+      "direct_email": 0,
+      "comments": 0,
+      "partial": false
+    },
+    "distinct_email_eligible": null,
+    "latest_five_post_email_status": "never_sent_opted_out",
+    "welcome_configured": true,
+    "welcome_received_witness": false,
+    "native_email_preview_witness": false,
+    "postal_address_witness": false,
+    "unsubscribe_functional_witness": false
+  },
+  "focus": {
+    "page_id": 1579,
+    "download_media_id": 1737,
+    "client_gift_status_param_nonblocklisted_unlock": true,
+    "client_is_subscriber_class_unlock": true,
+    "client_status_proves_confirmed_signup": false
+  },
+  "commerce": {
+    "zen12_email_permission_verified": false,
+    "total_focus_email_permission_verified": false,
+    "first_party_guides_approved_live": false,
+    "earning_links_verified": false,
+    "settled_paid_orders_verified": false,
+    "qualified_human_session_denominator_verified": false
+  },
+  "campaign": {
+    "master_pr": 175,
+    "master_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "predecessor_pr": 2858,
+    "editorial_slots": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_slots": [
+      3,
+      5
+    ],
+    "release": "HOLD_UNSENT",
+    "all_optional_copy_adopted": false
+  },
+  "sources": [
+    "https://finalvestige.com/focus/",
+    "https://finalvestige.com/dispatch/",
+    "https://finalvestige.com/editorial-standards/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://zen12.com/about",
+    "https://zen12.com/secret/",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://hypnosislive.com/faq"
+  ]
+}
