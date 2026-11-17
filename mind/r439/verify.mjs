@@ -34,7 +34,7 @@ check(name+' responsive and focus visible',()=>{contains(data,'width=device-widt
 check(name+' no personal product use claims',()=>no(data,/\b(I used Zen12|we tested the product|we bought Zen12|guaranteed income)\b/i));
 }
 check('B has one optional poster and readable transcript',()=>{contains(B,'R439_ORIGINAL_POSTER.svg');contains(B,'<details>');contains(B,'Read the complete film transcript');contains(B,'not encoded')});
-check('poster original accessible SVG',()=>{contains(svg,'viewBox="0 0 960 540"');contains(svg,'<title');contains(svg,'<desc');contains(svg,'role="img"');no(svg,/<script\b|<foreignObject\b|<image\b|https?:\/\//i)});
+check('poster original accessible SVG',()=>{contains(svg,'viewBox="0 0 960 540"');contains(svg,'<title');contains(svg,'<desc');contains(svg,'role="img"');no(svg.replace('http://www.w3.org/2000/svg',''),/<script\b|<foreignObject\b|<image\b|https?:\/\//i)});
 check('six caption cues over 42 seconds',()=>{assert.equal((vtt.match(/--> /g)||[]).length,6);contains(vtt,'00:00:42.000');contains(vtt,'WEBVTT')});
 check('article primary study and full sources',()=>{contains(article,'10.1111/psyp.70183');contains(article,'46 people');contains(article,'3.41');contains(article,'2025');contains(article,'Puységur');contains(article,'10.1016/j.concog.2025.103948');assert.ok(article.trim().split(/\s+/).length>1500)});
 check('article no affiliate sale link',()=>no(article,/\]\(https?:\/\/(?:www\.)?(?:zen12|hypnosislive|brainwaveshots)\.com\/(?:buy|cart|checkout)/i));
