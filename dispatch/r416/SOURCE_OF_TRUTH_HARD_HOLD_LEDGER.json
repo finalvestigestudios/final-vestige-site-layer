@@ -1,0 +1,202 @@
+{
+  "version": "r416.1",
+  "prepared_utc": "2026-11-17T05:31:59Z",
+  "purpose": "source-of-truth evidence audit; no sending or subscriber contact",
+  "governance": {
+    "issue": 174,
+    "parent_draft_pr": 2827,
+    "master_draft_pr": 175,
+    "readiness_pr": 201,
+    "homepage_frozen_pr": 49,
+    "all_adoption": false,
+    "all_unsent": true,
+    "founder_final_approval": false
+  },
+  "live_wordpress": {
+    "site": "https://finalvestige.com",
+    "status_as_of": "2026-11-17T05:31:53Z",
+    "settings_as_of": "2026-11-17T05:31:59Z",
+    "newsletter_enabled": true,
+    "can_send_technically": true,
+    "new_post_email_default": false,
+    "email_content_format": "full",
+    "reply_to": "no-reply",
+    "last_five_notification_statuses": [
+      "never_sent_opted_out",
+      "never_sent_opted_out",
+      "never_sent_opted_out",
+      "never_sent_opted_out",
+      "never_sent_opted_out"
+    ],
+    "dashboard": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "suppressed": 0,
+      "paid": 0
+    },
+    "follower_channels": {
+      "wpcom_reader": 3,
+      "direct_email": 0,
+      "partial": false
+    },
+    "unique_eligible_inboxes": null,
+    "real_welcome_receipt_verified": false,
+    "public_acquisition_promise": "new investigations and archive finds by email, when we publish them",
+    "publication_promise_alignment": "NEEDS_FOUNDER_REVIEW"
+  },
+  "release_proofs": {
+    "native_jetpack_email_preview": false,
+    "received_welcome_pdf": false,
+    "valid_fv_postal_address_rendered": false,
+    "functional_unsubscribe_verified": false,
+    "provider_eligible_deduplicated_count": false,
+    "named_inspire3_affiliate_acceptance": false,
+    "zen12_specific_email_permission": false,
+    "total_focus_specific_email_permission": false,
+    "issued_earning_urls_verified": false,
+    "approved_live_merchant_guides": false,
+    "referred_checkout_terms_verified": false,
+    "independent_settled_conversion_reports": false,
+    "audited_qualified_human_session_denominator": false
+  },
+  "slots": [
+    {
+      "issue": "01",
+      "type": "editorial",
+      "subject": "The stranger behind the door",
+      "candidate_sha": "aff82e87d931b3ff1e41a3e5acedf576d4c86678",
+      "cta": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "wp_type": "post",
+      "wp_id": 1922,
+      "source_status": "published",
+      "adopted": false,
+      "send_status": "HOLD_UNSENT"
+    },
+    {
+      "issue": "02",
+      "type": "editorial",
+      "subject": "Franklin looked for a force. The record asked why.",
+      "candidate_sha": "5c23b385bc2a7d067ce7707e95d789c2e76fe15b",
+      "cta": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "wp_type": "post",
+      "wp_id": 1924,
+      "source_status": "published",
+      "adopted": false,
+      "send_status": "HOLD_UNSENT"
+    },
+    {
+      "issue": "03",
+      "type": "commercial",
+      "subject": "Twelve minutes cannot promise an hour",
+      "candidate_sha": "3681fdd10e2ed67937bd14b1eeb731d6cf5424db",
+      "cta": null,
+      "offer": "Zen12",
+      "offer_email_permission": false,
+      "adopted": false,
+      "send_status": "HOLD_MERCHANT"
+    },
+    {
+      "issue": "04",
+      "type": "editorial",
+      "subject": "Apollo 1: the spark the record could not name",
+      "candidate_sha": "ccb1a7a6aca701a9e6fedbecfb93ca7a8be00f3c",
+      "cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "wp_type": "post",
+      "wp_id": 434,
+      "source_status": "published",
+      "adopted": false,
+      "send_status": "HOLD_COPY"
+    },
+    {
+      "issue": "05",
+      "type": "commercial",
+      "subject": "A hypnotic recording is not a finding",
+      "candidate_sha": "61d9c1ae287d0aacb21b3537f6264d6e6127f7e3",
+      "cta": null,
+      "offer": "Hypnosis Live Total Focus",
+      "offer_email_permission": false,
+      "adopted": false,
+      "send_status": "HOLD_MERCHANT"
+    },
+    {
+      "issue": "06",
+      "type": "editorial",
+      "subject": "The notebook remembers what the week forgets",
+      "candidate_sha": "543ef4319e39ecf31af7a9731eb037a144846a90",
+      "cta": "https://finalvestige.com/free-resources/the-page-that-changed/",
+      "wp_type": "page",
+      "wp_id": 2209,
+      "source_status": "published",
+      "adopted": false,
+      "send_status": "HOLD_UNSENT"
+    }
+  ],
+  "proposed_utm_contract": {
+    "active": false,
+    "social": {
+      "utm_medium": "organic_social",
+      "utm_content": "immutable_grok_asset_id_only",
+      "utm_campaign": "topic_cluster_pilot_2026_11",
+      "governance": "Grok owner + Claude QA"
+    },
+    "dispatch": {
+      "utm_source": "dispatch",
+      "utm_medium": "email",
+      "utm_campaign": "dispatch_mind_pilot_2026_11",
+      "utm_content": "issue_XX",
+      "status": "PROPOSAL_NOT_LINKS"
+    }
+  },
+  "event_truth": {
+    "confirmed_signup": {
+      "requires": [
+        "authenticated_provider_confirmation",
+        "email_eligible",
+        "not_suppressed",
+        "deduplicated_provider_identity"
+      ],
+      "excludes": [
+        "URL_success_parameter",
+        "download_visibility",
+        "WordPress_reader_follow",
+        "dashboard_total"
+      ]
+    },
+    "settled_order": {
+      "requires": [
+        "authenticated_paid_transaction",
+        "net_of_refunds_and_fees"
+      ],
+      "excludes": [
+        "opens",
+        "clicks",
+        "checkout_start",
+        "claimed_coupon",
+        "subscriber_count"
+      ]
+    }
+  },
+  "cohorts": {
+    "windows_days": [
+      7,
+      30
+    ],
+    "qualified_human_sessions": null,
+    "paid_confirmed_orders": null,
+    "net_revenue": null,
+    "net_revenue_per_1000_qualified_sessions": null,
+    "computed": false,
+    "tiny_sample_caution": true
+  },
+  "url_sources": {
+    "dispatch": "https://finalvestige.com/dispatch/",
+    "focus": "https://finalvestige.com/focus/",
+    "standards": "https://finalvestige.com/editorial-standards/",
+    "zen12": "https://zen12.com/about",
+    "hypnosis_live": "https://hypnosislive.com/mental-skills/total-focus",
+    "hypnosis_faq": "https://hypnosislive.com/faq",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "master_issue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174"
+  }
+}
