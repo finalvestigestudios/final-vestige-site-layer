@@ -1123,33 +1123,33 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_custody_r493.py
-          if ($LASTEXITCODE -ne 0) { throw "R493 digest custody failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R493 test FAILED" }
           python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_custody_r493.py
-          if ($LASTEXITCODE -ne 0) { throw "R493 optimized digest custody failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R493 test FAILED" }
           python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_binding_integration_r493.py
-          if ($LASTEXITCODE -ne 0) { throw "R493 candidate integration failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R493 test FAILED" }
           python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_binding_integration_r493.py
-          if ($LASTEXITCODE -ne 0) { throw "R493 optimized candidate integration failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R493 test FAILED" }
       - name: R494 Windows PE32+ directory bounds + candidate integrity regressions
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_directory_guard_r494.py
-          if ($LASTEXITCODE -ne 0) { throw "R494 directory bounds failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R494 test FAILED" }
           python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_directory_guard_r494.py
-          if ($LASTEXITCODE -ne 0) { throw "R494 optimized directory bounds failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R494 test FAILED" }
           python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_directory_binding_r494.py
-          if ($LASTEXITCODE -ne 0) { throw "R494 integration failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R494 test FAILED" }
           python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_directory_binding_r494.py
-          if ($LASTEXITCODE -ne 0) { throw "R494 optimized integration failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R494 test FAILED" }
       - name: R334 canonical six-app checksum evidence before private Windows packaging
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_canonical_inventory_r334.py'
-          if ($LASTEXITCODE -ne 0) { throw "R334 canonical inventory regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R334 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_canonical_inventory_r334.py'
-          if ($LASTEXITCODE -ne 0) { throw "R334 optimized canonical inventory regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R334 test FAILED" }
       - name: R335 Windows candidate manifest preservation before packaging (normal and -OO)
         shell: pwsh
         run: |
@@ -1163,25 +1163,25 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_smoke_runner_r336.py'
-          if ($LASTEXITCODE -ne 0) { throw "R336 smoke runner regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R336 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_smoke_runner_r336.py'
-          if ($LASTEXITCODE -ne 0) { throw "R336 optimized smoke runner regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R336 test FAILED" }
       - name: R338 Windows post-link custody and publisher integration (26 tests; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_report_link_*_r338.py'
-          if ($LASTEXITCODE -ne 0) { throw "R338 Windows post-link witness tests FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R338 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_report_link_*_r338.py'
-          if ($LASTEXITCODE -ne 0) { throw "R338 Windows optimized post-link witness tests FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R338 test FAILED" }
       - name: R339 Windows report stage custody (18 tests; standard and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_report_stage_retention_r339.py'
-          if ($LASTEXITCODE -ne 0) { throw "R339 stage retention regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R339 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_report_stage_retention_r339.py'
-          if ($LASTEXITCODE -ne 0) { throw "R339 optimized stage retention regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R339 test FAILED" }
       - name: R337 Windows release report byte and descriptor custody (normal and -OO)
         shell: pwsh
         run: |
@@ -1195,93 +1195,93 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_report_runtime_fault_r340.py'
-          if ($LASTEXITCODE -ne 0) { throw "R340 Windows private report fault regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R340 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_report_runtime_fault_r340.py'
-          if ($LASTEXITCODE -ne 0) { throw "R340 Windows optimized report fault regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R340 test FAILED" }
       - name: R341 Windows six-app release CLI private fault boundary (18 tests; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_release_gate_cli_privacy_r341.py'
-          if ($LASTEXITCODE -ne 0) { throw "R341 Windows CLI privacy regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R341 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_release_gate_cli_privacy_r341.py'
-          if ($LASTEXITCODE -ne 0) { throw "R341 Windows optimized CLI privacy regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R341 test FAILED" }
       - name: R342 Windows ProcureGuard native original document identity (R75 + 24 R342; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_reference_r75.py'
-          if ($LASTEXITCODE -ne 0) { throw "R75 Windows procurement references FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R75 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_document_r342.py'
-          if ($LASTEXITCODE -ne 0) { throw "R342 Windows procurement identity custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R342 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_reference_r75.py'
-          if ($LASTEXITCODE -ne 0) { throw "R75 optimized procurement references FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R75 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_document_r342.py'
-          if ($LASTEXITCODE -ne 0) { throw "R342 optimized procurement identity custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R342 test FAILED" }
       - name: R343 Windows ProcureGuard native normalization and review/citation integration
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_normalized_key_r343.py'
-          if ($LASTEXITCODE -ne 0) { throw "R343 Windows native document key tests FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R343 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_document_boundary_integration_r343.py'
-          if ($LASTEXITCODE -ne 0) { throw "R343 Windows procurement review integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R343 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_normalized_key_r343.py'
-          if ($LASTEXITCODE -ne 0) { throw "R343 Windows optimized native document key tests FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R343 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_document_boundary_integration_r343.py'
-          if ($LASTEXITCODE -ne 0) { throw "R343 Windows optimized review integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R343 test FAILED" }
       - name: R344 Windows ProcureGuard native row storage and physical citation custody
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_rows_r344.py'
-          if ($LASTEXITCODE -ne 0) { throw "R344 Windows native row unit tests FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R344 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_row_integration_r344.py'
-          if ($LASTEXITCODE -ne 0) { throw "R344 Windows procurement row integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R344 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_rows_r344.py'
-          if ($LASTEXITCODE -ne 0) { throw "R344 Windows optimized native rows FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R344 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_row_integration_r344.py'
-          if ($LASTEXITCODE -ne 0) { throw "R344 Windows optimized procurement integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R344 test FAILED" }
       - name: R345 Windows ProcureGuard Decimal callback custody (normal and optimized)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_result_r345.py'
-          if ($LASTEXITCODE -ne 0) { throw "R345 Windows numeric helper FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R345 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_integration_r345.py'
-          if ($LASTEXITCODE -ne 0) { throw "R345 Windows numeric integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R345 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_result_r345.py'
-          if ($LASTEXITCODE -ne 0) { throw "R345 Windows optimized numeric helper FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R345 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_integration_r345.py'
-          if ($LASTEXITCODE -ne 0) { throw "R345 Windows optimized numeric integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R345 test FAILED" }
       - name: R346-R347 Windows original and accounting source custody
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_source_r346.py'
-          if ($LASTEXITCODE -ne 0) { throw "R346 Windows original source tests FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R346 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_source_integration_r346.py'
-          if ($LASTEXITCODE -ne 0) { throw "R346 Windows original source integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R346 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_formatted_source_r347.py'
-          if ($LASTEXITCODE -ne 0) { throw "R347 Windows accounting custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R347 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_source_r346.py'
-          if ($LASTEXITCODE -ne 0) { throw "R346 Windows optimized original source tests FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R346 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_source_integration_r346.py'
-          if ($LASTEXITCODE -ne 0) { throw "R346 Windows optimized source integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R346 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_formatted_source_r347.py'
-          if ($LASTEXITCODE -ne 0) { throw "R347 Windows optimized accounting custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R347 test FAILED" }
       - name: R348 Windows ProcureGuard isolated Decimal callback context (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_decimal_context_r348.py'
-          if ($LASTEXITCODE -ne 0) { throw "R348 Windows Decimal context unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R348 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_decimal_context_integration_r348.py'
-          if ($LASTEXITCODE -ne 0) { throw "R348 Windows Decimal context engine integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R348 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_decimal_context_r348.py'
-          if ($LASTEXITCODE -ne 0) { throw "R348 Windows optimized context unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R348 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_decimal_context_integration_r348.py'
-          if ($LASTEXITCODE -ne 0) { throw "R348 Windows optimized context engine integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R348 test FAILED" }
       - name: R349 Windows ProcureGuard signed-zero evidence custody (normal and -OO)
         shell: pwsh
         run: |
@@ -1307,194 +1307,194 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_policy_custody_r351.py'
-          if ($LASTEXITCODE -ne 0) { throw "R351 Windows policy unit regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R351 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_policy_integration_r351.py'
-          if ($LASTEXITCODE -ne 0) { throw "R351 Windows policy integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R351 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_policy_custody_r351.py'
-          if ($LASTEXITCODE -ne 0) { throw "R351 Windows optimized policy unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R351 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_policy_integration_r351.py'
-          if ($LASTEXITCODE -ne 0) { throw "R351 Windows optimized policy integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R351 test FAILED" }
       - name: R352 Windows ProcureGuard document identifier Decimal context custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_decimal_context_r352.py'
-          if ($LASTEXITCODE -ne 0) { throw "R352 Windows identifier-context unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R352 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_context_integration_r352.py'
-          if ($LASTEXITCODE -ne 0) { throw "R352 Windows identifier-context integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R352 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_decimal_context_r352.py'
-          if ($LASTEXITCODE -ne 0) { throw "R352 Windows optimized identifier-context unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R352 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_context_integration_r352.py'
-          if ($LASTEXITCODE -ne 0) { throw "R352 Windows optimized identifier-context integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R352 test FAILED" }
       - name: R353 Windows ProcureGuard document candidate snapshot (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_session_r353.py'
-          if ($LASTEXITCODE -ne 0) { throw "R353 Windows identifier session unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R353 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_session_integration_r353.py'
-          if ($LASTEXITCODE -ne 0) { throw "R353 Windows identifier session integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R353 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_session_r353.py'
-          if ($LASTEXITCODE -ne 0) { throw "R353 Windows optimized identifier session unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R353 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_session_integration_r353.py'
-          if ($LASTEXITCODE -ne 0) { throw "R353 Windows optimized identifier session integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R353 test FAILED" }
       - name: R354 original Unicode reference custody and ProcureGuard integration on Windows (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_unicode_original_r354.py'
-          if ($LASTEXITCODE -ne 0) { throw "R354 Windows unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R354 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_unicode_original_integration_r354.py'
-          if ($LASTEXITCODE -ne 0) { throw "R354 Windows integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R354 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_unicode_original_r354.py'
-          if ($LASTEXITCODE -ne 0) { throw "R354 Windows optimized unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R354 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_unicode_original_integration_r354.py'
-          if ($LASTEXITCODE -ne 0) { throw "R354 Windows optimized integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R354 test FAILED" }
       - name: R355 SpendMap Decimal callback custody and real engine on Windows (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_callback_context_r355.py'
-          if ($LASTEXITCODE -ne 0) { throw "R355 Windows callback unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R355 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_callback_engine_integration_r355.py'
-          if ($LASTEXITCODE -ne 0) { throw "R355 Windows engine integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R355 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_callback_context_r355.py'
-          if ($LASTEXITCODE -ne 0) { throw "R355 Windows optimized unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R355 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_callback_engine_integration_r355.py'
-          if ($LASTEXITCODE -ne 0) { throw "R355 Windows optimized engine integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R355 test FAILED" }
 
       - name: R356 SpendMap original money custody and full engine on Windows (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_custody_r356.py'
-          if ($LASTEXITCODE -ne 0) { throw "R356 Windows source unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R356 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_engine_integration_r356.py'
-          if ($LASTEXITCODE -ne 0) { throw "R356 Windows source engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R356 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_custody_r356.py'
-          if ($LASTEXITCODE -ne 0) { throw "R356 Windows optimized source unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R356 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_engine_integration_r356.py'
-          if ($LASTEXITCODE -ne 0) { throw "R356 Windows optimized source engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R356 test FAILED" }
       - name: R357 SpendMap formatted-money evidence and real engine on Windows (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_format_custody_r357.py'
-          if ($LASTEXITCODE -ne 0) { throw "R357 Windows format unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R357 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_format_engine_integration_r357.py'
-          if ($LASTEXITCODE -ne 0) { throw "R357 Windows format engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R357 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_format_custody_r357.py'
-          if ($LASTEXITCODE -ne 0) { throw "R357 Windows optimized format unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R357 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_format_engine_integration_r357.py'
-          if ($LASTEXITCODE -ne 0) { throw "R357 Windows optimized format engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R357 test FAILED" }
       - name: R358 SpendMap Unicode vendor evidence and genuine CSV integration on Windows (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_evidence_r358.py'
-          if ($LASTEXITCODE -ne 0) { throw "R358 Windows vendor unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R358 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_integration_r358.py'
-          if ($LASTEXITCODE -ne 0) { throw "R358 Windows vendor engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R358 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_evidence_r358.py'
-          if ($LASTEXITCODE -ne 0) { throw "R358 Windows optimized vendor unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R358 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_integration_r358.py'
-          if ($LASTEXITCODE -ne 0) { throw "R358 Windows optimized vendor engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R358 test FAILED" }
       - name: R359 SpendMap independent original-date custody on Windows (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_date_custody_r359.py'
-          if ($LASTEXITCODE -ne 0) { throw "R359 Windows source date unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R359 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_date_engine_integration_r359.py'
-          if ($LASTEXITCODE -ne 0) { throw "R359 Windows source date engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R359 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_date_custody_r359.py'
-          if ($LASTEXITCODE -ne 0) { throw "R359 Windows optimized source date unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R359 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_date_engine_integration_r359.py'
-          if ($LASTEXITCODE -ne 0) { throw "R359 Windows optimized source date engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R359 test FAILED" }
       - name: R360 SpendMap vendor-source normalization session on Windows (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_session_r360.py'
-          if ($LASTEXITCODE -ne 0) { throw "R360 Windows vendor session unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R360 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_session_engine_integration_r360.py'
-          if ($LASTEXITCODE -ne 0) { throw "R360 Windows vendor session engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R360 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_session_r360.py'
-          if ($LASTEXITCODE -ne 0) { throw "R360 Windows optimized vendor session unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R360 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_session_engine_integration_r360.py'
-          if ($LASTEXITCODE -ne 0) { throw "R360 Windows optimized vendor session engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R360 test FAILED" }
       - name: R361 SpendMap direct-source budget on Windows (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_budget_r361.py'
-          if ($LASTEXITCODE -ne 0) { throw "R361 Windows source budget unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R361 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_budget_engine_integration_r361.py'
-          if ($LASTEXITCODE -ne 0) { throw "R361 Windows source budget engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R361 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_budget_r361.py'
-          if ($LASTEXITCODE -ne 0) { throw "R361 Windows optimized source budget unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R361 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_budget_engine_integration_r361.py'
-          if ($LASTEXITCODE -ne 0) { throw "R361 Windows optimized source budget engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R361 test FAILED" }
       - name: R362 SpendMap source field-cardinality on Windows (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_field_budget_r362.py'
-          if ($LASTEXITCODE -ne 0) { throw "R362 Windows field budget unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R362 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_field_engine_integration_r362.py'
-          if ($LASTEXITCODE -ne 0) { throw "R362 Windows field budget engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R362 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_field_budget_r362.py'
-          if ($LASTEXITCODE -ne 0) { throw "R362 Windows optimized field budget unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R362 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_field_engine_integration_r362.py'
-          if ($LASTEXITCODE -ne 0) { throw "R362 Windows optimized field budget engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R362 test FAILED" }
       - name: R363 SpendMap numeric source-row citations on Windows (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_row_order_r363.py'
-          if ($LASTEXITCODE -ne 0) { throw "R363 Windows source line unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R363 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_row_order_engine_r363.py'
-          if ($LASTEXITCODE -ne 0) { throw "R363 Windows source line engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R363 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_row_order_r363.py'
-          if ($LASTEXITCODE -ne 0) { throw "R363 Windows optimized line unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R363 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_row_order_engine_r363.py'
-          if ($LASTEXITCODE -ne 0) { throw "R363 Windows optimized line engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R363 test FAILED" }
       - name: R364 Policy Delta whole-hunk source custody on Windows (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_source_custody_r182.py'
-          if ($LASTEXITCODE -ne 0) { throw "R364 Windows legacy policy custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R364 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_whole_hunk_r364.py'
-          if ($LASTEXITCODE -ne 0) { throw "R364 Windows whole-hunk policy custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R364 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_source_custody_r182.py'
-          if ($LASTEXITCODE -ne 0) { throw "R364 Windows optimized legacy policy custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R364 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_whole_hunk_r364.py'
-          if ($LASTEXITCODE -ne 0) { throw "R364 Windows optimized whole-hunk policy custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R364 test FAILED" }
       - name: R365 Policy Delta bounded review evidence on Windows
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_budget_r365.py'
-          if ($LASTEXITCODE -ne 0) { throw "R365 Windows budget unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R365 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_budget_engine_r365.py'
-          if ($LASTEXITCODE -ne 0) { throw "R365 Windows budget engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R365 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_budget_r365.py'
-          if ($LASTEXITCODE -ne 0) { throw "R365 Windows optimized budget unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R365 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_budget_engine_r365.py'
-          if ($LASTEXITCODE -ne 0) { throw "R365 Windows optimized budget engine FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R365 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_bounded_selection_r366.py'
-          if ($LASTEXITCODE -ne 0) { throw "R366 Windows bounded citation selection FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R366 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_policy_confusable_bounded_selection_r366.py'
-          if ($LASTEXITCODE -ne 0) { throw "R366 Windows optimized bounded selection FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R366 test FAILED" }
       - name: R369 Windows Policy Delta bounded canonical NFC source tests
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_policy_canonical_bounded_r369.py'
-          if ($LASTEXITCODE -ne 0) { throw "R369 Windows normal bounded canonical custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R369 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_policy_canonical_bounded_r369.py'
-          if ($LASTEXITCODE -ne 0) { throw "R369 Windows optimized bounded canonical custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R369 test FAILED" }
       - name: R370 Windows PE W^X candidate-format regression (normal and -OO)
         shell: pwsh
         run: |
@@ -1508,57 +1508,57 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_smoke_child_environment_r371.py'
-          if ($LASTEXITCODE -ne 0) { throw "R371 Windows smoke environment normal tests FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R371 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_smoke_child_environment_r371.py'
-          if ($LASTEXITCODE -ne 0) { throw "R371 Windows smoke environment optimized tests FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R371 test FAILED" }
       - name: R319 witnessed-vs-compiled premium test source before Windows packaging
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_vault_source_digest_bind_r319.py'
-          if ($LASTEXITCODE -ne 0) { throw "R319 source witness binding FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R319 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_vault_source_digest_bind_r319.py'
-          if ($LASTEXITCODE -ne 0) { throw "R319 optimized source witness binding FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R319 test FAILED" }
       - name: R320 read-only premium restored bundle consistency before Windows packaging
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_restored_bundle_inspector_r320.py'
-          if ($LASTEXITCODE -ne 0) { throw "R320 premium bundle consistency FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R320 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_restored_bundle_inspector_r320.py'
-          if ($LASTEXITCODE -ne 0) { throw "R320 optimized premium bundle consistency FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R320 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_restored_*r321.py'
-          if ($LASTEXITCODE -ne 0) { throw "R321 journal structure FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R321 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_restored_*r321.py'
-          if ($LASTEXITCODE -ne 0) { throw "R321 optimized journal structure FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R321 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_restored_external_witness_r322.py'
-          if ($LASTEXITCODE -ne 0) { throw "R322 premium external witness FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R322 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_restored_external_witness_r322.py'
-          if ($LASTEXITCODE -ne 0) { throw "R322 optimized premium external witness FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R322 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_restored_journal_canonical_r323.py'
-          if ($LASTEXITCODE -ne 0) { throw "R323 canonical audit JSONL FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R323 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_restored_journal_canonical_r323.py'
-          if ($LASTEXITCODE -ne 0) { throw "R323 optimized canonical audit JSONL FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R323 test FAILED" }
       - name: R324 premium journal LF custody before Windows packaging
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_review_line_framing_r324.py'
-          if ($LASTEXITCODE -ne 0) { throw "R324 framing unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R324 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_line_framing_r324.py'
-          if ($LASTEXITCODE -ne 0) { throw "R324 optimized framing unit FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R324 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_review_line_framing_integration_r324.py'
-          if ($LASTEXITCODE -ne 0) { throw "R324 premium review reader integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R324 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_line_framing_integration_r324.py'
-          if ($LASTEXITCODE -ne 0) { throw "R324 optimized premium review reader integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R324 test FAILED" }
       - name: R325 premium bundle bounded open custody before Windows packaging
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_restored_bundle_open_race_r323.py'
-          if ($LASTEXITCODE -ne 0) { throw "R325 bounded evidence member opens FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R325 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_restored_bundle_open_race_r323.py'
-          if ($LASTEXITCODE -ne 0) { throw "R325 optimized bounded evidence member opens FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R325 test FAILED" }
       - name: Fail closed on CI artifact paths before packaging (R41)
         run: python products/desktop/ci_artifact_policy.py .github/workflows/desktop-build.yml
       - name: Verify mandatory two-mode CI source gate (R57)
@@ -1568,379 +1568,379 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_background_privacy_r266.py'
-          if ($LASTEXITCODE -ne 0) { throw "R266 normal source privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R266 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_background_privacy_r266.py'
-          if ($LASTEXITCODE -ne 0) { throw "R266 optimized source privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R266 test FAILED" }
       - name: R267 main-thread traceback privacy before native build (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_main_exception_privacy_r267.py'
-          if ($LASTEXITCODE -ne 0) { throw "R267 normal privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R267 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_main_exception_privacy_r267.py'
-          if ($LASTEXITCODE -ne 0) { throw "R267 optimized privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R267 test FAILED" }
       - name: R268 Tk callback handler installation custody before packaging (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_tk_callback_install_custody_r268.py'
-          if ($LASTEXITCODE -ne 0) { throw "R268 normal Tk safety gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R268 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_tk_callback_install_custody_r268.py'
-          if ($LASTEXITCODE -ne 0) { throw "R268 optimized Tk safety gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R268 test FAILED" }
       - name: R285 Windows native Tk single-flight Generate/Review custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_action_gate_r285.py'
-          if ($LASTEXITCODE -ne 0) { throw "R285 normal native Tk action gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R285 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_action_gate_r285.py'
-          if ($LASTEXITCODE -ne 0) { throw "R285 optimized native Tk action gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R285 test FAILED" }
       - name: R286 Windows atomic worker-thread Generate/Review admission (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_action_gate_threads_r286.py'
-          if ($LASTEXITCODE -ne 0) { throw "R286 normal atomic action gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R286 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_action_gate_threads_r286.py'
-          if ($LASTEXITCODE -ne 0) { throw "R286 optimized atomic action gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R286 test FAILED" }
       - name: R287 Windows premium review lock privacy regression (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_review_lock_privacy_r287.py'
-          if ($LASTEXITCODE -ne 0) { throw "R287 normal premium lock privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R287 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_lock_privacy_r287.py'
-          if ($LASTEXITCODE -ne 0) { throw "R287 optimized premium lock privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R287 test FAILED" }
       - name: R288 Windows premium review lock descriptor IO custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_review_lock_io_privacy_r288.py'
-          if ($LASTEXITCODE -ne 0) { throw "R288 normal premium descriptor custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R288 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_lock_io_privacy_r288.py'
-          if ($LASTEXITCODE -ne 0) { throw "R288 optimized premium descriptor custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R288 test FAILED" }
       - name: R289 Windows exceptional premium lock exit custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_review_lock_exception_exit_r289.py'
-          if ($LASTEXITCODE -ne 0) { throw "R289 normal exceptional lock custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R289 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_lock_exception_exit_r289.py'
-          if ($LASTEXITCODE -ne 0) { throw "R289 optimized exceptional lock custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R289 test FAILED" }
       - name: R290 Windows premium journal privacy and custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_journal_io_privacy_r290.py'
-          if ($LASTEXITCODE -ne 0) { throw "R290 normal premium journal privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R290 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_journal_io_privacy_r290.py'
-          if ($LASTEXITCODE -ne 0) { throw "R290 optimized premium journal privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R290 test FAILED" }
       - name: R291 Windows premium post-append custody (8 tests; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_journal_postappend_custody_r291.py'
-          if ($LASTEXITCODE -ne 0) { throw "R291 normal post-append custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R291 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_journal_postappend_custody_r291.py'
-          if ($LASTEXITCODE -ne 0) { throw "R291 optimized post-append custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R291 test FAILED" }
       - name: R292 Windows CI workflow-budget custody (10 tests; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_ci_workflow_budget_r292.py'
-          if ($LASTEXITCODE -ne 0) { throw "R292 normal CI budget FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R292 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_ci_workflow_budget_r292.py'
-          if ($LASTEXITCODE -ne 0) { throw "R292 optimized CI budget FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R292 test FAILED" }
       - name: R293 Windows CI root-key shadowing custody (13 tests; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_ci_root_mapping_custody_r293.py'
-          if ($LASTEXITCODE -ne 0) { throw "R293 normal CI root custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R293 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_ci_root_mapping_custody_r293.py'
-          if ($LASTEXITCODE -ne 0) { throw "R293 optimized CI root custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R293 test FAILED" }
       - name: R294 Windows job-key custody before packaging (23 tests; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_ci_job_mapping_r294.py'
-          if ($LASTEXITCODE -ne 0) { throw "R294 normal job-key guard FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R294 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_ci_job_mapping_r294.py'
-          if ($LASTEXITCODE -ne 0) { throw "R294 optimized job-key guard FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R294 test FAILED" }
       - name: R295 Windows trigger/token custody before packaging (30 tests; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_ci_event_permissions_r295.py'
-          if ($LASTEXITCODE -ne 0) { throw "R295 normal trigger/token guard FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R295 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_ci_event_permissions_r295.py'
-          if ($LASTEXITCODE -ne 0) { throw "R295 optimized trigger/token guard FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R295 test FAILED" }
       - name: R271 Windows evidence report double-pin (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_offline_windows_report_custody_r271.py'
-          if ($LASTEXITCODE -ne 0) { throw "R271 normal report custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R271 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_offline_windows_report_custody_r271.py'
-          if ($LASTEXITCODE -ne 0) { throw "R271 optimized report custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R271 test FAILED" }
       - name: R272 private Windows packaging CLI import preflight (normal and -OO)
         shell: pwsh
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_isolated_packaging_entrypoints_r272.py'
-          if ($LASTEXITCODE -ne 0) { throw "R272 normal isolated import gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R272 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_isolated_packaging_entrypoints_r272.py'
-          if ($LASTEXITCODE -ne 0) { throw "R272 optimized isolated import gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R272 test FAILED" }
       - name: R273 strict source receipt JSON and private runner integration (normal and -OO)
         shell: pwsh
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_strict_source_receipt_r273.py'
-          if ($LASTEXITCODE -ne 0) { throw "R273 normal JSON receipt gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R273 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_strict_source_receipt_r273.py'
-          if ($LASTEXITCODE -ne 0) { throw "R273 optimized JSON receipt gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R273 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_source_receipt_integration_r273.py'
-          if ($LASTEXITCODE -ne 0) { throw "R273 normal runner integration gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R273 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_source_receipt_integration_r273.py'
-          if ($LASTEXITCODE -ne 0) { throw "R273 optimized runner integration gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R273 test FAILED" }
       - name: R274 integer-only private receipt numbers (normal and -OO)
         shell: pwsh
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_strict_source_receipt_numbers_r274.py'
-          if ($LASTEXITCODE -ne 0) { throw "R274 normal receipt numbers gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R274 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_strict_source_receipt_numbers_r274.py'
-          if ($LASTEXITCODE -ne 0) { throw "R274 optimized receipt numbers gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R274 test FAILED" }
       - name: R275 bind tested source and tests to candidate checkout (normal and -OO)
         shell: pwsh
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_source_build_binding_r275.py'
-          if ($LASTEXITCODE -ne 0) { throw "R275 normal tested-source gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R275 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_source_build_binding_r275.py'
-          if ($LASTEXITCODE -ne 0) { throw "R275 optimized tested-source gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R275 test FAILED" }
       - name: R276 exact six-app source smoke receipt records (normal and -OO)
         shell: pwsh
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_source_smoke_receipt_r276.py'
-          if ($LASTEXITCODE -ne 0) { throw "R276 normal smoke receipt gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R276 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_source_smoke_receipt_r276.py'
-          if ($LASTEXITCODE -ne 0) { throw "R276 optimized smoke receipt gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R276 test FAILED" }
       - name: R277 private smoke receipt runner integration (normal and -OO)
         shell: pwsh
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_source_smoke_runner_integration_r277.py'
-          if ($LASTEXITCODE -ne 0) { throw "R277 normal receipt integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R277 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_source_smoke_runner_integration_r277.py'
-          if ($LASTEXITCODE -ne 0) { throw "R277 optimized receipt integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R277 test FAILED" }
       - name: R278 private candidate child environment privacy (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_candidate_child_environment_r278.py'
-          if ($LASTEXITCODE -ne 0) { throw "R278 normal credential privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R278 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_candidate_child_environment_r278.py'
-          if ($LASTEXITCODE -ne 0) { throw "R278 optimized credential privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R278 test FAILED" }
       - name: R279 private native Defender gate bridge (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_native_defender_bridge_r279.py'
-          if ($LASTEXITCODE -ne 0) { throw "R279 native candidate bridge tests FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R279 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_native_defender_bridge_r279.py'
-          if ($LASTEXITCODE -ne 0) { throw "R279 optimized native bridge tests FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R279 test FAILED" }
           python -I products/desktop/scripts/defender_candidate_scan_r111.py --help | Out-Null
-          if ($LASTEXITCODE -ne 0) { throw "R279 isolated Defender imports FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R279 test FAILED" }
       - name: R280 pinned Defender receipt claim contract (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_defender_receipt_contract_r280.py'
-          if ($LASTEXITCODE -ne 0) { throw "R280 Defender report contract FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R280 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_defender_receipt_contract_r280.py'
-          if ($LASTEXITCODE -ne 0) { throw "R280 optimized Defender report contract FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R280 test FAILED" }
       - name: R162 immutable CI action custody and strict tests (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/ci_action_pin_guard.py .github/workflows/desktop-build.yml
-          if ($LASTEXITCODE -ne 0) { throw "R162 action custody unavailable" }
+          if ($LASTEXITCODE -ne 0) { throw "R162 test FAILED" }
           python products/desktop/scripts/safe_unittest_r162.py
-          if ($LASTEXITCODE -ne 0) { throw "R162 normal tests unavailable" }
+          if ($LASTEXITCODE -ne 0) { throw "R162 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r162.py
-          if ($LASTEXITCODE -ne 0) { throw "R162 optimized tests unavailable" }
+          if ($LASTEXITCODE -ne 0) { throw "R162 test FAILED" }
       - name: R163 Node24 pinned-action runtime contracts (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r163.py
-          if ($LASTEXITCODE -ne 0) { throw "R163 normal runtime contract failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R163 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r163.py
-          if ($LASTEXITCODE -ne 0) { throw "R163 optimized runtime contract failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R163 test FAILED" }
       - name: R164 fail-closed YAML action-key custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r164.py
-          if ($LASTEXITCODE -ne 0) { throw "R164 normal action-key custody failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R164 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r164.py
-          if ($LASTEXITCODE -ne 0) { throw "R164 optimized action-key custody failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R164 test FAILED" }
       - name: R165 immutable Invoice Twin input snapshots (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r165.py
-          if ($LASTEXITCODE -ne 0) { throw "R165 normal invoice snapshot tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R165 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r165.py
-          if ($LASTEXITCODE -ne 0) { throw "R165 optimized invoice snapshot tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R165 test FAILED" }
       - name: R166 validate owned Invoice Twin mapping before source fields (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r166.py
-          if ($LASTEXITCODE -ne 0) { throw "R166 normal invoice custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R166 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r166.py
-          if ($LASTEXITCODE -ne 0) { throw "R166 optimized invoice custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R166 test FAILED" }
       - name: R167 verify Invoice Twin underlying dict storage custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r167.py
-          if ($LASTEXITCODE -ne 0) { throw "R167 normal stored-items custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R167 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r167.py
-          if ($LASTEXITCODE -ne 0) { throw "R167 optimized stored-items custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R167 test FAILED" }
       - name: R168 reject Invoice Twin forged source primitives (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r168.py
-          if ($LASTEXITCODE -ne 0) { throw "R168 normal exact-primitive tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R168 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r168.py
-          if ($LASTEXITCODE -ne 0) { throw "R168 optimized exact-primitive tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R168 test FAILED" }
       - name: R169 bind Invoice report IDs to native stored snapshots (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r169.py
-          if ($LASTEXITCODE -ne 0) { throw "R169 normal report snapshot tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R169 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r169.py
-          if ($LASTEXITCODE -ne 0) { throw "R169 optimized report snapshot tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R169 test FAILED" }
       - name: R170 reject conflicting Invoice source-pair classifications (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r170.py
-          if ($LASTEXITCODE -ne 0) { throw "R170 normal conflicting-pair tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R170 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r170.py
-          if ($LASTEXITCODE -ne 0) { throw "R170 optimized conflicting-pair tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R170 test FAILED" }
       - name: R171 Invoice Twin immutable plain-text report values (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r171.py
-          if ($LASTEXITCODE -ne 0) { throw "R171 normal value custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R171 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r171.py
-          if ($LASTEXITCODE -ne 0) { throw "R171 optimized value custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R171 test FAILED" }
       - name: R172 premium event native custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r172.py
-          if ($LASTEXITCODE -ne 0) { throw "R172 normal premium event tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R172 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r172.py
-          if ($LASTEXITCODE -ne 0) { throw "R172 optimized premium event tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R172 test FAILED" }
       - name: R173 procurement policy and event stream native primitives (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r173.py
-          if ($LASTEXITCODE -ne 0) { throw "R173 normal policy primitive tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R173 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r173.py
-          if ($LASTEXITCODE -ne 0) { throw "R173 optimized policy primitive tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R173 test FAILED" }
       - name: R174 SpendMap native stored record custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r174.py
-          if ($LASTEXITCODE -ne 0) { throw "R174 normal SpendMap custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R174 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r174.py
-          if ($LASTEXITCODE -ne 0) { throw "R174 optimized SpendMap custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R174 test FAILED" }
       - name: R175 LedgerDiff native report custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r175.py
-          if ($LASTEXITCODE -ne 0) { throw "R175 normal LedgerDiff custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R175 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r175.py
-          if ($LASTEXITCODE -ne 0) { throw "R175 optimized LedgerDiff custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R175 test FAILED" }
       - name: R176 shared numeric primitive custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r176.py
-          if ($LASTEXITCODE -ne 0) { throw "R176 normal financial primitive tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R176 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r176.py
-          if ($LASTEXITCODE -ne 0) { throw "R176 optimized financial primitive tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R176 test FAILED" }
       - name: R177 native financial identity/date custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r177.py
-          if ($LASTEXITCODE -ne 0) { throw "R177 native source identity tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R177 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r177.py
-          if ($LASTEXITCODE -ne 0) { throw "R177 optimized identity tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R177 test FAILED" }
       - name: R178 Policy Delta local canonical NFC change evidence (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r178.py
-          if ($LASTEXITCODE -ne 0) { throw "R178 canonical policy tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R178 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r178.py
-          if ($LASTEXITCODE -ne 0) { throw "R178 optimized canonical policy tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R178 test FAILED" }
       - name: R179 Policy Delta bounded Unicode codepoint evidence (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r179.py
-          if ($LASTEXITCODE -ne 0) { throw "R179 Unicode evidence tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R179 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r179.py
-          if ($LASTEXITCODE -ne 0) { throw "R179 optimized Unicode evidence tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R179 test FAILED" }
       - name: R180 Policy Delta cross-script look-alike evidence (34 methods, normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r180.py
-          if ($LASTEXITCODE -ne 0) { throw "R180 cross-script evidence tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R180 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r180.py
-          if ($LASTEXITCODE -ne 0) { throw "R180 optimized cross-script evidence tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R180 test FAILED" }
       - name: R181 Policy Delta spoken Unicode names (25 methods, normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r181.py
-          if ($LASTEXITCODE -ne 0) { throw "R181 spoken Unicode names tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R181 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r181.py
-          if ($LASTEXITCODE -ne 0) { throw "R181 optimized spoken Unicode names tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R181 test FAILED" }
       - name: R182 Policy Delta source-coordinate custody (38 methods, normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r182.py
-          if ($LASTEXITCODE -ne 0) { throw "R182 source-coordinate custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R182 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r182.py
-          if ($LASTEXITCODE -ne 0) { throw "R182 optimized source-coordinate custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R182 test FAILED" }
       - name: R183 Policy Delta global source-coordinate custody (25 methods, normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r183.py
-          if ($LASTEXITCODE -ne 0) { throw "R183 global source-coordinate custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R183 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r183.py
-          if ($LASTEXITCODE -ne 0) { throw "R183 optimized global source-coordinate custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R183 test FAILED" }
       - name: R184 R180 physical-order legacy compatibility (20 methods, normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r184.py
-          if ($LASTEXITCODE -ne 0) { throw "R184 source-order custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R184 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r184.py
-          if ($LASTEXITCODE -ne 0) { throw "R184 optimized source-order custody tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R184 test FAILED" }
       - name: R185 Policy Delta canonical source-coordinate custody (32 methods, normal and -OO)
         shell: pwsh
         run: |
@@ -1954,73 +1954,73 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_catalog_preflight_r186.py'
-          if ($LASTEXITCODE -ne 0) { throw "R186 catalog preflight tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R186 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_preflight_r186.py'
-          if ($LASTEXITCODE -ne 0) { throw "R186 optimized catalog preflight tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R186 test FAILED" }
           python products/desktop/catalog_preflight_r186.py products/desktop/site/software-catalog.gutenberg.html
-          if ($LASTEXITCODE -ne 0) { throw "R186 catalog draft preflight failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R186 test FAILED" }
       - name: R187 enforce catalog gate in BOTH independent runner jobs (16 methods, normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_catalog_ci_placement_r187.py'
-          if ($LASTEXITCODE -ne 0) { throw "R187 dual-job source contract failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R187 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_ci_placement_r187.py'
-          if ($LASTEXITCODE -ne 0) { throw "R187 optimized dual-job source contract failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R187 test FAILED" }
       - name: R188 reject plaintext release URLs, binaries and claims (53 tests, normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_catalog_visible*188.py'
-          if ($LASTEXITCODE -ne 0) { throw "R188 visible-text preflight tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R188 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_visible*188.py'
-          if ($LASTEXITCODE -ne 0) { throw "R188 optimized visible-text tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R188 test FAILED" }
           python products/desktop/catalog_preflight_r186.py products/desktop/site/software-catalog.gutenberg.html
-          if ($LASTEXITCODE -ne 0) { throw "R188 original six-card catalog preflight failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R188 test FAILED" }
       - name: R189 fail-closed fragmented release claims and installer names (52 cases, normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_catalog_fragment*189.py'
-          if ($LASTEXITCODE -ne 0) { throw "R189 normal fragment tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R189 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_fragment*189.py'
-          if ($LASTEXITCODE -ne 0) { throw "R189 optimized fragment tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R189 test FAILED" }
           python products/desktop/catalog_preflight_r186.py products/desktop/site/software-catalog.gutenberg.html
-          if ($LASTEXITCODE -ne 0) { throw "R189 catalog preflight failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R189 test FAILED" }
       - name: R190 NFKC compatibility spoofing hard hold (40 methods incl. real Gutenberg source, normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_catalog_compatibility*190.py'
-          if ($LASTEXITCODE -ne 0) { throw "R190 normal compatibility tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R190 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_compatibility*190.py'
-          if ($LASTEXITCODE -ne 0) { throw "R190 optimized compatibility tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R190 test FAILED" }
           python products/desktop/catalog_preflight_r186.py products/desktop/site/software-catalog.gutenberg.html
-          if ($LASTEXITCODE -ne 0) { throw "R190 catalog preflight failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R190 test FAILED" }
       - name: R191 SpendMap native Decimal heap safety and bounded median evidence (25 cases, normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_spend_median_native_envelope_r191.py'
-          if ($LASTEXITCODE -ne 0) { throw "R191 normal SpendMap median custody failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R191 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_spend_median_native_envelope_r191.py'
-          if ($LASTEXITCODE -ne 0) { throw "R191 optimized SpendMap median custody failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R191 test FAILED" }
       - name: R192 SpendMap pre-callback full collection source custody (23 cases, normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_spend_collection_snapshot_r192.py'
-          if ($LASTEXITCODE -ne 0) { throw "R192 normal SpendMap source snapshot failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R192 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_spend_collection_snapshot_r192.py'
-          if ($LASTEXITCODE -ne 0) { throw "R192 optimized SpendMap source snapshot failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R192 test FAILED" }
       - name: R193 fail-closed full-source shape/coordinate preflight (24 cases, normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_spend_collection_preflight_r193.py'
-          if ($LASTEXITCODE -ne 0) { throw "R193 normal SpendMap preflight failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R193 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_spend_collection_preflight_r193.py'
-          if ($LASTEXITCODE -ne 0) { throw "R193 optimized SpendMap preflight failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R193 test FAILED" }
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: R311 verified premium restore bytes and R310 crypto integration (normal and -OO)
@@ -2028,237 +2028,237 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_vault_restore_verify_r311.py'
-          if ($LASTEXITCODE -ne 0) { throw "R311 normal exact-restore verification failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R311 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_vault_restore_verify_r311.py'
-          if ($LASTEXITCODE -ne 0) { throw "R311 optimized exact-restore verification failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R311 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_vault_restore_writer_integration_r310.py'
-          if ($LASTEXITCODE -ne 0) { throw "R310 crypto integration failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R310 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_vault_restore_writer_integration_r310.py'
-          if ($LASTEXITCODE -ne 0) { throw "R310 optimized crypto integration failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R310 test FAILED" }
       - name: R312 premium vault product binding + AES-GCM restore (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_vault_product_gate_r312.py'
-          if ($LASTEXITCODE -ne 0) { throw "R312 guard normal failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R312 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_vault_product_gate_r312.py'
-          if ($LASTEXITCODE -ne 0) { throw "R312 guard optimized failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R312 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_vault_product_integration_r312.py'
-          if ($LASTEXITCODE -ne 0) { throw "R312 AES-GCM normal failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R312 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_vault_product_integration_r312.py'
-          if ($LASTEXITCODE -ne 0) { throw "R312 AES-GCM optimized failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R312 test FAILED" }
       - name: R313 packaged premium vault scope smoke contract (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_vault_smoke_scope_r313.py'
-          if ($LASTEXITCODE -ne 0) { throw "R313 scope smoke normal failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R313 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_vault_smoke_scope_r313.py'
-          if ($LASTEXITCODE -ne 0) { throw "R313 scope smoke optimized failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R313 test FAILED" }
       - name: R315 packaged premium vault custody checks (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_vault_smoke_custody_r315.py'
-          if ($LASTEXITCODE -ne 0) { throw "R315 vault custody normal failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R315 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_vault_smoke_custody_r315.py'
-          if ($LASTEXITCODE -ne 0) { throw "R315 vault custody optimized failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R315 test FAILED" }
       - name: R200 regression matrix runner self-tests (16 methods; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_recent_regression_gate_r200.py'
-          if ($LASTEXITCODE -ne 0) { throw "R200 regression runner self-tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R200 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_recent_regression_gate_r200.py'
-          if ($LASTEXITCODE -ne 0) { throw "R200 optimized regression runner self-tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R200 test FAILED" }
       - name: R201 regression output privacy (17 synthetic methods; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_recent_regression_privacy_r201.py'
-          if ($LASTEXITCODE -ne 0) { throw "R201 privacy tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R201 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_recent_regression_privacy_r201.py'
-          if ($LASTEXITCODE -ne 0) { throw "R201 optimized privacy tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R201 test FAILED" }
       - name: R202 strict pass-only audit results (17 synthetic methods; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_recent_regression_strict_results_r202.py'
-          if ($LASTEXITCODE -ne 0) { throw "R202 strict audit tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R202 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_recent_regression_strict_results_r202.py'
-          if ($LASTEXITCODE -ne 0) { throw "R202 optimized strict audit tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R202 test FAILED" }
       - name: R203 reject late invalid audit modules before any import (11 tests; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_recent_regression_preflight_r203.py'
-          if ($LASTEXITCODE -ne 0) { throw "R203 audit preflight tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R203 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_recent_regression_preflight_r203.py'
-          if ($LASTEXITCODE -ne 0) { throw "R203 optimized audit preflight tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R203 test FAILED" }
       - name: R204 symlink-permission fallback regression (4 synthetic cases; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_policy_symlink_witness_r204.py'
-          if ($LASTEXITCODE -ne 0) { throw "R204 Policy Delta symlink witness failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R204 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_policy_symlink_witness_r204.py'
-          if ($LASTEXITCODE -ne 0) { throw "R204 optimized Policy Delta symlink witness failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R204 test FAILED" }
       - name: R205 OS-level audit log isolation regression (14 tests; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_audit_subprocess_privacy_r205.py'
-          if ($LASTEXITCODE -ne 0) { throw "R205 private audit wrapper tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R205 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_audit_subprocess_privacy_r205.py'
-          if ($LASTEXITCODE -ne 0) { throw "R205 optimized private audit wrapper tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R205 test FAILED" }
       - name: R206 private child environment regression (12 tests; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_audit_child_environment_r206.py'
-          if ($LASTEXITCODE -ne 0) { throw "R206 private child environment tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R206 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_audit_child_environment_r206.py'
-          if ($LASTEXITCODE -ne 0) { throw "R206 optimized private child environment tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R206 test FAILED" }
       - name: R207 shared CSV header custody regressions (14 cases; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_header_custody_r207.py'
-          if ($LASTEXITCODE -ne 0) { throw "R207 shared CSV header tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R207 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_header_custody_r207.py'
-          if ($LASTEXITCODE -ne 0) { throw "R207 optimized CSV header tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R207 test FAILED" }
       - name: R208 strict CSV rendered-cell custody (18 cases; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_rendered_cell_custody_r208.py'
-          if ($LASTEXITCODE -ne 0) { throw "R208 CSV rendered-cell tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R208 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_rendered_cell_custody_r208.py'
-          if ($LASTEXITCODE -ne 0) { throw "R208 optimized CSV rendered-cell tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R208 test FAILED" }
       - name: R209 complete evidence-row schema (13 cases; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_row_schema_custody_r209.py'
-          if ($LASTEXITCODE -ne 0) { throw "R209 CSV evidence-row tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R209 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_row_schema_custody_r209.py'
-          if ($LASTEXITCODE -ne 0) { throw "R209 optimized CSV evidence-row tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R209 test FAILED" }
       - name: R210 reject forged/duplicate CSV row columns (16 cases; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_row_key_custody_r210.py'
-          if ($LASTEXITCODE -ne 0) { throw "R210 CSV row-key tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R210 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_row_key_custody_r210.py'
-          if ($LASTEXITCODE -ne 0) { throw "R210 optimized CSV row-key tests failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R210 test FAILED" }
       - name: R211 reject unencodable report text and redact conversion failures (14 cases; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_unicode_privacy_r211.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R211 CSV privacy regression failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R211 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_unicode_privacy_r211.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R211 optimized CSV privacy regression failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R211 test FAILED" }
       - name: R212 prove CSV callback and input iterator failures cannot leak hidden financial exceptions (16 cases; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_iterator_privacy_r212.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R212 CSV iterator privacy regression failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R212 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_iterator_privacy_r212.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R212 optimized CSV iterator privacy regression failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R212 test FAILED" }
       - name: R213 bound schema, row items and total CSV evidence rows (15 cases; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_capacity_r213.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R213 bounded CSV evidence regression failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R213 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_capacity_r213.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R213 optimized bounded CSV evidence regression failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R213 test FAILED" }
       - name: R214 enforce CSV output byte budget and cell limits (17 cases; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_byte_budget_r214.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R214 CSV output budget regression failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R214 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_byte_budget_r214.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R214 optimized CSV output budget regression failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R214 test FAILED" }
       - name: R215 reject CSV formula prefixes after whitespace/format marks (17 cases; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_formula_prefix_r215.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R215 CSV formula prefix regression failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R215 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_formula_prefix_r215.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R215 optimized CSV formula prefix regression failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R215 test FAILED" }
       - name: R216 reject nonnumeric minus and Unicode-prefix formulas (21 cases; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_negative_formula_r216.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R216 CSV formula custody regression failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R216 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_negative_formula_r216.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R216 optimized CSV formula custody regression failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R216 test FAILED" }
       - name: R217 reject hostile CSV row-item pair objects (17 cases; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_pair_shape_r217.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R217 CSV row-item custody regression failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R217 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_pair_shape_r217.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R217 optimized CSV row-item custody regression failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R217 test FAILED" }
       - name: R218 reject NFKC-compatible formula prefixes (20 cases; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_nfkc_prefix_r218.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R218 CSV compatibility formula custody failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R218 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_nfkc_prefix_r218.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R218 optimized CSV compatibility formula custody failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R218 test FAILED" }
       - name: R219 shared exporter/sanitizer integration (17 tests; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_safe_cell_nfkc_roundtrip_r219.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R219 compatibility-form export integration failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R219 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_safe_cell_nfkc_roundtrip_r219.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R219 optimized compatibility-form export integration failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R219 test FAILED" }
       - name: R220 native CSV cell custody (25 synthetic tests; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_native_cell_custody_r220.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R220 native CSV value custody failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R220 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_native_cell_custody_r220.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R220 optimized native CSV value custody failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R220 test FAILED" }
       - name: R221 native dict row custody (20 synthetic tests; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_native_dict_snapshot_r221.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R221 native dict row custody failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R221 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_native_dict_snapshot_r221.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R221 optimized native dict row custody failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R221 test FAILED" }
       - name: R222 UserDict native backing custody (30 synthetic tests; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_userdict_storage_r222.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R222 UserDict custody failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R222 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_userdict_storage_r222.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R222 optimized UserDict custody failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R222 test FAILED" }
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_userdict_custody_r222.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R222 CSV/UserDict integration failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R222 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_userdict_custody_r222.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R222 optimized CSV/UserDict integration failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R222 test FAILED" }
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_audit_subprocess_r205.py
-          if ($LASTEXITCODE -ne 0) { throw "R200 native-mode audit regression matrix failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R200 test FAILED" }
           python -OO products/desktop/scripts/safe_audit_subprocess_r205.py
-          if ($LASTEXITCODE -ne 0) { throw "R200 optimized audit regression matrix failed" }
+          if ($LASTEXITCODE -ne 0) { throw "R200 test FAILED" }
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)
         shell: pwsh
         run: |
@@ -2275,7 +2275,7 @@ jobs:
             } else {
               python -OO products/desktop/tests/test_windows_inventory_forensics_r101.py 2>$null
             }
-            if ($LASTEXITCODE -ne 0) { throw "R101 synthetic inventory verification FAILED ($mode)" }
+            if ($LASTEXITCODE -ne 0) { throw "R101 test FAILED" }
           }
           python products/desktop/scripts/diagnose_windows_inventory_r101.py
           if ($LASTEXITCODE -ne 0) { throw "R101 diagnostic execution unavailable" }
@@ -2284,7 +2284,7 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/diagnose_windows_toolchain_r104.py
-          if ($LASTEXITCODE -ne 0) { throw "R104 diagnostic unavailable" }
+          if ($LASTEXITCODE -ne 0) { throw "R104 test FAILED" }
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
         shell: pwsh
         run: |
@@ -2321,174 +2321,174 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_native_gui_probe_r105.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R105 synthetic native GUI validation FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R105 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_native_gui_probe_r105.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R105 optimized synthetic native GUI validation FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R105 test FAILED" }
       - name: Verify R106 source-owned keyboard contracts (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_native_keyboard_probe_r106.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R106 keyboard source contract FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R106 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_native_keyboard_probe_r106.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R106 optimized keyboard source contract FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R106 test FAILED" }
       - name: Verify R107 scaled-form source contracts (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_scroll_access_r107.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R107 local-first viewport regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R107 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_scroll_access_r107.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R107 optimized viewport regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R107 test FAILED" }
       - name: Verify R108 Tk accelerator and cancel safety (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_native_shortcut_events_r108.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R108 Tk accelerator regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R108 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_native_shortcut_events_r108.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R108 optimized Tk accelerator regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R108 test FAILED" }
       - name: Verify R109/R110 private Win11 reviewer-witness binding (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_methods_r110.py
-          if ($LASTEXITCODE -ne 0) { throw "R110 private acceptance source validation FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R110 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_methods_r110.py
-          if ($LASTEXITCODE -ne 0) { throw "R110 optimized private acceptance source validation FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R110 test FAILED" }
       - name: R127 synthetic Windows descriptor metadata parity diagnostic
         shell: pwsh
         run: |
           python products/desktop/scripts/diagnose_observation_parity_r127.py
-          if ($LASTEXITCODE -ne 0) { throw "R127 synthetic descriptor parity unavailable" }
+          if ($LASTEXITCODE -ne 0) { throw "R127 test FAILED" }
       - name: R122 private one-check Win11 witness writer (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r122.py
-          if ($LASTEXITCODE -ne 0) { throw "R122 private witness writer source regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R122 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r122.py
-          if ($LASTEXITCODE -ne 0) { throw "R122 optimized private witness writer regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R122 test FAILED" }
       - name: R123 read-only Win11 progress custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r123.py
-          if ($LASTEXITCODE -ne 0) { throw "R123 source progress custody regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R123 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r123.py
-          if ($LASTEXITCODE -ne 0) { throw "R123 optimized progress custody regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R123 test FAILED" }
       - name: R124 fail-closed reviewer witness inventory (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r124.py
-          if ($LASTEXITCODE -ne 0) { throw "R124 witness inventory regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R124 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r124.py
-          if ($LASTEXITCODE -ne 0) { throw "R124 optimized witness inventory regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R124 test FAILED" }
       - name: R125 witness and matrix file identity (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r125.py
-          if ($LASTEXITCODE -ne 0) { throw "R125 private witness identity regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R125 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r125.py
-          if ($LASTEXITCODE -ne 0) { throw "R125 optimized private witness identity regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R125 test FAILED" }
       - name: R126 distinct per-check capture-time provenance (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r126.py
-          if ($LASTEXITCODE -ne 0) { throw "R126 capture-time witness regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R126 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r126.py
-          if ($LASTEXITCODE -ne 0) { throw "R126 optimized capture-time witness regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R126 test FAILED" }
       - name: R127 private human observation file custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r127.py
-          if ($LASTEXITCODE -ne 0) { throw "R127 observation file custody regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R127 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r127.py
-          if ($LASTEXITCODE -ne 0) { throw "R127 optimized observation file custody regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R127 test FAILED" }
       - name: R128 unambiguous private Win11 testimony (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r128.py
-          if ($LASTEXITCODE -ne 0) { throw "R128 private witness display integrity regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R128 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r128.py
-          if ($LASTEXITCODE -ne 0) { throw "R128 optimized witness display integrity regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R128 test FAILED" }
       - name: R129 private Win11 evidence parent-path custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r129.py
-          if ($LASTEXITCODE -ne 0) { throw "R129 private parent-path custody regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R129 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r129.py
-          if ($LASTEXITCODE -ne 0) { throw "R129 optimized parent-path custody regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R129 test FAILED" }
       - name: R130 strict finite-only private R9 and witness JSON (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r130.py
-          if ($LASTEXITCODE -ne 0) { throw "R130 private finite-only evidence regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R130 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r130.py
-          if ($LASTEXITCODE -ne 0) { throw "R130 optimized finite-only evidence regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R130 test FAILED" }
       - name: R131 LedgerDiff explicit source-key mapping (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r131.py
-          if ($LASTEXITCODE -ne 0) { throw "R131 ledger key mapping regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R131 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r131.py
-          if ($LASTEXITCODE -ne 0) { throw "R131 optimized ledger key mapping regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R131 test FAILED" }
       - name: R132 LedgerDiff mapping native keyboard/scale regression (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r132.py
-          if ($LASTEXITCODE -ne 0) { throw "R132 ledger native accessibility regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R132 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r132.py
-          if ($LASTEXITCODE -ne 0) { throw "R132 optimized ledger native accessibility regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R132 test FAILED" }
       - name: R133 LedgerDiff high-DPI stacked layout regressions (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r133.py
-          if ($LASTEXITCODE -ne 0) { throw "R133 responsive layout regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R133 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r133.py
-          if ($LASTEXITCODE -ne 0) { throw "R133 optimized responsive layout regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R133 test FAILED" }
       - name: R134 Invoice Twin configurable review window (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r134.py
-          if ($LASTEXITCODE -ne 0) { throw "R134 invoice day-window regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R134 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r134.py
-          if ($LASTEXITCODE -ne 0) { throw "R134 optimized invoice day-window regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R134 test FAILED" }
       - name: R135 SpendMap category-specific spike evidence (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r135.py
-          if ($LASTEXITCODE -ne 0) { throw "R135 SpendMap category baseline regressions FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R135 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r135.py
-          if ($LASTEXITCODE -ne 0) { throw "R135 optimized SpendMap category baseline regressions FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R135 test FAILED" }
       - name: R136 Policy Delta physical-line change index (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r136.py
-          if ($LASTEXITCODE -ne 0) { throw "R136 Policy Delta index regressions FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R136 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r136.py
-          if ($LASTEXITCODE -ne 0) { throw "R136 optimized Policy Delta index regressions FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R136 test FAILED" }
       - name: R137 GrantAudit budget source-row and SHA custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r137.py
-          if ($LASTEXITCODE -ne 0) { throw "R137 GrantAudit budget custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R137 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r137.py
-          if ($LASTEXITCODE -ne 0) { throw "R137 optimized GrantAudit budget custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R137 test FAILED" }
       - name: R138 ProcureGuard source digest and offset line custody (normal and -OO)
         shell: pwsh
         run: |
@@ -2502,325 +2502,325 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r139.py
-          if ($LASTEXITCODE -ne 0) { throw "R139 spreadsheet formula guard FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R139 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r139.py
-          if ($LASTEXITCODE -ne 0) { throw "R139 optimized spreadsheet formula guard FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R139 test FAILED" }
       - name: R140 LedgerDiff independent amount-column mappings (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r140.py
-          if ($LASTEXITCODE -ne 0) { throw "R140 LedgerDiff amount mapping FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R140 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r140.py
-          if ($LASTEXITCODE -ne 0) { throw "R140 optimized LedgerDiff amount mapping FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R140 test FAILED" }
       - name: R141 SpendMap charge and credit offset evidence (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r141.py
-          if ($LASTEXITCODE -ne 0) { throw "R141 SpendMap credit offset FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R141 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r141.py
-          if ($LASTEXITCODE -ne 0) { throw "R141 optimized SpendMap credit offset FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R141 test FAILED" }
       - name: R142 Invoice Twin signed delta and date-gap evidence (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r142.py
-          if ($LASTEXITCODE -ne 0) { throw "R142 Invoice Twin evidence FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R142 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r142.py
-          if ($LASTEXITCODE -ne 0) { throw "R142 optimized Invoice Twin evidence FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R142 test FAILED" }
       - name: R143 local report replay and source-custody tests (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r143.py
-          if ($LASTEXITCODE -ne 0) { throw "R143 replay evidence FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R143 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r143.py
-          if ($LASTEXITCODE -ne 0) { throw "R143 optimized replay evidence FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R143 test FAILED" }
       - name: R144 private offline replay CLI parse gate (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r144.py
-          if ($LASTEXITCODE -ne 0) { throw "R144 private CLI parsing FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R144 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r144.py
-          if ($LASTEXITCODE -ne 0) { throw "R144 optimized private CLI parsing FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R144 test FAILED" }
       - name: R145 hash-bound private source snapshots (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r145.py
-          if ($LASTEXITCODE -ne 0) { throw "R145 private snapshot custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R145 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r145.py
-          if ($LASTEXITCODE -ne 0) { throw "R145 optimized private snapshot custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R145 test FAILED" }
       - name: R146 private Win11 reviewer CLI argument custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r146.py
-          if ($LASTEXITCODE -ne 0) { throw "R146 private reviewer CLI FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R146 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r146.py
-          if ($LASTEXITCODE -ne 0) { throw "R146 optimized reviewer CLI FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R146 test FAILED" }
       - name: R147 private replay CLI exact selection (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r147.py
-          if ($LASTEXITCODE -ne 0) { throw "R147 replay argument custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R147 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r147.py
-          if ($LASTEXITCODE -ne 0) { throw "R147 optimized replay argument custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R147 test FAILED" }
       - name: R148 LedgerDiff exact gross flow mismatches (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r148.py
-          if ($LASTEXITCODE -ne 0) { throw "R148 gross reconciliation FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R148 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r148.py
-          if ($LASTEXITCODE -ne 0) { throw "R148 optimized gross reconciliation FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R148 test FAILED" }
       - name: R149 Policy Delta explicit Unicode normalization evidence (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r149.py
-          if ($LASTEXITCODE -ne 0) { throw "R149 policy Unicode evidence FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R149 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r149.py
-          if ($LASTEXITCODE -ne 0) { throw "R149 optimized policy Unicode evidence FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R149 test FAILED" }
       - name: R150 Policy Delta compatibility-folding source evidence (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r150.py
-          if ($LASTEXITCODE -ne 0) { throw "R150 policy compatibility review FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R150 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r150.py
-          if ($LASTEXITCODE -ne 0) { throw "R150 optimized compatibility review FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R150 test FAILED" }
       - name: R151 Policy Delta per-hunk local compatibility review (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r151.py
-          if ($LASTEXITCODE -ne 0) { throw "R151 policy local compatibility review FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R151 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r151.py
-          if ($LASTEXITCODE -ne 0) { throw "R151 optimized policy local compatibility review FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R151 test FAILED" }
       - name: R152 SpendMap vendor-month gross offsets (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r152.py
-          if ($LASTEXITCODE -ne 0) { throw "R152 monthly gross review FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R152 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r152.py
-          if ($LASTEXITCODE -ne 0) { throw "R152 optimized monthly gross review FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R152 test FAILED" }
       - name: R153 SpendMap cross-category evidence custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r153.py
-          if ($LASTEXITCODE -ne 0) { throw "R153 monthly evidence custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R153 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r153.py
-          if ($LASTEXITCODE -ne 0) { throw "R153 optimized evidence custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R153 test FAILED" }
       - name: R154 SpendMap complete source-line evidence digest (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r154.py
-          if ($LASTEXITCODE -ne 0) { throw "R154 evidence digest FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R154 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r154.py
-          if ($LASTEXITCODE -ne 0) { throw "R154 optimized evidence digest FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R154 test FAILED" }
       - name: R155 SpendMap independent source membership verification (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r155.py
-          if ($LASTEXITCODE -ne 0) { throw "R155 membership verification FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R155 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r155.py
-          if ($LASTEXITCODE -ne 0) { throw "R155 optimized membership verification FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R155 test FAILED" }
       - name: R156 SpendMap independent exact-Decimal evidence recheck (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r156.py
-          if ($LASTEXITCODE -ne 0) { throw "R156 exact Decimal recheck FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R156 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r156.py
-          if ($LASTEXITCODE -ne 0) { throw "R156 optimized exact Decimal recheck FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R156 test FAILED" }
       - name: R157 SpendMap independent history/collision review evidence (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r157.py
-          if ($LASTEXITCODE -ne 0) { throw "R157 history review verification FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R157 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r157.py
-          if ($LASTEXITCODE -ne 0) { throw "R157 optimized history review verification FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R157 test FAILED" }
       - name: R158 SpendMap independent visible vendor labels (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r158.py
-          if ($LASTEXITCODE -ne 0) { throw "R158 source labels verification FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R158 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r158.py
-          if ($LASTEXITCODE -ne 0) { throw "R158 optimized source labels verification FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R158 test FAILED" }
       - name: R159 SpendMap native report schema and order (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r159.py
-          if ($LASTEXITCODE -ne 0) { throw "R159 native report verification FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R159 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r159.py
-          if ($LASTEXITCODE -ne 0) { throw "R159 optimized native report verification FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R159 test FAILED" }
       - name: R160 SpendMap source category display custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r160.py
-          if ($LASTEXITCODE -ne 0) { throw "R160 category custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R160 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r160.py
-          if ($LASTEXITCODE -ne 0) { throw "R160 optimized category custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R160 test FAILED" }
       - name: R161 native SpendMap byte custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r161.py
-          if ($LASTEXITCODE -ne 0) { throw "R161 native byte custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R161 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r161.py
-          if ($LASTEXITCODE -ne 0) { throw "R161 optimized native byte custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R161 test FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R111 Defender custody regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R111 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R111 optimized Defender custody regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R111 test FAILED" }
       - name: R112 installed Defender engine identity and version contracts (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_defender_engine_custody_r112.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R112 scanner identity regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R112 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_defender_engine_custody_r112.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R112 optimized scanner identity regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R112 test FAILED" }
       - name: R113 Defender history and exclusion observer (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_defender_environment_r113.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R113 Defender environment regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R113 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_defender_environment_r113.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R113 optimized Defender environment regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R113 test FAILED" }
       - name: R114 native System32 PowerShell anti-hijack contracts (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_trusted_powershell_r114.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R114 native PowerShell path regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R114 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_trusted_powershell_r114.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R114 optimized native PowerShell path regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R114 test FAILED" }
       - name: R115 Defender active-mode continuous checkpoint contracts (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_defender_active_health_r115.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R115 active-Defender checkpoint regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R115 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_defender_active_health_r115.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R115 optimized active-Defender checkpoint regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R115 test FAILED" }
       - name: R116 native Defender known-folder installation contract (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_trusted_defender_install_r116.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R116 native Defender installation regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R116 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_trusted_defender_install_r116.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R116 optimized native Defender installation regression FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R116 test FAILED" }
       - name: R117 sealed reviewer handoff adversarial crypto contracts (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_sealed_candidate_handoff_r117.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R117 offline handoff cryptographic regressions FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R117 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_sealed_candidate_handoff_r117.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R117 optimized handoff cryptographic regressions FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R117 test FAILED" }
       - name: R118 ephemeral six-EXE roundtrip orchestration regressions (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -m unittest discover -s products/desktop/tests -p 'test_native_sealed_roundtrip_r118.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R118 native roundtrip integration contracts FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R118 test FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_native_sealed_roundtrip_r118.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R118 optimized roundtrip integration contracts FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R118 test FAILED" }
       - name: R119 all-eight-entry sealed transfer tamper matrix (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/safe_unittest_r119.py
-          if ($LASTEXITCODE -ne 0) { throw "R119 focused synthetic 16-case matrix FAILED (normal)" }
+          if ($LASTEXITCODE -ne 0) { throw "R119 test FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r119.py
-          if ($LASTEXITCODE -ne 0) { throw "R119 focused synthetic 16-case matrix FAILED (optimized)" }
+          if ($LASTEXITCODE -ne 0) { throw "R119 test FAILED" }
       - name: R224 optional form keyboard access before packaging (16 cases, normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_optional_shortcuts_r224.py'
-          if ($LASTEXITCODE -ne 0) { throw "R224 keyboard optional controls FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R224 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_optional_shortcuts_r224.py'
-          if ($LASTEXITCODE -ne 0) { throw "R224 optimized keyboard optional controls FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R224 test FAILED" }
       - name: R225 LedgerDiff header keyboard prepackaging gate (17 methods; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_ledger_header_shortcuts_r225.py'
-          if ($LASTEXITCODE -ne 0) { throw "R225 LedgerDiff keyboard focus FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R225 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_ledger_header_shortcuts_r225.py'
-          if ($LASTEXITCODE -ne 0) { throw "R225 optimized LedgerDiff keyboard focus FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R225 test FAILED" }
       - name: R226 numeric-keypad input access prepackaging gate (11 methods; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_numeric_keypad_shortcuts_r226.py'
-          if ($LASTEXITCODE -ne 0) { throw "R226 keypad navigation FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R226 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_numeric_keypad_shortcuts_r226.py'
-          if ($LASTEXITCODE -ne 0) { throw "R226 optimized keypad navigation FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R226 test FAILED" }
       - name: R227 scoped wheel accessibility prepackaging gate (12 methods; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_wheel_access_r227.py'
-          if ($LASTEXITCODE -ne 0) { throw "R227 viewport wheel controls FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R227 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_wheel_access_r227.py'
-          if ($LASTEXITCODE -ne 0) { throw "R227 optimized viewport wheel controls FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R227 test FAILED" }
       - name: R228 Win32 precision-wheel input prepackaging gate (17 methods; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_precision_wheel_r228.py'
-          if ($LASTEXITCODE -ne 0) { throw "R228 precision-wheel input gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R228 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_precision_wheel_r228.py'
-          if ($LASTEXITCODE -ne 0) { throw "R228 optimized precision-wheel input gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R228 test FAILED" }
       - name: R229 Windows modifier-safe wheel prepackaging gate (21 methods; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_wheel_modifiers_r229.py'
-          if ($LASTEXITCODE -ne 0) { throw "R229 wheel modifier gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R229 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_wheel_modifiers_r229.py'
-          if ($LASTEXITCODE -ne 0) { throw "R229 optimized wheel modifier gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R229 test FAILED" }
       - name: R230 Windows precision-wheel boundary prepackaging gate (23 methods; normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_wheel_edge_guard_r230.py'
-          if ($LASTEXITCODE -ne 0) { throw "R230 wheel-edge gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R230 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_wheel_edge_guard_r230.py'
-          if ($LASTEXITCODE -ne 0) { throw "R230 optimized wheel-edge gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R230 test FAILED" }
       - name: R231 Windows text evidence prepackaging gate (28 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_r28.py'
-          if ($LASTEXITCODE -ne 0) { throw "R231 inherited atomic text gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R231 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_budget_r231.py'
-          if ($LASTEXITCODE -ne 0) { throw "R231 bounded atomic text gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R231 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_r28.py'
-          if ($LASTEXITCODE -ne 0) { throw "R231 optimized inherited text gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R231 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_budget_r231.py'
-          if ($LASTEXITCODE -ne 0) { throw "R231 optimized bounded text gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R231 test FAILED" }
       - name: R232 Windows private TXT staging prepackaging gate (15 methods per mode)
         shell: pwsh
         run: |
@@ -2834,137 +2834,137 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_io_privacy_r233.py'
-          if ($LASTEXITCODE -ne 0) { throw "R233 normal private TXT error redaction gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R233 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_io_privacy_r233.py'
-          if ($LASTEXITCODE -ne 0) { throw "R233 optimized private TXT error redaction gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R233 test FAILED" }
       - name: R234 Windows exact-length TXT evidence prepackaging gate (20 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_staged_length_r234.py'
-          if ($LASTEXITCODE -ne 0) { throw "R234 normal staged report custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R234 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_staged_length_r234.py'
-          if ($LASTEXITCODE -ne 0) { throw "R234 optimized staged report custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R234 test FAILED" }
       - name: R235 Windows byte-exact staged TXT evidence gate (17 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_bytes_r235.py'
-          if ($LASTEXITCODE -ne 0) { throw "R235 normal staged byte custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R235 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_bytes_r235.py'
-          if ($LASTEXITCODE -ne 0) { throw "R235 optimized staged byte custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R235 test FAILED" }
       - name: R236 Windows shared CSV staged byte integrity (18 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_stage_integrity_r236.py'
-          if ($LASTEXITCODE -ne 0) { throw "R236 normal staged CSV custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R236 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_stage_integrity_r236.py'
-          if ($LASTEXITCODE -ne 0) { throw "R236 optimized staged CSV custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R236 test FAILED" }
       - name: R237 Windows private CSV staging FD / redacted publication errors (14 tests per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_publish_guard_r237.py'
-          if ($LASTEXITCODE -ne 0) { throw "R237 normal CSV privacy custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R237 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_publish_guard_r237.py'
-          if ($LASTEXITCODE -ne 0) { throw "R237 optimized CSV privacy custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R237 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_publication_integration_r237.py'
-          if ($LASTEXITCODE -ne 0) { throw "R237 Windows normal CSV publisher integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R237 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_publication_integration_r237.py'
-          if ($LASTEXITCODE -ne 0) { throw "R237 Windows optimized CSV publisher integration FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R237 test FAILED" }
       - name: R452 native errno descriptor custody before Windows packaging
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_errno_descriptor_custody_r452.py'
-          if ($LASTEXITCODE -ne 0) { throw "R452 normal native errno custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R452 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_errno_descriptor_custody_r452.py'
-          if ($LASTEXITCODE -ne 0) { throw "R452 optimized native errno custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R452 test FAILED" }
       - name: R453 Windows bounded CSV serialization before packaging
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_serialization_preflight_r453.py'
-          if ($LASTEXITCODE -ne 0) { throw "R453 Windows normal CSV preflight FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R453 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_serialization_preflight_r453.py'
-          if ($LASTEXITCODE -ne 0) { throw "R453 Windows optimized CSV preflight FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R453 test FAILED" }
       - name: R454 Windows exact CSV dialect preflight and inherited boundary before packaging
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_exact_dialect_preflight_r454.py'
-          if ($LASTEXITCODE -ne 0) { throw "R454 Windows normal exact CSV preflight FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R454 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_exact_dialect_preflight_r454.py'
-          if ($LASTEXITCODE -ne 0) { throw "R454 Windows optimized exact CSV preflight FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R454 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_serialization_preflight_r453.py'
-          if ($LASTEXITCODE -ne 0) { throw "R453 inherited Windows normal CSV preflight FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R453 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_serialization_preflight_r453.py'
-          if ($LASTEXITCODE -ne 0) { throw "R453 inherited Windows optimized CSV preflight FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R453 test FAILED" }
       - name: R455 Windows CSV minus confusable and zero-copy Decimal guard (before packaging)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_negative_decimal_zero_copy_r455.py'
-          if ($LASTEXITCODE -ne 0) { throw "R455 Windows normal CSV minus guard FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R455 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_negative_decimal_zero_copy_r455.py'
-          if ($LASTEXITCODE -ne 0) { throw "R455 Windows optimized CSV minus guard FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R455 test FAILED" }
       - name: R456 Windows CSV safe_cell allocation and parity (pre-packaging)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_safe_cell_zero_copy_r456.py'
-          if ($LASTEXITCODE -ne 0) { throw "R456 Windows sanitizer standard-mode FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R456 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_safe_cell_zero_copy_r456.py'
-          if ($LASTEXITCODE -ne 0) { throw "R456 Windows sanitizer optimized-mode FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R456 test FAILED" }
       - name: R457 Windows incremental CSV render budget (pre-packaging; release HOLD)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_incremental_render_budget_r457.py'
-          if ($LASTEXITCODE -ne 0) { throw "R457 Windows normal CSV render-budget gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R457 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_incremental_render_budget_r457.py'
-          if ($LASTEXITCODE -ne 0) { throw "R457 Windows optimized CSV render-budget gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R457 test FAILED" }
       - name: R458 Windows bounded UTF-8 CSV witness (pre-packaging; release HOLD)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_csv_bounded_utf8_witness_r458.py'
-          if ($LASTEXITCODE -ne 0) { throw "R458 Windows normal CSV witness gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R458 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_csv_bounded_utf8_witness_r458.py'
-          if ($LASTEXITCODE -ne 0) { throw "R458 Windows optimized CSV witness gate FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R458 test FAILED" }
       - name: R463 Windows descriptor-verified fallback (32 tests; pre-packaging HOLD)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_offline_regression_gate_r459.py'
-          if ($LASTEXITCODE -ne 0) { throw "R459 Windows normal offline gate self-tests FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R459 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_offline_regression_gate_r459.py'
-          if ($LASTEXITCODE -ne 0) { throw "R459 Windows optimized offline gate self-tests FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R459 test FAILED" }
       - name: R460 Windows exact six-app smoke receipt (before packaging; release HOLD)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_offline_smoke_receipt_r460.py'
-          if ($LASTEXITCODE -ne 0) { throw "R460 Windows normal smoke receipt FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R460 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_offline_smoke_receipt_r460.py'
-          if ($LASTEXITCODE -ne 0) { throw "R460 Windows optimized smoke receipt FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R460 test FAILED" }
       - name: R461 Windows full six-app source and child digest binding (pre-packaging; HOLD)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_source_digest_binding_r461.py'
-          if ($LASTEXITCODE -ne 0) { throw "R461 Windows normal source digest binding FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R461 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_source_digest_binding_r461.py'
-          if ($LASTEXITCODE -ne 0) { throw "R461 Windows optimized source digest binding FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R461 test FAILED" }
       - name: R462 Windows strict duplicate-key source receipt checks (pre-packaging; HOLD)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_private_json_receipt_r462.py'
-          if ($LASTEXITCODE -ne 0) { throw "R462 Windows normal strict receipt test FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R462 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_private_json_receipt_r462.py'
-          if ($LASTEXITCODE -ne 0) { throw "R462 Windows optimized strict receipt test FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R462 test FAILED" }
       - name: R464 Windows offline fallback self-verification (16 module/modes and 12 launcher smokes; HOLD)
         shell: pwsh
         run: |
@@ -2975,75 +2975,75 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_pe_descriptor_custody_r238.py'
-          if ($LASTEXITCODE -ne 0) { throw "R238 Windows normal PE custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R238 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_pe_descriptor_custody_r238.py'
-          if ($LASTEXITCODE -ne 0) { throw "R238 Windows optimized PE custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R238 test FAILED" }
       - name: R239 Windows checksum/EXE descriptor custody before packaging (20 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_candidate_fd_custody_r239.py'
-          if ($LASTEXITCODE -ne 0) { throw "R239 normal candidate FD custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R239 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_candidate_fd_custody_r239.py'
-          if ($LASTEXITCODE -ne 0) { throw "R239 optimized candidate FD custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R239 test FAILED" }
       - name: R240 Windows PE stream privacy and FD custody before packaging (16 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_pe_stream_privacy_r240.py'
           python -W error -m unittest discover -s products/desktop/tests -p 'test_pe_private_chains_r373.py'
-          if ($LASTEXITCODE -ne 0) { throw "R240 normal PE stream privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R240 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_pe_stream_privacy_r240.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_pe_private_chains_r373.py'
-          if ($LASTEXITCODE -ne 0) { throw "R240 optimized PE stream privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R240 test FAILED" }
       - name: R241 Windows candidate EXE and manifest stream custody before packaging (18 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_candidate_stream_privacy_r241.py'
-          if ($LASTEXITCODE -ne 0) { throw "R241 normal candidate stream custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R241 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_candidate_stream_privacy_r241.py'
-          if ($LASTEXITCODE -ne 0) { throw "R241 optimized candidate stream custody FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R241 test FAILED" }
       - name: R374 Windows candidate-exception chain privacy (23 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_candidate_exception_chains_r374.py'
-          if ($LASTEXITCODE -ne 0) { throw "R374 Windows normal candidate privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R374 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_candidate_exception_chains_r374.py'
-          if ($LASTEXITCODE -ne 0) { throw "R374 Windows optimized candidate privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R374 test FAILED" }
       - name: R375 Windows premium registry SQLite bootstrap custody (12 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_registry_bootstrap_r375.py'
-          if ($LASTEXITCODE -ne 0) { throw "R375 Windows normal registry bootstrap FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R375 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_registry_bootstrap_r375.py'
-          if ($LASTEXITCODE -ne 0) { throw "R375 Windows optimized registry bootstrap FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R375 test FAILED" }
       - name: R376 Windows premium registry transaction rollback and redaction (14 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_registry_write_guard_r376.py'
-          if ($LASTEXITCODE -ne 0) { throw "R376 Windows normal registry transaction FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R376 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_registry_write_guard_r376.py'
-          if ($LASTEXITCODE -ne 0) { throw "R376 Windows optimized registry transaction FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R376 test FAILED" }
       - name: R377 Windows premium registry hardlink/privacy custody (14 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_registry_file_guard_r377.py'
-          if ($LASTEXITCODE -ne 0) { throw "R377 Windows normal registry file guard FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R377 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_registry_file_guard_r377.py'
-          if ($LASTEXITCODE -ne 0) { throw "R377 Windows optimized registry file guard FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R377 test FAILED" }
       - name: R380 Windows premium registry path identity custody (12 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_registry_path_identity_r380.py'
-          if ($LASTEXITCODE -ne 0) { throw "R380 Windows normal registry path identity FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R380 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_registry_path_identity_r380.py'
-          if ($LASTEXITCODE -ne 0) { throw "R380 Windows optimized registry path identity FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R380 test FAILED" }
       - name: R381 Windows operator signing-key FD custody and real encrypted Ed25519 (19 methods per mode)
         shell: pwsh
         run: |
@@ -3057,41 +3057,41 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_license_output_guard_r382.py'
-          if ($LASTEXITCODE -ne 0) { throw "R382 Windows normal issued-license output FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R382 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_license_output_guard_r382.py'
-          if ($LASTEXITCODE -ne 0) { throw "R382 Windows optimized issued-license output FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R382 test FAILED" }
       - name: R383 Windows premium client read error privacy (16 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_client_entitlement_privacy_r383.py'
-          if ($LASTEXITCODE -ne 0) { throw "R383 Windows normal premium client privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R383 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_client_entitlement_privacy_r383.py'
-          if ($LASTEXITCODE -ne 0) { throw "R383 Windows optimized premium client privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R383 test FAILED" }
       - name: R384 Windows entitlement payload-chain privacy (22 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_entitlement_payload_privacy_r384.py'
-          if ($LASTEXITCODE -ne 0) { throw "R384 Windows normal entitlement payload privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R384 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_entitlement_payload_privacy_r384.py'
-          if ($LASTEXITCODE -ne 0) { throw "R384 Windows optimized entitlement payload privacy FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R384 test FAILED" }
       - name: R378 Windows issued license fingerprint custody (18 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_issued_entitlement_guard_r378.py'
-          if ($LASTEXITCODE -ne 0) { throw "R378 Windows normal issued license fingerprint FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R378 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_issued_entitlement_guard_r378.py'
-          if ($LASTEXITCODE -ne 0) { throw "R378 Windows optimized issued license fingerprint FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R378 test FAILED" }
       - name: R379 Windows issued entitlement path identity custody (11 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_entitlement_path_identity_r379.py'
-          if ($LASTEXITCODE -ne 0) { throw "R379 Windows normal path identity FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R379 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_entitlement_path_identity_r379.py'
-          if ($LASTEXITCODE -ne 0) { throw "R379 Windows optimized path identity FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R379 test FAILED" }
       - name: R242 Windows checksum manifest staging custody before packaging (19 methods per mode)
         shell: pwsh
         run: |
@@ -3113,63 +3113,63 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_suite_capacity_r245.py'
-          if ($LASTEXITCODE -ne 0) { throw "R245 normal source capacity FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R245 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_suite_capacity_r245.py'
-          if ($LASTEXITCODE -ne 0) { throw "R245 optimized source capacity FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R245 test FAILED" }
       - name: R246 Windows premium review target custody (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_review_target_r246.py'
-          if ($LASTEXITCODE -ne 0) { throw "R246 normal premium review target FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R246 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_target_r246.py'
-          if ($LASTEXITCODE -ne 0) { throw "R246 optimized premium review target FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R246 test FAILED" }
       - name: R247 Windows premium review entitlement revocation (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_review_revocation_r247.py'
-          if ($LASTEXITCODE -ne 0) { throw "R247 normal premium entitlement revocation FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R247 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_revocation_r247.py'
-          if ($LASTEXITCODE -ne 0) { throw "R247 optimized premium entitlement revocation FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R247 test FAILED" }
       - name: R248 Windows premium entitlement proof (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_review_auth_proof_r248.py'
-          if ($LASTEXITCODE -ne 0) { throw "R248 normal premium proof FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R248 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_auth_proof_r248.py'
-          if ($LASTEXITCODE -ne 0) { throw "R248 optimized premium proof FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R248 test FAILED" }
       - name: R249 Windows premium evidence fault regressions (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_review_evidence_fault_r249.py'
-          if ($LASTEXITCODE -ne 0) { throw "R249 Windows source evidence normal FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R249 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_evidence_fault_r249.py'
-          if ($LASTEXITCODE -ne 0) { throw "R249 Windows source evidence optimized FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R249 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_review_ui_fault_wiring_r249.py'
-          if ($LASTEXITCODE -ne 0) { throw "R249 Windows UI evidence normal FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R249 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_ui_fault_wiring_r249.py'
-          if ($LASTEXITCODE -ne 0) { throw "R249 Windows UI evidence optimized FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R249 test FAILED" }
       - name: R250 Windows premium output custody and UI callbacks (normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_review_output_custody_r250.py'
-          if ($LASTEXITCODE -ne 0) { throw "R250 Windows output custody normal FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R250 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_output_custody_r250.py'
-          if ($LASTEXITCODE -ne 0) { throw "R250 Windows output custody optimized FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R250 test FAILED" }
           python -W error -m unittest discover -s products/desktop/tests -p 'test_review_ui_output_fault_r250.py'
-          if ($LASTEXITCODE -ne 0) { throw "R250 Windows output GUI normal FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R250 test FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_ui_output_fault_r250.py'
-          if ($LASTEXITCODE -ne 0) { throw "R250 Windows output GUI optimized FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R250 test FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/offline_source_gate.py
-          if ($LASTEXITCODE -ne 0) { throw "R57 complete source and engine smoke verification FAILED" }
+          if ($LASTEXITCODE -ne 0) { throw "R57 test FAILED" }
       - name: Install packaging tool
         run: python -m pip install "pyinstaller>=6.12,<7"
       - name: Build six standalone Windows executables
@@ -3178,26 +3178,26 @@ jobs:
           $custody = Join-Path $env:RUNNER_TEMP "fvs-six-build-inputs.json"
           $toolchain = Join-Path $env:RUNNER_TEMP "fvs-six-toolchain-inputs.json"
           python products/desktop/scripts/toolchain_guard.py capture $toolchain
-          if ($LASTEXITCODE -ne 0) { throw "R56 cannot pin packaging interpreter and installed dependencies" }
+          if ($LASTEXITCODE -ne 0) { throw "R56 test FAILED" }
           python products/desktop/scripts/build_input_guard.py capture $custody
-          if ($LASTEXITCODE -ne 0) { throw "R55 cannot pin six-app build inputs" }
+          if ($LASTEXITCODE -ne 0) { throw "R55 test FAILED" }
           $apps = @("LedgerDiffLite","InvoiceTwinScout","SpendMapLite","PolicyDeltaDesk","GrantAuditStudioPro","ProcureGuardStudioPro")
           foreach ($app in $apps) {
             python products/desktop/scripts/build_input_guard.py check $custody
-            if ($LASTEXITCODE -ne 0) { throw "R55 input changed before $app" }
+            if ($LASTEXITCODE -ne 0) { throw "R55 test FAILED" }
             python products/desktop/scripts/toolchain_guard.py check $toolchain
             if ($LASTEXITCODE -ne 0) { throw "R56 toolchain changed before $app" }
             python -I -m PyInstaller --noconfirm --clean --onefile --windowed --paths products/desktop --name $app --distpath dist --workpath "build/$app" --specpath build/specs "products/desktop/launchers/$app.py"
             if ($LASTEXITCODE -ne 0) { throw "PyInstaller failed for $app" }
             python products/desktop/scripts/build_input_guard.py check $custody
-            if ($LASTEXITCODE -ne 0) { throw "R55 input changed during $app" }
+            if ($LASTEXITCODE -ne 0) { throw "R55 test FAILED" }
             python products/desktop/scripts/toolchain_guard.py check $toolchain
             if ($LASTEXITCODE -ne 0) { throw "R56 toolchain changed during $app" }
           }
           python products/desktop/build_inventory.py dist
           if ($LASTEXITCODE -ne 0) { throw "R40 fail-closed candidate inventory build failed" }
           python products/desktop/scripts/build_input_guard.py check $custody
-          if ($LASTEXITCODE -ne 0) { throw "R55 source changed during inventory creation" }
+          if ($LASTEXITCODE -ne 0) { throw "R55 test FAILED" }
           python products/desktop/scripts/toolchain_guard.py check $toolchain
           if ($LASTEXITCODE -ne 0) { throw "R56 toolchain changed during inventory creation" }
       - name: R9 offline Windows x64 release-candidate gate (internal only)

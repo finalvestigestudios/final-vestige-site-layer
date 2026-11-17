@@ -37,3 +37,7 @@ jobs:
         run: |
           python -B -W error -m unittest discover -s products/desktop/tests -p test_candidate_identity_gate_r507.py
           python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_candidate_identity_gate_r507.py
+      - name: R508 restored workflow budget and fail-closed test-guard regression
+        run: |
+          python -B -W error -m unittest discover -s products/desktop/tests -p test_ci_step_compaction_r508.py
+          python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_ci_step_compaction_r508.py
