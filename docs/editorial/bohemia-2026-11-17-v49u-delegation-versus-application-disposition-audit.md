@@ -21,7 +21,7 @@
 - Source URLs in SVG metadata: both official LMA committee and board minute PDFs listed above.
 - Alt text: Board delegation approved while separately listed 107-acre application has no recorded full-board outcome; signed lease not shown.
 - Caption: Delegation to administer leases is confirmed, but no application-specific vote or executed lease is established by the reviewed minutes.
-- Source-control structure and byte readback should be independently confirmed after commit; isolated raster and actual 390px/1440px WordPress-theme QA still needed before any live staging.
+- **Independent readback completed November 17, 2026:** the committed SVG's Git blob SHA is `b834e998199f6440f9a708b19c6e1baaf7b4ad37`; the locally reconstructed bytes matched this exact blob SHA. The source-controlled graphic was rasterized at **390px, 540px and 680px** (CairoSVG) and the **390px render directly visually inspected**: no clipping, main values and labels legible at mobile width; small footer attribution needs accessible alt text and adjacent caption. This is **isolated original-image raster QA**, not authenticated 390px/1440px WordPress-theme QA, and the SVG is not inserted in WordPress. An external raw-GitHub HTTP fetch was DNS-blocked in the container; GitHub connector readback and matching blob-byte reconstruction supplied the equivalence check.
 
 ## Release blocker log
 
