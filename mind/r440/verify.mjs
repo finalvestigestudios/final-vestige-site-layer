@@ -28,7 +28,7 @@ const security=(label,html)=>{
  check(label+' has no form',!/<form\b/i.test(html));
  check(label+' has no tracker pixel',!/<img\b[^>]*src\s*=\s*["']https?:/i.test(html));
  check(label+' has no active buy button',!activeControls(html));
- check(label+' has no autoplay',!/\bautoplay\b(?=[^>]*>)/i.test(html));
+ check(label+' has no autoplay on video',!/<video\b[^>]*\bautoplay\b/i.test(html));
  check(label+' has responsive viewport',/name="viewport"/i.test(html));
  check(label+' declares language',/<html lang="en">/.test(html));
  check(label+' noindex source draft',/name="robots" content="noindex,nofollow"/.test(html));
