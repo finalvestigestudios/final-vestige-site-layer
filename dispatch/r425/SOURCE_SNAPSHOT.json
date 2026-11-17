@@ -1,0 +1,93 @@
+{
+  "schema": "fv-dispatch-r425-source-review-v1",
+  "captured_at": "2026-11-17T15:05:29Z",
+  "repo": "finalvestigestudios/final-vestige-site-layer",
+  "base_pr": 2873,
+  "base_sha": "4b78b9da14a38a25cd73f8cff950aa90e82b0aea",
+  "master_pr": 175,
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "qa_pr": 201,
+  "status": "HOLD_UNSENT",
+  "source_urls": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://finalvestige.com/dispatch/",
+    "https://finalvestige.com/focus/",
+    "https://finalvestige.com/editorial-standards/",
+    "https://jetpack.com/support/newsletter/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://jetpack.com/support/newsletter/customize-the-newsletter-experience/",
+    "https://affiliates.inspire3.com/",
+    "https://zen12.com/secret/",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://hypnosislive.com/faq",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business?wvideo=akzb57a5z3"
+  ],
+  "wp": {
+    "newsletter_enabled": true,
+    "can_send_capability": true,
+    "new_post_auto_email": false,
+    "content": "full",
+    "reply_to": "no-reply",
+    "subscriber_dashboard": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2
+    },
+    "distinct_eligible_inboxes": null,
+    "welcome_configured": true,
+    "welcome_received": false,
+    "native_preview_verified": false,
+    "postal_verified": false,
+    "unsubscribe_verified": false,
+    "last_five_notifications": "never_sent_opted_out"
+  },
+  "channels": {
+    "grok_primary_acquisition": true,
+    "existing_jetpack_only": true,
+    "manual_wp_new_post_send_design_not_approved": true
+  },
+  "commercial": {
+    "affiliate_account_approval_verified": false,
+    "merchant_email_channel_permission_verified": false,
+    "earning_link_verified": false,
+    "approved_live_warmup_guides_verified": false,
+    "checkout_terms_verified": false,
+    "paid_orders_verified": false
+  },
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "copy_hold": true
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "copy_hold": true
+    },
+    {
+      "number": 3,
+      "kind": "commercial",
+      "merchant_hold": true
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "copy_hold": true
+    },
+    {
+      "number": 5,
+      "kind": "commercial",
+      "merchant_hold": true
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "copy_hold": true
+    }
+  ],
+  "session_denominator_audited": false,
+  "net_per_1000": null,
+  "sends": 0
+}
