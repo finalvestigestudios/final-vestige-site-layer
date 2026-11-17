@@ -121,7 +121,11 @@ def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[i
             return proc.returncode, b"", True
         return proc.returncode, bytes(collected), False
     finally:
-        if proc.poll() is None or worker.is_alive():
+        # The direct test process may exit cleanly while a same-group child
+        # closed inherited pipes and keeps running. Tear down POSIX groups even
+        # on successful receipts; no source test may leave background work.
+        # Windows still has direct-child-only cleanup, not a tree guarantee.
+        if os.name == "posix" or proc.poll() is None or worker.is_alive():
             _terminate_test_family(proc)
         proc.wait()
         if worker.is_alive():
