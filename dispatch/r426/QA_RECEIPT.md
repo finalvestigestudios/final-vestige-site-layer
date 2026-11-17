@@ -11,3 +11,7 @@ Source-check results:
 - Issue 06: subject 53 chars; preheader 89; HTML links 3 (one editorial CTA plus evidence sources); email send HOLD.
 
 Critical unverified gates: named Inspire3 email permission, issue 03/05 approved live guide URLs, FV postal address, unsubscribe rendering, subscriber identity deduplication, actual received welcome and real native Jetpack preview. Value KPI remains not computable.
+
+## Independent final-GitHub source QA
+
+After writing, all 10 files were fetched from the actual R426 branch with their Git blob identities. Initial 29-predicate V8 static review found 28 passing and one **invalid QA predicate**: it counted the two clearly labeled Final Vestige evidence-source URLs in Issue 06 as extra operational CTAs. That was a test-definition defect, not a link defect. An independent stronger eight-check pass examined the exact first link as the editorial action, marked its styling distinctly, and confirmed every remaining link appears in labeled sources across Markdown and text. **8/8 corrected CTA/source checks passed.** No links were removed to silence the test. Text previews were separately corrected to contain an explicit HOLD_UNSENT marker before final verification. The committed offline Node test source has **not** been executed natively on the complete R426 GitHub tree; claims are limited to in-isolate exact-fetched static checks and prior native master Python results.
