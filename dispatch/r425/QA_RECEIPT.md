@@ -3,11 +3,11 @@
 - Original six issue master PR #175: exact current HEAD `d57ccdba3aee8f065e143e101c2945f4f3d01647`.
 - Independent mounted-source SHA check: all original six issues + manifest + test file match remote Git blob SHA; native `python -m unittest discover -s campaign-2026-mind/tests -p test_campaign.py -v` **6 passed / 0 failed**.
 - Authenticated WordPress Newsletter status `2026-11-17T15:05:27Z` and settings `2026-11-17T15:05:29Z`. No subscriber identity exposed. New-post automatic emails remain OFF and recent five posts `never_sent_opted_out`.
-- New R425 six source files fetched from the branch; **six real Git blob IDs established**:
+- New R425 six initial sources fetched from the branch; **six Git blob IDs established**, with snapshot post-QA correction noted below:
   - README_RELEASE_DECISION.md `f87a7e9f0d4abfa322292ca83a914bcc24a2ac53`
   - WORDPRESS_NATIVE_TRANSPORT_AND_CONSENT.md `0ca81c22b56bbb819efbd5af52debf66a1be65ba`
   - OFFER_TO_SETTLEMENT_ACCEPTANCE.md `a9fc59e442502c8da7eb366cec1d89e7ab0802b7`
-  - SOURCE_SNAPSHOT.json `aea87c64fe1fd9482fcc5775ccc65f0bf1f26337`
+  - SOURCE_SNAPSHOT.json `df079b48a2a553ade9a613e7ef9f4254dcd74aa2`
   - review_contract.cjs `bfa68bac726d8bf0bc116cd828804694136ddb06`
   - test_review_contract.cjs `4cf228b7a3ccb37b30ccf65659d3fdf3b103387a`
 - Source-authored precommit V8 checks: **12/12** passed.
@@ -18,3 +18,5 @@
 - Exact GITHUB PR head to be inserted in Issue #174 after PR creation; original #175/#201/parent #2873 remained unchanged.
 - **Not done:** native WordPress post/email preview, received email test, actual welcome receipt, qualifying commercial-channel license, issued affiliate link, legitimate postal address / unsubscribe witness, user-list inspection, revenue settlement.
 - **No side effects:** no WordPress draft/post/settings change, no email or test email, no subscriber contact/import, no merchant activation, no social posting, no expense, no merge.
+
+- **Post-QA correction:** snapshot field `sends:0` had risk of falsely implying lifetime sending history. Replaced with `last_five_post_notifications_sent:0` and `lifetime_send_total_verified:null`. This correction only changes an offline data snapshot, not site settings. Git blob `df079b48a2a553ade9a613e7ef9f4254dcd74aa2`.
