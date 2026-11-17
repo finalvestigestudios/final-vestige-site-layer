@@ -1,0 +1,528 @@
+{
+  "scope": "Final Vestige Mind & Perception only",
+  "version": "r433",
+  "checked": "2026-11-16",
+  "interpretation": "supported/seller_stated/unverified are not interchangeable; public seller pricing and payout marketing are not FV-specific contractual rights",
+  "sources": {
+    "s1": "https://www.nature.com/articles/35784",
+    "s2": "https://pubmed.ncbi.nlm.nih.gov/21738756/",
+    "s3": "https://online.ucpress.edu/collabra/article/6/1/22/113067/Demand-Characteristics-Confound-the-Rubber-Hand",
+    "s4": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2022.834492/full",
+    "s5": "https://www.nature.com/articles/s41598-024-78822-4",
+    "a1": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "a2": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "a3": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "a4": "https://finalvestige.com/focus/",
+    "m1": "https://inspire3.com/",
+    "m2": "https://zen12.com/",
+    "m3": "https://zen12.com/getstarted",
+    "m4": "https://hypnosislive.com/mental-skills/total-focus",
+    "m5": "https://brainwaveshots.com/focus-shot",
+    "m6": "https://affiliates.inspire3.com/",
+    "f1": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "f2": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "The original rubber-hand study appeared in Nature in 1998",
+      "type": "independent_science",
+      "status": "supported",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "id": "C02",
+      "claim": "The original report concerns vision, touch and proprioception",
+      "type": "independent_science",
+      "status": "supported",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "id": "C03",
+      "claim": "Every participant feels the rubber hand as their own",
+      "type": "independent_science",
+      "status": "not_supported",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "id": "C04",
+      "claim": "Proprioceptive drift equals conscious ownership",
+      "type": "independent_science",
+      "status": "contradicted_by_dissociation",
+      "source_ids": [
+        "s2"
+      ]
+    },
+    {
+      "id": "C05",
+      "claim": "Synchronous stimulation is part of the standard induction",
+      "type": "independent_science",
+      "status": "supported",
+      "source_ids": [
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "id": "C06",
+      "claim": "Expectancy is a contested explanation in this literature",
+      "type": "independent_science",
+      "status": "supported",
+      "source_ids": [
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "id": "C07",
+      "claim": "The 2020 critique establishes that every ownership report is fake",
+      "type": "independent_science",
+      "status": "not_supported",
+      "source_ids": [
+        "s3"
+      ]
+    },
+    {
+      "id": "C08",
+      "claim": "The 2022 reanalysis argues timing effects survive across hypnotisability levels",
+      "type": "independent_science",
+      "status": "supported_as_authors_argument",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "id": "C09",
+      "claim": "2024 work examined ownership, disownership and agency",
+      "type": "independent_science",
+      "status": "supported",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "id": "C10",
+      "claim": "The rubber hand proves a hypnosis MP3 can change focus",
+      "type": "commercial_efficacy",
+      "status": "not_supported",
+      "source_ids": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "id": "C11",
+      "claim": "Puységur's source archive documents historical witness and consent issues",
+      "type": "historical_archives",
+      "status": "supported",
+      "source_ids": [
+        "a1"
+      ]
+    },
+    {
+      "id": "C12",
+      "claim": "A notarized historical event validates magnetic fluid",
+      "type": "historical_archives",
+      "status": "not_supported",
+      "source_ids": [
+        "a1"
+      ]
+    },
+    {
+      "id": "C13",
+      "claim": "Final Vestige has a live free Focus Fieldbook pathway",
+      "type": "first_party_route",
+      "status": "supported",
+      "source_ids": [
+        "a4"
+      ]
+    },
+    {
+      "id": "C14",
+      "claim": "The published change-blindness story is an appropriate existing editorial link",
+      "type": "first_party_route",
+      "status": "supported",
+      "source_ids": [
+        "a2"
+      ]
+    },
+    {
+      "id": "C15",
+      "claim": "The published mesmerism investigation is an appropriate historical link",
+      "type": "first_party_route",
+      "status": "supported",
+      "source_ids": [
+        "a3"
+      ]
+    },
+    {
+      "id": "C16",
+      "claim": "Inspire3 publicly lists Zen12 among its brands",
+      "type": "vendor_description",
+      "status": "seller_stated",
+      "source_ids": [
+        "m1"
+      ]
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 publicly advertises a 12-level audio course",
+      "type": "vendor_description",
+      "status": "seller_stated",
+      "source_ids": [
+        "m2",
+        "m3"
+      ]
+    },
+    {
+      "id": "C18",
+      "claim": "The Zen12 full order page lists 48 MP3 files",
+      "type": "vendor_description",
+      "status": "seller_stated",
+      "source_ids": [
+        "m3"
+      ]
+    },
+    {
+      "id": "C19",
+      "claim": "Zen12 says one 12-minute audio session equals an hour of advanced meditation",
+      "type": "commercial_efficacy",
+      "status": "seller_claim_unsubstantiated",
+      "source_ids": [
+        "m2"
+      ]
+    },
+    {
+      "id": "C20",
+      "claim": "Zen12 audio independently treats anxiety or memory disorders",
+      "type": "commercial_efficacy",
+      "status": "not_supported",
+      "source_ids": [
+        "m2",
+        "f2"
+      ]
+    },
+    {
+      "id": "C21",
+      "claim": "Zen12's current public checkout is a binding referred FV checkout",
+      "type": "commerce",
+      "status": "unverified",
+      "source_ids": [
+        "m3"
+      ]
+    },
+    {
+      "id": "C22",
+      "claim": "Zen12 guarantees an FV-approved referral price or refund",
+      "type": "commerce",
+      "status": "unverified",
+      "source_ids": [
+        "m2",
+        "m3"
+      ]
+    },
+    {
+      "id": "C23",
+      "claim": "Total Focus's public page describes a 33-minute 47-MB recording",
+      "type": "vendor_description",
+      "status": "seller_stated",
+      "source_ids": [
+        "m4"
+      ]
+    },
+    {
+      "id": "C24",
+      "claim": "Total Focus independently proven to dramatically increase concentration",
+      "type": "commercial_efficacy",
+      "status": "not_supported",
+      "source_ids": [
+        "m4",
+        "f2"
+      ]
+    },
+    {
+      "id": "C25",
+      "claim": "Focus Shot lists 15/30 minute recordings and bonus files",
+      "type": "vendor_description",
+      "status": "seller_stated",
+      "source_ids": [
+        "m5"
+      ]
+    },
+    {
+      "id": "C26",
+      "claim": "Focus Shot brainwave claims prove guaranteed instant focus",
+      "type": "commercial_efficacy",
+      "status": "not_supported",
+      "source_ids": [
+        "m5",
+        "f2"
+      ]
+    },
+    {
+      "id": "C27",
+      "claim": "Inspire3's public affiliate portal is live",
+      "type": "commerce",
+      "status": "supported_public_portal_only",
+      "source_ids": [
+        "m6"
+      ]
+    },
+    {
+      "id": "C28",
+      "claim": "Final Vestige has named authenticated Inspire3 partner approval",
+      "type": "commerce",
+      "status": "not_authenticated",
+      "source_ids": [
+        "m6"
+      ]
+    },
+    {
+      "id": "C29",
+      "claim": "Final Vestige has an issued, permitted Zen12 earning URL",
+      "type": "commerce",
+      "status": "not_authenticated",
+      "source_ids": [
+        "m6"
+      ]
+    },
+    {
+      "id": "C30",
+      "claim": "Final Vestige may activate affiliate links based only on portal advertising",
+      "type": "commerce",
+      "status": "prohibited_without_permission",
+      "source_ids": [
+        "m6",
+        "f1"
+      ]
+    },
+    {
+      "id": "C31",
+      "claim": "Adjacent plain-language affiliate relationship disclosure is needed",
+      "type": "ftc",
+      "status": "supported",
+      "source_ids": [
+        "f1"
+      ]
+    },
+    {
+      "id": "C32",
+      "claim": "General research can validate a specific health-product promise",
+      "type": "ftc",
+      "status": "not_sufficient",
+      "source_ids": [
+        "f2"
+      ]
+    },
+    {
+      "id": "C33",
+      "claim": "A tracked outbound affiliate click proves a paid sale",
+      "type": "measurement",
+      "status": "false",
+      "source_ids": []
+    },
+    {
+      "id": "C34",
+      "claim": "No consent is needed to collect a user's address or email in attribution",
+      "type": "privacy",
+      "status": "prohibited",
+      "source_ids": []
+    },
+    {
+      "id": "C35",
+      "claim": "A/B film variant has been tested for actual paid conversion",
+      "type": "experiment",
+      "status": "not_tested",
+      "source_ids": []
+    },
+    {
+      "id": "C36",
+      "claim": "A currently payable, rights-cleared FV-owned Mind SKU was authenticated",
+      "type": "commerce",
+      "status": "not_authenticated",
+      "source_ids": []
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "gate": "named_affiliate_acceptance",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G02",
+      "gate": "allowed_zen12_sku",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G03",
+      "gate": "allowed_editorial_website_channel",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G04",
+      "gate": "allowed_social_channel",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G05",
+      "gate": "allowed_email_channel",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G06",
+      "gate": "approved_original_creatives",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G07",
+      "gate": "issued_earning_url",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G08",
+      "gate": "tracking_and_cookie_terms",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G09",
+      "gate": "referral_price_confirmed",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G10",
+      "gate": "checkout_mobile_verified",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G11",
+      "gate": "accurate_refund_terms",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G12",
+      "gate": "merchant_payment_proof",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G13",
+      "gate": "commission_and_fee_terms",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G14",
+      "gate": "refund_reversal_rules",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G15",
+      "gate": "actual_settlement_report",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G16",
+      "gate": "owned_fv_payable_sku",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G17",
+      "gate": "owned_fv_rights_manifest",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G18",
+      "gate": "owned_fv_fulfillment",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G19",
+      "gate": "owned_fv_refund_terms",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G20",
+      "gate": "approved_cta_copy",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G21",
+      "gate": "ftc_disclosure_visible",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G22",
+      "gate": "claim_to_source_complete",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G23",
+      "gate": "real_video_encoded",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G24",
+      "gate": "captions_and_transcript_tested",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G25",
+      "gate": "no_js_accessibility_tested",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G26",
+      "gate": "browser_cwv_tested",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G27",
+      "gate": "consent_safe_attribution_tested",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    },
+    {
+      "id": "G28",
+      "gate": "founder_release_approval",
+      "status": "HOLD",
+      "reason": "No independent acceptance/implementation/release proof in this sprint; source-level drafts do not satisfy live commercial gates"
+    }
+  ],
+  "commercial_activated": false,
+  "approved_earning_urls": [],
+  "settled_sales": [],
+  "privacy": "No PII, IP, fingerprint, email or invented attribution events recorded"
+}
