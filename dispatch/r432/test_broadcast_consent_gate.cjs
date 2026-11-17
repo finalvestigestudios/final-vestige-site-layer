@@ -7,11 +7,12 @@ const allShared=Object.fromEntries(REQUIRED_SHARED.map(k=>[k,true]));
 const offer = key=>({key,...Object.fromEntries(REQUIRED_COMMERCIAL.map(k=>[k,true]))});
 const pending=evaluate(snapshot,{},1);
 eq(pending.status,"HOLD_UNSENT");eq(pending.sendAuthorized,false);eq(pending.targeting,"BROADCAST_ONLY_NO_SUBSCRIBER_SEGMENTS");
-eq(pending.recipientCount,null);eq(pending.flags.zeroDirectEmailFollowersReported,true);has(pending.issues,"SUBSCRIBER_BUCKETS_NONADDITIVE");
-has(pending.issues,"NO_DIRECT_EMAIL_FOLLOWERS_REPORTED_NOT_ZERO_ELIGIBLE_PEOPLE_PROVEN");has(pending.issues,"ELIGIBLE_RECIPIENTS_UNVERIFIED");
+eq(pending.recipientCount,null);eq(pending.flags.zeroDirectEmailFollowersReported,true);has(pending.observations,"SUBSCRIBER_BUCKETS_NONADDITIVE");
+has(pending.observations,"NO_DIRECT_EMAIL_FOLLOWERS_REPORTED_NOT_ZERO_ELIGIBLE_PEOPLE_PROVEN");has(pending.issues,"ELIGIBLE_RECIPIENTS_UNVERIFIED");
 eq(pending.flags.welcomeConfiguredNotReceipt,true);eq(pending.flags.categoryTargetingOff,true);eq(ISSUE_KINDS.filter(x=>x==="editorial").length,4);eq(ISSUE_KINDS.filter(x=>x==="commercial").length,2);
 for(let i=1;i<=6;i++){let result=evaluate(snapshot,allShared,i, i===3?[offer("zen12")]:i===5?[offer("total_focus")]:[]);
-  eq(result.sendAuthorized,false);eq(result.status,"HOLD_UNSENT");has(result.issues,"SUBSCRIBER_BUCKETS_NONADDITIVE");}
+  eq(result.sendAuthorized,false);eq(result.status,"HUMAN_REVIEW_ONLY");has(result.observations,"SUBSCRIBER_BUCKETS_NONADDITIVE");}
+const providerVerified=evaluate(snapshot,allShared,1);eq(providerVerified.status,"HUMAN_REVIEW_ONLY");eq(providerVerified.sendAuthorized,false);
 const consistent={...snapshot,subscribers:{total:3,confirmed:3,unconfirmed:0},followers:{email:2,wpcom:1}};
 for(let i=1;i<=6;i++){const r=evaluate(consistent,allShared,i,i===3?[offer("zen12")]:i===5?[offer("total_focus")]:[]);eq(r.status,"HUMAN_REVIEW_ONLY");eq(r.sendAuthorized,false);eq(r.recipientCount,null);}
 const missing={...allShared,workingUnsubscribe:false};has(evaluate(consistent,missing,1).issues,"MISSING_workingUnsubscribe");
