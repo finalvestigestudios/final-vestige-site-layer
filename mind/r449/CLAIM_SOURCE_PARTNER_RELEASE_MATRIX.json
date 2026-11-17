@@ -1,0 +1,549 @@
+{
+  "version": "r449-2026-11-17",
+  "scope": "FV Mind & Perception only",
+  "editorial_status": "UNPUBLISHED_SOURCE_ONLY",
+  "commercial_status": "HARD_HOLD",
+  "source_checked_date": "2026-11-17",
+  "public_sources": [
+    {
+      "id": "gorilla",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/"
+    },
+    {
+      "id": "gorillaDOI",
+      "url": "https://doi.org/10.1177/0956797613479386"
+    },
+    {
+      "id": "classic",
+      "url": "https://doi.org/10.1068/p281059"
+    },
+    {
+      "id": "review2024",
+      "url": "https://doi.org/10.1186/s41235-024-00537-x"
+    },
+    {
+      "id": "puysegur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "inspire",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "zenAbout",
+      "url": "https://zen12.com/about"
+    },
+    {
+      "id": "zenCatalog",
+      "url": "https://zen12.com/"
+    },
+    {
+      "id": "zenOffer",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "affiliate",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "hypnosis",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "hypnosisFaq",
+      "url": "https://hypnosislive.com/faq"
+    },
+    {
+      "id": "focusShot",
+      "url": "https://brainwaveshots.com/focus-shot"
+    },
+    {
+      "id": "ftc",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "ftcHealth",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    }
+  ],
+  "claim_rows": [
+    {
+      "id": "G001",
+      "claim": "2013 study recruited 24 radiologists",
+      "status": "independent_supported",
+      "source_ids": [
+        "gorilla",
+        "gorillaDOI"
+      ],
+      "qualification": "Sample-specific"
+    },
+    {
+      "id": "G002",
+      "claim": "20 of 24 experts did not report the gorilla",
+      "status": "independent_supported",
+      "source_ids": [
+        "gorilla"
+      ],
+      "qualification": "83% applies only to task and sample"
+    },
+    {
+      "id": "G003",
+      "claim": "Gorilla illustration about 48 times size of average nodule",
+      "status": "independent_supported",
+      "source_ids": [
+        "gorilla"
+      ],
+      "qualification": "Image-size comparison, not medical finding"
+    },
+    {
+      "id": "G004",
+      "claim": "12 of the 20 missed observers fixated gorilla location",
+      "status": "independent_supported",
+      "source_ids": [
+        "gorilla"
+      ],
+      "qualification": "Fixation is not equivalent to conscious recognition"
+    },
+    {
+      "id": "G005",
+      "claim": "547 ms mean dwell for fixating-missed subgroup",
+      "status": "independent_supported",
+      "source_ids": [
+        "gorilla"
+      ],
+      "qualification": "A subgroup mean, not all 24"
+    },
+    {
+      "id": "G006",
+      "claim": "Experts' experimental nodule detection about 55%, novices about 12%",
+      "status": "independent_supported",
+      "source_ids": [
+        "gorilla"
+      ],
+      "qualification": "Not clinical diagnostic accuracy"
+    },
+    {
+      "id": "G007",
+      "claim": "No naive observers reported gorilla in comparison experiment",
+      "status": "independent_supported",
+      "source_ids": [
+        "gorilla"
+      ],
+      "qualification": "Study text elsewhere has a 24/25 naive observer denominator discrepancy; use 'none' without N in copy"
+    },
+    {
+      "id": "G008",
+      "claim": "Targeted explicit gorilla search achieved near-ceiling performance",
+      "status": "independent_supported",
+      "source_ids": [
+        "gorilla"
+      ],
+      "qualification": "Experiment 3 near 88%; not Zen12 research"
+    },
+    {
+      "id": "G009",
+      "claim": "1999 dynamic object inattentional blindness contingent on task",
+      "status": "independent_supported",
+      "source_ids": [
+        "classic"
+      ],
+      "qualification": "Publisher abstract only"
+    },
+    {
+      "id": "G010",
+      "claim": "2024 medical review says many errors cannot unambiguously be attributed to IB",
+      "status": "independent_supported",
+      "source_ids": [
+        "review2024"
+      ],
+      "qualification": "Mechanism must not be assumed"
+    },
+    {
+      "id": "G011",
+      "claim": "All doctors routinely miss 83% of clinical diagnoses",
+      "status": "rejected_no_evidence",
+      "source_ids": [
+        "gorilla",
+        "review2024"
+      ],
+      "qualification": "Never use"
+    },
+    {
+      "id": "G012",
+      "claim": "Eye fixation establishes fully conscious experience",
+      "status": "rejected_inference",
+      "source_ids": [
+        "gorilla"
+      ],
+      "qualification": "Never use"
+    },
+    {
+      "id": "G013",
+      "claim": "Puységur source archive includes notarial documents, failed cases and consent warnings",
+      "status": "site_archive_supported",
+      "source_ids": [
+        "puysegur"
+      ],
+      "qualification": "Historical events not validation of alleged magnetic mechanism"
+    },
+    {
+      "id": "G014",
+      "claim": "Fieldbook is free 52-page routine with existing Jetpack signup",
+      "status": "site_live_supported",
+      "source_ids": [
+        "focus"
+      ],
+      "qualification": "Do not claim provider-confirmed delivered leads"
+    },
+    {
+      "id": "Z001",
+      "claim": "Zen12 standard description uses 12-minute audio sessions",
+      "status": "seller_feature",
+      "source_ids": [
+        "zenAbout"
+      ],
+      "qualification": "No product-specific outcome proved"
+    },
+    {
+      "id": "Z002",
+      "claim": "Zen12 full course describes 12 levels and 4 styles",
+      "status": "seller_feature",
+      "source_ids": [
+        "zenAbout"
+      ],
+      "qualification": "Styles guided/music/white noise/nature"
+    },
+    {
+      "id": "Z003",
+      "claim": "Zen12 main catalog Premium describes 48 MP3s, Beginner/Advanced 24 each",
+      "status": "seller_feature",
+      "source_ids": [
+        "zenCatalog"
+      ],
+      "qualification": "Verify exact purchased SKU"
+    },
+    {
+      "id": "Z004",
+      "claim": "Zen12 main catalog describes a one-year money-back guarantee",
+      "status": "seller_policy_marketing",
+      "source_ids": [
+        "zenCatalog"
+      ],
+      "qualification": "Exact referred checkout terms unverified"
+    },
+    {
+      "id": "Z005",
+      "claim": "Zen12 secret promotional surface describes 48 MP3 full course",
+      "status": "seller_feature",
+      "source_ids": [
+        "zenOffer"
+      ],
+      "qualification": "Cannot assume eligibility or same offer conditions"
+    },
+    {
+      "id": "Z006",
+      "claim": "Zen12 twelve minutes equals an hour of meditation",
+      "status": "seller_unsubstantiated",
+      "source_ids": [
+        "zenAbout",
+        "zenCatalog"
+      ],
+      "qualification": "Do not repeat as established fact"
+    },
+    {
+      "id": "Z007",
+      "claim": "Zen12 guarantees immediate stress or medical relief",
+      "status": "seller_unsubstantiated",
+      "source_ids": [
+        "zenAbout"
+      ],
+      "qualification": "No independent product trial; do not echo"
+    },
+    {
+      "id": "Z008",
+      "claim": "Zen12 public checkout promotional prices/coupons are applicable FV referral terms",
+      "status": "unverified",
+      "source_ids": [
+        "zenCatalog",
+        "zenOffer"
+      ],
+      "qualification": "Offer surfaces differ; not for FV copy"
+    },
+    {
+      "id": "Z009",
+      "claim": "Final Vestige has named Inspire3 publisher acceptance and issued earning URL",
+      "status": "not_established",
+      "source_ids": [
+        "affiliate"
+      ],
+      "qualification": "Consumer newsletters and public signup do not establish account acceptance"
+    },
+    {
+      "id": "Z010",
+      "claim": "Inspire3 public partner page exists",
+      "status": "seller_portal_supported",
+      "source_ids": [
+        "affiliate"
+      ],
+      "qualification": "General posted payout statements not account-specific"
+    },
+    {
+      "id": "H001",
+      "claim": "Hypnosis Live Total Focus official page lists 33 min / 47 MB",
+      "status": "seller_feature",
+      "source_ids": [
+        "hypnosis"
+      ],
+      "qualification": "Not an efficacy finding"
+    },
+    {
+      "id": "H002",
+      "claim": "Hypnosis Live FAQ says 14-day refund and maximum five sessions per year",
+      "status": "seller_policy_marketing",
+      "source_ids": [
+        "hypnosisFaq"
+      ],
+      "qualification": "Applies to site FAQ; referred conditions unverified"
+    },
+    {
+      "id": "H003",
+      "claim": "Total Focus produces 100% concentration, reprograms brain",
+      "status": "seller_unsubstantiated",
+      "source_ids": [
+        "hypnosis"
+      ],
+      "qualification": "Never inherit"
+    },
+    {
+      "id": "B001",
+      "claim": "Brainwave Shots Focus Shot lists 15-min and 30-min versions",
+      "status": "seller_feature",
+      "source_ids": [
+        "focusShot"
+      ],
+      "qualification": "Brand specific"
+    },
+    {
+      "id": "B002",
+      "claim": "Brainwave Shots Focus Shot makes focus last 4 hours to rest of day",
+      "status": "seller_unsubstantiated",
+      "source_ids": [
+        "focusShot"
+      ],
+      "qualification": "No product-specific substantiation independently established"
+    },
+    {
+      "id": "F001",
+      "claim": "FTC expects clear conspicuous material connection disclosures",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "ftc"
+      ],
+      "qualification": "Place near individualized recommendation, not only footer"
+    },
+    {
+      "id": "F002",
+      "claim": "FTC health-benefit claims require adequate competent reliable science",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "ftcHealth"
+      ],
+      "qualification": "Consider implied outcomes, not just literal words"
+    }
+  ],
+  "claim_count": 31,
+  "release_gates": [
+    {
+      "id": "GATE_01",
+      "requirement": "Named FV publisher approval",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_02",
+      "requirement": "Affiliate account identity matches publisher",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_03",
+      "requirement": "Zen12 approved SKU",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_04",
+      "requirement": "Partner permits website editorial review links",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_05",
+      "requirement": "Partner permits email promotion separately",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_06",
+      "requirement": "Partner permits creator social attribution",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_07",
+      "requirement": "Issued account-specific tracking URL",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_08",
+      "requirement": "Link parameter and redirect terms confirmed",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_09",
+      "requirement": "Exact referred checkout resolved",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_10",
+      "requirement": "Checkout total and taxes captured at launch",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_11",
+      "requirement": "Exact purchased contents verified",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_12",
+      "requirement": "Returns/refunds policy at referred checkout",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_13",
+      "requirement": "Commission eligibility terms verified",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_14",
+      "requirement": "Commission reversal/refund rules",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_15",
+      "requirement": "Payment and settlement schedule authenticated",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_16",
+      "requirement": "Seller disclosure creative approved if required",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_17",
+      "requirement": "FTC adjacent text understandable on mobile",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_18",
+      "requirement": "No unsupported efficacy claims",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_19",
+      "requirement": "No invented prior product use",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_20",
+      "requirement": "No automatic redirect/link cloaking",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_21",
+      "requirement": "WCAG keyboard and screen reader review",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_22",
+      "requirement": "360/390/768/1440 real-browser review",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_23",
+      "requirement": "Performance/LCP/mobile video approval",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_24",
+      "requirement": "Original film encoded, captioned and playable",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_25",
+      "requirement": "WordPress sanitized draft import independently approved",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_26",
+      "requirement": "Site QA independent signoff",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_27",
+      "requirement": "Founder editorial and commercial release approval",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    },
+    {
+      "id": "GATE_28",
+      "requirement": "Merchant paid transaction/refunds/fees reconciled",
+      "passed": false,
+      "evidence": "NOT VERIFIED / NOT APPROVED"
+    }
+  ],
+  "release_gate_count": 28,
+  "release_gate_passed": 0,
+  "partner_email_review": {
+    "queries": "Targeted connected inbox searches 2026-11-17 for Zen12 approval/account/tracking and Inspire3 affiliate terms; no named FV acceptance seen",
+    "limitation": "Absence in searched mail does not prove absence in external affiliate portal or unknown inboxes",
+    "accepted": false
+  },
+  "owned_product_fallback": {
+    "paid_sku_verified": false,
+    "why": "Existing /focus/ is free; no live, rights-cleared, fulfilled paid FV Mind SKU and terms authenticated in this sprint",
+    "next_owner": "Founder/Commerce and Claude verify actual product/payment ledger"
+  },
+  "offer_surface_warning": "Main / catalog and /secret/ promotional funnels are different. No price, coupon, or refund duration may be assumed for an unissued referral link.",
+  "editorial_monetization_separation": "Research conclusions may not be changed by offer performance, and product review must remain accessible without signup.",
+  "consent_and_privacy": "No embedded trackers, no new scripts, no PII. Events in design contract only.",
+  "no_paid_offer": true
+}
