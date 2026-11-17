@@ -30,4 +30,4 @@ Mind must privately establish named SKU-specific email permission and a real ind
 
 **Non-actions:** No new posts, publications, emails, test sends, subscriber contacts/imports, WordPress settings or page writes, affiliate activation, social queue edits, paid service, branch merge or spend.
 
-**Source paths in this PR:** `INBOX_PROMISE_CONSENT_REVENUE_AUDIT.md`, `CONSENT_COPY_AND_FOUNDER_ACCEPTANCE.md`, `SOURCE_OF_TRUTH_HARD_HOLD_LEDGER.json`, `QA_NO_SEND_GATE.cjs`. This QA receipt was authored after the exact-remote V8 test and must be re-fetched after the last commit for source-integrity verification.
+**Source paths in this PR:** `INBOX_PROMISE_CONSENT_REVENUE_AUDIT.md`, `CONSENT_COPY_AND_FOUNDER_ACCEPTANCE.md`, `SOURCE_OF_TRUTH_HARD_HOLD_LEDGER.json`, `QA_NO_SEND_GATE.cjs`, `PUBLISHED_POLICY_POSTAL_SURFACE_REVIEW.md`, and this receipt. Public policy/contact pages 15, 14, 1342, and 235 were also inspected read-only: no FV physical postal address was identified in their visible prose; that **does not prove** the Jetpack email template lacks an address. This QA receipt was updated after that supplemental review and requires exact final GitHub-source re-fetch.
