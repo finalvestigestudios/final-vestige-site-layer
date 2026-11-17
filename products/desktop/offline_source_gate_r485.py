@@ -9,6 +9,7 @@ import json
 import os
 from pathlib import Path
 import re
+import signal
 import subprocess
 import sys
 import threading
@@ -42,18 +43,41 @@ def _child_env(desktop: Path) -> dict[str, str]:
     return env
 
 
+def _terminate_test_family(proc: subprocess.Popen[bytes]) -> None:
+    """Best-effort child-tree teardown; POSIX tests run in their own session.
+
+    Windows' direct-child fallback does not guarantee descendant termination.
+    Neither mode is a sandbox for arbitrary or detached test processes.
+    """
+    if os.name == "posix":
+        try:
+            os.killpg(proc.pid, signal.SIGKILL)
+            return
+        except OSError:
+            pass
+    try:
+        proc.kill()
+    except OSError:
+        pass  # Already gone. Do not expose a platform error or private path.
+
+
 def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[int, bytes, bool]:
     """Drain child stdout with a 1 MiB ceiling *while it runs*, on Windows or POSIX.
 
     A dedicated reader avoids PIPE deadlocks and never writes private exceptions to
     disk or the operator console. Above the cap the child is killed and its output
-    discarded. This is not a sandbox; trusted test code may spawn descendants.
+    discarded. POSIX children share a new process group so an inherited pipe
+    cannot strand a grandchild after a failed check. Not a sandbox; detached
+    descendants and Windows grandchildren are outside this guarantee.
     """
     collected = bytearray()
     overflow = threading.Event()
     read_error = threading.Event()
-    proc = subprocess.Popen(cmd, cwd=desktop.parent.parent, env=_child_env(desktop),
-                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    proc = subprocess.Popen(
+        cmd, cwd=desktop.parent.parent, env=_child_env(desktop),
+        stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT, start_new_session=(os.name == "posix"),
+    )
     assert proc.stdout is not None
     stream = proc.stdout
 
@@ -65,18 +89,12 @@ def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[i
                     break
                 if len(collected) + len(chunk) > _MAX_EVIDENCE_BYTES:
                     overflow.set()
-                    try:
-                        proc.kill()
-                    except OSError:
-                        pass  # Child may already have exited; still reject the log.
+                    _terminate_test_family(proc)
                     break
                 collected.extend(chunk)
         except (OSError, ValueError):
             read_error.set()
-            try:
-                proc.kill()
-            except OSError:
-                pass
+            _terminate_test_family(proc)
 
     worker = threading.Thread(target=read_child, name="fvs-source-log-drain", daemon=True)
     timed_out = False
@@ -86,10 +104,16 @@ def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[i
             proc.wait(timeout=timeout)
         except subprocess.TimeoutExpired:
             timed_out = True
-            proc.kill()
+            _terminate_test_family(proc)
             proc.wait()
         worker.join(timeout=2)
-        if worker.is_alive() or read_error.is_set():
+        if worker.is_alive():
+            # A direct child can exit while a grandchild holds its stdout.
+            # Closing the inherited pipe requires tearing down the group.
+            _terminate_test_family(proc)
+            worker.join(timeout=2)
+            raise OSError("Source evidence stream unavailable")
+        if read_error.is_set():
             raise OSError("Source evidence stream unavailable")
         if timed_out:
             raise subprocess.TimeoutExpired(cmd, timeout)
@@ -97,11 +121,12 @@ def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[i
             return proc.returncode, b"", True
         return proc.returncode, bytes(collected), False
     finally:
-        if proc.poll() is None:
-            proc.kill()
+        if proc.poll() is None or worker.is_alive():
+            _terminate_test_family(proc)
         proc.wait()
-        # Only close a stream that the reader has finished using. A pipe held
-        # open by descendants yields BLOCKED, not an unbounded parent hang.
+        if worker.is_alive():
+            worker.join(timeout=2)
+        # Never close a stream while its reader may still be using it.
         if not worker.is_alive():
             stream.close()
 
