@@ -31,7 +31,7 @@ ok(!/autoplay/i.test(html.replace(/no auto-play/gi,'')),name+': no autoplay tag'
 ok(!/https?:\/\/(?:zen12|inspire3|hypnosislive|brainwaveshots)\.com[^"\s]*"/i.test(html),name+': no merchant links or scripts');
 ok(!/href="(?!https:\/\/finalvestige\.com\/|#)[^"]+"/i.test(html),name+': first-party links only');
 ok(/focus\//.test(html),name+': free resource path');
-ok(!/<img\\b[^>]*(?:width|height)=['\"]1['\"]|gtag\\s*\\(|analytics\\.js|googletagmanager/i.test(html),name+': no tracking implementation');
+ok(!/<img\b[^>]*(?:width|height)=['\"]1['\"]|gtag\s*\(|analytics\.js|googletagmanager/i.test(html),name+': no tracking implementation');
 ok(/:focus-visible/.test(html),name+': visible keyboard focus style');
 ok(/max-width:650px/.test(html),name+': narrow viewport CSS');
 }
