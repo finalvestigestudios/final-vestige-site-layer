@@ -58,6 +58,9 @@ def verify_certificate_table(stream, optional: bytes, *, file_size: int) -> None
     header, tail and padding reads on the held descriptor.
     R503 requires a native post-read descriptor position to prove each claimed
     header, tail or padding read advanced by exactly the expected byte count.
+    R504 requires a present certificate table to terminate at exact file EOF,
+    rejecting appended bytes outside the declared security directory. Earlier
+    PyInstaller overlay bytes remain permitted before the certificate table.
     """
     if len(optional) < 112:
         raise PECertificateError("PE certificate table rejected")
@@ -69,8 +72,10 @@ def verify_certificate_table(stream, optional: bytes, *, file_size: int) -> None
     start, size = struct.unpack_from("<II", optional, 112 + 4 * 8)
     if start == 0 and size == 0:
         return
+    # Release policy: certificates must occupy the final bytes of the candidate.
+    # This is intentionally stricter than basic PE framing, not signature trust.
     if (start == 0 or size == 0 or start % 8 or size % 8
-            or size > MAX_CERTIFICATE_TABLE_BYTES or start + size > file_size):
+            or size > MAX_CERTIFICATE_TABLE_BYTES or start + size != file_size):
         raise PECertificateError("PE certificate table rejected")
     cursor, end, records = start, start + size, 0
     while cursor < end:
