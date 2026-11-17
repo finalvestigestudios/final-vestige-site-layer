@@ -21,7 +21,9 @@ def main():
   b=(ROOT/path).read_bytes(); check(hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()==sha,'pin '+path)
  code=f"define('ABSPATH','/'); require '{HERE/'staging-claim-bridge.php'}';"
  check(php(code+' echo fv_r433_parent_verified()?"OK":"BAD";')=='OK','parent custody')
+ check(php(code+' echo fv_r433_load_parent()?"OK":"BAD";')=='OK','seven-dependency gate')
  check(php(code+' echo fv_r433_allowed()?"BAD":"DENIED";')=='DENIED','deny activation by default')
+ check(php(code+' function fv_r432_render(){return "UNTRUSTED";} echo fv_r433_load_parent()?"BAD":"DENIED";')=='DENIED','reject unknown preloaded implementation')
  check(php(code+' echo fv_r433_shortcode();').count('Read the free Apollo 1 investigation')==1,'default fallback')
  allowed="function wp_get_environment_type(){return 'staging';}function is_singular(){return true;}function get_queried_object_id(){return 99;}"
  active="define('FV_R433_ENABLED',true);define('FV_R433_STAGING_PAGE_ID',99);"
