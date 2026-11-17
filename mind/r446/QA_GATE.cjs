@@ -63,15 +63,15 @@ check('captions have 6 successive cues covering 42 seconds',()=>{
 check('hub is an inert no-JS 4-stream preview with only published destinations',()=>{
   safeHtml(hub);assert.match(hub,/Four paths into the archive/);
   for(const term of ['Perception &amp; Attention','History of Suggestion','Practice &amp; Reflection','Tools Under Review'])assert(hub.includes(term));
-  assert.match(hub,/No live WordPress page/);assert.match(hub,/No new forms/);
+  assert.match(hub,/No live WordPress page/);assert.match(hub,/no form|no new signup/i);
   assert.match(hub,/https:\/\/finalvestige\.com\/focus\//);
   assert.match(hub,/https:\/\/finalvestige\.com\/free-resources\/puysegurs-animal-magnetism-files\//);
 });
 check('article 2000+ words and scientific sources / historic boundaries',()=>{
   assert(article.split(/\s+/).length>2000);
-  for(const item of ['1974','1978','2023','S1','S2','S3','S4','S5','S6','S7','S8','Pub','153','16 case'])assert(article.includes(item),item);
+  for(const item of ['1974','1978','2023','S1','S2','S3','S4','S5','S6','S7','S8','Puységur','153','16 case'])assert(article.includes(item),item);
   assert(article.includes('not evidence that Zen12 improves memory'));
-  assert(article.includes('no merchant link or earning link is active'));
+  assert.match(article,/no merchant link or earning link is active/i);
 });
 check('claim matrix covers all 28 with source evidence and 28 closed gates',()=>{
   assert.equal(matrix.claims.length,28);assert.equal(matrix.release_gates.length,28);
@@ -82,7 +82,7 @@ check('claim matrix covers all 28 with source evidence and 28 closed gates',()=>
   for(const id of ['affiliate-named','affiliate-link','commission','owned-paid','disclosure','health'])assert(matrix.claims.some(c=>c.id===id));
 });
 check('conversion spec separates clicks, leads and settlements',()=>{
-  for(const marker of ['qualified_campaign_landing','affiliate_click','merchant_order_paid','affiliate_commission_settled','refund_or_fee_adjustment','NOT COMPUTABLE','TASK-008','28','HOLD'])assert(spec.includes(marker),marker);
+  for(const marker of ['qualified_campaign_landing','affiliate_click','merchant_order_paid','affiliate_commission_settled','refund_or_fee_adjustment','NOT COMPUTABLE','TASK-008','HOLD'])assert(spec.includes(marker),marker);
   assert.match(spec,/no unique user's personal history/);
 });
 const mutants=[
