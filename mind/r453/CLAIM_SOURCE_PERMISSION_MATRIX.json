@@ -1,0 +1,468 @@
+{
+  "schema": "fv-mind-r453-claims-and-permissions-1",
+  "created_on": "2026-11-17",
+  "scope": "unpublished source-controlled review; no live affiliation or offer activation",
+  "source_urls": {
+    "schooler1990": "https://pubmed.ncbi.nlm.nih.gov/2295225/",
+    "meta2001": "https://doi.org/10.1002/acp.728",
+    "replication2014": "https://pubmed.ncbi.nlm.nih.gov/26186758/",
+    "features2014": "https://doi.org/10.2466/28.22.CP.3.21",
+    "mechanism": "https://doi.org/10.1111/lcrp.70013",
+    "binaural": "https://doi.org/10.1371/journal.pone.0286023",
+    "zen12Catalog": "https://zen12.com/",
+    "zen12About": "https://zen12.com/about",
+    "zen12Promo": "https://zen12.com/secret/",
+    "inspireCatalog": "https://inspire3.com/",
+    "totalFocus": "https://hypnosislive.com/mental-skills/total-focus",
+    "focusShot": "https://brainwaveshots.com/focus-shot",
+    "FTCendorse": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "FTChealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "focus": "https://finalvestige.com/focus/",
+    "dispatch": "https://finalvestige.com/dispatch/",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/"
+  },
+  "claims": [
+    {
+      "id": "S01",
+      "claim": "Original 1990 experimental series observed impaired recognition after some verbal face descriptions",
+      "status": "independent-primary",
+      "evidence": [
+        "schooler1990"
+      ],
+      "decision": "Use only with controlled-task context"
+    },
+    {
+      "id": "S02",
+      "claim": "Verbal description always impairs face recognition",
+      "status": "not-supported",
+      "evidence": [
+        "schooler1990",
+        "meta2001",
+        "features2014"
+      ],
+      "decision": "Reject absolute"
+    },
+    {
+      "id": "S03",
+      "claim": "2001 meta analysis: 29 comparisons, N=2018, small negative effect Fisher Zr -0.12",
+      "status": "independent-meta",
+      "evidence": [
+        "meta2001"
+      ],
+      "decision": "Use as reported, note moderators and heterogeneity"
+    },
+    {
+      "id": "S04",
+      "claim": "2014 preregistered replication: 4% immediate and 16% delayed reductions in robber selection",
+      "status": "independent-replication",
+      "evidence": [
+        "replication2014"
+      ],
+      "decision": "State specific timing; not real-case error probabilities"
+    },
+    {
+      "id": "S05",
+      "claim": "Descriptions of eyes/mouth led to no significant overshadowing in either tested 2014 study",
+      "status": "independent-primary",
+      "evidence": [
+        "features2014"
+      ],
+      "decision": "Do not extrapolate to all lineups"
+    },
+    {
+      "id": "S06",
+      "claim": "Later model suggests changes in culprit-presence detection and guessing-based selection",
+      "status": "independent-primary",
+      "evidence": [
+        "mechanism"
+      ],
+      "decision": "Model-based inference only"
+    },
+    {
+      "id": "S07",
+      "claim": "Puységur archival patient testimony establishes animal magnetism mechanism",
+      "status": "not-supported",
+      "evidence": [
+        "puysegur"
+      ],
+      "decision": "Historical record of assertions is not mechanism validation"
+    },
+    {
+      "id": "S08",
+      "claim": "Zen12 publicly describes 12-minute sessions, a twelve-level system and four listening styles",
+      "status": "seller-feature",
+      "evidence": [
+        "zen12Catalog",
+        "zen12About"
+      ],
+      "decision": "Attribute to seller, exact SKU verify"
+    },
+    {
+      "id": "S09",
+      "claim": "Zen12 public catalog Beginner/Premium/Advanced descriptions identify different level sets",
+      "status": "seller-feature",
+      "evidence": [
+        "zen12Catalog"
+      ],
+      "decision": "Describe general differences; no referred-SKU inference"
+    },
+    {
+      "id": "S10",
+      "claim": "Separate Zen12 /secret promotional surface advertises full course and bundle",
+      "status": "seller-promotion",
+      "evidence": [
+        "zen12Promo"
+      ],
+      "decision": "Do not assume same checkout/SKU or price"
+    },
+    {
+      "id": "S11",
+      "claim": "12 minutes of Zen12 has same measured outcome as one hour of meditation",
+      "status": "unsubstantiated-seller-claim",
+      "evidence": [
+        "zen12Catalog",
+        "zen12About",
+        "binaural"
+      ],
+      "decision": "Exclude from positive copy"
+    },
+    {
+      "id": "S12",
+      "claim": "Zen12 proves automatic brainwave entrainment for all listeners",
+      "status": "unsubstantiated-seller-claim",
+      "evidence": [
+        "zen12About",
+        "binaural"
+      ],
+      "decision": "Exclude"
+    },
+    {
+      "id": "S13",
+      "claim": "2023 review of 14 binaural beat EEG studies found inconsistent outcomes, high methodological heterogeneity",
+      "status": "independent-systematic-review",
+      "evidence": [
+        "binaural"
+      ],
+      "decision": "Literature not retail Zen12 trial"
+    },
+    {
+      "id": "S14",
+      "claim": "Zen12 public catalog advertises one-year money-back",
+      "status": "seller-policy-advertisement",
+      "evidence": [
+        "zen12Catalog"
+      ],
+      "decision": "Referred checkout terms not independently verified"
+    },
+    {
+      "id": "S15",
+      "claim": "Any current Zen12 price or promo coupon applies to FV referrals",
+      "status": "not-verified",
+      "evidence": [
+        "zen12Catalog",
+        "zen12Promo"
+      ],
+      "decision": "No prices or codes in draft"
+    },
+    {
+      "id": "S16",
+      "claim": "Hypnosis Live Total Focus publicly advertises satisfaction refund within 14 days",
+      "status": "seller-policy-advertisement",
+      "evidence": [
+        "totalFocus"
+      ],
+      "decision": "Do not import into Zen12; exact checkout verify"
+    },
+    {
+      "id": "S17",
+      "claim": "Brainwave Shots Focus Shot publicly describes 15- and 30-minute MP3 versions",
+      "status": "seller-feature",
+      "evidence": [
+        "focusShot"
+      ],
+      "decision": "No automatic focus improvement inference"
+    },
+    {
+      "id": "S18",
+      "claim": "Focus Shot immediately improves concentration for hours",
+      "status": "unsubstantiated-seller-claim",
+      "evidence": [
+        "focusShot",
+        "binaural"
+      ],
+      "decision": "Exclude"
+    },
+    {
+      "id": "S19",
+      "claim": "Existing FV Fieldbook offers a free 52-page focus workbook through existing Dispatch signup",
+      "status": "site-live-surface",
+      "evidence": [
+        "focus",
+        "dispatch"
+      ],
+      "decision": "No second form/list, no paid SKU assumption"
+    },
+    {
+      "id": "S20",
+      "claim": "Final Vestige named Inspire3 publisher acceptance and authorized earning link",
+      "status": "not-authenticated",
+      "evidence": [
+        "inspireCatalog"
+      ],
+      "decision": "Commercial HOLD until account proof"
+    },
+    {
+      "id": "S21",
+      "claim": "FTC expects clear conspicuous commission disclosure near earning recommendation/link",
+      "status": "regulatory-guidance",
+      "evidence": [
+        "FTCendorse"
+      ],
+      "decision": "Include nearby plain language if activated"
+    },
+    {
+      "id": "S22",
+      "claim": "Product-specific health/efficacy benefit claims require suitable substantiation",
+      "status": "regulatory-guidance",
+      "evidence": [
+        "FTChealth"
+      ],
+      "decision": "Unsupported claims barred"
+    },
+    {
+      "id": "S23",
+      "claim": "Clicks or leads constitute confirmed paid affiliate commissions",
+      "status": "invalid-metric",
+      "evidence": [],
+      "decision": "Only independent merchant settlement can confirm"
+    },
+    {
+      "id": "S24",
+      "claim": "An offline test fixture with paid order represents actual FV revenue",
+      "status": "invalid-metric",
+      "evidence": [],
+      "decision": "Synthetic fixtures never production data"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "description": "Final Vestige named Inspire3 account acceptance",
+      "owner": "founder-commerce",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G02",
+      "description": "Zen12 specific product and SKU approval",
+      "owner": "founder-commerce",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G03",
+      "description": "WEB-page channel permission",
+      "owner": "founder-commerce",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G04",
+      "description": "SOCIAL traffic and approved platform policy",
+      "owner": "founder-commerce-grok",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G05",
+      "description": "EMAIL/Jetpack channel permission if ever proposed",
+      "owner": "founder-commerce-dispatch",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G06",
+      "description": "Issued account-specific earning URL and tracking model",
+      "owner": "founder-commerce",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G07",
+      "description": "Allowed creatives and claim language, original source rights",
+      "owner": "mind-editorial",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G08",
+      "description": "Actual referred checkout SKU vs catalog vs secret confirmation",
+      "owner": "commerce",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G09",
+      "description": "Checkout current total and currency verified",
+      "owner": "commerce",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G10",
+      "description": "Checkout any recurring charges/upsells verified",
+      "owner": "commerce",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G11",
+      "description": "Exact applicable refund and support policy verified",
+      "owner": "commerce",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G12",
+      "description": "Merchant commission settlement and clawback/refund terms",
+      "owner": "commerce",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G13",
+      "description": "Independent scientific substantiation or claim removal",
+      "owner": "mind-editorial",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G14",
+      "description": "FTC near-CTA disclosure and visible relationship reviewed",
+      "owner": "site-qa",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G15",
+      "description": "Founder commercial and editorial release approval",
+      "owner": "founder",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G16",
+      "description": "Native/browser UX, 360/390/768/1440/1920 responsive test",
+      "owner": "site-qa",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G17",
+      "description": "Keyboard/no-JS/reduced-motion screen reader verification",
+      "owner": "site-qa",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G18",
+      "description": "Video encoded and caption synchronization tested",
+      "owner": "media-qa",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G19",
+      "description": "WP sanitizer and draft preview verified",
+      "owner": "claude-site-qa",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G20",
+      "description": "Live route, CTA, destination and mobile click path verified",
+      "owner": "claude-site-qa",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G21",
+      "description": "Grok immutable published asset IDs and lawful reuse verified",
+      "owner": "grok-praxxis",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G22",
+      "description": "Existing Fieldbook/Dispatch confirmed lead journey validated",
+      "owner": "claude-dispatch",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G23",
+      "description": "First-party analytics scheme reviewed for consent, no PII, no duplicate scripts",
+      "owner": "claude-analytics",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G24",
+      "description": "Independent merchant paid-order data integration approved and tested",
+      "owner": "commerce-claude",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G25",
+      "description": "Refund/fee settlement reconciliation independently validated",
+      "owner": "commerce-claude",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G26",
+      "description": "7-day qualified cohort denominators validated",
+      "owner": "claude-analytics",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G27",
+      "description": "30-day qualified cohort denominators validated",
+      "owner": "claude-analytics",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    },
+    {
+      "id": "G28",
+      "description": "Paid conversion net revenue and tiny-sample warnings accepted",
+      "owner": "founder-commerce",
+      "status": "HOLD",
+      "evidence": "not supplied and independently validated"
+    }
+  ],
+  "commerce_status": {
+    "partner_approved": false,
+    "issued_earning_url": null,
+    "approved_zen12_sku": null,
+    "referred_price": null,
+    "referred_return_terms": null,
+    "merchant_paid_order_receipts": null,
+    "verified_net_revenue_per_1000_human_sessions": null,
+    "reason": "Cannot infer authorization or revenue from public marketing, consumer mail or outbound clicks."
+  },
+  "offline_safety": {
+    "no_js_tracking_in_pages": true,
+    "no_new_jetpack_forms": true,
+    "prospective_earning_disclosure": true,
+    "real_purchase_cta_disabled": true,
+    "no_prices_presented": true,
+    "actual_fv_product_usage_claimed": false,
+    "actual_ab_test_executed": false,
+    "encoded_video_present": false
+  },
+  "notes": "Public page prices and offers vary; never inherit a public price, promo code, refund window or affiliate payout for FV referred checkout."
+}
