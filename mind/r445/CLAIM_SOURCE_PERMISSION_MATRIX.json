@@ -1,0 +1,556 @@
+{
+  "title": "Final Vestige Mind R445 verified-public-source claim and permission ledger",
+  "checked_date": "2026-11-17",
+  "status": "UNPUBLISHED / NOT AUTHORISED FOR COMMERCE",
+  "scope": "Mind / Zen12 pilot with comparative Total Focus and Focus Shot claims",
+  "sources": {
+    "S01": "https://inspire3.com/",
+    "S02": "https://zen12.com/about",
+    "S03": "https://zen12.com/secret/",
+    "S04": "https://zen12.com/hnp",
+    "S05": "https://affiliates.inspire3.com/",
+    "S06": "https://hypnosislive.com/mental-skills/total-focus",
+    "S07": "https://hypnosislive.com/faq",
+    "S08": "https://brainwaveshots.com/focus-shot",
+    "S09": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "S10": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "S11": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+    "S12": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+    "S13": "https://pubmed.ncbi.nlm.nih.gov/23593244/",
+    "S14": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "S15": "https://finalvestige.com/focus/",
+    "S16": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "S17": "https://finalvestige.com/editorial-standards/",
+    "S18": "https://finalvestige.com/affiliate-disclosure/"
+  },
+  "claims": [
+    {
+      "id": "M001",
+      "product": "Zen12",
+      "assertion": "A session lasts 12 minutes",
+      "classification": "Seller-described feature",
+      "source_id": "S02",
+      "source_url": "https://zen12.com/about",
+      "decision": "May report as seller-described format; not efficacy"
+    },
+    {
+      "id": "M002",
+      "product": "Zen12",
+      "assertion": "Twelve levels are advertised",
+      "classification": "Seller-described feature",
+      "source_id": "S02",
+      "source_url": "https://zen12.com/about",
+      "decision": "May describe, verify exact purchased tier"
+    },
+    {
+      "id": "M003",
+      "product": "Zen12",
+      "assertion": "Four styles: music, guided, white noise, nature",
+      "classification": "Seller-described feature",
+      "source_id": "S02",
+      "source_url": "https://zen12.com/about",
+      "decision": "Use only for seller's described package"
+    },
+    {
+      "id": "M004",
+      "product": "Zen12",
+      "assertion": "Separate full-course page advertises 48 MP3s",
+      "classification": "Seller-described bundle",
+      "source_id": "S03",
+      "source_url": "https://zen12.com/secret/",
+      "decision": "Do not assume all checkouts include them"
+    },
+    {
+      "id": "M005",
+      "product": "Zen12",
+      "assertion": "Twelve minutes equals one hour of meditation",
+      "classification": "Unsupported product-efficacy equivalence",
+      "source_id": "S02",
+      "source_url": "https://zen12.com/about",
+      "decision": "OMIT benefit claim; marketing statement only"
+    },
+    {
+      "id": "M006",
+      "product": "Zen12",
+      "assertion": "Audio automatically produces deep meditation",
+      "classification": "Unsupported product-specific mental-state claim",
+      "source_id": "S04",
+      "source_url": "https://zen12.com/hnp",
+      "decision": "OMIT as editorial fact"
+    },
+    {
+      "id": "M007",
+      "product": "Zen12",
+      "assertion": "Guaranteed elimination of stress and anxiety",
+      "classification": "Unsupported health claim",
+      "source_id": "S02",
+      "source_url": "https://zen12.com/about",
+      "decision": "OMIT; do not medicalize routine"
+    },
+    {
+      "id": "M008",
+      "product": "Zen12",
+      "assertion": "Brainwave entrainment universally works",
+      "classification": "Unsupported sweeping scientific claim",
+      "source_id": "S04",
+      "source_url": "https://zen12.com/hnp",
+      "decision": "OMIT; not validated by product-specific trials"
+    },
+    {
+      "id": "M009",
+      "product": "Zen12",
+      "assertion": "Promotional price, discount and countdown",
+      "classification": "Variable seller checkout representation",
+      "source_id": "S03",
+      "source_url": "https://zen12.com/secret/",
+      "decision": "Do not assert FV referred price, discount or urgency"
+    },
+    {
+      "id": "M010",
+      "product": "Zen12",
+      "assertion": "A money-back guarantee is stated",
+      "classification": "Seller-described partial policy",
+      "source_id": "S03",
+      "source_url": "https://zen12.com/secret/",
+      "decision": "Verify complete written return terms at exact referral checkout"
+    },
+    {
+      "id": "M011",
+      "product": "Zen12",
+      "assertion": "Partner-specific authorized earning link",
+      "classification": "No authenticated FV-specific evidence",
+      "source_id": "S05",
+      "source_url": "https://affiliates.inspire3.com/",
+      "decision": "WITHHOLD URL"
+    },
+    {
+      "id": "M012",
+      "product": "Inspire3",
+      "assertion": "Catalog includes Zen12, Hypnosis Live and Brainwave Shots",
+      "classification": "Official catalog",
+      "source_id": "S01",
+      "source_url": "https://inspire3.com/",
+      "decision": "Brand identities only, not automatic channel rights"
+    },
+    {
+      "id": "M013",
+      "product": "Inspire3",
+      "assertion": "Public affiliate program exists",
+      "classification": "Official public portal",
+      "source_id": "S05",
+      "source_url": "https://affiliates.inspire3.com/",
+      "decision": "Portal does not authenticate FV's acceptance"
+    },
+    {
+      "id": "M014",
+      "product": "Hypnosis Live Total Focus",
+      "assertion": "Standalone product says 33 minutes and 47 MB",
+      "classification": "Seller-described feature",
+      "source_id": "S06",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "decision": "Do not conflate with 40-min FAQ average or bundle"
+    },
+    {
+      "id": "M015",
+      "product": "Hypnosis Live Total Focus",
+      "assertion": "Page advertises strong concentration, work and memory outcomes",
+      "classification": "Unsupported product-efficacy claim",
+      "source_id": "S06",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "decision": "OMIT as independently established"
+    },
+    {
+      "id": "M016",
+      "product": "Hypnosis Live",
+      "assertion": "Product page displays pricing, but no FV referral price authenticated",
+      "classification": "Dynamic public offer",
+      "source_id": "S06",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "decision": "No price or discount in presell until verified"
+    },
+    {
+      "id": "M017",
+      "product": "Hypnosis Live",
+      "assertion": "Standalone page mentions 14-day satisfaction refund",
+      "classification": "Seller-described return statement",
+      "source_id": "S06",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "decision": "Cross-check FAQ and actual referred checkout"
+    },
+    {
+      "id": "M018",
+      "product": "Hypnosis Live",
+      "assertion": "Refund rules have additional restrictions per FAQ",
+      "classification": "Seller-described qualification",
+      "source_id": "S07",
+      "source_url": "https://hypnosislive.com/faq",
+      "decision": "No unqualified no-questions-asked interpretation"
+    },
+    {
+      "id": "M019",
+      "product": "Brainwave Shots Focus Shot",
+      "assertion": "15-minute and 30-minute versions advertised",
+      "classification": "Seller-described bundle",
+      "source_id": "S08",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "decision": "Report only as merchant formats"
+    },
+    {
+      "id": "M020",
+      "product": "Brainwave Shots Focus Shot",
+      "assertion": "Brainwave-only versions and quick-start video advertised",
+      "classification": "Seller-described bundle",
+      "source_id": "S08",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "decision": "Confirm SKU at checkout"
+    },
+    {
+      "id": "M021",
+      "product": "Brainwave Shots Focus Shot",
+      "assertion": "Hours of lasting focus and complete safety claims",
+      "classification": "Unsupported benefit and safety claim",
+      "source_id": "S08",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "decision": "OMIT"
+    },
+    {
+      "id": "M022",
+      "product": "Brainwave Shots Focus Shot",
+      "assertion": "One-year refund guarantee advertised",
+      "classification": "Seller-described policy",
+      "source_id": "S08",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "decision": "Verify exact written terms and restrictions"
+    },
+    {
+      "id": "M023",
+      "product": "Choice blindness",
+      "assertion": "Face choice swap often went unnoticed",
+      "classification": "Independent published research",
+      "source_id": "S11",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "decision": "Context is choice between face photographs; no hypnosis conclusion"
+    },
+    {
+      "id": "M024",
+      "product": "Choice blindness",
+      "assertion": "Jam and tea preference swaps detected in no more than one-third of manipulated trials overall",
+      "classification": "Independent published research",
+      "source_id": "S12",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "decision": "Restrict to manipulated trials and paper's sample"
+    },
+    {
+      "id": "M025",
+      "product": "Choice blindness",
+      "assertion": "Political attitude response manipulation studied",
+      "classification": "Independent published research",
+      "source_id": "S13",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/23593244/",
+      "decision": "Not general proof of elections being controlled"
+    },
+    {
+      "id": "M026",
+      "product": "Historical bridge",
+      "assertion": "Puységur archive retains failures and consent issues",
+      "classification": "First-party source-controlled historical archive",
+      "source_id": "S14",
+      "source_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "decision": "Archive supports provenance not magnetic physical mechanism"
+    },
+    {
+      "id": "M027",
+      "product": "Existing Focus",
+      "assertion": "52-page free Focus Fieldbook with existing Jetpack opt-in",
+      "classification": "Live first-party offer",
+      "source_id": "S15",
+      "source_url": "https://finalvestige.com/focus/",
+      "decision": "No paid product or duplicate list"
+    },
+    {
+      "id": "M028",
+      "product": "Change blindness",
+      "assertion": "Existing published modern perception investigation",
+      "classification": "First-party canonical article",
+      "source_id": "S16",
+      "source_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "decision": "Prevent near-duplicate SEO publication"
+    },
+    {
+      "id": "M029",
+      "product": "FTC",
+      "assertion": "Affiliate earning relationship must be apparent near link",
+      "classification": "Regulatory guidance",
+      "source_id": "S09",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "decision": "Use adjacent plain-language disclosure"
+    },
+    {
+      "id": "M030",
+      "product": "FTC",
+      "assertion": "Health and psychological efficacy claims need adequate substantiation",
+      "classification": "Regulatory guidance",
+      "source_id": "S10",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "decision": "Demand relevant competent and reliable evidence"
+    },
+    {
+      "id": "M031",
+      "product": "FV",
+      "assertion": "Commercial considerations do not determine historical conclusions",
+      "classification": "Published editorial standards",
+      "source_id": "S17",
+      "source_url": "https://finalvestige.com/editorial-standards/",
+      "decision": "Keep commerce separate from investigation"
+    },
+    {
+      "id": "M032",
+      "product": "FV",
+      "assertion": "A general site affiliate disclosure does not replace adjacent material-relationship notice",
+      "classification": "FTC + FV policy",
+      "source_id": "S09",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "decision": "Adjacent offer disclosure and site policy both present"
+    },
+    {
+      "id": "M033",
+      "product": "FV owned product",
+      "assertion": "No verified currently payable, rights-cleared Mind SKU in reviewed connected evidence",
+      "classification": "Authorization unresolved",
+      "source_id": "S15",
+      "source_url": "https://finalvestige.com/focus/",
+      "decision": "Do not misstate a free PDF as sellable product"
+    },
+    {
+      "id": "M034",
+      "product": "Revenue",
+      "assertion": "Paid orders and refunded settlement for these offers not authenticated",
+      "classification": "Accounting evidence missing",
+      "source_id": "S05",
+      "source_url": "https://affiliates.inspire3.com/",
+      "decision": "NOT COMPUTABLE; clicks are not purchases"
+    }
+  ],
+  "release_gates": [
+    {
+      "gate_id": "G01",
+      "name": "Named FV Inspire3 account acceptance",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G02",
+      "name": "Affiliation legal entity matches FV",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G03",
+      "name": "Allowed Zen12 SKU",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G04",
+      "name": "Allowed website channel",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G05",
+      "name": "Allowed TikTok/social channel",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G06",
+      "name": "Allowed YouTube channel",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G07",
+      "name": "Allowed email channel if used",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G08",
+      "name": "Issued FV earning link",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G09",
+      "name": "Link domain and parameter safety",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G10",
+      "name": "Allowed official creative/swipe rights",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G11",
+      "name": "Actual referred offer/tier mapping",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G12",
+      "name": "Actual referred checkout current price",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G13",
+      "name": "Actual complete referred refund policy",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G14",
+      "name": "Merchant support and delivery proof",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G15",
+      "name": "Final founder commerce approval",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G16",
+      "name": "Independent seller claim review",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Mind / independent Site QA"
+    },
+    {
+      "gate_id": "G17",
+      "name": "No health or wealth guarantee wording",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Mind / independent Site QA"
+    },
+    {
+      "gate_id": "G18",
+      "name": "Near-CTA affiliate relationship disclosure",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Mind / independent Site QA"
+    },
+    {
+      "gate_id": "G19",
+      "name": "Live preview link accessibility mobile",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Mind / independent Site QA"
+    },
+    {
+      "gate_id": "G20",
+      "name": "No-JS fallback and keyboard support",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Mind / independent Site QA"
+    },
+    {
+      "gate_id": "G21",
+      "name": "Encoded original film and captions rights (for B test)",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Mind / independent Site QA"
+    },
+    {
+      "gate_id": "G22",
+      "name": "Real browser CWV/a11y independent QA",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Mind / independent Site QA"
+    },
+    {
+      "gate_id": "G23",
+      "name": "Native WordPress sanitization QA",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Mind / independent Site QA"
+    },
+    {
+      "gate_id": "G24",
+      "name": "Existing Jetpack confirmation verified",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Claude/Dispatch"
+    },
+    {
+      "gate_id": "G25",
+      "name": "Grok published asset_id / mobile destination verified",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "gate_id": "G26",
+      "name": "Privacy consent and one-script audit",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Claude/Analytics"
+    },
+    {
+      "gate_id": "G27",
+      "name": "Merchant-confirmed paid order/commission",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate_id": "G28",
+      "name": "Refunds, fees and eligible-human denominator reconciled",
+      "release_state": "HOLD",
+      "pass_evidence": null,
+      "owner": "Founder/Commerce"
+    }
+  ],
+  "policy": {
+    "no_public_affiliate_url": true,
+    "no_exact_price_or_payout_claim": true,
+    "no_product_specific_efficacy_claim": true,
+    "exclude_unverified_testimonials": true,
+    "retain_existing_jetpack": true,
+    "no_live_CMS_or_publication": true,
+    "disclose_near_future_authorized_link": true,
+    "independent_science_not_brand_trial": true
+  },
+  "accounts": {
+    "verification": "Connected Gmail searches of Inspire3/affiliate and named Final Vestige found consumer promotions but no named FV acceptance or issued URL",
+    "scope_limit": "Gmail is not an authenticated partner portal or all entity records; negative search is not proof of universal nonexistence"
+  },
+  "owned_product": {
+    "focus": "Published free 52-page fieldbook",
+    "paid_sku_authenticated": false
+  },
+  "measurement": {
+    "affiliate_click": "NO PAID SALE INFERENCE",
+    "confirmed_partner_sale": "NOT VERIFIED",
+    "net_revenue_per_1000_human_sessions": "NOT COMPUTABLE"
+  },
+  "notes": "Source links are archival citations, not active seller recommendations. Product prices and refund conditions can change; reverify exact authorized checkout before publication."
+}
