@@ -1,0 +1,52 @@
+{
+  "edition": 4,
+  "candidate": "Apollo 1: the spark the record could not name",
+  "status": "NOT_ADOPTED_HOLD_UNSENT",
+  "source_of_truth": "NASA Apollo 204 Review Board and NASA's dated preliminary statements",
+  "events_gmt_1967_01_27": [
+    {
+      "time": "23:30:54.8",
+      "event": "recorded significant voltage transient",
+      "source": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_01c_Timeline.htm",
+      "ignition_proven": false
+    },
+    {
+      "time": "23:31:04.7",
+      "event": "initial crew fire transmission begins",
+      "source": "https://www.nasa.gov/history/Apollo204/tragedy.html",
+      "ignition_proven": false
+    },
+    {
+      "time": "23:31:19.4",
+      "event": "pressure-vessel rupture in later NASA timeline",
+      "source": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_01c_Timeline.htm",
+      "ignition_proven": false
+    }
+  ],
+  "later_report_to_rupture_seconds": 14.7,
+  "preliminary_report_as_of": "1967-02-03",
+  "preliminary_interval_seconds": 14,
+  "preliminary_warning": "NASA explicitly warned of possible station timing mismatch and subsequent revision",
+  "board_ignition_conclusion": "electrical arc most probable, exact single source unproven",
+  "oxygen_atmosphere": "100 percent oxygen at 16.7 psia (review board)",
+  "not_a_claim_of": [
+    "exact ignition moment",
+    "precise crew survival interval",
+    "causation established by isolated voltage transient"
+  ],
+  "permissions": {
+    "native_preview": false,
+    "postal_address": false,
+    "functional_unsubscribe": false,
+    "subscriber_eligibility": false,
+    "founder_final_send_approval": false
+  },
+  "campaign": {
+    "editorial": 4,
+    "commercial_reserved": 2,
+    "all_six_hold": true,
+    "master_pr": 175,
+    "master_issue": 174,
+    "parent_pr": 2806
+  }
+}
