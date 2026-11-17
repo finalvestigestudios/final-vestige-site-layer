@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ttl des" viewBox="0 0 1380 440" width="1380" height="440">
+<title id="ttl">Research Sources: 90 URLs attempted</title><desc id="des">Out of ninety directory entries, sixty-four institutional landing pages responded, three yielded only an application shell, eighteen were restricted to automated retrieval, two timed out, and three had other unresolved response limitations. These are retrieval outcomes, not judgments that links are broken.</desc>
+<rect x="0" y="0" width="1380" height="440" rx="24" fill="#151d1a"/><g font-family="system-ui,Segoe UI,sans-serif"><text x="54" y="67" fill="#c6a66d" font-size="18" letter-spacing="3" font-weight="700">FIELD NOTE · VERIFIED 2026-11-16</text><text x="54" y="125" fill="#f4f1e8" font-size="44" font-weight="730">Ninety addresses. Seven kinds of answer.</text><text x="54" y="161" fill="#b4c1b9" font-size="22">A reachable index is not a retrieved file. A blocked request is not a dead link.</text>
+<g transform="translate(54 194)"><rect x="0" y="0" width="1272" height="54" rx="10" fill="#29332f"/><rect x="0" y="0" width="904.53" height="54" rx="10" fill="#70aa8b"/><rect x="904.53" y="0" width="42.4" height="54" fill="#9fa7a0"/><rect x="946.93" y="0" width="254.4" height="54" fill="#b48855"/><rect x="1201.33" y="0" width="28.27" height="54" fill="#c3a5a0"/><rect x="1229.6" y="0" width="42.4" height="54" rx="3" fill="#8a8da6"/></g>
+<g font-size="19" font-weight="700">
+<circle cx="70" cy="296" r="8" fill="#70aa8b"/><text x="88" y="302" fill="#ecf1e9">64 institution pages</text>
+<circle cx="368" cy="296" r="8" fill="#9fa7a0"/><text x="386" y="302" fill="#ecf1e9">3 app shells</text>
+<circle cx="605" cy="296" r="8" fill="#b48855"/><text x="623" y="302" fill="#ecf1e9">18 automated blocks</text>
+<circle cx="963" cy="296" r="8" fill="#c3a5a0"/><text x="981" y="302" fill="#ecf1e9">2 timeouts</text>
+<circle cx="70" cy="346" r="8" fill="#8a8da6"/><text x="88" y="352" fill="#ecf1e9">3 other unresolved outcomes</text></g>
+<text x="54" y="404" fill="#a7b6ad" font-size="16">FINAL VESTIGE STUDIOS · Original source-access audit diagram · Landing checks only, not rights clearance.</text></g></svg>
