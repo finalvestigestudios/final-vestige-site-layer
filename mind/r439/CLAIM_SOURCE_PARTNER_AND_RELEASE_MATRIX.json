@@ -1,0 +1,553 @@
+{
+  "version": "mind-r439-v1",
+  "checked_date_pt": "2026-11-16",
+  "release_status": "HARD_HOLD",
+  "source_inventory": {
+    "kekecs2025": "https://doi.org/10.1111/psyp.70183",
+    "kekecsosf": "https://osf.io/prscg/files/osfstorage",
+    "zahedi2024": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+    "bias2025": "https://doi.org/10.1016/j.concog.2025.103948",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "fieldbook": "https://finalvestige.com/focus/",
+    "changeblindness": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "seller": "https://inspire3.com/",
+    "zenmain": "https://zen12.com/",
+    "zenabout": "https://zen12.com/about",
+    "zenpromo": "https://zen12.com/secret/",
+    "hfocus": "https://hypnosislive.com/mental-skills/total-focus",
+    "bfocus": "https://brainwaveshots.com/focus-shot",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftchealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "editorial": "https://finalvestige.com/editorial-standards/",
+    "affdisclosure": "https://finalvestige.com/affiliate-disclosure/"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "2025 Kekecs balanced placebo study analyzed 46 eligible participants",
+      "classification": "peer_reviewed_science",
+      "source_keys": [
+        "kekecs2025"
+      ],
+      "approved_copy": "The published study analyzed 46 participants.",
+      "limit_or_needed_proof": "Avoid implying represents all consumers.",
+      "scope": "2025 laboratory study, not product test"
+    },
+    {
+      "id": "C02",
+      "claim": "Experimental recordings crossed induction type and hypnosis/control label",
+      "classification": "peer_reviewed_science",
+      "source_keys": [
+        "kekecs2025"
+      ],
+      "approved_copy": "Four short listening conditions crossed recording type and the description given.",
+      "limit_or_needed_proof": "Detailed conditions must be retained.",
+      "scope": "Randomized within-subject setting"
+    },
+    {
+      "id": "C03",
+      "claim": "Hypnosis label increased expected hypnotic depth by 3.41/10 points on average",
+      "classification": "peer_reviewed_science",
+      "source_keys": [
+        "kekecs2025"
+      ],
+      "approved_copy": "The hypnosis label substantially changed expectations within this study.",
+      "limit_or_needed_proof": "Do not present as clinical or product outcome.",
+      "scope": "Measured expectancy, not efficacy"
+    },
+    {
+      "id": "C04",
+      "claim": "Hypnosis label influenced reported hypnotic depth",
+      "classification": "peer_reviewed_science",
+      "source_keys": [
+        "kekecs2025"
+      ],
+      "approved_copy": "Labeling influenced reported subjective depth.",
+      "limit_or_needed_proof": "Do not generalize to durable benefits.",
+      "scope": "Self-report within short lab exposure"
+    },
+    {
+      "id": "C05",
+      "claim": "White noise sometimes produced reported depth comparable to conventional induction",
+      "classification": "peer_reviewed_science",
+      "source_keys": [
+        "kekecs2025"
+      ],
+      "approved_copy": "The authors found a more complicated pattern than either label-only or procedure-only explanations predict.",
+      "limit_or_needed_proof": "Do not claim white noise itself heals or hypnotizes reliably.",
+      "scope": "Specific exploratory comparisons"
+    },
+    {
+      "id": "C06",
+      "claim": "Hypnosis mechanisms are contested",
+      "classification": "review_evidence",
+      "source_keys": [
+        "zahedi2024"
+      ],
+      "approved_copy": "A 2024 systematic theory review describes competing accounts with different strengths and limits.",
+      "limit_or_needed_proof": "No single mechanism proven.",
+      "scope": "Theory review"
+    },
+    {
+      "id": "C07",
+      "claim": "Small attentional-bias experiment tested hypnosis induction and suggestion components",
+      "classification": "peer_reviewed_science",
+      "source_keys": [
+        "bias2025"
+      ],
+      "approved_copy": "Researchers studied how induction and suggestion influenced emotional attentional bias in selected participants.",
+      "limit_or_needed_proof": "Not proof for any commercial audio.",
+      "scope": "High suggestibility subgroup; experimental"
+    },
+    {
+      "id": "C08",
+      "claim": "Puységur materials record claims witnesses and failures in 1784 memoir sequence",
+      "classification": "historical_archive",
+      "source_keys": [
+        "puysegur"
+      ],
+      "approved_copy": "The archival trail records testimony and attempted verification.",
+      "limit_or_needed_proof": "Not proof of animal magnetism or hypnosis treatment.",
+      "scope": "Historical interpretation"
+    },
+    {
+      "id": "C09",
+      "claim": "Existing free Focus Fieldbook is a 52-page seven-day resource",
+      "classification": "first_party_live",
+      "source_keys": [
+        "fieldbook"
+      ],
+      "approved_copy": "The existing free Focus Fieldbook includes seven days of practice and audio-claims questions.",
+      "limit_or_needed_proof": "Do not duplicate Jetpack list.",
+      "scope": "Live first-party resource"
+    },
+    {
+      "id": "C10",
+      "claim": "Published change blindness article already live",
+      "classification": "first_party_live",
+      "source_keys": [
+        "changeblindness"
+      ],
+      "approved_copy": "The canonical live change-blindness investigation already exists.",
+      "limit_or_needed_proof": "Do not publish competing overlapping manuscript.",
+      "scope": "Avoid SEO cannibalization"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 official site presents twelve-minute sessions",
+      "classification": "seller_description_only",
+      "source_keys": [
+        "zenmain",
+        "zenabout"
+      ],
+      "approved_copy": "Zen12 describes sessions lasting twelve minutes.",
+      "limit_or_needed_proof": "Does not prove equivalence to an hour.",
+      "scope": "Seller-described content"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 premium official main listing is 48 MP3 across twelve levels",
+      "classification": "seller_description_only",
+      "source_keys": [
+        "zenmain"
+      ],
+      "approved_copy": "The premium offer is described as 48 MP3s across twelve levels.",
+      "limit_or_needed_proof": "Reverify on actual authorized checkout.",
+      "scope": "Specific public package tier"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 beginner and advanced have distinct six-level packages",
+      "classification": "seller_description_only",
+      "source_keys": [
+        "zenmain"
+      ],
+      "approved_copy": "The main site shows separate six-level package options.",
+      "limit_or_needed_proof": "Do not conflate SKUs or promised bonuses.",
+      "scope": "Public listing"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 main and secret promotional page present differing prices/conditions",
+      "classification": "seller_offer_conflict",
+      "source_keys": [
+        "zenmain",
+        "zenpromo"
+      ],
+      "approved_copy": "Public pages display different offers; no affiliate referral price has been verified.",
+      "limit_or_needed_proof": "Resolve merchant referred checkout, no coupon laundering.",
+      "scope": "No promotional price quoted in published candidate"
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 advertises money back on main and secret pages",
+      "classification": "seller_policy_claim",
+      "source_keys": [
+        "zenmain",
+        "zenpromo"
+      ],
+      "approved_copy": "The seller describes a refund promise; verify complete written conditions at checkout.",
+      "limit_or_needed_proof": "Exact product/referral policy, exclusions and geography.",
+      "scope": "Seller policy not independently tested"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 equivalent one hour meditation in 12 minutes",
+      "classification": "unsupported_product_specific_benefit",
+      "source_keys": [
+        "zenmain"
+      ],
+      "approved_copy": "Zen12's hour-equivalence is a seller claim, not independently established for this named product.",
+      "limit_or_needed_proof": "Need product-specific controlled human outcome and operationalized equivalence.",
+      "scope": "Do not assert efficacy"
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 improves mood, focus, health and creativity on demand",
+      "classification": "unsupported_product_specific_benefit",
+      "source_keys": [
+        "zenmain"
+      ],
+      "approved_copy": "The seller markets broad benefits, which our guide does not adopt.",
+      "limit_or_needed_proof": "Independent robust product evidence required.",
+      "scope": "Implied health and cognitive outcomes"
+    },
+    {
+      "id": "C18",
+      "claim": "Hypnosis Live Total Focus described as a 33-minute 47 MB hypnosis MP3",
+      "classification": "seller_description_only",
+      "source_keys": [
+        "hfocus"
+      ],
+      "approved_copy": "Hypnosis Live lists Total Focus as a 33-minute single MP3.",
+      "limit_or_needed_proof": "No validated concentration improvement.",
+      "scope": "Seller inventory only"
+    },
+    {
+      "id": "C19",
+      "claim": "Hypnosis Live says Total Focus causes productivity or reprogramming",
+      "classification": "unsupported_product_specific_benefit",
+      "source_keys": [
+        "hfocus"
+      ],
+      "approved_copy": "The promise of lasting concentration is the seller's, not ours.",
+      "limit_or_needed_proof": "Product-specific evidence and permitted SKU needed.",
+      "scope": "Medical/cognitive/earnings implications"
+    },
+    {
+      "id": "C20",
+      "claim": "Brainwave Shots Focus Shot offers 15- and 30-minute formats",
+      "classification": "seller_description_only",
+      "source_keys": [
+        "bfocus"
+      ],
+      "approved_copy": "Focus Shot lists 15- and 30-minute versions.",
+      "limit_or_needed_proof": "Confirm download rights and checkout.",
+      "scope": "Seller inventory only"
+    },
+    {
+      "id": "C21",
+      "claim": "Brainwave Shots says concentration lasts four hours or all day",
+      "classification": "unsupported_product_specific_benefit",
+      "source_keys": [
+        "bfocus"
+      ],
+      "approved_copy": "Duration-of-effect claims remain unverified seller claims.",
+      "limit_or_needed_proof": "Controlled human study of exact track and duration required.",
+      "scope": "Specific functional outcome"
+    },
+    {
+      "id": "C22",
+      "claim": "Inspire3 public affiliate portal offers signup and special links",
+      "classification": "public_program_not_partner_approval",
+      "source_keys": [
+        "affiliate"
+      ],
+      "approved_copy": "A public affiliate application portal exists.",
+      "limit_or_needed_proof": "No FV-specific named acceptance, commission or payout proof.",
+      "scope": "Public generic marketing"
+    },
+    {
+      "id": "C23",
+      "claim": "FTC clear near-link disclosure needed for material relationships",
+      "classification": "regulatory_guidance",
+      "source_keys": [
+        "ftc"
+      ],
+      "approved_copy": "Prospective disclosure appears immediately above inactive merchant CTA.",
+      "limit_or_needed_proof": "Reassess mobile placement and labels after authorized link exists.",
+      "scope": "Contextual disclosure, actual active link absent"
+    },
+    {
+      "id": "C24",
+      "claim": "FTC health claims require adequate competent reliable scientific evidence",
+      "classification": "regulatory_guidance",
+      "source_keys": [
+        "ftchealth"
+      ],
+      "approved_copy": "Health and mental-benefit claims are intentionally omitted.",
+      "limit_or_needed_proof": "Verify claim-level competent reliable evidence.",
+      "scope": "No implied medical outcome permitted"
+    },
+    {
+      "id": "C25",
+      "claim": "Product-specific Inspire3 publisher acceptance and issued URL",
+      "classification": "unverified_private_permission",
+      "source_keys": [
+        "affiliate"
+      ],
+      "approved_copy": "No active merchant link; acceptance not authenticated.",
+      "limit_or_needed_proof": "Verify owner-controlled dashboard / issuer correspondence, SKU, channels and terms.",
+      "scope": "Private account status unknown"
+    },
+    {
+      "id": "C26",
+      "claim": "Owned sellable FV Mind digital product",
+      "classification": "unverified_own_product",
+      "source_keys": [
+        "fieldbook"
+      ],
+      "approved_copy": "The Focus Fieldbook is free; paid rights-cleared Mind SKU not authenticated.",
+      "limit_or_needed_proof": "SKU/license/checkout/delivery/refunds/payment settlement.",
+      "scope": "Owned product may exist elsewhere but not proved"
+    },
+    {
+      "id": "C27",
+      "claim": "Net revenue per thousand qualified human sessions",
+      "classification": "not_computable",
+      "source_keys": [],
+      "approved_copy": "Not computable until both qualified sessions and realized settled revenue are verified.",
+      "limit_or_needed_proof": "Provider/merchant reconciliation, 7/30 day cohorts and consent-safe data.",
+      "scope": "Net after refunds and fees"
+    },
+    {
+      "id": "C28",
+      "claim": "A/B film enhances realized paid conversion",
+      "classification": "untested_hypothesis",
+      "source_keys": [],
+      "approved_copy": "No A/B trial has run; same substantive copy in A and B.",
+      "limit_or_needed_proof": "Need accessible encoded film and authorized payable offer and qualified cohorts.",
+      "scope": "Film concept unencoded"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "requirement": "Inspire3 acceptance identifies Final Vestige legal publisher",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G02",
+      "requirement": "Partner account access established by owner, no passwords in issues",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G03",
+      "requirement": "Zen12 specifically approved as promoteable SKU",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G04",
+      "requirement": "Web editorial promotion channel permitted",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G05",
+      "requirement": "YouTube/TikTok sourced referrals permitted",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G06",
+      "requirement": "Existing Dispatch email referral channel permitted separately",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G07",
+      "requirement": "Exact issued affiliate earning URL authenticated, no invented URL",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G08",
+      "requirement": "No disallowed deep linking or redirect cloaking",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G09",
+      "requirement": "Checkout resolves to exact authorized SKU and amount",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G10",
+      "requirement": "Current checkout returns, exclusions and refund window verified",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G11",
+      "requirement": "Merchant paid conversion report accessible / credible",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G12",
+      "requirement": "Commission payable status and settlement mechanics verified",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G13",
+      "requirement": "No product-benefit claim without product-specific substantiation",
+      "owner": "Mind Editorial",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G14",
+      "requirement": "FTC disclosure adjacent to actual merchant link on mobile and desktop",
+      "owner": "Site QA",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G15",
+      "requirement": "Actual no-JS link behavior audited after enablement",
+      "owner": "Site QA",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G16",
+      "requirement": "Original optional film encoded, rights-cleared and captioned",
+      "owner": "Mind Media / Site QA",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G17",
+      "requirement": "Video only loads after interaction, no forced playback",
+      "owner": "Site QA",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G18",
+      "requirement": "Responsive 360,390,768,1440,1920 and keyboard QA",
+      "owner": "Site QA",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G19",
+      "requirement": "Lighthouse/CWV actual browser checks and regression budget",
+      "owner": "Site QA",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G20",
+      "requirement": "WordPress sanitizer preserves hierarchy, links, disclosure",
+      "owner": "Claude / Site QA",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G21",
+      "requirement": "One existing Jetpack signup and welcome intact",
+      "owner": "Claude / Dispatch",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G22",
+      "requirement": "Actual existing Fieldbook delivery verified by authorized provider",
+      "owner": "Claude / Dispatch",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G23",
+      "requirement": "Three genuine Grok post URLs/immutable IDs and media rights confirmed",
+      "owner": "Praxxis / Grok",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G24",
+      "requirement": "First-party campaign UTMs and consent/privacy reviewed",
+      "owner": "Claude / Privacy QA",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G25",
+      "requirement": "No duplicate deployed analytics or paid SaaS",
+      "owner": "Claude",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G26",
+      "requirement": "Paid order tracked separately from outbound affiliate click",
+      "owner": "Claude / Commerce",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G27",
+      "requirement": "Net revenue reconcile refunds/fees, 7/30-day cohorts",
+      "owner": "Commerce / Claude",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    },
+    {
+      "id": "G28",
+      "requirement": "Founder release approval and no PR #49/#172 overwrite",
+      "owner": "Founder / Site QA",
+      "status": "HOLD",
+      "evidence": "not verified in this run"
+    }
+  ],
+  "commerce_findings": {
+    "named_publisher_approval": "UNVERIFIED",
+    "issued_affiliate_url": null,
+    "approved_product_sku": null,
+    "checkout_current_price": null,
+    "private_return_policy": null,
+    "settled_affiliate_commission": null,
+    "confirmed_paid_fv_mind_order": null,
+    "verified_owned_payable_sku": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000_qualified_sessions": null,
+    "notes": "Promotional emails are not proof of publishing authorization; public site terms are not specific referred checkout."
+  },
+  "experiment": {
+    "a": "text only",
+    "b": "same buyer content with optional 42s original storyboard/poster/transcript, not playable",
+    "hypothesis": "B might raise paid conversion per qualified visitor but may reduce performance or distract; test is unrun",
+    "randomization": "server-side sticky eligible session assignment by existing privacy-safe mechanism only if Claude approves; no new scripts",
+    "winner_criterion": "verified refund-adjusted net revenue per 1000 qualified humans, with safety/AA/performance noninferiority; do not declare winner from tiny sample",
+    "commercial_control": "merchant CTA disabled in both variants"
+  }
+}
