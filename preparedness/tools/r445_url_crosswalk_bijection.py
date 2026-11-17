@@ -46,6 +46,9 @@ def check_graph(d: object) -> dict:
             count+=1
             if not isinstance(v,dict):errors.append('INVALID_VARIANT:'+sid+':'+str(j));continue
             branch,blob,url=v.get('branch'),v.get('source_blob'),v.get('url')
+            if not isinstance(branch,str):branch=None
+            if not isinstance(blob,str):blob=None
+            if not isinstance(url,str):url=None
             if branch not in branches:errors.append('UNKNOWN_VARIANT_BRANCH:'+sid+':'+str(j))
             if branch in branches_for_id:errors.append('REPEATED_ID_BRANCH:'+sid+':'+str(j))
             branches_for_id.add(branch)
@@ -66,8 +69,9 @@ def check_graph(d: object) -> dict:
         u=g['url'];ids=g['ids']
         if u in listed:errors.append('DUPLICATE_REVIEW_GROUP_URL:'+u)
         if len(ids)!=len(set(map(str,ids))):errors.append('DUPLICATE_GROUP_ID:'+u)
+        if any(not isinstance(x,str) for x in ids):errors.append('NONSTRING_GROUP_SOURCE_ID:'+u)
         if g.get('review_required') is not True:errors.append('SHARED_URL_REVIEW_REMOVED:'+u)
-        listed[u]=set(ids)
+        listed[u]=set(map(str,ids))
     if len(groups)!=17 or len(actual)!=17:errors.append('SHARED_URL_COUNT_DRIFT')
     for url in sorted(set(listed)|set(actual)):
         if listed.get(url)!=actual.get(url):errors.append('EXACT_URL_BIJECTION_DRIFT:'+url)
@@ -76,6 +80,7 @@ def check_graph(d: object) -> dict:
     for i,q in enumerate(disputes):
         if not isinstance(q,dict):errors.append('INVALID_DISPUTE:'+str(i));continue
         sid=q.get('source_id')
+        if not isinstance(sid,str):errors.append('INVALID_DISPUTED_ID:'+str(i));sid=str(sid)
         if sid in disputed_ids:errors.append('DUPLICATE_DISPUTED_ID:'+str(sid))
         disputed_ids.add(sid)
         if q.get('decision')!='HUMAN_REVIEW_REQUIRED' or q.get('selected_record') is not None:
@@ -84,7 +89,8 @@ def check_graph(d: object) -> dict:
         if not isinstance(vals,list) or len(vals)<2:errors.append('DISPUTE_VARIANTS_LOST:'+str(sid));continue
         for j,v in enumerate(vals):
             if not isinstance(v,dict):errors.append('INVALID_DISPUTED_VARIANT:'+str(sid));continue
-            if (v.get('branch'),v.get('source_blob'),v.get('url')) not in variants.get(sid,set()):
+            parts=tuple(x if isinstance(x,str) else None for x in (v.get('branch'),v.get('source_blob'),v.get('url')))
+            if parts not in variants.get(sid,set()):
                 errors.append('DISPUTE_CROSSWALK_VARIANT_MISMATCH:'+str(sid)+':'+str(j))
             if not isinstance(v.get('supports_exact'),str) or not v['supports_exact'].strip() or not isinstance(v.get('reading_scope_notes_exact'),str) or not v['reading_scope_notes_exact'].strip():
                 errors.append('DISPUTE_SCOPE_LOST:'+str(sid)+':'+str(j))
@@ -113,7 +119,7 @@ def audit(d: object, raw: bytes|None=None, observed_heads: dict|None=None) -> di
         r['errors'].append('FALSE_RELEASE_OR_COMMERCE_APPROVAL')
     if raw is None or git_blob(raw)!=R397_BLOB:r['errors'].append('AUTHENTIC_R397_BYTES_MISSING')
     pins=d.get('branch_pins');pins=pins if isinstance(pins,list) else []
-    names={v.get('branch'):v.get('sha') for v in pins if isinstance(v,dict)}
+    names={v.get('branch'):v.get('sha') for v in pins if isinstance(v,dict) and isinstance(v.get('branch'),str) and isinstance(v.get('sha'),str)}
     if observed_heads is None or observed_heads!=names:r['errors'].append('CURRENT_BRANCH_SHA_EVIDENCE_MISSING_OR_DRIFTED')
     r['errors']=sorted(set(r['errors']))
     r['graph_structural_pass']=not r['errors']
