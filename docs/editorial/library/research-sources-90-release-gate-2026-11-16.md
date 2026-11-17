@@ -28,13 +28,23 @@ This is a trust and information-architecture fault, not an invitation to add 30 
 
 1. A machine-readable, dated **90-record inventory** containing categories, existing institutional/reuse cues, original outbound URLs, unique-entry checks and honest per-link check status. Copyright status is **not** inferred from hosting.
 2. A **fail-closed staging patch**, [reconcile-research-sources-90.mjs](../../../scripts/editorial/reconcile-research-sources-90.mjs), which refuses unexpected IDs, revisions, counts, duplicate destinations or nonunique text anchors. It outputs staged markup; it has **no network calls** and **no publishing action**.
-3. [Regression tests](../../../tests/editorial/research-sources-90.test.mjs) covering 90-card preservation, categories, all 14 exact text substitutions, edit conflicts, duplicates, missing cards and reruns.
+3. [Regression tests](../../../tests/editorial/research-sources-90.test.mjs) covering 90-card preservation, categories, all 15 exact text substitutions, edit conflicts, duplicates, missing cards and reruns.
 
-**Dry-run result against authenticated 2026-11-16 raw Gutenberg content:** all **14 text anchors found exactly once**, 90 unique title and URL pairs maintained, five category totals correct, Gutenberg marker counts unchanged (page #1338: three \`wp:html\` sections plus two groups; Library #77 untouched structurally). All source URLs, full descriptions, rights notices and layouts remain unchanged. This was performed as an in-memory structural rehearsal; the new Node regression suite has not been independently executed in CI. Do not claim production browser testing.
+**Dry-run result against authenticated 2026-11-16 raw Gutenberg content:** all **15 text anchors found exactly once**, 90 unique title and URL pairs maintained, five category totals correct, Gutenberg marker counts unchanged (page #1338: three \`wp:html\` sections plus two groups; Library #77 untouched structurally). All source URLs, full descriptions, rights notices and layouts remain unchanged. This was performed as an in-memory structural rehearsal; the new Node regression suite has not been independently executed in CI. Do not claim production browser testing.
+
+## Source-freshness correction — 2026-11-16 follow-up
+
+NARA's [official Record Group Explorer](https://www.archives.gov/findingaid/record-group-explorer) now reports **503,600,456 online textual scans / 12,473,570,637 estimated pages = 4.04%** for **October 2026**, compared with the directory card's outdated **June 2026 475,127,595 scans / ~3.87%**. The retained percentage is a **scan-to-estimated-page ratio**, not the percentage of physical records surviving, publicly accessible, or fully catalogued. The adjacent donated-collection visualization is a **different population** (October 2026: 1,175,630 scans / 25,447,250 estimated pages, 4.62%); figures must not be merged. Source pages last rechecked 2026-11-16. These institutional figures may change monthly.
+
+Instead of replacing one number with another that will soon age, the guarded patch now revises the existing **Record Group Explorer description** to evergreen language and keeps its source URL, title, category and reuse cue intact. This increases the planned correction from 14 to **15 exact anchors**. The 90-entry JSON file is a dated **pre-repair inventory**, not a claim that its underlying WordPress copy has already been repaired.
+
+### Independently executed local Node QA (follow-up)
+
+Reconstructed the PR's staged JavaScript and Node test suite in an isolated local environment and ran `node --test` on the PR-original script/tests: **7/7 passed, 0 failed**. Added one source-freshness guard regression and a stale-metric assertion to the existing test fixture; the revised suite passed **8/8, 0 failed** locally. Original test suite and follow-up execution are **synthetic fixture QA**, not production WordPress-theme browser, accessibility or source-file delivery QA. Authenticated readback immediately before this update again found #1338 (2026-11-03 22:12:43) and #77 (2026-11-07 19:39:01) unchanged, with 90 unique titles/URLs, 12/24/21/25/8 category counts and 14 prior anchors each present exactly once. The new NARA stale phrase is also present exactly once. No WordPress write occurred.
 
 ## Targeted editorial corrections
 
-On published #1338, change only the headline quantity, introductory statistic, search label, all-filter quantity, five category numbers, initial live-region message, original script's total, and the supplemental script's **23 → 24** and **26 → 25** entries. Preserve all **90** source entries.
+On published #1338, correct the headline quantity, introductory statistic, search label, all-filter quantity, five category numbers, initial live-region message, original script's total, and supplemental script's **23 → 24** and **26 → 25** entries; also replace the outdated June 2026 Record Group Explorer description with source-qualified evergreen text. Preserve all **90** source entries and links.
 
 On published parent #77, change only **"Sixty free" → "Ninety free"** and **"60 curated sources · 8 research families" → "90 curated sources · 5 research paths."** The second correction is grounded in five \`data-cat\` families visible in the source directory.
 
@@ -54,7 +64,7 @@ No modifications to site navigation templates, other published pages, homepage, 
 | NIST Disaster/Failure Data Archive (#69) | Institutional landing page opened | https://www.nist.gov/disaster-failure-studies/data-archive |
 | NARA Record Group Explorer (#89) | Institutional page opened | https://www.archives.gov/findingaid/record-group-explorer — scan percentages are estimates of textual page coverage, not of records surviving |
 
-The other **83 URLs were not independently opened in this run**. A successful institutional landing page check does not prove every linked downloadable record is publicly accessible, complete, or reusable. Existing links are kept intact in this scoped correction.
+The other **83 URLs were not independently opened in the initial inventory pass**. The source-freshness follow-up also opened NARA's [October 2026 record-group figures](https://www.archives.gov/findingaid/record-group-explorer) and [donated-collection figures](https://www.archives.gov/findingaid/donated-collection-explorer/1000). A successful institutional landing page check does not prove every linked downloadable record is publicly accessible, complete, or reusable. Existing links are kept intact in this scoped correction.
 
 ## QA gate: HOLD before a live WordPress correction
 
