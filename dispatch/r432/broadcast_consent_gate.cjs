@@ -18,13 +18,13 @@ function evaluate(snapshot, proof, issueNumber, offers = []) {
     zeroDirectEmailFollowersReported: followers.email === 0,
     welcomeConfiguredNotReceipt: !!settings.welcome_message && !isTrue(proof,"welcomeReceipt")
   };
-  const issues = [];
+  const issues = [], observations = [];
   if (!factualFlags.jetpackEnabled) issues.push("NEWSLETTER_DISABLED");
   if (!factualFlags.newPostAutoEmailOff) issues.push("AUTOMATIC_SENDING_DEFAULT_UNSAFE");
   if (!factualFlags.categoryTargetingOff) issues.push("CATEGORY_CONFIGURATION_DRIFT_REQUIRES_REVIEW");
   if (!Number.isInteger(subscribers.total) || !Number.isInteger(subscribers.confirmed) || !Number.isInteger(subscribers.unconfirmed)) issues.push("SUBSCRIBER_DATA_INCOMPLETE");
-  else if (subscribers.total < subscribers.confirmed || subscribers.total < subscribers.unconfirmed || subscribers.confirmed + subscribers.unconfirmed > subscribers.total) issues.push("SUBSCRIBER_BUCKETS_NONADDITIVE");
-  if (followers.email === 0) issues.push("NO_DIRECT_EMAIL_FOLLOWERS_REPORTED_NOT_ZERO_ELIGIBLE_PEOPLE_PROVEN");
+  else if (subscribers.total < subscribers.confirmed || subscribers.total < subscribers.unconfirmed || subscribers.confirmed + subscribers.unconfirmed > subscribers.total) observations.push("SUBSCRIBER_BUCKETS_NONADDITIVE");
+  if (followers.email === 0) observations.push("NO_DIRECT_EMAIL_FOLLOWERS_REPORTED_NOT_ZERO_ELIGIBLE_PEOPLE_PROVEN");
   if (!isTrue(proof,"providerRecipientEligibility")) issues.push("ELIGIBLE_RECIPIENTS_UNVERIFIED");
   for (const field of REQUIRED_SHARED) if(!isTrue(proof, field)) issues.push("MISSING_" + field);
   const commercial = ISSUE_KINDS[issueNumber-1] === "commercial";
@@ -42,7 +42,7 @@ function evaluate(snapshot, proof, issueNumber, offers = []) {
   return Object.freeze({issue:issueNumber,kind:ISSUE_KINDS[issueNumber-1],status:reviewEligible ? "HUMAN_REVIEW_ONLY" : "HOLD_UNSENT",sendAuthorized:false,
     actualTransportVerified:isTrue(proof,"nativeJetpackPreview"), targeting:"BROADCAST_ONLY_NO_SUBSCRIBER_SEGMENTS", analyticsSegmentation:"SOURCE_TAGGED_SITE_VISITS_ONLY",
     recipientCount:null, totalDashboardCount:subscribers.total ?? null, confirmedDashboardCount:subscribers.confirmed ?? null, unconfirmedDashboardCount:subscribers.unconfirmed ?? null,
-    flags:factualFlags,issues:[...new Set(issues)]});
+    flags:factualFlags,issues:[...new Set(issues)],observations:[...new Set(observations)]});
 }
 function revenueProof(proof) {const missing=REQUIRED_REVENUE.filter(k=>!isTrue(proof,k));return {status:missing.length ? "NOT_COMPUTABLE" : "SOURCE_DATA_READY_FOR_INDEPENDENT_ACCOUNTING",missing,netRevenuePer1000:null};}
 function sourceAttribution(issueNumber) {
