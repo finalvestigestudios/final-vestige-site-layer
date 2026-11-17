@@ -11,7 +11,7 @@ from pathlib import Path
 import re
 import subprocess
 import sys
-import tempfile
+import threading
 
 CHECKS = (
     ("six_app_source_smoke", "test_offline_source_smoke_r408.py"),
@@ -28,7 +28,7 @@ _SUCCESS_TRAILER = re.compile(
     rb"\r?\n\r?\nOK\r?\n?\Z"
 )
 _FAILURE_LINE = re.compile(rb"(?m)^(?:FAILED(?:[ \t(]|$)|FAIL:|ERROR:|Traceback \(most recent call last\):)")
-_MAX_EVIDENCE_BYTES = 1_048_576  # Acceptance threshold, not a filesystem write limit.
+_MAX_EVIDENCE_BYTES = 1_048_576  # Hard parent-side capture ceiling, including errors.
 
 
 def _child_env(desktop: Path) -> dict[str, str]:
@@ -42,6 +42,70 @@ def _child_env(desktop: Path) -> dict[str, str]:
     return env
 
 
+def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[int, bytes, bool]:
+    """Drain child stdout with a 1 MiB ceiling *while it runs*, on Windows or POSIX.
+
+    A dedicated reader avoids PIPE deadlocks and never writes private exceptions to
+    disk or the operator console. Above the cap the child is killed and its output
+    discarded. This is not a sandbox; trusted test code may spawn descendants.
+    """
+    collected = bytearray()
+    overflow = threading.Event()
+    read_error = threading.Event()
+    proc = subprocess.Popen(cmd, cwd=desktop.parent.parent, env=_child_env(desktop),
+                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    assert proc.stdout is not None
+    stream = proc.stdout
+
+    def read_child() -> None:
+        try:
+            while True:
+                chunk = stream.read1(65536)
+                if not chunk:
+                    break
+                if len(collected) + len(chunk) > _MAX_EVIDENCE_BYTES:
+                    overflow.set()
+                    try:
+                        proc.kill()
+                    except OSError:
+                        pass  # Child may already have exited; still reject the log.
+                    break
+                collected.extend(chunk)
+        except (OSError, ValueError):
+            read_error.set()
+            try:
+                proc.kill()
+            except OSError:
+                pass
+
+    worker = threading.Thread(target=read_child, name="fvs-source-log-drain", daemon=True)
+    timed_out = False
+    try:
+        worker.start()
+        try:
+            proc.wait(timeout=timeout)
+        except subprocess.TimeoutExpired:
+            timed_out = True
+            proc.kill()
+            proc.wait()
+        worker.join(timeout=2)
+        if worker.is_alive() or read_error.is_set():
+            raise OSError("Source evidence stream unavailable")
+        if timed_out:
+            raise subprocess.TimeoutExpired(cmd, timeout)
+        if overflow.is_set():
+            return proc.returncode, b"", True
+        return proc.returncode, bytes(collected), False
+    finally:
+        if proc.poll() is None:
+            proc.kill()
+        proc.wait()
+        # Only close a stream that the reader has finished using. A pipe held
+        # open by descendants yields BLOCKED, not an unbounded parent hang.
+        if not worker.is_alive():
+            stream.close()
+
+
 def _single_check(desktop: Path, label: str, pattern: str, mode: str,
                   flags: tuple[str, ...], timeout: int) -> dict[str, object]:
     tests = desktop / "tests" / pattern
@@ -52,23 +116,13 @@ def _single_check(desktop: Path, label: str, pattern: str, mode: str,
             return {"check": label, "mode": mode, "result": "BLOCKED", "tests": 0}
         cmd = (sys.executable, *flags, "-B", "-W", "error", "-m", "unittest",
                "discover", "-s", str(desktop / "tests"), "-p", pattern)
-        # A disk-backed spool avoids storing large sensitive exception output in RAM;
-        # nothing from it is copied to the evidence record or console.
-        with tempfile.TemporaryFile(mode="w+b") as spool:
-            finished = subprocess.run(cmd, cwd=desktop.parent.parent, env=_child_env(desktop),
-                                      stdout=spool, stderr=subprocess.STDOUT,
-                                      timeout=timeout, check=False)
-            size = spool.tell()
-            if size > _MAX_EVIDENCE_BYTES:
-                # This rejects excessive test output; the disk spool is NOT capped
-                # while a child runs. Use a quota/isolation for untrusted code.
-                return {"check": label, "mode": mode, "result": "FAIL", "tests": 0}
-            spool.seek(0)
-            output = spool.read()
+        returncode, output, overflow = _bounded_child(cmd, desktop, timeout)
+        if overflow:
+            return {"check": label, "mode": mode, "result": "FAIL", "tests": 0}
         summaries = _TEST_SUMMARY.findall(output)
         count = int(summaries[0]) if len(summaries) == 1 else 0
         terminal = _SUCCESS_TRAILER.search(output)
-        passed = (finished.returncode == 0 and count > 0 and terminal is not None
+        passed = (returncode == 0 and count > 0 and terminal is not None
                   and int(terminal.group(1)) == count
                   and not _FAILURE_LINE.search(output))
         return {"check": label, "mode": mode,

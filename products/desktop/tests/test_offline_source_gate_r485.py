@@ -19,18 +19,17 @@ class OfflineGateR485Tests(unittest.TestCase):
             (self.desktop / "tests" / pattern).write_text("# synthetic test fixture\n")
 
     def _fake_run(self, output=b"----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nOK\n", code=0):
-        def call(*args, **kwargs):
-            kwargs["stdout"].write(output)
-            self.assertIs(kwargs["stderr"], gate.subprocess.STDOUT)
-            self.assertEqual(kwargs["timeout"], 600)
-            self.assertIn("-B", args[0])
-            self.assertEqual(kwargs["env"]["PYTHONPATH"], str(self.desktop))
-            self.assertNotIn("GITHUB_TOKEN", kwargs["env"])
-            return type("Completed", (), {"returncode": code})()
+        def call(cmd, desktop, timeout):
+            self.assertEqual(timeout, 600)
+            self.assertIn("-B", cmd)
+            self.assertEqual(desktop, self.desktop)
+            self.assertEqual(gate._child_env(desktop)["PYTHONPATH"], str(self.desktop))
+            self.assertNotIn("GITHUB_TOKEN", gate._child_env(desktop))
+            return code, output if len(output) <= gate._MAX_EVIDENCE_BYTES else b"", len(output) > gate._MAX_EVIDENCE_BYTES
         return call
 
     def test_eight_real_check_invocations_normal_and_optimized(self):
-        with patch.object(gate.subprocess, "run", side_effect=self._fake_run()) as call:
+        with patch.object(gate, "_bounded_child", side_effect=self._fake_run()) as call:
             result = gate.verify(self.desktop)
         self.assertEqual(call.call_count, 8)
         self.assertTrue(result["all_passed"])
@@ -40,7 +39,7 @@ class OfflineGateR485Tests(unittest.TestCase):
 
     def test_missing_test_file_is_blocked_without_running_it(self):
         (self.desktop / "tests" / gate.CHECKS[0][1]).unlink()
-        with patch.object(gate.subprocess, "run", side_effect=self._fake_run()) as run:
+        with patch.object(gate, "_bounded_child", side_effect=self._fake_run()) as run:
             result = gate.verify(self.desktop)
         self.assertEqual(run.call_count, 6)
         self.assertFalse(result["all_passed"])
@@ -48,7 +47,7 @@ class OfflineGateR485Tests(unittest.TestCase):
 
     def test_nonzero_exit_fails_and_private_errors_never_appear(self):
         secret = b"/private/claims/client-finances.csv"
-        with patch.object(gate.subprocess, "run", side_effect=self._fake_run(
+        with patch.object(gate, "_bounded_child", side_effect=self._fake_run(
                 b"Ran 4 tests in 0.001s\nFAILED\n" + secret, code=1)):
             result = gate.verify(self.desktop)
         self.assertFalse(result["all_passed"])
@@ -58,11 +57,11 @@ class OfflineGateR485Tests(unittest.TestCase):
     def test_zero_tests_or_skipped_tests_never_pass(self):
         for output in (b"Ran 0 tests in 0s\nOK", b"Ran 7 tests in 0s\nOK (skipped=1)"):
             with self.subTest(output=output):
-                with patch.object(gate.subprocess, "run", side_effect=self._fake_run(output)):
+                with patch.object(gate, "_bounded_child", side_effect=self._fake_run(output)):
                     self.assertFalse(gate.verify(self.desktop)["all_passed"])
 
     def test_timeout_stops_check_with_blocked_result(self):
-        with patch.object(gate.subprocess, "run", side_effect=gate.subprocess.TimeoutExpired("safe", 1)):
+        with patch.object(gate, "_bounded_child", side_effect=gate.subprocess.TimeoutExpired("safe", 1)):
             result = gate.verify(self.desktop)
         self.assertEqual({r["result"] for r in result["results"]}, {"BLOCKED"})
 
