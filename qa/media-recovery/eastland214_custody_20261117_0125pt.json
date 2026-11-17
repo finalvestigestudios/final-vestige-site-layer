@@ -1,0 +1,188 @@
+{
+  "type": "image-qa-custody",
+  "post_id": 214,
+  "source_snapshot_date": "2026-10-30",
+  "source_snapshot_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+  "post_modified": "2026-10-29T16:30:42",
+  "site_baseline": {
+    "posts": 61,
+    "refs": 355
+  },
+  "proven_42_broken": false,
+  "measured_76_percent_savings": false,
+  "original_storage_equals_visitor_bytes": false,
+  "wp_production_authorized": false,
+  "media_cache_authorized": false,
+  "homepage_scope": false,
+  "decision": "HOLD",
+  "slots": [
+    {
+      "key": "214:0",
+      "original_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19622v.jpg",
+      "alt": "SS Eastland lying on its side beside the Chicago River wharf after capsizing on July 24, 1915.",
+      "dom_width_attribute": null,
+      "dom_height_attribute": null,
+      "guest_current_src": null,
+      "guest_http_status": null,
+      "guest_mime": null,
+      "guest_decoded": null,
+      "guest_transfer_bytes": null,
+      "guest_screenshot": null,
+      "source_sha256": null,
+      "rights_approved": false,
+      "frame_verified": false,
+      "catalog": {
+        "id": "LOC 2014699553, ggbain.19622",
+        "url": "https://www.loc.gov/pictures/item/2014699553/marc/",
+        "native_px": null,
+        "review_px": null,
+        "rights_note": "Bain News Service; LOC: no known publication restrictions"
+      }
+    },
+    {
+      "key": "214:1",
+      "original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Wreck_of_the_Eastland,_Chicago,_1915.jpg",
+      "alt": "Panoramic view of the overturned Eastland and rescue activity along the Chicago River in 1915.",
+      "dom_width_attribute": null,
+      "dom_height_attribute": null,
+      "guest_current_src": null,
+      "guest_http_status": null,
+      "guest_mime": null,
+      "guest_decoded": null,
+      "guest_transfer_bytes": null,
+      "guest_screenshot": null,
+      "source_sha256": null,
+      "rights_approved": false,
+      "frame_verified": false,
+      "catalog": {
+        "id": "LOC pan.6a04191",
+        "url": "https://commons.wikimedia.org/wiki/File:Wreck_of_the_Eastland,_Chicago,_1915.jpg",
+        "native_px": [
+          2475,
+          662
+        ],
+        "review_px": {
+          "width": 960,
+          "height": 257
+        },
+        "rights_note": "Kaufmann, Weimer & Fabry / LOC; Commons PD-US claim"
+      }
+    },
+    {
+      "key": "214:2",
+      "original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/EastlandKenosha.jpg",
+      "alt": "The tug Kenosha alongside the overturned Eastland, rescuing survivors from the exposed hull in the Chicago River.",
+      "dom_width_attribute": null,
+      "dom_height_attribute": null,
+      "guest_current_src": null,
+      "guest_http_status": null,
+      "guest_mime": null,
+      "guest_decoded": null,
+      "guest_transfer_bytes": null,
+      "guest_screenshot": null,
+      "source_sha256": null,
+      "rights_approved": false,
+      "frame_verified": false,
+      "catalog": {
+        "id": "Chicago Daily News DN-0064936",
+        "url": "https://commons.wikimedia.org/wiki/File:EastlandKenosha.jpg",
+        "native_px": [
+          475,
+          381
+        ],
+        "review_px": {
+          "width": 475,
+          "height": 381
+        },
+        "rights_note": "Chicago Daily News / Chicago Historical Society; Commons PD-US"
+      }
+    },
+    {
+      "key": "214:3",
+      "original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Helen_Repa_Eastland_Disaster_photo.png?width=1280",
+      "alt": "Western Electric nurse Helen Repa assisting a victim after the Eastland disaster in Chicago.",
+      "dom_width_attribute": null,
+      "dom_height_attribute": null,
+      "guest_current_src": null,
+      "guest_http_status": null,
+      "guest_mime": null,
+      "guest_decoded": null,
+      "guest_transfer_bytes": null,
+      "guest_screenshot": null,
+      "source_sha256": null,
+      "rights_approved": false,
+      "frame_verified": false,
+      "catalog": {
+        "id": "Helen Repa 1915 newspaper",
+        "url": "https://commons.wikimedia.org/wiki/File:Helen_Repa_Eastland_Disaster_photo.png",
+        "native_px": [
+          1786,
+          920
+        ],
+        "review_px": {
+          "width": 960,
+          "height": 495
+        },
+        "rights_note": "Unknown photographer, 1915 paper; Commons pre-1931 PD-US claim"
+      }
+    },
+    {
+      "key": "214:4",
+      "original_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19623v.jpg",
+      "alt": "Rescuers attempting to revive a victim of the Eastland disaster in Chicago in July 1915.",
+      "dom_width_attribute": null,
+      "dom_height_attribute": null,
+      "guest_current_src": null,
+      "guest_http_status": null,
+      "guest_mime": null,
+      "guest_decoded": null,
+      "guest_transfer_bytes": null,
+      "guest_screenshot": null,
+      "source_sha256": null,
+      "rights_approved": false,
+      "frame_verified": false,
+      "catalog": {
+        "id": "LOC 2014699554, ggbain.19623",
+        "url": "https://www.loc.gov/pictures/item/2014699554/",
+        "native_px": [
+          4153,
+          5697
+        ],
+        "review_px": {
+          "width": 960,
+          "height": 1317
+        },
+        "rights_note": "Bain News Service / LOC; Commons TIFF geometry, date metadata conflict"
+      }
+    },
+    {
+      "key": "214:5",
+      "original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Photograph_of_The_Eastland_(upside_down)_on_Chicago_River,_Chicago._-_NARA_-_281841.jpg?width=1280",
+      "alt": "National Archives photograph of the overturned Eastland in the Chicago River after the 1915 disaster.",
+      "dom_width_attribute": null,
+      "dom_height_attribute": null,
+      "guest_current_src": null,
+      "guest_http_status": null,
+      "guest_mime": null,
+      "guest_decoded": null,
+      "guest_transfer_bytes": null,
+      "guest_screenshot": null,
+      "source_sha256": null,
+      "rights_approved": false,
+      "frame_verified": false,
+      "catalog": {
+        "id": "NARA NAID 281841 RG21",
+        "url": "https://commons.wikimedia.org/wiki/File:Photograph_of_The_Eastland_(upside_down)_on_Chicago_River,_Chicago._-_NARA_-_281841.jpg",
+        "native_px": [
+          3000,
+          2402
+        ],
+        "review_px": {
+          "width": 960,
+          "height": 769
+        },
+        "rights_note": "NARA custody; Commons federal PD assertion, author unknown"
+      }
+    }
+  ]
+}
