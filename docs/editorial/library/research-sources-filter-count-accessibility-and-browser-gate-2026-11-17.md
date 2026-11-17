@@ -13,9 +13,9 @@ At 02:43:03 site-local, the Library Studio used **WordPress single-section revis
 ## Reusable browser gate produced
 A new read-only **Python/Playwright browser-acceptance test** was built, packaged and attached in this Library Studio run: `qa_research_sources_live.py`, with original explanatory figure, dated rights/provenance report, strict JSON evidence and example screenshots.
 
-Its checks cover 320/390/768/1440px × scripts on/off; 90 unique URLs/titles; 5 category totals; static search label; accessible group role/name and non-`display:none` filter counts; 30 fallback records without scripts; live result count, search for supplemental record **National Archives Donated Collection Explorer**, no-result and reset; focus, horizontal overflow, link security, metadata and JS errors. It does **not** submit forms, click external links, sign in, publish or spend.
+Its checks cover 320/390/768/1440px × scripts on/off; uses Chromium ARIA snapshots to verify category numbers participate in button accessible names; 90 unique URLs/titles; 5 category totals; static search label; accessible group role/name and non-`display:none` filter counts; 30 fallback records without scripts; live result count, search for supplemental record **National Archives Donated Collection Explorer**, no-result and reset; focus, horizontal overflow, link security, metadata and JS errors. It does **not** submit forms, click external links, sign in, publish or spend.
 
-**Local *fictional* fixture:** 8/8 test configurations PASS, 0 failures; 212 individual checks passed, with 12 illustrative screenshots and JSON. The fixture has invented cards, not WordPress or genuine archival images. This is **not** production-theme, actual screen-reader or full keyboard traversal QA.
+**Local *fictional* fixture:** 8/8 test configurations PASS, 0 failures; 220 individual checks passed, with 12 illustrative screenshots and JSON. The fixture has invented cards, not WordPress or genuine archival images. Two negative-control variants (old CSS display:none and stale 60-search label) correctly returned nonzero failure in all 8 configurations. This is **not** production-theme, actual screen-reader or full keyboard traversal QA.
 
 Networked reviewer command:
 ```sh
