@@ -20,7 +20,7 @@ Direct GitHub blob reads returned **all 25 distinct originally enumerated candid
 
 A simple independent HTML-tag-stripped word estimate (not browser-visible text or a reading-depth PASS) identified material differences across the three original Shelter versions:
 
-| Original body | First branch | Continuation | Follow-up | Citation tokens (same order) |
+| Original body | First branch | Continuation | Follow-up | Citation token counts (three variants) |
 |---|---:|---:|---:|---|
 | Family contact/reunification | ~3,027 | ~3,464 | ~3,564 | 62 / 67 / 69 |
 | Home fire evacuation | ~3,747 | ~4,257 | ~4,257 | 70 / 73 / 73; continuation and follow-up are same Git blob |
@@ -29,7 +29,7 @@ A simple independent HTML-tag-stripped word estimate (not browser-visible text o
 
 Original Shelter source fragments contain **31 / 41 / 45** source records respectively. These increases and differences are not proof that newer content is better or safer. Qualified reviewers must examine each variant and verify applicable source evidence, medical/emergency instructions, privacy and accessibility before selecting any candidate. Preserve the oldest version as evidence even when the newer one has more words.
 
-## Reproduction on a genuine full checkout (read-only, no CMS)
+## Reproduction on a genuine full checkout (local build outputs only, no CMS)
 
 ```sh
 mkdir -p /tmp/fv-r431-original-objects
@@ -42,7 +42,7 @@ python -I preparedness/tools/validate.py
 python -I preparedness/tools/build.py
 ```
 
-The R431 CLI **always exits 2** and retains DRAFT_HARD_HOLD even with structurally authentic input. The native 35-article validate/build, authentic WordPress/private-preview export parity (70 pairs), exact rendered reading-depth comparison, independent QD #157 / synthetic fixture #169 / dependent #2205, five original source disputes, child privacy and qualified safety approvals are **not completed by R431**. A local full authenticated repository checkout was not available in this run; do not treat the isolated synthetic tests as native build evidence.
+The R431 CLI **always exits 2** and retains DRAFT_HARD_HOLD even with structurally authentic input. The native 35-article validate/build, authentic WordPress/private-preview export parity (35 pairs / 70 outputs), exact rendered reading-depth comparison, independent QD #157 / synthetic fixture #169 / dependent #2205, five original source disputes, child privacy and qualified safety approvals are **not completed by R431**. A local full authenticated repository checkout was not available in this run; do not treat the isolated synthetic tests as native build evidence.
 
 ## Conversion-first acceptance (#820)
 
