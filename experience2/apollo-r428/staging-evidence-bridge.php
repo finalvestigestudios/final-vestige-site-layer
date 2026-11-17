@@ -61,12 +61,14 @@ function fv_r428_render(int $instance): string {
         $out .= '<time datetime="' . fv_r428_e($date) . '">' . fv_r428_e($date) . '</time>';
         $out .= '<h3>' . fv_r428_e($title) . '</h3><p class="fv-r428__kind">' . fv_r428_e($kind) . '</p>';
         $out .= '<p>' . fv_r428_e($claim) . '</p><details><summary>What this source cannot establish</summary><p>' . fv_r428_e($limitation) . '</p></details>';
+        $out .= '<p class="fv-r428__print-only"><strong>Evidence limit:</strong> ' . fv_r428_e($limitation) . '</p>';
         $out .= '<p class="fv-r428__source"><a href="' . fv_r428_e($url) . '">' . fv_r428_e($source_label) . '</a></p></li>';
     }
     $out .= '</ol><aside class="fv-r428__method" aria-labelledby="' . $key . '-method">';
     $out .= '<h3 id="' . $key . '-method">An educator’s evidence question</h3>';
     $out .= '<p>Which account can establish the suspected ignition mechanism—and which image can only establish what was displayed in a museum decades later?</p>';
     $out .= '<details><summary>Show a source-based response</summary><p>The 1967 Review Board supports a probable electrical arc, while leaving the exact initiator unresolved. The 2017 announcement supports the museum display date, not the accident’s initiating mechanism.</p></details>';
+    $out .= '<p class="fv-r428__print-only"><strong>Source-based response:</strong> The 1967 Review Board supports a probable electrical arc but leaves the exact initiator unresolved; the 2017 announcement establishes the later exhibit.</p>';
     $out .= '<p class="fv-r428__rights">These are links to NASA publications, not copies of NASA media. NASA does not endorse FV or any FV product. Check <a href="' . FV_R428_RIGHTS . '">NASA image and brand guidance</a> before media reuse.</p>';
     $out .= '<p class="fv-r428__next"><a href="' . FV_R428_INVESTIGATION . '">Continue to the free Apollo 1 investigation</a></p></aside></section>';
     return $out;
