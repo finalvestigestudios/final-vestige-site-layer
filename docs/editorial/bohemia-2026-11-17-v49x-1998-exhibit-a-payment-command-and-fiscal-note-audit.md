@@ -1,0 +1,38 @@
+# Bohemia Spillway — v49x | 1998 Exhibit A, 1999 payment command and fiscal-note chronology
+
+**Checked:** November 17, 2026 (Pacific). **Release status:** HOLD, internal reader revision only. **Scope:** Existing Bohemia *The Spillway That Kept Its Names*; do not alter homepage, shared templates, Caernarvon, social distribution or subscriber mail.
+
+## Primary evidence inspected in original page images
+
+1. [Louisiana Legislature, enacted SB1076 / Act 1378 of 1999](https://www.legis.la.gov/Legis/ViewDocument.aspx?d=65096), **printed p. 5 / zero-based PDF page 4**. Exact subsection (C) points to an *Exhibit A* filed with the December 8, 1998 **Motion and Order For Leave to Pay Claims**, Twenty-fifth Judicial District Court, Plaquemines Parish, *Haspel & Davis* docket **31-357**. It mandates royalty and interest payments in listed amounts after appropriate claimant identification, with non-waiver language. This is a legislative directive naming a court-filed schedule, not the schedule or proof of payment.
+2. [SB1076 Senate Conference Committee Report, June 21, 1999](https://www.legis.la.gov/Legis/ViewDocument.aspx?d=611696), **printed p. 1 / PDF index 0**. Amendment No. 2 INSERTS that targeted subsection after the earlier engrossed bill version. [Official SB1076 bill history](https://www.legis.la.gov/Legis/BillInfo.aspx?i=3686) confirms **Act 1378** and **July 12, 1999 effective date**. The original enrolled Act page and original conference report page were visually inspected November 17, 2026.
+3. [Legislative Fiscal Office, May 8, 1999 Fiscal Note for SB1076](https://www.legis.la.gov/Legis/ViewDocument.aspx?d=616306), **single original page screenshot inspected**. Notes *ENGROSSED* bill version. Estimated five years of **$0 direct fiscal impact**, described as extension of return deadlines. **Version-and-date caveat:** this note predates the June 21 conference addition and does **not** evaluate that later claimant-payment amendment. It does not set royalty debt at zero or establish claim payments.
+4. [Louisiana Legislature, enrolled Act 130 of 2005](https://www.legis.la.gov/Legis/ViewDocument.aspx?d=317802), **printed p. 5 / PDF index 4**, original page image visually inspected. The 1999-specific exhibit payment subsection is visibly struck out; new text elsewhere records the Legislature's account of partial payments under a distinct December 11, 2000 class settlement judgment and prospective additional payments. **This is not proof that the separate court judgment was vacated, the 1998 Exhibit A claims were completely satisfied or recipients were paid.**
+
+## Original analysis
+
+The 1999 fiscal note is a **prior-version estimate**, not a cost forecast for the subsequently inserted Exhibit A mandate. Therefore the juxtaposition of its zero-dollar columns and the later targeted payment direction is not a contradiction or proof of nonpayment. The 1998 original exhibit and the 2000 judgment remain essential to validate specific payment identities, while court-registry and disbursing-agent records are required to establish actual transfers.
+
+**Focused document request:** (a) December 8, 1998 Motion and Order For Leave to Pay Claims, *including* Exhibit A; (b) December 11, 2000 consent judgment and homologated settlement, plus modifications; (c) judicial-registry deposits and Bourgeois Bennett disbursing-agent recipient-level payment evidence, reviewed appropriately to avoid publishing sensitive living claimant data; (d) 2005 post-amendment court enforcement and accounting dispositions. Do not present court docket or legislative exhibit references as independent inspection of unreceived documents.
+
+## Manuscript and source-ledger readback
+
+- Existing `docs/editorial/bohemia-spillway-reader-cut-v49-2026-11-16.md` edited in place, latest **v49x**, manuscript commit **8b785eef28c1ea6dbf8354d476b22d32ce169842**; independently fetched SHA **2cc7bf716a0beaeea2a4e013a9d79f5a3e4c631d**.
+- Three analytical paragraphs and a figure integrated after the existing 2005 deletion explanation, without inventing an Exhibit A list or beneficiary receipts; bibliography sources **#78** (1999 enacted law/committee/history) and **#79** (May fiscal note) added.
+- Independent readback: **79** numbered bibliography entries, **250** bracketed narrative citations, **0** unresolved numerical citation targets. This is a structural integrity check, **not** a full legal proofread or verification of all 250 claims.
+
+## First-party evidence graphic and rights
+
+- `docs/editorial/assets/bohemia-1998-2005-claimant-payment-document-chain-v49x.svg` created as **original vector graphic** by **Final Vestige Studios**, **November 17, 2026**; **© 2026 Final Vestige Studios**. Four documentary stages: 1998 cited court exhibit / July 1999 Act 1378 / December 2000 settlement judgment / June 2005 deletion of the specific statutory provision.
+- Provenance and rights: all graphic typography/shapes are studio-authored; no unlicensed embedded image, hotlink, archive facsimile or AI reconstruction. Embedded descriptive title, alt description, dates, copyright and four official source URLs. This timeline **does not prove payment**.
+- GitHub art commit **72ecba9c74cf90cf468a01f38af1a5cf0b66566c**; read-back Git blob **22666f1ffb20848cca9ab022bc59e75538e48ea5**. Rasterization performed from an exact byte-for-byte reconstruction **matched to this Git blob SHA** at widths **390px**, **560px** and **800px**. Actual 390px preview inspected for clipped/overlapping text, box boundaries and principal-text legibility: **isolated graphic PASS**. This is **not** authenticated WordPress-theme QA. Source-controlled SVG has not been staged in WordPress.
+- Public site already has WP-local documentary media **#2484** (2023 Landsat NASA/USGS) and **#2485** (2007 USDA NAIP/NASA), with creator/date/alt/captions independently read back. The original official NASA information page is https://science.nasa.gov/earth/earth-observatory/mardi-gras-pass-150986/ . Public anonymous JPEG byte loading remains unverified; tool errors are **not proof of broken URLs**.
+
+## Collision and release controls
+
+- Recent 66 published WordPress posts inspected; no live duplicate Bohemia observed in published listings. Continuing one manuscript under dedicated GitHub issue **#2832**; separate Caernarvon issue **#1463** is not touched. Live Journal / Editorial Standards / current queue consulted.
+- Authenticated WordPress draft **#2488**, last modified **2026-11-16T02:44:46** site-local, is **still DRAFT**, featured media #2484, categories 9369 / 232815. **No WordPress write** during v49x. Confirmed `jetpack_seo_noindex=true`, `_jetpack_dont_email_post_to_subs=true`, `jetpack_publicize_feature_enabled=false`. **No** social posting, subscriber email, paid services, homepage/shared-template edit or Caernarvon edit.
+- **HOLD**: independently obtained court Exhibit A and 2000 settlement/distribution instruments; executed interagency MOUs, modern royalty reconciliation and any dedicated audit; independent legal/editorial clearance; anonymous public image byte delivery; authenticated **390px and 1440px WordPress preview** with real theme and link/alt/credit QA. Sonlite SONRIS terms explicitly restrict automated access: **no scraping or bypass** was attempted.
+- Grok later, only after legal/editorial approval: explain why a 1999 fiscal note's zero direct cost forecast, written before a late payment amendment, does not show that no one was owed mineral royalties. No social publishing undertaken.
+
+**Publication:** none. **Cost:** $0.
