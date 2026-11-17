@@ -16,6 +16,7 @@ const page=['<!-- wp:html -->','<p>Sixty free collections, reports</p>',
 '<button>Archives, maps &amp; research <span>12</span></button>',
 '<button>Navigation &amp; preservation <span>5</span></button>',
 '<p>Showing all 60 sources.</p>',
+'<p>A record-group discovery tool that makes digitization gaps visible: NARA’s June 2026 baseline reports 475,127,595 scans, about 3.87% of estimated textual holdings represented there.</p>',
 "<script>let s=' of 60 source';const totals={all:90,declassified:12,accountability:23,engineering:21,archives:26,navigation:8};</script>",
 rawCards,'<!-- /wp:html -->'].join('\n');
 const library='<!-- wp:group --><p>Sixty free, first-party or institutionally maintained sources</p><p>60 curated sources · 8 research families · Link-out access</p><!-- /wp:group -->';
@@ -26,17 +27,22 @@ test('90 actual cards have the expected category distribution',()=>{
  assert.equal(cards(page).length,90);
  for(const [cat,n] of Object.entries(perCategory))assert.equal(cards(page).filter(c=>c.category===cat).length,n);
 });
-test('guarded staging corrects all 14 copy/label anchors and leaves cards intact',()=>{
+test('guarded staging corrects all 15 copy/label and source-freshness anchors and leaves cards intact',()=>{
  const out=stage(source);
  assert.equal(out.status,'STAGING_ONLY_DO_NOT_PUBLISH');
- assert.equal(out.validation.substitutions,14);
+ assert.equal(out.validation.substitutions,15);
  assert.equal(out.validation.source_cards_preserved,true);
  assert.equal(out.validation.production_theme_verified,false);
  assert.equal(out.page_content.includes('Search all 90 sources'),true);
  assert.equal(out.page_content.includes('Showing all 90 sources'),true);
  assert.equal(out.page_content.includes('accountability:24,engineering:21,archives:25'),true);
  assert.equal(out.library_content.includes('90 curated sources · 5 research paths'),true);
+ assert.equal(out.page_content.includes('NARA updates these estimates monthly'),true);
+ assert.equal(out.page_content.includes('NARA’s June 2026 baseline'),false);
  assert.deepEqual(cards(out.page_content),cards(page));
+});
+test('refuses missing outdated-statistic anchor (fail closed)',()=>{
+ assert.throws(()=>stage({...source,page_content:page.replace('475,127,595','475,127,596')}),/expected one occurrence/);
 });
 test('refuses changed WordPress revision (do not race another editor)',()=>{
  assert.throws(()=>stage({...source,page_modified:'2026-11-16T11:00:00'}),/revision changed/);
