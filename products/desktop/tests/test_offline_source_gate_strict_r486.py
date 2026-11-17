@@ -22,10 +22,9 @@ class OfflineGateStrictR486Tests(unittest.TestCase):
             (self.desktop / "tests" / filename).write_text("# placeholder\n")
 
     def _once(self, output: bytes, code: int = 0):
-        def fake_run(*args, **kwargs):
-            kwargs["stdout"].write(output)
-            return type("Completed", (), {"returncode": code})()
-        with patch.object(gate.subprocess, "run", side_effect=fake_run):
+        oversize = len(output) > gate._MAX_EVIDENCE_BYTES
+        with patch.object(gate, "_bounded_child", return_value=(
+                code, b"" if oversize else output, oversize)):
             return gate._single_check(self.desktop, "sample", gate.CHECKS[0][1],
                                       "normal", (), 600)
 
@@ -80,7 +79,7 @@ class OfflineGateStrictR486Tests(unittest.TestCase):
             target.symlink_to(outside)
         except (OSError, NotImplementedError):
             self.skipTest("Symlinks unavailable")
-        with patch.object(gate.subprocess, "run") as run:
+        with patch.object(gate, "_bounded_child") as run:
             outcome = gate._single_check(self.desktop, "sample", gate.CHECKS[0][1], "normal", (), 600)
         self.assertEqual(outcome["result"], "BLOCKED")
         run.assert_not_called()
@@ -92,7 +91,7 @@ class OfflineGateStrictR486Tests(unittest.TestCase):
             original.symlink_to(self.desktop / "oldtests", target_is_directory=True)
         except (OSError, NotImplementedError):
             self.skipTest("Symlinks unavailable")
-        with patch.object(gate.subprocess, "run") as run:
+        with patch.object(gate, "_bounded_child") as run:
             outcome = gate._single_check(self.desktop, "sample", gate.CHECKS[0][1], "normal", (), 600)
         self.assertEqual(outcome["result"], "BLOCKED")
         run.assert_not_called()
