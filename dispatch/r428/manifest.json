@@ -1,0 +1,64 @@
+{
+  "canonical_pr": 175,
+  "stack_base_pr": 2891,
+  "status": "HOLD_UNSENT_UNADOPTED",
+  "allocation": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial": [
+      3,
+      5
+    ]
+  },
+  "merchant_email_permission": false,
+  "earning_links_issued": false,
+  "warmup_guides_live": false,
+  "postal_verified": false,
+  "unsubscribe_verified": false,
+  "jetpack_preview_verified": false,
+  "founder_final_send_approval": false,
+  "allow_send": false,
+  "allow_publish": false,
+  "provider_2026_11_17": {
+    "newsletter_total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "wpcom_followers": 3,
+    "direct_email_followers": 0,
+    "eligible_inboxes": null
+  },
+  "issues": [
+    {
+      "number": 3,
+      "subject": "Twelve minutes, and one very large claim",
+      "preheader": "An honest attention log—and what audio research cannot promise.",
+      "guide": "[[APPROVED_LIVE_ZEN12_GUIDE_URL_REQUIRED]]",
+      "affiliate_link": null,
+      "source_urls": [
+        "https://zen12.com/about",
+        "https://zen12.com/",
+        "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+        "https://pubmed.ncbi.nlm.nih.gov/39910150/",
+        "https://www.nccih.nih.gov/health/meditation-and-mindfulness-what-you-need-to-know"
+      ]
+    },
+    {
+      "number": 5,
+      "subject": "What a 33-minute hypnosis audio can actually tell you",
+      "preheader": "The recording, the fine print, and five questions before buying.",
+      "guide": "[[APPROVED_LIVE_TOTAL_FOCUS_GUIDE_URL_REQUIRED]]",
+      "affiliate_link": null,
+      "source_urls": [
+        "https://hypnosislive.com/mental-skills/total-focus",
+        "https://hypnosislive.com/faq",
+        "https://www.nccih.nih.gov/health/hypnosis",
+        "https://pubmed.ncbi.nlm.nih.gov/25557062/",
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ]
+    }
+  ]
+}
