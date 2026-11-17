@@ -1,0 +1,33 @@
+# E436 — Article #11 reader-first edition, recall-scope clarity and original process HOLD
+
+**2026-11-17 PT | PREPAREDNESS ONLY | DRAFT / HARD HOLD / NO PUBLICATION**
+
+Continues original 35-slate Article #11 `safe-jerky-dehydration`, *What Dried Meat Cannot Promise*. Reviewed live [Preparedness Archive](https://finalvestige.com/preparedness/), [Editorial Standards](https://finalvestige.com/editorial-standards/), [issue #136](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/136), previous E435 reviewer memo, and independent Integration [R443 #2910](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2910) at frozen head `4cd2ba579c7f4dccdaebe6967b4a9c1e203e4b50`. Does not change Integration engineering or original 35-article corpus.
+
+## High-value editorial decision: make one readable piece instead of another micro-addendum
+
+The inherited E435 research-oriented candidate grew to **~9,892 rendered words and 13 figures**. E436 constructs a **separate 1,802-word review-only reader edition** with **one original HTML/CSS diagram** about three non-interchangeable evidence classes (product identity; validated process; official notice), plus a **307-word no-cost printable food-label/recall record**. The complete E435 file, all its sources, figures, risk research and prior E415–E435 notes remain unmodified. This is a proposed parallel editorial alternative, **not a selection among nine original manuscript forks** and not a content overwrite. Assets and evidence files are maintained in the E436 local QA bundle.
+
+## Current first-party source reconciliation, Nov. 17, 2026
+
+1. [FoodSafety.gov](https://www.foodsafety.gov/recalls-and-outbreaks) says an item whose identifiers do not match one recall is outside **that particular recall**; [FDA public notices](https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts) explicitly do **not** list all FDA recalls and archive notices after about three years; [FDA additional recall information](https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/additional-information-about-recalls) identifies a distinct Enforcement Report. No match to one notice is **not** general proof the product is safe. This clarifies the boundary without treating official agencies as necessarily contradictory.
+2. [CDC foodborne-outbreak guidance](https://www.cdc.gov/foodborne-outbreaks/what-to-do/index.html) (Nov. 25, 2025) supports retaining original labels/lot/dates and receipts; this **does not** validate food or a homemade preservation process.
+3. [FDA meat jurisdiction](https://www.fda.gov/food/meat-guidance-documents-regulatory-information/fda-regulated-meats-and-meat-products-human-consumption) distinguishes conventional FSIS amenable species from FDA non-amenable commercial game (deer/elk included), while acknowledging potential FSIS voluntary inspection. Package and inspection status matter; "jerky" alone does not decide agency.
+4. Direct [NCHFP jerky chapter](https://nchfp.uga.edu/how/dry/recipes/jerky) reflects 2014 UGA material and conditional process approaches. Direct [CDC CWD overview](https://www.cdc.gov/chronic-wasting/about/index.html) (Jan. 21, 2026) emphasizes no confirmed human disease, continuing uncertainty, state-specific testing, individual processing and not consuming CWD-positive meat; [2025 primary laboratory study](https://wwwnc.cdc.gov/eid/article/31/4/24-1176_article) shows detectable equipment transfer, not a household decontamination recipe or confirmed human infection.
+5. Direct USDA FSIS full Q&A endpoints [home jerky](https://ask.fsis.usda.gov/article/How-do-I-dry-jerky) and [home/commercial storage](https://ask.fsis.usda.gov/article/Is-jerky-safe-when-stored-at-room-temperature) **timed out**; first-party indexed summaries can be identified, but **full current original context was not confirmed**, so no temperatures, storage durations or home process instructions were copied.
+
+**Research documentation:** 12-source access ledger (10 directly opened official/public governance pages, 2 indexed-only FSIS), 18-group source/risk/safety crosswalk, E435→E436 8-section compression map, and SHA-256 manifest. Each source has access status, exact URL, claim scope and limitation. U.S. guidance; local, state, tribal, species and specific product directions control.
+
+## Original hazardous source content remains suppressed
+
+R397 original line references from E427/E428 custody: **7,37** (wild-game parasite freezing); **5,52–54,72–81** (unvalidated combined heating/drying procedure); **69** (untested equipment claim); **95–96** (storage duration compromise); **122** (overbroad source-verification assurance). Qualified, whole-method review remains required before any hazardous original direction is shown or approved. Neither E436 asset contains treatment schedules, curing ratios, home preservation recipes, CWD decontamination instructions, or shelf-life guarantees.
+
+## Local QA and ownership boundaries
+
+Local Chromium with JavaScript disabled: **12/12 PASS** on two assets at 320, 360, 390, 768, 1440 CSS px + print; zero horizontal overflow and one H1 per asset; safety note visible. Local `file://` navigation was blocked, so markup was rendered via `set_content()`; this is **not** live WordPress/mobile acceptance. One original semantic captioned three-card HTML/CSS figure; **no** stock photos, scripts, email collection, remote CSS or paid assets. No direct external HTTP link audit of exported WordPress because no export exists.
+
+Latest independent Integration [R443 #2910](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2910) adds read-only external-original evidence-lock checking but is explicitly HARD HOLD; current PR reports no authentic full 35-article native build, 70 real WordPress/private-preview pairs, qualified QD/food/wildlife and no trusted independent lock attestation. Five source disputes and nine manuscript forks remain unselected. Do not duplicate its implementation or claim R443 is a release PASS.
+
+**For the qualified reviewer:** Compare the short E436 candidate line-by-line with the selected original only after custody selection, verify source jurisdiction and the full treatment process, check actual Gutenberg/print/JS-off/source links and figure notice visibility, and sign independent safety/QD and founder release gates before any WordPress action.
+
+**Published: NONE. WordPress saved: NONE. Merge/deploy: NONE. Homepage/Investigations/navigation/commerce/social/email: UNCHANGED.** Original procedural guidance remains private. Next source review **Dec. 17, 2026**, sooner upon substantive official update.
