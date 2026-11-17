@@ -72,15 +72,27 @@ function validatePage(p,which,inv) {
   if(p.url!==original.url||p.revision!==original.modified)fail(`Source URL/revision drift in ${which} ${p.post_id}`);
   if(!Array.isArray(p.slots)||p.slots.length!==original.images)fail(`Missing image slot(s) in ${which} ${p.post_id}`);
   if(p.scrolled_to_end!==true||p.lazy_images_settled!==true||p.network_complete!==true||p.screenshot_reviewed!==true||!(/^[a-f0-9]{64}$/).test(p.screenshot_sha256||''))fail(`Incomplete visual/page evidence in ${which} ${p.post_id}`);
-  const slots=new Map(),reqs=new Set();let bytes=0;
+  const slots=new Map(),reqs=new Map();let bytes=0;
   for(const r of p.slots) {
     if(!isObject(r)||typeof r.key!=='string'||slots.has(r.key))fail(`Duplicate/invalid ${which} image slot`);
     const expected=original.rows.find(x=>x.key===r.key);
     if(!expected||r.authored_url!==expected.source_url)fail(`Unmatched source image identity in ${which} ${r.key}`);
-    if(!validUrl(r.current_src)||!validUrl(r.request_url)||!sourceMatches(r.current_src,expected.source_url)||r.current_src!==r.request_url||typeof r.request_id!=='string'||!r.request_id||reqs.has(r.request_id))fail(`Unmatched/duplicate ${which} network request`);
+    if(!validUrl(r.current_src)||!validUrl(r.request_url)||!sourceMatches(r.current_src,expected.source_url)||r.current_src!==r.request_url||typeof r.request_id!=='string'||!r.request_id)fail(`Unmatched ${which} network request`);
     if(!integer(r.http_status,200)||r.http_status>=300||typeof r.mime!=='string'||!/^image\//i.test(r.mime)||r.decoded!==true||!integer(r.natural_width,1)||!integer(r.natural_height,1)||!integer(r.wire_bytes)||r.from_cache!==false||r.from_service_worker!==false||r.from_prefetch!==false)fail(`Broken/missing/cached image in ${which} ${r.key}`);
-    reqs.add(r.request_id);slots.set(r.key,r);bytes+=r.wire_bytes;
-    if(!Number.isSafeInteger(bytes))fail('Unsafe image wire-byte sum');
+    // Chromium may serve the same decoded URL to multiple DOM image slots from one
+    // network request, even with HTTP cache disabled. Count that request once.
+    const previous=reqs.get(r.request_id);
+    if(previous) {
+      for(const field of ['current_src','request_url','http_status','mime','wire_bytes',
+        'natural_width','natural_height','from_cache','from_service_worker','from_prefetch']) {
+        if(r[field]!==previous[field])fail(`Conflicting shared network request in ${which} ${r.key}: ${field}`);
+      }
+    } else {
+      reqs.set(r.request_id,r);
+      bytes+=r.wire_bytes;
+      if(!Number.isSafeInteger(bytes))fail('Unsafe image wire-byte sum');
+    }
+    slots.set(r.key,r);
   }
   return {id:p.post_id,slots,bytes};
 }
