@@ -1,0 +1,54 @@
+# Mind R438 — conversion acceptance and creator-topic crosswalk
+**Status:** UNPUBLISHED, commercial HARD HOLD, reviewed 2026-11-16 PT. Business source: https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820 ; strategy: https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818 ; Mind: https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171 ; Dispatch: https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174 .
+
+## First: is there an authorized payable offer?
+
+**Intended audience:** a person intrigued by Final Vestige's experiments and considering an optional, convenient meditation-audio routine instead of expecting medical treatment or guaranteed brain improvement.
+
+**Candidate offer:** Zen12 premium full course, not an unspecified Zen12 coupon. Official descriptions https://zen12.com/ and https://zen12.com/about show twelve-minute MP3s, twelve levels, four listening styles, 48 MP3s in the premium course; other public variants contain only six levels. Separate promotional URL https://zen12.com/secret/ advertises a different coupon/price surface. Public main page showed premium $87.99 and seller-described one-year refund promise on review; **neither is a verified FV referred price or effective referred refund term**. No time-limited promise, discount entitlement, or referral checkout exists in these drafts.
+
+**Partner status:** the public Inspire3 portal https://affiliates.inspire3.com/ advertises signup and special earning links in generic terms. It does not establish Final Vestige publisher approval, authorized exact SKU, website/email/social channel permissions, approved swipe materials, issued earning URL, referred checkout, payout or settlement. Targeted read-only Gmail searches surfaced general promotions, not authenticated named publisher acceptance. All 28 commercial gates remain HOLD; approved affiliate swipe/creatives were not accessible and have not been copied. The source guide is deliberately non-clickable at merchant level.
+
+**Fallback:** https://finalvestige.com/free-resources/ and https://finalvestige.com/focus/ authenticate an existing free 52-page Fieldbook, not a payable Mind SKU. No rights-cleared, deliverable, actually sellable FV-owned Mind digital product was verified. Do not invent one or treat an opt-in as revenue. The free resource remains the near-term useful path, retaining the same Jetpack/Dispatch list and welcome.
+
+## Three proposed social-topic-to-evidence-to-offer journeys
+
+| Proposed factual creator hook (NOT a published asset claim) | Article destination and evidence | Existing owned nurture | Optional offer fit, never proof of efficacy | Asset |
+| --- | --- | --- | --- | --- |
+| "Count the passes. What else crossed the room?" | R438 original gorilla research is UNPUBLISHED; cite https://doi.org/10.1068/p281059 and https://doi.org/10.1068/i0386 ; no public routing until approved | https://finalvestige.com/focus/ | An optional honest Zen12 buyer guide for routine seekers; these experiments do NOT prove branded audio works | UNMATCHED |
+| "The stranger changed behind a door. Did you notice?" | ALREADY LIVE canonical https://finalvestige.com/2026/11/02/change-blindness/ ; do not create competing SEO page | Same existing Focus path | A relevant optional audio buyer guide only if merchant permission is established; no change-detection promise | UNMATCHED |
+| "What did Puységur's observers actually record?" | ALREADY LIVE source archive https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ ; preserve failures and editions | Same Focus/Dispatch only | Hypnosis Live product needs an independent separate authorization/claims review; none endorsed | UNMATCHED |
+
+Praxxis coordinates genuine already-published Grok asset IDs, platform URLs, exact hooks, rights, publication dates, consent-aware UTMs and allowed destinations through existing TASK-008 https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit . Grok owns content and posting. This dossier is not an assignment to Grok and does not modify a queue. Never synthesize an asset_id.
+
+## The buyer guide and 42-second variant
+
+A source-grounded problem-to-insight proposition: short structured listening may be *convenient* for someone who likes ready-made MP3 sessions, not proven to produce equal results to longer practice. The original guide offers a sourced 1999 and 2010 micro-story, free twelve-minute safe exercise, product-feature fit, five transparent purchase objections, terms/pricing uncertainty, and an accessible non-functional commercial control. A and B have identical substantive copy. B adds original static SVG poster, six-scene **42-second unencoded** storyboard, human-readable transcript and six-cue caption file. No film exists or plays. No autoplay, third-party pixel, new form, medical or wealth promises, merchant URL, or checkout.
+
+**Proposed future CTA only after authorization:** "Review verified Zen12 premium offer." Immediately beside any eventually approved earning link: **"If you purchase through this link, Final Vestige Studios may earn a commission at no additional cost to you."** Current disabled control says offer unavailable pending partner approval. General disclosures alone are insufficient; preserve proximity and read order in browser and screen reader. References: FTC https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking and health guidance https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance .
+
+**A/B hypothesis (NOT a result):** Among qualified high-intent humans, optional original explanatory video may improve later independently verified paid purchase versus the same text-only offer guide. Keep the exact same SKU, price, CTA placement, copy and disclosure. If release approved, assign via existing first-party server-side capability at 1:1 without cross-site tracking; do not implement duplicate measurement scripts. Video B must have a readable full transcript and accessible controls, caption synchronization, poster, no autoplay and no-JS fallback. Real film rights, encoding, browser performance and commerce verification are unsatisfied. No experiment has run. Small samples make any outcome exploratory.
+
+## First-party measurement and accounting contract
+
+Source campaign tokens: utm_source = verified platform; utm_medium = organic_social; utm_campaign = mind_perception_pilot_2026_11; utm_content = actual immutable Grok asset_id. Platform bio-link routes may require their own documented allowance. Sanitize user input and never record email addresses, IPs, fingerprints, cross-site IDs or personal mental-health information in event logs. Preserve consent and use existing compliant first-party instrumentation only after Claude review. Use aggregated daily or weekly cohorts.
+
+Funnel events are distinct: (1) qualified-human campaign_landing, (2) matched article/topic view, (3) article_to_resource_click, (4) confirmed_signup ONLY if Jetpack provider independently confirms, (5) optional buyer_guide_view, (6) affiliate_outbound ONLY if approved link exists, (7) merchant_confirmed_purchase ONLY with independent merchant payment/commission evidence, (8) verified refunds/fees and settlement. A click or checkout intent is NEVER a paid order. If cross-channel attribution cannot be linked in a privacy-safe way, state missing attribution.
+
+Primary KPI: 1000 × (independently confirmed realized net revenue) / (verified qualified-human sessions), if both available and denominator is positive; otherwise **NOT COMPUTABLE**, not zero. Reconcile gross orders, returns, merchant costs, affiliate settlement, commission clawbacks, repeat customers and 7/30-day cohorts. Report paid conversion rate, lead-to-customer conversion, totals and tiny-sample caveats. The #820 WordPress view baseline is not a qualified-human denominator. No real sale/commission or credible denominator was verified this sprint.
+
+## Prioritized offer → funnel step → blocker → change/experiment → pass/fail evidence → owner
+
+| Priority | Offer → step | Blocker | Needed action or experiment | Evidence this sprint | Verdict / owner |
+| --- | --- | --- | --- | --- | --- |
+| P0 | Zen12 → payable commission | Named partner, exact permitted SKU/channels, URL, terms, tracking, checkout and refund proof missing | Secure authenticated non-public account proof; match final promoted SKU to exact current checkout and payout | Official public descriptions checked; Gmail promotions only; 28 gates HOLD | FAIL-CLOSED / Founder + Commerce |
+| P0 | Owned Mind → paid order | No authenticated payable rights-cleared delivered SKU | Audit ownership, store listing, payment, delivery, refunds | Free Fieldbook live; paid SKU not verified | FAIL-CLOSED / Founder + Claude |
+| P1 | Grok video → qualified article | No three authenticated published asset IDs or mobile routes | Praxxis verify exact IDs, platform URLs, rights and hooks; route existing live change-blindness not competing draft | Three candidate topics, all asset IDs UNMATCHED | HOLD / Praxxis + Grok |
+| P1 | Article → confirmed free lead | Existing Jetpack provider confirmation not reconciled | Read-only provider-confirmed journey, preserve one list/welcome; no test subscriber without approval | Existing free route observed; no new signup | UNTESTED / Claude + Dispatch |
+| P1 | A/B guide → paid order | No encoded video, browser QA or approved checkout | Build rights-cleared original 42s film, QA both variants, then controlled trial after all approvals | HTML A/B and VTT exist; no film or experimental sales | DRAFT / Mind + QA |
+| P1 | Purchase → realized net | No settled paid order or qualified sessions | Merchant export/settlement, refund and fee reconciliation with consent-aware cohorts | No real paid conversion or denominator | NOT COMPUTABLE / Commerce + Claude |
+| P2 | /mind/ hub → live navigation | No editorial release approval and real browser / sanitizer QA | Review source-only four-stream hub and test mobile/keyboard/WCAG/reduced motion/no-JS | Prototype only, NOT saved CMS draft | HOLD / Mind + art lead #150 + QA #126 |
+
+## Independent release gates
+
+Source controls must be rerun against exact committed GitHub blobs. Real Chrome/Firefox/Safari at 360, 390, 768, 1440, 1920; WCAG 2.2 AA screen reader/keyboard; reduced motion and no-JS; WordPress sanitizer; track/video sync and performance; URL and permission lint; proof of actual referred checkout/returns; human signoff are all outstanding. This draft alters only mind/r438/*; it must not touch homepage PR #49, Issue #150, hub PR #172, WordPress CMS/nav, Jetpack, newsletter issues, Grok production, deployed analytics or any release channel. Commercial release stays HARD HOLD.
