@@ -49,7 +49,7 @@ function offerGuard(html){
  assert.ok(!/guaranteed\s+(?:focus|wealth|income|healing|cure)/i.test(html),'unqualified benefit promise');
  assert.ok(html.indexOf('id="commission-disclosure"')<html.indexOf('class="disabled-offer"'),'disclosure not before offer');
  assert.ok(html.indexOf('class="disabled-offer"')-html.indexOf('id="commission-disclosure"')<750,'disclosure too distant');
- assert.ok(!/\b(?:\$\d+[\.,]?\d*|[0-9]+%\s*(?:off|commission)|guaranteed\s+(?:wealth|income|focus|cure))/i.test(html),'unsupported hard commercial numeric/guarantee');
+ assert.ok(!/(?:\$\d+[\.,]?\d*|[0-9]+%\s*(?:off|commission)|guaranteed\s+(?:wealth|income|focus|cure))/i.test(html),'unsupported hard commercial numeric/guarantee');
  assert.ok(html.includes('https://finalvestige.com/focus/'),'existing free funnel missing');
  assert.ok(html.includes('https://finalvestige.com/2026/11/02/change-blindness/'),'canonical article missing');
  assert.ok(!/type=["']email["']/.test(html),'duplicate email capture');
