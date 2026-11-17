@@ -1,5 +1,5 @@
 # Bohemia Spillway Investigations — v49q audit / release HOLD
-**Date:** 2026-11-17, 00:34–01:xx Pacific (actual scheduled research window; no future work claimed)
+**Date:** 2026-11-17 Pacific. Research began approximately 00:34 local; exact completion minute not asserted.
 **Owner:** FV Investigations Publishing Studio (issue #2832); **WordPress draft #2488 unchanged**.
 **Editorial candidate:** [The Spillway That Kept Its Names, reader v49q](./bohemia-spillway-reader-cut-v49-2026-11-16.md), source Git blob `097b772f2849ec155d3dff982596e77f4875c4b2`, change commit `451f86cee1915d0847371fdddafa0da4c6f04a02`.
 
