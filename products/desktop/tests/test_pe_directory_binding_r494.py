@@ -45,7 +45,7 @@ class PEDataDirectoryIntegrationR494(unittest.TestCase):
 
     def test_certificate_overlay_passes(self):
         self.inspect(candidate(entry=4, address=1024, size=64,
-                               count=5, overlay=b"Z" * 64))
+                               count=5, overlay=struct.pack("<IHH", 64, 0x0200, 2) + b"Z" * 56))
 
     def test_unmapped_table_rejected(self):
         with self.assertRaises(PEFormatError):
