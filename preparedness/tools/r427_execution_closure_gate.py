@@ -43,13 +43,31 @@ SUSPICIOUS_SUFFIXES = ('.pyc','.pyo','.pth','.so','.pyd','.dll','.dylib')
 SUSPICIOUS_NAMES = {'sitecustomize.py','usercustomize.py'}
 POISON_ENV = ('PYTHONPATH','PYTHONHOME','PYTHONSTARTUP','PYTHONINSPECT',
               'PYTHONUSERBASE','PYTHONPYCACHEPREFIX')
+# A reviewer cannot treat the Python-import environment as isolated while
+# inheriting arbitrary Git selectors, trace writers, or config injection.
+# A few benign CI Git environment variables are explicitly tolerated; all
+# other GIT_* variables are REVIEW HOLDS, even though subprocesses scrub them.
+ALLOWED_GIT_ENV = frozenset(('GIT_TERMINAL_PROMPT', 'GIT_OPTIONAL_LOCKS',
+                             'GIT_CONFIG_NOSYSTEM'))
+
+
+def sanitized_git_env():
+    """Do not give Git inherited trace, repo/index or config selectors."""
+    clean = {k: v for k, v in os.environ.items() if not k.startswith('GIT_')}
+    clean.update({'GIT_OPTIONAL_LOCKS': '0', 'GIT_CONFIG_NOSYSTEM': '1',
+                  'GIT_CONFIG_GLOBAL': os.devnull,
+                  'GIT_CONFIG_SYSTEM': os.devnull,
+                  'GIT_TERMINAL_PROMPT': '0', 'GIT_NO_LAZY_FETCH': '1'})
+    return clean
 
 
 def git(repo,*args,binary=False):
     try:
-        result=subprocess.run(['git','-C',str(repo),*args],capture_output=True,
-               check=False,timeout=12,env={**os.environ,'GIT_OPTIONAL_LOCKS':'0',
-                   'GIT_CONFIG_NOSYSTEM':'1'})
+        # Local core.fsmonitor can execute an external command during status.
+        # Query only; do not invoke hooks, fetch, checkout, or write to Git.
+        result=subprocess.run(['git','-c','core.fsmonitor=false',
+               '-c','core.untrackedCache=false','-C',str(repo),*args],capture_output=True,
+               check=False,timeout=12,env=sanitized_git_env())
     except (OSError,subprocess.TimeoutExpired) as e:
         raise ValueError('GIT_QUERY_UNAVAILABLE') from e
     if result.returncode:
@@ -94,6 +112,9 @@ def closure(repo,expected_head,*,expected_base=BASE_HEAD,env=None):
     if not isinstance(expected_base,str) or not HEX40.fullmatch(expected_base):bad('INVALID_PARENT_PIN')
     for var in POISON_ENV:
         if env.get(var):bad('PYTHON_IMPORT_ENV_'+var)
+    for var, value in env.items():
+        if var.startswith('GIT_') and var not in ALLOWED_GIT_ENV and value:
+            bad('GIT_ENV_OVERRIDE_'+var)
     if env.get('PYTHONDONTWRITEBYTECODE')!='1':bad('BYTECODE_WRITES_NOT_DISABLED')
     if env.get('PYTHONNOUSERSITE')!='1':bad('USER_SITE_NOT_DISABLED')
     digest=None;reviewed=[]
