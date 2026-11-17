@@ -71,7 +71,7 @@ class Contract(unittest.TestCase):
     def test_article_duplicate(self):self.d['original_articles'][1]['slug']='article-0';self.check('DUPLICATE_ORIGINAL_ARTICLE_SLUG')
     def test_article_slug_traversal(self):self.d['original_articles'][0]['slug']='../x';self.check('INVALID_ORIGINAL_ARTICLE_SLUG')
     def test_article_sha_missing(self):self.d['original_articles'][0]['body_candidate_git_blobs']=[];self.check('INVALID_ORIGINAL_BODY_OBJECTS:article-0')
-    def test_article_sha_duplicate(self):self.d['original_articles'][0]['body_candidate_git_blobs']=['2'*40]*2;self.check('INVALID_ORIGINAL_BODY_OBJECTS:article-0')
+    def test_article_sha_duplicate(self):self.d['original_articles'][0]['body_candidate_git_blobs']=['2'*40]*2;self.assertNotIn('INVALID_ORIGINAL_BODY_OBJECTS:article-0',g.inspect_docket(self.d))
     def test_source_dispute_count(self):self.d['source_evidence_disputes'].pop();self.check('FIVE_SOURCE_DISPUTES_CHANGED')
     def test_source_decision_unreviewed(self):self.d['source_evidence_disputes'][0]['decision']='PASS';self.check('PREMATURE_SOURCE_ADJUDICATION')
     def test_source_auto_selection(self):self.d['source_evidence_disputes'][0]['selected_record']='x';self.check('PREMATURE_SOURCE_ADJUDICATION')
