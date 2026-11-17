@@ -4,8 +4,8 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 QA=ROOT/'QA'
 OUTPUT=QA/'Apollo_R419_Local_Evidence.zip'
-SOURCE=['README.md','staging-evidence-concordance.php','assets/concordance.css','qa/render_fixture.php','qa/test_contract.py','qa/browser_qa.py','qa/release_gate.py','qa/test_release_gate.py','qa/package_evidence.py']
-RESULTS=['QA/php_contract.log','QA/release_gate_tests.log','QA/browser_test.log','QA/browser_results.json','QA/chrome_accessibility_extract.json','QA/release_gate_result.json']
+SOURCE=['README.md','staging-evidence-concordance.php','assets/concordance.css','qa/render_fixture.php','qa/test_contract.py','qa/browser_qa.py','qa/release_gate.py','qa/test_release_gate.py','qa/navigation_probe.py','qa/package_evidence.py']
+RESULTS=['QA/php_contract.log','QA/release_gate_tests.log','QA/browser_test.log','QA/browser_results.json','QA/chrome_accessibility_extract.json','QA/navigation_probe.json','QA/release_gate_result.json']
 def build():
     files={rel:(ROOT/rel).read_bytes() for rel in SOURCE+RESULTS}
     for p in sorted((QA/'screenshots').glob('*.png')):files[str(p.relative_to(ROOT))]=p.read_bytes()
