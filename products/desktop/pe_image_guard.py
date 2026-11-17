@@ -15,6 +15,7 @@ from pathlib import Path
 from pe_digest_custody_r493 import verify_pe_digest_stream
 from pe_directory_guard_r494 import PEDataDirectoryError, validate_pe_directories
 from pe_certificate_guard_r496 import PECertificateError, verify_certificate_table
+from pe_header_receipt_r505 import PEHeaderReceiptError, read_exact_at
 
 
 class PEFormatError(ValueError):
@@ -55,13 +56,17 @@ def _u32(raw: bytes, at: int) -> int:
 
 
 def _read_at(stream, start: int, count: int, length: int) -> bytes:
-    if start < 0 or count < 0 or start + count > length:
-        raise PEFormatError("PE header or section extends beyond file")
-    stream.seek(start)
-    data = stream.read(count)
-    if len(data) != count:
-        raise PEFormatError("PE file changed or was truncated during inspection")
-    return data
+    """Read DOS/NT/optional/section bytes with exact descriptor receipts.
+
+    The smaller helper rejects forged seeks and non-native read results. Keep
+    the existing PEFormatError contract without retaining private I/O chains.
+    """
+    message = None
+    try:
+        return read_exact_at(stream, start, count, length)
+    except PEHeaderReceiptError as exc:
+        message = str(exc)
+    raise PEFormatError(message)
 
 
 def _power_of_two(value: int) -> bool:
