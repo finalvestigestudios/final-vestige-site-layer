@@ -75,7 +75,8 @@
       "rights_status": "item-level review required",
       "link_verification": "institutional page opened",
       "last_checked": "2026-11-16 America/Los_Angeles",
-      "link_verification_scope": "Previously checked institutional destination; see preceding 50-source report; no recheck inferred"
+      "link_verification_scope": "Previously observed institutional page/PDF landing; original check documented in 50-source audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 5,
@@ -110,7 +111,8 @@
       "rights_status": "item-level review required",
       "link_verification": "institutional page opened",
       "last_checked": "2026-11-16 America/Los_Angeles",
-      "link_verification_scope": "Previously checked institutional destination; see preceding 50-source report; no recheck inferred"
+      "link_verification_scope": "Previously observed institutional page/PDF landing; original check documented in 50-source audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 8,
@@ -628,7 +630,9 @@
       "rights_status": "item-level review required",
       "link_verification": "automated access blocked (HTTP 403); not a broken-link determination",
       "last_checked": "2026-11-16 America/Los_Angeles",
-      "link_verification_scope": "Previously checked institutional destination; see preceding 50-source report; no recheck inferred"
+      "link_verification_scope": "Prior LOC retrieval returned HTTP 403; not a broken-link determination",
+      "access_outcome": "automated_access_restricted",
+      "qualification": "Library of Congress Chronicling America page returned automated HTTP 403; visit with ordinary browser and assess individual newspaper-page rights."
     },
     {
       "index": 49,
@@ -769,7 +773,8 @@
       "rights_status": "item-level review required",
       "link_verification": "institutional PDF opened; cover visually inspected",
       "last_checked": "2026-11-16 America/Los_Angeles",
-      "link_verification_scope": "Previously checked institutional destination; see preceding 50-source report; no recheck inferred"
+      "link_verification_scope": "Previously observed institutional page/PDF landing; original check documented in 50-source audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 60,
@@ -1152,7 +1157,8 @@
       "rights_status": "item-level review required",
       "link_verification": "institutional page opened",
       "last_checked": "2026-11-16 America/Los_Angeles",
-      "link_verification_scope": "Previously checked institutional destination; see preceding 50-source report; no recheck inferred"
+      "link_verification_scope": "Previously observed institutional page/PDF landing; original check documented in 50-source audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 90,
