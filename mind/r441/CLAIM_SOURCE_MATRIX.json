@@ -1,0 +1,462 @@
+{
+  "version": "fv-mind-r441-v1",
+  "checked": "2026-11-17",
+  "publish": "HOLD_UNPUBLISHED",
+  "merchant_activation": "HOLD",
+  "references": {
+    "clinical": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+    "jamanet": "https://doi.org/10.1001/jamanetworkopen.2025.42537",
+    "audio_review": "https://doi.org/10.1080/00207144.2024.2434085",
+    "beats": "https://doi.org/10.1371/journal.pone.0286023",
+    "inspire": "https://inspire3.com/",
+    "zen": "https://zen12.com/about",
+    "zenpromo": "https://zen12.com/secret/",
+    "zenmain": "https://zen12.com/",
+    "totalfocus": "https://hypnosislive.com/mental-skills/total-focus",
+    "focusshot": "https://brainwaveshots.com/focus-shot",
+    "program": "https://affiliates.inspire3.com/",
+    "ftc1": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc2": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "fieldbook": "https://finalvestige.com/focus/",
+    "archive": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+  },
+  "claim_assessments": [
+    {
+      "id": "01",
+      "claim": "2025 study enrolled 250 postmenopausal women",
+      "classification": "STUDY_SUPPORTED",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "limit": "Only described population"
+    },
+    {
+      "id": "02",
+      "claim": "2025 study tested 6-week audio hypnosis against white noise labeled hypnosis",
+      "classification": "STUDY_SUPPORTED",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "limit": "Not a product-specific trial"
+    },
+    {
+      "id": "03",
+      "claim": "Hypnosis within-arm hot flash score reduction at 6 weeks 53.4%",
+      "classification": "STUDY_SUPPORTED",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "limit": "Do not describe as between-group difference"
+    },
+    {
+      "id": "04",
+      "claim": "White-noise within-arm score reduction at 6 weeks 40.9%",
+      "classification": "STUDY_SUPPORTED",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "limit": "Cannot infer entrainment"
+    },
+    {
+      "id": "05",
+      "claim": "Between-group 6-week test P=.04",
+      "classification": "STUDY_SUPPORTED",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "limit": "Do not imply universal effect"
+    },
+    {
+      "id": "06",
+      "claim": "Full change-trajectory comparison reached significance at P=.06",
+      "classification": "REJECT",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "limit": "P=.06 exceeds conventional .05"
+    },
+    {
+      "id": "07",
+      "claim": "Hot-flash symptom diaries were primary outcome",
+      "classification": "STUDY_SUPPORTED",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "limit": "Not objective EEG cognition"
+    },
+    {
+      "id": "08",
+      "claim": "One-off session established instant focus",
+      "classification": "REJECT",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "limit": "20min daily, six weeks and different outcome"
+    },
+    {
+      "id": "09",
+      "claim": "Self-administered audio program in trial is Zen12",
+      "classification": "REJECT",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "limit": "Not product trial"
+    },
+    {
+      "id": "10",
+      "claim": "Trial proves hypnosis heals all disorders",
+      "classification": "REJECT",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "limit": "Narrow clinical population/outcome"
+    },
+    {
+      "id": "11",
+      "claim": "Both study groups improved",
+      "classification": "STUDY_SUPPORTED",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "limit": "Effect of white-noise control not isolated"
+    },
+    {
+      "id": "12",
+      "claim": "Trial supplies lifetime follow-up",
+      "classification": "REJECT",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "limit": "12-week follow-up"
+    },
+    {
+      "id": "13",
+      "claim": "Sample reflects every demographic",
+      "classification": "REJECT",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "limit": "Generalizability limits noted"
+    },
+    {
+      "id": "14",
+      "claim": "RCT shows white noise entirely inert",
+      "classification": "NOT_ESTABLISHED",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "limit": "Active control itself may relax"
+    },
+    {
+      "id": "15",
+      "claim": "All sound-based hypnosis interventions are equivalent",
+      "classification": "REJECT",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12606380/",
+      "limit": "Script, condition, dose and outcomes differ"
+    },
+    {
+      "id": "16",
+      "claim": "A hypnosis-app review exists in 2025",
+      "classification": "BIBLIOGRAPHIC_ONLY",
+      "source_url": "https://doi.org/10.1080/00207144.2024.2434085",
+      "limit": "Full text was inaccessible; no numerical claims"
+    },
+    {
+      "id": "17",
+      "claim": "Binaural beat study literature is unanimous on EEG entrainment",
+      "classification": "REJECT",
+      "source_url": "https://doi.org/10.1371/journal.pone.0286023",
+      "limit": "Review identified methodological and outcome heterogeneity"
+    },
+    {
+      "id": "18",
+      "claim": "Inspire3 lists Zen12, Hypnosis Live and Brainwave Shots",
+      "classification": "SELLER_CATALOG",
+      "source_url": "https://inspire3.com/",
+      "limit": "No efficacy inference"
+    },
+    {
+      "id": "19",
+      "claim": "Zen12 official page describes 12 levels",
+      "classification": "SELLER_FORMAT",
+      "source_url": "https://zen12.com/about",
+      "limit": "SKU must be confirmed"
+    },
+    {
+      "id": "20",
+      "claim": "Zen12 official page lists four listening styles",
+      "classification": "SELLER_FORMAT",
+      "source_url": "https://zen12.com/about",
+      "limit": "Do not infer all styles in every SKU"
+    },
+    {
+      "id": "21",
+      "claim": "Zen12 full promotional package describes 48 MP3s",
+      "classification": "SELLER_FORMAT",
+      "source_url": "https://zen12.com/secret/",
+      "limit": "Verify referred checkout"
+    },
+    {
+      "id": "22",
+      "claim": "Zen12 12 min equals one hour normal meditation",
+      "classification": "UNSUBSTANTIATED_BENEFIT",
+      "source_url": "https://zen12.com/about",
+      "limit": "Do not repeat as fact"
+    },
+    {
+      "id": "23",
+      "claim": "Zen12 automatically erases anxiety and worry",
+      "classification": "UNSUBSTANTIATED_HEALTH",
+      "source_url": "https://zen12.com/about",
+      "limit": "Do not recommend on this basis"
+    },
+    {
+      "id": "24",
+      "claim": "Zen12 public offers have uniform price and refund policy",
+      "classification": "NOT_VERIFIED",
+      "source_url": "https://zen12.com/",
+      "limit": "Conflicting promotions"
+    },
+    {
+      "id": "25",
+      "claim": "Total Focus product page describes 33 minute 47 MB download",
+      "classification": "SELLER_FORMAT",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "limit": "Seller description only"
+    },
+    {
+      "id": "26",
+      "claim": "Total Focus creates guaranteed razor-sharp concentration",
+      "classification": "UNSUBSTANTIATED_BENEFIT",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "limit": "No product-specific RCT"
+    },
+    {
+      "id": "27",
+      "claim": "Total Focus bundle terms equal single-item terms",
+      "classification": "NOT_ESTABLISHED",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "limit": "Distinct product surfaces"
+    },
+    {
+      "id": "28",
+      "claim": "Focus Shot offers 15 minute and 30 minute options",
+      "classification": "SELLER_FORMAT",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "limit": "Verify final SKU"
+    },
+    {
+      "id": "29",
+      "claim": "Focus Shot gives focus for four hours to entire day",
+      "classification": "UNSUBSTANTIATED_BENEFIT",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "limit": "No exact-product independent trial"
+    },
+    {
+      "id": "30",
+      "claim": "Inspire3 public affiliate portal offers special tracked links",
+      "classification": "PUBLIC_PROGRAM",
+      "source_url": "https://affiliates.inspire3.com/",
+      "limit": "No named approval"
+    },
+    {
+      "id": "31",
+      "claim": "FV approved Inspire3 publisher",
+      "classification": "NOT_AUTHENTICATED",
+      "source_url": "https://affiliates.inspire3.com/",
+      "limit": "Partner written account evidence needed"
+    },
+    {
+      "id": "32",
+      "claim": "FV issued Zen12 URL and commercial permissions",
+      "classification": "NOT_AUTHENTICATED",
+      "source_url": "https://affiliates.inspire3.com/",
+      "limit": "Never invent"
+    },
+    {
+      "id": "33",
+      "claim": "Public affiliate payout percentage applies to FV account",
+      "classification": "NOT_AUTHENTICATED",
+      "source_url": "https://affiliates.inspire3.com/",
+      "limit": "No contract or settlement verified"
+    },
+    {
+      "id": "34",
+      "claim": "FV has paid Mind product ready for checkout",
+      "classification": "NOT_AUTHENTICATED",
+      "source_url": "https://finalvestige.com/focus/",
+      "limit": "Existing Fieldbook explicitly free"
+    },
+    {
+      "id": "35",
+      "claim": "Fieldbook free 52 page single Jetpack signup exists",
+      "classification": "LIVE_PAGE",
+      "source_url": "https://finalvestige.com/focus/",
+      "limit": "Do not duplicate funnel"
+    },
+    {
+      "id": "36",
+      "claim": "Puységur archive has 153 rows and 16 case dossiers",
+      "classification": "LIVE_ARCHIVE",
+      "source_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "limit": "Historical evidence not proof of magnetism"
+    },
+    {
+      "id": "37",
+      "claim": "Affiliate earning relationship must be clearly disclosed near recommendation",
+      "classification": "COMPLIANCE",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "limit": "Footer-only insufficient"
+    },
+    {
+      "id": "38",
+      "claim": "Health benefit claims need competent appropriate scientific substantiation",
+      "classification": "COMPLIANCE",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "limit": "Do not borrow another product trial"
+    },
+    {
+      "id": "39",
+      "claim": "Affiliate click is a paid sale",
+      "classification": "REJECT",
+      "source_url": "https://affiliates.inspire3.com/",
+      "limit": "Different event types"
+    },
+    {
+      "id": "40",
+      "claim": "A dynamic vendor timer authenticates price urgency for FV checkout",
+      "classification": "REJECT",
+      "source_url": "https://zen12.com/secret/",
+      "limit": "No seller terms verified"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "named partner approval",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G02",
+      "name": "publisher legal identity verified",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G03",
+      "name": "exact Zen12 SKU authorized",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G04",
+      "name": "web-channel permission",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G05",
+      "name": "email-channel permission",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G06",
+      "name": "creator-channel permission",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G07",
+      "name": "issued earning URL",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G08",
+      "name": "link presentation terms",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G09",
+      "name": "approved creative rights",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G10",
+      "name": "approved disclosure reviewed",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G11",
+      "name": "product-specific scientific substantiation",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G12",
+      "name": "final referred checkout price",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G13",
+      "name": "currency confirmed",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G14",
+      "name": "SKU/bundle parity",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G15",
+      "name": "refund policy on checkout",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G16",
+      "name": "settlement/reporting data access",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G17",
+      "name": "no false urgency",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G18",
+      "name": "no medical guarantees",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G19",
+      "name": "no wealth promises",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G20",
+      "name": "no product-test fabrication",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G21",
+      "name": "link enabled only after approval",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G22",
+      "name": "real browser screenreader/keyboard QA",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G23",
+      "name": "real mobile and CWV performance",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G24",
+      "name": "encoded local video and VTT QA",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G25",
+      "name": "Jetpack provider-confirmed delivery",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G26",
+      "name": "privacy/consent and attribution QA",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G27",
+      "name": "paid conversion independently reconciled",
+      "status": "HOLD_UNVERIFIED"
+    },
+    {
+      "id": "G28",
+      "name": "net revenue after fees/refunds independently reconciled",
+      "status": "HOLD_UNVERIFIED"
+    }
+  ],
+  "owned_digital_fallback": {
+    "product": "Seven Day Focus Fieldbook",
+    "status": "FREE_NOT_PAYABLE",
+    "evidence": "https://finalvestige.com/focus/",
+    "conclusion": "Do not misrepresent as paid SKU; no verified checkout/rights-cleared payable FV-owned Mind product."
+  },
+  "kpi": {
+    "qualified_human_sessions": "UNVERIFIED",
+    "affiliate_click": "NOT_LIVE",
+    "provider_confirmed_lead": "UNVERIFIED",
+    "paid_order": "UNVERIFIED",
+    "commission_paid": "UNVERIFIED",
+    "refunds_fees": "UNVERIFIED",
+    "realized_net_revenue_per_1000": "NOT_COMPUTABLE"
+  }
+}
