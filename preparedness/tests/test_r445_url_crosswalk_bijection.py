@@ -128,6 +128,12 @@ CASES=[
  ('depth_false',lambda d:d['original_fork_disputes'][0].update(requires_reading_depth_review=False),'FORK_REVIEW_DEPTH_LOST:'),
  ('citations_false',lambda d:d['original_fork_disputes'][0].update(requires_source_citation_review=False),'FORK_REVIEW_DEPTH_LOST:'),
  ('fork_variants_lost',lambda d:d['original_fork_disputes'][0].update(variants=[]),'FORK_VARIANTS_LOST:'),
+ ('variant_branch_list',lambda d:d['all_original_source_id_crosswalk'][0]['variants'][0].update(branch=['bad']),'UNKNOWN_VARIANT_BRANCH:'),
+ ('variant_url_list',lambda d:d['all_original_source_id_crosswalk'][0]['variants'][0].update(url=['bad']),'INVALID_SOURCE_URL:'),
+ ('group_id_list',lambda d:d['shared_exact_url_review_groups'][0]['ids'].__setitem__(0,['bad']),'NONSTRING_GROUP_SOURCE_ID:'),
+ ('dispute_id_list',lambda d:d['source_evidence_disputes'][0].update(source_id=['bad']),'INVALID_DISPUTED_ID:'),
+ ('dispute_blob_list',lambda d:d['source_evidence_disputes'][0]['variants'][0].update(source_blob=['bad']),'DISPUTE_CROSSWALK_VARIANT_MISMATCH:'),
+
 ]
 for name,mutate,error in CASES:
     def test(self,mutate=mutate,error=error):
