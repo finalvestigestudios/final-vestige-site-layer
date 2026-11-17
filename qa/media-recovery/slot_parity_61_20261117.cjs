@@ -29,6 +29,18 @@ function sourceMatches(current, authored) {
     return [...u.searchParams.keys()].every(k=>controls.has(k)||a.searchParams.has(k));
   } catch {return false;}
 }
+function validRedirectChain(start,end,chain) {
+  if(start===end)return chain===undefined||(Array.isArray(chain)&&chain.length===0);
+  if(!Array.isArray(chain)||chain.length<1||chain.length>6)return false;
+  const visited=new Set([start]);let current=start;
+  for(const hop of chain) {
+    if(!isObject(hop)||!validUrl(hop.from_url)||!validUrl(hop.to_url)||
+      hop.from_url!==current||![301,302,303,307,308].includes(hop.http_status)||
+      visited.has(hop.to_url))return false;
+    visited.add(hop.to_url);current=hop.to_url;
+  }
+  return current===end;
+}
 function blobSha(raw) {const b=Buffer.from(raw,'utf8');return crypto.createHash('sha1').update(`blob ${b.length}\0`).update(b).digest('hex');}
 function loadPinned(paths) {
   if(!Array.isArray(paths)||paths.length!==8)fail('Exactly eight pinned source files required');
@@ -77,7 +89,7 @@ function validatePage(p,which,inv) {
     if(!isObject(r)||typeof r.key!=='string'||slots.has(r.key))fail(`Duplicate/invalid ${which} image slot`);
     const expected=original.rows.find(x=>x.key===r.key);
     if(!expected||r.authored_url!==expected.source_url)fail(`Unmatched source image identity in ${which} ${r.key}`);
-    if(!validUrl(r.current_src)||!validUrl(r.request_url)||!sourceMatches(r.current_src,expected.source_url)||r.current_src!==r.request_url||typeof r.request_id!=='string'||!r.request_id)fail(`Unmatched ${which} network request`);
+    if(!validUrl(r.current_src)||!validUrl(r.request_url)||!sourceMatches(r.current_src,expected.source_url)||!validRedirectChain(r.current_src,r.request_url,r.redirect_chain)||typeof r.request_id!=='string'||!r.request_id)fail(`Unmatched ${which} network request`);
     if(r.http_status!==200||typeof r.mime!=='string'||!/^image\//i.test(r.mime)||r.decoded!==true||!integer(r.natural_width,1)||!integer(r.natural_height,1)||!integer(r.wire_bytes,1)||r.from_cache!==false||r.from_service_worker!==false||r.from_prefetch!==false)fail(`Broken/missing/cached image in ${which} ${r.key}`);
     // Chromium may serve the same decoded URL to multiple DOM image slots from one
     // network request, even with HTTP cache disabled. Count that request once.
@@ -92,6 +104,7 @@ function validatePage(p,which,inv) {
       bytes+=r.wire_bytes;
       if(!Number.isSafeInteger(bytes))fail('Unsafe image wire-byte sum');
     }
+    if(previous&&JSON.stringify(r.redirect_chain||[])!==JSON.stringify(previous.redirect_chain||[]))fail(`Conflicting shared network request in ${which} ${r.key}: redirect_chain`);
     slots.set(r.key,r);
   }
   return {id:p.post_id,slots,bytes};
@@ -114,5 +127,5 @@ function assess(parts,capture=null) {
   const complete=before.size===61&&slots===355;
   return {...base,status:complete?'ALL_355_SELF_REPORTED_REVIEW_REQUIRED':'MEASURED_SUBSET_NOT_SITEWIDE',paired_posts:before.size,paired_slots:slots,before_image_bytes:beforeBytes,after_image_bytes:afterBytes,reduction_percent:Math.round((1-afterBytes/beforeBytes)*10000)/100,sitewide_76_percent_verified:false,caveat:'Collector-supplied screenshot hashes/review flags and identity assertions are NOT independently verified; obtain independent trace and visual review before any sitewide claim or replacement.'};
 }
-module.exports={PINNED,blobSha,loadPinned,inventory,sourceMatches,assess};
+module.exports={PINNED,blobSha,loadPinned,inventory,sourceMatches,validRedirectChain,assess};
 if(require.main===module){try{const args=process.argv.slice(2);if(args.length<8||args.length>9)fail('Usage: node slot_parity_61_20261117.cjs parts/01.json ... parts/08.json [SiteQA-slot-capture.json]');const parts=loadPinned(args.slice(0,8));const cap=args[8]?JSON.parse(fs.readFileSync(args[8],'utf8')):null;process.stdout.write(JSON.stringify(assess(parts,cap),null,2)+'\n');}catch(e){console.error('HOLD: '+e.message);process.exitCode=1;}}
