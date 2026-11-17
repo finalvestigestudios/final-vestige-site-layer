@@ -13,6 +13,7 @@ import struct
 from pathlib import Path
 
 from pe_digest_custody_r493 import verify_pe_digest_stream
+from pe_directory_guard_r494 import PEDataDirectoryError, validate_pe_directories
 
 
 class PEFormatError(ValueError):
@@ -198,6 +199,16 @@ def verify_amd64_pe(path: str | Path, *, expected_sha256: str | None = None) -> 
                     raise PEFormatError("Overlapping PE section extents")
             if not backed_entry:
                 raise PEFormatError("Entry point is not backed by executable section bytes")
+            try:
+                # PE security directory is a raw file offset, not an RVA.
+                # Other table entries must live in mapped PE image regions.
+                validate_pe_directories(
+                    optional, header_size=headers_size, image_size=image_size,
+                    file_size=length, virtual_ranges=virtual_ranges,
+                    file_ranges=file_ranges,
+                )
+            except PEDataDirectoryError:
+                raise PEFormatError("PE data directory rejected") from None
             if expected_sha256 is not None:
                 # Bind the structural PE verdict to the EXACT manifest bytes on
                 # this same already-open descriptor; a pathname can be replaced
