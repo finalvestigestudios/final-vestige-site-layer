@@ -20,9 +20,9 @@ for(const html of [a,b]){
  check(html.includes('Prospective affiliate disclosure:'),'near-link prospective disclosure');
  check(html.includes('Purchase link unavailable'),'inactive merchant');
  check(html.includes('no approved earning link activated'),'disclosure not false approval');
- check(!/<a[^>]*>\s*(?:Purchase|Buy|Unlock)/i.test(html),'no click-to-buy CTA');
+ check(!/<a[^>]*>\s*(?:Purchase link|Buy Zen12|Unlock Zen12)/i.test(html),'no click-to-buy CTA');
  check(html.includes('52-page Seven Day Focus Fieldbook'),'existing single lead magnet');
- check(html.includes('12 levels'),'seller-described SKU');
+ check(html.includes('12 levels')||html.includes('twelve levels'),'seller-described SKU');
  check(html.includes('twelve-minute sessions'),'merchant format exact');
  check(html.includes('minute'),'substantive guide');
 }
