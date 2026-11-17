@@ -1,0 +1,12 @@
+.fv-r432{max-width:1080px;margin-inline:auto;min-width:0;overflow-wrap:anywhere;font:normal 1rem/1.65 system-ui,sans-serif}
+.fv-r432 *{box-sizing:border-box}
+.fv-r432__banner{background:#24221f;color:#f9f2e6;padding:clamp(1rem,4vw,2.2rem);border:1px solid #ba985e;border-bottom:4px solid #ba985e}
+.fv-r432__banner h2{font:normal clamp(1.65rem,4vw,2.6rem)/1.2 Georgia,serif;color:#fff4dc;margin:.3rem 0}
+.fv-r432__eyebrow{font-size:.78rem;letter-spacing:.08em;font-weight:750;color:#efd1a0}
+.fv-r432__rights{border:1px solid #aa9677;background:#f9f5ed;color:#2d241a;padding:1rem 1.4rem;margin-bottom:2rem}
+.fv-r432__rights summary{min-height:44px;padding:.65rem 0;cursor:pointer;font-weight:700}
+.fv-r432__rights a{color:#64430b;text-decoration:underline;text-underline-offset:3px}
+.fv-r432 :is(a,button,summary,textarea):focus-visible{outline:3px solid #a56d11;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){.fv-r432 *, .fv-r432 *::before,.fv-r432 *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){.fv-r432__banner,.fv-r432__rights{color:CanvasText;background:Canvas;border-color:CanvasText}.fv-r432__banner h2,.fv-r432__eyebrow,.fv-r432__rights a{color:CanvasText}}
+@media print{.fv-r432__banner,.fv-r432__rights{background:#fff!important;color:#000!important;border-color:#000!important}.fv-r432__banner h2,.fv-r432__eyebrow,.fv-r432__rights a{color:#000!important}.fv-r432__rights:not([open]){display:none}}
