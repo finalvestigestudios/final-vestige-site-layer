@@ -1,0 +1,183 @@
+{
+  "sprint": "R431",
+  "master_pr": 175,
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "base_pr": 2906,
+  "base_sha": "6ccbb221f3e40648123e63468fbc02ab18f72b67",
+  "source_v8_assertions": 44,
+  "source_specimens": [
+    {
+      "issue": 1,
+      "path": "dispatch/r429/issue_01_wp_blocks.html",
+      "blob": "e3e7f35c5ba80f506688cecc4dcc0ce1b9a9361d"
+    },
+    {
+      "issue": 2,
+      "path": "dispatch/r429/issue_02_wp_blocks.html",
+      "blob": "bbe30337154905d02ac4e499ac761e91eeed08a7"
+    },
+    {
+      "issue": 3,
+      "path": "dispatch/r429/issue_03_wp_blocks.html",
+      "blob": "d3c4d792d7f7efd76a9fffd6a673d000c56e7515"
+    },
+    {
+      "issue": 4,
+      "path": "dispatch/r429/issue_04_wp_blocks.html",
+      "blob": "b1b4a45c7de91ddf31126b59a18fc43132703ff6"
+    },
+    {
+      "issue": 5,
+      "path": "dispatch/r429/issue_05_wp_blocks.html",
+      "blob": "e53d51e0899c2efd63d6d4eb755aa5d7742d2dc7"
+    },
+    {
+      "issue": 6,
+      "path": "dispatch/r429/issue_06_wp_blocks.html",
+      "blob": "7ef4ae122948f1c77915b059c72f6b0a73d279f4"
+    }
+  ],
+  "rows": [
+    {
+      "issue": 1,
+      "subject": "The mind is not a camera",
+      "planned_preheader_not_native_verified": "What an old record can teach us about the difference between seeing and knowing.",
+      "kind": "editorial",
+      "real_source_first_paragraph": "EDITORIAL HOLD — DO NOT PUBLISH OR EMAIL. This is an UNSENT source-control transport specimen, NOT an authorized WordPress post. Do not copy to a live post or use Send test email without founder approval.",
+      "hypothetical_editorial_opening": "Before we investigate an old photograph, we ask a simple question: what does the photograph actually show?",
+      "hypothetical_80_char_snippet": "Before we investigate an old photograph, we ask a simple question: what does the",
+      "paragraphs": 10,
+      "first_party_hrefs": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "risk": "DUPLICATE_CTA",
+      "source_footer_hardstop": true,
+      "merchant_rights_verified": false,
+      "actual_jetpack_preview_verified": false,
+      "actual_email_receipt_verified": false,
+      "send_authorized": false,
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "issue": 2,
+      "subject": "Before hypnosis had a name",
+      "planned_preheader_not_native_verified": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "kind": "editorial",
+      "real_source_first_paragraph": "EDITORIAL HOLD — DO NOT PUBLISH OR EMAIL. This is an UNSENT source-control transport specimen, NOT an authorized WordPress post. Do not copy to a live post or use Send test email without founder approval.",
+      "hypothetical_editorial_opening": "In 1785, a reader encountering Puységur's accounts would have found something that still feels startling: observers trying to describe behavior for which they didn't have a comfortable explanation.",
+      "hypothetical_80_char_snippet": "In 1785, a reader encountering Puységur's accounts would have found something th",
+      "paragraphs": 10,
+      "first_party_hrefs": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "risk": "DUPLICATE_CTA",
+      "source_footer_hardstop": true,
+      "merchant_rights_verified": false,
+      "actual_jetpack_preview_verified": false,
+      "actual_email_receipt_verified": false,
+      "send_authorized": false,
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "issue": 3,
+      "subject": "The twelve-minute meditation question",
+      "planned_preheader_not_native_verified": "An honest way to evaluate a short audio practice before you spend anything.",
+      "kind": "commercial-review-pending",
+      "real_source_first_paragraph": "EDITORIAL HOLD — DO NOT PUBLISH OR EMAIL. This is an UNSENT source-control transport specimen, NOT an authorized WordPress post. Do not copy to a live post or use Send test email without founder approval.",
+      "hypothetical_editorial_opening": "Twelve minutes is an inviting proposition. It fits into a crowded morning, asks for less than the time we often lose scrolling, and feels possible even when an hour doesn't.",
+      "hypothetical_80_char_snippet": "Twelve minutes is an inviting proposition. It fits into a crowded morning, asks ",
+      "paragraphs": 10,
+      "first_party_hrefs": [
+        "https://finalvestige.com/focus/"
+      ],
+      "risk": "MERCHANT_RIGHTS_MISSING",
+      "source_footer_hardstop": true,
+      "merchant_rights_verified": false,
+      "actual_jetpack_preview_verified": false,
+      "actual_email_receipt_verified": false,
+      "send_authorized": false,
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "issue": 4,
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "planned_preheader_not_native_verified": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "kind": "editorial",
+      "real_source_first_paragraph": "EDITORIAL HOLD — DO NOT PUBLISH OR EMAIL. This is an UNSENT source-control transport specimen, NOT an authorized WordPress post. Do not copy to a live post or use Send test email without founder approval.",
+      "hypothetical_editorial_opening": "A good explanation is often shorter than the evidence it rests on. Sometimes it's too short.",
+      "hypothetical_80_char_snippet": "A good explanation is often shorter than the evidence it rests on. Sometimes it'",
+      "paragraphs": 9,
+      "first_party_hrefs": [
+        "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+      ],
+      "risk": "FACTUAL_SUBJECT_HOLD",
+      "source_footer_hardstop": true,
+      "merchant_rights_verified": false,
+      "actual_jetpack_preview_verified": false,
+      "actual_email_receipt_verified": false,
+      "send_authorized": false,
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "issue": 5,
+      "subject": "Before you press play on a hypnosis audio",
+      "planned_preheader_not_native_verified": "Three questions that matter more than an impressive promise.",
+      "kind": "commercial-review-pending",
+      "real_source_first_paragraph": "EDITORIAL HOLD — DO NOT PUBLISH OR EMAIL. This is an UNSENT source-control transport specimen, NOT an authorized WordPress post. Do not copy to a live post or use Send test email without founder approval.",
+      "hypothetical_editorial_opening": "A recording offers convenience: you can revisit it, practice privately and decide whether a guided format suits you. That says something about the format. It doesn't settle what the recording can change.",
+      "hypothetical_80_char_snippet": "A recording offers convenience: you can revisit it, practice privately and decid",
+      "paragraphs": 12,
+      "first_party_hrefs": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "risk": "MERCHANT_RIGHTS_MISSING",
+      "source_footer_hardstop": true,
+      "merchant_rights_verified": false,
+      "actual_jetpack_preview_verified": false,
+      "actual_email_receipt_verified": false,
+      "send_authorized": false,
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "issue": 6,
+      "subject": "What did seven days of attention reveal?",
+      "planned_preheader_not_native_verified": "A small experiment, a useful notebook, and no miracle claims.",
+      "kind": "editorial",
+      "real_source_first_paragraph": "EDITORIAL HOLD — DO NOT PUBLISH OR EMAIL. This is an UNSENT source-control transport specimen, NOT an authorized WordPress post. Do not copy to a live post or use Send test email without founder approval.",
+      "hypothetical_editorial_opening": "After a week of trying to concentrate differently, it's easy to be left with one of two impressions: it changed everything, or it changed nothing.",
+      "hypothetical_80_char_snippet": "After a week of trying to concentrate differently, it's easy to be left with one",
+      "paragraphs": 10,
+      "first_party_hrefs": [
+        "https://finalvestige.com/focus/"
+      ],
+      "risk": "REPEAT_SIGNUP_RISK",
+      "source_footer_hardstop": true,
+      "merchant_rights_verified": false,
+      "actual_jetpack_preview_verified": false,
+      "actual_email_receipt_verified": false,
+      "send_authorized": false,
+      "status": "HOLD_UNSENT"
+    }
+  ],
+  "current_wordpress": {
+    "read_at_utc": "2026-11-17T20:34:28Z",
+    "newsletter_on": true,
+    "auto_emails_off": true,
+    "email_format": "full",
+    "dashboard_total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "unique_eligible_receiving_inboxes": null,
+    "welcome_configured": true,
+    "welcome_received_verified": false,
+    "postal_verified": false,
+    "unsubscribe_verified": false
+  },
+  "merchant_email_approval": false,
+  "affiliate_links_issued": false,
+  "native_jetpack_preview_witness": false,
+  "paid_settlements_verified": false,
+  "qualified_human_denominator": null,
+  "net_revenue_per_1000": "NOT_COMPUTABLE",
+  "release": "HOLD_UNSENT"
+}
