@@ -1,0 +1,525 @@
+{
+  "sprint": "Mind R438",
+  "reviewed": "2026-11-16 America/Los_Angeles",
+  "status": "DRAFT_HARD_HOLD",
+  "owner": "FV Mind & Affiliate",
+  "policy": "seller claims are not independently established efficacy; no deployed merchant URL, pixels, redirects or CMS writes",
+  "sources": {
+    "science1999": "https://doi.org/10.1068/p281059",
+    "science2010": "https://doi.org/10.1068/i0386",
+    "science2001": "https://doi.org/10.1111/1467-9280.00303",
+    "pubmed1999": "https://pubmed.ncbi.nlm.nih.gov/10694957/",
+    "pubmed2010": "https://pubmed.ncbi.nlm.nih.gov/23397479/",
+    "fv_change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "fv_puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "fv_focus": "https://finalvestige.com/focus/",
+    "fv_library": "https://finalvestige.com/free-resources/",
+    "fv_editorial": "https://finalvestige.com/editorial-standards/",
+    "inspire": "https://inspire3.com/",
+    "partner": "https://affiliates.inspire3.com/",
+    "zen_main": "https://zen12.com/",
+    "zen_about": "https://zen12.com/about",
+    "zen_secret": "https://zen12.com/secret/",
+    "ftc_endorse": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "dispatch_issue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "business": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+  },
+  "claims": [
+    {
+      "id": "S01",
+      "claim": "The 1999 study investigated sustained inattentional blindness for unexpected dynamic events",
+      "kind": "independent_science",
+      "verdict": "SUPPORTED",
+      "source_ids": [
+        "science1999",
+        "pubmed1999"
+      ],
+      "limits": "Lab tasks, not every viewing condition"
+    },
+    {
+      "id": "S02",
+      "claim": "Likelihood of noticing varied with unexpected object's similarity to other objects",
+      "kind": "independent_science",
+      "verdict": "SUPPORTED",
+      "source_ids": [
+        "science1999"
+      ],
+      "limits": "Conditional experimental finding"
+    },
+    {
+      "id": "S03",
+      "claim": "Monitoring task difficulty influenced unexpected-event detection",
+      "kind": "independent_science",
+      "verdict": "SUPPORTED",
+      "source_ids": [
+        "science1999"
+      ],
+      "limits": "Not a generalized ability measure"
+    },
+    {
+      "id": "S04",
+      "claim": "Spatial proximity to attended location did not guarantee detection",
+      "kind": "independent_science",
+      "verdict": "SUPPORTED",
+      "source_ids": [
+        "science1999"
+      ],
+      "limits": "Does not mean gaze does not matter in any circumstance"
+    },
+    {
+      "id": "S05",
+      "claim": "Some participants did not report a fully visible gorilla",
+      "kind": "independent_science",
+      "verdict": "SUPPORTED",
+      "source_ids": [
+        "science1999"
+      ],
+      "limits": "Do not quote a universal percentage without condition"
+    },
+    {
+      "id": "S06",
+      "claim": "A 2010 follow-up included a gorilla, curtain-color change and player departure",
+      "kind": "independent_science",
+      "verdict": "SUPPORTED",
+      "source_ids": [
+        "science2010",
+        "pubmed2010"
+      ],
+      "limits": "New video not identical original"
+    },
+    {
+      "id": "S07",
+      "claim": "Familiarity with famous demo did not improve detection of other unexpected events in that task",
+      "kind": "independent_science",
+      "verdict": "SUPPORTED",
+      "source_ids": [
+        "science2010"
+      ],
+      "limits": "Not proof warnings never help"
+    },
+    {
+      "id": "S08",
+      "claim": "Selective ignoring and stimulus similarity affect inattentional blindness",
+      "kind": "independent_science",
+      "verdict": "SUPPORTED",
+      "source_ids": [
+        "science2001"
+      ],
+      "limits": "Task-specific effect"
+    },
+    {
+      "id": "S09",
+      "claim": "Inattentional blindness proves humans have no conscious awareness of surroundings",
+      "kind": "unsupported_inference",
+      "verdict": "PROHIBIT",
+      "source_ids": [
+        "science1999"
+      ],
+      "limits": "Overgeneralization"
+    },
+    {
+      "id": "S10",
+      "claim": "An unseen gorilla proves people are dishonest witnesses",
+      "kind": "unsupported_inference",
+      "verdict": "PROHIBIT",
+      "source_ids": [
+        "science1999"
+      ],
+      "limits": "Reporting error != fraud"
+    },
+    {
+      "id": "S11",
+      "claim": "Zen12 helps users notice gorillas or improves inattentional blindness",
+      "kind": "product_efficacy",
+      "verdict": "NOT_SUBSTANTIATED",
+      "source_ids": [
+        "science1999",
+        "zen_about"
+      ],
+      "limits": "No independent Zen12-specific trial found for this outcome"
+    },
+    {
+      "id": "S12",
+      "claim": "Meditation automatically improves all attention tasks",
+      "kind": "product_efficacy",
+      "verdict": "NOT_SUBSTANTIATED",
+      "source_ids": [
+        "science1999"
+      ],
+      "limits": "No justified universal claim"
+    },
+    {
+      "id": "S13",
+      "claim": "Existing public FV change-blindness article dates to Nov 2, 2026",
+      "kind": "published_site",
+      "verdict": "VERIFIED",
+      "source_ids": [
+        "fv_change"
+      ],
+      "limits": "Keep canonical separate; avoid keyword cannibalization"
+    },
+    {
+      "id": "S14",
+      "claim": "Published Puységur archive preserves image-locked provenance, case dossiers and failures",
+      "kind": "published_site",
+      "verdict": "VERIFIED",
+      "source_ids": [
+        "fv_puysegur"
+      ],
+      "limits": "Historical sources do not verify mesmerism mechanism"
+    },
+    {
+      "id": "S15",
+      "claim": "FV 52-page Focus Fieldbook is offered free with existing Dispatch subscription",
+      "kind": "published_site",
+      "verdict": "VERIFIED",
+      "source_ids": [
+        "fv_focus",
+        "fv_library"
+      ],
+      "limits": "No independent intervention trials of fieldbook"
+    },
+    {
+      "id": "V01",
+      "claim": "Inspire3 catalogs Zen12, Hypnosis Live, Brainwave Shots and other products",
+      "kind": "vendor_catalog",
+      "verdict": "SELLER_DESCRIBED",
+      "source_ids": [
+        "inspire"
+      ],
+      "limits": "Catalog alone does not give affiliate permission"
+    },
+    {
+      "id": "V02",
+      "claim": "Zen12 offers twelve-minute audio sessions",
+      "kind": "vendor_feature",
+      "verdict": "SELLER_DESCRIBED",
+      "source_ids": [
+        "zen_main",
+        "zen_about"
+      ],
+      "limits": "No tested intervention benefit inferred"
+    },
+    {
+      "id": "V03",
+      "claim": "Zen12 website lists twelve levels in full course",
+      "kind": "vendor_feature",
+      "verdict": "SELLER_DESCRIBED",
+      "source_ids": [
+        "zen_main",
+        "zen_about"
+      ],
+      "limits": "Verify precise referred SKU"
+    },
+    {
+      "id": "V04",
+      "claim": "Zen12 premium full course lists forty-eight MP3s",
+      "kind": "vendor_feature",
+      "verdict": "SELLER_DESCRIBED",
+      "source_ids": [
+        "zen_main",
+        "zen_secret"
+      ],
+      "limits": "Other packages differ"
+    },
+    {
+      "id": "V05",
+      "claim": "Zen12 lists guided meditation, relaxation music, sounds of nature, and white noise",
+      "kind": "vendor_feature",
+      "verdict": "SELLER_DESCRIBED",
+      "source_ids": [
+        "zen_about"
+      ],
+      "limits": "No first-hand use claimed"
+    },
+    {
+      "id": "V06",
+      "claim": "Zen12 homepage lists beginner and advanced 24 MP3 six-level options",
+      "kind": "vendor_feature",
+      "verdict": "SELLER_DESCRIBED",
+      "source_ids": [
+        "zen_main"
+      ],
+      "limits": "Confirm checkout eligibility for each SKU"
+    },
+    {
+      "id": "V07",
+      "claim": "Zen12 homepage advertises a one-year money-back guarantee",
+      "kind": "vendor_returns",
+      "verdict": "SELLER_CLAIM_UNVERIFIED_AT_REFERRED_CHECKOUT",
+      "source_ids": [
+        "zen_main"
+      ],
+      "limits": "Not confirmed enforceable on specific referred checkout"
+    },
+    {
+      "id": "V08",
+      "claim": "Zen12 main catalog premium was advertised at $87.99 when reviewed",
+      "kind": "vendor_price",
+      "verdict": "OBSERVED_NOT_REFERRED",
+      "source_ids": [
+        "zen_main"
+      ],
+      "limits": "Snapshot only, may change"
+    },
+    {
+      "id": "V09",
+      "claim": "Separate Zen12 secret offer shows different coupon/campaign price",
+      "kind": "vendor_price",
+      "verdict": "OBSERVED_NOT_REFERRED",
+      "source_ids": [
+        "zen_secret"
+      ],
+      "limits": "No entitlement to unrelated coupon; excludes countdown claims"
+    },
+    {
+      "id": "V10",
+      "claim": "Zen12 can deliver an hour's advanced meditation in twelve minutes",
+      "kind": "vendor_efficacy",
+      "verdict": "UNSUBSTANTIATED_PRODUCT_SPECIFIC",
+      "source_ids": [
+        "zen_about",
+        "zen_main"
+      ],
+      "limits": "Never adopt as fact or implied promise"
+    },
+    {
+      "id": "V11",
+      "claim": "Zen12 automatically erases stress/anxiety",
+      "kind": "vendor_health",
+      "verdict": "UNSUBSTANTIATED_PRODUCT_SPECIFIC",
+      "source_ids": [
+        "zen_about"
+      ],
+      "limits": "No health outcome claim"
+    },
+    {
+      "id": "V12",
+      "claim": "Inspire3 public affiliate portal advertises special earning links and generic payout terms",
+      "kind": "vendor_partner_marketing",
+      "verdict": "SELLER_DESCRIBED",
+      "source_ids": [
+        "partner"
+      ],
+      "limits": "Generic portal is not account-specific terms"
+    },
+    {
+      "id": "V13",
+      "claim": "FV is a verified accepted Inspire3 publishing partner",
+      "kind": "affiliate_permission",
+      "verdict": "NOT_VERIFIED",
+      "source_ids": [
+        "partner"
+      ],
+      "limits": "Gmail promotional messages do not establish named partner acceptance"
+    },
+    {
+      "id": "V14",
+      "claim": "Zen12 product/page is authorized for FV's website and email/social channels",
+      "kind": "affiliate_permission",
+      "verdict": "NOT_VERIFIED",
+      "source_ids": [
+        "partner"
+      ],
+      "limits": "SKU and channel-specific consent absent"
+    },
+    {
+      "id": "V15",
+      "claim": "FV has an issued earning URL and verified referral checkout",
+      "kind": "affiliate_permission",
+      "verdict": "NOT_VERIFIED",
+      "source_ids": [
+        "partner"
+      ],
+      "limits": "Never invent or activate a link"
+    },
+    {
+      "id": "F01",
+      "claim": "Affiliate recommendation requires clear conspicuous material connection near earning link",
+      "kind": "compliance",
+      "verdict": "SUPPORTED_GUIDANCE",
+      "source_ids": [
+        "ftc_endorse"
+      ],
+      "limits": "Future disclosure must stay adjacent visually and for screen readers"
+    },
+    {
+      "id": "F02",
+      "claim": "Objective health-related promotional claims require appropriate substantiation",
+      "kind": "compliance",
+      "verdict": "SUPPORTED_GUIDANCE",
+      "source_ids": [
+        "ftc_health"
+      ],
+      "limits": "FTC guide interprets law; adequacy depends on exact claim"
+    },
+    {
+      "id": "B01",
+      "claim": "An affiliate_click constitutes a paid sale",
+      "kind": "measurement",
+      "verdict": "FALSE",
+      "source_ids": [
+        "business"
+      ],
+      "limits": "Independently validated merchant settlement required"
+    },
+    {
+      "id": "B02",
+      "claim": "Verified revenue per 1000 qualified human sessions can be reported now",
+      "kind": "measurement",
+      "verdict": "NOT_COMPUTABLE",
+      "source_ids": [
+        "business"
+      ],
+      "limits": "No authenticated sales/settlement or qualified denominator"
+    },
+    {
+      "id": "B03",
+      "claim": "A payable rights-cleared FV-owned Mind digital SKU exists now",
+      "kind": "owned_offer",
+      "verdict": "NOT_AUTHENTICATED",
+      "source_ids": [
+        "fv_library"
+      ],
+      "limits": "Free Focus Fieldbook is not a paid SKU"
+    }
+  ],
+  "release_gates": {
+    "named_publisher_acceptance": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "permitted_zen12_sku": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "website_channel_permission": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "email_channel_permission": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "social_channel_permission": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "approved_merchant_creatives": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "issued_earning_url": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "verified_tracking_terms": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "verified_cookie_window": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "verified_attribution_model": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "referred_checkout_sku_match": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "actual_referred_price": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "currency_and_taxes": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "checkout_fees": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "referral_coupon_permissions": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "refund_terms_referred_order": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "physical_digital_fulfillment": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "commission_settlement_method": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "withdrawal_and_clawbacks": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "independent_product_trial": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "evidence_supported_product_outcomes": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "adjacent_disclosure_browser": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "a11y_keyboard_screenreader": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "actual_mobile_CWV": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "original_encoded_video_rights": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "jetpack_confirmed_leads": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "merchant_verified_paid_conversion": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    },
+    "founder_release_approval": {
+      "status": "HOLD",
+      "evidence": "Not independently satisfied at this sprint; do not activate"
+    }
+  },
+  "created_assets": [
+    "THE_GORILLA_WAS_THERE_THE_WHOLE_TIME.md",
+    "ZEN12_A_TEXT_GUIDE.html",
+    "ZEN12_B_OPTIONAL_FILM_CONCEPT.html",
+    "R438_42S_CAPTIONS.vtt",
+    "MIND_ARCHIVE_WORDPRESS_SOURCE_ONLY.html"
+  ],
+  "commerce_findings": {
+    "email_read": "Only broad promotional messages surfaced in read-only targeted Gmail search; not named FV acceptance",
+    "private_approved_creatives": "NOT ACCESSIBLE/NOT AUTHENTICATED",
+    "merchant_checkout": "NOT VERIFIED",
+    "owned_paid_mind_sku": "NOT AUTHENTICATED",
+    "qualified_human_sessions": null,
+    "settled_commissions": null,
+    "net_revenue_per_1000": "NOT COMPUTABLE"
+  },
+  "required_release_reviewer_roles": [
+    "Founder",
+    "Commerce",
+    "Site QA",
+    "Claude site engineering",
+    "Mind editor"
+  ]
+}
