@@ -1,0 +1,118 @@
+{
+  "schema": "fv_dispatch_r432_offline_read_only_v1",
+  "source": "authenticated WordPress site status and Jetpack Stats Followers",
+  "as_of_utc": "2026-11-17T21:38:25Z",
+  "repository_parent_head": "b72b02c206b894e12b05152cc35d9bc41e9a0fb6",
+  "master_pr": 175,
+  "issue_owner": 174,
+  "commercial_owner": 171,
+  "site": {
+    "url": "https://finalvestige.com",
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "newsletter_categories_enabled": false,
+    "newsletter_categories": [],
+    "email_content_format": "full",
+    "featured_image_in_email": true,
+    "reply_to": "no-reply",
+    "welcome_configured": true,
+    "welcome_received_verified": false
+  },
+  "newsletter_dashboard": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "paid": 0,
+    "imported_last_24h": 0,
+    "counts_are_additive": false
+  },
+  "jetpack_followers": {
+    "reader": 3,
+    "direct_email": 0,
+    "comments": 0,
+    "publicize": 0,
+    "different_scope_from_dashboard": true
+  },
+  "subscribers": {
+    "unique_recipients": "UNKNOWN",
+    "email_eligibility_provider_verified": false,
+    "subscriber_identity_exported": false
+  },
+  "delivery": {
+    "recent_five_posts": "never_sent_opted_out",
+    "lifetime_sends": "UNKNOWN",
+    "native_email_preview": false,
+    "received_email_witness": false,
+    "business_postal_address_verified": false,
+    "functional_unsubscribe_verified": false,
+    "founder_final_approval": false
+  },
+  "merchant": {
+    "named_fv_accepted": false,
+    "email_channel_permission": false,
+    "exact_sku": false,
+    "approved_live_guide": false,
+    "earning_url": null,
+    "referred_checkout_verified": false,
+    "refund_terms_referred_verified": false,
+    "independently_settled_orders_verified": false
+  },
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT",
+      "current_cta": "puysegur"
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT",
+      "current_cta": "puysegur"
+    },
+    {
+      "number": 3,
+      "kind": "commercial",
+      "status": "HOLD_MERCHANT",
+      "current_cta": null
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "status": "HOLD_FACTUAL_COPY"
+    },
+    {
+      "number": 5,
+      "kind": "commercial",
+      "status": "HOLD_MERCHANT",
+      "current_cta": null
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT",
+      "current_cta": "focus"
+    }
+  ],
+  "measurement": {
+    "qualified_human_sessions": "UNKNOWN",
+    "paid_order_count": "UNKNOWN",
+    "realized_net_revenue": "UNKNOWN",
+    "net_revenue_per_1000": "NOT_COMPUTABLE",
+    "unit": "USD",
+    "cohorts": [
+      "7d",
+      "30d"
+    ],
+    "ab_test": "NOT_VALID_TINY_LIST"
+  },
+  "release": {
+    "send_authorized": false,
+    "send_scheduled": false,
+    "wordpress_modified": false,
+    "new_list_created": false,
+    "subscriber_contacted": false,
+    "merchant_link_live": false
+  }
+}
