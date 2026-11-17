@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+'use strict';
+const assert=require('node:assert/strict');const {verify}=require('./validate_p0_routes_20261117_1526pt.cjs');const a=require('./p0_routes_20261117_1526pt.json');let count=0;
+const test=(name,mut,ok=false)=>{const x=JSON.parse(JSON.stringify(a));mut(x);if(ok)assert.doesNotThrow(()=>verify(x),name);else assert.throws(()=>verify(x),name);count++};
+test('baseline',()=>{},true);
+test('42 claim',x=>x.historical.broken_42_browser_proven=42);
+test('76 claim',x=>x.historical.savings_76_wire_proven=76);
+test('browser status invented',x=>x.visitor.final_http=404);
+test('WordPress upload',x=>x.entries[0].allowed_wp_upload=true);
+test('Gutenberg rewrite',x=>x.entries[1].allowed_post_rewrite=true);
+test('missing P0',x=>x.entries.pop());
+test('duplicate slot',x=>x.entries[1].slot='285:5');
+test('USGS tool error misread',x=>x.entries[5].probe={type:'HTTP_ERROR',http_status:400,tool_issue:null,guest_verified:false});
+test('UCS wrapper 500 asserted',x=>x.entries[1].probe.http_status=500);
+test('guest verified falsely',x=>x.entries[3].probe.guest_verified=true);
+test('rights cleared falsely',x=>x.entries[2].replacement.rehost_cleared=true);
+test('identity falsely confirmed',x=>x.entries[4].replacement.exact_frame_verified=true);
+test('fake hash',x=>x.entries[3].replacement.binary_sha256='deadbeef');
+test('museum preview upscale',x=>x.entries[4].replacement.target_px.width=960);
+test('crop aspect',x=>x.entries[0].replacement.target_px.height=888);
+test('invented dims',x=>x.entries[2].replacement.target_px={width:960,height:640});
+test('http source',x=>x.entries[3].source_url='http://example.org/a.jpg');
+test('no rights',x=>x.entries[5].replacement.rights='');
+test('fake bytes',x=>x.visitor.transferred_bytes=100);
+test('change HTTP 404 to 200',x=>x.entries[2].probe.http_status=200);
+console.log(count+'/'+count+' cases passed');
