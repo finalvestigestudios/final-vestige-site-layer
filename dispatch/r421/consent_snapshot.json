@@ -1,0 +1,59 @@
+{
+  "snapshot_at_utc": "2026-11-17T10:34:22Z",
+  "site": "https://finalvestige.com",
+  "source": {
+    "newsletter": "WordPress wpcom_jetpack_newsletter status / get_settings (read-only)",
+    "followers": "WordPress wpcom_jetpack_stats_followers (read-only; partial=false)",
+    "media": "WordPress wpcom_mcp_media_list search=Focus_Fieldbook (read-only)"
+  },
+  "newsletter": {
+    "enabled": true,
+    "can_send_platform": true,
+    "new_post_auto_email": false,
+    "content_format": "full",
+    "reply_to": "no-reply",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "paid": 0,
+    "recent_five_post_sends": [
+      "never_sent_opted_out",
+      "never_sent_opted_out",
+      "never_sent_opted_out",
+      "never_sent_opted_out",
+      "never_sent_opted_out"
+    ]
+  },
+  "followers": {
+    "email": 0,
+    "wpcom": 3,
+    "comment": 0,
+    "partial": false
+  },
+  "fieldbook": {
+    "configured_welcome_pdf": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+    "media_id": 1737,
+    "media_mime": "application/pdf",
+    "media_size_bytes": 599946,
+    "media_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+    "actual_received_welcome": null,
+    "actual_pdf_received_or_downloaded": null
+  },
+  "acceptance_evidence": {
+    "private_provider_deduplicated_recipient_eligibility": null,
+    "provider_confirmation_event_proof": null,
+    "optout_processing_witness": null,
+    "native_editor_preview_witness": null,
+    "final_vestige_postal_address_witness": null,
+    "named_zen12_affiliate_email_permission": null,
+    "named_total_focus_affiliate_email_permission": null,
+    "approved_live_zen12_guide": null,
+    "approved_live_total_focus_guide": null,
+    "issued_approved_earning_url": null,
+    "founder_final_send_approval": null,
+    "merchant_paid_settlement": null,
+    "audited_qualified_human_sessions": null
+  },
+  "release": "HOLD_UNSENT"
+}
