@@ -5,6 +5,7 @@ from pathlib import Path
 import subprocess
 import sys
 import tempfile
+import time
 import unittest
 
 from windows_source_start_custody_r491 import guarded_windows_command
@@ -36,6 +37,8 @@ class WindowsSourceStartCustodyR491(unittest.TestCase):
     def test_no_test_code_executes_before_authorized_handoff(self):
         p = self.start()
         try:
+            # Let a broken no-gate bootstrap reach unittest if it can.
+            time.sleep(0.2)
             self.assertIsNone(p.poll())
             self.assertFalse((self.desktop / "tests" / "test_fixture.executed").exists())
             p.stdin.write(b"G")
