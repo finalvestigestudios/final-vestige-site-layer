@@ -8,7 +8,7 @@ The original six canonical newsletter files, manifest and test from [PR #175](ht
 
 ## New R432 native test execution
 
-New additive `broadcast_consent_gate.cjs` / `test_broadcast_consent_gate.cjs` were authored and executed **locally with Node v22.16.0**. `node dispatch/r432/test_broadcast_consent_gate.cjs` returned **PASS 92/92 native Node assertions**, exit code 0.
+New additive `broadcast_consent_gate.cjs` / `test_broadcast_consent_gate.cjs` were authored and executed **locally with Node v22.16.0**. `node dispatch/r432/test_broadcast_consent_gate.cjs` returned **PASS 94/94 native Node assertions**, exit code 0.
 
 Exact GitHub readback source identities matched the locally executed bytes:
 
