@@ -2,14 +2,18 @@
 
 **Prepared 2026-11-16 PT**  
 **Branch:** `mind-r437-thatcher-illusion-offer-proof-20261116`  
-**QA source checkpoint before receipt:** `12263f839046104f8ef5937d0c045b8365e71d40`  
+**QA source checkpoint before receipt:** `f8d04db655b1841b3afb5ea3ea4322879a78c3b4`  
 **Release state:** UNPUBLISHED / COMMERCIAL HARD HOLD. No CMS edits, affiliate links, merchant changes, social posts or deployment.
 
 ## What was actually run
 
-One independent, read-only JavaScript V8 audit retrieved the eight exact GitHub blobs below at the isolated branch source checkpoint, then evaluated **48/48 source-level assertions PASS**. Tests covered claim counts, held gates, source-key integrity, 2,000+ word substantive editorial draft, original science citations, HTML language/noindex, no scripts/forms/iframes, no active seller anchors, visible focus styles, responsive rules, near-CTA prospective affiliate disclosures, disabled seller control, existing free /focus/ route, buyer-text byte equality across A/B, original SVG poster, no-JS transcript, six VTT cues completing at 42 seconds, all three social IDs UNMATCHED, no invented revenue and A/B allocation hypothesis.
+**Read-only source check:** eight exact GitHub source blobs were fetched from this branch and inspected directly; **48/48 independent static V8 checks PASS**.
 
-**Evidence scope:** These are static property checks of the fetched source strings, **not** execution of Node CLI, hosted CI, a browser, WordPress, an encoded video player, analytics, Jetpack or a merchant checkout. The committed `verify.mjs` provides a reproducible native-Node check for a maintainer with a checkout. It was not run with native Node in this environment; a passing V8 audit is not equivalent to its execution. A subsequent verifier-only regex correction is present at the pinned QA source checkpoint. The original pre-correction 48/48 V8 check did not exercise the exact committed Node script. Independent reviewer should run `node mind/r437/verify.mjs` on the pinned SHA.
+**Committed verifier executed in isolated V8:** the exact `verify.mjs` GitHub blob at this checkpoint was executed with only its shebang/Node `import` and filesystem read wrapper replaced by read-only in-memory adapters to the exact fetched source blobs. Its real validation body executed **82/82 PASS**. The final three-line result was `R437 SOURCE SAFETY & AB PARITY: 82/82 assertions PASS (source-level ONLY; no hosted CI/browser/merchant proof)`.
+
+**Adversarial mutation proof:** the same verifier body was run against twelve synthetic, in-memory mutations of the read source only. It rejected **12/12 unsafe changes**: flipping all gates to PASS; adding a merchant anchor; enabling the disabled button; removing commission disclosure; injecting script; injecting iframe; changing only B's buyer copy; damaging the last VTT timing cue; erasing SVG accessible description; fabricating matching social IDs; removing original DOI provenance; and deleting the existing /focus/ route. Zero repository files were changed by these synthetic checks.
+
+**Important boundary:** These checks verify text/source properties using read-only V8 adapters. **Native Node CLI on an actual checkout, hosted GitHub CI, a browser, WordPress, a playable encoded movie, Jetpack and real merchant checkout were NOT executed.** The `verify.mjs` file is committed for native reproduction by a maintainer. Do not label the full release QA passing.
 
 | Inspected exact file | Git blob SHA |
 |---|---|
@@ -20,7 +24,7 @@ One independent, read-only JavaScript V8 audit retrieved the eight exact GitHub 
 | `THE_FACE_THAT_CHANGED_WHEN_TURNED.md` | `90217f77fed6eb7fc828b4f7cd734166d4ad84c9` |
 | `CLAIM_SOURCE_AND_PERMISSION_MATRIX.json` | `eeb89ab5510edd4a668b61fff65330cf7995b417` |
 | `CONVERSION_ACCEPTANCE_AND_CREATOR_FIT.md` | `a08298e39ce0fca2bcdc820e83750104034c34fa` |
-| `verify.mjs` after hardening | Read from source checkpoint again when executing native Node; earlier blob `2cd06701210e4ab35d808c42e3ed21e9b6cab3f3` was corrected in two additive verifier-only commits. |
+| `verify.mjs` tested verifier body | `93d74012789c47414d257544aeb4243b602c0651` |
 
 ## Credible source verification
 
