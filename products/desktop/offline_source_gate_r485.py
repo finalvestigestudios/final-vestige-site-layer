@@ -1,4 +1,4 @@
-"""Operator-run, no-network six-app *source* regression gate (not an EXE release gate).
+"""Operator-run, network-unneeded six-app *source* regression gate (not an EXE release gate).
 
 Runs a fixed review-critical subset on a checked-out repository in two Python modes.
 Returns only fixed-label JSON; test output and private path tracebacks are discarded.
@@ -43,7 +43,7 @@ def _single_check(desktop: Path, label: str, pattern: str, mode: str,
     cmd = (sys.executable, *flags, "-B", "-W", "error", "-m", "unittest",
            "discover", "-s", str(desktop / "tests"), "-p", pattern)
     try:
-        # A bounded disk spool avoids storing sensitive exception output in RAM;
+        # A disk-backed spool avoids storing large sensitive exception output in RAM;
         # nothing from it is copied to the evidence record or console.
         with tempfile.TemporaryFile(mode="w+b") as spool:
             finished = subprocess.run(cmd, cwd=desktop.parent.parent, env=_child_env(desktop),
