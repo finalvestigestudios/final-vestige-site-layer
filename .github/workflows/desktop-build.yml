@@ -47,6 +47,10 @@ jobs:
         run: |
           python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_raw_descriptor_r498.py
           python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_raw_descriptor_r498.py
+      - name: R499 reject WIN_CERTIFICATE nonzero outer padding without exposing private I/O
+        run: |
+          python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_outer_padding_r499.py
+          python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_outer_padding_r499.py
       - name: Fail closed on CI artifact paths (R41)
         run: python products/desktop/ci_artifact_policy.py .github/workflows/desktop-build.yml
       - name: Verify mandatory two-mode CI source gate (R57)
