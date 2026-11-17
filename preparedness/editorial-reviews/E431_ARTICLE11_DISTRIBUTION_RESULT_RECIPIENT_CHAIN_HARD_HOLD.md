@@ -1,0 +1,18 @@
+# E431 Article #11 — CWD result distribution and recipient traceability | DRAFT / HARD HOLD
+
+**Editorial date:** 2026-11-17 (US; Wisconsin-specific public-agency examples). **Next review:** 2026-12-17, or earlier after material official change. **Parent:** #136. **Article:** locked 35-slate #11 `safe-jerky-dehydration`, *What Dried Meat Cannot Promise*. **Integration:** latest R438 draft #2885 remains hard hold.
+
+**Consequence:** Earlier E430 established animal/sample/processor/package identity. E431 resolves a missing *post-processing* record: an individual sample result does not follow the meat automatically when jerky/sausage or other portions are gifted/donated. This does **not** demonstrate food safety or imply that CWD is confirmed transmissible to humans.
+
+**New official-source distinctions, full pages checked 2026-11-17:**
+1. [Wisconsin DNR current Deer Health Advisories](https://dnr.wisconsin.gov/topic/Hunt/regulations/OnlineHuntingRegulations/DeerHealthAdvisories_LeadPFASCWD) transmits Wisconsin DHS advice against consuming **or distributing** venison from CWD-affected Wisconsin harvest areas until that animal's result shows CWD not detected. **Not a nationwide requirement**.
+2. [Wisconsin DNR 2025 donation notice](https://dnr.wisconsin.gov/newsroom/release/115401): program partner holds donated deer under CWD testing until results known. **Only that program**.
+3. [Wisconsin DNR Sep 28 2021 hunter notice](https://dnr.wisconsin.gov/newsroom/release/50116): jerky/sausage may contain trim from other animals; **older warning, not a current allegation against processors**.
+4. [CDC Jan 21 2026](https://www.cdc.gov/chronic-wasting/about/index.html) recommends individual processing and not eating meat from a CWD-positive animal; **no reported human CWD infections**. [TPWD](https://tpwd.texas.gov/huntwild/wild/diseases/cwd/test-results/) 'not detected' means *specific tissue tested*; Texas terms not nationwide.
+5. Washington DOH current prion page returned HTTP 403 on direct retrieval; **no claim derived**.
+
+**Local unpublished assets** (separate review package; not stored as production WP): E430 Article #11 revised with a stand-alone distribution subsection, original accessible captioned four-stage HTML/CSS traceability diagram, and source list 41→44; prior 11 figures and H1/H2 headings unchanged. Free paper-only game meat card adds private recipient/distribution/result-follow-up fields; no data collection. Seven-record source ledger, fifteen-claim safety crosswalk, exact redlines, SHA256 manifest. **12/12 local Chromium checks passed** at 320, 360, 390, 768, 1440 px and print for both assets (no horizontal overflow; warnings present). Not native integration, production-theme, human accessibility or qualified-safety certification.
+
+**Release: HARD HOLD.** Original R397 source `6fa55c397b161437e016d5d4a6c27da7ce3fa6bd` unchanged. Known original blocked sections still include freezer instructions lines 7/37, untested device at 69, composite checklist 72–81, and unsourced storage compromise 95–96. Five inherited source disputes and nine manuscript forks remain unadjudicated; 35 native builds/70 genuine paired exports, hosted CI, qualified food/wildlife QD and independent owner release are not established. No publish, merge, WordPress save, homepage, Investigations, public navigation, emails, social, analytics, affiliate or spending changes.
+
+**Required qualified review question:** Does each proposed distribution/recipient sentence precisely represent jurisdictional authority, and can it be kept distinctly separate from any claim that a negative test, lack of distribution, or traceable package is safe to consume?
