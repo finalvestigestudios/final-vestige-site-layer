@@ -1,0 +1,260 @@
+<!-- wp:html -->
+<style>
+.fv-two{--bg:#101c1d;--panel:#1b2b2b;--border:#65736d;--ink:#f1ecdf;--muted:#c4cfc9;--gold:#e5c58b;max-width:1100px;margin:0 auto;padding:clamp(15px,3.5vw,43px);background:var(--bg);color:var(--ink);font:400 17px/1.69 system-ui,-apple-system,"Segoe UI",sans-serif;box-sizing:border-box;overflow-wrap:anywhere}
+.fv-two *{box-sizing:border-box}.fv-two h1,.fv-two h2,.fv-two h3{font-family:Georgia,serif;font-weight:400;line-height:1.18;letter-spacing:-.025em;color:#f4e3c6}.fv-two h1{font-size:clamp(2.6rem,7vw,5.35rem);margin:.2em 0}.fv-two h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:.25em 0 .6em}.fv-two h3{font-size:1.4rem;margin:.35em 0}.fv-two p{margin:.45em 0 1em;max-width:80ch}.fv-two a{color:#f4d49b;text-underline-offset:.22em}.fv-two a:focus-visible,.fv-two button:focus-visible,.fv-two input:focus-visible,.fv-two select:focus-visible,.fv-two textarea:focus-visible{outline:3px solid #ffe4a2;outline-offset:3px}
+.fv-two .eyebrow{font-size:.77rem;text-transform:uppercase;letter-spacing:.2em;font-weight:750;color:var(--gold)}.fv-two .hero{padding:clamp(22px,4.5vw,57px);border:1px solid var(--border);background:radial-gradient(ellipse at 83% 12%,#415247 0,transparent 55%),#182a29}.fv-two .lead{font:400 clamp(1.2rem,2.45vw,1.55rem)/1.48 Georgia,serif;max-width:770px}.fv-two .meta{font-size:.83rem;color:var(--muted);letter-spacing:.03em}
+.fv-two section{padding:clamp(26px,4vw,45px) 0;border-bottom:1px solid #55645e}.fv-two .split{display:grid;grid-template-columns:1.05fr .95fr;gap:26px}.fv-two .panel,.fv-two .witness{background:var(--panel);border:1px solid #64746c;padding:clamp(14px,2.5vw,24px);min-width:0}.fv-two .witness{margin:16px 0}.fv-two .mininote{border-left:3px solid var(--gold);background:#243431;padding:16px 20px;margin:18px 0}.fv-two .mininote p{margin:0}
+.fv-two .wgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.fv-two label{display:block;font-size:.85rem;font-weight:700;color:#efd4a9}.fv-two label span{display:block;font-weight:400;color:var(--muted);font-size:.76rem}.fv-two input,.fv-two textarea,.fv-two select{width:100%;margin-top:5px;background:#0d1a1b;border:1px solid #9aada4;color:#f9f4e9;border-radius:2px;font:inherit;padding:10px;min-height:45px}.fv-two textarea{min-height:78px;resize:vertical}.fv-two .wide{grid-column:1/-1}.fv-two button{border:1px solid #cfb47c;background:#3e4e44;color:#f9ebcc;padding:10px 16px;min-height:44px;font:650 .94rem system-ui;cursor:pointer}.fv-two button:hover{background:#526459}.fv-two .actions{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}.fv-two .results{border:1px solid #b9a16b;background:#152725;padding:18px}.fv-two .results p{margin:.45em 0}.fv-two .results .warn{color:#ffd79a}.fv-two .results .good{color:#c7e6bf}.fv-two .records{padding-left:1.4em}.fv-two .records li{margin:0 0 12px}
+.fv-two .graphic{margin:26px 0}.fv-two .graphic svg{width:100%;height:auto;display:block}.fv-two figcaption,.fv-two .fine{font-size:.82rem;color:var(--muted)}.fv-two .sources li{margin:0 0 16px}.fv-two .sources span{display:block;font-size:.86rem;color:var(--muted)}.fv-two .controls legend{font-size:1.2rem;color:#f2d6a2;font-family:Georgia,serif}.fv-two .controls{border:1px solid #52665b;padding:16px}.fv-two .stamp{font:500 1.1rem Georgia,serif;color:#efdfc2}.fv-two .hide{display:none!important}
+@media(max-width:760px){.fv-two .split{grid-template-columns:1fr}.fv-two .wgrid{grid-template-columns:1fr}.fv-two .wide{grid-column:auto}}
+@media(max-width:390px){.fv-two{padding:12px;font-size:16px}.fv-two .hero{padding:19px}.fv-two h1{font-size:2.5rem}.fv-two button{width:100%}}
+@media print{.fv-two{max-width:none;background:#fff;color:#111;font:11pt/1.5 Georgia,serif;padding:0}.fv-two *{background:#fff!important;color:#111!important;box-shadow:none!important}.fv-two .actions,.fv-two .remove{display:none!important}.fv-two .witness,.fv-two .results,.fv-two section{break-inside:avoid}.fv-two a{color:#111!important}.fv-two input,.fv-two select,.fv-two textarea{border:1px solid #777}}
+
+/* FV original clock-label worksheet; accessible responsive lists. */
+.fv-two .clock-ledger{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0 30px}
+.fv-two .clock-ledger>div{min-width:0;border:1px solid #65736d;background:#1b2b2b;padding:17px 18px}
+.fv-two .clock-ledger dt{font:700 .88rem/1.45 system-ui,sans-serif;color:#e9cc98;margin-bottom:8px}
+.fv-two .clock-ledger dd{margin:0;color:#e8e8dc;line-height:1.58}
+.fv-two .clock-figure{max-width:100%;overflow:hidden}
+@media(max-width:760px){.fv-two .clock-ledger{grid-template-columns:1fr}}
+</style>
+<article class="fv-two" id="two-timelines">
+<header class="hero">
+<p class="eyebrow"><a href="/free-resources/">The Library</a> / Documentary methods / Free source comparison tool</p>
+<h1>The Two Timelines</h1>
+<p class="lead">Two records disagree about the hour. Perhaps one clock was wrong. Perhaps one person was remembering. Perhaps the records are describing two different moments and neither is mistaken.</p>
+<p>A chronology becomes reliable when we stop flattening those possibilities into a single line. This free, local-only research desk compares the <em>time windows you have actually verified</em>. It will not guess a historical time zone, invent a missing date, or decide which witness is truthful.</p>
+<p class="meta">Final Vestige Studios · Source check: November 17, 2026 · Original conceptual artwork · No signup, external libraries, storage, telemetry or network submission</p>
+</header>
+<figure class="graphic">
+<svg viewBox="0 0 900 184" role="img" aria-labelledby="tt-svg-title tt-svg-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="tt-svg-title">Three documentary time windows for one hypothetical occurrence</title>
+<desc id="tt-svg-desc">Illustration: Source A occupies an interval from 08:11 to 08:13; Source B from 08:12 to 08:15 and overlaps A; Source C from 08:19 to 08:21 and is separate. The values are invented solely to explain a method.</desc>
+<rect width="900" height="184" fill="#1b2b2b"/>
+<g stroke="#92a69d" stroke-width="1"><path d="M170 28V154M350 28V154M530 28V154M710 28V154"/></g>
+<g fill="#e5e8da" font-family="system-ui" font-size="15"><text x="14" y="54">Source A</text><text x="14" y="103">Source B</text><text x="14" y="150">Source C</text></g>
+<g fill="#9ed0b1"><rect x="245" y="37" width="130" height="24" rx="4"/></g>
+<g fill="#e5c58b"><rect x="315" y="85" width="175" height="24" rx="4"/></g>
+<g fill="#bd9a84"><rect x="640" y="132" width="112" height="24" rx="4"/></g>
+<g fill="#f0e6ce" font-family="system-ui" font-size="12"><text x="170" y="20">Earlier</text><text x="716" y="20">Later</text></g>
+</svg>
+<figcaption>Original Final Vestige Studios schematic (2026). Invented intervals demonstrate overlap and separation; not historical testimony, a clock reconstruction, or a reproduction of archival evidence. © Final Vestige Studios; no blanket redistribution license granted.</figcaption>
+</figure>
+<section id="tt-meaning">
+<div class="split"><div>
+<p class="eyebrow">01 / Separate the events</p><h2>What did the clock actually date?</h2>
+<p>A record may date the event, the writing of an entry, the arrival of a message, the printing of a newspaper, or the release of an archive scan. These are different clocks attached to different actions. Before arranging them in order, name the action each date describes.</p>
+<p>The National Archives distinguishes several date fields in its catalog, including inclusive dates, production, coverage, broadcast and release dates. That is an archival principle worth carrying into ordinary research: the date printed by a database is not automatically the day the event occurred.</p>
+</div><div class="panel">
+<h3>Three descriptions of an hour</h3><p><strong>Event:</strong> the sound was heard at 08:12, according to a direct log.</p>
+<p><strong>Transmission:</strong> the report reached another office at 08:18.</p>
+<p><strong>Publication:</strong> a newspaper reported the occurrence the following day.</p>
+<p class="fine">Invented example. Three compatible records may carry three different dates. None is a duplicate event timestamp merely because the subject matches.</p>
+</div></div>
+</section>
+<section id="tt-clock">
+<p class="eyebrow">02 / Keep the original words</p><h2>Do not repair a clock without showing the repair.</h2>
+<p>Copy the timestamp as the record gives it, including abbreviations, punctuation and oddities. “8:12,” “2014-03-09 02:12,” “8:12 local,” and “08:12Z” are not interchangeable claims. Record place and observed convention before conversion. An archival annotation may be later than the source; a recollection can be rounded; a chronometer may have a documented correction.</p>
+<p>Historical daylight-saving rules have changed. NIST identifies a substantial U.S. rule change effective in 2007, and the authority for civil time rules lies with the Department of Transportation. An offset that is correct now must not be silently assigned to an event from a different era. <a href="/the-moving-noon/">The Moving Noon</a> addresses local solar time, railway/company time, daylight time and other historical systems in more depth.</p>
+<div class="mininote"><p><strong>Rule:</strong> If the date, place, clock standard or historical offset cannot be established from the record and credible independent documentation, leave the normalized UTC window blank. The comparison will say “unresolved,” which is a result worth preserving.</p></div>
+</section>
+<section id="tt-precision">
+<p class="eyebrow">03 / Use windows, not false decimals</p><h2>A minute can be precise without being accurate.</h2>
+<p>A witness saying “around eight” gives you a looser interval than an instrument marked to the second. Yet even that instrument may have an unknown offset, drift or reporting delay. Precision of display is not independent evidence of accuracy.</p>
+<p>For each source, state its own uncertainty first. Only then choose an <strong>earliest and latest plausible UTC minute</strong> if the conversion has been independently established. This tool accepts minute-wide boundaries, not seconds or milliseconds; the Apollo 1 figures below are deliberately <em>not</em> run through it. A wide window can be defensible. A narrow one invented to make a timeline attractive cannot.</p>
+<p>The comparison below treats source claims as intervals only after each has an original-time transcription, a named source, a defined kind of timestamp and a dated explanation of its clock basis. Overlap means a shared time is possible, not that two sources independently confirm it. Separation means the supplied windows cannot both date the same instant under the stated assumptions; it does not identify an unreliable witness. If one source dates an event and another dates a later transmission, the desk marks them <em>different actions</em> instead of manufacturing a contradiction.</p>
+</section>
+
+<section id="tt-clock-labels" aria-labelledby="tt-clock-title">
+<p class="eyebrow">03A / The clock-label audit</p>
+<h2 id="tt-clock-title">The label on the clock is not the clock.</h2>
+<p>Two ways to go wrong with historical time are to misread the number, or to read it correctly and attach the wrong clock system. The second error can travel through several respectable publications before anybody notices.</p>
+<p>Consider <em>GMT</em>. The U.S. Naval Observatory warns that before 1925 certain astronomical and nautical almanacs counted the Greenwich Mean Time day from <strong>noon rather than midnight</strong>. That does not mean every old document marked GMT needs twelve hours added or subtracted. It means a historian must first identify the maker and its actual convention. A technical almanac, a civil newspaper and a ship's log need not use the same notation. <a href="https://aa.usno.navy.mil/faq/UT.html" target="_blank" rel="noopener noreferrer">USNO: Universal Time, historical note</a>.</p>
+<p>The initials <em>UTC</em> also have a history. NIST describes a revised international UTC scale effective <strong>January 1, 1972</strong>; earlier coordinated signals existed, but did not obey every modern technical rule. Applying today's software time scale to a 1967 recording does not establish that instrument's precision or synchronization. At this desk's whole-minute resolution, subsecond differences in time-scale definitions usually will not decide a comparison. An uncertain local offset, unsynchronized recorder, or mismatched event label can still matter enormously. <a href="https://www.nist.gov/pml/time-and-frequency-division/popular-links/walk-through-time/walk-through-time-world-time-scales" target="_blank" rel="noopener noreferrer">NIST: World Time Scales</a>.</p>
+<figure class="graphic clock-figure">
+<svg viewBox="0 0 900 244" role="img" aria-labelledby="tt-clock-figure-title tt-clock-figure-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="tt-clock-figure-title">Clock-label provenance before comparing records</title>
+<desc id="tt-clock-figure-desc">Original conceptual diagram showing a fictional written timestamp, a required documented historical clock rule, and then a justified comparison interval. A lower arrow leads from an unverified rule to an unresolved state. This is a methodological illustration, not an archival record.</desc>
+<rect x="1" y="1" width="898" height="242" rx="9" fill="#162626" stroke="#677a6b"/>
+<g font-family="system-ui, sans-serif">
+<rect x="25" y="28" width="245" height="92" fill="#273a34" stroke="#a9bda8"/><text x="41" y="54" fill="#e4c58c" font-size="14">1 / INSCRIPTION</text><text x="41" y="84" fill="#f3eee2" font-size="19">“00:10 GMT”</text><text x="41" y="104" fill="#d1dbd2" font-size="12">Invented example</text>
+<path d="M272 73H316m-9-7 9 7-9 7" stroke="#e4c58c" stroke-width="3" fill="none"/>
+<rect x="320" y="28" width="252" height="92" fill="#273a34" stroke="#a9bda8"/><text x="338" y="54" fill="#e4c58c" font-size="14">2 / CLOCK RULE</text><text x="338" y="84" fill="#f3eee2" font-size="17">Cited, dated, specific</text><text x="338" y="104" fill="#d1dbd2" font-size="12">Never inferred from initials</text>
+<path d="M574 73H613m-9-7 9 7-9 7" stroke="#e4c58c" stroke-width="3" fill="none"/>
+<rect x="617" y="28" width="258" height="92" fill="#273a34" stroke="#a9bda8"/><text x="635" y="54" fill="#e4c58c" font-size="14">3 / COMPARISON</text><text x="635" y="84" fill="#f3eee2" font-size="17">Justified UTC window</text><text x="635" y="104" fill="#d1dbd2" font-size="12">Bounds + uncertainty</text>
+<path d="M447 120V166m-6-9 6 9 6-9" stroke="#d9ada6" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+<rect x="308" y="170" width="280" height="52" fill="#44302e" stroke="#d9ada6"/><text x="448" y="192" text-anchor="middle" fill="#ffdfd3" font-size="16">Rule unverified? Stop.</text><text x="448" y="211" text-anchor="middle" fill="#ffdfd3" font-size="12">Keep original; leave UTC blank</text>
+</g></svg>
+<figcaption>Original Final Vestige Studios conceptual SVG, November 17, 2026. Fictional inscription, not documentary testimony. No outside imagery or archival material reproduced.</figcaption>
+</figure>
+<h3>The six-field clock-label audit</h3>
+<p>Write down these six things before asking whether two timestamps disagree. An unresolved clock is not a failed investigation. It is an honest boundary of the surviving evidence.</p>
+<dl class="clock-ledger">
+<div><dt>01 · Exact inscription</dt><dd>Preserve the written time, AM/PM, approximate marks, zone letters, and original date wording.</dd></div>
+<div><dt>02 · Source identity</dt><dd>Record the creator, item/page, repository and direct record URL or physical call number. A catalog entry is not always the original.</dd></div>
+<div><dt>03 · Action dated</dt><dd>Does it mean event, log entry, transmission, receipt, publication, or later recollection?</dd></div>
+<div><dt>04 · Historical clock rule</dt><dd>Cite the rule that governed this maker, place and date. Distinguish local, company, astronomical and civil time.</dd></div>
+<div><dt>05 · Error allowance</dt><dd>Document uncertainty from rounding, synchronization, drift, and reporting delay; precision printed is not accuracy proved.</dd></div>
+<div><dt>06 · Conversion finding</dt><dd>Justify earliest/latest UTC minutes or leave both blank and state what missing evidence could resolve them.</dd></div>
+</dl>
+<div class="mininote"><p><strong>Fictional teaching example:</strong> A hypothetical 1919 almanac reports “00:10 GMT,” and a hypothetical newspaper prints “12:10.” Matching digits, or a twelve-hour difference, prove nothing about event identity until each item's conventions are independently shown. The USNO note does not prove which convention either invented item followed. The appropriate initial outcome is <em>unresolved</em>, not an automatic correction.</p></div>
+<p><a href="/the-moving-noon/">The Moving Noon</a> develops historical solar, railway, civil and wartime time systems in depth. This shorter audit belongs immediately before the comparison desk. <a href="https://www.nist.gov/pml/time-and-frequency-division/how-utcnist-related-coordinated-universal-time-utc-international" target="_blank" rel="noopener noreferrer">NIST's modern UTC, GMT, EST and EDT guide</a> explains the vocabulary; a modern rule alone cannot certify an individual old recording.</p>
+</section>
+<section id="tt-desk">
+<p class="eyebrow">04 / The working desk</p><h2>Put two source witnesses side by side.</h2>
+<p>Enter only details you can trace back to the original item. A comparable interval requires a named record, its time as written, the event or recording action it dates, UTC basis, a provenance note, and both UTC limits. An empty note, unknown action or an unverified historical offset produces an unresolved result; choosing “verified” does not make it so. The form remains in this browser tab. It does not send your records to Final Vestige or anyone else; if you close the tab without exporting, the notes are lost. For privacy, avoid entering names or identifiers you would not want exposed if the device is shared.</p>
+<div class="panel">
+<label for="tt-event">One narrowly named occurrence <span>Specify the event being compared. For different events, make separate receipts.</span></label>
+<input id="tt-event" type="text" maxlength="180" placeholder="Example: the reported arrival of the alarm signal">
+<div id="tt-witnesses" aria-label="Source witnesses"></div>
+<div class="actions"><button type="button" id="tt-add">Add another source</button><button type="button" id="tt-compare">Compare intervals</button><button type="button" id="tt-export">Export Markdown receipt</button><button type="button" id="tt-print">Print research sheet</button></div>
+<div class="results" id="tt-results" role="status" aria-live="polite"><p>Enter two sources and select “Compare intervals.” Unverified clock standards remain unresolved even if someone has typed apparent UTC dates into the fields.</p></div>
+</div>
+<noscript><div class="mininote"><p><strong>JavaScript disabled:</strong> The comparison controls cannot operate. Use the blank source-witness template below as a handwritten worksheet and record the original clock, its basis, the evidence for any conversion and your uncertainty. The source guidance remains readable.</p></div></noscript>
+<div class="panel"><h3>Printable source-witness card</h3><p>Occurrence: __________________________</p><p>Original item / persistent ID: __________________________</p><p>Record creator and document type: __________________________</p><p>Time as written: __________________________</p><p>What the timestamp actually dates: __________________________</p><p>Proven clock standard and evidence: __________________________</p><p>Earliest / latest independently justified UTC minute: __________________________\n<p>Why this clock conversion is justified / cited evidence: __________________________</p></p><p>Uncertainties, gaps, alternate interpretations: __________________________</p></div>
+</section>
+<section id="tt-walkthrough">
+<p class="eyebrow">05 / A controlled example</p><h2>The clock disagreement that was not a verdict.</h2>
+<p>Imagine, strictly for demonstration, that three surviving records purport to date the moment a warehouse alarm began. The first log constrains it to 08:11–08:13 UTC. A second operator’s record allows 08:12–08:15 UTC. Their intervals overlap. The third claims 08:19–08:21 UTC. If all three genuinely concern the same instant and their clock conversions and uncertainty limits have been established, the third interval is incompatible with the other two.</p>
+<p>But perhaps that third record dates the receipt of the alarm, not the sounding. Its separation then belongs to the history of a message passing through a system, not to a contest over whose memory failed. Ask who created each record, which system generated the time, what action caused the entry, and whether one account merely copied another.</p>
+<p>In the real record, compare documents before narrating. The <a href="/apollo-1-evidence-atlas/">Apollo 1 Evidence Atlas</a> connects individual sources to a chronology; the underlying <a href="https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/" target="_blank" rel="noopener noreferrer">Apollo 204 Review Board report</a> is a model of why a sequence must be tied to known observations, procedures and their documentary provenance. The warehouse time windows above are wholly invented; the separately sourced Apollo 1 case below examines actual changes in reported times.</p>
+</section>
+
+<section id="tt-apollo-case">
+<p class="eyebrow">06 / A documented revision, not a fictional disagreement</p>
+<h2>Twenty seconds, two official accounts.</h2>
+<p>January 27, 1967. Inside Apollo Command Module 012, a fire overtook the crew during a ground test. Later descriptions sometimes give slightly different seconds for the same accident. These are not rival legends. They are records made at different stages of a technical investigation—and, in one important pair, they do not even date the same observation.</p>
+<div class="panel" aria-label="Comparison of two official NASA sources">
+<h3>The source-witness comparison</h3>
+<div style="overflow-x:auto">
+<table style="border-collapse:collapse;width:100%;min-width:540px;text-align:left">
+<thead><tr><th scope="col" style="padding:10px;border-bottom:2px solid #a89977">Question</th><th scope="col" style="padding:10px;border-bottom:2px solid #a89977">Feb. 3 preliminary memorandum</th><th scope="col" style="padding:10px;border-bottom:2px solid #a89977">Apollo 204 Review Board chronology</th></tr></thead>
+<tbody>
+<tr><th scope="row" style="padding:10px;border-bottom:1px solid #53655e">Earliest named fire observation</th><td style="padding:10px;border-bottom:1px solid #53655e">First detected: 6:31:03 p.m. EST</td><td style="padding:10px;border-bottom:1px solid #53655e">First <em>verbal report</em>: 23:31:04.7 GMT, explicitly 6:31:04.7 p.m. EST</td></tr>
+<tr><th scope="row" style="padding:10px;border-bottom:1px solid #53655e">Cabin rupture</th><td style="padding:10px;border-bottom:1px solid #53655e">About 6:31:17 p.m. EST</td><td style="padding:10px;border-bottom:1px solid #53655e">23:31:19.4 GMT (6:31:19.4 p.m. EST)</td></tr>
+<tr><th scope="row" style="padding:10px">Evidence caution</th><td style="padding:10px">Preliminary figures; recordings from different stations may be out of synchronization by a second or two</td><td style="padding:10px">Later reconstruction using recorded data and witness evidence; telemetry ended by 23:31:22.4 GMT</td></tr>
+</tbody></table></div>
+</div>
+<figure class="graphic">
+<div role="group" aria-label="Scroll to inspect the entire original timeline diagram" style="max-width:100%;overflow-x:auto">
+<svg viewBox="0 0 900 214" style="min-width:680px" role="img" aria-labelledby="tt-apollo-title tt-apollo-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="tt-apollo-title">Two NASA-reported cabin rupture times, at different stages of the investigation</title>
+<desc id="tt-apollo-desc">Original Final Vestige diagram showing the preliminary estimate at second 17 and the later Review Board figure at second 19.4 after 6:31 p.m. EST on January 27, 1967. The marks are reported times, not inferred uncertainty ranges.</desc>
+<rect width="900" height="214" fill="#1b2b2b"/>
+<g stroke="#809188" stroke-width="1"><line x1="185" y1="70" x2="835" y2="70"/><line x1="185" y1="70" x2="185" y2="174"/><line x1="510" y1="70" x2="510" y2="174"/><line x1="835" y1="70" x2="835" y2="174"/></g>
+<g fill="#e9e4d6" font-size="17" font-family="system-ui,sans-serif"><text x="176" y="54">:15</text><text x="500" y="54">:17.5</text><text x="820" y="54">:20</text><text x="22" y="111">Preliminary</text><text x="22" y="160">Board</text></g>
+<g stroke-width="4"><line x1="445" y1="102" x2="445" y2="120" stroke="#d9b676"/><line x1="757" y1="151" x2="757" y2="169" stroke="#a9d6b4"/></g>
+<g fill="#f4ecda" font-size="16" font-family="system-ui,sans-serif"><text x="456" y="116">:17</text><text x="768" y="165">:19.4</text></g>
+<text x="180" y="200" fill="#cdd7cf" font-size="15" font-family="system-ui,sans-serif">Local time: 18:31 + seconds, EST; reported instants, not clock-error bands</text>
+</svg></div>
+<figcaption>Original Final Vestige Studios comparison graphic, drawn November 17, 2026 from two linked NASA texts. It is an editorial visualization of reported times—not an archival graphic, an independent measurement, or evidence of the fire's ignition time. © Final Vestige Studios.</figcaption>
+</figure>
+<p><strong>The necessary distinction:</strong> “first detected” is not necessarily “first spoken report.” Treating 6:31:03 and 6:31:04.7 as competing stopwatch readings for the identical action would manufacture a conflict. The rupture estimates are more directly comparable; the later number is about 2.4 seconds later than the earlier one. The memorandum expressly warns about possible cross-station synchronization errors of one or two seconds. That warning matters, but it does not independently establish why every part of the 2.4-second revision occurred.</p>
+<p>The Review Board chronology gives a reported <em>verbal indication</em>, not a proven second of ignition. The original ignition instant cannot be recovered by subtracting a guessed delay from the transcript. Likewise, a later official investigation should not erase the earlier estimate from the historical record. Label both, date both, and show which evidence each source was using.</p>
+<div class="mininote"><p><strong>Try the method:</strong> Write down the original phrase identifying the event, then its reported time and source status. Keep the two rupture reports as two time claims; do not pretend their difference is a verified uncertainty interval. The comparison widget above operates at <em>whole-minute</em> granularity, so it is not suitable for adjudicating the seconds in this case.</p></div>
+<p class="fine"><strong>Source and rights receipt · checked November 17, 2026.</strong> Robert C. Seamans Jr., <a href="https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/seamans.html" target="_blank" rel="noopener noreferrer">Memorandum on Apollo 204 Review Board discussions (February 3, 1967)</a>, preserved by NASA History; and <a href="https://www.nasa.gov/history/Apollo204/tragedy.html" target="_blank" rel="noopener noreferrer">Report of the Apollo 204 Review Board, accident chronology</a>, NASA History. The memorandum is explicitly preliminary; the latter is a retrospective investigative account. Both links lead to NASA institutional text, not proof of independently synchronized original tapes. Linked U.S. government material is not reproduced here. NASA imagery, insignia and any third-party material require separate use-rights review; the graphic above is original FV work. For source-level connections see the <a href="/apollo-1-evidence-atlas/">Apollo 1 Evidence Atlas</a>.</p>
+</section>
+
+<section id="tt-franklin-case">
+<p class="eyebrow">07 / A date has a job</p>
+<h2>The day in the margin was not the day the ships were left.</h2>
+<p>The Victory Point note survives as one Admiralty form carrying two messages from the Franklin expedition. On this single piece of paper, a date can name the entry itself, a past event it reports, or an intended action still in the future. Confusing these roles produces a neat but false chronology.</p>
+<p>The <a href="https://www.historymuseum.ca/blog/a-very-special-piece-of-paper" target="_blank" rel="noopener noreferrer">Canadian Museum of History's transcription</a> records an original message dated 28 May 1847 and a marginal addition headed 25 April 1848. The addition says the ships had been deserted on 22 April and that the survivors intended to begin their journey toward Back's Fish River on the following day, the 26th. But <a href="https://www.rmg.co.uk/collections/archive/rmgc-object-504898" target="_blank" rel="noopener noreferrer">Royal Museums Greenwich's catalogue for the original object</a> describes the addition as made on 26 April. The reason those institutional descriptions differ is not established. Neither date should be silently erased.</p>
+<div class="panel"><h3>Five dates; six claims about the record</h3><div role="region" aria-label="Source-date comparison, horizontally scrollable" tabindex="0" style="max-width:100%;overflow-x:auto">
+<table style="border-collapse:collapse;width:100%;min-width:560px;text-align:left">
+<caption style="text-align:left;color:#f1dec0;padding:8px 0">An evidence-role table, not a reconstructed travel itinerary</caption>
+<thead><tr><th scope="col" style="padding:8px;border-bottom:2px solid #bba57e">Date</th><th scope="col" style="padding:8px;border-bottom:2px solid #bba57e">What this date describes</th><th scope="col" style="padding:8px;border-bottom:2px solid #bba57e">Documentary witness</th></tr></thead><tbody>
+<tr><th scope="row" style="padding:8px;border-bottom:1px solid #53655e">28 May 1847</th><td style="padding:8px;border-bottom:1px solid #53655e">Date of the earlier written report</td><td style="padding:8px;border-bottom:1px solid #53655e">Canadian Museum transcript</td></tr>
+<tr><th scope="row" style="padding:8px;border-bottom:1px solid #53655e">22 April 1848</th><td style="padding:8px;border-bottom:1px solid #53655e">Reported abandonment of the ships</td><td style="padding:8px;border-bottom:1px solid #53655e">Later message in transcript</td></tr>
+<tr><th scope="row" style="padding:8px;border-bottom:1px solid #53655e">25 April 1848</th><td style="padding:8px;border-bottom:1px solid #53655e">Date heading of the handwritten addition</td><td style="padding:8px;border-bottom:1px solid #53655e">Canadian Museum transcript</td></tr>
+<tr><th scope="row" style="padding:8px;border-bottom:1px solid #53655e">26 April 1848</th><td style="padding:8px;border-bottom:1px solid #53655e">Planned departure the next day; not confirmed completion</td><td style="padding:8px;border-bottom:1px solid #53655e">Later message in transcript</td></tr>
+<tr><th scope="row" style="padding:8px;border-bottom:1px solid #53655e">26 April 1848</th><td style="padding:8px;border-bottom:1px solid #53655e">Catalogue date for the addition itself</td><td style="padding:8px;border-bottom:1px solid #53655e">RMG HSR/C/9/1 catalogue</td></tr>
+<tr><th scope="row" style="padding:8px">April 1859</th><td style="padding:8px">Recovery of the document, not the writing date</td><td style="padding:8px">RMG HSR/C/9/1 catalogue</td></tr>
+</tbody></table></div></div>
+<figure class="graphic"><div role="group" aria-label="Illustrative date-role diagram, scroll horizontally on narrow screens" tabindex="0" style="max-width:100%;overflow-x:auto">
+<svg viewBox="0 0 850 203" style="min-width:700px" role="img" aria-labelledby="tt-franklin-title tt-franklin-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="tt-franklin-title">Five dates describing several kinds of action in the Victory Point note</title>
+<desc id="tt-franklin-desc">Original schematic, not archival evidence: top row represents the 1847 entry, ship abandonment reported for 22 April 1848, later entry dated 25 April and planned departure dated 26 April. A separate lower row shows Royal Museums Greenwich cataloguing the addition as 26 April. Dates are not rendered to a time scale; the disagreement is unresolved.</desc>
+<rect x="1" y="1" width="848" height="201" rx="7" fill="#1b2b2b" stroke="#879a8d"/>
+<text x="18" y="26" fill="#f0e8d7" font-family="system-ui" font-size="15">MUSEUM TRANSCRIPTION · DISTINCT DATE ROLES</text><path d="M30 83H810" stroke="#9dc2af" stroke-width="2"/>
+<g font-family="system-ui" text-anchor="middle" fill="#f2eee3" font-size="13">
+<circle cx="98" cy="83" r="7" fill="#e5c58b"/><text x="98" y="61">28 MAY 1847</text><text x="98" y="106">first entry</text>
+<circle cx="305" cy="83" r="7" fill="#e5c58b"/><text x="305" y="61">22 APR 1848</text><text x="305" y="106">ships deserted</text>
+<circle cx="515" cy="83" r="7" fill="#e5c58b"/><text x="515" y="61">25 APR 1848</text><text x="515" y="106">entry headed</text>
+<circle cx="737" cy="83" r="7" fill="#e5c58b"/><text x="737" y="61">26 APR 1848</text><text x="737" y="106">march planned</text></g>
+<path d="M30 147H810" stroke="#b3d6c4" stroke-width="2" stroke-dasharray="8 5"/>
+<g font-family="system-ui" fill="#efeadb"><text x="18" y="138" font-size="14">ORIGINAL OBJECT CATALOGUE · separate assertion</text><text x="18" y="174" font-size="15">RMG: addition described as 26 April 1848</text><text x="18" y="192" font-size="12" fill="#e5c58b">Reason for discrepancy not established</text></g>
+</svg></div><figcaption>Original Final Vestige Studios visual, created 17 November 2026; schematic spacing, not a facsimile, scientific timeline or manuscript photograph. No archival image copied. © Final Vestige Studios.</figcaption></figure>
+<div class="mininote"><p><strong>What cannot be concluded:</strong> that the departure happened exactly when intended, that the holding museum's date is an error, or that the catalogue and transcription describe the same date field. The RMG catalogue's broad 1847–1859 “Date made” field is not itself an exact event timestamp. Follow the full research story in <a href="/2026/08/20/all-well-was-written-first-franklin-expedition/">All Well Was Written First</a>.</p></div>
+<p class="fine"><strong>Provenance and rights, checked 2026-11-17:</strong> the holding institution is the National Maritime Museum, Greenwich; object reference HSR/C/9/1. Canadian Museum of History supplies the linked transcript. RMG provides a licensing pathway for its photograph. No museum photograph, scan, facsimile, or full transcription is reproduced here; reading access does not establish permission to copy.</p>
+</section>
+
+<section id="tt-ledger">
+<p class="eyebrow">08 / Source and use ledger</p><h2>Where the method comes from</h2>
+<p>These are links to controlling institutions, not a claim that every record those institutions hold is complete or accurate. URLs and page descriptions checked on November 17, 2026. External material is linked, not copied. Each record’s images, text, copyright status and reuse permissions must be evaluated at item level before republication.</p>
+<ol class="sources">
+<li><a href="https://www.archives.gov/research/catalog/help/search-tips" target="_blank" rel="noopener noreferrer">National Archives — Catalog Search Tips</a><span>NARA; date fields including inclusive, coverage, production, broadcast and release. Institutional guidance; link only, not an unrestricted license for third-party catalog material. Last checked 2026-11-17.</span></li>
+<li><a href="https://www.archives.gov/research/catalog/lcdrg/elements/production-date" target="_blank" rel="noopener noreferrer">National Archives — Production Date</a><span>NARA catalog descriptive standard; identifies the time an item was first produced or created, with qualifiers for uncertain or approximate date. Last checked 2026-11-17; link only.</span></li>
+<li><a href="https://www.archives.gov/research/catalog/lcdrg/elements/date-note" target="_blank" rel="noopener noreferrer">National Archives — Date Note</a><span>NARA catalog data-element guidance for gaps, approximate dates, bulk dates and meaningful date distinctions. Last checked 2026-11-17; link only.</span></li>
+<li><a href="https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst" target="_blank" rel="noopener noreferrer">NIST — Daylight Saving Time Rules</a><span>National Institute of Standards and Technology; explains current DST, historical rule change in 2007, and DOT rulemaking authority. Current-time guidance is not a retrospective time-zone conversion table. Last checked 2026-11-17; link only.</span></li>
+<li><a href="https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/" target="_blank" rel="noopener noreferrer">NASA — Report of the Apollo 204 Review Board</a><span>Official investigative record with history, findings and contemporaneous procedure references; used here only to demonstrate the value of tracing chronology into primary reports. Last checked 2026-11-17; no NASA image reproduced.</span></li>
+<li><a href="https://www.rmg.co.uk/collections/archive/rmgc-object-504898" target="_blank" rel="noopener noreferrer">Royal Museums Greenwich — Franklin's last message, HSR/C/9/1</a><span>Holding institution object catalogue; calls the addition 26 April 1848; notes April 1859 recovery and image-licensing pathway. Checked 2026-11-17. Item photograph link-only, not reproduced.</span></li>
+<li><a href="https://www.historymuseum.ca/blog/a-very-special-piece-of-paper" target="_blank" rel="noopener noreferrer">Canadian Museum of History — A Very Special Piece of Paper</a><span>Institutional transcription starts the marginal entry 25 April 1848; separately reports abandonment on 22 April and intention to travel on 26 April. Checked 2026-11-17. Link-only; no copied museum scan or full text.</span></li>
+<li><a href="/editorial-standards/">Final Vestige — Editorial Standards</a><span>Primary house policy for uncertain records, quantitative claims, quotation verification, and labeled reconstructions. Reviewed 2026-08-23 on site; link checked 2026-11-17.</span></li>
+</ol>
+<div class="mininote"><p><strong>Rights and qualifications:</strong> Chart and code were authored for this FV field tool in 2026. Original illustration is an explanatory composite, not source evidence. © Final Vestige Studios. External records remain with their institutions and applicable rightsholders. This research aid is not forensic certification and offers no legal or scientific finding about an event.</p></div>
+<p class="stamp">A chronology that acknowledges what it cannot align is more valuable than a neat one assembled by assumption.</p>
+<p><a href="/free-resources/">Return to The Library</a> · <a href="/free-resources/research-sources/">Research Sources</a> · <a href="/free-resources/the-page-that-changed/">The Page That Changed</a> · <a href="/free-resources/the-same-story-twice/">The Same Story Twice</a></p>
+</section>
+<template id="tt-card">
+<fieldset class="witness controls"><legend>Source <span class="tt-label-num">1</span></legend>
+<div class="wgrid">
+<label class="wide">Item title and repository <span>Not a secondary retelling unless explicitly identified as such.</span><input data-k="source" maxlength="260" placeholder="e.g. operator log, repository / ID"></label>
+<label>Original time, verbatim <span>Preserve the wording, including “approx.” or clock notation.</span><input data-k="original" maxlength="180" placeholder="e.g. 08:12 local"></label>
+<label>What this time describes <span>Event / entry / transmission / publication / unknown.</span><select data-k="kind"><option value="">Choose</option><option>Event occurrence</option><option>Record creation or entry</option><option>Message transmission or receipt</option><option>Publication or release</option><option>Recollection / later testimony</option><option>Unclear</option></select></label>
+<label class="wide">Original record URL <span>Optional https:// or http:// institutional record link.</span><input data-k="url" type="url" placeholder="https://…" maxlength="1000"></label>
+<label class="wide">Proven clock basis <span>Never choose UTC or verified conversion merely because it looks plausible.</span><select data-k="basis"><option value="">Unknown or unverified</option><option value="utc">UTC stated by the source</option><option value="verified">Converted to UTC with documented historical clock/offset evidence</option><option value="unverified">Local/company/solar time not yet proven</option></select></label>
+<label>Earliest justified UTC minute <span>Strict YYYY-MM-DD HH:MM. Leave blank when unknown.</span><input data-k="start" placeholder="YYYY-MM-DD HH:MM" maxlength="16" inputmode="numeric"></label>
+<label>Latest justified UTC minute <span>Inclusive end of possible interval, not a guessed point.</span><input data-k="end" placeholder="YYYY-MM-DD HH:MM" maxlength="16" inputmode="numeric"></label>
+<label class="wide">Conversion evidence and uncertainty <span>Required for numeric comparison. Link, page, documented offset/drift, how wide this interval is and why.</span><textarea data-k="qualification" maxlength="1200" placeholder="What permits this translation? What could make it wrong?"></textarea></label>
+</div><button type="button" class="tt-remove">Remove this source</button>
+</fieldset>
+</template>
+<script>
+(function(){
+"use strict";
+var root=document.getElementById("two-timelines");if(!root || root.dataset.ready==="yes")return;root.dataset.ready="yes";
+var wrap=root.querySelector("#tt-witnesses"),tpl=root.querySelector("#tt-card"),out=root.querySelector("#tt-results"),counter=0;
+function renumber(){Array.from(wrap.querySelectorAll("fieldset.witness")).forEach(function(b,i){b.querySelector(".tt-label-num").textContent=String(i+1);});}
+function add(){counter+=1;var box=tpl.content.cloneNode(true);var fld=box.querySelector("fieldset");fld.dataset.sourceId=String(counter);wrap.appendChild(box);renumber();}
+function val(box,k){var el=box.querySelector('[data-k="'+k+'"]');return el?el.value.trim():"";}
+function rows(){return Array.from(wrap.querySelectorAll("fieldset.witness")).map(function(b){return{source:val(b,"source"),original:val(b,"original"),kind:val(b,"kind"),url:val(b,"url"),basis:val(b,"basis"),start:val(b,"start"),end:val(b,"end"),qualification:val(b,"qualification")};});}
+function parseMinute(s){var m=/^(\d{4})-(\d\d)-(\d\d) (\d\d):(\d\d)$/.exec(s);if(!m)return null;var d=new Date(Date.UTC(+m[1],+m[2]-1,+m[3],+m[4],+m[5]));if(d.getUTCFullYear()!==+m[1] || d.getUTCMonth()+1!==+m[2] || d.getUTCDate()!==+m[3] || d.getUTCHours()!==+m[4] || d.getUTCMinutes()!==+m[5])return null;return d.getTime();}
+function interval(r){if(!(r.basis==="utc" || r.basis==="verified"))return null;
+if(!r.source || !r.original || !r.kind || r.kind==="Unclear" || !r.qualification)return null;
+var a=parseMinute(r.start),b=parseMinute(r.end);if(a===null || b===null || a>b)return null;return[a,b];}
+function classifyPair(r,s){
+if(!r.source || !s.source || !r.original || !s.original)return "unknown";
+if(r.kind && s.kind && r.kind!=="Unclear" && s.kind!=="Unclear" && r.kind!==s.kind)return "different";
+var x=interval(r),y=interval(s);if(!x||!y)return "unknown";
+return(x[1]<y[0] || y[1]<x[0])?"separate":"overlap";}
+function pairResults(a){var p=[];for(var i=0;i<a.length;i++){for(var j=i+1;j<a.length;j++){p.push({i:i+1,j:j+1,type:classifyPair(a[i],a[j])});}}return p;}
+function pairDescription(q){return q.type==="different"?"DIFFERENT ACTIONS — these timestamps describe different kinds of observation or record; do not frame them as a factual contradiction.":q.type==="overlap"?"WINDOWS OVERLAP — compatible under the supplied assumptions; not proof of independence.":q.type==="separate"?"WINDOWS DO NOT OVERLAP — incompatible for the same instant under the stated assumptions; review source dependence, clock evidence and what the timestamp dates.":"UNRESOLVED — missing original evidence, source description, a comparable action, clock qualification or valid UTC bounds.";}
+function compare(){
+var a=rows(),p=pairResults(a),missing=[];
+a.forEach(function(r,i){if(!interval(r))missing.push(i+1);});
+out.replaceChildren();var h=document.createElement("p");h.textContent="Comparisons for "+(root.querySelector("#tt-event").value.trim()||"the unnamed occurrence")+": "+p.length+" pair(s).";out.appendChild(h);
+if(a.length<2){var x=document.createElement("p");x.textContent="Add at least two source witnesses.";out.appendChild(x);return;}
+var list=document.createElement("ul");list.className="records";p.forEach(function(q){var li=document.createElement("li");li.textContent="Source "+q.i+" / Source "+q.j+": "+pairDescription(q);list.appendChild(li);});out.appendChild(list);
+if(missing.length){var n=document.createElement("p");n.textContent="Insufficient evidence for numeric comparison: Source "+missing.join(", ")+". Verify the original record, type of time, clock standard, provenance note and UTC window; do not infer historical offsets.";out.appendChild(n);}
+}
+function receipt(){var a=rows(),p=pairResults(a),lines=["# The Two Timelines — research receipt","","Occurrence: "+(root.querySelector("#tt-event").value.trim()||"(unnamed)"),"Method last checked: 2026-11-17","Desk: Final Vestige Studios, https://finalvestige.com/free-resources/",""];a.forEach(function(r,i){lines.push("## Source "+(i+1),"Original item: "+(r.source||"(not entered)"),"Time as written: "+(r.original||"(not entered)"),"Kind of time: "+(r.kind||"(unknown)"),"Record URL: "+(/^https?:\/\//i.test(r.url)?r.url:"(not provided or invalid)"),"Clock basis: "+(r.basis||"unknown"),"Justified earliest UTC: "+(r.start||"unresolved"),"Justified latest UTC: "+(r.end||"unresolved"),"Conversion evidence / qualifications: "+(r.qualification||"none supplied"),"");});lines.push("## Pairwise result");p.forEach(function(q){lines.push("Sources "+q.i+" and "+q.j+": "+pairDescription(q));});lines.push("","This output summarizes the researcher's inputs; the desk cannot independently verify their truth or establish synchronization or source independence.","Rights of linked records require item-level review.");return lines.join("\n");}
+root.querySelector("#tt-add").addEventListener("click",add);root.querySelector("#tt-compare").addEventListener("click",compare);
+root.querySelector("#tt-print").addEventListener("click",function(){window.print();});
+root.querySelector("#tt-export").addEventListener("click",function(){var blob=new Blob([receipt()],{type:"text/markdown;charset=utf-8"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="fv-two-timelines-research-receipt.md";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u);},1000);});
+wrap.addEventListener("click",function(e){if(e.target.classList.contains("tt-remove")){var b=e.target.closest("fieldset.witness");if(wrap.querySelectorAll("fieldset.witness").length>2){b.remove();renumber();}else{out.replaceChildren();var p=document.createElement("p");p.textContent="Keep at least two sources to compare; clear the source fields instead.";out.appendChild(p);}}});
+add();add();
+})();
+</script>
+</article>
+<!-- /wp:html -->

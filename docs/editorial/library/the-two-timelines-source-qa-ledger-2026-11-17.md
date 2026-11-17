@@ -1,0 +1,96 @@
+# The Two Timelines — source, rights and release receipt
+
+**Scope:** Final Vestige Studios Library only. Produced 2026-11-17. One new, free interactive desk: compare independently justified UTC windows for different documents purporting to date the same occurrence. Not a chronology reconstruction or conversion engine.
+
+**Reason for distinct asset:** Live *The Moving Noon* explains historical clock systems, *The Year That Changed Twice* covers calendars, *The Black Bar* concerns FOIA redactions, and the Apollo 1 Evidence Atlas presents sourced incident chronology. This desk does not replace them: it keeps original timestamp, the nature of what was dated, UTC conversion evidence and uncertainty separately, and checks only interval overlap. GitHub topic searches before authoring returned no exact chronology-conflict desk.
+
+**Verified institutional sources (links, not copied material; checked 2026-11-17):**
+1. NARA Catalog Search Tips — https://www.archives.gov/research/catalog/help/search-tips — distinguishes inclusive, coverage, production, broadcast, release and other catalog date concepts.
+2. NARA Production Date element — https://www.archives.gov/research/catalog/lcdrg/elements/production-date — creation/production date has a distinct meaning and uncertainty qualifiers.
+3. NARA Date Note — https://www.archives.gov/research/catalog/lcdrg/elements/date-note — date gaps, predominant bulk dates and uncertainty in catalog descriptions.
+4. NIST DST Rules — https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst — current U.S. DST rules and the 2007 change; explicitly **not** a historical time-zone converter.
+5. NASA Apollo 204 Review Board report — https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/ — primary investigation report with chronology and procedural record; no content copied.
+6. FV Editorial Standards — https://finalvestige.com/editorial-standards/ — house policy for disputed records, dates and reconstructions.
+
+**Original imagery and rights:** The SVG contains three fictional observation intervals, originally drawn for FV in 2026. Caption and accessible title/description declare it illustrative, not documentary; © Final Vestige Studios. No third-party scans, videos, maps, fonts or archival photographs have been copied. External rights remain item-specific, and no automatic license is inferred from government-hosted URLs.
+
+**Behavior:** Input stays client-side and is not stored. Reader supplies as-written time, source, kind of timestamp, original link, clock basis, independently justified inclusive UTC bounds, and uncertainty note. The form compares pairs only if clock basis is source-stated UTC or specifically verified UTC conversion, with valid ordered UTC-minute intervals. It classifies overlapping / separated / unresolved *under those assumptions*; it never decides witness truthfulness, independence, historical DST or timezone. Export uses a local Markdown Blob on user action only. No fetches, analytics, storage, automatic emails or external scripts.
+
+**Structural source-level acceptance:** Source/footer/link scoping, bounded original input, no dynamic insertion of user HTML (results use textContent), strict calendar round-trip validation, initial two witness fields, keyboard-accessible real buttons, aria-live result and original diagram alt description. CSS breakpoints at 760/390 with fluid 320+; print rules provided. Static checks: {"hasOriginalDiagram":true,"institutionalSources":6,"localOnly":true,"responsive":true,"scopedStyles":true,"sourceFields":true,"realClockChecks":true,"noCodeExecution":true,"internalCrosslinks":true}.
+
+**Publication status: HOLD.** WordPress status draft/noindex only; source level review does **not** establish actual theme contrast, 320/390/768/1440 visual rendering, assistive technology, mobile keyboard behavior or no cross-widget conflicts. Subscriber/social suppression not exercised. Nothing is linked into public Library navigation; no first-publish emails. A future release requires live-theme browser acceptance, confirmed suppression, item/link health recheck, then revision-scoped Library parent card insertion. No changes to Preparedness, Investigations, homepage, shared theme, Grok or subscriber settings.
+
+**Future Grok coordination idea only:** 40-second educational demonstration “Three clocks, one event—not three lies” using the explicitly fictional diagram. Do not use actual historic images or change Grok accounts without a rights check.
+
+## November 17, 2026, 07:37 PST — Apollo 1 primary-source chronology case
+
+**Scope:** Extended the existing *Two Timelines* draft rather than creating another competing Library item. The new case explicitly distinguishes a preliminary NASA memorandum from the later Apollo 204 Review Board chronology. This is documentary methods education, not a new Apollo 1 investigation. Its purpose is how to reconcile changing official time claims.
+
+**Primary institutional witnesses (each directly opened 2026-11-17):**
+1. Robert C. Seamans Jr., [Memorandum to NASA Administrator James E. Webb, February 3, 1967](https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/seamans.html), NASA History (historical memo; NASA web transcribed page last updated February 3, 2003). First fire detected at approximately 6:31:03 p.m. EST; rupture approximately 6:31:17 p.m. EST; warns separate station records could be unsynchronized by one or two seconds. The original memo explicitly calls its analysis preliminary.
+2. [Report of the Apollo 204 Review Board, accident chronology](https://www.nasa.gov/history/Apollo204/tragedy.html), NASA Historical Reference Collection. It specifies the first **verbal** report began 23:31:04.7 GMT / 6:31:04.7 p.m. EST, command-module rupture 23:31:19.4 GMT, and complete loss of voice/data transmission by 23:31:22.4 GMT. This is a later official reconstruction, not a claim of directly witnessed ignition.
+3. [NASA Apollo 204 Review Board report](https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/), supplementary board context on limitations and stages of fire.
+4. [Final Vestige Apollo 1 Evidence Atlas](https://finalvestige.com/apollo-1-evidence-atlas/), contextual cross-link; this Library case does not modify the separate Investigations lane.
+
+**Critical interpretation:** The memo's *first detected* fire and Board's *first spoken report* are not necessarily the same event. The reported rupture time changes by approximately 2.4 seconds. The early warning about possible 1–2-second station synchronization problems alone cannot conclusively explain the entirety of the difference. Do not infer the ignition instant, give artificial precision to a preliminary estimate, combine numbers as an experimentally measured uncertainty range, or use the desk's whole-minute comparator to decide a seconds-scale question.
+
+**Illustration and reuse:** New FV-authored SVG with 17- and 19.4-second marker positions mapped on a labeled 15–20-second EST axis. Neither axis nor markers are reproductions of an archival graph; the figure explicitly identifies them as editorial display of reported times. Has SVG title/description, non-color labels, a scrollable narrow-screen container, and caption. © Final Vestige Studios. NASA sources linked only; no NASA photos, source document scans, logos or third-party visual assets copied. NASA content and Smithsonian holdings must be cleared independently when reproducing actual material.
+
+**Revision-safe WordPress scope:** Single top-level `core/html` block replaced through optimistic locking on existing unpublished page **#2860**, parent #77, noindex. WordPress readback of **30,849-character** markup and the revised GitHub source match exactly. No duplicated element IDs. New section `#tt-apollo-case` exists once; the preceding entirely hypothetical warehouse comparison remains identified as invented. The subsequent ledger numbering changed from 06 to 07. WordPress saved without content warnings, modified **2026-11-17T07:37:15** site local time.
+
+**Independent readback:** All new NASA URLs, descriptive SVG markup and published internal cross-link are present in saved draft. Published page #1338 remains last modified **2026-11-03T22:12:43**, Library parent #77 **2026-11-07T19:39:01**; both still publish. No WordPress public content edited, and the draft's noindex remains true.
+
+**Release QA remains HOLD:** Static structural review does not demonstrate actual production-theme/browser view at 320/390/768/1440; keyboard and screen-reader operation, JavaScript on/off and export tests, actual third-party link behavior for all links, and reliable first-publish subscriber/social suppression still require verified runtime checks. The table's narrow-screen contained horizontal scroll must be tested in genuine browser layout. Do not publish or add a Library card before these gates pass. No paid services, subscriber mail, Grok account changes or edits to other editorial lanes.
+
+**Grok handoff concept only:** A 30–45-second sourced mini-lesson, “The seconds changed; the event did not,” with only the original FV diagram and large labels distinguishing a preliminary memo from the final chronology. No promotional or social account action taken.
+
+## November 17, 2026, 08:39 PST — Evidence-gated chronology comparator and export
+
+**Reader problem addressed:** The first version of the working desk compared any two syntactically valid UTC windows, even when a user had not entered a traceable source, the original wording, the kind of timestamp or a clock-provenance explanation. Worse, an event observation and its later transmission could be labelled "non-overlapping" and mistaken for a conflict. The Markdown export also omitted its conclusion. This is an editorial integrity problem rather than a cosmetic change.
+
+**Changes scoped to unpublished WordPress page #2860 and matching GitHub draft source:**
+- A pair requires original record title, as-written time, known timestamp kind, demonstrated or source-stated UTC clock basis, written evidence/uncertainty note and chronologically valid inclusive UTC-minute boundaries before numerical comparison. Dropdown selections and text notes remain the *reader's assertions*, not institutional verification by software.
+- An **event**, **message transmission**, **record creation**, **publication** or **recollection** can describe different actions. With traceable record titles and original readings but different timestamp kinds, the comparator now says **DIFFERENT ACTIONS**, not contradictory instants. If basic record identity/time is missing it says **UNRESOLVED**.
+- Exported Markdown contains the actual pairwise classification and proper line breaks, in addition to the input provenance and explicit qualifications. A malformed URL is omitted from the receipt, not promoted to a link.
+- Removing and re-adding source witnesses renumbers the visible labels to match the sequential results and receipt. A new cross-link to the already-published [The Same Story Twice](https://finalvestige.com/free-resources/the-same-story-twice/) addresses false independent corroboration without duplicating that guide.
+- Stronger prose explains why the Apollo 1 reported seconds are deliberately **not** fed into a whole-minute comparator. No attempt was made to solve a seconds-scale historic dispute from minute bins.
+
+**Primary-source verification (reopened 2026-11-17):**
+- NASA History, Robert C. Seamans Jr.'s February 3, 1967 preliminary memorandum: https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/seamans.html — a *preliminary* account, first detection at 18:31:03 EST, estimated rupture ~18:31:17; potential cross-station synchronization concerns are explicitly discussed.
+- NASA History, Apollo 204 Review Board chronology: https://www.nasa.gov/history/Apollo204/tragedy.html — first *verbal indication* 23:31:04.7 GMT, distinct from first detection; reported rupture 23:31:19.4 GMT. Later reconstructed observations do not establish an ignition timestamp.
+- NARA, Production Date standard: https://www.archives.gov/research/catalog/lcdrg/elements/production-date — item production date is not interchangeable with event date, reviewed September 26, 2024. URL checked 2026-11-17.
+- NIST DST rules: https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst — 2007 U.S. rule changes make present offsets unfit as automatic historical conversion rules. URL checked 2026-11-17.
+
+**Rights and media:** Only original FV SVG illustrations remain, with captions explaining their fictional/documentary status. No NASA photographs, scans, logos, third-party graphics or copyrighted excerpts were reproduced. External material is institutional *link-only*, not a blanket reuse license. FV graphic author: Final Vestige Studios, 2026, original source is this draft; © Final Vestige Studios. Alt-equivalent descriptions are embedded as SVG title/desc and text captions; actual screen-reader announcement remains untested.
+
+**Read-only acceptance actually executed:** The exact comparator functions were extracted from the committed HTML and exercised in a V8 isolate. The expanded run passed **22/22 source-derived assertions**: overlapping and separated intervals, inclusive boundary, event/transmission and event/publication distinction, unverified time zone, absent proof/source/original reading, unclear kind, reversed bounds, invalid calendar dates, leap day, three-pair behavior, exported pair results and real newline formatting, link preservation, unique IDs and no third-party `img`. A follow-up **4/4** source-derived checks also passed after tightening missing-record behavior. The entire inline script compiled via JavaScript parser without running site DOM code. These are **logic/source checks, not production-browser tests**.
+
+**Durable regression:** [scripts/editorial/check-two-timelines-evidence-gate.mjs](../../scripts/editorial/check-two-timelines-evidence-gate.mjs) is a dependency-free, read-only Node test that extracts the pure functions from the exact HTML and includes 27 named tests (24 semantic/structural and 3 receipt checks). Code was independently fetched from the GitHub branch and matched exactly after commit. **Native Node execution of that new file remains unverified**; do not report its checks as already passing on a native runner.
+
+**WordPress revision/readback:** A single `core/html` block was replaced using section identity, content hash and `expected_modified` optimistic locking. GitHub source and authenticated WordPress edit readback match exactly at **32,743 characters**, last modified **2026-11-17T08:38:45** site-local, no WP content warnings. Parent #77, status **draft**, `jetpack_seo_noindex=true`; no public post/published revision was touched. Anonymous draft slug `/free-resources/the-two-timelines/` returned HTTP **404**. Published parent #77 (modified 2026-11-07T19:39:01) and published Research Sources #1338 (modified 2026-11-03T22:12:43) retain their original revisions, HTTP 200/canonical and SEO metadata.
+
+**Publication decision: HOLD.** The real production theme at 320/390/768/1440, true screen-reader and keyboard browser navigation, interactive Markdown download, JS-off behavior, scroll containment and subscriber/social notifications have not passed an inspectable browser test. A ready WordPress screenshot URL alone is not pixel/assistive-technology evidence. Do not publish, update the public Library card, send announcements, or alter Grok's accounts until the independent release gate passes. No new spending and no changes to Preparedness, Investigations, the homepage or shared templates.
+
+
+## November 17, 2026 — clock-label and source-rule extension
+
+Existing draft extended in place, not a new page. Six-field clock-label worksheet, original 900 × 244 accessible SVG, and a clearly fictional GMT comparison now precede the desk. No interactive code changed. Reason: a correctly copied clock label can still carry an unverified historical convention.
+
+**Institutional primary-method references, checked 2026-11-17; all link-only, no external reproductions:**
+- US Naval Observatory, Universal Time: https://aa.usno.navy.mil/faq/UT.html — pre-1925 GMT day could begin at noon in astronomical and nautical almanacs; cannot generalize to all documents.
+- NIST, World Time Scales: https://www.nist.gov/pml/time-and-frequency-division/popular-links/walk-through-time/walk-through-time-world-time-scales — new international UTC became effective January 1, 1972; earlier coordinated time signals existed.
+- NIST, UTC/GMT/EST explainer: https://www.nist.gov/pml/time-and-frequency-division/how-utcnist-related-coordinated-universal-time-utc-international — modern time-zone distinction; does not establish the offset of a particular historical document.
+
+**Rights:** SVG and worksheet original FV 2026; fictitious example expressly labelled; © Final Vestige Studios. External sources linked without reproduction; their asset-specific rights remain unassessed. Alt and long SVG description written; no animation or dependencies.
+
+**Static checks:** one original core/html block, exact prior JavaScript preserved, section IDs preserved, no outside assets, responsive two-to-one column method card at 760px, and existing 390px/print rules retained. This is not a production-theme, keyboard, screen-reader or browser acceptance result.
+
+**Newsletter diagnostics 2026-11-17:** WordPress settings reported subscriptions=true and email_new_posts_by_default=false, but this is not proof of enforced notification suppression, nor evidence about social distribution. No settings were changed.
+
+**Release:** draft/noindex hold. Actual-theme inspectable 320/390/768/1440 and assistive testing and no-email/social guarantees remain blocked. Public page #77 and Research Sources #1338 remain outside scope.
+
+
+
+### 2026-11-17 — Franklin date-role case (unpublished)
+Original institutional sources independently checked 2026-11-17: [RMG object HSR/C/9/1](https://www.rmg.co.uk/collections/archive/rmgc-object-504898) and [Canadian Museum of History transcript](https://www.historymuseum.ca/blog/a-very-special-piece-of-paper). Cross-link to [FV Franklin investigation](https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/). Six-entry date-role table and original accessible SVG added. The transcription's later entry opens 25 April 1848 while RMG dates its addition to 26 April; no explanation invented. The 26 April march is described as planned, not independently verified. The 1847–1859 catalogue field does not establish when either entry was made. RMG collection photographs require rights/permission review; no third-party images, full transcripts or scans copied. Original FV SVG is explicitly illustrative, not a historic object or scaled timeline.
+RELEASE HOLD: production-theme responsive, keyboard, screen-reader and interaction testing, plus enforceable subscriber/social suppression, remain unverified. Do not publish, merge or modify Library index #77, Research Sources #1338, other editorial lanes or Grok accounts on this evidence alone.
