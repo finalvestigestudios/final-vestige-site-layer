@@ -9,6 +9,14 @@
 @media(max-width:760px){.fv-two .split{grid-template-columns:1fr}.fv-two .wgrid{grid-template-columns:1fr}.fv-two .wide{grid-column:auto}}
 @media(max-width:390px){.fv-two{padding:12px;font-size:16px}.fv-two .hero{padding:19px}.fv-two h1{font-size:2.5rem}.fv-two button{width:100%}}
 @media print{.fv-two{max-width:none;background:#fff;color:#111;font:11pt/1.5 Georgia,serif;padding:0}.fv-two *{background:#fff!important;color:#111!important;box-shadow:none!important}.fv-two .actions,.fv-two .remove{display:none!important}.fv-two .witness,.fv-two .results,.fv-two section{break-inside:avoid}.fv-two a{color:#111!important}.fv-two input,.fv-two select,.fv-two textarea{border:1px solid #777}}
+
+/* FV original clock-label worksheet; accessible responsive lists. */
+.fv-two .clock-ledger{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0 30px}
+.fv-two .clock-ledger>div{min-width:0;border:1px solid #65736d;background:#1b2b2b;padding:17px 18px}
+.fv-two .clock-ledger dt{font:700 .88rem/1.45 system-ui,sans-serif;color:#e9cc98;margin-bottom:8px}
+.fv-two .clock-ledger dd{margin:0;color:#e8e8dc;line-height:1.58}
+.fv-two .clock-figure{max-width:100%;overflow:hidden}
+@media(max-width:760px){.fv-two .clock-ledger{grid-template-columns:1fr}}
 </style>
 <article class="fv-two" id="two-timelines">
 <header class="hero">
@@ -55,6 +63,42 @@
 <p>A witness saying “around eight” gives you a looser interval than an instrument marked to the second. Yet even that instrument may have an unknown offset, drift or reporting delay. Precision of display is not independent evidence of accuracy.</p>
 <p>For each source, state its own uncertainty first. Only then choose an <strong>earliest and latest plausible UTC minute</strong> if the conversion has been independently established. This tool accepts minute-wide boundaries, not seconds or milliseconds; the Apollo 1 figures below are deliberately <em>not</em> run through it. A wide window can be defensible. A narrow one invented to make a timeline attractive cannot.</p>
 <p>The comparison below treats source claims as intervals only after each has an original-time transcription, a named source, a defined kind of timestamp and a dated explanation of its clock basis. Overlap means a shared time is possible, not that two sources independently confirm it. Separation means the supplied windows cannot both date the same instant under the stated assumptions; it does not identify an unreliable witness. If one source dates an event and another dates a later transmission, the desk marks them <em>different actions</em> instead of manufacturing a contradiction.</p>
+</section>
+
+<section id="tt-clock-labels" aria-labelledby="tt-clock-title">
+<p class="eyebrow">03A / The clock-label audit</p>
+<h2 id="tt-clock-title">The label on the clock is not the clock.</h2>
+<p>Two ways to go wrong with historical time are to misread the number, or to read it correctly and attach the wrong clock system. The second error can travel through several respectable publications before anybody notices.</p>
+<p>Consider <em>GMT</em>. The U.S. Naval Observatory warns that before 1925 certain astronomical and nautical almanacs counted the Greenwich Mean Time day from <strong>noon rather than midnight</strong>. That does not mean every old document marked GMT needs twelve hours added or subtracted. It means a historian must first identify the maker and its actual convention. A technical almanac, a civil newspaper and a ship's log need not use the same notation. <a href="https://aa.usno.navy.mil/faq/UT.html" target="_blank" rel="noopener noreferrer">USNO: Universal Time, historical note</a>.</p>
+<p>The initials <em>UTC</em> also have a history. NIST describes a revised international UTC scale effective <strong>January 1, 1972</strong>; earlier coordinated signals existed, but did not obey every modern technical rule. Applying today's software time scale to a 1967 recording does not establish that instrument's precision or synchronization. At this desk's whole-minute resolution, subsecond differences in time-scale definitions usually will not decide a comparison. An uncertain local offset, unsynchronized recorder, or mismatched event label can still matter enormously. <a href="https://www.nist.gov/pml/time-and-frequency-division/popular-links/walk-through-time/walk-through-time-world-time-scales" target="_blank" rel="noopener noreferrer">NIST: World Time Scales</a>.</p>
+<figure class="graphic clock-figure">
+<svg viewBox="0 0 900 244" role="img" aria-labelledby="tt-clock-figure-title tt-clock-figure-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="tt-clock-figure-title">Clock-label provenance before comparing records</title>
+<desc id="tt-clock-figure-desc">Original conceptual diagram showing a fictional written timestamp, a required documented historical clock rule, and then a justified comparison interval. A lower arrow leads from an unverified rule to an unresolved state. This is a methodological illustration, not an archival record.</desc>
+<rect x="1" y="1" width="898" height="242" rx="9" fill="#162626" stroke="#677a6b"/>
+<g font-family="system-ui, sans-serif">
+<rect x="25" y="28" width="245" height="92" fill="#273a34" stroke="#a9bda8"/><text x="41" y="54" fill="#e4c58c" font-size="14">1 / INSCRIPTION</text><text x="41" y="84" fill="#f3eee2" font-size="19">“00:10 GMT”</text><text x="41" y="104" fill="#d1dbd2" font-size="12">Invented example</text>
+<path d="M272 73H316m-9-7 9 7-9 7" stroke="#e4c58c" stroke-width="3" fill="none"/>
+<rect x="320" y="28" width="252" height="92" fill="#273a34" stroke="#a9bda8"/><text x="338" y="54" fill="#e4c58c" font-size="14">2 / CLOCK RULE</text><text x="338" y="84" fill="#f3eee2" font-size="17">Cited, dated, specific</text><text x="338" y="104" fill="#d1dbd2" font-size="12">Never inferred from initials</text>
+<path d="M574 73H613m-9-7 9 7-9 7" stroke="#e4c58c" stroke-width="3" fill="none"/>
+<rect x="617" y="28" width="258" height="92" fill="#273a34" stroke="#a9bda8"/><text x="635" y="54" fill="#e4c58c" font-size="14">3 / COMPARISON</text><text x="635" y="84" fill="#f3eee2" font-size="17">Justified UTC window</text><text x="635" y="104" fill="#d1dbd2" font-size="12">Bounds + uncertainty</text>
+<path d="M447 120V166m-6-9 6 9 6-9" stroke="#d9ada6" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+<rect x="308" y="170" width="280" height="52" fill="#44302e" stroke="#d9ada6"/><text x="448" y="192" text-anchor="middle" fill="#ffdfd3" font-size="16">Rule unverified? Stop.</text><text x="448" y="211" text-anchor="middle" fill="#ffdfd3" font-size="12">Keep original; leave UTC blank</text>
+</g></svg>
+<figcaption>Original Final Vestige Studios conceptual SVG, November 17, 2026. Fictional inscription, not documentary testimony. No outside imagery or archival material reproduced.</figcaption>
+</figure>
+<h3>The six-field clock-label audit</h3>
+<p>Write down these six things before asking whether two timestamps disagree. An unresolved clock is not a failed investigation. It is an honest boundary of the surviving evidence.</p>
+<dl class="clock-ledger">
+<div><dt>01 · Exact inscription</dt><dd>Preserve the written time, AM/PM, approximate marks, zone letters, and original date wording.</dd></div>
+<div><dt>02 · Source identity</dt><dd>Record the creator, item/page, repository and direct record URL or physical call number. A catalog entry is not always the original.</dd></div>
+<div><dt>03 · Action dated</dt><dd>Does it mean event, log entry, transmission, receipt, publication, or later recollection?</dd></div>
+<div><dt>04 · Historical clock rule</dt><dd>Cite the rule that governed this maker, place and date. Distinguish local, company, astronomical and civil time.</dd></div>
+<div><dt>05 · Error allowance</dt><dd>Document uncertainty from rounding, synchronization, drift, and reporting delay; precision printed is not accuracy proved.</dd></div>
+<div><dt>06 · Conversion finding</dt><dd>Justify earliest/latest UTC minutes or leave both blank and state what missing evidence could resolve them.</dd></div>
+</dl>
+<div class="mininote"><p><strong>Fictional teaching example:</strong> A hypothetical 1919 almanac reports “00:10 GMT,” and a hypothetical newspaper prints “12:10.” Matching digits, or a twelve-hour difference, prove nothing about event identity until each item's conventions are independently shown. The USNO note does not prove which convention either invented item followed. The appropriate initial outcome is <em>unresolved</em>, not an automatic correction.</p></div>
+<p><a href="/free-resources/the-moving-noon/">The Moving Noon</a> develops historical solar, railway, civil and wartime time systems in depth. This shorter audit belongs immediately before the comparison desk. <a href="https://www.nist.gov/pml/time-and-frequency-division/how-utcnist-related-coordinated-universal-time-utc-international" target="_blank" rel="noopener noreferrer">NIST's modern UTC, GMT, EST and EDT guide</a> explains the vocabulary; a modern rule alone cannot certify an individual old recording.</p>
 </section>
 <section id="tt-desk">
 <p class="eyebrow">04 / The working desk</p><h2>Put two source witnesses side by side.</h2>
