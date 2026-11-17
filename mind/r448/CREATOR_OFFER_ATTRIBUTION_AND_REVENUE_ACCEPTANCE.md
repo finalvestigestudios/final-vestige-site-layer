@@ -1,6 +1,6 @@
 # R448: Creator → Offer → Paid Conversion / 2026-11-17
 
-STATUS: UNPUBLISHED / COMMERCIAL HARD HOLD. OWNER: Mind & Perception presell scope. No CMS, social, newsletter, analytics or merchant changes.
+STATUS: UNPUBLISHED / COMMERCIAL HARD HOLD / NO-GO TO AFFILIATE ACTIVATION. OWNER: Mind & Perception presell scope. No CMS, social, newsletter, analytics or merchant changes.
 
 ## P0 eligibility verdict
 
