@@ -4,7 +4,7 @@ from pathlib import Path
 from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 import hashlib
 root=Path(__file__).resolve().parents[1]
-paths=sorted([p for p in root.rglob('*') if p.is_file() and p.suffix!='.zip' and '__pycache__' not in p.parts])
+paths=sorted([p for p in root.rglob('*') if p.is_file() and p.suffix!='.zip' and p.name!='archive-identity.log' and '__pycache__' not in p.parts])
 target=root/'QA/Apollo_R421_Local_Evidence.zip'
 target.parent.mkdir(exist_ok=True)
 with ZipFile(target,'w') as z:
