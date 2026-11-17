@@ -70,7 +70,7 @@ check('hub is an inert no-JS 4-stream preview with only published destinations',
 check('article 2000+ words and scientific sources / historic boundaries',()=>{
   assert(article.split(/\s+/).length>2000);
   for(const item of ['1974','1978','2023','S1','S2','S3','S4','S5','S6','S7','S8','Puységur','153','16 case'])assert(article.includes(item),item);
-  assert(article.includes('not evidence that Zen12 improves memory'));
+  assert(article.includes('a study of eyewitness questions is not an evaluation of a branded meditation track'));
   assert.match(article,/no merchant link or earning link is active/i);
 });
 check('claim matrix covers all 28 with source evidence and 28 closed gates',()=>{
