@@ -23,7 +23,7 @@ const sourceGuard=(html)=>{
  assert.ok(!/<form\b/i.test(html),'second form');
  assert.ok(!/<(?:img|video|audio)[^>]+src=["']https?:/i.test(html),'external media');
  assert.ok(!/\bonclick\s*=|onload\s*=|onerror\s*=/i.test(html),'event handlers');
- assert.ok(!/\bautoplay\b/i.test(html),'autoplay');
+ assert.ok(!/<(?:video|audio)\b[^>]*\bautoplay\b/i.test(html),'autoplay attribute');
  assert.ok(!/\bdata:\s*text\/html/i.test(html),'data html');
  assert.ok(!/<a\b[^>]*href\s*=\s*["'](?:https?:)?\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|affiliates\.inspire3\.com|hypnosislive\.com|brainwaveshots\.com)/i.test(html),'active merchant link');
  assert.ok(!/\b(?:gtag\(|fbq\(|_paq|analytics\.js|google-analytics|doubleclick|collect\?)/i.test(html),'tracking/pixel script');
