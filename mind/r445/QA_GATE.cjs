@@ -46,7 +46,7 @@ function offerGuard(html){
  assert.ok(/id="commission-disclosure"/.test(html),'adjacent disclosure absent');
  assert.ok(/may earn a commission at no additional cost to you/.test(html),'plain earning relationship absent');
  assert.ok(/No affiliate link is currently active/.test(html),'inactive condition missing');
- assert.ok(/no commission or sale/i.test(html+' no commission or sale'), 'inert check');
+ assert.ok(!/guaranteed\s+(?:focus|wealth|income|healing|cure)/i.test(html),'unqualified benefit promise');
  assert.ok(html.indexOf('id="commission-disclosure"')<html.indexOf('class="disabled-offer"'),'disclosure not before offer');
  assert.ok(html.indexOf('class="disabled-offer"')-html.indexOf('id="commission-disclosure"')<750,'disclosure too distant');
  assert.ok(!/\b(?:\$\d+[\.,]?\d*|[0-9]+%\s*(?:off|commission)|guaranteed\s+(?:wealth|income|focus|cure))/i.test(html),'unsupported hard commercial numeric/guarantee');
