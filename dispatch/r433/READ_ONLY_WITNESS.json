@@ -1,0 +1,74 @@
+{
+  "generated_at": "2026-11-17T22:39:25Z",
+  "site": "https://finalvestige.com",
+  "source": "read-only authenticated WP newsletter status + get_settings + public render + connected Gmail search",
+  "scope": "AGGREGATE_ONLY_NO_PII",
+  "mutation_authorized": false,
+  "jetpack": {
+    "subscriptions": true,
+    "site_can_send": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "newsletter_categories_enabled": false,
+    "featured_image_in_email": true,
+    "reply_to": "no-reply",
+    "from_name": "Final Vestige Studios",
+    "recent_send_statuses": [
+      "never_sent_opted_out",
+      "never_sent_opted_out",
+      "never_sent_opted_out",
+      "never_sent_opted_out",
+      "never_sent_opted_out"
+    ],
+    "lifetime_send_total": null
+  },
+  "subscribers": {
+    "dashboard_total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "reader_followers_last_observed": 3,
+    "direct_email_followers_last_observed": 0,
+    "provider_email_subscription_subscribed_aggregate": null,
+    "distinct_eligible_inboxes": null,
+    "count_interpretation": "Not-confirmed excluded from dashboard total; scopes not additive"
+  },
+  "welcome": {
+    "configured": true,
+    "fieldbook_pages": 52,
+    "received_welcome_proven": false,
+    "fieldbook_download_proven": false,
+    "gmail_search_scope": "one connected mailbox, after 2026-10-01",
+    "observed_confirmation_subject": "Confirm your subscription",
+    "observed_confirmation_date": "2026-10-25T22:00:12Z",
+    "confirmation_is_welcome": false,
+    "matching_received_welcome_messages_in_scope": 0,
+    "all_subscribers_delivery_inference": "NOT_ALLOWED"
+  },
+  "pages": [
+    {
+      "path": "/dispatch/",
+      "id": 523,
+      "rendered_http_status": 200
+    },
+    {
+      "path": "/focus/",
+      "id": 1579,
+      "rendered_http_status": 200
+    }
+  ],
+  "compliance": {
+    "sender_postal_verified": false,
+    "received_unsubscribe_verified": false,
+    "actual_jetpack_email_preview_verified": false,
+    "preheader_rendered_verified": false,
+    "affiliate_email_permission_verified": false,
+    "offer_warmup_guides_live_and_approved": false
+  },
+  "reports": {
+    "qualified_human_sessions": null,
+    "partner_settled_orders": null,
+    "net_revenue": null
+  },
+  "release": "HOLD_UNSENT"
+}
