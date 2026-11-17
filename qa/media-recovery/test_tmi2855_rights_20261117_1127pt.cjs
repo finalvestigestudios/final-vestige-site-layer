@@ -1,0 +1,38 @@
+'use strict';
+const {test}=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const {validate}=require('./validate_tmi2855_rights_20261117_1127pt.cjs');
+const original=JSON.parse(fs.readFileSync(path.join(__dirname,'tmi2855_rights_20261117_1127pt.json'),'utf8'));
+const clone=()=>JSON.parse(JSON.stringify(original));
+test('baseline holds despite public origin 404',()=>assert.equal(validate(clone()).decision,'HOLD'));
+function reject(name,mutate){test(name,()=>{const x=clone();mutate(x);assert.throws(()=>validate(x))})}
+reject('wrong post',x=>x.post_id=287);
+reject('wrong image slot',x=>x.slot='285:2');
+reject('stale post',x=>x.wp_revision='2026-11-01');
+reject('wrong WP pin',x=>x.wp_snapshot_blob='000');
+reject('rewritten src',x=>x.published_url=x.origin_reader.url);
+reject('original falsely recovered',x=>x.origin_reader.http_status=200);
+reject('fake guest response',x=>x.visitor.http_status=404);
+reject('fake guest currentSrc',x=>x.visitor.current_src='https://example.org');
+reject('fake browser decode',x=>x.visitor.decode=true);
+reject('fake transfer',x=>x.visitor.transfer_bytes=1000);
+reject('fake verified failures',x=>x.guest_42_failures_confirmed=42);
+reject('fake savings',x=>x.wire_savings_76_percent_verified=true);
+reject('confused stored bytes',x=>x.oversized_originals.visitor_transfer_bytes=64385752);
+reject('authorize WP write',x=>x.actions.wordpress_write=true);
+reject('authorize cache',x=>x.actions.cache=true);
+reject('authorize spend',x=>x.actions.spend=true);
+reject('no rights candidate',x=>x.candidates.pop());
+reject('NRC mislabeled public domain',x=>x.candidates[1].license='PUBLIC_DOMAIN');
+reject('NRC derivative invented',x=>x.candidates[1].review_width=960);
+reject('NRC second derivative invented',x=>x.candidates[2].review_height=560);
+reject('DOE master dimensions tampered',x=>x.candidates[0].native_width=2000);
+reject('DOE oversized target',x=>x.candidates[0].review_width=1200);
+reject('DOE crop distortion',x=>x.candidates[0].review_height=900);
+reject('candidate binary identity invented',x=>x.candidates[0].same_binary=true);
+reject('approved upload',x=>x.candidates[0].wp_upload_allowed=true);
+reject('erase title-date mismatch',x=>x.candidates[2].scene='1979');
+reject('wrong license',x=>x.license_link='https://example.com');
+
