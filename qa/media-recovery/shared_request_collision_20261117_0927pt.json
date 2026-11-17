@@ -1,0 +1,115 @@
+{
+  "schema": "fv-shared-image-request-collision-audit-v1",
+  "run_local": "2026-11-17T09:27:30-08:00",
+  "method": "Previous authenticated WP VIEW/source census and GitHub QA code readback; no new browser GET or media binary acquisition",
+  "evidence": {
+    "source_commit": "7948ce03f2589bbdbd132bf2b7b125e27d73fa16",
+    "source_blob": "421a2c1d06694726339f4416673cfb6eea78f73d",
+    "baseline_code_commit": "34637f79024ac0286fb6fea23de0ec682d54b8f9",
+    "site_qa_pr": 154,
+    "media_pr": 2747
+  },
+  "historical_scope": {
+    "published_posts": 61,
+    "inline_image_slots": 355,
+    "distinct_authored_urls": 353,
+    "identical_within_post_pairs": 2,
+    "reported_broken_not_guest_confirmed": 42,
+    "sitewide_wire_saving_percent_claimed_not_measured": 76,
+    "stored_oversized_originals": 20,
+    "stored_oversized_original_bytes": 64385752
+  },
+  "discovery": "The pre-existing 61-slot parity gate rejected any duplicate request_id even when two legitimate visible <img> slots use one identical currentSrc and one Chromium GET; this could incorrectly HOLD both affected posts and overcount transfer bytes if the collector duplicates request records.",
+  "groups": [
+    {
+      "post_id": 291,
+      "title": "One Bulldozer Never Came Back",
+      "post_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "wp_revision": "2026-11-02T21:36:09",
+      "slots": [
+        "291:2",
+        "291:5"
+      ],
+      "authored_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "published_view_url": "https://i0.wp.com/cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG?ssl=1",
+      "source_rights": "Deseret/Arc image rights not cleared for rehosting",
+      "alt_discrepancy": "Slot 291:2 says growing dam breach; same image in 291:5 is labelled downstream aftermath. Editorial screenshot and historical source review required.",
+      "candidate": {
+        "source_institution": "National Archives / Bureau of Reclamation",
+        "catalog": "https://catalog.archives.gov/id/28894684",
+        "accession": "NAID 28894684",
+        "relation": "Different historical image; candidate only for editorial correction; not an identical-frame replacement",
+        "reported_catalog_size_px": [
+          2558,
+          1728
+        ],
+        "conditional_review_size_px": [
+          960,
+          649
+        ],
+        "rights": "DPLA catalog asserts No Copyright – United States, item-level review pending; Commons version has later crop/rotation",
+        "same_frame_verified": false,
+        "wp_cache_approved": false
+      },
+      "visitor": {
+        "shared_request_id_verified": null,
+        "current_src": null,
+        "get_http_status": null,
+        "mime": null,
+        "decoded": null,
+        "wire_bytes": null,
+        "screenshot_sha256": null
+      }
+    },
+    {
+      "post_id": 213,
+      "title": "The Fire He Lit Himself",
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "wp_revision": "2026-10-29T20:59:21",
+      "slots": [
+        "213:2",
+        "213:6"
+      ],
+      "authored_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?VersionId=E03fTtNlZbsFr8cZyXxAMTHZfT8wEb4p",
+      "published_view_url": "https://i0.wp.com/fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?ssl=1",
+      "source_rights": "NWCG map government-hosted; precise item license/attribution needs review before caching",
+      "alt_discrepancy": "Two captions refer to different aspects of the same map; retain unless editorial review finds misidentification.",
+      "candidate": null,
+      "visitor": {
+        "shared_request_id_verified": null,
+        "current_src": null,
+        "get_http_status": null,
+        "mime": null,
+        "decoded": null,
+        "wire_bytes": null,
+        "screenshot_sha256": null
+      }
+    }
+  ],
+  "reducer_rule": {
+    "request_id_scoped_to": "one page and one capture phase",
+    "count_one_get_once": true,
+    "require_every_dom_slot": true,
+    "allow_sharing_only_if": [
+      "identical request URL and normalized CDP request id",
+      "identical transfer/status/MIME/dimensions/cache flags"
+    ],
+    "require_shared_fields_equal": true,
+    "separate_gets_count_separately": true,
+    "unmatched_source_rejected": true,
+    "offsite_mirror_automatically_allowed": false
+  },
+  "status": {
+    "browser_http_verification": "NOT_PERFORMED",
+    "native_node_test_run": "PENDING",
+    "repository_ci": "PENDING",
+    "production_writes": 0,
+    "media_downloads": 0,
+    "wordpress_media_cache": 0,
+    "homepage_changes": 0,
+    "merges": 0,
+    "deploys": 0,
+    "spend": 0
+  },
+  "next": "Site QA #154 collector may supply per DOM slot a shared request_id where its own CDP request evidence proves deduplication. Verify missing images, decoded pixels, screenshot and exact transfer bytes; do not apply the 76% claim until a full matched cold pair and independent review."
+}
