@@ -30,8 +30,7 @@
         const source=link?.getAttribute('href')||'';
         const time=card.querySelector('time');
         const rights=card.querySelector('details p');
-        lines.push(`${i+1}. ${node('h3')}`,
-          `Source type: ${node('.fv-r438__kind')}`,
+        lines.push(`${i+1}. ${node('h3')}`,`Source type: ${node('.fv-r438__kind')}`,
           `Record date or publication: ${tidy(time?.textContent)}`,
           `Supported finding: ${node('[data-r438-supports]')}`,
           `Cannot establish: ${node('[data-r438-limit]')}`,
