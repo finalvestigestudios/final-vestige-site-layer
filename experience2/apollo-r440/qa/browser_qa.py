@@ -1,0 +1,68 @@
+"""Actual Chromium against PHP-rendered HTML via set_content. No genuine axe or navigated staging."""
+import json,subprocess
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+ROOT=Path(__file__).resolve().parents[1];QA=ROOT/'QA';SHOTS=QA/'screenshots';SHOTS.mkdir(parents=True,exist_ok=True)
+html=subprocess.check_output(['php',str(ROOT/'qa/fixture.php')]).decode('utf-8')
+widths=[320,360,390,768,1024,1440,1920];checks=0;failed=[];download_size=0
+def ok(cond,desc):
+ global checks
+ checks+=1
+ if not cond:failed.append(desc)
+with sync_playwright() as pw:
+ browser=pw.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox'])
+ for w in widths:
+  context=browser.new_context(viewport={'width':w,'height':900},accept_downloads=True)
+  page=context.new_page();page.set_content(html,wait_until='load');page.wait_for_timeout(75)
+  ok(page.locator('[data-r440-root]').count()==2,f'{w} two independently rendered shortcodes')
+  ok(page.locator('[data-r440-export] button').count()==2,f'{w} local enhancement buttons')
+  ok(page.locator('a[href^="https://www.nasa.gov/"]').count()==6,f'{w} real NASA official links')
+  ok(page.locator('[data-r440-root] a[href*="payhip"]').count()==0,f'{w} no merchant CTA')
+  ok(page.locator('[data-r440-root] form').count()==0,f'{w} no collection form')
+  ok(page.locator('[data-r440-root] details').count()==2,f'{w} native accessible disclosure')
+  ok(not page.evaluate('document.documentElement.scrollWidth>innerWidth+1'),f'{w} no horizontal overflow')
+  ids=page.evaluate('Array.from(document.querySelectorAll("[id]"),e=>e.id)');ok(len(ids)==len(set(ids)),f'{w} unique IDs')
+  first=page.locator('[data-r440-root]').first;second=page.locator('[data-r440-root]').nth(1)
+  with page.expect_download() as info:first.locator('[data-r440-export] button').click()
+  data=Path(info.value.path()).read_text();download_size=len(data)
+  ok(info.value.suggested_filename=='fv-apollo-1-original-classroom-activity.txt',f'{w} original file name')
+  ok(all(x in data for x in ['INSTRUCTOR RUBRIC','NASA','PRIMARY:', 'no single ignition source was conclusively established']),f'{w} actual dated source-backed exercise file')
+  ok(not ('NASA approved' in data or 'payhip.com' in data),f'{w} no false endorsement or merchant')
+  ok(first.locator('[role="status"]').inner_text().startswith('Classroom text file prepared'),f'{w} local status truthful')
+  ok(second.locator('[role="status"]').inner_text()=='',f'{w} instance isolation')
+  page.screenshot(path=str(SHOTS/f'{w}.png'),full_page=True,animations='disabled')
+  context.close()
+ ctx=browser.new_context(viewport={'width':390,'height':900},java_script_enabled=False)
+ page=ctx.new_page();page.set_content(html,wait_until='load')
+ ok(page.locator('[data-r440-export] button').count()==0,'no-JS no inert control')
+ ok(page.locator('[data-r440-root] a[href^="https://www.nasa.gov/"]').count()==6,'no-JS sources remain')
+ page.locator('summary').first.click();ok(page.locator('details').first.get_attribute('open') is not None,'no-JS native disclosure opens')
+ page.screenshot(path=str(SHOTS/'nojs.png'),full_page=True);ctx.close()
+ ctx=browser.new_context(viewport={'width':390,'height':900},has_touch=True,is_mobile=True,accept_downloads=True)
+ page=ctx.new_page();page.set_content(html,wait_until='load')
+ page.locator('summary').first.tap();ok(page.locator('details').first.get_attribute('open') is not None,'touch disclosure opens')
+ with page.expect_download() as info:page.locator('[data-r440-export] button').first.tap()
+ ok(b'INSTRUCTOR RUBRIC' in Path(info.value.path()).read_bytes(),'touch actual text download')
+ page.screenshot(path=str(SHOTS/'touch.png'),full_page=True);ctx.close()
+ ctx=browser.new_context(viewport={'width':390,'height':900})
+ page=ctx.new_page();page.set_content(html,wait_until='load')
+ page.locator('[data-r440-export] button').first.focus();ok(page.evaluate('document.activeElement.tagName')=='BUTTON','keyboard focus button')
+ with page.expect_download() as info:page.keyboard.press('Enter')
+ ok(b'Chronology:' in Path(info.value.path()).read_bytes(),'keyboard download')
+ page.screenshot(path=str(SHOTS/'keyboard.png'),full_page=True);ctx.close()
+ for k,kwargs in [('reduced',{'reduced_motion':'reduce'}),('forced',{'forced_colors':'active'})]:
+  ctx=browser.new_context(viewport={'width':390,'height':900},**kwargs)
+  page=ctx.new_page();page.set_content(html,wait_until='load')
+  ok(page.locator('[data-r440-export] button:visible').count()==2,k+' buttons visible')
+  ok(page.locator('summary:visible').count()==2,k+' native disclosures')
+  page.screenshot(path=str(SHOTS/(k+'.png')),full_page=True,animations='disabled');ctx.close()
+ ctx=browser.new_context(viewport={'width':390,'height':900});page=ctx.new_page();page.set_content(html,wait_until='load')
+ page.evaluate('document.documentElement.style.fontSize="200%"')
+ ok(not page.evaluate('document.documentElement.scrollWidth>innerWidth+1'),'200% base font no overflow')
+ page.screenshot(path=str(SHOTS/'zoom200.png'),full_page=True,animations='disabled')
+ page.emulate_media(media='print');ok(page.locator('[data-r440-root]:visible').count()==2,'print both roots')
+ ok(page.locator('a[href^="https://www.nasa.gov/"]:visible').count()==6,'print NASA sources')
+ page.screenshot(path=str(SHOTS/'print.png'),full_page=True,animations='disabled');ctx.close()
+ browser.close()
+report={'kind':'ACTUAL_CHROMIUM_ON_REAL_R440_PHP_RENDERED_HTML_VIA_SET_CONTENT','status':'PASS' if not failed else 'FAIL','checks':checks,'failed':failed,'widths':widths,'screenshots':len(list(SHOTS.glob('*.png'))),'example_text_export_bytes':download_size,'genuine_axe':'UNAVAILABLE_NOT_RUN','navigated_lcp':None,'navigated_cls':None,'field_p75':'NOT_OBSERVED','installed_WordPress_staging':'NOT_TESTED','network_navigation':'ERR_BLOCKED_BY_ADMINISTRATOR','no_Javascript':'TESTED','privacy':'No network transmission, cookies, analytics or persistent visitor storage'}
+(QA/'browser.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n');print(json.dumps(report));raise SystemExit(bool(failed))
