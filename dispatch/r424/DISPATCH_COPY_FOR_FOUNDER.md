@@ -4,7 +4,7 @@
 
 **Deck:** Original investigations, archival discoveries and useful research notes, sent occasionally when an edition is ready.
 
-**Support:** Subscribe to the existing Final Vestige Studios newsletter. After you confirm your email address, the configured welcome message links to the free 52-page Seven Day Focus Fieldbook. The Dispatch brings occasional evidence-led editions about history, perception and the records behind both. We do **not** email for every website post. Some future editions may include clearly disclosed independent product-guide recommendations.
+**Support:** Subscribe to the existing Final Vestige Studios newsletter. After you confirm your email address, the configured welcome message links to the free 52-page Seven Day Focus Fieldbook. The Dispatch brings occasional evidence-led editions about history, perception and the records behind both. We do not email for every website post. Some future editions may include clearly disclosed independent product-guide recommendations.
 
 ## Beside current Jetpack Subscribe block
 **Heading:** Get The Dispatch
