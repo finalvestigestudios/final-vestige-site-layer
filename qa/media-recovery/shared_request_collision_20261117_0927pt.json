@@ -109,7 +109,20 @@
     "homepage_changes": 0,
     "merges": 0,
     "deploys": 0,
-    "spend": 0
+    "spend": 0,
+    "isolated_v8_tests": "36/36 passed with explicit compatibility-shim caveat"
   },
-  "next": "Site QA #154 collector may supply per DOM slot a shared request_id where its own CDP request evidence proves deduplication. Verify missing images, decoded pixels, screenshot and exact transfer bytes; do not apply the 76% claim until a full matched cold pair and independent review."
+  "next": "Site QA #154 collector may supply per DOM slot a shared request_id where its own CDP request evidence proves deduplication. Verify missing images, decoded pixels, screenshot and exact transfer bytes; do not apply the 76% claim until a full matched cold pair and independent review.",
+  "test_execution": {
+    "source_script_blob": "f75e1793b7632355f11f8be58e85f8ecf93747c5",
+    "test_suite_blob": "5284caaeb09c540ef7184de792a881f92bc118ef",
+    "run_engine": "isolated V8",
+    "test_definitions_registered": 36,
+    "test_definitions_passed": 36,
+    "test_definitions_failed": 0,
+    "adapters": "minimal URL, assert, Buffer and crypto shims; SHA1 test mocked; not Node-compatible environment proof",
+    "native_node": null,
+    "github_ci": null,
+    "real_browser_evidence": null
+  }
 }
