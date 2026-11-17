@@ -1,0 +1,486 @@
+{
+  "schema": "fv-sitewide-media-source-collision-20261117-v1",
+  "evidence_method": "HISTORICAL_WORDPRESS_AUTHORED_SOURCE_PLUS_FRESH_AUTHENTICATED_WP_VIEW_NO_GUEST_CRAWL",
+  "source_parts": {
+    "ref": "4366489a68620d26592d8438b4402feb453c3166",
+    "files": [
+      {
+        "path": "qa/media-recovery/parts/01.json",
+        "sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+      },
+      {
+        "path": "qa/media-recovery/parts/02.json",
+        "sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d"
+      },
+      {
+        "path": "qa/media-recovery/parts/03.json",
+        "sha": "49183f66f880f7c4dfd363acca906876877f2e5e"
+      },
+      {
+        "path": "qa/media-recovery/parts/04.json",
+        "sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+      },
+      {
+        "path": "qa/media-recovery/parts/05.json",
+        "sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9"
+      },
+      {
+        "path": "qa/media-recovery/parts/06.json",
+        "sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69"
+      },
+      {
+        "path": "qa/media-recovery/parts/07.json",
+        "sha": "21095161e633aba093b74c0ead9936c9f6186d00"
+      },
+      {
+        "path": "qa/media-recovery/parts/08.json",
+        "sha": "5659ec243c188928be3f89c0f96354b660608ca2"
+      }
+    ]
+  },
+  "historical": {
+    "posts": 61,
+    "image_references": 355,
+    "distinct_urls": 353,
+    "distinct_hosts": 80,
+    "first_party": 60,
+    "jetpack_proxy": 7,
+    "external": 170,
+    "wikimedia_redirect": 118,
+    "offsite_refs": 288
+  },
+  "host_concentration": [
+    {
+      "host": "commons.wikimedia.org",
+      "count": 118
+    },
+    {
+      "host": "finalvestige.com",
+      "count": 60
+    },
+    {
+      "host": "upload.wikimedia.org",
+      "count": 18
+    },
+    {
+      "host": "www.history.navy.mil",
+      "count": 15
+    },
+    {
+      "host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "count": 9
+    },
+    {
+      "host": "i0.wp.com",
+      "count": 9
+    },
+    {
+      "host": "cdn.loc.gov",
+      "count": 7
+    },
+    {
+      "host": "tile.loc.gov",
+      "count": 7
+    },
+    {
+      "host": "www.floridamemory.com",
+      "count": 7
+    },
+    {
+      "host": "www.nps.gov",
+      "count": 6
+    },
+    {
+      "host": "images-assets.nasa.gov",
+      "count": 5
+    },
+    {
+      "host": "media.defense.gov",
+      "count": 5
+    },
+    {
+      "host": "cloudfront-us-east-1.images.arcpublishing.com",
+      "count": 4
+    },
+    {
+      "host": "objects.lib.uidaho.edu",
+      "count": 4
+    },
+    {
+      "host": "archimedespalimpsest.org",
+      "count": 3
+    },
+    {
+      "host": "fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com",
+      "count": 3
+    },
+    {
+      "host": "research.fs.usda.gov",
+      "count": 3
+    },
+    {
+      "host": "www.fhwa.dot.gov",
+      "count": 3
+    },
+    {
+      "host": "www.history.uscg.mil",
+      "count": 3
+    },
+    {
+      "host": "cdn2.picryl.com",
+      "count": 2
+    },
+    {
+      "host": "historicbridges.org",
+      "count": 2
+    },
+    {
+      "host": "miro.medium.com",
+      "count": 2
+    },
+    {
+      "host": "www.geoinstitute.org",
+      "count": 2
+    },
+    {
+      "host": "www.researchgate.net",
+      "count": 2
+    },
+    {
+      "host": "2.bp.blogspot.com",
+      "count": 1
+    },
+    {
+      "host": "ahoy.tk-jk.net",
+      "count": 1
+    },
+    {
+      "host": "arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com",
+      "count": 1
+    },
+    {
+      "host": "bkimg.cdn.bcebos.com",
+      "count": 1
+    },
+    {
+      "host": "blog.ucsusa.org",
+      "count": 1
+    },
+    {
+      "host": "bloximages.chicago2.vip.townnews.com",
+      "count": 1
+    },
+    {
+      "host": "brightspotcdn.byui.edu",
+      "count": 1
+    },
+    {
+      "host": "cdn-sw.spidersweb.pl",
+      "count": 1
+    },
+    {
+      "host": "cgaviationhistory.org",
+      "count": 1
+    },
+    {
+      "host": "chicagology.com",
+      "count": 1
+    },
+    {
+      "host": "d1ldvf68ux039x.cloudfront.net",
+      "count": 1
+    },
+    {
+      "host": "d3d0lqu00lnqvz.cloudfront.net",
+      "count": 1
+    },
+    {
+      "host": "dmt55mxnkgbz2.cloudfront.net",
+      "count": 1
+    },
+    {
+      "host": "florencekelley.northwestern.edu",
+      "count": 1
+    },
+    {
+      "host": "i.insider.com",
+      "count": 1
+    },
+    {
+      "host": "ids.si.edu",
+      "count": 1
+    },
+    {
+      "host": "imagerenderer.com",
+      "count": 1
+    },
+    {
+      "host": "images.pixels.com",
+      "count": 1
+    },
+    {
+      "host": "images.pubble.cloud",
+      "count": 1
+    },
+    {
+      "host": "images.saymedia-content.com",
+      "count": 1
+    },
+    {
+      "host": "images2.minutemediacdn.com",
+      "count": 1
+    },
+    {
+      "host": "img.connatix.com",
+      "count": 1
+    },
+    {
+      "host": "indomgb.s3.amazonaws.com",
+      "count": 1
+    },
+    {
+      "host": "k-static.appmobile.cn",
+      "count": 1
+    },
+    {
+      "host": "k.sinaimg.cn",
+      "count": 1
+    },
+    {
+      "host": "live.staticflickr.com",
+      "count": 1
+    },
+    {
+      "host": "media.licdn.com",
+      "count": 1
+    },
+    {
+      "host": "nationalcoastguardmuseum.org",
+      "count": 1
+    },
+    {
+      "host": "navalunderseamuseum.org",
+      "count": 1
+    },
+    {
+      "host": "qmmuseum.army.mil",
+      "count": 1
+    },
+    {
+      "host": "quebecblogue.com",
+      "count": 1
+    },
+    {
+      "host": "scitechdaily.com",
+      "count": 1
+    },
+    {
+      "host": "skywaydisaster.com",
+      "count": 1
+    },
+    {
+      "host": "specials-images.forbesimg.com",
+      "count": 1
+    },
+    {
+      "host": "stadsarchief.rotterdam.nl",
+      "count": 1
+    },
+    {
+      "host": "static.ags.aer.ca",
+      "count": 1
+    },
+    {
+      "host": "static.thisdayinaviation.com",
+      "count": 1
+    },
+    {
+      "host": "stpetecatalyst.com",
+      "count": 1
+    },
+    {
+      "host": "unwritten-record.blogs.archives.gov",
+      "count": 1
+    },
+    {
+      "host": "warfarehistorynetwork.com",
+      "count": 1
+    },
+    {
+      "host": "www-d.ntsb.gov",
+      "count": 1
+    },
+    {
+      "host": "www.archimedespalimpsest.org",
+      "count": 1
+    },
+    {
+      "host": "www.datosfreak.org",
+      "count": 1
+    },
+    {
+      "host": "www.flmd.uscourts.gov",
+      "count": 1
+    },
+    {
+      "host": "www.hawaiimagazine.com",
+      "count": 1
+    },
+    {
+      "host": "www.ibiblio.org",
+      "count": 1
+    },
+    {
+      "host": "www.ladybegood.net",
+      "count": 1
+    },
+    {
+      "host": "www.navsource.net",
+      "count": 1
+    },
+    {
+      "host": "www.popsci.com",
+      "count": 1
+    },
+    {
+      "host": "www.rexburgonline.com",
+      "count": 1
+    },
+    {
+      "host": "www.spaceacademy.net.au",
+      "count": 1
+    },
+    {
+      "host": "www.travelserver.net",
+      "count": 1
+    },
+    {
+      "host": "www.usni.org",
+      "count": 1
+    },
+    {
+      "host": "www.vol.at",
+      "count": 1
+    },
+    {
+      "host": "www.warhistoryonline.com",
+      "count": 1
+    },
+    {
+      "host": "www.wttw.com",
+      "count": 1
+    }
+  ],
+  "identical_original_url_groups": [
+    {
+      "source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?VersionId=E03fTtNlZbsFr8cZyXxAMTHZfT8wEb4p",
+      "host": "fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com",
+      "classification": "SHARED_OFFICIAL_MAP_CONTEXT_REVIEW",
+      "slots": [
+        {
+          "key": "213:2",
+          "article": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+          "wp_revision": "2026-10-29T20:59:21",
+          "source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?VersionId=E03fTtNlZbsFr8cZyXxAMTHZfT8wEb4p",
+          "view_url": "https://i0.wp.com/fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?ssl=1",
+          "alt": "Historical Mann Gulch diagram showing smokejumper movements, wind, fire positions, the tool drop, escape fire, and survivor locations.",
+          "guest_current_src": null,
+          "guest_http_status": null,
+          "guest_mime": null,
+          "guest_decode": null,
+          "guest_natural_width": null,
+          "guest_transfer_bytes": null
+        },
+        {
+          "key": "213:6",
+          "article": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+          "wp_revision": "2026-10-29T20:59:21",
+          "source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?VersionId=E03fTtNlZbsFr8cZyXxAMTHZfT8wEb4p",
+          "view_url": "https://i0.wp.com/fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?ssl=1",
+          "alt": "Mann Gulch staff-ride map marking the location where Wag Dodge set his escape fire and where the crew continued toward the ridge.",
+          "guest_current_src": null,
+          "guest_http_status": null,
+          "guest_mime": null,
+          "guest_decode": null,
+          "guest_natural_width": null,
+          "guest_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "host": "cloudfront-us-east-1.images.arcpublishing.com",
+      "classification": "VISUAL_ALT_MISMATCH_SOURCE_LEVEL",
+      "slots": [
+        {
+          "key": "291:2",
+          "article": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+          "wp_revision": "2026-11-02T21:36:09",
+          "source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+          "view_url": "https://i0.wp.com/cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG?ssl=1",
+          "alt": "Growing breach in Teton Dam during the final hour before collapse.",
+          "guest_current_src": null,
+          "guest_http_status": null,
+          "guest_mime": null,
+          "guest_decode": null,
+          "guest_natural_width": null,
+          "guest_transfer_bytes": null
+        },
+        {
+          "key": "291:5",
+          "article": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+          "wp_revision": "2026-11-02T21:36:09",
+          "source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+          "view_url": "https://i0.wp.com/cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG?ssl=1",
+          "alt": "Aftermath of the Teton Dam failure and downstream cleanup in Idaho.",
+          "guest_current_src": null,
+          "guest_http_status": null,
+          "guest_mime": null,
+          "guest_decode": null,
+          "guest_natural_width": null,
+          "guest_transfer_bytes": null
+        }
+      ]
+    }
+  ],
+  "archive_candidate": {
+    "target_slot": "291:2",
+    "institution": "National Archives at Denver, Bureau of Reclamation",
+    "catalog": "https://catalog.archives.gov/id/28894684",
+    "accession": "NAID 28894684",
+    "historical_article": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+    "commons_catalog": "https://commons.wikimedia.org/wiki/File:Teton_Dam_Embankment_Leak_-_DPLA_-_fee62ebfb4a83f7a00334af1e3dbc6bc.jpg",
+    "rights": "No Copyright - United States assertion in DPLA/NARA metadata; rehosting rights and credits must be reviewed for exact item",
+    "current_commons_native_px": [
+      2558,
+      1728
+    ],
+    "proportional_review_px": [
+      960,
+      649
+    ],
+    "crop_revision": "2023 Commons re-crop/rotation differs from 2020 imported archive file",
+    "same_as_current_published_frame_verified": false,
+    "downloaded_binary_sha256": null,
+    "browser_status": null,
+    "rights_approved": false,
+    "wp_rehosting_approved": false
+  },
+  "claims": {
+    "reported_42_visitor_broken_confirmed": false,
+    "proposed_76_percent_wire_reduction_measured": false,
+    "over_1_5_decimal_MB_media_originals": 20,
+    "over_1_5_decimal_MB_original_bytes": 64385752,
+    "wire_bytes_observed": null
+  },
+  "safety": {
+    "no_wp_write": true,
+    "no_rehost": true,
+    "no_scrape": true,
+    "no_download": true,
+    "no_paid_service": true,
+    "no_homepage_change": true,
+    "no_automatic_post_blocks": true
+  },
+  "plan": "Site QA #154 retains logged-out GET/currentSrc/redirect/MIME/decode/screenshot/transfer verification; independent item rights, historical frame, credit and reviewed SHA-256 are gates before any <=960px no-upscale WordPress staging candidate. Any eventual edit requires independent approval and rollback."
+}
