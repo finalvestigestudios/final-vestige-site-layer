@@ -32,6 +32,7 @@ from candidate_guard import (
 )
 
 from build_inventory import EXPECTED
+from candidate_identity_r507 import CandidateIdentityError, require_distinct_candidate_images
 from canonical_inventory_r334 import CanonicalInventoryError, parse_canonical_inventory
 from smoke_provenance import SmokeProvenanceError, classify_smoke
 from smoke_runner_r336 import SmokeRunError, run_smoke_checked, select_smoke_runner
@@ -139,6 +140,18 @@ def verify(folder: str | Path, *, smoke: bool = False, runner=None,
         _pe64(candidate, expected_sha256=actual_hash)
         records.append({"name": name, "sha256": actual_hash, "pe_machine": "AMD64",
                         "smoke": "not_run"})
+    # For genuine native Windows smoke only, require six DIFFERENT packaged
+    # images before executing any one of them. Names, six valid SHA256 entries
+    # and PE shape alone permit the same executable copied under six labels.
+    # Source-only/injected smoke remains non-native and cannot clear this gate.
+    if smoke_status == "windows_smoke_passed":
+        distinct_failed = False
+        try:
+            require_distinct_candidate_images(records, EXPECTED)
+        except CandidateIdentityError:
+            distinct_failed = True
+        if distinct_failed:
+            raise GateFailure("Six Windows candidate images must be distinct")
     def recheck_artifacts(phase: str) -> None:
         """Catch changed binaries/inventory before and after each smoke execution."""
         changed_staging = False
