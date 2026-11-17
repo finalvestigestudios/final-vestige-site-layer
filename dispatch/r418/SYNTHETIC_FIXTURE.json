@@ -1,0 +1,46 @@
+{
+  "label": "SYNTHETIC_ONLY_NO_ACTUAL_CUSTOMERS",
+  "options": {
+    "as_of": "2026-11-17T07:30:00Z",
+    "window_days": 7
+  },
+  "records": [
+    {
+      "kind": "session",
+      "id": "sess_001",
+      "at": "2026-11-16T08:00:00Z",
+      "proof_ref": "audit_human_20261116",
+      "audit_class": "first_party_human_audit",
+      "qualified_human": true,
+      "utm_source": "youtube",
+      "utm_medium": "organic_social",
+      "utm_campaign": "mind_pilot_2026_11",
+      "asset_id": "ytshort_0001"
+    },
+    {
+      "kind": "signup",
+      "id": "signup_001",
+      "at": "2026-11-16T08:05:00Z",
+      "proof_ref": "audit_confirm_20261116",
+      "audit_class": "jetpack_confirmation_record",
+      "session_id": "sess_001",
+      "subscriber_token": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "confirmed": true,
+      "email_eligible": true,
+      "unsubscribed": false
+    },
+    {
+      "kind": "sale",
+      "id": "sale_001",
+      "at": "2026-11-16T08:08:00Z",
+      "proof_ref": "audit_settle_20261116",
+      "audit_class": "merchant_paid_settlement",
+      "session_id": "sess_001",
+      "order_ref": "order_fixture_0001",
+      "state": "settled",
+      "gross_cents": 1000,
+      "fees_cents": 120,
+      "refund_cents": 300
+    }
+  ]
+}
