@@ -1,0 +1,90 @@
+{
+  "schema": "fv-dispatch-r411-readonly-bridge-v1",
+  "as_of_utc": "2026-11-17T00:31:18Z",
+  "reference_issue": "174",
+  "master_pr": 175,
+  "baseline_pr": 2801,
+  "decision": "HOLD_UNSENT",
+  "founder_final_approval": false,
+  "send_allowed": false,
+  "newsletter": {
+    "enabled": true,
+    "new_post_auto_email": false,
+    "email_content_format": "full",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "distinct_eligible_recipients": null,
+    "welcome_configured": true,
+    "welcome_delivered_verified": false,
+    "native_preview_verified": false,
+    "publisher_postal_verified": false,
+    "operational_unsubscribe_verified": false
+  },
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "issue_state": "HOLD_UNSENT",
+      "cta": "LIVE_FIRST_PARTY",
+      "commercial_partner_email_permitted": null
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "issue_state": "HOLD_UNSENT",
+      "cta": "LIVE_FIRST_PARTY",
+      "commercial_partner_email_permitted": null
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "issue_state": "HOLD_MERCHANT",
+      "cta": "INACTIVE_GUIDE_PENDING",
+      "commercial_partner_email_permitted": false
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "issue_state": "HOLD_COPY",
+      "cta": "LIVE_FIRST_PARTY",
+      "commercial_partner_email_permitted": null
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "issue_state": "HOLD_MERCHANT",
+      "cta": "INACTIVE_GUIDE_PENDING",
+      "commercial_partner_email_permitted": false
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "issue_state": "HOLD_UNSENT",
+      "cta": "LIVE_FIRST_PARTY",
+      "commercial_partner_email_permitted": null
+    }
+  ],
+  "subscriber_diagnostics": "Different reporting universes; 3+2 is NOT five distinct recipients; 0 direct-email followers is NOT a count of deliverable inboxes.",
+  "conversion": {
+    "primary_offer": "ZEN12_CANDIDATE_ONLY",
+    "affiliate_email_authorized": false,
+    "guide_published_verified": false,
+    "issued_affiliate_link_verified": false,
+    "realized_revenue_usd": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000_qualified_human_sessions": null
+  },
+  "proof_gaps": [
+    "named_product_specific_email_permission",
+    "exact_earning_url",
+    "live_vetted_buyer_guide",
+    "referred_checkout_and_refund_terms",
+    "native_jetpack_non_sending_preview",
+    "actual_publisher_postal_address",
+    "operational_unsubscribe",
+    "provider_deduplicated_eligible_recipients",
+    "actual_welcome_and_fieldbook_arrival",
+    "independently_paid_orders_and_audited_sessions"
+  ]
+}
