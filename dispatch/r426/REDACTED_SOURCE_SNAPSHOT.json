@@ -1,0 +1,28 @@
+{
+  "as_of": "2026-11-17T15:36:31Z",
+  "site": "https://finalvestige.com",
+  "confirmed": 3,
+  "unconfirmed": 2,
+  "total": 3,
+  "suppressed": 0,
+  "recipient_identity_count": "NOT_VERIFIED",
+  "newsletter_enabled": true,
+  "send_new_posts_by_default": false,
+  "recent_post_notifications_sent": 0,
+  "recent_post_notification_sample": 5,
+  "lifetime_sent": "NOT_VERIFIED",
+  "email_content_format": "full",
+  "actual_welcome_receipt": "NOT_VERIFIED",
+  "actual_jetpack_preview": "NOT_VERIFIED",
+  "publisher_postal_address": "NOT_VERIFIED",
+  "unsubscribe_function": "NOT_VERIFIED",
+  "email_merchant_permission": "NOT_VERIFIED",
+  "commercial_slots_hold": [
+    3,
+    5
+  ],
+  "canonical_issue04_hold_copy": true,
+  "candidate_04_06_approved": false,
+  "actual_paid_sales": "NOT_VERIFIED",
+  "realized_revenue_per_1000_qualified_sessions": "NOT_COMPUTABLE"
+}

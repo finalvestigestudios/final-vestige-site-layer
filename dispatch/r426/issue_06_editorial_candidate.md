@@ -1,0 +1,28 @@
+# THE DISPATCH — ISSUE 06 · FOUNDER REVIEW ONLY
+
+STATUS: HOLD_UNSENT · NON-CANONICAL EDITORIAL CORRECTION CANDIDATE · NO WORDPRESS POST
+Subject: Your next seven days of focus, without another signup
+Preheader: A reusable field note for what actually happened—not a promise of instant transformation.
+Type: editorial
+
+A week into a new routine, memory starts editing the result. We remember the session that felt effortless, or the day we abandoned it, and let that single moment stand for all seven. A field note is a way to resist that shortcut.
+
+Start with an ordinary task you have been delaying. Give yourself twelve minutes to begin—not twelve minutes to become a different person. Record when you started, what interrupted you, whether you continued afterward and what you would change tomorrow.
+
+At the end of seven days, look for patterns instead of a victory speech. Did you find a time that was easier to protect? Was the task too broad to begin? Did an audio track help you stay with it, distract you, or make no observable difference? Each answer is useful; none proves a clinical benefit or that a commercial program works.
+
+You can make the comparison fairer by keeping the task and start time similar across days where possible. Still, seven personal observations are not a controlled study, and subjective impressions do not validate a seller's claims.
+
+Your 52-page Seven Day Focus Fieldbook already contains the seven-day practice, obstacle notes and thirty-day log. If you're reading this as a Dispatch subscriber, you do not need to subscribe again to obtain the file. The link below opens the same free PDF named in the existing welcome message.
+
+Final Vestige is extending its evidence-first approach into the history of suggestion, attention and practical reflection. The archive of historical investigations remains the center of the publication. When we review tools in future editions, we'll separate independent evidence from product advertising and disclose any financial relationship.
+
+**One editorial action:** [Open your 52-page Focus Fieldbook](https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf)
+
+**Evidence and source links**
+
+- [Final Vestige, Focus Fieldbook landing page and published description](https://finalvestige.com/focus/)
+- [Final Vestige, Editorial Standards](https://finalvestige.com/editorial-standards/)
+
+**Preflight release block — unresolved; this is not a send-ready email.**
+Sender: Final Vestige Studios. Publisher physical mailing address: `[[FV_VERIFIED_BUSINESS_POSTAL_ADDRESS_REQUIRED]]`. Actual unsubscribe rendering: `[[JETPACK_ACTUAL_UNSUBSCRIBE_RENDERING_AND_FUNCTION_REQUIRED]]`. Founder approval: NOT GRANTED.
