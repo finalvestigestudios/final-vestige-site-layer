@@ -64,11 +64,14 @@ def _inventory(root: Path) -> dict[str, str]:
         raise GateFailure("Candidate checksum inventory rejected")
 
 
-def _pe64(path: Path) -> None:
-    """Require a bounded, structurally plausible user-mode AMD64 PE32+ image."""
+def _pe64(path: Path, *, expected_sha256: str | None = None) -> None:
+    """Require AMD64 PE32+ structure bound to the manifest's exact bytes."""
     invalid_image = False
     try:
-        verify_amd64_pe(path)
+        if expected_sha256 is None:
+            verify_amd64_pe(path)
+        else:
+            verify_amd64_pe(path, expected_sha256=expected_sha256)
     except PEFormatError:
         invalid_image = True
     if invalid_image:
@@ -127,10 +130,13 @@ def verify(folder: str | Path, *, smoke: bool = False, runner=None,
     for name in EXPECTED:
         candidate = root / name
         _regular(candidate)
-        _pe64(candidate)
         actual_hash = _sha(candidate)
         if actual_hash != checksums[name]:
             raise GateFailure(f"{name}: SHA256 does not match inventory")
+        # The PE shape must be parsed from bytes that ALSO hash to the
+        # canonical inventory digest on the very same open descriptor.
+        # Separate independent format/hash passes admit a swap window.
+        _pe64(candidate, expected_sha256=actual_hash)
         records.append({"name": name, "sha256": actual_hash, "pe_machine": "AMD64",
                         "smoke": "not_run"})
     def recheck_artifacts(phase: str) -> None:
