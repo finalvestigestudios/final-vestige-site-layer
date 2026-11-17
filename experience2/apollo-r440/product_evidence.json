@@ -1,0 +1,19 @@
+{
+  "schema": "fv-apollo-educator-offer-evidence-v1",
+  "verification_status": "HOLD_NOT_SELLABLE",
+  "audience": "educators_and_homeschool",
+  "proposed_original_offer": "Apollo 1 educator evidence dossier: original lesson workflow, rubric and source analysis",
+  "buyer_promise": "Time-saving original teaching workflow, NOT exclusive rights to NASA records",
+  "merchant_seller_identity_verified": false,
+  "specific_paid_sku_verified": false,
+  "payment_checkout_verified": false,
+  "deliverable_fulfillment_verified": false,
+  "original_content_rights_verified": false,
+  "nasamedia_rights_reviewed_for_product": false,
+  "founder_approved_paid_launch": false,
+  "published_grok_asset_id_verified": false,
+  "paid_checkout_url": null,
+  "verified_orders": null,
+  "realized_net_revenue": null,
+  "notes": "Staging-only planning artifact; do not insert a merchant CTA, visitor collection or analytics until independently approved. Source documents remain free."
+}
