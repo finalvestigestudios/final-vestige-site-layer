@@ -91,7 +91,10 @@ def verify_amd64_pe(path: str | Path, *, expected_sha256: str | None = None) -> 
         if not stat.S_ISREG(metadata.st_mode):
             raise PEFormatError("Candidate is not a regular file")
         # Ownership moves to the stream only AFTER fdopen succeeds.
-        stream = os.fdopen(fd, "rb")
+        # R498: BufferedReader may serve prefetched certificate-tail bytes
+        # after another process truncates the file. Raw FileIO rechecks the
+        # held descriptor for every parser, tail-probe and digest read.
+        stream = os.fdopen(fd, "rb", buffering=0)
     except BaseException as exc:
         # fstat/fdopen can fail or be interrupted before ownership transfer.
         # Never abandon the raw candidate descriptor on any of those paths.
