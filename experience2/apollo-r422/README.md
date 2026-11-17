@@ -22,10 +22,10 @@ The test computes actual Git blob SHA-1 identities from archive bytes. It reject
 
 ## Browser release gate — executable but not yet runnable against real staging
 
-qa/staging_browser_acceptance.py is a read-only real-navigation Playwright Chromium harness that requires an explicitly approved nonproduction HTTPS hostname AND locally provided genuine axe-core JS. It refuses public finalvestige.com and www.finalvestige.com. It tests the installed R421 source-receipt experience at seven widths (320, 360, 390, 768, 1024, 1440, 1920), exactly three source receipts, one free Apollo 1 investigation CTA, no unauthorized embeds/forms/maps, zero overflow, real axe-core WCAG rules, and browser-observed navigated laboratory LCP/CLS. It writes screenshots and a JSON receipt; no scripts are installed on WordPress or existing analytics. Its timings are lab samples, not field p75 CWV.
+qa/staging_browser_acceptance.py is a read-only real-navigation Playwright Chromium harness that requires an explicitly approved nonproduction HTTPS hostname AND locally provided genuine axe-core JS pinned to an independently reviewed SHA-256. It refuses public finalvestige.com and www.finalvestige.com. It tests the installed R421 source-receipt experience at seven widths (320, 360, 390, 768, 1024, 1440, 1920), exactly three source receipts, one free Apollo 1 investigation CTA, no unauthorized embeds/forms/maps, zero overflow, real axe-core WCAG rules, keyboard/touch/no-JS/forced-colors/zoom/reduced-motion checks, same-host network isolation and browser-observed navigated laboratory LCP/CLS. It writes screenshots and a JSON receipt; no scripts are installed on WordPress or existing analytics. Its timings are lab samples, not field p75 CWV.
 
 Command example (ONLY after staging owner provides target and vetted axe JS):
-python qa/staging_browser_acceptance.py --url https://APPROVED-STAGING-HOST/path --approved-staging-host APPROVED-STAGING-HOST --axe-js /trusted/axe.min.js --output-dir QA/staging
+python qa/staging_browser_acceptance.py --url https://APPROVED-STAGING-HOST/path --approved-staging-host APPROVED-STAGING-HOST --axe-js /trusted/axe.min.js --axe-sha256 REVIEWED_64_HEX_SHA256 --output-dir QA/staging
 
 This runtime blocks Chromium navigation (ERR_BLOCKED_BY_ADMINISTRATOR); no vetted axe-core file, installed R421 staging URL or actual end-to-end test evidence is available. Therefore genuine axe results, navigated LCP/CLS, screenshots of installed WordPress and QD review remain BLOCKED. No inflated PASS or faux performance metrics.
 
