@@ -1,0 +1,340 @@
+{
+  "run": "R436",
+  "as_of": "2026-11-16",
+  "draft_only": true,
+  "affiliate_activation": "HARD_HOLD",
+  "live_duplicate_risk": "A live change-blindness article already exists at /2026/11/02/change-blindness/. The new draft must not become a second competing SEO URL without editorial consolidation approval.",
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Real-world person swap; some participants missed it",
+      "evidence_class": "primary research",
+      "source": "https://doi.org/10.3758/BF03208840",
+      "limitation": "Small and staged sample, avoid universal percentages"
+    },
+    {
+      "id": "C02",
+      "claim": "Social grouping affected detection in field study",
+      "evidence_class": "primary research",
+      "source": "https://doi.org/10.3758/BF03208840",
+      "limitation": "Do not extrapolate to demographics"
+    },
+    {
+      "id": "C03",
+      "claim": "Interrupted flicker hinders change detection",
+      "evidence_class": "primary research",
+      "source": "https://doi.org/10.1111/j.1467-9280.1997.tb00427.x",
+      "limitation": "Attention-dependent not universal blindness"
+    },
+    {
+      "id": "C04",
+      "claim": "240ms plus 80ms flicker method in conference abstract",
+      "evidence_class": "conference abstract",
+      "source": "https://www2.psych.ubc.ca/~rensink/publications/abs.96.2.html",
+      "limitation": "Timing specific to protocol"
+    },
+    {
+      "id": "C05",
+      "claim": "Meditator group better on some attentional measures",
+      "evidence_class": "observational research",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/20430650/",
+      "limitation": "Not randomized and not an audio intervention"
+    },
+    {
+      "id": "C06",
+      "claim": "No sustained inattentional blindness difference in same study",
+      "evidence_class": "observational research null outcome",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/20430650/",
+      "limitation": "Do not cherry-pick positive measures"
+    },
+    {
+      "id": "C07",
+      "claim": "Live change blindness article covers door and flicker already",
+      "evidence_class": "FV live inventory",
+      "source": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "limitation": "Avoid duplicate SEO or parallel publication; treat new manuscript as source companion"
+    },
+    {
+      "id": "C08",
+      "claim": "Puységur archive includes primary-source trail and failures",
+      "evidence_class": "FV archive",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "limitation": "Historical record is not medical proof"
+    },
+    {
+      "id": "C09",
+      "claim": "52-page Fieldbook free, existing Jetpack/Dispatch",
+      "evidence_class": "FV free offer",
+      "source": "https://finalvestige.com/focus/",
+      "limitation": "No new list or paid conversion"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 full course twelve levels/four styles/48 MP3s",
+      "evidence_class": "seller-described package",
+      "source": "https://zen12.com/",
+      "limitation": "Check exact SKU at partner referral checkout"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 beginner/advanced six-level subsets 24 MP3s",
+      "evidence_class": "seller-described tier",
+      "source": "https://zen12.com/",
+      "limitation": "Do not imply all tiers contain 48 files"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 sessions advertised as twelve minutes",
+      "evidence_class": "seller-described format",
+      "source": "https://zen12.com/",
+      "limitation": "Format does not prove efficacy"
+    },
+    {
+      "id": "C13",
+      "claim": "Twelve minutes equals an hour of meditation",
+      "evidence_class": "seller unsubstantiated efficacy",
+      "source": "https://zen12.com/",
+      "limitation": "Exclude outcome claim without product-specific evidence"
+    },
+    {
+      "id": "C14",
+      "claim": "Seller mental/medical benefit advertising",
+      "evidence_class": "seller unsubstantiated health claim",
+      "source": "https://zen12.com/",
+      "limitation": "Do not inherit without competent reliable science"
+    },
+    {
+      "id": "C15",
+      "claim": "Public one-year seller refund claim",
+      "evidence_class": "seller policy claim",
+      "source": "https://zen12.com/",
+      "limitation": "Confirm referred order specifics, exclusions and locale"
+    },
+    {
+      "id": "C16",
+      "claim": "Public price on seller page",
+      "evidence_class": "volatile seller price",
+      "source": "https://zen12.com/",
+      "limitation": "Not verified referred checkout; omit price"
+    },
+    {
+      "id": "C17",
+      "claim": "Inspire3 catalog lists Zen12/Hypnosis Live/Brainwave Shots",
+      "evidence_class": "seller catalog",
+      "source": "https://inspire3.com/",
+      "limitation": "No affiliate authorization implied"
+    },
+    {
+      "id": "C18",
+      "claim": "Inspire3 public affiliate portal advertises signup/commission",
+      "evidence_class": "seller public program",
+      "source": "https://affiliates.inspire3.com/",
+      "limitation": "No named FV approval, allowed SKU or issued link"
+    },
+    {
+      "id": "C19",
+      "claim": "Hypnosis Live Total Focus 33-minute MP3",
+      "evidence_class": "seller product feature",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "limitation": "Distinct terms, no scientific equivalence"
+    },
+    {
+      "id": "C20",
+      "claim": "Brainwave Shots Focus Shot 15/30-min formats",
+      "evidence_class": "seller product feature",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "limitation": "Distinct terms and unsupported seller outcomes"
+    },
+    {
+      "id": "C21",
+      "claim": "FTC endorsements require clear material relationship disclosures",
+      "evidence_class": "FTC staff guidance",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "limitation": "Disclose near earning CTA"
+    },
+    {
+      "id": "C22",
+      "claim": "FTC health product benefit statements need substantiation",
+      "evidence_class": "FTC staff guidance",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "limitation": "Applies to express and implied claims"
+    },
+    {
+      "id": "C23",
+      "claim": "Attribution requires true qualified-human and verified purchase",
+      "evidence_class": "Founder business charter",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "limitation": "No tracker or commission inferred from clicks"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "FV-named affiliate approval",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G02",
+      "name": "FV-owned account verified",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G03",
+      "name": "approved Zen12 product",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G04",
+      "name": "approved exact tier/SKU",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G05",
+      "name": "permitted organic search",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G06",
+      "name": "permitted TikTok/YouTube/Shorts",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G07",
+      "name": "approved presell landing layout",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G08",
+      "name": "approved creative rights",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G09",
+      "name": "issued FV affiliate URL",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G10",
+      "name": "allowed tracking/sub-id parameters",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G11",
+      "name": "approved UTM/campaign rules",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G12",
+      "name": "no cloaking or unapproved redirect",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G13",
+      "name": "checkout exact referred price",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G14",
+      "name": "referred refund policy",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G15",
+      "name": "merchant support and fulfillment",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G16",
+      "name": "near-link FTC relationship disclosure",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G17",
+      "name": "claim-to-proof review",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G18",
+      "name": "original artwork license",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G19",
+      "name": "actual encoded film",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G20",
+      "name": "caption/transcript QA",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G21",
+      "name": "keyboard/no-JS/reduced-motion QA",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G22",
+      "name": "360/390/768/1440/1920 layout QA",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G23",
+      "name": "WordPress sanitizer QA",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G24",
+      "name": "Jetpack confirmed signup/dedup QA",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G25",
+      "name": "privacy-safe event implementation QA",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G26",
+      "name": "independent site QA signoff",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G27",
+      "name": "founder production/commercial signoff",
+      "status": "HOLD",
+      "proof": null
+    },
+    {
+      "id": "G28",
+      "name": "merchant paid order/fees/refunds proof",
+      "status": "HOLD",
+      "proof": null
+    }
+  ]
+}
