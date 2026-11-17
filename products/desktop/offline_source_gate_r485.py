@@ -67,8 +67,9 @@ def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[i
     A dedicated reader avoids PIPE deadlocks and never writes private exceptions to
     disk or the operator console. Above the cap the child is killed and its output
     discarded. POSIX children share a new process group so an inherited pipe
-    cannot strand a grandchild after a failed check. Not a sandbox; detached
-    descendants and Windows grandchildren are outside this guarantee.
+    cannot strand a grandchild after a failed check. Same-group POSIX children
+    are also terminated after clean exits, even with closed inherited pipes.
+    Not a sandbox; detached and Windows grandchildren remain out of scope.
     """
     collected = bytearray()
     overflow = threading.Event()
@@ -121,7 +122,11 @@ def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[i
             return proc.returncode, b"", True
         return proc.returncode, bytes(collected), False
     finally:
-        if proc.poll() is None or worker.is_alive():
+        # The direct test process may exit cleanly while a same-group child
+        # closed inherited pipes and keeps running. Tear down POSIX groups even
+        # on successful receipts; no source test may leave background work.
+        # Windows still has direct-child-only cleanup, not a tree guarantee.
+        if os.name == "posix" or proc.poll() is None or worker.is_alive():
             _terminate_test_family(proc)
         proc.wait()
         if worker.is_alive():
