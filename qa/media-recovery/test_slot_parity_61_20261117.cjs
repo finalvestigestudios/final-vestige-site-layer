@@ -89,7 +89,7 @@ test('same currentSrc with two real distinct network GETs charges both transfers
 });
 test('reject fake shared GET when transferred byte counts disagree',()=>{
  const {parts,c}=duplicateSourceCapture();
- c.after[0].slots[1].wire_bytes=0;
+ c.after[0].slots[1].wire_bytes=1;
  assert.throws(()=>assess(parts,c),/Conflicting shared network request/);
 });
 test('reject fake shared GET when MIME, dimensions or actual URL disagree',()=>{
@@ -99,3 +99,7 @@ test('reject fake shared GET when MIME, dimensions or actual URL disagree',()=>{
   assert.throws(()=>assess(parts,c));
  }
 });
+bad('reject HTTP 204 no-content response masquerading as a decoded image',c=>c.after[0].slots[0].http_status=204);
+bad('reject HTTP 206 partial-content without a range-transfer ledger',c=>c.after[0].slots[0].http_status=206);
+bad('reject HTTP 201 created response as a cold image GET',c=>c.after[0].slots[0].http_status=201);
+bad('reject zero transferred bytes for alleged cold decoded image',c=>c.after[0].slots[0].wire_bytes=0);
