@@ -1,0 +1,238 @@
+{
+  "version": "R434",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "review_date": "2026-11-16",
+  "sources_policy": "seller claims never independent efficacy",
+  "claims": [
+    {
+      "id": 1,
+      "claim": "chronostasis first tick",
+      "source_type": "science_primary",
+      "source_url": "https://doi.org/10.1038/35104551",
+      "evidence_status": "supported_under_study_conditions",
+      "publication_action": "research_only"
+    },
+    {
+      "id": 2,
+      "claim": "gaze shift and spatial continuity matter",
+      "source_type": "science_primary",
+      "source_url": "https://doi.org/10.1038/35104551",
+      "evidence_status": "supported_under_study_conditions",
+      "publication_action": "research_only"
+    },
+    {
+      "id": 3,
+      "claim": "visual chronostasis proves time literally stops",
+      "source_type": "misleading",
+      "source_url": "https://doi.org/10.1038/35104551",
+      "evidence_status": "exclude",
+      "publication_action": "never_use"
+    },
+    {
+      "id": 4,
+      "claim": "auditory chronostasis exists in tested tasks",
+      "source_type": "science_primary",
+      "source_url": "https://doi.org/10.1016/S0960-9822(02)01219-8",
+      "evidence_status": "supported_under_study_conditions",
+      "publication_action": "research_only"
+    },
+    {
+      "id": 5,
+      "claim": "2020 action study complicates simple explanation",
+      "source_type": "science_primary",
+      "source_url": "https://doi.org/10.1038/s41598-020-73830-6",
+      "evidence_status": "supported_under_study_conditions",
+      "publication_action": "research_only"
+    },
+    {
+      "id": 6,
+      "claim": "Puységur archival testimony validates magnetism",
+      "source_type": "unsupported",
+      "source_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "evidence_status": "exclude",
+      "publication_action": "never_use"
+    },
+    {
+      "id": 7,
+      "claim": "Zen12 belongs to Inspire3 catalog",
+      "source_type": "seller_official",
+      "source_url": "https://inspire3.com/",
+      "evidence_status": "supported_seller_description",
+      "publication_action": "describe_only"
+    },
+    {
+      "id": 8,
+      "claim": "Zen12 sessions are 12 minutes",
+      "source_type": "seller_official",
+      "source_url": "https://zen12.com/about",
+      "evidence_status": "supported_seller_description",
+      "publication_action": "describe_only"
+    },
+    {
+      "id": 9,
+      "claim": "Zen12 has 12 levels",
+      "source_type": "seller_official",
+      "source_url": "https://zen12.com/about",
+      "evidence_status": "supported_seller_description",
+      "publication_action": "describe_only"
+    },
+    {
+      "id": 10,
+      "claim": "Zen12 each level offers four styles",
+      "source_type": "seller_official",
+      "source_url": "https://zen12.com/about",
+      "evidence_status": "supported_seller_description",
+      "publication_action": "describe_only"
+    },
+    {
+      "id": 11,
+      "claim": "Zen12 full course describes 48 MP3s",
+      "source_type": "seller_official",
+      "source_url": "https://zen12.com/secret/",
+      "evidence_status": "supported_seller_description",
+      "publication_action": "describe_only"
+    },
+    {
+      "id": 12,
+      "claim": "Zen12 equals one hour of meditation in 12 min",
+      "source_type": "seller_promise",
+      "source_url": "https://zen12.com/about",
+      "evidence_status": "not_independently_substantiated",
+      "publication_action": "exclude"
+    },
+    {
+      "id": 13,
+      "claim": "Zen12 treats anxiety depression or disease",
+      "source_type": "seller_promise",
+      "source_url": "https://zen12.com/about",
+      "evidence_status": "not_independently_substantiated",
+      "publication_action": "exclude"
+    },
+    {
+      "id": 14,
+      "claim": "Zen12 guarantees cognitive improvement",
+      "source_type": "seller_promise",
+      "source_url": "https://zen12.com/about",
+      "evidence_status": "not_independently_substantiated",
+      "publication_action": "exclude"
+    },
+    {
+      "id": 15,
+      "claim": "Zen12 promo checkout price is FV approved",
+      "source_type": "authorization_unverified",
+      "source_url": "https://zen12.com/secret/",
+      "evidence_status": "not_verified",
+      "publication_action": "exclude"
+    },
+    {
+      "id": 16,
+      "claim": "Zen12 one-year seller guarantee applies to referred checkout",
+      "source_type": "seller_terms_unverified",
+      "source_url": "https://zen12.com/about",
+      "evidence_status": "not_verified_for_referral",
+      "publication_action": "exclude"
+    },
+    {
+      "id": 17,
+      "claim": "Inspire3 public affiliate portal grants FV commissions",
+      "source_type": "authorization_unverified",
+      "source_url": "https://inspire3.com/",
+      "evidence_status": "not_verified",
+      "publication_action": "exclude"
+    },
+    {
+      "id": 18,
+      "claim": "Hypnosis Live Total Focus lists 33min 47MB",
+      "source_type": "seller_official",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "evidence_status": "supported_seller_description",
+      "publication_action": "describe_only"
+    },
+    {
+      "id": 19,
+      "claim": "Total Focus provides immediate focus gains",
+      "source_type": "seller_promise",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "evidence_status": "not_independently_substantiated",
+      "publication_action": "exclude"
+    },
+    {
+      "id": 20,
+      "claim": "Brainwave Shots Focus Shot includes 15 and 30 min",
+      "source_type": "seller_official",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "evidence_status": "supported_seller_description",
+      "publication_action": "describe_only"
+    },
+    {
+      "id": 21,
+      "claim": "Focus Shot ensures hours of concentration",
+      "source_type": "seller_promise",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "evidence_status": "not_independently_substantiated",
+      "publication_action": "exclude"
+    },
+    {
+      "id": 22,
+      "claim": "FV Focus Fieldbook is 52 pages and free with Dispatch",
+      "source_type": "first_party_live",
+      "source_url": "https://finalvestige.com/focus/",
+      "evidence_status": "supported_page_description",
+      "publication_action": "existing_flow_only"
+    },
+    {
+      "id": 23,
+      "claim": "FTC material relationship disclosure near link",
+      "source_type": "regulator",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "evidence_status": "required_when_applicable",
+      "publication_action": "disclose_adjacent"
+    },
+    {
+      "id": 24,
+      "claim": "FTC objective health benefits need substantiation",
+      "source_type": "regulator",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "evidence_status": "required_when_applicable",
+      "publication_action": "no_unsubstantiated_benefits"
+    },
+    {
+      "id": 25,
+      "claim": "Commission reporting from outbound click",
+      "source_type": "unsupported_conversion_inference",
+      "source_url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "evidence_status": "not_a_sale",
+      "publication_action": "exclude"
+    }
+  ],
+  "release_gates": {
+    "named_FV_partner_approval": "HOLD_UNVERIFIED",
+    "product_specific_zen12_authorization": "HOLD_UNVERIFIED",
+    "web_channel_authorization": "HOLD_UNVERIFIED",
+    "email_channel_authorization": "HOLD_UNVERIFIED",
+    "approved_creative_if_required": "HOLD_UNVERIFIED",
+    "issued_earning_url": "HOLD_UNVERIFIED",
+    "tracking_terms": "HOLD_UNVERIFIED",
+    "cookie_consent_review": "HOLD_UNVERIFIED",
+    "checkout_product_matches": "HOLD_UNVERIFIED",
+    "checkout_price_confirmed": "HOLD_UNVERIFIED",
+    "currency_and_tax_confirmed": "HOLD_UNVERIFIED",
+    "refund_terms_confirmed": "HOLD_UNVERIFIED",
+    "support_contact_confirmed": "HOLD_UNVERIFIED",
+    "subscription_and_upsell_checked": "HOLD_UNVERIFIED",
+    "merchant_brand_attribution": "HOLD_UNVERIFIED",
+    "claims_independent_review": "HOLD_UNVERIFIED",
+    "legal_disclosure_review": "HOLD_UNVERIFIED",
+    "copy_editor_signoff": "HOLD_UNVERIFIED",
+    "browser_keyboard": "HOLD_UNVERIFIED",
+    "noJS_text_completeness": "HOLD_UNVERIFIED",
+    "WCAG22AA": "HOLD_UNVERIFIED",
+    "mobile_360_390_768_1440_1920": "HOLD_UNVERIFIED",
+    "poster_asset_rights": "HOLD_UNVERIFIED",
+    "encoded_film_and_caption_QA": "HOLD_UNVERIFIED",
+    "security_CSP_sanitization": "HOLD_UNVERIFIED",
+    "founder_release_approval": "HOLD_UNVERIFIED",
+    "merchant_settlement_reporting": "HOLD_UNVERIFIED",
+    "analytics_owner_acceptance": "HOLD_UNVERIFIED"
+  }
+}
