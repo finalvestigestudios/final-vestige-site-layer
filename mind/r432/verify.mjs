@@ -37,12 +37,12 @@ for(const [label,html] of [['A',a],['B',b],['hub',hub]]){
  check(()=>assert.match(html,/<html lang="en">/),label+' english language');
  check(()=>assert.match(html,/<meta name="viewport"/),label+' viewport meta');
  check(()=>assert.match(html,/name="robots" content="noindex,nofollow"/),label+' noindex prototype');
- check(()=>assert.doesNotMatch(html,/<script\\b|<iframe\\b|<form\\b|<input\\b/i),label+' no scripts iframe or duplicate forms');
+ check(()=>assert.doesNotMatch(html,/<script\b|<iframe\b|<form\b|<input\b/i),label+' no scripts iframe or duplicate forms');
  check(()=>assert.doesNotMatch(html,/autoplay|onerror=|onclick=|javascript:/i),label+' no forced playback / inline handlers');
- check(()=>assert.doesNotMatch(html,/<a\\b[^>]*href="https?:\\/\\/(?:zen12|affiliates\\.inspire3|hypnosislive|brainwaveshots)\\./i),label+' no merchant outbound links');
+ check(()=>assert.doesNotMatch(html,/<a\b[^>]*href="https?:\/\/(?:zen12|affiliates\.inspire3|hypnosislive|brainwaveshots)\./i),label+' no merchant outbound links');
  check(()=>assert.match(html,/:focus-visible/),label+' keyboard visible focus');
- check(()=>assert.match(html,/@media\\(max-width:/),label+' responsive CSS');
- check(()=>assert.match(html,/<main\\b/),label+' meaningful main');
+ check(()=>assert.match(html,/@media\(max-width:/),label+' responsive CSS');
+ check(()=>assert.match(html,/<main\b/),label+' meaningful main');
 }
 for(const [label,html] of [['A',a],['B',b]]){
  check(()=>assert.match(html,/If you purchase through a qualifying Final Vestige link, Final Vestige may earn a commission/),label+' clear nearby disclosure');
@@ -59,9 +59,9 @@ check(()=>assert.match(b,/ZEN12_OPTIONAL_42S.vtt/),'B names VTT');
 check(()=>assert.match(b,/ZEN12_OPTIONAL_POSTER.svg/),'B names poster');
 check(()=>assert.match(poster,/<svg/),'poster is SVG');
 check(()=>assert.match(poster,/<title id="title">/),'poster accessible title');
-check(()=>assert.doesNotMatch(poster,/<script\\b|<foreignObject\\b|xlink:href|https?:\\/\\//i),'poster no script/remote assets');
+check(()=>assert.doesNotMatch(poster,/<script\b|<foreignObject\b|xlink:href|https?:\/\//i),'poster no script/remote assets');
 check(()=>assert.match(vtt,/^WEBVTT/),'captions VTT header');
-const cues=[...vtt.matchAll(/(\\d\\d:\\d\\d:\\d\\d\\.\\d{3}) --> (\\d\\d:\\d\\d:\\d\\d\\.\\d{3})/g)];
+const cues=[...vtt.matchAll(/(\d\d:\d\d:\d\d\.\d{3}) --> (\d\d:\d\d:\d\d\.\d{3})/g)];
 const ms=s=>{let [h,m,t]=s.split(':');return (+h)*3600000+(+m)*60000+Math.round(Number(t)*1000)};
 check(()=>assert.equal(cues.length,6),'six caption cues');
 check(()=>assert.equal(ms(cues[0][1]),0),'captions start at zero');
@@ -74,7 +74,7 @@ check(()=>assert.match(article,/10–12 hours per day/),'article training intens
 check(()=>assert.match(article,/NOT validate|does not license|does not validate|does not fill that gap/i),'article no product efficacy extrapolation');
 check(()=>assert.match(article,/https:\/\/finalvestige.com\/free-resources\/puysegurs-animal-magnetism-files/),'historical bridge');
 check(()=>assert.match(article,/https:\/\/finalvestige.com\/focus\//),'single Focus funnel');
-check(()=>assert.ok(article.split(/\\s+/).length>1900),'substantive original investigation');
+check(()=>assert.ok(article.split(/\s+/).length>1900),'substantive original investigation');
 check(()=>assert.match(contract,/UNMATCHED/),'real creator media unverified');
 check(()=>assert.match(contract,/NOT COMPUTABLE/),'revenue undefined rather than invented');
 check(()=>assert.match(contract,/affiliate_outbound/),'click distinct from sale');
