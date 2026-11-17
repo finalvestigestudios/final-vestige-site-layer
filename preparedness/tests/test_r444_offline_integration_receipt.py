@@ -1,4 +1,4 @@
-"""R444 synthetic only: 60+ discoverable regression tests; no source/QD/sales claims."""
+"""R444 synthetic only: 53 discoverable regression tests; no source/QD/sales claims."""
 import copy
 import importlib.util
 import json
