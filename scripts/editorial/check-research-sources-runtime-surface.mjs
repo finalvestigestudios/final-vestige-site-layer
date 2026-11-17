@@ -3,7 +3,7 @@
 // Never connects to WordPress or publishes. This is NOT a browser/accessibility verdict.
 import {readFileSync} from "node:fs";
 
-function audit(raw,expect){
+function audit(raw,expect,requireProgressiveEnhancement=false){
   const itemRx=/<article class="fv-rs-card" data-cat="([^"]+)"[^>]*>[\s\S]*?<h3>([\s\S]*?)<\/h3>[\s\S]*?<a href="([^"]+)"([^>]*)>/g;
   const cards=Array.from(raw.matchAll(itemRx),m=>({category:m[1],title:m[2].replace(/<[^>]+>/g,"").trim(),url:m[3],anchorAttrs:m[4]}));
   const first=raw.split("<!-- /wp:html -->")[0]||"";
@@ -27,6 +27,11 @@ function audit(raw,expect){
   if(raw.includes(".fv-rs-filters button span{display:none}"))warnings.push("CSS hides all numeric filter spans, including corrected category totals");
   if(/<div class="fv-rs-filters" aria-label=/.test(raw)&&!/<div class="fv-rs-filters"[^>]*role="group"/.test(raw))warnings.push("Filter div carries aria-label without explicit grouping role");
   if(expect===90 && Object.entries({...categories,all:90}).some(([k,v])=>filters[k]!==v))hard.push("static filter totals contradict 90-card inventory");
+  if(requireProgressiveEnhancement){
+    if(!/<noscript\b/i.test(raw))hard.push("progressive-enhancement requirement: missing noscript guidance");
+    if(scripts.filter(s=>s.includes("search.addEventListener('input'")).length!==1)hard.push("progressive-enhancement requirement: exactly one search controller");
+    if(!/<div class="fv-rs-filters"[^>]*role="group"[^>]*aria-label=/.test(raw))hard.push("progressive-enhancement requirement: labelled filter group lacks role");
+  }
   return {mode:expect===90?"staging":"published",cards:cards.length,uniqueTitles:new Set(cards.map(c=>c.title)).size,uniqueUrls:new Set(cards.map(c=>c.url)).size,firstBlockCards:(first.match(/class="fv-rs-card"/g)||[]).length,fallbackCards:(second.match(/class="fv-rs-card"/g)||[]).length,categories,filters,searchLabelCount:countLabel,summaryStatCount:stat,scriptCount:scripts.length,hardFailures:hard,warnings,verdict:hard.length?"FAIL":"PASS_STATIC_STRUCTURE_ONLY",browserTested:false,sourceRightsVerifiedByThisTool:false};
 }
 
@@ -34,9 +39,9 @@ const args=process.argv.slice(2);
 const path=args.find(a=>!a.startsWith("--"));
 const mode=args.find(a=>a.startsWith("--expect="))?.split("=")[1];
 if(!path||!["published","staging"].includes(mode)){
-  process.stderr.write("Usage: node check-research-sources-runtime-surface.mjs <raw-content.txt> --expect=published|staging\n");
+  process.stderr.write("Usage: node check-research-sources-runtime-surface.mjs <raw-content.txt> --expect=published|staging [--require-progressive-enhancement]\\n");
   process.exit(2);
 }
-const result=audit(readFileSync(path,"utf8"),mode==="published"?60:90);
+const result=audit(readFileSync(path,"utf8"),mode==="published"?60:90,args.includes("--require-progressive-enhancement"));
 process.stdout.write(JSON.stringify(result,null,2)+"\n");
 process.exit(result.hardFailures.length?1:0);
