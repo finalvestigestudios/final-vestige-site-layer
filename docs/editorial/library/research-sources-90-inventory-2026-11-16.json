@@ -22,7 +22,11 @@
     "403, 406 and automated restrictions are NOT broken-link determinations; browser/permission follow-up is required.",
     "USAspending and NARA Catalog return JavaScript shells here; search interactions were NOT tested.",
     "Published WordPress static labels still say 60 though there are 90 cards; the existing PR is release-held.",
-    "No live WordPress changes are authorized under the unresolved production-theme accessibility and subscriber/social suppression gate."
+    "No live WordPress changes are authorized under the unresolved production-theme accessibility and subscriber/social suppression gate.",
+    "All 90 original destination URLs have now been attempted in a public textual reader; no assertion that 90 interactive experiences or underlying documents work.",
+    "Observed institutional content is 64/90; other outcomes are explicitly classified, not called dead links.",
+    "Site-specific research and media use require an item-level license and ethical/privacy review; CC0 is limited to specifically marked Smithsonian assets.",
+    "Public WordPress labels and stale NARA card still await actual production-theme QA, suppression evidence and a guarded WordPress update."
   ],
   "sources": [
     {
@@ -69,7 +73,9 @@
       "url": "https://www.nsa.gov/serve-from-netstorage/news-features/declassified-documents/venona/index.html",
       "institution_and_reuse_cue": "National Security Agency · Signals intelligence · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "institutional page opened"
+      "link_verification": "institutional page opened",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Previously checked institutional destination; see preceding 50-source report; no recheck inferred"
     },
     {
       "index": 5,
@@ -102,7 +108,9 @@
       "url": "https://www.cia.gov/stories/story/the-nixon-collection/",
       "institution_and_reuse_cue": "Central Intelligence Agency · Presidential briefing files · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "institutional page opened"
+      "link_verification": "institutional page opened",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Previously checked institutional destination; see preceding 50-source report; no recheck inferred"
     },
     {
       "index": 8,
@@ -111,7 +119,11 @@
       "url": "https://www.cia.gov/resources/publications/presidents-daily-brief-delivering-intelligence-to-kennedy-and-johnson/",
       "institution_and_reuse_cue": "Central Intelligence Agency · Presidential intelligence · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "CIA publication page retrieved; the publication describes a curated product, not a complete chronological PDB corpus. Identify dates and editions before quotation."
     },
     {
       "index": 9,
@@ -144,7 +156,11 @@
       "url": "https://vault.fbi.gov/OKBOMB",
       "institution_and_reuse_cue": "FBI Vault · Federal investigation · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "FBI Vault OKBOMB listing retrieved with Part 01. Part-page availability and completeness were not tested."
     },
     {
       "index": 12,
@@ -165,7 +181,11 @@
       "url": "https://www.gao.gov/products/gao-25-107852",
       "institution_and_reuse_cue": "GAO · Federal IT oversight · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "GAO report GAO-25-107852 published January 23, 2025; a 2025 IT-management challenge report, not a live agency risk score."
     },
     {
       "index": 14,
@@ -249,7 +269,11 @@
       "url": "https://vault.fbi.gov/Amerithrax",
       "institution_and_reuse_cue": "FBI Vault · Federal investigation · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "FBI Vault Amerithrax landing retrieved, listing multiple parts. Automated inspection did not open all files."
     },
     {
       "index": 21,
@@ -271,7 +295,11 @@
       "url": "https://efile.fara.gov/ords/fara/f?p=1381:1",
       "institution_and_reuse_cue": "U.S. Department of Justice · Foreign-agent disclosures · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "DOJ FARA Browse Filings landing retrieved. Interactive filters/search and completeness were not tested."
     },
     {
       "index": 23,
@@ -318,7 +346,11 @@
       "url": "https://www.cms.gov/priorities/key-initiatives/open-payments/data",
       "institution_and_reuse_cue": "Centers for Medicare & Medicaid Services · Financial disclosures · Public data",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "CMS Open Payments data overview retrieved; collection scope, program rules, reporting years and amendments must accompany comparisons."
     },
     {
       "index": 27,
@@ -327,7 +359,11 @@
       "url": "https://www.epa.gov/office-inspector-general/report-revisions-needed-national-contingency-plan-based-deepwater-horizon",
       "institution_and_reuse_cue": "EPA Office of Inspector General · Disaster-response oversight · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "EPA OIG report 11-P-0534 (August 25, 2011) landing retrieved; links include agency responses, which need to be read separately from the OIG findings."
     },
     {
       "index": 28,
@@ -386,7 +422,11 @@
       "url": "https://www.nist.gov/disaster-failure-studies/station-nightclub-fire-2003",
       "institution_and_reuse_cue": "NIST · Fire and egress · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "NIST Station nightclub fire study page retrieved; distinguish preliminary releases from final technical findings and recommendations."
     },
     {
       "index": 33,
@@ -420,7 +460,11 @@
       "url": "https://www.usgs.gov/publications/terrestrial-lidar-datasets-new-orleans-louisiana-levee-failures-hurricane-katrina",
       "institution_and_reuse_cue": "U.S. Geological Survey · Levee forensics · Public data",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "USGS lidar publication entry retrieved, dated October 24, 2009. A dataset description does not establish all 3D files can be downloaded."
     },
     {
       "index": 36,
@@ -429,7 +473,11 @@
       "url": "https://www.usgs.gov/publications/geotechnical-reconnaissance-mississippi-river-delta-flood-protection-system-after",
       "institution_and_reuse_cue": "U.S. Geological Survey · Geotechnical reconnaissance · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "USGS Katrina geotechnical reconnaissance article retrieved; this is one study rather than the complete federal investigative record."
     },
     {
       "index": 37,
@@ -438,7 +486,11 @@
       "url": "https://www.ncei.noaa.gov/products/event-footprint-catalog",
       "institution_and_reuse_cue": "NOAA NCEI · Severe-weather evidence · Public data",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "NOAA NCEI Event Footprint Catalog retrieved. NCEI warns of cloud migration delays, slower updates and planned November 17, 2026 downtime; do not represent coverage as live or complete."
     },
     {
       "index": 38,
@@ -459,7 +511,11 @@
       "url": "https://www.cdc.gov/niosh/face/topics/index.html",
       "institution_and_reuse_cue": "NIOSH / State FACE Programs · Occupational fatalities · Link-only collection",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "CDC NIOSH FACE page retrieved. NIOSH directs reports dated 2015 or earlier to CDC Stacks; newer State FACE reports appear on this index."
     },
     {
       "index": 40,
@@ -468,7 +524,11 @@
       "url": "https://www.ntsb.gov/investigations/Pages/DCA96MA070.aspx",
       "institution_and_reuse_cue": "NTSB · Aviation · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "NTSB DCA96MA070 page retrieved. Investigation identifiers are the stable route; attached docket files were not individually opened."
     },
     {
       "index": 41,
@@ -490,7 +550,11 @@
       "url": "https://www.govinfo.gov/app/details/GOVPUB-HS5_100-PURL-LPS81562",
       "institution_and_reuse_cue": "FEMA / GovInfo · Building performance · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "GovInfo FEMA Katrina Mitigation Assessment Team report entry retrieved; catalog shows a very large ~255 MB PDF and 2006 publication. Avoid assuming a quick mobile download."
     },
     {
       "index": 43,
@@ -499,7 +563,11 @@
       "url": "https://www.iwr.usace.army.mil/About/History/IPET-and-HPDC-Investigations/",
       "institution_and_reuse_cue": "U.S. Army Corps of Engineers · Flood protection · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Automated access restricted via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "automated_access_restricted",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "U.S. Army Corps institute landing returned HTTP 403 to automated retrieval; manual browser check required, not a broken-link verdict."
     },
     {
       "index": 44,
@@ -508,7 +576,11 @@
       "url": "https://www.nrc.gov/reading-rm/doc-collections/nuregs/knowledge/km0001/r1/index",
       "institution_and_reuse_cue": "Nuclear Regulatory Commission · Nuclear accident archive · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Automated access restricted via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "automated_access_restricted",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "NRC NUREG knowledge digest page returned HTTP 403 to automated retrieval; item access unresolved."
     },
     {
       "index": 45,
@@ -554,7 +626,9 @@
       "url": "https://www.loc.gov/collections/chronicling-america/about-this-collection/",
       "institution_and_reuse_cue": "Library of Congress / NEH · Historic newspapers · Mixed rights by item",
       "rights_status": "item-level review required",
-      "link_verification": "automated access blocked (HTTP 403); not a broken-link determination"
+      "link_verification": "automated access blocked (HTTP 403); not a broken-link determination",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Previously checked institutional destination; see preceding 50-source report; no recheck inferred"
     },
     {
       "index": 49,
@@ -563,7 +637,11 @@
       "url": "https://www.nasa.gov/history/mission-transcripts-mercury-gemini-and-apollo/",
       "institution_and_reuse_cue": "NASA History · Mission operations · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "NASA Mercury/Gemini/Apollo transcript directory retrieved; transcripts should be cited by mission, document or recording where available."
     },
     {
       "index": 50,
@@ -572,7 +650,11 @@
       "url": "https://www.nasa.gov/history/alsj-and-afj/",
       "institution_and_reuse_cue": "NASA History / volunteer editors · Annotated Apollo archive · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "NASA Apollo Lunar Surface/Flight Journal overview retrieved; edited/annotated journals are not automatically literal contemporaneous unedited audio."
     },
     {
       "index": 51,
@@ -581,7 +663,11 @@
       "url": "https://www.osti.gov/",
       "institution_and_reuse_cue": "U.S. Department of Energy · Technical research · Link-only repository",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Timeout unresolved via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "retrieval_timeout",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "OSTI homepage request timed out; institutional service status and search operation not established."
     },
     {
       "index": 52,
@@ -590,7 +676,11 @@
       "url": "https://stacks.cdc.gov/",
       "institution_and_reuse_cue": "Centers for Disease Control and Prevention · Scientific archive · Link-only repository",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "CDC Stacks institutional homepage retrieved. Search is visible, but complete article/file access not tested."
     },
     {
       "index": 53,
@@ -598,8 +688,13 @@
       "title": "Smithsonian Open Access",
       "url": "https://www.si.edu/openaccess",
       "institution_and_reuse_cue": "Smithsonian Institution · Museum open access · CC0 where marked",
-      "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "rights_status": "CC0 only where asset specifically marked; other restrictions may apply",
+      "link_verification": "Inconsistent automated retrieval via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "inconsistent_automated_result",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "Exact Smithsonian Open Access URL produced a 404 on one direct retrieval and timed out on retry; a separately indexed Smithsonian page and its official Open Access FAQ confirm the program. Do not label broken without ordinary-browser verification. CC0 applies only to marked assets, not all Smithsonian holdings, and does not waive privacy/trademark rights.",
+      "official_rights_reference": "https://www.si.edu/openaccess/faq"
     },
     {
       "index": 54,
@@ -608,7 +703,11 @@
       "url": "https://www.loc.gov/collections/sanborn-maps/about-this-collection/",
       "institution_and_reuse_cue": "Library of Congress · Historical maps · Public domain collection",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Automated access restricted via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "automated_access_restricted",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "Library of Congress Sanborn collection returned HTTP 403 for automated retrieval. Item-level map copyright and publication dates still matter."
     },
     {
       "index": 55,
@@ -642,7 +741,11 @@
       "url": "https://www.navcen.uscg.gov/international-ice-patrol-annual-reports",
       "institution_and_reuse_cue": "U.S. Coast Guard · North Atlantic ice · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Automated access restricted via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "automated_access_restricted",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "USCG Ice Patrol reports landing returned HTTP 403 to automated retrieval; availability unresolved."
     },
     {
       "index": 58,
@@ -651,7 +754,11 @@
       "url": "https://nauticalcharts.noaa.gov/publications/coast-pilot/",
       "institution_and_reuse_cue": "NOAA Office of Coast Survey · Nautical reference · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "NOAA Coast Pilot landing retrieved. The Coast Pilot is a continually updated navigation publication; use edition/date, and do not substitute a historical copy for current navigation."
     },
     {
       "index": 59,
@@ -660,7 +767,9 @@
       "url": "https://www.navcen.uscg.gov/sites/default/files/pdf/navRules/Handbook/Nav%20Rules%20Handbook_Corrected_08-12-2024.pdf",
       "institution_and_reuse_cue": "U.S. Coast Guard · Rules of the Road · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "institutional PDF opened; cover visually inspected"
+      "link_verification": "institutional PDF opened; cover visually inspected",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Previously checked institutional destination; see preceding 50-source report; no recheck inferred"
     },
     {
       "index": 60,
@@ -681,7 +790,11 @@
       "url": "https://www.cia.gov/readingroom/",
       "institution_and_reuse_cue": "Central Intelligence Agency · FOIA and declassified records · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "CIA FOIA Electronic Reading Room landing retrieved; index availability does not prove all underlying intelligence files are unrestricted."
     },
     {
       "index": 62,
@@ -702,7 +815,11 @@
       "url": "https://history.state.gov/historicaldocuments/frus1964-68v23",
       "institution_and_reuse_cue": "U.S. Department of State · 582 documents · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "State Department FRUS Congo volume XXIII retrieved (2013 edition); introduction lists documents 1–582. It is a selected edited historical series, not a complete diplomatic record."
     },
     {
       "index": 64,
@@ -711,7 +828,11 @@
       "url": "https://www.reaganlibrary.gov/archives/topic-guide/iran-contra-scandal",
       "institution_and_reuse_cue": "Ronald Reagan Presidential Library · Presidential records · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "Reagan Library Iran-Contra topic guide retrieved; archival finding aids and collections may have distinct processing/access states."
     },
     {
       "index": 65,
@@ -795,7 +916,11 @@
       "url": "https://ntrs.nasa.gov/search",
       "institution_and_reuse_cue": "NASA · Technical literature · Link-only repository",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "NASA NTRS search interface retrieved and filters visible; actual record-level downloads were not tested."
     },
     {
       "index": 72,
@@ -829,7 +954,11 @@
       "url": "https://www.usgs.gov/programs/earthquake-hazards/science/loma-prieta-earthquake-professional-papers",
       "institution_and_reuse_cue": "U.S. Geological Survey · Earthquake research · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "USGS Loma Prieta series landing retrieved; USGS says the four multi-chapter professional papers cover a wide disciplinary range and are downloadable as chapters, not a single document."
     },
     {
       "index": 75,
@@ -838,7 +967,11 @@
       "url": "https://rosap.ntl.bts.gov/",
       "institution_and_reuse_cue": "U.S. Department of Transportation · Technical research · Link-only repository",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "DOT ROSA P repository homepage and search controls retrieved; downstream full-text permissions remain item-specific."
     },
     {
       "index": 76,
@@ -847,7 +980,11 @@
       "url": "https://earthexplorer.usgs.gov/",
       "institution_and_reuse_cue": "U.S. Geological Survey · Remote sensing · Link-only portal",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "USGS EarthExplorer interface retrieved; a place/date search can be specified, but certain uploads require login and actual downloads were not tested."
     },
     {
       "index": 77,
@@ -856,7 +993,11 @@
       "url": "https://www.blm.gov/sites/default/files/Manual_Of_Surveying_Instructions_2009.pdf",
       "institution_and_reuse_cue": "Bureau of Land Management · Cadastral surveying · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Oversize PDF / not inspected via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "oversized_source_document",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "The 2009 BLM Manual of Surveying Instructions PDF exceeds the public textual reader’s size ceiling (~39.6 MB); this is a retrieval limit, not a broken-link determination. Exact historical edition and controlling local law still matter."
     },
     {
       "index": 78,
@@ -865,7 +1006,11 @@
       "url": "https://www.navcen.uscg.gov/light-list-annual-publication",
       "institution_and_reuse_cue": "U.S. Coast Guard · Aids to navigation · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Automated access restricted via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "automated_access_restricted",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "Coast Guard Light List page returned HTTP 403 to automated retrieval; verify annual issue before use for active navigation."
     },
     {
       "index": 79,
@@ -874,7 +1019,11 @@
       "url": "https://www.faa.gov/air_traffic/publications/atpubs/aim_html/",
       "institution_and_reuse_cue": "Federal Aviation Administration · Aviation operations · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "FAA Aeronautical Information Manual landing retrieved, showing effective July 9, 2026, Change 3 at check time; not an archival edition for historical flights and not a substitute for current NOTAMs."
     },
     {
       "index": 80,
@@ -883,7 +1032,11 @@
       "url": "https://historicalcharts.noaa.gov/",
       "institution_and_reuse_cue": "NOAA Office of Coast Survey · Historical cartography · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "NOAA Historical Map & Chart Collection search landing retrieved; chart date, scale and survey revision remain distinct from present navigation conditions."
     },
     {
       "index": 81,
@@ -892,7 +1045,11 @@
       "url": "https://coast.noaa.gov/hurricanes/",
       "institution_and_reuse_cue": "NOAA Office for Coastal Management · Storm geography · Link-only portal",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "App shell / no testable result via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "application_shell_only",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "NOAA Historical Hurricane Tracks exact app URL returned no crawlable body, but NOAA's indexed companion page describes the interface. Search-radius filtering can exclude storms that caused damage at a place without passing directly through it; not a storm-impact footprint."
     },
     {
       "index": 82,
@@ -901,7 +1058,11 @@
       "url": "https://www.loc.gov/collections/railroad-maps-1828-to-1900/about-this-collection/",
       "institution_and_reuse_cue": "Library of Congress · Railroad cartography · Link-only collection",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Automated access restricted via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "automated_access_restricted",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "LOC Railroad Maps collection returned HTTP 403 to automated retrieval. Historic map scans may contain later annotations or rights notices; cannot infer usage license."
     },
     {
       "index": 83,
@@ -910,7 +1071,11 @@
       "url": "https://dp.la/",
       "institution_and_reuse_cue": "Digital Public Library of America · Cross-institution discovery · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "HTTP 405 / browser unverified via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "method_not_allowed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "Digital Public Library of America homepage returned HTTP 405 to this automated request. A 405 response is not proof ordinary visitors cannot browse; rights depend on the supplying institution and item."
     },
     {
       "index": 84,
@@ -918,8 +1083,13 @@
       "title": "David Rumsey Map Collection",
       "url": "https://www.davidrumsey.com/",
       "institution_and_reuse_cue": "David Rumsey Map Collection · Historical maps · Link-only",
-      "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "rights_status": "site grants broad image uses with important source-copyright and facsimile exceptions",
+      "link_verification": "Institutional page body observed via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "institutional_landing_content_observed",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "David Rumsey collection page retrieved. Its own permissions page allows many publication uses but warns about post-1929 copyrights, maps lacking a download button and stand-alone facsimile sale permission.",
+      "official_rights_reference": "https://www.davidrumsey.com/about/copyright-and-permissions"
     },
     {
       "index": 85,
@@ -941,7 +1111,12 @@
       "url": "https://www.loc.gov/collections/veterans-history-project-collection/",
       "institution_and_reuse_cue": "Library of Congress · Oral history and personal records · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "Automated access restricted via exact-URL public retrieval on 2026-11-16",
+      "access_outcome": "automated_access_restricted",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Destination-level textual reader only; no browser transaction, downstream media or rights clearance",
+      "qualification": "Library of Congress VHP landing could not be directly retrieved through this reader, but official indexed LOC collection/use guidance was identified. Some collections are descriptive only, and recorded interviews can carry participant/donor rights; copying for publication requires explicit rights review.",
+      "official_rights_reference": "https://www.loc.gov/collections/veterans-history-project-collection/about-this-collection/using-the-collection/"
     },
     {
       "index": 87,
@@ -975,7 +1150,9 @@
       "url": "https://www.archives.gov/findingaid/record-group-explorer",
       "institution_and_reuse_cue": "National Archives · Federal record groups · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "institutional page opened"
+      "link_verification": "institutional page opened",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "Previously checked institutional destination; see preceding 50-source report; no recheck inferred"
     },
     {
       "index": 90,
@@ -993,18 +1170,23 @@
   ],
   "verification_followup": {
     "date": "2026-11-16 America/Los_Angeles",
-    "method": "Public web destination-open on exact URL from original published WordPress inventory; inspect returned institutional title/body or access restriction. Historical initial status retained for five previously inspected entries.",
-    "pass_criteria": "Institutional page content observed, NOT a guarantee all linked items accessible or licensed; app shells treated separately.",
-    "newly_checked": 45,
-    "total_checked_including_prior": 50,
+    "method": "Exact published URL public web retrieval on all 90. 50 in earlier audit and 40 in present pass. Return bodies were inspected for institutional relevance; interactive searches and direct-file reuse conditions not independently exercised.",
+    "pass_criteria": "Destination content observed is a landing-page check only, not source survival, completeness, rights clearance, responsive browser QA or proof of a record.",
+    "newly_checked": 40,
+    "total_checked_including_prior": 90,
     "current_outcomes": {
-      "institutional_content_observed": 36,
-      "application_shell_only": 2,
-      "automated_retrieval_restricted": 11,
-      "timeout_unresolved": 1,
-      "not_checked": 40
+      "institutional_content_observed": 64,
+      "application_shell_only": 3,
+      "automated_retrieval_restricted": 18,
+      "timeout_unresolved": 2,
+      "oversized_pdf_uninspected": 1,
+      "inconsistent_automated_response": 1,
+      "http_405_unverified": 1,
+      "not_checked": 0
     },
+    "previous_report": "research-sources-50-of-90-link-audit-2026-11-16.md",
+    "full_report": "research-sources-90-of-90-link-audit-2026-11-16.md",
     "public_wordpress_unchanged": true,
-    "note": "No image copied, no subscriber or social activity, no WordPress write. Inspection time reflects research date, not document publication date."
+    "note": "Both automation restrictions and HTTP 405/404-type retrieval anomalies remain manual-browser review items; never silently repair external URL. No third-party material copied."
   }
 }
