@@ -1,0 +1,91 @@
+{
+  "schema": "fv-dispatch-proof-boundary-v1",
+  "as_of": "2026-11-17T12:30:38Z",
+  "campaign": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+  "snapshot_source": "authenticated-wordpress-connector-read-only",
+  "live_settings": {
+    "newsletter_enabled": true,
+    "post_auto_send": false,
+    "email_format": "full",
+    "reply_to": "no-reply",
+    "site_can_send": true
+  },
+  "dashboard": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2
+  },
+  "follower_stats": {
+    "reader": 3,
+    "email": 0,
+    "comment": 0,
+    "partial": false
+  },
+  "unique_eligible_recipients": null,
+  "welcome_pdf_media_verified": true,
+  "welcome_email_received_verified": false,
+  "client_download_is_signup": false,
+  "native_jetpack_preview_verified": false,
+  "final_vestige_postal_address_verified": false,
+  "functional_unsubscribe_verified": false,
+  "merchant_partner_named_approval_verified": false,
+  "merchant_email_channel_permission_verified": false,
+  "merchant_specific_affiliate_link_verified": false,
+  "approved_live_warmup_guide_verified": false,
+  "referred_sku_checkout_verified": false,
+  "merchant_attributed_settled_orders_verified": false,
+  "qualified_human_sessions_audited": false,
+  "issues": [
+    {
+      "slot": 1,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT",
+      "reason": "legal, native-preview and audience missing"
+    },
+    {
+      "slot": 2,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT",
+      "reason": "legal, native-preview and audience missing"
+    },
+    {
+      "slot": 3,
+      "kind": "commercial",
+      "status": "HOLD_MERCHANT",
+      "reason": "Zen12 partner email rights and guide/checkout missing"
+    },
+    {
+      "slot": 4,
+      "kind": "editorial",
+      "status": "HOLD_COPY",
+      "reason": "fourteen-second endpoints undefined; also legal/audience missing"
+    },
+    {
+      "slot": 5,
+      "kind": "commercial",
+      "status": "HOLD_MERCHANT",
+      "reason": "Hypnosis Live affiliate email rights and exact checkout missing"
+    },
+    {
+      "slot": 6,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT",
+      "reason": "legal, native-preview and audience missing"
+    }
+  ],
+  "audit_revenue": {
+    "qualified_human_sessions": null,
+    "settled_paid_orders": null,
+    "net_revenue": null,
+    "net_revenue_per_1000_qualified_human_sessions": null
+  },
+  "source_links": [
+    "https://finalvestige.com/dispatch/",
+    "https://finalvestige.com/focus/",
+    "https://finalvestige.com/editorial-standards/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://zen12.com/hnp",
+    "https://hypnosislive.com/faq"
+  ]
+}
