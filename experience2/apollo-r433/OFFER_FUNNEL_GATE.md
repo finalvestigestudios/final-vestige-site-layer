@@ -1,0 +1,10 @@
+# Conversion-first experiment contract — no sale/traffic claim
+
+| OFFER | FUNNEL STEP | BLOCKER | CHANGE / EXPERIMENT | PASS/FAIL EVIDENCE | OWNER |
+|---|---|---|---|---|---|
+| Original source-grounded Apollo classroom dossier (candidate, not an authenticated payable SKU) | educator decides to buy | commercial media and original-work rights, SKU/price, merchant checkout/fulfillment/refunds not verified | keep purchase CTA **disabled** until Claude/founder verify one actual sellable product | **HOLD**: no paid CTA or verified checkout; no orders | Founder / Claude commerce |
+| Grok Apollo long-form | creator post -> qualified human visit | no independently verified already-published post, immutable asset_id, permitted link or 7/30d qualified denominator | match source-led long-form hook to free archive only after Praxxis validates real Grok post; preserve only allowlisted public UTMs (R429) | **UNVERIFIED LIVE**; offline allowlist only | Grok / Praxxis / Claude |
+| Source plate -> free historical investigation | archival trust -> relevant next action | conflating event date, review board finding and later tests | R433 source roles + explicit limitations + one unchanged free CTA | PHP/Chromium local results in QA report; genuine WordPress, axe, LCP/CLS **HOLD** | Apollo / QD |
+| Merchant-confirmed paid orders -> realized net revenue | checkout -> receipt -> settlement -> refunds/fees | no authenticated orders, customer records, refunds/fees or attribution | Claude reconciling existing native analytics only; no new scripts | **NOT COMPUTABLE**, not 0; no purchase evidence | Claude / Commerce |
+
+**Proposed hypothesis, not result:** clear source confidence and printable cited teaching notes increase qualified educator intent to pay for an original classroom kit. Define two 7/30d cohorts *after* real published asset and merchant proof. Primary metric = `(verified settled gross receipts - refunds - processor/affiliate fees) / qualified unique human sessions * 1000`. Separate confirmed lead, checkout start, affiliate outbound, paid order and net receipts. Tiny samples must be flagged; do not infer a paid order from a link click.
