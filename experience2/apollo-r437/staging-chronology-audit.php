@@ -106,6 +106,13 @@ function fv_r437_render(int $instance, array $campaign = []): string {
     $parent = fv_r436_render($instance, $campaign);
     $needle = '<details class="fv-r436__proof"';
     if (substr_count($parent, $needle) !== 1 || substr_count($parent, 'class="fv-r429__cta"') !== 1) return fv_r437_fallback();
+    // Older verified layers repeat a precise 1967-04-05 board date, while NASA's
+    // own sources distinguish the report's drafting, signature and release.
+    // Correct every displayed upstream instance to an unambiguous finding year.
+    // Fail open to the free investigation if the expected source shape changes.
+    $unverifiedDate = 'datetime="1967-04-05">1967-04-05</time>';
+    if (substr_count($parent, $unverifiedDate) !== 4) return fv_r437_fallback();
+    $parent = str_replace($unverifiedDate, 'datetime="1967">1967 · Board findings</time>', $parent);
     return '<div class="fv-r437" data-fv-r437-shell>'.str_replace($needle, fv_r437_audit($instance).$needle, $parent).'</div>';
 }
 function fv_r437_shortcode(): string {

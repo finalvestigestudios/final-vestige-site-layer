@@ -31,6 +31,8 @@ ret,out,err=php_script("define('ABSPATH','/qa/');require 'staging-chronology-aud
 check(ret==0 and 'data-fv-r437' in out,'full parent rendering and chain')
 check(out.count('class="fv-r429__cta"')==1,'one existing free CTA')
 check(out.count('data-period=')==4,'four source records')
+check('1967-04-05' not in out,'inherited unverified exact Board day suppressed throughout')
+check(out.count('1967 · Board findings')==4,'four inherited date labels corrected')
 for phrase in ['January 27, 1967','2017','February 14, 2018','not claimed release day','no NASA media']:
  check(phrase in out,'source/date truth '+phrase)
 check('utm_content=fixture_not_a_published_asset' in out,'allowlisted campaign passes original CTA')
