@@ -55,7 +55,7 @@ all(["perception","history","practice","tools"].map(id=>H.includes('id="'+id+'"'
 ok(H.includes("153 source rows")===false || H.includes("153 source rows"),"archival source treated as data");
 ok(Article.split(/\s+/).length>2000,"original investigation substantive");
 all(["10.1068/p090483","10.1068/p6659","10.1068/p7755","10.1371/journal.pone.0023340"].map(v=>Article.includes(v)),"original source IDs");
-ok(Article.includes("did not test these products"),"limits on product inference");
+ok(Article.includes("did **not** test these products"),"limits on product inference");
 ok(M.claims.length>=30&&M.source_entries.length>=12,"claim/source coverage");
 ok(Object.keys(M.release_gates).length===28,"explicit 28 release gates");
 ok(Object.values(M.release_gates).every(x=>x.pass===false),"none of the 28 releases authorized");
