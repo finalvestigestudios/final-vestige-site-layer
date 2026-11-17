@@ -123,7 +123,7 @@
 </ol>
 <div class="mininote"><p><strong>Rights and qualifications:</strong> Chart and code were authored for this FV field tool in 2026. Original illustration is an explanatory composite, not source evidence. © Final Vestige Studios. External records remain with their institutions and applicable rightsholders. This research aid is not forensic certification and offers no legal or scientific finding about an event.</p></div>
 <p class="stamp">A chronology that acknowledges what it cannot align is more valuable than a neat one assembled by assumption.</p>
-<p><a href="/free-resources/">Return to The Library</a> · <a href="/free-resources/research-sources/">Research Sources</a> · <a href="/free-resources/the-page-that-changed/">The Page That Changed</a></p>
+<p><a href="/free-resources/">Return to The Library</a> · <a href="/free-resources/research-sources/">Research Sources</a> · <a href="/free-resources/the-page-that-changed/">The Page That Changed</a> · <a href="/free-resources/the-same-story-twice/">The Same Story Twice</a></p>
 </section>
 <template id="tt-card">
 <fieldset class="witness controls"><legend>Source <span class="tt-label-num">1</span></legend>
@@ -153,6 +153,7 @@ function interval(r){if(!(r.basis==="utc" || r.basis==="verified"))return null;
 if(!r.source || !r.original || !r.kind || r.kind==="Unclear" || !r.qualification)return null;
 var a=parseMinute(r.start),b=parseMinute(r.end);if(a===null || b===null || a>b)return null;return[a,b];}
 function classifyPair(r,s){
+if(!r.source || !s.source || !r.original || !s.original)return "unknown";
 if(r.kind && s.kind && r.kind!=="Unclear" && s.kind!=="Unclear" && r.kind!==s.kind)return "different";
 var x=interval(r),y=interval(s);if(!x||!y)return "unknown";
 return(x[1]<y[0] || y[1]<x[0])?"separate":"overlap";}
