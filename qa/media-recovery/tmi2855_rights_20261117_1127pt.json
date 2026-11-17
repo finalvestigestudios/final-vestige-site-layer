@@ -1,0 +1,100 @@
+{
+  "schema": "fv-media-tmi2855-alternate-rights-v1",
+  "date_pt": "2026-11-17 11:27",
+  "post_id": 285,
+  "slot": "285:5",
+  "wp_revision": "2026-11-02T21:39:59",
+  "wp_snapshot_blob": "9c3fdb065c57faf69e14b269ee3622e4e44c1462",
+  "page": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+  "published_url": "https://i0.wp.com/images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg?ssl=1",
+  "published_alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+  "origin_reader": {
+    "url": "https://images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+    "kind": "independent_public_retriever",
+    "http_status": 404,
+    "observed": "2026-11-17; not a visitor-browser response"
+  },
+  "jetpack_reader": {
+    "http_status": null,
+    "error": "tool inaccessible"
+  },
+  "visitor": {
+    "current_src": null,
+    "http_status": null,
+    "mime": null,
+    "decode": null,
+    "natural_size": null,
+    "transfer_bytes": null,
+    "screenshot": null
+  },
+  "candidates": [
+    {
+      "id": "DOE_COMMONS_PD",
+      "catalog": "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_(color).jpg",
+      "institution": "United States Department of Energy, original credited by Commons; secondary rendition hosted by Wikimedia Commons",
+      "license": "PD_US_GOV_REPORTED",
+      "native_width": 2592,
+      "native_height": 2488,
+      "review_width": 960,
+      "review_height": 921,
+      "scene": "different aerial photo; cropped/color-adjusted Commons derivative",
+      "same_binary": false,
+      "cache_allowed": false,
+      "wp_upload_allowed": false,
+      "binary_sha256": null,
+      "rights_note": "DOE-attributed federal-work public-domain claim; original DOE URL not independently recovered, Commons file needs provenance and caption review"
+    },
+    {
+      "id": "NRC_MARCH_1979",
+      "catalog": "https://www.flickr.com/photos/nrcgov/7447164588",
+      "institution": "Nuclear Regulatory Commission verified Flickr",
+      "license": "CC-BY-NC-ND-2.0",
+      "native_width": null,
+      "native_height": null,
+      "review_width": null,
+      "review_height": null,
+      "scene": "NRC caption says taken March 1979",
+      "same_binary": false,
+      "cache_allowed": false,
+      "wp_upload_allowed": false,
+      "binary_sha256": null,
+      "rights_note": "NRC Flickr license bars unlicensed commercial reuse/derivative distribution; monetized cache HOLD"
+    },
+    {
+      "id": "NRC_TITLED_1979_TAKEN_2008",
+      "catalog": "https://www.flickr.com/photos/nrcgov/7447157202",
+      "institution": "Nuclear Regulatory Commission verified Flickr",
+      "license": "CC-BY-NC-ND-2.0",
+      "native_width": null,
+      "native_height": null,
+      "review_width": null,
+      "review_height": null,
+      "scene": "Title says 1979 but metadata says taken August 12 2008",
+      "same_binary": false,
+      "cache_allowed": false,
+      "wp_upload_allowed": false,
+      "binary_sha256": null,
+      "rights_note": "Date/title contradiction and noncommercial/no-derivatives reuse restrictions; editorial HOLD"
+    }
+  ],
+  "license_link": "https://creativecommons.org/licenses/by-nc-nd/2.0/deed.en",
+  "archival_binary_source": "http://ma.mbe.doe.gov/me70/history/photos.htm",
+  "release": "HOLD_GUEST_RIGHTS_BINARY_EDITORIAL_STAGING",
+  "guest_42_failures_confirmed": null,
+  "wire_savings_76_percent_verified": false,
+  "oversized_originals": {
+    "count": 20,
+    "stored_bytes": 64385752,
+    "visitor_transfer_bytes": null
+  },
+  "actions": {
+    "download": false,
+    "cache": false,
+    "wordpress_write": false,
+    "block_rewrite": false,
+    "homepage_change": false,
+    "merge": false,
+    "deploy": false,
+    "spend": false
+  }
+}
