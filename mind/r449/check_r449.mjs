@@ -46,7 +46,7 @@ check('six caption cues',()=>assert.equal((vtt.match(/-->/g)||[]).length,6));
 check('last caption ends at 42s',()=>assert.match(vtt,/00:00:42\.000/));
 check('hub four streams',()=>['Perception & Attention','History of Suggestion','Practice & Reflection','Tools Under Review'].forEach(s=>assert.ok(hub.includes(s),s)));
 check('hub not claiming public gorilla URL',()=>assert.match(hub,/no invented live URL/));
-check('article exact numbers',()=>['20 of 24','12 of the 20','547 milliseconds','2024','Puységur'].forEach(s=>assert.ok(article.includes(s),s)));
+check('article exact numbers',()=>['20 of 24','12 actually fixated','547 milliseconds','2024','Puységur'].forEach(s=>assert.ok(article.includes(s),s)));
 check('article limitation on clinical errors',()=>assert.match(article,/cannot tell us how often real clinical diagnoses/i));
 check('article no external activated commercial link',()=>assert.doesNotMatch(article,/utm_affiliate=|ref=[^ ]*zen12|affiliate_click.*\bhref=/i));
 check('evidence matrix count consistent',()=>assert.equal(matrix.claim_count,matrix.claim_rows.length));
