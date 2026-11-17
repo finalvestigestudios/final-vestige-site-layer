@@ -4,6 +4,11 @@
 **State:** STATIC REVIEW COMPLETE / PUBLICATION HOLD  
 **Reviewed:** [published Research Sources #1338](https://finalvestige.com/free-resources/research-sources/), [WordPress staging #2354](https://finalvestige.com/wp-admin/post.php?post=2354&action=edit), [Library #77](https://finalvestige.com/free-resources/), [Editorial Standards](https://finalvestige.com/editorial-standards/), [GitHub coordination #1788](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1788) and [draft PR #2816](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2816).
 
+
+![Original accessible diagram showing 60 initial source cards and 30 separate fallback cards, with script-enabled regrouping into a searchable 90-card index versus scriptless preservation of two browsable sections.](./research-sources-90-two-paths-2026-11-17.svg)
+
+*Diagram: Final Vestige Studios, November 17, 2026. Original and reusable with FV credit. It depicts observed Gutenberg structure, not a production-browser test.*
+
 ## What was actually tested
 
 Read authenticated **raw Gutenberg content** separately from the unchanged public page (modified 2026-11-03T22:12:43 site-local) and the staged count-only correction (modified 2026-11-16T22:35:24). Parsed all source article headings, categories, outbound URLs, filter labels, script bodies and the independent fallback block. Code: [read-only audit utility](../../../scripts/editorial/check-research-sources-runtime-surface.mjs). The same pure function was executed on both real WordPress responses, not merely on a hand-written fixture.
