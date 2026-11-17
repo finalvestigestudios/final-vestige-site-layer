@@ -1,0 +1,22 @@
+# Dispatch R425 independent QA receipt — 2026-11-17
+- Branch: `dispatch-r425-transport-contract-failclosed-20261117` on exact parent `4b78b9da14a38a25cd73f8cff950aa90e82b0aea`.
+- Original six issue master PR #175: exact current HEAD `d57ccdba3aee8f065e143e101c2945f4f3d01647`.
+- Independent mounted-source SHA check: all original six issues + manifest + test file match remote Git blob SHA; native `python -m unittest discover -s campaign-2026-mind/tests -p test_campaign.py -v` **6 passed / 0 failed**.
+- Authenticated WordPress Newsletter status `2026-11-17T15:05:27Z` and settings `2026-11-17T15:05:29Z`. No subscriber identity exposed. New-post automatic emails remain OFF and recent five posts `never_sent_opted_out`.
+- New R425 six initial sources fetched from the branch; **six Git blob IDs established**, with snapshot post-QA correction noted below:
+  - README_RELEASE_DECISION.md `f87a7e9f0d4abfa322292ca83a914bcc24a2ac53`
+  - WORDPRESS_NATIVE_TRANSPORT_AND_CONSENT.md `0ca81c22b56bbb819efbd5af52debf66a1be65ba`
+  - OFFER_TO_SETTLEMENT_ACCEPTANCE.md `a9fc59e442502c8da7eb366cec1d89e7ab0802b7`
+  - SOURCE_SNAPSHOT.json `df079b48a2a553ade9a613e7ef9f4254dcd74aa2`
+  - review_contract.cjs `bfa68bac726d8bf0bc116cd828804694136ddb06`
+  - test_review_contract.cjs `4cf228b7a3ccb37b30ccf65659d3fdf3b103387a`
+- Source-authored precommit V8 checks: **12/12** passed.
+- **Exact-fetched GitHub JavaScript test source** reexecuted in V8 using explicit Node-test and assert shims: **16/16** passed, zero failed. Not a native Node run or a real email, browser, Jetpack or legal test. The test exercises merchant-vs-editorial gates, global proof removal, confidentiality, auto-send veto, all-false state, issue 04 correction and hard no-send.
+- Important proof limitation: a synthetic attestation can satisfy a structural signature. Human source verification is still required, and even the all-positive synthetic case returns `send_authorized=false`. No proof packet authenticates real deliverability or merchant rights by itself.
+- External current primary sources: https://jetpack.com/support/newsletter/ ; https://wordpress.com/support/newsletter/email-appearance/ ; https://jetpack.com/support/newsletter/customize-the-newsletter-experience/ ; https://affiliates.inspire3.com/ ; https://zen12.com/secret/ ; https://hypnosislive.com/mental-skills/total-focus ; https://hypnosislive.com/faq ; https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business?wvideo=akzb57a5z3 .
+- Connected Grok/Praxxis Google Drive document reads were attempted through the Google Drive connector, but both returned transient HTTP 429 (quota exceeded). No shared Drive content was modified or overwritten; owner boundaries respected.
+- Exact GITHUB PR head to be inserted in Issue #174 after PR creation; original #175/#201/parent #2873 remained unchanged.
+- **Not done:** native WordPress post/email preview, received email test, actual welcome receipt, qualifying commercial-channel license, issued affiliate link, legitimate postal address / unsubscribe witness, user-list inspection, revenue settlement.
+- **No side effects:** no WordPress draft/post/settings change, no email or test email, no subscriber contact/import, no merchant activation, no social posting, no expense, no merge.
+
+- **Post-QA correction:** snapshot field `sends:0` had risk of falsely implying lifetime sending history. Replaced with `last_five_post_notifications_sent:0` and `lifetime_send_total_verified:null`. This correction only changes an offline data snapshot, not site settings. Git blob `df079b48a2a553ade9a613e7ef9f4254dcd74aa2`.
