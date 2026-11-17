@@ -1,0 +1,666 @@
+{
+  "schema": "fv.mind.claim-permission.v1",
+  "run": "R452",
+  "date": "2026-11-17",
+  "branch": "mind-r452-faraday-ideomotor-conversion-decision-20261117",
+  "scope": "source-only unpublished Mind presell",
+  "commercial_release": "HARD_HOLD",
+  "verified_partner_approval": false,
+  "active_partner_link": false,
+  "merchant_paid_conversion": "UNVERIFIED",
+  "net_revenue_per_1000_qualified_sessions": null,
+  "official_product_checks": {
+    "zen12_about": "https://zen12.com/about",
+    "zen12_catalog": "https://zen12.com/",
+    "zen12_distinct_promo": "https://zen12.com/secret/",
+    "hypnosis_total_focus": "https://hypnosislive.com/mental-skills/total-focus",
+    "brainwave_focus_shot": "https://brainwaveshots.com/focus-shot",
+    "seller_marketing_creatives": "NOT_ACCESSED_TO_AUTHENTICATED_PARTNER_DASHBOARD",
+    "pricing": "Public catalog and promotion are not a verified authorized affiliate cart; current displayed price is deliberately not quoted as a referred offer",
+    "returns": "Seller advertises one-year guarantee on public surfaces; exact referred contract/checkout unverified"
+  },
+  "sources": [
+    {
+      "id": "FARADAY1853",
+      "title": "Michael Faraday letter to Times dated 1853-06-28",
+      "url": "https://epsilon.ac.uk/view/faraday/letters/Faraday2691",
+      "role": "primary historical"
+    },
+    {
+      "id": "HIST2024",
+      "title": "Methodology and psychical research historical chapter",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-52954-2_6",
+      "role": "scholarly historical analysis"
+    },
+    {
+      "id": "GAUCHOU2012",
+      "title": "Expression of nonconscious knowledge via ideomotor actions",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22377138/",
+      "role": "peer-reviewed experiment abstract"
+    },
+    {
+      "id": "ANDERSEN2018",
+      "title": "Predictive minds in Ouija board sessions, online 2018/journal 2019",
+      "url": "https://link.springer.com/article/10.1007/s11097-018-9585-8",
+      "role": "peer-reviewed field experiment"
+    },
+    {
+      "id": "PUYSEGUR",
+      "title": "Puységur's Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "role": "FV published archival synthesis"
+    },
+    {
+      "id": "MESMERISM",
+      "title": "Mesmerism Explained",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "role": "FV published source analysis"
+    },
+    {
+      "id": "CHANGE",
+      "title": "Change Blindness: Flicker Test and Door Experiment",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "role": "FV published sourced investigation"
+    },
+    {
+      "id": "FOCUS",
+      "title": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "role": "FV published free offer"
+    },
+    {
+      "id": "DISPATCH",
+      "title": "The Dispatch",
+      "url": "https://finalvestige.com/dispatch/",
+      "role": "FV published email program"
+    },
+    {
+      "id": "INSPIRE3",
+      "title": "Inspire3 official company/catalog",
+      "url": "https://inspire3.com/",
+      "role": "seller"
+    },
+    {
+      "id": "ZEN12ABOUT",
+      "title": "Zen12 /about",
+      "url": "https://zen12.com/about",
+      "role": "seller"
+    },
+    {
+      "id": "ZEN12CAT",
+      "title": "Zen12 ordinary catalog",
+      "url": "https://zen12.com/",
+      "role": "seller"
+    },
+    {
+      "id": "ZEN12SECRET",
+      "title": "Zen12 /secret promotional funnel",
+      "url": "https://zen12.com/secret/",
+      "role": "seller"
+    },
+    {
+      "id": "BRAINFOCUS",
+      "title": "Brainwave Shots Focus Shot",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "role": "seller"
+    },
+    {
+      "id": "HYPNOFOCUS",
+      "title": "Hypnosis Live Total Focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "role": "seller"
+    },
+    {
+      "id": "AFFPORTAL",
+      "title": "Inspire3 affiliate portal",
+      "url": "https://affiliates.inspire3.com/",
+      "role": "public program entry only"
+    },
+    {
+      "id": "FTCEND",
+      "title": "FTC Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "role": "government compliance"
+    },
+    {
+      "id": "FTCHEALTH",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "role": "government compliance"
+    },
+    {
+      "id": "STANDARDS",
+      "title": "FV Editorial Standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "role": "FV live governance"
+    },
+    {
+      "id": "DISCLOSURE",
+      "title": "FV Affiliate Disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "role": "FV live policy"
+    }
+  ],
+  "claims": [
+    {
+      "id": "F01",
+      "statement": "Faraday dated his letter 28 June 1853, published 30 June",
+      "evidence_type": "historical-supported",
+      "source_ids": [
+        "FARADAY1853"
+      ],
+      "editorial_action": "use"
+    },
+    {
+      "id": "F02",
+      "statement": "Faraday compared table-first and hands-first motion using a mechanical indicator",
+      "evidence_type": "historical-supported",
+      "source_ids": [
+        "FARADAY1853",
+        "HIST2024"
+      ],
+      "editorial_action": "use"
+    },
+    {
+      "id": "F03",
+      "statement": "With feedback visible the table-turning ceased in the sessions he tested",
+      "evidence_type": "historical-supported",
+      "source_ids": [
+        "FARADAY1853"
+      ],
+      "editorial_action": "use-with-conditions"
+    },
+    {
+      "id": "F04",
+      "statement": "Faraday demonstrated why all spiritualist events have a single cause",
+      "evidence_type": "overgeneralization",
+      "source_ids": [
+        "FARADAY1853"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "F05",
+      "statement": "Carpenter's work on involuntary muscle movement preceded Faraday's inquiry",
+      "evidence_type": "historical-supported",
+      "source_ids": [
+        "HIST2024"
+      ],
+      "editorial_action": "use"
+    },
+    {
+      "id": "F06",
+      "statement": "Gauchou et al found 50% voluntary guessing and 65% ideomotor accuracy in specified conditions",
+      "evidence_type": "peer-reviewed-specific",
+      "source_ids": [
+        "GAUCHOU2012"
+      ],
+      "editorial_action": "use-with-study-limit"
+    },
+    {
+      "id": "F07",
+      "statement": "Ouija boards access secret knowledge or consistently outperform conscious reports",
+      "evidence_type": "unsupported-inference",
+      "source_ids": [
+        "GAUCHOU2012"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "F08",
+      "statement": "The Andersen et al study tracked eye movements in paired Ouija conditions",
+      "evidence_type": "peer-reviewed-specific",
+      "source_ids": [
+        "ANDERSEN2018"
+      ],
+      "editorial_action": "use"
+    },
+    {
+      "id": "F09",
+      "statement": "Prediction of letters increased as a meaningful sequence formed",
+      "evidence_type": "peer-reviewed-specific",
+      "source_ids": [
+        "ANDERSEN2018"
+      ],
+      "editorial_action": "use-with-study-limit"
+    },
+    {
+      "id": "F10",
+      "statement": "The 2018 paper conclusively proves that all Ouija experiences are intentional trickery",
+      "evidence_type": "unsupported-inference",
+      "source_ids": [
+        "ANDERSEN2018"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "F11",
+      "statement": "Puységur archived witness statements, recorded predictions and failures",
+      "evidence_type": "historical-archive",
+      "source_ids": [
+        "PUYSEGUR"
+      ],
+      "editorial_action": "use"
+    },
+    {
+      "id": "F12",
+      "statement": "Puységur records verify animal magnetism as a curative force",
+      "evidence_type": "unsupported",
+      "source_ids": [
+        "PUYSEGUR"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "F13",
+      "statement": "A historical witness record is not a modern diagnosis of its subject",
+      "evidence_type": "editorial-boundary",
+      "source_ids": [
+        "PUYSEGUR",
+        "FARADAY1853"
+      ],
+      "editorial_action": "use"
+    },
+    {
+      "id": "P01",
+      "statement": "Inspire3 lists Zen12 among products",
+      "evidence_type": "seller-description",
+      "source_ids": [
+        "INSPIRE3"
+      ],
+      "editorial_action": "attribute"
+    },
+    {
+      "id": "P02",
+      "statement": "Zen12 describes 12-minute listening sessions",
+      "evidence_type": "seller-description",
+      "source_ids": [
+        "ZEN12ABOUT"
+      ],
+      "editorial_action": "attribute"
+    },
+    {
+      "id": "P03",
+      "statement": "Zen12 describes 12 levels and 4 listening styles",
+      "evidence_type": "seller-description",
+      "source_ids": [
+        "ZEN12ABOUT"
+      ],
+      "editorial_action": "attribute"
+    },
+    {
+      "id": "P04",
+      "statement": "Ordinary catalog separates Beginner Premium Advanced packages",
+      "evidence_type": "seller-description",
+      "source_ids": [
+        "ZEN12CAT"
+      ],
+      "editorial_action": "attribute"
+    },
+    {
+      "id": "P05",
+      "statement": "Separate promotional sales funnel describes 48 MP3s",
+      "evidence_type": "seller-description",
+      "source_ids": [
+        "ZEN12SECRET"
+      ],
+      "editorial_action": "attribute-distinct-offer"
+    },
+    {
+      "id": "P06",
+      "statement": "Product guarantees one hour of meditation benefits after twelve minutes",
+      "evidence_type": "unsubstantiated-product-efficacy",
+      "source_ids": [
+        "ZEN12ABOUT",
+        "ZEN12CAT"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "P07",
+      "statement": "A product-specific clinical trial in these references establishes Zen12 clinical benefit",
+      "evidence_type": "no-evidence-identified",
+      "source_ids": [
+        "ZEN12ABOUT",
+        "FTCHEALTH"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "P08",
+      "statement": "Zen12 guarantee applies to a future FV-referred checkout on specific terms",
+      "evidence_type": "partner-unverified",
+      "source_ids": [
+        "ZEN12CAT",
+        "ZEN12SECRET"
+      ],
+      "editorial_action": "hold"
+    },
+    {
+      "id": "P09",
+      "statement": "Final Vestige is approved to promote Zen12 on WEB EMAIL SOCIAL",
+      "evidence_type": "partner-unverified",
+      "source_ids": [
+        "AFFPORTAL"
+      ],
+      "editorial_action": "hold"
+    },
+    {
+      "id": "P10",
+      "statement": "FV has issued commission-bearing tracking URL and merchant settlement feed",
+      "evidence_type": "partner-unverified",
+      "source_ids": [
+        "AFFPORTAL"
+      ],
+      "editorial_action": "hold"
+    },
+    {
+      "id": "P11",
+      "statement": "Brainwave Shots Focus Shot describes 15-minute and 30-minute formats",
+      "evidence_type": "seller-description",
+      "source_ids": [
+        "BRAINFOCUS"
+      ],
+      "editorial_action": "attribute-only"
+    },
+    {
+      "id": "P12",
+      "statement": "Focus Shot guarantees 4+ hours of focus after one listen",
+      "evidence_type": "unsubstantiated-product-efficacy",
+      "source_ids": [
+        "BRAINFOCUS"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "P13",
+      "statement": "Hypnosis Live Total Focus describes a 33-minute MP3",
+      "evidence_type": "seller-description",
+      "source_ids": [
+        "HYPNOFOCUS"
+      ],
+      "editorial_action": "attribute-only"
+    },
+    {
+      "id": "P14",
+      "statement": "Total Focus delivers 100 percent sharp concentration on demand",
+      "evidence_type": "unsubstantiated-product-efficacy",
+      "source_ids": [
+        "HYPNOFOCUS"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "C01",
+      "statement": "FTC expects clear and conspicuous proximity for affiliate disclosures",
+      "evidence_type": "government-guidance",
+      "source_ids": [
+        "FTCEND"
+      ],
+      "editorial_action": "implement-if-approved"
+    },
+    {
+      "id": "C02",
+      "statement": "Health-related efficacy must have competent and reliable scientific substantiation",
+      "evidence_type": "government-guidance",
+      "source_ids": [
+        "FTCHEALTH"
+      ],
+      "editorial_action": "apply"
+    },
+    {
+      "id": "C03",
+      "statement": "The existing Focus Fieldbook is a free 52-page resource",
+      "evidence_type": "site-published",
+      "source_ids": [
+        "FOCUS"
+      ],
+      "editorial_action": "use-existing-single-path"
+    },
+    {
+      "id": "C04",
+      "statement": "Existing Dispatch and Focus welcome comprise one signup path",
+      "evidence_type": "site-published-and-issue",
+      "source_ids": [
+        "FOCUS",
+        "DISPATCH"
+      ],
+      "editorial_action": "preserve-no-duplication"
+    },
+    {
+      "id": "C05",
+      "statement": "FV-owned paid Mind product SKU plus checkout is authenticated",
+      "evidence_type": "not-authenticated",
+      "source_ids": [
+        "FOCUS"
+      ],
+      "editorial_action": "hold-no-sellable-owned-product"
+    },
+    {
+      "id": "C06",
+      "statement": "Video/post asset IDs for Grok Mind videos are authenticated",
+      "evidence_type": "missing-provider-evidence",
+      "source_ids": [
+        "CHANGE",
+        "PUYSEGUR"
+      ],
+      "editorial_action": "hold"
+    },
+    {
+      "id": "C07",
+      "statement": "affiliate_click is a merchant-confirmed paid commission",
+      "evidence_type": "false-identity",
+      "source_ids": [
+        "FTCEND"
+      ],
+      "editorial_action": "never"
+    },
+    {
+      "id": "C08",
+      "statement": "Net per 1000 qualified sessions is measurable without paid settlement and session denominator",
+      "evidence_type": "false-metric",
+      "source_ids": [],
+      "editorial_action": "never"
+    },
+    {
+      "id": "C09",
+      "statement": "An uninvolved reader may use core history without buying",
+      "evidence_type": "editorial-requirement",
+      "source_ids": [
+        "STANDARDS"
+      ],
+      "editorial_action": "preserve"
+    },
+    {
+      "id": "C10",
+      "statement": "The prospective disclosure alone authorizes a purchase link",
+      "evidence_type": "false-authorization",
+      "source_ids": [
+        "FTCEND",
+        "AFFPORTAL"
+      ],
+      "editorial_action": "never"
+    },
+    {
+      "id": "C11",
+      "statement": "Displayed seller catalog prices prove the referred checkout price",
+      "evidence_type": "unsupported-cross-checkout",
+      "source_ids": [
+        "ZEN12CAT",
+        "ZEN12SECRET"
+      ],
+      "editorial_action": "never"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "requirement": "Named Final Vestige publisher approval",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G02",
+      "requirement": "Approved legal publisher entity and site domain",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G03",
+      "requirement": "Exact merchant program acceptance date",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G04",
+      "requirement": "Approved Zen12 SKU / package",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G05",
+      "requirement": "Permitted WEB pre-sell placements",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G06",
+      "requirement": "Permitted social acquisition channels",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G07",
+      "requirement": "Permitted EMAIL channel independent of web",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G08",
+      "requirement": "Official approved creatives/swipe reviewed or confirmed absent",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G09",
+      "requirement": "Unique issued commission-bearing earning URL",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G10",
+      "requirement": "Tracking-link permitted query-parameter rules",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G11",
+      "requirement": "Approval of redirects/link structure",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G12",
+      "requirement": "Actual referred checkout price and currency",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G13",
+      "requirement": "Actual referred checkout contents/bonuses",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G14",
+      "requirement": "Live checkout works on mobile",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G15",
+      "requirement": "Actual customer refund policy for referred cart",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G16",
+      "requirement": "Any guarantee restrictions/exclusions",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G17",
+      "requirement": "Payment/commission rate and attribution period",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G18",
+      "requirement": "Commission settlement reporting access",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G19",
+      "requirement": "Reconciled unique affiliate sale record",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G20",
+      "requirement": "Refund/chargeback reporting",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G21",
+      "requirement": "FV rights-cleared payable Mind owned SKU alternative",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G22",
+      "requirement": "FV owned SKU delivery and license rights",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G23",
+      "requirement": "Independent product-specific efficacy substantiation for benefits in copy",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G24",
+      "requirement": "Written founder commercial release signoff",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G25",
+      "requirement": "Site QA WCAG real-browser validation",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G26",
+      "requirement": "Site QA performance/no-JS and WordPress sanitizer validation",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G27",
+      "requirement": "Existing Jetpack signup/delivery independently verified",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    },
+    {
+      "id": "G28",
+      "requirement": "Real Grok asset IDs and qualified human session attribution",
+      "status": "HOLD",
+      "proof": "Not authenticated in this run; no release inference"
+    }
+  ],
+  "decision": "No eligible paid offer authenticated; free Fieldbook only. Keep all paid CTA controls disabled. Do not interpret source claims, consumer mail, or public affiliate portal as publisher approval."
+}
