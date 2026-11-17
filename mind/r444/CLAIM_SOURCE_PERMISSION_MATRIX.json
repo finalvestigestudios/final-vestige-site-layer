@@ -1,0 +1,430 @@
+{
+  "version": "R444",
+  "verified_at": "2026-11-17",
+  "commercial_state": "HARD_HOLD",
+  "claim_count": 31,
+  "sources": {
+    "study_2004": "https://researchers.mq.edu.au/en/publications/zoning-out-while-reading-evidence-for-dissociations-between-exper/",
+    "review_2023": "https://doi.org/10.1016/j.concog.2022.103463",
+    "study_2017": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5572547/",
+    "review_2011": "https://pubmed.ncbi.nlm.nih.gov/21684189/",
+    "review_2015": "https://doi.org/10.1146/annurev-psych-010814-015331",
+    "study_2013": "https://pubmed.ncbi.nlm.nih.gov/23538911/",
+    "zen12_overview": "https://zen12.com/about",
+    "zen12_promo": "https://zen12.com/secret/",
+    "inspire3_official": "https://inspire3.com/",
+    "affiliate_portal": "https://affiliates.inspire3.com/",
+    "hypnosis_focus": "https://hypnosislive.com/mental-skills/total-focus",
+    "brainwave_focus": "https://brainwaveshots.com/focus-shot",
+    "ftc_endorsement": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "live_focus": "https://finalvestige.com/focus/",
+    "live_puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Self-caught mind wandering distinct from probe-caught",
+      "status": "SUPPORTED WITH METHODOLOGICAL LIMITS",
+      "source_urls": [
+        "https://researchers.mq.edu.au/en/publications/zoning-out-while-reading-evidence-for-dissociations-between-exper/",
+        "https://doi.org/10.1016/j.concog.2022.103463"
+      ]
+    },
+    {
+      "id": "C02",
+      "claim": "Meta-awareness may lag task-unrelated thought",
+      "status": "SUPPORTED IN STUDIED CONTEXT",
+      "source_urls": [
+        "https://researchers.mq.edu.au/en/publications/zoning-out-while-reading-evidence-for-dissociations-between-exper/",
+        "https://pubmed.ncbi.nlm.nih.gov/21684189/"
+      ]
+    },
+    {
+      "id": "C03",
+      "claim": "Mind wandering is not always deliberately chosen",
+      "status": "SUPPORTED IN STUDIED CONTEXT",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5572547/"
+      ]
+    },
+    {
+      "id": "C04",
+      "claim": "Internally directed thought can compete with external perception",
+      "status": "SUPPORTED WITH LIMITS",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/21684189/"
+      ]
+    },
+    {
+      "id": "C05",
+      "claim": "Off-task thought has potential planning and creativity associations",
+      "status": "QUALIFIED REVIEW, NO GUARANTEED BENEFIT",
+      "source_urls": [
+        "https://doi.org/10.1146/annurev-psych-010814-015331"
+      ]
+    },
+    {
+      "id": "C06",
+      "claim": "Specific 2-week mindfulness class improved some laboratory tasks",
+      "status": "SUPPORTED ONLY FOR STUDIED PROTOCOL",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/23538911/"
+      ]
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 replicates study C06",
+      "status": "NOT SUBSTANTIATED",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/23538911/",
+        "https://zen12.com/about"
+      ]
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 12 minutes produces an hour of meditation effects",
+      "status": "SELLER CLAIM; NOT SUBSTANTIATED",
+      "source_urls": [
+        "https://zen12.com/about"
+      ]
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 advertises twelve-minute sessions",
+      "status": "SELLER DESCRIPTION ONLY",
+      "source_urls": [
+        "https://zen12.com/about"
+      ]
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 advertises twelve levels",
+      "status": "SELLER DESCRIPTION ONLY",
+      "source_urls": [
+        "https://zen12.com/about"
+      ]
+    },
+    {
+      "id": "C11",
+      "claim": "Distinct promotional Zen12 page advertises 48 MP3 full package",
+      "status": "SELLER DESCRIPTION; PACKAGE/REFERRAL UNVERIFIED",
+      "source_urls": [
+        "https://zen12.com/secret/"
+      ]
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 public coupon/price/countdown applies to FV referred checkout",
+      "status": "NOT VERIFIED; PRICE NOT REPRODUCED",
+      "source_urls": [
+        "https://zen12.com/secret/"
+      ]
+    },
+    {
+      "id": "C13",
+      "claim": "Total Focus is described as 33-minute audio",
+      "status": "SELLER DESCRIPTION ONLY",
+      "source_urls": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ]
+    },
+    {
+      "id": "C14",
+      "claim": "Focus Shot describes 15-/30-minute audio offerings",
+      "status": "SELLER DESCRIPTION ONLY",
+      "source_urls": [
+        "https://brainwaveshots.com/focus-shot"
+      ]
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12, Total Focus, Focus Shot objectively improve concentration",
+      "status": "NOT ESTABLISHED FOR NAMED PRODUCTS",
+      "source_urls": [
+        "https://zen12.com/about",
+        "https://hypnosislive.com/mental-skills/total-focus",
+        "https://brainwaveshots.com/focus-shot"
+      ]
+    },
+    {
+      "id": "C16",
+      "claim": "Public Inspire3 affiliate portal offers applications and special links",
+      "status": "VERIFIED GENERAL PROGRAM ONLY",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ]
+    },
+    {
+      "id": "C17",
+      "claim": "Final Vestige has been approved as named publisher",
+      "status": "UNVERIFIED",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ]
+    },
+    {
+      "id": "C18",
+      "claim": "Final Vestige allowed to market named Zen12 SKU by TikTok/YouTube",
+      "status": "UNVERIFIED",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ]
+    },
+    {
+      "id": "C19",
+      "claim": "Final Vestige allowed to market named SKU in Dispatch email",
+      "status": "UNVERIFIED",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ]
+    },
+    {
+      "id": "C20",
+      "claim": "Final Vestige issued an attributable and approved earning URL",
+      "status": "UNVERIFIED",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ]
+    },
+    {
+      "id": "C21",
+      "claim": "Final Vestige affiliate settlement/commission rate",
+      "status": "UNVERIFIED; NO ESTIMATE",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ]
+    },
+    {
+      "id": "C22",
+      "claim": "Exact referred Zen12 SKU/price/refund is authenticated",
+      "status": "UNVERIFIED; DO NOT QUOTE PROMO AS OFFER",
+      "source_urls": [
+        "https://zen12.com/about",
+        "https://zen12.com/secret/"
+      ]
+    },
+    {
+      "id": "C23",
+      "claim": "An owned payable FV Mind digital product exists right now",
+      "status": "UNVERIFIED; NO PAID SKU IDENTIFIED",
+      "source_urls": [
+        "https://finalvestige.com/focus/"
+      ]
+    },
+    {
+      "id": "C24",
+      "claim": "Published Focus Fieldbook is free existing route",
+      "status": "VERIFIED LIVE ROUTE; JETPACK DELIVERY UNTESTED",
+      "source_urls": [
+        "https://finalvestige.com/focus/"
+      ]
+    },
+    {
+      "id": "C25",
+      "claim": "Published Puységur historical page is live",
+      "status": "VERIFIED LIVE ROUTE",
+      "source_urls": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ]
+    },
+    {
+      "id": "C26",
+      "claim": "FTC requires clear disclosure of material earnings relationships",
+      "status": "FTC STANDARD VERIFIED",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ]
+    },
+    {
+      "id": "C27",
+      "claim": "FTC health benefits must be truthful and scientifically substantiated",
+      "status": "FTC STANDARD VERIFIED",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ]
+    },
+    {
+      "id": "C28",
+      "claim": "Commission/paid sale proven by affiliate_click event",
+      "status": "FALSE; CLICKS NOT SALES",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ]
+    },
+    {
+      "id": "C29",
+      "claim": "42-second film is encoded/playable",
+      "status": "FALSE; SOURCE-ONLY POSTER/STORYBOARD/VTT",
+      "source_urls": []
+    },
+    {
+      "id": "C30",
+      "claim": "A/B has shown higher paid conversion",
+      "status": "UNTESTED; NO TRAFFIC/SALES EXPERIMENT",
+      "source_urls": []
+    },
+    {
+      "id": "C31",
+      "claim": "Net revenue per 1,000 qualified sessions can be calculated now",
+      "status": "NOT COMPUTABLE",
+      "source_urls": []
+    }
+  ],
+  "affiliate_activation": {
+    "named_partner_acceptance": false,
+    "approved_products": false,
+    "approved_channels": false,
+    "issued_earning_link": false,
+    "verified_referred_checkout": false,
+    "independent_settlement": false
+  },
+  "release_gates": [
+    {
+      "gate": "G01",
+      "decision": "HOLD",
+      "reason": "named partner/SKU/channel/link/checkout/settlement"
+    },
+    {
+      "gate": "G02",
+      "decision": "HOLD",
+      "reason": "named partner/SKU/channel/link/checkout/settlement"
+    },
+    {
+      "gate": "G03",
+      "decision": "HOLD",
+      "reason": "named partner/SKU/channel/link/checkout/settlement"
+    },
+    {
+      "gate": "G04",
+      "decision": "HOLD",
+      "reason": "named partner/SKU/channel/link/checkout/settlement"
+    },
+    {
+      "gate": "G05",
+      "decision": "HOLD",
+      "reason": "named partner/SKU/channel/link/checkout/settlement"
+    },
+    {
+      "gate": "G06",
+      "decision": "HOLD",
+      "reason": "named partner/SKU/channel/link/checkout/settlement"
+    },
+    {
+      "gate": "G07",
+      "decision": "HOLD",
+      "reason": "FTC claims/disclosure and product comparison authorization"
+    },
+    {
+      "gate": "G08",
+      "decision": "HOLD",
+      "reason": "FTC claims/disclosure and product comparison authorization"
+    },
+    {
+      "gate": "G09",
+      "decision": "HOLD",
+      "reason": "FTC claims/disclosure and product comparison authorization"
+    },
+    {
+      "gate": "G10",
+      "decision": "HOLD",
+      "reason": "FTC claims/disclosure and product comparison authorization"
+    },
+    {
+      "gate": "G11",
+      "decision": "HOLD",
+      "reason": "FTC claims/disclosure and product comparison authorization"
+    },
+    {
+      "gate": "G12",
+      "decision": "HOLD",
+      "reason": "FTC claims/disclosure and product comparison authorization"
+    },
+    {
+      "gate": "G13",
+      "decision": "HOLD",
+      "reason": "browser accessibility and no-JS performance"
+    },
+    {
+      "gate": "G14",
+      "decision": "HOLD",
+      "reason": "browser accessibility and no-JS performance"
+    },
+    {
+      "gate": "G15",
+      "decision": "HOLD",
+      "reason": "browser accessibility and no-JS performance"
+    },
+    {
+      "gate": "G16",
+      "decision": "HOLD",
+      "reason": "browser accessibility and no-JS performance"
+    },
+    {
+      "gate": "G17",
+      "decision": "HOLD",
+      "reason": "browser accessibility and no-JS performance"
+    },
+    {
+      "gate": "G18",
+      "decision": "HOLD",
+      "reason": "browser accessibility and no-JS performance"
+    },
+    {
+      "gate": "G19",
+      "decision": "HOLD",
+      "reason": "first-party consent and verified creator assets"
+    },
+    {
+      "gate": "G20",
+      "decision": "HOLD",
+      "reason": "first-party consent and verified creator assets"
+    },
+    {
+      "gate": "G21",
+      "decision": "HOLD",
+      "reason": "first-party consent and verified creator assets"
+    },
+    {
+      "gate": "G22",
+      "decision": "HOLD",
+      "reason": "first-party consent and verified creator assets"
+    },
+    {
+      "gate": "G23",
+      "decision": "HOLD",
+      "reason": "first-party consent and verified creator assets"
+    },
+    {
+      "gate": "G24",
+      "decision": "HOLD",
+      "reason": "real purchase, refunds, revenue and founder release"
+    },
+    {
+      "gate": "G25",
+      "decision": "HOLD",
+      "reason": "real purchase, refunds, revenue and founder release"
+    },
+    {
+      "gate": "G26",
+      "decision": "HOLD",
+      "reason": "real purchase, refunds, revenue and founder release"
+    },
+    {
+      "gate": "G27",
+      "decision": "HOLD",
+      "reason": "real purchase, refunds, revenue and founder release"
+    },
+    {
+      "gate": "G28",
+      "decision": "HOLD",
+      "reason": "real purchase, refunds, revenue and founder release"
+    }
+  ],
+  "outbound_affiliate_link_count": 0,
+  "customer_testimonials_used": 0,
+  "verified_revenue_per_1000": "NOT_COMPUTABLE",
+  "verified_paid_orders": null,
+  "qualified_human_sessions": null,
+  "scope": "draft source artifacts only; no CMS, email, tracking, live affiliate or social changes"
+}
