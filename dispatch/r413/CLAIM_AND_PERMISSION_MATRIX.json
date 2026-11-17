@@ -1,0 +1,82 @@
+{
+  "version": "R413-1",
+  "as_of": "2026-11-17T02:38:35Z",
+  "issue": 3,
+  "candidate_adopted": false,
+  "master_pr": 175,
+  "previous_dispatch_pr": 2811,
+  "allocation": "4 editorial / 2 commercial",
+  "word_count": 475,
+  "subject": "Twelve minutes cannot promise an hour",
+  "preheader": "An 1890 attention chapter, a modern evidence review, and five checks before paying for audio.",
+  "primary_cta": {
+    "label": "READ THE SOURCE-CHECKED ZEN12 BUYER GUIDE — NOT LIVE / NO LINK",
+    "active": false,
+    "approved_guide": false
+  },
+  "sales_claims_verified": false,
+  "official_sources": [
+    {
+      "name": "William James, The Principles of Psychology (1890), chapter XI",
+      "url": "https://psychclassics.yorku.ca/James/Principles/prin11.htm"
+    },
+    {
+      "name": "Goyal et al., JAMA Internal Medicine (2014), 47 trials",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24395196/"
+    },
+    {
+      "name": "NIH NCCIH meditation evidence and safety review",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety"
+    },
+    {
+      "name": "Official Zen12 product description — SELLER CLAIMS",
+      "url": "https://zen12.com/about"
+    },
+    {
+      "name": "Official Zen12 promotional page — VARIABLE SELLER OFFER",
+      "url": "https://zen12.com/secret/"
+    }
+  ],
+  "evidence": [
+    {
+      "claim": "James discusses attention as selection",
+      "source": "https://psychclassics.yorku.ca/James/Principles/prin11.htm",
+      "scope": "historic textbook, no product test"
+    },
+    {
+      "claim": "47 randomized trials/3515 participants with variable outcomes",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/24395196/",
+      "scope": "meditation research, not Zen12"
+    },
+    {
+      "claim": "research heterogeneity, safety caveats",
+      "source": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "scope": "general meditation, not product-specific"
+    },
+    {
+      "claim": "12 levels and 4 sound variants, 12-minute equivalence",
+      "source": "https://zen12.com/about",
+      "scope": "SELLER CLAIM ONLY"
+    },
+    {
+      "claim": "coupon countdown and offer price",
+      "source": "https://zen12.com/secret/",
+      "scope": "VOLATILE SELLER-CONTROLLED; NEVER SHOW TO READER AS VERIFIED OFFER"
+    }
+  ],
+  "missing_authorization": [
+    "named FV partner acceptance",
+    "SKU-specific EMAIL permission",
+    "issued approved earning link",
+    "current referred checkout, refund and fees",
+    "approved live pre-sell guide",
+    "provider-confirmed opted-in audience",
+    "actual Fieldbook welcome receipt",
+    "valid FV physical mailing address",
+    "operational Jetpack unsubscribe",
+    "genuine unsent native email Preview",
+    "founder final campaign approval"
+  ],
+  "final_state": "HOLD_UNSENT",
+  "no_sends": true
+}
