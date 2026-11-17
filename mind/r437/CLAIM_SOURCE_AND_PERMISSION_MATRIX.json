@@ -1,0 +1,572 @@
+{
+  "schema": "fv-mind-claim-and-authorization-v1",
+  "run": "R437",
+  "date_checked": "2026-11-16 PT",
+  "branch": "mind-r437-thatcher-illusion-offer-proof-20261116",
+  "release_status": "UNPUBLISHED_COMMERCIAL_HARD_HOLD",
+  "source_urls": {
+    "thompson1980": "https://doi.org/10.1068/p090483",
+    "wong2010": "https://pubmed.ncbi.nlm.nih.gov/20942363/",
+    "psalta2014": "https://doi.org/10.1177/0956797613501521",
+    "lobmaier2007": "https://doi.org/10.1068/p5508",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "existing_change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "focus": "https://finalvestige.com/focus/",
+    "dispatch": "https://finalvestige.com/dispatch/",
+    "fvstandards": "https://finalvestige.com/editorial-standards/",
+    "inspire": "https://inspire3.com/",
+    "zen_about": "https://zen12.com/about",
+    "zen_course": "https://zen12.com/",
+    "zen_exact": "https://zen12.com/secret/",
+    "hypnosis": "https://hypnosislive.com/mental-skills/total-focus",
+    "focus_shot": "https://brainwaveshots.com/focus-shot",
+    "ftc_disclose": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_claims": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "inspire_aff_public": "https://affiliates.inspire3.com/"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Thatcher effect 1980 published",
+      "kind": "experiment-history",
+      "status": "supported-by-bibliography",
+      "support_or_limit": "Thompson's 1980 report in Perception 9(4):483–484",
+      "source_keys": [
+        "thompson1980"
+      ],
+      "editorial_action": "cite as original historical report, original photos rights restricted"
+    },
+    {
+      "id": "C02",
+      "claim": "Local eye/mouth inversion more obvious when whole face upright",
+      "kind": "science",
+      "status": "supported-with-conditions",
+      "support_or_limit": "Task/stimulus/orientation dependent; avoid universal language",
+      "source_keys": [
+        "thompson1980",
+        "psalta2014"
+      ],
+      "editorial_action": "permissible carefully qualified"
+    },
+    {
+      "id": "C03",
+      "claim": "Thatcher effect proves humans see nothing upside down",
+      "kind": "science",
+      "status": "unsupported",
+      "support_or_limit": "Overstated interpretation",
+      "source_keys": [
+        "thompson1980"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "C04",
+      "claim": "Thatcher effect unique to face processing",
+      "kind": "science",
+      "status": "contested",
+      "support_or_limit": "2010 tests found related effects with non-face objects",
+      "source_keys": [
+        "wong2010"
+      ],
+      "editorial_action": "state competing explanations"
+    },
+    {
+      "id": "C05",
+      "claim": "2010 non-face replication categories",
+      "kind": "science",
+      "status": "supported-abstract",
+      "support_or_limit": "Cars, buildings, bicycles, letter strings; face exclusivity not supported by authors",
+      "source_keys": [
+        "wong2010"
+      ],
+      "editorial_action": "usable with attribution"
+    },
+    {
+      "id": "C06",
+      "claim": "2014 fMRI superior temporal sulcus orientation dependence",
+      "kind": "science",
+      "status": "supported-specific-design",
+      "support_or_limit": "fMRI adaptation study, not whole-brain causal proof",
+      "source_keys": [
+        "psalta2014"
+      ],
+      "editorial_action": "usable with boundaries"
+    },
+    {
+      "id": "C07",
+      "claim": "Body orientation may matter to inversion effect",
+      "kind": "science",
+      "status": "research-question",
+      "support_or_limit": "2007 human-turntable orientation study; do not imply singular definitive mechanism",
+      "source_keys": [
+        "lobmaier2007"
+      ],
+      "editorial_action": "use as methods example"
+    },
+    {
+      "id": "C08",
+      "claim": "Historical magnetism files include record of failures/consent issues",
+      "kind": "source-inventory",
+      "status": "supported",
+      "support_or_limit": "Public Puységur archive documents failures, consent conflict and witness limitations",
+      "source_keys": [
+        "puysegur"
+      ],
+      "editorial_action": "link without adopting magnetic mechanism"
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 produced effects seen in Thatcher experiments",
+      "kind": "product-efficacy",
+      "status": "not-tested",
+      "support_or_limit": "No product-specific trial in examined perceptual papers",
+      "source_keys": [
+        "thompson1980",
+        "wong2010",
+        "zen_about"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 session length",
+      "kind": "seller-feature",
+      "status": "seller-says",
+      "support_or_limit": "Official product description states 12-minute sessions",
+      "source_keys": [
+        "zen_about"
+      ],
+      "editorial_action": "attribute seller"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 course levels",
+      "kind": "seller-feature",
+      "status": "seller-says",
+      "support_or_limit": "Official page states 12 levels",
+      "source_keys": [
+        "zen_about"
+      ],
+      "editorial_action": "attribute seller"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 four styles",
+      "kind": "seller-feature",
+      "status": "seller-says",
+      "support_or_limit": "Guided, music, white noise, nature",
+      "source_keys": [
+        "zen_about"
+      ],
+      "editorial_action": "attribute seller"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 complete course 48 MP3s",
+      "kind": "seller-feature",
+      "status": "seller-says",
+      "support_or_limit": "Exact full-course order page states 48 MP3s",
+      "source_keys": [
+        "zen_exact"
+      ],
+      "editorial_action": "attribute to full-course SKU only"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 12min equals 1h of meditation",
+      "kind": "seller-efficacy",
+      "status": "unsubstantiated-for-SKU",
+      "support_or_limit": "Claim on seller page; independent SKU-specific equivalence trial not verified",
+      "source_keys": [
+        "zen_about",
+        "zen_course",
+        "ftc_claims"
+      ],
+      "editorial_action": "exclude as fact"
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 changes brainwaves automatically to deep meditation",
+      "kind": "seller-mechanism",
+      "status": "unsubstantiated-for-SKU",
+      "support_or_limit": "Seller mechanism claim not independently verified for product",
+      "source_keys": [
+        "zen_about",
+        "ftc_claims"
+      ],
+      "editorial_action": "exclude as outcome"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 guarantees immediate relief/health benefits",
+      "kind": "seller-health",
+      "status": "unsubstantiated-for-SKU",
+      "support_or_limit": "Seller statements are not evidence of particular outcomes",
+      "source_keys": [
+        "zen_course",
+        "ftc_claims"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 seller page says one-year return guarantee",
+      "kind": "seller-policy",
+      "status": "seller-says-unverified-checkout",
+      "support_or_limit": "Marketing text says one year; actual referred checkout and policy not checked",
+      "source_keys": [
+        "zen_course"
+      ],
+      "editorial_action": "ask buyer to verify policy; no unequivocal guarantee"
+    },
+    {
+      "id": "C18",
+      "claim": "Zen12 exact price and coupon",
+      "kind": "commerce",
+      "status": "dynamic-not-authenticated",
+      "support_or_limit": "Public homepage and /secret/ have different price paths and promotional framing",
+      "source_keys": [
+        "zen_course",
+        "zen_exact"
+      ],
+      "editorial_action": "omit price, discount and urgency"
+    },
+    {
+      "id": "C19",
+      "claim": "Zen12 approved affiliate material and swipe rights",
+      "kind": "affiliate-permission",
+      "status": "not-verified",
+      "support_or_limit": "Public materials are not account-level permission",
+      "source_keys": [
+        "inspire_aff_public"
+      ],
+      "editorial_action": "do not copy; obtain partner grant"
+    },
+    {
+      "id": "C20",
+      "claim": "Hypnosis Live Total Focus 33 min/47 MB",
+      "kind": "seller-feature",
+      "status": "seller-says",
+      "support_or_limit": "Product SKU page lists 33 minutes / 47 MB",
+      "source_keys": [
+        "hypnosis"
+      ],
+      "editorial_action": "attribute seller"
+    },
+    {
+      "id": "C21",
+      "claim": "Hypnosis Live Total Focus fixes focus and productivity",
+      "kind": "seller-efficacy",
+      "status": "unsubstantiated-for-SKU",
+      "support_or_limit": "Seller's broad concentration and NLP claims do not establish outcomes",
+      "source_keys": [
+        "hypnosis",
+        "ftc_claims"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "C22",
+      "claim": "Hypnosis Live 14-day refund promise",
+      "kind": "seller-policy",
+      "status": "seller-says-unverified-checkout",
+      "support_or_limit": "Product page links full policy; exact referred terms not verified",
+      "source_keys": [
+        "hypnosis"
+      ],
+      "editorial_action": "verify terms at checkout"
+    },
+    {
+      "id": "C23",
+      "claim": "Brainwave Shots Focus Shot formats",
+      "kind": "seller-feature",
+      "status": "seller-says",
+      "support_or_limit": "15/30 min plus brainwave-only variants",
+      "source_keys": [
+        "focus_shot"
+      ],
+      "editorial_action": "attribute seller"
+    },
+    {
+      "id": "C24",
+      "claim": "Focus Shot results last four hours to all day",
+      "kind": "seller-efficacy",
+      "status": "unsubstantiated-for-SKU",
+      "support_or_limit": "Seller outcome not independently established for exact product",
+      "source_keys": [
+        "focus_shot",
+        "ftc_claims"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "C25",
+      "claim": "Focus Shot 1-year guarantee",
+      "kind": "seller-policy",
+      "status": "seller-says-unverified-checkout",
+      "support_or_limit": "Promotional statement; governing policy not verified",
+      "source_keys": [
+        "focus_shot"
+      ],
+      "editorial_action": "verify checkout policy"
+    },
+    {
+      "id": "C26",
+      "claim": "Inspire3 public affiliate sign-up confers rights to FV",
+      "kind": "affiliate-permission",
+      "status": "not-verified",
+      "support_or_limit": "Account-specific acceptance/terms/URLs missing",
+      "source_keys": [
+        "inspire",
+        "inspire_aff_public"
+      ],
+      "editorial_action": "hard hold"
+    },
+    {
+      "id": "C27",
+      "claim": "FV-owned Mind paid product is active and rights-cleared",
+      "kind": "owned-commerce",
+      "status": "not-authenticated",
+      "support_or_limit": "Only free Fieldbook confirmed publicly as Mind offer",
+      "source_keys": [
+        "focus",
+        "dispatch"
+      ],
+      "editorial_action": "no paid Mind offer without actual SKU/delivery/returns"
+    },
+    {
+      "id": "C28",
+      "claim": "Focus Fieldbook is free 52-page with existing Dispatch",
+      "kind": "owned-lead",
+      "status": "supported-public",
+      "support_or_limit": "Published route explicitly says free with email signup",
+      "source_keys": [
+        "focus",
+        "dispatch"
+      ],
+      "editorial_action": "do not claim paid purchase or confirmed signup without provider proof"
+    },
+    {
+      "id": "C29",
+      "claim": "Affiliate click equals verified paid sale",
+      "kind": "measurement",
+      "status": "false",
+      "support_or_limit": "Only merchant statement reconciled to order/refund/fees qualifies sale",
+      "source_keys": [
+        "ftc_disclose"
+      ],
+      "editorial_action": "never count click as revenue"
+    },
+    {
+      "id": "C30",
+      "claim": "Near-link commission disclosure",
+      "kind": "regulatory",
+      "status": "required",
+      "support_or_limit": "Clear connection disclosure beside earning recommendation",
+      "source_keys": [
+        "ftc_disclose"
+      ],
+      "editorial_action": "test adjacency before activation"
+    },
+    {
+      "id": "C31",
+      "claim": "Mental/health claims require adequate prior substantiation",
+      "kind": "regulatory",
+      "status": "required",
+      "support_or_limit": "FTC competent reliable scientific evidence standard",
+      "source_keys": [
+        "ftc_claims"
+      ],
+      "editorial_action": "exclude unsubstantiated health promises"
+    },
+    {
+      "id": "C32",
+      "claim": "A/B video outperforms text-only",
+      "kind": "experiment",
+      "status": "untested-hypothesis",
+      "support_or_limit": "No randomized assignment or checkout observations",
+      "source_keys": [
+        "ftc_disclose"
+      ],
+      "editorial_action": "hypothesis only"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "01",
+      "gate": "named_publisher_acceptance",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "02",
+      "gate": "approved_zen12_sku",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "03",
+      "gate": "approved_web_channel",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "04",
+      "gate": "approved_email_channel_if_used",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "05",
+      "gate": "approved_social_channel",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "06",
+      "gate": "partner_tracking_terms",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "07",
+      "gate": "issued_earning_url",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "08",
+      "gate": "attribution_window_terms",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "09",
+      "gate": "prohibited_traffic_rules",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "10",
+      "gate": "approved_creative_rights",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "11",
+      "gate": "referred_checkout_identity",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "12",
+      "gate": "referred_checkout_price",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "13",
+      "gate": "referred_refund_terms",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "14",
+      "gate": "commission_schedule_terms",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "15",
+      "gate": "actual_paid_merchant_test",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "16",
+      "gate": "settlement_reporting",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "17",
+      "gate": "rights_cleared_fv_sku",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "18",
+      "gate": "verified_fv_delivery",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "19",
+      "gate": "fv_checkout_price",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "20",
+      "gate": "fv_returns_policy",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "21",
+      "gate": "founder_commerce_approval",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "22",
+      "gate": "founder_publication_approval",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "23",
+      "gate": "original_video_master_encoded",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "24",
+      "gate": "video_caption_playback_check",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "25",
+      "gate": "real_browser_a11y_qa",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "26",
+      "gate": "responsive_perf_cwv_qa",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "27",
+      "gate": "cms_sanitization_qa",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    },
+    {
+      "id": "28",
+      "gate": "verified_qualified_sessions",
+      "status": "HOLD",
+      "evidence": "Not independently authenticated or approved in this draft"
+    }
+  ],
+  "notes": [
+    "Seller-described features are not third-party lab validation.",
+    "All public checkout prices/terms are date-sensitive and may vary by acquisition path.",
+    "No single public affiliate signup demonstrates named publisher approval.",
+    "Do not infer a payable FV-owned Mind product from a free lead magnet.",
+    "Product claim matrix is evidence review, not a clinical systematic review.",
+    "An enabled earning URL must wait until every applicable gate is independently evidenced, not merely set to PASS in a JSON file."
+  ]
+}
