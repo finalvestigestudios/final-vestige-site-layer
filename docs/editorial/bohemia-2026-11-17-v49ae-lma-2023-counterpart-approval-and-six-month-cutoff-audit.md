@@ -1,0 +1,39 @@
+# Final Vestige Investigations · Bohemia source and release audit v49ae
+**Date:** November 17, 2026 (Pacific) · **Status:** DRAFT / PUBLICATION HOLD
+**Story:** *The Spillway That Kept Its Names*; WordPress #2488
+
+## Principal new documentary discovery — the LMA counterpart did approve the MOU
+
+**Original source #88:** Lakefront Management Authority, *November 16, 2023 Full Board Minutes*, available as [the government-hosted, 29-page original PDF](https://nolalakefront.com/wp-content/uploads/2024/02/NOV-16-2023-Board-Minutes-scored-approved-01.25.2024.pdf). Independently inspected original page images zero-based **p4** (management MOU terms), **p5** (revenue account plan, timing and vote), **p27** (formal Resolution VII-04-11162023 authorizes signing, 13 yeas, no nays) and **p28** (certified resolution with secretary's signature). The prose motion begins on PDF p3 and formally approved Resolution VII-04-11162023 begins p25. This is a **primary official record**, not an anonymous repost.
+
+**Resolution outcome:** The LMA board **approved and adopted** its management MOU with FPA–East on November 16, 2023, **13–0 among participating commissioners**, and explicitly authorized its chair or executive director to sign it. Thus two **counterpart public-board approvals** existed on that date, the FPA vote already recorded as prior source #85 and LMA vote #88. The actual executed MOU and the accounting posting of either party's commitments remain **unobtained**. **Authorization is not evidence of signature, remittance, or a claimant payment.**
+
+**Reported amounts:** The LMA minutes record Louis Capo describing **$700,000** owed to FPA as to be forgiven (p4), versus his **approximately $800,000** debt figure discussed in FPA's June 15, 2023 minutes, original source #22. A **$100,000 difference exists between the officials' dated descriptions**. This does NOT prove a $100k payment, accounting mistake, deception, debt write-off, or an identifiable Bohemia royalty. Obtain 2018 MOU, interfund ledger and November 2023 executed amended MOU before reconciliation.
+
+**The critical revenue-cutoff distinction:** LMA's November minutes say it would receive **up to $150,000 arising from July 1–December 31, 2023 oil-and-gas production** and subsequent future Bohemia funds from January 1, 2024. The FPA description in source #85 concerns LMA forgoing a claim to **funds FPA had already received before 2024**. Those are not equivalent date tests. LMA lawyer Jeff Dye reported an approximate **6–8 month lag** between production and royalty payment. The two accounts might be compatible if July–December production revenue became payable only later; their actual legal relationship is **unconfirmed** because the executed agreement and production/remittance reports are missing. No verified $150k deposit or transfer occurred in these minute pages.
+
+**Proposed allocation:** Capo said he planned a **separate LAMP account** and use for **South Shore Harbor Marina projects rather than operating expenses**; records prove his expressed intentions **only**, not account creation, appropriation, disbursement or compliance. Do not imply misappropriation from mere plans.
+
+**The linked February cross-check:** Reader source #86, original February 22, 2024 FPA Finance Committee page screenshot already verified, says FY2025 draft **excluded Bohemia royalties** because they were then routed to LMA. Reader source #83, February 20 LMA committee, reports first **$7,500** Bohemia payment. **Neither identifies source lease or reconciles these figures**; printed p54 of FY2025 audited combined report [87] contains aggregate interfund balances, not Bohemia remittance ledger.
+
+## Manuscript changes
+
+- [Reader manuscript](./bohemia-spillway-reader-cut-v49-2026-11-16.md) advanced to v49ae with **88** numbered bibliography sources, up from 85 at start of the run.
+- Corrected assertion that LMA counterpart board approval had not been examined.
+- Added explanatory subsection **“The other signature authority, and a six-month exception”** tracing the 13-vote approval, $700k versus $800k, 2023 production exception versus receipt date, and planned funds segregation.
+- Added source #88 with direct government URL, exact PDF page indices, interpretations and exclusions; updated publication-release caveats.
+- Prevented a misleading reading of original diagram's **pre-2024** language by amending its adjacent prose caption to distinguish *receipts before 2024* from *production during July–December 2023*.
+- Structural audit before v49ae commit: **88 numbered source entries, 345 raw numeric bracket occurrences (includes numbered bibliography and audit text), zero dangling source numbers**. Raw counts are **not a measure of every claim being independently legally verified**.
+- GitHub write commit **07600b41f9e41c153d5230e3ba14ffabe93ff2e4**. Independently fetch latest manuscript and check blob/content before claiming final readback.
+
+## Original visual and rights evidence
+
+The [existing, studio-created v49ac “The 2023 Bohemia Bargain” schematic](./assets/bohemia-2023-revenue-waiver-debt-offset-v49ac.svg) was independently retrieved from GitHub, exact Git blob **f454d1c2ee1a6516e30e9fb40e29d6e235068643** validated after excluding a local extra fixture newline. Rasterized at 390, 540, and 720 px; **390/540 images visually inspected** and found unclipped and readable for key content. Small embedded source-credit line needs adjacent accessible HTML caption. **Creator:** Final Vestige Studios Investigations. **Date:** November 17, 2026. **Rights:** © 2026 Final Vestige Studios, all rights reserved. **License:** internal studio-owned artwork; no outside copyright imagery. **Source URL:** [FPA November 16 2023 board minutes](https://www.floodauthority.org/wp-content/uploads/2023/12/2023-11-16-SLFPA-E-Board-Meeting-Minutes.pdf). **Alt text:** “The interagency agreement described by FPA: LMA relinquishes a claim to pre-2024 FPA-received Bohemia royalties, FPA offsets an LMA debt, and 2024-forward revenues route to LMA. No payment to a private claimant is shown.” **Caption:** “Original Final Vestige Studios documentary schematic, based on FPA board minutes, November 16, 2023. The LMA board separately discussed up to $150,000 tied to July–December 2023 production [88], not proof of prior receipt. The executed MOU and itemized accounting remain unverified.” **Not AI reconstruction or historical photo.** No image was uploaded to the live site; live theme QA remains pending.
+
+## Publication decision and exact blockers
+
+**HOLD** the existing WordPress draft #2488. Current authenticated readback earlier this run: status **draft**, modified **November 16, 2026 02:44:46** site-local; `jetpack_seo_noindex=true`, `_jetpack_dont_email_post_to_subs=true`, `jetpack_publicize_feature_enabled=false`. No edit to WordPress in this run.
+
+Remaining: **executed signed November 2023 MOU** (not merely two board approvals); reconciliation of June $800k versus November $700k; 2023 oil-production and actual remittance notices (especially July–December 2023 up-to-$150k); accurate debt forgiveness posting; original court-filed Exhibit A, 2000/2005 judgments and claimant payments; original FPA November 2023 PDF original-page screenshots (text-verified, screenshot service DisabledError); independent editorial/legal signoff; anonymous NASA/USDA image byte loads; authentic WordPress rendered theme 390px and 1440px screenshots; final alt/caption/credit/links readback. Do not publish or trigger subscriber email or social sharing; no homepage, shared-template, other post, or Caernarvon edits.
+
+**Grok handoff recommendation for after signoff:** a document-led explainer on **why “up to $150,000 from 2023 production” need not contradict a waiver of money *received by* FPA before 2024**. No social distribution from this lane. **Incremental spend: $0.**
