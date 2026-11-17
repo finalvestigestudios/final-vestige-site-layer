@@ -1,0 +1,29 @@
+{
+  "schema": "fv-dispatch-r424-v1",
+  "captured_utc": "2026-11-17T13:33:41Z",
+  "newsletter_enabled": true,
+  "auto_send": false,
+  "format": "full",
+  "from": "Final Vestige Studios",
+  "dashboard": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2
+  },
+  "eligible_unique": null,
+  "welcome_received": false,
+  "jetpack_preview": false,
+  "postal_verified": false,
+  "unsubscribe_verified": false,
+  "inspire3_email_permission": false,
+  "affiliate_link_verified": false,
+  "paid_orders_verified": false,
+  "qualified_human_sessions": null,
+  "net_revenue_per_1000": null,
+  "founder_send_approval": false,
+  "issues": {
+    "editorial": 4,
+    "commercial": 2
+  },
+  "release": "HOLD_UNSENT"
+}
