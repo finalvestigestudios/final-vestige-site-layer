@@ -17,11 +17,12 @@
   "unique_titles": 90,
   "unique_links": 90,
   "caveats": [
-    "Inventory presence does not imply destination health or lawful reuse.",
-    "'U.S. government work' and 'Link-only' are existing page cues, not independent item-level copyright determinations.",
-    "Only explicitly flagged institutional destinations were opened in this research pass; 403 may be crawler restriction.",
-    "Published page static copy is inconsistent (60), and supplemental script's 23/26 counts are incorrect (actual 24/25).",
-    "No published WordPress changes authorized under unresolved real-browser QA gate."
+    "Inventory is the immutable source-card snapshot of WordPress #1338 as of 2026-11-16, with per-URL verification annotations added afterward; no titles, categories, source URLs or item-level reuse cues were changed.",
+    "Landing-page access is not a guarantee of individual image/document access, complete downloading, or public-domain status. Rights require a record-level determination.",
+    "403, 406 and automated restrictions are NOT broken-link determinations; browser/permission follow-up is required.",
+    "USAspending and NARA Catalog return JavaScript shells here; search interactions were NOT tested.",
+    "Published WordPress static labels still say 60 though there are 90 cards; the existing PR is release-held.",
+    "No live WordPress changes are authorized under the unresolved production-theme accessibility and subscriber/social suppression gate."
   ],
   "sources": [
     {
@@ -31,7 +32,11 @@
       "url": "https://www.archives.gov/research/jfk/release-2025",
       "institution_and_reuse_cue": "National Archives · Declassified records · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed",
+      "qualification": "NARA release page explicitly warns some 2025 JFK files contain living persons' personal identifiers; do not rehost private data."
     },
     {
       "index": 2,
@@ -40,7 +45,10 @@
       "url": "https://www.archives.gov/research/pentagon-papers",
       "institution_and_reuse_cue": "National Archives · Government study · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 3,
@@ -49,7 +57,10 @@
       "url": "https://vault.fbi.gov/cointel-pro/cointel-pro",
       "institution_and_reuse_cue": "FBI Vault · Domestic intelligence records · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 4,
@@ -67,7 +78,10 @@
       "url": "https://history.state.gov/historicaldocuments/frus1951-54IranEd2",
       "institution_and_reuse_cue": "U.S. Department of State · 375 documents · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 6,
@@ -76,7 +90,10 @@
       "url": "https://history.state.gov/historicaldocuments/frus1952-54Guat",
       "institution_and_reuse_cue": "U.S. Department of State · 287 documents · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 7,
@@ -103,7 +120,10 @@
       "url": "https://history.state.gov/historicaldocuments/frus1961-63v11",
       "institution_and_reuse_cue": "U.S. Department of State · 390 documents · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 10,
@@ -112,7 +132,10 @@
       "url": "https://www.archives.gov/research/investigations/watergate/roadmap",
       "institution_and_reuse_cue": "National Archives · Evidence architecture · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 11,
@@ -130,7 +153,10 @@
       "url": "https://www.gao.gov/products/gao-25-107743",
       "institution_and_reuse_cue": "GAO · Federal oversight · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 13,
@@ -148,7 +174,10 @@
       "url": "https://www.fec.gov/data/",
       "institution_and_reuse_cue": "Federal Election Commission · Campaign finance · Public data",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 15,
@@ -157,7 +186,11 @@
       "url": "https://www.usaspending.gov/search",
       "institution_and_reuse_cue": "U.S. Treasury · Federal spending · Public data",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional JavaScript application shell returned; functions not verified on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "application_shell_only",
+      "qualification": "USAspending JavaScript application returned a shell only; search, data delivery and download not independently exercised."
     },
     {
       "index": 16,
@@ -166,7 +199,10 @@
       "url": "https://www.foia.gov/reports.html",
       "institution_and_reuse_cue": "U.S. Department of Justice · FOIA performance · Public data",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 17,
@@ -175,7 +211,11 @@
       "url": "https://lda.gov/system/public/",
       "institution_and_reuse_cue": "U.S. House Clerk / U.S. Senate · Lobbying disclosures · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "automated retrieval restricted/denied on 2026-11-16; not a broken-link determination",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "automated_access_restricted",
+      "qualification": "Lobbying Disclosure Act page returned HTTP 403 to automated retrieval; not a broken-link determination."
     },
     {
       "index": 18,
@@ -184,7 +224,11 @@
       "url": "https://www.osha.gov/fatalities",
       "institution_and_reuse_cue": "OSHA · Workplace safety · Public data",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed",
+      "qualification": "OSHA states fatality-inspection data are refreshed daily but only after an approximately six-month opening-conference delay."
     },
     {
       "index": 19,
@@ -193,7 +237,10 @@
       "url": "https://www.archives.gov/research/9-11",
       "institution_and_reuse_cue": "National Archives · Federal commission records · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 20,
@@ -211,7 +258,11 @@
       "url": "https://www.nrc.gov/reading-rm/adams",
       "institution_and_reuse_cue": "Nuclear Regulatory Commission · Licensing and inspection records · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "automated retrieval restricted/denied on 2026-11-16; not a broken-link determination",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "automated_access_restricted",
+      "qualification": "NRC ADAMS page returned HTTP 403 to automated retrieval; not a broken-link determination."
     },
     {
       "index": 22,
@@ -229,7 +280,11 @@
       "url": "https://www.oversight.gov/",
       "institution_and_reuse_cue": "Federal Inspectors General · Audits and recommendations · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "automated retrieval restricted/denied on 2026-11-16; not a broken-link determination",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "automated_access_restricted",
+      "qualification": "Oversight.gov returned HTTP 406 to automated retrieval; not a broken-link determination."
     },
     {
       "index": 24,
@@ -238,7 +293,10 @@
       "url": "https://www.sec.gov/search-filings",
       "institution_and_reuse_cue": "Securities and Exchange Commission · Corporate filings · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 25,
@@ -247,7 +305,11 @@
       "url": "https://www.regulations.gov/",
       "institution_and_reuse_cue": "Federal eRulemaking Program · Administrative record · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "automated retrieval restricted/denied on 2026-11-16; not a broken-link determination",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "automated_access_restricted",
+      "qualification": "Regulations.gov returned HTTP 403 to automated retrieval; not a broken-link determination."
     },
     {
       "index": 26,
@@ -274,7 +336,11 @@
       "url": "https://www.federalregister.gov/",
       "institution_and_reuse_cue": "Office of the Federal Register / GPO · Rules and notices · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed",
+      "qualification": "FederalRegister.gov itself says its HTML is not the official legal edition; use official GovInfo edition for controlling text."
     },
     {
       "index": 29,
@@ -283,7 +349,11 @@
       "url": "https://ntrs.nasa.gov/citations/20030093634",
       "institution_and_reuse_cue": "NASA Technical Reports Server · Aerospace · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "timed out on 2026-11-16; status unresolved",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "retrieval_timeout",
+      "qualification": "NASA NTRS citation request timed out; record existence and landing-page content not independently verified this run."
     },
     {
       "index": 30,
@@ -292,7 +362,10 @@
       "url": "https://www.nasa.gov/history/rogersrep/",
       "institution_and_reuse_cue": "NASA History · Aerospace · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 31,
@@ -301,7 +374,10 @@
       "url": "https://www.nist.gov/publications/federal-building-and-fire-safety-investigation-world-trade-center-disaster-final-report",
       "institution_and_reuse_cue": "NIST · Structural fire · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 32,
@@ -319,7 +395,10 @@
       "url": "https://www.ntsb.gov/investigations/Pages/DCA16MM001.aspx",
       "institution_and_reuse_cue": "NTSB · Maritime casualty · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 34,
@@ -328,7 +407,11 @@
       "url": "https://pubs.usgs.gov/publication/pp1250",
       "institution_and_reuse_cue": "U.S. Geological Survey · Volcanology · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "automated retrieval restricted/denied on 2026-11-16; not a broken-link determination",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "automated_access_restricted",
+      "qualification": "USGS PP1250 landing returned HTTP 403 to automated retrieval; do not label broken."
     },
     {
       "index": 35,
@@ -364,7 +447,10 @@
       "url": "https://www.csb.gov/bp-america-texas-city-refinery-explosion/",
       "institution_and_reuse_cue": "U.S. Chemical Safety Board · Process safety · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 39,
@@ -391,7 +477,11 @@
       "url": "https://www.usfa.fema.gov/downloads/pdf/publications/fa-264.pdf",
       "institution_and_reuse_cue": "USFA · National fire policy · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed",
+      "qualification": "Federal PDF opened and a page inspected. PDF explicitly exempts photographs from broad reproduction permission; linked-only, no image reuse."
     },
     {
       "index": 42,
@@ -427,7 +517,10 @@
       "url": "https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2/",
       "institution_and_reuse_cue": "CIA Center for the Study of Intelligence · Research method · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 46,
@@ -436,7 +529,11 @@
       "url": "https://www.loc.gov/pictures/collection/hh/",
       "institution_and_reuse_cue": "Library of Congress / National Park Service · Built environment · Link-only collection",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "automated retrieval restricted/denied on 2026-11-16; not a broken-link determination",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "automated_access_restricted",
+      "qualification": "LOC HABS/HAER/HALS catalog returned HTTP 403 to automated retrieval; not a broken-link determination."
     },
     {
       "index": 47,
@@ -445,7 +542,10 @@
       "url": "https://www.usgs.gov/tools/topoview",
       "institution_and_reuse_cue": "U.S. Geological Survey · Historical maps · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 48,
@@ -517,7 +617,11 @@
       "url": "https://catalog.archives.gov/",
       "institution_and_reuse_cue": "National Archives · Federal records · Link-only catalog",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional JavaScript application shell returned; functions not verified on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "application_shell_only",
+      "qualification": "National Archives Catalog returned an almost empty JavaScript application shell; records/search not validated through this interface."
     },
     {
       "index": 56,
@@ -526,7 +630,10 @@
       "url": "https://www.nps.gov/orgs/1739/preservation-briefs.htm",
       "institution_and_reuse_cue": "National Park Service · Technical preservation · Link-only series",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 57,
@@ -562,7 +669,10 @@
       "url": "https://www.nps.gov/orgs/1739/secretary-standards-treatment-historic-properties.htm",
       "institution_and_reuse_cue": "National Park Service · Historic-property treatment · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 61,
@@ -580,7 +690,10 @@
       "url": "https://www.justice.gov/olc/opinions",
       "institution_and_reuse_cue": "U.S. Department of Justice · Executive legal opinions · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 63,
@@ -607,7 +720,11 @@
       "url": "https://www.congress.gov/crs-products",
       "institution_and_reuse_cue": "Congressional Research Service · Policy and legal analysis · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "automated retrieval restricted/denied on 2026-11-16; not a broken-link determination",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "automated_access_restricted",
+      "qualification": "Congress.gov CRS products path rejected automated retrieval; content not validated."
     },
     {
       "index": 66,
@@ -616,7 +733,10 @@
       "url": "https://www.govinfo.gov/help/chrg",
       "institution_and_reuse_cue": "GovInfo · Congressional oversight · Link-only collection",
       "rights_status": "item-level review required",
-      "link_verification": "institutional page opened"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 67,
@@ -625,7 +745,10 @@
       "url": "https://www.fac.gov/",
       "institution_and_reuse_cue": "General Services Administration · Single Audits · Public data",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 68,
@@ -634,7 +757,11 @@
       "url": "https://www.courtlistener.com/recap/",
       "institution_and_reuse_cue": "Free Law Project · Federal court records · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "automated retrieval restricted/denied on 2026-11-16; not a broken-link determination",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "automated_access_restricted",
+      "qualification": "CourtListener RECAP returned HTTP 403 to automated retrieval; not a broken-link determination."
     },
     {
       "index": 69,
@@ -643,7 +770,10 @@
       "url": "https://www.nist.gov/disaster-failure-studies/data-archive",
       "institution_and_reuse_cue": "NIST · Disaster and failure evidence · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "institutional page opened"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 70,
@@ -652,7 +782,11 @@
       "url": "https://www.ntsb.gov/Pages/carol.aspx",
       "institution_and_reuse_cue": "National Transportation Safety Board · Investigation search · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed",
+      "qualification": "NTSB CAROL help specifies aviation coverage from 1962, other transport modes from 2010; check individual dockets."
     },
     {
       "index": 71,
@@ -670,7 +804,10 @@
       "url": "https://www.weather.gov/publications/assessments",
       "institution_and_reuse_cue": "National Weather Service · Operational review · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 73,
@@ -679,7 +816,11 @@
       "url": "https://www.nhc.noaa.gov/data/",
       "institution_and_reuse_cue": "NOAA National Hurricane Center · Storm records and data · U.S. government work",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "automated retrieval restricted/denied on 2026-11-16; not a broken-link determination",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "automated_access_restricted",
+      "qualification": "NHC data page returned HTTP 403 to automated retrieval; not a broken-link determination."
     },
     {
       "index": 74,
@@ -787,7 +928,11 @@
       "url": "https://www.nps.gov/subjects/nationalregister/database-research.htm",
       "institution_and_reuse_cue": "National Park Service · Historic places · Link-only collection",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed",
+      "qualification": "NPS states some Register files are not online and restricted files are not posted; use reference-number and custodian route."
     },
     {
       "index": 86,
@@ -805,7 +950,10 @@
       "url": "https://govinfo.library.unt.edu/",
       "institution_and_reuse_cue": "UNT Libraries / GovInfo · Government web preservation · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed"
     },
     {
       "index": 88,
@@ -814,7 +962,11 @@
       "url": "https://www.biodiversitylibrary.org/",
       "institution_and_reuse_cue": "Biodiversity Heritage Library · Scientific literature · Link-only portal",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "automated retrieval restricted/denied on 2026-11-16; not a broken-link determination",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "automated_access_restricted",
+      "qualification": "Biodiversity Heritage Library returned HTTP 403 to automated retrieval; not a broken-link determination."
     },
     {
       "index": 89,
@@ -832,7 +984,27 @@
       "url": "https://www.archives.gov/findingaid/donated-collection-explorer/1000",
       "institution_and_reuse_cue": "National Archives · Donated collections · Link-only",
       "rights_status": "item-level review required",
-      "link_verification": "not independently checked on 2026-11-16"
+      "link_verification": "institutional landing document content observed via public web retrieval on 2026-11-16",
+      "last_checked": "2026-11-16 America/Los_Angeles",
+      "link_verification_scope": "direct destination open only; no complete downstream record/media, authenticated UI, download or rights audit",
+      "access_outcome": "institutional_landing_content_observed",
+      "qualification": "Donated Collection Explorer tracks donated collections as a separate population from federal record groups; page ratios are estimates."
     }
-  ]
+  ],
+  "verification_followup": {
+    "date": "2026-11-16 America/Los_Angeles",
+    "method": "Public web destination-open on exact URL from original published WordPress inventory; inspect returned institutional title/body or access restriction. Historical initial status retained for five previously inspected entries.",
+    "pass_criteria": "Institutional page content observed, NOT a guarantee all linked items accessible or licensed; app shells treated separately.",
+    "newly_checked": 45,
+    "total_checked_including_prior": 50,
+    "current_outcomes": {
+      "institutional_content_observed": 36,
+      "application_shell_only": 2,
+      "automated_retrieval_restricted": 11,
+      "timeout_unresolved": 1,
+      "not_checked": 40
+    },
+    "public_wordpress_unchanged": true,
+    "note": "No image copied, no subscriber or social activity, no WordPress write. Inspection time reflects research date, not document publication date."
+  }
 }
