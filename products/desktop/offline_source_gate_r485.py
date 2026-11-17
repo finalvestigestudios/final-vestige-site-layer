@@ -15,6 +15,7 @@ import sys
 import threading
 
 from windows_job_custody_r490 import WindowsJob
+from windows_source_start_custody_r491 import guarded_windows_command
 
 CHECKS = (
     ("six_app_source_smoke", "test_offline_source_smoke_r408.py"),
@@ -77,9 +78,13 @@ def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[i
     collected = bytearray()
     overflow = threading.Event()
     read_error = threading.Event()
+    # On Windows only isolated Python (no site imports) starts before Job
+    # assignment. Actual unittest code remains behind the parent's GO byte.
+    if os.name == "nt":
+        cmd = guarded_windows_command(cmd, desktop)
     proc = subprocess.Popen(
         cmd, cwd=desktop.parent.parent, env=_child_env(desktop),
-        stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
+        stdin=(subprocess.PIPE if os.name == "nt" else subprocess.DEVNULL), stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT, start_new_session=(os.name == "posix"),
     )
     assert proc.stdout is not None
@@ -92,6 +97,9 @@ def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[i
         try:
             custody = WindowsJob(proc)
         except OSError:
+            # Revoke the untrusted-test startup token even if assignment fails.
+            if proc.stdin is not None:
+                proc.stdin.close()
             _terminate_test_family(proc)
             proc.wait()
             stream.close()
@@ -126,6 +134,14 @@ def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[i
     worker = threading.Thread(target=read_child, name="fvs-source-log-drain", daemon=True)
     timed_out = False
     try:
+        if custody is not None:
+            try:
+                if proc.stdin is None:
+                    raise OSError("Windows source startup custody unavailable")
+                proc.stdin.write(b"G")
+                proc.stdin.close()
+            except (OSError, ValueError):
+                raise OSError("Windows source startup custody unavailable") from None
         worker.start()
         try:
             proc.wait(timeout=timeout)
@@ -148,6 +164,12 @@ def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[i
             return proc.returncode, b"", True
         return proc.returncode, bytes(collected), False
     finally:
+        # Withhold/close the private one-byte control pipe on every error.
+        if proc.stdin is not None and not proc.stdin.closed:
+            try:
+                proc.stdin.close()
+            except OSError:
+                pass
         # Both platforms tear down their managed process group even when a
         # successful direct parent has closed stdout. Failure to terminate or
         # close a Windows job invalidates any otherwise successful receipt.
