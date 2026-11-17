@@ -1,0 +1,514 @@
+{
+  "schema": "FV-MIND-R443-v1",
+  "review_date": "2026-11-17",
+  "release": "HARD_HOLD",
+  "source_links": {
+    "R92": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+    "CP95": "https://pubmed.ncbi.nlm.nih.gov/7707027/",
+    "S07": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+    "I": "https://inspire3.com/",
+    "ZA": "https://zen12.com/about",
+    "ZS": "https://zen12.com/secret/",
+    "HL": "https://hypnosislive.com/mental-skills/total-focus",
+    "BS": "https://brainwaveshots.com/focus-shot",
+    "FTC1": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "FTC2": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "FA": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "FF": "https://finalvestige.com/focus/",
+    "AFF": "https://affiliates.inspire3.com/",
+    "I171": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+  },
+  "claims": [
+    {
+      "id": "SCI01",
+      "claim": "RSVP attentional blink was studied with target and probe letters in 1992",
+      "status": "independently-supported",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/1500880/"
+      ],
+      "buyer_copy_permission": "editorial-with-citation"
+    },
+    {
+      "id": "SCI02",
+      "claim": "1992 task showed a vulnerable 270ms detection window beginning ~180ms after target",
+      "status": "independently-supported-task-specific",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/1500880/"
+      ],
+      "buyer_copy_permission": "qualified"
+    },
+    {
+      "id": "SCI03",
+      "claim": "1992 blank-gap and first-target-identification controls mattered",
+      "status": "independently-supported",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/1500880/"
+      ],
+      "buyer_copy_permission": "qualified"
+    },
+    {
+      "id": "SCI04",
+      "claim": "1995 work proposed a two-stage target-processing explanation",
+      "status": "scientific-model-not-final-mechanism",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/7707027/"
+      ],
+      "buyer_copy_permission": "qualified"
+    },
+    {
+      "id": "SCI05",
+      "claim": "1995 experiments describe reduced detection ~200-500ms in their paradigms",
+      "status": "independently-supported-task-specific",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/7707027/"
+      ],
+      "buyer_copy_permission": "qualified"
+    },
+    {
+      "id": "SCI06",
+      "claim": "Training retreat participants showed reduced attentional blink in a 2007 study",
+      "status": "independently-supported-study-specific",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/17488185/"
+      ],
+      "buyer_copy_permission": "qualified"
+    },
+    {
+      "id": "SCI07",
+      "claim": "2007 study included ~three months of intensive meditation training",
+      "status": "independently-supported",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/17488185/"
+      ],
+      "buyer_copy_permission": "qualified"
+    },
+    {
+      "id": "SCI08",
+      "claim": "2007 study showed changes in T1-elicited P3b response",
+      "status": "independently-supported-measure-specific",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/17488185/"
+      ],
+      "buyer_copy_permission": "qualified"
+    },
+    {
+      "id": "SCI09",
+      "claim": "Attentional blink reflects universal blindness to a 500ms period",
+      "status": "contradicted-overgeneralization",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+        "https://pubmed.ncbi.nlm.nih.gov/7707027/"
+      ],
+      "buyer_copy_permission": "exclude"
+    },
+    {
+      "id": "SCI10",
+      "claim": "Any commercial audio improves attentional blink",
+      "status": "no-product-specific-support",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/17488185/"
+      ],
+      "buyer_copy_permission": "exclude"
+    },
+    {
+      "id": "SCI11",
+      "claim": "Zen12 has been tested in the 2007 intensive-retreat study",
+      "status": "false-scope",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+        "https://zen12.com/about"
+      ],
+      "buyer_copy_permission": "exclude"
+    },
+    {
+      "id": "HIS01",
+      "claim": "FV Puységur live archive discusses source-critical animal magnetism",
+      "status": "first-party-visible",
+      "sources": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "buyer_copy_permission": "editorial"
+    },
+    {
+      "id": "HIS02",
+      "claim": "Historical animal magnetism established attentional blink",
+      "status": "no-such-inference",
+      "sources": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+        "https://pubmed.ncbi.nlm.nih.gov/1500880/"
+      ],
+      "buyer_copy_permission": "exclude"
+    },
+    {
+      "id": "PRO01",
+      "claim": "Inspire3 catalog links to Zen12 and Hypnosis Live",
+      "status": "seller-catalog-visible",
+      "sources": [
+        "https://inspire3.com/"
+      ],
+      "buyer_copy_permission": "seller-attributed"
+    },
+    {
+      "id": "PRO02",
+      "claim": "Zen12 describes 12-minute sessions",
+      "status": "seller-described",
+      "sources": [
+        "https://zen12.com/about"
+      ],
+      "buyer_copy_permission": "seller-attributed"
+    },
+    {
+      "id": "PRO03",
+      "claim": "Zen12 describes twelve progressive levels",
+      "status": "seller-described",
+      "sources": [
+        "https://zen12.com/about"
+      ],
+      "buyer_copy_permission": "seller-attributed"
+    },
+    {
+      "id": "PRO04",
+      "claim": "Zen12 describes four listening styles for each level",
+      "status": "seller-described",
+      "sources": [
+        "https://zen12.com/about"
+      ],
+      "buyer_copy_permission": "seller-attributed"
+    },
+    {
+      "id": "PRO05",
+      "claim": "Zen12 secret offer describes full 12-level course with 48 MP3s",
+      "status": "seller-described-funnel-dependent",
+      "sources": [
+        "https://zen12.com/secret/"
+      ],
+      "buyer_copy_permission": "seller-attributed"
+    },
+    {
+      "id": "PRO06",
+      "claim": "Zen12 twelve minutes equals one hour of meditation",
+      "status": "seller-efficacy-unsubstantiated-for-named-product",
+      "sources": [
+        "https://zen12.com/about",
+        "https://pubmed.ncbi.nlm.nih.gov/17488185/"
+      ],
+      "buyer_copy_permission": "exclude-as-fact"
+    },
+    {
+      "id": "PRO07",
+      "claim": "Zen12 automatically shifts brainwaves into a desired mental state",
+      "status": "seller-efficacy-unsubstantiated-for-named-product",
+      "sources": [
+        "https://zen12.com/about"
+      ],
+      "buyer_copy_permission": "exclude-as-fact"
+    },
+    {
+      "id": "PRO08",
+      "claim": "Zen12 1-year refund guarantee appears on about page",
+      "status": "seller-described-checkout-unverified",
+      "sources": [
+        "https://zen12.com/about"
+      ],
+      "buyer_copy_permission": "only-as-seller-description"
+    },
+    {
+      "id": "PRO09",
+      "claim": "Zen12 secret promo price/coupon/countdown is verified FV referred price",
+      "status": "unverified-dynamic-offer",
+      "sources": [
+        "https://zen12.com/secret/"
+      ],
+      "buyer_copy_permission": "exclude"
+    },
+    {
+      "id": "PRO10",
+      "claim": "Hypnosis Live Total Focus product says 33 minutes and 47 MB",
+      "status": "seller-described",
+      "sources": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "buyer_copy_permission": "seller-attributed"
+    },
+    {
+      "id": "PRO11",
+      "claim": "Hypnosis Live Total Focus guarantees limitless concentration",
+      "status": "seller-efficacy-unsubstantiated",
+      "sources": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "buyer_copy_permission": "exclude-as-fact"
+    },
+    {
+      "id": "PRO12",
+      "claim": "Brainwave Focus Shot lists 15- and 30-minute recordings",
+      "status": "seller-described",
+      "sources": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "buyer_copy_permission": "seller-attributed"
+    },
+    {
+      "id": "PRO13",
+      "claim": "Brainwave Focus Shot grants hours of sharpened attention",
+      "status": "seller-efficacy-unsubstantiated",
+      "sources": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "buyer_copy_permission": "exclude-as-fact"
+    },
+    {
+      "id": "PRO14",
+      "claim": "Inspire3 affiliate public page references unique special links",
+      "status": "public-program-description-not-partner-approval",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "buyer_copy_permission": "not-a-live-link"
+    },
+    {
+      "id": "COM01",
+      "claim": "FV affiliate approval for named account/products/channels is verified",
+      "status": "not-authenticated",
+      "sources": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+      ],
+      "buyer_copy_permission": "hold"
+    },
+    {
+      "id": "COM02",
+      "claim": "FV assigned Zen12 tracking URL is verified",
+      "status": "not-authenticated",
+      "sources": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+      ],
+      "buyer_copy_permission": "hold"
+    },
+    {
+      "id": "COM03",
+      "claim": "FV referred checkout terms and net settlement evidence are established",
+      "status": "not-authenticated",
+      "sources": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+      ],
+      "buyer_copy_permission": "hold"
+    },
+    {
+      "id": "COM04",
+      "claim": "FV Focus Fieldbook is a free 52-page item through existing route",
+      "status": "first-party-visible",
+      "sources": [
+        "https://finalvestige.com/focus/"
+      ],
+      "buyer_copy_permission": "free-route-only"
+    },
+    {
+      "id": "COM05",
+      "claim": "FTC requires clear disclosure of material relationships in context",
+      "status": "FTC-guidance",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "buyer_copy_permission": "disclose-adjacent"
+    },
+    {
+      "id": "COM06",
+      "claim": "FTC expects appropriate support before objective health benefit claims",
+      "status": "FTC-guidance",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "buyer_copy_permission": "avoid-unsubstantiated"
+    },
+    {
+      "id": "REV01",
+      "claim": "Outbound affiliate click equals verified paid sale",
+      "status": "measurement-invalid",
+      "sources": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+      ],
+      "buyer_copy_permission": "never-equate"
+    },
+    {
+      "id": "REV02",
+      "claim": "Current net revenue per 1k qualified human Mind sessions is known",
+      "status": "no-verified-denominator-or-orders",
+      "sources": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+      ],
+      "buyer_copy_permission": "not-computable"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "Founder production release permission",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G02",
+      "name": "Final Vestige named publisher acceptance",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G03",
+      "name": "Authorized product/SKU Zen12",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G04",
+      "name": "Authorized content website channel",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G05",
+      "name": "Authorized Grok TikTok/YT channel attribution",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G06",
+      "name": "Authorized email channel (Dispatch)",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G07",
+      "name": "Affiliate creative permissions",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G08",
+      "name": "Issued FV affiliate earning URL",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G09",
+      "name": "Merchant referral cookie/attribution terms",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G10",
+      "name": "Landing domain approved by merchant",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G11",
+      "name": "Exact referred checkout SKU",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G12",
+      "name": "Current checkout total price/currency/tax",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G13",
+      "name": "Optional upsell presentation checked",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G14",
+      "name": "Returns/refund rules for referred checkout",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G15",
+      "name": "Merchant identity and support route",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G16",
+      "name": "No prohibited merchant link cloaking",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G17",
+      "name": "Near-link FTC earning disclosure reviewed",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G18",
+      "name": "No unsupported product health claims",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G19",
+      "name": "No implied guaranteed focus/wealth benefits",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G20",
+      "name": "Original rights-cleared video encoded",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G21",
+      "name": "Video poster captions transcript parity",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G22",
+      "name": "Keyboard/reduced motion/no-JS browser acceptance",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G23",
+      "name": "WordPress sanitize/editor preservation",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G24",
+      "name": "No duplicate Jetpack signup / welcome",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G25",
+      "name": "Real Grok asset_id and permissible URL",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G26",
+      "name": "First-party attribution QA with consent",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G27",
+      "name": "Paid merchant transaction independently reported",
+      "status": "HOLD",
+      "proof_required": true
+    },
+    {
+      "id": "G28",
+      "name": "Net fees/refunds/7-30day qualified cohort reconciled",
+      "status": "HOLD",
+      "proof_required": true
+    }
+  ],
+  "commercial_note": "Public seller promo, price, commissions or affiliate signup cannot authenticate named FV approval/settlement. Both presell variants lack active seller href and have native disabled controls. No merchant purchase made.",
+  "approval_record": null
+}
