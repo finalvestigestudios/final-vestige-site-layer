@@ -7,13 +7,16 @@ from __future__ import annotations
 
 from pathlib import Path
 import re
+import sys
 
+# Exactly one G byte followed by pipe EOF is required; a prefix read(1)
+# could start unittest on G plus trailing bytes or while the pipe stays open.
 # The interpreter starts in isolated mode with site imports disabled. Nothing
 # from the workspace, site packages, or the actual unittest module is loaded
 # until the parent has assigned Job custody and writes the release byte.
 _BOOTSTRAP = (
     "import sys\n"
-    "if sys.stdin.buffer.read(1) != b'G': raise SystemExit(93)\n"
+    "if sys.stdin.buffer.read(2) != b'G': raise SystemExit(93)\n"
     "sys.stdin.close()\n"
     "import site\n"
     "site.main()\n"
@@ -33,7 +36,8 @@ def guarded_windows_command(cmd: tuple[str, ...], desktop: Path) -> tuple[str, .
     """
     if (type(cmd) is not tuple or len(cmd) not in (11, 12)
             or any(type(arg) is not str for arg in cmd)
-            or not isinstance(desktop, Path)):
+            or not isinstance(desktop, Path)
+            or cmd[0] != sys.executable):
         raise ValueError("Unsafe Windows source check command")
     opt = ("-OO",) if len(cmd) == 12 and cmd[1] == "-OO" else ()
     args = cmd[1 + len(opt):]
