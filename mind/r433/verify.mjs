@@ -55,7 +55,7 @@ const cueLines=[...vtt.matchAll(/(\d\d:\d\d:\d\d\.\d{3}) --> (\d\d:\d\d:\d\d\.\d
 ok(cueLines.length===6,"six caption cues");
 const sec=(t)=>{const x=t.split(":");return (+x[0])*3600+(+x[1])*60+parseFloat(x[2]);};
 cueLines.forEach((c,i)=>{ok(sec(c[1])===i*7,"cue starts at "+i*7);ok(sec(c[2])===(i+1)*7,"cue ends at "+(i+1)*7)});
-for(const str of ["Botvinick","Rohde","Lush","Slater","Puységur","synchronous","asynchronous","Demand Characteristics","No approved","refund","source"]){
+for(const str of ["Botvinick","Rohde","Lush","Slater","Puységur","synchronous","asynchronous","Demand Characteristics","no live shopping","refund","source"]){
  starts(article,str,"article evidence "+str);
 }
 starts(article,"https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/","archive source");
