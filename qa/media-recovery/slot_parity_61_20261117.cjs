@@ -78,7 +78,7 @@ function validatePage(p,which,inv) {
     const expected=original.rows.find(x=>x.key===r.key);
     if(!expected||r.authored_url!==expected.source_url)fail(`Unmatched source image identity in ${which} ${r.key}`);
     if(!validUrl(r.current_src)||!validUrl(r.request_url)||!sourceMatches(r.current_src,expected.source_url)||r.current_src!==r.request_url||typeof r.request_id!=='string'||!r.request_id)fail(`Unmatched ${which} network request`);
-    if(!integer(r.http_status,200)||r.http_status>=300||typeof r.mime!=='string'||!/^image\//i.test(r.mime)||r.decoded!==true||!integer(r.natural_width,1)||!integer(r.natural_height,1)||!integer(r.wire_bytes)||r.from_cache!==false||r.from_service_worker!==false||r.from_prefetch!==false)fail(`Broken/missing/cached image in ${which} ${r.key}`);
+    if(r.http_status!==200||typeof r.mime!=='string'||!/^image\//i.test(r.mime)||r.decoded!==true||!integer(r.natural_width,1)||!integer(r.natural_height,1)||!integer(r.wire_bytes,1)||r.from_cache!==false||r.from_service_worker!==false||r.from_prefetch!==false)fail(`Broken/missing/cached image in ${which} ${r.key}`);
     // Chromium may serve the same decoded URL to multiple DOM image slots from one
     // network request, even with HTTP cache disabled. Count that request once.
     const previous=reqs.get(r.request_id);
