@@ -21,7 +21,7 @@ Updated `qa/media-recovery/slot_parity_61_20261117.cjs` on media draft branch, w
 4. Fail closed on one ID assigned to different URLs or contradictory status/bytes/MIME/dimensions; continue rejecting missing images, stale source revisions, failed decode, HTML responses, cache contamination, altered source identity and missing visual evidence.
 5. Preserve `MEASURED_SUBSET_NOT_SITEWIDE` and `ALL_355_SELF_REPORTED_REVIEW_REQUIRED` results. Never certify 76% based on self-reported screenshot flags or historical stored-media bytes.
 
-Four deterministic new Node `test` definitions cover legitimate request sharing, two independent GETs, mismatched bytes and divergent URL/MIME/native size. Existing 32 tests remain, including rejection of a duplicate request ID for **different** sources. **Test definitions committed; native Node and GitHub CI execution remain unverified** in this run. Command to execute from a checked-out branch:
+Four deterministic new Node `test` definitions cover legitimate request sharing, two independent GETs, mismatched bytes and divergent URL/MIME/native size. Existing 32 tests remain, including rejection of a duplicate request ID for **different** sources. **All 36 tests were executed in an isolated V8 harness with compatibility shims (36/36 PASS)** against the exact committed validator and test file. This is **not** native Node or GitHub CI verification; its SHA-1 test uses a synthetic known-value shim, not real cryptographic source verification. Native Node/CI remain unverified in this run. Command to execute from a checked-out branch:
 
 ```sh
 node --check qa/media-recovery/slot_parity_61_20261117.cjs
