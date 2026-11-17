@@ -18,7 +18,7 @@ class OfflineGateR485Tests(unittest.TestCase):
         for _, pattern in gate.CHECKS:
             (self.desktop / "tests" / pattern).write_text("# synthetic test fixture\n")
 
-    def _fake_run(self, output=b"Ran 4 tests in 0.001s\n\nOK\n", code=0):
+    def _fake_run(self, output=b"----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nOK\n", code=0):
         def call(*args, **kwargs):
             kwargs["stdout"].write(output)
             self.assertIs(kwargs["stderr"], gate.subprocess.STDOUT)
