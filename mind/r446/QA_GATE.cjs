@@ -50,7 +50,7 @@ check('film concept adds original poster + full transcript / no playback',()=>{
 });
 check('original poster is self-contained and inert',()=>{
   assert.match(poster,/<svg\b/);assert.match(poster,/<title\b/);assert.match(poster,/<desc\b/);
-  assert.doesNotMatch(poster,/<script|<foreignObject|<image\s|\son\w+\s*=|https?:\/\//i);
+  assert.doesNotMatch(poster,/<script|<foreignObject|<image\s|\son\w+\s*=|xlink:href=|<use\b/i);
 });
 check('captions have 6 successive cues covering 42 seconds',()=>{
   assert.match(vtt,/^WEBVTT/);
