@@ -17,23 +17,25 @@ MAX_CERTIFICATE_RECORDS = 128
 
 
 def _read_exact_at(stream, offset: int, size: int) -> bytes | None:
-    """Require an exact native seek receipt before trusting certificate bytes.
+    """Require exact native seek, read and post-read position receipts.
 
-    An injected stream may report success while seeking to the wrong location,
-    return True (which compares equal to 1), or override comparison on an int
-    subclass. Native FileIO and BytesIO return a plain integer offset. Catch
-    ordinary I/O faults here so the public error raised by the caller cannot
-    retain private exception context. Never swallow process interrupts.
+    Stream wrappers can misreport successful byte reads without advancing the
+    descriptor position. Checking the native tell() result after each read
+    rejects this shape while ordinary FileIO and BytesIO remain supported.
+    The primitive-receipt checks never dispatch hostile int subclass hooks.
+    Catch ordinary stream faults to avoid retaining private exception chains;
+    process interrupts still propagate.
     """
-    data = None
     try:
         positioned = stream.seek(offset)
         if type(positioned) is int and positioned == offset:
             data = stream.read(size)
+            if type(data) is bytes and len(data) == size:
+                end = stream.tell()
+                if type(end) is int and end == offset + size:
+                    return data
     except Exception:
         pass
-    if type(data) is bytes and len(data) == size:
-        return data
     return None
 
 
@@ -54,6 +56,8 @@ def verify_certificate_table(stream, optional: bytes, *, file_size: int) -> None
     stream faults without retaining their possibly private exception chains.
     R502 additionally requires an exact native seek position receipt for
     header, tail and padding reads on the held descriptor.
+    R503 requires a native post-read descriptor position to prove each claimed
+    header, tail or padding read advanced by exactly the expected byte count.
     """
     if len(optional) < 112:
         raise PECertificateError("PE certificate table rejected")
