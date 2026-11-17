@@ -1,0 +1,143 @@
+<!-- wp:html -->
+<section id="fv-log-desk" aria-labelledby="fv-log-title">
+<style>
+#fv-log-desk{--ink:#22332f;--muted:#53665e;--gold:#aa7436;--rule:#d7dbd0;--paper:#f8f7f1;--deep:#172e2a;max-width:100%;overflow-wrap:anywhere;color:var(--ink);font:inherit}
+#fv-log-desk *{box-sizing:border-box}#fv-log-desk .wrap{width:min(100% - 32px,980px);margin:0 auto}
+#fv-log-desk .kicker{letter-spacing:.15em;text-transform:uppercase;font-size:.75rem;font-weight:750;color:#b98d52}
+#fv-log-desk .hero{padding:clamp(24px,5vw,64px);background:var(--deep);color:#f6f0df;border-radius:6px}
+#fv-log-desk .hero h1{font-family:Georgia,serif;font-size:clamp(2.15rem,5.6vw,4.3rem);line-height:1.06;max-width:17ch;margin:.35em 0 .4em;color:#fff6e6}
+#fv-log-desk .deck{font-family:Georgia,serif;font-size:clamp(1.1rem,2.1vw,1.45rem);line-height:1.55;max-width:65ch}
+#fv-log-desk .hero .mini{font-size:.9rem;color:#cfdad0}
+#fv-log-desk article{max-width:850px;margin:0 auto;font-size:1.05rem;line-height:1.72}
+#fv-log-desk article>p,#fv-log-desk article>h2,#fv-log-desk article>h3,#fv-log-desk article>ol,#fv-log-desk article>ul,#fv-log-desk article>aside{max-width:74ch}
+#fv-log-desk h2{font-family:Georgia,serif;font-size:clamp(1.5rem,3vw,2.05rem);line-height:1.2;margin:2.2em 0 .55em;color:var(--ink)}
+#fv-log-desk h3{font-size:1.16rem;margin:1.4em 0 .4em}
+#fv-log-desk a{text-underline-offset:3px;color:#226d59}#fv-log-desk .hero a{color:#f1c77b}
+#fv-log-desk a:focus-visible,#fv-log-desk button:focus-visible,#fv-log-desk select:focus-visible,#fv-log-desk input:focus-visible,#fv-log-desk textarea:focus-visible{outline:3px solid #ce8d33;outline-offset:3px}
+#fv-log-desk .quiet{color:var(--muted);font-size:.89rem}#fv-log-desk .call{border-left:4px solid var(--gold);padding:15px 18px;background:var(--paper);margin:22px 0}
+#fv-log-desk .diagram{background:#f1f1e9;border:1px solid var(--rule);border-radius:7px;padding:16px;margin:24px auto}
+#fv-log-desk svg{display:block;width:100%;height:auto;max-height:380px}
+#fv-log-desk figcaption{font-size:.84rem;color:#42554c;margin-top:9px}
+#fv-log-desk .table-scroll{overflow-x:auto;max-width:100%;border:1px solid var(--rule);border-radius:5px}
+#fv-log-desk table{border-collapse:collapse;min-width:640px;width:100%;font-size:.93rem;line-height:1.53}
+#fv-log-desk th,#fv-log-desk td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--rule)}
+#fv-log-desk th{background:#e8ede4;color:#223b32}#fv-log-desk tr:last-child td{border-bottom:0}
+#fv-log-desk .tool{background:#edf0e9;border:1px solid #b6c5b6;border-radius:8px;padding:clamp(16px,3vw,32px);margin:35px 0}
+#fv-log-desk .tool h2{margin-top:0}#fv-log-desk .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+#fv-log-desk label{display:block;font-size:.91rem;font-weight:650;margin-bottom:4px}
+#fv-log-desk input,#fv-log-desk select,#fv-log-desk textarea{width:100%;max-width:100%;min-height:44px;padding:10px 12px;background:#fff;border:1px solid #7e9086;border-radius:4px;font:inherit;color:#18342a}
+#fv-log-desk textarea{min-height:90px;resize:vertical}#fv-log-desk .span2{grid-column:1/-1}
+#fv-log-desk .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+#fv-log-desk button{border-radius:4px;border:1px solid #265343;background:#245343;color:#fff;padding:11px 17px;cursor:pointer;font:inherit;font-weight:700}
+#fv-log-desk button.secondary{background:transparent;color:#245343}
+#fv-log-desk output{display:block;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.55;background:#fff;border:1px solid #b6c5b6;border-radius:5px;padding:15px;margin-top:16px;min-height:70px}
+#fv-log-desk .sources li{margin-bottom:13px}#fv-log-desk .notes{border-top:1px solid var(--rule);margin-top:32px;padding-top:20px;font-size:.93rem}
+@media(max-width:560px){#fv-log-desk .fields{grid-template-columns:1fr}#fv-log-desk .wrap{width:min(100% - 20px,980px)}#fv-log-desk .hero{padding:22px 18px}#fv-log-desk .span2{grid-column:auto}#fv-log-desk article{font-size:1rem}#fv-log-desk table{font-size:.88rem}}
+@media print{#fv-log-desk{color:#000!important}#fv-log-desk .hero{background:none;color:#000;border-bottom:2px solid #222;padding:15px 0}#fv-log-desk .hero h1,#fv-log-desk .hero .mini,#fv-log-desk .hero .kicker{color:#000}#fv-log-desk .wrap{width:100%}#fv-log-desk .tool{background:none}#fv-log-desk .actions{display:none}#fv-log-desk .table-scroll{overflow:visible}#fv-log-desk table{min-width:0}#fv-log-desk .diagram{break-inside:avoid}#fv-log-desk a{color:#000;text-decoration:underline}}
+</style>
+<header class="hero"><div class="wrap">
+<p class="kicker">Final Vestige Studios / The Library / Maritime records</p>
+<h1 id="fv-log-title">The Log Was Not the Voyage</h1>
+<p class="deck">A ship's name is not a record locator. A date is not necessarily a civil day. And a logbook's silence is not evidence that nothing happened.</p>
+<p class="mini">Free archival field guide · Print-ready witness card · Record-route desk · Sources checked 17 November 2026</p>
+</div></header>
+<article class="wrap">
+<p>A vessel can leave behind several histories. One is the official book: what the regulations required an officer or master to enter. Another is the operating record of machinery, navigation and work. A third is somebody's private journal. They might travel together, but they were not created for the same questions, and archives do not always preserve them together.</p>
+<p>Start by asking what record was <em>supposed</em> to exist. Then ask who would have held it. A broad search for a "captain's log" usually skips both questions.</p>
+<figure class="diagram">
+<svg viewBox="0 0 880 280" role="img" aria-labelledby="fv-log-svg-title fv-log-svg-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="fv-log-svg-title">Four-stage route from vessel identity to a defensible archival conclusion</title>
+<desc id="fv-log-svg-desc">Original editorial schematic: name and identifier lead to service and date, then to record series and holding institution, and finally to a document or a qualified absence. A dotted path labeled uncertainty shows that missing online images do not prove a missing original log.</desc>
+<rect x="3" y="3" width="874" height="274" rx="12" fill="#183630"/>
+<g fill="#f9f0dc" stroke="#d7c39a" stroke-width="1.5"><rect x="28" y="46" width="185" height="88" rx="6"/><rect x="244" y="46" width="185" height="88" rx="6"/><rect x="460" y="46" width="185" height="88" rx="6"/><rect x="676" y="46" width="176" height="88" rx="6"/></g>
+<g font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#183630" text-anchor="middle"><text x="120" y="80">VESSEL</text><text x="120" y="109" font-size="14" font-weight="400">name + identifier</text><text x="336" y="80">SERVICE</text><text x="336" y="109" font-size="14" font-weight="400">flag + date</text><text x="552" y="80">RECORD</text><text x="552" y="109" font-size="14" font-weight="400">type + custodian</text><text x="764" y="80">CLAIM</text><text x="764" y="109" font-size="14" font-weight="400">what it can prove</text></g>
+<g stroke="#dcb879" stroke-width="3" fill="none"><path d="M214 89h25m-7 -7 7 7 -7 7M430 89h25m-7 -7 7 7 -7 7M646 89h25m-7 -7 7 7 -7 7"/></g>
+<path d="M550 147v43h210v-43" stroke="#e5bf77" stroke-dasharray="6 5" fill="none" stroke-width="2"/>
+<g font-family="Arial,sans-serif" fill="#f2e5ca" text-anchor="middle"><text x="655" y="217" font-size="17">NOT ONLINE ≠ NEVER EXISTED</text><text x="440" y="252" font-size="13">Interpretive diagram, not an image of a historical record.</text></g>
+</svg>
+<figcaption>Original Final Vestige Studios explanatory diagram, 17 November 2026. Entirely illustrative; no ship, log page or archival document is depicted. Text equivalent: vessel identity → service/date → record series/custodian → qualified conclusion; absence online is not evidence of nonexistence.</figcaption>
+</figure>
+<h2>Three books with the same familiar name</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Comparison of ship log types; scroll horizontally on small screens">
+<table><thead><tr><th scope="col">Record</th><th scope="col">Typical purpose</th><th scope="col">First archive route</th><th scope="col">Trap to avoid</th></tr></thead><tbody>
+<tr><td><strong>Commissioned U.S. Navy deck log</strong></td><td>Official daily chronology of selected activities and observations.</td><td>National Archives, especially RG 24. Most through 1940 in Washington; most 1941 and later in College Park. Exceptions exist.</td><td>It is not a personal captain's diary or a complete register of aircraft, people or off-ship events.</td></tr>
+<tr><td><strong>U.S. merchant official logbook</strong></td><td>Statutory vessel, crew, voyage and reportable incident entries.</td><td>NARA RG 41 for many 1872–1941 logs; overlapping later material in RG 26 by filing region.</td><td>Not the same as an operating/deck or engine-room log. Search by home port and official number where known.</td></tr>
+<tr><td><strong>British merchant crew agreement / official log</strong></td><td>Engagement, discharge and certain legally significant events; logbooks may accompany crew records.</td><td>The National Archives (UK), merchant-shipping research guides and BT series; distribution and survival vary by era.</td><td>Many logs were not retained. A crew list cannot be treated as a narrative of every day at sea.</td></tr>
+<tr><td><strong>Private journal or navigational log</strong></td><td>Personal narrative or regular position/weather observations.</td><td>Local maritime museums, private papers, historical societies and special collections.</td><td>The maker, clock convention and authority of entries must be established; attractive handwriting does not make it official.</td></tr>
+</tbody></table></div>
+<p class="quiet">The table describes search routes, not an exhaustive holdings inventory. War years, commissioning dates, ownership, transfers and local custodial rules can change the answer. Sources: NARA Navy/merchant record guides; The National Archives (UK) merchant-vessel guide; Cape Ann Museum A18 finding aid.</p>
+<h2>The page date and the day at sea</h2>
+<p>Before converting a time, read the whole page. The U.S. Navy's later deck-log system arranges entries within a day by 24-hour clock. By contrast, Cape Ann Museum's finding aid for older private and navigational logbooks explains a <em>noon-to-noon</em> shipboard day; its finding aid also distinguishes positions observed astronomically from positions estimated by dead reckoning.</p>
+<p>These are two documented practices, not a universal rule for all vessels in all years. A 1951 U.S. Navy remarks sheet should not receive a noon-day correction merely because a nineteenth-century museum log used one. Preserve the date as written, identify the source's own time standard, and write "clock basis unresolved" when the page and collection do not establish it.</p>
+<aside class="call"><strong>Witness question:</strong> When you find two different positions entered at noon, are they observations from the same instrument and standard? One could be astronomical; another could be dead reckoning. The right next step is to inspect the notation and surrounding days, not to average the coordinates.</aside>
+<h2>A real archive path, without inventing a voyage</h2>
+<p>NARA's digitized Navy deck-log index lists <strong>USS Abbot (DD-629), February 1951</strong> and links to <a href="https://catalog.archives.gov/id/285104169">catalog record 285104169</a>. This is a verifiable <em>discovery path</em> from a named ship and month to a described archival item. The linked catalog viewer's contents were not independently inspectable during this review, so this guide makes no claims about a particular incident, officer, position, photograph or day entry inside that volume.</p>
+<p>Use it as a rehearsal: open NARA's <a href="https://www.archives.gov/research/military/logbooks/navy-online">digitized month index</a>, select a ship and month, preserve the linked catalog identifier, check the catalog description and any available page images, then record precisely what you saw. If the viewer fails or an image is missing, report that access state, not a conclusion about the ship.</p>
+<h2>Follow the evidence in six passes</h2>
+<ol>
+<li><strong>Identify the exact vessel.</strong> Name alone can be reused. Capture hull/official number, flag, registry port, previous names and target years. For renamed vessels, follow the vessel identity before assuming two catalogs describe different ships.</li>
+<li><strong>Choose the service branch.</strong> Commissioned U.S. Navy, U.S. merchant, British merchant or privately collected journal are different routes. Record why your classification is justified, not merely guessed.</li>
+<li><strong>Choose the record type.</strong> Official log, columnar weather sheet, deck remarks, engine/operating log, crew agreement, muster or journal answer different questions. The lack of a named sailor in deck remarks does not establish that person was absent from the ship.</li>
+<li><strong>Locate the series before the image.</strong> Capture repository, record group, series, entry, catalog identifier, volume/month and image/page number. If only a finding aid exists, say so.</li>
+<li><strong>Read adjacent pages.</strong> Look at the title sheet, date, ship/zone notation, previous and next entries, cancellations, initials and later alterations. Do not extract a single dramatic line without the mundane entries that locate it.</li>
+<li><strong>Write the result with its limits.</strong> Separate "found a record," "viewer showed a page," "the page states X," "other evidence supports X," and "still unknown." Those are five different claims.</li>
+</ol>
+<h2>What a blank search cannot say</h2>
+<p>NARA expressly notes commissioned-vessel retention rules, missing or withdrawn logs, staged digitization and record categories that were never kept permanently. Its <a href="https://www.archives.gov/research/military/logbooks/navy-info-not-in-deck-logs">guide to information not included in deck logs</a> warns that daily work assignments and much off-ship activity are outside the record's purpose. A negative online search therefore offers only a narrow statement: no matching image surfaced under that search at that time.</p>
+<p>Before saying an original is lost, check the alternate identifier, series, nearby months, a renamed ship, decommissioning dates, the holding office and the <a href="https://www.archives.gov/research/military/logbooks/navy-deck-log-exemptions">missing/classified log guidance</a>. "Not digitized," "not retained," "restricted," "misfiled" and "never created" are different conditions.</p>
+<div class="tool" id="fv-log-form">
+<h2>Build a logbook route receipt</h2>
+<p>Enter only ordinary archival identifiers, not private personal information. The field desk runs entirely in your browser: no account, server submission, analytics call or local storage. The result is a research lead, never a claim that the record exists.</p>
+<div class="fields">
+<div><label for="fv-log-ship">Vessel name</label><input id="fv-log-ship" maxlength="120" placeholder="e.g., Abbot"/></div>
+<div><label for="fv-log-number">Hull / official number, if known</label><input id="fv-log-number" maxlength="90" placeholder="e.g., DD-629"/></div>
+<div><label for="fv-log-year">Year of interest</label><input id="fv-log-year" inputmode="numeric" maxlength="4" placeholder="e.g., 1951"/></div>
+<div><label for="fv-log-service">Vessel / record jurisdiction</label><select id="fv-log-service"><option value="unknown">Not established</option><option value="navy">Commissioned U.S. Navy</option><option value="merchant-us">U.S. merchant vessel</option><option value="merchant-uk">British merchant vessel</option><option value="private">Private journal / museum collection</option></select></div>
+<div><label for="fv-log-target">Research question</label><input id="fv-log-target" maxlength="180" placeholder="Position, crew event, reported incident…"/></div>
+<div><label for="fv-log-clock">Clock/date convention</label><select id="fv-log-clock"><option value="unknown">Unresolved — do not convert</option><option value="documented">Documented from record itself</option><option value="suspected">Suspected, not established</option></select></div>
+<div class="span2"><label for="fv-log-source">Record / finding-aid URL or citation</label><input id="fv-log-source" maxlength="350" placeholder="Exact catalog ID or source URL; leave empty if not yet found"/></div>
+<div class="span2"><label for="fv-log-caveat">Access limitations, gap or rights uncertainty</label><textarea id="fv-log-caveat" maxlength="700" placeholder="Describe what was actually inspected and what still needs verification."></textarea></div>
+</div>
+<div class="actions"><button type="button" id="fv-log-generate">Build source receipt</button><button type="button" class="secondary" id="fv-log-copy">Copy receipt</button><button type="button" class="secondary" id="fv-log-download">Save text locally</button><button type="button" class="secondary" id="fv-log-clear">Clear</button></div>
+<output id="fv-log-output" aria-live="polite" aria-atomic="true">Choose a route and build a source receipt. Without JavaScript, use the field labels above as a printable worksheet and consult the source directory below.</output>
+<noscript><p><strong>JavaScript is off:</strong> the printed fields and institutional source routes remain usable. No automated receipt is needed to do this research.</p></noscript>
+</div>
+<h2>Source trail and rights ledger</h2>
+<p>Institutional references inspected 17 November 2026 unless stated. A linked finding aid is source evidence about collections and archival practice, not proof of the details of a record we have not opened.</p>
+<ol class="sources">
+<li><a href="https://www.archives.gov/research/military/logbooks/naval-deck-logs">NARA — Introduction to Navy Deck Logs</a>. Reviewed by institution 28 March 2023. Identifies the function of official logs, RG 24 custodians, and date/hull title fields. Access: public reference HTML; linked only; no archive images copied.</li>
+<li><a href="https://www.archives.gov/research/military/logbooks/navy-online">NARA — Navy Deck Logs Available in the Catalog</a>. Ship/month index and catalog links. Abbot (DD-629), February 1951 points to <a href="https://catalog.archives.gov/id/285104169">Catalog ID 285104169</a>. The institutional index was inspected; catalog viewer content was not independently readable in this environment.</li>
+<li><a href="https://www.archives.gov/research/military/logbooks/digitized-logs">NARA — Locating Digitized Deck Logs</a>. Search by ship without USS prefix, "Deck Log," hull and/or year. Provides a documented discovery workflow.</li>
+<li><a href="https://www.archives.gov/research/military/logbooks/merchant-vessels.html">NARA — Logbooks of U.S. Merchant Vessels</a>. Reviewed 15 August 2016. Distinguishes official from operating/departmental logs; RG 41, RG 26, RG 178, port and official-number routes.</li>
+<li><a href="https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-navy-ships-records-crew-lists-musters-and-log-books/">The National Archives (UK) — Merchant Navy ships' records</a>. Official institutional guide to agreements, BT series and survival gaps; search summary retrieved, direct browser access returned 403. Qualification retained rather than representing a complete manual review.</li>
+<li><a href="https://www.capeannmuseum.org/media/library_and_archives_finding_aids/a18_-_ships_log_book_collection_finding_aid.pdf">Cape Ann Museum Library &amp; Archives — Ships Log Book Collection, A18</a>, pp. 1–2. Institution's finding aid distinguishes official log from journal, explains a noon-to-noon convention within the collection and observed versus dead-reckoned position. PDF text and page images checked. <strong>Rights:</strong> the institution asks researchers to contact its Librarian/Archivist for publication permission. Linked only, no facsimile copied.</li>
+<li><a href="https://www.archives.gov/research/military/logbooks/navy-info-not-in-deck-logs">NARA — Information Not Included in Deck Logs</a>. Limits conclusions about people, off-ship activities, shipyard work and flights.</li>
+<li><a href="https://www.archives.gov/research/military/logbooks/navy-deck-log-exemptions">NARA — Classified, Withdrawn and Missing Deck Logs</a>. Documents different causes of absence and proper custodial questions.</li>
+<li><a href="https://www.archives.gov/research/still-pictures/permissions">NARA — Copyright and Permissions</a>. U.S. federal works may be public domain but NARA holdings include other rights; item-level reuse checks required. No NARA photographs, records, scans or logos reproduced here.</li>
+</ol>
+<div class="notes"><p><strong>Original content rights:</strong> Editorial guide, worksheet, interface and SVG created for Final Vestige Studios on 17 November 2026. The illustrated vessel-to-archive workflow is fictional and non-documentary. No third-party photos, scans, documents, or videos were copied. The free field tool uses no paid services, tracking or account data. <strong>Last checked:</strong> 17 November 2026. Automated access restrictions are marked, not silently equated with unavailable records.</p>
+<p><strong>Related Final Vestige reading:</strong> <a href="https://finalvestige.com/the-moving-noon/">The Moving Noon</a> (clock provenance), <a href="https://finalvestige.com/the-last-fix/">The Last Fix</a> (navigation uncertainty), <a href="https://finalvestige.com/the-archive-trail/">The Archive Trail</a> (finding a primary record), and <a href="https://finalvestige.com/editorial-standards/">Editorial Standards</a>. This guide does not take over those subjects, or assert a new finding about any FV investigation.</p></div>
+</article>
+<script>
+(function(){'use strict';
+var root=document.getElementById('fv-log-desk');if(!root)return;
+var ids=['ship','number','year','service','target','clock','source','caveat'];function el(x){return document.getElementById('fv-log-'+x)}function val(x){return el(x).value.trim()}
+var choices={
+navy:['NARA Navy Deck Logs; inspect ship/hull and month index, then RG 24 catalog item; generally through 1940 Washington, 1941+ College Park (exceptions).','https://www.archives.gov/research/military/logbooks/navy-online'],
+'merchant-us':['NARA U.S. merchant official logbooks: check RG 41 by port/ship and RG 26 for later regionally filed records; operating logs may be RG 178.','https://www.archives.gov/research/military/logbooks/merchant-vessels.html'],
+'merchant-uk':['The National Archives UK merchant shipping guide; establish official vessel number, port, year and BT record series; survival is uneven.','https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-navy-ships-records-crew-lists-musters-and-log-books/'],
+private:['Identify the holding museum/finding aid and maker; check journal status, time convention and item-specific publication rights. Cape Ann A18 is an example, not proof your vessel is there.','https://www.capeannmuseum.org/media/library_and_archives_finding_aids/a18_-_ships_log_book_collection_finding_aid.pdf'],
+unknown:['Establish whether this is commissioned U.S. Navy, merchant or privately created before asserting any archive custodian. Start with the NARA vessel/station logbook directory.','https://www.archives.gov/research/military/logbooks']
+};
+var current='';var o=el('output');
+function make(){var yr=val('year');if(yr&&!/^[1-2][0-9]{3}$/.test(yr)){o.textContent='Use a four-digit year, or leave the year blank. Do not guess a date.';current='';return}
+var c=choices[val('service')],lines=['FINAL VESTIGE / MARITIME LOGBOOK ROUTE RECEIPT','Created: '+new Date().toISOString().slice(0,10),'Vessel: '+(val('ship')||'[not established]'),'Hull / official number: '+(val('number')||'[not established]'),'Target year: '+(yr||'[unknown]'),'Research question: '+(val('target')||'[not yet defined]'),'Likely search route: '+c[0],'Institutional start: '+c[1],'Clock basis: '+(val('clock')==='documented'?'Documented in source; cite the exact page and rule.':val('clock')==='suspected'?'Suspected ONLY; preserve original times; do not convert.':'Unresolved; preserve original time as written; do not convert.'),'Record citation / URL: '+(val('source')||'[not yet inspected]'),'Access and rights note: '+(val('caveat')||'[not yet assessed]'),'Status: Research lead only. Existence, contents, rights and clock conversion NOT verified by this tool.'];
+current=lines.join('\n');o.textContent=current}
+el('generate').addEventListener('click',make);
+el('clear').addEventListener('click',function(){ids.forEach(function(x){if(x==='service'||x==='clock')el(x).selectedIndex=0;else el(x).value=''});current='';o.textContent='Fields cleared locally; no information was sent.'});
+el('copy').addEventListener('click',function(){if(!current)make();if(!current)return;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(current).then(function(){o.textContent=current+'\n\nCopied.'}).catch(function(){o.textContent=current+'\n\nClipboard unavailable; select and copy this text.'})}else o.textContent=current+'\n\nClipboard unavailable; select and copy this text.'});
+el('download').addEventListener('click',function(){if(!current)make();if(!current)return;var u=URL.createObjectURL(new Blob([current+'\n'],{type:'text/plain;charset=utf-8'}));var a=document.createElement('a');a.href=u;a.download='fv-maritime-logbook-route.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},1000)});
+})();
+</script>
+</section>
+<!-- /wp:html -->
