@@ -1,0 +1,27 @@
+# E433 — Article #11: 2026 California CWD zones, diagnostic sample custody and cross-border movement
+
+**2026-11-17 PT — PREPAREDNESS ONLY — REVIEW-ONLY / HARD HOLD.** Continues #11 `safe-jerky-dehydration`, *What Dried Meat Cannot Promise*. No change to original R397 manuscript Git blob `6fa55c397b161437e016d5d4a6c27da7ce3fa6bd`, source register, content slates, source selection or Integration branch. No CMS save/publication/merge.
+
+## Material primary-source findings (all accessed 2026-11-17)
+
+1. **2026 season-specific mandatory testing:** [California Department of Fish and Wildlife September 18, 2026 release](https://wildlife.ca.gov/News/Archive/california-deer-season-hits-full-stride-as-hunters-prepare-for-major-september-openers) states deer harvested in California zones **D7, X9a, X9b and X9c**, including specialty hunts within them, must be sampled for CWD. CDFW encourages voluntary sampling elsewhere. This is **2026, California, deer**, NOT a 50-state or every-species rule. Recheck before a later season.
+2. **Test result and sample are not interchangeable with packaged meat:** [CDFW's current CWD surveillance/FAQ](https://wildlife.ca.gov/Conservation/Laboratories/Wildlife-Health/Monitoring/CWD) distinguishes pending/not detected/positive/not tested. It states packaged meat cannot undergo its routine diagnostic CWD test, which relies on specific tissues (e.g. retropharyngeal lymph node/brainstem). The legal-to-import parts may omit these tissues. Readers should verify testing with the **harvest-state wildlife authority before travel**, not assume an after-the-fact meat test is available. Do not imply *not detected* proves an animal absolutely free of CWD or any processed product safe.
+3. **Separate laws and recommendation:** [CDFW Deer Hunting regulatory gateway](https://wildlife.ca.gov/hunting/deer) and CWD FAQ link California import-part restrictions and declaration requirements, with guidance to check origin and states transited. [Wisconsin DNR carcass movement guidance](https://dnr.wisconsin.gov/topic/wildlifehabitat/carcass) *recommends* not moving whole deer outside the harvest county/adjacent county, while separately describing inbound restrictions/conditional exceptions. Do NOT convert Wisconsin advice into a national prohibition or convey that California law governs transit states. No specific movement, field dressing, disposal, chemical treatment or preservation steps are offered in the draft.
+4. **Dated surveillance counts:** CDC's [January 21, 2026 animal page](https://www.cdc.gov/chronic-wasting/animals/index.html) uses an August 2025 count of **36** states; CDC's [May 18, 2026 where-occurs page](https://www.cdc.gov/chronic-wasting/data-research/index.html) reports **37** states. Keep the dated windows instead of collapsing them to a fabricated same-day discrepancy or using either count to certify a county.
+
+## Actual editorial outputs; local, NOT in CMS
+
+- E433 *complete* WordPress-oriented Article #11 HTML, based on E432 and preserving all 12 previous figures, existing H1/H2 headings and review warnings; adds one original captioned, accessible 3-stage harvest-jurisdiction/movement-jurisdiction/result-identity diagram (13 figures total).
+- E433 paper-only printable Game Meat Source-Check Card, retaining recipients' private follow-up records and adding origin/transit/destination and official URL/date fields; fixed one inherited malformed nested label for semantic HTML validity. No network form, tracker, JS or electronic personal-data collection.
+- Six-source primary-official access delta (four newly added bibliography sources; 44 -> 48, with inherited access statuses preserved), fifteen-claim crosswalk, exact editorial delta, local screenshots/checksums.
+- **Local-only Chromium/static checks: 30/30 PASS** at 320/360/390/768/1440px + print for both files, no horizontal overflow. Not authentic WP Gutenberg/theme capture, human screen reader/keyboard QA, independent source attestation or qualified food safety.
+
+## Mandatory HARD HOLD and integration handoff
+
+Original R397 source line **7 and 37 freezing**, **69 untested equipment**, **72-81 composite methods**, **95-96 storage-life compromise**, **122 evidence assurance** remain unapproved and have **not** been altered. Inherited five source disputes, nine manuscript forks, 35-original/70-authentic-exports/native CI and independently verified QD remain unresolved.
+
+Integration has progressed independently to [R440 draft PR #2895](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2895): synthetic 707/707 combined tests, not real native complete original run or human review. No code overlap or branch merge. Existing [editorial PR #2789](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2789) remains draft.
+
+**Reviewer question:** Does the 2026 CA/2026 WI distinction adequately prevent interpretation as a national rule, and do sample-custody questions remain a nonprocedural records tool? Independently verify current zone law and any planned travel restrictions before release. Human wildlife and qualified food-safety reviewers must examine original whole process, then independent QD/owner authorizes any public release.
+
+**Geographic scope:** United States, California 2026 and Wisconsin separate examples. **Sources accessed:** 2026-11-17. **Next review:** 2026-12-17 or sooner after state regulatory or season changes. **Changes to live site, WordPress, navigation, homepage, Investigations, email, commerce: NONE.**
