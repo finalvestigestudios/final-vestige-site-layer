@@ -1,0 +1,23 @@
+# The Two Timelines — source, rights and release receipt
+
+**Scope:** Final Vestige Studios Library only. Produced 2026-11-17. One new, free interactive desk: compare independently justified UTC windows for different documents purporting to date the same occurrence. Not a chronology reconstruction or conversion engine.
+
+**Reason for distinct asset:** Live *The Moving Noon* explains historical clock systems, *The Year That Changed Twice* covers calendars, *The Black Bar* concerns FOIA redactions, and the Apollo 1 Evidence Atlas presents sourced incident chronology. This desk does not replace them: it keeps original timestamp, the nature of what was dated, UTC conversion evidence and uncertainty separately, and checks only interval overlap. GitHub topic searches before authoring returned no exact chronology-conflict desk.
+
+**Verified institutional sources (links, not copied material; checked 2026-11-17):**
+1. NARA Catalog Search Tips — https://www.archives.gov/research/catalog/help/search-tips — distinguishes inclusive, coverage, production, broadcast, release and other catalog date concepts.
+2. NARA Production Date element — https://www.archives.gov/research/catalog/lcdrg/elements/production-date — creation/production date has a distinct meaning and uncertainty qualifiers.
+3. NARA Date Note — https://www.archives.gov/research/catalog/lcdrg/elements/date-note — date gaps, predominant bulk dates and uncertainty in catalog descriptions.
+4. NIST DST Rules — https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst — current U.S. DST rules and the 2007 change; explicitly **not** a historical time-zone converter.
+5. NASA Apollo 204 Review Board report — https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/ — primary investigation report with chronology and procedural record; no content copied.
+6. FV Editorial Standards — https://finalvestige.com/editorial-standards/ — house policy for disputed records, dates and reconstructions.
+
+**Original imagery and rights:** The SVG contains three fictional observation intervals, originally drawn for FV in 2026. Caption and accessible title/description declare it illustrative, not documentary; © Final Vestige Studios. No third-party scans, videos, maps, fonts or archival photographs have been copied. External rights remain item-specific, and no automatic license is inferred from government-hosted URLs.
+
+**Behavior:** Input stays client-side and is not stored. Reader supplies as-written time, source, kind of timestamp, original link, clock basis, independently justified inclusive UTC bounds, and uncertainty note. The form compares pairs only if clock basis is source-stated UTC or specifically verified UTC conversion, with valid ordered UTC-minute intervals. It classifies overlapping / separated / unresolved *under those assumptions*; it never decides witness truthfulness, independence, historical DST or timezone. Export uses a local Markdown Blob on user action only. No fetches, analytics, storage, automatic emails or external scripts.
+
+**Structural source-level acceptance:** Source/footer/link scoping, bounded original input, no dynamic insertion of user HTML (results use textContent), strict calendar round-trip validation, initial two witness fields, keyboard-accessible real buttons, aria-live result and original diagram alt description. CSS breakpoints at 760/390 with fluid 320+; print rules provided. Static checks: {"hasOriginalDiagram":true,"institutionalSources":6,"localOnly":true,"responsive":true,"scopedStyles":true,"sourceFields":true,"realClockChecks":true,"noCodeExecution":true,"internalCrosslinks":true}.
+
+**Publication status: HOLD.** WordPress status draft/noindex only; source level review does **not** establish actual theme contrast, 320/390/768/1440 visual rendering, assistive technology, mobile keyboard behavior or no cross-widget conflicts. Subscriber/social suppression not exercised. Nothing is linked into public Library navigation; no first-publish emails. A future release requires live-theme browser acceptance, confirmed suppression, item/link health recheck, then revision-scoped Library parent card insertion. No changes to Preparedness, Investigations, homepage, shared theme, Grok or subscriber settings.
+
+**Future Grok coordination idea only:** 40-second educational demonstration “Three clocks, one event—not three lies” using the explicitly fictional diagram. Do not use actual historic images or change Grok accounts without a rights check.
