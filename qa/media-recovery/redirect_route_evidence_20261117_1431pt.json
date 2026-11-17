@@ -1,0 +1,70 @@
+{
+  "schema": "fv-media-redirect-reconciliation-20261117-v1",
+  "checked_at_local": "2026-11-17 14:31 PST",
+  "method": "independent public web retriever, not logged-out Chromium or origin server diagnostic",
+  "applicable_gate": "qa/media-recovery/slot_parity_61_20261117.cjs",
+  "historical_inventory": {
+    "posts": 61,
+    "image_slots": 355,
+    "authored_offsite": 288
+  },
+  "guest_confirmed_broken": null,
+  "claimed_76percent_wire_reduction_verified": false,
+  "records": [
+    {
+      "slot": "287:5",
+      "authored_origin_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "independent_origin_http_status": 404,
+      "observed_at": "2026-11-17",
+      "alternate_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "alternate_observation": "rendered_by_independent_reader",
+      "alternate_http_status": null,
+      "redirect_proven": false,
+      "rights": "Publisher credits University Press of Florida; no rehosting/redistribution authorization established",
+      "match": "same_filename_related_image_binary_unverified",
+      "native_dimensions_px": null,
+      "preview_960px": null,
+      "caching_authorized": false
+    },
+    {
+      "slot": "418:2",
+      "authored_origin_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "independent_origin_http_status": 403,
+      "alternate_url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg",
+      "alternate_observation": "rendered_by_independent_reader",
+      "alternate_http_status": null,
+      "redirect_proven": false,
+      "rights": "Museum credits US Coast Guard; item-level asset-rights/crop review pending",
+      "match": "same_scene_filename_variant_not_binary_verified",
+      "native_dimensions_px": null,
+      "verified_preview_dimensions_px": {
+        "width": 600,
+        "height": 463
+      },
+      "no_upscale_proposed_dimensions_px": {
+        "width": 600,
+        "height": 463
+      },
+      "caching_authorized": false
+    },
+    {
+      "slot": "407:1",
+      "authored_origin_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "independent_origin_http_status": null,
+      "alternate_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+      "alternate_observation": "official HTML catalog states Public Domain and credits J. R. Stacy; not a binary source",
+      "alternate_http_status": null,
+      "rights": "USGS catalog PD; original image binary identity/size pending",
+      "native_dimensions_px": null,
+      "no_upscale_proposed_dimensions_px": null,
+      "caching_authorized": false
+    }
+  ],
+  "policy": {
+    "max_width_px": 960,
+    "no_upscaling": true,
+    "required": "cold guest currentSrc, actual CDP redirect chain and GET status/bytes/decoded screenshot; exact frame and rights clearance; no production rewrite",
+    "wp_production_write_authorized": false
+  },
+  "notes": "Reader 403/404 are independent observations, NOT confirmed visitor failures. URLs on separate media hosts are alternate leads, not proven HTTP redirects. Collector-supplied redirect chains must be independently audited against Network.requestWillBeSent.redirectResponse."
+}
