@@ -61,6 +61,10 @@ jobs:
         run: |
           python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_seek_receipt_r502.py
           python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_seek_receipt_r502.py
+      - name: R503 exact native post-read positions for certificate bytes (both modes)
+        run: |
+          python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_read_position_r503.py
+          python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_read_position_r503.py
       - name: Fail closed on CI artifact paths (R41)
         run: python products/desktop/ci_artifact_policy.py .github/workflows/desktop-build.yml
       - name: Verify mandatory two-mode CI source gate (R57)
