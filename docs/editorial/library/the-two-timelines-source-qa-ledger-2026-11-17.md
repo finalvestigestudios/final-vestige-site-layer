@@ -70,3 +70,22 @@
 **WordPress revision/readback:** A single `core/html` block was replaced using section identity, content hash and `expected_modified` optimistic locking. GitHub source and authenticated WordPress edit readback match exactly at **32,743 characters**, last modified **2026-11-17T08:38:45** site-local, no WP content warnings. Parent #77, status **draft**, `jetpack_seo_noindex=true`; no public post/published revision was touched. Anonymous draft slug `/free-resources/the-two-timelines/` returned HTTP **404**. Published parent #77 (modified 2026-11-07T19:39:01) and published Research Sources #1338 (modified 2026-11-03T22:12:43) retain their original revisions, HTTP 200/canonical and SEO metadata.
 
 **Publication decision: HOLD.** The real production theme at 320/390/768/1440, true screen-reader and keyboard browser navigation, interactive Markdown download, JS-off behavior, scroll containment and subscriber/social notifications have not passed an inspectable browser test. A ready WordPress screenshot URL alone is not pixel/assistive-technology evidence. Do not publish, update the public Library card, send announcements, or alter Grok's accounts until the independent release gate passes. No new spending and no changes to Preparedness, Investigations, the homepage or shared templates.
+
+
+## November 17, 2026 — clock-label and source-rule extension
+
+Existing draft extended in place, not a new page. Six-field clock-label worksheet, original 900 × 244 accessible SVG, and a clearly fictional GMT comparison now precede the desk. No interactive code changed. Reason: a correctly copied clock label can still carry an unverified historical convention.
+
+**Institutional primary-method references, checked 2026-11-17; all link-only, no external reproductions:**
+- US Naval Observatory, Universal Time: https://aa.usno.navy.mil/faq/UT.html — pre-1925 GMT day could begin at noon in astronomical and nautical almanacs; cannot generalize to all documents.
+- NIST, World Time Scales: https://www.nist.gov/pml/time-and-frequency-division/popular-links/walk-through-time/walk-through-time-world-time-scales — new international UTC became effective January 1, 1972; earlier coordinated time signals existed.
+- NIST, UTC/GMT/EST explainer: https://www.nist.gov/pml/time-and-frequency-division/how-utcnist-related-coordinated-universal-time-utc-international — modern time-zone distinction; does not establish the offset of a particular historical document.
+
+**Rights:** SVG and worksheet original FV 2026; fictitious example expressly labelled; © Final Vestige Studios. External sources linked without reproduction; their asset-specific rights remain unassessed. Alt and long SVG description written; no animation or dependencies.
+
+**Static checks:** one original core/html block, exact prior JavaScript preserved, section IDs preserved, no outside assets, responsive two-to-one column method card at 760px, and existing 390px/print rules retained. This is not a production-theme, keyboard, screen-reader or browser acceptance result.
+
+**Newsletter diagnostics 2026-11-17:** WordPress settings reported subscriptions=true and email_new_posts_by_default=false, but this is not proof of enforced notification suppression, nor evidence about social distribution. No settings were changed.
+
+**Release:** draft/noindex hold. Actual-theme inspectable 320/390/768/1440 and assistive testing and no-email/social guarantees remain blocked. Public page #77 and Research Sources #1338 remain outside scope.
+
