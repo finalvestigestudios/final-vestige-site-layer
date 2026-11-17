@@ -49,3 +49,41 @@ All below checked against web results **2026-11-17** unless stated. Access state
 
 ## Decision
 **HOLD.** Do not merge PR or publish page or newsletter/social. No paid spend, no third-party asset copying.
+
+---
+
+## 2026-11-17 15:38 PT — Second-pass annex: *A Missing Log Has More Than One Meaning*
+
+**Scope / reason.** First reviewed current public Library and Editorial Standards; authenticated WordPress listing shows 74 published/draft children. Reviewed GitHub coordination #2923 and draft PR #2922, plus the other Library work visible in PR/issue search. Avoided creating a duplicative child page: the second-pass instrument is one *new, separate Gutenberg HTML block* appended to existing draft #2870, preserving its first block. It addresses the distinct demand of **what to do when the archive returns no logbook**.
+
+**Reader deliverable.** A 2,014-word, 22,015-character original annex with:
+- seven evidence statuses presented as keyboard-native disclosure sections, with an actionable next question and direct NARA reference in each;
+- an accessible original four-step analytical SVG that distinguishes record identity, public access, institutional custody, and relevance, not archival documentation;
+- a four-row evidence-claim strength comparison;
+- two adaptable archive inquiry scripts (Navy and U.S. merchant);
+- an eight-line printable *Not Found Evidence Receipt* recording search terms, custody contacts, holdings response, limitations, next source, and rights;
+- explicit index-only example for USS *Abbot* DD-629 February 1951, without making claims about uninspected scanned pages.
+
+**Verified source ledger (last rechecked November 17, 2026):**
+1. NARA, *Introduction to Navy Deck Logs*: https://www.archives.gov/research/military/logbooks/naval-deck-logs — commissioned/in-service distinction; NARA Washington vs College Park date boundary **with exceptions**. Web HTML accessed, direct link, no reproductions.
+2. NARA, *Digitized Deck Logs*: https://www.archives.gov/research/military/logbooks/digitized-logs — search without USS prefix; incomplete indexed/catalog digitization; privacy review of later years. Web HTML accessed; no guarantee a given item has images.
+3. NARA, *Classified, Withdrawn, and Missing Deck Logs*: https://www.archives.gov/research/military/logbooks/navy-deck-log-exemptions — distinct states, different reference/FOIA paths and missing volume limitations; institutional reviewed February 3, 2022. Web HTML accessed; **never assume a specific volume is missing/withheld**.
+4. NARA, *Information NOT Included in Deck Logs*: https://www.archives.gov/research/military/logbooks/navy-info-not-in-deck-logs — off-ship events, aircraft manifests, day-to-day work, detailed yard repairs; reviewed February 3, 2022. Web HTML accessed.
+5. NARA, *Logbooks of US Merchant Vessels*: https://www.archives.gov/research/military/logbooks/merchant-vessels.html — statutory/operating/engineering logs; RG 41, RG 26, RG 178 differ by purpose and arrangement. Web HTML accessed; do not conflate survival of series.
+6. NARA, *Navy Deck Logs Available in the National Archives Catalog*: https://www.archives.gov/research/military/logbooks/navy-online — *Abbot* DD-629 February 1951 month entry linked to catalog ID 285104169. Web HTML accessed; **catalog scan pixels not inspected**.
+7. NARA, *Copyright and Permissions*: https://www.archives.gov/research/still-pictures/permissions — federal government works usually public domain in US, but NARA holdings contain private/right-restricted materials; item-level reuse needed. No third-party image copied.
+8. FV site links: \`/the-archive-trail/\` and \`/free-resources/the-same-story-twice/\` public HTML opened Nov 17; \`/the-moving-noon/\` received HTTP 429 from web client on this particular verification attempt (previous live checks in first-pass ledger). 429 is **not evidence that readers see an error**.
+
+**Image rights:** One new original author-drawn, date-stamped SVG explanatory flow diagram only; author/owner Final Vestige Studios, created 2026-11-17, original source within GitHub annex file. Descriptive \`<title>\`, \`<desc>\`, caption and explicit illustrative—not archival—label. No archival scans, photos, logos or third-party videos reproduced. Original prose, HTML/CSS and worksheet are FV-created; linked sources remain under their own access/reuse terms.
+
+**Static preflight:** 14/14 checks passed before write: unique IDs (5/5); absolute URLs; accessible SVG; seven \`<details open>\` sections; eight printable ruled fields; one \`<section>\`; print + 560px mobile CSS; no embedded external image; no JavaScript; institutional NARA links; dated source ledger; scrollable table; scoped CSS. **This is structural QA, not a browser or screen-reader result.**
+
+**Write + independent readback:** GitHub companion file:
+\`docs/editorial/library/the-log-was-not-the-voyage-missing-log-evidence-desk-2026-11-17.html\`, branch \`review/library-log-was-not-voyage-20261117\`, commit \`26581052aa4787183a1c5bae4cda55c8b98ec8e6\`. Used \`wpcom-page-sections-insert\` with exact \`modified/content_hash\` optimistic tokens, appended at index 1 to draft #2870. WP reported no stripping/warnings. Authenticated re-read:
+- page #2870 \`draft\`, parent #77, \`jetpack_seo_noindex=true\`, modified \`2026-11-17T15:37:49\`;
+- 47,775 character raw content total; first block hash **unchanged** \`0c83c5133fe85a1bb1e94e2cc125a97a9695a999\`; now 2 blocks;
+- second block **exact string present** matching GitHub (22,050 characters including Gutenberg wrapper).
+- new block hash \`c8dff9a37a03896f23d655fcc1193692321299b0\`, GitHub blob \`71e35f9659277a38aa759450927fbb80bcff39da\`.
+- Public Library #77 \`publish\` unchanged since 2026-11-07T19:39:01, Research Sources #1338 unchanged since 2026-11-03T22:12:43; public Library read as HTTP 200 and canonical \`/free-resources/\`.
+
+**RELEASE HOLD unchanged:** The WP production-theme preview at 320/390/768/1440, visual pixel review, real keyboard/screen-reader acceptance, signed-out preview behavior of the draft, item-level external access/accessibility, and reliable \`_jetpack_dont_email_post_to_subs=true\` plus social auto-publish suppression are not independently demonstrated. Because those conditions are not met, the annex is saved **only in draft**, no Library card/nav/other public page modified, no subscriptions or Grok account touched. Do not merge or change status until verified.
