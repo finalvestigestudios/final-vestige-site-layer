@@ -5,7 +5,7 @@ import hashlib, json
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'QA'/'Apollo_R428_Local_Evidence.zip'
-files=[p for p in ROOT.rglob('*') if p.is_file() and p != OUT and '__pycache__' not in p.parts]
+files=[p for p in ROOT.rglob('*') if p.is_file() and p not in (OUT, ROOT/'QA'/'manifest.json') and '__pycache__' not in p.parts]
 files=sorted(files, key=lambda p:p.relative_to(ROOT).as_posix())
 manifest=[{'path':p.relative_to(ROOT).as_posix(),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size} for p in files]
 (ROOT/'QA'/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
