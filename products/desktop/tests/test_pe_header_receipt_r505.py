@@ -1,4 +1,4 @@
-"""R504: exact position/byte custody for DOS, NT and section-table reads."""
+"""R505: exact position/byte custody for DOS, NT and section-table reads."""
 from __future__ import annotations
 
 from io import BytesIO
@@ -12,7 +12,7 @@ _DATA = bytes(range(256)) * 4
 _REDACTED = "PE file changed or was truncated during inspection"
 
 
-class HeaderReceiptR504(unittest.TestCase):
+class HeaderReceiptR505(unittest.TestCase):
     def read(self, stream, start=64, count=24, length=len(_DATA)):
         return read_exact_at(stream, start, count, length)
 
