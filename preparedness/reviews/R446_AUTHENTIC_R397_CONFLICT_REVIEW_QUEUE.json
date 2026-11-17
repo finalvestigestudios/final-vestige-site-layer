@@ -1,0 +1,950 @@
+{
+  "schema": "R446_ORIGINAL_ADJUDICATION_REVIEW_ONLY_v1",
+  "repo": "finalvestigestudios/final-vestige-site-layer",
+  "issue": 136,
+  "business_coordination_issue": 820,
+  "captured_date": "2026-11-17",
+  "original_docket": {
+    "path": "preparedness/reviews/r397_original_source_fork_docket.json",
+    "commit": "a22c8797da58ecf186f50fcf47063bd195fd3c17",
+    "git_blob": "86d22a1d504c93db7689b914e2202a7845b648e2"
+  },
+  "release_state": "DRAFT_HARD_HOLD",
+  "qualified_review_approved": false,
+  "publishable": false,
+  "safety_approved": false,
+  "merchant_offer_verified": false,
+  "branch_pins": [
+    {
+      "branch": "claude/prep-start-bbfeb8",
+      "sha": "2122d856fce9f64887c16df3d52e64be9f59a55b"
+    },
+    {
+      "branch": "claude/prep-food-ccdc55",
+      "sha": "f911ff7a655de8d81535ea86ec3d65a49ee76648"
+    },
+    {
+      "branch": "claude/prep-health-837444",
+      "sha": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17"
+    },
+    {
+      "branch": "claude/prep-hist-field-9db767",
+      "sha": "4e5caf812727953aa45e3bda2d382f2c67b6a09c"
+    },
+    {
+      "branch": "claude/prep-hist-food-b81f19",
+      "sha": "67e116e536c7410bed30f8f3b1bb8c166f3c223d"
+    },
+    {
+      "branch": "claude/prep-hist-home-0e0e38",
+      "sha": "7504a5f099594d635e3dd7332a33a2e1346c43a2"
+    },
+    {
+      "branch": "claude/prep-shelter-5e1e0e",
+      "sha": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976"
+    },
+    {
+      "branch": "claude/prep-shelter-continuation",
+      "sha": "ac8625faf30dd5538fadc31e06cb5a2cea1defae"
+    },
+    {
+      "branch": "claude/prep-shelter-followup-evidence",
+      "sha": "6a5998ead97eca997e573ce8d3ceacf1c6aabad4"
+    }
+  ],
+  "article_identities": [
+    {
+      "slug": "emergency-hygiene-sanitation",
+      "body_candidate_git_blobs": [
+        "324eeafa4d48c3e83e88055c5f226645a8893b4a"
+      ]
+    },
+    {
+      "slug": "family-communication-plan",
+      "body_candidate_git_blobs": [
+        "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+        "cbfe7830e9412ac99a1920c581a14d2913a9eaf6",
+        "c97a79761dc3be1c44e5f9322a606ccc7fd11c6e"
+      ]
+    },
+    {
+      "slug": "fire-making-across-time",
+      "body_candidate_git_blobs": [
+        "ff1b5e2c91172925e1d75462da4b3e162399269f"
+      ]
+    },
+    {
+      "slug": "food-safety-power-outage",
+      "body_candidate_git_blobs": [
+        "70339ef60f3f7bf1bec26a0ca457b0438650163e"
+      ]
+    },
+    {
+      "slug": "go-bags",
+      "body_candidate_git_blobs": [
+        "5135639786bbafa4e03939a74659cd0f31df3564"
+      ]
+    },
+    {
+      "slug": "history-of-food-preservation",
+      "body_candidate_git_blobs": [
+        "273b246a069e834d8476bfc2854308732f5137ab"
+      ]
+    },
+    {
+      "slug": "home-fire-escape-plan",
+      "body_candidate_git_blobs": [
+        "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+        "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+        "b8db7be7e0482334d8356f35616f21f36aaa2d4d"
+      ]
+    },
+    {
+      "slug": "homemade-water-filters",
+      "body_candidate_git_blobs": [
+        "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+        "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+        "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+        "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+        "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+        "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+        "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+        "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+        "67aa44e9a332f57fb70298a3867410d8f66c8c15"
+      ]
+    },
+    {
+      "slug": "household-emergency-plan",
+      "body_candidate_git_blobs": [
+        "8ca5c261dba56eeaf79c445332381a74867233de"
+      ]
+    },
+    {
+      "slug": "lewis-and-clark-salt-works",
+      "body_candidate_git_blobs": [
+        "364152230a6956a4936fd4ec4bce6b1547fe2533"
+      ]
+    },
+    {
+      "slug": "making-water-safer",
+      "body_candidate_git_blobs": [
+        "f85d158fc8752200a227282e640f6df48277daf5",
+        "f85d158fc8752200a227282e640f6df48277daf5",
+        "f85d158fc8752200a227282e640f6df48277daf5",
+        "f85d158fc8752200a227282e640f6df48277daf5",
+        "f85d158fc8752200a227282e640f6df48277daf5",
+        "f85d158fc8752200a227282e640f6df48277daf5",
+        "f85d158fc8752200a227282e640f6df48277daf5",
+        "f85d158fc8752200a227282e640f6df48277daf5",
+        "f85d158fc8752200a227282e640f6df48277daf5"
+      ]
+    },
+    {
+      "slug": "medication-and-devices",
+      "body_candidate_git_blobs": [
+        "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e"
+      ]
+    },
+    {
+      "slug": "navigation-before-gps",
+      "body_candidate_git_blobs": [
+        "49beb68339a6b85b07d686c0cfb9fe1d88b8de4f"
+      ]
+    },
+    {
+      "slug": "outage-heat-cold-generators",
+      "body_candidate_git_blobs": [
+        "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+        "55a1e3018e3413b79378c6677f15e536bb777377",
+        "5608a28249a0e351710e0c756d878048c8e41e24"
+      ]
+    },
+    {
+      "slug": "pantry-rotation",
+      "body_candidate_git_blobs": [
+        "727a43eff8b30c0f68fb6695d76d63166eb51450"
+      ]
+    },
+    {
+      "slug": "pemmican-and-dried-meats",
+      "body_candidate_git_blobs": [
+        "1febc8929f8b90c81a3fcef1e46a2811778b7e06"
+      ]
+    },
+    {
+      "slug": "pickling-fermentation-old-recipes",
+      "body_candidate_git_blobs": [
+        "1869e37626b7463da45763d60202bd5ac0bd7700"
+      ]
+    },
+    {
+      "slug": "pioneer-supply-chains-failed",
+      "body_candidate_git_blobs": [
+        "3643c50b43ca7ba6c1d9bc439e7c78730503b80f"
+      ]
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "body_candidate_git_blobs": [
+        "a658481d828dc4c5ba85f296adbfbee0514f0611"
+      ]
+    },
+    {
+      "slug": "preparedness-real-households",
+      "body_candidate_git_blobs": [
+        "70d03c366e10db623929f118501becfa26c48bab"
+      ]
+    },
+    {
+      "slug": "pressure-canning-low-acid",
+      "body_candidate_git_blobs": [
+        "c60d824c2f679fb7362b8523aec18110f8248290"
+      ]
+    },
+    {
+      "slug": "rain-barrels-and-cisterns",
+      "body_candidate_git_blobs": [
+        "1454ab95bef4e54ae8992addf4f815fc8bf358b4"
+      ]
+    },
+    {
+      "slug": "root-cellars-cool-storage",
+      "body_candidate_git_blobs": [
+        "7f375c32d74f2828b4912f5692abc44483e4629a"
+      ]
+    },
+    {
+      "slug": "safe-jerky-dehydration",
+      "body_candidate_git_blobs": [
+        "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd"
+      ]
+    },
+    {
+      "slug": "salt-beef-salt-pork-age-of-sail",
+      "body_candidate_git_blobs": [
+        "6539aafeca9bca67c96247c81a7412b117201b88",
+        "6539aafeca9bca67c96247c81a7412b117201b88",
+        "6539aafeca9bca67c96247c81a7412b117201b88",
+        "6539aafeca9bca67c96247c81a7412b117201b88",
+        "6539aafeca9bca67c96247c81a7412b117201b88",
+        "6539aafeca9bca67c96247c81a7412b117201b88",
+        "6539aafeca9bca67c96247c81a7412b117201b88",
+        "6539aafeca9bca67c96247c81a7412b117201b88",
+        "6539aafeca9bca67c96247c81a7412b117201b88"
+      ]
+    },
+    {
+      "slug": "sanitation-before-germ-theory",
+      "body_candidate_git_blobs": [
+        "02090fc1b773fd79f08a7ba754b6125844c37eab"
+      ]
+    },
+    {
+      "slug": "shelter-or-evacuate",
+      "body_candidate_git_blobs": [
+        "b8acf07e533eea43795aa242f39fd926b080130f",
+        "ed6e6bc4dc1344d1aa25679c6f4380f76d82927e",
+        "a8c36cd63517fdeb723dca201b31802c2a721ddf"
+      ]
+    },
+    {
+      "slug": "ships-biscuit-and-hardtack",
+      "body_candidate_git_blobs": [
+        "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4"
+      ]
+    },
+    {
+      "slug": "smokehouses-salting-curing",
+      "body_candidate_git_blobs": [
+        "e5f6241c1fa09fdbd684234317aa819ea4ef13a2"
+      ]
+    },
+    {
+      "slug": "three-day-kit",
+      "body_candidate_git_blobs": [
+        "ef5463ca668166766ca3d868908bc0bcb6040a23"
+      ]
+    },
+    {
+      "slug": "two-week-water-storage",
+      "body_candidate_git_blobs": [
+        "24572839d79a3c3f78805f3fc6834b7ab6037768",
+        "24572839d79a3c3f78805f3fc6834b7ab6037768",
+        "24572839d79a3c3f78805f3fc6834b7ab6037768",
+        "24572839d79a3c3f78805f3fc6834b7ab6037768",
+        "24572839d79a3c3f78805f3fc6834b7ab6037768",
+        "24572839d79a3c3f78805f3fc6834b7ab6037768",
+        "24572839d79a3c3f78805f3fc6834b7ab6037768",
+        "24572839d79a3c3f78805f3fc6834b7ab6037768",
+        "24572839d79a3c3f78805f3fc6834b7ab6037768"
+      ]
+    },
+    {
+      "slug": "warnings-radios-offline-maps",
+      "body_candidate_git_blobs": [
+        "fbc39101ba2c8378423ba9554aaf467ee3bc53b7"
+      ]
+    },
+    {
+      "slug": "water-advisories-explained",
+      "body_candidate_git_blobs": [
+        "e96486d74731606fdd5a616030f146f66c59e2b0",
+        "e96486d74731606fdd5a616030f146f66c59e2b0",
+        "e96486d74731606fdd5a616030f146f66c59e2b0",
+        "e96486d74731606fdd5a616030f146f66c59e2b0",
+        "e96486d74731606fdd5a616030f146f66c59e2b0",
+        "e96486d74731606fdd5a616030f146f66c59e2b0",
+        "e96486d74731606fdd5a616030f146f66c59e2b0",
+        "e96486d74731606fdd5a616030f146f66c59e2b0",
+        "e96486d74731606fdd5a616030f146f66c59e2b0"
+      ]
+    },
+    {
+      "slug": "water-math",
+      "body_candidate_git_blobs": [
+        "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+        "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+        "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+        "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+        "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+        "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+        "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+        "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+        "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4"
+      ]
+    },
+    {
+      "slug": "water-purification-through-history",
+      "body_candidate_git_blobs": [
+        "3c89d3041b170038c842dea1b4f943385b0c8a86"
+      ]
+    }
+  ],
+  "source_scope_review": [
+    {
+      "source_id": "fsis-power-failure",
+      "question": "Qualified reviewer: verify page freshness, four-hour refrigeration and 24/48-hour freezer assumptions, and any food-safety exclusions. Do not generalize.",
+      "original_decision": "HUMAN_REVIEW_REQUIRED",
+      "source_variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "source_blob": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+          "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "publisher": "USDA Food Safety and Inspection Service (Ask USDA)",
+          "kind": "regulator",
+          "supports_exact": "A refrigerator keeps food cold for about 4 hours if unopened; a full stand-alone freezer holds temperature about 48 hours (24 if half full) with the door closed; a refrigerator's freezer compartment may not hold as long; group freezer packages together.",
+          "reading_scope_notes_exact": "Short Q&A that points to the longer FSIS emergencies page. Upgraded from the register placeholder.",
+          "fragment": "preparedness/sources/fragments/food.json"
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "source_blob": "5105f4bbd7d5b2e991f28d4b4ae7c9d5a2804aa9",
+          "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+          "verified_on": "2026-11-01",
+          "human_link_check": false,
+          "publisher": "USDA Food Safety and Inspection Service (Ask USDA)",
+          "kind": "regulator",
+          "supports_exact": "A refrigerator keeps food cold for about 4 hours if unopened; a full stand-alone freezer holds its temperature for approximately 48 hours (24 hours if half full) if the door stays closed; the freezer compartment of a refrigerator-freezer may not keep food frozen as long; group freezer packages together.",
+          "reading_scope_notes_exact": "Upgraded from the register placeholder. Read: the whole short article as rendered by Firecrawl on 2026-11-01. Page shows 'Last Updated: Dec 17, 2024'. Agrees with the CDC, FEMA and Ready.gov timings. human_link_check remains false.",
+          "fragment": "preparedness/sources/fragments/shelter.json"
+        }
+      ],
+      "proposed_selection": null,
+      "reviewer": null,
+      "review_evidence": null,
+      "qualified_safety_approved": false
+    },
+    {
+      "source_id": "loc-pioneer-diaries",
+      "question": "Qualified historian: distinguish collection catalogue from individually read diary text; no invented primary-source quotations.",
+      "original_decision": "HUMAN_REVIEW_REQUIRED",
+      "source_variants": [
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "source_blob": "6b65e0aaa777b4c5ebc57fbeade0386b4ab6c32f",
+          "url": "https://www.loc.gov/item/2002564479/",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "publisher": "Library of Congress, with Harold B. Lee Library (Brigham Young University) and the Utah Academic Library Consortium",
+          "kind": "archive",
+          "supports_exact": "Catalogue record for a digitized collection of 49 diaries, 43 maps, 82 photographs and illustrations, and seven published guides for emigrants, about Mormon and other pioneers moving west to Utah, Montana and the Pacific between 1847 and 1869 (collection title runs from 1846).",
+          "reading_scope_notes_exact": "Upgraded from the register placeholder; the placeholder title 'Pioneer diaries collection' was not the record's actual title. The drafting agent read the catalogue record only, NOT the diaries. The collection is mostly Latter Day Saint migration to Utah and is not a Donner Party source; it is cited only as a place to read ordinary overland provisioning in the travelers' own words.",
+          "fragment": "preparedness/sources/fragments/hist-field.json"
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "source_blob": "c1856c998c6c728f0de72221e5654a238df994a9",
+          "url": "https://www.loc.gov/item/2002564479/",
+          "verified_on": "2026-10-30",
+          "human_link_check": false,
+          "publisher": "Library of Congress (American Memory-derived collection; source material from Brigham Young University and Utah Academic Libraries Consortium)",
+          "kind": "archive",
+          "supports_exact": "The collection comprises 49 diaries, 43 maps, 82 photographs and illustrations and seven published guides for emigrants, covering Mormon and other pioneers moving to Utah, Montana and the Pacific between 1847 and 1869.",
+          "reading_scope_notes_exact": "Only the collection-level description was read. We did not open individual diaries, so no diary text is quoted or paraphrased from it. The placeholder titled this 'Pioneer diaries collection'; this is the actual title. Extent read: the collection-level description only. No individual diary was opened.",
+          "fragment": "preparedness/sources/fragments/hist-food.json"
+        }
+      ],
+      "proposed_selection": null,
+      "reviewer": null,
+      "review_evidence": null,
+      "qualified_safety_approved": false
+    },
+    {
+      "source_id": "loc-prairie-traveler",
+      "question": "Qualified historian: identify exact pages or OCR read, original scan, secondary transcriptions, and quotation limits.",
+      "original_decision": "HUMAN_REVIEW_REQUIRED",
+      "source_variants": [
+        {
+          "branch": "claude/prep-hist-field-9db767",
+          "source_blob": "6b65e0aaa777b4c5ebc57fbeade0386b4ab6c32f",
+          "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "publisher": "Library of Congress (Joseph Meredith Toner Collection, digitized book)",
+          "kind": "primary-digitized",
+          "supports_exact": "Digitized public-domain handbook by Capt. Randolph B. Marcy, U.S. Army, 'published by authority of the War Department'. Contents list (seven chapters, read in full) shows chapters on routes, wagons and teams, stores and provisions (including anti-scorbutics), camp life including fuel and making fires, and guides. Preface says it draws on the author's frontier experience and on officers' reports for the routes.",
+          "reading_scope_notes_exact": "Upgraded from the register placeholder. The drafting agent read the LOC catalogue record and the OCR snippets of the first 25 of 398 page images (title page, copyright page, preface, both contents pages and the opening of chapter I). The two contents pages (images 17 and 18) were read in full on 2026-11-01; the book's full-text file could not be fetched (404), NOT the body chapters. No passage from the chapters is quoted or relied on. The LOC copy is the 1861 printing; the title page shows a copyright entry of 1860, and the work postdates the 1846-47 events discussed in pioneer-supply-chains-failed. Rights: LOC says books in this collection are in the public domain.",
+          "fragment": "preparedness/sources/fragments/hist-field.json"
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "source_blob": "c1856c998c6c728f0de72221e5654a238df994a9",
+          "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "publisher": "Library of Congress (Joseph Meredith Toner Collection); Randolph B. Marcy, Harper & Brothers, 1861",
+          "kind": "primary-digitized",
+          "supports_exact": "Catalogue and contents: 'published by authority of the War Department'; Chapter I contents list 'Stores and Provisions ... Pemmican ... Antiscorbutics ... Cold Flour'; Chapter V includes 'Jerking Meat'; rights statement says the book is in the public domain.",
+          "reading_scope_notes_exact": "The LOC page-level text view did not load for us; the passages we quote were read in the Internet Archive text of the same scan (see hist-food-marcy-prairie-traveler-text). Extent read: the item landing page (catalogue record, contents list and a few page-level OCR excerpts); the page-level text view did not load.",
+          "fragment": "preparedness/sources/fragments/hist-food.json"
+        }
+      ],
+      "proposed_selection": null,
+      "reviewer": null,
+      "review_evidence": null,
+      "qualified_safety_approved": false
+    },
+    {
+      "source_id": "nchfp-home",
+      "question": "Qualified preservation reviewer: this homepage is a hub; no specific preservation process may be inferred from a homepage alone.",
+      "original_decision": "HUMAN_REVIEW_REQUIRED",
+      "source_variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "source_blob": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+          "url": "https://nchfp.uga.edu/",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "publisher": "NCHFP, University of Georgia",
+          "kind": "extension",
+          "supports_exact": "Describes itself as the source of current research-based recommendations for most methods of home food preservation, established with USDA funding to address food-safety concerns; sections on canning, pickling, fermenting, freezing, drying, curing and smoking, and storing.",
+          "reading_scope_notes_exact": "Home page only. Used as the hub link. Upgraded from the register placeholder.",
+          "fragment": "preparedness/sources/fragments/food.json"
+        },
+        {
+          "branch": "claude/prep-hist-home-0e0e38",
+          "source_blob": "8d85fd868508c5caba14a839d119d55f31f14f72",
+          "url": "https://nchfp.uga.edu/",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "publisher": "NCHFP, University of Georgia",
+          "kind": "extension",
+          "supports_exact": "Describes itself as a source of current research-based recommendations for most methods of home food preservation, established with USDA (CSREES) funding; separate sections for canning, pickling, fermenting, freezing, drying, curing and smoking, and storing; points to the University of Georgia Cooperative Extension book So Easy To Preserve (6th edition, reviewed and updated 2020).",
+          "reading_scope_notes_exact": "Upgrades the register placeholder of the same id. Home page only; no specific recipe or process is taken from it. Reading depth: FULL: whole page read as markdown.",
+          "fragment": "preparedness/sources/fragments/hist-home.json"
+        }
+      ],
+      "proposed_selection": null,
+      "reviewer": null,
+      "review_evidence": null,
+      "qualified_safety_approved": false
+    },
+    {
+      "source_id": "nchfp-jerky",
+      "question": "Qualified food-safety reviewer: compare NCHFP/FSIS species-, temperature-, parasite-, method- and revision-specific claims; do not select a procedure automatically.",
+      "original_decision": "HUMAN_REVIEW_REQUIRED",
+      "source_variants": [
+        {
+          "branch": "claude/prep-food-ccdc55",
+          "source_blob": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+          "url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "publisher": "NCHFP, University of Georgia (extracted from So Easy to Preserve, 6th ed.)",
+          "kind": "extension",
+          "supports_exact": "Jerky safety procedure: raw poultry generally not recommended; freeze pork and wild game 6 inches or thinner at 0 F or below for at least 30 days against trichinella; handling rules; wild-game cautions; reaching 160 F internally by heating in marinade before drying or in an oven after drying, without case hardening; slices no thicker than 1/4 inch; dry in a dehydrator or oven preheated to 140 F until a test piece cracks but does not break; ground-meat jerky is harder; home-dried jerky keeps 2 weeks at room temperature in a sealed container, longer refrigerated or frozen.",
+          "reading_scope_notes_exact": "Page text credits \"So Easy to Preserve\", 6th ed. 2014 (Bulletin 989, UGA Cooperative Extension). No page-level date is shown. Upgraded from the register placeholder.",
+          "fragment": "preparedness/sources/fragments/food.json"
+        },
+        {
+          "branch": "claude/prep-hist-food-b81f19",
+          "source_blob": "c1856c998c6c728f0de72221e5654a238df994a9",
+          "url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+          "verified_on": "2026-10-29",
+          "human_link_check": false,
+          "publisher": "National Center for Home Food Preservation, University of Georgia (from So Easy to Preserve, 6th ed., Bulletin 989)",
+          "kind": "extension",
+          "supports_exact": "Jerky raw-meat hazards; wild game and pork trichinella treatment; heating meat strips to 160 F either in marinade before drying or in an oven after drying; fecal contamination of game; properly dried jerky keeps at room temperature two weeks in a sealed container.",
+          "reading_scope_notes_exact": "Upgrades the register placeholder of the same id. Source of an official disagreement: NCHFP allows the 160 F heat step after drying; USDA FSIS recommends it before dehydrating and says home-dried jerky keeps 1 to 2 months. See hist-food-fsis-jerky. Extent read: full page text, live scrape.",
+          "fragment": "preparedness/sources/fragments/hist-food.json"
+        }
+      ],
+      "proposed_selection": null,
+      "reviewer": null,
+      "review_evidence": null,
+      "qualified_safety_approved": false
+    }
+  ],
+  "manuscript_fork_review": [
+    {
+      "path": "preparedness/content/articles/family-communication-plan.body.html",
+      "original_decision": "HUMAN_REVIEW_REQUIRED",
+      "source_citation_review_required": true,
+      "reading_depth_review_required": true,
+      "original_variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "git_blob_sha": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+          "byte_length": 23180
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "git_blob_sha": "cbfe7830e9412ac99a1920c581a14d2913a9eaf6",
+          "byte_length": 26248
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "git_blob_sha": "c97a79761dc3be1c44e5f9322a606ccc7fd11c6e",
+          "byte_length": 26939
+        }
+      ],
+      "proposed_selection": null,
+      "reviewer": null,
+      "review_evidence": null,
+      "qualified_safety_approved": false
+    },
+    {
+      "path": "preparedness/content/articles/family-communication-plan.meta.json",
+      "original_decision": "HUMAN_REVIEW_REQUIRED",
+      "source_citation_review_required": true,
+      "reading_depth_review_required": true,
+      "original_variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "git_blob_sha": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+          "byte_length": 3524
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "git_blob_sha": "0ad68a8c456f50912ddef11c44bfc05c3c2d3513",
+          "byte_length": 4191
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "git_blob_sha": "a8618235711cca039f142ad59962c1153654aa45",
+          "byte_length": 4537
+        }
+      ],
+      "proposed_selection": null,
+      "reviewer": null,
+      "review_evidence": null,
+      "qualified_safety_approved": false
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.body.html",
+      "original_decision": "HUMAN_REVIEW_REQUIRED",
+      "source_citation_review_required": true,
+      "reading_depth_review_required": true,
+      "original_variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "git_blob_sha": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+          "byte_length": 26250
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "git_blob_sha": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "byte_length": 31755
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "git_blob_sha": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "byte_length": 31755
+        }
+      ],
+      "proposed_selection": null,
+      "reviewer": null,
+      "review_evidence": null,
+      "qualified_safety_approved": false
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.meta.json",
+      "original_decision": "HUMAN_REVIEW_REQUIRED",
+      "source_citation_review_required": true,
+      "reading_depth_review_required": true,
+      "original_variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "git_blob_sha": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+          "byte_length": 3127
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "git_blob_sha": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9",
+          "byte_length": 3758
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "git_blob_sha": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9",
+          "byte_length": 3758
+        }
+      ],
+      "proposed_selection": null,
+      "reviewer": null,
+      "review_evidence": null,
+      "qualified_safety_approved": false
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.body.html",
+      "original_decision": "HUMAN_REVIEW_REQUIRED",
+      "source_citation_review_required": true,
+      "reading_depth_review_required": true,
+      "original_variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "git_blob_sha": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+          "byte_length": 31428
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "git_blob_sha": "55a1e3018e3413b79378c6677f15e536bb777377",
+          "byte_length": 33238
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "git_blob_sha": "5608a28249a0e351710e0c756d878048c8e41e24",
+          "byte_length": 33265
+        }
+      ],
+      "proposed_selection": null,
+      "reviewer": null,
+      "review_evidence": null,
+      "qualified_safety_approved": false
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.meta.json",
+      "original_decision": "HUMAN_REVIEW_REQUIRED",
+      "source_citation_review_required": true,
+      "reading_depth_review_required": true,
+      "original_variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "git_blob_sha": "77dd194b096bb60ea99728a5b0042adf016b905e",
+          "byte_length": 4568
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "git_blob_sha": "debfd11fb189cb43a688862867dc60172fb6eb3a",
+          "byte_length": 5096
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "git_blob_sha": "593e7bd6fef0446f05d7a86551e702ceaa38eabb",
+          "byte_length": 5210
+        }
+      ],
+      "proposed_selection": null,
+      "reviewer": null,
+      "review_evidence": null,
+      "qualified_safety_approved": false
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.body.html",
+      "original_decision": "HUMAN_REVIEW_REQUIRED",
+      "source_citation_review_required": true,
+      "reading_depth_review_required": true,
+      "original_variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "git_blob_sha": "b8acf07e533eea43795aa242f39fd926b080130f",
+          "byte_length": 24382
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "git_blob_sha": "ed6e6bc4dc1344d1aa25679c6f4380f76d82927e",
+          "byte_length": 30877
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "git_blob_sha": "a8c36cd63517fdeb723dca201b31802c2a721ddf",
+          "byte_length": 31507
+        }
+      ],
+      "proposed_selection": null,
+      "reviewer": null,
+      "review_evidence": null,
+      "qualified_safety_approved": false
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.meta.json",
+      "original_decision": "HUMAN_REVIEW_REQUIRED",
+      "source_citation_review_required": true,
+      "reading_depth_review_required": true,
+      "original_variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "git_blob_sha": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+          "byte_length": 3398
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "git_blob_sha": "0f4800f6808f54e0487de1f8426b4612f7d0a54f",
+          "byte_length": 3736
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "git_blob_sha": "fb1081527e5afdd542299f2087397cf3308716c6",
+          "byte_length": 3981
+        }
+      ],
+      "proposed_selection": null,
+      "reviewer": null,
+      "review_evidence": null,
+      "qualified_safety_approved": false
+    },
+    {
+      "path": "preparedness/sources/fragments/shelter.json",
+      "original_decision": "HUMAN_REVIEW_REQUIRED",
+      "source_citation_review_required": true,
+      "reading_depth_review_required": true,
+      "original_variants": [
+        {
+          "branch": "claude/prep-shelter-5e1e0e",
+          "git_blob_sha": "d9eeb4546e58f083031e0767aaea7cf112099e09",
+          "byte_length": 35032
+        },
+        {
+          "branch": "claude/prep-shelter-continuation",
+          "git_blob_sha": "7291a7836a14b8a83f85310815e820295245c83b",
+          "byte_length": 48669
+        },
+        {
+          "branch": "claude/prep-shelter-followup-evidence",
+          "git_blob_sha": "5105f4bbd7d5b2e991f28d4b4ae7c9d5a2804aa9",
+          "byte_length": 54250
+        }
+      ],
+      "proposed_selection": null,
+      "reviewer": null,
+      "review_evidence": null,
+      "qualified_safety_approved": false
+    }
+  ],
+  "duplicate_exact_url_review": [
+    {
+      "url": "https://www.cdc.gov/botulism/prevention/home-canned-foods.html",
+      "source_ids": [
+        "food-cdc-home-canned",
+        "hist-home-cdc-botulism-home-canned"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.cdc.gov/carbon-monoxide/about/index.html",
+      "source_ids": [
+        "hist-field-cdc-co-basics",
+        "shelter-cdc-co-basics"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+      "source_ids": [
+        "health-cdc-power-outage",
+        "shelter-cdc-power-outage"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.fcc.gov/reports-research/guides/tips-communicating-emergency",
+      "source_ids": [
+        "health-fcc-comms-tips",
+        "shelter-fcc-comms"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+      "source_ids": [
+        "food-fsis-emergencies",
+        "shelter-usda-fsis-emergencies"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-fish/jerky",
+      "source_ids": [
+        "food-fsis-jerky",
+        "hist-food-fsis-jerky"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.ready.gov/alerts",
+      "source_ids": [
+        "health-ready-alerts",
+        "start-ready-alerts"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.ready.gov/evacuation",
+      "source_ids": [
+        "shelter-ready-evacuation",
+        "start-ready-evacuation"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.ready.gov/food",
+      "source_ids": [
+        "food-ready-food",
+        "start-ready-food"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.ready.gov/kit",
+      "source_ids": [
+        "health-ready-kit",
+        "start-ready-kit"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.ready.gov/people-disabilities",
+      "source_ids": [
+        "health-ready-disabilities",
+        "shelter-ready-disabilities",
+        "start-ready-disability"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.ready.gov/plan",
+      "source_ids": [
+        "health-ready-plan",
+        "shelter-ready-plan",
+        "start-ready-plan"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.ready.gov/power-outages",
+      "source_ids": [
+        "health-ready-power-outages",
+        "shelter-ready-power-outages",
+        "start-ready-power"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+      "source_ids": [
+        "food-fema-outage-sheet",
+        "health-fema-power-outage-sheet",
+        "shelter-fema-power-outage-sheet",
+        "start-fema-power-sheet"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/",
+      "source_ids": [
+        "shelter-usfa-high-rise",
+        "start-usfa-high-rise"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.weather.gov/nwr/",
+      "source_ids": [
+        "health-nws-nwr-national",
+        "shelter-nws-nwr"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    },
+    {
+      "url": "https://www.weather.gov/safety/winter-during",
+      "source_ids": [
+        "hist-field-nws-winter-during",
+        "shelter-nws-winter-during"
+      ],
+      "review_required": true,
+      "decision": "UNSELECTED",
+      "merge_authorized": false,
+      "reviewer": null
+    }
+  ],
+  "preservation_counts": {
+    "articles": 35,
+    "source_ids": 203,
+    "occurrences": 280,
+    "exact_urls": 181,
+    "shared_url_groups": 17,
+    "scope_disputes": 5,
+    "forks": 9,
+    "branches": 9
+  },
+  "instructions": "Human reviewers must separately assess exact full articles, reading-scope applicability, citation coverage, source currency, and all safety/privacy risks. Worklist is not QA pass, medical advice, publish permission, URL merge authorization or paid offer."
+}
