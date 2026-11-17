@@ -20,8 +20,15 @@ CHECKS = (
     ("six_exe_inventory_ancestry", "test_inventory_staging_ancestry_r484.py"),
 )
 MODES = (("normal", ()), ("optimized", ("-OO",)))
-_TEST_SUMMARY = re.compile(rb"Ran (\d+) tests? in ")
-_SKIP = re.compile(rb"skipped\s*=\s*([1-9]\d*)")
+# Only a genuine, terminal unittest success trailer can count as successful.
+# Bare "OK"/"Ran 7 tests" anywhere in a log is not sufficient evidence.
+_TEST_SUMMARY = re.compile(rb"(?m)^Ran (\d+) tests? in \d+(?:\.\d+)?s\r?$")
+_SUCCESS_TRAILER = re.compile(
+    rb"(?m)^-{70}\r?\nRan ([1-9]\d*) tests? in \d+(?:\.\d+)?s"
+    rb"\r?\n\r?\nOK\r?\n?\Z"
+)
+_FAILURE_LINE = re.compile(rb"(?m)^(?:FAILED(?:[ \t(]|$)|FAIL:|ERROR:|Traceback \(most recent call last\):)")
+_MAX_EVIDENCE_BYTES = 1_048_576  # Acceptance threshold, not a filesystem write limit.
 
 
 def _child_env(desktop: Path) -> dict[str, str]:
@@ -38,11 +45,13 @@ def _child_env(desktop: Path) -> dict[str, str]:
 def _single_check(desktop: Path, label: str, pattern: str, mode: str,
                   flags: tuple[str, ...], timeout: int) -> dict[str, object]:
     tests = desktop / "tests" / pattern
-    if not tests.is_file():
-        return {"check": label, "mode": mode, "result": "BLOCKED", "tests": 0}
-    cmd = (sys.executable, *flags, "-B", "-W", "error", "-m", "unittest",
-           "discover", "-s", str(desktop / "tests"), "-p", pattern)
     try:
+        # Never follow an externally substituted test file/directory.
+        if (desktop.is_symlink() or (desktop / "tests").is_symlink()
+                or tests.is_symlink() or not tests.is_file()):
+            return {"check": label, "mode": mode, "result": "BLOCKED", "tests": 0}
+        cmd = (sys.executable, *flags, "-B", "-W", "error", "-m", "unittest",
+               "discover", "-s", str(desktop / "tests"), "-p", pattern)
         # A disk-backed spool avoids storing large sensitive exception output in RAM;
         # nothing from it is copied to the evidence record or console.
         with tempfile.TemporaryFile(mode="w+b") as spool:
@@ -50,13 +59,18 @@ def _single_check(desktop: Path, label: str, pattern: str, mode: str,
                                       stdout=spool, stderr=subprocess.STDOUT,
                                       timeout=timeout, check=False)
             size = spool.tell()
-            spool.seek(max(0, size - 16384))
-            tail = spool.read()
-        summaries = _TEST_SUMMARY.findall(tail)
-        count = int(summaries[-1]) if summaries else 0
-        passed = (finished.returncode == 0 and count > 0
-                  and not _SKIP.search(tail) and b"OK" in tail
-                  and b"FAILED" not in tail)
+            if size > _MAX_EVIDENCE_BYTES:
+                # This rejects excessive test output; the disk spool is NOT capped
+                # while a child runs. Use a quota/isolation for untrusted code.
+                return {"check": label, "mode": mode, "result": "FAIL", "tests": 0}
+            spool.seek(0)
+            output = spool.read()
+        summaries = _TEST_SUMMARY.findall(output)
+        count = int(summaries[0]) if len(summaries) == 1 else 0
+        terminal = _SUCCESS_TRAILER.search(output)
+        passed = (finished.returncode == 0 and count > 0 and terminal is not None
+                  and int(terminal.group(1)) == count
+                  and not _FAILURE_LINE.search(output))
         return {"check": label, "mode": mode,
                 "result": "PASS" if passed else "FAIL", "tests": count}
     except (OSError, subprocess.TimeoutExpired, ValueError):
@@ -70,7 +84,7 @@ def verify(desktop: Path, timeout: int = 600) -> dict[str, object]:
     results = [_single_check(desktop, label, pattern, mode, flags, timeout)
                for label, pattern in CHECKS for mode, flags in MODES]
     return {"schema": "fvs-offline-source-gate-r485-v1", "release_authorized": False,
-            "all_passed": all(row["result"] == "PASS" for row in results),
+            "all_passed": bool(results) and all(row["result"] == "PASS" for row in results),
             "results": results}
 
 
