@@ -1,0 +1,139 @@
+{
+  "sprint": "R430",
+  "observed_at_utc": "2026-11-17T19:38:13Z",
+  "source_master_pr": 175,
+  "source_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stack_pr": 2901,
+  "stack_base_sha": "deca2898bd8a6238c81e18d6f07b6eee03f8980a",
+  "source_issues": [
+    174,
+    171,
+    129,
+    820
+  ],
+  "status": "HOLD_UNSENT",
+  "original_issues_changed": false,
+  "wordpress_changed": false,
+  "email_sent": false,
+  "affiliate_activated": false,
+  "letter_mix": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_reserved": [
+      3,
+      5
+    ]
+  },
+  "word_press": {
+    "blog_id": 256784396,
+    "newsletter_enabled": true,
+    "site_can_send": true,
+    "automatic_new_post_email": false,
+    "email_content_format": "full",
+    "dashboard_total": 3,
+    "dashboard_confirmed": 3,
+    "dashboard_unconfirmed": 2,
+    "reader_followers": 3,
+    "direct_email_followers": 0,
+    "distinct_eligible_receiving_inboxes": null,
+    "welcome_pdf_configured": true,
+    "welcome_receipt_verified": false,
+    "post_email_preview_verified": false,
+    "publisher_postal_verified": false,
+    "unsubscribe_render_and_function_verified": false
+  },
+  "release_flags": {
+    "founder_final_send_approval": false,
+    "actual_native_jetpack_preview_witness": false,
+    "receiving_eligibility_verified": false,
+    "welcome_receipt_witness": false,
+    "publisher_postal_verified": false,
+    "unsubscribe_render_and_function_witness": false,
+    "approved_final_copy": false,
+    "source_link_integrity_verified": false,
+    "named_merchant_email_promotion_permission": false,
+    "issued_approved_earning_link": false,
+    "live_warmup_guide_verified": false,
+    "exact_checkout_refund_terms_verified": false
+  },
+  "source_qa": {
+    "master_native_python": {
+      "passed": 6,
+      "total": 6
+    },
+    "r430_v8_shim": {
+      "passed": 69,
+      "total": 69
+    },
+    "r430_native_node": "NOT_EXECUTED",
+    "real_jetpack_email": "NOT_TESTED"
+  },
+  "paid_sales_proof": "UNAVAILABLE",
+  "audited_qualified_human_sessions": "UNAVAILABLE",
+  "net_revenue_per_1000_human_sessions": "NOT_COMPUTABLE",
+  "merchant": {
+    "zen12": {
+      "exact_sku_verified": false,
+      "channel_email_rights_verified": false,
+      "approved_live_guide": false,
+      "issued_earning_url": false,
+      "merchant_claims_independently_proven": false
+    },
+    "total_focus": {
+      "exact_sku_verified": false,
+      "channel_email_rights_verified": false,
+      "approved_live_guide": false,
+      "issued_earning_url": false,
+      "refund_terms_for_referred_checkout_verified": false
+    }
+  },
+  "candidate_ctas": [
+    {
+      "issue": 1,
+      "status": "CANDIDATE_NOT_LIVE",
+      "href": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/?utm_source=dispatch&utm_medium=email&utm_campaign=fv_dispatch_pilot_2026&utm_content=issue_01",
+      "note": "duplicate original CTA with Issue 02; better unadopted R427 candidate exists"
+    },
+    {
+      "issue": 2,
+      "status": "CANDIDATE_NOT_LIVE",
+      "href": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/?utm_source=dispatch&utm_medium=email&utm_campaign=fv_dispatch_pilot_2026&utm_content=issue_02"
+    },
+    {
+      "issue": 3,
+      "status": "HOLD_MERCHANT",
+      "href": null
+    },
+    {
+      "issue": 4,
+      "status": "HOLD_COPY",
+      "href": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/?utm_source=dispatch&utm_medium=email&utm_campaign=fv_dispatch_pilot_2026&utm_content=issue_04",
+      "note": "original subject fact-risk not adopted"
+    },
+    {
+      "issue": 5,
+      "status": "HOLD_MERCHANT",
+      "href": null
+    },
+    {
+      "issue": 6,
+      "status": "CANDIDATE_NOT_LIVE",
+      "href": "https://finalvestige.com/focus/?utm_source=dispatch&utm_medium=email&utm_campaign=fv_dispatch_pilot_2026&utm_content=issue_06",
+      "note": "original repeat-signup friction flagged"
+    }
+  ],
+  "references": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://wordpress.com/support/newsletter/send-newsletter-emails/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://zen12.com/about",
+    "https://zen12.com/secret/",
+    "https://hypnosislive.com/faq",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}
