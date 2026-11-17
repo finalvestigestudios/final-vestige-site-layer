@@ -20,7 +20,7 @@ const check=(label,truth)=>{
   catch(e) { failed++; process.stderr.write('FAIL '+label+': '+e.message+'\n'); }
 };
 const merchantLink = html => /<a\b[^>]*href\s*=\s*["'][^"']*(?:zen12\.com|inspire3\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)/i.test(html);
-const activeControls=html => /<button\b(?![^>]*\bdisabled\b)[^>]*>[\s\S]*?(?:buy|purchase|merchant offer)/i.test(html);
+const activeControls=html => [...html.matchAll(/<button\b([^>]*)>([\s\S]*?)<\/button>/gi)].some(([,attrs,label])=>!/(?:^|\s)disabled(?:\s|=|$)/i.test(attrs) && /buy|purchase|merchant offer/i.test(label));
 const security=(label,html)=>{
  check(label+' has no active seller href',!merchantLink(html));
  check(label+' has no script',!/<script\b/i.test(html));
