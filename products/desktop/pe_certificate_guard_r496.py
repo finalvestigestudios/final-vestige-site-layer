@@ -27,6 +27,8 @@ def verify_certificate_table(stream, optional: bytes, *, file_size: int) -> None
     the same stream, including its alignment padding. This catches truncation
     after an earlier file-size observation; it is not a lock or signature check.
     A structurally valid record is not proof of a valid signature.
+    R499 conservatively requires outer record alignment padding to be zero;
+    it does not parse PKCS#7 or check padding *inside* the signed-data payload.
     """
     if len(optional) < 112:
         raise PECertificateError("PE certificate table rejected")
@@ -72,5 +74,19 @@ def verify_certificate_table(stream, optional: bytes, *, file_size: int) -> None
             pass
         if tail is None or len(tail) != 1:
             raise PECertificateError("PE certificate table rejected")
+        # Per PE/COFF, padding OUTSIDE dwLength is zero-filled. An otherwise
+        # framed signature must not carry unaccounted bytes in this gap.
+        # This reads at most seven bytes, does not parse PKCS#7 and is not
+        # Microsoft's WinVerifyTrust EnableCertPaddingCheck implementation.
+        padding_bytes = padded_size - record_size
+        if padding_bytes:
+            padding = None
+            try:
+                stream.seek(cursor + record_size)
+                padding = stream.read(padding_bytes)
+            except OSError:
+                pass
+            if type(padding) is not bytes or padding != b"\x00" * padding_bytes:
+                raise PECertificateError("PE certificate table rejected")
         cursor += padded_size
         records += 1
