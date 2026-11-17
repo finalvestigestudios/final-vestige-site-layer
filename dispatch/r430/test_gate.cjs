@@ -93,4 +93,4 @@ for(const k of release.missing)all[k]=true;
 const ready=releaseDecision(all);same(ready.ready_for_review,true,"all synthetic evidence can enter founder review");
 same(ready.status,"HOLD_UNSENT","even full simulated evidence cannot send");
 same(ready.founder_release_required,true,"human release still needed");
-console.log("PASS "+passes+"/"+passes+" exact-source native Node assertions; all live channel actions remain HOLD_UNSENT");
+console.log("PASS "+passes+"/"+passes+" exact-source assertions (runtime verified separately); all live channel actions remain HOLD_UNSENT");
