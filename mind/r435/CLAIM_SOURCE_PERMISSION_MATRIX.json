@@ -1,0 +1,569 @@
+{
+  "version": "R435",
+  "date": "2026-11-16",
+  "source_only": true,
+  "commercial_release": "HARD_HOLD",
+  "source_list": [
+    {
+      "id": "A1",
+      "label": "Original FV Puységur case archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "first_party_editorial"
+    },
+    {
+      "id": "A2",
+      "label": "Original FV Focus Fieldbook landing",
+      "url": "https://finalvestige.com/focus/",
+      "type": "first_party_editorial"
+    },
+    {
+      "id": "H1",
+      "label": "Crabtree 2019 historical reconstruction",
+      "url": "https://doi.org/10.1002/jhbs.21974",
+      "type": "peer_reviewed_history"
+    },
+    {
+      "id": "H2",
+      "label": "Hypnosis at the Crossroads 2025",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12233205",
+      "type": "secondary_review"
+    },
+    {
+      "id": "R1",
+      "label": "Hypnosis myths 2020",
+      "url": "https://doi.org/10.1002/acp.3730",
+      "type": "peer_reviewed_review"
+    },
+    {
+      "id": "R2",
+      "label": "Hypnotic suggestion theory systematic review 2024",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "type": "systematic_review"
+    },
+    {
+      "id": "R3",
+      "label": "Clinical hypnosis meta-review 2024",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38268815/",
+      "type": "meta_review_not_branded_audio"
+    },
+    {
+      "id": "E1",
+      "label": "Burgess Kirsch hypnosis memory task",
+      "url": "https://doi.org/10.1002/ch.146",
+      "type": "primary_study"
+    },
+    {
+      "id": "E2",
+      "label": "Schmidt et al 2024 narrow n=24 study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38569321/",
+      "type": "primary_small_selected_sample"
+    },
+    {
+      "id": "V1",
+      "label": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "type": "merchant"
+    },
+    {
+      "id": "V2",
+      "label": "Zen12 official format and level descriptions",
+      "url": "https://zen12.com/about",
+      "type": "merchant"
+    },
+    {
+      "id": "V3",
+      "label": "Zen12 complete offer and promotions",
+      "url": "https://zen12.com/secret/",
+      "type": "merchant_volatile"
+    },
+    {
+      "id": "V4",
+      "label": "Hypnosis Live official catalog",
+      "url": "https://hypnosislive.com/",
+      "type": "merchant"
+    },
+    {
+      "id": "V5",
+      "label": "Focus Shot precise official offer",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "merchant"
+    },
+    {
+      "id": "F1",
+      "label": "FTC endorsement guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory_guidance"
+    },
+    {
+      "id": "F2",
+      "label": "FTC health products guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory_guidance"
+    }
+  ],
+  "claim_matrix": [
+    {
+      "id": "puys_report",
+      "claim": "Puységur reported an apparently sleeping but conversing patient circa 1784",
+      "evidence": "historical",
+      "source_ids": [
+        "H1",
+        "A1"
+      ],
+      "editorial_status": "ATTRIBUTED"
+    },
+    {
+      "id": "puys_causation",
+      "claim": "Animal-magnetic fluid was thereby proven",
+      "evidence": "unsupported",
+      "source_ids": [
+        "H1"
+      ],
+      "editorial_status": "PROHIBITED"
+    },
+    {
+      "id": "archive_rows",
+      "claim": "Live Puységur source archive describes 153 source rows and 16 dossiers",
+      "evidence": "first_party_snapshot",
+      "source_ids": [
+        "A1"
+      ],
+      "editorial_status": "ATTRIBUTED"
+    },
+    {
+      "id": "archive_failures",
+      "claim": "The historical archive retains failed cure and prediction episodes",
+      "evidence": "first_party_snapshot",
+      "source_ids": [
+        "A1"
+      ],
+      "editorial_status": "ATTRIBUTED"
+    },
+    {
+      "id": "hypnosis_not_sleep",
+      "claim": "Literal unconsciousness is not needed to study hypnosis",
+      "evidence": "research_synthesis",
+      "source_ids": [
+        "H2",
+        "R1"
+      ],
+      "editorial_status": "SUPPORTED_CONTEXT_ONLY"
+    },
+    {
+      "id": "hypnotic_mechanism",
+      "claim": "One settled account explains every response to suggestion",
+      "evidence": "unsupported",
+      "source_ids": [
+        "R2"
+      ],
+      "editorial_status": "PROHIBITED"
+    },
+    {
+      "id": "suggestibility",
+      "claim": "Some suggested subjective or behavioral effects are scientifically studied",
+      "evidence": "research_synthesis",
+      "source_ids": [
+        "R2"
+      ],
+      "editorial_status": "SUPPORTED_CONTEXT_ONLY"
+    },
+    {
+      "id": "hypnosis_memory",
+      "claim": "Hypnosis retrieves a verifiably complete record of lost memories",
+      "evidence": "unsupported",
+      "source_ids": [
+        "E1",
+        "E2"
+      ],
+      "editorial_status": "PROHIBITED"
+    },
+    {
+      "id": "memory_error",
+      "claim": "Expectation can influence confident memory errors in studied samples",
+      "evidence": "experimental_limited",
+      "source_ids": [
+        "E1"
+      ],
+      "editorial_status": "SUPPORTED_CONTEXT_ONLY"
+    },
+    {
+      "id": "study_n24",
+      "claim": "2024 posthypnotic cue research involved 24 highly suggestible subjects",
+      "evidence": "primary_narrow",
+      "source_ids": [
+        "E2"
+      ],
+      "editorial_status": "SUPPORTED_CONTEXT_ONLY"
+    },
+    {
+      "id": "clinical_bounds",
+      "claim": "Hypnosis research has stronger evidence in specified medical procedure and pain settings",
+      "evidence": "meta_review",
+      "source_ids": [
+        "R3"
+      ],
+      "editorial_status": "SUPPORTED_CONTEXT_ONLY"
+    },
+    {
+      "id": "clinical_transfer",
+      "claim": "Clinical hypnosis trials prove commercial self-help MP3 claims",
+      "evidence": "unsupported",
+      "source_ids": [
+        "R3",
+        "V4"
+      ],
+      "editorial_status": "PROHIBITED"
+    },
+    {
+      "id": "fieldbook",
+      "claim": "Existing FV Focus landing advertises a free 52-page fieldbook",
+      "evidence": "first_party",
+      "source_ids": [
+        "A2"
+      ],
+      "editorial_status": "ATTRIBUTED"
+    },
+    {
+      "id": "focus_opt_in",
+      "claim": "Jetpack signup has provider-confirmed delivery in this run",
+      "evidence": "missing_transaction_proof",
+      "source_ids": [
+        "A2"
+      ],
+      "editorial_status": "HOLD"
+    },
+    {
+      "id": "zen_duration",
+      "claim": "Zen12 merchant describes twelve-minute sessions",
+      "evidence": "merchant_description",
+      "source_ids": [
+        "V2"
+      ],
+      "editorial_status": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "zen_levels",
+      "claim": "Zen12 merchant describes twelve levels",
+      "evidence": "merchant_description",
+      "source_ids": [
+        "V2"
+      ],
+      "editorial_status": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "zen_four",
+      "claim": "Zen12 advertises four listening styles per level",
+      "evidence": "merchant_description",
+      "source_ids": [
+        "V2"
+      ],
+      "editorial_status": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "zen_mp3",
+      "claim": "Exact full package landing advertises 48 MP3s",
+      "evidence": "merchant_description",
+      "source_ids": [
+        "V3"
+      ],
+      "editorial_status": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "zen_equivalence",
+      "claim": "Zen12 yields an hour of meditation benefit in twelve minutes",
+      "evidence": "merchant_efficacy_not_substantiated",
+      "source_ids": [
+        "V2",
+        "F2"
+      ],
+      "editorial_status": "PROHIBITED_AS_EDITORIAL"
+    },
+    {
+      "id": "zen_brainwave",
+      "claim": "Zen12 brainwave claims are experimentally verified for this SKU",
+      "evidence": "not_substantiated",
+      "source_ids": [
+        "V2",
+        "F2"
+      ],
+      "editorial_status": "PROHIBITED_AS_EDITORIAL"
+    },
+    {
+      "id": "zen_price",
+      "claim": "A fixed FV referred price or promo can be guaranteed",
+      "evidence": "volatile_unverified",
+      "source_ids": [
+        "V3"
+      ],
+      "editorial_status": "HOLD"
+    },
+    {
+      "id": "zen_refund",
+      "claim": "Seller advertises guarantee, operative checkout terms independently verified",
+      "evidence": "vendor_only_no_referral_checkout",
+      "source_ids": [
+        "V3"
+      ],
+      "editorial_status": "HOLD"
+    },
+    {
+      "id": "focusshot_files",
+      "claim": "Focus Shot seller advertises 15- and 30-minute files",
+      "evidence": "merchant_description",
+      "source_ids": [
+        "V5"
+      ],
+      "editorial_status": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "focusshot_effect",
+      "claim": "Focus Shot has product-specific verified immediate focus improvements",
+      "evidence": "not_substantiated",
+      "source_ids": [
+        "V5"
+      ],
+      "editorial_status": "PROHIBITED_AS_EDITORIAL"
+    },
+    {
+      "id": "hypnosis_live_catalog",
+      "claim": "Hypnosis Live lists many self-hypnosis recordings",
+      "evidence": "merchant_description",
+      "source_ids": [
+        "V4"
+      ],
+      "editorial_status": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "hypnosis_live_guarantee",
+      "claim": "All Hypnosis Live recordings guarantee the claimed psychological outcomes",
+      "evidence": "seller_claim_not_product_proof",
+      "source_ids": [
+        "V4",
+        "F2"
+      ],
+      "editorial_status": "PROHIBITED_AS_EDITORIAL"
+    },
+    {
+      "id": "partner_acceptance",
+      "claim": "FV-named affiliate publisher approval verified",
+      "evidence": "not_authenticated",
+      "source_ids": [
+        "V1"
+      ],
+      "editorial_status": "HOLD"
+    },
+    {
+      "id": "issued_earning_link",
+      "claim": "Partner-issued FV tracking URL has been verified",
+      "evidence": "not_authenticated",
+      "source_ids": [
+        "V1"
+      ],
+      "editorial_status": "HOLD"
+    },
+    {
+      "id": "approved_creatives",
+      "claim": "FV permitted to use supplier's affiliate swipes",
+      "evidence": "not_authenticated",
+      "source_ids": [
+        "V1"
+      ],
+      "editorial_status": "HOLD"
+    },
+    {
+      "id": "owned_paid_sku",
+      "claim": "A rights-cleared currently sellable FV Mind SKU verified",
+      "evidence": "not_authenticated",
+      "source_ids": [
+        "A2"
+      ],
+      "editorial_status": "HOLD"
+    },
+    {
+      "id": "near_link_disclosure",
+      "claim": "Commission relationship must be disclosed near earning recommendation",
+      "evidence": "regulatory_guidance",
+      "source_ids": [
+        "F1"
+      ],
+      "editorial_status": "REQUIRED"
+    },
+    {
+      "id": "health_support",
+      "claim": "Product health outcomes need adequate substantiation before advertising",
+      "evidence": "regulatory_guidance",
+      "source_ids": [
+        "F2"
+      ],
+      "editorial_status": "REQUIRED"
+    },
+    {
+      "id": "media_identity",
+      "claim": "Three authentic Grok Mind video IDs and source-target match verified",
+      "evidence": "unmatched",
+      "source_ids": [
+        "A1"
+      ],
+      "editorial_status": "HOLD"
+    },
+    {
+      "id": "commission_sale",
+      "claim": "Merchant confirmed paid affiliate order, fees, refund and net revenue",
+      "evidence": "not_authenticated",
+      "source_ids": [
+        "V1"
+      ],
+      "editorial_status": "HOLD"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "fv_named_partner_approval",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "fv_named_account_identity",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "zen12_exact_sku_permission",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "youtube_channel_permission",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "tiktok_channel_permission",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "dispatch_email_channel_permission",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "issued_valid_earning_url",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "affiliate_cookie_and_attribution_terms",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "payout_eligibility_and_reporting",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "affiliate_creative_usage_rights",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "referred_checkout_price_and_currency",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "referred_checkout_refund_terms",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "merchant_order_confirmation",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "commission_settlement_and_refunds",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "owned_mind_paid_sku_verified",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "owned_sku_intellectual_property",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "owned_sku_delivery",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "owned_sku_refund_policy",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "three_published_grok_media_ids",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "grok_exact_mobile_link_policy",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "jetpack_confirmed_delivery",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "site_measurement_owner_approval",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "no_duplicate_tracking_scripts",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "independent_history_science_editorial_review",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "real_browser_a11y_wcag_qa",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "actual_mobile_performance_qa",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "accessible_encoded_original_video",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    },
+    {
+      "id": "founder_release_permission",
+      "status": "HOLD",
+      "reason": "no independently verified release proof in this sprint"
+    }
+  ],
+  "unverified_commission": true,
+  "no_active_earning_link": true,
+  "verification_notes": [
+    "Merchant public pages are not account-specific partner authorization.",
+    "Promotional checkout prices, coupons and countdowns are volatile and not an FV referred offer.",
+    "Claim substantiation is bound to specific studied product, outcome and population, never borrowed from general hypnosis/meditation science.",
+    "A prospective disclosure near disabled controls is not a substitute for future prominent near-link disclosure after authorization."
+  ]
+}
