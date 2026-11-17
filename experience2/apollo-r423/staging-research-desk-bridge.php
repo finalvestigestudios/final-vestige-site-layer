@@ -99,9 +99,9 @@ function fv_r423_enqueue(): void {
     if (!function_exists('plugins_url') || !function_exists('wp_enqueue_style') || !function_exists('wp_enqueue_script')) return;
     $existing_file = $root . '/final-vestige-ex2-research-desk.php';
     if (!is_file($existing_file)) return;
-    wp_enqueue_style('fv-r423-reviewed-ledger', plugins_url('assets/source-ledger.css', $existing_file), [], '0.0.3-research');
-    wp_enqueue_style('fv-r423-bridge', plugins_url('assets/bridge.css', __FILE__), ['fv-r423-reviewed-ledger'], '0.0.1-r423');
-    wp_enqueue_script('fv-r423-reviewed-ledger', plugins_url('assets/source-ledger.js', $existing_file), [], '0.0.3-research', true);
+    wp_enqueue_style('fv-ex2-research-desk', plugins_url('assets/source-ledger.css', $existing_file), [], '0.0.3-research');
+    wp_enqueue_style('fv-r423-bridge', plugins_url('assets/bridge.css', __FILE__), ['fv-ex2-research-desk'], '0.0.1-r423');
+    wp_enqueue_script('fv-ex2-research-desk', plugins_url('assets/source-ledger.js', $existing_file), [], '0.0.3-research', true);
 }
 if (function_exists('add_action')) add_action('wp_enqueue_scripts', 'fv_r423_enqueue', 20);
 if (function_exists('add_shortcode')) add_shortcode('fv_ex2_apollo_research_bridge_r423', 'fv_r423_shortcode');
