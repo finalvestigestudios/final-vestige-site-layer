@@ -1,0 +1,602 @@
+{
+  "as_of": "2026-11-17",
+  "scope": "Mind & Perception commercial approval and research",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "source_inventory": {
+    "ftc_aff": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "inspire": "https://inspire3.com/",
+    "zenhome": "https://zen12.com/",
+    "zenabout": "https://zen12.com/about",
+    "zensecret": "https://zen12.com/secret/",
+    "partner": "https://affiliates.inspire3.com/",
+    "focus": "https://finalvestige.com/focus/",
+    "dispatch": "https://finalvestige.com/dispatch/",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "index": "https://finalvestige.com/archive/time-place/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "total": "https://hypnosislive.com/mental-skills/total-focus",
+    "shot": "https://brainwaveshots.com/focus-shot",
+    "blink92": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+    "blink94": "https://pubmed.ncbi.nlm.nih.gov/8189198/",
+    "blink95": "https://pubmed.ncbi.nlm.nih.gov/7707027/",
+    "blink06": "https://pubmed.ncbi.nlm.nih.gov/16989545/",
+    "blink07": "https://pubmed.ncbi.nlm.nih.gov/16341546/",
+    "training07": "https://pubmed.ncbi.nlm.nih.gov/17488185/"
+  },
+  "claims": [
+    {
+      "id": "P01",
+      "statement": "Zen12 is an Inspire3 brand",
+      "status": "verified_seller_identity",
+      "sources": [
+        "https://inspire3.com/"
+      ],
+      "publish_rule": "Inspire3 lists Zen12; seller identity is not efficacy proof.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P02",
+      "statement": "Zen12 seller describes twelve-minute sessions",
+      "status": "verified_public_feature_only",
+      "sources": [
+        "https://zen12.com/",
+        "https://zen12.com/about"
+      ],
+      "publish_rule": "Twelve-minute file format, not an hour of verified benefit.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P03",
+      "statement": "Zen12 ordinary listing describes twelve progression levels",
+      "status": "verified_public_feature_only",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "publish_rule": "Course structure is seller-provided.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P04",
+      "statement": "Zen12 offers four listening styles",
+      "status": "verified_public_feature_only",
+      "sources": [
+        "https://zen12.com/about"
+      ],
+      "publish_rule": "Seller names guided, nature, music, white noise.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P05",
+      "statement": "Zen12 full course described as 48 MP3s",
+      "status": "verified_public_feature_only",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "publish_rule": "Only for full-course context; SKU-specific cart not authenticated.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P06",
+      "statement": "Ordinary listing distinguishes Beginner six levels",
+      "status": "verified_public_feature_only",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "publish_rule": "Do not conflate with Premium.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P07",
+      "statement": "Ordinary listing distinguishes Premium twelve levels",
+      "status": "verified_public_feature_only",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "publish_rule": "No actual referred checkout established.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P08",
+      "statement": "Ordinary listing distinguishes Advanced six levels",
+      "status": "verified_public_feature_only",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "publish_rule": "Do not call this a full beginner-to-advanced course.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P09",
+      "statement": "Zen12 secret funnel has distinct promotional context",
+      "status": "verified_public_surface_only",
+      "sources": [
+        "https://zen12.com/secret/",
+        "https://zen12.com/"
+      ],
+      "publish_rule": "Dynamic promotions are not authorized FV pricing or checkout proof.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P10",
+      "statement": "Zen12 ordinary catalog advertises a one-year refund guarantee",
+      "status": "seller_policy_claim",
+      "sources": [
+        "https://zen12.com/"
+      ],
+      "publish_rule": "Actual referred order terms/exclusions unknown; do not guarantee outcomes.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P11",
+      "statement": "A 12-minute Zen12 session equals an hour of meditation",
+      "status": "seller_efficacy_claim_UNSUPPORTED",
+      "sources": [
+        "https://zen12.com/",
+        "https://zen12.com/about"
+      ],
+      "publish_rule": "Suppress claimed equivalence.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P12",
+      "statement": "Zen12 audio automatically reproduces meditative brainwaves",
+      "status": "seller_mechanism_claim_UNSUPPORTED",
+      "sources": [
+        "https://zen12.com/about"
+      ],
+      "publish_rule": "No independent product-specific substantiation.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P13",
+      "statement": "Zen12 treats anxiety or other mental-health conditions",
+      "status": "medical_claim_UNSUPPORTED",
+      "sources": [
+        "https://zen12.com/",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "publish_rule": "Do not use.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P14",
+      "statement": "Intensive meditation training changed attentional-blink/EEG measures in research",
+      "status": "independent_study_not_Zen12",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/17488185/"
+      ],
+      "publish_rule": "Three months intensive training, not retail audio.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P15",
+      "statement": "Attentional blink original timing effect",
+      "status": "independent_primary_lab_research",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/1500880/"
+      ],
+      "publish_rule": "1992 probe deficit under stated task/timing.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P16",
+      "statement": "Two-target RSVP deficit and two-stage model",
+      "status": "independent_primary_lab_research",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/7707027/"
+      ],
+      "publish_rule": "200–500ms typical task window; model interpretation.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P17",
+      "statement": "Object vs temporal-interval task matters",
+      "status": "independent_primary_lab_research",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/8189198/"
+      ],
+      "publish_rule": "Task selection changes effect.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P18",
+      "statement": "Individual differences in attentional blink",
+      "status": "independent_primary_lab_research",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/16989545/"
+      ],
+      "publish_rule": "Not universal, not individual medical diagnostic.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P19",
+      "statement": "Target continuity changes attentional blink",
+      "status": "independent_primary_lab_research",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/16341546/"
+      ],
+      "publish_rule": "Challenges simplistic fixed-capacity picture.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P20",
+      "statement": "Hypnosis Live Total Focus is a seller-described 33-minute/47MB audio",
+      "status": "verified_public_feature_only",
+      "sources": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "publish_rule": "Duration and download size only, not outcome proof.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P21",
+      "statement": "Hypnosis Live Total Focus creates on-demand razor-sharp concentration",
+      "status": "seller_efficacy_claim_UNSUPPORTED",
+      "sources": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "publish_rule": "Suppress guaranteed concentration/career benefit.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P22",
+      "statement": "Hypnosis Live Total Focus refund offer context",
+      "status": "seller_policy_claim",
+      "sources": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "publish_rule": "Public 14-day statement; exact referred bundle/FAQ exceptions not authenticated.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P23",
+      "statement": "Brainwave Shots Focus Shot includes 15-minute/30-minute versions",
+      "status": "verified_public_feature_only",
+      "sources": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "publish_rule": "Seller-described formats.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P24",
+      "statement": "Brainwave Shots Focus Shot gives hours of enhanced focus",
+      "status": "seller_efficacy_claim_UNSUPPORTED",
+      "sources": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "publish_rule": "Suppress outcome duration.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P25",
+      "statement": "Brainwave Shots Focus Shot offers one-year guarantee",
+      "status": "seller_policy_claim",
+      "sources": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "publish_rule": "Confirm referred order terms before quoting as buyer guarantee.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P26",
+      "statement": "Public affiliate portal advertises network and payments",
+      "status": "public_program_only_not_account_authorization",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "publish_rule": "Portal's marketing about payouts is not FV commission contract.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P27",
+      "statement": "FV named acceptance, authorized WEBSITE/EMAIL/SOCIAL, issued earning link",
+      "status": "NOT_AUTHENTICATED",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "publish_rule": "Targeted Gmail search 17 Nov returned consumer promotions and generic pending enrollment; no FV acceptance.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P28",
+      "statement": "FTC paid recommendation must disclose material connection clearly near recommendation",
+      "status": "regulatory_guidance",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "publish_rule": "Place disclosure in same visual context as earning link.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P29",
+      "statement": "Health-product objective claims need competent reliable scientific substantiation",
+      "status": "regulatory_guidance",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "publish_rule": "An unrelated meditation experiment is insufficient.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P30",
+      "statement": "FV Puységur archive documents source trail and ethical failures",
+      "status": "published_editorial_context",
+      "sources": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "publish_rule": "Not proof animal magnetism or modern audio.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P31",
+      "statement": "Existing Fieldbook is free 52-page single-Dispatch resource",
+      "status": "published_owned_free_asset",
+      "sources": [
+        "https://finalvestige.com/focus/",
+        "https://finalvestige.com/dispatch/"
+      ],
+      "publish_rule": "No payable SKU, no added list, no actual lead confirmation.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P32",
+      "statement": "FV historical index reports 61 investigations",
+      "status": "published_site_context",
+      "sources": [
+        "https://finalvestige.com/archive/time-place/"
+      ],
+      "publish_rule": "Context only, not traffic/customer validation.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P33",
+      "statement": "Two live site bridges: change blindness and Mesmerism",
+      "status": "published_site_context",
+      "sources": [
+        "https://finalvestige.com/2026/11/02/change-blindness/",
+        "https://finalvestige.com/2026/11/02/mesmerism/"
+      ],
+      "publish_rule": "Grounded URLs; no invented Mind draft live route.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P34",
+      "statement": "FV has actual sellable rights-cleared Mind product SKU",
+      "status": "NOT_AUTHENTICATED",
+      "sources": [
+        "https://finalvestige.com/focus/"
+      ],
+      "publish_rule": "Fieldbook is free; no paid offer established.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P35",
+      "statement": "Verified FV affiliate sales, settled commissions, refunds and net revenue",
+      "status": "NOT_AUTHENTICATED",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "publish_rule": "No transaction/denominator; do not report numeric zero as a measured result.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    },
+    {
+      "id": "P36",
+      "statement": "Approved Inspire3 affiliate swipe/creative license",
+      "status": "NOT_AUTHENTICATED",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "publish_rule": "Do not reproduce any merchant ad or claim affiliate creative is approved.",
+      "may_be_used_as_affiliate_efficacy_proof": false
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "named legal publisher accepted",
+      "owner": "Founder / Commerce",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G02",
+      "name": "active Inspire3 approval status authenticated",
+      "owner": "Founder / Commerce",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G03",
+      "name": "exact Zen12 SKU permitted",
+      "owner": "Founder / Commerce",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G04",
+      "name": "website promotion permission written",
+      "owner": "Founder / Commerce",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G05",
+      "name": "email permission separate",
+      "owner": "Founder / Commerce / Dispatch",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G06",
+      "name": "social promotion permission separate",
+      "owner": "Founder / Commerce / Grok",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G07",
+      "name": "approved original creatives/asset license when needed",
+      "owner": "Founder / Commerce",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G08",
+      "name": "issued unmodified affiliate tracking link",
+      "owner": "Founder / Commerce",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G09",
+      "name": "exact destination and redirect chain reviewed",
+      "owner": "Commerce / Site QA",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G10",
+      "name": "referred checkout SKU matches presell",
+      "owner": "Commerce / Site QA",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G11",
+      "name": "final referred currency and order total observed",
+      "owner": "Commerce / Site QA",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G12",
+      "name": "checkout tax and upsell rules observed",
+      "owner": "Commerce / Site QA",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G13",
+      "name": "refund period exceptions and instructions confirmed",
+      "owner": "Commerce / Site QA",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G14",
+      "name": "subscription/renewal and cancellation verified",
+      "owner": "Commerce / Site QA",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G15",
+      "name": "attribution cookie and settlement terms evidenced",
+      "owner": "Founder / Commerce",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G16",
+      "name": "independent product-claim QA",
+      "owner": "Site QA",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G17",
+      "name": "FTC disclosure adjacent in final destination and context",
+      "owner": "Site QA",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G18",
+      "name": "safe mobile and keyboard browser QA",
+      "owner": "Site QA",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G19",
+      "name": "reduced motion and no-JS QA",
+      "owner": "Site QA",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G20",
+      "name": "real encoded captioned film rights and transcript QA",
+      "owner": "Site QA / Mind",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G21",
+      "name": "actual LCP/INP/CLS performance on staging",
+      "owner": "Claude / Site QA",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G22",
+      "name": "WordPress safe sanitization draft preview",
+      "owner": "Claude / Site QA",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G23",
+      "name": "one existing Fieldbook/Jetpack flow checked",
+      "owner": "Claude / Dispatch",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G24",
+      "name": "Grok three authentic media IDs and destinations verified",
+      "owner": "Praxxis / Grok",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G25",
+      "name": "existing first-party measurement no duplicated tags",
+      "owner": "Claude",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G26",
+      "name": "merchant paid-order/commission reconciliation test",
+      "owner": "Commerce / Claude",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G27",
+      "name": "founder specific commercial and release approval",
+      "owner": "Founder",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    },
+    {
+      "id": "G28",
+      "name": "independent QD/historical editorial signoff and rollback",
+      "owner": "Site QA / Founder",
+      "cleared": false,
+      "proof": "NOT AUTHENTICATED FOR THIS OFFER; no activation"
+    }
+  ],
+  "customer_pricing": "not verified for approved referred checkout; omitted",
+  "commission_rate": "not authenticated; omitted",
+  "tracking_url": null,
+  "affiliate_account_approved": false,
+  "paid_orders_verified": null,
+  "net_revenue_verified": null,
+  "qualified_human_sessions": null,
+  "rule": "never infer sales from clicks or null merchant data; no active earning URLs"
+}
