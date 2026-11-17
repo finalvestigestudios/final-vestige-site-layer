@@ -25,7 +25,14 @@ Locally executed on **Linux, CPython 3.13.5**, using source and new test bytes c
 
 The new tests use real spawned Python child and grandchild processes with synthetic data: no inherited stdin, unchanged canonical stderr receipt, isolated POSIX process group, orphaned stdout pipe treated as BLOCKED, grandchild stopped on overflow and timeout (checked with delayed marker files), no private error disclosure, and no release approval. Five POSIX-specific methods are intentionally skipped on Windows; Windows child-tree termination needs separately reviewed implementation and native validation.
 
-**Limitations:** These 16 method executions do **not** test all four selected production test modules in a complete trusted checkout, do not run the inherited R485–R487 test files, and do not establish passing GitHub Actions, Windows EXEs, Windows Defender, package checksums, accessibility, licensed downloads, or QD approval.
+**Inherited regressions also executed independently on the exact matching local source/test blobs:**
+- R485: 8/8 normal + 8/8 optimized PASS.
+- R486: 10/10 normal + 10/10 optimized PASS.
+- R487: 8/8 normal + 8/8 optimized PASS.
+- With the R488 methods, **34/34 per mode = 68/68 individual method executions PASS** when the four modules were invoked separately. The three inherited test files each matched their R487 Git blob hashes.
+- A wildcard discovery invocation covering all four modules in one Python process timed out locally, with the output last showing the R486 live subprocess test; its root cause was not determined. The actual workflow invokes these modules in separate steps; do **not** claim the combined wildcard run passed.
+
+**Limitations:** These checks used synthetic test fixtures, **not all four real production test modules in a complete trusted checkout**. They do not establish passing GitHub Actions, Windows EXEs, Windows Defender, package checksums, accessibility, licensed downloads, or QD approval.
 
 ## Operator/CI follow-up
 
