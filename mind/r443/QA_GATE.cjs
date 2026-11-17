@@ -70,6 +70,6 @@ const mutations=[
 ["disclosure distant",s=>s.replace("Affiliate disclosure:","Affiliate disclosure:"+ "x".repeat(900)),s=>!disclosureNextTo(s)]
 ];
 mutations.forEach(([name,mutate,detected])=>check("reject unsafe in-memory mutation "+name,()=>detected(mutate(A))));
-const result={kind:"source_only",passed,total:passed+failed.length,failed,mutations:mutations.length,native_node:true,checkout_tested:false,wp_tested:false,accessibility_browser_tested:false,affiliate_approved:false};
+const result={kind:"source_only",passed,total:passed+failed.length,failed,mutations:mutations.length,native_node:(typeof process.versions?.node === 'string'),checkout_tested:false,wp_tested:false,accessibility_browser_tested:false,affiliate_approved:false};
 process.stdout.write(JSON.stringify(result,null,2)+"\n");
 if(failed.length)process.exitCode=1;
