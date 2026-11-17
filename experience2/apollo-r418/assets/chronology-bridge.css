@@ -1,0 +1,22 @@
+/* Isolated Apollo 1 proof-first chronology, R418. No global theme selectors. */
+.fv-r418{color:var(--fv-r418-ink,#e8e0d1);background:var(--fv-r418-bg,#17191c);border:1px solid #77756c;border-radius:12px;font:inherit;line-height:1.55;max-width:100%;min-width:0;overflow-wrap:anywhere}
+.fv-r418 *, .fv-r418 *::before,.fv-r418 *::after{box-sizing:border-box}
+.fv-r418__wrap{max-width:76rem;margin:auto;padding:clamp(1rem,3vw,2.7rem);min-width:0}
+.fv-r418__eyebrow,.fv-r418__label{letter-spacing:.09em;text-transform:uppercase;color:#d9bd75;font-size:.85em;font-weight:750}
+.fv-r418 h2,.fv-r418 h3{font:inherit;font-weight:750;line-height:1.25;margin:.3em 0 .75em}
+.fv-r418 h2{font-size:clamp(1.6rem,4vw,2.7rem)}.fv-r418 h3{font-size:clamp(1.15rem,2.5vw,1.5rem)}
+.fv-r418 p{max-width:72ch;margin:.6em 0 1em}
+.fv-r418__rail{list-style:none;margin:1.75rem 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.fv-r418__stage{border:1px solid #817966;background:#202329;border-radius:9px;padding:clamp(.8rem,2vw,1.4rem);min-width:0}
+.fv-r418__stage>*{min-width:0}
+.fv-r418 a{color:#f6d58a;text-decoration:underline;text-underline-offset:.2em;overflow-wrap:anywhere}
+.fv-r418 a:focus-visible,.fv-r418 summary:focus-visible{outline:3px solid #fff2b9;outline-offset:3px}
+.fv-r418 details{border-top:1px solid #77756c;margin-top:1rem;padding-top:.7rem}
+.fv-r418 summary{cursor:pointer;font-weight:700;min-height:44px;display:list-item;padding:.6rem .2rem}
+.fv-r418__limit{border-left:3px solid #c5a15c;padding-left:1rem}
+.fv-r418__footer{border-top:1px solid #77756c;padding-top:1rem}
+.fv-r418__next{display:inline-block;font-weight:750;min-height:44px;padding:.7rem 0}
+@media(max-width:760px){.fv-r418__rail{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.fv-r418 *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){.fv-r418,.fv-r418__stage{border:1px solid CanvasText;background:Canvas;color:CanvasText}.fv-r418 a{color:LinkText}.fv-r418__limit{border-color:CanvasText}}
+@media print{.fv-r418,.fv-r418__stage{color:#000;background:#fff;border-color:#444}.fv-r418__rail{grid-template-columns:1fr}.fv-r418 details{display:block}.fv-r418 details>*{display:block!important}.fv-r418 a{color:#000}}
