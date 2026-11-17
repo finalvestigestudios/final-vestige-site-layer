@@ -1,0 +1,285 @@
+{
+  "schema": "fv-honda288-archive-crosswalk-v1",
+  "observed_date_local": "2026-11-16",
+  "observed_window_local": "17:22-17:44 PST",
+  "source_method": "AUTHENTICATED_WORDPRESS_EDIT_VIEW_PLUS_PUBLIC_RETRIEVER",
+  "site_post_id": 288,
+  "site_post_modified": "2026-08-19T14:37:40",
+  "historical_census": {
+    "posts": 61,
+    "inline_images": 355,
+    "directly_external_image_sources": 286
+  },
+  "claims": {
+    "reported_broken": 42,
+    "guest_confirmed_broken": null,
+    "reported_wire_savings_pct": 76,
+    "measured_wire_savings_pct": null,
+    "oversized_originals_count": 20,
+    "oversized_stored_bytes": 64385752
+  },
+  "production_writes": 0,
+  "downloaded_images": 0,
+  "authorized_replacements": 0,
+  "rights_policy_url": "https://www.history.navy.mil/our-collections/photography.html",
+  "limits": [
+    "Source EDIT/VIEW URL crosswalk, not real guest currentSrc",
+    "Retriever error codes are not guest HTTP statuses",
+    "Four original images display in independent public retriever; two origin routes tool error",
+    "Six Jetpack proxy routes tool-inaccessible, not established visitor breakage",
+    "Navy original high-TIFF dimensions from catalog metadata, not downloaded file; 960px sizes calculated, not transcoded",
+    "Original publisher header/identity != exact binary/crop equivalence",
+    "No image download, rehost, cache, CMS writes, homepage changes, merges or spend"
+  ],
+  "rows": [
+    {
+      "slot": "288:0",
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "source_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586/_jcr_content/mediaitem/image.img.jpg/1438378291110.jpg",
+      "view_current_markup_src": "https://i0.wp.com/www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586/_jcr_content/mediaitem/image.img.jpg/1438378291110.jpg?ssl=1",
+      "wp_view_width": null,
+      "wp_view_height": null,
+      "wp_view_srcset": null,
+      "wp_view_sizes": null,
+      "public_retriever": {
+        "original_outcome": "FETCH_TOOL_ERROR",
+        "original_tool_error_code": 502,
+        "original_numeric_http_status": null,
+        "proxy_outcome": "INACCESSIBLE_TO_RETRIEVER",
+        "proxy_numeric_http_status": null
+      },
+      "guest_browser": {
+        "current_src": null,
+        "http_status": null,
+        "mime_type": null,
+        "decoded": null,
+        "wire_bytes": null
+      },
+      "primary_source_candidate": {
+        "asset_catalog_id": "NH 69586",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586.html",
+        "official_metadata_found_in_indexed_primary_catalog": true,
+        "original_source_accession_basis": "DIRECT_NAVY_NH_ACCESSION_IN_CURRENT_SRC",
+        "description_and_attribution": "Aerial view, Fuller/Woodbury; Naval Historical Foundation; Admiral W. V. Pratt collection",
+        "high_tiff_native_width": 6256,
+        "high_tiff_native_height": 4862,
+        "conditional_target_width": 960,
+        "conditional_target_height": 746,
+        "available_web_medium": "1280x1280 CATALOG LABEL; RENDITION GEOMETRY UNVERIFIED",
+        "pixel_identity_verified": false,
+        "individual_rights_approved": false,
+        "rights_note": "NHHC says most collection images public domain, but item donation/provenance/copyright exceptions require item review; retain NHHC citation and original attribution."
+      },
+      "broken_for_visitors_confirmed": false,
+      "exact_pixel_match_verified": false,
+      "media_sha256": null,
+      "rights_release": "HOLD",
+      "media_cache_authorized": false,
+      "wordpress_write_authorized": false
+    },
+    {
+      "slot": "288:1",
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "source_url": "https://ahoy.tk-jk.net/Images8/Honda/DelphiAndNicholasAtHondaPoint.jpg",
+      "view_current_markup_src": "https://i0.wp.com/ahoy.tk-jk.net/Images8/Honda/DelphiAndNicholasAtHondaPoint.jpg?ssl=1",
+      "wp_view_width": null,
+      "wp_view_height": null,
+      "wp_view_srcset": null,
+      "wp_view_sizes": null,
+      "public_retriever": {
+        "original_outcome": "IMAGE_DISPLAYED",
+        "original_tool_error_code": null,
+        "original_numeric_http_status": null,
+        "proxy_outcome": "INACCESSIBLE_TO_RETRIEVER",
+        "proxy_numeric_http_status": null
+      },
+      "guest_browser": {
+        "current_src": null,
+        "http_status": null,
+        "mime_type": null,
+        "decoded": null,
+        "wire_bytes": null
+      },
+      "primary_source_candidate": {
+        "asset_catalog_id": "NH 69059",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69059.html",
+        "official_metadata_found_in_indexed_primary_catalog": true,
+        "original_source_accession_basis": "VISIBLE_HISTORIC_CAPTION_WITH_CATALOG_ID",
+        "description_and_attribution": "Delphy/Nicholas; courtesy San Francisco Maritime Museum (1969)",
+        "high_tiff_native_width": 6250,
+        "high_tiff_native_height": 4904,
+        "conditional_target_width": 960,
+        "conditional_target_height": 753,
+        "available_web_medium": "1280x1280 CATALOG LABEL; RENDITION GEOMETRY UNVERIFIED",
+        "pixel_identity_verified": false,
+        "individual_rights_approved": false,
+        "rights_note": "NHHC says most collection images public domain, but item donation/provenance/copyright exceptions require item review; retain NHHC citation and original attribution."
+      },
+      "broken_for_visitors_confirmed": false,
+      "exact_pixel_match_verified": false,
+      "media_sha256": null,
+      "rights_release": "HOLD",
+      "media_cache_authorized": false,
+      "wordpress_write_authorized": false
+    },
+    {
+      "slot": "288:2",
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "source_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio/jcr%3Acontent/mediaitem/image.img.jpg/1564510769845.jpg",
+      "view_current_markup_src": "https://i0.wp.com/www.history.navy.mil/content/history/nhhc/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio/jcr%3Acontent/mediaitem/image.img.jpg/1564510769845.jpg?ssl=1",
+      "wp_view_width": null,
+      "wp_view_height": null,
+      "wp_view_srcset": null,
+      "wp_view_sizes": null,
+      "public_retriever": {
+        "original_outcome": "FETCH_TOOL_ERROR",
+        "original_tool_error_code": 502,
+        "original_numeric_http_status": null,
+        "proxy_outcome": "INACCESSIBLE_TO_RETRIEVER",
+        "proxy_numeric_http_status": null
+      },
+      "guest_browser": {
+        "current_src": null,
+        "http_status": null,
+        "mime_type": null,
+        "decoded": null,
+        "wire_bytes": null
+      },
+      "primary_source_candidate": {
+        "asset_catalog_id": null,
+        "collection_catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/ug-collection/ug-21-us-naval-california-radio-station-collection.html",
+        "collection_only": "UG 21-01, Mare Island radio station. Individual image provenance/rights/dimensions not independently verified.",
+        "conditional_target_width": null,
+        "conditional_target_height": null,
+        "individual_rights_approved": false
+      },
+      "broken_for_visitors_confirmed": false,
+      "exact_pixel_match_verified": false,
+      "media_sha256": null,
+      "rights_release": "HOLD",
+      "media_cache_authorized": false,
+      "wordpress_write_authorized": false
+    },
+    {
+      "slot": "288:3",
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "source_url": "https://www.navsource.net/archives/05/pix1/0531104.jpg",
+      "view_current_markup_src": "https://i0.wp.com/www.navsource.net/archives/05/pix1/0531104.jpg?ssl=1",
+      "wp_view_width": null,
+      "wp_view_height": null,
+      "wp_view_srcset": null,
+      "wp_view_sizes": null,
+      "public_retriever": {
+        "original_outcome": "IMAGE_DISPLAYED",
+        "original_tool_error_code": null,
+        "original_numeric_http_status": null,
+        "proxy_outcome": "INACCESSIBLE_TO_RETRIEVER",
+        "proxy_numeric_http_status": null
+      },
+      "guest_browser": {
+        "current_src": null,
+        "http_status": null,
+        "mime_type": null,
+        "decoded": null,
+        "wire_bytes": null
+      },
+      "primary_source_candidate": {
+        "asset_catalog_id": "NH 84820",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-84000/NH-84820.html",
+        "official_metadata_found_in_indexed_primary_catalog": true,
+        "original_source_accession_basis": "VISIBLE_HISTORIC_CAPTION_WITH_CATALOG_ID",
+        "description_and_attribution": "S.P. Lee/Nicholas; photographer Aston; donated by Capt. G. M. Grening",
+        "high_tiff_native_width": 6146,
+        "high_tiff_native_height": 5130,
+        "conditional_target_width": 960,
+        "conditional_target_height": 801,
+        "available_web_medium": "1280x1280 CATALOG LABEL; RENDITION GEOMETRY UNVERIFIED",
+        "pixel_identity_verified": false,
+        "individual_rights_approved": false,
+        "rights_note": "NHHC says most collection images public domain, but item donation/provenance/copyright exceptions require item review; retain NHHC citation and original attribution."
+      },
+      "broken_for_visitors_confirmed": false,
+      "exact_pixel_match_verified": false,
+      "media_sha256": null,
+      "rights_release": "HOLD",
+      "media_cache_authorized": false,
+      "wordpress_write_authorized": false
+    },
+    {
+      "slot": "288:4",
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "source_url": "https://www.ibiblio.org/hyperwar/OnlineLibrary/photos/images/h84000/h84822.jpg",
+      "view_current_markup_src": "https://i0.wp.com/www.ibiblio.org/hyperwar/OnlineLibrary/photos/images/h84000/h84822.jpg?ssl=1",
+      "wp_view_width": null,
+      "wp_view_height": null,
+      "wp_view_srcset": null,
+      "wp_view_sizes": null,
+      "public_retriever": {
+        "original_outcome": "IMAGE_DISPLAYED",
+        "original_tool_error_code": null,
+        "original_numeric_http_status": null,
+        "proxy_outcome": "INACCESSIBLE_TO_RETRIEVER",
+        "proxy_numeric_http_status": null
+      },
+      "guest_browser": {
+        "current_src": null,
+        "http_status": null,
+        "mime_type": null,
+        "decoded": null,
+        "wire_bytes": null
+      },
+      "primary_source_candidate": {
+        "asset_catalog_id": "NH 84822",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-84000/NH-84822.html",
+        "official_metadata_found_in_indexed_primary_catalog": true,
+        "original_source_accession_basis": "VISIBLE_HISTORIC_CAPTION_WITH_CATALOG_ID",
+        "description_and_attribution": "Chauncey/Young, Woodbury/Fuller; photographer Aston; donated by Capt. G. M. Grening",
+        "high_tiff_native_width": 6158,
+        "high_tiff_native_height": 4992,
+        "conditional_target_width": 960,
+        "conditional_target_height": 778,
+        "available_web_medium": "1280x1280 CATALOG LABEL; RENDITION GEOMETRY UNVERIFIED",
+        "pixel_identity_verified": false,
+        "individual_rights_approved": false,
+        "rights_note": "NHHC says most collection images public domain, but item donation/provenance/copyright exceptions require item review; retain NHHC citation and original attribution."
+      },
+      "broken_for_visitors_confirmed": false,
+      "exact_pixel_match_verified": false,
+      "media_sha256": null,
+      "rights_release": "HOLD",
+      "media_cache_authorized": false,
+      "wordpress_write_authorized": false
+    },
+    {
+      "slot": "288:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "source_url": "https://www.usni.org/sites/default/files/styles/hero_image/public/LWF-PRO-3-20%201_0.jpg?itok=ex2XHVlK",
+      "view_current_markup_src": "https://i0.wp.com/www.usni.org/sites/default/files/styles/hero_image/public/LWF-PRO-3-20%201_0.jpg?ssl=1",
+      "wp_view_width": null,
+      "wp_view_height": null,
+      "wp_view_srcset": null,
+      "wp_view_sizes": null,
+      "public_retriever": {
+        "original_outcome": "IMAGE_DISPLAYED",
+        "original_tool_error_code": null,
+        "original_numeric_http_status": null,
+        "proxy_outcome": "INACCESSIBLE_TO_RETRIEVER",
+        "proxy_numeric_http_status": null
+      },
+      "guest_browser": {
+        "current_src": null,
+        "http_status": null,
+        "mime_type": null,
+        "decoded": null,
+        "wire_bytes": null
+      },
+      "primary_source_candidate": null,
+      "broken_for_visitors_confirmed": false,
+      "exact_pixel_match_verified": false,
+      "media_sha256": null,
+      "rights_release": "HOLD",
+      "media_cache_authorized": false,
+      "wordpress_write_authorized": false
+    }
+  ]
+}
