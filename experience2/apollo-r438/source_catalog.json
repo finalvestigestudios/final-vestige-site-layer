@@ -1,0 +1,71 @@
+{
+  "schema": "fv-apollo-atlas-v1",
+  "release": "source-link-only-no-geopins",
+  "records": [
+    {
+      "id": "review-1967",
+      "class": "Board finding",
+      "date": "1967",
+      "date_label": "1967 · finding year",
+      "title": "The suspected ignition mechanism",
+      "source_name": "Apollo 204 Review Board",
+      "source_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "supports": "An electrical arc was the most probable initiating mechanism identified by the Board.",
+      "limit": "The precise initiating arc, wire, and location were not conclusively proved.",
+      "rights": "Text linked as source; no illustrations reproduced.",
+      "role": "primary"
+    },
+    {
+      "id": "training-1966",
+      "class": "Archival photograph",
+      "date": "1966-10-18",
+      "date_label": "October 18, 1966",
+      "title": "Crew training is context, not telemetry",
+      "source_name": "NASA Apollo 1 gallery — S66-58038",
+      "source_url": "https://www.nasa.gov/gallery/apollo-1/",
+      "supports": "NASA catalogs S66-58038 as a 1966 preflight crew-training photograph.",
+      "limit": "A crew-training photograph does not record the January 1967 cabin fire or prove oxygen pressure.",
+      "rights": "NASA photo catalog linked; image reproduction not included or approved for product promotion.",
+      "role": "photograph"
+    },
+    {
+      "id": "aftermath-1967",
+      "class": "Archival photograph",
+      "date": "1967-01-28",
+      "date_label": "January 28, 1967",
+      "title": "Damage was photographed afterward",
+      "source_name": "NASA Apollo 1 gallery — S67-21294",
+      "source_url": "https://www.nasa.gov/gallery/apollo-1/",
+      "supports": "NASA catalogs S67-21294 as the command-module interior after the fire.",
+      "limit": "Visible damage is not a contemporaneous ignition recording and cannot identify the first spark.",
+      "rights": "NASA photo catalog linked; no image downloaded or reproduced.",
+      "role": "photograph"
+    },
+    {
+      "id": "tribute-2017",
+      "class": "Retrospective exhibit",
+      "date": "2017-01-27",
+      "date_label": "January 27, 2017",
+      "title": "A memorial display, fifty years later",
+      "source_name": "NASA Apollo 1 crew tribute announcement",
+      "source_url": "https://www.nasa.gov/news-release/nasa-unveils-tribute-to-crew-of-apollo-1/",
+      "supports": "NASA announced a 2017 exhibit that included a historic Apollo 1 hatch.",
+      "limit": "The 2017 display records how the accident was presented later, not how ignition occurred in 1967.",
+      "rights": "Source link only; museum imagery and any depicted likeness require separate item review for commerce.",
+      "role": "retrospective"
+    },
+    {
+      "id": "tests-2018",
+      "class": "Historical retrospective",
+      "date": "2018-02-14",
+      "date_label": "February 14, 2018 · publication",
+      "title": "Later fire tests were deliberate",
+      "source_name": "NASA: 50 Years Ago — Apollo Flammability Tests",
+      "source_url": "https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/",
+      "supports": "NASA described 102 deliberately initiated Command Module fires in its retrospective on 1967–68 testing.",
+      "limit": "The retrospective publication date is not the test date; reproduced fire dynamics do not prove the accident’s precise spark.",
+      "rights": "Source link only; any third-party embedded media require separate review.",
+      "role": "retrospective"
+    }
+  ]
+}
