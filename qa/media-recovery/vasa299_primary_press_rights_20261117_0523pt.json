@@ -1,0 +1,153 @@
+{
+  "schema": "fv-vasa-primary-press-and-wire-gate-v1",
+  "captured_at_pt": "2026-11-17 05:23",
+  "source_method": "GITHUB_PINNED_AUTHENTICATED_WP_MEDIA_VIEW_PLUS_PUBLIC_OFFICIAL_PRESS_PAGE_AND_READ_ONLY_RETRIEVER",
+  "source_oversized_exposure": {
+    "repo_path": "qa/media-recovery/wp_oversized_exposure_20_20261117_0428pt.json",
+    "git_blob_sha": "cd3af158a6cf4c197704be0527882bb4666f9156"
+  },
+  "post": {
+    "wp_id": 299,
+    "url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+    "wp_revision": "2026-11-02T21:40:05",
+    "published": true
+  },
+  "official_press": {
+    "catalog_url": "https://www.vasamuseet.se/en/about-the-vasa-museum/press/press-images",
+    "observed_policy": "Selected images free for editorial purposes with photographer and source credit",
+    "permission_scope": "EDITORIAL_ONLY_WITH_ATTRIBUTION_NOT_A_BLANKET_COPYRIGHT_LICENSE",
+    "catalog_observed_at": "2026-11-17"
+  },
+  "images": [
+    {
+      "media_id": 388,
+      "slot": "299:388",
+      "original_wp_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg",
+      "published_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=1024%2C681&ssl=1",
+      "original_stored_bytes": 8176362,
+      "wp_original_dimensions": {
+        "width": 4256,
+        "height": 2832
+      },
+      "proposed_geometry_only": {
+        "width": 960,
+        "height": 639
+      },
+      "official_candidate": {
+        "url": "https://www.vasamuseet.se/globalassets/vasamuseet/pressgenrebilder/press-images-eng/the-ship/vasa-modell-2020.jpg",
+        "press_page": "https://www.vasamuseet.se/en/about-the-vasa-museum/press/press-images",
+        "press_label": "A model of Vasa in scale 1:10",
+        "photographer": "Karolina Kristensson",
+        "credit": "Photo: Karolina Kristensson, Vasa Museum/SMMTF",
+        "match_basis": "EXACT_FILENAME_AND_DESCRIPTION",
+        "reader_observation": "IMAGE_RENDERED",
+        "numeric_http_status": null,
+        "official_master_dimensions": null,
+        "official_master_sha256": null,
+        "pixel_crop_match": false
+      },
+      "rights": "EDITORIAL_ONLY_CONDITIONAL_ITEM_REVIEW",
+      "publish_authorized": false,
+      "cache_authorized": false,
+      "browser": {
+        "current_src": null,
+        "http_status": null,
+        "decoded": null,
+        "transfer_bytes": null
+      }
+    },
+    {
+      "media_id": 389,
+      "slot": "299:389",
+      "original_wp_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg",
+      "published_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1024%2C676&ssl=1",
+      "original_stored_bytes": 2822969,
+      "wp_original_dimensions": {
+        "width": 2147,
+        "height": 1417
+      },
+      "proposed_geometry_only": {
+        "width": 960,
+        "height": 634
+      },
+      "official_candidate": {
+        "url": "https://www.vasamuseet.se/globalassets/vasamuseet/pressgenrebilder/press-images-eng/the-ship/fo179418-04dig.jpg",
+        "press_page": "https://www.vasamuseet.se/en/about-the-vasa-museum/press/press-images",
+        "press_label": "The warship Vasa in the Vasa Museum",
+        "photographer": "Anneli Karlsson",
+        "credit": "Photo: Anneli Karlsson, Vasa Museum/SMMTF",
+        "match_basis": "RELATED_SCENE_FILENAME_DIFFERS",
+        "reader_observation": "TOOL_REFUSED_LENGTH_NOT_BROWSER_ERROR",
+        "numeric_http_status": null,
+        "official_master_dimensions": null,
+        "official_master_sha256": null,
+        "pixel_crop_match": false
+      },
+      "rights": "EDITORIAL_ONLY_CONDITIONAL_ITEM_REVIEW",
+      "publish_authorized": false,
+      "cache_authorized": false,
+      "browser": {
+        "current_src": null,
+        "http_status": null,
+        "decoded": null,
+        "transfer_bytes": null
+      }
+    },
+    {
+      "media_id": 382,
+      "slot": "299:382",
+      "original_wp_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+      "published_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=1024%2C683&ssl=1",
+      "original_stored_bytes": 2318980,
+      "wp_original_dimensions": {
+        "width": 1800,
+        "height": 1200
+      },
+      "proposed_geometry_only": {
+        "width": 960,
+        "height": 640
+      },
+      "official_candidate": {
+        "url": "https://www.vasamuseet.se/globalassets/vasamuseet/pressgenrebilder/press-images-eng/suport-vasa/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+        "press_page": "https://www.vasamuseet.se/en/about-the-vasa-museum/press/press-images",
+        "press_label": "The warship Vasa with old (left) and new (right) supports",
+        "photographer": "Anneli Karlsson",
+        "credit": "Photo: Anneli Karlsson, Vasa Museum/SMMTF",
+        "match_basis": "EXACT_FILENAME_AND_DESCRIPTION",
+        "reader_observation": "IMAGE_RENDERED",
+        "numeric_http_status": null,
+        "official_master_dimensions": null,
+        "official_master_sha256": null,
+        "pixel_crop_match": false
+      },
+      "rights": "EDITORIAL_ONLY_CONDITIONAL_ITEM_REVIEW",
+      "publish_authorized": false,
+      "cache_authorized": false,
+      "browser": {
+        "current_src": null,
+        "http_status": null,
+        "decoded": null,
+        "transfer_bytes": null
+      }
+    }
+  ],
+  "summary": {
+    "n_media": 3,
+    "original_stored_bytes": 13318311,
+    "official_exact_filename_leads": 2,
+    "official_related_only_leads": 1,
+    "real_guest_http_checks": 0,
+    "sitewide_reported_broken_42_verified": false,
+    "claimed_76_percent_wire_saving_verified": false,
+    "measured_wire_before_bytes": null,
+    "measured_wire_after_bytes": null
+  },
+  "safety": {
+    "wordpress_writes": false,
+    "downloads": false,
+    "rehosting": false,
+    "gutenberg_rewrites": false,
+    "homepage_work": false,
+    "paid_requests": false
+  }
+}
