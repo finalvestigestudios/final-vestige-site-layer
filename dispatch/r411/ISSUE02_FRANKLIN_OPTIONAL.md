@@ -1,0 +1,53 @@
+# THE DISPATCH — ISSUE 02: OPTIONAL HISTORICAL ALTERNATIVE
+
+> **STATUS: NOT_ADOPTED / HOLD_UNSENT** — This does not replace master PR #175.
+
+**Subject (proposed post title):** Franklin looked for a force. The record asked why.
+
+**Preheader (editorial proposal, actual Jetpack inbox behavior UNVERIFIED):** A French commission in 1784 left a useful method for testing extraordinary claims.
+
+**Content type:** editorial — no commercial offer or earning link
+
+---
+
+In a Paris room in 1784, people gathered around an idea that seemed capable of changing the body. Music was part of the setting. Witnesses described striking responses. But there was a question that watching alone could not settle: what caused those responses?
+
+Animal magnetism, associated with Franz Anton Mesmer, was presented as a kind of invisible physical influence. The French crown appointed investigators to examine the practice. Benjamin Franklin, Antoine Lavoisier and other commissioners investigated demonstrations associated with Charles d’Eslon. Their task was not merely to decide whether someone felt something. It was to examine the proposed cause.
+
+The commission's report distinguished reported effects from the alleged magnetic fluid. Its investigators concluded that the observations did not establish the fluid as the cause; imagination and the setting offered explanations for the experiences. A later English translation was printed in London in 1785. That is a different date from the French commission's 1784 work—and an important bibliographic distinction.
+
+This was not a modern randomized clinical trial, and the report cannot be used to settle every claim about hypnosis, meditation, suggestion or contemporary audio products. It does show what a better question looks like. Instead of asking only whether an experience felt powerful, ask whether the evidence separates the proposed explanation from ordinary alternatives.
+
+**A small field test for the next claim you encounter**
+
+1. What exactly is being claimed?
+
+2. What did the witnesses or investigators actually observe?
+
+3. What other explanation would produce the same observation?
+
+Try this three-column test the next time a headline promises a remarkable result: first write the exact claim; next record what was directly measured or witnessed; finally list at least one other explanation that could fit the same observation. The last column is not cynicism. It is what keeps the first two honest.
+
+That method belongs in our historical investigations—and anywhere a vendor describes what an audio recording can supposedly achieve. A short session might be convenient; convenience is not proof of an advertised psychological effect. You can evaluate a claim without buying anything.
+
+The commission's historical language and conclusions have limits. The people described in eighteenth-century reports did not have today's research tools, and their categories should not be transplanted uncritically into modern medicine. The surviving document is evidence about what those investigators did and concluded, not a prescription for treatment.
+
+The live Final Vestige investigation follows the evidence behind the Mesmerism controversy, including what the original record does not prove.
+
+**Primary CTA — Read the investigation:** [What Franklin’s 1784 Commission Actually Found](https://finalvestige.com/2026/11/02/mesmerism/)
+
+**Original-source trail (research references, not purchase CTAs):**
+
+- [French commission, original 1784 edition (Wellcome Collection)](https://wellcomecollection.org/works/qaa7fryp)
+
+- [English translation, London 1785 (Wellcome Collection)](https://wellcomecollection.org/works/enhgscmf)
+
+- [Wood Library-Museum bibliographic and historical summary](https://www.woodlibrarymuseum.org/rare-book/franklin-b-report-of-dr-benjamin-franklin-and-other-commissioners-charged-by-the-king-of-france-with-the-examination-of-the-animal-magnetism-as-now-practised-at-paris-1785/)
+
+---
+
+**RELEASE HOLD:** [[VALID_POSTAL_ADDRESS_REQUIRED]] · [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
+
+**Mandatory review:** Native WordPress non-sending Preview email; recipient eligibility; welcome receipt; sender identity and founder approval.
+
+No affiliate offer appears in this editorial candidate. Source links are not paid links.
