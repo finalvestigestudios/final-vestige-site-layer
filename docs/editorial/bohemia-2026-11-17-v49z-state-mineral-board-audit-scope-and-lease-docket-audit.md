@@ -1,0 +1,35 @@
+# Bohemia Spillway · v49z evidence and release audit
+**Date:** 2026-11-17 Pacific · **Owner:** FV Investigations Publishing Studio · **Status:** INTERNAL / HOLD / NOT FOR PUBLICATION
+**Related:** Bohemia [#2832](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/2832); shared QA [#1589](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1589)
+**Existing WordPress draft:** #2488 (not changed in this run).
+**Reader:** [The Spillway That Kept Its Names — v49z](./bohemia-spillway-reader-cut-v49-2026-11-16.md).
+
+## Scope of new documentary examination
+1. [Louisiana State Mineral and Energy Board — November 12, 2026 Notice, Agenda and Reports](https://www.dce.louisiana.gov/assets/OSTR-SMEB/Board-MTG-Notices-Agendas-Reports/2026/2026-11-Notice-Agenda-Reports.pdf), an **official 19-page PDF**. Page images visually inspected November 17 for original PDF zero-based **p.4** (Audit Report; printed p.5) and **p.7** (Nomination and Tract Report; printed p.8). The PDF's parsed docket text p.11 (printed docket p.1) was inspected but **original page image not yet independently inspected**. 
+2. [Department of Conservation and Energy — State Mineral and Energy Board](https://www.dce.louisiana.gov/state-mineral-and-energy-board), official current board explanation, retrieved November 17, 2026. The board distinguishes nomination/advertisement, ongoing lease review, royalty audit and docket review; agency renamed October 1, 2025. Descriptive procedure **does not itself prove action in a named case**.
+3. Existing LMA sources: [March 26, 2025 LMA Finance minutes](https://nolalakefront.com/wp-content/uploads/2025/07/Finance-Minutes-March-26-2025final.pdf), previously verified in reader #69, and FY2025 independently audited LMA statements, reader #73. These are *different* evidence scopes from the new statewide board report.
+4. Live [FV Journal](https://finalvestige.com/blog/) and [Editorial Standards](https://finalvestige.com/editorial-standards/) inspected; no new competing published Bohemia post identified in retrieved listing. Prior issue and shared production QA reviewed before editing. No Caernarvon (#2151), homepage or shared template changed.
+
+## Findings, not to conflate
+- State audit director **Taletha Shorter**, November 12 report, states **39 open royalty audits**, **3 audits engaged in October**, and **$778,008.30 total field audit collections as of October 31, 2026**. This resolves arithmetically into **$653,285.38 royalty exceptions + $80,420.52 interest + $44,302.40 penalties**. **These are state-program figures, not identified as Bohemia or LMA**. The $12,663,669.88 in October state royalties (and $50,460,190.73 FY-to-date) likewise are *not* Bohemia-specific and have not been added to the reader.
+- November docket's **State Agency Leases** category text says **“No items received for this category.”** This is **only one November 12, 2026 docket**, not proof that an approximately 107-acre Bohemia application in July 2024 never proceeded. Absent named lease/tract number and complete board sale history, its result remains unverified.
+- LMA FY2025 audit issued an unmodified **statement** opinion and an entity-wide journal entry approval finding (2025-001); neither an identified Bohemia lease audit nor evidence of claimant payments. Capo's March 2025 request for lease scrutiny remains an unconfirmed **requested review**, not completed work.
+- SONRIS “All Lease Sale Results” from the official state board page routes to a **terms page prohibiting bots and automated access**. **Do not attempt automated scraping or paid subscription**. For follow-up, obtain individual agency-provided nomination, lease and audit records lawfully, or inspect permitted public materials without bypassing terms.
+- A Lakefront website **2026-labeled October agenda index** linked apparently older **2025-dated** PDFs during link examination; that page label is not proof of the linked PDF's event date. Do not label a source as 2026 solely from the website's index name.
+
+## Original visual
+[Three audits, three different records](./assets/bohemia-three-audit-scopes-v49z.svg) — original studio-authored accessible SVG, created 2026-11-17, copyright © FV Studios 2026, source URLs and descriptive alt/caption embedded in metadata; no historical reenactment or third-party imagery. The design distinguishes (1) FY2025 LMA financial audit, (2) March 2025 requested Bohemia lease audit without verified outcome, (3) November 2026 state-wide board audit figures. **Source-code and GitHub readback are structural checks only; no pixel-level/mobile theme QA or production insertion is claimed.**
+
+Suggested alt: “Three vertically stacked record types: LMA's 2025 organization-wide accounting audit; a requested Bohemia lease investigation without verified findings; and the November 2026 state mineral report, which lists 39 open statewide royalty audits and $778,008.30 in statewide audit collections. None establishes an individual Bohemia royalty payment.”
+Suggested caption: “Three audits, three different scopes. Statewide collections are not attributed to Bohemia; an LMA accounting-control finding is not a lease-specific conclusion. Original FV graphic, November 17, 2026. Sources #69, #73, #81–82.”
+
+## Exact release gate / next records
+1. Execute independent legal/fact-check review of private-owner entitlements and class-action settlements, with original court-filed **December 8, 1998 Exhibit A** (Plaquemines 31-357), **December 11, 2000 consent judgment**, later signed settlements, disbursing agent registry and individual cleared distribution records.
+2. Acquire executed 2023 LMA/FPA management agreement, July 2024 107-acre **nomination identifier**, advertised tract/sale record, winning bid/approval or disposition, signed lease and lease numbers.
+3. Obtain LMA/State Mineral Board **audit engagement, scope and report** for Bohemia if one was actually undertaken after March 2025; reconcile LMA receipt-level statements with numbered lessee remittances and contract due dates. Do not extrapolate from 39 statewide audits.
+4. Obtain independent legal/editorial clearance of current condensed reader. Maintain hold if any consequential claimant conclusion cannot be grounded in actual court/distrubution source.
+5. Authenticated actual current-theme WP draft #2488 screenshots at **390px and 1440px**, image pixel/overflow/navigation/source anchor checks; NASA/USDA media #2484/#2485 public byte loads, correct attribution, alt and caption; source-grounded SVG pixel inspection and delivery.
+6. If and only if approved and technically QA-passed, before first publish explicitly preserve `_jetpack_dont_email_post_to_subs=true`, disable auto-publicize, validate categories/metadata/credits, independently read back public article. **Do not publish or notify subscribers now.** Grok lane receives story angles only after editorial approval.
+
+## Cycle disposition
+**WordPress published: none. WP #2488 unchanged. Github reader v49z and SVG created. No other post, social destination, homepage, template or paid services touched.**
