@@ -53,6 +53,10 @@ jobs:
         run: |
           python -B -W error -m unittest discover -s products/desktop/tests -p test_offline_source_success_descendant_r489.py
           python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_offline_source_success_descendant_r489.py
+      - name: R490 Windows Job Object custody failures and native quiet descendant smoke
+        run: |
+          python -B -W error -m unittest discover -s products/desktop/tests -p test_windows_job_custody_r490.py
+          python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_windows_job_custody_r490.py
       - name: Prove independent CI custody rules in normal and optimized mode
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p test_independent_ci_r385.py
