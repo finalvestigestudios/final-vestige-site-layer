@@ -45,8 +45,17 @@ class R497CertificateTailCustody(unittest.TestCase):
     def test_valid_complete_record_remains_accepted(self):
         _verify(_record(b"ABCDEFGH"))
 
-    def test_valid_nonzero_padding_remains_accepted(self):
-        _verify(_record(b"A", padding=b"z" * 7))
+    def test_valid_zero_padding_remains_accepted(self):
+        # R499 tightened PE/COFF semantics: only zero-filled outer padding
+        # is accepted. Retain this inherited R497 tail-custody test under
+        # the current contract instead of expecting a known-bad image to pass.
+        _verify(_record(b"A", padding=b"\x00" * 7))
+
+    def test_nonzero_outer_padding_rejected_after_r499(self):
+        # The former positive fixture used seven 'z' bytes. That should now
+        # fail closed, while remaining separate from the tail-truncation checks.
+        with self.assertRaisesRegex(PECertificateError, _ERROR):
+            _verify(_record(b"A", padding=b"z" * 7))
 
     def test_two_complete_records_remain_accepted(self):
         _verify(_record(b"A") + _record(b"BCD"))
