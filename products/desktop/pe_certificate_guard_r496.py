@@ -16,6 +16,27 @@ MAX_CERTIFICATE_TABLE_BYTES = 8 * 1024 * 1024
 MAX_CERTIFICATE_RECORDS = 128
 
 
+def _read_exact_at(stream, offset: int, size: int) -> bytes | None:
+    """Require an exact native seek receipt before trusting certificate bytes.
+
+    An injected stream may report success while seeking to the wrong location,
+    return True (which compares equal to 1), or override comparison on an int
+    subclass. Native FileIO and BytesIO return a plain integer offset. Catch
+    ordinary I/O faults here so the public error raised by the caller cannot
+    retain private exception context. Never swallow process interrupts.
+    """
+    data = None
+    try:
+        positioned = stream.seek(offset)
+        if type(positioned) is int and positioned == offset:
+            data = stream.read(size)
+    except Exception:
+        pass
+    if type(data) is bytes and len(data) == size:
+        return data
+    return None
+
+
 def verify_certificate_table(stream, optional: bytes, *, file_size: int) -> None:
     """Walk an optional PE security directory without executing or loading its payload.
 
@@ -31,6 +52,8 @@ def verify_certificate_table(stream, optional: bytes, *, file_size: int) -> None
     it does not parse PKCS#7 or check padding *inside* the signed-data payload.
     R500 rejects non-native read receipts and sanitizes arbitrary ordinary
     stream faults without retaining their possibly private exception chains.
+    R502 additionally requires an exact native seek position receipt for
+    header, tail and padding reads on the held descriptor.
     """
     if len(optional) < 112:
         raise PECertificateError("PE certificate table rejected")
@@ -49,17 +72,8 @@ def verify_certificate_table(stream, optional: bytes, *, file_size: int) -> None
     while cursor < end:
         if records >= MAX_CERTIFICATE_RECORDS or end - cursor < 8:
             raise PECertificateError("PE certificate table rejected")
-        header = None
-        try:
-            stream.seek(cursor)
-            header = stream.read(8)
-        except Exception:
-            # A stream wrapper may fail with more than OSError. Build a fixed
-            # exception only after leaving the handler; never retain paths,
-            # client row data or arbitrary exception attributes in __context__.
-            # SystemExit/KeyboardInterrupt remain unsuppressed.
-            pass
-        if type(header) is not bytes or len(header) != 8:
+        header = _read_exact_at(stream, cursor, 8)
+        if header is None:
             raise PECertificateError("PE certificate table rejected")
         record_size, revision, cert_type = struct.unpack("<IHH", header)
         padded_size = (record_size + 7) & ~7
@@ -70,13 +84,8 @@ def verify_certificate_table(stream, optional: bytes, *, file_size: int) -> None
         # fstat file length is stale. Probe the final claimed byte, including
         # alignment padding, without allocating PKCS#7 payloads in memory.
         # A complete release gate also hashes this exact descriptor.
-        tail = None
-        try:
-            stream.seek(cursor + padded_size - 1)
-            tail = stream.read(1)
-        except Exception:
-            pass
-        if type(tail) is not bytes or len(tail) != 1:
+        tail = _read_exact_at(stream, cursor + padded_size - 1, 1)
+        if tail is None:
             raise PECertificateError("PE certificate table rejected")
         # Per PE/COFF, padding OUTSIDE dwLength is zero-filled. An otherwise
         # framed signature must not carry unaccounted bytes in this gap.
@@ -84,13 +93,8 @@ def verify_certificate_table(stream, optional: bytes, *, file_size: int) -> None
         # Microsoft's WinVerifyTrust EnableCertPaddingCheck implementation.
         padding_bytes = padded_size - record_size
         if padding_bytes:
-            padding = None
-            try:
-                stream.seek(cursor + record_size)
-                padding = stream.read(padding_bytes)
-            except Exception:
-                pass
-            if type(padding) is not bytes or padding != b"\x00" * padding_bytes:
+            padding = _read_exact_at(stream, cursor + record_size, padding_bytes)
+            if padding != b"\x00" * padding_bytes:
                 raise PECertificateError("PE certificate table rejected")
         cursor += padded_size
         records += 1
