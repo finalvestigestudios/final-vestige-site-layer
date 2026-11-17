@@ -56,4 +56,4 @@ with sync_playwright() as p:
     browser.close()
 result={'fixture':'actual PHP-rendered R429 via page.set_content; NOT network navigation','browser':'Chromium '+version,'assertions':len(checks),'passed':checks,'axe_core':'HOLD: pinned bundle unavailable','navigated_LCP':'HOLD: no navigated staging','navigated_CLS':'HOLD: no navigated staging','installed_WordPress':'HOLD: not installed','screenshots':sorted(p.name for p in SHOTS.glob('*.png'))}
 (QA/'browser_results.json').write_text(json.dumps(result,sort_keys=True,indent=2)+'\n')
-print('PASS',len(checks),'Chromium assertions; 13 screenshots; axe and navigated CWV HOLD')
+print('PASS',len(checks),'Chromium assertions;',len(list(SHOTS.glob('*.png'))),'screenshots; axe and navigated CWV HOLD')
