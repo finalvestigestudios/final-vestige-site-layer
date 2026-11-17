@@ -14,6 +14,8 @@ import subprocess
 import sys
 import threading
 
+from windows_job_custody_r490 import WindowsJob
+
 CHECKS = (
     ("six_app_source_smoke", "test_offline_source_smoke_r408.py"),
     ("six_app_safety_smoke", "test_safety_smoke.py"),
@@ -69,7 +71,8 @@ def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[i
     discarded. POSIX children share a new process group so an inherited pipe
     cannot strand a grandchild after a failed check. Same-group POSIX children
     are also terminated after clean exits, even with closed inherited pipes.
-    Not a sandbox; detached and Windows grandchildren remain out of scope.
+    Windows Job Objects terminate assigned descendants on clean and failed exits;
+    assignment races and privileged escape remain outside this guarantee. Not a sandbox.
     """
     collected = bytearray()
     overflow = threading.Event()
@@ -81,6 +84,29 @@ def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[i
     )
     assert proc.stdout is not None
     stream = proc.stdout
+    # Windows jobs keep descendants within teardown on success, timeout and
+    # over-budget output. Refuse to run without custody (nested job restrictions
+    # may prevent assignment); direct-child kill remains a failure fallback.
+    custody = None
+    if os.name == "nt":
+        try:
+            custody = WindowsJob(proc)
+        except OSError:
+            _terminate_test_family(proc)
+            proc.wait()
+            stream.close()
+            raise
+    custody_failed = threading.Event()
+
+    def terminate_family() -> None:
+        if custody is None:
+            _terminate_test_family(proc)
+            return
+        try:
+            custody.terminate()
+        except OSError:
+            custody_failed.set()
+            _terminate_test_family(proc)
 
     def read_child() -> None:
         try:
@@ -90,12 +116,12 @@ def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[i
                     break
                 if len(collected) + len(chunk) > _MAX_EVIDENCE_BYTES:
                     overflow.set()
-                    _terminate_test_family(proc)
+                    terminate_family()
                     break
                 collected.extend(chunk)
         except (OSError, ValueError):
             read_error.set()
-            _terminate_test_family(proc)
+            terminate_family()
 
     worker = threading.Thread(target=read_child, name="fvs-source-log-drain", daemon=True)
     timed_out = False
@@ -105,13 +131,13 @@ def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[i
             proc.wait(timeout=timeout)
         except subprocess.TimeoutExpired:
             timed_out = True
-            _terminate_test_family(proc)
+            terminate_family()
             proc.wait()
         worker.join(timeout=2)
         if worker.is_alive():
             # A direct child can exit while a grandchild holds its stdout.
             # Closing the inherited pipe requires tearing down the group.
-            _terminate_test_family(proc)
+            terminate_family()
             worker.join(timeout=2)
             raise OSError("Source evidence stream unavailable")
         if read_error.is_set():
@@ -122,18 +148,24 @@ def _bounded_child(cmd: tuple[str, ...], desktop: Path, timeout: int) -> tuple[i
             return proc.returncode, b"", True
         return proc.returncode, bytes(collected), False
     finally:
-        # The direct test process may exit cleanly while a same-group child
-        # closed inherited pipes and keeps running. Tear down POSIX groups even
-        # on successful receipts; no source test may leave background work.
-        # Windows still has direct-child-only cleanup, not a tree guarantee.
-        if os.name == "posix" or proc.poll() is None or worker.is_alive():
-            _terminate_test_family(proc)
+        # Both platforms tear down their managed process group even when a
+        # successful direct parent has closed stdout. Failure to terminate or
+        # close a Windows job invalidates any otherwise successful receipt.
+        if custody is not None or os.name == "posix" or proc.poll() is None or worker.is_alive():
+            terminate_family()
         proc.wait()
         if worker.is_alive():
             worker.join(timeout=2)
         # Never close a stream while its reader may still be using it.
         if not worker.is_alive():
             stream.close()
+        if custody is not None:
+            try:
+                custody.close()
+            except OSError:
+                custody_failed.set()
+        if custody_failed.is_set():
+            raise OSError("Windows job custody unavailable")
 
 
 def _single_check(desktop: Path, label: str, pattern: str, mode: str,
