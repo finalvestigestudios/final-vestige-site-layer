@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "audit_date_utc": "2026-11-04",
+  "scope": "source_identity_not_live_http",
+  "source_provenance": {
+    "frozen_part": "qa/media-recovery/parts/03.json",
+    "frozen_part_git_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e",
+    "cms_verified_previous_audit": "qa/media-recovery/iroquois_283_visual_custody_20261104.json",
+    "post_id": 283,
+    "slot_key": "283:3",
+    "published_article": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/"
+  },
+  "image": {
+    "stored_exact_url": "https://bloximages.chicago2.vip.townnews.com/enidnews.com/content/tncms/assets/v3/editorial/b/4e/b4e59e84-74da-5f9e-b24f-5e9e3658fd34/54716e12ac97b.image.jpg?resize=1200%2C804",
+    "source_host": "bloximages.chicago2.vip.townnews.com",
+    "source_selector": "resize=1200,804",
+    "selector_interpretation": "crop_or_dimension_change_possible; TownNews output composition not independently verified",
+    "frozen_alt": "Charred seating and stage area inside the Iroquois Theatre after the 1903 fire.",
+    "verified_browser_http_status": null,
+    "verified_origin_http_status": null,
+    "current_src": null,
+    "chrome_image_decode_ok": null,
+    "cdp_image_wire_bytes": null,
+    "previous_independent_renderer_status": "INACCESSIBLE_WITHOUT_CONFIRMED_ORIGIN_HTTP_STATUS",
+    "previous_renderer_status_is_guest_proof": false
+  },
+  "historical_candidate": {
+    "source": "Northwestern/Chicago History Museum ICHi-36007",
+    "candidate_catalog_url": "https://fk-sandbox.library.northwestern.edu/historical/iroquois/",
+    "mapping": "SUBJECT_ONLY_NO_BINARY_OR_CROP_MATCH",
+    "copyright_and_reproduction_rights": "HOLD_ITEM_REVIEW",
+    "credit": "UNVERIFIED",
+    "download_for_cache_authorized": false
+  },
+  "delivery": {
+    "max_display_width_px": 960,
+    "master_binary_width_px": null,
+    "master_binary_height_px": null,
+    "verified_resized_dimensions_px": null,
+    "allow_enlargement": false,
+    "proposed_height_px": null,
+    "derivative_reproduction_authorized": false,
+    "wordpress_media_upload_authorized": false,
+    "wordpress_post_rewrite_authorized": false
+  },
+  "regression": {
+    "tested_files": [
+      "qa/media-recovery/browser_probe_core.cjs",
+      "qa/media-recovery/test_proxy_crop_identity_20261101.cjs",
+      "qa/media-recovery/test_browser_probe_active_src.cjs",
+      "qa/media-recovery/test_network_redirect_identity.cjs",
+      "qa/media-recovery/test_resize_crop_visual_identity_20261104.cjs"
+    ],
+    "actual_browser_tests_executed": 0,
+    "native_node_ci_executed": false
+  },
+  "sitewide_baseline": {
+    "frozen_posts": 61,
+    "frozen_image_slots": 355,
+    "external_original_refs": 288,
+    "oversized_wordpress_original_count": 13,
+    "oversized_original_storage_bytes": 43522829,
+    "reported_broken_42_browser_verified": false,
+    "reported_76_percent_transfer_savings_measured": false,
+    "production_media_repairs": 0
+  },
+  "note": "This audit identifies a false-positive photo-identity risk, not an image restoration. Source-derived 1200x804 transform parameters do NOT establish source master pixel dimensions or authorize 960px re-encoding."
+}

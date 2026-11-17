@@ -1,0 +1,113 @@
+{
+  "schema": "fv-media-official-catalog-alias-differential-v1",
+  "observed_date_local": "2026-11-16",
+  "scope": "one post image slot, two official USGS catalog aliases, four distinct delivery routes",
+  "wordpress": {
+    "post_id": 407,
+    "image_index_zero_based": 1,
+    "slot": "407:1",
+    "published_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+    "modified": "2026-10-29T18:30:30",
+    "authored_image_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+    "rendered_rest_view_url": "https://i0.wp.com/d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg?ssl=1",
+    "authored_catalog_hyperlink": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+    "alt": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake.",
+    "guest_current_src": null,
+    "guest_http_status": null,
+    "guest_mime": null,
+    "guest_natural_width": null,
+    "guest_natural_height": null,
+    "guest_transfer_bytes": null,
+    "guest_decoded": null,
+    "guest_broken_proven": null
+  },
+  "official_catalogs": [
+    {
+      "catalog": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+      "relationship": "on-post linked catalog",
+      "catalog_original_link_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "catalog_title": "Hebgen Lake fault scarp in 1959",
+      "photographer": "J. R. Stacy",
+      "rights_label": "Public Domain.",
+      "retriever_observation": "original binary rejected as unsupported content-type binary/octet-stream",
+      "origin_http_status": null
+    },
+    {
+      "catalog": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+      "relationship": "official sibling catalog, not linked by post",
+      "catalog_original_link_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+      "catalog_title": "Hebgen Lake fault scarp in 1959",
+      "photographer": "J. R. Stacy",
+      "rights_label": "Public Domain.",
+      "retriever_observation": "image rendered by public reader",
+      "origin_http_status": null
+    }
+  ],
+  "observations": [
+    {
+      "route": "authored_original_same_as_linked_catalog",
+      "url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "method": "public-web-catalog-click",
+      "reader_result": "unsupported_binary_octet_stream",
+      "numeric_origin_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "route": "official_sibling_original",
+      "url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+      "method": "public-web-catalog-click",
+      "reader_result": "image_rendered",
+      "numeric_origin_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "route": "wordpress_jetpack_view",
+      "url": "https://i0.wp.com/d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg?ssl=1",
+      "method": "public-web-document-reader",
+      "reader_result": "tool_inaccessible",
+      "numeric_origin_status": null,
+      "guest_browser_status": null
+    }
+  ],
+  "integrity": {
+    "same_filename": true,
+    "same_photographer_and_subject": true,
+    "same_pixel_hash_proven": false,
+    "same_crop_and_frame_visually_approved": false,
+    "official_item_rights_statement_verified": true,
+    "copyright_rehost_approved": false,
+    "source_attribute_correction_approved": false,
+    "image_downloaded": false
+  },
+  "derivative": {
+    "max_width_px": 960,
+    "no_upscale": true,
+    "verified_native_dimensions": false,
+    "output_width_px": null,
+    "output_height_px": null,
+    "formula_after_native_dimensions": "w=min(960,native_w);h=round(native_h*w/native_w)",
+    "wordpress_media_staging_approved": false,
+    "cache_mirroring_approved": false
+  },
+  "gates": {
+    "visitor_failure_confirmed": false,
+    "per_image_rights_and_credit_review_done": false,
+    "pixel_or_frame_match_confirmed": false,
+    "responsive_or_lcp_acceptance_done": false,
+    "word_press_write_count": 0,
+    "live_website_changed": false
+  },
+  "unchanged_baselines": {
+    "frozen_posts": 61,
+    "frozen_images": 355,
+    "latest_posts": 66,
+    "latest_images": 361,
+    "reported_broken": 42,
+    "browser_confirmed_broken": null,
+    "claimed_weight_savings_percent": 76,
+    "visitor_bytes_savings_percent": null,
+    "over_1_5_mb_originals": 20,
+    "original_storage_bytes": 64385752
+  },
+  "next_gate": "Existing Site QA #154 cold guest Chromium collector: record 407:1 actual currentSrc, response status/MIME/redirect/cache, decoded natural pixels, before/after screenshots, encoded bytes, plus separately compare both USGS Original routes; only afterward propose one-slot reversible staging with rights and exact-frame signoff."
+}

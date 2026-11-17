@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "audit_date_local": "2026-11-03",
+  "post_id": 407,
+  "image_key": "407:1",
+  "frozen_source_part": "qa/media-recovery/parts/02.json",
+  "frozen_source_part_git_blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+  "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+  "source_alt": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake.",
+  "source_observation": {
+    "method": "independent_web_text_retriever",
+    "result": "UNSUPPORTED_BINARY_OCTET_STREAM",
+    "wrapper_status": 400,
+    "origin_http_status": null,
+    "guest_http_status": null,
+    "guest_image_decodes": null,
+    "visitor_current_src": null,
+    "wire_bytes": null,
+    "visitor_broken_confirmed": false
+  },
+  "official_usgs": {
+    "catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+    "credit": "J. R. Stacy / U.S. Geological Survey",
+    "catalog_rights_label": "Public Domain",
+    "official_link_labels": [
+      "Original",
+      "Thumbnail",
+      "Medium"
+    ],
+    "original_link_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+    "thumbnail_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/thumbnail/public/thumbnails/image/img7535.jpg?itok=97xFa4s9",
+    "medium_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/medium/public/thumbnails/image/img7535.jpg?itok=BwZ2ZSkM",
+    "page_display_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/thumbnails/image/img7535.jpg?itok=C0bw-HP5",
+    "original_viewer_displayed": true,
+    "original_intrinsic_dimensions_binary_verified": false,
+    "original_binary_sha256": null,
+    "proposed_960_derivative": null
+  },
+  "verified_secondary_archive": {
+    "catalog_url": "https://commons.wikimedia.org/wiki/File:Red_Canyon_fault_scarp_sjr00100.jpg",
+    "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Red_Canyon_fault_scarp_sjr00100.jpg",
+    "photo_credit": "J. R. Stacy (USGS)",
+    "catalog_description": "Red Canyon fault scarp east of Blarneystone Ranch; jeep on the footwall road; 19 August 1959",
+    "catalog_dimensions_px": {
+      "width": 698,
+      "height": 700
+    },
+    "catalog_original_file_bytes": 461875,
+    "rights_label": "Public domain — USGS (per Commons)",
+    "image_viewer_displayed": true,
+    "relationship_to_usgs": "SAME_HISTORICAL_PHOTOGRAPH_VISUAL_MATCH_CROP_OR_RENDITION_DIFFERS",
+    "binary_identical_to_usgs": false,
+    "source_binary_hash_match_verified": false,
+    "conditional_no_upscale_derivative_px": {
+      "width": 698,
+      "height": 700
+    },
+    "why_not_first_choice": "698-pixel rendition, different framing/resampling; Commons is secondary to the authoritative USGS catalog."
+  },
+  "visitor_verification": {
+    "needed": "Site QA #154 logged-out Chrome original-versus-official URL: exact currentSrc, final status, MIME, image decode, intrinsic dimensions, screenshot and CDP Image bytes",
+    "confirmed_404": false,
+    "existing_src_change_proposed_only": true
+  },
+  "publication_safeguards": {
+    "rights_item_review": "HOLD",
+    "same_crop_visual_comparison": "HOLD",
+    "first_party_localization_approved": false,
+    "wordpress_upload_approved": false,
+    "post_block_rewrite_approved": false,
+    "homepage_changes_approved": false,
+    "binary_asset_downloaded": false,
+    "production_repairs": 0
+  },
+  "totals_context": {
+    "published_posts": 61,
+    "image_references": 355,
+    "external_origin_references": 288,
+    "oversized_wp_originals": 13,
+    "reported_42_broken_browser_verified": false,
+    "reported_76_percent_reduction_measured": false
+  },
+  "bibliography": [
+    "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+    "https://commons.wikimedia.org/wiki/File:Red_Canyon_fault_scarp_sjr00100.jpg"
+  ]
+}

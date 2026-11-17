@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-10-30T21:45:00Z",
+  "image_key": "418:4",
+  "post_id": 418,
+  "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+  "exact_stored_image_url": "https://www.hawaiimagazine.com/wp-content/uploads/2020/12/Tsunami1946NOAA2.jpg",
+  "publisher_article_url": "https://www.hawaiimagazine.com/three-tsunamis-that-changed-hilo-and-hawaiis-big-island/",
+  "publisher_context": "HAWAI‘I Magazine attributes the 1946 Hilo Harbor Pier 1 wave and arrow-marked person photograph to NOAA; actual referenced JPEG rendered in the web viewer on 2026-10-30.",
+  "primary_source_links": {
+    "noaa_photo_library_search_index_record": "https://prod-01-alb-www-noaa.woc.noaa.gov/noaa-collections/photo-library/pl23theb2705jpg",
+    "noaa_photo_library_item_slug": "pl23theb2705jpg",
+    "noaa_original_label": "pl23_theb2705.jpg",
+    "noaa_catalog_credit": "NOAA",
+    "noaa_catalog_display_date": "Apr-46",
+    "noaa_catalog_location": "Hilo, Hawaii",
+    "noaa_catalog_description": "Tsunami inundating Hilo, Hawaii. Note man on pier.",
+    "noaa_library_safety_manual_pdf": "https://repository.library.noaa.gov/view/noaa/41185/noaa_41185_DS3.pdf",
+    "noaa_library_pdf_page_index_zero_based": 36,
+    "noaa_library_pdf_printed_page": 33,
+    "noaa_library_manual_photo_credit": "NOAA/NGDC and Pacific Tsunami Museum",
+    "usgs_independent_caption_pdf": "https://pubs.usgs.gov/gip/7000036/report.pdf"
+  },
+  "identity_evidence": {
+    "publisher_jpeg_viewer_displayed": true,
+    "noaa_pdf_page_screenshot_inspected": true,
+    "same_historic_pier_scene_observed": true,
+    "distinctive_arrow_marked_person_corroborated": true,
+    "noaa_catalog_exact_binary_match_proved": false,
+    "publisher_jpeg_sha256": null,
+    "noaa_original_jpeg_sha256": null,
+    "classification": "strong_visual_scene_corroboration_not_binary_identity",
+    "limitations": "NOAA PDF reproduction has a decorative wave emblem and its own crop, while the magazine JPG is differently cropped. Matching scene/arrow and catalog wording are strong identity evidence but not a byte-for-byte comparison or live-site loaded-image test. The original NOAA catalog landing page returned 503 via one web-viewer attempt, despite indexed metadata; verify official downloadable image directly before any replacement."
+  },
+  "reuse_and_hosting": {
+    "rights_status": "HOLD__item_level_review_required",
+    "reason": "Published NOAA/NGDC and Pacific Tsunami Museum joint credit does not establish whether every contributor's rights and endorsement/attribution conditions are clear for republication.",
+    "proposed_max_width_px": 960,
+    "no_upscale": true,
+    "preserve_aspect_ratio": true,
+    "known_intrinsic_width_px": null,
+    "known_intrinsic_height_px": null,
+    "calculated_target_dimensions_px": null,
+    "resize_output_format": null,
+    "original_download_sha256": null,
+    "candidate_wordpress_media_id": null,
+    "rights_verified": false,
+    "wordpress_upload_approved": false,
+    "wordpress_post_rewrite_approved": false,
+    "optimized_file_created": false
+  },
+  "performance_proof": {
+    "finalvestige_logged_out_browser_tested": false,
+    "finalvestige_browser_http_status": null,
+    "finalvestige_browser_natural_width_px": null,
+    "finalvestige_browser_encoded_transfer_bytes": null,
+    "confirmed_broken_in_browser": null,
+    "measured_weight_savings_percent": null,
+    "reported_42_broken_images_confirmed": null,
+    "reported_76_percent_savings_confirmed": null
+  },
+  "action": "First collect logged-out site Chrome evidence on exact stored URL/currentSrc. Then verify downloadable NOAA original, file hash, per-item rights and pixel dimensions. If approved, generate <=960px no-upscale optimized asset, preserve date/credit/caption, stage upload as a new WordPress media item, and separately approve safe replacement; no bulk post edits."
+}

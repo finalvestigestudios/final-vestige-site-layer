@@ -1,0 +1,373 @@
+{
+  "schema": "fv-archimedes-ten-v1",
+  "observed_date": "2026-11-03",
+  "post_id": 268,
+  "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+  "source_modified": "2026-10-30T01:10:13",
+  "source_archive_blob": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+  "source_live_wp_reverified": false,
+  "images": [
+    {
+      "key": "268:0",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Archimedes%20Palimpsest.jpg?width=1280",
+      "alt": "Open page of the Archimedes Palimpsest showing the later prayer-book text written across older erased Greek mathematics and diagrams.",
+      "origin_kind": "wikimedia_redirect",
+      "observation": {
+        "method": "web_open_independent_retriever",
+        "result": "retriever_inaccessible_no_origin_status",
+        "tool_wrapper_code": null,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "visitor_decoded": null,
+        "visitor_mime": null,
+        "visitor_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Archimedes_Palimpsest.jpg",
+        "project_license_context": "https://archimedespalimpsest.org/digital/image-bank.php",
+        "catalog_page_readable": true,
+        "same_scene_catalog_filename_only": true,
+        "original_catalog_dimensions_px": [
+          665,
+          448
+        ],
+        "conditional_960px_derivative": [
+          665,
+          448
+        ],
+        "rights_note": "PD-US Commons claim; photo credit Matthew Kon",
+        "localization_allowed": false,
+        "binary_or_crop_verified": false,
+        "wp_upload_approved": false,
+        "staging_approved": false
+      },
+      "target_max_width_px": 960
+    },
+    {
+      "key": "268:1",
+      "source_url": "https://archimedespalimpsest.org/assets/img/imaging_x8.jpg",
+      "alt": "A forged painted page in the Archimedes Palimpsest covering older erased writing beneath the medieval prayer text.",
+      "origin_kind": "external",
+      "observation": {
+        "method": "web_open_independent_retriever",
+        "result": "retriever_wrapper_403",
+        "tool_wrapper_code": 403,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "visitor_decoded": null,
+        "visitor_mime": null,
+        "visitor_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": null,
+        "project_license_context": "https://archimedespalimpsest.org/digital/image-bank.php",
+        "catalog_page_readable": false,
+        "same_scene_catalog_filename_only": false,
+        "original_catalog_dimensions_px": null,
+        "conditional_960px_derivative": null,
+        "rights_note": "Direct project-site editorial image; license NOT proven by image-bank dataset license",
+        "localization_allowed": false,
+        "binary_or_crop_verified": false,
+        "wp_upload_approved": false,
+        "staging_approved": false
+      },
+      "target_max_width_px": 960
+    },
+    {
+      "key": "268:2",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/002r-001v%20Arch13r%20Sinar%20uvblue%20norm8%20Euchologion%20up%20%289737603804%29.jpg?width=960",
+      "alt": "Ultraviolet image of a folio from the Archimedes Palimpsest showing the medieval prayer text and faint erased undertext.",
+      "origin_kind": "wikimedia_redirect",
+      "observation": {
+        "method": "web_open_independent_retriever",
+        "result": "retriever_inaccessible_no_origin_status",
+        "tool_wrapper_code": null,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "visitor_decoded": null,
+        "visitor_mime": null,
+        "visitor_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:002r-001v_Arch13r_Sinar_uvblue_norm8_Euchologion_up_(9737603804).jpg",
+        "project_license_context": "https://archimedespalimpsest.org/digital/image-bank.php",
+        "catalog_page_readable": true,
+        "same_scene_catalog_filename_only": true,
+        "original_catalog_dimensions_px": [
+          10880,
+          8160
+        ],
+        "conditional_960px_derivative": [
+          960,
+          720
+        ],
+        "rights_note": "Commons CC BY 2.0 Ryan Baumann/Flickr; imaging team credits also required",
+        "localization_allowed": false,
+        "binary_or_crop_verified": false,
+        "wp_upload_approved": false,
+        "staging_approved": false
+      },
+      "target_max_width_px": 960
+    },
+    {
+      "key": "268:3",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Heiberg-UV-blue%20%289737623542%29.jpg?width=960",
+      "alt": "Image of an Archimedes Palimpsest folio associated with Heiberg's early twentieth-century study and modern ultraviolet imaging.",
+      "origin_kind": "wikimedia_redirect",
+      "observation": {
+        "method": "web_open_independent_retriever",
+        "result": "retriever_inaccessible_no_origin_status",
+        "tool_wrapper_code": null,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "visitor_decoded": null,
+        "visitor_mime": null,
+        "visitor_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:017r-016v_Heiberg-UV-blue_(9737623542).jpg",
+        "project_license_context": "https://archimedespalimpsest.org/digital/image-bank.php",
+        "catalog_page_readable": true,
+        "same_scene_catalog_filename_only": true,
+        "original_catalog_dimensions_px": [
+          2040,
+          2720
+        ],
+        "conditional_960px_derivative": [
+          960,
+          1280
+        ],
+        "rights_note": "Commons CC BY 2.0 Ryan Baumann/Flickr; underlying owner metadata also exists",
+        "localization_allowed": false,
+        "binary_or_crop_verified": false,
+        "wp_upload_approved": false,
+        "staging_approved": false
+      },
+      "target_max_width_px": 960
+    },
+    {
+      "key": "268:4",
+      "source_url": "https://www.archimedespalimpsest.org/assets/img/imagecapture-capture2b.jpg",
+      "alt": "A conservator handling a separated Archimedes Palimpsest leaf during preparation for imaging.",
+      "origin_kind": "external",
+      "observation": {
+        "method": "web_open_independent_retriever",
+        "result": "retriever_wrapper_403",
+        "tool_wrapper_code": 403,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "visitor_decoded": null,
+        "visitor_mime": null,
+        "visitor_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": null,
+        "project_license_context": "https://archimedespalimpsest.org/digital/image-bank.php",
+        "catalog_page_readable": false,
+        "same_scene_catalog_filename_only": false,
+        "original_catalog_dimensions_px": null,
+        "conditional_960px_derivative": null,
+        "rights_note": "Direct project-site editorial image; license NOT proven by image-bank dataset license",
+        "localization_allowed": false,
+        "binary_or_crop_verified": false,
+        "wp_upload_approved": false,
+        "staging_approved": false
+      },
+      "target_max_width_px": 960
+    },
+    {
+      "key": "268:5",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Arch07r%20Sinar%20pseudo%20no-veil%20%289734386225%29.jpg?width=960",
+      "alt": "Processed multispectral image of an Archimedes Palimpsest folio making the erased undertext more legible beneath the prayer book.",
+      "origin_kind": "wikimedia_redirect",
+      "observation": {
+        "method": "web_open_independent_retriever",
+        "result": "retriever_inaccessible_no_origin_status",
+        "tool_wrapper_code": null,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "visitor_decoded": null,
+        "visitor_mime": null,
+        "visitor_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:017r-016v_Arch07r_Sinar_pseudo_no-veil_(9734386225).jpg",
+        "project_license_context": "https://archimedespalimpsest.org/digital/image-bank.php",
+        "catalog_page_readable": true,
+        "same_scene_catalog_filename_only": true,
+        "original_catalog_dimensions_px": [
+          8160,
+          10880
+        ],
+        "conditional_960px_derivative": [
+          960,
+          1280
+        ],
+        "rights_note": "Commons CC BY 2.0 Ryan Baumann/Flickr; institutional dataset CC BY 3.0 separately",
+        "localization_allowed": false,
+        "binary_or_crop_verified": false,
+        "wp_upload_approved": false,
+        "staging_approved": false
+      },
+      "target_max_width_px": 960
+    },
+    {
+      "key": "268:6",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/028v-021r%20Arch08r%20XRF%20FeFront%20registered%20%289734104759%29.jpg?width=1280",
+      "alt": "X-ray fluorescence iron map of an Archimedes Palimpsest folio revealing erased writing through elemental imaging.",
+      "origin_kind": "wikimedia_redirect",
+      "observation": {
+        "method": "web_open_independent_retriever",
+        "result": "retriever_inaccessible_no_origin_status",
+        "tool_wrapper_code": null,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "visitor_decoded": null,
+        "visitor_mime": null,
+        "visitor_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:028v-021r_Arch08r_XRF_FeFront_registered_(9734104759).jpg",
+        "project_license_context": "https://archimedespalimpsest.org/digital/image-bank.php",
+        "catalog_page_readable": true,
+        "same_scene_catalog_filename_only": true,
+        "original_catalog_dimensions_px": [
+          8160,
+          10880
+        ],
+        "conditional_960px_derivative": [
+          960,
+          1280
+        ],
+        "rights_note": "Commons CC BY 2.0 Ryan Baumann/Flickr; XRF team underlying credit",
+        "localization_allowed": false,
+        "binary_or_crop_verified": false,
+        "wp_upload_approved": false,
+        "staging_approved": false
+      },
+      "target_max_width_px": 960
+    },
+    {
+      "key": "268:7",
+      "source_url": "https://archimedespalimpsest.org/assets/img/imaging_x12.jpg",
+      "alt": "An Archimedes Palimpsest leaf mounted vertically on a scanning stage for X-ray fluorescence imaging at Stanford Synchrotron Radiation Laboratory.",
+      "origin_kind": "external",
+      "observation": {
+        "method": "web_open_independent_retriever",
+        "result": "retriever_wrapper_403",
+        "tool_wrapper_code": 403,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "visitor_decoded": null,
+        "visitor_mime": null,
+        "visitor_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": null,
+        "project_license_context": "https://archimedespalimpsest.org/digital/image-bank.php",
+        "catalog_page_readable": false,
+        "same_scene_catalog_filename_only": false,
+        "original_catalog_dimensions_px": null,
+        "conditional_960px_derivative": null,
+        "rights_note": "Direct project-site editorial image; license NOT proven by image-bank dataset license",
+        "localization_allowed": false,
+        "binary_or_crop_verified": false,
+        "wp_upload_approved": false,
+        "staging_approved": false
+      },
+      "target_max_width_px": 960
+    },
+    {
+      "key": "268:8",
+      "source_url": "https://archimedespalimpsest.org/assets/img/imaging_x9.jpg",
+      "alt": "X-ray fluorescence result from a forged Archimedes Palimpsest page revealing erased ancient writing beneath the paint.",
+      "origin_kind": "external",
+      "observation": {
+        "method": "web_open_independent_retriever",
+        "result": "retriever_inaccessible_no_origin_status",
+        "tool_wrapper_code": null,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "visitor_decoded": null,
+        "visitor_mime": null,
+        "visitor_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": null,
+        "project_license_context": "https://archimedespalimpsest.org/digital/image-bank.php",
+        "catalog_page_readable": false,
+        "same_scene_catalog_filename_only": false,
+        "original_catalog_dimensions_px": null,
+        "conditional_960px_derivative": null,
+        "rights_note": "Direct project-site editorial image; license NOT proven by image-bank dataset license",
+        "localization_allowed": false,
+        "binary_or_crop_verified": false,
+        "wp_upload_approved": false,
+        "staging_approved": false
+      },
+      "target_max_width_px": 960
+    },
+    {
+      "key": "268:9",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/176r-173v%20Hype03r%20Sinar%20LED445-735%20pseudo%20%289734660151%29.jpg?width=960",
+      "alt": "Processed multispectral image of a Palimpsest folio containing erased text by the Athenian orator Hyperides.",
+      "origin_kind": "wikimedia_redirect",
+      "observation": {
+        "method": "web_open_independent_retriever",
+        "result": "retriever_inaccessible_no_origin_status",
+        "tool_wrapper_code": null,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "visitor_decoded": null,
+        "visitor_mime": null,
+        "visitor_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:176r-173v_Hype03r_Sinar_LED445-735_pseudo_(9734660151).jpg",
+        "project_license_context": "https://archimedespalimpsest.org/digital/image-bank.php",
+        "catalog_page_readable": true,
+        "same_scene_catalog_filename_only": true,
+        "original_catalog_dimensions_px": [
+          6600,
+          9500
+        ],
+        "conditional_960px_derivative": [
+          960,
+          1382
+        ],
+        "rights_note": "Commons CC BY 2.0 Ryan Baumann/Flickr; Hyperides text, not Archimedes",
+        "localization_allowed": false,
+        "binary_or_crop_verified": false,
+        "wp_upload_approved": false,
+        "staging_approved": false
+      },
+      "target_max_width_px": 960
+    }
+  ],
+  "totals": {
+    "images": 10,
+    "commons_catalog_pages_read": 6,
+    "direct_project_image_sources": 4,
+    "tool_wrapper_403": 3,
+    "inaccessible_without_origin_status": 7,
+    "verified_guest_broken": 0,
+    "transferred_bytes": null,
+    "measured_reduction_percent": null,
+    "production_fixes": 0
+  },
+  "baseline": {
+    "investigations": 61,
+    "stored_image_slots": 355,
+    "offsite_origins": 288,
+    "wp_originals_over_1_5MiB": 13,
+    "reported_42_broken": "NOT_BROWSER_VERIFIED",
+    "claimed_76_percent": "NOT_MEASURED"
+  },
+  "release_gate": {
+    "guest_chromium_required": true,
+    "item_rights_required": true,
+    "exact_visual_and_crop_check_required": true,
+    "production_write_permitted": false,
+    "asset_download_permitted": false
+  }
+}

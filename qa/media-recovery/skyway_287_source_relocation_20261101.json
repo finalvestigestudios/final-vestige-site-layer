@@ -1,0 +1,483 @@
+{
+  "schema_version": 1,
+  "audited_date": "2026-11-01",
+  "scope": "Read-only source audit of six published external-image slots; not a logged-out browser test or production repair.",
+  "article": {
+    "post_id": 287,
+    "title": "The Warning Was a Man Waving",
+    "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+    "wp_status": "publish",
+    "wp_last_modified": "2026-10-29T18:42:40",
+    "wp_readback_method": "authenticated_wordpress_posts_get_context_edit_read_only",
+    "wp_source_and_alt_matches_frozen": 6,
+    "frozen_part": "qa/media-recovery/parts/03.json",
+    "frozen_part_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e"
+  },
+  "site_wide_context": {
+    "published_posts": 61,
+    "inline_image_slots": 355,
+    "offsite_image_slots": 288,
+    "wordpress_originals_over_1_5_mib": 13,
+    "originals_over_1_5_mib_total_stored_bytes": 43522829,
+    "visitor_transfer_bytes": null,
+    "broken_images_reported_42_browser_verified": false,
+    "verified_broken_count": null,
+    "claimed_76_percent_reduction_measured": false,
+    "measured_reduction_percent": null,
+    "production_images_repaired": 0
+  },
+  "public_browser_constraints": "No logged-out DOM/currentSrc/network waterfall; web retriever 404s/displays are method-labeled leads, not proof of visitor failure.",
+  "authoritative_related_records": [
+    {
+      "authority": "NTSB",
+      "record_id": "DCA80AM050 / MAR-81-03",
+      "url": "https://www.ntsb.gov/investigations/Pages/DCA80AM050.aspx",
+      "use": "1980 disaster/event and safety findings; NOT an exact image replacement"
+    },
+    {
+      "authority": "U.S. District Court, Middle District of Florida",
+      "record_id": "Maritime Matters / figure-9-sunshine-skyway-bridge-3.jpg",
+      "url": "https://www.flmd.uscourts.gov/maritime-matters",
+      "use": "Exact federal-hosted image for 287:4; federal hosting does NOT establish photographer ownership"
+    },
+    {
+      "authority": "University of South Florida Digital Commons",
+      "record_id": "Gandy 21_0982 (1982)",
+      "url": "https://digitalcommons.usf.edu/gandy/4754/",
+      "use": "Different post-collapse bridge photograph with listed CC BY 3.0; 1982, not May 1980; editorial alternative only"
+    },
+    {
+      "authority": "Manatee County digital archive",
+      "record_id": "p16681coll1/29937",
+      "url": "https://mymanatee.contentdm.oclc.org/digital/collection/p16681coll1/id/29937/",
+      "use": "Separate archival aerial photograph (Baldwin), not exact photo substitution; individual rights review"
+    },
+    {
+      "authority": "Florida Memory / State Archives of Florida",
+      "record_id": "DGM0237 (1969), DGM0236 (1982)",
+      "url": "https://floridamemory.com/items/show/267897",
+      "use": "Historical before/after photographs dated 1969 and 1982, NOT contemporaneous collision photos"
+    }
+  ],
+  "source_retriever_provenance": {
+    "method": "web_open_original_url_2026_11_01",
+    "note": "Five exact source URLs produced displayed images; exact 287:5 produced a retriever 404; relocated publisher-hosted candidate displayed. Content-type, origin status, network bytes and redirects are unmeasured."
+  },
+  "rows": [
+    {
+      "key": "287:0",
+      "post_id": 287,
+      "slot": 0,
+      "current_published_source_url": "https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/IIYZWAFLJUQD3YGEYEKMG5PVXY.jpg",
+      "current_published_alt": "An automobile stopped near the broken end of the Sunshine Skyway Bridge after the May 9, 1980 collapse.",
+      "live_cms_source_and_alt_verified": true,
+      "source_retriever": {
+        "method": "independent_web_retriever_NOT_guest_browser",
+        "exact_url_checked": "https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/IIYZWAFLJUQD3YGEYEKMG5PVXY.jpg",
+        "result": "RETRIEVER_IMAGE_DISPLAYED",
+        "retriever_wrapper_error_code": null,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "measured_transfer_bytes": null,
+        "content_type": null,
+        "decoded_original_dimensions": null
+      },
+      "candidate": {
+        "authority": "Washington Post publisher",
+        "primary_record_url": "https://www.washingtonpost.com/history/2024/03/26/baltimore-stpete-sunshine-skyway-bridge/",
+        "asset_url": null,
+        "source_relationship": "publisher_page_same_photo_visible_source_not_permissive_license",
+        "proven_binary_same_as_published": false,
+        "master_sha256": null,
+        "candidate_web_retriever": null
+      },
+      "rights": {
+        "reproduction_clearance": "HOLD",
+        "caching_clearance": "HOLD",
+        "basis": "Washington Post rights/photographer attribution must be cleared; accessible hotlink is not reuse permission.",
+        "required_credit": "Confirm individual creator/publisher credit and any third-party restrictions before reuse."
+      },
+      "geometry": {
+        "stored_html_width_px": 1024,
+        "stored_html_height_px": 672,
+        "original_master_width_px": null,
+        "original_master_height_px": null,
+        "conditional_target_width_px": 960,
+        "conditional_target_height_px": 630,
+        "conditional_basis": "stored_html_1024x672_NOT_decoded_master",
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "target_width_limit_px": 960
+      },
+      "visual_integrity": {
+        "review_required": false,
+        "note": "Published car-at-gap photograph shows vehicle, vessel and broken span. Preserve credit and scene."
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null,
+        "screenshot_evidence_url": null
+      },
+      "release": {
+        "replacement_ready": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      }
+    },
+    {
+      "key": "287:1",
+      "post_id": 287,
+      "slot": 1,
+      "current_published_source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/tbt/555OWMWIJMI6TGNIIBWI6S7HAY.jpg",
+      "current_published_alt": "The bulk carrier Summit Venture beneath the broken Sunshine Skyway Bridge after the collision.",
+      "live_cms_source_and_alt_verified": true,
+      "source_retriever": {
+        "method": "independent_web_retriever_NOT_guest_browser",
+        "exact_url_checked": "https://cloudfront-us-east-1.images.arcpublishing.com/tbt/555OWMWIJMI6TGNIIBWI6S7HAY.jpg",
+        "result": "RETRIEVER_IMAGE_DISPLAYED",
+        "retriever_wrapper_error_code": null,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "measured_transfer_bytes": null,
+        "content_type": null,
+        "decoded_original_dimensions": null
+      },
+      "candidate": {
+        "authority": "Tampa Bay Times publisher",
+        "primary_record_url": "https://www.tampabay.com/news/florida/2020/05/08/the-skyway-bridge-collapsed-40-years-ago-heres-how-were-remembering-the-tragedy/",
+        "asset_url": null,
+        "source_relationship": "regional_newspaper_subject_coverage_only_exact_catalog_unproved",
+        "proven_binary_same_as_published": false,
+        "master_sha256": null,
+        "candidate_web_retriever": null
+      },
+      "rights": {
+        "reproduction_clearance": "HOLD",
+        "caching_clearance": "HOLD",
+        "basis": "Tampa Bay Times private image/archival rights not verified.",
+        "required_credit": "Confirm individual creator/publisher credit and any third-party restrictions before reuse."
+      },
+      "geometry": {
+        "stored_html_width_px": null,
+        "stored_html_height_px": null,
+        "original_master_width_px": null,
+        "original_master_height_px": null,
+        "conditional_target_width_px": null,
+        "conditional_target_height_px": null,
+        "conditional_basis": "master_dimensions_unknown",
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "target_width_limit_px": 960
+      },
+      "visual_integrity": {
+        "review_required": false,
+        "note": "Publisher-hosted aerial view displays freighter and broken bridge, but no alternative asset is proven same photo."
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null,
+        "screenshot_evidence_url": null
+      },
+      "release": {
+        "replacement_ready": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      }
+    },
+    {
+      "key": "287:2",
+      "post_id": 287,
+      "slot": 2,
+      "current_published_source_url": "https://skywaydisaster.com/images/timeline2.jpg",
+      "current_published_alt": "Diagram showing the Summit Venture collision sequence at the Sunshine Skyway Bridge.",
+      "live_cms_source_and_alt_verified": true,
+      "source_retriever": {
+        "method": "independent_web_retriever_NOT_guest_browser",
+        "exact_url_checked": "https://skywaydisaster.com/images/timeline2.jpg",
+        "result": "RETRIEVER_IMAGE_DISPLAYED",
+        "retriever_wrapper_error_code": null,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "measured_transfer_bytes": null,
+        "content_type": null,
+        "decoded_original_dimensions": null
+      },
+      "candidate": {
+        "authority": "St. Petersburg Times graphic via skywaydisaster.com",
+        "primary_record_url": "https://skywaydisaster.com/photos.htm",
+        "asset_url": null,
+        "source_relationship": "existing_diagram_same_page_context_no_public_domain_license",
+        "proven_binary_same_as_published": false,
+        "master_sha256": null,
+        "candidate_web_retriever": null
+      },
+      "rights": {
+        "reproduction_clearance": "HOLD",
+        "caching_clearance": "HOLD",
+        "basis": "The visible diagram carries St. Petersburg Times identification; no license to mirror or modify.",
+        "required_credit": "Confirm individual creator/publisher credit and any third-party restrictions before reuse."
+      },
+      "geometry": {
+        "stored_html_width_px": null,
+        "stored_html_height_px": null,
+        "original_master_width_px": null,
+        "original_master_height_px": null,
+        "conditional_target_width_px": null,
+        "conditional_target_height_px": null,
+        "conditional_basis": "master_dimensions_unknown",
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "target_width_limit_px": 960
+      },
+      "visual_integrity": {
+        "review_required": true,
+        "note": "A copyrighted journalistic infographic, NOT a federal safety-board graphic. NTSB is factual reference, not image owner."
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null,
+        "screenshot_evidence_url": null
+      },
+      "release": {
+        "replacement_ready": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      }
+    },
+    {
+      "key": "287:3",
+      "post_id": 287,
+      "slot": 3,
+      "current_published_source_url": "https://img.connatix.com/ecf95169-f8cd-4cd5-8698-9bc54211f8e9/1_th.jpg",
+      "current_published_alt": "Automobile halted at the broken end of the Sunshine Skyway after the 1980 collapse.",
+      "live_cms_source_and_alt_verified": true,
+      "source_retriever": {
+        "method": "independent_web_retriever_NOT_guest_browser",
+        "exact_url_checked": "https://img.connatix.com/ecf95169-f8cd-4cd5-8698-9bc54211f8e9/1_th.jpg",
+        "result": "RETRIEVER_IMAGE_DISPLAYED",
+        "retriever_wrapper_error_code": null,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "measured_transfer_bytes": null,
+        "content_type": null,
+        "decoded_original_dimensions": null
+      },
+      "candidate": {
+        "authority": "NTSB historical context; video owner unknown",
+        "primary_record_url": "https://www.ntsb.gov/investigations/Pages/DCA80AM050.aspx",
+        "asset_url": null,
+        "source_relationship": "ntsb_factual_record_not_equivalent_to_third_party_video_thumbnail",
+        "proven_binary_same_as_published": false,
+        "master_sha256": null,
+        "candidate_web_retriever": null
+      },
+      "rights": {
+        "reproduction_clearance": "HOLD",
+        "caching_clearance": "HOLD",
+        "basis": "Connatix video thumbnail creator and republication rights unknown.",
+        "required_credit": "Confirm individual creator/publisher credit and any third-party restrictions before reuse."
+      },
+      "geometry": {
+        "stored_html_width_px": null,
+        "stored_html_height_px": null,
+        "original_master_width_px": null,
+        "original_master_height_px": null,
+        "conditional_target_width_px": null,
+        "conditional_target_height_px": null,
+        "conditional_basis": "master_dimensions_unknown",
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "target_width_limit_px": 960
+      },
+      "visual_integrity": {
+        "review_required": true,
+        "note": "287:3 shows an overhead black-and-white view of a white automobile; visually distinct from 287:0 color on-ramp photograph. Do not deduplicate."
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null,
+        "screenshot_evidence_url": null
+      },
+      "release": {
+        "replacement_ready": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      }
+    },
+    {
+      "key": "287:4",
+      "post_id": 287,
+      "slot": 4,
+      "current_published_source_url": "https://www.flmd.uscourts.gov/sites/flmd/files/images/figure-9-sunshine-skyway-bridge-3.jpg",
+      "current_published_alt": "Federal archival view of the collapsed Sunshine Skyway Bridge and Summit Venture after the May 1980 accident.",
+      "live_cms_source_and_alt_verified": true,
+      "source_retriever": {
+        "method": "independent_web_retriever_NOT_guest_browser",
+        "exact_url_checked": "https://www.flmd.uscourts.gov/sites/flmd/files/images/figure-9-sunshine-skyway-bridge-3.jpg",
+        "result": "RETRIEVER_IMAGE_DISPLAYED",
+        "retriever_wrapper_error_code": null,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "measured_transfer_bytes": null,
+        "content_type": null,
+        "decoded_original_dimensions": null
+      },
+      "candidate": {
+        "authority": "U.S. District Court, Middle District of Florida",
+        "primary_record_url": "https://www.flmd.uscourts.gov/maritime-matters",
+        "asset_url": null,
+        "source_relationship": "exact_current_image_on_us_district_court_site",
+        "proven_binary_same_as_published": false,
+        "master_sha256": null,
+        "candidate_web_retriever": null
+      },
+      "rights": {
+        "reproduction_clearance": "HOLD",
+        "caching_clearance": "HOLD",
+        "basis": "Government site hosting does not mean the photograph was made by a government employee or is public domain.",
+        "required_credit": "Confirm individual creator/publisher credit and any third-party restrictions before reuse."
+      },
+      "geometry": {
+        "stored_html_width_px": null,
+        "stored_html_height_px": null,
+        "original_master_width_px": null,
+        "original_master_height_px": null,
+        "conditional_target_width_px": null,
+        "conditional_target_height_px": null,
+        "conditional_basis": "master_dimensions_unknown",
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "target_width_limit_px": 960
+      },
+      "visual_integrity": {
+        "review_required": true,
+        "note": "Published ALT names Summit Venture; image shows a work barge/crane and collapsed pier. Vessel identification and timing are unsupported and must receive editorial review."
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null,
+        "screenshot_evidence_url": null
+      },
+      "release": {
+        "replacement_ready": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      }
+    },
+    {
+      "key": "287:5",
+      "post_id": 287,
+      "slot": 5,
+      "current_published_source_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "current_published_alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+      "live_cms_source_and_alt_verified": true,
+      "source_retriever": {
+        "method": "independent_web_retriever_NOT_guest_browser",
+        "exact_url_checked": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "result": "RETRIEVER_FETCH_404",
+        "retriever_wrapper_error_code": 404,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "measured_transfer_bytes": null,
+        "content_type": null,
+        "decoded_original_dimensions": null
+      },
+      "candidate": {
+        "authority": "St Pete Catalyst / University Press of Florida",
+        "primary_record_url": "https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/",
+        "asset_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "source_relationship": "same_publisher_relocated_same_basename_scene_no_binary_hash",
+        "proven_binary_same_as_published": false,
+        "master_sha256": null,
+        "candidate_web_retriever": {
+          "method": "independent_web_retriever_NOT_guest_browser",
+          "result": "RETRIEVER_IMAGE_DISPLAYED",
+          "origin_http_status": null,
+          "master_dimensions_verified": false
+        }
+      },
+      "rights": {
+        "reproduction_clearance": "HOLD",
+        "caching_clearance": "HOLD",
+        "basis": "Publisher captions the photograph 'Photo: University Press of Florida'; no commercial republication/caching license established.",
+        "required_credit": "Confirm individual creator/publisher credit and any third-party restrictions before reuse."
+      },
+      "geometry": {
+        "stored_html_width_px": null,
+        "stored_html_height_px": null,
+        "original_master_width_px": null,
+        "original_master_height_px": null,
+        "conditional_target_width_px": null,
+        "conditional_target_height_px": null,
+        "conditional_basis": "master_dimensions_unknown",
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "target_width_limit_px": 960
+      },
+      "visual_integrity": {
+        "review_required": true,
+        "note": "The published ALT claims later bridge replacement appears in this view, but the publisher describes collision aftermath from 1980. Fix caption only via approved editorial workflow."
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null,
+        "screenshot_evidence_url": null
+      },
+      "release": {
+        "replacement_ready": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      }
+    }
+  ],
+  "recovery_workflow": [
+    "1. Independent Site QA logged-out desktop/mobile browser validates 287:5 and all other active decoded currentSrc, network image response/MIME/bytes, dimensions, screenshot.",
+    "2. Verify same-image visual crop/EXIF/content hash between original publisher artwork and relocated 287:5 candidate; no automatic alternative use.",
+    "3. Obtain University Press of Florida/publisher permissions and exact requested photo credits, or select rights-cleared different archival photo via separate editorial approval.",
+    "4. For a licensed exact master only, create ≤960px original-aspect/no-upscale derivative, calculate SHA-256 and preserve archival credit.",
+    "5. Stage as new WordPress media in non-production, compare desktop/mobile appearance and transferred bytes, retain permalink/alt semantics; no Gutenberg raw block rewrites.",
+    "6. Publish only after independent editorial, rights and release approvals with reversible rollback."
+  ]
+}

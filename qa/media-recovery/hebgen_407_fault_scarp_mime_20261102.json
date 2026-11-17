@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "investigation_date": "2026-11-02",
+  "scope": "SOURCE_RETRIEVAL_AND_OFFICIAL_ALT_URL_NOT_GUEST_BROWSER",
+  "image_key": "407:1",
+  "post": {
+    "id": 407,
+    "title": "The Lake Wasn’t There Yesterday",
+    "url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+    "status": "publish",
+    "modified": "2026-10-29T18:30:30",
+    "verification": "authenticated_wordpress_posts_get_context_edit_read_only_2026_11_02"
+  },
+  "frozen_source": {
+    "path": "qa/media-recovery/parts/02.json",
+    "git_blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d"
+  },
+  "published": {
+    "src": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+    "alt": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake.",
+    "source_url_verified_in_live_raw_post": true
+  },
+  "exact_published_source_observation": {
+    "tool": "independent_web_open",
+    "date": "2026-11-02",
+    "result": "RETRIEVER_UNSUPPORTED_CONTENT_TYPE",
+    "wrapper_error_code": 400,
+    "reported_media_type": "binary/octet-stream",
+    "origin_http_status": null,
+    "visitor_browser_http_status": null,
+    "visitor_decoded_image": null,
+    "visitor_transferred_bytes": null,
+    "reason": "Tool rejects octet-stream; wrapper 400 is not an image GET origin 400 or proof of a broken browser image."
+  },
+  "official_candidate": {
+    "authority": "U.S. Geological Survey",
+    "record_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+    "record_title": "Hebgen Lake fault scarp in 1959",
+    "record_date": "1959 (approx.)",
+    "photographer": "J. R. Stacy",
+    "catalog_usage": "Public Domain",
+    "linked_original_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+    "exact_usgs_original_link": true,
+    "independent_image_renderer": "DISPLAYED",
+    "renderer_canvas_width_px": 1000,
+    "renderer_canvas_height_px": 1000,
+    "source_binary_sha256": null,
+    "exact_published_binary_match_verified": false,
+    "final_origin_http_status": null,
+    "original_master_dimensions_verified_from_binary": false
+  },
+  "derivative": {
+    "conditional_width_px": 960,
+    "conditional_height_px": 960,
+    "aspect_preserved": true,
+    "no_upscale": true,
+    "only_if_catalog_geometry_matches_original_binary": true
+  },
+  "editorial": {
+    "same_subject_candidate": true,
+    "same_exact_crop_verified": false,
+    "alt_keep_until_scene_review": true,
+    "alternate_scape_replacement_authorized": false,
+    "credit_required": "J. R. Stacy / U.S. Geological Survey"
+  },
+  "gates": {
+    "rights_review": "HOLD_ITEM_SPECIFIC",
+    "rehost_permission_confirmed": false,
+    "download_authorized": false,
+    "wp_media_upload_authorized": false,
+    "wp_post_edit_authorized": false,
+    "asset_substitution_authorized": false,
+    "production_changed": false,
+    "subscription_spend_usd": 0
+  },
+  "guest_browser": {
+    "current_src": null,
+    "final_image_get_url": null,
+    "final_http_status": null,
+    "mime_type": null,
+    "natural_width_px": null,
+    "natural_height_px": null,
+    "transfer_bytes": null,
+    "visibly_broken": null,
+    "screenshot": null
+  },
+  "next_action": "Site QA #154: logged-out Chrome check current published img7535.jpg full Image response headers/MIME/nosniff, decode/naturalWidth, desktop/mobile screenshot, transfer; only if visitor failure, confirm item rights and visually compare the separately linked USGS original before a staged 960x960 derivation. Do not rewrite Gutenberg blocks or copy media.",
+  "claim_context": {
+    "reported_sitewide_broken_42_confirmed": false,
+    "reported_76pct_savings_measured": false,
+    "sitewide_posts": 61,
+    "stored_image_refs": 355,
+    "external_origin_refs": 288,
+    "original_wp_media_over_1_5_mib": 13,
+    "production_repaired_images": 0
+  }
+}

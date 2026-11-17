@@ -1,0 +1,182 @@
+{
+  "schema": "fv-media-official-p0-triage-v1",
+  "date_pt": "2026-11-15",
+  "prior_audit_blob": "71924f0c656c520786ade4d49a59b0dd2fbc5d0c",
+  "source": "prior WordPress authenticated REST VIEW + primary archival catalogs (not guest browser)",
+  "claimed_42_broken_verified": false,
+  "claimed_76_percent_measured": false,
+  "records": [
+    {
+      "key": "285:2",
+      "priority": "P0",
+      "view_url": "https://i0.wp.com/blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg?ssl=1",
+      "guest_status": null,
+      "guest_broken": null,
+      "permissions": {
+        "cache": false,
+        "publish": false,
+        "edit_wordpress": false
+      },
+      "candidate": null
+    },
+    {
+      "key": "285:5",
+      "priority": "P0",
+      "view_url": "https://i0.wp.com/images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg?ssl=1",
+      "guest_status": null,
+      "guest_broken": null,
+      "permissions": {
+        "cache": false,
+        "publish": false,
+        "edit_wordpress": false
+      },
+      "candidate": null
+    },
+    {
+      "key": "287:5",
+      "priority": "P0",
+      "view_url": "https://i0.wp.com/stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg?ssl=1",
+      "guest_status": null,
+      "guest_broken": null,
+      "permissions": {
+        "cache": false,
+        "publish": false,
+        "edit_wordpress": false
+      },
+      "candidate": null
+    },
+    {
+      "key": "407:1",
+      "priority": "P0",
+      "view_url": "https://i0.wp.com/d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg?ssl=1",
+      "guest_status": null,
+      "guest_broken": null,
+      "permissions": {
+        "cache": false,
+        "publish": false,
+        "edit_wordpress": false
+      },
+      "candidate": null
+    },
+    {
+      "key": "418:1",
+      "priority": "P0",
+      "view_url": "https://i0.wp.com/media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG?ssl=1",
+      "guest_status": null,
+      "guest_broken": null,
+      "permissions": {
+        "cache": false,
+        "publish": false,
+        "edit_wordpress": false
+      },
+      "candidate": {
+        "archive": "US Coast Guard",
+        "id": "Anthony Pettit service photo",
+        "official_catalog": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "source_file": null,
+        "relation": "same subject, exact frame unverified",
+        "rights": "USCG service photo, item-specific reuse review pending",
+        "identity_verified": false,
+        "item_rights_cleared": false,
+        "native_px": null,
+        "review_px": null,
+        "max_width": 960,
+        "no_upscale": true
+      }
+    },
+    {
+      "key": "418:2",
+      "priority": "P0",
+      "view_url": "https://i0.wp.com/www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg?ssl=1",
+      "guest_status": null,
+      "guest_broken": null,
+      "permissions": {
+        "cache": false,
+        "publish": false,
+        "edit_wordpress": false
+      },
+      "candidate": null
+    },
+    {
+      "key": "287:0",
+      "priority": "P1",
+      "view_url": "https://i0.wp.com/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/IIYZWAFLJUQD3YGEYEKMG5PVXY.jpg?resize=1024%2C672&ssl=1",
+      "guest_status": null,
+      "guest_broken": null,
+      "permissions": {
+        "cache": false,
+        "publish": false,
+        "edit_wordpress": false
+      },
+      "candidate": {
+        "archive": "Florida Memory",
+        "id": "RC09236",
+        "official_catalog": "https://floridamemory.com/items/show/32082",
+        "source_file": "https://floridamemory.com/fpc/reference/rc09236.jpg",
+        "relation": "1980 bridge car scene, exact photo unknown",
+        "rights": "Florida DOS public-domain general declaration, item rights blank; verify before rehosting",
+        "identity_verified": false,
+        "item_rights_cleared": false,
+        "native_px": null,
+        "review_px": null,
+        "max_width": 960,
+        "no_upscale": true
+      }
+    },
+    {
+      "key": "287:3",
+      "priority": "P1",
+      "view_url": "https://i0.wp.com/img.connatix.com/ecf95169-f8cd-4cd5-8698-9bc54211f8e9/1_th.jpg?ssl=1",
+      "guest_status": null,
+      "guest_broken": null,
+      "permissions": {
+        "cache": false,
+        "publish": false,
+        "edit_wordpress": false
+      },
+      "candidate": {
+        "archive": "Florida Memory",
+        "id": "RC09236",
+        "official_catalog": "https://floridamemory.com/items/show/32082",
+        "source_file": "https://floridamemory.com/fpc/reference/rc09236.jpg",
+        "relation": "1980 bridge car scene, exact photo unknown",
+        "rights": "Florida DOS public-domain general declaration, item rights blank; verify before rehosting",
+        "identity_verified": false,
+        "item_rights_cleared": false,
+        "native_px": null,
+        "review_px": null,
+        "max_width": 960,
+        "no_upscale": true
+      }
+    },
+    {
+      "key": "418:5",
+      "priority": "P1",
+      "view_url": "https://i0.wp.com/d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/media/images/19460401_UNKNOWN_37-012_copy.jpg?ssl=1",
+      "guest_status": null,
+      "guest_broken": null,
+      "permissions": {
+        "cache": false,
+        "publish": false,
+        "edit_wordpress": false
+      },
+      "candidate": {
+        "archive": "US Geological Survey",
+        "id": "Hilo 1946 Original",
+        "official_catalog": "https://www.usgs.gov/media/images/damage-hilo-tsunami-struck-april-fools-day-1946",
+        "source_file": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/19460401_UNKNOWN_37-012_copy.jpg",
+        "relation": "same scene, exact pixels unknown",
+        "rights": "USGS explicitly Public Domain; photographer unknown",
+        "identity_verified": false,
+        "item_rights_cleared": false,
+        "native_px": null,
+        "review_px": null,
+        "max_width": 960,
+        "no_upscale": true
+      }
+    }
+  ],
+  "production_writes": 0,
+  "downloaded_media": 0,
+  "spent_usd": 0
+}

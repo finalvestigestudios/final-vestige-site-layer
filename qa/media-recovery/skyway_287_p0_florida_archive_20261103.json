@@ -1,0 +1,199 @@
+{
+  "schema": "fv-skyway-287-six-source-p0-v1",
+  "observed_date": "2026-11-03",
+  "wordpress": {
+    "post_id": 287,
+    "status": "publish",
+    "modified": "2026-11-02T21:40:01",
+    "link": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+    "source_confirmed": true
+  },
+  "archive": {
+    "source_blob": "49183f66f880f7c4dfd363acca906876877f2e5e",
+    "date": "2026-10-30"
+  },
+  "images": [
+    {
+      "key": "287:0",
+      "original_url": "https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/IIYZWAFLJUQD3YGEYEKMG5PVXY.jpg",
+      "original_alt": "An automobile stopped near the broken end of the Sunshine Skyway Bridge after the May 9, 1980 collapse.",
+      "stored_dimensions_px": [
+        1024,
+        672
+      ],
+      "observation": {
+        "method": "independent_web_image_retriever",
+        "result": "displayed",
+        "wrapper_code": null,
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_decoded": null,
+        "guest_current_src": null,
+        "guest_natural_width": null,
+        "guest_transfer_bytes": null
+      },
+      "target_max_width_px": 960,
+      "cached": false,
+      "wp_write": false
+    },
+    {
+      "key": "287:1",
+      "original_url": "https://cloudfront-us-east-1.images.arcpublishing.com/tbt/555OWMWIJMI6TGNIIBWI6S7HAY.jpg",
+      "original_alt": "The bulk carrier Summit Venture beneath the broken Sunshine Skyway Bridge after the collision.",
+      "stored_dimensions_px": null,
+      "observation": {
+        "method": "independent_web_image_retriever",
+        "result": "displayed",
+        "wrapper_code": null,
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_decoded": null,
+        "guest_current_src": null,
+        "guest_natural_width": null,
+        "guest_transfer_bytes": null
+      },
+      "target_max_width_px": 960,
+      "cached": false,
+      "wp_write": false
+    },
+    {
+      "key": "287:2",
+      "original_url": "https://skywaydisaster.com/images/timeline2.jpg",
+      "original_alt": "Diagram showing the Summit Venture collision sequence at the Sunshine Skyway Bridge.",
+      "stored_dimensions_px": null,
+      "observation": {
+        "method": "independent_web_image_retriever",
+        "result": "displayed",
+        "wrapper_code": null,
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_decoded": null,
+        "guest_current_src": null,
+        "guest_natural_width": null,
+        "guest_transfer_bytes": null
+      },
+      "target_max_width_px": 960,
+      "cached": false,
+      "wp_write": false
+    },
+    {
+      "key": "287:3",
+      "original_url": "https://img.connatix.com/ecf95169-f8cd-4cd5-8698-9bc54211f8e9/1_th.jpg",
+      "original_alt": "Automobile halted at the broken end of the Sunshine Skyway after the 1980 collapse.",
+      "stored_dimensions_px": null,
+      "observation": {
+        "method": "independent_web_image_retriever",
+        "result": "displayed",
+        "wrapper_code": null,
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_decoded": null,
+        "guest_current_src": null,
+        "guest_natural_width": null,
+        "guest_transfer_bytes": null
+      },
+      "target_max_width_px": 960,
+      "cached": false,
+      "wp_write": false
+    },
+    {
+      "key": "287:4",
+      "original_url": "https://www.flmd.uscourts.gov/sites/flmd/files/images/figure-9-sunshine-skyway-bridge-3.jpg",
+      "original_alt": "Federal archival view of the collapsed Sunshine Skyway Bridge and Summit Venture after the May 1980 accident.",
+      "stored_dimensions_px": null,
+      "observation": {
+        "method": "independent_web_image_retriever",
+        "result": "displayed",
+        "wrapper_code": null,
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_decoded": null,
+        "guest_current_src": null,
+        "guest_natural_width": null,
+        "guest_transfer_bytes": null
+      },
+      "target_max_width_px": 960,
+      "cached": false,
+      "wp_write": false
+    },
+    {
+      "key": "287:5",
+      "original_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "original_alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+      "stored_dimensions_px": null,
+      "observation": {
+        "method": "independent_web_image_retriever",
+        "result": "retriever_wrapper_404",
+        "wrapper_code": 404,
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_decoded": null,
+        "guest_current_src": null,
+        "guest_natural_width": null,
+        "guest_transfer_bytes": null
+      },
+      "target_max_width_px": 960,
+      "cached": false,
+      "wp_write": false
+    }
+  ],
+  "priority_image": "287:5",
+  "candidate": {
+    "type": "semantically_related_not_binary_identical",
+    "primary_archive": "Florida Memory / State Archives of Florida",
+    "catalog_id": "K894127",
+    "catalog_url": "https://floridamemory.com/items/show/131903",
+    "archive_file_url": "https://www.floridamemory.com/fpc/commerce/K894127.jpg",
+    "photographer": "H. Milo Stewart",
+    "date": "circa 1987",
+    "subject": "1987 view of old and new Sunshine Skyway bridges, not May 1980 collapse",
+    "commons_record": "https://commons.wikimedia.org/wiki/File:View_of_the_old_and_new_Sunshine_Skyway_bridges_from_St._Petersburg,_Florida,_1987.jpg",
+    "commons_width_px": 600,
+    "commons_height_px": 595,
+    "conditional_derivative_px": [
+      600,
+      595
+    ],
+    "alternate_archive_catalog": "https://floridamemory.com/items/show/131305",
+    "alternate_archive_id": "K893521",
+    "alternate_native_dimensions_px": null,
+    "rights_mark": "Florida Memory PDM 1.0 (mark, not grant)",
+    "rights_faq": "https://floridamemory.com/share/order-info/faq.php",
+    "archive_disclaimer": "https://floridamemory.com/learn/about/disclaimer.php",
+    "proposed_credit": "State Archives of Florida/Stewart",
+    "commons_uploader_cc0_not_rightsholder_proof": true,
+    "rights_cleared": false,
+    "exact_original_match": false,
+    "original_crop_verified": false,
+    "replacement_authorized": false,
+    "editorial_recaption_required": true,
+    "proposed_alt": "1987 view of the surviving old Sunshine Skyway structure beside the newly completed cable-stayed bridge."
+  },
+  "acceptance": {
+    "status": "HOLD",
+    "guest_browser_test": "NOT_PERFORMED",
+    "archival_binary_download": "NOT_AUTHORIZED",
+    "wp_media_upload": "NOT_AUTHORIZED",
+    "post_block_rewrite": "NOT_AUTHORIZED",
+    "same_image_or_editorial_substitution": "REQUIRES_REVIEW",
+    "credit_and_rights": "REQUIRES_ITEM_REVIEW",
+    "resize": "maximum 960 width with zero upscaling",
+    "required_qa": "logged-out currentSrc, image GET status and MIME, naturalWidth, decode, screenshot, completed cold CDP bytes; desktop/mobile"
+  },
+  "counts": {
+    "source_slots": 6,
+    "independently_displayed": 5,
+    "retriever_404_wrapper": 1,
+    "guest_confirmed_broken": 0,
+    "production_repaired": 0,
+    "visitor_weight_savings_percent": null
+  },
+  "site_baseline": {
+    "posts": 61,
+    "slots": 355,
+    "external_origins": 288,
+    "originals_over_1_5MiB": 13,
+    "reported_42": "UNVERIFIED_AS_BROWSER_FAILURES",
+    "claimed_76": "NOT_MEASURED"
+  }
+}

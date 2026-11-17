@@ -1,0 +1,17 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {validatePrimaryEvidence}=require('./primary_source_confirmations_core.cjs'),at=n=>path.join(__dirname,n);
+const q=JSON.parse(fs.readFileSync(at('p0_recovery_queue_20261030.json'),'utf8')),d=JSON.parse(fs.readFileSync(at('primary_source_confirmations_20261030.json'),'utf8'));
+const copy=()=>structuredClone(d),validate=(x,y=q)=>validatePrimaryEvidence(y,x);
+test('six verified primary records preserve P0 URLs and distinguish source tier',()=>{const r=validate(d);assert.equal(r.ok,true,JSON.stringify(r.errors));assert.equal(r.summary.total_offsite_p0_with_official_candidate,22);assert.equal(r.summary.offsite_p0_still_unmapped,14)});
+test('original inventory key/url change fails closed',()=>{const q2=structuredClone(q);q2.rows.find(r=>r.image_key==='407:4').exact_stored_url+='?stale';assert.equal(validate(d,q2).ok,false)});
+test('USGS source original cannot be swapped',()=>{const x=copy();x.entries[0].official_original_url=x.entries[1].exact_stored_url;assert.equal(validate(x).ok,false)});
+test('duplicated source image key fails',()=>{const x=copy();x.entries[1].image_key=x.entries[0].image_key;assert.equal(validate(x).ok,false)});
+test('NASA ID cannot point to another image',()=>{const x=copy();x.entries[3].catalog_id='S67-21294';assert.equal(validate(x).ok,false)});
+test('NASA gallery text is not original image proof',()=>{const x=copy();x.entries[3].proof_tier='exact_archive_original_url';assert.equal(validate(x).ok,false)});
+test('web image viewer cannot become numeric HTTP success',()=>{const x=copy();x.entries[0].web_viewer_http_status=200;assert.equal(validate(x).ok,false)});
+test('browser status and broken/working cannot be invented',()=>{for(const [key,value] of [['visitor_browser_http_status',404],['verified_broken_in_browser',true],['verified_broken_in_browser',false],['visitor_natural_width_px',960]]){const x=copy();x.entries[0][key]=value;assert.equal(validate(x).ok,false)}});
+test('archive public domain label not blanket authorization',()=>{const x=copy();x.entries[0].wordpress_media_upload_authorized=true;assert.equal(validate(x).ok,false)});
+test('960px no-upscale/unknown dimension gates apply',()=>{const x=copy();x.entries[0].maximum_width_px=1280;assert.equal(validate(x).ok,false);const y=copy();y.entries[0].target_dimensions_px=[960,800];assert.equal(validate(y).ok,false)});
+test('76 percent cannot be claimed from guessed bytes',()=>{const x=copy();x.entries[0].expected_savings_percent=76;assert.equal(validate(x).ok,false);const y=copy();y.counts.measured_weight_reduction=76;assert.equal(validate(y).ok,false)});
+test('catalog wrong institution fails',()=>{const x=copy();x.entries[0].official_catalog_url='https://unknown.example.com/source';assert.equal(validate(x).ok,false)});

@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-02",
+  "post_id": 418,
+  "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+  "post_modified": "2026-08-28T03:11:08",
+  "source_evidence": {
+    "frozen_authenticated_WP_inventory": "qa/media-recovery/parts/01.json",
+    "frozen_git_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+    "current_authenticated_wp_readback": true,
+    "source_src_alt_exact_matches": 6,
+    "article_status": "publish",
+    "site_qa_owned_pr": 154,
+    "media_branch_pr": 183
+  },
+  "corpus": {
+    "published_articles": 61,
+    "stored_inline_src": 355,
+    "external_source_refs": 288,
+    "originals_over_1_5_MiB": 13,
+    "reported_42_broken_guest_verified": false,
+    "claimed_76_percent_savings_wire_measured": false,
+    "production_repaired": 0
+  },
+  "external_historical_conflict": {
+    "official_parent_1946_url": "https://oceanexplorer.noaa.gov/expedition-feature/okeanos-seascape-alaska-ex2304-features-geology/",
+    "official_parent_1946_claim": "1946 tsunami destroyed Scotch Cap lighthouse",
+    "erroneous_noaa_individual_gallery_urls": [
+      "https://oceanexplorer.noaa.gov/multimedia/okeanos-explorations-seascape-alaska-ex2304-features-geology-media-lighthouse/",
+      "https://oceanexplorer.noaa.gov/multimedia/okeanos-explorations-seascape-alaska-ex2304-features-geology-media-lighthouse-debris/"
+    ],
+    "erroneous_noaa_gallery_claim": "1964 tsunami destroyed Scotch Cap lighthouse",
+    "correct_disaster_year": 1946,
+    "chronology_gate": "REJECT_GALLERY_1964_CAPTION",
+    "risk": "Two official NOAA photo-specific pages conflict with their July 25 2023 parent narrative and USCG history; don't copy the 1964 date into captions or asset metadata."
+  },
+  "third_party_mirror": {
+    "observed_same_filename": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+    "image_key": "418:2",
+    "publisher_permission_notice": "Pictures on page copyright Coast Guard, used by permission",
+    "same_binary_proven": false,
+    "third_party_mirror_caching_approved": false
+  },
+  "all_media_cache_approval": false,
+  "all_WP_changes_approved": false,
+  "observations": "418:4 and 418:5 displayed in independent image renderer. Source 418:1 and 418:2 had retriever 403, while 418:0 and 418:3 were inaccessible. Wrapper codes do NOT establish browser-origin HTTP codes. All six logged-out visitor statuses and real transfer sizes unknown.",
+  "rows": [
+    {
+      "image_key": "418:0",
+      "post_id": 418,
+      "slot": 0,
+      "source_url": "https://www.history.uscg.mil/Portals/6/2_%20new%20and%20old%20lighthouses%2019849609_web1_1_-Scotch-Cap-lighthouse-1200x984.jpg",
+      "alt": "The old and new Scotch Cap lighthouses on Unimak Island before the concrete lighthouse was destroyed by the April 1, 1946 tsunami.",
+      "independent_retrieval": {
+        "method": "web_retriever_or_image_renderer_2026_11_02_NOT_guest_Chrome",
+        "outcome": "INACCESSIBLE_NO_HTTP",
+        "retriever_wrapper_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_current_src": null,
+        "guest_browser_decoded_px": null,
+        "guest_browser_encoded_transfer_bytes": null,
+        "visibly_broken_in_guest_browser": null
+      },
+      "authority": {
+        "agency": "U.S. Coast Guard",
+        "catalog_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "identity_note": "Official USCG pre-event dual lighthouse photograph; same source article, identity hash unverified",
+        "rights_review": "ITEM_REVIEW_REQUIRED",
+        "asset_binary_sha256": null,
+        "exact_binary_identity_verified": false
+      },
+      "conditional_derivative": {
+        "maximum_width_px": 960,
+        "source_intrinsic_width_px": null,
+        "source_intrinsic_height_px": null,
+        "target_width_px": null,
+        "target_height_px": null,
+        "downscale_only": true,
+        "aspect_ratio_preserved": true,
+        "do_not_crop": true
+      },
+      "caching": {
+        "wordpress_media_cache_permitted": false,
+        "wordpress_post_edit_permitted": false,
+        "proposed_asset_status": "RESEARCH_ONLY"
+      }
+    },
+    {
+      "image_key": "418:1",
+      "post_id": 418,
+      "slot": 1,
+      "source_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew.",
+      "independent_retrieval": {
+        "method": "web_retriever_or_image_renderer_2026_11_02_NOT_guest_Chrome",
+        "outcome": "RETRIEVER_403",
+        "retriever_wrapper_code": 403,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_current_src": null,
+        "guest_browser_decoded_px": null,
+        "guest_browser_encoded_transfer_bytes": null,
+        "visibly_broken_in_guest_browser": null
+      },
+      "authority": {
+        "agency": "U.S. Coast Guard",
+        "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "identity_note": "Photo VIRIN 210330-G-DE713-0002; public-domain and release/credit notice explicit; spelling Petit/Pettit conflicts across official/catalog narratives",
+        "rights_review": "ITEM_REVIEW_REQUIRED",
+        "asset_binary_sha256": null,
+        "exact_binary_identity_verified": false
+      },
+      "conditional_derivative": {
+        "maximum_width_px": 960,
+        "source_intrinsic_width_px": null,
+        "source_intrinsic_height_px": null,
+        "target_width_px": null,
+        "target_height_px": null,
+        "downscale_only": true,
+        "aspect_ratio_preserved": true,
+        "do_not_crop": true
+      },
+      "caching": {
+        "wordpress_media_cache_permitted": false,
+        "wordpress_post_edit_permitted": false,
+        "proposed_asset_status": "RESEARCH_ONLY"
+      }
+    },
+    {
+      "image_key": "418:2",
+      "post_id": 418,
+      "slot": 2,
+      "source_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "alt": "Broken concrete and debris where Scotch Cap Lighthouse stood after the April 1, 1946 tsunami.",
+      "independent_retrieval": {
+        "method": "web_retriever_or_image_renderer_2026_11_02_NOT_guest_Chrome",
+        "outcome": "RETRIEVER_403",
+        "retriever_wrapper_code": 403,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_current_src": null,
+        "guest_browser_decoded_px": null,
+        "guest_browser_encoded_transfer_bytes": null,
+        "visibly_broken_in_guest_browser": null
+      },
+      "authority": {
+        "agency": "U.S. Coast Guard",
+        "catalog_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "identity_note": "Original named debris photograph linked by published USCG story. Lighthousefriends mirror has same stem but is third-party, rights-permission-only, hash not matched",
+        "rights_review": "ITEM_REVIEW_REQUIRED",
+        "asset_binary_sha256": null,
+        "exact_binary_identity_verified": false
+      },
+      "conditional_derivative": {
+        "maximum_width_px": 960,
+        "source_intrinsic_width_px": null,
+        "source_intrinsic_height_px": null,
+        "target_width_px": null,
+        "target_height_px": null,
+        "downscale_only": true,
+        "aspect_ratio_preserved": true,
+        "do_not_crop": true
+      },
+      "caching": {
+        "wordpress_media_cache_permitted": false,
+        "wordpress_post_edit_permitted": false,
+        "proposed_asset_status": "RESEARCH_ONLY"
+      }
+    },
+    {
+      "image_key": "418:3",
+      "post_id": 418,
+      "slot": 3,
+      "source_url": "https://www.history.uscg.mil/Portals/6/6_%20Scotch%20Cap%20remains.jpg",
+      "alt": "Aerial photograph of the destroyed Scotch Cap light station on Unimak Island after the 1946 tsunami.",
+      "independent_retrieval": {
+        "method": "web_retriever_or_image_renderer_2026_11_02_NOT_guest_Chrome",
+        "outcome": "INACCESSIBLE_NO_HTTP",
+        "retriever_wrapper_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_current_src": null,
+        "guest_browser_decoded_px": null,
+        "guest_browser_encoded_transfer_bytes": null,
+        "visibly_broken_in_guest_browser": null
+      },
+      "authority": {
+        "agency": "U.S. Coast Guard",
+        "catalog_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "identity_note": "Post-tsunami aerial scene cataloged in official article, accession and exact binary not established",
+        "rights_review": "ITEM_REVIEW_REQUIRED",
+        "asset_binary_sha256": null,
+        "exact_binary_identity_verified": false
+      },
+      "conditional_derivative": {
+        "maximum_width_px": 960,
+        "source_intrinsic_width_px": null,
+        "source_intrinsic_height_px": null,
+        "target_width_px": null,
+        "target_height_px": null,
+        "downscale_only": true,
+        "aspect_ratio_preserved": true,
+        "do_not_crop": true
+      },
+      "caching": {
+        "wordpress_media_cache_permitted": false,
+        "wordpress_post_edit_permitted": false,
+        "proposed_asset_status": "RESEARCH_ONLY"
+      }
+    },
+    {
+      "image_key": "418:4",
+      "post_id": 418,
+      "slot": 4,
+      "source_url": "https://www.hawaiimagazine.com/wp-content/uploads/2020/12/Tsunami1946NOAA2.jpg",
+      "alt": "Tsunami water inundating the Hilo waterfront in April 1946, with a person visible near the advancing water.",
+      "independent_retrieval": {
+        "method": "web_retriever_or_image_renderer_2026_11_02_NOT_guest_Chrome",
+        "outcome": "IMAGE_RENDERER_DISPLAYED",
+        "retriever_wrapper_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_current_src": null,
+        "guest_browser_decoded_px": null,
+        "guest_browser_encoded_transfer_bytes": null,
+        "visibly_broken_in_guest_browser": null
+      },
+      "authority": {
+        "agency": "NOAA / former Coast and Geodetic Survey",
+        "catalog_url": "https://www.noaa.gov/noaa-collections/photo-library/pl23theb2705jpg",
+        "identity_note": "Photo catalog page rejected by retriever with wrapper 405; hosted derivative visibly rendered, rights/crop unresolved",
+        "rights_review": "ITEM_REVIEW_REQUIRED",
+        "asset_binary_sha256": null,
+        "exact_binary_identity_verified": false
+      },
+      "conditional_derivative": {
+        "maximum_width_px": 960,
+        "source_intrinsic_width_px": null,
+        "source_intrinsic_height_px": null,
+        "target_width_px": null,
+        "target_height_px": null,
+        "downscale_only": true,
+        "aspect_ratio_preserved": true,
+        "do_not_crop": true
+      },
+      "caching": {
+        "wordpress_media_cache_permitted": false,
+        "wordpress_post_edit_permitted": false,
+        "proposed_asset_status": "RESEARCH_ONLY"
+      }
+    },
+    {
+      "image_key": "418:5",
+      "post_id": 418,
+      "slot": 5,
+      "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/media/images/19460401_UNKNOWN_37-012_copy.jpg?itok=ASMRCahz",
+      "alt": "Debris covering a Hilo street and partly burying a vehicle after the April 1, 1946 tsunami.",
+      "independent_retrieval": {
+        "method": "web_retriever_or_image_renderer_2026_11_02_NOT_guest_Chrome",
+        "outcome": "IMAGE_RENDERER_DISPLAYED",
+        "retriever_wrapper_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_current_src": null,
+        "guest_browser_decoded_px": null,
+        "guest_browser_encoded_transfer_bytes": null,
+        "visibly_broken_in_guest_browser": null
+      },
+      "authority": {
+        "agency": "USGS Hawaiian Volcano Observatory",
+        "catalog_url": "https://www.usgs.gov/media/images/damage-hilo-tsunami-struck-april-fools-day-1946",
+        "identity_note": "Official source marks Public Domain but credits photographer/source as unknown; exact published rendition displayed, identity confirmed at record/scene not hashed",
+        "rights_review": "ITEM_REVIEW_REQUIRED",
+        "asset_binary_sha256": null,
+        "exact_binary_identity_verified": false
+      },
+      "conditional_derivative": {
+        "maximum_width_px": 960,
+        "source_intrinsic_width_px": null,
+        "source_intrinsic_height_px": null,
+        "target_width_px": null,
+        "target_height_px": null,
+        "downscale_only": true,
+        "aspect_ratio_preserved": true,
+        "do_not_crop": true
+      },
+      "caching": {
+        "wordpress_media_cache_permitted": false,
+        "wordpress_post_edit_permitted": false,
+        "proposed_asset_status": "RESEARCH_ONLY"
+      }
+    }
+  ]
+}

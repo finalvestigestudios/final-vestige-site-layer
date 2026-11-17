@@ -1,0 +1,441 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-01",
+  "scope": "read-only prioritized guest-browser image probes; NOT a completed guest-browser test",
+  "source_documents": {
+    "release_queue_blob_sha": "a337a4c93639e5cb0f69914525e4ee7056c4eaa5",
+    "skyway_audit_blob_sha": "e6027acdd0adc97ed84725b11f2262d2d5f03daa",
+    "priority_planner_blob_sha": "40bb916870442ca1c18f2a89803df274659ca625",
+    "source_parts_blob_shas": [
+      "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+      "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "21095161e633aba093b74c0ead9936c9f6186d00",
+      "5659ec243c188928be3f89c0f96354b660608ca2"
+    ]
+  },
+  "summary": {
+    "site_published_posts": 61,
+    "site_stored_inline_image_slots": 355,
+    "site_external_references": 288,
+    "site_wordpress_originals_above_1_5_mib": 13,
+    "browser_priority_posts": 8,
+    "browser_priority_source_slots": 11,
+    "all_image_slots_on_priority_pages": 55,
+    "reported_42_broken_images_verified": false,
+    "claimed_76_percent_transfer_saving_measured": false,
+    "production_image_replacements": 0
+  },
+  "selected_post_ids": [
+    285,
+    287,
+    407,
+    418,
+    268,
+    432,
+    434,
+    621
+  ],
+  "rows": [
+    {
+      "image_key": "285:5",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "current_published_source_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "current_published_alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "web_retriever": {
+        "method": "independent_web_retriever_NOT_logged_out_browser",
+        "observation": "RETRIEVER_FETCH_404",
+        "retriever_wrapper_error_code": 404
+      },
+      "browser": {
+        "http_status": null,
+        "current_src": null,
+        "network_final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "institutional_candidate": {
+        "authority": "Wikimedia Commons original-creator catalog linked by publisher attribution",
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "candidate_asset_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "exact_binary_identity_verified": false,
+        "rights_and_cache_clearance": "HOLD"
+      },
+      "dimension_plan": {
+        "max_width_px": 960,
+        "conditional_width_px": 819,
+        "conditional_height_px": 614,
+        "no_upscale": true,
+        "actual_source_master_dimensions_verified": false
+      },
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "image_key": "287:5",
+      "post_id": 287,
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "current_published_source_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "current_published_alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+      "web_retriever": {
+        "method": "independent_web_retriever_NOT_logged_out_browser",
+        "observation": "RETRIEVER_FETCH_404",
+        "retriever_wrapper_error_code": 404
+      },
+      "browser": {
+        "http_status": null,
+        "current_src": null,
+        "network_final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "institutional_candidate": {
+        "authority": "St Pete Catalyst / University Press of Florida",
+        "catalog_url": "https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/",
+        "candidate_asset_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "exact_binary_identity_verified": false,
+        "rights_and_cache_clearance": "HOLD"
+      },
+      "dimension_plan": {
+        "max_width_px": 960,
+        "conditional_width_px": null,
+        "conditional_height_px": null,
+        "no_upscale": true,
+        "actual_source_master_dimensions_verified": false
+      },
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "image_key": "407:1",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "current_published_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "current_published_alt": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake.",
+      "web_retriever": {
+        "method": "independent_web_retriever_NOT_logged_out_browser",
+        "observation": "RETRIEVER_UNSUPPORTED_OCTET_STREAM",
+        "retriever_wrapper_error_code": 400
+      },
+      "browser": {
+        "http_status": null,
+        "current_src": null,
+        "network_final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "institutional_candidate": {
+        "authority": "USGS",
+        "catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+        "candidate_asset_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+        "exact_binary_identity_verified": false,
+        "rights_and_cache_clearance": "HOLD"
+      },
+      "dimension_plan": {
+        "max_width_px": 960,
+        "conditional_width_px": null,
+        "conditional_height_px": null,
+        "no_upscale": true,
+        "actual_source_master_dimensions_verified": false
+      },
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "image_key": "418:1",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "current_published_source_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "current_published_alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew.",
+      "web_retriever": {
+        "method": "independent_web_retriever_NOT_logged_out_browser",
+        "observation": "RETRIEVER_FETCH_403",
+        "retriever_wrapper_error_code": 403
+      },
+      "browser": {
+        "http_status": null,
+        "current_src": null,
+        "network_final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "institutional_candidate": {
+        "authority": "United States Coast Guard",
+        "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "candidate_asset_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+        "exact_binary_identity_verified": false,
+        "rights_and_cache_clearance": "HOLD"
+      },
+      "dimension_plan": {
+        "max_width_px": 960,
+        "conditional_width_px": null,
+        "conditional_height_px": null,
+        "no_upscale": true,
+        "actual_source_master_dimensions_verified": false
+      },
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "image_key": "418:2",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "current_published_source_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "current_published_alt": "Broken concrete and debris where Scotch Cap Lighthouse stood after the April 1, 1946 tsunami.",
+      "web_retriever": {
+        "method": "independent_web_retriever_NOT_logged_out_browser",
+        "observation": "RETRIEVER_FETCH_403",
+        "retriever_wrapper_error_code": 403
+      },
+      "browser": {
+        "http_status": null,
+        "current_src": null,
+        "network_final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "institutional_candidate": {
+        "authority": "US Coast Guard History",
+        "catalog_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "candidate_asset_url": null,
+        "exact_binary_identity_verified": false,
+        "rights_and_cache_clearance": "HOLD"
+      },
+      "dimension_plan": {
+        "max_width_px": 960,
+        "conditional_width_px": null,
+        "conditional_height_px": null,
+        "no_upscale": true,
+        "actual_source_master_dimensions_verified": false
+      },
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "image_key": "285:0",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "current_published_source_url": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+      "current_published_alt": "Operators and technical staff inside the Three Mile Island Unit 2 control room during the 1979 accident.",
+      "web_retriever": {
+        "method": "independent_web_retriever_NOT_logged_out_browser",
+        "observation": "RETRIEVER_FETCH_403",
+        "retriever_wrapper_error_code": 403
+      },
+      "browser": {
+        "http_status": null,
+        "current_src": null,
+        "network_final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "institutional_candidate": {
+        "authority": "US Nuclear Regulatory Commission official Flickr",
+        "catalog_url": "https://www.flickr.com/photos/nrcgov/7447166686",
+        "candidate_asset_url": "https://www.flickr.com/photos/nrcgov/7447166686",
+        "exact_binary_identity_verified": false,
+        "rights_and_cache_clearance": "HOLD"
+      },
+      "dimension_plan": {
+        "max_width_px": 960,
+        "conditional_width_px": null,
+        "conditional_height_px": null,
+        "no_upscale": true,
+        "actual_source_master_dimensions_verified": false
+      },
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "image_key": "407:3",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "current_published_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake3.jpg",
+      "current_published_alt": "Dragline excavating the Earthquake Lake spillway on October 18, 1959, with one of the nighttime lighting plants visible on the hillside.",
+      "web_retriever": {
+        "method": "independent_web_retriever_NOT_logged_out_browser",
+        "observation": "RETRIEVER_INACCESSIBLE_NO_HTTP",
+        "retriever_wrapper_error_code": null
+      },
+      "browser": {
+        "http_status": null,
+        "current_src": null,
+        "network_final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "institutional_candidate": {
+        "authority": "US Geological Survey",
+        "catalog_url": "https://www.usgs.gov/media/images/dragline-working-lower-outlet-channel-earthquake-lake-october-18-1959",
+        "candidate_asset_url": null,
+        "exact_binary_identity_verified": false,
+        "rights_and_cache_clearance": "HOLD"
+      },
+      "dimension_plan": {
+        "max_width_px": 960,
+        "conditional_width_px": 960,
+        "conditional_height_px": 684,
+        "no_upscale": true,
+        "actual_source_master_dimensions_verified": false
+      },
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "image_key": "268:8",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "current_published_source_url": "https://archimedespalimpsest.org/assets/img/imaging_x9.jpg",
+      "current_published_alt": "X-ray fluorescence result from a forged Archimedes Palimpsest page revealing erased ancient writing beneath the paint.",
+      "web_retriever": {
+        "method": "independent_web_retriever_NOT_logged_out_browser",
+        "observation": "RETRIEVER_INACCESSIBLE_NO_HTTP",
+        "retriever_wrapper_error_code": null
+      },
+      "browser": {
+        "http_status": null,
+        "current_src": null,
+        "network_final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "institutional_candidate": {
+        "authority": "Archimedes Palimpsest Project",
+        "catalog_url": "https://archimedespalimpsest.org/0_ReadMe.html",
+        "candidate_asset_url": null,
+        "exact_binary_identity_verified": false,
+        "rights_and_cache_clearance": "HOLD"
+      },
+      "dimension_plan": {
+        "max_width_px": 960,
+        "conditional_width_px": null,
+        "conditional_height_px": null,
+        "no_upscale": true,
+        "actual_source_master_dimensions_verified": false
+      },
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "image_key": "268:4",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "current_published_source_url": "https://www.archimedespalimpsest.org/assets/img/imagecapture-capture2b.jpg",
+      "current_published_alt": "A conservator handling a separated Archimedes Palimpsest leaf during preparation for imaging.",
+      "web_retriever": {
+        "method": "independent_web_retriever_NOT_logged_out_browser",
+        "observation": "RETRIEVER_REDIRECT_DESTINATION_UNAVAILABLE",
+        "retriever_wrapper_error_code": null
+      },
+      "browser": {
+        "http_status": null,
+        "current_src": null,
+        "network_final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "institutional_candidate": {
+        "authority": "Archimedes Palimpsest Project",
+        "catalog_url": "https://archimedespalimpsest.org/0_ReadMe.html",
+        "candidate_asset_url": null,
+        "exact_binary_identity_verified": false,
+        "rights_and_cache_clearance": "HOLD"
+      },
+      "dimension_plan": {
+        "max_width_px": 960,
+        "conditional_width_px": null,
+        "conditional_height_px": null,
+        "no_upscale": true,
+        "actual_source_master_dimensions_verified": false
+      },
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "image_key": "285:2",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "current_published_source_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "current_published_alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+      "web_retriever": {
+        "method": "independent_web_retriever_NOT_logged_out_browser",
+        "observation": "RETRIEVER_REDIRECT_DESTINATION_UNAVAILABLE",
+        "retriever_wrapper_error_code": 500
+      },
+      "browser": {
+        "http_status": null,
+        "current_src": null,
+        "network_final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "institutional_candidate": {
+        "authority": "National Archives / President's Commission",
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Control_room_Number_2._Nuclear_Regulatory_Commission_inspector_looking_at_meters._-_NARA_-_540034.tif",
+        "candidate_asset_url": null,
+        "exact_binary_identity_verified": false,
+        "rights_and_cache_clearance": "HOLD"
+      },
+      "dimension_plan": {
+        "max_width_px": 960,
+        "conditional_width_px": 960,
+        "conditional_height_px": 647,
+        "no_upscale": true,
+        "actual_source_master_dimensions_verified": false
+      },
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "image_key": "418:0",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "current_published_source_url": "https://www.history.uscg.mil/Portals/6/2_%20new%20and%20old%20lighthouses%2019849609_web1_1_-Scotch-Cap-lighthouse-1200x984.jpg",
+      "current_published_alt": "The old and new Scotch Cap lighthouses on Unimak Island before the concrete lighthouse was destroyed by the April 1, 1946 tsunami.",
+      "web_retriever": {
+        "method": "independent_web_retriever_NOT_logged_out_browser",
+        "observation": "RETRIEVER_INACCESSIBLE_NO_HTTP",
+        "retriever_wrapper_error_code": null
+      },
+      "browser": {
+        "http_status": null,
+        "current_src": null,
+        "network_final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "institutional_candidate": {
+        "authority": "US Coast Guard History",
+        "catalog_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "candidate_asset_url": null,
+        "exact_binary_identity_verified": false,
+        "rights_and_cache_clearance": "HOLD"
+      },
+      "dimension_plan": {
+        "max_width_px": 960,
+        "conditional_width_px": null,
+        "conditional_height_px": null,
+        "no_upscale": true,
+        "actual_source_master_dimensions_verified": false
+      },
+      "wordpress_production_write_authorized": false
+    }
+  ],
+  "publication_conditions": "Guest Chrome Image GET/currentSrc/decoded pixels and screenshot required; verify exact historical photo/rights/credit; ≤960px no-upscale derivative only after separate authorization; stage and compare matching before/after bytes; no production writes."
+}

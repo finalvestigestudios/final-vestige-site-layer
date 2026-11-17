@@ -1,0 +1,229 @@
+{
+  "schema": "fv-media-request-id-memory-cache-custody-v1",
+  "local_date": "2026-11-13",
+  "scope": "Unmerged draft source and offline testing; P0 original external URLs and official candidate leads; no browser/production claims.",
+  "security_correction": {
+    "file": "qa/media-recovery/request_id_wire_core.cjs",
+    "previous_git_blob": "3c5b3cb50ac6d793415c232ad0df1898af8d9c04",
+    "corrected_git_blob": "dff2fc4738cd7ede48cd9dee905295839ebd4275",
+    "test_file": "qa/media-recovery/test_request_id_wire_core_20261102.cjs",
+    "previous_test_blob": "c8af5f3ccae9fb4d0a9f8ad06847e82754629dfa",
+    "corrected_test_blob": "0eb28fa99d02c225747240c891871b7884fdcbfe",
+    "regression": "Before correction, source-identity and request-ID-matched row with from_memory_cache:true was classified complete and counted as 5000 cold article bytes. Corrected scopeByRequestId requires explicit false for was_cached, from_disk_cache, from_memory_cache, and from_service_worker.",
+    "negative_control": {
+      "request_id": "33.1",
+      "mime_type": "image/jpeg",
+      "http_status": 200,
+      "encoded_data_length": 5000,
+      "from_memory_cache": true,
+      "before_article_bytes": 5000,
+      "after_article_bytes": null,
+      "after_state": "HOLD"
+    },
+    "unknown_memory_control": {
+      "from_memory_cache": null,
+      "after_article_bytes": null,
+      "after_state": "HOLD"
+    },
+    "positive_control": {
+      "all_four_cache_flags_false": true,
+      "article_bytes": 5000,
+      "after_state": "MEASURED_LAB_ONLY"
+    },
+    "v8_regression": {
+      "cases_passed": 33,
+      "cases_failed": 0,
+      "environment": "isolated V8 with compatible node:test/assert and conservative URL-identity shims; exact revised committed core/test source",
+      "native_node_run": false,
+      "full_repo_ci_run": false,
+      "genuine_cdp_run": false
+    },
+    "interpretation": "Synthetic data-integrity regression; not a measured production saving, live cache incident, or site-wide 76% transfer finding."
+  },
+  "prioritization": {
+    "site_qa_issue_or_pr": 154,
+    "media_recovery_pr": 1703,
+    "small_p0_pr": 1655,
+    "original_image_queue": [
+      "285:5",
+      "285:2",
+      "287:5",
+      "418:1",
+      "418:2",
+      "407:1"
+    ],
+    "site_qa_exclusive_browser_collector": true
+  },
+  "primary_sources": [
+    {
+      "slot": "285:5",
+      "published_original_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "observed_2026_11_13": {
+        "method": "external_web_retriever_only",
+        "wrapper_code": 404,
+        "actual_origin_http_status": null,
+        "actual_guest_browser_http_status": null,
+        "decoded_guest_pixels": null,
+        "visitor_transfer_bytes": null,
+        "classification": "NOT_VISITOR_FAILURE_PROOF"
+      },
+      "catalog_candidate_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "candidate_kind": "COMMONS_CATALOG_RECORD",
+      "rights_observation": "PD_SELF",
+      "conditional_width_limit_px": 819,
+      "conditional_expected_dimensions_px": [
+        819,
+        614
+      ],
+      "exact_pixel_crop_identity_established": false,
+      "republication_approved": false,
+      "wordpress_upload_approved": false
+    },
+    {
+      "slot": "285:2",
+      "published_original_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "observed_2026_11_13": {
+        "method": "external_web_retriever_only",
+        "wrapper_code": 500,
+        "actual_origin_http_status": null,
+        "actual_guest_browser_http_status": null,
+        "decoded_guest_pixels": null,
+        "visitor_transfer_bytes": null,
+        "classification": "NOT_VISITOR_FAILURE_PROOF"
+      },
+      "catalog_candidate_url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "candidate_kind": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+      "rights_observation": "UNKNOWN",
+      "conditional_width_limit_px": 960,
+      "conditional_expected_dimensions_px": null,
+      "exact_pixel_crop_identity_established": false,
+      "republication_approved": false,
+      "wordpress_upload_approved": false
+    },
+    {
+      "slot": "287:5",
+      "published_original_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "observed_2026_11_13": {
+        "method": "external_web_retriever_only",
+        "wrapper_code": 404,
+        "actual_origin_http_status": null,
+        "actual_guest_browser_http_status": null,
+        "decoded_guest_pixels": null,
+        "visitor_transfer_bytes": null,
+        "classification": "NOT_VISITOR_FAILURE_PROOF"
+      },
+      "catalog_candidate_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "candidate_kind": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+      "rights_observation": "RIGHTS_UNVERIFIED",
+      "conditional_width_limit_px": 960,
+      "conditional_expected_dimensions_px": null,
+      "exact_pixel_crop_identity_established": false,
+      "republication_approved": false,
+      "wordpress_upload_approved": false
+    },
+    {
+      "slot": "418:1",
+      "published_original_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "observed_2026_11_13": {
+        "method": "external_web_retriever_only",
+        "wrapper_code": 403,
+        "actual_origin_http_status": null,
+        "actual_guest_browser_http_status": null,
+        "decoded_guest_pixels": null,
+        "visitor_transfer_bytes": null,
+        "classification": "NOT_VISITOR_FAILURE_PROOF"
+      },
+      "catalog_candidate_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "candidate_kind": "OFFICIAL_PRIMARY_CATALOG",
+      "rights_observation": "USCG_PUBLIC_DOMAIN_RELEASE_CATALOG",
+      "conditional_width_limit_px": 960,
+      "conditional_expected_dimensions_px": null,
+      "exact_pixel_crop_identity_established": false,
+      "republication_approved": false,
+      "wordpress_upload_approved": false
+    },
+    {
+      "slot": "418:2",
+      "published_original_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "observed_2026_11_13": {
+        "method": "external_web_retriever_only",
+        "wrapper_code": 403,
+        "actual_origin_http_status": null,
+        "actual_guest_browser_http_status": null,
+        "decoded_guest_pixels": null,
+        "visitor_transfer_bytes": null,
+        "classification": "NOT_VISITOR_FAILURE_PROOF"
+      },
+      "catalog_candidate_url": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+      "candidate_kind": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+      "rights_observation": "RIGHTS_UNVERIFIED",
+      "conditional_width_limit_px": 960,
+      "conditional_expected_dimensions_px": null,
+      "exact_pixel_crop_identity_established": false,
+      "republication_approved": false,
+      "wordpress_upload_approved": false
+    },
+    {
+      "slot": "407:1",
+      "published_original_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "observed_2026_11_13": {
+        "method": "external_web_retriever_only",
+        "wrapper_code": 400,
+        "actual_origin_http_status": null,
+        "actual_guest_browser_http_status": null,
+        "decoded_guest_pixels": null,
+        "visitor_transfer_bytes": null,
+        "classification": "NOT_VISITOR_FAILURE_PROOF"
+      },
+      "catalog_candidate_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+      "candidate_kind": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+      "rights_observation": "USGS_PUBLIC_DOMAIN_CATALOG",
+      "conditional_width_limit_px": 960,
+      "conditional_expected_dimensions_px": null,
+      "exact_pixel_crop_identity_established": false,
+      "republication_approved": false,
+      "wordpress_upload_approved": false
+    }
+  ],
+  "release_gate": {
+    "genuine_logged_out_browser_evidence_required": true,
+    "exact_historical_photo_or_explicitly_labeled_editorial_alternative": true,
+    "rights_and_credit_per_item_required": true,
+    "max_width_px": 960,
+    "no_upscale": true,
+    "css_width_times_dpr_required": true,
+    "visual_crop_and_caption_parity_required": true,
+    "cache_only_with_rights_and_explicit_approval": true,
+    "wordpress_production_writes_authorized": false
+  },
+  "performance": {
+    "historical_census": {
+      "posts": 61,
+      "image_slots": 355,
+      "external_origin_slots": 288
+    },
+    "expanded_census_kept_separate": {
+      "posts": 66,
+      "image_slots": 361
+    },
+    "historical_alleged_broken_images": 42,
+    "browser_confirmed_broken_images": null,
+    "oversized_wordpress_originals_gt_1500000_bytes": 15,
+    "oversized_wordpress_original_storage_bytes": 47096779,
+    "inline_oversized_originals": 11,
+    "inline_oversized_original_storage_bytes": 38480915,
+    "proposed_transfer_reduction_percent": 76,
+    "measured_actual_transfer_reduction_percent": null,
+    "proper_formula": "100*(sum matched uncached baseline Image encodedDataLength - sum matched uncached candidate Image encodedDataLength)/sum matched uncached baseline Image encodedDataLength; exact CDP request IDs and same cohort",
+    "storage_bytes_are_not_wire_bytes": true
+  },
+  "safety": {
+    "production_wordpress_writes": 0,
+    "third_party_binaries_downloaded": 0,
+    "third_party_cache_writes": 0,
+    "homepage_visual_changes": 0,
+    "merges": 0,
+    "deployments": 0,
+    "subscription_spend_usd": 0
+  }
+}

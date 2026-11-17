@@ -1,0 +1,11 @@
+'use strict';
+const{test}=require('node:test'),assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path');
+const{loadSnapshot}=require('./validate_inventory.cjs');
+const q=JSON.parse(fs.readFileSync(path.join(__dirname,'p0_recovery_queue_20261030.json'),'utf8'));
+const images=loadSnapshot().parts.flatMap(x=>x.images),byKey=new Map(images.map(x=>[x.key,x]));
+test('complete 43-slot P0 scope, 36 offsite and 7 first-party',()=>{assert.deepEqual(q.p0_post_ids,[268,432,418,407,434,621]);assert.equal(q.rows.length,43);assert.equal(q.counts.offsite,36);assert.equal(q.counts.first_party,7)});
+test('exact image keys and stored URL/title match parent census',()=>{assert.equal(new Set(q.rows.map(x=>x.image_key)).size,43);for(const x of q.rows){const p=byKey.get(x.image_key);assert.ok(p,x.image_key);assert.equal(x.exact_stored_url,p.source_url);assert.equal(x.article_url,p.post_url);assert.equal(x.alt_text,p.alt||'');assert.equal(x.source_kind,p.source_kind)}});
+test('no unverified image receives a fake HTTP status or transfer size',()=>{for(const x of q.rows){assert.equal(x.browser_http_status,null);assert.equal(x.transfer_bytes,null);assert.equal(x.verified_broken_in_browser,null);assert.equal(x.browser_state,'NOT_TESTED')}});
+test('rights and image transformations remain approval-gated',()=>{for(const x of q.rows){assert.equal(x.reuse_rights_verified,false);assert.equal(x.exact_asset_identity_verified,false);assert.equal(x.wordpress_media_upload_authorized,false);assert.equal(x.wordpress_post_rewrite_authorized,false);assert.equal(x.localization_plan.max_width_px,960);assert.equal(x.localization_plan.upscale,false);assert.equal(x.localization_plan.expected_savings_percent,null)}});
+test('do not label all 43 P0 image slots as 42 broken',()=>{assert.equal(q.counts.confirmed_broken,null);assert.ok(q.context.includes('42 alleged broken images'))});

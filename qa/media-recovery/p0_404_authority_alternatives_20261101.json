@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-01",
+  "method": "authoritative primary catalog review plus independent web retriever; not guest browser",
+  "scope": [
+    "285:5",
+    "287:5"
+  ],
+  "claims": {
+    "posts": 61,
+    "image_slots": 355,
+    "external_refs": 288,
+    "large_wp_originals": 13,
+    "claimed_42_broken_verified": false,
+    "claimed_76pct_savings_measured": false,
+    "production_images_fixed": 0
+  },
+  "entries": [
+    {
+      "key": "285:5",
+      "post": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "source": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "retriever": {
+        "outcome": "retriever_404",
+        "origin_status": null,
+        "browser_status": null,
+        "browser_bytes": null
+      },
+      "candidates": [
+        {
+          "id": "NARA 540012",
+          "archive": "https://docsteach.org/document/aerial-of-three-mile-island/",
+          "credit": "NARA / Record Group 220",
+          "date": "1979-04-10",
+          "relationship": "different contemporaneous aerial photo; not same published pixels",
+          "rights_evidence": "No Known Copyright, not an affirmative item-specific license",
+          "master_px": null,
+          "target_px": null,
+          "release": "HOLD"
+        },
+        {
+          "id": "CDC PHIL 1194",
+          "archive": "https://wwwn.cdc.gov/phil/Details.aspx?pid=1194",
+          "credit": "CDC / Dr. Ewing",
+          "date": "unknown",
+          "relationship": "different historic aerial view; exact exposure date unverified",
+          "rights_evidence": "Official CDC PHIL record: public domain, no copyright restrictions; binary/caption signoff pending",
+          "master_px": [
+            2843,
+            1817
+          ],
+          "target_px": [
+            960,
+            614
+          ],
+          "size_basis": "Commons derivative catalog, not independently downloaded master",
+          "release": "HOLD"
+        },
+        {
+          "id": "Commons 2010 Marque1313",
+          "archive": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+          "credit": "Commons creator Marque1313",
+          "date": "2010-06",
+          "relationship": "different post-accident view, 31 years after disaster",
+          "rights_evidence": "Creator-dedicated public domain; content identification remains distinct",
+          "master_px": [
+            819,
+            614
+          ],
+          "target_px": [
+            819,
+            614
+          ],
+          "size_basis": "Commons file catalog",
+          "release": "HOLD",
+          "date_note": "Commons file narrative says taken June 6, 2010, while its Date field says June 16, 2010. Do not assert a precise day until independently resolved."
+        }
+      ]
+    },
+    {
+      "key": "287:5",
+      "post": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "source": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+      "retriever": {
+        "outcome": "retriever_404",
+        "origin_status": null,
+        "browser_status": null,
+        "browser_bytes": null
+      },
+      "candidates": [
+        {
+          "id": "Catalyst relocated",
+          "archive": "https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/",
+          "asset": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+          "credit": "University Press of Florida credited by St Pete Catalyst",
+          "date": "1980-aftermath",
+          "relationship": "publisher's same-basename relocation, original binary identity not verified; caption misstates replacement bridge",
+          "rights_evidence": "Publisher photo credit does not confer republication/caching permission",
+          "master_px": null,
+          "target_px": null,
+          "release": "HOLD"
+        },
+        {
+          "id": "Florida Memory K894127",
+          "archive": "https://www.floridamemory.com/items/show/131903",
+          "asset": "https://www.floridamemory.com/fpc/commerce/K894127.jpg",
+          "credit": "State Archives of Florida / H. Milo Stewart",
+          "date": "circa 1987",
+          "relationship": "different photograph of old and new bridges, NOT contemporaneous 1980 collision aftermath",
+          "rights_evidence": "Florida Memory item rights field not affirmative; catalog credit and creator known",
+          "master_px": null,
+          "target_px": null,
+          "release": "HOLD"
+        }
+      ]
+    }
+  ],
+  "safety": {
+    "binary_identity_verified": false,
+    "all_media_caching_held": true,
+    "wordpress_writes_authorized": false,
+    "source_photo_substitution_authorized": false,
+    "actual_browser_evidence": false
+  }
+}

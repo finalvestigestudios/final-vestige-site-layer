@@ -1,0 +1,248 @@
+{
+  "schema": "fv-p0-cdp-cold-lineage-hardening-20261115-v1",
+  "site": "https://finalvestige.com",
+  "date_utc": "2026-11-15",
+  "status": "ISOLATED_DRAFT_QA_ONLY",
+  "linked_prs": {
+    "media_recovery": 183,
+    "site_qa": 154
+  },
+  "first_priority_six": [
+    "285:5",
+    "285:2",
+    "287:5",
+    "418:1",
+    "418:2",
+    "407:1"
+  ],
+  "source_baseline": {
+    "source": "qa/media-recovery/p0_memory_cache_proof_custody_20261115.json",
+    "source_blob": "30544cdb3531b5bef7781d76f43bb9158cd8baec",
+    "historical_posts": 61,
+    "historical_inline_images": 355,
+    "reported_broken_external_images": 42,
+    "reported_broken_browser_verified": null,
+    "claimed_76_percent_network_reduction_measured": false,
+    "last_verified_wp_originals_over_1500000_bytes": 16,
+    "last_verified_wp_original_stored_bytes": 49107665
+  },
+  "evidence_method": "External-reader wrappers measured 2026-11-15; none is an actual visitor/origin HTTP status.",
+  "engineering": {
+    "draft_pr": 183,
+    "changed_source": "qa/media-recovery/adjudicate_p0_guest_evidence_v1.cjs",
+    "source_blob_before": "f4c647581f701241f4256b82721ed776bc5a2c13",
+    "source_blob_after": "59c3aa8f712d2d4c0ff492c6b27fc0d90a0b1b29",
+    "test_file": "qa/media-recovery/test_adjudicate_p0_guest_evidence_v1.cjs",
+    "test_blob_after": "32a04171ad74c37301345d1c06741a49c8d9dc39",
+    "test_method": "Isolated V8, mock require/assert/URL, NOT native Node or real logged-out Chromium",
+    "before": {
+      "passed": 40,
+      "total": 47,
+      "new_regressions_failed": 7
+    },
+    "after": {
+      "passed": 47,
+      "total": 47,
+      "new_regressions_failed": 0
+    },
+    "corrected_false_positive_classes": [
+      "missing, string or fractional probe_version accepted as a valid guest collector",
+      "four false cache booleans accepted with incomplete CDP Image event chain",
+      "four false cache booleans accepted without cold_network_transfer_proven"
+    ]
+  },
+  "acceptance": {
+    "probe_version_must_be_integer_at_least_3": true,
+    "all_four_cache_negative_flags_required": true,
+    "cold_event_chain_complete_required": true,
+    "cold_network_transfer_proven_required": true,
+    "still_requires_dom_current_src_pixels_and_request_id": true
+  },
+  "rows": [
+    {
+      "image_key": "285:5",
+      "post_id": 285,
+      "exact_published_original_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "external_reader": {
+        "date_utc": "2026-11-15",
+        "method": "web.open exact original URL; wrapper, NOT browser/origin HTTP",
+        "wrapper_code": 404,
+        "wrapper_outcome": "NOT_FOUND"
+      },
+      "actual_origin_http_status": null,
+      "actual_guest_browser_http_status": null,
+      "guest_loaded": null,
+      "guest_natural_dimensions_px": null,
+      "guest_current_src": null,
+      "guest_cdp_request_id": null,
+      "guest_encoded_transfer_bytes": null,
+      "catalog_record_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "candidate_identity_relation": "publisher-linked original, requested 16:9 crop differs from native 4:3",
+      "rights_review": "Commons uploader public-domain dedication; creator and published crop require verification",
+      "native_master_dimensions_px": [
+        819,
+        614
+      ],
+      "maximum_derivative_width_px": 819,
+      "conditional_derivative_dimensions_px": [
+        819,
+        614
+      ],
+      "rights_authorized_to_cache": false,
+      "wp_upload_authorized": false,
+      "production_post_write_authorized": false,
+      "candidate_status": "HOLD_GUEST_AND_RIGHTS_UNVERIFIED"
+    },
+    {
+      "image_key": "285:2",
+      "post_id": 285,
+      "exact_published_original_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "external_reader": {
+        "date_utc": "2026-11-15",
+        "method": "web.open exact original URL; wrapper, NOT browser/origin HTTP",
+        "wrapper_code": 500,
+        "wrapper_outcome": "INACCESSIBLE_PUBLISHER_REDIRECT"
+      },
+      "actual_origin_http_status": null,
+      "actual_guest_browser_http_status": null,
+      "guest_loaded": null,
+      "guest_natural_dimensions_px": null,
+      "guest_current_src": null,
+      "guest_cdp_request_id": null,
+      "guest_encoded_transfer_bytes": null,
+      "catalog_record_url": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+      "candidate_identity_relation": "specific Figure 4 NRC-attributed panel; not replaceable by generic TMI photo",
+      "rights_review": "Publisher's migrated article; diagram reuse clearance not established",
+      "native_master_dimensions_px": null,
+      "maximum_derivative_width_px": 960,
+      "conditional_derivative_dimensions_px": null,
+      "rights_authorized_to_cache": false,
+      "wp_upload_authorized": false,
+      "production_post_write_authorized": false,
+      "candidate_status": "HOLD_GUEST_AND_RIGHTS_UNVERIFIED"
+    },
+    {
+      "image_key": "287:5",
+      "post_id": 287,
+      "exact_published_original_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "external_reader": {
+        "date_utc": "2026-11-15",
+        "method": "web.open exact original URL; wrapper, NOT browser/origin HTTP",
+        "wrapper_code": 404,
+        "wrapper_outcome": "NOT_FOUND"
+      },
+      "actual_origin_http_status": null,
+      "actual_guest_browser_http_status": null,
+      "guest_loaded": null,
+      "guest_natural_dimensions_px": null,
+      "guest_current_src": null,
+      "guest_cdp_request_id": null,
+      "guest_encoded_transfer_bytes": null,
+      "catalog_record_url": "https://www.floridamemory.com/items/show/32083",
+      "candidate_identity_relation": "chronologically relevant but different photograph from publisher image",
+      "rights_review": "Florida State Archives separate historical image; rights icon requires item check",
+      "native_master_dimensions_px": null,
+      "maximum_derivative_width_px": 960,
+      "conditional_derivative_dimensions_px": null,
+      "rights_authorized_to_cache": false,
+      "wp_upload_authorized": false,
+      "production_post_write_authorized": false,
+      "candidate_status": "HOLD_GUEST_AND_RIGHTS_UNVERIFIED"
+    },
+    {
+      "image_key": "418:1",
+      "post_id": 418,
+      "exact_published_original_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "external_reader": {
+        "date_utc": "2026-11-15",
+        "method": "web.open exact original URL; wrapper, NOT browser/origin HTTP",
+        "wrapper_code": 403,
+        "wrapper_outcome": "FORBIDDEN"
+      },
+      "actual_origin_http_status": null,
+      "actual_guest_browser_http_status": null,
+      "guest_loaded": null,
+      "guest_natural_dimensions_px": null,
+      "guest_current_src": null,
+      "guest_cdp_request_id": null,
+      "guest_encoded_transfer_bytes": null,
+      "catalog_record_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "candidate_identity_relation": "VIRIN 210330-G-DE713-0002, Anthony Pettit portrait; exact crop/pixels not checked",
+      "rights_review": "U.S. Coast Guard catalog says public domain, with credit and DoD usage notice",
+      "native_master_dimensions_px": null,
+      "maximum_derivative_width_px": 960,
+      "conditional_derivative_dimensions_px": null,
+      "rights_authorized_to_cache": false,
+      "wp_upload_authorized": false,
+      "production_post_write_authorized": false,
+      "candidate_status": "HOLD_GUEST_AND_RIGHTS_UNVERIFIED"
+    },
+    {
+      "image_key": "418:2",
+      "post_id": 418,
+      "exact_published_original_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "external_reader": {
+        "date_utc": "2026-11-15",
+        "method": "web.open exact original URL; wrapper, NOT browser/origin HTTP",
+        "wrapper_code": 403,
+        "wrapper_outcome": "FORBIDDEN"
+      },
+      "actual_origin_http_status": null,
+      "actual_guest_browser_http_status": null,
+      "guest_loaded": null,
+      "guest_natural_dimensions_px": null,
+      "guest_current_src": null,
+      "guest_cdp_request_id": null,
+      "guest_encoded_transfer_bytes": null,
+      "catalog_record_url": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+      "candidate_identity_relation": "historical lighthouse destruction, same scene candidate not binary match",
+      "rights_review": "Museum article credits U.S. Coast Guard; exact photograph permissions not yet independently cleared",
+      "native_master_dimensions_px": null,
+      "maximum_derivative_width_px": 960,
+      "conditional_derivative_dimensions_px": null,
+      "rights_authorized_to_cache": false,
+      "wp_upload_authorized": false,
+      "production_post_write_authorized": false,
+      "candidate_status": "HOLD_GUEST_AND_RIGHTS_UNVERIFIED"
+    },
+    {
+      "image_key": "407:1",
+      "post_id": 407,
+      "exact_published_original_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "external_reader": {
+        "date_utc": "2026-11-15",
+        "method": "web.open exact original URL; wrapper, NOT browser/origin HTTP",
+        "wrapper_code": 400,
+        "wrapper_outcome": "UNSUPPORTED_BINARY_MIME"
+      },
+      "actual_origin_http_status": null,
+      "actual_guest_browser_http_status": null,
+      "guest_loaded": null,
+      "guest_natural_dimensions_px": null,
+      "guest_current_src": null,
+      "guest_cdp_request_id": null,
+      "guest_encoded_transfer_bytes": null,
+      "catalog_record_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+      "candidate_identity_relation": "1959 Hebgen fault scarp scene, exact binary identity pending",
+      "rights_review": "U.S. Geological Survey item says public domain, photographer J. R. Stacy",
+      "native_master_dimensions_px": null,
+      "maximum_derivative_width_px": 960,
+      "conditional_derivative_dimensions_px": null,
+      "rights_authorized_to_cache": false,
+      "wp_upload_authorized": false,
+      "production_post_write_authorized": false,
+      "candidate_status": "HOLD_GUEST_AND_RIGHTS_UNVERIFIED"
+    }
+  ],
+  "release": {
+    "browser_cold_capture_required": true,
+    "rights_and_exact_scene_approval_required": true,
+    "max_width_px": 960,
+    "no_upscale": true,
+    "all_candidate_assets_held": true,
+    "wordpress_production_changes": 0,
+    "media_files_downloaded_or_cached": 0,
+    "homepage_changes": 0,
+    "subscription_spend_usd": 0
+  }
+}

@@ -1,0 +1,389 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-11-03",
+  "post_id": 407,
+  "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+  "inventory_source": {
+    "method": "frozen 2026-10-30 authenticated WordPress census, NOT a fresh CMS readback",
+    "path": "qa/media-recovery/parts/02.json",
+    "git_blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d"
+  },
+  "retriever_scope": "Fresh Nov 3 independent web.open of eight exact frozen src URLs; no logged-out guest Chrome",
+  "summary": {
+    "slots": 8,
+    "exact_urls_displayed": 6,
+    "exact_url_octet_stream_retriever_unsupported": 1,
+    "exact_url_inaccessible_without_origin_status": 1,
+    "official_usgs_catalog_matches": 8,
+    "official_usgs_renditions_independently_displayed": 2,
+    "guest_browser_failures_confirmed": 0,
+    "observed_actual_origin_http_statuses": 0,
+    "measured_transfer_bytes": 0,
+    "production_images_fixed": 0,
+    "sitewide_42_report_confirmed": false,
+    "sitewide_76_percent_measured": false
+  },
+  "rows": [
+    {
+      "key": "407:0",
+      "slot": 0,
+      "published_src_from_20261030": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/vhp_img317.jpg",
+      "published_alt_from_20261030": "A house partly submerged in Hebgen Lake beside a broken roadway after the 1959 earthquake.",
+      "published_html_dimensions_px": {
+        "width": null,
+        "height": null
+      },
+      "exact_source_retriever": {
+        "method": "web.open (independent renderer, NOT guest browser HTTP)",
+        "observation": "DISPLAYED",
+        "wrapper_error_code": null,
+        "observed_origin_http_status": null,
+        "observed_response_mime": null
+      },
+      "official_usgs_catalog_url": "https://www.usgs.gov/media/images/earthquake-damage-1959-hebgen-lake-event-yellowstone-plateau",
+      "catalog_reports_public_domain": true,
+      "creator_and_rights_note": "USGS catalog describes Mrs. Grace Miller house partly submerged; primary catalog marks Public Domain; photographer not specified.",
+      "official_rendition_candidate_url": null,
+      "official_rendition_retriever_observation": null,
+      "identical_binary_or_crop_verified": false,
+      "source_intrinsic_dimensions_px": {
+        "width": null,
+        "height": null
+      },
+      "conditional_derivative": {
+        "max_width_px": 960,
+        "target_width_px": null,
+        "target_height_px": null,
+        "no_upscale": true
+      },
+      "guest_browser": {
+        "http_status": null,
+        "final_current_src": null,
+        "natural_width_px": null,
+        "decoded": null,
+        "mime": null,
+        "cdp_encoded_bytes": null,
+        "visibly_broken": null
+      },
+      "copyright_clearance": "HOLD_ITEM_REVIEW",
+      "wp_media_cache_approved": false,
+      "wordpress_production_write_approved": false
+    },
+    {
+      "key": "407:1",
+      "slot": 1,
+      "published_src_from_20261030": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "published_alt_from_20261030": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake.",
+      "published_html_dimensions_px": {
+        "width": null,
+        "height": null
+      },
+      "exact_source_retriever": {
+        "method": "web.open (independent renderer, NOT guest browser HTTP)",
+        "observation": "RETRIEVER_UNSUPPORTED_BINARY_OCTET_STREAM",
+        "wrapper_error_code": 400,
+        "observed_origin_http_status": null,
+        "observed_response_mime": null
+      },
+      "official_usgs_catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+      "catalog_reports_public_domain": true,
+      "creator_and_rights_note": "USGS credits J. R. Stacy and marks Public Domain; an official USGS thumbnail of this scene rendered, but original current URL yielded binary/octet-stream to web retriever.",
+      "official_rendition_candidate_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+      "official_rendition_retriever_observation": "DISPLAYED_FROM_OFFICIAL_USGS_LINK",
+      "identical_binary_or_crop_verified": false,
+      "source_intrinsic_dimensions_px": {
+        "width": null,
+        "height": null
+      },
+      "conditional_derivative": {
+        "max_width_px": 960,
+        "target_width_px": null,
+        "target_height_px": null,
+        "no_upscale": true
+      },
+      "guest_browser": {
+        "http_status": null,
+        "final_current_src": null,
+        "natural_width_px": null,
+        "decoded": null,
+        "mime": null,
+        "cdp_encoded_bytes": null,
+        "visibly_broken": null
+      },
+      "copyright_clearance": "HOLD_ITEM_REVIEW",
+      "wp_media_cache_approved": false,
+      "wordpress_production_write_approved": false
+    },
+    {
+      "key": "407:2",
+      "slot": 2,
+      "published_src_from_20261030": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake1.jpg",
+      "published_alt_from_20261030": "The Madison Slide and rapidly filling Earthquake Lake four days after the 1959 Hebgen Lake earthquake, with camping gear abandoned by survivors in the foreground.",
+      "published_html_dimensions_px": {
+        "width": 1024,
+        "height": 719
+      },
+      "exact_source_retriever": {
+        "method": "web.open (independent renderer, NOT guest browser HTTP)",
+        "observation": "DISPLAYED",
+        "wrapper_error_code": null,
+        "observed_origin_http_status": null,
+        "observed_response_mime": null
+      },
+      "official_usgs_catalog_url": "https://www.usgs.gov/media/images/view-madison-slide-august-21-1959-rapidly-filling-earthquake-lake",
+      "catalog_reports_public_domain": true,
+      "creator_and_rights_note": "USGS credits Professor William B. Hall, Montana School of Mines; 1959-08-21 view; USGS marks Public Domain despite non-federal credited photographer, so hold item review.",
+      "official_rendition_candidate_url": null,
+      "official_rendition_retriever_observation": null,
+      "identical_binary_or_crop_verified": false,
+      "source_intrinsic_dimensions_px": {
+        "width": null,
+        "height": null
+      },
+      "conditional_derivative": {
+        "max_width_px": 960,
+        "target_width_px": null,
+        "target_height_px": null,
+        "no_upscale": true
+      },
+      "guest_browser": {
+        "http_status": null,
+        "final_current_src": null,
+        "natural_width_px": null,
+        "decoded": null,
+        "mime": null,
+        "cdp_encoded_bytes": null,
+        "visibly_broken": null
+      },
+      "copyright_clearance": "HOLD_ITEM_REVIEW",
+      "wp_media_cache_approved": false,
+      "wordpress_production_write_approved": false
+    },
+    {
+      "key": "407:3",
+      "slot": 3,
+      "published_src_from_20261030": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake3.jpg",
+      "published_alt_from_20261030": "Dragline excavating the Earthquake Lake spillway on October 18, 1959, with one of the nighttime lighting plants visible on the hillside.",
+      "published_html_dimensions_px": {
+        "width": 1024,
+        "height": 730
+      },
+      "exact_source_retriever": {
+        "method": "web.open (independent renderer, NOT guest browser HTTP)",
+        "observation": "RETRIEVER_INACCESSIBLE_NO_STATUS",
+        "wrapper_error_code": null,
+        "observed_origin_http_status": null,
+        "observed_response_mime": null
+      },
+      "official_usgs_catalog_url": "https://www.usgs.gov/media/images/dragline-working-lower-outlet-channel-earthquake-lake-october-18-1959",
+      "catalog_reports_public_domain": true,
+      "creator_and_rights_note": "USGS credits Mrs. Steven W. Nile, Montana School of Mines; primary catalog marks Public Domain despite non-federal credited photographer; official medium rendition rendered.",
+      "official_rendition_candidate_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/medium/public/media/images/EarthquakeLake3.jpg?itok=CeFY5xC-",
+      "official_rendition_retriever_observation": "DISPLAYED_FROM_OFFICIAL_USGS_LINK",
+      "identical_binary_or_crop_verified": false,
+      "source_intrinsic_dimensions_px": {
+        "width": null,
+        "height": null
+      },
+      "conditional_derivative": {
+        "max_width_px": 960,
+        "target_width_px": null,
+        "target_height_px": null,
+        "no_upscale": true
+      },
+      "guest_browser": {
+        "http_status": null,
+        "final_current_src": null,
+        "natural_width_px": null,
+        "decoded": null,
+        "mime": null,
+        "cdp_encoded_bytes": null,
+        "visibly_broken": null
+      },
+      "copyright_clearance": "HOLD_ITEM_REVIEW",
+      "wp_media_cache_approved": false,
+      "wordpress_production_write_approved": false
+    },
+    {
+      "key": "407:4",
+      "slot": 4,
+      "published_src_from_20261030": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7536.jpg",
+      "published_alt_from_20261030": "Rockslide damage along the Golden Gate road near Mammoth Hot Springs caused by the 1959 Hebgen Lake earthquake.",
+      "published_html_dimensions_px": {
+        "width": null,
+        "height": null
+      },
+      "exact_source_retriever": {
+        "method": "web.open (independent renderer, NOT guest browser HTTP)",
+        "observation": "DISPLAYED",
+        "wrapper_error_code": null,
+        "observed_origin_http_status": null,
+        "observed_response_mime": null
+      },
+      "official_usgs_catalog_url": "https://www.usgs.gov/media/images/rockslide-damage-golden-gate-area-near-mammoth-hot-springs",
+      "catalog_reports_public_domain": true,
+      "creator_and_rights_note": "USGS Yellowstone catalog marks Public Domain; source image may have NPS provenance; original author not confirmed.",
+      "official_rendition_candidate_url": null,
+      "official_rendition_retriever_observation": null,
+      "identical_binary_or_crop_verified": false,
+      "source_intrinsic_dimensions_px": {
+        "width": null,
+        "height": null
+      },
+      "conditional_derivative": {
+        "max_width_px": 960,
+        "target_width_px": null,
+        "target_height_px": null,
+        "no_upscale": true
+      },
+      "guest_browser": {
+        "http_status": null,
+        "final_current_src": null,
+        "natural_width_px": null,
+        "decoded": null,
+        "mime": null,
+        "cdp_encoded_bytes": null,
+        "visibly_broken": null
+      },
+      "copyright_clearance": "HOLD_ITEM_REVIEW",
+      "wp_media_cache_approved": false,
+      "wordpress_production_write_approved": false
+    },
+    {
+      "key": "407:5",
+      "slot": 5,
+      "published_src_from_20261030": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7538.jpg",
+      "published_alt_from_20261030": "Sapphire Pool in Yellowstone erupting after the 1959 Hebgen Lake earthquake altered the park’s hydrothermal system.",
+      "published_html_dimensions_px": {
+        "width": null,
+        "height": null
+      },
+      "exact_source_retriever": {
+        "method": "web.open (independent renderer, NOT guest browser HTTP)",
+        "observation": "DISPLAYED",
+        "wrapper_error_code": null,
+        "observed_origin_http_status": null,
+        "observed_response_mime": null
+      },
+      "official_usgs_catalog_url": "https://www.usgs.gov/media/images/sapphire-pool-upper-geyser-basin-erupting-after-1959-hebg",
+      "catalog_reports_public_domain": true,
+      "creator_and_rights_note": "USGS Yellowstone catalog marks Public Domain; original photographer unverified; source represents post-quake eruption, not generic geyser photo.",
+      "official_rendition_candidate_url": null,
+      "official_rendition_retriever_observation": null,
+      "identical_binary_or_crop_verified": false,
+      "source_intrinsic_dimensions_px": {
+        "width": null,
+        "height": null
+      },
+      "conditional_derivative": {
+        "max_width_px": 960,
+        "target_width_px": null,
+        "target_height_px": null,
+        "no_upscale": true
+      },
+      "guest_browser": {
+        "http_status": null,
+        "final_current_src": null,
+        "natural_width_px": null,
+        "decoded": null,
+        "mime": null,
+        "cdp_encoded_bytes": null,
+        "visibly_broken": null
+      },
+      "copyright_clearance": "HOLD_ITEM_REVIEW",
+      "wp_media_cache_approved": false,
+      "wordpress_production_write_approved": false
+    },
+    {
+      "key": "407:6",
+      "slot": 6,
+      "published_src_from_20261030": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7537.jpg",
+      "published_alt_from_20261030": "Seismic Geyser erupting in Yellowstone in 1970 after developing from a fracture formed following the 1959 earthquake.",
+      "published_html_dimensions_px": {
+        "width": null,
+        "height": null
+      },
+      "exact_source_retriever": {
+        "method": "web.open (independent renderer, NOT guest browser HTTP)",
+        "observation": "DISPLAYED",
+        "wrapper_error_code": null,
+        "observed_origin_http_status": null,
+        "observed_response_mime": null
+      },
+      "official_usgs_catalog_url": "https://www.usgs.gov/media/images/seismic-geyser-eruption-1970",
+      "catalog_reports_public_domain": true,
+      "creator_and_rights_note": "USGS credits John Brandow and marks Public Domain; preserve year 1970 in ALT, not 1959 event photo.",
+      "official_rendition_candidate_url": null,
+      "official_rendition_retriever_observation": null,
+      "identical_binary_or_crop_verified": false,
+      "source_intrinsic_dimensions_px": {
+        "width": null,
+        "height": null
+      },
+      "conditional_derivative": {
+        "max_width_px": 960,
+        "target_width_px": null,
+        "target_height_px": null,
+        "no_upscale": true
+      },
+      "guest_browser": {
+        "http_status": null,
+        "final_current_src": null,
+        "natural_width_px": null,
+        "decoded": null,
+        "mime": null,
+        "cdp_encoded_bytes": null,
+        "visibly_broken": null
+      },
+      "copyright_clearance": "HOLD_ITEM_REVIEW",
+      "wp_media_cache_approved": false,
+      "wordpress_production_write_approved": false
+    },
+    {
+      "key": "407:7",
+      "slot": 7,
+      "published_src_from_20261030": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/Quake%20lake%20and%20slide%2020230627.jpg",
+      "published_alt_from_20261030": "Earthquake Lake in 2023 with standing dead trees in the water and the 1959 Madison Slide scar visible beyond the lake.",
+      "published_html_dimensions_px": {
+        "width": 1024,
+        "height": 771
+      },
+      "exact_source_retriever": {
+        "method": "web.open (independent renderer, NOT guest browser HTTP)",
+        "observation": "DISPLAYED",
+        "wrapper_error_code": null,
+        "observed_origin_http_status": null,
+        "observed_response_mime": null
+      },
+      "official_usgs_catalog_url": "https://www.usgs.gov/media/images/earthquake-lake-and-madison-slide",
+      "catalog_reports_public_domain": true,
+      "creator_and_rights_note": "USGS credits Mike Poland; image taken 2023-06-27, modern landscape documenting 1959 aftermath, marks Public Domain.",
+      "official_rendition_candidate_url": null,
+      "official_rendition_retriever_observation": null,
+      "identical_binary_or_crop_verified": false,
+      "source_intrinsic_dimensions_px": {
+        "width": null,
+        "height": null
+      },
+      "conditional_derivative": {
+        "max_width_px": 960,
+        "target_width_px": null,
+        "target_height_px": null,
+        "no_upscale": true
+      },
+      "guest_browser": {
+        "http_status": null,
+        "final_current_src": null,
+        "natural_width_px": null,
+        "decoded": null,
+        "mime": null,
+        "cdp_encoded_bytes": null,
+        "visibly_broken": null
+      },
+      "copyright_clearance": "HOLD_ITEM_REVIEW",
+      "wp_media_cache_approved": false,
+      "wordpress_production_write_approved": false
+    }
+  ],
+  "release_status": "HOLD_NEEDS_GUEST_BROWSER_PLUS_RIGHTS_AND_CROP"
+}

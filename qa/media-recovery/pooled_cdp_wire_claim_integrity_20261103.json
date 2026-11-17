@@ -1,0 +1,129 @@
+{
+  "schema": "fv-pooled-cdp-image-wire-claim-guard-v1",
+  "audit_date_local": "2026-11-03",
+  "scope": "isolated read-only image-transfer evaluator code; synthetic tests only",
+  "source_inventory": {
+    "id": "FV-20261030-61POST-355SLOT",
+    "posts": 61,
+    "image_slots": 355,
+    "external_upstream_references": 288,
+    "oversized_wp_originals_gt_1_5MiB": 13,
+    "source_inventory_blob_sha": "b5e78a6bea067a132caa9a958a65b58bdad9a06f"
+  },
+  "finding": {
+    "id": "P0-MEDIAN-PERCENT-OVERCLAIM",
+    "issue": "A median of three percent-savings samples can exceed 76% even when the overwhelming majority of CDP wire bytes are not saved.",
+    "former_claim_logic": "median(100*(baseline_i-candidate_i)/baseline_i) >=76",
+    "replacement_logic": "pooled_total_bytes_reduction=100*(SUM(baseline_i)-SUM(candidate_i))/SUM(baseline_i); 76% badge requires 61/355 frozen census, >=3 matched runs, pooled ratio >=76 and EACH run's raw ratio >=76",
+    "additional": "fail closed if pooled integer byte totals are outside Number.isSafeInteger bounds; preserve median as diagnostic, not official site-wide percentage"
+  },
+  "synthetic_tests": {
+    "cases_passed": 36,
+    "cases_failed": 0,
+    "runner": "exact committed GitHub content executed in isolated V8 CommonJS compatibility shim (NOT native Node CI or guest browser)",
+    "examples": [
+      {
+        "name": "skewed third repeat",
+        "posts": 61,
+        "baseline_bytes_by_repeat": [
+          61000,
+          61000,
+          6100000
+        ],
+        "candidate_bytes_by_repeat": [
+          14640,
+          14640,
+          6100000
+        ],
+        "median_repeat_reduction_percent": 76,
+        "pooled_baseline_bytes": 6222000,
+        "pooled_candidate_bytes": 6129280,
+        "pooled_reduction_percent": 1.49,
+        "claim_76_blocked": true
+      },
+      {
+        "name": "one repeat degraded at one post",
+        "posts": 61,
+        "baseline_bytes_by_repeat": [
+          61000,
+          61000,
+          61000
+        ],
+        "candidate_bytes_by_repeat": [
+          15200,
+          14640,
+          14640
+        ],
+        "median_repeat_reduction_percent": 76,
+        "pooled_reduction_percent": 75.694,
+        "claim_76_blocked": true
+      },
+      {
+        "name": "unsafe pooled sums",
+        "posts": 61,
+        "baseline_byte_sum_above_max_safe_integer": true,
+        "result": "INSUFFICIENT_DATA"
+      }
+    ]
+  },
+  "commits": {
+    "evaluator": "da1e6a53b87ae010ff9771efcd885072def53ce7",
+    "test_suite": "9bcce163c3a1e48b8bb2577aa7f1473b5040de73",
+    "previous_test_revision": "09c40f175d6afac11d60ee324140c4f969af0445"
+  },
+  "blobs": {
+    "evaluator": "6d956cabb3c5621b9e974282eb04980b0f072d73",
+    "test_suite": "609119446710b1b4d0aae7ed7053c85359a42d59"
+  },
+  "priority_image_reference": {
+    "slot": "287:5",
+    "article_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+    "original_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+    "observation_date": "2026-11-03",
+    "method": "independent_web_image_retriever",
+    "retriever_wrapper_http_code": 404,
+    "actual_origin_http_status": null,
+    "guest_browser_http_status": null,
+    "guest_decoded": null,
+    "guest_cdp_transfer_bytes": null,
+    "confirmed_visitor_broken": false,
+    "primary_archive_candidate": {
+      "institution": "Florida Memory / State Archives of Florida",
+      "catalog_id": "K894127",
+      "catalog_url": "https://floridamemory.com/items/show/131903",
+      "source_image_url": "https://www.floridamemory.com/fpc/commerce/K894127.jpg",
+      "candidate_intrinsic_dimensions_px": [
+        600,
+        595
+      ],
+      "conditional_no_upscale_dimensions_px": [
+        600,
+        595
+      ],
+      "maximum_requested_width_px": 960,
+      "exact_binary_match": false,
+      "rights_note": "Florida Memory PDM 1.0 is a mark rather than unconditional rights grant; donor restrictions and precise source credit require review.",
+      "rights_cleared": false,
+      "wp_media_localization_approved": false,
+      "source_note": "Related 1987 photograph, not 1980 collapse scene."
+    },
+    "source_audit_file": "qa/media-recovery/skyway_287_p0_florida_archive_20261103.json"
+  },
+  "claim_status": {
+    "reported_broken_count": 42,
+    "verified_guest_broken_count": null,
+    "claimed_weight_reduction_percent": 76,
+    "actual_wire_reduction_percent": null,
+    "sitewide_76_verified": false,
+    "production_repaired": 0
+  },
+  "safety": {
+    "third_party_binary_downloads": 0,
+    "wordPress_production_writes": 0,
+    "homepage_design_edits": 0,
+    "existing_site_QA_drafts_modified": 0,
+    "subscriptions_purchased": 0,
+    "site_qa_pr": 154,
+    "media_pr": 183
+  }
+}

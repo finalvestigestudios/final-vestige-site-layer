@@ -1,0 +1,13 @@
+'use strict';
+const{test}=require('node:test'),assert=require('node:assert/strict');
+const{loadSnapshot,validateSnapshot}=require('./validate_inventory.cjs');
+const baseline=loadSnapshot(),copy=()=>JSON.parse(JSON.stringify(baseline));
+test('complete stored-media inventory, provenance counts and rights gates',()=>{const r=validateSnapshot(baseline);assert.equal(r.ok,true,r.errors.join('; '));assert.equal(r.metrics.published_posts,61);assert.equal(r.metrics.stored_images,355);assert.equal(r.metrics.offsite,288);assert.equal(r.metrics.oversize_originals,13)});
+test('reject invented browser image-success status',()=>{const d=copy();d.parts[0].images[0].actual_http_status=200;assert.equal(validateSnapshot(d).ok,false)});
+test('reject invented browser image failure',()=>{const d=copy();d.parts[0].images[0].broken_in_browser=true;assert.equal(validateSnapshot(d).ok,false)});
+test('reject unconfirmed 42 broken / 76 percent reduction as proven',()=>{const a=copy();a.summary.browser_verified_broken_images=42;assert.equal(validateSnapshot(a).ok,false);const b=copy();b.summary.reported_76_percent_weight_reduction='verified';assert.equal(validateSnapshot(b).ok,false)});
+test('reject orphan catalog record',()=>{const d=copy();d.sources[0].image_key='999:0';assert.equal(validateSnapshot(d).ok,false)});
+test('reject unapproved localization',()=>{const d=copy();d.parts[0].images[0].allowed_to_localize=true;assert.equal(validateSnapshot(d).ok,false)});
+test('reject oversize-output plans',()=>{const d=copy();d.sources[0].output_max_width_px=1920;assert.equal(validateSnapshot(d).ok,false)});
+test('reject viewer evidence promoted to browser status',()=>{const d=copy();d.viewer[0].browser_http_status=403;assert.equal(validateSnapshot(d).ok,false)});
+test('reject original file size treated as measured browser bytes',()=>{const d=copy();d.oversize[0].browser_transfer_bytes=50000;assert.equal(validateSnapshot(d).ok,false)});

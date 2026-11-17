@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-11-02",
+  "run_kind": "READ_ONLY_FROZEN_BASELINE_ATTESTATION",
+  "scope": "61 published Gutenberg articles and 355 stored inline image slots; source-only, not guest HTTP",
+  "baseline_source": "2026-10-30 frozen article inventory, unchanged 2026-11-02 authenticated read-only WordPress source recheck",
+  "source_files": [
+    {
+      "path": "qa/media-recovery/parts/01.json",
+      "git_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+    },
+    {
+      "path": "qa/media-recovery/parts/02.json",
+      "git_blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d"
+    },
+    {
+      "path": "qa/media-recovery/parts/03.json",
+      "git_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e"
+    },
+    {
+      "path": "qa/media-recovery/parts/04.json",
+      "git_blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+    },
+    {
+      "path": "qa/media-recovery/parts/05.json",
+      "git_blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9"
+    },
+    {
+      "path": "qa/media-recovery/parts/06.json",
+      "git_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69"
+    },
+    {
+      "path": "qa/media-recovery/parts/07.json",
+      "git_blob_sha": "21095161e633aba093b74c0ead9936c9f6186d00"
+    },
+    {
+      "path": "qa/media-recovery/parts/08.json",
+      "git_blob_sha": "5659ec243c188928be3f89c0f96354b660608ca2"
+    }
+  ],
+  "git_snapshot_read_proof": {
+    "parts": 8,
+    "post_rows": 61,
+    "unique_post_ids": 61,
+    "image_rows": 355,
+    "unique_image_keys": 355,
+    "all_part_blob_shas_match": true,
+    "per_post_photo_counts_match": true,
+    "images_without_post_id": 0
+  },
+  "unsafe_gap_closed": "Old pair evaluator accepted any internally self-consistent fake 61-post / 355-image CDP capture, even if the post IDs, permalinks and image URLs were not part of Final Vestige.",
+  "release_gate": {
+    "entrypoint": "qa/media-recovery/cli_weight_claim_pair_gate_20261102.cjs",
+    "new_identity_core": "qa/media-recovery/frozen_census_claim_gate_20261102.cjs",
+    "sequence": [
+      "git-SHA verify all 8 frozen image parts",
+      "validate archive schema and 61/355 internal consistency",
+      "match ALL baseline post IDs/permalinks and ALL exact image slot keys/source URLs",
+      "run existing strict CDP requestId per-photo before/after byte evaluator",
+      "reject without source continuity, rights, crop, publishing approvals on changed slots"
+    ],
+    "tests": "qa/media-recovery/test_frozen_census_claim_gate_20261102.cjs",
+    "native_node_tests_passed": 13,
+    "pinned_repo_part_integrity_verified": true,
+    "actual_guest_chrome_evidence_present": false,
+    "claim_76_percent_supported": null
+  },
+  "priority_suspect_urls": [
+    {
+      "image_key": "285:5",
+      "src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "independent_retriever": "wrapper_404_previously_observed_not_origin_status",
+      "next": "guest CDP actual currentSrc/requestId/naturalWidth"
+    },
+    {
+      "image_key": "287:5",
+      "src": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "independent_retriever": "wrapper_404_previously_observed_not_origin_status",
+      "next": "guest CDP actual currentSrc/requestId/naturalWidth"
+    },
+    {
+      "image_key": "418:1",
+      "src": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "next": "guest CDP actual currentSrc/requestId/naturalWidth"
+    },
+    {
+      "image_key": "418:2",
+      "src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "next": "guest CDP actual currentSrc/requestId/naturalWidth"
+    },
+    {
+      "image_key": "407:1",
+      "src": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "next": "guest CDP actual currentSrc/requestId/naturalWidth"
+    }
+  ],
+  "known_constraints": {
+    "broken_image_count_reported": 42,
+    "broken_image_count_guest_verified": null,
+    "claimed_76_percent_image_weight_reduction_actual_measured": null,
+    "wp_media_originals_above_1_5_MiB": 13,
+    "browser_transfer_bytes": null,
+    "maximum_future_derivative_width_px": 960,
+    "upscale_allowed": false,
+    "archive_rights_clearance_required": true,
+    "cached_media_wp_upload_authorized": false,
+    "wp_production_post_change_authorized": false,
+    "homepage_design_changed": false,
+    "subscription_spend": false
+  }
+}

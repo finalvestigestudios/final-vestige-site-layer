@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "date_utc": "2026-11-03",
+  "source_doc": "qa/media-recovery/live_110_media_13_oversize_scotch418_20261103.json",
+  "source_blob_sha": "b2d4b8f02c63b566eff494c205ac1a45e541ee7b",
+  "source_method": "authenticated read-only WordPress 110 media census and eight post source checks",
+  "evidence_kind": "source metadata only, NOT Chrome/CDP measured",
+  "source_61_posts_355_slots_snapshot": "2026-10-30 frozen; sitewide live rewrite must be revalidated",
+  "summary": {
+    "selected_posts": 5,
+    "selected_slots": 5,
+    "original_storage_bytes": 13267538,
+    "original_pixels_each": [
+      1672,
+      941
+    ],
+    "conditional_derivative_pixels_each": [
+      960,
+      540
+    ],
+    "conditional_pixel_area_reduction_percent": 67.051,
+    "pixel_reduction_is_not_wire_savings": true,
+    "reported_76_percent_measured": false,
+    "reported_42_browser_broken_confirmed": false,
+    "production_repairs": 0
+  },
+  "records": [
+    {
+      "post_id": 34,
+      "slot_key": "34:0",
+      "media_id": 39,
+      "published_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "original_storage_bytes": 2892087,
+      "original_pixels": [
+        1672,
+        941
+      ],
+      "registered_subsizes": 0,
+      "conditional_no_upscale_derivative_px": [
+        960,
+        540
+      ],
+      "post_modified": "2026-10-29T21:19:13",
+      "source_alt": "AI-assisted historical reconstruction of firefighters and horse-drawn fire engines on a ruined San Francisco street during the April 1906 fires",
+      "actual_guest_current_src": null,
+      "guest_status_http": null,
+      "guest_decode_ok": null,
+      "guest_encoded_wire_bytes": null,
+      "rights_clearance": "HOLD",
+      "candidate_publication_approved": false
+    },
+    {
+      "post_id": 35,
+      "slot_key": "35:0",
+      "media_id": 40,
+      "published_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "original_storage_bytes": 2552136,
+      "original_pixels": [
+        1672,
+        941
+      ],
+      "registered_subsizes": 0,
+      "conditional_no_upscale_derivative_px": [
+        960,
+        540
+      ],
+      "post_modified": "2026-10-29T17:07:04",
+      "source_alt": "AI-assisted historical reconstruction of Shackleton's six-man James Caird voyage across the Southern Ocean in 1916",
+      "actual_guest_current_src": null,
+      "guest_status_http": null,
+      "guest_decode_ok": null,
+      "guest_encoded_wire_bytes": null,
+      "rights_clearance": "HOLD",
+      "candidate_publication_approved": false
+    },
+    {
+      "post_id": 36,
+      "slot_key": "36:0",
+      "media_id": 41,
+      "published_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "original_storage_bytes": 2498247,
+      "original_pixels": [
+        1672,
+        941
+      ],
+      "registered_subsizes": 0,
+      "conditional_no_upscale_derivative_px": [
+        960,
+        540
+      ],
+      "post_modified": "2026-10-29T17:07:30",
+      "source_alt": "AI-assisted historical reconstruction of civilians sheltering in hand-dug caves during the Siege of Vicksburg in 1863",
+      "actual_guest_current_src": null,
+      "guest_status_http": null,
+      "guest_decode_ok": null,
+      "guest_encoded_wire_bytes": null,
+      "rights_clearance": "HOLD",
+      "candidate_publication_approved": false
+    },
+    {
+      "post_id": 37,
+      "slot_key": "37:0",
+      "media_id": 42,
+      "published_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "original_storage_bytes": 2488823,
+      "original_pixels": [
+        1672,
+        941
+      ],
+      "registered_subsizes": 0,
+      "conditional_no_upscale_derivative_px": [
+        960,
+        540
+      ],
+      "post_modified": "2026-10-29T17:07:17",
+      "source_alt": "AI-assisted historical reconstruction of Nabataean water channels, reservoirs and gravity-fed water infrastructure at Petra",
+      "actual_guest_current_src": null,
+      "guest_status_http": null,
+      "guest_decode_ok": null,
+      "guest_encoded_wire_bytes": null,
+      "rights_clearance": "HOLD",
+      "candidate_publication_approved": false
+    },
+    {
+      "post_id": 38,
+      "slot_key": "38:0",
+      "media_id": 43,
+      "published_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "original_storage_bytes": 2836245,
+      "original_pixels": [
+        1672,
+        941
+      ],
+      "registered_subsizes": 0,
+      "conditional_no_upscale_derivative_px": [
+        960,
+        540
+      ],
+      "post_modified": "2026-10-29T17:06:51",
+      "source_alt": "AI-assisted historical reconstruction of firefighters drawing emergency water from an underground cistern after the 1906 San Francisco disaster",
+      "actual_guest_current_src": null,
+      "guest_status_http": null,
+      "guest_decode_ok": null,
+      "guest_encoded_wire_bytes": null,
+      "rights_clearance": "HOLD",
+      "candidate_publication_approved": false
+    }
+  ],
+  "measurement_gate": {
+    "required_method": "CDP Network.loadingFinished.encodedDataLength",
+    "before_after_cold_cache_runs": null,
+    "sitewide_61_post_capture_complete": false,
+    "sitewide_355_slot_capture_complete": false,
+    "sitewide_minimum_repeats": 3,
+    "sitewide_76_percent_verified": false
+  },
+  "safeguards": {
+    "reencode_rights_review": "HOLD",
+    "wordPress_write": "FORBIDDEN without separate approval",
+    "homepage_design_out_of_scope": true,
+    "source_binary_copy": false,
+    "spend": 0
+  }
+}

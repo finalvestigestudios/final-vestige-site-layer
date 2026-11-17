@@ -1,0 +1,165 @@
+{
+  "schema": "fv.media_recovery.tmi_285_aerial_v1",
+  "as_of": "2026-11-02",
+  "post_id": 285,
+  "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+  "inventory": {
+    "posts": 61,
+    "images": 355,
+    "offsite_origin": 288,
+    "wordpress_originals_over_1_5_mib": 13
+  },
+  "frozen_census": "qa/media-recovery/parts/03.json",
+  "images": [
+    {
+      "key": "285:0",
+      "src": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+      "alt": "Operators and technical staff inside the Three Mile Island Unit 2 control room during the 1979 accident.",
+      "guest_http_status": null,
+      "guest_decoded": null,
+      "guest_transfer_bytes": null,
+      "source_kind": "external_direct"
+    },
+    {
+      "key": "285:1",
+      "src": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "alt": "Wide view of the densely instrumented Three Mile Island Unit 2 control room.",
+      "guest_http_status": null,
+      "guest_decoded": null,
+      "guest_transfer_bytes": null,
+      "source_kind": "external_jetpack_proxy"
+    },
+    {
+      "key": "285:2",
+      "src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+      "guest_http_status": null,
+      "guest_decoded": null,
+      "guest_transfer_bytes": null,
+      "source_kind": "external_direct"
+    },
+    {
+      "key": "285:3",
+      "src": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+      "alt": "Technical personnel gathered inside the Three Mile Island control room during the 1979 accident response.",
+      "guest_http_status": null,
+      "guest_decoded": null,
+      "guest_transfer_bytes": null,
+      "source_kind": "external_direct"
+    },
+    {
+      "key": "285:4",
+      "src": "https://images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg",
+      "alt": "Reconstruction of the severely damaged Three Mile Island Unit 2 reactor core after the partial meltdown.",
+      "guest_http_status": null,
+      "guest_decoded": null,
+      "guest_transfer_bytes": null,
+      "source_kind": "external_direct"
+    },
+    {
+      "key": "285:5",
+      "src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "guest_http_status": null,
+      "guest_decoded": null,
+      "guest_transfer_bytes": null,
+      "source_kind": "external_direct"
+    }
+  ],
+  "p0": {
+    "key": "285:5",
+    "retriever_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+    "method": "web_open_2026-11-02",
+    "retriever_result": "404 Not Found",
+    "web_wrapper_status": 404,
+    "actual_origin_status": null,
+    "guest_browser_status": null,
+    "broken_for_visitors": null,
+    "network_bytes": null
+  },
+  "candidates": [
+    {
+      "id": "NARA-540012",
+      "catalog": "https://docsteach.org/document/aerial-of-three-mile-island/",
+      "archive": "https://www.archives.gov/research/cartographic/aerial-photography/still-pictures-rg220-aerial-photography",
+      "provenance": "1979-04-10, National Archives Identifier 540012; RG 220, 220-TMI series",
+      "recorded_dimensions": [
+        2700,
+        2700
+      ],
+      "proposed_dimensions": [
+        960,
+        960
+      ],
+      "rights_claim": "DocsTeach No Known Copyright",
+      "rights_risk": "NARA reports 220-TMI acquired by DOE via contractor EG&G; government custody does not establish original photo creator/assignment.",
+      "scene_warning": "Square April 1979 aerial, visually unverified against SayMedia 16:9 crop.",
+      "exact_match": false,
+      "binary_sha256": null,
+      "rights_approved": false,
+      "wp_cache_approved": false,
+      "post_rewrite_approved": false
+    },
+    {
+      "id": "NARA-540027",
+      "catalog": "https://commons.wikimedia.org/wiki/File:Oblique_(view_of)_TMI_(Three_Mile_Island)_-_NARA_-_540027.tif",
+      "archive": "https://www.archives.gov/research/cartographic/aerial-photography/still-pictures-rg220-aerial-photography",
+      "provenance": "NARA NAID 540027; Commons archival catalog says 1979-04-11; creator unnamed.",
+      "recorded_dimensions": [
+        2700,
+        2700
+      ],
+      "proposed_dimensions": [
+        960,
+        960
+      ],
+      "rights_claim": "Commons PD-USGov and No Copyright-US; federal employee authorship not independently proven.",
+      "rights_risk": "NARA series commissioned from EG&G under DOE contract; license tags do not eliminate contractor-creator question.",
+      "scene_warning": "Oblique square scene; may be ancestral source of DOE color JPEG but image identity unverified.",
+      "exact_match": false,
+      "binary_sha256": null,
+      "rights_approved": false,
+      "wp_cache_approved": false,
+      "post_rewrite_approved": false
+    },
+    {
+      "id": "DOE-COLOR-COMMONS",
+      "catalog": "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_(color).jpg",
+      "archive": "https://www.archives.gov/research/cartographic/aerial-photography/still-pictures-rg220-aerial-photography",
+      "provenance": "Commons credits a former DOE photo page, but later file history links a NARA high-resolution file and edited/cropped version.",
+      "recorded_dimensions": [
+        2592,
+        2488
+      ],
+      "proposed_dimensions": [
+        960,
+        921
+      ],
+      "rights_claim": "Commons PD-USGov-DOE tag; original DOE webpage not independently accessible.",
+      "rights_risk": "DOE label vs NARA contractor-source lineage unsettled; verify primary authorship before WP republishing.",
+      "scene_warning": "Edited/cropped color rendition, not proven the same as NARA original or SayMedia 16:9 crop.",
+      "exact_match": false,
+      "binary_sha256": null,
+      "rights_approved": false,
+      "wp_cache_approved": false,
+      "post_rewrite_approved": false
+    }
+  ],
+  "geometry_policy": {
+    "max_width_px": 960,
+    "no_upscale": true,
+    "dimensions_only_catalog_not_download_verified": true
+  },
+  "claims": {
+    "broken_42_verified": false,
+    "weight_saving_76_verified": false,
+    "production_repairs": 0
+  },
+  "safety": {
+    "no_binary_downloads": true,
+    "no_wp_writes": true,
+    "no_homepage_edits": true,
+    "no_site_qa_draft_changes": true,
+    "no_spend": true
+  }
+}

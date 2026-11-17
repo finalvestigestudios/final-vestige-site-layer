@@ -1,0 +1,90 @@
+{
+  "schema": "fv-4182-scotchcap-same-scene-v1",
+  "date_pt": "2026-11-05",
+  "source": {
+    "post_id": 418,
+    "slot": "418:2",
+    "wp_modified": "2026-08-28T03:11:08",
+    "exact_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+    "pinned_live_wp_blob": "45c9764941f531c9981c8fe569c2d91409c00d18",
+    "independent_retriever_wrapper_status": 403,
+    "origin_http": null,
+    "guest_browser_http": null,
+    "current_src": null,
+    "natural_pixels": null,
+    "transfer_bytes": null,
+    "visitor_broken": null
+  },
+  "catalog": {
+    "uscg_article": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+    "uscg_event_date": "1946-04-01",
+    "museum_article": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+    "same_scene_image": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg",
+    "rendition_dimensions": [
+      600,
+      463
+    ],
+    "attribution": "U.S. Coast Guard",
+    "same_original_filename_stem": true,
+    "exact_binary_or_crop_identity": null,
+    "original_master_pixels": null,
+    "rights_to_cache": false
+  },
+  "noaa": {
+    "page": "https://oceanexplorer.noaa.gov/multimedia/okeanos-explorations-seascape-alaska-ex2304-features-geology-media-lighthouse-debris/",
+    "image": "https://oceanexplorer.noaa.gov/wp-content/uploads/2023/07/lighthouse-debris-hires.jpg",
+    "caption_year": 1964,
+    "actual_uscg_year": 1946,
+    "chronology_mismatch": true,
+    "copy_noaa_alt": false
+  },
+  "alternate_photos": [
+    {
+      "url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/Scotch_Cap_debris3_1946-600x458.jpg",
+      "dimensions": [
+        600,
+        458
+      ],
+      "different_photo": true
+    },
+    {
+      "url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/Scotch_Cap_debris1_1946-600x471.jpg",
+      "dimensions": [
+        600,
+        471
+      ],
+      "different_photo": true
+    }
+  ],
+  "release": {
+    "max_width": 960,
+    "existing_rendition_ceiling": [
+      600,
+      463
+    ],
+    "no_upscale": true,
+    "rights_approved": false,
+    "chrome_failure_confirmed": false,
+    "download_performed": false,
+    "wordpress_upload": false,
+    "wordpress_post_edit": false,
+    "automatic_publish": false,
+    "original_url_preserved": true,
+    "sha_versioned_wp_filename_proposal": "scotch-cap-1946-debris2-600w-VERIFIEDHASH.webp"
+  },
+  "context": {
+    "site_qa_pr": 154,
+    "media_pr": 183,
+    "frozen_posts": 61,
+    "frozen_images": 355,
+    "newer_posts": 66,
+    "newer_images": 361,
+    "claimed_broken": 42,
+    "actual_broken_count": null,
+    "claimed_weight_savings_percent": 76,
+    "measured_weight_savings_percent": null,
+    "oversize_originals": 13,
+    "oversize_stored_bytes": 43522829,
+    "live_repairs": 0
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "date": "2026-10-30",
+  "batch": 8,
+  "post_count": 5,
+  "image_count": 5,
+  "posts": [
+    {
+      "id": 38,
+      "title": "The Cisterns Beneath San Francisco",
+      "url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+      "modified": "2026-10-29T17:06:51",
+      "images": 1
+    },
+    {
+      "id": 37,
+      "title": "How Petra Made Water Flow Through Stone",
+      "url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "modified": "2026-10-29T17:07:17",
+      "images": 1
+    },
+    {
+      "id": 36,
+      "title": "The City That Went Underground",
+      "url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+      "modified": "2026-10-29T17:07:30",
+      "images": 1
+    },
+    {
+      "id": 35,
+      "title": "The Boat That Refused to Die",
+      "url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+      "modified": "2026-10-29T17:07:04",
+      "images": 1
+    },
+    {
+      "id": 34,
+      "title": "The Morning San Francisco Lost Its Water",
+      "url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+      "modified": "2026-10-29T21:19:13",
+      "images": 1
+    }
+  ],
+  "images": [
+    {
+      "key": "38:0",
+      "post_id": 38,
+      "post_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+      "post_title": "The Cisterns Beneath San Francisco",
+      "modified": "2026-10-29T17:06:51",
+      "slot": 0,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "source_host": "finalvestige.com",
+      "source_kind": "first_party",
+      "alt": "Firefighters drawing emergency water from an underground cistern in post-earthquake San Francisco",
+      "width_px": 1024,
+      "height_px": 576,
+      "broken_in_browser": null,
+      "actual_http_status": null,
+      "allowed_to_localize": false,
+      "target_max_width_px": 960
+    },
+    {
+      "key": "37:0",
+      "post_id": 37,
+      "post_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "post_title": "How Petra Made Water Flow Through Stone",
+      "modified": "2026-10-29T17:07:17",
+      "slot": 0,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "source_host": "finalvestige.com",
+      "source_kind": "first_party",
+      "alt": "Reconstruction of Petra’s water channels and reservoir system in the ancient desert city",
+      "width_px": 1024,
+      "height_px": 576,
+      "broken_in_browser": null,
+      "actual_http_status": null,
+      "allowed_to_localize": false,
+      "target_max_width_px": 960
+    },
+    {
+      "key": "36:0",
+      "post_id": 36,
+      "post_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+      "post_title": "The City That Went Underground",
+      "modified": "2026-10-29T17:07:30",
+      "slot": 0,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "source_host": "finalvestige.com",
+      "source_kind": "first_party",
+      "alt": "Civilians sheltering inside a cave during the Siege of Vicksburg",
+      "width_px": 1024,
+      "height_px": 576,
+      "broken_in_browser": null,
+      "actual_http_status": null,
+      "allowed_to_localize": false,
+      "target_max_width_px": 960
+    },
+    {
+      "key": "35:0",
+      "post_id": 35,
+      "post_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+      "post_title": "The Boat That Refused to Die",
+      "modified": "2026-10-29T17:07:04",
+      "slot": 0,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "source_host": "finalvestige.com",
+      "source_kind": "first_party",
+      "alt": "Shackleton and crew in a small lifeboat crossing icy seas during the Endurance expedition",
+      "width_px": 1024,
+      "height_px": 576,
+      "broken_in_browser": null,
+      "actual_http_status": null,
+      "allowed_to_localize": false,
+      "target_max_width_px": 960
+    },
+    {
+      "key": "34:0",
+      "post_id": 34,
+      "post_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+      "post_title": "The Morning San Francisco Lost Its Water",
+      "modified": "2026-10-29T21:19:13",
+      "slot": 0,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "source_host": "finalvestige.com",
+      "source_kind": "first_party",
+      "alt": "Firefighters and horse-drawn fire engines on a ruined San Francisco street during the 1906 fires",
+      "width_px": 1024,
+      "height_px": 576,
+      "broken_in_browser": null,
+      "actual_http_status": null,
+      "allowed_to_localize": false,
+      "target_max_width_px": 960
+    }
+  ]
+}

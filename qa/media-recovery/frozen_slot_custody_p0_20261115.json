@@ -1,0 +1,182 @@
+{
+  "schema": "fv-frozen-source-custody-and-p0-scotch-cap-v1",
+  "date_pacific": "2026-11-15",
+  "scope": "Read-only committed frozen source/slot integrity; two P0 original URLs rechecked via independent web retriever, not browser",
+  "github": {
+    "repo": "finalvestigestudios/final-vestige-site-layer",
+    "media_draft_pr": 183,
+    "site_qa_draft_pr": 154,
+    "base_reconciliation_commit": "85707d78e9a6dbad44a663d21ee32c49cb519256",
+    "frozen_part_paths": [
+      {
+        "path": "qa/media-recovery/parts/01.json",
+        "blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+      },
+      {
+        "path": "qa/media-recovery/parts/02.json",
+        "blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d"
+      },
+      {
+        "path": "qa/media-recovery/parts/03.json",
+        "blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e"
+      },
+      {
+        "path": "qa/media-recovery/parts/04.json",
+        "blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+      },
+      {
+        "path": "qa/media-recovery/parts/05.json",
+        "blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9"
+      },
+      {
+        "path": "qa/media-recovery/parts/06.json",
+        "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69"
+      },
+      {
+        "path": "qa/media-recovery/parts/07.json",
+        "blob_sha": "21095161e633aba093b74c0ead9936c9f6186d00"
+      },
+      {
+        "path": "qa/media-recovery/parts/08.json",
+        "blob_sha": "5659ec243c188928be3f89c0f96354b660608ca2"
+      }
+    ],
+    "reconciler_path": "qa/media-recovery/reconcile_jetpack_origin_20261115.cjs",
+    "tests_path": "qa/media-recovery/test_reconcile_jetpack_origin_20261115.cjs"
+  },
+  "verified_frozen": {
+    "parts": 8,
+    "posts": 61,
+    "image_slots": 355,
+    "duplicate_slots": 0,
+    "per_post_contiguous_slots": true,
+    "per_post_post_title_url_match": true,
+    "direct_first_party": 60,
+    "jetpack_first_party_origin": 7,
+    "external_direct": 286,
+    "jetpack_external_origin": 2,
+    "external_dependency_slots": 288
+  },
+  "adversarial_v8": {
+    "mutations_rejected": 12,
+    "cases": [
+      "duplicate-same-post-slot",
+      "orphan-image",
+      "out-of-range",
+      "wrong-post-title",
+      "wrong-post-url",
+      "duplicate-post-across-batches",
+      "batch-number-drift",
+      "bad-post-count",
+      "bad-image-count",
+      "bad-slot-key",
+      "invalid-post-image-count",
+      "post-identity-invalid"
+    ],
+    "test_scope": "pure slot coverage algorithm against all eight GitHub-read frozen parts, no native Node/full CI verdict"
+  },
+  "status_disclaimer": {
+    "reported_broken_original_external_images": 42,
+    "confirmed_broken_guest_browser": null,
+    "claimed_76_percent_transfer_reduction_verified": false,
+    "actual_visitors_total_image_bytes": null
+  },
+  "p0_source_records": [
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "original_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "web_retriever": {
+        "date": "2026-11-15",
+        "result": "403 forbidden",
+        "real_origin_http_status": null,
+        "logged_out_browser_http_status": null,
+        "decoded_dimensions": null,
+        "transfer_bytes": null
+      },
+      "primary_catalog": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "catalog_virin": "210330-G-DE713-0002.JPG",
+      "candidate_scene": "Anthony Pettit official USCG service portrait, not damaged lighthouse",
+      "item_rights": "Coast Guard record says public domain and cleared for release; observe credit, DoD endorsement and insignia limitations",
+      "candidate_width_px": null,
+      "candidate_height_px": null,
+      "conditional_max_width_px": 960,
+      "no_upscale": true,
+      "binary_identity_verified": false,
+      "wordpress_cache_authorized": false,
+      "release": "HOLD_COLD_BROWSER_AND_BINARY_DIMENSIONS"
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "original_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "web_retriever": {
+        "date": "2026-11-15",
+        "result": "403 forbidden",
+        "real_origin_http_status": null,
+        "logged_out_browser_http_status": null,
+        "decoded_dimensions": null,
+        "transfer_bytes": null
+      },
+      "primary_context": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+      "secondary_preview": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg",
+      "secondary_preview_dimensions_px": [
+        600,
+        463
+      ],
+      "candidate_scene": "Scotch Cap debris after 1946 tsunami",
+      "item_rights": "Historical photo credited to USCG; exact item, crop and source binary reuse not cleared",
+      "candidate_width_px": null,
+      "candidate_height_px": null,
+      "conditional_max_width_px": 960,
+      "no_upscale": true,
+      "preview_must_not_upscale": true,
+      "binary_identity_verified": false,
+      "wordpress_cache_authorized": false,
+      "release": "HOLD_COLD_BROWSER_ITEM_RIGHTS_AND_EXACT_SCENE"
+    }
+  ],
+  "remote_proxy_items": [
+    {
+      "slot": "285:1",
+      "original_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "origin": "www.squawkpoint.com",
+      "rights": "unknown",
+      "original_dimensions_px": null,
+      "candidate_primary_asset": null,
+      "status_guest_http": null,
+      "allowed_to_cache": false
+    },
+    {
+      "slot": "291:0",
+      "original_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "origin": "text-message.blogs.archives.gov",
+      "rights": "NARA private contractor source; item-level review required",
+      "original_dimensions_px": null,
+      "primary_context": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+      "candidate_catalog": "https://catalog.archives.gov/id/28894685",
+      "status_guest_http": null,
+      "allowed_to_cache": false
+    }
+  ],
+  "latest_separate_wp_stored_media_snapshot": {
+    "date": "2026-11-15",
+    "attachments": 132,
+    "originals_above_1500000_bytes": 20,
+    "originals_over_threshold_bytes": 64385752,
+    "all_original_storage_bytes": 90403013,
+    "network_bytes_derived": false
+  },
+  "release": {
+    "wordpress_production_writes": 0,
+    "binary_downloads": 0,
+    "cache_writes": 0,
+    "homepage_edits": 0,
+    "pr_merge": false,
+    "subscription_spend_usd": 0,
+    "guest_browser_gate": "Site QA #154",
+    "staging_only_after": "cold HTTP + decode proof, item rights, source identity, native dimensions, editorial approval, CDP transferred-byte pair"
+  }
+}

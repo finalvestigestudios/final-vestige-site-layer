@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-11-03",
+  "scope": "offline image-transfer measurement integrity; NO visitor HTTP measurements",
+  "issue": "existing 61-post weight evaluator could accept any URL as a 200 image and aggregate across mixed page viewports/profiles, risking false savings",
+  "evidence": {
+    "source_file": "qa/media-recovery/evaluate_image_wire_20261103.cjs",
+    "source_commit": "ab30956f3a800dafdf438f3d529c5c8b3d309f4d",
+    "source_blob_sha": "aa43c93b80602b84956a45a720008376fef03032",
+    "regression_file": "qa/media-recovery/test_image_wire_20261103.cjs",
+    "test_commit": "18185241b67068225f1cab85aa9c8c8848cc61a9",
+    "test_blob_sha": "ae1e8a72eb4c4f195e69dc9ad20b1a018d3f3566",
+    "independent_qa_pr": 154,
+    "media_pr": 183,
+    "frozen_inventory": "qa/media-recovery/wire_source_inventory_20261030.json"
+  },
+  "controlled_findings": [
+    {
+      "id": "CDP-IMAGE-TYPE",
+      "risk": "XHR or Fetch can appear to be a successful historical image if MIME/200/decode fields are asserted without the original CDP type",
+      "guard": "require each recorded request resource_type strictly Image",
+      "mutations": [
+        "after resource_type Fetch",
+        "before resource_type absent"
+      ],
+      "expected": "INSUFFICIENT_DATA",
+      "result": "PASS_IN_ISOLATED_V8"
+    },
+    {
+      "id": "COHORT-SAME-PROFILE",
+      "risk": "full 61-post aggregate can mix differing viewport and network profiles across posts even if before/after within each post match",
+      "guard": "compare complete conditions across posts and repetitions",
+      "mutations": [
+        "post 2 before and after both 1920px while other 60 posts remain 1280px"
+      ],
+      "expected": "INSUFFICIENT_DATA",
+      "result": "PASS_IN_ISOLATED_V8"
+    }
+  ],
+  "regression_results": {
+    "cases_passed": 33,
+    "cases_failed": 0,
+    "execution": "isolated V8 with CommonJS shim; source in memory matches newly committed content",
+    "native_node_ci": "NOT_RUN",
+    "real_chrome": "NOT_RUN"
+  },
+  "source_inventory": {
+    "posts": 61,
+    "image_slots": 355,
+    "third_party_upstreams": 288,
+    "oversized_wp_originals_gt_1_5_mib": 13
+  },
+  "guest_evidence": {
+    "confirmed_broken_count": null,
+    "reported_broken_count": 42,
+    "reported_broken_verified": false,
+    "baseline_image_transfer_bytes": null,
+    "after_image_transfer_bytes": null,
+    "reported_reduction_percent": 76,
+    "reported_reduction_verified": false
+  },
+  "safety": {
+    "production_media_repairs": 0,
+    "wordPress_production_writes": 0,
+    "third_party_binary_downloads": 0,
+    "homepage_modifications": 0,
+    "subscriptions_purchased": 0
+  },
+  "known_next_gates": [
+    "Ensure actual CDP collector exports the resource_type Image field for every request.",
+    "Capture stable matching viewport/browser/cache/network profile across all 61 articles.",
+    "Tie each slot's actual currentSrc to image request and rights-reviewed candidate identity before any image-replacement performance claim.",
+    "Logged-out browser HTTP status/MIME/image decoding/encoded bytes remain unknown."
+  ]
+}

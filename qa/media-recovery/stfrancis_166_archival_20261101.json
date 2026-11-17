@@ -1,0 +1,428 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-01",
+  "scope": "FinalVestige.com media recovery, isolated PR #183",
+  "article": {
+    "id": 166,
+    "url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+    "title": "They Checked the Dam That Morning",
+    "last_modified": "2026-10-29T17:32:42",
+    "wordpress_read_only_editor_rechecked": true,
+    "image_count": 7,
+    "source_part": "qa/media-recovery/parts/07.json",
+    "source_part_git_blob_sha": "21095161e633aba093b74c0ead9936c9f6186d00"
+  },
+  "sitewide_baseline": {
+    "published_posts": 61,
+    "image_slots": 355,
+    "offsite_slots": 288,
+    "oversize_originals_above_1_5MiB": 13,
+    "reported_broken_42_browser_confirmed": false,
+    "claimed_76pct_weight_reduction_measured": false,
+    "confirmed_broken_count": null,
+    "measured_transfer_reduction_percent": null,
+    "production_images_repaired": 0
+  },
+  "safety": {
+    "no_asset_downloads": true,
+    "no_scraping": true,
+    "no_production_wordpress_writes": true,
+    "no_subscription_spend": true,
+    "not_site_QA_PR_154": true
+  },
+  "method_note": "Exact source URLs/ALT freshly matched via authenticated read-only WP posts.get 166. Independent text retriever could not open seven media URLs; that DOES NOT establish an HTTP code or broken visitor image. Catalog geometry belongs to archival original or WP metadata, NOT actual currentSrc. None is approved for cache/republish.",
+  "slots": [
+    {
+      "key": "166:0",
+      "slot": 0,
+      "post_id": 166,
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "published_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/IMG_3479.jpeg",
+      "published_alt": "St. Francis Dam and reservoir in San Francisquito Canyon in February 1927, one year before the catastrophic failure",
+      "source_kind": "first_party",
+      "current_wp_editor_source_and_alt_match_frozen": true,
+      "independent_retriever": {
+        "method": "web_open_exact_published_asset_URL_not_guest_Chrome",
+        "observed_on": "2026-11-01",
+        "result": "ASSET_NOT_ACCESSIBLE_TO_TEXT_RETRIEVER",
+        "http_status": null,
+        "origin_http_status": null,
+        "visitor_http_status": null
+      },
+      "authority_candidate": {
+        "record_identifier": "WP media 171 / credited H. T. Stearns (USGS)",
+        "record_url": "https://commons.wikimedia.org/wiki/File:The_St._Francis_Dam.jpg",
+        "relationship": "same_subject_credited_usgs_not_pixel_matched",
+        "rights_basis": "FIRST_PARTY_CURRENT_ASSET_USGS_CREDIT_REVIEW",
+        "rights_note": "First-party source already has Jetpack 300/768/1024 responsive sizes; archive file aspect ratio differs, so DO NOT treat it as an exact replacement.",
+        "original_master_sha256": null,
+        "pixel_identity_confirmed": false,
+        "rights_review": "HOLD",
+        "credit_review": "PENDING"
+      },
+      "geometry": {
+        "catalog_or_media_width_px": 1400,
+        "catalog_or_media_height_px": 738,
+        "conditional_width_px": 960,
+        "conditional_height_px": 506,
+        "dimension_basis": "current_WordPress_media_171",
+        "observed_first_party_original_storage_bytes": 704922,
+        "actual_visitor_transfer_bytes": null,
+        "decoded_visitor_dimensions": null,
+        "no_upscaling": true
+      },
+      "guest_browser": {
+        "current_src": null,
+        "actual_image_get_status": null,
+        "final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "asset_downloaded": false,
+        "cache_authorized": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      }
+    },
+    {
+      "key": "166:1",
+      "slot": 1,
+      "post_id": 166,
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "published_source_url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ca/ca3000/ca3095/sheet/00002a.gif",
+      "published_alt": "Historic American Engineering Record drawing showing the Los Angeles Aqueduct system",
+      "source_kind": "external",
+      "current_wp_editor_source_and_alt_match_frozen": true,
+      "independent_retriever": {
+        "method": "web_open_exact_published_asset_URL_not_guest_Chrome",
+        "observed_on": "2026-11-01",
+        "result": "ASSET_NOT_ACCESSIBLE_TO_TEXT_RETRIEVER",
+        "http_status": null,
+        "origin_http_status": null,
+        "visitor_http_status": null
+      },
+      "authority_candidate": {
+        "record_identifier": "LOC HAER CA-298 sheet 2 of 18 (ca3095.sheet.00002a)",
+        "record_url": "https://www.loc.gov/pictures/item/ca3095.sheet.00002a",
+        "relationship": "exact_sheet_path_to_LOC_catalog_binary_unverified",
+        "rights_basis": "LOC_HAER_ITEM_REVIEW_GOVERNMENT_CREATION_CAVEAT",
+        "rights_note": "HAER documentation compiled after 1968. Wikimedia scan of same sheet is 14420x9819, NOT proven dimensions of current LOC GIF; retrospective aqueduct drawing is not 1928 field evidence.",
+        "original_master_sha256": null,
+        "pixel_identity_confirmed": false,
+        "rights_review": "HOLD",
+        "credit_review": "PENDING"
+      },
+      "geometry": {
+        "catalog_or_media_width_px": null,
+        "catalog_or_media_height_px": null,
+        "conditional_width_px": null,
+        "conditional_height_px": null,
+        "dimension_basis": "exact_published_LOC_GIF_dimensions_not_measured",
+        "observed_first_party_original_storage_bytes": null,
+        "actual_visitor_transfer_bytes": null,
+        "decoded_visitor_dimensions": null,
+        "no_upscaling": true
+      },
+      "guest_browser": {
+        "current_src": null,
+        "actual_image_get_status": null,
+        "final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "asset_downloaded": false,
+        "cache_authorized": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      }
+    },
+    {
+      "key": "166:2",
+      "slot": 2,
+      "post_id": 166,
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "published_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.%20Francis%20abutment.jpg?width=1280",
+      "published_alt": "Huge concrete block from the west abutment of St. Francis Dam carried about half a mile downstream by the 1928 flood",
+      "source_kind": "wikimedia_redirect",
+      "current_wp_editor_source_and_alt_match_frozen": true,
+      "independent_retriever": {
+        "method": "web_open_exact_published_asset_URL_not_guest_Chrome",
+        "observed_on": "2026-11-01",
+        "result": "ASSET_NOT_ACCESSIBLE_TO_TEXT_RETRIEVER",
+        "http_status": null,
+        "origin_http_status": null,
+        "visitor_http_status": null
+      },
+      "authority_candidate": {
+        "record_identifier": "H. T. Stearns USGS photo 682 / 17 March 1928",
+        "record_url": "https://commons.wikimedia.org/wiki/File:St._Francis_abutment.jpg",
+        "relationship": "same_filename_canonical_Commons_record_master_hash_unverified",
+        "rights_basis": "USGS_PUBLIC_DOMAIN_MARK_CATALOG_ITEM_CHECK",
+        "rights_note": "Photograph of detached west abutment concrete block; USGS source 682; no claim current redirected 1280px binary equals original.",
+        "original_master_sha256": null,
+        "pixel_identity_confirmed": false,
+        "rights_review": "HOLD",
+        "credit_review": "PENDING"
+      },
+      "geometry": {
+        "catalog_or_media_width_px": 1400,
+        "catalog_or_media_height_px": 806,
+        "conditional_width_px": 960,
+        "conditional_height_px": 553,
+        "dimension_basis": "Commons_original_file_metadata",
+        "observed_first_party_original_storage_bytes": null,
+        "actual_visitor_transfer_bytes": null,
+        "decoded_visitor_dimensions": null,
+        "no_upscaling": true
+      },
+      "guest_browser": {
+        "current_src": null,
+        "actual_image_get_status": null,
+        "final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "asset_downloaded": false,
+        "cache_authorized": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      }
+    },
+    {
+      "key": "166:3",
+      "slot": 3,
+      "post_id": 166,
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "published_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Twisted_Tracks.jpg?width=1280",
+      "published_alt": "Railroad tracks between Castaic Junction and Piru twisted by the flood from the St. Francis Dam failure",
+      "source_kind": "wikimedia_redirect",
+      "current_wp_editor_source_and_alt_match_frozen": true,
+      "independent_retriever": {
+        "method": "web_open_exact_published_asset_URL_not_guest_Chrome",
+        "observed_on": "2026-11-01",
+        "result": "ASSET_NOT_ACCESSIBLE_TO_TEXT_RETRIEVER",
+        "http_status": null,
+        "origin_http_status": null,
+        "visitor_http_status": null
+      },
+      "authority_candidate": {
+        "record_identifier": "USGS Flickr image 11449413284 / 18 March 1928",
+        "record_url": "https://commons.wikimedia.org/wiki/File:Twisted_Tracks.jpg",
+        "relationship": "same_filename_canonical_Commons_record_master_hash_unverified",
+        "rights_basis": "CC_BY_2_0_ATTRIBUTION_REQUIRED",
+        "rights_note": "Commons explicitly lists CC BY 2.0 from verified USGS Flickr transfer. Do not silently convert to public-domain assertion.",
+        "original_master_sha256": null,
+        "pixel_identity_confirmed": false,
+        "rights_review": "HOLD",
+        "credit_review": "PENDING"
+      },
+      "geometry": {
+        "catalog_or_media_width_px": 1400,
+        "catalog_or_media_height_px": 1017,
+        "conditional_width_px": 960,
+        "conditional_height_px": 697,
+        "dimension_basis": "Commons_original_file_metadata",
+        "observed_first_party_original_storage_bytes": null,
+        "actual_visitor_transfer_bytes": null,
+        "decoded_visitor_dimensions": null,
+        "no_upscaling": true
+      },
+      "guest_browser": {
+        "current_src": null,
+        "actual_image_get_status": null,
+        "final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "asset_downloaded": false,
+        "cache_authorized": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      }
+    },
+    {
+      "key": "166:4",
+      "slot": 4,
+      "post_id": 166,
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "published_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.%20Francis%20Dam%20after%20the%201928%20failure.jpg?width=1280",
+      "published_alt": "St. Francis Dam site five days after the March 1928 failure, with most of the concrete structure gone",
+      "source_kind": "wikimedia_redirect",
+      "current_wp_editor_source_and_alt_match_frozen": true,
+      "independent_retriever": {
+        "method": "web_open_exact_published_asset_URL_not_guest_Chrome",
+        "observed_on": "2026-11-01",
+        "result": "ASSET_NOT_ACCESSIBLE_TO_TEXT_RETRIEVER",
+        "http_status": null,
+        "origin_http_status": null,
+        "visitor_http_status": null
+      },
+      "authority_candidate": {
+        "record_identifier": "H. T. Stearns USGS photo 665 / 17 March 1928",
+        "record_url": "https://commons.wikimedia.org/wiki/File:St._Francis_Dam_after_the_1928_failure.jpg",
+        "relationship": "same_filename_canonical_Commons_record_master_hash_unverified",
+        "rights_basis": "USGS_PUBLIC_DOMAIN_MARK_CATALOG_ITEM_CHECK",
+        "rights_note": "Same viewpoint as USGS 664, showing remains on 17 March; date is five days after collapse.",
+        "original_master_sha256": null,
+        "pixel_identity_confirmed": false,
+        "rights_review": "HOLD",
+        "credit_review": "PENDING"
+      },
+      "geometry": {
+        "catalog_or_media_width_px": 1400,
+        "catalog_or_media_height_px": 1043,
+        "conditional_width_px": 960,
+        "conditional_height_px": 715,
+        "dimension_basis": "Commons_original_file_metadata",
+        "observed_first_party_original_storage_bytes": null,
+        "actual_visitor_transfer_bytes": null,
+        "decoded_visitor_dimensions": null,
+        "no_upscaling": true
+      },
+      "guest_browser": {
+        "current_src": null,
+        "actual_image_get_status": null,
+        "final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "asset_downloaded": false,
+        "cache_authorized": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      }
+    },
+    {
+      "key": "166:5",
+      "slot": 5,
+      "post_id": 166,
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "published_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Standing_section.jpg?width=1280",
+      "published_alt": "The surviving central section of the St. Francis Dam standing after the 1928 collapse",
+      "source_kind": "wikimedia_redirect",
+      "current_wp_editor_source_and_alt_match_frozen": true,
+      "independent_retriever": {
+        "method": "web_open_exact_published_asset_URL_not_guest_Chrome",
+        "observed_on": "2026-11-01",
+        "result": "ASSET_NOT_ACCESSIBLE_TO_TEXT_RETRIEVER",
+        "http_status": null,
+        "origin_http_status": null,
+        "visitor_http_status": null
+      },
+      "authority_candidate": {
+        "record_identifier": "Los Angeles Public Library TESSA / 00009829",
+        "record_url": "https://commons.wikimedia.org/wiki/File:Standing_section.jpg",
+        "relationship": "same_filename_canonical_Commons_record_LAPL_original_unverified",
+        "rights_basis": "COMMONS_PD_NONRENEWAL_CLAIM_ITEM_REVIEW",
+        "rights_note": "Commons states 1928 photograph but gives a 1931–1963 no-renewal copyright rationale; independently establish first publication and applicable rights before cache.",
+        "original_master_sha256": null,
+        "pixel_identity_confirmed": false,
+        "rights_review": "HOLD",
+        "credit_review": "PENDING"
+      },
+      "geometry": {
+        "catalog_or_media_width_px": 1250,
+        "catalog_or_media_height_px": 936,
+        "conditional_width_px": 960,
+        "conditional_height_px": 719,
+        "dimension_basis": "Commons_original_file_metadata",
+        "observed_first_party_original_storage_bytes": null,
+        "actual_visitor_transfer_bytes": null,
+        "decoded_visitor_dimensions": null,
+        "no_upscaling": true
+      },
+      "guest_browser": {
+        "current_src": null,
+        "actual_image_get_status": null,
+        "final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "asset_downloaded": false,
+        "cache_authorized": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      }
+    },
+    {
+      "key": "166:6",
+      "slot": 6,
+      "post_id": 166,
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "published_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Man%20pointing%20at%20crack%20in%20Saint%20Francis%20Dam%20after%20its%20collapse.jpg?width=1280",
+      "published_alt": "A man points to a crack in a surviving block of the St. Francis Dam after the 1928 collapse",
+      "source_kind": "wikimedia_redirect",
+      "current_wp_editor_source_and_alt_match_frozen": true,
+      "independent_retriever": {
+        "method": "web_open_exact_published_asset_URL_not_guest_Chrome",
+        "observed_on": "2026-11-01",
+        "result": "ASSET_NOT_ACCESSIBLE_TO_TEXT_RETRIEVER",
+        "http_status": null,
+        "origin_http_status": null,
+        "visitor_http_status": null
+      },
+      "authority_candidate": {
+        "record_identifier": "UCLA Daily News collection ARK 21198/zz00253zg8",
+        "record_url": "https://commons.wikimedia.org/wiki/File:Man_pointing_at_crack_in_Saint_Francis_Dam_after_its_collapse.jpg",
+        "relationship": "same_filename_canonical_Commons_record_master_hash_unverified",
+        "rights_basis": "CC_BY_4_0_ATTRIBUTION_LICENSE_AND_EDIT_NOTICE_REQUIRED",
+        "rights_note": "UCLA/Los Angeles Daily News image described CC BY 4.0; Commons structured metadata also includes a CC BY-SA 4.0 statement. Resolve inconsistent metadata and preserve credit/change notice; 18.42MB master is NOT current visitor download.",
+        "original_master_sha256": null,
+        "pixel_identity_confirmed": false,
+        "rights_review": "HOLD",
+        "credit_review": "PENDING"
+      },
+      "geometry": {
+        "catalog_or_media_width_px": 4431,
+        "catalog_or_media_height_px": 5760,
+        "conditional_width_px": 960,
+        "conditional_height_px": 1248,
+        "dimension_basis": "Commons_original_file_metadata",
+        "observed_first_party_original_storage_bytes": null,
+        "actual_visitor_transfer_bytes": null,
+        "decoded_visitor_dimensions": null,
+        "no_upscaling": true
+      },
+      "guest_browser": {
+        "current_src": null,
+        "actual_image_get_status": null,
+        "final_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "asset_downloaded": false,
+        "cache_authorized": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      }
+    }
+  ]
+}

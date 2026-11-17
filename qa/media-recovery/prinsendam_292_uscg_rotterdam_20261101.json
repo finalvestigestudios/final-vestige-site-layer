@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-11-01",
+  "post_id": 292,
+  "post_title": "They Marked the Empty Boats",
+  "inventory_snapshot_date": "2026-10-30",
+  "inventory_blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+  "inventory_trust": "frozen_authenticated_WP_source_census_not_fresh_CMS_readback",
+  "image_count": 6,
+  "external_count": 6,
+  "claimed_broken_42_verified": false,
+  "claimed_transfer_savings_76_percent_measured": false,
+  "production_repairs": 0,
+  "site_qa_browser_ownership": "PR #154",
+  "browser_status_proof": "not_available_from_this_runner",
+  "sitewide_context": {
+    "posts": 61,
+    "images": 355,
+    "external_refs": 288,
+    "oversize_wordpress_originals": 13
+  },
+  "records": [
+    {
+      "image_key": "292:0",
+      "post_id": 292,
+      "slot": 0,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "stored_src": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/DF-SN-86-12843-header-image-900x675.jpeg",
+      "stored_alt": "A U.S. Coast Guard helicopter hovering beside the fire-damaged cruise ship Prinsendam during the October 1980 rescue.",
+      "inventory_source_kind": "external",
+      "cms_readback_this_sprint": false,
+      "source_retriever": {
+        "method": "web_open_image_renderer_not_guest_browser",
+        "observed_date": "2026-11-01",
+        "result": "IMAGE_RENDERED",
+        "reported_wrapper_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "encoded_bytes": null
+      },
+      "archive": {
+        "official_record_url": "https://nationalcoastguardmuseum.org/articles/prinsendam/",
+        "candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:MS_Prisendam_sinking_off_Alaska_with_USCG_HH-3F_1980.jpeg",
+        "identifier": "DF-SN-86-12843",
+        "credit": "SSgt. Richard D. McKee; National Archives / U.S. DoD",
+        "relationship": "matching_VIRIN_and_publisher_filename_without_binary_hash",
+        "original_binary_hash": null,
+        "rights_review": "HOLD",
+        "rights_rationale": "Commons US-federal-government public-domain rationale; verify exact DoD work and National Coast Guard Museum crop before local reuse."
+      },
+      "geometry": {
+        "catalog_candidate_width_px": 2870,
+        "catalog_candidate_height_px": 1930,
+        "conditional_target_width_px": 960,
+        "conditional_target_height_px": 646,
+        "source": "catalog_metadata_not_current_browser_or_downloaded_binary",
+        "do_not_upscale": true,
+        "published_crop_warning": "Published filename states 900x675 (4:3 crop), unlike 2870x1930 full-master aspect; preserve historical framing on visual comparison."
+      },
+      "visual_risk": "This same catalog photo appears likely repeated at 292:3; two distinct downloads should not be silently merged.",
+      "guest_browser": {
+        "current_src": null,
+        "image_get_status": null,
+        "final_url": null,
+        "mime_type": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "exact_binary_identity_verified": false,
+        "legal_release_confirmed": false,
+        "cache_approved": false,
+        "wordpress_media_upload_approved": false,
+        "post_edit_approved": false,
+        "production_changed": false
+      }
+    },
+    {
+      "image_key": "292:1",
+      "post_id": 292,
+      "slot": 1,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "stored_src": "https://stadsarchief.rotterdam.nl/sites/default/files/styles/gallery_large/public/2025-04/hal-prinsendam-nl-rtsa_4121_24162-1-14.jpg?h=3e6ca723&itok=wjXwUo3w",
+      "stored_alt": "Prinsendam at Rotterdam's Wilhelminakade in 1973, seven years before the Gulf of Alaska fire.",
+      "inventory_source_kind": "external",
+      "cms_readback_this_sprint": false,
+      "source_retriever": {
+        "method": "web_open_image_renderer_not_guest_browser",
+        "observed_date": "2026-11-01",
+        "result": "IMAGE_RENDERED",
+        "reported_wrapper_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "encoded_bytes": null
+      },
+      "archive": {
+        "official_record_url": "https://stadsarchief.rotterdam.nl/zoek-en-ontdek/archieven/zoekresultaat-archieven/?mizig=299&miadt=184&miaet=14&micode=4121&minr=40013208&miview=ldt",
+        "candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:24162-1-14_Ms._%27Prinsendam%27_passeert_de_Koningsbruggen,_richting_Wilhelminakade.jpg",
+        "identifier": "Rotterdam Stadsarchief 4121 / 24162-1-14",
+        "credit": "Ary Groeneveld; Gemeente Rotterdam (Stadsarchief)",
+        "relationship": "exact_collection_filename_catalog_match_edition_and_crop_unverified",
+        "original_binary_hash": null,
+        "rights_review": "HOLD",
+        "rights_rationale": "Commons marks CC0 1.0; independently verify source institution rights statement and derivative/crop authority."
+      },
+      "geometry": {
+        "catalog_candidate_width_px": 2920,
+        "catalog_candidate_height_px": 2953,
+        "conditional_target_width_px": 960,
+        "conditional_target_height_px": 971,
+        "source": "catalog_metadata_not_current_browser_or_downloaded_binary",
+        "do_not_upscale": true,
+        "published_crop_warning": "Current published dynamic gallery derivative dimensions unknown; no master-image hash."
+      },
+      "visual_risk": "Archive dates photograph 8 April 1973, passing Koningsbruggen toward Wilhelminakade; current ALT 'at Wilhelminakade' overstates location.",
+      "guest_browser": {
+        "current_src": null,
+        "image_get_status": null,
+        "final_url": null,
+        "mime_type": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "exact_binary_identity_verified": false,
+        "legal_release_confirmed": false,
+        "cache_approved": false,
+        "wordpress_media_upload_approved": false,
+        "post_edit_approved": false,
+        "production_changed": false
+      }
+    },
+    {
+      "image_key": "292:2",
+      "post_id": 292,
+      "slot": 2,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "stored_src": "https://images.pubble.cloud/worker/jpg/quick/1920/3077598/96897487/content/2024/6/cf6d9b51-c16b-4938-800c-833b86ac5740",
+      "stored_alt": "Passenger ship Prinsendam during her launch at a Dutch shipyard.",
+      "inventory_source_kind": "external",
+      "cms_readback_this_sprint": false,
+      "source_retriever": {
+        "method": "web_open_image_renderer_not_guest_browser",
+        "observed_date": "2026-11-01",
+        "result": "IMAGE_RENDERED",
+        "reported_wrapper_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "encoded_bytes": null
+      },
+      "archive": {
+        "official_record_url": "https://stadsarchief.rotterdam.nl/zoek-en-ontdek/archieven/zoekresultaat-archieven/?mizig=299&miadt=184&miaet=14&micode=4121&minr=40011544&miview=ldt",
+        "candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:23562-3-2_Hoog_overzicht_stapelloop_passagiersschip_%27Prinsendam%27_bij_scheepswerf_%27De_Merwede%27_in_Hardinxveld-Giessendam.jpg",
+        "identifier": "Rotterdam Stadsarchief 4121 / 23562-3-2",
+        "credit": "Ary Groeneveld; Gemeente Rotterdam (Stadsarchief)",
+        "relationship": "different_launch_sequence_frame_authoritative_alternative_not_exact",
+        "original_binary_hash": null,
+        "rights_review": "HOLD",
+        "rights_rationale": "Commons marks CC0 1.0; independently check Stadsarchief item/license and publisher rights before cache."
+      },
+      "geometry": {
+        "catalog_candidate_width_px": 2927,
+        "catalog_candidate_height_px": 2953,
+        "conditional_target_width_px": 960,
+        "conditional_target_height_px": 969,
+        "source": "catalog_metadata_not_current_browser_or_downloaded_binary",
+        "do_not_upscale": true,
+        "published_crop_warning": "Actual Pubble image visually shows the ship already afloat in open water beside a large crane; official 23562-3-2 archive shows the vessel on the shipyard slipway before launch. These are different photographs; do not substitute without changing historical context."
+      },
+      "visual_risk": "VERIFIED VISUAL SUBJECT/FRAME DIFFERENCE in independent web image renderer: current Pubble photo is afloat at launch while Commons Stadsarchief 23562-3-2 is on slipway. Same event/ship, NOT same image. Copyright of Pubble derivative unknown.",
+      "guest_browser": {
+        "current_src": null,
+        "image_get_status": null,
+        "final_url": null,
+        "mime_type": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "exact_binary_identity_verified": false,
+        "legal_release_confirmed": false,
+        "cache_approved": false,
+        "wordpress_media_upload_approved": false,
+        "post_edit_approved": false,
+        "production_changed": false
+      }
+    },
+    {
+      "image_key": "292:3",
+      "post_id": 292,
+      "slot": 3,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "stored_src": "https://cgaviationhistory.org/wp-content/uploads/MS_Prisendam_sinking_off_Alaska_with_USCG_HH-3F_1980.jpg",
+      "stored_alt": "A U.S. Coast Guard HH-3F helicopter operating near the damaged Prinsendam in the Gulf of Alaska in 1980.",
+      "inventory_source_kind": "external",
+      "cms_readback_this_sprint": false,
+      "source_retriever": {
+        "method": "web_open_image_renderer_not_guest_browser",
+        "observed_date": "2026-11-01",
+        "result": "TIMEOUT_NO_HTTP",
+        "reported_wrapper_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "encoded_bytes": null
+      },
+      "archive": {
+        "official_record_url": "https://commons.wikimedia.org/wiki/File:MS_Prisendam_sinking_off_Alaska_with_USCG_HH-3F_1980.jpeg",
+        "candidate_catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002603427/",
+        "identifier": "Probable shared DF-SN-86-12843 rendition (not hash-verified)",
+        "credit": "US Coast Guard Aviation History site; original SSgt. Richard D. McKee attribution candidate",
+        "relationship": "published_filename_equal_to_archival_Commons_filename_no_binary_verified",
+        "original_binary_hash": null,
+        "rights_review": "HOLD",
+        "rights_rationale": "Likely US-government original from matching named source; prove exact asset identity, reuse rights and source credit individually. USCG photo 210210-G-G0000-1014 is a separately cataloged frame and cannot be assumed identical to DF-SN-86-12843."
+      },
+      "geometry": {
+        "catalog_candidate_width_px": 2870,
+        "catalog_candidate_height_px": 1930,
+        "conditional_target_width_px": 960,
+        "conditional_target_height_px": 646,
+        "source": "catalog_metadata_not_current_browser_or_downloaded_binary",
+        "do_not_upscale": true,
+        "published_crop_warning": "Original master dimensions come from a Commons catalog candidate, not verified currently published CG Aviation JPEG."
+      },
+      "visual_risk": "Likely duplicate historical photograph to 292:0, but byte identity/visual crop not established. Retriever timeout is NOT a proven visitor failure.",
+      "guest_browser": {
+        "current_src": null,
+        "image_get_status": null,
+        "final_url": null,
+        "mime_type": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "exact_binary_identity_verified": false,
+        "legal_release_confirmed": false,
+        "cache_approved": false,
+        "wordpress_media_upload_approved": false,
+        "post_edit_approved": false,
+        "production_changed": false
+      }
+    },
+    {
+      "image_key": "292:4",
+      "post_id": 292,
+      "slot": 4,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "stored_src": "https://www.travelserver.net/travelpage/aspgallery/pictures/Ad_1981_12.jpg",
+      "stored_alt": "Prinsendam listing heavily in the Gulf of Alaska after the 1980 fire and evacuation.",
+      "inventory_source_kind": "external",
+      "cms_readback_this_sprint": false,
+      "source_retriever": {
+        "method": "web_open_image_renderer_not_guest_browser",
+        "observed_date": "2026-11-01",
+        "result": "IMAGE_RENDERED",
+        "reported_wrapper_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "encoded_bytes": null
+      },
+      "archive": {
+        "official_record_url": "https://nationalcoastguardmuseum.org/articles/prinsendam/",
+        "candidate_catalog_url": "https://vilda.alaska.edu/digital/collection/cdmg21/id/10323/",
+        "identifier": "Alaska State Library cdmg21/10323 (different same-event photograph candidate)",
+        "credit": "Published source travelserver.net; original photographer/publisher rights unknown",
+        "relationship": "different_same_event_archive_candidate_not_interchangeable",
+        "original_binary_hash": null,
+        "rights_review": "HOLD",
+        "rights_rationale": "Travelserver's photograph creator and use permission unknown. Alaska State Library catalog is a different view and gives no blanket mirror permission."
+      },
+      "geometry": {
+        "catalog_candidate_width_px": null,
+        "catalog_candidate_height_px": null,
+        "conditional_target_width_px": null,
+        "conditional_target_height_px": null,
+        "source": "catalog_metadata_not_current_browser_or_downloaded_binary",
+        "do_not_upscale": true,
+        "published_crop_warning": "Existing published image decoded by independent viewer; master dimensions unverified."
+      },
+      "visual_risk": "Do not replace the strongly listing/sinking 1980 photo with a merely related earlier/other-angle Coast Guard image.",
+      "guest_browser": {
+        "current_src": null,
+        "image_get_status": null,
+        "final_url": null,
+        "mime_type": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "exact_binary_identity_verified": false,
+        "legal_release_confirmed": false,
+        "cache_approved": false,
+        "wordpress_media_upload_approved": false,
+        "post_edit_approved": false,
+        "production_changed": false
+      }
+    },
+    {
+      "image_key": "292:5",
+      "post_id": 292,
+      "slot": 5,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "stored_src": "https://static.thisdayinaviation.com/wp-content/uploads/tdia/2020/10/Screen-Shot-2020-10-03-at-14.51.27.png",
+      "stored_alt": "Historical illustration of the Coast Guard rescue operation around Prinsendam in the Gulf of Alaska.",
+      "inventory_source_kind": "external",
+      "cms_readback_this_sprint": false,
+      "source_retriever": {
+        "method": "web_open_image_renderer_not_guest_browser",
+        "observed_date": "2026-11-01",
+        "result": "WRAPPER_403_NOT_GUEST_BROWSER",
+        "reported_wrapper_code": 403,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "encoded_bytes": null
+      },
+      "archive": {
+        "official_record_url": "https://www.thisdayinaviation.com/4-october-1980-this-day-in-u-s-coast-guard-aviation-history/",
+        "candidate_catalog_url": "https://nationalcoastguardmuseum.org/articles/prinsendam/",
+        "identifier": "Tony Falcone, Rescue of the Dutch Cruise Ship Prinsendam, 1980 (possible illustration identity, unverified screenshot)",
+        "credit": "Tony Falcone / Coast Guard Academy Alumni Association (as museum credits painting)",
+        "relationship": "same_subject_possible_artwork_source_edition_unverified",
+        "original_binary_hash": null,
+        "rights_review": "HOLD",
+        "rights_rationale": "Specific artist copyright not established as public domain; explicit permission required before copying or caching. DVIDS/Walter Richards' rescue painting is a DIFFERENT work."
+      },
+      "geometry": {
+        "catalog_candidate_width_px": null,
+        "catalog_candidate_height_px": null,
+        "conditional_target_width_px": null,
+        "conditional_target_height_px": null,
+        "source": "catalog_metadata_not_current_browser_or_downloaded_binary",
+        "do_not_upscale": true,
+        "published_crop_warning": "Current screenshot PNG original geometry is unknown."
+      },
+      "visual_risk": "The image is a painting/illustration, not an actual 1980 action photograph. Independent image retriever returned 403, not visitor/browser status.",
+      "guest_browser": {
+        "current_src": null,
+        "image_get_status": null,
+        "final_url": null,
+        "mime_type": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "exact_binary_identity_verified": false,
+        "legal_release_confirmed": false,
+        "cache_approved": false,
+        "wordpress_media_upload_approved": false,
+        "post_edit_approved": false,
+        "production_changed": false
+      }
+    }
+  ],
+  "workflow": "HOLD until guest currentSrc+network+decode+screenshot, exact image/crop match, item rights+credit, source SHA and pixel geometry; then stage 960px/no-upscale local candidate for visual QA; never edit WordPress without separate release authorization.",
+  "visual_comparisons": [
+    {
+      "pair": "292:2 actual Pubble vs Stadsarchief candidate 23562-3-2",
+      "published_source": "https://images.pubble.cloud/worker/jpg/quick/1920/3077598/96897487/content/2024/6/cf6d9b51-c16b-4938-800c-833b86ac5740",
+      "candidate_catalog": "https://commons.wikimedia.org/wiki/File:23562-3-2_Hoog_overzicht_stapelloop_passagiersschip_%27Prinsendam%27_bij_scheepswerf_%27De_Merwede%27_in_Hardinxveld-Giessendam.jpg",
+      "published_view": "afloat in river with tugboats, dockside crane to right",
+      "catalog_view": "ship remains on slipway viewed lengthwise from elevated dock",
+      "same_image": false,
+      "binary_identity_checked": false,
+      "method": "independent web renderer visual comparison only",
+      "production_edit_allowed": false
+    }
+  ]
+}

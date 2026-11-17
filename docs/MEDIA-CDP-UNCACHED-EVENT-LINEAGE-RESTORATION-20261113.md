@@ -1,0 +1,30 @@
+# Media recovery — restore strict cold CDP provenance without weakening false-positive protection (2026-11-13 PT)
+
+**Draft only. No WordPress writes, media downloads, caching, rehosting, deployment, merge, homepage redesign, or paid calls.**
+
+## Reproduced code defect — actual deployed-image outcome still unknown
+
+The existing `qa/media-recovery/browser_probe_core.cjs` and `compare_cold_image_wire_v1.cjs` now correctly reject `from_memory_cache` unless it is **explicitly false**. However, the draft Chrome collector's Image request serializer emitted `was_cached`, `from_disk_cache`, and `from_service_worker`, **never** `from_memory_cache`. The synthetic strict-cold path therefore could not certify **any** otherwise clean image request as loaded or broken and could not produce a valid cold-transfer comparison. This is a testable QA instrumentation defect; it does **not** show 42 genuine live broken images.
+
+## Isolated correction in existing draft PR #183
+
+- `qa/media-recovery/cdp_cold_cache_provenance_20261113.cjs` — Git blob `9ff77f7ae6616ae3b4aa1ebdbaa3977fe801e55c` — pure, read-only evaluator. All four cold-cache flags can be **false** only if the Image request has matching observed `Network.requestWillBeSent`, `Network.responseReceived` and `Network.loadingFinished` events, a valid nonnegative `encodedDataLength`, no `Network.loadingFailed`, no `Network.requestServedFromCache`, no disk-cache/service-worker positive flags, and acknowledged cache-disabled/service-worker-bypass commands from before navigation. Otherwise the negative cache state remains **null**, or a positive cache flag remains **true**.
+- `qa/media-recovery/browser_probe_chrome.cjs` — Git blob `756e6bbfcf8035804951b8ad0aca7ad249c740bd` — tracks the full event chain, rejects absent/invalid transfer lengths rather than substituting a synthetic zero, and injects the pure provenance result into the existing Image classifier **and** existing network wire records. This extends the **same collector**; no competing collector or PR was created.
+- `qa/media-recovery/test_cdp_cold_cache_provenance_20261113.cjs` — Git blob `955519d807521928eb0c1f2f33df604edf6a941a` — **20/20 native Node v22.16.0** tests passed on local files whose hashes independently match those committed Git blobs.
+- `qa/media-recovery/test_cdp_cold_cache_classifier_integration_20261113.cjs` — Git blob `28cfea6ad51313e705c6cd61b117bf86599ac4a3` — **12/12** cross-layer tests passed in isolated V8 with Node `URL`, `node:test`, and assertion compatibility shims against the exact committed source. Test subjects are synthetic 404/200 image requests, missing events, cache hits, disk/SW hits, and failed loads. Native integration execution, actual Chrome capture, and full repository CI remain outstanding.
+
+The helper's booleans are based on a verified event sequence and acknowledged commands, not a claim that the CDP response directly emits `fromMemoryCache:false`. Partial or interrupted CDP streams remain HOLD. No code establishes true origin/browser HTTP response codes without running an actual guest browser.
+
+## Current six-image P0 priority and rights decision
+
+[Machine-readable full-URL/status/rights audit](../qa/media-recovery/p0_six_cold_cdp_closure_20261113.json) records the **six exact published source URLs** in order: `285:5 → 285:2 → 287:5 → 418:1 → 418:2 → 407:1`. Rechecked with an independent web retriever November 13: wrappers **404, 500/redirect inaccessible, 404, 403, 403, 400/unsupported binary**. These are **not authenticated visitor-browser/origin HTTP statuses**. A moved Skyway publisher image displayed, and the official USGS Hebgen catalog identifies its linked original as J. R. Stacy's public-domain photograph; neither observation establishes an authorized download/rehost or guest failure.
+
+Candidate records retain original URLs, specific publisher/USCG/USGS/catalog leads, `null` actual guest HTTP/decoded geometry/transfer measurements, `false` item-level rehosting approval, **maximum 960px derivative width**, **no upscale**, and editorial scene/crop and attribution HOLD. The moved publisher image has unknown reuse permission, the 2001/1980 historical context of editorial alternatives must not be misrepresented, and official archival records are not automatically byte-identical to the published photograph. The actual browser review and screenshots remain with **Site QA #154**.
+
+## Weight and transfer acceptance
+
+Read `docs/IMAGE-WEIGHT-WORKLIST.md` from **draft #183** (not main), blob `2acd06a4ca4317646006eb6591face3fe76fedec`. Preserve frozen **61 posts / 355 inline positions**, noting separate #183 inventory **288 offsite slots** versus #154's **286** (unresolved), and do not merge the expanded **66 posts / 361 images** denominator into the historical baseline. **15 originals >1,500,000 stored bytes** total **47,096,779**; **11 oversized originals referenced inline** total **38,480,915 stored bytes**. Neither is visitor-transferred bytes.
+
+The quoted **76% reduction is a hypothesis, not a finding**. The future paired comparator must sum `Network.loadingFinished.encodedDataLength` of only source-bound cold Image requests for the same posts, slots, URLs, viewport and device density, rejecting failures/caches/theme images/retries or unbound requests; compare both desktop and mobile with repeated captures. A **960px** derivative has enough physical pixels only if its actual painted CSS width × DPR is at most 960 (e.g. at 2× density only up to 480 CSS px). Avoid blindly shrinking maps, technical figures, native small photographs or already Jetpack-transformed Vasa images; require visual parity, original rights, credits, alt/caption accuracy and reversible staging before any release.
+
+**Next acceptance:** Site QA run the existing logged-out browser collector, read back its exact capture bytes/SHAs, verify one of the six P0 sources genuinely fails/loads with an uncached Image request, and provide screenshots; only then propose a licensed, same-scene staging remedy. No production permission is granted by this document.

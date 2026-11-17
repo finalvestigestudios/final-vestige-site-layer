@@ -1,0 +1,17 @@
+# Media Recovery — three verified live WordPress source slots and Scotch Cap bridge (2026-11-08)
+
+This work belongs to independent **draft PR #183**, not Site QA #154's browser collector, and does not touch homepage design. Read-only WordPress `posts_get(context=edit)` confirmed **three published posts** and their exact old image URLs/ALT without changing content.
+
+| P0 slot | Last modified UTC | Live WordPress source | Retriever only | Recovery lead |
+|---|---|---|---|---|
+| 418:2 (Scotch Cap) | 2026-08-28T03:11:08 | USCG `5_%20Scotch_Cap_debris2_1946.jpg` | wrapper **403** | [Same-basename secondary copy](https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg) **displays**; gallery attributes to Coast Guard Museum Northwest |
+| 287:5 (Skyway) | 2026-11-02T21:40:01 | St Pete Catalyst original `Skyway-Bridge-documentary.jpg` | wrapper **404** | [Same-publisher alternate host](https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg) **displays**; photo credit University Press of Florida; copyright HOLD |
+| 407:1 (Hebgen) | 2026-10-29T18:30:30 | USGS S3 `img7535.jpg` | wrapper **400 unsupported binary** | [USGS official 1959 fault-scarp catalog](https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959) credits J. R. Stacy, Public Domain; alternate thumbnail **not accessible on latest retriever attempt** |
+
+**New primary-research finding:** the [Scotch Cap gallery](https://www.lighthousefriends.com/light.asp?ID=1780) contains a visible 1946 tsunami wreckage image with the same basename as FV's inaccessible-to-retriever Coast Guard image; the gallery credits **Coast Guard Museum Northwest**. [National Coast Guard Museum](https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/) independently catalogs aftermath photographs credited to USCG. Neither binary hash nor exact crop/dimensions nor license to copy the secondary host's file has been established. A [NOAA catalog](https://oceanexplorer.noaa.gov/multimedia/okeanos-explorations-seascape-alaska-ex2304-features-geology-media-lighthouse-debris/) confusingly labels a Scotch Cap debris scene as after **1964**, while the Coast Guard Museum dates the lighthouse destruction **April 1, 1946**; do not automatically substitute the NOAA scene.
+
+For Skyway, the relocated image shows **1980 bridge destruction**, not the completed later replacement mentioned in FV's published ALT. Hold any edit for a separately approved historical-description review.
+
+**Procedure:** Site QA #154 must obtain real cold logged-out browser CDP Image GET, cache flags, HTTP, `currentSrc`, natural geometry, transfer bytes and screenshots. Web retriever wrappers **are not visitor HTTP**. Only after authentic browser failure, rights and exact-scene crop/binary parity are established should a proportional **max-960px/no-upscale** WordPress Media Library derivative be contemplated. No changed Gutenberg post blocks, no third-party scraping or media downloads, no production edits, no homepage work and no spend.
+
+[Machine-readable evidence](../qa/media-recovery/p0_live_cms_3_source_bridges_20261108.json) + [fail-closed validator](../qa/media-recovery/validate_p0_live_cms_source_bridges_20261108.cjs) + [native Node tests](../qa/media-recovery/test_p0_live_cms_source_bridges_20261108.cjs). Baseline 61/355 historic, 66/361 mixed-date expanded; **42 browser failures unverified, 76% wire savings unmeasured, 15 originals >1.5 decimal MB totaling 47,096,779 stored bytes**, not page transfers.

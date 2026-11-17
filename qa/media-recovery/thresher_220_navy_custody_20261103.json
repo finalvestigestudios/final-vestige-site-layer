@@ -1,0 +1,313 @@
+{
+  "schema": "fv-media-recovery-thresher-220-v1",
+  "audit_utc_date": "2026-11-03",
+  "source": {
+    "snapshot": "qa/media-recovery/parts/05.json",
+    "blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+    "post_id": 220,
+    "post_url": "https://finalvestige.com/2026/08/18/too-deep-for-the-rescue-bell/",
+    "original_modified": "2026-10-29T18:25:46",
+    "not_live_wp_read": true
+  },
+  "conclusion": {
+    "exact_redirect_web_retriever_inaccessible": 7,
+    "commons_catalog_pages_accessible": 7,
+    "navy_matching_custody_records": 6,
+    "related_navy_nonidentical": 1,
+    "confirmed_guest_breaks": 0,
+    "confirmed_browser_transfers": 0,
+    "sitewide_42_verified": false,
+    "sitewide_76_percent_measured": false,
+    "production_repairs": 0
+  },
+  "images": [
+    {
+      "key": "220:0",
+      "slot": 0,
+      "exact_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Thresher_(SSN-593)_bow.jpg?width=1280",
+      "original_alt": "Bow-on view of USS Thresher at sea in July 1961.",
+      "source_snapshot_modified": "2026-10-29T18:25:46",
+      "retrieval": {
+        "method": "web.open exact Wikimedia Special:Redirect/file URL",
+        "observed": "web_tool_internal_error_no_response",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_decoded": null,
+        "guest_current_src": null,
+        "guest_image_wire_bytes": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:USS_Thresher_(SSN-593)_bow.jpg",
+        "observation": "catalog_html_accessible",
+        "original_width_px": 4918,
+        "original_height_px": 6136,
+        "navy_catalog_id": "NH 97545",
+        "navy_primary_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-97000/NH-97545.html",
+        "association": "same_catalog_image_by_Commons_source_record",
+        "observation_note": "Photo dated July 24 1961; published source requests width=1280 though 960px derivative may suffice; Commons original matches Navy high TIFF catalog dimensions."
+      },
+      "rights": {
+        "claimed_status": "Commons PD-USGov and NHHC catalog indicate official Navy photo; item credit and scope still reviewed.",
+        "item_specific_signoff": false,
+        "copy_allowed": false,
+        "credits_reviewed": false
+      },
+      "proposed": {
+        "width_px": 960,
+        "height_px": 1198,
+        "method": "resize only if source pixel width >960; otherwise retain",
+        "wordpress_cache_and_rehost": "HOLD",
+        "swap_published_src": "HOLD",
+        "visual_identity_approval": false
+      }
+    },
+    {
+      "key": "220:1",
+      "slot": 1,
+      "exact_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Thresher_(SSN-593)_launching.jpg",
+      "original_alt": "USS Thresher entering the water during her July 9, 1960 launching at Portsmouth Naval Shipyard.",
+      "source_snapshot_modified": "2026-10-29T18:25:46",
+      "retrieval": {
+        "method": "web.open exact Wikimedia Special:Redirect/file URL",
+        "observed": "web_tool_internal_error_no_response",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_decoded": null,
+        "guest_current_src": null,
+        "guest_image_wire_bytes": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:USS_Thresher_(SSN-593)_launching.jpg",
+        "observation": "catalog_html_accessible",
+        "original_width_px": 740,
+        "original_height_px": 574,
+        "navy_catalog_id": "NH 97552",
+        "navy_primary_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-97000/NH-97552.html",
+        "association": "same_catalog_image_by_Commons_source_record",
+        "observation_note": "Launched July 9 1960 at Portsmouth Naval Shipyard; Commons original already under 960px wide. Navy high TIFF is not a proved identical crop."
+      },
+      "rights": {
+        "claimed_status": "Commons official Navy government-work claim; item-specific review.",
+        "item_specific_signoff": false,
+        "copy_allowed": false,
+        "credits_reviewed": false
+      },
+      "proposed": {
+        "width_px": 740,
+        "height_px": 574,
+        "method": "resize only if source pixel width >960; otherwise retain",
+        "wordpress_cache_and_rehost": "HOLD",
+        "swap_published_src": "HOLD",
+        "visual_identity_approval": false
+      }
+    },
+    {
+      "key": "220:2",
+      "slot": 2,
+      "exact_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Skylark_(ASR-20).jpg",
+      "original_alt": "USS Skylark, the submarine rescue ship accompanying Thresher during the April 1963 deep-dive trials.",
+      "source_snapshot_modified": "2026-10-29T18:25:46",
+      "retrieval": {
+        "method": "web.open exact Wikimedia Special:Redirect/file URL",
+        "observed": "web_tool_internal_error_no_response",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_decoded": null,
+        "guest_current_src": null,
+        "guest_image_wire_bytes": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:USS_Skylark_(ASR-20).jpg",
+        "observation": "catalog_html_accessible",
+        "original_width_px": 578,
+        "original_height_px": 737,
+        "navy_catalog_id": "NH 97310",
+        "navy_primary_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-97000/NH-97310.html",
+        "association": "same_catalog_image_by_Commons_source_record",
+        "observation_note": "Halftone Navy PR image from later 1950s or 1960s, not proved taken on April 10 1963; Navy page notes collection of Christopher P. Cavas (2000)."
+      },
+      "rights": {
+        "claimed_status": "Commons PD-USGov claim for photograph, but halftone reproduction/donor collection warrants separate rights confirmation.",
+        "item_specific_signoff": false,
+        "copy_allowed": false,
+        "credits_reviewed": false
+      },
+      "proposed": {
+        "width_px": 578,
+        "height_px": 737,
+        "method": "resize only if source pixel width >960; otherwise retain",
+        "wordpress_cache_and_rehost": "HOLD",
+        "swap_published_src": "HOLD",
+        "visual_identity_approval": false
+      }
+    },
+    {
+      "key": "220:3",
+      "slot": 3,
+      "exact_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Thresher_(SSN-593)_watertight_door.jpg",
+      "original_alt": "An internal watertight door from USS Thresher photographed on the seafloor by the bathyscaphe Trieste in August 1963.",
+      "source_snapshot_modified": "2026-10-29T18:25:46",
+      "retrieval": {
+        "method": "web.open exact Wikimedia Special:Redirect/file URL",
+        "observed": "web_tool_internal_error_no_response",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_decoded": null,
+        "guest_current_src": null,
+        "guest_image_wire_bytes": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:USS_Thresher_(SSN-593)_watertight_door.jpg",
+        "observation": "catalog_html_accessible",
+        "original_width_px": 740,
+        "original_height_px": 532,
+        "navy_catalog_id": "NH 97567",
+        "navy_primary_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-97000/NH-97567.html",
+        "association": "same_catalog_image_by_Commons_source_record",
+        "observation_note": "Watertight door photographed Aug 24 1963 from bathyscaphe Trieste and released September 5 1963; 740px original must not be enlarged."
+      },
+      "rights": {
+        "claimed_status": "Commons PD-USGov official Navy claim; source identity/credit pending.",
+        "item_specific_signoff": false,
+        "copy_allowed": false,
+        "credits_reviewed": false
+      },
+      "proposed": {
+        "width_px": 740,
+        "height_px": 532,
+        "method": "resize only if source pixel width >960; otherwise retain",
+        "wordpress_cache_and_rehost": "HOLD",
+        "swap_published_src": "HOLD",
+        "visual_identity_approval": false
+      }
+    },
+    {
+      "key": "220:4",
+      "slot": 4,
+      "exact_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bathyscaphe_Trieste2_2.jpg",
+      "original_alt": "Bathyscaphe Trieste II prepared in the configuration used for later surveys of the USS Thresher wreckage.",
+      "source_snapshot_modified": "2026-10-29T18:25:46",
+      "retrieval": {
+        "method": "web.open exact Wikimedia Special:Redirect/file URL",
+        "observed": "web_tool_internal_error_no_response",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_decoded": null,
+        "guest_current_src": null,
+        "guest_image_wire_bytes": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:Bathyscaphe_Trieste2_2.jpg",
+        "observation": "catalog_html_accessible",
+        "original_width_px": 1700,
+        "original_height_px": 1349,
+        "navy_catalog_id": null,
+        "navy_primary_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/USN-1084000/USN-1084706.html",
+        "association": "related_Navy_photo_not_same_image",
+        "observation_note": "Commons describes Trieste II reconfigured mid-1964 at Mare Island for second Thresher survey; related NHHC USN 1084706 is a DIFFERENT January 16 1964 crane/commissioning scene, not an exact-image match. Never substitute the latter silently or label this photo as the original 1963 Trieste."
+      },
+      "rights": {
+        "claimed_status": "Commons Navy-PD claim but source cites NavSource, item and photographer lineage not independently established.",
+        "item_specific_signoff": false,
+        "copy_allowed": false,
+        "credits_reviewed": false
+      },
+      "proposed": {
+        "width_px": 960,
+        "height_px": 762,
+        "method": "resize only if source pixel width >960; otherwise retain",
+        "wordpress_cache_and_rehost": "HOLD",
+        "swap_published_src": "HOLD",
+        "visual_identity_approval": false
+      }
+    },
+    {
+      "key": "220:5",
+      "slot": 5,
+      "exact_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Thresher_(SSN-593)_brass_pipe.jpg",
+      "original_alt": "Recovered brass pipe from USS Thresher bearing an inscription that includes the words 593 Boat.",
+      "source_snapshot_modified": "2026-10-29T18:25:46",
+      "retrieval": {
+        "method": "web.open exact Wikimedia Special:Redirect/file URL",
+        "observed": "web_tool_internal_error_no_response",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_decoded": null,
+        "guest_current_src": null,
+        "guest_image_wire_bytes": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:USS_Thresher_(SSN-593)_brass_pipe.jpg",
+        "observation": "catalog_html_accessible",
+        "original_width_px": 739,
+        "original_height_px": 574,
+        "navy_catalog_id": "NH 97570",
+        "navy_primary_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-97000/NH-97570.html",
+        "association": "same_catalog_image_by_Commons_source_record",
+        "observation_note": "Brass pipe with 593 Boat inscription recovered by Trieste; released September 13 1963; medium 739x574 needs no upscale."
+      },
+      "rights": {
+        "claimed_status": "NHHC official Navy photo and Commons PD-USGov claim; item review.",
+        "item_specific_signoff": false,
+        "copy_allowed": false,
+        "credits_reviewed": false
+      },
+      "proposed": {
+        "width_px": 739,
+        "height_px": 574,
+        "method": "resize only if source pixel width >960; otherwise retain",
+        "wordpress_cache_and_rehost": "HOLD",
+        "swap_published_src": "HOLD",
+        "visual_identity_approval": false
+      }
+    },
+    {
+      "key": "220:6",
+      "slot": 6,
+      "exact_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Thresher_(SSN-593)_rudder_sunk.jpg",
+      "original_alt": "Upper rudder from USS Thresher photographed on the deep Atlantic seafloor during a later Navy survey.",
+      "source_snapshot_modified": "2026-10-29T18:25:46",
+      "retrieval": {
+        "method": "web.open exact Wikimedia Special:Redirect/file URL",
+        "observed": "web_tool_internal_error_no_response",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_decoded": null,
+        "guest_current_src": null,
+        "guest_image_wire_bytes": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:USS_Thresher_(SSN-593)_rudder_sunk.jpg",
+        "observation": "catalog_html_accessible",
+        "original_width_px": 740,
+        "original_height_px": 576,
+        "navy_catalog_id": "NH 97557",
+        "navy_primary_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-97000/NH-97557.html",
+        "association": "same_catalog_image_by_Commons_source_record",
+        "observation_note": "Upper rudder photographed October 1964 via deep-sea vehicle from USNS Mizar, not April 1963; NHHC high TIFF label 4870x6084 is portrait while Commons 740x576 is landscape: cannot assume identical dimensions, orientation, crop."
+      },
+      "rights": {
+        "claimed_status": "Official Navy image with Commons PD-USGov claim; NHHC rendition orientation discrepancy must be reconciled.",
+        "item_specific_signoff": false,
+        "copy_allowed": false,
+        "credits_reviewed": false
+      },
+      "proposed": {
+        "width_px": 740,
+        "height_px": 576,
+        "method": "resize only if source pixel width >960; otherwise retain",
+        "wordpress_cache_and_rehost": "HOLD",
+        "swap_published_src": "HOLD",
+        "visual_identity_approval": false
+      }
+    }
+  ],
+  "guardrails": [
+    "web wrapper internal error is not HTTP 403/404 or actual failed visitor decoding",
+    "Wikimedia image catalog is not a confirmed binary redirect response",
+    "No copying or rehosting until rights/source/credit and crop approved",
+    "Do not serve a different 1964 Trieste II scene for 1963 dive",
+    "Do not upscale small originals",
+    "Source identity and browser CDP proof required prior to any production proposal"
+  ]
+}

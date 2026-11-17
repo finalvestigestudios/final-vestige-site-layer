@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-01",
+  "scope": "isolated Media Recovery PR #183; exact source URL checks and redirect/census false-positive engineering",
+  "methodology": "independent web retriever + publisher/Commons catalog, NOT logged-out Chrome/CDP and NOT origin HTTP certification",
+  "source_inventory": {
+    "published_posts": 61,
+    "stored_images": 355,
+    "offsite_references": 288,
+    "oversized_wp_originals_over_1_5_mib": 13,
+    "claimed_broken_42_verified": false,
+    "claimed_weight_reduction_76_percent_verified": false
+  },
+  "fresh_retrievals": [
+    {
+      "image_key": "287:5",
+      "url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "method": "independent_web_retriever",
+      "retriever_status": "FETCH_FAILED_404",
+      "retriever_error_code": 404,
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_browser_decoded": null,
+      "image_repaired": false
+    },
+    {
+      "image_key": "287:5",
+      "url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "method": "independent_web_image_renderer",
+      "retriever_status": "IMAGE_DISPLAYED",
+      "retriever_error_code": null,
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_browser_decoded": null,
+      "image_repaired": false
+    },
+    {
+      "image_key": "418:2",
+      "url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "method": "independent_web_retriever",
+      "retriever_status": "FETCH_FAILED_403",
+      "retriever_error_code": 403,
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "guest_browser_decoded": null,
+      "image_repaired": false
+    }
+  ],
+  "publisher_credit": {
+    "image_key": "287:5",
+    "publisher_page": "https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/",
+    "article_published": "2020-04-10",
+    "photo_credit": "University Press of Florida",
+    "scene": "1980 Sunshine Skyway disaster aftermath",
+    "publisher_relocated_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+    "matches_stored_alt_description_of_later_replacement": false,
+    "exact_binary_match_to_old_url": false,
+    "reproduction_permission_confirmed": false,
+    "cache_or_wp_upload_allowed": false
+  },
+  "alternate_primary_archive_candidate": {
+    "image_key": "287:5",
+    "record_url": "https://www.floridamemory.com/items/show/131903",
+    "commons_catalog_url": "https://commons.wikimedia.org/wiki/File:View_of_the_old_and_new_Sunshine_Skyway_bridges_from_St._Petersburg,_Florida,_1987.jpg",
+    "creator": "H. Milo Stewart",
+    "year": 1987,
+    "scene": "old and replacement Sunshine Skyway bridges, not 1980 collision wreckage",
+    "commons_catalog_license": "CC0 1.0 as tagged by uploader; independent primary rights confirmation pending",
+    "florida_memory_primary_retriever_status": "FETCH_FAILED_403",
+    "original_width_px": 600,
+    "original_height_px": 595,
+    "target_width_px": 600,
+    "target_height_px": 595,
+    "max_width_px": 960,
+    "upscale_allowed": false,
+    "exact_same_photo_as_published": false,
+    "editorial_scene_change": true,
+    "license_item_review_status": "HOLD",
+    "master_sha256": null,
+    "wp_media_id": null,
+    "cache_authorized": false,
+    "wordpress_publish_authorized": false
+  },
+  "engineering_reproduction": {
+    "affected_modules": [
+      "qa/media-recovery/browser_probe_core.cjs",
+      "qa/media-recovery/image_census_coverage_core.cjs"
+    ],
+    "defect": "A CDP request that matched the source only via a redirect alias, but ended at a different final image URL, could previously be counted as a confirmed 403/404/network/HTML failure; census accepted the same false positive.",
+    "synthetic_fixture_statuses": [
+      404,
+      403,
+      200,
+      null
+    ],
+    "synthetic_only": true,
+    "production_failures_demonstrated": 0,
+    "patch_gate": "require exact final CDP request image identity for every claimed broken image; reject redirected-image identity uncertainty in independent census",
+    "tests_isolated_v8": {
+      "passed": 74,
+      "failed": 0,
+      "files": 4
+    },
+    "native_node_ci": "NOT_RUN",
+    "live_guest_chrome": "NOT_RUN"
+  },
+  "safety": {
+    "image_binary_downloaded": false,
+    "unlicensed_scraping": false,
+    "wordpress_production_writes": false,
+    "homepage_visual_design_changes": false,
+    "site_qa_pr_154_code_changes": false,
+    "subscription_spend": false
+  }
+}

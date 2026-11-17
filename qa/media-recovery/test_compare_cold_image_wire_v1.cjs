@@ -1,0 +1,224 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {test}=require('node:test');
+const {compareColdImageWire}=require('./compare_cold_image_wire_v1.cjs');
+const copy=x=>JSON.parse(JSON.stringify(x));
+function fixture(bytes=1000){
+ const src='https://finalvestige.com/wp-content/uploads/2026/08/test.png';
+ const key='34:0';
+ const slot={image_key:key,result:'loaded_in_probe_browser',match:'exact_url_or_jetpack_origin',
+ verified_broken_in_browser:false,current_src_identity_verified:true,network_final_identity_verified:true,
+ loaded_network_proof_verified:true,redirected_image_identity_unverified:false,complete:true,
+ natural_width:960,natural_height:720,rendered_alt:'Historic source image',http_status:200,response_mime_type:'image/png',transfer_bytes:bytes,stored_url:src,
+ current_src:src,request_url:src,request_id:'r1'};
+ const page={post_id:34,url:'https://finalvestige.com/2026/08/01/post/',page_result:'inspected_browser',
+ scroll_coverage:{complete:true,state:'full_height_scanned'},image_census:{complete:true,confirmed_broken_count:0},
+ confirmed_broken_count:0,article_wire_evidence_complete:true,article_wire_evidence_errors:[],
+ article_wire_attribution_mode:'strict_cdp_request_id',stored_image_count:1,stored_images:[slot],
+ matched_article_network_requests:1,article_image_wire_bytes_total:bytes,
+ network_images:[{request_id:'r1',url:src,status:200,mime_type:'image/png',encoded_data_length:bytes,
+ was_cached:false,from_disk_cache:false,from_memory_cache:false,from_service_worker:false,
+ cold_event_chain_complete:true,cold_network_transfer_proven:true}]};
+ return {status:'complete_browser_image_census',image_census_coverage:{complete:true,confirmed_broken_count:0},
+ confirmed_broken_count:0,requested_pages:1,verified_pages:1,probe_version:4,viewport:'390x844',mode:'priority',
+ browser_product:'Chrome/140',run_profile:{cache_disabled:true,service_worker_bypassed:true},pages:[page]};
+}
+const compare=(mutBefore,mutAfter)=>{const b=fixture(),a=fixture(240);mutBefore?.(b);mutAfter?.(a);return compareColdImageWire(b,a)};
+const hold=(name,mutBefore,mutAfter,why)=>test(name,()=>{const r=compare(mutBefore,mutAfter);assert.equal(r.state,'HOLD');assert.equal(r.reduction_percent,null);assert.equal(r.sitewide_76_percent_claim_permitted,false);if(why)assert.ok(r.reasons.some(x=>x.includes(why)),JSON.stringify(r.reasons))});
+test('1000 vs 240 exact verified cold bytes = 76%, but not site-wide proof',()=>{
+ const r=compare();assert.equal(r.state,'LAB_PAIR_MEASURED');assert.equal(r.reduction_percent,76);assert.equal(r.at_least_76_percent_in_this_pair,true);assert.equal(r.sitewide_76_percent_claim_permitted,false);assert.equal(r.production_repair_claim_permitted,false);
+});
+test('reductions below threshold remain measured but not claimed',()=>{const r=compare(null,a=>{a.pages[0].stored_images[0].transfer_bytes=500;a.pages[0].network_images[0].encoded_data_length=500;a.pages[0].article_image_wire_bytes_total=500});assert.equal(r.reduction_percent,50);assert.equal(r.at_least_76_percent_in_this_pair,false)});
+test('increased bytes produce a negative reduction',()=>{const r=compare(null,a=>{a.pages[0].stored_images[0].transfer_bytes=1200;a.pages[0].network_images[0].encoded_data_length=1200;a.pages[0].article_image_wire_bytes_total=1200});assert.equal(r.reduction_percent,-20)});
+hold('no invented 76% when baseline has a broken image',b=>{b.pages[0].stored_images[0].result='confirmed_broken_in_probe_browser'},null,'unverified_or_broken_image');
+hold('missing viewport match',null,a=>{a.viewport='1440x900'},'unmatched_browser');
+hold('cached candidate never counts',null,a=>{a.pages[0].network_images[0].from_disk_cache=true},'uncached_cdp');
+hold('offline service-worker probe not acceptable',b=>{b.run_profile.service_worker_bypassed=false},null,'uncached_run');
+hold('fake network byte summary rejected',null,a=>{a.pages[0].article_image_wire_bytes_total=1},'article_byte_total');
+hold('CDP request mismatch rejected',null,a=>{a.pages[0].stored_images[0].request_id='unknown'},'uncached_cdp');
+hold('duplicate CDP request IDs rejected',b=>{b.pages[0].network_images.push(copy(b.pages[0].network_images[0]))},null,'duplicate_or_missing_cdp');
+hold('extra same-photo preload rejected',b=>{b.pages[0].network_images.push({...copy(b.pages[0].network_images[0]),request_id:'preload'})},null,'unbound_same_photo');
+hold('partial scan rejected',b=>{b.pages[0].scroll_coverage.complete=false},null,'page_or_scroll');
+hold('wrong page URL rejected',null,a=>{a.pages[0].url='https://finalvestige.com/not-original'},'post_url_or_image_slot');
+hold('new missing slot rejected',null,a=>{a.pages[0].stored_images[0].image_key='34:1'},'post_url_or_image_slot');
+hold('page broken-count declared rejects comparison',b=>{b.pages[0].confirmed_broken_count=1},null,'page_or_scroll');
+hold('census incompleteness rejected',b=>{b.image_census_coverage.complete=false},null,'census_or_image_failure');
+hold('unattributed source URL is invalid',b=>{b.pages[0].stored_images[0].current_src='not-a-url'},null,'unverified_or_broken_image');
+hold('mime text/html rejected',null,a=>{a.pages[0].network_images[0].mime_type='text/html'},'uncached_cdp');
+hold('missing network packet rejected',null,a=>{a.pages[0].network_images=[]},'uncached_cdp');
+hold('missing bytes rejected',null,a=>{a.pages[0].stored_images[0].transfer_bytes=null},'unverified_or_broken_image');
+hold('a document served from cache rejects',b=>{b.run_profile.cache_disabled=false},null,'uncached_run');
+
+hold('tiny candidate cannot masquerade as 76 percent savings',null,a=>{a.pages[0].stored_images[0].natural_width=1;a.pages[0].stored_images[0].natural_height=1},'candidate_intrinsic_too_small');
+hold('cropped scene requires review',null,a=>{a.pages[0].stored_images[0].natural_height=540},'image_crop_or_aspect_changed');
+hold('upscaled candidate requires review',null,a=>{a.pages[0].stored_images[0].natural_width=1920;a.pages[0].stored_images[0].natural_height=1440},'candidate_intrinsic_upscale_requires_review');
+hold('missing baseline intrinsic height fails',b=>{delete b.pages[0].stored_images[0].natural_height},null,'unverified_or_broken_image');
+hold('missing candidate intrinsic height fails',null,a=>{delete a.pages[0].stored_images[0].natural_height},'unverified_or_broken_image');
+hold('different historical caption requires review',null,a=>{a.pages[0].stored_images[0].rendered_alt='Different historical photo'},'rendered_alt_changed_or_missing');
+hold('unknown CDP cache flag is not uncached evidence',b=>{delete b.pages[0].network_images[0].was_cached},null,'uncached_cdp_request_mismatch');
+hold('unknown service worker cache flag fails closed',null,a=>{delete a.pages[0].network_images[0].from_service_worker},'uncached_cdp_request_mismatch');
+test('proportional 960x720 to 640x480 is measurable but cannot certify visual parity',()=>{const r=compare(null,a=>{a.pages[0].stored_images[0].natural_width=640;a.pages[0].stored_images[0].natural_height=480});assert.equal(r.state,'LAB_PAIR_MEASURED');assert.equal(r.visual_parity_verified,false)});
+
+hold('reject forged CDN URL where the decoded currentSrc is a different photo',null,a=>{
+ const s=a.pages[0].stored_images[0],n=a.pages[0].network_images[0];
+ s.current_src='https://elsewhere.example.org/different-photo.png';
+ s.request_url=s.current_src;n.url=s.current_src;
+},'unverified_image_source_chain');
+hold('reject unrelated CDP image request under the same valid post',null,a=>{
+ const s=a.pages[0].stored_images[0],n=a.pages[0].network_images[0];
+ s.request_url='https://finalvestige.com/wp-content/uploads/2026/08/other-photo.png';
+ n.url=s.request_url;
+},'unverified_image_source_chain');
+hold('reject an unauthorized PNG-to-WebP format transform as identity equivalent',null,a=>{
+ const s=a.pages[0].stored_images[0],n=a.pages[0].network_images[0];
+ s.current_src=s.stored_url+'?format=webp';s.request_url=s.current_src;n.url=s.current_src;
+},'unverified_image_source_chain');
+hold('reject contradicting CDP MIME declarations',null,a=>{
+ a.pages[0].stored_images[0].response_mime_type='image/jpeg';
+},'cdp_source_or_mime_identity_mismatch');
+hold('missing article wire error ledger must not silently pass',null,a=>{
+ a.pages[0].article_wire_evidence_errors=null;
+},'article_wire_evidence_unverified');
+test('Jetpack numeric fit for a first-party image stays eligible after independent source-chain validation',()=>{
+ const r=compare(null,a=>{
+  const s=a.pages[0].stored_images[0],n=a.pages[0].network_images[0];
+  s.current_src='https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/test.png?fit=960%2C720';
+  s.request_url=s.current_src;n.url=s.current_src;
+ });
+ assert.equal(r.state,'LAB_PAIR_MEASURED');
+ assert.equal(r.reduction_percent,76);
+ assert.equal(r.visual_parity_verified,false);
+});
+
+// These intentionally change BOTH the stored URL and every associated successful
+// CDP request so each individual capture remains internally consistent. The
+// *cross-run* provenance identity is the missing safeguard.
+function replaceImageSource(run, src) {
+ const s=run.pages[0].stored_images[0], n=run.pages[0].network_images[0];
+ s.stored_url=src;s.current_src=src;s.request_url=src;n.url=src;
+}
+hold('same ALT and geometry cannot disguise a different candidate historical photo',null,
+ a=>replaceImageSource(a,'https://finalvestige.com/wp-content/uploads/2026/08/unrelated-photo.png'),
+ 'published_original_changed_between_runs:34:0');
+hold('different baseline source with valid independent CDP responses cannot pass', 
+ b=>replaceImageSource(b,'https://finalvestige.com/wp-content/uploads/2026/08/older-scene.jpg'),
+ null,'published_original_changed_between_runs:34:0');
+hold('new external publisher source must not masquerade as compression savings',null,
+ a=>replaceImageSource(a,'https://archives.example.org/different-period-photo.jpg'),
+ 'published_original_changed_between_runs:34:0');
+hold('source alias pointing to the same origin with distinct stored URL requires provenance review',null,
+ a=>replaceImageSource(a,'https://finalvestige.com/wp-content/uploads/2026/08/test-v2.png'),
+ 'published_original_changed_between_runs:34:0');
+
+function withZeroImagePost(run) {
+ const row=copy(run.pages[0]);
+ row.post_id=1922;
+ row.url='https://finalvestige.com/2026/11/07/change-blindness/';
+ row.stored_image_count=0;
+ row.stored_images=[];
+ row.network_images=[];
+ row.matched_article_network_requests=0;
+ row.article_image_wire_bytes_total=0;
+ run.pages.push(row);
+ run.requested_pages=run.pages.length;
+ run.verified_pages=run.pages.length;
+ return run;
+}
+function zeroPair(mutBefore,mutAfter) {
+ const b=withZeroImagePost(fixture()), a=withZeroImagePost(fixture(240));
+ mutBefore?.(b);mutAfter?.(a);
+ return compareColdImageWire(b,a);
+}
+test('zero-image pages remain in a matched site-wide cohort',()=>{
+ const r=zeroPair();
+ assert.equal(r.state,'LAB_PAIR_MEASURED');
+ assert.equal(r.post_count,2);
+ assert.equal(r.paired_post_count,2);
+ assert.equal(r.paired.find(p=>p.post_id===1922).image_slots,0);
+ assert.deepEqual(r.paired.find(p=>p.post_id===1922).sources,[]);
+ assert.equal(r.baseline_cdp_bytes,1000);
+ assert.equal(r.candidate_cdp_bytes,240);
+ assert.equal(r.reduction_percent,76);
+ assert.equal(r.sitewide_76_percent_claim_permitted,false);
+});
+test('zero-image page must be full-scroll and censused',()=>{
+ const r=zeroPair(b=>{b.pages[1].scroll_coverage.complete=false});
+ assert.equal(r.state,'HOLD');
+ assert.ok(r.reasons.some(s=>s.includes('page_or_scroll_unverified:1922')));
+});
+test('zero-image page cannot forge article transferred bytes',()=>{
+ const r=zeroPair(null,a=>{a.pages[1].article_image_wire_bytes_total=999});
+ assert.equal(r.state,'HOLD');
+ assert.ok(r.reasons.some(s=>s.includes('zero_image_post_forged_article_traffic:1922')));
+});
+test('zero-image page cannot forge article CDP matches',()=>{
+ const r=zeroPair(b=>{b.pages[1].matched_article_network_requests=1});
+ assert.equal(r.state,'HOLD');
+ assert.ok(r.reasons.some(s=>s.includes('zero_image_post_forged_article_traffic:1922')));
+});
+test('zero-image declared count must match the actual stored list',()=>{
+ const r=zeroPair(null,a=>{a.pages[1].stored_image_count=1});
+ assert.equal(r.state,'HOLD');
+ assert.ok(r.reasons.some(s=>s.includes('missing_image_slots_or_network:1922')));
+});
+test('new image on candidate zero-image page is not silently ignored',()=>{
+ const r=zeroPair(null,a=>{
+   a.pages[1].stored_image_count=1;
+   a.pages[1].stored_images=[{...copy(a.pages[0].stored_images[0]),image_key:'1922:0'}];
+ });
+ assert.equal(r.state,'HOLD');
+ assert.equal(r.sitewide_76_percent_claim_permitted,false);
+});
+test('missing zero-image page from candidate is a cohort mismatch',()=>{
+ const r=zeroPair(null,a=>{a.pages.pop();a.requested_pages=1;a.verified_pages=1});
+ assert.equal(r.state,'HOLD');
+ assert.ok(r.reasons.some(s=>s.includes('paired_post_set_incomplete')));
+});
+test('all-zero-image cohort has no mathematical reduction denominator',()=>{
+ const r=zeroPair(b=>{b.pages.splice(0,1);b.requested_pages=1;b.verified_pages=1},
+ a=>{a.pages.splice(0,1);a.requested_pages=1;a.verified_pages=1});
+ assert.equal(r.state,'HOLD');
+ assert.equal(r.reduction_percent,null);
+ assert.ok(r.reasons.some(s=>s.includes('paired_cohort_has_no_positive_image_bytes')));
+});
+test('zero-image articles do not attribute unrelated theme network requests',()=>{
+ const r=zeroPair(b=>{b.pages[1].network_images.push({
+   request_id:'theme_logo',url:'https://finalvestige.com/wp-content/uploads/2026/08/logo.png',
+   status:200,mime_type:'image/png',encoded_data_length:500,
+   was_cached:false,from_disk_cache:false,from_service_worker:false
+ })});
+ assert.equal(r.state,'LAB_PAIR_MEASURED');
+ assert.equal(r.baseline_cdp_bytes,1000);
+});
+
+hold('candidate memory-cached response cannot manufacture a 76 percent saving',null,
+ a=>{a.pages[0].network_images[0].from_memory_cache=true},'uncached_cdp');
+hold('baseline memory-cached response is not a valid transfer',b=>{
+ b.pages[0].network_images[0].from_memory_cache=true},null,'uncached_cdp');
+hold('unknown candidate memory-cache status fails closed',null,
+ a=>{delete a.pages[0].network_images[0].from_memory_cache},'uncached_cdp');
+
+/** Regression: pre-v4 or unverifiable CDP transfers can fake a precise 76% saving.
+ * The old comparator accepted this fixture without event-chain/transfer attestations.
+ * These guards apply to BOTH baseline and candidate, not just the optimized side.
+ */
+hold('baseline without collector probe version cannot be called a measured 76% pair',
+ b=>{delete b.probe_version},null,'cold_collector_version_unverified');
+hold('candidate with string probe version cannot be called measured',
+ null,a=>{a.probe_version='4'},'cold_collector_version_unverified');
+hold('pre-v4 baseline CDP collector cannot certify a cold pair',
+ b=>{b.probe_version=3},null,'cold_collector_version_unverified');
+hold('fractional candidate collector version cannot qualify',
+ null,a=>{a.probe_version=4.5},'cold_collector_version_unverified');
+hold('missing baseline image event-chain attestation blocks wire comparison',
+ b=>{delete b.pages[0].network_images[0].cold_event_chain_complete},null,'uncached_cdp_request_mismatch');
+hold('candidate with false event-chain attestation blocks wire comparison',
+ null,a=>{a.pages[0].network_images[0].cold_event_chain_complete=false},'uncached_cdp_request_mismatch');
+hold('missing baseline cold-transfer proof blocks wire comparison',
+ b=>{delete b.pages[0].network_images[0].cold_network_transfer_proven},null,'uncached_cdp_request_mismatch');
+hold('candidate with false cold-transfer proof blocks wire comparison',
+ null,a=>{a.pages[0].network_images[0].cold_network_transfer_proven=false},'uncached_cdp_request_mismatch');
+test('complete version-4 cold CDP pair still measures 1000 to 240 bytes in lab only',()=>{
+ const r=compare();assert.equal(r.state,'LAB_PAIR_MEASURED');assert.equal(r.reduction_percent,76);
+ assert.equal(r.sitewide_76_percent_claim_permitted,false);
+});

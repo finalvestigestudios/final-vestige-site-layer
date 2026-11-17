@@ -1,0 +1,99 @@
+{
+  "schema": "fv-media-uscg-item-rights-and-name-conflict-v1",
+  "observed_at_pt": "2026-11-15T21:22:00-08:00",
+  "wordpress": {
+    "site": "https://finalvestige.com",
+    "post_id": 418,
+    "post_status": "publish",
+    "modified": "2026-08-28T03:11:08",
+    "slot_index_zero_based": 1,
+    "edit_src": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+    "view_src": "https://i0.wp.com/media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG?ssl=1",
+    "alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew.",
+    "guest_http_status": null,
+    "guest_current_src": null,
+    "guest_natural_width": null,
+    "guest_natural_height": null,
+    "guest_wire_bytes": null,
+    "guest_broken": null
+  },
+  "official_photo": {
+    "agency": "U.S. Coast Guard",
+    "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+    "photo_identifier": "210330-G-DE713-0002.JPG",
+    "photo_by": "U.S. Coast Guard",
+    "public_domain_statement_present": true,
+    "cleared_for_release_statement_present": true,
+    "reuse_credit_required": "U.S. Coast Guard",
+    "dod_restrictions_url": "https://www.dma.mil/Services/Visual-Information/References/Limitations/",
+    "catalog_display_name": "Anthony Pettit",
+    "catalog_displayed_download_mb": "0.04",
+    "source_identity_basis": "The identical VIRIN filename occurs in the published WP EDIT src and USCG item catalog; exact pixel hash and derivative identity not verified.",
+    "item_rights_status": "official_item_public_domain_cleared_for_release_with_conditions",
+    "item_native_width_px": null,
+    "item_native_height_px": null,
+    "permitted_review_max_width_px": 960,
+    "do_not_upscale": true,
+    "review_derivative_width_px": null,
+    "review_derivative_height_px": null,
+    "exact_pixel_identity_verified": false,
+    "storage_cache_or_upload_approved": false,
+    "wordpress_replacement_approved": false
+  },
+  "official_name_conflict": {
+    "description": "Two USCG sources disagree on surname spelling; do not mark the published 'Petit' as a confirmed typo.",
+    "gallery_spelling": "Pettit",
+    "gallery_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+    "facility_history_spelling": "Petit",
+    "facility_history_url": "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1988680/scotch-cap-light/",
+    "long_blue_line_same_page_has_both_spellings": true,
+    "long_blue_line_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+    "editorial_status": "HOLD_CONFLICTING_PRIMARY_SOURCES_NO_AUTOCORRECTION"
+  },
+  "related_slots": [
+    {
+      "slot": "418:2",
+      "edit_src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "item_level_rights": "unverified",
+      "guest_http_status": null,
+      "release": "HOLD"
+    },
+    {
+      "slot": "418:5",
+      "edit_src": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/media/images/19460401_UNKNOWN_37-012_copy.jpg?itok=ASMRCahz",
+      "official_catalog": "https://www.usgs.gov/media/images/damage-hilo-tsunami-struck-april-fools-day-1946",
+      "item_level_rights": "USGS catalog Public Domain, original source unknown",
+      "guest_http_status": null,
+      "release": "HOLD"
+    }
+  ],
+  "baseline": {
+    "frozen_posts": 61,
+    "frozen_image_tags": 355,
+    "current_posts": 66,
+    "current_image_tags": 361,
+    "reported_broken_external": 42,
+    "guest_confirmed_broken": null,
+    "claimed_weight_reduction_percent": 76,
+    "measured_wire_reduction_percent": null,
+    "oversize_originals": 20,
+    "oversize_stored_bytes": 64385752
+  },
+  "release_gates": {
+    "same_frame_visual_review_passed": false,
+    "guest_image_http_and_decode_passed": false,
+    "cold_bytes_measured": false,
+    "do_d_restrictions_reviewed": false,
+    "privacy_and_endorsement_reviewed": false,
+    "publish_approved": false
+  },
+  "deployment": {
+    "new_binaries_downloaded": 0,
+    "wp_production_writes": 0,
+    "published_blocks_changed": 0,
+    "homepage_design_changed": 0,
+    "subscriptions_spent_usd": 0,
+    "pr_merge": false,
+    "deploy": false
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "part": 8,
+  "method": "Authenticated WordPress posts.get context=edit, read-only, actual original URLs; NO visitor network requests",
+  "frozen_git_blob_sha": "5659ec243c188928be3f89c0f96354b660608ca2",
+  "posts": [
+    {
+      "id": 38,
+      "modified": "2026-10-29T17:06:51",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+      "stored_inline_count": 1,
+      "slots": [
+        {
+          "key": "38:0",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+          "alt": "Firefighters drawing emergency water from an underground cistern in post-earthquake San Francisco",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "modified": "2026-10-29T17:07:17",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "stored_inline_count": 1,
+      "slots": [
+        {
+          "key": "37:0",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+          "alt": "Reconstruction of Petra’s water channels and reservoir system in the ancient desert city",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "modified": "2026-10-29T17:07:30",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+      "stored_inline_count": 1,
+      "slots": [
+        {
+          "key": "36:0",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+          "alt": "Civilians sheltering inside a cave during the Siege of Vicksburg",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "modified": "2026-10-29T17:07:04",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+      "stored_inline_count": 1,
+      "slots": [
+        {
+          "key": "35:0",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+          "alt": "Shackleton and crew in a small lifeboat crossing icy seas during the Endurance expedition",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "modified": "2026-10-29T21:19:13",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+      "stored_inline_count": 1,
+      "slots": [
+        {
+          "key": "34:0",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+          "alt": "Firefighters and horse-drawn fire engines on a ruined San Francisco street during the 1906 fires",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "published_posts": 5,
+    "inline_img_tags": 5,
+    "external_origin_count": 0,
+    "classes": {
+      "FIRST_PARTY": 5
+    },
+    "source_drift_count": 0
+  },
+  "source_drift": [],
+  "rights_cleared_for_rehosting": false,
+  "wordpress_writes_authorized": false,
+  "measured_weight_reduction_pct": null,
+  "claimed_42_broken_images_confirmed": false,
+  "network_source_statuses_verified": false
+}

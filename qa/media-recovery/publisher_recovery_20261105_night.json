@@ -1,0 +1,81 @@
+{
+  "schema": "fv-publisher-recovery-20261105-v1",
+  "date": "2026-11-05 PT",
+  "pr_media": 183,
+  "pr_site_qa": 154,
+  "method": "WordPress read-only posts 285 and 287, web.open publisher article and images; web retriever 404 is NOT guest browser HTTP",
+  "baseline": {
+    "frozen_posts": 61,
+    "frozen_slots": 355,
+    "newer_posts": 66,
+    "newer_slots": 361,
+    "alleged_broken": 42,
+    "broken_browser_verified": null,
+    "claimed_weight_savings_percent": 76,
+    "measured_wire_savings_percent": null,
+    "wp_large_orig_count": 13,
+    "wp_large_orig_stored_bytes": 43522829
+  },
+  "rows": [
+    {
+      "key": "285:5",
+      "post": 285,
+      "old": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "web_reader_old_status": 404,
+      "chrome_status": null,
+      "publisher": "https://discover.hubpages.com/entertainment/The-China-Syndrome-Blockbuster-Movie-Becomes-Eerie-Prophecy",
+      "catalog": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "candidate": "https://upload.wikimedia.org/wikipedia/commons/0/09/Three_mile_island_062010.jpg",
+      "source_chain": "Publisher's 2022 article embeds a June 6 2010 aerial image linked directly to Commons; historic SayMedia crop/identity unknown",
+      "visual_relationship": "PUBLISHER_LINKED_SAME_SUBJECT_NOT_PIXEL_PROVEN",
+      "rights": "Marque1313 PD-self public domain original 819x614; SayMedia transform reuse rights not separately proved",
+      "credit": "Photo by Marque1313, Wikimedia Commons 2010",
+      "native": [
+        819,
+        614
+      ],
+      "derivative": [
+        819,
+        614
+      ],
+      "stored_alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "editorial_gate": "Photo shows plant in 2010, NOT during 1979 accident; 16:9 transformed image might have cropped the Commons original.",
+      "rehost_approved": false,
+      "hotlink_approved": false,
+      "wp_edit": false
+    },
+    {
+      "key": "287:5",
+      "post": 287,
+      "old": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "web_reader_old_status": 404,
+      "chrome_status": null,
+      "publisher": "https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/",
+      "catalog": "https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/",
+      "candidate": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "source_chain": "Publisher April 10 2020 article presently links same-filename photo from new media subdomain; web reader renders photo, pixel hash not compared",
+      "visual_relationship": "SAME_PUBLISHER_IMAGE_RELOCATED_NOT_HASH_PROVEN",
+      "rights": "Photo credits University Press of Florida, not a general redistribution, derivative or hotlink license",
+      "credit": "University Press of Florida (St Pete Catalyst attribution)",
+      "native": null,
+      "derivative": null,
+      "stored_alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+      "editorial_gate": "This photo depicts 1980 wreckage; replacement bridge opened 1987 and is not visible. Current stored ALT erroneously implies both bridges are present.",
+      "rehost_approved": false,
+      "hotlink_approved": false,
+      "wp_edit": false
+    }
+  ],
+  "release": {
+    "max_width": 960,
+    "never_upscale": true,
+    "browser_proof_required": true,
+    "rights_review_required": true,
+    "visual_review_required": true,
+    "publisher_hotlink_policy_review_required": true,
+    "production_repairs": 0,
+    "downloads": 0,
+    "wp_writes": 0,
+    "real_network_bytes": null
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "fv-tmi285-primary-publisher-identity-v1",
+  "audited": "2026-11-08",
+  "frozen_source_file": "qa/media-recovery/parts/03.json",
+  "frozen_source_blob": "49183f66f880f7c4dfd363acca906876877f2e5e",
+  "historical_42_broken": "UNVERIFIED_GUEST",
+  "claimed_76pct_transfer": "UNMEASURED",
+  "visitor_broken_total": null,
+  "publication_authorized": false,
+  "wp_media_write_authorized": false,
+  "assets_downloaded": 0,
+  "records": [
+    {
+      "slot": "285:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "published_src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "retriever": {
+        "result": "WEB_WRAPPER_404",
+        "code": 404,
+        "is_origin_http": false,
+        "is_browser_http": false
+      },
+      "browser_status": null,
+      "browser_bytes": null,
+      "browser_decode": null,
+      "candidate": {
+        "file_page": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "master_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Three_mile_island_062010.jpg",
+        "publisher_article": "https://discover.hubpages.com/entertainment/The-China-Syndrome-Blockbuster-Movie-Becomes-Eerie-Prophecy",
+        "publisher_links_direct_master": true,
+        "author": "Marque1313",
+        "license_evidence": "COMMONS_CREATOR_PD_SELF",
+        "native_px": [
+          819,
+          614
+        ],
+        "proposed_px": [
+          819,
+          614
+        ],
+        "max_width": 960,
+        "no_upscale": true,
+        "keep_full_frame": true,
+        "bytes_catalog_approx": 235000,
+        "date_discrepancy": "Commons caption says June 6, 2010; date field says June 16, 2010",
+        "scene": "2010 aerial of TMI, NOT 1979 emergency",
+        "crop_warning": "old SayMedia requests 1200px 16:9 fill crop; archival original 819x614 4:3; pixel/crop match unverified",
+        "binary_sha256": null,
+        "rights_for_specific_file": "COMMONS_PD_SELF_CLAIM",
+        "replacement_editor_approved": false,
+        "wordpress_action": "HOLD"
+      }
+    },
+    {
+      "slot": "285:2",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "published_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "retriever": {
+        "result": "WEB_WRAPPER_500_REDIRECT_DEST_INACCESSIBLE",
+        "code": 500,
+        "is_origin_http": false,
+        "is_browser_http": false,
+        "redirect_target": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg"
+      },
+      "browser_status": null,
+      "browser_bytes": null,
+      "browser_decode": null,
+      "candidate": {
+        "file_page": null,
+        "master_url": null,
+        "license_evidence": "NO_EXACT_PANEL_PHOTO_RIGHTS",
+        "native_px": null,
+        "proposed_px": null,
+        "max_width": 960,
+        "no_upscale": true,
+        "not_equivalent": "https://commons.wikimedia.org/wiki/File:Tmi-2_schematic.gif",
+        "not_equivalent_reason": "NRC schematic is not the published documentary panel photograph",
+        "binary_sha256": null,
+        "replacement_editor_approved": false,
+        "wordpress_action": "HOLD"
+      }
+    }
+  ]
+}

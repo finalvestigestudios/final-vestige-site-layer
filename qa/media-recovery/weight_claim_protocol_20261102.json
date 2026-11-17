@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-02",
+  "status": "SOURCE_INVENTORY_ONLY_NOT_BROWSER_PERFORMANCE_EVIDENCE",
+  "objective": "Fail-closed decision on claimed 76% image-transfer reduction; measure article image CDP wire bytes, not WordPress original storage",
+  "source_ledger": {
+    "path": "qa/media-recovery/oversized_inline_proxy_corrected_20261102.json",
+    "git_blob_sha": "827f29907b20d8a2d41b0ead107850006b9575f1"
+  },
+  "evaluation_code": "qa/media-recovery/weight_claim_pair_gate_20261102.cjs",
+  "evaluation_tests": "qa/media-recovery/test_weight_claim_pair_gate_20261102.cjs",
+  "all_site_denominator": {
+    "published_posts": 61,
+    "stored_image_slots": 355,
+    "external_origin_references": 288,
+    "original_wp_images_over_1_5_mib": 13,
+    "reported_broken_images_claimed": 42,
+    "reported_broken_images_guest_browser_verified": null,
+    "previous_76_percent_claim_measured": false
+  },
+  "actual_wire_evidence": {
+    "before_complete_all_pages_audit": null,
+    "after_complete_all_pages_audit": null,
+    "guest_chrome_current_src_measured": false,
+    "guest_chrome_image_response_http_measured": false,
+    "uncached_cdp_article_image_transfer_bytes_before": null,
+    "uncached_cdp_article_image_transfer_bytes_after": null,
+    "weight_reduction_percent": null
+  },
+  "five_p1_original_pngs": {
+    "source_storage_bytes_sum": 13267538,
+    "method": "Media library ORIGINAL storage only, NEVER visitor transfer",
+    "rows": [
+      {
+        "image_key": "34:0",
+        "post_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+        "media_id": 39,
+        "exact_current_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+        "source_storage_bytes": 2892087,
+        "original_px": {
+          "width": 1672,
+          "height": 941
+        },
+        "stored_html_px": {
+          "width": 1024,
+          "height": 576
+        },
+        "alt": "Firefighters and horse-drawn fire engines on a ruined San Francisco street during the 1906 fires",
+        "recorded_wp_subsizes": false,
+        "independent_retriever": "TOOL_INACCESSIBLE_NO_HTTP_STATUS",
+        "origin_http_status": null,
+        "logged_out_browser_http_status": null,
+        "current_src": null,
+        "decoded_px": null,
+        "cdp_request_id": null,
+        "uncached_wire_bytes": null,
+        "source_rights_clearance": "HOLD",
+        "same_crop_visual_approval": "HOLD",
+        "no_upscale_960px_candidate": {
+          "width": 960,
+          "height": 540,
+          "no_upscale": true,
+          "source_dimensions_only": true
+        },
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false
+      },
+      {
+        "image_key": "35:0",
+        "post_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+        "media_id": 40,
+        "exact_current_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+        "source_storage_bytes": 2552136,
+        "original_px": {
+          "width": 1672,
+          "height": 941
+        },
+        "stored_html_px": {
+          "width": 1024,
+          "height": 576
+        },
+        "alt": "Shackleton and crew in a small lifeboat crossing icy seas during the Endurance expedition",
+        "recorded_wp_subsizes": false,
+        "independent_retriever": "TOOL_INACCESSIBLE_NO_HTTP_STATUS",
+        "origin_http_status": null,
+        "logged_out_browser_http_status": null,
+        "current_src": null,
+        "decoded_px": null,
+        "cdp_request_id": null,
+        "uncached_wire_bytes": null,
+        "source_rights_clearance": "HOLD",
+        "same_crop_visual_approval": "HOLD",
+        "no_upscale_960px_candidate": {
+          "width": 960,
+          "height": 540,
+          "no_upscale": true,
+          "source_dimensions_only": true
+        },
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false
+      },
+      {
+        "image_key": "36:0",
+        "post_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+        "media_id": 41,
+        "exact_current_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+        "source_storage_bytes": 2498247,
+        "original_px": {
+          "width": 1672,
+          "height": 941
+        },
+        "stored_html_px": {
+          "width": 1024,
+          "height": 576
+        },
+        "alt": "Civilians sheltering inside a cave during the Siege of Vicksburg",
+        "recorded_wp_subsizes": false,
+        "independent_retriever": "TOOL_INACCESSIBLE_NO_HTTP_STATUS",
+        "origin_http_status": null,
+        "logged_out_browser_http_status": null,
+        "current_src": null,
+        "decoded_px": null,
+        "cdp_request_id": null,
+        "uncached_wire_bytes": null,
+        "source_rights_clearance": "HOLD",
+        "same_crop_visual_approval": "HOLD",
+        "no_upscale_960px_candidate": {
+          "width": 960,
+          "height": 540,
+          "no_upscale": true,
+          "source_dimensions_only": true
+        },
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false
+      },
+      {
+        "image_key": "37:0",
+        "post_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+        "media_id": 42,
+        "exact_current_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+        "source_storage_bytes": 2488823,
+        "original_px": {
+          "width": 1672,
+          "height": 941
+        },
+        "stored_html_px": {
+          "width": 1024,
+          "height": 576
+        },
+        "alt": "Reconstruction of Petra’s water channels and reservoir system in the ancient desert city",
+        "recorded_wp_subsizes": false,
+        "independent_retriever": "TOOL_INACCESSIBLE_NO_HTTP_STATUS",
+        "origin_http_status": null,
+        "logged_out_browser_http_status": null,
+        "current_src": null,
+        "decoded_px": null,
+        "cdp_request_id": null,
+        "uncached_wire_bytes": null,
+        "source_rights_clearance": "HOLD",
+        "same_crop_visual_approval": "HOLD",
+        "no_upscale_960px_candidate": {
+          "width": 960,
+          "height": 540,
+          "no_upscale": true,
+          "source_dimensions_only": true
+        },
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false
+      },
+      {
+        "image_key": "38:0",
+        "post_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+        "media_id": 43,
+        "exact_current_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+        "source_storage_bytes": 2836245,
+        "original_px": {
+          "width": 1672,
+          "height": 941
+        },
+        "stored_html_px": {
+          "width": 1024,
+          "height": 576
+        },
+        "alt": "Firefighters drawing emergency water from an underground cistern in post-earthquake San Francisco",
+        "recorded_wp_subsizes": false,
+        "independent_retriever": "TOOL_INACCESSIBLE_NO_HTTP_STATUS",
+        "origin_http_status": null,
+        "logged_out_browser_http_status": null,
+        "current_src": null,
+        "decoded_px": null,
+        "cdp_request_id": null,
+        "uncached_wire_bytes": null,
+        "source_rights_clearance": "HOLD",
+        "same_crop_visual_approval": "HOLD",
+        "no_upscale_960px_candidate": {
+          "width": 960,
+          "height": 540,
+          "no_upscale": true,
+          "source_dimensions_only": true
+        },
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false
+      }
+    ]
+  },
+  "proof_requirements": {
+    "sitewide_full_visit": "Paired logged-out Chromium --all scans: all 61 identical URLs and 355 stored image keys, full-height scroll, all photos loaded and CDP request IDs bound",
+    "capture_profile": "same exact Chrome build, viewport, cache-disabled and service-worker-bypassed settings and scroll timing",
+    "source_rewrites": "Every changed stored source URL needs exact one-to-one manifest, item rights/visual/crop approval, conditional <=960px no-upscale verified dimensions and explicit publication authorization",
+    "transfer": "Recompute attribution with request_id_wire_core from uncached network_images, separately for before and after; duplicate DOM uses of one request counted once",
+    "percent": "100 * (sum(before article CDP wire bytes) - sum(after article CDP wire bytes)) / sum(before article CDP wire bytes)",
+    "never_claim": "Original storage savings, CDN theoretical size or inaccessible independent web retriever responses as 76% actual wire savings",
+    "site_qa_pr": 154,
+    "isolated_media_recovery_pr": 183
+  },
+  "final_gates": {
+    "reported_42_broken_guest_verified": false,
+    "claimed_76_percent_savings_measured": false,
+    "wordpress_production_write_authorized": false,
+    "media_download_or_rehosting_authorized": false,
+    "subscription_spend": false
+  }
+}

@@ -1,0 +1,25 @@
+'use strict';
+const{test}=require('node:test'),assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path');
+const{validate}=require('./teton_visual_guard.cjs');
+const{matchStoredImages,classifyImages}=require('./browser_probe_core.cjs');
+const source=()=>JSON.parse(fs.readFileSync(path.join(__dirname,'teton_visual_integrity_20261030.json'),'utf8'));
+const reject=fn=>{const d=source();fn(d);assert.equal(validate(d).ok,false)};
+test('source ledger 12 images and contradictory duplicate validates',()=>assert.equal(validate(source()).ok,true));
+test('reject forged HTTP success',()=>reject(d=>d.images[0].http_status=200));
+test('reject fabricated 42 broken proof',()=>reject(d=>d.claims.image_failures_42_verified=true));
+test('reject fabricated transfer',()=>reject(d=>d.images[0].wire_bytes=123));
+test('reject rights clearance',()=>reject(d=>d.images[0].rights_cleared=true));
+test('reject Wordpress authorization',()=>reject(d=>d.images[0].wp_edit_approved=true));
+test('reject 1024px prohibited upscaling',()=>reject(d=>d.images[0].max_width=1024));
+test('reject swapped erroneous historical source',()=>reject(d=>d.images.find(x=>x.key==='291:2').url='https://example.org/fake.jpg'));
+test('reject premature archive approval',()=>reject(d=>d.alternative.approved=true));
+test('reject invented master hash',()=>reject(d=>d.alternative.original_binary_sha256='unverified'));
+test('reject 5/6 offsite current count',()=>reject(d=>d.source_reconciliation.current_original_classifier['291']=5));
+const dupe=()=>{const d=source();return['291:2','291:5'].map(key=>{const r=d.images.find(x=>x.key===key);return{key,source_url:r.url,alt:r.alt}})};
+const rendered=x=>x.map(v=>({src:v.source_url,currentSrc:v.source_url,alt:v.alt,complete:true,naturalWidth:960}));
+test('two identical URLs and distinct matching alts identify each DOM occurrence',()=>{const x=dupe();assert.deepEqual(matchStoredImages(x,rendered(x)).map(v=>v.match),['exact_url_unique_alt','exact_url_unique_alt'])});
+test('duplicate URLs with same ALT remain ambiguous',()=>{const x=dupe(),r=rendered(x);r[1].alt=r[0].alt;assert.deepEqual(matchStoredImages(x,r).map(v=>v.match),['ambiguous_url','ambiguous_url'])});
+test('unrelated URL with identical ALT cannot validate image source',()=>{const x=dupe(),r=rendered(x);r[0].src=r[0].currentSrc='https://example.org/unrelated.jpg';assert.notEqual(matchStoredImages(x,r)[0].match,'exact_url_unique_alt')});
+test('one fetched URL can serve two DOM images',()=>{const x=dupe(),s=classifyImages(x,rendered(x),[{url:x[0].source_url,status:200,encodedDataLength:3210}],true);assert.deepEqual(s.map(v=>v.verified_broken_in_browser),[false,false])});
+

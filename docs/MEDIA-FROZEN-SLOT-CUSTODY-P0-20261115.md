@@ -1,0 +1,26 @@
+# Frozen image-slot evidence custody and Scotch Cap P0 source checks — 2026-11-15
+
+**Scope:** FinalVestige.com media recovery, existing draft #183. Site QA #154 still owns six cold logged-out browser captures. Homepage design is expressly out of scope. No release or WordPress production write.
+
+## Concrete engineering change
+The independent 61-post source-origin reconcilor previously checked 355 total images, 61 distinct post IDs, source classifications and two remote-origin Jetpack images, but **did not reject a duplicated `post_id:slot` replacing a different valid slot in the same post**. Such a mutation could keep aggregate totals and the 288-dependency claim unchanged while silently dropping a source URL. The corrected source asserts each part's declared post and image counts, globally unique post and slot IDs, in-range **contiguous** per-post slots, and exact parent post title/URL matching.
+
+The CLI now also calculates each local frozen JSON source file's **Git blob SHA-1 with the canonical `blob <byte_length>\\0` prefix**, and rejects any of the eight parts differing from the verified GitHub blobs. This pins evidence against stale or altered fixtures before publishing a reconciliation. Eight GitHub parts at the prior commit were independently fetched, their returned blob SHAs matched the published source manifest, and strict coverage passed **61 posts / 355 unique slots / zero gaps**.
+
+A pure-function isolated V8 audit against the complete eight-part snapshot rejected **12/12 deliberate adversarial corruptions** (including a duplicate 621 slot, missing image, post mismatch, orphan, and batch drift). The native Node suite now includes additional targeted unit cases and one pinned eight-part integration case. **Native Node execution of the exact committed files and full repository CI are not claimed here**; those remain acceptance gates.
+
+## Two priority sources, independent web retriever — not visitor-browser evidence
+- **418:1** original `https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG`: retriever returned **403** on Nov 15. The [USCG primary photo catalog](https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/) matches VIRIN 210330-G-DE713-0002.JPG and explicitly describes the Anthony Pettit portrait as **public domain and cleared for release**, with attribution and DoD-use limitations. No origin HTTP, guest natural dimensions, binary hash, or download. Not an image of the lighthouse debris.
+- **418:2** original `https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg`: retriever returned **403** on Nov 15. The [USCG historical article](https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/) reproduces an aftermath photograph. A separate Coast Guard Museum preview is listed at **600×463** in previous evidence; never upscale it to 960px. Exact primary-origin binary equivalence and item reuse still need review.
+
+The origin 403 vs visitor failure distinction is absolute: **both real visitor HTTP statuses are unknown**. No source substitution, cached file, derivative or copy is approved. Every proposed image is limited to **min(960px, verified intrinsic width)**, with proportional height and visual crop review, and must preserve accurate historical ALT/credit.
+
+## Source-count and performance denominator
+The frozen 61-post/355-inline census reconciles **60 direct first-party, 7 first-party Jetpack, 286 direct external and 2 externally sourced Jetpack = 288 third-party-origin dependencies**. The two externally proxied URLs are exact entries **285:1** and **291:0**; this corrects the stale Site QA CSV's 286 without changing its files. This is a source dependency count, **not 288 broken images**.
+
+The latest separately verified WordPress media inventory has **132 stored originals, 20 strictly above 1,500,000 bytes totaling 64,385,752 bytes**, distinct from actual page-transfer bytes. The **42 reported broken original images remain cold-browser unconfirmed** and **76% visitor-network weight reduction unmeasured**. Do not mix the frozen 61-post baseline with the live 66-post cohort or with featured-image attachment storage.
+
+## Release/rollback sequence
+Site QA should capture true cold guest request ID, `currentSrc`, origin/redirection chain, status, MIME, decoded natural dimensions and transferred bytes for the six P0 slots. For any proved failure, validate exact scene and rights, inspect a lawful original's native dimensions, and prepare only a reversible **staging** Media Library proposal. Preserve original URL, attribution, ALT/caption and a rollback manifest; inspect desktop and mobile visual fidelity, map/text legibility, and before/after paired cold CDP bytes with collector v4+. No blanket mirroring, unlicensed scraping, live Gutenberg edits, production uploads, publication, homepage redesign or spend.
+
+Machine-readable [source/rights/status ledger](../qa/media-recovery/frozen_slot_custody_p0_20261115.json). Validator [source](../qa/media-recovery/reconcile_jetpack_origin_20261115.cjs), [tests](../qa/media-recovery/test_reconcile_jetpack_origin_20261115.cjs).

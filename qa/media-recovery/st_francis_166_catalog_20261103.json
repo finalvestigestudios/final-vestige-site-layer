@@ -1,0 +1,361 @@
+{
+  "schema_version": 1,
+  "as_of_utc": "2026-11-03T22:29:54Z",
+  "post": {
+    "id": 166,
+    "title": "They Checked the Dam That Morning",
+    "link": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+    "modified_wp": "2026-11-02T21:39:29",
+    "status": "publish"
+  },
+  "archived_inventory": {
+    "path": "qa/media-recovery/parts/07.json",
+    "blob_sha": "21095161e633aba093b74c0ead9936c9f6186d00",
+    "date": "2026-10-30",
+    "all_published_sources_match_live_wp": true
+  },
+  "priorities": {
+    "existing_site_qa_p0": [
+      "285:5",
+      "285:2",
+      "287:5",
+      "418:1",
+      "418:2",
+      "407:1"
+    ],
+    "this_post_priority": "P1_AFTER_SITE_QA_P0"
+  },
+  "stats": {
+    "image_slots": 7,
+    "offsite_stored": 6,
+    "commons_redirects": 5,
+    "loc_direct_gif": 1,
+    "first_party": 1,
+    "catalog_identifications": 5,
+    "exact_source_redirects_displayed": 0,
+    "actual_origin_http_status_count": 0,
+    "confirmed_visitor_broken": 0,
+    "actual_cold_wire_bytes_measured": false,
+    "claimed_broken_42_verified": false,
+    "claimed_reduction_76pct_verified": false,
+    "production_changes": 0
+  },
+  "important_flags": [
+    "LOC HAER CA3095 survey association is not confirmation of 00002a.gif sheet; verify layout and rights per drawing.",
+    "Standing section Commons photograph dated 1928, public-domain claim references 1931–1963 unrenewed publication; no automatic license clearance.",
+    "Pointing-at-crack UCLA/Los Angeles Daily News image has Commons CC BY4 statement but item-level rights status needs verification; catalog casualty figure must not be carried into article.",
+    "Original Commons Special:Redirect/file?width=1280 endpoints were inaccessible through text retriever, not evidence they fail in guest browsers."
+  ],
+  "rows": [
+    {
+      "key": "166:0",
+      "slot": 0,
+      "post_id": 166,
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/IMG_3479.jpeg",
+      "archived_source_kind": "first_party",
+      "published_alt": "St. Francis Dam and reservoir in San Francisquito Canyon in February 1927, one year before the catastrophic failure",
+      "source_snapshot_blob_sha": "21095161e633aba093b74c0ead9936c9f6186d00",
+      "source_reconciled_live_wp": true,
+      "origin_browser_http_status": null,
+      "origin_browser_mime": null,
+      "origin_browser_decode_ok": null,
+      "visitor_broken": null,
+      "cold_browser_transfer_bytes": null,
+      "probe": {
+        "date_utc": "2026-11-03",
+        "method": "web.open independent text retriever",
+        "result": "inaccessible_without_origin_status",
+        "http_status": null,
+        "origin_status_verified": false
+      },
+      "catalog": {
+        "url": null,
+        "identity_status": "local WP attachment not independently media-verified",
+        "master_dimensions_px": null,
+        "license_signal": "ORIGINAL-WP-MEDIA-CUSTODY-REVIEW",
+        "credit": null,
+        "rights_basis": "WP original attachment; current registered variants and creator rights not fetched",
+        "capture_date": null
+      },
+      "derivative_max_width_px": 960,
+      "derivative_dimensions_px": null,
+      "source_binary_sha256": null,
+      "candidate_visual_match_verified": false,
+      "rights_review_complete": false,
+      "wp_media_upload_authorized": false,
+      "production_rewrite_authorized": false,
+      "recovery_state": "HOLD_BROWSER_IDENTITY_RIGHTS",
+      "rollback": "Preserve exact original source, alt, caption, post revision; stage replacement media separately and compare before/after"
+    },
+    {
+      "key": "166:1",
+      "slot": 1,
+      "post_id": 166,
+      "published_src": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ca/ca3000/ca3095/sheet/00002a.gif",
+      "archived_source_kind": "external",
+      "published_alt": "Historic American Engineering Record drawing showing the Los Angeles Aqueduct system",
+      "source_snapshot_blob_sha": "21095161e633aba093b74c0ead9936c9f6186d00",
+      "source_reconciled_live_wp": true,
+      "origin_browser_http_status": null,
+      "origin_browser_mime": null,
+      "origin_browser_decode_ok": null,
+      "visitor_broken": null,
+      "cold_browser_transfer_bytes": null,
+      "probe": {
+        "date_utc": "2026-11-03",
+        "method": "web.open independent text retriever",
+        "result": "inaccessible_without_origin_status",
+        "http_status": null,
+        "origin_status_verified": false
+      },
+      "catalog": {
+        "url": "https://www.loc.gov/pictures/item/CA3095/",
+        "identity_status": "CA3095 parent survey cross-reference only; requested sheet 00002a not independently confirmed",
+        "master_dimensions_px": null,
+        "license_signal": "LOC-HAER-GOV-RECORD-NEEDS-ITEM-REVIEW",
+        "credit": "Historic American Engineering Record / Library of Congress",
+        "rights_basis": "LoC parent item CA3095 consistent with path, item sheet identity/rights unresolved",
+        "capture_date": null
+      },
+      "derivative_max_width_px": 960,
+      "derivative_dimensions_px": null,
+      "source_binary_sha256": null,
+      "candidate_visual_match_verified": false,
+      "rights_review_complete": false,
+      "wp_media_upload_authorized": false,
+      "production_rewrite_authorized": false,
+      "recovery_state": "HOLD_BROWSER_IDENTITY_RIGHTS",
+      "rollback": "Preserve exact original source, alt, caption, post revision; stage replacement media separately and compare before/after"
+    },
+    {
+      "key": "166:2",
+      "slot": 2,
+      "post_id": 166,
+      "published_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.%20Francis%20abutment.jpg?width=1280",
+      "archived_source_kind": "wikimedia_redirect",
+      "published_alt": "Huge concrete block from the west abutment of St. Francis Dam carried about half a mile downstream by the 1928 flood",
+      "source_snapshot_blob_sha": "21095161e633aba093b74c0ead9936c9f6186d00",
+      "source_reconciled_live_wp": true,
+      "origin_browser_http_status": null,
+      "origin_browser_mime": null,
+      "origin_browser_decode_ok": null,
+      "visitor_broken": null,
+      "cold_browser_transfer_bytes": null,
+      "probe": {
+        "date_utc": "2026-11-03",
+        "method": "web.open independent text retriever",
+        "result": "inaccessible_without_origin_status",
+        "http_status": null,
+        "origin_status_verified": false
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:St._Francis_abutment.jpg",
+        "identity_status": "same catalog filename; not byte-verified",
+        "master_dimensions_px": [
+          1400,
+          806
+        ],
+        "license_signal": "PD-US-GOV-USGS-CLAIM",
+        "credit": "H. T. Stearns / USGS",
+        "rights_basis": "USGS historical photo catalog source via Commons",
+        "capture_date": "1928-03-17"
+      },
+      "derivative_max_width_px": 960,
+      "derivative_dimensions_px": [
+        960,
+        553
+      ],
+      "source_binary_sha256": null,
+      "candidate_visual_match_verified": false,
+      "rights_review_complete": false,
+      "wp_media_upload_authorized": false,
+      "production_rewrite_authorized": false,
+      "recovery_state": "HOLD_BROWSER_IDENTITY_RIGHTS",
+      "rollback": "Preserve exact original source, alt, caption, post revision; stage replacement media separately and compare before/after"
+    },
+    {
+      "key": "166:3",
+      "slot": 3,
+      "post_id": 166,
+      "published_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Twisted_Tracks.jpg?width=1280",
+      "archived_source_kind": "wikimedia_redirect",
+      "published_alt": "Railroad tracks between Castaic Junction and Piru twisted by the flood from the St. Francis Dam failure",
+      "source_snapshot_blob_sha": "21095161e633aba093b74c0ead9936c9f6186d00",
+      "source_reconciled_live_wp": true,
+      "origin_browser_http_status": null,
+      "origin_browser_mime": null,
+      "origin_browser_decode_ok": null,
+      "visitor_broken": null,
+      "cold_browser_transfer_bytes": null,
+      "probe": {
+        "date_utc": "2026-11-03",
+        "method": "web.open independent text retriever",
+        "result": "inaccessible_without_origin_status",
+        "http_status": null,
+        "origin_status_verified": false
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:Twisted_Tracks.jpg",
+        "identity_status": "same catalog filename; not byte-verified",
+        "master_dimensions_px": [
+          1400,
+          1017
+        ],
+        "license_signal": "CC-BY-2.0-COMMONS-ITEM",
+        "credit": "U.S. Geological Survey (Flickr attribution)",
+        "rights_basis": "Commons file record and original USGS Flickr credit",
+        "capture_date": "1928-03-18"
+      },
+      "derivative_max_width_px": 960,
+      "derivative_dimensions_px": [
+        960,
+        697
+      ],
+      "source_binary_sha256": null,
+      "candidate_visual_match_verified": false,
+      "rights_review_complete": false,
+      "wp_media_upload_authorized": false,
+      "production_rewrite_authorized": false,
+      "recovery_state": "HOLD_BROWSER_IDENTITY_RIGHTS",
+      "rollback": "Preserve exact original source, alt, caption, post revision; stage replacement media separately and compare before/after"
+    },
+    {
+      "key": "166:4",
+      "slot": 4,
+      "post_id": 166,
+      "published_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.%20Francis%20Dam%20after%20the%201928%20failure.jpg?width=1280",
+      "archived_source_kind": "wikimedia_redirect",
+      "published_alt": "St. Francis Dam site five days after the March 1928 failure, with most of the concrete structure gone",
+      "source_snapshot_blob_sha": "21095161e633aba093b74c0ead9936c9f6186d00",
+      "source_reconciled_live_wp": true,
+      "origin_browser_http_status": null,
+      "origin_browser_mime": null,
+      "origin_browser_decode_ok": null,
+      "visitor_broken": null,
+      "cold_browser_transfer_bytes": null,
+      "probe": {
+        "date_utc": "2026-11-03",
+        "method": "web.open independent text retriever",
+        "result": "inaccessible_without_origin_status",
+        "http_status": null,
+        "origin_status_verified": false
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:St._Francis_Dam_after_the_1928_failure.jpg",
+        "identity_status": "same catalog filename; not byte-verified",
+        "master_dimensions_px": [
+          1400,
+          1043
+        ],
+        "license_signal": "PD-US-GOV-USGS-CLAIM",
+        "credit": "H. T. Stearns / USGS",
+        "rights_basis": "USGS photographer credited via Commons",
+        "capture_date": "1928-03-17"
+      },
+      "derivative_max_width_px": 960,
+      "derivative_dimensions_px": [
+        960,
+        715
+      ],
+      "source_binary_sha256": null,
+      "candidate_visual_match_verified": false,
+      "rights_review_complete": false,
+      "wp_media_upload_authorized": false,
+      "production_rewrite_authorized": false,
+      "recovery_state": "HOLD_BROWSER_IDENTITY_RIGHTS",
+      "rollback": "Preserve exact original source, alt, caption, post revision; stage replacement media separately and compare before/after"
+    },
+    {
+      "key": "166:5",
+      "slot": 5,
+      "post_id": 166,
+      "published_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Standing_section.jpg?width=1280",
+      "archived_source_kind": "wikimedia_redirect",
+      "published_alt": "The surviving central section of the St. Francis Dam standing after the 1928 collapse",
+      "source_snapshot_blob_sha": "21095161e633aba093b74c0ead9936c9f6186d00",
+      "source_reconciled_live_wp": true,
+      "origin_browser_http_status": null,
+      "origin_browser_mime": null,
+      "origin_browser_decode_ok": null,
+      "visitor_broken": null,
+      "cold_browser_transfer_bytes": null,
+      "probe": {
+        "date_utc": "2026-11-03",
+        "method": "web.open independent text retriever",
+        "result": "inaccessible_without_origin_status",
+        "http_status": null,
+        "origin_status_verified": false
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:Standing_section.jpg",
+        "identity_status": "same catalog filename; not byte-verified",
+        "master_dimensions_px": [
+          1250,
+          936
+        ],
+        "license_signal": "PD-UNRENEWED-COMMONS-CLAIM-REVIEW",
+        "credit": "Los Angeles Public Library / unknown photographer",
+        "rights_basis": "Commons photo dated 1928 but rights tag cites publication 1931–1963; inconsistent basis, review primary LAPL record",
+        "capture_date": "1928"
+      },
+      "derivative_max_width_px": 960,
+      "derivative_dimensions_px": [
+        960,
+        719
+      ],
+      "source_binary_sha256": null,
+      "candidate_visual_match_verified": false,
+      "rights_review_complete": false,
+      "wp_media_upload_authorized": false,
+      "production_rewrite_authorized": false,
+      "recovery_state": "HOLD_BROWSER_IDENTITY_RIGHTS",
+      "rollback": "Preserve exact original source, alt, caption, post revision; stage replacement media separately and compare before/after"
+    },
+    {
+      "key": "166:6",
+      "slot": 6,
+      "post_id": 166,
+      "published_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Man%20pointing%20at%20crack%20in%20Saint%20Francis%20Dam%20after%20its%20collapse.jpg?width=1280",
+      "archived_source_kind": "wikimedia_redirect",
+      "published_alt": "A man points to a crack in a surviving block of the St. Francis Dam after the 1928 collapse",
+      "source_snapshot_blob_sha": "21095161e633aba093b74c0ead9936c9f6186d00",
+      "source_reconciled_live_wp": true,
+      "origin_browser_http_status": null,
+      "origin_browser_mime": null,
+      "origin_browser_decode_ok": null,
+      "visitor_broken": null,
+      "cold_browser_transfer_bytes": null,
+      "probe": {
+        "date_utc": "2026-11-03",
+        "method": "web.open independent text retriever",
+        "result": "inaccessible_without_origin_status",
+        "http_status": null,
+        "origin_status_verified": false
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:Man_pointing_at_crack_in_Saint_Francis_Dam_after_its_collapse.jpg",
+        "identity_status": "same catalog filename; not byte-verified",
+        "master_dimensions_px": [
+          4431,
+          5760
+        ],
+        "license_signal": "CC-BY-4.0-COMMONS-ITEM-REVIEW",
+        "credit": "Los Angeles Daily News / UCLA Library",
+        "rights_basis": "Commons states bulk UCLA collection CC BY 4.0; per-item rights verification pending; do not reuse exaggerated casualty claim in catalog description",
+        "capture_date": "1928"
+      },
+      "derivative_max_width_px": 960,
+      "derivative_dimensions_px": [
+        960,
+        1248
+      ],
+      "source_binary_sha256": null,
+      "candidate_visual_match_verified": false,
+      "rights_review_complete": false,
+      "wp_media_upload_authorized": false,
+      "production_rewrite_authorized": false,
+      "recovery_state": "HOLD_BROWSER_IDENTITY_RIGHTS",
+      "rollback": "Preserve exact original source, alt, caption, post revision; stage replacement media separately and compare before/after"
+    }
+  ]
+}

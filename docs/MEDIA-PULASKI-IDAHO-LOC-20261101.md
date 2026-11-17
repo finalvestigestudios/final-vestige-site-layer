@@ -1,0 +1,39 @@
+# Pulaski / 1910 Big Burn — six-image archival integrity and recovery check
+**Read-only review:** 2026-11-01 · **Post:** 428, [*The Way Out Was Underground*](https://finalvestige.com/2026/08/20/the-way-out-was-underground-ed-pulaski-1910/) · **PR:** #183 (Media Recovery) · **Independent browser QA:** #154
+
+## What is verified — and what is not
+Authenticated WordPress `posts.get(context=edit)` returned the published article (last modified `2026-10-29T18:28:59`). **All six exact `img src` URLs and complete ALT strings** equal the frozen six rows in `qa/media-recovery/parts/01.json` (Git blob `948bc1b65b42799aa40cfdb810ddf6ffd80886b6`). No source or ALT was edited.
+
+**Five** source image URLs displayed in an independent web retriever (the four University of Idaho URLs and the LOC IIIF tile); **one first-party WordPress image, 428:0**, could not be retrieved by that tool and returned **no HTTP status**. The same University of Idaho archive photo is accessible under its archival JPEG URL. A web retriever's display, error or absence of status is *not a logged-out visitor-Chrome result*; no public broken-image count can be inferred.
+
+Authenticated read-only WordPress `media.list` independently confirms **media ID 476**, `archivalidaho432_sm.jpg`, is a real attached JPEG owned by post 428: **623×900 pixels, 90,157 original-storage bytes**, with registered Jetpack full (623×900), medium (208×300) and thumbnail (150×150) derivatives. This neither confirms delivery to visitors nor measures actual transfer. **Do not upscale** this media item to 960px or classify it among the thirteen >1.5 MiB originals.
+
+## Exact source-to-archive crosswalk
+
+| Published position | Exact published source URL | Institutional source identity / catalog | Independent retriever | Rights / reproduction |
+|---|---|---|---|---|
+| **428:0** | [FV media ID 476](https://finalvestige.com/wp-content/uploads/2026/08/archivalidaho432_sm.jpg) | [University of Idaho Archival Idaho: Pulaski at Pulaski Tunnel](https://www.lib.uidaho.edu/digital/archivalidaho/items/archivalidaho432.html), `pic_2014-09-30_005143b`, W.W. Morris, 1910. [Larger archive-hosted JPEG](https://objects.lib.uidaho.edu/archivalidaho/archivalidaho432.jpg) is a same-scene candidate, **not hash-matched** to FV derivative. | Inaccessible in tool, **no HTTP code** | Catalog PDM 1.0; library says item belongs to another holder. **HOLD** pending exact custody/reproduction review. |
+| **428:1** | [bigburn23.jpg](https://objects.lib.uidaho.edu/bigburn/bigburn23.jpg) | [University of Idaho Big Burn / 8-B498b](https://www.lib.uidaho.edu/digital/bigburn/items/bigburn23.html), Barnard-Stockbridge, **20 Aug 1910**, Wallace burning [02] | Image displayed | Archive notes public-domain determination by publication age, PDM 1.0; **HOLD** until item and editorial release approval. |
+| **428:2** | [bigburn38.jpg](https://objects.lib.uidaho.edu/bigburn/bigburn38.jpg) | [University of Idaho Big Burn / 8-C05b](https://www.lib.uidaho.edu/digital/bigburn/items/bigburn38.html), Placer Creek aftermath | Image displayed | PDM 1.0 archive indication; **HOLD** until release approval. |
+| **428:3** | [bigburn10.jpg](https://objects.lib.uidaho.edu/bigburn/bigburn10.jpg) | [University of Idaho Big Burn / 8-X90](https://www.lib.uidaho.edu/digital/bigburn/items/bigburn10.html), postfire elevated Wallace view, Aug 1910 | Image displayed | PDM 1.0 archive indication; **HOLD** until release approval. |
+| **428:4** | [bigburn18.jpg](https://objects.lib.uidaho.edu/bigburn/bigburn18.jpg) | [University of Idaho Big Burn / 8-X545e](https://www.lib.uidaho.edu/digital/bigburn/items/bigburn18.html), Pacific Hotel ruins, Aug 1910 | Image displayed | PDM 1.0 archive indication; **HOLD** until release approval. |
+| **428:5** | [LOC 1905 Sanborn IIIF tile](https://tile.loc.gov/image-services/iiif/service%3Agmd%3Agmd427m%3Ag4274m%3Ag4274wm%3Ag016871905%3A01687_1905-0001/full/pct%3A25/0/default.jpg) | [Library of Congress `sanborn01687_005`](https://www.loc.gov/item/sanborn01687_005/), 1905 Wallace first-sheet index/map, also [recorded by Commons](https://commons.wikimedia.org/wiki/File:Sanborn_Fire_Insurance_Map_from_Wallace,_Shoshone_County,_Idaho,_1905,_Plate_0001.jpg) | Image displayed | 1905 U.S. map has strong public-domain indication; check actual IIIF sheet reuse notice/credit. **HOLD** before mirror. |
+
+The University of Idaho's [Digital Collections policies/help](https://lib.uidaho.edu/digital/home/help.html) explain individual records' citation/rights fields and direct visitors to reproduction policies. **An archival Public Domain Mark is a rights signal, not proof that a derivative is the identical binary or that a site release was approved.**
+
+## Historical visual integrity
+**428:4** has a modest ALT overreach: the catalog identifies ruins **of the Pacific Hotel**, whereas the published ALT adds a broader “Pacific Hotel district” and machinery-detail inference. Suggested editorial-only replacement, after reviewing the image: **“Ruins of the Pacific Hotel in Wallace, Idaho, August 1910.”** Do not edit the published Gutenberg post in this workstream.
+
+The first-party photo **428:0** is not an inherently oversized weight issue: its original is under 0.1 MB. Image failure proof takes precedence over speculative optimization.
+
+## Conditional ≤960px first-party staging plan
+1. Have independent Site QA #154 collect logged-out desktop/mobile page screenshots and each rendered `currentSrc`, decoded `naturalWidth/Height`, final image request status, MIME, redirects and encoded transfer bytes. Prioritize **428:0** because the retriever failed but WordPress has a registered 623×900 item; a retriever failure is not proof of visitor failure.
+2. Verify archive record ↔ candidate image ↔ existing FV crop/description using authorized source viewing and cryptographic hashes **if retrieval rights and access permit**. No bulk scraping or unrelated historical substitutions.
+3. Record creator, exact archive URL, per-item publication/reproduction rights, attribution and `master_sha256`; require explicit editorial/media-release authorization. The University of Idaho records are strong provenance, but do not automatically trigger WordPress writes.
+4. From **verified decoded master dimensions**, calculate `width=min(960, master_width)` and `height=round(master_height×width/master_width)`. Preserve aspect ratio, do not upscale. **428:0 currently needs no resizing** (623×900 already within 960px width). Other five dimension proposals remain null until the actual source binaries are measured; a retriever thumbnail size is not master geometry.
+5. If a visitor failure is proven, use an isolated non-production WordPress media item, visually compare the exact same historical image/crop, retain descriptive ALT and credits, run a mobile/desktop before-after network comparison, and require explicit approval for any eventual production change. Never run raw block-wide string replacement.
+
+## Methodology and scope notes
+The current inventory is **61 posts / 355 stored images / 288 offsite references**, with **13** Media Library originals over 1.5 MiB. The old **42 broken** report has not been verified in a complete guest-browser run, and claimed **76% transfer reduction** has not been measured using identical before/after pages, actual encoded image request bytes and LCP/CLS. This batch does not alter either statistic; image transfers, HTTP codes and original archival binary hashes remain **null**.
+
+Machine-readable: `qa/media-recovery/pulaski_428_idaho_loc_20261101.json`; validator `validate_pulaski_428.cjs`; tests `test_pulaski_428.cjs`. **40/40 isolated exact-GitHub-source V8 regression cases passed** (one valid source and 39 fail-closed mutations); native Node CI and live Chrome not run. No media download or WordPress post/media modification, no homepage work, no spending.

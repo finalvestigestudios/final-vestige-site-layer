@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-11-02",
+  "description": "Read-only 61-post WordPress edit-context source recheck vs frozen 2026-10-30 source inventory. This does not assert visitor image GETs or image repair.",
+  "aggregate": {
+    "published_posts": 61,
+    "stored_image_slots": 355,
+    "unique_image_keys": 355,
+    "unchanged_source_and_alt_slots": 355,
+    "modified_timestamp_differences": 0,
+    "post_url_differences": 0,
+    "first_party_direct": 60,
+    "first_party_jetpack": 7,
+    "third_party_direct": 286,
+    "third_party_via_jetpack": 2,
+    "external_origin_total": 288,
+    "unrecognized_urls": 0,
+    "reported_42_broken_guest_verified": false,
+    "claimed_76_percent_wire_weight_saved_measured": false,
+    "wordpress_originals_over_1_5_mib_from_prior_media_inventory": 13,
+    "production_media_repairs": 0
+  },
+  "counts_as_of_this_wp_sample": {
+    "FIRST_PARTY": 60,
+    "THIRD_PARTY": 286,
+    "FIRST_PARTY_JETPACK": 7,
+    "THIRD_PARTY_JETPACK": 2
+  },
+  "third_party_jetpack_exact_two": [
+    {
+      "key": "291:0",
+      "post_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "published_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "origin_under_proxy": "text-message.blogs.archives.gov"
+    },
+    {
+      "key": "285:1",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "published_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "origin_under_proxy": "www.squawkpoint.com"
+    }
+  ],
+  "first_party_jetpack_slot_keys": [
+    "299:0",
+    "299:1",
+    "299:2",
+    "299:3",
+    "299:4",
+    "299:5",
+    "299:7"
+  ],
+  "top_stored_src_hosts": [
+    {
+      "host": "commons.wikimedia.org",
+      "slots": 118
+    },
+    {
+      "host": "finalvestige.com",
+      "slots": 60
+    },
+    {
+      "host": "upload.wikimedia.org",
+      "slots": 18
+    },
+    {
+      "host": "www.history.navy.mil",
+      "slots": 15
+    },
+    {
+      "host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "slots": 9
+    },
+    {
+      "host": "i0.wp.com",
+      "slots": 9
+    },
+    {
+      "host": "www.floridamemory.com",
+      "slots": 7
+    },
+    {
+      "host": "tile.loc.gov",
+      "slots": 7
+    },
+    {
+      "host": "cdn.loc.gov",
+      "slots": 7
+    },
+    {
+      "host": "www.nps.gov",
+      "slots": 6
+    },
+    {
+      "host": "images-assets.nasa.gov",
+      "slots": 5
+    },
+    {
+      "host": "media.defense.gov",
+      "slots": 5
+    },
+    {
+      "host": "objects.lib.uidaho.edu",
+      "slots": 4
+    },
+    {
+      "host": "cloudfront-us-east-1.images.arcpublishing.com",
+      "slots": 4
+    },
+    {
+      "host": "www.history.uscg.mil",
+      "slots": 3
+    }
+  ],
+  "priority_source_identity": [
+    {
+      "image_key": "418:1",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "stored_image_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew.",
+      "original_source_http_status": null,
+      "visitor_browser_http_status": null,
+      "decoded_width_px": null,
+      "transfer_bytes": null,
+      "rights_to_republish": "HOLD",
+      "cache_to_wordpress": "HOLD",
+      "derivative_max_width_px": 960,
+      "no_upscale": true
+    },
+    {
+      "image_key": "418:2",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "stored_image_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "alt": "Broken concrete and debris where Scotch Cap Lighthouse stood after the April 1, 1946 tsunami.",
+      "original_source_http_status": null,
+      "visitor_browser_http_status": null,
+      "decoded_width_px": null,
+      "transfer_bytes": null,
+      "rights_to_republish": "HOLD",
+      "cache_to_wordpress": "HOLD",
+      "derivative_max_width_px": 960,
+      "no_upscale": true
+    },
+    {
+      "image_key": "407:1",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_image_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "alt": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake.",
+      "original_source_http_status": null,
+      "visitor_browser_http_status": null,
+      "decoded_width_px": null,
+      "transfer_bytes": null,
+      "rights_to_republish": "HOLD",
+      "cache_to_wordpress": "HOLD",
+      "derivative_max_width_px": 960,
+      "no_upscale": true
+    },
+    {
+      "image_key": "287:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "stored_image_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+      "original_source_http_status": null,
+      "visitor_browser_http_status": null,
+      "decoded_width_px": null,
+      "transfer_bytes": null,
+      "rights_to_republish": "HOLD",
+      "cache_to_wordpress": "HOLD",
+      "derivative_max_width_px": 960,
+      "no_upscale": true
+    },
+    {
+      "image_key": "285:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "stored_image_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "original_source_http_status": null,
+      "visitor_browser_http_status": null,
+      "decoded_width_px": null,
+      "transfer_bytes": null,
+      "rights_to_republish": "HOLD",
+      "cache_to_wordpress": "HOLD",
+      "derivative_max_width_px": 960,
+      "no_upscale": true
+    }
+  ],
+  "old_snapshot": [
+    {
+      "path": "qa/media-recovery/parts/01.json",
+      "git_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+    },
+    {
+      "path": "qa/media-recovery/parts/02.json",
+      "git_blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d"
+    },
+    {
+      "path": "qa/media-recovery/parts/03.json",
+      "git_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e"
+    },
+    {
+      "path": "qa/media-recovery/parts/04.json",
+      "git_blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+    },
+    {
+      "path": "qa/media-recovery/parts/05.json",
+      "git_blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9"
+    },
+    {
+      "path": "qa/media-recovery/parts/06.json",
+      "git_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69"
+    },
+    {
+      "path": "qa/media-recovery/parts/07.json",
+      "git_blob_sha": "21095161e633aba093b74c0ead9936c9f6186d00"
+    },
+    {
+      "path": "qa/media-recovery/parts/08.json",
+      "git_blob_sha": "5659ec243c188928be3f89c0f96354b660608ca2"
+    }
+  ],
+  "new_wp_snapshots": [
+    {
+      "path": "qa/media-recovery/wp_live_recheck_20261102_part01.json",
+      "git_blob_sha": "ccbb099450025ff4af5522a8cec719cd19eea08d",
+      "post_count": 8,
+      "image_count": 52,
+      "external_origin_count": 41
+    },
+    {
+      "path": "qa/media-recovery/wp_live_recheck_20261102_part02.json",
+      "git_blob_sha": "cd84a2e9e71a0ace5f90d845a1e20d0d66f9d4a1",
+      "post_count": 8,
+      "image_count": 59,
+      "external_origin_count": 36
+    },
+    {
+      "path": "qa/media-recovery/wp_live_recheck_20261102_part03.json",
+      "git_blob_sha": "45670469f9fe62506a5ee7204d03ac6c7a933a51",
+      "post_count": 8,
+      "image_count": 49,
+      "external_origin_count": 49
+    },
+    {
+      "path": "qa/media-recovery/wp_live_recheck_20261102_part04.json",
+      "git_blob_sha": "4f56d558bc53425250624bee65fa5290acc05bc9",
+      "post_count": 8,
+      "image_count": 56,
+      "external_origin_count": 49
+    },
+    {
+      "path": "qa/media-recovery/wp_live_recheck_20261102_part05.json",
+      "git_blob_sha": "297b1f6994d239663fce02dcb807b424bb9f5fbb",
+      "post_count": 8,
+      "image_count": 54,
+      "external_origin_count": 54
+    },
+    {
+      "path": "qa/media-recovery/wp_live_recheck_20261102_part06.json",
+      "git_blob_sha": "f292988a79225134799debd608adc20d52eec88f",
+      "post_count": 8,
+      "image_count": 49,
+      "external_origin_count": 49
+    },
+    {
+      "path": "qa/media-recovery/wp_live_recheck_20261102_part07.json",
+      "git_blob_sha": "bf63de3e95de110636faf5013639840fe31b8e8c",
+      "post_count": 8,
+      "image_count": 31,
+      "external_origin_count": 10
+    },
+    {
+      "path": "qa/media-recovery/wp_live_recheck_20261102_part08.json",
+      "git_blob_sha": "edfaf5f1062e2ab69514bae8057c3aebcd5d1b01",
+      "post_count": 5,
+      "image_count": 5,
+      "external_origin_count": 0
+    }
+  ],
+  "source_comparisons": {
+    "original_urls_changed": [],
+    "post_modified_changed": [],
+    "post_links_changed": [],
+    "invalid_publication_status": []
+  },
+  "interpretation": {
+    "why_286_and_288": "286 third-party-direct stored source URLs plus 2 Jetpack proxy URLs whose upstream origin hosts are third parties. The 286 count is a direct-external subset, while the 288 count includes proxied third-party originals. Whether Site QA's original 286 originated from identical classification rules cannot be proven solely from aggregate CSV.",
+    "not_browser_proven": "All 355 URLs are stored Gutenberg src attributes, not visitor currentSrc. No HTTP network requests or visitor screenshots were captured.",
+    "weight_76_percent": "Unmeasured claim. Frozen >1.5 MiB originals concern storage bytes; do not infer visitor delivery.",
+    "rights": "No source URL or archive listing licenses copying, rehosting, cropping, caching or redistribution.",
+    "publish_permission": false
+  }
+}

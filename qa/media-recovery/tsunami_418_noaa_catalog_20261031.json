@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "research_date": "2026-10-31",
+  "image_key": "418:4",
+  "post_id": 418,
+  "post_title": "The Lighthouse Was Gone at Dawn",
+  "article_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+  "exact_stored_url": "https://www.hawaiimagazine.com/wp-content/uploads/2020/12/Tsunami1946NOAA2.jpg",
+  "stored_alt": "Tsunami water inundating the Hilo waterfront in April 1946, with a person visible near the advancing water.",
+  "current_source_type": "third_party_publisher",
+  "source_catalog_candidate": {
+    "institution": "National Oceanic and Atmospheric Administration (NOAA)",
+    "collection": "Historic Coast & Geodetic Survey",
+    "catalog_id": "theb2705",
+    "catalog_page": "https://prod-01-alb-www-noaa.woc.noaa.gov/noaa-collections/photo-library/pl23theb2705jpg",
+    "photo_description": "Tsunami inundating Hilo, Hawaii. Note man on pier.",
+    "catalog_display_date": "Apr-46",
+    "catalog_credit": "NOAA",
+    "historical_scene": "Tsunami breaking over Pier No. 1 in Hilo Harbor on 1946-04-01",
+    "mapping_strength": "high_confidence_same_historical_scene_catalog_candidate_not_binary_verified",
+    "original_binary_sha256": null,
+    "same_binary_as_stored_url": null,
+    "exact_binary_match_tested": false,
+    "original_intrinsic_width_px": null,
+    "original_intrinsic_height_px": null
+  },
+  "evidence": [
+    {
+      "basis": "primary_noaa_catalog_text_index",
+      "url": "https://prod-01-alb-www-noaa.woc.noaa.gov/noaa-collections/photo-library/pl23theb2705jpg",
+      "verified_detail": "Catalog ID theb2705; NOAA credit; Apr-46; man on pier; listed catalog download 265 KB (NOT visitor transfer bytes)."
+    },
+    {
+      "basis": "primary_noaa_archived_manual_visual",
+      "url": "https://repository.library.noaa.gov/view/noaa/41185/noaa_41185_DS3.pdf#page=37",
+      "verified_detail": "Printed p.33 (PDF page 37): photographed tsunami over Pier No.1, arrow indicating man. Credits NOAA/NGDC and Pacific Tsunami Museum."
+    },
+    {
+      "basis": "publisher_caption",
+      "url": "https://www.hawaiimagazine.com/three-tsunamis-that-changed-hilo-and-hawaiis-big-island/",
+      "verified_detail": "2009 article credits its photograph to NOAA, describing Pier 1 crest and person marked by arrow."
+    },
+    {
+      "basis": "independent_secondary_catalog_credit_conflict",
+      "url": "https://www.gettyimages.com.br/detail/foto-jornal%C3%ADstica/view-from-the-ss-brigham-victory-of-a-tsunami-foto-jornal%C3%ADstica/615289258",
+      "verified_detail": "Getty/Corbis markets a photo with matching Pier No.1/arrow scene under a © Corbis credit. This is a review flag, NOT evidence that NOAA owns no rights."
+    }
+  ],
+  "rights": {
+    "status": "HELD_ITEM_LEVEL_REVIEW",
+    "public_domain_assumed": false,
+    "attribution_proposed": "NOAA Historic Coast & Geodetic Survey (catalog theb2705); NOAA/NGDC and Pacific Tsunami Museum provenance subject to verification",
+    "reason": "NOAA says generally government-created images are reusable, but NOAA-hosted third-party items may retain rights. A Corbis-marketed derivative exists and museum provenance needs review.",
+    "rights_guidance_url": "https://www.omao.noaa.gov/image-licensing-usage-info",
+    "recognizable_person_caution": true,
+    "commercial_nonendorsement_caution": true
+  },
+  "candidate_delivery": {
+    "max_width_px": 960,
+    "preserve_aspect_ratio": true,
+    "upscale": false,
+    "crop": false,
+    "source_master_sha256": null,
+    "proposed_width_px": null,
+    "proposed_height_px": null,
+    "encoded_candidate_bytes": null,
+    "wordpress_media_id": null,
+    "cache_strategy": "After item-level rights approval and binary verification: retain protected master, generate ≤960px aspect-preserving responsive WordPress media, cache with first-party URL, screenshot-test captions before switching source.",
+    "wordpress_upload_authorized": false,
+    "wordpress_post_rewrite_authorized": false
+  },
+  "visitor_verification": {
+    "original_image_http_status": null,
+    "browser_current_src": null,
+    "browser_decoded_natural_width_px": null,
+    "browser_transferred_bytes": null,
+    "verified_broken_in_browser": null,
+    "browser_probe_status": "NOT_RUN_NETWORK_UNAVAILABLE",
+    "image_weight_reduction_percent": null
+  },
+  "p0_candidate_tracking": {
+    "scope": "36 offsite images among 43 P0 slots",
+    "previously_documented_candidates": 35,
+    "catalog_candidate_count_with_this_lead": 36,
+    "source_candidate_only_not_rights_or_binary_clearance": true
+  }
+}

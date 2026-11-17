@@ -1,0 +1,52 @@
+{
+  "schema": "fv-media-p0-scotchcap-museum-alias-v1",
+  "date": "2026-11-16",
+  "slot": "418:2",
+  "wordpress_post_id": 418,
+  "wordpress_post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+  "wordpress_modified": "2026-08-28T03:11:08",
+  "snapshot_method": "prior authenticated EDIT/VIEW (not guest browser)",
+  "edit_src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+  "view_src": "https://i0.wp.com/www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg?ssl=1",
+  "current_guest_src": null,
+  "guest_get_status": null,
+  "guest_decoded": null,
+  "guest_network_bytes": null,
+  "original_reader_outcome": "public reader returned 403 for USCG Portals original; guest response not measured",
+  "view_reader_outcome": "image reader inaccessible; no numeric guest HTTP result",
+  "candidate": {
+    "record": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+    "direct_image": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg",
+    "rendered_in_reader": true,
+    "image_description": "Remains of Scotch Cap Lighthouse from the bluff after the 1946 tsunami",
+    "attribution": "U.S. Coast Guard (museum caption)",
+    "file_lineage": "same distinctive Scotch_Cap_debris2_1946 basename; different prefix/space encoding and thumbnail suffix",
+    "same_pixels_verified": false,
+    "master_hash_sha256": null,
+    "master_dimensions_px": null,
+    "preview_dimensions_from_name_px": [
+      600,
+      463
+    ],
+    "conditional_unscaled_delivery_px": [
+      600,
+      463
+    ],
+    "maximum_allowed_width_px": 960,
+    "individual_publication_rights_verified": false,
+    "rehosting_approved": false,
+    "cache_wordpress_approved": false
+  },
+  "secondary_visual_reference": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+  "secondary_reference_rights_authority": false,
+  "reported_42_browser_failures_confirmed": false,
+  "claimed_76_percent_wire_savings_measured": false,
+  "oversized_originals_count": 20,
+  "oversized_originals_stored_bytes": 64385752,
+  "staging_status": "HOLD",
+  "site_qa_owns_browser_collector": true,
+  "production_wordpress_write": false,
+  "homepage_visual_edit": false,
+  "media_download": false,
+  "subscription_spend": false
+}

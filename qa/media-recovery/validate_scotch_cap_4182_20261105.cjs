@@ -1,0 +1,36 @@
+"use strict";
+const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+const expect=(v,w,k)=>{if(!same(v,w))throw Error("bad evidence: "+k)};
+function verify(x){
+ expect(x.schema,"fv-4182-scotchcap-same-scene-v1","schema");
+ expect(x.source.slot,"418:2","slot");expect(x.source.post_id,418,"post");
+ expect(x.source.exact_url,"https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg","original");
+ expect(x.source.pinned_live_wp_blob,"45c9764941f531c9981c8fe569c2d91409c00d18","readback");
+ expect(x.source.independent_retriever_wrapper_status,403,"wrapper");
+ for(const k of ["origin_http","guest_browser_http","current_src","natural_pixels","transfer_bytes","visitor_broken"])expect(x.source[k],null,k);
+ expect(x.catalog.uscg_event_date,"1946-04-01","USCG date");
+ expect(x.catalog.same_scene_image,"https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg","museum rendition");
+ expect(x.catalog.rendition_dimensions,[600,463],"museum dimensions");
+ expect(x.catalog.attribution,"U.S. Coast Guard","credit");
+ expect(x.catalog.exact_binary_or_crop_identity,null,"identity unverified");
+ expect(x.catalog.original_master_pixels,null,"master size unknown");
+ expect(x.catalog.rights_to_cache,false,"rights hold");
+ expect(x.noaa.caption_year,1964,"observed NOAA error");
+ expect(x.noaa.actual_uscg_year,1946,"correct USCG year");
+ expect(x.noaa.chronology_mismatch,true,"chronology warning");
+ expect(x.noaa.copy_noaa_alt,false,"no wrong caption");
+ expect(x.release.existing_rendition_ceiling,[600,463],"size ceiling");
+ expect(x.release.max_width,960,"max width");
+ expect(x.release.no_upscale,true,"no upscale");
+ for(const k of ["rights_approved","chrome_failure_confirmed","download_performed","wordpress_upload","wordpress_post_edit","automatic_publish"])expect(x.release[k],false,k);
+ expect(x.release.original_url_preserved,true,"rollback");
+ expect(x.context.actual_broken_count,null,"unverified broken count");
+ expect(x.context.measured_weight_savings_percent,null,"unmeasured savings");
+ expect(x.context.oversize_stored_bytes,43522829,"stored size");
+ expect(x.context.live_repairs,0,"zero repairs");
+ if(x.alternate_photos.length!==2||x.alternate_photos.some(t=>t.different_photo!==true))throw Error("different photo safety");
+ if(!x.catalog.uscg_article.startsWith("https://www.history.uscg.mil/")||!x.catalog.museum_article.startsWith("https://nationalcoastguardmuseum.org/"))throw Error("authority");
+ if(!x.noaa.page.startsWith("https://oceanexplorer.noaa.gov/"))throw Error("NOAA catalog");
+ return {status:"HOLD",slot:"418:2",candidate_px:[600,463],live_repairs:0};
+}
+module.exports={verify};

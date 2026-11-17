@@ -1,0 +1,636 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "part": 5,
+  "method": "Authenticated WordPress posts.get context=edit, read-only, actual original URLs; NO visitor network requests",
+  "frozen_git_blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+  "posts": [
+    {
+      "id": 256,
+      "modified": "2026-10-29T15:51:59",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+      "stored_inline_count": 7,
+      "slots": [
+        {
+          "key": "256:0",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Tom%20explosion%20-%201916.jpg?width=1280",
+          "alt": "Destroyed warehouses, rail infrastructure and scattered debris at the Black Tom ammunition terminal after the July 30, 1916 explosion.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "256:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Map%20of%20Black%20Tom%20Island%2C%20Jersey%20City%2C%20New%20Jersey%20-%20showing%20area%20damaged%20by%20explosion%20and%20fire%2C%20July%2030th%201916.%20LOC%202010588272.jpg?width=1280",
+          "alt": "1916 Sanborn map of Black Tom Island showing ammunition warehouses, railroad tracks, wharves and the area damaged by the explosion and fire.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "256:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Tom%20explosion%20-%20firefighters%20-%201916.jpg?width=1280",
+          "alt": "Firefighters working amid wreckage at Black Tom on the day after the 1916 explosion.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "256:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Tom%20explosion%20-%20Men%20on%20pier%20-%201916.jpg?width=1280",
+          "alt": "Men standing on the damaged Black Tom pier amid the aftermath of the 1916 explosion.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "256:4",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Diving%20at%20Black%20Tom%20LCCN2014702309.jpg?width=1280",
+          "alt": "A diver preparing to recover unexploded ammunition from the water at Black Tom after the 1916 explosion.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "256:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Girl%20with%20relics%20from%20the%20Black%20Tom%20Explosion.png?width=1280",
+          "alt": "A young girl holding three shells reportedly found about a mile and a half from Black Tom after the 1916 explosion.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "256:6",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Tom%20explosion%20-%20electrical%20poles%20-%201916.jpg?width=1280",
+          "alt": "Wreckage and damaged utility poles at Black Tom after the July 1916 explosion.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 255,
+      "modified": "2026-10-30T01:11:08",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/",
+      "stored_inline_count": 7,
+      "slots": [
+        {
+          "key": "255:0",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Figure%205.4%20-%20NARA%20-%2070172329.jpg?width=960",
+          "alt": "Hyatt Regency atrium after the 1981 collapse, showing the empty positions where the second- and fourth-floor suspended walkways had crossed the lobby.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "255:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/HRWalkway.svg",
+          "alt": "Diagram comparing the original Hyatt Regency continuous hanger rod detail with the two-rod arrangement that was built.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "255:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hyatt%20Regency%20collapse%20support.PNG",
+          "alt": "Close view of the damaged Hyatt Regency fourth-floor walkway support connection after the collapse.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "255:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Figure%205.7%20-%20NARA%20-%2070172360.jpg?width=960",
+          "alt": "Side view of a steel box-beam section recovered from one of the collapsed Hyatt Regency walkways.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "255:4",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Figure%205.30%20a%20-%20NARA%20-%2070172364.jpg?width=960",
+          "alt": "Side view of a collapsed Hyatt Regency walkway section preserved for the federal structural investigation.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "255:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hyatt%20Regency%20collapse%20floor%20view.PNG",
+          "alt": "Collapsed steel, concrete and debris on the Hyatt Regency lobby floor during the first day of the structural investigation.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "255:6",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Figure%205.6%20-%20NARA%20-%2070172359.jpg?width=960",
+          "alt": "Damaged second- and fourth-floor Hyatt Regency walkways with surrounding debris after the collapse.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 254,
+      "modified": "2026-10-29T15:50:32",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+      "stored_inline_count": 7,
+      "slots": [
+        {
+          "key": "254:0",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Anticythera%20shipwreck.%20Standard%20diving%20dress.jpg?width=1280",
+          "alt": "A sponge diver and crew using early surface-supplied diving equipment during the first Antikythera wreck campaigns.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "254:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Antikes%20Wrack%20von%20Antikythera%2003.jpg?width=1280",
+          "alt": "Greek officials, sailors and sponge divers aboard the naval vessel Mykali during recovery of the Antikythera wreck in 1900 to 1901.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "254:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mechanism%20of%20Antikythera%2C%20150-100%20BC%2C%20NAMA%2C%20191435.jpg?width=1280",
+          "alt": "Corroded bronze fragment of the Antikythera Mechanism showing surviving gear wheels in the National Archaeological Museum in Athens.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "254:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Antikythera%20Fragment%20A%20%28Front%29.webp?width=1280",
+          "alt": "Front of Fragment A of the Antikythera Mechanism, showing corroded bronze and surviving mechanical structure.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "254:4",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Fragments%20of%20the%20Antikythera%20Mechanism.jpg?width=1280",
+          "alt": "The three principal surviving fragments of the Antikythera Mechanism displayed together.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "254:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Reconstruction%20of%20the%20Antikythera%20mechanism%20%287751351552%29.jpg?width=1280",
+          "alt": "Modern physical reconstruction of the Antikythera Mechanism showing how a complete geared astronomical device may have appeared.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "254:6",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Antikes%20Wrack%20von%20Antikythera%2004.jpg?width=1280",
+          "alt": "Historical salvage work associated with the Antikythera shipwreck in the early twentieth century.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 253,
+      "modified": "2026-10-29T16:03:55",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/the-life-preservers-had-passed-inspection/",
+      "stored_inline_count": 7,
+      "slots": [
+        {
+          "key": "253:0",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/PS%20General%20Slocum%2C%20East%20River.jpg?width=1280",
+          "alt": "Passenger steamer General Slocum before the June 1904 fire in New York's East River.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "253:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/General%20slocum%20burning.jpg?width=1280",
+          "alt": "General Slocum burning in the East River with firefighting vessels nearby.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "253:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Among%20the%20oil%20barrels%20where%20fire%20started%2C%20showing%20defective%20life%20preservers%20and%20life%20boats.%20General%20Slocum%20Disaster%2C%20New%20York%20Harbor%2C%20June%2015%2C%201904%20LCCN2009632218.jpg?width=1280",
+          "alt": "Burned lifeboats, defective life preservers and barrels in the wreckage of General Slocum after the 1904 fire.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "253:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/On%20the%20deck%20of%20the%20Slocum%2C%20showing%20the%20effects%20of%20the%20fire%20on%20metal%20work%20and%20s%28tee%29l.%20G%28enera%29l%20Slocum%20Di%28saste%29r%2C%20New%20York%20H%28arbo%29r%2C%20June%2015%2C%201904%20LCCN2009632220.jpg?width=1280",
+          "alt": "Men standing among melted metal and wreckage on the deck of General Slocum after the fire.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "253:4",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/General%20Slocum%20Disaster%2C%20New%20York%20Harbor%2C%20June%2015%2C%201904.%20Diver%20going%20down%20for%20bodies%20in%20upper%20saloon%2C%20out%20of%20which%20over%20175%20were%20taken%20LCCN2009632224.jpg?width=1280",
+          "alt": "A diver working from the partially submerged General Slocum wreck during recovery operations in 1904.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "253:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/All%20that%20was%20left%20of%20the%20boat%20which%20carried%20over%201000%20souls%20to%20destruction.%20General%20view%20of%20Slocum%20after%20being%20raised%2C%20Slocum%20Disaster%2C%20New%20York%20Harbor%20LCCN2009632223.jpg?width=1280",
+          "alt": "General Slocum after the wreck was raised, with men standing among the damaged structure.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "253:6",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/General%20Slocum%20Memorial%20Tompkins%20Square%20Park%20NYC.JPG?width=1280",
+          "alt": "General Slocum memorial fountain in Tompkins Square Park commemorating the victims of the 1904 disaster.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 252,
+      "modified": "2026-10-30T01:12:06",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/they-thought-the-books-were-charcoal/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "252:0",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Herculaneum%20papyri.jpg?width=960",
+          "alt": "Carbonized Herculaneum papyrus fragments PHerc. 1103 and PHerc. 110, showing the dark brittle surfaces created by the AD 79 eruption.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "252:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Herculaneum%2C%20past%2C%20present%20and%20future%20%281908%29%20%2814596218878%29.jpg",
+          "alt": "Historic view of Herculaneum papyrus rolls and early work associated with the collection.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "252:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Abbot-Piaggio-machine-Herculaneum-papyri.jpg",
+          "alt": "Wooden mechanical apparatus developed from Antonio Piaggio's eighteenth-century machine for slowly unrolling carbonized Herculaneum papyri.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "252:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Heruclaneum%20Papyrus%201521%20f001r%2C%20British%20Library%2001.jpg?width=960",
+          "alt": "Charred and physically opened Herculaneum papyrus fragment preserving ancient writing.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "252:4",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Herculaneum%20papyrus%201425.png?width=960",
+          "alt": "Herculaneum papyrus fragment showing preserved Greek writing on carbonized material.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "252:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tetrapharmakos%20PHerc%201005%20col%205.png",
+          "alt": "Digitized text from Herculaneum papyrus PHerc. 1005 showing the kind of ancient writing scholars work to recover.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 221,
+      "modified": "2026-08-25T14:15:25",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+      "stored_inline_count": 7,
+      "slots": [
+        {
+          "key": "221:0",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/SL1nuclearpowerplant.JPG",
+          "alt": "SL-1 nuclear reactor building at the National Reactor Testing Station in Idaho.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "221:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/SL-1_-_Cutaway_of_reactor_and_control_building.png",
+          "alt": "Cutaway diagram of the SL-1 reactor and control building showing the reactor vessel and operating floor.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "221:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/SL-1_-_Reactor_schematic.png",
+          "alt": "SL-1 reactor schematic showing the core, pressure vessel and control-rod arrangement.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "221:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/US_AEC_SL-1.JPG",
+          "alt": "Atomic Energy Commission crews removing the damaged SL-1 reactor core from the Idaho facility after the 1961 accident.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "221:4",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sl-1-ineel81-3966.jpg",
+          "alt": "Retrospective photograph showing severe damage inside the SL-1 reactor core after the 1961 prompt-critical excursion.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "221:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sl-1-ineel61-9.jpg",
+          "alt": "Health physicists checking U.S. Highway 20 for radioactive contamination on the morning after the SL-1 accident.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "221:6",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/SL-1_-_Dismantling_of_the_foundation_piers.jpg",
+          "alt": "Workers dismantling the SL-1 reactor foundation piers during later cleanup of the Idaho site.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 220,
+      "modified": "2026-10-29T18:25:46",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/too-deep-for-the-rescue-bell/",
+      "stored_inline_count": 7,
+      "slots": [
+        {
+          "key": "220:0",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Thresher_(SSN-593)_bow.jpg?width=1280",
+          "alt": "Bow-on view of USS Thresher at sea in July 1961.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "220:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Thresher_(SSN-593)_launching.jpg",
+          "alt": "USS Thresher entering the water during her July 9, 1960 launching at Portsmouth Naval Shipyard.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "220:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Skylark_(ASR-20).jpg",
+          "alt": "USS Skylark, the submarine rescue ship accompanying Thresher during the April 1963 deep-dive trials.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "220:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Thresher_(SSN-593)_watertight_door.jpg",
+          "alt": "An internal watertight door from USS Thresher photographed on the seafloor by the bathyscaphe Trieste in August 1963.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "220:4",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bathyscaphe_Trieste2_2.jpg",
+          "alt": "Bathyscaphe Trieste II prepared in the configuration used for later surveys of the USS Thresher wreckage.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "220:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Thresher_(SSN-593)_brass_pipe.jpg",
+          "alt": "Recovered brass pipe from USS Thresher bearing an inscription that includes the words 593 Boat.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "220:6",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Thresher_(SSN-593)_rudder_sunk.jpg",
+          "alt": "Upper rudder from USS Thresher photographed on the deep Atlantic seafloor during a later Navy survey.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 219,
+      "modified": "2026-10-29T15:54:20",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/the-airship-had-no-life-jackets/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "219:0",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/80-G-1009363_(30087379334).jpg?width=1280",
+          "alt": "USS Akron flying over Washington, D.C., showing the immense scale of the Navy rigid airship.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "219:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Akron_(ZRS-4)_in_flight_over_Manhattan,_circa_1931-1933.jpg?width=1280",
+          "alt": "USS Akron flying above lower Manhattan in the early 1930s.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "219:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/NH_98039_USS_Akron_(ZRS-4).png?width=1280",
+          "alt": "USS Akron flying over the Panama Canal Zone with an N2Y-1 aircraft suspended beneath its internal hangar.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "219:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Akron_releases_its_N2Y_1_aircraft.jpg?width=1280",
+          "alt": "USS Akron releasing an N2Y-1 training aircraft from its aerial trapeze during flight tests in 1932.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "219:4",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Akron_approaches_mooring_mast.jpg?width=1280",
+          "alt": "USS Akron approaching a mooring mast during its operating career in the early 1930s.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "219:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Akron_kitchen.jpg?width=1280",
+          "alt": "A sailor aboard USS Akron getting water from a wash basin inside the airship, showing the aluminum structural framework.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "published_posts": 8,
+    "inline_img_tags": 54,
+    "external_origin_count": 54,
+    "classes": {
+      "THIRD_PARTY": 54
+    },
+    "source_drift_count": 0
+  },
+  "source_drift": [],
+  "rights_cleared_for_rehosting": false,
+  "wordpress_writes_authorized": false,
+  "measured_weight_reduction_pct": null,
+  "claimed_42_broken_images_confirmed": false,
+  "network_source_statuses_verified": false
+}

@@ -1,0 +1,76 @@
+{
+  "schema": "fv-scotch-cap-418-chronology-conflict-v1",
+  "observed_date_utc": "2026-11-08",
+  "observation_method": "read-only web catalog-text retrieval, NOT image download or visitor-browser capture",
+  "image_key": "418:2",
+  "exact_published_original_src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+  "published_image_binary_sha256": null,
+  "direct_original_origin_http_status": null,
+  "direct_original_guest_browser_http_status": null,
+  "earlier_external_retriever_wrapper_status": 403,
+  "earlier_retriever_observation_date": "2026-11-04",
+  "earlier_wrapper_is_origin_http": false,
+  "earlier_wrapper_is_guest_browser": false,
+  "candidate_records": [
+    {
+      "institution": "National Oceanic and Atmospheric Administration / Ocean Exploration",
+      "item_url": "https://oceanexplorer.noaa.gov/multimedia/okeanos-explorations-seascape-alaska-ex2304-features-geology-media-lighthouse-debris/",
+      "item_title": "Scotch Cap Lighthouse Debris",
+      "catalog_described_disaster_year": 1964,
+      "catalog_credit": "Image courtesy of D. Rosen, 2021, U.S. Coast Guard",
+      "catalog_download_listing_bytes": null,
+      "catalog_download_size_label": "214.2 KB (publisher display, not inspected binary)",
+      "original_pixel_width": null,
+      "original_pixel_height": null,
+      "exact_same_image_proven": false,
+      "source_catalog_status": "TEXT_CATALOG_RETRIEVED",
+      "origin_image_http_status": null,
+      "rights_review": "HOLD",
+      "reproduction_or_cache_authorized": false,
+      "suitability": "EXCLUDE_UNTIL_DATE_PROVENANCE_RECONCILED"
+    },
+    {
+      "institution": "National Coast Guard Museum",
+      "item_url": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+      "item_title": "Standing a deadly watch — The final hours of Scotch Cap Lighthouse",
+      "article_publication_date": "2024-10-30",
+      "historical_disaster_date": "1946-04-01",
+      "record_photograph_description": "Remains of Scotch Cap Lighthouse after the 1946 tsunami; multiple scene viewpoints catalogued",
+      "catalog_credit": "U.S. Coast Guard",
+      "original_pixel_width": null,
+      "original_pixel_height": null,
+      "exact_same_image_proven": false,
+      "source_catalog_status": "TEXT_CATALOG_RETRIEVED",
+      "origin_image_http_status": null,
+      "rights_review": "HOLD",
+      "reproduction_or_cache_authorized": false,
+      "suitability": "SUBJECT_LEVEL_COMPARISON_ONLY"
+    }
+  ],
+  "conflict": {
+    "status": "UNRESOLVED_CROSS_CATALOG_EVENT_DATE",
+    "noaa_year": 1964,
+    "uscg_museum_year": 1946,
+    "action": "HOLD automatic candidate swap, caption substitution, asset caching or CMS upload",
+    "correct_history_reference": "The Coast Guard Museum documents the Scotch Cap lighthouse destruction on 1946-04-01",
+    "noaa_exact_image_identity_unknown": true
+  },
+  "conditional_derivative": {
+    "max_width_px": 960,
+    "no_upscale": true,
+    "output_width_px": null,
+    "output_height_px": null,
+    "requires_binary_geometry": true,
+    "requires_composition_parity": true,
+    "requires_item_level_rights": true
+  },
+  "visitor_source_broken": null,
+  "production_repairs": 0,
+  "permission": {
+    "third_party_binary_download": false,
+    "wp_media_upload": false,
+    "published_post_edit": false,
+    "homepage_change": false,
+    "paid_tool": false
+  }
+}

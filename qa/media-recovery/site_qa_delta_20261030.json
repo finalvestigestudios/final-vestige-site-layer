@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-30",
+  "compared_snapshots": [
+    "qa/media/cms_image_census_20261030.csv at PR #154",
+    "qa/media-recovery/parts/01-08.json at PR #183"
+  ],
+  "method": "deterministic by-post offsite count comparison of 61 rows; visitor HTTP unverified",
+  "old_offsite_count": 286,
+  "new_offsite_count": 288,
+  "delta": 2,
+  "provenance_status": "exact origin mismatch isolated; historical diff cause not proven",
+  "differences": [
+    {
+      "post_id": 291,
+      "post_title": "One Bulldozer Never Came Back",
+      "older_source_offsite": 5,
+      "recovery_source_offsite": 6,
+      "newly_accounted_origin": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "origin_host": "i0.wp.com",
+      "actual_upstream_host": "text-message.blogs.archives.gov",
+      "must_classify": "external_third_party_proxy",
+      "claim_of_http_failure": false
+    },
+    {
+      "post_id": 285,
+      "post_title": "The Light Said Closed",
+      "older_source_offsite": 5,
+      "recovery_source_offsite": 6,
+      "newly_accounted_origin": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "origin_host": "i0.wp.com",
+      "actual_upstream_host": "www.squawkpoint.com",
+      "must_classify": "external_third_party_proxy",
+      "claim_of_http_failure": false
+    }
+  ],
+  "rule": "i0.wp.com/THIRD_PARTY_HOST/... is not a first-party finalvestige.com Jetpack proxy and requires ordinary third-party source/license/availability review",
+  "next_reconciliation": "Recompute PR #154 classifier on identical recorded posts.get markup to determine whether input changed, manual CSV differed, or a counting code path mislabeled i0.wp.com. Do not infer the 42 broken-image claim from this delta.",
+  "no_wordpress_writes": true,
+  "no_real_browser_http_verification": true
+}

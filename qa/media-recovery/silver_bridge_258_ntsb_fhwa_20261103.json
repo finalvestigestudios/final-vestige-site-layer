@@ -1,0 +1,199 @@
+{
+  "schema": "fv-silver-bridge-six-v1",
+  "date": "2026-11-03",
+  "wp_live": {
+    "id": 258,
+    "title": "Inside the Joint",
+    "url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+    "modified": "2026-11-02T21:39:47",
+    "status": "publish"
+  },
+  "pinned_source_blob": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96d",
+  "images": [
+    {
+      "key": "258:0",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Silver%20Bridge%2C%201928.jpg",
+      "alt": "Silver Bridge spanning the Ohio River between Point Pleasant, West Virginia, and Ohio shortly after completion in 1928.",
+      "original_observation": {
+        "method": "web_open_independent_retriever",
+        "result": "retriever_inaccessible_no_origin_status",
+        "origin_http_status": null,
+        "guest_browser_status": null,
+        "decode_verified": null,
+        "encoded_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Silver_Bridge,_1928.jpg",
+        "url": null,
+        "original_intrinsic_px": [
+          286,
+          154
+        ],
+        "conditional_derivative_px": [
+          286,
+          154
+        ],
+        "rights_note": "FHWA U.S. federal-work public-domain claim on Commons; confirm original credit",
+        "kind": "Commons_catalog",
+        "candidate_displayed": false,
+        "exact_bytes_or_crop_verified": false,
+        "rights_cleared": false,
+        "wp_upload_approved": false
+      },
+      "target_max_width_px": 960
+    },
+    {
+      "key": "258:1",
+      "source_url": "https://www-d.ntsb.gov/investigations/PublishingImages/80267-img.jpg",
+      "alt": "National Transportation Safety Board diagram showing a typical Silver Bridge eyebar-chain and hanger connection.",
+      "original_observation": {
+        "method": "web_open_independent_retriever",
+        "result": "retriever_inaccessible_no_origin_status",
+        "origin_http_status": null,
+        "guest_browser_status": null,
+        "decode_verified": null,
+        "encoded_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://www-s.ntsb.gov/investigations/Pages/80267.aspx",
+        "url": "https://www-s.ntsb.gov/investigations/PublishingImages/80267-img.jpg",
+        "original_intrinsic_px": null,
+        "conditional_derivative_px": null,
+        "rights_note": "NTSB plate 2 federal investigation drawing, source author/embedded rights check pending",
+        "kind": "official_NTSB_host_migration",
+        "candidate_displayed": true,
+        "exact_bytes_or_crop_verified": false,
+        "rights_cleared": false,
+        "wp_upload_approved": false
+      },
+      "target_max_width_px": 960
+    },
+    {
+      "key": "258:2",
+      "source_url": "https://www.fhwa.dot.gov/highwayhistory/images/national_bridge_inspection_standards/bridge_inspection_1_thumb.jpg",
+      "alt": "Collapsed Silver Bridge steel and roadway on the Ohio bank after the December 1967 disaster.",
+      "original_observation": {
+        "method": "web_open_independent_retriever",
+        "result": "viewer_displayed",
+        "origin_http_status": null,
+        "guest_browser_status": null,
+        "decode_verified": null,
+        "encoded_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.fhwa.dot.gov/highwayhistory/national_bridge_inspection_standards.cfm",
+        "url": null,
+        "original_intrinsic_px": null,
+        "conditional_derivative_px": null,
+        "rights_note": "FHWA government hosted; per-photograph authorship and rights review pending",
+        "kind": "FHWA_original_shown",
+        "candidate_displayed": false,
+        "exact_bytes_or_crop_verified": false,
+        "rights_cleared": false,
+        "wp_upload_approved": false
+      },
+      "target_max_width_px": 960
+    },
+    {
+      "key": "258:3",
+      "source_url": "https://www.fhwa.dot.gov/highwayhistory/images/national_bridge_inspection_standards/bridge_inspection_1B.jpg",
+      "alt": "Investigators and responders standing among collapsed Silver Bridge members at the Ohio end after the 1967 disaster.",
+      "original_observation": {
+        "method": "web_open_independent_retriever",
+        "result": "viewer_displayed",
+        "origin_http_status": null,
+        "guest_browser_status": null,
+        "decode_verified": null,
+        "encoded_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://highways.fhwa.dot.gov/highway-history/general-highway-history/happy-50th-anniversary-national-bridge-inspection-standards",
+        "url": "https://highways.fhwa.dot.gov/sites/fhwa.dot.gov/files/inline-images/bridge_inspection_1B.jpg",
+        "original_intrinsic_px": null,
+        "conditional_derivative_px": null,
+        "rights_note": "FHWA government hosted; per-photograph authorship and rights review pending",
+        "kind": "official_FHWA_migrated_site_rendition",
+        "candidate_displayed": true,
+        "exact_bytes_or_crop_verified": false,
+        "rights_cleared": false,
+        "wp_upload_approved": false
+      },
+      "target_max_width_px": 960
+    },
+    {
+      "key": "258:4",
+      "source_url": "https://www.fhwa.dot.gov/highwayhistory/images/national_bridge_inspection_standards/bridge_inspection_4.jpg",
+      "alt": "Five Federal Highway Administration engineers standing behind the 18-foot scale model built to study the Silver Bridge collapse.",
+      "original_observation": {
+        "method": "web_open_independent_retriever",
+        "result": "viewer_displayed",
+        "origin_http_status": null,
+        "guest_browser_status": null,
+        "decode_verified": null,
+        "encoded_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://highways.fhwa.dot.gov/highway-history/general-highway-history/happy-50th-anniversary-national-bridge-inspection-standards",
+        "url": "https://highways.fhwa.dot.gov/sites/fhwa.dot.gov/files/inline-images/bridge_inspection_4.jpg",
+        "original_intrinsic_px": null,
+        "conditional_derivative_px": null,
+        "rights_note": "FHWA government hosted; per-photograph authorship and rights review pending",
+        "kind": "official_FHWA_migrated_site_rendition",
+        "candidate_displayed": true,
+        "exact_bytes_or_crop_verified": false,
+        "rights_cleared": false,
+        "wp_upload_approved": false
+      },
+      "target_max_width_px": 960
+    },
+    {
+      "key": "258:5",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Silver%20Bridge%20-%20DPLA%20-%209fc0bcf07698072f128124fc79edd1c7%20%28page%202%29.jpg",
+      "alt": "Historical view of the Silver Bridge crossing the Ohio River before its 1967 collapse.",
+      "original_observation": {
+        "method": "web_open_independent_retriever",
+        "result": "retriever_inaccessible_no_origin_status",
+        "origin_http_status": null,
+        "guest_browser_status": null,
+        "decode_verified": null,
+        "encoded_transfer_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Silver_Bridge_-_DPLA_-_9fc0bcf07698072f128124fc79edd1c7_(page_2).jpg",
+        "url": null,
+        "original_intrinsic_px": [
+          3296,
+          2080
+        ],
+        "conditional_derivative_px": [
+          960,
+          606
+        ],
+        "rights_note": "RightsStatements.org No Known Copyright is INCONCLUSIVE, not a public-domain dedication; permission review required",
+        "kind": "Commons_catalog",
+        "candidate_displayed": false,
+        "exact_bytes_or_crop_verified": false,
+        "rights_cleared": false,
+        "wp_upload_approved": false
+      },
+      "target_max_width_px": 960
+    }
+  ],
+  "totals": {
+    "slots": 6,
+    "source_viewer_displayed": 3,
+    "source_retriever_inaccessible": 3,
+    "official_alternative_displayed": 3,
+    "browser_confirmed_broken": 0,
+    "wp_repairs": 0,
+    "measured_reduction_percent": null
+  },
+  "baseline": {
+    "articles": 61,
+    "stored_image_slots": 355,
+    "external_origins": 288,
+    "over_1_5MiB_wp_originals": 13,
+    "reported_42_broken": "NOT_BROWSER_VERIFIED",
+    "reported_76_percent": "NOT_MEASURED"
+  }
+}

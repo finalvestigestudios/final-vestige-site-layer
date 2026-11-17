@@ -1,0 +1,270 @@
+{
+  "schema": "fv-p0-six-wp-sources-retriever-20261108-v1",
+  "date_local": "2026-11-08",
+  "method": "Read-only WordPress posts_get edit for four current published posts and web.open wrapper for six exact image URLs; tool error codes are neither origin nor guest browser HTTP",
+  "frozen_git_source": {
+    "path": "qa/media-recovery/p0_guest_browser_disposition_pending_20261105.json",
+    "blob_sha": "9bf9a973fce37a546f8c3e79ecd0c34345eb2457"
+  },
+  "counts": {
+    "posts_read": 4,
+    "p0_exact_wp_sources_verified": 6,
+    "wrapper_results": 6,
+    "wrapper_nonrender": 6,
+    "alternative_images_displayed": 2,
+    "documented_item_pd_claims": 3,
+    "visitor_confirmed_broken": null,
+    "verified_broken_42": false,
+    "measured_transfer_reduction_76": false,
+    "historical_posts": 61,
+    "historical_images": 355,
+    "live_published_posts_previous_census": 66,
+    "oversize_originals_decimal_mb": 15,
+    "oversize_stored_original_bytes": 47096779
+  },
+  "rows": [
+    {
+      "slot": "285:5",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "modified": "2026-11-02T21:39:59",
+      "published_src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "live_wp_post_published": true,
+      "live_wp_exact_src_found": true,
+      "wrapper": {
+        "method": "web.open",
+        "date_local": "2026-11-08",
+        "tool_status": 404,
+        "tool_result": "NOT_FOUND",
+        "origin_http": null,
+        "guest_http": null,
+        "guest_pixels": null,
+        "guest_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "relationship": "PUBLISHER_LINKS_COMMMONS_PD_SELF_FULL_FRAME_VS_16_9_CROP",
+        "rights_evidence": "PD_SELF",
+        "native_dimensions": [
+          819,
+          614
+        ],
+        "conditional_max_960_derivative": [
+          819,
+          614
+        ],
+        "rendered_by_retriever": false,
+        "binary_sha256": null,
+        "right_to_cache_or_republish_proven": false,
+        "editor_approved": false
+      },
+      "actions": {
+        "fetch_binary": false,
+        "cache": false,
+        "wp_media": false,
+        "wp_post": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "modified": "2026-11-02T21:39:59",
+      "published_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "live_wp_post_published": true,
+      "live_wp_exact_src_found": true,
+      "wrapper": {
+        "method": "web.open",
+        "date_local": "2026-11-08",
+        "tool_status": 500,
+        "tool_result": "REDIRECT_TARGET_INACCESSIBLE",
+        "origin_http": null,
+        "guest_http": null,
+        "guest_pixels": null,
+        "guest_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+        "relationship": "SAME_PUBLISHER_MIGRATED_LINK_NOT_VISUALLY_VERIFIED",
+        "rights_evidence": "UNKNOWN",
+        "native_dimensions": null,
+        "conditional_max_960_derivative": null,
+        "rendered_by_retriever": false,
+        "binary_sha256": null,
+        "right_to_cache_or_republish_proven": false,
+        "editor_approved": false
+      },
+      "actions": {
+        "fetch_binary": false,
+        "cache": false,
+        "wp_media": false,
+        "wp_post": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "modified": "2026-11-02T21:40:01",
+      "published_src": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "live_wp_post_published": true,
+      "live_wp_exact_src_found": true,
+      "wrapper": {
+        "method": "web.open",
+        "date_local": "2026-11-08",
+        "tool_status": 404,
+        "tool_result": "NOT_FOUND",
+        "origin_http": null,
+        "guest_http": null,
+        "guest_pixels": null,
+        "guest_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "relationship": "SAME_PUBLISHER_FILENAME_1980_WRECK_NOT_REPLACEMENT_BRIDGE",
+        "rights_evidence": "RIGHTS_UNVERIFIED",
+        "native_dimensions": null,
+        "conditional_max_960_derivative": null,
+        "rendered_by_retriever": true,
+        "binary_sha256": null,
+        "right_to_cache_or_republish_proven": false,
+        "editor_approved": false
+      },
+      "actions": {
+        "fetch_binary": false,
+        "cache": false,
+        "wp_media": false,
+        "wp_post": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "modified": "2026-08-28T03:11:08",
+      "published_src": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "live_wp_post_published": true,
+      "live_wp_exact_src_found": true,
+      "wrapper": {
+        "method": "web.open",
+        "date_local": "2026-11-08",
+        "tool_status": 403,
+        "tool_result": "FORBIDDEN",
+        "origin_http": null,
+        "guest_http": null,
+        "guest_pixels": null,
+        "guest_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "relationship": "USCG_VIRIN_MATCH_PORTRAIT_NOT_WRECKAGE",
+        "rights_evidence": "USCG_PUBLIC_DOMAIN_RELEASE_CATALOG",
+        "native_dimensions": null,
+        "conditional_max_960_derivative": null,
+        "rendered_by_retriever": false,
+        "binary_sha256": null,
+        "right_to_cache_or_republish_proven": false,
+        "editor_approved": false
+      },
+      "actions": {
+        "fetch_binary": false,
+        "cache": false,
+        "wp_media": false,
+        "wp_post": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "modified": "2026-08-28T03:11:08",
+      "published_src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "live_wp_post_published": true,
+      "live_wp_exact_src_found": true,
+      "wrapper": {
+        "method": "web.open",
+        "date_local": "2026-11-08",
+        "tool_status": 403,
+        "tool_result": "FORBIDDEN",
+        "origin_http": null,
+        "guest_http": null,
+        "guest_pixels": null,
+        "guest_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "url": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+        "relationship": "SAME_BASENAME_SECONDARY_HOST_NOT_VERIFIED_BINARY",
+        "rights_evidence": "RIGHTS_UNVERIFIED",
+        "native_dimensions": null,
+        "conditional_max_960_derivative": null,
+        "rendered_by_retriever": true,
+        "binary_sha256": null,
+        "right_to_cache_or_republish_proven": false,
+        "editor_approved": false
+      },
+      "actions": {
+        "fetch_binary": false,
+        "cache": false,
+        "wp_media": false,
+        "wp_post": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "407:1",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "modified": "2026-10-29T18:30:30",
+      "published_src": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "live_wp_post_published": true,
+      "live_wp_exact_src_found": true,
+      "wrapper": {
+        "method": "web.open",
+        "date_local": "2026-11-08",
+        "tool_status": 400,
+        "tool_result": "UNSUPPORTED_OCTET_STREAM",
+        "origin_http": null,
+        "guest_http": null,
+        "guest_pixels": null,
+        "guest_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+        "relationship": "USGS_SAME_RECORD_THUMBNAIL_NOT_RETRIEVABLE_TODAY",
+        "rights_evidence": "USGS_PUBLIC_DOMAIN_CATALOG",
+        "native_dimensions": null,
+        "conditional_max_960_derivative": null,
+        "rendered_by_retriever": false,
+        "binary_sha256": null,
+        "right_to_cache_or_republish_proven": false,
+        "editor_approved": false
+      },
+      "actions": {
+        "fetch_binary": false,
+        "cache": false,
+        "wp_media": false,
+        "wp_post": false,
+        "homepage": false
+      }
+    }
+  ],
+  "release": {
+    "guest_browser_verification": false,
+    "wordpress_writes": 0,
+    "binary_downloads": 0,
+    "cache_writes": 0,
+    "homepage_edits": 0,
+    "spend_usd": 0,
+    "all_replacements_hold": true
+  }
+}

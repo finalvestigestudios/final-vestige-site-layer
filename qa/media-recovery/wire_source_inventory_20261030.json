@@ -1,0 +1,842 @@
+{
+  "schema_version": 1,
+  "source_snapshot_utc": "2026-10-30",
+  "note": "Frozen source census, not a current live-WordPress verification; revalidate before an actual site-wide 76-percent claim",
+  "inventory_id": "FV-20261030-61POST-355SLOT",
+  "posts_count": 61,
+  "image_slot_count": 355,
+  "source_parts": [
+    {
+      "path": "qa/media-recovery/parts/01.json",
+      "blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "declared_posts": 8,
+      "declared_slots": 52
+    },
+    {
+      "path": "qa/media-recovery/parts/02.json",
+      "blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "declared_posts": 8,
+      "declared_slots": 59
+    },
+    {
+      "path": "qa/media-recovery/parts/03.json",
+      "blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "declared_posts": 8,
+      "declared_slots": 49
+    },
+    {
+      "path": "qa/media-recovery/parts/04.json",
+      "blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+      "declared_posts": 8,
+      "declared_slots": 56
+    },
+    {
+      "path": "qa/media-recovery/parts/05.json",
+      "blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "declared_posts": 8,
+      "declared_slots": 54
+    },
+    {
+      "path": "qa/media-recovery/parts/06.json",
+      "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "declared_posts": 8,
+      "declared_slots": 49
+    },
+    {
+      "path": "qa/media-recovery/parts/07.json",
+      "blob_sha": "21095161e633aba093b74c0ead9936c9f6186d00",
+      "declared_posts": 8,
+      "declared_slots": 31
+    },
+    {
+      "path": "qa/media-recovery/parts/08.json",
+      "blob_sha": "5659ec243c188928be3f89c0f96354b660608ca2",
+      "declared_posts": 5,
+      "declared_slots": 5
+    }
+  ],
+  "posts": [
+    {
+      "post_id": 34,
+      "page_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+      "expected_slots": [
+        "34:0"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T21:19:13"
+    },
+    {
+      "post_id": 35,
+      "page_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+      "expected_slots": [
+        "35:0"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T17:07:04"
+    },
+    {
+      "post_id": 36,
+      "page_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+      "expected_slots": [
+        "36:0"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T17:07:30"
+    },
+    {
+      "post_id": 37,
+      "page_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "expected_slots": [
+        "37:0"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T17:07:17"
+    },
+    {
+      "post_id": 38,
+      "page_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+      "expected_slots": [
+        "38:0"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T17:06:51"
+    },
+    {
+      "post_id": 101,
+      "page_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+      "expected_slots": [
+        "101:0",
+        "101:1",
+        "101:2",
+        "101:3",
+        "101:4",
+        "101:5",
+        "101:6"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T18:26:05"
+    },
+    {
+      "post_id": 108,
+      "page_url": "https://finalvestige.com/2026/08/17/the-richest-ship-couldnt-buy-another-hour/",
+      "expected_slots": [
+        "108:0",
+        "108:1"
+      ],
+      "last_modified_as_of_snapshot": "2026-08-25T18:54:29"
+    },
+    {
+      "post_id": 139,
+      "page_url": "https://finalvestige.com/2026/08/17/the-rescue-machine-nobody-had-ever-needed/",
+      "expected_slots": [
+        "139:0",
+        "139:1"
+      ],
+      "last_modified_as_of_snapshot": "2026-09-08T02:51:01"
+    },
+    {
+      "post_id": 142,
+      "page_url": "https://finalvestige.com/2026/08/17/almost-home-sultana-disaster/",
+      "expected_slots": [
+        "142:0",
+        "142:1",
+        "142:2"
+      ],
+      "last_modified_as_of_snapshot": "2026-09-08T10:07:17"
+    },
+    {
+      "post_id": 146,
+      "page_url": "https://finalvestige.com/2026/08/17/the-dam-that-didnt-fail-vajont/",
+      "expected_slots": [
+        "146:0",
+        "146:1",
+        "146:2"
+      ],
+      "last_modified_as_of_snapshot": "2026-08-25T18:49:09"
+    },
+    {
+      "post_id": 151,
+      "page_url": "https://finalvestige.com/2026/08/17/they-taught-the-lake-to-breathe/",
+      "expected_slots": [
+        "151:0",
+        "151:1",
+        "151:2"
+      ],
+      "last_modified_as_of_snapshot": "2026-08-28T02:11:36"
+    },
+    {
+      "post_id": 156,
+      "page_url": "https://finalvestige.com/2026/08/17/they-lifted-the-city-galveston/",
+      "expected_slots": [
+        "156:0",
+        "156:1",
+        "156:2",
+        "156:3"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T14:45:54"
+    },
+    {
+      "post_id": 166,
+      "page_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "expected_slots": [
+        "166:0",
+        "166:1",
+        "166:2",
+        "166:3",
+        "166:4",
+        "166:5",
+        "166:6"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T17:32:42"
+    },
+    {
+      "post_id": 190,
+      "page_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "expected_slots": [
+        "190:0",
+        "190:1",
+        "190:2",
+        "190:3",
+        "190:4",
+        "190:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T14:46:47"
+    },
+    {
+      "post_id": 211,
+      "page_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "expected_slots": [
+        "211:0",
+        "211:1",
+        "211:2",
+        "211:3",
+        "211:4",
+        "211:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T17:37:13"
+    },
+    {
+      "post_id": 213,
+      "page_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "expected_slots": [
+        "213:0",
+        "213:1",
+        "213:2",
+        "213:3",
+        "213:4",
+        "213:5",
+        "213:6"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T20:59:21"
+    },
+    {
+      "post_id": 214,
+      "page_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "expected_slots": [
+        "214:0",
+        "214:1",
+        "214:2",
+        "214:3",
+        "214:4",
+        "214:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T16:30:42"
+    },
+    {
+      "post_id": 215,
+      "page_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "expected_slots": [
+        "215:0",
+        "215:1",
+        "215:2",
+        "215:3",
+        "215:4",
+        "215:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T15:59:59"
+    },
+    {
+      "post_id": 216,
+      "page_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "expected_slots": [
+        "216:0",
+        "216:1",
+        "216:2",
+        "216:3",
+        "216:4",
+        "216:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-30T01:13:09"
+    },
+    {
+      "post_id": 217,
+      "page_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "expected_slots": [
+        "217:0",
+        "217:1",
+        "217:2",
+        "217:3",
+        "217:4",
+        "217:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T16:04:52"
+    },
+    {
+      "post_id": 218,
+      "page_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "expected_slots": [
+        "218:0",
+        "218:1",
+        "218:2",
+        "218:3",
+        "218:4",
+        "218:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T16:01:32"
+    },
+    {
+      "post_id": 219,
+      "page_url": "https://finalvestige.com/2026/08/18/the-airship-had-no-life-jackets/",
+      "expected_slots": [
+        "219:0",
+        "219:1",
+        "219:2",
+        "219:3",
+        "219:4",
+        "219:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T15:54:20"
+    },
+    {
+      "post_id": 220,
+      "page_url": "https://finalvestige.com/2026/08/18/too-deep-for-the-rescue-bell/",
+      "expected_slots": [
+        "220:0",
+        "220:1",
+        "220:2",
+        "220:3",
+        "220:4",
+        "220:5",
+        "220:6"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T18:25:46"
+    },
+    {
+      "post_id": 221,
+      "page_url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+      "expected_slots": [
+        "221:0",
+        "221:1",
+        "221:2",
+        "221:3",
+        "221:4",
+        "221:5",
+        "221:6"
+      ],
+      "last_modified_as_of_snapshot": "2026-08-25T14:15:25"
+    },
+    {
+      "post_id": 252,
+      "page_url": "https://finalvestige.com/2026/08/18/they-thought-the-books-were-charcoal/",
+      "expected_slots": [
+        "252:0",
+        "252:1",
+        "252:2",
+        "252:3",
+        "252:4",
+        "252:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-30T01:12:06"
+    },
+    {
+      "post_id": 253,
+      "page_url": "https://finalvestige.com/2026/08/18/the-life-preservers-had-passed-inspection/",
+      "expected_slots": [
+        "253:0",
+        "253:1",
+        "253:2",
+        "253:3",
+        "253:4",
+        "253:5",
+        "253:6"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T16:03:55"
+    },
+    {
+      "post_id": 254,
+      "page_url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+      "expected_slots": [
+        "254:0",
+        "254:1",
+        "254:2",
+        "254:3",
+        "254:4",
+        "254:5",
+        "254:6"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T15:50:32"
+    },
+    {
+      "post_id": 255,
+      "page_url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/",
+      "expected_slots": [
+        "255:0",
+        "255:1",
+        "255:2",
+        "255:3",
+        "255:4",
+        "255:5",
+        "255:6"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-30T01:11:08"
+    },
+    {
+      "post_id": 256,
+      "page_url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+      "expected_slots": [
+        "256:0",
+        "256:1",
+        "256:2",
+        "256:3",
+        "256:4",
+        "256:5",
+        "256:6"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T15:51:59"
+    },
+    {
+      "post_id": 257,
+      "page_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "expected_slots": [
+        "257:0",
+        "257:1",
+        "257:2",
+        "257:3",
+        "257:4",
+        "257:5",
+        "257:6"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T20:59:35"
+    },
+    {
+      "post_id": 258,
+      "page_url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "expected_slots": [
+        "258:0",
+        "258:1",
+        "258:2",
+        "258:3",
+        "258:4",
+        "258:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T14:43:40"
+    },
+    {
+      "post_id": 268,
+      "page_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "expected_slots": [
+        "268:0",
+        "268:1",
+        "268:2",
+        "268:3",
+        "268:4",
+        "268:5",
+        "268:6",
+        "268:7",
+        "268:8",
+        "268:9"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-30T01:10:13"
+    },
+    {
+      "post_id": 269,
+      "page_url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "expected_slots": [
+        "269:0",
+        "269:1",
+        "269:2",
+        "269:3",
+        "269:4",
+        "269:5",
+        "269:6"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T20:59:49"
+    },
+    {
+      "post_id": 274,
+      "page_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "expected_slots": [
+        "274:0",
+        "274:1",
+        "274:2",
+        "274:3",
+        "274:4",
+        "274:5",
+        "274:6"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T16:02:05"
+    },
+    {
+      "post_id": 276,
+      "page_url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/",
+      "expected_slots": [
+        "276:0",
+        "276:1",
+        "276:2",
+        "276:3",
+        "276:4",
+        "276:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T18:28:26"
+    },
+    {
+      "post_id": 277,
+      "page_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/",
+      "expected_slots": [
+        "277:0",
+        "277:1",
+        "277:2",
+        "277:3",
+        "277:4",
+        "277:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-08-21T00:32:52"
+    },
+    {
+      "post_id": 278,
+      "page_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "expected_slots": [
+        "278:0",
+        "278:1",
+        "278:2",
+        "278:3",
+        "278:4",
+        "278:5",
+        "278:6"
+      ],
+      "last_modified_as_of_snapshot": "2026-08-21T00:32:59"
+    },
+    {
+      "post_id": 279,
+      "page_url": "https://finalvestige.com/2026/08/19/the-geologists-found-the-spy-satellite/",
+      "expected_slots": [
+        "279:0",
+        "279:1",
+        "279:2",
+        "279:3",
+        "279:4",
+        "279:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-09-08T10:06:54"
+    },
+    {
+      "post_id": 280,
+      "page_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "expected_slots": [
+        "280:0",
+        "280:1",
+        "280:2",
+        "280:3",
+        "280:4",
+        "280:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-09-07T09:43:49"
+    },
+    {
+      "post_id": 283,
+      "page_url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+      "expected_slots": [
+        "283:0",
+        "283:1",
+        "283:2",
+        "283:3",
+        "283:4",
+        "283:5",
+        "283:6"
+      ],
+      "last_modified_as_of_snapshot": "2026-08-21T00:33:14"
+    },
+    {
+      "post_id": 285,
+      "page_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "expected_slots": [
+        "285:0",
+        "285:1",
+        "285:2",
+        "285:3",
+        "285:4",
+        "285:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-09-08T10:06:47"
+    },
+    {
+      "post_id": 287,
+      "page_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "expected_slots": [
+        "287:0",
+        "287:1",
+        "287:2",
+        "287:3",
+        "287:4",
+        "287:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T18:42:40"
+    },
+    {
+      "post_id": 288,
+      "page_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "expected_slots": [
+        "288:0",
+        "288:1",
+        "288:2",
+        "288:3",
+        "288:4",
+        "288:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-08-19T14:37:40"
+    },
+    {
+      "post_id": 289,
+      "page_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "expected_slots": [
+        "289:0",
+        "289:1",
+        "289:2",
+        "289:3",
+        "289:4",
+        "289:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-08-28T15:23:16"
+    },
+    {
+      "post_id": 290,
+      "page_url": "https://finalvestige.com/2026/08/19/the-city-kept-moving-camp-century/",
+      "expected_slots": [
+        "290:0",
+        "290:1",
+        "290:2",
+        "290:3",
+        "290:4",
+        "290:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-08-31T03:32:37"
+    },
+    {
+      "post_id": 291,
+      "page_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "expected_slots": [
+        "291:0",
+        "291:1",
+        "291:2",
+        "291:3",
+        "291:4",
+        "291:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-08-28T15:14:59"
+    },
+    {
+      "post_id": 292,
+      "page_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "expected_slots": [
+        "292:0",
+        "292:1",
+        "292:2",
+        "292:3",
+        "292:4",
+        "292:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-08-27T11:24:49"
+    },
+    {
+      "post_id": 299,
+      "page_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+      "expected_slots": [
+        "299:0",
+        "299:1",
+        "299:2",
+        "299:3",
+        "299:4",
+        "299:5",
+        "299:6",
+        "299:7"
+      ],
+      "last_modified_as_of_snapshot": "2026-09-08T10:07:10"
+    },
+    {
+      "post_id": 330,
+      "page_url": "https://finalvestige.com/2026/08/19/the-filter-was-at-the-top-windscale/",
+      "expected_slots": [
+        "330:0",
+        "330:1",
+        "330:2",
+        "330:3",
+        "330:4",
+        "330:5",
+        "330:6",
+        "330:7"
+      ],
+      "last_modified_as_of_snapshot": "2026-08-30T01:56:40"
+    },
+    {
+      "post_id": 367,
+      "page_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "expected_slots": [
+        "367:0",
+        "367:1",
+        "367:2",
+        "367:3",
+        "367:4",
+        "367:5",
+        "367:6",
+        "367:7",
+        "367:8"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T17:34:27"
+    },
+    {
+      "post_id": 370,
+      "page_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "expected_slots": [
+        "370:0",
+        "370:1",
+        "370:2",
+        "370:3",
+        "370:4",
+        "370:5",
+        "370:6",
+        "370:7"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T15:27:15"
+    },
+    {
+      "post_id": 407,
+      "page_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "expected_slots": [
+        "407:0",
+        "407:1",
+        "407:2",
+        "407:3",
+        "407:4",
+        "407:5",
+        "407:6",
+        "407:7"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T18:30:30"
+    },
+    {
+      "post_id": 413,
+      "page_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+      "expected_slots": [
+        "413:0",
+        "413:1",
+        "413:2",
+        "413:3",
+        "413:4",
+        "413:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T15:30:32"
+    },
+    {
+      "post_id": 418,
+      "page_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "expected_slots": [
+        "418:0",
+        "418:1",
+        "418:2",
+        "418:3",
+        "418:4",
+        "418:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-08-28T03:11:08"
+    },
+    {
+      "post_id": 425,
+      "page_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "expected_slots": [
+        "425:0",
+        "425:1",
+        "425:2",
+        "425:3",
+        "425:4",
+        "425:5",
+        "425:6",
+        "425:7",
+        "425:8"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-30T01:08:21"
+    },
+    {
+      "post_id": 428,
+      "page_url": "https://finalvestige.com/2026/08/20/the-way-out-was-underground-ed-pulaski-1910/",
+      "expected_slots": [
+        "428:0",
+        "428:1",
+        "428:2",
+        "428:3",
+        "428:4",
+        "428:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T18:28:59"
+    },
+    {
+      "post_id": 431,
+      "page_url": "https://finalvestige.com/2026/08/20/the-mountain-buried-the-door-frank-slide/",
+      "expected_slots": [
+        "431:0",
+        "431:1",
+        "431:2",
+        "431:3",
+        "431:4",
+        "431:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T18:42:26"
+    },
+    {
+      "post_id": 432,
+      "page_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "expected_slots": [
+        "432:0",
+        "432:1",
+        "432:2",
+        "432:3",
+        "432:4",
+        "432:5",
+        "432:6"
+      ],
+      "last_modified_as_of_snapshot": "2026-08-28T03:07:30"
+    },
+    {
+      "post_id": 433,
+      "page_url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/",
+      "expected_slots": [
+        "433:0",
+        "433:1",
+        "433:2",
+        "433:3",
+        "433:4",
+        "433:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-10-29T16:31:22"
+    },
+    {
+      "post_id": 434,
+      "page_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "expected_slots": [
+        "434:0",
+        "434:1",
+        "434:2",
+        "434:3",
+        "434:4",
+        "434:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-09-08T02:51:21"
+    },
+    {
+      "post_id": 621,
+      "page_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "expected_slots": [
+        "621:0",
+        "621:1",
+        "621:2",
+        "621:3",
+        "621:4",
+        "621:5"
+      ],
+      "last_modified_as_of_snapshot": "2026-09-09T12:03:35"
+    }
+  ]
+}

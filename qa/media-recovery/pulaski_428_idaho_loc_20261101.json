@@ -1,0 +1,442 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-11-01",
+  "audit_kind": "read_only_CMS_exact_src_alt_plus_authoritative_archive_plus_independent_web_retriever",
+  "post": {
+    "id": 428,
+    "title": "The Way Out Was Underground",
+    "permalink": "https://finalvestige.com/2026/08/20/the-way-out-was-underground-ed-pulaski-1910/",
+    "modified": "2026-10-29T18:28:59",
+    "status": "publish",
+    "live_cms_img_count": 6,
+    "matched_frozen_exact_src_alt": true,
+    "frozen_inventory_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+  },
+  "sitewide": {
+    "published_posts": 61,
+    "stored_image_refs": 355,
+    "offsite_stored_refs": 288,
+    "wordpress_originals_exceeding_1_5_mib": 13,
+    "reported_broken_42_browser_verified": false,
+    "reported_reduction_76_percent_measured": false,
+    "production_images_repaired": 0
+  },
+  "rows": [
+    {
+      "key": "428:0",
+      "post_id": 428,
+      "slot": 0,
+      "published_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/archivalidaho432_sm.jpg",
+      "published_alt": "Ed Pulaski at the mine tunnel associated with the shelter of his firefighting crew during the Big Burn of 1910.",
+      "live_cms_source_and_alt_verified": true,
+      "candidate": {
+        "institution": "University of Idaho Archival Idaho Photograph Collection",
+        "catalog_id": "pic_2014-09-30_005143b",
+        "archive_record_url": "https://www.lib.uidaho.edu/digital/archivalidaho/items/archivalidaho432.html",
+        "candidate_asset_url": "https://objects.lib.uidaho.edu/archivalidaho/archivalidaho432.jpg",
+        "creator": "W. W. Morris",
+        "archive_date": "1910",
+        "relationship": "ORIGINAL_CATALOG_SAME_SCENE_DERIVATIVE_NOT_HASH_MATCHED",
+        "master_binary_sha256": null,
+        "confirmed_same_binary": false
+      },
+      "retrieval": {
+        "method": "independent_web_image_retriever_NOT_logged_out_Chrome",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_INACCESSIBLE_NO_HTTP_STATUS",
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "content_type": null,
+        "transferred_bytes": null
+      },
+      "rights": {
+        "archive_rights_signal": "PDM_1_0_CATALOG_WITH_OTHER_HOLDING_INSTITUTION",
+        "item_level_reuse_review": "HOLD",
+        "credit": "W. W. Morris; University of Idaho Archival Idaho Photograph Collection, catalog pic_2014-09-30_005143b",
+        "cache_reproduction_permission": "HOLD",
+        "reason": "Library notes that this Archival Idaho object is not held by its Special Collections and Archives; determine original custodian and image derivative rights before any reproduction."
+      },
+      "geometry": {
+        "master_width_px": null,
+        "master_height_px": null,
+        "proposed_width_px": null,
+        "proposed_height_px": null,
+        "max_width_px": 960,
+        "formula": "width=min(960,verified_master_width); height=round(verified_master_height*width/verified_master_width); never upscale",
+        "aspect_preserved": true,
+        "no_upscale": true
+      },
+      "visual_integrity": {
+        "review_required": false,
+        "note": "Exact original-size Archival Idaho image linked; same-scene candidate, source current first-party small derivative not binary matched. Verified current WordPress media ID 476 is a 623×900, 90,157-byte stored image with Jetpack variants; not a >1.5MiB optimizer target."
+      },
+      "guest_browser": {
+        "page_current_src": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "network_http_status": null,
+        "final_mime": null,
+        "actual_encoded_transfer_bytes": null,
+        "visibly_broken": null,
+        "screenshot_evidence_url": null
+      },
+      "release": {
+        "stage_ready": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "production_repaired": false
+      },
+      "wordpress_media_proof": {
+        "method": "authenticated_wordpress_media_list_read_only",
+        "media_id": 476,
+        "mime_type": "image/jpeg",
+        "post_id": 428,
+        "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/archivalidaho432_sm.jpg",
+        "wordpress_original_dimensions_px": {
+          "width": 623,
+          "height": 900
+        },
+        "wordpress_original_storage_bytes": 90157,
+        "recorded_jetpack_medium_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/archivalidaho432_sm.jpg?fit=208%2C300&ssl=1",
+        "recorded_jetpack_full_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/archivalidaho432_sm.jpg?fit=623%2C900&ssl=1",
+        "no_upscale_maximum_for_present_wordpress_media_px": {
+          "width": 623,
+          "height": 900
+        },
+        "actual_guest_transfer_bytes": null
+      }
+    },
+    {
+      "key": "428:1",
+      "post_id": 428,
+      "slot": 1,
+      "published_source_url": "https://objects.lib.uidaho.edu/bigburn/bigburn23.jpg",
+      "published_alt": "Buildings burning in Wallace, Idaho, during the night of August 20, 1910, as the Big Burn reached the city.",
+      "live_cms_source_and_alt_verified": true,
+      "candidate": {
+        "institution": "University of Idaho Big Burn Collection",
+        "catalog_id": "8-B498b",
+        "archive_record_url": "https://www.lib.uidaho.edu/digital/bigburn/items/bigburn23.html",
+        "candidate_asset_url": "https://objects.lib.uidaho.edu/bigburn/bigburn23.jpg",
+        "creator": "Barnard-Stockbridge Studio",
+        "archive_date": "1910-08-20",
+        "relationship": "EXACT_OFFICIAL_CATALOG_IMAGE_URL",
+        "master_binary_sha256": null,
+        "confirmed_same_binary": false
+      },
+      "retrieval": {
+        "method": "independent_web_image_retriever_NOT_logged_out_Chrome",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_IMAGE_DISPLAYED",
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "content_type": null,
+        "transferred_bytes": null
+      },
+      "rights": {
+        "archive_rights_signal": "PDM_1_0_CATALOG",
+        "item_level_reuse_review": "HOLD",
+        "credit": "Barnard-Stockbridge Studio; University of Idaho Big Burn Collection, catalog 8-B498b",
+        "cache_reproduction_permission": "HOLD",
+        "reason": "PDM 1.0 indication is provenance evidence, not permission to skip internal production approval."
+      },
+      "geometry": {
+        "master_width_px": null,
+        "master_height_px": null,
+        "proposed_width_px": null,
+        "proposed_height_px": null,
+        "max_width_px": 960,
+        "formula": "width=min(960,verified_master_width); height=round(verified_master_height*width/verified_master_width); never upscale",
+        "aspect_preserved": true,
+        "no_upscale": true
+      },
+      "visual_integrity": {
+        "review_required": false,
+        "note": "Preserve official creator, scene and date; no replacement with similar imagery."
+      },
+      "guest_browser": {
+        "page_current_src": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "network_http_status": null,
+        "final_mime": null,
+        "actual_encoded_transfer_bytes": null,
+        "visibly_broken": null,
+        "screenshot_evidence_url": null
+      },
+      "release": {
+        "stage_ready": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "production_repaired": false
+      }
+    },
+    {
+      "key": "428:2",
+      "post_id": 428,
+      "slot": 2,
+      "published_source_url": "https://objects.lib.uidaho.edu/bigburn/bigburn38.jpg",
+      "published_alt": "Burned timber and fire-damaged terrain along Placer Creek after the August 1910 fires near Wallace, Idaho.",
+      "live_cms_source_and_alt_verified": true,
+      "candidate": {
+        "institution": "University of Idaho Big Burn Collection",
+        "catalog_id": "8-C05b",
+        "archive_record_url": "https://www.lib.uidaho.edu/digital/bigburn/items/bigburn38.html",
+        "candidate_asset_url": "https://objects.lib.uidaho.edu/bigburn/bigburn38.jpg",
+        "creator": "Barnard-Stockbridge Studio",
+        "archive_date": "1910",
+        "relationship": "EXACT_OFFICIAL_CATALOG_IMAGE_URL",
+        "master_binary_sha256": null,
+        "confirmed_same_binary": false
+      },
+      "retrieval": {
+        "method": "independent_web_image_retriever_NOT_logged_out_Chrome",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_IMAGE_DISPLAYED",
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "content_type": null,
+        "transferred_bytes": null
+      },
+      "rights": {
+        "archive_rights_signal": "PDM_1_0_CATALOG",
+        "item_level_reuse_review": "HOLD",
+        "credit": "Barnard-Stockbridge Studio; University of Idaho Big Burn Collection, catalog 8-C05b",
+        "cache_reproduction_permission": "HOLD",
+        "reason": "PDM 1.0 indication is provenance evidence, not permission to skip internal production approval."
+      },
+      "geometry": {
+        "master_width_px": null,
+        "master_height_px": null,
+        "proposed_width_px": null,
+        "proposed_height_px": null,
+        "max_width_px": 960,
+        "formula": "width=min(960,verified_master_width); height=round(verified_master_height*width/verified_master_width); never upscale",
+        "aspect_preserved": true,
+        "no_upscale": true
+      },
+      "visual_integrity": {
+        "review_required": false,
+        "note": "Preserve official creator, scene and date; no replacement with similar imagery."
+      },
+      "guest_browser": {
+        "page_current_src": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "network_http_status": null,
+        "final_mime": null,
+        "actual_encoded_transfer_bytes": null,
+        "visibly_broken": null,
+        "screenshot_evidence_url": null
+      },
+      "release": {
+        "stage_ready": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "production_repaired": false
+      }
+    },
+    {
+      "key": "428:3",
+      "post_id": 428,
+      "slot": 3,
+      "published_source_url": "https://objects.lib.uidaho.edu/bigburn/bigburn10.jpg",
+      "published_alt": "Elevated view across burned blocks of Wallace, Idaho, after the August 1910 Big Burn.",
+      "live_cms_source_and_alt_verified": true,
+      "candidate": {
+        "institution": "University of Idaho Big Burn Collection",
+        "catalog_id": "8-X90",
+        "archive_record_url": "https://www.lib.uidaho.edu/digital/bigburn/items/bigburn10.html",
+        "candidate_asset_url": "https://objects.lib.uidaho.edu/bigburn/bigburn10.jpg",
+        "creator": "Barnard-Stockbridge Studio",
+        "archive_date": "1910-08",
+        "relationship": "EXACT_OFFICIAL_CATALOG_IMAGE_URL",
+        "master_binary_sha256": null,
+        "confirmed_same_binary": false
+      },
+      "retrieval": {
+        "method": "independent_web_image_retriever_NOT_logged_out_Chrome",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_IMAGE_DISPLAYED",
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "content_type": null,
+        "transferred_bytes": null
+      },
+      "rights": {
+        "archive_rights_signal": "PDM_1_0_CATALOG",
+        "item_level_reuse_review": "HOLD",
+        "credit": "Barnard-Stockbridge Studio; University of Idaho Big Burn Collection, catalog 8-X90",
+        "cache_reproduction_permission": "HOLD",
+        "reason": "PDM 1.0 indication is provenance evidence, not permission to skip internal production approval."
+      },
+      "geometry": {
+        "master_width_px": null,
+        "master_height_px": null,
+        "proposed_width_px": null,
+        "proposed_height_px": null,
+        "max_width_px": 960,
+        "formula": "width=min(960,verified_master_width); height=round(verified_master_height*width/verified_master_width); never upscale",
+        "aspect_preserved": true,
+        "no_upscale": true
+      },
+      "visual_integrity": {
+        "review_required": false,
+        "note": "Preserve official creator, scene and date; no replacement with similar imagery."
+      },
+      "guest_browser": {
+        "page_current_src": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "network_http_status": null,
+        "final_mime": null,
+        "actual_encoded_transfer_bytes": null,
+        "visibly_broken": null,
+        "screenshot_evidence_url": null
+      },
+      "release": {
+        "stage_ready": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "production_repaired": false
+      }
+    },
+    {
+      "key": "428:4",
+      "post_id": 428,
+      "slot": 4,
+      "published_source_url": "https://objects.lib.uidaho.edu/bigburn/bigburn18.jpg",
+      "published_alt": "Ruins of the Pacific Hotel district in Wallace after the 1910 Big Burn, with brick, timber and machinery scattered through the burned block.",
+      "live_cms_source_and_alt_verified": true,
+      "candidate": {
+        "institution": "University of Idaho Big Burn Collection",
+        "catalog_id": "8-X545e",
+        "archive_record_url": "https://www.lib.uidaho.edu/digital/bigburn/items/bigburn18.html",
+        "candidate_asset_url": "https://objects.lib.uidaho.edu/bigburn/bigburn18.jpg",
+        "creator": "Barnard-Stockbridge Studio",
+        "archive_date": "1910-08",
+        "relationship": "EXACT_OFFICIAL_CATALOG_IMAGE_URL",
+        "master_binary_sha256": null,
+        "confirmed_same_binary": false
+      },
+      "retrieval": {
+        "method": "independent_web_image_retriever_NOT_logged_out_Chrome",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_IMAGE_DISPLAYED",
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "content_type": null,
+        "transferred_bytes": null
+      },
+      "rights": {
+        "archive_rights_signal": "PDM_1_0_CATALOG",
+        "item_level_reuse_review": "HOLD",
+        "credit": "Barnard-Stockbridge Studio; University of Idaho Big Burn Collection, catalog 8-X545e",
+        "cache_reproduction_permission": "HOLD",
+        "reason": "PDM 1.0 indication is provenance evidence, not permission to skip internal production approval."
+      },
+      "geometry": {
+        "master_width_px": null,
+        "master_height_px": null,
+        "proposed_width_px": null,
+        "proposed_height_px": null,
+        "max_width_px": 960,
+        "formula": "width=min(960,verified_master_width); height=round(verified_master_height*width/verified_master_width); never upscale",
+        "aspect_preserved": true,
+        "no_upscale": true
+      },
+      "visual_integrity": {
+        "review_required": true,
+        "note": "Archive specifically describes Pacific Hotel ruins; original ALT embellishes 'district' and scattered machinery. Editorial proposed ALT: 'Ruins of the Pacific Hotel in Wallace, Idaho, August 1910.'"
+      },
+      "guest_browser": {
+        "page_current_src": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "network_http_status": null,
+        "final_mime": null,
+        "actual_encoded_transfer_bytes": null,
+        "visibly_broken": null,
+        "screenshot_evidence_url": null
+      },
+      "release": {
+        "stage_ready": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "production_repaired": false
+      }
+    },
+    {
+      "key": "428:5",
+      "post_id": 428,
+      "slot": 5,
+      "published_source_url": "https://tile.loc.gov/image-services/iiif/service%3Agmd%3Agmd427m%3Ag4274m%3Ag4274wm%3Ag016871905%3A01687_1905-0001/full/pct%3A25/0/default.jpg",
+      "published_alt": "1905 Sanborn fire insurance map of Wallace, Idaho, showing the city five years before the Big Burn.",
+      "live_cms_source_and_alt_verified": true,
+      "candidate": {
+        "institution": "Library of Congress Geography & Map Division",
+        "catalog_id": "sanborn01687_005",
+        "archive_record_url": "https://www.loc.gov/item/sanborn01687_005/",
+        "candidate_asset_url": "https://www.loc.gov/resource/g4274wm.g016871905/",
+        "creator": "Sanborn Map Company",
+        "archive_date": "1905-09",
+        "relationship": "LOCDIGITAL_1905_SHEET_0001_IIIF_IMAGE_MATCH_NO_BINARY_HASH",
+        "master_binary_sha256": null,
+        "confirmed_same_binary": false
+      },
+      "retrieval": {
+        "method": "independent_web_image_retriever_NOT_logged_out_Chrome",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_IMAGE_DISPLAYED",
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "content_type": null,
+        "transferred_bytes": null
+      },
+      "rights": {
+        "archive_rights_signal": "1905_US_WORK_COMPOSITE_PUBLIC_DOMAIN_CANDIDATE_RIGHTS_REVIEW",
+        "item_level_reuse_review": "HOLD",
+        "credit": "Sanborn Map Company; Library of Congress Geography & Map Division, catalog sanborn01687_005",
+        "cache_reproduction_permission": "HOLD",
+        "reason": "1905 sheet/public-domain candidate needs work-specific rights and exact IIIF derivative review."
+      },
+      "geometry": {
+        "master_width_px": null,
+        "master_height_px": null,
+        "proposed_width_px": null,
+        "proposed_height_px": null,
+        "max_width_px": 960,
+        "formula": "width=min(960,verified_master_width); height=round(verified_master_height*width/verified_master_width); never upscale",
+        "aspect_preserved": true,
+        "no_upscale": true
+      },
+      "visual_integrity": {
+        "review_required": false,
+        "note": "Preserve official creator, scene and date; no replacement with similar imagery."
+      },
+      "guest_browser": {
+        "page_current_src": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "network_http_status": null,
+        "final_mime": null,
+        "actual_encoded_transfer_bytes": null,
+        "visibly_broken": null,
+        "screenshot_evidence_url": null
+      },
+      "release": {
+        "stage_ready": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "production_repaired": false
+      }
+    }
+  ],
+  "source_limitations": "Direct image display and failure come from a web retriever, not actual logged-out visitor Chrome; no origin HTTP status, byte count, naturalWidth, screenshot or master SHA; no automatic caching or WordPress production writes.",
+  "next_steps": [
+    "Site QA #154: verify 428:0 guest Chrome load despite retriever access limitation; WordPress confirms media ID 476 exists at 623×900 and 90,157 original-storage bytes, not visitor-transfer proof.",
+    "After confirmation, item-level rights/credit review, exact original/derivative visual identity and SHA-256 before any binary caching.",
+    "Calculate ≤960px no-upscale derivatives from decoded original image dimensions; stage in isolated test WordPress only after rights/editorial approval.",
+    "Recheck historical ALT for 428:4 with the University's Pacific Hotel caption; do not rewrite post blocks automatically."
+  ]
+}

@@ -1,0 +1,462 @@
+{
+  "schema_version": 1,
+  "audit_local_date": "2026-10-31",
+  "audit_kind": "PRIMARY_SOURCE_CATALOG_AND_LIVE_CMS_STORED_SOURCE_ONLY",
+  "article": {
+    "post_id": 432,
+    "url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+    "title": "They Buried the Dead Apart",
+    "cms_status": "publish",
+    "cms_modified": "2026-08-28T03:07:30",
+    "read_only_editor_image_source_and_alt_matches": 7,
+    "image_slots": 7
+  },
+  "inventory_scope": {
+    "historical_posts": 61,
+    "historical_image_slots": 355,
+    "external_source_slots_worklist": 288,
+    "external_source_slots_site_qa": 286,
+    "delta_explanation": "different source URL classification; neither count implies rendered network failures",
+    "reported_broken_count_unverified": 42,
+    "reported_weight_reduction_percent_unverified": 76,
+    "oversize_wp_originals_reported": 13
+  },
+  "official_rights_policy": {
+    "source": "https://floridamemory.com/share/order-info/faq.php",
+    "statement": "Florida Memory offers images under Creative Commons Public Domain Mark 1.0; the archive requests credit under Florida Statutes section 257.35(6)",
+    "mark": "PDM-1.0",
+    "status": "PROGRAM-WIDE CLAIM VERIFIED; individual custody and exact-image identity release not yet signed off",
+    "attribution_required": true,
+    "final_editorial_release": false
+  },
+  "method": "Verified each image catalog identifier and subject on Florida Memory State Archives pages/search records; original src/ALT confirmed by authenticated read-only WordPress. Older independent image viewer observed www-to-non-www redirects but did not display destinations. Do not construe redirects or viewer errors as failed visitor images. No photograph bytes downloaded or copied.",
+  "images": [
+    {
+      "image_key": "432:0",
+      "post_id": 432,
+      "slot": 0,
+      "stored_source_url": "https://www.floridamemory.com/fpc/prints/pr04493.jpg",
+      "stored_alt": "Mourners gathered for a funeral service for victims of the 1928 hurricane at Woodlawn Cemetery in West Palm Beach.",
+      "cms_src_and_alt_match_frozen_inventory": true,
+      "primary_catalog": {
+        "publisher": "State Archives of Florida / Florida Memory",
+        "item_url": "https://floridamemory.com/items/show/4144",
+        "identifier": "PR04493",
+        "title": "Funeral service for hurricane victims",
+        "date": "1928",
+        "subject_notes": "Woodlawn Cemetery in West Palm Beach; funeral service",
+        "catalog_path": "/fpc/prints/pr04493.jpg",
+        "publisher_canonical_image_url": "https://floridamemory.com/fpc/prints/pr04493.jpg",
+        "identity_strength": "exact catalog identifier + exact on-record image path; binary hash not verified"
+      },
+      "third_party_viewer_observation": {
+        "result": "VIEWER_REDIRECT_DESTINATION_UNAVAILABLE",
+        "redirect_destination_url": "https://floridamemory.com/fpc/prints/pr04493.jpg",
+        "original_image_http_status": null,
+        "visitor_browser_result": null
+      },
+      "visitor_browser": {
+        "current_src": null,
+        "final_image_request_url": null,
+        "http_status": null,
+        "mime": null,
+        "encoded_bytes": null,
+        "natural_width": null,
+        "natural_height": null,
+        "decoded": null,
+        "screenshot_path": null
+      },
+      "original_binary_sha256": null,
+      "original_dimensions_px": null,
+      "proposed_derivative": {
+        "max_width_px": 960,
+        "dimensions_px": null,
+        "upscaling_allowed": false,
+        "preserve_aspect_ratio": true,
+        "target_format": "WebP if visual QA confirms",
+        "metadata_preserved": "State Archives of Florida, Florida Memory / PR04493"
+      },
+      "copyright": {
+        "source_mark": "PDM-1.0",
+        "archive_claim_verified": true,
+        "individual_reuse_review": "HOLD",
+        "credit": "State Archives of Florida, Florida Memory, PR04493; https://floridamemory.com/items/show/4144"
+      },
+      "staging": {
+        "downloaded": false,
+        "first_party_asset_created": false,
+        "wordpress_media_uploaded": false,
+        "article_rewritten": false,
+        "approved": false
+      },
+      "verified_broken_for_visitors": null,
+      "visitor_weight_savings_bytes": null
+    },
+    {
+      "image_key": "432:1",
+      "post_id": 432,
+      "slot": 1,
+      "stored_source_url": "https://www.floridamemory.com/fpc/reference/rc17068.jpg",
+      "stored_alt": "Floodwater and storm damage in the Lake Okeechobee region after the 1928 hurricane.",
+      "cms_src_and_alt_match_frozen_inventory": true,
+      "primary_catalog": {
+        "publisher": "State Archives of Florida / Florida Memory",
+        "item_url": "https://floridamemory.com/items/show/38362",
+        "identifier": "RC17068",
+        "title": "View of Avenue \"A\", flooded after the hurricane of 1928 - Belle Glade",
+        "date": "1928-09",
+        "subject_notes": "Photographed on Avenue A, Belle Glade, September 1928",
+        "catalog_path": "/fpc/reference/rc17068.jpg",
+        "publisher_canonical_image_url": "https://floridamemory.com/fpc/reference/rc17068.jpg",
+        "identity_strength": "exact catalog identifier + exact on-record image path; binary hash not verified"
+      },
+      "third_party_viewer_observation": {
+        "result": "VIEWER_REDIRECT_DESTINATION_UNAVAILABLE",
+        "redirect_destination_url": "https://floridamemory.com/fpc/reference/rc17068.jpg",
+        "original_image_http_status": null,
+        "visitor_browser_result": null
+      },
+      "visitor_browser": {
+        "current_src": null,
+        "final_image_request_url": null,
+        "http_status": null,
+        "mime": null,
+        "encoded_bytes": null,
+        "natural_width": null,
+        "natural_height": null,
+        "decoded": null,
+        "screenshot_path": null
+      },
+      "original_binary_sha256": null,
+      "original_dimensions_px": null,
+      "proposed_derivative": {
+        "max_width_px": 960,
+        "dimensions_px": null,
+        "upscaling_allowed": false,
+        "preserve_aspect_ratio": true,
+        "target_format": "WebP if visual QA confirms",
+        "metadata_preserved": "State Archives of Florida, Florida Memory / RC17068"
+      },
+      "copyright": {
+        "source_mark": "PDM-1.0",
+        "archive_claim_verified": true,
+        "individual_reuse_review": "HOLD",
+        "credit": "State Archives of Florida, Florida Memory, RC17068; https://floridamemory.com/items/show/38362"
+      },
+      "staging": {
+        "downloaded": false,
+        "first_party_asset_created": false,
+        "wordpress_media_uploaded": false,
+        "article_rewritten": false,
+        "approved": false
+      },
+      "verified_broken_for_visitors": null,
+      "visitor_weight_savings_bytes": null
+    },
+    {
+      "image_key": "432:2",
+      "post_id": 432,
+      "slot": 2,
+      "stored_source_url": "https://www.floridamemory.com/fpc/reference/rc10673.jpg",
+      "stored_alt": "Collapsed automotive garage and debris in Belle Glade after the 1928 Okeechobee Hurricane.",
+      "cms_src_and_alt_match_frozen_inventory": true,
+      "primary_catalog": {
+        "publisher": "State Archives of Florida / Florida Memory",
+        "item_url": "https://floridamemory.com/items/show/33289",
+        "identifier": "RC10673",
+        "title": "Automotive garage, demolished by the hurricane of 1928 - Belle Glade",
+        "date": "1928",
+        "subject_notes": "Collapsed automobile repair shop at Belle Glade",
+        "catalog_path": "/fpc/reference/rc10673.jpg",
+        "publisher_canonical_image_url": "https://floridamemory.com/fpc/reference/rc10673.jpg",
+        "identity_strength": "exact catalog identifier + exact on-record image path; binary hash not verified"
+      },
+      "third_party_viewer_observation": {
+        "result": "VIEWER_REDIRECT_DESTINATION_UNAVAILABLE",
+        "redirect_destination_url": "https://floridamemory.com/fpc/reference/rc10673.jpg",
+        "original_image_http_status": null,
+        "visitor_browser_result": null
+      },
+      "visitor_browser": {
+        "current_src": null,
+        "final_image_request_url": null,
+        "http_status": null,
+        "mime": null,
+        "encoded_bytes": null,
+        "natural_width": null,
+        "natural_height": null,
+        "decoded": null,
+        "screenshot_path": null
+      },
+      "original_binary_sha256": null,
+      "original_dimensions_px": null,
+      "proposed_derivative": {
+        "max_width_px": 960,
+        "dimensions_px": null,
+        "upscaling_allowed": false,
+        "preserve_aspect_ratio": true,
+        "target_format": "WebP if visual QA confirms",
+        "metadata_preserved": "State Archives of Florida, Florida Memory / RC10673"
+      },
+      "copyright": {
+        "source_mark": "PDM-1.0",
+        "archive_claim_verified": true,
+        "individual_reuse_review": "HOLD",
+        "credit": "State Archives of Florida, Florida Memory, RC10673; https://floridamemory.com/items/show/33289"
+      },
+      "staging": {
+        "downloaded": false,
+        "first_party_asset_created": false,
+        "wordpress_media_uploaded": false,
+        "article_rewritten": false,
+        "approved": false
+      },
+      "verified_broken_for_visitors": null,
+      "visitor_weight_savings_bytes": null
+    },
+    {
+      "image_key": "432:3",
+      "post_id": 432,
+      "slot": 3,
+      "stored_source_url": "https://www.floridamemory.com/fpc/general/n031889.jpg",
+      "stored_alt": "Florida State Board of Health personnel at the Pahokee disaster-response headquarters after the 1928 hurricane.",
+      "cms_src_and_alt_match_frozen_inventory": true,
+      "primary_catalog": {
+        "publisher": "State Archives of Florida / Florida Memory",
+        "item_url": "https://floridamemory.com/items/show/141398",
+        "identifier": "N031889",
+        "title": "State Board of Health headquarters - Pahokee",
+        "date": "1928",
+        "subject_notes": "Archive identifies Jule O. Graves, H. Mason Smith, and M. Safan(?) as depicted staff",
+        "catalog_path": "/fpc/general/n031889.jpg",
+        "publisher_canonical_image_url": "https://floridamemory.com/fpc/general/n031889.jpg",
+        "identity_strength": "exact catalog identifier + exact on-record image path; binary hash not verified"
+      },
+      "third_party_viewer_observation": {
+        "result": "VIEWER_REDIRECT_DESTINATION_UNAVAILABLE",
+        "redirect_destination_url": "https://floridamemory.com/fpc/general/n031889.jpg",
+        "original_image_http_status": null,
+        "visitor_browser_result": null
+      },
+      "visitor_browser": {
+        "current_src": null,
+        "final_image_request_url": null,
+        "http_status": null,
+        "mime": null,
+        "encoded_bytes": null,
+        "natural_width": null,
+        "natural_height": null,
+        "decoded": null,
+        "screenshot_path": null
+      },
+      "original_binary_sha256": null,
+      "original_dimensions_px": null,
+      "proposed_derivative": {
+        "max_width_px": 960,
+        "dimensions_px": null,
+        "upscaling_allowed": false,
+        "preserve_aspect_ratio": true,
+        "target_format": "WebP if visual QA confirms",
+        "metadata_preserved": "State Archives of Florida, Florida Memory / N031889"
+      },
+      "copyright": {
+        "source_mark": "PDM-1.0",
+        "archive_claim_verified": true,
+        "individual_reuse_review": "HOLD",
+        "credit": "State Archives of Florida, Florida Memory, N031889; https://floridamemory.com/items/show/141398"
+      },
+      "staging": {
+        "downloaded": false,
+        "first_party_asset_created": false,
+        "wordpress_media_uploaded": false,
+        "article_rewritten": false,
+        "approved": false
+      },
+      "verified_broken_for_visitors": null,
+      "visitor_weight_savings_bytes": null
+    },
+    {
+      "image_key": "432:4",
+      "post_id": 432,
+      "slot": 4,
+      "stored_source_url": "https://www.floridamemory.com/fpc/reference/rc04344.jpg",
+      "stored_alt": "Wooden coffins stacked beside a canal at Belle Glade during recovery from the 1928 Okeechobee Hurricane.",
+      "cms_src_and_alt_match_frozen_inventory": true,
+      "primary_catalog": {
+        "publisher": "State Archives of Florida / Florida Memory",
+        "item_url": "https://floridamemory.com/items/show/27848",
+        "identifier": "RC04344",
+        "title": "Coffins stacked along the bank of a canal, after the hurricane of 1928 - Belle Glade",
+        "date": "1928",
+        "subject_notes": "Canal-bank coffins in Belle Glade; archival title corroborates ALT",
+        "catalog_path": "/fpc/reference/rc04344.jpg",
+        "publisher_canonical_image_url": "https://floridamemory.com/fpc/reference/rc04344.jpg",
+        "identity_strength": "exact catalog identifier + exact on-record image path; binary hash not verified"
+      },
+      "third_party_viewer_observation": {
+        "result": "VIEWER_REDIRECT_DESTINATION_UNAVAILABLE",
+        "redirect_destination_url": "https://floridamemory.com/fpc/reference/rc04344.jpg",
+        "original_image_http_status": null,
+        "visitor_browser_result": null
+      },
+      "visitor_browser": {
+        "current_src": null,
+        "final_image_request_url": null,
+        "http_status": null,
+        "mime": null,
+        "encoded_bytes": null,
+        "natural_width": null,
+        "natural_height": null,
+        "decoded": null,
+        "screenshot_path": null
+      },
+      "original_binary_sha256": null,
+      "original_dimensions_px": null,
+      "proposed_derivative": {
+        "max_width_px": 960,
+        "dimensions_px": null,
+        "upscaling_allowed": false,
+        "preserve_aspect_ratio": true,
+        "target_format": "WebP if visual QA confirms",
+        "metadata_preserved": "State Archives of Florida, Florida Memory / RC04344"
+      },
+      "copyright": {
+        "source_mark": "PDM-1.0",
+        "archive_claim_verified": true,
+        "individual_reuse_review": "HOLD",
+        "credit": "State Archives of Florida, Florida Memory, RC04344; https://floridamemory.com/items/show/27848"
+      },
+      "staging": {
+        "downloaded": false,
+        "first_party_asset_created": false,
+        "wordpress_media_uploaded": false,
+        "article_rewritten": false,
+        "approved": false
+      },
+      "verified_broken_for_visitors": null,
+      "visitor_weight_savings_bytes": null
+    },
+    {
+      "image_key": "432:5",
+      "post_id": 432,
+      "slot": 5,
+      "stored_source_url": "https://www.floridamemory.com/fpc/reference/rc07668.jpg",
+      "stored_alt": "Crowds gathered during burial of victims of the 1928 hurricane in West Palm Beach.",
+      "cms_src_and_alt_match_frozen_inventory": true,
+      "primary_catalog": {
+        "publisher": "State Archives of Florida / Florida Memory",
+        "item_url": "https://floridamemory.com/items/show/30741",
+        "identifier": "RC07668",
+        "title": "Burial of victims of the 1928 hurricane - West Palm Beach",
+        "date": "1928",
+        "subject_notes": "Burial gathering in West Palm Beach",
+        "catalog_path": "/fpc/reference/rc07668.jpg",
+        "publisher_canonical_image_url": "https://floridamemory.com/fpc/reference/rc07668.jpg",
+        "identity_strength": "exact catalog identifier + exact on-record image path; binary hash not verified"
+      },
+      "third_party_viewer_observation": {
+        "result": "VIEWER_REDIRECT_DESTINATION_UNAVAILABLE",
+        "redirect_destination_url": "https://floridamemory.com/fpc/reference/rc07668.jpg",
+        "original_image_http_status": null,
+        "visitor_browser_result": null
+      },
+      "visitor_browser": {
+        "current_src": null,
+        "final_image_request_url": null,
+        "http_status": null,
+        "mime": null,
+        "encoded_bytes": null,
+        "natural_width": null,
+        "natural_height": null,
+        "decoded": null,
+        "screenshot_path": null
+      },
+      "original_binary_sha256": null,
+      "original_dimensions_px": null,
+      "proposed_derivative": {
+        "max_width_px": 960,
+        "dimensions_px": null,
+        "upscaling_allowed": false,
+        "preserve_aspect_ratio": true,
+        "target_format": "WebP if visual QA confirms",
+        "metadata_preserved": "State Archives of Florida, Florida Memory / RC07668"
+      },
+      "copyright": {
+        "source_mark": "PDM-1.0",
+        "archive_claim_verified": true,
+        "individual_reuse_review": "HOLD",
+        "credit": "State Archives of Florida, Florida Memory, RC07668; https://floridamemory.com/items/show/30741"
+      },
+      "staging": {
+        "downloaded": false,
+        "first_party_asset_created": false,
+        "wordpress_media_uploaded": false,
+        "article_rewritten": false,
+        "approved": false
+      },
+      "verified_broken_for_visitors": null,
+      "visitor_weight_savings_bytes": null
+    },
+    {
+      "image_key": "432:6",
+      "post_id": 432,
+      "slot": 6,
+      "stored_source_url": "https://www.floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+      "stored_alt": "The historic African American mass burial site for victims of the 1928 Okeechobee Hurricane at 25th Street and Tamarind Avenue in West Palm Beach.",
+      "cms_src_and_alt_match_frozen_inventory": true,
+      "primary_catalog": {
+        "publisher": "State Archives of Florida / Florida Memory",
+        "item_url": "https://floridamemory.com/items/show/340182",
+        "identifier": "MSF-PB11548-001",
+        "title": "Historic cemetery and mass grave site for victims of the 1928 Hurricane in West Palm Beach",
+        "date": "2001",
+        "subject_notes": "Photograph dated 2001 of historic grave site, not a 1928-event photograph",
+        "catalog_path": "/fpc/msf/MSF-PB11548-001.jpg",
+        "publisher_canonical_image_url": "https://floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+        "identity_strength": "exact catalog identifier + exact on-record image path; binary hash not verified"
+      },
+      "third_party_viewer_observation": {
+        "result": "VIEWER_REDIRECT_DESTINATION_UNAVAILABLE",
+        "redirect_destination_url": "https://floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+        "original_image_http_status": null,
+        "visitor_browser_result": null
+      },
+      "visitor_browser": {
+        "current_src": null,
+        "final_image_request_url": null,
+        "http_status": null,
+        "mime": null,
+        "encoded_bytes": null,
+        "natural_width": null,
+        "natural_height": null,
+        "decoded": null,
+        "screenshot_path": null
+      },
+      "original_binary_sha256": null,
+      "original_dimensions_px": null,
+      "proposed_derivative": {
+        "max_width_px": 960,
+        "dimensions_px": null,
+        "upscaling_allowed": false,
+        "preserve_aspect_ratio": true,
+        "target_format": "WebP if visual QA confirms",
+        "metadata_preserved": "State Archives of Florida, Florida Memory / MSF-PB11548-001"
+      },
+      "copyright": {
+        "source_mark": "PDM-1.0",
+        "archive_claim_verified": true,
+        "individual_reuse_review": "HOLD",
+        "credit": "State Archives of Florida, Florida Memory, MSF-PB11548-001; https://floridamemory.com/items/show/340182"
+      },
+      "staging": {
+        "downloaded": false,
+        "first_party_asset_created": false,
+        "wordpress_media_uploaded": false,
+        "article_rewritten": false,
+        "approved": false
+      },
+      "verified_broken_for_visitors": null,
+      "visitor_weight_savings_bytes": null
+    }
+  ]
+}

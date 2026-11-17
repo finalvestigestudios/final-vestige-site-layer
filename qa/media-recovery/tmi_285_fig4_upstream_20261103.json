@@ -1,0 +1,139 @@
+{
+  "schema": "fv.media.recovery.tmi_fig4.v1",
+  "captured_at": "2026-11-03",
+  "source_snapshot": {
+    "system": "authenticated WordPress read-only posts.get context=edit",
+    "post_id": 285,
+    "status": "publish",
+    "modified": "2026-11-02T21:39:59",
+    "article_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+    "source_git_blob": "49183f66f880f7c4dfd363acca906876877f2e5e",
+    "source_unchanged_vs_20261030": true
+  },
+  "sitewide_baseline": {
+    "posts": 61,
+    "source_image_slots": 355,
+    "third_party_origin_slots": 288,
+    "wp_originals_above_1_5_mib": 13,
+    "reported_broken_42_visitor_confirmed": false,
+    "claimed_76_percent_wire_saving_verified": false
+  },
+  "investigated_slots": [
+    {
+      "key": "285:2",
+      "published_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "published_alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+      "published_caption": "A TMI control panel illustrates the interface problem: each light and gauge represented part of the machine, but operators still had to infer the machine’s overall physical state.",
+      "retriever": {
+        "method": "web_open",
+        "result": "redirect_wrapper_error_500",
+        "numeric_origin_http_status": null,
+        "final_declared_url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg"
+      },
+      "image_search": {
+        "method": "web_image_search",
+        "result": "same_exact_published_src_image_displayed",
+        "numeric_origin_http_status": null
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "decoded": null,
+        "encoded_transfer_bytes": null,
+        "screenshot": null,
+        "broken": null
+      },
+      "editorial_issue": "UCS Figure 4 shows maintenance tags reportedly obscuring a CLOSED emergency feedwater valve indicator for roughly eight minutes; current ALT omits this distinctive factual context. Do not assert that the image is a generic or a different panel."
+    },
+    {
+      "key": "285:5",
+      "published_src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "published_alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "published_caption": "Three Mile Island from the air. The public emergency outside the plant and the physical damage inside the reactor differed sharply in scale.",
+      "retriever": {
+        "method": "web_open",
+        "result": "retriever_404_not_found",
+        "numeric_origin_http_status": null,
+        "final_declared_url": null
+      },
+      "image_search": {
+        "method": "web_image_search",
+        "result": "not_checked_this_batch",
+        "numeric_origin_http_status": null
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "decoded": null,
+        "encoded_transfer_bytes": null,
+        "screenshot": null,
+        "broken": null
+      },
+      "editorial_issue": "A published 16:9 filled crop is not pixel-identical to the publisher-linked 2010 ~4:3 Commons master; preserve visual composition and accurate photo date."
+    }
+  ],
+  "candidates": [
+    {
+      "for_key": "285:2",
+      "candidate_type": "same_historical_plate_retouched_derivative_not_binary_match",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:TMI-2_control_panel.png",
+      "source_record": "Report of the President's Commission on the Accident at Three Mile Island (October 1979), page 97; reproduced by UCS Fig.4",
+      "evidence_catalog_url": "https://www.si.edu/object/report-presidents-commission-accident-three-mile-island-need-change-legacy-tmi:siris_sil_765655",
+      "intrinsic_width": 604,
+      "intrinsic_height": 590,
+      "proposed_width": 604,
+      "proposed_height": 590,
+      "license_signal": "Commons claims public domain US federal government; page explicitly identifies 2010 retouched rendition",
+      "creator_credit": "President's Commission/Kemeny et al.; Commons 2010 retouch listed",
+      "source_identity_verified": "same_historical_panel_subject_only",
+      "pixel_crop_sha_match": false,
+      "rights_item_verified_for_rehosting": false,
+      "editorial_approved": false,
+      "wp_upload_authorized": false
+    },
+    {
+      "for_key": "285:5",
+      "candidate_type": "publisher_linked_same_scene_uncropped_original_not_binary_match",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "source_record": "Photographed June 2010 by Marque1313, day inconsistent in Commons metadata; linked by original HubPages publisher article",
+      "evidence_catalog_url": "https://discover.hubpages.com/entertainment/The-China-Syndrome-Blockbuster-Movie-Becomes-Eerie-Prophecy",
+      "intrinsic_width": 819,
+      "intrinsic_height": 614,
+      "proposed_width": 819,
+      "proposed_height": 614,
+      "license_signal": "Uploader claims worldwide public-domain dedication",
+      "creator_credit": "Marque1313",
+      "source_identity_verified": "publisher_attributed_same_scene_not_same_crop",
+      "pixel_crop_sha_match": false,
+      "rights_item_verified_for_rehosting": false,
+      "editorial_approved": false,
+      "wp_upload_authorized": false
+    }
+  ],
+  "optional_nonidentical_backup": {
+    "catalog_url": "https://wwwn.cdc.gov/phil/Details.aspx?pid=1194",
+    "credit": "CDC / Dr. Ewing",
+    "copyright_signal": "Official CDC PHIL explicitly labels image public domain; attribution requested",
+    "subject": "Three Mile Island aerial, not the publisher's 2010 source image",
+    "commons_geometry_url": "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_nuclear_power_plant.jpg",
+    "commons_width": 2843,
+    "commons_height": 1817,
+    "conditional_derivative_width": 960,
+    "conditional_derivative_height": 614,
+    "source_binary_identity_verified": false,
+    "editorial_approved": false
+  },
+  "release": {
+    "requires_logged_out_browser_decode": true,
+    "requires_before_after_same_scene_crops": true,
+    "requires_item_specific_rights_signoff": true,
+    "requires_editorial_alt_caption_review": true,
+    "requires_wordpress_media_staging": true,
+    "requires_actual_cold_wire_transfer_measurement": true,
+    "production_changes_made": false,
+    "all_caching_and_publication_on_hold": true,
+    "repairs_confirmed": 0
+  }
+}

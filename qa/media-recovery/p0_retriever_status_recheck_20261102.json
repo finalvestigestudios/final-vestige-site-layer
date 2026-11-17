@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-02",
+  "method": "independent web retrieval and authoritative catalogue reads; NOT logged-out Chrome or source-origin HTTP headers",
+  "frozen_source_blob_sha": "6eb8ab265e48262497c6ed749e579d58818e42e7",
+  "scope": {
+    "published_posts": 61,
+    "stored_image_references": 355,
+    "external_references": 288,
+    "oversized_wordpress_originals": 13
+  },
+  "checked": {
+    "original_external_image_url_count": 5,
+    "retriever_404": 2,
+    "retriever_403": 2,
+    "retriever_octet_stream_unsupported": 1,
+    "independently_rendered_alternatives": 2,
+    "guest_browser_confirmed_failures": 0,
+    "production_repairs": 0
+  },
+  "items": [
+    {
+      "image_key": "285:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "published_source_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "stored_alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "origin_retriever": {
+        "checked_on": "2026-11-02",
+        "kind": "retriever_404",
+        "web_retriever_wrapper_code": 404,
+        "actual_origin_http_status": null,
+        "actual_guest_chrome_http_status": null,
+        "actual_guest_current_src": null,
+        "guest_transfer_bytes": null
+      },
+      "candidate": {
+        "source_url": "https://docsteach.org/document/aerial-of-three-mile-island/",
+        "relationship": "historically contemporaneous April 10 1979 alternate; NOT the same SayMedia source image",
+        "image_viewer_display_dimensions": null,
+        "conditional_derivative_plan": null,
+        "rights": "No Known Copyright metadata on archival record; verify item-level use",
+        "exact_binary_hash_match_verified": false,
+        "rights_cleared_for_caching": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_rewrite_authorized": false
+      }
+    },
+    {
+      "image_key": "287:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "published_source_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "stored_alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+      "origin_retriever": {
+        "checked_on": "2026-11-02",
+        "kind": "retriever_404",
+        "web_retriever_wrapper_code": 404,
+        "actual_origin_http_status": null,
+        "actual_guest_chrome_http_status": null,
+        "actual_guest_current_src": null,
+        "guest_transfer_bytes": null
+      },
+      "candidate": {
+        "source_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "relationship": "relocated publisher file shows 1980 collision aftermath; exact binary not hashed; published ALT references later bridge",
+        "image_viewer_display_dimensions": {
+          "width_px": 1000,
+          "height_px": 649,
+          "source": "web image viewer",
+          "master_verified": false
+        },
+        "conditional_derivative_plan": {
+          "width_px": 960,
+          "height_px": 623,
+          "basis": "1000:649 displayed preview ratio only; verify source geometry and license before generating"
+        },
+        "rights": "University Press of Florida credited; reproduction or WordPress caching permission NOT verified",
+        "exact_binary_hash_match_verified": false,
+        "rights_cleared_for_caching": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_rewrite_authorized": false
+      }
+    },
+    {
+      "image_key": "407:1",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "published_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "stored_alt": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake.",
+      "origin_retriever": {
+        "checked_on": "2026-11-02",
+        "kind": "retriever_unsupported_octet_stream",
+        "web_retriever_wrapper_code": 400,
+        "actual_origin_http_status": null,
+        "actual_guest_chrome_http_status": null,
+        "actual_guest_current_src": null,
+        "guest_transfer_bytes": null
+      },
+      "candidate": {
+        "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+        "relationship": "USGS record's Original link; named img7535.jpg, alternative path, binary hash comparison not performed",
+        "image_viewer_display_dimensions": {
+          "width_px": 1000,
+          "height_px": 1000,
+          "source": "web image viewer",
+          "master_verified": false
+        },
+        "conditional_derivative_plan": {
+          "width_px": 960,
+          "height_px": 960,
+          "basis": "observed square preview ONLY; require verified binary dimensions at least 960x960 and image QA"
+        },
+        "rights": "USGS catalog explicitly says Public Domain; photographer J. R. Stacy (USGS), preserve credit and official restrictions",
+        "exact_binary_hash_match_verified": false,
+        "rights_cleared_for_caching": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_rewrite_authorized": false
+      }
+    },
+    {
+      "image_key": "418:1",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "published_source_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "stored_alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew.",
+      "origin_retriever": {
+        "checked_on": "2026-11-02",
+        "kind": "retriever_403",
+        "web_retriever_wrapper_code": 403,
+        "actual_origin_http_status": null,
+        "actual_guest_chrome_http_status": null,
+        "actual_guest_current_src": null,
+        "guest_transfer_bytes": null
+      },
+      "candidate": {
+        "source_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "relationship": "official USCG catalog entry, same VIRIN 210330-G-DE713-0002, downloadable binary not fetched",
+        "image_viewer_display_dimensions": null,
+        "conditional_derivative_plan": null,
+        "rights": "Official item public domain/cleared for release with photographer credit; DoD visual information restrictions apply",
+        "exact_binary_hash_match_verified": false,
+        "rights_cleared_for_caching": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_rewrite_authorized": false
+      }
+    },
+    {
+      "image_key": "418:2",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "published_source_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "stored_alt": "Broken concrete and debris where Scotch Cap Lighthouse stood after the April 1, 1946 tsunami.",
+      "origin_retriever": {
+        "checked_on": "2026-11-02",
+        "kind": "retriever_403",
+        "web_retriever_wrapper_code": 403,
+        "actual_origin_http_status": null,
+        "actual_guest_chrome_http_status": null,
+        "actual_guest_current_src": null,
+        "guest_transfer_bytes": null
+      },
+      "candidate": {
+        "source_url": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+        "relationship": "Museum publishes same-named historical debris2 scene as 600x463 derivative; cannot silently replace with debris1/debris3",
+        "image_viewer_display_dimensions": {
+          "width_px": 600,
+          "height_px": 463,
+          "source": "Coast Guard Museum displayed derivative (previous check)",
+          "master_verified": false
+        },
+        "conditional_derivative_plan": {
+          "width_px": 600,
+          "height_px": 463,
+          "basis": "maximum existing derivative size, no upscale"
+        },
+        "rights": "USCG source credit, but Museum derivative item-level redistribution terms not established",
+        "exact_binary_hash_match_verified": false,
+        "rights_cleared_for_caching": false,
+        "wordpress_media_upload_authorized": false,
+        "wordpress_post_rewrite_authorized": false
+      }
+    }
+  ],
+  "rights_policy": "No unlicensed scraping or mirroring. Item-specific rights, visually identical scene, 960px no-upscale derivative and human approval required before staging. Production WordPress writes always prohibited in this engineering batch.",
+  "weight_methodology": "Do not divide original Media Library bytes or failed-image zero-byte transfers into browser wire-byte savings. Require complete same-page/same-viewport paired CDP request-ID attribution, decoded images, cache-disabled transfer bytes and no visual changes. 76% remains unmeasured.",
+  "reported_42_broken_verified": false,
+  "claimed_76pct_weight_reduction_measured": false
+}
