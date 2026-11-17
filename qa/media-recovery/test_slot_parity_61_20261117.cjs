@@ -55,3 +55,47 @@ bad('reject incomplete lazy-image settling',c=>c.after[0].lazy_images_settled=fa
 bad('reject fabricated Site QA collector label',c=>c.environment.collector='non-browser');
 bad('reject missing paired after page',c=>c.after=[]);
 bad('reject corrupted source post URL',(_,f)=>f[0].images[0].post_url='https://elsewhere.test/');
+
+
+function duplicateSourceCapture(){
+ const parts=fixture();
+ // This models the two identical published image URLs on Teton 291:2/291:5,
+ // without conflating two independently fetched URLs.
+ const p=parts[0].posts[0];
+ parts[0].images[1].source_url=parts[0].images[0].source_url;
+ const inv=inventory(parts);
+ const c=capture(inv,[p.id],3000,600);
+ for(const phase of ['before','after']) {
+   const [a,b]=c[phase][0].slots;
+   b.request_id=a.request_id;
+ }
+ return {parts,c,slotCount:p.images};
+}
+test('one cold shared GET can display two DOM image slots and counts wire bytes once',()=>{
+ const {parts,c,slotCount}=duplicateSourceCapture();
+ const out=assess(parts,c);
+ assert.equal(out.paired_slots,slotCount);
+ assert.equal(out.before_image_bytes,(slotCount-1)*3000);
+ assert.equal(out.after_image_bytes,(slotCount-1)*600);
+ assert.equal(out.reduction_percent,80);
+ assert.equal(out.sitewide_76_percent_verified,false);
+});
+test('same currentSrc with two real distinct network GETs charges both transfers',()=>{
+ const {parts,c,slotCount}=duplicateSourceCapture();
+ for(const phase of ['before','after']) c[phase][0].slots[1].request_id='separate-get';
+ const out=assess(parts,c);
+ assert.equal(out.before_image_bytes,slotCount*3000);
+ assert.equal(out.after_image_bytes,slotCount*600);
+});
+test('reject fake shared GET when transferred byte counts disagree',()=>{
+ const {parts,c}=duplicateSourceCapture();
+ c.after[0].slots[1].wire_bytes=0;
+ assert.throws(()=>assess(parts,c),/Conflicting shared network request/);
+});
+test('reject fake shared GET when MIME, dimensions or actual URL disagree',()=>{
+ for(const [field,value] of [['mime','image/webp'],['natural_width',123],['current_src','https://different.example/img.jpg']]) {
+  const {parts,c}=duplicateSourceCapture();
+  c.after[0].slots[1][field]=value;
+  assert.throws(()=>assess(parts,c));
+ }
+});
