@@ -1,0 +1,102 @@
+{
+  "schema": "fv-dispatch-offer-surface-v1",
+  "snapshot_date_utc": "2026-11-17",
+  "canonical_campaign": "PR #175 / Issue #174; 4 editorial + 2 commercial-review-pending; no sends authorized",
+  "editorial_standards": "https://finalvestige.com/editorial-standards/",
+  "sources": {
+    "ftc_can_spam": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "inspire3_affiliates_public": "https://affiliates.inspire3.com/",
+    "zen12_main": "https://zen12.com/",
+    "zen12_promotional": "https://zen12.com/secret/",
+    "total_focus": "https://hypnosislive.com/mental-skills/total-focus",
+    "hypnosis_faq": "https://hypnosislive.com/faq"
+  },
+  "offers": {
+    "issue03_zen12": {
+      "issue": 3,
+      "seller_sku": "Zen12; three package levels displayed on public page, exact referred SKU unknown",
+      "first_party_guide": null,
+      "earning_link": null,
+      "affiliate_acceptance_document": null,
+      "email_channel_authorization": null,
+      "named_account_owner": null,
+      "referred_checkout_capture": null,
+      "merchant_payout_record": null,
+      "price_message_allowed": false,
+      "refund_message_allowed": false,
+      "efficacy_claim_allowed": false,
+      "surfaces": [
+        {
+          "source_key": "zen12_main",
+          "description": "seller main page; beginner/premium/advanced tiers",
+          "displayed_prices_usd": [
+            "67.77",
+            "87.99",
+            "67.77"
+          ],
+          "claim": "seller says 12 minutes is equivalent to an hour; not independently established for this SKU",
+          "buyer_decision": "tier-dependent; no single newsletter price"
+        },
+        {
+          "source_key": "zen12_promotional",
+          "description": "separate video/coupon sales funnel; may be campaign-specific",
+          "displayed_prices_usd": [
+            "37.00"
+          ],
+          "claim": "seller promotional price subject to funnel and coupon context",
+          "buyer_decision": "do not claim reader will receive this price"
+        }
+      ]
+    },
+    "issue05_total_focus": {
+      "issue": 5,
+      "seller_sku": "Hypnosis Live Total Focus single MP3; distinct from bundle",
+      "first_party_guide": null,
+      "earning_link": null,
+      "affiliate_acceptance_document": null,
+      "email_channel_authorization": null,
+      "named_account_owner": null,
+      "referred_checkout_capture": null,
+      "merchant_payout_record": null,
+      "price_message_allowed": false,
+      "refund_message_allowed": false,
+      "efficacy_claim_allowed": false,
+      "surfaces": [
+        {
+          "source_key": "total_focus",
+          "description": "product page single item",
+          "displayed_prices_usd": [
+            "24.44"
+          ],
+          "claim": "seller says 33 minutes, 47 MB; dramatic concentration outcomes not independently verified",
+          "buyer_decision": "this is a displayed public price, not a verified referral checkout"
+        },
+        {
+          "source_key": "total_focus",
+          "description": "product page bundle with different recording",
+          "displayed_prices_usd": [
+            "39.90"
+          ],
+          "claim": "bundle is not one Total Focus recording",
+          "buyer_decision": "must not mix bundle price with single-item price"
+        },
+        {
+          "source_key": "hypnosis_faq",
+          "description": "FAQ scope and refund restrictions",
+          "displayed_prices_usd": [],
+          "claim": "seller says 14-day refund, but limits refunded sessions to five per year",
+          "buyer_decision": "any refund statement must include current applicable qualification"
+        }
+      ]
+    }
+  },
+  "global_release_proofs": {
+    "publisher_physical_address_rendered": false,
+    "native_jetpack_preview_witness": false,
+    "functional_unsubscribe_witness": false,
+    "eligible_recipient_deduplication": false,
+    "welcome_receipt_witness": false,
+    "founder_final_send_approval": false
+  },
+  "no_send": true
+}
