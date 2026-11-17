@@ -1,0 +1,424 @@
+{
+  "matrix_version": "r448_2026-11-17",
+  "scope": "FINAL VESTIGE MIND ONLY",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "source_access": "public read 2026-11-17",
+  "source_entries": [
+    {
+      "id": "thompson1980",
+      "url": "https://doi.org/10.1068/p090483",
+      "note": "1980 original Thatcher illusion report; publisher metadata/abstract"
+    },
+    {
+      "id": "wong2010",
+      "url": "https://doi.org/10.1068/p6659",
+      "note": "2010 comparisons with multiple non-face object classes"
+    },
+    {
+      "id": "psalta2014",
+      "url": "https://doi.org/10.1068/p7755",
+      "note": "2014 expression-recognition and inversion study"
+    },
+    {
+      "id": "donnelly2011",
+      "url": "https://doi.org/10.1371/journal.pone.0023340",
+      "note": "2011 behavioral/fMRI comparison"
+    },
+    {
+      "id": "puysegur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "Current historical archive; research claims not converted into cures"
+    },
+    {
+      "id": "fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "note": "Existing 52-page free download/Jetpack funnel"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "note": "Official product portfolio"
+    },
+    {
+      "id": "zen12about",
+      "url": "https://zen12.com/about",
+      "note": "Official product feature/marketing statements"
+    },
+    {
+      "id": "zen12secret",
+      "url": "https://zen12.com/secret/",
+      "note": "Separate promotional full-course offer, dynamic price"
+    },
+    {
+      "id": "hypnosisfocus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "note": "Official Total Focus 33-minute session"
+    },
+    {
+      "id": "focusshot",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "note": "Official 15/30-minute Focus Shot product"
+    },
+    {
+      "id": "affiliateportal",
+      "url": "https://affiliates.inspire3.com/",
+      "note": "Public signup not account approval"
+    },
+    {
+      "id": "ftc_endorsement",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "Adjacent clear affiliate disclosure"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "Product-specific competent reliable science for health claims"
+    }
+  ],
+  "claims": [
+    {
+      "id": "T01",
+      "text": "Thatcher illusion reported in 1980",
+      "status": "research-supported",
+      "source_id": "thompson1980",
+      "limit": "report original manipulation; no photo reproduction"
+    },
+    {
+      "id": "T02",
+      "text": "Orientation can alter recognition of locally inverted features",
+      "status": "research-supported",
+      "source_id": "thompson1980",
+      "limit": "effect depends on task and stimulus"
+    },
+    {
+      "id": "T03",
+      "text": "Thatcher effect is unique to human faces",
+      "status": "contradicted-as-universal",
+      "source_id": "wong2010",
+      "limit": "non-face objects also show analogous effect"
+    },
+    {
+      "id": "T04",
+      "text": "Faces and objects are processed identically",
+      "status": "not-established",
+      "source_id": "wong2010",
+      "limit": "2010 result does not support complete identity"
+    },
+    {
+      "id": "T05",
+      "text": "Inverted Thatcherized face relatively improves some expression judgements",
+      "status": "research-supported",
+      "source_id": "psalta2014",
+      "limit": "task-specific, not general cognitive improvement"
+    },
+    {
+      "id": "T06",
+      "text": "Thatcherized face affects clinical health",
+      "status": "not-established",
+      "source_id": "donnelly2011",
+      "limit": "fMRI correlation does not validate treatment"
+    },
+    {
+      "id": "T07",
+      "text": "Puységur archive has 153 source rows / 16 dossiers",
+      "status": "published-primary-project-description",
+      "source_id": "puysegur",
+      "limit": "counts read from live page; not psychiatric proof"
+    },
+    {
+      "id": "T08",
+      "text": "Puységur proves animal magnetism as physical force",
+      "status": "not-established",
+      "source_id": "puysegur",
+      "limit": "historical reports are not independent mechanism"
+    },
+    {
+      "id": "P01",
+      "text": "Zen12 sessions last 12 minutes",
+      "status": "seller-format",
+      "source_id": "zen12about",
+      "limit": "check exact checkout SKU before activation"
+    },
+    {
+      "id": "P02",
+      "text": "Zen12 complete course has 12 levels",
+      "status": "seller-format",
+      "source_id": "zen12about",
+      "limit": "not every catalog SKU necessarily includes all"
+    },
+    {
+      "id": "P03",
+      "text": "Four per-level listening styles",
+      "status": "seller-format",
+      "source_id": "zen12about",
+      "limit": "music, guided, white noise, nature"
+    },
+    {
+      "id": "P04",
+      "text": "Promotional full course lists 48 MP3s",
+      "status": "seller-format",
+      "source_id": "zen12secret",
+      "limit": "do not conflate promo funnel with catalog"
+    },
+    {
+      "id": "P05",
+      "text": "12 Zen12 minutes equal one hour meditation",
+      "status": "unsupported-product-efficacy",
+      "source_id": "zen12about",
+      "limit": "no independently validated product-specific equivalence"
+    },
+    {
+      "id": "P06",
+      "text": "Zen12 automatically treats anxiety",
+      "status": "prohibited-unsubstantiated-health-claim",
+      "source_id": "zen12about",
+      "limit": "do not make claim"
+    },
+    {
+      "id": "P07",
+      "text": "Zen12 has a uniform price for FV referrals",
+      "status": "unverified-merchant-term",
+      "source_id": "zen12secret",
+      "limit": "dynamic coupon and countdown not validated referral price"
+    },
+    {
+      "id": "P08",
+      "text": "Zen12 refund guarantee applies to hypothetical FV referral",
+      "status": "unverified-referred-term",
+      "source_id": "zen12about",
+      "limit": "seller publicly describes guarantee; referred conditions unknown"
+    },
+    {
+      "id": "P09",
+      "text": "Hypnosis Live Total Focus has 33-minute MP3",
+      "status": "seller-format",
+      "source_id": "hypnosisfocus",
+      "limit": "not evidence of focus efficacy"
+    },
+    {
+      "id": "P10",
+      "text": "Total Focus delivers 100% concentration on demand",
+      "status": "unsupported-product-efficacy",
+      "source_id": "hypnosisfocus",
+      "limit": "do not adopt advertising promise"
+    },
+    {
+      "id": "P11",
+      "text": "Brainwave Shots Focus Shot lists 15/30-minute audios",
+      "status": "seller-format",
+      "source_id": "focusshot",
+      "limit": "no independent named-product outcome"
+    },
+    {
+      "id": "P12",
+      "text": "Focus Shot focus lasts 4 hours or all day",
+      "status": "unsupported-product-efficacy",
+      "source_id": "focusshot",
+      "limit": "seller promise not independently substantiated"
+    },
+    {
+      "id": "P13",
+      "text": "Inspire3 controls Zen12/Hypnosis Live/Brainwave Shots",
+      "status": "official-catalog",
+      "source_id": "inspire3",
+      "limit": "product brand context only"
+    },
+    {
+      "id": "A01",
+      "text": "Inspire3 portal publicly offers affiliate signup",
+      "status": "official-public-portal",
+      "source_id": "affiliateportal",
+      "limit": "does not mean FV approved"
+    },
+    {
+      "id": "A02",
+      "text": "FV named publisher acceptance",
+      "status": "not-authenticated",
+      "source_id": "affiliateportal",
+      "limit": "requires signed-in account or issued approval"
+    },
+    {
+      "id": "A03",
+      "text": "FV issued earning link and permitted WEB channel",
+      "status": "not-authenticated",
+      "source_id": "affiliateportal",
+      "limit": "no affiliate href should be used"
+    },
+    {
+      "id": "A04",
+      "text": "FV permitted EMAIL/Dispatch promotion",
+      "status": "not-authenticated",
+      "source_id": "affiliateportal",
+      "limit": "requires independent channel permission"
+    },
+    {
+      "id": "A05",
+      "text": "Approved creatives/swipe permitted for FV",
+      "status": "not-authenticated",
+      "source_id": "affiliateportal",
+      "limit": "no customer creative license presented"
+    },
+    {
+      "id": "F01",
+      "text": "Affiliates disclose commissions close to the recommendation",
+      "status": "legal-guidance",
+      "source_id": "ftc_endorsement",
+      "limit": "generic footer alone insufficient"
+    },
+    {
+      "id": "F02",
+      "text": "Health efficacy needs competent reliable scientific evidence",
+      "status": "legal-guidance",
+      "source_id": "ftc_health",
+      "limit": "general meditation studies not named-product RCT"
+    },
+    {
+      "id": "L01",
+      "text": "Focus Fieldbook is existing free 52-page resource",
+      "status": "live-owned-free-offer",
+      "source_id": "fieldbook",
+      "limit": "not authenticated paid digital SKU"
+    },
+    {
+      "id": "L02",
+      "text": "One Jetpack/Dispatch list is existing funnel",
+      "status": "reported-site-current-state",
+      "source_id": "fieldbook",
+      "limit": "do not duplicate email collection"
+    },
+    {
+      "id": "R01",
+      "text": "Commission or paid order verified for Mind pilot",
+      "status": "not-authenticated",
+      "source_id": "affiliateportal",
+      "limit": "paid settlement not observable"
+    },
+    {
+      "id": "R02",
+      "text": "Qualified-human session count tied to Grok asset_id",
+      "status": "not-authenticated",
+      "source_id": "fieldbook",
+      "limit": "must verify media IDs and permitted link path"
+    }
+  ],
+  "release_gates": {
+    "named_inspire3_account_authenticated": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "publisher_accepted": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "zen12_sku_authorized": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "web_channel_permitted": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "email_channel_permitted": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "approved_affiliate_creative_rights": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "issued_earning_url": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "referral_checkout_matches_sku": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "referral_price_and_currency_verified": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "referral_refund_policy_verified": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "commission_attribution_terms_verified": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "commission_payout_terms_verified": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "no_unsupported_medical_claims_in_live_copy": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "live_disclosure_near_link_qa": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "founder_commercial_approval": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "founder_publication_approval": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "site_qa_browser_a11y": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "site_qa_mobile_360_390_768_1440": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "real_lighthouse_or_equivalent": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "wordpress_sanitization_qa": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "playable_original_film_rights": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "caption_sync_real_film_qa": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "existing_jetpack_confirmation_verified": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "groks_three_actual_asset_ids_verified": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "mobile_creator_clickpaths_verified": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "claude_measurement_contract_verified": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "merchant_confirmed_order_or_commission": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    },
+    "refund_fee_net_reconciliation": {
+      "pass": false,
+      "evidence": "Not independently authenticated in this run; no release approval"
+    }
+  },
+  "merchandise": "No authorized outbound earning URL; no verified paid FV Mind product",
+  "observed_sales": null,
+  "observed_commission": null,
+  "observed_qualified_sessions": null,
+  "kpi_net_revenue_per_1000_sessions": null,
+  "footnote": "Public seller rates, prices, temporary discounts, public signup and testimonial language are not account-specific eligibility, settlement, proof of efficacy or authorized tracked links."
+}
