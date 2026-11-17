@@ -160,6 +160,7 @@ def verify_amd64_pe(path: str | Path, *, expected_sha256: str | None = None) -> 
             table = _read_at(stream, section_start, section_table_bytes, length)
             virtual_ranges: list[tuple[int, int]] = []
             file_ranges: list[tuple[int, int]] = []
+            backed_virtual_ranges: list[tuple[int, int]] = []
             backed_entry = False
             for offset in range(0, len(table), 40):
                 virtual_bytes = _u32(table, offset + 8)
@@ -189,6 +190,7 @@ def verify_amd64_pe(path: str | Path, *, expected_sha256: str | None = None) -> 
                     # An entry in executable zero-fill or file padding is not
                     # backed by actual code. Never accept another section's flags.
                     code_end = virtual_rva + min(raw_bytes, virtual_bytes or raw_bytes)
+                    backed_virtual_ranges.append((virtual_rva, code_end))
                     if (section_flags & 0x20000000
                             and virtual_rva <= entry_rva < code_end):
                         backed_entry = True
@@ -206,6 +208,7 @@ def verify_amd64_pe(path: str | Path, *, expected_sha256: str | None = None) -> 
                     optional, header_size=headers_size, image_size=image_size,
                     file_size=length, virtual_ranges=virtual_ranges,
                     file_ranges=file_ranges,
+                    backed_virtual_ranges=backed_virtual_ranges,
                 )
             except PEDataDirectoryError:
                 raise PEFormatError("PE data directory rejected") from None

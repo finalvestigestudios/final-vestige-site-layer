@@ -59,6 +59,33 @@ class PEDataDirectoryIntegrationR494(unittest.TestCase):
         with self.assertRaises(PEFormatError):
             self.inspect(candidate(entry=0, address=4096, size=32, count=17))
 
+    def test_raw_backed_directory_at_boundary_passes(self):
+        self.inspect(candidate(entry=1, address=0x11E0, size=32, count=2))
+
+    def test_zero_filled_section_tail_directory_rejected(self):
+        raw = bytearray(candidate(entry=1, address=0x1200, size=16, count=2))
+        # Expand VirtualSize but NOT SizeOfRawData: the RVA maps at runtime,
+        # yet the import-directory bytes have no on-disk representation.
+        struct.pack_into("<I", raw, 392 + 8, 0x400)
+        with self.assertRaises(PEFormatError):
+            self.inspect(bytes(raw))
+
+    def test_directory_straddling_raw_backing_boundary_rejected(self):
+        raw = bytearray(candidate(entry=1, address=0x11F0, size=32, count=2))
+        struct.pack_into("<I", raw, 392 + 8, 0x400)
+        with self.assertRaises(PEFormatError):
+            self.inspect(bytes(raw))
+
+    def test_six_candidate_gate_rejects_zero_filled_directory(self):
+        for name in EXPECTED:
+            (self.root / name).write_bytes(synthetic_pe64())
+        raw = bytearray(candidate(entry=1, address=0x1200, size=16, count=2))
+        struct.pack_into("<I", raw, 392 + 8, 0x400)
+        (self.root / EXPECTED[-1]).write_bytes(raw)
+        self.assertEqual(build_inventory(self.root), "SHA256SUMS.txt")
+        with self.assertRaises(release_gate.GateFailure):
+            release_gate.verify(self.root, smoke=False)
+
     def test_six_candidate_gate_rejects_malformed_directory(self):
         for name in EXPECTED:
             (self.root / name).write_bytes(synthetic_pe64())

@@ -20,7 +20,8 @@ class PEDataDirectoryR494(unittest.TestCase):
         validate_pe_directories(optional, header_size=512,
                                 image_size=8192, file_size=2048,
                                 virtual_ranges=[(4096, 4608), (5120, 5632)],
-                                file_ranges=[(512, 1024), (1024, 1536)])
+                                file_ranges=[(512, 1024), (1024, 1536)],
+                                backed_virtual_ranges=[(4096, 4352), (5120, 5376)])
 
     def test_empty_table_passes(self):
         self.check(header())
@@ -81,6 +82,32 @@ class PEDataDirectoryR494(unittest.TestCase):
     def test_tiny_optional_header_rejected(self):
         with self.assertRaises(PEDataDirectoryError):
             self.check(b"\x00" * 110)
+
+
+    def test_raw_backed_directory_ending_at_last_byte_accepted(self):
+        self.check(header([(1, 4320, 32)], count=2))
+
+    def test_directory_beyond_raw_backing_in_zero_filled_tail_rejected(self):
+        with self.assertRaises(PEDataDirectoryError):
+            self.check(header([(1, 4352, 32)], count=2))
+
+    def test_directory_crossing_raw_backing_boundary_rejected(self):
+        with self.assertRaises(PEDataDirectoryError):
+            self.check(header([(1, 4336, 32)], count=2))
+
+    def test_directory_must_fit_one_backed_section_not_union(self):
+        with self.assertRaises(PEDataDirectoryError):
+            self.check(header([(1, 4350, 900)], count=2))
+
+    def test_zero_raw_backing_denies_virtual_section_directory(self):
+        # One image-mapped range but no raw-file backing must not be a source
+        # of a nonempty import/resource/relocation directory.
+        with self.assertRaises(PEDataDirectoryError):
+            validate_pe_directories(
+                header([(1, 4096, 16)], count=2), header_size=512,
+                image_size=8192, file_size=2048,
+                virtual_ranges=[(4096, 4608)], file_ranges=[],
+                backed_virtual_ranges=[])
 
 
 if __name__ == "__main__":
