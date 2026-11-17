@@ -1,0 +1,509 @@
+{
+  "schema_version": "r440-v1",
+  "checked_local_date": "2026-11-17",
+  "branch": "mind-r440-twelve-minute-proof-gate-20261117",
+  "scope": "Mind & Perception presell and independent evidence only",
+  "status": "DRAFT_HARD_HOLD",
+  "sources": {
+    "basso": "https://pubmed.ncbi.nlm.nih.gov/30153464/",
+    "palmer": "https://doi.org/10.1038/s41598-023-46578-y",
+    "review": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10902202/",
+    "inspire3": "https://inspire3.com/",
+    "zenabout": "https://zen12.com/about",
+    "zenmain": "https://zen12.com/",
+    "zenpromo": "https://zen12.com/secret/",
+    "hypnosis": "https://hypnosislive.com/mental-skills/total-focus",
+    "brainwave": "https://brainwaveshots.com/focus-shot",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "focus": "https://finalvestige.com/focus/",
+    "puy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "aff": "https://affiliates.inspire3.com/"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Zen12 describes 12-minute sessions",
+      "classification": "seller-described feature",
+      "source_urls": [
+        "https://zen12.com/about"
+      ],
+      "disposition": "qualified-use",
+      "qualification": "Product feature only"
+    },
+    {
+      "id": "C02",
+      "statement": "Zen12 presents 12 levels",
+      "classification": "seller-described feature",
+      "source_urls": [
+        "https://zen12.com/about",
+        "https://zen12.com/secret/"
+      ],
+      "disposition": "qualified-use",
+      "qualification": "Exact SKU must be checked"
+    },
+    {
+      "id": "C03",
+      "statement": "The seller offers four audio versions per level",
+      "classification": "seller-described feature",
+      "source_urls": [
+        "https://zen12.com/about"
+      ],
+      "disposition": "qualified-use",
+      "qualification": "Seller description, not efficacy"
+    },
+    {
+      "id": "C04",
+      "statement": "The separate full-course promotional page lists 48 MP3s",
+      "classification": "seller-described feature",
+      "source_urls": [
+        "https://zen12.com/secret/"
+      ],
+      "disposition": "qualified-use",
+      "qualification": "Different offer surfaces may have different terms"
+    },
+    {
+      "id": "C05",
+      "statement": "Zen12 'meditates for you'",
+      "classification": "seller efficacy claim",
+      "source_urls": [
+        "https://zen12.com/about"
+      ],
+      "disposition": "exclude-as-fact",
+      "qualification": "No product-specific controlled evidence authenticated"
+    },
+    {
+      "id": "C06",
+      "statement": "12 minutes of Zen12 equals an hour of conventional meditation",
+      "classification": "seller equivalence claim",
+      "source_urls": [
+        "https://zen12.com/"
+      ],
+      "disposition": "exclude-as-fact",
+      "qualification": "No matched clinical or objective equivalence trial found"
+    },
+    {
+      "id": "C07",
+      "statement": "Brainwave sounds automatically induce a particular state",
+      "classification": "seller mechanism claim",
+      "source_urls": [
+        "https://zen12.com/about"
+      ],
+      "disposition": "exclude-as-fact",
+      "qualification": "Named product-specific EEG and outcome substantiation not obtained"
+    },
+    {
+      "id": "C08",
+      "statement": "Zen12 cures anxiety or depression",
+      "classification": "medical/health assertion",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "disposition": "prohibited-without-proof",
+      "qualification": "No evidence authenticated and no such editorial recommendation"
+    },
+    {
+      "id": "C09",
+      "statement": "Zen12 increases income, productivity or wealth",
+      "classification": "financial or performance promise",
+      "source_urls": [
+        "https://zen12.com/"
+      ],
+      "disposition": "exclude-as-fact",
+      "qualification": "No product-specific proof; not implied by task-choice exercise"
+    },
+    {
+      "id": "C10",
+      "statement": "Official Zen12 main and coupon pages show distinct offer presentations",
+      "classification": "merchant surface comparison",
+      "source_urls": [
+        "https://zen12.com/",
+        "https://zen12.com/secret/"
+      ],
+      "disposition": "qualified-use",
+      "qualification": "Do not transplant visible promotional price, code or terms into a referred offer"
+    },
+    {
+      "id": "C11",
+      "statement": "The public affiliate signup means Final Vestige is an approved partner",
+      "classification": "partner authorization",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "disposition": "not-established",
+      "qualification": "Public enrollment is not named acceptance"
+    },
+    {
+      "id": "C12",
+      "statement": "Final Vestige has an issued eligible tracking URL",
+      "classification": "partner authorization",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "disposition": "not-established",
+      "qualification": "No authenticated earning link or channel rights"
+    },
+    {
+      "id": "C13",
+      "statement": "Thirteen minutes daily for 8 weeks of guided meditation improved selected outcomes versus podcast listening",
+      "classification": "independent randomized study",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/30153464/"
+      ],
+      "disposition": "qualified-use",
+      "qualification": "Specific intervention; reported after 8 not 4 weeks; not Zen12"
+    },
+    {
+      "id": "C14",
+      "statement": "The Basso study establishes a guaranteed 12-minute threshold",
+      "classification": "unsupported extrapolation",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/30153464/"
+      ],
+      "disposition": "exclude-as-fact",
+      "qualification": "13 not 12; limited design and population; no guarantee"
+    },
+    {
+      "id": "C15",
+      "statement": "Ten versus twenty-minute single session did not show a general difference in state mindfulness",
+      "classification": "independent randomized study",
+      "source_urls": [
+        "https://doi.org/10.1038/s41598-023-46578-y"
+      ],
+      "disposition": "qualified-use",
+      "qualification": "Not an equivalence trial, 12 minutes and hour not tested"
+    },
+    {
+      "id": "C16",
+      "statement": "10- and 20-minute meditation are equivalent for every outcome",
+      "classification": "unsupported extrapolation",
+      "source_urls": [
+        "https://doi.org/10.1038/s41598-023-46578-y"
+      ],
+      "disposition": "exclude-as-fact",
+      "qualification": "Null difference in some outcomes not equivalence"
+    },
+    {
+      "id": "C17",
+      "statement": "A 2024 review included 111 randomized trials and 9,538 participants",
+      "classification": "independent synthesis",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10902202/"
+      ],
+      "disposition": "qualified-use",
+      "qualification": "Multiple interventions; exclude one-session studies"
+    },
+    {
+      "id": "C18",
+      "statement": "Mindfulness interventions improved processing speed and episodic memory reliably",
+      "classification": "research misstatement",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10902202/"
+      ],
+      "disposition": "exclude-as-fact",
+      "qualification": "Meta-analysis did not find significant improvements in these domains"
+    },
+    {
+      "id": "C19",
+      "statement": "Research on mindfulness validates the commercial Zen12 soundtrack",
+      "classification": "cross-product extrapolation",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/30153464/",
+        "https://doi.org/10.1038/s41598-023-46578-y",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10902202/"
+      ],
+      "disposition": "exclude-as-fact",
+      "qualification": "Named product not tested"
+    },
+    {
+      "id": "C20",
+      "statement": "FV Focus Fieldbook is a free 52-page established resource",
+      "classification": "first-party page",
+      "source_urls": [
+        "https://finalvestige.com/focus/"
+      ],
+      "disposition": "qualified-use",
+      "qualification": "Do not create second subscription or imply Fieldbook is clinically tested"
+    },
+    {
+      "id": "C21",
+      "statement": "FV Puységur archive includes historical testimony, failures and consent context",
+      "classification": "first-party primary-source archive",
+      "source_urls": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "disposition": "qualified-use",
+      "qualification": "No inference of animal-magnetism mechanism"
+    },
+    {
+      "id": "C22",
+      "statement": "An affiliate disclosure only in the site's footer suffices for a paid recommendation",
+      "classification": "compliance claim",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "disposition": "reject",
+      "qualification": "Put clear material relationship disclosure adjacent to specific earning link"
+    },
+    {
+      "id": "C23",
+      "statement": "A product's mental or health benefit requires adequate substantiation",
+      "classification": "compliance requirement",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "disposition": "enforce",
+      "qualification": "Competent reliable scientific evidence pertinent to named product and claim"
+    },
+    {
+      "id": "C24",
+      "statement": "An outbound affiliate_click is a confirmed paid transaction",
+      "classification": "measurement confusion",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "disposition": "reject",
+      "qualification": "Merchant order and settlement evidence required separately"
+    },
+    {
+      "id": "C25",
+      "statement": "Product price and refund terms are fixed across Zen12 offer surfaces",
+      "classification": "merchant surface equivalence",
+      "source_urls": [
+        "https://zen12.com/",
+        "https://zen12.com/secret/"
+      ],
+      "disposition": "not-established",
+      "qualification": "Require approved referred checkout snapshot and verified refund policy"
+    },
+    {
+      "id": "C26",
+      "statement": "Hypnosis Live Total Focus and Brainwave Shots Focus Shot are described by seller websites",
+      "classification": "seller-described products",
+      "source_urls": [
+        "https://hypnosislive.com/mental-skills/total-focus",
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "disposition": "qualified-use",
+      "qualification": "No specific efficacy or affiliate rights claimed; not active conversion SKUs"
+    },
+    {
+      "id": "C27",
+      "statement": "The live change-blindness URL is a current usable archive destination",
+      "classification": "first-party route",
+      "source_urls": [
+        "https://finalvestige.com/2026/11/02/change-blindness/"
+      ],
+      "disposition": "qualified-use",
+      "qualification": "Do not duplicate article or invent Grok asset ID"
+    },
+    {
+      "id": "C28",
+      "statement": "A first-party paid order can be attributed without qualified session or settlement evidence",
+      "classification": "measurement confusion",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "disposition": "reject",
+      "qualification": "Net revenue/1000 requires both real net revenue and denominator"
+    }
+  ],
+  "commerce": {
+    "merchant": "Inspire3",
+    "preferred_pilot": "Zen12 full-course only after precise SKU permission",
+    "affiliate_approval": null,
+    "earning_link": null,
+    "approved_channels": null,
+    "referred_price": null,
+    "checkout_terms": null,
+    "settled_commissions": null,
+    "verified_owned_paid_mind_product": null,
+    "cta_enabled": false,
+    "net_revenue_per_1000_qualified_humans": null
+  },
+  "commercial_release_gates": [
+    {
+      "id": "written_named_partner_acceptance",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "approved_specific_sku",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "permitted_web_channel",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "permitted_social_channel",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "permitted_email_channel",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "issued_final_earning_url",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "current_exact_referred_checkout",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "exact_offer_price_verification",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "exact_refund_conditions",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "rights_for_partner_creatives",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "brand_claims_human_qa",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "product_specific_claim_substantiation",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "adjacent_material_relationship_disclosure",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "no_misleading_urgency",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "merchant_href_activation_approval",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "founder_commercial_release",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "wp_sanitization_qa",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "real_browser_wcag_22aa",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "keyboard_and_nojs",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "reduced_motion",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "encoded_original_film",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "captions_transcript_playback_qa",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "lighthouse_cwv_mobile",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "actual_published_grok_asset_ids",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "jetpack_confirmed_lead",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "settled_paid_order_refunds_fees",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "qualified_human_session_denominator",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    },
+    {
+      "id": "7_30_day_revenue_reconciliation",
+      "status": "HOLD",
+      "evidence": null,
+      "reason": "No independent release-level evidence authenticated in R440; no live activation."
+    }
+  ],
+  "measurement_events": [
+    "qualified_human_session",
+    "landing_visit",
+    "editorial_cta_click",
+    "focus_optin_attempt",
+    "focus_lead_confirmed_provider",
+    "affiliate_click_outbound",
+    "merchant_order_reported",
+    "merchant_commission_settled",
+    "refund_or_chargeback",
+    "net_realized_revenue"
+  ],
+  "data_policy": "Use existing first-party analytics only; no new pixels or scripts. No raw IP, email, user ID or session fingerprint stored in editorial logs. Never use click as order evidence.",
+  "release": "No CMS, Jetpack, social, newsletter, merge, deployment, paid service, or commerce activation authorized."
+}
