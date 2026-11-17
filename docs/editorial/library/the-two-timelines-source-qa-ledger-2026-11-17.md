@@ -89,3 +89,8 @@ Existing draft extended in place, not a new page. Six-field clock-label workshee
 
 **Release:** draft/noindex hold. Actual-theme inspectable 320/390/768/1440 and assistive testing and no-email/social guarantees remain blocked. Public page #77 and Research Sources #1338 remain outside scope.
 
+
+
+### 2026-11-17 — Franklin date-role case (unpublished)
+Original institutional sources independently checked 2026-11-17: [RMG object HSR/C/9/1](https://www.rmg.co.uk/collections/archive/rmgc-object-504898) and [Canadian Museum of History transcript](https://www.historymuseum.ca/blog/a-very-special-piece-of-paper). Cross-link to [FV Franklin investigation](https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/). Six-entry date-role table and original accessible SVG added. The transcription's later entry opens 25 April 1848 while RMG dates its addition to 26 April; no explanation invented. The 26 April march is described as planned, not independently verified. The 1847–1859 catalogue field does not establish when either entry was made. RMG collection photographs require rights/permission review; no third-party images, full transcripts or scans copied. Original FV SVG is explicitly illustrative, not a historic object or scaled timeline.
+RELEASE HOLD: production-theme responsive, keyboard, screen-reader and interaction testing, plus enforceable subscriber/social suppression, remain unverified. Do not publish, merge or modify Library index #77, Research Sources #1338, other editorial lanes or Grok accounts on this evidence alone.
