@@ -14,6 +14,7 @@ from pathlib import Path
 
 from pe_digest_custody_r493 import verify_pe_digest_stream
 from pe_directory_guard_r494 import PEDataDirectoryError, validate_pe_directories
+from pe_certificate_guard_r496 import PECertificateError, verify_certificate_table
 
 
 class PEFormatError(ValueError):
@@ -212,6 +213,13 @@ def verify_amd64_pe(path: str | Path, *, expected_sha256: str | None = None) -> 
                 )
             except PEDataDirectoryError:
                 raise PEFormatError("PE data directory rejected") from None
+            try:
+                # Validate PKCS WIN_CERTIFICATE record framing on this very same
+                # open descriptor before binding the complete image to its digest.
+                # Shape acceptance is NOT Authenticode trust verification.
+                verify_certificate_table(stream, optional, file_size=length)
+            except PECertificateError:
+                raise PEFormatError("PE certificate table rejected") from None
             if expected_sha256 is not None:
                 # Bind the structural PE verdict to the EXACT manifest bytes on
                 # this same already-open descriptor; a pathname can be replaced
