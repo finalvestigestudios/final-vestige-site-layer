@@ -1,0 +1,265 @@
+{
+  "schema": "fv-source-route-live-six-v1",
+  "observed_at": "2026-11-17 07:24 PST",
+  "method": "Live WP EDIT/VIEW + separate web reader; NOT a logged-out visitor browser",
+  "historical": {
+    "posts": 61,
+    "images": 355,
+    "reported_broken": 42,
+    "verified_guest_broken": null,
+    "claimed_savings_pct": 76,
+    "measured_savings_pct": null,
+    "oversized_originals": 20,
+    "stored_bytes": 64385752,
+    "actual_visitor_bytes": null
+  },
+  "counts": {
+    "posts": 4,
+    "slots": 6,
+    "origin_404": 2,
+    "origin_403": 2,
+    "redirect_error": 1,
+    "reader_rendered": 1
+  },
+  "safety": {
+    "production_writes": 0,
+    "cache": 0,
+    "rehost": 0,
+    "download": 0,
+    "homepage": 0,
+    "block_rewrite": 0,
+    "deploy": 0,
+    "merge": 0,
+    "spend": 0
+  },
+  "rows": [
+    {
+      "slot": "285:2",
+      "post": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "revision": "2026-11-02T21:39:59",
+      "original": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "published": "https://i0.wp.com/blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg?ssl=1",
+      "alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+      "width": null,
+      "height": null,
+      "reader": {
+        "outcome": "REDIRECT_UNFETCHABLE",
+        "numeric_http": null,
+        "note": "UCS old host redirects to inaccessible new image path; tool wrapper 500 NOT origin HTTP 500"
+      },
+      "candidate": {
+        "catalog": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+        "image": null,
+        "rights_and_relation": "NRC Figure 4 (UCS credit) not binary-verified",
+        "preview_dimensions": null,
+        "conditional_no_upscale_dimensions": null,
+        "cache_authorized": false,
+        "original_binary_sha256": null,
+        "exact_crop_verified": false
+      },
+      "visitor": {
+        "currentSrc": null,
+        "http_status": null,
+        "mime": null,
+        "decoded": null,
+        "natural_width": null,
+        "transfer_bytes": null,
+        "screenshot": null
+      },
+      "staging_approved": false,
+      "wordpress_write": false
+    },
+    {
+      "slot": "285:5",
+      "post": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "revision": "2026-11-02T21:39:59",
+      "original": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "published": "https://i0.wp.com/images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg?ssl=1",
+      "alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "width": null,
+      "height": null,
+      "reader": {
+        "outcome": "RETRIEVER_404",
+        "numeric_http": 404,
+        "note": "Reader origin 404; actual visitor unknown"
+      },
+      "candidate": {
+        "catalog": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "image": null,
+        "rights_and_relation": "Different 2010 Commons frame; not replacement binary",
+        "preview_dimensions": [
+          819,
+          614
+        ],
+        "conditional_no_upscale_dimensions": [
+          819,
+          614
+        ],
+        "cache_authorized": false,
+        "original_binary_sha256": null,
+        "exact_crop_verified": false
+      },
+      "visitor": {
+        "currentSrc": null,
+        "http_status": null,
+        "mime": null,
+        "decoded": null,
+        "natural_width": null,
+        "transfer_bytes": null,
+        "screenshot": null
+      },
+      "staging_approved": false,
+      "wordpress_write": false
+    },
+    {
+      "slot": "287:5",
+      "post": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "revision": "2026-11-02T21:40:01",
+      "original": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "published": "https://i0.wp.com/stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg?ssl=1",
+      "alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+      "width": null,
+      "height": null,
+      "reader": {
+        "outcome": "RETRIEVER_404",
+        "numeric_http": 404,
+        "note": "Old origin 404; publisher new media image rendered; hashes unknown"
+      },
+      "candidate": {
+        "catalog": "https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/",
+        "image": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "rights_and_relation": "Same filename moved publisher host, credits University Press of Florida; rehosting rights unknown",
+        "preview_dimensions": null,
+        "conditional_no_upscale_dimensions": null,
+        "cache_authorized": false,
+        "original_binary_sha256": null,
+        "exact_crop_verified": false
+      },
+      "visitor": {
+        "currentSrc": null,
+        "http_status": null,
+        "mime": null,
+        "decoded": null,
+        "natural_width": null,
+        "transfer_bytes": null,
+        "screenshot": null
+      },
+      "staging_approved": false,
+      "wordpress_write": false
+    },
+    {
+      "slot": "292:2",
+      "post": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "revision": "2026-08-27T11:24:49",
+      "original": "https://images.pubble.cloud/worker/jpg/quick/1920/3077598/96897487/content/2024/6/cf6d9b51-c16b-4938-800c-833b86ac5740",
+      "published": "https://images.pubble.cloud/worker/jpg/quick/1920/3077598/96897487/content/2024/6/cf6d9b51-c16b-4938-800c-833b86ac5740",
+      "alt": "Passenger ship Prinsendam during her launch at a Dutch shipyard.",
+      "width": null,
+      "height": null,
+      "reader": {
+        "outcome": "RETRIEVER_RENDERED",
+        "numeric_http": null,
+        "note": "No guest failure; no authorized replacement"
+      },
+      "candidate": {
+        "catalog": null,
+        "image": null,
+        "rights_and_relation": "Direct Pubble image rendered; source rights unknown",
+        "preview_dimensions": null,
+        "conditional_no_upscale_dimensions": null,
+        "cache_authorized": false,
+        "original_binary_sha256": null,
+        "exact_crop_verified": false
+      },
+      "visitor": {
+        "currentSrc": null,
+        "http_status": null,
+        "mime": null,
+        "decoded": null,
+        "natural_width": null,
+        "transfer_bytes": null,
+        "screenshot": null
+      },
+      "staging_approved": false,
+      "wordpress_write": false
+    },
+    {
+      "slot": "418:1",
+      "post": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "revision": "2026-08-28T03:11:08",
+      "original": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "published": "https://i0.wp.com/media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG?ssl=1",
+      "alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew.",
+      "width": null,
+      "height": null,
+      "reader": {
+        "outcome": "RETRIEVER_403",
+        "numeric_http": 403,
+        "note": "Retriever source 403 not visitor 403"
+      },
+      "candidate": {
+        "catalog": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "image": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+        "rights_and_relation": "Same USCG VIRIN 210330-G-DE713-0002, catalog says public domain; rights/attribution check remains",
+        "preview_dimensions": null,
+        "conditional_no_upscale_dimensions": null,
+        "cache_authorized": false,
+        "original_binary_sha256": null,
+        "exact_crop_verified": false
+      },
+      "visitor": {
+        "currentSrc": null,
+        "http_status": null,
+        "mime": null,
+        "decoded": null,
+        "natural_width": null,
+        "transfer_bytes": null,
+        "screenshot": null
+      },
+      "staging_approved": false,
+      "wordpress_write": false
+    },
+    {
+      "slot": "418:2",
+      "post": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "revision": "2026-08-28T03:11:08",
+      "original": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "published": "https://i0.wp.com/www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg?ssl=1",
+      "alt": "Broken concrete and debris where Scotch Cap Lighthouse stood after the April 1, 1946 tsunami.",
+      "width": null,
+      "height": null,
+      "reader": {
+        "outcome": "RETRIEVER_403",
+        "numeric_http": 403,
+        "note": "Original USCG source retriever 403; museum 600x463 image renders"
+      },
+      "candidate": {
+        "catalog": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+        "image": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg",
+        "rights_and_relation": "Museum USCG-credit same-scene preview; item caching not cleared",
+        "preview_dimensions": [
+          600,
+          463
+        ],
+        "conditional_no_upscale_dimensions": [
+          600,
+          463
+        ],
+        "cache_authorized": false,
+        "original_binary_sha256": null,
+        "exact_crop_verified": false
+      },
+      "visitor": {
+        "currentSrc": null,
+        "http_status": null,
+        "mime": null,
+        "decoded": null,
+        "natural_width": null,
+        "transfer_bytes": null,
+        "screenshot": null
+      },
+      "staging_approved": false,
+      "wordpress_write": false
+    }
+  ]
+}
