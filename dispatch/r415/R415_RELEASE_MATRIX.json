@@ -1,0 +1,114 @@
+{
+  "version": "R415",
+  "reviewed_at_utc": "2026-11-17T04:37:49Z",
+  "master": {
+    "issue": 174,
+    "pr": 175,
+    "sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647"
+  },
+  "parent": {
+    "pr": 2823,
+    "sha": "aff82e87d931b3ff1e41a3e5acedf576d4c86678"
+  },
+  "active_allocation": {
+    "editorial": 4,
+    "commercial": 2
+  },
+  "live_subscriber_counts": {
+    "dashboard_total": 3,
+    "dashboard_confirmed": 3,
+    "dashboard_unconfirmed": 2,
+    "reader_followers": 3,
+    "email_followers": 0,
+    "unique_eligible_receivers": null
+  },
+  "live_settings": {
+    "newsletter_enabled": true,
+    "auto_post_email": false,
+    "format": "full",
+    "reply_to": "no-reply",
+    "welcome_configured": true,
+    "welcome_received": false
+  },
+  "overall_release": "HOLD_UNSENT",
+  "all_alternatives_unadopted": true,
+  "native_jetpack_preview_witness": false,
+  "verified_affiliate_email_permission": false,
+  "verified_publisher_postal_address": false,
+  "verified_unsubscribe": false,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "issues": [
+    {
+      "issue": "01",
+      "kind": "editorial",
+      "subject": "The stranger behind the door",
+      "proposed_preheader": "A 1998 experiment, eight missed substitutions, and one question every investigator should ask.",
+      "candidate": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/aff82e87d931b3ff1e41a3e5acedf576d4c86678/dispatch/r414/ISSUE01_DOOR_STUDY_OPTIONAL.md",
+      "first_party_cta": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "reason": "Replaces repetitive Puységur CTA with one documented 1998 experiment and relevant existing investigation",
+      "adopted": false,
+      "release_state": "HOLD_UNSENT",
+      "native_jetpack_preview": false
+    },
+    {
+      "issue": "02",
+      "kind": "editorial",
+      "subject": "Franklin looked for a force. The record asked why.",
+      "proposed_preheader": "A French commission in 1784 left a useful method for testing extraordinary claims.",
+      "candidate": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/5c23b385bc2a7d067ce7707e95d789c2e76fe15b/dispatch/r411/ISSUE02_FRANKLIN_OPTIONAL.md",
+      "first_party_cta": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "reason": "Distinguishes 1784 commission from English 1785 translation, preserving the archive-first identity",
+      "adopted": false,
+      "release_state": "HOLD_UNSENT",
+      "native_jetpack_preview": false
+    },
+    {
+      "issue": "03",
+      "kind": "commercial",
+      "subject": "Twelve minutes cannot promise an hour",
+      "proposed_preheader": "An 1890 attention chapter, a modern evidence review, and five checks before paying for audio.",
+      "candidate": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/3681fdd10e2ed67937bd14b1eeb731d6cf5424db/dispatch/r413/ISSUE03_12_MINUTE_OPTIONAL.md",
+      "first_party_cta": null,
+      "reason": "Zen12 seller equivalence claim is not independent science; approved first-party offer guide is not live",
+      "adopted": false,
+      "release_state": "HOLD_MERCHANT",
+      "native_jetpack_preview": false
+    },
+    {
+      "issue": "04",
+      "kind": "editorial",
+      "subject": "Apollo 1: the spark the record could not name",
+      "proposed_preheader": "NASA traced the fire's spread without identifying one exact ignition point.",
+      "candidate": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/ccb1a7a6aca701a9e6fedbecfb93ca7a8be00f3c/dispatch/r412/ISSUE04_APOLLO_OPTIONAL.md",
+      "first_party_cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "reason": "Corrects ambiguous fourteen-second subject by separating crew report, rupture and unidentified first ignition",
+      "adopted": false,
+      "release_state": "HOLD_COPY",
+      "native_jetpack_preview": false
+    },
+    {
+      "issue": "05",
+      "kind": "commercial",
+      "subject": "A hypnotic recording is not a finding",
+      "proposed_preheader": "An 1843 book, a 33-minute MP3, and five questions to ask before buying.",
+      "candidate": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/61d9c1ae287d0aacb21b3537f6264d6e6127f7e3/dispatch/r406/ISSUE05_TOTAL_FOCUS_OPTIONAL.md",
+      "first_party_cta": null,
+      "reason": "Total Focus SKU and refund limitations deserve a buyer guide, but EMAIL permission and guide remain unverified",
+      "adopted": false,
+      "release_state": "HOLD_MERCHANT",
+      "native_jetpack_preview": false
+    },
+    {
+      "issue": "06",
+      "kind": "editorial",
+      "subject": "The notebook remembers what the week forgets",
+      "proposed_preheader": "An 1885 memory experiment, a seven-day evidence check, and no miracle claims.",
+      "candidate": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/543ef4319e39ecf31af7a9731eb037a144846a90/dispatch/r407/ISSUE06_POST_WELCOME_OPTIONAL.md",
+      "first_party_cta": "https://finalvestige.com/free-resources/the-page-that-changed/",
+      "reason": "Moves a subscriber past the Fieldbook already in welcome email to the published evidence guide",
+      "adopted": false,
+      "release_state": "HOLD_UNSENT",
+      "native_jetpack_preview": false
+    }
+  ]
+}
