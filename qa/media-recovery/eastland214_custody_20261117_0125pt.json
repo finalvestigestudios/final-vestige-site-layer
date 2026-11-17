@@ -37,6 +37,12 @@
         "native_px": null,
         "review_px": null,
         "rights_note": "Bain News Service; LOC: no known publication restrictions"
+      },
+      "independent_public_reader": {
+        "method": "independent URL opener, NOT logged-out visitor browser, NOT origin HTTP",
+        "result": "tool_inaccessible_internal_error",
+        "origin_http_status": null,
+        "visitor_failure_confirmed": false
       }
     },
     {
@@ -66,6 +72,12 @@
           "height": 257
         },
         "rights_note": "Kaufmann, Weimer & Fabry / LOC; Commons PD-US claim"
+      },
+      "independent_public_reader": {
+        "method": "independent URL opener, NOT logged-out visitor browser, NOT origin HTTP",
+        "result": "tool_inaccessible_internal_error",
+        "origin_http_status": null,
+        "visitor_failure_confirmed": false
       }
     },
     {
@@ -95,6 +107,12 @@
           "height": 381
         },
         "rights_note": "Chicago Daily News / Chicago Historical Society; Commons PD-US"
+      },
+      "independent_public_reader": {
+        "method": "independent URL opener, NOT logged-out visitor browser, NOT origin HTTP",
+        "result": "tool_inaccessible_internal_error",
+        "origin_http_status": null,
+        "visitor_failure_confirmed": false
       }
     },
     {
@@ -124,6 +142,12 @@
           "height": 495
         },
         "rights_note": "Unknown photographer, 1915 paper; Commons pre-1931 PD-US claim"
+      },
+      "independent_public_reader": {
+        "method": "independent URL opener, NOT logged-out visitor browser, NOT origin HTTP",
+        "result": "tool_inaccessible_internal_error",
+        "origin_http_status": null,
+        "visitor_failure_confirmed": false
       }
     },
     {
@@ -153,6 +177,12 @@
           "height": 1317
         },
         "rights_note": "Bain News Service / LOC; Commons TIFF geometry, date metadata conflict"
+      },
+      "independent_public_reader": {
+        "method": "independent URL opener, NOT logged-out visitor browser, NOT origin HTTP",
+        "result": "tool_inaccessible_internal_error",
+        "origin_http_status": null,
+        "visitor_failure_confirmed": false
       }
     },
     {
@@ -182,7 +212,14 @@
           "height": 769
         },
         "rights_note": "NARA custody; Commons federal PD assertion, author unknown"
+      },
+      "independent_public_reader": {
+        "method": "independent URL opener, NOT logged-out visitor browser, NOT origin HTTP",
+        "result": "tool_inaccessible_internal_error",
+        "origin_http_status": null,
+        "visitor_failure_confirmed": false
       }
     }
-  ]
+  ],
+  "retrieval_probe_utc": "2026-11-17T09:25:00Z"
 }
