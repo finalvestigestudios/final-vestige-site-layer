@@ -30,7 +30,7 @@ check("B always disabled and disclosed",()=>staticSafety(B));
 check("no native external merchant hrefs all variants",()=>!sellerHref.test(A+B+H));
 check("no forms/scripts/iframes/video preload",()=>sourceOnly.every(x=>!externalScript.test(x)));
 check("B has poster accessible SVG semantics",()=>B.includes("poster-title")&&B.includes("poster-desc")&&B.includes('role="img"'));
-check("B has complete concept, not fake playable film",()=>B.includes("OPTIONAL VIDEO CONCEPT")&&B.includes("Not a playable"));
+check("B has complete concept, not fake playable film",()=>B.includes("OPTIONAL VIDEO CONCEPT")&&B.includes("NOT A PLAYABLE FILE"));
 check("B timed narrative six blocks",()=>[ "0–6s","6–13s","13–20s","20–27s","27–35s","35–42s"].every(t=>B.includes(t)));
 check("VTT 6 cues",()=>VTT.match(/\d\d:\d\d:\d\d\.\d{3} -->/g)?.length===6);
 check("VTT 42s exact",()=>VTT.includes("00:00:35.000 --> 00:00:42.000"));
