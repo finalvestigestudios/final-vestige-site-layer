@@ -110,5 +110,39 @@
         "https://finalvestige.com/focus/"
       ]
     }
-  ]
+  ],
+  "link_regression": {
+    "first_pass_status": "FAIL — generator silently suppressed all six safe first-party anchors due to unavailable URL API and vacuous every([]) check",
+    "repair_status": "PASS — each exact original source link restored to matching static specimen; all six issue HTML files re-fetched after the repair",
+    "fixed_link_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "verified_destinations": [
+      [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      [
+        "https://finalvestige.com/focus/"
+      ],
+      [
+        "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+      ],
+      [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      [
+        "https://finalvestige.com/focus/"
+      ]
+    ],
+    "approved_merchant_urls": 0,
+    "release": "HOLD_UNSENT"
+  }
 }
