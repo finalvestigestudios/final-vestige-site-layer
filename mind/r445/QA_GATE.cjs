@@ -40,7 +40,7 @@ function offerGuard(html){
  assert.ok(/noindex,nofollow/.test(html),'no indexing');
  const button=html.match(/<button\b[^>]*class="disabled-offer"[^>]*>/);
  assert.ok(button,'offer button absent');
- assert.ok(/\bdisabled\b/.test(button[0]),'offer button not natively disabled');
+ assert.ok(/\sdisabled(?=\s|>|=)/.test(button[0]),'offer button not natively disabled');
  assert.ok(/type="button"/.test(button[0]),'offer button submitting');
  assert.ok(/aria-describedby="commission-disclosure release-reason"/.test(button[0]),'missing describedby');
  assert.ok(/id="commission-disclosure"/.test(html),'adjacent disclosure absent');
