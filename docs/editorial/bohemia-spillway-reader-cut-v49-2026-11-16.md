@@ -1,5 +1,5 @@
 # The Spillway That Kept Its Names
-*Final Vestige Investigations · condensed reader candidate v49z · 17 November 2026 (Pacific) · INTERNAL EDITORIAL REVIEW / NOT FOR PUBLICATION*
+*Final Vestige Investigations · condensed reader candidate v49aa · 17 November 2026 (Pacific) · INTERNAL EDITORIAL REVIEW / NOT FOR PUBLICATION*
 
 **Deck:** Louisiana returned a family's land, and a court confirmed mineral revenue and interest owed on it. The surviving record names payments, judgments and settlement authorizations, but it does not contain a verified final ledger of every recipient.
 
@@ -320,6 +320,18 @@ The word *Bohemia* appears on both sets of books. That does not turn them into t
 
 More than thirty years after Louisiana began returning eligible Bohemia land, the name was still circulating through a government's accounts. But the payment stream under discussion had changed. It was not the old question of how a court judgment reached an heir. It was a new authority's question about the mineral leases it had inherited.
 
+### The first Bohemia receipt reported to LMA
+
+The earliest amount located in the new authority's public record is a small one, announced at a meeting concerned principally with airport finances. On **February 20, 2024**, six weeks after the administrative handoff took effect, Lakefront Management Authority executive director **Louis Capo** told the **Airport Committee** that the authority had received its **first payment “from Bohemia,” for $7,500**. The approved meeting minutes contain that statement on **PDF page 7 (zero-based page 6)**. It is a contemporaneous, attributable report of a receipt, not a copy of a deposit, a bank statement or a payment advice. [24][83]
+
+Crucially, the minutes do **not** identify who made the payment, its lease or tract, the reporting or production period, or whether Capo was referring to a royalty, rent, adjustment or another Bohemia-related revenue item. The word *first* refers to the LMA payment Capo reported, **not** the first money ever generated in the spillway, the first payment to any heir, or even an independently verified first royalty under the new arrangement. The authority had only recently assumed the administration of these assets. The transfer agreement, remittance notice, underlying lease, and LMA general-ledger deposit entry are the documents needed to identify the $7,500 with certainty. [24][83]
+
+The surrounding discussion offers a useful warning against uncritical arithmetic. Commissioner **Wilma Heaton** then noted possible grass-cutting cost savings from a recently negotiated memorandum, and Capo estimated those savings at **more than $516,000 annually**. That figure was an **anticipated operating saving**, not a Bohemia royalty payment, an heir-distribution amount, or evidence that the savings materialized. Neither the $7,500 reported in February 2024 nor that savings forecast should be added to the separate 2025 receipts, expectations or budgets discussed below. The February report helps locate the start of LMA's new cash-flow story; it does not reconcile that story. [83][71][72]
+
+![Original Final Vestige Studios timeline showing the administrative handoff on January 1, 2024, the first $7,500 Bohemia payment reported to LMA on February 20, 2024, and a later request to audit mineral leases in March 2025.](./assets/bohemia-first-payment-to-lma-v49aa.svg)
+
+*An administrative transfer, a reported payment, and an audit request are three separate kinds of evidence. Original Final Vestige Studios explanatory diagram, November 17, 2026. Original public-record sources: LMA July 2024 committee minutes [24], February 2024 Airport Committee minutes [83], March 2025 Finance Committee minutes [69]. The diagram is editorial vector artwork, not a photograph, bank receipt or reconstructed archival document. © 2026 Final Vestige Studios. Publication requires accessible HTML caption and actual WordPress responsive-theme inspection.*
+
 ### A prior settlement gave Algiers no claim to Bohemia assets
 
 A decade before the later Lakefront Management Authority negotiations, a different public authority had already put the name *Bohemia* into a negotiated release. On **February 13, 2012**, Southeast Louisiana Flood Protection Authority–West entered a compromise on behalf of the **Algiers Levee District** with the **Orleans Levee District**. According to the West authority's financial report for the year ended June 30, 2012, Algiers paid **$4,005,765** to settle its allocated share of outstanding Orleans district obligations and end further deductions from its property-tax distributions. In the same compromise, Algiers disclaimed any ownership interest in Orleans's non-flood assets, expressly including the **“Bohemia Properties.”** The state-posted report was released October 17, 2012; its Note H is visible on printed pages **61–62**. [80]
@@ -553,6 +565,8 @@ The source-numbered research bibliography builds on the original dossier and add
 82. **Louisiana Department of Conservation and Energy**, [*State Mineral and Energy Board: roles, nomination, lease-review and audit reports*](https://www.dce.louisiana.gov/state-mineral-and-energy-board), live official board description reviewed **November 17, 2026**. The board's **Nomination and Tract** process separates nominations/advertisement from eventual lease action; the **Audit Report** monitors late royalties, interest, penalties and underpayments through Mineral Income Division staff; the **Lease Review** process monitors state leases. Department name changed effective **October 1, 2025**. These are **general procedural descriptions**, not evidence that the board audited the specific Bohemia leases, approved the approximately 107-acre July 2024 application, or paid private heirs.
 
 ---
+
+83. **Lakefront Management Authority, Airport Committee**, [*Approved minutes of February 20, 2024*](https://nolalakefront.com/wp-content/uploads/2024/04/FEB-20-2024__Airport-Minutes_Appoved-March-28-2024.pdf), **PDF zero-based p. 6**. Original government-hosted PDF page image visually inspected **November 17, 2026**. Executive Director **Louis Capo** reported that LMA had received its first Bohemia payment of **$7,500**, without identifying payer, lease, tract, reporting period, payment type or independent bank receipt. Commissioner Heaton and Capo separately discussed projected grass-cutting savings under a negotiated MOU; Capo estimated savings of **over $516,000 annually**, not verified realized savings, royalty receipts or restitution. Meeting date is February 20; filename indicates later approval on March 28. **Limit:** the statement is a director's report of an incoming LMA payment, not evidence of a specific mineral royalty or a payment to an heir.
 
 ## Release gate for this condensed candidate
 
