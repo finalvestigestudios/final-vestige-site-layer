@@ -17,23 +17,23 @@ let n=0;const check=(label,fn)=>{fn();n++;process.stdout.write('PASS '+String(n)
 for(const [label,page] of [['A',A],['B',B],['hub',hub]]) {
   check(label+' doctype',()=>assert.match(page,/^<!doctype html>/i));
   check(label+' language',()=>assert.match(page,/<html lang="en">/));
-  check(label+' one main',()=>assert.equal((page.match(/<main\\b/g)||[]).length,1));
+  check(label+' one main',()=>assert.equal((page.match(/<main\b/g)||[]).length,1));
   check(label+' viewport',()=>assert.match(page,/name="viewport"/));
   check(label+' keyboard focus',()=>assert.match(page,/:focus-visible/));
-  check(label+' mobile media',()=>assert.match(page,/@media\\(max-width:/));
+  check(label+' mobile media',()=>assert.match(page,/@media\(max-width:/));
   check(label+' reduced motion',()=>assert.match(page,/prefers-reduced-motion/));
-  check(label+' no Javascript',()=>assert.doesNotMatch(page,/<script\\b|javascript:|onerror=|onclick=|onload=/i));
-  check(label+' no additional signup',()=>assert.doesNotMatch(page,/<form\\b|<input\\b|mailchimp|convertkit|mailerlite/i));
-  check(label+' no tracking pixel',()=>assert.doesNotMatch(page,/<iframe\\b|<img[^>]*https?:\\/\\/|googletagmanager|facebook\\.com\\/tr\\//i));
+  check(label+' no Javascript',()=>assert.doesNotMatch(page,/<script\b|javascript:|onerror=|onclick=|onload=/i));
+  check(label+' no additional signup',()=>assert.doesNotMatch(page,/<form\b|<input\b|mailchimp|convertkit|mailerlite/i));
+  check(label+' no tracking pixel',()=>assert.doesNotMatch(page,/<iframe\b|<img[^>]*https?:\/\/|googletagmanager|facebook\.com\/tr\//i));
 }
 for(const [label,page] of [['A',A],['B',B]]) {
-  check(label+' native disabled',()=>assert.match(page,/<button[^>]*\\bdisabled\\b[^>]*>/));
+  check(label+' native disabled',()=>assert.match(page,/<button[^>]*\bdisabled\b[^>]*>/));
   check(label+' adjacent disclosure',()=>{const d=page.indexOf('Potential affiliate disclosure:');const b=page.indexOf('<button',d);assert.ok(d>0&&b>d&&b-d<530)});
-  check(label+' no merchant active links',()=>assert.doesNotMatch(page,/<a\\b[^>]*href=["']https?:\\/\\/(?:zen12|inspire3|affiliates\\.inspire3|hypnosislive|brainwaveshots)\\./i));
-  check(label+' no prices or coupons',()=>assert.doesNotMatch(page,/\\$[0-9]|coupon code|discount ends tonight/i));
+  check(label+' no merchant active links',()=>assert.doesNotMatch(page,/<a\b[^>]*href=["']https?:\/\/(?:zen12|inspire3|affiliates\.inspire3|hypnosislive|brainwaveshots)\./i));
+  check(label+' no prices or coupons',()=>assert.doesNotMatch(page,/\$[0-9]|coupon code|discount ends tonight/i));
   check(label+' product caution',()=>assert.match(page,/no independent product-specific trial/i));
   check(label+' free route',()=>assert.match(page,/https:\/\/finalvestige.com\/focus\//));
-  check(label+' no autoplay or hidden videoplayer',()=>assert.doesNotMatch(page,/autoplay|<video\\b|<audio\\b/i));
+  check(label+' no autoplay or hidden videoplayer',()=>assert.doesNotMatch(page,/autoplay|<video\b|<audio\b/i));
 }
 check('control absent film module',()=>assert.doesNotMatch(A,/id="film-concept"/));
 check('B film concept present',()=>assert.match(B,/id="film-concept"/));
