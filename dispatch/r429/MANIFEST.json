@@ -1,0 +1,167 @@
+{
+  "sprint": "R429",
+  "as_of_utc": "2026-11-17T18:33:10Z",
+  "origin_pr": 175,
+  "origin_issue": 174,
+  "source_ref": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stacked_on_draft_pr": 2896,
+  "status": "HOLD_UNSENT_NO_WORDPRESS_WRITES",
+  "mixer": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_blocked": [
+      3,
+      5
+    ]
+  },
+  "transport_scope": "Offline Gutenberg post-body specimens only; WordPress's email HTML and excerpt/preheader mapping are NOT verified",
+  "live_wordpress_read_only": {
+    "newsletter_on": true,
+    "auto_post_emails_off": true,
+    "email_format": "full",
+    "reported_total": 3,
+    "reported_confirmed": 3,
+    "reported_unconfirmed": 2,
+    "reader_followers": 3,
+    "direct_email_followers": 0,
+    "unique_receiving_email_identities": "UNKNOWN",
+    "fieldbook_welcome": "CONFIGURED_NOT_RECEIVED_VERIFIED",
+    "native_jetpack_preview": "NOT_WITNESSED",
+    "publisher_postal_and_unsubscribe": "NOT_VERIFIED"
+  },
+  "publication_prohibited": true,
+  "sending_prohibited": true,
+  "merchant": {
+    "named_email_promotion_permission": false,
+    "issued_link": false,
+    "approved_warmup_live": false,
+    "exact_sku_and_checkout_confirmed": false,
+    "price_and_refund_current_for_referral": false
+  },
+  "sources": [
+    {
+      "path": "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md",
+      "github_blob_sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8"
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md",
+      "github_blob_sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14"
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md",
+      "github_blob_sha": "aeeef34efea0cc281f69901488e4501fea851245"
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md",
+      "github_blob_sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca"
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md",
+      "github_blob_sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc"
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md",
+      "github_blob_sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355"
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/manifest.json",
+      "github_blob_sha": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00"
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "subject": "The mind is not a camera",
+      "preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "kind": "editorial",
+      "status": "SOURCE_SPECIMEN_HOLD_NOT_WORDPRESS_DRAFT",
+      "proposed_post_status": "draft",
+      "send_subscription": false,
+      "preheader_jetpack_email_header_verified": false,
+      "gutenberg_source_path": "dispatch/r429/issue_01_wp_blocks.html",
+      "primary_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "all_href_links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ]
+    },
+    {
+      "number": 2,
+      "subject": "Before hypnosis had a name",
+      "preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "kind": "editorial",
+      "status": "SOURCE_SPECIMEN_HOLD_NOT_WORDPRESS_DRAFT",
+      "proposed_post_status": "draft",
+      "send_subscription": false,
+      "preheader_jetpack_email_header_verified": false,
+      "gutenberg_source_path": "dispatch/r429/issue_02_wp_blocks.html",
+      "primary_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "all_href_links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ]
+    },
+    {
+      "number": 3,
+      "subject": "The twelve-minute meditation question",
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "kind": "commercial-review-pending",
+      "status": "SOURCE_SPECIMEN_HOLD_NOT_WORDPRESS_DRAFT",
+      "proposed_post_status": "draft",
+      "send_subscription": false,
+      "preheader_jetpack_email_header_verified": false,
+      "gutenberg_source_path": "dispatch/r429/issue_03_wp_blocks.html",
+      "primary_cta": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]",
+      "all_href_links": [
+        "https://finalvestige.com/focus/"
+      ]
+    },
+    {
+      "number": 4,
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "kind": "editorial",
+      "status": "SOURCE_SPECIMEN_HOLD_NOT_WORDPRESS_DRAFT",
+      "proposed_post_status": "draft",
+      "send_subscription": false,
+      "preheader_jetpack_email_header_verified": false,
+      "gutenberg_source_path": "dispatch/r429/issue_04_wp_blocks.html",
+      "primary_cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "all_href_links": [
+        "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+      ]
+    },
+    {
+      "number": 5,
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "Three questions that matter more than an impressive promise.",
+      "kind": "commercial-review-pending",
+      "status": "SOURCE_SPECIMEN_HOLD_NOT_WORDPRESS_DRAFT",
+      "proposed_post_status": "draft",
+      "send_subscription": false,
+      "preheader_jetpack_email_header_verified": false,
+      "gutenberg_source_path": "dispatch/r429/issue_05_wp_blocks.html",
+      "primary_cta": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+      "all_href_links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ]
+    },
+    {
+      "number": 6,
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "kind": "editorial",
+      "status": "SOURCE_SPECIMEN_HOLD_NOT_WORDPRESS_DRAFT",
+      "proposed_post_status": "draft",
+      "send_subscription": false,
+      "preheader_jetpack_email_header_verified": false,
+      "gutenberg_source_path": "dispatch/r429/issue_06_wp_blocks.html",
+      "primary_cta": "https://finalvestige.com/focus/",
+      "all_href_links": [
+        "https://finalvestige.com/focus/"
+      ]
+    }
+  ]
+}
