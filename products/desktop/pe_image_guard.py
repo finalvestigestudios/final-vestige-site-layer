@@ -12,6 +12,8 @@ import stat
 import struct
 from pathlib import Path
 
+from pe_digest_custody_r493 import verify_pe_digest_stream
+
 
 class PEFormatError(ValueError):
     """The candidate does not meet the desktop suite PE32+ shape contract."""
@@ -64,7 +66,7 @@ def _power_of_two(value: int) -> bool:
     return value > 0 and value & (value - 1) == 0
 
 
-def verify_amd64_pe(path: str | Path) -> None:
+def verify_amd64_pe(path: str | Path, *, expected_sha256: str | None = None) -> None:
     """Reject truncated, non-AMD64, DLL/driver and malformed executable images.
 
     Deliberately restrict the expected PyInstaller --windowed output to normal
@@ -196,6 +198,11 @@ def verify_amd64_pe(path: str | Path) -> None:
                     raise PEFormatError("Overlapping PE section extents")
             if not backed_entry:
                 raise PEFormatError("Entry point is not backed by executable section bytes")
+            if expected_sha256 is not None:
+                # Bind the structural PE verdict to the EXACT manifest bytes on
+                # this same already-open descriptor; a pathname can be replaced
+                # between independent format and checksum passes.
+                verify_pe_digest_stream(stream, metadata, expected_sha256)
     except PEFormatError:
         raise
     except Exception:
