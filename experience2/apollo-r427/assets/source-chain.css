@@ -1,0 +1,12 @@
+/* Scoped source custody header. Never hides historical content; no animations or external assets. */
+.fv-r427{box-sizing:border-box;min-width:0;isolation:isolate}
+.fv-r427 *,.fv-r427 *::before,.fv-r427 *::after{box-sizing:inherit}
+.fv-r427__context{background:#181914;color:#f6efdf;padding:clamp(20px,4vw,64px);font:16px/1.65 system-ui,sans-serif;border-block:2px solid #b99659;overflow-wrap:anywhere}
+.fv-r427__context p{max-width:80ch;margin:1rem 0}
+.fv-r427__context h2{font:400 clamp(1.65rem,3.5vw,3.1rem)/1.17 Georgia,serif;max-width:22ch;color:#fff3dc;margin:.6rem 0 1rem}
+.fv-r427__context .fv-r427__eyebrow{font:bold .8rem/1.6 ui-monospace,monospace;letter-spacing:.08em;color:#e8c887}
+.fv-r427__context a{color:#f1cb8a;text-underline-offset:4px}
+.fv-r427 :focus-visible{outline:3px solid #f1cb8a;outline-offset:4px}
+@media(forced-colors:active){.fv-r427__context{border:2px solid CanvasText}}
+@media print{.fv-r427__context{color:#000;background:#fff;border-color:#333}.fv-r427__context h2,.fv-r427__context a{color:#000}}
+@media(prefers-reduced-motion:reduce){.fv-r427 *, .fv-r427 *::before,.fv-r427 *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
