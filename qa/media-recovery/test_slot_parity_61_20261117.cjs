@@ -2,7 +2,7 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const crypto=require('node:crypto');
-const {blobSha,loadPinned,inventory,sourceMatches,assess,PINNED}=require('./slot_parity_61_20261117.cjs');
+const {blobSha,loadPinned,inventory,sourceMatches,validRedirectChain,assess,PINNED}=require('./slot_parity_61_20261117.cjs');
 const batches=[52,59,49,56,54,49,31,5], groupSizes=[8,8,8,8,8,8,8,5];
 function fixture(){
  let id=1000,num=0;
@@ -103,3 +103,23 @@ bad('reject HTTP 204 no-content response masquerading as a decoded image',c=>c.a
 bad('reject HTTP 206 partial-content without a range-transfer ledger',c=>c.after[0].slots[0].http_status=206);
 bad('reject HTTP 201 created response as a cold image GET',c=>c.after[0].slots[0].http_status=201);
 bad('reject zero transferred bytes for alleged cold decoded image',c=>c.after[0].slots[0].wire_bytes=0);
+
+test('allow documented HTTP 302 chain with unchanged authored DOM image',()=>{
+ const f=fixture(),inv=inventory(f),id=[...inv.posts.keys()][0],c=capture(inv,[id]),s=c.after[0].slots[0];
+ s.request_url='https://cdn.example.test/final.jpg';s.redirect_chain=[{from_url:s.current_src,to_url:s.request_url,http_status:302}];
+ assert.equal(assess(f,c).status,'MEASURED_SUBSET_NOT_SITEWIDE');
+});
+test('same image URL with no redirect remains accepted',()=>assert.equal(validRedirectChain('https://a.test/a','https://a.test/a'),true));
+test('changed actual response URL requires a chain',()=>assert.equal(validRedirectChain('https://a.test/a','https://b.test/b'),false));
+test('reject unrelated hop origin',()=>assert.equal(validRedirectChain('https://a.test/a','https://b.test/b',[{from_url:'https://x.test/x',to_url:'https://b.test/b',http_status:301}]),false));
+test('reject redirect to different endpoint than final response',()=>assert.equal(validRedirectChain('https://a.test/a','https://b.test/b',[{from_url:'https://a.test/a',to_url:'https://c.test/c',http_status:302}]),false));
+test('reject non-redirect hop status 200',()=>assert.equal(validRedirectChain('https://a.test/a','https://b.test/b',[{from_url:'https://a.test/a',to_url:'https://b.test/b',http_status:200}]),false));
+test('reject insecure redirect to HTTP',()=>assert.equal(validRedirectChain('https://a.test/a','http://b.test/b',[{from_url:'https://a.test/a',to_url:'http://b.test/b',http_status:302}]),false));
+test('reject seven-hop chain',()=>assert.equal(validRedirectChain('https://a.test/0','https://a.test/7',Array.from({length:7},(_,i)=>({from_url:'https://a.test/'+i,to_url:'https://a.test/'+(i+1),http_status:302}))),false));
+test('reject redirect cycle',()=>assert.equal(validRedirectChain('https://a.test/0','https://a.test/2',[{from_url:'https://a.test/0',to_url:'https://a.test/1',http_status:301},{from_url:'https://a.test/1',to_url:'https://a.test/0',http_status:302},{from_url:'https://a.test/0',to_url:'https://a.test/2',http_status:302}]),false));
+test('shared request ID with inconsistent redirects fails',()=>{
+ const {parts,c}=duplicateSourceCapture();
+ for(const s of c.after[0].slots.slice(0,2)){s.request_url='https://cdn.example.test/final.jpg';s.redirect_chain=[{from_url:s.current_src,to_url:s.request_url,http_status:302}];}
+ c.after[0].slots[1].redirect_chain[0].http_status=301;
+ assert.throws(()=>assess(parts,c),/Conflicting shared network request/);
+});
