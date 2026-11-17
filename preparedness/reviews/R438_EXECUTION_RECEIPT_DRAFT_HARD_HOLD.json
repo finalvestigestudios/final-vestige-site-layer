@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "issue": 136,
+  "revenue_issue": 820,
+  "release_state": "DRAFT_HARD_HOLD",
+  "created_date": "2026-11-17",
+  "parent_pr": 2877,
+  "parent_sha": "d3420cd411ee2efaebb65bc83ff9ba0787091fc0",
+  "pr": 2885,
+  "source": {
+    "path": "preparedness/tools/r438_css_dependency_custody_gate.py",
+    "git_blob": "4e0946681b77b92323bb6577baeabe0e6a874095",
+    "sha256": "1b360948736b6d6a9f1846cc659eec697b0175f3fa5d73c82ea2a578b545c585"
+  },
+  "tests": {
+    "path": "preparedness/tests/test_r438_css_dependency_custody_gate.py",
+    "git_blob": "eb6f28f92b4099b2652bd64d7bb4b4676c40c391",
+    "sha256": ""
+  },
+  "local_python": {
+    "new_passed": 66,
+    "combined_passed": 562,
+    "combined_subset_passed": 448,
+    "compile": "PASS",
+    "missing_original_cli_exit": 2,
+    "details": "Reassembled exact R430–R438 code/test modules from earlier receipts. Full assembled unittest discover: 562 tests in 13.153 seconds, OK. No native article build/exports."
+  },
+  "upstream": {
+    "seven_claude_branches_and_two_shelter_descendants": "9/9 IDENTICAL 0 ahead/behind",
+    "qa_pr_157": "7d1ae6b8ef93d10cfb6810987672360885e9c1aa",
+    "fixture_pr_169": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+    "repair_pr_2205": "bbcf1859768624c611df4abadc564c18247cf32a",
+    "home_pr_1689": "f55c36b6598eec558dd8bb24e4c8988becc51be0"
+  },
+  "original_inventory": {
+    "articles": 35,
+    "source_ids": 203,
+    "source_occurrences": 280,
+    "shared_url_groups": 17,
+    "source_disputes": 5,
+    "unselected_forks": 9
+  },
+  "authentic_full_checkout": "NOT_AVAILABLE",
+  "native_validate_build": "NOT_RUN",
+  "actual_wp_private_exports": "NOT_SUPPLIED",
+  "browser_print_qd": "NOT_PERFORMED",
+  "qualified_safety_approval": false,
+  "claimed_paid_orders": null,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "publication_approved": false,
+  "paid_offer_approved": false
+}
