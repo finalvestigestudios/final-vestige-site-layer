@@ -1,0 +1,36 @@
+{
+  "sprint": "R413",
+  "status": "HOLD_UNSENT",
+  "candidate_issue": 3,
+  "adopted": false,
+  "planned_issues": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_pending": [
+      3,
+      5
+    ]
+  },
+  "canonical": "PR175 unchanged",
+  "last_stacked": "PR2811 unchanged",
+  "all_claims_tested_with_vendor_product": false,
+  "publisher_postal_address_verified": false,
+  "jetpack_unsubscribe_verified": false,
+  "jetpack_native_preview_seen": false,
+  "received_welcome_confirmed": false,
+  "named_inspire3_email_permission_verified": false,
+  "issued_earning_link_verified": false,
+  "live_authorized_guide_verified": false,
+  "verified_eligible_recipients": null,
+  "paid_orders_verified": null,
+  "realized_net_revenue_per_1000_human_sessions": null,
+  "send_allowed": false,
+  "posts_published": false,
+  "merchant_links_active": false,
+  "conversion_attribution_live": false,
+  "no_new_platform": true
+}
