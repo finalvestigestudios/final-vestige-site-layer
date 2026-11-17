@@ -1,0 +1,148 @@
+{
+  "release": "HOLD_UNSENT",
+  "master_pr": 175,
+  "sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "tests_passed": 61,
+  "originals": [
+    {
+      "num": 1,
+      "sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "subject": "The mind is not a camera",
+      "pre": "What an old record can teach us about the difference between seeing and knowing.",
+      "kind": "editorial",
+      "urls": []
+    },
+    {
+      "num": 2,
+      "sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "subject": "Before hypnosis had a name",
+      "pre": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "kind": "editorial",
+      "urls": []
+    },
+    {
+      "num": 3,
+      "sha": "aeeef34efea0cc281f69901488e4501fea851245",
+      "subject": "The twelve-minute meditation question",
+      "pre": "An honest way to evaluate a short audio practice before you spend anything.",
+      "kind": "commercial-review-pending",
+      "urls": []
+    },
+    {
+      "num": 4,
+      "sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "pre": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "kind": "editorial",
+      "urls": []
+    },
+    {
+      "num": 5,
+      "sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "subject": "Before you press play on a hypnosis audio",
+      "pre": "Three questions that matter more than an impressive promise.",
+      "kind": "commercial-review-pending",
+      "urls": []
+    },
+    {
+      "num": 6,
+      "sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "subject": "What did seven days of attention reveal?",
+      "pre": "A small experiment, a useful notebook, and no miracle claims.",
+      "kind": "editorial",
+      "urls": []
+    }
+  ],
+  "permission": {
+    "email": false,
+    "merchant": false,
+    "address": false,
+    "unsubscribe": false,
+    "actual_received_preview": false
+  },
+  "assertions": {
+    "canonical_html_link_count_exact": "PASS",
+    "all_verified_links_first_party": "PASS",
+    "zero_active_merchant_links": "PASS",
+    "regression": "Initial offline generator attempted URL validation with an unavailable runtime API; that incorrectly dropped all safe first-party links. Fixed and checked issue-by-issue against exact canonical Markdown source. No changes to original campaign.",
+    "real_jetpack_preview": false
+  },
+  "issue_link_results": [
+    {
+      "issue": 1,
+      "link_count": 1,
+      "links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ]
+    },
+    {
+      "issue": 2,
+      "link_count": 1,
+      "links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ]
+    },
+    {
+      "issue": 3,
+      "link_count": 1,
+      "links": [
+        "https://finalvestige.com/focus/"
+      ]
+    },
+    {
+      "issue": 4,
+      "link_count": 1,
+      "links": [
+        "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+      ]
+    },
+    {
+      "issue": 5,
+      "link_count": 1,
+      "links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ]
+    },
+    {
+      "issue": 6,
+      "link_count": 1,
+      "links": [
+        "https://finalvestige.com/focus/"
+      ]
+    }
+  ],
+  "link_regression": {
+    "first_pass_status": "FAIL — generator silently suppressed all six safe first-party anchors due to unavailable URL API and vacuous every([]) check",
+    "repair_status": "PASS — each exact original source link restored to matching static specimen; all six issue HTML files re-fetched after the repair",
+    "fixed_link_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "verified_destinations": [
+      [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      [
+        "https://finalvestige.com/focus/"
+      ],
+      [
+        "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+      ],
+      [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      [
+        "https://finalvestige.com/focus/"
+      ]
+    ],
+    "approved_merchant_urls": 0,
+    "release": "HOLD_UNSENT"
+  }
+}
