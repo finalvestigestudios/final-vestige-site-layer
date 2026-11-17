@@ -79,6 +79,7 @@ with sync_playwright() as p:
     page,ctx=page_setup(browser,390)
     page.emulate_media(media='print')
     assert_check('print-css',page.evaluate('getComputedStyle(document.querySelector(".fv-r428")).backgroundColor')=='rgb(255, 255, 255)')
+    assert_check('print-limits-actually-visible',page.locator('.fv-r428__print-only').first.evaluate('(el)=>el.getBoundingClientRect().height > 0'))
     page.screenshot(path=str(SCREENS/'print.png'),full_page=True)
     ctx.close()
 
