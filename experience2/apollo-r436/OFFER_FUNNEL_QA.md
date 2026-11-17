@@ -1,0 +1,10 @@
+# R436 Offer → Funnel → Blocker → Change → Evidence → Owner
+
+| Priority / Offer | Funnel step | Blocker | Safe change / experiment | Evidence status | Owner |
+|---|---|---|---|---|---|
+| P0 Original educator evidence dossier (candidate, NOT verified SKU) | Confirmed paid checkout and delivery | Current payable SKU, original-IP rights manifest, fee/refund reconciliation, fulfillment not authenticated | Founder and Claude audit current merchant catalog and verify delivery before any paid CTA | **HOLD**, no confirmed order | Founder / Claude Commerce |
+| P1 Verified published Grok Apollo long-form/Shorts | Unique `asset_id` / `utm_campaign` → qualified human visit | No verified real published Apollo asset, approved destination or qualified denominator | Grok/Praxxis inventory via existing TASK-008; Claude checks existing privacy-preserving UTM measurement | **UNKNOWN**, no attribution claimed | Grok / Praxxis / Claude |
+| P1 Source-backed Apollo evidence | Landing → single free investigation CTA | PR #158 photos may be confused with telemetry; R435 crew photo `S67-19766` ID unverified | Separate 1966–67 photos, April 1967 official Board, 2017 memorial; replace unsupported identifier; retain the *one* already-visible CTA | **22/22 local contract + 72/72 offline Chromium pass**; installed staging/axe/LCP/CLS **HOLD** | Apollo / independent Site QA |
+| P0 Net monetization | Verified order/settlement − refunds/fees → net / 1,000 qualified humans (7/30-day cohorts) | No merchant-confirmed orders, attribution, fees, refunds or human denominators | Reconcile only approved source-of-truth records, no new tracking scripts | **NOT COMPUTABLE**, not zero | Claude analytics / Commerce |
+
+**Conversion hypothesis, not result:** clearer evidence-source categories reduce educator distrust and improve intent to explore an original teacher kit. A clicked NASA source, a pageview, a confirmed lead and a paid order remain separate events. No unsolicited signup, affiliate activation, social post or spend. This lane does not edit Grok/Praxxis scripts or Claude's analytics.
