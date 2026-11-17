@@ -61,6 +61,10 @@ jobs:
         run: |
           python -B -W error -m unittest discover -s products/desktop/tests -p test_windows_source_start_custody_r491.py
           python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_windows_source_start_custody_r491.py
+      - name: R492 exact EOF-terminated Windows source authorization (both Python modes)
+        run: |
+          python -B -W error -m unittest discover -s products/desktop/tests -p test_windows_source_protocol_r492.py
+          python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_windows_source_protocol_r492.py
       - name: Prove independent CI custody rules in normal and optimized mode
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p test_independent_ci_r385.py
