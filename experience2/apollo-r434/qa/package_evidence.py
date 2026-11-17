@@ -5,7 +5,7 @@ import hashlib,json
 HERE=Path(__file__).resolve().parents[1]
 ROOT=HERE.parent.parent
 OUT=HERE/'QA/Apollo_R434_Local_Evidence.zip'
-EXCLUDE={'QA/Apollo_R434_Local_Evidence.zip'}
+EXCLUDE={'QA/Apollo_R434_Local_Evidence.zip','QA/package-report.json'}
 
 def build(target):
     items=[]
