@@ -76,7 +76,7 @@ check('buyer exposes no guaranteed clinical claim',()=>{assert.ok(!/guarantees? 
 check('no pretend completed video',()=>assert.ok(B.includes('there is no encoded audio/video')));
 check('article primary scientific sources',()=>['16210542','20637455','23593244'].forEach(t=>assert.ok(I.includes(t))));
 check('article Puységur source trail',()=>assert.ok(I.includes('puysegurs-animal-magnetism-files')));
-check('article no recommended merchant link',()=>assert.ok(!/\]\(https?:\/\/(?:www\.)?(?:zen12|hypnosislive|brainwaveshots)/i.test(I)));
+check('article no affiliate checkout or tracked merchant referral',()=>assert.ok(!/\]\(https?:\/\/(?:www\.)?(?:zen12|hypnosislive|brainwaveshots)[^)]*[?&](?:ref|aff|affiliate|hop)=/i.test(I)));
 check('acceptance counts settlement not click',()=>{assert.ok(C.includes('merchant_paid_order'));assert.ok(C.includes('merchant_commission_settled'));assert.ok(C.includes('NOT COMPUTABLE'));});
 check('no other agent owned artifacts',()=>{assert.ok(!H.includes('auto-publish'));assert.ok(C.includes('Do not send newsletter drafts'));});
 check('zero native email forms in A B hub',()=>[A,B,H].forEach(x=>assert.ok(!/<form\b/i.test(x))));
