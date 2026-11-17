@@ -7,26 +7,30 @@
 - Exact isolated branch: `mind-r435-puysegur-hypnosis-evidence-commerce-20261116`.
 - Initial source commit `d32029b614c837749b47a73684079e0b1f25cffd`.
 - Verifier correction commit `6dff2de78bc39e118656f4c1b5b4ba037dffc46f`.
-- Source contents were **reread from the actual GitHub branch** with `fetch_file` after the correction. The isolated V8 inspection then passed **60 / 60 static assertions**. These are source-level tests, not a native Node or website integration run.
+- Source contents were **reread from the actual GitHub branch** with `fetch_file` after the correction. The isolated V8 inspection then passed **63 / 63 static assertions**. These are source-level tests, not a native Node or website integration run.
 - Source/article research covers live FV Puységur archives, existing Focus, official Inspire3/Zen12/Hypnosis Live/Brainwave Shots exact product pages, peer-reviewed research and FTC guidance (links below). No unapproved merchant links or product efficacy claims activated.
 - Claim table: **34 entries, 16 cited evidence URLs**; commercial checklist: **28/28 HOLD**.
 - Buyer A/B copy: identical substantive buyer sections in both drafts by construction; B adds an *optional, non-playable* poster/storyboard/transcript/VTT concept, not a real video or completed A/B test. Six WebVTT cues end at **00:00:42.000**.
 - The hub is HTML source only, not a saved WordPress CMS draft or a published `/mind/` route.
-- GitHub static tests checked HTML5, lang, mobile viewport, noindex, CSS keyboard focus and reduced-motion hooks, absence of active scripts/iframes/forms/video, absent earning link, inactive purchase control, prospective FTC disclosure and copy-limit structure.
-- An earlier source inspection failed four overly broad checks that treated the noncommercial navigation text “Buyer questions” as an active purchase anchor and demanded numeric `12 levels` despite accurate “twelve levels.” Those verifier checks were narrowed in the new commit; **60/60 subsequently passed**. Do not report the earlier failing run as a success.
+- GitHub static tests checked HTML5, lang, mobile viewport, noindex, CSS keyboard focus and reduced-motion hooks, absence of active scripts/iframes/forms/video, absent earning link AND absent even ordinary clickable merchant links, inactive purchase control, prospective FTC disclosure and copy-limit structure.
+- An earlier source inspection failed four overly broad checks that treated the noncommercial navigation text “Buyer questions” as an active purchase anchor and demanded numeric `12 levels` despite accurate “twelve levels.” Those verifier checks were narrowed in the new commit; **63/63 subsequently passed**. Do not report the earlier failing run as a success.
 
 ## Exact source blob ledger from passing read
 
 | Path under mind/r435/ | GitHub blob SHA |
 |---|---|
 | THE_SLEEPING_WITNESS.md | `debeb16fbab39f40dcf0ca56499e9c540a58e0c0` |
-| ZEN12_A_TEXT.html | `18c8effa164e45e316b3041ab75f3eb2682c5867` |
-| ZEN12_B_FILM_CONCEPT.html | `f491f6f6ff7b6d45c53923d9bc5acc06803c67b0` |
+| ZEN12_A_TEXT.html | `3296e0f41ac8adddb8337a69ee871905080b9133` |
+| ZEN12_B_FILM_CONCEPT.html | `773dd573b1dc4a02376ac8fffd3d6175d851d5c9` |
 | MIND_HUB_WORDPRESS_SOURCE_ONLY.html | `618da3ae6798f4a49d7c2a3601d1222cf1dad325` |
 | film.vtt | `fab613d958d4d2e57cfb29e23e9d309d69b25f4f` |
 | CLAIM_SOURCE_PERMISSION_MATRIX.json | `ae2084a0bd50b36f8565da54f9d0adf433fecb5e` |
 | CONVERSION_ACCEPTANCE.md | `e03515df778ebecd421a0f2293dc793f5984cc85` |
-| verify.mjs | `c5b50099230a6fed29f10d09682572d9752eee4c` |
+| verify.mjs | `d132c7f572514328e354816be8ce6d978fc44c84` |
+
+## Commercial-link hardening after initial review
+
+Two initial buyer-guide versions cited public Zen12 seller pages as clickable links. This was not an affiliate referral, but it conflicted with the founder's stricter mandate to withhold commercial product links entirely. Both A/B drafts were updated to cite the precise seller URL as plain text rather than clickable merchant href. The verifier now rejects all active Inspire3, Zen12, Hypnosis Live and Brainwave Shots hrefs, even non-earning links. **Final read-only exact-GitHub-source execution: 63/63 static assertions pass**, 28/28 release gates HOLD. Earlier 60/60 check was superseded by this stronger test.
 
 ## Explicitly NOT TESTED / release blockers
 
