@@ -1,0 +1,481 @@
+{
+  "version": "mind-r455",
+  "checked_date": "2026-11-17",
+  "status": "SOURCE_ONLY_UNPUBLISHED_HARD_HOLD",
+  "scope": "Mind and Perception / ethically vetted Inspire3 presell",
+  "sources": {
+    "inspire3": "https://inspire3.com/",
+    "zenAbout": "https://zen12.com/about",
+    "zenOffer": "https://zen12.com/secret/",
+    "zenMain": "https://zen12.com/",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "totalFocus": "https://hypnosislive.com/mental-skills/total-focus",
+    "hypFaq": "https://hypnosislive.com/faq",
+    "focusShot": "https://brainwaveshots.com/focus-shot",
+    "coue": "https://www.gutenberg.org/ebooks/27203",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "freeFocus": "https://finalvestige.com/focus/",
+    "hypnosis2026": "https://doi.org/10.1002/ejp.70369",
+    "nccih": "https://www.nccih.nih.gov/health/hypnosis",
+    "hypnosis2024": "https://doi.org/10.3389/fpsyg.2023.1330238",
+    "depression2024": "https://pubmed.ncbi.nlm.nih.gov/39388785/",
+    "sleep2023": "https://pubmed.ncbi.nlm.nih.gov/37399315/",
+    "beats2023": "https://doi.org/10.1371/journal.pone.0286023",
+    "ftcEndorsement": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftcHealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  },
+  "commercial_status": {
+    "final_vestige_inspire3_partner_approved": null,
+    "permission_evidence": null,
+    "approved_sku": null,
+    "authorized_channels": null,
+    "issued_earning_url": null,
+    "verified_refund_terms": null,
+    "commission_amount": null,
+    "verified_paid_orders": null,
+    "verified_net_revenue_per_1000_qualified_human_sessions": null,
+    "owned_verified_payable_mind_sku": null,
+    "reason": "Generic Inspire3 affiliate public page plus consumer promotional emails and generic Refersion pending notice do not establish publisher rights."
+  },
+  "claims": [
+    {
+      "id": "ZEN12_FORMAT",
+      "claim": "twelve-minute sessions",
+      "status": "seller_feature",
+      "source_urls": [
+        "https://zen12.com/about"
+      ],
+      "limitation": "Only the duration is described; no equivalence to longer meditation"
+    },
+    {
+      "id": "ZEN12_LEVELS",
+      "claim": "twelve levels, 48 MP3s in a separate promotional package",
+      "status": "seller_feature",
+      "source_urls": [
+        "https://zen12.com/secret/"
+      ],
+      "limitation": "Only the specific secret landing context; no verified referred SKU"
+    },
+    {
+      "id": "ZEN12_HOUR_EQUIVALENCE",
+      "claim": "twelve minutes confers an hour's meditation benefit",
+      "status": "seller_claim_unsupported",
+      "source_urls": [
+        "https://zen12.com/about"
+      ],
+      "limitation": "Do not repeat as outcome"
+    },
+    {
+      "id": "ZEN12_RELAX_AUTOMATIC",
+      "claim": "brainwave sounds automatically induce relaxation",
+      "status": "seller_claim_unsupported",
+      "source_urls": [
+        "https://zen12.com/about"
+      ],
+      "limitation": "No product-specific blinded trial"
+    },
+    {
+      "id": "ZEN12_PRICE",
+      "claim": "live promotional checkout amount and discount code",
+      "status": "time_sensitive_unverified",
+      "source_urls": [
+        "https://zen12.com/secret/"
+      ],
+      "limitation": "Do not propagate; offer can change and affiliate authorization absent"
+    },
+    {
+      "id": "ZEN12_REFUND",
+      "claim": "refund and support of exact referred SKU",
+      "status": "time_sensitive_unverified",
+      "source_urls": [
+        "https://zen12.com/secret/"
+      ],
+      "limitation": "Marketing guarantee insufficient to authenticate actual referred checkout"
+    },
+    {
+      "id": "ZEN12_PARTNER",
+      "claim": "Final Vestige Inspire3 publisher accepted",
+      "status": "permission_unverified",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "limitation": "No named acceptance or issued earning URL; Aug 2026 generic Refersion pending != approval"
+    },
+    {
+      "id": "ZEN12_CHANNEL",
+      "claim": "Final Vestige WEB/EMAIL/SOCIAL approved",
+      "status": "permission_unverified",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "limitation": "Require written enumerated channel rights"
+    },
+    {
+      "id": "ZEN12_EARNING_URL",
+      "claim": "unique authorized publisher URL exists",
+      "status": "permission_unverified",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "limitation": "Do not synthesize merchant URL"
+    },
+    {
+      "id": "ZEN12_SETTLEMENT",
+      "claim": "publisher paid confirmed Zen12 commission",
+      "status": "not_verified",
+      "source_urls": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "limitation": "No settlement or merchant-confirmed order"
+    },
+    {
+      "id": "TOTALFOCUS_FORMAT",
+      "claim": "Total Focus advertised 33 mins / 47 MB",
+      "status": "seller_feature",
+      "source_urls": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "limitation": "Format, not focus outcome"
+    },
+    {
+      "id": "TOTALFOCUS_FOCUS",
+      "claim": "limitless focus and brain reprogramming",
+      "status": "seller_claim_unsupported",
+      "source_urls": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "limitation": "Do not adopt promotional promise"
+    },
+    {
+      "id": "TOTALFOCUS_RETURNS",
+      "claim": "seller FAQ 14 days max 5 sessions/year",
+      "status": "seller_policy",
+      "source_urls": [
+        "https://hypnosislive.com/faq"
+      ],
+      "limitation": "Check actual SKU checkout and order policy; distinguish seller FAQ from guarantee"
+    },
+    {
+      "id": "FOCUSSHOT_FORMAT",
+      "claim": "15- and 30-minute tracks and bonus versions",
+      "status": "seller_feature",
+      "source_urls": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "limitation": "Not proof of benefits"
+    },
+    {
+      "id": "FOCUSSHOT_EFFICACY",
+      "claim": "instant laser-sharp focus",
+      "status": "seller_claim_unsupported",
+      "source_urls": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "limitation": "No product-specific controlled evidence"
+    },
+    {
+      "id": "FOCUSSHOT_REFUND",
+      "claim": "1-year refund appears on seller page",
+      "status": "seller_policy",
+      "source_urls": [
+        "https://brainwaveshots.com/focus-shot"
+      ],
+      "limitation": "Not an independently verified referral or product contract"
+    },
+    {
+      "id": "CLINICAL_HYPNOSIS_PAIN",
+      "claim": "2026 review: modest pooled reduction vs nonactive controls, did not clearly exceed active",
+      "status": "independent_research",
+      "source_urls": [
+        "https://doi.org/10.1002/ejp.70369"
+      ],
+      "limitation": "Clinical pain outcomes, not productivity or retail efficacy"
+    },
+    {
+      "id": "CLINICAL_HYPNOSIS_UMBRELLA",
+      "claim": "2024 overview 49 meta-analyses/261 RCTs",
+      "status": "independent_research",
+      "source_urls": [
+        "https://doi.org/10.3389/fpsyg.2023.1330238"
+      ],
+      "limitation": "Heterogeneous outcomes; not a named-product trial"
+    },
+    {
+      "id": "HYPNOSIS_DEPRESSION",
+      "claim": "2024 review insufficient evidence for clinical recommendation",
+      "status": "independent_research",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/39388785/"
+      ],
+      "limitation": "Do not use hypnosis as replacement for care"
+    },
+    {
+      "id": "HYPNOSIS_SLEEP",
+      "claim": "2023 review of 44 studies mixed outcomes",
+      "status": "independent_research",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/37399315/"
+      ],
+      "limitation": "Not product-specific and not universal"
+    },
+    {
+      "id": "EEG_BEATS",
+      "claim": "2023 review of 14 studies 5 supportive 8 contradictory 1 mixed",
+      "status": "independent_research",
+      "source_urls": [
+        "https://doi.org/10.1371/journal.pone.0286023"
+      ],
+      "limitation": "Not a Zen12 trial; cannot infer product effects"
+    },
+    {
+      "id": "COUE_HISTORY",
+      "claim": "Coué 1922 published conscious autosuggestion manual",
+      "status": "primary_historical",
+      "source_urls": [
+        "https://www.gutenberg.org/ebooks/27203"
+      ],
+      "limitation": "Document supplies history, not controlled efficacy evidence"
+    },
+    {
+      "id": "PUYSEGUR_ARCHIVE",
+      "claim": "historical magnetic-somnambulism dossiers exist",
+      "status": "source_collection",
+      "source_urls": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "limitation": "Testimony != intervention efficacy"
+    },
+    {
+      "id": "FOCUS_PRODUCT",
+      "claim": "Seven Day Focus Fieldbook is free 52-page existing resource",
+      "status": "verified_live_free",
+      "source_urls": [
+        "https://finalvestige.com/focus/"
+      ],
+      "limitation": "Not currently verified payable SKU; do not duplicate Jetpack"
+    },
+    {
+      "id": "FTC_MATERIAL_CONNECTION",
+      "claim": "clear conspicuous near-link referral disclosure required",
+      "status": "regulatory_guidance",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "limitation": "General disclosure is not enough alone"
+    },
+    {
+      "id": "FTC_HEALTH_CLAIMS",
+      "claim": "health outcomes require truthful adequate substantiation",
+      "status": "regulatory_guidance",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limitation": "Does not establish a safe harbor"
+    },
+    {
+      "id": "BUYER_EXPERIENCE",
+      "claim": "page A vs B optional static film is not live tested",
+      "status": "authored_unpublished",
+      "source_urls": [],
+      "limitation": "No real A/B result or encoded playback"
+    },
+    {
+      "id": "MERCHANT_EVENTS",
+      "claim": "click vs independently verified settled order",
+      "status": "analytics_contract",
+      "source_urls": [],
+      "limitation": "Never count clicks or unconfirmed leads as revenue"
+    },
+    {
+      "id": "OWNED_SKU",
+      "claim": "paid rights-cleared Final Vestige Mind product",
+      "status": "not_verified",
+      "source_urls": [],
+      "limitation": "Free Fieldbook is not a payable fallback"
+    }
+  ],
+  "release_gates": [
+    {
+      "number": 1,
+      "id": "named_final_vestige_affiliate_approval",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 2,
+      "id": "publisher_identity_matches_studio",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 3,
+      "id": "approved_exact_zen12_sku",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 4,
+      "id": "approved_website_channel",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 5,
+      "id": "approved_email_channel_if_used",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 6,
+      "id": "approved_social_channel_if_used",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 7,
+      "id": "issued_earning_url",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 8,
+      "id": "tracked_redirect_rules",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 9,
+      "id": "approved_creative_licenses",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 10,
+      "id": "product_copy_matched_to_offer",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 11,
+      "id": "exact_checkout_price_at_release",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 12,
+      "id": "exact_checkout_product_contents",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 13,
+      "id": "exact_checkout_delivery_and_access",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 14,
+      "id": "exact_refund_policy_at_checkout",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 15,
+      "id": "merchant_reporting_provisioned",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 16,
+      "id": "merchant_settlement_receipt_format",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 17,
+      "id": "refund_fee_reconciliation",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 18,
+      "id": "privacy_consent_for_measurement",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 19,
+      "id": "first_party_analytics_owner_signoff",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 20,
+      "id": "verified_real_grok_media_ids",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 21,
+      "id": "correct_mobile_social_destination",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 22,
+      "id": "existing_jetpack_confirmation_test",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 23,
+      "id": "no_duplicate_email_collection",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 24,
+      "id": "accessible_encoded_video_ready",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 25,
+      "id": "real_browser_a11y_and_keyboard",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 26,
+      "id": "mobile_performance_review",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 27,
+      "id": "independent_site_qa_and_science_review",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    },
+    {
+      "number": 28,
+      "id": "founder_commercial_and_production_release",
+      "status": "HOLD",
+      "needed": "Verified evidence and responsible owner approval before activation"
+    }
+  ],
+  "accounting": {
+    "metric": "net_revenue_per_1000_qualified_human_sessions",
+    "definition": "1000*(merchant_verified_gross_cents-refunds_cents-fees_cents)/qualified_human_sessions",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "unknown_if_missing_settlement_or_denominator": true,
+    "click_is_not_sale": true,
+    "lead_is_not_sale": true,
+    "paid_orders_require_unique_merchant_order_id": true,
+    "report_tiny_samples": true
+  },
+  "no_live_changes": true
+}
