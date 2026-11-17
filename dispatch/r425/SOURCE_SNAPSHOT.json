@@ -89,5 +89,6 @@
   ],
   "session_denominator_audited": false,
   "net_per_1000": null,
-  "sends": 0
+  "last_five_post_notifications_sent": 0,
+  "lifetime_send_total_verified": null
 }
