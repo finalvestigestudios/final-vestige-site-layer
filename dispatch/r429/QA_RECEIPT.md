@@ -1,0 +1,5 @@
+# R429 pre-commit source verification
+
+Verified original PR #175 HEAD `d57ccdba3aee8f065e143e101c2945f4f3d01647` is still OPEN/DRAFT, and source hashes matched the eight-file local original master test run. Fresh native Python 3.13.5 `unittest discover` performed before building these specimens: **6/6 PASS**. Original suite has limited offline assertions only. The supplied original files were from a previous verified local package; all eight blob SHAs were independently rechecked against the live GitHub master HEAD during this run.
+
+R429 generator was exercised independently before commit: **53 synthetic source/content/release checks PASS**. Includes six deliberately altered preheaders correctly rejected. Native Node test file and Gutenberg block saved-file parity will be run after GitHub commit if executable source is locally available; do NOT claim them run merely because they are committed. No browser, WordPress editor, real email, native unsubscribe or paid conversion was tested. Release remains HOLD_UNSENT.
