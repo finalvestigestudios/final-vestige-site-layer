@@ -1,0 +1,124 @@
+{
+  "schema": "fv-skyway2875-archive-context-v1",
+  "checked_at": "2026-11-17T19:25:00-08:00",
+  "post_id": 287,
+  "slot": "287:5",
+  "source_view_url": "https://i0.wp.com/stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg?ssl=1",
+  "origin_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+  "observations": [
+    {
+      "url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "method": "independent_public_retriever",
+      "kind": "NUMERIC_HTTP",
+      "http_status": 404,
+      "visitor_http_status": null,
+      "decoded": null,
+      "wire_bytes": null
+    },
+    {
+      "url": "https://i0.wp.com/stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg?ssl=1",
+      "method": "independent_public_retriever",
+      "kind": "TOOL_INACCESSIBLE",
+      "http_status": null,
+      "visitor_http_status": null,
+      "decoded": null,
+      "wire_bytes": null
+    }
+  ],
+  "candidates": [
+    {
+      "accession": "RC09236",
+      "catalog_url": "https://floridamemory.com/items/show/32082",
+      "archival_image_url": "https://floridamemory.com/fpc/reference/rc09236.jpg",
+      "catalog_date": "1980-05-09",
+      "catalog_title": "Sunshine Skyway bridge accident",
+      "subject": "Car at collapsed bridge edge on accident day",
+      "editorial_role": "SAME_DAY_CONTEXT_ONLY",
+      "credit": "State Archives of Florida",
+      "archive": "Florida Memory / State Archives of Florida",
+      "match_to_published_photo": "UNVERIFIED_DIFFERENT_FRAME",
+      "rights": "PDM1.0_ARCHIVE_POLICY_ITEM_LEVEL_REVIEW",
+      "native_px": null,
+      "target_px": null,
+      "target_max_width_px": 960,
+      "master_sha256": null,
+      "attribution": "State Archives of Florida",
+      "license_verified_per_item": false,
+      "rehost_cleared": false
+    },
+    {
+      "accession": "DGM0234",
+      "catalog_url": "https://www.floridamemory.com/items/show/267898",
+      "archival_image_url": "https://www.floridamemory.com/fpc/dgmarks/DGM0234.jpg",
+      "catalog_date": "1982-02",
+      "catalog_title": "Sunshine Skyway Bridge over Tampa Bay",
+      "subject": "Post-disaster bridge view; photographed February 1982",
+      "editorial_role": "POST_DISASTER_CONTEXT_ONLY",
+      "credit": "State Archives of Florida/Marks",
+      "archive": "Florida Memory / State Archives of Florida",
+      "match_to_published_photo": "UNVERIFIED_DIFFERENT_FRAME",
+      "rights": "PDM1.0_ARCHIVE_POLICY_ITEM_LEVEL_REVIEW",
+      "native_px": null,
+      "target_px": null,
+      "target_max_width_px": 960,
+      "master_sha256": null,
+      "attribution": "State Archives of Florida/Marks",
+      "license_verified_per_item": false,
+      "rehost_cleared": false
+    },
+    {
+      "accession": "K894127",
+      "catalog_url": "https://www.floridamemory.com/items/show/131903",
+      "archival_image_url": "https://www.floridamemory.com/fpc/commerce/K894127.jpg",
+      "catalog_date": "circa 1987",
+      "catalog_title": "View of the old and new Sunshine Skyway bridges from St. Petersburg, Florida",
+      "subject": "New replacement bridge and old bridge in circa 1987 view",
+      "editorial_role": "RECONSTRUCTION_CONTEXT_ONLY",
+      "credit": "State Archives of Florida/Stewart",
+      "archive": "Florida Memory / State Archives of Florida",
+      "match_to_published_photo": "UNVERIFIED_DIFFERENT_FRAME",
+      "rights": "PDM1.0_ARCHIVE_POLICY_ITEM_LEVEL_REVIEW",
+      "native_px": null,
+      "target_px": null,
+      "target_max_width_px": 960,
+      "master_sha256": null,
+      "attribution": "State Archives of Florida/Stewart",
+      "license_verified_per_item": false,
+      "rehost_cleared": false
+    }
+  ],
+  "other_source_preview": {
+    "url": "https://commons.wikimedia.org/wiki/File:View_of_the_old_and_new_Sunshine_Skyway_bridges_from_St._Petersburg,_Florida,_1987.jpg",
+    "cataloged_file_px": [
+      600,
+      595
+    ],
+    "master_px": null,
+    "no_upscale_target_px": [
+      600,
+      595
+    ],
+    "license_claim": "Commons CC0 upload claim; chain of rights unverified",
+    "replacement_authorized": false
+  },
+  "rights_policy_url": "https://floridamemory.com/share/order-info/faq.php",
+  "visitor": {
+    "collector": "Site QA #154",
+    "current_src": null,
+    "request_status": null,
+    "decoded": null,
+    "screenshot_sha256": null,
+    "bytes": null
+  },
+  "controls": {
+    "reported_broken_42_confirmed": false,
+    "claimed_76pct_savings_verified": false,
+    "max_target_width_px": 960,
+    "allow_upscaling": false,
+    "production_wp_writes": false,
+    "post_rewrites": false,
+    "asset_rehosting": false,
+    "subscription_spend": false
+  },
+  "disposition": "HOLD: three date-identified archive records are alternative context scenes, not substitutes for the exact Skyway documentary image; require browser failure, rights and editorial review first"
+}
