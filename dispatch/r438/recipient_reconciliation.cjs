@@ -16,7 +16,7 @@ const evaluate = function evaluate(w) {
   const filtered=filter.source==="jetpack_subscribers_email_status_subscribed" && filter.snapshot_id===rec.snapshot_id && filter.no_addresses_recorded===true && isCount(filter.count) && typeof filter.witness_ref==="string" && filter.witness_ref.length>=8;
   if(!filtered) errors.push("no_same_snapshot_provider_subscribed_filter_witness");
   if(filtered&&f.email===0&&filter.count>0) errors.push("follower_subscribed_disagreement_requires_platform_review");
-  const eligible=filtered&&!errors.some(x=>x.startsWith("provider_")||x==="follower_count_invalid"||x==="confirmed_exceeds_total"||x==="follower_subscribed_disagreement_requires_platform_review")?filter.count:null;
+  const eligible=filtered&&!errors.some(x=>x.startsWith("provider_")||x==="follower_count_invalid"||x==="confirmed_exceeds_total"||x==="provider_provenance_missing"||x==="follower_subscribed_disagreement_requires_platform_review")?filter.count:null;
   const receipt=w?.welcome||{};
   const welcomeEvidence=receipt.authoritative_confirmation===true&&receipt.received_full_fieldbook_welcome===true&&typeof receipt.redacted_witness_ref==="string"&&receipt.redacted_witness_ref.length>=8;
   if(!welcomeEvidence) errors.push("no_actual_welcome_and_double_optin_witness");
