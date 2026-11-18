@@ -123,3 +123,17 @@ test('shared request ID with inconsistent redirects fails',()=>{
  c.after[0].slots[1].redirect_chain[0].http_status=301;
  assert.throws(()=>assess(parts,c),/Conflicting shared network request/);
 });
+
+
+const {preservesPixelGeometry}=require('./slot_parity_61_20261117.cjs');
+const geom=(w,h)=>({natural_width:w,natural_height:h});
+test('visual parity: 4K photo to <=960px proportional derivative',()=>assert.equal(preservesPixelGeometry(geom(4000,3000),geom(960,720)),true));
+test('visual parity: historical portrait 4918x6136 to 769x960',()=>assert.equal(preservesPixelGeometry(geom(4918,6136),geom(769,960)),true));
+test('visual parity: preserve small original 600x463 without upscale',()=>assert.equal(preservesPixelGeometry(geom(600,463),geom(600,463)),true));
+test('visual parity: wide panorama 4000x400 to 960x96',()=>assert.equal(preservesPixelGeometry(geom(4000,400),geom(960,96)),true));
+test('visual parity: reject same-ratio 64x48 placeholder for 1200x900 photograph',()=>assert.equal(preservesPixelGeometry(geom(1200,900),geom(64,48)),false));
+test('visual parity: reject invalid or excessive reported dimensions',()=>{assert.equal(preservesPixelGeometry(geom(640,480),geom(0,0)),false);assert.equal(preservesPixelGeometry(geom(640,480),geom(100001,100001)),false);});
+bad('integration: decoded 1x1 after image cannot claim high bandwidth reduction',c=>{c.after[0].slots[0].natural_width=1;c.after[0].slots[0].natural_height=1;});
+bad('integration: tiny proportional after image cannot claim high savings',c=>{c.after[0].slots[0].natural_width=64;c.after[0].slots[0].natural_height=48;});
+bad('integration: aspect-drift after image must hold despite valid status and bytes',c=>{c.after[0].slots[0].natural_width=640;c.after[0].slots[0].natural_height=640;});
+bad('integration: small source image may not silently lose half its pixels',c=>{c.before[0].slots[0].natural_width=200;c.before[0].slots[0].natural_height=100;c.after[0].slots[0].natural_width=100;c.after[0].slots[0].natural_height=50;});
