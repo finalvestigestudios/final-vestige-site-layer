@@ -889,7 +889,30 @@
     "origin_http_status": null,
     "published_jetpack_http_status": null,
     "guest_chromium_verified": false,
-    "decision": "P0_EDITORIAL_VISUAL_REVIEW_NO_AUTO_REPLACEMENT"
+    "decision": "P0_EDITORIAL_VISUAL_REVIEW_NO_AUTO_REPLACEMENT",
+    "replacement_candidates": [
+      {
+        "catalog_url": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+        "primary_authority": "U.S. National Archives, Record Group 115",
+        "catalog_accession": "NAID 28894684",
+        "subject": "Breach enlarging in Teton Dam",
+        "binary_dimensions": null,
+        "rights_status": "HOLD_ITEM_LEVEL",
+        "exact_frame_verified": false,
+        "editorial_approval": false
+      },
+      {
+        "catalog_url": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+        "primary_authority": "U.S. National Archives, Record Group 115",
+        "catalog_accession": "NAID 28894685",
+        "subject": "Breach approaches dam crest",
+        "binary_dimensions": null,
+        "rights_status": "HOLD_ITEM_LEVEL",
+        "exact_frame_verified": false,
+        "editorial_approval": false
+      }
+    ],
+    "possible_solution": "Editor verify live displayed frame; if mismatch, evaluate authentic NARA item 28894684 or 28894685 with item-level reuse rights and exact credit; preserve other context if correct. Prepare <=960px width, proportional, no-upscale derivative only after approval; stage as WP Media draft, maintain rollback map. No automatic block rewrite."
   },
   "other_repeat": {
     "keys": [
