@@ -4,6 +4,8 @@ const EXPECTED = Object.freeze([[274,7],[285,6],[287,6],[418,6],[407,8],[432,7],
 const P0 = new Set(['274:6','285:2','285:5','287:5','418:1','418:2','407:1']);
 const NO_SRCSET = new Map([['34:0',2892087],['38:0',2836245],['35:0',2552136],['36:0',2498247],['37:0',2488823]]);
 const FRESH_404 = new Set(['274:6','287:5']);
+const LEDGER_BLOB = '2c707d4ff6424e67264db1a4048afce9eba324b6';
+function gitBlob(raw) { const crypto=require('node:crypto'); const b=Buffer.from(raw,'utf8'); return crypto.createHash('sha1').update('blob '+b.length+'\x00').update(b).digest('hex'); }
 const isObject = x => x !== null && typeof x === 'object' && !Array.isArray(x);
 const int = (x, min=0) => Number.isSafeInteger(x) && x>=min;
 function fail(message) { throw new Error(message); }
@@ -49,9 +51,9 @@ function validate(snapshot) {
   if(seen.size!==12||total!==51||priority!==7||unsrc!==5||originalBytes!==13267538||results404!==2)fail('Inventory coverage mismatch');
   return {status:'HOLD_GUEST_BROWSER_AND_RIGHTS',posts:12,images:total,priority_slots:priority,new_origin_404:results404,unresponsive_png_slots:unsrc,stored_original_bytes_not_wire:originalBytes,confirmed_guest_broken:null,verified_wire_savings_76_percent:false,wordpress_writes:0};
 }
-module.exports={EXPECTED,P0,NO_SRCSET,FRESH_404,decodeAmp,unwrapJetpack,validate};
+module.exports={EXPECTED,P0,NO_SRCSET,FRESH_404,LEDGER_BLOB,gitBlob,decodeAmp,unwrapJetpack,validate};
 if(require.main===module){
   try { if(process.argv.length!==3)fail('Usage: node fv_wp_view_51_20261118.cjs ledger.json');
-    const fs=require('node:fs'); const result=validate(JSON.parse(fs.readFileSync(process.argv[2],'utf8')));console.log(JSON.stringify(result,null,2)); }
+    const fs=require('node:fs'); const raw=fs.readFileSync(process.argv[2],'utf8'); if(gitBlob(raw)!==LEDGER_BLOB)fail('Pinned 51-image ledger Git blob mismatch'); const result=validate(JSON.parse(raw));console.log(JSON.stringify(result,null,2)); }
   catch(e) {console.error('HOLD: '+e.message);process.exitCode=1;}
 }
