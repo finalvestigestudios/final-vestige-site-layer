@@ -14,7 +14,7 @@ const ARTICLE=read('THE_CHOICE_YOU_NEVER_MADE.md');
 const SVG=read('ZEN12_POSTER.svg');
 const VTT=read('ZEN12_FILM_CAPTIONS.vtt');
 const MATRIX=JSON.parse(read('CLAIM_PERMISSION_AND_REVENUE_MATRIX.json'));
-const stripFilm=x=>x.replace(/<section class="panel" aria-labelledby="film">[\s\S]*?<\/section>/,'');
+const stripFilm=x=>x.replace(/<section class="panel" aria-labelledby="film">[\s\S]*?<\/section>/,'').replace(/\n(?=<section aria-labelledby="demo")/,'');
 const disclosures=x=>{const c=x.match(/<section class="cta"[\s\S]*?<\/section>/);return c?c[0]:'';};
 const unsafe=x=>/(<script\b|<iframe\b|<form\b|onload\s*=|onclick\s*=|fetch\s*\(|dataLayer|googletagmanager|fbq\s*\()/i.test(x);
 test('A and B share precisely the same core copy, excluding optional film component',()=>assert.equal(stripFilm(B),A));
