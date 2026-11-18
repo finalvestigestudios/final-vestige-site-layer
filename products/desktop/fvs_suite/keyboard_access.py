@@ -7,6 +7,9 @@ nothing here reads, transmits, or records paths or customer data.
 """
 from __future__ import annotations
 
+import tkinter as tk
+from tkinter import ttk
+
 from .shortcut_targets_r403 import validate_shortcut_targets
 
 
@@ -46,6 +49,84 @@ def format_keyboard_help(legend: str) -> str:
         raise ValueError("Keyboard help contains an invalid shortcut section")
     return "Keyboard shortcuts:\n\n" + "\n".join("- " + part for part in sections)
 
+
+
+def show_keyboard_help(root, legend: str) -> None:
+    """Open one focusable, scrollable, read-only F1 help window per application.
+
+    The only displayed value is the statically authored shortcut legend. A
+    bounded window keeps its close control and keyboard scrolling usable on
+    high-DPI screens. No inputs, output paths, licenses or report data are read.
+    """
+    content = format_keyboard_help(legend)  # Validate before any Tk side effect.
+    existing = getattr(root, "_fvs_help_dialog", None)
+    if existing is not None:
+        try:
+            if existing.winfo_exists():
+                existing.lift()
+                return
+        except tk.TclError:
+            pass  # The previous help window was destroyed outside this helper.
+
+    former_focus = root.focus_get()  # Widget identity only; never entry.get().
+    dialog = tk.Toplevel(root)
+    root._fvs_help_dialog = dialog
+
+    def close(_event=None):
+        if getattr(root, "_fvs_help_dialog", None) is dialog:
+            root._fvs_help_dialog = None
+        dialog.destroy()
+        if former_focus is not None:
+            try:
+                if former_focus.winfo_exists():
+                    former_focus.focus_set()
+            except tk.TclError:
+                pass
+
+    def on_escape(event):
+        close()
+        return "break"
+
+    try:
+        dialog.title("Keyboard shortcuts")
+        dialog.transient(root)
+        dialog.resizable(True, True)
+        dialog.columnconfigure(0, weight=1)
+        dialog.rowconfigure(0, weight=1)
+
+        frame = ttk.Frame(dialog, padding=12)
+        frame.grid(row=0, column=0, sticky="nsew")
+        frame.columnconfigure(0, weight=1)
+        frame.rowconfigure(0, weight=1)
+
+        instructions = tk.Text(frame, width=54, height=10,
+                               wrap="word", takefocus=True)
+        instructions.insert("1.0", content)
+        instructions.configure(state="disabled")
+        scroll = ttk.Scrollbar(frame, orient="vertical",
+                               command=instructions.yview)
+        instructions.configure(yscrollcommand=scroll.set)
+        instructions.grid(row=0, column=0, sticky="nsew")
+        scroll.grid(row=0, column=1, sticky="ns")
+        ttk.Button(frame, text="Close (Esc)", command=close).grid(
+            row=1, column=0, columnspan=2, sticky="e", pady=(12, 0))
+        dialog.protocol("WM_DELETE_WINDOW", close)
+        dialog.bind("<Escape>", on_escape)
+
+        # Physical window bounds, not unbounded character-based sizing. Users
+        # can resize the dialog and scroll via keyboard, wheel or scrollbar.
+        width = max(1, min(760, root.winfo_screenwidth() - 64))
+        height = max(1, min(480, root.winfo_screenheight() - 96))
+        dialog.geometry(f"{width}x{height}")
+        instructions.focus_set()
+    except BaseException:
+        if getattr(root, "_fvs_help_dialog", None) is dialog:
+            root._fvs_help_dialog = None
+        try:
+            dialog.destroy()
+        except BaseException:
+            pass
+        raise
 
 def install_shortcuts(root, inputs, output, generate, *, review=None,
                       invoice_window=None, policy_rules=None,

@@ -1,6 +1,9 @@
 """R44 GUI keyboard access, no Tk display, customer file or network required."""
 from __future__ import annotations
 
+from unittest.mock import MagicMock, patch
+import fvs_suite.keyboard_access as help_module
+
 import unittest
 from fvs_suite.keyboard_access import install_shortcuts, format_keyboard_help
 
@@ -334,6 +337,169 @@ class KeyboardAccessR44(unittest.TestCase):
                          format_keyboard_help(original))
         for private in ("invoice.csv", r"C:\Users", "$100", "entitlement"):
             self.assertNotIn(private, format_keyboard_help(original))
+
+
+
+# R532: headless constructor mocks test the real six-app F1 dialog plumbing.
+# Native Windows Narrator/NVDA behavior remains a separate release gate.
+class R532KeyboardHelpWindow(unittest.TestCase):
+    LEGEND = (
+        "Keyboard: Alt+1..1 focus an input; Ctrl+1..1 browse; "
+        "numeric keypad 1..3 also supported (Num Lock on/off); "
+        "Alt+O/Ctrl+O output; Alt+G/Ctrl+Enter generate; "
+        "F1 opens keyboard help"
+    )
+
+    def setUp(self):
+        self.root = MagicMock()
+        self.root._fvs_help_dialog = None
+        self.root.winfo_screenwidth.return_value = 1200
+        self.root.winfo_screenheight.return_value = 800
+        self.previous = MagicMock()
+        self.previous.winfo_exists.return_value = True
+        self.root.focus_get.return_value = self.previous
+        self.dialog = MagicMock()
+        self.ins = MagicMock()
+        self.frame = MagicMock()
+        self.scroll = MagicMock()
+        self.close_button = MagicMock()
+        self.patches = [
+            patch.object(help_module.tk, "Toplevel", return_value=self.dialog),
+            patch.object(help_module.tk, "Text", return_value=self.ins),
+            patch.object(help_module.ttk, "Frame", return_value=self.frame),
+            patch.object(help_module.ttk, "Scrollbar", return_value=self.scroll),
+            patch.object(help_module.ttk, "Button", return_value=self.close_button),
+        ]
+        self.constructors = [item.start() for item in self.patches]
+        self.addCleanup(lambda: [item.stop() for item in reversed(self.patches)])
+
+    def open(self):
+        show_keyboard_help(self.root, self.LEGEND)
+
+    def test_r532_window_is_created_once(self):
+        self.open()
+        self.constructors[0].assert_called_once_with(self.root)
+        self.assertIs(self.root._fvs_help_dialog, self.dialog)
+
+    def test_r532_same_window_raised_not_recreated(self):
+        self.open()
+        self.dialog.winfo_exists.return_value = True
+        self.open()
+        self.constructors[0].assert_called_once()
+        self.dialog.lift.assert_called_once()
+
+    def test_r532_closed_window_can_be_recreated(self):
+        self.open()
+        self.dialog.winfo_exists.return_value = False
+        self.open()
+        self.assertEqual(self.constructors[0].call_count, 2)
+
+    def test_r532_stale_window_tcl_error_can_be_recreated(self):
+        self.root._fvs_help_dialog = MagicMock()
+        self.root._fvs_help_dialog.winfo_exists.side_effect = help_module.tk.TclError()
+        self.open()
+        self.constructors[0].assert_called_once()
+
+    def test_r532_content_is_exactly_static_legend(self):
+        self.open()
+        self.ins.insert.assert_called_once_with(
+            "1.0", format_keyboard_help(self.LEGEND))
+
+    def test_r532_text_is_read_only(self):
+        self.open()
+        self.ins.configure.assert_any_call(state="disabled")
+
+    def test_r532_text_is_focusable_and_scrolling(self):
+        self.open()
+        self.constructors[1].assert_called_once_with(
+            self.frame, width=54, height=10, wrap="word", takefocus=True)
+        self.ins.focus_set.assert_called_once()
+        self.constructors[3].assert_called_once_with(
+            self.frame, orient="vertical", command=self.ins.yview)
+        self.ins.configure.assert_any_call(yscrollcommand=self.scroll.set)
+
+    def test_r532_close_button_is_keyboard_reachable(self):
+        self.open()
+        self.assertEqual(
+            self.constructors[4].call_args.kwargs["text"], "Close (Esc)")
+        self.assertTrue(callable(
+            self.constructors[4].call_args.kwargs["command"]))
+
+    def test_r532_escape_returns_break_and_restores_focus(self):
+        self.open()
+        handler = self.dialog.bind.call_args.args[1]
+        self.assertEqual(self.dialog.bind.call_args.args[0], "<Escape>")
+        self.assertEqual(handler(object()), "break")
+        self.assertIsNone(self.root._fvs_help_dialog)
+        self.dialog.destroy.assert_called_once()
+        self.previous.focus_set.assert_called_once()
+
+    def test_r532_x_close_restores_focus(self):
+        self.open()
+        self.assertEqual(
+            self.dialog.protocol.call_args.args[0], "WM_DELETE_WINDOW")
+        self.dialog.protocol.call_args.args[1]()
+        self.previous.focus_set.assert_called_once()
+
+    def test_r532_close_ignores_destroyed_focus(self):
+        self.previous.winfo_exists.return_value = False
+        self.open()
+        self.dialog.protocol.call_args.args[1]()
+        self.previous.focus_set.assert_not_called()
+
+    def test_r532_close_survives_prior_focus_tcl_error(self):
+        self.previous.winfo_exists.side_effect = help_module.tk.TclError()
+        self.open()
+        self.dialog.protocol.call_args.args[1]()
+        self.previous.focus_set.assert_not_called()
+
+    def test_r532_geometry_bounds_normal_screen(self):
+        self.open()
+        self.dialog.geometry.assert_called_once_with("760x480")
+
+    def test_r532_geometry_bounds_small_screen(self):
+        self.root.winfo_screenwidth.return_value = 400
+        self.root.winfo_screenheight.return_value = 350
+        self.open()
+        self.dialog.geometry.assert_called_once_with("336x254")
+
+    def test_r532_invalid_legend_before_creating_gui(self):
+        with self.assertRaises(ValueError):
+            show_keyboard_help(self.root, "bad")
+        self.constructors[0].assert_not_called()
+        self.root.focus_get.assert_not_called()
+
+    def test_r532_no_customer_values_read(self):
+        self.open()
+        self.assertNotIn("invoice.csv", self.ins.insert.call_args.args[1])
+        self.root.get.assert_not_called()
+
+    def test_r532_cleanup_when_frame_creation_fails(self):
+        self.constructors[2].side_effect = RuntimeError("simulated")
+        with self.assertRaises(RuntimeError):
+            self.open()
+        self.assertIsNone(self.root._fvs_help_dialog)
+        self.dialog.destroy.assert_called_once()
+
+    def test_r532_cleanup_when_focus_set_fails(self):
+        self.ins.focus_set.side_effect = help_module.tk.TclError()
+        with self.assertRaises(help_module.tk.TclError):
+            self.open()
+        self.assertIsNone(self.root._fvs_help_dialog)
+        self.dialog.destroy.assert_called_once()
+
+    def test_r532_layout_keeps_close_control_separate(self):
+        self.open()
+        self.ins.grid.assert_called_once_with(
+            row=0, column=0, sticky="nsew")
+        self.scroll.grid.assert_called_once_with(
+            row=0, column=1, sticky="ns")
+        self.close_button.grid.assert_called_once_with(
+            row=1, column=0, columnspan=2, sticky="e", pady=(12, 0))
+
+    def test_r532_help_does_not_take_global_modal_grab(self):
+        self.open()
+        self.dialog.grab_set.assert_not_called()
 
 
 if __name__ == "__main__":
