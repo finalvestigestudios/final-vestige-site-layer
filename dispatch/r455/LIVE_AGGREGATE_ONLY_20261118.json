@@ -1,0 +1,101 @@
+{
+  "schema": "fv_dispatch_r455_provider_and_release_witness_v1",
+  "observed_at_utc": "2026-11-18T20:44:25Z",
+  "site": "https://finalvestige.com",
+  "source_urls": {
+    "issue_dispatch": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "issue_mind": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "master_draft": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+    "readiness_draft": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201",
+    "prior_transport": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/3036",
+    "official_wordpress_preview": "https://wordpress.com/support/newsletter/email-appearance/",
+    "official_wordpress_sends": "https://wordpress.com/support/newsletter/send-newsletter-emails/",
+    "FTC": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "Zen12_standard": "https://zen12.com/",
+    "Zen12_promo_distinct": "https://zen12.com/secret/",
+    "HypnosisLive_faq": "https://hypnosislive.com/faq"
+  },
+  "newsletter": {
+    "site_can_send": true,
+    "actual_sending_authorized": false,
+    "subscribers_total": 3,
+    "confirmed": 3,
+    "unconfirmed_excluded": 2,
+    "suppressed": 0,
+    "imported_last_24h": 0,
+    "recent_posts_last_five": "never_sent_opted_out",
+    "automatic_send": false,
+    "email_content_format": "full",
+    "welcome_configured": true,
+    "welcome_receipt_witnessed": false
+  },
+  "stats_subscribers": {
+    "email": 3,
+    "reader": 0
+  },
+  "stats_followers": {
+    "email": 0,
+    "reader": 3,
+    "partial": false
+  },
+  "audience_reconciliation": "SOURCE_CLASSIFICATION_DISAGREEMENT",
+  "actual_native_preview_witnessed": false,
+  "valid_FV_publisher_postal_rendered": false,
+  "working_unsubscribe_rendered": false,
+  "independent_affiliate_acceptance_verified": false,
+  "affiliate_EMAIL_promotion_permission_verified": false,
+  "exact_earning_URL_and_checkout_verified": false,
+  "live_approved_guide_verified": false,
+  "verified_new_external_qualified_leads": null,
+  "qualified_human_sessions": null,
+  "independently_settled_orders": null,
+  "realized_net_revenue_per_1000_qualified_humans": null,
+  "pilot": {
+    "mix": {
+      "editorial": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "commercial_reserved": [
+        3,
+        5
+      ]
+    },
+    "issues": [
+      {
+        "issue": 1,
+        "release": "HOLD_UNSENT",
+        "active_affiliate_link": false
+      },
+      {
+        "issue": 2,
+        "release": "HOLD_UNSENT",
+        "active_affiliate_link": false
+      },
+      {
+        "issue": 3,
+        "release": "HOLD_UNSENT",
+        "active_affiliate_link": false
+      },
+      {
+        "issue": 4,
+        "release": "HOLD_UNSENT",
+        "active_affiliate_link": false
+      },
+      {
+        "issue": 5,
+        "release": "HOLD_UNSENT",
+        "active_affiliate_link": false
+      },
+      {
+        "issue": 6,
+        "release": "HOLD_UNSENT",
+        "active_affiliate_link": false
+      }
+    ],
+    "founder_final_send_approval": false
+  },
+  "data_policy": "Aggregate and all-false attestations only; no subscriber PII or invented revenue"
+}
