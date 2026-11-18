@@ -115,14 +115,25 @@ _PRIVATE_ENV_SUFFIXES = (
 # Preserve only the public GitHub Actions boolean across the GITHUB_* boundary.
 # Job command files and event payloads are not needed by desktop source tests.
 _CI_ENV_MARKER = "GITHUB_ACTIONS"
-_UNTRUSTED_ENV_PREFIXES = ("PYTHON", "GITHUB_", "GIT_", "SSH_")
+# Cloud, package-registry and container configuration may carry credentials
+# in *_FILE, *_URL or *_PROFILE, not just token/password-suffixed variables.
+# Do not pass ambient host credentials into financial source regression tests.
+# This is environment minimization, NOT filesystem or OS process isolation.
+_UNTRUSTED_ENV_PREFIXES = (
+    "PYTHON", "GITHUB_", "GIT_", "SSH_",
+    "AWS_", "AZURE_", "GOOGLE_", "GCLOUD_", "CLOUDSDK_",
+    "GH_", "DOCKER_", "KUBE_", "NPM_", "PIP_", "PYPI_",
+    "TWINE_", "POETRY_", "UV_", "GPG_", "TF_", "TERRAFORM_",
+)
+_UNTRUSTED_ENV_NAMES = frozenset({"KUBECONFIG", "GNUPGHOME"})
 
 
 def _child_environment(root: Path) -> dict[str, str]:
     env = {}
     for name, value in os.environ.items():
         key = name.upper()
-        if (key in _PRIVATE_ENV_NAMES or key.endswith(_PRIVATE_ENV_SUFFIXES)
+        if (key in _PRIVATE_ENV_NAMES or key in _UNTRUSTED_ENV_NAMES
+                or key.endswith(_PRIVATE_ENV_SUFFIXES)
                 or (key.startswith(_UNTRUSTED_ENV_PREFIXES)
                     and key != _CI_ENV_MARKER)):
             continue
