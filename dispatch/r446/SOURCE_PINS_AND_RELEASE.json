@@ -1,0 +1,159 @@
+{
+  "id": "FV_DISPATCH_R446_SOURCE_PINNED_FOUNDER_REVIEW",
+  "created_at": "2026-11-18",
+  "release": "HOLD_UNSENT",
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "base_sha": "1cd7d8c40da4be91fc7ac401022bff14aabdfed9",
+  "unsubscribe_verified": false,
+  "publisher_postal_verified": false,
+  "jetpack_preview_verified": false,
+  "received_welcome_verified": false,
+  "zen12_email_permission_verified": false,
+  "hypnosislive_email_permission_verified": false,
+  "subscriber_snapshot": {
+    "as_of": "2026-11-18T11:38:57Z",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed_excluded": 2,
+    "email_eligible_provider_records": 3,
+    "external_acquired_leads_proven": null,
+    "recent_five_email_posts": "never_sent_opted_out",
+    "automatic_new_post_emails": false,
+    "welcome_configured": true,
+    "welcome_received": false
+  },
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "label": "Change blindness",
+      "original": {
+        "path": "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md",
+        "ref": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+        "sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+        "subject": "The mind is not a camera",
+        "preheader": "What an old record can teach us about the difference between seeing and knowing."
+      },
+      "alternative": {
+        "path": "dispatch/r444/ISSUE01_UNADOPTED.md",
+        "ref": "33cfde9d302387997250cd1033e9eac05857af04",
+        "sha": "c4d1cd241f3cc03b6e3525799b8012822ddc75cd",
+        "subject": "** The person changed. The conversation continued.",
+        "preheader": "** A 1998 street experiment, a missed substitution, and the difference between observation and confidence."
+      },
+      "founder_selection": null,
+      "status": "HOLD_UNSENT",
+      "merchant_link": null
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "label": "Puységur",
+      "original": {
+        "path": "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md",
+        "ref": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+        "sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+        "subject": "Before hypnosis had a name",
+        "preheader": "The eighteenth-century witnesses who left behind a problem of proof."
+      },
+      "alternative": {
+        "path": "dispatch/r443/ISSUE02_UNADOPTED.md",
+        "ref": "7dbd8e9229facee9377a99e9367d8ae89e185630",
+        "sha": "7497c95f12061e4caf63a775c47755ee038bd124",
+        "subject": "** The witness was also the experimenter",
+        "preheader": "** Puységur's 1784 account, Franklin's separate tests, and the gap between a record and proof."
+      },
+      "founder_selection": null,
+      "status": "HOLD_UNSENT",
+      "merchant_link": null
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "label": "Zen12",
+      "original": {
+        "path": "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md",
+        "ref": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+        "sha": "aeeef34efea0cc281f69901488e4501fea851245",
+        "subject": "The twelve-minute meditation question",
+        "preheader": "An honest way to evaluate a short audio practice before you spend anything."
+      },
+      "alternative": {
+        "path": "dispatch/r441/ISSUE03_UNADOPTED.txt",
+        "ref": "2eee8b5200da4f72eba2cad4f3e00b8abc118bd7",
+        "sha": "378f3ea2ce6f86bc779f1082d4634103ee25dfce",
+        "subject": "Twelve minutes is a unit of time, not a promise",
+        "preheader": "A three-day focus check, what Zen12 actually offers, and the evidence still missing."
+      },
+      "founder_selection": null,
+      "status": "HOLD_UNSENT",
+      "merchant_link": null
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "label": "Apollo 1",
+      "original": {
+        "path": "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md",
+        "ref": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+        "sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+        "subject": "Fourteen seconds. A much longer explanation.",
+        "preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead."
+      },
+      "alternative": {
+        "path": "dispatch/r442/ISSUE04_APOLLO_UNADOPTED.txt",
+        "ref": "ede9984caff0a1f1bee227ade8a05b4190a2ba6c",
+        "sha": "df86dd1e2e1ac7ef9af43c9acc0e566794d7219e",
+        "subject": "Apollo 1: a timestamp isn't a cause",
+        "preheader": "Two official accounts put the cabin rupture seconds apart. The danger was larger than either number."
+      },
+      "founder_selection": null,
+      "status": "HOLD_UNSENT",
+      "merchant_link": null
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "label": "Hypnosis Live",
+      "original": {
+        "path": "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md",
+        "ref": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+        "sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+        "subject": "Before you press play on a hypnosis audio",
+        "preheader": "Three questions that matter more than an impressive promise."
+      },
+      "alternative": {
+        "path": "dispatch/r440/ISSUE_05_HYPNOSIS_LIVE_UNADOPTED.md",
+        "ref": "9f3decc770bd2a6d5b39f2eb4b50130f4ef47a65",
+        "sha": "3a173be413078a04f695b458b1e57b19cd6460cb",
+        "subject": "** Before you buy a hypnosis recording",
+        "preheader": "** An old lesson about suggestion, and five buyer checks that work today."
+      },
+      "founder_selection": null,
+      "status": "HOLD_UNSENT",
+      "merchant_link": null
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "label": "Fisher tea test",
+      "original": {
+        "path": "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md",
+        "ref": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+        "sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+        "subject": "What did seven days of attention reveal?",
+        "preheader": "A small experiment, a useful notebook, and no miracle claims."
+      },
+      "alternative": {
+        "path": "dispatch/r445/ISSUE06_EIGHT_CUPS_UNADOPTED.md",
+        "ref": "1cd7d8c40da4be91fc7ac401022bff14aabdfed9",
+        "sha": "40543454d4123c13f946f5611fb4e2beca3375ad",
+        "subject": "** Eight cups. One useful kind of doubt.",
+        "preheader": "** Fisher’s 1935 tea test and a better way to read your seven-day focus notes."
+      },
+      "founder_selection": null,
+      "status": "HOLD_UNSENT",
+      "merchant_link": null
+    }
+  ]
+}
