@@ -180,5 +180,126 @@ class InvoiceReviewCustodyR444(unittest.TestCase):
             self.assertEqual(review_flags(a, b, "exact_invoice_key"), expected)
 
 
+
+# R525: public review_flags direct callers must retain source-row and
+# normalized-key custody, not just amounts, raw labels and calendar dates.
+# Synthetic records only. This remains an already-inventoried unittest module.
+class InvoiceReviewRowCustodyR525(unittest.TestCase):
+    def refuse(self, left, right=None, status="exact_invoice_key"):
+        if right is None:
+            right = row(3)
+        with self.assertRaises(ValueError) as caught:
+            review_flags(left, right, status)
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertIsNone(caught.exception.__context__)
+        self.assertNotIn(PRIVATE, str(caught.exception))
+        return str(caught.exception)
+
+    def test_same_physical_row_cannot_review_itself_exact(self):
+        self.assertIn("distinct", self.refuse(row(2), row(2)))
+
+    def test_same_physical_row_cannot_review_itself_near(self):
+        self.assertIn("distinct", self.refuse(
+            row(2), row(2, invoice="DIFFERENT"), "review_possible_duplicate"))
+
+    def test_missing_source_line_fails_closed(self):
+        left = row()
+        del left["row"]
+        self.assertIn("physical CSV row", self.refuse(left))
+
+    def test_header_or_zero_line_not_financial_evidence(self):
+        for bad in ("0", "1"):
+            with self.subTest(bad=bad):
+                left = row()
+                left["row"] = bad
+                self.assertIn("physical CSV row", self.refuse(left))
+
+    def test_noncanonical_or_overlong_source_rows_refused(self):
+        for bad in ("02", "+2", "２", "2.0", "2 ", "2\\n" + PRIVATE,
+                    "9" * 5000, ""):
+            with self.subTest(length=len(bad)):
+                left = row()
+                left["row"] = bad
+                self.assertIn("physical CSV row", self.refuse(left))
+
+    def test_source_line_must_be_native_string(self):
+        class Forge(str):
+            def __eq__(self, other):
+                raise RuntimeError(PRIVATE)
+        for bad in (2, 2.0, True, None, Forge("2")):
+            with self.subTest(kind=type(bad).__name__):
+                left = row()
+                left["row"] = bad
+                self.refuse(left)
+
+    def test_missing_normalized_vendor_or_invoice_refused(self):
+        for field in ("v", "inv"):
+            left = row()
+            del left[field]
+            self.assertIn("normalized ASCII", self.refuse(left))
+
+    def test_noncanonical_normalized_keys_refused(self):
+        for field in ("v", "inv"):
+            for bad in ("", "lowercase", "A-B", " A", "ＡＢ", PRIVATE):
+                with self.subTest(field=field, kind=bad[:8]):
+                    left = row()
+                    left[field] = bad
+                    self.assertIn("normalized ASCII", self.refuse(left))
+
+    def test_normalized_key_subclass_callbacks_are_never_used(self):
+        class Forged(str):
+            def __eq__(self, other):
+                raise RuntimeError(PRIVATE)
+            def __str__(self):
+                raise RuntimeError(PRIVATE)
+        for field in ("v", "inv"):
+            left = row()
+            left[field] = Forged("ACME")
+            self.assertIn("normalized ASCII", self.refuse(left))
+
+    def test_right_hand_evidence_is_validated_independently(self):
+        right = row(3)
+        right["inv"] = "PRIVATÉ-INVALID"
+        self.assertIn("normalized ASCII", self.refuse(row(), right))
+
+    def test_hostile_dict_getters_not_consulted(self):
+        class Hostile(dict):
+            def get(self, *args):
+                raise RuntimeError(PRIVATE)
+            def items(self):
+                raise RuntimeError(PRIVATE)
+            def keys(self):
+                raise RuntimeError(PRIVATE)
+        self.assertEqual(
+            review_flags(Hostile(row()), Hostile(row(3, vendor="Acme ")),
+                         "exact_invoice_key"),
+            "normalized_vendor_key_review")
+
+    def test_existing_valid_exact_and_near_candidate_behavior(self):
+        a, b = row(2), row(3)
+        self.assertEqual(review_flags(a, b, "exact_invoice_key"), "")
+        self.assertEqual(review_flags(a, row(3, amount=Decimal("13")),
+                                      "exact_invoice_key"), "amount_variance_review")
+        near = row(3, invoice="DIFFERENT")
+        self.assertEqual(review_flags(a, near, "review_possible_duplicate"), "")
+
+    def test_real_candidate_pair_still_has_source_evidence(self):
+        records = (row(4, invoice="NEW"), row(3), row(2))
+        for left, right, status, _ in candidate_pairs(iter(records)):
+            self.assertNotEqual(left["row"], right["row"])
+            self.assertEqual(review_flags(left, right, status), "")
+
+    def test_rejection_does_not_mutate_the_sources(self):
+        left, right = row(), row(3)
+        right["row"] = left["row"]
+        before = deepcopy((left, right))
+        self.refuse(left, right)
+        self.assertEqual((left, right), before)
+
+    def test_source_private_bad_keys_never_reach_exception_chain(self):
+        left = row()
+        left["v"] = PRIVATE
+        self.refuse(left)
+
 if __name__ == "__main__":
     unittest.main()
