@@ -35,6 +35,16 @@ class EvidenceRejected(ValueError):
     """Input or source evidence failed its reviewed custody contract."""
 
 
+def _is_unlinked_test_file(root: Path, name: str) -> bool:
+    """Reject linked tests and linked ancestor directories before launching code."""
+    target = root
+    for part in ("products", "desktop", "tests", name):
+        target = target / part
+        if target.is_symlink():
+            return False
+    return target.is_file()
+
+
 def git_blob_sha(raw: bytes) -> str:
     if type(raw) is not bytes:
         raise EvidenceRejected("Invalid manifest bytes")
@@ -61,8 +71,7 @@ def load_commands(raw: bytes, root: Path = ROOT, *,
             raise EvidenceRejected("Malformed source command")
         match = TEST_COMMAND.fullmatch(line)
         if match is not None:
-            source = root / "products" / "desktop" / "tests" / match.group(1)
-            if not source.is_file() or source.is_symlink():
+            if not _is_unlinked_test_file(root, match.group(1)):
                 raise EvidenceRejected("Required source test unavailable")
         elif line not in SCRIPT_COMMANDS:
             raise EvidenceRejected("Unreviewed source command")
@@ -70,12 +79,21 @@ def load_commands(raw: bytes, root: Path = ROOT, *,
     return tuple(approved)
 
 
+_PRIVATE_ENV_NAMES = frozenset({
+    "GITHUB_TOKEN", "GH_TOKEN", "GITHUB_ENV", "GITHUB_PATH", "GITHUB_OUTPUT",
+    "GIT_ASKPASS", "SSH_ASKPASS", "AWS_ACCESS_KEY_ID",
+    "PYTHONHOME", "PYTHONSTARTUP", "PYTHONINSPECT", "PYTHONUSERBASE",
+})
+_PRIVATE_ENV_SUFFIXES = (
+    "_TOKEN", "_SECRET", "_PASSWORD", "_KEY", "_CREDENTIAL", "_CREDENTIALS",
+    "_COOKIE", "_SESSION",
+)
+
+
 def _child_environment(root: Path) -> dict[str, str]:
     env = {k: v for k, v in os.environ.items()
-           if not (k.upper() in {"GITHUB_TOKEN", "GH_TOKEN", "PYTHONHOME",
-                                 "PYTHONSTARTUP", "PYTHONINSPECT", "PYTHONUSERBASE"}
-                   or k.upper().endswith("_TOKEN") or k.upper().endswith("_SECRET")
-                   or k.upper().endswith("_PASSWORD"))}
+           if k.upper() not in _PRIVATE_ENV_NAMES
+           and not k.upper().endswith(_PRIVATE_ENV_SUFFIXES)}
     env["PYTHONPATH"] = str(root / "products" / "desktop")
     env["PYTHONDONTWRITEBYTECODE"] = "1"
     return env

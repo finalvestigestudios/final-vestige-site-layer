@@ -92,7 +92,14 @@ class IndependentSourceCIR385(unittest.TestCase):
 
     def test_actual_crypto_gate_is_not_replaced_by_stubs(self):
         self.assertEqual(self.commands.count("-p test_vault_crypto_gate_r316.py"), 2)
-        self.assertIn("22 actual AES-GCM", self.text)
+        self.assertEqual(
+            self.commands.count("python -W error -m unittest discover -s products/desktop/tests -p test_vault_crypto_gate_r316.py"),
+            1,
+        )
+        self.assertEqual(
+            self.commands.count("python -OO -W error -m unittest discover -s products/desktop/tests -p test_vault_crypto_gate_r316.py"),
+            1,
+        )
 
     def test_offline_ed25519_and_sqlite_registry_both_modes(self):
         for case in ("test_offline_entitlement_r11.py", "test_license_issuer_r12.py",
