@@ -18,3 +18,17 @@ New CommonJS tests are synthetic. Any successful case signifies guard logic beha
 Native preview with real subject/preheader evidence; publisher postal/unsubscribe; welcome receipt; consumer-interest source; dated partner EMAIL permission and issued links, actual guide and current terms; founder final campaign creative/audience/schedule approval; settlement + audited human sessions. Product identity #05 remains Hypnosis Live, not Total Focus. Net revenue per 1,000 real qualified-human sessions = NOT COMPUTABLE.
 
 No emails, test emails, WordPress writes, subscriber imports, actual customer contact, affiliate activation, social posts, PR merges or money spent.
+
+## Final parity hardening and exact-source readback
+
+After the initial R440 commit, replaced the abbreviated review specimens with full, paragraph-for-paragraph subscriber-facing candidate copy from ISSUE_05_HYPNOSIS_LIVE_UNADOPTED.md, preserving the source narrative and adjacent in-body prospective commercial disclosure. The preview now has an external HOLD reviewer boundary and an explicitly unresolved legal footer; the merchant CTA remains a nonlinked placeholder. Email-safe table/inline styles and responsive width, English language, viewport metadata, no script or active merchant link.
+
+New committed review_05_parity.test.cjs checks normalized full-copy equality from canonical candidate to HTML, plaintext copy identity, no active outbound links/scripts, legal footer placeholders, accessibility basics and canonical Hypnosis Live identity. Independently fetched code and complete preview bytes from GitHub final post-parity commit. **12/12 test checks passed in V8 with Node fs/path/assert shims, NOT native Node.** Existing release_evidence_gate.test.cjs exact retrieved source: **30/30 passed in V8 with CommonJS/assert shims**. Seven extra privacy/source checks also passed previously. No actual email transport test performed.
+
+Preview source Git blobs after parity:
+- ISSUE_05_HYPNOSIS_LIVE_UNADOPTED.md dd16e06b5e3401b979873e46d9d4f9f2e1835d59 (unchanged unadopted candidate)
+- OFFLINE_EMAIL_REVIEW_05.html 6fdc8e6d34410c75609d20cb516a40a6dee9f5fe
+- OFFLINE_EMAIL_REVIEW_05.txt 7cb8a6b4168b420ed9106611b32deee2c6560243
+- review_05_parity.test.cjs e2f8f622bb6dbdc74ec4a0dfb6b40098d620a4db
+
+No founder release approval; canonical #175 originals remain untouched, and all six emails remain HOLD_UNSENT.
