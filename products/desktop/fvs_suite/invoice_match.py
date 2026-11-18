@@ -220,6 +220,19 @@ def _owned_review_evidence(record: dict[str, Any]) -> dict[str, Any]:
     if any(type(name) is not str for name in dict.keys(record)):
         raise ValueError("Invoice review field names must be plain text")
     evidence = dict(dict.items(record))
+    # Direct review callers can bypass candidate_pairs. A plausible empty
+    # review flag must not be produced for a missing/forged physical source
+    # citation or normalized match key: those fields bind the displayed
+    # finding back to the immutable CSV source and the candidate algorithm.
+    source_row = evidence.get("row")
+    if (type(source_row) is not str
+            or _PHYSICAL_ROW.fullmatch(source_row) is None
+            or int(source_row) < 2):
+        raise ValueError("Invoice review evidence requires a canonical physical CSV row")
+    for field in ("v", "inv"):
+        normalized = evidence.get(field)
+        if type(normalized) is not str or _NORMALIZED_KEY.fullmatch(normalized) is None:
+            raise ValueError("Invoice review evidence requires normalized ASCII keys")
     if (type(evidence.get("vendor")) is not str
             or type(evidence.get("invoice_number")) is not str):
         raise ValueError("Invoice review identity labels must be text")
@@ -247,6 +260,11 @@ def review_flags(a: dict[str, Any], b: dict[str, Any], status: str,
         raise ValueError("Invoice review window must be an integer between 0 and 365 days")
     a = _owned_review_evidence(a)
     b = _owned_review_evidence(b)
+    # A single physical CSV line cannot be a duplicate of itself. This
+    # condition otherwise silently produces a clean review result even
+    # though the source-pair citation is invalid.
+    if a["row"] == b["row"]:
+        raise ValueError("Invoice review requires distinct physical CSV rows")
     flags: list[str] = []
     if ascii_case_identity(a["vendor"]) != ascii_case_identity(b["vendor"]):
         flags.append("normalized_vendor_key_review")
