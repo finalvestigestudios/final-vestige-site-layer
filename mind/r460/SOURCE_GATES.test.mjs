@@ -1,0 +1,20 @@
+// Run in repository checkout: node --test mind/r460/SOURCE_GATES.test.mjs
+import {readFileSync} from 'node:fs';
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+const root=new URL('./',import.meta.url);
+const read=p=>readFileSync(new URL(p,root),'utf8');
+const A=read('ZEN12_A_TEXT_ONLY.html'), B=read('ZEN12_B_OPTIONAL_FILM.html'), H=read('MIND_ARCHIVE_HUB_SOURCE_ONLY.html');
+const M=JSON.parse(read('CLAIM_SOURCE_MERCHANT_MATRIX.json'));
+const body=s=>s.match(/<section aria-labelledby="problem">[\s\S]*?<\/section>\s*<section aria-labelledby="microstory">[\s\S]*<\/section>(?=<\/main>)/)?.[0];
+test('A and B contain identical substantive buying guide source',()=>assert.equal(body(A),body(B)));
+test('native purchase control is disabled in each variant',()=>{for(const s of [A,B])assert.match(s,/<button[^>]*\bdisabled\b/)});
+test('disclosure adjacent to unavailable CTA',()=>{for(const s of [A,B]){const x=s.indexOf('Prospective affiliate disclosure'), y=s.indexOf('<button class="cta"');assert.ok(x>0&&y>x&&y-x<700)}});
+test('no active merchant href, script, form, or pixel',()=>{for(const s of [A,B,H]){assert.doesNotMatch(s,/<script\b|<form\b|<iframe\b|<img\b|<video\b/i);assert.doesNotMatch(s,/href=["']https?:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots)\./i)}});
+test('B adds original film concept and text alternative only',()=>{assert.match(B,/Optional 42-second evidence film/);assert.match(B,/<svg\b/);assert.match(B,/<details>/);assert.match(B,/no playback/)});
+test('no autoplay, external fonts, CSS imports, JS or tracking',()=>{for(const s of [A,B,H]){assert.doesNotMatch(s,/\bautoplay\b[^<]*<video|@import|fonts\.google|gtag\(|fbq\(|googletagmanager|dataLayer\./i)}});
+test('safety: every commercial gate closed and earning URL null',()=>{assert.equal(M.commercial.approved_earning_url,null);assert.ok(M.release_gates.every(g=>g.passed===false && g.evidence===null));});
+test('claim matrix separates seller from trials and marks unknown price',()=>{assert.ok(M.claims.some(c=>c.status==='SELLER_DESCRIPTION'));assert.ok(M.claims.some(c=>c.status==='SUPPORTED_REVIEW_NOT_PRODUCT'));assert.ok(M.claims.some(c=>c.id==='offer-price'&&c.status==='NOT_VERIFIED'));});
+test('source-only hub preserves existing single lead funnel',()=>{assert.match(H,/finalvestige\.com\/focus\//);assert.doesNotMatch(H,/<form\b/i)});
+test('responsive, keyboard focus, reduced motion, no-JS text',()=>{for(const s of [A,B]){assert.match(s,/max-width:640px/);assert.match(s,/:focus-visible/);assert.match(s,/prefers-reduced-motion/);assert.match(s,/lang="en"/);}});
+test('disclosure and merchant CTA cannot misrepresent as paid sale',()=>{for(const s of [A,B]){assert.match(s,/No earning link is active here/);assert.doesNotMatch(s,/Buy now|limited time|guaranteed results/i);}});

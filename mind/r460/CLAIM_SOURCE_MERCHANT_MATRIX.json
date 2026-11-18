@@ -1,0 +1,322 @@
+{
+  "version": "R460-2026-11-17",
+  "state": "UNPUBLISHED_HARD_HOLD",
+  "evidence_dates": {
+    "checked": "2026-11-17",
+    "price": "UNVERIFIED",
+    "publisher_approval": "NOT_AUTHENTICATED"
+  },
+  "commercial": {
+    "seller": "Inspire3",
+    "merchant_offer": "Zen12",
+    "authorization": "NOT_AUTHENTICATED",
+    "approved_earning_url": null,
+    "permitted_channels": null,
+    "issued_sku": null,
+    "verified_checkout_price": null,
+    "verified_checkout_refund_terms": null,
+    "confirmed_affiliate_orders": null,
+    "realized_net_revenue": null,
+    "invariant": "No merchant earning URL or active purchase CTA without account-specific approval, exact SKU/channel rights, checkout/refund/settlement evidence, successful QA and founder release approval"
+  },
+  "claims": [
+    {
+      "id": "science-thompson-1980",
+      "text": "Thatcher illusion originally reported in 1980 using Thatcher portrait",
+      "status": "SUPPORTED_PRIMARY",
+      "source": "https://doi.org/10.1068/p090483",
+      "surface": "investigation"
+    },
+    {
+      "id": "science-nonfaces-2010",
+      "text": "Thatcher-like effect observed in several non-face object categories",
+      "status": "SUPPORTED_PRIMARY",
+      "source": "https://doi.org/10.1068/p6659",
+      "surface": "investigation"
+    },
+    {
+      "id": "science-local-2014",
+      "text": "Local eye-mouth orientation contributes materially to illusion",
+      "status": "SUPPORTED_PRIMARY",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/25301017/",
+      "surface": "investigation"
+    },
+    {
+      "id": "science-fmri-2013",
+      "text": "STS adaptation effect for upright Thatcherized changes in a specific fMRI task",
+      "status": "SUPPORTED_PRIMARY",
+      "source": "https://doi.org/10.1177/0956797613501521",
+      "surface": "investigation"
+    },
+    {
+      "id": "science-inversion-expression-2014",
+      "text": "Expression recognition and grotesque detection vary with different manipulations",
+      "status": "SUPPORTED_PRIMARY",
+      "source": "https://doi.org/10.1068/p7755",
+      "surface": "investigation"
+    },
+    {
+      "id": "science-binaural-2023",
+      "text": "14 EEG studies yielded five supportive, eight contradictory and one mixed outcome",
+      "status": "SUPPORTED_REVIEW_NOT_PRODUCT",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "surface": "buyer_guide"
+    },
+    {
+      "id": "offer-twelve",
+      "text": "Zen12 session described as 12 minutes",
+      "status": "SELLER_DESCRIPTION",
+      "source": "https://zen12.com/about",
+      "surface": "buyer_guide"
+    },
+    {
+      "id": "offer-levels",
+      "text": "Zen12 seller describes 12 levels and four listening formats",
+      "status": "SELLER_DESCRIPTION",
+      "source": "https://zen12.com/about",
+      "surface": "buyer_guide"
+    },
+    {
+      "id": "offer-promo",
+      "text": "Different /secret/ full-course bundle and promotion exists",
+      "status": "SELLER_PROMOTIONAL_PAGE_NOT_APPROVED_SKU",
+      "source": "https://zen12.com/secret/",
+      "surface": "matrix_only"
+    },
+    {
+      "id": "offer-price",
+      "text": "Current price, coupon and tax for FV-authorized checkout",
+      "status": "NOT_VERIFIED",
+      "source": null,
+      "surface": "SUPPRESS"
+    },
+    {
+      "id": "offer-refunds",
+      "text": "Exact returns/refund terms at FV-authorized referred checkout",
+      "status": "NOT_VERIFIED",
+      "source": null,
+      "surface": "SUPPRESS"
+    },
+    {
+      "id": "offer-benefit-equivalence",
+      "text": "Twelve minutes of Zen12 equals one hour of conventional meditation",
+      "status": "SELLER_ASSERTION_UNSUPPORTED_PRODUCT_SPECIFIC",
+      "source": "https://zen12.com/about",
+      "surface": "SUPPRESS"
+    },
+    {
+      "id": "offer-guaranteed-stress",
+      "text": "Zen12 eliminates stress or anxiety automatically",
+      "status": "SELLER_ASSERTION_UNSUPPORTED_PRODUCT_SPECIFIC",
+      "source": "https://zen12.com/about",
+      "surface": "SUPPRESS"
+    },
+    {
+      "id": "offer-brainwaves",
+      "text": "Zen12 reliably entrains brainwaves and changes mental performance",
+      "status": "NOT_SUBSTANTIATED_PRODUCT_SPECIFIC",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "surface": "SUPPRESS"
+    },
+    {
+      "id": "hypnosis-live",
+      "text": "Hypnosis Live prospective fit",
+      "status": "NOT_REVIEWED_FOR_THIS_OFFER",
+      "source": "https://inspire3.com/",
+      "surface": "NO_CTA"
+    },
+    {
+      "id": "brainwave-shots",
+      "text": "Brainwave Shots prospective fit",
+      "status": "NOT_REVIEWED_FOR_THIS_OFFER",
+      "source": "https://inspire3.com/",
+      "surface": "NO_CTA"
+    },
+    {
+      "id": "endorsements",
+      "text": "A commission disclosure must be clear and conspicuous near the recommendation",
+      "status": "REGULATORY_GUIDANCE",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "surface": "buyer_guide"
+    },
+    {
+      "id": "health",
+      "text": "Product health/benefit advertising requires appropriate scientific substantiation",
+      "status": "REGULATORY_GUIDANCE",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "surface": "buyer_guide"
+    },
+    {
+      "id": "fieldbook",
+      "text": "Existing free Focus fieldbook and Jetpack funnel",
+      "status": "GITHUB_ISSUE_171_EXISTING_RESOURCE_LIVE_CHECK_NOT_COMPLETED_THIS_RUN",
+      "source": "https://finalvestige.com/focus/",
+      "surface": "hub"
+    }
+  ],
+  "gate_owners": {
+    "named_account_partner_approval": "Founder/Commerce",
+    "sku_offer_channel_permission": "Founder/Commerce",
+    "link_terms_returns": "Founder/Commerce",
+    "scientific_editorial_signoff": "Mind editorial",
+    "browser_a11y_sanitization": "Site QA",
+    "analytics_instrumentation": "Claude existing first-party stack",
+    "creator_asset_id_matching": "Grok/Praxxis",
+    "site_publication_and_spend": "Founder",
+    "email_channel": "Dispatch Issue 174",
+    "actual_paid_settlement": "Commerce"
+  },
+  "release_gates": [
+    {
+      "name": "merchant_account_approved",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "partner_terms_read",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "site_channel_permitted",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "email_channel_permitted_if_used",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "social_channel_permitted_if_used",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "exact_sku_issued",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "exact_url_issued",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "landing_destination_verified",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "final_price_verified",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "billing_verified",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "refund_terms_verified",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "creative_rights_verified",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "product_specific_claims_reviewed",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "near_link_disclosure_visible",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "commercial_link_active_only_after_approval",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "film_rights_verified",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "film_encoded",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "captions_time_checked",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "transcript_equivalent",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "no_autoplay",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "no_js_graceful",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "keyboard_qa",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "mobile_360_390_768_1440_1920",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "wcag22aa_review",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "word_press_sanitization",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "real_browser_performance",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "privacy_consent_review",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "no_duplicate_tracking",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "jetpack_flow_integrity",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "name": "founder_release_approval",
+      "passed": false,
+      "evidence": null
+    }
+  ],
+  "key_revenue_metric": "net realized revenue (settled, after fees/refunds) / qualified-human sessions * 1000; UNKNOWN if numerator or denominator unverified"
+}
