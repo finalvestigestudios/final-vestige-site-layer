@@ -1,0 +1,587 @@
+{
+  "version": "R464",
+  "reviewed_on": "2026-11-17 America/Los_Angeles",
+  "workstream": "Mind & Perception only",
+  "commercial_state": "HARD_HOLD",
+  "method": "Direct official seller product/offer, scholarly abstracts and original FV public pages reviewed read-only; private pending notice summarized without identifiers",
+  "sources": {
+    "S01": {
+      "name": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "type": "seller"
+    },
+    "S02": {
+      "name": "Zen12 official About",
+      "url": "https://zen12.com/about",
+      "type": "seller"
+    },
+    "S03": {
+      "name": "Zen12 distinct secret promotional checkout context",
+      "url": "https://zen12.com/secret/",
+      "type": "seller"
+    },
+    "S04": {
+      "name": "Hypnosis Live official catalog",
+      "url": "https://hypnosislive.com/",
+      "type": "seller"
+    },
+    "S05": {
+      "name": "Brainwave Shots official catalog",
+      "url": "https://brainwaveshots.com/",
+      "type": "seller"
+    },
+    "S06": {
+      "name": "Inspire3 affiliate network public landing page",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "seller"
+    },
+    "S07": {
+      "name": "FTC endorsement guides Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator"
+    },
+    "S08": {
+      "name": "FTC health products compliance guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator"
+    },
+    "S09": {
+      "name": "McGurk & MacDonald 1976 original DOI",
+      "url": "https://doi.org/10.1038/264746a0",
+      "type": "research"
+    },
+    "S10": {
+      "name": "MacDonald retrospective",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31264593/",
+      "type": "research"
+    },
+    "S11": {
+      "name": "Strand et al. 2014",
+      "url": "https://doi.org/10.1044/2014_JSLHR-H-14-0059",
+      "type": "research"
+    },
+    "S12": {
+      "name": "Brown et al. 2018",
+      "url": "https://doi.org/10.1371/journal.pone.0207160",
+      "type": "research"
+    },
+    "S13": {
+      "name": "Magnotti et al. 2018 playback-rate",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31264598/",
+      "type": "research"
+    },
+    "S14": {
+      "name": "Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "fv_live"
+    },
+    "S15": {
+      "name": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "type": "fv_live"
+    },
+    "S16": {
+      "name": "Published change blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "fv_live"
+    },
+    "S17": {
+      "name": "Published Mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "fv_live"
+    },
+    "S18": {
+      "name": "Affiliate disclosure policy",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "type": "fv_live"
+    },
+    "S19": {
+      "name": "Editorial standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "type": "fv_live"
+    }
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Inspire3 groups Zen12/Hypnosis Live/Brainwave Shots",
+      "status": "seller_format",
+      "source_ids": [
+        "S01"
+      ],
+      "limit": "descriptive only"
+    },
+    {
+      "id": "C02",
+      "statement": "Zen12 seller advertises twelve-minute sessions",
+      "status": "seller_format",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "descriptive only"
+    },
+    {
+      "id": "C03",
+      "statement": "Zen12 seller advertises twelve levels",
+      "status": "seller_format",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "descriptive only"
+    },
+    {
+      "id": "C04",
+      "statement": "Zen12 seller advertises four audio styles",
+      "status": "seller_format",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "descriptive only"
+    },
+    {
+      "id": "C05",
+      "statement": "Zen12 seller advertises 48 MP3s on /secret/",
+      "status": "seller_offer",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "specific to that promotional page only"
+    },
+    {
+      "id": "C06",
+      "statement": "/secret/ includes guide/support/bonuses",
+      "status": "seller_offer",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "not universal"
+    },
+    {
+      "id": "C07",
+      "statement": "/secret/ has a time-sensitive coupon/countdown",
+      "status": "seller_offer",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "do not repeat price or urgency"
+    },
+    {
+      "id": "C08",
+      "statement": "12-minute Zen12 equals an hour of conventional meditation",
+      "status": "seller_efficacy_unsubstantiated",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "do not adopt"
+    },
+    {
+      "id": "C09",
+      "statement": "Zen12 automatically produces deep relaxation",
+      "status": "seller_efficacy_unsubstantiated",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "do not adopt"
+    },
+    {
+      "id": "C10",
+      "statement": "Zen12 cures anxiety or other health conditions",
+      "status": "unsubstantiated",
+      "source_ids": [
+        "S02",
+        "S08"
+      ],
+      "limit": "do not adopt"
+    },
+    {
+      "id": "C11",
+      "statement": "Zen12 seller warns not to use while driving or operating machinery",
+      "status": "seller_safety",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "note with attribution"
+    },
+    {
+      "id": "C12",
+      "statement": "Hypnosis Live official seller lists >200 self-hypnosis downloads",
+      "status": "seller_format",
+      "source_ids": [
+        "S04"
+      ],
+      "limit": "not independently tested"
+    },
+    {
+      "id": "C13",
+      "statement": "Hypnosis Live guarantees results",
+      "status": "seller_efficacy_unsubstantiated",
+      "source_ids": [
+        "S04"
+      ],
+      "limit": "do not repeat as editorial guarantee"
+    },
+    {
+      "id": "C14",
+      "statement": "Brainwave Shots seller has Focus Shot and similar themed MP3s",
+      "status": "seller_format",
+      "source_ids": [
+        "S05"
+      ],
+      "limit": "exact individual offer not approved"
+    },
+    {
+      "id": "C15",
+      "statement": "Brainwave Shots curing pain or disease",
+      "status": "seller_efficacy_unsubstantiated",
+      "source_ids": [
+        "S05",
+        "S08"
+      ],
+      "limit": "do not adopt"
+    },
+    {
+      "id": "C16",
+      "statement": "Inspire3 public affiliate site offers application/login",
+      "status": "public_affiliate_info",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "not finalvestige-specific approval"
+    },
+    {
+      "id": "C17",
+      "statement": "Inspire3 gives a special trackable link only upon authorization",
+      "status": "public_affiliate_info",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "no issued FV URL verified"
+    },
+    {
+      "id": "C18",
+      "statement": "FTC material connection disclosure must be obvious near review/link",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "adjacent full-language prospective disclosure"
+    },
+    {
+      "id": "C19",
+      "statement": "FTC objective health claims require sound science and substantiation",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "no product-specific clinical claim"
+    },
+    {
+      "id": "C20",
+      "statement": "1976 McGurk report demonstrates audiovisual speech illusion",
+      "status": "independent_research",
+      "source_ids": [
+        "S09",
+        "S10"
+      ],
+      "limit": "not audio-treatment evidence"
+    },
+    {
+      "id": "C21",
+      "statement": "2014 Strand 73 people and 58 retested, large individual differences",
+      "status": "independent_research",
+      "source_ids": [
+        "S11"
+      ],
+      "limit": "college sample and task-specific"
+    },
+    {
+      "id": "C22",
+      "statement": "2018 Brown individual variation 0-100% in some settings",
+      "status": "independent_research",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "does not diagnose traits"
+    },
+    {
+      "id": "C23",
+      "statement": "2018 Magnotti slowed-playback effect with 110 people",
+      "status": "independent_research",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "laboratory effect only"
+    },
+    {
+      "id": "C24",
+      "statement": "Puységur archive includes 153 source rows and 16 dossiers",
+      "status": "fv_live",
+      "source_ids": [
+        "S14"
+      ],
+      "limit": "historical records not mechanism proof"
+    },
+    {
+      "id": "C25",
+      "statement": "The Fieldbook is a free 52-page resource through existing signup",
+      "status": "fv_live",
+      "source_ids": [
+        "S15"
+      ],
+      "limit": "not an authenticated paid SKU"
+    },
+    {
+      "id": "C26",
+      "statement": "Change Blindness and Mesmerism are existing live routes",
+      "status": "fv_live",
+      "source_ids": [
+        "S16",
+        "S17"
+      ],
+      "limit": "creator asset IDs still unverified"
+    },
+    {
+      "id": "C27",
+      "statement": "A general affiliate policy does not replace near-link FTC disclosure",
+      "status": "editorial_application",
+      "source_ids": [
+        "S07",
+        "S18"
+      ],
+      "limit": "policy + adjacent disclosure both needed"
+    },
+    {
+      "id": "C28",
+      "statement": "A published historical report does not validate modern efficacy claims",
+      "status": "editorial_application",
+      "source_ids": [
+        "S14",
+        "S08"
+      ],
+      "limit": "separate inference"
+    },
+    {
+      "id": "C29",
+      "statement": "Refersion email states pending as of 24 Aug 2026",
+      "status": "private_account_read",
+      "source_ids": [],
+      "limit": "no publisher acceptance authenticated from targeted inbox search; do not expose private identifiers"
+    },
+    {
+      "id": "C30",
+      "statement": "No verified sale, SKU, payment settlement or paid Mind product",
+      "status": "commercial_unknown",
+      "source_ids": [],
+      "limit": "do not report zero revenue or a paid sale"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "named FV Inspire3 partner approval",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G02",
+      "name": "publisher identity verified",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G03",
+      "name": "authorized Zen12 SKU",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G04",
+      "name": "permitted website channel",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G05",
+      "name": "permitted social channel",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G06",
+      "name": "permitted email channel",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G07",
+      "name": "issued earning URL",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G08",
+      "name": "tracking cookie/attribution terms",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G09",
+      "name": "commission terms and currency",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G10",
+      "name": "refund and chargeback handling",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G11",
+      "name": "merchant reporting access",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G12",
+      "name": "settlement reconciliation mechanism",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G13",
+      "name": "exact current package equivalence",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G14",
+      "name": "exact final payable checkout total",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G15",
+      "name": "taxes and any upsells disclosed",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G16",
+      "name": "returns window and exclusions validated",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G17",
+      "name": "rights-cleared approved creative",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G18",
+      "name": "FTC adjacent disclosure independently checked",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G19",
+      "name": "product outcome claim substantiation",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G20",
+      "name": "no medical/wealth performance guarantee",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G21",
+      "name": "screen-reader/keyboard browser QA",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G22",
+      "name": "mobile viewport QA 360/390/768/1440",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G23",
+      "name": "no-JS read parity",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G24",
+      "name": "reduced-motion QA",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G25",
+      "name": "encoded original film with captions",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G26",
+      "name": "WordPress sanitizer proof",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G27",
+      "name": "existing Jetpack confirmed lead flow checked",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G28",
+      "name": "genuine Grok media IDs confirmed",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G29",
+      "name": "founder commerce/release sign-off",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G30",
+      "name": "Claude/site QA release sign-off",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G31",
+      "name": "verified paid commission/order receipt",
+      "verified": false,
+      "release_state": "HOLD"
+    },
+    {
+      "id": "G32",
+      "name": "qualified-human denominator and 7/30 cohorts",
+      "verified": false,
+      "release_state": "HOLD"
+    }
+  ],
+  "limitations": [
+    "Source checks establish seller copy, not that advertised claims are true.",
+    "No product-specific Zen12 randomized outcome trial was authenticated.",
+    "No exact account-approved earning link, SKU, allowed channels or settlement terms were found.",
+    "The price/coupon/countdown on /secret/ is context-dependent and intentionally excluded from page copy.",
+    "No authenticated paid FV-owned Mind SKU or deliverable checkout was established.",
+    "Grok media IDs, conversions, refunds, fees and qualifying sessions remain unverified.",
+    "No live CMS or email changes allowed; current hub/offer variants are unpublished source-only."
+  ],
+  "disclosure_example": "If Final Vestige is approved to offer a purchasing link and you buy through it, Final Vestige may earn a commission at no additional cost to you.",
+  "revenue_kpi": {
+    "formula": "1000 * (settled gross revenue - refunds - fees) / qualified-human sessions",
+    "status": "NOT_COMPUTABLE",
+    "why": "No independently verified settled paid orders/commissions or denominator"
+  }
+}
