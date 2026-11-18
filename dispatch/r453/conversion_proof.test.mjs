@@ -1,7 +1,7 @@
 /** Dispatch R453 Node 20+ assertions. Offline synthetic fixtures ONLY; no actual email or order data. */
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { RELEASE_STATE, assessProviderCounts, validateCampaign, assessSignup, assessUtm, sumRevenue } from './conversion_proof.mjs';
+import { RELEASE_STATE, assessProviderCounts, validateCampaign, assessSignup, assessUtm, sumRevenue, dedupeConfirmedSignups } from './conversion_proof.mjs';
 
 const proof = { verified: true, source_ref: 'provider:synthetic-receipt', checked_at: '2026-11-18T18:35:00Z' };
 const campaign = { issues: [1,2,3,4,5,6].map(number => ({
@@ -53,3 +53,10 @@ test('zero qualified sessions produces null per-1000', () => assert.equal(sumRev
 test('missing audited denominator proof blocks', () => assert.equal(sumRevenue({...ledger,sessions_proof:null}).status,'UNCOMPUTABLE'));
 test('missing complete provider settlement ledger blocks', () => assert.equal(sumRevenue({...ledger,order_ledger_proof:null}).status,'UNCOMPUTABLE'));
 test('clicks and incomplete reports never provide real revenue', () => assert.equal(sumRevenue({clicks:99,checkout_starts:3}).status,'UNCOMPUTABLE'));
+
+const eventToken={...signup,dedupe_token:'opaque-test-0001'};
+test('one verified new signup',()=>assert.equal(dedupeConfirmedSignups([eventToken]).confirmed_new,1));
+test('duplicate signup never double counted',()=>assert.equal(dedupeConfirmedSignups([eventToken,eventToken]).confirmed_new,1));
+test('unconfirmed attempt not counted',()=>assert.equal(dedupeConfirmedSignups([{...eventToken,type:'signup_attempt'}]).confirmed_new,0));
+test('new confirmation without opaque dedupe token fails',()=>assert.equal(dedupeConfirmedSignups([signup]).status,'UNCOMPUTABLE'));
+test('invalid or PII-looking dedupe token fails',()=>assert.equal(dedupeConfirmedSignups([{...eventToken,dedupe_token:'someone@example.com'}]).status,'UNCOMPUTABLE'));
