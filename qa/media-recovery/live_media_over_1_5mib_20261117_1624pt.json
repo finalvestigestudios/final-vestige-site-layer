@@ -1,0 +1,746 @@
+{
+  "schema": "fv-current-oversized-media-v1",
+  "audit_date": "2026-11-17",
+  "source": "live authenticated WP media list 2 pages, 132 image records, not page network requests",
+  "summary": {
+    "image_media_items": 132,
+    "oversized_count": 19,
+    "oversized_original_stored_bytes": 62842750,
+    "threshold_bytes": 1572864
+  },
+  "items": [
+    {
+      "id": 388,
+      "attached_post_id": 299,
+      "title": "Vasa 1:10 Painted Reconstruction — Karolina Kristensson",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg",
+      "wp_original_file": "2026/08/vasa-modell-2020.jpg",
+      "mime": "image/jpeg",
+      "original_bytes": 8176362,
+      "width": 4256,
+      "height": 2832,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 639
+      },
+      "existing_responsive_variants_at_or_under960": [
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 511,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=768%2C511&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 200,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=300%2C200&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?resize=150%2C150&ssl=1",
+          "virtual": true
+        }
+      ],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 2640,
+      "attached_post_id": 1917,
+      "title": "Piri Reis world map, 1513",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/piri-reis-world-map-01.jpg",
+      "wp_original_file": "2026/11/piri-reis-world-map-01.jpg",
+      "mime": "image/jpeg",
+      "original_bytes": 7422309,
+      "width": 1964,
+      "height": 2619,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 1280
+      },
+      "existing_responsive_variants_at_or_under960": [
+        {
+          "name": "large",
+          "width": 768,
+          "height": 1024,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/piri-reis-world-map-01.jpg?fit=768%2C1024&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 1024,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/piri-reis-world-map-01.jpg?fit=768%2C1024&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium",
+          "width": 225,
+          "height": 300,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/piri-reis-world-map-01.jpg?fit=225%2C300&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/piri-reis-world-map-01.jpg?resize=150%2C150&ssl=1",
+          "virtual": true
+        }
+      ],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 1258,
+      "attached_post_id": null,
+      "title": "edit-017-v02-nypl-5003296-original",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "wp_original_file": "2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "mime": "image/jpeg",
+      "original_bytes": 5553669,
+      "width": 5667,
+      "height": 3831,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 649
+      },
+      "existing_responsive_variants_at_or_under960": [
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 519,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=768%2C519&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 203,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=300%2C203&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?resize=150%2C150&ssl=1",
+          "virtual": true
+        }
+      ],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 1257,
+      "attached_post_id": null,
+      "title": "edit-017-v01-malbone-tunnel-generalpunger-original",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "wp_original_file": "2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "mime": "image/jpeg",
+      "original_bytes": 4798395,
+      "width": 4000,
+      "height": 3000,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 720
+      },
+      "existing_responsive_variants_at_or_under960": [
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 576,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=768%2C576&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 225,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=300%2C225&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?resize=150%2C150&ssl=1",
+          "virtual": true
+        }
+      ],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 2636,
+      "attached_post_id": 1924,
+      "title": "Le Baquet de Mesmer",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/le-baquet-de-mesmer.jpg",
+      "wp_original_file": "2026/11/le-baquet-de-mesmer.jpg",
+      "mime": "image/jpeg",
+      "original_bytes": 4462854,
+      "width": 2988,
+      "height": 3538,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 1137
+      },
+      "existing_responsive_variants_at_or_under960": [
+        {
+          "name": "large",
+          "width": 865,
+          "height": 1024,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/le-baquet-de-mesmer.jpg?fit=865%2C1024&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 909,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/le-baquet-de-mesmer.jpg?fit=768%2C909&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium",
+          "width": 253,
+          "height": 300,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/le-baquet-de-mesmer.jpg?fit=253%2C300&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/le-baquet-de-mesmer.jpg?resize=150%2C150&ssl=1",
+          "virtual": true
+        }
+      ],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 39,
+      "attached_post_id": 34,
+      "title": "1906 San Francisco Firefighters — Historical Reconstruction",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "wp_original_file": "2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "mime": "image/png",
+      "original_bytes": 2892087,
+      "width": 1672,
+      "height": 941,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 540
+      },
+      "existing_responsive_variants_at_or_under960": [],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 43,
+      "attached_post_id": 38,
+      "title": "San Francisco Emergency Cistern — Historical Reconstruction",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "wp_original_file": "2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "mime": "image/png",
+      "original_bytes": 2836245,
+      "width": 1672,
+      "height": 941,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 540
+      },
+      "existing_responsive_variants_at_or_under960": [],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 389,
+      "attached_post_id": 299,
+      "title": "Vasa in the Museum — Anneli Karlsson",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg",
+      "wp_original_file": "2026/08/vasa-01-2020.jpg",
+      "mime": "image/jpeg",
+      "original_bytes": 2822969,
+      "width": 2147,
+      "height": 1417,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 634
+      },
+      "existing_responsive_variants_at_or_under960": [
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 507,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=768%2C507&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 198,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=300%2C198&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?resize=150%2C150&ssl=1",
+          "virtual": true
+        }
+      ],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 40,
+      "attached_post_id": 35,
+      "title": "James Caird Southern Ocean — Historical Reconstruction",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "wp_original_file": "2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "mime": "image/png",
+      "original_bytes": 2552136,
+      "width": 1672,
+      "height": 941,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 540
+      },
+      "existing_responsive_variants_at_or_under960": [],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 41,
+      "attached_post_id": 36,
+      "title": "Vicksburg Cave Life — Historical Reconstruction",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "wp_original_file": "2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "mime": "image/png",
+      "original_bytes": 2498247,
+      "width": 1672,
+      "height": 941,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 540
+      },
+      "existing_responsive_variants_at_or_under960": [],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 42,
+      "attached_post_id": 37,
+      "title": "Petra Water System — Historical Reconstruction",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "wp_original_file": "2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "mime": "image/png",
+      "original_bytes": 2488823,
+      "width": 1672,
+      "height": 941,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 540
+      },
+      "existing_responsive_variants_at_or_under960": [],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 382,
+      "attached_post_id": 299,
+      "title": "Vasa Old and New Support Systems — Anneli Karlsson",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+      "wp_original_file": "2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+      "mime": "image/jpeg",
+      "original_bytes": 2318980,
+      "width": 1800,
+      "height": 1200,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 640
+      },
+      "existing_responsive_variants_at_or_under960": [
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 512,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=768%2C512&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 200,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=300%2C200&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?resize=150%2C150&ssl=1",
+          "virtual": true
+        }
+      ],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 482,
+      "attached_post_id": null,
+      "title": "050e21e0-7b54-4f9a-ba0b-7f594657af05",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png",
+      "wp_original_file": "2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png",
+      "mime": "image/png",
+      "original_bytes": 2293016,
+      "width": 1672,
+      "height": 941,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 540
+      },
+      "existing_responsive_variants_at_or_under960": [
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 432,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png?fit=768%2C432&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 169,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png?fit=300%2C169&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png?resize=150%2C150&ssl=1",
+          "virtual": true
+        }
+      ],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 405,
+      "attached_post_id": 85,
+      "title": "The Water Resilience Field Manual — Expanded First Edition",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png",
+      "wp_original_file": "2026/08/The20Water20Resilience20Field20Manual.png",
+      "mime": "image/png",
+      "original_bytes": 2201573,
+      "width": 1122,
+      "height": 1402,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 1200
+      },
+      "existing_responsive_variants_at_or_under960": [
+        {
+          "name": "large",
+          "width": 819,
+          "height": 1024,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png?fit=819%2C1024&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 960,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png?fit=768%2C960&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium",
+          "width": 240,
+          "height": 300,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png?fit=240%2C300&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png?resize=150%2C150&ssl=1",
+          "virtual": true
+        }
+      ],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 293,
+      "attached_post_id": null,
+      "title": "Bryan Rhodes — Founder and Editor of Final Vestige",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/ne.png",
+      "wp_original_file": "2026/08/ne.png",
+      "mime": "image/png",
+      "original_bytes": 2090327,
+      "width": 1122,
+      "height": 1402,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 1200
+      },
+      "existing_responsive_variants_at_or_under960": [
+        {
+          "name": "large",
+          "width": 819,
+          "height": 1024,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/ne.png?fit=819%2C1024&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 960,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/ne.png?fit=768%2C960&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium",
+          "width": 240,
+          "height": 300,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/ne.png?fit=240%2C300&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/ne.png?resize=150%2C150&ssl=1",
+          "virtual": true
+        }
+      ],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 2148,
+      "attached_post_id": null,
+      "title": "Caernarvon levee detonation, 1927 — NOAA historic archive",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/1927-caernarvon-levee-explosion-noaa-archive.jpg",
+      "wp_original_file": "2026/11/1927-caernarvon-levee-explosion-noaa-archive.jpg",
+      "mime": "image/jpeg",
+      "original_bytes": 2030948,
+      "width": 1821,
+      "height": 1190,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 627
+      },
+      "existing_responsive_variants_at_or_under960": [
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 502,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/1927-caernarvon-levee-explosion-noaa-archive.jpg?fit=768%2C502&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 196,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/1927-caernarvon-levee-explosion-noaa-archive.jpg?fit=300%2C196&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/1927-caernarvon-levee-explosion-noaa-archive.jpg?resize=150%2C150&ssl=1",
+          "virtual": true
+        }
+      ],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 2432,
+      "attached_post_id": 2429,
+      "title": "Artifact Editions — Editorial Still Life (Concept)",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/final-vestige-artifact-editions-editorial-concept.png",
+      "wp_original_file": "2026/11/final-vestige-artifact-editions-editorial-concept.png",
+      "mime": "image/png",
+      "original_bytes": 2010886,
+      "width": 1280,
+      "height": 720,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 540
+      },
+      "existing_responsive_variants_at_or_under960": [
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 432,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/final-vestige-artifact-editions-editorial-concept.png?fit=768%2C432&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 169,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/final-vestige-artifact-editions-editorial-concept.png?fit=300%2C169&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/final-vestige-artifact-editions-editorial-concept.png?resize=150%2C150&ssl=1",
+          "virtual": true
+        }
+      ],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 2638,
+      "attached_post_id": 1920,
+      "title": "Lycurgus Cup, British Museum",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/lycurgus-cup-british-museum.jpg",
+      "wp_original_file": "2026/11/lycurgus-cup-british-museum.jpg",
+      "mime": "image/jpeg",
+      "original_bytes": 1745282,
+      "width": 2720,
+      "height": 3649,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 1288
+      },
+      "existing_responsive_variants_at_or_under960": [
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 1030,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/lycurgus-cup-british-museum.jpg?fit=768%2C1030&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "large",
+          "width": 763,
+          "height": 1024,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/lycurgus-cup-british-museum.jpg?fit=763%2C1024&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium",
+          "width": 224,
+          "height": 300,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/lycurgus-cup-british-museum.jpg?fit=224%2C300&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/lycurgus-cup-british-museum.jpg?resize=150%2C150&ssl=1",
+          "virtual": true
+        }
+      ],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 2637,
+      "attached_post_id": 1926,
+      "title": "British Museum crystal skull",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/crystal-skull-british-museum.jpg",
+      "wp_original_file": "2026/11/crystal-skull-british-museum.jpg",
+      "mime": "image/jpeg",
+      "original_bytes": 1647642,
+      "width": 1436,
+      "height": 2001,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 1338
+      },
+      "existing_responsive_variants_at_or_under960": [
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 1070,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/crystal-skull-british-museum.jpg?fit=768%2C1070&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "large",
+          "width": 735,
+          "height": 1024,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/crystal-skull-british-museum.jpg?fit=735%2C1024&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium",
+          "width": 215,
+          "height": 300,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/crystal-skull-british-museum.jpg?fit=215%2C300&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/crystal-skull-british-museum.jpg?resize=150%2C150&ssl=1",
+          "virtual": true
+        }
+      ],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    }
+  ],
+  "not_proven_browser_wire_bytes": true,
+  "licensed_rehost_or_recompress": "HOLD",
+  "production_writes": 0
+}
