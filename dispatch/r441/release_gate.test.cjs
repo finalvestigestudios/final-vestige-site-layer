@@ -1,0 +1,12 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),{evaluate,canonical}=require('./release_gate.cjs');
+let base={issue:3,offer:'Zen12',issue05:'Hypnosis Live',guide:canonical.guide,provider_subscribed:3,provider_source:'WordPress Subscribers'};
+test('gated as unsent',()=>{assert.equal(evaluate(base).status,'HOLD_UNSENT');assert.equal(evaluate(base).ready_to_send,false)});
+test('email permission missing',()=>assert.ok(evaluate(base).blockers.includes('EMAIL_PARTNER_PERMISSION')));
+test('postal and unsub missing',()=>{let b=evaluate(base).blockers;assert.ok(b.includes('PUBLISHER_POSTAL'));assert.ok(b.includes('RENDERED_UNSUBSCRIBE'))});
+test('cannot replace Hypnosis Live with Total Focus',()=>assert.ok(evaluate({...base,issue05:'Total Focus'}).blockers.includes('OFFER_DRIFT')));
+test('cannot send to promotional seller URL',()=>assert.ok(evaluate({...base,guide:'https://zen12.com/secret/'}).blockers.includes('CTA_NOT_APPROVED')));
+test('cannot activate earning URL',()=>assert.ok(evaluate({...base,affiliate_url:'https://zen12.com/'}).blockers.includes('CTA_NOT_APPROVED')));
+test('cannot assume 3 provider rows means 3 welcome receipts',()=>assert.ok(evaluate(base).blockers.includes('RECEIVED_WELCOME')));
+test('even synthetic complete flags cannot enable sending',()=>{let v={...base};for(let k of ['email_partner_permission','live_approved_guide','exact_sku_checkout','publisher_postal','rendered_unsubscribe','jetpack_native_preview','received_welcome','founder_final_release']){v[k]=true;v[k+'_proof']='synthetic'}assert.equal(evaluate(v).ready_to_send,false)});
+test('forbidden send rejected',()=>assert.ok(evaluate({...base,send:true}).blockers.includes('FORBIDDEN_ACTION')));
+test('wrong provider count rejected',()=>assert.ok(evaluate({...base,provider_subscribed:5}).blockers.includes('ELIGIBILITY_EVIDENCE')));
