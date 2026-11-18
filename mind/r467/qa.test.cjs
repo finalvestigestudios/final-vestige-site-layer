@@ -37,7 +37,7 @@ test('exact promotional vs standard checkout separation',()=>{
  for(const x of [a,b]){assert.match(x,/zen12.com\/about/);assert.match(x,/zen12.com\/secret/);assert.match(x,/separate seller presentations/);}
 });
 test('no email list duplication',()=>{for(const x of htmls){assert.doesNotMatch(x,/<input|type=["']email|<form/i);assert.match(x,/Fieldbook/);}});
-test('optional film is explicitly unencoded and unplayable',()=>{assert.match(b,/not encoded or playable/);assert.doesNotMatch(a,/poster-title/);assert.match(b,/poster-title/);});
+test('optional film is explicitly unencoded and unplayable',()=>{assert.match(b,/No encoded or playable video is embedded/);assert.doesNotMatch(a,/poster-title/);assert.match(b,/poster-title/);});
 test('B includes accessible poster text and complete transcript',()=>{assert.match(b,/aria-labelledby="poster-title poster-desc"/);assert.match(b,/<details>/);assert.match(b,/00:35–00:42/);});
 test('VTT has six contiguous cues to 42s',()=>{
  const cues=[...vtt.matchAll(/(\d\d):(\d\d):(\d\d)\.000 --> (\d\d):(\d\d):(\d\d)\.000/g)];
