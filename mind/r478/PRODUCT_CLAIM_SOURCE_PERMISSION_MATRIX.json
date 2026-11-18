@@ -1,0 +1,377 @@
+{
+  "report": "R478 evidence and commercial permission gate",
+  "asOf": "2026-11-18",
+  "version": 1,
+  "activation": "HARD_HOLD",
+  "sources": [
+    {
+      "id": "S01",
+      "name": "Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "role": "seller"
+    },
+    {
+      "id": "S02",
+      "name": "Zen12 regular About",
+      "url": "https://zen12.com/about",
+      "role": "seller"
+    },
+    {
+      "id": "S03",
+      "name": "Zen12 separate promotional funnel",
+      "url": "https://zen12.com/secret/",
+      "role": "seller"
+    },
+    {
+      "id": "S04",
+      "name": "Ingendoh et al 2023 binaural EEG review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "role": "independent science"
+    },
+    {
+      "id": "S05",
+      "name": "FTC Endorsement Guide FAQs",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "role": "regulation"
+    },
+    {
+      "id": "S06",
+      "name": "FTC Health Products Compliance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "role": "regulation"
+    },
+    {
+      "id": "S07",
+      "name": "Johansson et al 2005",
+      "url": "https://doi.org/10.1126/science.1111709",
+      "role": "science"
+    },
+    {
+      "id": "S08",
+      "name": "Hall et al 2010 jams and tea",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "role": "science"
+    },
+    {
+      "id": "S09",
+      "name": "Hall et al 2012 survey",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3446893/",
+      "role": "science"
+    },
+    {
+      "id": "S10",
+      "name": "Grassi et al 2025 covert detection",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12713319/",
+      "role": "science counterevidence"
+    },
+    {
+      "id": "S11",
+      "name": "Choice blindness and self-knowledge 2019 critique",
+      "url": "https://doi.org/10.1007/s11229-019-02414-3",
+      "role": "science interpretation"
+    },
+    {
+      "id": "S12",
+      "name": "Choice blindness financial decisions",
+      "url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/choice-blindness-in-financial-decision-making/74173A560D9294AE9A8D51FAF3A70FA6",
+      "role": "science"
+    },
+    {
+      "id": "S13",
+      "name": "Puységur evidence archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "role": "existing live FV"
+    },
+    {
+      "id": "S14",
+      "name": "Existing free Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "role": "existing live FV"
+    },
+    {
+      "id": "S15",
+      "name": "Existing Dispatch",
+      "url": "https://finalvestige.com/dispatch/",
+      "role": "existing live FV"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c01",
+      "claim": "12-minute downloadable audio sessions",
+      "status": "seller_description",
+      "sourceId": "S02",
+      "decision": "Allowed only as vendor description; verify purchased SKU"
+    },
+    {
+      "id": "c02",
+      "claim": "12 sequential levels",
+      "status": "seller_description",
+      "sourceId": "S02",
+      "decision": "No extrapolation about increased depth"
+    },
+    {
+      "id": "c03",
+      "claim": "four listening styles per level",
+      "status": "seller_description",
+      "sourceId": "S02",
+      "decision": "Relaxation music, guided, white noise, nature; SKU check"
+    },
+    {
+      "id": "c04",
+      "claim": "the product meditates for the buyer",
+      "status": "seller_unsubstantiated",
+      "sourceId": "S02",
+      "decision": "Exclude from FV efficacy copy"
+    },
+    {
+      "id": "c05",
+      "claim": "12 minutes equals 1 hour of advanced meditation",
+      "status": "seller_unsubstantiated",
+      "sourceId": "S02",
+      "decision": "Exclude; no product-specific equivalence trial"
+    },
+    {
+      "id": "c06",
+      "claim": "instant anxiety elimination",
+      "status": "seller_unsubstantiated",
+      "sourceId": "S02",
+      "decision": "Exclude health claim"
+    },
+    {
+      "id": "c07",
+      "claim": "measurable brainwave entrainment achieved by Zen12",
+      "status": "seller_unsubstantiated",
+      "sourceId": "S02",
+      "decision": "Exclude until adequate product-specific evidence"
+    },
+    {
+      "id": "c08",
+      "claim": "binaural-beat EEG evidence is consistent",
+      "status": "contradicted_by_review",
+      "sourceId": "S04",
+      "decision": "2023 review 5 aligned, 8 contradictory, 1 mixed among heterogeneous 14"
+    },
+    {
+      "id": "c09",
+      "claim": "Secret promotion price coupon applies to FV audience",
+      "status": "unverified_partner_specific",
+      "sourceId": "S03",
+      "decision": "Never advertise screenshot total or countdown; checkout terms separate"
+    },
+    {
+      "id": "c10",
+      "claim": "Secret promotion package/refund/call applies to FV URL",
+      "status": "unverified_partner_specific",
+      "sourceId": "S03",
+      "decision": "No verified link, refund obligations or support terms"
+    },
+    {
+      "id": "c11",
+      "claim": "publisher account approved for Inspire3",
+      "status": "unverified_partner_specific",
+      "sourceId": "S01",
+      "decision": "Connected Gmail found only 2026-08-24 generic pending"
+    },
+    {
+      "id": "c12",
+      "claim": "earned affiliate tracking URL issued",
+      "status": "unverified_partner_specific",
+      "sourceId": "S01",
+      "decision": "HOLD; no links invented"
+    },
+    {
+      "id": "c13",
+      "claim": "social/YouTube/TikTok/email channels approved",
+      "status": "unverified_partner_specific",
+      "sourceId": "S01",
+      "decision": "HOLD per medium"
+    },
+    {
+      "id": "c14",
+      "claim": "publisher commission rate, cookie duration and paid settlement known",
+      "status": "unverified_partner_specific",
+      "sourceId": "S01",
+      "decision": "HOLD; no estimates reported"
+    },
+    {
+      "id": "c15",
+      "claim": "FV-owned paid Mind SKU exists and is rights cleared",
+      "status": "unverified_owned_commerce",
+      "sourceId": "S14",
+      "decision": "Focus is free; paid product not authenticated"
+    },
+    {
+      "id": "c16",
+      "claim": "choice-blindness face selection outcome switches sometimes unchallenged",
+      "status": "experiment_bound",
+      "sourceId": "S07",
+      "decision": "Task-specific observed behavior; does not prove unconsciousness"
+    },
+    {
+      "id": "c17",
+      "claim": "supermarket jam/tea sample switching detected no more than one-third of trials",
+      "status": "experiment_bound",
+      "sourceId": "S08",
+      "decision": "Specific study; do not generalize to all consumer purchases"
+    },
+    {
+      "id": "c18",
+      "claim": "69% miss at least one of two reversed survey responses",
+      "status": "experiment_bound",
+      "sourceId": "S09",
+      "decision": "Participant level, not 69% of all morality"
+    },
+    {
+      "id": "c19",
+      "claim": "all unreported mismatches were unnoticed",
+      "status": "challenged",
+      "sourceId": "S10",
+      "decision": "2025 covert detection cautions against conflating report with noticing"
+    },
+    {
+      "id": "c20",
+      "claim": "choice-blindness proves Zen12/self-hypnosis can rewire preferences",
+      "status": "unsupported_transfer",
+      "sourceId": "S07",
+      "decision": "Prohibited; no such product trial"
+    },
+    {
+      "id": "c21",
+      "claim": "existing Focus fieldbook is free 52 pages",
+      "status": "verified_existing_site",
+      "sourceId": "S14",
+      "decision": "No direct sale; existing single Jetpack/Dispatch"
+    },
+    {
+      "id": "c22",
+      "claim": "FTC disclosure beside recommendation",
+      "status": "required_policy",
+      "sourceId": "S05",
+      "decision": "Must not rely on generic footer or phrase affiliate link"
+    },
+    {
+      "id": "c23",
+      "claim": "health products require substantiation",
+      "status": "required_policy",
+      "sourceId": "S06",
+      "decision": "Claims must be truthful and adequately supported"
+    },
+    {
+      "id": "c24",
+      "claim": "lead/affiliate click equals paid conversion",
+      "status": "invalid_metric",
+      "sourceId": "S15",
+      "decision": "Merchant-authenticated settlement required"
+    },
+    {
+      "id": "c25",
+      "claim": "Puységur dossier proves animal magnetism",
+      "status": "contradicted_evidence_boundary",
+      "sourceId": "S13",
+      "decision": "Archive proves testimony/provenance only"
+    },
+    {
+      "id": "c26",
+      "claim": "current paid price and checkout accessible for this publisher",
+      "status": "unverified_partner_specific",
+      "sourceId": "S03",
+      "decision": "Do not quote a price until verified separately"
+    }
+  ],
+  "releaseGates": [
+    {
+      "id": "named_inspire3_fv_approval",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "exact_zen12_product_sku",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "issued_authorized_earning_url",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "allowed_website_channel",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "allowed_social_channels",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "allowed_email_channel",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "vendor_creative_rights",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "claim_substantiation_audit",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "real_checkout_total",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "returns_terms_matched_to_checkout",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "correct_affiliate_disclosure",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "accessible_mobile_360_390_768_1440",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "keyboard_and_no_js",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "optional_video_encoded_hosted",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "video_caption_transcript_proof",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "performance_cwv_lighthouse",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "qa_site_owner_signoff",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "founder_specific_release_approval",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "confirmed_jetpack_delivery",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "verified_merchant_order_attribution",
+      "status": "HOLD_NOT_VERIFIED"
+    },
+    {
+      "id": "fees_refunds_settlement_reconciliation",
+      "status": "HOLD_NOT_VERIFIED"
+    }
+  ],
+  "notes": [
+    "Source links represent research and seller representations, not FV account authorization",
+    "No affiliated outbound link or claimed price, experience, sale or commission is activated",
+    "Existing Fieldbook is free and paid owned Mind SKU remains unauthenticated",
+    "Last connected Gmail targeted searches found August 24 2026 Refersion account pending notice, not named approval",
+    "The 2025 choice-blindness study was published December 4 2025; article includes it as counterevidence",
+    "Source-only HTML prototypes are not saved WordPress CMS drafts"
+  ],
+  "owner": "Mind & Perception conversion editorial"
+}
