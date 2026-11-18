@@ -11,6 +11,10 @@ The [standalone 90-source Research Desk](./the-ninety-doors-offline-research-des
 
 **Release status: HOLD, not on the public site.** The [independent source, rights and QA ledger](./the-ninety-doors-offline-desk-qa-ledger-2026-11-18.md) confirms exact ninety-card parity with the published WordPress source but records that real-browser mobile, keyboard, spreadsheet-export and print testing remain outstanding. Do not advertise this as live or fully verified.
 
+## New: 90-gateway access diagnostic (18 November 2026)
+
+All ninety institutional URLs now have an individual **automated retrieval attempt** documented in [the 90-row access probe CSV](./research-sources-90-access-probe-2026-11-18.csv), [interpretation and printable failure receipt](./the-ninety-doors-access-audit-field-guide-2026-11-18.md) and [original accessible outcome chart](./research-sources-90-access-probe-2026-11-18.svg). Results: **63 text-readable HTML pages, two retrievable PDFs, three sparse/client-rendered shells and 22 inconclusive or blocked probes**. Those 22 are *not* proven dead links. Ordinary-browser, item-level rights and underlying-record checks remain separate. This audit is an editorial review asset and is not published as a live Library utility.
+
 ## What you can do with it
 
 1. **Start with the research question.** Filter the CSV's `category` column before opening any link. The five families are evidence routes, not grades of reliability.
