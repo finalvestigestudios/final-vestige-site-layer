@@ -42,7 +42,7 @@ with sync_playwright() as pw:
             txt=' '.join((' '.join(page.get_text() for page in doc)).split())
             assert links==S|{FREE},(label,links^(S|{FREE}))
             assert txt.count('Printable chronology source:')==3
-            assert txt.count('Printable NASA source:')==6
+            assert txt.count('Printable source lookup')==6
             assert 'Source acceptance HOLD' in txt and 'not commercial media clearance' in txt
             doc.close()
             if enabled and width in (320,390,768,1440,1920):
