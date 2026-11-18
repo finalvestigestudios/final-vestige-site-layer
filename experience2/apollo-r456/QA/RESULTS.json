@@ -1,0 +1,34 @@
+{
+  "browser_tests": {
+    "failed": 0,
+    "passed": 21
+  },
+  "commercial_kpi": "NOT COMPUTABLE",
+  "field_cwv": "HOLD_NOT_RUN",
+  "navigated_lcp_cls": "HOLD_NOT_RUN",
+  "paid_offer": "NOT VERIFIED",
+  "parent_head": "2a3d7a497e9ac7d6f4bbf5f4c7a8fbe129db3236",
+  "parent_pr": 3001,
+  "real_axe": "HOLD_NOT_RUN",
+  "source_dates_checked_with_official_nasa_urls": [
+    "1967-01-27 accident; Board report after event",
+    "2017-01-27 tribute release",
+    "2018-02-14 retrospective"
+  ],
+  "source_sha256": {
+    "README.md": "c7005aa81553c1ce633f6c778f4be1a39240e2f837e34fc389377c3e2a7af287",
+    "apollo_claim_review.php": "fc70d9d6bd3fb6f923953fa4cf4372f2d814a805c633d4b3957e3ff2d7d79730",
+    "assets/claims.css": "3ba6dd76cf90281e1f4683e106522cf6b89ad1a3604784f0e6e610a89f361a47",
+    "assets/claims.js": "69477c0475010c6ae59222195e5839e7ed75a42254c3b81d2441624cec74ead5",
+    "qa/browser_qa.py": "a1ff4b1befdcce06888aec2bc5a51e28800b9c5c9fdba0c95e3a3074aec8721b",
+    "qa/hosted_acceptance.py": "3056e588e1e29972f516a8c455e06167994a283237c74ec4a3aa00059e85eb75",
+    "qa/test_contract.py": "5b726eecc9ec605be70ba46decd3ae27cc59f0626e7d89b627e09321ae5d0a6b"
+  },
+  "source_tests": {
+    "failed": 0,
+    "passed": 11
+  },
+  "sprint": "R456",
+  "staging": "HOLD_NOT_RUN",
+  "static_image_rights": "no NASA images or logos embedded"
+}
