@@ -185,19 +185,43 @@
         "current_src": null,
         "raster_sha256": null
       },
-      "official_candidate": null,
+      "official_candidate": {
+        "accession": "NH 45641",
+        "catalog_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-45000/NH-45641.html",
+        "match_level": "caption_subject_match_only",
+        "notes": "Official NHHC catalog identifies V-5 crewman A.L. Rosenkotter demonstrating after escape hatch and Momsen escape lung during July 1930 sea trials. The original publisher's Charles Momsen article describes the same named person, submarine, month and demonstration. Exact crop/frame and source binary NOT compared.",
+        "historical_subject": "A. L. Rosenkotter, USS V-5 (later Narwhal), July 1930",
+        "official_catalog_high_tiff_dimensions_reported": {
+          "width_px": 4520,
+          "height_px": 5080
+        },
+        "official_catalog_preview_renditions": [
+          "PNG low max bounding box 319x319",
+          "JPEG medium max bounding box 1280x1280",
+          "TIFF high reported 4520x5080"
+        ],
+        "publisher_caption_evidence_url": "https://warfarehistorynetwork.com/article/charles-swede-momsen-submarine-pioneer/",
+        "additional_caption_correspondence_url": "https://world.dan.org/alert-diver/article/developing-oxygen-toxicity-guidelines/",
+        "identical_raster_verified": false,
+        "actual_navy_record_http_status": null
+      },
       "geometry": {
-        "max_width_px": null,
+        "max_width_px": 960,
         "known_preview_height_px": null,
         "no_upscale": true,
         "native_master_dimensions_verified": false,
-        "master_sha256": null
+        "master_sha256": null,
+        "catalog_reported_master_width_px": 4520,
+        "catalog_reported_master_height_px": 5080,
+        "provisional_960w_height_px": 1079,
+        "provisional_only_not_generated": true
       },
       "rights": {
-        "classification": "THIRD_PARTY_RIGHTS_UNKNOWN",
-        "credit": null,
+        "classification": "OFFICIAL_US_NAVY_PHOTO_ITEM_REVIEW",
+        "credit": "NH 45641 — Naval History & Heritage Command (subject to item-level conditions)",
         "item_specific_rights_confirmed": false,
-        "rehost_approved": false
+        "rehost_approved": false,
+        "publisher_original_rights_still_unverified": true
       }
     },
     {
@@ -326,5 +350,7 @@
         "rehost_approved": false
       }
     }
-  ]
+  ],
+  "audit_updated_at": "2026-11-18T00:24:03-08:00",
+  "audit_update_note": "New primary-source match for formerly unmatched slot 274:3; not a confirmed same-pixel image, rights clearance, or visitor failure."
 }
