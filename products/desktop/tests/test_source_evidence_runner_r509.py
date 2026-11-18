@@ -1453,5 +1453,142 @@ class PostflightR521(unittest.TestCase):
             Path("/tmp/a"), None, lambda _: (_ for _ in ()).throw(AssertionError())))
 
 
+class EngineSourcePostflightR522(unittest.TestCase):
+    """Shared financial-engine postflight custody, including main() wiring."""
+
+    CMD = (("-W", "error", "products/desktop/scripts/source_smoke_gate.py"),)
+
+    def setUp(self):
+        self.temp = TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.package = self.root / "products/desktop/fvs_suite"
+        self.package.mkdir(parents=True)
+        for name in ("__init__.py", "engine.py", "invoice_match.py"):
+            (self.package / name).write_text("pass\n", encoding="ascii")
+
+    def capture(self):
+        return runner.snapshot_engine_sources(self.root)
+
+    def check(self, receipt):
+        return runner.engine_sources_unchanged(self.root, receipt)
+
+    def test_unchanged_package_passes(self):
+        self.assertTrue(self.check(self.capture()))
+
+    def test_last_child_mutating_financial_engine_is_detected(self):
+        receipt = self.capture()
+        (self.package / "invoice_match.py").write_text("print('altered')\n")
+        self.assertFalse(self.check(receipt))
+
+    def test_new_python_engine_module_is_detected(self):
+        receipt = self.capture()
+        (self.package / "new_engine.py").write_text("pass\n")
+        self.assertFalse(self.check(receipt))
+
+    def test_removed_python_engine_module_is_detected(self):
+        receipt = self.capture()
+        (self.package / "invoice_match.py").unlink()
+        self.assertFalse(self.check(receipt))
+
+    def test_unreviewed_python_module_name_fails_closed(self):
+        (self.package / "private-unsafe.py").write_text("pass\n")
+        with self.assertRaises(runner.EngineSourceRejected):
+            self.capture()
+
+    def test_symlinked_python_module_fails_closed(self):
+        (self.package / "invoice_match.py").unlink()
+        try:
+            (self.package / "invoice_match.py").symlink_to(self.package / "engine.py")
+        except OSError:
+            self.skipTest("Symlink unavailable")
+        with self.assertRaises(runner.EngineSourceRejected):
+            self.capture()
+
+    def test_missing_required_package_module_fails_closed(self):
+        (self.package / "__init__.py").unlink()
+        with self.assertRaises(runner.EngineSourceRejected):
+            self.capture()
+
+    def test_directory_instead_of_engine_module_fails_closed(self):
+        (self.package / "engine.py").unlink()
+        (self.package / "engine.py").mkdir()
+        with self.assertRaises(runner.EngineSourceRejected):
+            self.capture()
+
+    def test_forged_snapshot_digest_is_rejected(self):
+        receipt = self.capture()
+        receipt[("products", "desktop", "fvs_suite", "engine.py")] = b"x"
+        self.assertFalse(self.check(receipt))
+
+    def test_snapshot_order_is_deterministic(self):
+        self.assertEqual(list(self.capture()), sorted(self.capture()))
+
+    def test_empty_and_relative_snapshot_fail_closed(self):
+        self.assertFalse(self.check({}))
+        with self.assertRaises(runner.EngineSourceRejected):
+            runner.snapshot_engine_sources(Path("relative"))
+
+    def test_execute_holds_on_engine_change_even_after_test_and_manifest_pass(self):
+        receipt = self.capture()
+        out, err = io.StringIO(), io.StringIO()
+        with patch.object(runner, "source_fingerprint", return_value=b"x" * 32), \
+             patch.object(runner, "matches_source_fingerprint", return_value=True), \
+             patch.object(runner, "postflight_unchanged", return_value=True), \
+             patch.object(runner, "engine_sources_unchanged", return_value=False), \
+             redirect_stdout(out), redirect_stderr(err):
+            result = runner.execute(
+                self.CMD, self.root,
+                spawn=lambda *a, **kw: SimpleNamespace(returncode=0),
+                verify_source_snapshots=True, manifest_snapshot=b"approved\n",
+                engine_source_snapshot=receipt)
+        self.assertEqual(result, 1)
+        self.assertIn("shared engine source changed", err.getvalue())
+        self.assertNotIn("PASS:", out.getvalue())
+
+    def test_execute_validates_engine_custody_before_claiming_pass(self):
+        receipt = self.capture()
+        out, err = io.StringIO(), io.StringIO()
+        with patch.object(runner, "source_fingerprint", return_value=b"x" * 32), \
+             patch.object(runner, "matches_source_fingerprint", return_value=True), \
+             patch.object(runner, "postflight_unchanged", return_value=True), \
+             patch.object(runner, "engine_sources_unchanged", return_value=True), \
+             redirect_stdout(out), redirect_stderr(err):
+            result = runner.execute(
+                self.CMD, self.root,
+                spawn=lambda *a, **kw: SimpleNamespace(returncode=0),
+                verify_source_snapshots=True, manifest_snapshot=b"approved\n",
+                engine_source_snapshot=receipt)
+        self.assertEqual(result, 0)
+        self.assertIn("PASS: 1 source commands", out.getvalue())
+        self.assertEqual(err.getvalue(), "")
+
+    def test_engine_receipt_without_manifest_is_rejected_before_spawn(self):
+        launches = []
+        err = io.StringIO()
+        with patch.object(runner, "source_fingerprint", return_value=b"x" * 32), \
+             redirect_stderr(err):
+            result = runner.execute(
+                self.CMD, self.root,
+                spawn=lambda *a, **kw: launches.append(a),
+                verify_source_snapshots=True,
+                engine_source_snapshot=self.capture())
+        self.assertEqual(result, 1)
+        self.assertEqual(launches, [])
+        self.assertIn("invalid engine source snapshot", err.getvalue())
+
+    def test_production_main_supplies_engine_snapshot(self):
+        receipt = self.capture()
+        with patch.object(runner, "_is_unlinked_repo_file", return_value=True), \
+             patch.object(runner, "read_manifest_bounded", return_value=b"approved\n"), \
+             patch.object(runner, "snapshot_engine_sources", return_value=receipt), \
+             patch.object(runner, "load_commands", return_value=self.CMD), \
+             patch.object(runner, "execute", return_value=0) as execute:
+            self.assertEqual(runner.main(), 0)
+        self.assertIs(execute.call_args.kwargs["engine_source_snapshot"], receipt)
+        self.assertEqual(execute.call_args.kwargs["manifest_snapshot"], b"approved\n")
+        self.assertTrue(execute.call_args.kwargs["verify_source_snapshots"])
+
+
 if __name__ == "__main__":
     unittest.main()
