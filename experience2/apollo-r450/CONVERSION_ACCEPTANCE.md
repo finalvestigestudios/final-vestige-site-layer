@@ -1,0 +1,10 @@
+# R450 conversion-first staged decision (NOT A LIVE OFFER)
+
+| OFFER | FUNNEL STEP | BLOCKER | CHANGE / EXPERIMENT | PASS / FAIL EVIDENCE | OWNER |
+|---|---|---|---|---|---|
+| Original Apollo teacher evidence kit (proposal) | Verified payable order → delivery | No authenticated FV-owned rights-cleared SKU, price, fulfillment, returns or settlement | Keep paid CTA absent; founder/commerce audit actual Payhip/product inventory and permission manifest before any sale | **HARD HOLD**. R440 hold manifest still false. No paid orders claimed | Founder / Claude / Commerce |
+| Grok documentary (authentic existing publication only) | Qualified-human landing with `utm_campaign` / immutable `asset_id` | No corroborated video URL, posting date, mobile link or human sessions | Praxxis independently checks a real Grok post; Grok alone controls video/posting; reuse approved native UTM convention only after verification | **UNKNOWN**. R446 registry intentionally not activated | Grok / Praxxis / Claude |
+| Source journey → educator consideration | Source integrity / voluntary original resource consumption | R449 has classroom text but no portable four-record source receipt | R450 adds original source-custody worksheet for educators and native no-JS reading, with one full-investigation CTA | **LOCAL PASS**; real staging, axe, LCP/CLS **NOT RUN** | Apollo / independent Site QA |
+| Verified merchant order | Realized net revenue/1,000 qualified humans (7/30d) | Qualified humans, attribution, delivered paid orders, fees/refunds missing | Source 7/30d settlement cohorts from approved merchant/analytics; no duplicate scripts | **NOT COMPUTABLE**, no sales or ROI claimed | Claude / Commerce |
+
+**Single next action in the live-content hypothesis:** the existing free full Apollo investigation link. No unrelated product inserted into a historical narrative, no mailing-list duplication, no paid activation or unapproved public change. Editorial trust is a necessary precondition for conversion, not evidence of conversion itself.
