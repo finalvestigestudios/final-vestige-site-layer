@@ -1,0 +1,375 @@
+{
+  "title": "FV Mind R458 claim/source/merchant release matrix",
+  "date": "2026-11-17",
+  "state": "UNPUBLISHED_HARD_HOLD",
+  "sourcesChecked": [
+    "https://inspire3.com/",
+    "https://zen12.com/",
+    "https://zen12.com/about",
+    "https://zen12.com/secret/",
+    "https://finalvestige.com/focus/",
+    "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+  ],
+  "claims": [
+    {
+      "id": "AB-01",
+      "claim": "In RSVP, second-probe report deteriorated in a timing-dependent window",
+      "kind": "research",
+      "status": "supported narrowly",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "limit": "1992 task-specific results; not general blindness"
+    },
+    {
+      "id": "AB-02",
+      "claim": "Immediately following targets may show lag-1 sparing",
+      "kind": "research",
+      "status": "supported with limitations",
+      "source": "https://doi.org/10.1080/02724980443000647",
+      "limit": "Order memory may trade off"
+    },
+    {
+      "id": "AB-03",
+      "claim": "Lag-1 sparing varies across objects and letters",
+      "kind": "research",
+      "status": "supported narrowly",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/21751050/",
+      "limit": "Stimulus-dependent"
+    },
+    {
+      "id": "AB-04",
+      "claim": "Natural-photo target categories show blink effects",
+      "kind": "research",
+      "status": "supported narrowly",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2025593/",
+      "limit": "Duration category-dependent"
+    },
+    {
+      "id": "MT-01",
+      "claim": "Intensive meditation-training group changed attentional-blink performance",
+      "kind": "research",
+      "status": "supported for studied task",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "limit": "Not Zen12 efficacy; not routine short recording"
+    },
+    {
+      "id": "BB-01",
+      "claim": "Fourteen-study binaural beat EEG review has mixed/inconsistent outcomes",
+      "kind": "research",
+      "status": "supported review summary",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "limit": "5 positive/8 contrary/1 mixed; methods differ"
+    },
+    {
+      "id": "FV-01",
+      "claim": "52-page Focus Fieldbook available free",
+      "kind": "FV site",
+      "status": "live page observed",
+      "source": "https://finalvestige.com/focus/",
+      "limit": "No claim workbook clinically tested"
+    },
+    {
+      "id": "FV-02",
+      "claim": "Puységur archive preserves documentary sources and contradictions",
+      "kind": "FV site",
+      "status": "live page observed",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "limit": "Historical records not proof of magnetism"
+    },
+    {
+      "id": "S-01",
+      "claim": "Zen12 describes 12-minute listening sessions",
+      "kind": "seller format",
+      "status": "described, not independently tested",
+      "source": "https://zen12.com/about",
+      "limit": "Product-specific efficacy not established"
+    },
+    {
+      "id": "S-02",
+      "claim": "Zen12 describes 12 progression levels",
+      "kind": "seller format",
+      "status": "described, not independently tested",
+      "source": "https://zen12.com/about",
+      "limit": "Confirm same SKU at actual checkout"
+    },
+    {
+      "id": "S-03",
+      "claim": "Zen12 describes four listening style choices",
+      "kind": "seller format",
+      "status": "described, not independently tested",
+      "source": "https://zen12.com/about",
+      "limit": "Guided/music/white noise/nature"
+    },
+    {
+      "id": "S-04",
+      "claim": "Zen12 separate promotional page lists 12 levels and 48 MP3s",
+      "kind": "seller promotion",
+      "status": "public display only",
+      "source": "https://zen12.com/secret/",
+      "limit": "Not generic package, may change"
+    },
+    {
+      "id": "S-05",
+      "claim": "Seller promo page displays coupon/countdown and money-back language",
+      "kind": "seller promotion",
+      "status": "time-sensitive; final order UNVERIFIED",
+      "source": "https://zen12.com/secret/",
+      "limit": "Do not quote discount/current price/return policy in ads"
+    },
+    {
+      "id": "S-06",
+      "claim": "Zen12 gives 1 hour advanced meditation in 12 min",
+      "kind": "seller efficacy",
+      "status": "NOT substantiated for named product",
+      "source": "https://zen12.com/about",
+      "limit": "Do not repeat as established benefit"
+    },
+    {
+      "id": "S-07",
+      "claim": "Zen12 automatically relaxes the user or boosts focus",
+      "kind": "seller efficacy",
+      "status": "NOT substantiated for named product",
+      "source": "https://zen12.com/about",
+      "limit": "Do not repeat as outcome"
+    },
+    {
+      "id": "S-08",
+      "claim": "Inspire3 describes Zen12, Hypnosis Live, Brainwave Shots",
+      "kind": "seller catalog",
+      "status": "seller categories confirmed",
+      "source": "https://inspire3.com/",
+      "limit": "Sellers' performance promises not adopted"
+    },
+    {
+      "id": "H-01",
+      "claim": "Hypnosis Live offers downloadable self-hypnosis catalog",
+      "kind": "seller category",
+      "status": "catalog statement only",
+      "source": "https://inspire3.com/",
+      "limit": "Specific offer page must be checked before guide"
+    },
+    {
+      "id": "B-01",
+      "claim": "Brainwave Shots is promoted as short audio tool",
+      "kind": "seller category",
+      "status": "catalog statement only",
+      "source": "https://inspire3.com/",
+      "limit": "No independently established benefit"
+    },
+    {
+      "id": "C-01",
+      "claim": "Affiliate relationships must be disclosed clearly near link",
+      "kind": "regulation",
+      "status": "FTC guidance",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "limit": "Near link, understandable to ordinary consumer"
+    },
+    {
+      "id": "C-02",
+      "claim": "Health benefit claims require adequate relevant substantiation",
+      "kind": "regulation",
+      "status": "FTC guidance",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "limit": "Also implied claims; product-specific relevance"
+    },
+    {
+      "id": "P-01",
+      "claim": "FV publisher-specific Inspire3 approval",
+      "kind": "merchant permission",
+      "status": "UNVERIFIED",
+      "source": null,
+      "limit": "Not inferred from program existence or pending Refersion email"
+    },
+    {
+      "id": "P-02",
+      "claim": "Exact earning URL and SKU/channel rights",
+      "kind": "merchant permission",
+      "status": "UNVERIFIED",
+      "source": null,
+      "limit": "WEB/EMAIL/SOCIAL independently required"
+    },
+    {
+      "id": "P-03",
+      "claim": "Exact referred checkout/refund/fees and settlement statement",
+      "kind": "merchant permission",
+      "status": "UNVERIFIED",
+      "source": null,
+      "limit": "Public timer/discount is not binding proof"
+    },
+    {
+      "id": "O-01",
+      "claim": "FV-owned rights-cleared paid Mind product with delivery",
+      "kind": "owned commerce",
+      "status": "UNVERIFIED",
+      "source": null,
+      "limit": "Fieldbook is free; not proof of payable SKU"
+    },
+    {
+      "id": "R-01",
+      "claim": "Paid affiliate sales or settled net revenue",
+      "kind": "conversion",
+      "status": "NOT ESTABLISHED",
+      "source": null,
+      "limit": "Click does not equal sale; denominator unknown"
+    }
+  ],
+  "releaseGates": [
+    {
+      "id": "G01",
+      "gate": "Named FV Inspire3 publisher approval",
+      "status": "HOLD"
+    },
+    {
+      "id": "G02",
+      "gate": "Authorized SKU and channel",
+      "status": "HOLD"
+    },
+    {
+      "id": "G03",
+      "gate": "Issued destination tracking URL",
+      "status": "HOLD"
+    },
+    {
+      "id": "G04",
+      "gate": "Approved campaign creatives rights",
+      "status": "HOLD"
+    },
+    {
+      "id": "G05",
+      "gate": "Exact checkout authenticated",
+      "status": "HOLD"
+    },
+    {
+      "id": "G06",
+      "gate": "Seller refund terms authenticated",
+      "status": "HOLD"
+    },
+    {
+      "id": "G07",
+      "gate": "Revenue settlement export available",
+      "status": "HOLD"
+    },
+    {
+      "id": "G08",
+      "gate": "Claims legally reviewed",
+      "status": "HOLD"
+    },
+    {
+      "id": "G09",
+      "gate": "Adjacent FTC disclosure reviewed",
+      "status": "HOLD"
+    },
+    {
+      "id": "G10",
+      "gate": "Real responsive browser QA",
+      "status": "HOLD"
+    },
+    {
+      "id": "G11",
+      "gate": "Screen-reader keyboard QA",
+      "status": "HOLD"
+    },
+    {
+      "id": "G12",
+      "gate": "Captioned playable original film",
+      "status": "HOLD"
+    },
+    {
+      "id": "G13",
+      "gate": "Poster motion/reduced-motion QA",
+      "status": "HOLD"
+    },
+    {
+      "id": "G14",
+      "gate": "No-JS fallback QA",
+      "status": "HOLD"
+    },
+    {
+      "id": "G15",
+      "gate": "No inline third-party trackers",
+      "status": "HOLD"
+    },
+    {
+      "id": "G16",
+      "gate": "Existing Jetpack only",
+      "status": "HOLD"
+    },
+    {
+      "id": "G17",
+      "gate": "Qualified human denominator reliable",
+      "status": "HOLD"
+    },
+    {
+      "id": "G18",
+      "gate": "Asset IDs matched to published Grok posts",
+      "status": "HOLD"
+    },
+    {
+      "id": "G19",
+      "gate": "Approved mobile destinations",
+      "status": "HOLD"
+    },
+    {
+      "id": "G20",
+      "gate": "Existing newsletter confirmation checked",
+      "status": "HOLD"
+    },
+    {
+      "id": "G21",
+      "gate": "No new list or popup",
+      "status": "HOLD"
+    },
+    {
+      "id": "G22",
+      "gate": "First-party UTM schema aligned to Claude",
+      "status": "HOLD"
+    },
+    {
+      "id": "G23",
+      "gate": "No duplicate analytics code",
+      "status": "HOLD"
+    },
+    {
+      "id": "G24",
+      "gate": "Written founder release approval",
+      "status": "HOLD"
+    },
+    {
+      "id": "G25",
+      "gate": "Independent Site QA approval",
+      "status": "HOLD"
+    },
+    {
+      "id": "G26",
+      "gate": "No homepage PR49 modification",
+      "status": "HOLD"
+    },
+    {
+      "id": "G27",
+      "gate": "No Mind PR172 overwrite",
+      "status": "HOLD"
+    },
+    {
+      "id": "G28",
+      "gate": "No Issue150 ownership crossing",
+      "status": "HOLD"
+    },
+    {
+      "id": "G29",
+      "gate": "Copyright/visual assets cleared",
+      "status": "HOLD"
+    },
+    {
+      "id": "G30",
+      "gate": "Reconciled paid/refund-adjusted sale",
+      "status": "HOLD"
+    }
+  ],
+  "policy": {
+    "no_active_affiliate_url": true,
+    "no_seller_price_reproduced": true,
+    "no_health_wealth_guarantees": true,
+    "one_jetpack_funnel": true,
+    "zero_live_writes": true
+  },
+  "note": "Status means observed public seller wording, not commercial permission or verified efficacy. Merchant-specific approval cannot be inferred from consumer email."
+}
