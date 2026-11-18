@@ -37,9 +37,10 @@ const evaluate=function evaluate(report) {
     if(!m.decoded)broken++;
     if(typeof m.screenshot!=="string"||!m.screenshot.trim())fail(tag+":"+pid+":screenshot");
     if(m.request_id){
-      const prev=requests.get(m.request_id);
+      const scopedRequestKey=pid+"::"+m.request_id;
+      const prev=requests.get(scopedRequestKey);
       if(prev){if(prev.final_url!==m.final_url||prev.http_status!==m.http_status||prev.transfer_bytes!==m.transfer_bytes)fail(tag+":"+pid+":request_collision");}
-      else {requests.set(m.request_id,m);if(int(m.transfer_bytes))bytes+=m.transfer_bytes;}
+      else {requests.set(scopedRequestKey,m);if(int(m.transfer_bytes))bytes+=m.transfer_bytes;}
     }
    }
    pages.set(pid,{p,assets});
