@@ -1,0 +1,23 @@
+# E459 — Article #11: a date can mean quality and still identify a recalled package — REVIEW ONLY / HARD HOLD
+
+**Accessed:** 2026-11-18 (United States). **Review due:** 2026-12-18 or sooner after material official change. **Scope:** only alternate, unpublished Article #11 *What Dried Meat Cannot Promise* and its free companion worksheet. Original 35-slate manuscript/source files unmodified; this memo confers no publication authority.
+
+## Source-checked, narrow editorial finding
+
+The jointly authored [FDA/USDA release, December 3, 2024](https://www.fda.gov/news-events/press-announcements/usda-fda-seek-information-about-food-date-labeling-aim-provide-further-clarity-transparency-and-cost) explains why consumers misread many food-package date phrases as safety determinations when they generally concern quality. The directly readable [FDA-posted company recall of October 22, 2026](https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/winco-foods-llc-issues-allergy-alert-undeclared-sesame-hoagie-rolls) identifies affected **bread**, distributed to listed western US states, by UPC and *printed best-by dates*. The two roles are different: ordinary date meaning does NOT certify safety, but a printed date can be used to match an official product-specific recall notice. The example is bread, not jerky; dated historical illustration, **not a live recall feed** or generalized household safety/expiry rule. Infant formula has distinct FDA use-by requirements and is expressly excluded from the generalization. No advice to eat past a date.
+
+Revised existing H2 **The label is not the meal**, preserved all 7 article H2 headings. Original two-column HTML/CSS diagram plus paragraph of specific recordkeeping advice (copy the exact date *phrase* and full date, and separately UPC/lot/brand; no package-date clearance). The new source-backed paragraph avoids storage times, temperatures, preservation procedures or microbiological claims. No AI-generated photographic evidence or third-party media.
+
+## Specific asset correction and completed local QA
+
+E458's distributed article linked to nonexistent `E458_ONE_SHELF_EVIDENCE_STATUS_WORKSHEET_REVIEW_ONLY.html` (only PDF was present). E459 delivers working standalone linked **HTML and two-page printable PDF**, no scripts/cookies/forms/upload or local storage. Worksheet uses date-phrase, date, code, package status and accessible household rehearsal; no opening/tasting unknown food. Both PDF pages visually checked. Exactly **29/29 local static/browser/PDF checks PASS** (JS off, 320/390/768/1440, no horizontal overflow, seven H2s, local companion links, original diagram, 2-page searchable PDF), **not** WordPress, independent screen-reader, qualified food-safety or release QD. E459 evidence CSV: 8 primary/source-status rows; 10 claim/risk crosswalk rows. The direct source grades differ: FDA/USDA and 2026 FDA notice direct HTML; FDA consumer explainer search-indexed only due timeout; USDA FSIS jerky Q&A still **indexed-only, direct timeout**.
+
+## Non-bypass and unresolved gates
+
+**CRITICAL HOLD:** NCHFP 2014-derived home-jerky vs USDA FSIS 2024 indexed-only storage estimates require qualified scope adjudication; CDC [wild-game freeze-resistant *Trichinella* caveat](https://www.cdc.gov/trichinellosis/prevention/index.html) conflicts with blanket species-neutral freezing inference. Neither storage duration nor freezing treatment transferred into guidance. No food consumption/processing method, label expiry ruling, or product-safety claim.
+
+Latest independent Integration [R465 DRAFT #3030](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/3030) HEAD `fdc2bbcd9883e0956679d35537302d46580a756c` remains hard hold: 35 canonical manuscript/source custody and 16 Shelter body/meta witness work; 32 shared URL/reading-scope groups, 17 manuscript divergences, 9 original forks and 5 source disputes unresolved, hosted CI failure (zero step details), no native full build/private WordPress exports or qualified release QD. Do not merge/overwrite/bypass Integration. Independent #157/#169/#2205 review branches untouched.
+
+**No WordPress/public save, publish, merge, navigation, homepage, Investigations, affiliate, social, purchase or email.** This memo only records an alternate editor review; full WordPress-ready HTML/worksheet/PDF, CSV ledgers, visual QA and checksum manifest are retained in E459 local review package.
+
+**Reviewer decision required:** primary-source/food-labeling reviewer to confirm the date dual-role wording and infant formula limitation; food-safety professional to adjudicate food/parasite source conflicts; Integration to select original manuscript versions and independent final release QD.
