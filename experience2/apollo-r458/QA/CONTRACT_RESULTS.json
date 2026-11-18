@@ -1,0 +1,10 @@
+{
+  "exact_source": "local candidate; SHA recorded after GitHub commit",
+  "failures": [],
+  "hosted": "NOT_RUN",
+  "image_rights": "NOT_CERTIFIED",
+  "passed": 28,
+  "sprint": "R458",
+  "test_type": "local_php_source_contract_and_mutations",
+  "total": 28
+}
