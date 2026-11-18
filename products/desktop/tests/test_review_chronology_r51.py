@@ -120,5 +120,131 @@ class JournalChronologyTests(unittest.TestCase):
         self.assertNotIn("2026-10-30T03:05:01", str(caught.exception))
 
 
+
+# R524: native chronology primitive custody for BOTH premium utilities.
+# All values are synthetic. These tests remain in an already pinned source test.
+from datetime import tzinfo as _R524Tzinfo
+
+_R524_BASE = "2026-11-18T12:00:00Z"
+
+class _R524ForgedFuture(datetime):
+    def astimezone(self, zone=None):
+        return datetime(2099, 1, 1, tzinfo=timezone.utc)
+
+class _R524ForgedPast(datetime):
+    def astimezone(self, zone=None):
+        return datetime(1900, 1, 1, tzinfo=timezone.utc)
+
+class _R524SpyTZ(_R524Tzinfo):
+    calls = 0
+    def utcoffset(self, dt):
+        self.calls += 1
+        raise RuntimeError("PRIVATE-CUSTOMER-CLAIM-123")
+    def dst(self, dt):
+        return timedelta(0)
+    def tzname(self, dt):
+        return "PRIVATE-CUSTOMER-CLAIM-123"
+
+class NativeReviewClockCustodyR524(unittest.TestCase):
+    def assert_private_rejection(self, action, message):
+        with self.assertRaises(ValueError) as raised:
+            action()
+        error = raised.exception
+        self.assertEqual(str(error), message)
+        self.assertIsNone(error.__cause__)
+        self.assertIsNone(error.__context__)
+        self.assertNotIn("PRIVATE-CUSTOMER", str(error))
+
+    def test_forged_future_clock_rejected(self):
+        clock = _R524ForgedFuture(2026, 11, 17, 12, tzinfo=timezone.utc)
+        self.assert_private_rejection(
+            lambda: check_new_review_clock(_R524_BASE, clock),
+            "Review requires a timezone-aware current clock")
+
+    def test_forged_past_previous_rejected(self):
+        previous = _R524ForgedPast(2026, 11, 19, 12, tzinfo=timezone.utc)
+        self.assert_private_rejection(
+            lambda: check_record_order(previous, _R524_BASE),
+            "Review journal has an invalid previous UTC timestamp")
+
+    def test_forged_clock_without_history_rejected(self):
+        clock = _R524ForgedFuture(2026, 11, 18, tzinfo=timezone.utc)
+        self.assert_private_rejection(
+            lambda: check_new_review_clock(None, clock),
+            "Review requires a timezone-aware current clock")
+
+    def test_forged_previous_equal_seconds_rejected(self):
+        previous = _R524ForgedPast(2026, 11, 18, 12, tzinfo=timezone.utc)
+        self.assert_private_rejection(
+            lambda: check_record_order(previous, _R524_BASE),
+            "Review journal has an invalid previous UTC timestamp")
+
+    def test_custom_timezone_current_never_called(self):
+        spy = _R524SpyTZ()
+        clock = datetime(2026, 11, 18, tzinfo=spy)
+        self.assert_private_rejection(
+            lambda: check_new_review_clock(None, clock),
+            "Review requires a timezone-aware current clock")
+        self.assertEqual(spy.calls, 0)
+
+    def test_custom_timezone_previous_never_called(self):
+        spy = _R524SpyTZ()
+        previous = datetime(2026, 11, 18, tzinfo=spy)
+        self.assert_private_rejection(
+            lambda: check_record_order(previous, _R524_BASE),
+            "Review journal has an invalid previous UTC timestamp")
+        self.assertEqual(spy.calls, 0)
+
+    def test_native_utc_current_accepted(self):
+        self.assertIsNone(check_new_review_clock(
+            _R524_BASE, datetime(2026, 11, 18, 12, tzinfo=timezone.utc)))
+
+    def test_native_utc_before_latest_rejected(self):
+        with self.assertRaisesRegex(ValueError, "predates"):
+            check_new_review_clock(_R524_BASE, datetime(
+                2026, 11, 18, 11, 59, 59, tzinfo=timezone.utc))
+
+    def test_native_named_zero_offset_accepted(self):
+        clock = datetime(2026, 11, 18, 12,
+                         tzinfo=timezone(timedelta(0), "Explicit UTC"))
+        self.assertIsNone(check_new_review_clock(_R524_BASE, clock))
+
+    def test_native_fixed_offset_previous_compatible(self):
+        previous = datetime(2026, 11, 18, 4,
+                            tzinfo=timezone(timedelta(hours=-8)))
+        self.assertEqual(check_record_order(previous, _R524_BASE),
+                         parse_review_utc(_R524_BASE))
+
+    def test_native_non_utc_current_rejected(self):
+        clock = datetime(2026, 11, 18, 4,
+                         tzinfo=timezone(timedelta(hours=-8)))
+        with self.assertRaisesRegex(ValueError, "UTC"):
+            check_new_review_clock(None, clock)
+
+    def test_naive_previous_rejected_privately(self):
+        self.assert_private_rejection(
+            lambda: check_record_order(datetime(2026, 11, 18), _R524_BASE),
+            "Review journal has an invalid previous UTC timestamp")
+
+    def test_naive_current_rejected_privately(self):
+        self.assert_private_rejection(
+            lambda: check_new_review_clock(None, datetime(2026, 11, 18)),
+            "Review requires a timezone-aware current clock")
+
+    def test_non_datetime_previous_rejected(self):
+        self.assert_private_rejection(
+            lambda: check_record_order("secret", _R524_BASE),
+            "Review journal has an invalid previous UTC timestamp")
+
+    def test_real_microsecond_rollback_still_rejected(self):
+        with self.assertRaisesRegex(ValueError, "chronological"):
+            check_record_order(
+                datetime(2026, 11, 18, 12, 0, 0, 1, tzinfo=timezone.utc),
+                _R524_BASE)
+
+    def test_native_utc_equal_record_accepted(self):
+        self.assertIsNone(check_new_review_clock(
+            _R524_BASE, parse_review_utc(_R524_BASE)))
+
 if __name__ == "__main__":
     unittest.main()
