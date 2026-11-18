@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1020" viewBox="0 0 900 1020" role="img" aria-labelledby="title description">
+<title id="title">Two audited fiscal years, not one Bohemia ledger</title>
+<desc id="description">Original Final Vestige Studios chart comparing the Southeast Louisiana Flood Protection Authority-East audited governmental-fund line called Royalties, leases, and permits. Fiscal 2023: 749,501 US dollars, entirely in Orleans Levee District General Fund. Fiscal 2024: 85,486 US dollars, consisting of 38,989 in Orleans Levee District General Fund and 46,497 in Lakefront Management Authority OLD Real Estate Fund. Bars share a common zero baseline and represent this combined accounting category across those funds, NOT Bohemia-only mineral royalties. Different years span a negotiated January 2024 handoff; decline alone proves no cause, claimant distribution, or proof of funds reallocation. Creator Final Vestige Studios, November 18 2026. Original explanatory data chart, copyright 2026 Final Vestige Studios. Primary audited reports: https://app.lla.state.la.us/PublicReports.nsf/0/7C1A721A298CB70786258A6D00711AD7/$FILE/00003310.pdf and https://app.lla.state.la.us/PublicReports.nsf/0/AB3139C8E769CB7086258BB700789609/$FILE/0000619F.pdf, both printed page 16, screenshot-inspected November 18 2026.</desc>
+<rect width="900" height="1020" fill="#172421"/>
+<rect x="24" y="24" width="852" height="972" rx="22" fill="#1c2b28" stroke="#648076" stroke-width="2"/>
+<text x="64" y="91" fill="#b5c7bb" font-family="Arial,sans-serif" font-size="28" letter-spacing="2">FINAL VESTIGE · DOCUMENTARY DATA</text>
+<text x="64" y="156" fill="#f7f1e7" font-family="Georgia,serif" font-size="48" font-weight="700">Two fiscal years.</text>
+<text x="64" y="211" fill="#f7f1e7" font-family="Georgia,serif" font-size="48" font-weight="700">Not one Bohemia ledger.</text>
+<text x="64" y="269" fill="#cad7ce" font-family="Arial,sans-serif" font-size="31">Audited category: “Royalties, leases, and permits”</text>
+<line x1="64" y1="302" x2="835" y2="302" stroke="#557167" stroke-width="2"/>
+<text x="64" y="362" fill="#ffffff" font-family="Arial,sans-serif" font-size="35" font-weight="700">FY 2023 · ended June 30, 2023</text>
+<text x="64" y="414" fill="#e7d6b7" font-family="Arial,sans-serif" font-size="43" font-weight="700">$749,501</text>
+<rect x="64" y="446" width="660" height="44" rx="7" fill="#bd9870"/>
+<text x="64" y="531" fill="#d8e3dc" font-family="Arial,sans-serif" font-size="29">All reported in OLD General Fund.</text>
+<line x1="64" y1="570" x2="835" y2="570" stroke="#557167" stroke-width="2"/>
+<text x="64" y="626" fill="#ffffff" font-family="Arial,sans-serif" font-size="35" font-weight="700">FY 2024 · ended June 30, 2024</text>
+<text x="64" y="677" fill="#e7d6b7" font-family="Arial,sans-serif" font-size="43" font-weight="700">$85,486</text>
+<rect x="64" y="711" width="34" height="44" rx="2" fill="#bd9870"/>
+<rect x="98" y="711" width="41" height="44" rx="2" fill="#7baca3"/>
+<rect x="65" y="711" width="659" height="44" rx="7" fill="none" stroke="#648076" stroke-width="1" stroke-dasharray="9,8"/>
+<circle cx="78" cy="804" r="10" fill="#bd9870"/><text x="102" y="814" fill="#f0efe8" font-family="Arial,sans-serif" font-size="29">OLD General Fund: $38,989</text>
+<circle cx="78" cy="850" r="10" fill="#7baca3"/><text x="102" y="860" fill="#f0efe8" font-family="Arial,sans-serif" font-size="29">LMA OLD Real Estate: $46,497</text>
+<line x1="64" y1="885" x2="835" y2="885" stroke="#557167" stroke-width="2"/>
+<text x="64" y="931" fill="#e4d2ae" font-family="Arial,sans-serif" font-size="30" font-weight="700">Not tract-specific; no causal finding.</text>
+<text x="64" y="971" fill="#bdcbc1" font-family="Arial,sans-serif" font-size="24">© 2026 Final Vestige Studios · Source: audited statements p.16</text>
+</svg>
