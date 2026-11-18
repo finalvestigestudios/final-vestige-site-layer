@@ -1,8 +1,9 @@
-"""R515/R516/R517: digest-only custody for read-only desktop source evidence.
+"""R515–R518: digest-only custody for read-only desktop source evidence.
 
 R516 checks root/hardlink custody, descriptor identity and postread stability.
 R517 preserves same-view Windows creation-time custody while avoiding false
 path/descriptor mismatches caused by differing st_ctime_ns across APIs.
+R518 strips private exception chains and closes unadopted descriptors.
 These checks are not atomic tree custody against a concurrent writer.
 """
 from __future__ import annotations
@@ -79,7 +80,18 @@ def source_fingerprint(root: Path, parts: tuple[str, ...]) -> bytes:
         flags = (os.O_RDONLY | getattr(os, "O_BINARY", 0) |
                  getattr(os, "O_CLOEXEC", 0) | getattr(os, "O_NOFOLLOW", 0) |
                  getattr(os, "O_NONBLOCK", 0))
-        with os.fdopen(os.open(leaf, flags), "rb") as reader:
+        descriptor = os.open(leaf, flags)
+        try:
+            reader = os.fdopen(descriptor, "rb")
+        except (OSError, ValueError):
+            # fdopen did not adopt ownership: close the raw descriptor before
+            # leaving the handler. Do not retain private OS error chains.
+            try:
+                os.close(descriptor)
+            except OSError:
+                pass
+            raise
+        with reader:
             opened = os.fstat(reader.fileno())
             if (not _regular_unique(opened) or
                     not _same_path_descriptor_identity(before, opened)):
@@ -95,7 +107,10 @@ def source_fingerprint(root: Path, parts: tuple[str, ...]) -> bytes:
             raise OSError("source changed during read")
         return sha256(raw).digest()
     except (OSError, ValueError):
-        raise SourceSnapshotRejected("Source custody preflight rejected") from None
+        # Raise only AFTER the handler has exited. `raise ... from None`
+        # suppresses display but keeps private filenames in __context__.
+        pass
+    raise SourceSnapshotRejected("Source custody preflight rejected")
 
 
 def matches_source_fingerprint(root: Path, parts: tuple[str, ...], expected: bytes) -> bool:
