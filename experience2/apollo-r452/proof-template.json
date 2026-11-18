@@ -1,0 +1,30 @@
+{
+  "schema": "fv-apollo-conversion-proof-v1",
+  "landing_url": "https://finalvestige.com/apollo-1-evidence-atlas/",
+  "free_cta_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+  "commercial_cta_enabled": false,
+  "campaign": {
+    "asset_id": "apollo_pending_0001",
+    "utm_source": "youtube",
+    "utm_medium": "organic_social",
+    "utm_campaign": "history_pilot_2026_11",
+    "utm_content": "apollo_pending_0001",
+    "publication_proof_status": "NOT_VERIFIED",
+    "platform_post_url": null,
+    "approved_landing_url": null,
+    "praxxis_review_ref": null
+  },
+  "offer": {
+    "audience": "educators",
+    "offer_type": "original_classroom_kit",
+    "status": "NO_VERIFIED_APOLLO_SKU",
+    "seller_acceptance_ref": null,
+    "sku": null,
+    "rights_manifest_ref": null,
+    "fulfillment_test_ref": null,
+    "refund_policy_ref": null,
+    "founder_release_ref": null,
+    "checkout_url": null
+  },
+  "cohorts": []
+}
