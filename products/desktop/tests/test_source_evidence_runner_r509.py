@@ -195,5 +195,165 @@ class SourceEvidenceR509(unittest.TestCase):
             runner.load_commands(b"", expected_sha=runner.MANIFEST_GIT_SHA1)
 
 
+
+class SourceEvidenceR511(unittest.TestCase):
+    """Source script, manifest and interpreter-startup custody (synthetic files)."""
+
+    SCRIPT = "products/desktop/scripts/source_smoke_gate.py"
+    LINE = ("python -W error " + SCRIPT + "\n").encode("ascii")
+    MANIFEST_PARTS = ("products", "desktop", "ci", "source_evidence_commands_r509.txt")
+
+    @classmethod
+    def validate_script(cls, root: Path):
+        return runner.load_commands(
+            cls.LINE, root, expected_sha=runner.git_blob_sha(cls.LINE), expected_count=1
+        )
+
+    def test_all_four_approved_script_commands_resolve_in_real_checkout(self):
+        raw = ("\n".join(sorted(runner.SCRIPT_COMMANDS)) + "\n").encode("ascii")
+        self.assertEqual(
+            len(runner.load_commands(
+                raw, ROOT, expected_sha=runner.git_blob_sha(raw), expected_count=4
+            )), 4
+        )
+
+    def test_regular_source_script_accepted(self):
+        with TemporaryDirectory() as d:
+            root = Path(d)
+            leaf = root / self.SCRIPT
+            leaf.parent.mkdir(parents=True)
+            leaf.write_text("pass\n")
+            self.assertEqual(len(self.validate_script(root)), 1)
+
+    def test_missing_approved_source_script_rejected(self):
+        with TemporaryDirectory() as d, self.assertRaises(runner.EvidenceRejected):
+            self.validate_script(Path(d))
+
+    def test_symlinked_source_script_leaf_rejected(self):
+        with TemporaryDirectory() as d:
+            root = Path(d)
+            real = root / "private.py"
+            real.write_text("pass")
+            leaf = root / self.SCRIPT
+            leaf.parent.mkdir(parents=True)
+            try:
+                leaf.symlink_to(real)
+            except (OSError, NotImplementedError) as exc:
+                self.skipTest(f"File symlink unavailable: {type(exc).__name__}")
+            with self.assertRaises(runner.EvidenceRejected):
+                self.validate_script(root)
+
+    def test_symlinked_source_scripts_directory_rejected(self):
+        with TemporaryDirectory() as d:
+            root = Path(d)
+            outside = root / "outside"
+            outside.mkdir()
+            (outside / "source_smoke_gate.py").write_text("pass")
+            script_dir = root / "products/desktop/scripts"
+            script_dir.parent.mkdir(parents=True)
+            try:
+                script_dir.symlink_to(outside, target_is_directory=True)
+            except (OSError, NotImplementedError) as exc:
+                self.skipTest(f"Directory symlink unavailable: {type(exc).__name__}")
+            with self.assertRaises(runner.EvidenceRejected):
+                self.validate_script(root)
+
+    def test_offline_script_symlinked_desktop_ancestor_rejected(self):
+        line = b"python -I products/desktop/offline_source_smoke_r408.py\n"
+        with TemporaryDirectory() as d:
+            root = Path(d)
+            outside = root / "outside"
+            outside.mkdir()
+            (outside / "offline_source_smoke_r408.py").write_text("pass")
+            parent = root / "products"
+            parent.mkdir()
+            try:
+                (parent / "desktop").symlink_to(outside, target_is_directory=True)
+            except (OSError, NotImplementedError) as exc:
+                self.skipTest(f"Directory symlink unavailable: {type(exc).__name__}")
+            with self.assertRaises(runner.EvidenceRejected):
+                runner.load_commands(line, root, expected_sha=runner.git_blob_sha(line),
+                                     expected_count=1)
+
+    def test_bad_repository_path_components_rejected(self):
+        with TemporaryDirectory() as d:
+            for parts in ((), ("..",), ("products/desktop",), ("\\\\server",), ("foo", "")):
+                with self.subTest(parts=parts):
+                    self.assertFalse(runner._is_unlinked_repo_file(Path(d), parts))
+
+    def test_regular_manifest_path_accepted(self):
+        with TemporaryDirectory() as d:
+            root = Path(d)
+            leaf = root.joinpath(*self.MANIFEST_PARTS)
+            leaf.parent.mkdir(parents=True)
+            leaf.write_text("synthetic inventory")
+            self.assertTrue(runner._is_unlinked_repo_file(root, self.MANIFEST_PARTS))
+
+    def test_symlinked_manifest_leaf_rejected(self):
+        with TemporaryDirectory() as d:
+            root = Path(d)
+            outside = root / "private.txt"
+            outside.write_text("secret")
+            leaf = root.joinpath(*self.MANIFEST_PARTS)
+            leaf.parent.mkdir(parents=True)
+            try:
+                leaf.symlink_to(outside)
+            except (OSError, NotImplementedError) as exc:
+                self.skipTest(f"File symlink unavailable: {type(exc).__name__}")
+            self.assertFalse(runner._is_unlinked_repo_file(root, self.MANIFEST_PARTS))
+
+    def test_symlinked_manifest_parent_rejected(self):
+        with TemporaryDirectory() as d:
+            root = Path(d)
+            outside = root / "outside"
+            outside.mkdir()
+            (outside / "source_evidence_commands_r509.txt").write_text("private")
+            parent = root / "products/desktop/ci"
+            parent.parent.mkdir(parents=True)
+            try:
+                parent.symlink_to(outside, target_is_directory=True)
+            except (OSError, NotImplementedError) as exc:
+                self.skipTest(f"Directory symlink unavailable: {type(exc).__name__}")
+            self.assertFalse(runner._is_unlinked_repo_file(root, self.MANIFEST_PARTS))
+
+    def test_entrypoint_refuses_linked_manifest_without_reading_private_target(self):
+        with TemporaryDirectory() as d:
+            root = Path(d)
+            outside = root / "customer-payment-records.csv"
+            outside.write_text("private")
+            leaf = root.joinpath(*self.MANIFEST_PARTS)
+            leaf.parent.mkdir(parents=True)
+            try:
+                leaf.symlink_to(outside)
+            except (OSError, NotImplementedError) as exc:
+                self.skipTest(f"File symlink unavailable: {type(exc).__name__}")
+            errors = io.StringIO()
+            with patch.object(runner, "ROOT", root), patch.object(runner, "MANIFEST", leaf), \
+                 patch.object(Path, "read_bytes", side_effect=AssertionError("read forbidden")), \
+                 redirect_stderr(errors):
+                self.assertEqual(runner.main(), 1)
+            self.assertIn("immutable source evidence unavailable", errors.getvalue())
+            self.assertNotIn("customer-payment-records", errors.getvalue())
+
+    def test_hostile_python_startup_and_loader_environment_removed(self):
+        injected = {
+            "PYTHONOPTIMIZE": "2", "PYTHONWARNINGS": "ignore",
+            "PYTHONBREAKPOINT": "attacker.hook",
+            "PYTHONPYCACHEPREFIX": "/private/cache",
+            "LD_PRELOAD": "/private/lib.so",
+            "LD_LIBRARY_PATH": "/private",
+            "DYLD_INSERT_LIBRARIES": "/private/inject.dylib",
+            "DYLD_LIBRARY_PATH": "/private",
+            "CI": "true",
+        }
+        with patch.dict(os.environ, injected):
+            child = runner._child_environment(ROOT)
+        for name in injected:
+            if name != "CI":
+                self.assertNotIn(name, child)
+        self.assertEqual(child["CI"], "true")
+        self.assertEqual(child["PYTHONDONTWRITEBYTECODE"], "1")
+
+
 if __name__ == "__main__":
     unittest.main()
