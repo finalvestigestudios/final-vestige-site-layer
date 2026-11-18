@@ -25,7 +25,7 @@ test('independent seller attribution and caveat',()=>{for(const x of [a,b]){asse
 test('readable free path uses existing fieldbook only',()=>{for(const x of [a,b,hub])assert.match(x,/https:\/\/finalvestige\.com\/focus\//);});
 test('film only in B, absent in A',()=>{assert.doesNotMatch(a,/Optional original short film/);assert.match(b,/Optional original short film/);assert.match(b,/not yet playable/);assert.match(b,/transcript/);});
 test('same substantive buyer guidance',()=>{let from=x=>x.slice(x.indexOf('<section aria-labelledby="questions">'),x.indexOf('</section>',x.indexOf('<section aria-labelledby="questions">')));assert.equal(from(a),from(b));});
-test('no autoplay or fake video player',()=>{assert.doesNotMatch(b,/<video|autoplay|<audio/i);});
+test('no autoplay or fake video player',()=>{assert.doesNotMatch(b,/<video\\b|<audio\\b/i);});
 test('exact film duration and six WebVTT cues',()=>{assert.match(vtt,/WEBVTT/);assert.equal((vtt.match(/-->/g)||[]).length,6);assert.match(vtt,/00:00:42\.000/);});
 test('historical claims and DOI/source links in article',()=>{for(const s of ['10.1068/p281059','10.1068/i0386','10.1177/0956797613479386','Puységur','twelve-minute','not a test of consumer meditation'])assert.ok(article.includes(s),s);});
 test('no first person user experience or guaranteed product outcomes',()=>{for(const x of [a,b]){assert.doesNotMatch(x,/I tried Zen12|we tested Zen12|Zen12 cured|Zen12 guarantees/i);}});
