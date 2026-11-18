@@ -22,3 +22,7 @@ This **independently confirms two totals from audited annual *broad-category* st
 - No WP post write, first publish, subscriber email, social push, homepage/template or Caernarvon edits. No paid services or records fees.
 - Coordinate only through existing [Investigations #2832](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/2832) and [production QA #1589](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1589). A Grok launch brief can be prepared **after** publication, but this lane must not publish social content.
 
+
+## Subsequent standalone SVG pixel QA — pass only at asset level
+
+Source-controlled chart independently fetched and source metadata checked: Git blob **c0fc5ef029f03d55caebc3943001d3e3679dc390**. Replicated the exact file bytes in isolated QA (Git blob hashing confirmed exact equality after dropping the local heredoc's trailing newline). Rendered this identical SVG source to **390×442** and **900×1020** PNGs with CairoSVG. Both raster images were visually inspected on November 18, 2026. Labels and comparison bars remain visible without clipping or overflow; the short on-image copyright/source footer becomes small at 390px but remains present. Source-context/limitations also appear in the SVG description and full manuscript caption. This is an **isolated static graphic PASS**, not evidence of actual loading/rendering inside a WordPress page or on readers' devices. New WordPress production-theme 390px/1440px QA and photo byte checks are **still outstanding**.
