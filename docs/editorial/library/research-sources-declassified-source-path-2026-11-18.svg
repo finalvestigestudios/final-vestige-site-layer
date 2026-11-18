@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="320" viewBox="0 0 1040 320" role="img" aria-labelledby="t d">
+<title id="t">The four steps from an archive index to a defensible historical claim</title>
+<desc id="d">Four labeled panels in a left-to-right progression: choose an official collection gateway; open the individual record; verify date, source and editorial interventions; record limitations and rights before publishing a claim. A footer warns that a portal is not a primary document.</desc>
+<rect width="1040" height="320" rx="22" fill="#171a20"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="36" y="42" font-size="15" letter-spacing="2" fill="#d6b787">FINAL VESTIGE STUDIOS  /  THE SOURCE DESK</text>
+<g>
+<rect x="36" y="76" width="218" height="161" rx="12" fill="#242831" stroke="#6e6a62"/>
+<rect x="284" y="76" width="218" height="161" rx="12" fill="#242831" stroke="#6e6a62"/>
+<rect x="532" y="76" width="218" height="161" rx="12" fill="#242831" stroke="#6e6a62"/>
+<rect x="780" y="76" width="224" height="161" rx="12" fill="#242831" stroke="#c5a36d"/>
+</g>
+<g font-size="18" fill="#f6f0e6" font-weight="bold"><text x="56" y="118">1 / Find</text><text x="304" y="118">2 / Inspect</text><text x="552" y="118">3 / Reconcile</text><text x="800" y="118">4 / Record</text></g>
+<g font-size="14" fill="#d5d0c7"><text x="56" y="150">Official series or</text><text x="56" y="172">collection gateway</text><text x="304" y="150">Individual document,</text><text x="304" y="172">page and file ID</text><text x="552" y="150">Date, selection,</text><text x="552" y="172">translation and edits</text><text x="800" y="150">Claim, uncertainty,</text><text x="800" y="172">rights and citation</text></g>
+<g font-size="30" fill="#c5a36d"><text x="259" y="167">›</text><text x="507" y="167">›</text><text x="755" y="167">›</text></g>
+<text x="36" y="282" fill="#c5a36d" font-size="14">A portal is not a primary document. An official published volume is not a complete archive.</text>
+</g></svg>
