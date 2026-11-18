@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>R436 — Focus Fieldbook public-access proposal (offline only)</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#141412;color:#eee9df}
+body{margin:0;line-height:1.6}a{color:#ecd6a5}a:focus-visible{outline:3px solid #f0cb7b;outline-offset:4px}
+main{max-width:820px;margin:auto;padding:clamp(20px,5vw,60px)}
+.notice{border:2px solid #b9955e;padding:18px;margin-bottom:28px;background:#28241b}
+h1{font-family:Georgia,serif;font-size:clamp(2rem,5vw,3.3rem);line-height:1.15}
+h2{font-size:1.5rem}h3{font-size:1.2rem}
+.panel{border:1px solid #b9955e;background:#25231f;padding:clamp(18px,4vw,32px)}
+.button{display:inline-block;background:#c4a474;color:#171714;padding:12px 19px;text-decoration:none;font-weight:700;border-radius:3px}
+.muted{color:#c6c0b5}code{white-space:normal}
+ul{padding-left:1.3rem}hr{border:0;border-top:1px solid #5a554d;margin:32px 0}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style></head>
+<body><main id="main">
+<div class="notice" role="note"><strong>LOCAL REVIEW ONLY — NOT A WORDPRESS OR EMAIL PREVIEW.</strong>
+This file has no working signup form, no tracking and no email capability. The production page and Jetpack settings remain unchanged.</div>
+<h1>The Seven Day Focus Fieldbook — public-access candidate</h1>
+<p class="muted">Founder/Claude review · proposed display only · 52-page free PDF · no consent inferred</p>
+<section aria-labelledby="formh"><h2 id="formh">The Dispatch subscription (not simulated)</h2>
+<p>The real page has its existing Jetpack subscribe block in this position. This preview deliberately does not duplicate a form or collect an address.</p></section>
+<section class="panel" aria-labelledby="fvf-gift-title">
+<h3 id="fvf-gift-title">Read the free Fieldbook</h3>
+<p>You can read this 52-page PDF without subscribing. There is no purchase or email confirmation required to download it.</p>
+<a class="button" href="https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf">Download the Seven Day Focus Fieldbook</a>
+<p>The Dispatch is optional. If you subscribe using the form above on the real site, follow WordPress's confirmation instructions when prompted. Our configured welcome message includes this same Fieldbook link. A PDF download is not a confirmed newsletter subscription.</p>
+</section>
+<hr>
+<h2>Release acceptance checklist</h2>
+<ul><li>Claude reviews the surgical source-only patch, and founder authorizes any production change</li>
+<li>Verify original Jetpack subscribe block still functions, no client-side spoofed confirmation</li>
+<li>Verify the PDF actually opens in a browser and on mobile</li>
+<li>Verify one provider-authoritative <code>confirmed_signup</code> only after eligible opt-in</li>
+<li>Check native WordPress email Preview separately; do not click Send test email</li>
+<li>For commercial Dispatch issues, verify publisher postal address and functional unsubscribe</li></ul>
+<p class="muted">Source-of-truth: <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174">Dispatch Issue 174</a> · <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/issues/129">Focus Issue 129</a>. No merchant links are included.</p>
+</main></body></html>
