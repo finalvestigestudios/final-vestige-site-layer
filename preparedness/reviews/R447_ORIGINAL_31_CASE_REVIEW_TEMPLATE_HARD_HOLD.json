@@ -1,0 +1,246 @@
+{
+  "schema": "R447_REVIEW_PROPOSALS_ONLY_v1",
+  "packet_git_blob": "0e655316ced77212abeff77459898253a1e768fd",
+  "release_state": "DRAFT_HARD_HOLD",
+  "qualified_review_approved": false,
+  "publishable": false,
+  "safety_approved": false,
+  "merchant_offer_verified": false,
+  "sources": [
+    {
+      "source_id": "fsis-power-failure",
+      "candidate_digest": null,
+      "reviewer": null,
+      "evidence_urls": [],
+      "reading_scope_confirmation": null,
+      "safety_review_note": null
+    },
+    {
+      "source_id": "loc-pioneer-diaries",
+      "candidate_digest": null,
+      "reviewer": null,
+      "evidence_urls": [],
+      "reading_scope_confirmation": null,
+      "safety_review_note": null
+    },
+    {
+      "source_id": "loc-prairie-traveler",
+      "candidate_digest": null,
+      "reviewer": null,
+      "evidence_urls": [],
+      "reading_scope_confirmation": null,
+      "safety_review_note": null
+    },
+    {
+      "source_id": "nchfp-home",
+      "candidate_digest": null,
+      "reviewer": null,
+      "evidence_urls": [],
+      "reading_scope_confirmation": null,
+      "safety_review_note": null
+    },
+    {
+      "source_id": "nchfp-jerky",
+      "candidate_digest": null,
+      "reviewer": null,
+      "evidence_urls": [],
+      "reading_scope_confirmation": null,
+      "safety_review_note": null
+    }
+  ],
+  "forks": [
+    {
+      "path": "preparedness/content/articles/family-communication-plan.body.html",
+      "candidate_digest": null,
+      "reviewer": null,
+      "evidence_urls": [],
+      "reading_depth_confirmation": null,
+      "citations_confirmation": null
+    },
+    {
+      "path": "preparedness/content/articles/family-communication-plan.meta.json",
+      "candidate_digest": null,
+      "reviewer": null,
+      "evidence_urls": [],
+      "reading_depth_confirmation": null,
+      "citations_confirmation": null
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.body.html",
+      "candidate_digest": null,
+      "reviewer": null,
+      "evidence_urls": [],
+      "reading_depth_confirmation": null,
+      "citations_confirmation": null
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.meta.json",
+      "candidate_digest": null,
+      "reviewer": null,
+      "evidence_urls": [],
+      "reading_depth_confirmation": null,
+      "citations_confirmation": null
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.body.html",
+      "candidate_digest": null,
+      "reviewer": null,
+      "evidence_urls": [],
+      "reading_depth_confirmation": null,
+      "citations_confirmation": null
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.meta.json",
+      "candidate_digest": null,
+      "reviewer": null,
+      "evidence_urls": [],
+      "reading_depth_confirmation": null,
+      "citations_confirmation": null
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.body.html",
+      "candidate_digest": null,
+      "reviewer": null,
+      "evidence_urls": [],
+      "reading_depth_confirmation": null,
+      "citations_confirmation": null
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.meta.json",
+      "candidate_digest": null,
+      "reviewer": null,
+      "evidence_urls": [],
+      "reading_depth_confirmation": null,
+      "citations_confirmation": null
+    },
+    {
+      "path": "preparedness/sources/fragments/shelter.json",
+      "candidate_digest": null,
+      "reviewer": null,
+      "evidence_urls": [],
+      "reading_depth_confirmation": null,
+      "citations_confirmation": null
+    }
+  ],
+  "url_groups": [
+    {
+      "url": "https://www.cdc.gov/botulism/prevention/home-canned-foods.html",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.cdc.gov/carbon-monoxide/about/index.html",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.fcc.gov/reports-research/guides/tips-communicating-emergency",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-fish/jerky",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.ready.gov/alerts",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.ready.gov/evacuation",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.ready.gov/food",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.ready.gov/kit",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.ready.gov/people-disabilities",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.ready.gov/plan",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.ready.gov/power-outages",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.weather.gov/nwr/",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    },
+    {
+      "url": "https://www.weather.gov/safety/winter-during",
+      "decision": "UNSELECTED",
+      "reviewer": null,
+      "evidence_urls": [],
+      "notes": null
+    }
+  ]
+}
