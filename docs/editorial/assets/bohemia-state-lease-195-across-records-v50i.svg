@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="630" viewBox="0 0 1000 630" role="img" aria-labelledby="tit desc">
+<title id="tit">The lease number that crossed decades</title>
+<desc id="desc">Original editorial evidence graphic. Three separate records mention State Lease 195: a 1965 Fifth Circuit opinion concerning Stone Island water bottoms; a 1970 Louisiana Supreme Court case involving other Plaquemines water-bottom title claims and a remand; and a July 2023 state nomination excluding parts of Bohemia Tract 193 already covered by State Leases 195 and 22099. A shared lease number does not establish that the litigated lands were Bohemia Tract 193 or Eusan Tract 78. 1965 opinion says February 28, 1928; 1970 opinion says February 20, 1928. Original instrument has not been retrieved.</desc>
+<metadata>Creator: Final Vestige Studios; date: 2026-11-17; copyright: © 2026 Final Vestige Studios. Original source-based schematic, not an archive scan or title survey. Sources: https://law.justia.com/cases/federal/appellate-courts/F2/346/43/445482/ ; https://law.justia.com/cases/louisiana/supreme-court/1970/255-la-857-0.html ; https://www.denr.louisiana.gov/assets/OMR/NOP_tracts/2023/45656-45659.pdf . Cite each source separately for its own parcel and judicial outcome.</metadata>
+<rect width="1000" height="630" rx="18" fill="#111d27"/>
+<rect x="32" y="30" width="936" height="566" rx="16" fill="#172734" stroke="#4e697a"/>
+<text x="58" y="78" font-family="Georgia,serif" font-size="35" font-weight="bold" fill="#f4eee3">One lease number. Different records.</text>
+<text x="58" y="109" font-family="Arial,sans-serif" font-size="18" fill="#d4e0e5">State Lease 195 in the Plaquemines Parish paper trail</text>
+<line x1="105" y1="155" x2="105" y2="447" stroke="#83c4c1" stroke-width="4"/>
+<g font-family="Arial,sans-serif">
+<circle cx="105" cy="166" r="11" fill="#d6aa68"/>
+<rect x="135" y="136" width="780" height="88" rx="10" fill="#203844"/>
+<text x="153" y="164" font-size="19" font-weight="bold" fill="#efc98c">1965 · Federal appellate opinion</text>
+<text x="153" y="190" font-size="18" fill="#f1f2ef">Stone Island: competing mineral claims; royalties in escrow</text>
+<text x="153" y="211" font-size="15" fill="#c2d1d7">Dates State Lease 195 to February 28, 1928</text>
+<circle cx="105" cy="290" r="11" fill="#d6aa68"/>
+<rect x="135" y="257" width="780" height="92" rx="10" fill="#203844"/>
+<text x="153" y="285" font-size="19" font-weight="bold" fill="#efc98c">1970 · Louisiana Supreme Court opinion</text>
+<text x="153" y="311" font-size="18" fill="#f1f2ef">Disputed water-bottom title; summary judgment set aside</text>
+<text x="153" y="333" font-size="15" fill="#c2d1d7">Dates State Lease 195 to February 20, 1928; remands</text>
+<circle cx="105" cy="412" r="11" fill="#86c8c3"/>
+<rect x="135" y="380" width="780" height="88" rx="10" fill="#203844"/>
+<text x="153" y="408" font-size="19" font-weight="bold" fill="#9edbd5">2023 · State mineral nomination</text>
+<text x="153" y="434" font-size="18" fill="#f1f2ef">Bohemia Tract 193 excludes earlier Leases 195 and 22099</text>
+<text x="153" y="455" font-size="15" fill="#c2d1d7">Does not identify the prior cases as litigation over Tract 193</text>
+</g>
+<rect x="59" y="496" width="882" height="67" rx="8" fill="#111d27" stroke="#6f8795"/>
+<text x="78" y="523" font-family="Arial,sans-serif" font-size="17" font-weight="bold" fill="#f1eee4">Evidence boundary</text>
+<text x="78" y="547" font-family="Arial,sans-serif" font-size="16" fill="#d9e1e5">Same lease number ≠ same tract, title or claimant. Original lease needed.</text>
+<text x="59" y="585" font-family="Arial,sans-serif" font-size="13" fill="#99abb8">© 2026 Final Vestige Studios · Original evidence diagram · Primary judicial opinions (1965, 1970) + Louisiana OMR (2023)</text>
+</svg>
