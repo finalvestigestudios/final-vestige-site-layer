@@ -1,0 +1,56 @@
+{
+  "id": "fv-dispatch-r440-privacy-safe-audience-witness",
+  "observed_at_utc": "2026-11-18T05:44:03Z",
+  "site": "https://finalvestige.com",
+  "provenance": "Authenticated WordPress/Jetpack connector read-only; Subscribers list filter all / email_subscriber / reader_subscriber. No identities or addresses stored.",
+  "newsletter": {
+    "enabled": true,
+    "site_can_send": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "newsletter_categories_enabled": false,
+    "welcome_fieldbook_configured": true,
+    "actual_welcome_received": false,
+    "new_post_sends_count_verified": 0
+  },
+  "dashboard_counts": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed_excluded": 2,
+    "suppressed": 0
+  },
+  "authoritative_subscriber_list": {
+    "all_total": 3,
+    "all_pages_read": true,
+    "email_subscriber_filter_total": 3,
+    "rows_status_subscribed_and_email_true": 3,
+    "reader_only_filter_total": 0,
+    "identity_fields_stored": false
+  },
+  "jetpack_legacy_stats": {
+    "direct_email_followers": 0,
+    "wordpress_com_reader_followers": 3,
+    "classification_differs_from_subscribers_list": true
+  },
+  "eligible_email_status_count": 3,
+  "actual_delivery_observed": false,
+  "campaign_policy": {
+    "four_editorial_two_commercial": true,
+    "canonical_issue_03": "Zen12",
+    "canonical_issue_05": "Hypnosis Live",
+    "all_six": "HOLD_UNSENT",
+    "no_email_or_test_send": true
+  },
+  "open_gates": [
+    "received welcome/Fieldbook",
+    "native non-sending WordPress email preview",
+    "valid Final Vestige publisher postal address",
+    "functional unsubscribe witness",
+    "merchant-issued account-specific EMAIL rights for both offers",
+    "approved live warm-up guides",
+    "final founder creative/audience/schedule approval",
+    "independently confirmed settlements and human session denominator"
+  ]
+}
