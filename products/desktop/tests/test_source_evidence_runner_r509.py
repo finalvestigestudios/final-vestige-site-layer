@@ -772,11 +772,15 @@ class SourcePrelaunchR515(unittest.TestCase):
         manifest = self.root / "products/desktop/ci/source_evidence_commands_r509.txt"
         manifest.parent.mkdir(parents=True)
         manifest.write_bytes(b"synthetic inventory\n")
+        engines = {("products", "desktop", "fvs_suite", "engine.py"): b"e" * 32}
         with patch.object(runner, "ROOT", self.root), patch.object(runner, "MANIFEST", manifest), \
+             patch.object(runner, "snapshot_engine_sources", return_value=engines), \
              patch.object(runner, "load_commands", return_value=self.commands), \
              patch.object(runner, "execute", return_value=0) as do_execute:
             self.assertEqual(runner.main(), 0)
-        do_execute.assert_called_once_with(self.commands, verify_source_snapshots=True,\n                                           manifest_snapshot=b"synthetic inventory\n")
+        do_execute.assert_called_once_with(self.commands, verify_source_snapshots=True,
+                                           manifest_snapshot=b"synthetic inventory\n",
+                                           engine_source_snapshot=engines)
 
 
 # R516 regression methods remain in the existing 416-command source inventory.
@@ -1163,13 +1167,17 @@ class BoundedManifestR519(unittest.TestCase):
             path.parent.mkdir(parents=True)
             path.write_bytes(b"synthetic pinned source\n")
             commands = (("-W", "error"),)
+            engines = {("products", "desktop", "fvs_suite", "engine.py"): b"e" * 32}
             with patch.object(runner, "ROOT", root), \
                  patch.object(runner, "MANIFEST", path), \
+                 patch.object(runner, "snapshot_engine_sources", return_value=engines), \
                  patch.object(runner, "load_commands", return_value=commands) as load, \
                  patch.object(runner, "execute", return_value=0) as run:
                 self.assertEqual(runner.main(), 0)
             load.assert_called_once_with(path.read_bytes())
-            run.assert_called_once_with(commands, verify_source_snapshots=True,\n                                        manifest_snapshot=b"synthetic pinned source\n")
+            run.assert_called_once_with(commands, verify_source_snapshots=True,
+                                        manifest_snapshot=b"synthetic pinned source\n",
+                                        engine_source_snapshot=engines)
 
 
 
