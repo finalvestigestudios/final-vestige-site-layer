@@ -16,6 +16,8 @@ import unittest
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "products" / "desktop" / "scripts"))
 import source_evidence_runner_r509 as runner
+import source_manifest_guard_r520 as manifest_guard
+from source_manifest_guard_r520 import ManifestReadRejected, read_manifest_custodied
 
 
 class SourceEvidenceR509(unittest.TestCase):
@@ -1098,15 +1100,30 @@ class BoundedManifestR519(unittest.TestCase):
                 runner.read_manifest_bounded(path)
 
     def test_open_call_never_requests_unbounded_read(self):
-        class CountedReader(io.BytesIO):
-            requested = None
-            def read(self, size=-1):
-                self.requested = size
-                return super().read(size)
-        source = CountedReader(b"small")
-        with patch.object(Path, "open", return_value=source):
-            self.assertEqual(runner.read_manifest_bounded(Path("/unused")), b"small")
-        self.assertEqual(source.requested, runner.MAX_MANIFEST_BYTES + 1)
+        # The R520 reader now opens by descriptor, not by Path.open.
+        with TemporaryDirectory() as d:
+            path = Path(d) / "manifest.txt"
+            payload = b"source inventory\\n"
+            path.write_bytes(payload)
+            real_fdopen = manifest_guard.os.fdopen
+            requests = []
+            class CountedReader:
+                def __init__(self, stream):
+                    self.stream = stream
+                def __enter__(self):
+                    return self
+                def __exit__(self, *args):
+                    self.stream.close()
+                def fileno(self):
+                    return self.stream.fileno()
+                def read(self, size=-1):
+                    requests.append(size)
+                    return self.stream.read(size)
+            with patch.object(manifest_guard.os, "fdopen",
+                              side_effect=lambda fd, mode: CountedReader(
+                                  real_fdopen(fd, mode))):
+                self.assertEqual(runner.read_manifest_bounded(path), payload)
+            self.assertEqual(requests, [runner.MAX_MANIFEST_BYTES + 1])
 
     def test_unreadable_private_path_produces_no_exception_chain(self):
         with TemporaryDirectory() as d:
@@ -1118,17 +1135,25 @@ class BoundedManifestR519(unittest.TestCase):
             self.assertNotIn(str(path), str(caught.exception))
 
     def test_stream_error_does_not_retain_private_exception(self):
-        with patch.object(Path, "open",
-                          side_effect=OSError("PRIVATE_VENDOR_DATA_r519")):
-            with self.assertRaises(runner.EvidenceRejected) as caught:
-                runner.read_manifest_bounded(Path("/unused"))
-            self.assertIsNone(caught.exception.__cause__)
-            self.assertIsNone(caught.exception.__context__)
+        with TemporaryDirectory() as d:
+            path = Path(d) / "PRIVATE_VENDOR_DATA_r519.txt"
+            path.write_bytes(b"contents\\n")
+            with patch.object(manifest_guard.os, "open",
+                              side_effect=OSError("PRIVATE_VENDOR_DATA_r519")):
+                with self.assertRaises(runner.EvidenceRejected) as caught:
+                    runner.read_manifest_bounded(path)
+                self.assertIsNone(caught.exception.__cause__)
+                self.assertIsNone(caught.exception.__context__)
 
     def test_malformed_stream_type_fails_closed(self):
-        with patch.object(Path, "open", return_value=io.StringIO("not bytes")):
-            with self.assertRaises(runner.EvidenceRejected):
-                runner.read_manifest_bounded(Path("/unused"))
+        with TemporaryDirectory() as d:
+            path = Path(d) / "manifest.txt"
+            path.write_bytes(b"source inventory\\n")
+            real_fdopen = manifest_guard.os.fdopen
+            with patch.object(manifest_guard.os, "fdopen",
+                              side_effect=lambda fd, mode: real_fdopen(fd, "r")):
+                with self.assertRaises(runner.EvidenceRejected):
+                    runner.read_manifest_bounded(path)
 
     def test_main_calls_bounded_reader_after_path_preflight(self):
         with TemporaryDirectory() as d:
@@ -1145,6 +1170,169 @@ class BoundedManifestR519(unittest.TestCase):
             load.assert_called_once_with(path.read_bytes())
             run.assert_called_once_with(commands, verify_source_snapshots=True)
 
+
+
+class DescriptorManifestR520(unittest.TestCase):
+    """Direct R520 committed integration regressions, in the pinned 416 matrix."""
+
+    def setUp(self):
+        self.temp = TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.path = self.root / "manifest.txt"
+        self.path.write_bytes(b"python -B -W error\n")
+        self.limit = runner.MAX_MANIFEST_BYTES
+
+    def reject(self):
+        with self.assertRaises(ManifestReadRejected) as caught:
+            read_manifest_custodied(self.path, self.limit)
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertIsNone(caught.exception.__context__)
+        self.assertNotIn(str(self.root), str(caught.exception))
+
+    def test_regular_descriptor_read_is_byte_exact(self):
+        self.assertEqual(read_manifest_custodied(self.path, self.limit),
+                         self.path.read_bytes())
+
+    def test_empty_manifest_rejected(self):
+        self.path.write_bytes(b"")
+        self.reject()
+
+    def test_exact_limit_and_one_byte_over(self):
+        self.path.write_bytes(b"x" * self.limit)
+        self.assertEqual(len(read_manifest_custodied(self.path, self.limit)), self.limit)
+        self.path.write_bytes(b"x" * (self.limit + 1))
+        self.reject()
+
+    def test_hardlink_rejected(self):
+        try:
+            os.link(self.path, self.root / "alias")
+        except OSError:
+            self.skipTest("Hardlink creation unavailable")
+        self.reject()
+
+    def test_symlinked_leaf_rejected(self):
+        original = self.root / "original"
+        self.path.rename(original)
+        try:
+            self.path.symlink_to(original)
+        except OSError:
+            self.skipTest("Symlink creation unavailable")
+        self.reject()
+
+    def test_symlinked_parent_rejected(self):
+        real = self.root / "real"
+        real.mkdir()
+        (real / "manifest.txt").write_bytes(self.path.read_bytes())
+        self.path = self.root / "linked" / "manifest.txt"
+        try:
+            self.path.parent.symlink_to(real, target_is_directory=True)
+        except OSError:
+            self.skipTest("Symlink creation unavailable")
+        self.reject()
+
+    def test_directory_rejected(self):
+        self.path.unlink()
+        self.path.mkdir()
+        self.reject()
+
+    def test_missing_private_path_has_no_exception_chain(self):
+        self.path.unlink()
+        self.reject()
+
+    def test_swap_between_path_stat_and_fd_open_rejected(self):
+        real_open = manifest_guard.os.open
+        def replace(path, flags):
+            if Path(path) == self.path:
+                self.path.unlink()
+                self.path.write_bytes(b"replaced manifest\n")
+            return real_open(path, flags)
+        with patch.object(manifest_guard.os, "open", side_effect=replace):
+            self.reject()
+
+    def test_mutation_after_read_rejected(self):
+        real_fstat = manifest_guard.os.fstat
+        calls = []
+        def mutate(fd):
+            calls.append(fd)
+            if len(calls) == 2:
+                self.path.write_bytes(b"changed source manifest longer\n")
+            return real_fstat(fd)
+        with patch.object(manifest_guard.os, "fstat", side_effect=mutate):
+            self.reject()
+        self.assertEqual(len(calls), 2)
+
+    def test_descriptor_read_size_is_bounded(self):
+        real_fdopen = manifest_guard.os.fdopen
+        requests = []
+        class Counted:
+            def __init__(self, stream):
+                self.stream = stream
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                self.stream.close()
+            def fileno(self):
+                return self.stream.fileno()
+            def read(self, size=-1):
+                requests.append(size)
+                return self.stream.read(size)
+        with patch.object(manifest_guard.os, "fdopen",
+                          side_effect=lambda fd, mode: Counted(real_fdopen(fd, mode))):
+            self.assertEqual(read_manifest_custodied(self.path, self.limit),
+                             self.path.read_bytes())
+        self.assertEqual(requests, [self.limit + 1])
+
+    def test_unadopted_descriptor_is_closed_on_fdopen_error(self):
+        real_open = manifest_guard.os.open
+        real_close = manifest_guard.os.close
+        opened, closed = [], []
+        def tracked_open(path, flags):
+            fd = real_open(path, flags)
+            opened.append(fd)
+            return fd
+        def tracked_close(fd):
+            closed.append(fd)
+            return real_close(fd)
+        with patch.object(manifest_guard.os, "open", side_effect=tracked_open), \
+             patch.object(manifest_guard.os, "fdopen",
+                          side_effect=ValueError("PRIVATE_ACCOUNT_ID")), \
+             patch.object(manifest_guard.os, "close", side_effect=tracked_close):
+            self.reject()
+        self.assertEqual(opened, closed)
+
+    def test_invalid_limits_rejected(self):
+        for limit in (0, 65_537, True, "65536"):
+            with self.subTest(limit=limit), self.assertRaises(ManifestReadRejected):
+                read_manifest_custodied(self.path, limit)
+
+    def test_non_absolute_or_non_path_rejected(self):
+        for path in ("/private", Path("relative.txt")):
+            with self.subTest(path=path), self.assertRaises(ManifestReadRejected):
+                read_manifest_custodied(path, self.limit)
+
+    def test_windows_cross_api_ctime_parity_only(self):
+        class Metadata:
+            def __init__(self, ctime):
+                self.st_dev = 1
+                self.st_ino = 2
+                self.st_mode = 0o100644
+                self.st_nlink = 1
+                self.st_size = 5
+                self.st_mtime_ns = 77
+                self.st_ctime_ns = ctime
+        left, right = Metadata(100), Metadata(200)
+        with patch.object(manifest_guard.os, "name", "nt"):
+            self.assertTrue(manifest_guard._same_cross_view(left, right))
+        self.assertFalse(manifest_guard._same_cross_view(left, right))
+
+    def test_runner_maps_private_failures_without_retained_chain(self):
+        self.path.unlink()
+        with self.assertRaises(runner.EvidenceRejected) as caught:
+            runner.read_manifest_bounded(self.path)
+        self.assertIsNone(caught.exception.__context__)
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertNotIn(str(self.root), str(caught.exception))
 
 if __name__ == "__main__":
     unittest.main()
