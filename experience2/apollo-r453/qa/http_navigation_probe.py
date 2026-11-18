@@ -44,7 +44,7 @@ def main():
                 page=browser.new_page()
                 try:page.goto(origin,wait_until='load',timeout=6000)
                 except Exception as exc:
-                    report['navigation_blocker']=str(exc).splitlines()[0][:160]
+                    report['navigation_blocker']='ERR_BLOCKED_BY_ADMINISTRATOR: local browser navigation refused' if 'ERR_BLOCKED_BY_ADMINISTRATOR' in str(exc) else str(exc).splitlines()[0][:160]
                     report['note']='Browser navigation is blocked by the executor; local LCP/CLS and real staging acceptance NOT measured.'
                     return 0
                 finally:page.close()
