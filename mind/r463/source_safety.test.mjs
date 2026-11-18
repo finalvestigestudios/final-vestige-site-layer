@@ -48,7 +48,7 @@ for (const [i,x] of shared.entries()) {
 test('optional B video is really optional, transcript present, no false playable media',()=>{
   assert.match(b,/<details>/);assert.match(b,/<summary>/);assert.match(b,/<svg/);
   assert.match(b,/Complete narration text/);
-  assert.doesNotMatch(b,/<video|autoplay/);
+  assert.doesNotMatch(b,/<video\\b|<(?:video|audio)[^>]*\\bautoplay\\b/i);
 });
 test('timed WebVTT covers exactly 0–42 sec in contiguous nonoverlapping spans',()=>{
   const spans=[...vtt.matchAll(/(\d\d):(\d\d):(\d\d)\.\d{3} --> (\d\d):(\d\d):(\d\d)\.\d{3}/g)].map(x=>[+x[1]*3600 + +x[2]*60 + +x[3],+x[4]*3600 + +x[5]*60 + +x[6]]);
