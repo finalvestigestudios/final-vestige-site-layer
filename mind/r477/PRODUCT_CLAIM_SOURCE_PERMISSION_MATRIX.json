@@ -1,0 +1,416 @@
+{
+  "schema": "fv-mind-r477-commercial-claim-source-matrix-v1",
+  "date": "2026-11-18",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "decision": "No affiliate offer qualifies for activation. No independently authenticated rights-cleared FV Mind digital product qualifies as paid fallback.",
+  "source_registry": [
+    {
+      "id": "S1",
+      "title": "Loftus & Palmer 1974 original experiment",
+      "url": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+      "type": "primary-experiment"
+    },
+    {
+      "id": "S2",
+      "title": "Loftus Miller Burns 1978",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/621467/",
+      "type": "primary-experiment"
+    },
+    {
+      "id": "S3",
+      "title": "Smołka and Blank 2024",
+      "url": "https://doi.org/10.1002/acp.4202",
+      "type": "preregistered-experimental-replication"
+    },
+    {
+      "id": "S4",
+      "title": "Catlin et al 2024",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11465838/",
+      "type": "systematic-review"
+    },
+    {
+      "id": "S5",
+      "title": "Neuschatz et al 2002",
+      "url": "https://doi.org/10.2190/YPC4-WMK6-XU4R-KUV9",
+      "type": "experimental-report"
+    },
+    {
+      "id": "S6",
+      "title": "Ingendoh Posny Heine 2023",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "systematic-review"
+    },
+    {
+      "id": "S7",
+      "title": "FV Puységur primary archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "published-historical-resource"
+    },
+    {
+      "id": "S8",
+      "title": "FV Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "type": "published-free-lead-resource"
+    },
+    {
+      "id": "S9",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "type": "seller"
+    },
+    {
+      "id": "S10",
+      "title": "Zen12 seller About page",
+      "url": "https://zen12.com/about",
+      "type": "seller"
+    },
+    {
+      "id": "S11",
+      "title": "Zen12 separate promotion",
+      "url": "https://zen12.com/secret/",
+      "type": "seller-promotion-not-authenticated-checkout"
+    },
+    {
+      "id": "S12",
+      "title": "Hypnosis Live official catalog",
+      "url": "https://hypnosislive.com/",
+      "type": "seller"
+    },
+    {
+      "id": "S13",
+      "title": "Brainwave Shots official catalog",
+      "url": "https://brainwaveshots.com/",
+      "type": "seller"
+    },
+    {
+      "id": "S14",
+      "title": "FTC endorsement guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory-guidance"
+    },
+    {
+      "id": "S15",
+      "title": "FTC health claims",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory-guidance"
+    },
+    {
+      "id": "S16",
+      "title": "Mind Issue #171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "business-governance"
+    },
+    {
+      "id": "S17",
+      "title": "Commercial Issue #820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "business-governance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "In controlled 1974 crash-film experiments the wording of speed questions affected speed estimates",
+      "source_ids": [
+        "S1"
+      ],
+      "decision": "ALLOW_WITH_CONTEXT",
+      "context": "lab judgement not actual vehicle speed"
+    },
+    {
+      "id": "C02",
+      "claim": "1974 followup: broken glass absent; 16/50 smashed, 7/50 hit, 6/50 control later answered yes",
+      "source_ids": [
+        "S1"
+      ],
+      "decision": "ALLOW_WITH_DENOMINATORS",
+      "context": "responses do not alone reveal exact subjective experience; do not claim universal susceptibility"
+    },
+    {
+      "id": "C03",
+      "claim": "1978 misinformation experiment used 1242 participants across five studies and pilot, later misleading postevent material harmed recognition accuracy",
+      "source_ids": [
+        "S2"
+      ],
+      "decision": "ALLOW_WITH_CONTEXT"
+    },
+    {
+      "id": "C04",
+      "claim": "2024 Smołka Blank double misinformation did not improve performance as expected; some witnesses saw discrepancy yet reported misinformation",
+      "source_ids": [
+        "S3"
+      ],
+      "decision": "ALLOW_WITH_CONTEXT",
+      "context": "specific preregistered test; not all warning interventions"
+    },
+    {
+      "id": "C05",
+      "claim": "2024 interrogation systematic review finds accusatorial versus information-gathering higher false-confession risk within included studies",
+      "source_ids": [
+        "S4"
+      ],
+      "decision": "ALLOW_WITH_DOMAIN_SEPARATION",
+      "context": "not a same-population comparison with eyewitness speed estimates"
+    },
+    {
+      "id": "C06",
+      "claim": "All memory is false",
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "decision": "PROHIBIT",
+      "reason": "overgeneralization"
+    },
+    {
+      "id": "C07",
+      "claim": "Hypnosis unlocks perfectly accurate memories",
+      "source_ids": [
+        "S5"
+      ],
+      "decision": "PROHIBIT",
+      "reason": "available experiment does not support this"
+    },
+    {
+      "id": "C08",
+      "claim": "Puységur proves nineteenth-century magnetic cure or modern hypnosis works",
+      "source_ids": [
+        "S7"
+      ],
+      "decision": "PROHIBIT",
+      "reason": "archive records historical claims and negative cases, not modern clinical effectiveness"
+    },
+    {
+      "id": "C09",
+      "claim": "The existing FV Fieldbook is free and contains twelve-minute practice and a thirty-day log",
+      "source_ids": [
+        "S8"
+      ],
+      "decision": "ALLOW"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 seller describes twelve levels, twelve-minute sessions and four styles",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "ALLOW_ONLY_AS_SELLER_FORMAT",
+      "reason": "purchase contents still require checkout confirmation"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 twelve minutes equals one hour of meditation",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "DO_NOT_REPEAT_AS_BENEFIT",
+      "reason": "seller claim not substantiated by product-specific comparative trial"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 automatically induces total relaxation or brain state",
+      "source_ids": [
+        "S10",
+        "S6"
+      ],
+      "decision": "DO_NOT_REPEAT_AS_BENEFIT",
+      "reason": "2023 heterogeneous EEG review is not Zen12 trial"
+    },
+    {
+      "id": "C13",
+      "claim": "2023 EEG review includes 14 binaural studies, five consistent with hypothesis, eight contradictory, one mixed",
+      "source_ids": [
+        "S6"
+      ],
+      "decision": "ALLOW_WITH_CONTEXT",
+      "reason": "does not establish all formats and all outcomes"
+    },
+    {
+      "id": "C14",
+      "claim": "Current Zen12 coupon countdown and displayed price are guaranteed or authorized to FV",
+      "source_ids": [
+        "S11"
+      ],
+      "decision": "PROHIBIT",
+      "reason": "not authenticated current checkout, affiliate terms or permitted creative"
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 advertised seller money-back statement is a verified FV checkout and enforceable return agreement",
+      "source_ids": [
+        "S11"
+      ],
+      "decision": "PROHIBIT",
+      "reason": "requires precise purchase route and policy verification"
+    },
+    {
+      "id": "C16",
+      "claim": "FV may earn a commission via authorized links, disclosure next to each actual link",
+      "source_ids": [
+        "S14"
+      ],
+      "decision": "CONDITIONAL",
+      "reason": "no active link until eligibility and terms; accurate future disclosure only"
+    },
+    {
+      "id": "C17",
+      "claim": "Commercial health claims require reliable scientific substantiation",
+      "source_ids": [
+        "S15"
+      ],
+      "decision": "ALLOW_REGULATORY_CONTEXT"
+    },
+    {
+      "id": "C18",
+      "claim": "Hypnosis Live offers downloadable hypnosis audio",
+      "source_ids": [
+        "S12"
+      ],
+      "decision": "ALLOW_SELLER_FORMAT_ONLY",
+      "reason": "not the chosen pilot SKU"
+    },
+    {
+      "id": "C19",
+      "claim": "Brainwave Shots lists thematic audio products",
+      "source_ids": [
+        "S13"
+      ],
+      "decision": "ALLOW_SELLER_FORMAT_ONLY",
+      "reason": "no evidence of medical efficacy"
+    },
+    {
+      "id": "C20",
+      "claim": "Final Vestige is accepted Inspire3 affiliate, with valid commission link and email permissions",
+      "source_ids": [],
+      "decision": "UNVERIFIED_HARD_HOLD",
+      "evidence": "Connected Gmail Aug 24 2026 generic Refersion pending notice; searched up to Nov 18 2026, no later named approval found. This does not exclude non-email portal status."
+    },
+    {
+      "id": "C21",
+      "claim": "A settled FV affiliate commission or paid own-product sale has occurred",
+      "source_ids": [],
+      "decision": "NOT_ESTABLISHED",
+      "reason": "neither external settlement nor attributable merchant receipt supplied"
+    },
+    {
+      "id": "C22",
+      "claim": "FV owns a payable rights-cleared Mind digital product",
+      "source_ids": [
+        "S8"
+      ],
+      "decision": "NOT_ESTABLISHED",
+      "reason": "Focus Fieldbook is free; no paid SKU/checkout/rights/settlement verified"
+    },
+    {
+      "id": "C23",
+      "claim": "No subscription form beyond existing Jetpack/Focus funnel",
+      "source_ids": [
+        "S8",
+        "S16"
+      ],
+      "decision": "REQUIRED_POLICY"
+    },
+    {
+      "id": "C24",
+      "claim": "Outbound affiliate_click is a verified sale",
+      "source_ids": [
+        "S17"
+      ],
+      "decision": "PROHIBIT",
+      "reason": "measure events separately"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "named FV affiliate approval",
+      "status": "HOLD"
+    },
+    {
+      "id": "G02",
+      "name": "permitted website and social promotion channels",
+      "status": "HOLD"
+    },
+    {
+      "id": "G03",
+      "name": "explicit email permission if used by Dispatch",
+      "status": "HOLD"
+    },
+    {
+      "id": "G04",
+      "name": "issued destination and tracking URL for exact SKU",
+      "status": "HOLD"
+    },
+    {
+      "id": "G05",
+      "name": "checkout price tax currency verified",
+      "status": "HOLD"
+    },
+    {
+      "id": "G06",
+      "name": "merchant current return and cancellation terms verified",
+      "status": "HOLD"
+    },
+    {
+      "id": "G07",
+      "name": "verified approved creative claims and restrictions",
+      "status": "HOLD"
+    },
+    {
+      "id": "G08",
+      "name": "FTC adjacent disclosures reviewed",
+      "status": "DRAFT_ONLY"
+    },
+    {
+      "id": "G09",
+      "name": "film caption/poster/motion host and keyboard test",
+      "status": "HOLD"
+    },
+    {
+      "id": "G10",
+      "name": "360 390 768 1440 1920 browser WCAG tests",
+      "status": "HOLD"
+    },
+    {
+      "id": "G11",
+      "name": "no JS, sanitizer and performance browser evidence",
+      "status": "HOLD"
+    },
+    {
+      "id": "G12",
+      "name": "three actual Grok media IDs mapped and authorized",
+      "status": "HOLD"
+    },
+    {
+      "id": "G13",
+      "name": "existing single Jetpack signup confirmation/welcome verified",
+      "status": "HOLD"
+    },
+    {
+      "id": "G14",
+      "name": "settled merchant sales/fees/refunds access and cohort match",
+      "status": "HOLD"
+    },
+    {
+      "id": "G15",
+      "name": "founder commercial release approval",
+      "status": "HOLD"
+    },
+    {
+      "id": "G16",
+      "name": "Claude/site QA independent release review",
+      "status": "HOLD"
+    }
+  ],
+  "rendering_and_privacy": {
+    "affiliate_url": null,
+    "promotion_active": false,
+    "cms_write": false,
+    "paid_saas": false,
+    "new_signup_forms": 0,
+    "tracking_scripts_added": 0,
+    "checkout_event_not_payment": true,
+    "no_personal_ids": true,
+    "no_cookie_experiment_without_consent": true
+  }
+}
