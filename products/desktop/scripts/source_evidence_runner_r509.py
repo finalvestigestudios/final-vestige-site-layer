@@ -14,6 +14,9 @@ import subprocess
 import sys
 
 from source_child_env_r514 import child_environment
+from source_engine_custody_r522 import (
+    EngineSourceRejected, engine_sources_unchanged, snapshot_engine_sources,
+)
 from source_manifest_guard_r520 import ManifestReadRejected, read_manifest_custodied
 from source_postflight_r521 import postflight_unchanged
 from source_path_snapshot_r515 import (
@@ -150,7 +153,8 @@ def _child_environment(root: Path) -> dict[str, str]:
 
 def execute(commands: tuple[tuple[str, ...], ...], root: Path = ROOT,
             *, spawn=None, verify_source_snapshots: bool = False,
-            manifest_snapshot: bytes | None = None) -> int:
+            manifest_snapshot: bytes | None = None,
+            engine_source_snapshot: dict[tuple[str, ...], bytes] | None = None) -> int:
     if (type(commands) is not tuple or not commands or
             any(type(x) is not tuple or not x or
                 any(type(y) is not str for y in x) for x in commands)):
@@ -177,6 +181,11 @@ def execute(commands: tuple[tuple[str, ...], ...], root: Path = ROOT,
             not verify_source_snapshots or type(manifest_snapshot) is not bytes
             or not manifest_snapshot):
         print("REJECTED: invalid source manifest snapshot", file=sys.stderr)
+        return 1
+    if engine_source_snapshot is not None and (
+            not verify_source_snapshots or manifest_snapshot is None
+            or type(engine_source_snapshot) is not dict or not engine_source_snapshot):
+        print("REJECTED: invalid engine source snapshot", file=sys.stderr)
         return 1
     run = subprocess.run if spawn is None else spawn
     env = _child_environment(root)
@@ -205,6 +214,13 @@ def execute(commands: tuple[tuple[str, ...], ...], root: Path = ROOT,
             MANIFEST, manifest_snapshot, read_manifest_bounded):
         print("REJECTED: source matrix changed after checks", file=sys.stderr)
         return 1
+    # R522 checks the shared Python financial engine in addition to executed
+    # test/script files. A final child cannot silently change an engine module
+    # or add another one without a postflight HOLD. main() always supplies it.
+    if engine_source_snapshot is not None and not engine_sources_unchanged(
+            root, engine_source_snapshot):
+        print("REJECTED: shared engine source changed after checks", file=sys.stderr)
+        return 1
     print(f"PASS: {len(commands)} source commands; NOT Windows EXE, QD, or release approval")
     return 0
 
@@ -216,9 +232,12 @@ def main() -> int:
         ):
             raise EvidenceRejected("Unsafe source evidence manifest path")
         original_manifest = read_manifest_bounded(MANIFEST)
+        # Capture BEFORE the matrix runs; no production/network/customer data.
+        original_engines = snapshot_engine_sources(ROOT)
         return execute(load_commands(original_manifest),
-                       verify_source_snapshots=True, manifest_snapshot=original_manifest)
-    except (OSError, EvidenceRejected):
+                       verify_source_snapshots=True, manifest_snapshot=original_manifest,
+                       engine_source_snapshot=original_engines)
+    except (OSError, EvidenceRejected, EngineSourceRejected):
         print("REJECTED: immutable source evidence unavailable", file=sys.stderr)
         return 1
 
