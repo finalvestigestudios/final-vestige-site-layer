@@ -107,7 +107,7 @@ def validate_graph(manifest: dict) -> dict:
         actual_matches = sorted(k for k, s in owners.items() if s == row["integrated_blob"])
         variants = len(set(owners.values()))
         needs_review = variants > 1 or not actual_matches
-        if row.get("matches_integrated") != actual_matches or row.get("distinct_contributor_blobs") != variants:
+        if not isinstance(row.get("matches_integrated"), list) or sorted(row["matches_integrated"]) != actual_matches or row.get("distinct_contributor_blobs") != variants:
             raise ProvenanceHold(f"manipulated provenance match/fork count: {path}")
         if row.get("requires_human_disposition") is not needs_review:
             raise ProvenanceHold(f"source disposition silently bypassed: {path}")
