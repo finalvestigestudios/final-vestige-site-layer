@@ -14,6 +14,7 @@ import subprocess
 import sys
 
 from source_child_env_r514 import child_environment
+from source_manifest_guard_r520 import ManifestReadRejected, read_manifest_custodied
 from source_path_snapshot_r515 import (
     SourceSnapshotRejected, matches_source_fingerprint, source_fingerprint,
 )
@@ -74,23 +75,18 @@ def git_blob_sha(raw: bytes) -> str:
 
 
 def read_manifest_bounded(path: Path) -> bytes:
-    """Read only one byte beyond the reviewed source manifest budget.
+    """Descriptor-verified bounded manifest read with private failure redaction.
 
-    Source integrity is authenticated later by the immutable Git blob hash.
-    Reading an arbitrarily enlarged untrusted file with Path.read_bytes()
-    first can exhaust memory before that rejection occurs.
+    R520 refuses linked, replaced, nonregular or mutated source manifests
+    before the immutable Git blob digest and 416-command allowlist are checked.
     """
-    raw = None
     try:
-        with path.open("rb") as stream:
-            raw = stream.read(MAX_MANIFEST_BYTES + 1)
-    except (OSError, ValueError):
-        # Raise a fixed message after leaving the handler, so private OS
-        # diagnostics and filenames do not persist in exception chains.
+        return read_manifest_custodied(path, MAX_MANIFEST_BYTES)
+    except ManifestReadRejected:
+        # Raise outside the catch block to avoid retaining private OS/path
+        # metadata in the public runner's chained exception state.
         pass
-    if type(raw) is not bytes or len(raw) > MAX_MANIFEST_BYTES:
-        raise EvidenceRejected("Unsafe source evidence manifest")
-    return raw
+    raise EvidenceRejected("Unsafe source evidence manifest")
 
 
 def load_commands(raw: bytes, root: Path = ROOT, *,
