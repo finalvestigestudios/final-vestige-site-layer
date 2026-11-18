@@ -1,0 +1,161 @@
+{
+  "id": "R437",
+  "status": "HOLD_UNSENT",
+  "generated_utc": "2026-11-18T02:35:26Z",
+  "canonical_pr": 175,
+  "canonical_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "canonical_manifest_blob": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+  "stacked_from_pr": 2940,
+  "stacked_from_commit": "d56010e10a1f5bb46656c9ec3b39031c28d2c0be",
+  "issue": 174,
+  "founder_approval": false,
+  "claims": [
+    "Source-only preview. No native Jetpack preview, no received message, no legal-footer attestation, no merchant EMAIL permission, no subscriber or payment evidence."
+  ],
+  "wordpress_read_only": {
+    "site_id": 256784396,
+    "subscribers_total": 3,
+    "confirmed": 3,
+    "unconfirmed_excluded_from_total": 2,
+    "direct_email_receiving_inboxes": "UNKNOWN",
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "reply_to": "no-reply",
+    "newsletter_categories_enabled": false,
+    "welcome_configured": true,
+    "welcome_received": "UNVERIFIED"
+  },
+  "records": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "source_path": "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md",
+      "source_blob": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "subject": "The mind is not a camera",
+      "preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "first_paragraph": "Before we investigate an old photograph, we ask a simple question: what does the photograph actually show?",
+      "preview_html": "dispatch/r437/previews/issue-01.html",
+      "preview_txt": "dispatch/r437/previews/issue-01.txt",
+      "all_first_party_links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "flags": [
+        "DUPLICATE_FIRST_PARTY_CTA",
+        "NATIVE_JETPACK_RENDER_AND_FOOTER_UNVERIFIED"
+      ],
+      "founder_adopted": false,
+      "eligible_to_send": false,
+      "actual_email_preview_verified": false,
+      "paid_sale_verified": false
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "source_path": "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md",
+      "source_blob": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "subject": "Before hypnosis had a name",
+      "preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "first_paragraph": "In 1785, a reader encountering Puységur's accounts would have found something that still feels startling: observers trying to describe behavior for which they didn't have a comfortable explanation.",
+      "preview_html": "dispatch/r437/previews/issue-02.html",
+      "preview_txt": "dispatch/r437/previews/issue-02.txt",
+      "all_first_party_links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "flags": [
+        "DUPLICATE_FIRST_PARTY_CTA",
+        "NATIVE_JETPACK_RENDER_AND_FOOTER_UNVERIFIED"
+      ],
+      "founder_adopted": false,
+      "eligible_to_send": false,
+      "actual_email_preview_verified": false,
+      "paid_sale_verified": false
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "source_path": "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md",
+      "source_blob": "aeeef34efea0cc281f69901488e4501fea851245",
+      "subject": "The twelve-minute meditation question",
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "first_paragraph": "Twelve minutes is an inviting proposition. It fits into a crowded morning, asks for less than the time we often lose scrolling, and feels possible even when an hour doesn't.",
+      "preview_html": "dispatch/r437/previews/issue-03.html",
+      "preview_txt": "dispatch/r437/previews/issue-03.txt",
+      "all_first_party_links": [
+        "https://finalvestige.com/focus/"
+      ],
+      "flags": [
+        "MERCHANT_EMAIL_PERMISSION_GUIDE_AND_REFERRAL_LINK_UNVERIFIED",
+        "NATIVE_JETPACK_RENDER_AND_FOOTER_UNVERIFIED"
+      ],
+      "founder_adopted": false,
+      "eligible_to_send": false,
+      "actual_email_preview_verified": false,
+      "paid_sale_verified": false
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "source_path": "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md",
+      "source_blob": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "first_paragraph": "A good explanation is often shorter than the evidence it rests on. Sometimes it's too short.",
+      "preview_html": "dispatch/r437/previews/issue-04.html",
+      "preview_txt": "dispatch/r437/previews/issue-04.txt",
+      "all_first_party_links": [
+        "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+      ],
+      "flags": [
+        "CANONICAL_FOURTEEN_SECONDS_SUBJECT_NEEDS_CORRECTION",
+        "NATIVE_JETPACK_RENDER_AND_FOOTER_UNVERIFIED"
+      ],
+      "founder_adopted": false,
+      "eligible_to_send": false,
+      "actual_email_preview_verified": false,
+      "paid_sale_verified": false
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "source_path": "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md",
+      "source_blob": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "Three questions that matter more than an impressive promise.",
+      "first_paragraph": "A recording offers convenience: you can revisit it, practice privately and decide whether a guided format suits you. That says something about the format. It doesn't settle what the recording can change.",
+      "preview_html": "dispatch/r437/previews/issue-05.html",
+      "preview_txt": "dispatch/r437/previews/issue-05.txt",
+      "all_first_party_links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "flags": [
+        "MERCHANT_EMAIL_PERMISSION_GUIDE_AND_REFERRAL_LINK_UNVERIFIED",
+        "NATIVE_JETPACK_RENDER_AND_FOOTER_UNVERIFIED"
+      ],
+      "founder_adopted": false,
+      "eligible_to_send": false,
+      "actual_email_preview_verified": false,
+      "paid_sale_verified": false
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "source_path": "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md",
+      "source_blob": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "first_paragraph": "After a week of trying to concentrate differently, it's easy to be left with one of two impressions: it changed everything, or it changed nothing.",
+      "preview_html": "dispatch/r437/previews/issue-06.html",
+      "preview_txt": "dispatch/r437/previews/issue-06.txt",
+      "all_first_party_links": [
+        "https://finalvestige.com/focus/"
+      ],
+      "flags": [
+        "NATIVE_JETPACK_RENDER_AND_FOOTER_UNVERIFIED"
+      ],
+      "founder_adopted": false,
+      "eligible_to_send": false,
+      "actual_email_preview_verified": false,
+      "paid_sale_verified": false
+    }
+  ]
+}

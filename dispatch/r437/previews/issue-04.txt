@@ -1,0 +1,23 @@
+INTERNAL R437 REVIEW ONLY — HOLD_UNSENT — DO NOT SEND OR COPY TO WORDPRESS
+ISSUE 04: editorial
+SUBJECT (proposed WP post title): Fourteen seconds. A much longer explanation.
+PREHEADER (manifest only; actual Jetpack inbox snippet unverified): Apollo 1, the surviving record, and why a tidy cause can mislead.
+FLAGS: CANONICAL_FOURTEEN_SECONDS_SUBJECT_NEEDS_CORRECTION; NATIVE_JETPACK_RENDER_AND_FOOTER_UNVERIFIED
+
+=== SUBSCRIBER BODY COPY UNDER REVIEW (NO VERIFIED LEGAL FOOTER) ===
+A good explanation is often shorter than the evidence it rests on. Sometimes it's too short.
+
+The Apollo 1 fire is often compressed into a sentence about an electrical spark. The surviving official findings tell a harder story: an oxygen-rich ground-test environment, combustible material, vulnerable wiring, emergency escape constraints and choices in the design and test process.
+
+The investigators could identify dangerous conditions without conclusively identifying the exact first arc. That distinction matters. Unknown doesn't mean nothing was learned. It means the boundary between evidence and inference has to stay visible.
+
+Our investigation, **The Hatch Opened Inward**, follows that boundary through records and hardware. It also shows why the redesigned hatch became one of the event's clearest physical traces.
+
+**Read the investigation:** [The Hatch Opened Inward](https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/).
+
+There is a connection to the mind here, too: we like stories with one obvious cause. The record often refuses to cooperate.
+
+This is what The Dispatch will continue to do—move between history, science and the strange edges of human experience, without asking you to trade curiosity for certainty.
+
+=== END PREVIEW, NOT SEND AUTHORIZATION ===
+Required: actual founder approval, provider eligible recipients and welcome witness, native Jetpack email preview, FV postal address/unsubscribe, and commercial merchant approvals when applicable.
