@@ -49,7 +49,11 @@ def check_record_order(previous: datetime | None, recorded: object) -> datetime:
     """Reject backwards timestamps; equal-second decisions remain permissible."""
     current = parse_review_utc(recorded)
     if previous is not None:
-        if not isinstance(previous, datetime) or previous.tzinfo is None or previous.utcoffset() is None:
+        # A datetime subclass can override astimezone/utcoffset and fabricate
+        # ordering. A custom tzinfo can execute user code while serializing a
+        # supposedly offline journal and leak private values in exceptions.
+        # The parser above produces only native datetime + fixed-offset zones.
+        if type(previous) is not datetime or type(previous.tzinfo) is not timezone:
             raise ValueError("Review journal has an invalid previous UTC timestamp")
         if current < previous.astimezone(timezone.utc):
             raise ValueError("Review journal timestamps are out of chronological order")
@@ -58,7 +62,10 @@ def check_record_order(previous: datetime | None, recorded: object) -> datetime:
 
 def check_new_review_clock(latest_recorded: object | None, current: datetime) -> None:
     """A clock behind the latest saved review cannot append an earlier action."""
-    if not isinstance(current, datetime) or current.tzinfo is None or current.utcoffset() is None:
+    # Refuse datetime subclasses and arbitrary tzinfo methods before invoking
+    # their potentially forged or exception-leaking behavior. Native fixed
+    # offsets remain accepted by the historical comparison path above.
+    if type(current) is not datetime or type(current.tzinfo) is not timezone:
         raise ValueError("Review requires a timezone-aware current clock")
     if current.utcoffset() != timedelta(0):
         raise ValueError("Review requires a UTC current clock")
