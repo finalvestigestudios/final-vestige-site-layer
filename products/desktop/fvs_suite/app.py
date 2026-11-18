@@ -302,7 +302,7 @@ def run(app_id):
         hint += ("; Alt+L left match, Alt+R right match; "
                  "Alt+A left amount, Alt+M right amount (blank = automatic)")
     if app_id == "invoices":
-        hint += "; Alt+W near-match day window (0-365; default 7)"
+        hint += "; Alt+W near-match day window (0-365 days, default 7)"
     if app_id == "procurement":
         hint += "; Alt+P optional policy; Ctrl+P browse policy"
     if premium:
