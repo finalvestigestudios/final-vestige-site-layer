@@ -1,0 +1,526 @@
+{
+  "run": "R456",
+  "date": "2026-11-17",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "sources": [
+    {
+      "id": "W70",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/5409744/"
+    },
+    {
+      "id": "S81",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6457110/"
+    },
+    {
+      "id": "S97",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9095679/"
+    },
+    {
+      "id": "L16",
+      "url": "https://www.nature.com/articles/ncomms13619"
+    },
+    {
+      "id": "BB23",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/"
+    },
+    {
+      "id": "FVJ",
+      "url": "https://finalvestige.com/blog/"
+    },
+    {
+      "id": "FVP",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "FVF",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "ZEN",
+      "url": "https://zen12.com/"
+    },
+    {
+      "id": "ZENS",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "HL",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "HLFAQ",
+      "url": "https://hypnosislive.com/faq"
+    },
+    {
+      "id": "BS",
+      "url": "https://brainwaveshots.com/focus-shot"
+    },
+    {
+      "id": "AFF",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "FTCEND",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "FTCHEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Warren restored masked phonemes; silence condition differs",
+      "classification": "INDEPENDENT",
+      "source_ids": [
+        "W70"
+      ],
+      "decision": "ALLOW_SCOPED"
+    },
+    {
+      "id": "C02",
+      "claim": "Mask acoustic properties matter",
+      "classification": "INDEPENDENT",
+      "source_ids": [
+        "S81"
+      ],
+      "decision": "ALLOW_SCOPED"
+    },
+    {
+      "id": "C03",
+      "claim": "Phonemic adaptation may follow restored sounds",
+      "classification": "INDEPENDENT",
+      "source_ids": [
+        "S97"
+      ],
+      "decision": "ALLOW_SCOPED"
+    },
+    {
+      "id": "C04",
+      "claim": "Neural auditory cortex findings are study-context-specific",
+      "classification": "INDEPENDENT",
+      "source_ids": [
+        "L16"
+      ],
+      "decision": "ALLOW_SCOPED"
+    },
+    {
+      "id": "C05",
+      "claim": "Binaural beat EEG literature inconsistent across 14 studies",
+      "classification": "REVIEW_NOT_PRODUCT_TRIAL",
+      "source_ids": [
+        "BB23"
+      ],
+      "decision": "ALLOW_SCOPE_ONLY"
+    },
+    {
+      "id": "C06",
+      "claim": "Zen12 markets 12-minute sessions",
+      "classification": "SELLER_FEATURE",
+      "source_ids": [
+        "ZEN"
+      ],
+      "decision": "ATTRIBUTED"
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 describes 12 levels and four audio styles",
+      "classification": "SELLER_FEATURE",
+      "source_ids": [
+        "ZEN"
+      ],
+      "decision": "ATTRIBUTED"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 complete catalog describes 48 MP3s",
+      "classification": "SELLER_FEATURE",
+      "source_ids": [
+        "ZEN",
+        "ZENS"
+      ],
+      "decision": "ATTRIBUTED_EXACT_SKU"
+    },
+    {
+      "id": "C09",
+      "claim": "Beginner and Advanced each described as 24 MP3s",
+      "classification": "SELLER_FEATURE",
+      "source_ids": [
+        "ZEN"
+      ],
+      "decision": "ATTRIBUTED"
+    },
+    {
+      "id": "C10",
+      "claim": "Catalog and secret promotion distinct buying contexts",
+      "classification": "SELLER_FEATURE",
+      "source_ids": [
+        "ZEN",
+        "ZENS"
+      ],
+      "decision": "DISTINGUISH"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 12 min equals hour of meditation",
+      "classification": "UNSUBSTANTIATED_SELLER_EFFICACY",
+      "source_ids": [
+        "ZEN",
+        "BB23"
+      ],
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 cures stress or improves cognition on demand",
+      "classification": "UNSUBSTANTIATED_SELLER_EFFICACY",
+      "source_ids": [
+        "ZEN",
+        "FTCHEALTH"
+      ],
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C13",
+      "claim": "Specific referred Zen12 price/discount/refund handling",
+      "classification": "UNVERIFIED_TRANSACTION",
+      "source_ids": [
+        "ZEN",
+        "ZENS"
+      ],
+      "decision": "HOLD"
+    },
+    {
+      "id": "C14",
+      "claim": "Total Focus 33-minute 47MB MP3",
+      "classification": "SELLER_FEATURE",
+      "source_ids": [
+        "HL"
+      ],
+      "decision": "ATTRIBUTED"
+    },
+    {
+      "id": "C15",
+      "claim": "Total Focus bundle same as single-item offer",
+      "classification": "MISLEADING",
+      "source_ids": [
+        "HL"
+      ],
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C16",
+      "claim": "Total Focus FAQ refund max five sessions/year and 14 days",
+      "classification": "SELLER_TERMS",
+      "source_ids": [
+        "HLFAQ"
+      ],
+      "decision": "ATTRIBUTED_REQUIRE_CHECKOUT"
+    },
+    {
+      "id": "C17",
+      "claim": "Total Focus guaranteed concentration",
+      "classification": "UNSUBSTANTIATED_SELLER_EFFICACY",
+      "source_ids": [
+        "HL",
+        "FTCHEALTH"
+      ],
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C18",
+      "claim": "Focus Shot offers 15 and 30 minute audio",
+      "classification": "SELLER_FEATURE",
+      "source_ids": [
+        "BS"
+      ],
+      "decision": "ATTRIBUTED"
+    },
+    {
+      "id": "C19",
+      "claim": "Focus Shot claims 4 hours to rest-of-day focus",
+      "classification": "UNSUBSTANTIATED_SELLER_EFFICACY",
+      "source_ids": [
+        "BS",
+        "BB23"
+      ],
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C20",
+      "claim": "Focus Shot guaranteed safety/treatment efficacy",
+      "classification": "UNSUBSTANTIATED_SELLER_EFFICACY",
+      "source_ids": [
+        "BS",
+        "FTCHEALTH"
+      ],
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C21",
+      "claim": "Puységur live archive describes 153 source rows and 16 dossiers",
+      "classification": "FIRST_PARTY_LIVE",
+      "source_ids": [
+        "FVP"
+      ],
+      "decision": "ALLOW_DATED"
+    },
+    {
+      "id": "C22",
+      "claim": "Free Focus Fieldbook 52-page edition exists",
+      "classification": "FIRST_PARTY_LIVE",
+      "source_ids": [
+        "FVF"
+      ],
+      "decision": "ALLOW_DATED"
+    },
+    {
+      "id": "C23",
+      "claim": "Affiliate disclosure near recommendation/link",
+      "classification": "FTC_GUIDANCE",
+      "source_ids": [
+        "FTCEND"
+      ],
+      "decision": "REQUIRED"
+    },
+    {
+      "id": "C24",
+      "claim": "Medical and health claims require proper evidence",
+      "classification": "FTC_GUIDANCE",
+      "source_ids": [
+        "FTCHEALTH"
+      ],
+      "decision": "REQUIRED"
+    },
+    {
+      "id": "C25",
+      "claim": "Generic Inspire3 affiliate portal exists",
+      "classification": "SELLER_PORTAL",
+      "source_ids": [
+        "AFF"
+      ],
+      "decision": "NOT_ACCEPTANCE"
+    },
+    {
+      "id": "C26",
+      "claim": "Final Vestige named Inspire3 acceptance",
+      "classification": "UNVERIFIED_ACCOUNT",
+      "source_ids": [
+        "AFF"
+      ],
+      "decision": "HOLD"
+    },
+    {
+      "id": "C27",
+      "claim": "Exact authorized earning URL, SKU, channel rights, referred checkout",
+      "classification": "UNVERIFIED_ACCOUNT",
+      "source_ids": [
+        "AFF"
+      ],
+      "decision": "HOLD"
+    },
+    {
+      "id": "C28",
+      "claim": "Actual independently reconciled paid commissions",
+      "classification": "UNVERIFIED_ACCOUNT",
+      "source_ids": [],
+      "decision": "UNKNOWN_NOT_ZERO"
+    },
+    {
+      "id": "C29",
+      "claim": "Qualified human sessions/Grok asset ids",
+      "classification": "UNVERIFIED_ATTRIBUTION",
+      "source_ids": [],
+      "decision": "UNKNOWN"
+    },
+    {
+      "id": "C30",
+      "claim": "Actually sellable owned Mind SKU",
+      "classification": "UNVERIFIED_OWNED_PRODUCT",
+      "source_ids": [
+        "FVF"
+      ],
+      "decision": "HOLD_FIELD_BOOK_FREE"
+    },
+    {
+      "id": "C31",
+      "claim": "Live Journal shows 66 search results versus 61-post Issue #171 baseline",
+      "classification": "INVENTORY_DIFFERENT_DEFINITIONS",
+      "source_ids": [
+        "FVJ"
+      ],
+      "decision": "RECHECK_NOT_EQUIVALENT"
+    },
+    {
+      "id": "C32",
+      "claim": "Publisher legal consent and channel permissions",
+      "classification": "UNVERIFIED_ACCOUNT",
+      "source_ids": [
+        "AFF"
+      ],
+      "decision": "HOLD"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "requirement": "named_partner_approval",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G02",
+      "requirement": "exact_brand_identity",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G03",
+      "requirement": "approved_Zen12_SKU",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G04",
+      "requirement": "approved_WEB_channel",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G05",
+      "requirement": "approved_EMAIL_channel",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G06",
+      "requirement": "approved_SOCIAL_channel",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G07",
+      "requirement": "approved_creatives",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G08",
+      "requirement": "issued_link",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G09",
+      "requirement": "cookie_terms",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G10",
+      "requirement": "exact_landing_destination",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G11",
+      "requirement": "verified_checkout_currency",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G12",
+      "requirement": "verified_checkout_tax",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G13",
+      "requirement": "verified_no_hidden_subscription",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G14",
+      "requirement": "verified_refund_policy",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G15",
+      "requirement": "commission_reporting",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G16",
+      "requirement": "attribution_method",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G17",
+      "requirement": "disclosure_near_CTA",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G18",
+      "requirement": "product_claims_supported",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G19",
+      "requirement": "founder_release_approval",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G20",
+      "requirement": "independent_site_QA",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G21",
+      "requirement": "WCAG_browser_QA",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G22",
+      "requirement": "noJS_QA",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G23",
+      "requirement": "performance_CWV",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G24",
+      "requirement": "actual_film_encoded",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G25",
+      "requirement": "film_captions_verified",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G26",
+      "requirement": "Jetpack_delivery_verified",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G27",
+      "requirement": "Grok_real_asset_IDs",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G28",
+      "requirement": "merchant_paid_order_reconciliation",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G29",
+      "requirement": "qualified_human_denominator",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    },
+    {
+      "id": "G30",
+      "requirement": "no_duplicate_measurement",
+      "status": "HOLD_NO_AFFIRMATIVE_EVIDENCE"
+    }
+  ],
+  "account_verification": {
+    "gmail_sweep": "17-Nov-2026 consumer promos, and a generic Refersion account pending email, do not establish named Inspire3 affiliation",
+    "affiliate_approval": "NOT_AUTHENTICATED",
+    "earning_url": "NOT_AUTHENTICATED",
+    "commission_sale": "UNKNOWN_NOT_ZERO",
+    "owned_paid_mind_product": "NOT_AUTHENTICATED"
+  },
+  "inactive_affiliate_links": true,
+  "production_deploy": false
+}

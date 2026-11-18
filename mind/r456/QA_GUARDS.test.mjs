@@ -1,0 +1,44 @@
+import {readFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import {dirname,join} from 'node:path';
+import test from 'node:test';
+import assert from 'node:assert/strict';
+const dir=dirname(fileURLToPath(import.meta.url));
+const read=name=>readFile(join(dir,name),'utf8');
+const [a,b,hub,svg,vtt,article,matrixText]=await Promise.all([
+'ZEN12_A_INDEPENDENT_TEXT.html','ZEN12_B_OPTIONAL_42S_CONCEPT.html','MIND_ARCHIVE_HUB_SOURCE_ONLY.html','ZEN12_42S_POSTER.svg','ZEN12_42S_CAPTIONS.vtt','THE_WORD_THE_NOISE_REPAIRED.md','CLAIM_SOURCE_PARTNER_RELEASE_MATRIX.json'].map(read));
+const mat=JSON.parse(matrixText);
+const main=html=>(html.match(/<main id="guide">([\s\S]*?)<\/main>/)||[])[1];
+function commercialGuard(html) {
+ const errors=[];
+ if(!/<button[^>]*\bdisabled\b[^>]*>Compare approved Zen12 offer/.test(html))errors.push('native disabled CTA absent');
+ const disclosureAt=html.indexOf('Potential commission disclosure:');
+ const buttonAt=html.indexOf('Compare approved Zen12 offer');
+ if(disclosureAt<0||buttonAt<0||buttonAt-disclosureAt>650)errors.push('adjacent disclosure absent');
+ if(/<script\b|<iframe\b|<form\b|<input\b/i.test(html))errors.push('unapproved scripts/forms');
+ if(/<a\b[^>]*href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots)\./i.test(html))errors.push('active merchant link');
+ if(/\bautoplay\s*=/i.test(html))errors.push('autoplay');
+ if(/\$[0-9]|guaranteed focus|clinically proven Zen12|earns [0-9]+% commission/i.test(html))errors.push('unsupported price/outcome');
+ if((html.match(/<main\b/g)||[]).length!==1)errors.push('main landmark');
+ return errors;
+}
+test('A/B substantive buyer main identical',()=>assert.equal(main(a),main(b)));
+test('native disabled merchant and adjacent disclosure',()=>{assert.deepEqual(commercialGuard(a),[]);assert.deepEqual(commercialGuard(b),[]);});
+test('no JS, external embed, duplicate form or autoplay',()=>{for(const h of [a,b])assert.doesNotMatch(h,/<script\b|<form\b|<iframe\b|<input\b|<video\b/i);});
+test('disclosure removal detected',()=>assert.ok(commercialGuard(a.replace('Potential commission disclosure:','UNDISCLOSED')).length));
+test('button reactivation detected',()=>assert.ok(commercialGuard(a.replace(' type="button" disabled',' type="button"')).length));
+test('active merchant link detected',()=>assert.ok(commercialGuard(a.replace('</main>','<a href="https://zen12.com/buy">BUY</a></main>')).length));
+test('script injection detected',()=>assert.ok(commercialGuard(a+'<script>alert(1)</script>').length));
+test('new lead form injection detected',()=>assert.ok(commercialGuard(a+'<form><input></form>').length));
+test('autoplay injection detected',()=>assert.ok(commercialGuard(a+'<video autoplay="true"></video>').length));
+test('unsupported price invented detected',()=>assert.ok(commercialGuard(a+'<p>$49 guaranteed focus</p>').length));
+test('film is declared nonplayable; transcript/captions present',()=>{assert.match(b,/Not yet playable/);assert.match(b,/transcript and caption plan/);});
+test('six contiguous timed caption cues',()=>{const t=[...vtt.matchAll(/(\d{2}:\d{2}:\d{2}\.\d{3}) --> (\d{2}:\d{2}:\d{2}\.\d{3})/g)];assert.equal(t.length,6);assert.equal(t[0][1],'00:00:00.000');assert.equal(t[5][2],'00:00:42.000');for(let i=1;i<t.length;i++)assert.equal(t[i][1],t[i-1][2]);});
+test('poster SVG does not execute or load external assets',()=>{assert.match(svg,/<svg/);assert.doesNotMatch(svg,/<script\b|<foreignObject\b|xlink:href|<image\b|onload\s*=|\bhref\s*=\s*["']https?:\/\//i);});
+test('article is substantial and links original evidence',()=>{for(const x of ['5409744','6457110','9095679','ncomms13619','37205669','puysegurs-animal-magnetism-files'])assert.ok(article.includes(x),x);assert.ok(article.trim().split(/\s+/).length>1800);});
+test('hub includes all four streams and verified routes',()=>{for(const x of ['Perception &amp; Attention','History of Suggestion','Practice &amp; Reflection','Tools Under Review','finalvestige.com/focus/','finalvestige.com/2026/11/02/change-blindness/'])assert.ok(hub.includes(x),x);assert.doesNotMatch(hub,/<script\b|<form\b|<iframe\b/i);});
+test('matrix every claim cites declared source IDs',()=>{const ids=new Set(mat.sources.map(s=>s.id));for(const c of mat.claims)for(const id of c.source_ids)assert.ok(ids.has(id),c.id+':'+id);});
+test('all release gates held',()=>{assert.equal(mat.status,'UNPUBLISHED_HARD_HOLD');assert.ok(mat.release_gates.length>=28);assert.ok(mat.release_gates.every(g=>g.status.startsWith('HOLD')));assert.equal(mat.inactive_affiliate_links,true);});
+test('pending approval and unknown sales are not falsely zero',()=>{assert.equal(mat.account_verification.affiliate_approval,'NOT_AUTHENTICATED');assert.equal(mat.account_verification.commission_sale,'UNKNOWN_NOT_ZERO');});
+test('synthetic gate reactivation would fail',()=>{const m=structuredClone(mat);m.release_gates[0].status='APPROVED';assert.equal(m.release_gates.every(g=>g.status.startsWith('HOLD')),false);});
+test('synthetic fake paid sale would fail',()=>{const m=structuredClone(mat);m.account_verification.commission_sale='PAID';assert.notEqual(m.account_verification.commission_sale,'UNKNOWN_NOT_ZERO');});
