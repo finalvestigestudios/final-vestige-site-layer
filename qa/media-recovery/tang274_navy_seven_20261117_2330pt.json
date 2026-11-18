@@ -1,0 +1,330 @@
+{
+  "schema": "fv-tang-274-seven-original-readonly-v1",
+  "audit_at": "2026-11-17T23:30:20-08:00",
+  "status": "REVIEW_ONLY",
+  "post_id": 274,
+  "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+  "source_snapshot": {
+    "path": "qa/media-recovery/live_66_view_slice_5_20261117.json",
+    "git_blob_sha": "c0d54c30769b0276a143c2f77b897202d818105f",
+    "source": "WordPress authenticated published VIEW inventory 2026-11-17",
+    "post_modified": "2026-11-02T21:39:50"
+  },
+  "scope": {
+    "current_published_posts": 66,
+    "current_image_slots": 361,
+    "current_offsite": 294,
+    "historical_posts": 61,
+    "historical_slots": 355,
+    "historical_offsite": 288,
+    "reported_broken_42_guest_confirmed": null,
+    "claimed_76_percent_wire_reduction_measured": false,
+    "stored_oversize_originals_decimal_mb": 20,
+    "stored_oversize_originals_bytes": 64385752,
+    "visitor_wire_bytes": null
+  },
+  "source_policy": {
+    "no_wordpress_writes": true,
+    "no_media_downloads": true,
+    "no_rehosting": true,
+    "no_bulk_scraping": true,
+    "no_homepage_changes": true,
+    "no_spending": true,
+    "media_max_width_px": 960,
+    "no_upscale": true,
+    "rights_per_item_required": true,
+    "viewer_error_not_browser_status": true
+  },
+  "rights_policy_url": "https://www.history.navy.mil/our-collections/photography.html",
+  "slots": [
+    {
+      "slot": "274:0",
+      "authored_view_src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/USS_Tang_%28SS-306%29_off_the_Mare_Island_Naval_Shipyard%2C_California_%28USA%29%2C_2_December_1943_%28NH_42273%29.jpg/1280px-USS_Tang_%28SS-306%29_off_the_Mare_Island_Naval_Shipyard%2C_California_%28USA%29%2C_2_December_1943_%28NH_42273%29.jpg",
+      "source_origin_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/USS_Tang_%28SS-306%29_off_the_Mare_Island_Naval_Shipyard%2C_California_%28USA%29%2C_2_December_1943_%28NH_42273%29.jpg/1280px-USS_Tang_%28SS-306%29_off_the_Mare_Island_Naval_Shipyard%2C_California_%28USA%29%2C_2_December_1943_%28NH_42273%29.jpg",
+      "source_route": "third_party_direct",
+      "post_modified": "2026-11-02T21:39:50",
+      "alt": "USS Tang SS-306 underway off Mare Island Navy Yard on December 2, 1943.",
+      "source_width_attr": null,
+      "source_height_attr": null,
+      "public_retriever": {
+        "observed_at": "2026-11-17T23:30:20-08:00",
+        "result": "BINARY_RENDERED",
+        "reported_status": "not_reported",
+        "interpretation": "image rendered by public retriever; numeric HTTP unknown"
+      },
+      "guest_chromium": {
+        "http_status": null,
+        "decoded": null,
+        "transferred_bytes": null,
+        "current_src": null,
+        "raster_sha256": null
+      },
+      "official_candidate": {
+        "accession": "NH 42273",
+        "catalog_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-42000/nh-42273-uss-tang--ss-306-.html",
+        "match_level": "accession_and_subject_match",
+        "notes": "960x587 Commons thumbnail, master 5019x3070 reported by Commons"
+      },
+      "geometry": {
+        "max_width_px": 960,
+        "known_preview_height_px": 587,
+        "no_upscale": true,
+        "native_master_dimensions_verified": false,
+        "master_sha256": null
+      },
+      "rights": {
+        "classification": "OFFICIAL_US_NAVY_PHOTO_ITEM_REVIEW",
+        "credit": "NH 42273 courtesy Naval History & Heritage Command",
+        "item_specific_rights_confirmed": false,
+        "rehost_approved": false
+      }
+    },
+    {
+      "slot": "274:1",
+      "authored_view_src": "https://i0.wp.com/www.history.navy.mil/content/history/nhhc/research/library/online-reading-room/title-list-alphabetically/u/united-states-submarine-losses/tang-ss-306/_jcr_content/body/media_asset_3/image.img.jpg/1485804525424.jpg?ssl=1",
+      "source_origin_url": "https://www.history.navy.mil/content/history/nhhc/research/library/online-reading-room/title-list-alphabetically/u/united-states-submarine-losses/tang-ss-306/_jcr_content/body/media_asset_3/image.img.jpg/1485804525424.jpg",
+      "source_route": "third_party_jetpack",
+      "post_modified": "2026-11-02T21:39:50",
+      "alt": "Richard O'Kane with twenty-two American aircrewmen rescued by USS Tang off Truk in May 1944.",
+      "source_width_attr": null,
+      "source_height_attr": null,
+      "public_retriever": {
+        "observed_at": "2026-11-17T23:30:20-08:00",
+        "result": "GATEWAY_ERROR",
+        "reported_status": 502,
+        "interpretation": "public retriever 502, not verified origin/server status"
+      },
+      "guest_chromium": {
+        "http_status": null,
+        "decoded": null,
+        "transferred_bytes": null,
+        "current_src": null,
+        "raster_sha256": null
+      },
+      "official_candidate": {
+        "accession": "80-G-227987",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-g-227987-uss-tang--ss-306-.html",
+        "match_level": "caption_subject_match_only",
+        "notes": "Official catalog says O'Kane and 22 rescued aviators, May 1944; pixels not compared"
+      },
+      "geometry": {
+        "max_width_px": 960,
+        "known_preview_height_px": null,
+        "no_upscale": true,
+        "native_master_dimensions_verified": false,
+        "master_sha256": null
+      },
+      "rights": {
+        "classification": "OFFICIAL_US_NAVY_PHOTO_ITEM_REVIEW",
+        "credit": "80-G-227987 — Official U.S. Navy photograph; National Archives via NHHC",
+        "item_specific_rights_confirmed": false,
+        "rehost_approved": false
+      }
+    },
+    {
+      "slot": "274:2",
+      "authored_view_src": "https://i0.wp.com/www.history.navy.mil/content/history/nhhc/browse-by-topic/exploration-and-innovation/navy-torpedoes/_jcr_content/body/media_asset_1279725910/image.img.jpg/1701176168705.jpg?ssl=1",
+      "source_origin_url": "https://www.history.navy.mil/content/history/nhhc/browse-by-topic/exploration-and-innovation/navy-torpedoes/_jcr_content/body/media_asset_1279725910/image.img.jpg/1701176168705.jpg",
+      "source_route": "third_party_jetpack",
+      "post_modified": "2026-11-02T21:39:50",
+      "alt": "Mark 18-2 electric submarine torpedo photographed by the U.S. Navy during World War II.",
+      "source_width_attr": null,
+      "source_height_attr": null,
+      "public_retriever": {
+        "observed_at": "2026-11-17T23:30:20-08:00",
+        "result": "GATEWAY_ERROR",
+        "reported_status": 502,
+        "interpretation": "public retriever 502, not verified origin/server status"
+      },
+      "guest_chromium": {
+        "http_status": null,
+        "decoded": null,
+        "transferred_bytes": null,
+        "current_src": null,
+        "raster_sha256": null
+      },
+      "official_candidate": {
+        "accession": "NH 84498",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-84000/NH-84498.html",
+        "match_level": "subject_match_only",
+        "notes": "Official Navy torpedo comparison photo includes Mark 18-2; may differ from article frame"
+      },
+      "geometry": {
+        "max_width_px": 960,
+        "known_preview_height_px": null,
+        "no_upscale": true,
+        "native_master_dimensions_verified": false,
+        "master_sha256": null
+      },
+      "rights": {
+        "classification": "OFFICIAL_US_NAVY_PHOTO_ITEM_REVIEW",
+        "credit": "NH 84498 — Official U.S. Navy photograph; NHHC",
+        "item_specific_rights_confirmed": false,
+        "rehost_approved": false
+      }
+    },
+    {
+      "slot": "274:3",
+      "authored_view_src": "https://i0.wp.com/warfarehistorynetwork.com/wp-content/uploads/W-Profile-4-HT-May10.jpg?ssl=1",
+      "source_origin_url": "https://warfarehistorynetwork.com/wp-content/uploads/W-Profile-4-HT-May10.jpg",
+      "source_route": "third_party_jetpack",
+      "post_modified": "2026-11-02T21:39:50",
+      "alt": "U.S. Navy submariner demonstrating the Momsen escape lung and submarine escape hatch during trials in July 1930.",
+      "source_width_attr": null,
+      "source_height_attr": null,
+      "public_retriever": {
+        "observed_at": "2026-11-17T23:30:20-08:00",
+        "result": "INTERNAL_TOOL_ERROR",
+        "reported_status": "not_reported",
+        "interpretation": "public retriever failed without numeric origin status"
+      },
+      "guest_chromium": {
+        "http_status": null,
+        "decoded": null,
+        "transferred_bytes": null,
+        "current_src": null,
+        "raster_sha256": null
+      },
+      "official_candidate": null,
+      "geometry": {
+        "max_width_px": null,
+        "known_preview_height_px": null,
+        "no_upscale": true,
+        "native_master_dimensions_verified": false,
+        "master_sha256": null
+      },
+      "rights": {
+        "classification": "THIRD_PARTY_RIGHTS_UNKNOWN",
+        "credit": null,
+        "item_specific_rights_confirmed": false,
+        "rehost_approved": false
+      }
+    },
+    {
+      "slot": "274:4",
+      "authored_view_src": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fmuseums%2Fnmusn%2FPhotography%2FNARA+II%2F80-G%2F80-G-300000%2F80-G-344565.tif&rendition=cq5dam.web.1280.1280.jpeg",
+      "source_origin_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fmuseums%2Fnmusn%2FPhotography%2FNARA+II%2F80-G%2F80-G-300000%2F80-G-344565.tif&rendition=cq5dam.web.1280.1280.jpeg",
+      "source_route": "third_party_direct",
+      "post_modified": "2026-11-02T21:39:50",
+      "alt": "USS Tang commander Richard O'Kane after liberation from Japanese captivity in September 1945.",
+      "source_width_attr": null,
+      "source_height_attr": null,
+      "public_retriever": {
+        "observed_at": "2026-11-17T23:30:20-08:00",
+        "result": "GATEWAY_ERROR",
+        "reported_status": 502,
+        "interpretation": "public retriever 502, not verified origin/server status"
+      },
+      "guest_chromium": {
+        "http_status": null,
+        "decoded": null,
+        "transferred_bytes": null,
+        "current_src": null,
+        "raster_sha256": null
+      },
+      "official_candidate": {
+        "accession": "80-G-344565",
+        "catalog_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/wwii/wwii-pacific/japanese-surrender/allied-prisoners-of-war/80-g-344565.html",
+        "match_level": "accession_in_original_query",
+        "notes": "Navy catalog says image released Sept 24 1945; that is not a certified capture date"
+      },
+      "geometry": {
+        "max_width_px": 960,
+        "known_preview_height_px": null,
+        "no_upscale": true,
+        "native_master_dimensions_verified": false,
+        "master_sha256": null
+      },
+      "rights": {
+        "classification": "OFFICIAL_US_NAVY_PHOTO_ITEM_REVIEW",
+        "credit": "80-G-344565 — Official U.S. Navy photograph; National Archives via NHHC",
+        "item_specific_rights_confirmed": false,
+        "rehost_approved": false
+      }
+    },
+    {
+      "slot": "274:5",
+      "authored_view_src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Vought_OS2U_Kingfisher_with_rescued_airmen_off_Truk_on_1_May_1944_%2880-G-227991%29.jpg/1280px-Vought_OS2U_Kingfisher_with_rescued_airmen_off_Truk_on_1_May_1944_%2880-G-227991%29.jpg",
+      "source_origin_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Vought_OS2U_Kingfisher_with_rescued_airmen_off_Truk_on_1_May_1944_%2880-G-227991%29.jpg/1280px-Vought_OS2U_Kingfisher_with_rescued_airmen_off_Truk_on_1_May_1944_%2880-G-227991%29.jpg",
+      "source_route": "third_party_direct",
+      "post_modified": "2026-11-02T21:39:50",
+      "alt": "Overloaded Vought OS2U Kingfisher with rescued American airmen off Truk awaiting pickup by USS Tang on May 1, 1944.",
+      "source_width_attr": null,
+      "source_height_attr": null,
+      "public_retriever": {
+        "observed_at": "2026-11-17T23:30:20-08:00",
+        "result": "BINARY_RENDERED",
+        "reported_status": "not_reported",
+        "interpretation": "image rendered by public retriever; numeric HTTP unknown"
+      },
+      "guest_chromium": {
+        "http_status": null,
+        "decoded": null,
+        "transferred_bytes": null,
+        "current_src": null,
+        "raster_sha256": null
+      },
+      "official_candidate": {
+        "accession": "80-G-227991",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-G-227991.html",
+        "match_level": "accession_and_subject_match",
+        "notes": "960x703 Commons thumbnail; master 5670x4150 reported by Commons"
+      },
+      "geometry": {
+        "max_width_px": 960,
+        "known_preview_height_px": 703,
+        "no_upscale": true,
+        "native_master_dimensions_verified": false,
+        "master_sha256": null
+      },
+      "rights": {
+        "classification": "OFFICIAL_US_NAVY_PHOTO_ITEM_REVIEW",
+        "credit": "80-G-227991 — Official U.S. Navy photograph; National Archives via NHHC",
+        "item_specific_rights_confirmed": false,
+        "rehost_approved": false
+      }
+    },
+    {
+      "slot": "274:6",
+      "authored_view_src": "https://i0.wp.com/www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg?resize=640%2C432&ssl=1",
+      "source_origin_url": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+      "source_route": "third_party_jetpack",
+      "post_modified": "2026-11-02T21:39:50",
+      "alt": "USS Tang crewmen taking a rescued American airman aboard the submarine off Truk in May 1944.",
+      "source_width_attr": 640,
+      "source_height_attr": 432,
+      "public_retriever": {
+        "observed_at": "2026-11-17T23:30:20-08:00",
+        "result": "RETRIEVER_HTTP_ERROR",
+        "reported_status": 404,
+        "interpretation": "public retriever reported 404 on exact original URL; browser/Jetpack untested"
+      },
+      "guest_chromium": {
+        "http_status": null,
+        "decoded": null,
+        "transferred_bytes": null,
+        "current_src": null,
+        "raster_sha256": null
+      },
+      "official_candidate": {
+        "accession": "80-G-227989",
+        "catalog_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-G-227989.html",
+        "match_level": "caption_subject_match_only",
+        "notes": "Original 640x432 publisher thumbnail unavailable; official photo may be different frame; retain if no exact match"
+      },
+      "geometry": {
+        "max_width_px": 640,
+        "known_preview_height_px": 432,
+        "no_upscale": true,
+        "native_master_dimensions_verified": false,
+        "master_sha256": null
+      },
+      "rights": {
+        "classification": "OFFICIAL_US_NAVY_PHOTO_ITEM_REVIEW",
+        "credit": "80-G-227989 — Official U.S. Navy photograph; National Archives via NHHC",
+        "item_specific_rights_confirmed": false,
+        "rehost_approved": false
+      }
+    }
+  ]
+}
