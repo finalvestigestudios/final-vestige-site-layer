@@ -1,0 +1,90 @@
+{
+  "snapshot_local": "2026-11-18 09:35 PT",
+  "source_pr_master": 175,
+  "source_pr_safety": 201,
+  "source_pr_parent": 3022,
+  "issue_03": "Zen12",
+  "issue_05": "Hypnosis Live",
+  "commercial_positions": [
+    3,
+    5
+  ],
+  "editorial_positions": [
+    1,
+    2,
+    4,
+    6
+  ],
+  "release_status": "HOLD_UNSENT",
+  "affiliate": {
+    "account_approved": false,
+    "email_channel_permission": false,
+    "issued_earning_url": false,
+    "current_checkout_verified": false,
+    "published_approved_buyer_guide": false
+  },
+  "email": {
+    "founder_final_approval": false,
+    "postal_address_verified": false,
+    "rendered_unsubscribe_verified": false,
+    "actual_jetpack_preview_verified": false,
+    "received_welcome_verified": false,
+    "send_authorized": false
+  },
+  "subscribers": {
+    "newsletter": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed_additional": 2
+    },
+    "stats_list": {
+      "all": 3,
+      "email_subscriber": 3,
+      "reader_subscriber": 0,
+      "unconfirmed_subscriber": 2
+    },
+    "stats_rollup": {
+      "email": 0,
+      "wpcom": 3,
+      "total": 3,
+      "partial": false
+    },
+    "confirmed_new_external_acquisitions": null
+  },
+  "revenue": {
+    "settled_paid_orders": null,
+    "net_revenue_per_1000_qualified_sessions": null
+  },
+  "merchant_claims": [
+    {
+      "source": "https://zen12.com/about",
+      "type": "vendor_statement",
+      "claim": "12-minute sessions; 12 levels; four listening formats",
+      "copy_eligibility": "product-description-with-attribution"
+    },
+    {
+      "source": "https://zen12.com/about",
+      "type": "vendor_unverified",
+      "claim": "One 12-minute session equivalent to an hour of conventional meditation",
+      "copy_eligibility": "MUST NOT assert as fact"
+    },
+    {
+      "source": "https://zen12.com/secret/",
+      "type": "separate_seller_promo",
+      "claim": "Different dynamic discount/countdown/bundle",
+      "copy_eligibility": "NO price, coupon or urgency carryover"
+    },
+    {
+      "source": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "type": "government_evidence_overview",
+      "claim": "Meditation studied in varying modalities, with quality and generalization limits",
+      "copy_eligibility": "carefully bounded general evidence"
+    },
+    {
+      "source": "https://affiliates.inspire3.com/",
+      "type": "generic_affiliate_landing",
+      "claim": "Seller describes affiliate network",
+      "copy_eligibility": "not publisher approval nor email permission"
+    }
+  ]
+}
