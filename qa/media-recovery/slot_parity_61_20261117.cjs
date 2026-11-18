@@ -41,6 +41,19 @@ function validRedirectChain(start,end,chain) {
   }
   return current===end;
 }
+// A decoded placeholder/distorted derivative is not visual parity.
+// Conservative offline HOLD: minimum 480px long edge (or original if smaller)
+// and <=2% aspect ratio drift; these checks do NOT prove exact subject identity.
+function preservesPixelGeometry(before,after) {
+  if(!isObject(before)||!isObject(after))return false;
+  const dims=[before.natural_width,before.natural_height,after.natural_width,after.natural_height];
+  if(!dims.every(n=>integer(n,1)&&n<=100000))return false;
+  if(Math.max(after.natural_width,after.natural_height)<Math.min(480,Math.max(before.natural_width,before.natural_height)))return false;
+  const oldRatio=before.natural_width/before.natural_height;
+  const newRatio=after.natural_width/after.natural_height;
+  return Math.abs(newRatio/oldRatio-1)<=0.02;
+}
+
 function blobSha(raw) {const b=Buffer.from(raw,'utf8');return crypto.createHash('sha1').update(`blob ${b.length}\0`).update(b).digest('hex');}
 function loadPinned(paths) {
   if(!Array.isArray(paths)||paths.length!==8)fail('Exactly eight pinned source files required');
@@ -122,10 +135,10 @@ function assess(parts,capture=null) {
     groups.push(found);
   }
   const [before,after]=groups;let beforeBytes=0,afterBytes=0,slots=0;
-  for(const [id,b] of before){const a=after.get(id);if(!a)fail(`Missing after post ${id}`);for(const [key] of b.slots)if(!a.slots.has(key))fail(`Lost after image ${key}`);beforeBytes+=b.bytes;afterBytes+=a.bytes;slots+=b.slots.size;}
+  for(const [id,b] of before){const a=after.get(id);if(!a)fail(`Missing after post ${id}`);for(const [key,oldSlot] of b.slots){const newSlot=a.slots.get(key);if(!newSlot)fail(`Lost after image ${key}`);if(!preservesPixelGeometry(oldSlot,newSlot))fail(`Image pixel geometry/legibility drift in ${key}`);}beforeBytes+=b.bytes;afterBytes+=a.bytes;slots+=b.slots.size;}
   if(!Number.isSafeInteger(beforeBytes)||!Number.isSafeInteger(afterBytes)||beforeBytes===0)fail('Unsafe/zero baseline image-byte total');
   const complete=before.size===61&&slots===355;
   return {...base,status:complete?'ALL_355_SELF_REPORTED_REVIEW_REQUIRED':'MEASURED_SUBSET_NOT_SITEWIDE',paired_posts:before.size,paired_slots:slots,before_image_bytes:beforeBytes,after_image_bytes:afterBytes,reduction_percent:Math.round((1-afterBytes/beforeBytes)*10000)/100,sitewide_76_percent_verified:false,caveat:'Collector-supplied screenshot hashes/review flags and identity assertions are NOT independently verified; obtain independent trace and visual review before any sitewide claim or replacement.'};
 }
-module.exports={PINNED,blobSha,loadPinned,inventory,sourceMatches,validRedirectChain,assess};
+module.exports={PINNED,blobSha,loadPinned,inventory,sourceMatches,validRedirectChain,preservesPixelGeometry,assess};
 if(require.main===module){try{const args=process.argv.slice(2);if(args.length<8||args.length>9)fail('Usage: node slot_parity_61_20261117.cjs parts/01.json ... parts/08.json [SiteQA-slot-capture.json]');const parts=loadPinned(args.slice(0,8));const cap=args[8]?JSON.parse(fs.readFileSync(args[8],'utf8')):null;process.stdout.write(JSON.stringify(assess(parts,cap),null,2)+'\n');}catch(e){console.error('HOLD: '+e.message);process.exitCode=1;}}
