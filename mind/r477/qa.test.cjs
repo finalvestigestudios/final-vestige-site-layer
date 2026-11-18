@@ -4,7 +4,7 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const read=n=>fs.readFileSync(path.join(__dirname,n),'utf8');
 const A=read('ZEN12_A_TEXT_ONLY_UNPUBLISHED.html'),B=read('ZEN12_B_OPTIONAL_FILM_UNPUBLISHED.html'),H=read('MIND_HUB_GUTENBERG_SOURCE_ONLY.html'),V=read('OPTIONAL_42S_TRANSCRIPT_CAPTIONS.vtt'),P=read('OFFER_FUNNEL_CONVERSION_AND_GROK_HANDOFF.md'),ART=read('THE_QUESTION_THAT_PUT_GLASS_ON_THE_ROAD.md'),M=JSON.parse(read('PRODUCT_CLAIM_SOURCE_PERMISSION_MATRIX.json'));
-const core=s=>s.replace(/<section aria-labelledby="film-title"[\s\S]*?<\/section>/,'').replace(/variant [AB]/g,'variant X').replace(/data-variant="[AB]"/g,'data-variant="X"');
+const core=s=>s.replace(/<section aria-labelledby="film-title"[\s\S]*?<\/section>/,'').replace(/guide [AB]/g,'guide X').replace(/data-variant="[AB]"/g,'data-variant="X"');
 test('guide A/B substantive copy identical except film & variant',()=>assert.equal(core(A),core(B)));
 test('film storyboard is optional and contains accessible transcript',()=>{assert.match(B,/42-second source-note film/);assert.match(B,/<details>/);assert.match(B,/Read complete 42-second film transcript/);});
 test('VTT six consecutive 7-second cues end 42 seconds',()=>{let m=[...V.matchAll(/(\d\d:\d\d:\d\d\.\d{3}) --> (\d\d:\d\d:\d\d\.\d{3})/g)].map(x=>[x[1],x[2]]);assert.equal(m.length,6);assert.equal(m[0][0],'00:00:00.000');assert.equal(m[5][1],'00:00:42.000');for(let i=1;i<6;i++)assert.equal(m[i-1][1],m[i][0]);});
