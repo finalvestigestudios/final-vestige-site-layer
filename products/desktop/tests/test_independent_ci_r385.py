@@ -10,7 +10,8 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-WORKFLOW = ROOT / ".github" / "workflows" / "desktop-source-evidence-r385.yml"\nCOMMANDS = ROOT / "products" / "desktop" / "ci" / "source_evidence_commands_r509.txt"
+WORKFLOW = ROOT / ".github" / "workflows" / "desktop-source-evidence-r385.yml"
+COMMANDS = ROOT / "products" / "desktop" / "ci" / "source_evidence_commands_r509.txt"
 
 
 def _read_workflow() -> str:
@@ -24,11 +25,13 @@ class IndependentSourceCIR385(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.text = _read_workflow()
-        cls.lines = cls.text.splitlines()\n        cls.commands = COMMANDS.read_text(encoding="ascii")
+        cls.lines = cls.text.splitlines()
+        cls.commands = COMMANDS.read_text(encoding="ascii")
 
     def test_small_standalone_workflow(self):
         self.assertLess(len(self.text.encode("utf-8")), 8192)
-        self.assertIn("name: Desktop six-engine source evidence", self.text)\n        self.assertIn("python -B -W error products/desktop/scripts/source_evidence_runner_r509.py", self.text)
+        self.assertIn("name: Desktop six-engine source evidence", self.text)
+        self.assertIn("python -B -W error products/desktop/scripts/source_evidence_runner_r509.py", self.text)
         self.assertNotIn("desktop-build.yml'", self.text)
 
     def test_pr_trigger_only_for_desktop_and_self(self):
