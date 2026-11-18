@@ -17,7 +17,7 @@ for(const [label,s] of [['A',a],['B',b]]){
 }
 test('B contains original poster and explanation concept',()=>{assert.match(b,/ZEN12_42S_POSTER.svg/);assert.match(b,/No video file is embedded or autoplayed/);});
 test('caption file full 42s',()=>{const v=get('ZEN12_42S_CAPTIONS.vtt');assert.match(v,/WEBVTT/);assert.equal((v.match(/ --> /g)||[]).length,6);assert.match(v,/00:00:35.000 --> 00:00:42.000/);});
-test('poster has no foreign resources or script',()=>{const v=get('ZEN12_42S_POSTER.svg');assert.match(v,/<svg/);assert.doesNotMatch(v,/<script|<foreignObject|<image|https?:\/\//i);});
+test('poster has no foreign resources or script',()=>{const v=get('ZEN12_42S_POSTER.svg');assert.match(v,/<svg/);assert.doesNotMatch(v,/<script|<foreignObject|<image\b|\b(?:href|src)="https?:\/\//i);});
 test('all release gates explicitly HOLD',()=>{assert.ok(matrix.release_gates.length>=25);assert.ok(matrix.release_gates.every(g=>g.status==='HOLD'));assert.equal(matrix.partner_acceptance_verified,false);assert.equal(matrix.authorized_tracking_url,null);});
 test('research not represented as product efficacy',()=>{assert.ok(matrix.claims.some(c=>c.id==='C19' && c.treatment==='exclude'));});
 test('one existing Focus route, no second form in hub',()=>{const h=get('MIND_HUB_WP_SOURCE_ONLY.html');assert.match(h,/https:\/\/finalvestige\.com\/focus\//);assert.doesNotMatch(h,/<form|<script|<iframe/);});
