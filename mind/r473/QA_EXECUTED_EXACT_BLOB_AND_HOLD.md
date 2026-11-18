@@ -6,7 +6,7 @@
 - 9 source files were fetched from the branch through authenticated GitHub connector.
 - 43/43 in-memory V8 source assertions **PASS**. All checks passed.
 - 8/8 deliberately unsafe synthetic changes detected. These tests run only on in-memory copies; no production file modified.
-- Original article word count: 2336. Eleven new source artifacts? Count is exact below (readback included native suite).
+- Original article word count: 2336.
 - A/B content equivalence verified by stripping only the optional B film section from B. B includes poster, caption VTT and full text transcript. **No encoded playable video in this branch**.
 - Native `qa.test.cjs` authored with 17 tests; **native Node test runner NOT EXECUTED** against exact committed files. In-memory V8 assertions are NOT a substitute for actual Node, CI, WCAG browser testing, or WordPress sanitization.
 - Actual signed-out mobile rendering, browser axe, 360/390/768/1440/1920 responsiveness, video playback, performance budget, WordPress sanitizer, Jetpack welcome/lead, checkout, paid sale, commission and refund tests **NOT EXECUTED**; Site QA/Commerce to witness.
