@@ -1,0 +1,543 @@
+FINAL VESTIGE DISPATCH / 12 COMPLETE MANUSCRIPTS / HOLD UNSENT / NO APPROVAL
+
+======== ISSUE 1 CHANGE BLINDNESS ========
+
+ORIGINAL PR #175: d57ccdba3aee8f065e143e101c2945f4f3d01647/dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md
+# THE DISPATCH — ISSUE 01
+
+> **STATUS: UNSENT DRAFT — DO NOT PUBLISH OR EMAIL**
+> This content awaits editorial and subscriber-list approval. All campaign emails require legal-footer QA; promotional issues require offer/affiliate review.
+
+**Subject:** The mind is not a camera
+
+**Preheader:** What an old record can teach us about the difference between seeing and knowing.
+
+**Content type:** editorial
+
+---
+
+Before we investigate an old photograph, we ask a simple question: what does the photograph actually show?
+
+It's a useful question for the mind, too.
+
+We tend to trust the feeling of having seen something. But the impression in our memory is not the same thing as a complete record. Context, expectation and attention all matter. That doesn't make an experience worthless. It makes the explanation worth examining.
+
+At Final Vestige, we usually begin with a physical trace: a map, a letter, an official report. This new series follows the same method into a less tangible archive—the history of perception and suggestion.
+
+Our first stop is the eighteenth-century files surrounding the Marquis de Puységur. They capture descriptions of unusual states, confident claims and witnesses attempting to understand what they saw. The extraordinary part isn't that every claim must be true; it's that the documentary record lets us follow how people reached their conclusions.
+
+**A question to carry with you this week:** When you describe something surprising, can you separate the event you observed from the explanation you attached to it?
+
+**Open the primary-source trail:** [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/).
+
+We'll keep the findings, the doubts and the useful tools in plain sight. That's the point of The Dispatch.
+
+
+---
+**Pre-send compliance block — remove/replace ONLY after legal and rendered-email QA.**
+Sender: Final Vestige Studios. Physical mailing address: `[[VALID_POSTAL_ADDRESS_REQUIRED]]`. Unsubscribe: `[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]`. These placeholders intentionally prevent sending.
+
+
+ALTERNATIVE NOT ADOPTED: 33cfde9d302387997250cd1033e9eac05857af04/dispatch/r444/ISSUE01_UNADOPTED.md
+# THE DISPATCH — Issue 01 · R444 alternative
+
+> UNADOPTED · HOLD UNSENT · NOT A PUBLISHED OR DELIVERED EMAIL
+
+**Subject:** The person changed. The conversation continued.
+
+**Preheader:** A 1998 street experiment, a missed substitution, and the difference between observation and confidence.
+
+**Type:** editorial, first of six; no merchant offer.
+
+A stranger asks for directions. While you answer, two people carry a door between you. On the other side, a different person finishes the conversation. Would you notice? It sounds absurd until you read the experiment.
+
+## A person, a door, a missed substitution
+
+In a 1998 field study, psychologists Daniel Simons and Daniel Levin had an experimenter speak with pedestrians. Workers carrying a door interrupted the exchange. A second experimenter quietly took the first person's place. In their first experiment, about half of the participants noticed the change. Detection also depended on social-group relationships. That percentage belongs to one particular experimental setting—not to everyone, everywhere.
+
+The result matters because this wasn't only a series of edited photographs: people failed to identify a change during a real conversation. It does not mean witnesses are useless, that eyesight cannot be trusted, or that everyone misses the same things. It means we must ask what a person attended to and what the procedure actually tested.
+
+## The interruption matters
+
+In 1997, Ronald Rensink, J. Kevin O'Regan and James Clark had examined a different phenomenon. Participants compared alternating pictures, with brief blank intervals between versions. Some conspicuous alterations proved difficult to identify. Directed cues helped observers find them faster. The visibility of a scene is not the same thing as detecting a change within it.
+
+These are studies of change detection. They should not be combined casually with every demonstration of inattentional blindness or treated as evidence that memory is always false. Even a celebrated experiment has precise limits, and we lose the useful finding when we stretch it into a universal rule.
+
+## Try a simple evidence check
+
+Take two ordinary photos of your own desk. Move three objects between images, then write down which change you expect to be most obvious. With someone's willing participation, show the pair in alternation and ask what changed. Record the answer before revealing the differences. Then compare your prediction, their report, and what the photographs actually contain.
+
+This isn't a scientific replication or a test of anyone's intelligence. A single informal demonstration gives you no diagnosis, no generalizable rate of change blindness, and no proof that a meditation recording enhances focus. It does give you a way to make predictions visible and distinguish what was observed from what you assumed would be obvious.
+
+## What it means for an evidence-first studio
+
+At Final Vestige, an investigation begins with the surviving trace: a memorandum, a map, a photograph, a witness statement. A witness is evidence that an account was given, not automatic proof of every interpretation attached to it. Studying attention lets us bring that same editorial discipline to ourselves without declaring the brain a broken camera.
+
+That is the reason for this first Mind & Perception edition. We are not abandoning history for a productivity sales pitch. We are opening a new evidence trail and asking the same questions: What is recorded? What is inferred? What might contradict our first impression?
+
+The existing change-blindness investigation goes deeper into the door study, interrupted scenes and the limits of seeing. If you arrived here from a short video about missed changes, this is the natural next step. No purchase, program or new signup is required to read it.
+
+**Single main CTA:** [Read the change-blindness investigation](https://finalvestige.com/2026/11/02/change-blindness/)
+
+### Primary sources and editorial policy
+1. [Simons and Levin, 1998 field study](https://doi.org/10.3758/BF03208840)
+2. [Rensink, O'Regan and Clark, 1997 scene study](https://doi.org/10.1111/j.1467-9280.1997.tb00427.x)
+3. [Final Vestige Editorial Standards](https://finalvestige.com/editorial-standards/)
+
+---
+**NOT SEND-READY:** Valid Final Vestige postal address [[VALID_FV_POSTAL_ADDRESS_REQUIRED]]; actual working rendered Jetpack unsubscribe [[VERIFIED_JETPACK_UNSUBSCRIBE_REQUIRED]]. Offline review only.
+
+
+======== ISSUE 2 PUYSÉGUR ========
+
+ORIGINAL PR #175: d57ccdba3aee8f065e143e101c2945f4f3d01647/dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md
+# THE DISPATCH — ISSUE 02
+
+> **STATUS: UNSENT DRAFT — DO NOT PUBLISH OR EMAIL**
+> This content awaits editorial and subscriber-list approval. All campaign emails require legal-footer QA; promotional issues require offer/affiliate review.
+
+**Subject:** Before hypnosis had a name
+
+**Preheader:** The eighteenth-century witnesses who left behind a problem of proof.
+
+**Content type:** editorial
+
+---
+
+In 1785, a reader encountering Puységur's accounts would have found something that still feels startling: observers trying to describe behavior for which they didn't have a comfortable explanation.
+
+It is tempting to pick a side immediately. Either the witnesses discovered a remarkable force—or they were fooled. But that shortcut skips the most interesting part: what survived on paper, who said it, how close they were to the events and where the record leaves us unable to decide.
+
+Those questions matter now. Hypnosis and suggestion are discussed in entirely different vocabulary today, yet marketing still sometimes leaps from a person's report of an experience to sweeping claims about what a technique can accomplish.
+
+The document doesn't authorize that leap. It gives us something better: the opportunity to examine it.
+
+**Three questions for any astonishing claim:**
+
+- What is the strongest firsthand source?
+- What was directly observed, rather than inferred?
+- What result would change our interpretation?
+
+We assembled a detailed resource with historical references, source rows and cases, including the limitations of the evidence. It isn't a recommendation to use historical treatments. It is a way to read extraordinary accounts carefully.
+
+**Read the file:** [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/).
+
+Next, we'll turn from historical testimony to a very practical question: can a short, deliberate routine help you make space for attention?
+
+
+---
+**Pre-send compliance block — remove/replace ONLY after legal and rendered-email QA.**
+Sender: Final Vestige Studios. Physical mailing address: `[[VALID_POSTAL_ADDRESS_REQUIRED]]`. Unsubscribe: `[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]`. These placeholders intentionally prevent sending.
+
+
+ALTERNATIVE NOT ADOPTED: 7dbd8e9229facee9377a99e9367d8ae89e185630/dispatch/r443/ISSUE02_UNADOPTED.md
+# THE DISPATCH — ISSUE 02 / R443 CANDIDATE
+
+> UNADOPTED · HOLD UNSENT · NO PUBLICATION / NO EMAIL
+
+**Subject:** The witness was also the experimenter
+
+**Preheader:** Puységur's 1784 account, Franklin's separate tests, and the gap between a record and proof.
+
+**Slot:** 02 of 06, editorial, no merchant placement.
+
+On May 4, 1784, a French aristocrat described a startling encounter at his estate in Buzancy. A young farm worker known as Victor apparently fell peacefully asleep while being “magnetized,” yet answered questions. According to the aristocrat, he remembered none of it afterward.
+
+You can imagine how that story might be sold today: the moment a mysterious power was discovered, followed by a promise that it can work for you. The surviving document gives us a much better question: how do we know what happened when the person describing the event was also the experimenter?
+
+## An extraordinary report is still a report
+
+The aristocrat was Armand-Marie-Jacques de Chastenet, marquis de Puységur. His 1784 Mémoires preserves dated letters about Victor and other subjects. These are valuable historical documents. They tell us what Puységur claimed to see, what he believed it meant and why he asked other operators to reproduce his experiences. They do not provide an independent account of Victor's interior experience or establish an animal-magnetic fluid.
+
+Elsewhere that year, the royal commission associated with Benjamin Franklin, Jean-Sylvain Bailly and Antoine Lavoisier examined Charles d'Eslon's animal-magnetism practice. Its investigators sometimes separated what a subject was told from what was actually done. They reported that expectation and imagination could produce strong reactions without the claimed magnetic action.
+
+The commission did not independently test Puységur's Buzancy cases. It would be careless to claim it did—or to treat the lack of such testing as evidence that Puységur was right. Two groups of historical records can illuminate the same controversy without settling the same question.
+
+## The three-column evidence check
+
+When you encounter an impressive claim, write three headings. Observation: what someone actually reported experiencing. Explanation: what mechanism the storyteller said caused it. Missing check: what independent comparison or plausible alternative would separate the two.
+
+For Victor, the apparently altered state belongs in the first column. The proposed magnetic cause belongs in the second. Independent observers, blinding, possible alternative causes and the subject's ability to consent or refuse belong in the third. That last point matters. Puységur's later files contain disturbing questions about authority, dependence and whose wishes were respected.
+
+Our Final Vestige archive follows those papers rather than awarding a winner. It has 153 indexed source rows and 16 case dossiers. We keep failed predictions, mismatched testimony, translation pitfalls and ethically difficult episodes on the page instead of polishing them away. Those numbers describe archival organization—not a tally of independently confirmed phenomena.
+
+The distinction is useful far beyond eighteenth-century France. Modern claims about attention, productivity and audio programs often ask us to jump directly from someone's experience to a proposed explanation. Slowing that jump costs nothing. You don't need to believe the magnetic theory—or dismiss every witness—to make the evidence more intelligible.
+
+The source trail is open, including the account's failures and unanswered questions. The next time a remarkable claim arrives wrapped in an impressive story, try labeling its observation, explanation and missing check before deciding what the story proves.
+
+**Primary CTA:** [Read Puységur's source trail](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/).
+
+### Source links
+1. [Puységur's 1784 Mémoires — original-edition links and contextual notes](https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/)
+2. [Bailly et al., 1784 royal commission — scope and original-edition links](https://www.circee.org/rapport-des-commissaires-examen-du-magnetisme-animal-1784/)
+3. [Final Vestige Editorial Standards](https://finalvestige.com/editorial-standards/)
+4. [FTC commercial email release requirements (for reviewer, not email source)](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business)
+
+---
+**HARD HOLD:** Publisher postal address [[VALID_FV_POSTAL_ADDRESS_REQUIRED]]; provider unsubscribe [[VERIFIED_JETPACK_UNSUBSCRIBE_REQUIRED]]. These placeholders are intentionally unusable for sending.
+
+
+======== ISSUE 3 ZEN12 ========
+
+ORIGINAL PR #175: d57ccdba3aee8f065e143e101c2945f4f3d01647/dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md
+# THE DISPATCH — ISSUE 03
+
+> **STATUS: UNSENT DRAFT — DO NOT PUBLISH OR EMAIL**
+> This content awaits editorial and subscriber-list approval. All campaign emails require legal-footer QA; promotional issues require offer/affiliate review.
+
+**Subject:** The twelve-minute meditation question
+
+**Preheader:** An honest way to evaluate a short audio practice before you spend anything.
+
+**Content type:** commercial-review-pending
+
+---
+
+Twelve minutes is an inviting proposition. It fits into a crowded morning, asks for less than the time we often lose scrolling, and feels possible even when an hour doesn't.
+
+But there's an important difference between **a routine being easier to try** and **an audio product delivering the results its seller describes**.
+
+If you want to explore meditation, begin by testing the part you control. Choose a short, quiet period. Sit comfortably. Notice when your attention moves. Return to one simple point of focus without treating that return as failure. You can keep a few notes: how consistently you practiced, what got in the way, and whether the routine was workable for you.
+
+This isn't a clinical intervention or a guarantee of a particular mental state. It's a modest, low-cost way to learn something about your own habits.
+
+**A tool we're examining: Zen12.** Inspire3 describes Zen12 as a meditation program designed around shorter sessions. That's the seller's positioning—not an independent finding that twelve minutes produces the same effects as an hour of meditation. We're preparing a guide that will spell out exactly what the program offers, what it costs at the time of review, and where evidence does or doesn't support its claims.
+
+**Read the Zen12 evaluation:** [[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]
+
+**Commercial disclosure:** If you choose to buy through a qualifying link in our evaluation guide, Final Vestige may earn a commission. This recommendation will be included only if we can independently assess the product and verify our affiliate authorization. No purchase is required to use the free [Seven Day Focus Fieldbook](https://finalvestige.com/focus/).
+
+*Editorial and affiliate review pending. The offer link above is deliberately not active.*
+
+
+---
+**Pre-send compliance block — remove/replace ONLY after legal and rendered-email QA.**
+Sender: Final Vestige Studios. Physical mailing address: `[[VALID_POSTAL_ADDRESS_REQUIRED]]`. Unsubscribe: `[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]`. These placeholders intentionally prevent sending.
+
+
+ALTERNATIVE NOT ADOPTED: 2eee8b5200da4f72eba2cad4f3e00b8abc118bd7/dispatch/r441/ISSUE03_UNADOPTED.txt
+FINAL VESTIGE DISPATCH · UNADOPTED ISSUE 03 · HOLD UNSENT
+Subject: Twelve minutes is a unit of time, not a promise
+Preheader: A three-day focus check, what Zen12 actually offers, and the evidence still missing.
+
+Twelve minutes is a convenient amount of time. It is not evidence that a recording provides all the benefits of an hour of meditation. The first statement is about a schedule. The second is a measurable claim that needs independent, product-specific comparison.
+
+Inspire3's Zen12 describes short MP3 sessions and markets an equivalence to longer practice. Final Vestige has not established that claim. We can investigate the advertised format without repeating a neurological promise as if it were verified.
+
+TRY THE FREE COMPARISON FIRST
+
+On three separate days, set aside twelve minutes for something manageable: reading, quiet attention, or organizing one task. Write the time, intended activity and likely distractions before starting. Put your phone away, begin, and mark each time you notice your attention wandering. At the end, record what you did and whether it was manageable to repeat.
+
+Do not treat a single calm afternoon as a scientific result. This little log is useful for personal reflection, not diagnosing a condition or establishing treatment effects. It can show whether a shorter, repeatable starting routine makes sense for you without spending a dollar.
+
+WHERE THE SCIENCE BECOMES UNTIDY
+
+A 2023 systematic review of fourteen EEG studies investigating binaural beats found inconsistent results and considerable differences between methods. It did not test Zen12. General research on meditation cannot substitute for testing whether a particular product produces the outcomes and magnitude described on a sales page.
+
+WHAT THE SELLER ACTUALLY OFFERS
+
+Zen12's standard site describes twelve levels and four audio styles: guided meditation, music, nature sounds and white noise. Its Beginner, Premium and Advanced packages have different contents. A separate promotional page presents a bundle, coupon and countdown. Neither page supplies Final Vestige's own email-promotion authorization, an issued affiliate URL or a stable approved checkout price.
+
+Before buying, ask: which levels and MP3s are included; can the recordings be used on your devices; does the sample resemble the actual purchase; what written refund conditions apply at the checkout you will use; and what independent study tested this exact recording? Do not confuse the seller's free-audio email opt-in with a Final Vestige newsletter subscription. They are separate lists and separate choices.
+
+A CONCLUSION WITHOUT A SALES TRICK
+
+Some people may like guided sound more than silent practice. Others may get everything they need from an ordinary timer and the free Focus Fieldbook. Neither preference proves an audio program changes brain activity or makes twelve minutes equivalent to an hour. Choose based on features and evidence, not a countdown.
+
+The independent Zen12 guide prepared by our Mind & Perception Studio remains unpublished and in review. There is no authorized referral link to offer readers, and our proposed guide CTA is intentionally unavailable until the partner, product, destination and editorial checks are complete.
+
+Commercial disclosure: If a future published evaluation links to a qualifying purchase and you use that link, Final Vestige may earn a commission. No verified earning link is active here.
+PROPOSED SINGLE CTA (INACTIVE): Read the independent Zen12 buyer guide
+[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]
+
+Sources
+Zen12 standard offer (seller description): https://zen12.com/
+Zen12 promotional variant (not FV-approved): https://zen12.com/secret/
+2023 binaural-beat EEG systematic review (not a Zen12 trial): https://pubmed.ncbi.nlm.nih.gov/37205669/
+Final Vestige Editorial Standards: https://finalvestige.com/editorial-standards/
+
+Final Vestige Studios | Postal: [[VALID_FV_POSTAL_ADDRESS_REQUIRED]] | Opt-out: [[RENDERED_JETPACK_UNSUBSCRIBE_REQUIRED]] | HOLD UNSENT
+
+
+======== ISSUE 4 APOLLO 1 ========
+
+ORIGINAL PR #175: d57ccdba3aee8f065e143e101c2945f4f3d01647/dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md
+# THE DISPATCH — ISSUE 04
+
+> **STATUS: UNSENT DRAFT — DO NOT PUBLISH OR EMAIL**
+> This content awaits editorial and subscriber-list approval. All campaign emails require legal-footer QA; promotional issues require offer/affiliate review.
+
+**Subject:** Fourteen seconds. A much longer explanation.
+
+**Preheader:** Apollo 1, the surviving record, and why a tidy cause can mislead.
+
+**Content type:** editorial
+
+---
+
+A good explanation is often shorter than the evidence it rests on. Sometimes it's too short.
+
+The Apollo 1 fire is often compressed into a sentence about an electrical spark. The surviving official findings tell a harder story: an oxygen-rich ground-test environment, combustible material, vulnerable wiring, emergency escape constraints and choices in the design and test process.
+
+The investigators could identify dangerous conditions without conclusively identifying the exact first arc. That distinction matters. Unknown doesn't mean nothing was learned. It means the boundary between evidence and inference has to stay visible.
+
+Our investigation, **The Hatch Opened Inward**, follows that boundary through records and hardware. It also shows why the redesigned hatch became one of the event's clearest physical traces.
+
+**Read the investigation:** [The Hatch Opened Inward](https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/).
+
+There is a connection to the mind here, too: we like stories with one obvious cause. The record often refuses to cooperate.
+
+This is what The Dispatch will continue to do—move between history, science and the strange edges of human experience, without asking you to trade curiosity for certainty.
+
+
+---
+**Pre-send compliance block — remove/replace ONLY after legal and rendered-email QA.**
+Sender: Final Vestige Studios. Physical mailing address: `[[VALID_POSTAL_ADDRESS_REQUIRED]]`. Unsubscribe: `[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]`. These placeholders intentionally prevent sending.
+
+
+ALTERNATIVE NOT ADOPTED: ede9984caff0a1f1bee227ade8a05b4190a2ba6c/dispatch/r442/ISSUE04_APOLLO_UNADOPTED.txt
+FINAL VESTIGE STUDIOS · THE DISPATCH · ISSUE 04 · UNADOPTED EDITORIAL ALTERNATIVE · HOLD UNSENT
+Subject: Apollo 1: a timestamp isn't a cause
+Preheader: Two official accounts put the cabin rupture seconds apart. The danger was larger than either number.
+
+Fourteen seconds is long enough to fit in a headline. It is not long enough to explain why three astronauts could not escape a spacecraft standing still on the ground.
+
+On January 27, 1967, Virgil “Gus” Grissom, Edward White and Roger Chaffee were inside Apollo command module 012 at Launch Complex 34. The Saturn IB was not fueled. They were rehearsing a countdown, not attempting a launch. Yet the cabin was pressurized with oxygen, and a fire swept through it during the test.
+
+TWO RECORDS, TWO CLOCKS
+
+In a February 3 memorandum, NASA Deputy Administrator Robert Seamans reported an initial fire indication at 6:31:03 p.m. Eastern and cabin rupture at 6:31:17 — fourteen seconds later. He explicitly warned that recording stations might be out of synchronization by a second or two and that the findings were preliminary.
+
+A later February 25 interim report placed the rupture at approximately 6:31:19. NASA's compiled timeline is more granular still: at 23:31:16 GMT, pressure exceeded the measuring range of certain instruments; at 23:31:19.4, the pressure vessel ruptured. These are different observations, not three interchangeable measurements of the same instant.
+
+The point is not that NASA somehow hid two seconds. Investigators revised their reconstruction as new evidence arrived. An early estimate, a sensor limit and a later assessment should not be silently fused into a single cinematic countdown. A number can be precisely reported without making every interpretation of that number precise.
+
+THE UNKNOWN SPARK, THE KNOWN HAZARDS
+
+The investigators regarded an electrical malfunction as the most likely ignition mechanism but had not conclusively identified the exact source in the interim report. That uncertainty did not erase what could be established: nylon netting, fasteners and other combustible materials; an oxygen-rich cabin; rapidly increasing pressure; and an escape hatch that could not be opened quickly in an emergency.
+
+The inward-opening, multi-part hatch was a design choice, not a failure by the crew. The board called for a faster hatch, less flammable materials, changes to pad emergency procedures and a reassessment of oxygen during prelaunch operations. These weren't small edits to a checklist. They forced the program to reconsider what it called a dangerous test.
+
+The unfueled rocket mattered, too. Without propellants, the ground exercise had been treated as comparatively low risk. The cabin itself presented a different set of hazards. Investigators could establish those dangerous conditions even without identifying the first electrical arc. An unknown ignition point is not the same as an unknown cause of vulnerability.
+
+A ONE-MINUTE EVIDENCE HABIT
+
+Next time a dramatic historical story gives you one exact number or a single culprit, make three columns: directly recorded, inferred from the record and still unknown. Put the number in the right column. Ask which instrument produced it, whether the document was preliminary and whether later sources changed the interpretation.
+
+This exercise will not solve Apollo 1. It can stop one memorable sentence from replacing years of design choices, testing assumptions and documented warnings. It also helps with the less dramatic claims encountered every day, including promises about what a tool, routine or recording can accomplish.
+
+FOLLOW THE PHYSICAL EVIDENCE
+
+Our investigation, The Hatch Opened Inward, follows the cabin design, the conditions of the ground test and the redesign that followed. The story does not end with a convenient single culprit. The surviving evidence offers something more useful: a record of how an institution confronted its own assumptions.
+
+Read The Hatch Opened Inward: https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+
+SOURCE NOTES — research references, not additional promotional CTAs
+1. NASA Apollo 1 mission record: https://www.nasa.gov/mission/apollo-1/
+2. Seamans memorandum, February 3, 1967 (preliminary): https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/seamans.html
+3. Seamans interim report, February 25, 1967: https://www.nasa.gov/history/Apollo204/seamans3.html
+4. NASA Apollo 1 official event timeline: https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_01c_Timeline.htm
+5. NASA history of Apollo 204 investigation: https://www.nasa.gov/history/Apollo204/
+
+PRE-SEND COMPLIANCE HARD STOP — HOLD UNSENT
+Publisher postal address: [[VALID_POSTAL_ADDRESS_REQUIRED]]
+Actual opt-out in rendered Jetpack email: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
+No send, publication or marketing approval has been granted.
+
+
+======== ISSUE 5 HYPNOSIS LIVE ========
+
+ORIGINAL PR #175: d57ccdba3aee8f065e143e101c2945f4f3d01647/dispatch/campaign-2026-mind/issues/05-before-you-press-play.md
+# THE DISPATCH — ISSUE 05
+
+> **STATUS: UNSENT DRAFT — DO NOT PUBLISH OR EMAIL**
+> This content awaits editorial and subscriber-list approval. All campaign emails require legal-footer QA; promotional issues require offer/affiliate review.
+
+**Subject:** Before you press play on a hypnosis audio
+
+**Preheader:** Three questions that matter more than an impressive promise.
+
+**Content type:** commercial-review-pending
+
+---
+
+A recording offers convenience: you can revisit it, practice privately and decide whether a guided format suits you. That says something about the format. It doesn't settle what the recording can change.
+
+In our historical Puységur files, the hardest part is separating what observers reported from the conclusions they attached to those reports. Modern hypnosis marketing deserves the same scrutiny.
+
+Before buying any self-hypnosis audio, I'd ask three questions.
+
+**What is actually included?** A downloadable recording, a course, a subscription, or something else? Are the instructions and usage conditions clear?
+
+**What is the claim?** General relaxation, a pleasant guided experience and a guaranteed change in behavior are different promises. They require different kinds of support.
+
+**What happens if it isn't for you?** Check current price, format, access terms and refund conditions on the seller's actual page, not in an old promotion.
+
+**A program under review: Hypnosis Live.** Inspire3 currently presents Hypnosis Live as a collection of self-hypnosis recordings. We're examining the specific offer and its claims before recommending anything. An extensive catalog is not, by itself, evidence of effectiveness.
+
+**See the forthcoming independent guide:** [[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]
+
+**Commercial disclosure:** If you purchase through a qualifying link within our guide, Final Vestige may receive a commission. We won't publish this recommendation until the merchant link, terms and claim review are verified. Our [Puységur source archive](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/) remains free to explore.
+
+*Editorial and affiliate review pending. The offer link above is deliberately not active.*
+
+
+---
+**Pre-send compliance block — remove/replace ONLY after legal and rendered-email QA.**
+Sender: Final Vestige Studios. Physical mailing address: `[[VALID_POSTAL_ADDRESS_REQUIRED]]`. Unsubscribe: `[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]`. These placeholders intentionally prevent sending.
+
+
+ALTERNATIVE NOT ADOPTED: 9f3decc770bd2a6d5b39f2eb4b50130f4ef47a65/dispatch/r440/ISSUE_05_HYPNOSIS_LIVE_UNADOPTED.md
+# ISSUE 05 — FOUNDER-REVIEW REPLACEMENT CANDIDATE (NOT ADOPTED)
+
+**Canonical product:** Hypnosis Live (NOT Total Focus)  
+**Status:** HOLD_UNSENT; the original PR #175 manuscript is unchanged.  
+**Subject candidate:** Before you buy a hypnosis recording  
+**Preheader candidate:** An old lesson about suggestion, and five buyer checks that work today.  
+**Audience:** historical-evidence readers who deliberately choose Mind & Perception content  
+**One primary CTA (INACTIVE):** [[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]  
+**Merchant earning URL:** NONE. No named EMAIL affiliate permission.
+
+## SUBSCRIBER-FACING CANDIDATE COPY STARTS
+
+In 1784, a French royal commission put a remarkable proposition to the test. Practitioners said they could produce effects through an invisible force they called animal magnetism. Instead of trusting how convincing the demonstrations felt, investigators changed what participants could see and what they were told.
+
+The experiments did not settle every question about suggestion, and they certainly did not evaluate a modern hypnosis recording. They demonstrated something narrower and more useful: **a striking experience and a good explanation of that experience are different things.**
+
+That's a useful distinction to carry into today's audio marketplace.
+
+A guided recording may be convenient. You can replay it at your own pace; the voice and structure might be a format you like. None of that, by itself, proves a promised change in memory, behavior, sleep, confidence or health.
+
+Before paying for any such program, make these five checks.
+
+**1. What exactly arrives?** A downloadable MP3 is different from a live session or ongoing subscription. Verify the particular item, delivery mechanism and who may access it.
+
+**2. Who is making the promise?** A recording seller may describe strong effects; those are seller statements unless sound product-specific evidence backs them. A positive anecdote can tell you about one person's experience, not what a typical buyer can expect.
+
+**3. Can you listen to a representative sample?** A voice, pacing, background sound and instructions matter when you plan to spend time with a recording. A sample can reveal whether you find it tolerable, not whether it is effective.
+
+**4. What is the precise refund boundary?** Hypnosis Live's published FAQ currently describes a 14-day request period and caps refundable sessions at five per year. Those are the seller's published conditions, not a guarantee that a particular future transaction will qualify. Confirm terms again at checkout.
+
+**5. What will you measure?** Write down the specific question you're hoping to answer before the first listen. Note what changed, what didn't, and alternative explanations. A good log may tell you that an audio suits your routine even when a broad advertised outcome remains unsupported.
+
+For a no-cost baseline, spend five quiet minutes following a simple audio-free routine on two different days. Record how easy it was to begin, whether you finished, and one distraction. You don't need a purchase to learn something about your attention.
+
+**Optional next step:** Our independently reviewed Hypnosis Live buyer guide is held pending merchant permission and exact-offer verification. Its future destination is [[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]. **There is no active offer link in this draft.**
+
+**Commercial disclosure, immediately beside that proposed guide:** If you purchase through a qualifying link within a future approved guide, Final Vestige may earn a commission. Commercial approval, affiliate email rights and all current purchase terms have not yet been verified; no recommendation is live.
+
+The same editorial principle applies to an eighteenth-century witness and a twenty-first-century audio file: record what happened, and keep the conclusion within what the record can bear.
+
+— The Dispatch, Final Vestige Studios
+
+## SUBSCRIBER-FACING CANDIDATE COPY ENDS
+
+### Complete research notes / proof limits (outside the email's single-CTA body)
+
+* Hypnosis Live seller FAQ, MP3/audio format, typical duration, self-described practitioner, generally advertised price, 14-day claim and five-session annual refund cap: https://hypnosislive.com/faq . All product facts are seller statements; avoid representing claimed efficacy as proven. Price intentionally omitted because checkout and specific SKU are not approved.
+* Merchant product category examples, not verified licensed creative or a purchased experience: https://hypnosislive.com/mental-skills .
+* 1784 original Commissioners' report (the Franklin Commission examined d'Eslon's claims, not a modern recording): 1785 English translation catalogued by Project Gutenberg https://www.gutenberg.org/ebooks/78413 ; Royal College of Physicians of Edinburgh translation of the original French report https://www.rcpe.ac.uk/sites/default/files/files/the_royal_commission_on_animal_-_translated_by_iml_donaldson_1.pdf . The documented blindfolded/suggestion experiments warrant the limited historical observation, not a clinical claim about modern hypnosis audio.
+* 1784 historical commission context: Final Vestige live primary-record-oriented discussion https://finalvestige.com/2026/11/02/mesmerism/ . Recheck cited archival witnesses before publication; no inference from Mesmerism to clinical effectiveness.
+* Publisher Editorial Standards https://finalvestige.com/editorial-standards/ ; FTC endorsement disclosure https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking ; FTC CAN-SPAM https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business .
+* Sending still needs genuine publisher postal address [[VALID_POSTAL_ADDRESS_REQUIRED]] and functional unsubscribe [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]] in actual received commercial email, not just a review artifact.
+* This candidate is unapproved, not a claim of actual vendor product testing, clinical benefit, a settled affiliate sale, or a native Jetpack preview.
+
+
+======== ISSUE 6 FISHER TEA TEST ========
+
+ORIGINAL PR #175: d57ccdba3aee8f065e143e101c2945f4f3d01647/dispatch/campaign-2026-mind/issues/06-the-evidence-log.md
+# THE DISPATCH — ISSUE 06
+
+> **STATUS: UNSENT DRAFT — DO NOT PUBLISH OR EMAIL**
+> This content awaits editorial and subscriber-list approval. All campaign emails require legal-footer QA; promotional issues require offer/affiliate review.
+
+**Subject:** What did seven days of attention reveal?
+
+**Preheader:** A small experiment, a useful notebook, and no miracle claims.
+
+**Content type:** editorial
+
+---
+
+After a week of trying to concentrate differently, it's easy to be left with one of two impressions: it changed everything, or it changed nothing.
+
+Neither impression is very useful without a record.
+
+A more practical question is what actually happened. Which days did you follow through? How long did you practice? When did you get interrupted? What made it easier to start the next day?
+
+Those observations aren't a medical result or proof that one technique is superior. They're simply better information for choosing what you'll keep doing.
+
+Our **Seven Day Focus Fieldbook — Complete Edition** was built for this kind of deliberate practice: a short starting routine, seven guided days, an obstacle playbook and a thirty-day log. It's free, and you don't need to buy an audio program to use it.
+
+**Open the free Fieldbook:** [Seven Day Focus Fieldbook](https://finalvestige.com/focus/).
+
+As we expand the Mind & Perception Archive, we'll keep putting the underlying sources where readers can check them. You'll also continue receiving the historical investigations and unexpected discoveries you came to Final Vestige for.
+
+If a product ever appears here, we'll say when it's a commercial recommendation, what we're basing it on and what remains uncertain. The work comes first.
+
+
+---
+**Pre-send compliance block — remove/replace ONLY after legal and rendered-email QA.**
+Sender: Final Vestige Studios. Physical mailing address: `[[VALID_POSTAL_ADDRESS_REQUIRED]]`. Unsubscribe: `[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]`. These placeholders intentionally prevent sending.
+
+
+ALTERNATIVE NOT ADOPTED: 1cd7d8c40da4be91fc7ac401022bff14aabdfed9/dispatch/r445/ISSUE06_EIGHT_CUPS_UNADOPTED.md
+# THE DISPATCH — Issue 06 · R445 editorial candidate
+> UNADOPTED / HOLD UNSENT / NOT A WORDPRESS OR RECEIVED EMAIL. This does not replace the original issue without founder approval.
+
+**Subject:** Eight cups. One useful kind of doubt.
+
+**Preheader:** Fisher’s 1935 tea test and a better way to read your seven-day focus notes.
+
+**Edition:** 06 of 06 · editorial · no affiliate offer · one principal CTA
+
+A cup of tea is a strange place to begin an investigation into attention. But in 1935, statistician R. A. Fisher used an ordinary tea-making claim to explain something that matters well beyond the kitchen: a confident impression is not yet a well-designed test.
+
+## What Fisher actually described
+
+A woman says she can tell whether milk or tea was poured first. Fisher's published example sets out eight cups, four prepared each way. The cups are presented in random order. The taster knows there are four of each and must assign each cup to one group.
+
+There are 70 possible ways to assign four cups to one group. Under Fisher's proposed guessing model, a perfect classification occurs by chance in one of those 70 arrangements. That calculation is a property of the *specific test design*, not a universal probability that anyone can taste a difference.
+
+The distinction matters. Fisher's book establishes how to *plan and interpret* this kind of test. Later historical accounts differ about what happened at an actual tea gathering and exactly how successful the purported taster was. We should not report the legendary outcome as a verified experimental result.
+
+The point was not tea. It was to decide what would count as evidence **before** seeing a flattering result.
+
+## The trap in seven good or bad days
+
+Now imagine you spent a week trying a twelve-minute attention routine. Some mornings felt sharp. Others were full of interruptions. You may be tempted to declare that the routine transformed your concentration—or failed completely.
+
+But what else changed? The difficulty of the work? Your sleep? A quiet room? How often you actually started? If the only observation was "I felt focused," you have an impression worth recording, not evidence that the routine *caused* it.
+
+A one-person seven-day log cannot establish a clinically meaningful benefit, isolate placebo or expectation effects, or validate the claims of an audio product. It can still be useful for making the next decision less arbitrary.
+
+## Make your next observation more honest
+
+Before your next session, write down one modest prediction: "I expect to complete a twelve-minute practice on four of the next seven mornings." Then keep three columns:
+
+**Prediction:** What did you expect before beginning?
+
+**Observed:** Did you start, for how long, and what interrupted you?
+
+**Other explanations:** What else might account for a change in how the session felt?
+
+Keep missed days in the notebook; don't erase them. After seven days, report adherence separately from impressions about attention. If you repeat the process, use the same basic definitions instead of moving the goalposts. This is a practical reflection exercise, **not** a controlled study or a test of intelligence.
+
+## The same standard applies to the archive
+
+This is how we approach a disputed historical source: preserve the record, name the inference, and leave room for what we don't know. The discipline that makes an old witness account worth reading also protects us from overselling a modern focus technique.
+
+Our free *Seven Day Focus Fieldbook — Complete Edition* includes the starting routine, guided days, obstacle playbook and a longer log. You do not need a paid recording to use it. The goal is to notice what you actually did and decide what is worth repeating.
+
+**One next step: [Explore the free 52-page Focus Fieldbook](https://finalvestige.com/focus/).**
+
+There is no product recommendation in this issue. Final Vestige's history investigations remain at the center of The Dispatch. We'll follow curiosity where the sources take us—and stop where the evidence stops.
+
+### Sources and standards
+- [R. A. Fisher, The Design of Experiments (1935), experiment excerpt (University of Houston)](https://www.math.uh.edu/~josic/old_website/myweb/teaching/2311H/reading/fisher_article_for_lady_tasting_tea.pdf)
+- [Philip Stark, Berkeley course notes on Fisher's experiment and its counting argument](https://www.stat.berkeley.edu/~stark/Teach/S240/Notes/ch3.htm)
+- [A Closer Look at the Lady Tasting Tea, Significance (2021), conflicting historical accounts](https://academic.oup.com/jrssig/article/18/5/34/7038291)
+- [Final Vestige Editorial Standards](https://finalvestige.com/editorial-standards/)
+
+---
+**PRE-SEND HARD HOLD:** Publisher's independently verified valid physical postal address: [[VALID_FV_POSTAL_ADDRESS_REQUIRED]]. Actual native Jetpack email unsubscribe link and rendered behavior: [[VERIFIED_JETPACK_UNSUBSCRIBE_REQUIRED]]. These are intentionally not substituteable with a merchant, Automattic or invented address. Real WordPress email Preview, founder creative/audience/schedule consent, delivery verification remain outstanding. Do not publish, schedule or send.
