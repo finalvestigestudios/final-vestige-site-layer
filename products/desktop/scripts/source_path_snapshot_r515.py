@@ -1,8 +1,9 @@
-"""R515/R516: digest-only custody for read-only desktop source evidence.
+"""R515/R516/R517: digest-only custody for read-only desktop source evidence.
 
-R516 additionally checks root and hard-link custody, descriptor identity and
-post-read stability. These checks reduce common filesystem races; they cannot
-provide atomic tree custody against an adversarial concurrent writer.
+R516 checks root/hardlink custody, descriptor identity and postread stability.
+R517 preserves same-view Windows creation-time custody while avoiding false
+path/descriptor mismatches caused by differing st_ctime_ns across APIs.
+These checks are not atomic tree custody against a concurrent writer.
 """
 from __future__ import annotations
 
@@ -28,6 +29,23 @@ def _linked(path: Path) -> bool:
 def _identity(receipt: os.stat_result) -> tuple[int, ...]:
     return (receipt.st_dev, receipt.st_ino, receipt.st_mode, receipt.st_nlink,
             receipt.st_size, receipt.st_mtime_ns, receipt.st_ctime_ns)
+
+
+def _same_path_descriptor_identity(path_info: os.stat_result,
+                                   descriptor_info: os.stat_result,
+                                   *, windows: bool | None = None) -> bool:
+    """Compare structural identity without conflating Windows ctime views.
+
+    On Windows, Python path.lstat and descriptor fstat may disagree on
+    st_ctime_ns for the very same file. Only omit ctime in cross-view checks;
+    retain the full receipt in every before/after check of the same view.
+    """
+    if windows is None:
+        windows = os.name == "nt"
+    path_identity = _identity(path_info)
+    descriptor_identity = _identity(descriptor_info)
+    return (path_identity[:-1] == descriptor_identity[:-1] if windows
+            else path_identity == descriptor_identity)
 
 
 def _regular_unique(receipt: os.stat_result) -> bool:
@@ -63,14 +81,16 @@ def source_fingerprint(root: Path, parts: tuple[str, ...]) -> bytes:
                  getattr(os, "O_NONBLOCK", 0))
         with os.fdopen(os.open(leaf, flags), "rb") as reader:
             opened = os.fstat(reader.fileno())
-            if not _regular_unique(opened) or _identity(opened) != _identity(before):
+            if (not _regular_unique(opened) or
+                    not _same_path_descriptor_identity(before, opened)):
                 raise OSError("source changed before open")
             raw = reader.read(_MAX_SOURCE_BYTES + 1)
             after_read = os.fstat(reader.fileno())
         after_path = leaf.lstat()
         if (len(raw) != before.st_size or
-                _identity(before) != _identity(after_read) or
+                _identity(opened) != _identity(after_read) or
                 _identity(before) != _identity(after_path) or
+                not _same_path_descriptor_identity(after_path, after_read) or
                 not _regular_unique(after_path) or _linked(leaf)):
             raise OSError("source changed during read")
         return sha256(raw).digest()
