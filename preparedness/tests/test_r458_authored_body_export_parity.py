@@ -150,6 +150,11 @@ class TestBodyParity(unittest.TestCase):
         resolved, _ = r458.independently_resolve_body(self.root, self.lib, self.meta, '<script>{{inline-js:helper.js}}</script>')
         self.assertEqual(resolved, '<script>const x="&amp;";\n</script>')
 
+    def test_inline_js_closing_braces_supported(self):
+        (self.root / 'tools' / 'helper.js').write_text('const v={a:{b:1}};\n', encoding='utf-8')
+        expanded, _ = r458.independently_resolve_body(self.root, self.lib, self.meta, '<script>{{inline-js:helper.js}}</script>')
+        self.assertIn('const v={a:{b:1}};', expanded)
+
     def test_inline_js_missing_holds(self):
         with self.assertRaises(r458.BodyHold):
             r458.independently_resolve_body(self.root, self.lib, self.meta, '<script>{{inline-js:missing.js}}</script>')
