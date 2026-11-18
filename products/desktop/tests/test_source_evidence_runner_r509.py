@@ -970,5 +970,102 @@ class SnapshotWindowsParityR517(unittest.TestCase):
         self.assertEqual(len(calls), 2)
 
 
+# R518: OS errors can retain private source paths in __context__ even when
+# raised "from None". The public custody error must leave that context behind.
+import traceback
+
+
+class SourceSnapshotPrivateFailureR518(unittest.TestCase):
+    PRIVATE = "SYNTHETIC_PRIVATE_CHECKOUT_PATH_R518"
+
+    def setUp(self):
+        temporary = TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        self.root = Path(temporary.name)
+        self.parts = ("products", "desktop", "tests", "test_r518.py")
+        self.source = self.root.joinpath(*self.parts)
+        self.source.parent.mkdir(parents=True)
+        self.source.write_bytes(b"print('local test only')\\n")
+
+    def assert_private_rejection(self, invoke):
+        with self.assertRaises(custody.SourceSnapshotRejected) as raised:
+            invoke()
+        error = raised.exception
+        self.assertIsNone(error.__cause__)
+        self.assertIsNone(error.__context__)
+        diagnostic = "".join(traceback.format_exception(error))
+        self.assertNotIn(self.PRIVATE, diagnostic)
+        self.assertNotIn(str(self.root), diagnostic)
+
+    def test_missing_file_has_no_private_exception_chain(self):
+        self.source.unlink()
+        self.assert_private_rejection(lambda: custody.source_fingerprint(self.root, self.parts))
+
+    def test_open_error_with_private_filename_has_no_exception_chain(self):
+        secret = OSError(13, self.PRIVATE, str(self.root / self.PRIVATE))
+        with patch.object(custody.os, "open", side_effect=secret):
+            self.assert_private_rejection(lambda: custody.source_fingerprint(self.root, self.parts))
+
+    def test_descriptor_stat_error_has_no_private_exception_chain(self):
+        with patch.object(custody.os, "fstat", side_effect=OSError(self.PRIVATE)):
+            self.assert_private_rejection(lambda: custody.source_fingerprint(self.root, self.parts))
+
+    def test_fdopen_oserror_closes_raw_descriptor(self):
+        created = []
+        real_open = os.open
+        def tracking_open(*args, **kwargs):
+            descriptor = real_open(*args, **kwargs)
+            created.append(descriptor)
+            return descriptor
+        with patch.object(custody.os, "open", side_effect=tracking_open), \\
+             patch.object(custody.os, "fdopen", side_effect=OSError(self.PRIVATE)):
+            self.assert_private_rejection(lambda: custody.source_fingerprint(self.root, self.parts))
+        self.assertEqual(len(created), 1)
+        with self.assertRaises(OSError):
+            os.fstat(created[0])
+
+    def test_fdopen_valueerror_closes_raw_descriptor(self):
+        created = []
+        real_open = os.open
+        def tracking_open(*args, **kwargs):
+            descriptor = real_open(*args, **kwargs)
+            created.append(descriptor)
+            return descriptor
+        with patch.object(custody.os, "open", side_effect=tracking_open), \\
+             patch.object(custody.os, "fdopen", side_effect=ValueError(self.PRIVATE)):
+            self.assert_private_rejection(lambda: custody.source_fingerprint(self.root, self.parts))
+        self.assertEqual(len(created), 1)
+        with self.assertRaises(OSError):
+            os.fstat(created[0])
+
+    def test_successful_digest_and_repeat_match_unchanged(self):
+        expected = custody.sha256(self.source.read_bytes()).digest()
+        self.assertEqual(custody.source_fingerprint(self.root, self.parts), expected)
+        self.assertTrue(custody.matches_source_fingerprint(self.root, self.parts, expected))
+
+    def test_updated_source_fails_digest_match(self):
+        expected = custody.source_fingerprint(self.root, self.parts)
+        self.source.write_bytes(b"print('replaced')\\n")
+        self.assertFalse(custody.matches_source_fingerprint(self.root, self.parts, expected))
+
+    def test_interrupt_is_not_swallowed(self):
+        with patch.object(custody.os, "fstat", side_effect=KeyboardInterrupt):
+            with self.assertRaises(KeyboardInterrupt):
+                custody.source_fingerprint(self.root, self.parts)
+
+    def test_invalid_part_rejection_has_no_chain(self):
+        self.assert_private_rejection(lambda: custody.source_fingerprint(self.root, ("..",)))
+
+    def test_symlink_leaf_failure_has_no_chain(self):
+        self.source.unlink()
+        target = self.root / "original.py"
+        target.write_bytes(b"pass\\n")
+        try:
+            self.source.symlink_to(target)
+        except (OSError, NotImplementedError):
+            self.skipTest("Symlinks unavailable")
+        self.assert_private_rejection(lambda: custody.source_fingerprint(self.root, self.parts))
+
+
 if __name__ == "__main__":
     unittest.main()
