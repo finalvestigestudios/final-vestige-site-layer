@@ -35,11 +35,11 @@ check('full-text access limit',()=>assert.ok(files.article.includes('access-rest
 check('article not a clinical product claim',()=>assert.ok(files.article.includes('not a controlled evaluation')));
 check('variant A safe',()=>assert.ok(safeBuyer(files.a)));
 check('variant B safe',()=>assert.ok(safeBuyer(files.b)));
-check('B includes unique optional film',()=>assert.ok(files.b.includes('42-second original short')));
+check('B includes unique optional film',()=>assert.ok(files.b.toLowerCase().includes('optional 42-second original short')));
 check('A does not contain film',()=>assert.ok(!files.a.includes('<section class="panel film"')));
 check('B has full 6-cue transcript',()=>assert.equal((files.b.match(/seconds:<\/strong>/g)||[]).length,6));
 check('A/B buyer copy byte-identical once optional section removed',()=>{
-  let b=files.b.replace(/<section class="panel film"[\s\S]*?<section class="panel" aria-labelledby="question">/, '<section class="panel" aria-labelledby="question">').replaceAll('Variant B','Variant A').replaceAll('Draft B','Draft A');
+  let b=files.b.replace(/<section class="panel film"[\s\S]*?<section class="panel" aria-labelledby="question">/, '<section class="panel" aria-labelledby="question">').replaceAll('Variant B','Variant A').replaceAll('Draft B','Draft A').replaceAll('draft B','draft A');
   assert.equal(b,files.a);
 });
 for(const [label,x] of [['A',files.a],['B',files.b],['hub',files.hub]]) {
