@@ -79,7 +79,7 @@ The value of the exercise is the record it leaves, not a score. If someone else 
 
 ### The product question: where this research stops
 
-A visitor may reach this article because they are curious about hypnosis, attention, guided meditation or brainwave audio. Those are legitimate interests. But audiovisual speech integration is **not an efficacy trial of Zen12, Hypnosis Live, Brainwave Shots or any other Inspire3 product**. Their sales pages describe what a seller offers and promises. An independent editorial guide must distinguish those descriptions from evidence about particular outcomes.
+A visitor may reach this article because they are curious about hypnosis, attention, guided meditation or brainwave audio. Those are legitimate interests. But audiovisual speech integration is **not an efficacy trial of Zen12, Hypnosis Live, Brainwave Shots or any other Inspire3 product**. The McGurk effect is not evidence that those recordings cause cognitive, financial or health benefits. Their sales pages describe what a seller offers and promises. An independent editorial guide must distinguish those descriptions from evidence about particular outcomes.
 
 For a person seeking a structured routine rather than an illusion, Final Vestige's existing [free Seven Day Focus Fieldbook](https://finalvestige.com/focus/) provides a twelve-minute practical start, worksheets and an audio-claims checklist. It is a free resource available through the existing Jetpack/Dispatch subscription; no additional list is required. The Fieldbook itself has not undergone product-specific clinical validation and is not medical treatment [7].
 
