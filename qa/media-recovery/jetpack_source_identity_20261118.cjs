@@ -55,4 +55,17 @@ function sourceMatches(current, authored) {
   }
   return true;
 }
-module.exports = { sourceMatches, parse };
+// Cross-phase before/after image URLs can use different responsive sizes.
+// Cropping and zooming must remain identical unless the photo replacement is
+// separately reviewed and approved by an editor.
+function sameFraming(beforeUrl, afterUrl) {
+  const before = parse(beforeUrl), after = parse(afterUrl);
+  if (!before || !after) return false;
+  for (const key of ['crop', 'zoom']) {
+    const first = before.mutable.get(key) ?? before.immutable.get(key) ?? null;
+    const second = after.mutable.get(key) ?? after.immutable.get(key) ?? null;
+    if (first !== second) return false;
+  }
+  return true;
+}
+module.exports = { sourceMatches, parse, sameFraming };
