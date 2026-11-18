@@ -42,23 +42,27 @@ function validRedirectChain(start,end,chain) {
   return current===end;
 }
 // A decoded placeholder/distorted derivative is not visual parity.
-// Conservative offline HOLD: no upscaling, <=960px derivative width, minimum
-// 480px long edge (or original if smaller), and <=2% aspect ratio drift.
-// These checks do NOT prove exact subject identity.
+// Fail-closed: require decoded binary raster dimensions for <=960px and
+// no upscaling. DOM naturalWidth/Height alone are density-corrected CSS px.
+// These self-reported checks cannot establish exact historical subject identity.
 function preservesPixelGeometry(before,after) {
   if(!isObject(before)||!isObject(after))return false;
-  const dims=[before.natural_width,before.natural_height,after.natural_width,after.natural_height];
-  if(!dims.every(n=>integer(n,1)&&n<=100000))return false;
-  // This gate assesses an intended optimized <=960px-wide derivative.
-  // Browser naturalWidth is not an archival master measurement. If the candidate
-  // exceeds the baseline in either axis, or is wider than the 960px derivative
-  // ceiling, HOLD for manual asset/rights review instead of certifying parity.
-  if(after.natural_width>960||after.natural_width>before.natural_width||
-     after.natural_height>before.natural_height)return false;
-  if(Math.max(after.natural_width,after.natural_height)<Math.min(480,Math.max(before.natural_width,before.natural_height)))return false;
-  const oldRatio=before.natural_width/before.natural_height;
-  const newRatio=after.natural_width/after.natural_height;
-  return Math.abs(newRatio/oldRatio-1)<=0.02;
+  const vals=[before.natural_width,before.natural_height,after.natural_width,after.natural_height,
+    before.raster_width_px,before.raster_height_px,after.raster_width_px,after.raster_height_px];
+  if(!vals.every(x=>integer(x,1)&&x<=100000))return false;
+  // HTMLImageElement.naturalWidth uses density-corrected CSS pixels.
+  // Require dimensions decoded from the actual encoded response body.
+  for(const r of [before,after]) {
+    if(r.raster_width_px<r.natural_width||r.raster_height_px<r.natural_height)return false;
+    if(Math.abs((r.raster_width_px/r.raster_height_px)/
+      (r.natural_width/r.natural_height)-1)>0.02)return false;
+  }
+  if(after.raster_width_px>960||after.raster_width_px>before.raster_width_px||
+     after.raster_height_px>before.raster_height_px)return false;
+  if(Math.max(after.raster_width_px,after.raster_height_px)<
+     Math.min(480,Math.max(before.raster_width_px,before.raster_height_px)))return false;
+  return Math.abs((after.raster_width_px/after.raster_height_px)/
+    (before.raster_width_px/before.raster_height_px)-1)<=0.02;
 }
 
 function blobSha(raw) {const b=Buffer.from(raw,'utf8');return crypto.createHash('sha1').update(`blob ${b.length}\0`).update(b).digest('hex');}
@@ -110,13 +114,16 @@ function validatePage(p,which,inv) {
     const expected=original.rows.find(x=>x.key===r.key);
     if(!expected||r.authored_url!==expected.source_url)fail(`Unmatched source image identity in ${which} ${r.key}`);
     if(!validUrl(r.current_src)||!validUrl(r.request_url)||!sourceMatches(r.current_src,expected.source_url)||!validRedirectChain(r.current_src,r.request_url,r.redirect_chain)||typeof r.request_id!=='string'||!r.request_id)fail(`Unmatched ${which} network request`);
-    if(r.http_status!==200||typeof r.mime!=='string'||!/^image\//i.test(r.mime)||r.decoded!==true||!integer(r.natural_width,1)||!integer(r.natural_height,1)||!integer(r.wire_bytes,1)||r.from_cache!==false||r.from_service_worker!==false||r.from_prefetch!==false)fail(`Broken/missing/cached image in ${which} ${r.key}`);
+    if(r.http_status!==200||typeof r.mime!=='string'||!/^image\//i.test(r.mime)||r.decoded!==true||!integer(r.natural_width,1)||!integer(r.natural_height,1)||!integer(r.wire_bytes,1)||!integer(r.raster_width_px,1)||!integer(r.raster_height_px,1)||
+       r.raster_probe!=='decoded_network_payload'||!(/^[a-f0-9]{64}$/).test(r.raster_sha256||'')||
+       r.from_cache!==false||r.from_service_worker!==false||r.from_prefetch!==false)fail(`Broken/missing/cached image in ${which} ${r.key}`);
     // Chromium may serve the same decoded URL to multiple DOM image slots from one
     // network request, even with HTTP cache disabled. Count that request once.
     const previous=reqs.get(r.request_id);
     if(previous) {
       for(const field of ['current_src','request_url','http_status','mime','wire_bytes',
-        'natural_width','natural_height','from_cache','from_service_worker','from_prefetch']) {
+        'natural_width','natural_height','raster_width_px','raster_height_px',
+        'raster_probe','raster_sha256','from_cache','from_service_worker','from_prefetch']) {
         if(r[field]!==previous[field])fail(`Conflicting shared network request in ${which} ${r.key}: ${field}`);
       }
     } else {
