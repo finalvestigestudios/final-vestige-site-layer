@@ -1,0 +1,74 @@
+{
+  "sprint": "Apollo R452",
+  "status": "LOCAL_PASS_STAGING_HARD_HOLD",
+  "date_utc": "2026-11-18",
+  "provenance": "read-only GitHub exact-blobs + local Chromium; NOT navigated WP",
+  "source_files": 7,
+  "source_blob_checks": "7_of_7_matching_offline_executed_local_files",
+  "python_contract_tests": {
+    "passed": 27,
+    "failed": 0,
+    "mode": "local executed"
+  },
+  "browser": {
+    "engine": "Chromium Playwright",
+    "mode": "page.set_content offline HTML fixture",
+    "cases_passed": 14,
+    "cases_failed": 0,
+    "widths_px": [
+      320,
+      360,
+      390,
+      768,
+      1024,
+      1440,
+      1920
+    ],
+    "js_modes": [
+      "on",
+      "off"
+    ],
+    "keyboard": true,
+    "touch": true,
+    "reduced_motion": true,
+    "source_link_count": 1,
+    "horizontal_overflow_detected": false
+  },
+  "reproducibility": {
+    "local_zip_sha256": "f766a8ad06f142d99c83b8ff5500350ad452be5773b35c84445fffb7c3bad306",
+    "zip_entries": 24,
+    "two_rebuilds_byte_identical": true,
+    "committed_zip": false
+  },
+  "independently_verified": {
+    "actual_wordpress_staging": false,
+    "axe_core": false,
+    "navigated_LCP_CLS": false,
+    "field_CWV": false,
+    "screen_reader": false,
+    "merchant_settlements": false,
+    "creator_published_apollo_asset": false,
+    "verified_paid_sku": false
+  },
+  "revenue_per_1000_qualified_humans": null,
+  "release": "HARD_HOLD",
+  "exclusions": [
+    "homepage PR #49",
+    "original research desk PR #158",
+    "WordPress content/settings",
+    "Grok/Praxxis Drive queue",
+    "paid tools",
+    "production deployment"
+  ],
+  "blockers": [
+    "R417 reconcile",
+    "public Atlas editorial review",
+    "approved navigable WP staging",
+    "real axe and LCP/CLS",
+    "independent QD",
+    "real creator asset",
+    "rights-cleared payable kit",
+    "merchant settlements/fees/refunds",
+    "founder approval"
+  ]
+}
