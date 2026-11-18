@@ -130,6 +130,11 @@ GRAMMAR = {
     'inline_script':BASE+'<script>alert(1)</script>',
     'empty_rule_body':'.pa-cite{}',
     'unverified_css_at_rule':BASE+'@property --x {syntax:"*";inherits:false;initial-value:0}',
+    'unsafe_palette_value':BASE+'.pa{--pa-text:transparent;color:var(--pa-text);}',
+    'palette_redefinition':BASE+'.pa{--pa-text:#F4EFE6;} .pa{--pa-text:transparent;}',
+    'unbound_palette_var':BASE+'.pa-body{color:var(--pa-text);}',
+    'unbound_measure':BASE+'.pa-body{max-width:var(--pa-measure);}',
+    'bare_zero_superscript':BASE+'.pa-body sup.pa-cite{line-height:0;}',
 }
 def make_grammar_bad(raw):
     def test(self):
@@ -154,6 +159,10 @@ ALLOWED = {
  'nested_container':'@container (min-width: 700px){.pa-sources ol{padding-left:1.2em;}}',
  'css_quoted_comment':'.pa-card{content:"/* not comment */";}',
  'noncritical_card':'.pa-card[hidden]{display:none;}',
+ 'noncritical_skip':'.pa .pa-skip{position:absolute;left:-9999px;}',
+ 'noncritical_printbar':'@media print{.pa .pa-printbar--head{display:none;}}',
+ 'approved_palette':'.pa{--pa-text:#F4EFE6;--pa-muted:#CFC8BB;--pa-gold:#C5A46A;--pa-measure:68ch;color:var(--pa-text);} .pa-body{max-width:var(--pa-measure);} .pa-review{color:var(--pa-muted);}',
+ 'superscript_linebox':'.pa-body sup.pa-cite{font-size: .72em;line-height:0;vertical-align: super;}',
 }
 def make_allowed(raw):
     def test(self): self.assertGreater(gate.audit_css(BASE+'\n'+raw)['protected_rules'],0)
