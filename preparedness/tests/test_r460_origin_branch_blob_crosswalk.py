@@ -60,6 +60,10 @@ class Contracts(unittest.TestCase):
         x=fixture();x["review_refs"]["fake"] = h(2);self.assertRaises(m.OriginHold,m.analyze,x)
     def test_false_qd_rejected(self):
         x=fixture();x["qualified_qd_pass"] = True;self.assertRaises(m.OriginHold,m.analyze,x)
+    def test_original_fragment_readme_is_valid(self):
+        x=fixture();x["candidate"]["sources"]["fragments/README.md"]=h(88)
+        for obj in x["origins"].values(): obj["sources"]["fragments/README.md"]=h(88)
+        self.assertEqual(m.analyze(x)["article_count"],35)
     def test_source_fragment_loss_rejected(self):
         x=fixture();x["candidate"]["sources"].pop("fragments/food.json");self.assertRaises(m.OriginHold,m.analyze,x)
     def test_orphan_pair_rejected(self):
