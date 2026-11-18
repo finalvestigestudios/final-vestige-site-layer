@@ -1,0 +1,389 @@
+{
+  "document": "R480 EVIDENCE AND PERMISSION DECISION MATRIX",
+  "date": "2026-11-18",
+  "status": "DRAFT_ONLY_HARD_HOLD",
+  "primary_offer": "Zen12",
+  "source_scope": "Public vendor descriptions, accessible experimental abstracts, FTC guidance and account-specific pending email. No completed purchase, actual product use or contract acceptance.",
+  "source_urls": {
+    "inspire3_catalog": "https://inspire3.com/",
+    "zen12_standard": "https://zen12.com/about",
+    "zen12_promo": "https://zen12.com/secret/",
+    "binaural_review": "https://doi.org/10.1371/journal.pone.0286023",
+    "pendulum_1975": "https://pubmed.ncbi.nlm.nih.gov/1202145/",
+    "pendulum_1976": "https://pubmed.ncbi.nlm.nih.gov/956790/",
+    "pendulum_1977": "https://pubmed.ncbi.nlm.nih.gov/28136225/",
+    "pendulum_history": "https://doi.org/10.1080/00029157.2011.10401754",
+    "ideomotor_2017": "https://doi.org/10.1093/nc/nix014",
+    "puys_archive": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/",
+    "ftc_endorsement": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "mind_pr_172": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/172"
+  },
+  "claims": [
+    {
+      "id": "Z12-F01",
+      "claim": "Zen12 seller describes twelve-minute sessions",
+      "kind": "seller_format",
+      "source": "zen12_standard",
+      "decision": "May describe as seller-specified, not independently validated quality/benefit",
+      "status": "allowed_qualified"
+    },
+    {
+      "id": "Z12-F02",
+      "claim": "Zen12 seller describes twelve progressive levels",
+      "kind": "seller_format",
+      "source": "zen12_standard",
+      "decision": "May state the seller's listed format, verify actual order SKU",
+      "status": "allowed_qualified"
+    },
+    {
+      "id": "Z12-F03",
+      "claim": "Zen12 seller describes four styles: guided/music/noise/nature",
+      "kind": "seller_format",
+      "source": "zen12_standard",
+      "decision": "May state seller-described modalities, not production quality",
+      "status": "allowed_qualified"
+    },
+    {
+      "id": "Z12-F04",
+      "claim": "Zen12 seller displays MP3/downloadable program",
+      "kind": "seller_format",
+      "source": "zen12_standard",
+      "decision": "May describe as seller listed, not verify delivery entitlement",
+      "status": "allowed_qualified"
+    },
+    {
+      "id": "Z12-B01",
+      "claim": "12 minutes equals one hour of meditation",
+      "kind": "seller_benefit",
+      "source": "zen12_standard",
+      "decision": "Do not endorse; requires product-specific direct comparative support",
+      "status": "withhold"
+    },
+    {
+      "id": "Z12-B02",
+      "claim": "The audio automatically shifts brainwaves into relaxation",
+      "kind": "seller_benefit",
+      "source": "zen12_standard",
+      "decision": "Do not endorse; mechanism unverified for Zen12",
+      "status": "withhold"
+    },
+    {
+      "id": "Z12-B03",
+      "claim": "Zen12 eliminates stress/anxiety or mental-health symptoms",
+      "kind": "seller_health",
+      "source": "zen12_standard",
+      "decision": "Do not repeat as proven; FTC health substantiation required",
+      "status": "withhold"
+    },
+    {
+      "id": "Z12-B04",
+      "claim": "An individual session guarantees immediate benefit",
+      "kind": "seller_guarantee",
+      "source": "zen12_standard",
+      "decision": "Do not repeat as FV promise",
+      "status": "withhold"
+    },
+    {
+      "id": "Z12-B05",
+      "claim": "Brainwave entrainment is proven for every listener",
+      "kind": "seller_benefit",
+      "source": "inspire3_catalog",
+      "decision": "Do not endorse; 2023 review is inconsistent and product nonspecific",
+      "status": "withhold"
+    },
+    {
+      "id": "Z12-P01",
+      "claim": "Secret promotional page shows a discounted coupon/countdown",
+      "kind": "seller_offer",
+      "source": "zen12_promo",
+      "decision": "Can note page differs from standard in internal matrix; never import countdown, price or code into FV presell",
+      "status": "withhold"
+    },
+    {
+      "id": "Z12-P02",
+      "claim": "Promotional bundle and seller guarantee apply to FV referrals",
+      "kind": "merchant_contract",
+      "source": "zen12_promo",
+      "decision": "Not authenticated for Final Vestige SKU/checkout; no guarantee/price claim",
+      "status": "withhold"
+    },
+    {
+      "id": "Z12-A01",
+      "claim": "Named FV Inspire3 account accepted",
+      "kind": "affiliate_permission",
+      "source": null,
+      "decision": "Aug 24 pending notice is not acceptance; require affirmative named proof",
+      "status": "unverified_hold"
+    },
+    {
+      "id": "Z12-A02",
+      "claim": "Website, video/social and email promotional channels allowed",
+      "kind": "affiliate_permission",
+      "source": null,
+      "decision": "Require specific written partner channel terms; email is separate permission",
+      "status": "unverified_hold"
+    },
+    {
+      "id": "Z12-A03",
+      "claim": "Current authorized tracking URL and exact SKU issued",
+      "kind": "affiliate_permission",
+      "source": null,
+      "decision": "No link may be generated/guessed/published",
+      "status": "unverified_hold"
+    },
+    {
+      "id": "Z12-A04",
+      "claim": "Commission rate/payout/refund settlement confirmed",
+      "kind": "affiliate_financial",
+      "source": null,
+      "decision": "No commission or net revenue inferred from outbound clicks",
+      "status": "unverified_hold"
+    },
+    {
+      "id": "Z12-E01",
+      "claim": "2023 review of fourteen binaural EEG studies reports inconsistent outcomes",
+      "kind": "independent_science",
+      "source": "binaural_review",
+      "decision": "May report review methodology/results with heterogeneity and scope",
+      "status": "allowed_qualified"
+    },
+    {
+      "id": "Z12-E02",
+      "claim": "2023 review establishes clinical benefit for Zen12 specifically",
+      "kind": "invalid_inference",
+      "source": "binaural_review",
+      "decision": "Not a Zen12 trial; prohibited",
+      "status": "withhold"
+    },
+    {
+      "id": "MIND-I01",
+      "claim": "Pendulum movement can be influenced by feedback, attention and expectations",
+      "kind": "independent_science",
+      "source": "pendulum_1977",
+      "decision": "May describe experimental findings; no products or supernatural claim follow",
+      "status": "allowed_qualified"
+    },
+    {
+      "id": "MIND-I02",
+      "claim": "1976 experiment included 60 college students",
+      "kind": "independent_science",
+      "source": "pendulum_1976",
+      "decision": "May report sample and limitations",
+      "status": "allowed_qualified"
+    },
+    {
+      "id": "MIND-I03",
+      "claim": "Puységur archive independently proves animal magnetism cures",
+      "kind": "unsupported_history",
+      "source": "puys_archive",
+      "decision": "False inference from notarization/testimony; prohibit",
+      "status": "withhold"
+    },
+    {
+      "id": "MIND-F01",
+      "claim": "Existing Focus Fieldbook is an ungated free paid product",
+      "kind": "contradiction",
+      "source": "focus",
+      "decision": "Existing 52-page fieldbook is free with established email opt-in; not a checkout SKU",
+      "status": "withhold"
+    },
+    {
+      "id": "FTC-D01",
+      "claim": "An affiliate disclosure only on generic site disclosure page is sufficient",
+      "kind": "compliance_misstatement",
+      "source": "ftc_endorsement",
+      "decision": "Use conspicuous near-link disclosure; no standalone generic-page-only reliance",
+      "status": "withhold"
+    },
+    {
+      "id": "BIZ-R01",
+      "claim": "Affiliate outbound click is a confirmed sale",
+      "kind": "measurement_misstatement",
+      "source": null,
+      "decision": "Clicks are diagnostic and never equal paid settlements",
+      "status": "withhold"
+    },
+    {
+      "id": "BIZ-R02",
+      "claim": "No authenticated FV-owned payable Mind SKU was identified in this audit",
+      "kind": "business_status",
+      "source": null,
+      "decision": "Report as not authenticated, not proof that none exists",
+      "status": "allowed_qualified"
+    }
+  ],
+  "commercial_release_gates": [
+    {
+      "gate": "named_FV_affiliate_acceptance",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "eligible_product_and_sku",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "website_channel_permission",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "social_channel_permission",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "email_channel_permission_if_used",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "approved_creative_rights",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "no_claims_without_substantiation",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "authorized_tracking_link",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "final_checkout_product_identity",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "current_price_currency_taxes",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "refund_eligibility_and_method",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "affiliate_attribution_window",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "commission_settlement_definition",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "commission_refunds_chargebacks",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "near_CTA_disclosure",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "founder_release_approval",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "precise_video_source_and_rights",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "video_42s_caption_transcript_playback",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "browser_360_390_768_1440_1920",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "keyboard_focus_no_JS_reduced_motion",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "WP_sanitization_and_CSP",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "Jetpack_single_list_preserved",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "no_duplicate_analytics_scripts",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "grok_actual_published_asset_ids",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "qualified_human_session_denominator",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "settled_payout_receipts",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "net_refund_fee_reconciliation",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "gate": "7_day_and_30_day_cohort_reconciliation",
+      "passed": false,
+      "proof": null
+    }
+  ],
+  "partner_account_evidence": {
+    "message_date": "2026-08-24",
+    "notice": "Your affiliate account is pending",
+    "status": "application_pending_only",
+    "accepted_partner_specific_email_found": false,
+    "approved_link": null
+  },
+  "owned_product_fallback": {
+    "sku": null,
+    "price": null,
+    "license": null,
+    "checkout": null,
+    "delivery": null,
+    "returns": null,
+    "payable_status": "not_authenticated",
+    "note": "Do not re-label free Focus Fieldbook as a paid product."
+  },
+  "conversion_definition": {
+    "event1": "qualified_human_landing",
+    "event2": "relevant_first_party_cta",
+    "event3": "provider_confirmed_lead_optional",
+    "event4": "independently_reported_paid_order_or_paid_affiliate_conversion",
+    "event5": "settlement_after_refunds_fees",
+    "key_metric": "1000*(realized_net_revenue/qualified_human_sessions)",
+    "missing_data": "undefined_not_zero",
+    "windows_days": [
+      7,
+      30
+    ]
+  }
+}
