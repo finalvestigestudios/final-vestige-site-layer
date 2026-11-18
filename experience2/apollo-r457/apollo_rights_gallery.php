@@ -36,7 +36,7 @@ function fv457_render(): string {
  $out.='<p class="fv457__lede">These are <strong>source index cards, not reproductions</strong>. Three records appear in the Atlas chronology. S67-19766 is labelled not shown in that Atlas but appears on the published homepage. The other records have not been independently confirmed as present or absent on the homepage. Page placement is not image-use permission, and no marketing or merchandise clearance is implied.</p>';
  $out.='<p class="fv457__rights"><strong>Rights boundary:</strong> NASA imagery is generally available for factual editorial use, subject to agency guidelines and potential third-party and publicity rights. No photograph, logo or astronaut likeness is embedded or cleared for merchandise, marketing or a paid educator product. NASA does not endorse this work.</p>';
  $out.='<p class="fv457__source-hold"><strong>Source acceptance HOLD:</strong> NASA Images catalogue URL KSC-20170124-PH_KLS01_0129 is not independently verified; the NASA article for S67-19766 is confirmed as a crew portrait, but its exact archive ID mapping remains under editorial review. These two links are research leads, not accepted provenance or commercial permissions.</p>';
- $out.='<p class="fv457__print-note">Printed source-custody copy: all six records and their NASA source URLs appear, regardless of any on-screen filter. Catalogue and identifier uncertainties remain unresolved; the printed copy is not commercial media clearance.</p>';
+ $out.='<p class="fv457__print-note">Printed source-custody copy: all six records retain clickable NASA source references in browser PDF exports, regardless of any on-screen filter. Catalogue and identifier uncertainties remain unresolved; the printed copy is not commercial media clearance.</p>';
  $out.='<div data-fv457-controls class="fv457__controls" hidden role="group" aria-label="Filter archive image records"><button type="button" data-fv457-choice="all" aria-pressed="true">All six</button><button type="button" data-fv457-choice="shown" aria-pressed="false">Atlas chronology (3)</button><button type="button" data-fv457-choice="homepage" aria-pressed="false">Confirmed homepage (1)</button><button type="button" data-fv457-choice="withheld" aria-pressed="false">Not in Atlas (3)</button></div>';
  $out.='<p data-fv457-status class="fv457__status" aria-live="polite">All six records remain available without JavaScript.</p><ol class="fv457__grid" aria-label="Archival catalogue records">';
  foreach($records as $index=>$r){
@@ -47,7 +47,8 @@ function fv457_render(): string {
   $out.='<p class="fv457__surface"><strong>Published-page cross-check:</strong> '.(($r['homepage_confirmed']??false)?'Confirmed on the homepage 18 November 2026; not in the Atlas chronology.':'Homepage presence or absence not independently established.').'</p>';$out.='<p class="fv457__limitation"><strong>Evidence limit:</strong> '.fv457_h($r['boundary']).'</p>';
   $hold=($r['id']==='KSC-20170124-PH_KLS01_0129')?' — CATALOGUE LINK UNVERIFIED':(($r['id']==='S67-19766')?' — ID MAPPING UNVERIFIED':'');
  $out.='<details><summary>Open source custody and usage review</summary><p>'.fv457_h($r['source_check']).'</p><p>Rights: source link does not grant commercial reuse or NASA endorsement.</p><p><a href="'.fv457_h($r['source_url']).'" rel="noopener noreferrer">NASA record for '.fv457_h($r['id']).fv457_h($hold).'</a></p></details>';
-  $out.='<p class="fv457__print-custody" aria-hidden="true"><strong>Printable source reference:</strong> '.fv457_h($r['source_url']).' · '.fv457_h($r['source_check']).' · Image-use permission not established.</p>';
+  // Print/PDF link must retain URL annotation and tagged-document semantics; CSS hides this duplicate on screen.
+  $out.='<p class="fv457__print-custody"><strong>Printable NASA source:</strong> <a href="'.fv457_h($r['source_url']).'" rel="noopener noreferrer">'.fv457_h($r['source_url']).'</a> · '.fv457_h($r['source_check']).' · Image-use permission not established.</p>';
   $out.='</li>';
  }
  $out.='</ol><p class="fv457__note">This is an editorial source catalogue, not a geographic map: no fabricated coordinates or source connections. Atlas entries and the homepage S67-19766 presentation were inspected on 18 November 2026. Homepage absence for any other record was NOT established. Reverify both pages before acceptance.</p>';
@@ -56,7 +57,7 @@ function fv457_render(): string {
  $css=__DIR__.'/assets/gallery.css';$js=__DIR__.'/assets/gallery.js';
  if(!is_file($css)||!is_file($js))return fv457_fallback();
  $style=file_get_contents($css);$script=file_get_contents($js);if($style===false||$script===false)return fv457_fallback();
- if(!hash_equals('68405e2d0a1c1cae2522cb103ce25b23c7fa801b95ad41d4458b373627bb75cd',hash('sha256',$style))||!hash_equals('9bbebeac776a33d1bf51dc9b40dbc5c58fdb7d220a00d1fc534ccac9db466bed',hash('sha256',$script)))return fv457_fallback();
+ if(!hash_equals('d5cb51bb84ff365d6cfcdf05df0bb8c9ab7600c846a7445c1976caf9f89144e1',hash('sha256',$style))||!hash_equals('9bbebeac776a33d1bf51dc9b40dbc5c58fdb7d220a00d1fc534ccac9db466bed',hash('sha256',$script)))return fv457_fallback();
  return '<style>'. $style .'</style>'.$out.'<script>'.$script.'</script>';
 }
 if(function_exists('add_action'))add_action('init',static function():void{
