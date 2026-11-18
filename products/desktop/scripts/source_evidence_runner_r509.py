@@ -21,7 +21,7 @@ ORIGINAL_COUNT = 414
 TOTAL_COUNT = 416
 TEST_COMMAND = re.compile(
     r"python (?:-OO )?(?:-B )?-W error -m unittest discover -s "
-    r"products/desktop/tests -p (test_[a-z0-9_]+\\.py)"
+    r"products/desktop/tests -p (test_[a-z0-9_]+\.py)"
 )
 SCRIPT_COMMANDS = frozenset({
     "python -W error products/desktop/scripts/source_smoke_gate.py",
@@ -38,14 +38,14 @@ class EvidenceRejected(ValueError):
 def git_blob_sha(raw: bytes) -> str:
     if type(raw) is not bytes:
         raise EvidenceRejected("Invalid manifest bytes")
-    return hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + b"\\0" + raw).hexdigest()
+    return hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + b"\0" + raw).hexdigest()
 
 
 def load_commands(raw: bytes, root: Path = ROOT, *,
                   expected_sha: str = MANIFEST_GIT_SHA1,
                   expected_count: int = TOTAL_COUNT) -> tuple[tuple[str, ...], ...]:
     if (type(raw) is not bytes or not raw or len(raw) > 65536 or
-            b"\\0" in raw or b"\\r" in raw or b"\\t" in raw or not raw.endswith(b"\\n")):
+            b"\0" in raw or b"\r" in raw or b"\t" in raw or not raw.endswith(b"\n")):
         raise EvidenceRejected("Unsafe source evidence manifest")
     if git_blob_sha(raw) != expected_sha:
         raise EvidenceRejected("Source command inventory changed")
