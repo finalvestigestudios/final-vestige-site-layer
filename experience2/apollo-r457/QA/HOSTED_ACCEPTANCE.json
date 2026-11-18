@@ -1,0 +1,9 @@
+{
+  "status": "HOLD_NOT_RUN",
+  "navigation": "HOLD_NOT_RUN",
+  "axe_core": "HOLD_NOT_RUN",
+  "navigated_lcp_ms": "HOLD_NOT_RUN",
+  "navigated_cls": "HOLD_NOT_RUN",
+  "checks": {},
+  "blocker": "Missing clean HTTPS URL for exact founder-approved staging host"
+}
