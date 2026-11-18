@@ -310,15 +310,19 @@ def review_flags(a: dict[str, Any], b: dict[str, Any], status: str,
         if (a["amt"] != 0 and b["amt"] != 0
                 and (a["amt"] < 0) != (b["amt"] < 0)):
             flags.append("opposing_signed_amounts_review")
-    # A clean result must not be based on fabricated matching keys that do
-    # not correspond to the two raw source labels. Keep existing explicit
-    # review flags for ambiguous lossy collisions; never silently certify a
-    # forged direct-call key/label pairing as a clean candidate. The same
-    # bounded normalizer is used by the CSV importer.
-    if not flags and (
-            normalize_key(a["vendor"]) != a["v"]
-            or normalize_key(b["vendor"]) != b["v"]
-            or normalize_key(a["invoice_number"]) != a["inv"]
-            or normalize_key(b["invoice_number"]) != b["inv"]):
-        raise ValueError("Invoice review identity labels contradict normalized evidence")
+    # Bind raw source labels to normalized keys for BOTH clean and flagged
+    # results. R527 refused a clean forged result, but a collision or amount
+    # variance could mask contradictory source keys. Do not erase existing
+    # human-review warnings: append an independent, non-approval warning for
+    # the contradictory evidence. All raw labels are already native/bounded.
+    source_key_mismatch = (
+        normalize_key(a["vendor"]) != a["v"]
+        or normalize_key(b["vendor"]) != b["v"]
+        or normalize_key(a["invoice_number"]) != a["inv"]
+        or normalize_key(b["invoice_number"]) != b["inv"]
+    )
+    if source_key_mismatch:
+        if not flags:
+            raise ValueError("Invoice review identity labels contradict normalized evidence")
+        flags.append("source_identity_key_mismatch_review")
     return ";".join(flags)
