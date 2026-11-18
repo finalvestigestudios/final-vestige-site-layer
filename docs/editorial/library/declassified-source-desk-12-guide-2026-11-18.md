@@ -5,7 +5,7 @@
 
 ![Original four-stage source evaluation diagram. Move from official gateway to individual document, reconciliation and a cited, qualified claim.](./research-sources-declassified-source-path-2026-11-18.svg)
 
-*Illustration: Final Vestige Studios, November 18, 2026. Original vector diagram, CC BY 4.0 for this editorial asset only; no historical reconstruction, external photograph or copyrighted archival item is reproduced. The figure is a method, not an evidence object.*
+*Illustration: Final Vestige Studios, November 18, 2026. Original artwork prepared for Final Vestige Studios; reuse permission remains with the studio; no historical reconstruction, external photograph or copyrighted archival item is reproduced. The figure is a method, not an evidence object.*
 
 ### The problem
 
@@ -197,7 +197,7 @@ Only outgoing text **links** were reviewed and preserved. No governmental seal, 
 
 All 12 official entry-page URLs produced readable institutional pages in this pass. That observation is **not** a promise of permanent link health, item-level public accessibility, current collection completeness, image-reuse permission or an actual WordPress browser QA pass. Item pages and PDF links behind those entries remain outside this limited audit.
 
-**Crosslinks:** [Archive Trail](https://finalvestige.com/free-resources/the-archive-trail/) for the claim-to-source method; [Research Sources](https://finalvestige.com/free-resources/research-sources/) for all institutional destinations; [Editorial Standards](https://finalvestige.com/editorial-standards/) for disputed accounts, sourcing, corrections and reconstructions; [The Public Record](https://finalvestige.com/accountability/) for a live example of official-record accountability.
+**Crosslinks:** [Archive Trail](https://finalvestige.com/the-archive-trail/) for the claim-to-source method; [Research Sources](https://finalvestige.com/free-resources/research-sources/) for all institutional destinations; [Editorial Standards](https://finalvestige.com/editorial-standards/) for disputed accounts, sourcing, corrections and reconstructions; [The Public Record](https://finalvestige.com/accountability/) for a live example of official-record accountability.
 
 ### Release and change ledger
 
