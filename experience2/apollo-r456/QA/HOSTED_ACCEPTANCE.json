@@ -1,0 +1,9 @@
+{
+  "axe": "HOLD_NOT_RUN",
+  "blocker": "Missing exact authorized staging host and clean HTTPS URL",
+  "browser": "Chromium",
+  "cls": "HOLD_NOT_RUN",
+  "lcp_ms": "HOLD_NOT_RUN",
+  "navigation": "HOLD_NOT_RUN",
+  "status": "HOLD_NOT_RUN"
+}
