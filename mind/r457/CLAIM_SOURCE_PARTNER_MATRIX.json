@@ -1,0 +1,477 @@
+{
+  "cycle": "R457 2026-11-17 PT",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "source_as_of": "2026-11-17",
+  "product": "Zen12 seller-described audio course",
+  "partner_acceptance_verified": false,
+  "authorized_tracking_url": null,
+  "authorized_channels": [],
+  "settled_orders_verified": null,
+  "qualified_human_sessions_verified": null,
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://inspire3.com/",
+      "role": "seller_portfolio"
+    },
+    {
+      "id": "S02",
+      "url": "https://zen12.com/about",
+      "role": "seller_course_overview"
+    },
+    {
+      "id": "S03",
+      "url": "https://zen12.com/",
+      "role": "seller_regular_catalog"
+    },
+    {
+      "id": "S04",
+      "url": "https://zen12.com/secret/",
+      "role": "seller_distinct_promotion"
+    },
+    {
+      "id": "S05",
+      "url": "https://affiliates.inspire3.com/",
+      "role": "generic_partner_program_only"
+    },
+    {
+      "id": "S06",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "role": "seller_individual_product"
+    },
+    {
+      "id": "S07",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "role": "seller_individual_product"
+    },
+    {
+      "id": "S08",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "role": "regulatory_disclosure_guidance"
+    },
+    {
+      "id": "S09",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "role": "regulatory_substantiation_guidance"
+    },
+    {
+      "id": "S10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "role": "choice_blindness_primary"
+    },
+    {
+      "id": "S11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "role": "choice_blindness_tasting_primary"
+    },
+    {
+      "id": "S12",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4033137/",
+      "role": "choice_blindness_memory_test"
+    },
+    {
+      "id": "S13",
+      "url": "https://finalvestige.com/focus/",
+      "role": "existing_free_funnel"
+    },
+    {
+      "id": "S14",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "role": "live_historical_source"
+    },
+    {
+      "id": "S15",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "role": "live_investigation"
+    },
+    {
+      "id": "S16",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "role": "live_historical_article"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12 sessions are twelve minutes",
+      "class": "seller_feature",
+      "sources": [
+        "S02",
+        "S03"
+      ],
+      "treatment": "attribute_to_seller;not_efficacy"
+    },
+    {
+      "id": "C02",
+      "claim": "Zen12 has twelve levels with four versions per level",
+      "class": "seller_feature",
+      "sources": [
+        "S02"
+      ],
+      "treatment": "attribute_to_seller"
+    },
+    {
+      "id": "C03",
+      "claim": "Ordinary catalog offers first six, all twelve, final six levels separately",
+      "class": "seller_feature",
+      "sources": [
+        "S03"
+      ],
+      "treatment": "precise_sku_required"
+    },
+    {
+      "id": "C04",
+      "claim": "Separate /secret/ promotional full-course page exists",
+      "class": "seller_feature",
+      "sources": [
+        "S04"
+      ],
+      "treatment": "do_not_merge_offers"
+    },
+    {
+      "id": "C05",
+      "claim": "Marketing says twelve minutes equals one hour of meditation",
+      "class": "unsupported_product_efficacy",
+      "sources": [
+        "S01",
+        "S03"
+      ],
+      "treatment": "exclude_as_result"
+    },
+    {
+      "id": "C06",
+      "claim": "Brainwave entrainment in this named product guarantees cognitive benefit",
+      "class": "unsupported_product_efficacy",
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "treatment": "exclude"
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 cures anxiety, depression or sleep conditions",
+      "class": "unsupported_health_claim",
+      "sources": [
+        "S09"
+      ],
+      "treatment": "exclude"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 yields wealth or financial breakthroughs",
+      "class": "unsupported_financial_claim",
+      "sources": [
+        "S09"
+      ],
+      "treatment": "exclude"
+    },
+    {
+      "id": "C09",
+      "claim": "Site lists promotional checkout prices or coupons",
+      "class": "time_sensitive_seller_copy",
+      "sources": [
+        "S03",
+        "S04"
+      ],
+      "treatment": "do_not_represent_as_authorized_referred_checkout"
+    },
+    {
+      "id": "C10",
+      "claim": "Seller advertises money-back guarantees",
+      "class": "seller_policy",
+      "sources": [
+        "S03",
+        "S04"
+      ],
+      "treatment": "verify_actual_checkout_written_terms_before_activation"
+    },
+    {
+      "id": "C11",
+      "claim": "Public Inspire3 affiliate program exists",
+      "class": "public_program_only",
+      "sources": [
+        "S05"
+      ],
+      "treatment": "does_not_prove_Final_Vestige_acceptance"
+    },
+    {
+      "id": "C12",
+      "claim": "Final Vestige approved affiliate partner with issued earning URL",
+      "class": "unverified_permission",
+      "sources": [
+        "S05"
+      ],
+      "treatment": "hard_hold"
+    },
+    {
+      "id": "C13",
+      "claim": "Final Vestige may promote Zen12 through web, social and email",
+      "class": "unverified_permission",
+      "sources": [
+        "S05"
+      ],
+      "treatment": "channel_by_channel_approval_required"
+    },
+    {
+      "id": "C14",
+      "claim": "Final Vestige has a payable rights-cleared Mind owned product",
+      "class": "unverified_commerce",
+      "sources": [
+        "S13"
+      ],
+      "treatment": "do_not_activate_own_product"
+    },
+    {
+      "id": "C15",
+      "claim": "Fieldbook is a 52-page free PDF tied to existing Dispatch route",
+      "class": "FV_live_asset",
+      "sources": [
+        "S13"
+      ],
+      "treatment": "existing_only_no_duplicate_form"
+    },
+    {
+      "id": "C16",
+      "claim": "In 2005 researchers switched selected face outcomes",
+      "class": "independent_experiment",
+      "sources": [
+        "S10"
+      ],
+      "treatment": "scope_to_deceptive_task"
+    },
+    {
+      "id": "C17",
+      "claim": "In 2010 no more than a third of manipulated jam/tea trials were detected",
+      "class": "independent_experiment",
+      "sources": [
+        "S11"
+      ],
+      "treatment": "trial_denominator_not_population_rate"
+    },
+    {
+      "id": "C18",
+      "claim": "2014 study found 41 percent non-detection, 3 percent later adoption",
+      "class": "independent_experiment",
+      "sources": [
+        "S12"
+      ],
+      "treatment": "distinct_measures_no_direct_equivalence"
+    },
+    {
+      "id": "C19",
+      "claim": "Choice blindness proves sound/meditation improves choice accuracy",
+      "class": "invalid_inference",
+      "sources": [
+        "S10",
+        "S09"
+      ],
+      "treatment": "exclude"
+    },
+    {
+      "id": "C20",
+      "claim": "Hypnosis Live Total Focus is seller-described 33 minute, 47 MB standalone audio",
+      "class": "seller_feature",
+      "sources": [
+        "S06"
+      ],
+      "treatment": "not_Zen12_package_or_therapy"
+    },
+    {
+      "id": "C21",
+      "claim": "Brainwave Shots Focus Shot seller describes 15 and 30-minute files",
+      "class": "seller_feature",
+      "sources": [
+        "S07"
+      ],
+      "treatment": "not_Zen12_and_no_focus_guarantee"
+    },
+    {
+      "id": "C22",
+      "claim": "Consumer-facing affiliate referral must have adjacent material connection disclosure",
+      "class": "FTC_rule",
+      "sources": [
+        "S08"
+      ],
+      "treatment": "plain_english_next_to_active_link"
+    },
+    {
+      "id": "C23",
+      "claim": "Health benefit claims require appropriate product-relevant scientific evidence",
+      "class": "FTC_rule",
+      "sources": [
+        "S09"
+      ],
+      "treatment": "avoid_unsupported"
+    },
+    {
+      "id": "C24",
+      "claim": "Affiliate click implies confirmed sale or commission",
+      "class": "measurement_error",
+      "sources": [
+        "S05"
+      ],
+      "treatment": "never_count_as_sale"
+    },
+    {
+      "id": "C25",
+      "claim": "No commission settlement or qualified-human denominator authenticated",
+      "class": "status_current_run",
+      "sources": [],
+      "treatment": "net_per_1000_unknown_not_zero"
+    }
+  ],
+  "release_gates": [
+    {
+      "name": "written_named_brand_approval",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "permitted_website_channel",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "permitted_social_channel",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "permitted_email_channel_if_used",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "approved_exact_Zen12_SKU",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "issued_publisher_earning_url",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "publisher_specific_tracking_terms",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "authorized_creative_and_copy_terms",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "precise_checkout_product_match",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "precise_checkout_final_price_currency_tax",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "checkout_upsell_clarity",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "referral_refund_terms",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "commission_payout_terms",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "merchant_settlement_reporting",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "independent_adequate_efficacy_substantiation_or_no_claim",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "adjacent_plain_english_affiliate_disclosure",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "independent_editorial_separation",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "native_disabled_CTA_until_approval",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "no_second_email_form",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "existing_Jetpack_delivery_QA",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "privacy_consent_event_contract",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "no_duplicate_tracker",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "Grok_authentic_asset_ids",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "first_party_qualified_session_attribution",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "real_browser_WCAG_2_2_AA_QA",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "real_browser_360_390_768_1440_1920_QA",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "noJS_keyboard_reduced_motion",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "optional_playable_video_with_captions_transcript",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "merchant_checkout_refund_QA",
+      "status": "HOLD",
+      "evidence": null
+    },
+    {
+      "name": "founder_release_approval",
+      "status": "HOLD",
+      "evidence": null
+    }
+  ]
+}
