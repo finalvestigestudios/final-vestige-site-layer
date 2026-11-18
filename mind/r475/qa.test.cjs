@@ -1,0 +1,36 @@
+/* Mind R475 source safety regressions. Run from repo root: node --test mind/r475/qa.test.cjs
+   Native execution status is separate from connector-side in-memory assertions. */
+'use strict';
+const { test }=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const ROOT=__dirname;
+const read=n=>fs.readFileSync(path.join(ROOT,n),'utf8');
+const a=read('ZEN12_A_TEXT_BUYER_GUIDE.html');
+const b=read('ZEN12_B_OPTIONAL_FILM_BUYER_GUIDE.html');
+const hub=read('MIND_HUB_WP_SOURCE_ONLY.html');
+const article=read('THE_GORILLA_WAS_VISIBLE.md');
+const vtt=read('ZEN12_42S_CAPTIONS.vtt');
+const matrix=JSON.parse(read('CLAIM_SOURCE_PERMISSION_MATRIX.json'));
+const docket=read('OFFER_FUNNEL_AND_NET_REVENUE_ACCEPTANCE.md');
+test('headings and skip to content accessible',()=>{for(const x of [a,b,hub]){assert.match(x,/<main id="main"/);assert.match(x,/class="skip"/);assert.match(x,/<h1>/);assert.match(x,/lang="en"/);}});
+test('mobile viewport and reduced motion',()=>{for(const x of [a,b,hub]){assert.match(x,/name="viewport"/);assert.match(x,/prefers-reduced-motion/);}});
+test('no scripts, trackers, iframes or signup duplication',()=>{for(const x of [a,b,hub]){assert.doesNotMatch(x,/<script\b|<iframe\b|<form\b|<input\b|gtag\(|dataLayer|pixel\.facebook/i);}});
+test('no active earning link or redirect',()=>{for(const x of [a,b,hub]){assert.doesNotMatch(x,/refersion\.com\/track|clickbank|hop\.clickbank|affiliate_id=|aff_id=|<meta[^>]+http-equiv="refresh"/i);}});
+test('commercial action genuinely disabled',()=>{for(const x of [a,b])assert.match(x,/<button[^>]+disabled aria-disabled="true"/);});
+test('commission disclosure appears before disabled action and adjacent',()=>{for(const x of [a,b]){let d=x.indexOf('may earn a commission');let btn=x.indexOf('class="disabled"');assert.ok(d>=0&&btn>d&&btn-d<450);}});
+test('no unverified price, coupon or scarcity',()=>{for(const x of [a,b]){assert.doesNotMatch(x,/\$\d+|coupon code|only \d+ spots|ends in \d+ minutes|countdown/i);}});
+test('independent seller attribution and caveat',()=>{for(const x of [a,b]){assert.match(x,/seller assertions/);assert.match(x,/did not test Zen12/);assert.match(x,/not a validated measure/);}});
+test('readable free path uses existing fieldbook only',()=>{for(const x of [a,b,hub])assert.match(x,/https:\/\/finalvestige\.com\/focus\//);});
+test('film only in B, absent in A',()=>{assert.doesNotMatch(a,/Optional original short film/);assert.match(b,/Optional original short film/);assert.match(b,/not yet playable/);assert.match(b,/transcript/);});
+test('same substantive buyer guidance',()=>{let from=x=>x.slice(x.indexOf('<section aria-labelledby="questions">'),x.indexOf('</section>',x.indexOf('<section aria-labelledby="questions">')));assert.equal(from(a),from(b));});
+test('no autoplay or fake video player',()=>{assert.doesNotMatch(b,/<video\\b|<audio\\b/i);});
+test('exact film duration and six WebVTT cues',()=>{assert.match(vtt,/WEBVTT/);assert.equal((vtt.match(/-->/g)||[]).length,6);assert.match(vtt,/00:00:42\.000/);});
+test('historical claims and DOI/source links in article',()=>{for(const s of ['10.1068/p281059','10.1068/i0386','10.1177/0956797613479386','Puységur','twelve-minute','does not automatically show'])assert.ok(article.includes(s),s);});
+test('no first person user experience or guaranteed product outcomes',()=>{for(const x of [a,b]){assert.doesNotMatch(x,/I tried Zen12|we tested Zen12|Zen12 cured|Zen12 guarantees/i);}});
+test('matrix commercial gates all closed',()=>{assert.ok(Object.values(matrix.activationGates).every(v=>v===false));});
+test('matrix official evidence minimum',()=>{assert.ok(matrix.sourceTrail.length>=12);assert.ok(matrix.decisions.length>=15);});
+test('outbound is not paid sale',()=>{assert.match(docket,/outbound click with a commission/);assert.match(docket,/NOT COMPUTABLE/);});
+test('hub preserves four streams and live stable routes',()=>{for(const s of ['Perception & attention','History of suggestion','Practice & reflection','Tools under review','/2026/11/02/mesmerism/','puysegurs-animal-magnetism-files/'])assert.ok(hub.includes(s));});
+test('robots noindex for source-only HTML',()=>{for(const x of [a,b,hub])assert.match(x,/noindex,nofollow/);});
