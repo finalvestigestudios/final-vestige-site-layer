@@ -25,3 +25,12 @@
 @media(max-width:760px){.fv457__rail{grid-template-columns:1fr}.fv457__moment{padding:16px}}
 @media(forced-colors:active){.fv457__moment,.fv457__chrono-question{border-color:CanvasText}}
 @media print{.fv457__chronology,.fv457__moment,.fv457__chrono-question{background:#fff!important;color:#000!important}.fv457__moment{border:1px solid #000;break-inside:avoid}.fv457__step{color:#000!important}}
+
+/* R464: PDF-export chronology custody is visible in print, invisible on screen.
+   A collapsed native details element cannot be relied upon for printed source URLs. */
+.fv457__chronology-print{display:none}
+@media print{
+ .fv457__chronology-print{display:block!important;color:#000!important;background:#fff!important;overflow-wrap:anywhere;word-break:break-word;font-size:10pt;border-top:1px solid #555;padding-top:.5em}
+ .fv457__chronology-print a{color:#000!important;text-decoration:underline;overflow-wrap:anywhere;word-break:break-word}
+ .fv457__chronology .fv457__moment{break-inside:avoid-page}
+}
