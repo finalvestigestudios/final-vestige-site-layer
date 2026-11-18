@@ -1,0 +1,55 @@
+{
+  "version": "r445",
+  "as_of": "2026-11-18",
+  "source_commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "canonical_manifest_unchanged": true,
+  "issue": 6,
+  "original_subject": "What did seven days of attention reveal?",
+  "candidate_subject": "Eight cups. One useful kind of doubt.",
+  "candidate_preheader": "Fisher’s 1935 tea test and a better way to read your seven-day focus notes.",
+  "editorial_type": "editorial",
+  "offer_slot": false,
+  "principal_cta": "https://finalvestige.com/focus/",
+  "unadopted": true,
+  "claims": [
+    {
+      "id": "fisher-design",
+      "fact": "In 1935 Fisher described a proposed eight-cup randomized classification test, four cups each preparation.",
+      "status": "supported_as_proposed_example",
+      "url": "https://www.math.uh.edu/~josic/old_website/myweb/teaching/2311H/reading/fisher_article_for_lady_tasting_tea.pdf"
+    },
+    {
+      "id": "seventy",
+      "fact": "There are C(8,4)=70 allocations. Probability of perfect classification under the specified guessing model is 1/70.",
+      "status": "bounded_by_design_assumptions",
+      "url": "https://www.stat.berkeley.edu/~stark/Teach/S240/Notes/ch3.htm"
+    },
+    {
+      "id": "historical-outcome",
+      "fact": "Retrospective accounts disagree about the purported real tea-tasting outcome.",
+      "status": "historically_disputed_do_not_claim_actual_result",
+      "url": "https://academic.oup.com/jrssig/article/18/5/34/7038291"
+    },
+    {
+      "id": "free-fieldbook",
+      "fact": "Current WordPress welcome identifies a 52-page free Fieldbook at /focus/; actual welcome receipt is not verified.",
+      "status": "provider_config_not_received_delivery",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "practice-causality",
+      "fact": "A seven-day unsystematic personal log cannot by itself establish an audio product's efficacy.",
+      "status": "methodological_boundary_no_medical_claim",
+      "url": "https://www.stat.berkeley.edu/~stark/Teach/S240/Notes/ch3.htm"
+    }
+  ],
+  "hard_hold": {
+    "publisher_postal": false,
+    "verified_unsubscribe": false,
+    "native_preview": false,
+    "actual_welcome_delivery": false,
+    "founder_final_approval": false
+  },
+  "seller_email_permission": "NOT_VERIFIED",
+  "paid_orders": "NOT_VERIFIED"
+}
