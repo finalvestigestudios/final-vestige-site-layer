@@ -15,13 +15,13 @@
 
 ## Executed native QA
 
-Local environment: Node **22.16.0**. Native execution:
+Local environment: Node **22.16.0**. Native execution (after the final settlement-maturity/public-copy regression hardening):
 ```
 node dispatch/r439/consent_promise_gate.test.cjs
-26/26 native Node tests passed; no send, no mutations
+28/28 native Node tests passed; no send, no mutations
 ```
-- Test file is byte-identical to GitHub blob `c35ed2eb06fdefb73136e0f7aca946ad3a6796d3`.
-- Evaluator is byte-identical to GitHub blob `dbdb04536227bb4161fb83b1a589cc9695253488`.
+- Test file is byte-identical to GitHub blob `132c6d07caf1830ec3050f06ecc3a7f793411d01`.
+- Evaluator is byte-identical to GitHub blob `58e5836590af4bd80eb85dc5c2896ae41cf02297`.
 - Local `git hash-object` for both files matched those GitHub blob SHAs after correcting backtick interpolation and a legitimate `merchant/email/zen12` evidence-reference false positive.
 - The original master PR #175's six **Python test conditions** and one extra exact-offer identity guard passed **7/7 using independently fetched GitHub source in V8**. This is **not** a fresh native Python execution. R434 previously documented native Python 6/6 on the same unchanged master commit.
 
@@ -35,7 +35,7 @@ Issue 03/05 merchant approval: NOT VERIFIED
 net revenue per 1,000 audited humans: NOT COMPUTABLE
 editorial_reviewable=false, commercial_reviewable=false, send_authorized=false
 ```
-All 26 native cases are deterministic/synthetic, including 4:2 preservation, Hypnosis Live vs Total Focus identity mismatch, follower-count non-additivity, provider count error handling, URL/PII evidence-reference rejection, provider-scope validation, stale/unknown recipient evidence and merchant net-revenue denominators. Tests do **not** establish a legally valid mail, actual preview or customer order.
+All 28 native cases are deterministic/synthetic, including 4:2 preservation, Hypnosis Live vs Total Focus identity mismatch, follower-count non-additivity, provider count error handling, URL/PII evidence-reference rejection, provider-scope validation, stale/unknown recipient evidence and merchant net-revenue denominators. Tests do **not** establish a legally valid mail, actual preview or customer order.
 
 ## Material R439 findings (higher-value than additional draft volume)
 
