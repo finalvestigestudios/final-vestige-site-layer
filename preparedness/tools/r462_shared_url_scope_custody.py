@@ -95,13 +95,15 @@ def audit(crosswalk, source_rows, snapshot=None, expected=TOTALS):
     for group in groups:
         require(isinstance(group, dict), "malformed shared URL group")
         url = group.get("url")
-        require(isinstance(url, str) and url in dupes and url not in seen,
+        require(isinstance(url, str), "invalid review URL")
+        key = review_alias(url)
+        require(key in dupes and key not in seen,
                 "duplicated or misdirected URL review group")
-        seen.add(url)
+        seen.add(key)
         require(group.get("canonical_url") == url, "URL silently canonicalized/retargeted")
         require(group.get("review_status") == REVIEW and group.get("reviewer") is None
                 and group.get("reviewed_on") is None, "false human source approval")
-        actual_pairs = dupes[url]
+        actual_pairs = dupes[key]
         identities = group.get("identities")
         variants = group.get("variants")
         require(isinstance(identities, list) and isinstance(variants, list)
