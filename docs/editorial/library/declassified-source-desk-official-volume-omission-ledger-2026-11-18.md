@@ -29,3 +29,16 @@ One wholly original FV schematic SVG inside the Gutenberg HTML, authored 2026-11
 - WordPress draft insertion/readback and earlier-block preservation to be logged after action.
 - Actual editor-authenticated production-theme responsive (320,390,768,1440), keyboard, assistive tech, print, source/file delivery and controlled first-publish subscriber/social suppression are NOT yet verified. Do not publish or add parent index cards until gates pass.
 - No public page, Preparedness, Investigations, homepage or Grok account changes.
+
+## Completed independent WordPress readback — 2026-11-18, 10:45 Pacific
+- Confirmed published original Library #77 and Research Sources #1338 returned visitor status HTTP 200; draft canonical /free-resources/declassified-source-desk/ returned 404 signed out, expected for unpublished draft.
+- Authenticated WordPress page #2917 (modified 2026-11-18T10:45:33 local) is still **draft**, parent 77, `jetpack_seo_noindex=true`; four Gutenberg core/html blocks; total serialized page content **77,858 characters**.
+- Old blocks #0–#2 hashes unchanged: `f80728c674aef2ef307bdc8e2b094109f3fc1d68`, `61e79bcae2129d556e1f9400894f6a00441da038`, `7e97d83e67f8b6795396e99698fd0be50d809905`.
+- New block #3 hash `0665e3702fc06684ee92676c9c91645ca07b4a59`; **15,111 characters**, byte-identical to the GitHub HTML source at blob `e7a50b3deda4211f216d5b4f9e922e4cbac2097b`.
+- All page-wide IDs unique (**51**) and every internal fragment link resolved. New block has a semantic SVG title and description, **10** printable receipt fields, no external media, unsafe href protocols or JavaScript.
+- Corrected an Archive Trail cross-link to its independently verified canonical public route `https://finalvestige.com/the-archive-trail/` before final readback. Site reader says the draft is not publicly visible; no WordPress public navigation change.
+- WordPress insert and guarded replacement each returned empty `_content_warnings`; no existing Gutenberg content was modified.
+- Newsletter diagnostic at 2026-11-18 18:46 UTC: `email_new_posts_by_default=false`, but `site_can_send=true`. This default is **not a per-page suppression proof**. No newsletter settings were changed, and neither newsletter, publicize, nor page publication was triggered.
+
+## Remaining hard release conditions
+Production-theme editor-authenticated 320/390/768/1440 viewport screenshots and overflow inspection, keyboard and screen-reader QA, real print acceptance, ordinary-browser link/media delivery review and verified first-publish `_jetpack_dont_email_post_to_subs=true` plus social-publicize off. Do not treat current public-page mshots as a rendering test for protected #2917. Maintain HOLD until all gates pass.
