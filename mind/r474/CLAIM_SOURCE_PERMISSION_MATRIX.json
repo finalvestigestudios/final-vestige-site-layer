@@ -1,0 +1,222 @@
+{
+  "date": "2026-11-18",
+  "vertical": "Mind/Perception",
+  "status": "SOURCE_ONLY_HARD_HOLD",
+  "reviewed_seller_pages": [
+    "https://inspire3.com/",
+    "https://zen12.com/about",
+    "https://zen12.com/secret/",
+    "https://affiliates.inspire3.com/"
+  ],
+  "claims": [
+    {
+      "id": "DRM_FAKE_RECALL",
+      "claim": "40% and 55% critical-list false recall in specific 1995 experiments",
+      "disposition": "supported-experiment-specific",
+      "url": "https://doi.org/10.1037/0278-7393.21.4.803"
+    },
+    {
+      "id": "DRM_POPULATION",
+      "claim": "The rates apply to everyday population or autobiographical memory",
+      "disposition": "reject",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20921097/"
+    },
+    {
+      "id": "DRM_ASSOCIATES",
+      "claim": "Increasing relevant associates affects false recall",
+      "disposition": "supported-experiment-specific",
+      "url": "https://doi.org/10.1111/j.1467-9280.1997.tb00417.x"
+    },
+    {
+      "id": "DRM_UNCONSCIOUS",
+      "claim": "False recognition possible in some conditions with poor recognition of list items",
+      "disposition": "supported-experiment-specific",
+      "url": "https://doi.org/10.1111/1467-9280.00004"
+    },
+    {
+      "id": "PUY_HISTORY",
+      "claim": "Historical records document operator testimony, failures, consent concerns",
+      "disposition": "historical-document-supported",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "PUY_MECHANISM",
+      "claim": "Historical records scientifically prove magnetic healing",
+      "disposition": "reject",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "ZEN_12_LEVELS",
+      "claim": "Zen12 seller describes 12 levels and 12-minute sessions",
+      "disposition": "seller-described-not-trial",
+      "url": "https://zen12.com/about"
+    },
+    {
+      "id": "ZEN_FOUR_FORMATS",
+      "claim": "Zen12 seller describes four listening formats",
+      "disposition": "seller-described",
+      "url": "https://zen12.com/about"
+    },
+    {
+      "id": "ZEN_PROMO_48_MP3",
+      "claim": "Separate promotion describes 48 MP3s",
+      "disposition": "separate-seller-promo-only",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "ZEN_60_EQUIVALENT",
+      "claim": "12 minutes equivalent to 1 hour of meditation",
+      "disposition": "not-substantiated-exclude",
+      "url": "https://zen12.com/about"
+    },
+    {
+      "id": "ZEN_CURES_ANXIETY",
+      "claim": "Zen12 can treat anxiety or disease",
+      "disposition": "not-substantiated-exclude",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "ZEN_BRAINWAVE",
+      "claim": "Brainwave entrainment and psychological benefits assured",
+      "disposition": "not-substantiated-exclude",
+      "url": "https://doi.org/10.1371/journal.pone.0286023"
+    },
+    {
+      "id": "ZEN_OFFER_PRICE",
+      "claim": "Promotional price and timer are binding checkout terms",
+      "disposition": "not-verified-exclude",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "ZEN_REFUND",
+      "claim": "Money-back and support details apply to exact approved SKU",
+      "disposition": "not-verified-hold",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "ZEN_APPROVAL",
+      "claim": "Final Vestige has been accepted as Inspire3 partner",
+      "disposition": "unverified-hold",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "ZEN_LINK",
+      "claim": "A trackable approved affiliate URL has been issued",
+      "disposition": "unverified-hold",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "ZEN_CHANNELS",
+      "claim": "Website social and email channels are authorized",
+      "disposition": "unverified-hold",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "OWNED_PAID_SKU",
+      "claim": "FV Mind has a verified payable, licensed, delivered product",
+      "disposition": "unverified-hold",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "FTC_AFFILIATE",
+      "claim": "Plain-language earning disclosure adjacent to proposed link",
+      "disposition": "draft-only-reviewed",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "FTC_HEALTH",
+      "claim": "Medical benefit claims require adequate scientific substantiation",
+      "disposition": "policy-verified",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "CLICK_SALE",
+      "claim": "An affiliate click is a confirmed commission",
+      "disposition": "reject",
+      "url": "https://affiliates.inspire3.com/"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "gate": "named-partner-approval",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    },
+    {
+      "gate": "specific-approved-SKU",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    },
+    {
+      "gate": "exact-authorized-earning-URL",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    },
+    {
+      "gate": "approved-website-social-email-channels",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    },
+    {
+      "gate": "checkout-and-returns-verified",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    },
+    {
+      "gate": "settlement-reconciliation",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    },
+    {
+      "gate": "paid-FV-owned-SKU",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    },
+    {
+      "gate": "IP-rights-and-delivery",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    },
+    {
+      "gate": "founder-release",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    },
+    {
+      "gate": "real-browser-WCAG",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    },
+    {
+      "gate": "WordPress-sanitizer",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    },
+    {
+      "gate": "encoded-captioned-video",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    },
+    {
+      "gate": "signed-out-mobile-route",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    },
+    {
+      "gate": "existing-Jetpack-delivery",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    },
+    {
+      "gate": "grok-asset-IDs",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    },
+    {
+      "gate": "qualified-human-cohort-denominator",
+      "accepted": false,
+      "reason": "not independently established or executed"
+    }
+  ],
+  "context": "Refersion search on 2026-11-18 found Aug 24 application pending; no named publisher approval. Seller descriptions are not endorsements. Focus Fieldbook is free."
+}
