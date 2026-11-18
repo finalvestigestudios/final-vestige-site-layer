@@ -460,5 +460,104 @@ class SourceEvidenceR512(unittest.TestCase):
         self.assertEqual(first, second)
 
 
+
+
+class SourceEvidenceR513(unittest.TestCase):
+    """Synthetic provider-configuration disclosure regressions for source children."""
+
+    def assert_names_filtered(self, names):
+        values = {name: f"synthetic-r513-{i}" for i, name in enumerate(names)}
+        with patch.dict(os.environ, values):
+            child = runner._child_environment(ROOT)
+        for name in names:
+            self.assertNotIn(name, child, name)
+        for value in values.values():
+            self.assertNotIn(value, tuple(child.values()))
+
+    def test_aws_and_azure_config_paths_do_not_escape(self):
+        self.assert_names_filtered((
+            "AWS_PROFILE", "AWS_CONFIG_FILE", "AWS_SHARED_CREDENTIALS_FILE",
+            "AZURE_CONFIG_DIR", "AZURE_SUBSCRIPTION_ID",
+        ))
+
+    def test_google_cloud_config_paths_do_not_escape(self):
+        self.assert_names_filtered((
+            "GOOGLE_APPLICATION_CREDENTIALS", "GOOGLE_CLOUD_PROJECT",
+            "GCLOUD_AUTH_TOKEN", "CLOUDSDK_CONFIG",
+        ))
+
+    def test_gh_container_and_kubernetes_configuration_do_not_escape(self):
+        self.assert_names_filtered((
+            "GH_HOST", "GH_CONFIG_DIR", "DOCKER_CONFIG", "DOCKER_HOST",
+            "KUBECONFIG", "KUBE_CONFIG",
+        ))
+
+    def test_package_registry_config_and_embedded_urls_do_not_escape(self):
+        self.assert_names_filtered((
+            "NPM_CONFIG_USERCONFIG", "PIP_INDEX_URL", "PIP_CONFIG_FILE",
+            "PYPI_USERNAME", "TWINE_USERNAME", "POETRY_HTTP_BASIC_FOO_USERNAME",
+            "UV_INDEX_URL",
+        ))
+
+    def test_gpg_and_terraform_configuration_do_not_escape(self):
+        self.assert_names_filtered((
+            "GNUPGHOME", "GPG_AGENT_INFO", "TF_VAR_registry_auth",
+            "TERRAFORM_CLI_CONFIG_FILE",
+        ))
+
+    def test_case_insensitive_provider_names_are_blocked(self):
+        self.assert_names_filtered((
+            "Aws_Profile", "gH_Config_dir", "pIp_ConfIg_fIle",
+            "kuBE_config", "gnuPGhome",
+        ))
+
+    def test_sensitive_values_absent_but_host_path_preserved(self):
+        with patch.dict(os.environ, {
+            "AWS_PROFILE": "SYNTHETIC_AWS_PRIVATE",
+            "PIP_INDEX_URL": "SYNTHETIC_PIP_PRIVATE",
+            "PATH": "/usr/bin",
+        }):
+            child = runner._child_environment(ROOT)
+        self.assertNotIn("SYNTHETIC_AWS_PRIVATE", tuple(child.values()))
+        self.assertNotIn("SYNTHETIC_PIP_PRIVATE", tuple(child.values()))
+        self.assertEqual(child["PATH"], "/usr/bin")
+
+    def test_public_ci_and_fixed_interpreter_settings_survive(self):
+        with patch.dict(os.environ, {
+            "CI": "true", "LANG": "en_US.UTF-8", "GITHUB_ACTIONS": "true",
+            "PYTHONHASHSEED": "random",
+        }):
+            child = runner._child_environment(ROOT)
+        self.assertEqual(child["CI"], "true")
+        self.assertEqual(child["LANG"], "en_US.UTF-8")
+        self.assertEqual(child["GITHUB_ACTIONS"], "true")
+        self.assertEqual(child["PYTHONHASHSEED"], "0")
+        self.assertEqual(child["PYTHONDONTWRITEBYTECODE"], "1")
+        self.assertEqual(child["PYTHONPATH"], str(ROOT / "products" / "desktop"))
+
+    def test_actual_child_process_cannot_read_injected_provider_settings(self):
+        import subprocess
+        with patch.dict(os.environ, {
+            "AWS_PROFILE": "SYNTHETIC_AWS_PRIVATE",
+            "PIP_INDEX_URL": "SYNTHETIC_PIP_PRIVATE",
+        }):
+            child = runner._child_environment(ROOT)
+            result = subprocess.run([
+                sys.executable, "-B", "-c",
+                "import os,sys;sys.exit(0 if (not os.getenv('AWS_PROFILE') "
+                "and not os.getenv('PIP_INDEX_URL') "
+                "and os.getenv('PYTHONHASHSEED')=='0') else 7)",
+            ], env=child, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                timeout=30, check=False)
+        self.assertEqual(result.returncode, 0)
+
+    def test_environment_generation_stays_deterministic(self):
+        with patch.dict(os.environ, {
+            "DOCKER_CONFIG": "SYNTHETIC_DOCKER_PRIVATE",
+            "AWS_PROFILE": "SYNTHETIC_AWS_PRIVATE",
+        }):
+            self.assertEqual(runner._child_environment(ROOT),
+                             runner._child_environment(ROOT))
+
 if __name__ == "__main__":
     unittest.main()
