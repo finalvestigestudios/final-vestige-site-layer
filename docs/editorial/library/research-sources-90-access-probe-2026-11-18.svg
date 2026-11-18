@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+<title id="title">Ninety Doors — results of an automated access probe on November 18, 2026</title>
+<desc id="desc">Of 90 institutional URLs, 63 returned readable HTML, 2 returned extractable PDFs, 3 returned only a limited client-side page shell, and 22 could not be inspected by the automated retrieval tool. Failed probes do not mean the records have disappeared. All reproduction rights remain unreviewed.</desc>
+<rect width="1080" height="560" rx="14" fill="#111a20"/>
+<g font-family="system-ui,Segoe UI,Arial,sans-serif">
+<text x="52" y="63" fill="#d4b87b" font-size="19" font-weight="700" letter-spacing="2">FINAL VESTIGE STUDIOS · LIBRARY</text>
+<text x="52" y="116" fill="#f4ece0" font-family="Georgia,serif" font-size="43">Ninety doors. Four observations.</text>
+<text x="52" y="153" fill="#c9c7bd" font-size="19">Gateway fetch results—not a verdict on archive access or reuse rights</text>
+<rect x="52" y="195" width="976" height="48" fill="#334148" rx="5"/>
+<rect x="52" y="195" width="683.2" height="48" fill="#93b2a9" rx="5"/>
+<rect x="735.2" y="195" width="21.7" height="48" fill="#d4b87b"/>
+<rect x="756.9" y="195" width="32.5" height="48" fill="#cc956d"/>
+<rect x="789.4" y="195" width="238.6" height="48" fill="#887b75" rx="5"/>
+<g font-size="22" font-weight="700">
+<text x="52" y="304" fill="#a6cabf">63</text><text x="555" y="304" fill="#dfc48a">2</text>
+<text x="52" y="390" fill="#e8b090">3</text><text x="555" y="390" fill="#d2c8c0">22</text></g>
+<g font-size="18" fill="#f1e9da">
+<text x="52" y="331">Readable HTML returned</text><text x="555" y="331">PDFs returned</text>
+<text x="52" y="417">Sparse / client-rendered shells</text><text x="555" y="417">Retrieval inconclusive or blocked</text>
+</g>
+<path d="M520 270v158" stroke="#526068" stroke-width="1"/>
+<path d="M52 448h976" stroke="#526068"/>
+<text x="52" y="485" fill="#d4cbbb" font-size="17">Checked 18 Nov 2026 · Existing 90-card Library directory · No archival media copied</text>
+<text x="52" y="515" fill="#adb4b2" font-size="15">Rights, working downloads, item identity and ordinary-browser behavior require separate checks.</text>
+</g></svg>
