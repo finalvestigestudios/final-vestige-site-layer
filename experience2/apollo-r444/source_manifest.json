@@ -1,0 +1,69 @@
+{
+  "editorial_signoff": "PENDING_INDEPENDENT_QD",
+  "media_rights": "NO_MEDIA_REPRODUCED; each future use requires rights review and non-endorsement compliance",
+  "no_paid_offer": "No cleared payable Apollo educator product authenticated",
+  "records": [
+    {
+      "date_label": "January 27, 1967",
+      "finding": "The fire occurred during the Apollo 204 plugs-out ground test.",
+      "id": "a1",
+      "limit": "This test context alone cannot establish the exact ignition source.",
+      "period": "original",
+      "source": "Report of the Apollo 204 Review Board",
+      "title": "A ground test, not a launch",
+      "type": "1967 investigation",
+      "url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "when": "1967-01-27"
+    },
+    {
+      "date_label": "1967 — Board finding",
+      "finding": "The Board recorded a 100-percent oxygen test atmosphere at approximately 16.7 psia and judged the conditions extremely hazardous.",
+      "id": "a2",
+      "limit": "This finding describes the hazard; it does not by itself identify a specific ignition location.",
+      "period": "original",
+      "source": "Report of the Apollo 204 Review Board",
+      "title": "Oxygen and pressure made the cabin hazardous",
+      "type": "1967 investigation",
+      "url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "when": "1967"
+    },
+    {
+      "date_label": "1967 — Board finding",
+      "finding": "The Board determined an electrical arc was the most probable initiator.",
+      "id": "a3",
+      "limit": "The Board explicitly reported that no single ignition source was conclusively identified.",
+      "period": "original",
+      "source": "Report of the Apollo 204 Review Board",
+      "title": "Most probable does not mean proved",
+      "type": "1967 investigation",
+      "url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "when": "1967"
+    },
+    {
+      "date_label": "1967 — Board finding",
+      "finding": "The accident inquiry documented hatch-opening and escape constraints during the fire.",
+      "id": "a4",
+      "limit": "A summary of hatch constraints is not a substitute for the Board’s full technical sequence.",
+      "period": "original",
+      "source": "Report of the Apollo 204 Review Board",
+      "title": "The escape problem",
+      "type": "1967 investigation",
+      "url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "when": "1967"
+    },
+    {
+      "date_label": "February 14, 2018 retrospective",
+      "finding": "NASA’s retrospective describes 102 deliberately initiated Command Module fires in tests conducted from December 1967 through February 1968.",
+      "id": "a5",
+      "limit": "These later engineering tests did not identify the original Apollo 1 spark. The article was published in 2018, not during the accident investigation.",
+      "period": "later",
+      "source": "50 Years Ago: Apollo Flammability Tests",
+      "title": "The later flammability program",
+      "type": "Later NASA historical account",
+      "url": "https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/",
+      "when": "2018-02-14"
+    }
+  ],
+  "schema": "fv-apollo-review-custody-v1",
+  "source_identity_status": "NASA official document addresses checked 2026-11-17; citation identity only"
+}
