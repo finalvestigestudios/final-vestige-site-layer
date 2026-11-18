@@ -1,0 +1,134 @@
+{
+  "schema": "fv-p0-asset-identity-geometry-20261117-v1",
+  "checked_at": "2026-11-17",
+  "methodology": "read-only independent public reader + primary-source catalog links; NO guest Chrome; no image binary downloads",
+  "scope": "media performance and broken third-party sources; no homepage design",
+  "source_census": {
+    "historical_posts": 61,
+    "historical_slots": 355,
+    "historical_external": 288,
+    "current_published_posts": 66,
+    "current_slots": 361,
+    "current_external": 294,
+    "reported_broken_42_guest_confirmed": null,
+    "claimed_76pct_wire_savings_verified": false,
+    "oversized_originals_gt_1_5MB_decimal": 20,
+    "oversized_stored_bytes": 64385752,
+    "visitor_transfer_bytes": null
+  },
+  "observations": [
+    {
+      "slot": "287:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "authored_jetpack_url": "https://i0.wp.com/stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg?ssl=1",
+      "original_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "original_public_retriever": {
+        "kind": "NUMERIC_HTTP_ERROR",
+        "status": 404
+      },
+      "jetpack_public_retriever": {
+        "kind": "TOOL_INACCESSIBLE",
+        "status": null
+      },
+      "visitor": {
+        "http_status": null,
+        "decoded": null,
+        "natural_px": null,
+        "wire_bytes": null
+      },
+      "candidate": {
+        "catalog": "https://floridamemory.com/items/show/32082",
+        "accession": "RC09236",
+        "role": "SAME_DAY_CONTEXT_ONLY",
+        "exact_published_frame_verified": false,
+        "reuse": "PDM_ARCHIVE_POLICY_NEEDS_ITEM_LEVEL_REVIEW",
+        "master_px": null,
+        "master_sha256": null,
+        "target_px": null,
+        "allow_rehosting": false
+      }
+    },
+    {
+      "slot": "407:1",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "authored_jetpack_url": "https://i0.wp.com/d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg?ssl=1",
+      "original_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "original_public_retriever": {
+        "kind": "UNSUPPORTED_BINARY_OCTET_STREAM",
+        "status": null
+      },
+      "visitor": {
+        "http_status": null,
+        "decoded": null,
+        "natural_px": null,
+        "wire_bytes": null
+      },
+      "catalog_primary": [
+        {
+          "url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+          "license_marking": "Public Domain",
+          "photographer": "J. R. Stacy",
+          "original_link_exact_match": true
+        },
+        {
+          "url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+          "license_marking": "Public Domain",
+          "photographer": "J. R. Stacy",
+          "original_link_exact_match": true
+        }
+      ],
+      "candidate": {
+        "exact_image_url_corresponds_to_catalog_original_link": true,
+        "exact_binary_hash_verified": false,
+        "master_px": null,
+        "master_sha256": null,
+        "target_px": null,
+        "derive_rule": "width <= min(960, original_width); proportional resize; no upscaling",
+        "allow_rehosting": false
+      }
+    }
+  ],
+  "engineering": {
+    "before_source_blob": "9cfe8d90e15d2ef1e0cc95890b94ccc06dcfd369",
+    "new_source_blob": "a434606b6085c8cb6aa8e2cc0f51e71878591c78",
+    "new_test_blob": "3e48236d59664eae9931ea61d9e281dc690bbe28",
+    "changes": [
+      "reject after.natural_width > 960 for proposed optimized derivative",
+      "reject after width or height exceeding observed baseline decoded dimensions",
+      "retain <=2% aspect ratio drift / minimum 480px long-edge checks",
+      "preserve existing caps on HTTP 200, cold positive bytes, request IDs, redirects and image slot parity"
+    ],
+    "tests": {
+      "isolated_v8_cases": 68,
+      "passed": 68,
+      "compat_shims": [
+        "URL",
+        "Buffer",
+        "crypto"
+      ],
+      "native_node_run": false,
+      "repository_ci_run": false
+    },
+    "limitations": [
+      "decoded dimensions alone do not prove subject or crop identity",
+      "baseline decoded image may not be original archive master",
+      "false positive HOLD for high-DPR responsive image is possible and requires manual evaluation"
+    ]
+  },
+  "safety": {
+    "production_wp_writes": false,
+    "asset_downloads": false,
+    "image_caching": false,
+    "image_rehosting": false,
+    "gutenberg_rewrites": false,
+    "homepage_visual_changes": false,
+    "merge": false,
+    "deploy": false,
+    "subscription_spend_usd": 0
+  },
+  "handoff": {
+    "owner": "Site QA #154",
+    "request": "guest-browser evidence for 287:5 and 407:1, including currentSrc, final GET+MIME, decoded dimensions, cold unique transferred bytes, screenshot and (if broken) failure fallback",
+    "duplicate_collector_created": false
+  }
+}
