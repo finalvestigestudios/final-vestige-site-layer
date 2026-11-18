@@ -18,6 +18,8 @@
 
 Creator-owner check in existing Praxxis/Grok TASK-008: find ACTUAL published post URL, immutable media ID, date, factually narrated hook, rights-cleared footage, platform-specific allowed mobile destination; otherwise mark UNMATCHED. Do not repurpose an unrelated video or edit Grok's queue. Proposed UTM: utm_source={youtube|tiktok|...}, utm_medium=organic_social, utm_campaign=mind_attention_pilot_2026_11, utm_content={actual_asset_id}. Do not invent IDs, and respect bio-only link restrictions.
 
+**Commercial accounting rule: Click does not equal sale.** A source-tagged session, free lead and outbound merchant event must never be counted as a confirmed paid order.
+
 ## Defined funnel and separate event meanings
 1. **Qualified human landing session** = first-party observable session with actual asset_id, campaign, route, consent status and bot/internal/test exclusion policy audited by Claude. Do not collect raw IP, browser fingerprint, email or individual health traits. Use existing analytics; never add a duplicate script.
 2. **Relevant CTA click** = article_to_fieldbook_click, guide_interest_click or independently permitted affiliate_click, each separate, counted once under a published scheme.
