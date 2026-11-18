@@ -35,7 +35,7 @@ with sync_playwright() as playwright:
     assert page.locator('[data-fv457-card]:visible').count()==6,'filtered records missing from print'
     assert page.locator('.fv457__print-custody:visible').count()==6,'print source reference missing'
     assert page.locator('.fv457__print-note:visible').count()==1
-    assert page.locator('details').count()==6
+    assert page.locator('.fv457__card details').count()==6, 'all six archive custody drawers retained'
     assert page.locator('.fv457__source-hold').is_visible()
     assert not page.locator('[data-fv457-controls]').is_visible()
     assert page.locator('.fv457__print-custody').first.evaluate('(e)=>getComputedStyle(e).color')=='rgb(0, 0, 0)'
