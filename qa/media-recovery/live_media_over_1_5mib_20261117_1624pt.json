@@ -1,12 +1,23 @@
 {
-  "schema": "fv-current-oversized-media-v1",
+  "schema": "fv-current-oversized-media-v2",
   "audit_date": "2026-11-17",
   "source": "live authenticated WP media list 2 pages, 132 image records, not page network requests",
+  "threshold_units": "MB decimal = 1,500,000 bytes; MiB binary = 1,572,864 bytes. Prior 20 count uses decimal.",
   "summary": {
     "image_media_items": 132,
-    "oversized_count": 19,
-    "oversized_original_stored_bytes": 62842750,
-    "threshold_bytes": 1572864
+    "decimal_threshold_bytes": 1500000,
+    "decimal_over_1_5MB_count": 20,
+    "decimal_over_1_5MB_stored_bytes": 64385752,
+    "binary_threshold_bytes": 1572864,
+    "binary_over_1_5MiB_count": 19,
+    "binary_over_1_5MiB_stored_bytes": 62842750,
+    "between_1_5MB_and_1_5MiB": [
+      {
+        "id": 1714,
+        "file": "2026/10/halifax-explosion-map.png",
+        "bytes": 1543002
+      }
+    ]
   },
   "items": [
     {
@@ -19,6 +30,8 @@
       "original_bytes": 8176362,
       "width": 4256,
       "height": 2832,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 639
@@ -61,6 +74,8 @@
       "original_bytes": 7422309,
       "width": 1964,
       "height": 2619,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 1280
@@ -110,6 +125,8 @@
       "original_bytes": 5553669,
       "width": 5667,
       "height": 3831,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 649
@@ -152,6 +169,8 @@
       "original_bytes": 4798395,
       "width": 4000,
       "height": 3000,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 720
@@ -194,6 +213,8 @@
       "original_bytes": 4462854,
       "width": 2988,
       "height": 3538,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 1137
@@ -243,6 +264,8 @@
       "original_bytes": 2892087,
       "width": 1672,
       "height": 941,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 540
@@ -263,6 +286,8 @@
       "original_bytes": 2836245,
       "width": 1672,
       "height": 941,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 540
@@ -283,6 +308,8 @@
       "original_bytes": 2822969,
       "width": 2147,
       "height": 1417,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 634
@@ -325,6 +352,8 @@
       "original_bytes": 2552136,
       "width": 1672,
       "height": 941,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 540
@@ -345,6 +374,8 @@
       "original_bytes": 2498247,
       "width": 1672,
       "height": 941,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 540
@@ -365,6 +396,8 @@
       "original_bytes": 2488823,
       "width": 1672,
       "height": 941,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 540
@@ -385,6 +418,8 @@
       "original_bytes": 2318980,
       "width": 1800,
       "height": 1200,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 640
@@ -427,6 +462,8 @@
       "original_bytes": 2293016,
       "width": 1672,
       "height": 941,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 540
@@ -469,6 +506,8 @@
       "original_bytes": 2201573,
       "width": 1122,
       "height": 1402,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 1200
@@ -518,6 +557,8 @@
       "original_bytes": 2090327,
       "width": 1122,
       "height": 1402,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 1200
@@ -567,6 +608,8 @@
       "original_bytes": 2030948,
       "width": 1821,
       "height": 1190,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 627
@@ -609,6 +652,8 @@
       "original_bytes": 2010886,
       "width": 1280,
       "height": 720,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 540
@@ -651,6 +696,8 @@
       "original_bytes": 1745282,
       "width": 2720,
       "height": 3649,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 1288
@@ -700,6 +747,8 @@
       "original_bytes": 1647642,
       "width": 1436,
       "height": 2001,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": true,
       "recommended_no_upscale_max960": {
         "width": 960,
         "height": 1338
@@ -731,6 +780,50 @@
           "width": 150,
           "height": 150,
           "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/crystal-skull-british-museum.jpg?resize=150%2C150&ssl=1",
+          "virtual": true
+        }
+      ],
+      "source_rights": "not_audited",
+      "guest_delivered_bytes": null,
+      "used_inline_in_current_66": "not_yet_matched",
+      "production_action": "none"
+    },
+    {
+      "id": 1714,
+      "attached_post_id": null,
+      "title": "Map of the Halifax Explosion area",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png",
+      "wp_original_file": "2026/10/halifax-explosion-map.png",
+      "mime": "image/png",
+      "original_bytes": 1543002,
+      "width": 1280,
+      "height": 1280,
+      "above_decimal_1_5MB": true,
+      "above_binary_1_5MiB": false,
+      "recommended_no_upscale_max960": {
+        "width": 960,
+        "height": 960
+      },
+      "existing_responsive_variants_at_or_under960": [
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 768,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png?fit=768%2C768&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 300,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png?fit=300%2C300&ssl=1",
+          "virtual": true
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png?resize=150%2C150&ssl=1",
           "virtual": true
         }
       ],
