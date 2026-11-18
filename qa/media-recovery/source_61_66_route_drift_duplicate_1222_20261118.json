@@ -1,0 +1,927 @@
+{
+  "schema": "fv-source-route-drift-20261118-v1",
+  "date": "2026-11-18",
+  "source_kind": "PINNED_CMS_SOURCE_NOT_GUEST",
+  "historic_csv": {
+    "path": "qa/media/cms_image_census_20261030.csv",
+    "blob": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
+    "date": "2026-10-30"
+  },
+  "current_slices": [
+    {
+      "path": "qa/media-recovery/live_66_view_slice_1_20261117.json",
+      "blob": "698b613c41e792b2e0100547a07f4b519c0a908a",
+      "date": "2026-11-17"
+    },
+    {
+      "path": "qa/media-recovery/live_66_view_slice_2_20261117.json",
+      "blob": "1c8cd5d1fd015705c0937d68471fb54546ed2f67",
+      "date": "2026-11-17"
+    },
+    {
+      "path": "qa/media-recovery/live_66_view_slice_3_20261117.json",
+      "blob": "32210de4d0f46ae2547d604d9f1d02769e98bd32",
+      "date": "2026-11-17"
+    },
+    {
+      "path": "qa/media-recovery/live_66_view_slice_4_20261117.json",
+      "blob": "0d5bf91705d7b9956ac7097ebb896c9b142afc51",
+      "date": "2026-11-17"
+    },
+    {
+      "path": "qa/media-recovery/live_66_view_slice_5_20261117.json",
+      "blob": "c0d54c30769b0276a143c2f77b897202d818105f",
+      "date": "2026-11-17"
+    },
+    {
+      "path": "qa/media-recovery/live_66_view_slice_6_20261117.json",
+      "blob": "38718a55ce8fb52eb09cf04765c444a9df1255c9",
+      "date": "2026-11-17"
+    },
+    {
+      "path": "qa/media-recovery/live_66_view_slice_7_20261117.json",
+      "blob": "8cdd86e25bbc6aff1654eeff3fc65f3f42b1e4af",
+      "date": "2026-11-17"
+    },
+    {
+      "path": "qa/media-recovery/live_66_view_slice_8_20261117.json",
+      "blob": "d2c1716c99ff9886e6dac60c6a42926c801be7f4",
+      "date": "2026-11-17"
+    },
+    {
+      "path": "qa/media-recovery/live_66_view_slice_9_20261117.json",
+      "blob": "0248e5d62e589dd6cfc0ec543b5c22a7c14128ea",
+      "date": "2026-11-17"
+    }
+  ],
+  "reconciled": {
+    "historic_posts": 61,
+    "historic_inline_images": 355,
+    "historic_external": 286,
+    "current_posts": 66,
+    "current_inline_images": 361,
+    "current_external": 294,
+    "current_external_in_shared_61": 288,
+    "shared_61_external_delta": 2,
+    "new_5_posts_external": 6,
+    "changed_post_ids": [
+      285,
+      291
+    ]
+  },
+  "crosswalk": [
+    {
+      "post_id": 34,
+      "post_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+      "post_modified": "2026-10-29T21:19:13",
+      "prior_img": 1,
+      "prior_offsite": 0,
+      "current_img": 1,
+      "current_offsite": 0,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 35,
+      "post_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+      "post_modified": "2026-10-29T17:07:04",
+      "prior_img": 1,
+      "prior_offsite": 0,
+      "current_img": 1,
+      "current_offsite": 0,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 36,
+      "post_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+      "post_modified": "2026-10-29T17:07:30",
+      "prior_img": 1,
+      "prior_offsite": 0,
+      "current_img": 1,
+      "current_offsite": 0,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 37,
+      "post_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "post_modified": "2026-10-29T17:07:17",
+      "prior_img": 1,
+      "prior_offsite": 0,
+      "current_img": 1,
+      "current_offsite": 0,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 38,
+      "post_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+      "post_modified": "2026-10-29T17:06:51",
+      "prior_img": 1,
+      "prior_offsite": 0,
+      "current_img": 1,
+      "current_offsite": 0,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 101,
+      "post_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+      "post_modified": "2026-11-15T12:56:17",
+      "prior_img": 7,
+      "prior_offsite": 4,
+      "current_img": 7,
+      "current_offsite": 4,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 108,
+      "post_url": "https://finalvestige.com/2026/08/17/the-richest-ship-couldnt-buy-another-hour/",
+      "post_modified": "2026-08-25T18:54:29",
+      "prior_img": 2,
+      "prior_offsite": 0,
+      "current_img": 2,
+      "current_offsite": 0,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 139,
+      "post_url": "https://finalvestige.com/2026/08/17/the-rescue-machine-nobody-had-ever-needed/",
+      "post_modified": "2026-09-08T02:51:01",
+      "prior_img": 2,
+      "prior_offsite": 0,
+      "current_img": 2,
+      "current_offsite": 0,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 142,
+      "post_url": "https://finalvestige.com/2026/08/17/almost-home-sultana-disaster/",
+      "post_modified": "2026-09-08T10:07:17",
+      "prior_img": 3,
+      "prior_offsite": 0,
+      "current_img": 3,
+      "current_offsite": 0,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 146,
+      "post_url": "https://finalvestige.com/2026/08/17/the-dam-that-didnt-fail-vajont/",
+      "post_modified": "2026-11-02T21:37:02",
+      "prior_img": 3,
+      "prior_offsite": 0,
+      "current_img": 3,
+      "current_offsite": 0,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 151,
+      "post_url": "https://finalvestige.com/2026/08/17/they-taught-the-lake-to-breathe/",
+      "post_modified": "2026-08-28T02:11:36",
+      "prior_img": 3,
+      "prior_offsite": 0,
+      "current_img": 3,
+      "current_offsite": 0,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 156,
+      "post_url": "https://finalvestige.com/2026/08/17/they-lifted-the-city-galveston/",
+      "post_modified": "2026-11-02T21:39:27",
+      "prior_img": 4,
+      "prior_offsite": 0,
+      "current_img": 4,
+      "current_offsite": 0,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 166,
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "post_modified": "2026-11-02T21:39:29",
+      "prior_img": 7,
+      "prior_offsite": 6,
+      "current_img": 7,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 190,
+      "post_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "post_modified": "2026-11-02T21:39:31",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 211,
+      "post_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "post_modified": "2026-11-02T21:39:32",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "post_modified": "2026-10-29T20:59:21",
+      "prior_img": 7,
+      "prior_offsite": 7,
+      "current_img": 7,
+      "current_offsite": 7,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "post_modified": "2026-11-02T21:39:34",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 215,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "post_modified": "2026-10-29T15:59:59",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 216,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "post_modified": "2026-11-02T21:39:36",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 217,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "post_modified": "2026-10-29T16:04:52",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 218,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "post_modified": "2026-10-29T16:01:32",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 219,
+      "post_url": "https://finalvestige.com/2026/08/18/the-airship-had-no-life-jackets/",
+      "post_modified": "2026-10-29T15:54:20",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 220,
+      "post_url": "https://finalvestige.com/2026/08/18/too-deep-for-the-rescue-bell/",
+      "post_modified": "2026-11-02T21:39:38",
+      "prior_img": 7,
+      "prior_offsite": 7,
+      "current_img": 7,
+      "current_offsite": 7,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 221,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+      "post_modified": "2026-11-02T21:39:39",
+      "prior_img": 7,
+      "prior_offsite": 7,
+      "current_img": 7,
+      "current_offsite": 7,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 252,
+      "post_url": "https://finalvestige.com/2026/08/18/they-thought-the-books-were-charcoal/",
+      "post_modified": "2026-11-15T02:59:07",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 253,
+      "post_url": "https://finalvestige.com/2026/08/18/the-life-preservers-had-passed-inspection/",
+      "post_modified": "2026-11-02T21:39:43",
+      "prior_img": 7,
+      "prior_offsite": 7,
+      "current_img": 7,
+      "current_offsite": 7,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 254,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+      "post_modified": "2026-11-15T12:54:18",
+      "prior_img": 7,
+      "prior_offsite": 7,
+      "current_img": 7,
+      "current_offsite": 7,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 255,
+      "post_url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/",
+      "post_modified": "2026-10-30T01:11:08",
+      "prior_img": 7,
+      "prior_offsite": 7,
+      "current_img": 7,
+      "current_offsite": 7,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 256,
+      "post_url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+      "post_modified": "2026-11-02T21:39:45",
+      "prior_img": 7,
+      "prior_offsite": 7,
+      "current_img": 7,
+      "current_offsite": 7,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 257,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "post_modified": "2026-10-29T20:59:35",
+      "prior_img": 7,
+      "prior_offsite": 7,
+      "current_img": 7,
+      "current_offsite": 7,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 258,
+      "post_url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "post_modified": "2026-11-02T21:39:47",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "post_modified": "2026-11-15T12:50:43",
+      "prior_img": 10,
+      "prior_offsite": 10,
+      "current_img": 10,
+      "current_offsite": 10,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 269,
+      "post_url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "post_modified": "2026-11-02T21:39:48",
+      "prior_img": 7,
+      "prior_offsite": 0,
+      "current_img": 7,
+      "current_offsite": 0,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "post_modified": "2026-11-02T21:39:50",
+      "prior_img": 7,
+      "prior_offsite": 7,
+      "current_img": 7,
+      "current_offsite": 7,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 276,
+      "post_url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/",
+      "post_modified": "2026-11-02T21:37:08",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 277,
+      "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/",
+      "post_modified": "2026-08-21T00:32:52",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "post_modified": "2026-11-02T21:39:52",
+      "prior_img": 7,
+      "prior_offsite": 7,
+      "current_img": 7,
+      "current_offsite": 7,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 279,
+      "post_url": "https://finalvestige.com/2026/08/19/the-geologists-found-the-spy-satellite/",
+      "post_modified": "2026-11-02T21:39:54",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "post_modified": "2026-11-02T21:39:55",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 283,
+      "post_url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+      "post_modified": "2026-11-02T21:39:57",
+      "prior_img": 7,
+      "prior_offsite": 7,
+      "current_img": 7,
+      "current_offsite": 7,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "post_modified": "2026-11-02T21:39:59",
+      "prior_img": 6,
+      "prior_offsite": 5,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 1
+    },
+    {
+      "post_id": 287,
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "post_modified": "2026-11-02T21:40:01",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 288,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "post_modified": "2026-08-19T14:37:40",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 289,
+      "post_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "post_modified": "2026-08-28T15:23:16",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 290,
+      "post_url": "https://finalvestige.com/2026/08/19/the-city-kept-moving-camp-century/",
+      "post_modified": "2026-11-02T21:40:03",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 291,
+      "post_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "post_modified": "2026-11-02T21:36:09",
+      "prior_img": 6,
+      "prior_offsite": 5,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 1
+    },
+    {
+      "post_id": 292,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "post_modified": "2026-08-27T11:24:49",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 299,
+      "post_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+      "post_modified": "2026-11-02T21:40:05",
+      "prior_img": 8,
+      "prior_offsite": 0,
+      "current_img": 8,
+      "current_offsite": 0,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 330,
+      "post_url": "https://finalvestige.com/2026/08/19/the-filter-was-at-the-top-windscale/",
+      "post_modified": "2026-08-30T01:56:40",
+      "prior_img": 8,
+      "prior_offsite": 0,
+      "current_img": 8,
+      "current_offsite": 0,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 367,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "post_modified": "2026-10-29T17:34:27",
+      "prior_img": 9,
+      "prior_offsite": 8,
+      "current_img": 9,
+      "current_offsite": 8,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "post_modified": "2026-11-02T21:40:07",
+      "prior_img": 8,
+      "prior_offsite": 4,
+      "current_img": 8,
+      "current_offsite": 4,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "post_modified": "2026-10-29T18:30:30",
+      "prior_img": 8,
+      "prior_offsite": 8,
+      "current_img": 8,
+      "current_offsite": 8,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 413,
+      "post_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+      "post_modified": "2026-10-29T15:30:32",
+      "prior_img": 6,
+      "prior_offsite": 4,
+      "current_img": 6,
+      "current_offsite": 4,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "post_modified": "2026-08-28T03:11:08",
+      "prior_img": 6,
+      "prior_offsite": 6,
+      "current_img": 6,
+      "current_offsite": 6,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 425,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "post_modified": "2026-10-30T01:08:21",
+      "prior_img": 9,
+      "prior_offsite": 8,
+      "current_img": 9,
+      "current_offsite": 8,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 428,
+      "post_url": "https://finalvestige.com/2026/08/20/the-way-out-was-underground-ed-pulaski-1910/",
+      "post_modified": "2026-10-29T18:28:59",
+      "prior_img": 6,
+      "prior_offsite": 5,
+      "current_img": 6,
+      "current_offsite": 5,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 431,
+      "post_url": "https://finalvestige.com/2026/08/20/the-mountain-buried-the-door-frank-slide/",
+      "post_modified": "2026-10-29T18:42:26",
+      "prior_img": 6,
+      "prior_offsite": 5,
+      "current_img": 6,
+      "current_offsite": 5,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "post_modified": "2026-08-28T03:07:30",
+      "prior_img": 7,
+      "prior_offsite": 7,
+      "current_img": 7,
+      "current_offsite": 7,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 433,
+      "post_url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/",
+      "post_modified": "2026-11-02T21:37:26",
+      "prior_img": 6,
+      "prior_offsite": 5,
+      "current_img": 6,
+      "current_offsite": 5,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 434,
+      "post_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "post_modified": "2026-11-15T12:58:22",
+      "prior_img": 6,
+      "prior_offsite": 5,
+      "current_img": 6,
+      "current_offsite": 5,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 621,
+      "post_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "post_modified": "2026-09-09T12:03:35",
+      "prior_img": 6,
+      "prior_offsite": 0,
+      "current_img": 6,
+      "current_offsite": 0,
+      "delta_offsite": 0
+    },
+    {
+      "post_id": 1917,
+      "post_url": "https://finalvestige.com/2026/11/02/piri-reis-map/",
+      "post_modified": "2026-11-15T02:59:06",
+      "prior_img": null,
+      "prior_offsite": null,
+      "current_img": 2,
+      "current_offsite": 2,
+      "delta_offsite": null
+    },
+    {
+      "post_id": 1920,
+      "post_url": "https://finalvestige.com/2026/11/02/lycurgus-cup/",
+      "post_modified": "2026-11-15T02:58:50",
+      "prior_img": null,
+      "prior_offsite": null,
+      "current_img": 2,
+      "current_offsite": 2,
+      "delta_offsite": null
+    },
+    {
+      "post_id": 1922,
+      "post_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "post_modified": "2026-11-14T18:43:34",
+      "prior_img": null,
+      "prior_offsite": null,
+      "current_img": 0,
+      "current_offsite": 0,
+      "delta_offsite": null
+    },
+    {
+      "post_id": 1924,
+      "post_url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "post_modified": "2026-11-15T02:58:49",
+      "prior_img": null,
+      "prior_offsite": null,
+      "current_img": 1,
+      "current_offsite": 1,
+      "delta_offsite": null
+    },
+    {
+      "post_id": 1926,
+      "post_url": "https://finalvestige.com/2026/11/02/crystal-skulls/",
+      "post_modified": "2026-11-15T02:58:50",
+      "prior_img": null,
+      "prior_offsite": null,
+      "current_img": 1,
+      "current_offsite": 1,
+      "delta_offsite": null
+    }
+  ],
+  "changed_image_sources": [
+    {
+      "slot": "291:0",
+      "origin_url": "https://text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg",
+      "published_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "route": "third_party_jetpack",
+      "alt": "A rapidly enlarging breach reaching the crest of Teton Dam shortly before its collapse on June 5, 1976.",
+      "http_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "slot": "291:1",
+      "origin_url": "https://dmt55mxnkgbz2.cloudfront.net/1205x0_s3-30217-W-AP-PNW-TETON-COLLAPSE-1.jpg",
+      "published_url": "https://i0.wp.com/dmt55mxnkgbz2.cloudfront.net/1205x0_s3-30217-W-AP-PNW-TETON-COLLAPSE-1.jpg?ssl=1",
+      "route": "third_party_jetpack",
+      "alt": "Aerial view of Teton Dam and reservoir around the time of the 1976 failure.",
+      "http_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "slot": "291:2",
+      "origin_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "published_url": "https://i0.wp.com/cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG?ssl=1",
+      "route": "third_party_jetpack",
+      "alt": "Growing breach in Teton Dam during the final hour before collapse.",
+      "http_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "slot": "291:3",
+      "origin_url": "https://brightspotcdn.byui.edu/dims4/default/37ddf06/2147483647/strip/true/crop/2048x1365+0+0/resize/1200x800!/quality/90/?url=https%3A%2F%2Fk3-prod-byuifulbrightspot.s3.us-west-2.amazonaws.com%2Fbrightspot%2F33%2F7d%2F67f04f174772ab1d35419706138c%2Fteton-dam-flooding-aerial.jpg",
+      "published_url": "https://brightspotcdn.byui.edu/dims4/default/37ddf06/2147483647/strip/true/crop/2048x1365+0+0/resize/1200x800!/quality/90/?url=https%3A%2F%2Fk3-prod-byuifulbrightspot.s3.us-west-2.amazonaws.com%2Fbrightspot%2F33%2F7d%2F67f04f174772ab1d35419706138c%2Fteton-dam-flooding-aerial.jpg",
+      "route": "third_party_direct",
+      "alt": "Aerial view of the flooding downstream after the Teton Dam collapse.",
+      "http_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "slot": "291:4",
+      "origin_url": "https://www.rexburgonline.com/wp-content/uploads/2016/05/fb-0053.jpg",
+      "published_url": "https://i0.wp.com/www.rexburgonline.com/wp-content/uploads/2016/05/fb-0053.jpg?ssl=1",
+      "route": "third_party_jetpack",
+      "alt": "The surviving remains of Teton Dam in Idaho, with the river passing through the unreconstructed breach.",
+      "http_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "slot": "291:5",
+      "origin_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "published_url": "https://i0.wp.com/cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG?ssl=1",
+      "route": "third_party_jetpack",
+      "alt": "Aftermath of the Teton Dam failure and downstream cleanup in Idaho.",
+      "http_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "slot": "285:0",
+      "origin_url": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+      "published_url": "https://i0.wp.com/live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg?ssl=1",
+      "route": "third_party_jetpack",
+      "alt": "Operators and technical staff inside the Three Mile Island Unit 2 control room during the 1979 accident.",
+      "http_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "slot": "285:1",
+      "origin_url": "https://www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg",
+      "published_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "route": "third_party_jetpack",
+      "alt": "Wide view of the densely instrumented Three Mile Island Unit 2 control room.",
+      "http_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "slot": "285:2",
+      "origin_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "published_url": "https://i0.wp.com/blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg?ssl=1",
+      "route": "third_party_jetpack",
+      "alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+      "http_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "slot": "285:3",
+      "origin_url": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+      "published_url": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+      "route": "third_party_direct",
+      "alt": "Technical personnel gathered inside the Three Mile Island control room during the 1979 accident response.",
+      "http_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "slot": "285:4",
+      "origin_url": "https://images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg",
+      "published_url": "https://i0.wp.com/images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg?ssl=1",
+      "route": "third_party_jetpack",
+      "alt": "Reconstruction of the severely damaged Three Mile Island Unit 2 reactor core after the partial meltdown.",
+      "http_status": null,
+      "guest_browser_status": null
+    },
+    {
+      "slot": "285:5",
+      "origin_url": "https://images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "published_url": "https://i0.wp.com/images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg?ssl=1",
+      "route": "third_party_jetpack",
+      "alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "http_status": null,
+      "guest_browser_status": null
+    }
+  ],
+  "duplicate_origin_review": [
+    {
+      "source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "slots": [
+        {
+          "slot": "291:2",
+          "alt": "Growing breach in Teton Dam during the final hour before collapse.",
+          "authored_url": "https://i0.wp.com/cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG?ssl=1"
+        },
+        {
+          "slot": "291:5",
+          "alt": "Aftermath of the Teton Dam failure and downstream cleanup in Idaho.",
+          "authored_url": "https://i0.wp.com/cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG?ssl=1"
+        }
+      ],
+      "all_identical_url": true,
+      "visitor_decode": null,
+      "http_status": null
+    },
+    {
+      "source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg",
+      "slots": [
+        {
+          "slot": "213:2",
+          "alt": "Historical Mann Gulch diagram showing smokejumper movements, wind, fire positions, the tool drop, escape fire, and survivor locations.",
+          "authored_url": "https://i0.wp.com/fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?ssl=1"
+        },
+        {
+          "slot": "213:6",
+          "alt": "Mann Gulch staff-ride map marking the location where Wag Dodge set his escape fire and where the crew continued toward the ridge.",
+          "authored_url": "https://i0.wp.com/fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?ssl=1"
+        }
+      ],
+      "all_identical_url": true,
+      "visitor_decode": null,
+      "http_status": null
+    }
+  ],
+  "visual_finding": {
+    "key": "291:2",
+    "source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+    "public_retriever_visual": "A black-and-white street-level view of sidewalk debris and cleanup; no dam wall, dam breach, or reservoir appears",
+    "contradictory_alt": "Growing breach in Teton Dam during the final hour before collapse.",
+    "same_image_used_at": "291:5",
+    "post_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+    "origin_http_status": null,
+    "published_jetpack_http_status": null,
+    "guest_chromium_verified": false,
+    "decision": "P0_EDITORIAL_VISUAL_REVIEW_NO_AUTO_REPLACEMENT"
+  },
+  "other_repeat": {
+    "keys": [
+      "213:2",
+      "213:6"
+    ],
+    "decision": "REVIEW_SAME_MAP_USED_FOR_TWO_DIFFERENT_CAPTION_CALLOUTS_NOT_AUTOMATICALLY_INCORRECT"
+  },
+  "source_observation": {
+    "retrieved_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+    "observed_via": "independent public image retriever, visual render 2026-11-18",
+    "http_status": null,
+    "guest_browser_status": null
+  },
+  "primary_context_candidate": {
+    "url": "https://www.usgs.gov/publications/flood-southeastern-idaho-teton-dam-failure-june-5-1976",
+    "type": "official report not an image replacement",
+    "exact_frame": false,
+    "rights_clearance": "NOT_REQUESTED"
+  },
+  "guardrails": {
+    "max_derivative_width_px": 960,
+    "keep_aspect": true,
+    "no_upscale": true,
+    "wp_media_upload_allowed": false,
+    "editorial_approval_required": true,
+    "rights_review_required": true,
+    "license_clearance": "HOLD",
+    "production_write_allowed": false
+  },
+  "claims": {
+    "broken_guest_images_42": "UNVERIFIED",
+    "wire_savings_76_percent": "UNMEASURED"
+  }
+}
