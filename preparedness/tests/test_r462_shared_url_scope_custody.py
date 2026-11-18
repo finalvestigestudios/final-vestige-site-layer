@@ -64,6 +64,22 @@ class TestCrosswalk(unittest.TestCase):
         sn["candidate"]["sources"]["register.json"]="c"*40
         with self.assertRaises(m.CrosswalkHold):
             m.audit(c,s,sn,expected=(3,2,1))
+    def test_terminal_slash_alias_is_review_only(self):
+        c,s=fixture()
+        s["preparedness/sources/fragments/start.json"][0]["url"]="https://agency.example/plan/"
+        c["groups"][0]["variants"][1]["source"]["url"]="https://agency.example/plan/"
+        c["unique_source_urls"]=3
+        out=m.audit(c,s,expected=(3,3,1))
+        self.assertEqual(out["literal_urls"],3)
+        self.assertEqual(out["shared_url_review_groups"],1)
+        self.assertFalse(out["may_publish"])
+    def test_query_string_cannot_be_silently_aliased(self):
+        c,s=fixture()
+        s["preparedness/sources/fragments/start.json"][0]["url"]="https://agency.example/plan?source=other"
+        c["groups"][0]["variants"][1]["source"]["url"]="https://agency.example/plan?source=other"
+        c["unique_source_urls"]=3
+        with self.assertRaises(m.CrosswalkHold):
+            m.audit(c,s,expected=(3,3,1))
     def test_json_duplicate_keys_rejected(self):
         with self.assertRaises(m.CrosswalkHold):
             json.loads('{"a":1,"a":2}',object_pairs_hook=m.no_duplicates)
