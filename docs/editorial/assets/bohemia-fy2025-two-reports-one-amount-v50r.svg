@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 690" role="img" aria-labelledby="title desc">
+  <title id="title">One LMA fund amount, two published financial reports</title>
+  <desc id="desc">An original Final Vestige Studios source-reconciliation graphic. The Lakefront Management Authority's 2025 standalone audit and Flood Protection Authority–East's consolidated 2025 audit each print $106,377 for the same LMA OLD Real Estate Fund royalties, leases and permits category. These are two presentations of one fund-level amount, not two payments. The FPA consolidated total of $169,656 also includes $63,279 in the Orleans Levee District General Fund. Lease-level transactions remain unverified.</desc>
+  <metadata>
+    Creator: Final Vestige Studios; created: 2026-11-18; copyright: © 2026 Final Vestige Studios. Original explanatory diagram. Rights: studio-owned vector art; source records retain their own rights.
+    Source A: Louisiana Legislative Auditor, Lakefront Management Authority FY2025 report, printed pp. 16 and 53, https://app.lla.state.la.us/PublicReports.nsf/0/C1CFBE668F38D1E086258D46005AFA4C/$FILE/000091EA.pdf
+    Source B: Louisiana Legislative Auditor, Southeast Louisiana Flood Protection Authority-East FY2025 report, printed p. 16, https://app.lla.state.la.us/PublicReports.nsf/0/7A7589E9550859E586258D380070A30B/$FILE/0000906da.pdf
+    Limitations: not a Bohemia-specific ledger, bank record, mineral-leasing statement or private-claimant payment history. No AI-generated historical imagery.
+    Suggested caption: Two audits, one agency account. The same LMA OLD Real Estate Fund $106,377 appears in both FY2025 reports and must not be counted twice.
+  </metadata>
+  <rect width="960" height="690" fill="#111b25"/>
+  <rect x="38" y="36" width="5" height="78" fill="#d3b879"/>
+  <text x="60" y="65" fill="#e9e3d4" font-size="20" font-family="Arial, sans-serif" font-weight="700" letter-spacing="2">FINAL VESTIGE STUDIOS  /  EVIDENCE GRAPHIC</text>
+  <text x="60" y="104" fill="#ffffff" font-family="Georgia, serif" font-size="34">Two reports. One fund amount.</text>
+  <text x="60" y="140" fill="#afc0cb" font-size="18" font-family="Arial, sans-serif">Fiscal year ended June 30, 2025 · royalties, leases and permits</text>
+  <rect x="45" y="173" width="425" height="184" fill="#1b2b36" stroke="#617684" stroke-width="1.5" rx="12"/>
+  <rect x="489" y="173" width="425" height="184" fill="#1b2b36" stroke="#617684" stroke-width="1.5" rx="12"/>
+  <text x="67" y="207" fill="#e1ca90" font-family="Arial, sans-serif" font-size="17" font-weight="bold">LMA standalone audit</text>
+  <text x="67" y="238" fill="#e7eef2" font-family="Arial, sans-serif" font-size="18">OLD Real Estate Fund</text>
+  <text x="67" y="297" fill="#ffffff" font-family="Arial, sans-serif" font-size="43" font-weight="bold">$106,377</text>
+  <text x="67" y="333" fill="#afc0cb" font-family="Arial, sans-serif" font-size="14">Printed p. 16 · audited basic statement</text>
+  <text x="511" y="207" fill="#e1ca90" font-family="Arial, sans-serif" font-size="17" font-weight="bold">FPA-East combined audit</text>
+  <text x="511" y="238" fill="#e7eef2" font-family="Arial, sans-serif" font-size="18">LMA OLD Real Estate Fund</text>
+  <text x="511" y="297" fill="#ffffff" font-family="Arial, sans-serif" font-size="43" font-weight="bold">$106,377</text>
+  <text x="511" y="333" fill="#afc0cb" font-family="Arial, sans-serif" font-size="14">Printed p. 16 · audited combined statement</text>
+  <line x1="260" y1="357" x2="260" y2="390" stroke="#d3b879" stroke-width="3"/>
+  <line x1="702" y1="357" x2="702" y2="390" stroke="#d3b879" stroke-width="3"/>
+  <path d="M260 390 H702" stroke="#d3b879" stroke-width="3" fill="none"/>
+  <path d="M481 390 V426" stroke="#d3b879" stroke-width="3" fill="none"/>
+  <path d="M470 416 L481 432 L492 416" fill="none" stroke="#d3b879" stroke-width="3"/>
+  <rect x="170" y="434" width="620" height="58" fill="#354331" rx="8"/>
+  <text x="480" y="470" text-anchor="middle" fill="#f7edbd" font-family="Arial, sans-serif" font-size="22" font-weight="bold">SAME REPORTED FUND AMOUNT · DO NOT ADD TWICE</text>
+  <text x="480" y="534" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="22">FPA-East combined FY2025 category: $63,279 + $106,377 = $169,656</text>
+  <text x="480" y="568" text-anchor="middle" fill="#c4d0d8" font-family="Arial, sans-serif" font-size="17">OLD General Fund + LMA OLD Real Estate Fund</text>
+  <line x1="60" y1="597" x2="900" y2="597" stroke="#516474"/>
+  <text x="60" y="625" fill="#d9e2e6" font-family="Arial, sans-serif" font-size="14">Independent published statements; not independent revenue streams.</text>
+  <text x="60" y="650" fill="#afc0cb" font-family="Arial, sans-serif" font-size="14">Does not identify Bohemia-only transactions, cleared receipts, or claimant payments.</text>
+  <text x="60" y="677" fill="#8c9eac" font-family="Arial, sans-serif" font-size="12">© 2026 FINAL VESTIGE STUDIOS · SOURCES: LA LEGISLATIVE AUDITOR · NOV 18, 2026</text>
+</svg>
