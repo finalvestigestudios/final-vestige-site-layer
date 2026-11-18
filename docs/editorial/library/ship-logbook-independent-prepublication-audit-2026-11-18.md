@@ -1,6 +1,6 @@
 # The Log Was Not the Voyage — independent nine-guide release audit
 
-**Last checked:** November 18, 2026, 03:40–04:00 PST (same-session authenticated WordPress reads and public-source review). **Scope:** Library draft IDs 2886–2894 only. **Disposition:** HOLD / unpublished. **Owner:** FV Library Resource Studio.
+**Last checked:** November 18, 2026, approximately 03:40 PST (same-session authenticated WordPress reads and public-source review). **Scope:** Library draft IDs 2886–2894 only. **Disposition:** HOLD / unpublished. **Owner:** FV Library Resource Studio.
 
 ## Why this is useful
 
