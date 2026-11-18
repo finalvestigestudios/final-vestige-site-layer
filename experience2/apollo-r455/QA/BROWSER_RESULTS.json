@@ -1,0 +1,106 @@
+{
+  "axe_core": "HOLD_NOT_RUN",
+  "cases": [
+    {
+      "case": "320-nojs",
+      "status": "PASS"
+    },
+    {
+      "case": "320-js",
+      "status": "PASS"
+    },
+    {
+      "case": "360-nojs",
+      "status": "PASS"
+    },
+    {
+      "case": "360-js",
+      "status": "PASS"
+    },
+    {
+      "case": "390-nojs",
+      "status": "PASS"
+    },
+    {
+      "case": "390-js",
+      "status": "PASS"
+    },
+    {
+      "case": "768-nojs",
+      "status": "PASS"
+    },
+    {
+      "case": "768-js",
+      "status": "PASS"
+    },
+    {
+      "case": "1024-nojs",
+      "status": "PASS"
+    },
+    {
+      "case": "1024-js",
+      "status": "PASS"
+    },
+    {
+      "case": "1440-nojs",
+      "status": "PASS"
+    },
+    {
+      "case": "1440-js",
+      "status": "PASS"
+    },
+    {
+      "case": "1920-nojs",
+      "status": "PASS"
+    },
+    {
+      "case": "1920-js",
+      "status": "PASS"
+    },
+    {
+      "case": "keyboard",
+      "status": "PASS"
+    },
+    {
+      "case": "touch",
+      "status": "PASS"
+    },
+    {
+      "case": "forced-colors",
+      "status": "PASS"
+    },
+    {
+      "case": "reduced-motion",
+      "status": "PASS"
+    },
+    {
+      "case": "print",
+      "status": "PASS"
+    },
+    {
+      "case": "zoom-200",
+      "status": "PASS"
+    },
+    {
+      "case": "local-text-download",
+      "status": "PASS"
+    },
+    {
+      "case": "independent-instance",
+      "status": "PASS"
+    },
+    {
+      "case": "nojs-source-depth",
+      "status": "PASS"
+    }
+  ],
+  "cls": "HOLD_NOT_RUN",
+  "component": "apollo-r455",
+  "engine": "Chromium / Playwright real browser with PHP-rendered page.set_content()",
+  "failed": 0,
+  "independent_screen_reader": "HOLD_NOT_RUN",
+  "lcp": "HOLD_NOT_RUN",
+  "navigation": "HOLD_NOT_RUN",
+  "passed": 23,
+  "production": "NOT_INSTALLED"
+}
