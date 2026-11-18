@@ -1,0 +1,107 @@
+{
+  "edition": "R456",
+  "date_utc": "2026-11-18",
+  "original_pr": 175,
+  "original_commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stack_parent_pr": 3041,
+  "stack_parent_sha": "636a342b9b84eb3f4375d91b8d732c4b593f3a94",
+  "original_manifest_sha": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+  "render_source": "Original first-mile #175 on stacked parent; no alternative was substituted",
+  "editions": [
+    {
+      "number": 1,
+      "source_path": "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md",
+      "source_blob_sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "subject": "The mind is not a camera",
+      "preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "kind": "editorial",
+      "html_path": "dispatch/r456/previews/01.html",
+      "text_path": "dispatch/r456/previews/01.txt",
+      "first_party_links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "number": 2,
+      "source_path": "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md",
+      "source_blob_sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "subject": "Before hypnosis had a name",
+      "preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "kind": "editorial",
+      "html_path": "dispatch/r456/previews/02.html",
+      "text_path": "dispatch/r456/previews/02.txt",
+      "first_party_links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "number": 3,
+      "source_path": "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md",
+      "source_blob_sha": "aeeef34efea0cc281f69901488e4501fea851245",
+      "subject": "The twelve-minute meditation question",
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "kind": "commercial-review-pending",
+      "html_path": "dispatch/r456/previews/03.html",
+      "text_path": "dispatch/r456/previews/03.txt",
+      "first_party_links": [
+        "https://finalvestige.com/focus/"
+      ],
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "number": 4,
+      "source_path": "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md",
+      "source_blob_sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "kind": "editorial",
+      "html_path": "dispatch/r456/previews/04.html",
+      "text_path": "dispatch/r456/previews/04.txt",
+      "first_party_links": [
+        "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+      ],
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "number": 5,
+      "source_path": "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md",
+      "source_blob_sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "Three questions that matter more than an impressive promise.",
+      "kind": "commercial-review-pending",
+      "html_path": "dispatch/r456/previews/05.html",
+      "text_path": "dispatch/r456/previews/05.txt",
+      "first_party_links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "number": 6,
+      "source_path": "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md",
+      "source_blob_sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "kind": "editorial",
+      "html_path": "dispatch/r456/previews/06.html",
+      "text_path": "dispatch/r456/previews/06.txt",
+      "first_party_links": [
+        "https://finalvestige.com/focus/"
+      ],
+      "release": "HOLD_UNSENT"
+    }
+  ],
+  "qa": {
+    "executed_environment": "functions V8 against fetched canonical GitHub source",
+    "assertions_passed": 53,
+    "assertions_failed": 0,
+    "adversarial_cases_rejected": 3,
+    "native_node_tests_executed": false,
+    "actual_jetpack_preview_witnessed": false,
+    "actual_welcome_received_verified": false,
+    "legitimate_postal_address_and_unsubscribe_verified": false,
+    "affiliate_EMAIL_rights_verified": false
+  }
+}
