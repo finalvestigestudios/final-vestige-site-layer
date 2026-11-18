@@ -1,0 +1,634 @@
+{
+  "version": "mind-r466",
+  "checked_date": "2026-11-18",
+  "commercial_status": "HARD_HOLD",
+  "scope": "Mind & Perception only",
+  "supplier": "Inspire3 / Zen12",
+  "evidence_protocol": "Seller feature ≠ product efficacy; public affiliate signup ≠ account-specific approval; click ≠ sale",
+  "affiliate_search": "Connected Gmail: from:(refersion.com) after:2026/08/01 produced one pending notice (2026-08-24); targeted Inspire3 affiliate wording and post-2026-09-01 Payhip sender searches yielded zero. Not exhaustive of merchant portals or other mailboxes.",
+  "sources": {
+    "S01": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "S02": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+    "S03": "https://inspire3.com/",
+    "S04": "https://affiliates.inspire3.com/",
+    "S05": "https://zen12.com/about",
+    "S06": "https://zen12.com/",
+    "S07": "https://zen12.com/secret/",
+    "S08": "https://hypnosislive.com/",
+    "S09": "https://brainwaveshots.com/",
+    "S10": "https://brainwaveshots.com/focus-shot",
+    "S11": "https://finalvestige.com/focus/",
+    "S12": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "S13": "https://pubmed.ncbi.nlm.nih.gov/15823785/",
+    "S14": "https://pubmed.ncbi.nlm.nih.gov/16649870/",
+    "S15": "https://pubmed.ncbi.nlm.nih.gov/17447869/",
+    "S16": "https://pubmed.ncbi.nlm.nih.gov/34297008/",
+    "S17": "https://pubmed.ncbi.nlm.nih.gov/11417145/",
+    "S18": "https://pubmed.ncbi.nlm.nih.gov/40706012/",
+    "S19": "https://pubmed.ncbi.nlm.nih.gov/41217756/",
+    "S20": "https://doi.org/10.1371/journal.pone.0286023",
+    "S21": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "S22": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "S23": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818",
+    "S24": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174"
+  },
+  "claims": [
+    {
+      "id": "Z01",
+      "claim": "Zen12 is offered as downloadable 12-minute audio sessions",
+      "kind": "seller_feature",
+      "source_ids": [
+        "S05",
+        "S06"
+      ],
+      "decision": "ATTRIBUTED_INCLUDE",
+      "limit": "Actual format is seller description; file delivery untested"
+    },
+    {
+      "id": "Z02",
+      "claim": "Zen12 describes twelve progressive levels",
+      "kind": "seller_feature",
+      "source_ids": [
+        "S05",
+        "S06"
+      ],
+      "decision": "ATTRIBUTED_INCLUDE",
+      "limit": "SKU inclusion not yet verified"
+    },
+    {
+      "id": "Z03",
+      "claim": "Zen12 describes four audio styles including guided, music, nature and white noise",
+      "kind": "seller_feature",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "ATTRIBUTED_INCLUDE",
+      "limit": "Do not claim all formats are in every priced tier"
+    },
+    {
+      "id": "Z04",
+      "claim": "Standard catalog and /secret/ are distinct offer contexts",
+      "kind": "seller_offer",
+      "source_ids": [
+        "S06",
+        "S07"
+      ],
+      "decision": "INCLUDE_DISTINCTION",
+      "limit": "Do not merge price, coupons, bonus, support or refunds"
+    },
+    {
+      "id": "Z05",
+      "claim": "An hour of meditation can be obtained in twelve minutes using Zen12",
+      "kind": "seller_efficacy",
+      "source_ids": [
+        "S05",
+        "S06"
+      ],
+      "decision": "EXCLUDE",
+      "limit": "No independently verified product-specific equivalence comparison"
+    },
+    {
+      "id": "Z06",
+      "claim": "Zen12 instantly relieves anxiety or stress for every listener",
+      "kind": "seller_health",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "EXCLUDE",
+      "limit": "Unverified product-specific psychological benefit"
+    },
+    {
+      "id": "Z07",
+      "claim": "Zen12 produces automatic brainwave entrainment with clinical benefit",
+      "kind": "seller_mechanism",
+      "source_ids": [
+        "S05",
+        "S06"
+      ],
+      "decision": "EXCLUDE",
+      "limit": "Marketing description not sufficient for mechanism and health inference"
+    },
+    {
+      "id": "Z08",
+      "claim": "Standard and promotional checkout price is identical",
+      "kind": "seller_terms",
+      "source_ids": [
+        "S06",
+        "S07"
+      ],
+      "decision": "REJECT",
+      "limit": "Different visible offer contexts; actual issued link unknown"
+    },
+    {
+      "id": "Z09",
+      "claim": "Zen12 one-year refund promise is enforceable on our eventual referral",
+      "kind": "seller_terms",
+      "source_ids": [
+        "S05",
+        "S06"
+      ],
+      "decision": "UNVERIFIED",
+      "limit": "Order-specific published terms need merchant verification"
+    },
+    {
+      "id": "Z10",
+      "claim": "Exact authorized Zen12 SKU, delivery, fees, taxes and refunds for FV",
+      "kind": "partner_specific",
+      "source_ids": [],
+      "decision": "HOLD",
+      "limit": "No named approval or checkout evidence"
+    },
+    {
+      "id": "A01",
+      "claim": "Inspire3 official site names Zen12, Hypnosis Live and Brainwave Shots",
+      "kind": "seller_catalog",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "ATTRIBUTED_INCLUDE",
+      "limit": "Does not imply partner acceptance"
+    },
+    {
+      "id": "A02",
+      "claim": "Public Inspire3 affiliate signup offers an affiliate network",
+      "kind": "seller_affiliate_program",
+      "source_ids": [
+        "S04"
+      ],
+      "decision": "ATTRIBUTED_INCLUDE",
+      "limit": "Not proof that this account has been approved"
+    },
+    {
+      "id": "A03",
+      "claim": "A generic Refersion account pending notice dated 2026-08-24 exists in searched Gmail",
+      "kind": "account_search",
+      "source_ids": [],
+      "decision": "PENDING_ONLY",
+      "limit": "One targeted mailbox; not partner-specific issued link, approval or revocation"
+    },
+    {
+      "id": "A04",
+      "claim": "Named FV Inspire3 partner eligibility and promotion rights",
+      "kind": "partner_specific",
+      "source_ids": [],
+      "decision": "HOLD",
+      "limit": "No account-specific approval in searched mailbox; portal not authenticated"
+    },
+    {
+      "id": "A05",
+      "claim": "Use of affiliate creatives/swipes is contractually permitted for exact intended offer",
+      "kind": "partner_specific",
+      "source_ids": [
+        "S04"
+      ],
+      "decision": "HOLD",
+      "limit": "Member-only creatives and permissions not accessed; public ads may not be copied"
+    },
+    {
+      "id": "A06",
+      "claim": "FV may promote via website, Grok YouTube/TikTok and existing Jetpack email",
+      "kind": "partner_specific",
+      "source_ids": [],
+      "decision": "HOLD",
+      "limit": "Must verify channels separately, especially email"
+    },
+    {
+      "id": "A07",
+      "claim": "Issued tracking URL, settlement rules and conversion reporting for FV",
+      "kind": "partner_specific",
+      "source_ids": [],
+      "decision": "HOLD",
+      "limit": "No link, payout terms or accepted transaction"
+    },
+    {
+      "id": "H01",
+      "claim": "Hypnosis Live lists over 200 downloadable self-hypnosis MP3s",
+      "kind": "seller_catalog",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "ATTRIBUTED_INCLUDE",
+      "limit": "Specific individual SKU and checkout not reviewed for an offer pilot"
+    },
+    {
+      "id": "H02",
+      "claim": "Hypnosis Live catalog health and wealth transformations are guaranteed",
+      "kind": "seller_efficacy",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "EXCLUDE",
+      "limit": "Not verified as clinical or financial outcomes"
+    },
+    {
+      "id": "B01",
+      "claim": "Brainwave Shots markets short audio listening products",
+      "kind": "seller_catalog",
+      "source_ids": [
+        "S09"
+      ],
+      "decision": "ATTRIBUTED_INCLUDE",
+      "limit": "Avoid generalizing across individual shots"
+    },
+    {
+      "id": "B02",
+      "claim": "Focus Shot seller describes 15- and 30-minute audio variants",
+      "kind": "seller_feature",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "ATTRIBUTED_INCLUDE",
+      "limit": "Not a study or proof of cognitive benefits"
+    },
+    {
+      "id": "B03",
+      "claim": "Focus Shot automatically increases mental performance",
+      "kind": "seller_efficacy",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "EXCLUDE",
+      "limit": "Product-specific outcomes unsubstantiated"
+    },
+    {
+      "id": "S01",
+      "claim": "2005 study compared hypnotic vs nonhypnotic imaginative suggestions and pain responses",
+      "kind": "primary_experiment",
+      "source_ids": [
+        "S13"
+      ],
+      "decision": "INCLUDE_BOUNDED",
+      "limit": "60 volunteers; not a consumer product efficacy trial"
+    },
+    {
+      "id": "S02",
+      "claim": "2006 experiment examined expectancy and hypnotic suggestibility",
+      "kind": "primary_experiment",
+      "source_ids": [
+        "S14"
+      ],
+      "decision": "INCLUDE_BOUNDED",
+      "limit": "Analogue interventions; do not claim universal response"
+    },
+    {
+      "id": "S03",
+      "claim": "2007 study examined credibility, expectations, suggestibility",
+      "kind": "primary_experiment",
+      "source_ids": [
+        "S15"
+      ],
+      "decision": "INCLUDE_BOUNDED",
+      "limit": "124 assigned; mediation analyses are not universal mechanism proof"
+    },
+    {
+      "id": "S04",
+      "claim": "2021 placebo verbal suggestibility associations depended on experimental procedure",
+      "kind": "primary_experiment",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "INCLUDE_BOUNDED",
+      "limit": "Different conditioning/suggestion conditions and limited correlations"
+    },
+    {
+      "id": "S05",
+      "claim": "2001 rapid self-hypnosis trial reported within-session preferences and comparable scale scores",
+      "kind": "primary_experiment",
+      "source_ids": [
+        "S17"
+      ],
+      "decision": "INCLUDE_BOUNDED",
+      "limit": "Not evidence of longer term clinical outcome"
+    },
+    {
+      "id": "S06",
+      "claim": "2025 scoping review maps 16 clinical hypnosis RCTs",
+      "kind": "review",
+      "source_ids": [
+        "S18"
+      ],
+      "decision": "INCLUDE_BOUNDED",
+      "limit": "Heterogeneous; many mixed interventions, no Zen12"
+    },
+    {
+      "id": "S07",
+      "claim": "2025 self-administered audio hypnosis RCT evaluated hot flashes against white noise",
+      "kind": "primary_experiment",
+      "source_ids": [
+        "S19"
+      ],
+      "decision": "INCLUDE_BOUNDED",
+      "limit": "250 participants, specified condition and recording; not Zen12/Hypnosis Live"
+    },
+    {
+      "id": "S08",
+      "claim": "2023 14-study review found inconsistent binaural EEG effects",
+      "kind": "independent_review",
+      "source_ids": [
+        "S20"
+      ],
+      "decision": "INCLUDE_BOUNDED",
+      "limit": "Not a Zen12 trial"
+    },
+    {
+      "id": "F01",
+      "claim": "52-page free Seven Day Focus Fieldbook exists with one Jetpack funnel",
+      "kind": "live_fv_page",
+      "source_ids": [
+        "S11"
+      ],
+      "decision": "VERIFIED_PUBLIC_PAGE",
+      "limit": "Confirm individual signup delivery separately; not paid SKU"
+    },
+    {
+      "id": "F02",
+      "claim": "Puységur archive distinguishes historical testimony and efficacy evidence",
+      "kind": "live_fv_archive",
+      "source_ids": [
+        "S12"
+      ],
+      "decision": "VERIFIED_PUBLIC_PAGE",
+      "limit": "Not a modern clinical proof source"
+    },
+    {
+      "id": "F03",
+      "claim": "Any specific already payable, rights-cleared FV Mind SKU with settled checkout",
+      "kind": "owned_commerce",
+      "source_ids": [
+        "S23"
+      ],
+      "decision": "UNAUTHENTICATED",
+      "limit": "Product inventory and merchant dashboard must be checked by Founder/Commerce"
+    },
+    {
+      "id": "C01",
+      "claim": "Affiliate connection must be clearly and conspicuously disclosed close to links",
+      "kind": "ftc_requirement",
+      "source_ids": [
+        "S21"
+      ],
+      "decision": "IMPLEMENT_IN_DRAFT",
+      "limit": "No live earning link; prospective disclosure adjacent disabled button"
+    },
+    {
+      "id": "C02",
+      "claim": "Objective health/psychological claims require adequate evidence",
+      "kind": "ftc_requirement",
+      "source_ids": [
+        "S22"
+      ],
+      "decision": "IMPLEMENT_IN_DRAFT",
+      "limit": "Claim source and implied impression require legal/compliance review"
+    },
+    {
+      "id": "R01",
+      "claim": "Outbound click is an independently verified paid affiliate conversion",
+      "kind": "measurement",
+      "source_ids": [
+        "S02"
+      ],
+      "decision": "FALSE",
+      "limit": "Distinct events; no confirmed commission or sale inferred"
+    },
+    {
+      "id": "R02",
+      "claim": "Revenue per thousand qualified human sessions is currently computable",
+      "kind": "measurement",
+      "source_ids": [
+        "S02",
+        "S23"
+      ],
+      "decision": "FALSE",
+      "limit": "Missing proven qualifying denominator and settled net orders"
+    },
+    {
+      "id": "R03",
+      "claim": "Optional 42s film variant improves paid conversion over text-only",
+      "kind": "hypothesis",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "UNTESTED",
+      "limit": "Not encoded, not accessible in browser yet; no live split test"
+    }
+  ],
+  "release_gates": [
+    {
+      "gate_id": "G01",
+      "name": "Named Inspire3 acceptance for Final Vestige",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G02",
+      "name": "Exact authorized Zen12 SKU and catalog context",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G03",
+      "name": "Allowed website promotion",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G04",
+      "name": "Allowed TikTok/YouTube promotion",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G05",
+      "name": "Allowed Jetpack email promotion",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G06",
+      "name": "Issued unique tracking URL",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G07",
+      "name": "Commission and attribution rules",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G08",
+      "name": "Refund/reversal/chargeback rules",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G09",
+      "name": "Checkout taxes, currency and total price",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G10",
+      "name": "Published and applicable consumer refund policy",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G11",
+      "name": "Digital delivery evidence",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G12",
+      "name": "Official affiliate creative reuse permission",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G13",
+      "name": "Product-specific health efficacy review",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G14",
+      "name": "Seller claim-to-public-copy signoff",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G15",
+      "name": "No unapproved media rights",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G16",
+      "name": "No active referral before authorization",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G17",
+      "name": "Adjacent plain-language FTC commission disclosure",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G18",
+      "name": "Independent and commerce zones separated",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G19",
+      "name": "No duplicate Jetpack form",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G20",
+      "name": "No paid SaaS or duplicate tracking scripts",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G21",
+      "name": "Mobile 360 and 390 actual browser review",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G22",
+      "name": "Tablet 768 and desktop 1440 actual browser review",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G23",
+      "name": "Keyboard and focus review",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G24",
+      "name": "Reduced-motion / no-JS review",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G25",
+      "name": "Actual encoded film / poster / caption synchronization",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G26",
+      "name": "WordPress sanitization test",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G27",
+      "name": "Cross-browser and CWV test",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G28",
+      "name": "Real published Grok asset IDs, rights, hooks and routes",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G29",
+      "name": "Consent-aware first-party campaign attribution approval",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G30",
+      "name": "Verified confirmed Jetpack lead and delivery",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G31",
+      "name": "Merchant verified paid sale or commission record",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G32",
+      "name": "Refund and fees reconciled",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G33",
+      "name": "7/30-day qualified human cohorts",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    },
+    {
+      "gate_id": "G34",
+      "name": "Founder production and commerce release approval",
+      "status": "HOLD",
+      "note": "Not a production release assertion; some source-only aspects pass static QA but not full release evidence"
+    }
+  ],
+  "kpi": {
+    "qualified_human_sessions": null,
+    "merchant_confirmed_paid_orders": null,
+    "affiliate_confirmed_paid_conversions": null,
+    "refund_adjusted_net_revenue": null,
+    "net_revenue_per_1000_sessions": null,
+    "status": "NOT_COMPUTABLE",
+    "periods": [
+      "7d",
+      "30d"
+    ]
+  },
+  "source_status_note": "Study summaries from PubMed abstracts and published source page; full-text clinical risk-of-bias review not completed. Seller pages accessed 2026-11-18. No audited active promotion or merchant transactions."
+}
