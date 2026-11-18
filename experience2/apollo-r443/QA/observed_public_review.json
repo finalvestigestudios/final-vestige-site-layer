@@ -1,0 +1,11 @@
+{
+  "source": "read_only_WordPress_page_2017_and_public_HTTP_text_via_web",
+  "observed_date_local": "2026-11-17",
+  "url": "https://finalvestige.com/apollo-1-evidence-atlas/",
+  "published_page_status": "published",
+  "published_atlas_not_equal_uninstalled_R438_R442": true,
+  "literal_unresolved_review_label": "Atlas review status: Not yet reviewed.",
+  "count_observed_in_stored_page": 2,
+  "interpretation": "Unreviewed editorial status visible; source facts not thereby disproved. Release requires explicit editorial reconciliation, not silent label removal.",
+  "limitations": "This observation is a redacted excerpt/metadata, not an archived full DOM or a navigated browser accessibility audit. No WP write."
+}
