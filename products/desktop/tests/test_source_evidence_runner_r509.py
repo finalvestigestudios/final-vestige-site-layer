@@ -1067,5 +1067,84 @@ class SourceSnapshotPrivateFailureR518(unittest.TestCase):
         self.assert_private_rejection(lambda: custody.source_fingerprint(self.root, self.parts))
 
 
+# R519: a changed manifest must not be loaded into memory without a bounded
+# read merely to discover that its immutable Git blob no longer matches.
+class BoundedManifestR519(unittest.TestCase):
+    def test_real_416_command_manifest_roundtrip(self):
+        raw = runner.read_manifest_bounded(runner.MANIFEST)
+        self.assertEqual(len(raw), 43_737)
+        self.assertEqual(runner.git_blob_sha(raw), runner.MANIFEST_GIT_SHA1)
+        self.assertEqual(len(runner.load_commands(raw)), runner.TOTAL_COUNT)
+
+    def test_small_manifest_read_is_exact(self):
+        with TemporaryDirectory() as d:
+            path = Path(d) / "manifest.txt"
+            raw = b"python -W error\n"
+            path.write_bytes(raw)
+            self.assertEqual(runner.read_manifest_bounded(path), raw)
+
+    def test_exact_limit_is_accepted_for_subsequent_digest_validation(self):
+        with TemporaryDirectory() as d:
+            path = Path(d) / "manifest.txt"
+            path.write_bytes(b"x" * runner.MAX_MANIFEST_BYTES)
+            self.assertEqual(len(runner.read_manifest_bounded(path)),
+                             runner.MAX_MANIFEST_BYTES)
+
+    def test_oversized_file_rejected_before_digest(self):
+        with TemporaryDirectory() as d:
+            path = Path(d) / "manifest.txt"
+            path.write_bytes(b"x" * 1_000_000)
+            with self.assertRaises(runner.EvidenceRejected):
+                runner.read_manifest_bounded(path)
+
+    def test_open_call_never_requests_unbounded_read(self):
+        class CountedReader(io.BytesIO):
+            requested = None
+            def read(self, size=-1):
+                self.requested = size
+                return super().read(size)
+        source = CountedReader(b"small")
+        with patch.object(Path, "open", return_value=source):
+            self.assertEqual(runner.read_manifest_bounded(Path("/unused")), b"small")
+        self.assertEqual(source.requested, runner.MAX_MANIFEST_BYTES + 1)
+
+    def test_unreadable_private_path_produces_no_exception_chain(self):
+        with TemporaryDirectory() as d:
+            path = Path(d) / "PRIVATE_GRANT_LEDGER_r519.csv"
+            with self.assertRaises(runner.EvidenceRejected) as caught:
+                runner.read_manifest_bounded(path)
+            self.assertIsNone(caught.exception.__cause__)
+            self.assertIsNone(caught.exception.__context__)
+            self.assertNotIn(str(path), str(caught.exception))
+
+    def test_stream_error_does_not_retain_private_exception(self):
+        with patch.object(Path, "open",
+                          side_effect=OSError("PRIVATE_VENDOR_DATA_r519")):
+            with self.assertRaises(runner.EvidenceRejected) as caught:
+                runner.read_manifest_bounded(Path("/unused"))
+            self.assertIsNone(caught.exception.__cause__)
+            self.assertIsNone(caught.exception.__context__)
+
+    def test_malformed_stream_type_fails_closed(self):
+        with patch.object(Path, "open", return_value=io.StringIO("not bytes")):
+            with self.assertRaises(runner.EvidenceRejected):
+                runner.read_manifest_bounded(Path("/unused"))
+
+    def test_main_calls_bounded_reader_after_path_preflight(self):
+        with TemporaryDirectory() as d:
+            root = Path(d)
+            path = root / "products/desktop/ci/source_evidence_commands_r509.txt"
+            path.parent.mkdir(parents=True)
+            path.write_bytes(b"synthetic pinned source\n")
+            commands = (("-W", "error"),)
+            with patch.object(runner, "ROOT", root), \
+                 patch.object(runner, "MANIFEST", path), \
+                 patch.object(runner, "load_commands", return_value=commands) as load, \
+                 patch.object(runner, "execute", return_value=0) as run:
+                self.assertEqual(runner.main(), 0)
+            load.assert_called_once_with(path.read_bytes())
+            run.assert_called_once_with(commands, verify_source_snapshots=True)
+
+
 if __name__ == "__main__":
     unittest.main()
