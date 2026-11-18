@@ -35,14 +35,30 @@ class EvidenceRejected(ValueError):
     """Input or source evidence failed its reviewed custody contract."""
 
 
-def _is_unlinked_test_file(root: Path, name: str) -> bool:
-    """Reject linked tests and linked ancestor directories before launching code."""
+def _is_unlinked_repo_file(root: Path, parts: tuple[str, ...]) -> bool:
+    """Reject linked source files, parents and Windows junctions before launch.
+
+    This is preflight custody, not an atomic or race-proof file open.
+    """
+    if not parts or any(not p or p in (".", "..") or "/" in p or "\\" in p for p in parts):
+        return False
     target = root
-    for part in ("products", "desktop", "tests", name):
-        target = target / part
-        if target.is_symlink():
-            return False
-    return target.is_file()
+    try:
+        for part in parts:
+            target = target / part
+            if target.is_symlink():
+                return False
+            junction = getattr(target, "is_junction", None)
+            if junction is not None and junction():
+                return False
+        return target.is_file()
+    except (OSError, ValueError):
+        return False
+
+
+def _is_unlinked_test_file(root: Path, name: str) -> bool:
+    """Apply the same custody rule to every manifest-listed source test."""
+    return _is_unlinked_repo_file(root, ("products", "desktop", "tests", name))
 
 
 def git_blob_sha(raw: bytes) -> str:
@@ -73,7 +89,11 @@ def load_commands(raw: bytes, root: Path = ROOT, *,
         if match is not None:
             if not _is_unlinked_test_file(root, match.group(1)):
                 raise EvidenceRejected("Required source test unavailable")
-        elif line not in SCRIPT_COMMANDS:
+        elif line in SCRIPT_COMMANDS:
+            script_path = line.split(" ")[-1]
+            if not _is_unlinked_repo_file(root, tuple(script_path.split("/"))):
+                raise EvidenceRejected("Required source script unavailable")
+        else:
             raise EvidenceRejected("Unreviewed source command")
         approved.append(tuple(line.split(" ")[1:]))
     return tuple(approved)
@@ -83,6 +103,8 @@ _PRIVATE_ENV_NAMES = frozenset({
     "GITHUB_TOKEN", "GH_TOKEN", "GITHUB_ENV", "GITHUB_PATH", "GITHUB_OUTPUT",
     "GIT_ASKPASS", "SSH_ASKPASS", "AWS_ACCESS_KEY_ID",
     "PYTHONHOME", "PYTHONSTARTUP", "PYTHONINSPECT", "PYTHONUSERBASE",
+    "PYTHONOPTIMIZE", "PYTHONWARNINGS", "PYTHONBREAKPOINT", "PYTHONPYCACHEPREFIX",
+    "LD_PRELOAD", "LD_LIBRARY_PATH", "DYLD_INSERT_LIBRARIES", "DYLD_LIBRARY_PATH",
 })
 _PRIVATE_ENV_SUFFIXES = (
     "_TOKEN", "_SECRET", "_PASSWORD", "_KEY", "_CREDENTIAL", "_CREDENTIALS",
@@ -125,6 +147,10 @@ def execute(commands: tuple[tuple[str, ...], ...], root: Path = ROOT,
 
 def main() -> int:
     try:
+        if not _is_unlinked_repo_file(
+            ROOT, ("products", "desktop", "ci", "source_evidence_commands_r509.txt")
+        ):
+            raise EvidenceRejected("Unsafe source evidence manifest path")
         return execute(load_commands(MANIFEST.read_bytes()))
     except (OSError, EvidenceRejected):
         print("REJECTED: immutable source evidence unavailable", file=sys.stderr)
