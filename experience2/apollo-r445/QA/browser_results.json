@@ -1,0 +1,158 @@
+{
+  "cases": [
+    {
+      "axe_core": "NOT_RUN",
+      "javascript": true,
+      "navigated_lcp_cls": "NOT_RUN",
+      "navigation": "set_content",
+      "php_fixture": true,
+      "result": "PASS",
+      "screenshot": "320-js.png",
+      "viewport": 320
+    },
+    {
+      "axe_core": "NOT_RUN",
+      "javascript": false,
+      "navigated_lcp_cls": "NOT_RUN",
+      "navigation": "set_content",
+      "php_fixture": true,
+      "result": "PASS",
+      "screenshot": "320-nojs.png",
+      "viewport": 320
+    },
+    {
+      "axe_core": "NOT_RUN",
+      "javascript": true,
+      "navigated_lcp_cls": "NOT_RUN",
+      "navigation": "set_content",
+      "php_fixture": true,
+      "result": "PASS",
+      "screenshot": "360-js.png",
+      "viewport": 360
+    },
+    {
+      "axe_core": "NOT_RUN",
+      "javascript": false,
+      "navigated_lcp_cls": "NOT_RUN",
+      "navigation": "set_content",
+      "php_fixture": true,
+      "result": "PASS",
+      "screenshot": "360-nojs.png",
+      "viewport": 360
+    },
+    {
+      "axe_core": "NOT_RUN",
+      "javascript": true,
+      "navigated_lcp_cls": "NOT_RUN",
+      "navigation": "set_content",
+      "php_fixture": true,
+      "result": "PASS",
+      "screenshot": "390-js.png",
+      "viewport": 390
+    },
+    {
+      "axe_core": "NOT_RUN",
+      "javascript": false,
+      "navigated_lcp_cls": "NOT_RUN",
+      "navigation": "set_content",
+      "php_fixture": true,
+      "result": "PASS",
+      "screenshot": "390-nojs.png",
+      "viewport": 390
+    },
+    {
+      "axe_core": "NOT_RUN",
+      "javascript": true,
+      "navigated_lcp_cls": "NOT_RUN",
+      "navigation": "set_content",
+      "php_fixture": true,
+      "result": "PASS",
+      "screenshot": "768-js.png",
+      "viewport": 768
+    },
+    {
+      "axe_core": "NOT_RUN",
+      "javascript": false,
+      "navigated_lcp_cls": "NOT_RUN",
+      "navigation": "set_content",
+      "php_fixture": true,
+      "result": "PASS",
+      "screenshot": "768-nojs.png",
+      "viewport": 768
+    },
+    {
+      "axe_core": "NOT_RUN",
+      "javascript": true,
+      "navigated_lcp_cls": "NOT_RUN",
+      "navigation": "set_content",
+      "php_fixture": true,
+      "result": "PASS",
+      "screenshot": "1024-js.png",
+      "viewport": 1024
+    },
+    {
+      "axe_core": "NOT_RUN",
+      "javascript": false,
+      "navigated_lcp_cls": "NOT_RUN",
+      "navigation": "set_content",
+      "php_fixture": true,
+      "result": "PASS",
+      "screenshot": "1024-nojs.png",
+      "viewport": 1024
+    },
+    {
+      "axe_core": "NOT_RUN",
+      "javascript": true,
+      "navigated_lcp_cls": "NOT_RUN",
+      "navigation": "set_content",
+      "php_fixture": true,
+      "result": "PASS",
+      "screenshot": "1440-js.png",
+      "viewport": 1440
+    },
+    {
+      "axe_core": "NOT_RUN",
+      "javascript": false,
+      "navigated_lcp_cls": "NOT_RUN",
+      "navigation": "set_content",
+      "php_fixture": true,
+      "result": "PASS",
+      "screenshot": "1440-nojs.png",
+      "viewport": 1440
+    },
+    {
+      "axe_core": "NOT_RUN",
+      "javascript": true,
+      "navigated_lcp_cls": "NOT_RUN",
+      "navigation": "set_content",
+      "php_fixture": true,
+      "result": "PASS",
+      "screenshot": "1920-js.png",
+      "viewport": 1920
+    },
+    {
+      "axe_core": "NOT_RUN",
+      "javascript": false,
+      "navigated_lcp_cls": "NOT_RUN",
+      "navigation": "set_content",
+      "php_fixture": true,
+      "result": "PASS",
+      "screenshot": "1920-nojs.png",
+      "viewport": 1920
+    }
+  ],
+  "commercial_sales": "UNKNOWN",
+  "count": 14,
+  "extra_screenshots": [
+    "390-forced-colors.png",
+    "390-hi-dpi.png",
+    "900-print.png"
+  ],
+  "genuine_axe": "NOT_RUN",
+  "navigated_lcp_cls": "NOT_RUN",
+  "navigation_probe": {
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://localhost.invalid/apollo-staging",
+    "result": "BLOCKED"
+  },
+  "staging_wordpress": "NOT_RUN"
+}

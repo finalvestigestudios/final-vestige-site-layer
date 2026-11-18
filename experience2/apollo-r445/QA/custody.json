@@ -1,0 +1,41 @@
+{
+  "axe": "NOT_RUN",
+  "lcp_cls": "NOT_RUN",
+  "release": "HARD_HOLD",
+  "screenshots": {
+    "1024-js.png": "5c45b3e288b0568999b3dc1ff50db4ed4356dad20f051f77f6ddd56250057715",
+    "1024-nojs.png": "645b110dd04f7e2bb573bc8e8628df715f753a6026e963b2896818bec88baa9b",
+    "1440-js.png": "8f3d3e065b4a25a6a81d7a1b00b302527fcd732624a5b34f809e2445433b82ff",
+    "1440-nojs.png": "cf47f40e2b060a3e45fcd8a6f3f43ed3dc2dc3bc23a9539136fd7f2c22428f6d",
+    "1920-js.png": "97436d323a7f82a58a33f0ca1474e47be9ffa033a39443199aacaf2350063cef",
+    "1920-nojs.png": "2192135a51d8d91b4554f48bc539316c5f38956b93439a194b8222630f3ab344",
+    "320-js.png": "68813f19f44637a6b9a80d87ae5fcbd18d4caac4b3db6f2907ed601d11b1d921",
+    "320-nojs.png": "690032bf7cc8fcaa224b33d90a63038025e5cdd4e2675daae9773b404acc99d8",
+    "360-js.png": "7c0ec4a00badec9915ac3bdffc6fca5796f2603a377357c29bfb9ce5c7ad70ba",
+    "360-nojs.png": "f4bcb751557a23fda7782c6b10f39e84fa35719ae043b1684215912836f6489a",
+    "390-forced-colors.png": "0b63a24ea079ac9c7bd245c8fd08db46e6e05f3f3c3388424c9d29ed77d3165e",
+    "390-hi-dpi.png": "0439d54d6b44cc58c1041c703f971fb01521eaa03742d024aff2bb0e066aef65",
+    "390-js.png": "d39e05b8912884a937eefd7e40d6756c9bd482c30a48e9afd8e88de52e576e74",
+    "390-nojs.png": "449f2bc5a22600d3791556ebd346934a06cd52c8b4bbbd503cdf25129cf5d011",
+    "768-js.png": "d9e8ffa9b333ce54e59b90ef0f3fd3bfe4855a90e7f10e7e7b257ffba63596c0",
+    "768-nojs.png": "a3f8a34424c274fbd0a90a3d12213a20148bdcbc4bcdbd0111a0a63875c6729f",
+    "900-print.png": "16dbe28cfc40acd045e738081b08942b6b408035790d2b3f093463e733f89131"
+  },
+  "source_files": {
+    "CONVERSION_CONTRACT.md": "46ff8b2cecc396eb8d7ce343ea571f8ed30ba562df84eeb9044790e17a0e28b6",
+    "README.md": "91ec0fc40b2e31d4465d9436a3583499bb1e28377055e733c8a4d461f3a1a3eb",
+    "bridge.php": "bb5d498bac3e2f767733b9876a77fdea76fb5c2e9f9d5eaa59f3261aebdd6fbb",
+    "qa/browser_qa.py": "09ab7750bacaf26e6f48061d56769a5f6e9c459f04045fc6472bb3379536ea39",
+    "qa/fixture.php": "51415e45336bc72689f1219eaa49e3430966e64fc5a33843e956f3c423dc167e",
+    "qa/package_evidence.py": "66fe28f02772b395c6b3ce9e6fc347d44cd5d8af93f8749e6ad4c858f7197b74",
+    "qa/test_bridge.py": "f59ff998540a7f3add43153d8afdd0a5d8c48851d528f2e1b4e16e4aae266612"
+  },
+  "stage": "LOCAL_PHP_AND_CHROMIUM_ONLY",
+  "staging": "NOT_RUN",
+  "upstream_R444": {
+    "assets/review-panel.css": "682d8985fb13779bcb0156dd28322b07cdcc3330ae8e6cb19ebf031c26a52385",
+    "assets/review-panel.js": "f6f4d52e8f0b435d196cbfd81e94da6a4e02e9b817eb6ea6efe6e8fd26374af5",
+    "review_panel.php": "19366737af847a0bc69ef91d238016d1436fa6c95ccc46848ebf4ead8ce8ae01",
+    "source_manifest.json": "a940d2e6d8c685219f3dccc0e0cc984e97d999948c81fc7379c09634f3e60004"
+  }
+}
