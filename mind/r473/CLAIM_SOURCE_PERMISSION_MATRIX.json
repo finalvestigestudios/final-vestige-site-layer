@@ -1,0 +1,256 @@
+{
+  "as_of": "2026-11-18",
+  "owner": "Final Vestige Mind & Perception",
+  "pilot": "Zen12",
+  "status": "DRAFT_HARD_HOLD",
+  "sources": [
+    {
+      "url": "https://doi.org/10.1038/35784",
+      "kind": "1998 original correspondence",
+      "limit": "Not a branded-audio trial"
+    },
+    {
+      "url": "https://doi.org/10.1016/j.concog.2014.08.022",
+      "kind": "2014 controlled spatial experiment",
+      "limit": "Distance and position/ownership measures only"
+    },
+    {
+      "url": "https://doi.org/10.1525/collabra.325",
+      "kind": "2020 expectation critique",
+      "limit": "Confounding analysis does not prove illusion fake"
+    },
+    {
+      "url": "https://doi.org/10.1525/collabra.32274",
+      "kind": "2022 methodological challenge",
+      "limit": "Interpretation contested"
+    },
+    {
+      "url": "https://doi.org/10.1525/collabra.35743",
+      "kind": "2022 conceptual replication",
+      "limit": "Procedure effects cannot be assumed identical"
+    },
+    {
+      "url": "https://doi.org/10.1525/collabra.116190",
+      "kind": "2024 expectancy replication",
+      "limit": "Sample/context-specific"
+    },
+    {
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "kind": "2023 14-study review",
+      "limit": "Heterogeneous, no Zen12 testing"
+    },
+    {
+      "url": "https://zen12.com/",
+      "kind": "Official standard seller offer",
+      "limit": "Dynamic checkout/prices not verified"
+    },
+    {
+      "url": "https://zen12.com/about",
+      "kind": "Official Zen12 description",
+      "limit": "Seller statements, not independent proof"
+    },
+    {
+      "url": "https://zen12.com/secret/",
+      "kind": "Official separate promotional offer",
+      "limit": "Coupon/countdown and conditions volatile"
+    },
+    {
+      "url": "https://inspire3.com/",
+      "kind": "Seller portfolio",
+      "limit": "Not publisher-specific approval"
+    },
+    {
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "Public affiliate program",
+      "limit": "Not named partner acceptance or permissions"
+    },
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "Federal endorsement disclosure guidance",
+      "limit": "Apply to real approved earning links"
+    },
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "Federal health claims substantiation guidance",
+      "limit": "Avoid unsupported product-specific outcomes"
+    },
+    {
+      "url": "https://finalvestige.com/focus/",
+      "kind": "Existing free Focus",
+      "limit": "Not a paid product"
+    },
+    {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "Existing history resource",
+      "limit": "Not proof of mesmerism"
+    }
+  ],
+  "decisions": [
+    {
+      "id": 1,
+      "claim": "Zen12 description: 12-minute downloadable MP3s, levels and modes",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source": "Official standard site /about",
+      "decision": "Quote as format not efficacy"
+    },
+    {
+      "id": 2,
+      "claim": "Zen12: 12 minutes equals 1 hour meditation",
+      "status": "DO_NOT_ADOPT",
+      "source": "Seller standard site",
+      "decision": "No product-specific independent equivalence evidence"
+    },
+    {
+      "id": 3,
+      "claim": "Zen12: automatically induces brainwave states",
+      "status": "DO_NOT_ADOPT",
+      "source": "Seller homepage",
+      "decision": "Independent EEG review inconclusive"
+    },
+    {
+      "id": 4,
+      "claim": "Zen12: heals anxiety, illness, depression",
+      "status": "DO_NOT_ADOPT",
+      "source": "FTC health guidance",
+      "decision": "No adequate product-specific evidence"
+    },
+    {
+      "id": 5,
+      "claim": "Zen12: 48 MP3s across 12 levels premium",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source": "Standard and /secret page",
+      "decision": "Verify exact selected SKU before publication"
+    },
+    {
+      "id": 6,
+      "claim": "Zen12 standard Beginner/Premium/Advanced checkout prices",
+      "status": "CHECKOUT_NOT_VERIFIED",
+      "source": "Official standard page 2026-11-18",
+      "decision": "Displayed figures volatile and not adopted in CTA"
+    },
+    {
+      "id": 7,
+      "claim": "Zen12 promotional coupon/discount/countdown",
+      "status": "DO_NOT_ADOPT",
+      "source": "Official /secret page",
+      "decision": "Time-sensitive and not approved publisher terms"
+    },
+    {
+      "id": 8,
+      "claim": "Zen12 advertised refund claim",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source": "Official standard page",
+      "decision": "Exact checkout terms, exceptions unverified"
+    },
+    {
+      "id": 9,
+      "claim": "Inspire3 public 60%+ claim",
+      "status": "DO_NOT_ASSERT_FOR_FV",
+      "source": "Public affiliate page",
+      "decision": "Not a Final Vestige-specific approved rate"
+    },
+    {
+      "id": 10,
+      "claim": "Final Vestige Inspire3 membership",
+      "status": "NOT_VERIFIED",
+      "source": "Aug 24 Refersion pending notice / restricted inbox search",
+      "decision": "Named acceptance missing"
+    },
+    {
+      "id": 11,
+      "claim": "Final Vestige authorized website/social/EMAIL channels",
+      "status": "NOT_VERIFIED",
+      "source": "No authenticated partner terms",
+      "decision": "No affiliate links"
+    },
+    {
+      "id": 12,
+      "claim": "Final Vestige tracked Zen12 link",
+      "status": "NOT_VERIFIED",
+      "source": "No issued merchant-specific link read",
+      "decision": "Disabled button only"
+    },
+    {
+      "id": 13,
+      "claim": "FV Mind owned paid SKU rights",
+      "status": "NOT_VERIFIED",
+      "source": "Existing Focus is free; no authenticated paid SKU",
+      "decision": "No sale funnel"
+    },
+    {
+      "id": 14,
+      "claim": "Rubber hand 1998 reports",
+      "status": "RESEARCH_SUPPORTED_WITH_LIMITS",
+      "source": "Botvinick and Cohen 1998",
+      "decision": "Not general trance/audio claims"
+    },
+    {
+      "id": 15,
+      "claim": "2024 condition-order expectations",
+      "status": "RESEARCH_SUPPORTED_WITH_LIMITS",
+      "source": "Tsuji & Imaizumi 2024",
+      "decision": "Not universal proof of mechanism"
+    },
+    {
+      "id": 16,
+      "claim": "2023 binaural EEG findings",
+      "status": "RESEARCH_SUPPORTED_WITH_LIMITS",
+      "source": "Ingendoh et al. 2023",
+      "decision": "14 heterogeneous studies, not Zen12"
+    },
+    {
+      "id": 17,
+      "claim": "FTC near-link commission disclosure",
+      "status": "REQUIRED_WHEN_LINK_ACTIVE",
+      "source": "FTC Endorsement Guides",
+      "decision": "Adjacent now as prospective disclosure; recheck approved copy"
+    },
+    {
+      "id": 18,
+      "claim": "Buyer CTA enabled",
+      "status": "BLOCKED",
+      "source": "Partner approval absent",
+      "decision": "Keep native disabled"
+    },
+    {
+      "id": 19,
+      "claim": "Existing Focus signup",
+      "status": "EXISTING_ONLY",
+      "source": "Live /focus/",
+      "decision": "No duplicate form"
+    },
+    {
+      "id": 20,
+      "claim": "Affiliate_click",
+      "status": "OUTBOUND_EVENT_NOT_SALE",
+      "source": "Existing first-party measurement contract",
+      "decision": "Only after approved link; no tracking script in draft"
+    },
+    {
+      "id": 21,
+      "claim": "Confirmed commission/sale",
+      "status": "UNVERIFIED",
+      "source": "Merchant settlement proof missing",
+      "decision": "Cannot count clicks as sales"
+    },
+    {
+      "id": 22,
+      "claim": "Realized net per 1000 verified human sessions",
+      "status": "NOT_COMPUTABLE",
+      "source": "Settlements/fees/refunds and denominator missing",
+      "decision": "Report N/A not 0"
+    }
+  ],
+  "commercial_gates": {
+    "named_partner_approval": false,
+    "earning_link_verified": false,
+    "allowed_website_social_email_permissions": false,
+    "exact_package_checkout_test": false,
+    "accurate_final_price_and_refund": false,
+    "independent_product_health_claim_substantiation": false,
+    "confirmed_paid_settlement": false,
+    "qualified_human_sessions": false,
+    "founder_release_approval": false
+  },
+  "not_a_claim": "Public seller affiliate percentages and prices are not Final Vestige payout terms."
+}
