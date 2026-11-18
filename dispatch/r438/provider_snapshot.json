@@ -1,0 +1,65 @@
+{
+  "version": "r438",
+  "recorded_utc": "2026-11-18T03:34:00Z",
+  "recipient": {
+    "snapshot_id": "wp-2026-11-18T03:34Z",
+    "newsletter_as_of": "2026-11-18T03:33:59Z",
+    "followers_as_of": "2026-11-18T03:34:00Z",
+    "newsletter": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "suppressed": 0,
+      "paid": 0
+    },
+    "followers": {
+      "email": 0,
+      "wpcom": 3,
+      "comment": 0,
+      "paid": 0
+    },
+    "subscribed_filter": {
+      "source": "PENDING",
+      "count": null,
+      "witness_ref": null,
+      "snapshot_id": null,
+      "no_addresses_recorded": false
+    }
+  },
+  "welcome": {
+    "authoritative_confirmation": false,
+    "received_full_fieldbook_welcome": false,
+    "redacted_witness_ref": null
+  },
+  "email": {
+    "native_jetpack_preview": false,
+    "from_identity_checked": false,
+    "publisher_postal_verified": false,
+    "unsub_functionality_verified": false,
+    "subject_and_first_paint_checked": false,
+    "founder_final_send_approval": false
+  },
+  "commercial": {
+    "named_affiliate_approval": false,
+    "email_channel_permission": false,
+    "specific_sku_and_claims_checked": false,
+    "merchant_issued_earning_url": false,
+    "approved_live_warmup_guide": false,
+    "price_refund_checkout_checked": false,
+    "near_offer_disclosure_checked": false
+  },
+  "revenue": {
+    "settled_report": {
+      "complete_7d": false,
+      "complete_30d": false,
+      "independent_merchant_source": false,
+      "paid_orders": null,
+      "gross_usd": null,
+      "refunds_usd": null,
+      "fees_usd": null
+    },
+    "audited_human_sessions": null,
+    "source_asset_ids_verified": false,
+    "nonhuman_excluded": false
+  }
+}
