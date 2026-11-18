@@ -1,0 +1,7 @@
+# R438 independently reproducible QA
+
+Read-only source inputs were retrieved from authenticated WordPress Jetpack Newsletter status and settings, Stats Followers and published /dispatch/, /focus/, /editorial-standards/; GitHub #174 / #171, master PR #175 and latest stacked PR #2945; official seller and FTC/WordPress documentation. UTC source reference: 2026-11-18 03:33:59–03:34:00. Sensitive individual details not copied.
+
+**V8 execution prior to commit:** 15 assertions PASSED; synthetic mutations included contradictory subscriber evidence, stale proof, false positive email eligibility, unconfirmed count additivity, inflated paid receipts, and premature release flags. Committed Node test is independently executable as `node dispatch/r438/test_recipient_reconciliation.cjs`; native Node execution is NOT claimed by this receipt until independently run. No real delivery, independent payment, or inbox render was performed.
+
+**Deployment boundary:** All these files are for an unmerged draft PR, no modifications to the original six issues or WordPress, and every evaluator output `send_allowed=false` with `status=HOLD_UNSENT`.
