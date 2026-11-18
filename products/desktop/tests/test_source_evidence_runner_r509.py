@@ -355,5 +355,110 @@ class SourceEvidenceR511(unittest.TestCase):
         self.assertEqual(child["PYTHONDONTWRITEBYTECODE"], "1")
 
 
+
+class SourceEvidenceR512(unittest.TestCase):
+    """Defend the child-process environment, with no private data fixtures."""
+
+    def test_unreviewed_python_startup_knobs_stripped(self):
+        injected = {key: "poison" for key in (
+            "PYTHONPATH", "PYTHONHOME", "PYTHONINSPECT", "PYTHONWARNINGS",
+            "PYTHONOPTIMIZE", "PYTHONSAFEPATH", "PYTHONUTF8",
+            "PYTHONIOENCODING", "PYTHONHASHSEED", "PYTHONDEVMODE",
+            "PYTHONPROFILEIMPORTTIME", "PYTHONTRACEMALLOC",
+        )}
+        with patch.dict(os.environ, injected):
+            child = runner._child_environment(ROOT)
+        for key in injected:
+            if key not in ("PYTHONPATH", "PYTHONHASHSEED"):
+                self.assertNotIn(key, child)
+        self.assertEqual(child["PYTHONHASHSEED"], "0")
+        self.assertEqual(child["PYTHONPATH"], str(ROOT / "products" / "desktop"))
+
+    def test_case_insensitive_python_startup_poisoning_rejected(self):
+        with patch.dict(os.environ, {
+            "PythonWarnings": "ignore", "pythoninspect": "1",
+        }):
+            child = runner._child_environment(ROOT)
+        self.assertNotIn("PythonWarnings", child)
+        self.assertNotIn("pythoninspect", child)
+
+    def test_github_command_files_and_event_payloads_stripped(self):
+        injected = {
+            "GITHUB_STEP_SUMMARY": "/private/summary",
+            "GITHUB_STATE": "/private/state",
+            "GITHUB_EVENT_PATH": "/private/event",
+            "GITHUB_ENV": "/private/env",
+            "GITHUB_OUTPUT": "/private/output",
+            "GITHUB_PATH": "/private/path",
+            "GITHUB_TOKEN": "synthetic-token",
+            "GITHUB_ACTIONS": "true",
+            "CI": "true",
+        }
+        with patch.dict(os.environ, injected):
+            child = runner._child_environment(ROOT)
+        for key in injected:
+            if key not in ("GITHUB_ACTIONS", "CI"):
+                self.assertNotIn(key, child)
+        self.assertEqual(child["GITHUB_ACTIONS"], "true")
+        self.assertEqual(child["CI"], "true")
+
+    def test_git_and_ssh_injection_and_agent_handles_stripped(self):
+        injected = {
+            "GIT_CONFIG_COUNT": "1", "GIT_CONFIG_KEY_0": "credential.helper",
+            "GIT_CONFIG_VALUE_0": "!private",
+            "SSH_AUTH_SOCK": "/private/agent",
+            "GIT_ASKPASS": "/private/askpass",
+            "SSH_ASKPASS": "/private/askpass2",
+        }
+        with patch.dict(os.environ, injected):
+            child = runner._child_environment(ROOT)
+        for key in injected:
+            self.assertNotIn(key, child)
+
+    def test_credential_suffixes_and_loader_flags_remain_blocked(self):
+        injected = {
+            "PAYMENT_COOKIE": "synthetic", "GRANT_SESSION": "synthetic",
+            "AWS_ACCESS_KEY_ID": "synthetic", "AZURE_CLIENT_SECRET": "synthetic",
+            "LD_PRELOAD": "/private/lib.so", "DYLD_LIBRARY_PATH": "/private",
+        }
+        with patch.dict(os.environ, injected):
+            child = runner._child_environment(ROOT)
+        for key in injected:
+            self.assertNotIn(key, child)
+
+    def test_nonsensitive_host_basics_and_ci_marker_preserved(self):
+        injected = {
+            "PATH": "/usr/bin", "CI": "true", "LANG": "en_US.UTF-8",
+            "FV_NONSECRET_FLAG": "enabled",
+        }
+        with patch.dict(os.environ, injected):
+            child = runner._child_environment(ROOT)
+        for key, value in injected.items():
+            self.assertEqual(child[key], value)
+
+    def test_real_child_process_ignores_hostile_python_settings(self):
+        import subprocess
+        with TemporaryDirectory() as d, patch.dict(os.environ, {
+            "PYTHONHASHSEED": "random", "PYTHONOPTIMIZE": "2",
+        }):
+            child = runner._child_environment(Path(d))
+            check = subprocess.run(
+                [sys.executable, "-B", "-c",
+                 "import os,sys; assert sys.flags.optimize == 0; "
+                 "assert os.getenv('PYTHONHASHSEED') == '0'"],
+                env=child, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                timeout=30, check=False,
+            )
+        self.assertEqual(check.returncode, 0, check.stderr.decode("utf-8", "replace"))
+
+    def test_environment_generation_is_repeatable(self):
+        with patch.dict(os.environ, {
+            "PYTHONHASHSEED": "random", "GITHUB_STEP_SUMMARY": "/private",
+        }):
+            first = runner._child_environment(ROOT)
+            second = runner._child_environment(ROOT)
+        self.assertEqual(first, second)
+
+
 if __name__ == "__main__":
     unittest.main()
