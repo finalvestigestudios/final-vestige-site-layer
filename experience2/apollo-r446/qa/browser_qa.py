@@ -22,25 +22,42 @@ with sync_playwright() as p:
             valid=records==5 and links==1 and nasa==5 and 'utm_' not in url
             # Native details must work without JavaScript; JS filter is supplemental.
             summary=page.locator('[data-r444-record] details summary').first
-            summary.click()
+            if w<=390:
+                summary.tap()
+                interaction='touch'
+            else:
+                summary.focus()
+                page.keyboard.press('Enter')
+                interaction='keyboard'
             details_open=page.locator('[data-r444-record] details').first.get_attribute('open') is not None
             valid=valid and details_open
             if js:
                 c=page.locator('[data-r444-controls]')
                 valid=valid and c.count()==1 and not c.is_hidden()
-                page.get_by_role('button',name='Later account').click()
+                target=page.get_by_role('button',name='Later account')
+                if w<=390: target.tap()
+                else:
+                    target.focus()
+                    page.keyboard.press('Enter')
                 visible=sum(page.locator('[data-r444-record]').nth(i).is_visible() for i in range(5))
                 valid=valid and visible==1
-                page.get_by_role('button',name='All five').click()
+                target=page.get_by_role('button',name='All five')
+                if w<=390: target.tap()
+                else:
+                    target.focus()
+                    page.keyboard.press('Enter')
             else:
                 valid=valid and all(page.locator('[data-r444-record]').nth(i).is_visible() for i in range(5))
             overflow=page.evaluate('document.documentElement.scrollWidth > document.documentElement.clientWidth + 1')
             valid=valid and not overflow
             # Return to fully expanded initial gallery for a visually comparable screenshot.
-            summary.click()
+            if w<=390: summary.tap()
+            else:
+                summary.focus()
+                page.keyboard.press('Enter')
             path=IMG/f'{w}-{("js" if js else "nojs")}.png'
             page.screenshot(path=str(path),full_page=True,animations='disabled')
-            row={'width':w,'javascript':js,'records':records,'nasa_links':nasa,'cta_count':links,'cta_untagged':'utm_' not in url,'details_opens':details_open,'overflow':overflow,'pass':valid,'screenshot':path.name}
+            row={'width':w,'javascript':js,'records':records,'nasa_links':nasa,'cta_count':links,'cta_untagged':'utm_' not in url,'details_opens':details_open,'interaction':interaction,'overflow':overflow,'pass':valid,'screenshot':path.name}
             rows.append(row)
             ctx.close()
     # Extra local interaction evidence, not standalone accessibility certification.
