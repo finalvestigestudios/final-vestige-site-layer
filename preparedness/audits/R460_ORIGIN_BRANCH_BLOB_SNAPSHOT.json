@@ -1,0 +1,637 @@
+{
+  "schema": "r460-origin-blob-v1",
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "release_state": "DRAFT_HARD_HOLD",
+  "qualified_qd_pass": false,
+  "candidate": {
+    "branch": "review/preparedness-r459-entire-draft-surface-custody-20261118",
+    "sha": "9b4846d2b2a94f7aeee2689e9b738f94a9eab97a",
+    "articles": {
+      "emergency-hygiene-sanitation": {
+        "body": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+        "meta": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6"
+      },
+      "family-communication-plan": {
+        "body": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+        "meta": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3"
+      },
+      "fire-making-across-time": {
+        "body": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+        "meta": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884"
+      },
+      "food-safety-power-outage": {
+        "body": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+        "meta": "3283071134ba24490d47f5a0635836b6ed4f8965"
+      },
+      "go-bags": {
+        "body": "e5910015fc6e33ad015bc5dc0605b86622b701be",
+        "meta": "16cc5e91204a77486912444c6e516f5d5b48f567"
+      },
+      "history-of-food-preservation": {
+        "body": "273b246a069e834d8476bfc2854308732f5137ab",
+        "meta": "907237e436b44a34f8d673ef9de3168d1e9ad517"
+      },
+      "home-fire-escape-plan": {
+        "body": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+        "meta": "ff1246dcbfb0dd0bc864977f815badb9ad4e7ed8"
+      },
+      "homemade-water-filters": {
+        "body": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+        "meta": "91c730bd1c7a61fa3140a86245c9bc0c88160c29"
+      },
+      "household-emergency-plan": {
+        "body": "f81cd43516e8295104230412f18776919148f905",
+        "meta": "0681d51e6e29166eaae27ac2b7f1fbde3f836787"
+      },
+      "lewis-and-clark-salt-works": {
+        "body": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+        "meta": "3a350aedac67ea89c6995831032367634248c9e9"
+      },
+      "making-water-safer": {
+        "body": "f85d158fc8752200a227282e640f6df48277daf5",
+        "meta": "827d861eb3beebfd010ee98fcca764b23a2de90e"
+      },
+      "medication-and-devices": {
+        "body": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e",
+        "meta": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c"
+      },
+      "navigation-before-gps": {
+        "body": "3c02e58c30d1d608224944142f31fbead44a1252",
+        "meta": "40c83419760bc7bd0c4c574304e65b773b4a8423"
+      },
+      "outage-heat-cold-generators": {
+        "body": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+        "meta": "be37b602d0b82593d438083dfc8a1e5ef595dd44"
+      },
+      "pantry-rotation": {
+        "body": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+        "meta": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c"
+      },
+      "pemmican-and-dried-meats": {
+        "body": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+        "meta": "03d3824e07fe51931671d0ddc7aa8c85eda58435"
+      },
+      "pickling-fermentation-old-recipes": {
+        "body": "1869e37626b7463da45763d60202bd5ac0bd7700",
+        "meta": "da97f42fcabbd05dc513d26c6af289bbeb8816f3"
+      },
+      "pioneer-supply-chains-failed": {
+        "body": "ad158ee898f76d05bcb65c845b1e4a0e8103c660",
+        "meta": "4d2dc4958736e3c5257c65dda8ed016a473ac6be"
+      },
+      "pioneer-travel-rations": {
+        "body": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+        "meta": "7191acba55d63dc405ad9c2003d66193276da89f"
+      },
+      "preparedness-real-households": {
+        "body": "68344cf6c4022285fffb2a01f42027bf6f9ee95d",
+        "meta": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2"
+      },
+      "pressure-canning-low-acid": {
+        "body": "c60d824c2f679fb7362b8523aec18110f8248290",
+        "meta": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341"
+      },
+      "rain-barrels-and-cisterns": {
+        "body": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+        "meta": "dc42694e842969624f24ab5edc9bff2497693e70"
+      },
+      "root-cellars-cool-storage": {
+        "body": "2ff8d029769aa9a97de6b1e388d937899f3af38c",
+        "meta": "c3b7425711c3953c2d6cac9eb2aabe21a6717285"
+      },
+      "safe-jerky-dehydration": {
+        "body": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+        "meta": "50b365e8109c14bdb9ce1a9365db88215a678ec5"
+      },
+      "salt-beef-salt-pork-age-of-sail": {
+        "body": "6539aafeca9bca67c96247c81a7412b117201b88",
+        "meta": "1c4c5396da703f3724b584c67e49e2128ab1f4c6"
+      },
+      "sanitation-before-germ-theory": {
+        "body": "d56df76647d2598f35cfd4609f91649cef063f12",
+        "meta": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523"
+      },
+      "shelter-or-evacuate": {
+        "body": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+        "meta": "cb559141d1e4a39debad16cf5cb796b746a01f19"
+      },
+      "ships-biscuit-and-hardtack": {
+        "body": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+        "meta": "2b2c3ce9472073df3d15e8befb39178d369632b1"
+      },
+      "smokehouses-salting-curing": {
+        "body": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+        "meta": "16223945e83f95b349acf09a2b684c09326550c0"
+      },
+      "three-day-kit": {
+        "body": "933f38ff3cd55a241cf9b392014fc52d4961e84f",
+        "meta": "1c69d5f1636a3a41631a5d93f11254d85cbe1b59"
+      },
+      "two-week-water-storage": {
+        "body": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+        "meta": "76f317f047ed95c8b6c7ab130f44d79232e7a463"
+      },
+      "warnings-radios-offline-maps": {
+        "body": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+        "meta": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7"
+      },
+      "water-advisories-explained": {
+        "body": "e96486d74731606fdd5a616030f146f66c59e2b0",
+        "meta": "4c88e747b46d9e95264ec3367911a5175baa6c31"
+      },
+      "water-math": {
+        "body": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+        "meta": "4b1c3cd7166afa03e56991f7de8af771828a6e54"
+      },
+      "water-purification-through-history": {
+        "body": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+        "meta": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e"
+      }
+    },
+    "sources": {
+      "article-evidence-lock.json": "2dc41fccad6f1272f0a9d9585b6c10c760dcb08c",
+      "crosswalk.json": "d62e493a67dedd23e04cfdf3cce762ef933c6bf9",
+      "fragments/README.md": "cec167dd6acaf9f6e92e87a61fa9aeacdad151a5",
+      "fragments/food.json": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+      "fragments/health.json": "cc29c439372b9d49debf78e63020ffe4d62baeb8",
+      "fragments/hist-field.json": "3dafa9425f3829c0be2e6fea00889aff95124031",
+      "fragments/hist-food.json": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+      "fragments/hist-home.json": "8d85fd868508c5caba14a839d119d55f31f14f72",
+      "fragments/shelter.json": "2a3f1a7ddeab2782add875be1e0e378513504aa1",
+      "fragments/start.json": "96140d6d1872588e5d20d9052445c9157e88934d",
+      "register.json": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77"
+    }
+  },
+  "origins": {
+    "food": {
+      "branch": "claude/prep-food-ccdc55",
+      "sha": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+      "articles": {
+        "food-safety-power-outage": {
+          "body": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+          "meta": "3283071134ba24490d47f5a0635836b6ed4f8965"
+        },
+        "homemade-water-filters": {
+          "body": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "meta": "33789d3db0ec06007deb50d0293361f07cea27ae"
+        },
+        "making-water-safer": {
+          "body": "f85d158fc8752200a227282e640f6df48277daf5",
+          "meta": "bcb567905444687b5ae0a261cbbdb7a24a9e7870"
+        },
+        "pantry-rotation": {
+          "body": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+          "meta": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c"
+        },
+        "pressure-canning-low-acid": {
+          "body": "c60d824c2f679fb7362b8523aec18110f8248290",
+          "meta": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341"
+        },
+        "safe-jerky-dehydration": {
+          "body": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+          "meta": "50b365e8109c14bdb9ce1a9365db88215a678ec5"
+        },
+        "salt-beef-salt-pork-age-of-sail": {
+          "body": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "meta": "06b1cec809cb78a3315f7a7655b028c0a27dd642"
+        },
+        "two-week-water-storage": {
+          "body": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "meta": "76f317f047ed95c8b6c7ab130f44d79232e7a463"
+        },
+        "water-advisories-explained": {
+          "body": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "meta": "4c88e747b46d9e95264ec3367911a5175baa6c31"
+        },
+        "water-math": {
+          "body": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "meta": "4b1c3cd7166afa03e56991f7de8af771828a6e54"
+        }
+      },
+      "sources": {
+        "fragments/README.md": "cec167dd6acaf9f6e92e87a61fa9aeacdad151a5",
+        "fragments/food.json": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+        "register.json": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77"
+      }
+    },
+    "health": {
+      "branch": "claude/prep-health-837444",
+      "sha": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+      "articles": {
+        "emergency-hygiene-sanitation": {
+          "body": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+          "meta": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6"
+        },
+        "homemade-water-filters": {
+          "body": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "meta": "33789d3db0ec06007deb50d0293361f07cea27ae"
+        },
+        "making-water-safer": {
+          "body": "f85d158fc8752200a227282e640f6df48277daf5",
+          "meta": "bcb567905444687b5ae0a261cbbdb7a24a9e7870"
+        },
+        "medication-and-devices": {
+          "body": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e",
+          "meta": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c"
+        },
+        "salt-beef-salt-pork-age-of-sail": {
+          "body": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "meta": "06b1cec809cb78a3315f7a7655b028c0a27dd642"
+        },
+        "two-week-water-storage": {
+          "body": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "meta": "76f317f047ed95c8b6c7ab130f44d79232e7a463"
+        },
+        "warnings-radios-offline-maps": {
+          "body": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+          "meta": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7"
+        },
+        "water-advisories-explained": {
+          "body": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "meta": "4c88e747b46d9e95264ec3367911a5175baa6c31"
+        },
+        "water-math": {
+          "body": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "meta": "4b1c3cd7166afa03e56991f7de8af771828a6e54"
+        }
+      },
+      "sources": {
+        "fragments/README.md": "cec167dd6acaf9f6e92e87a61fa9aeacdad151a5",
+        "fragments/health.json": "cc29c439372b9d49debf78e63020ffe4d62baeb8",
+        "register.json": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77"
+      }
+    },
+    "hist_field": {
+      "branch": "claude/prep-hist-field-9db767",
+      "sha": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+      "articles": {
+        "fire-making-across-time": {
+          "body": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+          "meta": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884"
+        },
+        "homemade-water-filters": {
+          "body": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "meta": "33789d3db0ec06007deb50d0293361f07cea27ae"
+        },
+        "making-water-safer": {
+          "body": "f85d158fc8752200a227282e640f6df48277daf5",
+          "meta": "bcb567905444687b5ae0a261cbbdb7a24a9e7870"
+        },
+        "navigation-before-gps": {
+          "body": "49beb68339a6b85b07d686c0cfb9fe1d88b8de4f",
+          "meta": "40c83419760bc7bd0c4c574304e65b773b4a8423"
+        },
+        "pioneer-supply-chains-failed": {
+          "body": "3643c50b43ca7ba6c1d9bc439e7c78730503b80f",
+          "meta": "8789c77dcc2be717f09ce0fbd340a04319aaf223"
+        },
+        "salt-beef-salt-pork-age-of-sail": {
+          "body": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "meta": "06b1cec809cb78a3315f7a7655b028c0a27dd642"
+        },
+        "two-week-water-storage": {
+          "body": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "meta": "76f317f047ed95c8b6c7ab130f44d79232e7a463"
+        },
+        "water-advisories-explained": {
+          "body": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "meta": "4c88e747b46d9e95264ec3367911a5175baa6c31"
+        },
+        "water-math": {
+          "body": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "meta": "4b1c3cd7166afa03e56991f7de8af771828a6e54"
+        }
+      },
+      "sources": {
+        "fragments/README.md": "cec167dd6acaf9f6e92e87a61fa9aeacdad151a5",
+        "fragments/hist-field.json": "6b65e0aaa777b4c5ebc57fbeade0386b4ab6c32f",
+        "register.json": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77"
+      }
+    },
+    "hist_food": {
+      "branch": "claude/prep-hist-food-b81f19",
+      "sha": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+      "articles": {
+        "history-of-food-preservation": {
+          "body": "273b246a069e834d8476bfc2854308732f5137ab",
+          "meta": "907237e436b44a34f8d673ef9de3168d1e9ad517"
+        },
+        "homemade-water-filters": {
+          "body": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "meta": "33789d3db0ec06007deb50d0293361f07cea27ae"
+        },
+        "lewis-and-clark-salt-works": {
+          "body": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+          "meta": "3a350aedac67ea89c6995831032367634248c9e9"
+        },
+        "making-water-safer": {
+          "body": "f85d158fc8752200a227282e640f6df48277daf5",
+          "meta": "bcb567905444687b5ae0a261cbbdb7a24a9e7870"
+        },
+        "pemmican-and-dried-meats": {
+          "body": "1febc8929f8b90c81a3fcef1e46a2811778b7e06",
+          "meta": "c19f68f2ac0988a8d0959e2d05b8ace8f9511348"
+        },
+        "pioneer-travel-rations": {
+          "body": "a658481d828dc4c5ba85f296adbfbee0514f0611",
+          "meta": "521e56a3f18d8b211920529a88a3c3b86eb332d7"
+        },
+        "salt-beef-salt-pork-age-of-sail": {
+          "body": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "meta": "06b1cec809cb78a3315f7a7655b028c0a27dd642"
+        },
+        "ships-biscuit-and-hardtack": {
+          "body": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+          "meta": "2b2c3ce9472073df3d15e8befb39178d369632b1"
+        },
+        "smokehouses-salting-curing": {
+          "body": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+          "meta": "16223945e83f95b349acf09a2b684c09326550c0"
+        },
+        "two-week-water-storage": {
+          "body": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "meta": "76f317f047ed95c8b6c7ab130f44d79232e7a463"
+        },
+        "water-advisories-explained": {
+          "body": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "meta": "4c88e747b46d9e95264ec3367911a5175baa6c31"
+        },
+        "water-math": {
+          "body": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "meta": "4b1c3cd7166afa03e56991f7de8af771828a6e54"
+        }
+      },
+      "sources": {
+        "fragments/README.md": "cec167dd6acaf9f6e92e87a61fa9aeacdad151a5",
+        "fragments/hist-food.json": "c1856c998c6c728f0de72221e5654a238df994a9",
+        "register.json": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77"
+      }
+    },
+    "hist_home": {
+      "branch": "claude/prep-hist-home-0e0e38",
+      "sha": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "articles": {
+        "homemade-water-filters": {
+          "body": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "meta": "33789d3db0ec06007deb50d0293361f07cea27ae"
+        },
+        "making-water-safer": {
+          "body": "f85d158fc8752200a227282e640f6df48277daf5",
+          "meta": "bcb567905444687b5ae0a261cbbdb7a24a9e7870"
+        },
+        "pickling-fermentation-old-recipes": {
+          "body": "1869e37626b7463da45763d60202bd5ac0bd7700",
+          "meta": "da97f42fcabbd05dc513d26c6af289bbeb8816f3"
+        },
+        "rain-barrels-and-cisterns": {
+          "body": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+          "meta": "dc42694e842969624f24ab5edc9bff2497693e70"
+        },
+        "root-cellars-cool-storage": {
+          "body": "7f375c32d74f2828b4912f5692abc44483e4629a",
+          "meta": "c3b7425711c3953c2d6cac9eb2aabe21a6717285"
+        },
+        "salt-beef-salt-pork-age-of-sail": {
+          "body": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "meta": "06b1cec809cb78a3315f7a7655b028c0a27dd642"
+        },
+        "sanitation-before-germ-theory": {
+          "body": "02090fc1b773fd79f08a7ba754b6125844c37eab",
+          "meta": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523"
+        },
+        "two-week-water-storage": {
+          "body": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "meta": "76f317f047ed95c8b6c7ab130f44d79232e7a463"
+        },
+        "water-advisories-explained": {
+          "body": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "meta": "4c88e747b46d9e95264ec3367911a5175baa6c31"
+        },
+        "water-math": {
+          "body": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "meta": "4b1c3cd7166afa03e56991f7de8af771828a6e54"
+        },
+        "water-purification-through-history": {
+          "body": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+          "meta": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e"
+        }
+      },
+      "sources": {
+        "fragments/README.md": "cec167dd6acaf9f6e92e87a61fa9aeacdad151a5",
+        "fragments/hist-home.json": "8d85fd868508c5caba14a839d119d55f31f14f72",
+        "register.json": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77"
+      }
+    },
+    "shelter": {
+      "branch": "claude/prep-shelter-5e1e0e",
+      "sha": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+      "articles": {
+        "family-communication-plan": {
+          "body": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+          "meta": "e63bbe70f5b93936da5cd71c030e33d82256d3ee"
+        },
+        "home-fire-escape-plan": {
+          "body": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+          "meta": "6a54547ef1458b0b5b0464f95d735ff4653c8368"
+        },
+        "homemade-water-filters": {
+          "body": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "meta": "33789d3db0ec06007deb50d0293361f07cea27ae"
+        },
+        "making-water-safer": {
+          "body": "f85d158fc8752200a227282e640f6df48277daf5",
+          "meta": "bcb567905444687b5ae0a261cbbdb7a24a9e7870"
+        },
+        "outage-heat-cold-generators": {
+          "body": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+          "meta": "77dd194b096bb60ea99728a5b0042adf016b905e"
+        },
+        "salt-beef-salt-pork-age-of-sail": {
+          "body": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "meta": "06b1cec809cb78a3315f7a7655b028c0a27dd642"
+        },
+        "shelter-or-evacuate": {
+          "body": "b8acf07e533eea43795aa242f39fd926b080130f",
+          "meta": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186"
+        },
+        "two-week-water-storage": {
+          "body": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "meta": "76f317f047ed95c8b6c7ab130f44d79232e7a463"
+        },
+        "water-advisories-explained": {
+          "body": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "meta": "4c88e747b46d9e95264ec3367911a5175baa6c31"
+        },
+        "water-math": {
+          "body": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "meta": "4b1c3cd7166afa03e56991f7de8af771828a6e54"
+        }
+      },
+      "sources": {
+        "fragments/README.md": "cec167dd6acaf9f6e92e87a61fa9aeacdad151a5",
+        "fragments/shelter.json": "d9eeb4546e58f083031e0767aaea7cf112099e09",
+        "register.json": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77"
+      }
+    },
+    "start": {
+      "branch": "claude/prep-start-bbfeb8",
+      "sha": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+      "articles": {
+        "go-bags": {
+          "body": "5135639786bbafa4e03939a74659cd0f31df3564",
+          "meta": "16cc5e91204a77486912444c6e516f5d5b48f567"
+        },
+        "homemade-water-filters": {
+          "body": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "meta": "33789d3db0ec06007deb50d0293361f07cea27ae"
+        },
+        "household-emergency-plan": {
+          "body": "8ca5c261dba56eeaf79c445332381a74867233de",
+          "meta": "0681d51e6e29166eaae27ac2b7f1fbde3f836787"
+        },
+        "making-water-safer": {
+          "body": "f85d158fc8752200a227282e640f6df48277daf5",
+          "meta": "bcb567905444687b5ae0a261cbbdb7a24a9e7870"
+        },
+        "preparedness-real-households": {
+          "body": "70d03c366e10db623929f118501becfa26c48bab",
+          "meta": "a0c3a09143a825560b5a5ed79d857b7402bfa295"
+        },
+        "salt-beef-salt-pork-age-of-sail": {
+          "body": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "meta": "06b1cec809cb78a3315f7a7655b028c0a27dd642"
+        },
+        "three-day-kit": {
+          "body": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+          "meta": "c830e4b8b0ee2890a8ddaf82273fdc25bd4b50f2"
+        },
+        "two-week-water-storage": {
+          "body": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "meta": "76f317f047ed95c8b6c7ab130f44d79232e7a463"
+        },
+        "water-advisories-explained": {
+          "body": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "meta": "4c88e747b46d9e95264ec3367911a5175baa6c31"
+        },
+        "water-math": {
+          "body": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "meta": "4b1c3cd7166afa03e56991f7de8af771828a6e54"
+        }
+      },
+      "sources": {
+        "fragments/README.md": "cec167dd6acaf9f6e92e87a61fa9aeacdad151a5",
+        "fragments/start.json": "29574c328cbab0548e6e5d4a026694857d56b6b4",
+        "register.json": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77"
+      }
+    },
+    "shelter_cont": {
+      "branch": "claude/prep-shelter-continuation",
+      "sha": "ac8625faf30dd5538fadc31e06cb5a2cea1defae",
+      "articles": {
+        "family-communication-plan": {
+          "body": "cbfe7830e9412ac99a1920c581a14d2913a9eaf6",
+          "meta": "0ad68a8c456f50912ddef11c44bfc05c3c2d3513"
+        },
+        "home-fire-escape-plan": {
+          "body": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "meta": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9"
+        },
+        "homemade-water-filters": {
+          "body": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "meta": "33789d3db0ec06007deb50d0293361f07cea27ae"
+        },
+        "making-water-safer": {
+          "body": "f85d158fc8752200a227282e640f6df48277daf5",
+          "meta": "bcb567905444687b5ae0a261cbbdb7a24a9e7870"
+        },
+        "outage-heat-cold-generators": {
+          "body": "55a1e3018e3413b79378c6677f15e536bb777377",
+          "meta": "debfd11fb189cb43a688862867dc60172fb6eb3a"
+        },
+        "salt-beef-salt-pork-age-of-sail": {
+          "body": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "meta": "06b1cec809cb78a3315f7a7655b028c0a27dd642"
+        },
+        "shelter-or-evacuate": {
+          "body": "ed6e6bc4dc1344d1aa25679c6f4380f76d82927e",
+          "meta": "0f4800f6808f54e0487de1f8426b4612f7d0a54f"
+        },
+        "two-week-water-storage": {
+          "body": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "meta": "76f317f047ed95c8b6c7ab130f44d79232e7a463"
+        },
+        "water-advisories-explained": {
+          "body": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "meta": "4c88e747b46d9e95264ec3367911a5175baa6c31"
+        },
+        "water-math": {
+          "body": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "meta": "4b1c3cd7166afa03e56991f7de8af771828a6e54"
+        }
+      },
+      "sources": {
+        "fragments/README.md": "cec167dd6acaf9f6e92e87a61fa9aeacdad151a5",
+        "fragments/shelter.json": "7291a7836a14b8a83f85310815e820295245c83b",
+        "register.json": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77"
+      }
+    },
+    "shelter_follow": {
+      "branch": "claude/prep-shelter-followup-evidence",
+      "sha": "6a5998ead97eca997e573ce8d3ceacf1c6aabad4",
+      "articles": {
+        "family-communication-plan": {
+          "body": "c97a79761dc3be1c44e5f9322a606ccc7fd11c6e",
+          "meta": "a8618235711cca039f142ad59962c1153654aa45"
+        },
+        "home-fire-escape-plan": {
+          "body": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "meta": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9"
+        },
+        "homemade-water-filters": {
+          "body": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+          "meta": "33789d3db0ec06007deb50d0293361f07cea27ae"
+        },
+        "making-water-safer": {
+          "body": "f85d158fc8752200a227282e640f6df48277daf5",
+          "meta": "bcb567905444687b5ae0a261cbbdb7a24a9e7870"
+        },
+        "outage-heat-cold-generators": {
+          "body": "5608a28249a0e351710e0c756d878048c8e41e24",
+          "meta": "593e7bd6fef0446f05d7a86551e702ceaa38eabb"
+        },
+        "salt-beef-salt-pork-age-of-sail": {
+          "body": "6539aafeca9bca67c96247c81a7412b117201b88",
+          "meta": "06b1cec809cb78a3315f7a7655b028c0a27dd642"
+        },
+        "shelter-or-evacuate": {
+          "body": "a8c36cd63517fdeb723dca201b31802c2a721ddf",
+          "meta": "fb1081527e5afdd542299f2087397cf3308716c6"
+        },
+        "two-week-water-storage": {
+          "body": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+          "meta": "76f317f047ed95c8b6c7ab130f44d79232e7a463"
+        },
+        "water-advisories-explained": {
+          "body": "e96486d74731606fdd5a616030f146f66c59e2b0",
+          "meta": "4c88e747b46d9e95264ec3367911a5175baa6c31"
+        },
+        "water-math": {
+          "body": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+          "meta": "4b1c3cd7166afa03e56991f7de8af771828a6e54"
+        }
+      },
+      "sources": {
+        "fragments/README.md": "cec167dd6acaf9f6e92e87a61fa9aeacdad151a5",
+        "fragments/shelter.json": "5105f4bbd7d5b2e991f28d4b4ae7c9d5a2804aa9",
+        "register.json": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77"
+      }
+    }
+  },
+  "review_refs": {
+    "qa157": "7d1ae6b8ef93d10cfb6810987672360885e9c1aa",
+    "fixture169": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+    "repair2205": "bbcf1859768624c611df4abadc564c18247cf32a",
+    "editorial2789": "00a82df32a49a792540b178ebf7f1f271040e2a0",
+    "home2985": "c724b7cc6789337a94596e4c37b5a4be4de1baaa"
+  }
+}
