@@ -1,0 +1,71 @@
+{
+  "schema": "fv-p0-primary-candidate-v1",
+  "checked_on": "2026-11-18",
+  "source_method": "public_retriever_origin_only_not_guest_browser",
+  "basis_blob": "16a7ec1c0b8cb92cef4a241eccc82924cd4ca74e",
+  "historical_posts": 61,
+  "current_posts": 66,
+  "claimed_42_browser_broken": null,
+  "claimed_76_percent_wire_verified": false,
+  "rows": [
+    {
+      "slot": "274:6",
+      "origin_http": 404,
+      "origin_url": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+      "guest_http": null,
+      "guest_decoded": null,
+      "guest_bytes": null,
+      "candidate_role": "possible_same_historical_frame_unverified_crop",
+      "catalog": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-G-227989.html",
+      "accession": "80-G-227989",
+      "reuse_evidence": "https://commons.wikimedia.org/wiki/File:USS_Tang_(SS-306)_rescues_airmen_off_Truk_in_1944.jpg",
+      "rights": "US_NAVY_FEDERAL_WORK_PUBLIC_DOMAIN_US_REVIEW",
+      "published_filename_hint": [
+        640,
+        432
+      ],
+      "candidate_raster_catalog": [
+        1910,
+        1288
+      ],
+      "catalog_original_bytes": 1245612,
+      "catalog_sha1": "b7356c7fd8600b34510ac57573d706d18c940faa",
+      "existing_preview": [
+        960,
+        647
+      ],
+      "navy_tiff_catalog": [
+        6060,
+        4926
+      ],
+      "new_sha256": null
+    },
+    {
+      "slot": "287:5",
+      "origin_http": 404,
+      "origin_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "guest_http": null,
+      "guest_decoded": null,
+      "guest_bytes": null,
+      "candidate_role": "different_archive_photo_editorial_alternative_only",
+      "catalog": "https://floridamemory.com/items/show/32083",
+      "accession": "RC09237",
+      "catalog_image_path": "/fpc/reference/rc09237.jpg",
+      "date": "1980-05-09",
+      "reuse_evidence": "https://floridamemory.com/share/order-info/faq.php",
+      "rights": "FLORIDA_MEMORY_PUBLIC_DOMAIN_MARK_1_GENERAL_POLICY_ITEM_REVIEW",
+      "candidate_raster_catalog": null,
+      "existing_preview": null,
+      "new_sha256": null
+    }
+  ],
+  "max_derivative_width": 960,
+  "no_upscaling": true,
+  "rights_review": "HOLD",
+  "exact_crop_review": "HOLD",
+  "editorial_review": "HOLD",
+  "auto_rehost": false,
+  "wordpress_write": false,
+  "wordpress_production_write": false,
+  "merge_deploy": false
+}
