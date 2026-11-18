@@ -3,11 +3,11 @@
 function boot(root){if(root.dataset.fv457Ready)return;
  const controls=root.querySelector('[data-fv457-controls]'),status=root.querySelector('[data-fv457-status]');
  const cards=[...root.querySelectorAll('[data-fv457-card]')],buttons=[...root.querySelectorAll('[data-fv457-choice]')];
- if(!controls||!status||cards.length!==6||buttons.length!==4)return;
+ if(!controls||!status||cards.length!==6||buttons.length!==5)return;
  const apply=choice=>{
-  if(!['all','shown','homepage','withheld'].includes(choice))return;
+  if(!['all','accepted','shown','homepage','withheld'].includes(choice))return;
   let visible=0;
-  for(const c of cards){const show=choice==='all'||(choice==='homepage'?c.dataset.fv457Home==='confirmed':c.dataset.fv457Card===choice);c.hidden=!show;if(show)visible++;}
+  for(const c of cards){const show=choice==='all'||(choice==='homepage'?c.dataset.fv457Home==='confirmed':choice==='accepted'?c.dataset.fv457Accepted==='yes':c.dataset.fv457Card===choice);c.hidden=!show;if(show)visible++;}
   buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.fv457Choice===choice)));
   status.textContent=`Showing ${visible} of ${cards.length} provenance records. Filters describe published-page placement, not image rights.`;
  };
