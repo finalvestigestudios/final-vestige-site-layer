@@ -1,0 +1,291 @@
+{
+  "schema": "fv-media-encoded-raster-guard-20261117-v1",
+  "date": "2026-11-17",
+  "review_type": "isolated_media_QA_without_production_writes",
+  "source_inventory": {
+    "historical_posts": 61,
+    "historical_slots": 355,
+    "historical_external": 288,
+    "current_published_posts": 66,
+    "current_slots": 361,
+    "current_external": 294,
+    "reported_42_broken_guest_confirmed": null,
+    "claimed_76pct_transfer_savings_verified": false,
+    "originals_over_1_5MB_decimal": 20,
+    "oversized_stored_bytes": 64385752,
+    "visitor_bytes": null
+  },
+  "pinned_existing_evidence": {
+    "prior_6_slot_blob": "9eab2382f827e09ec1060d50c4c57135d16655b5",
+    "prior_snapshot": "2026-11-17T18:32:00-08:00",
+    "exact_source_urls_preserved": true
+  },
+  "fresh_public_reader_checks": [
+    {
+      "slot": "285:5",
+      "url": "https://images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "result": "HTTP_ERROR",
+      "status": 404,
+      "method": "independent web reader, not Jetpack/guest Chromium",
+      "guest_status": null
+    },
+    {
+      "slot": "287:5",
+      "url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "result": "HTTP_ERROR",
+      "status": 404,
+      "method": "independent web reader, not Jetpack/guest Chromium",
+      "guest_status": null
+    },
+    {
+      "slot": "407:1",
+      "url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+      "result": "OFFICIAL_CATALOG_LOADED",
+      "status": null,
+      "license_marking": "Public Domain",
+      "photographer": "J. R. Stacy",
+      "original_binary_status": null
+    }
+  ],
+  "slots": [
+    {
+      "slot": "285:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "published_src": "https://i0.wp.com/images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg?ssl=1",
+      "exact_origin_url": "https://images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "origin_observation": {
+        "checked_at": "2026-11-17T18:32:00-08:00",
+        "method": "independent public retriever, not guest browser",
+        "requested_url": "https://images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+        "kind": "HTTP_ERROR",
+        "status": 404,
+        "note": null,
+        "visitor_verified": false
+      },
+      "current_jetpack_guest": {
+        "final_status": null,
+        "decoded": null,
+        "raster_width_px": null,
+        "raster_height_px": null,
+        "raw_payload_sha256": null,
+        "cold_wire_bytes": null
+      },
+      "candidate": {
+        "official_or_publisher_catalog": "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_(color).jpg",
+        "resource_url": null,
+        "rights": "FEDERAL_PD_CLAIM_DIFFERENT_FRAME_HOLD",
+        "exact_frame_verified": false,
+        "native_pixels": {
+          "width": 2592,
+          "height": 2488
+        },
+        "approved_rehost": false,
+        "derivative_target": {
+          "width": 960,
+          "height": 921
+        },
+        "geometry_rule": "width=min(960, native raster width); proportional/no-upscale; verify decoded payload bytes"
+      }
+    },
+    {
+      "slot": "285:2",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "published_src": "https://i0.wp.com/blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg?ssl=1",
+      "exact_origin_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "origin_observation": {
+        "checked_at": "2026-11-17T18:32:00-08:00",
+        "method": "independent public retriever, not guest browser",
+        "requested_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+        "kind": "TOOL_ERROR",
+        "status": null,
+        "note": "Redirects to blog.ucs.org; retriever wrapper 500 is not origin 500",
+        "visitor_verified": false
+      },
+      "current_jetpack_guest": {
+        "final_status": null,
+        "decoded": null,
+        "raster_width_px": null,
+        "raster_height_px": null,
+        "raw_payload_sha256": null,
+        "cold_wire_bytes": null
+      },
+      "candidate": {
+        "official_or_publisher_catalog": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+        "resource_url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+        "rights": "NRC_FIGURE_CREDIT_REUSE_UNKNOWN",
+        "exact_frame_verified": false,
+        "native_pixels": null,
+        "approved_rehost": false,
+        "derivative_target": null,
+        "geometry_rule": "width=min(960, native raster width); proportional/no-upscale; verify decoded payload bytes"
+      }
+    },
+    {
+      "slot": "287:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "published_src": "https://i0.wp.com/stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg?ssl=1",
+      "exact_origin_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "origin_observation": {
+        "checked_at": "2026-11-17T18:32:00-08:00",
+        "method": "independent public retriever, not guest browser",
+        "requested_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "kind": "HTTP_ERROR",
+        "status": 404,
+        "note": null,
+        "visitor_verified": false
+      },
+      "current_jetpack_guest": {
+        "final_status": null,
+        "decoded": null,
+        "raster_width_px": null,
+        "raster_height_px": null,
+        "raw_payload_sha256": null,
+        "cold_wire_bytes": null
+      },
+      "candidate": {
+        "official_or_publisher_catalog": "https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/",
+        "resource_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "rights": "UNIVERSITY_PRESS_FLORIDA_REHOST_UNCLEARED",
+        "exact_frame_verified": false,
+        "native_pixels": null,
+        "approved_rehost": false,
+        "derivative_target": null,
+        "geometry_rule": "width=min(960, native raster width); proportional/no-upscale; verify decoded payload bytes"
+      }
+    },
+    {
+      "slot": "418:1",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "published_src": "https://i0.wp.com/media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG?ssl=1",
+      "exact_origin_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "origin_observation": {
+        "checked_at": "2026-11-17T18:32:00-08:00",
+        "method": "independent public retriever, not guest browser",
+        "requested_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+        "kind": "HTTP_ERROR",
+        "status": 403,
+        "note": null,
+        "visitor_verified": false
+      },
+      "current_jetpack_guest": {
+        "final_status": null,
+        "decoded": null,
+        "raster_width_px": null,
+        "raster_height_px": null,
+        "raw_payload_sha256": null,
+        "cold_wire_bytes": null
+      },
+      "candidate": {
+        "official_or_publisher_catalog": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "resource_url": null,
+        "rights": "USCG_CATALOG_PUBLIC_DOMAIN_CLAIM_HOLD",
+        "exact_frame_verified": false,
+        "native_pixels": null,
+        "approved_rehost": false,
+        "derivative_target": null,
+        "geometry_rule": "width=min(960, native raster width); proportional/no-upscale; verify decoded payload bytes"
+      }
+    },
+    {
+      "slot": "418:2",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "published_src": "https://i0.wp.com/www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg?ssl=1",
+      "exact_origin_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "origin_observation": {
+        "checked_at": "2026-11-17T18:32:00-08:00",
+        "method": "independent public retriever, not guest browser",
+        "requested_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+        "kind": "HTTP_ERROR",
+        "status": 403,
+        "note": null,
+        "visitor_verified": false
+      },
+      "current_jetpack_guest": {
+        "final_status": null,
+        "decoded": null,
+        "raster_width_px": null,
+        "raster_height_px": null,
+        "raw_payload_sha256": null,
+        "cold_wire_bytes": null
+      },
+      "candidate": {
+        "official_or_publisher_catalog": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+        "resource_url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg",
+        "rights": "MUSEUM_PREVIEW_RIGHTS_REVIEW",
+        "exact_frame_verified": false,
+        "native_pixels": {
+          "width": 600,
+          "height": 463
+        },
+        "approved_rehost": false,
+        "derivative_target": {
+          "width": 600,
+          "height": 463
+        },
+        "geometry_rule": "width=min(960, native raster width); proportional/no-upscale; verify decoded payload bytes"
+      }
+    },
+    {
+      "slot": "407:1",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "published_src": "https://i0.wp.com/d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg?ssl=1",
+      "exact_origin_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "origin_observation": {
+        "checked_at": "2026-11-17T18:32:00-08:00",
+        "method": "independent public retriever, not guest browser",
+        "requested_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+        "kind": "TOOL_ERROR",
+        "status": null,
+        "note": "Binary/octet-stream unsupported; retriever wrapper 400 is not origin 400",
+        "visitor_verified": false
+      },
+      "current_jetpack_guest": {
+        "final_status": null,
+        "decoded": null,
+        "raster_width_px": null,
+        "raster_height_px": null,
+        "raw_payload_sha256": null,
+        "cold_wire_bytes": null
+      },
+      "candidate": {
+        "official_or_publisher_catalog": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+        "resource_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+        "rights": "USGS_PUBLIC_DOMAIN_J_R_STACY_CREDIT_REVIEW",
+        "exact_frame_verified": false,
+        "native_pixels": null,
+        "approved_rehost": false,
+        "derivative_target": null,
+        "geometry_rule": "width=min(960, native raster width); proportional/no-upscale; verify decoded payload bytes"
+      }
+    }
+  ],
+  "defect": {
+    "issue": "DOM naturalWidth/naturalHeight are density-adjusted CSS pixels, not necessarily encoded-file pixels",
+    "old_false_positive": "1920x1080 encoded raster could report 960x540 CSS natural dimensions and pass a 960px file limit when baseline sufficiently large",
+    "safeguard": "require raster_width_px/raster_height_px from decoded_network_payload plus 64-hex raster_sha256 in both phases; enforce encoded width <=960, encoded no-upscale, min DOM/raster legibility, <=2% aspect drift; shared request fields consistent",
+    "proof_limit": "raster_probe and hash are collector-supplied assertions, not independently authenticated; Site QA must review raw trace and screenshot, no live before/after supplied",
+    "source_blob": "d0e827752fa0998b8d58307f3c6bcba29d43a22c",
+    "test_blob": "dc7806174a3dc83f684b2fc077090cbbf017aa4b",
+    "head": "9b412663f7bcd1ae1d8f40d61f70f52a21534814",
+    "test_result": {
+      "cases": 79,
+      "passed": 79,
+      "runtime": "isolated V8 with Node/URL/crypto mock compatibility shims",
+      "native_node": false,
+      "full_CI": false
+    }
+  },
+  "release": {
+    "status": "HOLD",
+    "production_wp_writes": 0,
+    "asset_downloads": 0,
+    "mirrors_or_rehosts": 0,
+    "post_block_rewrites": 0,
+    "homepage_visual_changes": 0,
+    "merge_or_deploy": 0,
+    "subscription_spend_usd": 0,
+    "staging_plan": "after exact guest failure and rights/crop clearance, hash master locally, compute <=960px proportional derivative without upscale, upload only to approved WP staging, compare guest decode/screenshots/unique cold bytes, retain rollback manifest; no stage performed"
+  },
+  "qa_owner": "Site QA PR #154",
+  "duplicate_collector_created": false
+}
