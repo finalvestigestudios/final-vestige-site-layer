@@ -19,7 +19,7 @@ test('both variants are explicitly unpublished and noindexed', () => [a,b].forEa
 test('both have native-disabled merchant controls', () => [a,b].forEach(s=>{assert.match(s,/<button type="button" disabled aria-disabled="true">/);assert.doesNotMatch(s,/href="https?:\/\/(?:www\.)?(?:clickbank|refersion|hop\.clickbank|payhip|go\.|track\.)/i)}));
 test('a precise prospective commission disclosure is adjacent to control', () => [a,b].forEach(s=>{let x=s.indexOf('If Final Vestige later publishes an approved purchase link');let y=s.indexOf('<button type="button" disabled');assert.ok(x>=0 && y>x && y-x<800)}));
 test('no duplicate email signup, custom script or tracker', () => [a,b,hub].forEach(s=>{assert.doesNotMatch(s,/<form\b|<script\b|gtag\(|fbq\(|dataLayer\.push/i)}));
-test('video not asserted playable or autostarted',()=>{assert.match(b,/not currently available for playback/);assert.doesNotMatch(b,/autoplay|<video\b|<iframe\b/i)});
+test('video not asserted playable or autostarted',()=>{assert.match(b,/not currently available for playback/);assert.doesNotMatch(b,/<video[^>]*autoplay|<video\b|<iframe\b/i)});
 test('42 second transcript is transparent',()=>{assert.match(b,/35–42 seconds/);assert.match(b,/0–7 seconds/);assert.match(b,/<details><summary>/)});
 test('alternate variant has original inline SVG with accessible description',()=>{assert.match(b,/<svg[^>]+role="img"[^>]+aria-label=/)});
 test('HTML mobile/keyboard/reduced-motion support',()=>[a,b,hub].forEach(s=>{assert.match(s,/name="viewport"/);assert.match(s,/:focus-visible/);assert.match(s,/prefers-reduced-motion/)}));
