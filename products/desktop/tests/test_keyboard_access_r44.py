@@ -272,12 +272,11 @@ class KeyboardAccessR44(unittest.TestCase):
     def test_r531_invoice_window_shortcut_visible(self):
         legend = self._r531_static_legend().replace(
             "F1 opens keyboard help",
-            "Alt+W near-match day window (0-365; default 7); "
+            "Alt+W near-match day window (0-365 days, default 7); "
             "F1 opens keyboard help")
-        # Source legend contains a natural semicolon inside its explanatory
-        # parentheses. Help must treat it as part of one command, not break.
+        # The static legend uses a comma here to keep this one command intact.
         out = format_keyboard_help(legend)
-        self.assertIn("Alt+W near-match day window", out)
+        self.assertIn("- Alt+W near-match day window (0-365 days, default 7)", out)
 
     def test_r531_procurement_premium_controls_visible(self):
         legend = self._r531_static_legend().replace(
