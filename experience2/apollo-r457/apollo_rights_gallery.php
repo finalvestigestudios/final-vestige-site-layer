@@ -12,6 +12,42 @@ function fv457_records(): array {
   ];
 }
 function fv457_h(string $x): string {return htmlspecialchars($x, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');}
+
+/** R463 evidence chronology: event time != later source publication or exhibit photography. */
+function fv457_chronology(): array {
+ return [
+  ['date'=>'January 1967','precision'=>'month-only','event'=>'Apollo 1 crew photographed in training context','source_kind'=>'NASA retrospective image article (published 2017)','source'=>'https://www.nasa.gov/image-article/apollo-1-crew-honored/','boundary'=>'The article specifies January 1967 but not the photograph day; it does not verify the S67-19766 identifier or show the fire.'],
+  ['date'=>'27 January 1967','precision'=>'day','event'=>'Apollo 1 cabin fire during prelaunch testing','source_kind'=>'Apollo 204 Review Board report (investigation published after the fire)','source'=>'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/','boundary'=>'The Board found an electrical arc most probable, not a conclusively identified ignition source. This retrospective report is not a photograph of the event.'],
+  ['date'=>'27 January 2017','precision'=>'day','event'=>'Apollo 1 crew tribute opens at Kennedy Space Center','source_kind'=>'NASA retrospective museum article (2017)','source'=>'https://www.nasa.gov/history/apollo-1-crew-honored-in-new-tribute-exhibit/','boundary'=>'A NASA photograph dated 24 January 2017 documents exhibit preparations, not a 1967 fire scene; opening on 27 January 2017 is a different event.'],
+ ];
+}
+function fv457_chronology_valid(array $events): bool {
+ if(count($events)!==3)return false;
+ $seen=[];
+ foreach($events as $e){
+  foreach(['date','precision','event','source_kind','source','boundary'] as $key){if(!isset($e[$key])||!is_string($e[$key])||trim($e[$key])==='')return false;}
+  if(!in_array($e['precision'],['day','month-only'],true)||isset($seen[$e['source']]))return false;
+  $url=parse_url($e['source']);
+  if(!is_array($url)||($url['scheme']??'')!=='https'||($url['host']??'')!=='www.nasa.gov'||empty($url['path'])||isset($url['user'])||isset($url['pass'])||isset($url['query'])||isset($url['fragment'])||isset($url['port']))return false;
+  $seen[$e['source']]=true;
+ }
+ return true;
+}
+function fv457_chronology_html(string $instance): string {
+ $events=fv457_chronology();if(!fv457_chronology_valid($events))return '';
+ $o='<section class="fv457__chronology" aria-labelledby="'.$instance.'-chrono"><h3 id="'.$instance.'-chrono">Chronology: evidence time versus event time</h3>';
+ $o.='<p>Three dated contexts, not a fabricated photograph-by-photograph sequence. The January 1967 portrait has no verified day, so it cannot be ordered precisely against the 27 January fire. A 2017 exhibit image does not depict a 1967 event.</p>';
+ $o.='<ol class="fv457__rail" aria-label="Evidence time and event time">';
+ foreach($events as $n=>$e){
+  $o.='<li class="fv457__moment"><span class="fv457__step">'.fv457_h(str_pad((string)($n+1),2,'0',STR_PAD_LEFT)).' / 03</span>';
+  $o.='<p class="fv457__date"><strong>'.fv457_h($e['date']).'</strong> · '.fv457_h($e['precision']).'</p>';
+  $o.='<h4>'.fv457_h($e['event']).'</h4>';
+  $o.='<details><summary>Source, date and uncertainty</summary><p><strong>Source type:</strong> '.fv457_h($e['source_kind']).'</p><p><strong>Limit:</strong> '.fv457_h($e['boundary']).'</p>';
+  $o.='<p><a href="'.fv457_h($e['source']).'" rel="noopener noreferrer">Read primary NASA-hosted evidence</a></p></details></li>';
+ }
+ return $o.'</ol><p class="fv457__chrono-question"><strong>Classroom inquiry:</strong> Which record is evidence of a 1967 event, and which is a later interpretation? Explain how the publication date differs from the event date. This exercise is free; no signup is required.</p></section>';
+}
+
 function fv457_valid(array $records): bool {
  if(count($records)!==6)return false;
  $ids=[];$shown=0;$home=0;
@@ -34,6 +70,7 @@ function fv457_render(): string {
  $out='<section class="fv457" data-fv457-root id="'.$instance.'" aria-labelledby="'.$instance.'-heading"><div class="fv457__shell">';
  $out.='<p class="fv457__kicker">Final Vestige / Apollo 1 / Source custody</p><h2 id="'.$instance.'-heading">Six archival records across two published surfaces.</h2>';
  $out.='<p class="fv457__lede">These are <strong>source index cards, not reproductions</strong>. Three records appear in the Atlas chronology. S67-19766 is labelled not shown in that Atlas but appears on the published homepage. The other records have not been independently confirmed as present or absent on the homepage. Page placement is not image-use permission, and no marketing or merchandise clearance is implied.</p>';
+ $out.=fv457_chronology_html($instance);
  $out.='<p class="fv457__rights"><strong>Rights boundary:</strong> NASA imagery is generally available for factual editorial use, subject to agency guidelines and potential third-party and publicity rights. No photograph, logo or astronaut likeness is embedded or cleared for merchandise, marketing or a paid educator product. NASA does not endorse this work.</p>';
  $out.='<p class="fv457__source-hold"><strong>Source acceptance HOLD:</strong> NASA Images catalogue URL KSC-20170124-PH_KLS01_0129 is not independently verified; the NASA article for S67-19766 is confirmed as a crew portrait, but its exact archive ID mapping remains under editorial review. These two links are research leads, not accepted provenance or commercial permissions.</p>';
  $out.='<p class="fv457__print-note">Printed source-custody copy: all six records retain clickable NASA source references in browser PDF exports, regardless of any on-screen filter. Catalogue and identifier uncertainties remain unresolved; the printed copy is not commercial media clearance.</p>';
@@ -62,7 +99,7 @@ function fv457_render(): string {
  $cssPresent=is_file($css);$jsPresent=is_file($js);
  $style=$cssPresent?file_get_contents($css):null;
  $script=$jsPresent?file_get_contents($js):null;
- if(($cssPresent&&($style===false||!hash_equals('d5cb51bb84ff365d6cfcdf05df0bb8c9ab7600c846a7445c1976caf9f89144e1',hash('sha256',$style))))
+ if(($cssPresent&&($style===false||!hash_equals('c77bf7438b66ca78d4e3afe14815f03eb517c99d23eceb348285e3c5e161ef54',hash('sha256',$style))))
     ||($jsPresent&&($script===false||!hash_equals('9bbebeac776a33d1bf51dc9b40dbc5c58fdb7d220a00d1fc534ccac9db466bed',hash('sha256',$script)))))return fv457_fallback();
  if(!$cssPresent)return $out;
  return '<style>'.$style.'</style>'.$out.($jsPresent?'<script>'.$script.'</script>':'');
