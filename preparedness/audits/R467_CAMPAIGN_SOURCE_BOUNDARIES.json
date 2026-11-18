@@ -1,0 +1,14 @@
+{
+  "topic": "household-emergency-contact-reunification",
+  "free_destination": "https://finalvestige.com/preparedness/",
+  "published_grok_asset_id": null,
+  "social_asset_verification": "UNMATCHED",
+  "optional_tool_state": "DRAFT_QD_HOLD",
+  "optional_tool_live_url": null,
+  "paid_sku_verified": false,
+  "paid_product_url": null,
+  "commerce_review_state": "UNVERIFIED",
+  "release_state": "DRAFT_HARD_HOLD",
+  "site_cta_production_enabled": false,
+  "tracking_script_added": false
+}
