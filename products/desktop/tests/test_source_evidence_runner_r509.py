@@ -24,13 +24,13 @@ class SourceEvidenceR509(unittest.TestCase):
     def test_workflow_below_reviewed_eight_kib_ceiling(self):
         raw = (ROOT / ".github/workflows/desktop-source-evidence-r385.yml").read_bytes()
         self.assertLess(len(raw), 8192)
-        self.assertIn(b"permissions:\\n  contents: read", raw)
+        self.assertIn(b"permissions:\n  contents: read", raw)
         self.assertIn(b"source_evidence_runner_r509.py", raw)
         self.assertNotIn(b"continue-on-error", raw)
 
     def test_exact_github_blob_pin_and_legacy_414_command_parity(self):
         self.assertEqual(runner.git_blob_sha(self.raw), runner.MANIFEST_GIT_SHA1)
-        original = ("\\n".join(self.lines[:runner.ORIGINAL_COUNT]) + "\\n").encode("ascii")
+        original = ("\n".join(self.lines[:runner.ORIGINAL_COUNT]) + "\n").encode("ascii")
         self.assertEqual(runner.git_blob_sha(original), runner.ORIGINAL_GIT_SHA1)
         self.assertEqual(len(self.lines), 416)
         self.assertTrue(self.lines[-2].endswith("-p test_source_evidence_runner_r509.py"))
@@ -42,7 +42,7 @@ class SourceEvidenceR509(unittest.TestCase):
         self.assertEqual(len(tests), 410)
         self.assertEqual(sum(" -OO " in t for t in tests), 205)
         self.assertEqual(sum(" -OO " not in t for t in tests), 205)
-        paths = {re.search(r"-p (test_[a-z0-9_]+\\.py)$", t).group(1) for t in tests}
+        paths = {re.search(r"-p (test_[a-z0-9_]+\.py)$", t).group(1) for t in tests}
         self.assertTrue({"test_safety_smoke.py", "test_independent_ci_r385.py",
                          "test_vault_crypto_gate_r316.py",
                          "test_entitlement_payload_privacy_r384.py"} <= paths)
@@ -55,19 +55,19 @@ class SourceEvidenceR509(unittest.TestCase):
             root = Path(d)
             for line in ("python -c print(1)", "python -m pip install attacker",
                          "python -OO -W error -m unittest discover -s ../../ -p test_x.py"):
-                raw = (line + "\\n").encode()
+                raw = (line + "\n").encode()
                 with self.subTest(line=line), self.assertRaises(runner.EvidenceRejected):
                     runner.load_commands(raw, root, expected_sha=runner.git_blob_sha(raw),
                                          expected_count=1)
 
     def test_missing_required_test_is_rejected_before_process_launch(self):
-        line = b"python -W error -m unittest discover -s products/desktop/tests -p test_absent.py\\n"
+        line = b"python -W error -m unittest discover -s products/desktop/tests -p test_absent.py\n"
         with TemporaryDirectory() as d, self.assertRaises(runner.EvidenceRejected):
             runner.load_commands(line, Path(d), expected_sha=runner.git_blob_sha(line),
                                  expected_count=1)
 
     def test_changed_and_truncated_manifest_rejected(self):
-        for raw in (self.raw[:-1], self.raw + b"python -c 9\\n",
+        for raw in (self.raw[:-1], self.raw + b"python -c 9\n",
                     self.raw.replace(b"test_safety_smoke.py", b"test_untrusted_abc.py")):
             with self.subTest(length=len(raw)), self.assertRaises(runner.EvidenceRejected):
                 runner.load_commands(raw)
