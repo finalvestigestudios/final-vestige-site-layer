@@ -1,0 +1,63 @@
+{
+  "schema": "fv-apollo-claim-custody-v1",
+  "review_date": "2026-11-17",
+  "editorial_approval": "PENDING_INDEPENDENT_QD",
+  "image_rights": "NO_MEDIA_COPIED_OR_CLEARED_FOR_PROMOTIONAL_USE",
+  "paid_offer_status": "NO_VERIFIED_APOLLO_SKU",
+  "release_approved": false,
+  "interpretation": "Date on the rail is a source/event reference date, not proof that every cited source was published that day.",
+  "claims": [
+    {
+      "id": "training",
+      "date": "1966-10-18",
+      "date_context": "Photograph caption date",
+      "era": "before",
+      "source_kind": "Archival caption record",
+      "title": "Training preceded the ground test",
+      "supported": "NASA labels S66-58038 as Apollo 1 prime-crew altitude-chamber preparation on October 18, 1966.",
+      "not_supported": "It does not show or explain the fire on January 27, 1967.",
+      "source_title": "NASA Apollo 1 photograph gallery",
+      "source_url": "https://www.nasa.gov/gallery/apollo-1/",
+      "rights": "Catalogue reference only; photograph not reproduced. Astronaut likeness and promotional use require review."
+    },
+    {
+      "id": "review-board",
+      "date": "1967-01-27",
+      "date_context": "Accident date; Board report written afterward",
+      "era": "event",
+      "source_kind": "Primary investigation findings",
+      "title": "The Board did not identify a conclusive ignition source",
+      "supported": "The Apollo 204 Review Board identified an electrical arc as the most probable initiator and described hazardous oxygen-rich conditions.",
+      "not_supported": "It did not conclusively establish a single ignition source, or find evidence of sabotage.",
+      "source_title": "Apollo 204 Review Board report",
+      "source_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "rights": "Textual citation and original FV paraphrase only; no report photographs copied."
+    },
+    {
+      "id": "memorial",
+      "date": "2017-01-27",
+      "date_context": "NASA announcement and public opening date",
+      "era": "later",
+      "source_kind": "NASA contemporary announcement",
+      "title": "The hatch was exhibited fifty years later",
+      "supported": "NASA announced the Kennedy Space Center tribute opening on January 27, 2017, featuring the original spacecraft's three-part hatch.",
+      "not_supported": "The exhibit is not 1967 accident footage or a firsthand instrument reading; it cannot resolve the ignition source.",
+      "source_title": "NASA Unveils Tribute to Crew of Apollo 1",
+      "source_url": "https://www.nasa.gov/news-release/nasa-unveils-tribute-to-crew-of-apollo-1/",
+      "rights": "Official NASA announcement linked; no exhibit photographs or insignia copied."
+    },
+    {
+      "id": "flammability",
+      "date": "2018-02-14",
+      "date_context": "Later historical article publication date",
+      "era": "later",
+      "source_kind": "Retrospective technical history",
+      "title": "Later tests examined redesigned spacecraft",
+      "supported": "NASA's 2018 retrospective describes a post-fire flammability test program for redesigned Apollo spacecraft.",
+      "not_supported": "Those later experiments do not isolate the original 1967 electrical initiator.",
+      "source_title": "50 Years Ago: Apollo Flammability Tests",
+      "source_url": "https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/",
+      "rights": "Textual source linked; no photographs reproduced."
+    }
+  ]
+}
