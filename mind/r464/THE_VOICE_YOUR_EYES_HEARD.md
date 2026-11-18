@@ -31,7 +31,7 @@ In a 2018 open-access study, Violet Brown and colleagues examined potential sour
 
 These are correlations from the study's measurements. They are not personality rankings. A person who hears ba rather than da is not automatically less suggestible, less observant, less intelligent or in need of an audio program. Nor does a strong McGurk response prove unusual powers of 'mind influence.' This boundary is vital in an area marketed through claims about easy brain optimization.
 
-There is another complication: the particular clip matters. In a 2019 experiment with **110 participants** exposed to different audiovisual syllables at natural, slowed and accelerated playback rates, researchers reported unexpectedly **fewer** McGurk responses during slowed playback. That is counterintuitive if one assumes that more time to observe the lips must increase the effect. The authors compared the outcomes with a reliability-sensitive computational account, but the model is an explanation of task data, not a consumer-product test [5].
+There is another complication: the particular clip matters. In a study published in **2018** (indexed in PubMed in 2019) with **110 participants** exposed to different audiovisual syllables at natural, slowed and accelerated playback rates, researchers reported unexpectedly **fewer** McGurk responses during slowed playback. That is counterintuitive if one assumes that more time to observe the lips must increase the effect. The authors compared the outcomes with a reliability-sensitive computational account, but the model is an explanation of task data, not a consumer-product test [5].
 
 One laboratory scene can therefore support an important scientific proposition—that visual speech information can alter what listeners report hearing—while still failing to support a sweeping statement about what everyone hears or why each person reacts differently.
 
@@ -101,7 +101,7 @@ That is where the source trail begins.
 2. MacDonald, J. (2018/2019 indexed). *Hearing Lips and Seeing Voices: The Origins and Development of the McGurk Effect...* Multisensory Research. https://pubmed.ncbi.nlm.nih.gov/31264593/
 3. Strand, J., Cooperman, A., Rowe, J., & Simenstad, A. (2014). *Individual Differences in Susceptibility to the McGurk Effect.* Journal of Speech, Language, and Hearing Research, 57(6), 2322–2331. https://doi.org/10.1044/2014_JSLHR-H-14-0059
 4. Brown, V. A., et al. (2018). *What accounts for individual differences in susceptibility to the McGurk effect?* PLOS ONE 13(11), e0207160. Open access: https://doi.org/10.1371/journal.pone.0207160 ; https://pubmed.ncbi.nlm.nih.gov/30418995/
-5. Beauchamp and colleagues (2019). *Reducing Playback Rate of Audiovisual Speech Leads to a Surprising Decrease in the McGurk Effect.* https://pubmed.ncbi.nlm.nih.gov/31264598/
+5. Magnotti, J. F., Basu Mallick, D., & Beauchamp, M. S. (2018). *Reducing Playback Rate of Audiovisual Speech Leads to a Surprising Decrease in the McGurk Effect.* https://pubmed.ncbi.nlm.nih.gov/31264598/
 6. Final Vestige Studios. *Puységur's Animal Magnetism Files*, source archive and ethics dossiers. https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/
 7. Final Vestige Studios. *Seven Day Focus Fieldbook*, complete free edition and disclosure of evidence limitations. https://finalvestige.com/focus/
 
