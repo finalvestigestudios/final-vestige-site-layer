@@ -1,5 +1,6 @@
 "use strict";
 const {guardImageSource}=require("./image_wire_source_guard_20261118.cjs");
+const {MANIFEST_SHA256,verifyCapture}=require("./cohort_manifest_guard_20261118.cjs");
 /** Offline image-wire parity gate. No network requests or WP writes. Approval requires independent trace review. */
 const evaluate=function evaluate(report) {
  const errors=[], sums={}; const fail=(s)=>{if(errors.length<100)errors.push(s);};
@@ -10,6 +11,7 @@ const evaluate=function evaluate(report) {
  const cohort=report.cohort?.id, expected=cohort==="historic-61"?61:cohort==="current-66"?66:report.cohort?.expected_posts;
  if(!["historic-61","current-66","targeted"].includes(cohort)||!int(expected)||expected>1000||(cohort==="targeted"&&expected>=61)) fail("cohort");
  if(!/^[a-f0-9]{64}$/.test(report.manifest_sha256||""))fail("manifest_sha");
+ if(cohort!=="targeted"&&report.manifest_sha256!==MANIFEST_SHA256)fail("manifest_snapshot_mismatch");
  if(report.estimated_bytes===true||report.stored_original_bytes_used===true)fail("not_real_wire");
  function inspect(c,phase,device){
   const tag=phase+"-"+device;
@@ -18,11 +20,12 @@ const evaluate=function evaluate(report) {
      c.cache_disabled!==true||c.service_worker_bypassed!==true||c.complete_image_requests!==true)fail(tag+":control");
   if(!https(c.trace_evidence_url)||!/^[a-f0-9]{64}$/.test(c.trace_sha256||""))fail(tag+":trace");
   if(!Array.isArray(c.pages)||c.pages.length!==expected)fail(tag+":post_coverage");
+  if(cohort!=="targeted")for(const issue of verifyCapture(c,cohort))fail(tag+":cohort_"+issue);
   let bytes=0,broken=0;const pages=new Map(),requests=new Map();
   for(const p of Array.isArray(c.pages)?c.pages:[]){
    const pid=String(p?.post_id??"");
    if(!/^\d+$/.test(pid)||pages.has(pid)||!https(p.url)){fail(tag+":bad_post");continue;}
-   if(p.complete_image_requests!==true||!Array.isArray(p.images)||!p.images.length)fail(tag+":"+pid+":incomplete_images");
+   if(p.complete_image_requests!==true||!Array.isArray(p.images)||(cohort==="targeted"&&!p.images.length))fail(tag+":"+pid+":incomplete_images");
    const assets=new Map();
    for(const m of Array.isArray(p.images)?p.images:[]){
     if(!obj(m)||typeof m.asset_id!=="string"||!m.asset_id||assets.has(m.asset_id)){fail(tag+":"+pid+":duplicate_asset");continue;}
