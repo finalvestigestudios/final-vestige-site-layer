@@ -654,8 +654,8 @@ class SourcePrelaunchR515(unittest.TestCase):
         self.a = self.root.joinpath(*self.a_parts)
         self.b = self.root.joinpath(*self.b_parts)
         self.a.parent.mkdir(parents=True)
-        self.a.write_bytes(b"print('a')\\n".replace(b"\\n", b"\n"))
-        self.b.write_bytes(b"print('b')\\n".replace(b"\\n", b"\n"))
+        self.a.write_bytes(b"print('a')\n")
+        self.b.write_bytes(b"print('b')\n")
         prefix = ("-B", "-W", "error", "-m", "unittest",
                   "discover", "-s", "products/desktop/tests", "-p")
         self.commands = (prefix + ("test_r515_a.py",),
