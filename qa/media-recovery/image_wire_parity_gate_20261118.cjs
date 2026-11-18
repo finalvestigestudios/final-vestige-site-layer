@@ -1,5 +1,6 @@
 "use strict";
 const {guardImageSource}=require("./image_wire_source_guard_20261118.cjs");
+const {sameFraming}=require("./jetpack_source_identity_20261118.cjs");
 const {MANIFEST_SHA256,verifyCapture}=require("./cohort_manifest_guard_20261118.cjs");
 const {assessImageWire}=require("./media_failure_wire_semantics_20261118.cjs");
 /** Offline image-wire parity gate. No network requests or WP writes. Approval requires independent trace review. */
@@ -60,6 +61,11 @@ const evaluate=function evaluate(report) {
     for(const [id,m] of entry.assets){
       const n=next.assets.get(id);
       if(!n){fail(device+":"+pid+":missing_asset");continue;}
+      // A changed crop or zoom may hide essential historical context even when
+      // both phases claim the identical original image and source_identity.
+      if(n.source_identity===m.source_identity &&
+        (!sameFraming(m.authored_src,n.authored_src)||!sameFraming(m.current_src,n.current_src)))
+        fail(device+":"+pid+":unapproved_framing_change");
       if(n.source_identity!==m.source_identity){
         const ok=n.approval;
         if(!obj(ok)||ok.rights!=="CLEARED"||ok.exact_frame!==true||
