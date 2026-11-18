@@ -1,0 +1,267 @@
+{
+  "sprint": "R475",
+  "date": "2026-11-18",
+  "scope": "Mind/Perception and contextual Inspire3 offer evaluation only",
+  "status": "SOURCE_ONLY_HARD_HOLD",
+  "merchant": {
+    "candidate": "Zen12",
+    "seller": "Inspire3",
+    "partnerApproval": "NOT_AUTHENTICATED",
+    "knownMail": "2026-08-24 Refersion application-pending notice; scoped search on 2026-11-18 did not find named subsequent acceptance",
+    "issuedAffiliateLink": "WITHHELD",
+    "permittedChannels": "UNKNOWN",
+    "settlementTerms": "UNKNOWN",
+    "checkoutSku": "NOT_AUTHENTICATED",
+    "pricing": "UNVERIFIED_CURRENT_CHECKOUT; NO PRICE IN COPY",
+    "refunds": "SELLER CLAIM; ACTUAL SKU/PROCESS UNVERIFIED",
+    "promotionalCreativeRights": "NO APPROVED SWIPE OR LICENSE AUTHENTICATED"
+  },
+  "sourceTrail": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.1068/p281059",
+      "kind": "primary research",
+      "supports": [
+        "1999 inattentional blindness dynamic-task framing",
+        "salience/task similarity and difficulty"
+      ],
+      "doesNotSupport": [
+        "any product efficacy"
+      ]
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.1068/i0386",
+      "kind": "primary research",
+      "supports": [
+        "foreknowledge counterexample"
+      ],
+      "doesNotSupport": [
+        "universal immunity after warning"
+      ]
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.1177/0956797613479386",
+      "kind": "primary research",
+      "supports": [
+        "24-radiologist search experiment, 83 percent nonreport"
+      ],
+      "doesNotSupport": [
+        "patient safety outcome",
+        "all radiologists fail"
+      ]
+    },
+    {
+      "id": "s4",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "publisher historical archive",
+      "supports": [
+        "1785 edition / 1813 working facsimile distinction, source ethics, failures"
+      ],
+      "doesNotSupport": [
+        "modern animal magnetism mechanism"
+      ]
+    },
+    {
+      "id": "s5",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "publisher live free product",
+      "supports": [
+        "52-page free fieldbook, existing opt-in"
+      ],
+      "doesNotSupport": [
+        "independently tested brain effect"
+      ]
+    },
+    {
+      "id": "s6",
+      "url": "https://inspire3.com/",
+      "kind": "seller",
+      "supports": [
+        "Zen12, Hypnosis Live, Brainwave Shots appear in catalog"
+      ],
+      "doesNotSupport": [
+        "claimed therapy or cognitive performance"
+      ]
+    },
+    {
+      "id": "s7",
+      "url": "https://zen12.com/about",
+      "kind": "seller",
+      "supports": [
+        "12-minute program, 12 levels, four audio styles described"
+      ],
+      "doesNotSupport": [
+        "one hour of proven equivalent effects",
+        "instant worry removal"
+      ]
+    },
+    {
+      "id": "s8",
+      "url": "https://zen12.com/",
+      "kind": "seller commercial",
+      "supports": [
+        "separate beginner/premium/advanced presentations"
+      ],
+      "doesNotSupport": [
+        "current approved FV checkout/price"
+      ]
+    },
+    {
+      "id": "s9",
+      "url": "https://zen12.com/secret/",
+      "kind": "seller separate promotion",
+      "supports": [
+        "marketing page explicitly presents full course and promotional components"
+      ],
+      "doesNotSupport": [
+        "verified coupon, price, scarcity, affiliate-permitted offer"
+      ]
+    },
+    {
+      "id": "s10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "kind": "systematic review",
+      "supports": [
+        "14-study heterogeneous EEG evidence: five supportive, eight contradictory, one mixed"
+      ],
+      "doesNotSupport": [
+        "Zen12 efficacy"
+      ]
+    },
+    {
+      "id": "s11",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator",
+      "supports": [
+        "clearly conspicuous earning disclosure adjacent to links"
+      ],
+      "doesNotSupport": [
+        "permission to activate unapproved affiliate link"
+      ]
+    },
+    {
+      "id": "s12",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator",
+      "supports": [
+        "objective health-related claims need competent reliable scientific evidence"
+      ],
+      "doesNotSupport": [
+        "a seller testimonial as sufficient proof"
+      ]
+    },
+    {
+      "id": "s13",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "publisher",
+      "supports": [
+        "commerce independent of investigation conclusions"
+      ],
+      "doesNotSupport": [
+        "commercial approval"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "claim": "Zen12 seller describes 12-minute sessions and 12 levels",
+      "proof": "s7",
+      "decision": "ALLOW_WITH_SELLER_ATTRIBUTION"
+    },
+    {
+      "claim": "Zen12 product style options: guided/music/white noise/nature",
+      "proof": "s7",
+      "decision": "ALLOW_WITH_SELLER_ATTRIBUTION"
+    },
+    {
+      "claim": "Zen12 results equal one hour of meditation",
+      "proof": "s7",
+      "decision": "EXCLUDE_UNSUBSTANTIATED"
+    },
+    {
+      "claim": "Zen12 eliminates anxiety or cures mental health symptoms",
+      "proof": "s7",
+      "decision": "EXCLUDE_UNSUBSTANTIATED_HEALTH"
+    },
+    {
+      "claim": "brainwave entrainment universally proven",
+      "proof": "s10",
+      "decision": "EXCLUDE_EVIDENCE_HETEROGENEOUS"
+    },
+    {
+      "claim": "seller's promotional coupon, countdown and discounted price apply to FV users",
+      "proof": "s9",
+      "decision": "EXCLUDE_UNVERIFIED_CHECKOUT"
+    },
+    {
+      "claim": "verified refund eligibility for precise SKU",
+      "proof": "s8",
+      "decision": "HOLD_UNTIL_CHECKOUT_TERMS"
+    },
+    {
+      "claim": "named FV referral authorization",
+      "proof": "scoped Gmail + partner portal",
+      "decision": "HOLD_UNTIL_PUBLISHER_ACCEPTANCE"
+    },
+    {
+      "claim": "affiliate payout rate and cookie duration",
+      "proof": "none",
+      "decision": "EXCLUDE_UNKNOWN"
+    },
+    {
+      "claim": "product was personally tested by FV",
+      "proof": "none",
+      "decision": "EXCLUDE_NOT_TESTED"
+    },
+    {
+      "claim": "gorilla experiment demonstrates benefits from Zen12",
+      "proof": "s1/s7",
+      "decision": "EXCLUDE_UNSUPPORTED_INFERENCE"
+    },
+    {
+      "claim": "2013 radiologist study implies real patient injury",
+      "proof": "s3",
+      "decision": "EXCLUDE_BEYOND_STUDY"
+    },
+    {
+      "claim": "Puységur notarial trail validates magnetic cure",
+      "proof": "s4",
+      "decision": "EXCLUDE_UNSUPPORTED_INFERENCE"
+    },
+    {
+      "claim": "existing Focus Fieldbook is available free",
+      "proof": "s5",
+      "decision": "ALLOW"
+    },
+    {
+      "claim": "FTC prospective commission disclosure near disabled CTA",
+      "proof": "s11",
+      "decision": "ALLOW_CONTEXT_PROSPECTIVE_ONLY"
+    },
+    {
+      "claim": "outbound event equals paid affiliate sale",
+      "proof": "none",
+      "decision": "REJECT_MEASUREMENT_CONFLATION"
+    }
+  ],
+  "activationGates": {
+    "partnerAcceptance": false,
+    "verifiedSku": false,
+    "approvedAffiliateUrl": false,
+    "channelPermission": false,
+    "checkoutTotal": false,
+    "returnsPolicy": false,
+    "settlementReporting": false,
+    "founderRelease": false,
+    "siteQa": false,
+    "privacyAttribution": false
+  },
+  "paidFallback": {
+    "currentMindSku": "NONE_AUTHENTICATED",
+    "freeFieldbook": "AVAILABLE",
+    "revenuePilot": "NO_PAYABLE_OFFER_ESTABLISHED"
+  },
+  "evidenceSeparation": "SELLER CLAIM != INDEPENDENT SCIENCE != PRODUCT-SPECIFIC TRIAL != PAID PURCHASE"
+}
