@@ -18,4 +18,4 @@ test("missing inline asset rejected",()=>{const x=make("historic-61");x.pages[0]
 test("fake image on zero-image article rejected",()=>{const x=make("current-66");x.pages.find(p=>p.post_id===1922).images.push({asset_id:"1922:0"});assert.ok(verifyCapture(x,"current-66").includes("inline_slot_count"));});
 test("unapproved slot renumbering rejected",()=>{const x=make("historic-61");const p=x.pages.find(p=>p.images.length>1);p.images[0].asset_id=p.post_id+":98";assert.ok(verifyCapture(x,"historic-61").includes("slot_identity"));});
 test("duplicate slot rejected",()=>{const x=make("historic-61");const p=x.pages.find(p=>p.images.length>1);p.images[1].asset_id=p.images[0].asset_id;assert.ok(verifyCapture(x,"historic-61").includes("duplicate_inline_slot"));});
-test("tampered source count detected",()=>{const x=structuredClone(manifest);x.rows.find(r=>r.in_historic_61).img_slots++;assert.ok(validateManifest(x).includes("historic_image_count_drift"));});
+test("tampered source count detected",()=>{const x=JSON.parse(JSON.stringify(manifest));x.rows.find(r=>r.in_historic_61).img_slots++;assert.ok(validateManifest(x).includes("historic_image_count_drift"));});
