@@ -18,7 +18,7 @@ function fv457_chronology(): array {
  return [
   ['date'=>'January 1967','precision'=>'month-only','event'=>'Apollo 1 crew photographed in training context','source_kind'=>'NASA retrospective image article (published 2017)','source'=>'https://www.nasa.gov/image-article/apollo-1-crew-honored/','boundary'=>'The article specifies January 1967 but not the photograph day; it does not verify the S67-19766 identifier or show the fire.'],
   ['date'=>'27 January 1967','precision'=>'day','event'=>'Apollo 1 cabin fire during prelaunch testing','source_kind'=>'Apollo 204 Review Board report (investigation published after the fire)','source'=>'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/','boundary'=>'The Board found an electrical arc most probable, not a conclusively identified ignition source. This retrospective report is not a photograph of the event.'],
-  ['date'=>'27 January 2017','precision'=>'day','event'=>'Apollo 1 crew tribute opens at Kennedy Space Center','source_kind'=>'NASA retrospective museum article (2017)','source'=>'https://www.nasa.gov/history/apollo-1-crew-honored-in-new-tribute-exhibit/','boundary'=>'A NASA photograph dated 24 January 2017 documents exhibit preparations, not a 1967 fire scene; opening on 27 January 2017 is a different event.'],
+  ['date'=>'27 January 2017','precision'=>'day','event'=>'Apollo 1 crew tribute opens at Kennedy Space Center','source_kind'=>'NASA retrospective museum article (2017)','source'=>'https://www.nasa.gov/history/apollo-1-crew-honored-in-new-tribute-exhibit/','boundary'=>'A catalogue identifier suggests 24 January 2017, but that NASA image mapping remains unverified; no 2017 exhibit photo depicts the 1967 fire scene.'],
  ];
 }
 function fv457_chronology_valid(array $events): bool {
@@ -43,7 +43,7 @@ function fv457_chronology_html(string $instance): string {
   $o.='<p class="fv457__date"><strong>'.fv457_h($e['date']).'</strong> · '.fv457_h($e['precision']).'</p>';
   $o.='<h4>'.fv457_h($e['event']).'</h4>';
   $o.='<details><summary>Source, date and uncertainty</summary><p><strong>Source type:</strong> '.fv457_h($e['source_kind']).'</p><p><strong>Limit:</strong> '.fv457_h($e['boundary']).'</p>';
-  $o.='<p><a href="'.fv457_h($e['source']).'" rel="noopener noreferrer">Read primary NASA-hosted evidence</a></p></details></li>';
+  $o.='<p><a href="'.fv457_h($e['source']).'" rel="noopener noreferrer">Open NASA reference and provenance</a></p></details></li>';
  }
  return $o.'</ol><p class="fv457__chrono-question"><strong>Classroom inquiry:</strong> Which record is evidence of a 1967 event, and which is a later interpretation? Explain how the publication date differs from the event date. This exercise is free; no signup is required.</p></section>';
 }
