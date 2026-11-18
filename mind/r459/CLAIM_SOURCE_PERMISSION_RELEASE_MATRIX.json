@@ -1,0 +1,367 @@
+{
+  "revision": "Mind R459 / 2026-11-17 PT",
+  "status": "UNPUBLISHED / COMMERCIAL_HARD_HOLD",
+  "research_policy": "Seller features are not efficacy evidence. No affiliate activation, price or partner terms without authenticated publisher approval and offer-specific proof.",
+  "source_urls": {
+    "fv_puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "fv_focus": "https://finalvestige.com/focus/",
+    "fv_standards": "https://finalvestige.com/editorial-standards/",
+    "rubber_1998": "https://doi.org/10.1038/35784",
+    "rubber_2011": "https://doi.org/10.1371/journal.pone.0021659",
+    "rubber_2020": "https://doi.org/10.1525/collabra.325",
+    "rubber_2022": "https://pubmed.ncbi.nlm.nih.gov/35782045/",
+    "rubber_2023": "https://pubmed.ncbi.nlm.nih.gov/36880657/",
+    "binaural_review": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "zen12_catalog": "https://zen12.com/",
+    "zen12_promo": "https://zen12.com/secret/",
+    "inspire3_catalog": "https://inspire3.com/",
+    "hypnosislive_total_focus": "https://hypnosislive.com/mental-skills/total-focus",
+    "brainwave_focus": "https://brainwaveshots.com/focus-shot",
+    "ftc_endorsements": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  },
+  "claims": [
+    {
+      "id": "M01",
+      "claim": "1998 rubber-hand report describes vision/touch/proprioception interaction",
+      "classification": "independent_experimental_report",
+      "source": "rubber_1998",
+      "status": "ALLOW_WITH_SPECIFIC_LIMITS"
+    },
+    {
+      "id": "M02",
+      "claim": "Subjective ownership and proprioceptive drift are identical measures",
+      "classification": "refuted_by_scope",
+      "source": "rubber_2011",
+      "status": "EXCLUDE"
+    },
+    {
+      "id": "M03",
+      "claim": "2023 meta-analysis found correlation around 0.35",
+      "classification": "independent_meta_analysis_abstract",
+      "source": "rubber_2023",
+      "status": "ALLOW_WITH_CONTEXT"
+    },
+    {
+      "id": "M04",
+      "claim": "2020 demand-characteristics critique challenges standard control assumptions",
+      "classification": "researcher_critique",
+      "source": "rubber_2020",
+      "status": "ALLOW_AS_CONTESTED"
+    },
+    {
+      "id": "M05",
+      "claim": "2022 reanalysis found multisensory condition more important than measured expectancy",
+      "classification": "researcher_reanalysis",
+      "source": "rubber_2022",
+      "status": "ALLOW_AS_CONTESTED"
+    },
+    {
+      "id": "M06",
+      "claim": "Any psychology illusion proves hypnosis or meditation audio works",
+      "classification": "unsupported_cross_domain_inference",
+      "source": "rubber_1998",
+      "status": "EXCLUDE"
+    },
+    {
+      "id": "M07",
+      "claim": "Zen12 offers twelve-minute audio sessions",
+      "classification": "seller_feature",
+      "source": "zen12_catalog",
+      "status": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "M08",
+      "claim": "Zen12 catalog describes twelve levels and four styles",
+      "classification": "seller_feature",
+      "source": "zen12_catalog",
+      "status": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "M09",
+      "claim": "Zen12 separate /secret/ funnel advertises 48 MP3s in full course",
+      "classification": "seller_funnel_context",
+      "source": "zen12_promo",
+      "status": "ATTRIBUTED_ONLY_NOT_INTERCHANGEABLE"
+    },
+    {
+      "id": "M10",
+      "claim": "Zen12 twelve-minute session equals an hour of advanced meditation",
+      "classification": "seller_efficacy_assertion",
+      "source": "zen12_catalog",
+      "status": "EXCLUDE_FROM_FV_CLAIMS"
+    },
+    {
+      "id": "M11",
+      "claim": "Zen12 cures anxiety, illness or enhances cognition reliably",
+      "classification": "unsubstantiated_product_specific_health_claim",
+      "source": "zen12_catalog",
+      "status": "EXCLUDE"
+    },
+    {
+      "id": "M12",
+      "claim": "Zen12 issued FV affiliate URL/commission/channel terms",
+      "classification": "partner_account_specific_evidence_absent",
+      "source": "inspire3_catalog",
+      "status": "NOT_VERIFIED_BLOCK"
+    },
+    {
+      "id": "M13",
+      "claim": "Current promo countdown/coupon is a stable referred price",
+      "classification": "ephemeral_seller_marketing",
+      "source": "zen12_promo",
+      "status": "EXCLUDE"
+    },
+    {
+      "id": "M14",
+      "claim": "Hypnosis Live Total Focus product page describes 33m and 47 MB",
+      "classification": "seller_feature",
+      "source": "hypnosislive_total_focus",
+      "status": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "M15",
+      "claim": "Total Focus makes concentration 100 percent accurate",
+      "classification": "seller_efficacy_assertion",
+      "source": "hypnosislive_total_focus",
+      "status": "EXCLUDE"
+    },
+    {
+      "id": "M16",
+      "claim": "Brainwave Shots Focus Shot offers 15- and 30-minute formats",
+      "classification": "seller_feature",
+      "source": "brainwave_focus",
+      "status": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "M17",
+      "claim": "Focus Shot improves focus for 4 hours or an entire day",
+      "classification": "seller_efficacy_assertion",
+      "source": "brainwave_focus",
+      "status": "EXCLUDE"
+    },
+    {
+      "id": "M18",
+      "claim": "2023 binaural-beat EEG systematic review found inconsistent entrainment across 14 studies",
+      "classification": "independent_evidence",
+      "source": "binaural_review",
+      "status": "ALLOW_WITH_CONTEXT_NOT_ZEN12_TRIAL"
+    },
+    {
+      "id": "M19",
+      "claim": "FV 52-page Focus Fieldbook is currently free",
+      "classification": "live_FV_source",
+      "source": "fv_focus",
+      "status": "ALLOW"
+    },
+    {
+      "id": "M20",
+      "claim": "Published Puységur archive proves animal magnetism cures",
+      "classification": "false_archive_inference",
+      "source": "fv_puysegur",
+      "status": "EXCLUDE"
+    },
+    {
+      "id": "M21",
+      "claim": "Advertiser/endorser needs clear disclosure of material connection",
+      "classification": "FTC_regulatory_guidance",
+      "source": "ftc_endorsements",
+      "status": "REQUIRE_NEAR_LINK"
+    },
+    {
+      "id": "M22",
+      "claim": "Health-benefit advertising claims need competent reliable substantiation",
+      "classification": "FTC_regulatory_guidance",
+      "source": "ftc_health",
+      "status": "REQUIRE_BEFORE_ASSERTING"
+    },
+    {
+      "id": "M23",
+      "claim": "Paid affiliate click confirms commission",
+      "classification": "false_metric",
+      "source": "ftc_endorsements",
+      "status": "EXCLUDE"
+    },
+    {
+      "id": "M24",
+      "claim": "Verified revenue per 1,000 qualified human sessions can be computed now",
+      "classification": "missing_paid_order_and_denominator",
+      "source": "fv_focus",
+      "status": "NOT_COMPUTABLE"
+    }
+  ],
+  "permissions": {
+    "named_publisher_approval": null,
+    "authorized_website_channel": null,
+    "authorized_social_channel": null,
+    "authorized_email_channel": null,
+    "exact_sku": null,
+    "issued_affiliate_earning_url": null,
+    "tracking_and_attribution_terms": null,
+    "final_referred_price_and_tax": null,
+    "referred_return_policy": null,
+    "commission_settlement_terms": null,
+    "rights_to_creatives": null,
+    "source_confirmed_paid_conversion": null,
+    "refund_and_fee_reconciliation": null
+  },
+  "release_gates": [
+    {
+      "id": "G01",
+      "passed": false,
+      "notes": "Account / SKU / tracking / checkout evidence pending"
+    },
+    {
+      "id": "G02",
+      "passed": false,
+      "notes": "Account / SKU / tracking / checkout evidence pending"
+    },
+    {
+      "id": "G03",
+      "passed": false,
+      "notes": "Account / SKU / tracking / checkout evidence pending"
+    },
+    {
+      "id": "G04",
+      "passed": false,
+      "notes": "Account / SKU / tracking / checkout evidence pending"
+    },
+    {
+      "id": "G05",
+      "passed": false,
+      "notes": "Account / SKU / tracking / checkout evidence pending"
+    },
+    {
+      "id": "G06",
+      "passed": false,
+      "notes": "Account / SKU / tracking / checkout evidence pending"
+    },
+    {
+      "id": "G07",
+      "passed": false,
+      "notes": "Account / SKU / tracking / checkout evidence pending"
+    },
+    {
+      "id": "G08",
+      "passed": false,
+      "notes": "Account / SKU / tracking / checkout evidence pending"
+    },
+    {
+      "id": "G09",
+      "passed": false,
+      "notes": "Account / SKU / tracking / checkout evidence pending"
+    },
+    {
+      "id": "G10",
+      "passed": false,
+      "notes": "Account / SKU / tracking / checkout evidence pending"
+    },
+    {
+      "id": "G11",
+      "passed": false,
+      "notes": "Account / SKU / tracking / checkout evidence pending"
+    },
+    {
+      "id": "G12",
+      "passed": false,
+      "notes": "Account / SKU / tracking / checkout evidence pending"
+    },
+    {
+      "id": "G13",
+      "passed": false,
+      "notes": "Account / SKU / tracking / checkout evidence pending"
+    },
+    {
+      "id": "G14",
+      "passed": false,
+      "notes": "Site QA and editable CMS preview pending"
+    },
+    {
+      "id": "G15",
+      "passed": false,
+      "notes": "Site QA and editable CMS preview pending"
+    },
+    {
+      "id": "G16",
+      "passed": false,
+      "notes": "Site QA and editable CMS preview pending"
+    },
+    {
+      "id": "G17",
+      "passed": false,
+      "notes": "Site QA and editable CMS preview pending"
+    },
+    {
+      "id": "G18",
+      "passed": false,
+      "notes": "Site QA and editable CMS preview pending"
+    },
+    {
+      "id": "G19",
+      "passed": false,
+      "notes": "Site QA and editable CMS preview pending"
+    },
+    {
+      "id": "G20",
+      "passed": false,
+      "notes": "Site QA and editable CMS preview pending"
+    },
+    {
+      "id": "G21",
+      "passed": false,
+      "notes": "Grok/Jetpack/analytics integration pending"
+    },
+    {
+      "id": "G22",
+      "passed": false,
+      "notes": "Grok/Jetpack/analytics integration pending"
+    },
+    {
+      "id": "G23",
+      "passed": false,
+      "notes": "Grok/Jetpack/analytics integration pending"
+    },
+    {
+      "id": "G24",
+      "passed": false,
+      "notes": "Grok/Jetpack/analytics integration pending"
+    },
+    {
+      "id": "G25",
+      "passed": false,
+      "notes": "Grok/Jetpack/analytics integration pending"
+    },
+    {
+      "id": "G26",
+      "passed": false,
+      "notes": "Grok/Jetpack/analytics integration pending"
+    },
+    {
+      "id": "G27",
+      "passed": false,
+      "notes": "Founder release and independent transaction verification pending"
+    },
+    {
+      "id": "G28",
+      "passed": false,
+      "notes": "Founder release and independent transaction verification pending"
+    },
+    {
+      "id": "G29",
+      "passed": false,
+      "notes": "Founder release and independent transaction verification pending"
+    },
+    {
+      "id": "G30",
+      "passed": false,
+      "notes": "Founder release and independent transaction verification pending"
+    }
+  ],
+  "revenue": {
+    "qualified_human_sessions": null,
+    "confirmed_paid_orders": null,
+    "settled_net_revenue": null,
+    "net_revenue_per_1000_qualified_humans": null,
+    "state": "NOT_COMPUTABLE_NOT_ZERO"
+  }
+}
