@@ -123,6 +123,24 @@ def _validated_records(records: Iterable[dict[str, Any]]) -> Iterable[dict[str, 
             key = record.get(field)
             if type(key) is not str or _NORMALIZED_KEY.fullmatch(key) is None:
                 raise ValueError("Invoice vendor and invoice keys must be normalized ASCII")
+        # Key-only direct callers remain supported, but if the original
+        # source labels are also supplied, verify their asserted matching
+        # keys BEFORE grouping any invoice candidates. Previously a direct
+        # caller could relabel an actual vendor or invoice yet obtain an
+        # apparently exact duplicate from fabricated normalized identifiers.
+        # The full CSV workflow always supplies both labels. A missing
+        # optional label cannot authenticate identity; it merely preserves
+        # the historical low-level key-only API contract.
+        for raw_field, key_field in (
+                ("vendor", "v"), ("invoice_number", "inv")):
+            if raw_field not in record:
+                continue
+            label = record[raw_field]
+            if (type(label) is not str
+                    or len(label) > MAX_SOURCE_IDENTITY_CHARS):
+                raise ValueError("Invoice source identity labels must be bounded plain text")
+            if normalize_key(label) != record[key_field]:
+                raise ValueError("Invoice source label contradicts normalized key")
         # Exact built-in row/key/amount types are important here: str and
         # Decimal subclasses can redefine hash/equality, forging candidate
         # groups even when regex and numerical envelope checks pass.
