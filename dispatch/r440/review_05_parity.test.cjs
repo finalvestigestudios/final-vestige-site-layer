@@ -1,0 +1,25 @@
+"use strict";
+/* Exact copy-parity regression. Does not perform email delivery or WordPress preview. */
+const assert=require("node:assert/strict"),fs=require("node:fs"),path=require("node:path");
+const dir=__dirname;
+const m=fs.readFileSync(path.join(dir,"ISSUE_05_HYPNOSIS_LIVE_UNADOPTED.md"),"utf8");
+const h=fs.readFileSync(path.join(dir,"OFFLINE_EMAIL_REVIEW_05.html"),"utf8");
+const p=fs.readFileSync(path.join(dir,"OFFLINE_EMAIL_REVIEW_05.txt"),"utf8");
+const source=m.split("## SUBSCRIBER-FACING CANDIDATE COPY STARTS")[1].split("## SUBSCRIBER-FACING CANDIDATE COPY ENDS")[0].trim();
+const copy=h.split("<!-- COPY START -->")[1].split("<!-- COPY END -->")[0];
+const plainSource=source.replace(/\*\*/g,"");
+const decoded=copy.replace(/<[^>]*>/g," ").replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,'"');
+const normalize=s=>s.replace(/\s+/g," ").trim();
+assert.equal(normalize(decoded),normalize(plainSource));
+assert(p.includes(plainSource));
+assert(h.includes("lang=\"en\"")&&h.includes('name="viewport"'));
+assert(h.includes('role="presentation"'));
+assert(!/<script\b|<iframe\b|onload=|onclick=/i.test(h));
+assert(!/<a\b[^>]+href=/i.test(h));
+assert(h.includes("[[VALID_POSTAL_ADDRESS_REQUIRED]]")&&h.includes("[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]"));
+assert(p.includes("[[VALID_POSTAL_ADDRESS_REQUIRED]]")&&p.includes("[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]"));
+assert(h.includes("REVIEW ONLY / HOLD UNSENT"));
+assert(p.includes("NO LIVE LINK"));
+assert(m.includes("Hypnosis Live (NOT Total Focus)"));
+assert(!/https?:\/\/[^ \n]*affiliate/i.test(copy));
+process.stdout.write("12/12 exact-copy, accessibility and HOLD assertions passed (no email send)\n");
