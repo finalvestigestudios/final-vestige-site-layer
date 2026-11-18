@@ -14,6 +14,9 @@ import subprocess
 import sys
 
 from source_child_env_r514 import child_environment
+from source_path_snapshot_r515 import (
+    SourceSnapshotRejected, matches_source_fingerprint, source_fingerprint,
+)
 
 ROOT = Path(__file__).resolve().parents[3]
 MANIFEST = ROOT / "products/desktop/ci/source_evidence_commands_r509.txt"
@@ -101,6 +104,23 @@ def load_commands(raw: bytes, root: Path = ROOT, *,
     return tuple(approved)
 
 
+def _source_parts_for_argv(args: tuple[str, ...]) -> tuple[str, ...]:
+    """Map a pinned test command to the *actual* file it will launch.
+
+    Recheck source paths after initial manifest validation: earlier matrix
+    processes must not replace later Python source files unnoticed.
+    """
+    if type(args) is not tuple or any(type(x) is not str for x in args):
+        raise EvidenceRejected("Invalid source evidence command")
+    line = "python " + " ".join(args)
+    match = TEST_COMMAND.fullmatch(line)
+    if match is not None:
+        return ("products", "desktop", "tests", match.group(1))
+    if line in SCRIPT_COMMANDS:
+        return tuple(line.split(" ")[-1].split("/"))
+    raise EvidenceRejected("Unreviewed source evidence command")
+
+
 def _child_environment(root: Path) -> dict[str, str]:
     """Run child checks with reviewed OS/CI variables only (R514).
 
@@ -111,15 +131,37 @@ def _child_environment(root: Path) -> dict[str, str]:
 
 
 def execute(commands: tuple[tuple[str, ...], ...], root: Path = ROOT,
-            *, spawn=None) -> int:
+            *, spawn=None, verify_source_snapshots: bool = False) -> int:
     if (type(commands) is not tuple or not commands or
             any(type(x) is not tuple or not x or
                 any(type(y) is not str for y in x) for x in commands)):
         print("REJECTED: empty or invalid source evidence matrix", file=sys.stderr)
         return 1
+    # The immutable manifest checked all paths only once. Capture each
+    # unique source-file hash before starting ANY subprocess, then verify it
+    # immediately before every (potentially much later) launch.
+    # Direct isolated execute() fixtures retain their historical test hook;
+    # the real main() *always* enables prelaunch source custody.
+    planned_paths: list[tuple[str, ...]] = []
+    snapshots: dict[tuple[str, ...], bytes] = {}
+    if verify_source_snapshots:
+        try:
+            for args in commands:
+                parts = _source_parts_for_argv(args)
+                planned_paths.append(parts)
+                if parts not in snapshots:
+                    snapshots[parts] = source_fingerprint(root, parts)
+        except (EvidenceRejected, SourceSnapshotRejected):
+            print("REJECTED: source-file snapshot unavailable", file=sys.stderr)
+            return 1
     run = subprocess.run if spawn is None else spawn
     env = _child_environment(root)
     for index, args in enumerate(commands, 1):
+        if verify_source_snapshots:
+            parts = planned_paths[index - 1]
+            if not matches_source_fingerprint(root, parts, snapshots[parts]):
+                print(f"REJECTED: source check {index}/{len(commands)} changed", file=sys.stderr)
+                return 1
         try:
             result = run([sys.executable, *args], cwd=str(root), env=env,
                          stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
@@ -140,7 +182,7 @@ def main() -> int:
             ROOT, ("products", "desktop", "ci", "source_evidence_commands_r509.txt")
         ):
             raise EvidenceRejected("Unsafe source evidence manifest path")
-        return execute(load_commands(MANIFEST.read_bytes()))
+        return execute(load_commands(MANIFEST.read_bytes()), verify_source_snapshots=True)
     except (OSError, EvidenceRejected):
         print("REJECTED: immutable source evidence unavailable", file=sys.stderr)
         return 1
