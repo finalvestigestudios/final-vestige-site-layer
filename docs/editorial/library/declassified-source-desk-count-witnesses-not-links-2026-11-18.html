@@ -1,0 +1,125 @@
+<!-- wp:html -->
+<section class="fv-dsd-family" id="fv-dsd-family" aria-labelledby="fv-dsd-family-title">
+<style>
+.fv-dsd-family{--bg:#172029;--panel:#24313a;--ink:#f6f0e5;--muted:#d9d8d1;--gold:#e9cd94;--line:#89969d;--blue:#b5dbe1;box-sizing:border-box;background:var(--bg);color:var(--ink);border-radius:14px;max-width:1160px;margin:38px auto;padding:clamp(18px,4vw,48px);line-height:1.75;font:inherit}
+.fv-dsd-family *{box-sizing:border-box;overflow-wrap:anywhere}
+.fv-dsd-family h2,.fv-dsd-family h3,.fv-dsd-family h4{color:var(--ink);font-family:Georgia,serif;line-height:1.25;margin:0 0 .65em}
+.fv-dsd-family h2{font-size:clamp(1.8rem,3vw,2.6rem)}.fv-dsd-family h3{font-size:clamp(1.35rem,2vw,1.7rem)}
+.fv-dsd-family p,.fv-dsd-family li,.fv-dsd-family dd{color:var(--muted)}
+.fv-dsd-family p{margin:.4em 0 1em}.fv-dsd-family a{color:#ffe0a6;text-underline-offset:3px}
+.fv-dsd-family a:focus-visible,.fv-dsd-family summary:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.fv-dsd-family .eyebrow{color:var(--gold);text-transform:uppercase;font-size:.76rem;letter-spacing:.13em;font-weight:700}
+.fv-dsd-family .lede{font:normal clamp(1.15rem,2vw,1.45rem)/1.5 Georgia,serif;color:var(--ink);max-width:790px}
+.fv-dsd-family .tag{display:inline-block;border:1px solid var(--gold);padding:3px 12px;border-radius:20px;color:var(--gold);font-size:.83rem;margin:8px 8px 0 0}
+.fv-dsd-family .section{margin:38px 0 0}.fv-dsd-family .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:clamp(14px,3vw,26px)}
+.fv-dsd-family .lineage{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:22px 0}
+.fv-dsd-family .node{min-width:0;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;background:var(--panel);padding:19px;position:relative}
+.fv-dsd-family .node:not(:last-child):after{content:"→";position:absolute;right:-22px;top:38%;font:700 1.45rem Georgia,serif;color:var(--gold);z-index:1}
+.fv-dsd-family .node h4{font-size:1.11rem}.fv-dsd-family .node p{font-size:.91rem;margin:0}
+.fv-dsd-family .node .node-number{font-size:.77rem;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.fv-dsd-family .figcap{font-size:.84rem;color:var(--muted);line-height:1.55}
+.fv-dsd-family .result{border-left:4px solid var(--gold);padding:15px 20px;background:#2b3540;color:var(--ink);border-radius:4px}
+.fv-dsd-family .steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.fv-dsd-family .steps article{border-top:1px solid var(--line);padding:14px 0}
+.fv-dsd-family .steps strong{color:var(--ink)}
+.fv-dsd-family .table-scroll{overflow-x:auto;max-width:100%;border:1px solid var(--line);border-radius:10px}
+.fv-dsd-family table{border-collapse:collapse;width:100%;min-width:680px;line-height:1.45;font-size:.91rem}
+.fv-dsd-family th,.fv-dsd-family td{padding:13px 15px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.fv-dsd-family th{background:#34414a;color:var(--ink)}.fv-dsd-family td{color:var(--muted)}.fv-dsd-family tbody tr:last-child td{border-bottom:0}
+.fv-dsd-family .worksheet{background:#23313a;border:2px solid var(--gold);padding:clamp(14px,3vw,28px);border-radius:10px}
+.fv-dsd-family .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px}
+.fv-dsd-family .field{min-width:0;border-top:1px solid var(--line);padding:12px 0 8px;break-inside:avoid}
+.fv-dsd-family .field strong{display:block;font-size:.93rem;color:var(--ink)}.fv-dsd-family .field span{display:block;font-size:.84rem;color:var(--muted)}
+.fv-dsd-family .write-line{height:34px;border-bottom:1px solid #b0bdc3}
+.fv-dsd-family .sources{padding-left:1.5em}.fv-dsd-family .sources li{padding:5px 0}
+.fv-dsd-family .small{font-size:.85rem}.fv-dsd-family .printnote{font-weight:700;color:var(--ink)}
+@media(max-width:700px){.fv-dsd-family .lineage,.fv-dsd-family .steps,.fv-dsd-family .fields{grid-template-columns:1fr}.fv-dsd-family .node:not(:last-child):after{content:"↓";right:auto;left:48%;top:auto;bottom:-27px}.fv-dsd-family .lineage{gap:23px}.fv-dsd-family .table-scroll{outline:1px solid var(--line);outline-offset:2px}.fv-dsd-family{padding:19px 16px}}
+@media print{.fv-dsd-family{background:#fff!important;color:#111!important;margin:0!important;padding:12mm!important;max-width:none!important}.fv-dsd-family *{color:#111!important;box-shadow:none!important}.fv-dsd-family .node,.fv-dsd-family .panel,.fv-dsd-family .result,.fv-dsd-family .worksheet{background:white!important;border-color:#555!important}.fv-dsd-family .lineage{display:block}.fv-dsd-family .node{margin:9px 0}.fv-dsd-family .node:after{display:none}.fv-dsd-family .table-scroll{overflow:visible}.fv-dsd-family table{min-width:0;font-size:9pt}.fv-dsd-family .worksheet{break-before:page}.fv-dsd-family a{color:#111!important;text-decoration:underline}.fv-dsd-family .write-line{border-color:#777}.fv-dsd-family .section{break-inside:avoid-page}}
+</style>
+<header>
+<p class="eyebrow">Final Vestige Studios · Declassified Source Desk / Field instrument 05</p>
+<h2 id="fv-dsd-family-title">Count the witnesses, not the links.</h2>
+<p class="lede">Three official pages can look like three confirmations. Sometimes they are one document, traveling in three coats.</p>
+<p>Before adding a citation to an investigation, ask where its information came from. Two sites repeating one memo are two access points, not two independent accounts. The mistake matters most when a report says <em>several sources confirm</em> and the several sources lead back to one original statement.</p>
+<span class="tag">Free printable evidence-family receipt</span><span class="tag">Original explanatory diagram</span><span class="tag">No account or upload required</span>
+</header>
+<div class="section">
+<h3>A real example: one telephone memorandum, two official publications</h3>
+<p>In July 1953, a record of a telephone conversation between Secretary of State John Foster Dulles and CIA Director Allen Dulles referred to an Iran-related operation. The <a href="https://history.state.gov/historicaldocuments/frus1952-54v10/d335">1989 <em>Foreign Relations</em> volume, Document 335</a>, printed a memorandum of that conversation, dated July 24, 1953. Its source line points to the Eisenhower Library's Dulles papers, “Telephone Conversations.”</p>
+<p>A later <a href="https://history.state.gov/historicaldocuments/frus1951-54Iran/d251">editorial note, Document 251, in the 2018 Iran volume</a> reproduces the telephone text and explicitly directs the reader back to Document 335, pages 737–738. That second appearance is valuable: it supplies context and a route for checking the passage. It does not supply a second listener to the telephone call. These are two editorial placements of one underlying memorandum. The original archival manuscript or typescript was <strong>not</strong> examined for this guide; the published transcriptions are the evidence inspected.</p>
+<figure aria-labelledby="fv-dsd-family-figcap">
+<div class="lineage" role="img" aria-label="Explanatory lineage: a July 24, 1953 telephone conversation memorandum is the underlying record; a 1989 State Department edited publication prints it as Document 335; a 2018 State Department editorial note reprints and cites that 1989 placement as Document 251. The later edition is not an independent firsthand witness.">
+<div class="node"><p class="node-number">One underlying record · 1953</p><h4>Telephone memorandum</h4><p>Eisenhower Library, Dulles papers, according to the 1989 source line. Original not inspected here.</p></div>
+<div class="node"><p class="node-number">Publication · 1989</p><h4>FRUS Volume X, No. 335</h4><p>Printed transcript and editorial references. An accessible edition, not the paper original.</p></div>
+<div class="node"><p class="node-number">Editorial reuse · 2018</p><h4>FRUS Iran, No. 251</h4><p>Editorial note reproduces and explicitly cites the earlier published transcript.</p></div>
+</div>
+<figcaption class="figcap" id="fv-dsd-family-figcap">Original Final Vestige Studios source-lineage diagram, 2026-11-18. It is a documentary-method illustration, not an archival scan, facsimile, or reconstruction of the actual telephone call. Linked official documents are hosted by the U.S. Department of State; nothing from their scans is reproduced here.</figcaption>
+</figure>
+<p class="result"><strong>Defensible count:</strong> two reviewed State Department web documents, one identifiable underlying telephone memorandum and one line of reported dialogue. Not two independent records of a presidential decision. The reported assertion in the conversation is not itself an inspected presidential authorization instrument.</p>
+</div>
+<div class="section">
+<h3>The six tests before calling a source independent</h3>
+<div class="steps">
+<article><p><strong>01 / Identify the claim.</strong> Write the exact assertion needing support. “A memorandum reports that approval was said to have occurred” and “the approval document has been found” are different claims.</p></article>
+<article><p><strong>02 / Find each document's source line.</strong> Capture original writer or recorder, date, repository, collection, series, page and item identifier. An agency host is not the same as an original creator.</p></article>
+<article><p><strong>03 / Trace explicit dependencies.</strong> Look for “reprinted from,” “citing,” footnotes, editorial notes, shared transcripts, syndication, identical errors and identical page references.</p></article>
+<article><p><strong>04 / Separate copies from accounts.</strong> A scan, translation, excerpt, transcription, revised edition and rehosting may all be different representations of one account. Differences among representations deserve checking; they do not create new witnesses.</p></article>
+<article><p><strong>05 / Test truly separate origins.</strong> Independent evidence might be another contemporaneous office record, a separate participant's note or a distinct archive's related correspondence. Shared institutional custody alone neither proves nor disproves independence.</p></article>
+<article><p><strong>06 / State the narrow result.</strong> Record how many pages you checked, how many underlying documents you can identify, whether any records really corroborate the proposition, and what remains unexamined.</p></article>
+</div>
+</div>
+<div class="section">
+<h3>Which count belongs in the story?</h3>
+<p>Count by <em>evidence family</em> when speaking about corroboration; count by <em>publication</em> when discussing access, interpretation, editorial history or textual variants. Both counts can be useful, provided they are named.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Source-lineage classification table; scroll horizontally on small screens">
+<table><thead><tr><th scope="col">What you found</th><th scope="col">Relationship</th><th scope="col">What to say</th></tr></thead><tbody>
+<tr><td>Same memo published in two State Department volumes</td><td>Republished text; one underlying record</td><td>Two editions of the same memorandum, not independent corroboration</td></tr>
+<tr><td>Agency transcript and a cropped social-media image of it</td><td>Derivative copy; possible lost context</td><td>One text in two representations; inspect the agency version</td></tr>
+<tr><td>Separate office diary describing a related meeting</td><td>Potentially independent, not automatically</td><td>A second record to evaluate for firsthand knowledge, date and dependencies</td></tr>
+<tr><td>Modern historian citing the same official transcript</td><td>Secondary interpretation of one primary record</td><td>A scholarly reading, not another eyewitness</td></tr>
+<tr><td>An archive finding aid describing a folder</td><td>Collection description; not an inspected item</td><td>Evidence that a folder is described, not proof of its contents</td></tr>
+</tbody></table></div>
+<p class="small">For further distinctions between a collection description and an inspected item, consult the <a href="https://www.loc.gov/librarians/archival-description/">Library of Congress' archival-description guidance</a>. Its finding-aid rules do not automatically establish that every underlying document is digitized or public.</p>
+</div>
+<div class="section">
+<h3>Try it: the four-link trap</h3>
+<div class="panel">
+<p><strong>Fictional practice exercise, not historical evidence.</strong> An online article cites four URLs for a supposed official finding. Link A is an agency-hosted memorandum. Link B is a later edited collection quoting A. Link C is a newspaper story quoting B. Link D is a photograph of B's page on a forum.</p>
+<p>How many independent witnesses support the supposed finding? Based on that description alone, <strong>one identifiable underlying document</strong>, not four. The underlying memorandum itself may contain hearsay or error. To strengthen the claim, find a separate contemporaneous record, check its relationship to the original and report any contradiction. The four links remain useful as a transmission history; they do not independently verify the contents.</p>
+</div>
+</div>
+<div class="section worksheet" id="fv-dsd-family-receipt" aria-labelledby="fv-dsd-family-receipt-title">
+<p class="eyebrow">Copy · Print · Attach to the research folder</p>
+<h3 id="fv-dsd-family-receipt-title">The Witness-Family Receipt</h3>
+<p>A record for the evidence behind a claim, not a score assigned to the source. Print this page or copy the field labels into your own research notebook. Do not enter personal information into third-party tools unnecessarily.</p>
+<div class="fields">
+<div class="field"><strong>1. Claim being tested</strong><span>Write narrowly, without assuming the conclusion.</span><div class="write-line"></div></div>
+<div class="field"><strong>2. Original creator / recorder</strong><span>Not necessarily the current website.</span><div class="write-line"></div></div>
+<div class="field"><strong>3. Original document date</strong><span>Distinguish event, record, edition and access dates.</span><div class="write-line"></div></div>
+<div class="field"><strong>4. Repository / collection / series</strong><span>Keep collection and item levels distinct.</span><div class="write-line"></div></div>
+<div class="field"><strong>5. Source A: document / page / URL</strong><span>Specify the edition actually examined.</span><div class="write-line"></div></div>
+<div class="field"><strong>6. Source B: document / page / URL</strong><span>Record a second publication separately.</span><div class="write-line"></div></div>
+<div class="field"><strong>7. Shared source / explicit cross-citation</strong><span>Which item do both derive from?</span><div class="write-line"></div></div>
+<div class="field"><strong>8. Textual differences, if inspected</strong><span>State exactly where they appear.</span><div class="write-line"></div></div>
+<div class="field"><strong>9. Independent second record, if any</strong><span>Creator, date, repository and dependence test.</span><div class="write-line"></div></div>
+<div class="field"><strong>10. Evidence families identified</strong><span>Count families, not web tabs.</span><div class="write-line"></div></div>
+<div class="field"><strong>11. What is not yet established</strong><span>Missing original, missing authorization, conflict, etc.</span><div class="write-line"></div></div>
+<div class="field"><strong>12. Checked date / next record to retrieve</strong><span>Make the search reproducible.</span><div class="write-line"></div></div>
+</div>
+<p class="printnote">Decision line: SINGLE FAMILY / INDEPENDENCE VERIFIED / POSSIBLE DEPENDENCE / INSUFFICIENT EVIDENCE. Never convert “not located” into “never existed.”</p>
+</div>
+<div class="section" aria-labelledby="fv-dsd-family-sources-title">
+<h3 id="fv-dsd-family-sources-title">Source trail, access and reuse ledger</h3>
+<p>Last checked: <strong>November 18, 2026</strong>. These are direct institution-hosted pages. A linked document is not automatically licensed for republication. This resource reproduces no third-party manuscript page, scan, photo, or agency artwork.</p>
+<ol class="sources">
+<li><a href="https://history.state.gov/historicaldocuments/frus1952-54v10/d335">FRUS 1952–1954, Volume X, Document 335</a> — U.S. Department of State, Office of the Historian; 1989 published transcript of the July 24, 1953 telephone memorandum. The source line names the Eisenhower Library Dulles papers. Public web access; paper original not viewed here. Link-only.</li>
+<li><a href="https://history.state.gov/historicaldocuments/frus1951-54Iran/d251">FRUS Iran, Editorial Note 251</a> — U.S. Department of State, Office of the Historian; printed in its 2018 edition. Explicitly references the 1989 Volume X text. Public web access; editorial note, not another firsthand memorandum. Link-only.</li>
+<li><a href="https://history.state.gov/historicaldocuments/frus1951-54IranEd2">FRUS Iran, Second Edition, volume index</a> — U.S. Department of State / U.S. Government Publishing Office, 2018. Identifies editorial volume and its document range. Public web access; the index is not the underlying manuscript. Link-only.</li>
+<li><a href="https://www.loc.gov/librarians/archival-description/">Archival Description</a> — Library of Congress; institutional guidance on finding aids, provenance, arrangement and access conditions. Public web access; describes practice rather than proving this Iran case. Link-only.</li>
+<li><a href="https://finalvestige.com/editorial-standards/">Final Vestige Editorial Standards</a> — Final Vestige Studios; how documentary claims, incomplete records, corrections and images are handled. Public website; internal policy.</li>
+</ol>
+<p class="small"><strong>Qualification:</strong> The U.S. government's published editions have editorial choices and documentary limits. Source transcription, historical assertions inside a record and proof of the event asserted are separate questions. No independent authentication of the original July 1953 physical document, signatures, routing, or presidential approval instrument was performed. Any claim about presidential authorization requires separate documentary inquiry. Image and text rights for any future reproduction must be checked at item level even when an institutional landing page is public.</p>
+<p>Continue at <a href="https://finalvestige.com/free-resources/research-sources/">Research Sources</a>, <a href="https://finalvestige.com/free-resources/the-black-bar/">The Black Bar</a> (release comparison), <a href="https://finalvestige.com/free-resources/the-page-that-changed/">The Page That Changed</a> (version history), or <a href="https://finalvestige.com/the-archive-trail/">The Archive Trail</a> (source recovery). The core <em>Declassified Source Desk</em> remains unpublished, so these live cross-links do not point to a private preview.</p>
+</div>
+</section>
+<!-- /wp:html -->
