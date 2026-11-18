@@ -615,5 +615,131 @@ class InvoiceFlaggedSourceIdentityR528(unittest.TestCase):
         self.assertEqual((a, b), before)
 
 
+
+# R529: candidate discovery itself must not certify forged normalized keys
+# when the direct caller supplies original vendor/invoice labels. This check
+# runs before constructing candidate groups; review_flags remains a separate
+# human-review boundary for manually supplied candidate evidence.
+class InvoiceCandidateRawLabelCustodyR529(unittest.TestCase):
+    def refuse(self, records):
+        with self.assertRaises(ValueError) as caught:
+            candidate_pairs(iter(records))
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertIsNone(caught.exception.__context__)
+        self.assertNotIn(PRIVATE, str(caught.exception))
+        self.assertNotIn(PRIVATE, "".join(traceback.format_exception(caught.exception)))
+        return str(caught.exception)
+
+    def test_exact_vendor_relabel_is_not_a_discovered_duplicate(self):
+        self.assertIn("contradicts", self.refuse([row(), row(3, vendor="Other")]))
+
+    def test_exact_invoice_relabel_is_not_a_discovered_duplicate(self):
+        b = row(3)
+        b["invoice_number"] = "REPLACED"
+        self.assertIn("contradicts", self.refuse([row(), b]))
+
+    def test_both_rows_fabricate_same_vendor_key(self):
+        a, b = row(), row(3)
+        a["v"] = b["v"] = "FABRICATED"
+        self.assertIn("contradicts", self.refuse([a, b]))
+
+    def test_both_rows_fabricate_same_invoice_key(self):
+        a, b = row(), row(3)
+        a["inv"] = b["inv"] = "FABRICATED"
+        self.assertIn("contradicts", self.refuse([a, b]))
+
+    def test_near_candidate_invoice_relabel_is_refused_before_grouping(self):
+        b = row(3, invoice="OTHER")
+        b["invoice_number"] = "SPOOF"
+        self.assertIn("contradicts", self.refuse([row(), b]))
+
+    def test_forged_second_row_is_rejected_even_when_no_pair_exists(self):
+        source = row(3, invoice="OTHER", day=30)
+        source["vendor"] = "REPLACED"
+        self.assertIn("contradicts", self.refuse([row(), source]))
+
+    def test_native_text_required_for_optional_source_vendor(self):
+        source = row()
+        source["vendor"] = None
+        self.assertIn("bounded plain text", self.refuse([source]))
+
+    def test_native_text_required_for_optional_invoice_number(self):
+        class Hostile(str):
+            def upper(self):
+                raise RuntimeError(PRIVATE)
+        source = row()
+        source["invoice_number"] = Hostile("INV-A")
+        self.assertIn("bounded plain text", self.refuse([source]))
+
+    def test_bounded_text_before_normalization(self):
+        from unittest.mock import patch
+        source = row(vendor="ABCDEFGHI")
+        with patch("fvs_suite.invoice_match.MAX_SOURCE_IDENTITY_CHARS", 8):
+            self.assertIn("bounded plain text", self.refuse([source]))
+
+    def test_source_label_is_bound_when_only_one_present(self):
+        source = row()
+        del source["invoice_number"]
+        source["vendor"] = "OTHER"
+        self.assertIn("contradicts", self.refuse([source]))
+
+    def test_historical_normalized_key_only_records_still_work(self):
+        a, b = row(), row(3)
+        for source in (a, b):
+            del source["vendor"]
+            del source["invoice_number"]
+        found = candidate_pairs([b, a])
+        self.assertEqual([(x["row"], y["row"], s) for x, y, s, _ in found],
+                         [("2", "3", "exact_invoice_key")])
+
+    def test_partial_label_records_with_valid_source_keys_remain_compatible(self):
+        a, b = row(), row(3)
+        del a["vendor"]
+        del b["invoice_number"]
+        found = candidate_pairs([a, b])
+        self.assertEqual(len(found), 1)
+        self.assertEqual(found[0][2], "exact_invoice_key")
+
+    def test_punctuation_collision_still_requires_human_review(self):
+        a, b = row(), row(3, vendor="Acme-")
+        found = candidate_pairs([b, a])
+        self.assertEqual(len(found), 1)
+        self.assertEqual(review_flags(found[0][0], found[0][1], found[0][2]),
+                         "normalized_vendor_key_review")
+
+    def test_unicode_uppercase_expansion_remains_review_not_forgery(self):
+        a, b = row(invoice="Straße"), row(3, invoice="STRASSE")
+        found = candidate_pairs([b, a])
+        self.assertEqual(len(found), 1)
+        self.assertEqual(review_flags(found[0][0], found[0][1], found[0][2]),
+                         "normalized_invoice_key_review")
+
+    def test_valid_near_candidate_discovery_is_preserved(self):
+        found = candidate_pairs([row(3, invoice="OTHER"), row()])
+        self.assertEqual(len(found), 1)
+        self.assertEqual(found[0][2], "review_possible_duplicate")
+        self.assertEqual(review_flags(*found[0][:3]), "")
+
+    def test_rejection_preserves_original_records(self):
+        a, b = row(), row(3)
+        b["vendor"] = PRIVATE
+        previous = deepcopy((a, b))
+        self.refuse([a, b])
+        self.assertEqual((a, b), previous)
+
+    def test_native_snapshot_never_calls_subclass_lookup_hooks(self):
+        class Hostile(dict):
+            def get(self, *args):
+                raise RuntimeError(PRIVATE)
+            def items(self):
+                raise RuntimeError(PRIVATE)
+            def keys(self):
+                raise RuntimeError(PRIVATE)
+            def __getitem__(self, key):
+                raise RuntimeError(PRIVATE)
+        found = candidate_pairs([Hostile(row(3)), Hostile(row())])
+        self.assertEqual(len(found), 1)
+        self.assertEqual((found[0][0]["row"], found[0][1]["row"]), ("2", "3"))
+
 if __name__ == "__main__":
     unittest.main()
