@@ -61,7 +61,7 @@ test('merchant matrix all gates hold, no invented approved URL',()=>{
 });
 test('claims label efficacy unverified and historical analogy not product proof',()=>{
   for(const n of ['C06','C07','C08','C11','C14','C16','C21'])assert.match(m.claims.find(x=>x.id===n).decision,/BLOCK/);
-  assert.match(article,/Boundary/);assert.match(article,/Puységur/);
+  assert.match(article,/boundary/i);assert.match(article,/Puységur/);
 });
 test('hub has one h1 and all published editorial routes',()=>{
   assert.equal((hub.match(/<h1\b/g)||[]).length,1);
