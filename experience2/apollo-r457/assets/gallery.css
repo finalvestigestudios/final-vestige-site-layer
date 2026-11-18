@@ -12,3 +12,16 @@
 
 /* R461: print/PDF source URLs are actual links, not merely painted text. */
 @media print{.fv457__print-custody a{color:#000!important;text-decoration:underline;overflow-wrap:anywhere;word-break:break-word}}
+
+/* R463: semantic evidence chronology; no JS, no fabricated geo relationship. */
+.fv457__chronology{margin:34px 0;padding:20px 0;border-top:1px solid #7e6950;border-bottom:1px solid #7e6950}
+.fv457__chronology>h3{font-size:clamp(1.5rem,3vw,2.35rem);max-width:760px}
+.fv457__chronology>p{max-width:860px}
+.fv457__rail{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0;padding:0}
+.fv457__moment{min-width:0;border-left:3px solid #cba869;background:#1d1f1b;padding:16px 20px}
+.fv457__step{font-size:.8rem;color:#dfc08b;letter-spacing:.08em}
+.fv457__moment h4{font:400 clamp(1.14rem,1.8vw,1.42rem)/1.35 Georgia,serif;margin:.45rem 0 1rem}
+.fv457__chrono-question{border-left:3px solid #f1ce8d;padding:12px 18px;background:#262115;color:#fff1d6}
+@media(max-width:760px){.fv457__rail{grid-template-columns:1fr}.fv457__moment{padding:16px}}
+@media(forced-colors:active){.fv457__moment,.fv457__chrono-question{border-color:CanvasText}}
+@media print{.fv457__chronology,.fv457__moment,.fv457__chrono-question{background:#fff!important;color:#000!important}.fv457__moment{border:1px solid #000;break-inside:avoid}.fv457__step{color:#000!important}}
