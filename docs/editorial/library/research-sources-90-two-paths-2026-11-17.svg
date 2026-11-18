@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="610" viewBox="0 0 980 610" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">The same ninety sources across two viewing paths</title>
+<desc id="diagram-desc">The first Gutenberg HTML block contains sixty record links; a second fallback block contains thirty. With JavaScript, thirty are moved to the five category grids, producing one ninety-card index and interactive search. Without JavaScript, both original blocks remain readable as separate sections, but search and filters do not work. The two-path diagram documents structure rather than a browser test.</desc>
+<rect width="980" height="610" fill="#111b20"/>
+<rect x="28" y="28" width="924" height="554" rx="22" fill="#17262b" stroke="#52736c" stroke-width="1.5"/>
+<text x="60" y="78" font-family="system-ui, sans-serif" font-weight="700" font-size="26" fill="#f4ead8">Ninety links. Two reading paths.</text>
+<text x="60" y="107" font-family="system-ui, sans-serif" font-size="14" fill="#becac7">Research Sources · authenticated Gutenberg structure · 17 November 2026</text>
+<g font-family="system-ui, sans-serif">
+ <rect x="64" y="139" width="377" height="116" rx="12" fill="#233b40" stroke="#8fae9e"/>
+ <text x="86" y="173" font-size="13" fill="#e3c58e">WORDPRESS HTML BLOCK 1</text>
+ <text x="86" y="215" font-weight="700" font-size="32" fill="#fff8e8">60 cards</text>
+ <text x="86" y="238" font-size="14" fill="#d0deda">Main directory and search controls</text>
+ <rect x="539" y="139" width="377" height="116" rx="12" fill="#233b40" stroke="#8fae9e"/>
+ <text x="561" y="173" font-size="13" fill="#e3c58e">WORDPRESS HTML BLOCK 3</text>
+ <text x="561" y="215" font-weight="700" font-size="32" fill="#fff8e8">30 cards</text>
+ <text x="561" y="238" font-size="14" fill="#d0deda">Additional independent fallback section</text>
+ <path d="M245 255 V296 H245 V324" fill="none" stroke="#c8aa71" stroke-width="3" />
+ <path d="M727 255 V296 H727 V324" fill="none" stroke="#c8aa71" stroke-width="3" />
+ <path d="M245 296 H727" stroke="#c8aa71" stroke-width="3"/>
+ <path d="M237 316 L245 327 L253 316" stroke="#c8aa71" stroke-width="3" fill="none"/>
+ <path d="M719 316 L727 327 L735 316" stroke="#c8aa71" stroke-width="3" fill="none"/>
+ <rect x="66" y="337" width="407" height="168" rx="12" fill="#234b45" stroke="#91c5af"/>
+ <text x="88" y="368" font-size="14" font-weight="700" fill="#d6f2e1">JAVASCRIPT ON</text>
+ <text x="88" y="411" font-size="28" font-weight="700" fill="#fff8e8">90 in five groups</text>
+ <text x="88" y="439" font-size="15" fill="#d0e6dd">Thirty cards move into the main index</text>
+ <text x="88" y="461" font-size="15" fill="#d0e6dd">Search and filters respond to input</text>
+ <text x="88" y="485" font-size="13" fill="#e3c58e">Two handlers register: browser QA pending</text>
+ <rect x="507" y="337" width="407" height="168" rx="12" fill="#4a3931" stroke="#c8a47e"/>
+ <text x="529" y="368" font-size="14" font-weight="700" fill="#f1d8b7">JAVASCRIPT OFF</text>
+ <text x="529" y="411" font-size="28" font-weight="700" fill="#fff8e8">60 + 30 still visible</text>
+ <text x="529" y="439" font-size="15" fill="#e7d6c5">Links stay in separate HTML sections</text>
+ <text x="529" y="461" font-size="15" fill="#e7d6c5">Search / filter controls are inert</text>
+ <text x="529" y="485" font-size="13" fill="#f1d8b7">No scriptless explanation in source</text>
+ <text x="64" y="544" font-size="13" fill="#b9c8c4">Original Final Vestige editorial diagram · static code-level analysis, not a rendered browser verdict</text>
+ <text x="64" y="564" font-size="12" fill="#9caaa8">No archival imagery or third-party artwork reproduced · FV Library QA / PR #2816</text>
+</g>
+</svg>
