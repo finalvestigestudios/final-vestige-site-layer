@@ -897,7 +897,7 @@ class SnapshotWindowsParityR517(unittest.TestCase):
         self.parts = ("products", "desktop", "tests", "test_r517.py")
         self.path = self.root.joinpath(*self.parts)
         self.path.parent.mkdir(parents=True)
-        self.path.write_bytes(b"pass\\n")
+        self.path.write_bytes(b"pass\n")
 
     @staticmethod
     def _meta(info, *, ctime_shift=0, size_shift=0, mtime_shift=0):
@@ -931,11 +931,11 @@ class SnapshotWindowsParityR517(unittest.TestCase):
         original_compare = custody._same_path_descriptor_identity
         def different_view(fd):
             return self._meta(original_fstat(fd), ctime_shift=3_600_000_000)
-        with patch.object(custody.os, "fstat", side_effect=different_view), \\
+        with patch.object(custody.os, "fstat", side_effect=different_view), \
              patch.object(custody, "_same_path_descriptor_identity",
                           side_effect=lambda a, b: original_compare(a, b, windows=True)):
             digest = custody.source_fingerprint(self.root, self.parts)
-            self.assertEqual(digest, custody.sha256(b"pass\\n").digest())
+            self.assertEqual(digest, custody.sha256(b"pass\n").digest())
             self.assertTrue(custody.matches_source_fingerprint(self.root, self.parts, digest))
 
     def test_descriptor_ctime_change_midread_rejected_on_windows(self):
@@ -946,9 +946,9 @@ class SnapshotWindowsParityR517(unittest.TestCase):
             calls.append(fd)
             return self._meta(original_fstat(fd),
                               ctime_shift=3_600_000_000 + (1 if len(calls) == 2 else 0))
-        with patch.object(custody.os, "fstat", side_effect=changed_descriptor), \\
+        with patch.object(custody.os, "fstat", side_effect=changed_descriptor), \
              patch.object(custody, "_same_path_descriptor_identity",
-                          side_effect=lambda a, b: original_compare(a, b, windows=True)), \\
+                          side_effect=lambda a, b: original_compare(a, b, windows=True)), \
              self.assertRaises(custody.SourceSnapshotRejected):
             custody.source_fingerprint(self.root, self.parts)
         self.assertEqual(len(calls), 2)
@@ -960,11 +960,11 @@ class SnapshotWindowsParityR517(unittest.TestCase):
         def changed_source(fd):
             calls.append(fd)
             if len(calls) == 2:
-                self.path.write_bytes(b"tampered bytes\\n")
+                self.path.write_bytes(b"tampered bytes\n")
             return self._meta(original_fstat(fd), ctime_shift=3_600_000_000)
-        with patch.object(custody.os, "fstat", side_effect=changed_source), \\
+        with patch.object(custody.os, "fstat", side_effect=changed_source), \
              patch.object(custody, "_same_path_descriptor_identity",
-                          side_effect=lambda a, b: original_compare(a, b, windows=True)), \\
+                          side_effect=lambda a, b: original_compare(a, b, windows=True)), \
              self.assertRaises(custody.SourceSnapshotRejected):
             custody.source_fingerprint(self.root, self.parts)
         self.assertEqual(len(calls), 2)
