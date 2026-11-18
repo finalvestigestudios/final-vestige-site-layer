@@ -1,0 +1,197 @@
+{
+  "schema": "fv-primary-provenance-scotch-teton-v1",
+  "date": "2026-11-18",
+  "source_method": "read_only_wordpress_view_plus_public_retriever_and_official_catalog",
+  "source_snapshot": {
+    "historical_worklist_blob": "9cdf7af84175883775aaebf55ffa5ca77b33e423",
+    "prior_66post_audit_blob": "03d19a553e8ccb233ee9bc15b87df32aea1f4d0c",
+    "wordpress_view_date": "2026-11-18",
+    "posts_current": 66,
+    "posts_historical": 61
+  },
+  "posts": [
+    {
+      "post_id": 418,
+      "url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "source_modified": "2026-08-28T03:11:08"
+    },
+    {
+      "post_id": 291,
+      "url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "source_modified": null
+    }
+  ],
+  "slots": [
+    {
+      "key": "418:1",
+      "original": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "authored": "https://i0.wp.com/media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG?ssl=1",
+      "alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew.",
+      "caption": "Chief Boatswain’s Mate Anthony L. Petit. U.S. Coast Guard.",
+      "origin_observation": {
+        "method": "public_web_retriever_not_chromium",
+        "date": "2026-11-18",
+        "status": 403,
+        "final_guest_status": null,
+        "decoded_guest": null,
+        "guest_bytes": null
+      },
+      "visual_integrity": "SAME_VIRIN_OFFICIAL_PORTRAIT_IDENTITY_CATALOGED_RASTER_UNVERIFIED",
+      "candidate_refs": [
+        "USCG_VIRIN_210330_G_DE713_0002"
+      ]
+    },
+    {
+      "key": "418:2",
+      "original": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "authored": "https://i0.wp.com/www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg?ssl=1",
+      "alt": "Broken concrete and debris where Scotch Cap Lighthouse stood after the April 1, 1946 tsunami.",
+      "caption": "What remained at Scotch Cap after the tsunami. U.S. Coast Guard.",
+      "origin_observation": {
+        "method": "public_web_retriever_not_chromium",
+        "date": "2026-11-18",
+        "status": 403,
+        "final_guest_status": null,
+        "decoded_guest": null,
+        "guest_bytes": null
+      },
+      "visual_integrity": "EXACT_ARCHIVE_RASTER_UNVERIFIED",
+      "candidate_refs": [
+        "USCG_MUSEUM_DEBRIS_REVIEW"
+      ]
+    },
+    {
+      "key": "291:2",
+      "original": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "authored": "https://i0.wp.com/cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG?ssl=1",
+      "alt": "Growing breach in Teton Dam during the final hour before collapse.",
+      "caption": "The failure progressed rapidly enough to be photographed frame by frame.",
+      "origin_observation": {
+        "method": "public_web_image_retriever_visual_only",
+        "date": "2026-11-18",
+        "status": null,
+        "final_guest_status": null,
+        "decoded_guest": null,
+        "guest_bytes": null
+      },
+      "visual_integrity": "CONFIRMED_ORIGIN_VISUAL_MISMATCH_STREET_CLEANUP_NOT_BREACH",
+      "candidate_refs": [
+        "NARA_NAID_28894685",
+        "NARA_NAID_28894684"
+      ]
+    },
+    {
+      "key": "291:5",
+      "original": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "authored": "https://i0.wp.com/cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG?ssl=1",
+      "alt": "Aftermath of the Teton Dam failure and downstream cleanup in Idaho.",
+      "caption": "The Teton failure became both a disaster scene and a forensic engineering site.",
+      "origin_observation": {
+        "method": "public_web_image_retriever_visual_only",
+        "date": "2026-11-18",
+        "status": null,
+        "final_guest_status": null,
+        "decoded_guest": null,
+        "guest_bytes": null
+      },
+      "visual_integrity": "ORIGIN_VISUAL_CONSISTENT_WITH_CLEANUP_NOT_FINAL_PROVENANCE",
+      "candidate_refs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "USCG_VIRIN_210330_G_DE713_0002",
+      "for_slot": "418:1",
+      "source": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "official_id": "210330-G-DE713-0002.JPG",
+      "description": "U.S. Coast Guard service portrait of Anthony Pettit (same file identifier as original).",
+      "catalog_display_mb": 0.04,
+      "native_width": null,
+      "native_height": null,
+      "derivative_width": null,
+      "derivative_height": null,
+      "rights_evidence": "Official USCG item says public domain, cleared for release, credit photographer/DoD limitations.",
+      "rights_status": "ITEM_POLICY_IDENTIFIED_FINAL_REUSE_REVIEW_HOLD",
+      "exact_binary_verified": false,
+      "approved": false
+    },
+    {
+      "id": "USCG_MUSEUM_DEBRIS_REVIEW",
+      "for_slot": "418:2",
+      "source": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+      "official_id": null,
+      "description": "Historic image of Scotch Cap lighthouse remains; thematic museum reproduction; exact raster unverified.",
+      "catalog_display_mb": null,
+      "native_width": null,
+      "native_height": null,
+      "derivative_width": null,
+      "derivative_height": null,
+      "rights_evidence": "Museum labels photograph U.S. Coast Guard; separate item and rights validation required.",
+      "rights_status": "HOLD",
+      "exact_binary_verified": false,
+      "approved": false
+    },
+    {
+      "id": "NARA_NAID_28894685",
+      "for_slot": "291:2",
+      "source": "https://commons.wikimedia.org/wiki/File:Teton_Dam_Embankment_Leak_-_DPLA_-_7d121ff5023893a03827fcb49b0d4bd4.jpg",
+      "official_id": "28894685",
+      "description": "June 5 1976 Teton Dam breach reaching crest; NARA/DPLA donation; different photo from currently published cleanup scene.",
+      "catalog_original_width": 2798,
+      "catalog_original_height": 1966,
+      "catalog_original_mb_approx": 1.09,
+      "existing_960_preview": "https://thumb.wikimedia.org/",
+      "derivative_width": 960,
+      "derivative_height": 675,
+      "no_upscale": true,
+      "rights_evidence": "National Archives at Denver DPLA statement: No Copyright - United States; rights outside U.S. unresolved, review permissions.",
+      "rights_status": "US_NO_COPYRIGHT_STATEMENT_REVIEW_HOLD",
+      "exact_binary_verified": false,
+      "approved": false
+    },
+    {
+      "id": "NARA_NAID_28894684",
+      "for_slot": "291:2",
+      "source": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+      "official_id": "28894684",
+      "description": "Archival sequence photograph of enlarging Teton Dam breach identified by NARA archivist.",
+      "native_width": null,
+      "native_height": null,
+      "derivative_width": null,
+      "derivative_height": null,
+      "rights_evidence": "NARA record named, item-level rights and photographic dimensions not verified.",
+      "rights_status": "HOLD",
+      "exact_binary_verified": false,
+      "approved": false
+    }
+  ],
+  "chronology_guard": {
+    "event_date": "1946-04-01",
+    "verified_from": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+    "invalid_date_in_noaa_pages": [
+      "https://oceanexplorer.noaa.gov/multimedia/okeanos-explorations-seascape-alaska-ex2304-features-geology-media-lighthouse/",
+      "https://oceanexplorer.noaa.gov/multimedia/okeanos-explorations-seascape-alaska-ex2304-features-geology-media-lighthouse-debris/"
+    ],
+    "noaa_pages_currently_say": "1964",
+    "override_to": "1946",
+    "status": "DO_NOT_INHERIT_INCORRECT_ARCHIVE_CAPTION"
+  },
+  "protections": {
+    "max_width_px": 960,
+    "no_upscale": true,
+    "rights_cleared": false,
+    "wp_upload_allowed": false,
+    "wordpress_production_write": false,
+    "rehost_allowed": false,
+    "editorial_approval": false,
+    "browser_failure_claim": false,
+    "actual_wire_savings_claim": false
+  },
+  "acceptance": {
+    "guest_cdp_trace_sha256": null,
+    "guest_screenshots": null,
+    "full_61_or_66_post_wire_parity": null,
+    "visitor_broken_42_claim": "UNVERIFIED",
+    "visitor_76_percent_reduction": "UNMEASURED"
+  }
+}
