@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="1060" viewBox="0 0 760 1060" role="img" aria-labelledby="title desc">
+<title id="title">Three measures, not one royalty: State Tract 45659, July 2023</title>
+<desc id="desc">Original Final Vestige Studios documentary analysis of a July 2023 Louisiana mineral lease nomination. The notice first describes Bohemia Tract 193 as approximately 73.148 acres, then leaves 7.91 acres after exclusions, and states the Orleans Levee District maintains an 18.098 percent mineral-rights-only interest. These figures measure different things. Neither the nomination nor the diagram proves a bid, awarded lease, production, revenue, or claimant payment.</desc>
+<metadata>Author: Final Vestige Studios. Created 2026-11-17. Copyright (c) 2026 Final Vestige Studios. Source: Louisiana Office of Mineral Resources, July 12 2023 official State Agency Tract 45659 nomination, https://www.denr.louisiana.gov/assets/OMR/NOP_tracts/2023/45656-45659.pdf , original PDF pp. 12-13 (zero-based 11-12). Published July 2023 notice https://www.dnr.louisiana.gov/page/notice-of-publication-202307 . Rights: original editorial text and vector shapes by Final Vestige Studios; no state scan, map, photograph or bid form embedded. Not an AI reconstruction. State figure and described rights are nomination-party representations, not adjudicated title or a payment ledger.</metadata>
+<rect width="760" height="1060" fill="#101719"/>
+<path d="M50 48H710" stroke="#b9a17a" stroke-width="2"/>
+<text x="50" y="89" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" letter-spacing="3" fill="#decda8">FINAL VESTIGE STUDIOS</text>
+<text x="50" y="158" font-family="Georgia,serif" font-size="52" font-weight="700" fill="#f7f4eb">Three Measures.</text>
+<text x="50" y="215" font-family="Georgia,serif" font-size="52" font-weight="700" fill="#f7f4eb">Not One Royalty.</text>
+<text x="50" y="262" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#bbc8c8">July 2023 · Bohemia Tract 193 · State Tract 45659</text>
+<rect x="50" y="293" width="660" height="171" rx="12" fill="#202a2d" stroke="#536065"/>
+<text x="78" y="337" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.3" font-size="22" font-weight="700" fill="#e2c88d">THE ORIGINAL LAND DESCRIPTION</text>
+<text x="78" y="396" font-family="Georgia,serif" font-size="48" fill="#fffaf0" font-weight="700">73.148 acres</text>
+<text x="78" y="433" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#d1d9d9">Approximate area before named exceptions</text>
+<rect x="50" y="483" width="660" height="171" rx="12" fill="#202a2d" stroke="#536065"/>
+<text x="78" y="527" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.3" font-size="22" font-weight="700" fill="#e2c88d">THE AREA LEFT IN THE NOMINATION</text>
+<text x="78" y="586" font-family="Georgia,serif" font-size="48" fill="#fffaf0" font-weight="700">7.91 acres</text>
+<text x="78" y="624" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#d1d9d9">After southern-strip and prior-lease exclusions</text>
+<rect x="50" y="672" width="660" height="171" rx="12" fill="#202a2d" stroke="#536065"/>
+<text x="78" y="716" font-family="Arial,Helvetica,sans-serif" letter-spacing="1.3" font-size="22" font-weight="700" fill="#e2c88d">THE STATED MINERAL INTEREST</text>
+<text x="78" y="775" font-family="Georgia,serif" font-size="48" fill="#fffaf0" font-weight="700">18.098%</text>
+<text x="78" y="813" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#d1d9d9">District's claimed mineral rights only</text>
+<path d="M50 877H710" stroke="#a89772"/>
+<text x="50" y="912" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#e2c88d">WHAT THESE NUMBERS CANNOT PROVE</text>
+<text x="50" y="949" font-family="Arial,Helvetica,sans-serif" font-size="22" fill="#e5e9e9">An awarded lease, royalty rate, production,</text>
+<text x="50" y="980" font-family="Arial,Helvetica,sans-serif" font-size="22" fill="#e5e9e9">or any payment to a landowner or heir.</text>
+<text x="50" y="1028" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#b9c3c3">© 2026 Final Vestige Studios · Original sourced evidence graphic</text>
+</svg>
