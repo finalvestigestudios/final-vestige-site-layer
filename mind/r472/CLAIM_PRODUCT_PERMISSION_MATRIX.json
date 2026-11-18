@@ -1,0 +1,574 @@
+{
+  "schema_version": "r472.1",
+  "checked_utc": "2026-11-18",
+  "workstream": "Mind & Perception only",
+  "release_status": "HARD_HOLD",
+  "partner_evidence": "Refersion 2026-08-24 application-pending email only; no later named approval authenticated in targeted connected Gmail search.",
+  "reference_urls": {
+    "s1999": "https://doi.org/10.1068/p281059",
+    "s2010": "https://doi.org/10.1068/i0386",
+    "s2013": "https://doi.org/10.1177/0956797613479386",
+    "s2024": "https://doi.org/10.3758/s13423-023-02431-x",
+    "s2025": "https://doi.org/10.7554/eLife.100337.2",
+    "sbeats": "https://doi.org/10.1371/journal.pone.0286023",
+    "szen": "https://zen12.com/about",
+    "spromo": "https://zen12.com/secret/",
+    "sinspire": "https://inspire3.com/",
+    "saff": "https://affiliates.inspire3.com/",
+    "sftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "shealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "sfocus": "https://finalvestige.com/focus/",
+    "spuy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "schild": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "smes": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "s820": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+    "s171": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+  },
+  "exact_offer": {
+    "priority": "Zen12",
+    "official_parent": "https://inspire3.com/",
+    "standard_page": "https://zen12.com/about",
+    "promotional_page": "https://zen12.com/secret/",
+    "promotion_different_from_standard": true,
+    "approved_affiliate_link": null,
+    "approved_merchant_terms": null,
+    "verified_price": null,
+    "verified_refund_terms": null,
+    "activation": false
+  },
+  "fallback_owned_product": {
+    "sku": null,
+    "verified_payable": false,
+    "why": "Existing Focus Fieldbook is free; no independently verified FV-owned Mind paid SKU."
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "1999 sustained inattentional blindness used a dynamic monitoring task",
+      "decision": "independently_sourced",
+      "sources": [
+        "https://doi.org/10.1068/p281059"
+      ],
+      "limitations": "Lab result; no universal diagnostic"
+    },
+    {
+      "id": "C02",
+      "statement": "Detection depended partly on target similarity and task difficulty",
+      "decision": "independently_sourced",
+      "sources": [
+        "https://doi.org/10.1068/p281059"
+      ],
+      "limitations": "As described in original abstract; no generic percentage"
+    },
+    {
+      "id": "C03",
+      "statement": "2010 prior awareness increased spotting the gorilla but not other surprises",
+      "decision": "independently_sourced",
+      "sources": [
+        "https://doi.org/10.1068/i0386"
+      ],
+      "limitations": "Study specific"
+    },
+    {
+      "id": "C04",
+      "statement": "2013 study recruited 24 radiologists",
+      "decision": "independently_sourced",
+      "sources": [
+        "https://doi.org/10.1177/0956797613479386"
+      ],
+      "limitations": "Not prevalence of clinical diagnostic error"
+    },
+    {
+      "id": "C05",
+      "statement": "83 percent in 2013 missed inserted silhouette",
+      "decision": "independently_sourced",
+      "sources": [
+        "https://doi.org/10.1177/0956797613479386"
+      ],
+      "limitations": "24 subjects, artificial target, study specific"
+    },
+    {
+      "id": "C06",
+      "statement": "Silhouette 48 times size of average nodule",
+      "decision": "independently_sourced",
+      "sources": [
+        "https://doi.org/10.1177/0956797613479386"
+      ],
+      "limitations": "Not size of clinical lesions"
+    },
+    {
+      "id": "C07",
+      "statement": "Eye gaze near object proves conscious noticing",
+      "decision": "rejected",
+      "sources": [
+        "https://doi.org/10.1177/0956797613479386"
+      ],
+      "limitations": "Fixation is not recognition"
+    },
+    {
+      "id": "C08",
+      "statement": "The gorilla test measures IQ or general attention skill",
+      "decision": "rejected",
+      "sources": [
+        "https://doi.org/10.3758/s13423-023-02431-x"
+      ],
+      "limitations": "Cannot infer individual diagnosis"
+    },
+    {
+      "id": "C09",
+      "statement": "2024 individual differences synthesis found little consistent predictive evidence",
+      "decision": "independently_sourced",
+      "sources": [
+        "https://doi.org/10.3758/s13423-023-02431-x"
+      ],
+      "limitations": "Abstract only, sparse samples"
+    },
+    {
+      "id": "C10",
+      "statement": "2025 reviewed preprint reported above-chance feature sensitivity without positive noticing",
+      "decision": "qualified",
+      "sources": [
+        "https://doi.org/10.7554/eLife.100337.2"
+      ],
+      "limitations": "Review summary accessible; detailed data not independently analyzed"
+    },
+    {
+      "id": "C11",
+      "statement": "Puységur archive preserves source rows, failures and consent dilemmas",
+      "decision": "independently_sourced",
+      "sources": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "limitations": "Historical evidence not validation of magnetic fluid"
+    },
+    {
+      "id": "C12",
+      "statement": "Focus Fieldbook is free 52-page existing one-list lead magnet",
+      "decision": "first_party_observed",
+      "sources": [
+        "https://finalvestige.com/focus/"
+      ],
+      "limitations": "No duplicate list; current email delivery untested"
+    },
+    {
+      "id": "C13",
+      "statement": "Zen12 seller advertises 12-minute sessions",
+      "decision": "seller_description",
+      "sources": [
+        "https://zen12.com/about"
+      ],
+      "limitations": "Actual SKU/audio delivery not independently verified"
+    },
+    {
+      "id": "C14",
+      "statement": "Zen12 seller advertises 12 levels with four flavors per level",
+      "decision": "seller_description",
+      "sources": [
+        "https://zen12.com/about"
+      ],
+      "limitations": "Specific checkout package varies"
+    },
+    {
+      "id": "C15",
+      "statement": "Zen12 program is the equivalent of one hour of meditation",
+      "decision": "rejected_unsubstantiated",
+      "sources": [
+        "https://zen12.com/about"
+      ],
+      "limitations": "No appropriate Zen12-specific comparative test"
+    },
+    {
+      "id": "C16",
+      "statement": "Zen12 automatically changes brainwave activity or treats anxiety",
+      "decision": "rejected_unsubstantiated",
+      "sources": [
+        "https://zen12.com/about",
+        "https://doi.org/10.1371/journal.pone.0286023"
+      ],
+      "limitations": "No product-specific evidence"
+    },
+    {
+      "id": "C17",
+      "statement": "2023 review 14 EEG studies: 5 supportive, 8 contradictory, 1 mixed",
+      "decision": "independently_sourced",
+      "sources": [
+        "https://doi.org/10.1371/journal.pone.0286023"
+      ],
+      "limitations": "Not Zen12 or outcomes research"
+    },
+    {
+      "id": "C18",
+      "statement": "Promotional seller page has a dynamic coupon/countdown and separate package",
+      "decision": "seller_page_observed",
+      "sources": [
+        "https://zen12.com/secret/"
+      ],
+      "limitations": "Do not repeat price or urgency; not approved affiliate SKU"
+    },
+    {
+      "id": "C19",
+      "statement": "General Inspire3 public network terms grant FV approved publisher status",
+      "decision": "rejected",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "limitations": "Public recruitment page != named acceptance"
+    },
+    {
+      "id": "C20",
+      "statement": "Final Vestige Inspire3 affiliate account approved and issued earning URL",
+      "decision": "not_authenticated",
+      "sources": [
+        "https://affiliates.inspire3.com/"
+      ],
+      "limitations": "Connected mail only confirmed 2026-08-24 Refersion pending notice; portal/other inbox unknown"
+    },
+    {
+      "id": "C21",
+      "statement": "Verified current Zen12 SKU price, checkout and refund eligibility",
+      "decision": "not_authenticated",
+      "sources": [
+        "https://zen12.com/about",
+        "https://zen12.com/secret/"
+      ],
+      "limitations": "Commercial CTA held"
+    },
+    {
+      "id": "C22",
+      "statement": "Hypnosis Live catalogue currently includes over 200 MP3s",
+      "decision": "seller_description",
+      "sources": [
+        "https://inspire3.com/"
+      ],
+      "limitations": "Exact item page, allowed affiliate SKU and effectiveness unverified"
+    },
+    {
+      "id": "C23",
+      "statement": "Brainwave Shots seller advertises 15-minute audios",
+      "decision": "seller_description",
+      "sources": [
+        "https://inspire3.com/"
+      ],
+      "limitations": "No independent product-specific outcome substantiation"
+    },
+    {
+      "id": "C24",
+      "statement": "Affiliate disclosure must be visible near links",
+      "decision": "ftc_guidance",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "limitations": "General policy page alone inadequate in typical product reviews"
+    },
+    {
+      "id": "C25",
+      "statement": "Health-related benefits claims need appropriate science",
+      "decision": "ftc_guidance",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limitations": "No general science-to-product shortcut"
+    },
+    {
+      "id": "C26",
+      "statement": "Film improves paid conversion",
+      "decision": "unmeasured_hypothesis",
+      "sources": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+      ],
+      "limitations": "Requires authorized product and controlled paid-sales endpoint"
+    },
+    {
+      "id": "C27",
+      "statement": "Outbound affiliate click equals merchant sale",
+      "decision": "rejected",
+      "sources": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+      ],
+      "limitations": "Different funnel events"
+    },
+    {
+      "id": "C28",
+      "statement": "Verified current FV-owned Mind paid SKU",
+      "decision": "not_authenticated",
+      "sources": [
+        "https://finalvestige.com/focus/"
+      ],
+      "limitations": "Focus remains free; cannot invent product or price"
+    },
+    {
+      "id": "C29",
+      "statement": "A/B video material is an already hosted playable asset",
+      "decision": "rejected",
+      "sources": [],
+      "limitations": "B includes original SVG, captions, transcript concept; no hosted playable media"
+    },
+    {
+      "id": "C30",
+      "statement": "Mind hub is a saved or live WordPress page",
+      "decision": "rejected",
+      "sources": [],
+      "limitations": "Source-only unpublished HTML"
+    },
+    {
+      "id": "C31",
+      "statement": "Published 2026-11-02 change blindness and mesmerism live",
+      "decision": "first_party_observed",
+      "sources": [
+        "https://finalvestige.com/2026/11/02/change-blindness/",
+        "https://finalvestige.com/2026/11/02/mesmerism/"
+      ],
+      "limitations": "Existing linking routes"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_fv_partner_acceptance",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "allowed_promotion_channels",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "approved_affiliate_creative_rights",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Claude + Founder"
+    },
+    {
+      "id": "exact_zen12_sku",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "approved_referral_url",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "click_tracking_terms",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Claude + Founder"
+    },
+    {
+      "id": "sale_attribution_terms",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Claude + Founder"
+    },
+    {
+      "id": "merchant_settlement_report",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "current_sku_checkout_price",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "current_currency_taxes",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "current_refund_guarantee",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "current_delivery_formats",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Claude + Founder"
+    },
+    {
+      "id": "merchant_pii_privacy_terms",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "no_materially_false_claims",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Claude + Founder"
+    },
+    {
+      "id": "legal_review_of_merchant_implications",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "no_unverified_health_claims",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Claude + Founder"
+    },
+    {
+      "id": "adjacent_commission_disclosure",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Claude + Founder"
+    },
+    {
+      "id": "authorized_video_rights",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "original_media_rendered",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Claude + Founder"
+    },
+    {
+      "id": "caption_visual_sync",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "actual_playable_video",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "reduced_motion_test",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "keyboard_test",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "screen_reader_test",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "360_390_768_1440_layout",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "low_js_no_js_test",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "WordPress_sanitization_test",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "site_QA_signoff",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "founder_commercial_signoff",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "founder_publication_signoff",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Claude + Founder"
+    },
+    {
+      "id": "qualified_grok_asset_ids",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "id": "permitted_utm_campaigns",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "id": "existing_jetpack_delivery",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Claude + Founder"
+    },
+    {
+      "id": "no_duplicate_tracking",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Claude + Founder"
+    },
+    {
+      "id": "checkout_transaction_test",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "refund_fees_reconciliation",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "seven_day_paid_cohort",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "thirty_day_paid_cohort",
+      "status": "HOLD",
+      "evidence": "missing or untested",
+      "owner": "Founder/Commerce"
+    }
+  ],
+  "protected": [
+    "homepage PR #49",
+    "homepage Issue #150",
+    "Mind PR #172",
+    "Dispatch Issue #174",
+    "Grok TASK-008 queue",
+    "Jetpack Focus welcome"
+  ],
+  "measurement": {
+    "affiliate_click": "outbound intent only, NEVER a sale",
+    "paid_conversion": "only third-party merchant confirmation",
+    "primary_kpi": "refund-and-fee-adjusted net revenue per 1,000 qualified-human sessions",
+    "state": "NOT_COMPUTABLE",
+    "missing": [
+      "approved commercial offer",
+      "qualified human session cohort",
+      "settled merchant conversions",
+      "refunds and fees"
+    ]
+  }
+}
