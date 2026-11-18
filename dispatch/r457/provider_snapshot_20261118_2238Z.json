@@ -1,0 +1,43 @@
+{
+  "observed_at_utc": "2026-11-18T22:38:02Z",
+  "site_id": 256784396,
+  "newsletter": {
+    "enabled": true,
+    "can_send": true,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "reported_total": 3,
+    "auto_send": false,
+    "content_format": "full",
+    "reply_to": "no-reply",
+    "from_name": "Final Vestige Studios",
+    "recent_post_notifications_never_sent": 5,
+    "welcome_configured_fieldbook_52_pages": true,
+    "welcome_receipt_verified": false
+  },
+  "stats_subscribers": {
+    "email": 3,
+    "reader": 0
+  },
+  "stats_followers": {
+    "email": 0,
+    "reader": 3,
+    "partial": false
+  },
+  "merchant": {
+    "zen12_email_rights_verified": false,
+    "hypnosis_live_email_rights_verified": false,
+    "merchant_earning_url_verified": false
+  },
+  "release": {
+    "all_six_hold_unsent": true,
+    "native_jetpack_preview_verified": false,
+    "publisher_mailing_address_verified": false,
+    "unsubscribe_render_verified": false,
+    "founder_final_send_approval": false
+  },
+  "audited_qualified_human_sessions": null,
+  "independently_settled_paid_orders": null,
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "notes": "Aggregate provider data only; no subscriber identifiers. Unknown is distinct from zero. Prior historical observations of excerpt mode do not establish change provenance."
+}
