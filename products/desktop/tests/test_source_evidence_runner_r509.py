@@ -775,5 +775,117 @@ class SourcePrelaunchR515(unittest.TestCase):
             self.assertEqual(runner.main(), 0)
         do_execute.assert_called_once_with(self.commands, verify_source_snapshots=True)
 
+
+# R516 regression methods remain in the existing 416-command source inventory.
+import source_path_snapshot_r515 as custody
+
+
+class SnapshotR516(unittest.TestCase):
+    def setUp(self):
+        d = TemporaryDirectory()
+        self.addCleanup(d.cleanup)
+        self.root = Path(d.name)
+        self.parts = ("products", "desktop", "tests", "test_r516.py")
+        self.path = self.root.joinpath(*self.parts)
+        self.path.parent.mkdir(parents=True)
+        self.path.write_bytes(b"print(123)\n")
+
+    def test_regular_file_digest_and_match(self):
+        digest = custody.source_fingerprint(self.root, self.parts)
+        self.assertEqual(len(digest), 32)
+        self.assertTrue(custody.matches_source_fingerprint(self.root, self.parts, digest))
+
+    def test_changed_content(self):
+        digest = custody.source_fingerprint(self.root, self.parts)
+        self.path.write_bytes(b"print(456)\n")
+        self.assertFalse(custody.matches_source_fingerprint(self.root, self.parts, digest))
+
+    def test_hardlinked_leaf(self):
+        sibling = self.root / "hardlink.py"
+        try:
+            os.link(self.path, sibling)
+        except (OSError, NotImplementedError) as exc:
+            self.skipTest(type(exc).__name__)
+        with self.assertRaises(custody.SourceSnapshotRejected):
+            custody.source_fingerprint(self.root, self.parts)
+
+    def test_symlinked_root(self):
+        alias = self.root.parent / (self.root.name + "-r516-alias")
+        try:
+            alias.symlink_to(self.root, target_is_directory=True)
+        except (OSError, NotImplementedError) as exc:
+            self.skipTest(type(exc).__name__)
+        self.addCleanup(alias.unlink)
+        with self.assertRaises(custody.SourceSnapshotRejected):
+            custody.source_fingerprint(alias, self.parts)
+
+    def test_relative_root(self):
+        with self.assertRaises(custody.SourceSnapshotRejected):
+            custody.source_fingerprint(Path("."), self.parts)
+
+    def test_replaced_source_between_lstat_and_open(self):
+        real_open = custody.os.open
+        def replace(path, flags):
+            if Path(path) == self.path:
+                self.path.unlink()
+                self.path.write_bytes(b"print(789)\n")
+            return real_open(path, flags)
+        with patch.object(custody.os, "open", side_effect=replace), \
+             self.assertRaises(custody.SourceSnapshotRejected):
+            custody.source_fingerprint(self.root, self.parts)
+
+    def test_modified_after_read(self):
+        real_fstat = custody.os.fstat
+        calls = []
+        def mutate_second(fd):
+            calls.append(fd)
+            if len(calls) == 2:
+                self.path.write_bytes(b"changed bytes and size\n")
+            return real_fstat(fd)
+        with patch.object(custody.os, "fstat", side_effect=mutate_second), \
+             self.assertRaises(custody.SourceSnapshotRejected):
+            custody.source_fingerprint(self.root, self.parts)
+        self.assertEqual(len(calls), 2)
+
+    def test_timestamp_changed_after_read(self):
+        real_fstat = custody.os.fstat
+        calls = []
+        def mutate_second(fd):
+            calls.append(fd)
+            if len(calls) == 2:
+                now = self.path.stat()
+                os.utime(self.path, ns=(now.st_atime_ns, now.st_mtime_ns + 2_000_000_000))
+            return real_fstat(fd)
+        with patch.object(custody.os, "fstat", side_effect=mutate_second), \
+             self.assertRaises(custody.SourceSnapshotRejected):
+            custody.source_fingerprint(self.root, self.parts)
+
+    def test_no_private_error_paths(self):
+        self.path.unlink()
+        with self.assertRaises(custody.SourceSnapshotRejected) as seen:
+            custody.source_fingerprint(self.root, self.parts)
+        self.assertNotIn(str(self.root), str(seen.exception))
+        self.assertNotIn(self.path.name, str(seen.exception))
+
+    def test_oversize_fails(self):
+        self.path.write_bytes(b"x" * 1_048_577)
+        with self.assertRaises(custody.SourceSnapshotRejected):
+            custody.source_fingerprint(self.root, self.parts)
+
+    def test_invalid_receipt_fails(self):
+        self.assertFalse(custody.matches_source_fingerprint(self.root, self.parts, b"bad"))
+
+    def test_symlinked_leaf(self):
+        self.path.unlink()
+        target = self.root / "target.py"
+        target.write_bytes(b"pass\n")
+        try:
+            self.path.symlink_to(target)
+        except (OSError, NotImplementedError) as exc:
+            self.skipTest(type(exc).__name__)
+        with self.assertRaises(custody.SourceSnapshotRejected):
+            custody.source_fingerprint(self.root, self.parts)
+
+
 if __name__ == "__main__":
     unittest.main()
