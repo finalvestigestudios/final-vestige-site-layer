@@ -1,0 +1,45 @@
+REVIEWER BOUNDARY — OFFLINE PREVIEW ONLY / HOLD UNSENT
+NOT a WordPress-rendered or received email. No active offer link.
+
+FROM: Final Vestige Studios
+SUBJECT: Before you buy a hypnosis recording
+PREHEADER: An old lesson about suggestion, and five buyer checks that work today.
+
+THE DISPATCH — ISSUE 05 (Hypnosis Live; NOT Total Focus)
+
+In 1784, a royal commission used controlled observations to question
+animal magnetism. Its work did not test any present-day hypnosis audio.
+It reminds us that a compelling experience and a compelling explanation
+are different things.
+
+Before buying, examine:
+1. What exactly arrives: an MP3, live meeting, series or subscription?
+2. What does the seller promise, and what supports that product-specific claim?
+3. Is there a representative voice/sample?
+4. What are the actual refund conditions at the current checkout?
+5. What would you measure before and after, without pretending a result?
+
+The Hypnosis Live seller FAQ describes downloadable MP3s, a 14-day
+refund request period and a limit of five refunded sessions per year.
+Confirm the actual offer and terms independently.
+
+Free exercise: spend five quiet minutes on two days, noting start
+difficulty, completion and one distraction. This is self-observation,
+not proof of a commercial audio's efficacy.
+
+SINGLE PRIMARY CTA — DISABLED:
+[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]
+
+Commercial disclosure beside proposed CTA:
+If you purchase through a qualifying link inside a future approved
+guide, Final Vestige may earn a commission. The guide and earning
+link are not active or verified.
+
+Final Vestige publisher postal: [[VALID_POSTAL_ADDRESS_REQUIRED]]
+Jetpack unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
+
+DO NOT SEND / PUBLISH. The merchant email-permission, native email
+render and founder campaign approvals remain absent.
+
+Official seller FAQ: https://hypnosislive.com/faq
+FTC: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
