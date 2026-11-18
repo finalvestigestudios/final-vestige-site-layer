@@ -15,6 +15,7 @@ import sys
 
 from source_child_env_r514 import child_environment
 from source_manifest_guard_r520 import ManifestReadRejected, read_manifest_custodied
+from source_postflight_r521 import postflight_unchanged
 from source_path_snapshot_r515 import (
     SourceSnapshotRejected, matches_source_fingerprint, source_fingerprint,
 )
@@ -148,7 +149,8 @@ def _child_environment(root: Path) -> dict[str, str]:
 
 
 def execute(commands: tuple[tuple[str, ...], ...], root: Path = ROOT,
-            *, spawn=None, verify_source_snapshots: bool = False) -> int:
+            *, spawn=None, verify_source_snapshots: bool = False,
+            manifest_snapshot: bytes | None = None) -> int:
     if (type(commands) is not tuple or not commands or
             any(type(x) is not tuple or not x or
                 any(type(y) is not str for y in x) for x in commands)):
@@ -171,6 +173,11 @@ def execute(commands: tuple[tuple[str, ...], ...], root: Path = ROOT,
         except (EvidenceRejected, SourceSnapshotRejected):
             print("REJECTED: source-file snapshot unavailable", file=sys.stderr)
             return 1
+    if manifest_snapshot is not None and (
+            not verify_source_snapshots or type(manifest_snapshot) is not bytes
+            or not manifest_snapshot):
+        print("REJECTED: invalid source manifest snapshot", file=sys.stderr)
+        return 1
     run = subprocess.run if spawn is None else spawn
     env = _child_environment(root)
     for index, args in enumerate(commands, 1):
@@ -189,6 +196,15 @@ def execute(commands: tuple[tuple[str, ...], ...], root: Path = ROOT,
         except (OSError, ValueError, subprocess.TimeoutExpired):
             print(f"REJECTED: source check {index}/{len(commands)} blocked", file=sys.stderr)
             return 1
+    # A final subprocess can alter its own file or an already-run source.
+    # The prelaunch checks alone could still falsely print PASS. Revalidate
+    # every pinned source after the last process exits, and in real main()
+    # reread the descriptor-bound manifest against the original exact bytes.
+    if verify_source_snapshots and not postflight_unchanged(
+            root, snapshots, matches_source_fingerprint,
+            MANIFEST, manifest_snapshot, read_manifest_bounded):
+        print("REJECTED: source matrix changed after checks", file=sys.stderr)
+        return 1
     print(f"PASS: {len(commands)} source commands; NOT Windows EXE, QD, or release approval")
     return 0
 
@@ -199,7 +215,9 @@ def main() -> int:
             ROOT, ("products", "desktop", "ci", "source_evidence_commands_r509.txt")
         ):
             raise EvidenceRejected("Unsafe source evidence manifest path")
-        return execute(load_commands(read_manifest_bounded(MANIFEST)), verify_source_snapshots=True)
+        original_manifest = read_manifest_bounded(MANIFEST)
+        return execute(load_commands(original_manifest),
+                       verify_source_snapshots=True, manifest_snapshot=original_manifest)
     except (OSError, EvidenceRejected):
         print("REJECTED: immutable source evidence unavailable", file=sys.stderr)
         return 1
