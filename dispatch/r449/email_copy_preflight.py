@@ -85,7 +85,8 @@ def main() -> int:
     parser.add_argument("repository_root", type=pathlib.Path)
     parser.add_argument("--pins", type=pathlib.Path)
     args = parser.parse_args()
-    pins = json.loads(args.pins.read_text(encoding="utf-8")) if args.pins else {}
+    pins_doc = json.loads(args.pins.read_text(encoding="utf-8")) if args.pins else {}
+    pins = pins_doc.get("source_pins", pins_doc)
     result = scan(args.repository_root, pins)
     print(json.dumps(result, indent=2, ensure_ascii=False))
     return 1 if result["source_files_missing"] or result["source_pin_mismatches"] else 0
