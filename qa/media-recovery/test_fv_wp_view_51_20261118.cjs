@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
-const {EXPECTED,P0,NO_SRCSET,decodeAmp,unwrapJetpack,validate}=require('./fv_wp_view_51_20261118.cjs');
+const {EXPECTED,P0,NO_SRCSET,LEDGER_BLOB,gitBlob,decodeAmp,unwrapJetpack,validate}=require('./fv_wp_view_51_20261118.cjs');
 function fixture(){return {schema:'fv-media-wp-view-51-20261118-v1',capture_method:'WordPress.com posts_get context=view',captured_at:'2026-11-18T07:22:44-08:00',scope:{baseline_posts:61,current_census_posts:66,snapshot_posts:12,snapshot_images:51,reported_42_browser_broken_confirmed:null,claimed_76_percent_wire_savings_verified:false,production_writes:0},probes:{'274:6':404,'287:5':404},posts:EXPECTED.map(([id,n])=>({id,status:'publish',post_url:'https://finalvestige.com/post-'+id,modified:'2026-11-02T11:22:33',images:Array.from({length:n},(_,slot)=>{const key=id+':'+slot,p0=P0.has(key),src='https://i0.wp.com/archives.example.org/image-'+key+'.jpg?ssl=1',origin='https://archives.example.org/image-'+key+'.jpg',png=NO_SRCSET.has(key),source404=['274:6','287:5'].includes(key);return {key,slot,view_src_html:src,normalized_src:src,origin_url:origin,width_attr_px:png?1024:null,height_attr_px:png?576:null,has_srcset:id===621,guest_http_status:null,guest_decoded:null,guest_current_src:null,guest_transfer_bytes:null,raster_width_px:null,raster_height_px:null,raster_sha256:null,source_http_status:source404?404:null,source_probe_kind:source404?'PUBLIC_RETRIEVER_404':'NOT_CHECKED',source_probe:source404?{url:origin,context:'independent_web_retriever_not_guest'}:null,candidate:p0?{catalog_url:'https://www.history.navy.mil/catalog',rights_status:'HOLD',exact_raster_verified:false,catalog_checked_in_this_run:false}:null,stored_original_bytes:NO_SRCSET.get(key)??null,rights_status:'HOLD',max_derivative_width_px:960,allow_upscale:false,derivative_width_px:null,rehost_approved:false,wp_write_approved:false};})}))};}
 const row=(f,key)=>{const [p,s]=key.split(':').map(Number);return f.posts.find(x=>x.id===p).images[s];};
 test('valid 12-post/51-image read-only batch without guest claims',()=>{const r=validate(fixture());assert.deepEqual([r.posts,r.images,r.priority_slots,r.new_origin_404,r.unresponsive_png_slots,r.stored_original_bytes_not_wire],[12,51,7,2,5,13267538]);assert.equal(r.confirmed_guest_broken,null);assert.equal(r.verified_wire_savings_76_percent,false);});
@@ -44,3 +44,6 @@ bad('reject width attribute changed without fresh source',f=>row(f,'36:0').width
 bad('reject unrelated upstream image under Jetpack',f=>row(f,'285:2').normalized_src='https://i0.wp.com/evil.com/a.jpg');
 bad('reject stale capture timestamp',f=>f.captured_at='2026-11-17T07:22:44-08:00');
 bad('reject partial sample presented as full 61 census',f=>f.scope.snapshot_posts=61);
+
+test('immutable 51-image ledger pin is a Git SHA-1 blob',()=>assert.equal(LEDGER_BLOB,'2c707d4ff6424e67264db1a4048afce9eba324b6'));
+test('Git blob hashing follows official Git format',()=>assert.equal(gitBlob('hello\n'),'ce013625030ba8dba906f756967f9e9ca394464a'));
