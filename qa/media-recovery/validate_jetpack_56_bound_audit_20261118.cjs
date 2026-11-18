@@ -3,7 +3,7 @@
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
 const pins=["698b613c41e792b2e0100547a07f4b519c0a908a","1c8cd5d1fd015705c0937d68471fb54546ed2f67","32210de4d0f46ae2547d604d9f1d02769e98bd32","0d5bf91705d7b9956ac7097ebb896c9b142afc51","c0d54c30769b0276a143c2f77b897202d818105f","38718a55ce8fb52eb09cf04765c444a9df1255c9","8cdd86e25bbc6aff1654eeff3fc65f3f42b1e4af","d2c1716c99ff9886e6dac60c6a42926c801be7f4","0248e5d62e589dd6cfc0ec543b5c22a7c14128ea"],crossPin='66aa70b1982237015b87b1901ea0100fe9e64181';
 const hold=msg=>{throw Error('HOLD: '+msg)};
-const gitSha=str=>{const b=Buffer.from(str,'utf8');return crypto.createHash('sha1').update('blob '+b.length+'\\0').update(b).digest('hex')};
+const gitSha=str=>{const b=Buffer.from(str,'utf8');return crypto.createHash('sha1').update('blob '+b.length+'\0').update(b).digest('hex')};
 function loadSources(){
  const parts=pins.map((pin,i)=>{const raw=fs.readFileSync(path.join(__dirname,'live_66_view_slice_'+(i+1)+'_20261117.json'),'utf8');if(gitSha(raw)!==pin)hold('source slice SHA changed');return JSON.parse(raw)});
  const raw=fs.readFileSync(path.join(__dirname,'live_20_oversized_to_66_post_inline_crosswalk_20261117.json'),'utf8');
