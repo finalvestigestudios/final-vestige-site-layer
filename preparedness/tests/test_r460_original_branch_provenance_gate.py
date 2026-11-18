@@ -131,6 +131,24 @@ class Fixture(unittest.TestCase):
         with self.assertRaises(R.ProvenanceHold):
             self.audit()
 
+    def test_duplicate_tool_102_blocks_even_with_distinct_slug(self):
+        path = "preparedness/content/tools/tools-4.meta.json"
+        meta = copy.deepcopy(self.metadata["tools-4"])
+        meta["n"] = 102
+        self.write(path, (json.dumps(meta) + "\n").encode())
+        self.adjust_blob(path)
+        with self.assertRaisesRegex(R.ProvenanceHold, "duplicated article/tool number"):
+            self.audit()
+
+    def test_duplicate_tool_103_blocks_even_with_distinct_slug(self):
+        path = "preparedness/content/tools/tools-5.meta.json"
+        meta = copy.deepcopy(self.metadata["tools-5"])
+        meta["n"] = 103
+        self.write(path, (json.dumps(meta) + "\n").encode())
+        self.adjust_blob(path)
+        with self.assertRaisesRegex(R.ProvenanceHold, "duplicated article/tool number"):
+            self.audit()
+
     def test_release_status_published_blocks(self):
         path = "preparedness/content/articles/articles-3.meta.json"
         meta = copy.deepcopy(self.metadata["articles-3"])
