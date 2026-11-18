@@ -20,6 +20,7 @@ check('email setting drift flagged',()=>{const s=structuredClone(source);s.newsl
 check('token not a proof reference',()=>assert.equal(safeRef('access_token:1234567890'),false));
 check('PII not a proof reference',()=>assert.equal(safeRef('someone@example.com'),false));
 check('querystrings not proof',()=>assert.equal(safeRef('event?email=bob'),false));
+check('merchant email permission ref is acceptable',()=>assert.equal(safeRef('merchant/email/zen12'),true));
 check('opaque internal ref is acceptable',()=>assert.equal(safeRef('github/issue174/qa-r439'),true));
 check('email count only with witness',()=>assert.equal(evaluate(source,{email_eligible_count:3}).types.eligible_inboxes,null));
 check('email count with opaque provider witness',()=>assert.equal(evaluate(source,{email_eligible_count:1,email_eligible_ref:'provider/aggregate/r439'}).types.eligible_inboxes,1));
