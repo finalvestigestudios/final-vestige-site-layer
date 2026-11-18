@@ -39,7 +39,7 @@ REVIEW_REFS = {
 }
 SHA = re.compile(r"[0-9a-f]{40}\Z")
 SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
-SOURCE = re.compile(r"(?:register\.json|crosswalk\.json|article-evidence-lock\.json|fragments/[a-z0-9-]+\.(?:json|md))\Z")
+SOURCE = re.compile(r"(?:register\.json|crosswalk\.json|article-evidence-lock\.json|fragments/(?:README\.md|[a-z0-9-]+\.(?:json|md)))\Z")
 
 class OriginHold(ValueError):
     """A review-only provenance defect; never a publishing decision."""
