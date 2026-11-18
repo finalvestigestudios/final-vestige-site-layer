@@ -17,7 +17,7 @@ const acceptance=file("CONVERSION_CREATOR_AB_ACCEPTANCE.md");
 const matrix=JSON.parse(file("CLAIM_SOURCE_PARTNER_RELEASE_MATRIX.json"));
 const core=s=>s.match(/<div id="shared-guide"[\s\S]*?<\/div><\/main>/)?.[0]??null;
 const merchant=/<a\b[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots)\.com/i;
-const disabled=s=>/<button\b[^>]*\bdisabled\b[^>]*>[^<]+<\/button>/i.test(s);
+const disabled=s=>/<button\b[^>]*\sdisabled(?:\s|>)[^>]*>[^<]+<\/button>/i.test(s);
 const disclosure=s=>{const pos=s.indexOf("Prospective affiliate disclosure:");const btn=s.indexOf("<button",pos);return pos>=0&&btn>pos&&btn-pos<800};
 test("All surfaces are explicitly unpublished",()=>{assert.match(A,/noindex,nofollow/);assert.match(B,/noindex,nofollow/);assert.match(hub,/NOT PUBLISHED|SOURCE ONLY|source-only/i);});
 test("A/B main evidence text identical",()=>assert.equal(core(A),core(B)));
@@ -49,3 +49,12 @@ test("Campaign source metadata requires genuine asset_id",()=>{assert.match(acce
 test("Net revenue is not inferred from clicks",()=>{assert.match(acceptance,/merchant-confirmed gross paid revenue/);assert.match(acceptance,/NOT COMPUTABLE/);assert.match(acceptance,/affiliate_click/);});
 test("A/B experiment is still unrun and conditional",()=>assert.match(acceptance,/not yet run|NOT TESTED/i));
 test("No personal identifiers or secret tokens",()=>{for(const h of [A,B,hub,article,acceptance,JSON.stringify(matrix)]){assert.doesNotMatch(h,/brhodes0512|sk-proj-|ghp_[A-Za-z0-9]+/);}});
+
+// Synthetic mutations prove tests reject unsafe changes, without any deployment.
+test("mutated active button is rejected (aria-disabled alone is not disabled)",()=>assert.equal(disabled(A.replace(" disabled aria-disabled"," aria-disabled")),false));
+test("mutated disclosure deletion is rejected",()=>assert.equal(disclosure(A.replace("Prospective affiliate disclosure:","")),false));
+test("mutated seller hyperlink is caught",()=>assert.match(A+'<a href="https://zen12.com/secret/">Buy</a>',merchant));
+test("mutated scripted form is caught",()=>assert.match(A+"<form><input></form>",/<form\b/i));
+test("mutated film timing is caught",()=>assert.doesNotMatch(B.replace("35–42 s","35–47 s"),/35–42 s/));
+test("mutated B buyer copy breaks A/B parity",()=>assert.notEqual(core(A),core(B.replace("Six questions worth answering","Seven questions worth answering"))));
+test("mutated approval flag is caught",()=>assert.equal(matrix.gates.map((g,i)=>i===0?{...g,verified:true}:g).every(g=>!g.verified),false));
