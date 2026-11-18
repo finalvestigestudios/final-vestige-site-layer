@@ -112,12 +112,24 @@ _PRIVATE_ENV_SUFFIXES = (
 )
 
 
+# Preserve only the public GitHub Actions boolean across the GITHUB_* boundary.
+# Job command files and event payloads are not needed by desktop source tests.
+_CI_ENV_MARKER = "GITHUB_ACTIONS"
+_UNTRUSTED_ENV_PREFIXES = ("PYTHON", "GITHUB_", "GIT_", "SSH_")
+
+
 def _child_environment(root: Path) -> dict[str, str]:
-    env = {k: v for k, v in os.environ.items()
-           if k.upper() not in _PRIVATE_ENV_NAMES
-           and not k.upper().endswith(_PRIVATE_ENV_SUFFIXES)}
+    env = {}
+    for name, value in os.environ.items():
+        key = name.upper()
+        if (key in _PRIVATE_ENV_NAMES or key.endswith(_PRIVATE_ENV_SUFFIXES)
+                or (key.startswith(_UNTRUSTED_ENV_PREFIXES)
+                    and key != _CI_ENV_MARKER)):
+            continue
+        env[name] = value
     env["PYTHONPATH"] = str(root / "products" / "desktop")
     env["PYTHONDONTWRITEBYTECODE"] = "1"
+    env["PYTHONHASHSEED"] = "0"
     return env
 
 
