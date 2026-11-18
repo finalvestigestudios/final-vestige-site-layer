@@ -1,0 +1,25 @@
+# Bohemia investigation v50u — October 2025 audit-scope cross-check and release HOLD
+
+**Date:** 2026-11-18 Pacific. **Owner:** FV Investigations Publishing Studio. **Artifact:** [focused reader manuscript](./bohemia-reader-v50-focused-feature-2026-11-17.md). **Status:** INTERNAL editorial/legal review; NOT APPROVED to publish.
+
+## New primary-source evidence
+
+1. **LMA full board, October 23, 2025**: Louisiana Division of Administration [official approved minutes](https://wwwprd.doa.louisiana.gov/boardsandcommissions/MeetingMinutes/547_Regular%20Board%20Minutes%20%20-%20OCT%2023%202025.pdf), PDF zero-based p.6. Original page image inspected November 18, 2026. Under the director's report, Louis Capo forecast that an unspecified audit should be in its final stages and report in November or December. The document does **not** identify a Bohemia mineral-lease examination, operator, lease, methodology, engagement, scope or findings.
+2. **LMA annual financial statements FY2025**: [Louisiana Legislative Auditor-hosted independent report](https://app.lla.state.la.us/PublicReports.nsf/0/C1CFBE668F38D1E086258D46005AFA4C/$FILE/000091EA.pdf), PDF zero-based p.4 audited opinion section screenshot-reviewed November 18, 2026. Auditors dated report **October 16, 2025**, seven days before October 23. The financial auditors' opinion concerns statements as a whole (year ended June 30, 2025); it is not a signed lease-by-lease Bohemia royalty verification. Dates do not determine whether the October board forecast and financial report concerned the same workstream or separate ones.
+3. **Prior 2025 agency records:** [March 26 Finance Committee minutes](https://nolalakefront.com/wp-content/uploads/2025/07/Finance-Minutes-March-26-2025final.pdf) (source #36) and [March 27 full-board minutes](https://nolalakefront.com/wp-content/uploads/2025/07/MARCH-27-2025-FULL-BOARD-Minutes__completed062025.pdf) (source #37) record Capo's intended Bohemia payment verification, **not** completion. [August 21 FPA-East board minutes](https://www.floodauthority.org/wp-content/uploads/2025/09/08-21-25-SLFPA-E-Board-Meeting-.pdf) (source #38) mention an ongoing agency audit with no identified mineral-payment scope.
+
+**Limited negative check, not proof of absence:** Scanned state-posted LMA September 25, October 23, November 20, December 18, 2025 and April 2026 board PDF texts for Bohemia. No completed Bohemia-specific audit appears in these checked records. They are not the entire corpus of contracts, committee records, reports or correspondence.
+
+## Editorial, visual and release QA
+
+- Advanced source-controlled reader to **v50u**, adding a two-paragraph source-qualified analysis, **source #39**, and an updated audit-scope records blocker. Existing six selected illustrations retained (two credited documentary NASA/USDA/USGS images and four original Final Vestige Studios SVG evidence figures); no redundant new chart or AI reconstruction. Original rights/alt/caption/source metadata remain in the manuscript, with ©2026 Studio credit for first-party graphics.
+- Pre-write structural QA: **39 numbered ledger entries**, **117 numeric narrative source references**, **0 invalid ranges**. Structural verification is not independent legal review.
+- Live [Journal](https://finalvestige.com/blog/) showed **66 published investigations**. [Editorial Standards](https://finalvestige.com/editorial-standards/) reviewed. Authenticated WP posts search: no published Bohemia result, Bohemia draft #2488, separate Caernarvon draft #2151. Draft #2488 readback: **modified 2026-11-16 02:44:46** site-local, noindex true, newsletter suppression true, auto-publicize false. This run made no WP post write.
+- No verified public JPEG byte delivery or authenticated current-theme screenshots/overflow inspection at 390px and 1440px; these remain explicit FAIL-TO-VERIFY rather than claimed PASS. No new local raster was generated this run.
+- GitHub coordination: Investigations issue #2832 and shared QA #1589. No unrelated post, homepage, shared template, social distribution or other agent lane modified.
+
+## Next records and HOLD
+
+**HOLD** pending: (1) a defined March 2025 Bohemia royalty-verification engagement, correspondence, payer statements and findings (or explicit no-engagement record); (2) signed November 2023 interagency MOU; (3) 2023–25 OLD accounts 1001003300/1001003305 and LMA 444010 transaction-level crosswalk with no duplicate accounting; (4) lease instruments and 2023 Tract 45659/2024 Tract 45869 dispositions; (5) claimant/escrow disbursements and independent legal/editorial approval; (6) verified public media and authenticated 390/1440px WordPress-theme screenshots.
+
+**No new paid spend, requests for copies, public publication, subscriber newsletter, social/Grok posts or shared production edits.** On a future authorized first publication explicitly set _jetpack_dont_email_post_to_subs=true and jetpack_publicize_feature_enabled=false, followed by independent anonymous public URL, source-link and media readback. Grok coordination waits for approved public release.
