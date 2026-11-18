@@ -1,6 +1,7 @@
 "use strict";
 const {guardImageSource}=require("./image_wire_source_guard_20261118.cjs");
 const {MANIFEST_SHA256,verifyCapture}=require("./cohort_manifest_guard_20261118.cjs");
+const {assessImageWire}=require("./media_failure_wire_semantics_20261118.cjs");
 /** Offline image-wire parity gate. No network requests or WP writes. Approval requires independent trace review. */
 const evaluate=function evaluate(report) {
  const errors=[], sums={}; const fail=(s)=>{if(errors.length<100)errors.push(s);};
@@ -33,20 +34,15 @@ const evaluate=function evaluate(report) {
     const provenance=guardImageSource(m,pid);
     if(!provenance.ok)fail(tag+":"+pid+":source_"+provenance.reason);
     if(!https(m.authored_src)||!https(m.current_src)||!https(m.final_url)||!https(m.source_identity))fail(tag+":"+pid+":source_url");
-    if(!m.request_id||typeof m.request_id!=="string"||m.from_cache!==false||m.from_service_worker!==false||
-       m.transfer_metric!=="CDP_ENCODED_DATALENGTH"||!int(m.transfer_bytes))fail(tag+":"+pid+":unmeasured_wire");
-    if(!Number.isInteger(m.http_status)||m.http_status<100||m.http_status>599||
-       typeof m.mime!=="string"||!m.mime.startsWith("image/"))fail(tag+":"+pid+":response");
-    if(typeof m.decoded!=="boolean"||(m.decoded&&(!int(m.natural_width)||!int(m.natural_height)))||
-       (!m.decoded&&(m.natural_width!==0||m.natural_height!==0)))fail(tag+":"+pid+":decode_inconsistent");
-    if(m.decoded&&(m.http_status<200||m.http_status>=300))fail(tag+":"+pid+":decoded_error");
-    if(!m.decoded)broken++;
+    const wire=assessImageWire(m,phase);
+    for(const reason of wire.errors)fail(tag+":"+pid+":"+reason);
+    if(wire.broken)broken++;
     if(typeof m.screenshot!=="string"||!m.screenshot.trim())fail(tag+":"+pid+":screenshot");
     if(m.request_id){
       const scopedRequestKey=pid+"::"+m.request_id;
       const prev=requests.get(scopedRequestKey);
       if(prev){if(prev.final_url!==m.final_url||prev.http_status!==m.http_status||prev.transfer_bytes!==m.transfer_bytes)fail(tag+":"+pid+":request_collision");}
-      else {requests.set(scopedRequestKey,m);if(int(m.transfer_bytes))bytes+=m.transfer_bytes;}
+      else {requests.set(scopedRequestKey,m);if(wire.counted_bytes>0)bytes+=wire.counted_bytes;}
     }
    }
    pages.set(pid,{p,assets});
