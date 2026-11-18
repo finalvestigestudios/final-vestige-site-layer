@@ -1,0 +1,129 @@
+{
+  "schema": 1,
+  "state": "DRAFT_HARD_HOLD",
+  "scope": "Read-only exact GitHub source body snapshots; regex-extracted BLOCK quicklook only, NOT qualified QD or native R464 HTMLParser.",
+  "base_r463_head": "b36f3134c66131acc2dad8af25d541e6dcbc3d15",
+  "original_refs": {
+    "original": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+    "continuation": "ac8625faf30dd5538fadc31e06cb5a2cea1defae",
+    "followup": "6a5998ead97eca997e573ce8d3ceacf1c6aabad4",
+    "candidate": "b36f3134c66131acc2dad8af25d541e6dcbc3d15"
+  },
+  "results": [
+    {
+      "slug": "outage-heat-cold-generators",
+      "comparisons": [
+        {
+          "witness": "original",
+          "witness_sha": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+          "candidate_sha": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+          "witness_bytes": 31422,
+          "candidate_bytes": 33131,
+          "witness_citation_tokens": 116,
+          "candidate_citation_tokens": 121,
+          "witness_blocks": 81,
+          "candidate_blocks": 82,
+          "witness_unique_blocks_not_in_candidate": 6,
+          "candidate_unique_blocks_not_in_witness": 7,
+          "href_sequences_equal": true,
+          "sample_witness_only": [
+            "Two features of the CDC's description explain why guidance on this topic is so insistent. The early symptoms (headache, dizziness, weakness, upset stomach, vomiting, chest pain and confusion",
+            "Outdoors only, and far from the house. At least 20 feet from windows, doors and vents.{{cite:shelter-cdc-power-outage}}{{cite:shelter-cpsc-co}} FEMA's December 2023 power-outage sheet words "
+          ]
+        },
+        {
+          "witness": "continuation",
+          "witness_sha": "55a1e3018e3413b79378c6677f15e536bb777377",
+          "candidate_sha": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+          "witness_bytes": 33232,
+          "candidate_bytes": 33131,
+          "witness_citation_tokens": 120,
+          "candidate_citation_tokens": 121,
+          "witness_blocks": 82,
+          "candidate_blocks": 82,
+          "witness_unique_blocks_not_in_candidate": 1,
+          "candidate_unique_blocks_not_in_witness": 1,
+          "href_sequences_equal": true,
+          "sample_witness_only": [
+            "This guide stays on heat, cold and combustion. Food safety has its own page in this library once it is built. The numbers agencies give for the first hours are worth knowing, though: a refri"
+          ]
+        },
+        {
+          "witness": "followup",
+          "witness_sha": "5608a28249a0e351710e0c756d878048c8e41e24",
+          "candidate_sha": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+          "witness_bytes": 33259,
+          "candidate_bytes": 33131,
+          "witness_citation_tokens": 121,
+          "candidate_citation_tokens": 121,
+          "witness_blocks": 82,
+          "candidate_blocks": 82,
+          "witness_unique_blocks_not_in_candidate": 0,
+          "candidate_unique_blocks_not_in_witness": 0,
+          "href_sequences_equal": true,
+          "sample_witness_only": []
+        }
+      ]
+    },
+    {
+      "slug": "shelter-or-evacuate",
+      "comparisons": [
+        {
+          "witness": "original",
+          "witness_sha": "b8acf07e533eea43795aa242f39fd926b080130f",
+          "candidate_sha": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+          "witness_bytes": 24382,
+          "candidate_bytes": 31374,
+          "witness_citation_tokens": 50,
+          "candidate_citation_tokens": 59,
+          "witness_blocks": 76,
+          "candidate_blocks": 79,
+          "witness_unique_blocks_not_in_candidate": 5,
+          "candidate_unique_blocks_not_in_witness": 8,
+          "href_sequences_equal": true,
+          "sample_witness_only": [
+            "The pattern is that fast, local, violent hazards (tornadoes, flash floods) usually mean shelter now, and slower, wider hazards where the danger comes to you (hurricanes, wildfires) usually m",
+            "Ready.gov's tornado page lists winds that can exceed 200 miles per hour, and says a tornado can happen anytime and anywhere. The signs include a rotating, funnel-shaped cloud, an approaching"
+          ]
+        },
+        {
+          "witness": "continuation",
+          "witness_sha": "ed6e6bc4dc1344d1aa25679c6f4380f76d82927e",
+          "candidate_sha": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+          "witness_bytes": 30877,
+          "candidate_bytes": 31374,
+          "witness_citation_tokens": 58,
+          "candidate_citation_tokens": 59,
+          "witness_blocks": 78,
+          "candidate_blocks": 79,
+          "witness_unique_blocks_not_in_candidate": 2,
+          "candidate_unique_blocks_not_in_witness": 3,
+          "href_sequences_equal": true,
+          "sample_witness_only": [
+            "Then compare your answers with what the county or city emergency management office publishes. Ready.gov's planning page asks households to discuss almost exactly these questions: how will I ",
+            "Every instruction here comes from a Ready.gov page or the National Weather Service page cited beside it, read in full on the date shown. Those pages are dated from 2023 (hazardous materials)"
+          ]
+        },
+        {
+          "witness": "followup",
+          "witness_sha": "a8c36cd63517fdeb723dca201b31802c2a721ddf",
+          "candidate_sha": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+          "witness_bytes": 31507,
+          "candidate_bytes": 31374,
+          "witness_citation_tokens": 59,
+          "candidate_citation_tokens": 59,
+          "witness_blocks": 79,
+          "candidate_blocks": 79,
+          "witness_unique_blocks_not_in_candidate": 1,
+          "candidate_unique_blocks_not_in_witness": 1,
+          "href_sequences_equal": true,
+          "sample_witness_only": [
+            "Then compare your answers with what the county or city emergency management office publishes. Ready.gov's planning page asks households to discuss almost exactly these questions: how will I "
+          ]
+        }
+      ]
+    }
+  ],
+  "may_publish": false,
+  "qualified_safety_approval": false
+}

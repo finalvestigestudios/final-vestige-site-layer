@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "state": "DRAFT_HARD_HOLD",
+  "scope": "Read-only exact GitHub source body snapshots; regex-extracted BLOCK quicklook only, NOT qualified QD or native R464 HTMLParser.",
+  "base_r463_head": "b36f3134c66131acc2dad8af25d541e6dcbc3d15",
+  "original_refs": {
+    "original": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+    "continuation": "ac8625faf30dd5538fadc31e06cb5a2cea1defae",
+    "followup": "6a5998ead97eca997e573ce8d3ceacf1c6aabad4",
+    "candidate": "b36f3134c66131acc2dad8af25d541e6dcbc3d15"
+  },
+  "results": [
+    {
+      "slug": "family-communication-plan",
+      "comparisons": [
+        {
+          "witness": "original",
+          "witness_sha": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+          "candidate_sha": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+          "witness_bytes": 23180,
+          "candidate_bytes": 26822,
+          "witness_citation_tokens": 62,
+          "candidate_citation_tokens": 69,
+          "witness_blocks": 71,
+          "candidate_blocks": 72,
+          "witness_unique_blocks_not_in_candidate": 8,
+          "candidate_unique_blocks_not_in_witness": 9,
+          "href_sequences_equal": true,
+          "sample_witness_only": [
+            "The FCC's guide recommends that you designate someone out of the area as a central contact, and make sure all family members know who to contact if they become separated.{{cite:shelter-fcc-c",
+            "Editor's note Keep it on paper, too. A plan that lives only on a phone is lost when the phone is dead, lost or locked. Print or write the plan, keep a copy in a go-bag and one at home, and g"
+          ]
+        },
+        {
+          "witness": "continuation",
+          "witness_sha": "cbfe7830e9412ac99a1920c581a14d2913a9eaf6",
+          "candidate_sha": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+          "witness_bytes": 26248,
+          "candidate_bytes": 26822,
+          "witness_citation_tokens": 67,
+          "candidate_citation_tokens": 69,
+          "witness_blocks": 72,
+          "candidate_blocks": 72,
+          "witness_unique_blocks_not_in_candidate": 2,
+          "candidate_unique_blocks_not_in_witness": 2,
+          "href_sequences_equal": true,
+          "sample_witness_only": [
+            "Editor's note Keep it on paper, too. A plan that lives only on a phone is lost when the phone is dead, lost or locked. Print or write the plan, keep a copy in a go-bag and one at home, and g",
+            "A state example shows what a school plan can look like. Colorado's Office of School Safety describes reunification as \"not a normal pick-up\" but a slow and careful process meant to make sure"
+          ]
+        },
+        {
+          "witness": "followup",
+          "witness_sha": "c97a79761dc3be1c44e5f9322a606ccc7fd11c6e",
+          "candidate_sha": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+          "witness_bytes": 26939,
+          "candidate_bytes": 26822,
+          "witness_citation_tokens": 69,
+          "candidate_citation_tokens": 69,
+          "witness_blocks": 72,
+          "candidate_blocks": 72,
+          "witness_unique_blocks_not_in_candidate": 1,
+          "candidate_unique_blocks_not_in_witness": 1,
+          "href_sequences_equal": true,
+          "sample_witness_only": [
+            "Editor's note Keep it on paper, too. A plan that lives only on a phone is lost when the phone is dead, lost or locked. Print or write the plan, keep a copy in a go-bag and one at home, and g"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "home-fire-escape-plan",
+      "comparisons": [
+        {
+          "witness": "original",
+          "witness_sha": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+          "candidate_sha": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+          "witness_bytes": 26250,
+          "candidate_bytes": 31595,
+          "witness_citation_tokens": 70,
+          "candidate_citation_tokens": 73,
+          "witness_blocks": 86,
+          "candidate_blocks": 87,
+          "witness_unique_blocks_not_in_candidate": 5,
+          "candidate_unique_blocks_not_in_witness": 6,
+          "href_sequences_equal": true,
+          "sample_witness_only": [
+            "USFA's instructions are short: draw a map of your home that includes all doors and windows, and find two ways out of every room.{{cite:usfa-fire-escape}} NFPA adds that you should mark where",
+            "Uncertain The two pages differ in one detail: NFPA suggests opening the window at the top and bottom, and Ready.gov does not mention opening it. We have not found a source explaining when ea"
+          ]
+        },
+        {
+          "witness": "continuation",
+          "witness_sha": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "candidate_sha": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+          "witness_bytes": 31755,
+          "candidate_bytes": 31595,
+          "witness_citation_tokens": 73,
+          "candidate_citation_tokens": 73,
+          "witness_blocks": 87,
+          "candidate_blocks": 87,
+          "witness_unique_blocks_not_in_candidate": 0,
+          "candidate_unique_blocks_not_in_witness": 0,
+          "href_sequences_equal": true,
+          "sample_witness_only": []
+        },
+        {
+          "witness": "followup",
+          "witness_sha": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "candidate_sha": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+          "witness_bytes": 31755,
+          "candidate_bytes": 31595,
+          "witness_citation_tokens": 73,
+          "candidate_citation_tokens": 73,
+          "witness_blocks": 87,
+          "candidate_blocks": 87,
+          "witness_unique_blocks_not_in_candidate": 0,
+          "candidate_unique_blocks_not_in_witness": 0,
+          "href_sequences_equal": true,
+          "sample_witness_only": []
+        }
+      ]
+    }
+  ],
+  "may_publish": false,
+  "qualified_safety_approval": false
+}

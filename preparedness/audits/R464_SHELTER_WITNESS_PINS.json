@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "state": "DRAFT_HARD_HOLD",
+  "qd_pass": false,
+  "scope": "Original Shelter, continuation, followup versus R463 candidate. Git blob identities, no automatic version winner.",
+  "origin_commit_sha": {
+    "original": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+    "continuation": "ac8625faf30dd5538fadc31e06cb5a2cea1defae",
+    "followup": "6a5998ead97eca997e573ce8d3ceacf1c6aabad4",
+    "candidate": "b36f3134c66131acc2dad8af25d541e6dcbc3d15"
+  },
+  "articles": {
+    "family-communication-plan": {
+      "original": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+      "continuation": "cbfe7830e9412ac99a1920c581a14d2913a9eaf6",
+      "followup": "c97a79761dc3be1c44e5f9322a606ccc7fd11c6e",
+      "candidate": "8ac8bd7dba3be15d477c15737e54d83364d72527"
+    },
+    "home-fire-escape-plan": {
+      "original": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+      "continuation": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+      "followup": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+      "candidate": "0412484304a3bcf08f0bb1b170110f617e3c2869"
+    },
+    "outage-heat-cold-generators": {
+      "original": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+      "continuation": "55a1e3018e3413b79378c6677f15e536bb777377",
+      "followup": "5608a28249a0e351710e0c756d878048c8e41e24",
+      "candidate": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2"
+    },
+    "shelter-or-evacuate": {
+      "original": "b8acf07e533eea43795aa242f39fd926b080130f",
+      "continuation": "ed6e6bc4dc1344d1aa25679c6f4380f76d82927e",
+      "followup": "a8c36cd63517fdeb723dca201b31802c2a721ddf",
+      "candidate": "de3cb805041904cf22d4f216296bd4c8ddec17c1"
+    }
+  }
+}
