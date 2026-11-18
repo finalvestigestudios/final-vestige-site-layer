@@ -636,5 +636,144 @@ class SourceChildEnvironmentR514(unittest.TestCase):
                          {"CI", "PATH"})
         self.assertTrue({"PATH", "CI"}.issubset(_SAFE_HOST_NAMES))
 
+
+from source_path_snapshot_r515 import (
+    SourceSnapshotRejected, matches_source_fingerprint, source_fingerprint,
+)
+
+
+class SourcePrelaunchR515(unittest.TestCase):
+    """R515: pin bytes once, detect later test replacement before launch."""
+
+    def setUp(self):
+        self.directory = TemporaryDirectory()
+        self.addCleanup(self.directory.cleanup)
+        self.root = Path(self.directory.name)
+        self.a_parts = ("products", "desktop", "tests", "test_r515_a.py")
+        self.b_parts = ("products", "desktop", "tests", "test_r515_b.py")
+        self.a = self.root.joinpath(*self.a_parts)
+        self.b = self.root.joinpath(*self.b_parts)
+        self.a.parent.mkdir(parents=True)
+        self.a.write_bytes(b"print('a')\\n".replace(b"\\n", b"\n"))
+        self.b.write_bytes(b"print('b')\\n".replace(b"\\n", b"\n"))
+        prefix = ("-B", "-W", "error", "-m", "unittest",
+                  "discover", "-s", "products/desktop/tests", "-p")
+        self.commands = (prefix + ("test_r515_a.py",),
+                         prefix + ("test_r515_b.py",))
+
+    def test_snapshot_is_stable_and_digest_only(self):
+        receipt = source_fingerprint(self.root, self.a_parts)
+        self.assertEqual(len(receipt), 32)
+        self.assertTrue(matches_source_fingerprint(self.root, self.a_parts, receipt))
+        self.assertNotIn(b"print", receipt)
+
+    def test_regular_file_replacement_is_detected(self):
+        receipt = source_fingerprint(self.root, self.a_parts)
+        self.a.write_bytes(b"print('changed')\n")
+        self.assertFalse(matches_source_fingerprint(self.root, self.a_parts, receipt))
+
+    def test_missing_file_fails_closed(self):
+        receipt = source_fingerprint(self.root, self.a_parts)
+        self.a.unlink()
+        self.assertFalse(matches_source_fingerprint(self.root, self.a_parts, receipt))
+
+    def test_file_symlink_fails_closed(self):
+        receipt = source_fingerprint(self.root, self.a_parts)
+        self.a.unlink()
+        try:
+            self.a.symlink_to(self.b)
+        except (OSError, NotImplementedError) as exc:
+            self.skipTest(f"Symlink creation unavailable: {type(exc).__name__}")
+        self.assertFalse(matches_source_fingerprint(self.root, self.a_parts, receipt))
+
+    def test_parent_symlink_fails_closed(self):
+        self.a.unlink()
+        self.b.unlink()
+        self.a.parent.rmdir()
+        external = self.root / "outside"
+        external.mkdir()
+        (external / "test_r515_a.py").write_bytes(b"print('not trusted')\n")
+        try:
+            self.a.parent.symlink_to(external, target_is_directory=True)
+        except (OSError, NotImplementedError) as exc:
+            self.skipTest(f"Symlink creation unavailable: {type(exc).__name__}")
+        with self.assertRaises(SourceSnapshotRejected):
+            source_fingerprint(self.root, self.a_parts)
+
+    def test_oversized_source_fails_closed(self):
+        self.a.write_bytes(b"x" * 1_048_577)
+        with self.assertRaises(SourceSnapshotRejected):
+            source_fingerprint(self.root, self.a_parts)
+
+    def test_traversal_and_invalid_receipts_fail_closed(self):
+        for parts in (("..",), ("untrusted/test.py",), ("",), ()):
+            with self.subTest(parts=parts), self.assertRaises(SourceSnapshotRejected):
+                source_fingerprint(self.root, parts)
+        self.assertFalse(matches_source_fingerprint(self.root, self.a_parts, b"short"))
+
+    def test_private_filename_is_not_in_error(self):
+        self.a.unlink()
+        with self.assertRaises(SourceSnapshotRejected) as seen:
+            source_fingerprint(self.root, self.a_parts)
+        self.assertNotIn(self.directory.name, str(seen.exception))
+        self.assertNotIn("test_r515_a.py", str(seen.exception))
+
+    def test_runner_stable_prelaunch_two_checks_pass(self):
+        calls = []
+        def fake(argv, **kwargs):
+            calls.append(argv)
+            return SimpleNamespace(returncode=0)
+        out = io.StringIO()
+        with redirect_stdout(out):
+            status = runner.execute(self.commands, self.root, spawn=fake,
+                                    verify_source_snapshots=True)
+        self.assertEqual(status, 0)
+        self.assertEqual(len(calls), 2)
+        self.assertIn("2 source commands", out.getvalue())
+
+    def test_runner_rejects_later_regular_file_tampering(self):
+        calls = []
+        def mutate_after_first(argv, **kwargs):
+            calls.append(argv)
+            self.b.write_bytes(b"print('replaced')\n")
+            return SimpleNamespace(returncode=0)
+        errors = io.StringIO()
+        with redirect_stderr(errors):
+            status = runner.execute(self.commands, self.root, spawn=mutate_after_first,
+                                    verify_source_snapshots=True)
+        self.assertEqual(status, 1)
+        self.assertEqual(len(calls), 1)
+        self.assertIn("source check 2/2 changed", errors.getvalue())
+        self.assertNotIn(self.root.as_posix(), errors.getvalue())
+
+    def test_runner_rejects_missing_before_any_launch(self):
+        self.b.unlink()
+        calls = []
+        with redirect_stderr(io.StringIO()):
+            status = runner.execute(self.commands, self.root,
+                                    spawn=lambda *args, **kw: calls.append(args),
+                                    verify_source_snapshots=True)
+        self.assertEqual(status, 1)
+        self.assertFalse(calls)
+
+    def test_runner_rejects_unreviewed_command_before_any_launch(self):
+        calls = []
+        with redirect_stderr(io.StringIO()):
+            status = runner.execute((("-c", "print('private')"),), self.root,
+                                    spawn=lambda *a, **kw: calls.append(a),
+                                    verify_source_snapshots=True)
+        self.assertEqual(status, 1)
+        self.assertFalse(calls)
+
+    def test_main_enables_prelaunch_receipts_not_just_manifest_check(self):
+        manifest = self.root / "products/desktop/ci/source_evidence_commands_r509.txt"
+        manifest.parent.mkdir(parents=True)
+        manifest.write_bytes(b"synthetic inventory\n")
+        with patch.object(runner, "ROOT", self.root), patch.object(runner, "MANIFEST", manifest), \
+             patch.object(runner, "load_commands", return_value=self.commands), \
+             patch.object(runner, "execute", return_value=0) as do_execute:
+            self.assertEqual(runner.main(), 0)
+        do_execute.assert_called_once_with(self.commands, verify_source_snapshots=True)
+
 if __name__ == "__main__":
     unittest.main()
