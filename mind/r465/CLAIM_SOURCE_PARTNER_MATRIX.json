@@ -1,0 +1,218 @@
+{
+  "version": "mind-r465",
+  "review_date": "2026-11-18",
+  "commercial_status": "HARD HOLD / UNPUBLISHED",
+  "merchant_permission_check": "Targeted connected Gmail search returned 2026-08-24 Refersion affiliate account pending; did not authenticate Final Vestige-specific approval, SKU, channels, issued URL or terms. Search does not prove absence in every system.",
+  "claims": [
+    {
+      "id": "ZEN-01",
+      "claim": "12-minute sessions and twelve levels",
+      "evidence_class": "SELLER FORMAT",
+      "source_url": "https://zen12.com/about",
+      "decision": "Include, attributed to seller"
+    },
+    {
+      "id": "ZEN-02",
+      "claim": "Four styles: music, guided, nature, white noise",
+      "evidence_class": "SELLER FORMAT",
+      "source_url": "https://zen12.com/about",
+      "decision": "Include, attributed to seller"
+    },
+    {
+      "id": "ZEN-03",
+      "claim": "Regular catalog splits Beginner, Premium, Advanced packages",
+      "evidence_class": "SELLER OFFER",
+      "source_url": "https://zen12.com/",
+      "decision": "Include with exact seller context; verify intended checkout"
+    },
+    {
+      "id": "ZEN-04",
+      "claim": "Separate /secret/ is a distinct promotional offer context",
+      "evidence_class": "SELLER OFFER",
+      "source_url": "https://zen12.com/secret/",
+      "decision": "Include as difference; omit coupon/countdown/price"
+    },
+    {
+      "id": "ZEN-05",
+      "claim": "A 12-minute session equals an hour of meditation",
+      "evidence_class": "UNSUBSTANTIATED EFFICACY",
+      "source_url": "https://zen12.com/about",
+      "decision": "Exclude as independent claim"
+    },
+    {
+      "id": "ZEN-06",
+      "claim": "Automatic stress/anxiety relief and enhanced concentration",
+      "evidence_class": "UNSUBSTANTIATED HEALTH/COGNITION",
+      "source_url": "https://zen12.com/about",
+      "decision": "Exclude; requires product-specific substantiation"
+    },
+    {
+      "id": "ZEN-07",
+      "claim": "One-year money-back guarantee",
+      "evidence_class": "SELLER TERMS",
+      "source_url": "https://zen12.com/",
+      "decision": "Attribute to seller; no guaranteed refund without checkout verification"
+    },
+    {
+      "id": "ZEN-08",
+      "claim": "Exact FV-authorized checkout price, tax, fulfillment",
+      "evidence_class": "ACCOUNT-SPECIFIC",
+      "source_url": null,
+      "decision": "UNVERIFIED; no price or active checkout"
+    },
+    {
+      "id": "ZEN-09",
+      "claim": "Publisher-specific Inspire3 partner acceptance",
+      "evidence_class": "ACCOUNT-SPECIFIC",
+      "source_url": null,
+      "decision": "UNVERIFIED; August 24 2026 Refersion account pending is not approval"
+    },
+    {
+      "id": "ZEN-10",
+      "claim": "Issued FV earning URL, permitted promotion channels and settlement",
+      "evidence_class": "ACCOUNT-SPECIFIC",
+      "source_url": null,
+      "decision": "UNVERIFIED; withhold merchant CTA"
+    },
+    {
+      "id": "SCI-01",
+      "claim": "14-study EEG binaural-beat systematic review inconsistent",
+      "evidence_class": "INDEPENDENT REVIEW",
+      "source_url": "https://doi.org/10.1371/journal.pone.0286023",
+      "decision": "Include with limits: 5 aligned, 8 contradictory, 1 mixed; not Zen12"
+    },
+    {
+      "id": "SCI-02",
+      "claim": "1987 repetition-blindness type/token account",
+      "evidence_class": "PRIMARY RESEARCH",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/3691023/",
+      "decision": "Include bounded by RSVP conditions"
+    },
+    {
+      "id": "SCI-03",
+      "claim": "1989 visual versus compressed-auditory, spatial displacement",
+      "evidence_class": "PRIMARY RESEARCH",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/2927309/",
+      "decision": "Include, avoid universal modality claims"
+    },
+    {
+      "id": "SCI-04",
+      "claim": "1991 letter/color/spatial and attention tests",
+      "evidence_class": "PRIMARY RESEARCH",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/1830084/",
+      "decision": "Include bounded"
+    },
+    {
+      "id": "SCI-05",
+      "claim": "1995 retrieval cue study supports alternative interpretation",
+      "evidence_class": "COUNTEREVIDENCE",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/7595242/",
+      "decision": "Include as genuine counterinterpretation"
+    },
+    {
+      "id": "SCI-06",
+      "claim": "1996 reduced sensitivity under signal detection",
+      "evidence_class": "CONTROL EXPERIMENT",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/8865620/",
+      "decision": "Include not percent missed"
+    },
+    {
+      "id": "SCI-07",
+      "claim": "2002 online response rules against pure delayed-report account",
+      "evidence_class": "CONTROL EXPERIMENT",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/11999868/",
+      "decision": "Include, not proof of single mechanism"
+    },
+    {
+      "id": "SCI-08",
+      "claim": "1994 speed and second-target duration conditions",
+      "evidence_class": "PRIMARY RESEARCH",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/8027712/",
+      "decision": "Include sensitivity statistics as study-specific"
+    },
+    {
+      "id": "HIS-01",
+      "claim": "Puységur page has 153 source rows / 16 dossiers, rejects mechanism leap",
+      "evidence_class": "FIRST PARTY LIVE",
+      "source_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "decision": "Include as methodological bridge, not modern hypnosis trial"
+    },
+    {
+      "id": "FV-01",
+      "claim": "Free 52-page Seven Day Focus Fieldbook uses existing Dispatch flow",
+      "evidence_class": "FIRST PARTY LIVE",
+      "source_url": "https://finalvestige.com/focus/",
+      "decision": "Direct existing route; no duplicate signup"
+    },
+    {
+      "id": "FV-02",
+      "claim": "Actually payable rights-cleared FV-owned Mind digital SKU",
+      "evidence_class": "ACCOUNT SPECIFIC",
+      "source_url": null,
+      "decision": "UNVERIFIED; no guessed paid SKU"
+    },
+    {
+      "id": "HYP-01",
+      "claim": "Hypnosis Live has 200+ MP3 recordings",
+      "evidence_class": "SELLER CATALOG",
+      "source_url": "https://inspire3.com/",
+      "decision": "Attribute to seller; no active offer until exact page/rights checked"
+    },
+    {
+      "id": "HYP-02",
+      "claim": "Hypnosis Live guaranteed to work",
+      "evidence_class": "UNSUBSTANTIATED SELLER CLAIM",
+      "source_url": "https://inspire3.com/",
+      "decision": "Exclude"
+    },
+    {
+      "id": "BWS-01",
+      "claim": "Brainwave Shots FAQs describe 15/30-minute downloads",
+      "evidence_class": "SELLER PRODUCT FORMAT",
+      "source_url": "https://brainwaveshots.com/faq",
+      "decision": "Seller description only"
+    },
+    {
+      "id": "BWS-02",
+      "claim": "Brainwave Shots produces effects lasting hours or pain relief",
+      "evidence_class": "UNSUBSTANTIATED HEALTH CLAIM",
+      "source_url": "https://brainwaveshots.com/faq",
+      "decision": "Exclude; no product-specific support"
+    },
+    {
+      "id": "FTC-01",
+      "claim": "Adjacent, understandable affiliate relationship disclosure",
+      "evidence_class": "REGULATORY",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "decision": "Required for active paid endorsement"
+    },
+    {
+      "id": "FTC-02",
+      "claim": "Prior substantiation for objective health advertising claims",
+      "evidence_class": "REGULATORY",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "decision": "Required; exclude unsupported claims"
+    }
+  ],
+  "release_gates": {
+    "named_publisher_approval": false,
+    "exact_sku_authorization": false,
+    "permitted_channel_scope": false,
+    "issued_earning_link": false,
+    "verified_product_checkout_and_refunds": false,
+    "affiliate_settlement_terms": false,
+    "product_specific_efficacy_substantiated": false,
+    "merchant_paid_order_receipt": false,
+    "merchant_refunds_fees_reconciled": false,
+    "qualified_human_sessions_verified": false,
+    "founder_commercial_release_approval": false,
+    "creator_asset_ids_verified": false,
+    "existing_jetpack_confirmation_tested": false,
+    "real_browser_wcag22_aa_tested": false,
+    "video_encoded_accessible": false,
+    "scriptless_static_sources_present": true,
+    "active_affiliate_urls_absent": true,
+    "disclosure_adjacent_to_disabled_control": true
+  },
+  "safe_outcome": "No live commerce, emails, homepage, navigation, WP CMS, social posts or tracking deployed"
+}
