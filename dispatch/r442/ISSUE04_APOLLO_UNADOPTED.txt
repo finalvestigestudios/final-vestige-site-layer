@@ -1,0 +1,47 @@
+FINAL VESTIGE STUDIOS · THE DISPATCH · ISSUE 04 · UNADOPTED EDITORIAL ALTERNATIVE · HOLD UNSENT
+Subject: Apollo 1: a timestamp isn't a cause
+Preheader: Two official accounts put the cabin rupture seconds apart. The danger was larger than either number.
+
+Fourteen seconds is long enough to fit in a headline. It is not long enough to explain why three astronauts could not escape a spacecraft standing still on the ground.
+
+On January 27, 1967, Virgil “Gus” Grissom, Edward White and Roger Chaffee were inside Apollo command module 012 at Launch Complex 34. The Saturn IB was not fueled. They were rehearsing a countdown, not attempting a launch. Yet the cabin was pressurized with oxygen, and a fire swept through it during the test.
+
+TWO RECORDS, TWO CLOCKS
+
+In a February 3 memorandum, NASA Deputy Administrator Robert Seamans reported an initial fire indication at 6:31:03 p.m. Eastern and cabin rupture at 6:31:17 — fourteen seconds later. He explicitly warned that recording stations might be out of synchronization by a second or two and that the findings were preliminary.
+
+A later February 25 interim report placed the rupture at approximately 6:31:19. NASA's compiled timeline is more granular still: at 23:31:16 GMT, pressure exceeded the measuring range of certain instruments; at 23:31:19.4, the pressure vessel ruptured. These are different observations, not three interchangeable measurements of the same instant.
+
+The point is not that NASA somehow hid two seconds. Investigators revised their reconstruction as new evidence arrived. An early estimate, a sensor limit and a later assessment should not be silently fused into a single cinematic countdown. A number can be precisely reported without making every interpretation of that number precise.
+
+THE UNKNOWN SPARK, THE KNOWN HAZARDS
+
+The investigators regarded an electrical malfunction as the most likely ignition mechanism but had not conclusively identified the exact source in the interim report. That uncertainty did not erase what could be established: nylon netting, fasteners and other combustible materials; an oxygen-rich cabin; rapidly increasing pressure; and an escape hatch that could not be opened quickly in an emergency.
+
+The inward-opening, multi-part hatch was a design choice, not a failure by the crew. The board called for a faster hatch, less flammable materials, changes to pad emergency procedures and a reassessment of oxygen during prelaunch operations. These weren't small edits to a checklist. They forced the program to reconsider what it called a dangerous test.
+
+The unfueled rocket mattered, too. Without propellants, the ground exercise had been treated as comparatively low risk. The cabin itself presented a different set of hazards. Investigators could establish those dangerous conditions even without identifying the first electrical arc. An unknown ignition point is not the same as an unknown cause of vulnerability.
+
+A ONE-MINUTE EVIDENCE HABIT
+
+Next time a dramatic historical story gives you one exact number or a single culprit, make three columns: directly recorded, inferred from the record and still unknown. Put the number in the right column. Ask which instrument produced it, whether the document was preliminary and whether later sources changed the interpretation.
+
+This exercise will not solve Apollo 1. It can stop one memorable sentence from replacing years of design choices, testing assumptions and documented warnings. It also helps with the less dramatic claims encountered every day, including promises about what a tool, routine or recording can accomplish.
+
+FOLLOW THE PHYSICAL EVIDENCE
+
+Our investigation, The Hatch Opened Inward, follows the cabin design, the conditions of the ground test and the redesign that followed. The story does not end with a convenient single culprit. The surviving evidence offers something more useful: a record of how an institution confronted its own assumptions.
+
+Read The Hatch Opened Inward: https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+
+SOURCE NOTES — research references, not additional promotional CTAs
+1. NASA Apollo 1 mission record: https://www.nasa.gov/mission/apollo-1/
+2. Seamans memorandum, February 3, 1967 (preliminary): https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/seamans.html
+3. Seamans interim report, February 25, 1967: https://www.nasa.gov/history/Apollo204/seamans3.html
+4. NASA Apollo 1 official event timeline: https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_01c_Timeline.htm
+5. NASA history of Apollo 204 investigation: https://www.nasa.gov/history/Apollo204/
+
+PRE-SEND COMPLIANCE HARD STOP — HOLD UNSENT
+Publisher postal address: [[VALID_POSTAL_ADDRESS_REQUIRED]]
+Actual opt-out in rendered Jetpack email: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
+No send, publication or marketing approval has been granted.
