@@ -1,0 +1,111 @@
+{
+  "id": "FV_DISPATCH_R453_AGGREGATE_ONLY",
+  "sampled_at_utc": "2026-11-18T18:34:50Z",
+  "site": "https://finalvestige.com",
+  "source_issue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+  "base_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/3026",
+  "status": "HOLD_UNSENT",
+  "newsletter": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "paid": 0,
+    "imported_last_24h": 0
+  },
+  "stats_subscribers": {
+    "email_subscriber": 3,
+    "reader_subscriber": 0,
+    "unconfirmed_subscriber": 2
+  },
+  "stats_followers": {
+    "email": 0,
+    "wpcom": 3,
+    "total": 3,
+    "partial": false
+  },
+  "reconciliation": {
+    "status": "DISAGREE",
+    "conflicts": [
+      "subscriber_email_vs_followers_email",
+      "subscriber_reader_vs_followers_reader"
+    ],
+    "unique_people": null,
+    "independent_new_leads": null
+  },
+  "settings": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "welcome_fieldbook_link_configured": true
+  },
+  "post_email_stats": {
+    "posts": [],
+    "five_last_post_notifications": "never_sent_opted_out"
+  },
+  "proof_gates": {
+    "new_confirmed_external_lead": false,
+    "received_welcome": false,
+    "actual_jetpack_email_preview": false,
+    "final_vestige_valid_postal_footer": false,
+    "functional_unsubscribe_witness": false,
+    "zen12_affiliate_acceptance": false,
+    "zen12_email_permission": false,
+    "zen12_issued_earning_url": false,
+    "zen12_approved_live_guide": false,
+    "hypnosislive_affiliate_email_permission": false,
+    "verified_paid_order_ledger": false,
+    "verified_qualified_human_sessions": false,
+    "founder_final_send_approval": false
+  },
+  "launch": {
+    "issues": [
+      {
+        "number": 1,
+        "kind": "editorial",
+        "status": "HOLD_UNSENT"
+      },
+      {
+        "number": 2,
+        "kind": "editorial",
+        "status": "HOLD_UNSENT"
+      },
+      {
+        "number": 3,
+        "kind": "commercial",
+        "product": "Zen12",
+        "status": "HOLD_UNSENT"
+      },
+      {
+        "number": 4,
+        "kind": "editorial",
+        "status": "HOLD_UNSENT"
+      },
+      {
+        "number": 5,
+        "kind": "commercial",
+        "product": "Hypnosis Live",
+        "status": "HOLD_UNSENT"
+      },
+      {
+        "number": 6,
+        "kind": "editorial",
+        "status": "HOLD_UNSENT"
+      }
+    ]
+  },
+  "paid_conversions": null,
+  "realized_net_revenue_cents": null,
+  "qualified_human_sessions": null,
+  "net_revenue_per_1000": null,
+  "disclaimers": [
+    "The two unconfirmed are not added to total",
+    "No subscriber identities retained",
+    "The three reporting surfaces contradict one another",
+    "Configured welcome message is not proof of receipt",
+    "The cohort test fixtures are entirely synthetic",
+    "No email, test-send or affiliate link was activated"
+  ]
+}
