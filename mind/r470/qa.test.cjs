@@ -1,0 +1,34 @@
+// R470 portable offline source assertions. Run from repository root: node --test mind/r470/qa.test.cjs
+// NO WordPress calls, network calls, affiliate clicks, external dependencies or paid services.
+'use strict';
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const dir = __dirname;
+const read = f => fs.readFileSync(path.join(dir, f),'utf8');
+const a = read('ZEN12_A_TEXT_ONLY_UNPUBLISHED.html');
+const b = read('ZEN12_B_OPTIONAL_FILM_UNPUBLISHED.html');
+const hub = read('MIND_HUB_WP_SOURCE_ONLY.html');
+const article = read('THE_PENDULUM_THAT_MOVED_WITHOUT_A_GHOST.md');
+const matrix = JSON.parse(read('PRODUCT_CLAIM_AND_RELEASE_MATRIX.json'));
+const plan = read('CREATOR_TO_SETTLED_REVENUE_ACCEPTANCE.md');
+const stripFilm = s => s.replace(/<section class="clip"[\s\S]*?<\/section>/,'').replace('— B','— A');
+test('A/B buying guidance identical except optional film', () => assert.equal(stripFilm(b),a));
+test('both variants are explicitly unpublished and noindexed', () => [a,b].forEach(s=>assert.match(s,/<meta name="robots" content="noindex,nofollow"/)));
+test('both have native-disabled merchant controls', () => [a,b].forEach(s=>{assert.match(s,/<button type="button" disabled aria-disabled="true">/);assert.doesNotMatch(s,/href="https?:\/\/(?:www\.)?(?:clickbank|refersion|hop\.clickbank|payhip|go\.|track\.)/i)}));
+test('a precise prospective commission disclosure is adjacent to control', () => [a,b].forEach(s=>{let x=s.indexOf('If Final Vestige later publishes an approved purchase link');let y=s.indexOf('<button type="button" disabled');assert.ok(x>=0 && y>x && y-x<800)}));
+test('no duplicate email signup, custom script or tracker', () => [a,b,hub].forEach(s=>{assert.doesNotMatch(s,/<form\b|<script\b|gtag\(|fbq\(|dataLayer\.push/i)}));
+test('video not asserted playable or autostarted',()=>{assert.match(b,/not currently available for playback/);assert.doesNotMatch(b,/autoplay|<video\b|<iframe\b/i)});
+test('42 second transcript is transparent',()=>{assert.match(b,/35–42 seconds/);assert.match(b,/0–7 seconds/);assert.match(b,/<details><summary>/)});
+test('alternate variant has original inline SVG with accessible description',()=>{assert.match(b,/<svg[^>]+role="img"[^>]+aria-label=/)});
+test('HTML mobile/keyboard/reduced-motion support',()=>[a,b,hub].forEach(s=>{assert.match(s,/name="viewport"/);assert.match(s,/:focus-visible/);assert.match(s,/prefers-reduced-motion/)}));
+test('all hub internal destinations are real published routes',()=>{for(let u of ['https://finalvestige.com/focus/','https://finalvestige.com/2026/11/02/change-blindness/','https://finalvestige.com/2026/11/02/mesmerism/','https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/'])assert.ok(hub.includes(u))});
+test('hub has four distinct streams',()=>['id="perception"','id="suggestion"','id="practice"','id="tools"'].forEach(v=>assert.ok(hub.includes(v))));
+test('research manuscript includes at least six primary citations',()=>{assert.ok((article.match(/https:\/\/(?:pubmed\.ncbi\.nlm\.nih\.gov|doi\.org)\//g)||[]).length>=6)});
+test('claim matrix valid and includes exact offer-specific links',()=>{assert.ok(matrix.claims.length>=25);assert.ok(matrix.gates.length>=30);assert.ok(matrix.sources.zen12promo.includes('/secret/'))});
+test('no commercial release gate is open',()=>assert.ok(matrix.gates.every(g=>g.status==='HOLD' && g.verified_evidence===null)));
+test('unsubstantiated efficacy claims are excluded as asserted outcomes',()=>{let bad=matrix.claims.filter(c=>c.verification==='unsubstantiated');assert.ok(bad.length>=3);assert.ok(bad.every(c=>c.editorial_decision.startsWith('EXCLUDE')))});
+test('pending affiliate notice is not misclassified as approved',()=>{assert.equal(matrix.claims.find(c=>c.id==='C26').verification,'pending-not-approval');assert.equal(matrix.commercial_status,'HARD_HOLD')});
+test('creator IDs are not invented and order != click',()=>{assert.match(plan,/UNKNOWN; Praxxis/);assert.match(plan,/NOT COMPUTABLE/);assert.match(plan,/Do not infer from click/)});
+test('test primary is settled commission not outbound clicks',()=>{assert.match(plan,/settled merchant commissions per qualified human session/);assert.match(plan,/Do not call clicks the primary outcome/)});
