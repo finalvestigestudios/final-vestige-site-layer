@@ -2,11 +2,9 @@
 'use strict';
 // Offline source/candidate validation: no network access, downloads, or WordPress writes.
 const fs=require('node:fs');
-const crypto=require('node:crypto');
 const baseline=require('./p0_seven_guest_failure_queue_20261118.json');
 const fail=s=>{throw Error(s)};
 const ok=(x,s)=>{if(!x)fail(s)};
-const sha=raw=>{const b=Buffer.from(raw,'utf8');return crypto.createHash('sha1').update('blob '+b.length+'\\0'.replace('\\0','\0')).update(b).digest('hex')};
 function verify(a,base=baseline){
 ok(a&&a.schema==='fv-p0-primary-candidate-v1'&&a.checked_on==='2026-11-18','schema/date');
 ok(a.source_method==='public_retriever_origin_only_not_guest_browser'&&a.basis_blob==='16a7ec1c0b8cb92cef4a241eccc82924cd4ca74e','provenance');
