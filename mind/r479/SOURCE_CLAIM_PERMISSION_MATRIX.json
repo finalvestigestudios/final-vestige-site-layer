@@ -1,0 +1,298 @@
+{
+  "as_of": "2026-11-18",
+  "lane": "Mind and Perception — Zen12 pilot",
+  "status": "HARD_HOLD",
+  "sources": [
+    {
+      "id": "S01",
+      "label": "1992 primary study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "scope": "time-specific RSVP probe deficit"
+    },
+    {
+      "id": "S02",
+      "label": "1995 primary study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7707027/",
+      "scope": "two-stage account under tested RSVP conditions"
+    },
+    {
+      "id": "S03",
+      "label": "2006 lag 1 experiment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16365947/",
+      "scope": "close target identification can impair order"
+    },
+    {
+      "id": "S04",
+      "label": "2007 meditation training study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "scope": "three months intensive training—not a Zen12 test"
+    },
+    {
+      "id": "S05",
+      "label": "2023 binaural EEG review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "scope": "14 heterogeneous studies inconsistent"
+    },
+    {
+      "id": "S06",
+      "label": "official catalog",
+      "url": "https://inspire3.com/",
+      "scope": "Zen12 is seller catalog product"
+    },
+    {
+      "id": "S07",
+      "label": "official regular offer",
+      "url": "https://zen12.com/about",
+      "scope": "seller-described duration levels styles"
+    },
+    {
+      "id": "S08",
+      "label": "distinct promotional offer",
+      "url": "https://zen12.com/secret/",
+      "scope": "dynamic promotional terms not approved FV terms"
+    },
+    {
+      "id": "S09",
+      "label": "FTC endorsements",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "material relationship disclosures"
+    },
+    {
+      "id": "S10",
+      "label": "FTC health claims",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "objective benefit substantiation"
+    },
+    {
+      "id": "S11",
+      "label": "FV live Puységur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "historical archive"
+    },
+    {
+      "id": "S12",
+      "label": "FV live Focus",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "existing free resource"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Zen12 twelve-minute MP3 sessions",
+      "type": "seller_format",
+      "source": "S07",
+      "may_publish": true
+    },
+    {
+      "claim": "Zen12 twelve levels four audio options",
+      "type": "seller_format",
+      "source": "S07",
+      "may_publish": true
+    },
+    {
+      "claim": "Zen12 equals one hour meditation",
+      "type": "seller_claim_unproven",
+      "source": "S07",
+      "may_publish": false
+    },
+    {
+      "claim": "Zen12 guaranteed brain entrainment",
+      "type": "seller_claim_unproven",
+      "source": "S07",
+      "may_publish": false
+    },
+    {
+      "claim": "Zen12 treats anxiety",
+      "type": "health_claim_unproven",
+      "source": "S10",
+      "may_publish": false
+    },
+    {
+      "claim": "2007 intensive training attenuated blink",
+      "type": "primary_condition_specific",
+      "source": "S04",
+      "may_publish": true
+    },
+    {
+      "claim": "2007 trial tested Zen12",
+      "type": "false_attribution",
+      "source": "S04",
+      "may_publish": false
+    },
+    {
+      "claim": "2023 binaural EEG conclusive efficacy",
+      "type": "review_contradicts",
+      "source": "S05",
+      "may_publish": false
+    },
+    {
+      "claim": "lag one sparing under conditions",
+      "type": "primary_condition_specific",
+      "source": "S03",
+      "may_publish": true
+    },
+    {
+      "claim": "affiliate account accepted",
+      "type": "account_not_verified",
+      "source": "S08",
+      "may_publish": false
+    },
+    {
+      "claim": "FV commission and earning URL",
+      "type": "account_not_verified",
+      "source": "S08",
+      "may_publish": false
+    },
+    {
+      "claim": "current final price and returns",
+      "type": "commercial_not_verified",
+      "source": "S08",
+      "may_publish": false
+    },
+    {
+      "claim": "live Focus resource exists",
+      "type": "FV_live",
+      "source": "S12",
+      "may_publish": true
+    },
+    {
+      "claim": "published Puységur archive exists",
+      "type": "FV_live",
+      "source": "S11",
+      "may_publish": true
+    },
+    {
+      "claim": "consumer promotional countdown transferable",
+      "type": "not_authorized",
+      "source": "S08",
+      "may_publish": false
+    },
+    {
+      "claim": "disclosures belong near recommendation",
+      "type": "FTC",
+      "source": "S09",
+      "may_publish": true
+    }
+  ],
+  "gates": [
+    {
+      "id": 1,
+      "gate": "Named FV accepted Inspire3 account",
+      "passed": false
+    },
+    {
+      "id": 2,
+      "gate": "Zen12 partner-approved SKU",
+      "passed": false
+    },
+    {
+      "id": 3,
+      "gate": "Merchant issued earning URL",
+      "passed": false
+    },
+    {
+      "id": 4,
+      "gate": "Website promotion rights",
+      "passed": false
+    },
+    {
+      "id": 5,
+      "gate": "Social channel promotion rights",
+      "passed": false
+    },
+    {
+      "id": 6,
+      "gate": "Email promotion permission (only Dispatch coordinated)",
+      "passed": false
+    },
+    {
+      "id": 7,
+      "gate": "Approved current creative",
+      "passed": false
+    },
+    {
+      "id": 8,
+      "gate": "Supported product-specific health claims",
+      "passed": false
+    },
+    {
+      "id": 9,
+      "gate": "Final checkout price and currency",
+      "passed": false
+    },
+    {
+      "id": 10,
+      "gate": "Actual delivery format",
+      "passed": false
+    },
+    {
+      "id": 11,
+      "gate": "Subscription versus one-off terms",
+      "passed": false
+    },
+    {
+      "id": 12,
+      "gate": "Refund rules and exclusions",
+      "passed": false
+    },
+    {
+      "id": 13,
+      "gate": "Attribution and commission reversal terms",
+      "passed": false
+    },
+    {
+      "id": 14,
+      "gate": "Founder launch approval",
+      "passed": false
+    },
+    {
+      "id": 15,
+      "gate": "Site QA browser a11y review",
+      "passed": false
+    },
+    {
+      "id": 16,
+      "gate": "Film playable captions and transcript review",
+      "passed": false
+    },
+    {
+      "id": 17,
+      "gate": "Single Jetpack opt-in flow preserved",
+      "passed": false
+    },
+    {
+      "id": 18,
+      "gate": "Claude first-party attribution review",
+      "passed": false
+    },
+    {
+      "id": 19,
+      "gate": "Grok posted media IDs matched",
+      "passed": false
+    },
+    {
+      "id": 20,
+      "gate": "Merchant verified paid transaction",
+      "passed": false
+    },
+    {
+      "id": 21,
+      "gate": "Refund/fee adjusted settled net revenue",
+      "passed": false
+    }
+  ],
+  "authorization": {
+    "merchant": "Refersion 2026-08-24 application pending message; no later approval established",
+    "affiliate_url": null,
+    "eligible_sku": null,
+    "final_price": null,
+    "return_terms": null,
+    "commission": null
+  },
+  "distinctions": [
+    "seller format is not independently tested benefit",
+    "outbound click not a sale",
+    "visitor impression not qualified human session",
+    "paid commission requires merchant settlement"
+  ]
+}
