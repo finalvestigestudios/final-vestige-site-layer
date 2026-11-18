@@ -11,7 +11,7 @@
    - Source-only hub `MIND_ARCHIVE_SOURCE_ONLY.html`: `5d8da8704d27adb9acc84326214dbf3e38179544`
    - Matrix `CLAIM_SOURCE_MERCHANT_MATRIX.json`: `63e0c91c5ed15f504c1b8c8fef35643bb27f46a2`
    - Revenue plan `OFFER_FUNNEL_EXPERIMENT_AND_REVENUE_ACCEPTANCE.md`: `42b67e7a79128604eccd8ad5fc3321f77d8ae2c1`
-   - Native Node suite `qa.test.cjs`: `c0ffadda83be2cd7e2c00148171cc600c820a3a1`
+   - Native Node suite `qa.test.cjs`: `c40fc2726cb892ba3278511e631426549d74d47d`
 3. Executed **89/89 deterministic read-only V8 source assertions PASS** across those exact returned file contents. Checked: HTML language, viewport/noindex, no-JS/no tracking/no forms/autoplay/remote media, disabled controls, seller URLs not activated, near-control FTC disclosure, A/B substantive parity, source-format distinction, six contiguous VTT cues totaling exactly 42 seconds, accessible SVG text and transcript, primary research trail, JSON matrix referential integrity, all merchant release gates held, three unverified creator media IDs and existing live destination paths.
 4. Ran **7/7 synthetic in-memory adversarial mutation detections PASS** for removing the disabled attribute, inserting a seller hyperlink, altering A/B buyer copy, extending VTT to 44 seconds, falsely setting partner approval, changing the hub from noindex, and fabricating a computable revenue claim. These mutations were never committed to any branch.
 
@@ -35,3 +35,6 @@ Final HEAD and draft PR number must be taken from the **GitHub response after th
 ## Overall acceptance verdict
 **STATIC SOURCE READBACK: PASS, 89/89; mutation checks: PASS, 7/7.**
 **RELEASE AND COMMERCE: HARD HOLD**. Neither commercial eligibility nor full-stack browser and merchant QA is satisfied. Until actual independently settled orders and a qualified-human session denominator are authenticated, realized net revenue per 1,000 qualified human sessions is **NOT COMPUTABLE**.
+
+## Post-readback native-suite accuracy correction
+The native Node suite's film-state assertion was compared against the exact published B source and corrected to check its real phrase **“No encoded or playable video is embedded”** rather than an alternate negative phrasing. This change was source-only, not a runtime test result. The corrected source file's blob SHA is `c40fc2726cb892ba3278511e631426549d74d47d`. This correction did not modify buyer content or relax commerce gates. The native suite **still has not been run**. Earlier 89/89 V8 source assertions and 7/7 mutation detections apply to the unchanged seven product/editorial sources and the previously retrieved Node file; revised test-source phrasing was separately verified by exact GitHub readback. Final branch HEAD is the GitHub result of this QA evidence revision, not the SHA displayed in the earlier PR opening.
