@@ -1,0 +1,112 @@
+{
+  "schema": "fv-dispatch-source-only-r447-2026-11-18",
+  "purpose": "REVIEW_ONLY_NO_SEND_NO_PUBLICATION_NO_TRACKING",
+  "upstream": {
+    "master_pr": 175,
+    "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "safety_pr": 201,
+    "comparison_pr": 2995,
+    "comparison_sha": "fd374e58425a5168418249780a9f61d308c9fbf9",
+    "issues": [
+      174,
+      171,
+      129,
+      820
+    ]
+  },
+  "wordpress_readonly": {
+    "as_of_utc": "2026-11-18T12:35:57Z",
+    "site": "https://finalvestige.com",
+    "newsletter_enabled": true,
+    "automatic_new_post_sends": false,
+    "format": "full",
+    "from_name": "Final Vestige Studios",
+    "subscribers": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed_excluded": 2,
+      "email_subscriber_records": 3,
+      "verified_independent_new_leads": null,
+      "received_welcome": null
+    },
+    "last_five_posts": "never_sent_opted_out",
+    "configured_fieldbook_welcome": true,
+    "native_non_sending_preview_witness": null
+  },
+  "gates": {
+    "founder_final_campaign_approval": false,
+    "native_jetpack_preview_witness": false,
+    "fv_physical_postal_verified": false,
+    "rendered_unsubscribe_verified": false,
+    "optout_process_verified": false,
+    "audience_eligibility_witness": false,
+    "welcome_delivery_witness": false,
+    "copy_claim_and_cta_approved": false,
+    "named_affiliate_acceptance": false,
+    "email_channel_permission": false,
+    "sku_and_issued_link_verified": false,
+    "live_vetted_first_party_guide": false,
+    "current_checkout_refund_terms": false,
+    "near_offer_disclosure_verified": false
+  },
+  "issues": [
+    {
+      "id": 1,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "id": 2,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "id": 3,
+      "kind": "commercial_reserved",
+      "product": "Zen12",
+      "guide_live": false,
+      "affiliate_url": null,
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "id": 4,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "id": 5,
+      "kind": "commercial_reserved",
+      "product": "Hypnosis Live",
+      "guide_live": false,
+      "affiliate_url": null,
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "id": 6,
+      "kind": "editorial",
+      "status": "HOLD_UNSENT"
+    }
+  ],
+  "commerce": {
+    "issued_affiliate_links_verified": false,
+    "paid_settlements_verified": false,
+    "qualified_human_session_denominator_verified": false,
+    "realized_net_revenue_per_1000": null
+  },
+  "official_sources": [
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://zen12.com/",
+    "https://zen12.com/secret/",
+    "https://hypnosislive.com/faq",
+    "https://finalvestige.com/editorial-standards/"
+  ],
+  "assertions": [
+    "no invented email permission",
+    "no merchant approval inferred from consumer sales page",
+    "no attributed revenue from click",
+    "no subscriber email or stable identifier in source",
+    "no test sends without founder authorization",
+    "no WordPress writes"
+  ]
+}
