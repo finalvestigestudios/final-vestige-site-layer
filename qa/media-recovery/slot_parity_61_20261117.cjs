@@ -42,12 +42,19 @@ function validRedirectChain(start,end,chain) {
   return current===end;
 }
 // A decoded placeholder/distorted derivative is not visual parity.
-// Conservative offline HOLD: minimum 480px long edge (or original if smaller)
-// and <=2% aspect ratio drift; these checks do NOT prove exact subject identity.
+// Conservative offline HOLD: no upscaling, <=960px derivative width, minimum
+// 480px long edge (or original if smaller), and <=2% aspect ratio drift.
+// These checks do NOT prove exact subject identity.
 function preservesPixelGeometry(before,after) {
   if(!isObject(before)||!isObject(after))return false;
   const dims=[before.natural_width,before.natural_height,after.natural_width,after.natural_height];
   if(!dims.every(n=>integer(n,1)&&n<=100000))return false;
+  // This gate assesses an intended optimized <=960px-wide derivative.
+  // Browser naturalWidth is not an archival master measurement. If the candidate
+  // exceeds the baseline in either axis, or is wider than the 960px derivative
+  // ceiling, HOLD for manual asset/rights review instead of certifying parity.
+  if(after.natural_width>960||after.natural_width>before.natural_width||
+     after.natural_height>before.natural_height)return false;
   if(Math.max(after.natural_width,after.natural_height)<Math.min(480,Math.max(before.natural_width,before.natural_height)))return false;
   const oldRatio=before.natural_width/before.natural_height;
   const newRatio=after.natural_width/after.natural_height;
