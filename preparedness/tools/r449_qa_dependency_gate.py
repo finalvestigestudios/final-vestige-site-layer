@@ -6,6 +6,7 @@ QD approval, a production build, a WordPress release, or commercial conversion.
 """
 from __future__ import annotations
 import argparse
+import hashlib
 from collections import defaultdict
 import json
 from pathlib import Path
@@ -35,6 +36,15 @@ COUNTS = {"articles":35,"source_ids":203,"source_occurrences":280,
           "unresolved_source_disputes":5,"unselected_forks":9,
           "contributor_refs":9}
 SHA = re.compile(r"^[0-9a-f]{40}$")
+ORIGINAL_R448_LEDGER_BLOB = "e9dfce578903137b9ff41ac2d8dc684da7fe5b13"
+
+def git_blob_sha(data):
+    """Canonical SHA-1 of a Git blob, not ordinary file SHA-1."""
+    return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
+
+def ledger_file_authentic(path):
+    """Original R448 immutable blob check; never trust self-reported JSON identity."""
+    return git_blob_sha(Path(path).read_bytes()) == ORIGINAL_R448_LEDGER_BLOB
 
 def unique_object(pairs):
     d = {}
@@ -126,7 +136,7 @@ def audit(capture, fresh=None, ledger=None):
             fail("ORIGINAL_ARTICLE_SOURCE_CUSTODY_DRIFT")
         articles=ledger.get("articles")
         if not isinstance(articles,list) or len(articles)!=35 or any(
-                a.get("publication_state")!="HARD_HOLD" or
+                not isinstance(a,dict) or a.get("publication_state")!="HARD_HOLD" or
                 a.get("qualified_safety_state")!="NOT_APPROVED" or
                 a.get("source_occurrences_bound_to_this_article")!=
                 "NOT_AUTHENTICATED_FROM_ORIGINAL_DOCKET" for a in articles):
@@ -183,6 +193,9 @@ def main():
         r=audit(read_json(a.capture),
                 read_json(a.fresh) if a.fresh else None,
                 read_json(a.ledger) if a.ledger else None)
+        if a.ledger and not ledger_file_authentic(a.ledger):
+            r["errors"].append("ORIGINAL_R448_GIT_BLOB_NOT_AUTHENTICATED")
+            r["structural_preflight_pass"]=False
     except (OSError,ValueError,TypeError) as exc:
         r=result(["INPUT_REJECTED:"+type(exc).__name__],{})
     print(json.dumps(r,indent=2,sort_keys=True))
