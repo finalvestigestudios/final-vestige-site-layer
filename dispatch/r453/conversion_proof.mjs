@@ -71,3 +71,20 @@ export function sumRevenue(windowData) {
   const denom=windowData.qualified_human_sessions;
   return {status:denom>0?"COMPUTABLE":"UNCOMPUTABLE",reason:denom>0?null:"zero_qualified_sessions",orders,orders_with_independently_justified_campaign_attribution:attributed,gross_cents:gross,fees_cents:fees,refunds_cents:refunds,net_cents:net,net_revenue_per_1000_cents:denom>0?Math.round(net*1000/denom):null,warning:"A conversion is attributed only with a separate evidence reference. This is a reporting-window metric, not a causal experiment or an acquisition cohort."};
 }
+
+
+/** Count only new provider confirmations. No email/IP in the input; token must be
+ * an ephemeral provider-derived opaque key, never saved to repository or analytics.
+ * A caller must independently verify provenance. */
+export function dedupeConfirmedSignups(events) {
+  if(!Array.isArray(events))return {status:"UNCOMPUTABLE",reason:"events_missing",confirmed_new:null};
+  const seen=new Set();let accepted=0,rejected=0,duplicates=0;
+  for(const e of events){
+    const verdict=assessSignup(e);
+    if(!verdict.counted){rejected++;continue}
+    if(typeof e.dedupe_token!=="string"||!/^opaque-[a-zA-Z0-9_-]{4,64}$/.test(e.dedupe_token))return {status:"UNCOMPUTABLE",reason:"no_privacy_safe_dedupe_key",confirmed_new:null};
+    if(seen.has(e.dedupe_token)){duplicates++;continue}
+    seen.add(e.dedupe_token);accepted++;
+  }
+  return {status:"EVIDENCE_GATED_ONLY",confirmed_new:accepted,rejected_nonconfirmations:rejected,duplicates_ignored:duplicates,warning:"An attestation is not independent verification. Do not commit tokens, emails or identifiers."};
+}
