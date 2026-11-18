@@ -1,0 +1,43 @@
+<!-- wp:paragraph --><p><strong>THE LIBRARY · DIGITAL ARCHIVAL CUSTODY · FREE FIELD GUIDE · SOURCE REVIEWED 17 NOVEMBER 2026</strong></p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --><p>Two PDFs can have the same filename. Two scans can depict the same document while holding different bytes. A folder called “original” is not a chain of custody. The first useful question is smaller: is this file exactly the same sequence of bytes as the one I recorded before?</p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --><p>A cryptographic checksum helps answer that question. It can establish a repeatable comparison of digital file contents. It cannot establish who wrote the record, whether the original was forged, whether the catalog description is correct, or whether the scan is complete. The distinction matters most when a digital copy looks authoritative.</p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2} --><h2 class="wp-block-heading">What a file fingerprint actually proves</h2><!-- /wp:heading -->
+
+<!-- wp:paragraph --><p>SHA-256, specified by the <a href="https://www.nist.gov/publications/secure-hash-standard">National Institute of Standards and Technology</a>, produces a 256-bit digest commonly written as 64 hexadecimal characters. A changed byte will ordinarily produce a different value. Two independently calculated SHA-256 digests that match strongly support byte-for-byte identity, provided both calculations and the baseline are trustworthy. A matching digest does not make an unreliable source reliable.</p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --><p>The Library of Congress's <a href="https://www.loc.gov/programs/digital-collections-management/inventory-and-custody/data-integrity-management/">digital collection integrity guidance</a> describes retaining fixity metadata and audit logs. The U.S. National Archives <a href="https://www.archives.gov/preservation/products/products/aud-p1">audio preservation specification</a> describes rechecking a checksum after transferring a newly captured file to long-term storage. These are integrity controls, not tests of historical truth.</p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Three separate witnesses: identity, fixity, meaning</h2><!-- /wp:heading -->
+
+<!-- wp:paragraph --><p><strong>Identity.</strong> Capture the archive name, collection and item identifier, exact download URL, original filename, byte count and date. Distinguish a stable archival record locator from a temporary image-viewer link. Record the object you selected, not merely the search result that led you to it.</p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --><p><strong>Fixity.</strong> Calculate SHA-256 on the complete file. Preserve the result with the identifying metadata. When you later copy the file to another drive or download it again, calculate a new digest and compare. If the values differ, do not instantly call it tampering or damage. A PDF repackaged with searchable text, a rescanned image, a changed metadata field, and a genuinely corrupted file can all produce new hashes for different reasons.</p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --><p><strong>Meaning.</strong> An unchanged copy of a mistaken transcription is still a mistaken transcription. A stable bitstream tells us the copy is unchanged, not that a date, name or attribution is correct. Use <a href="https://finalvestige.com/the-archive-trail/">The Archive Trail</a> to examine the primary record, and <a href="https://finalvestige.com/free-resources/the-page-that-changed/">The Page That Changed</a> when a public record has been revised at a persistent address.</p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2} --><h2 class="wp-block-heading">When two checksums disagree</h2><!-- /wp:heading -->
+
+<!-- wp:paragraph --><p>First confirm that both digests were generated with the same algorithm against the full intended files. Then check whether either file was intentionally transformed: OCR added to a scan, metadata rewritten, images recompressed, a PDF optimized or a restoration made. Save both original and derivative, label their roles and note who made the change. If no earlier trustworthy digest exists, make an explicit baseline today; you cannot prove retrospectively that an unrecorded older copy was unchanged.</p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2} --><h2 class="wp-block-heading">A ten-field field card</h2><!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} --><ol><li>Exact original filename and extension.</li><li>Institution, collection, series and stable item locator.</li><li>Original source URL and access route.</li><li>Date obtained and person or process acquiring it.</li><li>Exact file size in bytes.</li><li>SHA-256 digest and software/tool used.</li><li>Date and provenance of any reference checksum.</li><li>Comparison result: match, mismatch or no baseline.</li><li>Known transformations, omissions and limits of interpretation.</li><li>Access and reproduction rights, backup copy location and next integrity review.</li></ol><!-- /wp:list -->
+
+<!-- wp:paragraph --><p>Keep the receipt separately from the file being checked. Never overwrite the only earlier digest when deliberately creating an access derivative. A checksum without a trustworthy provenance ledger is a highly precise answer to a question that has been lost.</p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2} --><h2 class="wp-block-heading">The free offline workbench</h2><!-- /wp:heading -->
+
+<!-- wp:paragraph --><p>The accompanying standalone HTML review edition provides local-only SHA-256 checking, an optional trusted-baseline comparison, printable evidence fields and text-receipt export. It does not upload files or retain user input. The workbench sets a 100 MiB file limit to avoid excessive browser memory use. The standalone tool is held for site hosting and production-browser review: an unpublished draft must not suggest that its download is already available to public readers.</p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2} --><h2 class="wp-block-heading">What this method does not replace</h2><!-- /wp:heading -->
+
+<!-- wp:paragraph --><p>An integrity receipt is not a backup, virus scan, digital signature, legal evidence-custody certification, authentication test or rights clearance. File copies should be stored separately and checked periodically; a digest cannot restore the bytes of the only lost copy. The <a href="https://www.dpconline.org/handbook/technical-solutions-and-tools/fixity-and-checksums">Digital Preservation Coalition's handbook</a> explains checksum comparison, manifests and multiple copies. The <a href="https://www.ndsa.org/publications/levels-of-digital-preservation/">National Digital Stewardship Alliance's Levels of Digital Preservation</a>, updated to version 2.1 in March 2026, provides a broader preservation-planning framework.</p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Primary-source and rights ledger</h2><!-- /wp:heading -->
+
+<!-- wp:paragraph --><p>Last checked: 17 November 2026. <a href="https://www.nist.gov/publications/secure-hash-standard">NIST FIPS 180-4</a> (SHA-256 specification, checked by direct public readback); <a href="https://www.archives.gov/preservation/products/products/aud-p1">NARA AUD-P1</a> (transfer verification, direct readback); <a href="https://www.ndsa.org/publications/levels-of-digital-preservation/">NDSA Levels v2.1</a> (current professional guidance); <a href="https://www.dpconline.org/handbook/technical-solutions-and-tools/fixity-and-checksums">DPC Handbook</a> (fixity methods and limits). The <a href="https://www.loc.gov/programs/digital-collections-management/inventory-and-custody/data-integrity-management/">Library of Congress page</a> is discoverable in its indexed institutional record but returned an automated 403 on a direct recheck, so it remains link-only pending ordinary-browser confirmation.</p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --><p>Rights: all external institutional content is linked, not copied. The accompanying explanatory diagram and local utility were authored for Final Vestige Studios in 2026, clearly labeled as original instructional material. No outside photographs, archival facsimiles, scanned documents, screenshots, logos or video were reproduced. The information is educational; access to an archival source does not imply permission to republish its contents.</p><!-- /wp:paragraph -->
