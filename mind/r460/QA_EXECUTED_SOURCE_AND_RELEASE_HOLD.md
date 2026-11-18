@@ -10,9 +10,9 @@ All eight substantive files below were fetched by exact GitHub branch ref using 
 - ZEN12_A_TEXT_ONLY.html — `9f754906ff1aad41a6cde48e586c1666b61c4b3c`
 - ZEN12_B_OPTIONAL_FILM.html — `032353717cf6752225993f4ce510ebaa3d6c5d3f`
 - ZEN12_42S_FILM_STORYBOARD.md — `990a1e3d1dfb6dc6157cb6a05472a4251b23907d`
-- MIND_ARCHIVE_HUB_SOURCE_ONLY.html — `c2abe6c419a7d2b37a78a20f394586b21f7985b6`
+- MIND_ARCHIVE_HUB_SOURCE_ONLY.html — `a937c77bbd4aeb16f0d493f9f5583c0fd123d907`
 - CLAIM_SOURCE_MERCHANT_MATRIX.json — `175b333d5130ab9efe41bd04ac36d169901e2b78`
-- OFFER_CREATOR_REVENUE_ACCEPTANCE.md — `2da0063f21a2ee9608d961a392338a05bccaf027`
+- OFFER_CREATOR_REVENUE_ACCEPTANCE.md — `5d85d2e30ae17490750b5cf114c072e55e635f92`
 - SOURCE_GATES.test.mjs — `190a0816a71635b18fe259282fbf5381b969e8f4`
 
 ## Actually executed
@@ -20,6 +20,11 @@ All eight substantive files below were fetched by exact GitHub branch ref using 
 - First pass had one **false-positive QA check**. The storyboard header contains the full time span `00:00-00:42`; the naive pattern counted it as a seventh scene. A corrected line-anchored check verified exactly six consecutive scene intervals: 00–07, 07–14, 14–20, 20–27, 27–34, 34–42 seconds; **PASS**. This was a checker discrepancy, not evidence that a playable R460 video was encoded.
 - **10/10 unsafe synthetic mutations detected**, including activated merchant URL, removal of native `disabled`, removal of near-link disclosure, insertion of script, invented price, added email form, removal of evidence caveat, changed earning URL, opened a commercial gate, and autoplay.
 - A portable native Node 11-case source guard file was **AUTHORED BUT NOT EXECUTED**. The available working container lacks DNS connectivity to GitHub; its own Node version check succeeded but could not retrieve the authenticated source. Do not report native Node success.
+
+## Subsequent production WordPress read-only verification (same run)
+Using the connected WordPress site source, verified **66 published posts / 92 published pages** on finalvestige.com, rather than Issue #171's older 61/79 baseline. Confirmed published **Change Blindness** post ID **1922**, https://finalvestige.com/2026/11/02/change-blindness/ , and **Mesmerism** post ID **1924**, https://finalvestige.com/2026/11/02/mesmerism/ . Read published **Focus** page ID **1579**, https://finalvestige.com/focus/ , and its existing Jetpack subscriptions block; read published **Puységur** page ID **1377**, https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ . No CMS write or new signup. Updated only the source-controlled hub and creator map to link the two genuine LIVE posts while accurately withholding the unpublished R460 Thatcher destination.
+
+The two revised committed GitHub blobs were independently reread with the other source files. Additional exact-source verification **30/30 PASS** including live-link accuracy in source, substantive A/B parity, no merchant activation, closed 30/30 gates and sequential 42-second six-scene plan. Earlier 32/32 V8 checks and 10/10 unsafe mutation checks remain valid for unchanged buyer/matrix source; newly revised hub and plan were additionally checked. Not native Node or hosted browser evidence.
 
 ## NOT EXECUTED / NOT VERIFIED
 Native Node test runner on a checked-out branch; hosted CI; real screen-reader / keyboard / WCAG 2.2 AA browser review; mobile viewport captures at 360/390/768/1440/1920; Lighthouse/CWV or throttled connection test; WordPress sanitizer and block-editor paste; actual video encoding/playback/captions (R460 only provides original poster, transcript and storyboard); Jetpack confirmation/delivery; merchant partner-account login, checkout, commission settlement and refunds; final founder release authorization. Full historic Thatcher photo rights are not cleared and no historic image is reproduced.
