@@ -1,0 +1,23 @@
+# R443 independent provider and commercial witness — 2026-11-18 08:33 UTC
+**All six original newsletters HOLD UNSENT.** Master [#175](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175), earlier safety [#201](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201), issue [#174](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174), Mind [#171](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171), parent [#2973](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2973). No source outside `dispatch/r443/` altered.
+
+## Read-only actual results
+- Live Jetpack newsletter ON, new-post automatic sends OFF, `site_can_send=true` (technical ability, **not campaign authorization**), latest five recent sends `never_sent_opted_out`; email format full; from display Final Vestige Studios; reply-to no-reply.
+- WordPress dashboard total=3, confirmed=3, excluded unconfirmed=2. Authenticated private filter `email_subscriber` returns **3 Subscribed + email_subscriber=true**, reported only as aggregate. **Actual deliveries still unverified.** WordPress subscriber `Not confirmed` excluded from totals; `Bounced`/`Emails paused` have different semantics: https://wordpress.com/support/subscribers/.
+- Welcome configuration contains a direct link to the 52-page Focus Fieldbook. Connected Gmail searches on November 18 found no received exact Dispatch welcome/Fieldbook in checked mailbox; earlier 2026-10-25 confirmation mail is not final welcome. That does not establish every recipient lacks delivery.
+- Actual native WordPress **Preview email** is still not observed; a connected tool cannot render the editor's Preview. WordPress documents a **non-sending** Preview email even when Send email is toggled OFF: https://wordpress.com/support/newsletter/email-appearance/. DO NOT click Send test email, Publish or Schedule.
+- No verified Final Vestige valid physical postal address or actually rendered functional opt-out. An Automattic mailing address is not the publisher address. https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business.
+- Refersion-related connected Gmail search finds a 2026-08-24 application **pending** notice, and subsequent merchant marketing emails but NO verified approval, account-issued earning URL, exact product terms or **EMAIL permission**. Account might be approved elsewhere: status **NOT VERIFIED**, not rejected. Mind #171 owns guides; latest Mind #2977 remains unpublished.
+- Issue03 = Zen12 and Issue05 = Hypnosis Live. Official seller pages https://zen12.com/about and https://hypnosislive.com/faq are **seller representations, not scientific evidence or permission**. The former advertises unsupported meditation-hour equivalence; the latter lists a 14-day request window and maximum five refunded sessions a year. Do not activate or quote final price, SKU, refund guarantee, video/audio claims until offer-specific confirmation.
+
+## Revenue-first acceptance matrix
+| Offer / step | Blocker | Draft change and decisive test | Owner |
+|---|---|---|---|
+| Focus → Dispatch lead | Welcome and genuine new consent transition not witnessed | keep one Jetpack list; audit provider confirmed transitions, never clicks/PDF views | Focus / Claude |
+| Issue02 → Puységur archive | Original Issue01 and Issue02 route to same archive without distinct hook | unadopted 12-block primary-record email with source-led mini exercise; founder chooses then non-sending native Preview | Dispatch / Founder |
+| Zen12 → Mind presell → merchant | EMAIL rights, earning link, SKU, live authorized guide missing | choose one published Mind-owned vetted guide only after merchant attestation | Mind / Commerce |
+| Dispatch → recipient | FV postal/unsubscribe actual rendered proof missing | capture actual newsletter Preview and verify footer + sender, no sending | Dispatch / Founder |
+| Grok visitor → settled order | qualified sessions, settlement join, refund/fee proof missing | use existing Claude tracking, canonical asset_id + UTM (no duplicate scripts); 7/30d cohorts | Claude / Praxxis / Grok |
+
+## Conversion contract
+`utm_source=grok&utm_medium=organic_social&utm_campaign=dispatch_pilot` plus immutable `asset_id` identifies source, not a paid sale. A `confirmed_signup` event requires actual newly confirmed WP provider state + consent scope, deduplicated opaque id; no personally identifiable subscriber info in issues. Net-per-1000 qualified human sessions is **NOT COMPUTABLE** without independently settled transactions, refunds, fees, matured 7/30-day cohorts, and audited denominator. No fabricated zero.
