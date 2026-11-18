@@ -87,6 +87,22 @@ class TestR449(unittest.TestCase):
     def test_test_file_conflicts_never_implicitly_resolved(self):
         l,o,s=fixtures();l["merge_decision"]="APPROVED"
         self.assertIn("MERGE_APPROVAL_INVENTED",g.audit(l,o,s)["errors"])
+    def test_git_object_empty_blob_reference(self):
+        # Git's well-known empty-blob identity, unlike sha1(b"").
+        self.assertEqual(g.git_blob_sha(b""),
+                         "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391")
+    def test_r448_external_blob_pin_required(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            p=Path(td)/"synthetic-r448.json"
+            p.write_text('{"counts":{"articles":35}}',encoding="utf-8")
+            self.assertFalse(g.ledger_file_authentic(p))
+    def test_non_object_article_in_ledger_fails_closed(self):
+        l,o,s=fixtures()
+        s["articles"][0]=None
+        self.assertIn("ORIGINAL_ARTICLE_SAFETY_OR_PLACEMENTS_UNPROVEN",
+                      g.audit(l,o,s)["errors"])
+
     def test_forced_original_article_release_detected(self):
         l,o,s=fixtures();s["articles"][0]["publication_state"]="PUBLISHED"
         self.assertIn("ORIGINAL_ARTICLE_SAFETY_OR_PLACEMENTS_UNPROVEN",g.audit(l,o,s)["errors"])
