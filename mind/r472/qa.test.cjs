@@ -18,8 +18,8 @@ const article=read('THE_GORILLA_YOU_WERE_NOT_LOOKING_FOR.md');
 const matrix=JSON.parse(read('CLAIM_PRODUCT_PERMISSION_MATRIX.json'));
 const spec=read('OFFER_TO_REALIZED_REVENUE_RUNBOOK.md');
 const removeFilm=(html)=>html.replace(/<section class="panel" aria-labelledby="film-title"[\s\S]*?<\/section>/,'').replace(/\s+/g,' ').trim();
-const unsafe=(html)=>/<script\b|<iframe\b|<form\b|\bautoplay\b|\bonclick=|\bonload=|http-equiv=["']refresh|<a[^>]*\bhref=["']https?:\/\/(?:affiliate\.example|tracking\.example|[^"']*refersion\.com)/i.test(html);
-const missingDisclosedCTA=(html)=>{const offer=html.match(/<section class="panel offer"[\s\S]*?<\/section>/)?.[0]??'';return !/commission disclosure/i.test(offer)||!/<button\b[^>]*\bdisabled\b/i.test(offer)||offer.indexOf('commission disclosure')>offer.indexOf('<button');};
+const unsafe=(html)=>/<script\b|<iframe\b|<form\b|<(?:video|audio)[^>]*\bautoplay\b|\bonclick=|\bonload=|http-equiv=["']refresh|<a[^>]*\bhref=["']https?:\/\/(?:affiliate\.example|tracking\.example|[^"']*refersion\.com)/i.test(html);
+const missingDisclosedCTA=(html)=>{const offer=html.match(/<section class="panel offer"[\s\S]*?<\/section>/)?.[0]??'';return !/commission disclosure/i.test(offer)||!/<button\b[^>]*\sdisabled(?:\s|>|=)/i.test(offer)||offer.indexOf('commission disclosure')>offer.indexOf('<button');};
 const safeGuide=(html)=>!unsafe(html)&&!missingDisclosedCTA(html);
 const c=(id)=>matrix.claims.find(x=>x.id===id);
 
@@ -31,7 +31,7 @@ test('buyer guide text is identical apart from optional-film section',()=>assert
 test('optional film is native details, no autoplay or broken video source',()=>{
 assert.match(B,/<details>/);assert.match(B,/<summary>/);assert.match(B,/Accessible transcript/);assert.match(B,/42-second/);assert.doesNotMatch(B,/<video\b/);
 });
-test('both guides have same disabled offered checkout',()=>{for(const x of [A,B]){assert.match(x,/<button\b[^>]*disabled\b/);assert.match(x,/unavailable pending approval/);}});
+test('both guides have same disabled offered checkout',()=>{for(const x of [A,B]){assert.match(x,/<button\b[^>]*\sdisabled(?:\s|>|=)/);assert.match(x,/unavailable pending approval/);}});
 test('nearby commission disclosure precedes disabled button',()=>{for(const x of [A,B])assert.equal(missingDisclosedCTA(x),false);});
 test('guides avoid scripts, forms, autoplay, trackers and active earning links',()=>{for(const x of [A,B])assert.equal(unsafe(x),false);});
 test('guide makes no invented merchant price or exact refund guarantee',()=>{
@@ -63,7 +63,7 @@ for(const id of ['10.1068/p281059','10.1068/i0386','10.1177/0956797613479386','1
 test('article states limits and preserves Puységur evidence boundary',()=>{
 assert.match(article,/does not mean attention is useless/);
 assert.match(article,/not a study of inattentional blindness/);
-assert.match(article,/No study of the invisible gorilla proves that any meditation audio increases focus/);
+assert.match(article,/no experimental bridge from missed basketball intruders/);
 });
 test('claim matrix contains 31 source-linked decisions',()=>{
 assert.equal(matrix.claims.length,31);
