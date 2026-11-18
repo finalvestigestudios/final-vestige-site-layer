@@ -1,0 +1,121 @@
+<section id="fv-catalog-door" aria-labelledby="fv-catalog-door-title">
+<style>
+#fv-catalog-door{--fv-ink:#25352f;--fv-soft:#53645b;--fv-line:#d8ded6;--fv-gold:#906a36;--fv-page:#f8f7f2;--fv-night:#182e28;color:var(--fv-ink);max-width:1040px;margin:clamp(2rem,5vw,4rem) auto;overflow-wrap:anywhere;font:inherit;line-height:1.7}
+#fv-catalog-door *{box-sizing:border-box}
+#fv-catalog-door .fv-top{border-top:3px solid var(--fv-gold);padding:1.4rem clamp(1rem,4vw,2.8rem) 1.9rem;background:var(--fv-page)}
+#fv-catalog-door .fv-kicker{color:var(--fv-gold);font-size:.83rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+#fv-catalog-door h2,#fv-catalog-door h3,#fv-catalog-door h4{line-height:1.25;letter-spacing:-.014em;color:var(--fv-night);margin:1.4em 0 .5em}
+#fv-catalog-door h2{font-size:clamp(1.8rem,3.8vw,2.65rem);margin:.45em 0 .45em}
+#fv-catalog-door h3{font-size:clamp(1.25rem,2.6vw,1.72rem)}
+#fv-catalog-door h4{font-size:1.12rem}
+#fv-catalog-door .fv-lead{font-size:clamp(1.03rem,1.5vw,1.2rem);max-width:70ch}
+#fv-catalog-door p,#fv-catalog-door li{max-width:82ch}
+#fv-catalog-door .fv-inner{padding:0 clamp(.3rem,2vw,1.2rem)}
+#fv-catalog-door .fv-rule{border-top:1px solid var(--fv-line);padding-top:1rem;margin-top:2.5rem}
+#fv-catalog-door a{color:#125d59;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.15em}
+#fv-catalog-door a:hover{color:#824e15}
+#fv-catalog-door :is(a,button,input,textarea):focus-visible{outline:3px solid #206a76;outline-offset:3px}
+#fv-catalog-door .fv-schematic{border:1px solid var(--fv-line);background:#f4f7f4;padding:clamp(.6rem,2vw,1.4rem);margin:1.5rem 0}
+#fv-catalog-door svg{display:block;width:100%;height:auto;max-height:340px}
+#fv-catalog-door figcaption{font-size:.89rem;color:var(--fv-soft);line-height:1.55;margin-top:.65rem}
+#fv-catalog-door .fv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.95rem;margin:1.25rem 0}
+#fv-catalog-door .fv-cell{border:1px solid var(--fv-line);padding:1.05rem 1.15rem;background:white;min-width:0}
+#fv-catalog-door .fv-cell h4{margin:0 0 .4rem}
+#fv-catalog-door .fv-cell p{margin:.3rem 0}
+#fv-catalog-door .fv-note{padding:1rem 1.15rem;border-left:3px solid var(--fv-gold);background:var(--fv-page);margin:1.3rem 0}
+#fv-catalog-door .fv-steps{counter-reset:fv-step;list-style:none;padding:0}
+#fv-catalog-door .fv-steps li{counter-increment:fv-step;padding:.9rem 0 .9rem 3.1rem;border-bottom:1px solid var(--fv-line);position:relative}
+#fv-catalog-door .fv-steps li:before{content:counter(fv-step,decimal-leading-zero);position:absolute;left:0;top:.8rem;font-size:1.1rem;font-weight:800;color:var(--fv-gold)}
+#fv-catalog-door .fv-paper{border:1px solid #bbc4ba;background:#fffdf7;padding:clamp(.9rem,3vw,2rem);margin:1.3rem 0}
+#fv-catalog-door .fv-paper h3{margin-top:0}
+#fv-catalog-door .fv-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+#fv-catalog-door .fv-field{display:block;min-width:0;font-size:.87rem;font-weight:700;color:var(--fv-ink)}
+#fv-catalog-door .fv-field input,#fv-catalog-door .fv-field textarea{display:block;width:100%;min-width:0;margin-top:.4rem;font:inherit;font-weight:400;color:#1c2c29;border:1px solid #abb8ad;border-radius:3px;background:#fff;padding:.58rem .65rem}
+#fv-catalog-door .fv-field textarea{min-height:5.2rem;resize:vertical}
+#fv-catalog-door .fv-wide{grid-column:1/-1}
+#fv-catalog-door .fv-sources{padding-left:1.4rem}
+#fv-catalog-door .fv-sources li{margin:.65rem 0}
+#fv-catalog-door .fv-meta{font-size:.89rem;color:var(--fv-soft)}
+@media(max-width:620px){#fv-catalog-door .fv-grid,#fv-catalog-door .fv-fields{grid-template-columns:1fr}#fv-catalog-door .fv-top{padding-left:1rem;padding-right:1rem}#fv-catalog-door .fv-wide{grid-column:auto}#fv-catalog-door .fv-steps li{padding-left:2.6rem}}
+@media print{#fv-catalog-door{color:#000;background:#fff;margin:0;max-width:none;font-size:10.5pt}#fv-catalog-door .fv-top{background:#fff;padding:.7rem 0}#fv-catalog-door .fv-paper{break-inside:avoid;background:#fff}#fv-catalog-door .fv-grid{grid-template-columns:repeat(2,1fr)}#fv-catalog-door a{color:#000}#fv-catalog-door a:after{content:" (" attr(href) ")";font-size:8pt;overflow-wrap:anywhere}#fv-catalog-door .fv-field input,#fv-catalog-door .fv-field textarea{border:0;border-bottom:1px solid #333;background:transparent}#fv-catalog-door .fv-schematic{break-inside:avoid;background:white}#fv-catalog-door h3{break-after:avoid}}
+</style>
+<div class="fv-top">
+<p class="fv-kicker">The Log Was Not the Voyage · Access rescue / Original field instrument</p>
+<h2 id="fv-catalog-door-title">The Catalog Door Sticks</h2>
+<p class="fv-lead">You have the vessel. You have the date. Perhaps you even have an archive number. Then the record page fails to load. That is a failure of access, not a finding about history.</p>
+<p>An error screen can look like a dead end because it arrives where the evidence ought to be. But a server response, a catalogue description, an attached scan and a preserved original are four different things. A historian who collapses them can accidentally turn an unreliable connection into a claim that a record never existed.</p>
+<p>This field instrument is for that particular moment: the archive link times out, returns an access error, or opens a catalogue shell without the description you need. It helps you keep the locator, find a second institutional route and make a useful request to the right custodian. It does not claim to restore an inaccessible source or to prove the contents of a file we could not open.</p>
+</div>
+<div class="fv-inner">
+<figure class="fv-schematic">
+<svg viewBox="0 0 920 280" role="img" aria-labelledby="fv-catalog-svg-title fv-catalog-svg-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="fv-catalog-svg-title">Four separate thresholds between a URL and archival evidence</title>
+<desc id="fv-catalog-svg-desc">A record may have a saved URL, a readable catalogue description, an accessible digital object and an inspected original. The first three do not guarantee the next. A failed webpage remains at the access layer, not the historical conclusion.</desc>
+<rect x="8" y="24" width="200" height="130" rx="10" fill="#e7efeb" stroke="#9db5a8"/>
+<rect x="242" y="24" width="200" height="130" rx="10" fill="#e7efeb" stroke="#9db5a8"/>
+<rect x="476" y="24" width="200" height="130" rx="10" fill="#e7efeb" stroke="#9db5a8"/>
+<rect x="710" y="24" width="202" height="130" rx="10" fill="#e7efeb" stroke="#9db5a8"/>
+<g font-family="system-ui,sans-serif" fill="#18332e" text-anchor="middle">
+<text x="108" y="66" font-size="24" font-weight="700">01</text><text x="108" y="94" font-size="17" font-weight="700">Saved locator</text><text x="108" y="118" font-size="14">URL / NAID / citation</text>
+<text x="342" y="66" font-size="24" font-weight="700">02</text><text x="342" y="94" font-size="17" font-weight="700">Description</text><text x="342" y="118" font-size="14">Series / date / holder</text>
+<text x="576" y="66" font-size="24" font-weight="700">03</text><text x="576" y="94" font-size="17" font-weight="700">Digital object</text><text x="576" y="118" font-size="14">Scanned pages / files</text>
+<text x="811" y="66" font-size="24" font-weight="700">04</text><text x="811" y="94" font-size="17" font-weight="700">Source examined</text><text x="811" y="118" font-size="14">Scope and page checked</text>
+</g>
+<g stroke="#a87634" stroke-width="4" stroke-linecap="round" fill="none"><path d="M211 87 H238"/><path d="M231 80 L239 87 L231 94"/><path d="M445 87 H472"/><path d="M465 80 L473 87 L465 94"/><path d="M679 87 H705"/><path d="M697 80 L706 87 L697 94"/></g>
+<path d="M110 161 V194 H811 V160" stroke="#a87634" stroke-width="3" stroke-dasharray="8 7" fill="none"/>
+<rect x="205" y="199" width="511" height="58" rx="8" fill="#fffaf0" stroke="#ac8753"/>
+<text x="460" y="221" font-family="system-ui,sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#513916">A failure at one door is not proof about the next.</text>
+<text x="460" y="242" font-family="system-ui,sans-serif" font-size="13" text-anchor="middle" fill="#513916">Mark the last threshold you actually verified.</text>
+</svg>
+<figcaption>Original Final Vestige Studios evidence-access schematic, November 18, 2026. Not a diagram of a specific government system or historical document; no third-party scans or imagery used. Text equivalent is supplied inside the SVG.</figcaption>
+</figure>
+<h3>First, name the failure accurately</h3>
+<div class="fv-grid">
+<div class="fv-cell"><h4>403 or blocked</h4><p>Your request was refused, or the research client was not permitted through. It does <strong>not</strong> establish that the underlying record was withdrawn or destroyed.</p></div>
+<div class="fv-cell"><h4>429 or rate limited</h4><p>The server has restricted requests. Record the clock time and the affected address; try later or through the institution's normal search interface. Do not hammer the service.</p></div>
+<div class="fv-cell"><h4>Timeout, 502 or blank shell</h4><p>A page or application failed to deliver usable content. A visible site frame without its record metadata is not confirmation of that record's title, date or identity.</p></div>
+<div class="fv-cell"><h4>Working description, no scan</h4><p>This is a stronger result: a described series or item may exist without accessible images. Read its access notes, rights restrictions, series context and holding location before asking for a copy.</p></div>
+</div>
+<div class="fv-note"><strong>Different question, different guide.</strong> This page diagnoses an online access failure. Whether a ship's log was created, retained, transferred, restricted, or simply silent is examined in <a href="https://finalvestige.com/free-resources/ship-logbook-missing-record/">A Missing Log Has More Than One Meaning</a> (companion draft, not yet publicly released).</div>
+<h3>Six moves that protect the evidence trail</h3>
+<ol class="fv-steps">
+<li><strong>Keep the exact locator.</strong> Record the full URL, archive identifier, title as displayed, repository, and the timestamp of your attempt. Save the error text, not a misleading “record missing” note. Do not publish private account details or access tokens that may appear in the address.</li>
+<li><strong>Move up one level.</strong> Re-enter through the institution's <a href="https://www.archives.gov/research/catalog/help/using">Catalog help and search interface</a>. Search the unique record identifier separately from the vessel name; then use the record-group, series, vessel name, hull number and date to distinguish similar hits. NARA's <a href="https://www.archives.gov/research/military/logbooks/digitized-logs">deck-log guide</a> recommends searching without the “USS” prefix and adding “Deck Log,” hull number and year where useful.</li>
+<li><strong>Check the kind of online availability.</strong> NARA says some digitized logs have searchable images while its predefined logbook links do not cover every digitized item. For permanent electronic records, its <a href="https://www.archives.gov/research/electronic-records/access-in-catalog-faqs">electronic-record access FAQ</a> explains how descriptions and actual downloadable files differ. That FAQ is specific to its Electronic Records Division, not an inventory rule for every paper logbook.</li>
+<li><strong>Use a separate institutional witness.</strong> A Navy ship history can establish vessel identity and periods of service; it is not a substitute for the daily deck log. For instance, the Naval History and Heritage Command's <a href="https://www.history.navy.mil/research/histories/ship-histories/danfs/a/abbot-dd-629-ii.html">Abbot II (DD-629) history</a> identifies recommissioning on February 26, 1951. It does not establish the contents of any particular February 1951 log page.</li>
+<li><strong>Ask the custodian, not the error screen.</strong> NARA's <a href="https://www.archives.gov/research/order">copy-ordering guidance</a> warns that reference staff can perform only limited searches and that some enquiries require in-person research. Ask first whether the precise series and date are held, open and retrievable, and whether a scan or reproduction can be requested; do not assume a free digital copy exists. Fees and restrictions may apply.</li>
+<li><strong>Write a provisional finding.</strong> Say “the cited catalogue page could not be inspected using this access route on [date], and the underlying record remains unverified here.” If an archivist later confirms its existence or sends pages, update your receipt and distinguish that new evidence from your earlier inference.</li>
+</ol>
+<h3>A small case, honestly bounded</h3>
+<p>Suppose your question concerns <em>Abbot</em> (DD-629) in February 1951. The Navy's official historical account establishes that the destroyer returned to commissioned status on February 26 of that year. NARA's deck-log guidance supplies the right research family and a search method. A previously cited Catalog URL with identifier <a href="https://catalog.archives.gov/id/285104169">285104169</a> could not be independently inspected in this research environment on November 18, 2026. The correct conclusion is <strong>not</strong> “the February log is gone,” nor “the page definitely contains the ship's daily movements.” It is that a candidate locator exists but its particular record description and images remain unverified here. The next defensible step is to search the Catalog directly or ask NARA to confirm the identifier, series and months covered.</p>
+<p>A verified ship history, a candidate archival identifier, and a daily source document have different evidentiary weight. They should never be merged into a single “source checked” line.</p>
+<div class="fv-paper" aria-labelledby="fv-catalog-receipt-title">
+<h3 id="fv-catalog-receipt-title">The Access Failure Receipt</h3>
+<p class="fv-meta">Fill on your device and print, or print blank. No submit button, account connection, automatic storage, tracking, external request or paid service is attached to these fields. Browser print behaviour varies; for a permanent digital record, copy your responses into your own notes.</p>
+<div class="fv-fields">
+<label class="fv-field">Vessel and identifying number<input type="text" autocomplete="off" placeholder="Name · hull or official number"></label>
+<label class="fv-field">Target event date or range<input type="text" autocomplete="off" placeholder="Include date convention if known"></label>
+<label class="fv-field">Institution / record group / series<input type="text" autocomplete="off" placeholder="What the finding aid actually says"></label>
+<label class="fv-field">Exact catalogue identifier<input type="text" autocomplete="off" placeholder="NAID or other unique number"></label>
+<label class="fv-field fv-wide">Record URL (remove any private access token)<input type="url" autocomplete="off" placeholder="https://"></label>
+<label class="fv-field">Checked date and time, with zone<input type="text" autocomplete="off" placeholder="2026-11-18, local/UTC"></label>
+<label class="fv-field">Observed response / last threshold reached<input type="text" autocomplete="off" placeholder="403, metadata only, scan inspected…"></label>
+<label class="fv-field fv-wide">Second institutional route checked<textarea placeholder="Official guide, reference page, alternative catalogue query, or archivist correspondence"></textarea></label>
+<label class="fv-field fv-wide">Precisely what remains unverified<textarea placeholder="Do not imply source pages were read when only an index was available"></textarea></label>
+<label class="fv-field fv-wide">Next request and later response<textarea placeholder="Institution, date, requested series and page range; later custodian response and restrictions"></textarea></label>
+</div>
+</div>
+<h3>Source and provenance ledger</h3>
+<ol class="fv-sources">
+<li><a href="https://www.archives.gov/research/military/logbooks/digitized-logs">National Archives — Digitized Deck Logs</a>. NARA, institutional guidance; checked November 18, 2026. Search terms, continuing digitization, predefined-link incompleteness, and post-1970 review limitations. Directly inspected text; no logbook images copied.</li>
+<li><a href="https://www.archives.gov/research/catalog/help/using">National Archives — Using the Catalog</a>. NARA, institutional help; checked November 18, 2026. Catalogue search and account/access context; guidance, not proof that any candidate NAID identifies a particular item.</li>
+<li><a href="https://www.archives.gov/research/electronic-records/access-in-catalog-faqs">National Archives — Accessing Electronic Records in the Catalog</a>. NARA, Electronic Records Division FAQ; checked November 18, 2026. Scope limited to described permanent Federal electronic records; not a blanket statement about naval paper files.</li>
+<li><a href="https://www.archives.gov/research/order">National Archives — How to Obtain Copies of Records</a>. NARA, request and reproduction guidance; checked November 18, 2026. Restrictions, fees and limits on staff searching.</li>
+<li><a href="https://www.history.navy.mil/research/histories/ship-histories/danfs/a/abbot-dd-629-ii.html">Naval History and Heritage Command — Abbot II (DD-629)</a>. Historical account by Raymond A. Mann, dated November 2, 1981; online agency presentation. Indexed institutional text checked November 18, 2026; direct research retrieval has intermittently returned gateway errors. This verifies the source's reported vessel history, not a log page.</li>
+<li><a href="https://www.archives.gov/research/catalog/help/api">National Archives — Catalog API terms</a>. NARA, checked November 18, 2026. The alternative API requires an issued key; do not paste keys into a public website or scrape around access limits. No API call was made for this resource.</li>
+<li><a href="https://www.archives.gov/research/still-pictures/permissions">National Archives — Copyright and Permissions</a>. NARA, institutional rights guidance; last checked November 18, 2026. Holdings may include third-party rights even when in federal custody; item-level reuse review is required before importing an image.</li>
+</ol>
+<p class="fv-meta"><strong>Art and rights.</strong> The text, layout, field slip and diagram were created as original Final Vestige Studios editorial material on November 18, 2026. No historical scan, institutional seal, photo or third-party artwork is reproduced. All external sources are linked rather than rehosted; any future archival-media use needs item-specific rights, attribution, date, caption and alt review. The diagram is an instructional abstraction, never a facsimile.</p>
+<p class="fv-meta"><strong>Editorial status:</strong> drafted November 18, 2026; production-theme/browser acceptance and first-publication subscriber/social suppression remain unverified. Related methods: <a href="https://finalvestige.com/the-archive-trail/">The Archive Trail</a>, <a href="https://finalvestige.com/free-resources/the-box-behind-the-citation/">The Box Behind the Citation</a>, and <a href="https://finalvestige.com/editorial-standards/">Editorial Standards</a>. This section does not revise those resources or independently certify the candidate Catalog item.</p>
+</div>
+</section>
