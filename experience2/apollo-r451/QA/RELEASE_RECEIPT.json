@@ -1,0 +1,57 @@
+{
+  "sprint": "R451",
+  "purpose": "Apollo source custody and conversion-readiness gate",
+  "tested_at": "2026-11-18",
+  "base_commit": "935caabcb1c093dcf5c5c0ca8b7731c1a86808c1",
+  "source": {
+    "committed_paths": [
+      "experience2/apollo-r451/qa/release_guard.py",
+      "experience2/apollo-r451/qa/test_release_guard.py",
+      "experience2/apollo-r451/README.md",
+      "experience2/apollo-r451/CONVERSION_ACCEPTANCE.md",
+      "experience2/apollo-r451/QA/RELEASE_RECEIPT.json"
+    ],
+    "github_blob_sha": {
+      "qa/release_guard.py": "8d6cb6e505f31b200244724ad939659ea81c0428",
+      "qa/test_release_guard.py": "1e609c96f90d5c9a8bac3199de427ec6579b1d9e",
+      "README.md": "59f39b7fce43d27f2fe6b897fd7664100649f453",
+      "CONVERSION_ACCEPTANCE.md": "d42180c699bf81f436eba0c3b0f4021122817b6c"
+    },
+    "nasa_source_manifest_sha256": "744ec9c2ca46693f116c7ea5a1edf4ec3416083384e11ade0d0b63ca900a9411"
+  },
+  "executed": {
+    "source_controlled_R451_python_assertions": {
+      "passed": 14,
+      "failed": 0,
+      "basis": "actual Github-blob-exact local Python code, inherited R448/R450 source inputs; not production"
+    },
+    "separate_uncommitted_local_R451_review_preview_Chromium_cases": {
+      "passed": 19,
+      "failed": 0,
+      "basis": "offline HTML page.set_content, 320..1920 JS/noJS plus keyboard/touch/zoom/forced colors/reduced motion; NOT installed WP"
+    },
+    "separate_local_preview_selftests": {
+      "passed": 10,
+      "failed": 0
+    },
+    "deterministic_offline_evidence_zip": {
+      "path": "experience2/apollo-r451/QA/evidence_bundle.zip (working-container only; NOT GitHub committed)",
+      "sha256": "931f79477c06971c2bccef4e0a1a617f14f0a9587383fc031d282eecaabd2d9f",
+      "entries": 33,
+      "twice_byte_identical": true
+    }
+  },
+  "not_run": [
+    "real navigated HTTPS WordPress staging",
+    "actual independently reviewed axe-core WCAG report",
+    "navigated lab LCP/CLS",
+    "independent screen-reader acceptance",
+    "field p75 Core Web Vitals/INP",
+    "authenticated real paid purchase/refunds/fees/qualified humans",
+    "verified published Apollo Grok asset+link"
+  ],
+  "release": "DRAFT_HARD_HOLD",
+  "no_merge_or_deployment": true,
+  "checkout_not_enabled": true,
+  "attribution": "No confirmed sales, lead, human sessions or revenue figures; do not equate a CTA click/checkout start/affiliate click with settled paid purchase"
+}
