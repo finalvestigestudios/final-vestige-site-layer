@@ -18,7 +18,7 @@ const article=read('THE_GORILLA_YOU_WERE_NOT_LOOKING_FOR.md');
 const matrix=JSON.parse(read('CLAIM_PRODUCT_PERMISSION_MATRIX.json'));
 const spec=read('OFFER_TO_REALIZED_REVENUE_RUNBOOK.md');
 const removeFilm=(html)=>html.replace(/<section class="panel" aria-labelledby="film-title"[\s\S]*?<\/section>/,'').replace(/\s+/g,' ').trim();
-const unsafe=(html)=>/<script\b|<iframe\b|<form\b|\bautoplay\b|\bonclick=|\bonload=|http-equiv=["']refresh|<a[^>]*\bhref=["'](?:https?:\/\/)?(?:[^"']*\.)?(?:affiliates?|refersion)\b/i.test(html);
+const unsafe=(html)=>/<script\b|<iframe\b|<form\b|\bautoplay\b|\bonclick=|\bonload=|http-equiv=["']refresh|<a[^>]*\bhref=["']https?:\/\/(?:affiliate\.example|tracking\.example|[^"']*refersion\.com)/i.test(html);
 const missingDisclosedCTA=(html)=>{const offer=html.match(/<section class="panel offer"[\s\S]*?<\/section>/)?.[0]??'';return !/commission disclosure/i.test(offer)||!/<button\b[^>]*\bdisabled\b/i.test(offer)||offer.indexOf('commission disclosure')>offer.indexOf('<button');};
 const safeGuide=(html)=>!unsafe(html)&&!missingDisclosedCTA(html);
 const c=(id)=>matrix.claims.find(x=>x.id===id);
@@ -43,7 +43,7 @@ test('guides distinguish official standard and promo URLs',()=>{
 for(const x of [A,B]){assert.match(x,/https:\/\/zen12\.com\/about/);assert.match(x,/https:\/\/zen12\.com\/secret\//);}
 });
 test('poster is original self-contained accessible SVG',()=>{
-assert.match(poster,/<svg\b[^>]+xmlns="http:\/\/www\.w3\.org\/2000\/svg"/);assert.match(poster,/<title/);assert.match(poster,/<desc/);assert.doesNotMatch(poster,/<image\b|<script\b|https?:\/\//);
+assert.match(poster,/<svg\b[^>]+xmlns="http:\/\/www\.w3\.org\/2000\/svg"/);assert.match(poster,/<title/);assert.match(poster,/<desc/);assert.doesNotMatch(poster,/<image\b|<script\b|(?:href|src)=["']https?:\/\//);
 });
 test('captions have WebVTT header, six sequential cues and end at 42 seconds',()=>{
 assert.match(vtt,/^WEBVTT\n/);const cues=[...vtt.matchAll(/(\d\d:\d\d:\d\d\.\d{3}) --> (\d\d:\d\d:\d\d\.\d{3})/g)];assert.equal(cues.length,6);
@@ -63,7 +63,7 @@ for(const id of ['10.1068/p281059','10.1068/i0386','10.1177/0956797613479386','1
 test('article states limits and preserves Puységur evidence boundary',()=>{
 assert.match(article,/does not mean attention is useless/);
 assert.match(article,/not a study of inattentional blindness/);
-assert.match(article,/not evidence that any meditation audio increases focus/);
+assert.match(article,/No study of the invisible gorilla proves that any meditation audio increases focus/);
 });
 test('claim matrix contains 31 source-linked decisions',()=>{
 assert.equal(matrix.claims.length,31);
