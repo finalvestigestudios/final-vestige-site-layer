@@ -61,6 +61,10 @@ function preservesPixelGeometry(before,after) {
      after.raster_height_px>before.raster_height_px)return false;
   if(Math.max(after.raster_width_px,after.raster_height_px)<
      Math.min(480,Math.max(before.raster_width_px,before.raster_height_px)))return false;
+  // Keep the independent DOM legibility check: a tiny density-corrected image
+  // must not pass merely because the claimed response-body raster is large.
+  if(Math.max(after.natural_width,after.natural_height)<
+     Math.min(480,Math.max(before.natural_width,before.natural_height)))return false;
   return Math.abs((after.raster_width_px/after.raster_height_px)/
     (before.raster_width_px/before.raster_height_px)-1)<=0.02;
 }
