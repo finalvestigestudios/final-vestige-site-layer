@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+<title id="title">Original Mind and Perception audio-guide poster</title><desc id="desc">Two overlapping circles identify observed experience and proposed explanation, separated by a question mark; this is a conceptual illustration, not documentary footage.</desc>
+<rect width="960" height="540" fill="#152d35"/><rect x="31" y="31" width="898" height="478" rx="6" fill="none" stroke="#9e8158" stroke-width="2"/>
+<text x="77" y="102" font-family="Georgia,serif" font-size="22" fill="#dcc39a" letter-spacing="3">FINAL VESTIGE  /  MIND ARCHIVE</text>
+<text x="77" y="172" font-family="Georgia,serif" font-size="45" fill="#f6f0e4">What you feel.</text>
+<text x="77" y="226" font-family="Georgia,serif" font-size="45" fill="#f6f0e4">What evidence proves.</text>
+<circle cx="326" cy="340" r="87" fill="#35525b" stroke="#bca078" stroke-width="2"/>
+<circle cx="627" cy="340" r="87" fill="#35525b" stroke="#bca078" stroke-width="2"/>
+<path d="M420 339H526" stroke="#e2ba7e" stroke-width="2" stroke-dasharray="8 8"/>
+<text x="320" y="341" text-anchor="middle" fill="#f6f0e4" font-family="sans-serif" font-size="21">Experience</text>
+<text x="626" y="341" text-anchor="middle" fill="#f6f0e4" font-family="sans-serif" font-size="21">Explanation</text>
+<text x="470" y="328" text-anchor="middle" fill="#e2ba7e" font-family="Georgia,serif" font-size="44">?</text>
+<text x="78" y="475" font-family="sans-serif" font-size="20" fill="#dddbd0">42-second original evidence primer · captions and transcript provided</text>
+</svg>
