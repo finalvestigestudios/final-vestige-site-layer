@@ -1,0 +1,552 @@
+{
+  "version": "Mind R469 / 2026-11-18",
+  "sources": {
+    "r1992": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+    "r1995": "https://pubmed.ncbi.nlm.nih.gov/7707027/",
+    "r2007": "https://doi.org/10.1007/s00426-005-0029-z",
+    "med2007": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+    "med2014": "https://pubmed.ncbi.nlm.nih.gov/24322326/",
+    "eeg2023": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "ftc_aff": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "inspire": "https://inspire3.com/",
+    "zen_about": "https://zen12.com/about",
+    "zen_promo": "https://zen12.com/secret/",
+    "focus": "https://finalvestige.com/focus/",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "mesmer": "https://finalvestige.com/2026/11/02/mesmerism/"
+  },
+  "claim_decisions": [
+    {
+      "id": "AB01",
+      "claim": "1992 RSVP target/probe short-lived deficit",
+      "status": "research",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/1500880/"
+      ],
+      "limitation": "task specific"
+    },
+    {
+      "id": "AB02",
+      "claim": "1992 probe dip from about 180ms for a 270ms window",
+      "status": "research",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/1500880/"
+      ],
+      "limitation": "not universal"
+    },
+    {
+      "id": "AB03",
+      "claim": "1992 blank intervals and demands altered deficit",
+      "status": "research",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/1500880/"
+      ],
+      "limitation": "critical control"
+    },
+    {
+      "id": "AB04",
+      "claim": "1995 second-target task 200 to 500ms deficit",
+      "status": "research",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/7707027/"
+      ],
+      "limitation": "design-specific"
+    },
+    {
+      "id": "AB05",
+      "claim": "2007 adjacent targets sometimes escape blink",
+      "status": "research",
+      "source_urls": [
+        "https://doi.org/10.1007/s00426-005-0029-z"
+      ],
+      "limitation": "counterexample"
+    },
+    {
+      "id": "AB06",
+      "claim": "attention universally shuts off half a second",
+      "status": "exclude",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/1500880/"
+      ],
+      "limitation": "false extrapolation"
+    },
+    {
+      "id": "MED01",
+      "claim": "2007 intensive meditation training linked to altered attentional blink/P3b",
+      "status": "contextual-research",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/17488185/"
+      ],
+      "limitation": "no audio tested"
+    },
+    {
+      "id": "MED02",
+      "claim": "2014 open monitoring effect in advanced meditators",
+      "status": "contextual-research",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/24322326/"
+      ],
+      "limitation": "very experienced population"
+    },
+    {
+      "id": "MED03",
+      "claim": "12-minute MP3 reproduces advanced training benefit",
+      "status": "exclude",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/24322326/"
+      ],
+      "limitation": "not studied"
+    },
+    {
+      "id": "EEG01",
+      "claim": "2023 binaural EEG review included 14 studies",
+      "status": "research",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/37205669/"
+      ],
+      "limitation": "none established Zen12 outcome"
+    },
+    {
+      "id": "EEG02",
+      "claim": "2023 review five favorable eight contrary one mixed",
+      "status": "research",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/37205669/"
+      ],
+      "limitation": "method heterogeneity"
+    },
+    {
+      "id": "EEG03",
+      "claim": "all audio automatically entrains EEG",
+      "status": "exclude",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/37205669/"
+      ],
+      "limitation": "not proven"
+    },
+    {
+      "id": "ZEN01",
+      "claim": "12 levels of 12-minute sessions",
+      "status": "seller-described",
+      "source_urls": [
+        "https://zen12.com/about"
+      ],
+      "limitation": "fulfillment not tested"
+    },
+    {
+      "id": "ZEN02",
+      "claim": "four listening styles",
+      "status": "seller-described",
+      "source_urls": [
+        "https://zen12.com/about"
+      ],
+      "limitation": "format only"
+    },
+    {
+      "id": "ZEN03",
+      "claim": "promotional page lists 48 MP3s and extras",
+      "status": "seller-described",
+      "source_urls": [
+        "https://zen12.com/secret/"
+      ],
+      "limitation": "distinct funnel"
+    },
+    {
+      "id": "ZEN04",
+      "claim": "hour of meditation compressed into twelve minutes",
+      "status": "seller-claim-excluded",
+      "source_urls": [
+        "https://zen12.com/about"
+      ],
+      "limitation": "no direct proof"
+    },
+    {
+      "id": "ZEN05",
+      "claim": "guaranteed health or mental benefit",
+      "status": "seller-claim-excluded",
+      "source_urls": [
+        "https://zen12.com/about"
+      ],
+      "limitation": "FTC health proof absent"
+    },
+    {
+      "id": "ZEN06",
+      "claim": "exact final checkout price for FV referral",
+      "status": "unverified",
+      "source_urls": [
+        "https://zen12.com/secret/"
+      ],
+      "limitation": "dynamic promo not official affiliate quote"
+    },
+    {
+      "id": "ZEN07",
+      "claim": "approved return contract for a specific FV SKU",
+      "status": "unverified",
+      "source_urls": [
+        "https://zen12.com/secret/"
+      ],
+      "limitation": "not authenticated"
+    },
+    {
+      "id": "ZEN08",
+      "claim": "FV partner acceptance",
+      "status": "unverified",
+      "source_urls": [
+        "https://inspire3.com/"
+      ],
+      "limitation": "generic pending email only"
+    },
+    {
+      "id": "ZEN09",
+      "claim": "authorized earning link and promotion channels",
+      "status": "unverified",
+      "source_urls": [
+        "https://inspire3.com/"
+      ],
+      "limitation": "no issued link"
+    },
+    {
+      "id": "ZEN10",
+      "claim": "paid commission or settlement",
+      "status": "unverified",
+      "source_urls": [
+        "https://inspire3.com/"
+      ],
+      "limitation": "no payout record"
+    },
+    {
+      "id": "FV01",
+      "claim": "52-page Focus Fieldbook is live and free",
+      "status": "live-observation",
+      "source_urls": [
+        "https://finalvestige.com/focus/"
+      ],
+      "limitation": "not a paid product"
+    },
+    {
+      "id": "FV02",
+      "claim": "Puységur archive preserves failed predictions and ethics",
+      "status": "live-observation",
+      "source_urls": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "limitation": "not clinical proof"
+    },
+    {
+      "id": "FV03",
+      "claim": "Change Blindness and Mesmerism are published",
+      "status": "live-observation",
+      "source_urls": [
+        "https://finalvestige.com/2026/11/02/change-blindness/"
+      ],
+      "limitation": "not Grok asset verification"
+    },
+    {
+      "id": "FTC01",
+      "claim": "Affiliate material connection requires conspicuous near-CTA statement",
+      "status": "guidance",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "limitation": "link adjacent"
+    },
+    {
+      "id": "FTC02",
+      "claim": "health efficacy claims require adequate science",
+      "status": "guidance",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limitation": "product-specific when necessary"
+    },
+    {
+      "id": "VIDEO01",
+      "claim": "optional film improves actual paid conversions",
+      "status": "untested-hypothesis",
+      "source_urls": [],
+      "limitation": "not tested"
+    },
+    {
+      "id": "METRIC01",
+      "claim": "affiliate_click equals paid sale",
+      "status": "exclude",
+      "source_urls": [],
+      "limitation": "ledger needed"
+    },
+    {
+      "id": "METRIC02",
+      "claim": "net per 1000 qualified sessions calculable",
+      "status": "unverified",
+      "source_urls": [],
+      "limitation": "missing numerator and denominator"
+    },
+    {
+      "id": "ASSET01",
+      "claim": "three real published matched Grok asset IDs",
+      "status": "unverified",
+      "source_urls": [],
+      "limitation": "Praxxis must verify"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "acceptance": "Publisher named approval",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G02",
+      "acceptance": "Web channel permission",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G03",
+      "acceptance": "Social channel permission",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G04",
+      "acceptance": "Email permission",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G05",
+      "acceptance": "SKU ID verified",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G06",
+      "acceptance": "Issued earning URL verified",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G07",
+      "acceptance": "Creative and copyright license",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G08",
+      "acceptance": "Checkout currency and actual price",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G09",
+      "acceptance": "Refund contract and exclusions",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G10",
+      "acceptance": "Payout and fee settlement terms",
+      "owner": "Founder/Commerce",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G11",
+      "acceptance": "Owned payable FV Mind SKU, if fallback",
+      "owner": "Founder/Claude",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G12",
+      "acceptance": "Owned product delivery and refunds",
+      "owner": "Founder/Claude",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G13",
+      "acceptance": "Product health claims independently substantiated",
+      "owner": "Mind/Site QA",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G14",
+      "acceptance": "FTC near-link disclosure QA",
+      "owner": "Mind/Site QA",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G15",
+      "acceptance": "A text-only buying guide real-browser QA",
+      "owner": "Site QA",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G16",
+      "acceptance": "B playable 42-second MP4 hosted",
+      "owner": "Mind/Site QA",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G17",
+      "acceptance": "Poster/captions/transcript timing",
+      "owner": "Site QA",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G18",
+      "acceptance": "No flashing/accessibility hazards",
+      "owner": "Site QA",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G19",
+      "acceptance": "360–1920 viewport checks",
+      "owner": "Site QA",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G20",
+      "acceptance": "WordPress sanitizer staging render",
+      "owner": "Claude/Site QA",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G21",
+      "acceptance": "Lighthouse and page-load budget",
+      "owner": "Site QA",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G22",
+      "acceptance": "No-JS keyboard and reduced motion check",
+      "owner": "Site QA",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G23",
+      "acceptance": "3 actual Grok published assets",
+      "owner": "Praxxis/Grok",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G24",
+      "acceptance": "Grok spoken claims/rights verified",
+      "owner": "Praxxis/Grok",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G25",
+      "acceptance": "Mobile CTA working after creator approval",
+      "owner": "Praxxis/Grok",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G26",
+      "acceptance": "Single existing Jetpack confirmation",
+      "owner": "Claude/Dispatch",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G27",
+      "acceptance": "Existing welcome message delivery",
+      "owner": "Claude/Dispatch",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G28",
+      "acceptance": "Existing analytics consent accepted",
+      "owner": "Claude",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G29",
+      "acceptance": "No duplicate scripts or signup list",
+      "owner": "Claude",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G30",
+      "acceptance": "Click distinct from paid conversion",
+      "owner": "Claude/Commerce",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G31",
+      "acceptance": "Settled order ID reconciliation",
+      "owner": "Commerce",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G32",
+      "acceptance": "Refund/chargeback tied to sale",
+      "owner": "Commerce",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G33",
+      "acceptance": "Qualified human session denominator",
+      "owner": "Claude",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G34",
+      "acceptance": "7/30 day net revenue and low-n warnings",
+      "owner": "Claude/Commerce",
+      "status": "HOLD",
+      "passed": false
+    },
+    {
+      "id": "G35",
+      "acceptance": "Founder public-release approval",
+      "owner": "Founder",
+      "status": "HOLD",
+      "passed": false
+    }
+  ],
+  "approval_evidence": {
+    "result": "NOT VERIFIED: read-only Gmail showed 2026-08-24 Refersion account pending, no later named FV acceptance in scoped search",
+    "scope_limit": "An outside portal or other mailbox could contain evidence",
+    "verified_affiliate_url": null
+  },
+  "commercial": {
+    "active_affiliate_links": 0,
+    "paid_owned_Mind_SKU_verified": false,
+    "realized_net_revenue_per_1000_qualified_sessions": null,
+    "reason": "No authenticated paid merchant settlement and reliable qualified-human session denominator",
+    "stage": "UNPUBLISHED/HARD HOLD"
+  }
+}
