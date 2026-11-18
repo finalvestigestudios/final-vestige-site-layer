@@ -37,6 +37,10 @@ The CSS bar chart, original reading workflow, document layout, and printable rec
 - All 90 external links open with noopener/noreferrer. Draft has noindex, print and reduced-motion rules.
 - No passwords, user-specific submissions, file uploads, remote network requests or analytics.
 
+## New independent institutional access probe (18 November 2026)
+
+A follow-up automated open attempt was made for **every one of the 90 source URLs**. The read-only [per-record CSV ledger](./research-sources-90-access-probe-2026-11-18.csv), [field interpretation](./the-ninety-doors-access-audit-field-guide-2026-11-18.md) and [original diagram](./research-sources-90-access-probe-2026-11-18.svg) document 63 HTML pages with readable text, 2 extractable PDFs, 3 sparse/JavaScript-heavy shells and 22 tool-inconclusive outcomes (15 403, 2 timeout, 1 each 502, 404, restricted, disabled and size-limit). **These are fetch outcomes, not end-to-end real-browser link-health assertions.** No rights or archival item reproduction permissions changed. The original export's snapshot fields remain intentionally unchanged.
+
 ## Runtime and release QA: HOLD (not run)
 
 **Static inspection is not visual/browser acceptance.** Browser acceptance for this exact artifact, local CSV download, keyboard/screen reader, 320/390/768/1440 widths, zoom, overflow, print-PDF and browser CSP have NOT run. Local Chromium cannot reach the network because DNS is blocked. WordPress screenshot capture URLs were returned at all four widths for the *published directory*, but the images were not independently inspected. These are not a pass.
