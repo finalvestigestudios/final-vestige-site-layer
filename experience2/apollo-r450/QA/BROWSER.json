@@ -1,0 +1,204 @@
+{
+  "axe_core": "NOT_RUN",
+  "cases": 20,
+  "errors": [],
+  "field_CWV": "NOT_VERIFIED",
+  "mode": "actual PHP-generated markup in Chromium via page.set_content; NOT HTTP navigation or installed WordPress",
+  "navigated_LCP_CLS": "NOT_RUN",
+  "rows": [
+    {
+      "case": "320-js",
+      "content": {
+        "claim_cards": 4,
+        "ctas": 1,
+        "journal": 1,
+        "paid": 0,
+        "receipt": 1,
+        "records": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "320-nojs",
+      "content": {
+        "claim_cards": 4,
+        "ctas": 1,
+        "journal": 1,
+        "paid": 0,
+        "receipt": 1,
+        "records": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "360-js",
+      "content": {
+        "claim_cards": 4,
+        "ctas": 1,
+        "journal": 1,
+        "paid": 0,
+        "receipt": 1,
+        "records": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "360-nojs",
+      "content": {
+        "claim_cards": 4,
+        "ctas": 1,
+        "journal": 1,
+        "paid": 0,
+        "receipt": 1,
+        "records": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "390-js",
+      "content": {
+        "claim_cards": 4,
+        "ctas": 1,
+        "journal": 1,
+        "paid": 0,
+        "receipt": 1,
+        "records": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "390-nojs",
+      "content": {
+        "claim_cards": 4,
+        "ctas": 1,
+        "journal": 1,
+        "paid": 0,
+        "receipt": 1,
+        "records": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "768-js",
+      "content": {
+        "claim_cards": 4,
+        "ctas": 1,
+        "journal": 1,
+        "paid": 0,
+        "receipt": 1,
+        "records": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "768-nojs",
+      "content": {
+        "claim_cards": 4,
+        "ctas": 1,
+        "journal": 1,
+        "paid": 0,
+        "receipt": 1,
+        "records": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "1024-js",
+      "content": {
+        "claim_cards": 4,
+        "ctas": 1,
+        "journal": 1,
+        "paid": 0,
+        "receipt": 1,
+        "records": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "1024-nojs",
+      "content": {
+        "claim_cards": 4,
+        "ctas": 1,
+        "journal": 1,
+        "paid": 0,
+        "receipt": 1,
+        "records": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "1440-js",
+      "content": {
+        "claim_cards": 4,
+        "ctas": 1,
+        "journal": 1,
+        "paid": 0,
+        "receipt": 1,
+        "records": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "1440-nojs",
+      "content": {
+        "claim_cards": 4,
+        "ctas": 1,
+        "journal": 1,
+        "paid": 0,
+        "receipt": 1,
+        "records": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "1920-js",
+      "content": {
+        "claim_cards": 4,
+        "ctas": 1,
+        "journal": 1,
+        "paid": 0,
+        "receipt": 1,
+        "records": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "1920-nojs",
+      "content": {
+        "claim_cards": 4,
+        "ctas": 1,
+        "journal": 1,
+        "paid": 0,
+        "receipt": 1,
+        "records": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "keyboard",
+      "status": "PASS"
+    },
+    {
+      "case": "touch",
+      "status": "PASS"
+    },
+    {
+      "case": "forced-colors",
+      "status": "PASS"
+    },
+    {
+      "case": "zoom",
+      "status": "PASS"
+    },
+    {
+      "case": "reduced-motion",
+      "status": "PASS"
+    },
+    {
+      "case": "print",
+      "status": "PASS"
+    }
+  ],
+  "screen_reader": "NOT_RUN",
+  "status": "PASS"
+}

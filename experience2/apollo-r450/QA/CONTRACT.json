@@ -1,0 +1,33 @@
+{
+  "actual_staging": "NOT_RUN",
+  "axe_core": "NOT_RUN",
+  "checks": [
+    "staging: safe render + single CTA",
+    "production: safe render + single CTA",
+    "disabled: safe render + single CTA",
+    "other-page: safe render + single CTA",
+    "duplicate shortcode suppresses second CTA",
+    "apollo-r449/journey.php: mutation blocked + restore",
+    "apollo-r448/manifest.json: mutation blocked + restore",
+    "apollo-r448/crosswalk.php: mutation blocked + restore",
+    "apollo-r440/staging-educator-intent.php: mutation blocked + restore",
+    "apollo-r450/assets/receipt.css: mutation blocked + restore",
+    "apollo-r450/assets/receipt.js: mutation blocked + restore",
+    "altered NASA claim blocked",
+    "dependency restoration yields full content"
+  ],
+  "dependency_sha256": {
+    "apollo-r440/staging-educator-intent.php": "835460b85afa4305f5419f09caad0fb8839202051359251d4c173954ff9ffa87",
+    "apollo-r448/crosswalk.php": "69e7c1b4130445a56b2e869ee2c4eae79c886679de1ee2e669cb818cab937536",
+    "apollo-r448/manifest.json": "744ec9c2ca46693f116c7ea5a1edf4ec3416083384e11ade0d0b63ca900a9411",
+    "apollo-r449/journey.php": "d92449dc6d557437210b3f6ecd61e5459fdceb29247ccf3bb17ce9ba6798e4bf",
+    "apollo-r450/assets/receipt.css": "9fe38bb1e875b803dcd21e7ff93c8c6e39a4f13fcb739356d2475b9ad437dd7c",
+    "apollo-r450/assets/receipt.js": "91f406195c85739c30be85f2537ed7bd6a1ca7e06058c540df20391866be4bb2"
+  },
+  "fixture_sha256": "3db819eaf3d9f1e0b39a35424481dda38924c099723c395c67288c2d3051afe7",
+  "lab_LCP_CLS": "NOT_RUN",
+  "mode": "offline PHP fixture with genuine inherited source; NOT WordPress staging",
+  "revenue": "NOT_VERIFIED",
+  "status": "PASS",
+  "tests": 13
+}
