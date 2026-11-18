@@ -6,6 +6,7 @@ from collections import defaultdict
 import hashlib
 import json
 from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
 
 REPO = "finalvestigestudios/final-vestige-site-layer"
 CROSSWALK_GIT = "d62e493a67dedd23e04cfdf3cce762ef933c6bf9"
@@ -40,6 +41,12 @@ def read_pinned(root, path, sha):
     require(len(data) <= 250000 and git_blob(data) == sha, "source Git blob drift: " + path)
     return json.loads(data, object_pairs_hook=no_duplicates)
 
+def review_alias(url):
+    """Terminal-slash grouping only for the review docket; retain every literal source URL."""
+    p = urlsplit(url)
+    return urlunsplit((p.scheme, p.netloc, (p.path or "/").rstrip("/") or "/",
+                      p.query, p.fragment))
+
 def audit(crosswalk, source_rows, snapshot=None, expected=TOTALS):
     """Rebuild URL groups from original row identity, preserving every author scope.
 
@@ -54,6 +61,7 @@ def audit(crosswalk, source_rows, snapshot=None, expected=TOTALS):
     require(isinstance(source_rows, dict) and len(roster) == len(source_rows),
             "source roster count mismatch")
     groups_by_url = defaultdict(list)
+    literal_urls = set()
     all_rows = []
     origins = set()
     for file in roster:
@@ -71,11 +79,12 @@ def audit(crosswalk, source_rows, snapshot=None, expected=TOTALS):
                     "source identity invalid")
             identity = {"origin": origin, "id": src["id"], "row_index": index}
             variant = {"origin": origin, "source_file": path, "row_index": index, "source": src}
-            groups_by_url[src["url"]].append((identity, variant))
+            groups_by_url[review_alias(src["url"])].append((identity, variant))
+            literal_urls.add(src["url"])
             all_rows.append((origin, index, src["id"], src["url"]))
     require(len(set(all_rows)) == len(all_rows), "source row duplicated")
     dupes = {url: rows for url, rows in groups_by_url.items() if len(rows) > 1}
-    actual = (len(all_rows), len(groups_by_url), len(dupes))
+    actual = (len(all_rows), len(literal_urls), len(dupes))
     require(actual == expected, "source group census drift; fresh review required")
     require((crosswalk.get("raw_source_rows"), crosswalk.get("unique_source_urls"),
              crosswalk.get("duplicate_url_groups")) == expected, "crosswalk census altered")
