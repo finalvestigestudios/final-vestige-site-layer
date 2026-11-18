@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test');
 const assert=require('node:assert/strict');
-const {sourceMatches}=require('./jetpack_source_identity_20261118.cjs');
+const {sourceMatches,sameFraming}=require('./jetpack_source_identity_20261118.cjs');
 const root='https://i0.wp.com/archives.gov/photographs/dam.jpg';
 test('existing 960px width transform from a 1400px source remains valid',()=>assert.equal(sourceMatches(root+'?w=960&ssl=1',root+'?w=1400&ssl=1'),true));
 test('unchanged authored crop remains valid with a smaller width',()=>assert.equal(sourceMatches(root+'?crop=center&w=960',root+'?crop=center&w=1400'),true));
@@ -16,3 +16,7 @@ test('unchanged source may move across Jetpack image host',()=>assert.equal(sour
 test('a new publisher signature may not be injected',()=>assert.equal(sourceMatches(root+'?w=960&sign=new',root+'?w=1400'),false));
 test('a direct origin cannot silently substitute an unrelated URL',()=>assert.equal(sourceMatches('https://archives.gov/photographs/different.jpg','https://archives.gov/photographs/dam.jpg'),false));
 test('publisher crop query is immutable during direct to Jetpack rewrite',()=>assert.equal(sourceMatches(root+'?crop=center&w=1400&ssl=1','https://archives.gov/photographs/dam.jpg?crop=center&w=1400'),true));
+test('cross-phase authored crop switch is rejected',()=>assert.equal(sameFraming(root+'?crop=center&w=1400',root+'?crop=left&w=960'),false));
+test('cross-phase added zoom is rejected',()=>assert.equal(sameFraming(root+'?w=1400',root+'?zoom=2&w=960'),false));
+test('cross-phase responsive resize with no crop change is safe',()=>assert.equal(sameFraming(root+'?crop=center&w=1400',root.replace('i0','i1')+'?crop=center&w=960'),true));
+test('cross-phase publisher query crop correctly tracks preservation',()=>assert.equal(sameFraming('https://archives.gov/photographs/dam.jpg?crop=center',root+'?crop=center&w=960'),true));
