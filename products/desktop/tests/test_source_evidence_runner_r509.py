@@ -6,6 +6,7 @@ import io
 import os
 from pathlib import Path
 import re
+import subprocess
 import sys
 from tempfile import TemporaryDirectory
 from types import SimpleNamespace
@@ -433,8 +434,10 @@ class SourceEvidenceR512(unittest.TestCase):
         }
         with patch.dict(os.environ, injected):
             child = runner._child_environment(ROOT)
-        for key, value in injected.items():
-            self.assertEqual(child[key], value)
+        for key in ("PATH", "CI", "LANG"):
+            self.assertEqual(child[key], injected[key])
+        # R514 is allowlist-only, even for a plausibly benign unknown name.
+        self.assertNotIn("FV_NONSECRET_FLAG", child)
 
     def test_real_child_process_ignores_hostile_python_settings(self):
         import subprocess
@@ -558,6 +561,80 @@ class SourceEvidenceR513(unittest.TestCase):
         }):
             self.assertEqual(runner._child_environment(ROOT),
                              runner._child_environment(ROOT))
+
+
+from source_child_env_r514 import _SAFE_HOST_NAMES, child_environment
+
+
+class SourceChildEnvironmentR514(unittest.TestCase):
+    """Ten real module regressions, exercised by BOTH pinned matrix modes."""
+    ROOT = Path("/synthetic")
+
+    def test_unknown_financial_configuration_does_not_escape(self):
+        host = {"FV_LICENSE_FILE": "private", "GRANTS_AUDIT_DIR": "private2",
+                "FINANCE_VAULT_URL": "private3", "CLIENT_BILLING_ENDPOINT": "private4"}
+        self.assertFalse(set(host).intersection(child_environment(self.ROOT, host)))
+
+    def test_arbitrary_unsuffixed_variable_no_longer_passes(self):
+        self.assertNotIn("FV_NONSECRET_FLAG", child_environment(self.ROOT,
+                         {"FV_NONSECRET_FLAG": "enabled"}))
+
+    def test_cloud_and_registry_configuration_no_longer_passes(self):
+        host = {"AWS_PROFILE": "private", "KUBECONFIG": "private",
+                "PIP_INDEX_URL": "private", "GH_CONFIG_DIR": "private"}
+        self.assertFalse(set(host).intersection(child_environment(self.ROOT, host)))
+
+    def test_os_and_ci_bootstrap_survive(self):
+        host = {"PATH": "/usr/bin", "CI": "true", "LANG": "en_US.UTF-8",
+                "GITHUB_ACTIONS": "true", "SystemRoot": "C:\\Windows",
+                "TEMP": "C:\\Temp", "LOCALAPPDATA": "C:\\Local"}
+        child = child_environment(self.ROOT, host)
+        for key, value in host.items():
+            self.assertEqual(child[key], value)
+
+    def test_python_controls_are_fixed_not_inherited(self):
+        host = {"PYTHONHASHSEED": "random", "PYTHONOPTIMIZE": "2",
+                "PYTHONPATH": "/private", "PYTHONWARNINGS": "ignore"}
+        child = child_environment(self.ROOT, host)
+        self.assertEqual(child["PYTHONHASHSEED"], "0")
+        self.assertEqual(child["PYTHONDONTWRITEBYTECODE"], "1")
+        self.assertEqual(child["PYTHONPATH"], str(self.ROOT / "products/desktop"))
+        self.assertNotIn("PYTHONOPTIMIZE", child)
+        self.assertNotIn("PYTHONWARNINGS", child)
+
+    def test_loader_and_pythonuserbase_not_allowed(self):
+        host = {"LD_PRELOAD": "/private", "LD_AUDIT": "/private",
+                "DYLD_INSERT_LIBRARIES": "/private", "PYTHONUSERBASE": "/private"}
+        self.assertFalse(set(host).intersection(child_environment(self.ROOT, host)))
+
+    def test_duplicate_case_folded_windows_name_dropped(self):
+        child = child_environment(self.ROOT, {"Path": "private", "PATH": "/safe", "CI": "true"})
+        self.assertNotIn("Path", child)
+        self.assertNotIn("PATH", child)
+        self.assertEqual(child["CI"], "true")
+
+    def test_synthetic_subprocess_cannot_see_unknown_host_variable(self):
+        env = child_environment(self.ROOT, {"PATH": "/usr/bin",
+                  "FINANCE_PRIVATE_ENDPOINT": "synthetic-never-inherit"})
+        result = subprocess.run([sys.executable, "-B", "-c",
+             "import os,sys;sys.exit(0 if 'FINANCE_PRIVATE_ENDPOINT' not in os.environ "
+             "and os.environ.get('PYTHONHASHSEED') == '0' else 9)"],
+             env=env, capture_output=True, timeout=15, check=False)
+        self.assertEqual(result.returncode, 0)
+
+    def test_mapping_is_never_mutated(self):
+        host = {"CI": "true", "PIP_INDEX_URL": "synthetic"}
+        before = dict(host)
+        child_environment(self.ROOT, host)
+        self.assertEqual(host, before)
+
+    def test_deterministic_and_no_unknown_keys(self):
+        host = {"CI": "true", "PAYMENT_URL": "synthetic", "PATH": "/usr/bin"}
+        a = child_environment(self.ROOT, host)
+        self.assertEqual(a, child_environment(self.ROOT, host))
+        self.assertEqual(set(a) - {"PYTHONPATH", "PYTHONHASHSEED", "PYTHONDONTWRITEBYTECODE"},
+                         {"CI", "PATH"})
+        self.assertTrue({"PATH", "CI"}.issubset(_SAFE_HOST_NAMES))
 
 if __name__ == "__main__":
     unittest.main()

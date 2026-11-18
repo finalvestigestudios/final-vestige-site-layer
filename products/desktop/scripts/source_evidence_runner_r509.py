@@ -13,6 +13,8 @@ import re
 import subprocess
 import sys
 
+from source_child_env_r514 import child_environment
+
 ROOT = Path(__file__).resolve().parents[3]
 MANIFEST = ROOT / "products/desktop/ci/source_evidence_commands_r509.txt"
 MANIFEST_GIT_SHA1 = "a55a9b5bcbee5b9f075a39fc581ed5a4716eaca3"
@@ -99,49 +101,13 @@ def load_commands(raw: bytes, root: Path = ROOT, *,
     return tuple(approved)
 
 
-_PRIVATE_ENV_NAMES = frozenset({
-    "GITHUB_TOKEN", "GH_TOKEN", "GITHUB_ENV", "GITHUB_PATH", "GITHUB_OUTPUT",
-    "GIT_ASKPASS", "SSH_ASKPASS", "AWS_ACCESS_KEY_ID",
-    "PYTHONHOME", "PYTHONSTARTUP", "PYTHONINSPECT", "PYTHONUSERBASE",
-    "PYTHONOPTIMIZE", "PYTHONWARNINGS", "PYTHONBREAKPOINT", "PYTHONPYCACHEPREFIX",
-    "LD_PRELOAD", "LD_LIBRARY_PATH", "DYLD_INSERT_LIBRARIES", "DYLD_LIBRARY_PATH",
-})
-_PRIVATE_ENV_SUFFIXES = (
-    "_TOKEN", "_SECRET", "_PASSWORD", "_KEY", "_CREDENTIAL", "_CREDENTIALS",
-    "_COOKIE", "_SESSION",
-)
-
-
-# Preserve only the public GitHub Actions boolean across the GITHUB_* boundary.
-# Job command files and event payloads are not needed by desktop source tests.
-_CI_ENV_MARKER = "GITHUB_ACTIONS"
-# Cloud, package-registry and container configuration may carry credentials
-# in *_FILE, *_URL or *_PROFILE, not just token/password-suffixed variables.
-# Do not pass ambient host credentials into financial source regression tests.
-# This is environment minimization, NOT filesystem or OS process isolation.
-_UNTRUSTED_ENV_PREFIXES = (
-    "PYTHON", "GITHUB_", "GIT_", "SSH_",
-    "AWS_", "AZURE_", "GOOGLE_", "GCLOUD_", "CLOUDSDK_",
-    "GH_", "DOCKER_", "KUBE_", "NPM_", "PIP_", "PYPI_",
-    "TWINE_", "POETRY_", "UV_", "GPG_", "TF_", "TERRAFORM_",
-)
-_UNTRUSTED_ENV_NAMES = frozenset({"KUBECONFIG", "GNUPGHOME"})
-
-
 def _child_environment(root: Path) -> dict[str, str]:
-    env = {}
-    for name, value in os.environ.items():
-        key = name.upper()
-        if (key in _PRIVATE_ENV_NAMES or key in _UNTRUSTED_ENV_NAMES
-                or key.endswith(_PRIVATE_ENV_SUFFIXES)
-                or (key.startswith(_UNTRUSTED_ENV_PREFIXES)
-                    and key != _CI_ENV_MARKER)):
-            continue
-        env[name] = value
-    env["PYTHONPATH"] = str(root / "products" / "desktop")
-    env["PYTHONDONTWRITEBYTECODE"] = "1"
-    env["PYTHONHASHSEED"] = "0"
-    return env
+    """Run child checks with reviewed OS/CI variables only (R514).
+
+    The historical blacklist admitted arbitrary new credential/config names.
+    This module-level wrapper preserves the runner's established test API.
+    """
+    return child_environment(root, os.environ)
 
 
 def execute(commands: tuple[tuple[str, ...], ...], root: Path = ROOT,
