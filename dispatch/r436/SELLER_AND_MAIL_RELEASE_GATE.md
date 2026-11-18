@@ -1,0 +1,23 @@
+# R436 official sales-page and email-transport claims QA — November 17 PT / November 18 UTC
+**Two of six commercial slots remain HARD HOLD.** Public merchant pages prove that the seller presents offers, **not** Final Vestige's partner acceptance, email marketing rights, paid affiliate tracking or product-specific efficacy.
+
+## Zen12 (Issue 03 — reserved, not linked)
+Exact seller source: https://zen12.com/about . The vendor describes 12-minute sessions, twelve sequential levels and four audio styles per level; it also asserts equivalence to an hour of ordinary meditation and sweeping stress/brainwave outcomes. Those physiological/efficacy claims have NOT been independently established for the actual Zen12 SKU. The separate /secret/ page is a different promotional sales context: https://zen12.com/secret/ . Neither webpage provides a named Final Vestige affiliate acceptance letter, approved promotional email template, issued earning URL, channel permission or current referred checkout/refund terms. **Do not quote a guaranteed result or generic sale price in Dispatch.** Mind #171 owns guide and vendor evidence.
+
+## Total Focus (Issue 05 — reserved, not linked)
+Exact seller source: https://hypnosislive.com/mental-skills/total-focus . Seller currently displays a 33-minute / 47MB recording with separately priced single- and bundle-context checkouts. The vendor claims concentration and other outcomes; FV has not tested or validated those promises. FAQ https://hypnosislive.com/faq specifies refund requests within 14 days, annual limit of five refunded sessions; this is a qualification that the front-page 100% satisfaction tagline should not hide. No named FV EMAIL-channel permission or issued earning link has been witnessed; do not assume a clicked link would produce commission or that website permission includes email. Do not insert current headline price into campaign copy without last-mile referred checkout verification.
+
+## Footer and message primary purpose
+FTC https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business requires accurate headers/subject, conspicuous marketing identification when applicable, valid **Final Vestige** postal address, understandable opt-out and prompt honoring. An Automattic address from a confirmation email or the merchant's UK address is not proof of Final Vestige's mailing address. The required rendered postal and unsub proof is still missing. All six issues remain HOLD_UNSENT; treat 03/05 as commercial for stricter review even if surrounded by genuinely useful research.
+
+## Native WordPress preview — not an inbox receipt
+WordPress https://wordpress.com/support/newsletter/email-appearance/ documents a non-sending 'Preview email' tool for a **post editor** (desktop/tablet/mobile preview), and a separate 'Send test email' control that sends real mail. Neither was invoked here; do not turn a source-only HTML/Gutenberg mock into 'real Jetpack rendering'. Current authenticated newsletter settings are ON / automatic new-post emails OFF / full-text / from Final Vestige Studios / no-reply / newsletter categories OFF. Five recent posts show 'never_sent_opted_out', not a complete lifetime record. Need approved draft/editor context before a genuine preview without sending; no draft post creation is authorized. Full-text mode may expose internal 'EDITORIAL HOLD' paragraphs in original Gutenberg specimen if copied blindly; never paste those into a recipient-facing post.
+
+## Actual release checklist
+Provider-qualified eligible audience, confirmed receipt of Fieldbook where authorized, founder-approved content and audience, title/subject and genuine inbox preheader confirmation, native email Preview screenshots, independently reviewed FV mailing postal address and opt-out, partner account EMAIL permissions and exact merchant SKU/URL, guide actually live, and settled-sale source. Without any one, **HOLD**. No email/test email/publishing/settings/subscriber import/affiliate activation on this branch.
+
+## Other official sources
+- WordPress actual subscriber eligibility vs total: https://wordpress.com/support/subscribers/ (Not confirmed excluded from total; not sending/paused/bounced may be included)
+- Welcome sequence distinctions: https://wordpress.com/support/newsletter-settings/
+- Sender format and real Preview: https://wordpress.com/support/newsletter/email-appearance/
+- Final Vestige public editorial contract: https://finalvestige.com/editorial-standards/
