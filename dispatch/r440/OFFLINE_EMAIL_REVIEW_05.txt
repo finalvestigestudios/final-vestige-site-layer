@@ -1,45 +1,40 @@
-REVIEWER BOUNDARY — OFFLINE PREVIEW ONLY / HOLD UNSENT
-NOT a WordPress-rendered or received email. No active offer link.
+REVIEW ONLY — HOLD UNSENT — NOT A RECEIVED EMAIL
+NO LIVE LINK. Do not publish, send or paste into WordPress.
 
 FROM: Final Vestige Studios
 SUBJECT: Before you buy a hypnosis recording
 PREHEADER: An old lesson about suggestion, and five buyer checks that work today.
 
-THE DISPATCH — ISSUE 05 (Hypnosis Live; NOT Total Focus)
+In 1784, a French royal commission put a remarkable proposition to the test. Practitioners said they could produce effects through an invisible force they called animal magnetism. Instead of trusting how convincing the demonstrations felt, investigators changed what participants could see and what they were told.
 
-In 1784, a royal commission used controlled observations to question
-animal magnetism. Its work did not test any present-day hypnosis audio.
-It reminds us that a compelling experience and a compelling explanation
-are different things.
+The experiments did not settle every question about suggestion, and they certainly did not evaluate a modern hypnosis recording. They demonstrated something narrower and more useful: a striking experience and a good explanation of that experience are different things.
 
-Before buying, examine:
-1. What exactly arrives: an MP3, live meeting, series or subscription?
-2. What does the seller promise, and what supports that product-specific claim?
-3. Is there a representative voice/sample?
-4. What are the actual refund conditions at the current checkout?
-5. What would you measure before and after, without pretending a result?
+That's a useful distinction to carry into today's audio marketplace.
 
-The Hypnosis Live seller FAQ describes downloadable MP3s, a 14-day
-refund request period and a limit of five refunded sessions per year.
-Confirm the actual offer and terms independently.
+A guided recording may be convenient. You can replay it at your own pace; the voice and structure might be a format you like. None of that, by itself, proves a promised change in memory, behavior, sleep, confidence or health.
 
-Free exercise: spend five quiet minutes on two days, noting start
-difficulty, completion and one distraction. This is self-observation,
-not proof of a commercial audio's efficacy.
+Before paying for any such program, make these five checks.
 
-SINGLE PRIMARY CTA — DISABLED:
-[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]
+1. What exactly arrives? A downloadable MP3 is different from a live session or ongoing subscription. Verify the particular item, delivery mechanism and who may access it.
 
-Commercial disclosure beside proposed CTA:
-If you purchase through a qualifying link inside a future approved
-guide, Final Vestige may earn a commission. The guide and earning
-link are not active or verified.
+2. Who is making the promise? A recording seller may describe strong effects; those are seller statements unless sound product-specific evidence backs them. A positive anecdote can tell you about one person's experience, not what a typical buyer can expect.
 
+3. Can you listen to a representative sample? A voice, pacing, background sound and instructions matter when you plan to spend time with a recording. A sample can reveal whether you find it tolerable, not whether it is effective.
+
+4. What is the precise refund boundary? Hypnosis Live's published FAQ currently describes a 14-day request period and caps refundable sessions at five per year. Those are the seller's published conditions, not a guarantee that a particular future transaction will qualify. Confirm terms again at checkout.
+
+5. What will you measure? Write down the specific question you're hoping to answer before the first listen. Note what changed, what didn't, and alternative explanations. A good log may tell you that an audio suits your routine even when a broad advertised outcome remains unsupported.
+
+For a no-cost baseline, spend five quiet minutes following a simple audio-free routine on two different days. Record how easy it was to begin, whether you finished, and one distraction. You don't need a purchase to learn something about your attention.
+
+Optional next step: Our independently reviewed Hypnosis Live buyer guide is held pending merchant permission and exact-offer verification. Its future destination is [[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]. There is no active offer link in this draft.
+
+Commercial disclosure, immediately beside that proposed guide: If you purchase through a qualifying link within a future approved guide, Final Vestige may earn a commission. Commercial approval, affiliate email rights and all current purchase terms have not yet been verified; no recommendation is live.
+
+The same editorial principle applies to an eighteenth-century witness and a twenty-first-century audio file: record what happened, and keep the conclusion within what the record can bear.
+
+— The Dispatch, Final Vestige Studios
+
+MANDATORY FOOTER UNVERIFIED — CANNOT SEND
 Final Vestige publisher postal: [[VALID_POSTAL_ADDRESS_REQUIRED]]
 Jetpack unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
-
-DO NOT SEND / PUBLISH. The merchant email-permission, native email
-render and founder campaign approvals remain absent.
-
-Official seller FAQ: https://hypnosislive.com/faq
-FTC: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
