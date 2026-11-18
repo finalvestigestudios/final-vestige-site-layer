@@ -1,0 +1,16 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const r=n=>fs.readFileSync(path.join(__dirname,n),'utf8');
+const A=r('ZEN12_A_TEXT_GUIDE.html'),B=r('ZEN12_B_OPTIONAL_FILM_GUIDE.html'),H=r('MIND_HUB_SOURCE_ONLY.html'),V=r('ZEN12_42S_CAPTIONS.vtt'),P=r('ZEN12_POSTER.svg'),M=JSON.parse(r('CLAIM_SOURCE_PERMISSION_MATRIX.json')),E=r('THE_WORD_NOBODY_SAID.md'),D=r('OFFER_FUNNEL_NET_REVENUE_DOCKET.md');
+test('all commercial gates closed',()=>assert.ok(M.commercial_gates.every(g=>g.accepted===false)));
+test('no script or new newsletter form',()=>assert.doesNotMatch(A+B+H,/<script\\b|<form\\b/i));
+test('disabled merchant controls',()=>{assert.match(A,/<button[^>]*disabled/i);assert.match(B,/<button[^>]*disabled/i);});
+test('near button earning disclosure',()=>{for(const x of [A,B]){let d=x.indexOf('commission');let b=x.indexOf('<button',d);assert.ok(d>=0&&b>d&&b-d<2200)}});
+test('no active referral URL',()=>{for(const x of [A,B])assert.doesNotMatch(x,/href=["'][^"']*(?:refersion|affiliates\\.inspire3|hop\\.clickbank)/i)});
+test('captions six cues and 42 seconds',()=>assert.ok((V.match(/-->/g)||[]).length===6&&V.includes('00:00:42.000')));
+test('video remains optional and not autoplay',()=>{assert.match(B,/<details>/i);assert.doesNotMatch(B,/autoplay/i);});
+test('poster accessible metadata',()=>{assert.match(P,/<title/);assert.match(P,/<desc/);});
+test('scientific and historical source anchors',()=>{for(const k of ['10.1037/0278-7393.21.4.803','10.3758','Puységur','10.1371/journal.pone.0286023']){if(k==='10.3758')continue;assert.ok(E.includes(k));}});
+test('4-stream hub no live-save claim',()=>{assert.match(H,/Perception/);assert.match(H,/History of Suggestion/);assert.match(H,/Practice/);assert.match(H,/Tools Under Review/);});
+test('conversions distinct from clicks',()=>{assert.match(D,/affiliate_outbound_click/);assert.match(D,/NOT COMPUTABLE/);});
+test('no embedded product price',()=>assert.doesNotMatch(A+B,/\$37|\$87/));
