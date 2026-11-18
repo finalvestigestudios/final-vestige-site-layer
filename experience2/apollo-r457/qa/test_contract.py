@@ -46,5 +46,25 @@ class Contract(unittest.TestCase):
    p.write_bytes(old+b'\n/* unexpected modification */')
    self.assertIn('temporarily unavailable',php('echo fv457_render();'))
   finally:p.write_bytes(old)
+ def test_unverified_identifiers_have_visible_hold(self):
+  html=php('echo fv457_render();')
+  self.assertIn('Source acceptance HOLD:',html)
+  self.assertIn('CATALOGUE LINK UNVERIFIED',html)
+  self.assertIn('ID MAPPING UNVERIFIED',html)
+ def test_no_false_verified_mapping(self):
+  html=php('echo fv457_render();')
+  self.assertIn('two links are research leads, not accepted provenance',html)
+  self.assertEqual(html.count('CATALOGUE LINK UNVERIFIED'),1)
+  self.assertEqual(html.count('ID MAPPING UNVERIFIED'),1)
+ def test_print_cards_and_ink_have_contrast(self):
+  css=(ROOT/'assets/gallery.css').read_text()
+  self.assertIn('.fv457,.fv457__card,.fv457__rights,.fv457__source-hold{background:#fff!important;color:#000!important}',css)
+  self.assertIn('.fv457__controls{display:none!important}',css)
+ def test_css_pin_mutation_fallback(self):
+  target=ROOT/'assets/gallery.css';old=target.read_bytes()
+  try:
+   target.write_bytes(old+b'/* changed css */')
+   self.assertIn('temporarily unavailable',php('echo fv457_render();'))
+  finally:target.write_bytes(old)
  def test_shortcode_disabled_default(self):self.assertNotIn('add_shortcode(',php('echo function_exists("add_shortcode")?"yes":"no";'))
 if __name__=='__main__':unittest.main(verbosity=1)
