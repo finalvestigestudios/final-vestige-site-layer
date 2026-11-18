@@ -3,10 +3,10 @@
   "date": "2026-11-18",
   "status": "LOCAL_OFFLINE_PASS_STAGING_AND_COMMERCE_HARD_HOLD",
   "files": {
-    "README.md": "3f36a83e6a1eaa64a2fa27cbde3136d5fe237239225047f0fb4131c5625975e1",
+    "README.md": "eb1c1a57c9f79b91a892fa433f1d97a19f518d74469cdb1d09f32e6a9beb14da",
     "apollo_evidence_lab.php": "19fb9b626620a1f1e28250990f0ef38dae1cc115557b79a2237b9a3b4eb007b8",
-    "qa/browser_qa.py": "4b21867225ad3cab1ff898313afcfad119a5a40d4d55775cc7ca1b8c9b380bb35",
-    "qa/test_source_and_guard.py": "fd22f716f42ba02bab990983271767144ebd18bfa54a41fb272a7724278d2ed71"
+    "qa/browser_qa.py": "dabef985c39e0af09feca4f2b2cf9cafc7e76b43dd918facd21c7750ad1a4a74",
+    "qa/test_source_and_guard.py": "8694bf2a4190b10fee09a427ac692ec415d63b8b906b8322010a790079edba4c"
   },
   "executed": {
     "php_syntax": "PASS",
