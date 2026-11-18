@@ -1,0 +1,107 @@
+<!-- wp:html -->
+<nav id="fv-log-route-map" aria-label="Logbook research: nine problem routes" class="fv-lrm">
+<style>
+#fv-log-route-map{--ink:#18362d;--muted:#445a52;--line:#ced8ce;--paper:#f7f5ee;--gold:#956837;max-width:1080px;margin:1.5rem auto 2.8rem;color:var(--ink);font:normal 1rem/1.65 Georgia,serif;overflow-wrap:anywhere}
+#fv-log-route-map *{box-sizing:border-box}
+#fv-log-route-map .inner{padding:clamp(16px,3vw,34px);border:1px solid var(--line);border-radius:15px;background:var(--paper)}
+#fv-log-route-map .kicker{font:700 .75rem/1.4 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#80572c}
+#fv-log-route-map .lead{font-size:clamp(1.32rem,3.6vw,2rem);line-height:1.22;margin:.4rem 0 .65rem;font-weight:700;max-width:32ch}
+#fv-log-route-map p{margin:.55rem 0 1rem}
+#fv-log-route-map .intro{max-width:78ch}
+#fv-log-route-map .route-list{display:grid;grid-template-columns:minmax(0,1fr);gap:11px;margin:1.4rem 0 1rem;padding:0;list-style:none}
+#fv-log-route-map .route-list>li{min-width:0;margin:0;padding:0}
+#fv-log-route-map .route-list a{height:100%;display:flex;align-items:start;gap:12px;padding:16px;border:1px solid #c8d4c9;border-radius:9px;background:#fffefa;color:#14382e;text-decoration:none;box-shadow:0 1px 0 #e2e7db}
+#fv-log-route-map .route-list a:hover,#fv-log-route-map .route-list a:focus-visible{border-color:#966e32;background:#fffcf3;outline:2px solid #73501d;outline-offset:2px}
+#fv-log-route-map .num{flex:0 0 auto;font:700 .88rem/1.5 system-ui,sans-serif;color:#765126}
+#fv-log-route-map strong{font-size:1.05rem;line-height:1.3;display:block}
+#fv-log-route-map .desc{display:block;font-size:.92rem;line-height:1.55;color:var(--muted);margin-top:.4rem}
+#fv-log-route-map .go{display:block;color:#185747;text-decoration:underline;text-underline-offset:3px;font:700 .83rem/1.4 system-ui,sans-serif;margin-top:.65rem}
+#fv-log-route-map .before{border-top:1px solid #cbd5ca;margin-top:1.55rem;padding-top:1.3rem}
+#fv-log-route-map .before h3{font-size:1.18rem;margin:.4rem 0 .6rem}
+#fv-log-route-map .before ol{padding-left:1.45rem;margin:.4rem 0 1rem}
+#fv-log-route-map .before li{margin:.45rem 0}
+#fv-log-route-map a:not(.route-list a){color:#17604e;text-decoration:underline;text-underline-offset:3px}
+#fv-log-route-map .diagram{overflow-x:auto;max-width:100%;border:1px solid #c5d0c5;border-radius:9px;background:#fff;outline-offset:2px;margin:1.15rem 0}
+#fv-log-route-map .diagram:focus-visible{outline:2px solid #73501d}
+#fv-log-route-map svg{display:block;width:100%;min-width:670px;height:auto}
+#fv-log-route-map figcaption{font:.82rem/1.55 system-ui,sans-serif;color:#4d6159;padding:.4rem .8rem}
+#fv-log-route-map .receipt{border:1px dashed #a5b8a8;background:#fff;padding:1rem;margin-top:1.1rem}
+#fv-log-route-map .receipt h3{margin:0 0 .5rem;font-size:1.15rem}
+#fv-log-route-map .receipt dl{display:grid;grid-template-columns:minmax(0,1fr);gap:.4rem}
+#fv-log-route-map .receipt dt{font-weight:700}
+#fv-log-route-map .receipt dd{margin:0 0 .5rem;border-bottom:1px solid #9baea0;min-height:1.8rem}
+#fv-log-route-map .sources{border-top:1px solid #cbd5ca;margin-top:1.6rem;padding-top:1.1rem;font-size:.9rem}
+#fv-log-route-map .sources ul{padding-left:1.4rem;margin:.5rem 0}
+#fv-log-route-map .sources li{margin:.38rem 0}
+@media(min-width:650px){#fv-log-route-map .route-list{grid-template-columns:repeat(2,minmax(0,1fr))}#fv-log-route-map .receipt dl{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:1.4rem}}
+@media(min-width:980px){#fv-log-route-map .route-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:390px){#fv-log-route-map .inner{padding:14px}#fv-log-route-map .route-list a{padding:12px}#fv-log-route-map .lead{font-size:1.45rem}}
+@media print{#fv-log-route-map{color:#000;margin:0;max-width:none}#fv-log-route-map .inner{border:0;padding:0;background:white}#fv-log-route-map .route-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}#fv-log-route-map .route-list a{box-shadow:none;padding:8px;font-size:.82rem}#fv-log-route-map .route-list .desc{font-size:.72rem}#fv-log-route-map .diagram{overflow:visible}#fv-log-route-map svg{min-width:0}#fv-log-route-map a{text-decoration:none!important;color:#000!important}#fv-log-route-map .receipt{break-inside:avoid}}
+</style>
+<div class="inner">
+<p class="kicker">The Library / maritime source desk / navigation sheet</p>
+<p class="lead">Find the right witness before reading the wrong one.</p>
+<p class="intro">A ship's log is not a complete memory of its voyage. It is one record, made for particular duties, kept under particular rules, and sometimes found generations later as a scan of a scan. If you came here with a ship's name, a disputed hour or a missing sailor, don't read nine chapters in order. Begin with the specific question that brought you to the archive.</p>
+<p class="intro">This is an <strong>editorial route map</strong>, not a claim that any one record will settle a case. Each route opens a complete free chapter farther down this page. The original wording of archival records, their dates and their rights must still be checked against the item itself.</p>
+<ol class="route-list">
+<li><a href="#fv-log-absence"><span class="num">01</span><span><strong>Can&#39;t find the log</strong><span class="desc">An empty search is not evidence of a lost book. Separate not online, restricted, never retained, and truly missing.</span><span class="go">Verify the record&#39;s status <span aria-hidden="true">↘</span></span></span></a></li>
+<li><a href="#fv-abbot-case"><span class="num">02</span><span><strong>Two ships, one name</strong><span class="desc">Identify hull number, commission, flag, dates, and the predecessor with the same name before citing a catalog hit.</span><span class="go">Check identity <span aria-hidden="true">↘</span></span></span></a></li>
+<li><a href="#fv-deck-page-anatomy"><span class="num">03</span><span><strong>What kind of page is this?</strong><span class="desc">The monthly title, daily remarks and weather columns answer different questions. Date the layout before reading it.</span><span class="go">Read the page <span aria-hidden="true">↘</span></span></span></a></li>
+<li><a href="#fv-sailor-witness"><span class="num">04</span><span><strong>Was someone aboard?</strong><span class="desc">A deck log is not a crew roster. Compare muster rolls, personnel diaries and service files while respecting restrictions.</span><span class="go">Trace personnel <span aria-hidden="true">↘</span></span></span></a></li>
+<li><a href="#fv-position-witness"><span class="num">05</span><span><strong>Where did it sail?</strong><span class="desc">Two recorded positions do not make a witnessed route. Record the method, clock, datum and uncertainty.</span><span class="go">Test the route <span aria-hidden="true">↘</span></span></span></a></li>
+<li><a href="#fv-port-date"><span class="num">06</span><span><strong>When did it reach port?</strong><span class="desc">Physical arrival, customs entry, clearance and later reporting can each carry a different date.</span><span class="go">Compare port records <span aria-hidden="true">↘</span></span></span></a></li>
+<li><a href="#fv-message-chain"><span class="num">07</span><span><strong>Was a warning delivered?</strong><span class="desc">A sent or acknowledged wireless message is not proof it reached the bridge. Follow every custody handoff.</span><span class="go">Follow the message <span aria-hidden="true">↘</span></span></span></a></li>
+<li><a href="#fv-ln9"><span class="num">08</span><span><strong>Was an entry changed?</strong><span class="desc">Identify rough and smooth versions, signatures, legible corrections and later reproductions before claiming tampering.</span><span class="go">Examine corrections <span aria-hidden="true">↘</span></span></span></a></li>
+<li><a href="#fv-log-desk"><span class="num">09</span><span><strong>Where should I begin?</strong><span class="desc">Start with the claim, vessel identity and target date. Trace the proper institutional collection and its catalog metadata.</span><span class="go">Find the record <span aria-hidden="true">↘</span></span></span></a></li>
+</ol>
+<div class="before">
+<h3>Before the first archive search</h3>
+<ol>
+<li><strong>Make the claim testable.</strong> “A vessel entered port on Tuesday” is a claim. “The voyage ended strangely” is not yet a search instruction. Write the exact event or disputed assertion.</li>
+<li><strong>Name the record creator.</strong> Navy, Coast Guard, merchant master, customs collector and wireless office are not interchangeable. They produced different paper trails, and retention rules differ.</li>
+<li><strong>Keep the full identity.</strong> Record the vessel name <em>and</em> hull or registry identifier where applicable, flag, service dates, and known renamings. A shared name does not identify a shared ship.</li>
+<li><strong>Define the date before converting it.</strong> Note the original clock and date convention verbatim; distinguish local ship time, a port office's administrative date and an archivist's modern catalog date.</li>
+<li><strong>Inspect the object.</strong> A finding-aid listing proves that a series or item has been described. It does not prove a particular page says what you hope it says. Record the image, folio and entry before drawing conclusions.</li>
+<li><strong>Write down what did not survive.</strong> A blank field, no digitized image, no search hit and an expressly destroyed or unretained log are four different evidentiary states. Record which one you actually encountered.</li>
+</ol>
+<figure class="diagram" tabindex="0" role="group" aria-label="Scrollable five-step evidence route illustration">
+<svg viewBox="0 0 850 154" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fv-lrm-svg-title fv-lrm-svg-desc">
+<title id="fv-lrm-svg-title">A logbook research route, from claim to limited conclusion</title>
+<desc id="fv-lrm-svg-desc">Five connected boxes, left to right: exact claim, correct record creator, vessel and date identity, original folio or scan, conclusion with explicit limits. This is an original explanatory workflow, not an image of archival material.</desc>
+<rect x="1" y="1" width="848" height="152" rx="10" fill="#f8f8f2" stroke="#c6d1c7"/>
+<g font-family="system-ui,sans-serif" font-size="15" text-anchor="middle">
+<rect x="16" y="40" width="135" height="70" rx="7" fill="#22493c"/><text x="83.5" y="68" fill="#fff">Exact</text><text x="83.5" y="88" fill="#fff">claim</text>
+<rect x="188" y="40" width="135" height="70" rx="7" fill="#e6ecdf" stroke="#839b8a"/><text x="255.5" y="68" fill="#18372b">Record</text><text x="255.5" y="88" fill="#18372b">creator</text>
+<rect x="360" y="40" width="135" height="70" rx="7" fill="#e6ecdf" stroke="#839b8a"/><text x="427.5" y="68" fill="#18372b">Identity</text><text x="427.5" y="88" fill="#18372b">and clock</text>
+<rect x="532" y="40" width="135" height="70" rx="7" fill="#e6ecdf" stroke="#839b8a"/><text x="599.5" y="68" fill="#18372b">Folio /</text><text x="599.5" y="88" fill="#18372b">scan</text>
+<rect x="704" y="40" width="130" height="70" rx="7" fill="#22493c"/><text x="769" y="68" fill="#fff">Qualified</text><text x="769" y="88" fill="#fff">conclusion</text>
+<g fill="none" stroke="#a1743b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M158 75 H180 l-7 -6 M180 75 l-7 6"/><path d="M330 75 H352 l-7 -6 M352 75 l-7 6"/><path d="M502 75 H524 l-7 -6 M524 75 l-7 6"/><path d="M674 75 H696 l-7 -6 M696 75 l-7 6"/></g>
+</g>
+</svg>
+<figcaption>Original Final Vestige Studios explanatory diagram, November 17, 2026. No documentary material is depicted. On narrow screens, scroll sideways within the diagram; the five-step order is also stated in its accessible description. © Final Vestige Studios; readers may print for personal research. Other reuse by permission.</figcaption>
+</figure>
+<p><strong>Three useful boundaries.</strong> A catalog record is evidence that a repository describes something, not a substitute for reading its images. A ship's daily record is evidence of the events selected for its purpose, not a complete passenger or crew database. And two marks on a page—whether coordinates or edits—need their creation context before anyone turns them into a story. These distinctions follow the National Archives' descriptions of deck logs, their limits and rough/smooth copying practices.</p>
+</div>
+<div class="receipt" aria-labelledby="fv-lrm-receipt-title">
+<h3 id="fv-lrm-receipt-title">The first ten lines of a research receipt</h3>
+<p>Print this sheet, or copy the fields into a notebook. It deliberately asks for things a search engine often hides.</p>
+<dl>
+<dt>1. Exact claim or question</dt><dd aria-hidden="true"></dd>
+<dt>2. Vessel name as written</dt><dd aria-hidden="true"></dd>
+<dt>3. Hull / registry / renaming evidence</dt><dd aria-hidden="true"></dd>
+<dt>4. Target date in source notation</dt><dd aria-hidden="true"></dd>
+<dt>5. Record creator and repository</dt><dd aria-hidden="true"></dd>
+<dt>6. Series / catalog identifier / URL</dt><dd aria-hidden="true"></dd>
+<dt>7. Page, folio, frame or image number</dt><dd aria-hidden="true"></dd>
+<dt>8. Observation, transcription or inference?</dt><dd aria-hidden="true"></dd>
+<dt>9. Rights statement and access limitations</dt><dd aria-hidden="true"></dd>
+<dt>10. What remains unverified / next request</dt><dd aria-hidden="true"></dd>
+</dl>
+</div>
+<div class="sources">
+<p><strong>Source trail · checked November 17, 2026.</strong> Institutional research guidance: <a href="https://www.archives.gov/research/military/logbooks/naval-deck-logs">NARA, Introduction to Navy Deck Logs</a>; <a href="https://www.archives.gov/research/military/logbooks/navy-online">NARA, Navy Deck Logs Available in the Catalog</a>; <a href="https://www.archives.gov/research/military/logbooks/navy-info-not-in-deck-logs">NARA, Information Not Included in Deck Logs</a>; <a href="https://www.archives.gov/research/military/logbooks/other-logs">NARA, Other Logs</a>; <a href="https://www.archives.gov/research/military/navy/muster-rolls">NARA, U.S. Navy Muster Rolls, 1798–1939</a>; <a href="https://www.archives.gov/research/guide-fed-records/groups/036.html">NARA, Customs Service Record Group 36</a>. These are guides and catalogs, <em>not</em> a claim of having inspected a specific ship's original pages.</p>
+<p>For broader archival methodology see <a href="https://finalvestige.com/the-archive-trail/">The Archive Trail</a>; for historical clock conversions see <a href="https://finalvestige.com/the-moving-noon/">The Moving Noon</a>. No third-party scans, photos or illustrations are embedded. Linked holdings can have item-level copyright, donor, privacy, access or reproduction restrictions; inspect the specific repository record before reusing anything. The route map is guidance, not a navigation chart, legal determination or authentication certificate. Report corrections through <a href="https://finalvestige.com/contact/">Final Vestige's corrections and contact page</a>.</p>
+</div>
+</div>
+</nav>
+<!-- /wp:html -->
