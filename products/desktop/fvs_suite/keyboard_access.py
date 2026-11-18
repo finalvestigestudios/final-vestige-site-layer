@@ -29,7 +29,7 @@ def _verify_callback_ack(callback_id, used_ids: set[str]) -> None:
 
 def install_shortcuts(root, inputs, output, generate, *, review=None,
                       invoice_window=None, policy_rules=None,
-                      ledger_headers=None) -> tuple[str, ...]:
+                      ledger_headers=None, help_action=None) -> tuple[str, ...]:
     """Install shortcut access without replacing native Tab or focus-reveal.
 
     Alt+1..3 focuses source fields; Ctrl+1..3 opens their existing Browse
@@ -43,6 +43,8 @@ def install_shortcuts(root, inputs, output, generate, *, review=None,
     Alt+R (right match), Alt+A (left amount) and Alt+M (right amount).
     All optional Ledger shortcuts focus only; no shortcut authorizes a
     report or executes a financial rule without the app's button.
+    An optional F1 handler shows caller-supplied, static keyboard help. It
+    cannot run Generate or premium Review and reads no financial input.
     """
     fields = tuple(inputs)
     if not 1 <= len(fields) <= 3:
@@ -60,6 +62,11 @@ def install_shortcuts(root, inputs, output, generate, *, review=None,
                 or len(fields) != 2 or review is not None
                 or invoice_window is not None or policy_rules is not None):
             raise ValueError("Ledger headers require two inputs and no other optional controls")
+
+    # Reject an invalid optional help callback before installing ANY shortcut.
+    # Existing API clients without help_action keep the same binding inventory.
+    if help_action is not None and not callable(help_action):
+        raise ValueError("Keyboard help action must be callable")
 
     # Validate every focus/Browse target before installing any root binding.
     validate_shortcut_targets(fields, output, generate,
@@ -111,6 +118,10 @@ def install_shortcuts(root, inputs, output, generate, *, review=None,
     actions["<Control-Return>"] = generate.invoke
     if review is not None:
         actions["<Alt-Key-r>"] = review.invoke
+    if help_action is not None:
+        # App-level messagebox uses only a static shortcut legend: no paths,
+        # entered values or entitlement tokens are captured in this handler.
+        actions["<F1>"] = help_action
 
     # Staged callbacks are inert until every additive Tk bind has succeeded.
     # R404 can retain a callback with an unknown ID after a failed bind; that

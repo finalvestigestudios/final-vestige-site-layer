@@ -153,5 +153,85 @@ class KeyboardAccessR44(unittest.TestCase):
         self.assertEqual(set(premium) - set(free), {"<Alt-Key-r>"})
 
 
+    # R530: a keyboard-only user can discover shortcuts at any scroll position.
+    # The handler is opt-in so historical headless integrations remain stable.
+    def test_r530_existing_callers_do_not_gain_f1(self):
+        self.bind(1)
+        self.assertNotIn("<F1>", self.root.bindings)
+
+    def test_r530_invalid_help_action_fails_before_binding(self):
+        for bad in (False, 1, "", object()):
+            root = FakeRoot()
+            with self.subTest(value=type(bad).__name__), self.assertRaisesRegex(
+                    ValueError, "Keyboard help action"):
+                install_shortcuts(root, self.fields[:1], self.output,
+                                  self.generate, help_action=bad)
+            self.assertEqual(root.bindings, {})
+
+    def test_r530_help_is_not_invoked_during_registration(self):
+        shown = []
+        keys = install_shortcuts(
+            self.root, self.fields[:1], self.output, self.generate,
+            help_action=lambda: shown.append("static legend"))
+        self.assertIn("<F1>", keys)
+        self.assertEqual(keys[-1], "<F1>")
+        self.assertEqual(shown, [])
+
+    def test_r530_f1_dispatches_help_without_generate(self):
+        shown = []
+        install_shortcuts(self.root, self.fields[:1], self.output,
+                          self.generate, help_action=lambda: shown.append("help"))
+        self.assertEqual(self.root.press("<F1>"), "break")
+        self.assertEqual(shown, ["help"])
+        self.assertEqual(self.generate.invoked, 0)
+        self.assertEqual(self.output[1].invoked, 0)
+
+    def test_r530_f1_does_not_bypass_premium_review(self):
+        shown = []
+        install_shortcuts(self.root, self.fields, self.output, self.generate,
+                          review=self.review,
+                          help_action=lambda: shown.append("help"))
+        self.root.press("<F1>")
+        self.assertEqual(shown, ["help"])
+        self.assertEqual(self.review.invoked, 0)
+        self.assertEqual(self.generate.invoked, 0)
+        self.assertIn("<Alt-Key-r>", self.root.bindings)
+
+    def test_r530_all_form_counts_bind_a_single_help_key(self):
+        for count in (1, 2, 3):
+            root = FakeRoot()
+            keys = install_shortcuts(
+                root, self.fields[:count], self.output, self.generate,
+                help_action=lambda: None)
+            with self.subTest(count=count):
+                self.assertEqual(keys.count("<F1>"), 1)
+                self.assertEqual(len(keys), len(set(keys)))
+
+    def test_r530_help_registration_order_is_deterministic(self):
+        orders = []
+        for _ in range(2):
+            root = FakeRoot()
+            orders.append(install_shortcuts(
+                root, self.fields[:2], self.output, self.generate,
+                help_action=lambda: None))
+        self.assertEqual(orders[0], orders[1])
+        self.assertEqual(orders[0][-1], "<F1>")
+
+    def test_r530_failed_f1_registration_is_inert(self):
+        class UncertainHelpRoot(FakeRoot):
+            def bind(self, key, handler, add=None):
+                ack = super().bind(key, handler, add)
+                return "" if key == "<F1>" else ack
+
+        root = UncertainHelpRoot()
+        shown = []
+        with self.assertRaisesRegex(ValueError, "callback ID"):
+            install_shortcuts(root, self.fields[:1], self.output,
+                              self.generate,
+                              help_action=lambda: shown.append("help"))
+        # The failing registration can leave an orphan in Tk; it cannot act.
+        self.assertEqual(root.press("<F1>"), "break")
+        self.assertEqual(shown, [])
+
 if __name__ == "__main__":
     unittest.main()

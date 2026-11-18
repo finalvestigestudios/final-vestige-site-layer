@@ -307,6 +307,7 @@ def run(app_id):
         hint += "; Alt+P optional policy; Ctrl+P browse policy"
     if premium:
         hint += "; Alt+R review exceptions"
+    hint += "; F1 opens keyboard help"
     hint_row = layout["hint"]
     ui_label(frame, text=hint, wraplength=700).grid(
         row=hint_row, column=0, columnspan=3,
@@ -327,6 +328,8 @@ def run(app_id):
                       generate_button, review=review_button,
                       invoice_window=invoice_window_entry,
                       policy_rules=policy_rules_controls,
-                      ledger_headers=tuple(ledger_header_entries) if ledger_layout else None)
+                      ledger_headers=tuple(ledger_header_entries) if ledger_layout else None,
+                      help_action=lambda: messagebox.showinfo(
+                          "Keyboard help", hint, parent=root))
     root.after_idle(input_controls[0][0].focus_set)
     root.mainloop()
