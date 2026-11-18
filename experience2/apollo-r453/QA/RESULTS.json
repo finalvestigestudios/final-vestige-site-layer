@@ -1,0 +1,26 @@
+{
+  "sprint": "R453",
+  "date": "2026-11-18",
+  "status": "LOCAL_SOURCE_PASS_BROWSER_NAV_HOLD_PRODUCTION_HARD_HOLD",
+  "source": "R452 pinned Git blob 86537e55ebb5b7da546e9361626adcc083d7e60b",
+  "executed": {
+    "python_unittest_methods_passed": 12,
+    "python_unittest_methods_failed": 0,
+    "adversarial_video_url_shapes_rejected": 20,
+    "baseline_proof_gate": "HARD_HOLD",
+    "browser_http_navigation_probe": "HOLD_NOT_RUN",
+    "browser_navigation_observed_error": "net::ERR_BLOCKED_BY_ADMINISTRATOR even at 127.0.0.1",
+    "navigated_cases_executed": 0,
+    "screenshots_captured": 0,
+    "axe_core": "NOT_RUN",
+    "lab_LCP_CLS": "NOT_RUN",
+    "installed_WordPress_staging": "NOT_RUN",
+    "field_p75_Core_Web_Vitals": "NOT_RUN"
+  },
+  "actual_published_Grok_Apollo_asset": "NOT_VERIFIED",
+  "verified_payable_Apollo_product": "NOT_VERIFIED",
+  "realized_net_revenue_per_1000_qualified_human_sessions": null,
+  "source_rights": "NASA links and paraphrases only; image rights not cleared",
+  "release": "HARD_HOLD",
+  "notes": "Structural URL canonicality and local tests cannot authenticate publication, merchant orders or revenue. Browser navigation blocked by executor is neither a site defect nor a staging acceptance."
+}
