@@ -38,6 +38,7 @@ for(const [id,html] of [['A',A],['B',B]]){
    assert.doesNotMatch(html,/<(script|iframe|form|input)\b/i);
    assert.doesNotMatch(html,/\b(autoplay|onload|onclick|onerror)\s*=/i);
    assert.doesNotMatch(html,/VZ54YTD6|\$37|\$87/);
+   assert.doesNotMatch(html,/\*\*[^*]+\*\*/); // raw Markdown must never bleed into rendered HTML
  });
 }
 test('B video concept is optional, non-playable and fully transcribed',()=>{
