@@ -41,10 +41,11 @@ function evaluate(snapshot, proofs = {}) {
   const providerConfirmed = proofs.confirmed_signup_event === true && safeRef(proofs.confirmed_signup_ref) && proofs.consent_scope === 'dispatch_newsletter';
   if (!providerConfirmed) blockers.push('confirmed_signup cannot be proven by click, URL parameter, PDF download or Reader follow');
   const auditedSessions = Number.isInteger(proofs.qualified_human_sessions) && proofs.qualified_human_sessions > 0 && safeRef(proofs.session_audit_ref);
-  const paid = Number.isInteger(proofs.settled_orders) && proofs.settled_orders >= 0 && safeRef(proofs.merchant_settlement_ref) && safeRef(proofs.refunds_fees_ref);
+  const paid = Number.isInteger(proofs.settled_orders) && proofs.settled_orders >= 0 && safeRef(proofs.merchant_settlement_ref) && safeRef(proofs.refunds_fees_ref) && proofs.settlement_cohort_mature === true;
   const validAmounts = ['gross','refunds','fees'].every(k => typeof proofs[k] === 'number' && Number.isFinite(proofs[k]) && proofs[k] >= 0);
   const netPerK = auditedSessions && paid && validAmounts ? 1000 * (proofs.gross - proofs.refunds - proofs.fees) / proofs.qualified_human_sessions : null;
-  const readiness = { editorial_reviewable: errors.length === 0 && eligibleProof && Number.isInteger(eligible) && !!safeRef(proofs.preview_ref) && !!safeRef(proofs.valid_fv_postal_ref) && !!safeRef(proofs.rendered_unsubscribe_ref), commercial_reviewable: false, send_authorized: false };
+  const sharedBlocked = blockers.some(x => !x.startsWith('issue '));
+  const readiness = { editorial_reviewable: errors.length === 0 && !sharedBlocked && eligibleProof && Number.isInteger(eligible) && !!safeRef(proofs.preview_ref) && !!safeRef(proofs.valid_fv_postal_ref) && !!safeRef(proofs.rendered_unsubscribe_ref), commercial_reviewable: false, send_authorized: false };
   const types = { total: c.total ?? null, confirmed: c.confirmed ?? null, unconfirmed_excluded: c.unconfirmed ?? null, direct_email_followers: f.email ?? null, reader_followers: f.reader ?? null, eligible_inboxes: eligibleProof && Number.isInteger(eligible) ? eligible : null };
   return { errors, blockers, types, consent_status: providerConfirmed ? 'PROVIDER_EVENT_WITH_SCOPE' : 'UNVERIFIED', revenue_per_1000_qualified_humans: netPerK, readiness, note: 'No subject or HTML preview can override a missing legal, recipient, partner or founder release gate.' };
 }
