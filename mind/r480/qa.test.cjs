@@ -43,7 +43,7 @@ for(const [id,html] of [['A',A],['B',B]]){
 test('B video concept is optional, non-playable and fully transcribed',()=>{
  assert.match(B,/film-heading/);
  assert.match(B,/<details><summary>/);
- assert.match(B,/not encoded or hosted video/);
+ assert.match(B,/no encoded or hosted video/);
  assert.match(B,/OPTIONAL_42S_POSTER.svg/);
  assert.match(poster,/^<svg/);
  assert.doesNotMatch(poster,/<script\b/i);
