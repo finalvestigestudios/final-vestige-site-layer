@@ -12,8 +12,8 @@ from urllib.parse import urlsplit
 
 HOLD = "DRAFT_HARD_HOLD"
 FREE = "https://finalvestige.com/preparedness/"
-ORIGINS = ("base", "food", "health", "hist_field", "hist_food",
-           "hist_home", "shelter", "start")
+ORIGINS = ("base", "food", "health", "hist-field", "hist-food",
+           "hist-home", "shelter", "start")
 FORBIDDEN_TAGS = {"script", "iframe", "form", "input", "object", "embed",
                   "meta", "base", "link", "template", "style", "button"}
 COMMERCE = {"payhip.com", "gumroad.com", "stripe.com", "paypal.com",
