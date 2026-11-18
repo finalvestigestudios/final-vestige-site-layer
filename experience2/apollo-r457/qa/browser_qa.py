@@ -26,27 +26,31 @@ with sync_playwright() as p:
    case(f'{width}-{ "js" if js else "nojs"}',check)
    if width==390 and js:
     def filter_check():
-     page.get_by_role('button',name='Shown on live Atlas').click()
+     page.get_by_role('button',name='Atlas chronology (3)').click()
      assert page.locator('[data-fv457-card]:visible').count()==3
-     assert page.get_by_role('button',name='Shown on live Atlas').get_attribute('aria-pressed')=='true'
-     page.get_by_role('button',name='Withheld').click()
+     assert page.get_by_role('button',name='Atlas chronology (3)').get_attribute('aria-pressed')=='true'
+     page.get_by_role('button',name='Not in Atlas (3)').click()
      assert page.locator('[data-fv457-card]:visible').count()==3
+     page.get_by_role('button',name='Confirmed homepage (1)').click()
+     assert page.locator('[data-fv457-card]:visible').count()==1
+     assert page.locator('[data-fv457-card]:visible h3').inner_text()=='S67-19766'
      page.get_by_role('button',name='All six').click()
      assert page.locator('[data-fv457-card]:visible').count()==6
     case('filter-and-aria',filter_check)
     def keyboard_check():
-     btn=page.get_by_role('button',name='Withheld');btn.focus();page.keyboard.press('Enter');assert btn.get_attribute('aria-pressed')=='true'
+     btn=page.get_by_role('button',name='Not in Atlas (3)');btn.focus();page.keyboard.press('Enter');assert btn.get_attribute('aria-pressed')=='true'
     case('keyboard-enter',keyboard_check)
     def details_check():
      page.get_by_role('button',name='All six').click();item=page.locator('details').first;item.locator('summary').click();assert item.get_attribute('open') is not None
     case('native-source-details',details_check)
+    case('no-embedded-media',lambda: (page.locator('img,iframe,video').count()==0 or (_ for _ in ()).throw(AssertionError('embedded media'))))
    context.close()
  context=browser.new_context(has_touch=True,is_mobile=True,viewport={'width':390,'height':844},device_scale_factor=1)
- page=context.new_page();page.set_default_timeout(2500);page.set_content(html);case('touch-tap',lambda:(page.get_by_role('button',name='Withheld').tap(),page.locator('[data-fv457-card]:visible').count()==3 or (_ for _ in ()).throw(Exception('touch failed'))));context.close()
+ page=context.new_page();page.set_default_timeout(2500);page.set_content(html);case('touch-tap',lambda:(page.get_by_role('button',name='Not in Atlas (3)').tap(),page.locator('[data-fv457-card]:visible').count()==3 or (_ for _ in ()).throw(Exception('touch failed'))));context.close()
  context=browser.new_context(reduced_motion='reduce',viewport={'width':390,'height':800});page=context.new_page();page.set_content(html);case('reduced-motion',lambda:page.locator('[data-fv457-card]').count()==6 or (_ for _ in ()).throw(Exception('missing records')));context.close()
  context=browser.new_context(forced_colors='active',viewport={'width':390,'height':800});page=context.new_page();page.set_content(html);case('forced-colors',lambda:page.locator('[data-fv457-card]').count()==6 or (_ for _ in ()).throw(Exception('missing records')));context.close()
  browser.close()
-report={'sprint':'R457','render':'PHP generated HTML / Chromium page.set_content; no hosted navigation','local_cases_passed':len(passes),'local_cases_failed':len(fail),'passed_names':passes,'failures':fail,'hosted_WordPress':'HOLD_NOT_RUN','navigated_LCP':'HOLD_NOT_RUN','navigated_CLS':'HOLD_NOT_RUN','axe_core':'HOLD_NOT_RUN','manual_screen_reader':'HOLD_NOT_RUN','field_CWV':'HOLD_NOT_RUN'}
+report={'sprint':'R458','render':'PHP generated HTML / Chromium page.set_content; no hosted navigation','local_cases_passed':len(passes),'local_cases_failed':len(fail),'passed_names':passes,'failures':fail,'hosted_WordPress':'HOLD_NOT_RUN','navigated_LCP':'HOLD_NOT_RUN','navigated_CLS':'HOLD_NOT_RUN','axe_core':'HOLD_NOT_RUN','manual_screen_reader':'HOLD_NOT_RUN','field_CWV':'HOLD_NOT_RUN'}
 (QA/'BROWSER_RESULTS.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
 print(json.dumps({'passed':len(passes),'failed':fail},indent=2))
 if fail:raise SystemExit(1)
