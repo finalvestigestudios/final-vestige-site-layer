@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-18",
+  "source_state": "reviewed public sources",
+  "release": "HOLD_UNSENT",
+  "slot": 2,
+  "offer": "none",
+  "primary_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+  "claims": [
+    {
+      "claim": "1784 Victor episode dated May 4; attributed to Puységur",
+      "qualification": "operator's published narrative, not independent observation",
+      "url": "https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/"
+    },
+    {
+      "claim": "Puységur's 1784 memoir includes dated testimonial letters",
+      "qualification": "surviving memoir; no modern efficacy inference",
+      "url": "https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/"
+    },
+    {
+      "claim": "Royal commission investigated d'Eslon/Deslon",
+      "qualification": "not Puységur's Buzancy case",
+      "url": "https://www.circee.org/rapport-des-commissaires-examen-du-magnetisme-animal-1784/"
+    },
+    {
+      "claim": "Commission experimentally separated expectation and claimed action",
+      "qualification": "historical commission's inference, not universal modern result",
+      "url": "https://www.circee.org/rapport-des-commissaires-examen-du-magnetisme-animal-1784/"
+    },
+    {
+      "claim": "Commission did not test Puységur's somnambulism accounts",
+      "qualification": "scope limitation material to accuracy",
+      "url": "https://www.circee.org/rapport-des-commissaires-examen-du-magnetisme-animal-1784/"
+    },
+    {
+      "claim": "Final Vestige archive has 153 active rows and 16 dossiers",
+      "qualification": "public internal archival inventory, not validated claims",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "claim": "Archive retains failed predictions and ethically troubling material",
+      "qualification": "evidence-source interpretive claim; review live case notes",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "claim": "Commercial emails require sender postal + opt-out",
+      "qualification": "FTC release requirement; cannot fill with Automattic address",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    }
+  ],
+  "prohibitions": [
+    "No magnetic fluid scientifically established",
+    "No causal efficacy of historical treatments established",
+    "No modern hypnosis/Zen12 endorsement",
+    "No claimed operator-independent Victor testimony"
+  ],
+  "unverified": [
+    "Actual mail-native preview",
+    "publisher physical address",
+    "functional unsubscribe",
+    "received welcome",
+    "founder adoption"
+  ]
+}
