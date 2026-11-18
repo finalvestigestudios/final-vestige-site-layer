@@ -1,0 +1,624 @@
+{
+  "schema_version": "mind-r467-evidence-matrix-v1",
+  "date": "2026-11-18",
+  "scope": "UNPUBLISHED source-only; no commerce activation",
+  "owner": "Final Vestige Mind & Perception",
+  "sources": [
+    {
+      "id": "I1",
+      "title": "Hasher et al 1977",
+      "url": "https://doi.org/10.1016/S0022-5371(77)80012-1",
+      "type": "primary psychology experiment",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "I2",
+      "title": "Fazio et al 2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26301795/",
+      "type": "primary psychology experiments",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "I3",
+      "title": "Repeated statements up to 27 times 2021",
+      "url": "https://link.springer.com/article/10.1186/s41235-021-00301-5",
+      "type": "primary cognitive experiments",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "I4",
+      "title": "Henderson Simons Barr 2021",
+      "url": "https://doi.org/10.5334/joc.161",
+      "type": "registered longitudinal report",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "I5",
+      "title": "Calio et al 2020",
+      "url": "https://doi.org/10.1016/j.actpsy.2020.103185",
+      "type": "primary warnings experiment",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "I6",
+      "title": "Stoeckel et al 2024",
+      "url": "https://doi.org/10.1038/s44271-024-00057-w",
+      "type": "three preregistered experiments",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "I7",
+      "title": "Tu 2024",
+      "url": "https://doi.org/10.1093/joc/jqae007",
+      "type": "survey experiment",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "I8",
+      "title": "Ingendoh Posny Heine 2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "type": "systematic review, 14 heterogeneous binaural-beat EEG studies",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "S1",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "type": "seller catalog not independent efficacy research",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "S2",
+      "title": "Zen12 About",
+      "url": "https://zen12.com/about",
+      "type": "standard seller description",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "S3",
+      "title": "Zen12 promotional VSL",
+      "url": "https://zen12.com/secret/",
+      "type": "distinct seller promotion, checkout context and nonpermanent countdown",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "F1",
+      "title": "FTC Endorsement Guides",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "official disclosure guidance",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "F2",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "official substantiation guidance",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "V1",
+      "title": "Puységur archival resource",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "live Final Vestige original-source trail",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "V2",
+      "title": "Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "type": "live free lead magnet",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "V3",
+      "title": "Change Blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "existing live mind article",
+      "checked_date": "2026-11-18"
+    },
+    {
+      "id": "V4",
+      "title": "Mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "existing live historical investigation",
+      "checked_date": "2026-11-18"
+    }
+  ],
+  "claims": [
+    {
+      "id": "R01",
+      "statement": "Repeated statements received increased truth ratings in 1977 experiment",
+      "decision": "independent supported in tested design",
+      "source_ids": [
+        "I1"
+      ]
+    },
+    {
+      "id": "R02",
+      "statement": "All repeated statements become true",
+      "decision": "false inference",
+      "source_ids": [
+        "I1"
+      ]
+    },
+    {
+      "id": "R03",
+      "statement": "Prior knowledge did not always stop illusory truth judgments",
+      "decision": "independent supported in tested design",
+      "source_ids": [
+        "I2"
+      ]
+    },
+    {
+      "id": "R04",
+      "statement": "Knowledge is useless against every repeated claim",
+      "decision": "unsupported exaggeration",
+      "source_ids": [
+        "I2"
+      ]
+    },
+    {
+      "id": "R05",
+      "statement": "Experiments tested up to 27 repetitions and observed diminishing marginal increases",
+      "decision": "independent supported in tested design",
+      "source_ids": [
+        "I3"
+      ]
+    },
+    {
+      "id": "R06",
+      "statement": "The truth effect was found after up to one month, declining with delay",
+      "decision": "independent supported in tested design",
+      "source_ids": [
+        "I4"
+      ]
+    },
+    {
+      "id": "R07",
+      "statement": "Warnings can reduce but not universally eliminate the effect",
+      "decision": "independent supported in tested design",
+      "source_ids": [
+        "I5"
+      ]
+    },
+    {
+      "id": "R08",
+      "statement": "Social corrections can reduce confidence in false claims",
+      "decision": "independent supported within tested context",
+      "source_ids": [
+        "I6"
+      ]
+    },
+    {
+      "id": "R09",
+      "statement": "Incorrect social corrections can also undermine true claims",
+      "decision": "independent supported within tested context",
+      "source_ids": [
+        "I6"
+      ]
+    },
+    {
+      "id": "R10",
+      "statement": "Fact-checking guide increased verification behaviors in 636-person experiment",
+      "decision": "independent supported within tested context",
+      "source_ids": [
+        "I7"
+      ]
+    },
+    {
+      "id": "R11",
+      "statement": "FV-specific twelve-minute audit is clinically proven",
+      "decision": "unsupported: original educational exercise",
+      "source_ids": [
+        "I7"
+      ]
+    },
+    {
+      "id": "R12",
+      "statement": "Puységur has a source-documented history archive",
+      "decision": "live site verified",
+      "source_ids": [
+        "V1"
+      ]
+    },
+    {
+      "id": "R13",
+      "statement": "Historical notarization proves magnetism",
+      "decision": "unsupported inference",
+      "source_ids": [
+        "V1"
+      ]
+    },
+    {
+      "id": "R14",
+      "statement": "The Focus Fieldbook is free and uses established Jetpack/Dispatch funnel",
+      "decision": "live site verified",
+      "source_ids": [
+        "V2"
+      ]
+    },
+    {
+      "id": "R15",
+      "statement": "Focus Fieldbook has proven product-specific efficacy",
+      "decision": "unsupported: underlying studies are not a trial of this product",
+      "source_ids": [
+        "V2"
+      ]
+    },
+    {
+      "id": "S01",
+      "statement": "Inspire3 catalogs Zen12, Hypnosis Live and Brainwave Shots",
+      "decision": "seller catalog verified",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "S02",
+      "statement": "Zen12 standard program has twelve levels and twelve-minute sessions",
+      "decision": "seller-described specification, not independently tested",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "id": "S03",
+      "statement": "Zen12 has guided, music, white noise and nature formats",
+      "decision": "seller-described specification, not independently tested",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "id": "S04",
+      "statement": "The promotional page describes a 48-MP3 package and extras",
+      "decision": "seller-described distinct offer, not checked out",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "S05",
+      "statement": "Twelve minutes of Zen12 equals an hour of regular meditation",
+      "decision": "seller claim not independently substantiated for this product",
+      "source_ids": [
+        "S1",
+        "S2",
+        "I8"
+      ]
+    },
+    {
+      "id": "S06",
+      "statement": "Zen12 immediately erases stress or anxiety",
+      "decision": "seller claim, omit health efficacy guarantee",
+      "source_ids": [
+        "S2",
+        "F2"
+      ]
+    },
+    {
+      "id": "S07",
+      "statement": "Special sounds reliably entrain each listener's brainwaves",
+      "decision": "not established by 14-study heterogeneous EEG review",
+      "source_ids": [
+        "I8"
+      ]
+    },
+    {
+      "id": "S08",
+      "statement": "Zen12 causes wealth, medical cures or permanent cognitive change",
+      "decision": "no product-specific evidence, prohibit",
+      "source_ids": [
+        "F2"
+      ]
+    },
+    {
+      "id": "S09",
+      "statement": "Current checkout price, coupon and countdown are stable",
+      "decision": "not authenticated, do not reuse temporary promotion",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "S10",
+      "statement": "Precise refund policy and exclusions for FV attributed purchase verified",
+      "decision": "not established, HOLD",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "S11",
+      "statement": "Final Vestige Inspire3 publisher approved, authorized link and promotion channels verified",
+      "decision": "not authenticated by this sprint, HOLD",
+      "source_ids": []
+    },
+    {
+      "id": "S12",
+      "statement": "Commission, cookie attribution and payout settlement terms verified",
+      "decision": "not authenticated by this sprint, HOLD",
+      "source_ids": []
+    },
+    {
+      "id": "S13",
+      "statement": "FV paid digital Mind SKU owned, licensed and actively purchasable",
+      "decision": "not authenticated by this sprint, HOLD",
+      "source_ids": [
+        "V2"
+      ]
+    },
+    {
+      "id": "F01",
+      "statement": "Disclose material commission ties clearly near earning recommendations",
+      "decision": "FTC guidance required",
+      "source_ids": [
+        "F1"
+      ]
+    },
+    {
+      "id": "F02",
+      "statement": "Objective health outcomes need adequate competent reliable scientific evidence",
+      "decision": "FTC guidance required",
+      "source_ids": [
+        "F2"
+      ]
+    },
+    {
+      "id": "F03",
+      "statement": "Individual testimonials establish typical outcome",
+      "decision": "not acceptable as product efficacy proof",
+      "source_ids": [
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": "M01",
+      "statement": "An affiliate_click event equals a paid affiliate commission",
+      "decision": "prohibited metric conflation",
+      "source_ids": []
+    },
+    {
+      "id": "M02",
+      "statement": "A confirmed newsletter lead equals a paid customer",
+      "decision": "prohibited metric conflation",
+      "source_ids": []
+    },
+    {
+      "id": "M03",
+      "statement": "Realized net revenue per 1000 qualified-human sessions available",
+      "decision": "not computable: missing independent settlement and denominator",
+      "source_ids": []
+    }
+  ],
+  "release_gates": [
+    {
+      "gate": "G01",
+      "criterion": "Named partner identity/acceptance",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G02",
+      "criterion": "Partner contract date",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G03",
+      "criterion": "Exact eligible Zen12 SKU",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G04",
+      "criterion": "Approved public sales destination",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G05",
+      "criterion": "Approved affiliate earning URL",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G06",
+      "criterion": "Web promotional permission",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G07",
+      "criterion": "Organic TikTok promotional permission",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G08",
+      "criterion": "Organic YouTube promotional permission",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G09",
+      "criterion": "Newsletter promotional permission",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G10",
+      "criterion": "Exact price displayed by destination verified",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G11",
+      "criterion": "Taxes and currency verified",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G12",
+      "criterion": "Coupon conditions verified",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G13",
+      "criterion": "Recurring/one-time billing clarified",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G14",
+      "criterion": "Refund window and exclusions verified",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G15",
+      "criterion": "Order delivery rights",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G16",
+      "criterion": "Commission schedule and amount verified",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G17",
+      "criterion": "Cookie attribution terms verified",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G18",
+      "criterion": "Payout threshold/fees verified",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G19",
+      "criterion": "Actual publisher payee verified",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G20",
+      "criterion": "FTC near-link disclosure visual QA",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G21",
+      "criterion": "Product-specific medical claims excluded",
+      "status": "draft-static-pass-other-release-gates-hold",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G22",
+      "criterion": "No invented personal experience",
+      "status": "draft-static-pass-other-release-gates-hold",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G23",
+      "criterion": "No manufactured urgency",
+      "status": "draft-static-pass-other-release-gates-hold",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G24",
+      "criterion": "No seller creative copied verbatim",
+      "status": "draft-static-pass-other-release-gates-hold",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G25",
+      "criterion": "No earning link in unpublished HTML",
+      "status": "draft-static-pass-other-release-gates-hold",
+      "explanation": "Guides have no earning-link href and an inert native disabled CTA. Source-level readback still required."
+    },
+    {
+      "gate": "G26",
+      "criterion": "No JS/no autoplay compliance",
+      "status": "draft-static-pass-other-release-gates-hold",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G27",
+      "criterion": "No duplicated signup/Jetpack flow",
+      "status": "draft-static-pass-other-release-gates-hold",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G28",
+      "criterion": "Browser keyboard/WCAG QA",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G29",
+      "criterion": "WordPress sanitizer QA",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G30",
+      "criterion": "Film encoded/caption QA",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G31",
+      "criterion": "Real mobile destination and page-performance QA",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G32",
+      "criterion": "Three authenticated Grok media IDs",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G33",
+      "criterion": "Consent-aware first-party attribution configured",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G34",
+      "criterion": "Reconciled merchant paid commission and refunds",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G35",
+      "criterion": "Qualified-human session denominator",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    },
+    {
+      "gate": "G36",
+      "criterion": "Founder release approval",
+      "status": "HOLD",
+      "explanation": "No commercial release authorization or completed production end-to-end verification; static assertions are not a release approval."
+    }
+  ],
+  "merchant_status": {
+    "inspire3_account_specific_approval": "NOT VERIFIED",
+    "exact_product_offer_link": "WITHHELD",
+    "partner_creatives_permission": "NOT VERIFIED",
+    "retailer_current_price": "not asserted; promo ephemeral",
+    "refund_conditions": "NOT VERIFIED",
+    "own_paid_mind_product": "NOT VERIFIED",
+    "verified_paid_sales": "NO EVIDENCE",
+    "revenue_per_1000_qualified_sessions": "NOT COMPUTABLE"
+  },
+  "review_instructions": "Each source-specific assertion must be individually checked for meaning before release; seller pages not proof. Static gate passing is not merchant authorization."
+}
