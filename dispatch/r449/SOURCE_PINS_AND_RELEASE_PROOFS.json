@@ -1,0 +1,123 @@
+{
+  "review_version": "R449 2026-11-18 06:33 PT",
+  "repo": "finalvestigestudios/final-vestige-site-layer",
+  "source_head": "220654f81a31ae847f798f552c472605d114b1ed",
+  "source_pins": {
+    "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+    "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+    "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md": "aeeef34efea0cc281f69901488e4501fea851245",
+    "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+    "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+    "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+    "dispatch/r444/ISSUE01_UNADOPTED.md": "c4d1cd241f3cc03b6e3525799b8012822ddc75cd",
+    "dispatch/r443/ISSUE02_UNADOPTED.md": "7497c95f12061e4caf63a775c47755ee038bd124",
+    "dispatch/r441/ISSUE03_UNADOPTED.txt": "378f3ea2ce6f86bc779f1082d4634103ee25dfce",
+    "dispatch/r442/ISSUE04_APOLLO_UNADOPTED.txt": "df86dd1e2e1ac7ef9af43c9acc0e566794d7219e",
+    "dispatch/r440/ISSUE_05_HYPNOSIS_LIVE_UNADOPTED.md": "3a173be413078a04f695b458b1e57b19cd6460cb",
+    "dispatch/r445/ISSUE06_EIGHT_CUPS_UNADOPTED.md": "40543454d4123c13f946f5611fb4e2beca3375ad"
+  },
+  "mix": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_review_pending": [
+      3,
+      5
+    ]
+  },
+  "issue_variants": [
+    {
+      "issue": 1,
+      "original_external_sources": 0,
+      "alternative_external_urls": 2,
+      "conversion_risk": "original duplicates issue02 Puységur CTA despite change-blindness topic",
+      "review": "prefer A1 after founder selection, confirm CTA published",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "issue": 2,
+      "original_external_sources": 0,
+      "alternative_external_urls": 3,
+      "conversion_risk": "original lacks in-email primary source links",
+      "review": "A2 clearer scope; commission did not test Puységur cases",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "issue": 3,
+      "original_external_sources": 0,
+      "alternative_external_urls": 3,
+      "conversion_risk": "approved warm-up guide and named merchant EMAIL permission absent; standard offer and countdown promo differ",
+      "review": "Zen12 only; no purchase/link/price; source-only CTA; cannot promote",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "issue": 4,
+      "original_external_sources": 0,
+      "alternative_external_urls": 5,
+      "conversion_risk": "original subject's fourteen-second framing could overstate official timeline precision",
+      "review": "A4 more accurate but NASA source-link recheck required before adopting",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "issue": 5,
+      "original_external_sources": 0,
+      "alternative_external_urls": 6,
+      "conversion_risk": "A5 includes internal notes outside subscriber-facing boundary; product-specific consent/terms absent",
+      "review": "Hypnosis Live only; extract exact email body for future internal review; never paste whole file",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "issue": 6,
+      "original_external_sources": 0,
+      "alternative_external_urls": 3,
+      "conversion_risk": "Fieldbook download is available without proving email opt-in",
+      "review": "A6 separates observation from causal inference; PDF download not confirmed signup",
+      "status": "HOLD_UNSENT"
+    }
+  ],
+  "provider_read_only": {
+    "as_of": "2026-11-18T14:33:02Z",
+    "enabled": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "confirmed": 3,
+    "unconfirmed_additional": 2,
+    "recent_post_email_status": "five never_sent_opted_out"
+  },
+  "release_proofs": {
+    "true_native_jetpack_email_preview": false,
+    "received_52_page_welcome": false,
+    "publisher_valid_postal": false,
+    "rendered_unsubscribe": false,
+    "zen12_named_email_permission": false,
+    "hypnosis_live_named_email_permission": false,
+    "live_approved_zen12_guide": false,
+    "live_approved_hypnosis_live_guide": false,
+    "issued_earning_urls": false,
+    "independently_settled_sales": false,
+    "audited_human_sessions": false,
+    "founder_final_approval": false
+  },
+  "policy": {
+    "send_authorized": false,
+    "external_merchant_link_authorized": false,
+    "new_subscriber_list_authorized": false,
+    "new_email_platform_authorized": false,
+    "revenue_per_1000_sessions": null,
+    "revenue_reason": "missing independent settled net revenue and qualified human session denominator"
+  },
+  "references": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/3004",
+    "https://wordpress.com/support/newsletter/send-newsletter-emails/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}
