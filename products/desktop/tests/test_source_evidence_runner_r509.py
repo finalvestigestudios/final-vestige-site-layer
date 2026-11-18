@@ -1079,7 +1079,7 @@ class BoundedManifestR519(unittest.TestCase):
     def test_small_manifest_read_is_exact(self):
         with TemporaryDirectory() as d:
             path = Path(d) / "manifest.txt"
-            raw = b"python -W error\\n".replace(b"\\n", b"\n")
+            raw = b"python -W error\n"
             path.write_bytes(raw)
             self.assertEqual(runner.read_manifest_bounded(path), raw)
 
@@ -1135,11 +1135,11 @@ class BoundedManifestR519(unittest.TestCase):
             root = Path(d)
             path = root / "products/desktop/ci/source_evidence_commands_r509.txt"
             path.parent.mkdir(parents=True)
-            path.write_bytes(b"synthetic pinned source\\n")
+            path.write_bytes(b"synthetic pinned source\n")
             commands = (("-W", "error"),)
-            with patch.object(runner, "ROOT", root), \\
-                 patch.object(runner, "MANIFEST", path), \\
-                 patch.object(runner, "load_commands", return_value=commands) as load, \\
+            with patch.object(runner, "ROOT", root), \
+                 patch.object(runner, "MANIFEST", path), \
+                 patch.object(runner, "load_commands", return_value=commands) as load, \
                  patch.object(runner, "execute", return_value=0) as run:
                 self.assertEqual(runner.main(), 0)
             load.assert_called_once_with(path.read_bytes())
