@@ -1,0 +1,44 @@
+# THE DISPATCH — ISSUE 02 / R443 CANDIDATE
+
+> UNADOPTED · HOLD UNSENT · NO PUBLICATION / NO EMAIL
+
+**Subject:** The witness was also the experimenter
+
+**Preheader:** Puységur's 1784 account, Franklin's separate tests, and the gap between a record and proof.
+
+**Slot:** 02 of 06, editorial, no merchant placement.
+
+On May 4, 1784, a French aristocrat described a startling encounter at his estate in Buzancy. A young farm worker known as Victor apparently fell peacefully asleep while being “magnetized,” yet answered questions. According to the aristocrat, he remembered none of it afterward.
+
+You can imagine how that story might be sold today: the moment a mysterious power was discovered, followed by a promise that it can work for you. The surviving document gives us a much better question: how do we know what happened when the person describing the event was also the experimenter?
+
+## An extraordinary report is still a report
+
+The aristocrat was Armand-Marie-Jacques de Chastenet, marquis de Puységur. His 1784 Mémoires preserves dated letters about Victor and other subjects. These are valuable historical documents. They tell us what Puységur claimed to see, what he believed it meant and why he asked other operators to reproduce his experiences. They do not provide an independent account of Victor's interior experience or establish an animal-magnetic fluid.
+
+Elsewhere that year, the royal commission associated with Benjamin Franklin, Jean-Sylvain Bailly and Antoine Lavoisier examined Charles d'Eslon's animal-magnetism practice. Its investigators sometimes separated what a subject was told from what was actually done. They reported that expectation and imagination could produce strong reactions without the claimed magnetic action.
+
+The commission did not independently test Puységur's Buzancy cases. It would be careless to claim it did—or to treat the lack of such testing as evidence that Puységur was right. Two groups of historical records can illuminate the same controversy without settling the same question.
+
+## The three-column evidence check
+
+When you encounter an impressive claim, write three headings. Observation: what someone actually reported experiencing. Explanation: what mechanism the storyteller said caused it. Missing check: what independent comparison or plausible alternative would separate the two.
+
+For Victor, the apparently altered state belongs in the first column. The proposed magnetic cause belongs in the second. Independent observers, blinding, possible alternative causes and the subject's ability to consent or refuse belong in the third. That last point matters. Puységur's later files contain disturbing questions about authority, dependence and whose wishes were respected.
+
+Our Final Vestige archive follows those papers rather than awarding a winner. It has 153 indexed source rows and 16 case dossiers. We keep failed predictions, mismatched testimony, translation pitfalls and ethically difficult episodes on the page instead of polishing them away. Those numbers describe archival organization—not a tally of independently confirmed phenomena.
+
+The distinction is useful far beyond eighteenth-century France. Modern claims about attention, productivity and audio programs often ask us to jump directly from someone's experience to a proposed explanation. Slowing that jump costs nothing. You don't need to believe the magnetic theory—or dismiss every witness—to make the evidence more intelligible.
+
+The source trail is open, including the account's failures and unanswered questions. The next time a remarkable claim arrives wrapped in an impressive story, try labeling its observation, explanation and missing check before deciding what the story proves.
+
+**Primary CTA:** [Read Puységur's source trail](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/).
+
+### Source links
+1. [Puységur's 1784 Mémoires — original-edition links and contextual notes](https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/)
+2. [Bailly et al., 1784 royal commission — scope and original-edition links](https://www.circee.org/rapport-des-commissaires-examen-du-magnetisme-animal-1784/)
+3. [Final Vestige Editorial Standards](https://finalvestige.com/editorial-standards/)
+4. [FTC commercial email release requirements (for reviewer, not email source)](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business)
+
+---
+**HARD HOLD:** Publisher postal address [[VALID_FV_POSTAL_ADDRESS_REQUIRED]]; provider unsubscribe [[VERIFIED_JETPACK_UNSUBSCRIBE_REQUIRED]]. These placeholders are intentionally unusable for sending.
