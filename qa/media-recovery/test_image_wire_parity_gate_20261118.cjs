@@ -1,20 +1,27 @@
 "use strict";
 const test=require("node:test"),assert=require("node:assert/strict");
 const {evaluate}=require("./image_wire_parity_gate_20261118.cjs");
+const {rowsFor,MANIFEST_SHA256}=require("./cohort_manifest_guard_20261118.cjs");
 const make=function make(cohort="targeted",count=1,after=20){
+ const specs=cohort==="targeted"
+  ? Array.from({length:count},(_,i)=>({post_id:i+1,url:"https://finalvestige.com/test-"+(i+1)+"/",img_slots:1}))
+  : rowsFor(cohort).slice(0,count);
  const capture=(viewport,phase)=>({instrument:"CDP_NETWORK",capture_type:"GUEST_CHROMIUM",viewport,
   cache_disabled:true,service_worker_bypassed:true,complete_image_requests:true,
   trace_evidence_url:"https://github.com/finalvestigestudios/final-vestige-site-layer/pull/154",trace_sha256:"a".repeat(64),
-  pages:Array.from({length:count},(_,i)=>({post_id:i+1,url:`https://finalvestige.com/test-${i+1}/`,
-    complete_image_requests:true,images:[{asset_id:`${i+1}:0`,authored_src:"https://i0.wp.com/archives.gov/pic.jpg",
-      current_src:"https://i0.wp.com/archives.gov/pic.jpg?w=960",final_url:"https://i0.wp.com/archives.gov/pic.jpg?w=960",
-      source_identity:"https://archives.gov/pic.jpg",request_id:`${viewport}-${phase}-${i+1}`,
-      from_cache:false,from_service_worker:false,transfer_metric:"CDP_ENCODED_DATALENGTH",
-      transfer_bytes:phase==="before"?100:after,http_status:200,mime:"image/jpeg",
-      decoded:true,natural_width:960,natural_height:600,screenshot:"test-only/screen.png"}]}))});
- return {schema:"fv-image-wire-parity-v1",cohort:{id:cohort,expected_posts:count},manifest_sha256:"b".repeat(64),
-   estimated_bytes:false,stored_original_bytes_used:false,before:{desktop:capture("desktop","before"),mobile:capture("mobile","before")},
-   after:{desktop:capture("desktop","after"),mobile:capture("mobile","after")}};
+  pages:specs.map(spec=>({post_id:spec.post_id,url:spec.url,complete_image_requests:true,
+   images:Array.from({length:spec.img_slots},(_,slot)=>({asset_id:spec.post_id+":"+slot,
+    authored_src:"https://i0.wp.com/archives.gov/pic.jpg",
+    current_src:"https://i0.wp.com/archives.gov/pic.jpg?w=960",
+    final_url:"https://i0.wp.com/archives.gov/pic.jpg?w=960",
+    source_identity:"https://archives.gov/pic.jpg",request_id:viewport+"-"+phase+"-"+spec.post_id+"-"+slot,
+    from_cache:false,from_service_worker:false,transfer_metric:"CDP_ENCODED_DATALENGTH",
+    transfer_bytes:phase==="before"?100:after,http_status:200,mime:"image/jpeg",
+    decoded:true,natural_width:960,natural_height:600,screenshot:"test-only/screen.png"}))}))});
+ return {schema:"fv-image-wire-parity-v1",cohort:{id:cohort,expected_posts:count},
+  manifest_sha256:cohort==="targeted"?"b".repeat(64):MANIFEST_SHA256,
+  estimated_bytes:false,stored_original_bytes_used:false,before:{desktop:capture("desktop","before"),mobile:capture("mobile","before")},
+  after:{desktop:capture("desktop","after"),mobile:capture("mobile","after")}};
 };
 test("targeted_not_sitewide",()=>{const x=(()=>make())();assert.equal((x=>!evaluate(x).threshold_met)(x),true);});
 test("61_sitewide_with_76_percent",()=>{const x=(()=>make("historic-61",61,24))();assert.equal((x=>evaluate(x).threshold_met)(x),true);});
@@ -38,3 +45,8 @@ test("trace_required",()=>{const x=(()=>{let z=make();z.after.desktop.trace_sha2
 test("full_image_coverage_required",()=>{const x=(()=>{let z=make();z.after.desktop.pages[0].complete_image_requests=false;return z;})();assert.equal((x=>evaluate(x).errors.some(s=>s.includes("incomplete_images")))(x),true);});
 test("both_devices_require_76",()=>{const x=(()=>{let z=make("historic-61",61,24);for(const p of z.after.mobile.pages)p.images[0].transfer_bytes=50;return z;})();assert.equal((x=>!evaluate(x).threshold_met)(x),true);});
 test("request_ids_are_scoped_to_page_navigation",()=>{const x=make("targeted",2);for(const phase of ["before","after"])for(const device of ["desktop","mobile"]){const pages=x[phase][device].pages;pages[1].images[0].request_id=pages[0].images[0].request_id;}assert.equal(evaluate(x).devices.desktop.before_bytes,200);assert.equal(evaluate(x).errors.includes("before-desktop:2:request_collision"),false);});
+
+test("zero-image post 1922 is valid in full current cohort",()=>{const x=make("current-66",66,24);assert.equal(x.before.mobile.pages.find(p=>p.post_id===1922).images.length,0);assert.equal(evaluate(x).threshold_met,true);});
+test("wrong census digest cannot claim sitewide",()=>{const x=make("historic-61",61,24);x.manifest_sha256="b".repeat(64);assert.ok(evaluate(x).errors.includes("manifest_snapshot_mismatch"));});
+test("arbitrary 61 post IDs cannot claim historic coverage",()=>{const x=make("historic-61",61,24);for(const phase of ["before","after"])for(const device of ["desktop","mobile"])x[phase][device].pages[0].post_id=99999;assert.ok(evaluate(x).errors.some(s=>s.includes("cohort_unexpected_post")));});
+test("added image on 1922 invalidates cohort",()=>{const x=make("current-66",66,24);x.after.mobile.pages.find(p=>p.post_id===1922).images.push({...x.after.mobile.pages[0].images[0],asset_id:"1922:0"});assert.ok(evaluate(x).errors.some(s=>s.includes("cohort_inline_slot_count")));});
