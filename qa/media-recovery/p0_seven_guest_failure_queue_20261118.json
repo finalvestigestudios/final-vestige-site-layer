@@ -1,0 +1,227 @@
+{
+  "schema": "fv-guest-failure-intake-20261118-v1",
+  "created_at": "2026-11-18T04:29:00-08:00",
+  "historical_worklist_blob": "9cdf7af84175883775aaebf55ffa5ca77b33e423",
+  "p0_source_blob": "9eab2382f827e09ec1060d50c4c57135d16655b5",
+  "tang_basis_blob": "daf131578622af7f1e24da275d919a86d0ab6a27",
+  "provenance": "Read-only six-slot WordPress VIEW exact-origin snapshot; fresh 2026-11-18 independent Tang source-origin retriever",
+  "source_stored_posts": 66,
+  "source_stored_images": 361,
+  "summary": {
+    "priority_slots": 7,
+    "known_origin_http_4xx": 5,
+    "retriever_errors_without_numeric_origin_status": 2,
+    "guest_chromium_slots_verified": 0,
+    "guest_42_failures_confirmed": null,
+    "actual_wire_savings_76_percent_confirmed": null,
+    "oversized_media_originals_gt_1500000_bytes": 20,
+    "oversized_originals_stored_bytes": 64385752,
+    "replacement_assets_rights_cleared": 0,
+    "wordpress_writes_allowed": false
+  },
+  "slots": [
+    {
+      "slot": "274:6",
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "authored_src": "https://i0.wp.com/www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg?resize=640%2C432&ssl=1",
+      "origin_url": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+      "origin_probe": {
+        "kind": "HTTP_ERROR",
+        "status": 404,
+        "checked_at": "2026-11-18T04:29:00-08:00",
+        "method": "independent public web retriever (not Chromium)",
+        "note": "Fresh source-origin check returned 404; published Jetpack visitor remains unknown"
+      },
+      "candidate": {
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography.html",
+        "accession": "80-G-227989",
+        "rights_status": "HOLD",
+        "rights_note": "NHHC image accession subject match; source item, exact frame and license not yet approved",
+        "exact_raster_verified": false,
+        "rehost_approved": false,
+        "native_width": null,
+        "native_height": null,
+        "derivative_width": null
+      },
+      "guest_http": null,
+      "guest_decode": null,
+      "guest_current_src": null,
+      "rehosting_approved": false,
+      "wp_write_approved": false
+    },
+    {
+      "slot": "285:2",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "authored_src": "https://i0.wp.com/blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg?ssl=1",
+      "origin_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "origin_probe": {
+        "kind": "TOOL_ERROR",
+        "status": null,
+        "checked_at": "2026-11-17T18:32:00-08:00",
+        "method": "independent public retriever, not guest browser",
+        "note": "Redirects to blog.ucs.org; retriever wrapper 500 is not origin 500"
+      },
+      "candidate": {
+        "catalog_url": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+        "accession": null,
+        "rights_status": "HOLD",
+        "rights_note": "NRC_FIGURE_CREDIT_REUSE_UNKNOWN",
+        "exact_raster_verified": false,
+        "rehost_approved": false,
+        "native_width": null,
+        "native_height": null,
+        "derivative_width": null
+      },
+      "guest_http": null,
+      "guest_decode": null,
+      "guest_current_src": null,
+      "rehosting_approved": false,
+      "wp_write_approved": false
+    },
+    {
+      "slot": "285:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "authored_src": "https://i0.wp.com/images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg?ssl=1",
+      "origin_url": "https://images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "origin_probe": {
+        "kind": "HTTP_ERROR",
+        "status": 404,
+        "checked_at": "2026-11-17T18:32:00-08:00",
+        "method": "independent public retriever, not guest browser",
+        "note": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_(color).jpg",
+        "accession": null,
+        "rights_status": "HOLD",
+        "rights_note": "FEDERAL_PD_CLAIM_DIFFERENT_FRAME_HOLD",
+        "exact_raster_verified": false,
+        "rehost_approved": false,
+        "native_width": 2592,
+        "native_height": 2488,
+        "derivative_width": 960
+      },
+      "guest_http": null,
+      "guest_decode": null,
+      "guest_current_src": null,
+      "rehosting_approved": false,
+      "wp_write_approved": false
+    },
+    {
+      "slot": "287:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "authored_src": "https://i0.wp.com/stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg?ssl=1",
+      "origin_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "origin_probe": {
+        "kind": "HTTP_ERROR",
+        "status": 404,
+        "checked_at": "2026-11-17T18:32:00-08:00",
+        "method": "independent public retriever, not guest browser",
+        "note": null
+      },
+      "candidate": {
+        "catalog_url": "https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/",
+        "accession": null,
+        "rights_status": "HOLD",
+        "rights_note": "UNIVERSITY_PRESS_FLORIDA_REHOST_UNCLEARED",
+        "exact_raster_verified": false,
+        "rehost_approved": false,
+        "native_width": null,
+        "native_height": null,
+        "derivative_width": null
+      },
+      "guest_http": null,
+      "guest_decode": null,
+      "guest_current_src": null,
+      "rehosting_approved": false,
+      "wp_write_approved": false
+    },
+    {
+      "slot": "407:1",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "authored_src": "https://i0.wp.com/d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg?ssl=1",
+      "origin_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "origin_probe": {
+        "kind": "TOOL_ERROR",
+        "status": null,
+        "checked_at": "2026-11-17T18:32:00-08:00",
+        "method": "independent public retriever, not guest browser",
+        "note": "Binary/octet-stream unsupported; retriever wrapper 400 is not origin 400"
+      },
+      "candidate": {
+        "catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+        "accession": null,
+        "rights_status": "HOLD",
+        "rights_note": "USGS_PUBLIC_DOMAIN_J_R_STACY_CREDIT_REVIEW",
+        "exact_raster_verified": false,
+        "rehost_approved": false,
+        "native_width": null,
+        "native_height": null,
+        "derivative_width": null
+      },
+      "guest_http": null,
+      "guest_decode": null,
+      "guest_current_src": null,
+      "rehosting_approved": false,
+      "wp_write_approved": false
+    },
+    {
+      "slot": "418:1",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "authored_src": "https://i0.wp.com/media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG?ssl=1",
+      "origin_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "origin_probe": {
+        "kind": "HTTP_ERROR",
+        "status": 403,
+        "checked_at": "2026-11-17T18:32:00-08:00",
+        "method": "independent public retriever, not guest browser",
+        "note": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "accession": null,
+        "rights_status": "HOLD",
+        "rights_note": "USCG_CATALOG_PUBLIC_DOMAIN_CLAIM_HOLD",
+        "exact_raster_verified": false,
+        "rehost_approved": false,
+        "native_width": null,
+        "native_height": null,
+        "derivative_width": null
+      },
+      "guest_http": null,
+      "guest_decode": null,
+      "guest_current_src": null,
+      "rehosting_approved": false,
+      "wp_write_approved": false
+    },
+    {
+      "slot": "418:2",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "authored_src": "https://i0.wp.com/www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg?ssl=1",
+      "origin_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "origin_probe": {
+        "kind": "HTTP_ERROR",
+        "status": 403,
+        "checked_at": "2026-11-17T18:32:00-08:00",
+        "method": "independent public retriever, not guest browser",
+        "note": null
+      },
+      "candidate": {
+        "catalog_url": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+        "accession": null,
+        "rights_status": "HOLD",
+        "rights_note": "MUSEUM_PREVIEW_RIGHTS_REVIEW",
+        "exact_raster_verified": false,
+        "rehost_approved": false,
+        "native_width": 600,
+        "native_height": 463,
+        "derivative_width": 600
+      },
+      "guest_http": null,
+      "guest_decode": null,
+      "guest_current_src": null,
+      "rehosting_approved": false,
+      "wp_write_approved": false
+    }
+  ]
+}
