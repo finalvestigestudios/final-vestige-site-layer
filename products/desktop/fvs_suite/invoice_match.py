@@ -245,6 +245,26 @@ def _owned_review_evidence(record: dict[str, Any]) -> dict[str, Any]:
     return evidence
 
 
+def _check_review_candidate_policy(left, right, status, window_days):
+    """Reject status labels inconsistent with the verified matching evidence.
+
+    The public review_flags API also admits direct third-party calls, not
+    necessarily pairs produced by candidate_pairs. Validate the same
+    predicates here so a forged status cannot yield plausible clean evidence.
+    Operands have already been copied and strictly type-checked by the caller.
+    """
+    if left["v"] != right["v"]:
+        raise ValueError("Invoice review candidate has mismatched vendor key")
+    if status == "exact_invoice_key":
+        if left["inv"] != right["inv"]:
+            raise ValueError("Invoice exact candidate has mismatched invoice key")
+        return
+    if (left["inv"] == right["inv"]
+            or left["amt"] != right["amt"]
+            or abs((left["dt"] - right["dt"]).days) > window_days):
+        raise ValueError("Invoice near candidate contradicts reviewed matching policy")
+
+
 def review_flags(a: dict[str, Any], b: dict[str, Any], status: str,
                  *, window_days: int = WINDOW_DAYS) -> str:
     """Surface deterministic human-review flags, never fraud or approval.
@@ -265,6 +285,7 @@ def review_flags(a: dict[str, Any], b: dict[str, Any], status: str,
     # though the source-pair citation is invalid.
     if a["row"] == b["row"]:
         raise ValueError("Invoice review requires distinct physical CSV rows")
+    _check_review_candidate_policy(a, b, status, window_days)
     flags: list[str] = []
     if ascii_case_identity(a["vendor"]) != ascii_case_identity(b["vendor"]):
         flags.append("normalized_vendor_key_review")

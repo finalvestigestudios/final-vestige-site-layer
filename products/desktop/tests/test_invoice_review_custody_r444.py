@@ -50,7 +50,7 @@ class InvoiceReviewCustodyR444(unittest.TestCase):
 
     def test_near_candidate_does_not_invent_exact_invoice_flags(self):
         self.assertEqual(
-            review_flags(row(), row(3, invoice="different", amount=Decimal("18")),
+            review_flags(row(), row(3, invoice="different", amount=Decimal("12")),
                          "review_possible_duplicate"), "")
 
     def test_exact_variance_and_date_flags_are_independent(self):
@@ -300,6 +300,92 @@ class InvoiceReviewRowCustodyR525(unittest.TestCase):
         left = row()
         left["v"] = PRIVATE
         self.refuse(left)
+
+
+# R526: public direct review must authenticate its candidate status against the
+# same normalized evidence predicates used by candidate_pairs. Pure synthetic
+# records; no customer data or external services are used.
+class InvoiceReviewCandidatePolicyR526(unittest.TestCase):
+    def refuse(self, left, right, status="exact_invoice_key", window_days=7):
+        with self.assertRaises(ValueError) as caught:
+            review_flags(left, right, status, window_days=window_days)
+        self.assertIsNone(caught.exception.__context__)
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertNotIn(PRIVATE, str(caught.exception))
+        return str(caught.exception)
+
+    def test_exact_same_normalized_identity_allows_amount_date_variance(self):
+        self.assertEqual(
+            review_flags(row(), row(3, amount=Decimal("13"), day=30),
+                         "exact_invoice_key"),
+            "amount_variance_review;distant_dates_review")
+
+    def test_exact_rejects_different_normalized_vendor(self):
+        other = row(3)
+        other["v"] = "OTHER"
+        self.assertIn("vendor key", self.refuse(row(), other))
+
+    def test_exact_rejects_different_normalized_invoice(self):
+        self.assertIn("invoice key", self.refuse(
+            row(), row(3, invoice="OTHER")))
+
+    def test_near_accepts_exact_seven_day_limit(self):
+        self.assertEqual(
+            review_flags(row(), row(3, invoice="OTHER", day=7),
+                         "review_possible_duplicate"), "")
+
+    def test_near_requires_distinct_normalized_invoice(self):
+        self.assertIn("near candidate", self.refuse(
+            row(), row(3), "review_possible_duplicate"))
+
+    def test_near_requires_same_normalized_vendor(self):
+        other = row(3, invoice="OTHER")
+        other["v"] = "OTHER"
+        self.assertIn("vendor key", self.refuse(
+            row(), other, "review_possible_duplicate"))
+
+    def test_near_requires_same_exact_amount(self):
+        self.assertIn("near candidate", self.refuse(
+            row(), row(3, invoice="OTHER", amount=Decimal("12.01")),
+            "review_possible_duplicate"))
+
+    def test_near_rejects_eight_day_gap(self):
+        self.assertIn("near candidate", self.refuse(
+            row(), row(3, invoice="OTHER", day=8),
+            "review_possible_duplicate"))
+
+    def test_near_window_zero_accepts_same_day(self):
+        self.assertEqual(
+            review_flags(row(), row(3, invoice="OTHER"),
+                         "review_possible_duplicate", window_days=0), "")
+
+    def test_near_window_zero_rejects_next_day(self):
+        self.refuse(
+            row(), row(3, invoice="OTHER", day=1),
+            "review_possible_duplicate", window_days=0)
+
+    def test_near_reverse_chronological_order_is_valid(self):
+        self.assertEqual(
+            review_flags(row(3, invoice="OTHER", day=7), row(),
+                         "review_possible_duplicate"), "")
+
+    def test_near_rejects_opposing_charge_and_credit(self):
+        self.refuse(
+            row(), row(3, invoice="OTHER", amount=Decimal("-12")),
+            "review_possible_duplicate")
+
+    def test_near_equal_decimal_value_different_scale_is_valid(self):
+        self.assertEqual(
+            review_flags(row(), row(3, invoice="OTHER",
+                                    amount=Decimal("12.000")),
+                         "review_possible_duplicate"), "")
+
+    def test_policy_guard_does_not_mutate_source_rows(self):
+        a, b = row(), row(3, invoice="OTHER", day=7)
+        original = deepcopy((a, b))
+        self.assertEqual(review_flags(a, b, "review_possible_duplicate"), "")
+        self.assertEqual((a, b), original)
+
 
 if __name__ == "__main__":
     unittest.main()
