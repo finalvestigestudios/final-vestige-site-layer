@@ -37,6 +37,12 @@ def check(name,cb):
 
 def pdf_assert(page,label):
     exported=page.pdf(format='A4',print_background=True,tagged=True)
+    draft=fitz.open(stream=exported,filetype='pdf')
+    draft.set_metadata({'title':'Final Vestige Apollo 1 R461 printable source custody',
+       'author':'Final Vestige Studios', 'creator':'Chromium/PyMuPDF deterministic QA',
+       'creationDate':'D:20261118000000Z','modDate':'D:20261118000000Z'})
+    exported=draft.tobytes(garbage=4,deflate=True,no_new_id=True)
+    draft.close()
     doc=fitz.open(stream=exported,filetype='pdf')
     links=[l.get('uri') for p in doc for l in p.get_links() if l.get('uri')]
     # Chromium annotates each wrapped line of a long link separately; validate unique targets, not rectangle count.
