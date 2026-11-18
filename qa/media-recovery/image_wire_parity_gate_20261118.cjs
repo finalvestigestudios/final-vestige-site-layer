@@ -1,4 +1,5 @@
 "use strict";
+const {guardImageSource}=require("./image_wire_source_guard_20261118.cjs");
 /** Offline image-wire parity gate. No network requests or WP writes. Approval requires independent trace review. */
 const evaluate=function evaluate(report) {
  const errors=[], sums={}; const fail=(s)=>{if(errors.length<100)errors.push(s);};
@@ -26,6 +27,8 @@ const evaluate=function evaluate(report) {
    for(const m of Array.isArray(p.images)?p.images:[]){
     if(!obj(m)||typeof m.asset_id!=="string"||!m.asset_id||assets.has(m.asset_id)){fail(tag+":"+pid+":duplicate_asset");continue;}
     assets.set(m.asset_id,m);
+    const provenance=guardImageSource(m,pid);
+    if(!provenance.ok)fail(tag+":"+pid+":source_"+provenance.reason);
     if(!https(m.authored_src)||!https(m.current_src)||!https(m.final_url)||!https(m.source_identity))fail(tag+":"+pid+":source_url");
     if(!m.request_id||typeof m.request_id!=="string"||m.from_cache!==false||m.from_service_worker!==false||
        m.transfer_metric!=="CDP_ENCODED_DATALENGTH"||!int(m.transfer_bytes))fail(tag+":"+pid+":unmeasured_wire");
