@@ -1,0 +1,8 @@
+{
+  "schema": "fv-apollo-creator-custody-v1",
+  "status": "HOLD_NO_VERIFIED_GROK_APOLLO_ASSETS",
+  "production_release_approved": false,
+  "campaign_handoff_reviewed": false,
+  "disclosure": "This is a source-only staging candidate. No publisher asset or offer has been verified, and no traffic, lead or sale is asserted.",
+  "assets": []
+}
