@@ -45,6 +45,14 @@ function sourceMatches(current, authored) {
   if (!a.proxy) {
     for (const [k] of c.mutable) if (a.immutable.has(k) && c.mutable.get(k) !== a.immutable.get(k)) return false;
   }
+  // Crop and zoom change the historically meaningful visual framing, even when
+  // all paths and source_identity labels identify the same master JPEG.
+  // Preserve them exactly; responsive size and quality changes remain allowed.
+  for (const key of ['crop', 'zoom']) {
+    const before = a.mutable.get(key) ?? a.immutable.get(key) ?? null;
+    const after = c.mutable.get(key) ?? c.immutable.get(key) ?? null;
+    if (before !== after) return false;
+  }
   return true;
 }
 module.exports = { sourceMatches, parse };
