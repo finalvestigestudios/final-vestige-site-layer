@@ -27,6 +27,26 @@ def _verify_callback_ack(callback_id, used_ids: set[str]) -> None:
     used_ids.add(callback_id)
 
 
+
+def format_keyboard_help(legend: str) -> str:
+    """Show the existing, trusted keyboard legend as short screen-reader lines.
+
+    The caller supplies only the app's static shortcut text, never an input
+    filename, payment record or entitlement. Reject malformed/unbounded text
+    rather than allowing a modal help dialog to render a giant single line.
+    """
+    if (type(legend) is not str or not legend.startswith("Keyboard: ")
+            or not 1 <= len(legend) <= 700):
+        raise ValueError("Keyboard help requires a bounded static legend")
+    sections = legend[len("Keyboard: "):].split("; ")
+    if (not 4 <= len(sections) <= 12
+            or any(not part or len(part) > 75 or ";" in part
+                   or any(ord(ch) < 32 or ord(ch) == 127 for ch in part)
+                   for part in sections)):
+        raise ValueError("Keyboard help contains an invalid shortcut section")
+    return "Keyboard shortcuts:\n\n" + "\n".join("- " + part for part in sections)
+
+
 def install_shortcuts(root, inputs, output, generate, *, review=None,
                       invoice_window=None, policy_rules=None,
                       ledger_headers=None, help_action=None) -> tuple[str, ...]:
