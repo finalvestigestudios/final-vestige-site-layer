@@ -1,0 +1,75 @@
+{
+  "as_of_utc": "2026-11-18T13:31:58Z",
+  "origin": "authenticated WordPress.com Jetpack read-only status/get_settings plus provider email-subscriber filter",
+  "site": "https://finalvestige.com",
+  "source_refs": {
+    "dispatch_issue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "mind_issue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "master": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+    "safety": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201",
+    "previous": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/3000"
+  },
+  "newsletter": {
+    "enabled": true,
+    "can_send_operationally": true,
+    "auto_post_emails": false,
+    "email_content_format": "full",
+    "reply_to": "no-reply",
+    "from_name": "Final Vestige Studios",
+    "confirmed_total": 3,
+    "total": 3,
+    "unconfirmed_excluded_from_total": 2,
+    "email_subscribed_records": 3,
+    "recent_five_posts_email_status": "never_sent_opted_out",
+    "welcome_pdf_configured": true,
+    "welcome_inbox_received_proven": false,
+    "native_jetpack_preview_witnessed": false
+  },
+  "live_copy": {
+    "dispatch_page_id": 523,
+    "dispatch_promise_email_when_published": true,
+    "focus_page_id": 1579,
+    "focus_promise_email_when_published": true,
+    "copy_parity_hold": true
+  },
+  "commercial": {
+    "issue_03": "Zen12",
+    "issue_05": "Hypnosis Live",
+    "publisher_approved_merchant_email_rights": false,
+    "issued_earning_links_verified": false,
+    "live_approved_guide_urls_verified": false,
+    "postal_address_verified": false,
+    "unsubscribe_rendering_verified": false,
+    "independently_settled_sales_evidence": false,
+    "audited_qualified_sessions_evidence": false
+  },
+  "leads": {
+    "new_external_provider_confirmations_proven": null,
+    "note": "null is evidence unavailable, not zero; confirmed subscriber stock does not establish fresh acquisition"
+  },
+  "revenue": {
+    "net_per_1000_qualified_human_sessions": null,
+    "status": "NOT_COMPUTABLE"
+  },
+  "release": {
+    "all_six": "HOLD_UNSENT",
+    "founder_approval": false,
+    "sent": false,
+    "scheduled": false
+  },
+  "tests": {
+    "master_exact_sha_native_python": "6/6 pass",
+    "provider_truth_gate_exact_sha_native_python": "16/16 pass"
+  },
+  "prohibited_effects": [
+    "send_email",
+    "test_email",
+    "publish_or_create_wp_post",
+    "alter_wp_settings",
+    "import_subscribers",
+    "activate_affiliate_links",
+    "deploy_tracking",
+    "merge",
+    "spend"
+  ]
+}
