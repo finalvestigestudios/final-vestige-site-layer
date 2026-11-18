@@ -18,7 +18,7 @@ spec2.loader.exec_module(helpers)
 
 
 def fixtures():
-    return helpers.variants()
+    return helpers.evidence() if hasattr(helpers, "evidence") else helpers.variants()
 
 
 def patched_fixtures():
