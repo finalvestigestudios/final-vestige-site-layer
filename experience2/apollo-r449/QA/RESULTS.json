@@ -1,0 +1,19 @@
+{
+  "CI": "UNVERIFIED_AT_GENERATION; CHECK EXACT GITHUB HEAD",
+  "actual_staging": "HOLD_NOT_RUN",
+  "browser_cases": 19,
+  "browser_mode": "actual PHP HTML via page.set_content; not HTTP or installed WordPress",
+  "browser_status": "PASS",
+  "field_CWV": "NOT_VERIFIED",
+  "genuine_axe": "NOT_RUN",
+  "grok_asset": "NOT_VERIFIED",
+  "independent_screen_reader": "NOT_RUN",
+  "mutation_copies_corrupted": 9,
+  "navigated_lab_LCP_CLS": "NOT_RUN",
+  "paid_product": "HOLD_NOT_SELLABLE",
+  "release": "HARD_HOLD",
+  "screenshots": 19,
+  "source_contract_status": "PASS",
+  "source_contract_tests": 9,
+  "suite": "Apollo R449 local integration acceptance"
+}
