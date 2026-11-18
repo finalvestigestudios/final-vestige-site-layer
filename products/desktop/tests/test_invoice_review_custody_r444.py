@@ -387,5 +387,116 @@ class InvoiceReviewCandidatePolicyR526(unittest.TestCase):
         self.assertEqual((a, b), original)
 
 
+# R527: no supposedly clean direct invoice review from contradictory source
+# labels/normalized keys; bounded raw label processing. Synthetic only.
+class InvoiceCleanReviewIdentityR527(unittest.TestCase):
+    def refuse(self, left, right, status="exact_invoice_key"):
+        with self.assertRaises(ValueError) as caught:
+            review_flags(left, right, status)
+        error = caught.exception
+        self.assertIsNone(error.__cause__)
+        self.assertIsNone(error.__context__)
+        self.assertNotIn(PRIVATE, str(error))
+        self.assertNotIn(PRIVATE, "".join(traceback.format_exception(error)))
+        return str(error)
+
+    def test_valid_exact_pair_remains_clean(self):
+        self.assertEqual(review_flags(row(), row(3), "exact_invoice_key"), "")
+
+    def test_valid_near_pair_remains_clean(self):
+        self.assertEqual(review_flags(row(), row(3, invoice="OTHER"),
+                                      "review_possible_duplicate"), "")
+
+    def test_both_raw_vendor_labels_contradict_matching_keys(self):
+        a, b = row(), row(3)
+        a["v"] = b["v"] = "OTHER"
+        self.assertIn("contradict", self.refuse(a, b))
+
+    def test_both_raw_invoice_labels_contradict_matching_keys(self):
+        a, b = row(), row(3)
+        a["inv"] = b["inv"] = "OTHER"
+        self.assertIn("contradict", self.refuse(a, b))
+
+    def test_one_side_raw_vendor_label_contradicts_accepted_key(self):
+        a, b = row(), row(3)
+        b["vendor"] = "NotAcme"
+        # A visible source-label collision already requires human review.
+        self.assertEqual(review_flags(a, b, "exact_invoice_key"),
+                         "normalized_vendor_key_review")
+        b["vendor"] = a["vendor"]
+        b["v"] = a["v"] = "SPOOF"
+        self.refuse(a, b)
+
+    def test_near_status_rejects_forged_different_keys_for_same_raw_invoice(self):
+        a, b = row(), row(3)
+        b["inv"] = "NOTINVOICE"
+        self.assertIn("contradict", self.refuse(
+            a, b, "review_possible_duplicate"))
+
+    def test_near_status_rejects_forged_matching_vendor_key(self):
+        a, b = row(), row(3, invoice="DIFFERENT")
+        a["v"] = b["v"] = "FAKE"
+        self.refuse(a, b, "review_possible_duplicate")
+
+    def test_raw_punctuation_normalization_remains_valid(self):
+        a, b = row(invoice="INV---A"), row(3, invoice="INV A")
+        self.assertEqual(review_flags(a, b, "exact_invoice_key"),
+                         "normalized_invoice_key_review")
+
+    def test_unicode_uppercase_expansion_preserves_clean_evidence(self):
+        a, b = row(invoice="Straße"), row(3, invoice="STRASSE")
+        self.assertEqual(review_flags(a, b, "exact_invoice_key"),
+                         "normalized_invoice_key_review")
+
+    def test_ascii_case_variants_remain_clean(self):
+        self.assertEqual(review_flags(row(invoice="Invoice"),
+                                      row(3, invoice="iNVOICE"),
+                                      "exact_invoice_key"), "")
+
+    def test_empty_raw_vendor_cannot_support_clean_matching_key(self):
+        a, b = row(), row(3)
+        a["vendor"] = b["vendor"] = ""
+        self.refuse(a, b)
+
+    def test_empty_raw_invoice_cannot_support_clean_matching_key(self):
+        a, b = row(), row(3)
+        a["invoice_number"] = b["invoice_number"] = ""
+        self.refuse(a, b)
+
+    def test_vendor_label_limit_applies_even_if_collision_would_be_flagged(self):
+        from unittest.mock import patch
+        a, b = row(), row(3, vendor="ABCDEFGHI")
+        with patch("fvs_suite.invoice_match.MAX_SOURCE_IDENTITY_CHARS", 8):
+            self.assertIn("length limit", self.refuse(a, b))
+
+    def test_invoice_label_limit_applies_to_near_review(self):
+        from unittest.mock import patch
+        a, b = row(), row(3, invoice="LONGINVOICE123")
+        with patch("fvs_suite.invoice_match.MAX_SOURCE_IDENTITY_CHARS", 8):
+            self.assertIn("length limit", self.refuse(
+                a, b, "review_possible_duplicate"))
+
+    def test_at_test_ceiling_valid_labels_still_work(self):
+        from unittest.mock import patch
+        a, b = row(invoice="INV-1234"), row(3, invoice="INV-1234")
+        with patch("fvs_suite.invoice_match.MAX_SOURCE_IDENTITY_CHARS", 8):
+            self.assertEqual(review_flags(a, b, "exact_invoice_key"), "")
+
+    def test_private_raw_label_not_exposed_by_error_or_traceback(self):
+        a, b = row(), row(3)
+        a["invoice_number"] = b["invoice_number"] = PRIVATE
+        self.refuse(a, b)
+
+    def test_rejected_and_accepted_source_mappings_remain_unmodified(self):
+        a, b = row(), row(3)
+        before = deepcopy((a, b))
+        self.assertEqual(review_flags(a, b, "exact_invoice_key"), "")
+        self.assertEqual((a, b), before)
+        a["v"] = b["v"] = "FAKE"
+        before = deepcopy((a, b))
+        self.refuse(a, b)
+        self.assertEqual((a, b), before)
+
+
 if __name__ == "__main__":
     unittest.main()

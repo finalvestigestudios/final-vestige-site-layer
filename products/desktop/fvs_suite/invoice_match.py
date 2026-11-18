@@ -12,6 +12,7 @@ import re
 from typing import Any, Iterable
 
 from .review import ascii_case_identity
+from .identity_inputs import MAX_SOURCE_IDENTITY_CHARS, normalize_key
 
 WINDOW_DAYS = 7
 MAX_CANDIDATES = 100_000
@@ -233,9 +234,15 @@ def _owned_review_evidence(record: dict[str, Any]) -> dict[str, Any]:
         normalized = evidence.get(field)
         if type(normalized) is not str or _NORMALIZED_KEY.fullmatch(normalized) is None:
             raise ValueError("Invoice review evidence requires normalized ASCII keys")
-    if (type(evidence.get("vendor")) is not str
-            or type(evidence.get("invoice_number")) is not str):
-        raise ValueError("Invoice review identity labels must be text")
+    # Raw labels are untrusted direct-API input too. Bound them *before*
+    # case translation or normalization can allocate a second large string.
+    # Reuse the source importer's ceiling without changing valid CSV reports.
+    for field in ("vendor", "invoice_number"):
+        label = evidence.get(field)
+        if type(label) is not str:
+            raise ValueError("Invoice review identity labels must be text")
+        if len(label) > MAX_SOURCE_IDENTITY_CHARS:
+            raise ValueError("Invoice review identity label exceeds length limit")
     amount = evidence.get("amt")
     if type(amount) is not Decimal or not amount.is_finite():
         raise ValueError("Invoice review amount must be a finite exact Decimal")
@@ -303,4 +310,15 @@ def review_flags(a: dict[str, Any], b: dict[str, Any], status: str,
         if (a["amt"] != 0 and b["amt"] != 0
                 and (a["amt"] < 0) != (b["amt"] < 0)):
             flags.append("opposing_signed_amounts_review")
+    # A clean result must not be based on fabricated matching keys that do
+    # not correspond to the two raw source labels. Keep existing explicit
+    # review flags for ambiguous lossy collisions; never silently certify a
+    # forged direct-call key/label pairing as a clean candidate. The same
+    # bounded normalizer is used by the CSV importer.
+    if not flags and (
+            normalize_key(a["vendor"]) != a["v"]
+            or normalize_key(b["vendor"]) != b["v"]
+            or normalize_key(a["invoice_number"]) != a["inv"]
+            or normalize_key(b["invoice_number"]) != b["inv"]):
+        raise ValueError("Invoice review identity labels contradict normalized evidence")
     return ";".join(flags)
