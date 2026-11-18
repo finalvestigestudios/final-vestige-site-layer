@@ -17,18 +17,8 @@ const isObject = x => x !== null && typeof x === 'object' && !Array.isArray(x);
 const integer = (x,min=0) => Number.isSafeInteger(x) && x>=min;
 function fail(msg) { throw new Error(msg); }
 function validUrl(x) { try {const u = new URL(x);return u.protocol==='https:' && !u.username && !u.password && typeof x==='string';}catch{return false;} }
-function sourceMatches(current, authored) {
-  if(current===authored)return true;
-  try {
-    const a=new URL(authored), u=new URL(current);
-    if(!/^i[0-3]\.wp\.com$/.test(u.hostname)||u.protocol!=='https:')return false;
-    if(decodeURIComponent(u.pathname)!==`/${a.hostname}${decodeURIComponent(a.pathname)}`)return false;
-    // Known Jetpack resizing controls; unknown URL transformations are a source-identity HOLD.
-    const controls=new Set(['ssl','resize','w','h','fit','crop','quality','strip','zoom']);
-    for(const [k,v] of a.searchParams)if(u.searchParams.get(k)!==v)return false;
-    return [...u.searchParams.keys()].every(k=>controls.has(k)||a.searchParams.has(k));
-  } catch {return false;}
-}
+// Shared strict source-identity check supports responsive Jetpack currentSrc variants.
+const {sourceMatches} = require('./jetpack_source_identity_20261118.cjs');
 function validRedirectChain(start,end,chain) {
   if(start===end)return chain===undefined||(Array.isArray(chain)&&chain.length===0);
   if(!Array.isArray(chain)||chain.length<1||chain.length>6)return false;
