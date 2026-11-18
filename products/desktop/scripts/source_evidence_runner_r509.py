@@ -151,6 +151,18 @@ def _child_environment(root: Path) -> dict[str, str]:
     return child_environment(root, os.environ)
 
 
+def _engine_receipt_current(root: Path, receipt: dict[tuple[str, ...], bytes]) -> bool:
+    """Reject any engine inventory mismatch without disclosing private paths.
+
+    A failed or exception-raising verifier must never authorize subprocesses.
+    Only the exact boolean True is sufficient evidence.
+    """
+    try:
+        return engine_sources_unchanged(root, receipt) is True
+    except Exception:
+        return False
+
+
 def execute(commands: tuple[tuple[str, ...], ...], root: Path = ROOT,
             *, spawn=None, verify_source_snapshots: bool = False,
             manifest_snapshot: bytes | None = None,
@@ -195,6 +207,14 @@ def execute(commands: tuple[tuple[str, ...], ...], root: Path = ROOT,
             if not matches_source_fingerprint(root, parts, snapshots[parts]):
                 print(f"REJECTED: source check {index}/{len(commands)} changed", file=sys.stderr)
                 return 1
+        # R523 rechecks the shared six-app engines before EVERY command, not
+        # only at matrix end. A changed engine must not run in a later test and
+        # then be restored to its initial bytes to manufacture a PASS.
+        if (engine_source_snapshot is not None and
+                not _engine_receipt_current(root, engine_source_snapshot)):
+            print(f"REJECTED: shared engine source changed before check {index}/{len(commands)}",
+                  file=sys.stderr)
+            return 1
         try:
             result = run([sys.executable, *args], cwd=str(root), env=env,
                          stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
@@ -214,11 +234,10 @@ def execute(commands: tuple[tuple[str, ...], ...], root: Path = ROOT,
             MANIFEST, manifest_snapshot, read_manifest_bounded):
         print("REJECTED: source matrix changed after checks", file=sys.stderr)
         return 1
-    # R522 checks the shared Python financial engine in addition to executed
-    # test/script files. A final child cannot silently change an engine module
-    # or add another one without a postflight HOLD. main() always supplies it.
-    if engine_source_snapshot is not None and not engine_sources_unchanged(
-            root, engine_source_snapshot):
+    # Preserve the R522 postflight; the last child could still edit engine
+    # source after its own prelaunch verification. main() always supplies it.
+    if (engine_source_snapshot is not None and
+            not _engine_receipt_current(root, engine_source_snapshot)):
         print("REJECTED: shared engine source changed after checks", file=sys.stderr)
         return 1
     print(f"PASS: {len(commands)} source commands; NOT Windows EXE, QD, or release approval")
