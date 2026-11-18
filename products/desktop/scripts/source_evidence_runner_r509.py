@@ -24,6 +24,7 @@ MANIFEST_GIT_SHA1 = "a55a9b5bcbee5b9f075a39fc581ed5a4716eaca3"
 ORIGINAL_GIT_SHA1 = "cbebff514baf4244754125c6d73e429b74f6b4e1"
 ORIGINAL_COUNT = 414
 TOTAL_COUNT = 416
+MAX_MANIFEST_BYTES = 65_536
 TEST_COMMAND = re.compile(
     r"python (?:-OO )?(?:-B )?-W error -m unittest discover -s "
     r"products/desktop/tests -p (test_[a-z0-9_]+\.py)"
@@ -72,10 +73,30 @@ def git_blob_sha(raw: bytes) -> str:
     return hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + b"\0" + raw).hexdigest()
 
 
+def read_manifest_bounded(path: Path) -> bytes:
+    """Read only one byte beyond the reviewed source manifest budget.
+
+    Source integrity is authenticated later by the immutable Git blob hash.
+    Reading an arbitrarily enlarged untrusted file with Path.read_bytes()
+    first can exhaust memory before that rejection occurs.
+    """
+    raw = None
+    try:
+        with path.open("rb") as stream:
+            raw = stream.read(MAX_MANIFEST_BYTES + 1)
+    except (OSError, ValueError):
+        # Raise a fixed message after leaving the handler, so private OS
+        # diagnostics and filenames do not persist in exception chains.
+        pass
+    if type(raw) is not bytes or len(raw) > MAX_MANIFEST_BYTES:
+        raise EvidenceRejected("Unsafe source evidence manifest")
+    return raw
+
+
 def load_commands(raw: bytes, root: Path = ROOT, *,
                   expected_sha: str = MANIFEST_GIT_SHA1,
                   expected_count: int = TOTAL_COUNT) -> tuple[tuple[str, ...], ...]:
-    if (type(raw) is not bytes or not raw or len(raw) > 65536 or
+    if (type(raw) is not bytes or not raw or len(raw) > MAX_MANIFEST_BYTES or
             b"\0" in raw or b"\r" in raw or b"\t" in raw or not raw.endswith(b"\n")):
         raise EvidenceRejected("Unsafe source evidence manifest")
     if git_blob_sha(raw) != expected_sha:
@@ -182,7 +203,7 @@ def main() -> int:
             ROOT, ("products", "desktop", "ci", "source_evidence_commands_r509.txt")
         ):
             raise EvidenceRejected("Unsafe source evidence manifest path")
-        return execute(load_commands(MANIFEST.read_bytes()), verify_source_snapshots=True)
+        return execute(load_commands(read_manifest_bounded(MANIFEST)), verify_source_snapshots=True)
     except (OSError, EvidenceRejected):
         print("REJECTED: immutable source evidence unavailable", file=sys.stderr)
         return 1
