@@ -1,0 +1,165 @@
+{
+  "generated_at": "2026-11-18",
+  "status": "HARD_HOLD_UNPUBLISHED",
+  "source_scope": "Public official product descriptions, research and targeted partner inbox review; no authenticated live checkout or partner contract",
+  "sources": {
+    "s_inspire": "https://inspire3.com/",
+    "s_about": "https://zen12.com/about",
+    "s_main": "https://zen12.com/",
+    "s_promo": "https://zen12.com/secret/",
+    "s_trial": "https://pubmed.ncbi.nlm.nih.gov/1960275/",
+    "s_origin": "https://doi.org/10.1038/264746a0",
+    "s_review": "https://doi.org/10.1371/journal.pone.0286023",
+    "s_ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "s_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "s_fieldbook": "https://finalvestige.com/focus/",
+    "s_puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+  },
+  "decisions": [
+    {
+      "id": "feature01",
+      "claim": "Zen12 vendor describes twelve-minute sessions",
+      "class": "seller_feature",
+      "source": "s_about",
+      "use": "ATTRIBUTE_TO_SELLER"
+    },
+    {
+      "id": "feature02",
+      "claim": "Zen12 vendor describes twelve levels, four listening styles",
+      "class": "seller_feature",
+      "source": "s_about",
+      "use": "ATTRIBUTE_TO_SELLER"
+    },
+    {
+      "id": "feature03",
+      "claim": "Main catalog contains distinct package configurations",
+      "class": "seller_feature",
+      "source": "s_main",
+      "use": "ATTRIBUTE_TO_SELLER_CHECKOUT_REQUIRED"
+    },
+    {
+      "id": "feature04",
+      "claim": "Separate promotional funnel has a separate offer context",
+      "class": "seller_offer",
+      "source": "s_promo",
+      "use": "DO_NOT_TRANSFER_PRICE_OR_COUPON"
+    },
+    {
+      "id": "seller05",
+      "claim": "Twelve minutes equals one hour of ordinary meditation",
+      "class": "seller_efficacy",
+      "source": "s_about",
+      "use": "OMIT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "seller06",
+      "claim": "Immediate erasure of anxiety and stress",
+      "class": "seller_health",
+      "source": "s_about",
+      "use": "OMIT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "seller07",
+      "claim": "Brainwave audio automatically produces intended neural changes",
+      "class": "seller_science",
+      "source": "s_main",
+      "use": "OMIT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "seller08",
+      "claim": "All purchasers get measurable life/wealth improvement",
+      "class": "seller_health_wealth",
+      "source": "s_inspire",
+      "use": "OMIT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "sci09",
+      "claim": "Audio-visual syllable mismatch can alter heard-syllable reports under some conditions",
+      "class": "research",
+      "source": "s_origin",
+      "use": "INCLUDE_WITH_LIMITS"
+    },
+    {
+      "id": "sci10",
+      "claim": "Noise and auditory intelligibility modulated results for the tested Japanese syllables/listeners",
+      "class": "research",
+      "source": "s_trial",
+      "use": "INCLUDE_WITH_SAMPLE_LIMIT"
+    },
+    {
+      "id": "sci11",
+      "claim": "EEG review of 14 binaural-beat studies had five positive, eight contradictory, one mixed",
+      "class": "systematic_review",
+      "source": "s_review",
+      "use": "INCLUDE_COUNTS_WITH_HETEROGENEITY"
+    },
+    {
+      "id": "sci12",
+      "claim": "2023 EEG review validates Zen12",
+      "class": "false_inference",
+      "source": "s_review",
+      "use": "REJECT_NOT_PRODUCT_SPECIFIC"
+    },
+    {
+      "id": "legal13",
+      "claim": "Commercial commission link requires prominent adjacent material-connection disclosure",
+      "class": "compliance",
+      "source": "s_ftc",
+      "use": "GATE_AND_PROXIMITY_TEST"
+    },
+    {
+      "id": "legal14",
+      "claim": "Specific objective health claims require adequate evidence",
+      "class": "compliance",
+      "source": "s_health",
+      "use": "OMIT_WHEN_NOT_SUBSTANTIATED"
+    },
+    {
+      "id": "asset15",
+      "claim": "Free existing 52-page Focus Fieldbook uses one Dispatch path",
+      "class": "existing_free_offer",
+      "source": "s_fieldbook",
+      "use": "KEEP_SINGLE_EXISTING_FUNNEL"
+    },
+    {
+      "id": "history16",
+      "claim": "Puységur files establish scientifically verified animal magnetism",
+      "class": "false_inference",
+      "source": "s_puysegur",
+      "use": "REJECT_HISTORICAL_NOT_CLINICAL"
+    }
+  ],
+  "partner_verification": {
+    "searched": "2026-11-18 Gmail: from:(refersion.com) after:2026/08/01 and (approved OR accepted OR affiliate OR commission) (inspire3 OR zen12 OR refersion)",
+    "found": "2026-08-24 account pending notice only",
+    "named_FV_approval": false,
+    "issued_authorized_affiliate_url": false,
+    "authorized_products_and_channels": false,
+    "exact_checkout_price_and_returns_verified": false,
+    "settled_commission_verified": false,
+    "merchant_link": "WITHHELD",
+    "merchant_control": "DISABLED",
+    "revenue_per_1000": "NOT_COMPUTABLE"
+  },
+  "release_gates": [
+    "founder_documented_written_inspire3_acceptance",
+    "exact_approved_sku",
+    "authorized_earning_url_no_cloak",
+    "approved_social_and_email_channels",
+    "actual_checkout_price_refund_tax_delivery_witness",
+    "independent_zen12_claim_substantiation_or_claim_omission",
+    "adjacent_ftc_disclosure",
+    "no_fake_user_testimonials",
+    "zero_unapproved_tracking",
+    "no_duplicate_jetpack_form",
+    "signed_out_mobile_navigation",
+    "WCAG_browser_360_390_768_1440_1920",
+    "no_JS_fallback",
+    "film_original_rights_caption_transcript",
+    "film_encoding_size_CWV_review",
+    "A_B_paid_order_measurement_approval",
+    "qualified_human_session_dedup_documented",
+    "merchant_confirmation_refund_fee_reconciliation",
+    "founder_explicit_release_approval"
+  ]
+}
