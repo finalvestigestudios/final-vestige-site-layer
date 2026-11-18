@@ -23,8 +23,12 @@ HTML=subprocess.check_output(['php','-r',f'require {json.dumps(str(ROOT/"apollo_
 DATA=subprocess.check_output(['php','-r',f'require {json.dumps(str(ROOT/"apollo_rights_gallery.php"))}; echo json_encode(fv457_records());'],text=True)
 RECORDS=json.loads(DATA)
 SOURCES={r['source_url'] for r in RECORDS}
+# R464: printable chronology adds three independent NASA reference destinations.
+CHRONOLOGY=json.loads(subprocess.check_output(['php','-r',f'require {json.dumps(str(ROOT/"apollo_rights_gallery.php"))}; echo json_encode(fv457_chronology());'],text=True))
+CHRONOLOGY_SOURCES={e['source'] for e in CHRONOLOGY}
 FREE='https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/'
-assert len(SOURCES)==6 and all(x.startswith(('https://www.nasa.gov/','https://images.nasa.gov/')) for x in SOURCES)
+assert len(SOURCES)==6 and len(CHRONOLOGY_SOURCES)==3 and len(SOURCES|CHRONOLOGY_SOURCES)==9
+assert all(x.startswith(('https://www.nasa.gov/','https://images.nasa.gov/')) for x in SOURCES|CHRONOLOGY_SOURCES)
 RESULTS=[]
 FAIL=[]
 SCREENSHOTS=[]
@@ -47,13 +51,14 @@ def pdf_assert(page,label):
     links=[l.get('uri') for p in doc for l in p.get_links() if l.get('uri')]
     # Chromium annotates each wrapped line of a long link separately; validate unique targets, not rectangle count.
     counts=Counter(links)
-    assert set(counts)==SOURCES|{FREE}, f'{label}: wrong or missing source URLs: {links}'
+    assert set(counts)==SOURCES|CHRONOLOGY_SOURCES|{FREE}, f'{label}: wrong or missing source URLs: {links}'
     assert counts[FREE]==1, f'{label}: unexpected free CTA link count'
-    assert all(1 <= counts[u] <= 4 for u in SOURCES),f'{label}: unexpected PDF URL rectangle counts: {counts}'
+    assert all(1 <= counts[u] <= 4 for u in SOURCES|CHRONOLOGY_SOURCES),f'{label}: unexpected PDF URL rectangle counts: {counts}'
     text=' '.join(p.get_text() for p in doc)
     assert text.count('Printable NASA source:')==6, f'{label}: missing readable source text in PDF'
+    assert len(re.findall(r'Printable chronology\s+source:',text))==3, f'{label}: missing chronology references'
     assert 'Source acceptance HOLD' in text, f'{label}: provenance disclaimer disappeared'
-    assert 'not commercial media clearance' in text, f'{label}: print rights disclaimer disappeared'
+    assert 'not commercial media clearance' in ' '.join(text.split()), f'{label}: print rights disclaimer disappeared'
     assert 'Image-use permission not established.' in text, f'{label}: per-card usage boundary missing'
     for id_ in ('S66-58038','S67-15717','S67-19766','S67-21294'):
         assert id_ in text, f'{label}: lost record identifier {id_}'
@@ -81,7 +86,7 @@ with sync_playwright() as play:
                 if width in (320,390,768,1440,1920) and javascript:
                     target=OUT/f'{width}-filtered-tagged.pdf'
                     target.write_bytes(data)
-            check(label+'-pdf-seven-clickable-urls',export)
+            check(label+'-pdf-ten-clickable-urls',export)
             if width in (320,390,768,1440,1920) and javascript:
                 pg.emulate_media(media='print')
                 name=f'{width}-print.png'
@@ -95,13 +100,13 @@ with sync_playwright() as play:
         pg=ctx.new_page();pg.set_content(HTML)
         if label=='touch':pg.get_by_role('button',name='Not in Atlas (3)').tap()
         else:pg.get_by_role('button',name='Not in Atlas (3)').click()
-        check(label+'-pdf-seven-clickable-urls',lambda:pdf_assert(pg,label))
+        check(label+'-pdf-ten-clickable-urls',lambda:pdf_assert(pg,label))
         ctx.close()
     browser.close()
 
 file_hashes={x.name:hashlib.sha256(x.read_bytes()).hexdigest() for x in sorted(OUT.iterdir()) if x.is_file() and x.suffix in ('.png','.pdf')}
 report={'sprint':'R461','test_subject':'local PHP rendered document in real Chromium; PDF content and URI annotations examined via PyMuPDF','passed':len(RESULTS),'failed':FAIL,'cases':RESULTS,'screenshots':SCREENSHOTS,'artifact_sha256':file_hashes,
-        'verified_unique_pdf_urls_per_export':7,'NASA_source_links_per_export':6,'commercial_ctas':0,
+        'verified_unique_pdf_urls_per_export':10,'NASA_source_links_per_export':9,'commercial_ctas':0,
         'hosted_wordpress':'HOLD_NOT_RUN','axe_core':'HOLD_NOT_RUN (verified axe JS bundle unavailable in this environment)','navigated_lcp_cls':'HOLD_NOT_RUN (page.goto ERR_BLOCKED_BY_ADMINISTRATOR)','screen_reader_manual':'HOLD_NOT_RUN','field_cwv':'HOLD_NOT_RUN','revenue_and_asset_id':'UNVERIFIED'}
 (OUT/'REPORT.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n',encoding='utf-8')
 print(json.dumps({'passed':len(RESULTS),'failed':FAIL,'screenshots':SCREENSHOTS,'pdf_count':len(list(OUT.glob('*.pdf')))},indent=2))
