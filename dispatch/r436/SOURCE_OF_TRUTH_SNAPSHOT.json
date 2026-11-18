@@ -1,0 +1,67 @@
+{
+  "id": "fv-dispatch-r436-source-witness",
+  "observed_utc": "2026-11-18T01:33:35Z",
+  "target_site": "https://finalvestige.com",
+  "read_only": true,
+  "wordpress": {
+    "site_id": 256784396,
+    "focus_page_id": 1579,
+    "focus_page_modified": "2026-11-16T14:54:58",
+    "focus_stored_gift_panel_hidden": true,
+    "focus_stored_reveal_triggers": [
+      "nonblacklisted arbitrary subscribe URL parameter",
+      "is-subscriber CSS class"
+    ],
+    "focus_pdf_link_public": true,
+    "newsletter_enabled": true,
+    "automatic_post_email": false,
+    "email_content_format": "full",
+    "newsletter_categories_enabled": false,
+    "reply_to": "no-reply",
+    "from_name": "Final Vestige Studios",
+    "welcome_configured_with_same_pdf": true,
+    "welcome_receipt_verified": false,
+    "native_email_preview_witnessed": false,
+    "publisher_postal_footer_verified": false,
+    "functional_unsubscribe_in_sent_email_verified": false,
+    "unique_eligible_receiving_inboxes": null,
+    "subscriber_counts": {
+      "total": 3,
+      "confirmed": 3,
+      "not_confirmed_excluded_from_total": 2,
+      "suppressed": 0,
+      "imported_last_24h": 0
+    },
+    "recent_sends_last_5": {
+      "result": "never_sent_opted_out",
+      "dispatched_at": null,
+      "scope": "only latest five reported; not lifetime history"
+    }
+  },
+  "commercial": {
+    "zen12_named_final_vestige_email_authorization": false,
+    "total_focus_named_final_vestige_email_authorization": false,
+    "approved_earning_url": false,
+    "live_vetted_merchant_guide": false,
+    "independently_settled_purchases_available": false,
+    "audited_human_sessions_available": false,
+    "realized_net_revenue_per_1000_sessions": null
+  },
+  "campaign": {
+    "canonical": "PR #175 at d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "editorial": 4,
+    "merchant_reserved": 2,
+    "emails_sent_this_sprint": 0,
+    "release": "HOLD_UNSENT"
+  },
+  "external_public_sources": [
+    "https://wordpress.com/support/subscribers/",
+    "https://wordpress.com/support/newsletter-settings/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://zen12.com/about",
+    "https://zen12.com/secret/",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://hypnosislive.com/faq"
+  ]
+}
