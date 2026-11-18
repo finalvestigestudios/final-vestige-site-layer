@@ -887,5 +887,88 @@ class SnapshotR516(unittest.TestCase):
             custody.source_fingerprint(self.root, self.parts)
 
 
+# R517 regressions: Windows path lstat and descriptor fstat can disagree on
+# creation time for the same source. Same-view mutation must still be rejected.
+class SnapshotWindowsParityR517(unittest.TestCase):
+    def setUp(self):
+        tmp = TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.root = Path(tmp.name)
+        self.parts = ("products", "desktop", "tests", "test_r517.py")
+        self.path = self.root.joinpath(*self.parts)
+        self.path.parent.mkdir(parents=True)
+        self.path.write_bytes(b"pass\n")
+
+    @staticmethod
+    def _meta(info, *, ctime_shift=0, size_shift=0, mtime_shift=0):
+        return SimpleNamespace(
+            st_dev=info.st_dev, st_ino=info.st_ino, st_mode=info.st_mode,
+            st_nlink=info.st_nlink, st_size=info.st_size + size_shift,
+            st_mtime_ns=info.st_mtime_ns + mtime_shift,
+            st_ctime_ns=info.st_ctime_ns + ctime_shift,
+        )
+
+    def test_windows_cross_view_ctime_disagreement_accepted(self):
+        sample = self.path.stat()
+        self.assertTrue(custody._same_path_descriptor_identity(
+            sample, self._meta(sample, ctime_shift=3_600_000_000), windows=True))
+
+    def test_posix_cross_view_ctime_disagreement_rejected(self):
+        sample = self.path.stat()
+        self.assertFalse(custody._same_path_descriptor_identity(
+            sample, self._meta(sample, ctime_shift=3_600_000_000), windows=False))
+
+    def test_windows_cross_view_mtime_and_size_changes_rejected(self):
+        sample = self.path.stat()
+        for mismatch in (dict(size_shift=1), dict(mtime_shift=1)):
+            with self.subTest(mismatch=mismatch):
+                self.assertFalse(custody._same_path_descriptor_identity(
+                    sample, self._meta(sample, ctime_shift=3_600_000_000,
+                                       **mismatch), windows=True))
+
+    def test_real_read_with_simulated_windows_ctime_disagreement(self):
+        original_fstat = os.fstat
+        original_compare = custody._same_path_descriptor_identity
+        def different_view(fd):
+            return self._meta(original_fstat(fd), ctime_shift=3_600_000_000)
+        with patch.object(custody.os, "fstat", side_effect=different_view), \
+             patch.object(custody, "_same_path_descriptor_identity",
+                          side_effect=lambda a, b: original_compare(a, b, windows=True)):
+            digest = custody.source_fingerprint(self.root, self.parts)
+            self.assertEqual(digest, custody.sha256(b"pass\n").digest())
+            self.assertTrue(custody.matches_source_fingerprint(self.root, self.parts, digest))
+
+    def test_descriptor_ctime_change_midread_rejected_on_windows(self):
+        original_fstat = os.fstat
+        original_compare = custody._same_path_descriptor_identity
+        calls = []
+        def changed_descriptor(fd):
+            calls.append(fd)
+            return self._meta(original_fstat(fd),
+                              ctime_shift=3_600_000_000 + (1 if len(calls) == 2 else 0))
+        with patch.object(custody.os, "fstat", side_effect=changed_descriptor), \
+             patch.object(custody, "_same_path_descriptor_identity",
+                          side_effect=lambda a, b: original_compare(a, b, windows=True)), \
+             self.assertRaises(custody.SourceSnapshotRejected):
+            custody.source_fingerprint(self.root, self.parts)
+        self.assertEqual(len(calls), 2)
+
+    def test_cross_view_parity_does_not_mask_changed_source(self):
+        original_fstat = os.fstat
+        original_compare = custody._same_path_descriptor_identity
+        calls = []
+        def changed_source(fd):
+            calls.append(fd)
+            if len(calls) == 2:
+                self.path.write_bytes(b"tampered bytes\n")
+            return self._meta(original_fstat(fd), ctime_shift=3_600_000_000)
+        with patch.object(custody.os, "fstat", side_effect=changed_source), \
+             patch.object(custody, "_same_path_descriptor_identity",
+                          side_effect=lambda a, b: original_compare(a, b, windows=True)), \
+             self.assertRaises(custody.SourceSnapshotRejected):
+            custody.source_fingerprint(self.root, self.parts)
+        self.assertEqual(len(calls), 2)
+
+
 if __name__ == "__main__":
     unittest.main()
