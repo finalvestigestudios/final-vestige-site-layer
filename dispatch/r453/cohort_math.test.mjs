@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { measureClosedCohort } from './cohort_math.mjs';
-const p={verified:true},s={id:'opaque-session-1',seen_at:'2026-09-01T15:00:00Z',kind:'qualified_human',bot:false,proof:p,
+const p={verified:true,source_ref:'provider:synthetic',checked_at:'2026-11-18T18:35:00Z'},s={id:'opaque-session-1',seen_at:'2026-09-01T15:00:00Z',kind:'qualified_human',bot:false,proof:p,
  utm:{source:'youtube',medium:'organic_social',asset_id:'YT001'}};
 const o={id:'opaque-order-1',session_id:s.id,sale_type:'affiliate',currency:'USD',gross_cents:2700,fees_cents:300,refunds_cents:400,
  settled_at:'2026-09-03T12:00:00Z',state:'settled',settlement_proof:p,attribution_proof:p};
