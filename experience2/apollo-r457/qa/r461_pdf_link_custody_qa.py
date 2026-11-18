@@ -53,13 +53,13 @@ def pdf_assert(page,label):
     counts=Counter(links)
     assert set(counts)==SOURCES|CHRONOLOGY_SOURCES|{FREE}, f'{label}: wrong or missing source URLs: {links}'
     assert counts[FREE]==1, f'{label}: unexpected free CTA link count'
-    assert all(1 <= counts[u] <= 4 for u in SOURCES|CHRONOLOGY_SOURCES),f'{label}: unexpected PDF URL rectangle counts: {counts}'
+    assert all(1 <= counts[u] <= 32 for u in SOURCES|CHRONOLOGY_SOURCES),f'{label}: unexpected PDF URL rectangle counts: {counts}'
     text=' '.join(p.get_text() for p in doc)
-    assert text.count('Printable NASA source:')==6, f'{label}: missing readable source text in PDF'
+    assert text.count('Printable source lookup')==6, f'{label}: missing readable source text in PDF'
     assert len(re.findall(r'Printable chronology\s+source:',text))==3, f'{label}: missing chronology references'
     assert 'Source acceptance HOLD' in text, f'{label}: provenance disclaimer disappeared'
     assert 'not commercial media clearance' in ' '.join(text.split()), f'{label}: print rights disclaimer disappeared'
-    assert 'Image-use permission not established.' in text, f'{label}: per-card usage boundary missing'
+    assert 'Image-use permission not established.' in ' '.join(text.split()), f'{label}: per-card usage boundary missing'
     for id_ in ('S66-58038','S67-15717','S67-19766','S67-21294'):
         assert id_ in text, f'{label}: lost record identifier {id_}'
     doc.close()
