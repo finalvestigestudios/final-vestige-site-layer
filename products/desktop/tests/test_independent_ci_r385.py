@@ -10,7 +10,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-WORKFLOW = ROOT / ".github" / "workflows" / "desktop-source-evidence-r385.yml"
+WORKFLOW = ROOT / ".github" / "workflows" / "desktop-source-evidence-r385.yml"\nCOMMANDS = ROOT / "products" / "desktop" / "ci" / "source_evidence_commands_r509.txt"
 
 
 def _read_workflow() -> str:
@@ -24,11 +24,11 @@ class IndependentSourceCIR385(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.text = _read_workflow()
-        cls.lines = cls.text.splitlines()
+        cls.lines = cls.text.splitlines()\n        cls.commands = COMMANDS.read_text(encoding="ascii")
 
     def test_small_standalone_workflow(self):
         self.assertLess(len(self.text.encode("utf-8")), 8192)
-        self.assertIn("name: Desktop six-engine source evidence", self.text)
+        self.assertIn("name: Desktop six-engine source evidence", self.text)\n        self.assertIn("python -B -W error products/desktop/scripts/source_evidence_runner_r509.py", self.text)
         self.assertNotIn("desktop-build.yml'", self.text)
 
     def test_pr_trigger_only_for_desktop_and_self(self):
@@ -79,28 +79,28 @@ class IndependentSourceCIR385(unittest.TestCase):
 
     def test_real_six_engine_source_smoke_twice(self):
         script = "products/desktop/scripts/source_smoke_gate.py"
-        self.assertIn(f"python -W error {script}", self.text)
-        self.assertIn(f"python -OO -W error {script}", self.text)
+        self.assertIn(f"python -W error {script}", self.commands)
+        self.assertIn(f"python -OO -W error {script}", self.commands)
         self.assertIn("SHA-256 source inventory", self.text)
 
     def test_all_six_financial_engines_are_covered(self):
-        self.assertIn("test_safety_smoke.py", self.text)
-        self.assertEqual(self.text.count("-p test_safety_smoke.py"), 2)
+        self.assertIn("test_safety_smoke.py", self.commands)
+        self.assertEqual(self.commands.count("-p test_safety_smoke.py"), 2)
 
     def test_actual_crypto_gate_is_not_replaced_by_stubs(self):
-        self.assertEqual(self.text.count("-p test_vault_crypto_gate_r316.py"), 2)
+        self.assertEqual(self.commands.count("-p test_vault_crypto_gate_r316.py"), 2)
         self.assertIn("22 actual AES-GCM", self.text)
 
     def test_offline_ed25519_and_sqlite_registry_both_modes(self):
         for case in ("test_offline_entitlement_r11.py", "test_license_issuer_r12.py",
                      "test_license_registry_r13.py"):
-            self.assertEqual(self.text.count("-p " + case), 2)
+            self.assertEqual(self.commands.count("-p " + case), 2)
 
     def test_last_premium_privacy_regressions_both_modes(self):
-        self.assertEqual(self.text.count("-p test_entitlement_payload_privacy_r384.py"), 2)
+        self.assertEqual(self.commands.count("-p test_entitlement_payload_privacy_r384.py"), 2)
 
     def test_self_custody_tests_both_modes(self):
-        self.assertEqual(self.text.count("-p test_independent_ci_r385.py"), 2)
+        self.assertEqual(self.commands.count("-p test_independent_ci_r385.py"), 2)
 
     def test_no_implicit_build_or_release_success_claims(self):
         self.assertNotIn("pyinstaller", self.text.lower())
