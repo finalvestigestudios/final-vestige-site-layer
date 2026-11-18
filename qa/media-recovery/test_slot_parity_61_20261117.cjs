@@ -137,3 +137,12 @@ bad('integration: decoded 1x1 after image cannot claim high bandwidth reduction'
 bad('integration: tiny proportional after image cannot claim high savings',c=>{c.after[0].slots[0].natural_width=64;c.after[0].slots[0].natural_height=48;});
 bad('integration: aspect-drift after image must hold despite valid status and bytes',c=>{c.after[0].slots[0].natural_width=640;c.after[0].slots[0].natural_height=640;});
 bad('integration: small source image may not silently lose half its pixels',c=>{c.before[0].slots[0].natural_width=200;c.before[0].slots[0].natural_height=100;c.after[0].slots[0].natural_width=100;c.after[0].slots[0].natural_height=50;});
+
+test('960px safeguard: 1280px derivative from 4K original must HOLD despite same crop',()=>assert.equal(preservesPixelGeometry(geom(4000,3000),geom(1280,960)),false));
+test('960px safeguard: proper 960x720 derivative from 4K original passes',()=>assert.equal(preservesPixelGeometry(geom(4000,3000),geom(960,720)),true));
+test('no-upscale safeguard: 600x463 archival preview must not become 900x694',()=>assert.equal(preservesPixelGeometry(geom(600,463),geom(900,694)),false));
+test('no-upscale safeguard: original smaller than 960px must not be enlarged to limit',()=>assert.equal(preservesPixelGeometry(geom(200,100),geom(960,480)),false));
+test('portrait 960px width with >960px height is valid (width, not longest-edge cap)',()=>assert.equal(preservesPixelGeometry(geom(1500,3000),geom(960,1920)),true));
+test('small original preserved exactly needs no unnecessary upscaling',()=>assert.equal(preservesPixelGeometry(geom(200,100),geom(200,100)),true));
+bad('integration: optimistic 960x720 upscaled replacement of 640x480 is not savings parity',c=>{c.after[0].slots[0].natural_width=960;c.after[0].slots[0].natural_height=720;});
+bad('integration: 4K original reduced only to 1280px fails strict 960px derivative ceiling',c=>{c.before[0].slots[0].natural_width=4000;c.before[0].slots[0].natural_height=3000;c.after[0].slots[0].natural_width=1280;c.after[0].slots[0].natural_height=960;});
