@@ -1,0 +1,588 @@
+{
+  "schema_version": "r468-1",
+  "created_at_local": "2026-11-18",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "limitations": "Snapshot from official public seller pages plus a targeted connected Gmail search, not a partner dashboard inspection, purchase, clinical trial or legal opinion. Absence from searched mailbox does not prove non-approval elsewhere.",
+  "sources": {
+    "issue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "growth": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+    "inspire3": "https://inspire3.com/",
+    "zen_about": "https://zen12.com/about",
+    "zen_promo": "https://zen12.com/secret/",
+    "hypnosis_faq": "https://hypnosislive.com/faq",
+    "brainwave": "https://brainwaveshots.com/",
+    "ftc_endorse": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "review": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "loftus": "https://web.stanford.edu/class/psych205/papers/Loftus-Palmer-1974.pdf",
+    "loftus1978": "https://pubmed.ncbi.nlm.nih.gov/621467/",
+    "repeat2023": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2023.1201674/full",
+    "hypnosis_review": "https://pubmed.ncbi.nlm.nih.gov/40179604/",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/"
+  },
+  "claims": [
+    {
+      "id": "IN01",
+      "claim": "Inspire3 lists Zen12, Hypnosis Live and Brainwave Shots",
+      "type": "seller_product_identity",
+      "status": "supported_as_seller_listing",
+      "source_urls": [
+        "https://inspire3.com/"
+      ],
+      "limitations": "Catalog identity only"
+    },
+    {
+      "id": "ZN01",
+      "claim": "Zen12 sessions described as twelve minutes",
+      "type": "seller_format",
+      "status": "supported_as_seller_description",
+      "source_urls": [
+        "https://zen12.com/about"
+      ],
+      "limitations": "Does not verify purchased files"
+    },
+    {
+      "id": "ZN02",
+      "claim": "Zen12 standard About page describes twelve levels",
+      "type": "seller_format",
+      "status": "supported_as_seller_description",
+      "source_urls": [
+        "https://zen12.com/about"
+      ],
+      "limitations": "Does not establish final SKU"
+    },
+    {
+      "id": "ZN03",
+      "claim": "Each Zen12 level is described as having four styles",
+      "type": "seller_format",
+      "status": "supported_as_seller_description",
+      "source_urls": [
+        "https://zen12.com/about"
+      ],
+      "limitations": "Guided, music, white noise, nature"
+    },
+    {
+      "id": "ZN04",
+      "claim": "Promotional offer presents 48 MP3s plus named bonuses",
+      "type": "seller_offer_presentation",
+      "status": "supported_as_snapshot_not_verified_checkout",
+      "source_urls": [
+        "https://zen12.com/secret/"
+      ],
+      "limitations": "Dynamic promotion; not approved landing or purchased package"
+    },
+    {
+      "id": "ZN05",
+      "claim": "Zen12 makes one hour of meditation achievable in twelve minutes",
+      "type": "health_or_psych_claim",
+      "status": "exclude_unsubstantiated_product_specific",
+      "source_urls": [
+        "https://zen12.com/about",
+        "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limitations": "No proprietary product trial identified"
+    },
+    {
+      "id": "ZN06",
+      "claim": "Zen12 automatically induces deep relaxation or a specific EEG state",
+      "type": "health_or_psych_claim",
+      "status": "exclude_unsubstantiated_product_specific",
+      "source_urls": [
+        "https://zen12.com/about",
+        "https://pubmed.ncbi.nlm.nih.gov/37205669/"
+      ],
+      "limitations": "Seller assertion only"
+    },
+    {
+      "id": "ZN07",
+      "claim": "Zen12 guarantees reduced anxiety, improved mood or creativity",
+      "type": "health_claim",
+      "status": "exclude_unsubstantiated_product_specific",
+      "source_urls": [
+        "https://zen12.com/about",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limitations": "No FV use or branded trial"
+    },
+    {
+      "id": "ZN08",
+      "claim": "Promotional coupon and countdown are valid at eventual authorized checkout",
+      "type": "price_or_urgency",
+      "status": "withhold_not_authenticated",
+      "source_urls": [
+        "https://zen12.com/secret/"
+      ],
+      "limitations": "Offer may vary by campaign/time/permission"
+    },
+    {
+      "id": "ZN09",
+      "claim": "Zen12 has verified current refund coverage for precise authorized SKU",
+      "type": "merchant_terms",
+      "status": "hold_unverified",
+      "source_urls": [
+        "https://zen12.com/secret/"
+      ],
+      "limitations": "Generic guarantee does not prove final terms"
+    },
+    {
+      "id": "ZN10",
+      "claim": "Final Vestige approved to promote exact Zen12 offer",
+      "type": "affiliate_authorization",
+      "status": "hold_unverified",
+      "source_urls": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+      ],
+      "limitations": "Public program and pending notice not proof of acceptance"
+    },
+    {
+      "id": "ZN11",
+      "claim": "Final Vestige issued correct trackable earning URL",
+      "type": "affiliate_authorization",
+      "status": "hold_unverified",
+      "source_urls": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+      ],
+      "limitations": "No authenticated account-specific earning link"
+    },
+    {
+      "id": "HL01",
+      "claim": "Hypnosis Live FAQ describes instant-download MP3 sessions, most about 40 minutes",
+      "type": "seller_format",
+      "status": "supported_as_seller_description",
+      "source_urls": [
+        "https://hypnosislive.com/faq"
+      ],
+      "limitations": "Not independent possession test"
+    },
+    {
+      "id": "HL02",
+      "claim": "Hypnosis Live FAQ describes 14-day refund with five-session annual limit",
+      "type": "seller_policy",
+      "status": "supported_as_public_faq_only",
+      "source_urls": [
+        "https://hypnosislive.com/faq"
+      ],
+      "limitations": "At purchase verify exact terms; not an FV approved offer"
+    },
+    {
+      "id": "HL03",
+      "claim": "Hypnosis Live changes any aspect of life or cures phobias",
+      "type": "health_or_psych_claim",
+      "status": "exclude_unsubstantiated_product_specific",
+      "source_urls": [
+        "https://hypnosislive.com/faq",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limitations": "No broad branded-product efficacy evidence"
+    },
+    {
+      "id": "BW01",
+      "claim": "Brainwave Shots catalog lists Focus Shot and multiple category-specific recordings",
+      "type": "seller_format",
+      "status": "supported_as_seller_listing",
+      "source_urls": [
+        "https://brainwaveshots.com/"
+      ],
+      "limitations": "Seller title only; no measured focus outcome"
+    },
+    {
+      "id": "BW02",
+      "claim": "Brainwave Shots healing/pain recordings work as advertised",
+      "type": "health_claim",
+      "status": "exclude_unsubstantiated_product_specific",
+      "source_urls": [
+        "https://brainwaveshots.com/",
+        "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limitations": "No product-specific competent evidence"
+    },
+    {
+      "id": "EV01",
+      "claim": "1974 smashed vs hit wording changed eyewitness reports",
+      "type": "peer_reviewed_experiment",
+      "status": "supported_limited_to_laboratory",
+      "source_urls": [
+        "https://web.stanford.edu/class/psych205/papers/Loftus-Palmer-1974.pdf"
+      ],
+      "limitations": "Do not state all memory physically rewritten"
+    },
+    {
+      "id": "EV02",
+      "claim": "1978 post-event misinformation reduced later recognition accuracy",
+      "type": "peer_reviewed_experiment",
+      "status": "supported_limited_to_laboratory",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/621467/"
+      ],
+      "limitations": "Visual slide tasks; not branded hypnosis trial"
+    },
+    {
+      "id": "EV03",
+      "claim": "2023 repetition may increase suggestibility; apparent sources alone need not",
+      "type": "mixed_experimental_meta",
+      "status": "supported_bounded",
+      "source_urls": [
+        "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2023.1201674/full"
+      ],
+      "limitations": "Do not claim all repetition effects universal"
+    },
+    {
+      "id": "EV04",
+      "claim": "2023 binaural-beat EEG literature consistently supports entrainment",
+      "type": "systematic_review",
+      "status": "contradicted_by_heterogeneous_results",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/37205669/"
+      ],
+      "limitations": "5 supportive, 8 contradictory, 1 mixed"
+    },
+    {
+      "id": "EV05",
+      "claim": "2025 clinical-procedure hypnosis meta-analysis validates generic consumer MP3s",
+      "type": "cross_intervention_extrapolation",
+      "status": "exclude_invalid_transfer",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/40179604/"
+      ],
+      "limitations": "Clinical setting and interventions differ"
+    },
+    {
+      "id": "FV01",
+      "claim": "Existing 52-page Focus Fieldbook is free with existing Jetpack/Dispatch",
+      "type": "verified_existing_site",
+      "status": "supported_as_live_page",
+      "source_urls": [
+        "https://finalvestige.com/focus/"
+      ],
+      "limitations": "No checkout or paid sale"
+    },
+    {
+      "id": "FV02",
+      "claim": "Final Vestige has verified payable Mind-owned digital SKU",
+      "type": "merchant_checkout",
+      "status": "hold_unverified",
+      "source_urls": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+        "https://finalvestige.com/focus/"
+      ],
+      "limitations": "No authenticated SKU/price/rights/fulfillment"
+    },
+    {
+      "id": "ME01",
+      "claim": "Outward CTA click equals paid commission",
+      "type": "measurement",
+      "status": "prohibited_category_error",
+      "source_urls": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+      ],
+      "limitations": "Need merchant sale/settlement independently"
+    },
+    {
+      "id": "FTC01",
+      "claim": "Clear material-connection disclosure placed close to earning link",
+      "type": "ftc_requirement",
+      "status": "required_if_activated",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "limitations": "Prospective disclosure present in disabled CTA context"
+    },
+    {
+      "id": "FTC02",
+      "claim": "Objective health outcomes must be substantiated before advertising",
+      "type": "ftc_requirement",
+      "status": "required_if_claimed",
+      "source_urls": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limitations": "Do not inherit seller claim merely by attribution"
+    },
+    {
+      "id": "TX01",
+      "claim": "Actual eligible named Grok asset IDs and click attribution exist",
+      "type": "measurement",
+      "status": "hold_unverified",
+      "source_urls": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+      ],
+      "limitations": "No authenticated immutable media IDs in reviewed TASK-008"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_inspire3_publisher_acceptance",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "exact_promotable_sku",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "approved_website_channel",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "approved_youtube_channel",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "approved_tiktok_channel",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "approved_email_channel_if_used",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "approved_creative_rights",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "issued_tracking_url",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "verified_target_checkout",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "verified_current_price_and_currency",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "verified_accepted_payment_terms",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "verified_returns_terms",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "verified_merchant_commission_rules",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "verified_merchant_reporting_access",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "confirmed_financial_settlement_or_payout",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "documented_receipt_and_refund_adjustment",
+      "status": "HOLD",
+      "owner": "Founder/Commerce",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "documented_affiliate_near_link_disclosure",
+      "status": "HOLD",
+      "owner": "Mind/Founder",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "no_unsubstantiated_health_claims",
+      "status": "HOLD",
+      "owner": "Mind/Founder",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "text_video_information_parity",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "film_encoded_42_seconds",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "film_captions_validated",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "film_transcript_complete",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "film_poster_rights_cleared",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "no_autoplay",
+      "status": "HOLD",
+      "owner": "Mind/Founder",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "no_js_fallback",
+      "status": "HOLD",
+      "owner": "Mind/Founder",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "keyboard_and_focus_qa",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "wcag_22_aa_real_browser",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "mobile_360_390_768_1440_1920",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "lighthouse_cwv_baseline",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "wordpress_sanitizer_acceptance",
+      "status": "HOLD",
+      "owner": "Mind/Site QA",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "no_duplicate_jetpack_signup",
+      "status": "HOLD",
+      "owner": "Claude/Dispatch/Praxxis",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "existing_welcome_confirmed",
+      "status": "HOLD",
+      "owner": "Claude/Dispatch/Praxxis",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "privacy_safe_utm_campaign",
+      "status": "HOLD",
+      "owner": "Claude/Dispatch/Praxxis",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "unique_grok_asset_id_verified",
+      "status": "HOLD",
+      "owner": "Mind/Founder",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "qualified_human_session_denominator",
+      "status": "HOLD",
+      "owner": "Claude/Dispatch/Praxxis",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "merchant_confirmed_sale_proof",
+      "status": "HOLD",
+      "owner": "Mind/Founder",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "seven_day_cohort_qa",
+      "status": "HOLD",
+      "owner": "Claude/Dispatch/Praxxis",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "thirty_day_cohort_qa",
+      "status": "HOLD",
+      "owner": "Claude/Dispatch/Praxxis",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    },
+    {
+      "id": "founder_specific_release_approval",
+      "status": "HOLD",
+      "owner": "Mind/Founder",
+      "reason": "No executed authorization and production release proof in this sprint; not implicitly passed"
+    }
+  ],
+  "storefront_snapshot": {
+    "offer": "Zen12",
+    "standard_page": "https://zen12.com/about",
+    "promo_page": "https://zen12.com/secret/",
+    "merchant_account_status": "UNVERIFIED; Refersion pending email dated 2026-08-24, no named approval found in targeted searches",
+    "exact_sku": "UNKNOWN",
+    "price": "WITHHELD",
+    "returns": "WITHHELD",
+    "affiliate_url": null,
+    "commission_rate": null,
+    "payout": null,
+    "approval_verified": false
+  },
+  "purchasable_owned_alternative": {
+    "verified_sku": null,
+    "verified_checkout_url": null,
+    "price": null,
+    "rights": null,
+    "status": "UNVERIFIED; free Focus is not a paid SKU"
+  },
+  "measurement_definition": {
+    "primary_metric": "verified_realized_net_revenue_per_1000_qualified_human_sessions",
+    "numerator": "merchant-confirmed settled gross revenue attributable to cohort minus refunds, chargebacks and relevant fees; affiliate publisher earned settlement instead of consumer order value",
+    "denominator": "eligible privacy-safe qualified-human landing sessions with verified asset_id and utm_campaign",
+    "missing_policy": "NULL not zero when no credible denominators or settlement evidence",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "unverified_events_not_sales": [
+      "affiliate_click",
+      "outbound_click",
+      "lead_form_submit",
+      "confirmed_signup",
+      "checkout_start"
+    ],
+    "privacy": "No email, IP, fingerprint, medical history, cookie IDs or raw user agent in analytics specification"
+  }
+}
