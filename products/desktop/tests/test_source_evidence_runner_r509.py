@@ -1598,5 +1598,166 @@ class EngineSourcePostflightR522(unittest.TestCase):
         self.assertTrue(execute.call_args.kwargs["verify_source_snapshots"])
 
 
+import source_engine_custody_r522 as engine_custody
+
+
+class EngineImportSurfaceR523(unittest.TestCase):
+    """R523 blocks added importable files and subpackages outside flat .py inventory."""
+
+    def setUp(self):
+        self.temp = TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.package = self.root.joinpath(*engine_custody.PACKAGE_PARTS)
+        self.package.mkdir(parents=True)
+        for name in ("__init__.py", "engine.py", "invoice_match.py"):
+            (self.package / name).write_text("pass\n", encoding="ascii")
+
+    def assert_untrusted(self):
+        with self.assertRaises(engine_custody.EngineSourceRejected):
+            engine_custody.snapshot_engine_sources(self.root)
+
+    def test_clean_sources_pass(self):
+        receipt = engine_custody.snapshot_engine_sources(self.root)
+        self.assertTrue(engine_custody.engine_sources_unchanged(self.root, receipt))
+
+    def test_new_subpackage_rejected(self):
+        child = self.package / "forged"
+        child.mkdir()
+        (child / "__init__.py").write_text("pass\n")
+        self.assert_untrusted()
+
+    def test_native_pyd_rejected(self):
+        (self.package / "forged.pyd").write_bytes(b"native")
+        self.assert_untrusted()
+
+    def test_native_so_rejected(self):
+        (self.package / "forged.cpython-313.so").write_bytes(b"native")
+        self.assert_untrusted()
+
+    def test_compiled_pyc_rejected(self):
+        (self.package / "forged.pyc").write_bytes(b"compiled")
+        self.assert_untrusted()
+
+    def test_pyo_rejected(self):
+        (self.package / "forged.pyo").write_bytes(b"compiled")
+        self.assert_untrusted()
+
+    def test_cache_regular_allowed(self):
+        cache = self.package / "__pycache__"
+        cache.mkdir()
+        (cache / "engine.cpython-313.pyc").write_bytes(b"cache")
+        receipt = engine_custody.snapshot_engine_sources(self.root)
+        self.assertTrue(engine_custody.engine_sources_unchanged(self.root, receipt))
+
+    def test_cache_link_rejected(self):
+        target = self.root / "outside"
+        target.mkdir()
+        try:
+            (self.package / "__pycache__").symlink_to(target, target_is_directory=True)
+        except OSError:
+            self.skipTest("Symlink unavailable")
+        self.assert_untrusted()
+
+    def test_nonpy_asset_allowed(self):
+        (self.package / "readme.txt").write_text("doc")
+        receipt = engine_custody.snapshot_engine_sources(self.root)
+        self.assertTrue(engine_custody.engine_sources_unchanged(self.root, receipt))
+
+    def test_new_subpackage_detected_postflight(self):
+        receipt = engine_custody.snapshot_engine_sources(self.root)
+        child = self.package / "forged"
+        child.mkdir()
+        (child / "__init__.py").write_text("pass\n")
+        self.assertFalse(engine_custody.engine_sources_unchanged(self.root, receipt))
+
+    def test_native_file_detected_postflight(self):
+        receipt = engine_custody.snapshot_engine_sources(self.root)
+        (self.package / "forged.pyd").write_bytes(b"native")
+        self.assertFalse(engine_custody.engine_sources_unchanged(self.root, receipt))
+
+
+class EnginePrelaunchR523(unittest.TestCase):
+    """Transient cross-command engine changes are caught before the next launch."""
+
+    CMD = (("-W", "error", "products/desktop/scripts/source_smoke_gate.py"),) * 2
+
+    def setUp(self):
+        self.temp = TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.package = self.root.joinpath(*engine_custody.PACKAGE_PARTS)
+        self.package.mkdir(parents=True)
+        for name in ("__init__.py", "engine.py", "invoice_match.py"):
+            (self.package / name).write_text("pass\n", encoding="ascii")
+        self.receipt = engine_custody.snapshot_engine_sources(self.root)
+
+    def run_matrix(self, *, spawn=None, checker=None):
+        calls = []
+        def fake_spawn(*args, **kwargs):
+            calls.append(args)
+            if spawn:
+                spawn(len(calls))
+            return SimpleNamespace(returncode=0)
+        stdout, stderr = io.StringIO(), io.StringIO()
+        with patch.object(runner, "source_fingerprint", return_value=b"x" * 32), \
+             patch.object(runner, "matches_source_fingerprint", return_value=True), \
+             patch.object(runner, "postflight_unchanged", return_value=True), \
+             patch.object(runner, "_child_environment", return_value={}), \
+             patch.object(runner, "engine_sources_unchanged",
+                          side_effect=checker or engine_custody.engine_sources_unchanged), \
+             redirect_stdout(stdout), redirect_stderr(stderr):
+            result = runner.execute(
+                self.CMD, self.root, spawn=fake_spawn,
+                verify_source_snapshots=True, manifest_snapshot=b"pinned\n",
+                engine_source_snapshot=self.receipt)
+        return result, len(calls), stdout.getvalue(), stderr.getvalue()
+
+    def test_clean_two_commands_engine_checked_thrice(self):
+        visits = []
+        def checker(root, receipt):
+            visits.append(1)
+            return engine_custody.engine_sources_unchanged(root, receipt)
+        result, count, out, _ = self.run_matrix(checker=checker)
+        self.assertEqual((result, count, len(visits)), (0, 2, 3))
+        self.assertIn("PASS: 2", out)
+
+    def test_transient_modification_restored_by_later_test_is_rejected(self):
+        def mutate(number):
+            (self.package / "engine.py").write_text(
+                "malicious\n" if number == 1 else "pass\n")
+        result, count, out, err = self.run_matrix(spawn=mutate)
+        self.assertEqual((result, count), (1, 1))
+        self.assertIn("before check 2/2", err)
+        self.assertNotIn("PASS:", out)
+
+    def test_modified_engine_stops_before_first_launch(self):
+        (self.package / "engine.py").write_text("changed\n")
+        result, count, _, err = self.run_matrix()
+        self.assertEqual((result, count), (1, 0))
+        self.assertIn("before check 1/2", err)
+
+    def test_private_scanner_error_sanitized(self):
+        def fails(*args):
+            raise OSError("/private/secret/accounting.csv")
+        result, count, out, err = self.run_matrix(checker=fails)
+        self.assertEqual((result, count), (1, 0))
+        self.assertNotIn("/private/", out + err)
+
+    def test_truthy_nonboolean_scanner_result_rejected(self):
+        result, count, _, _ = self.run_matrix(checker=lambda *_: 1)
+        self.assertEqual((result, count), (1, 0))
+
+    def test_final_child_mutation_remains_postflight_hold(self):
+        def mutate(number):
+            if number == 2:
+                (self.package / "engine.py").write_text("altered\n")
+        result, count, out, err = self.run_matrix(spawn=mutate)
+        self.assertEqual((result, count), (1, 2))
+        self.assertIn("after checks", err)
+        self.assertNotIn("PASS:", out)
+
+
+
 if __name__ == "__main__":
     unittest.main()

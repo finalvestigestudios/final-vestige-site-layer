@@ -2,7 +2,8 @@
 
 This supplements the pinned test/script and manifest checks. It protects the
 flat fvs_suite Python package from addition, removal, or modification during
-source evidence execution. This is not an atomic filesystem attestation.
+source evidence execution. R523 also blocks unreviewed import surfaces.
+This is not an atomic filesystem attestation.
 """
 from __future__ import annotations
 
@@ -16,6 +17,7 @@ from source_path_snapshot_r515 import (
 PACKAGE_PARTS = ("products", "desktop", "fvs_suite")
 MAX_MODULES = 256
 _MODULE_NAME = re.compile(r"(?:__init__|[a-z][a-z0-9_]*)\.py\Z", re.ASCII)
+_IMPORTABLE_SUFFIXES = frozenset({".pyc", ".pyo", ".pyd", ".so", ".dll", ".dylib", ".pyw"})
 
 
 class EngineSourceRejected(ValueError):
@@ -33,9 +35,20 @@ def _engine_paths(root: Path) -> tuple[tuple[str, ...], ...]:
         raise EngineSourceRejected("Unsafe engine source inventory")
     names = []
     for entry in package.iterdir():
-        # Ignore non-source data, but refuse any Python source with an
-        # unreviewed name or symlink. Descriptor custody checks each leaf.
-        if entry.suffix != ".py":
+        # An introduced subpackage, sourceless bytecode or native extension
+        # can change imported code without changing any top-level *.py hash.
+        # Ordinary CPython caches remain permitted, but not linked caches.
+        linked = entry.is_symlink()
+        junction = getattr(entry, "is_junction", None)
+        if linked or (junction is not None and junction()):
+            raise EngineSourceRejected("Unsafe engine source inventory")
+        if entry.name == "__pycache__":
+            if not entry.is_dir():
+                raise EngineSourceRejected("Unsafe engine source inventory")
+            continue
+        if entry.is_dir() or entry.suffix.lower() in _IMPORTABLE_SUFFIXES:
+            raise EngineSourceRejected("Unsafe engine source inventory")
+        if entry.suffix.lower() != ".py":
             continue
         if (_MODULE_NAME.fullmatch(entry.name) is None or
                 not entry.is_file() or entry.is_symlink()):
