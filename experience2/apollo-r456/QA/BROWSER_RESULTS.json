@@ -1,0 +1,98 @@
+{
+  "axe_core": "HOLD_NOT_RUN",
+  "axes": "HOLD_NOT_RUN",
+  "cases": [
+    {
+      "name": "320-nojs",
+      "status": "PASS"
+    },
+    {
+      "name": "320-js",
+      "status": "PASS"
+    },
+    {
+      "name": "360-nojs",
+      "status": "PASS"
+    },
+    {
+      "name": "360-js",
+      "status": "PASS"
+    },
+    {
+      "name": "390-nojs",
+      "status": "PASS"
+    },
+    {
+      "name": "390-js",
+      "status": "PASS"
+    },
+    {
+      "name": "768-nojs",
+      "status": "PASS"
+    },
+    {
+      "name": "768-js",
+      "status": "PASS"
+    },
+    {
+      "name": "1024-nojs",
+      "status": "PASS"
+    },
+    {
+      "name": "1024-js",
+      "status": "PASS"
+    },
+    {
+      "name": "1440-nojs",
+      "status": "PASS"
+    },
+    {
+      "name": "1440-js",
+      "status": "PASS"
+    },
+    {
+      "name": "1920-nojs",
+      "status": "PASS"
+    },
+    {
+      "name": "1920-js",
+      "status": "PASS"
+    },
+    {
+      "name": "keyboard",
+      "status": "PASS"
+    },
+    {
+      "name": "touch",
+      "status": "PASS"
+    },
+    {
+      "name": "forced-colors",
+      "status": "PASS"
+    },
+    {
+      "name": "reduced-motion",
+      "status": "PASS"
+    },
+    {
+      "name": "print",
+      "status": "PASS"
+    },
+    {
+      "name": "multi-instance",
+      "status": "PASS"
+    },
+    {
+      "name": "200-percent-zoom",
+      "status": "PASS"
+    }
+  ],
+  "failed": 0,
+  "field_CWV": "HOLD_NOT_RUN",
+  "hosted_WordPress": "HOLD_NOT_RUN",
+  "navigated_CLS": "HOLD_NOT_RUN",
+  "navigated_LCP": "HOLD_NOT_RUN",
+  "passed": 21,
+  "render": "PHP rendered HTML / Chromium page.set_content, no hosted navigation",
+  "sprint": "R456"
+}
