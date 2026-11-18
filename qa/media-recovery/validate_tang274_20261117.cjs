@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),crypto=require('node:crypto');
 const PIN='c0d54c30769b0276a143c2f77b897202d818105f';
-const sha=s=>{const b=Buffer.from(s,'utf8');return crypto.createHash('sha1').update('blob '+b.length+'\\0'.replace('\\0','\0')).update(b).digest('hex');};
+const sha=s=>{const b=Buffer.from(s,'utf8');return crypto.createHash('sha1').update('blob '+b.length+String.fromCharCode(0)).update(b).digest('hex');};
 function verify(o,src,sourceRaw){const bad=m=>{throw Error(m)};
  if(sha(sourceRaw)!==PIN||o.source_snapshot?.git_blob_sha!==PIN)bad('source SHA drift');
  if(o.schema!=='fv-tang-274-seven-original-readonly-v1'||o.post_id!==274||o.status!=='REVIEW_ONLY')bad('schema');
@@ -10,7 +10,7 @@ function verify(o,src,sourceRaw){const bad=m=>{throw Error(m)};
  if(Object.entries(o.source_policy||{}).some(([k,v])=>typeof v==='boolean'&&v!==true)||o.source_policy?.media_max_width_px!==960)bad('production policy');
  if(o.slots.filter(r=>r.official_candidate).length!==6)bad('candidate count');
  const seen=new Set();for(let i=0;i<7;i++){const r=o.slots[i],s=slots[i];
- if(r.slot!==\`274:\${i}\`||seen.has(r.slot))bad('slot identity');seen.add(r.slot);
+ if(r.slot!=='274:'+i||seen.has(r.slot))bad('slot identity');seen.add(r.slot);
  if(r.authored_view_src!==s.authored_view_src||r.source_origin_url!==s.source_origin_url||r.alt!==s.alt||r.source_route!==s.route_type)bad('exact URL mismatch');
  if(!Object.values(r.guest_chromium||{}).every(v=>v===null))bad('fabricated browser');
  if(r.rights?.rehost_approved!==false||r.rights?.item_specific_rights_confirmed!==false)bad('rights hold');
