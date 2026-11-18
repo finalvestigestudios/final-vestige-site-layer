@@ -9,3 +9,6 @@
  .fv457__print-note{border:2px solid #000;padding:.6em;margin:1em 0}
  .fv457__status{display:none!important}
 }
+
+/* R461: print/PDF source URLs are actual links, not merely painted text. */
+@media print{.fv457__print-custody a{color:#000!important;text-decoration:underline;overflow-wrap:anywhere;word-break:break-word}}
