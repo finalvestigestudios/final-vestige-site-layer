@@ -20,7 +20,7 @@
 #fv-port-date .p-cell{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:1rem}
 #fv-port-date .p-cell b{display:block;color:var(--night);margin-bottom:.4rem}
 #fv-port-date .p-figure{border:1px solid var(--rule);border-radius:6px;background:#f1f4ee;padding:clamp(12px,2vw,24px);margin:1.8rem 0}
-#fv-port-date svg{display:block;width:100%;height:auto}
+#fv-port-date .p-diagram-scroll{overflow-x:auto;max-width:100%}#fv-port-date svg{display:block;width:100%;min-width:620px;height:auto}
 #fv-port-date figcaption{color:var(--muted);font-size:.88rem;margin-top:.65rem}
 #fv-port-date .p-table-wrap{overflow-x:auto;max-width:100%;border:1px solid var(--rule);border-radius:5px}
 #fv-port-date table{width:100%;min-width:570px;border-collapse:collapse;font-size:.92rem}
@@ -34,7 +34,7 @@
 #fv-port-date .p-sources{padding-left:1.25rem;word-break:break-word}
 #fv-port-date .p-sources li{margin:.55rem 0}
 @media(max-width:580px){#fv-port-date .p-grid,#fv-port-date .p-fields{grid-template-columns:1fr}#fv-port-date{margin:2rem auto}#fv-port-date .p-wrap{padding:0 12px}}
-@media print{#fv-port-date{color:#000!important;margin:0;max-width:100%}#fv-port-date .p-hero{background:#fff!important;color:#000!important;border-bottom:2px solid #000}#fv-port-date .p-meta,#fv-port-date .p-kicker{color:#000}#fv-port-date .p-cell,#fv-port-date .p-alert,#fv-port-date .p-figure{background:#fff!important}#fv-port-date .p-card{break-inside:avoid}#fv-port-date a{color:#000;text-decoration:underline}#fv-port-date h3{break-after:avoid}}
+@media print{#fv-port-date{color:#000!important;margin:0;max-width:100%}#fv-port-date .p-hero{background:#fff!important;color:#000!important;border-bottom:2px solid #000}#fv-port-date .p-meta,#fv-port-date .p-kicker{color:#000}#fv-port-date .p-cell,#fv-port-date .p-alert,#fv-port-date .p-figure{background:#fff!important}#fv-port-date .p-card{break-inside:avoid}#fv-port-date a{color:#000;text-decoration:underline}#fv-port-date h3{break-after:avoid}#fv-port-date svg{min-width:0}}
 </style>
 <div class="p-hero">
 <p class="p-kicker">Final Vestige Studios · Free Library · Maritime evidence desk</p>
@@ -56,7 +56,7 @@
 </div>
 
 <figure class="p-figure">
-<svg viewBox="0 0 760 328" role="img" aria-labelledby="fv-port-fig-title fv-port-fig-desc" xmlns="http://www.w3.org/2000/svg">
+<div class="p-diagram-scroll" tabindex="0" role="region" aria-label="Explanatory three-lane diagram, scroll horizontally on small screens"><svg viewBox="0 0 760 328" role="img" aria-labelledby="fv-port-fig-title fv-port-fig-desc" xmlns="http://www.w3.org/2000/svg">
 <title id="fv-port-fig-title">Different records can date different events in one port call</title>
 <desc id="fv-port-fig-desc">Three separate horizontal lanes: vessel observations, customs transactions, and later reports. Each lane has two example dots at different positions. All examples are fictional, have no dates or fixed order, and are not a reconstruction of an actual port visit.</desc>
 <rect x="0" y="0" width="760" height="328" rx="10" fill="#f1f4ee"/>
@@ -67,7 +67,7 @@
 <g fill="#2b7664"><circle cx="278" cy="106" r="9"/><circle cx="472" cy="106" r="9"/></g><g fill="#95652b"><rect x="353" y="175" width="18" height="18" rx="3"/><rect x="581" y="175" width="18" height="18" rx="3"/></g><g fill="#637c95"><path d="M421 251l11 19h-22z"/><path d="M670 251l11 19h-22z"/></g>
 <g font-family="Arial,sans-serif" font-size="12" fill="#354d42"><text x="234" y="88">observed</text><text x="443" y="88">moored</text><text x="328" y="163">entered</text><text x="566" y="163">cleared</text><text x="378" y="246">reported</text><text x="640" y="246">reprinted</text></g>
 <text x="24" y="309" font-family="Arial,sans-serif" font-size="12" fill="#55695d">Horizontal position is diagrammatic, NOT elapsed time or event order.</text>
-</svg>
+</svg></div>
 <figcaption>Original FV diagram, 2026. Author and rights holder: Final Vestige Studios. Illustrative, not archival evidence, not to scale. Alt description is embedded in the SVG. The layout distinguishes document purposes; it intentionally does not assert universal ordering or time intervals.</figcaption>
 </figure>
 
@@ -131,7 +131,7 @@
 <li><a href="https://www.archives.gov/research/maritime/merchant-vessel-documentation">NARA, Merchant Vessel Documentation</a>. Official numbers, registers, licenses, record gaps and requesting details. Checked November 17, 2026.</li>
 <li><a href="https://www.archives.gov/boston/finding-aids/maritime.html">NARA Boston, Customs, Coast Guard, and Other Maritime Records</a>. Illustrates regional record-group and access paths. Checked November 17, 2026.</li>
 </ol>
-<p class="p-small"><strong>Rights / access ledger:</strong> Only new Final Vestige-authored text, CSS and SVG are reproduced here (© Final Vestige Studios, 2026). NARA links are references, not embedded third-party scans. U.S. federal government-authored content is often public domain in the United States, but NARA holdings can include privately copyrighted and restricted records; never assume item-level reuse rights from the repository name. Source URLs are freely reachable guides; any catalog item/scan access, fees, completeness or reproduction rights must be checked individually. The NARA Catalog ID route responds, but the interactive object descriptions and images were <strong>not</strong> verified in this pass.</p>
+<p class="p-small"><strong>Rights / access ledger:</strong> Only new Final Vestige-authored text, CSS and SVG are reproduced here (© Final Vestige Studios, 2026). NARA links are references, not embedded third-party scans. U.S. federal government-authored content is often public domain in the United States, but NARA holdings can include privately copyrighted and restricted records; never assume item-level reuse rights from the repository name. See NARA’s <a href="https://www.archives.gov/research/still-pictures/permissions">copyright and permissions guidance</a> for that institutional qualification. Source URLs are freely reachable guides; any catalog item/scan access, fees, completeness or reproduction rights must be checked individually. The NARA Catalog ID route responds, but the interactive object descriptions and images were <strong>not</strong> verified in this pass.</p>
 <p>For broader methods see <a href="https://finalvestige.com/free-resources/">The Library</a> and for a carefully bounded maritime source dispute read FV's <a href="https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/">Franklin expedition investigation</a>. The latter concerns another era and does not document the fictional example above.</p>
 <p class="p-small">Final Vestige Studios · Source/provenance review: November 17, 2026. Errors or broken links: <a href="https://finalvestige.com/contact/">Corrections &amp; Contact</a>. This educational research guide is not legal advice, nautical navigation guidance or proof that any named vessel's original records have been inspected.</p>
 </div></div>
