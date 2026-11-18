@@ -1,0 +1,43 @@
+{
+  "review": "R450",
+  "date_utc": "2026-11-18T15:39:25Z",
+  "source_ref": "bae819b8d3034073f500b0f6f42579f949382c11",
+  "source_path": "dispatch/r440/ISSUE_05_HYPNOSIS_LIVE_UNADOPTED.md",
+  "source_sha": "3a173be413078a04f695b458b1e57b19cd6460cb",
+  "extraction": "content strictly between unique subscriber-facing markers",
+  "changes": [
+    "inactive guide token replaced with visible non-link text",
+    "four sources inserted in recipient-visible source notes"
+  ],
+  "kind": "unadopted_review_not_sendable",
+  "episode": 5,
+  "product": "Hypnosis Live",
+  "mix": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_reserved": [
+      3,
+      5
+    ]
+  },
+  "release": "HOLD_UNSENT",
+  "send_authorized": false,
+  "wp_subscribers_confirmed": 3,
+  "wp_additional_unconfirmed": 2,
+  "autopost_email": false,
+  "merchant_email_permission": false,
+  "merchant_earning_url": false,
+  "live_guide": false,
+  "actual_jetpack_preview": false,
+  "received_fieldbook_welcome": false,
+  "valid_publisher_postal": false,
+  "rendered_optout": false,
+  "founder_final_campaign_approval": false,
+  "settled_net_revenue": null,
+  "human_sessions": null,
+  "revenue_per_1000": null
+}
