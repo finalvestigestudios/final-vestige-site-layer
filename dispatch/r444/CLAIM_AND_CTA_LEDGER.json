@@ -1,0 +1,48 @@
+{
+  "status": "HOLD_UNSENT_UNADOPTED",
+  "parent_master_pr": 175,
+  "previous_stack_pr": 2979,
+  "original_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "slot": 1,
+  "kind": "editorial",
+  "subject": "The person changed. The conversation continued.",
+  "preheader": "A 1998 street experiment, a missed substitution, and the difference between observation and confidence.",
+  "primary_cta": "https://finalvestige.com/2026/11/02/change-blindness/",
+  "primary_cta_live_source": "authenticated WordPress post 1922",
+  "reason": "Original Issues 01 and 02 both point to Puységur. This proposed Issue01 instead matches a published change-blindness article and source-tagged Grok viewer intent, without adding a merchant.",
+  "research_claims": [
+    {
+      "claim": "Door interruption and unexpected person swap; approximately half first-experiment participants detected it",
+      "source": "https://doi.org/10.3758/BF03208840",
+      "limit": "Specific experimental condition, not a population rate"
+    },
+    {
+      "claim": "Scene change difficulty with interposed blank field; attention cue assists",
+      "source": "https://doi.org/10.1111/j.1467-9280.1997.tb00427.x",
+      "limit": "Specific test; does not establish efficacy of audio products"
+    }
+  ],
+  "sources": [
+    "https://doi.org/10.3758/BF03208840",
+    "https://doi.org/10.1111/j.1467-9280.1997.tb00427.x",
+    "https://finalvestige.com/editorial-standards/"
+  ],
+  "all_release_proofs": {
+    "founder_final_approval": false,
+    "native_jetpack_preview": false,
+    "actual_received_welcome": false,
+    "publisher_postal_address": false,
+    "functional_rendered_unsubscribe": false,
+    "merchant_email_permission": false,
+    "paid_settlement": false
+  },
+  "commercial_slots": [
+    3,
+    5
+  ],
+  "merchant_names": {
+    "3": "Zen12",
+    "5": "Hypnosis Live"
+  },
+  "conversion_event": "confirmed_signup only on independently verified new provider eligibility transition"
+}
