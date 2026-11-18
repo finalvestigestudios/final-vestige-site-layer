@@ -1,6 +1,6 @@
 """Read-only source audit for Final Vestige's 4-editorial/2-commercial Dispatch pilot.
 
-Usage: python email_copy_preflight.py REPOSITORY_ROOT [--json]
+Usage: python email_copy_preflight.py REPOSITORY_ROOT [--pins SOURCE_PINS_AND_RELEASE_PROOFS.json]
 This script never edits files, sends email, makes requests or creates subscribers.
 It does not certify a Jetpack render, merchant approval, consent or CAN-SPAM compliance.
 """
