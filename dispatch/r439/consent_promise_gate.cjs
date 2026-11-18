@@ -12,7 +12,7 @@ function evaluate(snapshot, proofs = {}) {
   const f = s.followers || {};
   const sum = (arr) => arr.reduce((a,b) => a + b, 0);
   for (const k of ['total','confirmed','unconfirmed','suppressed']) {
-    if (!Number.isInteger(c[k]) || c[k] < 0) errors.push(`invalid newsletter.\${k}`);
+    if (!Number.isInteger(c[k]) || c[k] < 0) errors.push(`invalid newsletter.${k}`);
   }
   if (Number.isInteger(c.total) && Number.isInteger(c.confirmed) && c.confirmed > c.total)
     errors.push('confirmed exceeds total');
@@ -38,7 +38,7 @@ function evaluate(snapshot, proofs = {}) {
     if (![3,5].includes(item.issue)) errors.push('commercial slot must be issue 03 or 05');
     if ((item.issue === 3 && item.id !== 'zen12') || (item.issue === 5 && item.id !== 'hypnosis_live')) errors.push('canonical offer identity drift: Issue 03 Zen12 / Issue 05 Hypnosis Live');
     for (const field of ['email_permission_ref','approved_guide_ref','earning_url_ref','merchant_terms_ref','claim_review_ref'])
-      if (!safeRef(proofs.offers?.[item.issue]?.[field])) blockers.push(`issue \${item.issue} missing \${field}`);
+      if (!safeRef(proofs.offers?.[item.issue]?.[field])) blockers.push(`issue ${item.issue} missing ${field}`);
   }
   const providerConfirmed = proofs.confirmed_signup_event === true && safeRef(proofs.confirmed_signup_ref) && proofs.consent_scope === 'dispatch_newsletter';
   if (!providerConfirmed) blockers.push('confirmed_signup cannot be proven by click, URL parameter, PDF download or Reader follow');
