@@ -50,3 +50,32 @@ test("zero-image post 1922 is valid in full current cohort",()=>{const x=make("c
 test("wrong census digest cannot claim sitewide",()=>{const x=make("historic-61",61,24);x.manifest_sha256="b".repeat(64);assert.ok(evaluate(x).errors.includes("manifest_snapshot_mismatch"));});
 test("arbitrary 61 post IDs cannot claim historic coverage",()=>{const x=make("historic-61",61,24);for(const phase of ["before","after"])for(const device of ["desktop","mobile"])x[phase][device].pages[0].post_id=99999;assert.ok(evaluate(x).errors.some(s=>s.includes("cohort_unexpected_post")));});
 test("added image on 1922 invalidates cohort",()=>{const x=make("current-66",66,24);x.after.mobile.pages.find(p=>p.post_id===1922).images.push({...x.after.mobile.pages[0].images[0],asset_id:"1922:0"});assert.ok(evaluate(x).errors.some(s=>s.includes("cohort_inline_slot_count")));});
+
+test("baseline_404_html_excludes_error_body_and_allows_recovery_measurement",()=>{
+ const x=make("historic-61",61,20);
+ for(const d of ["desktop","mobile"]){
+   const m=x.before[d].pages[0].images[0];
+   Object.assign(m,{http_status:404,mime:"text/html",decoded:false,
+     natural_width:0,natural_height:0,transfer_bytes:123});
+ }
+ const y=evaluate(x);
+ assert.equal(y.devices.desktop.broken_before,1);
+ assert.equal(y.devices.mobile.broken_before,1);
+ assert.equal(y.devices.desktop.before_bytes,35400); // 355 genuine originals less one failed image
+ assert.equal(y.devices.mobile.before_bytes,35400);
+ assert.equal(y.devices.desktop.after_bytes,7100); // recovered image now costs wire bytes
+ assert.equal(y.threshold_met,true); // still needs independent QA, not a public 76% claim
+ assert.equal(y.claim_publicly_verified,false);
+});
+test("unrecovered_404_after_must_remain_hold_even_when_savings_look_large",()=>{
+ const x=make("historic-61",61,20);
+ for(const d of ["desktop","mobile"]){
+   const m=x.after[d].pages[0].images[0];
+   Object.assign(m,{http_status:404,mime:"text/html",decoded:false,
+     natural_width:0,natural_height:0,transfer_bytes:12});
+ }
+ const y=evaluate(x);
+ assert.equal(y.gate,"HOLD");
+ assert.equal(y.threshold_met,false);
+ assert.ok(y.errors.some(s=>s.includes("broken_after")));
+});
