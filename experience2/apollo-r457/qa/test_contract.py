@@ -43,7 +43,7 @@ class Contract(unittest.TestCase):
   self.assertIn('Six archival records across two published surfaces',html)
   p=ROOT/'assets/gallery.js';old=p.read_bytes()
   try:
-   p.write_bytes(old+b'\\n/* unexpected modification */')
+   p.write_bytes(old+b'\n/* unexpected modification */')
    self.assertIn('temporarily unavailable',php('echo fv457_render();'))
   finally:p.write_bytes(old)
  def test_shortcode_disabled_default(self):self.assertNotIn('add_shortcode(',php('echo function_exists("add_shortcode")?"yes":"no";'))
