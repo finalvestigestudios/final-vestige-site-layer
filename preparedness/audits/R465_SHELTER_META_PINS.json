@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "state": "DRAFT_HARD_HOLD",
+  "qd_pass": false,
+  "publication_authorized": false,
+  "source_commit_sha": {
+    "original": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+    "continuation": "ac8625faf30dd5538fadc31e06cb5a2cea1defae",
+    "followup": "6a5998ead97eca997e573ce8d3ceacf1c6aabad4",
+    "candidate": "b36f3134c66131acc2dad8af25d541e6dcbc3d15"
+  },
+  "articles": {
+    "family-communication-plan": {
+      "original": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+      "continuation": "0ad68a8c456f50912ddef11c44bfc05c3c2d3513",
+      "followup": "a8618235711cca039f142ad59962c1153654aa45",
+      "candidate": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3"
+    },
+    "home-fire-escape-plan": {
+      "original": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+      "continuation": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9",
+      "followup": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9",
+      "candidate": "ff1246dcbfb0dd0bc864977f815badb9ad4e7ed8"
+    },
+    "outage-heat-cold-generators": {
+      "original": "77dd194b096bb60ea99728a5b0042adf016b905e",
+      "continuation": "debfd11fb189cb43a688862867dc60172fb6eb3a",
+      "followup": "593e7bd6fef0446f05d7a86551e702ceaa38eabb",
+      "candidate": "be37b602d0b82593d438083dfc8a1e5ef595dd44"
+    },
+    "shelter-or-evacuate": {
+      "original": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+      "continuation": "0f4800f6808f54e0487de1f8426b4612f7d0a54f",
+      "followup": "fb1081527e5afdd542299f2087397cf3308716c6",
+      "candidate": "cb559141d1e4a39debad16cf5cb796b746a01f19"
+    }
+  }
+}
