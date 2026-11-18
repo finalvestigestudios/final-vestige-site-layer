@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "products" / "desktop" / "scripts"))
 import source_evidence_runner_r509 as runner
 import source_manifest_guard_r520 as manifest_guard
+from source_postflight_r521 import postflight_unchanged
 from source_manifest_guard_r520 import ManifestReadRejected, read_manifest_custodied
 
 
@@ -775,7 +776,7 @@ class SourcePrelaunchR515(unittest.TestCase):
              patch.object(runner, "load_commands", return_value=self.commands), \
              patch.object(runner, "execute", return_value=0) as do_execute:
             self.assertEqual(runner.main(), 0)
-        do_execute.assert_called_once_with(self.commands, verify_source_snapshots=True)
+        do_execute.assert_called_once_with(self.commands, verify_source_snapshots=True,\n                                           manifest_snapshot=b"synthetic inventory\\n")
 
 
 # R516 regression methods remain in the existing 416-command source inventory.
@@ -1168,7 +1169,7 @@ class BoundedManifestR519(unittest.TestCase):
                  patch.object(runner, "execute", return_value=0) as run:
                 self.assertEqual(runner.main(), 0)
             load.assert_called_once_with(path.read_bytes())
-            run.assert_called_once_with(commands, verify_source_snapshots=True)
+            run.assert_called_once_with(commands, verify_source_snapshots=True,\n                                        manifest_snapshot=b"synthetic pinned source\\n")
 
 
 
@@ -1333,6 +1334,124 @@ class DescriptorManifestR520(unittest.TestCase):
         self.assertIsNone(caught.exception.__context__)
         self.assertIsNone(caught.exception.__cause__)
         self.assertNotIn(str(self.root), str(caught.exception))
+
+
+
+class PostflightR521(unittest.TestCase):
+    """R521 last-process mutation controls in the pinned source-test module."""
+
+    CMD = (("-W", "error", "products/desktop/scripts/source_smoke_gate.py"),)
+    RAW = b"synthetic manifest\\n"
+
+    def run_matrix(self, source_results, *, manifest=None, reader=None):
+        launched = []
+        def spawn(*args, **kwargs):
+            launched.append(args)
+            return SimpleNamespace(returncode=0)
+        source_results = iter(source_results)
+        matches = lambda *args: next(source_results)
+        with TemporaryDirectory() as d, \\
+             patch.object(runner, "source_fingerprint", return_value=b"x" * 32), \\
+             patch.object(runner, "matches_source_fingerprint", side_effect=matches), \\
+             patch.object(runner, "read_manifest_bounded",
+                          side_effect=reader if reader else None,
+                          return_value=self.RAW if manifest is None else manifest):
+            stderr = io.StringIO()
+            stdout = io.StringIO()
+            with redirect_stderr(stderr), redirect_stdout(stdout):
+                result = runner.execute(self.CMD, Path(d), spawn=spawn,
+                                        verify_source_snapshots=True,
+                                        manifest_snapshot=self.RAW)
+        return result, stderr.getvalue(), stdout.getvalue(), launched
+
+    def test_last_child_rewrites_own_source_then_zero_exit_is_hold(self):
+        result, error, out, launched = self.run_matrix((True, False))
+        self.assertEqual(result, 1)
+        self.assertEqual(len(launched), 1)
+        self.assertIn("source matrix changed after checks", error)
+        self.assertNotIn("PASS:", out)
+
+    def test_unchanged_sources_and_manifest_pass_postflight(self):
+        result, error, out, launched = self.run_matrix((True, True))
+        self.assertEqual(result, 0)
+        self.assertEqual(len(launched), 1)
+        self.assertIn("PASS: 1 source commands", out)
+        self.assertEqual(error, "")
+
+    def test_last_child_rewrites_immutable_manifest_is_hold(self):
+        result, error, out, launched = self.run_matrix(
+            (True, True), manifest=b"modified manifest\\n")
+        self.assertEqual(result, 1)
+        self.assertIn("source matrix changed after checks", error)
+        self.assertNotIn("PASS:", out)
+
+    def test_postflight_missing_manifest_redacts_private_filename(self):
+        private = "/private/client-payroll.csv"
+        result, error, out, launched = self.run_matrix(
+            (True, True), reader=OSError(private))
+        self.assertEqual(result, 1)
+        self.assertNotIn(private, error + out)
+        self.assertNotIn("PASS:", out)
+
+    def test_disabled_source_custody_cannot_claim_manifest_postflight(self):
+        launched = []
+        with redirect_stderr(io.StringIO()) as error:
+            result = runner.execute(self.CMD,
+                spawn=lambda *args, **kw: launched.append(args),
+                manifest_snapshot=self.RAW)
+        self.assertEqual(result, 1)
+        self.assertEqual(launched, [])
+        self.assertIn("invalid source manifest snapshot", error.getvalue())
+
+    def test_helper_rejects_last_source_mismatch(self):
+        snapshots = {("products", "desktop", "tests", "test_one.py"): b"a" * 32}
+        self.assertFalse(postflight_unchanged(
+            Path("/tmp"), snapshots, lambda *args: False,
+            Path("/tmp/commands.txt"), self.RAW, lambda _: self.RAW))
+
+    def test_helper_checks_all_source_paths(self):
+        snapshots = {("test_one.py",): b"a" * 32,
+                     ("test_two.py",): b"b" * 32}
+        visited = []
+        def matches(root, parts, digest):
+            visited.append(parts)
+            return parts != ("test_two.py",)
+        self.assertFalse(postflight_unchanged(
+            Path("/tmp"), snapshots, matches,
+            Path("/tmp/commands.txt"), self.RAW, lambda _: self.RAW))
+        self.assertEqual(visited, list(snapshots))
+
+    def test_helper_rejects_forged_digest_or_callback_result(self):
+        for invalid in (b"x", bytearray(b"x" * 32)):
+            self.assertFalse(postflight_unchanged(
+                Path("/tmp"), {("one.py",): invalid}, lambda *a: True,
+                Path("/tmp/a"), self.RAW, lambda _: self.RAW))
+        self.assertFalse(postflight_unchanged(
+            Path("/tmp"), {("one.py",): b"a" * 32}, lambda *a: 1,
+            Path("/tmp/a"), self.RAW, lambda _: self.RAW))
+
+    def test_helper_rejects_empty_or_invalid_manifest(self):
+        snapshots = {("one.py",): b"a" * 32}
+        for invalid in (b"", bytearray(self.RAW)):
+            self.assertFalse(postflight_unchanged(
+                Path("/tmp"), snapshots, lambda *a: True,
+                Path("/tmp/a"), invalid, lambda _: self.RAW))
+
+    def test_helper_returns_false_for_private_callback_exception(self):
+        private = "/private/grants/customer.csv"
+        def fail(*args):
+            raise OSError(private)
+        self.assertFalse(postflight_unchanged(
+            Path("/tmp"), {("one.py",): b"a" * 32}, fail,
+            Path("/tmp/a"), self.RAW, lambda _: self.RAW))
+
+    def test_direct_strict_execute_without_manifest_still_checks_source(self):
+        # Existing direct test hook may omit the manifest; production main()
+        # always passes exact original bytes and also checks them postflight.
+        self.assertTrue(postflight_unchanged(
+            Path("/tmp"), {("one.py",): b"a" * 32}, lambda *a: True,
+            Path("/tmp/a"), None, lambda _: (_ for _ in ()).throw(AssertionError())))
+
 
 if __name__ == "__main__":
     unittest.main()
