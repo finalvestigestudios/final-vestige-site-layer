@@ -19,7 +19,8 @@ function fixture(){
  });
 }
 const sha=crypto.createHash('sha256').update('fixture').digest('hex');
-function page(p,bytes){return {post_id:p.id,url:p.url,revision:p.modified,screenshot_sha256:sha,screenshot_reviewed:true,scrolled_to_end:true,lazy_images_settled:true,network_complete:true,slots:p.rows.map((r,i)=>({key:r.key,authored_url:r.source_url,current_src:r.source_url,request_url:r.source_url,request_id:`req-${r.key}`,http_status:200,mime:'image/jpeg',decoded:true,natural_width:640,natural_height:480,wire_bytes:bytes,from_cache:false,from_service_worker:false,from_prefetch:false}))};}
+function page(p,bytes){return {post_id:p.id,url:p.url,revision:p.modified,screenshot_sha256:sha,screenshot_reviewed:true,scrolled_to_end:true,lazy_images_settled:true,network_complete:true,slots:p.rows.map((r,i)=>({key:r.key,authored_url:r.source_url,current_src:r.source_url,request_url:r.source_url,request_id:`req-${r.key}`,http_status:200,mime:'image/jpeg',decoded:true,natural_width:640,natural_height:480,raster_width_px:640,raster_height_px:480,
+      raster_probe:'decoded_network_payload',raster_sha256:sha,wire_bytes:bytes,from_cache:false,from_service_worker:false,from_prefetch:false}))};}
 function capture(inv,ids=null,before=3000,after=600){const posts=[...inv.posts.values()].filter(p=>!ids||ids.includes(p.id));return {schema:'fv-siteqa-image-slot-parity-v1',environment:{collector:'Site QA #154',browser:'Chromium',session:'logged_out',cache_disabled:true,service_workers_bypassed:true,viewport_width:390,viewport_height:844,dpr:2},before:posts.map(p=>page(p,before)),after:posts.map(p=>page(p,after))};}
 const clone=x=>structuredClone(x);
 function bad(desc,mutate){test(desc,()=>{const parts=fixture(),inv=inventory(parts),c=capture(inv,[[...inv.posts.keys()][0]]);mutate(c,parts);assert.throws(()=>assess(parts,c))});}
@@ -126,7 +127,7 @@ test('shared request ID with inconsistent redirects fails',()=>{
 
 
 const {preservesPixelGeometry}=require('./slot_parity_61_20261117.cjs');
-const geom=(w,h)=>({natural_width:w,natural_height:h});
+const geom=(w,h)=>({natural_width:w,natural_height:h,raster_width_px:w,raster_height_px:h});
 test('visual parity: 4K photo to <=960px proportional derivative',()=>assert.equal(preservesPixelGeometry(geom(4000,3000),geom(960,720)),true));
 test('visual parity: historical portrait 4918x6136 to 769x960',()=>assert.equal(preservesPixelGeometry(geom(4918,6136),geom(769,960)),true));
 test('visual parity: preserve small original 600x463 without upscale',()=>assert.equal(preservesPixelGeometry(geom(600,463),geom(600,463)),true));
@@ -146,3 +147,25 @@ test('portrait 960px width with >960px height is valid (width, not longest-edge 
 test('small original preserved exactly needs no unnecessary upscaling',()=>assert.equal(preservesPixelGeometry(geom(200,100),geom(200,100)),true));
 bad('integration: optimistic 960x720 upscaled replacement of 640x480 is not savings parity',c=>{c.after[0].slots[0].natural_width=960;c.after[0].slots[0].natural_height=720;});
 bad('integration: 4K original reduced only to 1280px fails strict 960px derivative ceiling',c=>{c.before[0].slots[0].natural_width=4000;c.before[0].slots[0].natural_height=3000;c.after[0].slots[0].natural_width=1280;c.after[0].slots[0].natural_height=960;});
+
+test('density-adjusted 960px DOM width must not conceal 1920px encoded file',()=>{
+ const a={natural_width:960,natural_height:540,raster_width_px:1920,raster_height_px:1080};
+ assert.equal(preservesPixelGeometry(geom(4000,3000),a),false);
+});
+test('a real 960px file can have density-adjusted naturalWidth 480',()=>{
+ const a={natural_width:480,natural_height:360,raster_width_px:960,raster_height_px:720};
+ assert.equal(preservesPixelGeometry(geom(4000,3000),a),true);
+});
+test('normal genuine 960x720 encoded derivative passes',()=>assert.equal(preservesPixelGeometry(geom(4000,3000),geom(960,720)),true));
+test('missing binary raster dimensions cannot certify image optimization',()=>assert.equal(preservesPixelGeometry(geom(4000,3000),{natural_width:960,natural_height:720}),false));
+test('DOM and binary aspect ratios cannot silently diverge',()=>assert.equal(preservesPixelGeometry(geom(4000,3000),{natural_width:480,natural_height:360,raster_width_px:960,raster_height_px:960}),false));
+test('file raster cannot be smaller than natural CSS geometry',()=>assert.equal(preservesPixelGeometry(geom(4000,3000),{natural_width:960,natural_height:720,raster_width_px:480,raster_height_px:360}),false));
+bad('integration: encoded raster over 960 HOLD even if DOM naturalWidth is 640',c=>{c.after[0].slots[0].raster_width_px=1280;c.after[0].slots[0].raster_height_px=960;});
+bad('integration: DOM-only probe cannot substitute actual decoded response payload',c=>{c.after[0].slots[0].raster_probe='DOM_naturalWidth';});
+bad('integration: absent binary response SHA256 cannot certify dimensions',c=>{c.after[0].slots[0].raster_sha256=null;});
+bad('integration: same request ID with contradictory raster geometry rejected',c=>{c.after[0].slots[1].request_id=c.after[0].slots[0].request_id;c.after[0].slots[1].raster_width_px=959;});
+bad('integration: density correction cannot hide encoded image upscaling',c=>{
+ const x=c.before[0].slots[0],y=c.after[0].slots[0];
+ x.natural_width=480;x.natural_height=360;x.raster_width_px=480;x.raster_height_px=360;
+ y.natural_width=480;y.natural_height=360;y.raster_width_px=960;y.raster_height_px=720;
+});
