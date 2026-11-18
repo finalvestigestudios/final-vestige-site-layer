@@ -1,0 +1,484 @@
+{
+  "id": "FV-MIND-R463",
+  "review_date": "2026-11-17 PT",
+  "classification": "UNPUBLISHED RESEARCH; NO LIVE COMMERCIAL LINK",
+  "sources": {
+    "S01": "https://inspire3.com/",
+    "S02": "https://zen12.com/about",
+    "S03": "https://zen12.com/secret/",
+    "S04": "https://hypnosislive.com/",
+    "S05": "https://brainwaveshots.com/",
+    "S06": "https://affiliates.inspire3.com/",
+    "S07": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "S08": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "S09": "https://pubmed.ncbi.nlm.nih.gov/2522508/",
+    "S10": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7187786/",
+    "S11": "https://journals.sagepub.com/doi/full/10.1177/09567976221093575",
+    "S12": "https://journals.sagepub.com/doi/10.1177/09567976221140341",
+    "S13": "https://finalvestige.com/focus/",
+    "S14": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "S15": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "S16": "https://finalvestige.com/2026/11/02/mesmerism/"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Inspire3 lists Zen12 as a brainwave/meditation offer",
+      "kind": "seller-feature",
+      "sources": [
+        "S01"
+      ],
+      "decision": "allowed as attributed description"
+    },
+    {
+      "id": "C02",
+      "statement": "Zen12 describes twelve-minute audio sessions",
+      "kind": "seller-feature",
+      "sources": [
+        "S02"
+      ],
+      "decision": "allowed as seller description"
+    },
+    {
+      "id": "C03",
+      "statement": "Zen12 describes twelve levels",
+      "kind": "seller-feature",
+      "sources": [
+        "S02"
+      ],
+      "decision": "allowed as seller description"
+    },
+    {
+      "id": "C04",
+      "statement": "Zen12 About describes four listening styles",
+      "kind": "seller-feature",
+      "sources": [
+        "S02"
+      ],
+      "decision": "allowed as seller description"
+    },
+    {
+      "id": "C05",
+      "statement": "Zen12 Secret promo lists 48 MP3s and extras",
+      "kind": "offer-specific-seller-feature",
+      "sources": [
+        "S03"
+      ],
+      "decision": "only attribute to this distinct promo page"
+    },
+    {
+      "id": "C06",
+      "statement": "Zen12 12 minutes equals 1 hour of meditation",
+      "kind": "seller-efficacy",
+      "sources": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "decision": "BLOCK: no independent product-specific verification"
+    },
+    {
+      "id": "C07",
+      "statement": "Zen12 automatically induces particular brain state",
+      "kind": "seller-efficacy",
+      "sources": [
+        "S02"
+      ],
+      "decision": "BLOCK: not substantiated for FV use"
+    },
+    {
+      "id": "C08",
+      "statement": "Zen12 improves anxiety, depression, sleep, pain",
+      "kind": "health",
+      "sources": [
+        "S08"
+      ],
+      "decision": "BLOCK: no product-specific human clinical support"
+    },
+    {
+      "id": "C09",
+      "statement": "Zen12 has a guaranteed current price/discount",
+      "kind": "commercial",
+      "sources": [
+        "S03"
+      ],
+      "decision": "BLOCK: destination-specific price volatile/approval absent"
+    },
+    {
+      "id": "C10",
+      "statement": "Zen12 exact refund/cancellation terms apply to FV referrals",
+      "kind": "commercial",
+      "sources": [
+        "S03"
+      ],
+      "decision": "BLOCK: no authorized checkout or refund agreement"
+    },
+    {
+      "id": "C11",
+      "statement": "Zen12 affiliate is approved for Final Vestige",
+      "kind": "partner-permission",
+      "sources": [
+        "S06"
+      ],
+      "decision": "BLOCK: public portal is not approval; only pending email observed"
+    },
+    {
+      "id": "C12",
+      "statement": "Inspire3 public site lists Hypnosis Live",
+      "kind": "seller-feature",
+      "sources": [
+        "S01"
+      ],
+      "decision": "attributed only"
+    },
+    {
+      "id": "C13",
+      "statement": "Hypnosis Live offers self-hypnosis downloads and Total Focus listing",
+      "kind": "seller-feature",
+      "sources": [
+        "S04"
+      ],
+      "decision": "category exists; no therapeutic claims"
+    },
+    {
+      "id": "C14",
+      "statement": "Hypnosis Live guaranteed outcomes",
+      "kind": "seller-efficacy",
+      "sources": [
+        "S04"
+      ],
+      "decision": "BLOCK: no product-specific support"
+    },
+    {
+      "id": "C15",
+      "statement": "Brainwave Shots catalog lists Focus Shot",
+      "kind": "seller-feature",
+      "sources": [
+        "S05"
+      ],
+      "decision": "attributed only"
+    },
+    {
+      "id": "C16",
+      "statement": "Brainwave Shots promises performance enhancement",
+      "kind": "seller-efficacy",
+      "sources": [
+        "S01",
+        "S05"
+      ],
+      "decision": "BLOCK: no independent product-specific support"
+    },
+    {
+      "id": "C17",
+      "statement": "The 1989 drawing experiment included 37 undergraduates",
+      "kind": "independent-research",
+      "sources": [
+        "S09"
+      ],
+      "decision": "specific task context only"
+    },
+    {
+      "id": "C18",
+      "statement": "Boundary extensions universally occur in photo memory",
+      "kind": "independent-research",
+      "sources": [
+        "S10"
+      ],
+      "decision": "FALSE: contraction occurs"
+    },
+    {
+      "id": "C19",
+      "statement": "2020 research examined 1000 images and 2000 participants",
+      "kind": "independent-research",
+      "sources": [
+        "S10"
+      ],
+      "decision": "supported; task-limited"
+    },
+    {
+      "id": "C20",
+      "statement": "Viewing distance/depth of field changes boundary effects",
+      "kind": "independent-research",
+      "sources": [
+        "S11",
+        "S12"
+      ],
+      "decision": "supported in studies; not seller proof"
+    },
+    {
+      "id": "C21",
+      "statement": "Puységur archives prove animal magnetism works",
+      "kind": "historical-efficacy",
+      "sources": [
+        "S14"
+      ],
+      "decision": "BLOCK: archival testimony is not clinical evidence"
+    },
+    {
+      "id": "C22",
+      "statement": "Existing Focus Fieldbook is free and has 52 pages",
+      "kind": "first-party-site",
+      "sources": [
+        "S13"
+      ],
+      "decision": "supported current published page"
+    },
+    {
+      "id": "C23",
+      "statement": "Clear affiliate financial disclosure should be near paid link",
+      "kind": "regulatory",
+      "sources": [
+        "S07"
+      ],
+      "decision": "required if later activated"
+    },
+    {
+      "id": "C24",
+      "statement": "Health benefit marketing must be adequately substantiated",
+      "kind": "regulatory",
+      "sources": [
+        "S08"
+      ],
+      "decision": "supported"
+    },
+    {
+      "id": "C25",
+      "statement": "Affiliate click means a sale occurred",
+      "kind": "measurement",
+      "sources": [],
+      "decision": "FALSE: only merchant confirmation counts"
+    },
+    {
+      "id": "C26",
+      "statement": "Public Inspire3 portal offers self-signup",
+      "kind": "seller-partner-process",
+      "sources": [
+        "S06"
+      ],
+      "decision": "not evidence of account activation or permissions"
+    },
+    {
+      "id": "C27",
+      "statement": "Published change-blindness article may be relevant to a matching social video",
+      "kind": "first-party-site",
+      "sources": [
+        "S15"
+      ],
+      "decision": "intent-based mapping only, media IDs unverified"
+    },
+    {
+      "id": "C28",
+      "statement": "Zen12 free gift route is equivalent to paid FV checkout",
+      "kind": "commercial",
+      "sources": [
+        "S03"
+      ],
+      "decision": "BLOCK: different merchant flow/list consent; never combine"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "requirement": "Named Final Vestige Inspire3 acceptance",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G02",
+      "requirement": "Authenticated portal status",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G03",
+      "requirement": "Specific approved product identifier",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G04",
+      "requirement": "Approved landing destination",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G05",
+      "requirement": "Exact issued earning link",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G06",
+      "requirement": "Allowed WEB use",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G07",
+      "requirement": "Allowed EMAIL use",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G08",
+      "requirement": "Allowed social promotion",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G09",
+      "requirement": "No prohibited creatives",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G10",
+      "requirement": "Checkout shown without misleading urgency",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G11",
+      "requirement": "Accurate current package",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G12",
+      "requirement": "Accurate total price at checkout",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G13",
+      "requirement": "Currency and tax evidence",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G14",
+      "requirement": "Upsell/renewal disclosures",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G15",
+      "requirement": "Refund policy evidence",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G16",
+      "requirement": "File delivery evidence",
+      "status": "HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G17",
+      "requirement": "Copyright/licensing review",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "id": "G18",
+      "requirement": "Medical/mental-health claims removed",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "id": "G19",
+      "requirement": "Efficacy claim-to-proof review",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "id": "G20",
+      "requirement": "Near-CTA clear FTC disclosure",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "id": "G21",
+      "requirement": "Independently checked accessible mobile UX",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "id": "G22",
+      "requirement": "No-JS reading",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "id": "G23",
+      "requirement": "Optional non-autoplay video playable",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "id": "G24",
+      "requirement": "Correct synchronized captions and transcript",
+      "status": "HOLD",
+      "owner": "Mind/Site QA"
+    },
+    {
+      "id": "G25",
+      "requirement": "No new tracking vendor or code",
+      "status": "HOLD",
+      "owner": "Claude/Commerce"
+    },
+    {
+      "id": "G26",
+      "requirement": "Existing Jetpack confirmation test",
+      "status": "HOLD",
+      "owner": "Claude/Commerce"
+    },
+    {
+      "id": "G27",
+      "requirement": "Authentic Grok media IDs",
+      "status": "HOLD",
+      "owner": "Claude/Commerce"
+    },
+    {
+      "id": "G28",
+      "requirement": "First-party campaign/session QA",
+      "status": "HOLD",
+      "owner": "Claude/Commerce"
+    },
+    {
+      "id": "G29",
+      "requirement": "Independent merchant purchase settlement",
+      "status": "HOLD",
+      "owner": "Claude/Commerce"
+    },
+    {
+      "id": "G30",
+      "requirement": "Refund/fees reconciliation",
+      "status": "HOLD",
+      "owner": "Claude/Commerce"
+    },
+    {
+      "id": "G31",
+      "requirement": "Founder production approval",
+      "status": "HOLD",
+      "owner": "Claude/Commerce"
+    },
+    {
+      "id": "G32",
+      "requirement": "Independent Site QA release approval",
+      "status": "HOLD",
+      "owner": "Claude/Commerce"
+    }
+  ],
+  "partner_status": "NOT VERIFIED; connected Gmail targeted search found only Aug 24 Refersion pending, not approval",
+  "owned_paid_mind_sku": "NOT VERIFIED via published WP inventory/Gmail; Focus Fieldbook is free",
+  "measurement": "sale requires independently authenticated settlement; net revenue per 1000 qualified sessions unavailable",
+  "exact_sales_destination": "NOT AUTHENTICATED",
+  "consumer_marketing_messages": "NOT AFFILIATE APPROVAL",
+  "internal_links": [
+    "https://finalvestige.com/2026/11/02/change-blindness/",
+    "https://finalvestige.com/2026/11/02/mesmerism/",
+    "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "https://finalvestige.com/focus/"
+  ]
+}
