@@ -1,0 +1,29 @@
+{
+  "sprint": "R454",
+  "date": "2026-11-18",
+  "status": "LOCAL_OFFLINE_PASS_STAGING_AND_COMMERCE_HARD_HOLD",
+  "files": {
+    "README.md": "eb1c1a57c9f79b91a892fa433f1d97a19f518d74469cdb1d09f32e6a9beb14da",
+    "apollo_evidence_lab.php": "19fb9b626620a1f1e28250990f0ef38dae1cc115557b79a2237b9a3b4eb007b8",
+    "qa/browser_qa.py": "dabef985c39e0af09feca4f2b2cf9cafc7e76b43dd918facd21c7750ad1a4a74",
+    "qa/test_source_and_guard.py": "8694bf2a4190b10fee09a427ac692ec415d63b8b906b8322010a790079edba4c"
+  },
+  "executed": {
+    "php_syntax": "PASS",
+    "python_unit_methods": 14,
+    "playwright_offline_cases": 18,
+    "playwright_failures": 0,
+    "screenshots": 16
+  },
+  "not_run": [
+    "WordPress hosted staging navigation",
+    "genuine reviewed axe-core",
+    "navigated LCP/CLS",
+    "independent screen-reader acceptance",
+    "p75 field Core Web Vitals",
+    "authenticated merchant orders and refunds",
+    "confirmed Grok Apollo publication",
+    "green exact-head CI"
+  ],
+  "release": "HARD_HOLD"
+}
