@@ -24,7 +24,7 @@ test('A and B share identical substantive copy',()=>{
 });
 for(const [id,html] of [['A',A],['B',B]]){
  test(id+' hard hold and adjacent disclosure',()=>{
-   assert.match(html,/<button\b[^>]*\bdisabled\b/);
+   assert.match(html,/<button\b[^>]*\sdisabled(?:\s|>)/);
    assert.match(html,/If you purchase through a future qualifying link, Final Vestige may earn a commission/);
    const d=html.indexOf('class="disclosure"'), b=html.indexOf('<button');
    assert.ok(d>0 && b>d && b-d<600);
