@@ -129,7 +129,7 @@ def independently_resolve_body(root: Path, library, meta: dict, original: str) -
     body = INLINE.sub(lambda m: checked_inline_js(root, m.group(1)), original)
     body = CITE.sub(cite, body)
     body = LINK.sub(link, body)
-    if "{{" in body or "}}" in body:
+    if "{{" in body:
         raise BodyHold("unresolved/unsupported authored macro")
     return body, order
 
