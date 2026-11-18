@@ -1,0 +1,415 @@
+{
+  "schema": "fv.mind.claim-permission-matrix.r461",
+  "reviewedAt": "2026-11-17",
+  "commercialStatus": "HARD_HOLD",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://doi.org/10.1068/p281059",
+      "role": "Original controlled inattentional blindness study"
+    },
+    {
+      "id": "S02",
+      "url": "https://doi.org/10.1177/0956797613479386",
+      "role": "2013 radiologist experiment"
+    },
+    {
+      "id": "S03",
+      "url": "https://doi.org/10.1068/i0386",
+      "role": "2010 familiarity/other unexpected changes"
+    },
+    {
+      "id": "S04",
+      "url": "https://doi.org/10.1073/pnas.2214930120",
+      "role": "2023 fast-motion counterexample"
+    },
+    {
+      "id": "S05",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "role": "Live archive, not science for audio efficacy"
+    },
+    {
+      "id": "S06",
+      "url": "https://finalvestige.com/focus/",
+      "role": "Existing free 52-page Fieldbook"
+    },
+    {
+      "id": "S07",
+      "url": "https://inspire3.com/",
+      "role": "Parent seller official catalog"
+    },
+    {
+      "id": "S08",
+      "url": "https://zen12.com/about",
+      "role": "Zen12 seller features and efficacy claims"
+    },
+    {
+      "id": "S09",
+      "url": "https://zen12.com/secret/",
+      "role": "Separate volatile Zen12 promotional checkout context"
+    },
+    {
+      "id": "S10",
+      "url": "https://hypnosislive.com/faq",
+      "role": "Hypnosis Live distinct product and FAQ"
+    },
+    {
+      "id": "S11",
+      "url": "https://brainwaveshots.com/",
+      "role": "Brainwave Shots distinct product catalog"
+    },
+    {
+      "id": "S12",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "role": "Systematic review of 14 EEG studies, not Zen12"
+    },
+    {
+      "id": "S13",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "role": "FTC affiliate disclosures"
+    },
+    {
+      "id": "S14",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "role": "FTC objective health claim support"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Observers can miss an unexpected object when tasked with visual counting",
+      "class": "INDEPENDENT_RESEARCH",
+      "sourceId": "S01",
+      "decision": "BOUNDED_EDITORIAL",
+      "verified": true
+    },
+    {
+      "id": "C02",
+      "claim": "In one controlled CT experiment 24 radiologists searched for nodules and 83% did not report the gorilla",
+      "class": "INDEPENDENT_RESEARCH",
+      "sourceId": "S02",
+      "decision": "BOUNDED_EDITORIAL",
+      "verified": true
+    },
+    {
+      "id": "C03",
+      "claim": "Seeing region with gaze does not necessarily entail reporting an unexpected feature in that experiment",
+      "class": "INDEPENDENT_RESEARCH",
+      "sourceId": "S02",
+      "decision": "BOUNDED_EDITORIAL",
+      "verified": true
+    },
+    {
+      "id": "C04",
+      "claim": "Familiarity with the famous gorilla does not guarantee detecting other unexpected changes",
+      "class": "INDEPENDENT_RESEARCH",
+      "sourceId": "S03",
+      "decision": "BOUNDED_EDITORIAL",
+      "verified": true
+    },
+    {
+      "id": "C05",
+      "claim": "Fast unexpected motion can interrupt task focus under specific conditions",
+      "class": "INDEPENDENT_RESEARCH",
+      "sourceId": "S04",
+      "decision": "BOUNDED_EDITORIAL",
+      "verified": true
+    },
+    {
+      "id": "C06",
+      "claim": "Puységur archive contains documented witness/consent contradictions and failed predictions",
+      "class": "PRIMARY_HISTORICAL_ARCHIVE",
+      "sourceId": "S05",
+      "decision": "EDITORIAL_ONLY",
+      "verified": true
+    },
+    {
+      "id": "C07",
+      "claim": "The Focus Fieldbook is free and uses the existing Dispatch/Jetpack funnel",
+      "class": "VERIFIED_LIVE_FEATURE",
+      "sourceId": "S06",
+      "decision": "INTERNAL_LINK_ALLOWED",
+      "verified": true
+    },
+    {
+      "id": "C08",
+      "claim": "Inspire3 owns or catalogs Zen12, Hypnosis Live and Brainwave Shots",
+      "class": "PARENT_SELLER",
+      "sourceId": "S07",
+      "decision": "ATTRIBUTE_TO_SELLER",
+      "verified": true
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 describes 12-minute sessions, 12 levels and 4 versions",
+      "class": "PRODUCT_FORMAT_SELLER",
+      "sourceId": "S08",
+      "decision": "ATTRIBUTE_TO_SELLER",
+      "verified": true
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 promotion describes 48-MP3 12-level bundle and extras",
+      "class": "PROMOTIONAL_SELLER",
+      "sourceId": "S09",
+      "decision": "VERIFY_EXACT_SKU_BEFORE_OFFER",
+      "verified": true
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 automatically gives an hour's meditation benefits in 12 minutes",
+      "class": "EFFICACY_SELLER_UNSUBSTANTIATED",
+      "sourceId": "S08",
+      "decision": "DO_NOT_ENDORSE",
+      "verified": true
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 guaranteed improves stress, focus or health",
+      "class": "EFFICACY_SELLER_UNSUBSTANTIATED",
+      "sourceId": "S08",
+      "decision": "DO_NOT_ENDORSE",
+      "verified": true
+    },
+    {
+      "id": "C13",
+      "claim": "Hypnosis Live FAQ mentions MP3 product delivery and refunds, not a Zen12 package",
+      "class": "PRODUCT_SPECIFIC_SELLER",
+      "sourceId": "S10",
+      "decision": "NO_SKU_SUBSTITUTION",
+      "verified": true
+    },
+    {
+      "id": "C14",
+      "claim": "Brainwave Shots advertises short audio and performance effects",
+      "class": "EFFICACY_SELLER_UNSUBSTANTIATED",
+      "sourceId": "S11",
+      "decision": "DO_NOT_ENDORSE",
+      "verified": true
+    },
+    {
+      "id": "C15",
+      "claim": "2023 EEG review reports inconsistent results across 14 binaural beat studies",
+      "class": "INDEPENDENT_REVIEW",
+      "sourceId": "S12",
+      "decision": "NOT_A_ZEN12_TRIAL",
+      "verified": true
+    },
+    {
+      "id": "C16",
+      "claim": "Material commission connections need clear and conspicuous near-link disclosure",
+      "class": "COMPLIANCE",
+      "sourceId": "S13",
+      "decision": "REQUIRED_BEFORE_LINK",
+      "verified": true
+    },
+    {
+      "id": "C17",
+      "claim": "Health-benefit assertions need competent reliable scientific substantiation",
+      "class": "COMPLIANCE",
+      "sourceId": "S14",
+      "decision": "NO_UNSUPPORTED_BENEFITS",
+      "verified": true
+    },
+    {
+      "id": "C18",
+      "claim": "FV account-specific Inspire3 acceptance and website/social/email rights",
+      "class": "APPROVAL_UNVERIFIED",
+      "sourceId": null,
+      "decision": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "C19",
+      "claim": "Issued verified FV Zen12 affiliate tracking URL and allowed link method",
+      "class": "APPROVAL_UNVERIFIED",
+      "sourceId": null,
+      "decision": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "C20",
+      "claim": "Actual authorized offer checkout total, VAT, refund terms and settlement currency",
+      "class": "MERCHANT_TERMS_UNVERIFIED",
+      "sourceId": null,
+      "decision": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "C21",
+      "claim": "Current live approved partner creatives/swipe license",
+      "class": "CREATIVE_LICENSE_UNVERIFIED",
+      "sourceId": null,
+      "decision": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "C22",
+      "claim": "Confirmed FV merchant-reported settled commission, refund and fees",
+      "class": "REVENUE_UNVERIFIED",
+      "sourceId": null,
+      "decision": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "C23",
+      "claim": "FV-owned actually sellable and rights-cleared paid Mind product",
+      "class": "PAID_OWNED_SKU_UNVERIFIED",
+      "sourceId": null,
+      "decision": "HARD_HOLD",
+      "verified": false
+    }
+  ],
+  "releaseGates": [
+    {
+      "gate": "named_publisher_acceptance",
+      "status": "HOLD"
+    },
+    {
+      "gate": "exact_product_sku",
+      "status": "HOLD"
+    },
+    {
+      "gate": "approved_link",
+      "status": "HOLD"
+    },
+    {
+      "gate": "web_permission",
+      "status": "HOLD"
+    },
+    {
+      "gate": "social_permission",
+      "status": "HOLD"
+    },
+    {
+      "gate": "email_permission",
+      "status": "HOLD"
+    },
+    {
+      "gate": "written_partner_terms",
+      "status": "HOLD"
+    },
+    {
+      "gate": "approved_creative_license",
+      "status": "HOLD"
+    },
+    {
+      "gate": "checkout_price_currency",
+      "status": "HOLD"
+    },
+    {
+      "gate": "refund_terms",
+      "status": "HOLD"
+    },
+    {
+      "gate": "merchant_fee_settlement_terms",
+      "status": "HOLD"
+    },
+    {
+      "gate": "product_specific_claim_review",
+      "status": "HOLD"
+    },
+    {
+      "gate": "adjacent_FTC_disclosure",
+      "status": "HOLD"
+    },
+    {
+      "gate": "no_cloaking",
+      "status": "HOLD"
+    },
+    {
+      "gate": "no_false_urgency",
+      "status": "HOLD"
+    },
+    {
+      "gate": "no_guarantees",
+      "status": "HOLD"
+    },
+    {
+      "gate": "founder_release",
+      "status": "HOLD"
+    },
+    {
+      "gate": "site_QA_mobile",
+      "status": "HOLD"
+    },
+    {
+      "gate": "site_QA_keyboard",
+      "status": "HOLD"
+    },
+    {
+      "gate": "site_QA_WCAG22",
+      "status": "HOLD"
+    },
+    {
+      "gate": "no_JS",
+      "status": "HOLD"
+    },
+    {
+      "gate": "film_local_player",
+      "status": "HOLD"
+    },
+    {
+      "gate": "film_captions_and_transcript",
+      "status": "HOLD"
+    },
+    {
+      "gate": "CWV_performance",
+      "status": "HOLD"
+    },
+    {
+      "gate": "single_Jetpack",
+      "status": "HOLD"
+    },
+    {
+      "gate": "consent_privacy",
+      "status": "HOLD"
+    },
+    {
+      "gate": "verified_Grok_assets",
+      "status": "HOLD"
+    },
+    {
+      "gate": "first_party_campaign_integrity",
+      "status": "HOLD"
+    },
+    {
+      "gate": "merchant_paid_reconciliation",
+      "status": "HOLD"
+    },
+    {
+      "gate": "net_revenue_7d_30d",
+      "status": "HOLD"
+    }
+  ],
+  "commerce": {
+    "accountApproval": "NOT_AUTHENTICATED",
+    "approvalEvidence": "2026-08-24 Refersion 'affiliate account is pending' email; no named welcome/acceptance found in targeted email search",
+    "url": null,
+    "exactSku": null,
+    "allowedChannels": null,
+    "price": null,
+    "refundConditions": null,
+    "commission": null,
+    "settledSales": null,
+    "qualifiedHumanSessions": null,
+    "netRevenuePer1000": null,
+    "note": "Unknown is not zero; no merchant-settled attribution or eligible-session denominator verified"
+  },
+  "measurement": {
+    "eventStages": [
+      "qualified_human_session",
+      "article_landing",
+      "relevant_cta_click",
+      "confirmed_optin_if_observable",
+      "affiliate_outbound_if_approved",
+      "independently_reported_paid_sale_or_commission",
+      "merchant_refund",
+      "merchant_fees",
+      "realized_net_revenue"
+    ],
+    "noPII": true,
+    "noDuplicateScripts": true,
+    "implementation": "NOT_DEPLOYED"
+  }
+}
