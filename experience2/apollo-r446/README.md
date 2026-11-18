@@ -1,0 +1,13 @@
+# Apollo R446 — Verified Creator Asset Handoff (staging only)
+
+This source-only, draft, non-deployed increment builds on R445 and the R444 five-record NASA source panel. It prevents mere well-formed UTMs from being mistaken for a real Grok asset or an authorized campaign. It preserves **one** free Apollo investigation CTA and refuses unknown campaign provenance without disrupting the public source experience.
+
+**Live manifest:** `registry.json` deliberately contains zero verified creator assets and both approval flags false. This is not evidence that any Grok Apollo video has shipped. `handoff.php` pins the registry and the R445 parent by SHA-256; for any unreviewed, duplicate, corrupted, malformed or fake source it renders the same five records and the original **untagged** free investigation URL. If its parent source is modified, it fails open to an untagged free investigation link. No visitor identity is stored or transmitted.
+
+**Conditional future handoff:** only after Grok supplies a publicly verified published post URL, date, immutable `asset_id`, approved source/placement, rights review, and qualified landing route; Praxxis performs independent review; Claude validates real stage analytics and founder approves campaign activation, can a separately reviewed revision update `registry.json` and its source hash. The synthetic asset in tests is never real or approved. A future registry approval is not a production release approval.
+
+**WordPress:** `[fv_apollo_verified_creator_bridge]` registers only for `wp_get_environment_type()==='staging'` plus `FV_APOLLO_R446_ENABLE_STAGING===true`. Prehead enqueue for ordinary singular post content is a candidate; reusable/dynamic blocks require staging QA. **Do not install or activate without governed approval.** No edit to PR #49, PR #158, Grok TASK-008, WordPress, checkout, or existing analytics.
+
+**QA:** `python qa/test_contract.py`, `python qa/browser_qa.py`; source must be alongside the exact R444 and R445 files. Genuine Playwright Chromium `set_content` QA tests 320–1920px, JS/no-JS, disclosure/touch and optional filters. Because navigation is blocked, this is not authentic WordPress staging, axe-core, screen-reader review, navigated LCP/CLS or field Core Web Vitals. Do not replace required independent QD/CI with local passes.
+
+**NASA:** official Board findings at https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/ ; image/media and nonendorsement conditions at https://www.nasa.gov/nasa-brand-center/images-and-media/ . No NASA image, insignia, or hypothetical geospatial edge is reproduced. Editorial signoff and media clearance remain pending.
