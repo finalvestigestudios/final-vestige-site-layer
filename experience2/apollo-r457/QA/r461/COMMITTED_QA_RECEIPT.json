@@ -1,0 +1,64 @@
+{
+  "sprint": "R461",
+  "date_utc": "2026-11-18",
+  "mode": "local_chromium_php_generated_html_not_hosted_staging",
+  "tests": {
+    "php_syntax": "PASS",
+    "source_security": {
+      "passed": 26,
+      "failed": 0
+    },
+    "baseline_browser": {
+      "passed": 21,
+      "failed": 0
+    },
+    "r459_print": {
+      "passed": 14,
+      "failed": 0
+    },
+    "r460_filtered_print": {
+      "passed": 45,
+      "failed": 0
+    },
+    "r461_tagged_pdf": {
+      "passed": 43,
+      "failed": 0
+    }
+  },
+  "pdf": {
+    "tagged": true,
+    "nasa_unique_link_targets": 6,
+    "free_investigation_unique_link_targets": 1,
+    "baseline_nasa_clickable_targets": 0,
+    "after_nasa_clickable_targets": 6,
+    "source_id_holds": [
+      "KSC-20170124-PH_KLS01_0129",
+      "S67-19766"
+    ],
+    "file_sha256": "cf64cde4378152b9efe8c1d600074c5dc47dfc6fd779798f36ba6ea038afb1de"
+  },
+  "screenshots_sha256": {
+    "320-print.png": "62617dafe282442fa8cceed246338f7196350f9bf906ec06f3180dad3ea71186",
+    "390-print.png": "4d2c3f5eb4c30d18a2140761190101acab7aa27ffb38816b4c7b6fc78a407d39",
+    "768-print.png": "f0b79ade1b6355a3d502a29bd644bdcb26240fd15c9a5f71a330de60b33d8909",
+    "1440-print.png": "8c587bedae56cae492980c8a6cd4d1cf645bb74bdd5ab61842ca147b51595479",
+    "1920-print.png": "a12bcaf4b5f104ec2ee49dade240704b4caaaae2dc95a2ddcf231ebce4244217"
+  },
+  "scope": {
+    "homepage_pr49": "UNCHANGED",
+    "research_desk_pr158": "UNCHANGED",
+    "wordpress_write": false,
+    "social_post": false,
+    "commerce_change": false
+  },
+  "hold": {
+    "hosted_wordpress": "NOT_RUN",
+    "axe_core": "NOT_RUN",
+    "navigated_lcp_cls": "BLOCKED_ERR_BLOCKED_BY_ADMINISTRATOR",
+    "manual_screen_reader": "NOT_RUN",
+    "exact_head_ci": "PENDING_CHECK",
+    "creator_asset_id": "UNVERIFIED",
+    "paid_product": "UNVERIFIED",
+    "net_revenue": "NOT_COMPUTABLE"
+  }
+}
