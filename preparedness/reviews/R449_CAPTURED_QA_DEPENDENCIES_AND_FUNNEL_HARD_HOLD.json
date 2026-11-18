@@ -1,0 +1,192 @@
+{
+  "schema": "R449_QA_BRANCH_AND_ORIGINAL_SOURCE_CUSTODY_CAPTURE_v1",
+  "repo": "finalvestigestudios/final-vestige-site-layer",
+  "source_issue": 136,
+  "business_issue": 820,
+  "observed_at_utc": "2026-11-18T02:56:30.530Z",
+  "parent_r448_pr": 2939,
+  "parent_r448_commit": "cbb981d47a75bea417768026258d7b6fe54b5865",
+  "original_ledger_blob": "e9dfce578903137b9ff41ac2d8dc684da7fe5b13",
+  "original_ledger_fresh_on_own_branch_not_proven": true,
+  "release_state": "DRAFT_HARD_HOLD",
+  "publishable": false,
+  "qd_approved": false,
+  "paid_offer_verified": false,
+  "paid_conversion_verified": false,
+  "merge_decision": "NOT_APPROVED",
+  "review_disputes": {
+    "source": 5,
+    "forks": 9,
+    "shared_url_groups": 17
+  },
+  "branch_pins": [
+    {
+      "branch": "claude/prep-start-bbfeb8",
+      "sha": "2122d856fce9f64887c16df3d52e64be9f59a55b"
+    },
+    {
+      "branch": "claude/prep-food-ccdc55",
+      "sha": "f911ff7a655de8d81535ea86ec3d65a49ee76648"
+    },
+    {
+      "branch": "claude/prep-health-837444",
+      "sha": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17"
+    },
+    {
+      "branch": "claude/prep-hist-field-9db767",
+      "sha": "4e5caf812727953aa45e3bda2d382f2c67b6a09c"
+    },
+    {
+      "branch": "claude/prep-hist-food-b81f19",
+      "sha": "67e116e536c7410bed30f8f3b1bb8c166f3c223d"
+    },
+    {
+      "branch": "claude/prep-hist-home-0e0e38",
+      "sha": "7504a5f099594d635e3dd7332a33a2e1346c43a2"
+    },
+    {
+      "branch": "claude/prep-shelter-5e1e0e",
+      "sha": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976"
+    },
+    {
+      "branch": "claude/prep-shelter-continuation",
+      "sha": "ac8625faf30dd5538fadc31e06cb5a2cea1defae"
+    },
+    {
+      "branch": "claude/prep-shelter-followup-evidence",
+      "sha": "6a5998ead97eca997e573ce8d3ceacf1c6aabad4"
+    }
+  ],
+  "pull_requests": [
+    {
+      "number": 157,
+      "head_sha": "7d1ae6b8ef93d10cfb6810987672360885e9c1aa",
+      "base_sha": "10f58fed1ba808056813064ca5f9680589db8da1",
+      "base": "claude/prep-start-bbfeb8",
+      "state": "open",
+      "draft": true,
+      "changed_files": 5,
+      "filenames": [
+        "preparedness/content/articles/household-emergency-plan.body.html",
+        "preparedness/content/articles/three-day-kit.body.html",
+        "preparedness/sources/fragments/start.json",
+        "preparedness/taxonomy.json",
+        "preparedness/tests/test_preparedness.py"
+      ]
+    },
+    {
+      "number": 169,
+      "head_sha": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+      "base_sha": "4b009361277ea1d4617b368f5d45104c7318b284",
+      "base": "claude/prep-food-ccdc55",
+      "state": "open",
+      "draft": true,
+      "changed_files": 1,
+      "filenames": [
+        "preparedness/tests/test_preparedness.py"
+      ]
+    },
+    {
+      "number": 2205,
+      "head_sha": "bbcf1859768624c611df4abadc564c18247cf32a",
+      "base_sha": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+      "base": "review/preparedness-food-fixture-isolation-20261030",
+      "state": "open",
+      "draft": true,
+      "changed_files": 2,
+      "filenames": [
+        "preparedness/audits/r318_source_fixture_qa_remediation_HARD_HOLD.md",
+        "preparedness/tests/test_preparedness.py"
+      ]
+    },
+    {
+      "number": 2789,
+      "head_sha": "4e1ef2fb82f5888901e1e2ead87601880efad1af",
+      "base_sha": "82d183bf056da53a21ccf55181e7a1182c5b0ef1",
+      "base": "main",
+      "state": "open",
+      "draft": true,
+      "changed_files": 31,
+      "filenames": [
+        "preparedness/editorial-reviews/E413_ARTICLE11_FREEZE_DRYING_SCOPE_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E414_ARTICLE11_TREATMENT_SEQUENCE_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E415_ARTICLE11_RECALL_NOTICE_SCOPE_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E416_ARTICLE11_RECALL_RECORD_REVISION_HTML_CUSTODY_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E417_ARTICLE11_USDA_SEQUENCE_MECHANISM_SOURCE_LIMIT_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E418_ARTICLE11_SHELF_STABILITY_SOURCE_SCOPE_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E419_ARTICLE11_FDA_FSIS_RECALL_AGENCY_ROUTING_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E420_ARTICLE11_EDITORIAL_CONSOLIDATION_SOURCE_CUSTODY_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E421_ARTICLE11_PACKAGE_PLANT_NUMBER_VS_LOT_CODE_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E422_ARTICLE11_RECALL_CONTACTS_FIELD_SEPARATION_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E423_ARTICLE11_ORIGINAL_WILD_GAME_FREEZER_SOURCE_CONFLICT_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E424_ARTICLE11_EXACT_TWO_SITE_WILD_GAME_SUPPRESSION_EVIDENCE_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E425_ARTICLE11_MANAGED_PORK_WILD_GAME_SURVEILLANCE_SCOPE_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E426_ARTICLE11_FREEZER_PURPOSES_AND_EIGHT_LINE_CUSTODY_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E427_ARTICLE11_ORIGINAL_24_GROUP_HAZARD_SURFACE_GATE_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E428_ARTICLE11_COMPOSITE_CHECKLIST_NOT_A_VALIDATED_PROCESS_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E429_ARTICLE11_CWD_ANIMAL_SOURCE_AND_TREATMENT_BOUNDARY_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E430_ARTICLE11_CWD_TEST_STATUS_PROCESSOR_TRACEABILITY_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E431_ARTICLE11_DISTRIBUTION_RESULT_RECIPIENT_CHAIN_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E432_ARTICLE11_WISCONSIN_DONATION_MODALITY_AND_EQUIPMENT_SCOPE_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E433_ARTICLE11_2026_CALIFORNIA_CWD_ZONE_AND_CARCASS_MOVEMENT_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E434_ARTICLE11_FDA_PUBLIC_NOTICE_COVERAGE_WINDOW_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E435_ARTICLE11_CDFW_FOUR_RESULT_STATES_NONEXCLUSION_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E436_ARTICLE11_READER_FIRST_COMPRESSION_AND_RECALL_SCOPE_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E437_ARTICLE11_RECALL_ALERT_OUTBREAK_DISTINCTION_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E438_ARTICLE11_RECALL_NOTICE_EXPANSION_AND_DATA_LATENCY_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E439_ARTICLE11_NCHFP_CDC_FREEZE_SCOPE_CONFLICT_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E440_ARTICLE11_ONTARIO_FROZEN_THEN_JERKY_ORIGINAL_STUDY_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E441_ARTICLE11_NCHFP_2011_2014_EDITION_DRIFT_ALASKA_BEAR_CAUTION_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E442_ARTICLE11_PANTRY_FIRST_FOODSUPPLY_NONHAZARDOUS_REVIEW_ONLY_HARD_HOLD.md",
+        "preparedness/editorial-reviews/E443_ARTICLE11_INCLUSIVE_PANTRY_ACCESS_3DAY_VS_1WEEK_HARD_HOLD.md"
+      ]
+    },
+    {
+      "number": 2931,
+      "head_sha": "c43980270e3e9d31c03fcb70e0f1126914c58604",
+      "base_sha": "de1c3e3ac74574cfd775fb89aa544864f0bf3ff2",
+      "base": "research/apollo-r440-educator-offer-proof-20261117",
+      "state": "open",
+      "draft": true,
+      "changed_files": 7,
+      "filenames": [
+        "experience2/apollo-r441/OFFER_FUNNEL_QA.md",
+        "experience2/apollo-r441/README.md",
+        "experience2/apollo-r441/qa/local_probe.py",
+        "experience2/apollo-r441/qa/package_evidence.py",
+        "experience2/apollo-r441/qa/source_guard.py",
+        "experience2/apollo-r441/qa/staging_acceptance.py",
+        "experience2/apollo-r441/qa/test_source_guard.py"
+      ]
+    },
+    {
+      "number": 2939,
+      "head_sha": "cbb981d47a75bea417768026258d7b6fe54b5865",
+      "base_sha": "007737c37040b91d5b53d15fe53be01dcb217bcd",
+      "base": "review/preparedness-r447-adjudication-proposal-custody-20261117",
+      "state": "open",
+      "draft": true,
+      "changed_files": 4,
+      "filenames": [
+        "preparedness/reviews/R448_ARTICLE_MATRIX_AND_FUNNEL_ACCEPTANCE_HANDOFF_HARD_HOLD.md",
+        "preparedness/reviews/R448_AUTHENTIC_35_ARTICLE_SOURCE_DEPENDENCY_LEDGER_HARD_HOLD.json",
+        "preparedness/tests/test_r448_article_readiness_matrix.py",
+        "preparedness/tools/r448_article_readiness_matrix.py"
+      ]
+    }
+  ],
+  "social_candidate": "family emergency contact and reunification",
+  "real_grok_asset_id": null,
+  "real_grok_public_post_url": null,
+  "proposed_free_destination": "https://www.ready.gov/plan",
+  "free_cta_draft": "Review the official household emergency checklist",
+  "article_15_publication_approved": false,
+  "tool_104_publication_approved": false,
+  "verified_fv_paid_preparedness_sku": null,
+  "verified_checkout": null,
+  "verified_delivery": null,
+  "verified_refund_policy": null,
+  "merchant_confirmed_orders": null,
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "note": "Captured from connector reads, not an independent signed attestation or native build. Original 35-article ledger and all source/fork decisions remain on HARD HOLD."
+}
