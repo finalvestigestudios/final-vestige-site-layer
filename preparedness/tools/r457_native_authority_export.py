@@ -102,6 +102,26 @@ def check_original_source_graph(root: Path, library) -> dict:
                 raise CustodyHold(f'{origin}: duplicate original source ID {sid}')
             seen_origins.add((origin,sid))
             expected.setdefault(sid,[]).append({**record,'_origin':origin})
+    # Crosswalk's original Git blob SHAs and counts bind the on-disk file
+    # lineage. Without this, a coordinated disk+memory rewrite could pass.
+    pins = crosswalk.get('source_files', [])
+    if pins:
+        if not isinstance(pins,list) or len(pins)!=len(paths):
+            raise CustodyHold('frozen source-file inventory does not match original files')
+        bypath={}
+        for pin in pins:
+            if not isinstance(pin,dict) or not isinstance(pin.get('path'),str) or pin['path'] in bypath:
+                raise CustodyHold('malformed/duplicate frozen source-file pin')
+            bypath[pin['path']]=pin
+        for path,origin in paths:
+            label='preparedness/'+path.relative_to(root).as_posix()
+            pin=bypath.get(label)
+            if not pin or pin.get('origin')!=origin:
+                raise CustodyHold(f'{label}: source origin/path pin mismatch')
+            data=read_bytes_checked(root,path,label=f'{origin}: pinned source')
+            git_sha=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+            if pin.get('git_blob_sha')!=git_sha or pin.get('count')!=len(strict_json(data,origin)['sources']):
+                raise CustodyHold(f'{label}: original Git blob/count pin mismatch')
     if library.source_variants != expected:
         raise CustodyHold('loaded source variants differ from original register/fragments')
     expected_register={}
