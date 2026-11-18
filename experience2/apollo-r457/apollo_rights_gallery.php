@@ -54,11 +54,18 @@ function fv457_render(): string {
  $out.='</ol><p class="fv457__note">This is an editorial source catalogue, not a geographic map: no fabricated coordinates or source connections. Atlas entries and the homepage S67-19766 presentation were inspected on 18 November 2026. Homepage absence for any other record was NOT established. Reverify both pages before acceptance.</p>';
  $out.='<p class="fv457__cta"><a href="https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/">Read the complete free Apollo 1 investigation</a></p>';
  $out.='</div></section>';
+ // R462 progressive degradation: an unavailable optional enhancement must not erase
+ // source custody. A *present but altered* asset is an integrity failure and stays
+ // fail-closed. When CSS is unavailable, omit JavaScript too: native HTML remains
+ // useful with controls hidden and without an unstyled interactive mode.
  $css=__DIR__.'/assets/gallery.css';$js=__DIR__.'/assets/gallery.js';
- if(!is_file($css)||!is_file($js))return fv457_fallback();
- $style=file_get_contents($css);$script=file_get_contents($js);if($style===false||$script===false)return fv457_fallback();
- if(!hash_equals('d5cb51bb84ff365d6cfcdf05df0bb8c9ab7600c846a7445c1976caf9f89144e1',hash('sha256',$style))||!hash_equals('9bbebeac776a33d1bf51dc9b40dbc5c58fdb7d220a00d1fc534ccac9db466bed',hash('sha256',$script)))return fv457_fallback();
- return '<style>'. $style .'</style>'.$out.'<script>'.$script.'</script>';
+ $cssPresent=is_file($css);$jsPresent=is_file($js);
+ $style=$cssPresent?file_get_contents($css):null;
+ $script=$jsPresent?file_get_contents($js):null;
+ if(($cssPresent&&($style===false||!hash_equals('d5cb51bb84ff365d6cfcdf05df0bb8c9ab7600c846a7445c1976caf9f89144e1',hash('sha256',$style))))
+    ||($jsPresent&&($script===false||!hash_equals('9bbebeac776a33d1bf51dc9b40dbc5c58fdb7d220a00d1fc534ccac9db466bed',hash('sha256',$script)))))return fv457_fallback();
+ if(!$cssPresent)return $out;
+ return '<style>'.$style.'</style>'.$out.($jsPresent?'<script>'.$script.'</script>':'');
 }
 if(function_exists('add_action'))add_action('init',static function():void{
  if(!defined('FV_R457_ENABLE_STAGING')||FV_R457_ENABLE_STAGING!==true||!defined('FV_R457_STAGING_PAGE_ID')||!is_int(FV_R457_STAGING_PAGE_ID)||FV_R457_STAGING_PAGE_ID<1||!function_exists('wp_get_environment_type')||wp_get_environment_type()!=='staging'||!function_exists('add_shortcode'))return;
