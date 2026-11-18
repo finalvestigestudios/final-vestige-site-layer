@@ -66,7 +66,7 @@ We inspected `/editorial-standards/` read-only (page 17): strongest available or
 ### Engineering/QA boundaries
 
 - Static preflight is **read-only**, uses Python standard library, and has a **fail-closed exit** if 12 files are missing or changed against `SOURCE_PINS_AND_RELEASE_PROOFS.json`. It does not actually perform any WordPress render or email send, and must not be interpreted as legal compliance certification.
-- Use `python dispatch/r449/email_copy_preflight.py . --pins <(python -c '...')` only if a shell is explicitly configured for process substitution; the pins file itself contains a **nested** `source_pins` mapping, so extract that mapping first to a temporary file before passing `--pins`. You can instead run `scan(root, data["source_pins"])` from Python. **Do not** write source subscriber data to temporary files.
+- Run locally from the checked-out repository: `python dispatch/r449/email_copy_preflight.py . --pins dispatch/r449/SOURCE_PINS_AND_RELEASE_PROOFS.json`. The preflight accepts the nested `source_pins` mapping directly; it reads source-control text only and requires no subscriber data, network access or temporary source export.
 - The **complete R446 twelve-manuscript founder comparison** remains the human editorial selection tool. This package is its adversarial adjunct, not a thirteenth variation.
 - Frozen homepage PR #49, Grok production queue, WordPress pages/settings, Jetpack subscribers, merchant backend, affiliate links, current Welcome email and analytics scripts remain untouched.
 
