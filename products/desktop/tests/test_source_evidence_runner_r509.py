@@ -444,8 +444,8 @@ class SourceEvidenceR512(unittest.TestCase):
             child = runner._child_environment(Path(d))
             check = subprocess.run(
                 [sys.executable, "-B", "-c",
-                 "import os,sys; assert sys.flags.optimize == 0; "
-                 "assert os.getenv('PYTHONHASHSEED') == '0'"],
+                 "import os,sys; sys.exit(0 if sys.flags.optimize == 0 "
+                 "and os.getenv('PYTHONHASHSEED') == '0' else 7)"],
                 env=child, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                 timeout=30, check=False,
             )
