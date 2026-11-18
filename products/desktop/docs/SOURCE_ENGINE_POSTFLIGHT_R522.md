@@ -34,6 +34,10 @@ wheel files, build inputs or the entire checkout.
 
 - 15 new committed regression methods appended to the already pinned
   `test_source_evidence_runner_r509.py` (no manifest edit).
+- Two inherited main() regression assertions contained literal `\\n` source
+  tokens outside strings; repaired those Python syntax defects and updated
+  their exact-call expectations for the new engine receipt. Syntax validity
+  of the complete committed module still needs full Python compilation in CI.
 - Focused local isolated Linux helper harness: **12/12 standard CPython**
   and **12/12 optimized CPython `-OO`**, zero skips, plus `py_compile` PASS.
   The helper under test is text-identical to the proposed R522 implementation,
