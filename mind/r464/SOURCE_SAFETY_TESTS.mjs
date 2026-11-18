@@ -1,0 +1,51 @@
+// R464 native Node regression suite, written for reproducible off-line execution.
+// Command from repo root: node --test mind/r464/SOURCE_SAFETY_TESTS.mjs
+// DOES NOT contact a merchant, deploy analytics, create accounts, or touch WordPress.
+import test from "node:test";
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+
+const dir=dirname(fileURLToPath(import.meta.url));
+const file=name=>readFileSync(join(dir,name),"utf8");
+const A=file("ZEN12_A_TEXT_ONLY.html");
+const B=file("ZEN12_B_OPTIONAL_42S.html");
+const hub=file("MIND_HUB_WORDPRESS_SOURCE_ONLY.html");
+const article=file("THE_VOICE_YOUR_EYES_HEARD.md");
+const acceptance=file("CONVERSION_CREATOR_AB_ACCEPTANCE.md");
+const matrix=JSON.parse(file("CLAIM_SOURCE_PARTNER_RELEASE_MATRIX.json"));
+const core=s=>s.match(/<div id="shared-guide"[\s\S]*?<\/div><\/main>/)?.[0]??null;
+const merchant=/<a\b[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots)\.com/i;
+const disabled=s=>/<button\b[^>]*\bdisabled\b[^>]*>[^<]+<\/button>/i.test(s);
+const disclosure=s=>{const pos=s.indexOf("Prospective affiliate disclosure:");const btn=s.indexOf("<button",pos);return pos>=0&&btn>pos&&btn-pos<800};
+test("All surfaces are explicitly unpublished",()=>{assert.match(A,/noindex,nofollow/);assert.match(B,/noindex,nofollow/);assert.match(hub,/NOT PUBLISHED|SOURCE ONLY|source-only/i);});
+test("A/B main evidence text identical",()=>assert.equal(core(A),core(B)));
+test("Only variant B carries the original visual storyboard",()=>{assert.doesNotMatch(A,/id="optional-film"/);assert.match(B,/id="optional-film"/);assert.match(B,/aria-label="Original illustrated poster/);});
+test("Both variants explain product format without claiming trial",()=>{for(const h of [A,B]){assert.match(h,/twelve levels/);assert.match(h,/four versions per level/);assert.match(h,/not evidence that Zen12 changes/i);}});
+test("Both variants disclose hypothetical commission next to inactive button",()=>{for(const h of [A,B]){assert.ok(disclosure(h));assert.ok(disabled(h));}});
+test("No active merchant-domain links in presell surfaces",()=>{for(const h of [A,B])assert.doesNotMatch(h,merchant);});
+test("No affiliate redirect or commerce anchor in presell surfaces",()=>{for(const h of [A,B]){assert.doesNotMatch(h,/(ref=|aff_id=|hop=|clickbank|refersion|buy-now)/i);assert.doesNotMatch(h,/<a[^>]*>\s*(?:Buy|Checkout|Purchase)/i);}});
+test("No new forms or additional list",()=>{for(const h of [A,B,hub])assert.doesNotMatch(h,/<form\b/i);});
+test("No JavaScript or third-party embed",()=>{for(const h of [A,B,hub]){assert.doesNotMatch(h,/<script\b|<iframe\b|<object\b/i);assert.doesNotMatch(h,/\bon(?:click|load|submit|error)=/i);}});
+test("No fake autoplay, autoplay video or unsupported play element",()=>{for(const h of [A,B]){assert.doesNotMatch(h,/autoplay\s*=/i);assert.doesNotMatch(h,/<video\b/i);}});
+test("Clear no-JS anchors and responsive mobile CSS",()=>{for(const h of [A,B]){assert.match(h,/href="#main"/);assert.match(h,/id="main"/);assert.match(h,/max-width:650px/);assert.match(h,/prefers-reduced-motion/);}});
+test("Full 42-second six-scene film transcript in B only",()=>{assert.equal((B.match(/<li><strong>\d+–\d+ s:/g)||[]).length,6);assert.match(B,/35–42 s/);});
+test("B does not pretend film already hosted or playable",()=>assert.match(B,/not playable yet/));
+test("Original authorial film poster has no third-party image",()=>{assert.match(B,/<svg/);assert.doesNotMatch(B,/<image\b|<img\b/i);});
+test("No advertised checkout price or discount",()=>{for(const h of [A,B])assert.doesNotMatch(h,/\$\s?\d|coupon code [A-Z0-9]+|expires in\s?\d/i);});
+test("Proper same-site free Fieldbook CTA",()=>{for(const h of [A,B,hub])assert.match(h,/https:\/\/finalvestige\.com\/focus\//);});
+test("Hub links verified historical investigations",()=>{assert.match(hub,/2026\/11\/02\/change-blindness/);assert.match(hub,/2026\/11\/02\/mesmerism/);assert.match(hub,/puysegurs-animal-magnetism-files/);});
+test("Hub does not fake a live McGurk URL",()=>assert.match(hub,/not published|NOT PUBLISHED/));
+test("Article sources experimental counterexamples and exclusions",()=>{for(const s of ["264746a0","30418995","31264598","73 college-age","110 participants","Puységur","not evidence"])assert.ok(article.toLowerCase().includes(s.toLowerCase()),s);});
+test("Matrix source and claim counts",()=>{assert.equal(Object.keys(matrix.sources).length,19);assert.equal(matrix.claims.length,30);assert.equal(matrix.gates.length,32);});
+test("All 32 commercial gates held closed",()=>assert.ok(matrix.gates.every(g=>g.verified===false&&g.release_state==="HOLD")));
+test("Documented P0 pending status",()=>{assert.equal(matrix.commercial_state,"HARD_HOLD");assert.match(JSON.stringify(matrix),/pending/i);});
+test("Source links are valid HTTPS and classification is explicit",()=>{for(const s of Object.values(matrix.sources)){assert.match(s.url,/^https:\/\//);assert.ok(s.type);}});
+test("Product efficacy is not adopted as evidence",()=>{for(const c of matrix.claims.filter(c=>c.status.includes("unsubstantiated")))assert.match(c.limit,/do not adopt/);});
+test("Claims do not reference missing source IDs",()=>{for(const c of matrix.claims)for(const id of c.source_ids)assert.ok(matrix.sources[id],id);});
+test("Owned product not falsely called paid",()=>{assert.match(acceptance,/Fieldbook is free/i);assert.doesNotMatch(acceptance,/Fieldbook is on sale|pay for the Fieldbook/i);});
+test("Campaign source metadata requires genuine asset_id",()=>{assert.match(acceptance,/asset_id \*\*UNKNOWN\*\*/);assert.match(acceptance,/utm_content=authenticated_asset_id/);});
+test("Net revenue is not inferred from clicks",()=>{assert.match(acceptance,/merchant-confirmed gross paid revenue/);assert.match(acceptance,/NOT COMPUTABLE/);assert.match(acceptance,/affiliate_click/);});
+test("A/B experiment is still unrun and conditional",()=>assert.match(acceptance,/not yet run|NOT TESTED/i));
+test("No personal identifiers or secret tokens",()=>{for(const h of [A,B,hub,article,acceptance,JSON.stringify(matrix)]){assert.doesNotMatch(h,/brhodes0512|sk-proj-|ghp_[A-Za-z0-9]+/);}});
