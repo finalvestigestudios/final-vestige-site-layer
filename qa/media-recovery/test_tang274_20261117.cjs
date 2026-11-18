@@ -7,6 +7,10 @@ const clone=()=>JSON.parse(JSON.stringify(base));
 test('source SHA pinned',()=>assert.equal(sha(raw),PIN));
 test('seven-slot baseline',()=>assert.equal(verify(base,src,raw).slots,7));
 const invalid=[
+ ['absent browser evidence object',a=>delete a.slots[0].guest_chromium],
+ ['missing guest decode key',a=>delete a.slots[1].guest_chromium.decoded],
+ ['false origin 404 from retriever 502',a=>{a.slots[1].public_retriever.result='RETRIEVER_HTTP_ERROR';a.slots[1].public_retriever.reported_status=404;}],
+ ['wrong Navy accession',a=>a.slots[0].official_candidate.accession='NH 00000'],
  ['invented visitor HTTP',a=>a.slots[6].guest_chromium.http_status=404],
  ['invented wire bytes',a=>a.slots[0].guest_chromium.transferred_bytes=9],
  ['false 42 guest failures',a=>a.scope.reported_broken_42_guest_confirmed=42],
