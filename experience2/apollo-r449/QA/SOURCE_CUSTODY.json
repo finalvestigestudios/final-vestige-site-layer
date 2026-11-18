@@ -1,0 +1,39 @@
+{
+  "files": {
+    "apollo-r440/assets/educator-intent.css": {
+      "git_blob_sha": "46066a94324d06550a1c756440a5c659b384de8b",
+      "sha256": "b0b5c504e0ee57ed3f7b1525973842f8c2df1f9afdad0493f5a8fec4399971a1"
+    },
+    "apollo-r440/assets/educator-intent.js": {
+      "git_blob_sha": "967a43d37d1a1a58063a3fd5598a6c83e55d4558",
+      "sha256": "13a186fb80b552f8cc9b96ffcfda38c0ccd111f43c3e147349a7847db2120888"
+    },
+    "apollo-r440/product_evidence.json": {
+      "git_blob_sha": "795893be79d49c87a30555e77c7f4999217a997c",
+      "sha256": "936cdae7af73e60139dd5fc7c58477be6aa4f7b662c4da5fb59c7f47b498b564"
+    },
+    "apollo-r440/staging-educator-intent.php": {
+      "git_blob_sha": "d1c9d499332d6059bd38842cc9cc66070591a97e",
+      "sha256": "835460b85afa4305f5419f09caad0fb8839202051359251d4c173954ff9ffa87"
+    },
+    "apollo-r448/assets/crosswalk.css": {
+      "git_blob_sha": "6c65af81438f3ff88d2bdd4cb2d89ccd197df66a",
+      "sha256": "0e0256d1f2ba2b0a200197d2092ce32e2caf8481307adbdbaf35fc9a868ae3a1"
+    },
+    "apollo-r448/assets/crosswalk.js": {
+      "git_blob_sha": "e96ec562e78675cc07f9b247a62a257be9ce497d",
+      "sha256": "1edc3a80838bfaad6bafa9a70134e872e3e74a7ff31afab6317f3aaa8eec1181"
+    },
+    "apollo-r448/crosswalk.php": {
+      "git_blob_sha": "502c28be034c892a56ec0d17437e0220b49b725a",
+      "sha256": "69e7c1b4130445a56b2e869ee2c4eae79c886679de1ee2e669cb818cab937536"
+    },
+    "apollo-r448/manifest.json": {
+      "git_blob_sha": "2b1f743c7e50792a2d5cf95aa28963b3c2ade0ec",
+      "sha256": "744ec9c2ca46693f116c7ea5a1edf4ec3416083384e11ade0d0b63ca900a9411"
+    }
+  },
+  "method": "git hash-object locally equals independently fetched GitHub blob IDs",
+  "upstream_commit": "0a940016489727d5471106dc277800052f358c6f",
+  "verified_blob_count": 8
+}

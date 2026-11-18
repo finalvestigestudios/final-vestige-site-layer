@@ -1,0 +1,16 @@
+/* FV R449: additive staging integration shell. Inherited visual primitives remain unchanged. */
+.fv-r449{box-sizing:border-box;width:100%;max-width:1200px;margin-inline:auto;padding:clamp(1rem,3vw,2.5rem);color:#f2eee5;background:#111719;font-family:system-ui,-apple-system,sans-serif;overflow-wrap:anywhere}
+.fv-r449 *, .fv-r449 *::before,.fv-r449 *::after{box-sizing:border-box}
+.fv-r449__header{max-width:72ch;margin:0 0 clamp(1.5rem,4vw,3rem)}
+.fv-r449__header h1{font-size:clamp(1.9rem,4vw,3.4rem);line-height:1.12;letter-spacing:-.025em;margin:.5rem 0 1rem;color:#f5edda}
+.fv-r449__header p{line-height:1.65}
+.fv-r449__kicker{font-size:.85rem;letter-spacing:.11em;text-transform:uppercase;color:#e1c27d}
+.fv-r449__educator{margin-block:clamp(2rem,5vw,4rem);border-block:1px solid #6e644e;padding-block:clamp(1.2rem,3vw,2.5rem)}
+.fv-r449__end{font-size:.92rem;max-width:74ch;line-height:1.65;color:#d7d6d1}
+.fv-r449 :focus-visible{outline:3px solid #edc86a;outline-offset:3px}
+.fv-r449 :is(a,button,summary){touch-action:manipulation}
+.fv-r449 [hidden]{display:none!important}
+@media(max-width:390px){.fv-r449{padding:.75rem}.fv-r449__header h1{font-size:1.85rem}}
+@media(prefers-reduced-motion:reduce){.fv-r449,.fv-r449 *{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media(forced-colors:active){.fv-r449__educator{border-color:CanvasText}.fv-r449__kicker{color:CanvasText}}
+@media print{.fv-r449{color:#111;background:#fff}.fv-r449__header h1,.fv-r449__kicker{color:#111}.fv-r449__educator{border-color:#333}}
