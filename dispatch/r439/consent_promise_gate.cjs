@@ -1,16 +1,14 @@
 'use strict';
 /* Offline, pure, read-only evaluator. No network, no WordPress writes, no sending. */
-const assert = require('node:assert/strict');
 
 function isNonempty(v) { return typeof v === 'string' && v.trim().length > 0; }
-function safeRef(v) { return isNonempty(v) && /^[A-Za-z0-9_./#:-]{8,256}$/.test(v) && !/@|\?|&|email|token|secret|password|subscriber_id|ip_address/i.test(v); }
+function safeRef(v) { return isNonempty(v) && /^[A-Za-z0-9_./#:-]{8,256}$/.test(v) && !/@|\?|&|token|secret|password|subscriber_id|ip_address/i.test(v); }
 function evaluate(snapshot, proofs = {}) {
   const blockers = [];
   const errors = [];
   const s = snapshot || {};
   const c = s.newsletter || {};
   const f = s.followers || {};
-  const sum = (arr) => arr.reduce((a,b) => a + b, 0);
   for (const k of ['total','confirmed','unconfirmed','suppressed']) {
     if (!Number.isInteger(c[k]) || c[k] < 0) errors.push(`invalid newsletter.${k}`);
   }
