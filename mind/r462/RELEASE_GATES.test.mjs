@@ -1,0 +1,22 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+const dir=new URL('./', import.meta.url);
+const read=name=>readFileSync(new URL(name,dir),'utf8');
+const A=read('ZEN12_A_TEXT_ONLY.html'), B=read('ZEN12_B_OPTIONAL_42S.html');
+const H=read('MIND_HUB_SOURCE_ONLY.html'),M=JSON.parse(read('CLAIM_SOURCE_PARTNER_MATRIX.json'));
+function count(x,s){return x.split(s).length-1}
+test('hold at top level',()=>{assert.equal(M.state,'HARD_HOLD');assert.equal(M.approved_url,null);assert.equal(M.verified_paid_sales,null)});
+test('thirty explicit gates closed',()=>{assert.equal(M.release_gates.length,30);assert.ok(M.release_gates.every(x=>x.status==='HOLD'))});
+test('seller product claims separated from proof',()=>{assert.ok(M.claims.some(x=>x.id==='zen12_one_hour'&&x.decision.startsWith('OMIT')));assert.ok(M.claims.some(x=>x.id==='binaural_review'&&x.decision==='ALLOW_GENERAL_NOT_ZEN12'))});
+test('FTC language appears next to both inactive buttons',()=>{for(const x of [A,B]){const d=x.indexOf('If a future approved purchase link');const b=x.indexOf('Review Zen12 offer — awaiting');assert.ok(d>0&&b>d&&b-d<600)}});
+test('native disabled checkout and no active merchant links',()=>{for(const x of [A,B]){assert.ok(x.includes('disabled aria-disabled="true"'));assert.ok(!x.includes('href="https://zen12.com'));assert.ok(!x.includes('href="https://inspire3.com'))}});
+test('no live scripts or duplicate subscription',()=>{for(const x of [A,B,H]){assert.ok(!x.includes('<script'));assert.ok(!x.includes('<iframe'));assert.ok(!x.includes('<form'));assert.ok(!x.includes('autoplay='))}});
+test('A/B one identical substantive guide',()=>{const start='<section class="box" aria-labelledby="optional-film">';const a=B.indexOf(start),z=B.indexOf('</section>',a);assert.ok(a>0&&z>a);assert.equal(B.slice(0,a)+B.slice(z+10),A)});
+test('accessible optional film transcript',()=>{assert.ok(B.includes('<details>'));assert.ok(B.includes('<summary>'));assert.ok(B.includes('loading="lazy"'));assert.ok(B.includes('not a playable'))});
+test('six caption cues and final 42s frame',()=>{const v=read('DOORWAY_42S_CONCEPT.vtt');assert.equal(count(v,' --> '),6);assert.ok(v.includes('00:00:35.000 --> 00:00:42.000'))});
+test('poster self-contained and rights safe',()=>{const p=read('DOORWAY_POSTER.svg');assert.ok(p.includes('<svg'));assert.ok(!p.includes('<image'));assert.ok(!p.includes('<foreignObject'));assert.ok(!p.includes('href='))});
+test('hub grounded actual published routes',()=>{for(const key of ['change-blindness','mesmerism','puysegurs-animal-magnetism-files','/focus/'])assert.ok(H.includes(key))});
+test('investigation gives counterevidence & new studies',()=>{const i=read('DOORWAY_THOUGHT_INVESTIGATION.md');for(const s of ['2006','2011','2021','2026','no significant','Puységur','not a'])assert.ok(i.includes(s))});
+test('no fabricated purchase price from promo',()=>{for(const x of [A,B]){assert.ok(!x.includes('$37'));assert.ok(!x.includes('$87'));assert.ok(x.includes('no checkout price'))}});
+test('free fallback and no invented owned purchase',()=>{assert.ok(H.includes('free 52-page'));assert.equal(M.net_revenue_per_1000_qualified_sessions,'NOT_COMPUTABLE')});

@@ -1,0 +1,277 @@
+{
+  "sprint": "R462",
+  "date": "2026-11-17",
+  "state": "HARD_HOLD",
+  "standard_offer": "https://zen12.com/",
+  "promotional_alternate": "https://zen12.com/secret/",
+  "partner_specific_approval": "NOT_VERIFIED",
+  "approved_url": null,
+  "checkout_price": "NOT_VERIFIED_AT_AUTHORIZED_DESTINATION",
+  "refund_terms": "NOT_VERIFIED_AT_AUTHORIZED_DESTINATION",
+  "verified_paid_sales": null,
+  "net_revenue_per_1000_qualified_sessions": "NOT_COMPUTABLE",
+  "claims": [
+    {
+      "id": "door2006",
+      "statement": "Lower object-memory accessibility after spatial shift in task",
+      "kind": "independent-study",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/17128613/",
+      "decision": "ALLOW_LIMITED"
+    },
+    {
+      "id": "door2011",
+      "statement": "Location updating demonstrated with real-world movement in described tasks",
+      "kind": "independent-study",
+      "source": "https://journals.sagepub.com/doi/10.1080/17470218.2011.571267",
+      "decision": "ALLOW_LIMITED"
+    },
+    {
+      "id": "door2021",
+      "statement": "Four experiments lacked general significant doorway forgetting; load-dependent signal-discrimination exception",
+      "kind": "independent-study",
+      "source": "https://link.springer.com/article/10.1186/s40359-021-00536-3",
+      "decision": "ALLOW_COUNTEREVIDENCE"
+    },
+    {
+      "id": "door2026",
+      "statement": "90 participants VR, event boundary with temporal/spatial recall; intervention placement mattered",
+      "kind": "independent-study",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/41586865/",
+      "decision": "ALLOW_LIMITED"
+    },
+    {
+      "id": "words2026",
+      "statement": "Weak short-lived near-boundary word recall benefit in one of two experiments",
+      "kind": "independent-study",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/41514139/",
+      "decision": "ALLOW_LIMITED"
+    },
+    {
+      "id": "zen12_format",
+      "statement": "12-minute MP3 sessions, 12 levels, four formats",
+      "kind": "seller-description",
+      "source": "https://zen12.com/",
+      "decision": "ALLOW_AS_SELLER_DESCRIPTION"
+    },
+    {
+      "id": "zen12_packages",
+      "statement": "Standard site has Beginner, Premium, Advanced packages with different contents",
+      "kind": "seller-description",
+      "source": "https://zen12.com/",
+      "decision": "ALLOW_WITHOUT_LIVE_PRICE"
+    },
+    {
+      "id": "zen12_promo",
+      "statement": "Secret landing has separate transient offer and coupon",
+      "kind": "seller-description",
+      "source": "https://zen12.com/secret/",
+      "decision": "HOLD_NO_APPROVED_DESTINATION_OR_PRICE"
+    },
+    {
+      "id": "zen12_one_hour",
+      "statement": "12 minutes equals one hour advanced meditation benefits",
+      "kind": "seller-efficacy",
+      "source": "https://zen12.com/about",
+      "decision": "OMIT_NO_PRODUCT_SPECIFIC_PROOF"
+    },
+    {
+      "id": "zen12_health",
+      "statement": "Automatic health/stress/brainpower gains",
+      "kind": "seller-efficacy",
+      "source": "https://zen12.com/",
+      "decision": "OMIT_NO_PRODUCT_SPECIFIC_PROOF"
+    },
+    {
+      "id": "binaural_review",
+      "statement": "14 studies of EEG binaural beat entrainment inconsistent: 5 supportive, 8 contradictory, 1 mixed",
+      "kind": "independent-review",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "decision": "ALLOW_GENERAL_NOT_ZEN12"
+    },
+    {
+      "id": "hypnosislive",
+      "statement": "Inspire3 advertises 200+ self-hypnosis MP3s",
+      "kind": "seller-description",
+      "source": "https://inspire3.com/",
+      "decision": "ALLOW_ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "brainwaveshots",
+      "statement": "Inspire3 advertises 15-minute audio shots",
+      "kind": "seller-description",
+      "source": "https://inspire3.com/",
+      "decision": "ALLOW_ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "focus",
+      "statement": "Free 52-page Focus Fieldbook uses existing subscriber funnel",
+      "kind": "first-party-live",
+      "source": "https://finalvestige.com/focus/",
+      "decision": "ALLOW_FREE_NOT_PURCHASE"
+    },
+    {
+      "id": "puysegur",
+      "statement": "153 source rows 16 dossiers; historical records not evidence of magnetic mechanism",
+      "kind": "first-party-live",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "decision": "ALLOW_HISTORY_ONLY"
+    },
+    {
+      "id": "ftc_endorsements",
+      "statement": "Material connection disclosure near recommendation",
+      "kind": "regulator",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "decision": "REQUIRED"
+    },
+    {
+      "id": "ftc_health",
+      "statement": "Health outcomes need adequate competent reliable substantiation",
+      "kind": "regulator",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "decision": "REQUIRED"
+    },
+    {
+      "id": "partner",
+      "statement": "Aug 24 2026 generic Refersion account pending only; no named Inspire3 publisher permission",
+      "kind": "connected-mail-read",
+      "source": "not-public",
+      "decision": "HARD_HOLD"
+    },
+    {
+      "id": "paid_owned_product",
+      "statement": "No specifically authenticated sale-ready FV-owned Mind SKU",
+      "kind": "unverified",
+      "source": "not-authenticated",
+      "decision": "HARD_HOLD"
+    },
+    {
+      "id": "actual_grok_ids",
+      "statement": "No three exact published matching platform IDs and URLs verified",
+      "kind": "unverified",
+      "source": "not-authenticated",
+      "decision": "HARD_HOLD"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_account_approved",
+      "status": "HOLD"
+    },
+    {
+      "id": "named_partner_inspire3",
+      "status": "HOLD"
+    },
+    {
+      "id": "approved_zen12_sku",
+      "status": "HOLD"
+    },
+    {
+      "id": "approved_web_channel",
+      "status": "HOLD"
+    },
+    {
+      "id": "approved_social_channel",
+      "status": "HOLD"
+    },
+    {
+      "id": "approved_email_channel",
+      "status": "HOLD"
+    },
+    {
+      "id": "verified_issued_earning_url",
+      "status": "HOLD"
+    },
+    {
+      "id": "link_placement_terms",
+      "status": "HOLD"
+    },
+    {
+      "id": "exact_live_checkout",
+      "status": "HOLD"
+    },
+    {
+      "id": "exact_price_and_currency",
+      "status": "HOLD"
+    },
+    {
+      "id": "exact_returns_and_exclusions",
+      "status": "HOLD"
+    },
+    {
+      "id": "merchant_payout_reporting",
+      "status": "HOLD"
+    },
+    {
+      "id": "paid_settlement_confirmation",
+      "status": "HOLD"
+    },
+    {
+      "id": "affiliate_disclosure_proximity",
+      "status": "HOLD"
+    },
+    {
+      "id": "objective_health_claims_removed",
+      "status": "HOLD"
+    },
+    {
+      "id": "seller_promo_not_confused_with_catalog",
+      "status": "HOLD"
+    },
+    {
+      "id": "correct_grok_asset_ids",
+      "status": "HOLD"
+    },
+    {
+      "id": "mobile_360",
+      "status": "HOLD"
+    },
+    {
+      "id": "mobile_390",
+      "status": "HOLD"
+    },
+    {
+      "id": "tablet_768",
+      "status": "HOLD"
+    },
+    {
+      "id": "desktop_1440",
+      "status": "HOLD"
+    },
+    {
+      "id": "desktop_1920",
+      "status": "HOLD"
+    },
+    {
+      "id": "keyboard_focus",
+      "status": "HOLD"
+    },
+    {
+      "id": "screen_reader",
+      "status": "HOLD"
+    },
+    {
+      "id": "no_js_full_text",
+      "status": "HOLD"
+    },
+    {
+      "id": "reduced_motion",
+      "status": "HOLD"
+    },
+    {
+      "id": "no_duplicate_analytics",
+      "status": "HOLD"
+    },
+    {
+      "id": "existing_jetpack_only",
+      "status": "HOLD"
+    },
+    {
+      "id": "consent_and_privacy",
+      "status": "HOLD"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HOLD"
+    }
+  ]
+}
