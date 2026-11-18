@@ -1,0 +1,334 @@
+{
+  "title": "R471 source/claim/merchant release matrix",
+  "date": "2026-11-18",
+  "state": "UNPUBLISHED_HARD_HOLD",
+  "sources": {
+    "thompson": "https://doi.org/10.1068/p090483",
+    "wong": "https://pubmed.ncbi.nlm.nih.gov/20942363/",
+    "mast": "https://pubmed.ncbi.nlm.nih.gov/17564200/",
+    "cornes": "https://pubmed.ncbi.nlm.nih.gov/21639673/",
+    "psalta": "https://pubmed.ncbi.nlm.nih.gov/25301017/",
+    "seller": "https://zen12.com/about",
+    "promo": "https://zen12.com/secret/",
+    "catalog": "https://inspire3.com/",
+    "review": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "archive": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/"
+  },
+  "claims": [
+    {
+      "id": "T01",
+      "claim": "Thompson's original Thatcher illusion was published in 1980",
+      "decision": "bibliographically_verified",
+      "source": "https://doi.org/10.1068/p090483"
+    },
+    {
+      "id": "T02",
+      "claim": "Original facial part inversion is easier to detect upright than inverted",
+      "decision": "limited_experimental_effect_not_universal",
+      "source": "https://doi.org/10.1068/p090483"
+    },
+    {
+      "id": "T03",
+      "claim": "Thatcher illusion exclusively proves a face-specific mechanism",
+      "decision": "rejected_by_nonface_comparisons",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/20942363/"
+    },
+    {
+      "id": "T04",
+      "claim": "Wong et al. tested cars, buildings, bikes, and letters",
+      "decision": "abstract_supported",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/20942363/"
+    },
+    {
+      "id": "T05",
+      "claim": "Researchers manipulated observer body orientation",
+      "decision": "abstract_supported_do_not_invent_result",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/17564200/"
+    },
+    {
+      "id": "T06",
+      "claim": "Task and decision processes affect Thatcher judgments",
+      "decision": "abstract_supported",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/21639673/"
+    },
+    {
+      "id": "T07",
+      "claim": "2014 paper found effect for eye-only and mouth-only parts",
+      "decision": "abstract_supported_counterexample_to_exclusive_whole_face_account",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/25301017/"
+    },
+    {
+      "id": "T08",
+      "claim": "Thatcher illusion validates meditation-product outcomes",
+      "decision": "unsupported_transfer_do_not_claim",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/25301017/"
+    },
+    {
+      "id": "Z01",
+      "claim": "Seller describes 12-minute sessions",
+      "decision": "seller_format_only",
+      "source": "https://zen12.com/about"
+    },
+    {
+      "id": "Z02",
+      "claim": "Seller describes 12 levels",
+      "decision": "seller_format_only",
+      "source": "https://zen12.com/about"
+    },
+    {
+      "id": "Z03",
+      "claim": "Seller describes four listening styles",
+      "decision": "seller_format_only",
+      "source": "https://zen12.com/about"
+    },
+    {
+      "id": "Z04",
+      "claim": "Separate promo advertises 48 MP3s plus bonuses",
+      "decision": "seller_offer_variant_not_verified_final_purchase",
+      "source": "https://zen12.com/secret/"
+    },
+    {
+      "id": "Z05",
+      "claim": "One Zen12 12-minute session equals an hour of ordinary meditation",
+      "decision": "seller_claim_no_product_specific_proof",
+      "source": "https://zen12.com/about"
+    },
+    {
+      "id": "Z06",
+      "claim": "Zen12 automatically erases worry or reliably alters brainwaves",
+      "decision": "seller_claim_unverified_exclude",
+      "source": "https://zen12.com/about"
+    },
+    {
+      "id": "Z07",
+      "claim": "Binaural beat EEG effect firmly established",
+      "decision": "not_supported_2023_heterogeneous_review",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/"
+    },
+    {
+      "id": "Z08",
+      "claim": "2023 review included 14 studies: 5 consistent, 8 contradictory, 1 mixed",
+      "decision": "review_supported_not_Zen12_specific",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/"
+    },
+    {
+      "id": "Z09",
+      "claim": "Current exact Zen12 checkout price is confirmed",
+      "decision": "unverified_do_not_publish",
+      "source": "https://zen12.com/secret/"
+    },
+    {
+      "id": "Z10",
+      "claim": "Current final-sale return terms established",
+      "decision": "unverified_do_not_publish",
+      "source": "https://zen12.com/about"
+    },
+    {
+      "id": "C01",
+      "claim": "Final Vestige has named Inspire3 partner authorization",
+      "decision": "NOT_AUTHENTICATED",
+      "source": "gmail 2026-08-24 Refersion pending notice"
+    },
+    {
+      "id": "C02",
+      "claim": "Final Vestige has its own earning URL and permitted promotion channels",
+      "decision": "NOT_AUTHENTICATED",
+      "source": "gmail 2026-08-24 Refersion pending notice"
+    },
+    {
+      "id": "C03",
+      "claim": "Fieldbook is a 52-page free product through one existing signup",
+      "decision": "live_route_verified",
+      "source": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "C04",
+      "claim": "A rights-cleared FV-owned purchasable Mind product already exists",
+      "decision": "NOT_AUTHENTICATED",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818"
+    },
+    {
+      "id": "C05",
+      "claim": "Clear proximate affiliate commission disclosure required at recommendations",
+      "decision": "ftc_guidance",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "C06",
+      "claim": "Objective health benefit claims require competent reliable substantiation",
+      "decision": "ftc_guidance",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "C07",
+      "claim": "Puységur's recorded witness statements prove magnetic effects",
+      "decision": "not_proven_by_archive",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    }
+  ],
+  "seller_offer_distinction": {
+    "standard": "Seller says 12 minutes, 12 levels, four styles",
+    "promo": "Different bundle, displayed offer and potentially dynamic promotion; NOT licensed for FV",
+    "price": null,
+    "refund_terms": null,
+    "issued_earning_url": null
+  },
+  "partner_acceptance": {
+    "latest_scoped_evidence": "August 24 2026 Refersion account-pending email",
+    "accepted": "UNKNOWN_NOT_VERIFIED",
+    "authorized_website": false,
+    "authorized_social": false,
+    "authorized_email": false,
+    "commercial_activation": "FORBIDDEN"
+  },
+  "FV_owned_purchasable_Mind_product": "NOT_AUTHENTICATED",
+  "existing_Fieldbook": "free_52_page_single_Jetpack_optin",
+  "release_gates": [
+    {
+      "id": "named_partner_acceptance",
+      "status": "HOLD"
+    },
+    {
+      "id": "exact_publisher_identity",
+      "status": "HOLD"
+    },
+    {
+      "id": "authorized_Zen12_SKU",
+      "status": "HOLD"
+    },
+    {
+      "id": "authorized_earning_link",
+      "status": "HOLD"
+    },
+    {
+      "id": "website_promotion_permission",
+      "status": "HOLD"
+    },
+    {
+      "id": "social_promotion_permission_if_used",
+      "status": "HOLD"
+    },
+    {
+      "id": "email_promotion_permission_if_used",
+      "status": "HOLD"
+    },
+    {
+      "id": "verified_exact_bundle",
+      "status": "HOLD"
+    },
+    {
+      "id": "current_checkout_price_and_currency",
+      "status": "HOLD"
+    },
+    {
+      "id": "verified_refund_policy",
+      "status": "HOLD"
+    },
+    {
+      "id": "verified_settlement_terms",
+      "status": "HOLD"
+    },
+    {
+      "id": "no_unsubstantiated_health_claims",
+      "status": "HOLD"
+    },
+    {
+      "id": "actual_product_creative_rights",
+      "status": "HOLD"
+    },
+    {
+      "id": "adjacent_affiliate_disclosure",
+      "status": "HOLD"
+    },
+    {
+      "id": "optional_film_encoded",
+      "status": "HOLD"
+    },
+    {
+      "id": "filmed_transcript_accuracy",
+      "status": "HOLD"
+    },
+    {
+      "id": "caption_accessibility",
+      "status": "HOLD"
+    },
+    {
+      "id": "native_browser_360",
+      "status": "HOLD"
+    },
+    {
+      "id": "native_browser_390",
+      "status": "HOLD"
+    },
+    {
+      "id": "native_browser_768",
+      "status": "HOLD"
+    },
+    {
+      "id": "native_browser_1440",
+      "status": "HOLD"
+    },
+    {
+      "id": "native_browser_1920",
+      "status": "HOLD"
+    },
+    {
+      "id": "WCAG22AA_keyboard_screenreader",
+      "status": "HOLD"
+    },
+    {
+      "id": "native_no_JS",
+      "status": "HOLD"
+    },
+    {
+      "id": "WordPress_sanitizer",
+      "status": "HOLD"
+    },
+    {
+      "id": "no_duplicate_analytics",
+      "status": "HOLD"
+    },
+    {
+      "id": "privacy_and_consent_QA",
+      "status": "HOLD"
+    },
+    {
+      "id": "actual_Grok_media_ids",
+      "status": "HOLD"
+    },
+    {
+      "id": "Grok_permitted_links",
+      "status": "HOLD"
+    },
+    {
+      "id": "existing_Jetpack_delivery",
+      "status": "HOLD"
+    },
+    {
+      "id": "paid_order_confirmation",
+      "status": "HOLD"
+    },
+    {
+      "id": "net_revenue_refunds_fees",
+      "status": "HOLD"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HOLD"
+    }
+  ],
+  "measurement": {
+    "lead_is_not_sale": true,
+    "outbound_click_is_not_sale": true,
+    "attributed_sessions": "unverified",
+    "paid_orders": "unverified",
+    "net_revenue_per_1000": "NOT_COMPUTABLE",
+    "cohorts_days": [
+      7,
+      30
+    ]
+  }
+}
