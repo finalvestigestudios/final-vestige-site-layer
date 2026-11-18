@@ -1,0 +1,89 @@
+{
+  "observed_at_utc": "2026-11-18T16:39:10Z",
+  "site": "finalvestige.com",
+  "newsletter": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2
+  },
+  "subscribers": {
+    "all_total": 3,
+    "email_eligible": 3,
+    "unconfirmed_total": 2
+  },
+  "followers": {
+    "total": 3,
+    "email": 0,
+    "wpcom": 3,
+    "partial": false
+  },
+  "site_settings": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "reply_to": "no-reply"
+  },
+  "recent_send_statuses": [
+    "never_sent_opted_out",
+    "never_sent_opted_out",
+    "never_sent_opted_out",
+    "never_sent_opted_out",
+    "never_sent_opted_out"
+  ],
+  "issues": [
+    {
+      "type": "editorial",
+      "founder_selected": false
+    },
+    {
+      "type": "editorial",
+      "founder_selected": false
+    },
+    {
+      "type": "commercial",
+      "founder_selected": false,
+      "offer": "Zen12"
+    },
+    {
+      "type": "editorial",
+      "founder_selected": false
+    },
+    {
+      "type": "commercial",
+      "founder_selected": false,
+      "offer": "Hypnosis Live"
+    },
+    {
+      "type": "editorial",
+      "founder_selected": false
+    }
+  ],
+  "release_proof": {
+    "founder_final_send_approval": false,
+    "native_jetpack_preview_witness": false,
+    "verified_publisher_postal": false,
+    "rendered_functional_unsubscribe": false,
+    "consent_and_delivery_evidence": false,
+    "named_partner_acceptance": false,
+    "product_specific_email_permission": false,
+    "issued_earning_url": false,
+    "vetted_published_guide": false,
+    "current_checkout_and_refund_witness": false
+  },
+  "observations": {
+    "welcome_configured": true,
+    "welcome_received_verified": false,
+    "new_external_leads": null,
+    "reported_settlements": null,
+    "qualified_human_sessions": null,
+    "revenue_per_1000": null,
+    "source_disagreement_under_review": true
+  },
+  "sources": [
+    "Authenticated WordPress.com Jetpack newsletter status/get_settings",
+    "Authenticated WordPress.com subscriber all and unconfirmed filters",
+    "Authenticated WordPress.com Jetpack follower statistics"
+  ],
+  "no_personal_data": true,
+  "no_writes_or_sends": true
+}
