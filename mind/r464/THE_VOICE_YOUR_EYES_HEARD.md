@@ -69,7 +69,7 @@ This is an **evidence-reading exercise**, not a reproduction of the original sci
 
 **Minutes 4–6:** Read the abstract of the 2014 Strand paper [3]. Find the participants who returned for a second session. Ask why repeatability matters, and why repeatability alone is not an explanation of mechanism.
 
-**Minutes 6–8:** Read the 2019 playback-rate abstract [5]. Before seeing the result, what would you have predicted about the slow condition? Record your prediction. Then compare the published observation.
+**Minutes 6–8:** Read the 2018 playback-rate abstract [5]. Before seeing the result, what would you have predicted about the slow condition? Record your prediction. Then compare the published observation.
 
 **Minutes 8–10:** Open one historical case from Puységur [6]. Identify one observation, one attributed cause and one missing control. Do not reclassify a historical patient's experience as a modern medical fact.
 
