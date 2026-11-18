@@ -1,0 +1,95 @@
+{
+  "candidate": "R442_ISSUE04_UNADOPTED_HOLD_UNSENT",
+  "canonical_issue": 4,
+  "kind": "editorial",
+  "subject": "Apollo 1: a timestamp isn't a cause",
+  "preheader": "Two official accounts put the cabin rupture seconds apart. The danger was larger than either number.",
+  "word_count": 564,
+  "primary_cta": {
+    "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+    "wordpress_post_id": 434
+  },
+  "source_links": [
+    {
+      "title": "NASA Apollo 1 mission record",
+      "url": "https://www.nasa.gov/mission/apollo-1/"
+    },
+    {
+      "title": "Seamans memorandum, February 3, 1967 (preliminary)",
+      "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/seamans.html"
+    },
+    {
+      "title": "Seamans interim report, February 25, 1967",
+      "url": "https://www.nasa.gov/history/Apollo204/seamans3.html"
+    },
+    {
+      "title": "NASA Apollo 1 official event timeline",
+      "url": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_01c_Timeline.htm"
+    },
+    {
+      "title": "NASA history of Apollo 204 investigation",
+      "url": "https://www.nasa.gov/history/Apollo204/"
+    }
+  ],
+  "findings": [
+    {
+      "claim": "Apollo 1 was a ground test with astronauts Grissom, White, Chaffee, Jan. 27 1967",
+      "source_indexes": [
+        1,
+        5
+      ],
+      "certainty": "documented"
+    },
+    {
+      "claim": "Feb 3 preliminary memo gives 6:31:17 rupture after 6:31:03 detection; notes station synchronization uncertainty",
+      "source_indexes": [
+        2
+      ],
+      "certainty": "documented_preliminary"
+    },
+    {
+      "claim": "Feb 25 interim report estimates rupture near 6:31:19",
+      "source_indexes": [
+        3
+      ],
+      "certainty": "documented_interim"
+    },
+    {
+      "claim": "Timeline distinguishes transducer overrange at 23:31:16 from rupture at 23:31:19.4",
+      "source_indexes": [
+        4
+      ],
+      "certainty": "documented_distinct_events"
+    },
+    {
+      "claim": "Electrical malfunction judged most likely, exact ignition source not conclusively pinpointed",
+      "source_indexes": [
+        3
+      ],
+      "certainty": "likely_not_proven"
+    },
+    {
+      "claim": "Fire loads, hatch, pad procedures and prelaunch oxygen required redesign",
+      "source_indexes": [
+        3,
+        5
+      ],
+      "certainty": "documented"
+    }
+  ],
+  "release": {
+    "adopted": false,
+    "founder_final_approved": false,
+    "valid_fv_postal_verified": false,
+    "jetpack_opt_out_received_verified": false,
+    "real_native_preview_verified": false,
+    "send_authorized": false
+  },
+  "original": {
+    "pr": 175,
+    "sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "plan": "4 editorial + 2 commercially reserved",
+    "issue03": "Zen12",
+    "issue05": "Hypnosis Live"
+  }
+}
