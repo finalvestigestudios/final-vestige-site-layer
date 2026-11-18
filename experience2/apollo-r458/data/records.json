@@ -1,0 +1,38 @@
+{
+  "audit_context": {
+    "snapshot_day": "2026-11-18",
+    "issue_url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/150",
+    "evidence_note": "These labels rest on a recorded read-only Atlas/homepage review, not a live re-audit or individual commercial-rights clearance."
+  },
+  "records": [
+    {
+      "id": "S66-58038", "event_date": "1966-10-18", "precision": "day", "when": "18 October 1966", "topic": "Crew training context", "atlas_use": "shown", "homepage_use": "not_reviewed", "catalogue_status": "located", "review_state": "recorded", "source_url": "https://www.nasa.gov/image-detail/amf-s66-58038/", "limit": "Crew-training photograph; it does not depict the accident or establish the cause of ignition."
+    },
+    {
+      "id": "S67-15717", "event_date": "1967-01-03", "precision": "day", "when": "3 January 1967", "topic": "Pre-fire spacecraft context", "atlas_use": "shown", "homepage_use": "not_reviewed", "catalogue_status": "located", "review_state": "recorded", "source_url": "https://www.nasa.gov/image-detail/amf-s67-15717/", "limit": "Pre-accident context cannot prove the location or mechanism of the later ignition."
+    },
+    {
+      "id": "S67-19766", "event_date": "1967-01", "precision": "month", "when": "January 1967; exact photograph day not verified", "topic": "Crew portrait / surface-use discrepancy", "atlas_use": "withheld", "homepage_use": "shown", "catalogue_status": "item_mapping_unconfirmed", "review_state": "reconcile", "source_url": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/", "limit": "The Atlas describes this image as withheld while the homepage was recorded as displaying it. Editorial-context review and item-ID mapping are required; this alone proves no license violation."
+    },
+    {
+      "id": "S67-21294", "event_date": "1967-01-28", "precision": "day", "when": "28 January 1967", "topic": "Post-accident context", "atlas_use": "withheld", "homepage_use": "not_reviewed", "catalogue_status": "located", "review_state": "recorded", "source_url": "https://www.nasa.gov/image-detail/amf-s67-21294/", "limit": "Post-event image: not footage of the ignition or a precise second-by-second reconstruction."
+    },
+    {
+      "id": "KSC-20170124-PH_KLS01_0090", "event_date": "2017-01-24", "precision": "day", "when": "24 January 2017", "topic": "Fiftieth-anniversary exhibit", "atlas_use": "withheld", "homepage_use": "not_reviewed", "catalogue_status": "located", "review_state": "recorded", "source_url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/", "limit": "Museum display, photographed decades after the 1967 accident; not contemporaneous fire-scene evidence."
+    },
+    {
+      "id": "KSC-20170124-PH_KLS01_0129", "event_date": "2017-01-24", "precision": "day", "when": "24 January 2017", "topic": "Fiftieth-anniversary hatch exhibit", "atlas_use": "shown", "homepage_use": "not_reviewed", "catalogue_status": "unretrieved", "review_state": "source_hold", "source_url": "https://images.nasa.gov/details/KSC-20170124-PH_KLS01_0129", "limit": "The archive item URL could not be independently retrieved for this audit. Do not certify this item's identity, reuse rights or source metadata; the 2017 exhibit is retrospective."
+    }
+  ],
+  "claims": [
+    {
+      "heading": "A probable initiator is not a proven ignition wire", "supported": "The Apollo 204 Review Board judged an electrical arc the most probable initiator and found no conclusively identified single ignition source.", "cannot_show": "A crew photograph, post-fire image, or 2017 museum exhibit cannot identify the precise wire that sparked the 1967 fire.", "source_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/", "source_kind": "Primary board finding, 1967"
+    },
+    {
+      "heading": "The oxygen atmosphere was a hazardous condition", "supported": "The Review Board documented a ground test conducted at 16.7 psia in a 100-percent oxygen cabin atmosphere, with abundant combustible material.", "cannot_show": "The oxygen environment helps explain severity and rapid propagation; it alone does not identify the initial electrical fault.", "source_url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html", "source_kind": "Primary board determination, 1967"
+    },
+    {
+      "heading": "The hatch limitation was a documented escape barrier", "supported": "The Review Board concluded internal pressure prevented the inward-opening hatch from being opened before vessel rupture.", "cannot_show": "A later museum photograph illustrates surviving hardware; it does not establish crew movements or the fire's exact ignition sequence.", "source_url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html", "source_kind": "Primary board determination, 1967"
+    }
+  ]
+}
