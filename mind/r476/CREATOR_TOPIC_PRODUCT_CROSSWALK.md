@@ -1,0 +1,11 @@
+# R476 — Three creator-topic-to-article-to-Focus/offer mappings
+**Research only, for Praxxis/Grok TASK-008. NOT a production queue, video assignment or posting instruction.**
+No real matched published Grok asset ID, URL, publish date, social rights or signed-out mobile destination was authenticated. Mark all three UNMATCHED.
+
+| Real video hook to verify, NOT assume already published | Primary source | Article / destination | Existing optional next step | Product fit |
+| --- | --- | --- | --- | --- |
+| Did your eyes change what your ears heard? | McGurk & MacDonald 1976 https://doi.org/10.1038/264746a0 and Sekiyama & Tohkura 1991 https://pubmed.ncbi.nlm.nih.gov/1960275/ | R476 The Voice You Heard With Your Eyes: source-only UNPUBLISHED. No live link yet. | Only existing https://finalvestige.com/focus/ and Dispatch for interested readers | Zen12 guide only when independent reader chooses to shop for audio; no illusion→efficacy inference |
+| Why didn't you notice the gorilla? | Simons & Chabris https://doi.org/10.1068/p281059 and Drew et al. https://doi.org/10.1177/0956797613479386 | R475 The Gorilla Was Visible: source-only UNPUBLISHED. No live link yet. | Existing Focus/Dispatch if genuinely pertinent | No direct paid presell; attention curiosity is not buying intent |
+| What do Puységur's failed predictions tell us? | Source-controlled historical https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ | Existing live https://finalvestige.com/2026/11/02/mesmerism/ → published archive | Optional existing Focus, otherwise remain ungated | No paid offer necessary; any future Hypnosis Live comparison independently verify actual SKU, claims, channel permissions |
+
+Praxxis must check immutable platform asset_id, actual video hook, publish date, permalink, rightsholder, allowed live CTA, exact source article route, signed-out 360/390px mobile destination and vetted UTM campaign. Do not pretend a hypothetical asset is real or append tracking to an unauthorized destination. Commerce events distinguish qualified_human_session, affiliate_click, merchant_paid_order, refund_adjustment. Never claim click=commission. Claude owns existing privacy-safe first-party analytics; Grok owns content/post; founder approves production releases; Dispatch #174 owns newsletters. Do not edit the Grok task queue.
