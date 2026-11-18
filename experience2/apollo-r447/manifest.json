@@ -1,0 +1,69 @@
+{
+  "schema":"fv-apollo-media-custody-v1",
+  "review_status":"HOLD_EDITORIAL_AND_MEDIA_RIGHTS",
+  "commerce_status":"NO_VERIFIED_APOLLO_PAID_SKU",
+  "no_image_embedding":true,
+  "source_reviewed_on":"2026-11-17",
+  "editorial_signoff":"PENDING_INDEPENDENT_QD",
+  "media_use_approval":"NOT_GRANTED",
+  "offer_release_approved":false,
+  "records":[
+    {
+      "id":"crew-training",
+      "date":"1966-10-18",
+      "date_label":"October 18, 1966",
+      "stage":"before",
+      "kind":"Archival photograph record · training context",
+      "title":"Before the test: altitude-chamber training",
+      "source_id":"NASA S66-58038",
+      "source_url":"https://www.nasa.gov/image-detail/amf-s66-58038/",
+      "source_state":"NASA_RECORD_LINK_VERIFIED",
+      "description":"An official NASA catalogue record describes Apollo 1 prime-crew training in an altitude chamber.",
+      "limit":"This training record is not a photograph of the January 27 fire or its recorded seconds.",
+      "media_state":"RIGHTS_AND_LIKENESS_REVIEW_REQUIRED"
+    },
+    {
+      "id":"capsule-processing",
+      "date":"1967-01-03",
+      "date_label":"January 3, 1967",
+      "stage":"before",
+      "kind":"Archival photograph record · spacecraft processing",
+      "title":"Command Module 012 before the accident",
+      "source_id":"NASA S67-15717",
+      "source_url":"https://www.nasa.gov/image-detail/amf-s67-15717/",
+      "source_state":"NASA_RECORD_LINK_VERIFIED",
+      "description":"NASA's catalog identifies the spacecraft during preflight preparations.",
+      "limit":"This is an earlier processing image, not the emergency or the accident investigation's instrument timeline.",
+      "media_state":"RIGHTS_AND_LIKENESS_REVIEW_REQUIRED"
+    },
+    {
+      "id":"accident-record",
+      "date":"1967-01-27",
+      "date_label":"January 27, 1967",
+      "stage":"event",
+      "kind":"Primary historical investigation · no event photograph claimed",
+      "title":"The actual event: Review Board evidence",
+      "source_id":"Apollo 204 Review Board final report",
+      "source_url":"https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "source_state":"NASA_REPORT_VERIFIED",
+      "description":"The Board recorded the fire during the plugs-out ground test, hazardous cabin conditions and the inability to determine one conclusive ignition source.",
+      "limit":"No archival photograph in this gallery depicts the recorded fire or the Board's individual instrument time marks.",
+      "media_state":"NO_IMAGE_PRESENT"
+    },
+    {
+      "id":"hatch-memorial",
+      "date":"2017-01-24",
+      "date_label":"January 24, 2017",
+      "stage":"later",
+      "kind":"Museum exhibit photograph record · retrospective context",
+      "title":"The hatch preserved for public memory",
+      "source_id":"NASA KSC-20170124-PH_KLS01_0129",
+      "source_url":"https://images.nasa.gov/details/KSC-20170124-PH_KLS01_0129",
+      "source_state":"CATALOG_LINK_RECORDED_NOT_RECHECKED",
+      "description":"The existing FV Atlas cites a 2017 NASA museum photo of the preserved Apollo 1 hatch.",
+      "limit":"The museum exhibit is fifty years after the fire; it must not be placed on the 1967 event timeline as event imagery.",
+      "media_state":"RIGHTS_AND_LIKENESS_REVIEW_REQUIRED"
+    }
+  ],
+  "policy_links":["https://www.nasa.gov/nasa-brand-center/","https://www.nasa.gov/nasa-brand-center/advertising-guidelines/"]
+}
