@@ -1,0 +1,521 @@
+{
+  "schema_version": "2026-11-18-r468",
+  "status": "DRAFT_UNPUBLISHED_HARD_HOLD",
+  "reviewed_at_date": "2026-11-18",
+  "goal": "Commercial accuracy and verified paid revenue before promotional activation",
+  "account_evidence": "Connected Gmail search on 2026-11-18 found 2026-08-24 Refersion pending notice; absence of later found approval in that scoped search is not proof that none exists elsewhere. Promotional consumer emails do not establish publisher approval.",
+  "sources": {
+    "issue171": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "issue820": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+    "science2005": "https://doi.org/10.1126/science.1111709",
+    "plos2013": "https://doi.org/10.1371/journal.pone.0060554",
+    "eyewitness2014": "https://doi.org/10.1002/acp.3062",
+    "review2023": "https://doi.org/10.1371/journal.pone.0286023",
+    "ftcAffiliates": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftcHealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "inspire3": "https://inspire3.com/",
+    "zen12About": "https://zen12.com/about",
+    "zen12Catalog": "https://zen12.com/?no-popup=1",
+    "zen12Promo": "https://zen12.com/secret/",
+    "hypnosisFaq": "https://hypnosislive.com/faq",
+    "brainwaveCatalog": "https://brainwaveshots.com/",
+    "puységur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/",
+    "affiliateDisclosure": "https://finalvestige.com/affiliate-disclosure/",
+    "publishedChange": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "publishedMesmer": "https://finalvestige.com/2026/11/02/mesmerism/"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "2005 face-choice swaps can go unreported",
+      "type": "scientific finding",
+      "decision": "supported_in_lab",
+      "sources": [
+        "https://doi.org/10.1126/science.1111709"
+      ],
+      "limitations": "Do not generalize to all decisions"
+    },
+    {
+      "id": "C02",
+      "claim": "Original choice-blindness paper reports 46 of 354 manipulated trials detected concurrently",
+      "type": "study-specific rate",
+      "decision": "supported_context_only",
+      "sources": [
+        "https://doi.org/10.1126/science.1111709"
+      ],
+      "limitations": "Trial denominator, not people; detection definitions matter"
+    },
+    {
+      "id": "C03",
+      "claim": "2013 altered political-survey answers were often unrecognized",
+      "type": "scientific finding",
+      "decision": "supported_in_study",
+      "sources": [
+        "https://doi.org/10.1371/journal.pone.0060554"
+      ],
+      "limitations": "Not a real election campaign experiment"
+    },
+    {
+      "id": "C04",
+      "claim": "48% indicated willingness to consider changing coalitions",
+      "type": "outcome description",
+      "decision": "supported_context_only",
+      "sources": [
+        "https://doi.org/10.1371/journal.pone.0060554"
+      ],
+      "limitations": "Not actual votes cast or durable behavior"
+    },
+    {
+      "id": "C05",
+      "claim": "Eyewitness-simulation mismatch rates vary with timing and type of choice",
+      "type": "research finding",
+      "decision": "supported_in_study",
+      "sources": [
+        "https://doi.org/10.1002/acp.3062"
+      ],
+      "limitations": "Mock-crime studies, not proof of any actual mistaken conviction"
+    },
+    {
+      "id": "C06",
+      "claim": "Puységur files contain historical testimony, contradictions and operator-pressure concerns",
+      "type": "historical archive",
+      "decision": "supported_archive",
+      "sources": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "limitations": "Do not infer modern clinical efficacy"
+    },
+    {
+      "id": "C07",
+      "claim": "12-minute MP3 audio is described by Zen12",
+      "type": "product format",
+      "decision": "seller_description_only",
+      "sources": [
+        "https://zen12.com/about"
+      ],
+      "limitations": "Product has not been personally tested"
+    },
+    {
+      "id": "C08",
+      "claim": "12 levels and four variants per level are described",
+      "type": "product format",
+      "decision": "seller_description_only",
+      "sources": [
+        "https://zen12.com/about"
+      ],
+      "limitations": "Confirm exact included package"
+    },
+    {
+      "id": "C09",
+      "claim": "General catalog lists differing beginner/premium/advanced audio and level counts",
+      "type": "offer identity",
+      "decision": "seller_description_only",
+      "sources": [
+        "https://zen12.com/?no-popup=1"
+      ],
+      "limitations": "Not interchangeable with promotional offer"
+    },
+    {
+      "id": "C10",
+      "claim": "Separate promotional page presents a distinct complete bundle and coupon experience",
+      "type": "offer identity",
+      "decision": "seller_description_only",
+      "sources": [
+        "https://zen12.com/secret/"
+      ],
+      "limitations": "Do not repeat price, discount, scarcity or clock; terms not authorized"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 replicates one hour of meditation in 12 minutes",
+      "type": "efficacy",
+      "decision": "withhold_unsubstantiated",
+      "sources": [
+        "https://zen12.com/about",
+        "https://doi.org/10.1371/journal.pone.0286023"
+      ],
+      "limitations": "No identified Zen12-specific comparative randomized study"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 changes brainwaves automatically",
+      "type": "health_neuroscience",
+      "decision": "withhold_unsubstantiated",
+      "sources": [
+        "https://zen12.com/about",
+        "https://doi.org/10.1371/journal.pone.0286023"
+      ],
+      "limitations": "Review inconsistent; does not evaluate Zen12"
+    },
+    {
+      "id": "C13",
+      "claim": "Meditation audio cures anxiety, depression, trauma or other illness",
+      "type": "medical",
+      "decision": "prohibited_without_product_specific_support",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limitations": "No such claim allowed"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 ensures wealth or other financial result",
+      "type": "financial",
+      "decision": "withhold_unsubstantiated",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limitations": "No earning or wealth guarantees"
+    },
+    {
+      "id": "C15",
+      "claim": "A 2023 fourteen-study binaural-beat EEG review was inconsistent",
+      "type": "research finding",
+      "decision": "supported",
+      "sources": [
+        "https://doi.org/10.1371/journal.pone.0286023"
+      ],
+      "limitations": "Five positive, eight contradictory, one mixed; not product test"
+    },
+    {
+      "id": "C16",
+      "claim": "Hypnosis Live advertises downloadable MP3 self-hypnosis sessions",
+      "type": "product format",
+      "decision": "seller_description_only",
+      "sources": [
+        "https://hypnosislive.com/faq"
+      ],
+      "limitations": "Do not transfer hypnotherapy research to individual products"
+    },
+    {
+      "id": "C17",
+      "claim": "Brainwave Shots seller lists named downloadable products including Focus and Brain Power",
+      "type": "product format",
+      "decision": "seller_description_only",
+      "sources": [
+        "https://brainwaveshots.com/"
+      ],
+      "limitations": "Name is not substantiation; health categories high risk"
+    },
+    {
+      "id": "C18",
+      "claim": "Generic Inspire3 site names Zen12 and Hypnosis Live as products",
+      "type": "manufacturer identity",
+      "decision": "seller_description_only",
+      "sources": [
+        "https://inspire3.com/"
+      ],
+      "limitations": "General site != publisher agreement"
+    },
+    {
+      "id": "C19",
+      "claim": "Final Vestige is accepted in Inspire3 affiliate program",
+      "type": "account permission",
+      "decision": "NOT_VERIFIED",
+      "sources": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+      ],
+      "limitations": "Aug 24 2026 connected Gmail Refersion application pending; no matched acceptance observed in scoped search"
+    },
+    {
+      "id": "C20",
+      "claim": "Final Vestige has a permitted Zen12 earning link",
+      "type": "publisher tracking",
+      "decision": "NOT_VERIFIED",
+      "sources": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+      ],
+      "limitations": "No issued SKU-specific URL or permission document authenticated"
+    },
+    {
+      "id": "C21",
+      "claim": "Zen12 checkout price, tax, currency, refund eligibility and sale terms are verified for FV earning link",
+      "type": "commercial terms",
+      "decision": "NOT_VERIFIED",
+      "sources": [
+        "https://zen12.com/?no-popup=1",
+        "https://zen12.com/secret/"
+      ],
+      "limitations": "Two seller presentations differ; cannot assume either is FV offer"
+    },
+    {
+      "id": "C22",
+      "claim": "Final Vestige has personally used Zen12",
+      "type": "endorsement",
+      "decision": "FALSE_NOT_CLAIMED",
+      "sources": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+      ],
+      "limitations": "No firsthand product use evidence; never invent"
+    },
+    {
+      "id": "C23",
+      "claim": "Earning affiliate links should carry conspicuous adjacent disclosure",
+      "type": "FTC endorsement",
+      "decision": "supported_guidance",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "limitations": "General disclosure page alone insufficient"
+    },
+    {
+      "id": "C24",
+      "claim": "Objective health efficacy requires competent reliable scientific evidence",
+      "type": "FTC guidance",
+      "decision": "supported_guidance",
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "limitations": "Not satisfied by unrelated neuroscience experiment"
+    },
+    {
+      "id": "C25",
+      "claim": "Free Focus Fieldbook is 52 pages, one existing signup and no checkout",
+      "type": "FV resource",
+      "decision": "verified_live_page",
+      "sources": [
+        "https://finalvestige.com/focus/"
+      ],
+      "limitations": "No new email form, lead != order"
+    },
+    {
+      "id": "C26",
+      "claim": "An actually payable FV-owned rights-cleared Mind SKU exists",
+      "type": "owned_product",
+      "decision": "NOT_VERIFIED",
+      "sources": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+      ],
+      "limitations": "Need product identity, rights, checkout, delivery and refunds"
+    },
+    {
+      "id": "C27",
+      "claim": "Three Mind video asset IDs are authenticated",
+      "type": "creator mapping",
+      "decision": "NOT_VERIFIED",
+      "sources": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+      ],
+      "limitations": "Grok/Praxxis must supply real media IDs and links"
+    },
+    {
+      "id": "C28",
+      "claim": "Any outbound affiliate click proves a sale",
+      "type": "attribution",
+      "decision": "FALSE_NOT_CLAIMED",
+      "sources": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+      ],
+      "limitations": "Clicks are not customer orders or commissions"
+    },
+    {
+      "id": "C29",
+      "claim": "Net revenue per 1000 qualified human sessions is computable",
+      "type": "commercial KPI",
+      "decision": "NOT_VERIFIED",
+      "sources": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+      ],
+      "limitations": "No verified settlement and denominator"
+    },
+    {
+      "id": "C30",
+      "claim": "Our optional film version improves purchase conversion",
+      "type": "experiment",
+      "decision": "UNTESTED_HYPOTHESIS",
+      "sources": [
+        "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+      ],
+      "limitations": "No live randomization, valid denominator, or settled outcomes"
+    }
+  ],
+  "gates": [
+    {
+      "gate_id": "G01",
+      "name": "Named Inspire3 publisher acceptance for Final Vestige",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G02",
+      "name": "Exact permitted Zen12 SKU and merchant destination",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G03",
+      "name": "Permitted channels: website",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G04",
+      "name": "Permitted channels: YouTube and TikTok",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G05",
+      "name": "Permitted channels: newsletter/email (separately)",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G06",
+      "name": "Approved and documented earning URL",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G07",
+      "name": "Approved creatives/swipe usage terms, if any",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G08",
+      "name": "Actual landing page and click-through purchase flow verified",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G09",
+      "name": "Checkout live price/currency/taxes independently rechecked",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G10",
+      "name": "Refund window/exclusions and buyer support independently rechecked",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G11",
+      "name": "No claimed medical, clinical or wealth outcomes without adequate evidence",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G12",
+      "name": "Product-specific evidence substantiates every express/implied outcome claim",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G13",
+      "name": "FTC commission disclosure adjacent to earning link on mobile",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G14",
+      "name": "No misleading countdown, scarcity, testimonial or non-user endorsement",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G15",
+      "name": "Consent-aware first-party attribution approved by Claude",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G16",
+      "name": "No duplicate analytics script or tracking pixel",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G17",
+      "name": "No personal data or IP stored in campaign event payload",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G18",
+      "name": "Verified genuine published Grok asset IDs before live UTMs",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G19",
+      "name": "Landing message/asset intent fit accepted by Praxxis",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G20",
+      "name": "Mobile 360/390 accessibility keyboard and no-JS browser QA",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G21",
+      "name": "Reduced motion/autoplay/side-effect controls in video",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G22",
+      "name": "Accurate captions/transcript and original media rights reviewed",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G23",
+      "name": "Accessible on-screen CTA with real disabled/active state appropriate",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G24",
+      "name": "No live CMS/new category/homepage modifications without founder signoff",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G25",
+      "name": "Founder's written commercial and production release approval",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G26",
+      "name": "Source-controlled exact commit and CI evidence reviewed",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G27",
+      "name": "Single existing Jetpack Focus funnel and delivery QA",
+      "status": "HOLD",
+      "notes": "Single existing Jetpack form must be preserved"
+    },
+    {
+      "gate_id": "G28",
+      "name": "Payment/affiliate settlement receipt independently verified",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G29",
+      "name": "Net revenue reconciled refunds and fees",
+      "status": "HOLD",
+      "notes": ""
+    },
+    {
+      "gate_id": "G30",
+      "name": "7- and 30-day qualified-human cohorts and tiny-sample warnings",
+      "status": "HOLD",
+      "notes": ""
+    }
+  ],
+  "affiliate_url": null,
+  "commission_rate": null,
+  "verified_paid_orders": null,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "existing_jetpack_funnel_only": true,
+  "no_live_changes": true
+}
