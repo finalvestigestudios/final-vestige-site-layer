@@ -74,7 +74,7 @@ function buildNav(id){
   ` p{line-height:1.65;max-width:74ch}`,
   ` ol{list-style:none;padding:0;margin:1rem 0 1.3rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}`,
   ` li{min-width:0}`,
-  ` a, .here{display:block;min-height:102px;background:#f7f6f0;border:1px solid #b7bcb2;border-radius:5px;padding:14px;color:#25332e;text-decoration:none;overflow-wrap:anywhere}`,
+  ` a, #fv-log-series-${id} .here{display:block;min-height:102px;background:#f7f6f0;border:1px solid #b7bcb2;border-radius:5px;padding:14px;color:#25332e;text-decoration:none;overflow-wrap:anywhere}`,
   ` a:hover{border-color:#755322;background:#ece7d8}`,
   ` a:focus-visible{outline:3px solid #8b5b17;outline-offset:3px}`,
   ` .here{background:#e5ece2;border:2px solid #4c7156}`,
