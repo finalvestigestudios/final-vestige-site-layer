@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import unittest
-from fvs_suite.keyboard_access import install_shortcuts
+from fvs_suite.keyboard_access import install_shortcuts, format_keyboard_help
 
 
 class Widget:
@@ -232,6 +232,109 @@ class KeyboardAccessR44(unittest.TestCase):
         # The failing registration can leave an orphan in Tk; it cannot act.
         self.assertEqual(root.press("<F1>"), "break")
         self.assertEqual(shown, [])
+
+
+    # R531: on narrow/high-DPI forms the new F1 help must be read as short,
+    # ordered lines, with no customer input or arbitrary/unbounded modal text.
+    @staticmethod
+    def _r531_static_legend():
+        return (
+            "Keyboard: Alt+1..1 focus an input; Ctrl+1..1 browse; "
+            "numeric keypad 1..3 also supported (Num Lock on/off); "
+            "Alt+O/Ctrl+O output; Alt+G/Ctrl+Enter generate; "
+            "F1 opens keyboard help"
+        )
+
+    def test_r531_f1_help_has_short_separate_lines(self):
+        out = format_keyboard_help(self._r531_static_legend())
+        self.assertEqual(out.splitlines()[0], "Keyboard shortcuts:")
+        self.assertEqual(len(out.splitlines()), 8)
+        self.assertEqual(out.count("\n- "), 6)
+        self.assertIn("- F1 opens keyboard help", out)
+        self.assertTrue(all(len(line) <= 77 for line in out.splitlines()))
+
+    def test_r531_f1_help_preserves_order(self):
+        out = format_keyboard_help(self._r531_static_legend())
+        self.assertLess(out.index("Alt+1..1"), out.index("Ctrl+1..1"))
+        self.assertLess(out.index("Ctrl+1..1"), out.index("Alt+O/Ctrl+O"))
+        self.assertLess(out.index("Alt+O/Ctrl+O"), out.index("Alt+G/Ctrl+Enter"))
+
+    def test_r531_ledger_header_shortcuts_are_visible(self):
+        legend = self._r531_static_legend().replace(
+            "F1 opens keyboard help",
+            "Alt+L left match, Alt+R right match; "
+            "Alt+A left amount, Alt+M right amount (blank = automatic); "
+            "F1 opens keyboard help")
+        out = format_keyboard_help(legend)
+        self.assertIn("- Alt+L left match, Alt+R right match", out)
+        self.assertIn("- Alt+A left amount", out)
+
+    def test_r531_invoice_window_shortcut_visible(self):
+        legend = self._r531_static_legend().replace(
+            "F1 opens keyboard help",
+            "Alt+W near-match day window (0-365 days, default 7); "
+            "F1 opens keyboard help")
+        # The static legend uses a comma here to keep this one command intact.
+        out = format_keyboard_help(legend)
+        self.assertIn("- Alt+W near-match day window (0-365 days, default 7)", out)
+
+    def test_r531_procurement_premium_controls_visible(self):
+        legend = self._r531_static_legend().replace(
+            "F1 opens keyboard help",
+            "Alt+P optional policy; Ctrl+P browse policy; "
+            "Alt+R review exceptions; F1 opens keyboard help")
+        out = format_keyboard_help(legend)
+        self.assertIn("- Alt+P optional policy", out)
+        self.assertIn("- Ctrl+P browse policy", out)
+        self.assertIn("- Alt+R review exceptions", out)
+
+    def test_r531_f1_help_invocation_is_lazy_and_read_only(self):
+        shown = []
+        install_shortcuts(
+            self.root, self.fields[:1], self.output, self.generate,
+            help_action=lambda: shown.append(
+                format_keyboard_help(self._r531_static_legend())))
+        self.assertEqual(shown, [])
+        self.assertEqual(self.root.press("<F1>"), "break")
+        self.assertEqual(len(shown), 1)
+        self.assertTrue(shown[0].startswith("Keyboard shortcuts:"))
+        self.assertEqual(self.generate.invoked, 0)
+        self.assertEqual(self.review.invoked, 0)
+
+    def test_r531_help_rejects_subclasses_and_nontext(self):
+        class StrSubclass(str):
+            pass
+        for bad in (None, True, 5, StrSubclass(self._r531_static_legend())):
+            with self.subTest(kind=type(bad).__name__):
+                with self.assertRaisesRegex(ValueError, "bounded static legend"):
+                    format_keyboard_help(bad)
+
+    def test_r531_help_rejects_control_characters(self):
+        original = self._r531_static_legend()
+        for bad in (original + "\n", original + "\r",
+                    original + "\x00", original + "\x7f"):
+            with self.subTest(bad=repr(bad[-2:])):
+                with self.assertRaises(ValueError):
+                    format_keyboard_help(bad)
+
+    def test_r531_help_rejects_bad_delimiters_and_oversize(self):
+        original = self._r531_static_legend()
+        for bad in (original.replace("Keyboard: ", "Keys: "),
+                    original.replace("; ", ";; "),
+                    original.replace("F1 opens keyboard help", "x" * 76),
+                    original + "x" * 1000,
+                    original + "; x" * 8):
+            with self.subTest(length=len(bad)):
+                with self.assertRaises(ValueError):
+                    format_keyboard_help(bad)
+
+    def test_r531_help_is_deterministic_without_source_values(self):
+        original = self._r531_static_legend()
+        self.assertEqual(format_keyboard_help(original),
+                         format_keyboard_help(original))
+        for private in ("invoice.csv", r"C:\Users", "$100", "entitlement"):
+            self.assertNotIn(private, format_keyboard_help(original))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -3,7 +3,7 @@ import tkinter as tk
 from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
 from . import engine
-from .keyboard_access import install_shortcuts
+from .keyboard_access import install_shortcuts, format_keyboard_help
 from .action_gate import ActionGate
 from .form_layout import standard_stacked_rows
 from .scroll_access import ScrollableForm
@@ -302,7 +302,7 @@ def run(app_id):
         hint += ("; Alt+L left match, Alt+R right match; "
                  "Alt+A left amount, Alt+M right amount (blank = automatic)")
     if app_id == "invoices":
-        hint += "; Alt+W near-match day window (0-365; default 7)"
+        hint += "; Alt+W near-match day window (0-365 days, default 7)"
     if app_id == "procurement":
         hint += "; Alt+P optional policy; Ctrl+P browse policy"
     if premium:
@@ -330,6 +330,6 @@ def run(app_id):
                       policy_rules=policy_rules_controls,
                       ledger_headers=tuple(ledger_header_entries) if ledger_layout else None,
                       help_action=lambda: messagebox.showinfo(
-                          "Keyboard help", hint, parent=root))
+                          "Keyboard help", format_keyboard_help(hint), parent=root))
     root.after_idle(input_controls[0][0].focus_set)
     root.mainloop()
