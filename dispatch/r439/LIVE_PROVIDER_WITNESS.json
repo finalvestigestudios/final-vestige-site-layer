@@ -1,0 +1,67 @@
+{
+  "id": "fv-dispatch-r439",
+  "as_of_utc": "2026-11-18T04:31:45Z",
+  "status": "READ_ONLY_SOURCE_WITNESS_NO_SEND",
+  "source_urls": {
+    "issue174": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "issue171": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "master": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+    "last_stacked": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2951",
+    "site_editorial": "https://finalvestige.com/editorial-standards/",
+    "dispatch": "https://finalvestige.com/dispatch/",
+    "focus": "https://finalvestige.com/focus/",
+    "wp_docs": "https://wordpress.com/support/newsletter-settings/"
+  },
+  "newsletter": {
+    "enabled": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "recent_five_post_notifications": "never_sent_opted_out",
+    "welcome_configured": true,
+    "welcome_received_verified": false,
+    "site_can_send": true
+  },
+  "followers": {
+    "email": 0,
+    "reader": 3,
+    "stats_partial": false,
+    "note": "Source totals are not unique eligible mailboxes; Reader users may choose email according to their own preferences."
+  },
+  "promise": {
+    "email_every_published_investigation": true,
+    "public_page_language": "New investigations and archive finds by email, when we publish them.",
+    "status": "potential_expectation_mismatch_not_proof_of_broken_functionality"
+  },
+  "recipient_eligible_count": null,
+  "native_preview_received": false,
+  "publisher_postal_verified": false,
+  "rendered_unsubscribe_verified": false,
+  "issue_mix": {
+    "editorial": 4,
+    "commercial": 2
+  },
+  "commercial_offers": [
+    {
+      "issue": 3,
+      "id": "zen12",
+      "email_promotion_permission": "NOT_VERIFIED",
+      "approved_guide": "NOT_LIVE_VERIFIED",
+      "earning_link": "NOT_VERIFIED"
+    },
+    {
+      "issue": 5,
+      "id": "hypnosis_live",
+      "email_promotion_permission": "NOT_VERIFIED",
+      "approved_guide": "NOT_LIVE_VERIFIED",
+      "earning_link": "NOT_VERIFIED"
+    }
+  ],
+  "founder_final_send_approval": false,
+  "revenue_per_1000_qualified_human_sessions": null
+}
