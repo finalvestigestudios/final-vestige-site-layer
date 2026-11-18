@@ -212,7 +212,7 @@ def verify_checkout(root: Path, manifest_bytes: bytes, observed: dict | None = N
             if meta.get("status", {}).get("publish") != "draft":
                 raise ProvenanceHold(f"publication state changed: {slug}")
             if meta.get("safety_review", {}).get("state") in ("approved", "pass", "passed"):
-                raise ProvenanceHold(f"unqualified safety approval introduced: {slug}")
+                raise ProvenanceHold(f"preexisting approval metadata is not independent qualified safety review: {slug}")
             section = meta.get("section")
             if not isinstance(section, str) or not SLUG.fullmatch(section):
                 raise ProvenanceHold(f"invalid section: {slug}")
