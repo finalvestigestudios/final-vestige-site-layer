@@ -34,3 +34,8 @@
  .fv457__chronology-print a{color:#000!important;text-decoration:underline;overflow-wrap:anywhere;word-break:break-word}
  .fv457__chronology .fv457__moment{break-inside:avoid-page}
 }
+
+/* R465: editorial source acceptance is distinct from commercial image clearance. */
+.fv457__provenance{padding:.7em .9em;border-left:3px solid #d1b475;background:#292619;color:#f8e8c7;font-size:.92rem;overflow-wrap:anywhere}
+@media(forced-colors:active){.fv457__provenance{border-color:CanvasText}}
+@media print{.fv457__provenance{color:#000!important;background:#fff!important;border:1px solid #000!important}}
