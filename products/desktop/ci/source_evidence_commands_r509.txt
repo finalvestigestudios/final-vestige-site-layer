@@ -1,0 +1,416 @@
+python -W error -m unittest discover -s products/desktop/tests -p test_offline_source_gate_r485.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_offline_source_gate_r485.py
+python -W error -m unittest discover -s products/desktop/tests -p test_offline_source_gate_strict_r486.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_offline_source_gate_strict_r486.py
+python -W error -m unittest discover -s products/desktop/tests -p test_offline_source_stream_budget_r487.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_offline_source_stream_budget_r487.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_offline_source_descendant_custody_r488.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_offline_source_descendant_custody_r488.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_offline_source_success_descendant_r489.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_offline_source_success_descendant_r489.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_windows_job_custody_r490.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_windows_job_custody_r490.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_windows_source_start_custody_r491.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_windows_source_start_custody_r491.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_windows_source_protocol_r492.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_windows_source_protocol_r492.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_custody_r493.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_custody_r493.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_binding_integration_r493.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_binding_integration_r493.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_directory_guard_r494.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_directory_guard_r494.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_directory_binding_r494.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_directory_binding_r494.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_guard_r496.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_guard_r496.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_binding_r496.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_binding_r496.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_tail_r497.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_tail_r497.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_raw_descriptor_r498.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_raw_descriptor_r498.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_outer_padding_r499.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_outer_padding_r499.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_receipt_privacy_r500.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_receipt_privacy_r500.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_compat_r501.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_compat_r501.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_seek_receipt_r502.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_seek_receipt_r502.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_read_position_r503.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_certificate_read_position_r503.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_header_receipt_r505.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_header_receipt_r505.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_header_binding_r505.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_header_binding_r505.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_receipts_r506.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_pe_digest_receipts_r506.py
+python -W error -m unittest discover -s products/desktop/tests -p test_independent_ci_r385.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_independent_ci_r385.py
+python -W error -m unittest discover -s products/desktop/tests -p test_smoke_result_custody_r386.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_smoke_result_custody_r386.py
+python -W error -m unittest discover -s products/desktop/tests -p test_smoke_receipt_contract_r387.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_smoke_receipt_contract_r387.py
+python -W error -m unittest discover -s products/desktop/tests -p test_source_smoke_gate_r21.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_source_smoke_gate_r21.py
+python -W error -m unittest discover -s products/desktop/tests -p test_procurement_policy_private_json_r388.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_policy_private_json_r388.py
+python -W error -m unittest discover -s products/desktop/tests -p test_procurement_policy_privacy_integration_r388.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_policy_privacy_integration_r388.py
+python -W error -m unittest discover -s products/desktop/tests -p test_smoke_output_roles_r389.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_smoke_output_roles_r389.py
+python -W error -m unittest discover -s products/desktop/tests -p test_candidate_reparse_r390.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_candidate_reparse_r390.py
+python -W error -m unittest discover -s products/desktop/tests -p test_candidate_path_ancestry_r391.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_candidate_path_ancestry_r391.py
+python -W error -m unittest discover -s products/desktop/tests -p test_candidate_path_integration_r391.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_candidate_path_integration_r391.py
+python -W error -m unittest discover -s products/desktop/tests -p test_report_attestation_custody_r392.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_report_attestation_custody_r392.py
+python -W error -m unittest discover -s products/desktop/tests -p test_release_gate_privacy_r393.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_release_gate_privacy_r393.py
+python -W error -m unittest discover -s products/desktop/tests -p test_report_private_exception_custody_r394.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_report_private_exception_custody_r394.py
+python -W error -m unittest discover -s products/desktop/tests -p test_review_utc_canonical_r395.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_utc_canonical_r395.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_review_utc_integration_r395.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_review_utc_integration_r395.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_source_error_privacy_r396.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_source_error_privacy_r396.py
+python -W error -m unittest discover -s products/desktop/tests -p test_financial_callback_exception_custody_r397.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_financial_callback_exception_custody_r397.py
+python -W error -m unittest discover -s products/desktop/tests -p test_review_source_identity_r398.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_source_identity_r398.py
+python -W error -m unittest discover -s products/desktop/tests -p test_import_identity_integration_r398.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_import_identity_integration_r398.py
+python -W error -m unittest discover -s products/desktop/tests -p test_audit_identity_boundaries_r399.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_audit_identity_boundaries_r399.py
+python -W error -m unittest discover -s products/desktop/tests -p test_audit_display_r81.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_audit_display_r81.py
+python -W error -m unittest discover -s products/desktop/tests -p test_source_label_visibility_r97.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_source_label_visibility_r97.py
+python -W error -m unittest discover -s products/desktop/tests -p test_review_combining_identity_r400.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_combining_identity_r400.py
+python -W error -m unittest discover -s products/desktop/tests -p test_review_spacing_marks_r401.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_spacing_marks_r401.py
+python -W error -m unittest discover -s products/desktop/tests -p test_policy_spacing_mark_evidence_r402.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_policy_spacing_mark_evidence_r402.py
+python -W error -m unittest discover -s products/desktop/tests -p test_policy_display_r76.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_policy_display_r76.py
+python -W error -m unittest discover -s products/desktop/tests -p test_policy_spacing_r78.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_policy_spacing_r78.py
+python -W error -m unittest discover -s products/desktop/tests -p test_policy_local_canonical_r178.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_policy_local_canonical_r178.py
+python -W error -m unittest discover -s products/desktop/tests -p test_keyboard_target_preflight_r403.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_keyboard_target_preflight_r403.py
+python -W error -m unittest discover -s products/desktop/tests -p test_keyboard_binding_integration_r403.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_keyboard_binding_integration_r403.py
+python -W error -m unittest discover -s products/desktop/tests -p test_keyboard_access_r44.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_keyboard_access_r44.py
+python -W error -m unittest discover -s products/desktop/tests -p test_keyboard_bind_uncertain_r404.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_keyboard_bind_uncertain_r404.py
+python -W error -m unittest discover -s products/desktop/tests -p test_keyboard_staged_activation_r405.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_keyboard_staged_activation_r405.py
+python -W error -m unittest discover -s products/desktop/tests -p test_keyboard_bind_ack_r406.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_keyboard_bind_ack_r406.py
+python -W error -m unittest discover -s products/desktop/tests -p test_keyboard_unique_receipts_r407.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_keyboard_unique_receipts_r407.py
+python -W error products/desktop/scripts/source_smoke_gate.py
+python -OO -W error products/desktop/scripts/source_smoke_gate.py
+python -W error -m unittest discover -s products/desktop/tests -p test_safety_smoke.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_safety_smoke.py
+python -W error -m unittest discover -s products/desktop/tests -p test_vault_crypto_gate_r316.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_vault_crypto_gate_r316.py
+python -W error -m unittest discover -s products/desktop/tests -p test_offline_entitlement_r11.py
+python -W error -m unittest discover -s products/desktop/tests -p test_license_issuer_r12.py
+python -W error -m unittest discover -s products/desktop/tests -p test_license_registry_r13.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_offline_entitlement_r11.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_license_issuer_r12.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_license_registry_r13.py
+python -W error -m unittest discover -s products/desktop/tests -p test_entitlement_payload_privacy_r384.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_entitlement_payload_privacy_r384.py
+python -W error -m unittest discover -s products/desktop/tests -p test_offline_source_smoke_r408.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_offline_source_smoke_r408.py
+python -I products/desktop/offline_source_smoke_r408.py
+python -W error -m unittest discover -s products/desktop/tests -p test_offline_source_privacy_r409.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_offline_source_privacy_r409.py
+python -W error -m unittest discover -s products/desktop/tests -p test_offline_source_environment_r410.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_offline_source_environment_r410.py
+python -W error -m unittest discover -s products/desktop/tests -p test_offline_source_continuity_r411.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_offline_source_continuity_r411.py
+python -W error -m unittest discover -s products/desktop/tests -p test_source_import_artifacts_r412.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_source_import_artifacts_r412.py
+python -W error -m unittest discover -s products/desktop/tests -p test_import_file_custody_r413.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_import_file_custody_r413.py
+python -W error -m unittest discover -s products/desktop/tests -p test_launcher_route_r414.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_launcher_route_r414.py
+python -W error -m unittest discover -s products/desktop/tests -p test_source_inventory_budget_r415.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_source_inventory_budget_r415.py
+python -W error -m unittest discover -s products/desktop/tests -p test_source_smoke_runtime_r416.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_source_smoke_runtime_r416.py
+python -W error -m unittest discover -s products/desktop/tests -p test_source_descriptor_custody_r417.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_source_descriptor_custody_r417.py
+python -W error -m unittest discover -s products/desktop/tests -p test_single_inventory_r418.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_single_inventory_r418.py
+python -W error -m unittest discover -s products/desktop/tests -p test_review_identity_gate_r419.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_identity_gate_r419.py
+python -W error -m unittest discover -s products/desktop/tests -p test_review_identity_integration_r419.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_identity_integration_r419.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_review_revalidation_r420.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_review_revalidation_r420.py
+python -W error -m unittest discover -s products/desktop/tests -p test_review_auth_proof_r248.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_auth_proof_r248.py
+python -W error -m unittest discover -s products/desktop/tests -p test_review_revocation_r247.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_revocation_r247.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_launch_proof_r252.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_launch_proof_r252.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_label_independent_r430.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_label_independent_r430.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_compatibility_formula_r431.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_compatibility_formula_r431.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_compatibility_integration_r431.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_compatibility_integration_r431.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_verification_integration_r430.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_verification_integration_r430.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_visible_labels_r158.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_visible_labels_r158.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_integration_r358.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_integration_r358.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_review_history_r157.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_review_history_r157.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_source_label_custody_r428.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_source_label_custody_r428.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_evidence_r358.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_evidence_r358.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_source_label_integration_r428.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_source_label_integration_r428.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_group_digest_r427.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_group_digest_r427.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_group_digest_integration_r427.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_group_digest_integration_r427.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_source_digest_r426.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_source_digest_r426.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_source_digest_integration_r426.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_source_digest_integration_r426.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_source_digest_r61.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_source_digest_r61.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_month_r152.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_month_r152.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_engine_integration_r59.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_engine_integration_r59.py
+python -W error -m unittest discover -s products/desktop/tests -p test_inventory_native_digest_custody_r425.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_inventory_native_digest_custody_r425.py
+python -W error -m unittest discover -s products/desktop/tests -p test_manifest_guard_r29.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_manifest_guard_r29.py
+python -W error -m unittest discover -s products/desktop/tests -p test_snapshot_manifest_binding_r31.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_snapshot_manifest_binding_r31.py
+python -W error -m unittest discover -s products/desktop/tests -p test_identity_normalization_budget_r424.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_identity_normalization_budget_r424.py
+python -W error -m unittest discover -s products/desktop/tests -p test_native_identity_date_r177.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_native_identity_date_r177.py
+python -W error -m unittest discover -s products/desktop/tests -p test_csv_snapshot_native_budget_r423.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_snapshot_native_budget_r423.py
+python -W error -m unittest discover -s products/desktop/tests -p test_csv_snapshot_r30.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_snapshot_r30.py
+python -W error -m unittest discover -s products/desktop/tests -p test_csv_descriptor_custody_r258.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_descriptor_custody_r258.py
+python -W error -m unittest discover -s products/desktop/tests -p test_csv_snapshot_exception_privacy_r296.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_snapshot_exception_privacy_r296.py
+python -W error -m unittest discover -s products/desktop/tests -p test_entitlement_native_product_r422.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_entitlement_native_product_r422.py
+python -W error -m unittest discover -s products/desktop/tests -p test_offline_entitlement_r11.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_offline_entitlement_r11.py
+python -W error -m unittest discover -s products/desktop/tests -p test_review_scope_mandatory_r421.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_scope_mandatory_r421.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_review_revalidation_r420.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_review_revalidation_r420.py
+python -W error -m unittest discover -s products/desktop/tests -p test_review_revocation_r247.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_revocation_r247.py
+python -W error -m unittest discover -s products/desktop/tests -p test_review_auth_proof_r248.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_review_auth_proof_r248.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_launch_proof_r252.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_launch_proof_r252.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_private_unicode_custody_r432.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_private_unicode_custody_r432.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_private_report_errors_integration_r432.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_private_report_errors_integration_r432.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_compatibility_formula_r431.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_compatibility_formula_r431.py
+python -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_verification_integration_r430.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_spend_vendor_verification_integration_r430.py
+python -W error -m unittest discover -s products/desktop/tests -p test_manifest_private_read_budget_r433.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_manifest_private_read_budget_r433.py
+python -W error -m unittest discover -s products/desktop/tests -p test_manifest_guard_r29.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_manifest_guard_r29.py
+python -W error -m unittest discover -s products/desktop/tests -p test_inventory_native_digest_custody_r425.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_inventory_native_digest_custody_r425.py
+python -W error -m unittest discover -s products/desktop/tests -p test_snapshot_manifest_binding_r31.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_snapshot_manifest_binding_r31.py
+python -W error -m unittest discover -s products/desktop/tests -p test_focus_viewport_r434.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_focus_viewport_r434.py
+python -W error -m unittest discover -s products/desktop/tests -p test_scroll_access_r107.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_scroll_access_r107.py
+python -W error -m unittest discover -s products/desktop/tests -p test_responsive_controls_r435.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_responsive_controls_r435.py
+python -W error -m unittest discover -s products/desktop/tests -p test_native_wheel_owner_r436.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_native_wheel_owner_r436.py
+python -W error -m unittest discover -s products/desktop/tests -p test_native_wheel_focus_integration_r436.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_native_wheel_focus_integration_r436.py
+python -W error -m unittest discover -s products/desktop/tests -p test_wheel_access_r227.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_wheel_access_r227.py
+python -W error -m unittest discover -s products/desktop/tests -p test_wheel_modifiers_r229.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_wheel_modifiers_r229.py
+python -W error -m unittest discover -s products/desktop/tests -p test_wheel_edge_guard_r230.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_wheel_edge_guard_r230.py
+python -W error -m unittest discover -s products/desktop/tests -p test_responsive_controls_r435.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_responsive_controls_r435.py
+python -W error -m unittest discover -s products/desktop/tests -p test_focus_viewport_r434.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_focus_viewport_r434.py
+python -W error -m unittest discover -s products/desktop/tests -p test_native_wheel_ancestry_r437.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_native_wheel_ancestry_r437.py
+python -W error -m unittest discover -s products/desktop/tests -p test_native_wheel_ancestry_integration_r437.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_native_wheel_ancestry_integration_r437.py
+python -W error -m unittest discover -s products/desktop/tests -p test_native_wheel_owner_r436.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_native_wheel_owner_r436.py
+python -W error -m unittest discover -s products/desktop/tests -p test_native_wheel_focus_integration_r436.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_native_wheel_focus_integration_r436.py
+python -W error -m unittest discover -s products/desktop/tests -p test_issuer_registry_native_product_r438.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_issuer_registry_native_product_r438.py
+python -W error -m unittest discover -s products/desktop/tests -p test_license_issuer_r12.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_license_issuer_r12.py
+python -W error -m unittest discover -s products/desktop/tests -p test_license_registry_r13.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_license_registry_r13.py
+python -W error -m unittest discover -s products/desktop/tests -p test_entitlement_native_product_r422.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_entitlement_native_product_r422.py
+python -W error -m unittest discover -s products/desktop/tests -p test_registry_private_guard_chains_r439.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_registry_private_guard_chains_r439.py
+python -W error -m unittest discover -s products/desktop/tests -p test_registry_schema_guard_r14.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_registry_schema_guard_r14.py
+python -W error -m unittest discover -s products/desktop/tests -p test_registry_row_guard_r15.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_registry_row_guard_r15.py
+python -W error -m unittest discover -s products/desktop/tests -p test_license_registry_r13.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_license_registry_r13.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_issuer_fault_custody_r440.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_issuer_fault_custody_r440.py
+python -W error -m unittest discover -s products/desktop/tests -p test_registry_private_guard_chains_r439.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_registry_private_guard_chains_r439.py
+python -W error -m unittest discover -s products/desktop/tests -p test_license_issuer_r12.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_license_issuer_r12.py
+python -W error -m unittest discover -s products/desktop/tests -p test_license_registry_r13.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_license_registry_r13.py
+python -W error -m unittest discover -s products/desktop/tests -p test_holder_identity_pure_r441.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_holder_identity_pure_r441.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_holder_custody_r441.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_holder_custody_r441.py
+python -W error -m unittest discover -s products/desktop/tests -p test_holder_display_boundaries_r442.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_holder_display_boundaries_r442.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_holder_boundaries_r442.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_holder_boundaries_r442.py
+python -W error -m unittest discover -s products/desktop/tests -p test_invoice_iterable_privacy_r443.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_invoice_iterable_privacy_r443.py
+python -W error -m unittest discover -s products/desktop/tests -p test_invoice_iterable_integration_r443.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_invoice_iterable_integration_r443.py
+python -W error -m unittest discover -s products/desktop/tests -p test_invoice_boundary_r67.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_invoice_boundary_r67.py
+python -W error -m unittest discover -s products/desktop/tests -p test_invoice_source_order_r93.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_invoice_source_order_r93.py
+python -W error -m unittest discover -s products/desktop/tests -p test_invoice_review_custody_r444.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_invoice_review_custody_r444.py
+python -W error -m unittest discover -s products/desktop/tests -p test_invoice_boundary_r67.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_invoice_boundary_r67.py
+python -W error -m unittest discover -s products/desktop/tests -p test_invoice_source_order_r93.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_invoice_source_order_r93.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_manifest_private_chains_r445.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_manifest_private_chains_r445.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_manifest_completion_r254.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_manifest_completion_r254.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_inventory_stability_r255.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_inventory_stability_r255.py
+python -W error -m unittest discover -s products/desktop/tests -p test_evidence_labels_r446.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_evidence_labels_r446.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_manifest_completion_r254.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_manifest_completion_r254.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_inventory_stability_r255.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_inventory_stability_r255.py
+python -W error -m unittest discover -s products/desktop/tests -p test_windows_evidence_basename_r447.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_windows_evidence_basename_r447.py
+python -W error -m unittest discover -s products/desktop/tests -p test_windows_manifest_integration_r447.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_windows_manifest_integration_r447.py
+python -W error -m unittest discover -s products/desktop/tests -p test_evidence_labels_r446.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_evidence_labels_r446.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_manifest_completion_r254.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_manifest_completion_r254.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_inventory_stability_r255.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_inventory_stability_r255.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_manifest_link_custody_r448.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_manifest_link_custody_r448.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_inventory_stability_r255.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_inventory_stability_r255.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_manifest_completion_r254.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_manifest_completion_r254.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_invisible_marks_r449.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_invisible_marks_r449.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_invisible_marks_integration_r449.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_invisible_marks_integration_r449.py
+python -W error -m unittest discover -s products/desktop/tests -p test_evidence_labels_r446.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_evidence_labels_r446.py
+python -W error -m unittest discover -s products/desktop/tests -p test_premium_manifest_link_custody_r448.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_premium_manifest_link_custody_r448.py
+python -W error -m unittest discover -s products/desktop/tests -p test_csv_private_context_r450.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_private_context_r450.py
+python -W error -m unittest discover -s products/desktop/tests -p test_csv_guard_import_contract_r451.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_guard_import_contract_r451.py
+python -W error -m unittest discover -s products/desktop/tests -p test_csv_publish_guard_r237.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_publish_guard_r237.py
+python -W error -m unittest discover -s products/desktop/tests -p test_csv_publication_integration_r237.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_publication_integration_r237.py
+python -W error -m unittest discover -s products/desktop/tests -p test_csv_errno_descriptor_custody_r452.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_errno_descriptor_custody_r452.py
+python -W error -m unittest discover -s products/desktop/tests -p test_csv_serialization_preflight_r453.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_serialization_preflight_r453.py
+python -W error -m unittest discover -s products/desktop/tests -p test_csv_exact_dialect_preflight_r454.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_exact_dialect_preflight_r454.py
+python -W error -m unittest discover -s products/desktop/tests -p test_csv_negative_decimal_zero_copy_r455.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_negative_decimal_zero_copy_r455.py
+python -W error -m unittest discover -s products/desktop/tests -p test_csv_safe_cell_zero_copy_r456.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_safe_cell_zero_copy_r456.py
+python -W error -m unittest discover -s products/desktop/tests -p test_csv_incremental_render_budget_r457.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_incremental_render_budget_r457.py
+python -W error -m unittest discover -s products/desktop/tests -p test_csv_bounded_utf8_witness_r458.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_csv_bounded_utf8_witness_r458.py
+python -W error -m unittest discover -s products/desktop/tests -p test_offline_regression_gate_r459.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_offline_regression_gate_r459.py
+python -W error -m unittest discover -s products/desktop/tests -p test_offline_smoke_receipt_r460.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_offline_smoke_receipt_r460.py
+python -W error -m unittest discover -s products/desktop/tests -p test_source_digest_binding_r461.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_source_digest_binding_r461.py
+python -W error -m unittest discover -s products/desktop/tests -p test_private_json_receipt_r462.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_private_json_receipt_r462.py
+python -B products/desktop/offline_regression_gate_r459.py
+python -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_budget_r475.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_budget_r475.py
+python -W error -m unittest discover -s products/desktop/tests -p test_procurement_integration_r5.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_integration_r5.py
+python -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_atomic_r476.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_atomic_r476.py
+python -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_canonical_r477.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_canonical_r477.py
+python -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_private_rows_r478.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_private_rows_r478.py
+python -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_foreign_offset_r479.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_cross_po_foreign_offset_r479.py
+python -W error -m unittest discover -s products/desktop/tests -p test_procurement_foreign_offset_integration_r479.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_foreign_offset_integration_r479.py
+python -W error -m unittest discover -s products/desktop/tests -p test_procurement_foreign_offset_fanout_r480.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_foreign_offset_fanout_r480.py
+python -W error -m unittest discover -s products/desktop/tests -p test_procurement_foreign_row_key_cache_r481.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_foreign_row_key_cache_r481.py
+python -W error -m unittest discover -s products/desktop/tests -p test_procurement_shared_row_key_cache_r482.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_shared_row_key_cache_r482.py
+python -W error -m unittest discover -s products/desktop/tests -p test_procurement_foreign_hash_custody_r483.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_procurement_foreign_hash_custody_r483.py
+python -W error -m unittest discover -s products/desktop/tests -p test_inventory_staging_ancestry_r484.py
+python -OO -W error -m unittest discover -s products/desktop/tests -p test_inventory_staging_ancestry_r484.py
+python -B -W error -m unittest discover -s products/desktop/tests -p test_source_evidence_runner_r509.py
+python -OO -B -W error -m unittest discover -s products/desktop/tests -p test_source_evidence_runner_r509.py
