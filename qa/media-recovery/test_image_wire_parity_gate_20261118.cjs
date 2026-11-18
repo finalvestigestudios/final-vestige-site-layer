@@ -79,3 +79,26 @@ test("unrecovered_404_after_must_remain_hold_even_when_savings_look_large",()=>{
  assert.equal(y.threshold_met,false);
  assert.ok(y.errors.some(s=>s.includes("broken_after")));
 });
+
+test("same_master_after_crop_change_must_hold",()=>{
+ const x=make("historic-61",61,20);
+ for(const phase of ["before","after"])for(const device of ["desktop","mobile"]){
+  const m=x[phase][device].pages[0].images[0];
+  m.authored_src="https://i0.wp.com/archives.gov/pic.jpg?crop="+(phase==="before"?"center":"left")+"&w=960";
+  m.current_src=m.authored_src;m.final_url=m.authored_src;
+ }
+ const y=evaluate(x);
+ assert.equal(y.threshold_met,false);
+ assert.ok(y.errors.some(s=>s.includes("unapproved_framing_change")));
+});
+test("same_master_after_add_zoom_must_hold",()=>{
+ const x=make("current-66",66,24);
+ for(const device of ["desktop","mobile"]){
+  const m=x.after[device].pages[0].images[0];
+  m.authored_src="https://i0.wp.com/archives.gov/pic.jpg?zoom=2&w=960";
+  m.current_src=m.authored_src;m.final_url=m.authored_src;
+ }
+ const y=evaluate(x);
+ assert.equal(y.threshold_met,false);
+ assert.ok(y.errors.some(s=>s.includes("unapproved_framing_change")));
+});
