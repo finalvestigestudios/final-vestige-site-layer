@@ -40,7 +40,7 @@ class Gate(unittest.TestCase):
           ('https://www.tiktok.com/@name/video/7312345678901234567?x=1','tiktok'),
           ('https://www.tiktok.com/@name/video/7312345678901234567','youtube'),
           ('https://www.youtube.com/watch?v=AaBbCcDd_12%0a','youtube'),
-          ('https://www.youtube.com/watch?v=AaBbCcDd_12\','youtube'),
+          ('https://www.youtube.com/watch?v=AaBbCcDd_12\\','youtube'),
           ('javascript:alert(1)','youtube'),
           ('https://www.youtube.com./watch?v=AaBbCcDd_12','youtube'),
           ('https://www.youtube.com/watch?url=https://evil.org','youtube'),
