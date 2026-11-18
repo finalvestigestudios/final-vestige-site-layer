@@ -3,7 +3,7 @@ import tkinter as tk
 from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
 from . import engine
-from .keyboard_access import install_shortcuts, format_keyboard_help
+from .keyboard_access import install_shortcuts, show_keyboard_help
 from .action_gate import ActionGate
 from .form_layout import standard_stacked_rows
 from .scroll_access import ScrollableForm
@@ -329,7 +329,6 @@ def run(app_id):
                       invoice_window=invoice_window_entry,
                       policy_rules=policy_rules_controls,
                       ledger_headers=tuple(ledger_header_entries) if ledger_layout else None,
-                      help_action=lambda: messagebox.showinfo(
-                          "Keyboard help", format_keyboard_help(hint), parent=root))
+                      help_action=lambda: show_keyboard_help(root, hint))
     root.after_idle(input_controls[0][0].focus_set)
     root.mainloop()
