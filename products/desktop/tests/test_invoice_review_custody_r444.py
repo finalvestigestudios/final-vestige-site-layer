@@ -420,9 +420,9 @@ class InvoiceCleanReviewIdentityR527(unittest.TestCase):
     def test_one_side_raw_vendor_label_contradicts_accepted_key(self):
         a, b = row(), row(3)
         b["vendor"] = "NotAcme"
-        # A visible source-label collision already requires human review.
+        # Preserve the collision review and explicitly flag source/key conflict.
         self.assertEqual(review_flags(a, b, "exact_invoice_key"),
-                         "normalized_vendor_key_review")
+                         "normalized_vendor_key_review;source_identity_key_mismatch_review")
         b["vendor"] = a["vendor"]
         b["v"] = a["v"] = "SPOOF"
         self.refuse(a, b)
@@ -495,6 +495,123 @@ class InvoiceCleanReviewIdentityR527(unittest.TestCase):
         a["v"] = b["v"] = "FAKE"
         before = deepcopy((a, b))
         self.refuse(a, b)
+        self.assertEqual((a, b), before)
+
+
+
+# R528: direct review source/key contradictions must remain visible even
+# when another independent ambiguity already produces a human-review flag.
+# Standalone synthetic evidence only; no files, network or premium artifacts.
+class InvoiceFlaggedSourceIdentityR528(unittest.TestCase):
+    MISMATCH = "source_identity_key_mismatch_review"
+
+    def test_forged_left_vendor_stays_visible_after_collision(self):
+        a = row()
+        a["vendor"] = "OtherVendor"
+        self.assertEqual(
+            review_flags(a, row(3), "exact_invoice_key"),
+            "normalized_vendor_key_review;" + self.MISMATCH)
+
+    def test_forged_right_vendor_stays_visible_after_collision(self):
+        b = row(3)
+        b["vendor"] = "OtherVendor"
+        self.assertEqual(
+            review_flags(row(), b, "exact_invoice_key"),
+            "normalized_vendor_key_review;" + self.MISMATCH)
+
+    def test_forged_left_invoice_stays_visible_after_collision(self):
+        a = row()
+        a["invoice_number"] = "OTHER"
+        self.assertEqual(
+            review_flags(a, row(3), "exact_invoice_key"),
+            "normalized_invoice_key_review;" + self.MISMATCH)
+
+    def test_forged_right_invoice_stays_visible_after_collision(self):
+        b = row(3)
+        b["invoice_number"] = "OTHER"
+        self.assertEqual(
+            review_flags(row(), b, "exact_invoice_key"),
+            "normalized_invoice_key_review;" + self.MISMATCH)
+
+    def test_four_contradictions_make_only_one_explicit_mismatch_flag(self):
+        a, b = row(), row(3)
+        a["vendor"] = b["vendor"] = "WrongVendor"
+        a["invoice_number"] = "OTHER"
+        b["invoice_number"] = "DIFFERENT"
+        flags = review_flags(a, b, "exact_invoice_key").split(";")
+        self.assertIn(self.MISMATCH, flags)
+        self.assertEqual(flags.count(self.MISMATCH), 1)
+        self.assertEqual(flags[-1], self.MISMATCH)
+
+    def test_variance_and_date_flags_are_retained(self):
+        b = row(3, vendor="OtherVendor", amount=Decimal("14.00"), day=12)
+        self.assertEqual(
+            review_flags(row(), b, "exact_invoice_key"),
+            "normalized_vendor_key_review;amount_variance_review;"
+            "distant_dates_review;" + self.MISMATCH)
+
+    def test_sign_review_is_retained_with_source_mismatch(self):
+        b = row(3, invoice="OTHER", amount=Decimal("-12.00"))
+        # Exact invoice number identity is also required for this status.
+        b["inv"] = "INVA"
+        self.assertEqual(
+            review_flags(row(), b, "exact_invoice_key"),
+            "normalized_invoice_key_review;amount_variance_review;"
+            "opposing_signed_amounts_review;" + self.MISMATCH)
+
+    def test_near_vendor_collision_and_forged_invoice_label(self):
+        b = row(3, vendor="Acme ", invoice="OTHER")
+        b["invoice_number"] = "FORGED"
+        self.assertEqual(
+            review_flags(row(), b, "review_possible_duplicate"),
+            "normalized_vendor_key_review;" + self.MISMATCH)
+
+    def test_near_genuine_pair_remains_clean(self):
+        self.assertEqual(
+            review_flags(row(), row(3, invoice="OTHER"),
+                         "review_possible_duplicate"), "")
+
+    def test_clean_vendor_key_spoof_still_fails_closed(self):
+        a, b = row(), row(3)
+        a["v"] = b["v"] = "OTHER"
+        with self.assertRaisesRegex(ValueError, "contradict") as caught:
+            review_flags(a, b, "exact_invoice_key")
+        self.assertIsNone(caught.exception.__context__)
+
+    def test_clean_invoice_key_spoof_still_fails_closed(self):
+        a, b = row(), row(3)
+        a["inv"] = b["inv"] = "OTHER"
+        with self.assertRaisesRegex(ValueError, "contradict") as caught:
+            review_flags(a, b, "exact_invoice_key")
+        self.assertIsNone(caught.exception.__context__)
+
+    def test_valid_raw_vendor_punctuation_only_remains_review(self):
+        self.assertEqual(
+            review_flags(row(), row(3, vendor="Acme-"), "exact_invoice_key"),
+            "normalized_vendor_key_review")
+
+    def test_valid_raw_invoice_punctuation_only_remains_review(self):
+        self.assertEqual(
+            review_flags(row(invoice="INV-A"), row(3, invoice="INV A"),
+                         "exact_invoice_key"), "normalized_invoice_key_review")
+
+    def test_unicode_uppercase_expansion_remains_a_normal_collision(self):
+        self.assertEqual(
+            review_flags(row(invoice="Straße"), row(3, invoice="STRASSE"),
+                         "exact_invoice_key"), "normalized_invoice_key_review")
+
+    def test_private_forged_label_is_not_written_to_review_flags(self):
+        b = row(3)
+        b["vendor"] = PRIVATE
+        flags = review_flags(row(), b, "exact_invoice_key")
+        self.assertEqual(
+            flags, "normalized_vendor_key_review;" + self.MISMATCH)
+        self.assertNotIn(PRIVATE, flags)
+
+    def test_source_dicts_not_mutated_even_for_forged_flagged_pair(self):
+        a, b = row(), row(3, vendor="OtherVendor")
+        before = deepcopy((a, b))
+        self.assertIn(self.MISMATCH, review_flags(a, b, "exact_invoice_key"))
         self.assertEqual((a, b), before)
 
 
