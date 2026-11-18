@@ -776,7 +776,7 @@ class SourcePrelaunchR515(unittest.TestCase):
              patch.object(runner, "load_commands", return_value=self.commands), \
              patch.object(runner, "execute", return_value=0) as do_execute:
             self.assertEqual(runner.main(), 0)
-        do_execute.assert_called_once_with(self.commands, verify_source_snapshots=True,\n                                           manifest_snapshot=b"synthetic inventory\\n")
+        do_execute.assert_called_once_with(self.commands, verify_source_snapshots=True,\n                                           manifest_snapshot=b"synthetic inventory\n")
 
 
 # R516 regression methods remain in the existing 416-command source inventory.
@@ -1169,7 +1169,7 @@ class BoundedManifestR519(unittest.TestCase):
                  patch.object(runner, "execute", return_value=0) as run:
                 self.assertEqual(runner.main(), 0)
             load.assert_called_once_with(path.read_bytes())
-            run.assert_called_once_with(commands, verify_source_snapshots=True,\n                                        manifest_snapshot=b"synthetic pinned source\\n")
+            run.assert_called_once_with(commands, verify_source_snapshots=True,\n                                        manifest_snapshot=b"synthetic pinned source\n")
 
 
 
@@ -1341,7 +1341,7 @@ class PostflightR521(unittest.TestCase):
     """R521 last-process mutation controls in the pinned source-test module."""
 
     CMD = (("-W", "error", "products/desktop/scripts/source_smoke_gate.py"),)
-    RAW = b"synthetic manifest\\n"
+    RAW = b"synthetic manifest\n"
 
     def run_matrix(self, source_results, *, manifest=None, reader=None):
         launched = []
@@ -1350,9 +1350,9 @@ class PostflightR521(unittest.TestCase):
             return SimpleNamespace(returncode=0)
         source_results = iter(source_results)
         matches = lambda *args: next(source_results)
-        with TemporaryDirectory() as d, \\
-             patch.object(runner, "source_fingerprint", return_value=b"x" * 32), \\
-             patch.object(runner, "matches_source_fingerprint", side_effect=matches), \\
+        with TemporaryDirectory() as d, \
+             patch.object(runner, "source_fingerprint", return_value=b"x" * 32), \
+             patch.object(runner, "matches_source_fingerprint", side_effect=matches), \
              patch.object(runner, "read_manifest_bounded",
                           side_effect=reader if reader else None,
                           return_value=self.RAW if manifest is None else manifest):
@@ -1380,7 +1380,7 @@ class PostflightR521(unittest.TestCase):
 
     def test_last_child_rewrites_immutable_manifest_is_hold(self):
         result, error, out, launched = self.run_matrix(
-            (True, True), manifest=b"modified manifest\\n")
+            (True, True), manifest=b"modified manifest\n")
         self.assertEqual(result, 1)
         self.assertIn("source matrix changed after checks", error)
         self.assertNotIn("PASS:", out)
