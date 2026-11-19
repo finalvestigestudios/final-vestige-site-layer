@@ -1,0 +1,69 @@
+{
+  "schema": "r462-public-aggregate-v1",
+  "as_of": "2026-11-19T03:37:22Z",
+  "privacy": "NO PII: rows contain only status and email_subscriber; NOT subscriber IDs",
+  "note": "Stats Subscribers privately inspected as aggregate; no raw list exported",
+  "newsletter": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2
+  },
+  "filters": {
+    "all": {
+      "total": 3,
+      "rows": [
+        {
+          "status": "Subscribed",
+          "email_subscriber": true
+        },
+        {
+          "status": "Subscribed",
+          "email_subscriber": true
+        },
+        {
+          "status": "Subscribed",
+          "email_subscriber": true
+        }
+      ]
+    },
+    "email": {
+      "total": 3,
+      "rows": [
+        {
+          "status": "Subscribed",
+          "email_subscriber": true
+        },
+        {
+          "status": "Subscribed",
+          "email_subscriber": true
+        },
+        {
+          "status": "Subscribed",
+          "email_subscriber": true
+        }
+      ]
+    },
+    "reader": {
+      "total": 0,
+      "rows": []
+    },
+    "unconfirmed": {
+      "total": 2,
+      "rows": [
+        {
+          "status": "Not confirmed",
+          "email_subscriber": true
+        },
+        {
+          "status": "Not confirmed",
+          "email_subscriber": true
+        }
+      ]
+    }
+  },
+  "followers": {
+    "email": 0,
+    "wpcom": 3,
+    "partial": false
+  }
+}
