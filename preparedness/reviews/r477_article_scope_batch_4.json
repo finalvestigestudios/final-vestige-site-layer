@@ -1,0 +1,897 @@
+{
+  "schema": "fv-r477-authentic-35-article-scope-custody-batch-v1",
+  "repo": "finalvestigestudios/final-vestige-site-layer",
+  "candidate_ref": "1d4d885c0b427d4b1bfbb77cf2ecf0c10a0dc070",
+  "candidate_manifest_blob": "2adcffe48fcbb3ac3aa9eb2fc18b048f032fcc0c",
+  "authenticated_source_index_blob": "f6e505331a3f66c27e4ccde38dd6ca8709993b75",
+  "crosswalk_blob": "d62e493a67dedd23e04cfdf3cce762ef933c6bf9",
+  "batch": 4,
+  "total_batches": 5,
+  "release": "DRAFT_HARD_HOLD",
+  "review_state": "ALL_CLAIM_SCOPES_UNADJUDICATED",
+  "qualified_qd_pass": false,
+  "publication_authorized": false,
+  "articles": [
+    {
+      "slug": "rain-barrels-and-cisterns",
+      "n": 29,
+      "origin": "hist-home",
+      "body_git_blob": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+      "metadata_git_blob": "dc42694e842969624f24ab5edc9bff2497693e70",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 44,
+      "distinct_citation_ids": 7,
+      "citation_sequence": [
+        "hist-home-cdc-rainwater",
+        "hist-home-cdc-rainwater",
+        "cdc-find-clean-water",
+        "hist-home-cdc-rainwater",
+        "hist-home-monticello-cisterns",
+        "hist-home-monticello-cisterns",
+        "hist-home-monticello-cisterns",
+        "hist-home-monticello-cisterns",
+        "hist-home-monticello-cisterns",
+        "hist-home-nps-fort-union-water",
+        "hist-home-nps-fort-union-water",
+        "hist-home-nps-fort-union-water",
+        "hist-home-nps-san-juan-cisterns",
+        "hist-home-nps-san-juan-cisterns",
+        "hist-home-nps-san-juan-cisterns",
+        "hist-home-cdc-rainwater",
+        "hist-home-epa-rain-barrels",
+        "hist-home-cdc-rainwater",
+        "hist-home-cdc-rainwater",
+        "hist-home-cdc-rainwater",
+        "hist-home-cdc-rainwater",
+        "hist-home-cdc-rainwater",
+        "hist-home-cdc-rainwater",
+        "hist-home-cdc-cisterns",
+        "hist-home-cdc-cisterns",
+        "hist-home-cdc-rainwater",
+        "hist-home-epa-rain-barrels",
+        "hist-home-monticello-cisterns",
+        "hist-home-nps-fort-union-water",
+        "hist-home-nps-san-juan-cisterns",
+        "hist-home-monticello-cisterns",
+        "hist-home-nps-fort-union-water",
+        "hist-home-nps-san-juan-cisterns",
+        "hist-home-cdc-rainwater",
+        "hist-home-cdc-rainwater",
+        "hist-home-epa-rain-barrels",
+        "hist-home-cdc-cisterns",
+        "hist-home-cdc-rainwater",
+        "hist-home-cdc-cisterns",
+        "hist-home-cdc-rainwater",
+        "cdc-find-clean-water",
+        "hist-home-monticello-cisterns",
+        "hist-home-nps-fort-union-water",
+        "hist-home-cdc-rainwater"
+      ],
+      "source_claims": [
+        {
+          "sid": "hist-home-cdc-rainwater",
+          "source_use_exact": "Rainwater not necessarily safe to drink; sources of germs and chemicals; limit swallowing; test and treat; keep separate from piped water; first-flush diverters; mosquito cautions; local rules.",
+          "occurrences": 16,
+          "first_context": "rms and chemicals from it. Even when it looks clean, it can contain things that could make you sick.{{cite:hist-home-cdc-rainwater}}</li> <li>If you collect rainwater, the CDC suggests using it in ways that limit the chance you will swallow it, and using tap w"
+        },
+        {
+          "sid": "cdc-find-clean-water",
+          "source_use_exact": "Rainwater and other outdoor sources must be treated.",
+          "occurrences": 2,
+          "first_context": "oor sources that need treatment. See {{link:making-water-safer|making water safer in an emergency}}.{{cite:cdc-find-clean-water}}</li> <li>Collecting rainwater is not allowed in every place. Check with your state environmental or health department before you s"
+        },
+        {
+          "sid": "hist-home-monticello-cisterns",
+          "source_use_exact": "Jefferson's four brick cisterns, his arithmetic, the leaks, and his unrealized sand-well plan for potable water.",
+          "occurrences": 8,
+          "first_context": "aundry and garden.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-monticello-cisterns}} Jefferson did the arithmetic himself, multiplying average rainfall by the area of the roofs, and concluded that four bric"
+        },
+        {
+          "sid": "hist-home-nps-fort-union-water",
+          "source_use_exact": "Fort Union's roof-fed cisterns kept for fire; wells and privies; the page is silent on drinking cistern water.",
+          "occurrences": 6,
+          "first_context": " plumbing arrived.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-nps-fort-union-water}} The rain was a supplement, not the supply. The fort kept a large store of water on hand in case of fire, \"using primaril"
+        },
+        {
+          "sid": "hist-home-nps-san-juan-cisterns",
+          "source_use_exact": "Spanish cisterns at San Juan, the 1898 closure on fear of poisoning, and restoration for non-potable use.",
+          "occurrences": 5,
+          "first_context": "n of their water.\"<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-nps-san-juan-cisterns}}</p> <p>The same release records an episode that shows how a community with no way to test water behaves. After the Span"
+        },
+        {
+          "sid": "hist-home-epa-rain-barrels",
+          "source_use_exact": "Rain barrels and cisterns defined; roof runoff can carry bacteria and chemicals; consider before using on edible plants.",
+          "occurrences": 3,
+          "first_context": "cals from roof materials, and says to consider this before using rain barrel water on edible plants.{{cite:hist-home-epa-rain-barrels}}</p> <p>The second hazard is what happens in the tank. The CDC advises regularly emptying rain barrels and keeping the system"
+        },
+        {
+          "sid": "hist-home-cdc-cisterns",
+          "source_use_exact": "Untreated catchment cisterns after a disaster; disinfecting storm debris or floodwater does not work well; fuel and chemicals cannot be treated away; flush-only use.",
+          "occurrences": 4,
+          "first_context": "contaminated through the open connections.<span class=\"pa-tag pa-tag--fact\">Official guidance</span>{{cite:hist-home-cdc-cisterns}}</p> <p>It also says that if a cistern's water has fuel or other toxic chemicals in it, treating it cannot make it safe, and that"
+        }
+      ]
+    },
+    {
+      "slug": "root-cellars-cool-storage",
+      "n": 27,
+      "origin": "hist-home",
+      "body_git_blob": "2ff8d029769aa9a97de6b1e388d937899f3af38c",
+      "metadata_git_blob": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+      "authored_publish": "draft",
+      "authored_safety_state": "not-required",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 42,
+      "distinct_citation_ids": 8,
+      "citation_sequence": [
+        "hist-home-mu-root-cellars",
+        "hist-home-fsis-refrigeration",
+        "cdc-botulism-prevention",
+        "hist-home-nps-oxon-hill-root-cellar",
+        "hist-home-nps-ww2-canning",
+        "hist-home-nps-oxon-hill-root-cellar",
+        "hist-home-mu-root-cellars",
+        "hist-home-mu-root-cellars",
+        "hist-home-mu-root-cellars",
+        "hist-home-mu-root-cellars",
+        "hist-home-msu-simmons-1798",
+        "hist-home-msu-simmons-1798",
+        "hist-home-msu-simmons-1798",
+        "hist-home-mu-root-cellars",
+        "hist-home-mu-root-cellars",
+        "hist-home-nps-ww2-canning",
+        "hist-home-monticello-ice-house",
+        "hist-home-monticello-ice-house",
+        "hist-home-monticello-ice-house",
+        "hist-home-nps-fort-union-water",
+        "hist-home-monticello-ice-house",
+        "hist-home-fsis-refrigeration",
+        "hist-home-mu-root-cellars",
+        "hist-home-fsis-refrigeration",
+        "hist-home-mu-root-cellars",
+        "hist-home-mu-root-cellars",
+        "hist-home-nps-oxon-hill-root-cellar",
+        "hist-home-msu-simmons-1798",
+        "hist-home-mu-root-cellars",
+        "hist-home-mu-root-cellars",
+        "hist-home-monticello-ice-house",
+        "hist-home-monticello-ice-house",
+        "hist-home-fsis-refrigeration",
+        "hist-home-mu-root-cellars",
+        "hist-home-mu-root-cellars",
+        "hist-home-fsis-refrigeration",
+        "cdc-botulism-prevention",
+        "hist-home-monticello-ice-house",
+        "hist-home-nps-oxon-hill-root-cellar",
+        "hist-home-monticello-ice-house",
+        "hist-home-mu-root-cellars",
+        "hist-home-fsis-refrigeration"
+      ],
+      "source_claims": [
+        {
+          "sid": "hist-home-mu-root-cellars",
+          "source_use_exact": "Crop-by-crop storage conditions; do not freeze; do not store fruit with vegetables; storage life depends on crop, conditions and condition at storage; ground storage; companion publications.",
+          "occurrences": 15,
+          "first_context": "what you store together. It says not to let produce freeze, and not to store fruits with vegetables.{{cite:hist-home-mu-root-cellars}}</li> <li>For perishable foods, the USDA's benchmark is a refrigerator at 40 °F or below. A cellar is a different tool.{{cite:"
+        },
+        {
+          "sid": "hist-home-fsis-refrigeration",
+          "source_use_exact": "USDA benchmark: 40 F or below, appliance thermometer, danger zone, two-hour limit.",
+          "occurrences": 6,
+          "first_context": "hable foods, the USDA's benchmark is a refrigerator at 40 °F or below. A cellar is a different tool.{{cite:hist-home-fsis-refrigeration}}</li> </ul> <p class=\"pa-act-note\">If you or someone in your home has stomach illness, fever or vomiting after eating store"
+        },
+        {
+          "sid": "cdc-botulism-prevention",
+          "source_use_exact": "If in doubt, throw it out.",
+          "occurrences": 2,
+          "first_context": " a stored food is safe, the CDC's rule for home-preserved food is simple: if in doubt, throw it out.{{cite:cdc-botulism-prevention}}</p> </section> <ul class=\"pa-key\" aria-label=\"How to read the labels in this guide\"> <li><span class=\"pa-tag pa-tag--doc\">Docu"
+        },
+        {
+          "sid": "hist-home-nps-oxon-hill-root-cellar",
+          "source_use_exact": "An 1830 partly underground root cellar that kept vegetables through winter before refrigeration.",
+          "occurrences": 4,
+          "first_context": " without spoiling.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-nps-oxon-hill-root-cellar}} The wider Park Service account of home preservation in the 1940s says the same about root vegetables generally: the"
+        },
+        {
+          "sid": "hist-home-nps-ww2-canning",
+          "source_use_exact": "Root vegetables stored in root cellars or in the ground over winter.",
+          "occurrences": 2,
+          "first_context": ": they stored well in cool, dark places like root cellars, or even stored in the ground over winter.{{cite:hist-home-nps-ww2-canning}}</p> <p><span class=\"pa-tag pa-tag--ed\">Editor's note</span> Both accounts are short and describe what the structure was for. "
+        },
+        {
+          "sid": "hist-home-msu-simmons-1798",
+          "source_use_exact": "A 1798 cook book's instructions on cellar storage of potatoes, butter and preserved fruit, and parsnips left in the ground.",
+          "occurrences": 4,
+          "first_context": "oiled for cooking.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-msu-simmons-1798}} Butter packed in May is to be set in the coldest part of the cellar or in the ice-house, and preserved fruit in a cool, dry "
+        },
+        {
+          "sid": "hist-home-monticello-ice-house",
+          "source_use_exact": "Jefferson's ice house: purpose, labor, 62 wagon loads, losses to melting, ice failing in September 1810 and lasting to October 15, 1815.",
+          "occurrences": 8,
+          "first_context": "k for the drivers.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-monticello-ice-house}}</p> <p>The record also shows the losses. At the Italian ice houses Jefferson visited, his note records, about a third of"
+        },
+        {
+          "sid": "hist-home-nps-fort-union-water",
+          "source_use_exact": "Fort Union's subterranean ice houses and ice cutting from dammed creek ponds.",
+          "occurrences": 1,
+          "first_context": "eam in the summer.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-nps-fort-union-water}}</p> <p><span class=\"pa-tag pa-tag--ed\">Editor's note</span> Taken together, the records describe cold that was seasonal,"
+        }
+      ]
+    },
+    {
+      "slug": "safe-jerky-dehydration",
+      "n": 11,
+      "origin": "food",
+      "body_git_blob": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+      "metadata_git_blob": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 71,
+      "distinct_citation_ids": 11,
+      "citation_sequence": [
+        "food-fsis-jerky",
+        "food-fsis-jerky-qa",
+        "nchfp-jerky",
+        "food-ksu-jerky",
+        "nchfp-jerky",
+        "nchfp-jerky",
+        "nchfp-jerky",
+        "food-fsis-jerky",
+        "food-ksu-jerky",
+        "food-fsis-emergencies",
+        "food-fsis-jerky",
+        "food-fsis-jerky",
+        "food-fsis-jerky",
+        "food-fsis-jerky",
+        "food-fsis-jerky",
+        "nchfp-jerky",
+        "food-fsis-jerky",
+        "nchfp-jerky",
+        "food-fsis-jerky-qa",
+        "nchfp-jerky",
+        "nchfp-jerky",
+        "nchfp-jerky",
+        "nchfp-jerky",
+        "food-fsis-jerky",
+        "nchfp-jerky",
+        "food-fsis-jerky",
+        "food-fsis-jerky",
+        "nchfp-jerky",
+        "nchfp-jerky",
+        "food-ksu-jerky",
+        "food-ksu-jerky",
+        "food-fsis-jerky",
+        "food-fsis-jerky-qa",
+        "food-fsis-jerky-qa",
+        "nchfp-jerky",
+        "food-ksu-jerky",
+        "nchfp-jerky",
+        "nchfp-jerky",
+        "food-ksu-jerky",
+        "nchfp-jerky",
+        "nchfp-jerky",
+        "food-ksu-jerky",
+        "food-fsis-jerky",
+        "nchfp-jerky",
+        "food-fsis-jerky",
+        "food-fsis-jerky-qa",
+        "food-ksu-jerky",
+        "food-fsis-jerky-qa",
+        "nchfp-jerky",
+        "food-fsis-jerky-qa",
+        "nchfp-jerky",
+        "food-ksu-jerky",
+        "nchfp-jerky",
+        "food-fsis-jerky-qa",
+        "nchfp-jerky",
+        "nchfp-jerky",
+        "nchfp-jerky",
+        "food-fsis-jerky",
+        "food-fsis-shelf-stable",
+        "food-ksu-jerky",
+        "nchfp-jerky",
+        "food-osu-survival-food",
+        "food-fsis-jerky",
+        "fsis-home-cure-qa",
+        "cdc-botulism-prevention",
+        "nchfp-cure-smoke",
+        "food-fsis-shelf-stable",
+        "food-fsis-jerky",
+        "food-osu-survival-food",
+        "nchfp-jerky",
+        "food-cdc-risk-factors"
+      ],
+      "source_claims": [
+        {
+          "sid": "food-fsis-jerky",
+          "source_use_exact": "Why dehydrators do not kill pathogens; Salmonella and E. coli O157:H7; 160 F / 165 F then 130 to 140 F; the physics of heat resistance; sun drying; the two studies as FSIS summarizes them; wild game; storage times.",
+          "occurrences": 17,
+          "first_context": " illnesses from <em>Salmonella</em> and <em>E. coli</em> O157:H7 have been traced to homemade jerky.{{cite:food-fsis-jerky}}</li> <li><strong>Heat the meat to a safe internal temperature, and prove it with a thermometer.</strong> The USDA Meat and Poultry Hotl"
+        },
+        {
+          "sid": "food-fsis-jerky-qa",
+          "source_use_exact": "Current Hotline recommendation; steam or roast to 160 F / 165 F; dehydrator holds 130 to 140 F; test piece; 10 to 24 hours; handling steps.",
+          "occurrences": 8,
+          "first_context": "t the dried strips in an oven afterwards. The sources disagree about the order; see the table below.{{cite:food-fsis-jerky-qa}}{{cite:nchfp-jerky}}{{cite:food-ksu-jerky}}</li> <li><strong>Slice no thicker than ¼ inch,</strong> trim off the fat, and keep the me"
+        },
+        {
+          "sid": "nchfp-jerky",
+          "source_use_exact": "Raw poultry; Trichinella freezing; handling; wild game; two heating routes to 160 F; slices no thicker than 1/4 inch; dry at 140 F; ground meat; packaging; 2 weeks at room temperature.",
+          "occurrences": 27,
+          "first_context": "en afterwards. The sources disagree about the order; see the table below.{{cite:food-fsis-jerky-qa}}{{cite:nchfp-jerky}}{{cite:food-ksu-jerky}}</li> <li><strong>Slice no thicker than ¼ inch,</strong> trim off the fat, and keep the meat cold (40°F or below) and"
+        },
+        {
+          "sid": "food-ksu-jerky",
+          "source_use_exact": "March 2026 extension summary: same two heating methods; do not raise dehydrator temperature (case hardening); ground-meat oven step; 1 to 2 months; refrigerate or freeze.",
+          "occurrences": 10,
+          "first_context": "ources disagree about the order; see the table below.{{cite:food-fsis-jerky-qa}}{{cite:nchfp-jerky}}{{cite:food-ksu-jerky}}</li> <li><strong>Slice no thicker than ¼ inch,</strong> trim off the fat, and keep the meat cold (40°F or below) and the equipment clean"
+        },
+        {
+          "sid": "food-fsis-emergencies",
+          "source_use_exact": "USDA Meat and Poultry Hotline number and hours.",
+          "occurrences": 1,
+          "first_context": "8-674-6854, Monday to Friday 10 a.m. to 6 p.m. Eastern) answers questions about making jerky safely.{{cite:food-fsis-emergencies}} For a ready-made supply, commercially made jerky is produced under federal inspection and is listed by FSIS as shelf-stable for 1"
+        },
+        {
+          "sid": "food-fsis-shelf-stable",
+          "source_use_exact": "Home-dried jerky shelf life and why it is shorter; sun drying and low-acid foods; storage chart.",
+          "occurrences": 2,
+          "first_context": "commends a shorter shelf life for homemade jerky because the process varies.{{cite:food-fsis-jerky}}{{cite:food-fsis-shelf-stable}}</td></tr> <tr><th scope=\"row\">Kansas State Extension (March 2026)</th><td>Homemade jerky is best used within 1 to 2 months. Refr"
+        },
+        {
+          "sid": "food-osu-survival-food",
+          "source_use_exact": "Vacuum-sealing low-acid foods and botulism; jerky as a pantry protein.",
+          "occurrences": 2,
+          "first_context": "ate an environment for botulism toxin to grow if the foods would normally be refrigerated or frozen.{{cite:food-osu-survival-food}} They may not conflict, because one concerns dried jerky and the other fresh foods, but neither source says vacuum packaging make"
+        },
+        {
+          "sid": "fsis-home-cure-qa",
+          "source_use_exact": "Botulism cases have followed home-canned, preserved, cured, smoked or fermented foods; points to NCHFP.",
+          "occurrences": 1,
+          "first_context": "th toxin, and points consumers to the National Center for Home Food Preservation for tested methods.{{cite:fsis-home-cure-qa}}</li> <li>The CDC lists improperly preserved homemade foods among the common sources of foodborne botulism, says you cannot see, smell"
+        },
+        {
+          "sid": "cdc-botulism-prevention",
+          "source_use_exact": "Improperly preserved homemade foods; toxin cannot be seen, smelled or tasted; if in doubt throw it out.",
+          "occurrences": 1,
+          "first_context": "orne botulism, says you cannot see, smell or taste the toxin, and says: \"If in doubt, throw it out\".{{cite:cdc-botulism-prevention}}</li> <li>NCHFP describes curing as using salt, and sometimes sugar and seasonings, to draw moisture out of meat, and as a matte"
+        },
+        {
+          "sid": "nchfp-cure-smoke",
+          "source_use_exact": "Curing as a balance of time, temperature and ingredients; where tested curing and smoking methods live.",
+          "occurrences": 1,
+          "first_context": "ngredients. It has its own pages for curing and smoking, and that is where tested instructions live.{{cite:nchfp-cure-smoke}}</li> <li><span class=\"pa-tag pa-tag--unc\">Uncertain</span> <strong>Smoking.</strong> The sources we read for this guide do not evaluat"
+        },
+        {
+          "sid": "food-cdc-risk-factors",
+          "source_use_exact": "Who is at higher risk of severe food poisoning.",
+          "occurrences": 1,
+          "first_context": "weakened immune systems and pregnant women are at higher risk of severe illness from food poisoning.{{cite:food-cdc-risk-factors}} The jerky sources we read give no separate rule for them, and we did not read CDC's \"Safer Food Choices\" pages. <span class=\"pa-t"
+        }
+      ]
+    },
+    {
+      "slug": "salt-beef-salt-pork-age-of-sail",
+      "n": 21,
+      "origin": "base",
+      "body_git_blob": "6539aafeca9bca67c96247c81a7412b117201b88",
+      "metadata_git_blob": "1c4c5396da703f3724b584c67e49e2128ab1f4c6",
+      "authored_publish": "draft",
+      "authored_safety_state": "approved",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 49,
+      "distinct_citation_ids": 10,
+      "citation_sequence": [
+        "cdc-botulism-prevention",
+        "nchfp-cure-smoke",
+        "cdc-botulism-prevention",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "rmg-biscuit-aab0766",
+        "usscm-brenckle-2019",
+        "rmg-life-at-sea",
+        "usscm-brenckle-2019",
+        "rmg-life-at-sea",
+        "usscm-brenckle-2019",
+        "jll-trohler-2003",
+        "si-lind-1753",
+        "jll-trohler-2003",
+        "jll-trohler-2003",
+        "usscm-brenckle-2019",
+        "si-nmah-life-aboard",
+        "si-nmah-life-aboard",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "rmg-life-at-sea",
+        "jll-trohler-2003",
+        "fsis-botulism",
+        "nchfp-cure-smoke",
+        "fsis-botulism",
+        "cdc-botulism-prevention",
+        "fsis-home-cure-qa",
+        "fsis-botulism",
+        "cdc-botulism-prevention",
+        "usscm-brenckle-2019",
+        "fsis-botulism",
+        "nchfp-cure-smoke",
+        "cdc-botulism-prevention"
+      ],
+      "source_claims": [
+        {
+          "sid": "cdc-botulism-prevention",
+          "source_use_exact": "Current botulism prevention advice: pressure canning for low-acid foods, toxin cannot be seen, smelled or tasted.",
+          "occurrences": 5,
+          "first_context": ", smoked, salted and fermented foods have caused botulism. You cannot see, smell or taste the toxin.{{cite:cdc-botulism-prevention}}</li> <li>If you want to preserve meat at home, use a procedure published and tested by the USDA or the National Center for Home"
+        },
+        {
+          "sid": "nchfp-cure-smoke",
+          "source_use_exact": "Where to find tested home curing and smoking methods, and how the NCHFP describes what curing does.",
+          "occurrences": 3,
+          "first_context": "hed and tested by the USDA or the National Center for Home Food Preservation, and follow it exactly.{{cite:nchfp-cure-smoke}}</li> <li>If you do not know whether a food was safely preserved, the CDC's advice is short: if in doubt, throw it out.{{cite:cdc-botul"
+        },
+        {
+          "sid": "usscm-brenckle-2019",
+          "source_use_exact": "1813 load-out and weekly ration table; the 1812 Binney beef and pork specification; steeping practice; Melville and other journal accounts; bread contract and biscuit dimensions; pests; scurvy theory about 'slush'; 1802 water rules.",
+          "occurrences": 25,
+          "first_context": "ew of roughly 450.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:usscm-brenckle-2019}}</p> <p>The beef and pork were not fresh and could not be. They were cut, salted, and packed into barrels on shore, loaded, stowed, "
+        },
+        {
+          "sid": "rmg-biscuit-aab0766",
+          "source_use_exact": "A surviving ship's biscuit in a museum collection, as a physical record of the bread half of the ration.",
+          "occurrences": 1,
+          "first_context": "made to an 1846 recipe, marked with a broad arrow and the letter C, measuring 15 by 135 millimetres.{{cite:rmg-biscuit-aab0766}}</p> <p>The infestation stories are partly true. The museum study identifies real pests that could ruin a bag of biscuit (the cadell"
+        },
+        {
+          "sid": "rmg-life-at-sea",
+          "source_use_exact": "Overview of the main shipboard rations, the way storage and vermin degraded food, and the cause of scurvy.",
+          "occurrences": 3,
+          "first_context": "view lists storage problems, poor ventilation and vermin among the reasons ship's food deteriorated.{{cite:rmg-life-at-sea}} A sailor on a round-the-world expedition in 1838 recalled mouldy biscuit full of grubs, but the study cautions that his ship had been a"
+        },
+        {
+          "sid": "jll-trohler-2003",
+          "source_use_exact": "Scholarly account of Lind's trial and the Navy's slow response.",
+          "occurrences": 4,
+          "first_context": "tise of the Scurvy</em> argued the evidence at length; Smithsonian Libraries holds a digitized copy.{{cite:jll-trohler-2003}}{{cite:si-lind-1753}} The scale of the problem is stark in the same scholarship: an account of Anson's circumnavigation, published in 1"
+        },
+        {
+          "sid": "si-lind-1753",
+          "source_use_exact": "The digitized 1753 Treatise of the Scurvy, as the primary source for the scurvy discussion.",
+          "occurrences": 1,
+          "first_context": "rgued the evidence at length; Smithsonian Libraries holds a digitized copy.{{cite:jll-trohler-2003}}{{cite:si-lind-1753}} The scale of the problem is stark in the same scholarship: an account of Anson's circumnavigation, published in 1748, is what first drew L"
+        },
+        {
+          "sid": "si-nmah-life-aboard",
+          "source_use_exact": "A fishing schooner's 1879 provisions list, as a contrast with naval scale.",
+          "occurrences": 2,
+          "first_context": "rrels of beef, one of pork, one of hams, ten of flour, 330 pounds of sugar and 200 pounds of butter.{{cite:si-nmah-life-aboard}} By volume, the salt aboard was not for the crew; it was for the catch, and the crew's own barrelled meat is a footnote beside it. T"
+        },
+        {
+          "sid": "fsis-botulism",
+          "source_use_exact": "Botulism, the role of nitrite in cured meat, and the link to traditionally prepared salted foods.",
+          "occurrences": 4,
+          "first_context": "um</em> spores</th><td><span class=\"pa-tag pa-tag--fact\">Official guidance</span></td><td>USDA FSIS.{{cite:fsis-botulism}}</td></tr> </tbody></table></div> <h2 id=\"why-it-worked\">Why salt works, and why that is not enough</h2> <p>The National Center for Home "
+        },
+        {
+          "sid": "fsis-home-cure-qa",
+          "source_use_exact": "USDA's statement that botulism cases have followed home-cured, smoked, preserved and fermented foods.",
+          "occurrences": 1,
+          "first_context": "ods contaminated with toxin, and points consumers to the National Center for Home Food Preservation.{{cite:fsis-home-cure-qa}}</li> <li>FSIS lists traditionally prepared salted or fermented fish among foods linked to recent botulism illness.{{cite:fsis-botulis"
+        }
+      ]
+    },
+    {
+      "slug": "sanitation-before-germ-theory",
+      "n": 33,
+      "origin": "hist-home",
+      "body_git_blob": "d56df76647d2598f35cfd4609f91649cef063f12",
+      "metadata_git_blob": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+      "authored_publish": "draft",
+      "authored_safety_state": "not-required",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 48,
+      "distinct_citation_ids": 10,
+      "citation_sequence": [
+        "hist-home-cdc-clean-hands",
+        "hist-home-chadwick-cureus",
+        "hist-home-chadwick-cureus",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-smith-naval-hygiene",
+        "rmg-life-at-sea",
+        "hist-home-nps-fort-union-water",
+        "hist-home-nps-fort-union-water",
+        "hist-home-nps-fort-union-water",
+        "hist-home-chadwick-cureus",
+        "hist-home-chadwick-cureus",
+        "hist-home-chadwick-cureus",
+        "hist-home-wellcome-chadwick-1842",
+        "hist-home-tulchinsky-snow",
+        "hist-home-snow-mode-of-communication",
+        "hist-home-wellcome-snow-map",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-chadwick-cureus",
+        "hist-home-tulchinsky-snow",
+        "cdc-water-safe",
+        "hist-home-chadwick-cureus",
+        "hist-home-chadwick-cureus",
+        "hist-home-cdc-clean-hands",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-chadwick-cureus",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-chadwick-cureus",
+        "hist-home-chadwick-cureus",
+        "hist-home-tulchinsky-snow",
+        "hist-home-cdc-clean-hands",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-chadwick-cureus",
+        "cdc-water-safe",
+        "hist-home-cdc-clean-hands",
+        "hist-home-smith-naval-hygiene",
+        "hist-home-chadwick-cureus",
+        "hist-home-cdc-clean-hands",
+        "cdc-water-safe"
+      ],
+      "source_claims": [
+        {
+          "sid": "hist-home-cdc-clean-hands",
+          "source_use_exact": "Handwashing with soap prevents respiratory and diarrheal infections; five steps; 60% alcohol sanitizer when soap is unavailable.",
+          "occurrences": 5,
+          "first_context": "If soap and water are not available, the CDC says to use a hand sanitizer with at least 60% alcohol.{{cite:hist-home-cdc-clean-hands}}</li> <li>If your water or sewage service fails, follow your local health department. For the water side, see {{link:water-adv"
+        },
+        {
+          "sid": "hist-home-chadwick-cureus",
+          "source_use_exact": "Miasma theory defined; Chadwick's 1842 report; its cost and rejection; the 1848 Public Health Act; a claimed reduction in cholera and typhoid.",
+          "occurrences": 13,
+          "first_context": "ng organic matter.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-chadwick-cureus}}</p> <p>The theory was wrong about the mechanism and, as it happens, useful in practice. The same review notes that although g"
+        },
+        {
+          "sid": "hist-home-smith-naval-hygiene",
+          "source_use_exact": "Royal Navy hygiene: washing and fumigating decks, 'cleanse or die', Admiralty instructions, miasma beliefs, contagionist adherents, limits and later decline in casualties.",
+          "occurrences": 17,
+          "first_context": " \"cleanse or die!\"<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-smith-naval-hygiene}}</p> <p>The study's main subject is the steam-age Navy of 1840 to 1900, but it traces the practice back to the eighteenth "
+        },
+        {
+          "sid": "rmg-life-at-sea",
+          "source_use_exact": "Poor storage, ventilation and vermin degraded shipboard food; scurvy and malnutrition.",
+          "occurrences": 1,
+          "first_context": " among the reasons food deteriorated, and poor diet caused malnutrition and diseases such as scurvy.{{cite:rmg-life-at-sea}} That is a reminder that a sanitation program on a ship was fighting on several fronts, not all of which were about filth. For the dieta"
+        },
+        {
+          "sid": "hist-home-nps-fort-union-water",
+          "source_use_exact": "Privies, pits, bathing and flooding at an army post.",
+          "occurrences": 3,
+          "first_context": "w call sanitation.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-nps-fort-union-water}}</p> <p>Indoor plumbing arrived at Fort Union in the mid-1880s, but, the page says, bathroom facilities \"remained rudimen"
+        },
+        {
+          "sid": "hist-home-wellcome-chadwick-1842",
+          "source_use_exact": "Archive record of a digitized copy of Chadwick's 1842 report (imprint, parliamentary presentation, 546 images). Catalogue record only.",
+          "occurrences": 1,
+          "first_context": " by Her Majesty's Stationery Office in 1842 and presented to both Houses of Parliament in July 1842.{{cite:hist-home-wellcome-chadwick-1842}} We read that record, not the report's 546 pages.</p> <h2 id=\"snow\">Snow's challenge to the bad-air theory</h2> <p>Whi"
+        },
+        {
+          "sid": "hist-home-tulchinsky-snow",
+          "source_use_exact": "Snow's two-water-company comparison and the 14-times figure.",
+          "occurrences": 3,
+          "first_context": "take was upstream.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-tulchinsky-snow}} Snow described the comparison in his own text as an experiment \"on the grandest scale.\"{{cite:hist-home-snow-mode-of-communic"
+        },
+        {
+          "sid": "hist-home-snow-mode-of-communication",
+          "source_use_exact": "Snow's description of the comparison as an experiment on the grandest scale.",
+          "occurrences": 1,
+          "first_context": "insky-snow}} Snow described the comparison in his own text as an experiment \"on the grandest scale.\"{{cite:hist-home-snow-mode-of-communication}}</p> <p>The Wellcome Collection's catalogue entry for a map from the Cholera Inquiry Committee's 1855 report to the"
+        },
+        {
+          "sid": "hist-home-wellcome-snow-map",
+          "source_use_exact": "Archive record of a map from the Cholera Inquiry Committee's 1855 vestry report (Snow's section), which covered sanitation, sewerage, cess pools and water supply.",
+          "occurrences": 1,
+          "first_context": "nformation about population, housing, sanitation, sewerage, cess pools and the water supply of Soho.{{cite:hist-home-wellcome-snow-map}} In other words, the record of a pump and a map sits inside a wider sanitary survey of a neighborhood.</p> <p>The full accou"
+        },
+        {
+          "sid": "cdc-water-safe",
+          "source_use_exact": "Current CDC water-safety guidance as the modern benchmark.",
+          "occurrences": 3,
+          "first_context": " as the carrier; current guidance treats clean water as essential.{{cite:hist-home-tulchinsky-snow}}{{cite:cdc-water-safe}}</td></tr> <tr><th scope=\"row\">Sewers and waste disposal</th><td>Remove the filth that makes foul air.{{cite:hist-home-chadwick-cureus}}<"
+        }
+      ]
+    },
+    {
+      "slug": "shelter-or-evacuate",
+      "n": 14,
+      "origin": "shelter",
+      "body_git_blob": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+      "metadata_git_blob": "cb559141d1e4a39debad16cf5cb796b746a01f19",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 59,
+      "distinct_citation_ids": 15,
+      "citation_sequence": [
+        "shelter-ready-hurricanes",
+        "shelter-ready-wildfires",
+        "shelter-ready-tornadoes",
+        "shelter-ready-hazmat",
+        "shelter-ready-hurricanes",
+        "shelter-nws-nwr",
+        "shelter-ready-evacuation",
+        "shelter-ready-shelter",
+        "shelter-ready-shelter",
+        "shelter-ready-evacuation",
+        "shelter-ready-shelter",
+        "shelter-ready-tornadoes",
+        "shelter-ready-hurricanes",
+        "shelter-ready-floods",
+        "shelter-ready-wildfires",
+        "shelter-ready-hazmat",
+        "shelter-ready-winter-weather",
+        "shelter-ready-power-outages",
+        "shelter-ready-floods",
+        "shelter-ready-hurricanes",
+        "shelter-ready-hazmat",
+        "shelter-ready-tornadoes",
+        "shelter-ready-tornadoes",
+        "shelter-ready-tornadoes",
+        "shelter-ready-tornadoes",
+        "shelter-ready-hurricanes",
+        "shelter-ready-hurricanes",
+        "shelter-ready-hurricanes",
+        "shelter-ready-floods",
+        "shelter-ready-floods",
+        "shelter-ready-floods",
+        "shelter-ready-wildfires",
+        "shelter-ready-wildfires",
+        "shelter-ready-wildfires",
+        "shelter-ready-hazmat",
+        "shelter-ready-hazmat",
+        "shelter-ready-hazmat",
+        "shelter-cdc-chemical-sip",
+        "shelter-ready-hazmat",
+        "shelter-cdc-chemical-sip",
+        "shelter-ready-hazmat",
+        "shelter-cdc-chemical-evac",
+        "shelter-ready-shelter",
+        "shelter-cdc-chemical-sip",
+        "shelter-ready-shelter",
+        "shelter-ready-hurricanes",
+        "shelter-ready-wildfires",
+        "shelter-ready-tornadoes",
+        "shelter-nws-nwr",
+        "shelter-ready-evacuation",
+        "shelter-ready-evacuation",
+        "shelter-ready-disabilities",
+        "shelter-ready-shelter",
+        "shelter-ready-evacuation",
+        "shelter-ready-disabilities",
+        "shelter-ready-evacuation",
+        "shelter-ready-plan",
+        "shelter-ready-plan-locations",
+        "shelter-ready-plan"
+      ],
+      "source_claims": [
+        {
+          "sid": "shelter-ready-hurricanes",
+          "source_use_exact": "Mandatory evacuation zones; interior room or storm shelter for wind; highest level and no closed attic if flooded; six inches / one foot of moving water; surge as leading cause of deaths; not just coastal; FEMA app, EAS and WEA alerts.",
+          "occurrences": 8,
+          "first_context": "ne and local officials tell you to evacuate, do so immediately, and its wildfire page says the same.{{cite:shelter-ready-hurricanes}}{{cite:shelter-ready-wildfires}}</li> <li><strong>If a tornado warning is issued for your area, shelter at once.</strong> Go to"
+        },
+        {
+          "sid": "shelter-ready-wildfires",
+          "source_use_exact": "Evacuate immediately if told; shelter with friends or family; trapped: call 911, response may be delayed or impossible; smoke room, N95, recirculate; stay inside or go to lower-smoke building if not ordered out.",
+          "occurrences": 6,
+          "first_context": "o evacuate, do so immediately, and its wildfire page says the same.{{cite:shelter-ready-hurricanes}}{{cite:shelter-ready-wildfires}}</li> <li><strong>If a tornado warning is issued for your area, shelter at once.</strong> Go to the safe place you identified in"
+        },
+        {
+          "sid": "shelter-ready-tornadoes",
+          "source_use_exact": "Warning actions; safe room, ICC 500 shelter or interior windowless room; head and neck; vehicle guidance; sirens; text after.",
+          "occurrences": 7,
+          "first_context": "ance and stay away from windows, doors and outside walls. Protect your head and neck with your arms.{{cite:shelter-ready-tornadoes}}</li> <li><strong>For a chemical or hazardous-materials incident, do what the local authorities say.</strong> Ready.gov says ins"
+        },
+        {
+          "sid": "shelter-ready-hazmat",
+          "source_use_exact": "Signs of a chemical release; instructions differ by threat; evacuate / stay-indoors / outside steps; do not leave shelter until authorities say; decontamination.",
+          "occurrences": 8,
+          "first_context": "e: \"sometimes it may be safer to shelter inside your home, other times it may be safer to evacuate.\"{{cite:shelter-ready-hazmat}}</li> <li><strong>Get warnings in more than one way.</strong> Ready.gov names the FEMA app, community alert sign-ups, and the Emerg"
+        },
+        {
+          "sid": "shelter-nws-nwr",
+          "source_use_exact": "NOAA Weather Radio All Hazards description, EAS link, chemical-release alerts, receiver need, transmitter outages.",
+          "occurrences": 2,
+          "first_context": " Alerts; the National Weather Service describes NOAA Weather Radio.{{cite:shelter-ready-hurricanes}}{{cite:shelter-nws-nwr}} <span class=\"pa-tag pa-tag--ed\">Editor's note</span> Make sure at least one of your ways works without power.</li> <li><strong>Decide b"
+        },
+        {
+          "sid": "shelter-ready-evacuation",
+          "source_use_exact": "Evacuation checklist: destinations, routes, on foot, fuel, one car, go-bag, leaving, note, out-of-state contact, neighbors, returning, FEMA app shelters.",
+          "occurrences": 6,
+          "first_context": " would go, by which route, and who would go with you.</strong> The rest of this guide is the detail.{{cite:shelter-ready-evacuation}}</li> </ol> <p class=\"pa-act-note\">This guide cannot tell you what to do in a particular emergency. Local officials know where "
+        },
+        {
+          "sid": "shelter-ready-shelter",
+          "source_use_exact": "Three meanings of shelter; follow local authorities; mass care shelter points; pets and service animals; text SHELTER to 43362; shelter-in-place conditions and steps; sealing a room as a temporary measure.",
+          "occurrences": 6,
+          "first_context": "d is, and Ready.gov's shelter page says in all cases to stay informed and follow their instructions.{{cite:shelter-ready-shelter}} If you are in immediate danger, or if someone is injured or seriously ill, call 911.</p> </section> <ul class=\"pa-key\" aria-labe"
+        },
+        {
+          "sid": "shelter-ready-floods",
+          "source_use_exact": "Depending on the type of flooding; barricades; trapped in car or building; most common disaster; flood insurance timing.",
+          "occurrences": 5,
+          "first_context": "gher ground or a higher floor, or stay where you are. Do not walk, swim or drive through floodwater.{{cite:shelter-ready-floods}}</td></tr> <tr><th scope=\"row\">Wildfire</th><td>Evacuate immediately if authorities tell you to. If you are not ordered out but con"
+        },
+        {
+          "sid": "shelter-ready-winter-weather",
+          "source_use_exact": "Find shelter right away under a warning; stay off roads; stay in the car if trapped.",
+          "occurrences": 1,
+          "first_context": "Find shelter right away under a warning; stay off the roads; if trapped in your car, stay inside it.{{cite:shelter-ready-winter-weather}}</td></tr> <tr><th scope=\"row\">Extreme heat or cold during an outage</th><td>Go to a community location with power if heat "
+        },
+        {
+          "sid": "shelter-ready-power-outages",
+          "source_use_exact": "Go to a community location with power if heat or cold is extreme.",
+          "occurrences": 1,
+          "first_context": "t or cold during an outage</th><td>Go to a community location with power if heat or cold is extreme.{{cite:shelter-ready-power-outages}}</td></tr> </tbody></table></div> <p>Four things decide the answer, and no category of hazard settles it by itself: the <str"
+        },
+        {
+          "sid": "shelter-cdc-chemical-sip",
+          "source_use_exact": "CDC chemical shelter-in-place: safe-room choice, seal kit, practice, vehicles not airtight, all clear, 'few hours, possibly a few days, or longer' as the possible length of the emergency.",
+          "occurrences": 3,
+          "first_context": "nd other vehicles may not be airtight enough to protect you, so you should find the nearest shelter.{{cite:shelter-cdc-chemical-sip}}</p> <p>The two agencies differ in small ways. Ready.gov's hazmat page suggests an above-ground room with as few openings as po"
+        },
+        {
+          "sid": "shelter-cdc-chemical-evac",
+          "source_use_exact": "Chemical evacuation: follow officials, do not go to separated children unless officials say it is safe, text or call an outside contact, medications for up to a week, some shelters take only service animals.",
+          "occurrences": 1,
+          "first_context": "to a week, and note that some shelters, such as the American Red Cross's, take only service animals.{{cite:shelter-cdc-chemical-evac}}</p> <div class=\"pa-alert\"><p class=\"pa-alert-title\">Sealing a room is a temporary measure</p> <p>Ready.gov's shelter page des"
+        },
+        {
+          "sid": "shelter-ready-disabilities",
+          "source_use_exact": "Support network; accessible transportation; registries; dialysis; assistive devices; service animals in shelters.",
+          "occurrences": 2,
+          "first_context": "to your doctor or health care provider in advance about keeping such equipment running in an outage.{{cite:shelter-ready-disabilities}} Make that plan, including who handles the power at the main panel, before the day. The pages we read do not say more than th"
+        },
+        {
+          "sid": "shelter-ready-plan",
+          "source_use_exact": "Household discussion questions; household-needs checklist.",
+          "occurrences": 2,
+          "first_context": " languages, cultural and religious considerations, pets or service animals and school-aged children.{{cite:shelter-ready-plan}}</li> <li><strong>Places away from home.</strong> Ready.gov says plan for the places you go regularly, including school, daycare and "
+        },
+        {
+          "sid": "shelter-ready-plan-locations",
+          "source_use_exact": "Plan for school, daycare, work; ask about alerts, evacuation and shelter-in-place plans.",
+          "occurrences": 1,
+          "first_context": "chool, daycare and work, and ask what alerts, evacuation routes and shelter-in-place plans each has.{{cite:shelter-ready-plan-locations}} See {{link:family-communication-plan|the family communication plan}} for how a household stays in touch when members are i"
+        }
+      ]
+    },
+    {
+      "slug": "ships-biscuit-and-hardtack",
+      "n": 22,
+      "origin": "hist-food",
+      "body_git_blob": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+      "metadata_git_blob": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 42,
+      "distinct_citation_ids": 8,
+      "citation_sequence": [
+        "hist-food-fsis-molds",
+        "hist-food-nps-hardtack-mana",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "rmg-biscuit-aab0766",
+        "usscm-brenckle-2019",
+        "hist-food-nps-fosc-rations",
+        "usscm-brenckle-2019",
+        "hist-food-nps-fosc-rations",
+        "hist-food-marcy-prairie-traveler-text",
+        "usscm-brenckle-2019",
+        "hist-food-nps-hardtack-mana",
+        "hist-food-nps-fosc-rations",
+        "usscm-brenckle-2019",
+        "rmg-life-at-sea",
+        "hist-food-nps-hardtack-mana",
+        "hist-food-nps-hardtack-mana",
+        "hist-food-nps-fosc-rations",
+        "hist-food-nps-hardtack-mana",
+        "hist-food-marcy-prairie-traveler-text",
+        "loc-prairie-traveler",
+        "hist-food-fsis-molds",
+        "rmg-life-at-sea",
+        "usscm-brenckle-2019",
+        "hist-food-marcy-prairie-traveler-text",
+        "usscm-brenckle-2019",
+        "usscm-brenckle-2019",
+        "rmg-biscuit-aab0766",
+        "usscm-brenckle-2019",
+        "hist-food-nps-hardtack-mana",
+        "hist-food-nps-fosc-rations",
+        "usscm-brenckle-2019",
+        "rmg-life-at-sea",
+        "hist-food-fsis-molds",
+        "hist-food-fsis-molds",
+        "hist-food-fsis-molds",
+        "hist-food-nps-fosc-rations",
+        "usscm-brenckle-2019",
+        "hist-food-nps-fosc-rations",
+        "hist-food-fsis-molds"
+      ],
+      "source_claims": [
+        {
+          "sid": "hist-food-fsis-molds",
+          "source_use_exact": "Modern USDA guidance to discard moldy bread and baked goods; molds tolerate salt and sugar; mycotoxins; do not sniff moldy food.",
+          "occurrences": 6,
+          "first_context": "discard them, because porous foods can be contaminated below the surface and some molds make toxins.{{cite:hist-food-fsis-molds}}</li> <li>Do not trust a bread-like food just because it looks and feels dry. The historical record below is full of dry biscuit th"
+        },
+        {
+          "sid": "hist-food-nps-hardtack-mana",
+          "source_use_exact": "Civil War hardtack: made of flour, water and salt; nicknames; wet and moldy in boxes; insects; cooking uses; Confederate reliance on corn.",
+          "occurrences": 6,
+          "first_context": " The historical record below is full of dry biscuit that went moldy, wormy or both once it got damp.{{cite:hist-food-nps-hardtack-mana}}</li> <li>For emergency food you actually plan to rely on, use commercially made, labelled, shelf-stable products and rotate"
+        },
+        {
+          "sid": "usscm-brenckle-2019",
+          "source_use_exact": "1813 bread and meat load-out; weekly ration table; bread contract and biscuit dimensions; 'hardtack' as an 1840s term; pests; 1838 recollection; calorie estimate; USS Congress chaplain.",
+          "occurrences": 14,
+          "first_context": "00 pounds of pork.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:usscm-brenckle-2019}} Bread was the heaviest single item in the hold. It was also the one that had to survive the longest, in the dampest place, in the c"
+        },
+        {
+          "sid": "rmg-biscuit-aab0766",
+          "source_use_exact": "A surviving ship's biscuit (1846 recipe, broad arrow and letter C) as a physical record.",
+          "occurrences": 2,
+          "first_context": "made to an 1846 recipe, marked with a broad arrow and the letter C, measuring 15 by 135 millimetres.{{cite:rmg-biscuit-aab0766}}</p> <p>That is nearly everything the sources tell us about the thing itself. They tell us what it was made of, how hard it was bake"
+        },
+        {
+          "sid": "hist-food-nps-fosc-rations",
+          "source_use_exact": "1840s Army ration; hardtack issue of about a pound; common problems; the coffee-and-skimming remedy.",
+          "occurrences": 7,
+          "first_context": " a pound of hardtack, nine or ten crackers, was issued to a soldier whether on the march or in camp.{{cite:hist-food-nps-fosc-rations}} The park's page credits its hardtack details to John D. Billings's memoir <em>Hardtack and Coffee</em> rather than to archiv"
+        },
+        {
+          "sid": "hist-food-marcy-prairie-traveler-text",
+          "source_use_exact": "Marcy's 150 lb of flour 'or its equivalent in hard bread'; recommendation of antiscorbutics.",
+          "occurrences": 3,
+          "first_context": "equivalent in hard bread\" for a roughly 110-day journey</td><td>Marcy, <em>The Prairie Traveler</em>{{cite:hist-food-marcy-prairie-traveler-text}}</td></tr> </tbody></table></div> <p>These are records of what institutions issued or recommended in their own tim"
+        },
+        {
+          "sid": "rmg-life-at-sea",
+          "source_use_exact": "Storage, ventilation and vermin as causes of spoilage; malnutrition and scurvy at sea.",
+          "occurrences": 3,
+          "first_context": "reenwich lists poor storage, poor ventilation and vermin among the reasons ship's food deteriorated.{{cite:rmg-life-at-sea}}</p> <p><span class=\"pa-tag pa-tag--ed\">Editor's note</span> Putting those together gives a fair reading. Biscuit baked hard and kept dr"
+        },
+        {
+          "sid": "loc-prairie-traveler",
+          "source_use_exact": "Library of Congress digitization and edition date of Marcy's handbook.",
+          "occurrences": 1,
+          "first_context": ", coffee and sugar, and fresh beef driven on the hoof.{{cite:hist-food-marcy-prairie-traveler-text}}{{cite:loc-prairie-traveler}} Note the phrase: hard bread is offered as one of two ways to carry the same flour. Marcy treats biscuit as a convenience of packin"
+        }
+      ]
+    }
+  ]
+}
