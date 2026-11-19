@@ -100,6 +100,8 @@ with sync_playwright() as p:
                     assert details.get_attribute('open') is not None,(mode,width)
                 if width in (390,1440) and js and mode in ('clean','tampered_css','tampered_js','tampered_both'):
                     page.evaluate('document.activeElement instanceof HTMLElement && document.activeElement.blur();window.scrollTo(0,0)')
+                    page.mouse.move(1,1)
+                    page.wait_for_timeout(100)
                     page.screenshot(path=str(OUT/f'{mode}-{width}.png'),full_page=True,animations='disabled')
                 if mode=='tampered_both' and width==390 and js:
                     page.emulate_media(media='print')
