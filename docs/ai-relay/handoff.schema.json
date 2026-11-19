@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Final Vestige AI Relay event v1",
+  "description": "Public non-sensitive metadata only. Receiving service authenticates actor independently; fields alone never confer trust or approval.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "event_id",
+    "campaign_id",
+    "actor",
+    "action",
+    "status",
+    "updated_at_utc",
+    "next_owner"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fv-handoff-v1"
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^FV-[0-9]{8}-[a-z0-9-]{3,64}$"
+    },
+    "campaign_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,90}$"
+    },
+    "actor": {
+      "enum": [
+        "claude",
+        "grok",
+        "chatgpt",
+        "praxxis",
+        "founder"
+      ]
+    },
+    "action": {
+      "enum": [
+        "HELLO",
+        "CREATE",
+        "UPDATE",
+        "QA_RESULT",
+        "DRAFT_READY",
+        "PUBLISH_VERIFIED",
+        "MEASURE",
+        "BLOCKER"
+      ]
+    },
+    "status": {
+      "enum": [
+        "READY_FOR_WORK",
+        "IN_PROGRESS",
+        "READY_FOR_QA",
+        "QA_HOLD",
+        "READY_FOR_APPROVAL",
+        "APPROVED",
+        "SCHEDULED",
+        "PUBLISHED",
+        "MEASURED",
+        "BLOCKED"
+      ]
+    },
+    "updated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "next_owner": {
+      "enum": [
+        "claude",
+        "grok",
+        "chatgpt",
+        "praxxis",
+        "founder",
+        "none"
+      ]
+    },
+    "asset_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100
+    },
+    "platforms": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "youtube",
+          "tiktok",
+          "instagram",
+          "facebook_pages",
+          "x",
+          "medium",
+          "substack",
+          "threads",
+          "bluesky",
+          "wordpress",
+          "dispatch",
+          "pinterest",
+          "linkedin"
+        ]
+      },
+      "maxItems": 25
+    },
+    "manifest_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 2048
+    },
+    "source_issue_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 2048
+    },
+    "canonical_article_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 2048
+    },
+    "utm_campaign": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 150
+    },
+    "rights_check": {
+      "enum": [
+        "pending",
+        "pass",
+        "hold",
+        "not_applicable"
+      ]
+    },
+    "source_check": {
+      "enum": [
+        "pending",
+        "pass",
+        "hold",
+        "not_applicable"
+      ]
+    },
+    "approval_check": {
+      "enum": [
+        "required",
+        "pending",
+        "approved_by_owner",
+        "not_applicable"
+      ]
+    },
+    "blocker": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 1500
+    },
+    "evidence_urls": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 2048
+      },
+      "maxItems": 100
+    },
+    "published_urls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "platform",
+          "url",
+          "asset_id"
+        ],
+        "properties": {
+          "platform": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "asset_id": {
+            "type": "string"
+          },
+          "published_at_utc": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "maxItems": 50
+    }
+  }
+}
