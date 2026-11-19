@@ -1,0 +1,11 @@
+import assert from "node:assert/strict";
+import {test} from "node:test";
+import {reconcileProviderViews} from "./provider_crosswalk.mjs";
+import observations from "./provider_observations.json" with {type:"json"};
+const base=()=>structuredClone(observations);
+test("three-fingerprint source conflict without user identifiers",()=>{const x=reconcileProviderViews(base());assert.equal(x.release,"HOLD_UNSENT");assert.equal(x.sourceCounts.newsletter_confirmed,3);assert.equal(x.sourceCounts.newsletter_unconfirmed_additional,2);assert.equal(x.unique_confirmed_human_signups,null);assert.ok(x.warnings.includes("FOLLOWERS_AND_SUBSCRIBERS_DISAGREE"));assert.ok(x.warnings.includes("UNCONFIRMED_IS_SEPARATE_COHORT_NOT_ADDITIVE"));});
+for(const name of ["email","name","subscription_id","user_id"])test("reject private "+name,()=>{const x=base();x.filters.all.rows[0][name]="PRIVATE";assert.throws(()=>reconcileProviderViews(x));});
+test("partial followers cannot establish reconciliation",()=>{const x=base();x.followers.partial=true;assert.ok(reconcileProviderViews(x).warnings.includes("FOLLOWERS_PARTIAL_NO_COMPARISON"));});
+test("invalid negative source counts reject",()=>{const x=base();x.newsletter.confirmed=-1;assert.throws(()=>reconcileProviderViews(x));});
+test("confirmed beyond total is a warning not a verified lead",()=>{const x=base();x.newsletter.confirmed=5;assert.ok(reconcileProviderViews(x).warnings.includes("NEWSLETTER_CONFIRMED_EXCEEDS_TOTAL"));});
+test("no network or purchase events in reconciliation",()=>{assert.equal(reconcileProviderViews(base()).attributable_confirmed_signup_events,null);assert.equal(reconcileProviderViews(base()).email_delivery_witnessed,false);});
