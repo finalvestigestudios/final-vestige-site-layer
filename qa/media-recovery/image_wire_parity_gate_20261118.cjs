@@ -1,4 +1,5 @@
 "use strict";
+const {meetsReduction76,displayReductionPercent}=require("./image_wire_exact_threshold_20261118.cjs");
 const {guardImageSource}=require("./image_wire_source_guard_20261118.cjs");
 const {sameFraming}=require("./jetpack_source_identity_20261118.cjs");
 const {MANIFEST_SHA256,verifyCapture}=require("./cohort_manifest_guard_20261118.cjs");
@@ -43,7 +44,7 @@ const evaluate=function evaluate(report) {
       const scopedRequestKey=pid+"::"+m.request_id;
       const prev=requests.get(scopedRequestKey);
       if(prev){if(prev.final_url!==m.final_url||prev.http_status!==m.http_status||prev.transfer_bytes!==m.transfer_bytes)fail(tag+":"+pid+":request_collision");}
-      else {requests.set(scopedRequestKey,m);if(wire.counted_bytes>0)bytes+=wire.counted_bytes;}
+      else {requests.set(scopedRequestKey,m);if(wire.counted_bytes>0){bytes+=wire.counted_bytes;if(!Number.isSafeInteger(bytes))fail(tag+":wire_total_unsafe");}}
     }
    }
    pages.set(pid,{p,assets});
@@ -78,11 +79,11 @@ const evaluate=function evaluate(report) {
     for(const id of next.assets.keys())if(!entry.assets.has(id))fail(device+":"+pid+":unmatched_new_asset");
   }
   sums[device]={before_bytes:b.bytes,after_bytes:a.bytes,request_count_before:b.requests,request_count_after:a.requests,
-    broken_before:b.broken,broken_after:a.broken,reduction_percent:b.bytes>0&&a.bytes>0?Math.round((1-a.bytes/b.bytes)*10000)/100:null};
+    broken_before:b.broken,broken_after:a.broken,reduction_percent:displayReductionPercent(b.bytes,a.bytes)};
  }
  const sitewide=cohort==="historic-61"||cohort==="current-66";
  const met=errors.length===0&&sitewide&&sums.desktop&&sums.mobile&&
-   sums.desktop.reduction_percent>=76&&sums.mobile.reduction_percent>=76;
+   meetsReduction76(sums.desktop.before_bytes,sums.desktop.after_bytes)&&meetsReduction76(sums.mobile.before_bytes,sums.mobile.after_bytes);
  return {gate:met?"AWAIT_INDEPENDENT_TRACE_AND_VISUAL_QA":"HOLD",threshold_met:!!met,
    claim_publicly_verified:false,cohort,expected_posts:expected,devices:sums,
    errors:errors.length?errors:(met?["external_trace_authenticity_and_visual_review_pending"]:["threshold_or_sitewide_coverage_not_met"])};
