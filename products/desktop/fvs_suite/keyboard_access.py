@@ -124,6 +124,14 @@ def show_keyboard_help(root, legend: str) -> None:
         close()
         return "break"
 
+    def on_help(_event):
+        # A Tk Toplevel has its own bindtags: root-scoped F1 does not receive
+        # key events from this help window's Text or Close button. Route F1
+        # back through the same bounded helper without a global binding.
+        # Re-entry also reconstructs an externally destroyed help Text.
+        show_keyboard_help(root, legend)
+        return "break"
+
     try:
         dialog.title("Keyboard shortcuts")
         dialog.transient(root)
@@ -150,6 +158,7 @@ def show_keyboard_help(root, legend: str) -> None:
         ttk.Button(frame, text="Close (Esc)", command=close).grid(
             row=1, column=0, columnspan=2, sticky="e", pady=(12, 0))
         dialog.protocol("WM_DELETE_WINDOW", close)
+        dialog.bind("<F1>", on_help)
         dialog.bind("<Escape>", on_escape)
 
         # Physical window bounds, not unbounded character-based sizing. Users
