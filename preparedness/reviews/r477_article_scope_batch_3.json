@@ -1,0 +1,1041 @@
+{
+  "schema": "fv-r477-authentic-35-article-scope-custody-batch-v1",
+  "repo": "finalvestigestudios/final-vestige-site-layer",
+  "candidate_ref": "1d4d885c0b427d4b1bfbb77cf2ecf0c10a0dc070",
+  "candidate_manifest_blob": "2adcffe48fcbb3ac3aa9eb2fc18b048f032fcc0c",
+  "authenticated_source_index_blob": "f6e505331a3f66c27e4ccde38dd6ca8709993b75",
+  "crosswalk_blob": "d62e493a67dedd23e04cfdf3cce762ef933c6bf9",
+  "batch": 3,
+  "total_batches": 5,
+  "release": "DRAFT_HARD_HOLD",
+  "review_state": "ALL_CLAIM_SCOPES_UNADJUDICATED",
+  "qualified_qd_pass": false,
+  "publication_authorized": false,
+  "articles": [
+    {
+      "slug": "pantry-rotation",
+      "n": 8,
+      "origin": "food",
+      "body_git_blob": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+      "metadata_git_blob": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 68,
+      "distinct_citation_ids": 9,
+      "citation_sequence": [
+        "food-ready-food",
+        "food-osu-survival-food",
+        "fsis-emergency-foods",
+        "food-osu-survival-food",
+        "food-usu-canned-goods",
+        "food-illinois-room-temp",
+        "food-fsis-shelf-stable",
+        "food-usu-canned-goods",
+        "food-fsis-shelf-stable",
+        "food-usu-canned-goods",
+        "food-illinois-room-temp",
+        "food-osu-survival-food",
+        "fsis-emergency-foods",
+        "food-ready-food",
+        "fsis-emergency-foods",
+        "food-ready-food",
+        "food-osu-survival-food",
+        "food-osu-survival-food",
+        "food-ready-food",
+        "fsis-emergency-foods",
+        "food-osu-survival-food",
+        "fsis-emergency-foods",
+        "food-ready-food",
+        "food-fsis-dating",
+        "food-fsis-dating",
+        "food-fsis-dating",
+        "food-fsis-dating",
+        "food-fsis-dating",
+        "food-fsis-dating",
+        "food-fsis-dating",
+        "food-illinois-room-temp",
+        "food-fsis-dating",
+        "food-usu-canned-goods",
+        "food-fsis-shelf-stable",
+        "food-foodkeeper",
+        "food-fsis-shelf-stable",
+        "food-cdc-home-canned",
+        "food-fsis-shelf-stable",
+        "food-usu-canned-goods",
+        "food-illinois-room-temp",
+        "food-osu-survival-food",
+        "food-cdc-home-canned",
+        "food-osu-survival-food",
+        "food-fsis-shelf-stable",
+        "food-ready-food",
+        "food-illinois-room-temp",
+        "food-fsis-shelf-stable",
+        "food-fsis-shelf-stable",
+        "food-usu-canned-goods",
+        "food-osu-survival-food",
+        "food-usu-canned-goods",
+        "food-fsis-shelf-stable",
+        "food-osu-survival-food",
+        "food-fsis-dating",
+        "food-illinois-room-temp",
+        "food-fsis-dating",
+        "food-fsis-dating",
+        "fsis-emergency-foods",
+        "food-fsis-shelf-stable",
+        "food-osu-survival-food",
+        "food-usu-canned-goods",
+        "food-osu-survival-food",
+        "food-osu-survival-food",
+        "fsis-emergency-foods",
+        "food-osu-survival-food",
+        "fsis-emergency-foods",
+        "food-usu-canned-goods",
+        "food-cdc-home-canned"
+      ],
+      "source_claims": [
+        {
+          "sid": "food-ready-food",
+          "source_use_exact": "Several-day supply of non-perishable food; choose foods your family will eat; example items; swollen, dented or corroded cans.",
+          "occurrences": 6,
+          "first_context": "of non-perishable food, to choose foods your family will eat, and to remember special dietary needs.{{cite:food-ready-food}} Oregon State Extension adds the reason: food you actually like is food you can cycle through.{{cite:food-osu-survival-food}}</li> <li><"
+        },
+        {
+          "sid": "food-osu-survival-food",
+          "source_use_exact": "Cycle through food you eat; add a little each shop; three-day bags; storage locations in small homes; pests every six months; 2-week and 4-week Oregon targets; sodium; freeze-dried caution; 95 F.",
+          "occurrences": 14,
+          "first_context": "food}} Oregon State Extension adds the reason: food you actually like is food you can cycle through.{{cite:food-osu-survival-food}}</li> <li><strong>Add a little each time you shop</strong> instead of buying a stockpile at once. Buy small cans so there are no "
+        },
+        {
+          "sid": "fsis-emergency-foods",
+          "source_use_exact": "Example foods to keep; 3-day bottled water; small cans; infant formula, pet food and special-diet foods; manual can opener; use and refresh the supply.",
+          "occurrences": 8,
+          "first_context": " cans so there are no leftovers that need refrigeration, and keep a manual can opener with the food.{{cite:fsis-emergency-foods}}{{cite:food-osu-survival-food}}</li> <li><strong>Label what you buy with the month and year,</strong> shelve it behind what is alre"
+        },
+        {
+          "sid": "food-usu-canned-goods",
+          "source_use_exact": "Label purchase date; store cool, dark, dry, off the floor; do not freeze; first in first out; budget resellers; commercial versus home canned; home-canned one-year shelf life.",
+          "occurrences": 9,
+          "first_context": " with the month and year,</strong> shelve it behind what is already there, and use the oldest first.{{cite:food-usu-canned-goods}}{{cite:food-illinois-room-temp}}</li> <li><strong>Keep it cool and dry,</strong> away from the stove, pipes and furnace, and keep "
+        },
+        {
+          "sid": "food-illinois-room-temp",
+          "source_use_exact": "Pantry tips, first in first out, cover opened food, package dates and expiration dates.",
+          "occurrences": 6,
+          "first_context": "ong> shelve it behind what is already there, and use the oldest first.{{cite:food-usu-canned-goods}}{{cite:food-illinois-room-temp}}</li> <li><strong>Keep it cool and dry,</strong> away from the stove, pipes and furnace, and keep metal cans off the floor. FSIS"
+        },
+        {
+          "sid": "food-fsis-shelf-stable",
+          "source_use_exact": "Storage conditions and the 85 F and 100 F figures; check pantry every few weeks; can rust, dents, freezing; botulism signs and symptoms; the storage chart rows; the home-canned-row conflict.",
+          "occurrences": 10,
+          "first_context": "r. FSIS says temperatures below 85°F are best and that you should check your pantry every few weeks.{{cite:food-fsis-shelf-stable}}{{cite:food-usu-canned-goods}}</li> <li><strong>Throw out cans that are bulging, leaking, or deeply dented (a dent you can lay a "
+        },
+        {
+          "sid": "food-fsis-dating",
+          "source_use_exact": "Dates are about quality; meaning of date labels; infant formula exception; can codes; 12 to 18 months and 2 to 5 years; donation.",
+          "occurrences": 11,
+          "first_context": " formula, product dating is not required by federal law and that dates indicate quality, not safety.{{cite:food-fsis-dating}}</p> <div class=\"pa-tablewrap\" role=\"region\" aria-label=\"Date labels and what they mean\" tabindex=\"0\"> <table> <caption>Common date lab"
+        },
+        {
+          "sid": "food-foodkeeper",
+          "source_use_exact": "Pointer to the FoodKeeper storage tool and who developed it.",
+          "occurrences": 1,
+          "first_context": " searchable storage tool developed by FSIS with Cornell University and the Food Marketing Institute.{{cite:food-foodkeeper}} We have not taken any durations from it.</p> <div class=\"pa-alert pa-alert--stop\"><p class=\"pa-alert-title\">One FSIS row we do not rep"
+        },
+        {
+          "sid": "food-cdc-home-canned",
+          "source_use_exact": "Home-canned storage: a year's worth, not above 95 F, 50 to 70 F for quality; boil-before-eating advice that agrees with FSIS's text.",
+          "occurrences": 3,
+          "first_context": "he 10-minute boil\".{{cite:food-fsis-shelf-stable}} The CDC page agrees with the text, not the chart.{{cite:food-cdc-home-canned}} We therefore do not quote the chart's home-canned row. Home-canned food is covered in {{link:pressure-canning-low-acid|our pressur"
+        }
+      ]
+    },
+    {
+      "slug": "pemmican-and-dried-meats",
+      "n": 25,
+      "origin": "hist-food",
+      "body_git_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+      "metadata_git_blob": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 46,
+      "distinct_citation_ids": 11,
+      "citation_sequence": [
+        "hist-food-fsis-jerky",
+        "hist-food-nchfp-jerky",
+        "fsis-home-cure-qa",
+        "cdc-botulism-prevention",
+        "hist-food-ce-pemmican",
+        "hist-food-natifs-wasna",
+        "hist-food-headsmashedin",
+        "hist-food-ce-pemmican",
+        "hist-food-metis-fur-trade",
+        "hist-food-nk360-bison",
+        "hist-food-headsmashedin",
+        "hist-food-headsmashedin",
+        "hist-food-ce-pemmican",
+        "hist-food-ce-pemmican",
+        "hist-food-metis-fur-trade",
+        "hist-food-ce-pemmican",
+        "hist-food-ce-pemmican",
+        "hist-food-marcy-prairie-traveler-text",
+        "loc-prairie-traveler",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-natifs-wasna",
+        "hist-food-ce-pemmican",
+        "hist-food-headsmashedin",
+        "hist-food-fsis-jerky",
+        "hist-food-nchfp-jerky",
+        "hist-food-fsis-jerky",
+        "hist-food-nchfp-jerky",
+        "hist-food-fsis-jerky",
+        "hist-food-nchfp-jerky",
+        "hist-food-ce-pemmican",
+        "hist-food-headsmashedin",
+        "hist-food-natifs-wasna",
+        "hist-food-ce-pemmican",
+        "hist-food-metis-fur-trade",
+        "hist-food-ce-pemmican",
+        "hist-food-ce-pemmican",
+        "hist-food-fsis-jerky",
+        "hist-food-nchfp-jerky",
+        "hist-food-fsis-jerky",
+        "hist-food-nchfp-jerky",
+        "cdc-botulism-prevention",
+        "fsis-home-cure-qa",
+        "hist-food-headsmashedin",
+        "hist-food-metis-fur-trade",
+        "hist-food-fsis-jerky",
+        "hist-food-nchfp-jerky"
+      ],
+      "source_claims": [
+        {
+          "sid": "hist-food-fsis-jerky",
+          "source_use_exact": "USDA heat step before dehydrating; reasons; wild game; home-dried jerky stored 1 to 2 months.",
+          "occurrences": 7,
+          "first_context": ": meat is heated to a stated internal temperature, and home-dried jerky is given a short shelf life.{{cite:hist-food-fsis-jerky}}{{cite:hist-food-nchfp-jerky}}</li> <li>Home-preserved, cured and dried foods have been linked to botulism cases, and you cannot se"
+        },
+        {
+          "sid": "hist-food-nchfp-jerky",
+          "source_use_exact": "Extension jerky guidance; heat step timing; trichinella; two weeks at room temperature; fat trimming.",
+          "occurrences": 7,
+          "first_context": "internal temperature, and home-dried jerky is given a short shelf life.{{cite:hist-food-fsis-jerky}}{{cite:hist-food-nchfp-jerky}}</li> <li>Home-preserved, cured and dried foods have been linked to botulism cases, and you cannot see, smell or taste the toxin.{"
+        },
+        {
+          "sid": "fsis-home-cure-qa",
+          "source_use_exact": "Botulism cases following home-canned, preserved, cured, smoked or fermented foods.",
+          "occurrences": 2,
+          "first_context": "ed and dried foods have been linked to botulism cases, and you cannot see, smell or taste the toxin.{{cite:fsis-home-cure-qa}}{{cite:cdc-botulism-prevention}} If you want to dry meat at home, use a method published by USDA or the National Center for Home Food "
+        },
+        {
+          "sid": "cdc-botulism-prevention",
+          "source_use_exact": "Improperly preserved foods and botulism; toxin cannot be seen, smelled or tasted.",
+          "occurrences": 2,
+          "first_context": "en linked to botulism cases, and you cannot see, smell or taste the toxin.{{cite:fsis-home-cure-qa}}{{cite:cdc-botulism-prevention}} If you want to dry meat at home, use a method published by USDA or the National Center for Home Food Preservation.</li> </ul> <"
+        },
+        {
+          "sid": "hist-food-ce-pemmican",
+          "source_use_exact": "Cree word and gloss; definition; Peter Pond 1779 and the Chipewyans; trade posts; 1814 Pemmican Proclamation; Royal Navy beef pemmican; storage and shipping in hide bags.",
+          "occurrences": 11,
+          "first_context": "t, traditionally bison, pounded into coarse powder and combined with fat, occasionally with berries.{{cite:hist-food-ce-pemmican}}</li> <li><strong>Lakota and Dakota (<em>wasna</em>) and Anishinaabe (pemmican).</strong> NATIFS, an Indigenous foodways organizat"
+        },
+        {
+          "sid": "hist-food-natifs-wasna",
+          "source_use_exact": "Attribution of wasna to Lakota and Dakota and pemmican to Anishinaabe peoples; continuing use.",
+          "occurrences": 3,
+          "first_context": " relied on it during hunts, seasonal travel and winter, with many still making and sharing it today.{{cite:hist-food-natifs-wasna}}</li> <li><strong>Blackfoot (Siksika, Kainai and Piikani).</strong> The Head-Smashed-In Buffalo Jump World Heritage Site in Alber"
+        },
+        {
+          "sid": "hist-food-headsmashedin",
+          "source_use_exact": "Blackfoot (Siksika, Kainai, Piikani) dry meat and pemmican as winter and emergency stores; 1881 and Treaty 7.",
+          "occurrences": 6,
+          "first_context": "identifies the Blackfoot as three tribes: the Siksika, the Kainai (Bloods) and the Piikani (Peigan).{{cite:hist-food-headsmashedin}}</li> <li><strong>Chipewyan.</strong> The Canadian Encyclopedia credits the fur trader Peter Pond with introducing pemmican to t"
+        },
+        {
+          "sid": "hist-food-metis-fur-trade",
+          "source_use_exact": "Métis pemmican provisioning, Ross's hunt figures, economic weight and 1870s price rise.",
+          "occurrences": 4,
+          "first_context": "provisions gave Métis bison hunters and pemmican provisioners the only steady market for their work.{{cite:hist-food-metis-fur-trade}}</li> </ul> <p>Two notes on that list. First, the sources overlap but do not give a single origin story, and none of them give"
+        },
+        {
+          "sid": "hist-food-nk360-bison",
+          "source_use_exact": "The reciprocal relationship between Northern Plains Native Nations and the bison.",
+          "occurrences": 1,
+          "first_context": " relationship, and people honored and cared for the bison through ceremonies and cultural protocols.{{cite:hist-food-nk360-bison}} That context matters for reading anything below. Dried meat and pemmican were the product of a relationship with the animal and w"
+        },
+        {
+          "sid": "hist-food-marcy-prairie-traveler-text",
+          "source_use_exact": "Marcy on pemmican as the Fur Company men's diet; Dr Rae's 1854 allowance; 'keep fresh for a long time'.",
+          "occurrences": 2,
+          "first_context": "little over two pounds of the most nutritious food was found barely sufficient in that cold climate.{{cite:hist-food-marcy-prairie-traveler-text}}{{cite:loc-prairie-traveler}} Marcy is a U.S. Army officer and an outsider to the peoples who made the food; he de"
+        },
+        {
+          "sid": "loc-prairie-traveler",
+          "source_use_exact": "Library of Congress digitization of Marcy's handbook.",
+          "occurrences": 1,
+          "first_context": "food was found barely sufficient in that cold climate.{{cite:hist-food-marcy-prairie-traveler-text}}{{cite:loc-prairie-traveler}} Marcy is a U.S. Army officer and an outsider to the peoples who made the food; he describes the product and its use by the fur com"
+        }
+      ]
+    },
+    {
+      "slug": "pickling-fermentation-old-recipes",
+      "n": 28,
+      "origin": "hist-home",
+      "body_git_blob": "1869e37626b7463da45763d60202bd5ac0bd7700",
+      "metadata_git_blob": "da97f42fcabbd05dc513d26c6af289bbeb8816f3",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 49,
+      "distinct_citation_ids": 10,
+      "citation_sequence": [
+        "nchfp-home",
+        "hist-home-cdc-botulism-about",
+        "cdc-botulism-prevention",
+        "hist-home-cdc-botulism-home-canned",
+        "hist-home-cdc-botulism-about",
+        "hist-home-nchfp-pickling",
+        "hist-home-nchfp-pickling",
+        "hist-home-loc-simmons-1796",
+        "hist-home-loc-simmons-1796",
+        "hist-home-msu-simmons-1798",
+        "hist-home-msu-simmons-1798",
+        "hist-home-msu-simmons-1798",
+        "cdc-botulism-prevention",
+        "hist-home-msu-simmons-1798",
+        "hist-home-nps-ww2-canning",
+        "hist-home-nps-ww2-canning",
+        "hist-home-nchfp-pickling",
+        "hist-home-nchfp-pickling",
+        "hist-home-msu-simmons-1798",
+        "hist-home-nchfp-pickling",
+        "hist-home-nchfp-pickling",
+        "hist-home-cdc-botulism-about",
+        "fsis-home-cure-qa",
+        "fsis-botulism",
+        "cdc-botulism-prevention",
+        "hist-home-cdc-botulism-home-canned",
+        "hist-home-cdc-botulism-home-canned",
+        "fsis-home-cure-qa",
+        "hist-home-nchfp-pickling",
+        "hist-home-nchfp-pickling",
+        "hist-home-nchfp-pickling",
+        "hist-home-loc-simmons-1796",
+        "hist-home-msu-simmons-1798",
+        "cdc-botulism-prevention",
+        "hist-home-nps-ww2-canning",
+        "hist-home-nchfp-pickling",
+        "hist-home-nchfp-pickling",
+        "cdc-botulism-prevention",
+        "hist-home-cdc-botulism-about",
+        "fsis-home-cure-qa",
+        "hist-home-nchfp-pickling",
+        "hist-home-cdc-botulism-about",
+        "cdc-botulism-prevention",
+        "hist-home-cdc-botulism-home-canned",
+        "nchfp-home",
+        "hist-home-loc-simmons-1796",
+        "hist-home-nps-ww2-canning",
+        "hist-home-nchfp-pickling",
+        "hist-home-cdc-botulism-home-canned"
+      ],
+      "source_claims": [
+        {
+          "sid": "nchfp-home",
+          "source_use_exact": "Where tested home-preservation methods are published; program purpose and book reference.",
+          "occurrences": 2,
+          "first_context": "r Home Food Preservation (NCHFP), a University of Georgia program supported by USDA, publishes them.{{cite:nchfp-home}}</li> <li>Improperly canned, preserved or fermented homemade foods are the common sources of foodborne botulism. You cannot see, smell or tas"
+        },
+        {
+          "sid": "hist-home-cdc-botulism-about",
+          "source_use_exact": "Botulism overview: toxin, effects, improperly canned, preserved or fermented homemade foods, medical emergency.",
+          "occurrences": 5,
+          "first_context": "memade foods are the common sources of foodborne botulism. You cannot see, smell or taste the toxin.{{cite:hist-home-cdc-botulism-about}}{{cite:cdc-botulism-prevention}}</li> <li>If you do not know whether a home-preserved food was made safely, do not eat it a"
+        },
+        {
+          "sid": "cdc-botulism-prevention",
+          "source_use_exact": "Toxin cannot be seen, smelled or tasted; if in doubt throw it out.",
+          "occurrences": 6,
+          "first_context": "f foodborne botulism. You cannot see, smell or taste the toxin.{{cite:hist-home-cdc-botulism-about}}{{cite:cdc-botulism-prevention}}</li> <li>If you do not know whether a home-preserved food was made safely, do not eat it and do not taste it to check. The CDC'"
+        },
+        {
+          "sid": "hist-home-cdc-botulism-home-canned",
+          "source_use_exact": "Signs to discard a home-canned container; never taste; boil-before-eating list (times not reproduced).",
+          "occurrences": 5,
+          "first_context": " safely, do not eat it and do not taste it to check. The CDC's advice is: if in doubt, throw it out.{{cite:hist-home-cdc-botulism-home-canned}}</li> </ul> <p class=\"pa-act-note\">Botulism is a medical emergency. The CDC lists difficulty breathing and muscle par"
+        },
+        {
+          "sid": "hist-home-nchfp-pickling",
+          "source_use_exact": "Fermented versus fresh-pack pickles; acidity as important as taste; tested proportions; uniform acid; salt vital in ferments; flake salt density; boiling-water canner and spoilage.",
+          "occurrences": 13,
+          "first_context": "nings and vinegar.<span class=\"pa-tag pa-tag--fact\" style=\"margin-left:6px\">Official guidance</span>{{cite:hist-home-nchfp-pickling}}</p> <p>That distinction matters for safety, because the two families protect food in different ways. In a fermented product, s"
+        },
+        {
+          "sid": "hist-home-loc-simmons-1796",
+          "source_use_exact": "Catalogue record of the 1796 Hartford printing; first American-written cook book; rights statement. Catalogue only.",
+          "occurrences": 4,
+          "first_context": "d to this country.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-loc-simmons-1796}} The Library says it is not aware of any U.S. copyright or other restrictions on the digitized documents in the collection.{{"
+        },
+        {
+          "sid": "hist-home-msu-simmons-1798",
+          "source_use_exact": "Transcription of the 1798 printing of American Cookery: pickle and preserve directions described without amounts; the green-peas direction with no heating step; brass and bell-metal vessels without warning.",
+          "occurrences": 6,
+          "first_context": "n Butler of Northampton, 1798, which the repository describes as the first edition, second printing.{{cite:hist-home-msu-simmons-1798}} We cannot say that the 1796 printing reads the same, and everything in the next four paragraphs is about the 1798 text.</p> "
+        },
+        {
+          "sid": "hist-home-nps-ww2-canning",
+          "source_use_exact": "Wartime home-front preservation: extension resources, pickling among the methods, mixed vegetables discouraged, botulism risk, community canneries and trained staff.",
+          "occurrences": 4,
+          "first_context": " pressure canners.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-nps-ww2-canning}}</p> <p>The scale was large. The same page says that in 1943, 75% of American homemakers put up 4.1 billion containers of food"
+        },
+        {
+          "sid": "fsis-home-cure-qa",
+          "source_use_exact": "Many botulism cases followed home-canned, preserved, cured, smoked or fermented foods.",
+          "occurrences": 3,
+          "first_context": "ases have followed home-canned, preserved, cured, smoked or fermented foods contaminated with toxin.{{cite:fsis-home-cure-qa}} Its botulism page also lists traditionally prepared salted or fermented fish among foods linked to recent illness.{{cite:fsis-botulis"
+        },
+        {
+          "sid": "fsis-botulism",
+          "source_use_exact": "Traditionally prepared salted or fermented fish linked to recent botulism illness.",
+          "occurrences": 1,
+          "first_context": "age also lists traditionally prepared salted or fermented fish among foods linked to recent illness.{{cite:fsis-botulism}} The source does not name which communities prepare those foods or how, and we do not guess. We make no generalization about any people's "
+        }
+      ]
+    },
+    {
+      "slug": "pioneer-supply-chains-failed",
+      "n": 34,
+      "origin": "hist-field",
+      "body_git_blob": "ad158ee898f76d05bcb65c845b1e4a0e8103c660",
+      "metadata_git_blob": "4d2dc4958736e3c5257c65dda8ed016a473ac6be",
+      "authored_publish": "draft",
+      "authored_safety_state": "not-required",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 63,
+      "distinct_citation_ids": 11,
+      "citation_sequence": [
+        "hist-field-nws-winter-before",
+        "hist-field-nws-winter-during",
+        "hist-field-nws-winter-during",
+        "hist-field-nps-donner",
+        "hist-field-britannica-donner",
+        "hist-field-britannica-donner",
+        "hist-field-nps-donner",
+        "hist-field-nps-donner",
+        "hist-field-britannica-donner",
+        "hist-field-britannica-donner",
+        "hist-field-utah-hastings",
+        "hist-field-utah-hastings",
+        "hist-field-britannica-donner",
+        "hist-field-ia-hastings-guide",
+        "hist-field-ia-hastings-guide",
+        "hist-field-nps-donner",
+        "hist-field-utah-hastings",
+        "hist-field-britannica-donner",
+        "hist-field-britannica-donner",
+        "hist-field-nps-donner",
+        "hist-field-britannica-donner",
+        "hist-field-britannica-donner",
+        "hist-field-nps-donner",
+        "hist-field-britannica-donner",
+        "hist-field-nps-donner",
+        "hist-field-nps-donner",
+        "hist-field-britannica-donner",
+        "hist-field-britannica-donner",
+        "hist-field-britannica-donner",
+        "hist-field-oac-breen-diary",
+        "hist-field-oac-breen-diary",
+        "hist-field-nps-donner",
+        "hist-field-utah-hastings",
+        "hist-field-mccurdy-1994",
+        "hist-field-britannica-donner",
+        "hist-field-mccurdy-1994",
+        "loc-prairie-traveler",
+        "loc-prairie-traveler",
+        "loc-pioneer-diaries",
+        "hist-field-ca-parks-donner",
+        "hist-field-nps-donner",
+        "hist-field-utah-hastings",
+        "hist-field-britannica-donner",
+        "hist-field-ia-hastings-guide",
+        "hist-field-britannica-donner",
+        "hist-field-nps-donner",
+        "hist-field-utah-hastings",
+        "hist-field-britannica-donner",
+        "hist-field-britannica-donner",
+        "hist-field-nps-donner",
+        "hist-field-nps-donner",
+        "hist-field-nps-donner",
+        "hist-field-mccurdy-1994",
+        "hist-field-nps-donner",
+        "hist-field-britannica-donner",
+        "hist-field-mccurdy-1994",
+        "hist-field-nws-winter-before",
+        "hist-field-nws-winter-before",
+        "hist-field-nws-winter-during",
+        "hist-field-nps-donner",
+        "hist-field-britannica-donner",
+        "hist-field-nws-winter-before",
+        "hist-field-nws-winter-during"
+      ],
+      "source_claims": [
+        {
+          "sid": "hist-field-nws-winter-before",
+          "source_use_exact": "Winter travel planning: tell someone your route, check conditions, vehicle kit.",
+          "occurrences": 4,
+          "first_context": "and alternate routes, avoid traveling alone, and check road and weather conditions before you leave.{{cite:hist-field-nws-winter-before}}</li> <li>If your vehicle gets stuck in a storm, the National Weather Service says to stay in it, because leaving means bec"
+        },
+        {
+          "sid": "hist-field-nws-winter-during",
+          "source_use_exact": "Stay with a stuck vehicle; leaving means becoming disoriented.",
+          "occurrences": 4,
+          "first_context": "says to stay in it, because leaving means becoming disoriented quickly in wind-driven snow and cold.{{cite:hist-field-nws-winter-during}}</li> <li>Call your emergency number (911 in the United States) early. In 1846 there was no number to call.</li> </ul> <p c"
+        },
+        {
+          "sid": "hist-field-nps-donner",
+          "source_use_exact": "National Park Service account: late start, Hastings Cutoff, depleted supplies, entrapment, 40 deaths of 87, Winnemucca quote.",
+          "occurrences": 16,
+          "first_context": "other migrants of 1846 had finished their journey by the time this party reached the Humboldt River.{{cite:hist-field-nps-donner}}{{cite:hist-field-britannica-donner}} The case is useful because it shows, in unusual detail, how several parts of a journey's \"su"
+        },
+        {
+          "sid": "hist-field-britannica-donner",
+          "source_use_exact": "Tertiary details: 125 miles longer, two weeks in the Wasatch, desert crossing in five days against two, lost cattle and wagons, snow on October 31, relief parties, 42 deaths, 2010 excavation, Breen's diary.",
+          "occurrences": 20,
+          "first_context": "ished their journey by the time this party reached the Humboldt River.{{cite:hist-field-nps-donner}}{{cite:hist-field-britannica-donner}} The case is useful because it shows, in unusual detail, how several parts of a journey's \"supply chain\" depended on each o"
+        },
+        {
+          "sid": "hist-field-utah-hastings",
+          "source_use_exact": "Utah state history of the cutoff: Hastings's guide and uncertain intent, supporters and critics, the Henefer note, the route taken, 47 of 87 reaching Sutter's Fort.",
+          "occurrences": 6,
+          "first_context": "ugh Fort Hall was possible.<span class=\"pa-tag pa-tag--unc\" style=\"margin-left:6px\">Uncertain</span>{{cite:hist-field-utah-hastings}} That essay also records that the route had supporters, among them John Fremont, James Hudspeth and James Bridger, and critics:"
+        },
+        {
+          "sid": "hist-field-ia-hastings-guide",
+          "source_use_exact": "Primary source (OCR): Hastings's stated distance and duration, Fort Hall as the supply point, and the garbled southwest-to-Salt-Lake passage.",
+          "occurrences": 3,
+          "first_context": "es and provisions.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-field-ia-hastings-guide}} The same passage describes a California route leaving the Oregon route and heading southwest toward the Salt Lake, but the"
+        },
+        {
+          "sid": "hist-field-oac-breen-diary",
+          "source_use_exact": "Bancroft Library finding aid for Breen's diary: dates, form, tone, and the warning about corrupt early printings.",
+          "occurrences": 2,
+          "first_context": "ief party arrived.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-field-oac-breen-diary}} The finding aid also warns that early printed versions, beginning with a copy sent to a newspaper in May 1847, are \"consider"
+        },
+        {
+          "sid": "hist-field-mccurdy-1994",
+          "source_use_exact": "Epidemiology of the party's mortality by age, sex and family; 90 persons, 42 deaths (abstract read only).",
+          "occurrences": 4,
+          "first_context": "tr><th scope=\"row\">McCurdy, <em>Western Journal of Medicine</em> (1994)</th><td>90</td><td>42 (47%).{{cite:hist-field-mccurdy-1994}}</td></tr> <tr><th scope=\"row\">Britannica</th><td>87 at its peak</td><td>42, including two men who joined at the lake, with 47 s"
+        },
+        {
+          "sid": "loc-prairie-traveler",
+          "source_use_exact": "Library of Congress Army handbook; title page, preface and contents only.",
+          "occurrences": 2,
+          "first_context": "pment, and guides.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:loc-prairie-traveler}} The preface says the book draws on the author's frontier experience and on the reports of army topographical engineers who had sur"
+        },
+        {
+          "sid": "loc-pioneer-diaries",
+          "source_use_exact": "Library of Congress catalogue record for 49 emigrant diaries and seven guides; pointer only.",
+          "occurrences": 1,
+          "first_context": "s, <em>Trails to Utah and the Pacific</em>, which we have also not read beyond its catalogue record.{{cite:loc-pioneer-diaries}} For navigation, see {{link:navigation-before-gps|finding your way before GPS}}.</p> <h2 id=\"memorial\">How the site is remembered</"
+        },
+        {
+          "sid": "hist-field-ca-parks-donner",
+          "source_use_exact": "The memorial, the park's elevation and its exhibits.",
+          "occurrences": 1,
+          "first_context": " over Donner Pass.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-field-ca-parks-donner}} The park's page is a visitor guide, not a history, so we use it for the memorial and not for the account above.</p> <h2 id="
+        }
+      ]
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "n": 24,
+      "origin": "hist-food",
+      "body_git_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+      "metadata_git_blob": "7191acba55d63dc405ad9c2003d66193276da89f",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 39,
+      "distinct_citation_ids": 10,
+      "citation_sequence": [
+        "fsis-home-cure-qa",
+        "cdc-botulism-prevention",
+        "nchfp-cure-smoke",
+        "loc-pioneer-diaries",
+        "loc-prairie-traveler",
+        "hist-food-nps-emigrant-trails",
+        "hist-food-nps-emigrant-trails",
+        "hist-food-nps-emigrant-trails",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-nps-emigrant-trails",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-nps-nht-nevada-guide",
+        "hist-food-nps-nht-nevada-guide",
+        "hist-food-nps-nht-nevada-guide",
+        "hist-food-nps-nht-nevada-guide",
+        "hist-food-nps-nht-nevada-guide",
+        "hist-food-nps-nht-nevada-guide",
+        "hist-food-nps-nht-nevada-guide",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-nps-emigrant-trails",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-nps-nht-nevada-guide",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-fsis-jerky",
+        "hist-food-fsis-jerky",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-nchfp-jerky",
+        "hist-food-fsis-jerky",
+        "cdc-botulism-prevention",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-nps-nht-nevada-guide",
+        "nchfp-cure-smoke",
+        "hist-food-fsis-jerky"
+      ],
+      "source_claims": [
+        {
+          "sid": "fsis-home-cure-qa",
+          "source_use_exact": "Botulism cases following home-canned, preserved, cured, smoked or fermented foods.",
+          "occurrences": 1,
+          "first_context": "ed and fermented foods have been linked to botulism cases. You cannot see, smell or taste the toxin.{{cite:fsis-home-cure-qa}}{{cite:cdc-botulism-prevention}}</li> <li>For food you will carry, use commercially packaged, labelled products. If you want to dry or"
+        },
+        {
+          "sid": "cdc-botulism-prevention",
+          "source_use_exact": "Improperly preserved foods among common sources of botulism; toxin cannot be seen, smelled or tasted.",
+          "occurrences": 2,
+          "first_context": "e been linked to botulism cases. You cannot see, smell or taste the toxin.{{cite:fsis-home-cure-qa}}{{cite:cdc-botulism-prevention}}</li> <li>For food you will carry, use commercially packaged, labelled products. If you want to dry or cure meat yourself, use a"
+        },
+        {
+          "sid": "nchfp-cure-smoke",
+          "source_use_exact": "Use tested methods for home curing and smoking.",
+          "occurrences": 2,
+          "first_context": "procedure published by USDA or the National Center for Home Food Preservation and follow it exactly.{{cite:nchfp-cure-smoke}}</li> </ul> <p class=\"pa-act-note\">If you are traveling in remote country, tell someone your route and when to expect you, and carry en"
+        },
+        {
+          "sid": "loc-pioneer-diaries",
+          "source_use_exact": "Catalogue description of the Library of Congress collection of emigrant diaries and guides (collection level only).",
+          "occurrences": 1,
+          "first_context": "s, covering Mormon and other pioneers moving to Utah, Montana and the Pacific between 1847 and 1869.{{cite:loc-pioneer-diaries}}</p> <p>We have to be straightforward about the limit of this piece. We read that collection's catalogue description, not the indivi"
+        },
+        {
+          "sid": "loc-prairie-traveler",
+          "source_use_exact": "Library of Congress digitization of Marcy's handbook and its edition date.",
+          "occurrences": 1,
+          "first_context": "r is Randolph B. Marcy's <em>The Prairie Traveler</em>, which the Library of Congress has digitized.{{cite:loc-prairie-traveler}} The park service's page on trail supplies relies on a different guide, Joseph Ware's <em>Emigrant's Guide</em> of 1849.{{cite:hist"
+        },
+        {
+          "sid": "hist-food-nps-emigrant-trails",
+          "source_use_exact": "Ware's 1849 supply list for three people; food on the trail; buffalo chips; outfit cost.",
+          "occurrences": 5,
+          "first_context": "page on trail supplies relies on a different guide, Joseph Ware's <em>Emigrant's Guide</em> of 1849.{{cite:hist-food-nps-emigrant-trails}}</p> <h2 id=\"list\">What the guidebooks said to carry</h2> <p>The National Park Service reports that Ware's 1849 guide, pu"
+        },
+        {
+          "sid": "hist-food-marcy-prairie-traveler-text",
+          "source_use_exact": "Marcy's provisions list for 110 days; desiccated vegetables; antiscorbutics; cold flour; jerking; his 1857-58 shortage; his remark on emigrants exhausting their provisions.",
+          "occurrences": 13,
+          "first_context": "ortion, 15 pounds of coffee and 25 pounds of sugar, plus saleratus or yeast powder, salt and pepper.{{cite:hist-food-marcy-prairie-traveler-text}}</p> <div class=\"pa-tablewrap\" role=\"region\" aria-label=\"Two recommended provision lists compared\" tabindex=\"0\"> <"
+        },
+        {
+          "sid": "hist-food-nps-nht-nevada-guide",
+          "source_use_exact": "Bidwell-Bartleson provisions; Humboldt shortages; Donner-Reed food; Hastings Cutoff provisioning; the Newe and Numa hunger passages and the 1855 agent's report.",
+          "occurrences": 9,
+          "first_context": "eir weakest oxen, and the guide notes that the ox-drovers owned the food and the oxen were the food.{{cite:hist-food-nps-nht-nevada-guide}} By the time emigrants reached the Humboldt River in the main years of travel, the guide says, they had often thrown away"
+        },
+        {
+          "sid": "hist-food-fsis-jerky",
+          "source_use_exact": "Current USDA recommendation to heat meat to 160 F and poultry to 165 F before dehydrating.",
+          "occurrences": 4,
+          "first_context": " pa-tag--fact\">Official guidance: no</span></td><td>USDA FSIS recommends heating before dehydrating.{{cite:hist-food-fsis-jerky}}</td></tr> </tbody></table></div> <div class=\"pa-verdict\" role=\"group\" aria-labelledby=\"verdict-h\"> <div class=\"pa-verdict-head\"><"
+        },
+        {
+          "sid": "hist-food-nchfp-jerky",
+          "source_use_exact": "Extension jerky guidance (heat in marinade or after drying); source of the timing difference with USDA.",
+          "occurrences": 1,
+          "first_context": "n an oven after drying, while USDA recommends the heat before dehydrating. Both give 160°F for meat.{{cite:hist-food-nchfp-jerky}}{{cite:hist-food-fsis-jerky}} For a gated safety question we link to both rather than choosing, and flag it for the human reviewer"
+        }
+      ]
+    },
+    {
+      "slug": "preparedness-real-households",
+      "n": 20,
+      "origin": "start",
+      "body_git_blob": "68344cf6c4022285fffb2a01f42027bf6f9ee95d",
+      "metadata_git_blob": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 64,
+      "distinct_citation_ids": 17,
+      "citation_sequence": [
+        "start-usfa-high-rise",
+        "start-ready-low-cost",
+        "start-ready-disability",
+        "start-ready-older-adults",
+        "start-ready-financial",
+        "start-ready-disability",
+        "start-usfa-high-rise",
+        "start-ready-older-adults",
+        "ready-are-you-ready",
+        "start-usfa-high-rise",
+        "start-usfa-high-rise",
+        "start-redcross-older-adults",
+        "start-ready-power",
+        "cdc-water-store",
+        "start-hud-multifamily-template",
+        "start-ready-financial",
+        "ready-are-you-ready",
+        "ready-are-you-ready",
+        "start-ready-financial",
+        "start-ready-low-cost",
+        "start-ready-disability",
+        "start-redcross-older-adults",
+        "ready-are-you-ready",
+        "start-cdc-pyh-prescriptions",
+        "cdc-water-store",
+        "start-ready-low-cost",
+        "start-ready-financial",
+        "start-ready-financial",
+        "start-ready-older-adults",
+        "start-ready-financial",
+        "start-fema-housing",
+        "start-fema-housing",
+        "start-ready-financial",
+        "start-acl-emergency",
+        "start-ready-older-adults",
+        "start-ready-older-adults",
+        "start-ready-older-adults",
+        "start-ready-disability",
+        "start-redcross-older-adults",
+        "start-redcross-older-adults",
+        "start-ready-older-adults",
+        "start-ready-older-adults",
+        "start-ready-older-adults",
+        "start-acl-emergency",
+        "start-acl-emergency",
+        "start-acl-emergency",
+        "start-cdc-disability-plan",
+        "start-ready-disability",
+        "start-ready-disability",
+        "start-ready-disability",
+        "start-acl-emergency",
+        "start-ready-disability",
+        "start-cdc-disability-evacuate",
+        "start-ready-disability",
+        "start-ready-plan",
+        "start-ready-alerts",
+        "start-ready-alerts",
+        "start-ready-disability",
+        "start-ready-disability",
+        "start-cdc-pyh-prescriptions",
+        "start-ready-older-adults",
+        "start-ready-disability",
+        "start-cdc-disability-evacuate",
+        "start-ready-financial"
+      ],
+      "source_claims": [
+        {
+          "sid": "start-usfa-high-rise",
+          "source_use_exact": "Know your exits, practice your route, keep stair doors closed, do not use elevators in a fire, call 911 and shelter in place or wait on a clear landing if you cannot use the stairs (fire only), not all tall buildings meet modern standards.",
+          "occurrences": 4,
+          "first_context": "ctice your exit route, never prop stair or corridor doors open, and not use elevators during a fire.{{cite:start-usfa-high-rise}}</li> <li><strong>Do the free things first.</strong> Ready.gov's low-cost list starts with a family evacuation plan, a free communi"
+        },
+        {
+          "sid": "start-ready-low-cost",
+          "source_use_exact": "Free and low-cost starting points.",
+          "occurrences": 3,
+          "first_context": "ily evacuation plan, a free communication plan, free preparedness resources and local alert sign-up.{{cite:start-ready-low-cost}}</li> <li><strong>Build a small support network and give one person a key.</strong> Ready.gov tells people with disabilities, and o"
+        },
+        {
+          "sid": "start-ready-disability",
+          "source_use_exact": "Support network, key, registries, dialysis, power priority list, assistive devices, heat risk, kit tips.",
+          "occurrences": 12,
+          "first_context": "ild a network of helpers who know where supplies are, and to consider giving a trusted person a key.{{cite:start-ready-disability}}{{cite:start-ready-older-adults}}</li> <li><strong>If you rent, check your insurance.</strong> Ready.gov says to obtain property "
+        },
+        {
+          "sid": "start-ready-older-adults",
+          "source_use_exact": "Take Control in 1, 2, 3; support-network key; clinics' emergency plans; transport; insurance card copies.",
+          "occurrences": 10,
+          "first_context": "ow where supplies are, and to consider giving a trusted person a key.{{cite:start-ready-disability}}{{cite:start-ready-older-adults}}</li> <li><strong>If you rent, check your insurance.</strong> Ready.gov says to obtain property (homeowners or renters), health"
+        },
+        {
+          "sid": "start-ready-financial",
+          "source_use_exact": "Renters insurance, flood coverage caveat, small cash, document storage, benefits by direct deposit, ID for FEMA assistance, scam cautions.",
+          "occurrences": 8,
+          "first_context": ", health and life insurance if you have none, and to read the policy to see which hazards it covers.{{cite:start-ready-financial}}</li> <li><strong>If anyone depends on powered medical equipment, call your clinician and your power provider now,</strong> not du"
+        },
+        {
+          "sid": "ready-are-you-ready",
+          "source_use_exact": "Insurance for an apartment, lease documents, emergency savings, cash, 72-hour framing.",
+          "occurrences": 4,
+          "first_context": "FEMA's guide likewise notes that most of the recommended kit items are inexpensive and easy to find.{{cite:ready-are-you-ready}} Neither promises that this is easy for every household. We will not either.</p> <h2 id=\"renters\">Renters and apartment residents</"
+        },
+        {
+          "sid": "start-redcross-older-adults",
+          "source_use_exact": "Plan to stay two weeks or evacuate, 30 days of medication, two ways out of every room, registries, renter's insurance, review every six months.",
+          "occurrences": 4,
+          "first_context": "der adults, adds a general rule worth applying in any building: identify two ways out of every room.{{cite:start-redcross-older-adults}}</p> <h3>Power and the elevator</h3> <p>Ready.gov's power-outage page lists what an extended outage can disrupt: communicati"
+        },
+        {
+          "sid": "start-ready-power",
+          "source_use_exact": "Outage effects, medical devices, refrigeration times, generator and stove cautions.",
+          "occurrences": 1,
+          "first_context": "es, gas stations, ATMs and banks, and it can cause food spoilage and prevent use of medical devices.{{cite:start-ready-power}} <span class=\"pa-tag pa-tag--ed\">Editor's note</span> In an apartment tower there is a further, practical consequence: if the elevator"
+        },
+        {
+          "sid": "cdc-water-store",
+          "source_use_exact": "Water baseline and the 2-week goal.",
+          "occurrences": 2,
+          "first_context": "rage and space</h3> <p>The CDC baseline is 1 gallon of water per person per day for at least 3 days.{{cite:cdc-water-store}} For a household of four, that is 12 gallons, and, as {{link:water-math|water math}} notes, water weighs a little over 8 pounds a gallon"
+        },
+        {
+          "sid": "start-hud-multifamily-template",
+          "source_use_exact": "That HUD Exchange hosts an optional planning template for multifamily owners, with its own disclaimer, and lists resident handouts and an evacuation special-assistance form in its table of contents. Only 12 of 79 pages were read; no legal or program requirement is claimed.",
+          "occurrences": 1,
+          "first_context": "lists resident handouts, an evacuation planning checklist and an evacuation special-assistance form.{{cite:start-hud-multifamily-template}}</p> <p><span class=\"pa-tag pa-tag--unc\">Uncertain</span> We read only the introduction, the disclaimer, the table of con"
+        },
+        {
+          "sid": "start-cdc-pyh-prescriptions",
+          "source_use_exact": "Emergency supply of medicines, medicine list, state refill laws.",
+          "occurrences": 2,
+          "first_context": "rgency supply of medicines.</td><td>FEMA's guide, Ready.gov and the CDC.{{cite:ready-are-you-ready}}{{cite:start-cdc-pyh-prescriptions}}</td></tr> <tr><th scope=\"row\">Low</th><td>Gradually add water and shelf-stable food you already eat.</td><td>CDC and Ready."
+        },
+        {
+          "sid": "start-fema-housing",
+          "source_use_exact": "Help after a declared disaster: rent, lodging reimbursement, serious needs; the eligibility conditions as printed on 2026-10-30; may qualify even with insurance; how to apply; not a reimbursement for lost power or food.",
+          "occurrences": 2,
+          "first_context": "fy even if you have insurance, provided you file a claim and submit the settlement or denial letter.{{cite:start-fema-housing}}</p> <div class=\"pa-alert pa-alert--note\"><p class=\"pa-alert-title\">Limits of that help</p> <p><span class=\"pa-tag pa-tag--fact\">Offi"
+        },
+        {
+          "sid": "start-acl-emergency",
+          "source_use_exact": "Chronic conditions among older adults, support network, Medical Information Card, Eldercare Locator, DIAL, Disaster Distress Helpline, emPOWER, service-provider obligations.",
+          "occurrences": 5,
+          "first_context": "s, which can make them more vulnerable during periods without food, water, shelter or adequate rest.{{cite:start-acl-emergency}} Ready.gov's older-adult page points to its \"Take Control in 1, 2, 3\" guide: assess your needs, make a plan and engage your support "
+        },
+        {
+          "sid": "start-cdc-disability-plan",
+          "source_use_exact": "Contact list and check-ins, alerts, evacuation options, practice and annual review.",
+          "occurrences": 1,
+          "first_context": "eck on you directly, and asks you to think about how you would reach each other if the power is out.{{cite:start-cdc-disability-plan}}</p> <h3>Heat</h3> <p>Ready.gov notes that people with disabilities, access and functional needs, and older adults may be at i"
+        },
+        {
+          "sid": "start-cdc-disability-evacuate",
+          "source_use_exact": "Accessible transport may not be available; ADA shelters; service and emotional support animals.",
+          "occurrences": 2,
+          "first_context": "ster shelters are required to allow emotional support animals under the Fair Housing Amendments Act.{{cite:start-cdc-disability-evacuate}}</li> <li><strong>Communication.</strong> Carry printed cards or store information on your devices to tell responders how "
+        },
+        {
+          "sid": "start-ready-plan",
+          "source_use_exact": "Ready.gov's Make A Plan asks households to consider the languages spoken when assessing individual needs. Cited here only for that language/accessibility consideration in family communication planning.",
+          "occurrences": 1,
+          "first_context": "gs.{{cite:start-ready-disability}} Ready.gov asks you to consider languages spoken in the household,{{cite:start-ready-plan}} and the Ready.gov pages we read are offered in many languages.{{cite:start-ready-alerts}}</li> <li><strong>Alerts.</strong> Wireless E"
+        },
+        {
+          "sid": "start-ready-alerts",
+          "source_use_exact": "Alert systems and the limits of each.",
+          "occurrences": 2,
+          "first_context": "e household,{{cite:start-ready-plan}} and the Ready.gov pages we read are offered in many languages.{{cite:start-ready-alerts}}</li> <li><strong>Alerts.</strong> Wireless Emergency Alerts rely on sound and vibration and on a compatible phone; a person who is d"
+        }
+      ]
+    },
+    {
+      "slug": "pressure-canning-low-acid",
+      "n": 10,
+      "origin": "food",
+      "body_git_blob": "c60d824c2f679fb7362b8523aec18110f8248290",
+      "metadata_git_blob": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 74,
+      "distinct_citation_ids": 17,
+      "citation_sequence": [
+        "nchfp-home",
+        "food-cdc-home-canned",
+        "food-cdc-home-canned",
+        "food-cdc-home-canned",
+        "food-nchfp-multicooker",
+        "cdc-botulism-prevention",
+        "food-fsis-shelf-stable",
+        "food-nchfp-using-pressure-canners",
+        "food-nchfp-ensuring-safe",
+        "food-nchfp-ensuring-safe",
+        "food-fsis-shelf-stable",
+        "food-nchfp-ensuring-safe",
+        "food-cdc-home-canned",
+        "food-nchfp-ensuring-safe",
+        "food-cdc-home-canned",
+        "food-nchfp-recommended-canners",
+        "food-nchfp-dry-canning",
+        "nchfp-pressure-ground-meat",
+        "nchfp-pressure-ground-meat",
+        "food-nchfp-dry-canning",
+        "nchfp-pressure-ground-meat",
+        "food-nchfp-recommended-canners",
+        "food-nchfp-using-pressure-canners",
+        "food-nchfp-ensuring-safe",
+        "food-nchfp-using-pressure-canners",
+        "food-nchfp-using-pressure-canners",
+        "food-nchfp-recommended-canners",
+        "food-nchfp-using-pressure-canners",
+        "food-cdc-home-canned",
+        "food-nchfp-using-pressure-canners",
+        "food-nchfp-multicooker",
+        "nchfp-pressure-ground-meat",
+        "food-nchfp-using-pressure-canners",
+        "food-nchfp-recommended-canners",
+        "food-cdc-home-canned",
+        "food-cdc-home-canned",
+        "food-nchfp-multicooker",
+        "food-nchfp-dry-canning",
+        "food-nchfp-not-recommended",
+        "food-nchfp-not-recommended",
+        "food-nchfp-not-recommended",
+        "food-cdc-home-canned",
+        "food-osu-survival-food",
+        "food-osu-survival-food",
+        "food-nchfp-ensuring-safe",
+        "food-nchfp-recommended-canners",
+        "food-nchfp-multicooker",
+        "food-nchfp-dry-canning",
+        "food-nchfp-steam-canning",
+        "food-nchfp-not-recommended",
+        "food-usda-canning-guide-1",
+        "food-nchfp-dry-canning",
+        "food-cdc-home-canned",
+        "food-usda-canning-guide-1",
+        "food-usda-canning-guide-1",
+        "food-fsis-shelf-stable",
+        "food-cdc-home-canned",
+        "food-fsis-shelf-stable",
+        "food-cdc-home-canned",
+        "food-fsis-shelf-stable",
+        "food-cdc-home-canned",
+        "food-usu-canned-goods",
+        "food-cdc-home-canned",
+        "food-usda-canning-guide-1",
+        "food-cdc-home-canned",
+        "food-usda-canning-guide-1",
+        "food-usu-canned-goods",
+        "food-fsis-emergencies",
+        "food-cdc-after-emergency",
+        "food-usu-canned-goods",
+        "food-cdc-home-canned",
+        "food-nchfp-recommended-canners",
+        "food-nchfp-using-pressure-canners",
+        "food-osu-survival-food"
+      ],
+      "source_claims": [
+        {
+          "sid": "nchfp-home",
+          "source_use_exact": "What the National Center for Home Food Preservation is and says it provides.",
+          "occurrences": 1,
+          "first_context": "FP), which describes itself as a source of current research-based home-preservation recommendations.{{cite:nchfp-home}} We link to them and do not reprint their times and pressures, because a table copied out of context is how a safe process becomes an unsafe "
+        },
+        {
+          "sid": "food-cdc-home-canned",
+          "source_use_exact": "Pressure canning is the only recommended method for low-acid foods; no boiling water canner or electric multi-cooker; use USDA recipes only; canner and gauge advice; storage; boil-before-eating rule; signs of contamination; if in doubt throw it out.",
+          "occurrences": 16,
+          "first_context": "only recommended method for them, and that a boiling-water canner will not protect against botulism.{{cite:food-cdc-home-canned}}</li> <li><strong>Use only tested recipes.</strong> The CDC says to use only recipes and cookbooks that follow the USDA guide, and "
+        },
+        {
+          "sid": "food-nchfp-multicooker",
+          "source_use_exact": "Why NCHFP does not support USDA processes in electric multi-cookers.",
+          "occurrences": 4,
+          "first_context": "c multi-cooker for canning,</strong> even if it has a \"canning\" button.{{cite:food-cdc-home-canned}}{{cite:food-nchfp-multicooker}}</li> <li><strong>You cannot see, smell or taste botulinum toxin.</strong> If you do not know whether a jar was canned by a safe "
+        },
+        {
+          "sid": "cdc-botulism-prevention",
+          "source_use_exact": "Toxin cannot be seen, smelled or tasted; if in doubt throw it out.",
+          "occurrences": 1,
+          "first_context": "her a jar was canned by a safe method, do not eat it. The CDC's rule is \"If in doubt, throw it out\".{{cite:cdc-botulism-prevention}}</li> </ol> <p class=\"pa-act-note\">Botulism is a medical emergency. Symptoms can include double vision, droopy eyelids, trouble "
+        },
+        {
+          "sid": "food-fsis-shelf-stable",
+          "source_use_exact": "Botulism symptoms and timing; the boil-before-eating qualification; the conflicting storage chart row; double-bagging suspect cans.",
+          "occurrences": 5,
+          "first_context": "ng and difficulty breathing, and they typically start 12 to 48 hours after eating contaminated food.{{cite:food-fsis-shelf-stable}} If you or anyone you know has them after eating home-canned food, call your emergency number immediately. If you are new to cann"
+        },
+        {
+          "sid": "food-nchfp-using-pressure-canners",
+          "source_use_exact": "Canner types and size; venting 10 minutes; gauge accuracy; restart timing if pressure drops; do not force-cool; burner limits; handling cautions; directory of local experts.",
+          "occurrences": 8,
+          "first_context": "about classes before you buy equipment; NCHFP's pages link a directory of local experts and classes.{{cite:food-nchfp-using-pressure-canners}}</p> </section> <ul class=\"pa-key\" aria-label=\"How to read the labels in this guide\"> <li><span class=\"pa-tag pa-tag-"
+        },
+        {
+          "sid": "food-nchfp-ensuring-safe",
+          "source_use_exact": "Botulism growth conditions; definition and examples of low-acid foods; 240 to 250 F in pressure canners; the 20 to 100 minute and 7 to 11 hour time ranges; elevation.",
+          "occurrences": 6,
+          "first_context": "tures: a moist, low-acid food; a temperature between 40°F and 120°F; and less than 2 percent oxygen.{{cite:food-nchfp-ensuring-safe}} <span class=\"pa-tag pa-tag--ed\">Editor's note</span> A sealed jar of low-acid food that has not been heated enough can be exac"
+        },
+        {
+          "sid": "food-nchfp-recommended-canners",
+          "source_use_exact": "Temperature versus pressure; trapped air and elevation as the two errors; gauge accuracy and Extension gauge testing; small pressure saucepans.",
+          "occurrences": 6,
+          "first_context": "n it. At sea level a canner at 10.5 pounds of gauge pressure gives an internal temperature of 240°F.{{cite:food-nchfp-recommended-canners}} That is why trapped air is dangerous (see below) and why a gadget that merely reaches a pressure does not prove it has r"
+        },
+        {
+          "sid": "food-nchfp-dry-canning",
+          "source_use_exact": "Why canning raw vegetables without liquid is hazardous; processes must be used as written.",
+          "occurrences": 5,
+          "first_context": "step-by-step process in a recommended type of pressure canner, and how to make altitude adjustments.{{cite:food-nchfp-dry-canning}}</p> <div class=\"pa-tablewrap\" role=\"region\" aria-label=\"Conditions that are part of a tested low-acid canning process\" tabindex="
+        },
+        {
+          "sid": "nchfp-pressure-ground-meat",
+          "source_use_exact": "The example of a tested process: preparation, separate tables by jar size, gauge type and elevation band (not reprinted).",
+          "occurrences": 4,
+          "first_context": "ocess. For ground or chopped meat, NCHFP has its own page with its own preparation steps and tables.{{cite:nchfp-pressure-ground-meat}}</td></tr> <tr><th scope=\"row\">Jar size</th><td>Process time differs between pints and quarts on the ground-meat page.{{cite:"
+        },
+        {
+          "sid": "food-nchfp-not-recommended",
+          "source_use_exact": "Oven, microwave, dishwasher, open-kettle and dry-oven canning not recommended; canning powders useless.",
+          "occurrences": 4,
+          "first_context": "heating jars in an oven</th><td>NCHFP: not a recommended, science-based method of storing dry foods.{{cite:food-nchfp-not-recommended}}</td></tr> <tr><th scope=\"row\">Oven, microwave or dishwasher \"processing\" of filled jars; open-kettle canning</th><td>Not rec"
+        },
+        {
+          "sid": "food-osu-survival-food",
+          "source_use_exact": "Do not can water, butter, dairy, grains, leftovers, cakes, quick breads or cured meats; vacuum-sealing low-acid foods; canning during a long outage.",
+          "occurrences": 3,
+          "first_context": "dairy, grains, leftovers, cakes, quick breads or cured meats</th><td>Oregon State Extension: do not.{{cite:food-osu-survival-food}}</td></tr> <tr><th scope=\"row\">Vacuum-sealing low-acid foods and storing them at room temperature</th><td>Oregon State Extension:"
+        },
+        {
+          "sid": "food-nchfp-steam-canning",
+          "source_use_exact": "Atmospheric steam canning is endorsed for high-acid foods only.",
+          "occurrences": 1,
+          "first_context": "ested recipes and its extra steps are followed. It says nothing that extends this to low-acid foods.{{cite:food-nchfp-steam-canning}} Separately, NCHFP's older page on equipment still says steam canners are not currently recommended and points to the newer gui"
+        },
+        {
+          "sid": "food-usda-canning-guide-1",
+          "source_use_exact": "Spoiled low-acid food may show little evidence; handling suspect jars; storage and freezing of canned food.",
+          "occurrences": 5,
+          "first_context": "ll suspect containers of spoiled low-acid food should be treated as having produced botulinum toxin.{{cite:food-usda-canning-guide-1}} NCHFP says botulism toxin can be present in canned vegetables without any visual changes or odors.{{cite:food-nchfp-dry-canni"
+        },
+        {
+          "sid": "food-usu-canned-goods",
+          "source_use_exact": "Commercially canned is superior for storage; tasting and boiling advice that conflicts with CDC; do not let jars freeze.",
+          "occurrences": 3,
+          "first_context": "food for 10 minutes before tasting, or heating low-acid food to 165°F or boiling it 5 to 10 minutes.{{cite:food-usu-canned-goods}} The CDC says never to taste food to see if it is safe, and the USDA guide says not to taste food from a jar showing signs of spoi"
+        },
+        {
+          "sid": "food-fsis-emergencies",
+          "source_use_exact": "Discard home-canned food that touched floodwater.",
+          "occurrences": 1,
+          "first_context": "-canned foods that touched floodwater, because the jars cannot be effectively cleaned and sanitized.{{cite:food-fsis-emergencies}}{{cite:food-cdc-after-emergency}}</p> <h2 id=\"households\">Is this for you? Budget, space, ability</h2> <p>Pressure canning is a r"
+        },
+        {
+          "sid": "food-cdc-after-emergency",
+          "source_use_exact": "Discard home-canned food that touched floodwater.",
+          "occurrences": 1,
+          "first_context": "odwater, because the jars cannot be effectively cleaned and sanitized.{{cite:food-fsis-emergencies}}{{cite:food-cdc-after-emergency}}</p> <h2 id=\"households\">Is this for you? Budget, space, ability</h2> <p>Pressure canning is a real undertaking, and the other"
+        }
+      ]
+    }
+  ]
+}
