@@ -1,0 +1,615 @@
+{
+  "run": "R484",
+  "review_date": "2026-11-18",
+  "state": "UNPUBLISHED_DRAFT_COMMERCIAL_HARD_HOLD",
+  "affiliate_account_status": "PENDING_OR_UNVERIFIED_NOT_ACCEPTED",
+  "source_count": 18,
+  "claim_count": 34,
+  "release_gate_count": 30,
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Inspire3 official portfolio",
+      "url": "https://inspire3.com/",
+      "scope": "merchant identity / catalog only"
+    },
+    {
+      "id": "S02",
+      "title": "Focus Shot exact seller offer",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "scope": "seller's bundle, audio protocol, promotion, price display, guarantee; NOT independently verified checkout"
+    },
+    {
+      "id": "S03",
+      "title": "Zen12 official about",
+      "url": "https://zen12.com/about",
+      "scope": "different product and seller claims"
+    },
+    {
+      "id": "S04",
+      "title": "Zen12 promotional funnel",
+      "url": "https://zen12.com/secret/",
+      "scope": "potentially variant-specific discount/coupon/urgency not reusable"
+    },
+    {
+      "id": "S05",
+      "title": "Hypnosis Live official FAQ",
+      "url": "https://hypnosislive.com/faq",
+      "scope": "other distinct product; its terms cannot carry over"
+    },
+    {
+      "id": "S06",
+      "title": "Oster (1973) original article",
+      "url": "https://doi.org/10.1038/scientificamerican1073-94",
+      "scope": "binaural phenomenon, not intervention efficacy"
+    },
+    {
+      "id": "S07",
+      "title": "Ross et al. (2014) original experiment",
+      "url": "https://doi.org/10.1152/jn.00224.2014",
+      "scope": "cortical neural response not purchased recording"
+    },
+    {
+      "id": "S08",
+      "title": "eNeuro (2020) controlled comparison",
+      "url": "https://www.eneuro.org/content/7/2/ENEURO.0232-19.2020",
+      "scope": "binaural vs monaural, no study mood effect"
+    },
+    {
+      "id": "S09",
+      "title": "2019 behavioral meta-analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+      "scope": "22 trials, pooled g=.45 across disparate outcomes"
+    },
+    {
+      "id": "S10",
+      "title": "2023 EEG systematic review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "scope": "5 supportive/8 contradictory/1 mixed, heterogeneous"
+    },
+    {
+      "id": "S11",
+      "title": "2024 auditory autonomic review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+      "scope": "mixed/insufficient data"
+    },
+    {
+      "id": "S12",
+      "title": "2026 audio intervention review",
+      "url": "https://doi.org/10.1017/neu.2026.10057",
+      "scope": "10 mixed interventions; not Focus Shot"
+    },
+    {
+      "id": "S13",
+      "title": "FTC endorsements FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "clear conspicuous relationship disclosure"
+    },
+    {
+      "id": "S14",
+      "title": "FTC health claims",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "product-specific adequate substantiation"
+    },
+    {
+      "id": "S15",
+      "title": "Existing Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "free 52 pages, existing Jetpack"
+    },
+    {
+      "id": "S16",
+      "title": "Existing Puységur archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "historical source not proof of audio"
+    },
+    {
+      "id": "S17",
+      "title": "FV Editorial Standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "scope": "commercial/editorial separation"
+    },
+    {
+      "id": "S18",
+      "title": "Existing independent change-blindness investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "real existing article for creator matching"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Focus Shot seller offers 15-minute audio",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "Can write 'seller describes'; verify offer immediately before release"
+    },
+    {
+      "id": "C02",
+      "claim": "Focus Shot seller offers 30-minute audio",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "No independent audio inspection"
+    },
+    {
+      "id": "C03",
+      "claim": "Focus Shot contains 'brainwave only' versions",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "No included file verification"
+    },
+    {
+      "id": "C04",
+      "claim": "Focus Shot includes quick-start video/support",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "Not guaranteed customer delivery"
+    },
+    {
+      "id": "C05",
+      "claim": "Full protocol alternates 12 and 18 Hz",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "Stated frequencies unmeasured"
+    },
+    {
+      "id": "C06",
+      "claim": "Full protocol contains mountain ambience/brown noise",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "No direct audio inspection"
+    },
+    {
+      "id": "C07",
+      "claim": "Headphones not required",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "Cannot infer binaural method"
+    },
+    {
+      "id": "C08",
+      "claim": "Focus Shot is verified binaural-beat audio",
+      "status": "DO_NOT_ASSERT",
+      "source_ids": [
+        "S02",
+        "S06"
+      ],
+      "note": "Headphone claim conflicts with unqualified binaural assumption"
+    },
+    {
+      "id": "C09",
+      "claim": "Binaural beats are a recognized auditory percept",
+      "status": "SOURCE_SUPPORTED_RESEARCH",
+      "source_ids": [
+        "S06",
+        "S07"
+      ],
+      "note": "Not all named audio products use this mechanism"
+    },
+    {
+      "id": "C10",
+      "claim": "Cortical responses to binaural stimuli observed",
+      "status": "SOURCE_SUPPORTED_RESEARCH",
+      "source_ids": [
+        "S07",
+        "S08"
+      ],
+      "note": "Does not establish practical efficacy"
+    },
+    {
+      "id": "C11",
+      "claim": "Monaural control produced stronger cortical entrainment in one study",
+      "status": "SOURCE_SUPPORTED_RESEARCH",
+      "source_ids": [
+        "S08"
+      ],
+      "note": "This particular 2020 protocol; do not generalize"
+    },
+    {
+      "id": "C12",
+      "claim": "That study found no mood effect",
+      "status": "SOURCE_SUPPORTED_RESEARCH",
+      "source_ids": [
+        "S08"
+      ],
+      "note": "Specific sample/protocol/outcome"
+    },
+    {
+      "id": "C13",
+      "claim": "2019 meta-analysis showed some behavioral benefits",
+      "status": "SOURCE_SUPPORTED_RESEARCH",
+      "source_ids": [
+        "S09"
+      ],
+      "note": "Positive pooled g=.45 is not product-specific"
+    },
+    {
+      "id": "C14",
+      "claim": "2023 EEG entrainment literature is inconsistent",
+      "status": "SOURCE_SUPPORTED_RESEARCH",
+      "source_ids": [
+        "S10"
+      ],
+      "note": "5 supportive/8 contradictory/1 mixed"
+    },
+    {
+      "id": "C15",
+      "claim": "2026 review suggests some audio-intervention benefits",
+      "status": "SOURCE_SUPPORTED_RESEARCH",
+      "source_ids": [
+        "S12"
+      ],
+      "note": "Mixed music/AV/binaural interventions, small samples and heterogeneity"
+    },
+    {
+      "id": "C16",
+      "claim": "Focus Shot instantly produces sharp attention",
+      "status": "DO_NOT_ASSERT",
+      "source_ids": [
+        "S02",
+        "S08",
+        "S10"
+      ],
+      "note": "Vendor promise lacks product-specific controlled proof"
+    },
+    {
+      "id": "C17",
+      "claim": "Focus Shot focus improvements last 4h to a day",
+      "status": "DO_NOT_ASSERT",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "No independent replication found"
+    },
+    {
+      "id": "C18",
+      "claim": "Focus Shot proven completely safe",
+      "status": "DO_NOT_ASSERT",
+      "source_ids": [
+        "S02",
+        "S14"
+      ],
+      "note": "Absolute safety unsupported"
+    },
+    {
+      "id": "C19",
+      "claim": "Focus Shot treats ADHD/anxiety/insomnia",
+      "status": "DO_NOT_ASSERT",
+      "source_ids": [
+        "S14"
+      ],
+      "note": "Medical outcome absent"
+    },
+    {
+      "id": "C20",
+      "claim": "Zen12 equals 1h regular meditation in 12min",
+      "status": "DO_NOT_ASSERT",
+      "source_ids": [
+        "S03",
+        "S04"
+      ],
+      "note": "Marketing equivalence unverified; distinct SKU"
+    },
+    {
+      "id": "C21",
+      "claim": "Hypnosis Live changes nearly any part of life",
+      "status": "DO_NOT_ASSERT",
+      "source_ids": [
+        "S05",
+        "S14"
+      ],
+      "note": "Merchant broad efficacy claims unsupported"
+    },
+    {
+      "id": "C22",
+      "claim": "Seller display showed $17.99 and crossed-out price on Nov 18",
+      "status": "SELLER_SIDE_OBSERVATION_NOT_OFFER",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "Currency/checkout/eligibility not authenticated; no buyer-facing price promise"
+    },
+    {
+      "id": "C23",
+      "claim": "Seller page displays one-year money-back claim",
+      "status": "SELLER_SIDE_OBSERVATION_NOT_OFFER",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "No written executed contract or refund exercise; check exact terms"
+    },
+    {
+      "id": "C24",
+      "claim": "Seller rating 4.9 reflects verified customers",
+      "status": "DO_NOT_ASSERT",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "Widget provenance not independently verified"
+    },
+    {
+      "id": "C25",
+      "claim": "Final Vestige accepted by Inspire3 Refersion",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S01"
+      ],
+      "note": "Only named Aug 24 pending email seen; dashboard unverified"
+    },
+    {
+      "id": "C26",
+      "claim": "Final Vestige issued Focus Shot earning URL",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S01"
+      ],
+      "note": "Never construct or copy unspecified tracking URL"
+    },
+    {
+      "id": "C27",
+      "claim": "Email/social promotional rights granted",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S01"
+      ],
+      "note": "Must authenticate agreement/channel terms"
+    },
+    {
+      "id": "C28",
+      "claim": "Current payback/commission schedule",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S01"
+      ],
+      "note": "Never invent payout or rate"
+    },
+    {
+      "id": "C29",
+      "claim": "FV paid Mind owned digital SKU available",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S15"
+      ],
+      "note": "Existing Focus is free, no authenticated paid SKU"
+    },
+    {
+      "id": "C30",
+      "claim": "Focus Fieldbook is free 52-page resource",
+      "status": "FIRST_PARTY_PUBLISHED",
+      "source_ids": [
+        "S15"
+      ],
+      "note": "Keep sole existing Jetpack form and welcome"
+    },
+    {
+      "id": "C31",
+      "claim": "Puységur historical archive supports commercial hypnosis efficacy",
+      "status": "DO_NOT_ASSERT",
+      "source_ids": [
+        "S16"
+      ],
+      "note": "History is not clinical product proof"
+    },
+    {
+      "id": "C32",
+      "claim": "FTC adjacent affiliate disclosure required in eventual recommendation",
+      "status": "COMPLIANCE_GATE",
+      "source_ids": [
+        "S13"
+      ],
+      "note": "Place before actual earning URL, not only policy footer"
+    },
+    {
+      "id": "C33",
+      "claim": "FTC product-specific health substantiation required for strong health promise",
+      "status": "COMPLIANCE_GATE",
+      "source_ids": [
+        "S14"
+      ],
+      "note": "No implied health guarantees"
+    },
+    {
+      "id": "C34",
+      "claim": "affiliate_click equals independently verified commission",
+      "status": "FALSE_EQUIVALENCE_FORBIDDEN",
+      "source_ids": [
+        "S13"
+      ],
+      "note": "Reconcile seller settlement and refund ledger"
+    }
+  ],
+  "commercial_controls": {
+    "affiliate_url": null,
+    "active_checkout_cta": false,
+    "authorized_partner_sku": null,
+    "authorized_channels": [],
+    "verified_price": null,
+    "verified_commission": null,
+    "affiliate_approval_document": null,
+    "realized_net_revenue": null,
+    "qualified_human_sessions": null,
+    "paid_conversion_rate": null
+  },
+  "release_gates": [
+    {
+      "id": "G01",
+      "requirement": "Named Final Vestige affiliate application accepted in authenticated partner portal",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G02",
+      "requirement": "Written product family/SKU and earning URL issued for Focus Shot",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G03",
+      "requirement": "Explicit permitted channels for search/organic/social and optional email",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G04",
+      "requirement": "Prohibited claims and creative-use limitations checked",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G05",
+      "requirement": "Current exact landing checkout SKU verified without placing order",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G06",
+      "requirement": "Current displayed total/currency/fees/upsell and refund policy independently audited",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G07",
+      "requirement": "Product rights/license and brand use approved",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G08",
+      "requirement": "Final Vestige-owned digital product eligibility rechecked before launching speculative affiliate page",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G09",
+      "requirement": "Publication/release explicitly approved by founder",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G10",
+      "requirement": "Editorial independence and technical source audits reviewed by independent editor",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G11",
+      "requirement": "Adjacent unmistakable FTC relationship disclosure visually tested on mobile",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G12",
+      "requirement": "No clinical, guaranteed, wealth, safety or hour-equivalence assertions",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G13",
+      "requirement": "No invalid merchant URLs or disabled-appearance-but-active controls",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G14",
+      "requirement": "Keyboard focus and screen reader labels validated by real browser",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G15",
+      "requirement": "Reduced motion, no-JS and 360/390/768/1440/1920 responsive QA",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G16",
+      "requirement": "WordPress sanitizer preview and block behavior checked without writes",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G17",
+      "requirement": "Optional film is original, playable, captioned and transcript complete",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G18",
+      "requirement": "No forced autoplay or third-party embed/performance regression",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G19",
+      "requirement": "CSP/CWV/performance budgets independently checked",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G20",
+      "requirement": "Jetpack confirmation and welcome delivery for existing funnel independently checked",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G21",
+      "requirement": "No second email signup form or welcome duplication",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G22",
+      "requirement": "Exact Grok asset IDs, published media URLs and actual hooks independently matched",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G23",
+      "requirement": "Permissioned campaign parameters do not contain PII",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G24",
+      "requirement": "First-party landing/CTA event names do not duplicate Claude instrumentation",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G25",
+      "requirement": "Merchant payout report accepts join key where available without fabricating attribution",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G26",
+      "requirement": "Refunds, chargebacks and fees reconciled to realized revenue",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G27",
+      "requirement": "7/30-day qualified-human session denominator independently confirmed",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G28",
+      "requirement": "A/B allocation randomized, persisted appropriately, pre-registered, and authorized",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G29",
+      "requirement": "Real visitors/verified paid outcomes observed before effectiveness conclusions",
+      "status": "NOT_CLEARED"
+    },
+    {
+      "id": "G30",
+      "requirement": "Commercial release approval and rollback documented",
+      "status": "NOT_CLEARED"
+    }
+  ],
+  "metrics": {
+    "primary": "realized_net_revenue_per_1000_qualified_human_sessions",
+    "formula": "1000*(verified_paid_settlement - refunds - chargebacks - processing_and_applicable_fees)/qualified_human_sessions",
+    "window_days": [
+      7,
+      30
+    ],
+    "if_missing": "NOT_COMPUTABLE",
+    "never_conflate": [
+      "click",
+      "lead",
+      "checkout_start",
+      "attributed_session",
+      "settled_order"
+    ]
+  }
+}
