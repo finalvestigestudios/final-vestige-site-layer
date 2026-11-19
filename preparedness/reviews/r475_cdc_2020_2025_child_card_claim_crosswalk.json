@@ -1,0 +1,169 @@
+{
+  "schema": "fv-preparedness-r475-cdc-child-card-claim-custody-v1",
+  "status": "DRAFT_HARD_HOLD",
+  "may_publish": false,
+  "qualified_qd_pass": false,
+  "qualified_school_privacy_review": false,
+  "native_35_article_build_pass": false,
+  "wordpress_private_export_parity_pass": false,
+  "article_15_status": "draft_safety_pending",
+  "tool_104_status": "draft_safety_pending",
+  "tool_102_distinct": true,
+  "evidence": {
+    "r474_integration_head": "7d0a7ad4e00465041b82667a9560bc8e6aa04b56",
+    "r474_historical_catalog_scope_manifest_blob": "3b90c422aa85fdcbd26b7d4f09a123c3dbf26ffc",
+    "editorial_e466_memo_blob": "c83330dbc53625be81e30c681aa6df35308ab52e",
+    "editorial_e467_commit": "28e10b233eb110b03603b6c8f3e4a8868d41d5f0",
+    "editorial_e467_memo_blob": "68de3215599eddf04b1f63a75558da203a5969c7",
+    "original_article_html_blob": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+    "original_article_meta_blob": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3",
+    "original_tool_html_blob": "be8698ac5d020476ff649d85813810e2000c6f98",
+    "original_tool_meta_blob": "47da1e7e20e39f0ea85e26d54a8d58301f6e0a15"
+  },
+  "sources": [
+    {
+      "id": "cdc-2020-backpack-pdf-e467-review-only",
+      "url": "https://stacks.cdc.gov/view/cdc/139829/cdc_139829_DS1.pdf",
+      "published": "2020-07-14",
+      "scope": "one_pdf_page_visually_inspected_2026-11-18",
+      "origin": "E467_EDITORIAL_PDF_VISUAL_REVIEW",
+      "citation_registered": false,
+      "rights": "US_GOV_PUBLIC_DOMAIN_PER_CATALOG",
+      "2020_child_backpack_fields": [
+        "child_name",
+        "child_dob",
+        "home_address",
+        "school_contact",
+        "medical_allergies",
+        "emergency_contacts",
+        "pickup_address"
+      ],
+      "2020_guardian_wallet_fields": [
+        "child_name",
+        "child_dob",
+        "home_address",
+        "school_contact",
+        "medical_allergies",
+        "emergency_contacts",
+        "pickup_address",
+        "healthcare_specialist"
+      ],
+      "old_e466_catalog_only_is_historical": true
+    },
+    {
+      "id": "cdc-2025-keeping-children-safe-e467-review-only",
+      "url": "https://www.cdc.gov/children-and-school-preparedness/keeping-safe/index.html",
+      "published": "2025-12-16",
+      "scope": "full_official_web_page",
+      "origin": "E467_EDITORIAL_WEB_REVIEW",
+      "citation_registered": false,
+      "rights": "OFFICIAL_WEB_GUIDANCE_NOT_TEMPLATE_LICENSE",
+      "2025_page_explicit_fields": [
+        "child_name",
+        "child_dob",
+        "medical_allergies",
+        "school_caregiver_contacts",
+        "parent_guardian_contacts",
+        "emergency_contacts"
+      ],
+      "2025_page_explicitly_lists_home_address": false,
+      "2025_address_is_prohibited": false,
+      "2025_address_is_required": false
+    },
+    {
+      "id": "cdc-2025-before-during-after-e467-review-only",
+      "url": "https://www.cdc.gov/children-and-school-preparedness/before-during-after/index.html",
+      "published": "2025-12-24",
+      "scope": "full_official_web_page",
+      "origin": "E467_EDITORIAL_WEB_REVIEW",
+      "citation_registered": false,
+      "rights": "OFFICIAL_WEB_GUIDANCE",
+      "card_grants_school_pickup_authority": false,
+      "school_emergency_contacts_must_stay_current": true,
+      "follow_authorized_pickup_instructions": true
+    }
+  ],
+  "claim_boundaries": {
+    "cdc_guardian_wallet_is_child_specific": true,
+    "cdc_guardian_wallet_is_fv_minimal_adult_card": false,
+    "fv_minimal_adult_note_is_optional_editorial_only": true,
+    "fv_minimal_tool_is_approved_cdc_template": false,
+    "cdc_2020_pdf_and_2025_web_fields_are_interchangeable": false,
+    "cdc_2025_page_prohibits_home_address": false,
+    "cdc_2025_page_mandates_home_address": false,
+    "emergency_card_grants_school_pickup_permission": false,
+    "parent_written_card_proves_ferpa_compliance": false,
+    "original_cdc_citation_updated_without_registration": false,
+    "full_original_35_article_native_build_passed": false,
+    "word_press_or_live_child_data_security_verified": false,
+    "no_child_pii_collected_by_this_gate": true,
+    "no_advice_approved_as_medically_safe": true
+  },
+  "human_decisions": [
+    {
+      "id": "form_purpose_and_custodian",
+      "status": "UNADJUDICATED",
+      "owner": "Preparedness/QD",
+      "reviewer": null,
+      "signed_receipt": null
+    },
+    {
+      "id": "necessary_child_medical_identifiers",
+      "status": "UNADJUDICATED",
+      "owner": "Preparedness/QD",
+      "reviewer": null,
+      "signed_receipt": null
+    },
+    {
+      "id": "school_childcare_local_pickup_policy",
+      "status": "UNADJUDICATED",
+      "owner": "Preparedness/QD",
+      "reviewer": null,
+      "signed_receipt": null
+    },
+    {
+      "id": "new_source_registration_and_citation_scope",
+      "status": "UNADJUDICATED",
+      "owner": "Preparedness/QD",
+      "reviewer": null,
+      "signed_receipt": null
+    },
+    {
+      "id": "production_js_data_privacy_and_print",
+      "status": "UNADJUDICATED",
+      "owner": "Claude/Engineering",
+      "reviewer": null,
+      "signed_receipt": null
+    },
+    {
+      "id": "native_build_wordpress_preview_parity",
+      "status": "UNADJUDICATED",
+      "owner": "Claude/Engineering",
+      "reviewer": null,
+      "signed_receipt": null
+    },
+    {
+      "id": "accessible_mobile_print_and_200_percent_zoom",
+      "status": "UNADJUDICATED",
+      "owner": "Preparedness/QD",
+      "reviewer": null,
+      "signed_receipt": null
+    },
+    {
+      "id": "qualified_release_approval",
+      "status": "UNADJUDICATED",
+      "owner": "Founder/Commerce",
+      "reviewer": null,
+      "signed_receipt": null
+    }
+  ],
+  "commercial_funnel": {
+    "verified_purchasable_preparedness_sku": false,
+    "published_grok_asset_id_matched": false,
+    "paid_checkout_verified": false,
+    "settled_customer_order_verified": false,
+    "attributable_net_revenue_1000_qualified_sessions": null
+  },
+  "review_only_last_checked": "2026-11-18",
+  "review_by": "2026-12-18"
+}
