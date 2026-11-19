@@ -173,10 +173,18 @@ function fv457_render(): string {
  $cssPresent=is_file($css);$jsPresent=is_file($js);
  $style=$cssPresent?file_get_contents($css):null;
  $script=$jsPresent?file_get_contents($js):null;
- if(($cssPresent&&($style===false||!hash_equals('ee244a0136a61b089c4e4c643f8336395963558f57f1d8b28ec6940871c6a6ff',hash('sha256',$style))))
-    ||($jsPresent&&($script===false||!hash_equals('001ba5b8857bfee90d5d79db8435047946bc3a61253b3a8f4623e725daa1fb0a',hash('sha256',$script)))))return fv457_fallback();
- if(!$cssPresent)return $out;
- return '<style>'.$style.'</style>'.$out.($jsPresent?'<script>'.$script.'</script>':'');
+ // R470: quarantine altered optional assets without erasing verified source custody.
+ // Server-side validated catalogue HTML is independent of CSS/JS. Never embed
+ // bytes from an altered asset, and never run JS without an intact stylesheet.
+ $badCss=$cssPresent&&($style===false||!hash_equals('ee244a0136a61b089c4e4c643f8336395963558f57f1d8b28ec6940871c6a6ff',hash('sha256',$style)));
+ $badJs=$jsPresent&&($script===false||!hash_equals('001ba5b8857bfee90d5d79db8435047946bc3a61253b3a8f4623e725daa1fb0a',hash('sha256',$script)));
+ if($badCss||$badJs){
+  $affected=implode(' and ',array_values(array_filter([$badCss?'stylesheet':null,$badJs?'script':null])));
+  $notice='<p role="status"><strong>Archive enhancement quarantined:</strong> The '.$affected.' failed integrity validation and was not loaded. All six source records, chronology, evidence limits and the free investigation remain available below in native HTML. Interactive filters are disabled.</p>';
+  $out=str_replace('<div class="fv457__shell">','<div class="fv457__shell">'.$notice,$out);
+ }
+ if(!$cssPresent||$badCss)return $out;
+ return '<style>'.$style.'</style>'.$out.($jsPresent&&!$badJs?'<script>'.$script.'</script>':'');
 }
 if(function_exists('add_action'))add_action('init',static function():void{
  if(!defined('FV_R457_ENABLE_STAGING')||FV_R457_ENABLE_STAGING!==true||!defined('FV_R457_STAGING_PAGE_ID')||!is_int(FV_R457_STAGING_PAGE_ID)||FV_R457_STAGING_PAGE_ID<1||!function_exists('wp_get_environment_type')||wp_get_environment_type()!=='staging'||!function_exists('add_shortcode'))return;
