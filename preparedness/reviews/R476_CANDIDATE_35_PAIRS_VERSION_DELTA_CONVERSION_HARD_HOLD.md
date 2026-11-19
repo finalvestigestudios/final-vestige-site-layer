@@ -4,7 +4,7 @@
 
 ## Deterministic, authenticated candidate inventory
 
-Read the GitHub contents API at the above exact parent commit. The returned tree has **35 article slugs, 35 body files and 35 metadata files**. Record all 70 exact **Git blob SHAs and byte sizes** in `r476_35_article_candidate_custody.json`. The companion read-only validator requires: strict JSON (no duplicate keys / NaN), precisely 35 paired and alphabetically sorted canonical slugs, unique blob identities, exact expected file paths, no unexpected or missing local article pair, literal Git-object byte comparison, 1–35 article-number uniqueness, draft publication and pending safety status, preserved nonempty authored source-use reading scopes, and every literal citation bound to authored `source_use` metadata. It never grants QD approval: the CLI returns exit 2 even on structural integrity.
+Read the GitHub contents API at the above exact parent commit. The returned tree has **35 article slugs, 35 body files and 35 metadata files**. Record all 70 exact **Git blob SHAs and byte sizes** in `r476_35_article_candidate_custody.json`. The companion read-only validator requires: strict JSON (no duplicate keys / NaN), precisely 35 paired and alphabetically sorted canonical slugs, unique blob identities, exact expected file paths, no unexpected or missing local article pair, literal Git-object byte comparison, 1–35 article-number uniqueness, draft publication and **exact pinned authored safety metadata without false qualified QD interpretation**, preserved nonempty authored source-use reading scopes, and every literal citation bound to authored `source_use` metadata. It never grants QD approval: the CLI returns exit 2 even on structural integrity.
 
 ### Historical comparison: important interpretation
 
@@ -15,10 +15,13 @@ Exact 9 original contribution branch refs rechecked, matching historical pins:
 
 Independent review branches inspected and **not modified**: QD PR #157 HEAD `7d1ae6b8ef93d10cfb6810987672360885e9c1aa`, fixture PR #169 `e9cd7766dac59d47ab467d8945269b9146c2aef5`, dependent #2205 `bbcf1859768624c611df4abadc564c18247cf32a`; Article #11 editorial #2789 `8aac85e64301560edeef340bb5ae34000b543d68`; Apollo/home #3072 `06d208bcaa4f07935b7fbd424bf4cd8ea3c54455`. All were drafts at inspection.
 
+
+**Important authentic metadata correction (R476 full metadata audit):** The original 35 article metadata does **not** contain 35 pending safety states. It contains **29 `pending`**, **4 `not-required`** (historical Lost Ways records), and **2 `approved`** with reviewer text `Founder chat reply 'approved' (name unconfirmed; scope unconfirmed)` (Article #6 `making-water-safer`; Article #21 `salt-beef-salt-pork-age-of-sail`). These are pre-existing authored state strings preserved by exact Git blob custody, **not** an independently verified reviewer identity, scoped qualified QD approval or release clearance. All 35 `status.publish` remain `draft`. Actual `track` enum is `modern` / `lost-ways`, not a synthetic `historical` alias; the validator and positive tests now use authentic values. Locally **56/56 new**, **479/479 R472–R476 combined** Python synthetic tests PASS. Full native validation/export and human source/safety still HARD HOLD.
+
 ## Validation / limitation
 
-- **BUILT**: frozen 70-blob/35-pair candidate manifest, 14-versus-R448 historical delta and 10-fork review queue; Python read-only validator; 53 local synthetic unittest cases, including 42 adversarial mutations.
-- **TESTED**: exact locally executed Python source/test Git blob IDs and Python compilation; 53/53 isolated offline unit tests PASS.
+- **BUILT**: frozen 70-blob/35-pair candidate manifest, 14-versus-R448 historical delta and 10-fork review queue; Python read-only validator; 56 local synthetic unittest cases, including 42 adversarial mutations.
+- **TESTED**: exact locally executed Python source/test Git blob IDs and Python compilation; 56/56 isolated offline unit tests PASS.
 - **NOT EXECUTED**: complete native 35-article `validate.py` / `build.py`, actual 41 WordPress and 41 private-preview exports, browser/print accessibility, authenticated full source checkout. The native gate fails closed on missing inputs. GitHub-hosted CI results must be checked separately and cannot be presumed PASS.
 - **NOT APPROVED**: food/wild-game freezing (#11), CDC child-card privacy and school pickup (#15/#104), all independent qualified emergency/medical/food/privacy/QD assessments, original source disputes and editorial decisions.
 - **LIVE/VERIFIED commercial changes**: NONE.
