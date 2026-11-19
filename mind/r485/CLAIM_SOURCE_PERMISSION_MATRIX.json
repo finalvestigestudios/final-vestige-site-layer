@@ -1,0 +1,304 @@
+{
+  "snapshot_date": "2026-11-18",
+  "workstream": "Final Vestige Studios Mind & Perception",
+  "branch": "mind-r485-gorilla-what-experts-miss-commercial-gates-20261118",
+  "source_policy": "All publicly checked seller details are descriptions, not independent efficacy tests. No affiliate approval, tracking link, payout, current SKU/checkout or owned payable Mind SKU verified.",
+  "sources": {
+    "s99": "https://doi.org/10.1068/p281059",
+    "s10": "https://doi.org/10.1068/i0386",
+    "s13": "https://doi.org/10.1177/0956797613479386",
+    "s23": "https://doi.org/10.1073/pnas.2214930120",
+    "zen_about": "https://zen12.com/about",
+    "zen_promo": "https://zen12.com/secret/",
+    "zen_research": "https://zen12.com/research",
+    "inspire": "https://inspire3.com/",
+    "binaural": "https://doi.org/10.1371/journal.pone.0286023",
+    "ftc_endorse": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "fv_focus": "https://finalvestige.com/focus/",
+    "fv_puy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "fv_change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "fv_disclosure": "https://finalvestige.com/affiliate-disclosure/"
+  },
+  "claims": [
+    {
+      "id": "R485-01",
+      "text": "1999 research tested sustained inattentional blindness in dynamic settings",
+      "type": "study finding",
+      "sources": [
+        "s99"
+      ],
+      "status": "allowed with task-dependence caveat"
+    },
+    {
+      "id": "R485-02",
+      "text": "Observer detection varies by similarity and difficulty of monitoring task",
+      "type": "study finding",
+      "sources": [
+        "s99"
+      ],
+      "status": "allowed, not universal"
+    },
+    {
+      "id": "R485-03",
+      "text": "2013 24 radiologists performed lung-nodule search",
+      "type": "study detail",
+      "sources": [
+        "s13"
+      ],
+      "status": "allowed only with experimental context"
+    },
+    {
+      "id": "R485-04",
+      "text": "83% in that 2013 sample did not report a gorilla inserted in final case",
+      "type": "study finding",
+      "sources": [
+        "s13"
+      ],
+      "status": "allowed, no real-world clinical-error inference"
+    },
+    {
+      "id": "R485-05",
+      "text": "Eye fixation at object location guarantees conscious awareness",
+      "type": "unsupported implication",
+      "sources": [
+        "s13"
+      ],
+      "status": "prohibited"
+    },
+    {
+      "id": "R485-06",
+      "text": "2010 familiarity with gorilla did not reliably improve noticing other changes",
+      "type": "study finding",
+      "sources": [
+        "s10"
+      ],
+      "status": "allowed with specific protocol context"
+    },
+    {
+      "id": "R485-07",
+      "text": "2023 fast unexpected objects noticed more often under tested conditions",
+      "type": "study finding",
+      "sources": [
+        "s23"
+      ],
+      "status": "allowed, do not generalize to all speeds/tasks"
+    },
+    {
+      "id": "R485-08",
+      "text": "2023 study included 4493 participants total across three experiments",
+      "type": "study detail",
+      "sources": [
+        "s23"
+      ],
+      "status": "allowed"
+    },
+    {
+      "id": "R485-09",
+      "text": "Gorilla studies demonstrate Zen12 improves attention",
+      "type": "unsupported cross-domain extrapolation",
+      "sources": [
+        "s99",
+        "s13",
+        "s23"
+      ],
+      "status": "prohibited"
+    },
+    {
+      "id": "R485-10",
+      "text": "Zen12 seller describes twelve-minute sessions",
+      "type": "seller format",
+      "sources": [
+        "zen_about"
+      ],
+      "status": "allowed only as seller description"
+    },
+    {
+      "id": "R485-11",
+      "text": "Zen12 seller describes twelve levels and four listening styles",
+      "type": "seller format",
+      "sources": [
+        "zen_about"
+      ],
+      "status": "allowed only as seller description"
+    },
+    {
+      "id": "R485-12",
+      "text": "Zen12 separate promotional page describes 12 levels / 48 MP3s",
+      "type": "seller bundle",
+      "sources": [
+        "zen_promo"
+      ],
+      "status": "allowed as promotional listing; SKU not authenticated"
+    },
+    {
+      "id": "R485-13",
+      "text": "Twelve minutes Zen12 equals one hour of meditation",
+      "type": "seller efficacy",
+      "sources": [
+        "zen_about"
+      ],
+      "status": "prohibited absent independent product-specific evidence"
+    },
+    {
+      "id": "R485-14",
+      "text": "Zen12 automatically shifts brainwaves and guarantees benefits",
+      "type": "seller efficacy",
+      "sources": [
+        "zen_about",
+        "zen_research"
+      ],
+      "status": "prohibited absent independent product-specific evidence"
+    },
+    {
+      "id": "R485-15",
+      "text": "2023 binaural EEG systematic review found heterogeneous inconsistent results",
+      "type": "review finding",
+      "sources": [
+        "binaural"
+      ],
+      "status": "allowed; explicitly not Zen12 trial"
+    },
+    {
+      "id": "R485-16",
+      "text": "Zen12 uses the same exact technique validated by any individual EEG paper",
+      "type": "mechanism transfer",
+      "sources": [
+        "zen_research",
+        "binaural"
+      ],
+      "status": "prohibited"
+    },
+    {
+      "id": "R485-17",
+      "text": "Published promo price and countdown are the authorized FV checkout",
+      "type": "commercial inference",
+      "sources": [
+        "zen_promo"
+      ],
+      "status": "prohibited: checkout/approval unverified"
+    },
+    {
+      "id": "R485-18",
+      "text": "Publisher mentions one-year refund guarantee",
+      "type": "seller conditional terms",
+      "sources": [
+        "zen_research"
+      ],
+      "status": "source-known but omitted from buyer claims until SKU/cart authenticated"
+    },
+    {
+      "id": "R485-19",
+      "text": "Final Vestige is approved for Inspire3 affiliate program",
+      "type": "account authorization",
+      "sources": [],
+      "status": "unverified: 2026-08-24 Refersion status PENDING; no verified acceptance"
+    },
+    {
+      "id": "R485-20",
+      "text": "Final Vestige owns a currently sellable and rights-cleared Mind digital SKU",
+      "type": "owned offer eligibility",
+      "sources": [],
+      "status": "not verified; existing Focus is free"
+    },
+    {
+      "id": "R485-21",
+      "text": "Final Vestige earns commission on clicks",
+      "type": "payment accounting",
+      "sources": [],
+      "status": "prohibited: outbound click is not settlement"
+    },
+    {
+      "id": "R485-22",
+      "text": "FTC requires material relationship disclosure clear and conspicuous",
+      "type": "regulatory guidance",
+      "sources": [
+        "ftc_endorse"
+      ],
+      "status": "allowed, prospective disclosure beside inactive control"
+    },
+    {
+      "id": "R485-23",
+      "text": "FTC health-benefit claims need adequate substantiation",
+      "type": "regulatory guidance",
+      "sources": [
+        "ftc_health"
+      ],
+      "status": "allowed"
+    },
+    {
+      "id": "R485-24",
+      "text": "Existing free Focus Fieldbook and single welcome path are live",
+      "type": "first-party current state",
+      "sources": [
+        "fv_focus"
+      ],
+      "status": "allowed, do not duplicate opt-in"
+    },
+    {
+      "id": "R485-25",
+      "text": "Puységur files prove contemporary clinical hypnosis benefits",
+      "type": "unsupported historical transfer",
+      "sources": [
+        "fv_puy"
+      ],
+      "status": "prohibited"
+    },
+    {
+      "id": "R485-26",
+      "text": "No linked Grok assets can be claimed until real public media IDs verified",
+      "type": "measurement requirement",
+      "sources": [],
+      "status": "hold: no authenticated published media IDs in readback"
+    },
+    {
+      "id": "R485-27",
+      "text": "A CTA click equals paid order",
+      "type": "measurement inference",
+      "sources": [],
+      "status": "prohibited"
+    },
+    {
+      "id": "R485-28",
+      "text": "Net revenue per 1000 qualified humans is computable from pageviews",
+      "type": "measurement inference",
+      "sources": [],
+      "status": "prohibited; needs verified settlements and denominator"
+    }
+  ],
+  "commercial_release_gates": [
+    "Named merchant/partner written acceptance for Final Vestige",
+    "Exact affiliate program ownership mapped to entity",
+    "Permitted platforms and paid/organic channels",
+    "Actual approved and non-cloaked earning URL",
+    "Exact offer SKU and tier",
+    "SKU-specific inclusion and delivery terms",
+    "Live checkout final price and currency",
+    "All taxes/fees and recurring-charge status",
+    "Merchant refund terms and exceptions",
+    "Affiliate commission attribution and settlement terms",
+    "Disclosure adjacency and consumer-comprehension review",
+    "No unsupported product-specific efficacy",
+    "No guarantee/wealth/medical implicit claims",
+    "Authorized rights for photos/audio/swipe and creative",
+    "Optional video encoded with original rights-cleared media",
+    "Video captions, transcript and optional playback without autoplay",
+    "No-JS and screen-reader access to same buying guidance",
+    "360/390/768/1440/1920 browser/device QA",
+    "Real WordPress sanitizer QA without CMS write",
+    "Security/CSP/outbound link rel check",
+    "Exact canonical existing article route verified",
+    "Grok asset_id, actual spoken hook, URL and permission verified",
+    "Consent-compliant 1p attribution mapped to existing analytics",
+    "Confirmed Jetpack opt-in flow without duplicate list",
+    "Merchant-confirmed paid order feed or commission report",
+    "Refund/fees settlement reconciliation",
+    "7-day cohort qualified human session denominator",
+    "30-day cohort qualified human session denominator",
+    "Founder commercial/release approval",
+    "QA sign-off and PR review before merge"
+  ],
+  "current_state": "ALL commercial release gates OPEN; no activation",
+  "outbound_commission_event": "affiliate_click only after actual link is legally authorized; never paid conversion",
+  "verified_net_revenue_per_1000_qualified_sessions": null
+}
