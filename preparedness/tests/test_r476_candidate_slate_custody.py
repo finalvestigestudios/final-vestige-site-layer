@@ -79,6 +79,20 @@ class CandidateTests(unittest.TestCase):
         meta['track']='lost-ways'
         result=gate.check_article('alpha',html,json.dumps(meta).encode(),set())
         self.assertEqual(result['track'],'lost-ways')
+    def test_authentic_historical_not_required_does_not_make_qd_pass(self):
+        html,_,meta=example()
+        meta['track']='lost-ways'
+        meta['safety_review']['state']='not-required'
+        result=gate.check_article('alpha',html,json.dumps(meta).encode(),set())
+        self.assertEqual(result['authored_safety_state'],'not-required')
+        self.assertFalse(result['qualified_qd_approval_verified'])
+    def test_unscoped_founder_chat_approved_is_not_qd_pass(self):
+        html,_,meta=example()
+        meta['safety_review']['state']='approved'
+        meta['safety_review']['reviewer']="Founder chat reply 'approved' (name unconfirmed; scope unconfirmed)"
+        result=gate.check_article('alpha',html,json.dumps(meta).encode(),set())
+        self.assertEqual(result['authored_safety_state'],'approved')
+        self.assertFalse(result['qualified_qd_approval_verified'])
     def test_metadata_citation_body_no_silent_promotion(self):
         html,raw,meta=example()
         r=gate.check_article('alpha',html,raw,set())
