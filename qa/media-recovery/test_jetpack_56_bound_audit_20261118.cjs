@@ -1,0 +1,25 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {loadSources,parseBound,build,validate}=require('./validate_jetpack_56_bound_audit_20261118.cjs');
+const {parts,cross}=loadSources(),data=JSON.parse(fs.readFileSync(path.join(__dirname,'jetpack_56_bound_audit_20261118.json'),'utf8'));
+function bad(name,change){test(name,()=>{const a=structuredClone(data);change(a);assert.throws(()=>validate(a,parts,cross),/HOLD/)})}
+test('actual source SHA pinned 9 slices plus 20 large originals',()=>assert.deepEqual(build(parts,cross),data));
+test('56 source-bound URLs validate, no visitor bandwidth claim',()=>assert.equal(validate(data,parts,cross).query_candidates,56));
+test('Malbone original source dimensions are only query bounds',()=>assert.deepEqual(data.rows.filter(x=>x.post_id===621&&x.query_bound_width_px>1920).map(x=>x.query_bound_width_px).sort((a,b)=>a-b),[4000,5667]));
+test('11 matched stored originals all HOLD',()=>assert.equal(data.rows.filter(x=>x.oversized_original&&x.license_clearance==='HOLD').length,11));
+test('recognizes percent-encoded Jetpack resize',()=>assert.deepEqual(parseBound('https://i0.wp.com/finalvestige.com/a.jpg?resize=4000%2C3000&ssl=1'),{type:'resize',width:4000,height:3000}));
+test('recognizes fit bounding-box without declaring delivered width',()=>assert.deepEqual(parseBound('https://i0.wp.com/finalvestige.com/a.jpg?fit=1024%2C676'),{type:'fit',width:1024,height:676}));
+test('rejects non-Jetpack query bounds',()=>assert.equal(parseBound('https://example.org/a.jpg?resize=4000%2C3000'),null));
+bad('no invented guest 404',x=>x.rows[0].guest_http_status=404);
+bad('no invented 42 guest failures',x=>x.summary.confirmed_broken_guest=42);
+bad('no invented 76 percent savings',x=>x.summary.measured_savings_percent=76);
+bad('no fabricated transfer bytes',x=>x.rows[0].guest_wire_bytes=500);
+bad('no substituted image URL',x=>x.rows[0].original_url='https://example.org/p.jpg');
+bad('no forged media attachment',x=>x.rows.find(z=>z.oversized_original).oversized_original.media_id=999);
+bad('no speculative rights clearance',x=>x.rows[0].license_clearance='PUBLIC_DOMAIN');
+bad('no speculative replacement approval',x=>x.rows[0].replacement_approved=true);
+bad('no 1920px derivatives',x=>x.rows[0].derivative_width_limit_px=1920);
+bad('no deleted high-risk source row',x=>x.rows.pop());
+bad('no added duplicate source row',x=>x.rows.push(x.rows[0]));
+bad('no WordPress production writes',x=>x.release.wp_production_writes=1);
+bad('no competing Site QA collector',x=>x.release.new_browser_collector=true);

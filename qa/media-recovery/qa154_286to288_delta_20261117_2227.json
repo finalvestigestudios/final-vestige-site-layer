@@ -1,0 +1,260 @@
+{
+  "schema": "fv-media-qa154-286to288-v1",
+  "audit_date": "2026-11-17",
+  "siteqa_snapshot": {
+    "date": "2026-10-30",
+    "path": "qa/media/cms_image_census_20261030.csv",
+    "branch": "qa/media-source-dependency-20261029-2347",
+    "blob": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
+    "posts": 61,
+    "slots": 355,
+    "offsite": 286
+  },
+  "media_snapshot": {
+    "date": "2026-11-17",
+    "source_slices": [
+      {
+        "path": "qa/media-recovery/live_66_view_slice_1_20261117.json",
+        "blob": "698b613c41e792b2e0100547a07f4b519c0a908a"
+      },
+      {
+        "path": "qa/media-recovery/live_66_view_slice_2_20261117.json",
+        "blob": "1c8cd5d1fd015705c0937d68471fb54546ed2f67"
+      },
+      {
+        "path": "qa/media-recovery/live_66_view_slice_3_20261117.json",
+        "blob": "32210de4d0f46ae2547d604d9f1d02769e98bd32"
+      },
+      {
+        "path": "qa/media-recovery/live_66_view_slice_4_20261117.json",
+        "blob": "0d5bf91705d7b9956ac7097ebb896c9b142afc51"
+      },
+      {
+        "path": "qa/media-recovery/live_66_view_slice_5_20261117.json",
+        "blob": "c0d54c30769b0276a143c2f77b897202d818105f"
+      },
+      {
+        "path": "qa/media-recovery/live_66_view_slice_6_20261117.json",
+        "blob": "38718a55ce8fb52eb09cf04765c444a9df1255c9"
+      },
+      {
+        "path": "qa/media-recovery/live_66_view_slice_7_20261117.json",
+        "blob": "8cdd86e25bbc6aff1654eeff3fc65f3f42b1e4af"
+      },
+      {
+        "path": "qa/media-recovery/live_66_view_slice_8_20261117.json",
+        "blob": "d2c1716c99ff9886e6dac60c6a42926c801be7f4"
+      },
+      {
+        "path": "qa/media-recovery/live_66_view_slice_9_20261117.json",
+        "blob": "0248e5d62e589dd6cfc0ec543b5c22a7c14128ea"
+      }
+    ],
+    "cohort_posts": 61,
+    "cohort_slots": 355,
+    "cohort_offsite": 288,
+    "all_posts": 66,
+    "all_slots": 361,
+    "all_offsite": 294
+  },
+  "changed_post_counts": [
+    {
+      "id": 291,
+      "title": "One Bulldozer Never Came Back",
+      "post_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "modified": "2026-11-02T21:36:09",
+      "old_offsite": 5,
+      "new_offsite": 6,
+      "image_slots": 6,
+      "delta": 1,
+      "current_images": [
+        {
+          "slot": "291:0",
+          "published_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+          "origin_url": "https://text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg",
+          "host": "text-message.blogs.archives.gov",
+          "route": "third_party_jetpack",
+          "guest_status": null,
+          "guest_decode": null,
+          "guest_bytes": null,
+          "rights": "HOLD",
+          "replacement_approved": false,
+          "max_width": 960,
+          "no_upscale": true
+        },
+        {
+          "slot": "291:1",
+          "published_url": "https://i0.wp.com/dmt55mxnkgbz2.cloudfront.net/1205x0_s3-30217-W-AP-PNW-TETON-COLLAPSE-1.jpg?ssl=1",
+          "origin_url": "https://dmt55mxnkgbz2.cloudfront.net/1205x0_s3-30217-W-AP-PNW-TETON-COLLAPSE-1.jpg",
+          "host": "dmt55mxnkgbz2.cloudfront.net",
+          "route": "third_party_jetpack",
+          "guest_status": null,
+          "guest_decode": null,
+          "guest_bytes": null,
+          "rights": "HOLD",
+          "replacement_approved": false,
+          "max_width": 960,
+          "no_upscale": true
+        },
+        {
+          "slot": "291:2",
+          "published_url": "https://i0.wp.com/cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG?ssl=1",
+          "origin_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+          "host": "cloudfront-us-east-1.images.arcpublishing.com",
+          "route": "third_party_jetpack",
+          "guest_status": null,
+          "guest_decode": null,
+          "guest_bytes": null,
+          "rights": "HOLD",
+          "replacement_approved": false,
+          "max_width": 960,
+          "no_upscale": true
+        },
+        {
+          "slot": "291:3",
+          "published_url": "https://brightspotcdn.byui.edu/dims4/default/37ddf06/2147483647/strip/true/crop/2048x1365+0+0/resize/1200x800!/quality/90/?url=https%3A%2F%2Fk3-prod-byuifulbrightspot.s3.us-west-2.amazonaws.com%2Fbrightspot%2F33%2F7d%2F67f04f174772ab1d35419706138c%2Fteton-dam-flooding-aerial.jpg",
+          "origin_url": "https://brightspotcdn.byui.edu/dims4/default/37ddf06/2147483647/strip/true/crop/2048x1365+0+0/resize/1200x800!/quality/90/?url=https%3A%2F%2Fk3-prod-byuifulbrightspot.s3.us-west-2.amazonaws.com%2Fbrightspot%2F33%2F7d%2F67f04f174772ab1d35419706138c%2Fteton-dam-flooding-aerial.jpg",
+          "host": "brightspotcdn.byui.edu",
+          "route": "third_party_direct",
+          "guest_status": null,
+          "guest_decode": null,
+          "guest_bytes": null,
+          "rights": "HOLD",
+          "replacement_approved": false,
+          "max_width": 960,
+          "no_upscale": true
+        },
+        {
+          "slot": "291:4",
+          "published_url": "https://i0.wp.com/www.rexburgonline.com/wp-content/uploads/2016/05/fb-0053.jpg?ssl=1",
+          "origin_url": "https://www.rexburgonline.com/wp-content/uploads/2016/05/fb-0053.jpg",
+          "host": "www.rexburgonline.com",
+          "route": "third_party_jetpack",
+          "guest_status": null,
+          "guest_decode": null,
+          "guest_bytes": null,
+          "rights": "HOLD",
+          "replacement_approved": false,
+          "max_width": 960,
+          "no_upscale": true
+        },
+        {
+          "slot": "291:5",
+          "published_url": "https://i0.wp.com/cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG?ssl=1",
+          "origin_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+          "host": "cloudfront-us-east-1.images.arcpublishing.com",
+          "route": "third_party_jetpack",
+          "guest_status": null,
+          "guest_decode": null,
+          "guest_bytes": null,
+          "rights": "HOLD",
+          "replacement_approved": false,
+          "max_width": 960,
+          "no_upscale": true
+        }
+      ]
+    },
+    {
+      "id": 285,
+      "title": "The Light Said Closed",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "modified": "2026-11-02T21:39:59",
+      "old_offsite": 5,
+      "new_offsite": 6,
+      "image_slots": 6,
+      "delta": 1,
+      "current_images": [
+        {
+          "slot": "285:0",
+          "published_url": "https://i0.wp.com/live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg?ssl=1",
+          "origin_url": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+          "host": "live.staticflickr.com",
+          "route": "third_party_jetpack",
+          "guest_status": null,
+          "guest_decode": null,
+          "guest_bytes": null,
+          "rights": "HOLD",
+          "replacement_approved": false,
+          "max_width": 960,
+          "no_upscale": true
+        },
+        {
+          "slot": "285:1",
+          "published_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+          "origin_url": "https://www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg",
+          "host": "www.squawkpoint.com",
+          "route": "third_party_jetpack",
+          "guest_status": null,
+          "guest_decode": null,
+          "guest_bytes": null,
+          "rights": "HOLD",
+          "replacement_approved": false,
+          "max_width": 960,
+          "no_upscale": true
+        },
+        {
+          "slot": "285:2",
+          "published_url": "https://i0.wp.com/blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg?ssl=1",
+          "origin_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+          "host": "blog.ucsusa.org",
+          "route": "third_party_jetpack",
+          "guest_status": null,
+          "guest_decode": null,
+          "guest_bytes": null,
+          "rights": "HOLD",
+          "replacement_approved": false,
+          "max_width": 960,
+          "no_upscale": true
+        },
+        {
+          "slot": "285:3",
+          "published_url": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+          "origin_url": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+          "host": "i.insider.com",
+          "route": "third_party_direct",
+          "guest_status": null,
+          "guest_decode": null,
+          "guest_bytes": null,
+          "rights": "HOLD",
+          "replacement_approved": false,
+          "max_width": 960,
+          "no_upscale": true
+        },
+        {
+          "slot": "285:4",
+          "published_url": "https://i0.wp.com/images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg?ssl=1",
+          "origin_url": "https://images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg",
+          "host": "images.pixels.com",
+          "route": "third_party_jetpack",
+          "guest_status": null,
+          "guest_decode": null,
+          "guest_bytes": null,
+          "rights": "HOLD",
+          "replacement_approved": false,
+          "max_width": 960,
+          "no_upscale": true
+        },
+        {
+          "slot": "285:5",
+          "published_url": "https://i0.wp.com/images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg?ssl=1",
+          "origin_url": "https://images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+          "host": "images.saymedia-content.com",
+          "route": "third_party_jetpack",
+          "guest_status": null,
+          "guest_decode": null,
+          "guest_bytes": null,
+          "rights": "HOLD",
+          "replacement_approved": false,
+          "max_width": 960,
+          "no_upscale": true
+        }
+      ]
+    }
+  ],
+  "interpretation": "Same 61 post IDs and 355 total image slots. Exactly posts 285 and 291 increase from 5/6 to 6/6 third-party origins. Both have post-modified dates after Oct 30. Older aggregate CSV has no per-slot URLs: cannot prove which image URL was changed, or whether revision versus classifier explains each difference.",
+  "reported_42_broken_guest_confirmed": null,
+  "claimed_76_percent_wire_savings_verified": false,
+  "visitor_bytes": null,
+  "rights_rehosting_authorized": false,
+  "wordpress_writes": 0
+}

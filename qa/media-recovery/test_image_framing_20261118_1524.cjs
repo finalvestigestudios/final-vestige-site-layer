@@ -1,0 +1,28 @@
+'use strict';
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const {sourceMatches,sameFraming}=require('./jetpack_source_identity_20261118.cjs');
+const root='https://i0.wp.com/archives.gov/photographs/dam.jpg';
+test('existing 960px width transform from a 1400px source remains valid',()=>assert.equal(sourceMatches(root+'?w=960&ssl=1',root+'?w=1400&ssl=1'),true));
+test('unchanged authored crop remains valid with a smaller width',()=>assert.equal(sourceMatches(root+'?crop=center&w=960',root+'?crop=center&w=1400'),true));
+test('changed Jetpack crop must fail even when upstream photograph is identical',()=>assert.equal(sourceMatches(root+'?crop=left&w=960',root+'?crop=center&w=1400'),false));
+test('added crop must fail',()=>assert.equal(sourceMatches(root+'?crop=right&w=960',root+'?w=1400'),false));
+test('removed crop must fail',()=>assert.equal(sourceMatches(root+'?w=960',root+'?crop=center&w=1400'),false));
+test('added zoom must fail',()=>assert.equal(sourceMatches(root+'?zoom=2&w=960',root+'?w=1400'),false));
+test('changed zoom must fail',()=>assert.equal(sourceMatches(root+'?zoom=3&w=960',root+'?zoom=2&w=1400'),false));
+test('removed zoom must fail',()=>assert.equal(sourceMatches(root+'?w=960',root+'?zoom=2&w=1400'),false));
+test('same zoom preserved through smaller width remains valid',()=>assert.equal(sourceMatches(root+'?zoom=2&w=960',root+'?zoom=2&w=1400'),true));
+test('unchanged source may move across Jetpack image host',()=>assert.equal(sourceMatches(root.replace('i0','i1')+'?w=960&ssl=1',root+'?w=1400&ssl=1'),true));
+test('a new publisher signature may not be injected',()=>assert.equal(sourceMatches(root+'?w=960&sign=new',root+'?w=1400'),false));
+test('a direct origin cannot silently substitute an unrelated URL',()=>assert.equal(sourceMatches('https://archives.gov/photographs/different.jpg','https://archives.gov/photographs/dam.jpg'),false));
+test('publisher crop query is immutable during direct to Jetpack rewrite',()=>assert.equal(sourceMatches(root+'?crop=center&w=1400&ssl=1','https://archives.gov/photographs/dam.jpg?crop=center&w=1400'),true));
+test('cross-phase authored crop switch is rejected',()=>assert.equal(sameFraming(root+'?crop=center&w=1400',root+'?crop=left&w=960'),false));
+test('cross-phase added zoom is rejected',()=>assert.equal(sameFraming(root+'?w=1400',root+'?zoom=2&w=960'),false));
+test('cross-phase responsive resize with no crop change is safe',()=>assert.equal(sameFraming(root+'?crop=center&w=1400',root.replace('i0','i1')+'?crop=center&w=960'),true));
+test('cross-phase publisher query crop correctly tracks preservation',()=>assert.equal(sameFraming('https://archives.gov/photographs/dam.jpg?crop=center',root+'?crop=center&w=960'),true));
+
+test('resize with unchanged 16:9 crop ratio still passes responsive sizing',()=>assert.equal(sourceMatches(root+'?resize=960,540',root+'?resize=640,360'),true));
+test('resize crop ratio changing from 16:9 to square fails within capture',()=>assert.equal(sourceMatches(root+'?resize=960,960',root+'?resize=640,360'),false));
+test('resize ratio changed between phases fails even if photo URL is identical',()=>assert.equal(sameFraming(root+'?resize=640,360',root+'?resize=960,960'),false));
+test('adding resize crop without editorial review fails',()=>assert.equal(sourceMatches(root+'?resize=640,360',root+'?w=960'),false));
+test('fit preserves source aspect ratio and stays eligible',()=>assert.equal(sourceMatches(root+'?fit=960,540',root+'?fit=640,360'),true));

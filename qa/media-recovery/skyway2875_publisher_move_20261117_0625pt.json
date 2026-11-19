@@ -1,0 +1,143 @@
+{
+  "schema": "fv-skyway2875-relocation-v1",
+  "audit_date": "2026-11-17 06:25 PST",
+  "source": {
+    "prior_file": "qa/media-recovery/wp_view_proxy_26_20261115.json",
+    "prior_blob": "dcb735226eb71fcba302b38ae3ab3a73751fe2a8",
+    "source_type": "previous authenticated WP EDIT/VIEW NOT guest browser",
+    "post_id": 287,
+    "post_modified": "2026-11-02T21:40:01",
+    "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+    "slot": "287:5"
+  },
+  "published": {
+    "authored_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+    "jetpack_view_src": "https://i0.wp.com/stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg?ssl=1",
+    "alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+    "html_width": null,
+    "html_height": null,
+    "srcset": null,
+    "sizes": null
+  },
+  "origin_candidate": {
+    "url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+    "basis": "same file basename at publisher moved media host; visibly May 1980 damaged pier and Summit Venture scene; binary/crop identity NOT established",
+    "image_author": "UNKNOWN",
+    "copyright": "UNKNOWN_NOT_AUTHORIZED",
+    "binary_sha256": null,
+    "native_dimensions": null,
+    "conditional_960px": null,
+    "max_width_no_upscale": 960,
+    "cache_authorized": false
+  },
+  "reader_observations": [
+    {
+      "route": "old_origin",
+      "url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "method": "independent_public_retriever",
+      "outcome": "RETRIEVER_HTTP_404",
+      "retriever_http_status": 404,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_mime": null,
+      "guest_decoded": null,
+      "guest_natural_width": null,
+      "guest_transfer_bytes": null
+    },
+    {
+      "route": "publisher_moved",
+      "url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "method": "independent_public_retriever",
+      "outcome": "IMAGE_RENDERED",
+      "retriever_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_mime": null,
+      "guest_decoded": null,
+      "guest_natural_width": null,
+      "guest_transfer_bytes": null
+    },
+    {
+      "route": "published_jetpack",
+      "url": "https://i0.wp.com/stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg?ssl=1",
+      "method": "NOT_BROWSER_TESTED",
+      "outcome": "UNKNOWN",
+      "retriever_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_mime": null,
+      "guest_decoded": null,
+      "guest_natural_width": null,
+      "guest_transfer_bytes": null
+    }
+  ],
+  "archives": [
+    {
+      "id": "RC09237",
+      "catalog": "https://www.floridamemory.com/items/show/32083",
+      "image": "https://www.floridamemory.com/fpc/reference/rc09237.jpg",
+      "subject": "1980-05-09 black-white car near severed bridge and ship",
+      "relation": "DIFFERENT_FRAME",
+      "reader": "IMAGE_RENDERED",
+      "native_dimensions": null,
+      "review_960px": null,
+      "rights": "Florida Memory collection-level Public Domain Mark 1.0; archival credit and individual rights/visual review needed",
+      "substitution_authorized": false
+    },
+    {
+      "id": "RC09236",
+      "catalog": "https://www.floridamemory.com/items/show/32082",
+      "image": "https://www.floridamemory.com/fpc/reference/rc09236.jpg",
+      "subject": "1980-05-09 black-white bridge accident scene",
+      "relation": "DIFFERENT_FRAME",
+      "reader": "CATALOG_VERIFIED",
+      "native_dimensions": null,
+      "review_960px": null,
+      "rights": "Florida Memory collection-level Public Domain Mark 1.0; archival credit and individual rights/visual review needed",
+      "substitution_authorized": false
+    }
+  ],
+  "visual": {
+    "finding": "Published ALT mentions later replacement bridge, but moved publisher image depicts wrecked 1980 pier and vessel, with no visible 1987 replacement bridge",
+    "editorial_review_required": true,
+    "auto_change": false
+  },
+  "guest_release_gate": {
+    "owner": "Site QA PR #154 existing cold-browser collector",
+    "required": [
+      "cold currentSrc and redirect chain",
+      "numeric GET status and MIME",
+      "decoded naturalWidth/naturalHeight",
+      "viewport screenshot",
+      "cold image transfer bytes",
+      "unchanged post revision",
+      "item-level rights and photographer credit",
+      "binary SHA-256 and verified native size",
+      "same-frame/crop review",
+      "no-upscale <=960px staging rollback"
+    ],
+    "decision": "HOLD_GUEST_RIGHTS_IDENTITY",
+    "wordpress_write": false,
+    "rehost": false,
+    "automatic_replacement": false
+  },
+  "stats": {
+    "historical_posts": 61,
+    "historical_images": 355,
+    "reported_broken_42_confirmed": false,
+    "claimed_76pct_wire_reduction_measured": false,
+    "oversized_wp_originals_gt_1_5mb": 20,
+    "oversized_stored_bytes": 64385752,
+    "guest_wire_before": null,
+    "guest_wire_after": null
+  },
+  "restrictions": {
+    "production": false,
+    "asset_download": false,
+    "home_design": false,
+    "post_rewrites": false,
+    "merge": false,
+    "deploy": false,
+    "paid": false
+  }
+}

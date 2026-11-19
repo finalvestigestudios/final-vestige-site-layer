@@ -1,0 +1,541 @@
+{
+  "schema": "fv-media-census-delta-v1",
+  "date": "2026-11-16",
+  "scope": "historical 61 WordPress posts; stored inline <img src> only; NOT logged-out rendered browser",
+  "provenance": {
+    "media_ref": "4366489a68620d26592d8438b4402feb453c3166",
+    "qa_ref": "b64dc8673aec299192686d37296a4e1f0db56fa9",
+    "qa_csv_file": "qa/media/cms_image_census_20261030.csv",
+    "qa_csv_blob": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
+    "media_parts": [
+      {
+        "path": "qa/media-recovery/parts/01.json",
+        "blob": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+      },
+      {
+        "path": "qa/media-recovery/parts/02.json",
+        "blob": "48e1ebf07207e948ba5802e714eb39659d2e1c1d"
+      },
+      {
+        "path": "qa/media-recovery/parts/03.json",
+        "blob": "49183f66f880f7c4dfd363acca906876877f2e5e"
+      },
+      {
+        "path": "qa/media-recovery/parts/04.json",
+        "blob": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+      },
+      {
+        "path": "qa/media-recovery/parts/05.json",
+        "blob": "9b16b828342a9ac338f3e65610fd3d8d508355e9"
+      },
+      {
+        "path": "qa/media-recovery/parts/06.json",
+        "blob": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69"
+      },
+      {
+        "path": "qa/media-recovery/parts/07.json",
+        "blob": "21095161e633aba093b74c0ead9936c9f6186d00"
+      },
+      {
+        "path": "qa/media-recovery/parts/08.json",
+        "blob": "5659ec243c188928be3f89c0f96354b660608ca2"
+      }
+    ]
+  },
+  "comparison": {
+    "qa_posts": 61,
+    "qa_images": 355,
+    "qa_external": 286,
+    "recovery_posts": 61,
+    "recovery_images": 355,
+    "recovery_external": 288,
+    "agreed_posts": 59,
+    "offsite_count_disagreement": 2,
+    "source_kinds_recovery": {
+      "first_party": 60,
+      "jetpack_proxy": 7,
+      "external": 170,
+      "wikimedia_redirect": 118
+    }
+  },
+  "cause": "UNDETERMINED: possible Jetpack classification or different source snapshots",
+  "rows": [
+    {
+      "post_id": 621,
+      "image_count": 6,
+      "qa_offsite": 0,
+      "recovery_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 434,
+      "image_count": 6,
+      "qa_offsite": 5,
+      "recovery_offsite": 5,
+      "delta": 0
+    },
+    {
+      "post_id": 433,
+      "image_count": 6,
+      "qa_offsite": 5,
+      "recovery_offsite": 5,
+      "delta": 0
+    },
+    {
+      "post_id": 432,
+      "image_count": 7,
+      "qa_offsite": 7,
+      "recovery_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 431,
+      "image_count": 6,
+      "qa_offsite": 5,
+      "recovery_offsite": 5,
+      "delta": 0
+    },
+    {
+      "post_id": 428,
+      "image_count": 6,
+      "qa_offsite": 5,
+      "recovery_offsite": 5,
+      "delta": 0
+    },
+    {
+      "post_id": 425,
+      "image_count": 9,
+      "qa_offsite": 8,
+      "recovery_offsite": 8,
+      "delta": 0
+    },
+    {
+      "post_id": 418,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 413,
+      "image_count": 6,
+      "qa_offsite": 4,
+      "recovery_offsite": 4,
+      "delta": 0
+    },
+    {
+      "post_id": 407,
+      "image_count": 8,
+      "qa_offsite": 8,
+      "recovery_offsite": 8,
+      "delta": 0
+    },
+    {
+      "post_id": 370,
+      "image_count": 8,
+      "qa_offsite": 4,
+      "recovery_offsite": 4,
+      "delta": 0
+    },
+    {
+      "post_id": 367,
+      "image_count": 9,
+      "qa_offsite": 8,
+      "recovery_offsite": 8,
+      "delta": 0
+    },
+    {
+      "post_id": 330,
+      "image_count": 8,
+      "qa_offsite": 0,
+      "recovery_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 299,
+      "image_count": 8,
+      "qa_offsite": 0,
+      "recovery_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 292,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 291,
+      "image_count": 6,
+      "qa_offsite": 5,
+      "recovery_offsite": 6,
+      "delta": 1
+    },
+    {
+      "post_id": 290,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 289,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 288,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 287,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 285,
+      "image_count": 6,
+      "qa_offsite": 5,
+      "recovery_offsite": 6,
+      "delta": 1
+    },
+    {
+      "post_id": 283,
+      "image_count": 7,
+      "qa_offsite": 7,
+      "recovery_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 280,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 279,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 278,
+      "image_count": 7,
+      "qa_offsite": 7,
+      "recovery_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 277,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 276,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 274,
+      "image_count": 7,
+      "qa_offsite": 7,
+      "recovery_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 269,
+      "image_count": 7,
+      "qa_offsite": 0,
+      "recovery_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 268,
+      "image_count": 10,
+      "qa_offsite": 10,
+      "recovery_offsite": 10,
+      "delta": 0
+    },
+    {
+      "post_id": 258,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 257,
+      "image_count": 7,
+      "qa_offsite": 7,
+      "recovery_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 256,
+      "image_count": 7,
+      "qa_offsite": 7,
+      "recovery_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 255,
+      "image_count": 7,
+      "qa_offsite": 7,
+      "recovery_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 254,
+      "image_count": 7,
+      "qa_offsite": 7,
+      "recovery_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 253,
+      "image_count": 7,
+      "qa_offsite": 7,
+      "recovery_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 252,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 221,
+      "image_count": 7,
+      "qa_offsite": 7,
+      "recovery_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 220,
+      "image_count": 7,
+      "qa_offsite": 7,
+      "recovery_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 219,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 218,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 217,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 216,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 215,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 214,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 213,
+      "image_count": 7,
+      "qa_offsite": 7,
+      "recovery_offsite": 7,
+      "delta": 0
+    },
+    {
+      "post_id": 211,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 190,
+      "image_count": 6,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 166,
+      "image_count": 7,
+      "qa_offsite": 6,
+      "recovery_offsite": 6,
+      "delta": 0
+    },
+    {
+      "post_id": 156,
+      "image_count": 4,
+      "qa_offsite": 0,
+      "recovery_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 151,
+      "image_count": 3,
+      "qa_offsite": 0,
+      "recovery_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 146,
+      "image_count": 3,
+      "qa_offsite": 0,
+      "recovery_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 142,
+      "image_count": 3,
+      "qa_offsite": 0,
+      "recovery_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 139,
+      "image_count": 2,
+      "qa_offsite": 0,
+      "recovery_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 108,
+      "image_count": 2,
+      "qa_offsite": 0,
+      "recovery_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 101,
+      "image_count": 7,
+      "qa_offsite": 4,
+      "recovery_offsite": 4,
+      "delta": 0
+    },
+    {
+      "post_id": 38,
+      "image_count": 1,
+      "qa_offsite": 0,
+      "recovery_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 37,
+      "image_count": 1,
+      "qa_offsite": 0,
+      "recovery_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 36,
+      "image_count": 1,
+      "qa_offsite": 0,
+      "recovery_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 35,
+      "image_count": 1,
+      "qa_offsite": 0,
+      "recovery_offsite": 0,
+      "delta": 0
+    },
+    {
+      "post_id": 34,
+      "image_count": 1,
+      "qa_offsite": 0,
+      "recovery_offsite": 0,
+      "delta": 0
+    }
+  ],
+  "suspected_origin_classification_slots": [
+    {
+      "key": "285:1",
+      "post_id": 285,
+      "source_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "upstream_host": "www.squawkpoint.com",
+      "source_kind": "external",
+      "official_catalog_record_url": null,
+      "cause_unproven": "Jetpack proxy from offsite origin might explain source-count variance; raw QA source versions needed",
+      "guest_http_status": null,
+      "guest_decoded": null,
+      "actual_transfer_bytes": null,
+      "browser_failure_proven": false,
+      "rights_status": "HOLD",
+      "cached_to_wordpress": false,
+      "master_hash_sha256": null,
+      "native_dimensions_px": null,
+      "max_derivative_width_px": 960
+    },
+    {
+      "key": "291:0",
+      "post_id": 291,
+      "source_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "upstream_host": "text-message.blogs.archives.gov",
+      "source_kind": "external",
+      "official_catalog_record_url": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+      "cause_unproven": "Jetpack proxy from offsite origin might explain source-count variance; raw QA source versions needed",
+      "guest_http_status": null,
+      "guest_decoded": null,
+      "actual_transfer_bytes": null,
+      "browser_failure_proven": false,
+      "rights_status": "HOLD",
+      "cached_to_wordpress": false,
+      "master_hash_sha256": null,
+      "native_dimensions_px": null,
+      "max_derivative_width_px": 960
+    }
+  ],
+  "reported_42_broken_confirmed": false,
+  "measured_76_percent_reduction": null,
+  "oversized_wp_originals": {
+    "count": 20,
+    "stored_bytes": 64385752,
+    "network_transfer_bytes": null
+  },
+  "qa_collector_owner": "Site QA #154",
+  "release_hold": "No repair until actual browser GET/currentSrc/decoded image/rights/exact-frame/960px no-upscale gate",
+  "production_writes": 0,
+  "rights_clearances": 0,
+  "replacements_installed": 0
+}

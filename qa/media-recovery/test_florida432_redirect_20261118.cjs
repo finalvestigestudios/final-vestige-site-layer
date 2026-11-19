@@ -1,0 +1,40 @@
+'use strict';
+const {test}=require('node:test');
+const assert=require('node:assert/strict');
+const {verify,EXPECTED}=require('./validate_florida432_redirect_20261118.cjs');
+const fixture=()=>({
+ schema:'fv-florida432-redirect-v1',post_id:432,post_url:'https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/',historical_cohort:'61-post-20261030',historical_source_blob:'948bc1b65b42799aa40cfdb810ddf6ffd80886b6',candidate_crosswalk_blob:'f737816bb8e7cf36b69834d8e3ed28d2839d8d9d',guest_broken_confirmed:null,origin_http_500_confirmed:false,claimed_42_broken_verified:false,claimed_76_percent_wire_savings_verified:false,rehost_approved:false,wordpress_production_write_approved:false,
+ slots:EXPECTED.map(([key,path,accession,id])=>({key,stored_original:'https://www.floridamemory.com'+path,redirect_target:'https://floridamemory.com'+path,archival_record:'https://www.floridamemory.com/items/show/'+id,accession,origin_probe:{kind:'RETRIEVER_REDIRECT_WRAPPER_ERROR',retriever_reported_code:500,origin_final_http_status:null,redirect_observed:true,visitor_http_status:null,browser_decode:null,actual_transfer_bytes:null,target_retriever_accessible:false,mode:'public_web_retriever_not_browser'},catalog_match_basis:'archival_id_and_source_path_prior_snapshot',catalog_date:key==='432:6'?'2001':key==='432:3'?'1928':null,metadata_review:'EDITOR_REVIEW',exact_raster_verified:false,native_width_px:null,native_height_px:null,derivative_width_px:null,derivative_height_px:null,target_max_width_px:960,no_upscale:true,rights_clearance:'HOLD',can_rehost:false,can_edit_wordpress:false}))
+});
+const bad=(label,fn)=>test(label,()=>{const x=fixture();fn(x);assert.throws(()=>verify(x));});
+test('complete seven-slot historical archive crosswalk holds instead of false failures',()=>{const x=verify(fixture());assert.equal(x.origin_redirect_wrappers,7);assert.equal(x.verified_origin_http_500,0);assert.equal(x.guest_confirmed_failures,0)});
+bad('incomplete batch',a=>a.slots.pop());
+bad('missing archival source SHA',a=>a.historical_source_blob='f'.repeat(40));
+bad('changed archive-candidate SHA',a=>a.candidate_crosswalk_blob='f'.repeat(40));
+bad('invented guest-broken number',a=>a.guest_broken_confirmed=7);
+bad('invented true origin HTTP 500',a=>a.origin_http_500_confirmed=true);
+bad('unsupported 42 claim',a=>a.claimed_42_broken_verified=true);
+bad('unsupported 76 percent transfer claim',a=>a.claimed_76_percent_wire_savings_verified=true);
+bad('unauthorized WordPress production write',a=>a.wordpress_production_write_approved=true);
+bad('unauthorized rehosting',a=>a.rehost_approved=true);
+bad('slot duplication',a=>a.slots[1].key=a.slots[0].key);
+bad('wrong official ID for exact source',a=>a.slots[0].accession='RC17068');
+bad('redirect changes archive image path',a=>a.slots[0].redirect_target=a.slots[0].redirect_target.replace('pr04493','pr04494'));
+bad('wrong redirect target domain',a=>a.slots[0].redirect_target='https://mirror.example/fpc/prints/pr04493.jpg');
+bad('query-string source swap',a=>a.slots[0].stored_original+='?replacement=1');
+bad('catalog item swap',a=>a.slots[0].archival_record='https://www.floridamemory.com/items/show/38362');
+bad('invented source origin numeric 500',a=>a.slots[0].origin_probe.origin_final_http_status=500);
+bad('wrapper 500 counted as guest 500',a=>a.slots[0].origin_probe.visitor_http_status=500);
+bad('fabricated decoded guest image',a=>a.slots[0].origin_probe.browser_decode=true);
+bad('fabricated transferred bytes',a=>a.slots[0].origin_probe.actual_transfer_bytes=100);
+bad('metadata wrong historical date N031889',a=>a.slots[3].catalog_date='after 1928 hurricane');
+bad('2001 cemetery slide relabeled 1928',a=>a.slots[6].catalog_date='1928');
+bad('invented 960px derivative without master',a=>a.slots[0].derivative_width_px=960);
+bad('fabricated exact raster identity',a=>a.slots[0].exact_raster_verified=true);
+bad('oversized derivative width policy',a=>a.slots[0].target_max_width_px=1920);
+bad('upscaling enabled',a=>a.slots[0].no_upscale=false);
+bad('rights incorrectly cleared',a=>a.slots[0].rights_clearance='PUBLIC_DOMAIN');
+bad('individual image authorized for rehosting',a=>a.slots[0].can_rehost=true);
+bad('missing existing editorial hold',a=>a.slots[0].metadata_review='APPROVED');
+bad('crawler wrapper error mislabeled HTTP_ERROR',a=>a.slots[0].origin_probe.kind='HTTP_ERROR');
+bad('accessibility incorrectly asserted',a=>a.slots[0].origin_probe.target_retriever_accessible=true);

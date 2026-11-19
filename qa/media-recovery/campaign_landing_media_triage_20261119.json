@@ -1,0 +1,711 @@
+{
+  "schema": "fv-traffic-media-recovery-20261119-v1",
+  "window": {
+    "start_date": "2026-10-20",
+    "end_date": "2026-11-18",
+    "days": 30,
+    "source": "Connected WordPress Jetpack Stats",
+    "metrics": "browser page views, not unique users",
+    "video_or_social_campaign_attribution": false,
+    "facebook_referrer_views": 5,
+    "youtube_referrer_views": 1,
+    "tagged_facebook_organic_social_views": 1,
+    "attributed_destination_pages": null
+  },
+  "source_custody": {
+    "historical_posts": 61,
+    "historical_images": 355,
+    "current_snapshot_date": "2026-11-17",
+    "current_posts": 66,
+    "current_images": 361,
+    "source_snapshot_blob_sha": "9c9966be78d4e4abe7ec5bc9826ce56fbad8a1a0",
+    "oversize_media_blob_sha": "d1ed574a527b9b431febdcb15ea91b48316812f2",
+    "archived_worklist_blob_sha": "71280920640a00551b4d2c2b54fa0f95e33030b8",
+    "site_qa_pr": 154,
+    "media_recovery_pr": 2747
+  },
+  "reported_failures_42_guest_verified": false,
+  "claimed_76_percent_all_image_transfer_verified": false,
+  "stored_oversize_originals": {
+    "count": 20,
+    "total_bytes": 64385752,
+    "visitor_transfer_bytes": null
+  },
+  "priority_posts": [
+    {
+      "post_id": 274,
+      "url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "views_30d": 8,
+      "source_of_views": "POST_VIEWS",
+      "image_count": 7,
+      "direct_external": 3,
+      "jetpack_external": 4,
+      "jetpack_first_party": 0,
+      "missing_dimension_pair": 6,
+      "missing_srcset_or_sizes": 7,
+      "known_origin_http_404": [
+        {
+          "slot": "274:6",
+          "exact_url": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+          "origin_response": 404,
+          "observed_date": "2026-11-18",
+          "guest_response": null,
+          "guest_decode": null,
+          "guest_broken_confirmed": false
+        }
+      ],
+      "large_originals": [],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "P0_SOURCE_404_PENDING_BROWSER"
+    },
+    {
+      "post_id": 285,
+      "url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "views_30d": 8,
+      "source_of_views": "POST_VIEWS",
+      "image_count": 6,
+      "direct_external": 1,
+      "jetpack_external": 5,
+      "jetpack_first_party": 0,
+      "missing_dimension_pair": 6,
+      "missing_srcset_or_sizes": 6,
+      "known_origin_http_404": [
+        {
+          "slot": "285:5",
+          "exact_url": "https://images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+          "origin_response": 404,
+          "observed_date": "2026-11-18",
+          "guest_response": null,
+          "guest_decode": null,
+          "guest_broken_confirmed": false
+        }
+      ],
+      "large_originals": [],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "P0_SOURCE_404_PENDING_BROWSER"
+    },
+    {
+      "post_id": 287,
+      "url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "views_30d": 12,
+      "source_of_views": "TOP_POSTS",
+      "image_count": 6,
+      "direct_external": 0,
+      "jetpack_external": 6,
+      "jetpack_first_party": 0,
+      "missing_dimension_pair": 5,
+      "missing_srcset_or_sizes": 6,
+      "known_origin_http_404": [
+        {
+          "slot": "287:5",
+          "exact_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+          "origin_response": 404,
+          "observed_date": "2026-11-18",
+          "guest_response": null,
+          "guest_decode": null,
+          "guest_broken_confirmed": false
+        }
+      ],
+      "large_originals": [],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "P0_SOURCE_404_PENDING_BROWSER"
+    },
+    {
+      "post_id": 1917,
+      "url": "https://finalvestige.com/2026/11/02/piri-reis-map/",
+      "views_30d": 38,
+      "source_of_views": "TOP_POSTS",
+      "image_count": 2,
+      "direct_external": 2,
+      "jetpack_external": 0,
+      "jetpack_first_party": 0,
+      "missing_dimension_pair": 2,
+      "missing_srcset_or_sizes": 2,
+      "known_origin_http_404": [],
+      "large_originals": [
+        {
+          "id": 2640,
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/piri-reis-world-map-01.jpg",
+          "original_stored_bytes": 7422309,
+          "inline_slot": null,
+          "guest_original_download_confirmed": null,
+          "rights_cleared": false
+        }
+      ],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "P1_TRAFFIC_EXPOSURE"
+    },
+    {
+      "post_id": 1924,
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "views_30d": 33,
+      "source_of_views": "TOP_POSTS",
+      "image_count": 1,
+      "direct_external": 1,
+      "jetpack_external": 0,
+      "jetpack_first_party": 0,
+      "missing_dimension_pair": 1,
+      "missing_srcset_or_sizes": 1,
+      "known_origin_http_404": [],
+      "large_originals": [
+        {
+          "id": 2636,
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/le-baquet-de-mesmer.jpg",
+          "original_stored_bytes": 4462854,
+          "inline_slot": null,
+          "guest_original_download_confirmed": null,
+          "rights_cleared": false
+        }
+      ],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "P1_TRAFFIC_EXPOSURE"
+    },
+    {
+      "post_id": 621,
+      "url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "views_30d": 29,
+      "source_of_views": "TOP_POSTS",
+      "image_count": 6,
+      "direct_external": 0,
+      "jetpack_external": 0,
+      "jetpack_first_party": 6,
+      "missing_dimension_pair": 0,
+      "missing_srcset_or_sizes": 0,
+      "known_origin_http_404": [],
+      "large_originals": [
+        {
+          "id": 1258,
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+          "original_stored_bytes": 5553669,
+          "inline_slot": "621:1",
+          "guest_original_download_confirmed": null,
+          "rights_cleared": false
+        },
+        {
+          "id": 1257,
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+          "original_stored_bytes": 4798395,
+          "inline_slot": "621:0",
+          "guest_original_download_confirmed": null,
+          "rights_cleared": false
+        }
+      ],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "P1_TRAFFIC_EXPOSURE"
+    },
+    {
+      "post_id": 254,
+      "url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+      "views_30d": 27,
+      "source_of_views": "TOP_POSTS",
+      "image_count": 7,
+      "direct_external": 7,
+      "jetpack_external": 0,
+      "jetpack_first_party": 0,
+      "missing_dimension_pair": 7,
+      "missing_srcset_or_sizes": 7,
+      "known_origin_http_404": [],
+      "large_originals": [],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "P1_TRAFFIC_EXPOSURE"
+    },
+    {
+      "post_id": 1920,
+      "url": "https://finalvestige.com/2026/11/02/lycurgus-cup/",
+      "views_30d": 20,
+      "source_of_views": "TOP_POSTS",
+      "image_count": 2,
+      "direct_external": 2,
+      "jetpack_external": 0,
+      "jetpack_first_party": 0,
+      "missing_dimension_pair": 2,
+      "missing_srcset_or_sizes": 2,
+      "known_origin_http_404": [],
+      "large_originals": [
+        {
+          "id": 2638,
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/lycurgus-cup-british-museum.jpg",
+          "original_stored_bytes": 1745282,
+          "inline_slot": null,
+          "guest_original_download_confirmed": null,
+          "rights_cleared": false
+        }
+      ],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "P1_TRAFFIC_EXPOSURE"
+    },
+    {
+      "post_id": 34,
+      "url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+      "views_30d": 18,
+      "source_of_views": "TOP_POSTS",
+      "image_count": 1,
+      "direct_external": 0,
+      "jetpack_external": 0,
+      "jetpack_first_party": 1,
+      "missing_dimension_pair": 0,
+      "missing_srcset_or_sizes": 1,
+      "known_origin_http_404": [],
+      "large_originals": [
+        {
+          "id": 39,
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+          "original_stored_bytes": 2892087,
+          "inline_slot": "34:0",
+          "guest_original_download_confirmed": null,
+          "rights_cleared": false
+        }
+      ],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "P1_TRAFFIC_EXPOSURE"
+    },
+    {
+      "post_id": 425,
+      "url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "views_30d": 17,
+      "source_of_views": "TOP_POSTS",
+      "image_count": 9,
+      "direct_external": 8,
+      "jetpack_external": 0,
+      "jetpack_first_party": 1,
+      "missing_dimension_pair": 8,
+      "missing_srcset_or_sizes": 8,
+      "known_origin_http_404": [],
+      "large_originals": [],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "P1_TRAFFIC_EXPOSURE"
+    },
+    {
+      "post_id": 434,
+      "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "views_30d": 17,
+      "source_of_views": "TOP_POSTS",
+      "image_count": 6,
+      "direct_external": 0,
+      "jetpack_external": 5,
+      "jetpack_first_party": 1,
+      "missing_dimension_pair": 5,
+      "missing_srcset_or_sizes": 5,
+      "known_origin_http_404": [],
+      "large_originals": [],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "P1_TRAFFIC_EXPOSURE"
+    },
+    {
+      "post_id": 268,
+      "url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "views_30d": 16,
+      "source_of_views": "TOP_POSTS",
+      "image_count": 10,
+      "direct_external": 6,
+      "jetpack_external": 4,
+      "jetpack_first_party": 0,
+      "missing_dimension_pair": 10,
+      "missing_srcset_or_sizes": 10,
+      "known_origin_http_404": [],
+      "large_originals": [],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "P1_TRAFFIC_EXPOSURE"
+    },
+    {
+      "post_id": 407,
+      "url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "views_30d": 12,
+      "source_of_views": "TOP_POSTS",
+      "image_count": 8,
+      "direct_external": 0,
+      "jetpack_external": 8,
+      "jetpack_first_party": 0,
+      "missing_dimension_pair": 5,
+      "missing_srcset_or_sizes": 8,
+      "known_origin_http_404": [],
+      "large_originals": [],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "P1_TRAFFIC_EXPOSURE"
+    },
+    {
+      "post_id": 291,
+      "url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "views_30d": 8,
+      "source_of_views": "POST_VIEWS",
+      "image_count": 6,
+      "direct_external": 1,
+      "jetpack_external": 5,
+      "jetpack_first_party": 0,
+      "missing_dimension_pair": 6,
+      "missing_srcset_or_sizes": 6,
+      "known_origin_http_404": [],
+      "large_originals": [],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "P0_CAPTION_VISUAL_MISMATCH"
+    },
+    {
+      "post_id": 418,
+      "url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "views_30d": 7,
+      "source_of_views": "POST_VIEWS",
+      "image_count": 6,
+      "direct_external": 0,
+      "jetpack_external": 6,
+      "jetpack_first_party": 0,
+      "missing_dimension_pair": 5,
+      "missing_srcset_or_sizes": 6,
+      "known_origin_http_404": [],
+      "large_originals": [],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "P1_TRAFFIC_EXPOSURE"
+    },
+    {
+      "post_id": 1922,
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "views_30d": 18,
+      "source_of_views": "TOP_POSTS",
+      "image_count": 0,
+      "direct_external": 0,
+      "jetpack_external": 0,
+      "jetpack_first_party": 0,
+      "missing_dimension_pair": 0,
+      "missing_srcset_or_sizes": 0,
+      "known_origin_http_404": [],
+      "large_originals": [],
+      "mobile": {
+        "independent_test": false,
+        "current_src": null,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null,
+        "inp_ms": null,
+        "screenshot_sha256": null
+      },
+      "desktop": {
+        "independent_test": false,
+        "actual_transfer_bytes": null,
+        "lcp_ms": null,
+        "cls": null
+      },
+      "stage_approved": false,
+      "wordpress_write_authorized": false,
+      "triage": "ZERO_INLINE_CONTROL"
+    }
+  ],
+  "official_candidates": [
+    {
+      "slot": "274:6",
+      "authority": "Naval History and Heritage Command",
+      "accession": "80-G-227989",
+      "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-G-227989.html",
+      "fit_960_proposal": "960x647 (catalog-provisional)",
+      "exact_image_and_crop_confirmed": false,
+      "rights_review": "HOLD_ITEM_LEVEL",
+      "rehosting_approved": false
+    },
+    {
+      "slot": "418:1",
+      "authority": "U.S. Coast Guard",
+      "accession": "210330-G-DE713-0002",
+      "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "fit_960_proposal": "PENDING_NATIVE_DIMENSIONS",
+      "exact_image_and_crop_confirmed": false,
+      "rights_review": "Official item indicates public domain / cleared for release; credit and restrictions review still HOLD",
+      "rehosting_approved": false
+    },
+    {
+      "slot": "418:2",
+      "authority": "National Coast Guard Museum",
+      "accession": "Scotch_Cap_debris2_1946",
+      "catalog_url": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+      "fit_960_proposal": "600x463 preview; NO_UPSCALE",
+      "exact_image_and_crop_confirmed": false,
+      "rights_review": "HOLD_MASTER_AND_ATTRIBUTION",
+      "rehosting_approved": false
+    },
+    {
+      "slot": "287:5",
+      "authority": "Florida Memory",
+      "accession": "RC09237",
+      "catalog_url": "https://www.floridamemory.com/items/show/32083",
+      "fit_960_proposal": "PENDING_NATIVE_DIMENSIONS",
+      "exact_image_and_crop_confirmed": false,
+      "rights_review": "Collection PDM; unrelated photograph, NO AUTOMATIC REPLACEMENT",
+      "rehosting_approved": false
+    },
+    {
+      "slot": "291:2",
+      "authority": "U.S. National Archives",
+      "accession": "NAID 28894685",
+      "catalog_url": "https://catalog.archives.gov/id/28894685",
+      "fit_960_proposal": "960x675 (2798x1966 catalog)",
+      "exact_image_and_crop_confirmed": false,
+      "rights_review": "No Copyright – United States catalog claim; item/exact scene review HOLD",
+      "rehosting_approved": false
+    },
+    {
+      "slot": "407:1",
+      "authority": "USGS",
+      "accession": "J. R. Stacy img7535.jpg",
+      "catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+      "fit_960_proposal": "PENDING_NATIVE_DIMENSIONS",
+      "exact_image_and_crop_confirmed": false,
+      "rights_review": "USGS item public domain; exact bytes/frame HOLD",
+      "rehosting_approved": false
+    }
+  ],
+  "release_policy": {
+    "wordPress_production_writes": false,
+    "automatic_downloads": false,
+    "cached_rehosting": false,
+    "scope": "article media only, no homepage redesign",
+    "site_qa_existing_collector_owns_mobile": true,
+    "required_evidence": "guest mobile/desktop cold numeric GET, MIME, currentSrc, successful or failed decode, screenshot hash, measured LCP/CLS/INP and complete image-resource bytes including CSS, exact historical photo rights/caption; stage and rollback before any publishing",
+    "max_width_px": 960,
+    "crop": "NO_CROP",
+    "upscale": false
+  },
+  "fresh_20261119_probe": {
+    "article_public_retriever": "ACCESS_DENIED_OR_429",
+    "image_public_retriever": "NOT_VERIFIED",
+    "container_http": "DNS_UNAVAILABLE",
+    "mobile_chromium": "UNAVAILABLE",
+    "new_http_status_claims": 0
+  }
+}

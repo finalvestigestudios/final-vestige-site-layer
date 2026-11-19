@@ -1,0 +1,67 @@
+{
+  "schema": "fv-66-view-slice-v1",
+  "date": "2026-11-17",
+  "slice": 9,
+  "slice_size": 8,
+  "listing_total": 66,
+  "source": "authenticated published WP VIEW; source_origin_url derived from Jetpack path (not origin GET); no guest/browser status",
+  "posts": [
+    {
+      "id": 35,
+      "title": "The Boat That Refused to Die",
+      "url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+      "list_modified": "2026-10-29T17:07:04",
+      "view_modified": "2026-10-29T17:07:04",
+      "image_slots": 1,
+      "third_party_slots": 0
+    },
+    {
+      "id": 34,
+      "title": "The Morning San Francisco Lost Its Water",
+      "url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+      "list_modified": "2026-10-29T21:19:13",
+      "view_modified": "2026-10-29T21:19:13",
+      "image_slots": 1,
+      "third_party_slots": 0
+    }
+  ],
+  "images": [
+    {
+      "post_id": 35,
+      "slot": 0,
+      "authored_view_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png?resize=1024%2C576&ssl=1",
+      "source_origin_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "origin_host": "finalvestige.com",
+      "route_type": "first_party_jetpack",
+      "alt": "Shackleton and crew in a small lifeboat crossing icy seas during the Endurance expedition",
+      "width_attr": 1024,
+      "height_attr": 576,
+      "has_srcset": false,
+      "has_sizes": false,
+      "visitor_http_status": null,
+      "visitor_decode": null,
+      "visitor_wire_bytes": null,
+      "rights_rehosting": "HOLD",
+      "replacement_approved": false
+    },
+    {
+      "post_id": 34,
+      "slot": 0,
+      "authored_view_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png?resize=1024%2C576&ssl=1",
+      "source_origin_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "origin_host": "finalvestige.com",
+      "route_type": "first_party_jetpack",
+      "alt": "Firefighters and horse-drawn fire engines on a ruined San Francisco street during the 1906 fires",
+      "width_attr": 1024,
+      "height_attr": 576,
+      "has_srcset": false,
+      "has_sizes": false,
+      "visitor_http_status": null,
+      "visitor_decode": null,
+      "visitor_wire_bytes": null,
+      "rights_rehosting": "HOLD",
+      "replacement_approved": false
+    }
+  ],
+  "production_writes": 0
+}

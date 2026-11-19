@@ -1,0 +1,325 @@
+{
+  "schema": "fv-media-tmi285-v1",
+  "wp": {
+    "post_id": 285,
+    "url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+    "modified": "2026-11-02T21:39:59",
+    "method": "authenticated EDIT/VIEW; not guest browser"
+  },
+  "baseline": {
+    "posts": 61,
+    "images": 355,
+    "reported_broken": 42,
+    "verified_broken": null,
+    "claimed_savings_percent": 76,
+    "measured_savings_percent": null,
+    "oversize_original_count": 20,
+    "oversize_original_stored_bytes": 64385752,
+    "visitor_bytes": null
+  },
+  "worklist": {
+    "path": "docs/IMAGE-WEIGHT-WORKLIST.md",
+    "ref": "qa/media-recovery-reviewed-20261030-1158",
+    "blob_sha": "71280920640a00551b4d2c2b54fa0f95e33030b8"
+  },
+  "items": [
+    {
+      "slot": "285:0",
+      "authored": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+      "view_html": "https://i0.wp.com/live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg?ssl=1",
+      "view_url": "https://i0.wp.com/live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg?ssl=1",
+      "alt": "Operators and technical staff inside the Three Mile Island Unit 2 control room during the 1979 accident.",
+      "view_markup": {
+        "width": null,
+        "height": null,
+        "srcset": false,
+        "sizes": false
+      },
+      "jetpack": true,
+      "guest": {
+        "current_src": null,
+        "status": null,
+        "mime": null,
+        "decode": null,
+        "natural_width": null,
+        "transfer_bytes": null,
+        "screenshot": null,
+        "broken": false
+      },
+      "retriever_note": null,
+      "candidates": [
+        {
+          "catalog_url": "https://www.flickr.com/photos/nrcgov/7447166686",
+          "source": "NRC Flickr / original published photo",
+          "identity": "EXACT_CATALOG",
+          "rights_note": "Flickr shows CC BY-NC-ND 2.0; NRC states only most agency images federal PD; item clearance HOLD",
+          "catalog_native_px": null,
+          "review_px": null,
+          "rights_cleared": false,
+          "exact_frame_verified": false,
+          "binary_sha256": null,
+          "wordpress_rehosting_approved": false
+        }
+      ]
+    },
+    {
+      "slot": "285:1",
+      "authored": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "view_html": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "view_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "alt": "Wide view of the densely instrumented Three Mile Island Unit 2 control room.",
+      "view_markup": {
+        "width": null,
+        "height": null,
+        "srcset": false,
+        "sizes": false
+      },
+      "jetpack": true,
+      "guest": {
+        "current_src": null,
+        "status": null,
+        "mime": null,
+        "decode": null,
+        "natural_width": null,
+        "transfer_bytes": null,
+        "screenshot": null,
+        "broken": false
+      },
+      "retriever_note": null,
+      "candidates": [
+        {
+          "catalog_url": "https://www.flickr.com/photos/nrcgov/7447160104",
+          "source": "NRC Flickr 1979 control room",
+          "identity": "OTHER_SCENE",
+          "rights_note": "Individual license and identical-frame clearance HOLD",
+          "catalog_native_px": null,
+          "review_px": null,
+          "rights_cleared": false,
+          "exact_frame_verified": false,
+          "binary_sha256": null,
+          "wordpress_rehosting_approved": false
+        }
+      ]
+    },
+    {
+      "slot": "285:2",
+      "authored": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "view_html": "https://i0.wp.com/blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg?ssl=1",
+      "view_url": "https://i0.wp.com/blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg?ssl=1",
+      "alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+      "view_markup": {
+        "width": null,
+        "height": null,
+        "srcset": false,
+        "sizes": false
+      },
+      "jetpack": true,
+      "guest": {
+        "current_src": null,
+        "status": null,
+        "mime": null,
+        "decode": null,
+        "natural_width": null,
+        "transfer_bytes": null,
+        "screenshot": null,
+        "broken": false
+      },
+      "retriever_note": null,
+      "candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:TMI-2_control_panel.png",
+          "source": "1979 President's Commission, p97",
+          "identity": "OTHER_SCENE",
+          "rights_note": "Commons claims USGov PD; derivative scan retouched; review",
+          "catalog_native_px": [
+            604,
+            590
+          ],
+          "review_px": [
+            604,
+            590
+          ],
+          "rights_cleared": false,
+          "exact_frame_verified": false,
+          "binary_sha256": null,
+          "wordpress_rehosting_approved": false
+        }
+      ]
+    },
+    {
+      "slot": "285:3",
+      "authored": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+      "view_html": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&#038;format=jpeg&#038;width=800",
+      "view_url": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+      "alt": "Technical personnel gathered inside the Three Mile Island control room during the 1979 accident response.",
+      "view_markup": {
+        "width": null,
+        "height": null,
+        "srcset": false,
+        "sizes": false
+      },
+      "jetpack": false,
+      "guest": {
+        "current_src": null,
+        "status": null,
+        "mime": null,
+        "decode": null,
+        "natural_width": null,
+        "transfer_bytes": null,
+        "screenshot": null,
+        "broken": false
+      },
+      "retriever_note": null,
+      "candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:TMI-2_control_room.png",
+          "source": "1979 President's Commission, p108",
+          "identity": "OTHER_SCENE",
+          "rights_note": "Commons claims USGov PD; item review",
+          "catalog_native_px": [
+            597,
+            578
+          ],
+          "review_px": [
+            597,
+            578
+          ],
+          "rights_cleared": false,
+          "exact_frame_verified": false,
+          "binary_sha256": null,
+          "wordpress_rehosting_approved": false
+        }
+      ]
+    },
+    {
+      "slot": "285:4",
+      "authored": "https://images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg",
+      "view_html": "https://i0.wp.com/images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg?ssl=1",
+      "view_url": "https://i0.wp.com/images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg?ssl=1",
+      "alt": "Reconstruction of the severely damaged Three Mile Island Unit 2 reactor core after the partial meltdown.",
+      "view_markup": {
+        "width": null,
+        "height": null,
+        "srcset": false,
+        "sizes": false
+      },
+      "jetpack": true,
+      "guest": {
+        "current_src": null,
+        "status": null,
+        "mime": null,
+        "decode": null,
+        "natural_width": null,
+        "transfer_bytes": null,
+        "screenshot": null,
+        "broken": false
+      },
+      "retriever_note": null,
+      "candidates": [
+        {
+          "catalog_url": "https://www.nrc.gov/regulations-legislation/fact-sheets-brochures/backgrounder-on-the-three-mile-island-accident",
+          "source": "NRC primary reactor schematic",
+          "identity": "OTHER_ARTWORK",
+          "rights_note": "Figure-specific source copyright and pixels unreviewed",
+          "catalog_native_px": null,
+          "review_px": null,
+          "rights_cleared": false,
+          "exact_frame_verified": false,
+          "binary_sha256": null,
+          "wordpress_rehosting_approved": false
+        }
+      ]
+    },
+    {
+      "slot": "285:5",
+      "authored": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "view_html": "https://i0.wp.com/images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg?ssl=1",
+      "view_url": "https://i0.wp.com/images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg?ssl=1",
+      "alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "view_markup": {
+        "width": null,
+        "height": null,
+        "srcset": false,
+        "sizes": false
+      },
+      "jetpack": true,
+      "guest": {
+        "current_src": null,
+        "status": null,
+        "mime": null,
+        "decode": null,
+        "natural_width": null,
+        "transfer_bytes": null,
+        "screenshot": null,
+        "broken": false
+      },
+      "retriever_note": "Independent web text fetch reported 404 for SayMedia original. This is NOT verified guest HTTP status.",
+      "candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+          "source": "Original photographer Marque1313, 2010 photo credited in upstream HubPages",
+          "identity": "POSSIBLE_SAME_IMAGE_NO_PIXEL_PROOF",
+          "rights_note": "Creator personally declared PD worldwide; no crop identity verified",
+          "catalog_native_px": [
+            819,
+            614
+          ],
+          "review_px": [
+            819,
+            614
+          ],
+          "rights_cleared": false,
+          "exact_frame_verified": false,
+          "binary_sha256": null,
+          "wordpress_rehosting_approved": false
+        },
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_nuclear_power_plant.jpg",
+          "source": "CDC PHIL ID 1194",
+          "identity": "OTHER_SCENE",
+          "rights_note": "Commons labels CDC federal PD; individual PHIL source review",
+          "catalog_native_px": [
+            2843,
+            1817
+          ],
+          "review_px": [
+            960,
+            614
+          ],
+          "rights_cleared": false,
+          "exact_frame_verified": false,
+          "binary_sha256": null,
+          "wordpress_rehosting_approved": false
+        },
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_plant_through_trees_-_NARA_-_540038.tif",
+          "source": "NARA NAID 540038, 1979-04-06",
+          "identity": "OTHER_SCENE",
+          "rights_note": "Commons US federal PD assertion; NARA custody not blanket rights clearance",
+          "catalog_native_px": [
+            3000,
+            2011
+          ],
+          "review_px": [
+            960,
+            644
+          ],
+          "rights_cleared": false,
+          "exact_frame_verified": false,
+          "binary_sha256": null,
+          "wordpress_rehosting_approved": false
+        }
+      ]
+    }
+  ],
+  "safety": {
+    "site_qa_collector": "PR #154",
+    "no_homepage_scope": true,
+    "no_upscale": true,
+    "max_width_px": 960,
+    "wordpress_writes": 0,
+    "downloads": 0,
+    "rehosts": 0,
+    "decision": "HOLD"
+  }
+}

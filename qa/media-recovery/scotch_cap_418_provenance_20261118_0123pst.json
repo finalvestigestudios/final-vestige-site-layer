@@ -1,0 +1,127 @@
+{
+  "schema": "fv-media-scotch-cap-provenance-v1",
+  "checked_at": "2026-11-18T01:23:00-08:00",
+  "scope": "read_only_source_catalog_crosswalk_no_guest_browser",
+  "post_id": 418,
+  "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+  "post_revision_from_prior_wp_view": "2026-08-28T03:11:08",
+  "historical_event_date": "1946-04-01",
+  "historical_sources": [
+    "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+    "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1988680/scotch-cap-light/",
+    "https://oceanexplorer.noaa.gov/expedition-feature/okeanos-seascape-alaska-ex2304-features-geology/",
+    "https://sos.noaa.gov/catalog/datasets/tsunami-historical-series-aleutian-islands-1946/"
+  ],
+  "editorial_risk": {
+    "noaa_media_caption_urls_incorrectly_say_1964": [
+      "https://oceanexplorer.noaa.gov/multimedia/okeanos-explorations-seascape-alaska-ex2304-features-geology-media-lighthouse/",
+      "https://oceanexplorer.noaa.gov/multimedia/okeanos-explorations-seascape-alaska-ex2304-features-geology-media-lighthouse-debris/"
+    ],
+    "official_event_year": 1946,
+    "media_card_caption_year": 1964,
+    "parent_noaa_article_year": 1946,
+    "result": "CONFLICT_HOLD_DO_NOT_COPY_NOAA_MEDIA_CARD_CAPTIONS",
+    "name_conflict": "USCG photo record spells Pettit; USCG historical station roster spells Petit; do not automatically change the published Petit alt without historical name review"
+  },
+  "slots": [
+    {
+      "key": "418:1",
+      "authored_src": "https://i0.wp.com/media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG?ssl=1",
+      "exact_origin_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "prior_public_retriever": {
+        "checked_at": "2026-11-17T18:32:00-08:00",
+        "kind": "HTTP_ERROR",
+        "http_status": 403
+      },
+      "current_public_jetpack_retriever": {
+        "checked_at": "2026-11-18T01:23:00-08:00",
+        "kind": "TOOL_INACCESSIBLE",
+        "http_status": null
+      },
+      "guest_chromium": {
+        "final_http": null,
+        "decoded": null,
+        "natural_width": null,
+        "wire_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "catalog_virin": "210330-G-DE713-0002.JPG",
+        "identity_level": "SAME_USCG_VIRIN_FILENAME_CATALOG_NOT_BINARY_VERIFIED",
+        "rights": "USCG_CATALOG_PUBLIC_DOMAIN_CLEARED_FOR_RELEASE_WITH_CREDIT_AND_DOD_LIMITATIONS",
+        "subject_name_variants": [
+          "Anthony Pettit",
+          "Anthony L. Petit"
+        ],
+        "catalog_download_size_approx_mb": 0.04,
+        "native_width_px": null,
+        "native_height_px": null,
+        "proposed_width_px": null,
+        "proposed_height_px": null,
+        "master_sha256": null,
+        "rehost_authorized": false
+      },
+      "max_derivative_width_px": 960,
+      "no_upscale": true,
+      "wp_production_write": false
+    },
+    {
+      "key": "418:2",
+      "authored_src": "https://i0.wp.com/www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg?ssl=1",
+      "exact_origin_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "prior_public_retriever": {
+        "checked_at": "2026-11-17T18:32:00-08:00",
+        "kind": "HTTP_ERROR",
+        "http_status": 403
+      },
+      "current_public_jetpack_retriever": {
+        "checked_at": "2026-11-18T01:23:00-08:00",
+        "kind": "TOOL_INACCESSIBLE",
+        "http_status": null
+      },
+      "guest_chromium": {
+        "final_http": null,
+        "decoded": null,
+        "natural_width": null,
+        "wire_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+        "preview_url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg",
+        "identity_level": "MATCHING_STEM_AND_SUBJECT_ONLY_NOT_BINARY_OR_CROP_VERIFIED",
+        "rights": "MUSEUM_PREVIEW_CREDIT_USCG_IN_PAGE_RIGHTS_AND_MASTER_UNVERIFIED",
+        "native_width_px": 600,
+        "native_height_px": 463,
+        "proposed_width_px": 600,
+        "proposed_height_px": 463,
+        "master_sha256": null,
+        "rehost_authorized": false
+      },
+      "max_derivative_width_px": 960,
+      "no_upscale": true,
+      "wp_production_write": false
+    }
+  ],
+  "sitewide_baseline": {
+    "historical_posts": 61,
+    "historical_images": 355,
+    "historical_third_party": 288,
+    "latest_census_posts": 66,
+    "latest_images": 361,
+    "latest_external_origin": 294,
+    "reported_broken_guest_confirmed": null,
+    "claimed_76pct_visitor_byte_saving_verified": false,
+    "oversized_originals_decimal_mb": 20,
+    "oversized_stored_bytes": 64385752,
+    "visitor_wire_bytes": null
+  },
+  "release": {
+    "decision": "HOLD",
+    "actual_replacements": 0,
+    "wp_production_writes": 0,
+    "homepage_visual_changes": 0,
+    "new_browser_collector": false,
+    "downloads": 0,
+    "subscription_spend_usd": 0
+  }
+}

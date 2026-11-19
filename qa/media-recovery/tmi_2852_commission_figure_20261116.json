@@ -1,0 +1,119 @@
+{
+  "schema": "fv-media-government-figure-route-v1",
+  "checked_date_pt": "2026-11-16",
+  "scope": "P0 slot 285:2; read-only candidate and source proof, no CMS mutation",
+  "provenance": {
+    "source_pr": 183,
+    "source_commit": "4366489a68620d26592d8438b4402feb453c3166",
+    "source_file": "qa/media-recovery/p0_image_staging_custody_20261116.json",
+    "source_blob_sha": "93ed6631518dc0c06253719b61d1cf50b623f6f0",
+    "site_qa_pr": 154,
+    "isolated_pr": 2747
+  },
+  "image": {
+    "slot": "285:2",
+    "post_id": 285,
+    "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+    "post_modified_from_prior_wp_read": "2026-11-02T21:39:59",
+    "authored_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+    "wp_proxy_src": "https://i0.wp.com/blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg?ssl=1",
+    "publisher_article": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+    "publisher_figure_number": 4,
+    "publisher_figure_link": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+    "publisher_caption_source": "Nuclear Regulatory Commission",
+    "official_government_report": {
+      "title": "Report of the President's Commission on the Accident at Three Mile Island: The Need for Change: The Legacy of TMI",
+      "hosted_copy_url": "https://www.ans.org/file/6651/Kemeny%20Commission%20Report.pdf",
+      "printed_page": 97,
+      "described_photo": "TMI-2 control panel with maintenance tags obscuring an emergency feedwater valve indicator",
+      "pdf_screenshot_available": false
+    }
+  },
+  "observations": [
+    {
+      "url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "method": "public-web-retriever-open",
+      "outcome": "redirected_to_new_host_then_reader_inaccessible",
+      "redirected_to": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "retriever_reported_code": 500,
+      "actual_origin_http_status": null,
+      "guest_browser_status": null,
+      "decoded_native_dimensions_px": null,
+      "transferred_bytes": null
+    },
+    {
+      "url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "method": "public-web-retriever-open",
+      "outcome": "reader_inaccessible",
+      "retriever_reported_code": null,
+      "actual_origin_http_status": null,
+      "guest_browser_status": null,
+      "decoded_native_dimensions_px": null,
+      "transferred_bytes": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/TMI-2_control_panel.png",
+      "method": "public-image-reader-open",
+      "outcome": "image_visibly_rendered_in_reader",
+      "retriever_reported_code": null,
+      "actual_origin_http_status": null,
+      "guest_browser_status": null,
+      "decoded_native_dimensions_px": null,
+      "transferred_bytes": null
+    }
+  ],
+  "candidate": {
+    "authority": "President's Commission 1979 report, printed page 97; catalogued at Wikimedia Commons",
+    "catalog_url": "https://commons.wikimedia.org/wiki/File:TMI-2_control_panel.png",
+    "direct_binary_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/TMI-2_control_panel.png",
+    "advertised_catalog_width_px": 604,
+    "advertised_catalog_height_px": 590,
+    "planned_review_width_px": 604,
+    "planned_review_height_px": 590,
+    "max_allowed_width_px": 960,
+    "source_catalog_approx_kb": 459,
+    "file_description": "Same photographed TMI-2 control-panel scene, maintenance tags",
+    "visual_integrity": "RELATED_SCENE_DIFFERENT_CAPTION_CROP",
+    "detail": "UCS rendered figure includes a typeset explanatory strip; the Commons 604x590 PNG shows the control panel without that strip. Same-event panel visual, not verified exact pixel/crop identity.",
+    "binary_sha256": null,
+    "decoded_master_dimensions_px": null,
+    "catalog_public_domain_mark": "CC PDM 1.0; historical federal government source asserted by Commons",
+    "catalog_derivative_history": "Current Commons file is described as a retouched version; review lineage before reuse",
+    "primary_rights_policy_url": "https://www.nrc.gov/reading-rm/photo-gallery/guide",
+    "item_rights_status": "HOLD_INDIVIDUAL_REVIEW",
+    "attribution_proposal": "Report of the President's Commission on the Accident at Three Mile Island (1979), p. 97; NRC cited by UCS; Commons version/retouch provenance to verify",
+    "wp_caching_authorized": false,
+    "wp_upload_authorized": false,
+    "staging_approval": false
+  },
+  "actual_guest_browser": {
+    "currentSrc": null,
+    "http_status": null,
+    "mime_type": null,
+    "natural_width": null,
+    "natural_height": null,
+    "image_decoded": null,
+    "visual_screenshot": null,
+    "transfer_bytes": null
+  },
+  "release": {
+    "decision": "HOLD_NOT_AN_IDENTICAL_REPLACEMENT",
+    "next_step": "Site QA #154 captures cold guest currentSrc, GET/decode/screenshot/transfer. Review commissioned-report original and Commons derivative rights/crop, then reversible private staging ONLY if needed; preserve authored content/ALT/caption and rollback version.",
+    "allowed_max_width": 960,
+    "no_upscaling": true,
+    "production_wordpress_write": false,
+    "external_binary_download": false,
+    "media_rehost": false,
+    "homepage_visual_change": false,
+    "published_block_rewrite": false,
+    "paid_service": false
+  },
+  "program_context": {
+    "historical_published_posts": 61,
+    "historical_inline_images": 355,
+    "reported_broken_42_guest_confirmed": false,
+    "claimed_76_percent_visitor_transfer_savings_measured": false,
+    "current_oversized_original_count_gt_1_5_decimal_mb": 20,
+    "current_oversized_original_storage_bytes": 64385752
+  }
+}

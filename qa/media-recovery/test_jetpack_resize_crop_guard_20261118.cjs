@@ -1,0 +1,15 @@
+'use strict';
+const test = require('node:test'), assert = require('node:assert/strict');
+const {resizeCropPreserved} = require('./jetpack_resize_crop_guard_20261118.cjs');
+const root='https://i0.wp.com/archives.gov/images/dam.jpg';
+test('width only remains safe',()=>assert.equal(resizeCropPreserved(root+'?w=960',root+'?w=640'),true));
+test('proportionally smaller cropped image retains framing ratio',()=>assert.equal(resizeCropPreserved(root+'?resize=960,540',root+'?resize=640,360'),true));
+test('same photo changed from widescreen to square fails',()=>assert.equal(resizeCropPreserved(root+'?resize=960,540',root+'?resize=640,640'),false));
+test('same photo from portrait to landscape fails',()=>assert.equal(resizeCropPreserved(root+'?resize=400,600',root+'?resize=600,400'),false));
+test('adding a forced crop fails without visual verification',()=>assert.equal(resizeCropPreserved(root+'?w=960',root+'?resize=640,360'),false));
+test('removing a forced crop also fails',()=>assert.equal(resizeCropPreserved(root+'?resize=640,360',root+'?w=960'),false));
+test('fit box may change while preserving aspect ratio',()=>assert.equal(resizeCropPreserved(root+'?fit=640,360',root+'?fit=960,540'),true));
+test('moving among Jetpack subhosts is safe for proportional resize',()=>assert.equal(resizeCropPreserved(root+'?resize=960,540',root.replace('i0','i2')+'?resize=640,360'),true));
+test('invalid zero crop dimension fails',()=>assert.equal(resizeCropPreserved(root+'?resize=0,540',root+'?resize=640,360'),false));
+test('duplicate resize params fail',()=>assert.equal(resizeCropPreserved(root+'?resize=960,540&resize=960,540',root+'?resize=640,360'),false));
+test('no Jetpack transform on direct publisher URL is not classified as forced crop',()=>assert.equal(resizeCropPreserved('https://archives.gov/images/dam.jpg?resize=1,1','https://archives.gov/images/dam.jpg?resize=2,2'),true));

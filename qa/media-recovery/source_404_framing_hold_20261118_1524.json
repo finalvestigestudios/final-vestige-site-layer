@@ -1,0 +1,111 @@
+{
+  "schema": "fv-media-crop-drift-and-origin-audit-v1",
+  "verified_date_local": "2026-11-18",
+  "verified_time_local": "15:24 PST",
+  "scope": "Read-only audit and QA-only code; not a visitor browser capture",
+  "historical_census": {
+    "posts": 61,
+    "inline_images": 355,
+    "offsite_sources_original_site_qa": 286
+  },
+  "current_census": {
+    "posts": 66,
+    "inline_images": 361,
+    "offsite_sources": 294
+  },
+  "claims": {
+    "reported_broken_visitor_images": 42,
+    "verified_broken_visitor_images": null,
+    "reported_wire_reduction_percent": 76,
+    "verified_wire_reduction_percent": null
+  },
+  "original_library_storage": {
+    "oversize_originals_over_1500000_bytes": 20,
+    "original_storage_bytes_total_in_that_group": 64385752,
+    "verified_cold_transfer_bytes": null
+  },
+  "threat_model": "Jetpack crop and zoom transforms can change visible historical framing while preserving original photo URL and source_identity; sourceMatches now requires those settings to be unchanged.",
+  "observations": [
+    {
+      "post_slot": "285:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "origin_url": "https://images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "public_retriever_http_status": 404,
+      "public_retriever_date": "2026-11-18",
+      "published_jetpack_url": "https://i0.wp.com/images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg?ssl=1",
+      "guest_image_final_status": null,
+      "guest_image_decode": null,
+      "guest_transfer_bytes": null,
+      "candidate": null,
+      "candidate_identity": "NO_EXACT_FRAME_FOUND",
+      "rights": "HOLD",
+      "decision": "Do not silently replace a film image with an unrelated Three Mile Island photograph",
+      "derivative_max_width_px": 960,
+      "no_upscale": true
+    },
+    {
+      "post_slot": "274:6",
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "origin_url": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+      "public_retriever_http_status": 404,
+      "public_retriever_date": "2026-11-18",
+      "published_jetpack_url": "https://i0.wp.com/www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg?resize=640%2C432&ssl=1",
+      "guest_image_final_status": null,
+      "guest_image_decode": null,
+      "guest_transfer_bytes": null,
+      "candidate": {
+        "record": "US Navy 80-G-227989",
+        "official_catalog": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-G-227989.html",
+        "commons": "https://commons.wikimedia.org/wiki/File:USS_Tang_(SS-306)_rescues_airmen_off_Truk_in_1944.jpg",
+        "known_commons_dimensions_px": [
+          1910,
+          1288
+        ],
+        "candidate_proportional_960_preview_px": [
+          960,
+          647
+        ]
+      },
+      "candidate_identity": "SIMILAR_OR_SAME_SCENE_NOT_PIXEL_PROVEN",
+      "rights": "HOLD_ITEM_REVIEW",
+      "decision": "Verify photograph and precise crop, attribution and item-level reuse rights before staging",
+      "derivative_max_width_px": 960,
+      "no_upscale": true
+    },
+    {
+      "post_slot": "287:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "origin_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "public_retriever_http_status": 404,
+      "public_retriever_date": "2026-11-18",
+      "published_jetpack_url": "https://i0.wp.com/stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg?ssl=1",
+      "guest_image_final_status": null,
+      "guest_image_decode": null,
+      "guest_transfer_bytes": null,
+      "candidate": {
+        "record": "Florida Memory RC09237",
+        "catalog": "https://floridamemory.com/items/show/32083",
+        "known_raster_dimensions_px": null
+      },
+      "candidate_identity": "DIFFERENT_PHOTOGRAPH_DO_NOT_AUTO_REPLACE",
+      "rights": "HOLD_ITEM_REVIEW",
+      "decision": "Candidate represents May 1980 Skyway disaster but is not the original documentary still; requires explicit editorial approval",
+      "derivative_max_width_px": 960,
+      "no_upscale": true
+    }
+  ],
+  "cached_media_staging": {
+    "production_wordpress_write": false,
+    "automated_rehost": false,
+    "require_guest_failure_proof": true,
+    "require_exact_identity": true,
+    "require_rights_clearance": true,
+    "record_master_sha256": true,
+    "preserve_credit_and_context": true,
+    "generate_proportional_at_most_960px": true,
+    "keep_staging_and_rollback": true,
+    "require_site_qa_browser_decode_and_wire_verification": true
+  },
+  "qa_owner": "Site QA #154 existing Chromium collector; no duplicate collector",
+  "safe_release_state": "HOLD"
+}
