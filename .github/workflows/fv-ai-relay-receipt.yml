@@ -1,0 +1,92 @@
+name: FV AI Relay Receipt
+
+# Non-privileged webhook receipt for a trusted owner-authored issue comment.
+# This does NOT execute an AI model, publish media, send email, or authorize a release.
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  acknowledge:
+    if: >-
+      ${{ github.event.issue.number == 3090 &&
+          github.event.comment.user.login == 'finalvestigestudios' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    env:
+      FV_CLAUDE_GH_USER: ${{ vars.FV_CLAUDE_GH_USER }}
+      FV_GROK_GH_USER: ${{ vars.FV_GROK_GH_USER }}
+    steps:
+      - name: Validate and acknowledge safe relay event
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const body = context.payload.comment.body || '';
+            const blocks = [...body.matchAll(/```json\s*([\s\S]*?)```/gi)];
+            const validActors = ['claude','grok','chatgpt','praxxis','founder'];
+            const validNext = ['claude','grok','chatgpt','praxxis','founder','none'];
+            const validActions = ['HELLO','CREATE','UPDATE','QA_RESULT','DRAFT_READY','PUBLISH_VERIFIED','MEASURE','BLOCKER'];
+            const validStatuses = ['READY_FOR_WORK','IN_PROGRESS','READY_FOR_QA','QA_HOLD','READY_FOR_APPROVAL','APPROVED','SCHEDULED','PUBLISHED','MEASURED','BLOCKED'];
+            let event = null;
+            for (const block of blocks) {
+              try {
+                const x = JSON.parse(block[1]);
+                if (x.schema !== 'fv-handoff-v1') continue;
+                if (!/^FV-[0-9]{8}-[a-z0-9-]{3,64}$/.test(x.event_id || '')) continue;
+                if (!/^[a-z0-9_-]{3,90}$/.test(x.campaign_id || '')) continue;
+                if (!validActors.includes(x.actor) || !validNext.includes(x.next_owner)) continue;
+                if (!validActions.includes(x.action) || !validStatuses.includes(x.status)) continue;
+                event = x;
+                break;
+              } catch (err) {
+                core.info('Ignored malformed JSON event');
+              }
+            }
+            if (!event) {
+              core.info('No valid fv-handoff-v1 JSON block. Nothing posted.');
+              return;
+            }
+
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const issue_number = 3090;
+
+            const current = await github.paginate(github.rest.issues.listComments, {
+              owner, repo, issue_number, per_page: 100
+            });
+            const marker = 'FV_AUTO_RECEIPT ' + event.event_id;
+            if (current.some(c => c.user?.login === 'github-actions[bot]' &&
+                      (c.body || '').includes(marker))) {
+              core.info('This event already received an acknowledgment.');
+              return;
+            }
+
+            // Mentions occur ONLY for owner-confirmed GitHub usernames explicitly stored as repo variables.
+            const nextIdentity = event.next_owner === 'claude'
+              ? (process.env.FV_CLAUDE_GH_USER || '')
+              : event.next_owner === 'grok'
+                ? (process.env.FV_GROK_GH_USER || '')
+                : '';
+            const userPattern = /^[A-Za-z0-9](?:[A-Za-z0-9-]{0,37}[A-Za-z0-9])?$/;
+            const mention = nextIdentity && userPattern.test(nextIdentity)
+              ? '@' + nextIdentity
+              : '(not configured)';
+            const source = context.payload.comment.html_url;
+            await github.rest.issues.createComment({
+              owner, repo, issue_number,
+              body: [
+                '**FV_AUTO_RECEIPT ' + event.event_id + '**',
+                'Validated owner-authored event: actor=' + event.actor +
+                  ', action=' + event.action + ', status=' + event.status +
+                  ', next_owner=' + event.next_owner + '.',
+                'Routing identity: ' + mention +
+                  ' (GitHub username notification only; independent AI delivery not proven).',
+                'Source: ' + source,
+                'This is a receipt, **not** QA approval or permission to publish.'
+              ].join('\n\n')
+            });
