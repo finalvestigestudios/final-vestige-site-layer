@@ -1,0 +1,82 @@
+{
+  "sprint": "R463",
+  "as_of_utc": "2026-11-19T04:33:05Z",
+  "pilot_master_pr": 175,
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "safety_pr": 201,
+  "parent_pr": 3081,
+  "state": "HOLD_UNSENT",
+  "publisher_approved_to_send": false,
+  "original_issues_changed": false,
+  "slots": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_reserved": [
+      3,
+      5
+    ]
+  },
+  "newsletter": {
+    "enabled": true,
+    "auto_new_post_email": false,
+    "body_format": "full",
+    "welcome_fieldbook_url_configured": true,
+    "welcome_received": false,
+    "jetpack_native_preview_witnessed": false,
+    "sender_postal_verified": false,
+    "unsubscribe_rendered_verified": false,
+    "recorded_post_email_stats_rows": 0
+  },
+  "counts": {
+    "diagnostic_confirmed": 3,
+    "diagnostic_unconfirmed_additional": 2,
+    "stats_subscribers_email": 3,
+    "stats_subscribers_reader": 0,
+    "stats_followers_email": 0,
+    "stats_followers_reader": 3,
+    "provider_reconciled": false,
+    "independent_human_acquisitions": null
+  },
+  "offer": {
+    "candidate": "Zen12",
+    "email_channel_approval_verified": false,
+    "earning_url_verified": false,
+    "live_approved_prewarm_guide_verified": false,
+    "merchant_specific_effectiveness_proven": false,
+    "checkout_price_refunds_verified": false,
+    "affiliate_paid_order_verified": false
+  },
+  "cta": {
+    "primary": "https://finalvestige.com/focus/",
+    "affiliate_url": null,
+    "sent": false
+  },
+  "kpis": {
+    "qualified_human_session_denominator": null,
+    "merchant_settled_orders": null,
+    "net_revenue_per_thousand_qualified_human_sessions": null
+  },
+  "sources": [
+    {
+      "label": "Zen12, program description (seller claims)",
+      "url": "https://zen12.com/about"
+    },
+    {
+      "label": "Zen12, current package presentation (seller terms; recheck before any publication)",
+      "url": "https://zen12.com/?no-popup=1"
+    },
+    {
+      "label": "NCCIH, Meditation and Mindfulness: Effectiveness and Safety",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety"
+    },
+    {
+      "label": "Garcia-Argibay et al. (2019), binaural beats meta-analysis; not Zen12-specific",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30073406/"
+    }
+  ],
+  "message": "No subscriber PII, no partner claims promoted as proven, no verified revenue."
+}
