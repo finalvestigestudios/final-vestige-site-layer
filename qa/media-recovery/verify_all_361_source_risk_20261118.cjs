@@ -33,7 +33,7 @@ function verify(a,sources,manifest){
   if(!x.has_srcset)flags.push("NO_SRCSET");
   if(x.authored_view_src.includes("/wiki/Special:Redirect/file/"))flags.push("WIKIMEDIA_IMAGE_REDIRECT_ROUTE");
   if(widthHint(x.authored_view_src)>960)flags.push("REQUESTED_WIDTH_HINT_GT_960");
-  const confirmed=(a.known_404_origins_retriever_only||[]).find(q=>q.post_id+":"+q.slot===k&&q.url===x.source_origin_url&&q.observed_http===404);
+  const confirmed=(a.known_404_origins_retriever_only||[]).find(q=>q.slot===k&&q.post_id===x.post_id&&q.url===x.source_origin_url&&q.observed_http===404);
   if(confirmed)flags.push("EXTERNAL_ORIGINAL_RETRIEVER_404");
   if(JSON.stringify(flags)!==JSON.stringify(r.flags)||r.original_public_retriever_http!==(confirmed?404:null)||r.original_probe_date!==(confirmed?"2026-11-18":null))bad("origin_probe_or_flag_drift");
   for(const f of flags)flagcount[f]=(flagcount[f]||0)+1;
