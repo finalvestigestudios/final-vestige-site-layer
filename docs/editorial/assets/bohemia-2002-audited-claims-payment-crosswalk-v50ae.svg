@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="1100" viewBox="0 0 760 1100" role="img" aria-labelledby="title desc">
+<title id="title">What the Orleans Levee District reported in 2002 about Vogt and Edgecombe claims</title>
+<desc id="desc">Original Final Vestige Studios analytical graphic. The fiscal 2002 audited statement lists a Vogt and Edgecombe judgment basis of 1,831,528 dollars, 108,683 dollars reported paid in small claims by August 15, 2000, and 1,722,845 dollars of principal still unpaid as of June 30, 2002, plus interest. The three figures reconcile arithmetically within the financial statement but do not explain why the 1998 appellate judgment was 2,853,358 dollars and 44 cents. Reported payments have not been checked against cleared checks or claimant receipts.</desc>
+<metadata>Creator: Final Vestige Studios; Date: 2026-11-18; Copyright (c) 2026 Final Vestige Studios. Original explanatory diagram, not an historical document, survey, bank record, or AI reconstruction. Sources: https://www.lla.state.la.us/PublicReports.nsf/86256EA9004C005986256F7F007D7E24/$FILE/41d2eee0.PDF (printed p.54); https://law.justia.com/cases/louisiana/fourth-circuit-court-of-appeal/2002/2001-ca-0089.html . All figures qualified as reported by sources; no verified individual receipt. Alt text in desc. License: All rights reserved.</metadata>
+<rect width="760" height="1100" fill="#f5f3ec"/>
+<path d="M48 54h78" stroke="#8a6046" stroke-width="8"/>
+<text x="48" y="106" font-family="Georgia,serif" font-size="47" font-weight="bold" fill="#172437">THE BOOKS SAID</text>
+<text x="48" y="160" font-family="Georgia,serif" font-size="47" font-weight="bold" fill="#172437">TWO THINGS</text>
+<text x="48" y="215" font-family="Arial,sans-serif" font-size="26" fill="#4e5863">Vogt &amp; Edgecombe · District financial statements, FY2002</text>
+<rect x="48" y="251" width="664" height="175" rx="17" fill="#fff" stroke="#ccd3d6" stroke-width="2"/>
+<text x="75" y="299" font-family="Arial,sans-serif" font-size="26" fill="#44525c">JUDGMENT BASIS LISTED IN AUDIT</text>
+<text x="75" y="368" font-family="Arial,sans-serif" font-weight="bold" font-size="65" fill="#152b40">$1,831,528</text>
+<rect x="48" y="447" width="664" height="175" rx="17" fill="#fff" stroke="#ccd3d6" stroke-width="2"/>
+<text x="75" y="495" font-family="Arial,sans-serif" font-size="25" fill="#44525c">SMALL CLAIMS REPORTED PAID BY AUG. 2000</text>
+<text x="75" y="564" font-family="Arial,sans-serif" font-weight="bold" font-size="65" fill="#136459">$108,683</text>
+<rect x="48" y="643" width="664" height="175" rx="17" fill="#fff" stroke="#ccd3d6" stroke-width="2"/>
+<text x="75" y="691" font-family="Arial,sans-serif" font-size="26" fill="#44525c">UNPAID PRINCIPAL AT JUNE 30, 2002</text>
+<text x="75" y="758" font-family="Arial,sans-serif" font-weight="bold" font-size="65" fill="#a34b31">$1,722,845</text>
+<text x="76" y="800" font-family="Arial,sans-serif" font-size="26" fill="#4b5358">Plus interest; not a final payment figure</text>
+<rect x="48" y="841" width="664" height="131" rx="17" fill="#e8e3d9"/>
+<text x="76" y="882" font-family="Arial,sans-serif" font-weight="bold" font-size="26" fill="#25384a">ONE DISCREPANCY REMAINS</text>
+<text x="76" y="924" font-family="Arial,sans-serif" font-size="29" fill="#25384a">1998 court judgment: $2,853,358.44</text>
+<text x="76" y="956" font-family="Arial,sans-serif" font-size="22" fill="#544f4c">Difference in stated bases is NOT reconciled.</text>
+<text x="48" y="1018" font-family="Arial,sans-serif" font-size="22" fill="#4e5863">Reported by the district ≠ independently verified receipts.</text>
+<text x="48" y="1057" font-family="Arial,sans-serif" font-size="19" fill="#4e5863">FVS · Original evidence graphic · 18 Nov 2026 · See source ledger [54,56]</text>
+</svg>
