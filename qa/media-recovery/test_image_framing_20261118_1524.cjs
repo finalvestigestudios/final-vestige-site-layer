@@ -20,3 +20,9 @@ test('cross-phase authored crop switch is rejected',()=>assert.equal(sameFraming
 test('cross-phase added zoom is rejected',()=>assert.equal(sameFraming(root+'?w=1400',root+'?zoom=2&w=960'),false));
 test('cross-phase responsive resize with no crop change is safe',()=>assert.equal(sameFraming(root+'?crop=center&w=1400',root.replace('i0','i1')+'?crop=center&w=960'),true));
 test('cross-phase publisher query crop correctly tracks preservation',()=>assert.equal(sameFraming('https://archives.gov/photographs/dam.jpg?crop=center',root+'?crop=center&w=960'),true));
+
+test('resize with unchanged 16:9 crop ratio still passes responsive sizing',()=>assert.equal(sourceMatches(root+'?resize=960,540',root+'?resize=640,360'),true));
+test('resize crop ratio changing from 16:9 to square fails within capture',()=>assert.equal(sourceMatches(root+'?resize=960,960',root+'?resize=640,360'),false));
+test('resize ratio changed between phases fails even if photo URL is identical',()=>assert.equal(sameFraming(root+'?resize=640,360',root+'?resize=960,960'),false));
+test('adding resize crop without editorial review fails',()=>assert.equal(sourceMatches(root+'?resize=640,360',root+'?w=960'),false));
+test('fit preserves source aspect ratio and stays eligible',()=>assert.equal(sourceMatches(root+'?fit=960,540',root+'?fit=640,360'),true));
