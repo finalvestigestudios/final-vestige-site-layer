@@ -55,7 +55,7 @@ A privacy-safe *event specification*, not a deployed script:
 - merchant_confirmed_paid_order: *merchant authoritative* qualified paid order, buyer hashed or key handled in secured commerce reconciliation **not in public analytics**.
 - merchant_refund / fees / chargeback / settlement_date: commerce-only authoritative.
 - One controlled aggregation table per 7/30-day cohort: campaign+asset_id+variant, qualified_humans, page_visits, CTA_clicks, confirmed_leads, merchant_paid_orders, gross, refunded, fees, realized_net, net_per_1000, confidence/missing flags.
-**Do not add any scripts, pixels, redirects, fingerprints, raw email/phone or third-party SaaS.** Consult Issue #820 Claude implementation before deciding existing native tooling is inadequate.
+**No extra tracking scripts, pixels, redirects, fingerprints, raw email/phone or third-party SaaS.** Do not deploy any new tracking implementation. Consult Issue #820 Claude implementation before deciding existing native tooling is inadequate.
 
 ## Pre-release UX and security checks
 1. Validate correct final product/version/delivery and checkout-refund terms against official exact SKU (not a promotional landing timer).
