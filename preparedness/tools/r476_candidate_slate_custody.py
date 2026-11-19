@@ -102,7 +102,7 @@ def check_article(slug: str, body: bytes, metadata: bytes, seen_numbers: set) ->
     seen_numbers.add(n)
     require(type(data.get('title')) is str and data['title'].strip(), 'missing article title')
     require(type(data.get('section')) is str and data['section'].strip(), 'missing section')
-    require(data.get('track') in ('modern', 'historical'), 'invalid editorial track')
+    require(data.get('track') in ('modern', 'lost-ways'), 'invalid editorial track')
     status = data.get('status')
     require(type(status) is dict and status.get('publish') == 'draft', 'publication state escalated')
     safety = data.get('safety_review')
