@@ -7,10 +7,10 @@
 A standalone offline HTML evidence instrument was built and exercised in local Chromium. It is **not another field guide**: it gives researchers a precise way to record a published railway timetable and a second putative operating witness without turning scheduled service into an observed journey.
 
 - Three claim scopes: *scheduled*, *specific train operated*, *named passenger traveled*. The final is never considered established by timetable/operating log alone.
-- 21 form inputs/selects/text areas; original descriptive SVG; clear fictional worked example; user-affirmed exact date, service identity, independent source and image inspection.
+- 21 form inputs/selects/text areas; original descriptive SVG; clear fictional worked example; user-affirmed exact date, service identity, independent source and image inspection; second-witness URLs must also be complete HTTPS URLs.
 - Conservative classifications distinguish missing document identity, timetable-only claims, retrospective recollection, duplicated schedule, catalog description and independently reviewed second records.
 - Qualified text receipt, locally downloaded UTF-8 CSV (formula-injection guard), copy and print. No cookies, accounts, analytics, CDN, tracking, external assets, API requests, form submission or automatic date/time conversion.
-- Source/tool file **SHA-256** `ac6c77751c0866c3a0f1ffd4c7c32fb2f03e664303b1b621c19c70859345d9fe`; 22,692 UTF-8 bytes. Current exact HTML deliverable resides in the Library Studio task artifact bundle attached to this run; **it is not committed to this branch by this note**. Do not call the GitHub branch a complete deployable package until the HTML has been transferred and hash-checked.
+- Source/tool file **SHA-256** `b3db3ea13bac046134145a1d35fbd855f3dfe7eaf1bb9153895378a30e56b56a`; 22,730 UTF-8 bytes. Current exact HTML deliverable resides in the Library Studio task artifact bundle attached to this run; **it is not committed to this branch by this note**. Do not call the GitHub branch a complete deployable package until the HTML has been transferred and hash-checked.
 
 ## Research register: inspected on November 18, 2026
 
