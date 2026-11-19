@@ -121,6 +121,8 @@ def show_keyboard_help(root, legend: str) -> None:
                                wrap="word", takefocus=True)
         instructions.insert("1.0", content)
         instructions.configure(state="disabled")
+        # Retain the keyboard-readable target for repeated F1 focus recovery.
+        dialog._fvs_help_text = instructions
         scroll = ttk.Scrollbar(frame, orient="vertical",
                                command=instructions.yview)
         instructions.configure(yscrollcommand=scroll.set)
