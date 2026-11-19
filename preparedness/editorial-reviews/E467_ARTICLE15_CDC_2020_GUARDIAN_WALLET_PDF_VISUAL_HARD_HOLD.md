@@ -1,0 +1,31 @@
+# Preparedness editorial E467 — Article #15 / Tool #104: CDC guardian-wallet PDF is also CHILD-SPECIFIC
+
+**2026-11-18 PT · REVIEW ONLY / HARD HOLD · do not publish, merge, update WordPress, alter original source register, or claim a safety/QD PASS.** Parent [#136](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/136); Independent Integration [R474 draft #3069](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/3069) still holds. This augments E466 editorial evidence, **not** a substitute original manuscript and not Integration engineering.
+
+## Material new finding from original PDF visual review
+
+E466 identified that original Tool #104's categorical "do not put a child's full name or medical diagnosis on a printed card" is too broad beside CDC's current recommendations. **E467 inspected the actual one-page agency source**, not merely its catalog: [CDC Stacks *Backpack Emergency Card [2020]* PDF](https://stacks.cdc.gov/view/cdc/139829/cdc_139829_DS1.pdf), **page 1 (zero-indexed screenshot page 0)**. The official 2020 sample has two different pieces of paper: (1) Child's Card in backpack and (2) Guardian's Card in the adult's wallet. **Both** request child name, DOB, home address, medical/allergy information, school details and emergency contacts. The adult wallet sample is also child-specific and is **not** a minimalist phone list. The guardian card additionally lists a child's healthcare specialist.
+
+[CDC Stacks catalog](https://stacks.cdc.gov/view/cdc/139829) lists the source as **published July 14, 2020** and **public domain**. No government PDF design or graphics have been copied to the new FV original HTML evidence matrix. E466's useful **FV minimal adult-contact note** is an independent **editorial option** and MUST NOT be mistaken for the CDC guardian wallet form.
+
+The current [CDC *Keeping Children Safe Away from Home*, 2025-12-16](https://www.cdc.gov/children-and-school-preparedness/keeping-safe/index.html), checked directly 2026-11-18, recommends cards for child's backpack and guardian wallet with child identity/DOB, relevant medical/allergy and parent/school/emergency contacts. **This short 2025 web list does not explicitly mention a home address; the 2020 PDF does.** Do NOT extrapolate a 2025 prohibition, requirement, legal rule, universal school policy, or a newly approved field list from that distinction. [CDC *Before, During and After an Emergency*, 2025-12-24](https://www.cdc.gov/children-and-school-preparedness/before-during-after/index.html), directly read, calls for current school contacts and waiting until school/emergency officials say it is safe to collect children. A card is NOT pickup authorization. The [U.S. Department of Education's FERPA emergency FAQ](https://studentprivacy.ed.gov/faq/when-it-permissible-utilize-ferpas-health-or-safety-emergency-exception-disclosures) concerns **schools' education-record disclosures**, not the privacy of a lost parent-created paper card; no legal compliance claim.
+
+## Proposed bounded original-copy correction — all UNAPPROVED
+
+**Original Tool #104 privacy note (replace categorical statement only after human review):**
+
+> Printed cards can be lost. This tool's minimal option is a general-contact note, not the CDC guardian's child-information wallet card or a complete backpack emergency card. CDC's sample cards for both children and guardians include child identification and relevant medical information; its current guidance recommends these details for emergency contact cards. Decide what a child or caregiver needs with your school or childcare provider, and keep official contacts and authorized-pickup records current. Do not use a card as permission to collect a child. No medical details are requested by this FV draft tool.
+
+**Original Article #15 Step 2 editorial note (replace only after human review):**
+
+> A paper contact plan has to match its reader. A spare adult contact note may hold only names and numbers; the CDC's guardian wallet card is a different, child-specific document. Ask your school how it makes necessary care information available to authorized staff, what belongs on a backpack card, and how official pickup records are updated. Do not assume a printed card changes the school's emergency procedure.
+
+**Tool #104 selector disclosure:** “Minimal” is an FV editorial setting for general-contact carry. It does not implement the CDC child-backpack or guardian-wallet templates and must not be presented as an approved emergency medical-information card.
+
+## Original custody and release boundaries
+
+Original Article #15 HTML blob `8ac8bd7dba3be15d477c15737e54d83364d72527`, metadata `dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3`; Tool #104 HTML `be8698ac5d020476ff649d85813810e2000c6f98`, metadata `47da1e7e20e39f0ea85e26d54a8d58301f6e0a15`, read on original `preparedness/r203-all35-body-citation-link-20261107`. Original both draft / safety pending; four pins agree with R474's manifest. Older `shelter-cdc-reunification` tokens **cannot** stand in for the newly checked 2025 CDC sources. Source-citation registration and exact wording await qualified editorial/childcare/privacy acceptance.
+
+**Local artifacts (editorial working copy, NOT in GitHub):** E467 original no-form/no-JS responsive three-lane HTML comparison, free one-page printable questions-only PDF, seven-source access/rights CSV, fourteen-claim scope/safety CSV, QA log and screenshots. Visually inspected final PDF page; browser HTML at 320/390/768/1440px with JavaScript disabled and no horizontal overflow; 200% zoom test timed out (NOT PASS). No external images or original-government artwork. This local QA does not cover actual original WordPress runtime privacy, native 35-article build, hosted CI, qualified school/medical/privacy or accessibility review, or publication approval. Existing FEMA fillable PDF returned HTTP 403 this run; its second page remains unverified.
+
+**Status:** 0 live pages, 0 WordPress draft saves, 0 merges, 0 email, 0 commerce changes. No homepage, Investigations, archive nav, private hazardous procedures, or Tool #102 changes. **Geographic limits:** U.S., with school, childcare, local/state/tribal rules controlling. **Access date:** November 18, 2026. **Next review:** December 18, 2026 or after material authoritative update.

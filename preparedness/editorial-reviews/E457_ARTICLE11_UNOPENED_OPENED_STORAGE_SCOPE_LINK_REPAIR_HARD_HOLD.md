@@ -1,0 +1,25 @@
+# E457 — Article #11, unopened/opened storage boundary and real worksheet link — REVIEW ONLY / HARD HOLD
+
+**2026-11-18 PT | United States | recheck 2026-12-18 or sooner if official sources change.** Continues the existing unreleased Article #11, *What Dried Meat Cannot Promise*. This is a **standalone alternate review manuscript**, not an accepted source/manuscript choice in the canonical 35-article slate. Nothing is authorized for publication.
+
+## Material new direct primary-source distinction
+
+Directly opened [FoodSafety.gov's Cold Food Storage Chart](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) (last reviewed 2023-09-19; checked 2026-11-18). Its canned-ham examples distinguish **Keep Refrigerated**, **unopened shelf-stable**, and **shelf-stable after opening**. E457 uses that bounded *product-and-package-state* demonstration to correct an ambiguous reader assumption that any sealed or dry-looking package can be counted as a safe no-power meal. **It is not a homemade-jerky shelf-life rule, treatment method or permission to eat a questionable product.** The reader edition now records the actual manufacturer label and opened/repacked condition, while preserving the previous separate identity, tested process and current warning evidence.
+
+Read the live [Preparedness Archive](https://finalvestige.com/preparedness/) (original hazardous guidance still private), [Editorial Standards](https://finalvestige.com/editorial-standards/), [issue #136](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/136), this draft [#2789](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2789), and latest independent Integration [R462 draft PR #3015](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/3015). R462 says **32 separate shared-literal-URL reading-scope review groups**, from 244 source records and 202 URLs; **not a replacement** for the older 17-group audit. Its tests are on a local equivalent prototype, its hosted CI failed with zero steps, and native 35-article build / actual WordPress exports / qualified release are still HOLD. Neither original manuscripts nor integration scripts touched.
+
+## E456 → E457 concrete delivery correction
+
+E456 standalone article HTML pointed to `E456_ONE_SHELF_EVIDENCE_CHECK_PRINT_REVIEW_ONLY.html`, which is **absent from the E456 deliverable folder**. E457 creates an actual **HTML no-open/no-taste/no-cook one-shelf worksheet**, fixes the HTML article's relative link to it and separately provides a two-page PDF. The exercise records up to three original package labels, unopened/opened/repacked states, after-opening wording, water/power, assistive access and unresolved recalls. Removed duplicate bibliography occurrence of an indexed-only FSIS vacuum FAQ.
+
+## Claim, safety and provenance boundary
+
+- Direct official HTML checked this run: FoodSafety.gov chart and emergency food planning; CDC trichinellosis and disability preparedness; NCHFP jerky; FDA food allergen information; FoodKeeper. **No numeric jerky storage duration or food-processing schedules added.**
+- Critical **HOLD**: NCHFP's broad pork/wild-game freezing instruction versus [CDC's freeze-resistant wild-game parasite caveat](https://www.cdc.gov/trichinellosis/prevention/index.html).
+- Critical **HOLD**: NCHFP sealed home-jerky duration versus USDA FSIS's different generic homemade/inspected periods (FSIS consumer Q&A indexed-only; direct 502/timeout).
+- High **HOLD**: USDA FSIS 2014 industry guidance is not household process; September 2025 MPR labeling-policy edit remains an agency-authored third-party mirror without direct original agency verification.
+- No third-party images. Existing diagram is original studio HTML/CSS. New worksheet original text/CSS; no scripts, submission, tracking or household personal data collection.
+- Local editor package: E457 article HTML SHA256 `db7c45f6e83479a35bc5075900cf6d55f6a7c8e7a0922e0c6b147d6ecaa23900`; worksheet HTML `6fe5aa8996031012dfdfa4c2ffd913f105b9599e5018c6bb41b17e128a15d097`; PDF `306ff181f623219b4d1e625edf7e299b8955bfd64658d99f18f6e0117f9d336c`. Also 11-source access/scope ledger and 14-claim crosswalk, separately retained in the local deliverable.
+- **36/36 local static and Chromium set_content tests PASS** across 320/390/768/1440 widths, JS disabled; two-page PDF visually inspected. These are NOT actual WordPress/browser acceptance or an independent screen-reader/qualified food-safety signoff.
+
+**Release remains HARD HOLD**: 17 original article divergences and four source fragment review groups, five semantic source disputes, nine manuscript/source forks, the prior 17 shared-URL groups, new R462 32-group audit, source/safety and owner release/QD remain open. **No WordPress draft or publication; no merges; no homepage, Investigations, Preparedness navigation, email, analytics, commerce or social actions.**

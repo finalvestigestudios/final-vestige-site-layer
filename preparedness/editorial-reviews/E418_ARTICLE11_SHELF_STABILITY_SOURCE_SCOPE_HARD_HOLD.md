@@ -1,0 +1,31 @@
+# Preparedness editorial E418 — Article #11 shelf-stability source scope
+
+**DRAFT / REVIEW ONLY / HARD HOLD · Nov 16, 2026 PT. Never merge, publish, turn into household food instructions, or count as qualified scientific, QA or original-corpus custody approval.**
+
+Continues exactly one original 35-slate item: Article #11 `safe-jerky-dehydration`, *What Dried Meat Cannot Promise*. E417 remains the immutable standalone baseline. This file is a bounded evidence-review handoff, NOT an authenticated source manuscript, draft WordPress page or engineering change.
+
+## Newly compared evidence and retrieval classifications
+
+1. [USDA FSIS, *How does drying meat make it safe?*](https://ask.fsis.usda.gov/article/How-does-drying-meat-make-it-safe) — OFFICIAL SEARCH INDEX ONLY, update 2024-12-18. Its indexed text makes a broad categorical statement about jerky/dried foods without refrigeration. **Direct original fetch timed out** on 2026-11-16; no current complete page was authenticated. This is NOT a test of an unknown batch.
+2. [USDA FSIS, *Is jerky safe when stored at room temperature?*](https://ask.fsis.usda.gov/article/Is-jerky-safe-when-stored-at-room-temperature) — OFFICIAL SEARCH INDEX ONLY, update 2024-05-22. Distinguishes federally inspected commercial manufacture and variable homemade jerky, with different general durations. **Direct fetch HTTP 502.** Do not reproduce durations as blanket instructions or treat them as a verified product guarantee.
+3. [USDA FSIS, *What does shelf-stable mean?*](https://ask.fsis.usda.gov/article/What-does-shelf-stable-mean) — OFFICIAL SEARCH INDEX ONLY, update 2024-04-16; indexed category/label scope, not a fully read direct page.
+4. [NCHFP/University of Georgia, *Jerky*](https://nchfp.uga.edu/how/dry/recipes/jerky/) — FULL ORIGINAL DIRECTLY READ, sourced from a 2014 manual. Its storage passage is conditioned on *properly dried* jerky in a documented process. **Do not transfer that condition or its storage period to a different/unknown batch.**
+5. [UMN Extension, *Preserving food at home: Drying*](https://extension.umn.edu/food/preparing/cooking-at-home/food-preservation/drying) — FULL ORIGINAL DIRECTLY READ, reviewed 2026; describes a differently conditioned jerky treatment. The inherited 2025 UMN *Cooking without a kitchen* general list creates a separate unresolved product-scope question.
+
+**Meaning:** a category-level shelf-stability statement, an agency's commercial-versus-homemade distinction, a validated method's conditional storage language, and the safety of a particular batch are **different kinds of evidence**. None supplies a general household shelf-life guarantee. This is source-scoped explanation only, not food preservation advice.
+
+## Literal proposed new article excerpt (for qualified comparison, not release)
+
+> A broader federal answer adds a third layer of uncertainty. A USDA FSIS public Q&A about why drying preserves meat, indexed as updated December 18, 2024, ends with a general statement that jerky and other dried foods can be kept without refrigeration. That is category-level language; it is not an inspection record, a product test, or evidence of how somebody's unmarked home batch was processed. Its full current source page did not open during this review, so the indexed statement remains source-index evidence, not a directly verified current full-page instruction.
+>
+> Two other records make the scope problem tangible. An FSIS storage answer indexed as updated May 22, 2024 distinguishes federally inspected commercial jerky from variable homemade batches and describes different general storage periods; its full page was also inaccessible. By contrast, the directly readable NCHFP jerky chapter conditions its storage statement on a product being properly dried according to that chapter's particular processing context. Its source text dates to a 2014 manual. These records do not establish one transferable shelf life for a food whose ingredients, process, packaging and storage history are unknown.
+
+The local E418 review-only HTML also adds an **original FV text-first HTML/CSS three-panel source-scope diagram**: general category / qualified process / specific item. Caption names FV provenance and states it is NOT a safety test or official photograph. All **five prior original figure captions** remain, no external image/license or script introduced. 25 inherited source-list entries preserved; two properly scoped new entries added; all major headings preserved.
+
+## Tests, custody and release
+
+Local review HTML SHA-256 **`c17b52703abed5bbca4195381c9d0c2aa9a5ab6ca25b7ba8070808d8280e4e8a`**, E417 immutable baseline SHA-256 **`3b1b9c9ee1b3fea42793f307325fff8c0493d2c9d19fc8d5eed10b4ece2ec3cd`**. 17/17 separate local structural checks PASS. Six/6 local Chromium JS-disabled viewports/print emulation PASS at 320/360/390/768/1440/print, no horizontal overflow, no remote asset requests; source note and caption visible. No native 35-corpus build, authentic WordPress/private preview pairs, production WordPress acceptance or human screen-reader audit.
+
+Review requires current authenticated FSIS full original, qualified food-safety reconciliation of storage/process and wild-game freezing, inherited five source disputes/nine unselected Shelter forks, actual 35 manuscript custody, native build, independent QD and explicit owner release. Current Integration [R425 draft #2815](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2815) is synthetic/structural HOLD; its hosted CI is FAIL with unresolved cause, not clearance.
+
+**Source access:** 2026-11-16 PT; **U.S. context**, follow applicable state/tribal/local and product-specific notices. **Review due:** 2026-12-16 or sooner after authoritative change. **WordPress drafts 0; published 0; repository engineering files 0; live modifications 0.** Only this additive isolated editorial memo enters the existing DRAFT review PR; no changes to homepage, Investigations, Preparedness navigation, original guidance, commerce, social or email.

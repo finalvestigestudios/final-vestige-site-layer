@@ -1,0 +1,24 @@
+# E448 — Article #11 FDA notice status and recheck record (REVIEW ONLY / HARD HOLD)
+
+**Date / access:** November 17, 2026 PT. **Scope:** Preparedness Archive issue #136; held Article #11 `safe-jerky-dehydration`, “What Dried Meat Cannot Promise.” **U.S. federal scope only**, with state, tribal, local, manufacturer and incident-specific instructions controlling. **Review again by:** December 17, 2026, sooner on consequential agency changes.
+
+## Directly verified, material correction
+
+1. [FDA Enforcement Reports](https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/enforcement-reports) — “Not Yet Classified” does **not** mean “not recalled” or “no known risk.” FDA has determined that the firm's action meets its recall definition, but its assessment of relative health-hazard class remains pending. Public statements can predate regulatory classification or report posting. The report records changes to product description, codes, reason and classification.
+2. [FDA Enforcement Report Definitions](https://www.fda.gov/safety/enforcement-reports/enforcement-report-information-and-definitions) — distinction between recall existence, pending class, and FDA's subsequent recall-status designations.
+3. [FDA Recalls, Market Withdrawals & Safety Alerts](https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts) — only *certain* recalls appear on this public-warning page; entries remain here three years then move to archives. No hit is NOT evidence the food is safe.
+4. [FDA Food Recalls: What You Need to Know](https://www.fda.gov/food/buy-store-serve-safe-food/food-recalls-what-you-need-know) — identify the actual product using name, package, UPC, lot and printed dates, then follow the current product-specific recall notice. Manufacturer updates and source distribution can matter.
+5. [openFDA Food Enforcement API](https://open.fda.gov/apis/food/enforcement/) — weekly updated data and explicit caution not to use the dataset to issue consumer alerts or track the full recall lifecycle. **Not used as an alert service.**
+6. [USDA FSIS electronic consumer complaint form](https://foodcomplaint.fsis.usda.gov/eccf/) — official USDA reporting route and Meat & Poultry Hotline, directly accessible. [FSIS recalls](https://www.fsis.usda.gov/recalls) returned HTTP **403**; [FSIS match FAQ](https://ask.fsis.usda.gov/article/Is-my-product-part-of-a-recall) timed out. Neither is upgraded to full direct verification.
+
+## Exact editorial advancement / limits
+
+Continued E447's **unpublished**, alternative Article #11 reader edition; did not touch canonical 35-item source/manuscript corpus. Retained seven H2 headings, original 3-part FV HTML/CSS evidence diagram, FDA-versus-FSIS comparison table, allergy caveats, direct CFR labeling boundaries, noindex and prominent review-only disclosure. Inserted one bounded explanation of FDA pending classification, reporting order and update trail; recorded three *notice-specific* matching conclusions (specific match / does not match **this notice** / unresolved). All three explicitly avoid an FV safety clearance. Updated a no-data paper household worksheet with actual agency URL, time/version and recheck trigger. No recipes, times, temperatures, medical treatment, sanitation or hazard-control procedures; no generated/stock media or forms/scripts.
+
+Local package: E448 article HTML, printable HTML, **20-source** ledger (inherited E447 context + eight new official references), **29-claim** risk/source/release crosswalk, screenshots, QA report/checksums, ZIP. Executed **36/36 local static/responsive/print-CSS checks PASS** using Chromium JavaScript-disabled 320/390/768/1024/1440 widths and print emulation. A passing local page.set_content does **not** establish live WordPress acceptance, actual clickthrough to blocked USDA sites, screen-reader WCAG verification, full 35-manuscript build, hosted CI or qualified safety signoff.
+
+## Handoff to Integration / non-negotiable holds
+
+R453 [draft PR #2967](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2967) owns independent source/citation custody; E448 is a **review memo only** on the existing editorial [draft PR #2789](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2789), not an integration test or branch merge. Retain the authentic source baseline and unresolved five source disputes, nine manuscript forks and 17 shared-URL groups. Original wild-game freezing contradiction (NCHFP vs CDC), allergen exceptions, complete FSIS direct source reads, qualified food/wildlife reviewer, independent accessibility, real WordPress private preview/export, native QA, CI and explicit release remain **HARD HOLD**.
+
+No WordPress draft/save/publish, public link change, nav/menu or other site area, merch, affiliate, email or social action. Homepage and Investigations untouched. Do not treat an unmatched or “Not Yet Classified” record as permission to consume a product.
