@@ -76,3 +76,28 @@ class ReviewCustodyTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             self.assertEqual(gate.main(["--root",tmp]),2)
 
+    def test_original_unregistered_new_source(self):
+        x=setup();x[1]["source_use"][gate.REVIEW_SOURCES[0][0]]="fabricated"
+        with self.assertRaises(gate.Hold):gate.validate_originals(*x)
+
+    def test_original_old_source_rebranded(self):
+        x=setup();x[3]["source_use"]["shelter-cdc-reunification"]="2025 new child cards"
+        with self.assertRaises(gate.Hold):gate.validate_originals(*x)
+
+    def test_missing_new_url_read_depth(self):
+        x=setup();x[4]["review_only_sources"][2]["read_scope"]="full_official_page"
+        with self.assertRaises(gate.Hold):gate.validate_originals(*x)
+
+    def test_review_only_token_laundered_article(self):
+        x=setup();x[0]+="{{cite:"+gate.REVIEW_SOURCES[0][0]+"}}"
+        with self.assertRaises(gate.Hold):gate.validate_originals(*x)
+
+    def test_review_only_token_laundered_tool(self):
+        x=setup();x[2]+="{{cite:"+gate.REVIEW_SOURCES[1][0]+"}}"
+        with self.assertRaises(gate.Hold):gate.validate_originals(*x)
+
+    def test_no_js_or_merchant_actions(self):
+        self.assertNotIn("requests.", SCRIPT.read_text())
+        self.assertNotIn("wordpress_post", SCRIPT.read_text())
+
+
