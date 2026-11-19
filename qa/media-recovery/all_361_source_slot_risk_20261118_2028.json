@@ -676,7 +676,7 @@
       "missing_srcset": 7,
       "direct_external": 3,
       "image_redirects": 0,
-      "origin_404_probes": 0
+      "origin_404_probes": 1
     },
     {
       "post_id": 258,
@@ -775,7 +775,7 @@
       "missing_srcset": 6,
       "direct_external": 1,
       "image_redirects": 0,
-      "origin_404_probes": 0
+      "origin_404_probes": 1
     },
     {
       "post_id": 289,
@@ -907,7 +907,7 @@
       "missing_srcset": 6,
       "direct_external": 0,
       "image_redirects": 0,
-      "origin_404_probes": 0
+      "origin_404_probes": 1
     },
     {
       "post_id": 407,
@@ -4809,8 +4809,8 @@
       "has_sizes": false,
       "alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
       "requested_width_hint_px": null,
-      "original_public_retriever_http": null,
-      "original_probe_date": null,
+      "original_public_retriever_http": 404,
+      "original_probe_date": "2026-11-18",
       "visitor_http_status": null,
       "visitor_decoded": null,
       "visitor_wire_bytes": null,
@@ -4818,7 +4818,8 @@
       "replacement_approved": false,
       "flags": [
         "MISSING_EXPLICIT_DIMENSIONS",
-        "NO_SRCSET"
+        "NO_SRCSET",
+        "EXTERNAL_ORIGINAL_RETRIEVER_404"
       ]
     },
     {
@@ -4966,8 +4967,8 @@
       "has_sizes": false,
       "alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
       "requested_width_hint_px": null,
-      "original_public_retriever_http": null,
-      "original_probe_date": null,
+      "original_public_retriever_http": 404,
+      "original_probe_date": "2026-11-18",
       "visitor_http_status": null,
       "visitor_decoded": null,
       "visitor_wire_bytes": null,
@@ -4975,7 +4976,8 @@
       "replacement_approved": false,
       "flags": [
         "MISSING_EXPLICIT_DIMENSIONS",
-        "NO_SRCSET"
+        "NO_SRCSET",
+        "EXTERNAL_ORIGINAL_RETRIEVER_404"
       ]
     },
     {
@@ -6147,15 +6149,16 @@
       "has_sizes": false,
       "alt": "USS Tang crewmen taking a rescued American airman aboard the submarine off Truk in May 1944.",
       "requested_width_hint_px": 640,
-      "original_public_retriever_http": null,
-      "original_probe_date": null,
+      "original_public_retriever_http": 404,
+      "original_probe_date": "2026-11-18",
       "visitor_http_status": null,
       "visitor_decoded": null,
       "visitor_wire_bytes": null,
       "rights_review": "HOLD_ITEM_LEVEL",
       "replacement_approved": false,
       "flags": [
-        "NO_SRCSET"
+        "NO_SRCSET",
+        "EXTERNAL_ORIGINAL_RETRIEVER_404"
       ]
     },
     {
@@ -10895,5 +10898,16 @@
     "media_downloaded": 0,
     "paid_calls": 0,
     "auto_replacements": 0
+  },
+  "observation_provenance_correction": {
+    "reason": "Original-source probes use fully qualified slot strings (e.g. '274:6'), not numeric indices. Source audit joins by exact slot plus post_id.",
+    "affected_slots": [
+      "274:6",
+      "287:5",
+      "285:5"
+    ],
+    "source_only_http_404_count": 3,
+    "guest_browser_status_still_unverified": true,
+    "historical_probe_source": "qa/media-recovery/social_card_12_rendered_20261118_1930.json"
   }
 }
