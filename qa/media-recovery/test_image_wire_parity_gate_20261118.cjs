@@ -102,3 +102,19 @@ test("same_master_after_add_zoom_must_hold",()=>{
  assert.equal(y.threshold_met,false);
  assert.ok(y.errors.some(s=>s.includes("unapproved_framing_change")));
 });
+
+test("61-post near-threshold rounding cannot claim 76 percent",()=>{
+ const x=make("historic-61",61,24);
+ x.after.desktop.pages[0].images[0].transfer_bytes=25;
+ const y=evaluate(x);
+ assert.equal(y.devices.desktop.reduction_percent,76);
+ assert.equal(y.threshold_met,false);
+ assert.equal(y.gate,"HOLD");
+});
+test("66-post one-byte near-threshold rounding cannot claim 76 percent",()=>{
+ const x=make("current-66",66,24);
+ x.after.mobile.pages.find(p=>p.images.length).images[0].transfer_bytes=25;
+ const y=evaluate(x);
+ assert.equal(y.devices.mobile.reduction_percent,76);
+ assert.equal(y.threshold_met,false);
+});
