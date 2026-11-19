@@ -8,7 +8,7 @@ function reconcileProviderViews(v) {
   if(ints.some(x=>!Number.isInteger(x)||x<0))throw new Error("all nine counts must be nonnegative integers");
   const n=v.newsletter,f=v.filters,g=v.followers;const warnings=[];
   if(n.confirmed>n.total)warnings.push("NEWSLETTER_CONFIRMED_EXCEEDS_TOTAL");
-  if(n.confirmed+n.unconfirmed>n.total)warnings.push("UNCONFIRMED_IS_SEPARATE_COORT_NOT_ADDITIVE");
+  if(n.confirmed+n.unconfirmed>n.total)warnings.push("UNCONFIRMED_IS_SEPARATE_COHORT_NOT_ADDITIVE");
   if(f.all.total!==f.all.rows.length||f.email.total!==f.email.rows.length||f.reader.total!==f.reader.rows.length||f.unconfirmed.total!==f.unconfirmed.rows.length)warnings.push("FILTER_ROWS_TOTAL_MISMATCH");
   if(f.all.rows.some(z=>z.status!=="Subscribed")||f.email.rows.some(z=>z.email_subscriber!==true||z.status!=="Subscribed"))warnings.push("SUBSCRIBER_STATUS_NOT_CONFIRMED");
   if(f.unconfirmed.rows.some(z=>z.status==="Subscribed"))warnings.push("UNCONFIRMED_FILTER_CONTAINS_CONFIRMED");
