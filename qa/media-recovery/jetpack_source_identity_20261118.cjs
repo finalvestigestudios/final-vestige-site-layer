@@ -2,6 +2,7 @@
 // Offline URL identity comparison. No network access, CMS writes or HTTP claims.
 // A browser-selected srcset currentSrc may vary the Jetpack size transform
 // without changing the underlying historical photograph.
+const {resizeCropPreserved}=require("./jetpack_resize_crop_guard_20261118.cjs");
 const TRANSFORMS = new Set(['ssl', 'resize', 'w', 'h', 'fit', 'crop', 'quality', 'strip', 'zoom']);
 const isProxy = host => /^i[0-3]\.wp\.com$/.test(host);
 function parse(url) {
@@ -53,7 +54,7 @@ function sourceMatches(current, authored) {
     const after = c.mutable.get(key) ?? c.immutable.get(key) ?? null;
     if (before !== after) return false;
   }
-  return true;
+  return resizeCropPreserved(current, authored);
 }
 // Cross-phase before/after image URLs can use different responsive sizes.
 // Cropping and zooming must remain identical unless the photo replacement is
@@ -66,6 +67,6 @@ function sameFraming(beforeUrl, afterUrl) {
     const second = after.mutable.get(key) ?? after.immutable.get(key) ?? null;
     if (first !== second) return false;
   }
-  return true;
+  return resizeCropPreserved(beforeUrl, afterUrl);
 }
 module.exports = { sourceMatches, parse, sameFraming };
