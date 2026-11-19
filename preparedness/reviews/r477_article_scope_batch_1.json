@@ -1,0 +1,1128 @@
+{
+  "schema": "fv-r477-authentic-35-article-scope-custody-batch-v1",
+  "repo": "finalvestigestudios/final-vestige-site-layer",
+  "candidate_ref": "1d4d885c0b427d4b1bfbb77cf2ecf0c10a0dc070",
+  "candidate_manifest_blob": "2adcffe48fcbb3ac3aa9eb2fc18b048f032fcc0c",
+  "authenticated_source_index_blob": "f6e505331a3f66c27e4ccde38dd6ca8709993b75",
+  "crosswalk_blob": "d62e493a67dedd23e04cfdf3cce762ef933c6bf9",
+  "batch": 1,
+  "total_batches": 5,
+  "release": "DRAFT_HARD_HOLD",
+  "review_state": "ALL_CLAIM_SCOPES_UNADJUDICATED",
+  "qualified_qd_pass": false,
+  "publication_authorized": false,
+  "articles": [
+    {
+      "slug": "emergency-hygiene-sanitation",
+      "n": 18,
+      "origin": "health",
+      "body_git_blob": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+      "metadata_git_blob": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 62,
+      "distinct_citation_ids": 7,
+      "citation_sequence": [
+        "cdc-hygiene-emergency",
+        "health-cdc-septic",
+        "health-osu-sanitation",
+        "health-wadoh-toilet",
+        "health-osu-sanitation",
+        "cdc-hygiene-emergency",
+        "health-cdc-power-outage",
+        "health-osu-sanitation",
+        "health-osu-sanitation",
+        "cdc-hygiene-emergency",
+        "health-ready-kit",
+        "cdc-hygiene-emergency",
+        "health-osu-sanitation",
+        "cdc-hygiene-emergency",
+        "cdc-hygiene-emergency",
+        "cdc-hygiene-emergency",
+        "health-osu-sanitation",
+        "cdc-hygiene-emergency",
+        "health-wadoh-toilet",
+        "health-osu-sanitation",
+        "health-osu-sanitation",
+        "cdc-hygiene-emergency",
+        "health-osu-sanitation",
+        "health-osu-sanitation",
+        "health-osu-sanitation",
+        "health-cdc-septic",
+        "health-cdc-septic",
+        "health-wadoh-toilet",
+        "health-wadoh-toilet",
+        "health-osu-sanitation",
+        "health-osu-sanitation",
+        "health-osu-sanitation",
+        "health-wadoh-toilet",
+        "health-osu-sanitation",
+        "health-osu-sanitation",
+        "health-wadoh-toilet",
+        "health-osu-sanitation",
+        "health-cdc-sanitation-archive",
+        "health-cdc-sanitation-archive",
+        "health-cdc-sanitation-archive",
+        "cdc-hygiene-emergency",
+        "cdc-hygiene-emergency",
+        "cdc-hygiene-emergency",
+        "cdc-hygiene-emergency",
+        "health-osu-sanitation",
+        "health-osu-sanitation",
+        "health-ready-kit",
+        "health-osu-sanitation",
+        "health-osu-sanitation",
+        "health-wadoh-toilet",
+        "health-osu-sanitation",
+        "health-osu-sanitation",
+        "health-osu-sanitation",
+        "health-ready-kit",
+        "health-ready-kit",
+        "health-osu-sanitation",
+        "health-osu-sanitation",
+        "health-osu-sanitation",
+        "health-cdc-sanitation-archive",
+        "health-osu-sanitation",
+        "health-osu-sanitation",
+        "health-cdc-septic"
+      ],
+      "source_claims": [
+        {
+          "sid": "cdc-hygiene-emergency",
+          "source_use_exact": "Handwashing for at least 20 seconds; when boiled or disinfected water is recommended; temporary jug station; sanitizer with at least 60% alcohol and its limits; bathing, teeth, wound care and Vibrio; diaper fact sheets pointer.",
+          "occurrences": 13,
+          "first_context": " caring for anyone who is sick. No running water? Make a handwashing station from a large water jug.{{cite:cdc-hygiene-emergency}}</li> <li><strong>If water or sewer service is in doubt, stop flushing and ask.</strong> Local authorities can tell you whether to"
+        },
+        {
+          "sid": "health-cdc-septic",
+          "source_use_exact": "Limit flushing and water use in an emergency; flush as little as possible or use a temporary toilet; do not pump a flooded septic tank more than halfway; signs of failure; avoid sewage-contaminated floodwater; do not drink well water until known safe; pre-flood steps for septic households.",
+          "occurrences": 4,
+          "first_context": "her toilets are safe to use. Meanwhile, flush as little as possible or switch to a temporary toilet.{{cite:health-cdc-septic}}{{cite:health-osu-sanitation}}</li> <li><strong>Set up a bag-lined toilet before you need it.</strong> A bucket or your own toilet bow"
+        },
+        {
+          "sid": "health-osu-sanitation",
+          "source_use_exact": "Toilet blindness; fecal-oral disease risk; twin-bucket set-up, use and emptying; avoid toilets even if home pipes seem fine; turn off household water; handwashing station design; CDC key handwashing times as listed; sanitizer caveats; diapers, menstrual products and mobility; supply list; do not put human waste in normal garbage.",
+          "occurrences": 29,
+          "first_context": "e. Meanwhile, flush as little as possible or switch to a temporary toilet.{{cite:health-cdc-septic}}{{cite:health-osu-sanitation}}</li> <li><strong>Set up a bag-lined toilet before you need it.</strong> A bucket or your own toilet bowl, a sturdy bag, something"
+        },
+        {
+          "sid": "health-wadoh-toilet",
+          "source_use_exact": "Three toilet options; the bag-lined bowl steps; the bucket option; cat-hole conditions; wipes and sanitizer if no running water; bagging non-biodegradable items; suggested disposal in the garbage (the point on which it disagrees with OSU).",
+          "occurrences": 7,
+          "first_context": "partment of Health and Oregon State University Extension both describe how, and the steps are below.{{cite:health-wadoh-toilet}}{{cite:health-osu-sanitation}}</li> <li><strong>Keep cuts clean and covered, and stay out of floodwater.</strong> Open wounds expose"
+        },
+        {
+          "sid": "health-cdc-power-outage",
+          "source_use_exact": "Safe water for drinking, cooking and personal hygiene is bottled, boiled or treated.",
+          "occurrences": 1,
+          "first_context": "rsonal hygiene when your tap water is suspect, and follow your health department's advice over ours.{{cite:health-cdc-power-outage}}</li> </ol> <p class=\"pa-act-note\">If someone is seriously ill, severely dehydrated, or injured, call your emergency number or a"
+        },
+        {
+          "sid": "health-ready-kit",
+          "source_use_exact": "One gallon per person per day counts for drinking and sanitation; moist towelettes, garbage bags and ties; soap, sanitizer, diapers, feminine and hygiene supplies.",
+          "occurrences": 4,
+          "first_context": "ge counts the one gallon per person per day it recommends as water for drinking and sanitation both.{{cite:health-ready-kit}}</p> <h2 id=\"hands\">Handwashing, with and without a tap</h2> <p>The CDC's advice is to wash with soap and water for at least 20 second"
+        },
+        {
+          "sid": "health-cdc-sanitation-archive",
+          "source_use_exact": "Archived emergency-response comparison of toilet options and their constraints; handwashing at every sanitation facility; containing waste reduces disease spread (cited as general principle only).",
+          "occurrences": 4,
+          "first_context": "ice, and the page is no longer maintained, so we use it only to show the trade-offs, which are real.{{cite:health-cdc-sanitation-archive}}</p> <div class=\"pa-tablewrap\" role=\"region\" aria-label=\"Comparison of emergency sanitation options\" tabindex=\"0\"> <table"
+        }
+      ]
+    },
+    {
+      "slug": "family-communication-plan",
+      "n": 15,
+      "origin": "shelter",
+      "body_git_blob": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+      "metadata_git_blob": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 69,
+      "distinct_citation_ids": 20,
+      "citation_sequence": [
+        "shelter-fcc-comms",
+        "shelter-ready-plan-form",
+        "shelter-ready-plan",
+        "shelter-cdc-reunification",
+        "shelter-cdc-reunification",
+        "shelter-ready-plan-locations",
+        "shelter-co-oss-reunification",
+        "shelter-ready-plan",
+        "shelter-fcc-comms",
+        "shelter-ready-plan",
+        "shelter-cdc-reunification",
+        "shelter-cdc-reunification",
+        "shelter-fcc-comms",
+        "shelter-fcc-comms",
+        "shelter-ready-evacuation",
+        "shelter-cdc-chemical-sip",
+        "shelter-cdc-reunification",
+        "shelter-fcc-comms",
+        "shelter-ready-plan-form",
+        "shelter-ready-plan-form",
+        "shelter-ready-plan-form",
+        "shelter-ready-plan-form",
+        "shelter-ready-plan-form",
+        "shelter-ready-plan-form",
+        "shelter-ready-plan-form",
+        "shelter-ready-plan",
+        "shelter-ready-plan",
+        "shelter-cdc-reunification",
+        "shelter-ready-evacuation",
+        "shelter-ready-tech",
+        "shelter-fcc-comms",
+        "shelter-ready-tornadoes",
+        "shelter-ready-hurricanes",
+        "shelter-ready-wildfires",
+        "shelter-cdc-reunification",
+        "shelter-ready-plan-locations",
+        "shelter-ready-plan-form",
+        "shelter-cdc-reunification",
+        "shelter-co-oss-reunification",
+        "shelter-ca-cde-safety-plans",
+        "shelter-cdc-chemical-evac",
+        "shelter-cdc-reunification",
+        "shelter-co-oss-reunification",
+        "shelter-fcc-comms",
+        "shelter-co-oss-reunification",
+        "shelter-co-oss-reunification",
+        "shelter-co-oss-reunification",
+        "shelter-co-oss-reunification",
+        "shelter-ready-plan-locations",
+        "shelter-cdc-reunification",
+        "shelter-ready-plan-locations",
+        "shelter-ready-plan",
+        "shelter-cdc-reunification",
+        "shelter-ncmec-hotline",
+        "shelter-fema-reunification",
+        "shelter-ready-heat",
+        "shelter-cdc-reunification",
+        "shelter-ready-disabilities",
+        "shelter-ready-disabilities",
+        "shelter-ready-disabilities",
+        "shelter-ready-plan-locations",
+        "shelter-fcc-comms",
+        "shelter-ready-plan",
+        "shelter-ready-plan-locations",
+        "shelter-ready-plan",
+        "shelter-ready-shelter",
+        "shelter-ready-plan",
+        "shelter-ready-evacuation",
+        "shelter-ready-home-fires"
+      ],
+      "source_claims": [
+        {
+          "sid": "shelter-fcc-comms",
+          "source_use_exact": "Out-of-area central contact; network congestion; limit calls, brief calls, text, try other services, wait 10 seconds, vehicle stationary, call forwarding, backup power, corded phone, personal care attendant.",
+          "occurrences": 8,
+          "first_context": "central contact and to make certain all family members know who to contact if they become separated.{{cite:shelter-fcc-comms}}</li> <li><strong>Write the plan down.</strong> Ready.gov's family emergency communication plan collects names, phone numbers, schools"
+        },
+        {
+          "sid": "shelter-ready-plan-form",
+          "source_use_exact": "Fields of Ready.gov's family emergency communication plan; information not saved or shared by any government agency; PDF can be emailed.",
+          "occurrences": 9,
+          "first_context": "ools, childcare, workplaces, emergency contacts, meeting places and medical information on one form.{{cite:shelter-ready-plan-form}}</li> <li><strong>Agree on more than one meeting place,</strong> familiar and easy to find, and agree when you would use each.{{"
+        },
+        {
+          "sid": "shelter-ready-plan",
+          "source_use_exact": "Family may not be together; meeting place familiar and easy to find; household-needs checklist; network assistance; practice the plan; pets.",
+          "occurrences": 9,
+          "first_context": " more than one meeting place,</strong> familiar and easy to find, and agree when you would use each.{{cite:shelter-ready-plan}}{{cite:shelter-cdc-reunification}}</li> <li><strong>Put an emergency contact card in each child's school bag,</strong> and help older"
+        },
+        {
+          "sid": "shelter-cdc-reunification",
+          "source_use_exact": "Reunification defined; 69 million children in school or childcare; faster reunion better; multiple meeting places; contact cards; memorize numbers; school drills; social media to say 'I'm safe'; NCMEC hotline; FEMA and Red Cross program pointers.",
+          "occurrences": 12,
+          "first_context": "e,</strong> familiar and easy to find, and agree when you would use each.{{cite:shelter-ready-plan}}{{cite:shelter-cdc-reunification}}</li> <li><strong>Put an emergency contact card in each child's school bag,</strong> and help older children memorize the impo"
+        },
+        {
+          "sid": "shelter-ready-plan-locations",
+          "source_use_exact": "Plan for school and daycare; ask about alerts, evacuation and shelter-in-place plans; backup plans for children; neighbors and apartments.",
+          "occurrences": 6,
+          "first_context": "how it would reunite children with families,</strong> and find out where and how it will notify you.{{cite:shelter-ready-plan-locations}}{{cite:shelter-co-oss-reunification}}</li> <li><strong>Practice the plan with everyone in the household.</strong>{{cite:she"
+        },
+        {
+          "sid": "shelter-co-oss-reunification",
+          "source_use_exact": "Colorado example: reunification is not a normal pick-up; stay home; notification system; photo ID and pen; limit calls and texts; release to authorized adults.",
+          "occurrences": 7,
+          "first_context": "milies,</strong> and find out where and how it will notify you.{{cite:shelter-ready-plan-locations}}{{cite:shelter-co-oss-reunification}}</li> <li><strong>Practice the plan with everyone in the household.</strong>{{cite:shelter-ready-plan}}</li> </ol> <p class"
+        },
+        {
+          "sid": "shelter-ready-evacuation",
+          "source_use_exact": "Out-of-state contact in the family communications plan; update the meeting place with circumstance.",
+          "occurrences": 3,
+          "first_context": "email the out-of-state contact in your family communications plan and tell them where you are going.{{cite:shelter-ready-evacuation}} The CDC's chemical-emergency plan says it in plainer words: let a friend or relative outside your area know where you are, and"
+        },
+        {
+          "sid": "shelter-cdc-chemical-sip",
+          "source_use_exact": "Let a friend or relative outside your area know where you are; messages by text or social media.",
+          "occurrences": 1,
+          "first_context": " relative outside your area know where you are, and expect to send messages by text or social media.{{cite:shelter-cdc-chemical-sip}}</p> <p><span class=\"pa-tag pa-tag--ed\">Editor's note</span> The sources recommend the practice but do not explain why it works"
+        },
+        {
+          "sid": "shelter-ready-tech",
+          "source_use_exact": "Current Ready.gov statement on texting, group chats, contacts, charging and conserving battery.",
+          "occurrences": 1,
+          "first_context": "an emergency charging option at home and in the car, and low-power or airplane mode to save battery.{{cite:shelter-ready-tech}} The FCC's older guide adds more detail. Its recommended practices for all users are, in summary:{{cite:shelter-fcc-comms}}</p> <ul> "
+        },
+        {
+          "sid": "shelter-ready-tornadoes",
+          "source_use_exact": "After a tornado save calls for emergencies; use text or social media.",
+          "occurrences": 1,
+          "first_context": "t messaging or social media to reach family and friends, since phone systems are often down or busy.{{cite:shelter-ready-tornadoes}}{{cite:shelter-ready-hurricanes}}{{cite:shelter-ready-wildfires}} The CDC adds that children who use social media can use featur"
+        },
+        {
+          "sid": "shelter-ready-hurricanes",
+          "source_use_exact": "After a hurricane save calls for emergencies; use text or social media.",
+          "occurrences": 1,
+          "first_context": "each family and friends, since phone systems are often down or busy.{{cite:shelter-ready-tornadoes}}{{cite:shelter-ready-hurricanes}}{{cite:shelter-ready-wildfires}} The CDC adds that children who use social media can use features in the apps to let loved ones"
+        },
+        {
+          "sid": "shelter-ready-wildfires",
+          "source_use_exact": "After a wildfire send text messages; phone systems are often busy.",
+          "occurrences": 1,
+          "first_context": "one systems are often down or busy.{{cite:shelter-ready-tornadoes}}{{cite:shelter-ready-hurricanes}}{{cite:shelter-ready-wildfires}} The CDC adds that children who use social media can use features in the apps to let loved ones know they are safe.{{cite:shelte"
+        },
+        {
+          "sid": "shelter-ca-cde-safety-plans",
+          "source_use_exact": "California's recommendation that schools set reunification locations and procedures and tell parents in languages they understand; written for schools.",
+          "occurrences": 1,
+          "first_context": "ponders. That page is written for schools and districts, not parents, and is specific to California.{{cite:shelter-ca-cde-safety-plans}} In a chemical emergency, the CDC adds a rule for separated families: do not go to your children, loved ones or pets unless "
+        },
+        {
+          "sid": "shelter-cdc-chemical-evac",
+          "source_use_exact": "Do not go to separated children, loved ones or pets unless officials say it is safe; call or text an outside contact.",
+          "occurrences": 1,
+          "first_context": " police, fire or other local officials say it is safe, because they may be sheltered where they are.{{cite:shelter-cdc-chemical-evac}}</p> <div class=\"pa-alert\"><p class=\"pa-alert-title\">The sources point slightly different ways</p> <p>The CDC says the faster "
+        },
+        {
+          "sid": "shelter-ncmec-hotline",
+          "source_use_exact": "NCMEC's own listing of its 24-hour hotline, 1-800-843-5678.",
+          "occurrences": 1,
+          "first_context": "me number written with digits, and says to contact NCMEC if you think you have seen a missing child.{{cite:shelter-ncmec-hotline}}</p> <p>FEMA's reunification fact sheet explains the national picture. FEMA, the Red Cross and NCMEC co-lead a National Reunificat"
+        },
+        {
+          "sid": "shelter-fema-reunification",
+          "source_use_exact": "National Reunification Committee; NECLC activation after Presidential declaration; Unaccompanied Minors Registry; Red Cross welfare checks; communication access commitments; marked as archived content.",
+          "occurrences": 1,
+          "first_context": "ch, people with cognitive or intellectual disabilities, and people with limited English proficiency.{{cite:shelter-fema-reunification}} <span class=\"pa-tag pa-tag--ed\">Editor's note</span> The fact sheet is written for emergency planners, not households, and F"
+        },
+        {
+          "sid": "shelter-ready-heat",
+          "source_use_exact": "Summer-break family list: teach 911, emergency contact person, family password or phrase, meeting place.",
+          "occurrences": 1,
+          "first_context": "if you are separated; and create a family password or phrase so a child does not go with a stranger.{{cite:shelter-ready-heat}} The CDC asks you to include children in making the plan.{{cite:shelter-cdc-reunification}}</p> <p><span class=\"pa-tag pa-tag--ed\">Ed"
+        },
+        {
+          "sid": "shelter-ready-disabilities",
+          "source_use_exact": "Communication cards; deaf and hard-of-hearing tools; support network contact list.",
+          "occurrences": 3,
+          "first_context": " how to communicate if the device fails, for instance with laminated cards of phrases or pictograms.{{cite:shelter-ready-disabilities}}</li> <li><strong>People who are deaf or hard of hearing.</strong> The same page lists a weather radio with a text display an"
+        },
+        {
+          "sid": "shelter-ready-shelter",
+          "source_use_exact": "Many public shelters allow only service animals.",
+          "occurrences": 1,
+          "first_context": "ow only service animals, so a family plan should say where pets would go.{{cite:shelter-ready-plan}}{{cite:shelter-ready-shelter}}</li> </ul> <p><span class=\"pa-tag pa-tag--ed\">Editor's note</span> <strong>Households with more than one home, shared custody, or"
+        },
+        {
+          "sid": "shelter-ready-home-fires",
+          "source_use_exact": "Drill twice a year.",
+          "occurrences": 1,
+          "first_context": "current. Ready.gov's fire-escape advice for drills is twice a year; the same rhythm can be borrowed.{{cite:shelter-ready-home-fires}}</li> <li>Test the out-of-area contact: have each person send them a text and check that the message arrives.</li> <li>Run a \"w"
+        }
+      ]
+    },
+    {
+      "slug": "fire-making-across-time",
+      "n": 31,
+      "origin": "hist-field",
+      "body_git_blob": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+      "metadata_git_blob": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 67,
+      "distinct_citation_ids": 11,
+      "citation_sequence": [
+        "hist-field-nps-campfires",
+        "hist-field-nfpa-outdoor-fire",
+        "hist-field-cdc-co-basics",
+        "hist-field-nfpa-outdoor-fire",
+        "hist-field-nps-campfires",
+        "hist-field-cdc-co-basics",
+        "hist-field-smg-fire-methods",
+        "hist-field-smg-fire-methods",
+        "hist-field-smg-fire-methods",
+        "hist-field-smg-fire-methods",
+        "hist-field-nps-flint-steel",
+        "hist-field-nmah-tinder-box",
+        "hist-field-smg-fire-methods",
+        "hist-field-smg-fire-methods",
+        "hist-field-smg-fire-methods",
+        "hist-field-smg-fire-methods",
+        "hist-field-smg-fire-methods",
+        "hist-field-smg-fire-methods",
+        "hist-field-bbc-walker-light",
+        "hist-field-tvm-walker",
+        "hist-field-bbc-walker-light",
+        "hist-field-tvm-walker",
+        "hist-field-bbc-walker-light",
+        "hist-field-smg-fire-methods",
+        "hist-field-tvm-walker",
+        "hist-field-bbc-walker-light",
+        "hist-field-smg-fire-methods",
+        "hist-field-smg-fire-methods",
+        "hist-field-smg-fire-methods",
+        "hist-field-smg-fire-methods",
+        "hist-field-nps-flint-steel",
+        "hist-field-smg-fire-methods",
+        "hist-field-smg-fire-methods",
+        "hist-field-bbc-walker-light",
+        "hist-field-tvm-walker",
+        "hist-field-smg-fire-methods",
+        "hist-field-bbc-walker-light",
+        "hist-field-tvm-walker",
+        "hist-field-smg-fire-methods",
+        "hist-field-smg-fire-methods",
+        "hist-field-usfa-outdoor-fire",
+        "hist-field-nfpa-outdoor-fire",
+        "hist-field-nps-campfires",
+        "hist-field-nfpa-outdoor-fire",
+        "hist-field-usfa-outdoor-fire",
+        "hist-field-nps-campfires",
+        "hist-field-nfpa-outdoor-fire",
+        "hist-field-nps-campfires",
+        "hist-field-nfpa-outdoor-fire",
+        "hist-field-cdc-co-basics",
+        "hist-field-usfa-outdoor-fire",
+        "hist-field-nws-winter-before",
+        "hist-field-nws-winter-during",
+        "hist-field-usfa-outdoor-fire",
+        "hist-field-nws-winter-before",
+        "hist-field-nps-flint-steel",
+        "hist-field-nps-campfires",
+        "hist-field-smg-fire-methods",
+        "hist-field-smg-fire-methods",
+        "hist-field-nfpa-outdoor-fire",
+        "hist-field-nps-campfires",
+        "hist-field-cdc-co-basics",
+        "hist-field-smg-fire-methods",
+        "hist-field-nps-flint-steel",
+        "hist-field-nps-campfires",
+        "hist-field-nfpa-outdoor-fire",
+        "hist-field-cdc-co-basics"
+      ],
+      "source_claims": [
+        {
+          "sid": "hist-field-nps-campfires",
+          "source_use_exact": "Park rules and bans; 15-foot distance; lighter fluid allowance; never leave a fire unattended.",
+          "occurrences": 8,
+          "first_context": " Windy, dry weather can mean campfires are banned, and some places never allow outdoor fires at all.{{cite:hist-field-nps-campfires}}{{cite:hist-field-nfpa-outdoor-fire}}</li> <li>Never burn charcoal or use a camp stove indoors, and never burn anything in a st"
+        },
+        {
+          "sid": "hist-field-nfpa-outdoor-fire",
+          "source_use_exact": "Ask the local fire department first; embers and wildfire risk; fire pit and NFPA 1 distances; never flammable liquids or plastics.",
+          "occurrences": 8,
+          "first_context": "fires are banned, and some places never allow outdoor fires at all.{{cite:hist-field-nps-campfires}}{{cite:hist-field-nfpa-outdoor-fire}}</li> <li>Never burn charcoal or use a camp stove indoors, and never burn anything in a stove or fireplace that is not vent"
+        },
+        {
+          "sid": "hist-field-cdc-co-basics",
+          "source_use_exact": "Carbon monoxide: what it is, symptoms, never burn charcoal or use camp stoves indoors, CO detectors.",
+          "occurrences": 5,
+          "first_context": "urn anything in a stove or fireplace that is not vented. Carbon monoxide has no smell and no colour.{{cite:hist-field-cdc-co-basics}}</li> <li>Never use gasoline or other flammable liquids to start or feed a fire, and never leave a fire unattended.{{cite:hist-"
+        },
+        {
+          "sid": "hist-field-smg-fire-methods",
+          "source_use_exact": "Museum overview of how fire-making works and its categories; the people named for friction methods; fire pistons and Dobereiner's lamp; Walker's match and its hazards; white phosphorus, phossy jaw and the 1888 Matchgirl Strikes; safety matches and the ferrocerium lighter; the provenance caveat.",
+          "occurrences": 23,
+          "first_context": "illion years back.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-field-smg-fire-methods}} The same museum offers a plain account of what any method has to do: raise the temperature of a fine, easily burned materia"
+        },
+        {
+          "sid": "hist-field-nps-flint-steel",
+          "source_use_exact": "National Park Service description of flint, steel and char cloth, and who used them.",
+          "occurrences": 4,
+          "first_context": "aling with tribes.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-field-nps-flint-steel}} The Smithsonian's National Museum of American History holds an iron tinder box classified under domestic life, though its on"
+        },
+        {
+          "sid": "hist-field-nmah-tinder-box",
+          "source_use_exact": "Smithsonian's iron tinder box record, as evidence of household fire-making equipment.",
+          "occurrences": 1,
+          "first_context": " an iron tinder box classified under domestic life, though its online record gives no date or maker.{{cite:hist-field-nmah-tinder-box}}</p> <p><span class=\"pa-tag pa-tag--ed\">Editor's note</span> The word \"carried\" is doing a lot of work here. A tinder box was"
+        },
+        {
+          "sid": "hist-field-bbc-walker-light",
+          "source_use_exact": "A museum-contributed record of an original friction match: 1826 discovery, first sale 12 April 1827, cardboard-to-splint-to-boxed development, no patent, Samuel Jones's Lucifers.",
+          "occurrences": 6,
+          "first_context": "er found in 1826 that a stick coated with chemicals burst into flame when scraped across his hearth.{{cite:hist-field-bbc-walker-light}} Tees Valley Museums adds that he was an independent chemist who had been looking for a way to ignite fire safely and easily"
+        },
+        {
+          "sid": "hist-field-tvm-walker",
+          "source_use_exact": "Walker's background, first sale 7 April 1827 (disagrees with the other museum), Faraday's advice to patent, the 1977 statue.",
+          "occurrences": 5,
+          "first_context": " easily, that he stirred the mixture with that stick, and that he opened his chemist's shop in 1819.{{cite:hist-field-tvm-walker}}</p> <p>The two museums disagree on one date. The Preston Hall record says Walker sold his first \"Friction Light\" on 12 April 1827"
+        },
+        {
+          "sid": "hist-field-usfa-outdoor-fire",
+          "source_use_exact": "Leading cause of outdoor fires; campfire and fire pit distances; grills only outdoors; supervision, screens, matches out of children's reach.",
+          "occurrences": 4,
+          "first_context": "ns are the leading cause of outside fires.<span class=\"pa-tag pa-tag--fact\">Official guidance</span>{{cite:hist-field-usfa-outdoor-fire}} The National Fire Protection Association adds that even a small fire or fire pit can throw embers that ignite nearby struc"
+        },
+        {
+          "sid": "hist-field-nws-winter-before",
+          "source_use_exact": "Winter-vehicle kit mentions matches; home supplies include smoke alarm and extinguisher.",
+          "occurrences": 2,
+          "first_context": " turn a history page into fuel and engine guidance. Read them at the source if you travel in winter.{{cite:hist-field-nws-winter-before}}{{cite:hist-field-nws-winter-during}}</p> <h3 id=\"household\">Fire in the household</h3> <p>The U.S. Fire Administration sa"
+        },
+        {
+          "sid": "hist-field-nws-winter-during",
+          "source_use_exact": "Source for the stuck-vehicle and no-shelter fire statements, deliberately not reproduced.",
+          "occurrences": 1,
+          "first_context": "gine guidance. Read them at the source if you travel in winter.{{cite:hist-field-nws-winter-before}}{{cite:hist-field-nws-winter-during}}</p> <h3 id=\"household\">Fire in the household</h3> <p>The U.S. Fire Administration says to store matches and lighters out "
+        }
+      ]
+    },
+    {
+      "slug": "food-safety-power-outage",
+      "n": 9,
+      "origin": "food",
+      "body_git_blob": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+      "metadata_git_blob": "3283071134ba24490d47f5a0635836b6ed4f8965",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 69,
+      "distinct_citation_ids": 9,
+      "citation_sequence": [
+        "fsis-power-failure",
+        "food-cdc-after-emergency",
+        "food-cdc-after-emergency",
+        "food-cdc-after-emergency",
+        "food-cdc-after-emergency",
+        "food-foodsafety-outage-chart",
+        "food-fsis-emergencies",
+        "food-fsis-emergencies",
+        "food-fema-outage-sheet",
+        "fsis-power-failure",
+        "food-cdc-after-emergency",
+        "food-fda-outage-flood",
+        "food-ready-food",
+        "food-fema-outage-sheet",
+        "food-fda-outage-flood",
+        "food-foodsafety-outage-chart",
+        "food-fda-outage-flood",
+        "food-fsis-emergencies",
+        "food-cdc-after-emergency",
+        "food-fda-outage-flood",
+        "food-ready-food",
+        "food-fema-outage-sheet",
+        "food-foodsafety-outage-chart",
+        "food-osu-survival-food",
+        "food-fsis-emergencies",
+        "food-cdc-after-emergency",
+        "food-fda-outage-flood",
+        "food-fsis-emergencies",
+        "food-fda-outage-flood",
+        "food-fda-outage-flood",
+        "food-fsis-emergencies",
+        "food-fda-outage-flood",
+        "food-fsis-emergencies",
+        "food-cdc-after-emergency",
+        "food-fsis-emergencies",
+        "food-osu-survival-food",
+        "food-fsis-emergencies",
+        "food-cdc-after-emergency",
+        "food-fsis-emergencies",
+        "fsis-power-failure",
+        "food-fsis-emergencies",
+        "food-fda-outage-flood",
+        "food-fsis-emergencies",
+        "food-fda-outage-flood",
+        "food-ready-food",
+        "food-fsis-emergencies",
+        "food-ready-food",
+        "food-fema-outage-sheet",
+        "food-cdc-after-emergency",
+        "food-fda-outage-flood",
+        "food-foodsafety-outage-chart",
+        "food-foodsafety-outage-chart",
+        "food-fsis-emergencies",
+        "food-foodsafety-outage-chart",
+        "food-osu-survival-food",
+        "food-fsis-emergencies",
+        "food-foodsafety-outage-chart",
+        "food-fda-outage-flood",
+        "food-cdc-risk-factors",
+        "food-fsis-emergencies",
+        "food-fda-outage-flood",
+        "food-cdc-after-emergency",
+        "food-fsis-emergencies",
+        "food-fsis-emergencies",
+        "food-fda-outage-flood",
+        "food-cdc-after-emergency",
+        "food-ready-food",
+        "food-ready-food",
+        "food-foodsafety-outage-chart"
+      ],
+      "source_claims": [
+        {
+          "sid": "fsis-power-failure",
+          "source_use_exact": "Refrigerator about 4 hours unopened; full freezer about 48 hours, half full 24; freezer compartment of a refrigerator may not hold as long; group freezer packages.",
+          "occurrences": 3,
+          "first_context": "bout 4 hours. A full freezer holds its temperature for about 48 hours, a half-full one for about 24.{{cite:fsis-power-failure}}{{cite:food-cdc-after-emergency}}</li> <li><strong>Watch the clock from the moment the power goes out</strong>, and write the time do"
+        },
+        {
+          "sid": "food-cdc-after-emergency",
+          "source_use_exact": "4-hour, 48-hour and 24-hour figures; move food to a cooler at 4 hours; discard rule; never taste; refreeze if ice crystals or 40 F or below; CDC bleach amounts.",
+          "occurrences": 12,
+          "first_context": "r holds its temperature for about 48 hours, a half-full one for about 24.{{cite:fsis-power-failure}}{{cite:food-cdc-after-emergency}}</li> <li><strong>Watch the clock from the moment the power goes out</strong>, and write the time down. If it has been 4 hours "
+        },
+        {
+          "sid": "food-foodsafety-outage-chart",
+          "source_use_exact": "The 2-hour column; the keep-or-discard rows reproduced in the table; frozen-food chart notes; juice verdicts.",
+          "occurrences": 8,
+          "first_context": "uffer. Safety depends on the food, so check the chart further down.{{cite:food-cdc-after-emergency}}{{cite:food-foodsafety-outage-chart}}</li> <li><strong>When in doubt, throw it out.</strong>{{cite:food-fsis-emergencies}}</li> </ol> <p class=\"pa-act-note\">If "
+        },
+        {
+          "sid": "food-fsis-emergencies",
+          "source_use_exact": "Planning steps; 4-hour refrigerator and 48/24-hour freezer figures; dry ice example; snow warning; foods to discard and foods that are safe; flood and fire steps; the FSIS bleach amounts; USDA Meat and Poultry Hotline.",
+          "occurrences": 18,
+          "first_context": "rgency}}{{cite:food-foodsafety-outage-chart}}</li> <li><strong>When in doubt, throw it out.</strong>{{cite:food-fsis-emergencies}}</li> </ol> <p class=\"pa-act-note\">If someone is seriously ill after eating, or cannot keep fluids down, call your emergency numbe"
+        },
+        {
+          "sid": "food-fema-outage-sheet",
+          "source_use_exact": "December 2023 FEMA fact sheet: 4 hours above 40 F; medication wording (plan with your doctor, replace if out a day or more unless the label says otherwise, call doctor or pharmacist); generators outdoors 20 feet from openings.",
+          "occurrences": 4,
+          "first_context": "has been at room temperature, and that you should use the medicine only until you have a new supply.{{cite:food-fema-outage-sheet}} <span class=\"pa-tag pa-tag--ed\">Editor's note</span> Do not stop or skip a prescribed medicine on your own, and do not wait for "
+        },
+        {
+          "sid": "food-fda-outage-flood",
+          "source_use_exact": "Preparation steps; 45 F allowance; 2-hour / 1-hour room-temperature rule; cooking meat to a safe temperature; foodborne illness timing and symptoms; FDA bleach amounts.",
+          "occurrences": 14,
+          "first_context": "rator keeps food safe for about 4 hours.{{cite:fsis-power-failure}}{{cite:food-cdc-after-emergency}}{{cite:food-fda-outage-flood}}{{cite:food-ready-food}}{{cite:food-fema-outage-sheet}} Most of those pages also contain a second figure, 2 hours, and the two get"
+        },
+        {
+          "sid": "food-ready-food",
+          "source_use_exact": "Refrigerator four hours; discard perishables above 40 F for two hours; dry ice example and gloves; ready-to-feed formula; Ready.gov bleach ratio.",
+          "occurrences": 6,
+          "first_context": "t 4 hours.{{cite:fsis-power-failure}}{{cite:food-cdc-after-emergency}}{{cite:food-fda-outage-flood}}{{cite:food-ready-food}}{{cite:food-fema-outage-sheet}} Most of those pages also contain a second figure, 2 hours, and the two get tangled in memory. They measu"
+        },
+        {
+          "sid": "food-osu-survival-food",
+          "source_use_exact": "Eat refrigerator, then freezer, then pantry; refrigerator above 40 F then two more hours; egg note.",
+          "occurrences": 3,
+          "first_context": " After the temperature rises above 40°F, most refrigerated foods keep no longer than two more hours.{{cite:food-osu-survival-food}}</td></tr> </tbody></table></div> <div class=\"pa-alert\"><p class=\"pa-alert-title\">Where the sources differ</p> <p>FDA alone allo"
+        },
+        {
+          "sid": "food-cdc-risk-factors",
+          "source_use_exact": "Who is at higher risk of severe food poisoning (65 and older, under 5, weakened immune system, pregnant).",
+          "occurrences": 1,
+          "first_context": "lness from food poisoning, and that it is especially important for them to take steps to prevent it.{{cite:food-cdc-risk-factors}} <span class=\"pa-tag pa-tag--ed\">Editor's note</span> The outage pages we read give one set of time limits for everyone and no sep"
+        }
+      ]
+    },
+    {
+      "slug": "go-bags",
+      "n": 16,
+      "origin": "start",
+      "body_git_blob": "e5910015fc6e33ad015bc5dc0605b86622b701be",
+      "metadata_git_blob": "16cc5e91204a77486912444c6e516f5d5b48f567",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 73,
+      "distinct_citation_ids": 18,
+      "citation_sequence": [
+        "start-ready-evacuation",
+        "start-ready-evacuation",
+        "start-ready-kit",
+        "start-ready-disability",
+        "ready-are-you-ready",
+        "start-ready-evacuation",
+        "start-ready-evacuation",
+        "start-ready-kit",
+        "start-ready-supply-list",
+        "start-hud-multifamily-template",
+        "start-ready-evacuation",
+        "start-ready-evacuation",
+        "ready-are-you-ready",
+        "start-ready-evacuation",
+        "start-ready-evacuation",
+        "start-ready-car",
+        "start-ready-kit",
+        "start-ready-kit",
+        "start-ready-kit",
+        "start-ready-kit",
+        "start-ready-kit",
+        "start-ready-kit",
+        "start-ready-kit",
+        "start-ready-financial",
+        "ready-are-you-ready",
+        "start-ready-kit",
+        "start-cdc-family-kit",
+        "start-ready-kit",
+        "start-cdc-family-kit",
+        "start-cdc-family-kit",
+        "start-cdc-family-kit",
+        "start-ready-disability",
+        "ready-are-you-ready",
+        "start-cdc-infant-checklist",
+        "start-cdc-infant-checklist",
+        "start-cdc-infant-checklist",
+        "start-ready-food",
+        "start-cdc-infant-checklist",
+        "start-cdc-infant-checklist",
+        "start-cdc-infant-checklist",
+        "start-cdc-infant-checklist",
+        "start-cdc-infant-checklist",
+        "start-cdc-infant-checklist",
+        "start-cdc-family-kit",
+        "start-cdc-family-kit",
+        "ready-pets",
+        "ready-pets",
+        "ready-pets",
+        "start-cdc-pyh-connected",
+        "ready-pets",
+        "start-ready-evacuation",
+        "ready-pets",
+        "start-ready-disability",
+        "start-cdc-disability-evacuate",
+        "start-ready-disability",
+        "start-ready-disability",
+        "start-ready-disability",
+        "start-ready-disability",
+        "start-ready-disability",
+        "start-ready-disability",
+        "start-cdc-disability-kit",
+        "start-ready-disability",
+        "start-ready-older-adults",
+        "start-acl-emergency",
+        "start-cdc-disability-evacuate",
+        "start-cdc-disability-evacuate",
+        "start-ready-evacuation",
+        "start-cdc-disability-kit",
+        "start-cdc-family-kit",
+        "ready-are-you-ready",
+        "start-ready-kit",
+        "start-cdc-infant-checklist",
+        "start-ready-low-cost"
+      ],
+      "source_claims": [
+        {
+          "sid": "start-ready-evacuation",
+          "source_use_exact": "Build a go-bag for leaving on foot or by public transport, supplies for longer trips by car, who is responsible for the bag, what to do before and during an evacuation, and pet-friendly destinations.",
+          "occurrences": 10,
+          "first_context": "a friend's or relative's home or a designated shelter, and to choose places in different directions.{{cite:start-ready-evacuation}}</li> <li><strong>Build one bag per person</strong> from the portable part of your kit, so you do not have to scramble. Ready.gov"
+        },
+        {
+          "sid": "start-ready-kit",
+          "source_use_exact": "The item list a go-bag draws on, and kit locations.",
+          "occurrences": 12,
+          "first_context": "y's formula, a pet's carrier. Those are the items that cannot be replaced from a shelter's supplies.{{cite:start-ready-kit}}{{cite:start-ready-disability}}</li> <li><strong>Lift every bag.</strong> If someone cannot carry theirs, decide now who will, or what c"
+        },
+        {
+          "sid": "start-ready-disability",
+          "source_use_exact": "Support network, accessible transport, spare batteries, manual chair backup, patch kit, cushions, device information, kit tips by disability, dementia tips.",
+          "occurrences": 10,
+          "first_context": "rier. Those are the items that cannot be replaced from a shelter's supplies.{{cite:start-ready-kit}}{{cite:start-ready-disability}}</li> <li><strong>Lift every bag.</strong> If someone cannot carry theirs, decide now who will, or what comes out.</li> </ol> <p "
+        },
+        {
+          "sid": "ready-are-you-ready",
+          "source_use_exact": "Evacuation guidelines, leaving a note, sturdy shoes and clothing, one car per family, never below half a tank, shelter pet limits.",
+          "occurrences": 5,
+          "first_context": "tions and may also advise leaving without requiring it; FEMA says to follow their orders and advice.{{cite:ready-are-you-ready}} If anyone is in immediate danger, call 911 or your local emergency number.</p> </section> <ul class=\"pa-key\" aria-label=\"How to re"
+        },
+        {
+          "sid": "start-ready-supply-list",
+          "source_use_exact": "One full kit at home and smaller portable kits elsewhere.",
+          "occurrences": 1,
+          "first_context": "y-kit}} The printable checklist recommends one full kit at home and smaller portable kits elsewhere.{{cite:start-ready-supply-list}}</p> <p><span class=\"pa-tag pa-tag--unc\">Uncertain</span> That means there is no single official go-bag list for us to reproduce"
+        },
+        {
+          "sid": "start-hud-multifamily-template",
+          "source_use_exact": "That HUD's multifamily template for owners includes resident evacuation handouts and a go-bag checklist; we read only the table of contents.",
+          "occurrences": 1,
+          "first_context": "t we read only the first 12 of its 79 pages and did not read that handout, so we do not describe it.{{cite:start-hud-multifamily-template}}</p> <p><span class=\"pa-tag pa-tag--ed\">Editor's note</span> So what follows is built this way: the official kit lists gi"
+        },
+        {
+          "sid": "start-ready-car",
+          "source_use_exact": "Vehicle kit extras and keeping the tank full.",
+          "occurrences": 1,
+          "first_context": "riangle, an ice scraper, a car phone charger, a blanket, a map, and cat litter or sand for traction.{{cite:start-ready-car}}</p> <h2 id=\"adult\">The adult bag</h2> <p>This is the base. Each line below is on the Ready.gov or FEMA kit lists; the right-hand colum"
+        },
+        {
+          "sid": "start-ready-financial",
+          "source_use_exact": "Document and cash guidance; benefits by direct deposit.",
+          "occurrences": 1,
+          "first_context": " home; FEMA's guide suggests enough for food, fuel and a few nights in a hotel if you must evacuate.{{cite:start-ready-financial}}{{cite:ready-are-you-ready}}</td><td>No source gives a dollar figure. Choose what you can set aside.</td></tr> <tr><th scope=\"row\""
+        },
+        {
+          "sid": "start-cdc-family-kit",
+          "source_use_exact": "Items for infants and young children, ID tags and wristbands, memorized numbers, the pregnancy list including 'emergency birth supplies' (context only), two-week medication, check every six months.",
+          "occurrences": 7,
+          "first_context": "family checklist also suggests downloading maps to your phone in case there is no power or internet.{{cite:start-cdc-family-kit}}</td></tr> </tbody></table></div> <p>Two items on the kit list belong in the car or the home kit more than in a bag you carry on fo"
+        },
+        {
+          "sid": "start-cdc-infant-checklist",
+          "source_use_exact": "Feeding-method kit contents, diaper bag contents, the six starred items to skip if they cannot be cleaned, ready-to-feed formula as the safest option, infant acetaminophen listed with no dosing guidance, monthly check.",
+          "occurrences": 10,
+          "first_context": "arate emergency list for families with infants and young children, built around how the baby is fed.{{cite:start-cdc-infant-checklist}} The key points:</p> <ul> <li><strong>Breast milk.</strong> One or two boxes of disposable nursing pads, not reusable ones th"
+        },
+        {
+          "sid": "start-ready-food",
+          "source_use_exact": "Use ready-to-feed formula; bottled or boiled water as a last resort if mixing.",
+          "occurrences": 1,
+          "first_context": "e ready-to-feed formula, and if you must mix, to use bottled water or boiled water as a last resort.{{cite:start-ready-food}}</li> <li><strong>For every baby.</strong> A diaper bag with at least one large pack of diapers, at least two packs of wipes, diaper ra"
+        },
+        {
+          "sid": "ready-pets",
+          "source_use_exact": "Two kits for pets (shelter and lightweight evacuation), kit contents, buddy system, microchip, carrier, pets evacuate with you.",
+          "occurrences": 5,
+          "first_context": "have two kits, a larger one if you are sheltering in place and a lightweight version for evacuating.{{cite:ready-pets}}</p> <p>Items it suggests include: several days of food in an airtight, waterproof container; a water bowl and several days' supply of water;"
+        },
+        {
+          "sid": "start-cdc-pyh-connected",
+          "source_use_exact": "Microchip pets and keep registration current.",
+          "occurrences": 1,
+          "first_context": "des an emergency contact outside your area.{{cite:ready-pets}} The CDC repeats the microchip advice.{{cite:start-cdc-pyh-connected}} Because many public shelters and hotels do not allow pets, find a pet-friendly destination in advance.{{cite:ready-pets}}{{cite"
+        },
+        {
+          "sid": "start-cdc-disability-evacuate",
+          "source_use_exact": "Accessible transport may not be available, tell shelter workers your needs, ADA shelter accessibility, service animals and emotional support animals in shelters.",
+          "occurrences": 3,
+          "first_context": "gency, so contact your paratransit provider or local government in advance to learn who provides it.{{cite:start-cdc-disability-evacuate}}</p> <h3>Specific items Ready.gov lists</h3> <ul> <li><strong>Power wheelchair users:</strong> a lightweight manual chair "
+        },
+        {
+          "sid": "start-cdc-disability-kit",
+          "source_use_exact": "One week of medication, chargers and batteries for adaptive equipment, communication aids, contact list in a watertight container, check every six months.",
+          "occurrences": 2,
+          "first_context": " to be chilled, medical supplies and health documents, and a contact list in a watertight container.{{cite:start-cdc-disability-kit}} Ready.gov also suggests a list of the style and serial number of your medical devices with instructions for operating them, co"
+        },
+        {
+          "sid": "start-ready-older-adults",
+          "source_use_exact": "Medicare and insurance card copies, assistive devices come with you, support network member with a key, pets and service animals.",
+          "occurrences": 1,
+          "first_context": " in your support network has a key and knows where your supplies are.{{cite:start-ready-disability}}{{cite:start-ready-older-adults}}</p> <p>The HHS Administration for Community Living offers two printable tools to put in the bag: a Medical Information Card fo"
+        },
+        {
+          "sid": "start-acl-emergency",
+          "source_use_exact": "ACL's Medical Information Card and Communication Assistance Card.",
+          "occurrences": 1,
+          "first_context": "ance Card for first responders helping a person whose disability makes it hard to communicate needs.{{cite:start-acl-emergency}}</p> <p>Shelters and service animals: the CDC says shelters must be accessible for people with disabilities under the Americans with"
+        },
+        {
+          "sid": "start-ready-low-cost",
+          "source_use_exact": "Thrift-store gear and older clothing that still fits.",
+          "occurrences": 1,
+          "first_context": "t advice for kits applies here: thrift stores for bags and gear, and older clothing that still fits.{{cite:start-ready-low-cost}} <span class=\"pa-tag pa-tag--ed\">Editor's note</span> A school backpack the child has outgrown, a duffel from a thrift shop, or a s"
+        }
+      ]
+    },
+    {
+      "slug": "history-of-food-preservation",
+      "n": 35,
+      "origin": "hist-food",
+      "body_git_blob": "273b246a069e834d8476bfc2854308732f5137ab",
+      "metadata_git_blob": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 47,
+      "distinct_citation_ids": 12,
+      "citation_sequence": [
+        "nchfp-cure-smoke",
+        "cdc-botulism-prevention",
+        "cdc-botulism-prevention",
+        "nchfp-historical-origins",
+        "nchfp-historical-origins",
+        "hist-food-headsmashedin",
+        "usscm-brenckle-2019",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-marcy-prairie-traveler-text",
+        "nchfp-historical-origins",
+        "fsis-botulism",
+        "usscm-brenckle-2019",
+        "hist-food-monticello-meat",
+        "nchfp-historical-origins",
+        "nchfp-historical-origins",
+        "nchfp-historical-origins",
+        "fsis-botulism",
+        "cdc-botulism-prevention",
+        "hist-food-marcy-prairie-traveler-text",
+        "hist-food-si-cold",
+        "hist-food-nps-icebox",
+        "hist-food-si-cold",
+        "nchfp-historical-origins",
+        "hist-food-si-cold",
+        "nchfp-historical-origins",
+        "nchfp-historical-origins",
+        "nchfp-historical-origins",
+        "usscm-brenckle-2019",
+        "hist-food-nps-icebox",
+        "nchfp-historical-origins",
+        "nchfp-historical-origins",
+        "nchfp-historical-origins",
+        "fsis-botulism",
+        "fsis-botulism",
+        "hist-food-si-cold",
+        "hist-food-nps-icebox",
+        "nchfp-historical-origins",
+        "rmg-life-at-sea",
+        "hist-food-monticello-meat",
+        "cdc-botulism-prevention",
+        "fsis-botulism",
+        "nchfp-cure-smoke",
+        "fsis-home-cure-qa",
+        "nchfp-historical-origins",
+        "usscm-brenckle-2019",
+        "cdc-botulism-prevention",
+        "nchfp-cure-smoke"
+      ],
+      "source_claims": [
+        {
+          "sid": "nchfp-cure-smoke",
+          "source_use_exact": "Tested curing and smoking methods.",
+          "occurrences": 3,
+          "first_context": "blished and tested by USDA or the National Center for Home Food Preservation, and follow it exactly.{{cite:nchfp-cure-smoke}}</li> <li>Low-acid foods, including meat and most vegetables, need pressure canning; the CDC says it is the only recommended home canni"
+        },
+        {
+          "sid": "cdc-botulism-prevention",
+          "source_use_exact": "Pressure canning for low-acid foods; toxin cannot be seen, smelled or tasted; if in doubt, throw it out.",
+          "occurrences": 5,
+          "first_context": "the only recommended home canning method for them. Botulism toxin cannot be seen, smelled or tasted.{{cite:cdc-botulism-prevention}}</li> <li>If you do not know whether a food was safely preserved, the CDC's advice is short: if in doubt, throw it out.{{cite:cd"
+        },
+        {
+          "sid": "nchfp-historical-origins",
+          "source_use_exact": "Overview of drying, freezing, fermenting, pickling, curing, jam, canning; Appert, Durand, Pasteur, Chevalier-Appert; nitrites and C. botulinum in the 1920s.",
+          "occurrences": 15,
+          "first_context": "ttle in one place and form communities, because they no longer had to eat a kill or harvest at once.{{cite:nchfp-historical-origins}} The overview is a short 2002 piece, and several of its early claims are stated without citation, so we treat the deepest dates"
+        },
+        {
+          "sid": "hist-food-headsmashedin",
+          "source_use_exact": "Blackfoot preparation of dry meat and pemmican for winter.",
+          "occurrences": 1,
+          "first_context": "or winter, which the {{link:pemmican-and-dried-meats|pemmican piece}} covers with the peoples named.{{cite:hist-food-headsmashedin}} The Navy's bread was baked until thoroughly dry, as the {{link:ships-biscuit-and-hardtack|ship's biscuit piece}} describes.{{ci"
+        },
+        {
+          "sid": "usscm-brenckle-2019",
+          "source_use_exact": "1812 contract for salt and saltpetre; bread baked dry.",
+          "occurrences": 4,
+          "first_context": "ked until thoroughly dry, as the {{link:ships-biscuit-and-hardtack|ship's biscuit piece}} describes.{{cite:usscm-brenckle-2019}} And in 1859 Captain Randolph Marcy wrote that desiccated vegetables, pressed into a hard cake and dried, had been \"extensively used"
+        },
+        {
+          "sid": "hist-food-marcy-prairie-traveler-text",
+          "source_use_exact": "Desiccated vegetables in the Crimean war and Utah; canned vegetables not as portable; sealed-tin butter.",
+          "occurrences": 3,
+          "first_context": "the U.S. Army in Utah, and that he regarded them as the best preparation for prairie travel he knew.{{cite:hist-food-marcy-prairie-traveler-text}} He also said canned vegetables were very good for campaigning but \"not so portable\".{{cite:hist-food-marcy-prairi"
+        },
+        {
+          "sid": "fsis-botulism",
+          "source_use_exact": "Nitrite and C. botulinum; USDA authorization from 1925; spores survive boiling.",
+          "occurrences": 5,
+          "first_context": "meat and poultry products in 1925 and that concern about nitrosamines was raised in the early 1970s.{{cite:fsis-botulism}}</p> <p>The documented practice sits between those dates. In 1812 the Navy's Boston agent asked for \"a sufficient quantity of good Salt an"
+        },
+        {
+          "sid": "hist-food-monticello-meat",
+          "source_use_exact": "Enslaved workers salting and smoking pork at Monticello.",
+          "occurrences": 2,
+          "first_context": " cuts of pork in salt to draw moisture out and hung them in the smokehouse over a low hardwood fire.{{cite:hist-food-monticello-meat}} In the winter of 1805-1806 the Corps of Discovery sent men to the Oregon coast to boil seawater for salt, a story told in our"
+        },
+        {
+          "sid": "hist-food-si-cold",
+          "source_use_exact": "Underground cold stores and icehouses; natural ice harvest and Tudor; iceboxes; why cold won out; DOMELRE and the 1927 GE Monitor top.",
+          "occurrences": 4,
+          "first_context": "\" because salting, drying and canning erased any appearance of freshness and took longer to prepare.{{cite:hist-food-si-cold}}</p> <p>The National Park Service adds figures from its account of an icebox in a Kennedy family kitchen: in 1847, nearly 52,000 tons "
+        },
+        {
+          "sid": "hist-food-nps-icebox",
+          "source_use_exact": "1847 ice shipments; ice factories; 1927 GE refrigerator; 85 percent of households by 1944.",
+          "occurrences": 3,
+          "first_context": "n 1927, and by 1944 about 85 percent of American households had a refrigerator instead of an icebox.{{cite:hist-food-nps-icebox}} The Smithsonian dates an earlier small electric device, the DOMELRE, to 1914, and says that the 1927 GE Monitor top became the fir"
+        },
+        {
+          "sid": "rmg-life-at-sea",
+          "source_use_exact": "Poor diet at sea causing malnutrition and scurvy.",
+          "occurrences": 1,
+          "first_context": "d and still left them short of what fresh food provides, as the RMG overview of life at sea records.{{cite:rmg-life-at-sea}}</li> <li><strong>The people doing the work are easy to miss.</strong> The Monticello and Mount Vernon pages name enslaved workers as th"
+        },
+        {
+          "sid": "fsis-home-cure-qa",
+          "source_use_exact": "Botulism cases following home-canned, preserved, cured, smoked or fermented foods.",
+          "occurrences": 1,
+          "first_context": "es have followed home-canned, preserved, cured, smoked and fermented foods.{{cite:nchfp-cure-smoke}}{{cite:fsis-home-cure-qa}}</li> <li>For refrigeration and freezing, follow current USDA and FDA guidance, which this page does not reproduce.</li> </ul> <p>This"
+        }
+      ]
+    },
+    {
+      "slug": "home-fire-escape-plan",
+      "n": 13,
+      "origin": "shelter",
+      "body_git_blob": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+      "metadata_git_blob": "ff1246dcbfb0dd0bc864977f815badb9ad4e7ed8",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 73,
+      "distinct_citation_ids": 13,
+      "citation_sequence": [
+        "usfa-fire-escape",
+        "shelter-nfpa-smoke-alarms",
+        "usfa-fire-escape",
+        "usfa-fire-escape",
+        "shelter-ready-home-fires",
+        "usfa-fire-escape",
+        "shelter-nfpa-escape",
+        "shelter-nfpa-escape",
+        "shelter-ready-home-fires",
+        "usfa-fire-escape",
+        "usfa-fire-escape",
+        "shelter-nfpa-escape",
+        "shelter-ready-home-fires",
+        "shelter-nfpa-smoke-alarms",
+        "shelter-ready-home-fires",
+        "shelter-nfpa-smoke-alarms",
+        "shelter-nfpa-smoke-alarms",
+        "shelter-nfpa-smoke-alarms",
+        "shelter-nfpa-smoke-alarms",
+        "shelter-nfpa-smoke-alarms",
+        "shelter-cpsc-co",
+        "usfa-fire-escape",
+        "shelter-nfpa-escape",
+        "shelter-usfa-escape-grid",
+        "shelter-ready-home-fires",
+        "shelter-ready-home-fires",
+        "shelter-ready-home-fires",
+        "shelter-nfpa-escape",
+        "shelter-nfpa-escape",
+        "shelter-nfpa-escape",
+        "usfa-fire-escape",
+        "shelter-nfpa-escape",
+        "shelter-nfpa-escape",
+        "shelter-nfpa-escape",
+        "shelter-ready-home-fires",
+        "shelter-ready-home-fires",
+        "shelter-nfpa-escape",
+        "shelter-ready-home-fires",
+        "shelter-ready-disabilities",
+        "shelter-nfpa-smoke-alarms",
+        "shelter-ready-home-fires",
+        "shelter-ready-home-fires",
+        "shelter-nfpa-escape",
+        "shelter-nfpa-escape",
+        "shelter-nfpa-escape",
+        "shelter-ready-home-fires",
+        "usfa-fire-escape",
+        "shelter-ready-home-fires",
+        "shelter-nfpa-escape",
+        "shelter-nfpa-escape",
+        "shelter-ready-home-fires",
+        "shelter-nfpa-escape",
+        "shelter-ready-home-fires",
+        "shelter-nfpa-escape",
+        "shelter-ready-home-fires",
+        "shelter-ready-home-fires",
+        "shelter-ready-home-fires",
+        "shelter-nfpa-escape",
+        "shelter-nfpa-high-rise",
+        "shelter-usfa-high-rise-handout",
+        "shelter-usfa-high-rise-handout",
+        "usfa-fire-escape",
+        "shelter-usfa-high-rise",
+        "shelter-usfa-high-rise",
+        "shelter-nfpa-escape",
+        "shelter-nfpa-high-rise",
+        "shelter-usfa-high-rise-handout",
+        "shelter-ready-plan-locations",
+        "shelter-ready-plan-locations",
+        "shelter-ready-home-fires",
+        "shelter-cdc-power-outage",
+        "shelter-ready-home-fires",
+        "shelter-ready-plan"
+      ],
+      "source_claims": [
+        {
+          "sid": "usfa-fire-escape",
+          "source_use_exact": "Less than 2 minutes to escape; map with all doors and windows; two ways out of every room; keep exits unblocked; outside meeting place in front; practice with everyone; test button starts the drill; high-rise sequence.",
+          "occurrences": 10,
+          "first_context": "rong> USFA's own drill starts that way: push the test button to sound the alarm and begin the drill.{{cite:usfa-fire-escape}} Alarms belong in every sleeping room, outside each sleeping area and on every level, and the whole unit should be replaced 10 years af"
+        },
+        {
+          "sid": "shelter-nfpa-smoke-alarms",
+          "source_use_exact": "Alarm placement, monthly testing, 10-year replacement, interconnection, meaning of alarm sounds, devices for people who are deaf or hard of hearing, the 60 percent / in half inconsistency.",
+          "occurrences": 8,
+          "first_context": "rea and on every level, and the whole unit should be replaced 10 years after its manufacturing date.{{cite:shelter-nfpa-smoke-alarms}}</li> <li><strong>Draw a map of your home that shows every door and window, and mark two ways out of every room.</strong>{{cit"
+        },
+        {
+          "sid": "shelter-ready-home-fires",
+          "source_use_exact": "Fire speed; smoke and toxic gases; battery and unit replacement; windows, screens and security bars; practice in the dark; wheelchair doorways; feel doors; crawl low; cannot get out; stop, drop and roll; burn first steps; after a fire; heater, stove, candle and extinguisher prevention tips.",
+          "occurrences": 21,
+          "first_context": "stuck, screens come out quickly and any security bars open from the inside.{{cite:usfa-fire-escape}}{{cite:shelter-ready-home-fires}}</li> <li><strong>Choose one meeting place outside, in front of the home,</strong> a safe distance away, and mark it on the map"
+        },
+        {
+          "sid": "shelter-nfpa-escape",
+          "source_use_exact": "One or two minutes; floor plan and alarms marked; meeting place; street number; memorize fire department number; assign helpers and backups; security-bar releases; guests and sleepovers; practice twice a year; children's drills; wake-up check; ladders; low under smoke; closing doors; sealing yourself in; stay out; high-rise 'defending in place'.",
+          "occurrences": 20,
+          "first_context": "n front of the home,</strong> a safe distance away, and mark it on the map.{{cite:usfa-fire-escape}}{{cite:shelter-nfpa-escape}}</li> <li><strong>Practice with everyone who lives there,</strong> twice a year, and when a real alarm sounds get out immediately an"
+        },
+        {
+          "sid": "shelter-cpsc-co",
+          "source_use_exact": "If a CO alarm sounds, get outside to fresh air and call 911.",
+          "occurrences": 1,
+          "first_context": " the CPSC says that if one sounds you should get outside to fresh air immediately and then call 911.{{cite:shelter-cpsc-co}} For where CO comes from during an outage, see {{link:outage-heat-cold-generators|heat, cold and generator safety in an outage}}.</p> <p"
+        },
+        {
+          "sid": "shelter-usfa-escape-grid",
+          "source_use_exact": "Fields of USFA's printable escape grid.",
+          "occurrences": 1,
+          "first_context": "s out of each room, a drawn outside meeting place, and a reminder to practice at least twice a year.{{cite:shelter-usfa-escape-grid}} The free {{link:home-fire-escape-worksheet|home fire escape plan worksheet}} in this library uses the same fields and adds som"
+        },
+        {
+          "sid": "shelter-ready-disabilities",
+          "source_use_exact": "Neighbors who can assist with building evacuation; backup mobility devices.",
+          "occurrences": 1,
+          "first_context": "elling neighbors who could help if you must leave the building, and having a backup mobility device.{{cite:shelter-ready-disabilities}}</td></tr> <tr><th scope=\"row\">People who are deaf or hard of hearing</th><td>Alarms with a strobe light or vibrating pad exi"
+        },
+        {
+          "sid": "shelter-nfpa-high-rise",
+          "source_use_exact": "Building-plan familiarization; know all exit stairs; feel the door; follow announcements; stairs not elevators (marked emergency elevators exist); cannot-get-out steps with a slightly opened window and be ready to close it; fire department evacuation can take a long time.",
+          "occurrences": 2,
+          "first_context": "makes the smoke worse, and USFA says to close it again so the air does not pull smoke into the room.{{cite:shelter-nfpa-high-rise}}{{cite:shelter-usfa-high-rise-handout}} Ready.gov says to signal at the window and does not mention opening it. USFA's handout al"
+        },
+        {
+          "sid": "shelter-usfa-high-rise-handout",
+          "source_use_exact": "Leave and close the door, pull the alarm, stairs; cannot-get-out steps, stay on the phone, open slightly then close the window.",
+          "occurrences": 3,
+          "first_context": " says to close it again so the air does not pull smoke into the room.{{cite:shelter-nfpa-high-rise}}{{cite:shelter-usfa-high-rise-handout}} Ready.gov says to signal at the window and does not mention opening it. USFA's handout also says to stay on the phone wi"
+        },
+        {
+          "sid": "shelter-usfa-high-rise",
+          "source_use_exact": "USFA high-rise page: evacuate by stairs by default; shelter in place only for those who cannot self-evacuate; keep stair doors closed; no elevators.",
+          "occurrences": 2,
+          "first_context": "to the stairwell, and these work best with doors closed. Never prop stairway or corridor doors open.{{cite:shelter-usfa-high-rise}}</p> <p>Sheltering in place appears on that page only for people who cannot self-evacuate or use the stairs. They should call 911"
+        },
+        {
+          "sid": "shelter-ready-plan-locations",
+          "source_use_exact": "Ask for building alarm, evacuation and shelter-in-place plans; high-rise exits, elevators, stairwells.",
+          "occurrences": 2,
+          "first_context": "termine whether to stay put, shelter in place or get away and to listen for and follow instructions.{{cite:shelter-ready-plan-locations}} This is an item for the human safety reviewer.</p></div> <p>Ready.gov's guidance for planning at a building you live or wo"
+        },
+        {
+          "sid": "shelter-cdc-power-outage",
+          "source_use_exact": "Flashlights over candles; candles away from flammables and never unattended.",
+          "occurrences": 1,
+          "first_context": "hat if you use candles you must keep them away from anything that can catch fire and stay near them.{{cite:shelter-cdc-power-outage}} For the full outage picture see {{link:outage-heat-cold-generators|heat, cold and generator safety in an outage}}.</p> <h2 id"
+        },
+        {
+          "sid": "shelter-ready-plan",
+          "source_use_exact": "Household plan questions including shelter, evacuation and communication; practice with the household.",
+          "occurrences": 1,
+          "first_context": "nd communication questions alongside it, and suggests practicing the whole plan with your household.{{cite:shelter-ready-plan}} For what to do when you cannot go home, see {{link:shelter-or-evacuate|shelter in place or evacuate}}, and for how a family stays in"
+        }
+      ]
+    }
+  ]
+}
