@@ -458,6 +458,10 @@ def invoice_twins(source,folder, *, window_days=7):
     The output is never partial: excess candidate density raises ValueError
     before creating a report. Findings are possible duplicates, not fraud.
     """
+    from .invoice_window_policy_r536 import require_invoice_review_window
+    # Reject malformed/forged direct-API windows before opening a private CSV.
+    # Candidate matching performs the same check for independent direct calls.
+    window_days = require_invoice_review_window(window_days)
     from .invoice_provenance import attach_invoice_provenance
     records, source_sha256=table(source,("vendor","invoice_number","amount","date"),
                                  include_digest=True)
