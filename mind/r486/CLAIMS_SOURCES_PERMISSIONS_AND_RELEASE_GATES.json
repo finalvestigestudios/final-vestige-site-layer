@@ -1,0 +1,442 @@
+{
+  "version": "mind-r486-2026-11-18",
+  "status": "DRAFT_COMMERCE_HOLD",
+  "last_source_review": "2026-11-18 PT",
+  "sources": {
+    "S1": "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+    "S2": "https://doi.org/10.2466/pr0.1993.72.3.867",
+    "S3": "https://doi.org/10.1177/1745691619898795",
+    "S4": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "S5": "https://finalvestige.com/focus/",
+    "S6": "https://inspire3.com/",
+    "S7": "https://zen12.com/about",
+    "S8": "https://zen12.com/",
+    "S9": "https://zen12.com/secret/",
+    "S10": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "S11": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "S12": "https://finalvestige.com/affiliate-disclosure/",
+    "S13": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "S14": "https://finalvestige.com/dispatch/"
+  },
+  "claims": [
+    {
+      "id": "thought-suppression-original",
+      "claim": "The 1987 white-bear study reported post-suppression rebound under its tasks",
+      "status": "supported_scope_limited",
+      "source_ids": [
+        "S1"
+      ],
+      "evidence_limit": "Behavioral reported tokens; not neural recording or clinical evidence"
+    },
+    {
+      "id": "thought-suppression-replication",
+      "claim": "A 1993 investigation did not reproduce rebound in its initial experiment",
+      "status": "supported_scope_limited",
+      "source_ids": [
+        "S2"
+      ],
+      "evidence_limit": "Do not imply no one has replicated since"
+    },
+    {
+      "id": "thought-suppression-meta",
+      "claim": "2020 synthesis of 31 studies found rebound and cognitively loaded immediate enhancement",
+      "status": "supported_scope_limited",
+      "source_ids": [
+        "S3"
+      ],
+      "evidence_limit": "Meta-analysis inclusion and cognitive-load constraints"
+    },
+    {
+      "id": "historical-suggestion",
+      "claim": "Puységur archive records claims, contradictions and consent concerns",
+      "status": "supported_historical",
+      "source_ids": [
+        "S4"
+      ],
+      "evidence_limit": "No animal magnetism efficacy inference"
+    },
+    {
+      "id": "focus-existing-free",
+      "claim": "FV Focus Fieldbook is free and 52 pages with existing list",
+      "status": "verified_live_free",
+      "source_ids": [
+        "S5",
+        "S14"
+      ],
+      "evidence_limit": "Not a paid product or guaranteed outcome"
+    },
+    {
+      "id": "zen12-seller",
+      "claim": "Inspire3 identifies Zen12 as an offering",
+      "status": "seller_identity_only",
+      "source_ids": [
+        "S6"
+      ],
+      "evidence_limit": "Not affiliate eligibility"
+    },
+    {
+      "id": "zen12-session",
+      "claim": "Zen12 seller describes 12-minute listening sessions",
+      "status": "seller_format",
+      "source_ids": [
+        "S7"
+      ],
+      "evidence_limit": "Not product effectiveness"
+    },
+    {
+      "id": "zen12-levels",
+      "claim": "Zen12 seller describes 12 levels and four styles",
+      "status": "seller_format",
+      "source_ids": [
+        "S7"
+      ],
+      "evidence_limit": "Different bundles include differing level sets"
+    },
+    {
+      "id": "zen12-standard-bundles",
+      "claim": "Standard site lists Beginner Premium and Advanced bundles",
+      "status": "seller_format",
+      "source_ids": [
+        "S8"
+      ],
+      "evidence_limit": "Exact cart SKU, payment and license unverified"
+    },
+    {
+      "id": "zen12-sales-funnel",
+      "claim": "Separate /secret promo page uses coupon and countdown framing",
+      "status": "seller_presentation",
+      "source_ids": [
+        "S9"
+      ],
+      "evidence_limit": "No scarcity, coupon or countdown reproduced"
+    },
+    {
+      "id": "zen12-equivalence",
+      "claim": "Twelve minutes of Zen12 equals one hour of meditation",
+      "status": "REJECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "S7",
+        "S10"
+      ],
+      "evidence_limit": "No authenticated product-specific trial"
+    },
+    {
+      "id": "zen12-brainwave",
+      "claim": "Zen12 automatically changes brainwave patterns and guarantees benefits",
+      "status": "REJECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "S7",
+        "S10"
+      ],
+      "evidence_limit": "Specific intervention proof required"
+    },
+    {
+      "id": "zen12-health",
+      "claim": "Zen12 treats anxiety depression insomnia or other conditions",
+      "status": "REJECT_NO_MEDICAL_CLAIM",
+      "source_ids": [
+        "S10"
+      ],
+      "evidence_limit": "Never imply medical outcomes"
+    },
+    {
+      "id": "zen12-price",
+      "claim": "A displayed offer amount is the actual customer checkout price",
+      "status": "HOLD_NOT_CHECKOUT_VERIFIED",
+      "source_ids": [
+        "S8",
+        "S9"
+      ],
+      "evidence_limit": "Must verify eligible SKU, currency, total and taxes"
+    },
+    {
+      "id": "zen12-refunds",
+      "claim": "Advertised money-back terms apply to FV referred transactions",
+      "status": "HOLD_ACTUAL_TERMS_UNVERIFIED",
+      "source_ids": [
+        "S8"
+      ],
+      "evidence_limit": "Validate actual policy and eligibility"
+    },
+    {
+      "id": "endorsement",
+      "claim": "FV has personally tried and recommends Zen12 from experience",
+      "status": "REJECT_NO_PERSONAL_USE",
+      "source_ids": [
+        "S11"
+      ],
+      "evidence_limit": "Never invent experiences"
+    },
+    {
+      "id": "affiliate_approval",
+      "claim": "FV's Inspire3 Refersion application was approved",
+      "status": "HOLD_ACCOUNT_VERIFICATION",
+      "source_ids": [
+        "S6"
+      ],
+      "evidence_limit": "Gmail Aug 24 pending is not acceptance; dashboard uninspected"
+    },
+    {
+      "id": "affiliate_url",
+      "claim": "FV possesses an authorized tracking link",
+      "status": "HOLD_NO_AUTHORIZED_URL",
+      "source_ids": [
+        "S6"
+      ],
+      "evidence_limit": "No invented/link-cloaked URL"
+    },
+    {
+      "id": "affiliate_email_channel",
+      "claim": "FV may place tracked offers in existing Dispatch",
+      "status": "HOLD_CHANNEL_PERMISSION",
+      "source_ids": [
+        "S11"
+      ],
+      "evidence_limit": "Email permissions require account evidence and founder approval"
+    },
+    {
+      "id": "sale",
+      "claim": "An outbound click proves commission or a paid sale",
+      "status": "REJECT_INFERENCE",
+      "source_ids": [
+        "S11"
+      ],
+      "evidence_limit": "Require merchant paid order / independently reported commission"
+    },
+    {
+      "id": "new_signup",
+      "claim": "Creating a second lead list improves conversion",
+      "status": "REJECT_DUPLICATION",
+      "source_ids": [
+        "S5",
+        "S14"
+      ],
+      "evidence_limit": "Retain existing Jetpack list"
+    },
+    {
+      "id": "text_film",
+      "claim": "Optional video generates more paid purchases than text",
+      "status": "HYPOTHESIS_UNTESTED",
+      "source_ids": [
+        "S11"
+      ],
+      "evidence_limit": "Only a controlled visitor purchase test could inform decision"
+    },
+    {
+      "id": "licensed_owned_product",
+      "claim": "The free Focus Fieldbook is an actively payable FV SKU",
+      "status": "REJECT_FREE_RESOURCE",
+      "source_ids": [
+        "S5"
+      ],
+      "evidence_limit": "No paid checkout established"
+    },
+    {
+      "id": "creator_ids",
+      "claim": "Three corresponding social media IDs are already verified",
+      "status": "HOLD_PUBLISHED_ASSET_IDS_UNKNOWN",
+      "source_ids": [
+        "S13"
+      ],
+      "evidence_limit": "Need source URLs/IDs from Grok"
+    },
+    {
+      "id": "privacy_revenue",
+      "claim": "Net revenue per 1000 qualified sessions is currently measurable",
+      "status": "HOLD_DENOMINATOR_SETTLEMENT",
+      "source_ids": [
+        "S5"
+      ],
+      "evidence_limit": "No verified qualifying sessions paired with settled earnings"
+    }
+  ],
+  "gates": [
+    {
+      "id": "partner_named_approval",
+      "owner": "Founder/Commerce",
+      "status": "hold",
+      "acceptance": "Account-specific accepted partner enrollment"
+    },
+    {
+      "id": "authorized_link",
+      "owner": "Founder/Commerce",
+      "status": "hold",
+      "acceptance": "Issuer-provided URL exactly as authorized"
+    },
+    {
+      "id": "permitted_web_channel",
+      "owner": "Founder/Commerce",
+      "status": "hold",
+      "acceptance": "Partner approved website and policy"
+    },
+    {
+      "id": "permitted_email_channel",
+      "owner": "Founder/Commerce",
+      "status": "hold",
+      "acceptance": "Partner expressly approves email channel"
+    },
+    {
+      "id": "merchant_exact_bundle",
+      "owner": "Founder/Commerce",
+      "status": "hold",
+      "acceptance": "Eligible SKU and bundle features"
+    },
+    {
+      "id": "merchant_final_total",
+      "owner": "Founder/Commerce",
+      "status": "hold",
+      "acceptance": "Real checkout total/currency/fees"
+    },
+    {
+      "id": "merchant_refund_terms",
+      "owner": "Founder/Commerce",
+      "status": "hold",
+      "acceptance": "Written terms and request flow"
+    },
+    {
+      "id": "revenue_reporting",
+      "owner": "Founder/Commerce",
+      "status": "hold",
+      "acceptance": "Partner reporting and settlement data"
+    },
+    {
+      "id": "owned_payable_sku",
+      "owner": "Founder/Claude",
+      "status": "hold",
+      "acceptance": "Owned catalog item with real active checkout"
+    },
+    {
+      "id": "owned_rights",
+      "owner": "Founder/Claude",
+      "status": "hold",
+      "acceptance": "Licenses/asset provenance"
+    },
+    {
+      "id": "owned_delivery",
+      "owner": "Founder/Claude",
+      "status": "hold",
+      "acceptance": "Order-to-file fulfillment"
+    },
+    {
+      "id": "copy_product_specific",
+      "owner": "Mind",
+      "status": "pass_offline_only",
+      "acceptance": "No claims of product-specific efficacy"
+    },
+    {
+      "id": "no_fake_price",
+      "owner": "Mind",
+      "status": "pass_offline_only",
+      "acceptance": "No displayed price promised"
+    },
+    {
+      "id": "disclosure_adjacent",
+      "owner": "Mind",
+      "status": "pass_offline_only",
+      "acceptance": "Adjacent prospective earning disclosure"
+    },
+    {
+      "id": "inactive_native_button",
+      "owner": "Mind",
+      "status": "pass_offline_only",
+      "acceptance": "HTML disabled button without merchant href"
+    },
+    {
+      "id": "one_focus_list",
+      "owner": "Mind/Dispatch",
+      "status": "pass_offline_only",
+      "acceptance": "No new form/list"
+    },
+    {
+      "id": "no_forced_play",
+      "owner": "Mind",
+      "status": "pass_offline_only",
+      "acceptance": "No autoplay/video request"
+    },
+    {
+      "id": "encoded_video",
+      "owner": "Mind/QA",
+      "status": "hold",
+      "acceptance": "Need finished 42s captioned media"
+    },
+    {
+      "id": "browser_wcag",
+      "owner": "Site QA",
+      "status": "hold",
+      "acceptance": "360/390/768/1440/1920, keyboard and assistive tech"
+    },
+    {
+      "id": "wordPress_sanitizer",
+      "owner": "Site QA",
+      "status": "hold",
+      "acceptance": "Gutenberg preview/sanitization"
+    },
+    {
+      "id": "authentic_grok_ids",
+      "owner": "Praxxis/Grok",
+      "status": "hold",
+      "acceptance": "3 real published IDs, URLs and hooks"
+    },
+    {
+      "id": "first_party_attribution",
+      "owner": "Claude",
+      "status": "hold",
+      "acceptance": "No duplicate tracking; privacy approval"
+    },
+    {
+      "id": "confirmed_signup",
+      "owner": "Dispatch/Claude",
+      "status": "hold",
+      "acceptance": "Existing Jetpack confirmation not simulated"
+    },
+    {
+      "id": "merchant_test_order",
+      "owner": "Commerce/Claude",
+      "status": "hold",
+      "acceptance": "Authorized non-production or approved test only"
+    },
+    {
+      "id": "real_paid_orders",
+      "owner": "Commerce",
+      "status": "hold",
+      "acceptance": "Independent merchant order IDs"
+    },
+    {
+      "id": "refund_fee_accounting",
+      "owner": "Commerce",
+      "status": "hold",
+      "acceptance": "Settled net revenue"
+    },
+    {
+      "id": "cohort_7_30",
+      "owner": "Claude",
+      "status": "hold",
+      "acceptance": "Qualified human denominator/time windows"
+    },
+    {
+      "id": "ab_randomization",
+      "owner": "Claude/Site QA",
+      "status": "hold",
+      "acceptance": "Consent-safe variant assignment and stable exposure"
+    },
+    {
+      "id": "founder_release",
+      "owner": "Founder",
+      "status": "hold",
+      "acceptance": "Specific commercial/publication approval"
+    },
+    {
+      "id": "merge_and_deploy",
+      "owner": "Founder/Claude",
+      "status": "hold",
+      "acceptance": "Authorized merge/release only"
+    }
+  ],
+  "commercial_url": null,
+  "partner_approved": null,
+  "verified_paid_orders": null,
+  "verified_affiliate_commission": null,
+  "verified_revenue_per_1000": null,
+  "editorial_policy": "Seller descriptions and laboratory evidence kept distinct; no fabricated product efficacy, checkout, availability, pricing, payouts, reviews or affiliate URL.",
+  "security_policy": "No scripts, forms, third-party assets or auto-play in buyer pilots; disabled CTA; existing Jetpack funnel only."
+}
