@@ -1,0 +1,139 @@
+{
+  "schema": "fv-full-image-wire-manifest-binding-v1",
+  "run_date": "2026-11-18",
+  "run_local_time": "18:28 PST",
+  "scope": "QA_ONLY_DRAFT_NO_PRODUCTION",
+  "issue_pr": 154,
+  "media_pr": 2747,
+  "historical_61": {
+    "posts": 61,
+    "inline_slots": 355
+  },
+  "current_66": {
+    "posts": 66,
+    "inline_slots": 361,
+    "zero_inline_post_id": 1922
+  },
+  "defect": {
+    "observed": "Companion full-CDP Image-resource gate previously compared supplied inline and CDP captures to each other but did not bind those captures to the pinned historical/current article identities. Synthetically invented 61 post URLs could yield threshold_met=true.",
+    "fix": "Call existing pinned cohort verifier on each inline phase/device and reject any manifest hash other than the module-derived immutable MANIFEST_SHA256.",
+    "before_test_basis": "Prior 16-case test fixture used invented post IDs 1..61/1..66, invented /example-N URLs, and placeholder manifest hash.",
+    "after_test_basis": "Updated test fixture uses actual pinned 61/66 published post IDs, canonical URLs, all real image slot counts (355/361), and the true manifest module hash.",
+    "regression_cases": [
+      "invented post ID rejected",
+      "matching but forged article URL rejected",
+      "forged article slot rejected",
+      "matching but invented manifest hash rejected",
+      "zero-inline-image current post 1922 accepted"
+    ],
+    "offline_validation": {
+      "passed": 21,
+      "failed": 0,
+      "runtime": "isolated V8 exact patched code with Node test/assert shim and deterministic crypto digest shim",
+      "native_node_verified": false,
+      "repository_ci_verified": false
+    }
+  },
+  "pinned_files": {
+    "manifest": "qa/media-recovery/cohort_61_66_manifest_20261118.json",
+    "manifest_git_blob": "a00478ecbb26f96785e7b565bbb0f4f684a6d62a",
+    "guard": "qa/media-recovery/cohort_manifest_guard_20261118.cjs",
+    "guard_git_blob": "2d18876ab55c8b0c39a5838801caf14f92f6e904",
+    "all_cdp_gate": "qa/media-recovery/full_image_request_census_20261118.cjs",
+    "new_all_cdp_gate_git_blob": "80599b3a477bb15c8e2870cac0a55fbca21221e5",
+    "all_cdp_tests": "qa/media-recovery/test_full_image_request_census_20261118.cjs",
+    "new_all_cdp_tests_git_blob": "094ceb896356766eb85a74412c60d8d6e0696cf6"
+  },
+  "prioritized_origins": [
+    {
+      "slot": "274:6",
+      "original_url": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+      "prior_source_retriever_http": 404,
+      "guest_final_http": null,
+      "guest_decode": null,
+      "guest_transfer_bytes": null,
+      "checked_on": "2026-11-18",
+      "catalog": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-G-227989.html",
+      "accession": "80-G-227989",
+      "image_identity": "POSSIBLE_SAME_FRAME_CROP_UNCONFIRMED",
+      "catalog_dimensions_px": [
+        1910,
+        1288
+      ],
+      "proportional_960_px": [
+        960,
+        647
+      ],
+      "rights": "HOLD_ITEM_LEVEL_US_NAVY_WORK_AND_EXACT_CROP"
+    },
+    {
+      "slot": "287:5",
+      "original_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "prior_source_retriever_http": 404,
+      "guest_final_http": null,
+      "guest_decode": null,
+      "guest_transfer_bytes": null,
+      "checked_on": "2026-11-18",
+      "catalog": "https://floridamemory.com/items/show/32083",
+      "accession": "RC09237",
+      "image_identity": "DIFFERENT_PHOTOGRAPH_EDITORIAL_ALTERNATIVE_ONLY",
+      "catalog_dimensions_px": null,
+      "proportional_960_px": null,
+      "rights": "HOLD_ITEM_LEVEL_FLORIDA_MEMORY_GENERAL_POLICY_NOT_ASSET_GRANT"
+    },
+    {
+      "slot": "285:5",
+      "original_url": "https://images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "prior_source_retriever_http": 404,
+      "guest_final_http": null,
+      "guest_decode": null,
+      "guest_transfer_bytes": null,
+      "checked_on": "2026-11-18",
+      "catalog": null,
+      "accession": null,
+      "image_identity": "MOVIE_RELATED_NO_EQUIVALENT_PRIMARY_REPLACEMENT",
+      "catalog_dimensions_px": null,
+      "proportional_960_px": null,
+      "rights": "HOLD_UNLICENSED_MOVIE_IMAGE"
+    },
+    {
+      "slot": "291:2",
+      "original_url": null,
+      "prior_source_retriever_http": null,
+      "guest_final_http": null,
+      "guest_decode": null,
+      "guest_transfer_bytes": null,
+      "checked_on": "2026-11-18",
+      "catalog": "https://catalog.archives.gov/id/28894685",
+      "accession": "NAID-28894685",
+      "image_identity": "EDITORIAL_BREACH_PHOTO_TO_REPLACE_INCORRECT_CLEANUP_PHOTO",
+      "catalog_dimensions_px": [
+        2798,
+        1966
+      ],
+      "proportional_960_px": [
+        960,
+        675
+      ],
+      "rights": "HOLD_NARA_ITEM_AND_EDITORIAL_APPROVAL"
+    }
+  ],
+  "metric_policy": {
+    "claimed_42_broken_browser_images_verified": false,
+    "claimed_76_percent_true_network_savings_verified": false,
+    "image_wire_scope": "COMPLETE_CDP_IMAGE_REQUESTS_PER_ARTICLE_NAVIGATION",
+    "required": "Logged-out uncached mobile and desktop trace with real image GET status, mime, transfer, decode, source and final URLs, all 61/66 pinned posts, plus independent visual review."
+  },
+  "staging": {
+    "target_max_width_px": 960,
+    "mode": "PROPORTIONAL_NO_CROP_NO_UPSCALE",
+    "must_prove_exact_photo": true,
+    "item_rights_approval_required": true,
+    "cache_strategy": "Approved first-party WordPress Media staging only after rights clearance; responsive srcset and cache validation, reversible per-image change, production writes prohibited.",
+    "wordpress_production_writes": 0,
+    "media_downloads": 0,
+    "deployed": false,
+    "merged": false,
+    "subscription_spend_usd": 0
+  }
+}
