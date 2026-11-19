@@ -114,3 +114,76 @@ def validate_manifest(m: dict):
          "unsupported offer, social asset or revenue assertion")
 
 
+def validate_originals(article: str, a_meta: dict, tool: str, t_meta: dict, m: dict) -> dict:
+    validate_manifest(m)
+    for slug, number, meta in ((ARTICLE, 15, a_meta), (TOOL, 104, t_meta)):
+        need(meta.get("slug") == slug and meta.get("n") == number, "article/tool metadata identity changed")
+        need(meta.get("status", {}).get("publish") == "draft" and
+             meta.get("safety_review", {}).get("state") == "pending" and
+             meta.get("safety_review", {}).get("reviewer") is None and
+             meta.get("safety_review", {}).get("date") is None,
+             "original review or publication status promoted")
+        old_ids = meta.get("source_use")
+        need(type(old_ids) is dict and REQUIRED_OLD_IDS <= set(old_ids), "authored source-use IDs missing")
+        need(not any(s[0] in old_ids for s in REVIEW_SOURCES), "review-only CDC URL repurposed as authored source")
+        need("2025" not in old_ids["shelter-cdc-reunification"], "older CDC citation rebranded as 2025 guidance")
+    need("<strong>Keep it on paper, too.</strong>" in article and
+         "This is our caution, not an agency's." in article and
+         "{{link:family-reunification-card|fold-over wallet card}}" in article,
+         "original Article #15 context/attribution missing")
+    need("A printed card can be lost" in tool and
+         "Do not put a child's full name" in tool and
+         "a medical diagnosis or a password on it." in tool and
+         "First names or nicknames and phone numbers are usually enough." in tool,
+         "Tool #104 blanket privacy warning altered or silently repaired")
+    need("minimal version" in tool and "School, childcare and care (left off the minimal version)" in tool,
+         "minimal/public-carry vs school-card functional boundary lost")
+    need("{{cite:shelter-cdc-reunification}}" in article and
+         "{{cite:shelter-cdc-reunification}}" in tool and
+         "{{cite:shelter-ready-plan-form}}" in article,
+         "original citation or source-use reading scope missing")
+    # New source tokens are not accepted into original drafts until a separately
+    # approved crosswalk and human review. This is a legacy-content custody test.
+    for text in (article, tool):
+        need(not any("{{cite:" + s[0] + "}}" in text for s in REVIEW_SOURCES),
+             "review-only 2025 CDC reference laundered into original article")
+    return {"state": "CHILD_CARD_CONTEXT_AND_CITATION_REVIEW_HARD_HOLD",
+            "article": 15, "tool": 104, "originals_checked": 4,
+            "review_sources_unregistered": 3, "unadjudicated_decisions": len(DECISIONS),
+            "purpose_boundary_open": True, "school_pickup_authority_not_from_card": True,
+            "child_privacy_verified": False, "qualified_qd_pass": False,
+            "may_publish": False, "wordpress_writes": False,
+            "commercial_paid_offer_verified": False}
+
+
+def native(root: Path) -> dict:
+    data = {p: checked_file(root, p, sha) for p, sha in EVIDENCE.items()}
+    # R474 manifest is itself immutable once frozen in the PR, while the
+    # editorial E466 memo remains independently owned on branch #2789.
+    m = strict_json(checked_file(root, "reviews/r474_child_card_scope_manifest.json", MANIFEST_BLOB))
+    result = validate_originals(data[f"content/articles/{ARTICLE}.body.html"].decode(),
+         strict_json(data[f"content/articles/{ARTICLE}.meta.json"]),
+         data[f"content/tools/{TOOL}.body.html"].decode(),
+         strict_json(data[f"content/tools/{TOOL}.meta.json"]), m)
+    # Separate native 35-article + WordPress/private-export validators are
+    # mandatory and have not been evidenced here; this tool cannot clear release.
+    result["native_build_and_export_release_clearance"] = False
+    return result
+
+
+def main(argv=None):
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
+    ns = p.parse_args(argv)
+    try:
+        out = native(ns.root)
+    except (Hold, ValueError, KeyError, TypeError, OSError, UnicodeError, json.JSONDecodeError) as e:
+        out = {"state": "R474_NATIVE_SOURCE_OR_REVIEW_EVIDENCE_MISSING_HARD_HOLD",
+               "error": str(e), "may_publish": False,
+               "qualified_qd_pass": False, "wordpress_writes": False}
+    print(json.dumps(out, sort_keys=True))
+    return 2  # Structural evidence or missing evidence: never QD PASS.
+
+
+if __name__ == "__main__":
+    sys.exit(main())
