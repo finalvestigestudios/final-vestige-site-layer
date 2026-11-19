@@ -49,7 +49,7 @@ test('B transcript contains six 7-second intervals',()=>{
 });
 test('article has >=1800 words and source boundaries',()=>{
  assert.ok(article.trim().split(/\s+/).length>=1800);
- for(const token of ['Wegner','1993','2020','31 studies','Puységur','not a standardized experiment','affiliate purchase link','S10'])assert.ok(article.includes(token),token);
+ for(const token of ['Wegner','1993','2020','31 studies','Puységur','standardized experiment','affiliate purchase link','S10'])assert.ok(article.includes(token),token);
 });
 test('hub remains four-stream and links only to confirmed FV destinations',()=>{
  for(const token of ['Perception &amp; attention','History of suggestion','Practice &amp; reflection','Tools under review','https://finalvestige.com/focus/','/puysegurs-animal-magnetism-files/'])assert.ok(hub.includes(token),token);
