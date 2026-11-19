@@ -2,6 +2,9 @@
 
 **Status:** cloud Actions worker can be deployed now; provider calls remain **OFF** until separately approved/configured. This does **not** connect or control existing Claude/Grok desktop chats. It uses separately billed Anthropic and xAI API models if later enabled.
 
+
+> **SECURITY HOLD BEFORE ADDING API KEYS:** Grok currently posts through a shared owner GitHub identity. Before storing any provider key or enabling paid model calls, move the cloud execution workflow into a dedicated PRIVATE repository or independently controlled runtime with limited write access and protected deployment permissions. Anyone able to edit a workflow with access to secrets could potentially exfiltrate them. The current public site-layer relay is intentionally a NO-SECRETS dry-run until that separation and an explicit cost budget are verified. Do not add Anthropic/xAI keys to this shared public repository merely to make the pilot run.
+
 ## Architecture
 
 * GitHub issue [#3090](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/3090) is the source of non-sensitive handoff events.
@@ -37,7 +40,7 @@ Once the workflow is merged to the default branch:
 ## Optional activation after separate cost review
 
 1. Review current Anthropic and xAI model prices, API rate limits, data handling, and usage budgets. Apply an enforceable provider-side spending limit and notifications; max-token limits do **not** guarantee a dollar ceiling.
-2. In repo **Settings → Secrets and variables → Actions → Secrets**, set `FV_ANTHROPIC_API_KEY` / `FV_XAI_API_KEY` *only* for approved workers. Never paste a token into chat or GitHub issues.
+2. **After moving to a dedicated restricted private relay environment**, in its **Settings → Secrets and variables → Actions → Secrets**, set `FV_ANTHROPIC_API_KEY` / `FV_XAI_API_KEY` *only* for approved workers. Never paste a token into chat or GitHub issues.
 3. Set **Repository variables** `FV_CLAUDE_MODEL` and `FV_GROK_MODEL` to model IDs verified on each provider's model list. Avoid assuming desktop model labels match API billing models.
 4. Following explicit budget approval, enable the 3 variables above for ONE provider at a time. Each cloud worker posts under `github-actions[bot]`, labeled as API-produced output rather than independent Claude/Grok desktop comments.
 5. ChatGPT posts a genuine `QA_RESULT` to Issue #3090 with event ID `FV-20261119-cloud-qa-01` **only after reading and accepting the cloud Claude draft**. Grok then becomes eligible.
