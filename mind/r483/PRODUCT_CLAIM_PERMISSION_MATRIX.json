@@ -1,0 +1,238 @@
+{
+  "sprint": "R483",
+  "date": "2026-11-18 PT",
+  "safe_to_activate": false,
+  "commercial": "HARD_HOLD",
+  "verified_affiliate_acceptance": false,
+  "issued_earning_link": false,
+  "approved_email_social_channels": false,
+  "verified_payable_owned_Mind_SKU": false,
+  "reported_merchant_paid_sales": null,
+  "sources": [
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "kind": "seller catalog"
+    },
+    {
+      "id": "zen12-about",
+      "url": "https://zen12.com/about",
+      "kind": "seller product description"
+    },
+    {
+      "id": "zen12-secret",
+      "url": "https://zen12.com/secret/",
+      "kind": "seller promotional checkout funnel"
+    },
+    {
+      "id": "ftc-endorse",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "US regulator"
+    },
+    {
+      "id": "ftc-health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "US regulator"
+    },
+    {
+      "id": "binaural",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "kind": "2023 independent systematic review (NOT Zen12 trial)"
+    },
+    {
+      "id": "chronostasis",
+      "url": "https://doi.org/10.1038/35104551",
+      "kind": "2001 primary study (NOT Zen12 trial)"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "published first-party resource"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Zen12 describes twelve-minute sessions",
+      "disposition": "seller-format-only",
+      "source_id": "zen12-about"
+    },
+    {
+      "claim": "Zen12 describes twelve levels",
+      "disposition": "seller-format-only",
+      "source_id": "zen12-about"
+    },
+    {
+      "claim": "Zen12 describes music, nature, guided and white-noise styles",
+      "disposition": "seller-format-only",
+      "source_id": "zen12-about"
+    },
+    {
+      "claim": "Promo funnel says forty-eight MP3s",
+      "disposition": "seller-promo-only; SKU/checkout unverified",
+      "source_id": "zen12-secret"
+    },
+    {
+      "claim": "12 minutes equal an hour of meditation",
+      "disposition": "WITHHOLD; equivalency unsupported",
+      "source_id": "zen12-about"
+    },
+    {
+      "claim": "Brainwave sounds automatically induce guaranteed deep states",
+      "disposition": "WITHHOLD; product-specific outcome unsupported",
+      "source_id": "zen12-about"
+    },
+    {
+      "claim": "Zen12 eliminates worry, stress or anxiety",
+      "disposition": "WITHHOLD; health claim unsupported",
+      "source_id": "ftc-health"
+    },
+    {
+      "claim": "Zen12 boosts creativity, focus, memory",
+      "disposition": "WITHHOLD; product-specific evidence not established",
+      "source_id": "zen12-about"
+    },
+    {
+      "claim": "Seller coupon, price, timer or bonuses apply to FV",
+      "disposition": "WITHHOLD; dynamic and account terms unverified",
+      "source_id": "zen12-secret"
+    },
+    {
+      "claim": "Seller refunds are guaranteed for an FV buyer",
+      "disposition": "WITHHOLD; checkout terms need validation",
+      "source_id": "zen12-secret"
+    },
+    {
+      "claim": "FV has an approved Inspire3 affiliate account",
+      "disposition": "NOT VERIFIED; 2026-08-24 Refersion email states pending",
+      "source_id": "inspire3"
+    },
+    {
+      "claim": "FV has an issued legal earning URL",
+      "disposition": "NOT VERIFIED; no link activated",
+      "source_id": "inspire3"
+    },
+    {
+      "claim": "An outbound click means an affiliate commission",
+      "disposition": "FALSE; no settlement evidence",
+      "source_id": "ftc-endorse"
+    },
+    {
+      "claim": "Material connections require near-link plain disclosure",
+      "disposition": "MANDATORY on activation",
+      "source_id": "ftc-endorse"
+    },
+    {
+      "claim": "Fourteen-study 2023 EEG synthesis is inconsistent",
+      "disposition": "SUPPORTED with qualification; not Zen12",
+      "source_id": "binaural"
+    },
+    {
+      "claim": "Chronostasis validates meditation MP3 effectiveness",
+      "disposition": "FALSE; unrelated experimental design",
+      "source_id": "chronostasis"
+    },
+    {
+      "claim": "Existing 52-page Focus Fieldbook is free",
+      "disposition": "verified first party; not clinical validation",
+      "source_id": "focus"
+    }
+  ],
+  "release_gates": [
+    {
+      "name": "Named FV merchant approval",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Eligible exact Zen12 SKU and terms",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Approved specific earning URL",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Approved email/social channels",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Current checkout total and currencies",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Current refunds and billing/renewal terms",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Seller approved product creative rights",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Source-to-claim scientific QA",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "FTC disclosure accessibility",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "No invented experiences",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "No unsupported health promises",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "First-party existing analytics contract only",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Verified existing Jetpack confirmation",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Tested film controls/captions/transcript",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "No-JS accessibility",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "WCAG 2.2 AA mobile/desktop QA",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Security scan/CSP/sanitization",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Page speed/Lighthouse",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Real consent-safe A/B allocation",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Paid conversion verification from merchant",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Settlement minus refunds and fees",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Founder's publication authorization",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "Site QA acceptance",
+      "status": "NOT CLEARED"
+    },
+    {
+      "name": "No protected homepage/Dispatch modification",
+      "status": "NOT CLEARED"
+    }
+  ]
+}
