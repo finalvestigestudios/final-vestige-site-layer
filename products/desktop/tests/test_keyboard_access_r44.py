@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, patch
 import fvs_suite.keyboard_access as help_module
 
 import unittest
-from fvs_suite.keyboard_access import install_shortcuts, format_keyboard_help
+from fvs_suite.keyboard_access import install_shortcuts, format_keyboard_help, show_keyboard_help
 
 
 class Widget:
@@ -500,6 +500,75 @@ class R532KeyboardHelpWindow(unittest.TestCase):
     def test_r532_help_does_not_take_global_modal_grab(self):
         self.open()
         self.dialog.grab_set.assert_not_called()
+
+
+    # R533: the previously committed R532 window class called a missing
+    # show_keyboard_help name. Keep this import and exercise reentrant focus.
+    def test_r533_r532_help_function_is_imported(self):
+        self.assertIs(show_keyboard_help, help_module.show_keyboard_help)
+
+    def test_r533_dialog_keeps_exact_accessible_text_handle(self):
+        self.open()
+        self.assertIs(self.dialog._fvs_help_text, self.ins)
+
+    def test_r533_repeated_f1_restores_help_text_focus(self):
+        self.open()
+        self.ins.focus_set.reset_mock()
+        self.dialog.winfo_exists.return_value = True
+        self.open()
+        self.constructors[0].assert_called_once()
+        self.dialog.lift.assert_called_once()
+        self.ins.focus_set.assert_called_once()
+        self.root.get.assert_not_called()
+
+    def test_r533_repeated_f1_falls_back_to_window_if_text_missing(self):
+        self.open()
+        self.dialog._fvs_help_text = None
+        self.dialog.winfo_exists.return_value = True
+        self.open()
+        self.dialog.focus_set.assert_called_once()
+        self.constructors[0].assert_called_once()
+
+    def test_r533_lost_help_text_focus_does_not_create_second_window(self):
+        self.open()
+        self.dialog.winfo_exists.return_value = True
+        self.ins.focus_set.side_effect = help_module.tk.TclError()
+        self.open()
+        self.constructors[0].assert_called_once()
+        self.root.get.assert_not_called()
+
+    def test_r533_repeated_escape_close_is_idempotent(self):
+        self.open()
+        on_escape = self.dialog.bind.call_args.args[1]
+        self.assertEqual(on_escape(object()), "break")
+        self.assertEqual(on_escape(object()), "break")
+        self.dialog.destroy.assert_called_once()
+        self.previous.focus_set.assert_called_once()
+        self.assertIsNone(self.root._fvs_help_dialog)
+
+    def test_r533_window_manager_double_close_is_idempotent(self):
+        self.open()
+        on_close = self.dialog.protocol.call_args.args[1]
+        on_close()
+        on_close()
+        self.dialog.destroy.assert_called_once()
+        self.previous.focus_set.assert_called_once()
+
+    def test_r533_destroyed_dialog_restores_focus_after_tcl_error(self):
+        self.dialog.destroy.side_effect = help_module.tk.TclError()
+        self.open()
+        self.dialog.protocol.call_args.args[1]()
+        self.assertIsNone(self.root._fvs_help_dialog)
+        self.previous.focus_set.assert_called_once()
+
+    def test_r533_lift_race_rebuilds_without_using_customer_data(self):
+        self.open()
+        self.dialog.winfo_exists.return_value = True
+        self.dialog.lift.side_effect = help_module.tk.TclError()
+        self.open()
+        self.assertEqual(self.constructors[0].call_count, 2)
+        self.root.get.assert_not_called()
+
 
 
 if __name__ == "__main__":
