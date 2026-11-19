@@ -1,0 +1,57 @@
+{
+  "snapshot": "2026-11-19T01:29Z",
+  "status": "HOLD_UNSENT",
+  "owner": "Dispatch QA (not Mind commerce)",
+  "claims": [
+    {
+      "claim_id": "zen12_12_minutes",
+      "page": "https://zen12.com/about",
+      "seller_statement": "12-minute sessions and 12 levels",
+      "editorial_use": "Seller-described format only",
+      "independent_product_efficacy_verified": false,
+      "commercial_rights_verified": false
+    },
+    {
+      "claim_id": "zen12_equivalence",
+      "page": "https://zen12.com/about",
+      "seller_statement": "Each 12-minute session brings benefits equivalent to an hour of regular meditation",
+      "editorial_use": "Never assert as independent fact",
+      "independent_product_efficacy_verified": false,
+      "commercial_rights_verified": false
+    },
+    {
+      "claim_id": "zen12_special_discount",
+      "page": "https://zen12.com/secret/",
+      "seller_statement": "Promotional offer, coupon and countdown",
+      "editorial_use": "No urgency, price or coupon reproduction until current eligible checkout verified",
+      "current_checkout_verified": false,
+      "commercial_rights_verified": false
+    },
+    {
+      "claim_id": "hypnosis_audio_format",
+      "page": "https://hypnosislive.com/faq",
+      "seller_statement": "Instant MP3 access; most sessions described as 40 minutes",
+      "editorial_use": "Only qualified seller description; specific SKU must be checked",
+      "product_specific_terms_verified": false,
+      "commercial_rights_verified": false
+    },
+    {
+      "claim_id": "inspire3_approval",
+      "page": "https://affiliates.inspire3.com/",
+      "seller_statement": "Public affiliate program pitch",
+      "editorial_use": "No evidence of account-specific acceptance, named issued link or email promotion right",
+      "named_FV_accepted": false,
+      "email_channel_authorized": false,
+      "earning_link_issued": false
+    },
+    {
+      "claim_id": "focus_fieldbook_media",
+      "page": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+      "seller_statement": "N/A, first-party media ID 1737 application/pdf 599946 bytes",
+      "editorial_use": "Same URL in WordPress media, welcome settings and Focus CTA; actual receipt/HTTP open unverified",
+      "matched_url_three_surfaces": true,
+      "received_welcome_verified": false,
+      "public_pdf_download_verified": false
+    }
+  ]
+}
