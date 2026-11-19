@@ -1,0 +1,125 @@
+{
+  "schema": "fv-media-all-cdp-image-wire-methodology-audit-v1",
+  "observed_at_local": "2026-11-18 16:43 PST",
+  "scope": "FinalVestige.com published article navigations; homepage design excluded",
+  "source_worklist": {
+    "path": "docs/IMAGE-WEIGHT-WORKLIST.md",
+    "archived_git_blob": "9cdf7af84175883775aaebf55ffa5ca77b33e423",
+    "present_in_current_branch": false
+  },
+  "baseline": {
+    "historic_posts": 61,
+    "historic_inline_images": 355,
+    "historic_offsite_by_siteqa": 286,
+    "current_posts": 66,
+    "current_inline_images": 361,
+    "current_offsite": 294,
+    "reported_broken": 42,
+    "confirmed_guest_broken": null,
+    "claimed_weight_reduction_percent": 76,
+    "verified_full_network_reduction_percent": null,
+    "oversize_originals_gt_1_5MB": 20,
+    "stored_original_bytes": 64385752
+  },
+  "methodology": {
+    "known_gap": "Existing image-wire parity evaluator sums known inline image slots, not every CDP Image resource requested by article navigation; untracked CSS background and other media can prevent an inline-only 76% saving from representing total article image-bandwidth savings.",
+    "synthetic_counterexample": {
+      "cohort_posts": 61,
+      "inline_before_bytes": 6100,
+      "inline_after_bytes": 1220,
+      "inline_reduction_percent": 80,
+      "extra_css_image_before_bytes": 10000,
+      "extra_css_image_after_bytes": 10000,
+      "full_before_bytes": 16100,
+      "full_after_bytes": 11220,
+      "full_reduction_percent": 30.31055900621118,
+      "full_76_threshold_met": false,
+      "synthetic_not_a_site_measurement": true
+    },
+    "companion_gate": "qa/media-recovery/full_image_request_census_20261118.cjs",
+    "require_both_existing_inline_gate_and_all_resource_gate": true,
+    "real_browser_cdp_available": false,
+    "actual_network_captures": 0
+  },
+  "p0_sources": [
+    {
+      "slot": "285:5",
+      "article": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "origin": "https://images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "earlier_2026_11_18_origin_public_retriever_http": 404,
+      "new_1643_jetpack_public_retriever_http": null,
+      "guest_http": null,
+      "guest_decoded": null,
+      "guest_wire_bytes": null,
+      "candidate": null,
+      "rights": "HOLD_NO_EXACT_CANDIDATE"
+    },
+    {
+      "slot": "274:6",
+      "article": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "origin": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+      "earlier_2026_11_18_origin_public_retriever_http": 404,
+      "new_1643_jetpack_public_retriever_http": null,
+      "guest_http": null,
+      "guest_decoded": null,
+      "guest_wire_bytes": null,
+      "candidate": {
+        "primary": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-G-227989.html",
+        "accession": "80-G-227989",
+        "catalog_original_px": [
+          1910,
+          1288
+        ],
+        "derivative_max_px": [
+          960,
+          647
+        ],
+        "exact_frame_confirmed": false
+      },
+      "rights": "HOLD_ITEM_LEVEL"
+    },
+    {
+      "slot": "287:5",
+      "article": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "origin": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "earlier_2026_11_18_origin_public_retriever_http": 404,
+      "new_1643_jetpack_public_retriever_http": null,
+      "guest_http": null,
+      "guest_decoded": null,
+      "guest_wire_bytes": null,
+      "candidate": {
+        "primary": "https://floridamemory.com/items/show/32083",
+        "accession": "RC09237",
+        "derivative_max_width_px": 960,
+        "original_dimensions_unknown": true,
+        "different_photograph": true
+      },
+      "rights": "HOLD_EDITORIAL_DIFFERENT_IMAGE"
+    }
+  ],
+  "new_jetpack_probe": {
+    "at_local": "2026-11-18 16:43 PST",
+    "tool": "public document retriever",
+    "tested_slots": [
+      "274:6",
+      "287:5",
+      "34:0",
+      "418:1"
+    ],
+    "result": "URL_NOT_ACCESSIBLE_TO_RETRIEVER",
+    "numeric_http_status": null,
+    "visitor_failure_inferred": false
+  },
+  "media_recovery_plan": {
+    "approval_required": true,
+    "item_level_license": true,
+    "preserve_caption_and_exact_scene": true,
+    "target_width_max_px": 960,
+    "no_upscale": true,
+    "wordpress_media_only_after_staging_approval": true,
+    "cache_response_remeasure_cdp": true,
+    "retain_rollback_url": true,
+    "production_writes": false,
+    "subscriptions": false
+  }
+}
