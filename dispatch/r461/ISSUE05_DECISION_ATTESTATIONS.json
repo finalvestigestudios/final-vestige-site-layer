@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "revision": "r461",
+  "source_head_parent": "6313affaa6f74ee55fbb7b551f09286e44548dde",
+  "campaign_master_pr": 175,
+  "safety_pr": 201,
+  "origin_issue": 174,
+  "commercial_owner_issue": 171,
+  "prior_qa_pr": 3070,
+  "status": "ALL_HOLD_UNSENT",
+  "send_authorized": false,
+  "campaign": {
+    "editorial_slots": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_reserved_slots": [
+      3,
+      5
+    ],
+    "weekly_draft_only": true,
+    "founder_final_approval": false
+  },
+  "issue_05": {
+    "candidate_subject": "The recording cannot testify for itself",
+    "original_preserved": true,
+    "alternate_approved": false,
+    "active_editorial_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "merchant_earning_url": null,
+    "commercial_buy_cta_active": false,
+    "approved_warm_guide_url": null
+  },
+  "audience": {
+    "provider_newsletter_total": 3,
+    "confirmed": 3,
+    "additional_unconfirmed_excluded": 2,
+    "stats_subscribers_email": 3,
+    "stats_subscribers_reader": 0,
+    "stats_followers_email": 0,
+    "stats_followers_reader": 3,
+    "reporting_discrepancy_resolved": false,
+    "verified_new_confirmed_signup_count": null
+  },
+  "ledger": {
+    "qualified_human_sessions": null,
+    "paid_orders": null,
+    "gross_revenue": null,
+    "merchant_settlement": null,
+    "fees": null,
+    "refunds": null,
+    "realized_net_revenue_per_1000": null
+  },
+  "release_gates": {
+    "partner_acceptance": {
+      "verified": false,
+      "reference": null
+    },
+    "channel_specific_email_permission": {
+      "verified": false,
+      "reference": null
+    },
+    "approved_sku_and_current_checkout": {
+      "verified": false,
+      "reference": null
+    },
+    "issued_tracking_link_and_link_rules": {
+      "verified": false,
+      "reference": null
+    },
+    "authorized_live_prewarm_guide": {
+      "verified": false,
+      "reference": null
+    },
+    "native_jetpack_preview": {
+      "verified": false,
+      "reference": null
+    },
+    "received_welcome_after_confirmation": {
+      "verified": false,
+      "reference": null
+    },
+    "confirmed_audience_reconciliation": {
+      "verified": false,
+      "reference": null
+    },
+    "valid_fv_postal_address_in_native_render": {
+      "verified": false,
+      "reference": null
+    },
+    "functional_unsubscribe_in_native_render": {
+      "verified": false,
+      "reference": null
+    },
+    "product_claim_reviewer_signoff": {
+      "verified": false,
+      "reference": null
+    },
+    "founder_final_issue_audience_and_schedule_approval": {
+      "verified": false,
+      "reference": null
+    }
+  },
+  "measurement_event_contract": {
+    "event": "confirmed_signup",
+    "source": "provider-confirmed new transition",
+    "dedup": "unique provider record at first confirmed transition per signup, no form-click proxy",
+    "utm_content": "Grok asset_id if legitimately preserved",
+    "utm_campaign": "source-aligned campaign",
+    "email_attribution": "approved issue id + destination guide + cohort; not treated as sale",
+    "purchase": "unique independently settled merchant order, fees and refunds"
+  },
+  "restrictions": [
+    "NO_EMAIL",
+    "NO_TEST_EMAIL",
+    "NO_WP_WRITE",
+    "NO_SUBSCRIBER_EXPORT",
+    "NO_AFFILIATE_ACTIVATION",
+    "NO_PAID_SPEND",
+    "NO_MERGE",
+    "NO_HOMEPAGE_PR49_CHANGE"
+  ]
+}
