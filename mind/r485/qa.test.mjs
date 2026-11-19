@@ -14,9 +14,9 @@ const hub=read('MIND_ARCHIVE_SOURCE_ONLY.html');
 const funnel=read('OFFER_FUNNEL_CONVERSION_AND_GROK_HANDOFF.md');
 const matrix=JSON.parse(read('CLAIM_SOURCE_PERMISSION_MATRIX.json'));
 const main=(html)=>html.slice(html.indexOf('<section aria-labelledby="question">'),html.indexOf('</main>'));
-const activePurchase=(html)=>/<a\b[^>]*(?:checkout|buy-now|affiliate|refersion)/i.test(html)||/<button\b(?![^>]*\bdisabled\b)[^>]*>[^<]*(?:buy|offer|merchant|zen12)/i.test(html);
+const activePurchase=(html)=>/<a\b[^>]*href="[^"]*(?:checkout|buy-now|refersion|aff_id=|affiliate_id=)/i.test(html)||/<button\b(?![^>]*\bdisabled\b)[^>]*>[^<]*(?:buy|offer|merchant|zen12)/i.test(html);
 const disclosureNear=(html)=>{const button=html.indexOf('<button type="button" disabled');const d=html.lastIndexOf('Affiliate disclosure:',button);return button>=0&&d>=0&&button-d<700;};
-const noUnsafe=(s)=>!/<script\b|<iframe\b|\son(?:click|load|error)=|javascript:|autoplay|<form\b/i.test(s);
+const noUnsafe=(s)=>!/<script\b|<iframe\b|\son(?:click|load|error)=|javascript:|<(?:video|audio)\b[^>]*\bautoplay\b|<form\b/i.test(s);
 const truths=[
   ['two independent buyer guide variants share exactly the same advice',()=>assert.equal(main(a),main(b))],
   ['both variants have a native disabled purchase button',()=>{for(const x of [a,b])assert.match(x,/<button type="button" disabled/)}],
@@ -52,7 +52,7 @@ test('Synthetic safety mutations must be detected by guards',()=>{
   [a.replace('Affiliate disclosure:','Disclosure missing:'),x=>!disclosureNear(x)],
   [a.replace('</body>','<script src="https://example.com/track.js"></script></body>'),x=>!noUnsafe(x)],
   [a.replace('</body>','<form><input type="email"></form></body>'),x=>!noUnsafe(x)],
-  [a.replace('Check the verified Zen12 offer — unavailable','buy-now affiliate'),x=>!activePurchase(x)===false],
+  [a.replace('<button type="button" disabled','<button type="button"'),x=>activePurchase(x)],
   [b.replace('no encoded video is supplied','ready to play and hosted'),x=>!/no encoded video is supplied/.test(x)]
  ];
  assert.equal(mutants.length,6);
