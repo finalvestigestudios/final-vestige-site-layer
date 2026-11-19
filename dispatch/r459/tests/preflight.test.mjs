@@ -1,0 +1,28 @@
+// No network: mutations of exact committed R459 specimens. Node >=18.
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { auditIssue, runOfflineAudit } from '../preflight.mjs';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const src = JSON.parse(fs.readFileSync(path.join(root,'ISSUE04_SOURCE_STRUCTURED.json'), 'utf8'));
+const html = fs.readFileSync(path.join(root,'ISSUE04_SUBSCRIBER_REVIEW.html'), 'utf8');
+const txt = fs.readFileSync(path.join(root,'ISSUE04_SUBSCRIBER_REVIEW.txt'), 'utf8');
+const cloned = () => JSON.parse(JSON.stringify(src));
+test('baseline copy safe, all sends held', () => { const r=runOfflineAudit(root); assert.equal(r.copyPass,true); assert.equal(r.releaseAllowed,false); assert.equal(r.ctaCount,1); assert.equal(r.sourceCount,4); });
+test('rejects wrong CTA',()=>assert.equal(auditIssue(src,html.replace(src.cta.url,'https://bad.invalid/'),txt).copyPass,false));
+test('rejects missing source',()=>assert.equal(auditIssue(src,html.replace(src.sources[0].url,'https://bad.invalid/'),txt).copyPass,false));
+test('rejects hidden altered preheader',()=>assert.equal(auditIssue(src,html.replace(src.preheader,'Wrong invisible preview'),txt).copyPass,false));
+test('rejects active JavaScript',()=>assert.equal(auditIssue(src,html+'<script>alert(1)</script>',txt).copyPass,false));
+test('rejects remote images',()=>assert.equal(auditIssue(src,html+'<img src="https://pixel.invalid/x">',txt).copyPass,false));
+test('rejects inline handler',()=>assert.equal(auditIssue(src,html.replace('<html lang="en">','<html lang="en" onclick="hack()">'),txt).copyPass,false));
+test('rejects missing legal address hold',()=>assert.equal(auditIssue(src,html.replace(src.legal.address,''),txt).copyPass,false));
+test('rejects missing unsubscribe hold',()=>assert.equal(auditIssue(src,html.replace(src.legal.unsubscribe,''),txt).copyPass,false));
+test('rejects merchant placement in archival issue',()=>assert.equal(auditIssue(src,html+'https://zen12.com/about',txt).copyPass,false));
+test('rejects subject header injection',()=>{const v=cloned();v.subject+='\nBcc: me';assert.equal(auditIssue(v,html,txt).copyPass,false)});
+test('rejects extra primary CTA',()=>{const v=cloned();v.blocks.push({type:'cta',text:v.cta.label});assert.equal(auditIssue(v,html,txt).copyPass,false)});
+test('rejects loss of qualified ignition finding',()=>assert.equal(auditIssue(src,html,txt.replaceAll('source of ignition','unknown component')).copyPass,false));
+test('rejects false precision subject',()=>{const v=cloned();v.subject='Fourteen seconds. A much longer explanation.';assert.equal(auditIssue(v,html,txt).copyPass,false)});
+test('cannot enable sending by toggling only founder approval',()=>{const v=cloned();v.legal.founder_approved=true;assert.equal(auditIssue(v,html,txt).releaseAllowed,false)});
+test('does not treat incomplete legal attestations as proven',()=>{const v=cloned();v.legal.native_preview_verified=true;v.legal.founder_approved=true;assert.equal(auditIssue(v,html,txt).releaseAllowed,false)});
