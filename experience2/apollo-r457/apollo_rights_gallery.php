@@ -14,6 +14,20 @@ function fv457_records(): array {
     ['id'=>'KSC-20170124-PH_KLS01_0090','source_status'=>'accepted','credit'=>'NASA / Kim Shiflett; KSC (producer)','date'=>'2017-01-24','precision'=>'day','date_label'=>'24 January 2017','role'=>'Retrospective exhibit context','shown'=>false,'source_url'=>'https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/','source_check'=>'Direct NASA image-detail record independently checked on 18 November 2026; source availability does not establish marketing rights.','boundary'=>'2017 exhibit photograph, not evidence of the ignition source.'],
   ];
 }
+/** R468 editorial custody pin. A NASA hostname alone does not prove that a URL belongs
+ * to the printed ID. Exact pairs require deliberate human review to update.
+ * This is a consistency guard, NOT remote source authentication or media clearance.
+ */
+function fv457_custody_contract(): array {
+ return [
+  'S66-58038'=>['accepted','1966-10-18','day','18 October 1966','https://www.nasa.gov/image-detail/amf-s66-58038/',true,false],
+  'S67-15717'=>['accepted','1967-01-03','day','3 January 1967','https://www.nasa.gov/image-detail/amf-s67-15717/',true,false],
+  'S67-19766'=>['id_hold','1967-01','month','January 1967 (day not established here)','https://www.nasa.gov/image-detail/apollo-1-crew-honored/',false,true],
+  'S67-21294'=>['accepted','1967-01-28','day','28 January 1967','https://www.nasa.gov/image-detail/amf-s67-21294/',false,false],
+  'KSC-20170124-PH_KLS01_0129'=>['catalogue_hold','unverified','unverified','Date not independently verified (2017-01-24 appears only in the candidate identifier)','https://images.nasa.gov/details/KSC-20170124-PH_KLS01_0129',true,false],
+  'KSC-20170124-PH_KLS01_0090'=>['accepted','2017-01-24','day','24 January 2017','https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/',false,false],
+ ];
+}
 function fv457_h(string $x): string {return htmlspecialchars($x, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');}
 /** Break long visible source addresses without modifying a link's actual href. */
 function fv457_url_label(string $url): string {return str_replace(['/', '-', '_'], ['/<wbr>', '-<wbr>', '_<wbr>'], fv457_h($url));}
@@ -62,10 +76,17 @@ function fv457_chronology_html(string $instance): string {
 function fv457_valid(array $records): bool {
  if(count($records)!==6)return false;
  $ids=[];$shown=0;$home=0;$accepted=0;$heldId=0;$heldCatalogue=0;
+ $contract=fv457_custody_contract();
+ if(count($contract)!==6)return false;
  foreach($records as $r){
   foreach(['id','date','precision','date_label','role','source_url','source_check','boundary','source_status','credit'] as $k){if(!isset($r[$k])||!is_string($r[$k])||trim($r[$k])==='')return false;}
   if(!isset($r['shown'])||!is_bool($r['shown'])|| (isset($r['homepage_confirmed'])&&!is_bool($r['homepage_confirmed']))||isset($ids[$r['id']])||!preg_match('/^[A-Z0-9_-]{7,40}$/D',$r['id']))return false;
   if(!in_array($r['source_status'],['accepted','id_hold','catalogue_hold'],true))return false;
+  // Explicit pairing prevents a valid NASA URL, historical date or publication
+  // placement being silently transferred to a different archive record.
+  if(!isset($contract[$r['id']]))return false;
+  $actual=[$r['source_status'],$r['date'],$r['precision'],$r['date_label'],$r['source_url'],$r['shown'],($r['homepage_confirmed']??false)];
+  if($actual!==$contract[$r['id']])return false;
   if($r['source_status']==='accepted')$accepted++;
   elseif($r['source_status']==='id_hold')$heldId++;
   else $heldCatalogue++;
