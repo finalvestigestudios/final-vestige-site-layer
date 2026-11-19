@@ -1,0 +1,250 @@
+{
+  "sprint": "R482",
+  "as_of": "2026-11-18",
+  "status": "DRAFT_ONLY_HARD_HOLD",
+  "merchant": "Inspire3",
+  "selected_candidate": "Zen12",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://inspire3.com/",
+      "type": "official_vendor_catalog"
+    },
+    {
+      "id": "s2",
+      "url": "https://zen12.com/about",
+      "type": "official_product"
+    },
+    {
+      "id": "s3",
+      "url": "https://zen12.com/",
+      "type": "official_standard_sales"
+    },
+    {
+      "id": "s4",
+      "url": "https://zen12.com/secret/",
+      "type": "official_distinct_promo_funnel"
+    },
+    {
+      "id": "s5",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "type": "independent_review"
+    },
+    {
+      "id": "s6",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory"
+    },
+    {
+      "id": "s7",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory"
+    },
+    {
+      "id": "s8",
+      "url": "https://doi.org/10.1038/35784",
+      "type": "primary_experiment"
+    },
+    {
+      "id": "s9",
+      "url": "https://doi.org/10.1525/collabra.325",
+      "type": "peer_reviewed_expectation"
+    },
+    {
+      "id": "s10",
+      "url": "https://doi.org/10.1525/collabra.116190",
+      "type": "replication"
+    },
+    {
+      "id": "s11",
+      "url": "https://finalvestige.com/focus/",
+      "type": "verified_first_party_free"
+    },
+    {
+      "id": "s12",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "verified_first_party_archive"
+    }
+  ],
+  "decisions": [
+    {
+      "claim": "Zen12 is described by seller as twelve-minute MP3 sessions",
+      "verdict": "SELLER_DESCRIPTION_ONLY",
+      "refs": [
+        "s2"
+      ]
+    },
+    {
+      "claim": "Zen12 is advertised as twelve levels with four audio styles",
+      "verdict": "SELLER_DESCRIPTION_ONLY",
+      "refs": [
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "claim": "Standard site describes 48 MP3s in a package",
+      "verdict": "SELLER_DESCRIPTION_ONLY_VERIFY_AT_CHECKOUT",
+      "refs": [
+        "s3"
+      ]
+    },
+    {
+      "claim": "Separate /secret/ page currently promotes a different package/discount/countdown",
+      "verdict": "SALES_PAGE_DIFFERS_NO_FV_OFFER_AUTHENTICATION",
+      "refs": [
+        "s4"
+      ]
+    },
+    {
+      "claim": "One year money-back language appears on vendor site",
+      "verdict": "SELLER_MARKETING_VERIFY_ACTUAL_CONTRACT_NOT_PUBLISH_AS_GUARANTEE",
+      "refs": [
+        "s3"
+      ]
+    },
+    {
+      "claim": "Price or coupon available to FV referred buyers",
+      "verdict": "NO_AUTHORIZED_FINAL_FV_PRICE_OR_COUPON",
+      "refs": [
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "claim": "Zen12 scientifically gives one hour meditation in 12 minutes",
+      "verdict": "UNSUBSTANTIATED_WITHHOLD",
+      "refs": [
+        "s2",
+        "s3",
+        "s5"
+      ]
+    },
+    {
+      "claim": "Audio automatically shifts brainwave state",
+      "verdict": "UNSUBSTANTIATED_FOR_NAMED_PRODUCT_WITHHOLD",
+      "refs": [
+        "s2",
+        "s5"
+      ]
+    },
+    {
+      "claim": "Audio clinically improves health, wealth, sleep, memory or focus",
+      "verdict": "NO_PRODUCT_SPECIFIC_EVIDENCE_WITHHOLD",
+      "refs": [
+        "s5",
+        "s7"
+      ]
+    },
+    {
+      "claim": "Binaural-beat EEG research has consistent entrainment effects",
+      "verdict": "CONTRADICTED_BY_HETEROGENEOUS_REVIEW_5_SUPPORT_8_CONTRADICT_1_MIXED",
+      "refs": [
+        "s5"
+      ]
+    },
+    {
+      "claim": "Rubber hand illusion proves effectiveness of Zen12",
+      "verdict": "INVALID_CROSS_DOMAIN_INFERENCE_WITHHOLD",
+      "refs": [
+        "s8",
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "claim": "2011 proprioceptive drift independently proves ownership",
+      "verdict": "WRONG_MEASURE_WITHHOLD",
+      "refs": [
+        "s8"
+      ]
+    },
+    {
+      "claim": "Expectancy studies raise substantive measurement confounds",
+      "verdict": "SUPPORTED_AS_METHOD_CRITIQUE_NOT_UNIVERSAL_DISPROOF",
+      "refs": [
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "claim": "Existing FV Focus Fieldbook is free and 52 pages",
+      "verdict": "VERIFIED_PUBLIC_FIRST_PARTY",
+      "refs": [
+        "s11"
+      ]
+    },
+    {
+      "claim": "FV merchant affiliate application is accepted",
+      "verdict": "NOT_VERIFIED_GMAIL_PENDING_EMAIL_2026-08-24",
+      "refs": []
+    },
+    {
+      "claim": "FV has an issued approved affiliate tracking link",
+      "verdict": "NOT_VERIFIED_DO_NOT_CREATE_LINK",
+      "refs": []
+    },
+    {
+      "claim": "FV has email-channel marketing authorization",
+      "verdict": "NOT_VERIFIED_NO_DISPATCH_EARNING_LINK",
+      "refs": []
+    },
+    {
+      "claim": "FTC allows hidden end-of-page disclosures",
+      "verdict": "FALSE_REQUIRE_CONSPICUOUS_ADJACENT_TO_RECOMMENDATION",
+      "refs": [
+        "s6"
+      ]
+    },
+    {
+      "claim": "FV has tested/used Zen12",
+      "verdict": "NOT_VERIFIED_DO_NOT_CLAIM_EXPERIENCE",
+      "refs": []
+    },
+    {
+      "claim": "An affiliate_outbound event is paid revenue",
+      "verdict": "FALSE_DISTINCT_FROM_MERCHANT_CONFIRMED_SALE",
+      "refs": []
+    },
+    {
+      "claim": "FV-owned payable Mind product is ready",
+      "verdict": "NOT_AUTHENTICATED_NO_PRICE_RIGHTS_OR_DELIVERY",
+      "refs": []
+    }
+  ],
+  "release_gates": [
+    "named FV Inspire3/Refersion approval",
+    "exact approved affiliate URL",
+    "approved web channel",
+    "approved EMAIL channel if applicable",
+    "exact SKU and product variant",
+    "confirmed checkout totals",
+    "applicable refund terms",
+    "product-specific evidence claims audit",
+    "approved affiliate disclosure",
+    "source/rights editorial review",
+    "real browser WCAG 2.2 AA QA",
+    "mobile 360/390/768/1440 checks",
+    "no-JS test",
+    "optional video encoded and captioned",
+    "performance/cwv baseline",
+    "privacy consent/attribution approval",
+    "Jetpack existing list delivery test",
+    "independent merchant settlement evidence",
+    "refund/fees reconciliation",
+    "founder release authorization",
+    "site QA approval",
+    "no conflicts PR49/PR172/issues150/174"
+  ],
+  "proof_scope": "Product facts verified as public seller descriptions; merchant account status only from targeted connected Gmail message, not merchant dashboard.",
+  "must_not_activate": true,
+  "has_affiliate_url": false,
+  "tests_pending": [
+    "actual authenticated merchant portal",
+    "transaction/refund",
+    "browser screenreader",
+    "video encode",
+    "live Jetpack test",
+    "native full build"
+  ]
+}
