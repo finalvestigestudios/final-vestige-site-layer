@@ -28,6 +28,28 @@ function fv457_custody_contract(): array {
   'KSC-20170124-PH_KLS01_0090'=>['accepted','2017-01-24','day','24 January 2017','https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/',false,false],
  ];
 }
+/** R469: Pin the record's explanatory claims as well as its metadata.
+ * Digest is SHA-256(JSON array of role, credit, evidence boundary, review note).
+ * Requires deliberate editorial review for any copy change, including hold notices.
+ * This catches accidental substitutions but is NOT independent NASA authentication.
+ */
+function fv457_claim_custody_contract(): array {
+ return [
+  'S66-58038'=>'3c05f3f6aac1aaf3711b5e23dd02c59bd69dd0476ff69773ce49381ad419ffc5',
+  'S67-15717'=>'daf9bb50cf0ed67d04806643bdee63aa041a2a05ed22984b6b71d95fae42c321',
+  'S67-19766'=>'b74cf9a43ef13d45b5569c77d4552f7364b3bd2394045caa5bc47c3c8f4d3c51',
+  'S67-21294'=>'7daa3ddffa153287355e540fee58cba135389a51b570b5c787aeed5f1152ed6a',
+  'KSC-20170124-PH_KLS01_0129'=>'606b46a454eaf3cf74e939d1c0d780162623c35080917202ef8fe247952c27c7',
+  'KSC-20170124-PH_KLS01_0090'=>'7c0e71694e3ae29e182c0613e49cf2ec5f7616286f3d89b82f278d7ba339f31a',
+ ];
+}
+function fv457_claim_digest(array $r): string {
+ return hash('sha256',json_encode([$r['role'],$r['credit'],$r['boundary'],$r['source_check']],JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR));
+}
+/** Do not publish an unverified catalogue lookup as a working link. */
+function fv457_source_link_eligible(array $r): bool {
+ return $r['source_status']!=='catalogue_hold';
+}
 function fv457_h(string $x): string {return htmlspecialchars($x, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');}
 /** Break long visible source addresses without modifying a link's actual href. */
 function fv457_url_label(string $url): string {return str_replace(['/', '-', '_'], ['/<wbr>', '-<wbr>', '_<wbr>'], fv457_h($url));}
@@ -74,6 +96,7 @@ function fv457_chronology_html(string $instance): string {
 }
 
 function fv457_valid(array $records): bool {
+ $claimContract=fv457_claim_custody_contract();
  if(count($records)!==6)return false;
  $ids=[];$shown=0;$home=0;$accepted=0;$heldId=0;$heldCatalogue=0;
  $contract=fv457_custody_contract();
@@ -87,6 +110,7 @@ function fv457_valid(array $records): bool {
   if(!isset($contract[$r['id']]))return false;
   $actual=[$r['source_status'],$r['date'],$r['precision'],$r['date_label'],$r['source_url'],$r['shown'],($r['homepage_confirmed']??false)];
   if($actual!==$contract[$r['id']])return false;
+  if(!isset($claimContract[$r['id']])||!hash_equals($claimContract[$r['id']],fv457_claim_digest($r)))return false;
   if($r['source_status']==='accepted')$accepted++;
   elseif($r['source_status']==='id_hold')$heldId++;
   else $heldCatalogue++;
@@ -114,7 +138,7 @@ function fv457_render(): string {
  $out.=fv457_chronology_html($instance);
  $out.='<p class="fv457__rights"><strong>Rights boundary:</strong> NASA imagery is generally available for factual editorial use, subject to agency guidelines and potential third-party and publicity rights. No photograph, logo or astronaut likeness is embedded or cleared for merchandise, marketing or a paid educator product. NASA does not endorse this work.</p>';
  $out.='<p class="fv457__source-hold"><strong>Source acceptance HOLD:</strong> Four NASA image-detail records have independently verified matching catalogue IDs; the S67-19766 portrait ARTICLE is accessible but its archival-ID association is unverified, and the KSC-20170124-PH_KLS01_0129 catalogue lookup remains inaccessible. Its apparent 24 January date derives only from the candidate ID, not accepted image metadata. Neither an accepted source nor a research lead establishes rights to commercial reuse.</p>';
- $out.='<p class="fv457__print-note">Printed source-custody copy: all six archival records and all three chronology moments retain linked NASA source references in browser PDF exports, regardless of any on-screen filter. Dates describe historical events, not necessarily source-publication dates. Catalogue and identifier uncertainties remain unresolved; the printed copy is not commercial media clearance.</p>';
+ $out.='<p class="fv457__print-note">Printed source-custody copy: five independently retrievable archival references and three chronology moments retain linked NASA sources; the sixth candidate remains plainly documented but unlinked in PDF exports, regardless of any on-screen filter. Dates describe historical events, not necessarily source-publication dates. Catalogue and identifier uncertainties remain unresolved; the printed copy is not commercial media clearance.</p>';
  $out.='<div data-fv457-controls class="fv457__controls" hidden role="group" aria-label="Filter archive image records"><button type="button" data-fv457-choice="all" aria-controls="'.$instance.'-records" aria-pressed="true">All six</button><button type="button" data-fv457-choice="accepted" aria-controls="'.$instance.'-records" aria-pressed="false">NASA ID confirmed (4)</button><button type="button" data-fv457-choice="shown" aria-controls="'.$instance.'-records" aria-pressed="false">Atlas chronology (3)</button><button type="button" data-fv457-choice="homepage" aria-controls="'.$instance.'-records" aria-pressed="false">Confirmed homepage (1)</button><button type="button" data-fv457-choice="withheld" aria-controls="'.$instance.'-records" aria-pressed="false">Not in Atlas (3)</button></div>';
  $out.='<p data-fv457-status class="fv457__status" aria-live="polite">All six records remain available without JavaScript.</p><ol class="fv457__grid" id="'.$instance.'-records" tabindex="-1" aria-label="Archival catalogue records">';
  foreach($records as $index=>$r){
@@ -127,9 +151,15 @@ function fv457_render(): string {
   $out.='<p class="fv457__surface"><strong>Published-page cross-check:</strong> '.(($r['homepage_confirmed']??false)?'Confirmed on the homepage 18 November 2026; not in the Atlas chronology.':'Homepage presence or absence not independently established.').'</p>';$out.='<p class="fv457__limitation"><strong>Evidence limit:</strong> '.fv457_h($r['boundary']).'</p>';
   $hold=($r['id']==='KSC-20170124-PH_KLS01_0129')?' — CATALOGUE LINK UNVERIFIED':(($r['id']==='S67-19766')?' — ID MAPPING UNVERIFIED':'');
  $linkText=$r['source_status']==='accepted'?'Open confirmed NASA image-detail record for ':'Open unverified research lead for ';
-  $out.='<details><summary>NASA source and rights limits — '.fv457_h($r['id']).'</summary><p>'.fv457_h($r['source_check']).'</p><p>Rights: source link does not grant commercial reuse or NASA endorsement.</p><p><a href="'.fv457_h($r['source_url']).'" rel="noopener noreferrer">'.fv457_h($linkText).fv457_h($r['id']).fv457_h($hold).'</a></p></details>';
+  $out.='<details><summary>NASA source and rights limits — '.fv457_h($r['id']).'</summary><p>'.fv457_h($r['source_check']).'</p><p>Rights: source link does not grant commercial reuse or NASA endorsement.</p>';
+  if(fv457_source_link_eligible($r))$out.='<p><a href="'.fv457_h($r['source_url']).'" rel="noopener noreferrer">'.fv457_h($linkText).fv457_h($r['id']).fv457_h($hold).'</a></p>';
+  else $out.='<p><strong>Unverified catalogue lead — not a validated NASA source link.</strong> Candidate identifier: <code>'.fv457_h($r['id']).'</code>. Request independent catalogue confirmation before linking or use.</p>';
+  $out.='</details>';
   // Print/PDF link must retain URL annotation and tagged-document semantics; CSS hides this duplicate on screen.
-  $out.='<p class="fv457__print-custody"><strong>Printable source lookup — '.fv457_h($state).':</strong> <a href="'.fv457_h($r['source_url']).'" rel="noopener noreferrer">'.fv457_h($r['source_url']).'</a> · '.fv457_h($r['source_check']).' · '.fv457_h($r['credit']).' · Image-use permission not established.</p>';
+  $out.='<p class="fv457__print-custody"><strong>Printable source lookup — '.fv457_h($state).':</strong> ';
+  if(fv457_source_link_eligible($r))$out.='<a href="'.fv457_h($r['source_url']).'" rel="noopener noreferrer">'.fv457_url_label($r['source_url']).'</a>';
+  else $out.='<strong>UNVERIFIED CATALOGUE LINK WITHHELD.</strong> Candidate ID: '.fv457_h($r['id']).' (not a validated record)';
+  $out.=' · '.fv457_h($r['source_check']).' · '.fv457_h($r['credit']).' · Image-use permission not established.</p>';
   $out.='</li>';
  }
  $out.='</ol><p class="fv457__note">This is an editorial source catalogue, not a geographic map: no fabricated coordinates or source connections. Atlas entries and the homepage S67-19766 presentation were inspected on 18 November 2026. Homepage absence for any other record was NOT established. Reverify both pages before acceptance.</p>';
