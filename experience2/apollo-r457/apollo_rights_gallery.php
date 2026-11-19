@@ -3,7 +3,7 @@
 declare(strict_types=1);
 // Optional R466 source-claim layer: missing or changed code must not erase archive evidence.
 $fv457_plate_file=__DIR__.'/evidence_plates.php';
-if(is_file($fv457_plate_file)&&hash_equals('f3c51cff629ed13113ca54f179ef6d9313b152956309eff4fe73f17ad79abbad',hash_file('sha256',$fv457_plate_file)))require_once $fv457_plate_file;
+if(is_file($fv457_plate_file)&&hash_equals('6dc4cd13ef2c1e4fe66aace15cc74f7670c478a73b1f36091eeb7b5ee51dafa8',hash_file('sha256',$fv457_plate_file)))require_once $fv457_plate_file;
 function fv457_records(): array {
   return [
     ['id'=>'S66-58038','source_status'=>'accepted','credit'=>'NASA / JSC (producer)','date'=>'1966-10-18','precision'=>'day','date_label'=>'18 October 1966','role'=>'Crew training context','shown'=>true,'source_url'=>'https://www.nasa.gov/image-detail/amf-s66-58038/','source_check'=>'Direct NASA image-detail record independently checked on 18 November 2026; source availability does not establish marketing rights.','boundary'=>'Training photograph. Does not depict the Apollo 1 accident.'],
@@ -50,8 +50,8 @@ function fv457_chronology_html(string $instance): string {
   $o.='<li class="fv457__moment"><span class="fv457__step">'.fv457_h(str_pad((string)($n+1),2,'0',STR_PAD_LEFT)).' / 03</span>';
   $o.='<p class="fv457__date"><time datetime="'.fv457_h($e['machine_date']).'"><strong>'.fv457_h($e['date']).'</strong></time> · '.fv457_h($e['precision']).'</p>';
   $o.='<h4>'.fv457_h($e['event']).'</h4>';
-  $o.='<details><summary>Source, date and uncertainty</summary><p><strong>Source type:</strong> '.fv457_h($e['source_kind']).'</p><p><strong>Limit:</strong> '.fv457_h($e['boundary']).'</p>';
-  $o.='<p><a href="'.fv457_h($e['source']).'" rel="noopener noreferrer">Open NASA reference and provenance</a></p></details>';
+  $o.='<details><summary>NASA source and date limits — '.fv457_h($e['date']).'</summary><p><strong>Source type:</strong> '.fv457_h($e['source_kind']).'</p><p><strong>Limit:</strong> '.fv457_h($e['boundary']).'</p>';
+  $o.='<p><a href="'.fv457_h($e['source']).'" rel="noopener noreferrer">Open NASA reference for '.fv457_h($e['event']).'</a></p></details>';
   // Native details remain collapsed by default. Print/PDF preserves their precise
   // chronology source, full URL, and source-time uncertainty without scripting.
   $o.='<p class="fv457__chronology-print"><strong>Printable chronology source:</strong> <a href="'.fv457_h($e['source']).'" rel="noopener noreferrer">'.fv457_url_label($e['source']).'</a> · <strong>Publication context:</strong> '.fv457_h($e['source_kind']).' · <strong>Uncertainty:</strong> '.fv457_h($e['boundary']).'</p></li>';
@@ -87,15 +87,15 @@ function fv457_fallback(): string {return '<p>The image provenance list is tempo
 function fv457_render(): string {
  static $count=0;$records=fv457_records();if(!fv457_valid($records))return fv457_fallback();$instance='fv457-'.(++$count);
  $out='<section class="fv457" data-fv457-root id="'.$instance.'" aria-labelledby="'.$instance.'-heading"><div class="fv457__shell">';
- $out.='<p class="fv457__kicker">Final Vestige / Apollo 1 / Source custody</p><h2 id="'.$instance.'-heading">Six archival records across two published surfaces.</h2>';
+ $out.='<a class="fv457__skip" href="#'.$instance.'-records">Skip to the six archival source records</a><p class="fv457__kicker">Final Vestige / Apollo 1 / Source custody</p><h2 id="'.$instance.'-heading">Six archival records across two published surfaces.</h2>';
  $out.='<p class="fv457__lede">These are <strong>source index cards, not reproductions</strong>. Three records appear in the Atlas chronology. S67-19766 is labelled not shown in that Atlas but appears on the published homepage. The other records have not been independently confirmed as present or absent on the homepage. Page placement is not image-use permission, and no marketing or merchandise clearance is implied.</p>';
  $out.=function_exists('fv457_evidence_plates_html')?fv457_evidence_plates_html($instance):'<p>Evidence comparison temporarily unavailable; the source chronology and archival record cards remain available below.</p>';
  $out.=fv457_chronology_html($instance);
  $out.='<p class="fv457__rights"><strong>Rights boundary:</strong> NASA imagery is generally available for factual editorial use, subject to agency guidelines and potential third-party and publicity rights. No photograph, logo or astronaut likeness is embedded or cleared for merchandise, marketing or a paid educator product. NASA does not endorse this work.</p>';
  $out.='<p class="fv457__source-hold"><strong>Source acceptance HOLD:</strong> Four NASA image-detail records have independently verified matching catalogue IDs; the S67-19766 portrait ARTICLE is accessible but its archival-ID association is unverified, and the KSC-20170124-PH_KLS01_0129 catalogue lookup remains inaccessible. Its apparent 24 January date derives only from the candidate ID, not accepted image metadata. Neither an accepted source nor a research lead establishes rights to commercial reuse.</p>';
  $out.='<p class="fv457__print-note">Printed source-custody copy: all six archival records and all three chronology moments retain linked NASA source references in browser PDF exports, regardless of any on-screen filter. Dates describe historical events, not necessarily source-publication dates. Catalogue and identifier uncertainties remain unresolved; the printed copy is not commercial media clearance.</p>';
- $out.='<div data-fv457-controls class="fv457__controls" hidden role="group" aria-label="Filter archive image records"><button type="button" data-fv457-choice="all" aria-pressed="true">All six</button><button type="button" data-fv457-choice="accepted" aria-pressed="false">NASA ID confirmed (4)</button><button type="button" data-fv457-choice="shown" aria-pressed="false">Atlas chronology (3)</button><button type="button" data-fv457-choice="homepage" aria-pressed="false">Confirmed homepage (1)</button><button type="button" data-fv457-choice="withheld" aria-pressed="false">Not in Atlas (3)</button></div>';
- $out.='<p data-fv457-status class="fv457__status" aria-live="polite">All six records remain available without JavaScript.</p><ol class="fv457__grid" aria-label="Archival catalogue records">';
+ $out.='<div data-fv457-controls class="fv457__controls" hidden role="group" aria-label="Filter archive image records"><button type="button" data-fv457-choice="all" aria-controls="'.$instance.'-records" aria-pressed="true">All six</button><button type="button" data-fv457-choice="accepted" aria-controls="'.$instance.'-records" aria-pressed="false">NASA ID confirmed (4)</button><button type="button" data-fv457-choice="shown" aria-controls="'.$instance.'-records" aria-pressed="false">Atlas chronology (3)</button><button type="button" data-fv457-choice="homepage" aria-controls="'.$instance.'-records" aria-pressed="false">Confirmed homepage (1)</button><button type="button" data-fv457-choice="withheld" aria-controls="'.$instance.'-records" aria-pressed="false">Not in Atlas (3)</button></div>';
+ $out.='<p data-fv457-status class="fv457__status" aria-live="polite">All six records remain available without JavaScript.</p><ol class="fv457__grid" id="'.$instance.'-records" tabindex="-1" aria-label="Archival catalogue records">';
  foreach($records as $index=>$r){
   $out.='<li class="fv457__card" data-fv457-card="'.($r['shown']?'shown':'withheld').'" data-fv457-home="'.(($r['homepage_confirmed']??false)?'confirmed':'unverified').'" data-fv457-accepted="'.($r['source_status']==='accepted'?'yes':'no').'">';
   $out.='<p class="fv457__number">'.str_pad((string)($index+1),2,'0',STR_PAD_LEFT).' / 06 · '.($r['shown']?'In Atlas chronology':'Not in Atlas chronology').'</p>';
@@ -106,7 +106,7 @@ function fv457_render(): string {
   $out.='<p class="fv457__surface"><strong>Published-page cross-check:</strong> '.(($r['homepage_confirmed']??false)?'Confirmed on the homepage 18 November 2026; not in the Atlas chronology.':'Homepage presence or absence not independently established.').'</p>';$out.='<p class="fv457__limitation"><strong>Evidence limit:</strong> '.fv457_h($r['boundary']).'</p>';
   $hold=($r['id']==='KSC-20170124-PH_KLS01_0129')?' — CATALOGUE LINK UNVERIFIED':(($r['id']==='S67-19766')?' — ID MAPPING UNVERIFIED':'');
  $linkText=$r['source_status']==='accepted'?'Open confirmed NASA image-detail record for ':'Open unverified research lead for ';
-  $out.='<details><summary>Open source custody and usage review</summary><p>'.fv457_h($r['source_check']).'</p><p>Rights: source link does not grant commercial reuse or NASA endorsement.</p><p><a href="'.fv457_h($r['source_url']).'" rel="noopener noreferrer">'.fv457_h($linkText).fv457_h($r['id']).fv457_h($hold).'</a></p></details>';
+  $out.='<details><summary>NASA source and rights limits — '.fv457_h($r['id']).'</summary><p>'.fv457_h($r['source_check']).'</p><p>Rights: source link does not grant commercial reuse or NASA endorsement.</p><p><a href="'.fv457_h($r['source_url']).'" rel="noopener noreferrer">'.fv457_h($linkText).fv457_h($r['id']).fv457_h($hold).'</a></p></details>';
   // Print/PDF link must retain URL annotation and tagged-document semantics; CSS hides this duplicate on screen.
   $out.='<p class="fv457__print-custody"><strong>Printable source lookup — '.fv457_h($state).':</strong> <a href="'.fv457_h($r['source_url']).'" rel="noopener noreferrer">'.fv457_h($r['source_url']).'</a> · '.fv457_h($r['source_check']).' · '.fv457_h($r['credit']).' · Image-use permission not established.</p>';
   $out.='</li>';
@@ -122,7 +122,7 @@ function fv457_render(): string {
  $cssPresent=is_file($css);$jsPresent=is_file($js);
  $style=$cssPresent?file_get_contents($css):null;
  $script=$jsPresent?file_get_contents($js):null;
- if(($cssPresent&&($style===false||!hash_equals('d263a0284884937eaf83256342d51d9e88da60f43e9a81a1a6caa81a24dc744c',hash('sha256',$style))))
+ if(($cssPresent&&($style===false||!hash_equals('ee244a0136a61b089c4e4c643f8336395963558f57f1d8b28ec6940871c6a6ff',hash('sha256',$style))))
     ||($jsPresent&&($script===false||!hash_equals('001ba5b8857bfee90d5d79db8435047946bc3a61253b3a8f4623e725daa1fb0a',hash('sha256',$script)))))return fv457_fallback();
  if(!$cssPresent)return $out;
  return '<style>'.$style.'</style>'.$out.($jsPresent?'<script>'.$script.'</script>':'');
