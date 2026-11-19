@@ -1,0 +1,849 @@
+{
+  "schema": "fv-r477-authentic-35-article-scope-custody-batch-v1",
+  "repo": "finalvestigestudios/final-vestige-site-layer",
+  "candidate_ref": "1d4d885c0b427d4b1bfbb77cf2ecf0c10a0dc070",
+  "candidate_manifest_blob": "2adcffe48fcbb3ac3aa9eb2fc18b048f032fcc0c",
+  "authenticated_source_index_blob": "f6e505331a3f66c27e4ccde38dd6ca8709993b75",
+  "crosswalk_blob": "d62e493a67dedd23e04cfdf3cce762ef933c6bf9",
+  "batch": 5,
+  "total_batches": 5,
+  "release": "DRAFT_HARD_HOLD",
+  "review_state": "ALL_CLAIM_SCOPES_UNADJUDICATED",
+  "qualified_qd_pass": false,
+  "publication_authorized": false,
+  "articles": [
+    {
+      "slug": "smokehouses-salting-curing",
+      "n": 26,
+      "origin": "hist-food",
+      "body_git_blob": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+      "metadata_git_blob": "16223945e83f95b349acf09a2b684c09326550c0",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 36,
+      "distinct_citation_ids": 11,
+      "citation_sequence": [
+        "fsis-home-cure-qa",
+        "cdc-botulism-prevention",
+        "nchfp-cure-smoke",
+        "hist-food-fsis-smoking",
+        "hist-food-monticello-meat",
+        "hist-food-monticello-meat",
+        "hist-food-mv-smokehouse",
+        "usscm-brenckle-2019",
+        "hist-food-marcy-prairie-traveler-text",
+        "nchfp-historical-origins",
+        "fsis-botulism",
+        "nchfp-cure-smoke",
+        "fsis-botulism",
+        "hist-food-monticello-meat",
+        "hist-food-mv-smokehouse",
+        "hist-food-fsis-smoking",
+        "hist-food-fsis-molds",
+        "hist-food-mv-smokehouse",
+        "hist-food-monticello-meat",
+        "usscm-brenckle-2019",
+        "hist-food-monticello-meat",
+        "hist-food-mv-smokehouse",
+        "hist-food-monticello-meat",
+        "usscm-brenckle-2019",
+        "nchfp-historical-origins",
+        "fsis-botulism",
+        "fsis-home-cure-qa",
+        "hist-food-fsis-smoking",
+        "cdc-botulism-prevention",
+        "fsis-home-cure-qa",
+        "fsis-botulism",
+        "hist-food-fsis-smoking",
+        "hist-food-monticello-meat",
+        "hist-food-mv-smokehouse",
+        "nchfp-cure-smoke",
+        "fsis-botulism"
+      ],
+      "source_claims": [
+        {
+          "sid": "fsis-home-cure-qa",
+          "source_use_exact": "Botulism cases following home-canned, preserved, cured, smoked or fermented foods.",
+          "occurrences": 3,
+          "first_context": "ed and fermented foods have been linked to botulism cases. You cannot see, smell or taste the toxin.{{cite:fsis-home-cure-qa}}{{cite:cdc-botulism-prevention}}</li> <li>If you want to cure or smoke meat at home, use a procedure published and tested by USDA or t"
+        },
+        {
+          "sid": "cdc-botulism-prevention",
+          "source_use_exact": "Improperly preserved foods and botulism; toxin cannot be seen, smelled or tasted.",
+          "occurrences": 2,
+          "first_context": "e been linked to botulism cases. You cannot see, smell or taste the toxin.{{cite:fsis-home-cure-qa}}{{cite:cdc-botulism-prevention}}</li> <li>If you want to cure or smoke meat at home, use a procedure published and tested by USDA or the National Center for Hom"
+        },
+        {
+          "sid": "nchfp-cure-smoke",
+          "source_use_exact": "How curing works as NCHFP describes it; where to find tested methods.",
+          "occurrences": 3,
+          "first_context": "blished and tested by USDA or the National Center for Home Food Preservation, and follow it exactly.{{cite:nchfp-cure-smoke}}</li> <li>Smoking in a modern guide means cooking. USDA's page on smoking meat is about slow cooking in a purpose-built smoker, with a "
+        },
+        {
+          "sid": "hist-food-fsis-smoking",
+          "source_use_exact": "USDA treats smoking as slow cooking in an approved smoker with thermometers.",
+          "occurrences": 4,
+          "first_context": "bout slow cooking in a purpose-built smoker, with a thermometer, not about traditional smoke-curing.{{cite:hist-food-fsis-smoking}}</li> </ul> <p class=\"pa-act-note\">If someone develops blurred vision, difficulty swallowing or speaking, or growing weakness aft"
+        },
+        {
+          "sid": "hist-food-monticello-meat",
+          "source_use_exact": "Ursula Granger and John; salting, smokehouse, rationing and unequal cuts.",
+          "occurrences": 7,
+          "first_context": "erson's household.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-food-monticello-meat}} The same entry notes that prime cuts were intended for Jefferson's household, while enslaved workers and their families recei"
+        },
+        {
+          "sid": "hist-food-mv-smokehouse",
+          "source_use_exact": "Smokehouse description; enslaved workers; ashes storage; locking against theft; 1795 theft; 300 hams a year; 1786 hams for Lafayette.",
+          "occurrences": 5,
+          "first_context": "a year, and in 1786 Martha Washington packed a barrel of Virginia hams for the Marquis de Lafayette.{{cite:hist-food-mv-smokehouse}}</p> <p>Neither page gives a quantity of salt, a length of time, a type of cut beyond \"hams, bacon and salt pork\", or a temperat"
+        },
+        {
+          "sid": "usscm-brenckle-2019",
+          "source_use_exact": "1812 contract for 'a sufficient quantity of good Salt and Salt Petre'; historian's view on quality; no tally of condemned barrels.",
+          "occurrences": 3,
+          "first_context": "cient quantity of good Salt and Salt Petre\" and gave no ratio, no curing time and no brine strength.{{cite:usscm-brenckle-2019}} Our companion piece on {{link:salt-beef-salt-pork-age-of-sail|salt beef and salt pork at sea}} covers that record in full. The poin"
+        },
+        {
+          "sid": "hist-food-marcy-prairie-traveler-text",
+          "source_use_exact": "Marcy on sun-jerking with no salt.",
+          "occurrences": 1,
+          "first_context": "ever used in this process\". It is not required, he says, as the meat, if kept dry, rarely putrefies.{{cite:hist-food-marcy-prairie-traveler-text}} Salt cures and sun-dried meat are different traditions with different logic, and the next sections explain why ne"
+        },
+        {
+          "sid": "nchfp-historical-origins",
+          "source_use_exact": "Curing as dehydration; nitrites and red colour in the 1800s; nitrite and C. botulinum recognized in the 1920s.",
+          "occurrences": 2,
+          "first_context": "um botulinum</em> was worked out in the 1920s was it realized that nitrites inhibited that organism.{{cite:nchfp-historical-origins}}</p> <p>USDA's food-safety service gives the regulatory side. Nitrites in cured meat inhibit the growth of <em>C. botulinum</em"
+        },
+        {
+          "sid": "fsis-botulism",
+          "source_use_exact": "Nitrite inhibits C. botulinum spores; USDA authorization from 1925; nitrosamine concern; salted or fermented fish linked to botulism.",
+          "occurrences": 5,
+          "first_context": " raised in the early 1970s, and processors may use ascorbic acid or related compounds to counter it.{{cite:fsis-botulism}} The NCHFP describes curing as using salt, and sometimes sugar and seasonings, to draw moisture from meat and create an environment hostil"
+        },
+        {
+          "sid": "hist-food-fsis-molds",
+          "source_use_exact": "Molds tolerate salt and sugar; country hams' surface mold; discard guidance for other meats.",
+          "occurrences": 1,
+          "first_context": "scrubbed off before cooking, while luncheon meats, bacon and hot dogs with mold should be discarded.{{cite:hist-food-fsis-molds}} That is a detail about commercial dry-cured hams, not an instruction for a home smokehouse. We cite it to show that even in the mo"
+        }
+      ]
+    },
+    {
+      "slug": "three-day-kit",
+      "n": 2,
+      "origin": "start",
+      "body_git_blob": "933f38ff3cd55a241cf9b392014fc52d4961e84f",
+      "metadata_git_blob": "1c69d5f1636a3a41631a5d93f11254d85cbe1b59",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 79,
+      "distinct_citation_ids": 18,
+      "citation_sequence": [
+        "cdc-water-store",
+        "ready-are-you-ready",
+        "start-ready-food",
+        "start-ready-kit",
+        "start-cdc-pyh-prescriptions",
+        "start-ready-kit",
+        "start-ready-kit",
+        "ready-are-you-ready",
+        "start-ready-kit",
+        "start-ready-kit",
+        "start-ready-kit",
+        "start-ready-kit",
+        "start-ready-kit",
+        "start-ready-kit",
+        "start-ready-kit",
+        "start-ready-kit",
+        "start-ready-low-cost",
+        "start-ready-kit",
+        "start-ready-kit",
+        "start-ready-financial",
+        "start-ready-kit",
+        "start-ready-low-cost",
+        "start-ready-kit",
+        "start-ready-food",
+        "start-ready-supply-list",
+        "start-ready-kit",
+        "cdc-water-store",
+        "ready-are-you-ready",
+        "start-ready-food",
+        "start-ready-food",
+        "start-ready-food",
+        "ready-are-you-ready",
+        "start-ready-kit",
+        "ready-are-you-ready",
+        "start-ready-power",
+        "start-fema-power-sheet",
+        "start-fsis-emergency-food",
+        "start-ready-power",
+        "start-ready-food",
+        "start-fema-power-sheet",
+        "start-ready-food",
+        "start-ready-power",
+        "start-fema-power-sheet",
+        "start-cdc-power-outage",
+        "start-ready-food",
+        "start-cdc-infant-checklist",
+        "start-ready-kit",
+        "start-ready-power",
+        "start-ready-disability",
+        "start-cdc-disability-kit",
+        "start-cdc-family-kit",
+        "start-redcross-older-adults",
+        "start-cdc-pyh-prescriptions",
+        "start-cdc-pyh-prescriptions",
+        "start-fema-power-sheet",
+        "start-ready-power",
+        "ready-are-you-ready",
+        "start-ready-power",
+        "start-fema-power-sheet",
+        "start-cdc-pyh-prescriptions",
+        "start-cdc-pyh-prescriptions",
+        "start-ready-kit",
+        "ready-are-you-ready",
+        "start-ready-kit",
+        "ready-are-you-ready",
+        "ready-are-you-ready",
+        "start-ready-kit",
+        "start-ready-kit",
+        "start-ready-car",
+        "start-ready-kit",
+        "ready-are-you-ready",
+        "ready-are-you-ready",
+        "start-cdc-disability-kit",
+        "start-cdc-family-kit",
+        "start-ready-kit",
+        "start-cdc-infant-checklist",
+        "start-ready-low-cost",
+        "start-redcross-older-adults",
+        "cdc-water-store"
+      ],
+      "source_claims": [
+        {
+          "sid": "cdc-water-store",
+          "source_use_exact": "Water baseline of 1 gallon per person per day for at least 3 days, and try for 2 weeks.",
+          "occurrences": 3,
+          "first_context": " gallon of water per person per day, for at least 3 days; it suggests aiming for 2 weeks if you can.{{cite:cdc-water-store}} FEMA's guide tells you to store commercially bottled water with your kit, not tap water.{{cite:ready-are-you-ready}} The arithmetic is "
+        },
+        {
+          "sid": "ready-are-you-ready",
+          "source_use_exact": "'At least 72 hours'; water of 3, 7 or 14 days depending on location; cash in small bills; N95 masks; the maintenance steps; bottled water for the kit; learning to shut off utilities before an emergency. Its 2020 'discard refrigerated medication after a day' line, shown as older than the 2023 FEMA sheet.",
+          "occurrences": 11,
+          "first_context": "ter-store}} FEMA's guide tells you to store commercially bottled water with your kit, not tap water.{{cite:ready-are-you-ready}} The arithmetic is in {{link:water-math|water math}}.</li> <li><strong>Add food you already eat.</strong> Ready.gov says to store at"
+        },
+        {
+          "sid": "start-ready-food",
+          "source_use_exact": "Several-day non-perishable food; choose foods your family will eat; example items; the swollen/dented can rule; outdoor-only cooking appliances; Ready.gov's two-hour rule.",
+          "occurrences": 8,
+          "first_context": "least a several-day supply of non-perishable food and to choose foods your family will actually eat.{{cite:start-ready-food}}</li> <li><strong>Gather what you already own.</strong> Flashlight, batteries, blankets, a first aid kit, a can opener, a radio, a phon"
+        },
+        {
+          "sid": "start-ready-kit",
+          "source_use_exact": "The Basic Disaster Supplies Kit list and additional items; storing items in airtight bags in one or two easy-to-carry containers; maintenance; home, work and car kits.",
+          "occurrences": 24,
+          "first_context": "first aid kit, a can opener, a radio, a phone charger and sturdy shoes are all on the official list.{{cite:start-ready-kit}} Put them in one place before you buy anything.</li> <li><strong>Cover medicines and papers.</strong> Ask your pharmacist or doctor how "
+        },
+        {
+          "sid": "start-cdc-pyh-prescriptions",
+          "source_use_exact": "Talk to a doctor or pharmacist about an emergency supply; keep a medicine list; no number of days given.",
+          "occurrences": 5,
+          "first_context": "mergency supply of any prescriptions, keep a written list of them, and keep copies of key documents.{{cite:start-cdc-pyh-prescriptions}}{{cite:start-ready-kit}}</li> <li><strong>Put it all in one or two containers</strong> that you can carry, and tell everyone"
+        },
+        {
+          "sid": "start-ready-low-cost",
+          "source_use_exact": "Garage sales and thrift stores for camping gear, tools and cookware; older clothing that fits.",
+          "occurrences": 3,
+          "first_context": "><td>Ready.gov's low-cost material suggests thrift stores and adding older clothing that still fits.{{cite:start-ready-low-cost}}</td></tr> <tr><th scope=\"row\">Tools and shelter</th><td>Wrench or pliers (to turn off utilities); plastic sheeting, scissors and d"
+        },
+        {
+          "sid": "start-ready-financial",
+          "source_use_exact": "Small amounts of cash in small bills; document storage.",
+          "occurrences": 1,
+          "first_context": " financial page suggests a small amount of cash in small bills, because ATMs and cards may not work.{{cite:start-ready-financial}}</td></tr> <tr><th scope=\"row\">Cooking and eating</th><td>Mess kits, paper cups, plates, paper towels and plastic utensils.{{cite:"
+        },
+        {
+          "sid": "start-ready-supply-list",
+          "source_use_exact": "The printable checklist, the 'only a starting point' caveat and the recommendation of one full kit at home plus smaller portable kits elsewhere.",
+          "occurrences": 1,
+          "first_context": "s: one full kit at home, and smaller portable kits at work, in a vehicle or wherever you spend time.{{cite:start-ready-supply-list}} Ready.gov's kit page says the same about work and the car, and suggests being prepared to shelter at work for at least 24 hours"
+        },
+        {
+          "sid": "start-ready-power",
+          "source_use_exact": "Outage effects; refrigerator and freezer holding times; Ready.gov's two-hour food rule and discard-medicine wording (older than FEMA's 2023 sheet); 20-foot generator rule; talk to your provider about how long medicine can be stored warm.",
+          "occurrences": 6,
+          "first_context": "d cold for about four hours, and a full freezer for about 48 hours, according to Ready.gov and FEMA.{{cite:start-ready-power}}{{cite:start-fema-power-sheet}} The USDA's Food Safety and Inspection Service describes two different conditions: a closed refrigerato"
+        },
+        {
+          "sid": "start-fema-power-sheet",
+          "source_use_exact": "FEMA's December 2023 power-outage fact sheet: replace refrigerated medicines after a day or more unless the label says otherwise, call the doctor or pharmacist, use only until a new supply; 4-hour food rule; 20 feet from building openings; no grill, dryer or stove for heat.",
+          "occurrences": 5,
+          "first_context": "s, and a full freezer for about 48 hours, according to Ready.gov and FEMA.{{cite:start-ready-power}}{{cite:start-fema-power-sheet}} The USDA's Food Safety and Inspection Service describes two different conditions: a closed refrigerator keeps food safely cold f"
+        },
+        {
+          "sid": "start-fsis-emergency-food",
+          "source_use_exact": "USDA FSIS: a closed refrigerator keeps food safely cold about 4 hours; perishable food above 40 F for 2 hours should be discarded (two different conditions).",
+          "occurrences": 1,
+          "first_context": "at, poultry, fish, eggs, leftovers) that has itself been above 40°F for 2 hours should be discarded.{{cite:start-fsis-emergency-food}} Ready.gov's food and power-outage pages give the two-hour rule for food above 40°F.{{cite:start-ready-power}}{{cite:start-rea"
+        },
+        {
+          "sid": "start-cdc-power-outage",
+          "source_use_exact": "CDC cross-check of the generator rule: never inside the home, basement or garage, or less than 20 feet from any window, door or vent.",
+          "occurrences": 1,
+          "first_context": "ndow, door or vent, and to use an extension cord long enough to keep the generator at that distance.{{cite:start-cdc-power-outage}} <span class=\"pa-tag pa-tag--ed\">Editor's note</span> Twenty feet is the agencies' stated distance, not a promise of safety. Foll"
+        },
+        {
+          "sid": "start-cdc-infant-checklist",
+          "source_use_exact": "Ready-to-feed formula is the safest formula option; check the kit monthly because babies grow quickly.",
+          "occurrences": 2,
+          "first_context": "a option in an emergency, and asks you to check an infant's kit monthly because babies grow quickly.{{cite:start-cdc-infant-checklist}} More on this is in {{link:go-bags|the go-bag guide}}.</p> <h2 id=\"power\">Light, radio and charging</h2> <p>The official lis"
+        },
+        {
+          "sid": "start-ready-disability",
+          "source_use_exact": "'Several days supply of prescription medicines'; tips for specific disabilities.",
+          "occurrences": 1,
+          "first_context": "\"row\">Ready.gov, people with disabilities</th><td>A \"several days\" supply of prescription medicines.{{cite:start-ready-disability}}</td></tr> <tr><th scope=\"row\">CDC, disability-kit guidance</th><td>At least one week's supply, with a cooler for medicines that "
+        },
+        {
+          "sid": "start-cdc-disability-kit",
+          "source_use_exact": "One week of prescription medication; chargers and batteries for adaptive equipment; check every six months.",
+          "occurrences": 2,
+          "first_context": "it guidance</th><td>At least one week's supply, with a cooler for medicines that need refrigeration.{{cite:start-cdc-disability-kit}}</td></tr> <tr><th scope=\"row\">CDC, pregnancy, infants and children checklist</th><td>At least a two-week supply.{{cite:start-c"
+        },
+        {
+          "sid": "start-cdc-family-kit",
+          "source_use_exact": "The two-week medication figure; essential-items list; additions for infants and young children; check every six months.",
+          "occurrences": 2,
+          "first_context": "r><th scope=\"row\">CDC, pregnancy, infants and children checklist</th><td>At least a two-week supply.{{cite:start-cdc-family-kit}}</td></tr> <tr><th scope=\"row\">American Red Cross, older adults</th><td>At least 30 days of medications, plus extra assistive items"
+        },
+        {
+          "sid": "start-redcross-older-adults",
+          "source_use_exact": "At least 30 days of medications and extra assistive items.",
+          "occurrences": 2,
+          "first_context": "merican Red Cross, older adults</th><td>At least 30 days of medications, plus extra assistive items.{{cite:start-redcross-older-adults}}</td></tr> <tr><th scope=\"row\">CDC, Prepare Your Health</th><td>No number: talk to your doctor or pharmacist about creating "
+        },
+        {
+          "sid": "start-ready-car",
+          "source_use_exact": "The car kit extras and keeping the tank full.",
+          "occurrences": 1,
+          "first_context": "ter or sand for traction) and says to keep the gas tank full in case of evacuation or power outages.{{cite:start-ready-car}}</p> <p>The maintenance steps are short: keep canned food cool and dry, replace expired items, use food before it spoils and replace it "
+        }
+      ]
+    },
+    {
+      "slug": "two-week-water-storage",
+      "n": 4,
+      "origin": "base",
+      "body_git_blob": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+      "metadata_git_blob": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 28,
+      "distinct_citation_ids": 3,
+      "citation_sequence": [
+        "cdc-water-store",
+        "ready-water",
+        "cdc-water-store",
+        "cdc-water-store",
+        "cdc-water-store",
+        "cdc-water-store",
+        "ready-water",
+        "cdc-water-store",
+        "cdc-water-store",
+        "cdc-water-store",
+        "ready-water",
+        "cdc-water-store",
+        "cdc-water-store",
+        "cdc-water-store",
+        "ready-water",
+        "cdc-water-store",
+        "ready-water",
+        "cdc-water-store",
+        "cdc-water-store",
+        "cdc-water-store",
+        "ready-water",
+        "cdc-water-store",
+        "cdc-water-store",
+        "cdc-water-store",
+        "usscm-brenckle-2019",
+        "cdc-water-store",
+        "cdc-water-store",
+        "ready-water"
+      ],
+      "source_claims": [
+        {
+          "sid": "cdc-water-store",
+          "source_use_exact": "Bottled water first; container choice and what to avoid; wash, sanitize, shake, wait, dry, fill; labeling; six-month replacement; temperature range; light and toxin separation; clean scoop; bleach to keep on hand.",
+          "occurrences": 20,
+          "first_context": " its sealed original container, in a cool, dark place, and observe the expiration date on the label.{{cite:cdc-water-store}}{{cite:ready-water}}</li> <li><strong>If you fill your own containers, use food-grade water-storage containers</strong> that have been w"
+        },
+        {
+          "sid": "ready-water",
+          "source_use_exact": "Store commercially bottled water sealed in its original container in a cool, dark place; food-grade containers; sanitizing solution; non-commercial water replaced every six months.",
+          "occurrences": 7,
+          "first_context": "tainer, in a cool, dark place, and observe the expiration date on the label.{{cite:cdc-water-store}}{{cite:ready-water}}</li> <li><strong>If you fill your own containers, use food-grade water-storage containers</strong> that have been washed with soap, rinsed,"
+        },
+        {
+          "sid": "usscm-brenckle-2019",
+          "source_use_exact": "Captain Porter's 1812-13 account of cask cleaning and seasoning for ship's water (history panel only).",
+          "occurrences": 1,
+          "first_context": " small live fish, bred from spawn in a cask filled in the Delaware River, that was pumped out of it.{{cite:usscm-brenckle-2019}}</p></div> <div class=\"pa-now\"><h3>Now: your containers</h3> <p><span class=\"pa-tag pa-tag--fact\">Official guidance</span> Food-grad"
+        }
+      ]
+    },
+    {
+      "slug": "warnings-radios-offline-maps",
+      "n": 19,
+      "origin": "health",
+      "body_git_blob": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+      "metadata_git_blob": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 55,
+      "distinct_citation_ids": 9,
+      "citation_sequence": [
+        "health-ready-alerts",
+        "nws-nwr",
+        "health-ready-kit",
+        "health-fema-ipaws",
+        "health-ready-kit",
+        "health-fcc-comms-tips",
+        "health-fema-ipaws",
+        "health-ready-alerts",
+        "health-ready-alerts",
+        "health-fcc-wea",
+        "health-ready-alerts",
+        "health-ready-alerts",
+        "health-nws-nwr-national",
+        "health-nws-nwr-national",
+        "health-nws-nwr-national",
+        "health-ready-alerts",
+        "health-fema-ipaws",
+        "health-ready-alerts",
+        "health-fcc-wea",
+        "health-ready-alerts",
+        "health-fema-ipaws",
+        "health-ready-alerts",
+        "health-fcc-wea",
+        "health-ready-alerts",
+        "health-fcc-wea",
+        "health-nws-nwr-national",
+        "health-nws-nwr-national",
+        "health-nws-nwr-national",
+        "health-nws-nwr-national",
+        "health-nws-nwr-national",
+        "nws-nwr",
+        "health-ready-disabilities",
+        "health-nws-nwr-national",
+        "health-ready-alerts",
+        "health-ready-alerts",
+        "health-fema-ipaws",
+        "health-ready-alerts",
+        "health-fema-ipaws",
+        "health-ready-alerts",
+        "health-ready-alerts",
+        "health-ready-disabilities",
+        "health-fcc-comms-tips",
+        "health-ready-plan",
+        "health-fcc-comms-tips",
+        "health-ready-kit",
+        "health-ready-plan",
+        "health-ready-kit",
+        "nws-nwr",
+        "health-ready-alerts",
+        "health-ready-plan",
+        "health-nws-nwr-national",
+        "health-ready-alerts",
+        "health-ready-disabilities",
+        "health-nws-nwr-national",
+        "health-ready-alerts"
+      ],
+      "source_claims": [
+        {
+          "sid": "health-ready-alerts",
+          "source_use_exact": "WEA features and troubleshooting; who may send WEAs; EAS description and the 10-minute presidential access; NWR and IPAWS summaries; FEMA App features; children and WEAs.",
+          "occurrences": 18,
+          "first_context": "ire you to turn WEAs on. Some carriers label them \"Government Alerts\" or \"Emergency Alert Messages.\"{{cite:health-ready-alerts}}</li> <li><strong>Get a NOAA Weather Radio.</strong> Look for tone alert, SAME programming for your county, and battery backup.{{cit"
+        },
+        {
+          "sid": "nws-nwr",
+          "source_use_exact": "Three useful receiver features: tone alert, SAME for one county, and battery backup; NWR works with the Emergency Alert System.",
+          "occurrences": 3,
+          "first_context": "A Weather Radio.</strong> Look for tone alert, SAME programming for your county, and battery backup.{{cite:nws-nwr}} FEMA's basic kit lists one with tone alert, plus a separate battery-powered or hand-crank radio.{{cite:health-ready-kit}}</li> <li><strong>Use "
+        },
+        {
+          "sid": "health-ready-kit",
+          "source_use_exact": "Battery-powered or hand-crank radio and NOAA Weather Radio with tone alert; local maps; phone chargers and a backup battery; yearly kit review.",
+          "occurrences": 4,
+          "first_context": "r}} FEMA's basic kit lists one with tone alert, plus a separate battery-powered or hand-crank radio.{{cite:health-ready-kit}}</li> <li><strong>Use more than one channel.</strong> A phone alert, a radio, a TV or radio broadcast and a word from neighbors fail in"
+        },
+        {
+          "sid": "health-fema-ipaws",
+          "source_use_exact": "IPAWS delivers one authenticated message through several pathways; WEA by location even if cellular networks are overloaded; sirens, digital signs and phone networks; more than 2,000 alerting authorities.",
+          "occurrences": 6,
+          "first_context": "in different ways. FEMA's own alerting system sends through several at once for exactly that reason.{{cite:health-fema-ipaws}}</li> <li><strong>Put local paper maps in your kit,</strong> and make sure your phone has a charger and a backup battery.{{cite:health"
+        },
+        {
+          "sid": "health-fcc-comms-tips",
+          "source_use_exact": "Congestion explanation; limit and shorten calls; text first; try several services; wait 10 seconds before redialing; backup power; out-of-area contact; call forwarding; corded phone.",
+          "occurrences": 3,
+          "first_context": "r</strong> if calls will not go through: text first, calls short, and one contact outside your area.{{cite:health-fcc-comms-tips}}</li> </ol> <p class=\"pa-act-note\">An alert tells you to act. It is not a substitute for your local officials' instructions. If a "
+        },
+        {
+          "sid": "health-fcc-wea",
+          "source_use_exact": "WEA is pushed from cell towers by participating carriers; participation is voluntary but regulated; WEA and EAS are the two main components; the 2023 FCC item on delivering alerts during cell tower outages (title only).",
+          "occurrences": 4,
+          "first_context": "rom a participating carrier.{{cite:health-ready-alerts}}</td><td>Carrier participation is voluntary.{{cite:health-fcc-wea}} Older phones may not be capable.{{cite:health-ready-alerts}}</td></tr> <tr><th scope=\"row\">Emergency Alert System (EAS)</th><td>Broadcas"
+        },
+        {
+          "sid": "health-nws-nwr-national",
+          "source_use_exact": "NWR scope, non-weather hazards, over 1,000 transmitters, need for a special receiver, the seven VHF frequencies, station and county listings, live outage list and reasons, weekly-test notice.",
+          "occurrences": 11,
+          "first_context": "<td>Continuous broadcasts from the nearest National Weather Service office on seven VHF frequencies.{{cite:health-nws-nwr-national}}</td><td>A radio made to receive NWR, or a scanner able to pick up its signal.{{cite:health-nws-nwr-national}}</td><td>A transmi"
+        },
+        {
+          "sid": "health-ready-disabilities",
+          "source_use_exact": "Weather radio with text display and flashing alert; hearing-aid batteries; battery lantern; FEMA App alerts for up to five locations; Braille labels and communication devices.",
+          "occurrences": 3,
+          "first_context": "d paper, and a battery-operated lantern so that signing or lip reading remains possible in the dark.{{cite:health-ready-disabilities}}</p> <div class=\"pa-alert pa-alert--note\"><p class=\"pa-alert-title\">Transmitters fail too</p> <p><span class=\"pa-tag pa-tag--"
+        },
+        {
+          "sid": "health-ready-plan",
+          "source_use_exact": "Alerts as the first planning question; evacuation route; family communication plan; meeting place; practice.",
+          "occurrences": 3,
+          "first_context": "r and reconnect if separated, pick a familiar and easy-to-find meeting place, and practice the plan.{{cite:health-ready-plan}} For a full treatment, see the family communication plan guide in this section.</p> <p><span class=\"pa-tag pa-tag--unc\">Uncertain</spa"
+        }
+      ]
+    },
+    {
+      "slug": "water-advisories-explained",
+      "n": 5,
+      "origin": "base",
+      "body_git_blob": "e96486d74731606fdd5a616030f146f66c59e2b0",
+      "metadata_git_blob": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 30,
+      "distinct_citation_ids": 4,
+      "citation_sequence": [
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "epa-emergency-disinfection",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-safe",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-find-clean-water",
+        "cdc-water-safe",
+        "cdc-water-advisories",
+        "cdc-find-clean-water",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories",
+        "cdc-water-advisories"
+      ],
+      "source_claims": [
+        {
+          "sid": "cdc-water-advisories",
+          "source_use_exact": "The three advisory types; what each asks of a household; fridge water and ice; boil even if filtered; infant feeding; hygiene, dishes, laundry, pets and gardens; boiling does not fix chemicals.",
+          "occurrences": 25,
+          "first_context": "ells you what to do. The CDC's central instruction is to follow the recommendations in the advisory.{{cite:cdc-water-advisories}}</li> <li><strong>Boil-water advisory:</strong> use commercially bottled water or boil your tap water at a full rolling boil for 1 "
+        },
+        {
+          "sid": "epa-emergency-disinfection",
+          "source_use_exact": "That local authorities may recommend bottled, boiled or disinfected water until regular service is restored.",
+          "occurrences": 1,
+          "first_context": "rities may then recommend using only bottled, boiled or disinfected water until service is restored.{{cite:epa-emergency-disinfection}}</p> <h2 id=\"three\">The three types, side by side</h2> <p>The CDC identifies three kinds of drinking water advisory.{{cite:c"
+        },
+        {
+          "sid": "cdc-water-safe",
+          "source_use_exact": "Boiling steps and the list of activities to avoid with unsafe water.",
+          "occurrences": 2,
+          "first_context": "s list of water uses to avoid includes making baby formula with water you know or suspect is unsafe.{{cite:cdc-water-safe}} Ask your pediatrician in advance about what to do if the water is not safe.</p> <h3>Hands, bathing and teeth</h3> <p>In many cases you c"
+        },
+        {
+          "sid": "cdc-find-clean-water",
+          "source_use_exact": "That officials may advise shutting off the main water valve, and that fuel- or chemical-contaminated water cannot be made safe.",
+          "occurrences": 2,
+          "first_context": "safe by boiling or disinfecting it, and that you should use bottled water or another source instead.{{cite:cdc-find-clean-water}}{{cite:cdc-water-safe}}</p></div> <h2 id=\"dnu\">Under a do-not-use advisory</h2> <p>This is the strictest and the rarest. Officials"
+        }
+      ]
+    },
+    {
+      "slug": "water-math",
+      "n": 3,
+      "origin": "base",
+      "body_git_blob": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+      "metadata_git_blob": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 33,
+      "distinct_citation_ids": 5,
+      "citation_sequence": [
+        "cdc-water-store",
+        "ready-water",
+        "cdc-water-store",
+        "ready-water",
+        "ready-pets",
+        "cdc-water-store",
+        "ready-water",
+        "cdc-water-store",
+        "ready-water",
+        "ready-water",
+        "cdc-water-store",
+        "ready-water",
+        "ready-water",
+        "ready-water",
+        "ready-water",
+        "cdc-water-store",
+        "cdc-water-store",
+        "ready-pets",
+        "ready-water",
+        "ready-water",
+        "cdc-find-clean-water",
+        "cdc-find-clean-water",
+        "cdc-find-clean-water",
+        "usscm-brenckle-2019",
+        "cdc-water-store",
+        "ready-water",
+        "cdc-water-store",
+        "ready-water",
+        "ready-pets",
+        "cdc-water-store",
+        "cdc-find-clean-water",
+        "cdc-water-store",
+        "ready-water"
+      ],
+      "source_claims": [
+        {
+          "sid": "cdc-water-store",
+          "source_use_exact": "One gallon per person per day for three days; try for two weeks; store more for pregnancy, illness, pets and heat; what the gallon is meant to cover.",
+          "occurrences": 11,
+          "first_context": " gallon of water per person per day, for at least 3 days. It suggests aiming for 2 weeks if you can.{{cite:cdc-water-store}} FEMA's Ready.gov uses the same figure.{{cite:ready-water}}</li> <li><strong>Add on top, don't average down.</strong> Store more if anyo"
+        },
+        {
+          "sid": "ready-water",
+          "source_use_exact": "About three-quarters of a gallon of fluid for a normally active person; individual needs vary; more for children, nursing mothers, sick people, medical emergencies; very hot weather can double needs; do not ration; do not substitute caffeinated or carbonated drinks.",
+          "occurrences": 14,
+          "first_context": "ggests aiming for 2 weeks if you can.{{cite:cdc-water-store}} FEMA's Ready.gov uses the same figure.{{cite:ready-water}}</li> <li><strong>Add on top, don't average down.</strong> Store more if anyone is pregnant, sick, nursing, a young child, or if you live so"
+        },
+        {
+          "sid": "ready-pets",
+          "source_use_exact": "Pets need their own water bowl and several days' supply of water in the pet kit; no quantity is stated.",
+          "occurrences": 3,
+          "first_context": "narian for the quantity. We could not find an official per-animal figure, so we will not invent one.{{cite:ready-pets}}</li> </ol> <p class=\"pa-act-note\">Example: a household of four needs 12 gallons for 3 days and 56 gallons for 14 days, before any additions "
+        },
+        {
+          "sid": "cdc-find-clean-water",
+          "source_use_exact": "Other water found inside the home, and the cautions on each.",
+          "occurrences": 4,
+          "first_context": "DC lists other sources of clean water inside a home if you have no bottled, boiled or treated water:{{cite:cdc-find-clean-water}}</p> <ul> <li>Water from your home's tap water heater tank. The CDC is careful to say this is the tank connected to your faucets an"
+        },
+        {
+          "sid": "usscm-brenckle-2019",
+          "source_use_exact": "The 1802 naval regulation and the documented 1813 daily allotment aboard USS Constitution (history panel only).",
+          "occurrences": 1,
+          "first_context": "t as 250 gallons a day, 280 on pea and rice days, rising to 310 and 340 once grog water was allowed.{{cite:usscm-brenckle-2019}}</p> <p><span class=\"pa-tag pa-tag--ed\">Editor's note</span> Spread over a crew of roughly 450, that is between about half a gallon "
+        }
+      ]
+    },
+    {
+      "slug": "water-purification-through-history",
+      "n": 30,
+      "origin": "hist-home",
+      "body_git_blob": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+      "metadata_git_blob": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+      "authored_publish": "draft",
+      "authored_safety_state": "pending",
+      "qualified_safety_approval_verified": false,
+      "citation_occurrences": 76,
+      "distinct_citation_ids": 14,
+      "citation_sequence": [
+        "cdc-water-hiking",
+        "cdc-water-safe",
+        "nps-purify-water",
+        "cdc-water-safe",
+        "cdc-water-hiking",
+        "nps-purify-water",
+        "hist-home-ayu-water",
+        "hist-home-ayu-water",
+        "hist-home-savours-phipps",
+        "hist-home-savours-phipps",
+        "ready-water",
+        "hist-home-monticello-cisterns",
+        "hist-home-monticello-cisterns",
+        "hist-home-tulchinsky-snow",
+        "hist-home-snow-mode-of-communication",
+        "hist-home-wellcome-snow-map",
+        "hist-home-tulchinsky-snow",
+        "hist-home-tulchinsky-snow",
+        "hist-home-snow-mode-of-communication",
+        "hist-home-snow-mode-of-communication",
+        "hist-home-aim25-chelsea",
+        "hist-home-oregon-slow-sand",
+        "hist-home-aim25-chelsea",
+        "hist-home-oregon-slow-sand",
+        "hist-home-oregon-slow-sand",
+        "hist-home-oregon-slow-sand",
+        "cdc-water-safe",
+        "cdc-water-hiking",
+        "nps-purify-water",
+        "hist-home-cdc-chlorine",
+        "hist-home-cdc-chlorine",
+        "hist-home-cdc-chlorine",
+        "cdc-water-safe",
+        "cdc-water-safe",
+        "cdc-water-hiking",
+        "hist-home-ayu-water",
+        "hist-home-ayu-water",
+        "hist-home-savours-phipps",
+        "cdc-water-safe",
+        "epa-emergency-disinfection",
+        "hist-home-savours-phipps",
+        "ready-water",
+        "hist-home-aim25-chelsea",
+        "hist-home-oregon-slow-sand",
+        "hist-home-oregon-slow-sand",
+        "hist-home-monticello-cisterns",
+        "cdc-water-hiking",
+        "nps-purify-water",
+        "hist-home-cdc-chlorine",
+        "hist-home-cdc-chlorine",
+        "hist-home-tulchinsky-snow",
+        "hist-home-snow-mode-of-communication",
+        "hist-home-wellcome-snow-map",
+        "hist-home-tulchinsky-snow",
+        "hist-home-tulchinsky-snow",
+        "hist-home-aim25-chelsea",
+        "hist-home-monticello-cisterns",
+        "hist-home-ayu-water",
+        "cdc-water-hiking",
+        "nps-purify-water",
+        "cdc-water-safe",
+        "epa-emergency-disinfection",
+        "cdc-water-safe",
+        "epa-emergency-disinfection",
+        "cdc-water-safe",
+        "nps-purify-water",
+        "cdc-water-hiking",
+        "hist-home-ayu-water",
+        "hist-home-oregon-slow-sand",
+        "hist-home-cdc-chlorine",
+        "hist-home-aim25-chelsea",
+        "hist-home-oregon-slow-sand",
+        "hist-home-tulchinsky-snow",
+        "cdc-water-safe",
+        "cdc-water-hiking",
+        "hist-home-cdc-chlorine"
+      ],
+      "source_claims": [
+        {
+          "sid": "cdc-water-hiking",
+          "source_use_exact": "Clear water can carry germs; absolute pore size and NSF 53/58 certification; portable filters do not remove viruses.",
+          "occurrences": 8,
+          "first_context": "arry germs. The CDC says drinking water straight from a clear mountain stream is generally not safe.{{cite:cdc-water-hiking}}</li> <li>If you have to make questionable water safer, use the current CDC methods in {{link:making-water-safer|making water safer in "
+        },
+        {
+          "sid": "cdc-water-safe",
+          "source_use_exact": "Current boiling and disinfection guidance; fuel, toxic chemicals and radioactive material cannot be made safe by boiling or disinfecting; follow a filter with a disinfectant.",
+          "occurrences": 10,
+          "first_context": "ng water safer in an emergency}}. Boiling is the one that every official source we read ranks first.{{cite:cdc-water-safe}}{{cite:nps-purify-water}}</li> <li>A homemade sand or charcoal filter is not a way to make unknown water safe. Nothing at your kitchen ta"
+        },
+        {
+          "sid": "nps-purify-water",
+          "source_use_exact": "Never drink untreated natural water even if clear; filtration alone does not purify.",
+          "occurrences": 6,
+          "first_context": "ergency}}. Boiling is the one that every official source we read ranks first.{{cite:cdc-water-safe}}{{cite:nps-purify-water}}</li> <li>A homemade sand or charcoal filter is not a way to make unknown water safe. Nothing at your kitchen table can show whether it"
+        },
+        {
+          "sid": "hist-home-ayu-water",
+          "source_use_exact": "A Sushruta Samhita flower method as reported by modern authors, and their statement that no standard measure or scientific study exists.",
+          "occurrences": 6,
+          "first_context": "g it after a time.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-ayu-water}} The same authors are candid about the evidence. They write that a standard measure for this method is not known and that a scientif"
+        },
+        {
+          "sid": "hist-home-savours-phipps",
+          "source_use_exact": "Irving's shipboard distilling apparatus on the 1773 Phipps expedition, as quoted in a scholarly account.",
+          "occurrences": 4,
+          "first_context": "ship's provisions.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-savours-phipps}}</p> <p>The same quoted account says the apparatus used no great addition of fuel. We do not repeat the quantity of water given"
+        },
+        {
+          "sid": "ready-water",
+          "source_use_exact": "Distillation described as removing microbes, heavy metals, salts and most other chemicals.",
+          "occurrences": 2,
+          "first_context": "bes distillation in modern terms: it removes microbes, heavy metals, salts and most other chemicals.{{cite:ready-water}} Note \"most,\" not \"all.\" <span class=\"pa-tag pa-tag--ed\">Editor's note</span> Distillation is boiling, with a burn risk and a fuel cost, and"
+        },
+        {
+          "sid": "hist-home-monticello-cisterns",
+          "source_use_exact": "Jefferson's own letter about an intended sand-filter well and the leaking cisterns.",
+          "occurrences": 4,
+          "first_context": "ble to do as yet.\"<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-monticello-cisterns}}</p> <p>It is the plan of an educated man with strong views about water and no way to test the result. Jefferson's phrase "
+        },
+        {
+          "sid": "hist-home-tulchinsky-snow",
+          "source_use_exact": "Snow's Broad Street investigation, the declining epidemic, and the two-water-company comparison.",
+          "occurrences": 7,
+          "first_context": "utbreak describes how he surveyed the households and concluded that the pump's water was the source.{{cite:hist-home-tulchinsky-snow}} In his own account, Snow wrote that the pump handle was \"removed on the following day.\"<span class=\"pa-tag pa-tag--doc\" style"
+        },
+        {
+          "sid": "hist-home-snow-mode-of-communication",
+          "source_use_exact": "Short quoted phrases from Snow's own account.",
+          "occurrences": 4,
+          "first_context": "he following day.\"<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-snow-mode-of-communication}} The Wellcome Collection holds a map from pages 97 to 120 of the Cholera Inquiry Committee's 1855 report to the St "
+        },
+        {
+          "sid": "hist-home-wellcome-snow-map",
+          "source_use_exact": "Archive record of a map and report on the 1854 Soho outbreak.",
+          "occurrences": 2,
+          "first_context": "er supply of Soho.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-wellcome-snow-map}}</p> <p>Two things in that evidence are worth keeping separate from the legend.</p> <p><strong>The handle did not clearly en"
+        },
+        {
+          "sid": "hist-home-aim25-chelsea",
+          "source_use_exact": "Chelsea Waterworks Company history: polluted Thames intake, 1829 slow sand filtration, 1856 filter beds.",
+          "occurrences": 5,
+          "first_context": "iltration in 1829.<span class=\"pa-tag pa-tag--doc\" style=\"margin-left:6px\">Documented history</span>{{cite:hist-home-aim25-chelsea}} An Oregon Health Authority training deck describes this as the first use of slow sand filtration expressly to produce drinking "
+        },
+        {
+          "sid": "hist-home-oregon-slow-sand",
+          "source_use_exact": "Utility-scale slow sand filtration history and conditional performance; the 1852 Metropolis Water Act.",
+          "occurrences": 8,
+          "first_context": "s Cathedral to be filtered.<span class=\"pa-tag pa-tag--unc\" style=\"margin-left:6px\">Uncertain</span>{{cite:hist-home-oregon-slow-sand}} That detail rests on the training deck alone; we did not read the Act. The archive history adds that after that Act the comp"
+        },
+        {
+          "sid": "hist-home-cdc-chlorine",
+          "source_use_exact": "First US use of chlorine in tap water (1908), chloramine (1929), safe levels, byproducts.",
+          "occurrences": 7,
+          "first_context": "utilities first used chlorine to kill germs in tap water in 1908, and first used chloramine in 1929.{{cite:hist-home-cdc-chlorine}} Utilities add low levels of chlorine or chloramine so that germs are killed on the way through the pipes, and the CDC says level"
+        },
+        {
+          "sid": "epa-emergency-disinfection",
+          "source_use_exact": "Boiling or disinfection will not destroy heavy metals, salts and most chemicals.",
+          "occurrences": 3,
+          "first_context": "adioactive material.{{cite:cdc-water-safe}} Does not destroy heavy metals, salts and most chemicals.{{cite:epa-emergency-disinfection}}</td></tr> <tr><th scope=\"row\">Distillation</th><td>Irving's shipboard apparatus, 1773.{{cite:hist-home-savours-phipps}}</td>"
+        }
+      ]
+    }
+  ]
+}
