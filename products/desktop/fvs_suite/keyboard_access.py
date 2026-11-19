@@ -60,24 +60,36 @@ def show_keyboard_help(root, legend: str) -> None:
     """
     content = format_keyboard_help(legend)  # Validate before any Tk side effect.
     existing = getattr(root, "_fvs_help_dialog", None)
+    recovered_focus = None
     if existing is not None:
         try:
             if existing.winfo_exists():
                 existing.lift()
-                # A second F1 must return keyboard control to the help text,
-                # not merely raise the window while focus stays on a form.
                 focus_target = getattr(existing, "_fvs_help_text", None)
-                try:
-                    (focus_target if focus_target is not None else existing).focus_set()
-                except tk.TclError:
-                    pass  # A concurrently destroyed child cannot steal focus.
-                return
+                if focus_target is None:
+                    # Legacy dialogs may not carry a separate text handle.
+                    existing.focus_set()
+                    return
+                if focus_target.winfo_exists():
+                    try:
+                        focus_target.focus_set()
+                    except tk.TclError:
+                        # Keep the live window keyboard-reachable if its child
+                        # loses focus during a Tk/window-manager transition.
+                        existing.focus_set()
+                    return
+                # The window survived but its help Text was destroyed. Do not
+                # keep returning an inaccessible empty window on every F1.
+                recovered_focus = getattr(existing, "_fvs_former_focus", None)
+                existing.destroy()
         except tk.TclError:
-            pass  # The previous help window was destroyed outside this helper.
+            pass  # Stale window or focus race: rebuild a usable help dialog.
 
-    former_focus = root.focus_get()  # Widget identity only; never entry.get().
+    former_focus = (recovered_focus if recovered_focus is not None
+                    else root.focus_get())  # Widget only; never entry.get().
     dialog = tk.Toplevel(root)
     root._fvs_help_dialog = dialog
+    dialog._fvs_former_focus = former_focus
 
     closed = False
 
