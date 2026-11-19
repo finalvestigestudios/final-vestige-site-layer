@@ -101,3 +101,33 @@ class ReviewCustodyTests(unittest.TestCase):
         self.assertNotIn("wordpress_post", SCRIPT.read_text())
 
 
+def create_mutation_tests():
+    mods={}
+    # Fixed manifest and state tampering at every authority boundary.
+    for key, bad in (
+        ("schema","other"),("integration_parent_sha","deadbeef"),
+        ("editorial_review_head_sha","deadbeef"),("editorial_e466_memo_blob","deadbeef"),
+        ("original_blobs",{}),("article_number",99),("tool_number",102),
+        ("tool_102_is_distinct",False),("release","PUBLISHED"),
+        ("may_publish",True),("qualified_qd_pass",True),
+        ("child_medical_advice_approved",True),("child_privacy_verified",True),
+        ("school_pickup_rules_universal",True),("commercial_offer_approved",True),
+        ("fema_pdf_original_publication","2025-06"),("fema_pdf_second_page_checked",True),
+        ("review_only_sources",[]),("decisions",[])
+    ):
+        def f(x,k=key,v=bad):x[4][k]=v
+        mods["manifest_"+key]=f
+    for i in range(3):
+        for key,bad in (("id","wrong"),("published","2026"),("url","https://example.org"),
+                        ("read_scope","unlimited"),("citation_registered",True),
+                        ("review_state","APPROVED")):
+            def f(x,i=i,k=key,v=bad):x[4]["review_only_sources"][i][k]=v
+            mods[f"review_source_{i}_{key}"]=f
+    for i in range(8):
+        for key,bad in (("id","changed"),("state","APPROVED"),("reviewer","self"),
+                        ("evidence","unverified"),("approved_copy","safe"),("owner","AI")):
+            def f(x,i=i,k=key,v=bad):x[4]["decisions"][i][k]=v
+            mods[f"decision_{i}_{key}"]=f
+    for key in ("paid_sku_authenticated","grok_published_asset_matched","realized_net_revenue_verified"):
+        def f(x,k=key):x[4]["commercial_funnel"][k]=True
+        mods["false_commerce_"+key]=f
