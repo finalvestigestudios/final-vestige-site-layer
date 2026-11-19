@@ -15,9 +15,9 @@ page_html='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name
 results={'mode':'local PHP markup injected with Playwright set_content; NOT navigated or hosted WordPress','axe':'HOLD_NOT_RUN: axe-core not installed','lcp':'HOLD_NOT_RUN: no navigation','cls':'HOLD_NOT_RUN: no navigation','cases':[]}
 with sync_playwright() as p:
     browser=p.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox','--disable-background-networking'])
-    for width in (320,390,768,1920):
+    for width in (320,360,390,768,1024,1440,1920):
         for enabled in (False,True):
-            ctx=browser.new_context(viewport={'width':width,'height':860},java_script_enabled=enabled,reduced_motion='reduce',device_scale_factor=1)
+            ctx=browser.new_context(viewport={'width':width,'height':860},java_script_enabled=enabled,reduced_motion='reduce',device_scale_factor=1,has_touch=(width==390))
             page=ctx.new_page()
             errors=[]
             page.on('pageerror',lambda err:errors.append(str(err)))
@@ -30,7 +30,7 @@ with sync_playwright() as p:
             assert page.locator('.fv457__cta a').count()==1
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),f'overflow at {width}'
             if enabled:
-                page.get_by_role('button',name='NASA ID confirmed (4)').click()
+                (page.get_by_role('button',name='NASA ID confirmed (4)').tap() if width==390 else page.get_by_role('button',name='NASA ID confirmed (4)').click())
                 assert page.locator('[data-fv457-card]:visible').count()==4
                 page.get_by_role('button',name='Not in Atlas (3)').click()
                 assert page.locator('[data-fv457-card]:visible').count()==3
@@ -50,4 +50,4 @@ with sync_playwright() as p:
     browser.close()
 results['screenshot_sha256']={path.name:hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted(OUT.glob('*.png'))}
 (OUT/'results.json').write_text(json.dumps(results,indent=2,sort_keys=True)+'\n')
-print('PASS R468 Chromium:',len(results['cases']),'contexts; four widths 320–1920, JS on/off, key navigation, source filters, overflow')
+print('PASS R468 Chromium:',len(results['cases']),'contexts; seven widths 320–1920, JS on/off, tap/keyboard navigation, source filters, overflow')
