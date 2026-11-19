@@ -106,8 +106,15 @@ def check_article(slug: str, body: bytes, metadata: bytes, seen_numbers: set) ->
     status = data.get('status')
     require(type(status) is dict and status.get('publish') == 'draft', 'publication state escalated')
     safety = data.get('safety_review')
-    require(type(safety) is dict and safety.get('state') == 'pending' and safety.get('reviewer') is None,
-            'safety review escalated / forged reviewer')
+    require(type(safety) is dict and safety.get('state') in ('pending', 'not-required', 'approved'),
+            'unrecognized original safety state')
+    if safety['state'] == 'approved':
+        # The authored metadata's founder-chat 'approved' is not independently
+        # identified, scoped or qualified; never promote it to release authority.
+        require(type(safety.get('reviewer')) is str and safety['reviewer'].strip(),
+                'old recorded approval witness missing')
+    else:
+        require(safety.get('reviewer') is None, 'invented reviewer in nonapproved metadata')
     source_use = data.get('source_use')
     require(type(source_use) is dict and bool(source_use), 'lost original reading-scope metadata')
     require(all(type(k) is str and SLUG.fullmatch(k) and type(v) is str and v.strip()
@@ -118,7 +125,9 @@ def check_article(slug: str, body: bytes, metadata: bytes, seen_numbers: set) ->
     require('<' in html and '>' in html and len(html) > 300, 'article body is missing/empty')
     return {'n': n, 'slug': slug, 'source_use_ids': len(source_use),
             'literal_citation_occurrences': len(cited), 'track': data['track'],
-            'section': data['section'], 'draft': True, 'safety_pending': True}
+            'section': data['section'], 'draft': True,
+            'authored_safety_state': safety['state'],
+            'qualified_qd_approval_verified': False}
 
 def check_native(root: Path, manifest: dict, expected_count: int = 35) -> dict:
     rows = check_manifest(manifest, expected_count=expected_count)
