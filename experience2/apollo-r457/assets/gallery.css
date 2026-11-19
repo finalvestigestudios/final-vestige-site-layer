@@ -53,3 +53,9 @@
 @media(max-width:760px){.fv457__evidence-grid{grid-template-columns:1fr}.fv457__evidence-plate{padding:18px}}
 @media(forced-colors:active){.fv457__evidence-plate,.fv457__evidence-question{border:1px solid CanvasText}}
 @media print{.fv457__evidence,.fv457__evidence-plate,.fv457__evidence-question{background:#fff!important;color:#000!important}.fv457__evidence-plate{border:1px solid #000;break-inside:avoid-page}.fv457__evidence-label{color:#000!important}.fv457__evidence-print{display:block!important;color:#000!important;overflow-wrap:anywhere;word-break:break-word;font-size:10pt;border-top:1px solid #555;padding-top:.5em}.fv457__evidence-print a{color:#000!important;text-decoration:underline}}
+
+/* R467: intra-page navigation for long evidence documents; no extra commerce CTA. */
+.fv457__skip{display:inline-block;max-width:100%;padding:.55rem .75rem;margin:0 0 1rem;border:1px solid #bfa476;font-size:.92rem;overflow-wrap:anywhere}
+.fv457__grid:focus{outline:3px solid #ffdb8a;outline-offset:6px}
+@media(forced-colors:active){.fv457__skip{border-color:CanvasText}}
+@media print{.fv457__skip{display:none!important}}

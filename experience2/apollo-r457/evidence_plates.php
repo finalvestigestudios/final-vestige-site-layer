@@ -33,7 +33,7 @@ function fv457_evidence_plates_html(string $instance): string {
   $o.='<p class="fv457__evidence-label">'.fv457_h($p['label']).' · '.fv457_h($p['date']).'</p>';
   $o.='<h4>'.fv457_h($p['claim']).'</h4>';
   $o.='<p><strong>Evidence boundary:</strong> '.fv457_h($p['limit']).'</p>';
-  $o.='<details><summary>Review the official source and custody</summary><p><strong>Record:</strong> '.fv457_h($p['kind']).'</p><p><strong>Reuse:</strong> Source citation only; no NASA photo, insignia, or astronaut likeness licensed for paid use.</p><p><a href="'.fv457_h($p['source']).'" rel="noopener noreferrer">Read the NASA record</a></p></details>';
+  $o.='<details><summary>NASA record and limits — '.fv457_h($p['label']).'</summary><p><strong>Record:</strong> '.fv457_h($p['kind']).'</p><p><strong>Reuse:</strong> Source citation only; no NASA photo, insignia, or astronaut likeness licensed for paid use.</p><p><a href="'.fv457_h($p['source']).'" rel="noopener noreferrer">Read NASA source for '.fv457_h($p['label']).'</a></p></details>';
   $o.='<p class="fv457__evidence-print"><strong>Printable evidence citation:</strong> '.fv457_h($p['kind']).' · <a href="'.fv457_h($p['source']).'" rel="noopener noreferrer">Open NASA source</a> · <strong>URL:</strong> '.fv457_url_label($p['source']).' · <strong>Limitation:</strong> '.fv457_h($p['limit']).'</p>';
   $o.='</li>';
  }
