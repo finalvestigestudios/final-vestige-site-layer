@@ -131,3 +131,37 @@ def create_mutation_tests():
     for key in ("paid_sku_authenticated","grok_published_asset_matched","realized_net_revenue_verified"):
         def f(x,k=key):x[4]["commercial_funnel"][k]=True
         mods["false_commerce_"+key]=f
+    for i in (1,3):
+        for key,bad in (("n",42),("slug","wrong")):
+            def f(x,i=i,k=key,v=bad):x[i][k]=v
+            mods[f"meta_{i}_{key}"]=f
+        for key,bad in (("publish","published"),):
+            def f(x,i=i,k=key,v=bad):x[i]["status"][k]=v
+            mods[f"meta_{i}_status_{key}"]=f
+        for key,bad in (("state","passed"),("reviewer","someone"),("date","2026-11-18")):
+            def f(x,i=i,k=key,v=bad):x[i]["safety_review"][k]=v
+            mods[f"meta_{i}_safety_{key}"]=f
+        for sid in gate.REQUIRED_OLD_IDS:
+            def f(x,i=i,s=sid):x[i]["source_use"].pop(s)
+            mods[f"meta_{i}_missing_{sid}"]=f
+    for i, phrases in ((0,("Keep it on paper, too.","This is our caution, not an agency's.",
+                           "{{link:family-reunification-card|fold-over wallet card}}",
+                           "{{cite:shelter-cdc-reunification}}","{{cite:shelter-ready-plan-form}}")),
+                       (2,("A printed card can be lost","Do not put a child's full name",
+                           "a medical diagnosis or a password on it.",
+                           "First names or nicknames and phone numbers are usually enough.",
+                           "minimal version","School, childcare and care (left off the minimal version)",
+                           "{{cite:shelter-cdc-reunification}}"))):
+        for j,p in enumerate(phrases):
+            def f(x,i=i,p=p):x[i]=x[i].replace(p,"TAMPERED")
+            mods[f"authored_{i}_{j}"]=f
+    for name,mutate in mods.items():
+        def case(self,mutate=mutate):
+            x=setup();mutate(x)
+            with self.assertRaises(gate.Hold):gate.validate_originals(*x)
+        setattr(ReviewCustodyTests,"test_tamper_"+name,case)
+    return len(mods)
+
+CASE_COUNT=create_mutation_tests()
+
+if __name__ == "__main__": unittest.main()
