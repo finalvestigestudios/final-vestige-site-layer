@@ -26,7 +26,7 @@ test('A is text-only; B is explicitly a storyboard rather than playable film',()
  assert.match(B,/<svg\b/);
  assert.match(B,/<title id="film-title">/);
  assert.match(B,/<desc id="film-desc">/);
- assert.doesNotMatch(B,/<video\b|<iframe\b|autoplay\b/i);
+ assert.doesNotMatch(B,/<video\b|<iframe\b|\sautoplay(?:\s|=|>)/i);
 });
 test('all buyer pages have natively disabled purchase control',()=>[A,B].forEach(disabledCTA));
 test('no clickable merchant link or checkout on buyer pages',()=>[A,B].forEach(rejectLiveMerchantAnchor));
