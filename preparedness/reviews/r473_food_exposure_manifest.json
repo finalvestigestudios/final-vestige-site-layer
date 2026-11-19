@@ -1,0 +1,218 @@
+{
+  "schema": "fv-preparedness-r473-food-exposure-review-v1",
+  "article_slug": "safe-jerky-dehydration",
+  "article_number": 11,
+  "release": "DRAFT_HARD_HOLD",
+  "required_exposure_count": 12,
+  "source_version_conflict_open": true,
+  "qualified_qd_pass": false,
+  "medical_or_food_safety_verified": false,
+  "may_publish": false,
+  "e463_original_redline_blob": "5076f3b364a5871b9a347a5837cddc81ee00febf",
+  "e464_source_lineage_blob": "ba97ab12e377e79e6e74cebc92f79382e6512a62",
+  "e464_editorial_head": "2a4a68a644c5ea89ae8a2dd31c988364eb984c58",
+  "original_body_blob": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+  "original_metadata_blob": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+  "source_versions": [
+    {
+      "id": "uga_2011",
+      "name": "UGA Cooperative Extension original Preparing Safer Jerky",
+      "published": "2011-03",
+      "url": "https://nchfp.uga.edu/papers/UGA_Publications/prep_safe_jerky.pdf",
+      "species_scope": "pork_and_wild_game_grouped",
+      "type": "historical_not_universal_instruction",
+      "review_state": "conflict_open"
+    },
+    {
+      "id": "nchfp_2014",
+      "name": "NCHFP So Easy to Preserve 6th edition jerky",
+      "published": "2014",
+      "url": "https://nchfp.uga.edu/how/dry/meat-and-poultry/jerky/",
+      "species_scope": "pork_and_wild_game_grouped",
+      "type": "historical_not_universal_instruction",
+      "review_state": "conflict_open"
+    },
+    {
+      "id": "cdc_2024",
+      "name": "CDC trichinellosis prevention",
+      "published": "2024-03-12",
+      "url": "https://www.cdc.gov/trichinellosis/prevention/index.html",
+      "species_scope": "pork_example_wild_game_freeze_resistance",
+      "type": "public_health_scope_caution",
+      "review_state": "conflict_open"
+    },
+    {
+      "id": "fsis_2025",
+      "name": "USDA FSIS on home freezing",
+      "published": "2025-02-03",
+      "url": "https://ask.fsis.usda.gov/article/Does-freezing-destroy-parasites",
+      "species_scope": "home_freezing_not_reliable_for_trichina",
+      "type": "public_health_scope_caution",
+      "review_state": "conflict_open"
+    },
+    {
+      "id": "cdc_mmwr_2024",
+      "name": "CDC freeze-resistant T. nativa bear meat outbreak",
+      "published": "2024-05-23",
+      "url": "https://www.cdc.gov/mmwr/volumes/73/wr/mm7320a2.htm",
+      "species_scope": "bear_meat_outbreak_not_jerky_case",
+      "type": "case_evidence_not_universal_schedule",
+      "review_state": "conflict_open"
+    },
+    {
+      "id": "cdc_eid_2026",
+      "name": "CDC 2026 bear jerky report",
+      "published": "2026-06-24",
+      "url": "https://wwwnc.cdc.gov/eid/article/32/7/26-0062_article",
+      "species_scope": "unfrozen_jerky_case_not_home_freezer_test",
+      "type": "case_evidence_not_universal_schedule",
+      "review_state": "conflict_open"
+    }
+  ],
+  "exposures": [
+    {
+      "id": "freezer_lead",
+      "locator": "action-list",
+      "review_question": "Wild-game freezing schedule in opening action list",
+      "priority": "P0",
+      "authored_source_id": "nchfp-jerky",
+      "review_state": "UNADJUDICATED",
+      "qualified_reviewer": null,
+      "review_date": null,
+      "approved_replacement": null,
+      "decision_evidence": null
+    },
+    {
+      "id": "freezer_table",
+      "locator": "hazard-table",
+      "review_question": "Wild-game freezing schedule in Trichinella hazard row",
+      "priority": "P0",
+      "authored_source_id": "nchfp-jerky",
+      "review_state": "UNADJUDICATED",
+      "qualified_reviewer": null,
+      "review_date": null,
+      "approved_replacement": null,
+      "decision_evidence": null
+    },
+    {
+      "id": "heat_action",
+      "locator": "act-now",
+      "review_question": "Abbreviated heat and internal-temperature instruction",
+      "priority": "P0",
+      "authored_source_id": "food-fsis-jerky-qa",
+      "review_state": "UNADJUDICATED",
+      "qualified_reviewer": null,
+      "review_date": null,
+      "approved_replacement": null,
+      "decision_evidence": null
+    },
+    {
+      "id": "method_table",
+      "locator": "methods",
+      "review_question": "Three source methods with missing contextual constraints",
+      "priority": "P0",
+      "authored_source_id": "nchfp-jerky",
+      "review_state": "UNADJUDICATED",
+      "qualified_reviewer": null,
+      "review_date": null,
+      "approved_replacement": null,
+      "decision_evidence": null
+    },
+    {
+      "id": "method_preference",
+      "locator": "methods-editorial",
+      "review_question": "Editorial selection of a preferred procedure",
+      "priority": "P0",
+      "authored_source_id": "food-fsis-jerky",
+      "review_state": "UNADJUDICATED",
+      "qualified_reviewer": null,
+      "review_date": null,
+      "approved_replacement": null,
+      "decision_evidence": null
+    },
+    {
+      "id": "equipment_procedure",
+      "locator": "equipment",
+      "review_question": "Procedural bullet for home dehydrator or oven",
+      "priority": "P1",
+      "authored_source_id": "food-fsis-jerky",
+      "review_state": "UNADJUDICATED",
+      "qualified_reviewer": null,
+      "review_date": null,
+      "approved_replacement": null,
+      "decision_evidence": null
+    },
+    {
+      "id": "eight_step_recipe",
+      "locator": "handling",
+      "review_question": "Sequential eight-step processing list",
+      "priority": "P0",
+      "authored_source_id": "food-fsis-jerky-qa",
+      "review_state": "UNADJUDICATED",
+      "qualified_reviewer": null,
+      "review_date": null,
+      "approved_replacement": null,
+      "decision_evidence": null
+    },
+    {
+      "id": "shelf_life",
+      "locator": "storage-table",
+      "review_question": "Conflicting household room-temperature storage durations",
+      "priority": "P0",
+      "authored_source_id": "nchfp-jerky",
+      "review_state": "UNADJUDICATED",
+      "qualified_reviewer": null,
+      "review_date": null,
+      "approved_replacement": null,
+      "decision_evidence": null
+    },
+    {
+      "id": "storage_preference",
+      "locator": "storage-editorial",
+      "review_question": "Editorial choice of shortest storage time",
+      "priority": "P0",
+      "authored_source_id": "nchfp-jerky",
+      "review_state": "UNADJUDICATED",
+      "qualified_reviewer": null,
+      "review_date": null,
+      "approved_replacement": null,
+      "decision_evidence": null
+    },
+    {
+      "id": "vacuum_safety",
+      "locator": "storage-packaging",
+      "review_question": "Unsupported vacuum/cold packaging safety implication",
+      "priority": "P0",
+      "authored_source_id": "food-osu-survival-food",
+      "review_state": "UNADJUDICATED",
+      "qualified_reviewer": null,
+      "review_date": null,
+      "approved_replacement": null,
+      "decision_evidence": null
+    },
+    {
+      "id": "commercial_shelf",
+      "locator": "household",
+      "review_question": "Unqualified commercial-jerky product shelf-life claim",
+      "priority": "P1",
+      "authored_source_id": "food-fsis-jerky",
+      "review_state": "UNADJUDICATED",
+      "qualified_reviewer": null,
+      "review_date": null,
+      "approved_replacement": null,
+      "decision_evidence": null
+    },
+    {
+      "id": "universal_verified",
+      "locator": "limits",
+      "review_question": "Statement implying all instructions independently verified",
+      "priority": "P0",
+      "authored_source_id": "food-fsis-jerky",
+      "review_state": "UNADJUDICATED",
+      "qualified_reviewer": null,
+      "review_date": null,
+      "approved_replacement": null,
+      "decision_evidence": null
+    }
+  ]
+}
