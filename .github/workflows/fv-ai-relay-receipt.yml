@@ -12,9 +12,7 @@ permissions:
 
 jobs:
   acknowledge:
-    if: >-
-      ${{ github.event.issue.number == 3090 &&
-          github.event.comment.user.login == 'finalvestigestudios' }}
+    if: ${{ github.event.issue.number == 3090 }}
     runs-on: ubuntu-latest
     timeout-minutes: 3
     env:
@@ -27,6 +25,14 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const body = context.payload.comment.body || '';
+            const sender = context.payload.comment.user?.login || '';
+            const allowlisted = new Set(['finalvestigestudios',
+              process.env.FV_CLAUDE_GH_USER || '',
+              process.env.FV_GROK_GH_USER || ''].filter(Boolean));
+            if (!allowlisted.has(sender)) {
+              core.info('Unverified public author ignored; no receipt or action.');
+              return;
+            }
             const blocks = [...body.matchAll(/```json\s*([\s\S]*?)```/gi)];
             const validActors = ['claude','grok','chatgpt','praxxis','founder'];
             const validNext = ['claude','grok','chatgpt','praxxis','founder','none'];
@@ -40,6 +46,14 @@ jobs:
                 if (!/^FV-[0-9]{8}-[a-z0-9-]{3,64}$/.test(x.event_id || '')) continue;
                 if (!/^[a-z0-9_-]{3,90}$/.test(x.campaign_id || '')) continue;
                 if (!validActors.includes(x.actor) || !validNext.includes(x.next_owner)) continue;
+                // Outside the owner's account, the claimed actor must match the verified sender.
+                if (sender !== 'finalvestigestudios') {
+                  const assignedRole = sender === (process.env.FV_CLAUDE_GH_USER || '')
+                    ? 'claude'
+                    : sender === (process.env.FV_GROK_GH_USER || '')
+                      ? 'grok' : null;
+                  if (x.actor !== assignedRole) continue;
+                }
                 if (!validActions.includes(x.action) || !validStatuses.includes(x.status)) continue;
                 event = x;
                 break;
