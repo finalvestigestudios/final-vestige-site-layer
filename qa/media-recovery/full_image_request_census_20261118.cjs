@@ -1,6 +1,7 @@
 'use strict';
 // Supplement to #154's existing browser collector and image-wire inline gate.
 // No network, WordPress, download, rewriting, or publication side effects.
+const {MANIFEST_SHA256,verifyCapture}=require('./cohort_manifest_guard_20261118.cjs');
 const https=u=>typeof u==='string'&&/^https:\/\/[^/?#\s]+(?:[/?#]|$)/.test(u);
 const safe=n=>Number.isSafeInteger(n)&&n>=0;
 const okHash=s=>typeof s==='string'&&/^[a-f0-9]{64}$/.test(s);
@@ -15,6 +16,7 @@ function evaluateTotalImageWire(inline, full){
  if(!['historic-61','current-66'].includes(cohort)||full.cohort_id!==cohort||
     !okHash(inline.manifest_sha256)||full.manifest_sha256!==inline.manifest_sha256)
    add('cohort_or_manifest');
+ if(inline.manifest_sha256!==MANIFEST_SHA256)add('untrusted_manifest_snapshot');
  const expected=cohort==='historic-61'?61:cohort==='current-66'?66:0;
  for(const device of ['desktop','mobile']){
    totals[device]={before_bytes:0,after_bytes:0,other_image_requests_before:0,
@@ -26,6 +28,7 @@ function evaluateTotalImageWire(inline, full){
         c.pages.length!==expected||n.pages.length!==expected||
         !okHash(c.trace_sha256)||n.trace_sha256!==c.trace_sha256||
         n.trace_evidence_url!==c.trace_evidence_url){add(tag+':capture_or_trace');continue;}
+     for(const issue of verifyCapture(c,cohort))add(tag+':pinned_cohort_'+issue);
      const official=new Map();
      for(const page of c.pages){
        const k=String(page?.post_id??'');
