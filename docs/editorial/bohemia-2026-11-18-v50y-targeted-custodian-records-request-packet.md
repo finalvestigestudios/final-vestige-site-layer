@@ -1,11 +1,19 @@
 # Bohemia Spillway — targeted custodian records packet
-*Final Vestige Studios Investigations · v50y · 18 November 2026 · drafted only, NOT SENT · no costs incurred*
+*Final Vestige Studios Investigations · v50ab addendum to v50y · 18 November 2026 · drafted only, NOT SENT · no costs incurred*
 
 ## Evidence to reconcile
 
 The Lakefront Management Authority (LMA) amended September 24, 2026 board agenda describes a September 3 Beacon Land Management LLC proposal for approximately 394 acres in Section 28 T18S R15E and 267 acres in Section 18 T18S R16E in the Bohemia Spillway. Louisiana's public December 9 lease-sale register lists Plaquemines State Agency Tracts **46175 (394 acres)** and **46176 (267 acres)**. The acreage match is a candidate lead only; parcel identity and actual September LMA authorization are unverified. State Agency Tract **46177 (640 acres)** is a separate listed tract, not assumed part of the pair. The December sale is still in the future. [LMA agenda](https://nolalakefront.com/wp-content/uploads/2026/09/AMENDED-Regular-Board-Meeting-Agenda__SEPTEMBER-24-2026final003.pdf) · [state register](https://sonlite.dnr.state.la.us/ords/r/sonris_pub/ucm_customsearches/lease-sale-date-tracts).
 
 **Access and cost rule:** State SONRIS tract-detail links redirected to a CAPTCHA and terms prohibiting automated extraction. No bypass or paid subscription. The official [Request for Copies form](https://www.denr.louisiana.gov/assets/docs/mineral/formspubs/RequestForCopiesForm.pdf) warns that some copies carry fees. Seek existing digital records, obtain fee estimates in advance, and do not order charged copies without authorization. No request has been transmitted.
+
+## v50ab addendum — bid area and executed-instrument test (not sent)
+
+An important correction to any future records request: **advertised acres may differ from awarded or executed lease acres**. [Louisiana R.S. 30:127(A), (C), and (D)](https://www.legis.la.gov/legis/Law.aspx?d=86943) permits portion bids and awards of less acreage than advertised, while requiring accurate legal descriptions in leases. The [official December 2026 notice](https://www.dce.louisiana.gov/page/mineral-and-energy-board-notice-of-publication) provides for competing **overlapping portion bids** and a deadline for the successful bidder's signed instrument. This is the general procedure, not evidence about any actual 46175/46176 bid.
+
+**Supplement Request 2 with existing records, separately for Tracts 46175, 46176 and, only if documentary links justify it, 46177:** the original nomination with section/township/range and plat; published *full legal description*; every full-tract or portion bid with bidder identities, per-acre and total bonus offer, proposed royalty and attached metes-and-bounds polygon; any overlapping-bid priority/withdrawal calculation; bid-tabulation sheet; conditional acceptance and prospective-leaseholder registration record; signed board resolution accepting, modifying or rejecting each bid; the board-executed and lessee-executed lease and effective date; final acreage, lease number and any amended plat; fee/bonus clearing and payee/distribution records. If no bids, awards or contracts exist because the scheduled **December 9, 2026 sale has not occurred**, defer those requests until after that date rather than ask for nonexistent results.
+
+**Verification matrix required before public claims:** for each tract, maintain columns for *advertised acreage*, *nominated parcel geometry*, *accepted bid geometry*, *board-awarded acreage*, *final executed leased acreage*, *mineral interest represented*, *accepted bonus and contractual royalty rate*, *operator/lease number*, and *post-execution production, division-of-interest and remittances*. Put **NOT VERIFIED** in empty cells rather than copy forward the earlier acreage. No automatic multiplication of 394 + 267 into contracted area; no multiplication of area by a 1/8 royalty to imply dollars. Do not link the two tracts to Eusan Tract 78 without a separately supported legal crosswalk.
 
 ## Request 1 — Lakefront Management Authority / Orleans Levee District custodian
 
