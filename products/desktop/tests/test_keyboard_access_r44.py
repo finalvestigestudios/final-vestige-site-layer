@@ -570,6 +570,134 @@ class R532KeyboardHelpWindow(unittest.TestCase):
         self.root.get.assert_not_called()
 
 
+    # R534: a Tk Toplevel may outlive its child Text widget. Repeated F1
+    # must never leave keyboard users inside an empty, unreadable dialog.
+    def test_r534_destroyed_help_text_rebuilds_window(self):
+        self.open()
+        successor = MagicMock()
+        self.constructors[0].return_value = successor
+        self.ins.winfo_exists.return_value = False
+        self.open()
+        self.assertEqual(self.constructors[0].call_count, 2)
+        self.dialog.destroy.assert_called_once()
+        self.assertIs(self.root._fvs_help_dialog, successor)
+        self.assertIs(successor._fvs_former_focus, self.previous)
+
+    def test_r534_recovery_preserves_original_form_focus(self):
+        self.open()
+        successor = MagicMock()
+        self.constructors[0].return_value = successor
+        newer_focus = MagicMock()
+        self.root.focus_get.return_value = newer_focus
+        self.ins.winfo_exists.return_value = False
+        self.open()
+        self.assertIs(successor._fvs_former_focus, self.previous)
+        self.root.focus_get.assert_called_once()
+
+    def test_r534_child_focus_error_falls_back_to_dialog(self):
+        self.open()
+        self.ins.focus_set.reset_mock()
+        self.ins.focus_set.side_effect = help_module.tk.TclError()
+        self.dialog.winfo_exists.return_value = True
+        self.open()
+        self.dialog.focus_set.assert_called_once()
+        self.assertEqual(self.constructors[0].call_count, 1)
+
+    def test_r534_stale_text_status_exception_rebuilds(self):
+        self.open()
+        self.ins.winfo_exists.side_effect = help_module.tk.TclError()
+        self.open()
+        self.assertEqual(self.constructors[0].call_count, 2)
+        self.root.get.assert_not_called()
+
+    def test_r534_destroy_race_fails_safe_and_rebuilds(self):
+        self.open()
+        self.ins.winfo_exists.return_value = False
+        self.dialog.destroy.side_effect = help_module.tk.TclError()
+        self.open()
+        self.assertEqual(self.constructors[0].call_count, 2)
+        self.assertIsNotNone(self.root._fvs_help_dialog)
+
+
+    def test_r534_failed_raise_destroys_orphan_before_rebuild(self):
+        self.open()
+        self.dialog.winfo_exists.return_value = True
+        self.dialog.lift.side_effect = help_module.tk.TclError()
+        successor = MagicMock()
+        self.constructors[0].return_value = successor
+        self.open()
+        self.dialog.destroy.assert_called_once()
+        self.assertIs(self.root._fvs_help_dialog, successor)
+        self.assertIs(successor._fvs_former_focus, self.previous)
+
+
+class R534NativeTkHelpRecovery(unittest.TestCase):
+    """Real Tk recovery on a display; skip instead of faking GUI availability."""
+    LEGEND = (
+        "Keyboard: Alt+1 focus input; Ctrl+1 browse file; "
+        "Alt+G generate report; F1 opens help"
+    )
+
+    def setUp(self):
+        try:
+            self.root = help_module.tk.Tk()
+        except help_module.tk.TclError:
+            self.skipTest("No native Tk display available")
+        self.addCleanup(self.root.destroy)
+        self.entry = help_module.ttk.Entry(self.root)
+        self.entry.pack()
+        self.root.update()
+        self.root.focus_force()
+        self.entry.focus_set()
+        self.root.update()
+
+    def open(self):
+        show_keyboard_help(self.root, self.LEGEND)
+        self.root.update()
+        return self.root._fvs_help_dialog
+
+    def test_r534_native_destroyed_child_recreates_text(self):
+        previous = self.open()
+        previous._fvs_help_text.destroy()
+        self.root.update()
+        successor = self.open()
+        self.assertIsNot(successor, previous)
+        self.assertFalse(previous.winfo_exists())
+        self.assertTrue(successor._fvs_help_text.winfo_exists())
+        self.assertEqual(successor._fvs_help_text.cget("state"), "disabled")
+
+    def test_r534_native_recreate_carries_original_focus(self):
+        previous = self.open()
+        self.assertIs(previous._fvs_former_focus, self.entry)
+        previous._fvs_help_text.destroy()
+        self.root.update()
+        successor = self.open()
+        self.assertIs(successor._fvs_former_focus, self.entry)
+
+    def test_r534_native_second_f1_does_not_duplicate_window(self):
+        previous = self.open()
+        self.entry.focus_set()
+        self.root.update()
+        self.assertIs(self.open(), previous)
+
+    def test_r534_native_failed_lift_replaces_old_window(self):
+        previous = self.open()
+        def fail_lift():
+            raise help_module.tk.TclError()
+        previous.lift = fail_lift
+        successor = self.open()
+        self.assertIsNot(successor, previous)
+        self.assertFalse(previous.winfo_exists())
+        self.assertIs(successor._fvs_former_focus, self.entry)
+
+    def test_r534_native_rejects_bad_text_before_constructing(self):
+        with self.assertRaises(ValueError):
+            show_keyboard_help(self.root, "Keyboard: malformed")
+        self.assertIsNone(getattr(self.root, "_fvs_help_dialog", None))
+
+
+
+
 
 if __name__ == "__main__":
     unittest.main()
