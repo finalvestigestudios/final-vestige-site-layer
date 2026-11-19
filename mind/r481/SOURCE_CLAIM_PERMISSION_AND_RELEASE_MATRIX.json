@@ -1,0 +1,489 @@
+{
+  "matrix_version": "R481-2026-11-18",
+  "scope": "UNPUBLISHED independent Mind and Zen12 research",
+  "data_as_of": "2026-11-18",
+  "evidence_policy": "Source records verify only what they specifically support; inaccessible full texts are not treated as read.",
+  "account_status": "REFERSION PENDING notice 2026-08-24; NO account-specific approved affiliate terms, URL or commissions verified in targeted Gmail search.",
+  "revenue_status": "NOT COMPUTABLE; no matched qualified-human denominator or authenticated settled commission",
+  "sources": {
+    "thompson1980": "https://doi.org/10.1068/p090483",
+    "thompson2017": "https://doi.org/10.1093/acprof:oso/9780199794607.003.0091",
+    "wong2010": "https://doi.org/10.1068/p6659",
+    "lobmaier2007": "https://doi.org/10.1068/p5508",
+    "psalta2013": "https://doi.org/10.1177/0956797613501521",
+    "puységur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/",
+    "archive": "https://finalvestige.com/archive/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "inspire3": "https://inspire3.com/",
+    "zen12_about": "https://zen12.com/about",
+    "zen12_standard": "https://zen12.com/",
+    "zen12_promo": "https://zen12.com/secret/",
+    "affiliate_public": "https://affiliates.inspire3.com/",
+    "ftc_endorsements": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "binaural_review": "https://doi.org/10.1371/journal.pone.0286023"
+  },
+  "claim_decisions": [
+    {
+      "id": "P01",
+      "claim": "Thompson first reported Thatcher illusion in Perception in 1980",
+      "source_ids": [
+        "thompson1980"
+      ],
+      "status": "bibliographic-verified",
+      "approved_public_copy": "yes, qualified",
+      "note": "Full original article restricted; no fabricated direct quotes"
+    },
+    {
+      "id": "P02",
+      "claim": "Local eye/mouth inversion can look less conspicuous when entire face is inverted",
+      "source_ids": [
+        "thompson2017",
+        "wong2010"
+      ],
+      "status": "supported-abstract",
+      "approved_public_copy": "yes, conditional",
+      "note": "Do not assert every viewer sees identical effect"
+    },
+    {
+      "id": "P03",
+      "claim": "The illusion uniquely proves a specialized face-only mechanism",
+      "source_ids": [
+        "wong2010"
+      ],
+      "status": "contradicted-by-nonface-tests",
+      "approved_public_copy": "no",
+      "note": "2010 tests included buildings, bicycles, cars, letter strings"
+    },
+    {
+      "id": "P04",
+      "claim": "2007 study rotated observers on a 3D turntable at 0,45,90,135,180 degrees",
+      "source_ids": [
+        "lobmaier2007"
+      ],
+      "status": "supported-abstract",
+      "approved_public_copy": "yes",
+      "note": "Do not invent numeric outcome"
+    },
+    {
+      "id": "P05",
+      "claim": "2013 imaging found orientation-dependent adaptation effects in superior temporal sulcus",
+      "source_ids": [
+        "psalta2013"
+      ],
+      "status": "supported-abstract",
+      "approved_public_copy": "yes, limited",
+      "note": "Not a universal brain center"
+    },
+    {
+      "id": "P06",
+      "claim": "Thatcher illusion proves hypnosis, animal magnetism or meditation effectiveness",
+      "source_ids": [
+        "thompson2017"
+      ],
+      "status": "unsupported",
+      "approved_public_copy": "no",
+      "note": "No valid causal bridge"
+    },
+    {
+      "id": "P07",
+      "claim": "Puységur archive preserves testimony and failed predictions",
+      "source_ids": [
+        "puységur"
+      ],
+      "status": "verified-live-archive",
+      "approved_public_copy": "yes",
+      "note": "Historical record, not confirmation of magnetism"
+    },
+    {
+      "id": "P08",
+      "claim": "Current Focus Fieldbook is free and 52 pages",
+      "source_ids": [
+        "focus"
+      ],
+      "status": "verified-live-route",
+      "approved_public_copy": "yes",
+      "note": "Preserve existing single Jetpack flow"
+    },
+    {
+      "id": "P09",
+      "claim": "The legacy archive lists multiple published theme categories",
+      "source_ids": [
+        "archive"
+      ],
+      "status": "verified-live-route",
+      "approved_public_copy": "yes",
+      "note": "Do not infer counts always static"
+    },
+    {
+      "id": "P10",
+      "claim": "Zen12 seller describes 12-minute audio sessions",
+      "source_ids": [
+        "zen12_about"
+      ],
+      "status": "seller-format-claim",
+      "approved_public_copy": "as seller description",
+      "note": "Not proof of benefits"
+    },
+    {
+      "id": "P11",
+      "claim": "Zen12 seller describes 12 levels and four styles",
+      "source_ids": [
+        "zen12_about"
+      ],
+      "status": "seller-format-claim",
+      "approved_public_copy": "as seller description",
+      "note": "Exact SKU may differ"
+    },
+    {
+      "id": "P12",
+      "claim": "Zen12 produces one hour of meditation benefits in twelve minutes",
+      "source_ids": [
+        "zen12_standard"
+      ],
+      "status": "seller-efficacy-unsubstantiated",
+      "approved_public_copy": "no",
+      "note": "No independent product-specific clinical comparison"
+    },
+    {
+      "id": "P13",
+      "claim": "Brainwave sounds automatically shift brainwaves and relieve anxiety",
+      "source_ids": [
+        "zen12_standard"
+      ],
+      "status": "seller-efficacy-unsubstantiated",
+      "approved_public_copy": "no",
+      "note": "Requires competent reliable scientific evidence"
+    },
+    {
+      "id": "P14",
+      "claim": "All 12 Zen12 levels are included in any purchase",
+      "source_ids": [
+        "zen12_standard"
+      ],
+      "status": "unverified-sku",
+      "approved_public_copy": "no",
+      "note": "Offer packages differ: obtain exact SKU"
+    },
+    {
+      "id": "P15",
+      "claim": "A promotional discount/coupon/countdown is valid for FV audience",
+      "source_ids": [
+        "zen12_promo"
+      ],
+      "status": "unverified-time-sensitive",
+      "approved_public_copy": "no",
+      "note": "Never inherit dynamic offer"
+    },
+    {
+      "id": "P16",
+      "claim": "A specific current price, tax, charge, guarantee or refund is verified",
+      "source_ids": [
+        "zen12_standard"
+      ],
+      "status": "unverified-live-checkout",
+      "approved_public_copy": "no",
+      "note": "Needs verified checkout/policy and date"
+    },
+    {
+      "id": "P17",
+      "claim": "2023 binaural-beat EEG systematic review found inconsistent evidence",
+      "source_ids": [
+        "binaural_review"
+      ],
+      "status": "independent-evidence-review",
+      "approved_public_copy": "yes, limited",
+      "note": "Not a trial of Zen12; distinguish EEG entrainment from consumer outcomes"
+    },
+    {
+      "id": "P18",
+      "claim": "Zen12 medical benefit inferred from general meditation studies",
+      "source_ids": [
+        "ftc_health"
+      ],
+      "status": "unsupported-inference",
+      "approved_public_copy": "no",
+      "note": "General practice research is not product-specific support"
+    },
+    {
+      "id": "P19",
+      "claim": "FV has active authorized Inspire3 earning link",
+      "source_ids": [
+        "affiliate_public"
+      ],
+      "status": "no-account-specific-evidence",
+      "approved_public_copy": "no",
+      "note": "Public signup page not named partner approval"
+    },
+    {
+      "id": "P20",
+      "claim": "FV has approved TikTok/YouTube/email affiliate promotion permissions",
+      "source_ids": [
+        "affiliate_public"
+      ],
+      "status": "no-account-specific-evidence",
+      "approved_public_copy": "no",
+      "note": "Need signed partner channel terms"
+    },
+    {
+      "id": "P21",
+      "claim": "Published affiliate recommendations must disclose material connection close to link",
+      "source_ids": [
+        "ftc_endorsements"
+      ],
+      "status": "guidance-supported",
+      "approved_public_copy": "yes",
+      "note": "Adjacent readable disclosure, no CSS hiding"
+    },
+    {
+      "id": "P22",
+      "claim": "FTCs guidance requires substantiation for express and implied health claims",
+      "source_ids": [
+        "ftc_health"
+      ],
+      "status": "guidance-supported",
+      "approved_public_copy": "yes",
+      "note": "Removing a disclaimer cannot rescue misleading main claim"
+    },
+    {
+      "id": "P23",
+      "claim": "An outbound_click event confirms an affiliate sale",
+      "source_ids": [
+        "affiliate_public"
+      ],
+      "status": "false-metric",
+      "approved_public_copy": "no",
+      "note": "Only seller-confirmed settlement can support paid affiliate conversion"
+    },
+    {
+      "id": "P24",
+      "claim": "The Focus Fieldbook is a paid SKU",
+      "source_ids": [
+        "focus"
+      ],
+      "status": "false-current-offer",
+      "approved_public_copy": "no",
+      "note": "Explicitly free at live page"
+    },
+    {
+      "id": "P25",
+      "claim": "A source-controlled but unpublished /mind/ route is live",
+      "source_ids": [
+        "archive"
+      ],
+      "status": "unverified",
+      "approved_public_copy": "no",
+      "note": "Do not direct social traffic to hypothetical URL"
+    },
+    {
+      "id": "P26",
+      "claim": "Adding optional video is guaranteed to improve conversion",
+      "source_ids": [
+        "ftc_endorsements"
+      ],
+      "status": "unsubstantiated-experiment",
+      "approved_public_copy": "no",
+      "note": "A/B test only after merchant eligibility and browser QA"
+    },
+    {
+      "id": "P27",
+      "claim": "Inspire3 listing includes Hypnosis Live among its brands",
+      "source_ids": [
+        "inspire3"
+      ],
+      "status": "verified-seller-catalog",
+      "approved_public_copy": "as merchant catalog description",
+      "note": "No clinical endorsement; exact product page required before presell"
+    },
+    {
+      "id": "P28",
+      "claim": "The public affiliate page advertises potential payout percentages",
+      "source_ids": [
+        "affiliate_public"
+      ],
+      "status": "seller-network-marketing-only",
+      "approved_public_copy": "no",
+      "note": "Not FV's executed agreement or revenue"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "required": "Named Final Vestige account approval by Inspire3",
+      "owner": "founder-commerce",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G02",
+      "required": "Exact Zen12 approved SKU and trackable earning URL",
+      "owner": "founder-commerce",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G03",
+      "required": "Written allowed TikTok/YouTube/email/site channels",
+      "owner": "founder-commerce",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G04",
+      "required": "Verified current checkout total, taxes and currency",
+      "owner": "founder-commerce",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G05",
+      "required": "Verified refunds/subscription/payment processor and delivery",
+      "owner": "founder-commerce",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G06",
+      "required": "Affiliate disclosure immediately beside earning CTA",
+      "owner": "mind-siteqa",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G07",
+      "required": "Independent claim-to-science match; health and cognitive claims removed unless proven",
+      "owner": "mind-siteqa",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G08",
+      "required": "No fabricated endorsements or first-person trials",
+      "owner": "mind-siteqa",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G09",
+      "required": "Native-disabled button absent authorization",
+      "owner": "mind-siteqa",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G10",
+      "required": "No external seller-domain href before approval",
+      "owner": "mind-siteqa",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G11",
+      "required": "No second email list/form or Jetpack modification",
+      "owner": "dispatch-claude",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G12",
+      "required": "No unapproved live WP or menu edits",
+      "owner": "founder-claude",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G13",
+      "required": "No JS, privacy leak, pixel, forced autoplay or personal-data analytics",
+      "owner": "siteqa-claude",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G14",
+      "required": "Keyboard, screen reader and reduced-motion coverage",
+      "owner": "siteqa",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G15",
+      "required": "360/390/768/1440/1920 viewport and Lighthouse/CWV reviews",
+      "owner": "siteqa",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G16",
+      "required": "Optional film actual encoded, captioned, transcript-matched, autoplay off",
+      "owner": "mind-siteqa",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G17",
+      "required": "Identical substantive guide text in A/B",
+      "owner": "mind-siteqa",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G18",
+      "required": "Matched genuine published Grok asset_id and spoken hook",
+      "owner": "praxxis-grok",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G19",
+      "required": "Existing Focus/Dispatch confirmed lead method verified",
+      "owner": "claude-dispatch",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G20",
+      "required": "Merchant-confirmed order/commission settlement, refunds and fees",
+      "owner": "founder-commerce",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G21",
+      "required": "7/30-day qualified-human cohort denominator independently verified",
+      "owner": "claude-analytics",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G22",
+      "required": "Net revenue/1000 sessions reported only when both numerator and denominator exist",
+      "owner": "claude-analytics",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G23",
+      "required": "Founder approves commerce activation and release separately",
+      "owner": "founder",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G24",
+      "required": "Current merchant terms and approved creative audited without copying ads",
+      "owner": "mind-founder",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G25",
+      "required": "Owned FV product alternative has actual SKU, rights, checkout, delivery and refunds",
+      "owner": "founder-claude",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G26",
+      "required": "Checkout friction real browser tested (only with approval)",
+      "owner": "siteqa",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G27",
+      "required": "No homepage PR #49 / agent-owned Issue #150 / PR #172 touched",
+      "owner": "mind",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G28",
+      "required": "No unapproved send, social post, analytics script or spending",
+      "owner": "founder",
+      "status": "HARD_HOLD_UNCLEARED"
+    },
+    {
+      "id": "G29",
+      "required": "Film experiment measured by independently verified paid purchase—not just clicks",
+      "owner": "claude-commerce",
+      "status": "HARD_HOLD_UNCLEARED"
+    }
+  ],
+  "private_personal_data": "No PII collected or embedded",
+  "merchant_sale_links_in_buyer_pages": "ZERO",
+  "approval_to_activate": false
+}
