@@ -83,7 +83,14 @@ def show_keyboard_help(root, legend: str) -> None:
                 recovered_focus = getattr(existing, "_fvs_former_focus", None)
                 existing.destroy()
         except tk.TclError:
-            pass  # Stale window or focus race: rebuild a usable help dialog.
+            # A failed raise/focus can leave a live orphan Toplevel. Dispose
+            # of it before reconstructing the accessible help text.
+            try:
+                if existing.winfo_exists():
+                    recovered_focus = getattr(existing, "_fvs_former_focus", None)
+                    existing.destroy()
+            except tk.TclError:
+                pass
 
     former_focus = (recovered_focus if recovered_focus is not None
                     else root.focus_get())  # Widget only; never entry.get().
