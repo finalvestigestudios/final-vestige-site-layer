@@ -1,0 +1,41 @@
+Subject: The map was not the whole argument
+Preheader (review intent only; native Jetpack transport not verified): John Snow's 1854 investigation, and the limits of a seven-day log.
+Status: HOLD UNSENT | Existing subscribers only | Optional Issue 06, not substituted
+
+In 1854, a physician looked at deaths around a London water pump and found a pattern. The familiar version of the story goes like this: John Snow drew a map, removed the Broad Street pump handle, and stopped an epidemic. It is a memorable ending. It is not a complete account of the evidence.
+
+MORE THAN A MAP
+Snow's second edition of On the Mode of Communication of Cholera appeared in 1855. His case was broader than dots on a map. He examined water use, asked where affected households obtained it, considered people living near the pump who did not drink from it, and drew on comparisons between water suppliers. The spatial pattern was a clue to investigate, not a substitute for investigating.
+
+THE HANDLE WAS NOT A CLEAN EXPERIMENT
+The pump handle was removed on September 8, 1854. That decision interrupted access to a suspected source, but the outbreak had already declined markedly by that date. It would be misleading to present the subsequent fall in illness as a controlled measurement of exactly how many infections the handle removal prevented. Snow and later historians treated several kinds of evidence as relevant; his critics challenged what the evidence could establish at the time.
+
+WHAT AN ATTENTION LOG CAN ACTUALLY SAY
+There is no equivalence between tracing a lethal epidemic and keeping a personal attention notebook. The transferable principle is narrower: a visible pattern is a question, not automatically an explanation. A focus log can tell you what you attempted and what happened afterward. Alone, it cannot show what would have happened on a different day under otherwise identical conditions.
+
+THREE CHECKS FOR YOUR OWN RECORD
+If you used the Seven Day Focus Fieldbook, open your log and examine three entries. First, count attempts separately from completed sessions. Next, mark interruptions and how much time was actually available; a difficult day with no available time does not measure the quality of your attention. Finally, write down one plausible alternative explanation for any improvement: easier work, fewer interruptions, a better night's sleep, or simply growing familiar with the task.
+
+ONE RESULT, TWO EXPLANATIONS
+Suppose you completed four of seven planned sessions. The count is useful. But if the four sessions all occurred on quiet mornings, it does not establish that the routine itself caused better concentration. Conversely, an interrupted day is not proof that the routine failed. Keep the observed counts, the conditions, and the interpretation in separate columns.
+
+KEEP THE OBSERVATION. QUESTION THE CONCLUSION.
+The fieldbook was built to make those distinctions practical, not to diagnose anyone or promise an outcome. It's the same free 52-page edition linked in the Dispatch welcome message. If you are already subscribed, do not submit your email again just to retrieve it.
+
+OPEN THE FREE 52-PAGE FOCUS FIELDBOOK:
+https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf
+
+SOURCES (research trail, not additional action prompts):
+1. John Snow, On the Mode of Communication of Cholera (1855), Wellcome Collection
+https://wellcomecollection.org/works/uqa27qrt
+2. Brody et al., map and inquiry context, Social Science & Medicine (2000)
+https://www.ph.ucla.edu/epi/snow/socscimed50_923_935_2000.pdf
+3. London cholera and the blind-spot of an epidemiology theory, Significance (2011)
+https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1740-9713.2011.00493.x
+4. Contemporary criticism of Snow, International Journal of Epidemiology (2013)
+https://academic.oup.com/ije/article/42/6/1553/740477
+
+SENDER: Final Vestige Studios
+POSTAL ADDRESS: [[VALID_POSTAL_ADDRESS_REQUIRED]]
+UNSUBSCRIBE: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
+Not a sent message. Do not ship until sender/footer/actual Jetpack rendering and founder sign-off verified.
