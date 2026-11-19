@@ -64,6 +64,13 @@ def show_keyboard_help(root, legend: str) -> None:
         try:
             if existing.winfo_exists():
                 existing.lift()
+                # A second F1 must return keyboard control to the help text,
+                # not merely raise the window while focus stays on a form.
+                focus_target = getattr(existing, "_fvs_help_text", None)
+                try:
+                    (focus_target if focus_target is not None else existing).focus_set()
+                except tk.TclError:
+                    pass  # A concurrently destroyed child cannot steal focus.
                 return
         except tk.TclError:
             pass  # The previous help window was destroyed outside this helper.
@@ -72,10 +79,21 @@ def show_keyboard_help(root, legend: str) -> None:
     dialog = tk.Toplevel(root)
     root._fvs_help_dialog = dialog
 
+    closed = False
+
     def close(_event=None):
+        nonlocal closed
+        # Escape and the window-manager close event may both arrive during
+        # teardown. Never destroy twice or restore focus multiple times.
+        if closed:
+            return
+        closed = True
         if getattr(root, "_fvs_help_dialog", None) is dialog:
             root._fvs_help_dialog = None
-        dialog.destroy()
+        try:
+            dialog.destroy()
+        except tk.TclError:
+            pass  # Window already destroyed by the window manager.
         if former_focus is not None:
             try:
                 if former_focus.winfo_exists():
