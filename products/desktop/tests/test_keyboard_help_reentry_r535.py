@@ -142,6 +142,14 @@ class R535NativeDialogReentry(unittest.TestCase):
         self.assertIs(rebuilt._fvs_former_focus, self.entry)
 
     def test_r535_native_escape_after_f1_restores_form(self):
+        # Under Xvfb, destroying the transient may leave OS window focus None.
+        # Verify that the exact former widget is asked to regain focus.
+        original_focus = self.entry.focus_set
+        restored = []
+        def capture_restore():
+            restored.append(self.entry)
+            original_focus()
+        self.entry.focus_set = capture_restore
         button = self.close_button()
         button.focus_force()
         self.root.update()
@@ -150,7 +158,7 @@ class R535NativeDialogReentry(unittest.TestCase):
         self.text.event_generate("<Escape>")
         self.root.update()
         self.assertIsNone(self.root._fvs_help_dialog)
-        self.assertIs(self.root.focus_get(), self.entry)
+        self.assertEqual(restored, [self.entry])
 
     def test_r535_native_f1_is_not_rebound_globally_to_root(self):
         root_f1 = []
