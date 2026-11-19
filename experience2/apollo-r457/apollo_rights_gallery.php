@@ -1,6 +1,9 @@
 <?php
 /** R457 Apollo provenance gallery: staging-only; read-only source catalogue, not imagery rights clearance. */
 declare(strict_types=1);
+// Optional R466 source-claim layer: missing or changed code must not erase archive evidence.
+$fv457_plate_file=__DIR__.'/evidence_plates.php';
+if(is_file($fv457_plate_file)&&hash_equals('f3c51cff629ed13113ca54f179ef6d9313b152956309eff4fe73f17ad79abbad',hash_file('sha256',$fv457_plate_file)))require_once $fv457_plate_file;
 function fv457_records(): array {
   return [
     ['id'=>'S66-58038','source_status'=>'accepted','credit'=>'NASA / JSC (producer)','date'=>'1966-10-18','precision'=>'day','date_label'=>'18 October 1966','role'=>'Crew training context','shown'=>true,'source_url'=>'https://www.nasa.gov/image-detail/amf-s66-58038/','source_check'=>'Direct NASA image-detail record independently checked on 18 November 2026; source availability does not establish marketing rights.','boundary'=>'Training photograph. Does not depict the Apollo 1 accident.'],
@@ -86,6 +89,7 @@ function fv457_render(): string {
  $out='<section class="fv457" data-fv457-root id="'.$instance.'" aria-labelledby="'.$instance.'-heading"><div class="fv457__shell">';
  $out.='<p class="fv457__kicker">Final Vestige / Apollo 1 / Source custody</p><h2 id="'.$instance.'-heading">Six archival records across two published surfaces.</h2>';
  $out.='<p class="fv457__lede">These are <strong>source index cards, not reproductions</strong>. Three records appear in the Atlas chronology. S67-19766 is labelled not shown in that Atlas but appears on the published homepage. The other records have not been independently confirmed as present or absent on the homepage. Page placement is not image-use permission, and no marketing or merchandise clearance is implied.</p>';
+ $out.=function_exists('fv457_evidence_plates_html')?fv457_evidence_plates_html($instance):'<p>Evidence comparison temporarily unavailable; the source chronology and archival record cards remain available below.</p>';
  $out.=fv457_chronology_html($instance);
  $out.='<p class="fv457__rights"><strong>Rights boundary:</strong> NASA imagery is generally available for factual editorial use, subject to agency guidelines and potential third-party and publicity rights. No photograph, logo or astronaut likeness is embedded or cleared for merchandise, marketing or a paid educator product. NASA does not endorse this work.</p>';
  $out.='<p class="fv457__source-hold"><strong>Source acceptance HOLD:</strong> Four NASA image-detail records have independently verified matching catalogue IDs; the S67-19766 portrait ARTICLE is accessible but its archival-ID association is unverified, and the KSC-20170124-PH_KLS01_0129 catalogue lookup remains inaccessible. Its apparent 24 January date derives only from the candidate ID, not accepted image metadata. Neither an accepted source nor a research lead establishes rights to commercial reuse.</p>';
@@ -118,7 +122,7 @@ function fv457_render(): string {
  $cssPresent=is_file($css);$jsPresent=is_file($js);
  $style=$cssPresent?file_get_contents($css):null;
  $script=$jsPresent?file_get_contents($js):null;
- if(($cssPresent&&($style===false||!hash_equals('e5c42da56f3455e1e454780838cd7d5aa2abd51fe110bfcf3a7701441068ff41',hash('sha256',$style))))
+ if(($cssPresent&&($style===false||!hash_equals('d263a0284884937eaf83256342d51d9e88da60f43e9a81a1a6caa81a24dc744c',hash('sha256',$style))))
     ||($jsPresent&&($script===false||!hash_equals('001ba5b8857bfee90d5d79db8435047946bc3a61253b3a8f4623e725daa1fb0a',hash('sha256',$script)))))return fv457_fallback();
  if(!$cssPresent)return $out;
  return '<style>'.$style.'</style>'.$out.($jsPresent?'<script>'.$script.'</script>':'');
