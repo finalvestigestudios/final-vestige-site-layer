@@ -74,6 +74,11 @@ class CandidateTests(unittest.TestCase):
             self.assertEqual(result['native_candidate_article_pairs_checked'],1)
             self.assertFalse(result['native_build_pass'])
             self.assertFalse(result['publication_authorized'])
+    def test_authentic_lost_ways_track_accepted(self):
+        html,_,meta=example()
+        meta['track']='lost-ways'
+        result=gate.check_article('alpha',html,json.dumps(meta).encode(),set())
+        self.assertEqual(result['track'],'lost-ways')
     def test_metadata_citation_body_no_silent_promotion(self):
         html,raw,meta=example()
         r=gate.check_article('alpha',html,raw,set())
