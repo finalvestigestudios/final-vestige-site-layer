@@ -367,6 +367,14 @@ def ledger_diff(left,right,folder, *, left_match_column=None, right_match_column
     Matching net amounts with different gross flows are explicitly flagged
     for independent human review rather than silently declared matched.
     """
+    # Check BOTH sides' explicit mappings before reading either private CSV.
+    # Right-side invalid configuration must not trigger a left-side snapshot.
+    from .ledger_mapping_preflight_r537 import preflight_ledger_overrides
+    preflight_ledger_overrides(
+        left_match_column=left_match_column,
+        right_match_column=right_match_column,
+        left_amount_column=left_amount_column,
+        right_amount_column=right_amount_column)
     from .ledger_provenance import attach_ledger_provenance
     groups=[defaultdict(list),defaultdict(list)]
     digests=[]
