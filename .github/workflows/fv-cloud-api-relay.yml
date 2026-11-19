@@ -1,0 +1,48 @@
+name: FV Cloud API Relay (gated pilot)
+
+# A live GitHub-hosted runner, independent of desktop Claude/Grok conversations.
+# Public issue comments only trigger the fixed zero-cost smoke probe.
+# Scheduled/manual runs cannot contact any model until three explicit true gates.
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: fv-cloud-relay-3090
+  cancel-in-progress: false
+
+jobs:
+  cloud-relay:
+    if: >-
+      github.event_name != 'issue_comment' ||
+      (github.event.issue.number == 3090 && github.event.comment.user.login == 'finalvestigestudios')
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      FV_PAID_CALLS_ALLOWED: ${{ vars.FV_PAID_CALLS_ALLOWED }}
+      FV_CLOUD_RELAY_ENABLED: ${{ vars.FV_CLOUD_RELAY_ENABLED }}
+      FV_CLAUDE_API_ENABLED: ${{ vars.FV_CLAUDE_API_ENABLED }}
+      FV_GROK_API_ENABLED: ${{ vars.FV_GROK_API_ENABLED }}
+      FV_CLAUDE_MODEL: ${{ vars.FV_CLAUDE_MODEL }}
+      FV_GROK_MODEL: ${{ vars.FV_GROK_MODEL }}
+      FV_ANTHROPIC_API_KEY: ${{ secrets.FV_ANTHROPIC_API_KEY }}
+      FV_XAI_API_KEY: ${{ secrets.FV_XAI_API_KEY }}
+    steps:
+      - name: Read reviewed relay from the default branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Prove local safety checks without calling any provider
+        run: |
+          python3 -m py_compile scripts/fv_cloud_relay.py
+          python3 -m unittest discover -s tests -p test_fv_cloud_relay.py -v
+      - name: Cloud pilot poll or harmless smoke-event receipt
+        run: python3 scripts/fv_cloud_relay.py
