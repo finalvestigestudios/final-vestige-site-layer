@@ -1,0 +1,501 @@
+{
+  "title": "R483: source, efficacy and commercial permission matrix",
+  "as_of": "2026-11-18",
+  "publication_status": "source-control-only / no live actions",
+  "partner_status": "INCOMPLETE: Gmail 2026-08-24 Refersion account pending; no later named acceptance established by targeted search; dashboard not reviewed",
+  "seller_scope": "Hypnosis Live FAQ exact product/Zen12 standard and promotional URLs; no exact priced checkout verified",
+  "sources": [
+    {
+      "id": "ST1935",
+      "url": "https://doi.org/10.1037/h0054651",
+      "type": "primary experiment",
+      "access": "abstract crosschecked"
+    },
+    {
+      "id": "ST1983",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6224888/",
+      "type": "experiment"
+    },
+    {
+      "id": "ST1984",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6238123/",
+      "type": "experiment"
+    },
+    {
+      "id": "ST2015",
+      "url": "https://doi.org/10.3389/fpsyg.2015.00117",
+      "type": "experiment"
+    },
+    {
+      "id": "RAZ2002",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12470132/",
+      "type": "experimental study"
+    },
+    {
+      "id": "RAZ2006",
+      "url": "https://doi.org/10.1111/j.1467-9280.2006.01669.x",
+      "type": "experimental study"
+    },
+    {
+      "id": "BB2023",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "systematic review"
+    },
+    {
+      "id": "INSPIRE3",
+      "url": "https://inspire3.com/",
+      "type": "seller catalog"
+    },
+    {
+      "id": "HLFAQ",
+      "url": "https://hypnosislive.com/faq",
+      "type": "seller FAQ"
+    },
+    {
+      "id": "ZENABOUT",
+      "url": "https://zen12.com/about",
+      "type": "seller product description"
+    },
+    {
+      "id": "ZENSECRET",
+      "url": "https://zen12.com/secret/",
+      "type": "seller sales-funnel landing"
+    },
+    {
+      "id": "FTCDISC",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory disclosure guidance"
+    },
+    {
+      "id": "FTCHEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory health claims guidance"
+    },
+    {
+      "id": "FVFOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "type": "live owned free resource"
+    },
+    {
+      "id": "FVP",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "live source-critical archive"
+    },
+    {
+      "id": "FVJOURNAL",
+      "url": "https://finalvestige.com/blog/",
+      "type": "live journal inventory 66 results as of 2026-11-18"
+    },
+    {
+      "id": "FVEDIT",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "type": "publisher policy"
+    }
+  ],
+  "claims": [
+    {
+      "id": "R483-C01",
+      "claim": "The 1935 experimental color-naming task showed asymmetric interference",
+      "status": "research-supported-with-task-limits",
+      "evidence": [
+        "ST1935"
+      ],
+      "copy_rule": "Accept with exact task qualification"
+    },
+    {
+      "id": "R483-C02",
+      "claim": "Stroop interference is literally unstoppable in every context",
+      "status": "reject-overgeneralization",
+      "evidence": [
+        "ST1983",
+        "ST1984",
+        "ST2015"
+      ],
+      "copy_rule": "Never use"
+    },
+    {
+      "id": "R483-C03",
+      "claim": "2002 Raz study involved 16 highly and 16 less suggestible participants",
+      "status": "research-supported",
+      "evidence": [
+        "RAZ2002"
+      ],
+      "copy_rule": "State sample sizes and limits"
+    },
+    {
+      "id": "R483-C04",
+      "claim": "2002 suggestion eliminated Stroop interference in highly suggestible sample",
+      "status": "research-supported-in-study-only",
+      "evidence": [
+        "RAZ2002"
+      ],
+      "copy_rule": "No generalization to consumer audio"
+    },
+    {
+      "id": "R483-C05",
+      "claim": "2006 suggestion reduced interference both with and without hypnosis induction",
+      "status": "research-supported-in-study-only",
+      "evidence": [
+        "RAZ2006"
+      ],
+      "copy_rule": "Preserve non-induction finding"
+    },
+    {
+      "id": "R483-C06",
+      "claim": "These cognitive studies validate commercial hypnosis recordings",
+      "status": "reject-unsupported",
+      "evidence": [
+        "RAZ2002",
+        "RAZ2006",
+        "HLFAQ"
+      ],
+      "copy_rule": "Never infer product efficacy"
+    },
+    {
+      "id": "R483-C07",
+      "claim": "Hypnosis Live catalog advertises 200+ downloads",
+      "status": "seller-format-claim",
+      "evidence": [
+        "INSPIRE3"
+      ],
+      "copy_rule": "Seller attribution only"
+    },
+    {
+      "id": "R483-C08",
+      "claim": "Hypnosis Live MP3 sessions generally last about 40 minutes",
+      "status": "seller-format-claim",
+      "evidence": [
+        "HLFAQ"
+      ],
+      "copy_rule": "Check exact selected SKU"
+    },
+    {
+      "id": "R483-C09",
+      "claim": "Hypnosis Live FAQ attributes recordings to Julie-Ann Amos",
+      "status": "seller-attributed",
+      "evidence": [
+        "HLFAQ"
+      ],
+      "copy_rule": "No personal or independent use claimed"
+    },
+    {
+      "id": "R483-C10",
+      "claim": "Hypnosis Live has no additional payments after buying a session",
+      "status": "seller-claim-needs-checkout",
+      "evidence": [
+        "HLFAQ"
+      ],
+      "copy_rule": "Do not state as confirmed transaction term"
+    },
+    {
+      "id": "R483-C11",
+      "claim": "Hypnosis Live FAQ lists a typical price for a session",
+      "status": "seller-claim-not-exact-checkout",
+      "evidence": [
+        "HLFAQ"
+      ],
+      "copy_rule": "Avoid price claim in commercial copy"
+    },
+    {
+      "id": "R483-C12",
+      "claim": "Hypnosis Live FAQ lists a 14-day return window and maximum five sessions refunded/year",
+      "status": "seller-policy-claim-needs-SKU-checkout",
+      "evidence": [
+        "HLFAQ"
+      ],
+      "copy_rule": "Include caveat exact policy may vary"
+    },
+    {
+      "id": "R483-C13",
+      "claim": "Hypnosis Live can cure fears/phobias, end smoking or boost income",
+      "status": "reject-clinical-financial-unproven",
+      "evidence": [
+        "HLFAQ",
+        "FTCHEALTH"
+      ],
+      "copy_rule": "Exclude from recommendation"
+    },
+    {
+      "id": "R483-C14",
+      "claim": "An audio will reprogram every listener's brain",
+      "status": "reject",
+      "evidence": [
+        "HLFAQ",
+        "RAZ2006",
+        "FTCHEALTH"
+      ],
+      "copy_rule": "Never use"
+    },
+    {
+      "id": "R483-C15",
+      "claim": "Zen12 seller lists twelve-minute sessions, twelve levels, four styles",
+      "status": "seller-product-description",
+      "evidence": [
+        "ZENABOUT"
+      ],
+      "copy_rule": "Seller attribution"
+    },
+    {
+      "id": "R483-C16",
+      "claim": "Zen12 promotional funnel displays transient coupon/countdown pricing",
+      "status": "seller-sales-screen-not-authoritative",
+      "evidence": [
+        "ZENSECRET"
+      ],
+      "copy_rule": "Do not reproduce prices, discounts, urgency"
+    },
+    {
+      "id": "R483-C17",
+      "claim": "Zen12 automatically duplicates one hour meditation in twelve minutes",
+      "status": "reject-product-efficacy-unproven",
+      "evidence": [
+        "ZENABOUT",
+        "BB2023"
+      ],
+      "copy_rule": "Exclude"
+    },
+    {
+      "id": "R483-C18",
+      "claim": "Binaural beat EEG entrainment uniformly proven",
+      "status": "reject",
+      "evidence": [
+        "BB2023"
+      ],
+      "copy_rule": "Fourteen-study review inconclusive"
+    },
+    {
+      "id": "R483-C19",
+      "claim": "Product user has to subscribe to Dispatch to see independent guide",
+      "status": "reject",
+      "evidence": [
+        "FVFOCUS",
+        "FTCDISC"
+      ],
+      "copy_rule": "Free browsing must remain"
+    },
+    {
+      "id": "R483-C20",
+      "claim": "Focus Fieldbook is an existing free 52-page workbook",
+      "status": "live-owned-asset",
+      "evidence": [
+        "FVFOCUS"
+      ],
+      "copy_rule": "Use current route, no duplicate sign-up"
+    },
+    {
+      "id": "R483-C21",
+      "claim": "Puységur records evidence of historical operator/subject claims",
+      "status": "historical-source-only",
+      "evidence": [
+        "FVP"
+      ],
+      "copy_rule": "No bridge to modern treatment efficacy"
+    },
+    {
+      "id": "R483-C22",
+      "claim": "Affiliate disclosure needs to appear adjacent to the earning link",
+      "status": "compliance-practice",
+      "evidence": [
+        "FTCDISC"
+      ],
+      "copy_rule": "Mandatory proximity on activation"
+    },
+    {
+      "id": "R483-C23",
+      "claim": "Merchant's public affiliate program confirms FV partner acceptance",
+      "status": "reject",
+      "evidence": [
+        "HLFAQ"
+      ],
+      "copy_rule": "Named written approval required"
+    },
+    {
+      "id": "R483-C24",
+      "claim": "Outbound affiliate click represents paid purchase",
+      "status": "reject",
+      "evidence": [
+        "FTCDISC"
+      ],
+      "copy_rule": "Measure separately; no sales inference"
+    },
+    {
+      "id": "R483-C25",
+      "claim": "A/B variant B optional film improves paid conversion",
+      "status": "hypothesis-unverified",
+      "evidence": [],
+      "copy_rule": "No claim until authorized randomized test"
+    },
+    {
+      "id": "R483-C26",
+      "claim": "FV net revenue per thousand human sessions is known",
+      "status": "unknown-without-data",
+      "evidence": [],
+      "copy_rule": "Do not output number without independent purchases/valid denominator"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "Named Final Vestige partner approval",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G02",
+      "name": "Issued FV-specific earning URL",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G03",
+      "name": "Approved exact SKU",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G04",
+      "name": "Written allowed channel list (YouTube/TikTok/blog/email)",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G05",
+      "name": "Accurate named merchant settlement and tracking terms",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G06",
+      "name": "Current exact chosen product page and checkout",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G07",
+      "name": "Current SKU price and applicable taxes",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G08",
+      "name": "Current return/refund document and checkout agreement",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G09",
+      "name": "Rights to use any creative/audio",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G10",
+      "name": "Seller benefit claims substantiated for exact product",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G11",
+      "name": "Human-reviewed FTC near-link disclosure",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G12",
+      "name": "No cloaking or unauthorized redirect",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G13",
+      "name": "No medical, mental-health or wealth guarantee",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G14",
+      "name": "Live commercial consent/release from founder",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G15",
+      "name": "Independent Site QA visual/keyboard/WCAG",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G16",
+      "name": "WordPress HTML sanitizer on staging",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G17",
+      "name": "Real browser no-JS/reduced-motion",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G18",
+      "name": "Original short video encoded and captioned",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G19",
+      "name": "Grok asset_id and target URL matching",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G20",
+      "name": "Existing Jetpack lead confirmation tested without unauthorized test signups",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G21",
+      "name": "Commerce settlement export or merchant report",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G22",
+      "name": "Refund/fee reconciliation",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G23",
+      "name": "Valid qualified-human session counts",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G24",
+      "name": "No extra tracking scripts or PII",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G25",
+      "name": "Production release rollback approved",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    },
+    {
+      "id": "G26",
+      "name": "7/30 day A/B power and tiny-sample decision review",
+      "status": "not-cleared",
+      "proof_required": "independent dated owner-provided evidence"
+    }
+  ],
+  "restrictions": {
+    "product_links": "WITHHELD",
+    "disclosure": "prospective adjacent statement only; current no monetized link",
+    "traffic": "first-party, campaign_id + asset_id; no fingerprint/PII",
+    "revenue": "only independently merchant-confirmed paid settlement minus refunds/fees",
+    "emails": "reuse existing Jetpack/Dispatch opt-in; no duplicate list"
+  }
+}
