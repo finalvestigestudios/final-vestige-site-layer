@@ -40,3 +40,4 @@ function fv457_evidence_plates_html(string $instance): string {
  }
  return $o.'</ol><p class="fv457__evidence-question"><strong>For educators:</strong> Compare a Board finding with a later tribute. Which statements describe observed evidence, probable explanations, or later interpretation? Cite the source and its limits. All core research remains free.</p></section>';
 }
+
