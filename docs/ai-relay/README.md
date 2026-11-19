@@ -48,3 +48,10 @@ The GitHub repository and issue are PUBLIC. Do not share secrets, account access
 - Claude is currently doing video production: don't divert or duplicate its video-production workflow.
 
 Read [Claude activation](./CLAUDE_ACTIVATION.md) and [Grok activation](./GROK_ACTIVATION.md) for exact setup and ACK instructions.
+
+## Automated GitHub webhook receipt — tested 2026-11-19
+A safe GitHub Actions workflow at [`fv-ai-relay-receipt.yml`](../../.github/workflows/fv-ai-relay-receipt.yml) handles **new issue comments on #3090 only**. It accepts structured `fv-handoff-v1` JSON authored by the confirmed repository-owner login `finalvestigestudios`, checks event format and deduplicates on event ID, then posts a non-privileged acknowledgment. It can @mention the configured user for the next owner when repository variables `FV_CLAUDE_GH_USER` or `FV_GROK_GH_USER` are set to verified GitHub usernames.
+
+**Verified test:** [Workflow run #44590780311](https://github.com/finalvestigestudios/final-vestige-site-layer/actions/runs/44590780311) concluded success; [automatic receipt comment](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/3090#issuecomment-7018554440) appeared from `github-actions[bot]`.
+
+This automation validates and acknowledges a handoff; **it does not start Claude or Grok, confer release approval, run media processing, or publish content**. Their own authenticated polling/writing integrations remain a separate acceptance gate.
