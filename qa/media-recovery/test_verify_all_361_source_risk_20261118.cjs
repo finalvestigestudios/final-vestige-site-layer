@@ -21,3 +21,18 @@ test('invented browser proof is rejected',()=>{const x=clone();x.known_404_origi
 test('production write is rejected',()=>{const x=clone();x.methods_and_release_hold.wordpress_production_writes=1;assert.notDeepEqual(check(x),[]);});
 test('changed query width is rejected',()=>{const x=clone();x.image_slots[0].requested_width_hint_px=1234;assert.notDeepEqual(check(x),[]);});
 test('query width parser reads fit / Commons width',()=>{assert.equal(widthHint('https://a.org/b?fit=1024%2C650'),1024);assert.equal(widthHint('https://c.org?width=1280'),1280);assert.equal(widthHint('https://x.org/z'),null);});
+
+test('three authentic Nov 18 original 404 observations are retained by exact slot key, never called visitor failures',()=>{
+ const slots=a.image_slots.filter(x=>x.original_public_retriever_http===404).map(x=>x.slot).sort();
+ assert.deepEqual(slots,['274:6','285:5','287:5']);
+ assert.ok(a.image_slots.filter(x=>x.original_public_retriever_http===404).every(x=>x.visitor_http_status===null));
+ assert.deepEqual(check(a),[]);
+});
+test('lost original-source 404 mapping causes HOLD',()=>{
+ const x=clone();const r=x.image_slots.find(z=>z.slot==='274:6');r.original_public_retriever_http=null;
+ assert.notDeepEqual(check(x),[]);
+});
+test('probe cannot be reassigned to a different image slot',()=>{
+ const x=clone();x.known_404_origins_retriever_only[0].slot='274:5';
+ assert.notDeepEqual(check(x),[]);
+});
