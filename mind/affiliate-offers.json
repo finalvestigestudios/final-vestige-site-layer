@@ -1,0 +1,68 @@
+{
+  "_status": "Editorial research queue. No affiliate account/tracking-link approval or independent product efficacy is asserted. Never interpret these entries as approved paid placements.",
+  "publisher": "Inspire3",
+  "catalog_reference": "https://inspire3.com/",
+  "last_catalog_checked": "2026-10-30",
+  "entries": [
+    {
+      "id": "zen12",
+      "name": "Zen12",
+      "catalog_category": "Brainwaves",
+      "seller_product_description": "Meditation program using audio and brainwave-focused marketing",
+      "planned_editorial_fit": "Beginner meditation methods / attention practice",
+      "evidence_status": "Not independently reviewed",
+      "affiliate_status": "Link withheld; partner approval and terms unverified",
+      "affiliate_url": null
+    },
+    {
+      "id": "brainwave-shots",
+      "name": "Brainwave Shots",
+      "catalog_category": "Brainwaves",
+      "seller_product_description": "Short performance-focused audio programs",
+      "planned_editorial_fit": "Attention, task preparation and what audio can and cannot establish",
+      "evidence_status": "Not independently reviewed",
+      "affiliate_status": "Link withheld; partner approval and terms unverified",
+      "affiliate_url": null
+    },
+    {
+      "id": "hypnosis-live",
+      "name": "Hypnosis Live",
+      "catalog_category": "Personal development",
+      "seller_product_description": "Self-hypnosis audio resources",
+      "planned_editorial_fit": "History and practice of hypnotic suggestion",
+      "evidence_status": "Not independently reviewed",
+      "affiliate_status": "Link withheld; partner approval and terms unverified",
+      "affiliate_url": null
+    },
+    {
+      "id": "subliminal-guru",
+      "name": "Subliminal Guru",
+      "catalog_category": "Subliminals",
+      "seller_product_description": "Catalog of subliminal audio albums",
+      "planned_editorial_fit": "Subliminal perception research versus vendor claims",
+      "evidence_status": "Not independently reviewed",
+      "affiliate_status": "Link withheld; partner approval and terms unverified",
+      "affiliate_url": null
+    },
+    {
+      "id": "subliminal360",
+      "name": "Subliminal360",
+      "catalog_category": "Subliminals",
+      "seller_product_description": "Computer software for displaying subliminal affirmations",
+      "planned_editorial_fit": "Subliminal presentation, user control, evidence boundaries",
+      "evidence_status": "Not independently reviewed",
+      "affiliate_status": "Link withheld; partner approval and terms unverified",
+      "affiliate_url": null
+    },
+    {
+      "id": "mind-movies",
+      "name": "Mind Movies",
+      "catalog_category": "Manifesting",
+      "seller_product_description": "Personalized visualization and vision-board videos",
+      "planned_editorial_fit": "Visualization, goal-setting and critical examination of manifestation claims",
+      "evidence_status": "Not independently reviewed",
+      "affiliate_status": "Link withheld; partner approval and terms unverified",
+      "affiliate_url": null
+    }
+  ]
+}

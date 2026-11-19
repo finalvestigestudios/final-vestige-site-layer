@@ -1,0 +1,111 @@
+<!-- wp:html -->
+<style>
+.fv-mind{--m-bg:#090a0a;--m-panel:#111311;--m-paper:#f4efe6;--m-muted:#b9b2a7;--m-line:#34322e;--m-gold:#c7a66c;background:var(--m-bg);color:var(--m-paper);font-family:var(--wp--preset--font-family--inter,Inter,system-ui,sans-serif);line-height:1.65;overflow:hidden}
+.fv-mind *, .fv-mind *::before,.fv-mind *::after{box-sizing:border-box}
+.fv-mind a{color:inherit;text-underline-offset:.24em}
+.fv-mind a:focus-visible{outline:3px solid #f6ce87;outline-offset:5px}
+.fv-mind h1,.fv-mind h2,.fv-mind h3,.fv-mind p{margin-top:0}
+.fv-mind__wrap{max-width:1280px;margin:auto;padding-inline:clamp(20px,5vw,72px)}
+.fv-mind__eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--m-gold)}
+.fv-mind__hero{position:relative;isolation:isolate;padding-block:clamp(88px,12vw,160px) clamp(80px,10vw,140px);background:radial-gradient(ellipse at 78% 30%,rgba(181,142,84,.15),transparent 38%),radial-gradient(ellipse at 10% 95%,rgba(23,63,63,.17),transparent 43%),#090a0a}
+.fv-mind__hero::before{content:"";position:absolute;inset:20px 20px auto auto;width:min(34vw,410px);height:min(34vw,410px);border:1px solid rgba(199,166,108,.14);border-radius:50%;box-shadow:0 0 0 34px rgba(199,166,108,.022),0 0 0 83px rgba(199,166,108,.018);z-index:-1;pointer-events:none}
+.fv-mind__hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.55fr);gap:clamp(32px,7vw,100px);align-items:end}
+.fv-mind__hero h1{font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:clamp(50px,8.8vw,122px);line-height:.97;letter-spacing:-.045em;max-width:930px;margin:19px 0 31px;text-wrap:balance}
+.fv-mind__hero h1 em{display:block;color:var(--m-gold);font-weight:400}
+.fv-mind__lede{max-width:650px;font-size:clamp(17px,1.7vw,21px);color:#d8d2c7;line-height:1.65}
+.fv-mind__actions{display:flex;flex-wrap:wrap;gap:16px 25px;margin-top:31px;align-items:center}
+.fv-mind__primary{display:inline-flex;min-height:48px;align-items:center;padding:12px 24px;background:var(--m-gold);color:#11100d!important;font-weight:800;font-size:13px;text-decoration:none;border:2px solid var(--m-gold)}
+.fv-mind__primary:hover{background:#e2c28a}
+.fv-mind__subtle{font-size:13px;font-weight:700;color:var(--m-paper)}
+.fv-mind__ledger{padding:30px;border:1px solid rgba(199,166,108,.35);background:linear-gradient(145deg,#181710,#0b0c0b);box-shadow:0 28px 70px rgba(0,0,0,.45);transform:rotate(1deg);position:relative}
+.fv-mind__ledger::before{content:"FV / EVIDENCE";position:absolute;right:22px;top:-10px;background:#090a0a;padding:0 9px;color:var(--m-gold);font:700 9px/1.4 monospace;letter-spacing:.18em}
+.fv-mind__ledger-mark{color:var(--m-gold);font:700 11px/1.2 monospace;letter-spacing:.18em}
+.fv-mind__ledger p{font-family:Georgia,serif;font-size:clamp(23px,2.35vw,33px);line-height:1.25;margin:34px 0 26px}
+.fv-mind__ledger small{display:block;color:var(--m-muted);font-size:12px;line-height:1.65;border-top:1px solid var(--m-line);padding-top:16px}
+.fv-mind__section{padding-block:clamp(65px,9vw,120px);border-top:1px solid #272722}
+.fv-mind__section h2{font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:clamp(36px,5vw,68px);line-height:1.1;letter-spacing:-.035em;max-width:840px}
+.fv-mind__intro{max-width:770px;color:var(--m-muted);font-size:18px}
+.fv-mind__feature{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.15fr);gap:clamp(28px,6vw,96px);align-items:center}
+.fv-mind__stat{border-top:1px solid var(--m-line);border-bottom:1px solid var(--m-line);padding:22px 0;display:flex;gap:24px;align-items:baseline;color:var(--m-muted)}
+.fv-mind__stat strong{font-size:clamp(46px,7vw,90px);line-height:1;color:var(--m-gold);font-family:Georgia,serif;font-weight:400}
+.fv-mind__feature p,.fv-mind__card p{color:var(--m-muted)}
+.fv-mind__text-link{font-weight:750;font-size:14px;color:var(--m-gold)!important}
+.fv-mind__tracks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--m-line);border:1px solid var(--m-line);margin-top:42px}
+.fv-mind__card{padding:clamp(24px,3vw,40px);background:#111210;min-height:260px}
+.fv-mind__card span{font:700 11px/1.3 monospace;letter-spacing:.14em;color:var(--m-gold)}
+.fv-mind__card h3{font-family:Georgia,serif;font-size:clamp(23px,2.6vw,33px);font-weight:400;line-height:1.25;margin:28px 0 15px}
+.fv-mind__card p{font-size:15px;line-height:1.65}
+.fv-mind__focus{background:linear-gradient(105deg,#17140e,#111311 70%);border-top:1px solid #403a2d;border-bottom:1px solid #403a2d}
+.fv-mind__focus-inner{display:grid;grid-template-columns:1fr auto;gap:24px 40px;align-items:center}
+.fv-mind__focus p{max-width:680px;color:var(--m-muted)}
+.fv-mind__focus h2{margin-bottom:12px}
+.fv-mind__fine{font-size:13px;color:var(--m-muted);max-width:900px}
+.fv-mind__methods{max-width:870px}
+.fv-mind__methods strong{color:#ead3aa}
+.fv-mind__methods p{color:var(--m-muted)}
+@media(max-width:920px){.fv-mind__hero-grid,.fv-mind__feature{grid-template-columns:1fr}.fv-mind__ledger{max-width:520px;transform:none}.fv-mind__focus-inner{grid-template-columns:1fr}.fv-mind__tracks{grid-template-columns:1fr}.fv-mind__card{min-height:auto}}
+@media(max-width:520px){.fv-mind__hero{padding-block:78px 60px}.fv-mind__hero h1{font-size:clamp(48px,13.5vw,72px)}.fv-mind__ledger{padding:23px}.fv-mind__actions{align-items:stretch;flex-direction:column}.fv-mind__actions a{width:fit-content}.fv-mind__stat{gap:14px;align-items:center}.fv-mind__stat strong{font-size:52px}}
+@media(prefers-reduced-motion:reduce){.fv-mind *, .fv-mind *::before,.fv-mind *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+<div class="fv-mind">
+  <section class="fv-mind__hero" aria-labelledby="fv-mind-title">
+    <div class="fv-mind__wrap fv-mind__hero-grid">
+      <div>
+        <p class="fv-mind__eyebrow">FINAL VESTIGE / THE MIND &amp; PERCEPTION ARCHIVE</p>
+        <h1 id="fv-mind-title">The mind is a witness. <em>Not a camera.</em></h1>
+        <p class="fv-mind__lede">A history of what we see, what we remember, and why experience alone isn't always proof. Follow the records behind attention, suggestion, altered states and the stories we tell ourselves.</p>
+        <div class="fv-mind__actions">
+          <a class="fv-mind__primary" href="#fv-mind-evidence">Enter the evidence room</a>
+          <a class="fv-mind__subtle" href="/focus/">Get the free Focus Fieldbook &rarr;</a>
+        </div>
+      </div>
+      <aside class="fv-mind__ledger" aria-label="Editorial principle">
+        <span class="fv-mind__ledger-mark">RESEARCH NOTE / 001</span>
+        <p>An experience can be genuine. Its explanation can still be wrong.</p>
+        <small>Our starting rule: distinguish the firsthand report, the surviving document, the measured result and the interpretation.</small>
+      </aside>
+    </div>
+  </section>
+  <section class="fv-mind__section" id="fv-mind-evidence" aria-labelledby="fv-mind-puy-title">
+    <div class="fv-mind__wrap fv-mind__feature">
+      <div>
+        <p class="fv-mind__eyebrow">FIRST IN THE ARCHIVE / A SOURCE TRAIL</p>
+        <h2 id="fv-mind-puy-title">Before hypnosis had a name.</h2>
+        <p>In the 1780s, the magnetic-somnambulism records surrounding the Marquis de Puységur raised enduring questions about suggestion, testimony, authority and what observers thought they had witnessed.</p>
+        <a class="fv-mind__text-link" href="/free-resources/puysegurs-animal-magnetism-files/">Examine the Puységur files &rarr;</a>
+      </div>
+      <div>
+        <div class="fv-mind__stat"><strong>1785</strong><span>The original reference year identified in our published Puységur source archive.</span></div>
+        <p class="fv-mind__fine">A documented historical claim is not proof that the alleged mechanism or reported treatment worked. See the original sources and the stated evidence limits.</p>
+      </div>
+    </div>
+  </section>
+  <section class="fv-mind__section" id="fv-mind-pathways" aria-labelledby="fv-mind-tracks-title">
+    <div class="fv-mind__wrap">
+      <p class="fv-mind__eyebrow">THREE WAYS INTO THE QUESTION</p>
+      <h2 id="fv-mind-tracks-title">The question changes. The evidence standard doesn't.</h2>
+      <p class="fv-mind__intro">These research tracks are being developed. We won't pretend unpublished experiments, clinical results or product reviews already exist.</p>
+      <div class="fv-mind__tracks">
+        <article class="fv-mind__card"><span>01 / PERCEPTION</span><h3>What did you miss?</h3><p>Change blindness, inattentional blindness and the unsettling limits of attention. Experiments first; interpretations second.</p></article>
+        <article class="fv-mind__card"><span>02 / SUGGESTION</span><h3>Who put the idea there?</h3><p>The history of hypnosis, automatic behavior and claims of extraordinary influence, read through original documents and careful research.</p></article>
+        <article class="fv-mind__card"><span>03 / PRACTICE</span><h3>What changes with practice?</h3><p>Mindful attention, focus and meditation methods, distinguished from extraordinary promises about what a commercial audio program can do.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="fv-mind__section fv-mind__focus" aria-labelledby="fv-mind-focus-title">
+    <div class="fv-mind__wrap fv-mind__focus-inner">
+      <div><p class="fv-mind__eyebrow">A FREE FIELD GUIDE / NO PURCHASE REQUIRED</p><h2 id="fv-mind-focus-title">Start with your attention.</h2><p>The Seven Day Focus Fieldbook offers a structured way to explore attention and deliberate practice. It is already available as part of Final Vestige's existing free-resource library.</p></div>
+      <a class="fv-mind__primary" href="/focus/">Explore the free fieldbook &rarr;</a>
+    </div>
+  </section>
+  <section class="fv-mind__section" id="fv-mind-method" aria-labelledby="fv-mind-method-title">
+    <div class="fv-mind__wrap fv-mind__methods">
+      <p class="fv-mind__eyebrow">HOW WE TREAT COMMERCIAL CLAIMS</p>
+      <h2 id="fv-mind-method-title">Curiosity isn't a blank check.</h2>
+      <p>We're evaluating meditation, hypnosis and other mind-related tools. <strong>A seller's promise is not an independently demonstrated result.</strong> Our future product guides will explain what a product actually contains, who it may suit, the evidence and limitations, and any commercial relationship.</p>
+      <p>We won't recommend a tool merely because it pays a commission. No purchase is needed to read our research or use the free Fieldbook.</p>
+      <p class="fv-mind__fine">Commercial relationships will be disclosed clearly beside any qualifying recommendation. See our <a href="/affiliate-disclosure/">Affiliate Disclosure</a> and <a href="/editorial-standards/">Editorial Standards</a>.</p>
+    </div>
+  </section>
+</div>
+<!-- /wp:html -->
