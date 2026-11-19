@@ -1,0 +1,122 @@
+{
+  "schema": "fv-preparedness-r474-child-card-purpose-review-v1",
+  "integration_parent_sha": "42f3cfc57b5bd6f065980d40236a42fe1ac4b4a0",
+  "editorial_review_head_sha": "8cecc7ff09fe7e89a1eda366f1de574b39be84bd",
+  "editorial_e466_memo_blob": "c83330dbc53625be81e30c681aa6df35308ab52e",
+  "original_blobs": {
+    "content/articles/family-communication-plan.body.html": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+    "content/articles/family-communication-plan.meta.json": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3",
+    "content/tools/family-reunification-card.body.html": "be8698ac5d020476ff649d85813810e2000c6f98",
+    "content/tools/family-reunification-card.meta.json": "47da1e7e20e39f0ea85e26d54a8d58301f6e0a15"
+  },
+  "article_number": 15,
+  "tool_number": 104,
+  "tool_102_is_distinct": true,
+  "release": "DRAFT_HARD_HOLD",
+  "may_publish": false,
+  "qualified_qd_pass": false,
+  "child_medical_advice_approved": false,
+  "child_privacy_verified": false,
+  "school_pickup_rules_universal": false,
+  "commercial_offer_approved": false,
+  "review_only_sources": [
+    {
+      "id": "cdc-child-keeping-safe-2025-review-only",
+      "published": "2025-12-16",
+      "url": "https://www.cdc.gov/children-and-school-preparedness/keeping-safe/index.html",
+      "read_scope": "full_official_page",
+      "citation_registered": false,
+      "review_state": "REVIEW_ONLY_NOT_IN_ORIGINAL_CITATIONS"
+    },
+    {
+      "id": "cdc-child-before-during-after-2025-review-only",
+      "published": "2025-12-24",
+      "url": "https://www.cdc.gov/children-and-school-preparedness/before-during-after/index.html",
+      "read_scope": "full_official_page",
+      "citation_registered": false,
+      "review_state": "REVIEW_ONLY_NOT_IN_ORIGINAL_CITATIONS"
+    },
+    {
+      "id": "cdc-child-backpack-2020-catalog-review-only",
+      "published": "2020",
+      "url": "https://stacks.cdc.gov/view/cdc/139829",
+      "read_scope": "catalog_record_only",
+      "citation_registered": false,
+      "review_state": "REVIEW_ONLY_NOT_IN_ORIGINAL_CITATIONS"
+    }
+  ],
+  "fema_pdf_original_publication": "2017-07",
+  "fema_pdf_second_page_checked": false,
+  "decisions": [
+    {
+      "id": "child_backpack_vs_adult_public_carry",
+      "state": "UNADJUDICATED",
+      "owner": "Preparedness/QD",
+      "reviewer": null,
+      "evidence": null,
+      "approved_copy": null
+    },
+    {
+      "id": "printed_card_sensitive_information",
+      "state": "UNADJUDICATED",
+      "owner": "Preparedness/QD",
+      "reviewer": null,
+      "evidence": null,
+      "approved_copy": null
+    },
+    {
+      "id": "school_authorized_pickup",
+      "state": "UNADJUDICATED",
+      "owner": "Preparedness/QD",
+      "reviewer": null,
+      "evidence": null,
+      "approved_copy": null
+    },
+    {
+      "id": "cdc_2025_source_registration",
+      "state": "UNADJUDICATED",
+      "owner": "Preparedness/QD",
+      "reviewer": null,
+      "evidence": null,
+      "approved_copy": null
+    },
+    {
+      "id": "school_and_clinician_context",
+      "state": "UNADJUDICATED",
+      "owner": "Preparedness/QD",
+      "reviewer": null,
+      "evidence": null,
+      "approved_copy": null
+    },
+    {
+      "id": "local_only_privacy_security",
+      "state": "UNADJUDICATED",
+      "owner": "Claude/Engineering",
+      "reviewer": null,
+      "evidence": null,
+      "approved_copy": null
+    },
+    {
+      "id": "qualified_accessibility_print_review",
+      "state": "UNADJUDICATED",
+      "owner": "Preparedness/QD",
+      "reviewer": null,
+      "evidence": null,
+      "approved_copy": null
+    },
+    {
+      "id": "native_wp_preview_citation_parity",
+      "state": "UNADJUDICATED",
+      "owner": "Claude/Engineering",
+      "reviewer": null,
+      "evidence": null,
+      "approved_copy": null
+    }
+  ],
+  "commercial_funnel": {
+    "paid_sku_authenticated": false,
+    "grok_published_asset_matched": false,
+    "realized_net_revenue_verified": false
+  },
+  "notes": "Cross-branch E466 is reviewer evidence, not integrated approved copy. Purpose and custodian of an adult public-carry card differ from a child school-bag emergency card. No new child-medical fields, tracking, emails or published CTA."
+}
