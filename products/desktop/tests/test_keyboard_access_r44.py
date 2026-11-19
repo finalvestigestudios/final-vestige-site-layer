@@ -619,6 +619,18 @@ class R532KeyboardHelpWindow(unittest.TestCase):
         self.assertIsNotNone(self.root._fvs_help_dialog)
 
 
+    def test_r534_failed_raise_destroys_orphan_before_rebuild(self):
+        self.open()
+        self.dialog.winfo_exists.return_value = True
+        self.dialog.lift.side_effect = help_module.tk.TclError()
+        successor = MagicMock()
+        self.constructors[0].return_value = successor
+        self.open()
+        self.dialog.destroy.assert_called_once()
+        self.assertIs(self.root._fvs_help_dialog, successor)
+        self.assertIs(successor._fvs_former_focus, self.previous)
+
+
 class R534NativeTkHelpRecovery(unittest.TestCase):
     """Real Tk recovery on a display; skip instead of faking GUI availability."""
     LEGEND = (
@@ -667,6 +679,16 @@ class R534NativeTkHelpRecovery(unittest.TestCase):
         self.entry.focus_set()
         self.root.update()
         self.assertIs(self.open(), previous)
+
+    def test_r534_native_failed_lift_replaces_old_window(self):
+        previous = self.open()
+        def fail_lift():
+            raise help_module.tk.TclError()
+        previous.lift = fail_lift
+        successor = self.open()
+        self.assertIsNot(successor, previous)
+        self.assertFalse(previous.winfo_exists())
+        self.assertIs(successor._fvs_former_focus, self.entry)
 
     def test_r534_native_rejects_bad_text_before_constructing(self):
         with self.assertRaises(ValueError):
