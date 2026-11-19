@@ -13,6 +13,7 @@ from typing import Any, Iterable
 
 from .review import ascii_case_identity
 from .identity_inputs import MAX_SOURCE_IDENTITY_CHARS, normalize_key
+from .invoice_window_policy_r536 import require_invoice_review_window
 
 WINDOW_DAYS = 7
 MAX_CANDIDATES = 100_000
@@ -165,8 +166,7 @@ def candidate_pairs(records: Iterable[dict[str, Any]], *,
     Fail closed with an explicit error once the report limit is reached;
     do not emit a partial report or claim completeness.
     """
-    if type(window_days) is not int or not 0 <= window_days <= 365:
-        raise ValueError("Duplicate window must be an integer between 0 and 365 days")
+    window_days = require_invoice_review_window(window_days)
     if type(max_candidates) is not int or max_candidates < 1:
         raise ValueError("Candidate limit must be a positive integer")
     if max_candidates > MAX_CANDIDATES:
