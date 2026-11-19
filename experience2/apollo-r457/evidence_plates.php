@@ -11,15 +11,14 @@ function fv457_evidence_plates(): array {
 }
 function fv457_evidence_plates_valid(array $plates): bool {
  if(count($plates)!==3)return false;
- $expected=['cause','egress','memorial'];$used=[];
- $allowed=[
-  'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/',
-  'https://www.nasa.gov/history/apollo-1-crew-honored-in-new-tribute-exhibit/',
- ];
+ $board='https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/';
+ $tribute='https://www.nasa.gov/history/apollo-1-crew-honored-in-new-tribute-exhibit/';
+ $expected=['cause'=>['date'=>'1967','source'=>$board], 'egress'=>['date'=>'1967-01-27','source'=>$board], 'memorial'=>['date'=>'2017-01-27','source'=>$tribute]];
+ $used=[];
  foreach($plates as $p){
   foreach(['id','date','label','claim','limit','kind','source'] as $key)if(!isset($p[$key])||!is_string($p[$key])||trim($p[$key])==='')return false;
-  if(!in_array($p['id'],$expected,true)||isset($used[$p['id']])||!in_array($p['source'],$allowed,true))return false;
-  if(!in_array($p['date'],['1967','1967-01-27','2017-01-27'],true))return false;
+  if(!isset($expected[$p['id']])||isset($used[$p['id']]))return false;
+  if($p['source']!==$expected[$p['id']]['source']||$p['date']!==$expected[$p['id']]['date'])return false;
   $used[$p['id']]=true;
  }
  return count($used)===3;
