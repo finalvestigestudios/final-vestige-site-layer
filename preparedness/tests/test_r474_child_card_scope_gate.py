@@ -30,3 +30,49 @@ def setup():
     return [article, a, tool, t, copy.deepcopy(MANIFEST)]
 
 
+class ReviewCustodyTests(unittest.TestCase):
+    def test_original_synthetic_holds(self):
+        d = gate.validate_originals(*setup())
+        self.assertEqual(d["state"], "CHILD_CARD_CONTEXT_AND_CITATION_REVIEW_HARD_HOLD")
+        self.assertFalse(d["may_publish"])
+        self.assertFalse(d["qualified_qd_pass"])
+        self.assertEqual(d["review_sources_unregistered"], 3)
+        self.assertEqual(d["unadjudicated_decisions"], 8)
+
+    def test_strict_duplicate_json(self):
+        with self.assertRaises(gate.Hold):
+            gate.strict_json(b'{"x":1,"x":2}')
+
+    def test_strict_non_object(self):
+        with self.assertRaises(gate.Hold):gate.strict_json(b'[]')
+
+    def test_valid_sha_git_blob(self):
+        self.assertEqual(gate.blob_sha(b"hello"), "b6fc4c620b67d95f953a5c1c1230aaab5db5a1b0")
+
+    def test_pinned_missing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaises(gate.Hold):gate.checked_file(Path(tmp),"notthere", "abcd")
+
+    def test_pinned_symlink(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp);(path/"regular").write_text("hello");(path/"link").symlink_to(path/"regular")
+            with self.assertRaises(gate.Hold):gate.checked_file(path,"link",gate.blob_sha(b"hello"))
+
+    def test_pinned_wrong_content(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp);(p/"evidence").write_text("fraud")
+            with self.assertRaises(gate.Hold):gate.checked_file(p,"evidence",gate.blob_sha(b"original"))
+
+    def test_pinned_correct_content(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp);(p/"evidence").write_text("original")
+            self.assertEqual(gate.checked_file(p,"evidence",gate.blob_sha(b"original")),b"original")
+
+    def test_native_missing_original_holds(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaises(gate.Hold):gate.native(Path(tmp))
+
+    def test_cli_always_returns_two(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(gate.main(["--root",tmp]),2)
+
