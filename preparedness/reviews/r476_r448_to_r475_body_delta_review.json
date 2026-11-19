@@ -1,0 +1,198 @@
+{
+  "schema": "fv-preparedness-r476-old-ledger-candidate-delta-v1",
+  "release": "DRAFT_HARD_HOLD",
+  "baseline_r448_ledger_blob": "e9dfce578903137b9ff41ac2d8dc684da7fe5b13",
+  "candidate_r476_manifest_blob": "2adcffe48fcbb3ac3aa9eb2fc18b048f032fcc0c",
+  "r475_branch_sha": "1f8261505202ccd3def3c10b34853da21868acf2",
+  "article_count": 35,
+  "candidate_bodies_absent_from_r448_original_alternative_inventory": 14,
+  "articles_with_multiple_old_candidate_bodies": 10,
+  "meaning": "R448 predates later integration edits; changes are version deltas, NOT proven content or citation loss",
+  "human_review": "UNADJUDICATED",
+  "qualified_qd_pass": false,
+  "publication_authorized": false,
+  "mismatches": [
+    {
+      "slug": "family-communication-plan",
+      "candidate_blob": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+      "baseline_original_candidate_blobs": [
+        "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+        "cbfe7830e9412ac99a1920c581a14d2913a9eaf6",
+        "c97a79761dc3be1c44e5f9322a606ccc7fd11c6e"
+      ],
+      "disposition": "REVIEW_UNADJUDICATED_NO_TEXT_LOSS_INFERRED"
+    },
+    {
+      "slug": "go-bags",
+      "candidate_blob": "e5910015fc6e33ad015bc5dc0605b86622b701be",
+      "baseline_original_candidate_blobs": [
+        "5135639786bbafa4e03939a74659cd0f31df3564"
+      ],
+      "disposition": "REVIEW_UNADJUDICATED_NO_TEXT_LOSS_INFERRED"
+    },
+    {
+      "slug": "home-fire-escape-plan",
+      "candidate_blob": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+      "baseline_original_candidate_blobs": [
+        "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+        "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+        "b8db7be7e0482334d8356f35616f21f36aaa2d4d"
+      ],
+      "disposition": "REVIEW_UNADJUDICATED_NO_TEXT_LOSS_INFERRED"
+    },
+    {
+      "slug": "household-emergency-plan",
+      "candidate_blob": "f81cd43516e8295104230412f18776919148f905",
+      "baseline_original_candidate_blobs": [
+        "8ca5c261dba56eeaf79c445332381a74867233de"
+      ],
+      "disposition": "REVIEW_UNADJUDICATED_NO_TEXT_LOSS_INFERRED"
+    },
+    {
+      "slug": "navigation-before-gps",
+      "candidate_blob": "3c02e58c30d1d608224944142f31fbead44a1252",
+      "baseline_original_candidate_blobs": [
+        "49beb68339a6b85b07d686c0cfb9fe1d88b8de4f"
+      ],
+      "disposition": "REVIEW_UNADJUDICATED_NO_TEXT_LOSS_INFERRED"
+    },
+    {
+      "slug": "outage-heat-cold-generators",
+      "candidate_blob": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+      "baseline_original_candidate_blobs": [
+        "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+        "55a1e3018e3413b79378c6677f15e536bb777377",
+        "5608a28249a0e351710e0c756d878048c8e41e24"
+      ],
+      "disposition": "REVIEW_UNADJUDICATED_NO_TEXT_LOSS_INFERRED"
+    },
+    {
+      "slug": "pemmican-and-dried-meats",
+      "candidate_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+      "baseline_original_candidate_blobs": [
+        "1febc8929f8b90c81a3fcef1e46a2811778b7e06"
+      ],
+      "disposition": "REVIEW_UNADJUDICATED_NO_TEXT_LOSS_INFERRED"
+    },
+    {
+      "slug": "pioneer-supply-chains-failed",
+      "candidate_blob": "ad158ee898f76d05bcb65c845b1e4a0e8103c660",
+      "baseline_original_candidate_blobs": [
+        "3643c50b43ca7ba6c1d9bc439e7c78730503b80f"
+      ],
+      "disposition": "REVIEW_UNADJUDICATED_NO_TEXT_LOSS_INFERRED"
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "candidate_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+      "baseline_original_candidate_blobs": [
+        "a658481d828dc4c5ba85f296adbfbee0514f0611"
+      ],
+      "disposition": "REVIEW_UNADJUDICATED_NO_TEXT_LOSS_INFERRED"
+    },
+    {
+      "slug": "preparedness-real-households",
+      "candidate_blob": "68344cf6c4022285fffb2a01f42027bf6f9ee95d",
+      "baseline_original_candidate_blobs": [
+        "70d03c366e10db623929f118501becfa26c48bab"
+      ],
+      "disposition": "REVIEW_UNADJUDICATED_NO_TEXT_LOSS_INFERRED"
+    },
+    {
+      "slug": "root-cellars-cool-storage",
+      "candidate_blob": "2ff8d029769aa9a97de6b1e388d937899f3af38c",
+      "baseline_original_candidate_blobs": [
+        "7f375c32d74f2828b4912f5692abc44483e4629a"
+      ],
+      "disposition": "REVIEW_UNADJUDICATED_NO_TEXT_LOSS_INFERRED"
+    },
+    {
+      "slug": "sanitation-before-germ-theory",
+      "candidate_blob": "d56df76647d2598f35cfd4609f91649cef063f12",
+      "baseline_original_candidate_blobs": [
+        "02090fc1b773fd79f08a7ba754b6125844c37eab"
+      ],
+      "disposition": "REVIEW_UNADJUDICATED_NO_TEXT_LOSS_INFERRED"
+    },
+    {
+      "slug": "shelter-or-evacuate",
+      "candidate_blob": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+      "baseline_original_candidate_blobs": [
+        "b8acf07e533eea43795aa242f39fd926b080130f",
+        "ed6e6bc4dc1344d1aa25679c6f4380f76d82927e",
+        "a8c36cd63517fdeb723dca201b31802c2a721ddf"
+      ],
+      "disposition": "REVIEW_UNADJUDICATED_NO_TEXT_LOSS_INFERRED"
+    },
+    {
+      "slug": "three-day-kit",
+      "candidate_blob": "933f38ff3cd55a241cf9b392014fc52d4961e84f",
+      "baseline_original_candidate_blobs": [
+        "ef5463ca668166766ca3d868908bc0bcb6040a23"
+      ],
+      "disposition": "REVIEW_UNADJUDICATED_NO_TEXT_LOSS_INFERRED"
+    }
+  ],
+  "forks": [
+    {
+      "slug": "family-communication-plan",
+      "old_original_candidate_count": 3,
+      "selected_candidate_matches_old_alternative": false,
+      "disposition": "REVIEW_UNADJUDICATED"
+    },
+    {
+      "slug": "home-fire-escape-plan",
+      "old_original_candidate_count": 3,
+      "selected_candidate_matches_old_alternative": false,
+      "disposition": "REVIEW_UNADJUDICATED"
+    },
+    {
+      "slug": "homemade-water-filters",
+      "old_original_candidate_count": 9,
+      "selected_candidate_matches_old_alternative": true,
+      "disposition": "REVIEW_UNADJUDICATED"
+    },
+    {
+      "slug": "making-water-safer",
+      "old_original_candidate_count": 9,
+      "selected_candidate_matches_old_alternative": true,
+      "disposition": "REVIEW_UNADJUDICATED"
+    },
+    {
+      "slug": "outage-heat-cold-generators",
+      "old_original_candidate_count": 3,
+      "selected_candidate_matches_old_alternative": false,
+      "disposition": "REVIEW_UNADJUDICATED"
+    },
+    {
+      "slug": "salt-beef-salt-pork-age-of-sail",
+      "old_original_candidate_count": 9,
+      "selected_candidate_matches_old_alternative": true,
+      "disposition": "REVIEW_UNADJUDICATED"
+    },
+    {
+      "slug": "shelter-or-evacuate",
+      "old_original_candidate_count": 3,
+      "selected_candidate_matches_old_alternative": false,
+      "disposition": "REVIEW_UNADJUDICATED"
+    },
+    {
+      "slug": "two-week-water-storage",
+      "old_original_candidate_count": 9,
+      "selected_candidate_matches_old_alternative": true,
+      "disposition": "REVIEW_UNADJUDICATED"
+    },
+    {
+      "slug": "water-advisories-explained",
+      "old_original_candidate_count": 9,
+      "selected_candidate_matches_old_alternative": true,
+      "disposition": "REVIEW_UNADJUDICATED"
+    },
+    {
+      "slug": "water-math",
+      "old_original_candidate_count": 9,
+      "selected_candidate_matches_old_alternative": true,
+      "disposition": "REVIEW_UNADJUDICATED"
+    }
+  ]
+}
