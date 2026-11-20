@@ -1,0 +1,26 @@
+{
+  "snapshot_as_of_utc": "2026-11-20T16:25:58Z",
+  "site": "https://finalvestige.com",
+  "newsletter": {"total":3,"confirmed":3,"unconfirmed":2,"automatic_new_post_email":false,"email_content_format":"full","welcome_pdf_configured":true},
+  "dispatch001": {"post_id":2928,"url":"https://finalvestige.com/2026/11/18/dispatch-001-piri-reis-map/","status":"delivered","sent":3,"bounced":0,"dispatched_at":"2026-11-19T04:41:52Z"},
+  "stats_subscribers": {"total":3,"email":3,"reader":0},
+  "stats_followers": {"email":0,"reader":3,"partial":false},
+  "stats_emails": {"post_id":2928,"sent":3,"unique_opens":0,"unique_clicks":0},
+  "evidence": {
+    "newsletter": "WordPress wpcom_jetpack_newsletter_read status and get_settings 2026-11-20",
+    "email_stats": "WordPress wpcom_jetpack_stats_emails 2026-11-20 (all-time)",
+    "stats_subscribers": "WordPress wpcom_jetpack_stats_subscribers 2026-11-20 (counts only)",
+    "stats_followers": "WordPress wpcom_jetpack_stats_followers 2026-11-20",
+    "welcome_received": null,
+    "pdf_download_completed": null,
+    "affiliate_email_permission": null,
+    "publisher_postal_in_rendered_email": null,
+    "unsubscribe_click_verified": null,
+    "native_jetpack_preview_witness": null,
+    "merchant_settled_orders": null,
+    "qualified_human_sessions": null
+  },
+  "release": "HOLD_NO_NEW_SEND",
+  "classification_warning": "Newsletter total=3 and confirmed=3; an additional two unconfirmed is not additive to confirmed. Stats Followers Reader=3 conflicts with Stats Subscribers Email=3. Do not infer real humans or new leads.",
+  "analytics_warning": "Zero recorded opens/clicks is not proof of no reading. The platform reported a delivered send, not witnessed inbox or received Fieldbook welcome."
+}
