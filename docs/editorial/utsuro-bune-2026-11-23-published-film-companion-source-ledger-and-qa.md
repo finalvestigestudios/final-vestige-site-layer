@@ -8,13 +8,13 @@
 - Live WordPress search (including drafts) and the GitHub coordination queue found no competing Utsuro-bune article. Existing Mesmerism #1924 was enhanced on Nov 19; Flannan #3089 is a production brief, **not** a published film. Shabaka/Piltdown/Meroitic/Vinland proposed slate in #3090 is QA_HOLD; Forbidden Files #3093 planning-only.
 - No homepage, templates, shared blocks, analytics scripts, video deliverables or social posts changed.
 
-## Draft created; publication HOLD pending live-delivery QA
-- **WordPress draft:** post **#2935**, slug `utsuro-bune-1803-archives-manuscripts`, Discovery category **#9369**, title **“Utsuro-bune: The 1803 ‘UFO’ and the Manuscripts Rediscovered in 2026”**.
+## Publication and live-site release QA
+- **WordPress published post:** post **#2935**, slug `utsuro-bune-1803-archives-manuscripts`, Discovery category **#9369**, title **“Utsuro-bune: The 1803 ‘UFO’ and the Manuscripts Rediscovered in 2026”**.
 - Approximately **2,200 narrative words**; 7-item source/further reading ledger with inline links to named archives, museum PDF, researcher and image rights. Analytical angle: how differing archival filing categories, geography and copy routes change what multiple witnesses actually prove.
 - Hero/media **#2934**, original hosted at `https://finalvestige.com/wp-content/uploads/2026/11/utsuro-bune-hirokata-zuihitsu-public-domain.jpg`, **2138×1603** JPG / 751,642 bytes according to authenticated WordPress media record, alt text and caption set. The 1024×768 auto-generated variant returned as a **virtual size**, so its hypothetical `...-1024x768.jpg` hardcoded URL was REMOVED and guarded Gutenberg `core/image` replacement now uses the known source_url (new block hash verified by successful guarded API replacement).
 - Studio original **source-chain timeline** embedded as accessible `core/html` diagram with labeled 1803 / early 1800s–1825 / 2025 / 2026 sections. Original by FV Nov 23, no historical reconstruction. Full explanatory caption with citations.
-- Protective metadata: `_jetpack_dont_email_post_to_subs=true`; `jetpack_publicize_feature_enabled=false`; `jetpack_seo_noindex=true` while draft; no subscriber mailing, no social auto-post.
-- WordPress draft creation and editor readback confirmed 21,753 characters *before guarded image block fix*, all 39 original blocks retained, seven source entries, 33 https links, accurate category and 2934 media ID; targeted image section replacement returned no warning. Final production browser visual/semantic QA NOT established, so **not released**.
+- Protective metadata: `_jetpack_dont_email_post_to_subs=true`; `jetpack_publicize_feature_enabled=false`; `jetpack_seo_noindex=true` during drafting, then set to **false** on first public publication. No subscriber mailing or social auto-post.
+- WordPress draft creation and editor readback confirmed 21,753 characters *before guarded image block fix*, all 39 original blocks retained, seven source entries, 33 https links, accurate category and 2934 media ID; targeted image section replacement returned no warning. Initial preview/production rendering had not yet been established; the article was held as a draft until the public imagery capture and release readiness checks below were completed. It was then published and independently read back.
 
 ### Material source-ledger, checks, and limits
 | ID | Source / custody | Supporting observation | Explicit limit |
@@ -35,9 +35,9 @@
 1. WordPress editor readback (draft, media attributes, 39-block manuscript, emails/social disabled): **PASS**.
 2. Source detail vs primary institutional records (including museum original PDF page screenshots): **PASS**, subject to ordinary uncertainty explicitly disclosed.
 3. Historical image license/custody (Wikimedia PD-Japan/PD-1996, Archives source): **PASS**.
-4. Live anonymous byte-delivery of the self-hosted JPEG: **NOT VERIFIED** (available browsing route cannot directly inspect a new image binary; media metadata exists but is insufficient to claim anonymous delivery). The Wordpress media endpoint reports generated smaller sizes virtual, therefore fixed manuscript to use original URL.
-5. Actual production WordPress theme screenshots, **390px/1440px** with image, original inline source-chain figure, hyperlinks, keyboard/accessibility: **NOT VERIFIED**.
-6. **Publication: HOLD**. Post #2935 remains a noindex draft and may not be promoted to publish until visual and public-delivery checks succeed; no claim of live publication, no subscriber email or social distribution. Next session should inspect draft preview, test public image, then if approved publish with `_jetpack_dont_email_post_to_subs=true` on the same state-change request, verify anonymous live URL and WordPress status, image/credits/links before completing.
+4. Image link/delivery: WordPress authenticated media item and a fresh public **WordPress mshots screenshot capture of the original JPEG URL** returned `capture_shows=site`, `site_visibility=public`, `status=ready`; the image remains self-hosted. WordPress smaller sizes were marked virtual, so manuscript was corrected to original source URL. Raw HTTP image-byte inspection from this sandbox was not possible.
+5. Production WordPress screenshot captures requested and returned **ready** at **390px and 1440px**; links below. Programmatic signed-out HTML audit returned **HTTP 200**, `page_shows=page`, canonical URL, OG image+alt, 0 images missing alt, 0 empty links, 2825 words with site chrome, nine intended story/source headings. Browser image pixel inspection, keyboard navigation and responsive figure legibility are still open for manual visual QA; this is not a claim of WCAG certification.
+6. **Publication: LIVE, 23 Nov 2026 08:37:58 PT.** WordPress post #2935 `publish`, first-publication request explicitly `_jetpack_dont_email_post_to_subs=true`, `jetpack_publicize_feature_enabled=false`, `jetpack_seo_noindex=false`. Signed-out rendered-page readback **HTTP 200**, permalink/canonical https://finalvestige.com/2026/11/23/utsuro-bune-1803-archives-manuscripts/; page includes 17 headings (nine within story and other site furniture), OG image and matching alt, no empty anchors, no missing alt. Three `links_to_nowhere` reports are website-level image-tool buttons (“Toggle photo metadata visibility”, “Toggle photo comments visibility”, “Download image”), not broken citations; follow up separately without modifying shared template. Jetpack newsletter diagnostics for #2935 confirmed `never_sent_opted_out`, `dispatched_at=null`, `send_subscription flag is false`. No social publishing or new paid services.
 
 ## Conversion evidence snapshot (23 November 2026)
 - Utsuro long documentary 22 YouTube views, related Short 959 YouTube views (vidIQ channel snapshot; these do not equal website sessions).
@@ -51,3 +51,13 @@
 - This audit deliberately contains public-ready source evidence and aggregate audience counts only, not PII, secrets, copyrighted private assets or unreleased production copies.
 
 **Cash outlay:** $0. No new services, no external records requests, no video, no social publication.
+
+
+## Independent post-publication evidence (Nov 23 2026)
+- **Canonical:** https://finalvestige.com/2026/11/23/utsuro-bune-1803-archives-manuscripts/
+- **Public server readback:** signed-out WP renderer status=200, site_visibility=public, `page_shows=page`, Jetpack title/description/OG article image with accurate alt, canonical exact, schema `Article`.
+- **Mobile:** [390px screenshot (mshots service, ready)](https://s0.wp.com/mshots/v1/https%3A%2F%2Ffinalvestige.com%2F2026%2F11%2F23%2Futsuro-bune-1803-archives-manuscripts%2F?vpw=390&vph=3200&w=1200&requeue=true).
+- **Desktop:** [1440px screenshot (mshots service, ready)](https://s0.wp.com/mshots/v1/https%3A%2F%2Ffinalvestige.com%2F2026%2F11%2F23%2Futsuro-bune-1803-archives-manuscripts%2F?vpw=1440&vph=3200&w=1200&requeue=true).
+- **Mailing:** #2935 `never_sent_opted_out`; three confirmed newsletter subscribers still reported at 16:38Z, no message dispatched for this story. Sitewide `total=3/confirmed=3/unconfirmed=2` remains a count consistency issue; do not add them.
+- **Attribution:** no verified qualified visits or confirmed new subscriptions attributable to this article at release time; future measurement required. May hand canonical URL to Grok for *drafting/approved distribution* only, not automatic publishing.
+- **Limitations:** screenshot links indicate screenshot generation, not independent visual pixel-by-pixel review; direct image byte fetch through this tool environment was not possible. Monitor production images, mobile and contrast when browser inspection is available. Do not claim full WCAG audit.
