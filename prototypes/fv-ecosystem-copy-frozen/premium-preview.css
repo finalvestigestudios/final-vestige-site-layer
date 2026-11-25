@@ -1,0 +1,30 @@
+/* Isolated prototype: not enqueued, no copy or DOM changes.
+   Apply .fv-premium-preview only in an explicitly approved test harness. */
+.fv-premium-preview {
+ --fv-ink:#101418; --fv-forest:#283b3b; --fv-gold:#b59a68;
+ --fv-paper:#eae2d2; --fv-ivory:#f7f5ef; --fv-muted:#c9c3b8;
+ --fv-serif: Georgia, "Times New Roman", serif;
+ --fv-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+ --fv-space:clamp(1rem,2.5vw,2.5rem);
+ --fv-radius:clamp(.5rem,1vw,1rem);
+ background:var(--fv-ink); color:var(--fv-ivory);
+ font-family:var(--fv-sans); line-height:1.65;
+}
+.fv-premium-preview :where(h1,h2,h3){font-family:var(--fv-serif);font-weight:500;line-height:1.15;text-wrap:balance;letter-spacing:-.025em}
+.fv-premium-preview h1{font-size:clamp(2rem,5vw,4.5rem)}
+.fv-premium-preview h2{font-size:clamp(1.5rem,3vw,2.75rem)}
+.fv-premium-preview :where(p,li){overflow-wrap:anywhere}
+.fv-premium-preview .fv-preview-container{width:min(100% - 2 * var(--fv-space),76rem);margin-inline:auto}
+.fv-premium-preview .fv-preview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:var(--fv-space)}
+.fv-premium-preview .fv-preview-card{min-width:0;border:1px solid #64706b;border-radius:var(--fv-radius);background:#1a2424;padding:var(--fv-space)}
+.fv-premium-preview .fv-preview-card :where(img,svg){display:block;max-width:100%;height:auto}
+.fv-premium-preview .fv-preview-media{aspect-ratio:16/9;overflow:hidden;border-radius:var(--fv-radius);background:#202c2b}
+.fv-premium-preview .fv-preview-media img{width:100%;height:100%;object-fit:cover}
+.fv-premium-preview a{color:#e0c48b;text-underline-offset:.18em}
+.fv-premium-preview :where(a,button,input,select,textarea):focus-visible{outline:3px solid #f2dca7;outline-offset:4px}
+.fv-premium-preview .fv-preview-control{min-height:44px;padding:.7rem 1.1rem;border:1px solid var(--fv-gold);border-radius:.5rem;background:var(--fv-gold);color:var(--fv-ink);font:inherit}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+ .fv-premium-preview .fv-preview-card{transition:transform 180ms ease,border-color 180ms ease}
+ .fv-premium-preview .fv-preview-card:hover{transform:translateY(-3px);border-color:var(--fv-gold)}
+}
+@media (prefers-reduced-motion:reduce){.fv-premium-preview *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
