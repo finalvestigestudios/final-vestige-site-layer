@@ -1,0 +1,564 @@
+{
+  "schema": "fv-oversize-runtime-proxy-crosscheck-v1",
+  "observed_date_pt": "2026-11-16",
+  "collection_method": "fresh authenticated read-only WordPress media_list 100/page + media_get(edit) + posts_get(view); no browser or binary request",
+  "source_scope": {
+    "site": "finalvestige.com",
+    "sort": "id desc",
+    "media_pages": [
+      {
+        "page": 1,
+        "count": 100
+      },
+      {
+        "page": 2,
+        "count": 32
+      }
+    ],
+    "scanned_image_count": 132
+  },
+  "historical_counts_not_replaced": {
+    "historical_posts": 61,
+    "historical_image_refs": 355,
+    "reported_broken_unverified": 42,
+    "savings_76_percent_measured": false
+  },
+  "oversize": {
+    "decimal_byte_threshold": 1500000,
+    "count": 20,
+    "original_storage_bytes": 64385752,
+    "assets": [
+      {
+        "media_id": 388,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg",
+        "bytes": 8176362,
+        "native_width": 4256,
+        "native_height": 2832,
+        "mime": "image/jpeg",
+        "wordpress_variant_keys": [
+          "medium",
+          "large",
+          "thumbnail",
+          "medium_large",
+          "1536x1536",
+          "2048x2048",
+          "full"
+        ],
+        "media_metadata_date": "2026-08-20T00:02:12",
+        "media_title": "Vasa 1:10 Painted Reconstruction — Karolina Kristensson"
+      },
+      {
+        "media_id": 2640,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/piri-reis-world-map-01.jpg",
+        "bytes": 7422309,
+        "native_width": 1964,
+        "native_height": 2619,
+        "mime": "image/jpeg",
+        "wordpress_variant_keys": [
+          "medium",
+          "large",
+          "thumbnail",
+          "medium_large",
+          "1536x1536",
+          "2048x2048",
+          "full"
+        ],
+        "media_metadata_date": "2026-11-15T02:58:46",
+        "media_title": "Piri Reis world map, 1513"
+      },
+      {
+        "media_id": 1258,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+        "bytes": 5553669,
+        "native_width": 5667,
+        "native_height": 3831,
+        "mime": "image/jpeg",
+        "wordpress_variant_keys": [
+          "medium",
+          "large",
+          "thumbnail",
+          "medium_large",
+          "1536x1536",
+          "2048x2048",
+          "full"
+        ],
+        "media_metadata_date": "2026-08-31T13:58:36",
+        "media_title": "edit-017-v02-nypl-5003296-original"
+      },
+      {
+        "media_id": 1257,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+        "bytes": 4798395,
+        "native_width": 4000,
+        "native_height": 3000,
+        "mime": "image/jpeg",
+        "wordpress_variant_keys": [
+          "medium",
+          "large",
+          "thumbnail",
+          "medium_large",
+          "1536x1536",
+          "2048x2048",
+          "full"
+        ],
+        "media_metadata_date": "2026-08-31T13:58:33",
+        "media_title": "edit-017-v01-malbone-tunnel-generalpunger-original"
+      },
+      {
+        "media_id": 2636,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/le-baquet-de-mesmer.jpg",
+        "bytes": 4462854,
+        "native_width": 2988,
+        "native_height": 3538,
+        "mime": "image/jpeg",
+        "wordpress_variant_keys": [
+          "medium",
+          "large",
+          "thumbnail",
+          "medium_large",
+          "1536x1536",
+          "2048x2048",
+          "full"
+        ],
+        "media_metadata_date": "2026-11-15T02:58:31",
+        "media_title": "Le Baquet de Mesmer"
+      },
+      {
+        "media_id": 39,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+        "bytes": 2892087,
+        "native_width": 1672,
+        "native_height": 941,
+        "mime": "image/png",
+        "wordpress_variant_keys": [],
+        "media_metadata_date": "2026-08-16T22:03:37",
+        "media_title": "1906 San Francisco Firefighters — Historical Reconstruction"
+      },
+      {
+        "media_id": 43,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+        "bytes": 2836245,
+        "native_width": 1672,
+        "native_height": 941,
+        "mime": "image/png",
+        "wordpress_variant_keys": [],
+        "media_metadata_date": "2026-08-16T22:03:58",
+        "media_title": "San Francisco Emergency Cistern — Historical Reconstruction"
+      },
+      {
+        "media_id": 389,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg",
+        "bytes": 2822969,
+        "native_width": 2147,
+        "native_height": 1417,
+        "mime": "image/jpeg",
+        "wordpress_variant_keys": [
+          "medium",
+          "large",
+          "thumbnail",
+          "medium_large",
+          "1536x1536",
+          "2048x2048",
+          "full"
+        ],
+        "media_metadata_date": "2026-08-20T00:02:14",
+        "media_title": "Vasa in the Museum — Anneli Karlsson"
+      },
+      {
+        "media_id": 40,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+        "bytes": 2552136,
+        "native_width": 1672,
+        "native_height": 941,
+        "mime": "image/png",
+        "wordpress_variant_keys": [],
+        "media_metadata_date": "2026-08-16T22:03:42",
+        "media_title": "James Caird Southern Ocean — Historical Reconstruction"
+      },
+      {
+        "media_id": 41,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+        "bytes": 2498247,
+        "native_width": 1672,
+        "native_height": 941,
+        "mime": "image/png",
+        "wordpress_variant_keys": [],
+        "media_metadata_date": "2026-08-16T22:03:47",
+        "media_title": "Vicksburg Cave Life — Historical Reconstruction"
+      },
+      {
+        "media_id": 42,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+        "bytes": 2488823,
+        "native_width": 1672,
+        "native_height": 941,
+        "mime": "image/png",
+        "wordpress_variant_keys": [],
+        "media_metadata_date": "2026-08-16T22:03:52",
+        "media_title": "Petra Water System — Historical Reconstruction"
+      },
+      {
+        "media_id": 382,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+        "bytes": 2318980,
+        "native_width": 1800,
+        "native_height": 1200,
+        "mime": "image/jpeg",
+        "wordpress_variant_keys": [
+          "medium",
+          "large",
+          "thumbnail",
+          "medium_large",
+          "1536x1536",
+          "full"
+        ],
+        "media_metadata_date": "2026-08-20T00:02:02",
+        "media_title": "Vasa Old and New Support Systems — Anneli Karlsson"
+      },
+      {
+        "media_id": 482,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png",
+        "bytes": 2293016,
+        "native_width": 1672,
+        "native_height": 941,
+        "mime": "image/png",
+        "wordpress_variant_keys": [
+          "medium",
+          "large",
+          "thumbnail",
+          "medium_large",
+          "1536x1536",
+          "full"
+        ],
+        "media_metadata_date": "2026-08-20T19:48:17",
+        "media_title": "050e21e0-7b54-4f9a-ba0b-7f594657af05"
+      },
+      {
+        "media_id": 405,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png",
+        "bytes": 2201573,
+        "native_width": 1122,
+        "native_height": 1402,
+        "mime": "image/png",
+        "wordpress_variant_keys": [
+          "medium",
+          "large",
+          "thumbnail",
+          "medium_large",
+          "full"
+        ],
+        "media_metadata_date": "2026-08-20T00:15:36",
+        "media_title": "The Water Resilience Field Manual — Expanded First Edition"
+      },
+      {
+        "media_id": 293,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/ne.png",
+        "bytes": 2090327,
+        "native_width": 1122,
+        "native_height": 1402,
+        "mime": "image/png",
+        "wordpress_variant_keys": [
+          "medium",
+          "large",
+          "thumbnail",
+          "medium_large",
+          "full"
+        ],
+        "media_metadata_date": "2026-08-19T13:46:39",
+        "media_title": "Bryan Rhodes — Founder and Editor of Final Vestige"
+      },
+      {
+        "media_id": 2148,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/1927-caernarvon-levee-explosion-noaa-archive.jpg",
+        "bytes": 2030948,
+        "native_width": 1821,
+        "native_height": 1190,
+        "mime": "image/jpeg",
+        "wordpress_variant_keys": [
+          "medium",
+          "large",
+          "thumbnail",
+          "medium_large",
+          "1536x1536",
+          "full"
+        ],
+        "media_metadata_date": "2026-11-07T11:37:04",
+        "media_title": "Caernarvon levee detonation, 1927 — NOAA historic archive"
+      },
+      {
+        "media_id": 2432,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/final-vestige-artifact-editions-editorial-concept.png",
+        "bytes": 2010886,
+        "native_width": 1280,
+        "native_height": 720,
+        "mime": "image/png",
+        "wordpress_variant_keys": [
+          "medium",
+          "large",
+          "thumbnail",
+          "medium_large",
+          "full"
+        ],
+        "media_metadata_date": "2026-11-12T01:53:45",
+        "media_title": "Artifact Editions — Editorial Still Life (Concept)"
+      },
+      {
+        "media_id": 2638,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/lycurgus-cup-british-museum.jpg",
+        "bytes": 1745282,
+        "native_width": 2720,
+        "native_height": 3649,
+        "mime": "image/jpeg",
+        "wordpress_variant_keys": [
+          "medium",
+          "large",
+          "thumbnail",
+          "medium_large",
+          "1536x1536",
+          "2048x2048",
+          "full"
+        ],
+        "media_metadata_date": "2026-11-15T02:58:36",
+        "media_title": "Lycurgus Cup, British Museum"
+      },
+      {
+        "media_id": 2637,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/crystal-skull-british-museum.jpg",
+        "bytes": 1647642,
+        "native_width": 1436,
+        "native_height": 2001,
+        "mime": "image/jpeg",
+        "wordpress_variant_keys": [
+          "medium",
+          "large",
+          "thumbnail",
+          "medium_large",
+          "1536x1536",
+          "full"
+        ],
+        "media_metadata_date": "2026-11-15T02:58:32",
+        "media_title": "British Museum crystal skull"
+      },
+      {
+        "media_id": 1714,
+        "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png",
+        "bytes": 1543002,
+        "native_width": 1280,
+        "native_height": 1280,
+        "mime": "image/png",
+        "wordpress_variant_keys": [
+          "medium",
+          "large",
+          "thumbnail",
+          "medium_large",
+          "full"
+        ],
+        "media_metadata_date": "2026-10-29T15:20:33",
+        "media_title": "Map of the Halifax Explosion area"
+      }
+    ]
+  },
+  "focus": {
+    "ids": [
+      39,
+      40,
+      41,
+      42,
+      43
+    ],
+    "post_ids": [
+      34,
+      35,
+      36,
+      37,
+      38
+    ],
+    "count": 5,
+    "stored_bytes": 13267538,
+    "records": [
+      {
+        "media_id": 39,
+        "post_id": 34,
+        "post_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+        "post_modified": "2026-10-29T21:19:13",
+        "post_status": "publish",
+        "featured_media_id": 39,
+        "wp_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+        "wp_original_bytes": 2892087,
+        "wp_original_native_px": [
+          1672,
+          941
+        ],
+        "wp_media_api_sizes_keys": [],
+        "rendered_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png?resize=1024%2C576&ssl=1",
+        "view_img_width": 1024,
+        "view_img_height": 576,
+        "view_srcset_present": false,
+        "view_sizes_present": false,
+        "view_loading": "lazy",
+        "view_decode": "async",
+        "alt_text_present": true,
+        "ai_reconstruction_caption_in_media": true,
+        "conditional_960_max_no_upscale_px": [
+          960,
+          540
+        ],
+        "currentSrc_in_guest_browser": null,
+        "guest_get_http_status": null,
+        "guest_decoded": null,
+        "guest_transfer_bytes": null,
+        "visual_comparison": null,
+        "item_rights_review": "PENDING",
+        "production_write_authorized": false
+      },
+      {
+        "media_id": 40,
+        "post_id": 35,
+        "post_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+        "post_modified": "2026-10-29T17:07:04",
+        "post_status": "publish",
+        "featured_media_id": 40,
+        "wp_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+        "wp_original_bytes": 2552136,
+        "wp_original_native_px": [
+          1672,
+          941
+        ],
+        "wp_media_api_sizes_keys": [],
+        "rendered_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png?resize=1024%2C576&ssl=1",
+        "view_img_width": 1024,
+        "view_img_height": 576,
+        "view_srcset_present": false,
+        "view_sizes_present": false,
+        "view_loading": "lazy",
+        "view_decode": "async",
+        "alt_text_present": true,
+        "ai_reconstruction_caption_in_media": true,
+        "conditional_960_max_no_upscale_px": [
+          960,
+          540
+        ],
+        "currentSrc_in_guest_browser": null,
+        "guest_get_http_status": null,
+        "guest_decoded": null,
+        "guest_transfer_bytes": null,
+        "visual_comparison": null,
+        "item_rights_review": "PENDING",
+        "production_write_authorized": false
+      },
+      {
+        "media_id": 41,
+        "post_id": 36,
+        "post_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+        "post_modified": "2026-10-29T17:07:30",
+        "post_status": "publish",
+        "featured_media_id": 41,
+        "wp_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+        "wp_original_bytes": 2498247,
+        "wp_original_native_px": [
+          1672,
+          941
+        ],
+        "wp_media_api_sizes_keys": [],
+        "rendered_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png?resize=1024%2C576&ssl=1",
+        "view_img_width": 1024,
+        "view_img_height": 576,
+        "view_srcset_present": false,
+        "view_sizes_present": false,
+        "view_loading": "lazy",
+        "view_decode": "async",
+        "alt_text_present": true,
+        "ai_reconstruction_caption_in_media": true,
+        "conditional_960_max_no_upscale_px": [
+          960,
+          540
+        ],
+        "currentSrc_in_guest_browser": null,
+        "guest_get_http_status": null,
+        "guest_decoded": null,
+        "guest_transfer_bytes": null,
+        "visual_comparison": null,
+        "item_rights_review": "PENDING",
+        "production_write_authorized": false
+      },
+      {
+        "media_id": 42,
+        "post_id": 37,
+        "post_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+        "post_modified": "2026-10-29T17:07:17",
+        "post_status": "publish",
+        "featured_media_id": 42,
+        "wp_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+        "wp_original_bytes": 2488823,
+        "wp_original_native_px": [
+          1672,
+          941
+        ],
+        "wp_media_api_sizes_keys": [],
+        "rendered_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png?resize=1024%2C576&ssl=1",
+        "view_img_width": 1024,
+        "view_img_height": 576,
+        "view_srcset_present": false,
+        "view_sizes_present": false,
+        "view_loading": "lazy",
+        "view_decode": "async",
+        "alt_text_present": true,
+        "ai_reconstruction_caption_in_media": true,
+        "conditional_960_max_no_upscale_px": [
+          960,
+          540
+        ],
+        "currentSrc_in_guest_browser": null,
+        "guest_get_http_status": null,
+        "guest_decoded": null,
+        "guest_transfer_bytes": null,
+        "visual_comparison": null,
+        "item_rights_review": "PENDING",
+        "production_write_authorized": false
+      },
+      {
+        "media_id": 43,
+        "post_id": 38,
+        "post_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+        "post_modified": "2026-10-29T17:06:51",
+        "post_status": "publish",
+        "featured_media_id": 43,
+        "wp_original_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+        "wp_original_bytes": 2836245,
+        "wp_original_native_px": [
+          1672,
+          941
+        ],
+        "wp_media_api_sizes_keys": [],
+        "rendered_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png?resize=1024%2C576&ssl=1",
+        "view_img_width": 1024,
+        "view_img_height": 576,
+        "view_srcset_present": false,
+        "view_sizes_present": false,
+        "view_loading": "lazy",
+        "view_decode": "async",
+        "alt_text_present": true,
+        "ai_reconstruction_caption_in_media": true,
+        "conditional_960_max_no_upscale_px": [
+          960,
+          540
+        ],
+        "currentSrc_in_guest_browser": null,
+        "guest_get_http_status": null,
+        "guest_decoded": null,
+        "guest_transfer_bytes": null,
+        "visual_comparison": null,
+        "item_rights_review": "PENDING",
+        "production_write_authorized": false
+      }
+    ]
+  },
+  "interpretation": [
+    "Five >1.5 MB WP originals have no generated sizes entries in media API but published inline HTML uses Jetpack resize=1024,576 with explicit width/height. Do NOT infer full originals load to visitors.",
+    "The 5 rendered IMG tags lack srcset and sizes; browser-specific currentSrc, HTTP, pixel decode, transfer and CLS remain unmeasured.",
+    "960x540 is a metadata-derived proportional review target only; does not authorize generation, caching or publishing.",
+    "Historical 61/355, newer 66/361, 42 alleged breaks, 76% hypothetical savings and 20/64,385,752 stored bytes are distinct measurement cohorts."
+  ],
+  "release": "HOLD: no WP writes, uploads, downloads, media rehosting, Gutenberg rewrites, homepage changes, merge, deploy or paid action",
+  "qa_owner": "Site QA #154 cold guest browser collector; no duplicate"
+}

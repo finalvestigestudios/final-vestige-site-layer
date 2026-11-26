@@ -1,0 +1,107 @@
+{
+  "schema": "fv-media-guest-cold-transfer-semantic-fix-v1",
+  "observed_date": "2026-11-17",
+  "observed_local_time": "13:27 PT",
+  "baseline": {
+    "historic_posts": 61,
+    "historic_image_slots": 355,
+    "authored_offsite": 288,
+    "reported_broken_unconfirmed": 42,
+    "claimed_reduction_percent_unmeasured": 76,
+    "oversized_wp_original_count_over_1500000_bytes": 20,
+    "oversized_wp_stored_bytes": 64385752
+  },
+  "release_gate": {
+    "file": "qa/media-recovery/slot_parity_61_20261117.cjs",
+    "pre_fix_blob_sha": "f75e1793b7632355f11f8be58e85f8ecf93747c5",
+    "pre_fix_test_blob_sha": "5284caaeb09c540ef7184de792a881f92bc118ef",
+    "method": "offline Site QA 154 capture consumer; not guest/browser collector",
+    "previous_acceptances": [
+      "HTTP 201 synthetic decoded=TRUE",
+      "HTTP 204 synthetic decoded=TRUE",
+      "HTTP 206 without range-transfer accounting",
+      "HTTP 200 decoded=TRUE but zero recorded wire bytes"
+    ],
+    "new_policy": "Only full 200 cold image GET with positive recorded wire bytes may enter reduction formula; 201/204/206 and zero bytes HOLD",
+    "observed_v8_negative_control_old": "36 pass / 4 new adversarial tests fail (incorrectly accepted)",
+    "observed_v8_fixed": "40 pass / 0 fail after fix",
+    "test_limitations": "Isolated V8 with Node assert/crypto/URL/Buffer shims and synthetic source inventory, not native Node or CI; screenshot and CDP evidence still missing"
+  },
+  "p0_direct_source_probe": {
+    "method": "web public image retriever; original URL, not visitor-browser currentSrc/Jetpack",
+    "observations": [
+      {
+        "slot": "287:5",
+        "url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "retriever_outcome": "HTTP 404",
+        "numeric_http_from_retriever": 404,
+        "guest_http_status": null,
+        "related_candidate": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "candidate_outcome": "image rendered by public retriever; numeric 2xx not independently exposed",
+        "candidate_native_dimensions": null,
+        "render_target_960px": null,
+        "rights": "University Press of Florida credited by publisher; rehosting permission unverified",
+        "exact_binary_match_verified": false
+      },
+      {
+        "slot": "418:1",
+        "url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+        "retriever_outcome": "HTTP 403",
+        "numeric_http_from_retriever": 403,
+        "guest_http_status": null,
+        "official_catalog": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "candidate_native_dimensions": null,
+        "render_target_960px": null,
+        "rights": "USCG catalog marks item public domain / cleared for release; exact binary/frame/credit review pending"
+      },
+      {
+        "slot": "418:2",
+        "url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+        "retriever_outcome": "HTTP 403",
+        "numeric_http_from_retriever": 403,
+        "guest_http_status": null,
+        "related_candidate": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg",
+        "candidate_native_dimensions": {
+          "width": 600,
+          "height": 463,
+          "kind": "previously reported museum preview metadata, not current verified master"
+        },
+        "render_target_960px": {
+          "width": 600,
+          "height": 463,
+          "rule": "do_not_upscale"
+        },
+        "rights": "USCG credited by Museum, item-level reuse and exact frame pending"
+      },
+      {
+        "slot": "407:1",
+        "url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+        "retriever_outcome": "TOOL_400_UNSUPPORTED_OCTET_STREAM",
+        "numeric_http_from_retriever": null,
+        "guest_http_status": null,
+        "official_catalog": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+        "related_candidate": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+        "candidate_native_dimensions": null,
+        "render_target_960px": null,
+        "rights": "USGS catalog Public Domain, J. R. Stacy credit; actual original/crop/byte match unverified"
+      }
+    ],
+    "jetpack_status": "Four probed Jetpack URLs and UCS Figure-4 fifth URL were inaccessible via public retriever, no numeric HTTP outcome; not evidence of guest failures",
+    "additional_p0_slots_unprobed_this_run": [
+      "285:2",
+      "285:5"
+    ],
+    "confirm_only_via": "Site QA #154 logged-out Chromium CDP request/status/MIME/decoded/natural dimensions/transfer bytes/screenshots"
+  },
+  "safety": {
+    "wordpress_production_writes": 0,
+    "image_binary_downloads": 0,
+    "image_caching": 0,
+    "media_rehosting": 0,
+    "post_block_rewrites": 0,
+    "homepage_visual_edits": 0,
+    "merges": 0,
+    "deployments": 0,
+    "subscription_spend": 0
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schema": "fv-61-slot-parity-engineering-manifest-v1",
+  "run_local": "2026-11-17T08:27:48-08:00",
+  "baseline": {
+    "published_post_count": 61,
+    "authored_image_slots": 355,
+    "external_authored_sources": 288,
+    "reported_broken_unconfirmed": 42,
+    "claimed_wire_reduction_unmeasured_percent": 76,
+    "oversized_originals_1500000B": 20,
+    "oversized_original_stored_bytes": 64385752
+  },
+  "source_snapshot_commit": "4366489a68620d26592d8438b4402feb453c3166",
+  "source_git_blobs": {
+    "qa/media-recovery/parts/01.json": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+    "qa/media-recovery/parts/02.json": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+    "qa/media-recovery/parts/03.json": "49183f66f880f7c4dfd363acca906876877f2e5e",
+    "qa/media-recovery/parts/04.json": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+    "qa/media-recovery/parts/05.json": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+    "qa/media-recovery/parts/06.json": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+    "qa/media-recovery/parts/07.json": "21095161e633aba093b74c0ead9936c9f6186d00",
+    "qa/media-recovery/parts/08.json": "5659ec243c188928be3f89c0f96354b660608ca2"
+  },
+  "guest_capture": {
+    "siteqa_pr": 154,
+    "collector": "Site QA #154",
+    "captured": false,
+    "verified_guest_broken_count": null,
+    "measured_reduction_percent": null,
+    "status": "HOLD"
+  },
+  "priority": [
+    {
+      "slot": "285:5",
+      "source": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "reader": "RETRIEVER_404",
+      "official_catalog": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "candidate_size": [
+        819,
+        614
+      ],
+      "same_frame": false,
+      "rights": "PENDING"
+    },
+    {
+      "slot": "285:2",
+      "source": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "reader": "REDIRECT_WRAPPER_ERROR_NOT_ORIGIN_HTTP",
+      "official_catalog": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+      "candidate_size": null,
+      "same_frame": false,
+      "rights": "PENDING"
+    },
+    {
+      "slot": "287:5",
+      "source": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "reader": "RETRIEVER_404",
+      "official_catalog": "https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/",
+      "candidate_image": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "candidate_size": null,
+      "same_frame": false,
+      "rights": "UNIVERSITY_PRESS_OF_FLORIDA_CREDIT_REUSE_NOT_CLEARED"
+    },
+    {
+      "slot": "418:1",
+      "source": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "reader": "RETRIEVER_403",
+      "official_catalog": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "candidate_size": null,
+      "same_frame": false,
+      "rights": "USCG_ITEM_PUBLIC_DOMAIN_CREDIT_REQUIRED_STAGING_PENDING"
+    },
+    {
+      "slot": "418:2",
+      "source": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "reader": "RETRIEVER_403",
+      "official_catalog": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+      "candidate_image": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg",
+      "candidate_size": [
+        600,
+        463
+      ],
+      "same_frame": false,
+      "rights": "USCG_CREDIT_ITEM_REUSE_REVIEW"
+    },
+    {
+      "slot": "407:1",
+      "source": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "reader": "TOOL_UNSUPPORTED_OCTET_STREAM_NOT_ORIGIN_HTTP_400",
+      "official_catalog": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+      "candidate_image": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+      "candidate_size": null,
+      "same_frame": false,
+      "rights": "USGS_PUBLIC_DOMAIN_ITEM_CREDIT_J_R_STACY_STAGING_PENDING"
+    }
+  ],
+  "visitor_fields": {
+    "currentSrc": null,
+    "http_status": null,
+    "mime": null,
+    "decoded": null,
+    "wire_bytes": null,
+    "visual_review": null
+  },
+  "production_writes": 0,
+  "media_downloads": 0,
+  "rehosting": 0,
+  "homepage_changes": 0,
+  "subscription_spend": 0,
+  "merged": false,
+  "deployed": false,
+  "next": "Site QA browser capture with 61 page image slots, source identity, request/decoding and screenshot hashes; do not treat missing image as bandwidth savings."
+}

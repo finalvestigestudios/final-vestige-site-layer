@@ -1,0 +1,176 @@
+{
+  "schema": "fv-p0-route-ledger-v1",
+  "checked_pt": "2026-11-17 15:26 PDT",
+  "method": "independent public web retriever, not guest Chromium",
+  "historical": {
+    "posts": 61,
+    "slots": 355,
+    "current_published_count_separate": 66,
+    "broken_42_browser_proven": null,
+    "savings_76_wire_proven": null,
+    "over_1500000_bytes": 20,
+    "stored_original_bytes": 64385752
+  },
+  "entries": [
+    {
+      "slot": "285:5",
+      "source_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "probe": {
+        "type": "HTTP_ERROR",
+        "http_status": 404,
+        "tool_issue": null,
+        "guest_verified": false
+      },
+      "replacement": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_(color).jpg",
+        "candidate_url": null,
+        "rights": "FEDERAL_PD_CLAIM_DIFFERENT_FRAME_HOLD",
+        "exact_frame_verified": false,
+        "rehost_cleared": false,
+        "credit_confirmed": false,
+        "binary_sha256": null,
+        "native_px": {
+          "width": 2592,
+          "height": 2488
+        },
+        "target_px": {
+          "width": 960,
+          "height": 921
+        }
+      },
+      "allowed_wp_upload": false,
+      "allowed_post_rewrite": false
+    },
+    {
+      "slot": "285:2",
+      "source_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "probe": {
+        "type": "TOOL_ERROR",
+        "http_status": null,
+        "tool_issue": "REDIRECT_WRAPPER_NOT_ORIGIN_500",
+        "guest_verified": false
+      },
+      "replacement": {
+        "catalog_url": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+        "candidate_url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+        "rights": "NRC_FIGURE_CREDIT_REUSE_UNKNOWN",
+        "exact_frame_verified": false,
+        "rehost_cleared": false,
+        "credit_confirmed": false,
+        "binary_sha256": null,
+        "native_px": null,
+        "target_px": null
+      },
+      "allowed_wp_upload": false,
+      "allowed_post_rewrite": false
+    },
+    {
+      "slot": "287:5",
+      "source_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "probe": {
+        "type": "HTTP_ERROR",
+        "http_status": 404,
+        "tool_issue": null,
+        "guest_verified": false
+      },
+      "replacement": {
+        "catalog_url": "https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/",
+        "candidate_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "rights": "UNIVERSITY_PRESS_FLORIDA_REHOST_UNCLEARED",
+        "exact_frame_verified": false,
+        "rehost_cleared": false,
+        "credit_confirmed": false,
+        "binary_sha256": null,
+        "native_px": null,
+        "target_px": null
+      },
+      "allowed_wp_upload": false,
+      "allowed_post_rewrite": false
+    },
+    {
+      "slot": "418:1",
+      "source_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "probe": {
+        "type": "HTTP_ERROR",
+        "http_status": 403,
+        "tool_issue": null,
+        "guest_verified": false
+      },
+      "replacement": {
+        "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "candidate_url": null,
+        "rights": "USCG_CATALOG_PUBLIC_DOMAIN_CLAIM_HOLD",
+        "exact_frame_verified": false,
+        "rehost_cleared": false,
+        "credit_confirmed": false,
+        "binary_sha256": null,
+        "native_px": null,
+        "target_px": null
+      },
+      "allowed_wp_upload": false,
+      "allowed_post_rewrite": false
+    },
+    {
+      "slot": "418:2",
+      "source_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "probe": {
+        "type": "HTTP_ERROR",
+        "http_status": 403,
+        "tool_issue": null,
+        "guest_verified": false
+      },
+      "replacement": {
+        "catalog_url": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+        "candidate_url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg",
+        "rights": "MUSEUM_PREVIEW_RIGHTS_REVIEW",
+        "exact_frame_verified": false,
+        "rehost_cleared": false,
+        "credit_confirmed": false,
+        "binary_sha256": null,
+        "native_px": {
+          "width": 600,
+          "height": 463
+        },
+        "target_px": {
+          "width": 600,
+          "height": 463
+        }
+      },
+      "allowed_wp_upload": false,
+      "allowed_post_rewrite": false
+    },
+    {
+      "slot": "407:1",
+      "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "probe": {
+        "type": "TOOL_ERROR",
+        "http_status": null,
+        "tool_issue": "UNSUPPORTED_OCTET_STREAM_NOT_ORIGIN_400",
+        "guest_verified": false
+      },
+      "replacement": {
+        "catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+        "candidate_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+        "rights": "USGS_PUBLIC_DOMAIN_J_R_STACY_CREDIT_REVIEW",
+        "exact_frame_verified": false,
+        "rehost_cleared": false,
+        "credit_confirmed": false,
+        "binary_sha256": null,
+        "native_px": null,
+        "target_px": null
+      },
+      "allowed_wp_upload": false,
+      "allowed_post_rewrite": false
+    }
+  ],
+  "visitor": {
+    "current_src": null,
+    "final_http": null,
+    "mime": null,
+    "decoded": null,
+    "transferred_bytes": null,
+    "screenshot_hash": null
+  },
+  "production_writes": 0,
+  "subscription_spend": 0
+}

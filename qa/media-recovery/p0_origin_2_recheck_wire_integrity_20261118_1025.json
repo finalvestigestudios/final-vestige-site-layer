@@ -1,0 +1,82 @@
+{
+  "schema": "fv-media-origin-recheck-v1",
+  "observed_at_local": "2026-11-18 10:25 PST",
+  "scope": "P0 source-origin recheck and wire-gate source-provenance hardening; not a browser test",
+  "origin_probe_method": "public web retriever open exact URL; numeric source HTTP independently reported",
+  "guest_tested": false,
+  "historic_census": {
+    "posts": 61,
+    "img_tags": 355,
+    "offsite_worklist": 288,
+    "offsite_siteqa_154": 286,
+    "offsite_delta_unreconciled": 2
+  },
+  "current_census": {
+    "posts": 66,
+    "oversized_originals_above_1500000_bytes": 20,
+    "stored_original_bytes": 64385752,
+    "transfer_bytes": null
+  },
+  "reported_broken_42_guest_verified": null,
+  "claimed_76_percent_wire_savings_verified": false,
+  "records": [
+    {
+      "slot": "274:6",
+      "post_id": 274,
+      "priority": "P0",
+      "origin_url": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+      "published_jetpack_url": "https://i0.wp.com/www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg?resize=640%2C432&ssl=1",
+      "source_retriever_http": 404,
+      "source_probe_kind": "PUBLIC_WEB_RETRIEVER",
+      "jetpack_probe": "INACCESSIBLE_TO_RETRIEVER",
+      "guest_http": null,
+      "guest_decode": null,
+      "guest_transfer_bytes": null,
+      "archival_candidate": {
+        "authority": "Naval History and Heritage Command",
+        "accession": "80-G-227989",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-G-227989.html",
+        "catalog_frame_compatibility": "HISTORIC_SUBJECT_PLAUSIBLE_EXACT_CROP_UNVERIFIED",
+        "candidate_native_width_px": null,
+        "candidate_native_height_px": null,
+        "derivative_width_px": null,
+        "rights": "HOLD",
+        "exact_frame_verified": false,
+        "rehost_approved": false
+      }
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "priority": "P0",
+      "origin_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "published_jetpack_url": "https://i0.wp.com/stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg?ssl=1",
+      "source_retriever_http": 404,
+      "source_probe_kind": "PUBLIC_WEB_RETRIEVER",
+      "jetpack_probe": "INACCESSIBLE_TO_RETRIEVER",
+      "guest_http": null,
+      "guest_decode": null,
+      "guest_transfer_bytes": null,
+      "archival_candidate": {
+        "authority": "State Archives of Florida / Florida Memory",
+        "accession": "RC09237",
+        "catalog_url": "https://floridamemory.com/items/show/32083",
+        "catalog_frame_compatibility": "DIFFERENT_PHOTOGRAPH_NOT_AUTOMATIC_REPLACEMENT",
+        "candidate_native_width_px": null,
+        "candidate_native_height_px": null,
+        "derivative_width_px": null,
+        "rights": "HOLD",
+        "exact_frame_verified": false,
+        "rehost_approved": false
+      }
+    }
+  ],
+  "policy": {
+    "max_width_px": 960,
+    "no_upscale": true,
+    "exact_frame_and_rights_required": true,
+    "no_production_writes": true,
+    "no_homepage_design_changes": true,
+    "no_spend": true
+  }
+}

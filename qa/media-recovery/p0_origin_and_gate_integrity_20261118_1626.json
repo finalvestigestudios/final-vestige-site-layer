@@ -1,0 +1,133 @@
+{
+  "schema": "fv-media-guest-status-and-gate-integrity-v1",
+  "observed_at_local": "2026-11-18 16:26 PST",
+  "observation_class": "PUBLIC_WEB_RETRIEVER_NOT_GUEST_BROWSER",
+  "cohort_counts": {
+    "historic_20261030": {
+      "posts": 61,
+      "inline_images": 355,
+      "external_origins": 286
+    },
+    "current_20261117": {
+      "posts": 66,
+      "inline_images": 361,
+      "external_origins": 294
+    },
+    "do_not_mix_denominators": true
+  },
+  "unresolved_claims": {
+    "reported_broken_images": 42,
+    "verified_guest_broken_images": null,
+    "reported_reduction_pct": 76,
+    "verified_guest_reduction_pct": null,
+    "oversize_originals_over_1500000_bytes": 20,
+    "stored_bytes_for_oversize_originals": 64385752,
+    "verified_cold_wire_bytes": null
+  },
+  "methodology_integrity": {
+    "old_false_positive_example": {
+      "before_bytes": 35500,
+      "after_bytes": 8521,
+      "raw_reduction_pct": 75.99718309859,
+      "rounded_display_pct": 76,
+      "prior_gate_wrongly_passed": true,
+      "correct_gate_passes": false
+    },
+    "corrected_rule": "after_bytes*100 <= before_bytes*24, using BigInt on safe integer sums; both desktop and mobile required",
+    "why": "a rounded displayed percentage cannot establish a 76% threshold",
+    "jetpack_resize_crop": "Official WordPress API documents resize=W,H as an exact-size crop, while fit maintains source aspect ratio; check resize aspect-ratio consistency within and across captures",
+    "wordpress_api": "https://developer.wordpress.com/docs/developer-tools/site-accelerator-api/"
+  },
+  "rechecked_original_urls": [
+    {
+      "slot": "285:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "original_url": "https://images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "public_retriever_http_status": 404,
+      "guest_chromium_final_http_status": null,
+      "guest_decoded": null,
+      "guest_transfer_bytes": null,
+      "candidate": null,
+      "rights_status": "HOLD_NO_EXACT_CANDIDATE",
+      "target_max_width_px": 960
+    },
+    {
+      "slot": "274:6",
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "original_url": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+      "public_retriever_http_status": 404,
+      "guest_chromium_final_http_status": null,
+      "guest_decoded": null,
+      "guest_transfer_bytes": null,
+      "candidate": {
+        "official_catalog": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-G-227989.html",
+        "record": "US Navy 80-G-227989",
+        "commons": "https://commons.wikimedia.org/wiki/File:USS_Tang_(SS-306)_rescues_airmen_off_Truk_in_1944.jpg",
+        "raster_px": [
+          1910,
+          1288
+        ],
+        "proportional_960px": [
+          960,
+          647
+        ],
+        "same_exact_crop_proven": false
+      },
+      "rights_status": "HOLD_ITEM_LEVEL_REVIEW",
+      "target_max_width_px": 960
+    },
+    {
+      "slot": "287:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "original_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "public_retriever_http_status": 404,
+      "guest_chromium_final_http_status": null,
+      "guest_decoded": null,
+      "guest_transfer_bytes": null,
+      "candidate": {
+        "catalog": "https://floridamemory.com/items/show/32083",
+        "record": "Florida Memory RC09237",
+        "raster_px": null,
+        "same_exact_crop_proven": false,
+        "different_image": true
+      },
+      "rights_status": "HOLD_EDITORIAL_DIFFERENT_IMAGE",
+      "target_max_width_px": 960
+    }
+  ],
+  "other_priority": {
+    "teton_dam_slot": "291:2",
+    "status": "SOURCE_CAPTION_SCENE_MISMATCH_PREVIOUSLY_DOCUMENTED",
+    "candidate": "https://catalog.archives.gov/id/28894685",
+    "candidate_dimensions_px": [
+      2798,
+      1966
+    ],
+    "proportional_960px": [
+      960,
+      675
+    ],
+    "rights_status": "HOLD_ITEM_LEVEL_REVIEW_AND_EDITOR_APPROVAL",
+    "guest_status": null
+  },
+  "media_plan": {
+    "download_media": false,
+    "production_wordpress_writes": false,
+    "auto_rehost": false,
+    "require_browser_failure": true,
+    "require_exact_raster_match_or_editor_approval": true,
+    "require_rights_catalog_and_attribution": true,
+    "record_original_and_derivative_sha256": true,
+    "max_width_px": 960,
+    "no_upscale": true,
+    "stage_only": true,
+    "retain_rollback_url": true,
+    "measure_cold_desktop_mobile_image_transfer": true
+  },
+  "coordination": {
+    "site_qa": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/154",
+    "existing_collector_owner": "Site QA",
+    "duplicate_collector": false
+  },
+  "release_state": "HOLD"
+}

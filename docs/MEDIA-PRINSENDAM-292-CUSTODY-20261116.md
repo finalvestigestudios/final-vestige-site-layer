@@ -1,0 +1,20 @@
+# Prinsendam post 292 — 2026-11-16 20:31 PT read-only media batch
+
+Source: https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/, WordPress EDIT+VIEW modified 2026-08-27T11:24:49. All six authored sources and rendered URLs, ALTs, and visitor evidence nulls are stored in `qa/media-recovery/prinsendam292_guest_source_custody_20261116_2031pt.json`. Baseline 61 posts / 355 img tags / 286 external originals; historical 42 reported broken NOT browser verified, 76% savings NOT wire-measured, and 20 oversize originals total 64,385,752 STORED bytes.
+
+## Actionable discoveries
+- Six authored offsite originals; five VIEW requests rewritten to Jetpack. **292:2 remains a direct external Pubble cloud request**, so it does not benefit from Jetpack's source proxy (in current VIEW HTML).
+- Independent public retriever DISPLAYED 292:0 through 292:4, **including 292:1 only with Rotterdam archive query token**. 292:5 yielded a retriever 403. None of these results are logged-out guest HTTP statuses; browser/network/decode/transfer are all unknown.
+- 292:0 has width/height 900×675, the other five have no explicit geometry; all six lack srcset/sizes. This is layout and responsiveness risk, NOT measured CLS/LCP.
+- **292:0 and 292:3 use the SAME Prinsendam-plus-helicopter image with DIFFERENT crops.** Current museum 900×675 is 4:3; DefenseImagery 2870×1930 is ~1.49:1. No automated replacement/deduping should disturb editorial framing.
+- Official [USCG photo VIRIN 210210-G-G0000-1014](https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002603427/) 2820×1891 catalog and public-domain-cleared-release statement, with credit/DoD limitations. Conditional proportional 960×644 image (not downloaded).
+- [DefenseImagery Commons VIRIN DF-SN-86-12843](https://commons.wikimedia.org/wiki/File:MS_Prisendam_sinking_off_Alaska_with_USCG_HH-3F_1980.jpeg) credits SSgt Richard D. McKee; native 2870×1930, conditional 960×646. Commons federal-work license claim; verify exact derivative and crop before rehosting.
+- Rotterdam archive photo identifier 4121_24162-1-14 must retain query tokens; [archive copyright policy](https://www.rotterdam.nl/beeld-en-geluid-van-stadsarchief-opzoeken) warns not all imagery may be reused. 292:2 publisher rights unknown; 292:4 & 292:5 have no exact primary/public-domain replacement cleared. [DVIDS image 2219225](https://www.dvidshub.net/image/2219225/rescuers-survivors-reunite-35th-anniversary-prinsendam-rescue) and [artwork 1085125](https://www.dvidshub.net/image/1085125/prinsendam-rescue-walter-richards) are related only, not frame-identical replacements.
+
+## Conditional WordPress/cache staging plan (not authorized now)
+1. Site QA #154 existing Chromium collector obtains exact currentSrc, source/request GET numeric statuses, MIME, decoded dimensions, screenshot, cold/warm transfer bytes and cache headers on mobile/desktop. Prioritize 292:5, then 292:2 direct CDN and Rotterdam query token; avoid duplicate collector.
+2. For actually broken slots, after case-by-case rights, credit, identity and crop approval, derive max-width-960, no-upscale, aspect-ratio-preserving asset. Compare actual pixels and alt/caption; checksum and item credit recorded. Never mirror third-party assets without permission.
+3. Upload **only on a separately authorized staging WordPress site**, test responsive width/height and srcset/sizes, changed file payload and visual comparison, then independently review a reversible rollback plan. No production writes, risky Gutenberg changes, homepage work, merge, deployment or spend.
+4. Test 76% byte-savings claim using **matched cold browser before/after encoded image transfer bytes**, not original Media Library file sizes. Keep Jetpack/cached and uncached requests separate.
+
+Validator: `qa/media-recovery/verify_prinsendam292.cjs`; 31 native-Node-ready fixture tests: `qa/media-recovery/test_prinsendam292.cjs`. Release **HOLD**. Worklist `docs/IMAGE-WEIGHT-WORKLIST.md` not available on main or current PR branch.

@@ -1,0 +1,98 @@
+{
+  "schema": "fv-p0-guest-evidence-evaluation-v1",
+  "provenance": "NO_GUEST_CAPTURE",
+  "source": "fv-p0-web-retriever-matrix-v1",
+  "capture_time_utc": null,
+  "summary": {
+    "expected_slots": 6,
+    "provided_capture_slots": 0,
+    "reported_broken_slots": 0,
+    "reported_rendered_slots": 0,
+    "unresolved_slots": 6,
+    "wire_byte_slots": 0,
+    "observed_partial_wire_bytes": null,
+    "complete_six_slot_wire_bytes": null,
+    "reported_42_broken_sitewide_verified": false,
+    "claimed_76_percent_sitewide_wire_savings_verified": false
+  },
+  "rows": [
+    {
+      "key": "285:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "expected_jetpack_url": "https://i0.wp.com/images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg?ssl=1",
+      "reported_current_src": null,
+      "browser_http_status": null,
+      "browser_mime_type": null,
+      "browser_wire_bytes": null,
+      "decoding_observed": null,
+      "delivery": "UNOBSERVED",
+      "source_unchanged": null,
+      "production_replacement_allowed": false
+    },
+    {
+      "key": "285:2",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "expected_jetpack_url": "https://i0.wp.com/blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg?ssl=1",
+      "reported_current_src": null,
+      "browser_http_status": null,
+      "browser_mime_type": null,
+      "browser_wire_bytes": null,
+      "decoding_observed": null,
+      "delivery": "UNOBSERVED",
+      "source_unchanged": null,
+      "production_replacement_allowed": false
+    },
+    {
+      "key": "287:5",
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "expected_jetpack_url": "https://i0.wp.com/stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg?ssl=1",
+      "reported_current_src": null,
+      "browser_http_status": null,
+      "browser_mime_type": null,
+      "browser_wire_bytes": null,
+      "decoding_observed": null,
+      "delivery": "UNOBSERVED",
+      "source_unchanged": null,
+      "production_replacement_allowed": false
+    },
+    {
+      "key": "418:1",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "expected_jetpack_url": "https://i0.wp.com/media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG?ssl=1",
+      "reported_current_src": null,
+      "browser_http_status": null,
+      "browser_mime_type": null,
+      "browser_wire_bytes": null,
+      "decoding_observed": null,
+      "delivery": "UNOBSERVED",
+      "source_unchanged": null,
+      "production_replacement_allowed": false
+    },
+    {
+      "key": "418:2",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "expected_jetpack_url": "https://i0.wp.com/www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg?ssl=1",
+      "reported_current_src": null,
+      "browser_http_status": null,
+      "browser_mime_type": null,
+      "browser_wire_bytes": null,
+      "decoding_observed": null,
+      "delivery": "UNOBSERVED",
+      "source_unchanged": null,
+      "production_replacement_allowed": false
+    },
+    {
+      "key": "407:1",
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "expected_jetpack_url": "https://i0.wp.com/d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg?ssl=1",
+      "reported_current_src": null,
+      "browser_http_status": null,
+      "browser_mime_type": null,
+      "browser_wire_bytes": null,
+      "decoding_observed": null,
+      "delivery": "UNOBSERVED",
+      "source_unchanged": null,
+      "production_replacement_allowed": false
+    }
+  ]
+}

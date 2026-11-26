@@ -1,0 +1,291 @@
+{
+  "schema": "fv-live-social-card-image-census-v1",
+  "captured_at_local": "2026-11-18 19:30 PST",
+  "collection": "WORDPRESS_RENDERED_PAGE_GET_READ_ONLY_SIGNED_OUT_SERVER_RESPONSE",
+  "scope": "12 selected published posts, not a complete 61/66-post social census",
+  "historical_posts": 61,
+  "current_posts": 66,
+  "historical_inline": 355,
+  "current_inline": 361,
+  "reported_broken_visitor_images": 42,
+  "verified_broken_visitor_images": null,
+  "reported_image_wire_saving_percent": 76,
+  "verified_image_wire_saving_percent": null,
+  "oversized_wordpress_originals_gt_1500000_bytes": 20,
+  "oversized_stored_bytes": 64385752,
+  "network_measurements": false,
+  "production_writes": 0,
+  "pages": [
+    {
+      "post_id": 274,
+      "page_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "page_http": 200,
+      "og_image": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+      "og_image_width_declared": 640,
+      "og_image_height_declared": 432,
+      "og_alt": "USS Tang crewmen taking a rescued American airman aboard the submarine off Truk in May 1944.",
+      "twitter_image": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg?w=640",
+      "image_response_http": null,
+      "image_decode": null,
+      "image_network_transfer_bytes": null
+    },
+    {
+      "post_id": 287,
+      "page_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "page_http": 200,
+      "og_image": "https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/IIYZWAFLJUQD3YGEYEKMG5PVXY.jpg",
+      "og_image_width_declared": 1024,
+      "og_image_height_declared": 672,
+      "og_alt": "An automobile stopped near the broken end of the Sunshine Skyway Bridge after the May 9, 1980 collapse.",
+      "twitter_image": "https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/IIYZWAFLJUQD3YGEYEKMG5PVXY.jpg?w=640",
+      "image_response_http": null,
+      "image_decode": null,
+      "image_network_transfer_bytes": null
+    },
+    {
+      "post_id": 285,
+      "page_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "page_http": 200,
+      "og_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/fv-site-icon-512.png?fit=512%2C512&ssl=1",
+      "og_image_width_declared": 512,
+      "og_image_height_declared": 512,
+      "og_alt": "Three-stone cairn emblem of Final Vestige Studios",
+      "twitter_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/fv-site-icon-512.png?fit=512%2C512&ssl=1",
+      "image_response_http": null,
+      "image_decode": null,
+      "image_network_transfer_bytes": null
+    },
+    {
+      "post_id": 291,
+      "page_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "page_http": 200,
+      "og_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/fv-site-icon-512.png?fit=512%2C512&ssl=1",
+      "og_image_width_declared": 512,
+      "og_image_height_declared": 512,
+      "og_alt": "Three-stone cairn emblem of Final Vestige Studios",
+      "twitter_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/fv-site-icon-512.png?fit=512%2C512&ssl=1",
+      "image_response_http": null,
+      "image_decode": null,
+      "image_network_transfer_bytes": null
+    },
+    {
+      "post_id": 418,
+      "page_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "page_http": 200,
+      "og_image": "https://www.history.uscg.mil/Portals/6/2_%20new%20and%20old%20lighthouses%2019849609_web1_1_-Scotch-Cap-lighthouse-1200x984.jpg",
+      "og_image_width_declared": 1200,
+      "og_image_height_declared": 984,
+      "og_alt": "The old and new Scotch Cap lighthouses on Unimak Island before the concrete lighthouse was destroyed by the April 1, 1946 tsunami.",
+      "twitter_image": "https://www.history.uscg.mil/Portals/6/2_%20new%20and%20old%20lighthouses%2019849609_web1_1_-Scotch-Cap-lighthouse-1200x984.jpg?w=640",
+      "image_response_http": null,
+      "image_decode": null,
+      "image_network_transfer_bytes": null
+    },
+    {
+      "post_id": 407,
+      "page_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "page_http": 200,
+      "og_image": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake1.jpg",
+      "og_image_width_declared": 1024,
+      "og_image_height_declared": 719,
+      "og_alt": "The Madison Slide and rapidly filling Earthquake Lake four days after the 1959 Hebgen Lake earthquake, with camping gear abandoned by survivors in the foreground.",
+      "twitter_image": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake1.jpg?w=640",
+      "image_response_http": null,
+      "image_decode": null,
+      "image_network_transfer_bytes": null
+    },
+    {
+      "post_id": 299,
+      "page_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+      "page_http": 200,
+      "og_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1200%2C792&ssl=1",
+      "og_image_width_declared": 1200,
+      "og_image_height_declared": 792,
+      "og_alt": "The preserved 1628 warship Vasa inside the Vasa Museum in Stockholm, showing the tall upperworks above the hull.",
+      "twitter_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1200%2C792&ssl=1&w=640",
+      "image_response_http": null,
+      "image_decode": null,
+      "image_network_transfer_bytes": null
+    },
+    {
+      "post_id": 1917,
+      "page_url": "https://finalvestige.com/2026/11/02/piri-reis-map/",
+      "page_http": 200,
+      "og_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/piri-reis-world-map-01.jpg?fit=900%2C1200&ssl=1",
+      "og_image_width_declared": 900,
+      "og_image_height_declared": 1200,
+      "og_alt": "The surviving fragment of the 1513 Piri Reis world map: parchment with the Atlantic Ocean, the coasts of Europe, Africa and South America, compass roses, and annotations in Ottoman Turkish.",
+      "twitter_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/piri-reis-world-map-01.jpg?fit=900%2C1200&ssl=1&w=640",
+      "image_response_http": null,
+      "image_decode": null,
+      "image_network_transfer_bytes": null
+    },
+    {
+      "post_id": 621,
+      "page_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "page_http": 200,
+      "og_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=1200%2C900&ssl=1",
+      "og_image_width_declared": 1200,
+      "og_image_height_declared": 900,
+      "og_alt": "View into the Malbone Street Tunnel from the southbound platform at Prospect Park, showing the surviving curved tunnel alignment.",
+      "twitter_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=1200%2C900&ssl=1&w=640",
+      "image_response_http": null,
+      "image_decode": null,
+      "image_network_transfer_bytes": null
+    },
+    {
+      "post_id": 268,
+      "page_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "page_http": 200,
+      "og_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/archimedes-palimpsest.jpg?fit=665%2C448&ssl=1",
+      "og_image_width_declared": 665,
+      "og_image_height_declared": 448,
+      "og_alt": "Open page of the Archimedes Palimpsest showing the later prayer-book text written across older erased Greek mathematics and diagrams.",
+      "twitter_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/archimedes-palimpsest.jpg?fit=665%2C448&ssl=1&w=640",
+      "image_response_http": null,
+      "image_decode": null,
+      "image_network_transfer_bytes": null
+    },
+    {
+      "post_id": 432,
+      "page_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "page_http": 200,
+      "og_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/fv-site-icon-512.png?fit=512%2C512&ssl=1",
+      "og_image_width_declared": 512,
+      "og_image_height_declared": 512,
+      "og_alt": "Three-stone cairn emblem of Final Vestige Studios",
+      "twitter_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/fv-site-icon-512.png?fit=512%2C512&ssl=1",
+      "image_response_http": null,
+      "image_decode": null,
+      "image_network_transfer_bytes": null
+    },
+    {
+      "post_id": 434,
+      "page_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "page_http": 200,
+      "og_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?fit=1041%2C810&ssl=1",
+      "og_image_width_declared": 1041,
+      "og_image_height_declared": 810,
+      "og_alt": "Apollo 1 astronauts Gus Grissom, Ed White and Roger Chaffee near Launch Complex 34 during training in January 1967.",
+      "twitter_image": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?fit=1041%2C810&ssl=1&w=640",
+      "image_response_http": null,
+      "image_decode": null,
+      "image_network_transfer_bytes": null
+    }
+  ],
+  "external_origin_probes": [
+    {
+      "post_id": 274,
+      "slot": "274:6",
+      "url": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+      "observed_http": 404,
+      "observed_by": "PUBLIC_WEB_RETRIEVER",
+      "observed_date": "2026-11-18",
+      "guest_browser_http": null,
+      "origin_same_as_og_image": true
+    },
+    {
+      "post_id": 287,
+      "slot": "287:5",
+      "url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "observed_http": 404,
+      "observed_by": "EARLIER_PUBLIC_WEB_RETRIEVER",
+      "observed_date": "2026-11-18",
+      "guest_browser_http": null,
+      "origin_same_as_og_image": false
+    },
+    {
+      "post_id": 285,
+      "slot": "285:5",
+      "url": "https://images.saymedia-content.com/.image/ar_16%3A9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Aeco%2Cw_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "observed_http": 404,
+      "observed_by": "EARLIER_PUBLIC_WEB_RETRIEVER",
+      "observed_date": "2026-11-18",
+      "guest_browser_http": null,
+      "origin_same_as_og_image": false
+    }
+  ],
+  "recovery_candidates": [
+    {
+      "post_id": 274,
+      "slot": "274:6",
+      "catalog": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-G-227989.html",
+      "accession": "80-G-227989",
+      "primary_description": "Tang takes aboard rescued airmen off Truk, May 1 1944",
+      "raster_ref": "https://commons.wikimedia.org/wiki/File:USS_Tang_(SS-306)_rescues_airmen_off_Truk_in_1944.jpg",
+      "candidate_raster_known_px": [
+        1910,
+        1288
+      ],
+      "proposed_proportional_max_width_960": [
+        960,
+        647
+      ],
+      "rights": "HOLD_ITEM_LEVEL",
+      "same_crop_verified": false,
+      "approved_to_replace": false
+    },
+    {
+      "post_id": 287,
+      "slot": "287:5",
+      "catalog": "https://www.floridamemory.com/items/show/32083",
+      "accession": "RC09237",
+      "primary_description": "May 9 1980 Sunshine Skyway disaster, automobile near fallen span",
+      "candidate_raster_known_px": null,
+      "proposed_proportional_max_width_960": null,
+      "rights": "HOLD_ITEM_LEVEL",
+      "same_crop_verified": false,
+      "approved_to_replace": false,
+      "difference": "NOT_SAME_DOCUMENTARY_STILL"
+    },
+    {
+      "post_id": 418,
+      "slot": "418:1",
+      "catalog": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "accession": "210330-G-DE713-0002",
+      "primary_description": "Chief Pettit portrait; not the old/new lighthouse OG photograph",
+      "candidate_raster_known_px": null,
+      "proposed_proportional_max_width_960": null,
+      "rights": "HOLD_CREDIT_DOD_ITEM_REVIEW",
+      "same_crop_verified": false,
+      "approved_to_replace": false
+    },
+    {
+      "post_id": 291,
+      "slot": "291:2",
+      "catalog": "https://catalog.archives.gov/id/28894685",
+      "accession": "NAID 28894685",
+      "primary_description": "Teton Dam breach; potential correction for mismatched cleanup caption",
+      "candidate_raster_known_px": [
+        2798,
+        1966
+      ],
+      "proposed_proportional_max_width_960": [
+        960,
+        675
+      ],
+      "rights": "HOLD_ITEM_LEVEL_AND_EDITORIAL",
+      "same_crop_verified": false,
+      "approved_to_replace": false
+    }
+  ],
+  "cache_and_wp_plan": {
+    "proof_first": true,
+    "rights_and_identity_review": true,
+    "hash_master_before_staging": true,
+    "proportional_no_upscale_max_width_px": 960,
+    "staging_media_only": true,
+    "retain_original_caption_attribution": true,
+    "verify_guest_browser_and_social_crawler": true,
+    "production_wordpress_write": false,
+    "automated_mirror": false,
+    "rollback_required": true
+  },
+  "caveats": [
+    "200 article response does not establish any embedded image response or decode",
+    "A 404 from independent image retriever is not proof of visitor image failure",
+    "OG fallback emblem is a verified source-metadata choice, not a broken image",
+    "The 12-page subset is not proof of 42 broken images or 76% savings",
+    "Source imagery may be proprietary even when the historical event is public domain"
+  ]
+}
