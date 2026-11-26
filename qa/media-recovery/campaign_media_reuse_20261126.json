@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-26",
+  "source": "WordPress authenticated VIEW and media metadata; external public catalog retriever; no visitor browser measurements",
+  "historical": {
+    "posts": 61,
+    "slots": 355,
+    "reportedBroken": 42,
+    "reportedReductionPercent": 76,
+    "verified": false,
+    "oversizedStoredBytes": 64385752,
+    "oversizedStoredCount": 20
+  },
+  "worklist": {
+    "ref": "qa/media-recovery-reviewed-20261030-1158",
+    "blob": "71280920640a00551b4d2c2b54fa0f95e33030b8"
+  },
+  "copyPolicy": "2026-11-25 exact founder approval required for all changed website wording; no proposed copy in this batch",
+  "rows": [
+    {
+      "id": 2935,
+      "mid": 2934,
+      "kind": "already_first_party",
+      "catalog": "https://commons.wikimedia.org/wiki/File:Utsuro-bune_Hirokata-zuihitsu.jpg",
+      "primary": "https://www.digital.archives.go.jp/img/1271371",
+      "primaryReaderStatus": 403,
+      "catalogDimensions": [
+        2138,
+        1603
+      ],
+      "catalogBytes": 751642,
+      "catalogSha1": "e100c91df21804f66192ea03f9dc9b5e1a903369",
+      "rights": "Commons PD-Japan and PD-1996; jurisdiction caveats; archive link retriever 403",
+      "publicReaderResult": "existing virtual image inaccessible; numeric HTTP unknown",
+      "url": "https://finalvestige.com/2026/11/23/utsuro-bune-1803-archives-manuscripts/",
+      "revision": "2026-11-25T09:20:13",
+      "slot": "2935:0",
+      "authoredSrc": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/utsuro-bune-hirokata-zuihitsu-public-domain.jpg?resize=2138%2C1603&ssl=1",
+      "authoredDimensions": [
+        2138,
+        1603
+      ],
+      "hasSrcset": true,
+      "hasSizes": true,
+      "altMatchesAttachment": false,
+      "attachmentUrl": "https://finalvestige.com/wp-content/uploads/2026/11/utsuro-bune-hirokata-zuihitsu-public-domain.jpg",
+      "attachmentDimensions": [
+        2138,
+        1603
+      ],
+      "attachmentBytes": 751642,
+      "existingVariant": {
+        "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/utsuro-bune-hirokata-zuihitsu-public-domain.jpg?fit=768%2C576&ssl=1",
+        "width": 768,
+        "height": 576,
+        "virtual": true
+      },
+      "targetDimensions": [
+        960,
+        720
+      ],
+      "browser": {
+        "status": null,
+        "decode": null,
+        "bytes": null,
+        "lcp": null,
+        "cls": null,
+        "inp": null
+      },
+      "identityVerified": false,
+      "decision": "HOLD",
+      "copyChanges": 0
+    },
+    {
+      "id": 1926,
+      "mid": 2637,
+      "kind": "existing_attachment_reuse_candidate",
+      "catalog": "https://commons.wikimedia.org/wiki/File:Crystal_Skull_British_Museum_26072013_05.jpg",
+      "primary": null,
+      "primaryReaderStatus": null,
+      "catalogDimensions": [
+        1436,
+        2001
+      ],
+      "catalogBytes": 1647642,
+      "catalogSha1": "1f24db7730c5063b7ae19e175d4cc664c1ab0703",
+      "rights": "Photographer Vassil CC0 1.0 dedication on original uploader catalog; retain credit",
+      "publicReaderResult": "authored redirect and existing virtual image inaccessible; numeric HTTP unknown",
+      "url": "https://finalvestige.com/2026/11/02/crystal-skulls/",
+      "revision": "2026-11-25T09:17:38",
+      "slot": "1926:0",
+      "authoredSrc": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Crystal%20Skull%20British%20Museum%2026072013%2005.jpg?width=900",
+      "authoredDimensions": null,
+      "hasSrcset": false,
+      "hasSizes": false,
+      "altMatchesAttachment": true,
+      "attachmentUrl": "https://finalvestige.com/wp-content/uploads/2026/11/crystal-skull-british-museum.jpg",
+      "attachmentDimensions": [
+        1436,
+        2001
+      ],
+      "attachmentBytes": 1647642,
+      "existingVariant": {
+        "url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/crystal-skull-british-museum.jpg?fit=768%2C1070&ssl=1",
+        "width": 768,
+        "height": 1070,
+        "virtual": true
+      },
+      "targetDimensions": [
+        960,
+        1338
+      ],
+      "browser": {
+        "status": null,
+        "decode": null,
+        "bytes": null,
+        "lcp": null,
+        "cls": null,
+        "inp": null
+      },
+      "identityVerified": false,
+      "decision": "HOLD",
+      "copyChanges": 0
+    }
+  ]
+}
